@@ -10,8 +10,7 @@ namespace TerraFX.Interop
         [NativeTypeName("UINT")]
         public uint cbSize;
 
-        [NativeTypeName("BOOL")]
-        public int Enabled;
+        public BOOL Enabled;
 
         [NativeTypeName("LCID")]
         public uint Locale;

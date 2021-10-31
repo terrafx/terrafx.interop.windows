@@ -25,8 +25,7 @@ namespace TerraFX.Interop
         [NativeTypeName("const DML_TENSOR_DESC *")]
         public DML_TENSOR_DESC* OutputTensor;
 
-        [NativeTypeName("BOOL")]
-        public int Spatial;
+        public BOOL Spatial;
 
         [NativeTypeName("FLOAT")]
         public float Epsilon;

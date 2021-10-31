@@ -59,9 +59,9 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
         [return: NativeTypeName("HRESULT")]
-        public int PreTranslateMessage([NativeTypeName("const MSG *")] MSG* message, [NativeTypeName("BOOL *")] int* result)
+        public int PreTranslateMessage([NativeTypeName("const MSG *")] MSG* message, BOOL* result)
         {
-            return ((delegate* unmanaged<IDesktopWindowXamlSourceNative2*, MSG*, int*, int>)(lpVtbl[5]))((IDesktopWindowXamlSourceNative2*)Unsafe.AsPointer(ref this), message, result);
+            return ((delegate* unmanaged<IDesktopWindowXamlSourceNative2*, MSG*, BOOL*, int>)(lpVtbl[5]))((IDesktopWindowXamlSourceNative2*)Unsafe.AsPointer(ref this), message, result);
         }
     }
 }

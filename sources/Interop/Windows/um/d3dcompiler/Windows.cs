@@ -16,7 +16,7 @@ namespace TerraFX.Interop
 
         [DllImport("d3dcompiler_47", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
-        public static extern int D3DWriteBlobToFile(ID3DBlob* pBlob, [NativeTypeName("LPCWSTR")] ushort* pFileName, [NativeTypeName("BOOL")] int bOverwrite);
+        public static extern int D3DWriteBlobToFile(ID3DBlob* pBlob, [NativeTypeName("LPCWSTR")] ushort* pFileName, BOOL bOverwrite);
 
         [DllImport("d3dcompiler_47", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]

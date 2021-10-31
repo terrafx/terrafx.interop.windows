@@ -43,9 +43,9 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
         [return: NativeTypeName("HRESULT")]
-        public int AreSnapshotsAvailable([NativeTypeName("LPCWSTR")] ushort* pszPath, [NativeTypeName("BOOL")] int fOkToBeSlow, [NativeTypeName("BOOL *")] int* pfAvailable)
+        public int AreSnapshotsAvailable([NativeTypeName("LPCWSTR")] ushort* pszPath, BOOL fOkToBeSlow, BOOL* pfAvailable)
         {
-            return ((delegate* unmanaged<IPreviousVersionsInfo*, ushort*, int, int*, int>)(lpVtbl[3]))((IPreviousVersionsInfo*)Unsafe.AsPointer(ref this), pszPath, fOkToBeSlow, pfAvailable);
+            return ((delegate* unmanaged<IPreviousVersionsInfo*, ushort*, BOOL, BOOL*, int>)(lpVtbl[3]))((IPreviousVersionsInfo*)Unsafe.AsPointer(ref this), pszPath, fOkToBeSlow, pfAvailable);
         }
     }
 }

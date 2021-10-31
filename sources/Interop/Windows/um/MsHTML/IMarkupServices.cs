@@ -139,9 +139,9 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(15)]
         [return: NativeTypeName("HRESULT")]
-        public int IsScopedElement(IHTMLElement* pElement, [NativeTypeName("BOOL *")] int* pfScoped)
+        public int IsScopedElement(IHTMLElement* pElement, BOOL* pfScoped)
         {
-            return ((delegate* unmanaged<IMarkupServices*, IHTMLElement*, int*, int>)(lpVtbl[15]))((IMarkupServices*)Unsafe.AsPointer(ref this), pElement, pfScoped);
+            return ((delegate* unmanaged<IMarkupServices*, IHTMLElement*, BOOL*, int>)(lpVtbl[15]))((IMarkupServices*)Unsafe.AsPointer(ref this), pElement, pfScoped);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

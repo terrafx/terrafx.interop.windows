@@ -59,9 +59,9 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
         [return: NativeTypeName("HRESULT")]
-        public int HitTestPoint(POINT* pPoint, IUnknown* pReserved, [NativeTypeName("BOOL *")] int* pbHit)
+        public int HitTestPoint(POINT* pPoint, IUnknown* pReserved, BOOL* pbHit)
         {
-            return ((delegate* unmanaged<IElementBehaviorRender*, POINT*, IUnknown*, int*, int>)(lpVtbl[5]))((IElementBehaviorRender*)Unsafe.AsPointer(ref this), pPoint, pReserved, pbHit);
+            return ((delegate* unmanaged<IElementBehaviorRender*, POINT*, IUnknown*, BOOL*, int>)(lpVtbl[5]))((IElementBehaviorRender*)Unsafe.AsPointer(ref this), pPoint, pReserved, pbHit);
         }
     }
 }

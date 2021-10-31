@@ -7,7 +7,6 @@ namespace TerraFX.Interop
 {
     public partial struct AM_AC3_ROOM_TYPE
     {
-        [NativeTypeName("BOOL")]
-        public int fLargeRoom;
+        public BOOL fLargeRoom;
     }
 }

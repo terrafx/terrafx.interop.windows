@@ -59,9 +59,9 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
         [return: NativeTypeName("HRESULT")]
-        public int GetEncoding([NativeTypeName("BOOL *")] int* pKnown, [NativeTypeName("UINT32 *")] uint* pCodePage)
+        public int GetEncoding(BOOL* pKnown, [NativeTypeName("UINT32 *")] uint* pCodePage)
         {
-            return ((delegate* unmanaged<IDxcBlobUtf8*, int*, uint*, int>)(lpVtbl[5]))((IDxcBlobUtf8*)Unsafe.AsPointer(ref this), pKnown, pCodePage);
+            return ((delegate* unmanaged<IDxcBlobUtf8*, BOOL*, uint*, int>)(lpVtbl[5]))((IDxcBlobUtf8*)Unsafe.AsPointer(ref this), pKnown, pCodePage);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

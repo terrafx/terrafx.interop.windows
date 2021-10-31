@@ -138,8 +138,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(15)]
-        [return: NativeTypeName("BOOL")]
-        public int IsMatchingType(IRecordInfo* pRecordInfo)
+        public BOOL IsMatchingType(IRecordInfo* pRecordInfo)
         {
             return ((delegate* unmanaged<IRecordInfo*, IRecordInfo*, int>)(lpVtbl[15]))((IRecordInfo*)Unsafe.AsPointer(ref this), pRecordInfo);
         }

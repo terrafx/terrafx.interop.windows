@@ -16,10 +16,8 @@ namespace TerraFX.Interop
         [NativeTypeName("DWORD")]
         public uint dwOperationalStatus;
 
-        [NativeTypeName("BOOL")]
-        public int bMHbeatActive;
+        public BOOL bMHbeatActive;
 
-        [NativeTypeName("BOOL")]
-        public int bMHbeatAlive;
+        public BOOL bMHbeatAlive;
     }
 }

@@ -115,17 +115,17 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(12)]
         [return: NativeTypeName("HRESULT")]
-        public int GetMirrorState([NativeTypeName("BOOL *")] int* pfMirrorState)
+        public int GetMirrorState(BOOL* pfMirrorState)
         {
-            return ((delegate* unmanaged<IMFCapturePreviewSink*, int*, int>)(lpVtbl[12]))((IMFCapturePreviewSink*)Unsafe.AsPointer(ref this), pfMirrorState);
+            return ((delegate* unmanaged<IMFCapturePreviewSink*, BOOL*, int>)(lpVtbl[12]))((IMFCapturePreviewSink*)Unsafe.AsPointer(ref this), pfMirrorState);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(13)]
         [return: NativeTypeName("HRESULT")]
-        public int SetMirrorState([NativeTypeName("BOOL")] int fMirrorState)
+        public int SetMirrorState(BOOL fMirrorState)
         {
-            return ((delegate* unmanaged<IMFCapturePreviewSink*, int, int>)(lpVtbl[13]))((IMFCapturePreviewSink*)Unsafe.AsPointer(ref this), fMirrorState);
+            return ((delegate* unmanaged<IMFCapturePreviewSink*, BOOL, int>)(lpVtbl[13]))((IMFCapturePreviewSink*)Unsafe.AsPointer(ref this), fMirrorState);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

@@ -155,9 +155,9 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(17)]
         [return: NativeTypeName("HRESULT")]
-        public int GetSortDescriptionLabel([NativeTypeName("BOOL")] int fDescending, [NativeTypeName("LPWSTR *")] ushort** ppszDescription)
+        public int GetSortDescriptionLabel(BOOL fDescending, [NativeTypeName("LPWSTR *")] ushort** ppszDescription)
         {
-            return ((delegate* unmanaged<IPropertyDescriptionAliasInfo*, int, ushort**, int>)(lpVtbl[17]))((IPropertyDescriptionAliasInfo*)Unsafe.AsPointer(ref this), fDescending, ppszDescription);
+            return ((delegate* unmanaged<IPropertyDescriptionAliasInfo*, BOOL, ushort**, int>)(lpVtbl[17]))((IPropertyDescriptionAliasInfo*)Unsafe.AsPointer(ref this), fDescending, ppszDescription);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

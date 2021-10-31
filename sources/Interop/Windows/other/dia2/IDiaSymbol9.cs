@@ -171,25 +171,25 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(19)]
         [return: NativeTypeName("HRESULT")]
-        public int get_volatileType([NativeTypeName("BOOL *")] int* pRetVal)
+        public int get_volatileType(BOOL* pRetVal)
         {
-            return ((delegate* unmanaged<IDiaSymbol9*, int*, int>)(lpVtbl[19]))((IDiaSymbol9*)Unsafe.AsPointer(ref this), pRetVal);
+            return ((delegate* unmanaged<IDiaSymbol9*, BOOL*, int>)(lpVtbl[19]))((IDiaSymbol9*)Unsafe.AsPointer(ref this), pRetVal);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(20)]
         [return: NativeTypeName("HRESULT")]
-        public int get_constType([NativeTypeName("BOOL *")] int* pRetVal)
+        public int get_constType(BOOL* pRetVal)
         {
-            return ((delegate* unmanaged<IDiaSymbol9*, int*, int>)(lpVtbl[20]))((IDiaSymbol9*)Unsafe.AsPointer(ref this), pRetVal);
+            return ((delegate* unmanaged<IDiaSymbol9*, BOOL*, int>)(lpVtbl[20]))((IDiaSymbol9*)Unsafe.AsPointer(ref this), pRetVal);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(21)]
         [return: NativeTypeName("HRESULT")]
-        public int get_unalignedType([NativeTypeName("BOOL *")] int* pRetVal)
+        public int get_unalignedType(BOOL* pRetVal)
         {
-            return ((delegate* unmanaged<IDiaSymbol9*, int*, int>)(lpVtbl[21]))((IDiaSymbol9*)Unsafe.AsPointer(ref this), pRetVal);
+            return ((delegate* unmanaged<IDiaSymbol9*, BOOL*, int>)(lpVtbl[21]))((IDiaSymbol9*)Unsafe.AsPointer(ref this), pRetVal);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -227,9 +227,9 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(26)]
         [return: NativeTypeName("HRESULT")]
-        public int get_editAndContinueEnabled([NativeTypeName("BOOL *")] int* pRetVal)
+        public int get_editAndContinueEnabled(BOOL* pRetVal)
         {
-            return ((delegate* unmanaged<IDiaSymbol9*, int*, int>)(lpVtbl[26]))((IDiaSymbol9*)Unsafe.AsPointer(ref this), pRetVal);
+            return ((delegate* unmanaged<IDiaSymbol9*, BOOL*, int>)(lpVtbl[26]))((IDiaSymbol9*)Unsafe.AsPointer(ref this), pRetVal);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -323,25 +323,25 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(38)]
         [return: NativeTypeName("HRESULT")]
-        public int get_virtual([NativeTypeName("BOOL *")] int* pRetVal)
+        public int get_virtual(BOOL* pRetVal)
         {
-            return ((delegate* unmanaged<IDiaSymbol9*, int*, int>)(lpVtbl[38]))((IDiaSymbol9*)Unsafe.AsPointer(ref this), pRetVal);
+            return ((delegate* unmanaged<IDiaSymbol9*, BOOL*, int>)(lpVtbl[38]))((IDiaSymbol9*)Unsafe.AsPointer(ref this), pRetVal);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(39)]
         [return: NativeTypeName("HRESULT")]
-        public int get_intro([NativeTypeName("BOOL *")] int* pRetVal)
+        public int get_intro(BOOL* pRetVal)
         {
-            return ((delegate* unmanaged<IDiaSymbol9*, int*, int>)(lpVtbl[39]))((IDiaSymbol9*)Unsafe.AsPointer(ref this), pRetVal);
+            return ((delegate* unmanaged<IDiaSymbol9*, BOOL*, int>)(lpVtbl[39]))((IDiaSymbol9*)Unsafe.AsPointer(ref this), pRetVal);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(40)]
         [return: NativeTypeName("HRESULT")]
-        public int get_pure([NativeTypeName("BOOL *")] int* pRetVal)
+        public int get_pure(BOOL* pRetVal)
         {
-            return ((delegate* unmanaged<IDiaSymbol9*, int*, int>)(lpVtbl[40]))((IDiaSymbol9*)Unsafe.AsPointer(ref this), pRetVal);
+            return ((delegate* unmanaged<IDiaSymbol9*, BOOL*, int>)(lpVtbl[40]))((IDiaSymbol9*)Unsafe.AsPointer(ref this), pRetVal);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -403,9 +403,9 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(48)]
         [return: NativeTypeName("HRESULT")]
-        public int get_reference([NativeTypeName("BOOL *")] int* pRetVal)
+        public int get_reference(BOOL* pRetVal)
         {
-            return ((delegate* unmanaged<IDiaSymbol9*, int*, int>)(lpVtbl[48]))((IDiaSymbol9*)Unsafe.AsPointer(ref this), pRetVal);
+            return ((delegate* unmanaged<IDiaSymbol9*, BOOL*, int>)(lpVtbl[48]))((IDiaSymbol9*)Unsafe.AsPointer(ref this), pRetVal);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -435,81 +435,81 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(52)]
         [return: NativeTypeName("HRESULT")]
-        public int get_packed([NativeTypeName("BOOL *")] int* pRetVal)
+        public int get_packed(BOOL* pRetVal)
         {
-            return ((delegate* unmanaged<IDiaSymbol9*, int*, int>)(lpVtbl[52]))((IDiaSymbol9*)Unsafe.AsPointer(ref this), pRetVal);
+            return ((delegate* unmanaged<IDiaSymbol9*, BOOL*, int>)(lpVtbl[52]))((IDiaSymbol9*)Unsafe.AsPointer(ref this), pRetVal);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(53)]
         [return: NativeTypeName("HRESULT")]
-        public int get_constructor([NativeTypeName("BOOL *")] int* pRetVal)
+        public int get_constructor(BOOL* pRetVal)
         {
-            return ((delegate* unmanaged<IDiaSymbol9*, int*, int>)(lpVtbl[53]))((IDiaSymbol9*)Unsafe.AsPointer(ref this), pRetVal);
+            return ((delegate* unmanaged<IDiaSymbol9*, BOOL*, int>)(lpVtbl[53]))((IDiaSymbol9*)Unsafe.AsPointer(ref this), pRetVal);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(54)]
         [return: NativeTypeName("HRESULT")]
-        public int get_overloadedOperator([NativeTypeName("BOOL *")] int* pRetVal)
+        public int get_overloadedOperator(BOOL* pRetVal)
         {
-            return ((delegate* unmanaged<IDiaSymbol9*, int*, int>)(lpVtbl[54]))((IDiaSymbol9*)Unsafe.AsPointer(ref this), pRetVal);
+            return ((delegate* unmanaged<IDiaSymbol9*, BOOL*, int>)(lpVtbl[54]))((IDiaSymbol9*)Unsafe.AsPointer(ref this), pRetVal);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(55)]
         [return: NativeTypeName("HRESULT")]
-        public int get_nested([NativeTypeName("BOOL *")] int* pRetVal)
+        public int get_nested(BOOL* pRetVal)
         {
-            return ((delegate* unmanaged<IDiaSymbol9*, int*, int>)(lpVtbl[55]))((IDiaSymbol9*)Unsafe.AsPointer(ref this), pRetVal);
+            return ((delegate* unmanaged<IDiaSymbol9*, BOOL*, int>)(lpVtbl[55]))((IDiaSymbol9*)Unsafe.AsPointer(ref this), pRetVal);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(56)]
         [return: NativeTypeName("HRESULT")]
-        public int get_hasNestedTypes([NativeTypeName("BOOL *")] int* pRetVal)
+        public int get_hasNestedTypes(BOOL* pRetVal)
         {
-            return ((delegate* unmanaged<IDiaSymbol9*, int*, int>)(lpVtbl[56]))((IDiaSymbol9*)Unsafe.AsPointer(ref this), pRetVal);
+            return ((delegate* unmanaged<IDiaSymbol9*, BOOL*, int>)(lpVtbl[56]))((IDiaSymbol9*)Unsafe.AsPointer(ref this), pRetVal);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(57)]
         [return: NativeTypeName("HRESULT")]
-        public int get_hasAssignmentOperator([NativeTypeName("BOOL *")] int* pRetVal)
+        public int get_hasAssignmentOperator(BOOL* pRetVal)
         {
-            return ((delegate* unmanaged<IDiaSymbol9*, int*, int>)(lpVtbl[57]))((IDiaSymbol9*)Unsafe.AsPointer(ref this), pRetVal);
+            return ((delegate* unmanaged<IDiaSymbol9*, BOOL*, int>)(lpVtbl[57]))((IDiaSymbol9*)Unsafe.AsPointer(ref this), pRetVal);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(58)]
         [return: NativeTypeName("HRESULT")]
-        public int get_hasCastOperator([NativeTypeName("BOOL *")] int* pRetVal)
+        public int get_hasCastOperator(BOOL* pRetVal)
         {
-            return ((delegate* unmanaged<IDiaSymbol9*, int*, int>)(lpVtbl[58]))((IDiaSymbol9*)Unsafe.AsPointer(ref this), pRetVal);
+            return ((delegate* unmanaged<IDiaSymbol9*, BOOL*, int>)(lpVtbl[58]))((IDiaSymbol9*)Unsafe.AsPointer(ref this), pRetVal);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(59)]
         [return: NativeTypeName("HRESULT")]
-        public int get_scoped([NativeTypeName("BOOL *")] int* pRetVal)
+        public int get_scoped(BOOL* pRetVal)
         {
-            return ((delegate* unmanaged<IDiaSymbol9*, int*, int>)(lpVtbl[59]))((IDiaSymbol9*)Unsafe.AsPointer(ref this), pRetVal);
+            return ((delegate* unmanaged<IDiaSymbol9*, BOOL*, int>)(lpVtbl[59]))((IDiaSymbol9*)Unsafe.AsPointer(ref this), pRetVal);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(60)]
         [return: NativeTypeName("HRESULT")]
-        public int get_virtualBaseClass([NativeTypeName("BOOL *")] int* pRetVal)
+        public int get_virtualBaseClass(BOOL* pRetVal)
         {
-            return ((delegate* unmanaged<IDiaSymbol9*, int*, int>)(lpVtbl[60]))((IDiaSymbol9*)Unsafe.AsPointer(ref this), pRetVal);
+            return ((delegate* unmanaged<IDiaSymbol9*, BOOL*, int>)(lpVtbl[60]))((IDiaSymbol9*)Unsafe.AsPointer(ref this), pRetVal);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(61)]
         [return: NativeTypeName("HRESULT")]
-        public int get_indirectVirtualBaseClass([NativeTypeName("BOOL *")] int* pRetVal)
+        public int get_indirectVirtualBaseClass(BOOL* pRetVal)
         {
-            return ((delegate* unmanaged<IDiaSymbol9*, int*, int>)(lpVtbl[61]))((IDiaSymbol9*)Unsafe.AsPointer(ref this), pRetVal);
+            return ((delegate* unmanaged<IDiaSymbol9*, BOOL*, int>)(lpVtbl[61]))((IDiaSymbol9*)Unsafe.AsPointer(ref this), pRetVal);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -571,33 +571,33 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(69)]
         [return: NativeTypeName("HRESULT")]
-        public int get_code([NativeTypeName("BOOL *")] int* pRetVal)
+        public int get_code(BOOL* pRetVal)
         {
-            return ((delegate* unmanaged<IDiaSymbol9*, int*, int>)(lpVtbl[69]))((IDiaSymbol9*)Unsafe.AsPointer(ref this), pRetVal);
+            return ((delegate* unmanaged<IDiaSymbol9*, BOOL*, int>)(lpVtbl[69]))((IDiaSymbol9*)Unsafe.AsPointer(ref this), pRetVal);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(70)]
         [return: NativeTypeName("HRESULT")]
-        public int get_function([NativeTypeName("BOOL *")] int* pRetVal)
+        public int get_function(BOOL* pRetVal)
         {
-            return ((delegate* unmanaged<IDiaSymbol9*, int*, int>)(lpVtbl[70]))((IDiaSymbol9*)Unsafe.AsPointer(ref this), pRetVal);
+            return ((delegate* unmanaged<IDiaSymbol9*, BOOL*, int>)(lpVtbl[70]))((IDiaSymbol9*)Unsafe.AsPointer(ref this), pRetVal);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(71)]
         [return: NativeTypeName("HRESULT")]
-        public int get_managed([NativeTypeName("BOOL *")] int* pRetVal)
+        public int get_managed(BOOL* pRetVal)
         {
-            return ((delegate* unmanaged<IDiaSymbol9*, int*, int>)(lpVtbl[71]))((IDiaSymbol9*)Unsafe.AsPointer(ref this), pRetVal);
+            return ((delegate* unmanaged<IDiaSymbol9*, BOOL*, int>)(lpVtbl[71]))((IDiaSymbol9*)Unsafe.AsPointer(ref this), pRetVal);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(72)]
         [return: NativeTypeName("HRESULT")]
-        public int get_msil([NativeTypeName("BOOL *")] int* pRetVal)
+        public int get_msil(BOOL* pRetVal)
         {
-            return ((delegate* unmanaged<IDiaSymbol9*, int*, int>)(lpVtbl[72]))((IDiaSymbol9*)Unsafe.AsPointer(ref this), pRetVal);
+            return ((delegate* unmanaged<IDiaSymbol9*, BOOL*, int>)(lpVtbl[72]))((IDiaSymbol9*)Unsafe.AsPointer(ref this), pRetVal);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -635,17 +635,17 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(77)]
         [return: NativeTypeName("HRESULT")]
-        public int get_compilerGenerated([NativeTypeName("BOOL *")] int* pRetVal)
+        public int get_compilerGenerated(BOOL* pRetVal)
         {
-            return ((delegate* unmanaged<IDiaSymbol9*, int*, int>)(lpVtbl[77]))((IDiaSymbol9*)Unsafe.AsPointer(ref this), pRetVal);
+            return ((delegate* unmanaged<IDiaSymbol9*, BOOL*, int>)(lpVtbl[77]))((IDiaSymbol9*)Unsafe.AsPointer(ref this), pRetVal);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(78)]
         [return: NativeTypeName("HRESULT")]
-        public int get_addressTaken([NativeTypeName("BOOL *")] int* pRetVal)
+        public int get_addressTaken(BOOL* pRetVal)
         {
-            return ((delegate* unmanaged<IDiaSymbol9*, int*, int>)(lpVtbl[78]))((IDiaSymbol9*)Unsafe.AsPointer(ref this), pRetVal);
+            return ((delegate* unmanaged<IDiaSymbol9*, BOOL*, int>)(lpVtbl[78]))((IDiaSymbol9*)Unsafe.AsPointer(ref this), pRetVal);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -835,97 +835,97 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(102)]
         [return: NativeTypeName("HRESULT")]
-        public int get_noReturn([NativeTypeName("BOOL *")] int* pRetVal)
+        public int get_noReturn(BOOL* pRetVal)
         {
-            return ((delegate* unmanaged<IDiaSymbol9*, int*, int>)(lpVtbl[102]))((IDiaSymbol9*)Unsafe.AsPointer(ref this), pRetVal);
+            return ((delegate* unmanaged<IDiaSymbol9*, BOOL*, int>)(lpVtbl[102]))((IDiaSymbol9*)Unsafe.AsPointer(ref this), pRetVal);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(103)]
         [return: NativeTypeName("HRESULT")]
-        public int get_customCallingConvention([NativeTypeName("BOOL *")] int* pRetVal)
+        public int get_customCallingConvention(BOOL* pRetVal)
         {
-            return ((delegate* unmanaged<IDiaSymbol9*, int*, int>)(lpVtbl[103]))((IDiaSymbol9*)Unsafe.AsPointer(ref this), pRetVal);
+            return ((delegate* unmanaged<IDiaSymbol9*, BOOL*, int>)(lpVtbl[103]))((IDiaSymbol9*)Unsafe.AsPointer(ref this), pRetVal);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(104)]
         [return: NativeTypeName("HRESULT")]
-        public int get_noInline([NativeTypeName("BOOL *")] int* pRetVal)
+        public int get_noInline(BOOL* pRetVal)
         {
-            return ((delegate* unmanaged<IDiaSymbol9*, int*, int>)(lpVtbl[104]))((IDiaSymbol9*)Unsafe.AsPointer(ref this), pRetVal);
+            return ((delegate* unmanaged<IDiaSymbol9*, BOOL*, int>)(lpVtbl[104]))((IDiaSymbol9*)Unsafe.AsPointer(ref this), pRetVal);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(105)]
         [return: NativeTypeName("HRESULT")]
-        public int get_optimizedCodeDebugInfo([NativeTypeName("BOOL *")] int* pRetVal)
+        public int get_optimizedCodeDebugInfo(BOOL* pRetVal)
         {
-            return ((delegate* unmanaged<IDiaSymbol9*, int*, int>)(lpVtbl[105]))((IDiaSymbol9*)Unsafe.AsPointer(ref this), pRetVal);
+            return ((delegate* unmanaged<IDiaSymbol9*, BOOL*, int>)(lpVtbl[105]))((IDiaSymbol9*)Unsafe.AsPointer(ref this), pRetVal);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(106)]
         [return: NativeTypeName("HRESULT")]
-        public int get_notReached([NativeTypeName("BOOL *")] int* pRetVal)
+        public int get_notReached(BOOL* pRetVal)
         {
-            return ((delegate* unmanaged<IDiaSymbol9*, int*, int>)(lpVtbl[106]))((IDiaSymbol9*)Unsafe.AsPointer(ref this), pRetVal);
+            return ((delegate* unmanaged<IDiaSymbol9*, BOOL*, int>)(lpVtbl[106]))((IDiaSymbol9*)Unsafe.AsPointer(ref this), pRetVal);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(107)]
         [return: NativeTypeName("HRESULT")]
-        public int get_interruptReturn([NativeTypeName("BOOL *")] int* pRetVal)
+        public int get_interruptReturn(BOOL* pRetVal)
         {
-            return ((delegate* unmanaged<IDiaSymbol9*, int*, int>)(lpVtbl[107]))((IDiaSymbol9*)Unsafe.AsPointer(ref this), pRetVal);
+            return ((delegate* unmanaged<IDiaSymbol9*, BOOL*, int>)(lpVtbl[107]))((IDiaSymbol9*)Unsafe.AsPointer(ref this), pRetVal);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(108)]
         [return: NativeTypeName("HRESULT")]
-        public int get_farReturn([NativeTypeName("BOOL *")] int* pRetVal)
+        public int get_farReturn(BOOL* pRetVal)
         {
-            return ((delegate* unmanaged<IDiaSymbol9*, int*, int>)(lpVtbl[108]))((IDiaSymbol9*)Unsafe.AsPointer(ref this), pRetVal);
+            return ((delegate* unmanaged<IDiaSymbol9*, BOOL*, int>)(lpVtbl[108]))((IDiaSymbol9*)Unsafe.AsPointer(ref this), pRetVal);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(109)]
         [return: NativeTypeName("HRESULT")]
-        public int get_isStatic([NativeTypeName("BOOL *")] int* pRetVal)
+        public int get_isStatic(BOOL* pRetVal)
         {
-            return ((delegate* unmanaged<IDiaSymbol9*, int*, int>)(lpVtbl[109]))((IDiaSymbol9*)Unsafe.AsPointer(ref this), pRetVal);
+            return ((delegate* unmanaged<IDiaSymbol9*, BOOL*, int>)(lpVtbl[109]))((IDiaSymbol9*)Unsafe.AsPointer(ref this), pRetVal);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(110)]
         [return: NativeTypeName("HRESULT")]
-        public int get_hasDebugInfo([NativeTypeName("BOOL *")] int* pRetVal)
+        public int get_hasDebugInfo(BOOL* pRetVal)
         {
-            return ((delegate* unmanaged<IDiaSymbol9*, int*, int>)(lpVtbl[110]))((IDiaSymbol9*)Unsafe.AsPointer(ref this), pRetVal);
+            return ((delegate* unmanaged<IDiaSymbol9*, BOOL*, int>)(lpVtbl[110]))((IDiaSymbol9*)Unsafe.AsPointer(ref this), pRetVal);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(111)]
         [return: NativeTypeName("HRESULT")]
-        public int get_isLTCG([NativeTypeName("BOOL *")] int* pRetVal)
+        public int get_isLTCG(BOOL* pRetVal)
         {
-            return ((delegate* unmanaged<IDiaSymbol9*, int*, int>)(lpVtbl[111]))((IDiaSymbol9*)Unsafe.AsPointer(ref this), pRetVal);
+            return ((delegate* unmanaged<IDiaSymbol9*, BOOL*, int>)(lpVtbl[111]))((IDiaSymbol9*)Unsafe.AsPointer(ref this), pRetVal);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(112)]
         [return: NativeTypeName("HRESULT")]
-        public int get_isDataAligned([NativeTypeName("BOOL *")] int* pRetVal)
+        public int get_isDataAligned(BOOL* pRetVal)
         {
-            return ((delegate* unmanaged<IDiaSymbol9*, int*, int>)(lpVtbl[112]))((IDiaSymbol9*)Unsafe.AsPointer(ref this), pRetVal);
+            return ((delegate* unmanaged<IDiaSymbol9*, BOOL*, int>)(lpVtbl[112]))((IDiaSymbol9*)Unsafe.AsPointer(ref this), pRetVal);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(113)]
         [return: NativeTypeName("HRESULT")]
-        public int get_hasSecurityChecks([NativeTypeName("BOOL *")] int* pRetVal)
+        public int get_hasSecurityChecks(BOOL* pRetVal)
         {
-            return ((delegate* unmanaged<IDiaSymbol9*, int*, int>)(lpVtbl[113]))((IDiaSymbol9*)Unsafe.AsPointer(ref this), pRetVal);
+            return ((delegate* unmanaged<IDiaSymbol9*, BOOL*, int>)(lpVtbl[113]))((IDiaSymbol9*)Unsafe.AsPointer(ref this), pRetVal);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -939,81 +939,81 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(115)]
         [return: NativeTypeName("HRESULT")]
-        public int get_hasAlloca([NativeTypeName("BOOL *")] int* pRetVal)
+        public int get_hasAlloca(BOOL* pRetVal)
         {
-            return ((delegate* unmanaged<IDiaSymbol9*, int*, int>)(lpVtbl[115]))((IDiaSymbol9*)Unsafe.AsPointer(ref this), pRetVal);
+            return ((delegate* unmanaged<IDiaSymbol9*, BOOL*, int>)(lpVtbl[115]))((IDiaSymbol9*)Unsafe.AsPointer(ref this), pRetVal);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(116)]
         [return: NativeTypeName("HRESULT")]
-        public int get_hasSetJump([NativeTypeName("BOOL *")] int* pRetVal)
+        public int get_hasSetJump(BOOL* pRetVal)
         {
-            return ((delegate* unmanaged<IDiaSymbol9*, int*, int>)(lpVtbl[116]))((IDiaSymbol9*)Unsafe.AsPointer(ref this), pRetVal);
+            return ((delegate* unmanaged<IDiaSymbol9*, BOOL*, int>)(lpVtbl[116]))((IDiaSymbol9*)Unsafe.AsPointer(ref this), pRetVal);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(117)]
         [return: NativeTypeName("HRESULT")]
-        public int get_hasLongJump([NativeTypeName("BOOL *")] int* pRetVal)
+        public int get_hasLongJump(BOOL* pRetVal)
         {
-            return ((delegate* unmanaged<IDiaSymbol9*, int*, int>)(lpVtbl[117]))((IDiaSymbol9*)Unsafe.AsPointer(ref this), pRetVal);
+            return ((delegate* unmanaged<IDiaSymbol9*, BOOL*, int>)(lpVtbl[117]))((IDiaSymbol9*)Unsafe.AsPointer(ref this), pRetVal);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(118)]
         [return: NativeTypeName("HRESULT")]
-        public int get_hasInlAsm([NativeTypeName("BOOL *")] int* pRetVal)
+        public int get_hasInlAsm(BOOL* pRetVal)
         {
-            return ((delegate* unmanaged<IDiaSymbol9*, int*, int>)(lpVtbl[118]))((IDiaSymbol9*)Unsafe.AsPointer(ref this), pRetVal);
+            return ((delegate* unmanaged<IDiaSymbol9*, BOOL*, int>)(lpVtbl[118]))((IDiaSymbol9*)Unsafe.AsPointer(ref this), pRetVal);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(119)]
         [return: NativeTypeName("HRESULT")]
-        public int get_hasEH([NativeTypeName("BOOL *")] int* pRetVal)
+        public int get_hasEH(BOOL* pRetVal)
         {
-            return ((delegate* unmanaged<IDiaSymbol9*, int*, int>)(lpVtbl[119]))((IDiaSymbol9*)Unsafe.AsPointer(ref this), pRetVal);
+            return ((delegate* unmanaged<IDiaSymbol9*, BOOL*, int>)(lpVtbl[119]))((IDiaSymbol9*)Unsafe.AsPointer(ref this), pRetVal);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(120)]
         [return: NativeTypeName("HRESULT")]
-        public int get_hasSEH([NativeTypeName("BOOL *")] int* pRetVal)
+        public int get_hasSEH(BOOL* pRetVal)
         {
-            return ((delegate* unmanaged<IDiaSymbol9*, int*, int>)(lpVtbl[120]))((IDiaSymbol9*)Unsafe.AsPointer(ref this), pRetVal);
+            return ((delegate* unmanaged<IDiaSymbol9*, BOOL*, int>)(lpVtbl[120]))((IDiaSymbol9*)Unsafe.AsPointer(ref this), pRetVal);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(121)]
         [return: NativeTypeName("HRESULT")]
-        public int get_hasEHa([NativeTypeName("BOOL *")] int* pRetVal)
+        public int get_hasEHa(BOOL* pRetVal)
         {
-            return ((delegate* unmanaged<IDiaSymbol9*, int*, int>)(lpVtbl[121]))((IDiaSymbol9*)Unsafe.AsPointer(ref this), pRetVal);
+            return ((delegate* unmanaged<IDiaSymbol9*, BOOL*, int>)(lpVtbl[121]))((IDiaSymbol9*)Unsafe.AsPointer(ref this), pRetVal);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(122)]
         [return: NativeTypeName("HRESULT")]
-        public int get_isNaked([NativeTypeName("BOOL *")] int* pRetVal)
+        public int get_isNaked(BOOL* pRetVal)
         {
-            return ((delegate* unmanaged<IDiaSymbol9*, int*, int>)(lpVtbl[122]))((IDiaSymbol9*)Unsafe.AsPointer(ref this), pRetVal);
+            return ((delegate* unmanaged<IDiaSymbol9*, BOOL*, int>)(lpVtbl[122]))((IDiaSymbol9*)Unsafe.AsPointer(ref this), pRetVal);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(123)]
         [return: NativeTypeName("HRESULT")]
-        public int get_isAggregated([NativeTypeName("BOOL *")] int* pRetVal)
+        public int get_isAggregated(BOOL* pRetVal)
         {
-            return ((delegate* unmanaged<IDiaSymbol9*, int*, int>)(lpVtbl[123]))((IDiaSymbol9*)Unsafe.AsPointer(ref this), pRetVal);
+            return ((delegate* unmanaged<IDiaSymbol9*, BOOL*, int>)(lpVtbl[123]))((IDiaSymbol9*)Unsafe.AsPointer(ref this), pRetVal);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(124)]
         [return: NativeTypeName("HRESULT")]
-        public int get_isSplitted([NativeTypeName("BOOL *")] int* pRetVal)
+        public int get_isSplitted(BOOL* pRetVal)
         {
-            return ((delegate* unmanaged<IDiaSymbol9*, int*, int>)(lpVtbl[124]))((IDiaSymbol9*)Unsafe.AsPointer(ref this), pRetVal);
+            return ((delegate* unmanaged<IDiaSymbol9*, BOOL*, int>)(lpVtbl[124]))((IDiaSymbol9*)Unsafe.AsPointer(ref this), pRetVal);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -1027,17 +1027,17 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(126)]
         [return: NativeTypeName("HRESULT")]
-        public int get_inlSpec([NativeTypeName("BOOL *")] int* pRetVal)
+        public int get_inlSpec(BOOL* pRetVal)
         {
-            return ((delegate* unmanaged<IDiaSymbol9*, int*, int>)(lpVtbl[126]))((IDiaSymbol9*)Unsafe.AsPointer(ref this), pRetVal);
+            return ((delegate* unmanaged<IDiaSymbol9*, BOOL*, int>)(lpVtbl[126]))((IDiaSymbol9*)Unsafe.AsPointer(ref this), pRetVal);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(127)]
         [return: NativeTypeName("HRESULT")]
-        public int get_noStackOrdering([NativeTypeName("BOOL *")] int* pRetVal)
+        public int get_noStackOrdering(BOOL* pRetVal)
         {
-            return ((delegate* unmanaged<IDiaSymbol9*, int*, int>)(lpVtbl[127]))((IDiaSymbol9*)Unsafe.AsPointer(ref this), pRetVal);
+            return ((delegate* unmanaged<IDiaSymbol9*, BOOL*, int>)(lpVtbl[127]))((IDiaSymbol9*)Unsafe.AsPointer(ref this), pRetVal);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -1051,49 +1051,49 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(129)]
         [return: NativeTypeName("HRESULT")]
-        public int get_hasManagedCode([NativeTypeName("BOOL *")] int* pRetVal)
+        public int get_hasManagedCode(BOOL* pRetVal)
         {
-            return ((delegate* unmanaged<IDiaSymbol9*, int*, int>)(lpVtbl[129]))((IDiaSymbol9*)Unsafe.AsPointer(ref this), pRetVal);
+            return ((delegate* unmanaged<IDiaSymbol9*, BOOL*, int>)(lpVtbl[129]))((IDiaSymbol9*)Unsafe.AsPointer(ref this), pRetVal);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(130)]
         [return: NativeTypeName("HRESULT")]
-        public int get_isHotpatchable([NativeTypeName("BOOL *")] int* pRetVal)
+        public int get_isHotpatchable(BOOL* pRetVal)
         {
-            return ((delegate* unmanaged<IDiaSymbol9*, int*, int>)(lpVtbl[130]))((IDiaSymbol9*)Unsafe.AsPointer(ref this), pRetVal);
+            return ((delegate* unmanaged<IDiaSymbol9*, BOOL*, int>)(lpVtbl[130]))((IDiaSymbol9*)Unsafe.AsPointer(ref this), pRetVal);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(131)]
         [return: NativeTypeName("HRESULT")]
-        public int get_isCVTCIL([NativeTypeName("BOOL *")] int* pRetVal)
+        public int get_isCVTCIL(BOOL* pRetVal)
         {
-            return ((delegate* unmanaged<IDiaSymbol9*, int*, int>)(lpVtbl[131]))((IDiaSymbol9*)Unsafe.AsPointer(ref this), pRetVal);
+            return ((delegate* unmanaged<IDiaSymbol9*, BOOL*, int>)(lpVtbl[131]))((IDiaSymbol9*)Unsafe.AsPointer(ref this), pRetVal);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(132)]
         [return: NativeTypeName("HRESULT")]
-        public int get_isMSILNetmodule([NativeTypeName("BOOL *")] int* pRetVal)
+        public int get_isMSILNetmodule(BOOL* pRetVal)
         {
-            return ((delegate* unmanaged<IDiaSymbol9*, int*, int>)(lpVtbl[132]))((IDiaSymbol9*)Unsafe.AsPointer(ref this), pRetVal);
+            return ((delegate* unmanaged<IDiaSymbol9*, BOOL*, int>)(lpVtbl[132]))((IDiaSymbol9*)Unsafe.AsPointer(ref this), pRetVal);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(133)]
         [return: NativeTypeName("HRESULT")]
-        public int get_isCTypes([NativeTypeName("BOOL *")] int* pRetVal)
+        public int get_isCTypes(BOOL* pRetVal)
         {
-            return ((delegate* unmanaged<IDiaSymbol9*, int*, int>)(lpVtbl[133]))((IDiaSymbol9*)Unsafe.AsPointer(ref this), pRetVal);
+            return ((delegate* unmanaged<IDiaSymbol9*, BOOL*, int>)(lpVtbl[133]))((IDiaSymbol9*)Unsafe.AsPointer(ref this), pRetVal);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(134)]
         [return: NativeTypeName("HRESULT")]
-        public int get_isStripped([NativeTypeName("BOOL *")] int* pRetVal)
+        public int get_isStripped(BOOL* pRetVal)
         {
-            return ((delegate* unmanaged<IDiaSymbol9*, int*, int>)(lpVtbl[134]))((IDiaSymbol9*)Unsafe.AsPointer(ref this), pRetVal);
+            return ((delegate* unmanaged<IDiaSymbol9*, BOOL*, int>)(lpVtbl[134]))((IDiaSymbol9*)Unsafe.AsPointer(ref this), pRetVal);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -1115,41 +1115,41 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(137)]
         [return: NativeTypeName("HRESULT")]
-        public int get_wasInlined([NativeTypeName("BOOL *")] int* pRetVal)
+        public int get_wasInlined(BOOL* pRetVal)
         {
-            return ((delegate* unmanaged<IDiaSymbol9*, int*, int>)(lpVtbl[137]))((IDiaSymbol9*)Unsafe.AsPointer(ref this), pRetVal);
+            return ((delegate* unmanaged<IDiaSymbol9*, BOOL*, int>)(lpVtbl[137]))((IDiaSymbol9*)Unsafe.AsPointer(ref this), pRetVal);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(138)]
         [return: NativeTypeName("HRESULT")]
-        public int get_strictGSCheck([NativeTypeName("BOOL *")] int* pRetVal)
+        public int get_strictGSCheck(BOOL* pRetVal)
         {
-            return ((delegate* unmanaged<IDiaSymbol9*, int*, int>)(lpVtbl[138]))((IDiaSymbol9*)Unsafe.AsPointer(ref this), pRetVal);
+            return ((delegate* unmanaged<IDiaSymbol9*, BOOL*, int>)(lpVtbl[138]))((IDiaSymbol9*)Unsafe.AsPointer(ref this), pRetVal);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(139)]
         [return: NativeTypeName("HRESULT")]
-        public int get_isCxxReturnUdt([NativeTypeName("BOOL *")] int* pRetVal)
+        public int get_isCxxReturnUdt(BOOL* pRetVal)
         {
-            return ((delegate* unmanaged<IDiaSymbol9*, int*, int>)(lpVtbl[139]))((IDiaSymbol9*)Unsafe.AsPointer(ref this), pRetVal);
+            return ((delegate* unmanaged<IDiaSymbol9*, BOOL*, int>)(lpVtbl[139]))((IDiaSymbol9*)Unsafe.AsPointer(ref this), pRetVal);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(140)]
         [return: NativeTypeName("HRESULT")]
-        public int get_isConstructorVirtualBase([NativeTypeName("BOOL *")] int* pRetVal)
+        public int get_isConstructorVirtualBase(BOOL* pRetVal)
         {
-            return ((delegate* unmanaged<IDiaSymbol9*, int*, int>)(lpVtbl[140]))((IDiaSymbol9*)Unsafe.AsPointer(ref this), pRetVal);
+            return ((delegate* unmanaged<IDiaSymbol9*, BOOL*, int>)(lpVtbl[140]))((IDiaSymbol9*)Unsafe.AsPointer(ref this), pRetVal);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(141)]
         [return: NativeTypeName("HRESULT")]
-        public int get_RValueReference([NativeTypeName("BOOL *")] int* pRetVal)
+        public int get_RValueReference(BOOL* pRetVal)
         {
-            return ((delegate* unmanaged<IDiaSymbol9*, int*, int>)(lpVtbl[141]))((IDiaSymbol9*)Unsafe.AsPointer(ref this), pRetVal);
+            return ((delegate* unmanaged<IDiaSymbol9*, BOOL*, int>)(lpVtbl[141]))((IDiaSymbol9*)Unsafe.AsPointer(ref this), pRetVal);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -1163,49 +1163,49 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(143)]
         [return: NativeTypeName("HRESULT")]
-        public int get_framePointerPresent([NativeTypeName("BOOL *")] int* pRetVal)
+        public int get_framePointerPresent(BOOL* pRetVal)
         {
-            return ((delegate* unmanaged<IDiaSymbol9*, int*, int>)(lpVtbl[143]))((IDiaSymbol9*)Unsafe.AsPointer(ref this), pRetVal);
+            return ((delegate* unmanaged<IDiaSymbol9*, BOOL*, int>)(lpVtbl[143]))((IDiaSymbol9*)Unsafe.AsPointer(ref this), pRetVal);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(144)]
         [return: NativeTypeName("HRESULT")]
-        public int get_isSafeBuffers([NativeTypeName("BOOL *")] int* pRetVal)
+        public int get_isSafeBuffers(BOOL* pRetVal)
         {
-            return ((delegate* unmanaged<IDiaSymbol9*, int*, int>)(lpVtbl[144]))((IDiaSymbol9*)Unsafe.AsPointer(ref this), pRetVal);
+            return ((delegate* unmanaged<IDiaSymbol9*, BOOL*, int>)(lpVtbl[144]))((IDiaSymbol9*)Unsafe.AsPointer(ref this), pRetVal);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(145)]
         [return: NativeTypeName("HRESULT")]
-        public int get_intrinsic([NativeTypeName("BOOL *")] int* pRetVal)
+        public int get_intrinsic(BOOL* pRetVal)
         {
-            return ((delegate* unmanaged<IDiaSymbol9*, int*, int>)(lpVtbl[145]))((IDiaSymbol9*)Unsafe.AsPointer(ref this), pRetVal);
+            return ((delegate* unmanaged<IDiaSymbol9*, BOOL*, int>)(lpVtbl[145]))((IDiaSymbol9*)Unsafe.AsPointer(ref this), pRetVal);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(146)]
         [return: NativeTypeName("HRESULT")]
-        public int get_sealed([NativeTypeName("BOOL *")] int* pRetVal)
+        public int get_sealed(BOOL* pRetVal)
         {
-            return ((delegate* unmanaged<IDiaSymbol9*, int*, int>)(lpVtbl[146]))((IDiaSymbol9*)Unsafe.AsPointer(ref this), pRetVal);
+            return ((delegate* unmanaged<IDiaSymbol9*, BOOL*, int>)(lpVtbl[146]))((IDiaSymbol9*)Unsafe.AsPointer(ref this), pRetVal);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(147)]
         [return: NativeTypeName("HRESULT")]
-        public int get_hfaFloat([NativeTypeName("BOOL *")] int* pRetVal)
+        public int get_hfaFloat(BOOL* pRetVal)
         {
-            return ((delegate* unmanaged<IDiaSymbol9*, int*, int>)(lpVtbl[147]))((IDiaSymbol9*)Unsafe.AsPointer(ref this), pRetVal);
+            return ((delegate* unmanaged<IDiaSymbol9*, BOOL*, int>)(lpVtbl[147]))((IDiaSymbol9*)Unsafe.AsPointer(ref this), pRetVal);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(148)]
         [return: NativeTypeName("HRESULT")]
-        public int get_hfaDouble([NativeTypeName("BOOL *")] int* pRetVal)
+        public int get_hfaDouble(BOOL* pRetVal)
         {
-            return ((delegate* unmanaged<IDiaSymbol9*, int*, int>)(lpVtbl[148]))((IDiaSymbol9*)Unsafe.AsPointer(ref this), pRetVal);
+            return ((delegate* unmanaged<IDiaSymbol9*, BOOL*, int>)(lpVtbl[148]))((IDiaSymbol9*)Unsafe.AsPointer(ref this), pRetVal);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -1275,9 +1275,9 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(157)]
         [return: NativeTypeName("HRESULT")]
-        public int get_isLocationControlFlowDependent([NativeTypeName("BOOL *")] int* pRetVal)
+        public int get_isLocationControlFlowDependent(BOOL* pRetVal)
         {
-            return ((delegate* unmanaged<IDiaSymbol9*, int*, int>)(lpVtbl[157]))((IDiaSymbol9*)Unsafe.AsPointer(ref this), pRetVal);
+            return ((delegate* unmanaged<IDiaSymbol9*, BOOL*, int>)(lpVtbl[157]))((IDiaSymbol9*)Unsafe.AsPointer(ref this), pRetVal);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -1307,9 +1307,9 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(161)]
         [return: NativeTypeName("HRESULT")]
-        public int get_isMatrixRowMajor([NativeTypeName("BOOL *")] int* pRetVal)
+        public int get_isMatrixRowMajor(BOOL* pRetVal)
         {
-            return ((delegate* unmanaged<IDiaSymbol9*, int*, int>)(lpVtbl[161]))((IDiaSymbol9*)Unsafe.AsPointer(ref this), pRetVal);
+            return ((delegate* unmanaged<IDiaSymbol9*, BOOL*, int>)(lpVtbl[161]))((IDiaSymbol9*)Unsafe.AsPointer(ref this), pRetVal);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -1331,17 +1331,17 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(164)]
         [return: NativeTypeName("HRESULT")]
-        public int get_isReturnValue([NativeTypeName("BOOL *")] int* pRetVal)
+        public int get_isReturnValue(BOOL* pRetVal)
         {
-            return ((delegate* unmanaged<IDiaSymbol9*, int*, int>)(lpVtbl[164]))((IDiaSymbol9*)Unsafe.AsPointer(ref this), pRetVal);
+            return ((delegate* unmanaged<IDiaSymbol9*, BOOL*, int>)(lpVtbl[164]))((IDiaSymbol9*)Unsafe.AsPointer(ref this), pRetVal);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(165)]
         [return: NativeTypeName("HRESULT")]
-        public int get_isOptimizedAway([NativeTypeName("BOOL *")] int* pRetVal)
+        public int get_isOptimizedAway(BOOL* pRetVal)
         {
-            return ((delegate* unmanaged<IDiaSymbol9*, int*, int>)(lpVtbl[165]))((IDiaSymbol9*)Unsafe.AsPointer(ref this), pRetVal);
+            return ((delegate* unmanaged<IDiaSymbol9*, BOOL*, int>)(lpVtbl[165]))((IDiaSymbol9*)Unsafe.AsPointer(ref this), pRetVal);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -1459,65 +1459,65 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(180)]
         [return: NativeTypeName("HRESULT")]
-        public int get_isHLSLData([NativeTypeName("BOOL *")] int* pRetVal)
+        public int get_isHLSLData(BOOL* pRetVal)
         {
-            return ((delegate* unmanaged<IDiaSymbol9*, int*, int>)(lpVtbl[180]))((IDiaSymbol9*)Unsafe.AsPointer(ref this), pRetVal);
+            return ((delegate* unmanaged<IDiaSymbol9*, BOOL*, int>)(lpVtbl[180]))((IDiaSymbol9*)Unsafe.AsPointer(ref this), pRetVal);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(181)]
         [return: NativeTypeName("HRESULT")]
-        public int get_isPointerToDataMember([NativeTypeName("BOOL *")] int* pRetVal)
+        public int get_isPointerToDataMember(BOOL* pRetVal)
         {
-            return ((delegate* unmanaged<IDiaSymbol9*, int*, int>)(lpVtbl[181]))((IDiaSymbol9*)Unsafe.AsPointer(ref this), pRetVal);
+            return ((delegate* unmanaged<IDiaSymbol9*, BOOL*, int>)(lpVtbl[181]))((IDiaSymbol9*)Unsafe.AsPointer(ref this), pRetVal);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(182)]
         [return: NativeTypeName("HRESULT")]
-        public int get_isPointerToMemberFunction([NativeTypeName("BOOL *")] int* pRetVal)
+        public int get_isPointerToMemberFunction(BOOL* pRetVal)
         {
-            return ((delegate* unmanaged<IDiaSymbol9*, int*, int>)(lpVtbl[182]))((IDiaSymbol9*)Unsafe.AsPointer(ref this), pRetVal);
+            return ((delegate* unmanaged<IDiaSymbol9*, BOOL*, int>)(lpVtbl[182]))((IDiaSymbol9*)Unsafe.AsPointer(ref this), pRetVal);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(183)]
         [return: NativeTypeName("HRESULT")]
-        public int get_isSingleInheritance([NativeTypeName("BOOL *")] int* pRetVal)
+        public int get_isSingleInheritance(BOOL* pRetVal)
         {
-            return ((delegate* unmanaged<IDiaSymbol9*, int*, int>)(lpVtbl[183]))((IDiaSymbol9*)Unsafe.AsPointer(ref this), pRetVal);
+            return ((delegate* unmanaged<IDiaSymbol9*, BOOL*, int>)(lpVtbl[183]))((IDiaSymbol9*)Unsafe.AsPointer(ref this), pRetVal);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(184)]
         [return: NativeTypeName("HRESULT")]
-        public int get_isMultipleInheritance([NativeTypeName("BOOL *")] int* pRetVal)
+        public int get_isMultipleInheritance(BOOL* pRetVal)
         {
-            return ((delegate* unmanaged<IDiaSymbol9*, int*, int>)(lpVtbl[184]))((IDiaSymbol9*)Unsafe.AsPointer(ref this), pRetVal);
+            return ((delegate* unmanaged<IDiaSymbol9*, BOOL*, int>)(lpVtbl[184]))((IDiaSymbol9*)Unsafe.AsPointer(ref this), pRetVal);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(185)]
         [return: NativeTypeName("HRESULT")]
-        public int get_isVirtualInheritance([NativeTypeName("BOOL *")] int* pRetVal)
+        public int get_isVirtualInheritance(BOOL* pRetVal)
         {
-            return ((delegate* unmanaged<IDiaSymbol9*, int*, int>)(lpVtbl[185]))((IDiaSymbol9*)Unsafe.AsPointer(ref this), pRetVal);
+            return ((delegate* unmanaged<IDiaSymbol9*, BOOL*, int>)(lpVtbl[185]))((IDiaSymbol9*)Unsafe.AsPointer(ref this), pRetVal);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(186)]
         [return: NativeTypeName("HRESULT")]
-        public int get_restrictedType([NativeTypeName("BOOL *")] int* pRetVal)
+        public int get_restrictedType(BOOL* pRetVal)
         {
-            return ((delegate* unmanaged<IDiaSymbol9*, int*, int>)(lpVtbl[186]))((IDiaSymbol9*)Unsafe.AsPointer(ref this), pRetVal);
+            return ((delegate* unmanaged<IDiaSymbol9*, BOOL*, int>)(lpVtbl[186]))((IDiaSymbol9*)Unsafe.AsPointer(ref this), pRetVal);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(187)]
         [return: NativeTypeName("HRESULT")]
-        public int get_isPointerBasedOnSymbolValue([NativeTypeName("BOOL *")] int* pRetVal)
+        public int get_isPointerBasedOnSymbolValue(BOOL* pRetVal)
         {
-            return ((delegate* unmanaged<IDiaSymbol9*, int*, int>)(lpVtbl[187]))((IDiaSymbol9*)Unsafe.AsPointer(ref this), pRetVal);
+            return ((delegate* unmanaged<IDiaSymbol9*, BOOL*, int>)(lpVtbl[187]))((IDiaSymbol9*)Unsafe.AsPointer(ref this), pRetVal);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -1547,25 +1547,25 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(191)]
         [return: NativeTypeName("HRESULT")]
-        public int get_isAcceleratorGroupSharedLocal([NativeTypeName("BOOL *")] int* pRetVal)
+        public int get_isAcceleratorGroupSharedLocal(BOOL* pRetVal)
         {
-            return ((delegate* unmanaged<IDiaSymbol9*, int*, int>)(lpVtbl[191]))((IDiaSymbol9*)Unsafe.AsPointer(ref this), pRetVal);
+            return ((delegate* unmanaged<IDiaSymbol9*, BOOL*, int>)(lpVtbl[191]))((IDiaSymbol9*)Unsafe.AsPointer(ref this), pRetVal);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(192)]
         [return: NativeTypeName("HRESULT")]
-        public int get_isAcceleratorPointerTagLiveRange([NativeTypeName("BOOL *")] int* pRetVal)
+        public int get_isAcceleratorPointerTagLiveRange(BOOL* pRetVal)
         {
-            return ((delegate* unmanaged<IDiaSymbol9*, int*, int>)(lpVtbl[192]))((IDiaSymbol9*)Unsafe.AsPointer(ref this), pRetVal);
+            return ((delegate* unmanaged<IDiaSymbol9*, BOOL*, int>)(lpVtbl[192]))((IDiaSymbol9*)Unsafe.AsPointer(ref this), pRetVal);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(193)]
         [return: NativeTypeName("HRESULT")]
-        public int get_isAcceleratorStubFunction([NativeTypeName("BOOL *")] int* pRetVal)
+        public int get_isAcceleratorStubFunction(BOOL* pRetVal)
         {
-            return ((delegate* unmanaged<IDiaSymbol9*, int*, int>)(lpVtbl[193]))((IDiaSymbol9*)Unsafe.AsPointer(ref this), pRetVal);
+            return ((delegate* unmanaged<IDiaSymbol9*, BOOL*, int>)(lpVtbl[193]))((IDiaSymbol9*)Unsafe.AsPointer(ref this), pRetVal);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -1579,41 +1579,41 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(195)]
         [return: NativeTypeName("HRESULT")]
-        public int get_isSdl([NativeTypeName("BOOL *")] int* pRetVal)
+        public int get_isSdl(BOOL* pRetVal)
         {
-            return ((delegate* unmanaged<IDiaSymbol9*, int*, int>)(lpVtbl[195]))((IDiaSymbol9*)Unsafe.AsPointer(ref this), pRetVal);
+            return ((delegate* unmanaged<IDiaSymbol9*, BOOL*, int>)(lpVtbl[195]))((IDiaSymbol9*)Unsafe.AsPointer(ref this), pRetVal);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(196)]
         [return: NativeTypeName("HRESULT")]
-        public int get_isWinRTPointer([NativeTypeName("BOOL *")] int* pRetVal)
+        public int get_isWinRTPointer(BOOL* pRetVal)
         {
-            return ((delegate* unmanaged<IDiaSymbol9*, int*, int>)(lpVtbl[196]))((IDiaSymbol9*)Unsafe.AsPointer(ref this), pRetVal);
+            return ((delegate* unmanaged<IDiaSymbol9*, BOOL*, int>)(lpVtbl[196]))((IDiaSymbol9*)Unsafe.AsPointer(ref this), pRetVal);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(197)]
         [return: NativeTypeName("HRESULT")]
-        public int get_isRefUdt([NativeTypeName("BOOL *")] int* pRetVal)
+        public int get_isRefUdt(BOOL* pRetVal)
         {
-            return ((delegate* unmanaged<IDiaSymbol9*, int*, int>)(lpVtbl[197]))((IDiaSymbol9*)Unsafe.AsPointer(ref this), pRetVal);
+            return ((delegate* unmanaged<IDiaSymbol9*, BOOL*, int>)(lpVtbl[197]))((IDiaSymbol9*)Unsafe.AsPointer(ref this), pRetVal);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(198)]
         [return: NativeTypeName("HRESULT")]
-        public int get_isValueUdt([NativeTypeName("BOOL *")] int* pRetVal)
+        public int get_isValueUdt(BOOL* pRetVal)
         {
-            return ((delegate* unmanaged<IDiaSymbol9*, int*, int>)(lpVtbl[198]))((IDiaSymbol9*)Unsafe.AsPointer(ref this), pRetVal);
+            return ((delegate* unmanaged<IDiaSymbol9*, BOOL*, int>)(lpVtbl[198]))((IDiaSymbol9*)Unsafe.AsPointer(ref this), pRetVal);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(199)]
         [return: NativeTypeName("HRESULT")]
-        public int get_isInterfaceUdt([NativeTypeName("BOOL *")] int* pRetVal)
+        public int get_isInterfaceUdt(BOOL* pRetVal)
         {
-            return ((delegate* unmanaged<IDiaSymbol9*, int*, int>)(lpVtbl[199]))((IDiaSymbol9*)Unsafe.AsPointer(ref this), pRetVal);
+            return ((delegate* unmanaged<IDiaSymbol9*, BOOL*, int>)(lpVtbl[199]))((IDiaSymbol9*)Unsafe.AsPointer(ref this), pRetVal);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -1707,25 +1707,25 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(211)]
         [return: NativeTypeName("HRESULT")]
-        public int get_isPGO([NativeTypeName("BOOL *")] int* pRetVal)
+        public int get_isPGO(BOOL* pRetVal)
         {
-            return ((delegate* unmanaged<IDiaSymbol9*, int*, int>)(lpVtbl[211]))((IDiaSymbol9*)Unsafe.AsPointer(ref this), pRetVal);
+            return ((delegate* unmanaged<IDiaSymbol9*, BOOL*, int>)(lpVtbl[211]))((IDiaSymbol9*)Unsafe.AsPointer(ref this), pRetVal);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(212)]
         [return: NativeTypeName("HRESULT")]
-        public int get_hasValidPGOCounts([NativeTypeName("BOOL *")] int* pRetVal)
+        public int get_hasValidPGOCounts(BOOL* pRetVal)
         {
-            return ((delegate* unmanaged<IDiaSymbol9*, int*, int>)(lpVtbl[212]))((IDiaSymbol9*)Unsafe.AsPointer(ref this), pRetVal);
+            return ((delegate* unmanaged<IDiaSymbol9*, BOOL*, int>)(lpVtbl[212]))((IDiaSymbol9*)Unsafe.AsPointer(ref this), pRetVal);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(213)]
         [return: NativeTypeName("HRESULT")]
-        public int get_isOptimizedForSpeed([NativeTypeName("BOOL *")] int* pRetVal)
+        public int get_isOptimizedForSpeed(BOOL* pRetVal)
         {
-            return ((delegate* unmanaged<IDiaSymbol9*, int*, int>)(lpVtbl[213]))((IDiaSymbol9*)Unsafe.AsPointer(ref this), pRetVal);
+            return ((delegate* unmanaged<IDiaSymbol9*, BOOL*, int>)(lpVtbl[213]))((IDiaSymbol9*)Unsafe.AsPointer(ref this), pRetVal);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -1779,57 +1779,57 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(220)]
         [return: NativeTypeName("HRESULT")]
-        public int get_hasControlFlowCheck([NativeTypeName("BOOL *")] int* pRetVal)
+        public int get_hasControlFlowCheck(BOOL* pRetVal)
         {
-            return ((delegate* unmanaged<IDiaSymbol9*, int*, int>)(lpVtbl[220]))((IDiaSymbol9*)Unsafe.AsPointer(ref this), pRetVal);
+            return ((delegate* unmanaged<IDiaSymbol9*, BOOL*, int>)(lpVtbl[220]))((IDiaSymbol9*)Unsafe.AsPointer(ref this), pRetVal);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(221)]
         [return: NativeTypeName("HRESULT")]
-        public int get_constantExport([NativeTypeName("BOOL *")] int* pRetVal)
+        public int get_constantExport(BOOL* pRetVal)
         {
-            return ((delegate* unmanaged<IDiaSymbol9*, int*, int>)(lpVtbl[221]))((IDiaSymbol9*)Unsafe.AsPointer(ref this), pRetVal);
+            return ((delegate* unmanaged<IDiaSymbol9*, BOOL*, int>)(lpVtbl[221]))((IDiaSymbol9*)Unsafe.AsPointer(ref this), pRetVal);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(222)]
         [return: NativeTypeName("HRESULT")]
-        public int get_dataExport([NativeTypeName("BOOL *")] int* pRetVal)
+        public int get_dataExport(BOOL* pRetVal)
         {
-            return ((delegate* unmanaged<IDiaSymbol9*, int*, int>)(lpVtbl[222]))((IDiaSymbol9*)Unsafe.AsPointer(ref this), pRetVal);
+            return ((delegate* unmanaged<IDiaSymbol9*, BOOL*, int>)(lpVtbl[222]))((IDiaSymbol9*)Unsafe.AsPointer(ref this), pRetVal);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(223)]
         [return: NativeTypeName("HRESULT")]
-        public int get_privateExport([NativeTypeName("BOOL *")] int* pRetVal)
+        public int get_privateExport(BOOL* pRetVal)
         {
-            return ((delegate* unmanaged<IDiaSymbol9*, int*, int>)(lpVtbl[223]))((IDiaSymbol9*)Unsafe.AsPointer(ref this), pRetVal);
+            return ((delegate* unmanaged<IDiaSymbol9*, BOOL*, int>)(lpVtbl[223]))((IDiaSymbol9*)Unsafe.AsPointer(ref this), pRetVal);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(224)]
         [return: NativeTypeName("HRESULT")]
-        public int get_noNameExport([NativeTypeName("BOOL *")] int* pRetVal)
+        public int get_noNameExport(BOOL* pRetVal)
         {
-            return ((delegate* unmanaged<IDiaSymbol9*, int*, int>)(lpVtbl[224]))((IDiaSymbol9*)Unsafe.AsPointer(ref this), pRetVal);
+            return ((delegate* unmanaged<IDiaSymbol9*, BOOL*, int>)(lpVtbl[224]))((IDiaSymbol9*)Unsafe.AsPointer(ref this), pRetVal);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(225)]
         [return: NativeTypeName("HRESULT")]
-        public int get_exportHasExplicitlyAssignedOrdinal([NativeTypeName("BOOL *")] int* pRetVal)
+        public int get_exportHasExplicitlyAssignedOrdinal(BOOL* pRetVal)
         {
-            return ((delegate* unmanaged<IDiaSymbol9*, int*, int>)(lpVtbl[225]))((IDiaSymbol9*)Unsafe.AsPointer(ref this), pRetVal);
+            return ((delegate* unmanaged<IDiaSymbol9*, BOOL*, int>)(lpVtbl[225]))((IDiaSymbol9*)Unsafe.AsPointer(ref this), pRetVal);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(226)]
         [return: NativeTypeName("HRESULT")]
-        public int get_exportIsForwarder([NativeTypeName("BOOL *")] int* pRetVal)
+        public int get_exportIsForwarder(BOOL* pRetVal)
         {
-            return ((delegate* unmanaged<IDiaSymbol9*, int*, int>)(lpVtbl[226]))((IDiaSymbol9*)Unsafe.AsPointer(ref this), pRetVal);
+            return ((delegate* unmanaged<IDiaSymbol9*, BOOL*, int>)(lpVtbl[226]))((IDiaSymbol9*)Unsafe.AsPointer(ref this), pRetVal);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -1931,25 +1931,25 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(239)]
         [return: NativeTypeName("HRESULT")]
-        public int get_isObjCClass([NativeTypeName("BOOL *")] int* pRetVal)
+        public int get_isObjCClass(BOOL* pRetVal)
         {
-            return ((delegate* unmanaged<IDiaSymbol9*, int*, int>)(lpVtbl[239]))((IDiaSymbol9*)Unsafe.AsPointer(ref this), pRetVal);
+            return ((delegate* unmanaged<IDiaSymbol9*, BOOL*, int>)(lpVtbl[239]))((IDiaSymbol9*)Unsafe.AsPointer(ref this), pRetVal);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(240)]
         [return: NativeTypeName("HRESULT")]
-        public int get_isObjCCategory([NativeTypeName("BOOL *")] int* pRetVal)
+        public int get_isObjCCategory(BOOL* pRetVal)
         {
-            return ((delegate* unmanaged<IDiaSymbol9*, int*, int>)(lpVtbl[240]))((IDiaSymbol9*)Unsafe.AsPointer(ref this), pRetVal);
+            return ((delegate* unmanaged<IDiaSymbol9*, BOOL*, int>)(lpVtbl[240]))((IDiaSymbol9*)Unsafe.AsPointer(ref this), pRetVal);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(241)]
         [return: NativeTypeName("HRESULT")]
-        public int get_isObjCProtocol([NativeTypeName("BOOL *")] int* pRetVal)
+        public int get_isObjCProtocol(BOOL* pRetVal)
         {
-            return ((delegate* unmanaged<IDiaSymbol9*, int*, int>)(lpVtbl[241]))((IDiaSymbol9*)Unsafe.AsPointer(ref this), pRetVal);
+            return ((delegate* unmanaged<IDiaSymbol9*, BOOL*, int>)(lpVtbl[241]))((IDiaSymbol9*)Unsafe.AsPointer(ref this), pRetVal);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -1971,33 +1971,33 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(244)]
         [return: NativeTypeName("HRESULT")]
-        public int get_noexcept([NativeTypeName("BOOL *")] int* pRetVal)
+        public int get_noexcept(BOOL* pRetVal)
         {
-            return ((delegate* unmanaged<IDiaSymbol9*, int*, int>)(lpVtbl[244]))((IDiaSymbol9*)Unsafe.AsPointer(ref this), pRetVal);
+            return ((delegate* unmanaged<IDiaSymbol9*, BOOL*, int>)(lpVtbl[244]))((IDiaSymbol9*)Unsafe.AsPointer(ref this), pRetVal);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(245)]
         [return: NativeTypeName("HRESULT")]
-        public int get_hasAbsoluteAddress([NativeTypeName("BOOL *")] int* pRetVal)
+        public int get_hasAbsoluteAddress(BOOL* pRetVal)
         {
-            return ((delegate* unmanaged<IDiaSymbol9*, int*, int>)(lpVtbl[245]))((IDiaSymbol9*)Unsafe.AsPointer(ref this), pRetVal);
+            return ((delegate* unmanaged<IDiaSymbol9*, BOOL*, int>)(lpVtbl[245]))((IDiaSymbol9*)Unsafe.AsPointer(ref this), pRetVal);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(246)]
         [return: NativeTypeName("HRESULT")]
-        public int get_isStaticMemberFunc([NativeTypeName("BOOL *")] int* pRetVal)
+        public int get_isStaticMemberFunc(BOOL* pRetVal)
         {
-            return ((delegate* unmanaged<IDiaSymbol9*, int*, int>)(lpVtbl[246]))((IDiaSymbol9*)Unsafe.AsPointer(ref this), pRetVal);
+            return ((delegate* unmanaged<IDiaSymbol9*, BOOL*, int>)(lpVtbl[246]))((IDiaSymbol9*)Unsafe.AsPointer(ref this), pRetVal);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(247)]
         [return: NativeTypeName("HRESULT")]
-        public int get_isSignRet([NativeTypeName("BOOL *")] int* pRetVal)
+        public int get_isSignRet(BOOL* pRetVal)
         {
-            return ((delegate* unmanaged<IDiaSymbol9*, int*, int>)(lpVtbl[247]))((IDiaSymbol9*)Unsafe.AsPointer(ref this), pRetVal);
+            return ((delegate* unmanaged<IDiaSymbol9*, BOOL*, int>)(lpVtbl[247]))((IDiaSymbol9*)Unsafe.AsPointer(ref this), pRetVal);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -2067,9 +2067,9 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(256)]
         [return: NativeTypeName("HRESULT")]
-        public int get_isRTCs([NativeTypeName("BOOL *")] int* pRetVal)
+        public int get_isRTCs(BOOL* pRetVal)
         {
-            return ((delegate* unmanaged<IDiaSymbol9*, int*, int>)(lpVtbl[256]))((IDiaSymbol9*)Unsafe.AsPointer(ref this), pRetVal);
+            return ((delegate* unmanaged<IDiaSymbol9*, BOOL*, int>)(lpVtbl[256]))((IDiaSymbol9*)Unsafe.AsPointer(ref this), pRetVal);
         }
     }
 }

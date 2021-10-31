@@ -1,7 +1,7 @@
 @../../settings.rsp
 @../../remap.rsp
 --include-directory
-C:/Program Files (x86)/Microsoft Visual Studio/2019/Community/DIA SDK/include
+C:/Program Files/Microsoft Visual Studio/2022/Preview/DIA SDK/include
 --file
 other-cvconst.h
 --output
@@ -9,4 +9,4 @@ other-cvconst.h
 --test-output
 ../../../tests/Interop/Windows/other/cvconst
 --traverse
-C:/Program Files (x86)/Microsoft Visual Studio/2019/Community/DIA SDK/include/cvconst.h
+C:/Program Files/Microsoft Visual Studio/2022/Preview/DIA SDK/include/cvconst.h

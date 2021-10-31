@@ -67,9 +67,9 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
         [return: NativeTypeName("HRESULT")]
-        public int WriteAttributes(IXmlReader* pReader, [NativeTypeName("BOOL")] int fWriteDefaultAttributes)
+        public int WriteAttributes(IXmlReader* pReader, BOOL fWriteDefaultAttributes)
         {
-            return ((delegate* unmanaged<IXmlWriter*, IXmlReader*, int, int>)(lpVtbl[6]))((IXmlWriter*)Unsafe.AsPointer(ref this), pReader, fWriteDefaultAttributes);
+            return ((delegate* unmanaged<IXmlWriter*, IXmlReader*, BOOL, int>)(lpVtbl[6]))((IXmlWriter*)Unsafe.AsPointer(ref this), pReader, fWriteDefaultAttributes);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -179,17 +179,17 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(20)]
         [return: NativeTypeName("HRESULT")]
-        public int WriteNode(IXmlReader* pReader, [NativeTypeName("BOOL")] int fWriteDefaultAttributes)
+        public int WriteNode(IXmlReader* pReader, BOOL fWriteDefaultAttributes)
         {
-            return ((delegate* unmanaged<IXmlWriter*, IXmlReader*, int, int>)(lpVtbl[20]))((IXmlWriter*)Unsafe.AsPointer(ref this), pReader, fWriteDefaultAttributes);
+            return ((delegate* unmanaged<IXmlWriter*, IXmlReader*, BOOL, int>)(lpVtbl[20]))((IXmlWriter*)Unsafe.AsPointer(ref this), pReader, fWriteDefaultAttributes);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(21)]
         [return: NativeTypeName("HRESULT")]
-        public int WriteNodeShallow(IXmlReader* pReader, [NativeTypeName("BOOL")] int fWriteDefaultAttributes)
+        public int WriteNodeShallow(IXmlReader* pReader, BOOL fWriteDefaultAttributes)
         {
-            return ((delegate* unmanaged<IXmlWriter*, IXmlReader*, int, int>)(lpVtbl[21]))((IXmlWriter*)Unsafe.AsPointer(ref this), pReader, fWriteDefaultAttributes);
+            return ((delegate* unmanaged<IXmlWriter*, IXmlReader*, BOOL, int>)(lpVtbl[21]))((IXmlWriter*)Unsafe.AsPointer(ref this), pReader, fWriteDefaultAttributes);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

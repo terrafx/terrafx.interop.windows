@@ -59,17 +59,17 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
         [return: NativeTypeName("HRESULT")]
-        public int SetPrimary([NativeTypeName("BOOL")] int fPrimary)
+        public int SetPrimary(BOOL fPrimary)
         {
-            return ((delegate* unmanaged<IElementSegment*, int, int>)(lpVtbl[5]))((IElementSegment*)Unsafe.AsPointer(ref this), fPrimary);
+            return ((delegate* unmanaged<IElementSegment*, BOOL, int>)(lpVtbl[5]))((IElementSegment*)Unsafe.AsPointer(ref this), fPrimary);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
         [return: NativeTypeName("HRESULT")]
-        public int IsPrimary([NativeTypeName("BOOL *")] int* pfPrimary)
+        public int IsPrimary(BOOL* pfPrimary)
         {
-            return ((delegate* unmanaged<IElementSegment*, int*, int>)(lpVtbl[6]))((IElementSegment*)Unsafe.AsPointer(ref this), pfPrimary);
+            return ((delegate* unmanaged<IElementSegment*, BOOL*, int>)(lpVtbl[6]))((IElementSegment*)Unsafe.AsPointer(ref this), pfPrimary);
         }
     }
 }

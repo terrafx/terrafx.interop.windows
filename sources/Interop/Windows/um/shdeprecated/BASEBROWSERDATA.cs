@@ -77,11 +77,9 @@ namespace TerraFX.Interop
         [NativeTypeName("LPWSTR")]
         public ushort* _pszTitlePending;
 
-        [NativeTypeName("BOOL")]
-        public int _fIsViewMSHTML;
+        public BOOL _fIsViewMSHTML;
 
-        [NativeTypeName("BOOL")]
-        public int _fPrivacyImpacted;
+        public BOOL _fPrivacyImpacted;
 
         [NativeTypeName("CLSID")]
         public Guid _clsidView;

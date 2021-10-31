@@ -28,10 +28,8 @@ namespace TerraFX.Interop
         [NativeTypeName("UINT32")]
         public uint bidiLevel;
 
-        [NativeTypeName("BOOL")]
-        public int isText;
+        public BOOL isText;
 
-        [NativeTypeName("BOOL")]
-        public int isTrimmed;
+        public BOOL isTrimmed;
     }
 }

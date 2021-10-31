@@ -96,13 +96,10 @@ namespace TerraFX.Interop
         [NativeTypeName("INT")]
         public int FunctionParameterCount;
 
-        [NativeTypeName("BOOL")]
-        public int HasReturn;
+        public BOOL HasReturn;
 
-        [NativeTypeName("BOOL")]
-        public int Has10Level9VertexShader;
+        public BOOL Has10Level9VertexShader;
 
-        [NativeTypeName("BOOL")]
-        public int Has10Level9PixelShader;
+        public BOOL Has10Level9PixelShader;
     }
 }

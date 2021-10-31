@@ -147,9 +147,9 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(16)]
         [return: NativeTypeName("HRESULT")]
-        public int SupportsTransparency([NativeTypeName("BOOL *")] int* pfSupportsTransparency)
+        public int SupportsTransparency(BOOL* pfSupportsTransparency)
         {
-            return ((delegate* unmanaged<IWICPixelFormatInfo2*, int*, int>)(lpVtbl[16]))((IWICPixelFormatInfo2*)Unsafe.AsPointer(ref this), pfSupportsTransparency);
+            return ((delegate* unmanaged<IWICPixelFormatInfo2*, BOOL*, int>)(lpVtbl[16]))((IWICPixelFormatInfo2*)Unsafe.AsPointer(ref this), pfSupportsTransparency);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

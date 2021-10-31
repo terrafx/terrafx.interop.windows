@@ -75,9 +75,9 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(7)]
         [return: NativeTypeName("HRESULT")]
-        public int EnableModeless([NativeTypeName("BOOL")] int fEnable)
+        public int EnableModeless(BOOL fEnable)
         {
-            return ((delegate* unmanaged<ISyncMgrSynchronizeCallback*, int, int>)(lpVtbl[7]))((ISyncMgrSynchronizeCallback*)Unsafe.AsPointer(ref this), fEnable);
+            return ((delegate* unmanaged<ISyncMgrSynchronizeCallback*, BOOL, int>)(lpVtbl[7]))((ISyncMgrSynchronizeCallback*)Unsafe.AsPointer(ref this), fEnable);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

@@ -211,9 +211,9 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(24)]
         [return: NativeTypeName("HRESULT")]
-        public int CreateTargetForHwnd([NativeTypeName("HWND")] IntPtr hwnd, [NativeTypeName("BOOL")] int topmost, IDCompositionTarget** target)
+        public int CreateTargetForHwnd([NativeTypeName("HWND")] IntPtr hwnd, BOOL topmost, IDCompositionTarget** target)
         {
-            return ((delegate* unmanaged<IDCompositionDesktopDevice*, IntPtr, int, IDCompositionTarget**, int>)(lpVtbl[24]))((IDCompositionDesktopDevice*)Unsafe.AsPointer(ref this), hwnd, topmost, target);
+            return ((delegate* unmanaged<IDCompositionDesktopDevice*, IntPtr, BOOL, IDCompositionTarget**, int>)(lpVtbl[24]))((IDCompositionDesktopDevice*)Unsafe.AsPointer(ref this), hwnd, topmost, target);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

@@ -11,10 +11,10 @@ namespace TerraFX.Interop
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public partial struct SHELLFLAGSTATE
     {
-        public int _bitfield;
+        public BOOL _bitfield;
 
         [NativeTypeName("BOOL : 1")]
-        public int fShowAllObjects
+        public BOOL fShowAllObjects
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
@@ -30,7 +30,7 @@ namespace TerraFX.Interop
         }
 
         [NativeTypeName("BOOL : 1")]
-        public int fShowExtensions
+        public BOOL fShowExtensions
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
@@ -46,7 +46,7 @@ namespace TerraFX.Interop
         }
 
         [NativeTypeName("BOOL : 1")]
-        public int fNoConfirmRecycle
+        public BOOL fNoConfirmRecycle
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
@@ -62,7 +62,7 @@ namespace TerraFX.Interop
         }
 
         [NativeTypeName("BOOL : 1")]
-        public int fShowSysFiles
+        public BOOL fShowSysFiles
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
@@ -78,7 +78,7 @@ namespace TerraFX.Interop
         }
 
         [NativeTypeName("BOOL : 1")]
-        public int fShowCompColor
+        public BOOL fShowCompColor
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
@@ -94,7 +94,7 @@ namespace TerraFX.Interop
         }
 
         [NativeTypeName("BOOL : 1")]
-        public int fDoubleClickInWebView
+        public BOOL fDoubleClickInWebView
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
@@ -110,7 +110,7 @@ namespace TerraFX.Interop
         }
 
         [NativeTypeName("BOOL : 1")]
-        public int fDesktopHTML
+        public BOOL fDesktopHTML
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
@@ -126,7 +126,7 @@ namespace TerraFX.Interop
         }
 
         [NativeTypeName("BOOL : 1")]
-        public int fWin95Classic
+        public BOOL fWin95Classic
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
@@ -142,7 +142,7 @@ namespace TerraFX.Interop
         }
 
         [NativeTypeName("BOOL : 1")]
-        public int fDontPrettyPath
+        public BOOL fDontPrettyPath
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
@@ -158,7 +158,7 @@ namespace TerraFX.Interop
         }
 
         [NativeTypeName("BOOL : 1")]
-        public int fShowAttribCol
+        public BOOL fShowAttribCol
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
@@ -174,7 +174,7 @@ namespace TerraFX.Interop
         }
 
         [NativeTypeName("BOOL : 1")]
-        public int fMapNetDrvBtn
+        public BOOL fMapNetDrvBtn
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
@@ -190,7 +190,7 @@ namespace TerraFX.Interop
         }
 
         [NativeTypeName("BOOL : 1")]
-        public int fShowInfoTip
+        public BOOL fShowInfoTip
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
@@ -206,7 +206,7 @@ namespace TerraFX.Interop
         }
 
         [NativeTypeName("BOOL : 1")]
-        public int fHideIcons
+        public BOOL fHideIcons
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
@@ -222,7 +222,7 @@ namespace TerraFX.Interop
         }
 
         [NativeTypeName("BOOL : 1")]
-        public int fAutoCheckSelect
+        public BOOL fAutoCheckSelect
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
@@ -238,7 +238,7 @@ namespace TerraFX.Interop
         }
 
         [NativeTypeName("BOOL : 1")]
-        public int fIconsOnly
+        public BOOL fIconsOnly
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
@@ -265,7 +265,7 @@ namespace TerraFX.Interop
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             set
             {
-                _bitfield = (_bitfield & ~(0x1 << 15)) | (int)((value & 0x1u) << 15);
+                _bitfield = (_bitfield & ~(0x1 << 15)) | (BOOL)((value & 0x1u) << 15);
             }
         }
     }

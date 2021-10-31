@@ -21,7 +21,6 @@ namespace TerraFX.Interop
 
         public EPxcPortConnection PortConnection;
 
-        [NativeTypeName("BOOL")]
-        public int IsConnected;
+        public BOOL IsConnected;
     }
 }

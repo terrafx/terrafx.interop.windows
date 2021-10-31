@@ -43,9 +43,9 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
         [return: NativeTypeName("HRESULT")]
-        public int Initialize([NativeTypeName("LPCWSTR")] ushort* pszMachine, [NativeTypeName("BOOL")] int bEnumerating)
+        public int Initialize([NativeTypeName("LPCWSTR")] ushort* pszMachine, BOOL bEnumerating)
         {
-            return ((delegate* unmanaged<IRemoteComputer*, ushort*, int, int>)(lpVtbl[3]))((IRemoteComputer*)Unsafe.AsPointer(ref this), pszMachine, bEnumerating);
+            return ((delegate* unmanaged<IRemoteComputer*, ushort*, BOOL, int>)(lpVtbl[3]))((IRemoteComputer*)Unsafe.AsPointer(ref this), pszMachine, bEnumerating);
         }
     }
 }

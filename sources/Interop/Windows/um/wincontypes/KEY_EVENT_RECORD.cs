@@ -9,8 +9,7 @@ namespace TerraFX.Interop
 {
     public partial struct KEY_EVENT_RECORD
     {
-        [NativeTypeName("BOOL")]
-        public int bKeyDown;
+        public BOOL bKeyDown;
 
         [NativeTypeName("WORD")]
         public ushort wRepeatCount;

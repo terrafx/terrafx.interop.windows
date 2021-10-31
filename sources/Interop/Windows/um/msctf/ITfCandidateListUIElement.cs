@@ -59,17 +59,17 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
         [return: NativeTypeName("HRESULT")]
-        public int Show([NativeTypeName("BOOL")] int bShow)
+        public int Show(BOOL bShow)
         {
-            return ((delegate* unmanaged<ITfCandidateListUIElement*, int, int>)(lpVtbl[5]))((ITfCandidateListUIElement*)Unsafe.AsPointer(ref this), bShow);
+            return ((delegate* unmanaged<ITfCandidateListUIElement*, BOOL, int>)(lpVtbl[5]))((ITfCandidateListUIElement*)Unsafe.AsPointer(ref this), bShow);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
         [return: NativeTypeName("HRESULT")]
-        public int IsShown([NativeTypeName("BOOL *")] int* pbShow)
+        public int IsShown(BOOL* pbShow)
         {
-            return ((delegate* unmanaged<ITfCandidateListUIElement*, int*, int>)(lpVtbl[6]))((ITfCandidateListUIElement*)Unsafe.AsPointer(ref this), pbShow);
+            return ((delegate* unmanaged<ITfCandidateListUIElement*, BOOL*, int>)(lpVtbl[6]))((ITfCandidateListUIElement*)Unsafe.AsPointer(ref this), pbShow);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

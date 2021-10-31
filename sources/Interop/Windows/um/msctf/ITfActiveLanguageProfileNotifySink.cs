@@ -43,9 +43,9 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
         [return: NativeTypeName("HRESULT")]
-        public int OnActivated([NativeTypeName("const IID &")] Guid* clsid, [NativeTypeName("const GUID &")] Guid* guidProfile, [NativeTypeName("BOOL")] int fActivated)
+        public int OnActivated([NativeTypeName("const IID &")] Guid* clsid, [NativeTypeName("const GUID &")] Guid* guidProfile, BOOL fActivated)
         {
-            return ((delegate* unmanaged<ITfActiveLanguageProfileNotifySink*, Guid*, Guid*, int, int>)(lpVtbl[3]))((ITfActiveLanguageProfileNotifySink*)Unsafe.AsPointer(ref this), clsid, guidProfile, fActivated);
+            return ((delegate* unmanaged<ITfActiveLanguageProfileNotifySink*, Guid*, Guid*, BOOL, int>)(lpVtbl[3]))((ITfActiveLanguageProfileNotifySink*)Unsafe.AsPointer(ref this), clsid, guidProfile, fActivated);
         }
     }
 }

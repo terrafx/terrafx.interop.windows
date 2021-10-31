@@ -194,7 +194,7 @@ namespace TerraFX.Interop
 
         [DllImport("evr", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
-        public static extern int MFCreateDXSurfaceBuffer([NativeTypeName("const IID &")] Guid* riid, IUnknown* punkSurface, [NativeTypeName("BOOL")] int fBottomUpWhenLinear, IMFMediaBuffer** ppBuffer);
+        public static extern int MFCreateDXSurfaceBuffer([NativeTypeName("const IID &")] Guid* riid, IUnknown* punkSurface, BOOL fBottomUpWhenLinear, IMFMediaBuffer** ppBuffer);
 
         [DllImport("mfplat", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
@@ -202,7 +202,7 @@ namespace TerraFX.Interop
 
         [DllImport("mfplat", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
-        public static extern int MFCreateDXGISurfaceBuffer([NativeTypeName("const IID &")] Guid* riid, IUnknown* punkSurface, [NativeTypeName("UINT")] uint uSubresourceIndex, [NativeTypeName("BOOL")] int fBottomUpWhenLinear, IMFMediaBuffer** ppBuffer);
+        public static extern int MFCreateDXGISurfaceBuffer([NativeTypeName("const IID &")] Guid* riid, IUnknown* punkSurface, [NativeTypeName("UINT")] uint uSubresourceIndex, BOOL fBottomUpWhenLinear, IMFMediaBuffer** ppBuffer);
 
         [DllImport("mfplat", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
@@ -10679,7 +10679,7 @@ namespace TerraFX.Interop
 
         [DllImport("mfplat", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
-        public static extern int MFCalculateBitmapImageSize([NativeTypeName("const BITMAPINFOHEADER *")] BITMAPINFOHEADER* pBMIH, [NativeTypeName("UINT32")] uint cbBufSize, [NativeTypeName("UINT32 *")] uint* pcbImageSize, [NativeTypeName("BOOL *")] int* pbKnown = null);
+        public static extern int MFCalculateBitmapImageSize([NativeTypeName("const BITMAPINFOHEADER *")] BITMAPINFOHEADER* pBMIH, [NativeTypeName("UINT32")] uint cbBufSize, [NativeTypeName("UINT32 *")] uint* pcbImageSize, BOOL* pbKnown = null);
 
         [DllImport("mfplat", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
@@ -10714,8 +10714,7 @@ namespace TerraFX.Interop
         public static extern int MFCreateAMMediaTypeFromMFMediaType(IMFMediaType* pMFType, [NativeTypeName("GUID")] Guid guidFormatBlockType, AM_MEDIA_TYPE** ppAMType);
 
         [DllImport("mfplat", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int MFCompareFullToPartialMediaType(IMFMediaType* pMFTypeFull, IMFMediaType* pMFTypePartial);
+        public static extern BOOL MFCompareFullToPartialMediaType(IMFMediaType* pMFTypeFull, IMFMediaType* pMFTypePartial);
 
         [DllImport("mfplat", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
@@ -10734,8 +10733,7 @@ namespace TerraFX.Interop
         public static extern int MFCreateVideoMediaTypeFromSubtype([NativeTypeName("const GUID *")] Guid* pAMSubtype, IMFVideoMediaType** ppIVideoMediaType);
 
         [DllImport("evr", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int MFIsFormatYUV([NativeTypeName("DWORD")] uint Format);
+        public static extern BOOL MFIsFormatYUV([NativeTypeName("DWORD")] uint Format);
 
         [DllImport("mfplat", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
@@ -10795,7 +10793,7 @@ namespace TerraFX.Interop
 
         [DllImport("mfplat", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
-        public static extern int MFCreate2DMediaBuffer([NativeTypeName("DWORD")] uint dwWidth, [NativeTypeName("DWORD")] uint dwHeight, [NativeTypeName("DWORD")] uint dwFourCC, [NativeTypeName("BOOL")] int fBottomUp, IMFMediaBuffer** ppBuffer);
+        public static extern int MFCreate2DMediaBuffer([NativeTypeName("DWORD")] uint dwWidth, [NativeTypeName("DWORD")] uint dwHeight, [NativeTypeName("DWORD")] uint dwFourCC, BOOL fBottomUp, IMFMediaBuffer** ppBuffer);
 
         [DllImport("mfplat", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
@@ -11026,7 +11024,7 @@ namespace TerraFX.Interop
 
         [DllImport("mfplat", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
-        public static extern int MFCombineSamples(IMFSample* pSample, IMFSample* pSampleToAdd, [NativeTypeName("DWORD")] uint dwMaxMergedDurationInMS, [NativeTypeName("BOOL *")] int* pMerged);
+        public static extern int MFCombineSamples(IMFSample* pSample, IMFSample* pSampleToAdd, [NativeTypeName("DWORD")] uint dwMaxMergedDurationInMS, BOOL* pMerged);
 
         [DllImport("mfplat", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]

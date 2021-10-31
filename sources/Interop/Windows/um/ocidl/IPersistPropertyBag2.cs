@@ -67,9 +67,9 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
         [return: NativeTypeName("HRESULT")]
-        public int Save(IPropertyBag2* pPropBag, [NativeTypeName("BOOL")] int fClearDirty, [NativeTypeName("BOOL")] int fSaveAllProperties)
+        public int Save(IPropertyBag2* pPropBag, BOOL fClearDirty, BOOL fSaveAllProperties)
         {
-            return ((delegate* unmanaged<IPersistPropertyBag2*, IPropertyBag2*, int, int, int>)(lpVtbl[6]))((IPersistPropertyBag2*)Unsafe.AsPointer(ref this), pPropBag, fClearDirty, fSaveAllProperties);
+            return ((delegate* unmanaged<IPersistPropertyBag2*, IPropertyBag2*, BOOL, BOOL, int>)(lpVtbl[6]))((IPersistPropertyBag2*)Unsafe.AsPointer(ref this), pPropBag, fClearDirty, fSaveAllProperties);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

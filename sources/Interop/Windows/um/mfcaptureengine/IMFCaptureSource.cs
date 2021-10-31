@@ -131,17 +131,17 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(14)]
         [return: NativeTypeName("HRESULT")]
-        public int GetMirrorState([NativeTypeName("DWORD")] uint dwStreamIndex, [NativeTypeName("BOOL *")] int* pfMirrorState)
+        public int GetMirrorState([NativeTypeName("DWORD")] uint dwStreamIndex, BOOL* pfMirrorState)
         {
-            return ((delegate* unmanaged<IMFCaptureSource*, uint, int*, int>)(lpVtbl[14]))((IMFCaptureSource*)Unsafe.AsPointer(ref this), dwStreamIndex, pfMirrorState);
+            return ((delegate* unmanaged<IMFCaptureSource*, uint, BOOL*, int>)(lpVtbl[14]))((IMFCaptureSource*)Unsafe.AsPointer(ref this), dwStreamIndex, pfMirrorState);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(15)]
         [return: NativeTypeName("HRESULT")]
-        public int SetMirrorState([NativeTypeName("DWORD")] uint dwStreamIndex, [NativeTypeName("BOOL")] int fMirrorState)
+        public int SetMirrorState([NativeTypeName("DWORD")] uint dwStreamIndex, BOOL fMirrorState)
         {
-            return ((delegate* unmanaged<IMFCaptureSource*, uint, int, int>)(lpVtbl[15]))((IMFCaptureSource*)Unsafe.AsPointer(ref this), dwStreamIndex, fMirrorState);
+            return ((delegate* unmanaged<IMFCaptureSource*, uint, BOOL, int>)(lpVtbl[15]))((IMFCaptureSource*)Unsafe.AsPointer(ref this), dwStreamIndex, fMirrorState);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

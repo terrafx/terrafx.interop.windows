@@ -19,8 +19,7 @@ namespace TerraFX.Interop
         public static extern IntPtr CreatePropertySheetPageW([NativeTypeName("LPCPROPSHEETPAGEW")] PROPSHEETPAGEW* constPropSheetPagePointer);
 
         [DllImport("comctl32", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int DestroyPropertySheetPage([NativeTypeName("HPROPSHEETPAGE")] IntPtr param0);
+        public static extern BOOL DestroyPropertySheetPage([NativeTypeName("HPROPSHEETPAGE")] IntPtr param0);
 
         [DllImport("comctl32", ExactSpelling = true)]
         [return: NativeTypeName("INT_PTR")]
@@ -34,7 +33,7 @@ namespace TerraFX.Interop
         public static delegate*<IntPtr, uint, nuint, nint, nint> SNDMSG => &SendMessageW;
 
         [NativeTypeName("#define PSTMSG ::PostMessage")]
-        public static delegate*<IntPtr, uint, nuint, nint, int> PSTMSG => &PostMessageW;
+        public static delegate*<IntPtr, uint, nuint, nint, BOOL> PSTMSG => &PostMessageW;
 
         [NativeTypeName("#define MAXPROPPAGES 100")]
         public const int MAXPROPPAGES = 100;

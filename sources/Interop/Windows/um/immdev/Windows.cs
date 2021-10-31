@@ -11,16 +11,13 @@ namespace TerraFX.Interop
     public static unsafe partial class Windows
     {
         [DllImport("imm32", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int ImmGetHotKey([NativeTypeName("DWORD")] uint param0, [NativeTypeName("LPUINT")] uint* lpuModifiers, [NativeTypeName("LPUINT")] uint* lpuVKey, [NativeTypeName("LPHKL")] IntPtr* phKL);
+        public static extern BOOL ImmGetHotKey([NativeTypeName("DWORD")] uint param0, [NativeTypeName("LPUINT")] uint* lpuModifiers, [NativeTypeName("LPUINT")] uint* lpuVKey, [NativeTypeName("LPHKL")] IntPtr* phKL);
 
         [DllImport("imm32", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int ImmSetHotKey([NativeTypeName("DWORD")] uint param0, [NativeTypeName("UINT")] uint param1, [NativeTypeName("UINT")] uint param2, [NativeTypeName("HKL")] IntPtr param3);
+        public static extern BOOL ImmSetHotKey([NativeTypeName("DWORD")] uint param0, [NativeTypeName("UINT")] uint param1, [NativeTypeName("UINT")] uint param2, [NativeTypeName("HKL")] IntPtr param3);
 
         [DllImport("imm32", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int ImmGenerateMessage([NativeTypeName("HIMC")] IntPtr param0);
+        public static extern BOOL ImmGenerateMessage([NativeTypeName("HIMC")] IntPtr param0);
 
         [DllImport("imm32", ExactSpelling = true)]
         [return: NativeTypeName("LRESULT")]
@@ -35,20 +32,17 @@ namespace TerraFX.Interop
         public static extern IntPtr ImmCreateSoftKeyboard([NativeTypeName("UINT")] uint param0, [NativeTypeName("HWND")] IntPtr param1, int param2, int param3);
 
         [DllImport("imm32", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int ImmDestroySoftKeyboard([NativeTypeName("HWND")] IntPtr param0);
+        public static extern BOOL ImmDestroySoftKeyboard([NativeTypeName("HWND")] IntPtr param0);
 
         [DllImport("imm32", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int ImmShowSoftKeyboard([NativeTypeName("HWND")] IntPtr param0, int param1);
+        public static extern BOOL ImmShowSoftKeyboard([NativeTypeName("HWND")] IntPtr param0, int param1);
 
         [DllImport("imm32", ExactSpelling = true)]
         [return: NativeTypeName("LPINPUTCONTEXT")]
         public static extern INPUTCONTEXT* ImmLockIMC([NativeTypeName("HIMC")] IntPtr param0);
 
         [DllImport("imm32", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int ImmUnlockIMC([NativeTypeName("HIMC")] IntPtr param0);
+        public static extern BOOL ImmUnlockIMC([NativeTypeName("HIMC")] IntPtr param0);
 
         [DllImport("imm32", ExactSpelling = true)]
         [return: NativeTypeName("DWORD")]
@@ -67,8 +61,7 @@ namespace TerraFX.Interop
         public static extern void* ImmLockIMCC([NativeTypeName("HIMCC")] IntPtr param0);
 
         [DllImport("imm32", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int ImmUnlockIMCC([NativeTypeName("HIMCC")] IntPtr param0);
+        public static extern BOOL ImmUnlockIMCC([NativeTypeName("HIMCC")] IntPtr param0);
 
         [DllImport("imm32", ExactSpelling = true)]
         [return: NativeTypeName("DWORD")]

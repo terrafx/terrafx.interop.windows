@@ -107,9 +107,9 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(11)]
         [return: NativeTypeName("HRESULT")]
-        public int TakeOwnership(IUnknown* pDevice, [NativeTypeName("BOOL")] int Exclusive)
+        public int TakeOwnership(IUnknown* pDevice, BOOL Exclusive)
         {
-            return ((delegate* unmanaged<IDXGIOutput*, IUnknown*, int, int>)(lpVtbl[11]))((IDXGIOutput*)Unsafe.AsPointer(ref this), pDevice, Exclusive);
+            return ((delegate* unmanaged<IDXGIOutput*, IUnknown*, BOOL, int>)(lpVtbl[11]))((IDXGIOutput*)Unsafe.AsPointer(ref this), pDevice, Exclusive);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

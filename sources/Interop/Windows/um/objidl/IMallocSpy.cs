@@ -57,60 +57,60 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        public void* PreFree(void* pRequest, [NativeTypeName("BOOL")] int fSpyed)
+        public void* PreFree(void* pRequest, BOOL fSpyed)
         {
-            return ((delegate* unmanaged<IMallocSpy*, void*, int, void*>)(lpVtbl[5]))((IMallocSpy*)Unsafe.AsPointer(ref this), pRequest, fSpyed);
+            return ((delegate* unmanaged<IMallocSpy*, void*, BOOL, void*>)(lpVtbl[5]))((IMallocSpy*)Unsafe.AsPointer(ref this), pRequest, fSpyed);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        public void PostFree([NativeTypeName("BOOL")] int fSpyed)
+        public void PostFree(BOOL fSpyed)
         {
-            ((delegate* unmanaged<IMallocSpy*, int, void>)(lpVtbl[6]))((IMallocSpy*)Unsafe.AsPointer(ref this), fSpyed);
+            ((delegate* unmanaged<IMallocSpy*, BOOL, void>)(lpVtbl[6]))((IMallocSpy*)Unsafe.AsPointer(ref this), fSpyed);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(7)]
         [return: NativeTypeName("SIZE_T")]
-        public nuint PreRealloc(void* pRequest, [NativeTypeName("SIZE_T")] nuint cbRequest, void** ppNewRequest, [NativeTypeName("BOOL")] int fSpyed)
+        public nuint PreRealloc(void* pRequest, [NativeTypeName("SIZE_T")] nuint cbRequest, void** ppNewRequest, BOOL fSpyed)
         {
-            return ((delegate* unmanaged<IMallocSpy*, void*, nuint, void**, int, nuint>)(lpVtbl[7]))((IMallocSpy*)Unsafe.AsPointer(ref this), pRequest, cbRequest, ppNewRequest, fSpyed);
+            return ((delegate* unmanaged<IMallocSpy*, void*, nuint, void**, BOOL, nuint>)(lpVtbl[7]))((IMallocSpy*)Unsafe.AsPointer(ref this), pRequest, cbRequest, ppNewRequest, fSpyed);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(8)]
-        public void* PostRealloc(void* pActual, [NativeTypeName("BOOL")] int fSpyed)
+        public void* PostRealloc(void* pActual, BOOL fSpyed)
         {
-            return ((delegate* unmanaged<IMallocSpy*, void*, int, void*>)(lpVtbl[8]))((IMallocSpy*)Unsafe.AsPointer(ref this), pActual, fSpyed);
+            return ((delegate* unmanaged<IMallocSpy*, void*, BOOL, void*>)(lpVtbl[8]))((IMallocSpy*)Unsafe.AsPointer(ref this), pActual, fSpyed);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(9)]
-        public void* PreGetSize(void* pRequest, [NativeTypeName("BOOL")] int fSpyed)
+        public void* PreGetSize(void* pRequest, BOOL fSpyed)
         {
-            return ((delegate* unmanaged<IMallocSpy*, void*, int, void*>)(lpVtbl[9]))((IMallocSpy*)Unsafe.AsPointer(ref this), pRequest, fSpyed);
+            return ((delegate* unmanaged<IMallocSpy*, void*, BOOL, void*>)(lpVtbl[9]))((IMallocSpy*)Unsafe.AsPointer(ref this), pRequest, fSpyed);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(10)]
         [return: NativeTypeName("SIZE_T")]
-        public nuint PostGetSize([NativeTypeName("SIZE_T")] nuint cbActual, [NativeTypeName("BOOL")] int fSpyed)
+        public nuint PostGetSize([NativeTypeName("SIZE_T")] nuint cbActual, BOOL fSpyed)
         {
-            return ((delegate* unmanaged<IMallocSpy*, nuint, int, nuint>)(lpVtbl[10]))((IMallocSpy*)Unsafe.AsPointer(ref this), cbActual, fSpyed);
+            return ((delegate* unmanaged<IMallocSpy*, nuint, BOOL, nuint>)(lpVtbl[10]))((IMallocSpy*)Unsafe.AsPointer(ref this), cbActual, fSpyed);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(11)]
-        public void* PreDidAlloc(void* pRequest, [NativeTypeName("BOOL")] int fSpyed)
+        public void* PreDidAlloc(void* pRequest, BOOL fSpyed)
         {
-            return ((delegate* unmanaged<IMallocSpy*, void*, int, void*>)(lpVtbl[11]))((IMallocSpy*)Unsafe.AsPointer(ref this), pRequest, fSpyed);
+            return ((delegate* unmanaged<IMallocSpy*, void*, BOOL, void*>)(lpVtbl[11]))((IMallocSpy*)Unsafe.AsPointer(ref this), pRequest, fSpyed);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(12)]
-        public int PostDidAlloc(void* pRequest, [NativeTypeName("BOOL")] int fSpyed, int fActual)
+        public int PostDidAlloc(void* pRequest, BOOL fSpyed, int fActual)
         {
-            return ((delegate* unmanaged<IMallocSpy*, void*, int, int, int>)(lpVtbl[12]))((IMallocSpy*)Unsafe.AsPointer(ref this), pRequest, fSpyed, fActual);
+            return ((delegate* unmanaged<IMallocSpy*, void*, BOOL, int, int>)(lpVtbl[12]))((IMallocSpy*)Unsafe.AsPointer(ref this), pRequest, fSpyed, fActual);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

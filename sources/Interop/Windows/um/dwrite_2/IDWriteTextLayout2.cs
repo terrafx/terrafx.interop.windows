@@ -299,17 +299,17 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(36)]
         [return: NativeTypeName("HRESULT")]
-        public int SetUnderline([NativeTypeName("BOOL")] int hasUnderline, DWRITE_TEXT_RANGE textRange)
+        public int SetUnderline(BOOL hasUnderline, DWRITE_TEXT_RANGE textRange)
         {
-            return ((delegate* unmanaged<IDWriteTextLayout2*, int, DWRITE_TEXT_RANGE, int>)(lpVtbl[36]))((IDWriteTextLayout2*)Unsafe.AsPointer(ref this), hasUnderline, textRange);
+            return ((delegate* unmanaged<IDWriteTextLayout2*, BOOL, DWRITE_TEXT_RANGE, int>)(lpVtbl[36]))((IDWriteTextLayout2*)Unsafe.AsPointer(ref this), hasUnderline, textRange);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(37)]
         [return: NativeTypeName("HRESULT")]
-        public int SetStrikethrough([NativeTypeName("BOOL")] int hasStrikethrough, DWRITE_TEXT_RANGE textRange)
+        public int SetStrikethrough(BOOL hasStrikethrough, DWRITE_TEXT_RANGE textRange)
         {
-            return ((delegate* unmanaged<IDWriteTextLayout2*, int, DWRITE_TEXT_RANGE, int>)(lpVtbl[37]))((IDWriteTextLayout2*)Unsafe.AsPointer(ref this), hasStrikethrough, textRange);
+            return ((delegate* unmanaged<IDWriteTextLayout2*, BOOL, DWRITE_TEXT_RANGE, int>)(lpVtbl[37]))((IDWriteTextLayout2*)Unsafe.AsPointer(ref this), hasStrikethrough, textRange);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -419,17 +419,17 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(51)]
         [return: NativeTypeName("HRESULT")]
-        public int GetUnderline([NativeTypeName("UINT32")] uint currentPosition, [NativeTypeName("BOOL *")] int* hasUnderline, DWRITE_TEXT_RANGE* textRange = null)
+        public int GetUnderline([NativeTypeName("UINT32")] uint currentPosition, BOOL* hasUnderline, DWRITE_TEXT_RANGE* textRange = null)
         {
-            return ((delegate* unmanaged<IDWriteTextLayout2*, uint, int*, DWRITE_TEXT_RANGE*, int>)(lpVtbl[51]))((IDWriteTextLayout2*)Unsafe.AsPointer(ref this), currentPosition, hasUnderline, textRange);
+            return ((delegate* unmanaged<IDWriteTextLayout2*, uint, BOOL*, DWRITE_TEXT_RANGE*, int>)(lpVtbl[51]))((IDWriteTextLayout2*)Unsafe.AsPointer(ref this), currentPosition, hasUnderline, textRange);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(52)]
         [return: NativeTypeName("HRESULT")]
-        public int GetStrikethrough([NativeTypeName("UINT32")] uint currentPosition, [NativeTypeName("BOOL *")] int* hasStrikethrough, DWRITE_TEXT_RANGE* textRange = null)
+        public int GetStrikethrough([NativeTypeName("UINT32")] uint currentPosition, BOOL* hasStrikethrough, DWRITE_TEXT_RANGE* textRange = null)
         {
-            return ((delegate* unmanaged<IDWriteTextLayout2*, uint, int*, DWRITE_TEXT_RANGE*, int>)(lpVtbl[52]))((IDWriteTextLayout2*)Unsafe.AsPointer(ref this), currentPosition, hasStrikethrough, textRange);
+            return ((delegate* unmanaged<IDWriteTextLayout2*, uint, BOOL*, DWRITE_TEXT_RANGE*, int>)(lpVtbl[52]))((IDWriteTextLayout2*)Unsafe.AsPointer(ref this), currentPosition, hasStrikethrough, textRange);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -523,17 +523,17 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(64)]
         [return: NativeTypeName("HRESULT")]
-        public int HitTestPoint([NativeTypeName("FLOAT")] float pointX, [NativeTypeName("FLOAT")] float pointY, [NativeTypeName("BOOL *")] int* isTrailingHit, [NativeTypeName("BOOL *")] int* isInside, DWRITE_HIT_TEST_METRICS* hitTestMetrics)
+        public int HitTestPoint([NativeTypeName("FLOAT")] float pointX, [NativeTypeName("FLOAT")] float pointY, BOOL* isTrailingHit, BOOL* isInside, DWRITE_HIT_TEST_METRICS* hitTestMetrics)
         {
-            return ((delegate* unmanaged<IDWriteTextLayout2*, float, float, int*, int*, DWRITE_HIT_TEST_METRICS*, int>)(lpVtbl[64]))((IDWriteTextLayout2*)Unsafe.AsPointer(ref this), pointX, pointY, isTrailingHit, isInside, hitTestMetrics);
+            return ((delegate* unmanaged<IDWriteTextLayout2*, float, float, BOOL*, BOOL*, DWRITE_HIT_TEST_METRICS*, int>)(lpVtbl[64]))((IDWriteTextLayout2*)Unsafe.AsPointer(ref this), pointX, pointY, isTrailingHit, isInside, hitTestMetrics);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(65)]
         [return: NativeTypeName("HRESULT")]
-        public int HitTestTextPosition([NativeTypeName("UINT32")] uint textPosition, [NativeTypeName("BOOL")] int isTrailingHit, [NativeTypeName("FLOAT *")] float* pointX, [NativeTypeName("FLOAT *")] float* pointY, DWRITE_HIT_TEST_METRICS* hitTestMetrics)
+        public int HitTestTextPosition([NativeTypeName("UINT32")] uint textPosition, BOOL isTrailingHit, [NativeTypeName("FLOAT *")] float* pointX, [NativeTypeName("FLOAT *")] float* pointY, DWRITE_HIT_TEST_METRICS* hitTestMetrics)
         {
-            return ((delegate* unmanaged<IDWriteTextLayout2*, uint, int, float*, float*, DWRITE_HIT_TEST_METRICS*, int>)(lpVtbl[65]))((IDWriteTextLayout2*)Unsafe.AsPointer(ref this), textPosition, isTrailingHit, pointX, pointY, hitTestMetrics);
+            return ((delegate* unmanaged<IDWriteTextLayout2*, uint, BOOL, float*, float*, DWRITE_HIT_TEST_METRICS*, int>)(lpVtbl[65]))((IDWriteTextLayout2*)Unsafe.AsPointer(ref this), textPosition, isTrailingHit, pointX, pointY, hitTestMetrics);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -547,17 +547,17 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(67)]
         [return: NativeTypeName("HRESULT")]
-        public int SetPairKerning([NativeTypeName("BOOL")] int isPairKerningEnabled, DWRITE_TEXT_RANGE textRange)
+        public int SetPairKerning(BOOL isPairKerningEnabled, DWRITE_TEXT_RANGE textRange)
         {
-            return ((delegate* unmanaged<IDWriteTextLayout2*, int, DWRITE_TEXT_RANGE, int>)(lpVtbl[67]))((IDWriteTextLayout2*)Unsafe.AsPointer(ref this), isPairKerningEnabled, textRange);
+            return ((delegate* unmanaged<IDWriteTextLayout2*, BOOL, DWRITE_TEXT_RANGE, int>)(lpVtbl[67]))((IDWriteTextLayout2*)Unsafe.AsPointer(ref this), isPairKerningEnabled, textRange);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(68)]
         [return: NativeTypeName("HRESULT")]
-        public int GetPairKerning([NativeTypeName("UINT32")] uint currentPosition, [NativeTypeName("BOOL *")] int* isPairKerningEnabled, DWRITE_TEXT_RANGE* textRange = null)
+        public int GetPairKerning([NativeTypeName("UINT32")] uint currentPosition, BOOL* isPairKerningEnabled, DWRITE_TEXT_RANGE* textRange = null)
         {
-            return ((delegate* unmanaged<IDWriteTextLayout2*, uint, int*, DWRITE_TEXT_RANGE*, int>)(lpVtbl[68]))((IDWriteTextLayout2*)Unsafe.AsPointer(ref this), currentPosition, isPairKerningEnabled, textRange);
+            return ((delegate* unmanaged<IDWriteTextLayout2*, uint, BOOL*, DWRITE_TEXT_RANGE*, int>)(lpVtbl[68]))((IDWriteTextLayout2*)Unsafe.AsPointer(ref this), currentPosition, isPairKerningEnabled, textRange);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -602,15 +602,14 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(74)]
         [return: NativeTypeName("HRESULT")]
-        public int SetLastLineWrapping([NativeTypeName("BOOL")] int isLastLineWrappingEnabled)
+        public int SetLastLineWrapping(BOOL isLastLineWrappingEnabled)
         {
-            return ((delegate* unmanaged<IDWriteTextLayout2*, int, int>)(lpVtbl[74]))((IDWriteTextLayout2*)Unsafe.AsPointer(ref this), isLastLineWrappingEnabled);
+            return ((delegate* unmanaged<IDWriteTextLayout2*, BOOL, int>)(lpVtbl[74]))((IDWriteTextLayout2*)Unsafe.AsPointer(ref this), isLastLineWrappingEnabled);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(75)]
-        [return: NativeTypeName("BOOL")]
-        public int GetLastLineWrapping()
+        public BOOL GetLastLineWrapping()
         {
             return ((delegate* unmanaged<IDWriteTextLayout2*, int>)(lpVtbl[75]))((IDWriteTextLayout2*)Unsafe.AsPointer(ref this));
         }

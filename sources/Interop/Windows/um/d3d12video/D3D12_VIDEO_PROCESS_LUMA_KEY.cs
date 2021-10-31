@@ -7,8 +7,7 @@ namespace TerraFX.Interop
 {
     public partial struct D3D12_VIDEO_PROCESS_LUMA_KEY
     {
-        [NativeTypeName("BOOL")]
-        public int Enable;
+        public BOOL Enable;
 
         [NativeTypeName("FLOAT")]
         public float Lower;

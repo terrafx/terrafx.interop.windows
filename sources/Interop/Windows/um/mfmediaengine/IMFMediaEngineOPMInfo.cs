@@ -43,9 +43,9 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
         [return: NativeTypeName("HRESULT")]
-        public int GetOPMInfo(MF_MEDIA_ENGINE_OPM_STATUS* pStatus, [NativeTypeName("BOOL *")] int* pConstricted)
+        public int GetOPMInfo(MF_MEDIA_ENGINE_OPM_STATUS* pStatus, BOOL* pConstricted)
         {
-            return ((delegate* unmanaged<IMFMediaEngineOPMInfo*, MF_MEDIA_ENGINE_OPM_STATUS*, int*, int>)(lpVtbl[3]))((IMFMediaEngineOPMInfo*)Unsafe.AsPointer(ref this), pStatus, pConstricted);
+            return ((delegate* unmanaged<IMFMediaEngineOPMInfo*, MF_MEDIA_ENGINE_OPM_STATUS*, BOOL*, int>)(lpVtbl[3]))((IMFMediaEngineOPMInfo*)Unsafe.AsPointer(ref this), pStatus, pConstricted);
         }
     }
 }

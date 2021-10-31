@@ -139,9 +139,9 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(15)]
         [return: NativeTypeName("HRESULT")]
-        public int SetKey([NativeTypeName("HKEY")] IntPtr hkey, [NativeTypeName("BOOL")] int fReadOnly)
+        public int SetKey([NativeTypeName("HKEY")] IntPtr hkey, BOOL fReadOnly)
         {
-            return ((delegate* unmanaged<ISpRegDataKey*, IntPtr, int, int>)(lpVtbl[15]))((ISpRegDataKey*)Unsafe.AsPointer(ref this), hkey, fReadOnly);
+            return ((delegate* unmanaged<ISpRegDataKey*, IntPtr, BOOL, int>)(lpVtbl[15]))((ISpRegDataKey*)Unsafe.AsPointer(ref this), hkey, fReadOnly);
         }
     }
 }

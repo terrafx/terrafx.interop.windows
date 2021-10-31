@@ -67,17 +67,17 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
         [return: NativeTypeName("HRESULT")]
-        public int OnTextUpdated([NativeTypeName("DWORD")] uint dwFlags, ITfRange* pRangeNew, [NativeTypeName("BOOL *")] int* pfAccept)
+        public int OnTextUpdated([NativeTypeName("DWORD")] uint dwFlags, ITfRange* pRangeNew, BOOL* pfAccept)
         {
-            return ((delegate* unmanaged<ITfPropertyStore*, uint, ITfRange*, int*, int>)(lpVtbl[6]))((ITfPropertyStore*)Unsafe.AsPointer(ref this), dwFlags, pRangeNew, pfAccept);
+            return ((delegate* unmanaged<ITfPropertyStore*, uint, ITfRange*, BOOL*, int>)(lpVtbl[6]))((ITfPropertyStore*)Unsafe.AsPointer(ref this), dwFlags, pRangeNew, pfAccept);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(7)]
         [return: NativeTypeName("HRESULT")]
-        public int Shrink(ITfRange* pRangeNew, [NativeTypeName("BOOL *")] int* pfFree)
+        public int Shrink(ITfRange* pRangeNew, BOOL* pfFree)
         {
-            return ((delegate* unmanaged<ITfPropertyStore*, ITfRange*, int*, int>)(lpVtbl[7]))((ITfPropertyStore*)Unsafe.AsPointer(ref this), pRangeNew, pfFree);
+            return ((delegate* unmanaged<ITfPropertyStore*, ITfRange*, BOOL*, int>)(lpVtbl[7]))((ITfPropertyStore*)Unsafe.AsPointer(ref this), pRangeNew, pfFree);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

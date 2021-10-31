@@ -83,9 +83,9 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(8)]
         [return: NativeTypeName("HRESULT")]
-        public int AddCheckButton([NativeTypeName("DWORD")] uint dwIDCtl, [NativeTypeName("LPCWSTR")] ushort* pszLabel, [NativeTypeName("BOOL")] int bChecked)
+        public int AddCheckButton([NativeTypeName("DWORD")] uint dwIDCtl, [NativeTypeName("LPCWSTR")] ushort* pszLabel, BOOL bChecked)
         {
-            return ((delegate* unmanaged<IFileDialogCustomize*, uint, ushort*, int, int>)(lpVtbl[8]))((IFileDialogCustomize*)Unsafe.AsPointer(ref this), dwIDCtl, pszLabel, bChecked);
+            return ((delegate* unmanaged<IFileDialogCustomize*, uint, ushort*, BOOL, int>)(lpVtbl[8]))((IFileDialogCustomize*)Unsafe.AsPointer(ref this), dwIDCtl, pszLabel, bChecked);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -155,17 +155,17 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(17)]
         [return: NativeTypeName("HRESULT")]
-        public int GetCheckButtonState([NativeTypeName("DWORD")] uint dwIDCtl, [NativeTypeName("BOOL *")] int* pbChecked)
+        public int GetCheckButtonState([NativeTypeName("DWORD")] uint dwIDCtl, BOOL* pbChecked)
         {
-            return ((delegate* unmanaged<IFileDialogCustomize*, uint, int*, int>)(lpVtbl[17]))((IFileDialogCustomize*)Unsafe.AsPointer(ref this), dwIDCtl, pbChecked);
+            return ((delegate* unmanaged<IFileDialogCustomize*, uint, BOOL*, int>)(lpVtbl[17]))((IFileDialogCustomize*)Unsafe.AsPointer(ref this), dwIDCtl, pbChecked);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(18)]
         [return: NativeTypeName("HRESULT")]
-        public int SetCheckButtonState([NativeTypeName("DWORD")] uint dwIDCtl, [NativeTypeName("BOOL")] int bChecked)
+        public int SetCheckButtonState([NativeTypeName("DWORD")] uint dwIDCtl, BOOL bChecked)
         {
-            return ((delegate* unmanaged<IFileDialogCustomize*, uint, int, int>)(lpVtbl[18]))((IFileDialogCustomize*)Unsafe.AsPointer(ref this), dwIDCtl, bChecked);
+            return ((delegate* unmanaged<IFileDialogCustomize*, uint, BOOL, int>)(lpVtbl[18]))((IFileDialogCustomize*)Unsafe.AsPointer(ref this), dwIDCtl, bChecked);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

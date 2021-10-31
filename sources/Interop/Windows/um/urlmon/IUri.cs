@@ -67,9 +67,9 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
         [return: NativeTypeName("HRESULT")]
-        public int HasProperty(Uri_PROPERTY uriProp, [NativeTypeName("BOOL *")] int* pfHasProperty)
+        public int HasProperty(Uri_PROPERTY uriProp, BOOL* pfHasProperty)
         {
-            return ((delegate* unmanaged<IUri*, Uri_PROPERTY, int*, int>)(lpVtbl[6]))((IUri*)Unsafe.AsPointer(ref this), uriProp, pfHasProperty);
+            return ((delegate* unmanaged<IUri*, Uri_PROPERTY, BOOL*, int>)(lpVtbl[6]))((IUri*)Unsafe.AsPointer(ref this), uriProp, pfHasProperty);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -235,9 +235,9 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(27)]
         [return: NativeTypeName("HRESULT")]
-        public int IsEqual(IUri* pUri, [NativeTypeName("BOOL *")] int* pfEqual)
+        public int IsEqual(IUri* pUri, BOOL* pfEqual)
         {
-            return ((delegate* unmanaged<IUri*, IUri*, int*, int>)(lpVtbl[27]))((IUri*)Unsafe.AsPointer(ref this), pUri, pfEqual);
+            return ((delegate* unmanaged<IUri*, IUri*, BOOL*, int>)(lpVtbl[27]))((IUri*)Unsafe.AsPointer(ref this), pUri, pfEqual);
         }
     }
 }

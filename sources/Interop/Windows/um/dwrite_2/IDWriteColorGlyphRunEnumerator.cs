@@ -43,9 +43,9 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
         [return: NativeTypeName("HRESULT")]
-        public int MoveNext([NativeTypeName("BOOL *")] int* hasRun)
+        public int MoveNext(BOOL* hasRun)
         {
-            return ((delegate* unmanaged<IDWriteColorGlyphRunEnumerator*, int*, int>)(lpVtbl[3]))((IDWriteColorGlyphRunEnumerator*)Unsafe.AsPointer(ref this), hasRun);
+            return ((delegate* unmanaged<IDWriteColorGlyphRunEnumerator*, BOOL*, int>)(lpVtbl[3]))((IDWriteColorGlyphRunEnumerator*)Unsafe.AsPointer(ref this), hasRun);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

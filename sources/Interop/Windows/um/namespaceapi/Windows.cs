@@ -27,8 +27,7 @@ namespace TerraFX.Interop
         public static extern IntPtr CreateBoundaryDescriptorW([NativeTypeName("LPCWSTR")] ushort* Name, [NativeTypeName("ULONG")] uint Flags);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int AddSIDToBoundaryDescriptor([NativeTypeName("HANDLE *")] IntPtr* BoundaryDescriptor, [NativeTypeName("PSID")] void* RequiredSid);
+        public static extern BOOL AddSIDToBoundaryDescriptor([NativeTypeName("HANDLE *")] IntPtr* BoundaryDescriptor, [NativeTypeName("PSID")] void* RequiredSid);
 
         [DllImport("kernel32", ExactSpelling = true)]
         public static extern void DeleteBoundaryDescriptor([NativeTypeName("HANDLE")] IntPtr BoundaryDescriptor);

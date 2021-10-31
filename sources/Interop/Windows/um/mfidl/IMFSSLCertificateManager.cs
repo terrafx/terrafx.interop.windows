@@ -67,17 +67,17 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
         [return: NativeTypeName("HRESULT")]
-        public int GetCertificatePolicy([NativeTypeName("LPCWSTR")] ushort* pszURL, [NativeTypeName("BOOL *")] int* pfOverrideAutomaticCheck, [NativeTypeName("BOOL *")] int* pfClientCertificateAvailable)
+        public int GetCertificatePolicy([NativeTypeName("LPCWSTR")] ushort* pszURL, BOOL* pfOverrideAutomaticCheck, BOOL* pfClientCertificateAvailable)
         {
-            return ((delegate* unmanaged<IMFSSLCertificateManager*, ushort*, int*, int*, int>)(lpVtbl[6]))((IMFSSLCertificateManager*)Unsafe.AsPointer(ref this), pszURL, pfOverrideAutomaticCheck, pfClientCertificateAvailable);
+            return ((delegate* unmanaged<IMFSSLCertificateManager*, ushort*, BOOL*, BOOL*, int>)(lpVtbl[6]))((IMFSSLCertificateManager*)Unsafe.AsPointer(ref this), pszURL, pfOverrideAutomaticCheck, pfClientCertificateAvailable);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(7)]
         [return: NativeTypeName("HRESULT")]
-        public int OnServerCertificate([NativeTypeName("LPCWSTR")] ushort* pszURL, [NativeTypeName("BYTE *")] byte* pbData, [NativeTypeName("DWORD")] uint cbData, [NativeTypeName("BOOL *")] int* pfIsGood)
+        public int OnServerCertificate([NativeTypeName("LPCWSTR")] ushort* pszURL, [NativeTypeName("BYTE *")] byte* pbData, [NativeTypeName("DWORD")] uint cbData, BOOL* pfIsGood)
         {
-            return ((delegate* unmanaged<IMFSSLCertificateManager*, ushort*, byte*, uint, int*, int>)(lpVtbl[7]))((IMFSSLCertificateManager*)Unsafe.AsPointer(ref this), pszURL, pbData, cbData, pfIsGood);
+            return ((delegate* unmanaged<IMFSSLCertificateManager*, ushort*, byte*, uint, BOOL*, int>)(lpVtbl[7]))((IMFSSLCertificateManager*)Unsafe.AsPointer(ref this), pszURL, pbData, cbData, pfIsGood);
         }
     }
 }

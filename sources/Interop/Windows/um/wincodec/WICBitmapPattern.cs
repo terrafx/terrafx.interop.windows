@@ -18,7 +18,6 @@ namespace TerraFX.Interop
         [NativeTypeName("BYTE *")]
         public byte* Mask;
 
-        [NativeTypeName("BOOL")]
-        public int EndOfStream;
+        public BOOL EndOfStream;
     }
 }

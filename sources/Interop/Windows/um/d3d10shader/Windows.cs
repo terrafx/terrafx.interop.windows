@@ -118,7 +118,7 @@ namespace TerraFX.Interop
 
         [DllImport("d3d10", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
-        public static extern int D3D10DisassembleShader([NativeTypeName("const void *")] void* pShader, [NativeTypeName("SIZE_T")] nuint BytecodeLength, [NativeTypeName("BOOL")] int EnableColorCode, [NativeTypeName("LPCSTR")] sbyte* pComments, [NativeTypeName("ID3D10Blob **")] ID3DBlob** ppDisassembly);
+        public static extern int D3D10DisassembleShader([NativeTypeName("const void *")] void* pShader, [NativeTypeName("SIZE_T")] nuint BytecodeLength, BOOL EnableColorCode, [NativeTypeName("LPCSTR")] sbyte* pComments, [NativeTypeName("ID3D10Blob **")] ID3DBlob** ppDisassembly);
 
         [DllImport("d3d10", ExactSpelling = true)]
         [return: NativeTypeName("LPCSTR")]

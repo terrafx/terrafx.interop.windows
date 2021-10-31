@@ -19,8 +19,7 @@ namespace TerraFX.Interop
         [NativeTypeName("LPVOID")]
         public void* pvOidSpecificInfo;
 
-        [NativeTypeName("BOOL")]
-        public int fHasFreshnessTime;
+        public BOOL fHasFreshnessTime;
 
         [NativeTypeName("DWORD")]
         public uint dwFreshnessTime;

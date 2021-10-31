@@ -13,8 +13,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("BOOL")]
-        public int IsValid()
+        public BOOL IsValid()
         {
             return ((delegate* unmanaged<ID3D10EffectType*, int>)(lpVtbl[0]))((ID3D10EffectType*)Unsafe.AsPointer(ref this));
         }

@@ -20,8 +20,7 @@ namespace TerraFX.Interop
         public const uint c_DwmMaxAdapters = 16;
 
         [DllImport("dwmapi", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int DwmDefWindowProc([NativeTypeName("HWND")] IntPtr hWnd, [NativeTypeName("UINT")] uint msg, [NativeTypeName("WPARAM")] nuint wParam, [NativeTypeName("LPARAM")] nint lParam, [NativeTypeName("LRESULT *")] nint* plResult);
+        public static extern BOOL DwmDefWindowProc([NativeTypeName("HWND")] IntPtr hWnd, [NativeTypeName("UINT")] uint msg, [NativeTypeName("WPARAM")] nuint wParam, [NativeTypeName("LPARAM")] nint lParam, [NativeTypeName("LRESULT *")] nint* plResult);
 
         [DllImport("dwmapi", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
@@ -33,7 +32,7 @@ namespace TerraFX.Interop
 
         [DllImport("dwmapi", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
-        public static extern int DwmEnableMMCSS([NativeTypeName("BOOL")] int fEnableMMCSS);
+        public static extern int DwmEnableMMCSS(BOOL fEnableMMCSS);
 
         [DllImport("dwmapi", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
@@ -41,7 +40,7 @@ namespace TerraFX.Interop
 
         [DllImport("dwmapi", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
-        public static extern int DwmGetColorizationColor([NativeTypeName("DWORD *")] uint* pcrColorization, [NativeTypeName("BOOL *")] int* pfOpaqueBlend);
+        public static extern int DwmGetColorizationColor([NativeTypeName("DWORD *")] uint* pcrColorization, BOOL* pfOpaqueBlend);
 
         [DllImport("dwmapi", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
@@ -53,11 +52,11 @@ namespace TerraFX.Interop
 
         [DllImport("dwmapi", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
-        public static extern int DwmIsCompositionEnabled([NativeTypeName("BOOL *")] int* pfEnabled);
+        public static extern int DwmIsCompositionEnabled(BOOL* pfEnabled);
 
         [DllImport("dwmapi", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
-        public static extern int DwmModifyPreviousDxFrameDuration([NativeTypeName("HWND")] IntPtr hwnd, [NativeTypeName("INT")] int cRefreshes, [NativeTypeName("BOOL")] int fRelative);
+        public static extern int DwmModifyPreviousDxFrameDuration([NativeTypeName("HWND")] IntPtr hwnd, [NativeTypeName("INT")] int cRefreshes, BOOL fRelative);
 
         [DllImport("dwmapi", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
@@ -121,7 +120,7 @@ namespace TerraFX.Interop
 
         [DllImport("dwmapi", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
-        public static extern int DwmGetTransportAttributes([NativeTypeName("BOOL *")] int* pfIsRemoting, [NativeTypeName("BOOL *")] int* pfIsConnected, [NativeTypeName("DWORD *")] uint* pDwGeneration);
+        public static extern int DwmGetTransportAttributes(BOOL* pfIsRemoting, BOOL* pfIsConnected, [NativeTypeName("DWORD *")] uint* pDwGeneration);
 
         [DllImport("dwmapi", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
@@ -133,7 +132,7 @@ namespace TerraFX.Interop
 
         [DllImport("dwmapi", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
-        public static extern int DwmTetherContact([NativeTypeName("DWORD")] uint dwPointerID, [NativeTypeName("BOOL")] int fEnable, POINT ptTether);
+        public static extern int DwmTetherContact([NativeTypeName("DWORD")] uint dwPointerID, BOOL fEnable, POINT ptTether);
 
         [DllImport("dwmapi", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]

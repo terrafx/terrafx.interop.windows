@@ -403,17 +403,17 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(48)]
         [return: NativeTypeName("HRESULT")]
-        public int Process([NativeTypeName("BOOL *")] int* completed)
+        public int Process(BOOL* completed)
         {
-            return ((delegate* unmanaged<IInertiaProcessor*, int*, int>)(lpVtbl[48]))((IInertiaProcessor*)Unsafe.AsPointer(ref this), completed);
+            return ((delegate* unmanaged<IInertiaProcessor*, BOOL*, int>)(lpVtbl[48]))((IInertiaProcessor*)Unsafe.AsPointer(ref this), completed);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(49)]
         [return: NativeTypeName("HRESULT")]
-        public int ProcessTime([NativeTypeName("DWORD")] uint timestamp, [NativeTypeName("BOOL *")] int* completed)
+        public int ProcessTime([NativeTypeName("DWORD")] uint timestamp, BOOL* completed)
         {
-            return ((delegate* unmanaged<IInertiaProcessor*, uint, int*, int>)(lpVtbl[49]))((IInertiaProcessor*)Unsafe.AsPointer(ref this), timestamp, completed);
+            return ((delegate* unmanaged<IInertiaProcessor*, uint, BOOL*, int>)(lpVtbl[49]))((IInertiaProcessor*)Unsafe.AsPointer(ref this), timestamp, completed);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

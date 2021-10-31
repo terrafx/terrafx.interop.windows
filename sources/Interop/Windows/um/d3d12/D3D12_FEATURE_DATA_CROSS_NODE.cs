@@ -9,7 +9,6 @@ namespace TerraFX.Interop
     {
         public D3D12_CROSS_NODE_SHARING_TIER SharingTier;
 
-        [NativeTypeName("BOOL")]
-        public int AtomicShaderInstructions;
+        public BOOL AtomicShaderInstructions;
     }
 }

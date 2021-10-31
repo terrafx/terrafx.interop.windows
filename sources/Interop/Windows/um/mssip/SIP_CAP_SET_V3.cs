@@ -16,8 +16,7 @@ namespace TerraFX.Interop
         [NativeTypeName("DWORD")]
         public uint dwVersion;
 
-        [NativeTypeName("BOOL")]
-        public int isMultiSign;
+        public BOOL isMultiSign;
 
         [NativeTypeName("_SIP_CAP_SET_V3::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/mssip.h:193:5)")]
         public _Anonymous_e__Union Anonymous;

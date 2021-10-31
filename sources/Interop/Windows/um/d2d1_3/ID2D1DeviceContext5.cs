@@ -619,8 +619,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(56)]
-        [return: NativeTypeName("BOOL")]
-        public int IsSupported([NativeTypeName("const D2D1_RENDER_TARGET_PROPERTIES *")] D2D1_RENDER_TARGET_PROPERTIES* renderTargetProperties)
+        public BOOL IsSupported([NativeTypeName("const D2D1_RENDER_TARGET_PROPERTIES *")] D2D1_RENDER_TARGET_PROPERTIES* renderTargetProperties)
         {
             return ((delegate* unmanaged<ID2D1DeviceContext5*, D2D1_RENDER_TARGET_PROPERTIES*, int>)(lpVtbl[56]))((ID2D1DeviceContext5*)Unsafe.AsPointer(ref this), renderTargetProperties);
         }
@@ -715,16 +714,14 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(68)]
-        [return: NativeTypeName("BOOL")]
-        public int IsDxgiFormatSupported(DXGI_FORMAT format)
+        public BOOL IsDxgiFormatSupported(DXGI_FORMAT format)
         {
             return ((delegate* unmanaged<ID2D1DeviceContext5*, DXGI_FORMAT, int>)(lpVtbl[68]))((ID2D1DeviceContext5*)Unsafe.AsPointer(ref this), format);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(69)]
-        [return: NativeTypeName("BOOL")]
-        public int IsBufferPrecisionSupported(D2D1_BUFFER_PRECISION bufferPrecision)
+        public BOOL IsBufferPrecisionSupported(D2D1_BUFFER_PRECISION bufferPrecision)
         {
             return ((delegate* unmanaged<ID2D1DeviceContext5*, D2D1_BUFFER_PRECISION, int>)(lpVtbl[69]))((ID2D1DeviceContext5*)Unsafe.AsPointer(ref this), bufferPrecision);
         }
@@ -1052,17 +1049,17 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(113)]
         [return: NativeTypeName("HRESULT")]
-        public int GetColorBitmapGlyphImage(DWRITE_GLYPH_IMAGE_FORMATS glyphImageFormat, [NativeTypeName("D2D1_POINT_2F")] D2D_POINT_2F glyphOrigin, IDWriteFontFace* fontFace, [NativeTypeName("FLOAT")] float fontEmSize, [NativeTypeName("UINT16")] ushort glyphIndex, [NativeTypeName("BOOL")] int isSideways, [NativeTypeName("const D2D1_MATRIX_3X2_F *")] D2D_MATRIX_3X2_F* worldTransform, [NativeTypeName("FLOAT")] float dpiX, [NativeTypeName("FLOAT")] float dpiY, [NativeTypeName("D2D1_MATRIX_3X2_F *")] D2D_MATRIX_3X2_F* glyphTransform, ID2D1Image** glyphImage)
+        public int GetColorBitmapGlyphImage(DWRITE_GLYPH_IMAGE_FORMATS glyphImageFormat, [NativeTypeName("D2D1_POINT_2F")] D2D_POINT_2F glyphOrigin, IDWriteFontFace* fontFace, [NativeTypeName("FLOAT")] float fontEmSize, [NativeTypeName("UINT16")] ushort glyphIndex, BOOL isSideways, [NativeTypeName("const D2D1_MATRIX_3X2_F *")] D2D_MATRIX_3X2_F* worldTransform, [NativeTypeName("FLOAT")] float dpiX, [NativeTypeName("FLOAT")] float dpiY, [NativeTypeName("D2D1_MATRIX_3X2_F *")] D2D_MATRIX_3X2_F* glyphTransform, ID2D1Image** glyphImage)
         {
-            return ((delegate* unmanaged<ID2D1DeviceContext5*, DWRITE_GLYPH_IMAGE_FORMATS, D2D_POINT_2F, IDWriteFontFace*, float, ushort, int, D2D_MATRIX_3X2_F*, float, float, D2D_MATRIX_3X2_F*, ID2D1Image**, int>)(lpVtbl[113]))((ID2D1DeviceContext5*)Unsafe.AsPointer(ref this), glyphImageFormat, glyphOrigin, fontFace, fontEmSize, glyphIndex, isSideways, worldTransform, dpiX, dpiY, glyphTransform, glyphImage);
+            return ((delegate* unmanaged<ID2D1DeviceContext5*, DWRITE_GLYPH_IMAGE_FORMATS, D2D_POINT_2F, IDWriteFontFace*, float, ushort, BOOL, D2D_MATRIX_3X2_F*, float, float, D2D_MATRIX_3X2_F*, ID2D1Image**, int>)(lpVtbl[113]))((ID2D1DeviceContext5*)Unsafe.AsPointer(ref this), glyphImageFormat, glyphOrigin, fontFace, fontEmSize, glyphIndex, isSideways, worldTransform, dpiX, dpiY, glyphTransform, glyphImage);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(114)]
         [return: NativeTypeName("HRESULT")]
-        public int GetSvgGlyphImage([NativeTypeName("D2D1_POINT_2F")] D2D_POINT_2F glyphOrigin, IDWriteFontFace* fontFace, [NativeTypeName("FLOAT")] float fontEmSize, [NativeTypeName("UINT16")] ushort glyphIndex, [NativeTypeName("BOOL")] int isSideways, [NativeTypeName("const D2D1_MATRIX_3X2_F *")] D2D_MATRIX_3X2_F* worldTransform, ID2D1Brush* defaultFillBrush, ID2D1SvgGlyphStyle* svgGlyphStyle, [NativeTypeName("UINT32")] uint colorPaletteIndex, [NativeTypeName("D2D1_MATRIX_3X2_F *")] D2D_MATRIX_3X2_F* glyphTransform, ID2D1CommandList** glyphImage)
+        public int GetSvgGlyphImage([NativeTypeName("D2D1_POINT_2F")] D2D_POINT_2F glyphOrigin, IDWriteFontFace* fontFace, [NativeTypeName("FLOAT")] float fontEmSize, [NativeTypeName("UINT16")] ushort glyphIndex, BOOL isSideways, [NativeTypeName("const D2D1_MATRIX_3X2_F *")] D2D_MATRIX_3X2_F* worldTransform, ID2D1Brush* defaultFillBrush, ID2D1SvgGlyphStyle* svgGlyphStyle, [NativeTypeName("UINT32")] uint colorPaletteIndex, [NativeTypeName("D2D1_MATRIX_3X2_F *")] D2D_MATRIX_3X2_F* glyphTransform, ID2D1CommandList** glyphImage)
         {
-            return ((delegate* unmanaged<ID2D1DeviceContext5*, D2D_POINT_2F, IDWriteFontFace*, float, ushort, int, D2D_MATRIX_3X2_F*, ID2D1Brush*, ID2D1SvgGlyphStyle*, uint, D2D_MATRIX_3X2_F*, ID2D1CommandList**, int>)(lpVtbl[114]))((ID2D1DeviceContext5*)Unsafe.AsPointer(ref this), glyphOrigin, fontFace, fontEmSize, glyphIndex, isSideways, worldTransform, defaultFillBrush, svgGlyphStyle, colorPaletteIndex, glyphTransform, glyphImage);
+            return ((delegate* unmanaged<ID2D1DeviceContext5*, D2D_POINT_2F, IDWriteFontFace*, float, ushort, BOOL, D2D_MATRIX_3X2_F*, ID2D1Brush*, ID2D1SvgGlyphStyle*, uint, D2D_MATRIX_3X2_F*, ID2D1CommandList**, int>)(lpVtbl[114]))((ID2D1DeviceContext5*)Unsafe.AsPointer(ref this), glyphOrigin, fontFace, fontEmSize, glyphIndex, isSideways, worldTransform, defaultFillBrush, svgGlyphStyle, colorPaletteIndex, glyphTransform, glyphImage);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

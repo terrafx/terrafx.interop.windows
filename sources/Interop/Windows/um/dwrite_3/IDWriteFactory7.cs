@@ -43,9 +43,9 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
         [return: NativeTypeName("HRESULT")]
-        public int GetSystemFontCollection(IDWriteFontCollection** fontCollection, [NativeTypeName("BOOL")] int checkForUpdates = 0)
+        public int GetSystemFontCollection(IDWriteFontCollection** fontCollection, [Optional] BOOL checkForUpdates)
         {
-            return ((delegate* unmanaged<IDWriteFactory7*, IDWriteFontCollection**, int, int>)(lpVtbl[3]))((IDWriteFactory7*)Unsafe.AsPointer(ref this), fontCollection, checkForUpdates);
+            return ((delegate* unmanaged<IDWriteFactory7*, IDWriteFontCollection**, BOOL, int>)(lpVtbl[3]))((IDWriteFactory7*)Unsafe.AsPointer(ref this), fontCollection, checkForUpdates);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -171,9 +171,9 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(19)]
         [return: NativeTypeName("HRESULT")]
-        public int CreateGdiCompatibleTextLayout([NativeTypeName("const WCHAR *")] ushort* @string, [NativeTypeName("UINT32")] uint stringLength, IDWriteTextFormat* textFormat, [NativeTypeName("FLOAT")] float layoutWidth, [NativeTypeName("FLOAT")] float layoutHeight, [NativeTypeName("FLOAT")] float pixelsPerDip, [NativeTypeName("const DWRITE_MATRIX *")] DWRITE_MATRIX* transform, [NativeTypeName("BOOL")] int useGdiNatural, IDWriteTextLayout** textLayout)
+        public int CreateGdiCompatibleTextLayout([NativeTypeName("const WCHAR *")] ushort* @string, [NativeTypeName("UINT32")] uint stringLength, IDWriteTextFormat* textFormat, [NativeTypeName("FLOAT")] float layoutWidth, [NativeTypeName("FLOAT")] float layoutHeight, [NativeTypeName("FLOAT")] float pixelsPerDip, [NativeTypeName("const DWRITE_MATRIX *")] DWRITE_MATRIX* transform, BOOL useGdiNatural, IDWriteTextLayout** textLayout)
         {
-            return ((delegate* unmanaged<IDWriteFactory7*, ushort*, uint, IDWriteTextFormat*, float, float, float, DWRITE_MATRIX*, int, IDWriteTextLayout**, int>)(lpVtbl[19]))((IDWriteFactory7*)Unsafe.AsPointer(ref this), @string, stringLength, textFormat, layoutWidth, layoutHeight, pixelsPerDip, transform, useGdiNatural, textLayout);
+            return ((delegate* unmanaged<IDWriteFactory7*, ushort*, uint, IDWriteTextFormat*, float, float, float, DWRITE_MATRIX*, BOOL, IDWriteTextLayout**, int>)(lpVtbl[19]))((IDWriteFactory7*)Unsafe.AsPointer(ref this), @string, stringLength, textFormat, layoutWidth, layoutHeight, pixelsPerDip, transform, useGdiNatural, textLayout);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -195,9 +195,9 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(22)]
         [return: NativeTypeName("HRESULT")]
-        public int CreateNumberSubstitution(DWRITE_NUMBER_SUBSTITUTION_METHOD substitutionMethod, [NativeTypeName("const WCHAR *")] ushort* localeName, [NativeTypeName("BOOL")] int ignoreUserOverride, IDWriteNumberSubstitution** numberSubstitution)
+        public int CreateNumberSubstitution(DWRITE_NUMBER_SUBSTITUTION_METHOD substitutionMethod, [NativeTypeName("const WCHAR *")] ushort* localeName, BOOL ignoreUserOverride, IDWriteNumberSubstitution** numberSubstitution)
         {
-            return ((delegate* unmanaged<IDWriteFactory7*, DWRITE_NUMBER_SUBSTITUTION_METHOD, ushort*, int, IDWriteNumberSubstitution**, int>)(lpVtbl[22]))((IDWriteFactory7*)Unsafe.AsPointer(ref this), substitutionMethod, localeName, ignoreUserOverride, numberSubstitution);
+            return ((delegate* unmanaged<IDWriteFactory7*, DWRITE_NUMBER_SUBSTITUTION_METHOD, ushort*, BOOL, IDWriteNumberSubstitution**, int>)(lpVtbl[22]))((IDWriteFactory7*)Unsafe.AsPointer(ref this), substitutionMethod, localeName, ignoreUserOverride, numberSubstitution);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -211,9 +211,9 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(24)]
         [return: NativeTypeName("HRESULT")]
-        public int GetEudcFontCollection(IDWriteFontCollection** fontCollection, [NativeTypeName("BOOL")] int checkForUpdates = 0)
+        public int GetEudcFontCollection(IDWriteFontCollection** fontCollection, [Optional] BOOL checkForUpdates)
         {
-            return ((delegate* unmanaged<IDWriteFactory7*, IDWriteFontCollection**, int, int>)(lpVtbl[24]))((IDWriteFactory7*)Unsafe.AsPointer(ref this), fontCollection, checkForUpdates);
+            return ((delegate* unmanaged<IDWriteFactory7*, IDWriteFontCollection**, BOOL, int>)(lpVtbl[24]))((IDWriteFactory7*)Unsafe.AsPointer(ref this), fontCollection, checkForUpdates);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -323,9 +323,9 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(38)]
         [return: NativeTypeName("HRESULT")]
-        public int GetSystemFontCollection([NativeTypeName("BOOL")] int includeDownloadableFonts, IDWriteFontCollection1** fontCollection, [NativeTypeName("BOOL")] int checkForUpdates = 0)
+        public int GetSystemFontCollection(BOOL includeDownloadableFonts, IDWriteFontCollection1** fontCollection, [Optional] BOOL checkForUpdates)
         {
-            return ((delegate* unmanaged<IDWriteFactory7*, int, IDWriteFontCollection1**, int, int>)(lpVtbl[38]))((IDWriteFactory7*)Unsafe.AsPointer(ref this), includeDownloadableFonts, fontCollection, checkForUpdates);
+            return ((delegate* unmanaged<IDWriteFactory7*, BOOL, IDWriteFontCollection1**, BOOL, int>)(lpVtbl[38]))((IDWriteFactory7*)Unsafe.AsPointer(ref this), includeDownloadableFonts, fontCollection, checkForUpdates);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -418,17 +418,17 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(50)]
         [return: NativeTypeName("HRESULT")]
-        public int GetSystemFontSet([NativeTypeName("BOOL")] int includeDownloadableFonts, IDWriteFontSet1** fontSet)
+        public int GetSystemFontSet(BOOL includeDownloadableFonts, IDWriteFontSet1** fontSet)
         {
-            return ((delegate* unmanaged<IDWriteFactory7*, int, IDWriteFontSet1**, int>)(lpVtbl[50]))((IDWriteFactory7*)Unsafe.AsPointer(ref this), includeDownloadableFonts, fontSet);
+            return ((delegate* unmanaged<IDWriteFactory7*, BOOL, IDWriteFontSet1**, int>)(lpVtbl[50]))((IDWriteFactory7*)Unsafe.AsPointer(ref this), includeDownloadableFonts, fontSet);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(51)]
         [return: NativeTypeName("HRESULT")]
-        public int GetSystemFontCollection([NativeTypeName("BOOL")] int includeDownloadableFonts, DWRITE_FONT_FAMILY_MODEL fontFamilyModel, IDWriteFontCollection2** fontCollection)
+        public int GetSystemFontCollection(BOOL includeDownloadableFonts, DWRITE_FONT_FAMILY_MODEL fontFamilyModel, IDWriteFontCollection2** fontCollection)
         {
-            return ((delegate* unmanaged<IDWriteFactory7*, int, DWRITE_FONT_FAMILY_MODEL, IDWriteFontCollection2**, int>)(lpVtbl[51]))((IDWriteFactory7*)Unsafe.AsPointer(ref this), includeDownloadableFonts, fontFamilyModel, fontCollection);
+            return ((delegate* unmanaged<IDWriteFactory7*, BOOL, DWRITE_FONT_FAMILY_MODEL, IDWriteFontCollection2**, int>)(lpVtbl[51]))((IDWriteFactory7*)Unsafe.AsPointer(ref this), includeDownloadableFonts, fontFamilyModel, fontCollection);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -458,17 +458,17 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(55)]
         [return: NativeTypeName("HRESULT")]
-        public int GetSystemFontSet([NativeTypeName("BOOL")] int includeDownloadableFonts, IDWriteFontSet2** fontSet)
+        public int GetSystemFontSet(BOOL includeDownloadableFonts, IDWriteFontSet2** fontSet)
         {
-            return ((delegate* unmanaged<IDWriteFactory7*, int, IDWriteFontSet2**, int>)(lpVtbl[55]))((IDWriteFactory7*)Unsafe.AsPointer(ref this), includeDownloadableFonts, fontSet);
+            return ((delegate* unmanaged<IDWriteFactory7*, BOOL, IDWriteFontSet2**, int>)(lpVtbl[55]))((IDWriteFactory7*)Unsafe.AsPointer(ref this), includeDownloadableFonts, fontSet);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(56)]
         [return: NativeTypeName("HRESULT")]
-        public int GetSystemFontCollection([NativeTypeName("BOOL")] int includeDownloadableFonts, DWRITE_FONT_FAMILY_MODEL fontFamilyModel, IDWriteFontCollection3** fontCollection)
+        public int GetSystemFontCollection(BOOL includeDownloadableFonts, DWRITE_FONT_FAMILY_MODEL fontFamilyModel, IDWriteFontCollection3** fontCollection)
         {
-            return ((delegate* unmanaged<IDWriteFactory7*, int, DWRITE_FONT_FAMILY_MODEL, IDWriteFontCollection3**, int>)(lpVtbl[56]))((IDWriteFactory7*)Unsafe.AsPointer(ref this), includeDownloadableFonts, fontFamilyModel, fontCollection);
+            return ((delegate* unmanaged<IDWriteFactory7*, BOOL, DWRITE_FONT_FAMILY_MODEL, IDWriteFontCollection3**, int>)(lpVtbl[56]))((IDWriteFactory7*)Unsafe.AsPointer(ref this), includeDownloadableFonts, fontFamilyModel, fontCollection);
         }
     }
 }

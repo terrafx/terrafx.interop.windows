@@ -147,9 +147,9 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(16)]
         [return: NativeTypeName("HRESULT")]
-        public int SetDuckingPreference([NativeTypeName("BOOL")] int optOut)
+        public int SetDuckingPreference(BOOL optOut)
         {
-            return ((delegate* unmanaged<IAudioSessionControl2*, int, int>)(lpVtbl[16]))((IAudioSessionControl2*)Unsafe.AsPointer(ref this), optOut);
+            return ((delegate* unmanaged<IAudioSessionControl2*, BOOL, int>)(lpVtbl[16]))((IAudioSessionControl2*)Unsafe.AsPointer(ref this), optOut);
         }
     }
 }

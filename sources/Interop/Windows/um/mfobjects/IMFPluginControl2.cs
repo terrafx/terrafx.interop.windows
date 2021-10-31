@@ -83,9 +83,9 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(8)]
         [return: NativeTypeName("HRESULT")]
-        public int SetDisabled([NativeTypeName("DWORD")] uint pluginType, [NativeTypeName("const IID &")] Guid* clsid, [NativeTypeName("BOOL")] int disabled)
+        public int SetDisabled([NativeTypeName("DWORD")] uint pluginType, [NativeTypeName("const IID &")] Guid* clsid, BOOL disabled)
         {
-            return ((delegate* unmanaged<IMFPluginControl2*, uint, Guid*, int, int>)(lpVtbl[8]))((IMFPluginControl2*)Unsafe.AsPointer(ref this), pluginType, clsid, disabled);
+            return ((delegate* unmanaged<IMFPluginControl2*, uint, Guid*, BOOL, int>)(lpVtbl[8]))((IMFPluginControl2*)Unsafe.AsPointer(ref this), pluginType, clsid, disabled);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

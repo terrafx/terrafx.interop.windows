@@ -51,9 +51,9 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
         [return: NativeTypeName("HRESULT")]
-        public int StopAt([NativeTypeName("const REFERENCE_TIME *")] long* ptStop, [NativeTypeName("BOOL")] int bSendExtra, [NativeTypeName("DWORD")] uint dwCookie)
+        public int StopAt([NativeTypeName("const REFERENCE_TIME *")] long* ptStop, BOOL bSendExtra, [NativeTypeName("DWORD")] uint dwCookie)
         {
-            return ((delegate* unmanaged<IAMStreamControl*, long*, int, uint, int>)(lpVtbl[4]))((IAMStreamControl*)Unsafe.AsPointer(ref this), ptStop, bSendExtra, dwCookie);
+            return ((delegate* unmanaged<IAMStreamControl*, long*, BOOL, uint, int>)(lpVtbl[4]))((IAMStreamControl*)Unsafe.AsPointer(ref this), ptStop, bSendExtra, dwCookie);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

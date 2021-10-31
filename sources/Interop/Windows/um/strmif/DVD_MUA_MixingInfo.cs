@@ -7,17 +7,13 @@ namespace TerraFX.Interop
 {
     public partial struct DVD_MUA_MixingInfo
     {
-        [NativeTypeName("BOOL")]
-        public int fMixTo0;
+        public BOOL fMixTo0;
 
-        [NativeTypeName("BOOL")]
-        public int fMixTo1;
+        public BOOL fMixTo1;
 
-        [NativeTypeName("BOOL")]
-        public int fMix0InPhase;
+        public BOOL fMix0InPhase;
 
-        [NativeTypeName("BOOL")]
-        public int fMix1InPhase;
+        public BOOL fMix1InPhase;
 
         [NativeTypeName("DWORD")]
         public uint dwSpeakerPosition;

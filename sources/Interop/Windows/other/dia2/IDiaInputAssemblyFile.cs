@@ -67,9 +67,9 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
         [return: NativeTypeName("HRESULT")]
-        public int get_pdbAvailableAtILMerge([NativeTypeName("BOOL *")] int* pRetVal)
+        public int get_pdbAvailableAtILMerge(BOOL* pRetVal)
         {
-            return ((delegate* unmanaged<IDiaInputAssemblyFile*, int*, int>)(lpVtbl[6]))((IDiaInputAssemblyFile*)Unsafe.AsPointer(ref this), pRetVal);
+            return ((delegate* unmanaged<IDiaInputAssemblyFile*, BOOL*, int>)(lpVtbl[6]))((IDiaInputAssemblyFile*)Unsafe.AsPointer(ref this), pRetVal);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

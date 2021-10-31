@@ -44,17 +44,13 @@ namespace TerraFX.Interop
         [NativeTypeName("UINT")]
         public uint uCursorSize;
 
-        [NativeTypeName("BOOL")]
-        public int bFullScreen;
+        public BOOL bFullScreen;
 
-        [NativeTypeName("BOOL")]
-        public int bQuickEdit;
+        public BOOL bQuickEdit;
 
-        [NativeTypeName("BOOL")]
-        public int bInsertMode;
+        public BOOL bInsertMode;
 
-        [NativeTypeName("BOOL")]
-        public int bAutoPosition;
+        public BOOL bAutoPosition;
 
         [NativeTypeName("UINT")]
         public uint uHistoryBufferSize;
@@ -62,8 +58,7 @@ namespace TerraFX.Interop
         [NativeTypeName("UINT")]
         public uint uNumberOfHistoryBuffers;
 
-        [NativeTypeName("BOOL")]
-        public int bHistoryNoDup;
+        public BOOL bHistoryNoDup;
 
         [NativeTypeName("COLORREF [16]")]
         public fixed uint ColorTable[16];

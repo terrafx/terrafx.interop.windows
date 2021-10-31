@@ -99,9 +99,9 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(10)]
         [return: NativeTypeName("HRESULT")]
-        public int IsName([NativeTypeName("LPOLESTR")] ushort* szNameBuf, [NativeTypeName("ULONG")] uint lHashVal, [NativeTypeName("BOOL *")] int* pfName)
+        public int IsName([NativeTypeName("LPOLESTR")] ushort* szNameBuf, [NativeTypeName("ULONG")] uint lHashVal, BOOL* pfName)
         {
-            return ((delegate* unmanaged<ITypeLib*, ushort*, uint, int*, int>)(lpVtbl[10]))((ITypeLib*)Unsafe.AsPointer(ref this), szNameBuf, lHashVal, pfName);
+            return ((delegate* unmanaged<ITypeLib*, ushort*, uint, BOOL*, int>)(lpVtbl[10]))((ITypeLib*)Unsafe.AsPointer(ref this), szNameBuf, lHashVal, pfName);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

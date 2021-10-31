@@ -75,9 +75,9 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(7)]
         [return: NativeTypeName("HRESULT")]
-        public int IsConnected([NativeTypeName("BOOL *")] int* pbConnected)
+        public int IsConnected(BOOL* pbConnected)
         {
-            return ((delegate* unmanaged<IConnector*, int*, int>)(lpVtbl[7]))((IConnector*)Unsafe.AsPointer(ref this), pbConnected);
+            return ((delegate* unmanaged<IConnector*, BOOL*, int>)(lpVtbl[7]))((IConnector*)Unsafe.AsPointer(ref this), pbConnected);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

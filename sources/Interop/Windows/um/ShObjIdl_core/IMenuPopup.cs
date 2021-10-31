@@ -51,9 +51,9 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
         [return: NativeTypeName("HRESULT")]
-        public int ContextSensitiveHelp([NativeTypeName("BOOL")] int fEnterMode)
+        public int ContextSensitiveHelp(BOOL fEnterMode)
         {
-            return ((delegate* unmanaged<IMenuPopup*, int, int>)(lpVtbl[4]))((IMenuPopup*)Unsafe.AsPointer(ref this), fEnterMode);
+            return ((delegate* unmanaged<IMenuPopup*, BOOL, int>)(lpVtbl[4]))((IMenuPopup*)Unsafe.AsPointer(ref this), fEnterMode);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -99,9 +99,9 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(10)]
         [return: NativeTypeName("HRESULT")]
-        public int SetSubMenu(IMenuPopup* pmp, [NativeTypeName("BOOL")] int fSet)
+        public int SetSubMenu(IMenuPopup* pmp, BOOL fSet)
         {
-            return ((delegate* unmanaged<IMenuPopup*, IMenuPopup*, int, int>)(lpVtbl[10]))((IMenuPopup*)Unsafe.AsPointer(ref this), pmp, fSet);
+            return ((delegate* unmanaged<IMenuPopup*, IMenuPopup*, BOOL, int>)(lpVtbl[10]))((IMenuPopup*)Unsafe.AsPointer(ref this), pmp, fSet);
         }
     }
 }

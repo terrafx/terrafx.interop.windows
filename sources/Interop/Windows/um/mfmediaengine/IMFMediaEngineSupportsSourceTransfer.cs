@@ -43,9 +43,9 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
         [return: NativeTypeName("HRESULT")]
-        public int ShouldTransferSource([NativeTypeName("BOOL *")] int* pfShouldTransfer)
+        public int ShouldTransferSource(BOOL* pfShouldTransfer)
         {
-            return ((delegate* unmanaged<IMFMediaEngineSupportsSourceTransfer*, int*, int>)(lpVtbl[3]))((IMFMediaEngineSupportsSourceTransfer*)Unsafe.AsPointer(ref this), pfShouldTransfer);
+            return ((delegate* unmanaged<IMFMediaEngineSupportsSourceTransfer*, BOOL*, int>)(lpVtbl[3]))((IMFMediaEngineSupportsSourceTransfer*)Unsafe.AsPointer(ref this), pfShouldTransfer);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

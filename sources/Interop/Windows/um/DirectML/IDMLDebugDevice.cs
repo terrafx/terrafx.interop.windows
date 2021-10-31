@@ -42,9 +42,9 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        public void SetMuteDebugOutput([NativeTypeName("BOOL")] int mute)
+        public void SetMuteDebugOutput(BOOL mute)
         {
-            ((delegate* unmanaged<IDMLDebugDevice*, int, void>)(lpVtbl[3]))((IDMLDebugDevice*)Unsafe.AsPointer(ref this), mute);
+            ((delegate* unmanaged<IDMLDebugDevice*, BOOL, void>)(lpVtbl[3]))((IDMLDebugDevice*)Unsafe.AsPointer(ref this), mute);
         }
     }
 }

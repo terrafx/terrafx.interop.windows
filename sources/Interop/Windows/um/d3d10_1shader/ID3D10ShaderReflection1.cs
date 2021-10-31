@@ -142,17 +142,17 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(16)]
         [return: NativeTypeName("HRESULT")]
-        public int IsLevel9Shader([NativeTypeName("BOOL *")] int* pbLevel9Shader)
+        public int IsLevel9Shader(BOOL* pbLevel9Shader)
         {
-            return ((delegate* unmanaged<ID3D10ShaderReflection1*, int*, int>)(lpVtbl[16]))((ID3D10ShaderReflection1*)Unsafe.AsPointer(ref this), pbLevel9Shader);
+            return ((delegate* unmanaged<ID3D10ShaderReflection1*, BOOL*, int>)(lpVtbl[16]))((ID3D10ShaderReflection1*)Unsafe.AsPointer(ref this), pbLevel9Shader);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(17)]
         [return: NativeTypeName("HRESULT")]
-        public int IsSampleFrequencyShader([NativeTypeName("BOOL *")] int* pbSampleFrequency)
+        public int IsSampleFrequencyShader(BOOL* pbSampleFrequency)
         {
-            return ((delegate* unmanaged<ID3D10ShaderReflection1*, int*, int>)(lpVtbl[17]))((ID3D10ShaderReflection1*)Unsafe.AsPointer(ref this), pbSampleFrequency);
+            return ((delegate* unmanaged<ID3D10ShaderReflection1*, BOOL*, int>)(lpVtbl[17]))((ID3D10ShaderReflection1*)Unsafe.AsPointer(ref this), pbSampleFrequency);
         }
     }
 }

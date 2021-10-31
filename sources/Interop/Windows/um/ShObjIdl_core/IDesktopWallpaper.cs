@@ -163,9 +163,9 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(18)]
         [return: NativeTypeName("HRESULT")]
-        public int Enable([NativeTypeName("BOOL")] int enable)
+        public int Enable(BOOL enable)
         {
-            return ((delegate* unmanaged<IDesktopWallpaper*, int, int>)(lpVtbl[18]))((IDesktopWallpaper*)Unsafe.AsPointer(ref this), enable);
+            return ((delegate* unmanaged<IDesktopWallpaper*, BOOL, int>)(lpVtbl[18]))((IDesktopWallpaper*)Unsafe.AsPointer(ref this), enable);
         }
     }
 }

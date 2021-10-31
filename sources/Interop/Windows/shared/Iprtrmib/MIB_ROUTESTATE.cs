@@ -7,7 +7,6 @@ namespace TerraFX.Interop
 {
     public partial struct MIB_ROUTESTATE
     {
-        [NativeTypeName("BOOL")]
-        public int bRoutesSetToStack;
+        public BOOL bRoutesSetToStack;
     }
 }

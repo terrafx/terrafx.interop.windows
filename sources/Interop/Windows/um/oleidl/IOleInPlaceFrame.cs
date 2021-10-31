@@ -51,9 +51,9 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
         [return: NativeTypeName("HRESULT")]
-        public int ContextSensitiveHelp([NativeTypeName("BOOL")] int fEnterMode)
+        public int ContextSensitiveHelp(BOOL fEnterMode)
         {
-            return ((delegate* unmanaged<IOleInPlaceFrame*, int, int>)(lpVtbl[4]))((IOleInPlaceFrame*)Unsafe.AsPointer(ref this), fEnterMode);
+            return ((delegate* unmanaged<IOleInPlaceFrame*, BOOL, int>)(lpVtbl[4]))((IOleInPlaceFrame*)Unsafe.AsPointer(ref this), fEnterMode);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -123,9 +123,9 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(13)]
         [return: NativeTypeName("HRESULT")]
-        public int EnableModeless([NativeTypeName("BOOL")] int fEnable)
+        public int EnableModeless(BOOL fEnable)
         {
-            return ((delegate* unmanaged<IOleInPlaceFrame*, int, int>)(lpVtbl[13]))((IOleInPlaceFrame*)Unsafe.AsPointer(ref this), fEnable);
+            return ((delegate* unmanaged<IOleInPlaceFrame*, BOOL, int>)(lpVtbl[13]))((IOleInPlaceFrame*)Unsafe.AsPointer(ref this), fEnable);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

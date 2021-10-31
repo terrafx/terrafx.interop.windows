@@ -15,8 +15,7 @@ namespace TerraFX.Interop
 
         public DXGI_FORMAT Format;
 
-        [NativeTypeName("BOOL")]
-        public int Stereo;
+        public BOOL Stereo;
 
         public DXGI_SAMPLE_DESC SampleDesc;
 

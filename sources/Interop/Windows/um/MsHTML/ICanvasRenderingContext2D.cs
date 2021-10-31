@@ -379,9 +379,9 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(45)]
         [return: NativeTypeName("HRESULT")]
-        public int arc(float x, float y, float radius, float startAngle, float endAngle, [NativeTypeName("BOOL")] int anticlockwise)
+        public int arc(float x, float y, float radius, float startAngle, float endAngle, BOOL anticlockwise)
         {
-            return ((delegate* unmanaged<ICanvasRenderingContext2D*, float, float, float, float, float, int, int>)(lpVtbl[45]))((ICanvasRenderingContext2D*)Unsafe.AsPointer(ref this), x, y, radius, startAngle, endAngle, anticlockwise);
+            return ((delegate* unmanaged<ICanvasRenderingContext2D*, float, float, float, float, float, BOOL, int>)(lpVtbl[45]))((ICanvasRenderingContext2D*)Unsafe.AsPointer(ref this), x, y, radius, startAngle, endAngle, anticlockwise);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

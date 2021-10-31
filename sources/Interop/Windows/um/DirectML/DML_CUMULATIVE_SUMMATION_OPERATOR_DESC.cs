@@ -18,7 +18,6 @@ namespace TerraFX.Interop
 
         public DML_AXIS_DIRECTION AxisDirection;
 
-        [NativeTypeName("BOOL")]
-        public int HasExclusiveSum;
+        public BOOL HasExclusiveSum;
     }
 }

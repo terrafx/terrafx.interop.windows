@@ -7,10 +7,8 @@ namespace TerraFX.Interop
 {
     public partial struct AM_AC3_ERROR_CONCEALMENT
     {
-        [NativeTypeName("BOOL")]
-        public int fRepeatPreviousBlock;
+        public BOOL fRepeatPreviousBlock;
 
-        [NativeTypeName("BOOL")]
-        public int fErrorInCurrentBlock;
+        public BOOL fErrorInCurrentBlock;
     }
 }

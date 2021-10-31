@@ -22,7 +22,6 @@ namespace TerraFX.Interop
         [NativeTypeName("DWORD")]
         public uint dwFlags;
 
-        [NativeTypeName("BOOL")]
-        public int bModal;
+        public BOOL bModal;
     }
 }

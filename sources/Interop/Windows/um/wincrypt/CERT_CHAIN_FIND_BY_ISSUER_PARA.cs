@@ -26,7 +26,7 @@ namespace TerraFX.Interop
         public CRYPT_DATA_BLOB* rgIssuer;
 
         [NativeTypeName("PFN_CERT_CHAIN_FIND_BY_ISSUER_CALLBACK")]
-        public delegate* unmanaged<CERT_CONTEXT*, void*, int> pfnFindCallback;
+        public delegate* unmanaged<CERT_CONTEXT*, void*, BOOL> pfnFindCallback;
 
         public void* pvFindArg;
     }

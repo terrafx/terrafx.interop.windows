@@ -51,9 +51,9 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
         [return: NativeTypeName("HRESULT")]
-        public int GetStreamingState([NativeTypeName("BOOL *")] int* pfStreaming)
+        public int GetStreamingState(BOOL* pfStreaming)
         {
-            return ((delegate* unmanaged<IMFSensorProcessActivity*, int*, int>)(lpVtbl[4]))((IMFSensorProcessActivity*)Unsafe.AsPointer(ref this), pfStreaming);
+            return ((delegate* unmanaged<IMFSensorProcessActivity*, BOOL*, int>)(lpVtbl[4]))((IMFSensorProcessActivity*)Unsafe.AsPointer(ref this), pfStreaming);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

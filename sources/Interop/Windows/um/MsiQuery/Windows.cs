@@ -157,8 +157,7 @@ namespace TerraFX.Interop
         public static extern uint MsiCreateRecord([NativeTypeName("UINT")] uint cParams);
 
         [DllImport("msi", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int MsiRecordIsNull([NativeTypeName("MSIHANDLE")] uint hRecord, [NativeTypeName("UINT")] uint iField);
+        public static extern BOOL MsiRecordIsNull([NativeTypeName("MSIHANDLE")] uint hRecord, [NativeTypeName("UINT")] uint iField);
 
         [DllImport("msi", ExactSpelling = true)]
         [return: NativeTypeName("UINT")]
@@ -232,12 +231,11 @@ namespace TerraFX.Interop
         public static extern ushort MsiGetLanguage([NativeTypeName("MSIHANDLE")] uint hInstall);
 
         [DllImport("msi", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int MsiGetMode([NativeTypeName("MSIHANDLE")] uint hInstall, MSIRUNMODE eRunMode);
+        public static extern BOOL MsiGetMode([NativeTypeName("MSIHANDLE")] uint hInstall, MSIRUNMODE eRunMode);
 
         [DllImport("msi", ExactSpelling = true)]
         [return: NativeTypeName("UINT")]
-        public static extern uint MsiSetMode([NativeTypeName("MSIHANDLE")] uint hInstall, MSIRUNMODE eRunMode, [NativeTypeName("BOOL")] int fState);
+        public static extern uint MsiSetMode([NativeTypeName("MSIHANDLE")] uint hInstall, MSIRUNMODE eRunMode, BOOL fState);
 
         [DllImport("msi", ExactSpelling = true)]
         [return: NativeTypeName("UINT")]

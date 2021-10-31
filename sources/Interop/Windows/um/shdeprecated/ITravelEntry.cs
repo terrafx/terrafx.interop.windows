@@ -51,9 +51,9 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
         [return: NativeTypeName("HRESULT")]
-        public int Update(IUnknown* punk, [NativeTypeName("BOOL")] int fIsLocalAnchor)
+        public int Update(IUnknown* punk, BOOL fIsLocalAnchor)
         {
-            return ((delegate* unmanaged<ITravelEntry*, IUnknown*, int, int>)(lpVtbl[4]))((ITravelEntry*)Unsafe.AsPointer(ref this), punk, fIsLocalAnchor);
+            return ((delegate* unmanaged<ITravelEntry*, IUnknown*, BOOL, int>)(lpVtbl[4]))((ITravelEntry*)Unsafe.AsPointer(ref this), punk, fIsLocalAnchor);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

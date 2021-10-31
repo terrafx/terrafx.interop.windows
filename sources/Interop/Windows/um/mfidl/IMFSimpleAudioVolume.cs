@@ -59,17 +59,17 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
         [return: NativeTypeName("HRESULT")]
-        public int SetMute([NativeTypeName("const BOOL")] int bMute)
+        public int SetMute([NativeTypeName("const BOOL")] BOOL bMute)
         {
-            return ((delegate* unmanaged<IMFSimpleAudioVolume*, int, int>)(lpVtbl[5]))((IMFSimpleAudioVolume*)Unsafe.AsPointer(ref this), bMute);
+            return ((delegate* unmanaged<IMFSimpleAudioVolume*, BOOL, int>)(lpVtbl[5]))((IMFSimpleAudioVolume*)Unsafe.AsPointer(ref this), bMute);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
         [return: NativeTypeName("HRESULT")]
-        public int GetMute([NativeTypeName("BOOL *")] int* pbMute)
+        public int GetMute(BOOL* pbMute)
         {
-            return ((delegate* unmanaged<IMFSimpleAudioVolume*, int*, int>)(lpVtbl[6]))((IMFSimpleAudioVolume*)Unsafe.AsPointer(ref this), pbMute);
+            return ((delegate* unmanaged<IMFSimpleAudioVolume*, BOOL*, int>)(lpVtbl[6]))((IMFSimpleAudioVolume*)Unsafe.AsPointer(ref this), pbMute);
         }
     }
 }

@@ -139,25 +139,25 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(15)]
         [return: NativeTypeName("HRESULT")]
-        public int ActivateHandler([NativeTypeName("BOOL")] int fActivate, [NativeTypeName("LPCWSTR")] ushort* pszHandlerID, [NativeTypeName("HWND")] IntPtr hwndOwner, SYNCMGR_CONTROL_FLAGS nControlFlags)
+        public int ActivateHandler(BOOL fActivate, [NativeTypeName("LPCWSTR")] ushort* pszHandlerID, [NativeTypeName("HWND")] IntPtr hwndOwner, SYNCMGR_CONTROL_FLAGS nControlFlags)
         {
-            return ((delegate* unmanaged<ISyncMgrControl*, int, ushort*, IntPtr, SYNCMGR_CONTROL_FLAGS, int>)(lpVtbl[15]))((ISyncMgrControl*)Unsafe.AsPointer(ref this), fActivate, pszHandlerID, hwndOwner, nControlFlags);
+            return ((delegate* unmanaged<ISyncMgrControl*, BOOL, ushort*, IntPtr, SYNCMGR_CONTROL_FLAGS, int>)(lpVtbl[15]))((ISyncMgrControl*)Unsafe.AsPointer(ref this), fActivate, pszHandlerID, hwndOwner, nControlFlags);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(16)]
         [return: NativeTypeName("HRESULT")]
-        public int EnableHandler([NativeTypeName("BOOL")] int fEnable, [NativeTypeName("LPCWSTR")] ushort* pszHandlerID, [NativeTypeName("HWND")] IntPtr hwndOwner, SYNCMGR_CONTROL_FLAGS nControlFlags)
+        public int EnableHandler(BOOL fEnable, [NativeTypeName("LPCWSTR")] ushort* pszHandlerID, [NativeTypeName("HWND")] IntPtr hwndOwner, SYNCMGR_CONTROL_FLAGS nControlFlags)
         {
-            return ((delegate* unmanaged<ISyncMgrControl*, int, ushort*, IntPtr, SYNCMGR_CONTROL_FLAGS, int>)(lpVtbl[16]))((ISyncMgrControl*)Unsafe.AsPointer(ref this), fEnable, pszHandlerID, hwndOwner, nControlFlags);
+            return ((delegate* unmanaged<ISyncMgrControl*, BOOL, ushort*, IntPtr, SYNCMGR_CONTROL_FLAGS, int>)(lpVtbl[16]))((ISyncMgrControl*)Unsafe.AsPointer(ref this), fEnable, pszHandlerID, hwndOwner, nControlFlags);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(17)]
         [return: NativeTypeName("HRESULT")]
-        public int EnableItem([NativeTypeName("BOOL")] int fEnable, [NativeTypeName("LPCWSTR")] ushort* pszHandlerID, [NativeTypeName("LPCWSTR")] ushort* pszItemID, [NativeTypeName("HWND")] IntPtr hwndOwner, SYNCMGR_CONTROL_FLAGS nControlFlags)
+        public int EnableItem(BOOL fEnable, [NativeTypeName("LPCWSTR")] ushort* pszHandlerID, [NativeTypeName("LPCWSTR")] ushort* pszItemID, [NativeTypeName("HWND")] IntPtr hwndOwner, SYNCMGR_CONTROL_FLAGS nControlFlags)
         {
-            return ((delegate* unmanaged<ISyncMgrControl*, int, ushort*, ushort*, IntPtr, SYNCMGR_CONTROL_FLAGS, int>)(lpVtbl[17]))((ISyncMgrControl*)Unsafe.AsPointer(ref this), fEnable, pszHandlerID, pszItemID, hwndOwner, nControlFlags);
+            return ((delegate* unmanaged<ISyncMgrControl*, BOOL, ushort*, ushort*, IntPtr, SYNCMGR_CONTROL_FLAGS, int>)(lpVtbl[17]))((ISyncMgrControl*)Unsafe.AsPointer(ref this), fEnable, pszHandlerID, pszItemID, hwndOwner, nControlFlags);
         }
     }
 }

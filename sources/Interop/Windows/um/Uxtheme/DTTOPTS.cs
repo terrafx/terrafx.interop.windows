@@ -36,8 +36,7 @@ namespace TerraFX.Interop
 
         public int iStateId;
 
-        [NativeTypeName("BOOL")]
-        public int fApplyOverlay;
+        public BOOL fApplyOverlay;
 
         public int iGlowSize;
 

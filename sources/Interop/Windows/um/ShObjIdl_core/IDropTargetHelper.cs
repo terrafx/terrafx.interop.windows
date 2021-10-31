@@ -75,9 +75,9 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(7)]
         [return: NativeTypeName("HRESULT")]
-        public int Show([NativeTypeName("BOOL")] int fShow)
+        public int Show(BOOL fShow)
         {
-            return ((delegate* unmanaged<IDropTargetHelper*, int, int>)(lpVtbl[7]))((IDropTargetHelper*)Unsafe.AsPointer(ref this), fShow);
+            return ((delegate* unmanaged<IDropTargetHelper*, BOOL, int>)(lpVtbl[7]))((IDropTargetHelper*)Unsafe.AsPointer(ref this), fShow);
         }
     }
 }

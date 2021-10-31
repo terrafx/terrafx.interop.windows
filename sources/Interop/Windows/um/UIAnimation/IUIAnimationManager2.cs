@@ -155,9 +155,9 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(17)]
         [return: NativeTypeName("HRESULT")]
-        public int SetManagerEventHandler(IUIAnimationManagerEventHandler2* handler, [NativeTypeName("BOOL")] int fRegisterForNextAnimationEvent = 0)
+        public int SetManagerEventHandler(IUIAnimationManagerEventHandler2* handler, [Optional] BOOL fRegisterForNextAnimationEvent)
         {
-            return ((delegate* unmanaged<IUIAnimationManager2*, IUIAnimationManagerEventHandler2*, int, int>)(lpVtbl[17]))((IUIAnimationManager2*)Unsafe.AsPointer(ref this), handler, fRegisterForNextAnimationEvent);
+            return ((delegate* unmanaged<IUIAnimationManager2*, IUIAnimationManagerEventHandler2*, BOOL, int>)(lpVtbl[17]))((IUIAnimationManager2*)Unsafe.AsPointer(ref this), handler, fRegisterForNextAnimationEvent);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

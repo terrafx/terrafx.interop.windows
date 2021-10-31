@@ -83,9 +83,9 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(8)]
         [return: NativeTypeName("HRESULT")]
-        public int ComparePublisher([NativeTypeName("LPCWSTR")] ushort* other, [NativeTypeName("BOOL *")] int* isSame)
+        public int ComparePublisher([NativeTypeName("LPCWSTR")] ushort* other, BOOL* isSame)
         {
-            return ((delegate* unmanaged<IAppxManifestPackageId2*, ushort*, int*, int>)(lpVtbl[8]))((IAppxManifestPackageId2*)Unsafe.AsPointer(ref this), other, isSame);
+            return ((delegate* unmanaged<IAppxManifestPackageId2*, ushort*, BOOL*, int>)(lpVtbl[8]))((IAppxManifestPackageId2*)Unsafe.AsPointer(ref this), other, isSame);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

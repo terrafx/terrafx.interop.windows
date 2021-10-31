@@ -81,8 +81,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(8)]
-        [return: NativeTypeName("BOOL")]
-        public int IsInBand()
+        public BOOL IsInBand()
         {
             return ((delegate* unmanaged<IMFTimedTextTrack*, int>)(lpVtbl[8]))((IMFTimedTextTrack*)Unsafe.AsPointer(ref this));
         }
@@ -97,8 +96,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(10)]
-        [return: NativeTypeName("BOOL")]
-        public int IsActive()
+        public BOOL IsActive()
         {
             return ((delegate* unmanaged<IMFTimedTextTrack*, int>)(lpVtbl[10]))((IMFTimedTextTrack*)Unsafe.AsPointer(ref this));
         }

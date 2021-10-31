@@ -59,9 +59,9 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
         [return: NativeTypeName("HRESULT")]
-        public int IsCurrent([NativeTypeName("BOOL *")] int* pIsCurrent)
+        public int IsCurrent(BOOL* pIsCurrent)
         {
-            return ((delegate* unmanaged<ISurfacePresenter*, int*, int>)(lpVtbl[5]))((ISurfacePresenter*)Unsafe.AsPointer(ref this), pIsCurrent);
+            return ((delegate* unmanaged<ISurfacePresenter*, BOOL*, int>)(lpVtbl[5]))((ISurfacePresenter*)Unsafe.AsPointer(ref this), pIsCurrent);
         }
     }
 }

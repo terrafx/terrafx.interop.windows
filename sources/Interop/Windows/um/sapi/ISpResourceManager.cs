@@ -59,9 +59,9 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
         [return: NativeTypeName("HRESULT")]
-        public int GetObject([NativeTypeName("const GUID &")] Guid* guidServiceId, [NativeTypeName("const IID &")] Guid* ObjectCLSID, [NativeTypeName("const IID &")] Guid* ObjectIID, [NativeTypeName("BOOL")] int fReleaseWhenLastExternalRefReleased, void** ppObject)
+        public int GetObject([NativeTypeName("const GUID &")] Guid* guidServiceId, [NativeTypeName("const IID &")] Guid* ObjectCLSID, [NativeTypeName("const IID &")] Guid* ObjectIID, BOOL fReleaseWhenLastExternalRefReleased, void** ppObject)
         {
-            return ((delegate* unmanaged<ISpResourceManager*, Guid*, Guid*, Guid*, int, void**, int>)(lpVtbl[5]))((ISpResourceManager*)Unsafe.AsPointer(ref this), guidServiceId, ObjectCLSID, ObjectIID, fReleaseWhenLastExternalRefReleased, ppObject);
+            return ((delegate* unmanaged<ISpResourceManager*, Guid*, Guid*, Guid*, BOOL, void**, int>)(lpVtbl[5]))((ISpResourceManager*)Unsafe.AsPointer(ref this), guidServiceId, ObjectCLSID, ObjectIID, fReleaseWhenLastExternalRefReleased, ppObject);
         }
     }
 }

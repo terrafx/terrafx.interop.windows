@@ -83,9 +83,9 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(8)]
         [return: NativeTypeName("HRESULT")]
-        public int SetRedDisable([NativeTypeName("BOOL")] int redDisable)
+        public int SetRedDisable(BOOL redDisable)
         {
-            return ((delegate* unmanaged<IDCompositionLinearTransferEffect*, int, int>)(lpVtbl[8]))((IDCompositionLinearTransferEffect*)Unsafe.AsPointer(ref this), redDisable);
+            return ((delegate* unmanaged<IDCompositionLinearTransferEffect*, BOOL, int>)(lpVtbl[8]))((IDCompositionLinearTransferEffect*)Unsafe.AsPointer(ref this), redDisable);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -123,9 +123,9 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(13)]
         [return: NativeTypeName("HRESULT")]
-        public int SetGreenDisable([NativeTypeName("BOOL")] int greenDisable)
+        public int SetGreenDisable(BOOL greenDisable)
         {
-            return ((delegate* unmanaged<IDCompositionLinearTransferEffect*, int, int>)(lpVtbl[13]))((IDCompositionLinearTransferEffect*)Unsafe.AsPointer(ref this), greenDisable);
+            return ((delegate* unmanaged<IDCompositionLinearTransferEffect*, BOOL, int>)(lpVtbl[13]))((IDCompositionLinearTransferEffect*)Unsafe.AsPointer(ref this), greenDisable);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -163,9 +163,9 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(18)]
         [return: NativeTypeName("HRESULT")]
-        public int SetBlueDisable([NativeTypeName("BOOL")] int blueDisable)
+        public int SetBlueDisable(BOOL blueDisable)
         {
-            return ((delegate* unmanaged<IDCompositionLinearTransferEffect*, int, int>)(lpVtbl[18]))((IDCompositionLinearTransferEffect*)Unsafe.AsPointer(ref this), blueDisable);
+            return ((delegate* unmanaged<IDCompositionLinearTransferEffect*, BOOL, int>)(lpVtbl[18]))((IDCompositionLinearTransferEffect*)Unsafe.AsPointer(ref this), blueDisable);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -203,17 +203,17 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(23)]
         [return: NativeTypeName("HRESULT")]
-        public int SetAlphaDisable([NativeTypeName("BOOL")] int alphaDisable)
+        public int SetAlphaDisable(BOOL alphaDisable)
         {
-            return ((delegate* unmanaged<IDCompositionLinearTransferEffect*, int, int>)(lpVtbl[23]))((IDCompositionLinearTransferEffect*)Unsafe.AsPointer(ref this), alphaDisable);
+            return ((delegate* unmanaged<IDCompositionLinearTransferEffect*, BOOL, int>)(lpVtbl[23]))((IDCompositionLinearTransferEffect*)Unsafe.AsPointer(ref this), alphaDisable);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(24)]
         [return: NativeTypeName("HRESULT")]
-        public int SetClampOutput([NativeTypeName("BOOL")] int clampOutput)
+        public int SetClampOutput(BOOL clampOutput)
         {
-            return ((delegate* unmanaged<IDCompositionLinearTransferEffect*, int, int>)(lpVtbl[24]))((IDCompositionLinearTransferEffect*)Unsafe.AsPointer(ref this), clampOutput);
+            return ((delegate* unmanaged<IDCompositionLinearTransferEffect*, BOOL, int>)(lpVtbl[24]))((IDCompositionLinearTransferEffect*)Unsafe.AsPointer(ref this), clampOutput);
         }
     }
 }

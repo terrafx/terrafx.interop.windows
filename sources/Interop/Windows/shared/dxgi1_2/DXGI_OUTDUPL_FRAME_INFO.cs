@@ -14,11 +14,9 @@ namespace TerraFX.Interop
         [NativeTypeName("UINT")]
         public uint AccumulatedFrames;
 
-        [NativeTypeName("BOOL")]
-        public int RectsCoalesced;
+        public BOOL RectsCoalesced;
 
-        [NativeTypeName("BOOL")]
-        public int ProtectedContentMaskedOut;
+        public BOOL ProtectedContentMaskedOut;
 
         public DXGI_OUTDUPL_POINTER_POSITION PointerPosition;
 

@@ -21,7 +21,6 @@ namespace TerraFX.Interop
 
         public D3D12_RESOLVE_MODE ResolveMode;
 
-        [NativeTypeName("BOOL")]
-        public int PreserveResolveSource;
+        public BOOL PreserveResolveSource;
     }
 }

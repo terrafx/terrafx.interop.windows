@@ -43,9 +43,9 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
         [return: NativeTypeName("HRESULT")]
-        public int MoveNext([NativeTypeName("BOOL *")] int* hasCurrentFile)
+        public int MoveNext(BOOL* hasCurrentFile)
         {
-            return ((delegate* unmanaged<IDWriteFontFileEnumerator*, int*, int>)(lpVtbl[3]))((IDWriteFontFileEnumerator*)Unsafe.AsPointer(ref this), hasCurrentFile);
+            return ((delegate* unmanaged<IDWriteFontFileEnumerator*, BOOL*, int>)(lpVtbl[3]))((IDWriteFontFileEnumerator*)Unsafe.AsPointer(ref this), hasCurrentFile);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

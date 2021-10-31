@@ -19,16 +19,16 @@ namespace TerraFX.Interop
         public delegate* unmanaged<void*, void> pfnFree;
 
         [NativeTypeName("PFN_CPD_ADD_STORE")]
-        public delegate* unmanaged<CRYPT_PROVIDER_DATA*, IntPtr, int> pfnAddStore2Chain;
+        public delegate* unmanaged<CRYPT_PROVIDER_DATA*, IntPtr, BOOL> pfnAddStore2Chain;
 
         [NativeTypeName("PFN_CPD_ADD_SGNR")]
-        public delegate* unmanaged<CRYPT_PROVIDER_DATA*, int, uint, CRYPT_PROVIDER_SGNR*, int> pfnAddSgnr2Chain;
+        public delegate* unmanaged<CRYPT_PROVIDER_DATA*, BOOL, uint, CRYPT_PROVIDER_SGNR*, BOOL> pfnAddSgnr2Chain;
 
         [NativeTypeName("PFN_CPD_ADD_CERT")]
-        public delegate* unmanaged<CRYPT_PROVIDER_DATA*, uint, int, uint, CERT_CONTEXT*, int> pfnAddCert2Chain;
+        public delegate* unmanaged<CRYPT_PROVIDER_DATA*, uint, BOOL, uint, CERT_CONTEXT*, BOOL> pfnAddCert2Chain;
 
         [NativeTypeName("PFN_CPD_ADD_PRIVDATA")]
-        public delegate* unmanaged<CRYPT_PROVIDER_DATA*, CRYPT_PROVIDER_PRIVDATA*, int> pfnAddPrivData2Chain;
+        public delegate* unmanaged<CRYPT_PROVIDER_DATA*, CRYPT_PROVIDER_PRIVDATA*, BOOL> pfnAddPrivData2Chain;
 
         [NativeTypeName("PFN_PROVIDER_INIT_CALL")]
         public delegate* unmanaged<CRYPT_PROVIDER_DATA*, int> pfnInitialize;
@@ -46,7 +46,7 @@ namespace TerraFX.Interop
         public delegate* unmanaged<CRYPT_PROVIDER_DATA*, int> pfnFinalPolicy;
 
         [NativeTypeName("PFN_PROVIDER_CERTCHKPOLICY_CALL")]
-        public delegate* unmanaged<CRYPT_PROVIDER_DATA*, uint, int, uint, int> pfnCertCheckPolicy;
+        public delegate* unmanaged<CRYPT_PROVIDER_DATA*, uint, BOOL, uint, BOOL> pfnCertCheckPolicy;
 
         [NativeTypeName("PFN_PROVIDER_TESTFINALPOLICY_CALL")]
         public delegate* unmanaged<CRYPT_PROVIDER_DATA*, int> pfnTestFinalPolicy;

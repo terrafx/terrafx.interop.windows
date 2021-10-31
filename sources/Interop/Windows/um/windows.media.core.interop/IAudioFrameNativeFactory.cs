@@ -67,9 +67,9 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
         [return: NativeTypeName("HRESULT")]
-        public int CreateFromMFSample(IMFSample* data, [NativeTypeName("BOOL")] int forceReadOnly, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPVOID *")] void** ppv)
+        public int CreateFromMFSample(IMFSample* data, BOOL forceReadOnly, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPVOID *")] void** ppv)
         {
-            return ((delegate* unmanaged<IAudioFrameNativeFactory*, IMFSample*, int, Guid*, void**, int>)(lpVtbl[6]))((IAudioFrameNativeFactory*)Unsafe.AsPointer(ref this), data, forceReadOnly, riid, ppv);
+            return ((delegate* unmanaged<IAudioFrameNativeFactory*, IMFSample*, BOOL, Guid*, void**, int>)(lpVtbl[6]))((IAudioFrameNativeFactory*)Unsafe.AsPointer(ref this), data, forceReadOnly, riid, ppv);
         }
     }
 }

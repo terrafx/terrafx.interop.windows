@@ -51,9 +51,9 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
         [return: NativeTypeName("HRESULT")]
-        public int GetTextExt([NativeTypeName("TfEditCookie")] uint ec, ITfRange* pRange, RECT* prc, [NativeTypeName("BOOL *")] int* pfClipped)
+        public int GetTextExt([NativeTypeName("TfEditCookie")] uint ec, ITfRange* pRange, RECT* prc, BOOL* pfClipped)
         {
-            return ((delegate* unmanaged<ITfContextView*, uint, ITfRange*, RECT*, int*, int>)(lpVtbl[4]))((ITfContextView*)Unsafe.AsPointer(ref this), ec, pRange, prc, pfClipped);
+            return ((delegate* unmanaged<ITfContextView*, uint, ITfRange*, RECT*, BOOL*, int>)(lpVtbl[4]))((ITfContextView*)Unsafe.AsPointer(ref this), ec, pRange, prc, pfClipped);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

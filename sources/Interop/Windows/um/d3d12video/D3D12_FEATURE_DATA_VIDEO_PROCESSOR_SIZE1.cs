@@ -19,8 +19,7 @@ namespace TerraFX.Interop
         [NativeTypeName("const D3D12_VIDEO_PROCESS_INPUT_STREAM_DESC *")]
         public D3D12_VIDEO_PROCESS_INPUT_STREAM_DESC* pInputStreamDescs;
 
-        [NativeTypeName("BOOL")]
-        public int Protected;
+        public BOOL Protected;
 
         [NativeTypeName("UINT64")]
         public ulong MemoryPoolL0Size;

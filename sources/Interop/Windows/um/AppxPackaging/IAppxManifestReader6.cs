@@ -43,9 +43,9 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
         [return: NativeTypeName("HRESULT")]
-        public int GetIsNonQualifiedResourcePackage([NativeTypeName("BOOL *")] int* isNonQualifiedResourcePackage)
+        public int GetIsNonQualifiedResourcePackage(BOOL* isNonQualifiedResourcePackage)
         {
-            return ((delegate* unmanaged<IAppxManifestReader6*, int*, int>)(lpVtbl[3]))((IAppxManifestReader6*)Unsafe.AsPointer(ref this), isNonQualifiedResourcePackage);
+            return ((delegate* unmanaged<IAppxManifestReader6*, BOOL*, int>)(lpVtbl[3]))((IAppxManifestReader6*)Unsafe.AsPointer(ref this), isNonQualifiedResourcePackage);
         }
     }
 }

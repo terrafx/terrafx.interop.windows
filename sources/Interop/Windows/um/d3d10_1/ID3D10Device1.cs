@@ -168,9 +168,9 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(21)]
-        public void SetPredication(ID3D10Predicate* pPredicate, [NativeTypeName("BOOL")] int PredicateValue)
+        public void SetPredication(ID3D10Predicate* pPredicate, BOOL PredicateValue)
         {
-            ((delegate* unmanaged<ID3D10Device1*, ID3D10Predicate*, int, void>)(lpVtbl[21]))((ID3D10Device1*)Unsafe.AsPointer(ref this), pPredicate, PredicateValue);
+            ((delegate* unmanaged<ID3D10Device1*, ID3D10Predicate*, BOOL, void>)(lpVtbl[21]))((ID3D10Device1*)Unsafe.AsPointer(ref this), pPredicate, PredicateValue);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -392,9 +392,9 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(53)]
-        public void GetPredication(ID3D10Predicate** ppPredicate, [NativeTypeName("BOOL *")] int* pPredicateValue)
+        public void GetPredication(ID3D10Predicate** ppPredicate, BOOL* pPredicateValue)
         {
-            ((delegate* unmanaged<ID3D10Device1*, ID3D10Predicate**, int*, void>)(lpVtbl[53]))((ID3D10Device1*)Unsafe.AsPointer(ref this), ppPredicate, pPredicateValue);
+            ((delegate* unmanaged<ID3D10Device1*, ID3D10Predicate**, BOOL*, void>)(lpVtbl[53]))((ID3D10Device1*)Unsafe.AsPointer(ref this), ppPredicate, pPredicateValue);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

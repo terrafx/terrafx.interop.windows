@@ -43,9 +43,9 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
         [return: NativeTypeName("HRESULT")]
-        public int IsPixelSnappingDisabled(void* clientDrawingContext, [NativeTypeName("BOOL *")] int* isDisabled)
+        public int IsPixelSnappingDisabled(void* clientDrawingContext, BOOL* isDisabled)
         {
-            return ((delegate* unmanaged<IDWritePixelSnapping*, void*, int*, int>)(lpVtbl[3]))((IDWritePixelSnapping*)Unsafe.AsPointer(ref this), clientDrawingContext, isDisabled);
+            return ((delegate* unmanaged<IDWritePixelSnapping*, void*, BOOL*, int>)(lpVtbl[3]))((IDWritePixelSnapping*)Unsafe.AsPointer(ref this), clientDrawingContext, isDisabled);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

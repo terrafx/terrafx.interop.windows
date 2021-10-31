@@ -56,9 +56,9 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        public void TrackSelected([NativeTypeName("DWORD")] uint trackId, [NativeTypeName("BOOL")] int selected)
+        public void TrackSelected([NativeTypeName("DWORD")] uint trackId, BOOL selected)
         {
-            ((delegate* unmanaged<IMFTimedTextNotify*, uint, int, void>)(lpVtbl[5]))((IMFTimedTextNotify*)Unsafe.AsPointer(ref this), trackId, selected);
+            ((delegate* unmanaged<IMFTimedTextNotify*, uint, BOOL, void>)(lpVtbl[5]))((IMFTimedTextNotify*)Unsafe.AsPointer(ref this), trackId, selected);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

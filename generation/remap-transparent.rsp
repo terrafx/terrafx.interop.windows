@@ -1,0 +1,2 @@
+--with-transparent-struct
+BOOL=int

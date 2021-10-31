@@ -51,9 +51,9 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
         [return: NativeTypeName("HRESULT")]
-        public int QueryRange(ITfRange* pRange, ITfRange** ppNewRange, [NativeTypeName("BOOL *")] int* pfConvertable)
+        public int QueryRange(ITfRange* pRange, ITfRange** ppNewRange, BOOL* pfConvertable)
         {
-            return ((delegate* unmanaged<ITfFnReconversion*, ITfRange*, ITfRange**, int*, int>)(lpVtbl[4]))((ITfFnReconversion*)Unsafe.AsPointer(ref this), pRange, ppNewRange, pfConvertable);
+            return ((delegate* unmanaged<ITfFnReconversion*, ITfRange*, ITfRange**, BOOL*, int>)(lpVtbl[4]))((ITfFnReconversion*)Unsafe.AsPointer(ref this), pRange, ppNewRange, pfConvertable);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

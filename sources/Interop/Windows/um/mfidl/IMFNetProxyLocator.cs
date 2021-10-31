@@ -43,9 +43,9 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
         [return: NativeTypeName("HRESULT")]
-        public int FindFirstProxy([NativeTypeName("LPCWSTR")] ushort* pszHost, [NativeTypeName("LPCWSTR")] ushort* pszUrl, [NativeTypeName("BOOL")] int fReserved)
+        public int FindFirstProxy([NativeTypeName("LPCWSTR")] ushort* pszHost, [NativeTypeName("LPCWSTR")] ushort* pszUrl, BOOL fReserved)
         {
-            return ((delegate* unmanaged<IMFNetProxyLocator*, ushort*, ushort*, int, int>)(lpVtbl[3]))((IMFNetProxyLocator*)Unsafe.AsPointer(ref this), pszHost, pszUrl, fReserved);
+            return ((delegate* unmanaged<IMFNetProxyLocator*, ushort*, ushort*, BOOL, int>)(lpVtbl[3]))((IMFNetProxyLocator*)Unsafe.AsPointer(ref this), pszHost, pszUrl, fReserved);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

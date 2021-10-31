@@ -74,8 +74,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(7)]
-        [return: NativeTypeName("BOOL")]
-        public int HasUserCancelled()
+        public BOOL HasUserCancelled()
         {
             return ((delegate* unmanaged<IProgressDialog*, int>)(lpVtbl[7]))((IProgressDialog*)Unsafe.AsPointer(ref this));
         }
@@ -99,9 +98,9 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(10)]
         [return: NativeTypeName("HRESULT")]
-        public int SetLine([NativeTypeName("DWORD")] uint dwLineNum, [NativeTypeName("PCWSTR")] ushort* pwzString, [NativeTypeName("BOOL")] int fCompactPath, [NativeTypeName("LPCVOID")] void* pvResevered)
+        public int SetLine([NativeTypeName("DWORD")] uint dwLineNum, [NativeTypeName("PCWSTR")] ushort* pwzString, BOOL fCompactPath, [NativeTypeName("LPCVOID")] void* pvResevered)
         {
-            return ((delegate* unmanaged<IProgressDialog*, uint, ushort*, int, void*, int>)(lpVtbl[10]))((IProgressDialog*)Unsafe.AsPointer(ref this), dwLineNum, pwzString, fCompactPath, pvResevered);
+            return ((delegate* unmanaged<IProgressDialog*, uint, ushort*, BOOL, void*, int>)(lpVtbl[10]))((IProgressDialog*)Unsafe.AsPointer(ref this), dwLineNum, pwzString, fCompactPath, pvResevered);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

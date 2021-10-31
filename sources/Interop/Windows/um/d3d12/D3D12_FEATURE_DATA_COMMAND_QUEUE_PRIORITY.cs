@@ -12,7 +12,6 @@ namespace TerraFX.Interop
         [NativeTypeName("UINT")]
         public uint Priority;
 
-        [NativeTypeName("BOOL")]
-        public int PriorityForTypeIsSupported;
+        public BOOL PriorityForTypeIsSupported;
     }
 }

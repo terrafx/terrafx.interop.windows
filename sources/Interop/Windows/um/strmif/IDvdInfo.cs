@@ -91,9 +91,9 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(9)]
         [return: NativeTypeName("HRESULT")]
-        public int GetCurrentSubpicture([NativeTypeName("ULONG *")] uint* pulStreamsAvailable, [NativeTypeName("ULONG *")] uint* pulCurrentStream, [NativeTypeName("BOOL *")] int* pIsDisabled)
+        public int GetCurrentSubpicture([NativeTypeName("ULONG *")] uint* pulStreamsAvailable, [NativeTypeName("ULONG *")] uint* pulCurrentStream, BOOL* pIsDisabled)
         {
-            return ((delegate* unmanaged<IDvdInfo*, uint*, uint*, int*, int>)(lpVtbl[9]))((IDvdInfo*)Unsafe.AsPointer(ref this), pulStreamsAvailable, pulCurrentStream, pIsDisabled);
+            return ((delegate* unmanaged<IDvdInfo*, uint*, uint*, BOOL*, int>)(lpVtbl[9]))((IDvdInfo*)Unsafe.AsPointer(ref this), pulStreamsAvailable, pulCurrentStream, pIsDisabled);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

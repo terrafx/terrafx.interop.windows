@@ -43,9 +43,9 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
         [return: NativeTypeName("HRESULT")]
-        public int SetRGB219([NativeTypeName("BOOL")] int bState)
+        public int SetRGB219(BOOL bState)
         {
-            return ((delegate* unmanaged<IDVRGB219*, int, int>)(lpVtbl[3]))((IDVRGB219*)Unsafe.AsPointer(ref this), bState);
+            return ((delegate* unmanaged<IDVRGB219*, BOOL, int>)(lpVtbl[3]))((IDVRGB219*)Unsafe.AsPointer(ref this), bState);
         }
     }
 }

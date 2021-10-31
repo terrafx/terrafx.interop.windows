@@ -139,17 +139,17 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(15)]
         [return: NativeTypeName("HRESULT")]
-        public int OnItemAdded(IShellItem* psi, [NativeTypeName("BOOL")] int fIsRoot)
+        public int OnItemAdded(IShellItem* psi, BOOL fIsRoot)
         {
-            return ((delegate* unmanaged<INameSpaceTreeControlEvents*, IShellItem*, int, int>)(lpVtbl[15]))((INameSpaceTreeControlEvents*)Unsafe.AsPointer(ref this), psi, fIsRoot);
+            return ((delegate* unmanaged<INameSpaceTreeControlEvents*, IShellItem*, BOOL, int>)(lpVtbl[15]))((INameSpaceTreeControlEvents*)Unsafe.AsPointer(ref this), psi, fIsRoot);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(16)]
         [return: NativeTypeName("HRESULT")]
-        public int OnItemDeleted(IShellItem* psi, [NativeTypeName("BOOL")] int fIsRoot)
+        public int OnItemDeleted(IShellItem* psi, BOOL fIsRoot)
         {
-            return ((delegate* unmanaged<INameSpaceTreeControlEvents*, IShellItem*, int, int>)(lpVtbl[16]))((INameSpaceTreeControlEvents*)Unsafe.AsPointer(ref this), psi, fIsRoot);
+            return ((delegate* unmanaged<INameSpaceTreeControlEvents*, IShellItem*, BOOL, int>)(lpVtbl[16]))((INameSpaceTreeControlEvents*)Unsafe.AsPointer(ref this), psi, fIsRoot);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

@@ -13,8 +13,7 @@ namespace TerraFX.Interop
         [NativeTypeName("DWORD")]
         public uint dwDxDiagHeaderVersion;
 
-        [NativeTypeName("BOOL")]
-        public int bAllowWHQLChecks;
+        public BOOL bAllowWHQLChecks;
 
         public void* pReserved;
     }

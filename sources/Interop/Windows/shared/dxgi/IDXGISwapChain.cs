@@ -99,17 +99,17 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(10)]
         [return: NativeTypeName("HRESULT")]
-        public int SetFullscreenState([NativeTypeName("BOOL")] int Fullscreen, IDXGIOutput* pTarget)
+        public int SetFullscreenState(BOOL Fullscreen, IDXGIOutput* pTarget)
         {
-            return ((delegate* unmanaged<IDXGISwapChain*, int, IDXGIOutput*, int>)(lpVtbl[10]))((IDXGISwapChain*)Unsafe.AsPointer(ref this), Fullscreen, pTarget);
+            return ((delegate* unmanaged<IDXGISwapChain*, BOOL, IDXGIOutput*, int>)(lpVtbl[10]))((IDXGISwapChain*)Unsafe.AsPointer(ref this), Fullscreen, pTarget);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(11)]
         [return: NativeTypeName("HRESULT")]
-        public int GetFullscreenState([NativeTypeName("BOOL *")] int* pFullscreen, IDXGIOutput** ppTarget)
+        public int GetFullscreenState(BOOL* pFullscreen, IDXGIOutput** ppTarget)
         {
-            return ((delegate* unmanaged<IDXGISwapChain*, int*, IDXGIOutput**, int>)(lpVtbl[11]))((IDXGISwapChain*)Unsafe.AsPointer(ref this), pFullscreen, ppTarget);
+            return ((delegate* unmanaged<IDXGISwapChain*, BOOL*, IDXGIOutput**, int>)(lpVtbl[11]))((IDXGISwapChain*)Unsafe.AsPointer(ref this), pFullscreen, ppTarget);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

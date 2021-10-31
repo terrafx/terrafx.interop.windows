@@ -12,8 +12,7 @@ namespace TerraFX.Interop
         [NativeTypeName("UINT")]
         public uint cb;
 
-        [NativeTypeName("BOOL")]
-        public int fMDIApp;
+        public BOOL fMDIApp;
 
         [NativeTypeName("HWND")]
         public IntPtr hwndFrame;

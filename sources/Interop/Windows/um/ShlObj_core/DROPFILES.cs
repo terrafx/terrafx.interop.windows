@@ -15,10 +15,8 @@ namespace TerraFX.Interop
 
         public POINT pt;
 
-        [NativeTypeName("BOOL")]
-        public int fNC;
+        public BOOL fNC;
 
-        [NativeTypeName("BOOL")]
-        public int fWide;
+        public BOOL fWide;
     }
 }

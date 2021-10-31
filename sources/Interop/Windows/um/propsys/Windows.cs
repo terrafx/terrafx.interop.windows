@@ -78,11 +78,11 @@ namespace TerraFX.Interop
 
         [DllImport("propsys", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
-        public static extern int PSGetItemPropertyHandler(IUnknown* punkItem, [NativeTypeName("BOOL")] int fReadWrite, [NativeTypeName("const IID &")] Guid* riid, void** ppv);
+        public static extern int PSGetItemPropertyHandler(IUnknown* punkItem, BOOL fReadWrite, [NativeTypeName("const IID &")] Guid* riid, void** ppv);
 
         [DllImport("propsys", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
-        public static extern int PSGetItemPropertyHandlerWithCreateObject(IUnknown* punkItem, [NativeTypeName("BOOL")] int fReadWrite, IUnknown* punkCreateObject, [NativeTypeName("const IID &")] Guid* riid, void** ppv);
+        public static extern int PSGetItemPropertyHandlerWithCreateObject(IUnknown* punkItem, BOOL fReadWrite, IUnknown* punkCreateObject, [NativeTypeName("const IID &")] Guid* riid, void** ppv);
 
         [DllImport("propsys", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
@@ -206,11 +206,11 @@ namespace TerraFX.Interop
 
         [DllImport("propsys", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
-        public static extern int PSPropertyBag_ReadBOOL(IPropertyBag* propBag, [NativeTypeName("LPCWSTR")] ushort* propName, [NativeTypeName("BOOL *")] int* value);
+        public static extern int PSPropertyBag_ReadBOOL(IPropertyBag* propBag, [NativeTypeName("LPCWSTR")] ushort* propName, BOOL* value);
 
         [DllImport("propsys", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
-        public static extern int PSPropertyBag_WriteBOOL(IPropertyBag* propBag, [NativeTypeName("LPCWSTR")] ushort* propName, [NativeTypeName("BOOL")] int value);
+        public static extern int PSPropertyBag_WriteBOOL(IPropertyBag* propBag, [NativeTypeName("LPCWSTR")] ushort* propName, BOOL value);
 
         [DllImport("propsys", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]

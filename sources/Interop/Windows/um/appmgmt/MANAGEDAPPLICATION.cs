@@ -54,7 +54,6 @@ namespace TerraFX.Interop
         [NativeTypeName("DWORD")]
         public uint dwPathType;
 
-        [NativeTypeName("BOOL")]
-        public int bInstalled;
+        public BOOL bInstalled;
     }
 }

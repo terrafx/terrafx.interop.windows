@@ -10,7 +10,6 @@ namespace TerraFX.Interop
         [NativeTypeName("UINT64")]
         public ulong Frequency;
 
-        [NativeTypeName("BOOL")]
-        public int Disjoint;
+        public BOOL Disjoint;
     }
 }

@@ -26,8 +26,7 @@ namespace TerraFX.Interop
         [NativeTypeName("PCRYPT_TIMESTAMP_ACCURACY")]
         public CRYPT_TIMESTAMP_ACCURACY* pvAccuracy;
 
-        [NativeTypeName("BOOL")]
-        public int fOrdering;
+        public BOOL fOrdering;
 
         [NativeTypeName("CRYPT_DER_BLOB")]
         public CRYPT_DATA_BLOB Nonce;

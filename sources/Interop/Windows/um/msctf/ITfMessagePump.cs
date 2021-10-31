@@ -43,33 +43,33 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
         [return: NativeTypeName("HRESULT")]
-        public int PeekMessageA([NativeTypeName("LPMSG")] MSG* pMsg, [NativeTypeName("HWND")] IntPtr hwnd, [NativeTypeName("UINT")] uint wMsgFilterMin, [NativeTypeName("UINT")] uint wMsgFilterMax, [NativeTypeName("UINT")] uint wRemoveMsg, [NativeTypeName("BOOL *")] int* pfResult)
+        public int PeekMessageA([NativeTypeName("LPMSG")] MSG* pMsg, [NativeTypeName("HWND")] IntPtr hwnd, [NativeTypeName("UINT")] uint wMsgFilterMin, [NativeTypeName("UINT")] uint wMsgFilterMax, [NativeTypeName("UINT")] uint wRemoveMsg, BOOL* pfResult)
         {
-            return ((delegate* unmanaged<ITfMessagePump*, MSG*, IntPtr, uint, uint, uint, int*, int>)(lpVtbl[3]))((ITfMessagePump*)Unsafe.AsPointer(ref this), pMsg, hwnd, wMsgFilterMin, wMsgFilterMax, wRemoveMsg, pfResult);
+            return ((delegate* unmanaged<ITfMessagePump*, MSG*, IntPtr, uint, uint, uint, BOOL*, int>)(lpVtbl[3]))((ITfMessagePump*)Unsafe.AsPointer(ref this), pMsg, hwnd, wMsgFilterMin, wMsgFilterMax, wRemoveMsg, pfResult);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
         [return: NativeTypeName("HRESULT")]
-        public int GetMessageA([NativeTypeName("LPMSG")] MSG* pMsg, [NativeTypeName("HWND")] IntPtr hwnd, [NativeTypeName("UINT")] uint wMsgFilterMin, [NativeTypeName("UINT")] uint wMsgFilterMax, [NativeTypeName("BOOL *")] int* pfResult)
+        public int GetMessageA([NativeTypeName("LPMSG")] MSG* pMsg, [NativeTypeName("HWND")] IntPtr hwnd, [NativeTypeName("UINT")] uint wMsgFilterMin, [NativeTypeName("UINT")] uint wMsgFilterMax, BOOL* pfResult)
         {
-            return ((delegate* unmanaged<ITfMessagePump*, MSG*, IntPtr, uint, uint, int*, int>)(lpVtbl[4]))((ITfMessagePump*)Unsafe.AsPointer(ref this), pMsg, hwnd, wMsgFilterMin, wMsgFilterMax, pfResult);
+            return ((delegate* unmanaged<ITfMessagePump*, MSG*, IntPtr, uint, uint, BOOL*, int>)(lpVtbl[4]))((ITfMessagePump*)Unsafe.AsPointer(ref this), pMsg, hwnd, wMsgFilterMin, wMsgFilterMax, pfResult);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
         [return: NativeTypeName("HRESULT")]
-        public int PeekMessageW([NativeTypeName("LPMSG")] MSG* pMsg, [NativeTypeName("HWND")] IntPtr hwnd, [NativeTypeName("UINT")] uint wMsgFilterMin, [NativeTypeName("UINT")] uint wMsgFilterMax, [NativeTypeName("UINT")] uint wRemoveMsg, [NativeTypeName("BOOL *")] int* pfResult)
+        public int PeekMessageW([NativeTypeName("LPMSG")] MSG* pMsg, [NativeTypeName("HWND")] IntPtr hwnd, [NativeTypeName("UINT")] uint wMsgFilterMin, [NativeTypeName("UINT")] uint wMsgFilterMax, [NativeTypeName("UINT")] uint wRemoveMsg, BOOL* pfResult)
         {
-            return ((delegate* unmanaged<ITfMessagePump*, MSG*, IntPtr, uint, uint, uint, int*, int>)(lpVtbl[5]))((ITfMessagePump*)Unsafe.AsPointer(ref this), pMsg, hwnd, wMsgFilterMin, wMsgFilterMax, wRemoveMsg, pfResult);
+            return ((delegate* unmanaged<ITfMessagePump*, MSG*, IntPtr, uint, uint, uint, BOOL*, int>)(lpVtbl[5]))((ITfMessagePump*)Unsafe.AsPointer(ref this), pMsg, hwnd, wMsgFilterMin, wMsgFilterMax, wRemoveMsg, pfResult);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
         [return: NativeTypeName("HRESULT")]
-        public int GetMessageW([NativeTypeName("LPMSG")] MSG* pMsg, [NativeTypeName("HWND")] IntPtr hwnd, [NativeTypeName("UINT")] uint wMsgFilterMin, [NativeTypeName("UINT")] uint wMsgFilterMax, [NativeTypeName("BOOL *")] int* pfResult)
+        public int GetMessageW([NativeTypeName("LPMSG")] MSG* pMsg, [NativeTypeName("HWND")] IntPtr hwnd, [NativeTypeName("UINT")] uint wMsgFilterMin, [NativeTypeName("UINT")] uint wMsgFilterMax, BOOL* pfResult)
         {
-            return ((delegate* unmanaged<ITfMessagePump*, MSG*, IntPtr, uint, uint, int*, int>)(lpVtbl[6]))((ITfMessagePump*)Unsafe.AsPointer(ref this), pMsg, hwnd, wMsgFilterMin, wMsgFilterMax, pfResult);
+            return ((delegate* unmanaged<ITfMessagePump*, MSG*, IntPtr, uint, uint, BOOL*, int>)(lpVtbl[6]))((ITfMessagePump*)Unsafe.AsPointer(ref this), pMsg, hwnd, wMsgFilterMin, wMsgFilterMax, pfResult);
         }
     }
 }

@@ -75,9 +75,9 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(7)]
         [return: NativeTypeName("HRESULT")]
-        public int GetMaxConvertLength([NativeTypeName("DWORD")] uint cSrcLength, [NativeTypeName("BOOL")] int bSAPI2UPS, [NativeTypeName("DWORD *")] uint* pcMaxDestLength)
+        public int GetMaxConvertLength([NativeTypeName("DWORD")] uint cSrcLength, BOOL bSAPI2UPS, [NativeTypeName("DWORD *")] uint* pcMaxDestLength)
         {
-            return ((delegate* unmanaged<ISpPhoneticAlphabetConverter*, uint, int, uint*, int>)(lpVtbl[7]))((ISpPhoneticAlphabetConverter*)Unsafe.AsPointer(ref this), cSrcLength, bSAPI2UPS, pcMaxDestLength);
+            return ((delegate* unmanaged<ISpPhoneticAlphabetConverter*, uint, BOOL, uint*, int>)(lpVtbl[7]))((ISpPhoneticAlphabetConverter*)Unsafe.AsPointer(ref this), cSrcLength, bSAPI2UPS, pcMaxDestLength);
         }
     }
 }

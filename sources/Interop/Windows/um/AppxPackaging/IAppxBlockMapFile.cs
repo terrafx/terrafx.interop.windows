@@ -75,9 +75,9 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(7)]
         [return: NativeTypeName("HRESULT")]
-        public int ValidateFileHash(IStream* fileStream, [NativeTypeName("BOOL *")] int* isValid)
+        public int ValidateFileHash(IStream* fileStream, BOOL* isValid)
         {
-            return ((delegate* unmanaged<IAppxBlockMapFile*, IStream*, int*, int>)(lpVtbl[7]))((IAppxBlockMapFile*)Unsafe.AsPointer(ref this), fileStream, isValid);
+            return ((delegate* unmanaged<IAppxBlockMapFile*, IStream*, BOOL*, int>)(lpVtbl[7]))((IAppxBlockMapFile*)Unsafe.AsPointer(ref this), fileStream, isValid);
         }
     }
 }

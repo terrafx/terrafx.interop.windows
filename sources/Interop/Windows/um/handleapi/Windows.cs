@@ -11,24 +11,19 @@ namespace TerraFX.Interop
     public static unsafe partial class Windows
     {
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int CloseHandle([NativeTypeName("HANDLE")] IntPtr hObject);
+        public static extern BOOL CloseHandle([NativeTypeName("HANDLE")] IntPtr hObject);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int DuplicateHandle([NativeTypeName("HANDLE")] IntPtr hSourceProcessHandle, [NativeTypeName("HANDLE")] IntPtr hSourceHandle, [NativeTypeName("HANDLE")] IntPtr hTargetProcessHandle, [NativeTypeName("LPHANDLE")] IntPtr* lpTargetHandle, [NativeTypeName("DWORD")] uint dwDesiredAccess, [NativeTypeName("BOOL")] int bInheritHandle, [NativeTypeName("DWORD")] uint dwOptions);
+        public static extern BOOL DuplicateHandle([NativeTypeName("HANDLE")] IntPtr hSourceProcessHandle, [NativeTypeName("HANDLE")] IntPtr hSourceHandle, [NativeTypeName("HANDLE")] IntPtr hTargetProcessHandle, [NativeTypeName("LPHANDLE")] IntPtr* lpTargetHandle, [NativeTypeName("DWORD")] uint dwDesiredAccess, BOOL bInheritHandle, [NativeTypeName("DWORD")] uint dwOptions);
 
         [DllImport("kernelbase", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int CompareObjectHandles([NativeTypeName("HANDLE")] IntPtr hFirstObjectHandle, [NativeTypeName("HANDLE")] IntPtr hSecondObjectHandle);
+        public static extern BOOL CompareObjectHandles([NativeTypeName("HANDLE")] IntPtr hFirstObjectHandle, [NativeTypeName("HANDLE")] IntPtr hSecondObjectHandle);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int GetHandleInformation([NativeTypeName("HANDLE")] IntPtr hObject, [NativeTypeName("LPDWORD")] uint* lpdwFlags);
+        public static extern BOOL GetHandleInformation([NativeTypeName("HANDLE")] IntPtr hObject, [NativeTypeName("LPDWORD")] uint* lpdwFlags);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SetHandleInformation([NativeTypeName("HANDLE")] IntPtr hObject, [NativeTypeName("DWORD")] uint dwMask, [NativeTypeName("DWORD")] uint dwFlags);
+        public static extern BOOL SetHandleInformation([NativeTypeName("HANDLE")] IntPtr hObject, [NativeTypeName("DWORD")] uint dwMask, [NativeTypeName("DWORD")] uint dwFlags);
 
         [NativeTypeName("#define INVALID_HANDLE_VALUE ((HANDLE)(LONG_PTR)-1)")]
         public static IntPtr INVALID_HANDLE_VALUE => ((nint)((nint)(-1)));

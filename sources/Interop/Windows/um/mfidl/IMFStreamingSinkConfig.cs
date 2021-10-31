@@ -43,9 +43,9 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
         [return: NativeTypeName("HRESULT")]
-        public int StartStreaming([NativeTypeName("BOOL")] int fSeekOffsetIsByteOffset, [NativeTypeName("QWORD")] ulong qwSeekOffset)
+        public int StartStreaming(BOOL fSeekOffsetIsByteOffset, [NativeTypeName("QWORD")] ulong qwSeekOffset)
         {
-            return ((delegate* unmanaged<IMFStreamingSinkConfig*, int, ulong, int>)(lpVtbl[3]))((IMFStreamingSinkConfig*)Unsafe.AsPointer(ref this), fSeekOffsetIsByteOffset, qwSeekOffset);
+            return ((delegate* unmanaged<IMFStreamingSinkConfig*, BOOL, ulong, int>)(lpVtbl[3]))((IMFStreamingSinkConfig*)Unsafe.AsPointer(ref this), fSeekOffsetIsByteOffset, qwSeekOffset);
         }
     }
 }

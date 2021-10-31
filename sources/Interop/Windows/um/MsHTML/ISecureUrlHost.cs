@@ -43,9 +43,9 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
         [return: NativeTypeName("HRESULT")]
-        public int ValidateSecureUrl([NativeTypeName("BOOL *")] int* pfAllow, [NativeTypeName("OLECHAR *")] ushort* pchUrlInQuestion, [NativeTypeName("DWORD")] uint dwFlags)
+        public int ValidateSecureUrl(BOOL* pfAllow, [NativeTypeName("OLECHAR *")] ushort* pchUrlInQuestion, [NativeTypeName("DWORD")] uint dwFlags)
         {
-            return ((delegate* unmanaged<ISecureUrlHost*, int*, ushort*, uint, int>)(lpVtbl[3]))((ISecureUrlHost*)Unsafe.AsPointer(ref this), pfAllow, pchUrlInQuestion, dwFlags);
+            return ((delegate* unmanaged<ISecureUrlHost*, BOOL*, ushort*, uint, int>)(lpVtbl[3]))((ISecureUrlHost*)Unsafe.AsPointer(ref this), pfAllow, pchUrlInQuestion, dwFlags);
         }
     }
 }

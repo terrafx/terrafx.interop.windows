@@ -43,9 +43,9 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
         [return: NativeTypeName("HRESULT")]
-        public int IsStoreSerializable([NativeTypeName("const GUID &")] Guid* guidProp, ITfRange* pRange, ITfPropertyStore* pPropStore, [NativeTypeName("BOOL *")] int* pfSerializable)
+        public int IsStoreSerializable([NativeTypeName("const GUID &")] Guid* guidProp, ITfRange* pRange, ITfPropertyStore* pPropStore, BOOL* pfSerializable)
         {
-            return ((delegate* unmanaged<ITfCreatePropertyStore*, Guid*, ITfRange*, ITfPropertyStore*, int*, int>)(lpVtbl[3]))((ITfCreatePropertyStore*)Unsafe.AsPointer(ref this), guidProp, pRange, pPropStore, pfSerializable);
+            return ((delegate* unmanaged<ITfCreatePropertyStore*, Guid*, ITfRange*, ITfPropertyStore*, BOOL*, int>)(lpVtbl[3]))((ITfCreatePropertyStore*)Unsafe.AsPointer(ref this), guidProp, pRange, pPropStore, pfSerializable);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

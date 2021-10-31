@@ -618,8 +618,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(56)]
-        [return: NativeTypeName("BOOL")]
-        public int IsSupported([NativeTypeName("const D2D1_RENDER_TARGET_PROPERTIES *")] D2D1_RENDER_TARGET_PROPERTIES* renderTargetProperties)
+        public BOOL IsSupported([NativeTypeName("const D2D1_RENDER_TARGET_PROPERTIES *")] D2D1_RENDER_TARGET_PROPERTIES* renderTargetProperties)
         {
             return ((delegate* unmanaged<ID2D1DeviceContext3*, D2D1_RENDER_TARGET_PROPERTIES*, int>)(lpVtbl[56]))((ID2D1DeviceContext3*)Unsafe.AsPointer(ref this), renderTargetProperties);
         }
@@ -714,16 +713,14 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(68)]
-        [return: NativeTypeName("BOOL")]
-        public int IsDxgiFormatSupported(DXGI_FORMAT format)
+        public BOOL IsDxgiFormatSupported(DXGI_FORMAT format)
         {
             return ((delegate* unmanaged<ID2D1DeviceContext3*, DXGI_FORMAT, int>)(lpVtbl[68]))((ID2D1DeviceContext3*)Unsafe.AsPointer(ref this), format);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(69)]
-        [return: NativeTypeName("BOOL")]
-        public int IsBufferPrecisionSupported(D2D1_BUFFER_PRECISION bufferPrecision)
+        public BOOL IsBufferPrecisionSupported(D2D1_BUFFER_PRECISION bufferPrecision)
         {
             return ((delegate* unmanaged<ID2D1DeviceContext3*, D2D1_BUFFER_PRECISION, int>)(lpVtbl[69]))((ID2D1DeviceContext3*)Unsafe.AsPointer(ref this), bufferPrecision);
         }

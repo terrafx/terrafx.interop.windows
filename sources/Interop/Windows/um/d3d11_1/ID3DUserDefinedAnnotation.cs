@@ -65,8 +65,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        [return: NativeTypeName("BOOL")]
-        public int GetStatus()
+        public BOOL GetStatus()
         {
             return ((delegate* unmanaged<ID3DUserDefinedAnnotation*, int>)(lpVtbl[6]))((ID3DUserDefinedAnnotation*)Unsafe.AsPointer(ref this));
         }

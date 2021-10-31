@@ -31,20 +31,16 @@ namespace TerraFX.Interop
         public static extern int GetRestrictedErrorInfo(IRestrictedErrorInfo** ppRestrictedErrorInfo);
 
         [DllImport("combase", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int RoOriginateErrorW([NativeTypeName("HRESULT")] int error, [NativeTypeName("UINT")] uint cchMax, [NativeTypeName("PCWSTR")] ushort* message);
+        public static extern BOOL RoOriginateErrorW([NativeTypeName("HRESULT")] int error, [NativeTypeName("UINT")] uint cchMax, [NativeTypeName("PCWSTR")] ushort* message);
 
         [DllImport("combase", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int RoOriginateError([NativeTypeName("HRESULT")] int error, [NativeTypeName("HSTRING")] IntPtr message);
+        public static extern BOOL RoOriginateError([NativeTypeName("HRESULT")] int error, [NativeTypeName("HSTRING")] IntPtr message);
 
         [DllImport("combase", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int RoTransformErrorW([NativeTypeName("HRESULT")] int oldError, [NativeTypeName("HRESULT")] int newError, [NativeTypeName("UINT")] uint cchMax, [NativeTypeName("PCWSTR")] ushort* message);
+        public static extern BOOL RoTransformErrorW([NativeTypeName("HRESULT")] int oldError, [NativeTypeName("HRESULT")] int newError, [NativeTypeName("UINT")] uint cchMax, [NativeTypeName("PCWSTR")] ushort* message);
 
         [DllImport("combase", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int RoTransformError([NativeTypeName("HRESULT")] int oldError, [NativeTypeName("HRESULT")] int newError, [NativeTypeName("HSTRING")] IntPtr message);
+        public static extern BOOL RoTransformError([NativeTypeName("HRESULT")] int oldError, [NativeTypeName("HRESULT")] int newError, [NativeTypeName("HSTRING")] IntPtr message);
 
         [DllImport("combase", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
@@ -65,8 +61,7 @@ namespace TerraFX.Interop
             return RoSetErrorReportingFlags(flags);
         }
 
-        [return: NativeTypeName("BOOL")]
-        public static int OriginateError([NativeTypeName("HRESULT")] int error, [NativeTypeName("UINT")] uint cchMax, [NativeTypeName("PCWSTR")] ushort* message)
+        public static BOOL OriginateError([NativeTypeName("HRESULT")] int error, [NativeTypeName("UINT")] uint cchMax, [NativeTypeName("PCWSTR")] ushort* message)
         {
             if ((((int)(error)) >= 0))
             {
@@ -76,8 +71,7 @@ namespace TerraFX.Interop
             return RoOriginateErrorW(error, cchMax, message);
         }
 
-        [return: NativeTypeName("BOOL")]
-        public static int OriginateError([NativeTypeName("HRESULT")] int error, [NativeTypeName("HSTRING")] IntPtr message)
+        public static BOOL OriginateError([NativeTypeName("HRESULT")] int error, [NativeTypeName("HSTRING")] IntPtr message)
         {
             if ((((int)(error)) >= 0))
             {
@@ -87,8 +81,7 @@ namespace TerraFX.Interop
             return RoOriginateError(error, message);
         }
 
-        [return: NativeTypeName("BOOL")]
-        public static int TransformError([NativeTypeName("HRESULT")] int oldError, [NativeTypeName("HRESULT")] int newError, [NativeTypeName("UINT")] uint cchMax, [NativeTypeName("PCWSTR")] ushort* message)
+        public static BOOL TransformError([NativeTypeName("HRESULT")] int oldError, [NativeTypeName("HRESULT")] int newError, [NativeTypeName("UINT")] uint cchMax, [NativeTypeName("PCWSTR")] ushort* message)
         {
             if ((oldError == newError) || ((((int)(oldError)) >= 0) && (((int)(newError)) >= 0)))
             {
@@ -98,8 +91,7 @@ namespace TerraFX.Interop
             return RoTransformErrorW(oldError, newError, cchMax, message);
         }
 
-        [return: NativeTypeName("BOOL")]
-        public static int TransformError([NativeTypeName("HRESULT")] int oldError, [NativeTypeName("HRESULT")] int newError, [NativeTypeName("HSTRING")] IntPtr message)
+        public static BOOL TransformError([NativeTypeName("HRESULT")] int oldError, [NativeTypeName("HRESULT")] int newError, [NativeTypeName("HSTRING")] IntPtr message)
         {
             if ((oldError == newError) || ((((int)(oldError)) >= 0) && (((int)(newError)) >= 0)))
             {
@@ -110,8 +102,7 @@ namespace TerraFX.Interop
         }
 
         [DllImport("combase", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int RoOriginateLanguageException([NativeTypeName("HRESULT")] int error, [NativeTypeName("HSTRING")] IntPtr message, IUnknown* languageException);
+        public static extern BOOL RoOriginateLanguageException([NativeTypeName("HRESULT")] int error, [NativeTypeName("HSTRING")] IntPtr message, IUnknown* languageException);
 
         [DllImport("combase", ExactSpelling = true)]
         public static extern void RoClearError();
@@ -133,8 +124,7 @@ namespace TerraFX.Interop
         public static extern int RoReportFailedDelegate(IUnknown* punkDelegate, IRestrictedErrorInfo* pRestrictedErrorInfo);
 
         [DllImport("combase", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int IsErrorPropagationEnabled();
+        public static extern BOOL IsErrorPropagationEnabled();
 
         [NativeTypeName("#define MAX_ERROR_MESSAGE_CHARS 512")]
         public const int MAX_ERROR_MESSAGE_CHARS = 512;

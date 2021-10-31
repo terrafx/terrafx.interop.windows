@@ -51,17 +51,17 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
         [return: NativeTypeName("HRESULT")]
-        public int ContextSensitiveHelp([NativeTypeName("BOOL")] int fEnterMode)
+        public int ContextSensitiveHelp(BOOL fEnterMode)
         {
-            return ((delegate* unmanaged<IDeskBand2*, int, int>)(lpVtbl[4]))((IDeskBand2*)Unsafe.AsPointer(ref this), fEnterMode);
+            return ((delegate* unmanaged<IDeskBand2*, BOOL, int>)(lpVtbl[4]))((IDeskBand2*)Unsafe.AsPointer(ref this), fEnterMode);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
         [return: NativeTypeName("HRESULT")]
-        public int ShowDW([NativeTypeName("BOOL")] int fShow)
+        public int ShowDW(BOOL fShow)
         {
-            return ((delegate* unmanaged<IDeskBand2*, int, int>)(lpVtbl[5]))((IDeskBand2*)Unsafe.AsPointer(ref this), fShow);
+            return ((delegate* unmanaged<IDeskBand2*, BOOL, int>)(lpVtbl[5]))((IDeskBand2*)Unsafe.AsPointer(ref this), fShow);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -75,9 +75,9 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(7)]
         [return: NativeTypeName("HRESULT")]
-        public int ResizeBorderDW([NativeTypeName("LPCRECT")] RECT* prcBorder, IUnknown* punkToolbarSite, [NativeTypeName("BOOL")] int fReserved)
+        public int ResizeBorderDW([NativeTypeName("LPCRECT")] RECT* prcBorder, IUnknown* punkToolbarSite, BOOL fReserved)
         {
-            return ((delegate* unmanaged<IDeskBand2*, RECT*, IUnknown*, int, int>)(lpVtbl[7]))((IDeskBand2*)Unsafe.AsPointer(ref this), prcBorder, punkToolbarSite, fReserved);
+            return ((delegate* unmanaged<IDeskBand2*, RECT*, IUnknown*, BOOL, int>)(lpVtbl[7]))((IDeskBand2*)Unsafe.AsPointer(ref this), prcBorder, punkToolbarSite, fReserved);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -91,25 +91,25 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(9)]
         [return: NativeTypeName("HRESULT")]
-        public int CanRenderComposited([NativeTypeName("BOOL *")] int* pfCanRenderComposited)
+        public int CanRenderComposited(BOOL* pfCanRenderComposited)
         {
-            return ((delegate* unmanaged<IDeskBand2*, int*, int>)(lpVtbl[9]))((IDeskBand2*)Unsafe.AsPointer(ref this), pfCanRenderComposited);
+            return ((delegate* unmanaged<IDeskBand2*, BOOL*, int>)(lpVtbl[9]))((IDeskBand2*)Unsafe.AsPointer(ref this), pfCanRenderComposited);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(10)]
         [return: NativeTypeName("HRESULT")]
-        public int SetCompositionState([NativeTypeName("BOOL")] int fCompositionEnabled)
+        public int SetCompositionState(BOOL fCompositionEnabled)
         {
-            return ((delegate* unmanaged<IDeskBand2*, int, int>)(lpVtbl[10]))((IDeskBand2*)Unsafe.AsPointer(ref this), fCompositionEnabled);
+            return ((delegate* unmanaged<IDeskBand2*, BOOL, int>)(lpVtbl[10]))((IDeskBand2*)Unsafe.AsPointer(ref this), fCompositionEnabled);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(11)]
         [return: NativeTypeName("HRESULT")]
-        public int GetCompositionState([NativeTypeName("BOOL *")] int* pfCompositionEnabled)
+        public int GetCompositionState(BOOL* pfCompositionEnabled)
         {
-            return ((delegate* unmanaged<IDeskBand2*, int*, int>)(lpVtbl[11]))((IDeskBand2*)Unsafe.AsPointer(ref this), pfCompositionEnabled);
+            return ((delegate* unmanaged<IDeskBand2*, BOOL*, int>)(lpVtbl[11]))((IDeskBand2*)Unsafe.AsPointer(ref this), pfCompositionEnabled);
         }
     }
 }

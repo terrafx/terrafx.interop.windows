@@ -51,17 +51,17 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
         [return: NativeTypeName("HRESULT")]
-        public int ContextSensitiveHelp([NativeTypeName("BOOL")] int fEnterMode)
+        public int ContextSensitiveHelp(BOOL fEnterMode)
         {
-            return ((delegate* unmanaged<IDeskBand*, int, int>)(lpVtbl[4]))((IDeskBand*)Unsafe.AsPointer(ref this), fEnterMode);
+            return ((delegate* unmanaged<IDeskBand*, BOOL, int>)(lpVtbl[4]))((IDeskBand*)Unsafe.AsPointer(ref this), fEnterMode);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
         [return: NativeTypeName("HRESULT")]
-        public int ShowDW([NativeTypeName("BOOL")] int fShow)
+        public int ShowDW(BOOL fShow)
         {
-            return ((delegate* unmanaged<IDeskBand*, int, int>)(lpVtbl[5]))((IDeskBand*)Unsafe.AsPointer(ref this), fShow);
+            return ((delegate* unmanaged<IDeskBand*, BOOL, int>)(lpVtbl[5]))((IDeskBand*)Unsafe.AsPointer(ref this), fShow);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -75,9 +75,9 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(7)]
         [return: NativeTypeName("HRESULT")]
-        public int ResizeBorderDW([NativeTypeName("LPCRECT")] RECT* prcBorder, IUnknown* punkToolbarSite, [NativeTypeName("BOOL")] int fReserved)
+        public int ResizeBorderDW([NativeTypeName("LPCRECT")] RECT* prcBorder, IUnknown* punkToolbarSite, BOOL fReserved)
         {
-            return ((delegate* unmanaged<IDeskBand*, RECT*, IUnknown*, int, int>)(lpVtbl[7]))((IDeskBand*)Unsafe.AsPointer(ref this), prcBorder, punkToolbarSite, fReserved);
+            return ((delegate* unmanaged<IDeskBand*, RECT*, IUnknown*, BOOL, int>)(lpVtbl[7]))((IDeskBand*)Unsafe.AsPointer(ref this), prcBorder, punkToolbarSite, fReserved);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

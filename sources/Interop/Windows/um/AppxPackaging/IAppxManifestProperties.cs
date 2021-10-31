@@ -43,9 +43,9 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
         [return: NativeTypeName("HRESULT")]
-        public int GetBoolValue([NativeTypeName("LPCWSTR")] ushort* name, [NativeTypeName("BOOL *")] int* value)
+        public int GetBoolValue([NativeTypeName("LPCWSTR")] ushort* name, BOOL* value)
         {
-            return ((delegate* unmanaged<IAppxManifestProperties*, ushort*, int*, int>)(lpVtbl[3]))((IAppxManifestProperties*)Unsafe.AsPointer(ref this), name, value);
+            return ((delegate* unmanaged<IAppxManifestProperties*, ushort*, BOOL*, int>)(lpVtbl[3]))((IAppxManifestProperties*)Unsafe.AsPointer(ref this), name, value);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

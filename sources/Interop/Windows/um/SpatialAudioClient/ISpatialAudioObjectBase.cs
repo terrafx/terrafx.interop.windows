@@ -59,9 +59,9 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
         [return: NativeTypeName("HRESULT")]
-        public int IsActive([NativeTypeName("BOOL *")] int* isActive)
+        public int IsActive(BOOL* isActive)
         {
-            return ((delegate* unmanaged<ISpatialAudioObjectBase*, int*, int>)(lpVtbl[5]))((ISpatialAudioObjectBase*)Unsafe.AsPointer(ref this), isActive);
+            return ((delegate* unmanaged<ISpatialAudioObjectBase*, BOOL*, int>)(lpVtbl[5]))((ISpatialAudioObjectBase*)Unsafe.AsPointer(ref this), isActive);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

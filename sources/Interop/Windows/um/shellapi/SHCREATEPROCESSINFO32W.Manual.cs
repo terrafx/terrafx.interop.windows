@@ -38,8 +38,7 @@ namespace TerraFX.Interop
         [NativeTypeName("LPSECURITY_ATTRIBUTES")]
         public SECURITY_ATTRIBUTES* lpThreadAttributes;
 
-        [NativeTypeName("BOOL")]
-        public int bInheritHandles;
+        public BOOL bInheritHandles;
 
         [NativeTypeName("DWORD")]
         public uint dwCreationFlags;

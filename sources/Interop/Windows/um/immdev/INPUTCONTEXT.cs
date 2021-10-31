@@ -14,8 +14,7 @@ namespace TerraFX.Interop
         [NativeTypeName("HWND")]
         public IntPtr hWnd;
 
-        [NativeTypeName("BOOL")]
-        public int fOpen;
+        public BOOL fOpen;
 
         public POINT ptStatusWndPos;
 

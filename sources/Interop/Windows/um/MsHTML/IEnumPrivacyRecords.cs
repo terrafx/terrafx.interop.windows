@@ -59,9 +59,9 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
         [return: NativeTypeName("HRESULT")]
-        public int GetPrivacyImpacted([NativeTypeName("BOOL *")] int* pState)
+        public int GetPrivacyImpacted(BOOL* pState)
         {
-            return ((delegate* unmanaged<IEnumPrivacyRecords*, int*, int>)(lpVtbl[5]))((IEnumPrivacyRecords*)Unsafe.AsPointer(ref this), pState);
+            return ((delegate* unmanaged<IEnumPrivacyRecords*, BOOL*, int>)(lpVtbl[5]))((IEnumPrivacyRecords*)Unsafe.AsPointer(ref this), pState);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

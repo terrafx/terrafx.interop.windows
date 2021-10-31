@@ -43,9 +43,9 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
         [return: NativeTypeName("HRESULT")]
-        public int InitializePredefined(WICBitmapPaletteType ePaletteType, [NativeTypeName("BOOL")] int fAddTransparentColor)
+        public int InitializePredefined(WICBitmapPaletteType ePaletteType, BOOL fAddTransparentColor)
         {
-            return ((delegate* unmanaged<IWICPalette*, WICBitmapPaletteType, int, int>)(lpVtbl[3]))((IWICPalette*)Unsafe.AsPointer(ref this), ePaletteType, fAddTransparentColor);
+            return ((delegate* unmanaged<IWICPalette*, WICBitmapPaletteType, BOOL, int>)(lpVtbl[3]))((IWICPalette*)Unsafe.AsPointer(ref this), ePaletteType, fAddTransparentColor);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -59,9 +59,9 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
         [return: NativeTypeName("HRESULT")]
-        public int InitializeFromBitmap(IWICBitmapSource* pISurface, [NativeTypeName("UINT")] uint cCount, [NativeTypeName("BOOL")] int fAddTransparentColor)
+        public int InitializeFromBitmap(IWICBitmapSource* pISurface, [NativeTypeName("UINT")] uint cCount, BOOL fAddTransparentColor)
         {
-            return ((delegate* unmanaged<IWICPalette*, IWICBitmapSource*, uint, int, int>)(lpVtbl[5]))((IWICPalette*)Unsafe.AsPointer(ref this), pISurface, cCount, fAddTransparentColor);
+            return ((delegate* unmanaged<IWICPalette*, IWICBitmapSource*, uint, BOOL, int>)(lpVtbl[5]))((IWICPalette*)Unsafe.AsPointer(ref this), pISurface, cCount, fAddTransparentColor);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -99,25 +99,25 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(10)]
         [return: NativeTypeName("HRESULT")]
-        public int IsBlackWhite([NativeTypeName("BOOL *")] int* pfIsBlackWhite)
+        public int IsBlackWhite(BOOL* pfIsBlackWhite)
         {
-            return ((delegate* unmanaged<IWICPalette*, int*, int>)(lpVtbl[10]))((IWICPalette*)Unsafe.AsPointer(ref this), pfIsBlackWhite);
+            return ((delegate* unmanaged<IWICPalette*, BOOL*, int>)(lpVtbl[10]))((IWICPalette*)Unsafe.AsPointer(ref this), pfIsBlackWhite);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(11)]
         [return: NativeTypeName("HRESULT")]
-        public int IsGrayscale([NativeTypeName("BOOL *")] int* pfIsGrayscale)
+        public int IsGrayscale(BOOL* pfIsGrayscale)
         {
-            return ((delegate* unmanaged<IWICPalette*, int*, int>)(lpVtbl[11]))((IWICPalette*)Unsafe.AsPointer(ref this), pfIsGrayscale);
+            return ((delegate* unmanaged<IWICPalette*, BOOL*, int>)(lpVtbl[11]))((IWICPalette*)Unsafe.AsPointer(ref this), pfIsGrayscale);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(12)]
         [return: NativeTypeName("HRESULT")]
-        public int HasAlpha([NativeTypeName("BOOL *")] int* pfHasAlpha)
+        public int HasAlpha(BOOL* pfHasAlpha)
         {
-            return ((delegate* unmanaged<IWICPalette*, int*, int>)(lpVtbl[12]))((IWICPalette*)Unsafe.AsPointer(ref this), pfHasAlpha);
+            return ((delegate* unmanaged<IWICPalette*, BOOL*, int>)(lpVtbl[12]))((IWICPalette*)Unsafe.AsPointer(ref this), pfHasAlpha);
         }
     }
 }

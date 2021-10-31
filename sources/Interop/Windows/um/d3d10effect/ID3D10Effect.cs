@@ -40,16 +40,14 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("BOOL")]
-        public int IsValid()
+        public BOOL IsValid()
         {
             return ((delegate* unmanaged<ID3D10Effect*, int>)(lpVtbl[3]))((ID3D10Effect*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        [return: NativeTypeName("BOOL")]
-        public int IsPool()
+        public BOOL IsPool()
         {
             return ((delegate* unmanaged<ID3D10Effect*, int>)(lpVtbl[4]))((ID3D10Effect*)Unsafe.AsPointer(ref this));
         }
@@ -129,8 +127,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(15)]
-        [return: NativeTypeName("BOOL")]
-        public int IsOptimized()
+        public BOOL IsOptimized()
         {
             return ((delegate* unmanaged<ID3D10Effect*, int>)(lpVtbl[15]))((ID3D10Effect*)Unsafe.AsPointer(ref this));
         }

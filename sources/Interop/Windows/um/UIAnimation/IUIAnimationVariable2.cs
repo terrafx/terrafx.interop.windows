@@ -227,17 +227,17 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(26)]
         [return: NativeTypeName("HRESULT")]
-        public int SetVariableChangeHandler(IUIAnimationVariableChangeHandler2* handler, [NativeTypeName("BOOL")] int fRegisterForNextAnimationEvent = 0)
+        public int SetVariableChangeHandler(IUIAnimationVariableChangeHandler2* handler, [Optional] BOOL fRegisterForNextAnimationEvent)
         {
-            return ((delegate* unmanaged<IUIAnimationVariable2*, IUIAnimationVariableChangeHandler2*, int, int>)(lpVtbl[26]))((IUIAnimationVariable2*)Unsafe.AsPointer(ref this), handler, fRegisterForNextAnimationEvent);
+            return ((delegate* unmanaged<IUIAnimationVariable2*, IUIAnimationVariableChangeHandler2*, BOOL, int>)(lpVtbl[26]))((IUIAnimationVariable2*)Unsafe.AsPointer(ref this), handler, fRegisterForNextAnimationEvent);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(27)]
         [return: NativeTypeName("HRESULT")]
-        public int SetVariableIntegerChangeHandler(IUIAnimationVariableIntegerChangeHandler2* handler, [NativeTypeName("BOOL")] int fRegisterForNextAnimationEvent = 0)
+        public int SetVariableIntegerChangeHandler(IUIAnimationVariableIntegerChangeHandler2* handler, [Optional] BOOL fRegisterForNextAnimationEvent)
         {
-            return ((delegate* unmanaged<IUIAnimationVariable2*, IUIAnimationVariableIntegerChangeHandler2*, int, int>)(lpVtbl[27]))((IUIAnimationVariable2*)Unsafe.AsPointer(ref this), handler, fRegisterForNextAnimationEvent);
+            return ((delegate* unmanaged<IUIAnimationVariable2*, IUIAnimationVariableIntegerChangeHandler2*, BOOL, int>)(lpVtbl[27]))((IUIAnimationVariable2*)Unsafe.AsPointer(ref this), handler, fRegisterForNextAnimationEvent);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

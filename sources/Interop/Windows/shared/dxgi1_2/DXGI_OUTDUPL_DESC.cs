@@ -11,7 +11,6 @@ namespace TerraFX.Interop
 
         public DXGI_MODE_ROTATION Rotation;
 
-        [NativeTypeName("BOOL")]
-        public int DesktopImageInSystemMemory;
+        public BOOL DesktopImageInSystemMemory;
     }
 }

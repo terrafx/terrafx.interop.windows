@@ -195,9 +195,9 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(22)]
         [return: NativeTypeName("HRESULT")]
-        public int GetAnyOperationsAborted([NativeTypeName("BOOL *")] int* pfAnyOperationsAborted)
+        public int GetAnyOperationsAborted(BOOL* pfAnyOperationsAborted)
         {
-            return ((delegate* unmanaged<IFileOperation*, int*, int>)(lpVtbl[22]))((IFileOperation*)Unsafe.AsPointer(ref this), pfAnyOperationsAborted);
+            return ((delegate* unmanaged<IFileOperation*, BOOL*, int>)(lpVtbl[22]))((IFileOperation*)Unsafe.AsPointer(ref this), pfAnyOperationsAborted);
         }
     }
 }

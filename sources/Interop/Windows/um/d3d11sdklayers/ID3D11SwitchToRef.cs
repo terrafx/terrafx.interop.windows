@@ -42,16 +42,14 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("BOOL")]
-        public int SetUseRef([NativeTypeName("BOOL")] int UseRef)
+        public BOOL SetUseRef(BOOL UseRef)
         {
-            return ((delegate* unmanaged<ID3D11SwitchToRef*, int, int>)(lpVtbl[3]))((ID3D11SwitchToRef*)Unsafe.AsPointer(ref this), UseRef);
+            return ((delegate* unmanaged<ID3D11SwitchToRef*, BOOL, int>)(lpVtbl[3]))((ID3D11SwitchToRef*)Unsafe.AsPointer(ref this), UseRef);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        [return: NativeTypeName("BOOL")]
-        public int GetUseRef()
+        public BOOL GetUseRef()
         {
             return ((delegate* unmanaged<ID3D11SwitchToRef*, int>)(lpVtbl[4]))((ID3D11SwitchToRef*)Unsafe.AsPointer(ref this));
         }

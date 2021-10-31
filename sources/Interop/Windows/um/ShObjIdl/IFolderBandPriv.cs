@@ -43,33 +43,33 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
         [return: NativeTypeName("HRESULT")]
-        public int SetCascade([NativeTypeName("BOOL")] int fCascade)
+        public int SetCascade(BOOL fCascade)
         {
-            return ((delegate* unmanaged<IFolderBandPriv*, int, int>)(lpVtbl[3]))((IFolderBandPriv*)Unsafe.AsPointer(ref this), fCascade);
+            return ((delegate* unmanaged<IFolderBandPriv*, BOOL, int>)(lpVtbl[3]))((IFolderBandPriv*)Unsafe.AsPointer(ref this), fCascade);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
         [return: NativeTypeName("HRESULT")]
-        public int SetAccelerators([NativeTypeName("BOOL")] int fAccelerators)
+        public int SetAccelerators(BOOL fAccelerators)
         {
-            return ((delegate* unmanaged<IFolderBandPriv*, int, int>)(lpVtbl[4]))((IFolderBandPriv*)Unsafe.AsPointer(ref this), fAccelerators);
+            return ((delegate* unmanaged<IFolderBandPriv*, BOOL, int>)(lpVtbl[4]))((IFolderBandPriv*)Unsafe.AsPointer(ref this), fAccelerators);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
         [return: NativeTypeName("HRESULT")]
-        public int SetNoIcons([NativeTypeName("BOOL")] int fNoIcons)
+        public int SetNoIcons(BOOL fNoIcons)
         {
-            return ((delegate* unmanaged<IFolderBandPriv*, int, int>)(lpVtbl[5]))((IFolderBandPriv*)Unsafe.AsPointer(ref this), fNoIcons);
+            return ((delegate* unmanaged<IFolderBandPriv*, BOOL, int>)(lpVtbl[5]))((IFolderBandPriv*)Unsafe.AsPointer(ref this), fNoIcons);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
         [return: NativeTypeName("HRESULT")]
-        public int SetNoText([NativeTypeName("BOOL")] int fNoText)
+        public int SetNoText(BOOL fNoText)
         {
-            return ((delegate* unmanaged<IFolderBandPriv*, int, int>)(lpVtbl[6]))((IFolderBandPriv*)Unsafe.AsPointer(ref this), fNoText);
+            return ((delegate* unmanaged<IFolderBandPriv*, BOOL, int>)(lpVtbl[6]))((IFolderBandPriv*)Unsafe.AsPointer(ref this), fNoText);
         }
     }
 }

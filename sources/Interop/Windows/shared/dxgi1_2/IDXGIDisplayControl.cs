@@ -42,17 +42,16 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("BOOL")]
-        public int IsStereoEnabled()
+        public BOOL IsStereoEnabled()
         {
             return ((delegate* unmanaged<IDXGIDisplayControl*, int>)(lpVtbl[3]))((IDXGIDisplayControl*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        public void SetStereoEnabled([NativeTypeName("BOOL")] int enabled)
+        public void SetStereoEnabled(BOOL enabled)
         {
-            ((delegate* unmanaged<IDXGIDisplayControl*, int, void>)(lpVtbl[4]))((IDXGIDisplayControl*)Unsafe.AsPointer(ref this), enabled);
+            ((delegate* unmanaged<IDXGIDisplayControl*, BOOL, void>)(lpVtbl[4]))((IDXGIDisplayControl*)Unsafe.AsPointer(ref this), enabled);
         }
     }
 }

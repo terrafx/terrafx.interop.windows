@@ -43,9 +43,9 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
         [return: NativeTypeName("HRESULT")]
-        public int OnMouseEvent([NativeTypeName("ULONG")] uint uEdge, [NativeTypeName("ULONG")] uint uQuadrant, [NativeTypeName("DWORD")] uint dwBtnStatus, [NativeTypeName("BOOL *")] int* pfEaten)
+        public int OnMouseEvent([NativeTypeName("ULONG")] uint uEdge, [NativeTypeName("ULONG")] uint uQuadrant, [NativeTypeName("DWORD")] uint dwBtnStatus, BOOL* pfEaten)
         {
-            return ((delegate* unmanaged<ITfMouseSink*, uint, uint, uint, int*, int>)(lpVtbl[3]))((ITfMouseSink*)Unsafe.AsPointer(ref this), uEdge, uQuadrant, dwBtnStatus, pfEaten);
+            return ((delegate* unmanaged<ITfMouseSink*, uint, uint, uint, BOOL*, int>)(lpVtbl[3]))((ITfMouseSink*)Unsafe.AsPointer(ref this), uEdge, uQuadrant, dwBtnStatus, pfEaten);
         }
     }
 }

@@ -75,9 +75,9 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(7)]
         [return: NativeTypeName("HRESULT")]
-        public int NotifyRelease([NativeTypeName("LONG")] int idResource, IResourceConsumer* pConsumer, [NativeTypeName("BOOL")] int bStillWant)
+        public int NotifyRelease([NativeTypeName("LONG")] int idResource, IResourceConsumer* pConsumer, BOOL bStillWant)
         {
-            return ((delegate* unmanaged<IResourceManager*, int, IResourceConsumer*, int, int>)(lpVtbl[7]))((IResourceManager*)Unsafe.AsPointer(ref this), idResource, pConsumer, bStillWant);
+            return ((delegate* unmanaged<IResourceManager*, int, IResourceConsumer*, BOOL, int>)(lpVtbl[7]))((IResourceManager*)Unsafe.AsPointer(ref this), idResource, pConsumer, bStillWant);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

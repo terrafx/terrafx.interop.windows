@@ -243,9 +243,9 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(28)]
         [return: NativeTypeName("HRESULT")]
-        public int DragShowNolock([NativeTypeName("BOOL")] int fShow)
+        public int DragShowNolock(BOOL fShow)
         {
-            return ((delegate* unmanaged<IImageList2*, int, int>)(lpVtbl[28]))((IImageList2*)Unsafe.AsPointer(ref this), fShow);
+            return ((delegate* unmanaged<IImageList2*, BOOL, int>)(lpVtbl[28]))((IImageList2*)Unsafe.AsPointer(ref this), fShow);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

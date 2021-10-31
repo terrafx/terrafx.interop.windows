@@ -14,11 +14,11 @@ namespace TerraFX.Interop
     {
         [DllImport("shcore", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
-        public static extern int IsProcessInWDAGContainer([NativeTypeName("PVOID")] void* Reserved, [NativeTypeName("BOOL *")] int* isProcessInWDAGContainer);
+        public static extern int IsProcessInWDAGContainer([NativeTypeName("PVOID")] void* Reserved, BOOL* isProcessInWDAGContainer);
 
         [DllImport("shcore", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
-        public static extern int IsProcessInIsolatedContainer([NativeTypeName("BOOL *")] int* isProcessInIsolatedContainer);
+        public static extern int IsProcessInIsolatedContainer(BOOL* isProcessInIsolatedContainer);
 
         public static ref readonly Guid IID_IIsolatedAppLauncher
         {

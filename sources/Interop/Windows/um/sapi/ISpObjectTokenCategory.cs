@@ -139,9 +139,9 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(15)]
         [return: NativeTypeName("HRESULT")]
-        public int SetId([NativeTypeName("LPCWSTR")] ushort* pszCategoryId, [NativeTypeName("BOOL")] int fCreateIfNotExist)
+        public int SetId([NativeTypeName("LPCWSTR")] ushort* pszCategoryId, BOOL fCreateIfNotExist)
         {
-            return ((delegate* unmanaged<ISpObjectTokenCategory*, ushort*, int, int>)(lpVtbl[15]))((ISpObjectTokenCategory*)Unsafe.AsPointer(ref this), pszCategoryId, fCreateIfNotExist);
+            return ((delegate* unmanaged<ISpObjectTokenCategory*, ushort*, BOOL, int>)(lpVtbl[15]))((ISpObjectTokenCategory*)Unsafe.AsPointer(ref this), pszCategoryId, fCreateIfNotExist);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

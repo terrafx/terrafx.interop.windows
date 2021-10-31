@@ -16,7 +16,6 @@ namespace TerraFX.Interop
         [NativeTypeName("HANDLE")]
         public IntPtr ProcessHandle;
 
-        [NativeTypeName("BOOL")]
-        public int AllowAccess;
+        public BOOL AllowAccess;
     }
 }

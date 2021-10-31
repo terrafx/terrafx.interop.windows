@@ -59,9 +59,9 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
         [return: NativeTypeName("HRESULT")]
-        public int IsEqual(IAnchor* paWith, [NativeTypeName("BOOL *")] int* pfEqual)
+        public int IsEqual(IAnchor* paWith, BOOL* pfEqual)
         {
-            return ((delegate* unmanaged<IAnchor*, IAnchor*, int*, int>)(lpVtbl[5]))((IAnchor*)Unsafe.AsPointer(ref this), paWith, pfEqual);
+            return ((delegate* unmanaged<IAnchor*, IAnchor*, BOOL*, int>)(lpVtbl[5]))((IAnchor*)Unsafe.AsPointer(ref this), paWith, pfEqual);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -91,9 +91,9 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(9)]
         [return: NativeTypeName("HRESULT")]
-        public int ShiftRegion([NativeTypeName("DWORD")] uint dwFlags, TsShiftDir dir, [NativeTypeName("BOOL *")] int* pfNoRegion)
+        public int ShiftRegion([NativeTypeName("DWORD")] uint dwFlags, TsShiftDir dir, BOOL* pfNoRegion)
         {
-            return ((delegate* unmanaged<IAnchor*, uint, TsShiftDir, int*, int>)(lpVtbl[9]))((IAnchor*)Unsafe.AsPointer(ref this), dwFlags, dir, pfNoRegion);
+            return ((delegate* unmanaged<IAnchor*, uint, TsShiftDir, BOOL*, int>)(lpVtbl[9]))((IAnchor*)Unsafe.AsPointer(ref this), dwFlags, dir, pfNoRegion);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

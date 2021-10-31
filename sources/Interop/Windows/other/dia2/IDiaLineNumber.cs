@@ -139,9 +139,9 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(15)]
         [return: NativeTypeName("HRESULT")]
-        public int get_statement([NativeTypeName("BOOL *")] int* pRetVal)
+        public int get_statement(BOOL* pRetVal)
         {
-            return ((delegate* unmanaged<IDiaLineNumber*, int*, int>)(lpVtbl[15]))((IDiaLineNumber*)Unsafe.AsPointer(ref this), pRetVal);
+            return ((delegate* unmanaged<IDiaLineNumber*, BOOL*, int>)(lpVtbl[15]))((IDiaLineNumber*)Unsafe.AsPointer(ref this), pRetVal);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

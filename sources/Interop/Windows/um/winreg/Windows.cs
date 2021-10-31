@@ -108,7 +108,7 @@ namespace TerraFX.Interop
 
         [DllImport("advapi32", ExactSpelling = true)]
         [return: NativeTypeName("LONG")]
-        public static extern int RegQueryReflectionKey([NativeTypeName("HKEY")] IntPtr hBase, [NativeTypeName("BOOL *")] int* bIsReflectionDisabled);
+        public static extern int RegQueryReflectionKey([NativeTypeName("HKEY")] IntPtr hBase, BOOL* bIsReflectionDisabled);
 
         [DllImport("advapi32", ExactSpelling = true)]
         [return: NativeTypeName("LSTATUS")]
@@ -160,7 +160,7 @@ namespace TerraFX.Interop
 
         [DllImport("advapi32", ExactSpelling = true)]
         [return: NativeTypeName("LSTATUS")]
-        public static extern int RegNotifyChangeKeyValue([NativeTypeName("HKEY")] IntPtr hKey, [NativeTypeName("BOOL")] int bWatchSubtree, [NativeTypeName("DWORD")] uint dwNotifyFilter, [NativeTypeName("HANDLE")] IntPtr hEvent, [NativeTypeName("BOOL")] int fAsynchronous);
+        public static extern int RegNotifyChangeKeyValue([NativeTypeName("HKEY")] IntPtr hKey, BOOL bWatchSubtree, [NativeTypeName("DWORD")] uint dwNotifyFilter, [NativeTypeName("HANDLE")] IntPtr hEvent, BOOL fAsynchronous);
 
         [DllImport("advapi32", ExactSpelling = true)]
         [return: NativeTypeName("LSTATUS")]
@@ -331,28 +331,22 @@ namespace TerraFX.Interop
         public static extern int RegLoadAppKeyW([NativeTypeName("LPCWSTR")] ushort* lpFile, [NativeTypeName("PHKEY")] IntPtr* phkResult, [NativeTypeName("REGSAM")] uint samDesired, [NativeTypeName("DWORD")] uint dwOptions, [NativeTypeName("DWORD")] uint Reserved);
 
         [DllImport("advapi32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int InitiateSystemShutdownA([NativeTypeName("LPSTR")] sbyte* lpMachineName, [NativeTypeName("LPSTR")] sbyte* lpMessage, [NativeTypeName("DWORD")] uint dwTimeout, [NativeTypeName("BOOL")] int bForceAppsClosed, [NativeTypeName("BOOL")] int bRebootAfterShutdown);
+        public static extern BOOL InitiateSystemShutdownA([NativeTypeName("LPSTR")] sbyte* lpMachineName, [NativeTypeName("LPSTR")] sbyte* lpMessage, [NativeTypeName("DWORD")] uint dwTimeout, BOOL bForceAppsClosed, BOOL bRebootAfterShutdown);
 
         [DllImport("advapi32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int InitiateSystemShutdownW([NativeTypeName("LPWSTR")] ushort* lpMachineName, [NativeTypeName("LPWSTR")] ushort* lpMessage, [NativeTypeName("DWORD")] uint dwTimeout, [NativeTypeName("BOOL")] int bForceAppsClosed, [NativeTypeName("BOOL")] int bRebootAfterShutdown);
+        public static extern BOOL InitiateSystemShutdownW([NativeTypeName("LPWSTR")] ushort* lpMachineName, [NativeTypeName("LPWSTR")] ushort* lpMessage, [NativeTypeName("DWORD")] uint dwTimeout, BOOL bForceAppsClosed, BOOL bRebootAfterShutdown);
 
         [DllImport("advapi32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int AbortSystemShutdownA([NativeTypeName("LPSTR")] sbyte* lpMachineName);
+        public static extern BOOL AbortSystemShutdownA([NativeTypeName("LPSTR")] sbyte* lpMachineName);
 
         [DllImport("advapi32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int AbortSystemShutdownW([NativeTypeName("LPWSTR")] ushort* lpMachineName);
+        public static extern BOOL AbortSystemShutdownW([NativeTypeName("LPWSTR")] ushort* lpMachineName);
 
         [DllImport("advapi32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int InitiateSystemShutdownExA([NativeTypeName("LPSTR")] sbyte* lpMachineName, [NativeTypeName("LPSTR")] sbyte* lpMessage, [NativeTypeName("DWORD")] uint dwTimeout, [NativeTypeName("BOOL")] int bForceAppsClosed, [NativeTypeName("BOOL")] int bRebootAfterShutdown, [NativeTypeName("DWORD")] uint dwReason);
+        public static extern BOOL InitiateSystemShutdownExA([NativeTypeName("LPSTR")] sbyte* lpMachineName, [NativeTypeName("LPSTR")] sbyte* lpMessage, [NativeTypeName("DWORD")] uint dwTimeout, BOOL bForceAppsClosed, BOOL bRebootAfterShutdown, [NativeTypeName("DWORD")] uint dwReason);
 
         [DllImport("advapi32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int InitiateSystemShutdownExW([NativeTypeName("LPWSTR")] ushort* lpMachineName, [NativeTypeName("LPWSTR")] ushort* lpMessage, [NativeTypeName("DWORD")] uint dwTimeout, [NativeTypeName("BOOL")] int bForceAppsClosed, [NativeTypeName("BOOL")] int bRebootAfterShutdown, [NativeTypeName("DWORD")] uint dwReason);
+        public static extern BOOL InitiateSystemShutdownExW([NativeTypeName("LPWSTR")] ushort* lpMachineName, [NativeTypeName("LPWSTR")] ushort* lpMessage, [NativeTypeName("DWORD")] uint dwTimeout, BOOL bForceAppsClosed, BOOL bRebootAfterShutdown, [NativeTypeName("DWORD")] uint dwReason);
 
         [DllImport("advapi32", ExactSpelling = true)]
         [return: NativeTypeName("DWORD")]
@@ -567,10 +561,10 @@ namespace TerraFX.Interop
         public static delegate*<ushort*, IntPtr*, uint, uint, uint, int> RegLoadAppKey => &RegLoadAppKeyW;
 
         [NativeTypeName("#define InitiateSystemShutdown InitiateSystemShutdownW")]
-        public static delegate*<ushort*, ushort*, uint, int, int, int> InitiateSystemShutdown => &InitiateSystemShutdownW;
+        public static delegate*<ushort*, ushort*, uint, BOOL, BOOL, BOOL> InitiateSystemShutdown => &InitiateSystemShutdownW;
 
         [NativeTypeName("#define AbortSystemShutdown AbortSystemShutdownW")]
-        public static delegate*<ushort*, int> AbortSystemShutdown => &AbortSystemShutdownW;
+        public static delegate*<ushort*, BOOL> AbortSystemShutdown => &AbortSystemShutdownW;
 
         [NativeTypeName("#define REASON_SWINSTALL (SHTDN_REASON_MAJOR_SOFTWARE|SHTDN_REASON_MINOR_INSTALLATION)")]
         public const int REASON_SWINSTALL = (0x00030000 | 0x00000002);
@@ -603,7 +597,7 @@ namespace TerraFX.Interop
         public const int MAX_SHUTDOWN_TIMEOUT = (10 * 365 * 24 * 60 * 60);
 
         [NativeTypeName("#define InitiateSystemShutdownEx InitiateSystemShutdownExW")]
-        public static delegate*<ushort*, ushort*, uint, int, int, uint, int> InitiateSystemShutdownEx => &InitiateSystemShutdownExW;
+        public static delegate*<ushort*, ushort*, uint, BOOL, BOOL, uint, BOOL> InitiateSystemShutdownEx => &InitiateSystemShutdownExW;
 
         [NativeTypeName("#define SHUTDOWN_FORCE_OTHERS 0x00000001")]
         public const int SHUTDOWN_FORCE_OTHERS = 0x00000001;

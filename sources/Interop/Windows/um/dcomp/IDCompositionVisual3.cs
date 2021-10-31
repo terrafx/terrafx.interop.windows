@@ -147,9 +147,9 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(16)]
         [return: NativeTypeName("HRESULT")]
-        public int AddVisual(IDCompositionVisual* visual, [NativeTypeName("BOOL")] int insertAbove, IDCompositionVisual* referenceVisual)
+        public int AddVisual(IDCompositionVisual* visual, BOOL insertAbove, IDCompositionVisual* referenceVisual)
         {
-            return ((delegate* unmanaged<IDCompositionVisual3*, IDCompositionVisual*, int, IDCompositionVisual*, int>)(lpVtbl[16]))((IDCompositionVisual3*)Unsafe.AsPointer(ref this), visual, insertAbove, referenceVisual);
+            return ((delegate* unmanaged<IDCompositionVisual3*, IDCompositionVisual*, BOOL, IDCompositionVisual*, int>)(lpVtbl[16]))((IDCompositionVisual3*)Unsafe.AsPointer(ref this), visual, insertAbove, referenceVisual);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -283,9 +283,9 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(33)]
         [return: NativeTypeName("HRESULT")]
-        public int SetVisible([NativeTypeName("BOOL")] int visible)
+        public int SetVisible(BOOL visible)
         {
-            return ((delegate* unmanaged<IDCompositionVisual3*, int, int>)(lpVtbl[33]))((IDCompositionVisual3*)Unsafe.AsPointer(ref this), visible);
+            return ((delegate* unmanaged<IDCompositionVisual3*, BOOL, int>)(lpVtbl[33]))((IDCompositionVisual3*)Unsafe.AsPointer(ref this), visible);
         }
     }
 }

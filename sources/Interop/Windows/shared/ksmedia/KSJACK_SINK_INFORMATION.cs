@@ -18,11 +18,9 @@ namespace TerraFX.Interop
         [NativeTypeName("WORD")]
         public ushort AudioLatency;
 
-        [NativeTypeName("BOOL")]
-        public int HDCPCapable;
+        public BOOL HDCPCapable;
 
-        [NativeTypeName("BOOL")]
-        public int AICapable;
+        public BOOL AICapable;
 
         [NativeTypeName("UCHAR")]
         public byte SinkDescriptionLength;

@@ -51,9 +51,9 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
         [return: NativeTypeName("HRESULT")]
-        public int GetObjectW(IMoniker* pimk, [NativeTypeName("BOOL")] int fBindIfRootRegistered, IUnknown** ppiunk)
+        public int GetObjectW(IMoniker* pimk, BOOL fBindIfRootRegistered, IUnknown** ppiunk)
         {
-            return ((delegate* unmanaged<IHlinkBrowseContext*, IMoniker*, int, IUnknown**, int>)(lpVtbl[4]))((IHlinkBrowseContext*)Unsafe.AsPointer(ref this), pimk, fBindIfRootRegistered, ppiunk);
+            return ((delegate* unmanaged<IHlinkBrowseContext*, IMoniker*, BOOL, IUnknown**, int>)(lpVtbl[4]))((IHlinkBrowseContext*)Unsafe.AsPointer(ref this), pimk, fBindIfRootRegistered, ppiunk);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

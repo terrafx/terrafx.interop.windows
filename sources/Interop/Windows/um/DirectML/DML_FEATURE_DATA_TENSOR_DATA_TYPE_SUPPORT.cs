@@ -7,7 +7,6 @@ namespace TerraFX.Interop
 {
     public partial struct DML_FEATURE_DATA_TENSOR_DATA_TYPE_SUPPORT
     {
-        [NativeTypeName("BOOL")]
-        public int IsSupported;
+        public BOOL IsSupported;
     }
 }

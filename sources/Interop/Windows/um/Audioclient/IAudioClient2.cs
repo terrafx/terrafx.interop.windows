@@ -139,9 +139,9 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(15)]
         [return: NativeTypeName("HRESULT")]
-        public int IsOffloadCapable(AUDIO_STREAM_CATEGORY Category, [NativeTypeName("BOOL *")] int* pbOffloadCapable)
+        public int IsOffloadCapable(AUDIO_STREAM_CATEGORY Category, BOOL* pbOffloadCapable)
         {
-            return ((delegate* unmanaged<IAudioClient2*, AUDIO_STREAM_CATEGORY, int*, int>)(lpVtbl[15]))((IAudioClient2*)Unsafe.AsPointer(ref this), Category, pbOffloadCapable);
+            return ((delegate* unmanaged<IAudioClient2*, AUDIO_STREAM_CATEGORY, BOOL*, int>)(lpVtbl[15]))((IAudioClient2*)Unsafe.AsPointer(ref this), Category, pbOffloadCapable);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -155,9 +155,9 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(17)]
         [return: NativeTypeName("HRESULT")]
-        public int GetBufferSizeLimits([NativeTypeName("const WAVEFORMATEX *")] WAVEFORMATEX* pFormat, [NativeTypeName("BOOL")] int bEventDriven, [NativeTypeName("REFERENCE_TIME *")] long* phnsMinBufferDuration, [NativeTypeName("REFERENCE_TIME *")] long* phnsMaxBufferDuration)
+        public int GetBufferSizeLimits([NativeTypeName("const WAVEFORMATEX *")] WAVEFORMATEX* pFormat, BOOL bEventDriven, [NativeTypeName("REFERENCE_TIME *")] long* phnsMinBufferDuration, [NativeTypeName("REFERENCE_TIME *")] long* phnsMaxBufferDuration)
         {
-            return ((delegate* unmanaged<IAudioClient2*, WAVEFORMATEX*, int, long*, long*, int>)(lpVtbl[17]))((IAudioClient2*)Unsafe.AsPointer(ref this), pFormat, bEventDriven, phnsMinBufferDuration, phnsMaxBufferDuration);
+            return ((delegate* unmanaged<IAudioClient2*, WAVEFORMATEX*, BOOL, long*, long*, int>)(lpVtbl[17]))((IAudioClient2*)Unsafe.AsPointer(ref this), pFormat, bEventDriven, phnsMinBufferDuration, phnsMaxBufferDuration);
         }
     }
 }

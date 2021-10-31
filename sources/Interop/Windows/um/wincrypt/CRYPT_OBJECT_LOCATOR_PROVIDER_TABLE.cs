@@ -11,7 +11,7 @@ namespace TerraFX.Interop
         public uint cbSize;
 
         [NativeTypeName("PFN_CRYPT_OBJECT_LOCATOR_PROVIDER_GET")]
-        public delegate* unmanaged<void*, CRYPT_DATA_BLOB*, uint, CRYPT_DATA_BLOB*, byte**, uint*, ushort**, CRYPT_DATA_BLOB**, int> pfnGet;
+        public delegate* unmanaged<void*, CRYPT_DATA_BLOB*, uint, CRYPT_DATA_BLOB*, byte**, uint*, ushort**, CRYPT_DATA_BLOB**, BOOL> pfnGet;
 
         [NativeTypeName("PFN_CRYPT_OBJECT_LOCATOR_PROVIDER_RELEASE")]
         public delegate* unmanaged<uint, void*, void> pfnRelease;

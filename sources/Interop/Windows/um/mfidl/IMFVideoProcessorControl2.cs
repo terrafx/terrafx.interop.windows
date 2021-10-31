@@ -99,9 +99,9 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(10)]
         [return: NativeTypeName("HRESULT")]
-        public int EnableHardwareEffects([NativeTypeName("BOOL")] int fEnabled)
+        public int EnableHardwareEffects(BOOL fEnabled)
         {
-            return ((delegate* unmanaged<IMFVideoProcessorControl2*, int, int>)(lpVtbl[10]))((IMFVideoProcessorControl2*)Unsafe.AsPointer(ref this), fEnabled);
+            return ((delegate* unmanaged<IMFVideoProcessorControl2*, BOOL, int>)(lpVtbl[10]))((IMFVideoProcessorControl2*)Unsafe.AsPointer(ref this), fEnabled);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

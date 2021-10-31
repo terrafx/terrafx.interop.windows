@@ -21,8 +21,7 @@ namespace TerraFX.Interop
         [NativeTypeName("CRYPT_INTEGER_BLOB")]
         public CRYPT_DATA_BLOB Nonce;
 
-        [NativeTypeName("BOOL")]
-        public int fCertReq;
+        public BOOL fCertReq;
 
         [NativeTypeName("DWORD")]
         public uint cExtension;

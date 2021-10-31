@@ -26,8 +26,7 @@ namespace TerraFX.Interop
         [NativeTypeName("FILEOP_FLAGS")]
         public ushort fFlags;
 
-        [NativeTypeName("BOOL")]
-        public int fAnyOperationsAborted;
+        public BOOL fAnyOperationsAborted;
 
         [NativeTypeName("LPVOID")]
         public void* hNameMappings;

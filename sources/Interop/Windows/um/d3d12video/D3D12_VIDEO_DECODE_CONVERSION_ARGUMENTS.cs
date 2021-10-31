@@ -7,8 +7,7 @@ namespace TerraFX.Interop
 {
     public unsafe partial struct D3D12_VIDEO_DECODE_CONVERSION_ARGUMENTS
     {
-        [NativeTypeName("BOOL")]
-        public int Enable;
+        public BOOL Enable;
 
         public ID3D12Resource* pReferenceTexture2D;
 

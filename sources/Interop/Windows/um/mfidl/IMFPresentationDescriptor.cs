@@ -59,17 +59,17 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
         [return: NativeTypeName("HRESULT")]
-        public int CompareItem([NativeTypeName("const GUID &")] Guid* guidKey, [NativeTypeName("const PROPVARIANT &")] PROPVARIANT* Value, [NativeTypeName("BOOL *")] int* pbResult)
+        public int CompareItem([NativeTypeName("const GUID &")] Guid* guidKey, [NativeTypeName("const PROPVARIANT &")] PROPVARIANT* Value, BOOL* pbResult)
         {
-            return ((delegate* unmanaged<IMFPresentationDescriptor*, Guid*, PROPVARIANT*, int*, int>)(lpVtbl[5]))((IMFPresentationDescriptor*)Unsafe.AsPointer(ref this), guidKey, Value, pbResult);
+            return ((delegate* unmanaged<IMFPresentationDescriptor*, Guid*, PROPVARIANT*, BOOL*, int>)(lpVtbl[5]))((IMFPresentationDescriptor*)Unsafe.AsPointer(ref this), guidKey, Value, pbResult);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
         [return: NativeTypeName("HRESULT")]
-        public int Compare(IMFAttributes* pTheirs, MF_ATTRIBUTES_MATCH_TYPE MatchType, [NativeTypeName("BOOL *")] int* pbResult)
+        public int Compare(IMFAttributes* pTheirs, MF_ATTRIBUTES_MATCH_TYPE MatchType, BOOL* pbResult)
         {
-            return ((delegate* unmanaged<IMFPresentationDescriptor*, IMFAttributes*, MF_ATTRIBUTES_MATCH_TYPE, int*, int>)(lpVtbl[6]))((IMFPresentationDescriptor*)Unsafe.AsPointer(ref this), pTheirs, MatchType, pbResult);
+            return ((delegate* unmanaged<IMFPresentationDescriptor*, IMFAttributes*, MF_ATTRIBUTES_MATCH_TYPE, BOOL*, int>)(lpVtbl[6]))((IMFPresentationDescriptor*)Unsafe.AsPointer(ref this), pTheirs, MatchType, pbResult);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -291,9 +291,9 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(34)]
         [return: NativeTypeName("HRESULT")]
-        public int GetStreamDescriptorByIndex([NativeTypeName("DWORD")] uint dwIndex, [NativeTypeName("BOOL *")] int* pfSelected, IMFStreamDescriptor** ppDescriptor)
+        public int GetStreamDescriptorByIndex([NativeTypeName("DWORD")] uint dwIndex, BOOL* pfSelected, IMFStreamDescriptor** ppDescriptor)
         {
-            return ((delegate* unmanaged<IMFPresentationDescriptor*, uint, int*, IMFStreamDescriptor**, int>)(lpVtbl[34]))((IMFPresentationDescriptor*)Unsafe.AsPointer(ref this), dwIndex, pfSelected, ppDescriptor);
+            return ((delegate* unmanaged<IMFPresentationDescriptor*, uint, BOOL*, IMFStreamDescriptor**, int>)(lpVtbl[34]))((IMFPresentationDescriptor*)Unsafe.AsPointer(ref this), dwIndex, pfSelected, ppDescriptor);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

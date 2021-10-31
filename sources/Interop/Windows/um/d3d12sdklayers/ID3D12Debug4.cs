@@ -49,16 +49,16 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        public void SetEnableGPUBasedValidation([NativeTypeName("BOOL")] int Enable)
+        public void SetEnableGPUBasedValidation(BOOL Enable)
         {
-            ((delegate* unmanaged<ID3D12Debug4*, int, void>)(lpVtbl[4]))((ID3D12Debug4*)Unsafe.AsPointer(ref this), Enable);
+            ((delegate* unmanaged<ID3D12Debug4*, BOOL, void>)(lpVtbl[4]))((ID3D12Debug4*)Unsafe.AsPointer(ref this), Enable);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        public void SetEnableSynchronizedCommandQueueValidation([NativeTypeName("BOOL")] int Enable)
+        public void SetEnableSynchronizedCommandQueueValidation(BOOL Enable)
         {
-            ((delegate* unmanaged<ID3D12Debug4*, int, void>)(lpVtbl[5]))((ID3D12Debug4*)Unsafe.AsPointer(ref this), Enable);
+            ((delegate* unmanaged<ID3D12Debug4*, BOOL, void>)(lpVtbl[5]))((ID3D12Debug4*)Unsafe.AsPointer(ref this), Enable);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

@@ -59,9 +59,9 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
         [return: NativeTypeName("HRESULT")]
-        public int OnCheckButtonToggled(IFileDialogCustomize* pfdc, [NativeTypeName("DWORD")] uint dwIDCtl, [NativeTypeName("BOOL")] int bChecked)
+        public int OnCheckButtonToggled(IFileDialogCustomize* pfdc, [NativeTypeName("DWORD")] uint dwIDCtl, BOOL bChecked)
         {
-            return ((delegate* unmanaged<IFileDialogControlEvents*, IFileDialogCustomize*, uint, int, int>)(lpVtbl[5]))((IFileDialogControlEvents*)Unsafe.AsPointer(ref this), pfdc, dwIDCtl, bChecked);
+            return ((delegate* unmanaged<IFileDialogControlEvents*, IFileDialogCustomize*, uint, BOOL, int>)(lpVtbl[5]))((IFileDialogControlEvents*)Unsafe.AsPointer(ref this), pfdc, dwIDCtl, bChecked);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

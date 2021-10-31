@@ -229,8 +229,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(7)]
-        [return: NativeTypeName("BOOL")]
-        public int IsTextContent()
+        public BOOL IsTextContent()
         {
             return ((delegate* unmanaged<ID2D1SvgElement*, int>)(lpVtbl[7]))((ID2D1SvgElement*)Unsafe.AsPointer(ref this));
         }
@@ -244,8 +243,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(9)]
-        [return: NativeTypeName("BOOL")]
-        public int HasChildren()
+        public BOOL HasChildren()
         {
             return ((delegate* unmanaged<ID2D1SvgElement*, int>)(lpVtbl[9]))((ID2D1SvgElement*)Unsafe.AsPointer(ref this));
         }
@@ -322,10 +320,9 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(19)]
-        [return: NativeTypeName("BOOL")]
-        public int IsAttributeSpecified([NativeTypeName("PCWSTR")] ushort* name, [NativeTypeName("BOOL *")] int* inherited = null)
+        public BOOL IsAttributeSpecified([NativeTypeName("PCWSTR")] ushort* name, BOOL* inherited = null)
         {
-            return ((delegate* unmanaged<ID2D1SvgElement*, ushort*, int*, int>)(lpVtbl[19]))((ID2D1SvgElement*)Unsafe.AsPointer(ref this), name, inherited);
+            return ((delegate* unmanaged<ID2D1SvgElement*, ushort*, BOOL*, int>)(lpVtbl[19]))((ID2D1SvgElement*)Unsafe.AsPointer(ref this), name, inherited);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -339,17 +336,17 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(21)]
         [return: NativeTypeName("HRESULT")]
-        public int GetSpecifiedAttributeName([NativeTypeName("UINT32")] uint index, [NativeTypeName("PWSTR")] ushort* name, [NativeTypeName("UINT32")] uint nameCount, [NativeTypeName("BOOL *")] int* inherited = null)
+        public int GetSpecifiedAttributeName([NativeTypeName("UINT32")] uint index, [NativeTypeName("PWSTR")] ushort* name, [NativeTypeName("UINT32")] uint nameCount, BOOL* inherited = null)
         {
-            return ((delegate* unmanaged<ID2D1SvgElement*, uint, ushort*, uint, int*, int>)(lpVtbl[21]))((ID2D1SvgElement*)Unsafe.AsPointer(ref this), index, name, nameCount, inherited);
+            return ((delegate* unmanaged<ID2D1SvgElement*, uint, ushort*, uint, BOOL*, int>)(lpVtbl[21]))((ID2D1SvgElement*)Unsafe.AsPointer(ref this), index, name, nameCount, inherited);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(22)]
         [return: NativeTypeName("HRESULT")]
-        public int GetSpecifiedAttributeNameLength([NativeTypeName("UINT32")] uint index, [NativeTypeName("UINT32 *")] uint* nameLength, [NativeTypeName("BOOL *")] int* inherited = null)
+        public int GetSpecifiedAttributeNameLength([NativeTypeName("UINT32")] uint index, [NativeTypeName("UINT32 *")] uint* nameLength, BOOL* inherited = null)
         {
-            return ((delegate* unmanaged<ID2D1SvgElement*, uint, uint*, int*, int>)(lpVtbl[22]))((ID2D1SvgElement*)Unsafe.AsPointer(ref this), index, nameLength, inherited);
+            return ((delegate* unmanaged<ID2D1SvgElement*, uint, uint*, BOOL*, int>)(lpVtbl[22]))((ID2D1SvgElement*)Unsafe.AsPointer(ref this), index, nameLength, inherited);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

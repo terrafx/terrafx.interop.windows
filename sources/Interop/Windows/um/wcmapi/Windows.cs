@@ -24,7 +24,7 @@ namespace TerraFX.Interop
 
         [DllImport("wcmapi", ExactSpelling = true)]
         [return: NativeTypeName("DWORD")]
-        public static extern uint WcmSetProfileList(WCM_PROFILE_INFO_LIST* pProfileList, [NativeTypeName("DWORD")] uint dwPosition, [NativeTypeName("BOOL")] int fIgnoreUnknownProfiles, void* pReserved);
+        public static extern uint WcmSetProfileList(WCM_PROFILE_INFO_LIST* pProfileList, [NativeTypeName("DWORD")] uint dwPosition, BOOL fIgnoreUnknownProfiles, void* pReserved);
 
         [DllImport("wcmapi", ExactSpelling = true)]
         public static extern void WcmFreeMemory(void* pMemory);

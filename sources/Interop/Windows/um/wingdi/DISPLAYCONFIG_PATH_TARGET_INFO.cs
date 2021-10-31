@@ -28,8 +28,7 @@ namespace TerraFX.Interop
 
         public DISPLAYCONFIG_SCANLINE_ORDERING scanLineOrdering;
 
-        [NativeTypeName("BOOL")]
-        public int targetAvailable;
+        public BOOL targetAvailable;
 
         [NativeTypeName("UINT32")]
         public uint statusFlags;

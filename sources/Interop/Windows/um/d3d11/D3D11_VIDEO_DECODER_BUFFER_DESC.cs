@@ -41,8 +41,7 @@ namespace TerraFX.Interop
         [NativeTypeName("UINT")]
         public uint IVSize;
 
-        [NativeTypeName("BOOL")]
-        public int PartialEncryption;
+        public BOOL PartialEncryption;
 
         public D3D11_ENCRYPTED_BLOCK_INFO EncryptedBlockInfo;
     }

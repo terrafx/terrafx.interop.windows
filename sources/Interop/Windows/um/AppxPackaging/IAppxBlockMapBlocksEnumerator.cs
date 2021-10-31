@@ -51,17 +51,17 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
         [return: NativeTypeName("HRESULT")]
-        public int GetHasCurrent([NativeTypeName("BOOL *")] int* hasCurrent)
+        public int GetHasCurrent(BOOL* hasCurrent)
         {
-            return ((delegate* unmanaged<IAppxBlockMapBlocksEnumerator*, int*, int>)(lpVtbl[4]))((IAppxBlockMapBlocksEnumerator*)Unsafe.AsPointer(ref this), hasCurrent);
+            return ((delegate* unmanaged<IAppxBlockMapBlocksEnumerator*, BOOL*, int>)(lpVtbl[4]))((IAppxBlockMapBlocksEnumerator*)Unsafe.AsPointer(ref this), hasCurrent);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
         [return: NativeTypeName("HRESULT")]
-        public int MoveNext([NativeTypeName("BOOL *")] int* hasNext)
+        public int MoveNext(BOOL* hasNext)
         {
-            return ((delegate* unmanaged<IAppxBlockMapBlocksEnumerator*, int*, int>)(lpVtbl[5]))((IAppxBlockMapBlocksEnumerator*)Unsafe.AsPointer(ref this), hasNext);
+            return ((delegate* unmanaged<IAppxBlockMapBlocksEnumerator*, BOOL*, int>)(lpVtbl[5]))((IAppxBlockMapBlocksEnumerator*)Unsafe.AsPointer(ref this), hasNext);
         }
     }
 }

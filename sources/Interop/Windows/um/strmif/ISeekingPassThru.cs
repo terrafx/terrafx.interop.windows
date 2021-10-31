@@ -43,9 +43,9 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
         [return: NativeTypeName("HRESULT")]
-        public int Init([NativeTypeName("BOOL")] int bSupportRendering, IPin* pPin)
+        public int Init(BOOL bSupportRendering, IPin* pPin)
         {
-            return ((delegate* unmanaged<ISeekingPassThru*, int, IPin*, int>)(lpVtbl[3]))((ISeekingPassThru*)Unsafe.AsPointer(ref this), bSupportRendering, pPin);
+            return ((delegate* unmanaged<ISeekingPassThru*, BOOL, IPin*, int>)(lpVtbl[3]))((ISeekingPassThru*)Unsafe.AsPointer(ref this), bSupportRendering, pPin);
         }
     }
 }

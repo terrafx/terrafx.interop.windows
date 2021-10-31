@@ -43,9 +43,9 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
         [return: NativeTypeName("HRESULT")]
-        public int IsMember([NativeTypeName("BOOL *")] int* member)
+        public int IsMember(BOOL* member)
         {
-            return ((delegate* unmanaged<IHomeGroup*, int*, int>)(lpVtbl[3]))((IHomeGroup*)Unsafe.AsPointer(ref this), member);
+            return ((delegate* unmanaged<IHomeGroup*, BOOL*, int>)(lpVtbl[3]))((IHomeGroup*)Unsafe.AsPointer(ref this), member);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

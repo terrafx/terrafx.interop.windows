@@ -67,17 +67,17 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
         [return: NativeTypeName("HRESULT")]
-        public int CreateFromWICBitmap(IWICBitmap* data, [NativeTypeName("BOOL")] int forceReadOnly, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPVOID *")] void** ppv)
+        public int CreateFromWICBitmap(IWICBitmap* data, BOOL forceReadOnly, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPVOID *")] void** ppv)
         {
-            return ((delegate* unmanaged<ISoftwareBitmapNativeFactory*, IWICBitmap*, int, Guid*, void**, int>)(lpVtbl[6]))((ISoftwareBitmapNativeFactory*)Unsafe.AsPointer(ref this), data, forceReadOnly, riid, ppv);
+            return ((delegate* unmanaged<ISoftwareBitmapNativeFactory*, IWICBitmap*, BOOL, Guid*, void**, int>)(lpVtbl[6]))((ISoftwareBitmapNativeFactory*)Unsafe.AsPointer(ref this), data, forceReadOnly, riid, ppv);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(7)]
         [return: NativeTypeName("HRESULT")]
-        public int CreateFromMF2DBuffer2(IMF2DBuffer2* data, [NativeTypeName("const GUID &")] Guid* subtype, [NativeTypeName("UINT32")] uint width, [NativeTypeName("UINT32")] uint height, [NativeTypeName("BOOL")] int forceReadOnly, [NativeTypeName("const MFVideoArea *")] MFVideoArea* minDisplayAperture, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPVOID *")] void** ppv)
+        public int CreateFromMF2DBuffer2(IMF2DBuffer2* data, [NativeTypeName("const GUID &")] Guid* subtype, [NativeTypeName("UINT32")] uint width, [NativeTypeName("UINT32")] uint height, BOOL forceReadOnly, [NativeTypeName("const MFVideoArea *")] MFVideoArea* minDisplayAperture, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPVOID *")] void** ppv)
         {
-            return ((delegate* unmanaged<ISoftwareBitmapNativeFactory*, IMF2DBuffer2*, Guid*, uint, uint, int, MFVideoArea*, Guid*, void**, int>)(lpVtbl[7]))((ISoftwareBitmapNativeFactory*)Unsafe.AsPointer(ref this), data, subtype, width, height, forceReadOnly, minDisplayAperture, riid, ppv);
+            return ((delegate* unmanaged<ISoftwareBitmapNativeFactory*, IMF2DBuffer2*, Guid*, uint, uint, BOOL, MFVideoArea*, Guid*, void**, int>)(lpVtbl[7]))((ISoftwareBitmapNativeFactory*)Unsafe.AsPointer(ref this), data, subtype, width, height, forceReadOnly, minDisplayAperture, riid, ppv);
         }
     }
 }

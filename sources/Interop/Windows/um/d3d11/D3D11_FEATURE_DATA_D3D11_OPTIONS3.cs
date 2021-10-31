@@ -7,7 +7,6 @@ namespace TerraFX.Interop
 {
     public partial struct D3D11_FEATURE_DATA_D3D11_OPTIONS3
     {
-        [NativeTypeName("BOOL")]
-        public int VPAndRTArrayIndexFromAnyShaderFeedingRasterizer;
+        public BOOL VPAndRTArrayIndexFromAnyShaderFeedingRasterizer;
     }
 }

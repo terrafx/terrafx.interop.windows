@@ -170,16 +170,14 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(19)]
-        [return: NativeTypeName("BOOL")]
-        public int IsDefault()
+        public BOOL IsDefault()
         {
             return ((delegate* unmanaged<IXmlReader*, int>)(lpVtbl[19]))((IXmlReader*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(20)]
-        [return: NativeTypeName("BOOL")]
-        public int IsEmptyElement()
+        public BOOL IsEmptyElement()
         {
             return ((delegate* unmanaged<IXmlReader*, int>)(lpVtbl[20]))((IXmlReader*)Unsafe.AsPointer(ref this));
         }
@@ -218,8 +216,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(25)]
-        [return: NativeTypeName("BOOL")]
-        public int IsEOF()
+        public BOOL IsEOF()
         {
             return ((delegate* unmanaged<IXmlReader*, int>)(lpVtbl[25]))((IXmlReader*)Unsafe.AsPointer(ref this));
         }

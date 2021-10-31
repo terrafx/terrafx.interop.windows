@@ -179,9 +179,9 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(20)]
         [return: NativeTypeName("HRESULT")]
-        public int GetDictionaryItem([NativeTypeName("InstanceHandle")] ulong dictionaryHandle, [NativeTypeName("LPCWSTR")] ushort* resourceName, [NativeTypeName("BOOL")] int resourceIsImplicitStyle, [NativeTypeName("InstanceHandle *")] ulong* resourceHandle)
+        public int GetDictionaryItem([NativeTypeName("InstanceHandle")] ulong dictionaryHandle, [NativeTypeName("LPCWSTR")] ushort* resourceName, BOOL resourceIsImplicitStyle, [NativeTypeName("InstanceHandle *")] ulong* resourceHandle)
         {
-            return ((delegate* unmanaged<IVisualTreeService3*, ulong, ushort*, int, ulong*, int>)(lpVtbl[20]))((IVisualTreeService3*)Unsafe.AsPointer(ref this), dictionaryHandle, resourceName, resourceIsImplicitStyle, resourceHandle);
+            return ((delegate* unmanaged<IVisualTreeService3*, ulong, ushort*, BOOL, ulong*, int>)(lpVtbl[20]))((IVisualTreeService3*)Unsafe.AsPointer(ref this), dictionaryHandle, resourceName, resourceIsImplicitStyle, resourceHandle);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

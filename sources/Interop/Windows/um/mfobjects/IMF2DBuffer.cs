@@ -67,9 +67,9 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
         [return: NativeTypeName("HRESULT")]
-        public int IsContiguousFormat([NativeTypeName("BOOL *")] int* pfIsContiguous)
+        public int IsContiguousFormat(BOOL* pfIsContiguous)
         {
-            return ((delegate* unmanaged<IMF2DBuffer*, int*, int>)(lpVtbl[6]))((IMF2DBuffer*)Unsafe.AsPointer(ref this), pfIsContiguous);
+            return ((delegate* unmanaged<IMF2DBuffer*, BOOL*, int>)(lpVtbl[6]))((IMF2DBuffer*)Unsafe.AsPointer(ref this), pfIsContiguous);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

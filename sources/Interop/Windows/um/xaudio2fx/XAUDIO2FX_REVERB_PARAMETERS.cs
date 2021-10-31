@@ -70,7 +70,6 @@ namespace TerraFX.Interop
 
         public float RoomSize;
 
-        [NativeTypeName("BOOL")]
-        public int DisableLateField;
+        public BOOL DisableLateField;
     }
 }

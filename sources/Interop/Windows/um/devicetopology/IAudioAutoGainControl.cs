@@ -43,17 +43,17 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
         [return: NativeTypeName("HRESULT")]
-        public int GetEnabled([NativeTypeName("BOOL *")] int* pbEnabled)
+        public int GetEnabled(BOOL* pbEnabled)
         {
-            return ((delegate* unmanaged<IAudioAutoGainControl*, int*, int>)(lpVtbl[3]))((IAudioAutoGainControl*)Unsafe.AsPointer(ref this), pbEnabled);
+            return ((delegate* unmanaged<IAudioAutoGainControl*, BOOL*, int>)(lpVtbl[3]))((IAudioAutoGainControl*)Unsafe.AsPointer(ref this), pbEnabled);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
         [return: NativeTypeName("HRESULT")]
-        public int SetEnabled([NativeTypeName("BOOL")] int bEnable, [NativeTypeName("LPCGUID")] Guid* pguidEventContext)
+        public int SetEnabled(BOOL bEnable, [NativeTypeName("LPCGUID")] Guid* pguidEventContext)
         {
-            return ((delegate* unmanaged<IAudioAutoGainControl*, int, Guid*, int>)(lpVtbl[4]))((IAudioAutoGainControl*)Unsafe.AsPointer(ref this), bEnable, pguidEventContext);
+            return ((delegate* unmanaged<IAudioAutoGainControl*, BOOL, Guid*, int>)(lpVtbl[4]))((IAudioAutoGainControl*)Unsafe.AsPointer(ref this), bEnable, pguidEventContext);
         }
     }
 }

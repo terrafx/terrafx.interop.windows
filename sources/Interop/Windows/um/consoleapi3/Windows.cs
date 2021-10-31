@@ -11,55 +11,44 @@ namespace TerraFX.Interop
     public static unsafe partial class Windows
     {
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int GetNumberOfConsoleMouseButtons([NativeTypeName("LPDWORD")] uint* lpNumberOfMouseButtons);
+        public static extern BOOL GetNumberOfConsoleMouseButtons([NativeTypeName("LPDWORD")] uint* lpNumberOfMouseButtons);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
         public static extern COORD GetConsoleFontSize([NativeTypeName("HANDLE")] IntPtr hConsoleOutput, [NativeTypeName("DWORD")] uint nFont);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int GetCurrentConsoleFont([NativeTypeName("HANDLE")] IntPtr hConsoleOutput, [NativeTypeName("BOOL")] int bMaximumWindow, [NativeTypeName("PCONSOLE_FONT_INFO")] CONSOLE_FONT_INFO* lpConsoleCurrentFont);
+        public static extern BOOL GetCurrentConsoleFont([NativeTypeName("HANDLE")] IntPtr hConsoleOutput, BOOL bMaximumWindow, [NativeTypeName("PCONSOLE_FONT_INFO")] CONSOLE_FONT_INFO* lpConsoleCurrentFont);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int GetCurrentConsoleFontEx([NativeTypeName("HANDLE")] IntPtr hConsoleOutput, [NativeTypeName("BOOL")] int bMaximumWindow, [NativeTypeName("PCONSOLE_FONT_INFOEX")] CONSOLE_FONT_INFOEX* lpConsoleCurrentFontEx);
+        public static extern BOOL GetCurrentConsoleFontEx([NativeTypeName("HANDLE")] IntPtr hConsoleOutput, BOOL bMaximumWindow, [NativeTypeName("PCONSOLE_FONT_INFOEX")] CONSOLE_FONT_INFOEX* lpConsoleCurrentFontEx);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SetCurrentConsoleFontEx([NativeTypeName("HANDLE")] IntPtr hConsoleOutput, [NativeTypeName("BOOL")] int bMaximumWindow, [NativeTypeName("PCONSOLE_FONT_INFOEX")] CONSOLE_FONT_INFOEX* lpConsoleCurrentFontEx);
+        public static extern BOOL SetCurrentConsoleFontEx([NativeTypeName("HANDLE")] IntPtr hConsoleOutput, BOOL bMaximumWindow, [NativeTypeName("PCONSOLE_FONT_INFOEX")] CONSOLE_FONT_INFOEX* lpConsoleCurrentFontEx);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int GetConsoleSelectionInfo([NativeTypeName("PCONSOLE_SELECTION_INFO")] CONSOLE_SELECTION_INFO* lpConsoleSelectionInfo);
+        public static extern BOOL GetConsoleSelectionInfo([NativeTypeName("PCONSOLE_SELECTION_INFO")] CONSOLE_SELECTION_INFO* lpConsoleSelectionInfo);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int GetConsoleHistoryInfo([NativeTypeName("PCONSOLE_HISTORY_INFO")] CONSOLE_HISTORY_INFO* lpConsoleHistoryInfo);
+        public static extern BOOL GetConsoleHistoryInfo([NativeTypeName("PCONSOLE_HISTORY_INFO")] CONSOLE_HISTORY_INFO* lpConsoleHistoryInfo);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SetConsoleHistoryInfo([NativeTypeName("PCONSOLE_HISTORY_INFO")] CONSOLE_HISTORY_INFO* lpConsoleHistoryInfo);
+        public static extern BOOL SetConsoleHistoryInfo([NativeTypeName("PCONSOLE_HISTORY_INFO")] CONSOLE_HISTORY_INFO* lpConsoleHistoryInfo);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int GetConsoleDisplayMode([NativeTypeName("LPDWORD")] uint* lpModeFlags);
+        public static extern BOOL GetConsoleDisplayMode([NativeTypeName("LPDWORD")] uint* lpModeFlags);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SetConsoleDisplayMode([NativeTypeName("HANDLE")] IntPtr hConsoleOutput, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("PCOORD")] COORD* lpNewScreenBufferDimensions);
+        public static extern BOOL SetConsoleDisplayMode([NativeTypeName("HANDLE")] IntPtr hConsoleOutput, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("PCOORD")] COORD* lpNewScreenBufferDimensions);
 
         [DllImport("kernel32", ExactSpelling = true)]
         [return: NativeTypeName("HWND")]
         public static extern IntPtr GetConsoleWindow();
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int AddConsoleAliasA([NativeTypeName("LPSTR")] sbyte* Source, [NativeTypeName("LPSTR")] sbyte* Target, [NativeTypeName("LPSTR")] sbyte* ExeName);
+        public static extern BOOL AddConsoleAliasA([NativeTypeName("LPSTR")] sbyte* Source, [NativeTypeName("LPSTR")] sbyte* Target, [NativeTypeName("LPSTR")] sbyte* ExeName);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int AddConsoleAliasW([NativeTypeName("LPWSTR")] ushort* Source, [NativeTypeName("LPWSTR")] ushort* Target, [NativeTypeName("LPWSTR")] ushort* ExeName);
+        public static extern BOOL AddConsoleAliasW([NativeTypeName("LPWSTR")] ushort* Source, [NativeTypeName("LPWSTR")] ushort* Target, [NativeTypeName("LPWSTR")] ushort* ExeName);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("DWORD")]
@@ -108,12 +97,10 @@ namespace TerraFX.Interop
         public static extern void ExpungeConsoleCommandHistoryW([NativeTypeName("LPWSTR")] ushort* ExeName);
 
         [DllImport("kernel32", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SetConsoleNumberOfCommandsA([NativeTypeName("DWORD")] uint Number, [NativeTypeName("LPSTR")] sbyte* ExeName);
+        public static extern BOOL SetConsoleNumberOfCommandsA([NativeTypeName("DWORD")] uint Number, [NativeTypeName("LPSTR")] sbyte* ExeName);
 
         [DllImport("kernel32", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SetConsoleNumberOfCommandsW([NativeTypeName("DWORD")] uint Number, [NativeTypeName("LPWSTR")] ushort* ExeName);
+        public static extern BOOL SetConsoleNumberOfCommandsW([NativeTypeName("DWORD")] uint Number, [NativeTypeName("LPWSTR")] ushort* ExeName);
 
         [DllImport("kernel32", ExactSpelling = true)]
         [return: NativeTypeName("DWORD")]
@@ -166,7 +153,7 @@ namespace TerraFX.Interop
         public const int CONSOLE_WINDOWED_MODE = 2;
 
         [NativeTypeName("#define AddConsoleAlias AddConsoleAliasW")]
-        public static delegate*<ushort*, ushort*, ushort*, int> AddConsoleAlias => &AddConsoleAliasW;
+        public static delegate*<ushort*, ushort*, ushort*, BOOL> AddConsoleAlias => &AddConsoleAliasW;
 
         [NativeTypeName("#define GetConsoleAlias GetConsoleAliasW")]
         public static delegate*<ushort*, ushort*, uint, ushort*, uint> GetConsoleAlias => &GetConsoleAliasW;
@@ -187,7 +174,7 @@ namespace TerraFX.Interop
         public static delegate*<ushort*, void> ExpungeConsoleCommandHistory => &ExpungeConsoleCommandHistoryW;
 
         [NativeTypeName("#define SetConsoleNumberOfCommands SetConsoleNumberOfCommandsW")]
-        public static delegate*<uint, ushort*, int> SetConsoleNumberOfCommands => &SetConsoleNumberOfCommandsW;
+        public static delegate*<uint, ushort*, BOOL> SetConsoleNumberOfCommands => &SetConsoleNumberOfCommandsW;
 
         [NativeTypeName("#define GetConsoleCommandHistoryLength GetConsoleCommandHistoryLengthW")]
         public static delegate*<ushort*, uint> GetConsoleCommandHistoryLength => &GetConsoleCommandHistoryLengthW;

@@ -58,8 +58,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        [return: NativeTypeName("BOOL")]
-        public int Equals(IDWriteFontFaceReference* fontFaceReference)
+        public BOOL Equals(IDWriteFontFaceReference* fontFaceReference)
         {
             return ((delegate* unmanaged<IDWriteFontFaceReference1*, IDWriteFontFaceReference*, int>)(lpVtbl[5]))((IDWriteFontFaceReference1*)Unsafe.AsPointer(ref this), fontFaceReference);
         }

@@ -35,12 +35,11 @@ namespace TerraFX.Interop
         public static extern ushort* WindowsGetStringRawBuffer([NativeTypeName("HSTRING")] IntPtr @string, [NativeTypeName("UINT32 *")] uint* length);
 
         [DllImport("combase", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int WindowsIsStringEmpty([NativeTypeName("HSTRING")] IntPtr @string);
+        public static extern BOOL WindowsIsStringEmpty([NativeTypeName("HSTRING")] IntPtr @string);
 
         [DllImport("combase", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
-        public static extern int WindowsStringHasEmbeddedNull([NativeTypeName("HSTRING")] IntPtr @string, [NativeTypeName("BOOL *")] int* hasEmbedNull);
+        public static extern int WindowsStringHasEmbeddedNull([NativeTypeName("HSTRING")] IntPtr @string, BOOL* hasEmbedNull);
 
         [DllImport("combase", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]

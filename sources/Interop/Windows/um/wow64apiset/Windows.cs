@@ -15,16 +15,13 @@ namespace TerraFX.Interop
         public static extern byte Wow64EnableWow64FsRedirection([NativeTypeName("BOOLEAN")] byte Wow64FsEnableRedirection);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int Wow64DisableWow64FsRedirection([NativeTypeName("PVOID *")] void** OldValue);
+        public static extern BOOL Wow64DisableWow64FsRedirection([NativeTypeName("PVOID *")] void** OldValue);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int Wow64RevertWow64FsRedirection([NativeTypeName("PVOID")] void* OlValue);
+        public static extern BOOL Wow64RevertWow64FsRedirection([NativeTypeName("PVOID")] void* OlValue);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int IsWow64Process([NativeTypeName("HANDLE")] IntPtr hProcess, [NativeTypeName("PBOOL")] int* Wow64Process);
+        public static extern BOOL IsWow64Process([NativeTypeName("HANDLE")] IntPtr hProcess, [NativeTypeName("PBOOL")] BOOL* Wow64Process);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("UINT")]
@@ -35,8 +32,7 @@ namespace TerraFX.Interop
         public static extern uint GetSystemWow64DirectoryW([NativeTypeName("LPWSTR")] ushort* lpBuffer, [NativeTypeName("UINT")] uint uSize);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int IsWow64Process2([NativeTypeName("HANDLE")] IntPtr hProcess, [NativeTypeName("USHORT *")] ushort* pProcessMachine, [NativeTypeName("USHORT *")] ushort* pNativeMachine);
+        public static extern BOOL IsWow64Process2([NativeTypeName("HANDLE")] IntPtr hProcess, [NativeTypeName("USHORT *")] ushort* pProcessMachine, [NativeTypeName("USHORT *")] ushort* pNativeMachine);
 
         [DllImport("kernelbase", ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("UINT")]
@@ -48,15 +44,13 @@ namespace TerraFX.Interop
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("HRESULT")]
-        public static extern int IsWow64GuestMachineSupported([NativeTypeName("USHORT")] ushort WowGuestMachine, [NativeTypeName("BOOL *")] int* MachineIsSupported);
+        public static extern int IsWow64GuestMachineSupported([NativeTypeName("USHORT")] ushort WowGuestMachine, BOOL* MachineIsSupported);
 
         [DllImport("kernel32", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int Wow64GetThreadContext([NativeTypeName("HANDLE")] IntPtr hThread, [NativeTypeName("PWOW64_CONTEXT")] WOW64_CONTEXT* lpContext);
+        public static extern BOOL Wow64GetThreadContext([NativeTypeName("HANDLE")] IntPtr hThread, [NativeTypeName("PWOW64_CONTEXT")] WOW64_CONTEXT* lpContext);
 
         [DllImport("kernel32", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int Wow64SetThreadContext([NativeTypeName("HANDLE")] IntPtr hThread, [NativeTypeName("const WOW64_CONTEXT *")] WOW64_CONTEXT* lpContext);
+        public static extern BOOL Wow64SetThreadContext([NativeTypeName("HANDLE")] IntPtr hThread, [NativeTypeName("const WOW64_CONTEXT *")] WOW64_CONTEXT* lpContext);
 
         [DllImport("kernel32", ExactSpelling = true)]
         [return: NativeTypeName("DWORD")]

@@ -65,9 +65,9 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
         [return: NativeTypeName("HRESULT")]
-        public int IsClipListChanged([NativeTypeName("BOOL *")] int* param0)
+        public int IsClipListChanged(BOOL* param0)
         {
-            return ((delegate* unmanaged<IDirectDrawClipper*, int*, int>)(lpVtbl[6]))((IDirectDrawClipper*)Unsafe.AsPointer(ref this), param0);
+            return ((delegate* unmanaged<IDirectDrawClipper*, BOOL*, int>)(lpVtbl[6]))((IDirectDrawClipper*)Unsafe.AsPointer(ref this), param0);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

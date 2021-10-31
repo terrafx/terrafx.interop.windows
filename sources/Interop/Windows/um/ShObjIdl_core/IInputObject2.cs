@@ -43,9 +43,9 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
         [return: NativeTypeName("HRESULT")]
-        public int UIActivateIO([NativeTypeName("BOOL")] int fActivate, MSG* pMsg)
+        public int UIActivateIO(BOOL fActivate, MSG* pMsg)
         {
-            return ((delegate* unmanaged<IInputObject2*, int, MSG*, int>)(lpVtbl[3]))((IInputObject2*)Unsafe.AsPointer(ref this), fActivate, pMsg);
+            return ((delegate* unmanaged<IInputObject2*, BOOL, MSG*, int>)(lpVtbl[3]))((IInputObject2*)Unsafe.AsPointer(ref this), fActivate, pMsg);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

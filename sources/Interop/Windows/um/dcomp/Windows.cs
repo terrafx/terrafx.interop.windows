@@ -30,11 +30,11 @@ namespace TerraFX.Interop
 
         [DllImport("dcomp", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
-        public static extern int DCompositionAttachMouseWheelToHwnd(IDCompositionVisual* visual, [NativeTypeName("HWND")] IntPtr hwnd, [NativeTypeName("BOOL")] int enable);
+        public static extern int DCompositionAttachMouseWheelToHwnd(IDCompositionVisual* visual, [NativeTypeName("HWND")] IntPtr hwnd, BOOL enable);
 
         [DllImport("dcomp", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
-        public static extern int DCompositionAttachMouseDragToHwnd(IDCompositionVisual* visual, [NativeTypeName("HWND")] IntPtr hwnd, [NativeTypeName("BOOL")] int enable);
+        public static extern int DCompositionAttachMouseDragToHwnd(IDCompositionVisual* visual, [NativeTypeName("HWND")] IntPtr hwnd, BOOL enable);
 
         public static ref readonly Guid IID_IDCompositionDevice
         {

@@ -43,9 +43,9 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
         [return: NativeTypeName("HRESULT")]
-        public int OnStartComposition(ITfCompositionView* pComposition, [NativeTypeName("BOOL *")] int* pfOk)
+        public int OnStartComposition(ITfCompositionView* pComposition, BOOL* pfOk)
         {
-            return ((delegate* unmanaged<ITfContextOwnerCompositionSink*, ITfCompositionView*, int*, int>)(lpVtbl[3]))((ITfContextOwnerCompositionSink*)Unsafe.AsPointer(ref this), pComposition, pfOk);
+            return ((delegate* unmanaged<ITfContextOwnerCompositionSink*, ITfCompositionView*, BOOL*, int>)(lpVtbl[3]))((ITfContextOwnerCompositionSink*)Unsafe.AsPointer(ref this), pComposition, pfOk);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

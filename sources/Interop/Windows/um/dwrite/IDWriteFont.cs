@@ -71,8 +71,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(7)]
-        [return: NativeTypeName("BOOL")]
-        public int IsSymbolFont()
+        public BOOL IsSymbolFont()
         {
             return ((delegate* unmanaged<IDWriteFont*, int>)(lpVtbl[7]))((IDWriteFont*)Unsafe.AsPointer(ref this));
         }
@@ -88,9 +87,9 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(9)]
         [return: NativeTypeName("HRESULT")]
-        public int GetInformationalStrings(DWRITE_INFORMATIONAL_STRING_ID informationalStringID, IDWriteLocalizedStrings** informationalStrings, [NativeTypeName("BOOL *")] int* exists)
+        public int GetInformationalStrings(DWRITE_INFORMATIONAL_STRING_ID informationalStringID, IDWriteLocalizedStrings** informationalStrings, BOOL* exists)
         {
-            return ((delegate* unmanaged<IDWriteFont*, DWRITE_INFORMATIONAL_STRING_ID, IDWriteLocalizedStrings**, int*, int>)(lpVtbl[9]))((IDWriteFont*)Unsafe.AsPointer(ref this), informationalStringID, informationalStrings, exists);
+            return ((delegate* unmanaged<IDWriteFont*, DWRITE_INFORMATIONAL_STRING_ID, IDWriteLocalizedStrings**, BOOL*, int>)(lpVtbl[9]))((IDWriteFont*)Unsafe.AsPointer(ref this), informationalStringID, informationalStrings, exists);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -110,9 +109,9 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(12)]
         [return: NativeTypeName("HRESULT")]
-        public int HasCharacter([NativeTypeName("UINT32")] uint unicodeValue, [NativeTypeName("BOOL *")] int* exists)
+        public int HasCharacter([NativeTypeName("UINT32")] uint unicodeValue, BOOL* exists)
         {
-            return ((delegate* unmanaged<IDWriteFont*, uint, int*, int>)(lpVtbl[12]))((IDWriteFont*)Unsafe.AsPointer(ref this), unicodeValue, exists);
+            return ((delegate* unmanaged<IDWriteFont*, uint, BOOL*, int>)(lpVtbl[12]))((IDWriteFont*)Unsafe.AsPointer(ref this), unicodeValue, exists);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

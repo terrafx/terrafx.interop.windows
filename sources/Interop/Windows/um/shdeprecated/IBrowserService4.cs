@@ -83,17 +83,17 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(8)]
         [return: NativeTypeName("HRESULT")]
-        public int ShowControlWindow([NativeTypeName("UINT")] uint id, [NativeTypeName("BOOL")] int fShow)
+        public int ShowControlWindow([NativeTypeName("UINT")] uint id, BOOL fShow)
         {
-            return ((delegate* unmanaged<IBrowserService4*, uint, int, int>)(lpVtbl[8]))((IBrowserService4*)Unsafe.AsPointer(ref this), id, fShow);
+            return ((delegate* unmanaged<IBrowserService4*, uint, BOOL, int>)(lpVtbl[8]))((IBrowserService4*)Unsafe.AsPointer(ref this), id, fShow);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(9)]
         [return: NativeTypeName("HRESULT")]
-        public int IsControlWindowShown([NativeTypeName("UINT")] uint id, [NativeTypeName("BOOL *")] int* pfShown)
+        public int IsControlWindowShown([NativeTypeName("UINT")] uint id, BOOL* pfShown)
         {
-            return ((delegate* unmanaged<IBrowserService4*, uint, int*, int>)(lpVtbl[9]))((IBrowserService4*)Unsafe.AsPointer(ref this), id, pfShown);
+            return ((delegate* unmanaged<IBrowserService4*, uint, BOOL*, int>)(lpVtbl[9]))((IBrowserService4*)Unsafe.AsPointer(ref this), id, pfShown);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -147,9 +147,9 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(16)]
         [return: NativeTypeName("HRESULT")]
-        public int NotifyRedirect(IShellView* psv, [NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidl, [NativeTypeName("BOOL *")] int* pfDidBrowse)
+        public int NotifyRedirect(IShellView* psv, [NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidl, BOOL* pfDidBrowse)
         {
-            return ((delegate* unmanaged<IBrowserService4*, IShellView*, ITEMIDLIST*, int*, int>)(lpVtbl[16]))((IBrowserService4*)Unsafe.AsPointer(ref this), psv, pidl, pfDidBrowse);
+            return ((delegate* unmanaged<IBrowserService4*, IShellView*, ITEMIDLIST*, BOOL*, int>)(lpVtbl[16]))((IBrowserService4*)Unsafe.AsPointer(ref this), psv, pidl, pfDidBrowse);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -235,9 +235,9 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(27)]
         [return: NativeTypeName("HRESULT")]
-        public int SetHistoryObject(IOleObject* pole, [NativeTypeName("BOOL")] int fIsLocalAnchor)
+        public int SetHistoryObject(IOleObject* pole, BOOL fIsLocalAnchor)
         {
-            return ((delegate* unmanaged<IBrowserService4*, IOleObject*, int, int>)(lpVtbl[27]))((IBrowserService4*)Unsafe.AsPointer(ref this), pole, fIsLocalAnchor);
+            return ((delegate* unmanaged<IBrowserService4*, IOleObject*, BOOL, int>)(lpVtbl[27]))((IBrowserService4*)Unsafe.AsPointer(ref this), pole, fIsLocalAnchor);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -259,9 +259,9 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(30)]
         [return: NativeTypeName("HRESULT")]
-        public int OnHttpEquiv(IShellView* psv, [NativeTypeName("BOOL")] int fDone, VARIANT* pvarargIn, VARIANT* pvarargOut)
+        public int OnHttpEquiv(IShellView* psv, BOOL fDone, VARIANT* pvarargIn, VARIANT* pvarargOut)
         {
-            return ((delegate* unmanaged<IBrowserService4*, IShellView*, int, VARIANT*, VARIANT*, int>)(lpVtbl[30]))((IBrowserService4*)Unsafe.AsPointer(ref this), psv, fDone, pvarargIn, pvarargOut);
+            return ((delegate* unmanaged<IBrowserService4*, IShellView*, BOOL, VARIANT*, VARIANT*, int>)(lpVtbl[30]))((IBrowserService4*)Unsafe.AsPointer(ref this), psv, fDone, pvarargIn, pvarargOut);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -275,9 +275,9 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(32)]
         [return: NativeTypeName("HRESULT")]
-        public int RegisterWindow([NativeTypeName("BOOL")] int fForceRegister, int swc)
+        public int RegisterWindow(BOOL fForceRegister, int swc)
         {
-            return ((delegate* unmanaged<IBrowserService4*, int, int, int>)(lpVtbl[32]))((IBrowserService4*)Unsafe.AsPointer(ref this), fForceRegister, swc);
+            return ((delegate* unmanaged<IBrowserService4*, BOOL, int, int>)(lpVtbl[32]))((IBrowserService4*)Unsafe.AsPointer(ref this), fForceRegister, swc);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -355,9 +355,9 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(42)]
         [return: NativeTypeName("HRESULT")]
-        public int OnFrameWindowActivateBS([NativeTypeName("BOOL")] int fActive)
+        public int OnFrameWindowActivateBS(BOOL fActive)
         {
-            return ((delegate* unmanaged<IBrowserService4*, int, int>)(lpVtbl[42]))((IBrowserService4*)Unsafe.AsPointer(ref this), fActive);
+            return ((delegate* unmanaged<IBrowserService4*, BOOL, int>)(lpVtbl[42]))((IBrowserService4*)Unsafe.AsPointer(ref this), fActive);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -443,9 +443,9 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(53)]
         [return: NativeTypeName("HRESULT")]
-        public int AllowViewResize([NativeTypeName("BOOL")] int f)
+        public int AllowViewResize(BOOL f)
         {
-            return ((delegate* unmanaged<IBrowserService4*, int, int>)(lpVtbl[53]))((IBrowserService4*)Unsafe.AsPointer(ref this), f);
+            return ((delegate* unmanaged<IBrowserService4*, BOOL, int>)(lpVtbl[53]))((IBrowserService4*)Unsafe.AsPointer(ref this), f);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -515,9 +515,9 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(62)]
         [return: NativeTypeName("HRESULT")]
-        public int _PauseOrResumeView([NativeTypeName("BOOL")] int fPaused)
+        public int _PauseOrResumeView(BOOL fPaused)
         {
-            return ((delegate* unmanaged<IBrowserService4*, int, int>)(lpVtbl[62]))((IBrowserService4*)Unsafe.AsPointer(ref this), fPaused);
+            return ((delegate* unmanaged<IBrowserService4*, BOOL, int>)(lpVtbl[62]))((IBrowserService4*)Unsafe.AsPointer(ref this), fPaused);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -555,17 +555,17 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(67)]
         [return: NativeTypeName("HRESULT")]
-        public int _ExecChildren(IUnknown* punkBar, [NativeTypeName("BOOL")] int fBroadcast, [NativeTypeName("const GUID *")] Guid* pguidCmdGroup, [NativeTypeName("DWORD")] uint nCmdID, [NativeTypeName("DWORD")] uint nCmdexecopt, [NativeTypeName("VARIANTARG *")] VARIANT* pvarargIn, [NativeTypeName("VARIANTARG *")] VARIANT* pvarargOut)
+        public int _ExecChildren(IUnknown* punkBar, BOOL fBroadcast, [NativeTypeName("const GUID *")] Guid* pguidCmdGroup, [NativeTypeName("DWORD")] uint nCmdID, [NativeTypeName("DWORD")] uint nCmdexecopt, [NativeTypeName("VARIANTARG *")] VARIANT* pvarargIn, [NativeTypeName("VARIANTARG *")] VARIANT* pvarargOut)
         {
-            return ((delegate* unmanaged<IBrowserService4*, IUnknown*, int, Guid*, uint, uint, VARIANT*, VARIANT*, int>)(lpVtbl[67]))((IBrowserService4*)Unsafe.AsPointer(ref this), punkBar, fBroadcast, pguidCmdGroup, nCmdID, nCmdexecopt, pvarargIn, pvarargOut);
+            return ((delegate* unmanaged<IBrowserService4*, IUnknown*, BOOL, Guid*, uint, uint, VARIANT*, VARIANT*, int>)(lpVtbl[67]))((IBrowserService4*)Unsafe.AsPointer(ref this), punkBar, fBroadcast, pguidCmdGroup, nCmdID, nCmdexecopt, pvarargIn, pvarargOut);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(68)]
         [return: NativeTypeName("HRESULT")]
-        public int _SendChildren([NativeTypeName("HWND")] IntPtr hwndBar, [NativeTypeName("BOOL")] int fBroadcast, [NativeTypeName("UINT")] uint uMsg, [NativeTypeName("WPARAM")] nuint wParam, [NativeTypeName("LPARAM")] nint lParam)
+        public int _SendChildren([NativeTypeName("HWND")] IntPtr hwndBar, BOOL fBroadcast, [NativeTypeName("UINT")] uint uMsg, [NativeTypeName("WPARAM")] nuint wParam, [NativeTypeName("LPARAM")] nint lParam)
         {
-            return ((delegate* unmanaged<IBrowserService4*, IntPtr, int, uint, nuint, nint, int>)(lpVtbl[68]))((IBrowserService4*)Unsafe.AsPointer(ref this), hwndBar, fBroadcast, uMsg, wParam, lParam);
+            return ((delegate* unmanaged<IBrowserService4*, IntPtr, BOOL, uint, nuint, nint, int>)(lpVtbl[68]))((IBrowserService4*)Unsafe.AsPointer(ref this), hwndBar, fBroadcast, uMsg, wParam, lParam);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -587,9 +587,9 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(71)]
         [return: NativeTypeName("HRESULT")]
-        public int v_ShowHideChildWindows([NativeTypeName("BOOL")] int fChildOnly)
+        public int v_ShowHideChildWindows(BOOL fChildOnly)
         {
-            return ((delegate* unmanaged<IBrowserService4*, int, int>)(lpVtbl[71]))((IBrowserService4*)Unsafe.AsPointer(ref this), fChildOnly);
+            return ((delegate* unmanaged<IBrowserService4*, BOOL, int>)(lpVtbl[71]))((IBrowserService4*)Unsafe.AsPointer(ref this), fChildOnly);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -713,9 +713,9 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(87)]
         [return: NativeTypeName("HRESULT")]
-        public int _CloseAndReleaseToolbars([NativeTypeName("BOOL")] int fClose)
+        public int _CloseAndReleaseToolbars(BOOL fClose)
         {
-            return ((delegate* unmanaged<IBrowserService4*, int, int>)(lpVtbl[87]))((IBrowserService4*)Unsafe.AsPointer(ref this), fClose);
+            return ((delegate* unmanaged<IBrowserService4*, BOOL, int>)(lpVtbl[87]))((IBrowserService4*)Unsafe.AsPointer(ref this), fClose);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -729,9 +729,9 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(89)]
         [return: NativeTypeName("HRESULT")]
-        public int _ResizeNextBorderHelper([NativeTypeName("UINT")] uint itb, [NativeTypeName("BOOL")] int bUseHmonitor)
+        public int _ResizeNextBorderHelper([NativeTypeName("UINT")] uint itb, BOOL bUseHmonitor)
         {
-            return ((delegate* unmanaged<IBrowserService4*, uint, int, int>)(lpVtbl[89]))((IBrowserService4*)Unsafe.AsPointer(ref this), itb, bUseHmonitor);
+            return ((delegate* unmanaged<IBrowserService4*, uint, BOOL, int>)(lpVtbl[89]))((IBrowserService4*)Unsafe.AsPointer(ref this), itb, bUseHmonitor);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -761,9 +761,9 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(93)]
         [return: NativeTypeName("HRESULT")]
-        public int _GetBorderDWHelper(IUnknown* punkSrc, [NativeTypeName("LPRECT")] RECT* lprectBorder, [NativeTypeName("BOOL")] int bUseHmonitor)
+        public int _GetBorderDWHelper(IUnknown* punkSrc, [NativeTypeName("LPRECT")] RECT* lprectBorder, BOOL bUseHmonitor)
         {
-            return ((delegate* unmanaged<IBrowserService4*, IUnknown*, RECT*, int, int>)(lpVtbl[93]))((IBrowserService4*)Unsafe.AsPointer(ref this), punkSrc, lprectBorder, bUseHmonitor);
+            return ((delegate* unmanaged<IBrowserService4*, IUnknown*, RECT*, BOOL, int>)(lpVtbl[93]))((IBrowserService4*)Unsafe.AsPointer(ref this), punkSrc, lprectBorder, bUseHmonitor);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -793,9 +793,9 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(97)]
         [return: NativeTypeName("HRESULT")]
-        public int ActivateView([NativeTypeName("BOOL")] int fPendingView)
+        public int ActivateView(BOOL fPendingView)
         {
-            return ((delegate* unmanaged<IBrowserService4*, int, int>)(lpVtbl[97]))((IBrowserService4*)Unsafe.AsPointer(ref this), fPendingView);
+            return ((delegate* unmanaged<IBrowserService4*, BOOL, int>)(lpVtbl[97]))((IBrowserService4*)Unsafe.AsPointer(ref this), fPendingView);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

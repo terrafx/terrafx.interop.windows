@@ -43,9 +43,9 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
         [return: NativeTypeName("HRESULT")]
-        public int OnFocusChangeIS(IUnknown* punkObj, [NativeTypeName("BOOL")] int fSetFocus)
+        public int OnFocusChangeIS(IUnknown* punkObj, BOOL fSetFocus)
         {
-            return ((delegate* unmanaged<IInputObjectSite*, IUnknown*, int, int>)(lpVtbl[3]))((IInputObjectSite*)Unsafe.AsPointer(ref this), punkObj, fSetFocus);
+            return ((delegate* unmanaged<IInputObjectSite*, IUnknown*, BOOL, int>)(lpVtbl[3]))((IInputObjectSite*)Unsafe.AsPointer(ref this), punkObj, fSetFocus);
         }
     }
 }

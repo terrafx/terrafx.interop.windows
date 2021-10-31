@@ -59,9 +59,9 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
         [return: NativeTypeName("HRESULT")]
-        public int IsFinal([NativeTypeName("BOOL *")] int* pfIsFinal)
+        public int IsFinal(BOOL* pfIsFinal)
         {
-            return ((delegate* unmanaged<IMFTrustedOutput*, int*, int>)(lpVtbl[5]))((IMFTrustedOutput*)Unsafe.AsPointer(ref this), pfIsFinal);
+            return ((delegate* unmanaged<IMFTrustedOutput*, BOOL*, int>)(lpVtbl[5]))((IMFTrustedOutput*)Unsafe.AsPointer(ref this), pfIsFinal);
         }
     }
 }

@@ -91,9 +91,9 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(9)]
         [return: NativeTypeName("HRESULT")]
-        public int SetInput(IUnknown* pUnkInput, [NativeTypeName("BOOL")] int fAllowFormatChanges)
+        public int SetInput(IUnknown* pUnkInput, BOOL fAllowFormatChanges)
         {
-            return ((delegate* unmanaged<ISpRecognizer*, IUnknown*, int, int>)(lpVtbl[9]))((ISpRecognizer*)Unsafe.AsPointer(ref this), pUnkInput, fAllowFormatChanges);
+            return ((delegate* unmanaged<ISpRecognizer*, IUnknown*, BOOL, int>)(lpVtbl[9]))((ISpRecognizer*)Unsafe.AsPointer(ref this), pUnkInput, fAllowFormatChanges);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -179,9 +179,9 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(20)]
         [return: NativeTypeName("HRESULT")]
-        public int IsUISupported([NativeTypeName("LPCWSTR")] ushort* pszTypeOfUI, void* pvExtraData, [NativeTypeName("ULONG")] uint cbExtraData, [NativeTypeName("BOOL *")] int* pfSupported)
+        public int IsUISupported([NativeTypeName("LPCWSTR")] ushort* pszTypeOfUI, void* pvExtraData, [NativeTypeName("ULONG")] uint cbExtraData, BOOL* pfSupported)
         {
-            return ((delegate* unmanaged<ISpRecognizer*, ushort*, void*, uint, int*, int>)(lpVtbl[20]))((ISpRecognizer*)Unsafe.AsPointer(ref this), pszTypeOfUI, pvExtraData, cbExtraData, pfSupported);
+            return ((delegate* unmanaged<ISpRecognizer*, ushort*, void*, uint, BOOL*, int>)(lpVtbl[20]))((ISpRecognizer*)Unsafe.AsPointer(ref this), pszTypeOfUI, pvExtraData, cbExtraData, pfSupported);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

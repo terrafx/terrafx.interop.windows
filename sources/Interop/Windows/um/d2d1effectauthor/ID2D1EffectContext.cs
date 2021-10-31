@@ -129,8 +129,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(14)]
-        [return: NativeTypeName("BOOL")]
-        public int IsShaderLoaded([NativeTypeName("const GUID &")] Guid* shaderId)
+        public BOOL IsShaderLoaded([NativeTypeName("const GUID &")] Guid* shaderId)
         {
             return ((delegate* unmanaged<ID2D1EffectContext*, Guid*, int>)(lpVtbl[14]))((ID2D1EffectContext*)Unsafe.AsPointer(ref this), shaderId);
         }
@@ -201,8 +200,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(23)]
-        [return: NativeTypeName("BOOL")]
-        public int IsBufferPrecisionSupported(D2D1_BUFFER_PRECISION bufferPrecision)
+        public BOOL IsBufferPrecisionSupported(D2D1_BUFFER_PRECISION bufferPrecision)
         {
             return ((delegate* unmanaged<ID2D1EffectContext*, D2D1_BUFFER_PRECISION, int>)(lpVtbl[23]))((ID2D1EffectContext*)Unsafe.AsPointer(ref this), bufferPrecision);
         }

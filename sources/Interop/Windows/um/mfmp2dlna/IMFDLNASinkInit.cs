@@ -43,9 +43,9 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
         [return: NativeTypeName("HRESULT")]
-        public int Initialize(IMFByteStream* pByteStream, [NativeTypeName("BOOL")] int fPal)
+        public int Initialize(IMFByteStream* pByteStream, BOOL fPal)
         {
-            return ((delegate* unmanaged<IMFDLNASinkInit*, IMFByteStream*, int, int>)(lpVtbl[3]))((IMFDLNASinkInit*)Unsafe.AsPointer(ref this), pByteStream, fPal);
+            return ((delegate* unmanaged<IMFDLNASinkInit*, IMFByteStream*, BOOL, int>)(lpVtbl[3]))((IMFDLNASinkInit*)Unsafe.AsPointer(ref this), pByteStream, fPal);
         }
     }
 }

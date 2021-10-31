@@ -43,9 +43,9 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
         [return: NativeTypeName("HRESULT")]
-        public int Init([NativeTypeName("const GUID &")] Guid* rguidProcessID, IProcessLock* pProcessLock, [NativeTypeName("BOOL *")] int* pfApplicationAware)
+        public int Init([NativeTypeName("const GUID &")] Guid* rguidProcessID, IProcessLock* pProcessLock, BOOL* pfApplicationAware)
         {
-            return ((delegate* unmanaged<ISurrogateService*, Guid*, IProcessLock*, int*, int>)(lpVtbl[3]))((ISurrogateService*)Unsafe.AsPointer(ref this), rguidProcessID, pProcessLock, pfApplicationAware);
+            return ((delegate* unmanaged<ISurrogateService*, Guid*, IProcessLock*, BOOL*, int>)(lpVtbl[3]))((ISurrogateService*)Unsafe.AsPointer(ref this), rguidProcessID, pProcessLock, pfApplicationAware);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

@@ -51,9 +51,9 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
         [return: NativeTypeName("HRESULT")]
-        public int SyncUsingStreamOffset([NativeTypeName("BOOL")] int bUseStreamOffset)
+        public int SyncUsingStreamOffset(BOOL bUseStreamOffset)
         {
-            return ((delegate* unmanaged<IAMGraphStreams*, int, int>)(lpVtbl[4]))((IAMGraphStreams*)Unsafe.AsPointer(ref this), bUseStreamOffset);
+            return ((delegate* unmanaged<IAMGraphStreams*, BOOL, int>)(lpVtbl[4]))((IAMGraphStreams*)Unsafe.AsPointer(ref this), bUseStreamOffset);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

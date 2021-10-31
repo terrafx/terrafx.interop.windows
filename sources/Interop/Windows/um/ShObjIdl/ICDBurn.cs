@@ -59,9 +59,9 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
         [return: NativeTypeName("HRESULT")]
-        public int HasRecordableDrive([NativeTypeName("BOOL *")] int* pfHasRecorder)
+        public int HasRecordableDrive(BOOL* pfHasRecorder)
         {
-            return ((delegate* unmanaged<ICDBurn*, int*, int>)(lpVtbl[5]))((ICDBurn*)Unsafe.AsPointer(ref this), pfHasRecorder);
+            return ((delegate* unmanaged<ICDBurn*, BOOL*, int>)(lpVtbl[5]))((ICDBurn*)Unsafe.AsPointer(ref this), pfHasRecorder);
         }
     }
 }

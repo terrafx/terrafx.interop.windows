@@ -83,9 +83,9 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(8)]
         [return: NativeTypeName("HRESULT")]
-        public int RestoreLastFocus([NativeTypeName("DWORD *")] uint* pdwThreadId, [NativeTypeName("BOOL")] int fPrev)
+        public int RestoreLastFocus([NativeTypeName("DWORD *")] uint* pdwThreadId, BOOL fPrev)
         {
-            return ((delegate* unmanaged<ITfLangBarMgr*, uint*, int, int>)(lpVtbl[8]))((ITfLangBarMgr*)Unsafe.AsPointer(ref this), pdwThreadId, fPrev);
+            return ((delegate* unmanaged<ITfLangBarMgr*, uint*, BOOL, int>)(lpVtbl[8]))((ITfLangBarMgr*)Unsafe.AsPointer(ref this), pdwThreadId, fPrev);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

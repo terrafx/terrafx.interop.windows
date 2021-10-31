@@ -51,9 +51,9 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
         [return: NativeTypeName("HRESULT")]
-        public int GetGroupByProperty(PROPERTYKEY* pkey, [NativeTypeName("BOOL *")] int* pfGroupAscending)
+        public int GetGroupByProperty(PROPERTYKEY* pkey, BOOL* pfGroupAscending)
         {
-            return ((delegate* unmanaged<IFolderViewSettings*, PROPERTYKEY*, int*, int>)(lpVtbl[4]))((IFolderViewSettings*)Unsafe.AsPointer(ref this), pkey, pfGroupAscending);
+            return ((delegate* unmanaged<IFolderViewSettings*, PROPERTYKEY*, BOOL*, int>)(lpVtbl[4]))((IFolderViewSettings*)Unsafe.AsPointer(ref this), pkey, pfGroupAscending);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

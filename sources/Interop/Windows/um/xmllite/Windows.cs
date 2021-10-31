@@ -18,11 +18,11 @@ namespace TerraFX.Interop
 
         [DllImport("xmllite", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
-        public static extern int CreateXmlReaderInputWithEncodingCodePage(IUnknown* pInputStream, IMalloc* pMalloc, [NativeTypeName("UINT")] uint nEncodingCodePage, [NativeTypeName("BOOL")] int fEncodingHint, [NativeTypeName("LPCWSTR")] ushort* pwszBaseUri, [NativeTypeName("IXmlReaderInput **")] IUnknown** ppInput);
+        public static extern int CreateXmlReaderInputWithEncodingCodePage(IUnknown* pInputStream, IMalloc* pMalloc, [NativeTypeName("UINT")] uint nEncodingCodePage, BOOL fEncodingHint, [NativeTypeName("LPCWSTR")] ushort* pwszBaseUri, [NativeTypeName("IXmlReaderInput **")] IUnknown** ppInput);
 
         [DllImport("xmllite", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
-        public static extern int CreateXmlReaderInputWithEncodingName(IUnknown* pInputStream, IMalloc* pMalloc, [NativeTypeName("LPCWSTR")] ushort* pwszEncodingName, [NativeTypeName("BOOL")] int fEncodingHint, [NativeTypeName("LPCWSTR")] ushort* pwszBaseUri, [NativeTypeName("IXmlReaderInput **")] IUnknown** ppInput);
+        public static extern int CreateXmlReaderInputWithEncodingName(IUnknown* pInputStream, IMalloc* pMalloc, [NativeTypeName("LPCWSTR")] ushort* pwszEncodingName, BOOL fEncodingHint, [NativeTypeName("LPCWSTR")] ushort* pwszBaseUri, [NativeTypeName("IXmlReaderInput **")] IUnknown** ppInput);
 
         [DllImport("xmllite", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]

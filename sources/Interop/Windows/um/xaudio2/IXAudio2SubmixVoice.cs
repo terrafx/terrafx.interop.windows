@@ -54,9 +54,9 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        public void GetEffectState([NativeTypeName("UINT32")] uint EffectIndex, [NativeTypeName("BOOL *")] int* pEnabled)
+        public void GetEffectState([NativeTypeName("UINT32")] uint EffectIndex, BOOL* pEnabled)
         {
-            ((delegate* unmanaged<IXAudio2SubmixVoice*, uint, int*, void>)(lpVtbl[5]))((IXAudio2SubmixVoice*)Unsafe.AsPointer(ref this), EffectIndex, pEnabled);
+            ((delegate* unmanaged<IXAudio2SubmixVoice*, uint, BOOL*, void>)(lpVtbl[5]))((IXAudio2SubmixVoice*)Unsafe.AsPointer(ref this), EffectIndex, pEnabled);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

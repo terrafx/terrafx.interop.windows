@@ -47,7 +47,6 @@ namespace TerraFX.Interop
         [NativeTypeName("INT16")]
         public short superscriptSizeY;
 
-        [NativeTypeName("BOOL")]
-        public int hasTypographicMetrics;
+        public BOOL hasTypographicMetrics;
     }
 }

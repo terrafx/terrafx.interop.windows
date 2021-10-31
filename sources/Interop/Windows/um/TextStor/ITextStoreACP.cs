@@ -131,9 +131,9 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(14)]
         [return: NativeTypeName("HRESULT")]
-        public int QueryInsertEmbedded([NativeTypeName("const GUID *")] Guid* pguidService, [NativeTypeName("const FORMATETC *")] FORMATETC* pFormatEtc, [NativeTypeName("BOOL *")] int* pfInsertable)
+        public int QueryInsertEmbedded([NativeTypeName("const GUID *")] Guid* pguidService, [NativeTypeName("const FORMATETC *")] FORMATETC* pFormatEtc, BOOL* pfInsertable)
         {
-            return ((delegate* unmanaged<ITextStoreACP*, Guid*, FORMATETC*, int*, int>)(lpVtbl[14]))((ITextStoreACP*)Unsafe.AsPointer(ref this), pguidService, pFormatEtc, pfInsertable);
+            return ((delegate* unmanaged<ITextStoreACP*, Guid*, FORMATETC*, BOOL*, int>)(lpVtbl[14]))((ITextStoreACP*)Unsafe.AsPointer(ref this), pguidService, pFormatEtc, pfInsertable);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -187,9 +187,9 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(21)]
         [return: NativeTypeName("HRESULT")]
-        public int FindNextAttrTransition([NativeTypeName("LONG")] int acpStart, [NativeTypeName("LONG")] int acpHalt, [NativeTypeName("ULONG")] uint cFilterAttrs, [NativeTypeName("const TS_ATTRID *")] Guid* paFilterAttrs, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("LONG *")] int* pacpNext, [NativeTypeName("BOOL *")] int* pfFound, [NativeTypeName("LONG *")] int* plFoundOffset)
+        public int FindNextAttrTransition([NativeTypeName("LONG")] int acpStart, [NativeTypeName("LONG")] int acpHalt, [NativeTypeName("ULONG")] uint cFilterAttrs, [NativeTypeName("const TS_ATTRID *")] Guid* paFilterAttrs, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("LONG *")] int* pacpNext, BOOL* pfFound, [NativeTypeName("LONG *")] int* plFoundOffset)
         {
-            return ((delegate* unmanaged<ITextStoreACP*, int, int, uint, Guid*, uint, int*, int*, int*, int>)(lpVtbl[21]))((ITextStoreACP*)Unsafe.AsPointer(ref this), acpStart, acpHalt, cFilterAttrs, paFilterAttrs, dwFlags, pacpNext, pfFound, plFoundOffset);
+            return ((delegate* unmanaged<ITextStoreACP*, int, int, uint, Guid*, uint, int*, BOOL*, int*, int>)(lpVtbl[21]))((ITextStoreACP*)Unsafe.AsPointer(ref this), acpStart, acpHalt, cFilterAttrs, paFilterAttrs, dwFlags, pacpNext, pfFound, plFoundOffset);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -227,9 +227,9 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(26)]
         [return: NativeTypeName("HRESULT")]
-        public int GetTextExt([NativeTypeName("TsViewCookie")] uint vcView, [NativeTypeName("LONG")] int acpStart, [NativeTypeName("LONG")] int acpEnd, RECT* prc, [NativeTypeName("BOOL *")] int* pfClipped)
+        public int GetTextExt([NativeTypeName("TsViewCookie")] uint vcView, [NativeTypeName("LONG")] int acpStart, [NativeTypeName("LONG")] int acpEnd, RECT* prc, BOOL* pfClipped)
         {
-            return ((delegate* unmanaged<ITextStoreACP*, uint, int, int, RECT*, int*, int>)(lpVtbl[26]))((ITextStoreACP*)Unsafe.AsPointer(ref this), vcView, acpStart, acpEnd, prc, pfClipped);
+            return ((delegate* unmanaged<ITextStoreACP*, uint, int, int, RECT*, BOOL*, int>)(lpVtbl[26]))((ITextStoreACP*)Unsafe.AsPointer(ref this), vcView, acpStart, acpEnd, prc, pfClipped);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

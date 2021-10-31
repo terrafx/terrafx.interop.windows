@@ -17,8 +17,7 @@ namespace TerraFX.Interop
         [NativeTypeName("LPWSTR")]
         public ushort* pwszItem;
 
-        [NativeTypeName("BOOL")]
-        public int fShow;
+        public BOOL fShow;
 
         [NativeTypeName("HMONITOR")]
         public IntPtr hMon;

@@ -12,8 +12,7 @@ namespace TerraFX.Interop
         [NativeTypeName("GUID")]
         public Guid guidEventContext;
 
-        [NativeTypeName("BOOL")]
-        public int bMuted;
+        public BOOL bMuted;
 
         public float fMasterVolume;
 

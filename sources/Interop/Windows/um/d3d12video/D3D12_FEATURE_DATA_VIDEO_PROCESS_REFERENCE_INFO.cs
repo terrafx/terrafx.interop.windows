@@ -20,8 +20,7 @@ namespace TerraFX.Interop
 
         public DXGI_RATIONAL OutputFrameRate;
 
-        [NativeTypeName("BOOL")]
-        public int EnableAutoProcessing;
+        public BOOL EnableAutoProcessing;
 
         [NativeTypeName("UINT")]
         public uint PastFrames;

@@ -59,9 +59,9 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
         [return: NativeTypeName("HRESULT")]
-        public int IsProfileAvailableForLang([NativeTypeName("LANGID")] ushort langid, [NativeTypeName("BOOL *")] int* pfAvailable)
+        public int IsProfileAvailableForLang([NativeTypeName("LANGID")] ushort langid, BOOL* pfAvailable)
         {
-            return ((delegate* unmanaged<ITfFnLangProfileUtil*, ushort, int*, int>)(lpVtbl[5]))((ITfFnLangProfileUtil*)Unsafe.AsPointer(ref this), langid, pfAvailable);
+            return ((delegate* unmanaged<ITfFnLangProfileUtil*, ushort, BOOL*, int>)(lpVtbl[5]))((ITfFnLangProfileUtil*)Unsafe.AsPointer(ref this), langid, pfAvailable);
         }
     }
 }

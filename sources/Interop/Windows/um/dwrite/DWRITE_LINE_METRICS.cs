@@ -22,7 +22,6 @@ namespace TerraFX.Interop
         [NativeTypeName("FLOAT")]
         public float baseline;
 
-        [NativeTypeName("BOOL")]
-        public int isTrimmed;
+        public BOOL isTrimmed;
     }
 }

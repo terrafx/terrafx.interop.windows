@@ -9,15 +9,12 @@ namespace TerraFX.Interop
     {
         public CRL_DIST_POINT_NAME DistPointName;
 
-        [NativeTypeName("BOOL")]
-        public int fOnlyContainsUserCerts;
+        public BOOL fOnlyContainsUserCerts;
 
-        [NativeTypeName("BOOL")]
-        public int fOnlyContainsCACerts;
+        public BOOL fOnlyContainsCACerts;
 
         public CRYPT_BIT_BLOB OnlySomeReasonFlags;
 
-        [NativeTypeName("BOOL")]
-        public int fIndirectCRL;
+        public BOOL fIndirectCRL;
     }
 }

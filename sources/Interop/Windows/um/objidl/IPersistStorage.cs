@@ -75,9 +75,9 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(7)]
         [return: NativeTypeName("HRESULT")]
-        public int Save(IStorage* pStgSave, [NativeTypeName("BOOL")] int fSameAsLoad)
+        public int Save(IStorage* pStgSave, BOOL fSameAsLoad)
         {
-            return ((delegate* unmanaged<IPersistStorage*, IStorage*, int, int>)(lpVtbl[7]))((IPersistStorage*)Unsafe.AsPointer(ref this), pStgSave, fSameAsLoad);
+            return ((delegate* unmanaged<IPersistStorage*, IStorage*, BOOL, int>)(lpVtbl[7]))((IPersistStorage*)Unsafe.AsPointer(ref this), pStgSave, fSameAsLoad);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

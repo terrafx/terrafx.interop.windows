@@ -7,8 +7,7 @@ namespace TerraFX.Interop
 {
     public unsafe partial struct WINHTTP_CURRENT_USER_IE_PROXY_CONFIG
     {
-        [NativeTypeName("BOOL")]
-        public int fAutoDetect;
+        public BOOL fAutoDetect;
 
         [NativeTypeName("LPWSTR")]
         public ushort* lpszAutoConfigUrl;

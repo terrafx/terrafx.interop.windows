@@ -67,17 +67,17 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
         [return: NativeTypeName("HRESULT")]
-        public int Cling([NativeTypeName("BOOL *")] int* pfCling)
+        public int Cling(BOOL* pfCling)
         {
-            return ((delegate* unmanaged<IMarkupPointer2*, int*, int>)(lpVtbl[6]))((IMarkupPointer2*)Unsafe.AsPointer(ref this), pfCling);
+            return ((delegate* unmanaged<IMarkupPointer2*, BOOL*, int>)(lpVtbl[6]))((IMarkupPointer2*)Unsafe.AsPointer(ref this), pfCling);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(7)]
         [return: NativeTypeName("HRESULT")]
-        public int SetCling([NativeTypeName("BOOL")] int fCLing)
+        public int SetCling(BOOL fCLing)
         {
-            return ((delegate* unmanaged<IMarkupPointer2*, int, int>)(lpVtbl[7]))((IMarkupPointer2*)Unsafe.AsPointer(ref this), fCLing);
+            return ((delegate* unmanaged<IMarkupPointer2*, BOOL, int>)(lpVtbl[7]))((IMarkupPointer2*)Unsafe.AsPointer(ref this), fCLing);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -91,9 +91,9 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(9)]
         [return: NativeTypeName("HRESULT")]
-        public int IsPositioned([NativeTypeName("BOOL *")] int* pfPositioned)
+        public int IsPositioned(BOOL* pfPositioned)
         {
-            return ((delegate* unmanaged<IMarkupPointer2*, int*, int>)(lpVtbl[9]))((IMarkupPointer2*)Unsafe.AsPointer(ref this), pfPositioned);
+            return ((delegate* unmanaged<IMarkupPointer2*, BOOL*, int>)(lpVtbl[9]))((IMarkupPointer2*)Unsafe.AsPointer(ref this), pfPositioned);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -123,25 +123,25 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(13)]
         [return: NativeTypeName("HRESULT")]
-        public int MoveToContainer(IMarkupContainer* pContainer, [NativeTypeName("BOOL")] int fAtStart)
+        public int MoveToContainer(IMarkupContainer* pContainer, BOOL fAtStart)
         {
-            return ((delegate* unmanaged<IMarkupPointer2*, IMarkupContainer*, int, int>)(lpVtbl[13]))((IMarkupPointer2*)Unsafe.AsPointer(ref this), pContainer, fAtStart);
+            return ((delegate* unmanaged<IMarkupPointer2*, IMarkupContainer*, BOOL, int>)(lpVtbl[13]))((IMarkupPointer2*)Unsafe.AsPointer(ref this), pContainer, fAtStart);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(14)]
         [return: NativeTypeName("HRESULT")]
-        public int Left([NativeTypeName("BOOL")] int fMove, MARKUP_CONTEXT_TYPE* pContext, IHTMLElement** ppElement, [NativeTypeName("long *")] int* pcch, [NativeTypeName("OLECHAR *")] ushort* pchText)
+        public int Left(BOOL fMove, MARKUP_CONTEXT_TYPE* pContext, IHTMLElement** ppElement, [NativeTypeName("long *")] int* pcch, [NativeTypeName("OLECHAR *")] ushort* pchText)
         {
-            return ((delegate* unmanaged<IMarkupPointer2*, int, MARKUP_CONTEXT_TYPE*, IHTMLElement**, int*, ushort*, int>)(lpVtbl[14]))((IMarkupPointer2*)Unsafe.AsPointer(ref this), fMove, pContext, ppElement, pcch, pchText);
+            return ((delegate* unmanaged<IMarkupPointer2*, BOOL, MARKUP_CONTEXT_TYPE*, IHTMLElement**, int*, ushort*, int>)(lpVtbl[14]))((IMarkupPointer2*)Unsafe.AsPointer(ref this), fMove, pContext, ppElement, pcch, pchText);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(15)]
         [return: NativeTypeName("HRESULT")]
-        public int Right([NativeTypeName("BOOL")] int fMove, MARKUP_CONTEXT_TYPE* pContext, IHTMLElement** ppElement, [NativeTypeName("long *")] int* pcch, [NativeTypeName("OLECHAR *")] ushort* pchText)
+        public int Right(BOOL fMove, MARKUP_CONTEXT_TYPE* pContext, IHTMLElement** ppElement, [NativeTypeName("long *")] int* pcch, [NativeTypeName("OLECHAR *")] ushort* pchText)
         {
-            return ((delegate* unmanaged<IMarkupPointer2*, int, MARKUP_CONTEXT_TYPE*, IHTMLElement**, int*, ushort*, int>)(lpVtbl[15]))((IMarkupPointer2*)Unsafe.AsPointer(ref this), fMove, pContext, ppElement, pcch, pchText);
+            return ((delegate* unmanaged<IMarkupPointer2*, BOOL, MARKUP_CONTEXT_TYPE*, IHTMLElement**, int*, ushort*, int>)(lpVtbl[15]))((IMarkupPointer2*)Unsafe.AsPointer(ref this), fMove, pContext, ppElement, pcch, pchText);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -155,41 +155,41 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(17)]
         [return: NativeTypeName("HRESULT")]
-        public int IsLeftOf(IMarkupPointer* pPointerThat, [NativeTypeName("BOOL *")] int* pfResult)
+        public int IsLeftOf(IMarkupPointer* pPointerThat, BOOL* pfResult)
         {
-            return ((delegate* unmanaged<IMarkupPointer2*, IMarkupPointer*, int*, int>)(lpVtbl[17]))((IMarkupPointer2*)Unsafe.AsPointer(ref this), pPointerThat, pfResult);
+            return ((delegate* unmanaged<IMarkupPointer2*, IMarkupPointer*, BOOL*, int>)(lpVtbl[17]))((IMarkupPointer2*)Unsafe.AsPointer(ref this), pPointerThat, pfResult);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(18)]
         [return: NativeTypeName("HRESULT")]
-        public int IsLeftOfOrEqualTo(IMarkupPointer* pPointerThat, [NativeTypeName("BOOL *")] int* pfResult)
+        public int IsLeftOfOrEqualTo(IMarkupPointer* pPointerThat, BOOL* pfResult)
         {
-            return ((delegate* unmanaged<IMarkupPointer2*, IMarkupPointer*, int*, int>)(lpVtbl[18]))((IMarkupPointer2*)Unsafe.AsPointer(ref this), pPointerThat, pfResult);
+            return ((delegate* unmanaged<IMarkupPointer2*, IMarkupPointer*, BOOL*, int>)(lpVtbl[18]))((IMarkupPointer2*)Unsafe.AsPointer(ref this), pPointerThat, pfResult);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(19)]
         [return: NativeTypeName("HRESULT")]
-        public int IsRightOf(IMarkupPointer* pPointerThat, [NativeTypeName("BOOL *")] int* pfResult)
+        public int IsRightOf(IMarkupPointer* pPointerThat, BOOL* pfResult)
         {
-            return ((delegate* unmanaged<IMarkupPointer2*, IMarkupPointer*, int*, int>)(lpVtbl[19]))((IMarkupPointer2*)Unsafe.AsPointer(ref this), pPointerThat, pfResult);
+            return ((delegate* unmanaged<IMarkupPointer2*, IMarkupPointer*, BOOL*, int>)(lpVtbl[19]))((IMarkupPointer2*)Unsafe.AsPointer(ref this), pPointerThat, pfResult);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(20)]
         [return: NativeTypeName("HRESULT")]
-        public int IsRightOfOrEqualTo(IMarkupPointer* pPointerThat, [NativeTypeName("BOOL *")] int* pfResult)
+        public int IsRightOfOrEqualTo(IMarkupPointer* pPointerThat, BOOL* pfResult)
         {
-            return ((delegate* unmanaged<IMarkupPointer2*, IMarkupPointer*, int*, int>)(lpVtbl[20]))((IMarkupPointer2*)Unsafe.AsPointer(ref this), pPointerThat, pfResult);
+            return ((delegate* unmanaged<IMarkupPointer2*, IMarkupPointer*, BOOL*, int>)(lpVtbl[20]))((IMarkupPointer2*)Unsafe.AsPointer(ref this), pPointerThat, pfResult);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(21)]
         [return: NativeTypeName("HRESULT")]
-        public int IsEqualTo(IMarkupPointer* pPointerThat, [NativeTypeName("BOOL *")] int* pfAreEqual)
+        public int IsEqualTo(IMarkupPointer* pPointerThat, BOOL* pfAreEqual)
         {
-            return ((delegate* unmanaged<IMarkupPointer2*, IMarkupPointer*, int*, int>)(lpVtbl[21]))((IMarkupPointer2*)Unsafe.AsPointer(ref this), pPointerThat, pfAreEqual);
+            return ((delegate* unmanaged<IMarkupPointer2*, IMarkupPointer*, BOOL*, int>)(lpVtbl[21]))((IMarkupPointer2*)Unsafe.AsPointer(ref this), pPointerThat, pfAreEqual);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -211,9 +211,9 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(24)]
         [return: NativeTypeName("HRESULT")]
-        public int IsAtWordBreak([NativeTypeName("BOOL *")] int* pfAtBreak)
+        public int IsAtWordBreak(BOOL* pfAtBreak)
         {
-            return ((delegate* unmanaged<IMarkupPointer2*, int*, int>)(lpVtbl[24]))((IMarkupPointer2*)Unsafe.AsPointer(ref this), pfAtBreak);
+            return ((delegate* unmanaged<IMarkupPointer2*, BOOL*, int>)(lpVtbl[24]))((IMarkupPointer2*)Unsafe.AsPointer(ref this), pfAtBreak);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -243,17 +243,17 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(28)]
         [return: NativeTypeName("HRESULT")]
-        public int IsInsideURL(IMarkupPointer* pRight, [NativeTypeName("BOOL *")] int* pfResult)
+        public int IsInsideURL(IMarkupPointer* pRight, BOOL* pfResult)
         {
-            return ((delegate* unmanaged<IMarkupPointer2*, IMarkupPointer*, int*, int>)(lpVtbl[28]))((IMarkupPointer2*)Unsafe.AsPointer(ref this), pRight, pfResult);
+            return ((delegate* unmanaged<IMarkupPointer2*, IMarkupPointer*, BOOL*, int>)(lpVtbl[28]))((IMarkupPointer2*)Unsafe.AsPointer(ref this), pRight, pfResult);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(29)]
         [return: NativeTypeName("HRESULT")]
-        public int MoveToContent(IHTMLElement* pIElement, [NativeTypeName("BOOL")] int fAtStart)
+        public int MoveToContent(IHTMLElement* pIElement, BOOL fAtStart)
         {
-            return ((delegate* unmanaged<IMarkupPointer2*, IHTMLElement*, int, int>)(lpVtbl[29]))((IMarkupPointer2*)Unsafe.AsPointer(ref this), pIElement, fAtStart);
+            return ((delegate* unmanaged<IMarkupPointer2*, IHTMLElement*, BOOL, int>)(lpVtbl[29]))((IMarkupPointer2*)Unsafe.AsPointer(ref this), pIElement, fAtStart);
         }
     }
 }

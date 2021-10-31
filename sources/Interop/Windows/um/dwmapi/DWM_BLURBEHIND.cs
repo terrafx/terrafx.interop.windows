@@ -14,13 +14,11 @@ namespace TerraFX.Interop
         [NativeTypeName("DWORD")]
         public uint dwFlags;
 
-        [NativeTypeName("BOOL")]
-        public int fEnable;
+        public BOOL fEnable;
 
         [NativeTypeName("HRGN")]
         public IntPtr hRgnBlur;
 
-        [NativeTypeName("BOOL")]
-        public int fTransitionOnMaximized;
+        public BOOL fTransitionOnMaximized;
     }
 }

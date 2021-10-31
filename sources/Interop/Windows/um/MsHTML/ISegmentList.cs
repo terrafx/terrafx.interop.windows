@@ -59,9 +59,9 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
         [return: NativeTypeName("HRESULT")]
-        public int IsEmpty([NativeTypeName("BOOL *")] int* pfEmpty)
+        public int IsEmpty(BOOL* pfEmpty)
         {
-            return ((delegate* unmanaged<ISegmentList*, int*, int>)(lpVtbl[5]))((ISegmentList*)Unsafe.AsPointer(ref this), pfEmpty);
+            return ((delegate* unmanaged<ISegmentList*, BOOL*, int>)(lpVtbl[5]))((ISegmentList*)Unsafe.AsPointer(ref this), pfEmpty);
         }
     }
 }

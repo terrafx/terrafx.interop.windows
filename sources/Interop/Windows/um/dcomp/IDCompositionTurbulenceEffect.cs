@@ -99,9 +99,9 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(10)]
         [return: NativeTypeName("HRESULT")]
-        public int SetStitchable([NativeTypeName("BOOL")] int stitchable)
+        public int SetStitchable(BOOL stitchable)
         {
-            return ((delegate* unmanaged<IDCompositionTurbulenceEffect*, int, int>)(lpVtbl[10]))((IDCompositionTurbulenceEffect*)Unsafe.AsPointer(ref this), stitchable);
+            return ((delegate* unmanaged<IDCompositionTurbulenceEffect*, BOOL, int>)(lpVtbl[10]))((IDCompositionTurbulenceEffect*)Unsafe.AsPointer(ref this), stitchable);
         }
     }
 }

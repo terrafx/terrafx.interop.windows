@@ -59,17 +59,17 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
         [return: NativeTypeName("HRESULT")]
-        public int SetStreamActiveState([NativeTypeName("BOOL")] int fActive)
+        public int SetStreamActiveState(BOOL fActive)
         {
-            return ((delegate* unmanaged<IVMRVideoStreamControl*, int, int>)(lpVtbl[5]))((IVMRVideoStreamControl*)Unsafe.AsPointer(ref this), fActive);
+            return ((delegate* unmanaged<IVMRVideoStreamControl*, BOOL, int>)(lpVtbl[5]))((IVMRVideoStreamControl*)Unsafe.AsPointer(ref this), fActive);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
         [return: NativeTypeName("HRESULT")]
-        public int GetStreamActiveState([NativeTypeName("BOOL *")] int* lpfActive)
+        public int GetStreamActiveState(BOOL* lpfActive)
         {
-            return ((delegate* unmanaged<IVMRVideoStreamControl*, int*, int>)(lpVtbl[6]))((IVMRVideoStreamControl*)Unsafe.AsPointer(ref this), lpfActive);
+            return ((delegate* unmanaged<IVMRVideoStreamControl*, BOOL*, int>)(lpVtbl[6]))((IVMRVideoStreamControl*)Unsafe.AsPointer(ref this), lpfActive);
         }
     }
 }

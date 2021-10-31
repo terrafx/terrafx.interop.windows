@@ -200,6 +200,29 @@ namespace TerraFX.Interop
             }
         }
 
+        public static ref readonly Guid IID_IDiaEnumSymbolsByAddr2
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x02, 0xBD, 0x45, 0x1E,
+                    0x45, 0xBE,
+                    0x71, 0x4D,
+                    0xBA,
+                    0x32,
+                    0x0E,
+                    0x57,
+                    0x6C,
+                    0xFC,
+                    0xD5,
+                    0x9F
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
         public static ref readonly Guid IID_IDiaEnumSourceFiles
         {
             get

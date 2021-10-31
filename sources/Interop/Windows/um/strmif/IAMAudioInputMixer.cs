@@ -43,33 +43,33 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
         [return: NativeTypeName("HRESULT")]
-        public int put_Enable([NativeTypeName("BOOL")] int fEnable)
+        public int put_Enable(BOOL fEnable)
         {
-            return ((delegate* unmanaged<IAMAudioInputMixer*, int, int>)(lpVtbl[3]))((IAMAudioInputMixer*)Unsafe.AsPointer(ref this), fEnable);
+            return ((delegate* unmanaged<IAMAudioInputMixer*, BOOL, int>)(lpVtbl[3]))((IAMAudioInputMixer*)Unsafe.AsPointer(ref this), fEnable);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
         [return: NativeTypeName("HRESULT")]
-        public int get_Enable([NativeTypeName("BOOL *")] int* pfEnable)
+        public int get_Enable(BOOL* pfEnable)
         {
-            return ((delegate* unmanaged<IAMAudioInputMixer*, int*, int>)(lpVtbl[4]))((IAMAudioInputMixer*)Unsafe.AsPointer(ref this), pfEnable);
+            return ((delegate* unmanaged<IAMAudioInputMixer*, BOOL*, int>)(lpVtbl[4]))((IAMAudioInputMixer*)Unsafe.AsPointer(ref this), pfEnable);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
         [return: NativeTypeName("HRESULT")]
-        public int put_Mono([NativeTypeName("BOOL")] int fMono)
+        public int put_Mono(BOOL fMono)
         {
-            return ((delegate* unmanaged<IAMAudioInputMixer*, int, int>)(lpVtbl[5]))((IAMAudioInputMixer*)Unsafe.AsPointer(ref this), fMono);
+            return ((delegate* unmanaged<IAMAudioInputMixer*, BOOL, int>)(lpVtbl[5]))((IAMAudioInputMixer*)Unsafe.AsPointer(ref this), fMono);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
         [return: NativeTypeName("HRESULT")]
-        public int get_Mono([NativeTypeName("BOOL *")] int* pfMono)
+        public int get_Mono(BOOL* pfMono)
         {
-            return ((delegate* unmanaged<IAMAudioInputMixer*, int*, int>)(lpVtbl[6]))((IAMAudioInputMixer*)Unsafe.AsPointer(ref this), pfMono);
+            return ((delegate* unmanaged<IAMAudioInputMixer*, BOOL*, int>)(lpVtbl[6]))((IAMAudioInputMixer*)Unsafe.AsPointer(ref this), pfMono);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -107,17 +107,17 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(11)]
         [return: NativeTypeName("HRESULT")]
-        public int put_Loudness([NativeTypeName("BOOL")] int fLoudness)
+        public int put_Loudness(BOOL fLoudness)
         {
-            return ((delegate* unmanaged<IAMAudioInputMixer*, int, int>)(lpVtbl[11]))((IAMAudioInputMixer*)Unsafe.AsPointer(ref this), fLoudness);
+            return ((delegate* unmanaged<IAMAudioInputMixer*, BOOL, int>)(lpVtbl[11]))((IAMAudioInputMixer*)Unsafe.AsPointer(ref this), fLoudness);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(12)]
         [return: NativeTypeName("HRESULT")]
-        public int get_Loudness([NativeTypeName("BOOL *")] int* pfLoudness)
+        public int get_Loudness(BOOL* pfLoudness)
         {
-            return ((delegate* unmanaged<IAMAudioInputMixer*, int*, int>)(lpVtbl[12]))((IAMAudioInputMixer*)Unsafe.AsPointer(ref this), pfLoudness);
+            return ((delegate* unmanaged<IAMAudioInputMixer*, BOOL*, int>)(lpVtbl[12]))((IAMAudioInputMixer*)Unsafe.AsPointer(ref this), pfLoudness);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

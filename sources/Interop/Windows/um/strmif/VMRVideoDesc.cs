@@ -16,8 +16,7 @@ namespace TerraFX.Interop
         [NativeTypeName("DWORD")]
         public uint dwSampleHeight;
 
-        [NativeTypeName("BOOL")]
-        public int SingleFieldPerSample;
+        public BOOL SingleFieldPerSample;
 
         [NativeTypeName("DWORD")]
         public uint dwFourCC;

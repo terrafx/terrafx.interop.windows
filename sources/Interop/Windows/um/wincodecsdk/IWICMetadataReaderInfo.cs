@@ -139,25 +139,25 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(15)]
         [return: NativeTypeName("HRESULT")]
-        public int DoesRequireFullStream([NativeTypeName("BOOL *")] int* pfRequiresFullStream)
+        public int DoesRequireFullStream(BOOL* pfRequiresFullStream)
         {
-            return ((delegate* unmanaged<IWICMetadataReaderInfo*, int*, int>)(lpVtbl[15]))((IWICMetadataReaderInfo*)Unsafe.AsPointer(ref this), pfRequiresFullStream);
+            return ((delegate* unmanaged<IWICMetadataReaderInfo*, BOOL*, int>)(lpVtbl[15]))((IWICMetadataReaderInfo*)Unsafe.AsPointer(ref this), pfRequiresFullStream);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(16)]
         [return: NativeTypeName("HRESULT")]
-        public int DoesSupportPadding([NativeTypeName("BOOL *")] int* pfSupportsPadding)
+        public int DoesSupportPadding(BOOL* pfSupportsPadding)
         {
-            return ((delegate* unmanaged<IWICMetadataReaderInfo*, int*, int>)(lpVtbl[16]))((IWICMetadataReaderInfo*)Unsafe.AsPointer(ref this), pfSupportsPadding);
+            return ((delegate* unmanaged<IWICMetadataReaderInfo*, BOOL*, int>)(lpVtbl[16]))((IWICMetadataReaderInfo*)Unsafe.AsPointer(ref this), pfSupportsPadding);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(17)]
         [return: NativeTypeName("HRESULT")]
-        public int DoesRequireFixedSize([NativeTypeName("BOOL *")] int* pfFixedSize)
+        public int DoesRequireFixedSize(BOOL* pfFixedSize)
         {
-            return ((delegate* unmanaged<IWICMetadataReaderInfo*, int*, int>)(lpVtbl[17]))((IWICMetadataReaderInfo*)Unsafe.AsPointer(ref this), pfFixedSize);
+            return ((delegate* unmanaged<IWICMetadataReaderInfo*, BOOL*, int>)(lpVtbl[17]))((IWICMetadataReaderInfo*)Unsafe.AsPointer(ref this), pfFixedSize);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -171,9 +171,9 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(19)]
         [return: NativeTypeName("HRESULT")]
-        public int MatchesPattern([NativeTypeName("const GUID &")] Guid* guidContainerFormat, IStream* pIStream, [NativeTypeName("BOOL *")] int* pfMatches)
+        public int MatchesPattern([NativeTypeName("const GUID &")] Guid* guidContainerFormat, IStream* pIStream, BOOL* pfMatches)
         {
-            return ((delegate* unmanaged<IWICMetadataReaderInfo*, Guid*, IStream*, int*, int>)(lpVtbl[19]))((IWICMetadataReaderInfo*)Unsafe.AsPointer(ref this), guidContainerFormat, pIStream, pfMatches);
+            return ((delegate* unmanaged<IWICMetadataReaderInfo*, Guid*, IStream*, BOOL*, int>)(lpVtbl[19]))((IWICMetadataReaderInfo*)Unsafe.AsPointer(ref this), guidContainerFormat, pIStream, pfMatches);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

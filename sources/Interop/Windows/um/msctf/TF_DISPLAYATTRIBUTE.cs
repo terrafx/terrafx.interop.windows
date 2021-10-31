@@ -13,8 +13,7 @@ namespace TerraFX.Interop
 
         public TF_DA_LINESTYLE lsStyle;
 
-        [NativeTypeName("BOOL")]
-        public int fBoldLine;
+        public BOOL fBoldLine;
 
         public TF_DA_COLOR crLine;
 

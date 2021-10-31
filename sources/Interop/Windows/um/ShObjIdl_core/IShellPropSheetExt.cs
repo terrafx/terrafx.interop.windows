@@ -43,17 +43,17 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
         [return: NativeTypeName("HRESULT")]
-        public int AddPages([NativeTypeName("LPFNSVADDPROPSHEETPAGE")] delegate* unmanaged<IntPtr, nint, int> pfnAddPage, [NativeTypeName("LPARAM")] nint lParam)
+        public int AddPages([NativeTypeName("LPFNSVADDPROPSHEETPAGE")] delegate* unmanaged<IntPtr, nint, BOOL> pfnAddPage, [NativeTypeName("LPARAM")] nint lParam)
         {
-            return ((delegate* unmanaged<IShellPropSheetExt*, delegate* unmanaged<IntPtr, nint, int>, nint, int>)(lpVtbl[3]))((IShellPropSheetExt*)Unsafe.AsPointer(ref this), pfnAddPage, lParam);
+            return ((delegate* unmanaged<IShellPropSheetExt*, delegate* unmanaged<IntPtr, nint, BOOL>, nint, int>)(lpVtbl[3]))((IShellPropSheetExt*)Unsafe.AsPointer(ref this), pfnAddPage, lParam);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
         [return: NativeTypeName("HRESULT")]
-        public int ReplacePage([NativeTypeName("EXPPS")] uint uPageID, [NativeTypeName("LPFNSVADDPROPSHEETPAGE")] delegate* unmanaged<IntPtr, nint, int> pfnReplaceWith, [NativeTypeName("LPARAM")] nint lParam)
+        public int ReplacePage([NativeTypeName("EXPPS")] uint uPageID, [NativeTypeName("LPFNSVADDPROPSHEETPAGE")] delegate* unmanaged<IntPtr, nint, BOOL> pfnReplaceWith, [NativeTypeName("LPARAM")] nint lParam)
         {
-            return ((delegate* unmanaged<IShellPropSheetExt*, uint, delegate* unmanaged<IntPtr, nint, int>, nint, int>)(lpVtbl[4]))((IShellPropSheetExt*)Unsafe.AsPointer(ref this), uPageID, pfnReplaceWith, lParam);
+            return ((delegate* unmanaged<IShellPropSheetExt*, uint, delegate* unmanaged<IntPtr, nint, BOOL>, nint, int>)(lpVtbl[4]))((IShellPropSheetExt*)Unsafe.AsPointer(ref this), uPageID, pfnReplaceWith, lParam);
         }
     }
 }

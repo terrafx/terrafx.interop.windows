@@ -115,25 +115,25 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(12)]
         [return: NativeTypeName("HRESULT")]
-        public int ShiftStartRegion([NativeTypeName("TfEditCookie")] uint ec, TfShiftDir dir, [NativeTypeName("BOOL *")] int* pfNoRegion)
+        public int ShiftStartRegion([NativeTypeName("TfEditCookie")] uint ec, TfShiftDir dir, BOOL* pfNoRegion)
         {
-            return ((delegate* unmanaged<ITfRange*, uint, TfShiftDir, int*, int>)(lpVtbl[12]))((ITfRange*)Unsafe.AsPointer(ref this), ec, dir, pfNoRegion);
+            return ((delegate* unmanaged<ITfRange*, uint, TfShiftDir, BOOL*, int>)(lpVtbl[12]))((ITfRange*)Unsafe.AsPointer(ref this), ec, dir, pfNoRegion);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(13)]
         [return: NativeTypeName("HRESULT")]
-        public int ShiftEndRegion([NativeTypeName("TfEditCookie")] uint ec, TfShiftDir dir, [NativeTypeName("BOOL *")] int* pfNoRegion)
+        public int ShiftEndRegion([NativeTypeName("TfEditCookie")] uint ec, TfShiftDir dir, BOOL* pfNoRegion)
         {
-            return ((delegate* unmanaged<ITfRange*, uint, TfShiftDir, int*, int>)(lpVtbl[13]))((ITfRange*)Unsafe.AsPointer(ref this), ec, dir, pfNoRegion);
+            return ((delegate* unmanaged<ITfRange*, uint, TfShiftDir, BOOL*, int>)(lpVtbl[13]))((ITfRange*)Unsafe.AsPointer(ref this), ec, dir, pfNoRegion);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(14)]
         [return: NativeTypeName("HRESULT")]
-        public int IsEmpty([NativeTypeName("TfEditCookie")] uint ec, [NativeTypeName("BOOL *")] int* pfEmpty)
+        public int IsEmpty([NativeTypeName("TfEditCookie")] uint ec, BOOL* pfEmpty)
         {
-            return ((delegate* unmanaged<ITfRange*, uint, int*, int>)(lpVtbl[14]))((ITfRange*)Unsafe.AsPointer(ref this), ec, pfEmpty);
+            return ((delegate* unmanaged<ITfRange*, uint, BOOL*, int>)(lpVtbl[14]))((ITfRange*)Unsafe.AsPointer(ref this), ec, pfEmpty);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -147,17 +147,17 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(16)]
         [return: NativeTypeName("HRESULT")]
-        public int IsEqualStart([NativeTypeName("TfEditCookie")] uint ec, ITfRange* pWith, TfAnchor aPos, [NativeTypeName("BOOL *")] int* pfEqual)
+        public int IsEqualStart([NativeTypeName("TfEditCookie")] uint ec, ITfRange* pWith, TfAnchor aPos, BOOL* pfEqual)
         {
-            return ((delegate* unmanaged<ITfRange*, uint, ITfRange*, TfAnchor, int*, int>)(lpVtbl[16]))((ITfRange*)Unsafe.AsPointer(ref this), ec, pWith, aPos, pfEqual);
+            return ((delegate* unmanaged<ITfRange*, uint, ITfRange*, TfAnchor, BOOL*, int>)(lpVtbl[16]))((ITfRange*)Unsafe.AsPointer(ref this), ec, pWith, aPos, pfEqual);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(17)]
         [return: NativeTypeName("HRESULT")]
-        public int IsEqualEnd([NativeTypeName("TfEditCookie")] uint ec, ITfRange* pWith, TfAnchor aPos, [NativeTypeName("BOOL *")] int* pfEqual)
+        public int IsEqualEnd([NativeTypeName("TfEditCookie")] uint ec, ITfRange* pWith, TfAnchor aPos, BOOL* pfEqual)
         {
-            return ((delegate* unmanaged<ITfRange*, uint, ITfRange*, TfAnchor, int*, int>)(lpVtbl[17]))((ITfRange*)Unsafe.AsPointer(ref this), ec, pWith, aPos, pfEqual);
+            return ((delegate* unmanaged<ITfRange*, uint, ITfRange*, TfAnchor, BOOL*, int>)(lpVtbl[17]))((ITfRange*)Unsafe.AsPointer(ref this), ec, pWith, aPos, pfEqual);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -179,9 +179,9 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(20)]
         [return: NativeTypeName("HRESULT")]
-        public int AdjustForInsert([NativeTypeName("TfEditCookie")] uint ec, [NativeTypeName("ULONG")] uint cchInsert, [NativeTypeName("BOOL *")] int* pfInsertOk)
+        public int AdjustForInsert([NativeTypeName("TfEditCookie")] uint ec, [NativeTypeName("ULONG")] uint cchInsert, BOOL* pfInsertOk)
         {
-            return ((delegate* unmanaged<ITfRange*, uint, uint, int*, int>)(lpVtbl[20]))((ITfRange*)Unsafe.AsPointer(ref this), ec, cchInsert, pfInsertOk);
+            return ((delegate* unmanaged<ITfRange*, uint, uint, BOOL*, int>)(lpVtbl[20]))((ITfRange*)Unsafe.AsPointer(ref this), ec, cchInsert, pfInsertOk);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

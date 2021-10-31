@@ -51,9 +51,9 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
         [return: NativeTypeName("HRESULT")]
-        public int InWriteSession([NativeTypeName("TfClientId")] uint tid, [NativeTypeName("BOOL *")] int* pfWriteSession)
+        public int InWriteSession([NativeTypeName("TfClientId")] uint tid, BOOL* pfWriteSession)
         {
-            return ((delegate* unmanaged<ITfContext*, uint, int*, int>)(lpVtbl[4]))((ITfContext*)Unsafe.AsPointer(ref this), tid, pfWriteSession);
+            return ((delegate* unmanaged<ITfContext*, uint, BOOL*, int>)(lpVtbl[4]))((ITfContext*)Unsafe.AsPointer(ref this), tid, pfWriteSession);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

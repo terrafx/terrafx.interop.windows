@@ -7,18 +7,15 @@ namespace TerraFX.Interop
 {
     public partial struct D3D12_FEATURE_DATA_D3D12_OPTIONS6
     {
-        [NativeTypeName("BOOL")]
-        public int AdditionalShadingRatesSupported;
+        public BOOL AdditionalShadingRatesSupported;
 
-        [NativeTypeName("BOOL")]
-        public int PerPrimitiveShadingRateSupportedWithViewportIndexing;
+        public BOOL PerPrimitiveShadingRateSupportedWithViewportIndexing;
 
         public D3D12_VARIABLE_SHADING_RATE_TIER VariableShadingRateTier;
 
         [NativeTypeName("UINT")]
         public uint ShadingRateImageTileSize;
 
-        [NativeTypeName("BOOL")]
-        public int BackgroundProcessingSupported;
+        public BOOL BackgroundProcessingSupported;
     }
 }

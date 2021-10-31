@@ -67,9 +67,9 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
         [return: NativeTypeName("HRESULT")]
-        public int ProcessInput([NativeTypeName("const MSG *")] MSG* message, [NativeTypeName("BOOL *")] int* handled)
+        public int ProcessInput([NativeTypeName("const MSG *")] MSG* message, BOOL* handled)
         {
-            return ((delegate* unmanaged<IDirectManipulationManager2*, MSG*, int*, int>)(lpVtbl[6]))((IDirectManipulationManager2*)Unsafe.AsPointer(ref this), message, handled);
+            return ((delegate* unmanaged<IDirectManipulationManager2*, MSG*, BOOL*, int>)(lpVtbl[6]))((IDirectManipulationManager2*)Unsafe.AsPointer(ref this), message, handled);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

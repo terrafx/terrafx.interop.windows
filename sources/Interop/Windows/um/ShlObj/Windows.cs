@@ -28,12 +28,10 @@ namespace TerraFX.Interop
         public static extern void PathQualify([NativeTypeName("PWSTR")] ushort* psz);
 
         [DllImport("shell32", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int PathIsSlowA([NativeTypeName("LPCSTR")] sbyte* pszFile, [NativeTypeName("DWORD")] uint dwAttr);
+        public static extern BOOL PathIsSlowA([NativeTypeName("LPCSTR")] sbyte* pszFile, [NativeTypeName("DWORD")] uint dwAttr);
 
         [DllImport("shell32", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int PathIsSlowW([NativeTypeName("LPCWSTR")] ushort* pszFile, [NativeTypeName("DWORD")] uint dwAttr);
+        public static extern BOOL PathIsSlowW([NativeTypeName("LPCWSTR")] ushort* pszFile, [NativeTypeName("DWORD")] uint dwAttr);
 
         [DllImport("shell32", ExactSpelling = true)]
         [return: NativeTypeName("HPSXA")]
@@ -43,8 +41,7 @@ namespace TerraFX.Interop
         public const int BMICON_SMALL = 1;
 
         [DllImport("shell32", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SHOpenPropSheetW([NativeTypeName("LPCWSTR")] ushort* pszCaption, [NativeTypeName("HKEY []")] IntPtr* ahkeys, [NativeTypeName("UINT")] uint ckeys, [NativeTypeName("const CLSID *")] Guid* pclsidDefault, IDataObject* pdtobj, IShellBrowser* psb, [NativeTypeName("LPCWSTR")] ushort* pStartPage);
+        public static extern BOOL SHOpenPropSheetW([NativeTypeName("LPCWSTR")] ushort* pszCaption, [NativeTypeName("HKEY []")] IntPtr* ahkeys, [NativeTypeName("UINT")] uint ckeys, [NativeTypeName("const CLSID *")] Guid* pclsidDefault, IDataObject* pdtobj, IShellBrowser* psb, [NativeTypeName("LPCWSTR")] ushort* pStartPage);
 
         [DllImport("shdocvw", ExactSpelling = true)]
         [return: NativeTypeName("DWORD")]
@@ -227,7 +224,7 @@ namespace TerraFX.Interop
         public const int SHCDF_UPDATEITEM = 0x00000001;
 
         [NativeTypeName("#define PathIsSlow PathIsSlowW")]
-        public static delegate*<ushort*, uint, int> PathIsSlow => &PathIsSlowW;
+        public static delegate*<ushort*, uint, BOOL> PathIsSlow => &PathIsSlowW;
 
         [NativeTypeName("#define OPENPROPS_NONE 0x0000")]
         public const int OPENPROPS_NONE = 0x0000;
@@ -269,7 +266,7 @@ namespace TerraFX.Interop
         public const int TBIF_NOTOOLBAR = 0x00030000;
 
         [NativeTypeName("#define SHOpenPropSheet SHOpenPropSheetW")]
-        public static delegate*<ushort*, IntPtr*, uint, Guid*, IDataObject*, IShellBrowser*, ushort*, int> SHOpenPropSheet => &SHOpenPropSheetW;
+        public static delegate*<ushort*, IntPtr*, uint, Guid*, IDataObject*, IShellBrowser*, ushort*, BOOL> SHOpenPropSheet => &SHOpenPropSheetW;
 
         [NativeTypeName("#define SFVM_REARRANGE 0x00000001")]
         public const int SFVM_REARRANGE = 0x00000001;

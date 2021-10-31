@@ -59,17 +59,17 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
         [return: NativeTypeName("HRESULT")]
-        public int UpdateText(SPTEXT sptext, [NativeTypeName("LPCWSTR")] ushort* pszText, [NativeTypeName("BOOL")] int fMayCompact)
+        public int UpdateText(SPTEXT sptext, [NativeTypeName("LPCWSTR")] ushort* pszText, BOOL fMayCompact)
         {
-            return ((delegate* unmanaged<IActionProgress*, SPTEXT, ushort*, int, int>)(lpVtbl[5]))((IActionProgress*)Unsafe.AsPointer(ref this), sptext, pszText, fMayCompact);
+            return ((delegate* unmanaged<IActionProgress*, SPTEXT, ushort*, BOOL, int>)(lpVtbl[5]))((IActionProgress*)Unsafe.AsPointer(ref this), sptext, pszText, fMayCompact);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
         [return: NativeTypeName("HRESULT")]
-        public int QueryCancel([NativeTypeName("BOOL *")] int* pfCancelled)
+        public int QueryCancel(BOOL* pfCancelled)
         {
-            return ((delegate* unmanaged<IActionProgress*, int*, int>)(lpVtbl[6]))((IActionProgress*)Unsafe.AsPointer(ref this), pfCancelled);
+            return ((delegate* unmanaged<IActionProgress*, BOOL*, int>)(lpVtbl[6]))((IActionProgress*)Unsafe.AsPointer(ref this), pfCancelled);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

@@ -115,33 +115,33 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(12)]
         [return: NativeTypeName("HRESULT")]
-        public int get_systemExceptionHandling([NativeTypeName("BOOL *")] int* pRetVal)
+        public int get_systemExceptionHandling(BOOL* pRetVal)
         {
-            return ((delegate* unmanaged<IDiaStackFrame*, int*, int>)(lpVtbl[12]))((IDiaStackFrame*)Unsafe.AsPointer(ref this), pRetVal);
+            return ((delegate* unmanaged<IDiaStackFrame*, BOOL*, int>)(lpVtbl[12]))((IDiaStackFrame*)Unsafe.AsPointer(ref this), pRetVal);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(13)]
         [return: NativeTypeName("HRESULT")]
-        public int get_cplusplusExceptionHandling([NativeTypeName("BOOL *")] int* pRetVal)
+        public int get_cplusplusExceptionHandling(BOOL* pRetVal)
         {
-            return ((delegate* unmanaged<IDiaStackFrame*, int*, int>)(lpVtbl[13]))((IDiaStackFrame*)Unsafe.AsPointer(ref this), pRetVal);
+            return ((delegate* unmanaged<IDiaStackFrame*, BOOL*, int>)(lpVtbl[13]))((IDiaStackFrame*)Unsafe.AsPointer(ref this), pRetVal);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(14)]
         [return: NativeTypeName("HRESULT")]
-        public int get_functionStart([NativeTypeName("BOOL *")] int* pRetVal)
+        public int get_functionStart(BOOL* pRetVal)
         {
-            return ((delegate* unmanaged<IDiaStackFrame*, int*, int>)(lpVtbl[14]))((IDiaStackFrame*)Unsafe.AsPointer(ref this), pRetVal);
+            return ((delegate* unmanaged<IDiaStackFrame*, BOOL*, int>)(lpVtbl[14]))((IDiaStackFrame*)Unsafe.AsPointer(ref this), pRetVal);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(15)]
         [return: NativeTypeName("HRESULT")]
-        public int get_allocatesBasePointer([NativeTypeName("BOOL *")] int* pRetVal)
+        public int get_allocatesBasePointer(BOOL* pRetVal)
         {
-            return ((delegate* unmanaged<IDiaStackFrame*, int*, int>)(lpVtbl[15]))((IDiaStackFrame*)Unsafe.AsPointer(ref this), pRetVal);
+            return ((delegate* unmanaged<IDiaStackFrame*, BOOL*, int>)(lpVtbl[15]))((IDiaStackFrame*)Unsafe.AsPointer(ref this), pRetVal);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

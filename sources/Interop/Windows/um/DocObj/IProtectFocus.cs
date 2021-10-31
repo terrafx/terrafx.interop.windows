@@ -43,9 +43,9 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
         [return: NativeTypeName("HRESULT")]
-        public int AllowFocusChange([NativeTypeName("BOOL *")] int* pfAllow)
+        public int AllowFocusChange(BOOL* pfAllow)
         {
-            return ((delegate* unmanaged<IProtectFocus*, int*, int>)(lpVtbl[3]))((IProtectFocus*)Unsafe.AsPointer(ref this), pfAllow);
+            return ((delegate* unmanaged<IProtectFocus*, BOOL*, int>)(lpVtbl[3]))((IProtectFocus*)Unsafe.AsPointer(ref this), pfAllow);
         }
     }
 }

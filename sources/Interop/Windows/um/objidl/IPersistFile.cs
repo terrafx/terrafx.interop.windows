@@ -67,9 +67,9 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
         [return: NativeTypeName("HRESULT")]
-        public int Save([NativeTypeName("LPCOLESTR")] ushort* pszFileName, [NativeTypeName("BOOL")] int fRemember)
+        public int Save([NativeTypeName("LPCOLESTR")] ushort* pszFileName, BOOL fRemember)
         {
-            return ((delegate* unmanaged<IPersistFile*, ushort*, int, int>)(lpVtbl[6]))((IPersistFile*)Unsafe.AsPointer(ref this), pszFileName, fRemember);
+            return ((delegate* unmanaged<IPersistFile*, ushort*, BOOL, int>)(lpVtbl[6]))((IPersistFile*)Unsafe.AsPointer(ref this), pszFileName, fRemember);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

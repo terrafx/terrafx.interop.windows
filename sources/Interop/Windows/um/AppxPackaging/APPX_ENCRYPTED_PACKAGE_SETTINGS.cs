@@ -13,8 +13,7 @@ namespace TerraFX.Interop
         [NativeTypeName("LPCWSTR")]
         public ushort* encryptionAlgorithm;
 
-        [NativeTypeName("BOOL")]
-        public int useDiffusion;
+        public BOOL useDiffusion;
 
         public IUri* blockMapHashAlgorithm;
     }

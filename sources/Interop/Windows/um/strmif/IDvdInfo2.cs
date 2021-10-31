@@ -91,9 +91,9 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(9)]
         [return: NativeTypeName("HRESULT")]
-        public int GetCurrentSubpicture([NativeTypeName("ULONG *")] uint* pulStreamsAvailable, [NativeTypeName("ULONG *")] uint* pulCurrentStream, [NativeTypeName("BOOL *")] int* pbIsDisabled)
+        public int GetCurrentSubpicture([NativeTypeName("ULONG *")] uint* pulStreamsAvailable, [NativeTypeName("ULONG *")] uint* pulCurrentStream, BOOL* pbIsDisabled)
         {
-            return ((delegate* unmanaged<IDvdInfo2*, uint*, uint*, int*, int>)(lpVtbl[9]))((IDvdInfo2*)Unsafe.AsPointer(ref this), pulStreamsAvailable, pulCurrentStream, pbIsDisabled);
+            return ((delegate* unmanaged<IDvdInfo2*, uint*, uint*, BOOL*, int>)(lpVtbl[9]))((IDvdInfo2*)Unsafe.AsPointer(ref this), pulStreamsAvailable, pulCurrentStream, pbIsDisabled);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -259,9 +259,9 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(30)]
         [return: NativeTypeName("HRESULT")]
-        public int IsAudioStreamEnabled([NativeTypeName("ULONG")] uint ulStreamNum, [NativeTypeName("BOOL *")] int* pbEnabled)
+        public int IsAudioStreamEnabled([NativeTypeName("ULONG")] uint ulStreamNum, BOOL* pbEnabled)
         {
-            return ((delegate* unmanaged<IDvdInfo2*, uint, int*, int>)(lpVtbl[30]))((IDvdInfo2*)Unsafe.AsPointer(ref this), ulStreamNum, pbEnabled);
+            return ((delegate* unmanaged<IDvdInfo2*, uint, BOOL*, int>)(lpVtbl[30]))((IDvdInfo2*)Unsafe.AsPointer(ref this), ulStreamNum, pbEnabled);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -347,9 +347,9 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(41)]
         [return: NativeTypeName("HRESULT")]
-        public int IsSubpictureStreamEnabled([NativeTypeName("ULONG")] uint ulStreamNum, [NativeTypeName("BOOL *")] int* pbEnabled)
+        public int IsSubpictureStreamEnabled([NativeTypeName("ULONG")] uint ulStreamNum, BOOL* pbEnabled)
         {
-            return ((delegate* unmanaged<IDvdInfo2*, uint, int*, int>)(lpVtbl[41]))((IDvdInfo2*)Unsafe.AsPointer(ref this), ulStreamNum, pbEnabled);
+            return ((delegate* unmanaged<IDvdInfo2*, uint, BOOL*, int>)(lpVtbl[41]))((IDvdInfo2*)Unsafe.AsPointer(ref this), ulStreamNum, pbEnabled);
         }
     }
 }

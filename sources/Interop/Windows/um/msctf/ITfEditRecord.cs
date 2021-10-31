@@ -43,9 +43,9 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
         [return: NativeTypeName("HRESULT")]
-        public int GetSelectionStatus([NativeTypeName("BOOL *")] int* pfChanged)
+        public int GetSelectionStatus(BOOL* pfChanged)
         {
-            return ((delegate* unmanaged<ITfEditRecord*, int*, int>)(lpVtbl[3]))((ITfEditRecord*)Unsafe.AsPointer(ref this), pfChanged);
+            return ((delegate* unmanaged<ITfEditRecord*, BOOL*, int>)(lpVtbl[3]))((ITfEditRecord*)Unsafe.AsPointer(ref this), pfChanged);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

@@ -19,27 +19,23 @@ namespace TerraFX.Interop
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("HANDLE")]
-        public static extern IntPtr OpenJobObjectW([NativeTypeName("DWORD")] uint dwDesiredAccess, [NativeTypeName("BOOL")] int bInheritHandle, [NativeTypeName("LPCWSTR")] ushort* lpName);
+        public static extern IntPtr OpenJobObjectW([NativeTypeName("DWORD")] uint dwDesiredAccess, BOOL bInheritHandle, [NativeTypeName("LPCWSTR")] ushort* lpName);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int AssignProcessToJobObject([NativeTypeName("HANDLE")] IntPtr hJob, [NativeTypeName("HANDLE")] IntPtr hProcess);
+        public static extern BOOL AssignProcessToJobObject([NativeTypeName("HANDLE")] IntPtr hJob, [NativeTypeName("HANDLE")] IntPtr hProcess);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int TerminateJobObject([NativeTypeName("HANDLE")] IntPtr hJob, [NativeTypeName("UINT")] uint uExitCode);
+        public static extern BOOL TerminateJobObject([NativeTypeName("HANDLE")] IntPtr hJob, [NativeTypeName("UINT")] uint uExitCode);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SetInformationJobObject([NativeTypeName("HANDLE")] IntPtr hJob, JOBOBJECTINFOCLASS JobObjectInformationClass, [NativeTypeName("LPVOID")] void* lpJobObjectInformation, [NativeTypeName("DWORD")] uint cbJobObjectInformationLength);
+        public static extern BOOL SetInformationJobObject([NativeTypeName("HANDLE")] IntPtr hJob, JOBOBJECTINFOCLASS JobObjectInformationClass, [NativeTypeName("LPVOID")] void* lpJobObjectInformation, [NativeTypeName("DWORD")] uint cbJobObjectInformationLength);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("DWORD")]
         public static extern uint SetIoRateControlInformationJobObject([NativeTypeName("HANDLE")] IntPtr hJob, JOBOBJECT_IO_RATE_CONTROL_INFORMATION* IoRateControlInfo);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int QueryInformationJobObject([NativeTypeName("HANDLE")] IntPtr hJob, JOBOBJECTINFOCLASS JobObjectInformationClass, [NativeTypeName("LPVOID")] void* lpJobObjectInformation, [NativeTypeName("DWORD")] uint cbJobObjectInformationLength, [NativeTypeName("LPDWORD")] uint* lpReturnLength);
+        public static extern BOOL QueryInformationJobObject([NativeTypeName("HANDLE")] IntPtr hJob, JOBOBJECTINFOCLASS JobObjectInformationClass, [NativeTypeName("LPVOID")] void* lpJobObjectInformation, [NativeTypeName("DWORD")] uint cbJobObjectInformationLength, [NativeTypeName("LPDWORD")] uint* lpReturnLength);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("DWORD")]

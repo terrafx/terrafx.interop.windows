@@ -43,9 +43,9 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
         [return: NativeTypeName("HRESULT")]
-        public int IsTimeSeekSupported([NativeTypeName("BOOL *")] int* pfTimeSeekIsSupported)
+        public int IsTimeSeekSupported(BOOL* pfTimeSeekIsSupported)
         {
-            return ((delegate* unmanaged<IMFByteStreamTimeSeek*, int*, int>)(lpVtbl[3]))((IMFByteStreamTimeSeek*)Unsafe.AsPointer(ref this), pfTimeSeekIsSupported);
+            return ((delegate* unmanaged<IMFByteStreamTimeSeek*, BOOL*, int>)(lpVtbl[3]))((IMFByteStreamTimeSeek*)Unsafe.AsPointer(ref this), pfTimeSeekIsSupported);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

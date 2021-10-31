@@ -51,9 +51,9 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
         [return: NativeTypeName("HRESULT")]
-        public int Kill([NativeTypeName("BOOL")] int bWait)
+        public int Kill(BOOL bWait)
         {
-            return ((delegate* unmanaged<IRunnableTask*, int, int>)(lpVtbl[4]))((IRunnableTask*)Unsafe.AsPointer(ref this), bWait);
+            return ((delegate* unmanaged<IRunnableTask*, BOOL, int>)(lpVtbl[4]))((IRunnableTask*)Unsafe.AsPointer(ref this), bWait);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

@@ -42,8 +42,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("BOOL")]
-        public int GetMultithreadProtected()
+        public BOOL GetMultithreadProtected()
         {
             return ((delegate* unmanaged<ID2D1Multithread*, int>)(lpVtbl[3]))((ID2D1Multithread*)Unsafe.AsPointer(ref this));
         }

@@ -43,17 +43,17 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
         [return: NativeTypeName("HRESULT")]
-        public int GetCheckState([NativeTypeName("BOOL *")] int* pbCheck)
+        public int GetCheckState(BOOL* pbCheck)
         {
-            return ((delegate* unmanaged<IRegTreeItem*, int*, int>)(lpVtbl[3]))((IRegTreeItem*)Unsafe.AsPointer(ref this), pbCheck);
+            return ((delegate* unmanaged<IRegTreeItem*, BOOL*, int>)(lpVtbl[3]))((IRegTreeItem*)Unsafe.AsPointer(ref this), pbCheck);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
         [return: NativeTypeName("HRESULT")]
-        public int SetCheckState([NativeTypeName("BOOL")] int bCheck)
+        public int SetCheckState(BOOL bCheck)
         {
-            return ((delegate* unmanaged<IRegTreeItem*, int, int>)(lpVtbl[4]))((IRegTreeItem*)Unsafe.AsPointer(ref this), bCheck);
+            return ((delegate* unmanaged<IRegTreeItem*, BOOL, int>)(lpVtbl[4]))((IRegTreeItem*)Unsafe.AsPointer(ref this), bCheck);
         }
     }
 }

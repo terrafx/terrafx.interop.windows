@@ -24,7 +24,6 @@ namespace TerraFX.Interop
         [NativeTypeName("UINT")]
         public uint fStyleCurrent;
 
-        [NativeTypeName("BOOL")]
-        public int fAutoBreak;
+        public BOOL fAutoBreak;
     }
 }

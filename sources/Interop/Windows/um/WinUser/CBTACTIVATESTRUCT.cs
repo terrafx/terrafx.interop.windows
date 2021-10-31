@@ -9,8 +9,7 @@ namespace TerraFX.Interop
 {
     public partial struct CBTACTIVATESTRUCT
     {
-        [NativeTypeName("BOOL")]
-        public int fMouse;
+        public BOOL fMouse;
 
         [NativeTypeName("HWND")]
         public IntPtr hWndActive;

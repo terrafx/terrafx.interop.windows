@@ -119,7 +119,7 @@ namespace TerraFX.Interop
 
         [DllImport("webservices", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
-        public static extern int WsReadToStartElement([NativeTypeName("WS_XML_READER *")] IntPtr reader, [NativeTypeName("const WS_XML_STRING *")] WS_XML_STRING* localName, [NativeTypeName("const WS_XML_STRING *")] WS_XML_STRING* ns, [NativeTypeName("BOOL *")] int* found, [NativeTypeName("WS_ERROR *")] IntPtr error);
+        public static extern int WsReadToStartElement([NativeTypeName("WS_XML_READER *")] IntPtr reader, [NativeTypeName("const WS_XML_STRING *")] WS_XML_STRING* localName, [NativeTypeName("const WS_XML_STRING *")] WS_XML_STRING* ns, BOOL* found, [NativeTypeName("WS_ERROR *")] IntPtr error);
 
         [DllImport("webservices", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
@@ -143,7 +143,7 @@ namespace TerraFX.Interop
 
         [DllImport("webservices", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
-        public static extern int WsFindAttribute([NativeTypeName("WS_XML_READER *")] IntPtr reader, [NativeTypeName("const WS_XML_STRING *")] WS_XML_STRING* localName, [NativeTypeName("const WS_XML_STRING *")] WS_XML_STRING* ns, [NativeTypeName("BOOL")] int required, [NativeTypeName("ULONG *")] uint* attributeIndex, [NativeTypeName("WS_ERROR *")] IntPtr error);
+        public static extern int WsFindAttribute([NativeTypeName("WS_XML_READER *")] IntPtr reader, [NativeTypeName("const WS_XML_STRING *")] WS_XML_STRING* localName, [NativeTypeName("const WS_XML_STRING *")] WS_XML_STRING* ns, BOOL required, [NativeTypeName("ULONG *")] uint* attributeIndex, [NativeTypeName("WS_ERROR *")] IntPtr error);
 
         [DllImport("webservices", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
@@ -175,7 +175,7 @@ namespace TerraFX.Interop
 
         [DllImport("webservices", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
-        public static extern int WsMoveReader([NativeTypeName("WS_XML_READER *")] IntPtr reader, WS_MOVE_TO moveTo, [NativeTypeName("BOOL *")] int* found, [NativeTypeName("WS_ERROR *")] IntPtr error);
+        public static extern int WsMoveReader([NativeTypeName("WS_XML_READER *")] IntPtr reader, WS_MOVE_TO moveTo, BOOL* found, [NativeTypeName("WS_ERROR *")] IntPtr error);
 
         [DllImport("webservices", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
@@ -210,11 +210,11 @@ namespace TerraFX.Interop
 
         [DllImport("webservices", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
-        public static extern int WsWriteXmlnsAttribute([NativeTypeName("WS_XML_WRITER *")] IntPtr writer, [NativeTypeName("const WS_XML_STRING *")] WS_XML_STRING* prefix, [NativeTypeName("const WS_XML_STRING *")] WS_XML_STRING* ns, [NativeTypeName("BOOL")] int singleQuote, [NativeTypeName("WS_ERROR *")] IntPtr error);
+        public static extern int WsWriteXmlnsAttribute([NativeTypeName("WS_XML_WRITER *")] IntPtr writer, [NativeTypeName("const WS_XML_STRING *")] WS_XML_STRING* prefix, [NativeTypeName("const WS_XML_STRING *")] WS_XML_STRING* ns, BOOL singleQuote, [NativeTypeName("WS_ERROR *")] IntPtr error);
 
         [DllImport("webservices", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
-        public static extern int WsWriteStartAttribute([NativeTypeName("WS_XML_WRITER *")] IntPtr writer, [NativeTypeName("const WS_XML_STRING *")] WS_XML_STRING* prefix, [NativeTypeName("const WS_XML_STRING *")] WS_XML_STRING* localName, [NativeTypeName("const WS_XML_STRING *")] WS_XML_STRING* ns, [NativeTypeName("BOOL")] int singleQuote, [NativeTypeName("WS_ERROR *")] IntPtr error);
+        public static extern int WsWriteStartAttribute([NativeTypeName("WS_XML_WRITER *")] IntPtr writer, [NativeTypeName("const WS_XML_STRING *")] WS_XML_STRING* prefix, [NativeTypeName("const WS_XML_STRING *")] WS_XML_STRING* localName, [NativeTypeName("const WS_XML_STRING *")] WS_XML_STRING* ns, BOOL singleQuote, [NativeTypeName("WS_ERROR *")] IntPtr error);
 
         [DllImport("webservices", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
@@ -290,7 +290,7 @@ namespace TerraFX.Interop
 
         [DllImport("webservices", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
-        public static extern int WsGetPrefixFromNamespace([NativeTypeName("WS_XML_WRITER *")] IntPtr writer, [NativeTypeName("const WS_XML_STRING *")] WS_XML_STRING* ns, [NativeTypeName("BOOL")] int required, [NativeTypeName("const WS_XML_STRING **")] WS_XML_STRING** prefix, [NativeTypeName("WS_ERROR *")] IntPtr error);
+        public static extern int WsGetPrefixFromNamespace([NativeTypeName("WS_XML_WRITER *")] IntPtr writer, [NativeTypeName("const WS_XML_STRING *")] WS_XML_STRING* ns, BOOL required, [NativeTypeName("const WS_XML_STRING **")] WS_XML_STRING** prefix, [NativeTypeName("WS_ERROR *")] IntPtr error);
 
         [DllImport("webservices", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
@@ -302,7 +302,7 @@ namespace TerraFX.Interop
 
         [DllImport("webservices", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
-        public static extern int WsMoveWriter([NativeTypeName("WS_XML_WRITER *")] IntPtr writer, WS_MOVE_TO moveTo, [NativeTypeName("BOOL *")] int* found, [NativeTypeName("WS_ERROR *")] IntPtr error);
+        public static extern int WsMoveWriter([NativeTypeName("WS_XML_WRITER *")] IntPtr writer, WS_MOVE_TO moveTo, BOOL* found, [NativeTypeName("WS_ERROR *")] IntPtr error);
 
         [DllImport("webservices", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
@@ -318,7 +318,7 @@ namespace TerraFX.Interop
 
         [DllImport("webservices", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
-        public static extern int WsGetNamespaceFromPrefix([NativeTypeName("WS_XML_READER *")] IntPtr reader, [NativeTypeName("const WS_XML_STRING *")] WS_XML_STRING* prefix, [NativeTypeName("BOOL")] int required, [NativeTypeName("const WS_XML_STRING **")] WS_XML_STRING** ns, [NativeTypeName("WS_ERROR *")] IntPtr error);
+        public static extern int WsGetNamespaceFromPrefix([NativeTypeName("WS_XML_READER *")] IntPtr reader, [NativeTypeName("const WS_XML_STRING *")] WS_XML_STRING* prefix, BOOL required, [NativeTypeName("const WS_XML_STRING **")] WS_XML_STRING** ns, [NativeTypeName("WS_ERROR *")] IntPtr error);
 
         [DllImport("webservices", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
@@ -805,7 +805,7 @@ namespace TerraFX.Interop
 
         [DllImport("webservices", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
-        public static extern int WsMatchPolicyAlternative([NativeTypeName("WS_POLICY *")] IntPtr policy, [NativeTypeName("ULONG")] uint alternativeIndex, WS_POLICY_CONSTRAINTS* policyConstraints, [NativeTypeName("BOOL")] int matchRequired, [NativeTypeName("WS_HEAP *")] IntPtr heap, [NativeTypeName("WS_ERROR *")] IntPtr error);
+        public static extern int WsMatchPolicyAlternative([NativeTypeName("WS_POLICY *")] IntPtr policy, [NativeTypeName("ULONG")] uint alternativeIndex, WS_POLICY_CONSTRAINTS* policyConstraints, BOOL matchRequired, [NativeTypeName("WS_HEAP *")] IntPtr heap, [NativeTypeName("WS_ERROR *")] IntPtr error);
 
         [DllImport("webservices", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
@@ -821,6 +821,6 @@ namespace TerraFX.Interop
 
         [DllImport("webservices", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
-        public static extern int WsCreateServiceEndpointFromTemplate(WS_CHANNEL_TYPE channelType, [NativeTypeName("const WS_SERVICE_ENDPOINT_PROPERTY *")] WS_SERVICE_ENDPOINT_PROPERTY* properties, [NativeTypeName("ULONG")] uint propertyCount, [NativeTypeName("const WS_STRING *")] WS_STRING* addressUrl, [NativeTypeName("const WS_SERVICE_CONTRACT *")] WS_SERVICE_CONTRACT* contract, [NativeTypeName("WS_SERVICE_SECURITY_CALLBACK")] delegate* unmanaged<IntPtr, int*, IntPtr, int> authorizationCallback, [NativeTypeName("WS_HEAP *")] IntPtr heap, WS_BINDING_TEMPLATE_TYPE templateType, void* templateValue, [NativeTypeName("ULONG")] uint templateSize, [NativeTypeName("const void *")] void* templateDescription, [NativeTypeName("ULONG")] uint templateDescriptionSize, WS_SERVICE_ENDPOINT** serviceEndpoint, [NativeTypeName("WS_ERROR *")] IntPtr error);
+        public static extern int WsCreateServiceEndpointFromTemplate(WS_CHANNEL_TYPE channelType, [NativeTypeName("const WS_SERVICE_ENDPOINT_PROPERTY *")] WS_SERVICE_ENDPOINT_PROPERTY* properties, [NativeTypeName("ULONG")] uint propertyCount, [NativeTypeName("const WS_STRING *")] WS_STRING* addressUrl, [NativeTypeName("const WS_SERVICE_CONTRACT *")] WS_SERVICE_CONTRACT* contract, [NativeTypeName("WS_SERVICE_SECURITY_CALLBACK")] delegate* unmanaged<IntPtr, BOOL*, IntPtr, int> authorizationCallback, [NativeTypeName("WS_HEAP *")] IntPtr heap, WS_BINDING_TEMPLATE_TYPE templateType, void* templateValue, [NativeTypeName("ULONG")] uint templateSize, [NativeTypeName("const void *")] void* templateDescription, [NativeTypeName("ULONG")] uint templateDescriptionSize, WS_SERVICE_ENDPOINT** serviceEndpoint, [NativeTypeName("WS_ERROR *")] IntPtr error);
     }
 }

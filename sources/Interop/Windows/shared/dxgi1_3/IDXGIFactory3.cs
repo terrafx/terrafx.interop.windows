@@ -122,16 +122,14 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(13)]
-        [return: NativeTypeName("BOOL")]
-        public int IsCurrent()
+        public BOOL IsCurrent()
         {
             return ((delegate* unmanaged<IDXGIFactory3*, int>)(lpVtbl[13]))((IDXGIFactory3*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(14)]
-        [return: NativeTypeName("BOOL")]
-        public int IsWindowedStereoEnabled()
+        public BOOL IsWindowedStereoEnabled()
         {
             return ((delegate* unmanaged<IDXGIFactory3*, int>)(lpVtbl[14]))((IDXGIFactory3*)Unsafe.AsPointer(ref this));
         }

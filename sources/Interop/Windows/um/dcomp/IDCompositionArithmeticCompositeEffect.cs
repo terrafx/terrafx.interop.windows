@@ -59,9 +59,9 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
         [return: NativeTypeName("HRESULT")]
-        public int SetClampOutput([NativeTypeName("BOOL")] int clampoutput)
+        public int SetClampOutput(BOOL clampoutput)
         {
-            return ((delegate* unmanaged<IDCompositionArithmeticCompositeEffect*, int, int>)(lpVtbl[5]))((IDCompositionArithmeticCompositeEffect*)Unsafe.AsPointer(ref this), clampoutput);
+            return ((delegate* unmanaged<IDCompositionArithmeticCompositeEffect*, BOOL, int>)(lpVtbl[5]))((IDCompositionArithmeticCompositeEffect*)Unsafe.AsPointer(ref this), clampoutput);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

@@ -43,9 +43,9 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
         [return: NativeTypeName("HRESULT")]
-        public int AdviseKeyEventSink([NativeTypeName("TfClientId")] uint tid, ITfKeyEventSink* pSink, [NativeTypeName("BOOL")] int fForeground)
+        public int AdviseKeyEventSink([NativeTypeName("TfClientId")] uint tid, ITfKeyEventSink* pSink, BOOL fForeground)
         {
-            return ((delegate* unmanaged<ITfKeystrokeMgr*, uint, ITfKeyEventSink*, int, int>)(lpVtbl[3]))((ITfKeystrokeMgr*)Unsafe.AsPointer(ref this), tid, pSink, fForeground);
+            return ((delegate* unmanaged<ITfKeystrokeMgr*, uint, ITfKeyEventSink*, BOOL, int>)(lpVtbl[3]))((ITfKeystrokeMgr*)Unsafe.AsPointer(ref this), tid, pSink, fForeground);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -67,33 +67,33 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
         [return: NativeTypeName("HRESULT")]
-        public int TestKeyDown([NativeTypeName("WPARAM")] nuint wParam, [NativeTypeName("LPARAM")] nint lParam, [NativeTypeName("BOOL *")] int* pfEaten)
+        public int TestKeyDown([NativeTypeName("WPARAM")] nuint wParam, [NativeTypeName("LPARAM")] nint lParam, BOOL* pfEaten)
         {
-            return ((delegate* unmanaged<ITfKeystrokeMgr*, nuint, nint, int*, int>)(lpVtbl[6]))((ITfKeystrokeMgr*)Unsafe.AsPointer(ref this), wParam, lParam, pfEaten);
+            return ((delegate* unmanaged<ITfKeystrokeMgr*, nuint, nint, BOOL*, int>)(lpVtbl[6]))((ITfKeystrokeMgr*)Unsafe.AsPointer(ref this), wParam, lParam, pfEaten);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(7)]
         [return: NativeTypeName("HRESULT")]
-        public int TestKeyUp([NativeTypeName("WPARAM")] nuint wParam, [NativeTypeName("LPARAM")] nint lParam, [NativeTypeName("BOOL *")] int* pfEaten)
+        public int TestKeyUp([NativeTypeName("WPARAM")] nuint wParam, [NativeTypeName("LPARAM")] nint lParam, BOOL* pfEaten)
         {
-            return ((delegate* unmanaged<ITfKeystrokeMgr*, nuint, nint, int*, int>)(lpVtbl[7]))((ITfKeystrokeMgr*)Unsafe.AsPointer(ref this), wParam, lParam, pfEaten);
+            return ((delegate* unmanaged<ITfKeystrokeMgr*, nuint, nint, BOOL*, int>)(lpVtbl[7]))((ITfKeystrokeMgr*)Unsafe.AsPointer(ref this), wParam, lParam, pfEaten);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(8)]
         [return: NativeTypeName("HRESULT")]
-        public int KeyDown([NativeTypeName("WPARAM")] nuint wParam, [NativeTypeName("LPARAM")] nint lParam, [NativeTypeName("BOOL *")] int* pfEaten)
+        public int KeyDown([NativeTypeName("WPARAM")] nuint wParam, [NativeTypeName("LPARAM")] nint lParam, BOOL* pfEaten)
         {
-            return ((delegate* unmanaged<ITfKeystrokeMgr*, nuint, nint, int*, int>)(lpVtbl[8]))((ITfKeystrokeMgr*)Unsafe.AsPointer(ref this), wParam, lParam, pfEaten);
+            return ((delegate* unmanaged<ITfKeystrokeMgr*, nuint, nint, BOOL*, int>)(lpVtbl[8]))((ITfKeystrokeMgr*)Unsafe.AsPointer(ref this), wParam, lParam, pfEaten);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(9)]
         [return: NativeTypeName("HRESULT")]
-        public int KeyUp([NativeTypeName("WPARAM")] nuint wParam, [NativeTypeName("LPARAM")] nint lParam, [NativeTypeName("BOOL *")] int* pfEaten)
+        public int KeyUp([NativeTypeName("WPARAM")] nuint wParam, [NativeTypeName("LPARAM")] nint lParam, BOOL* pfEaten)
         {
-            return ((delegate* unmanaged<ITfKeystrokeMgr*, nuint, nint, int*, int>)(lpVtbl[9]))((ITfKeystrokeMgr*)Unsafe.AsPointer(ref this), wParam, lParam, pfEaten);
+            return ((delegate* unmanaged<ITfKeystrokeMgr*, nuint, nint, BOOL*, int>)(lpVtbl[9]))((ITfKeystrokeMgr*)Unsafe.AsPointer(ref this), wParam, lParam, pfEaten);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -107,9 +107,9 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(11)]
         [return: NativeTypeName("HRESULT")]
-        public int IsPreservedKey([NativeTypeName("const GUID &")] Guid* rguid, [NativeTypeName("const TF_PRESERVEDKEY *")] TF_PRESERVEDKEY* pprekey, [NativeTypeName("BOOL *")] int* pfRegistered)
+        public int IsPreservedKey([NativeTypeName("const GUID &")] Guid* rguid, [NativeTypeName("const TF_PRESERVEDKEY *")] TF_PRESERVEDKEY* pprekey, BOOL* pfRegistered)
         {
-            return ((delegate* unmanaged<ITfKeystrokeMgr*, Guid*, TF_PRESERVEDKEY*, int*, int>)(lpVtbl[11]))((ITfKeystrokeMgr*)Unsafe.AsPointer(ref this), rguid, pprekey, pfRegistered);
+            return ((delegate* unmanaged<ITfKeystrokeMgr*, Guid*, TF_PRESERVEDKEY*, BOOL*, int>)(lpVtbl[11]))((ITfKeystrokeMgr*)Unsafe.AsPointer(ref this), rguid, pprekey, pfRegistered);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -147,9 +147,9 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(16)]
         [return: NativeTypeName("HRESULT")]
-        public int SimulatePreservedKey(ITfContext* pic, [NativeTypeName("const GUID &")] Guid* rguid, [NativeTypeName("BOOL *")] int* pfEaten)
+        public int SimulatePreservedKey(ITfContext* pic, [NativeTypeName("const GUID &")] Guid* rguid, BOOL* pfEaten)
         {
-            return ((delegate* unmanaged<ITfKeystrokeMgr*, ITfContext*, Guid*, int*, int>)(lpVtbl[16]))((ITfKeystrokeMgr*)Unsafe.AsPointer(ref this), pic, rguid, pfEaten);
+            return ((delegate* unmanaged<ITfKeystrokeMgr*, ITfContext*, Guid*, BOOL*, int>)(lpVtbl[16]))((ITfKeystrokeMgr*)Unsafe.AsPointer(ref this), pic, rguid, pfEaten);
         }
     }
 }

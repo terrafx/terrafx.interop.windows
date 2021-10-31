@@ -7,7 +7,6 @@ namespace TerraFX.Interop
 {
     public partial struct D3D11_FEATURE_DATA_D3D9_SHADOW_SUPPORT
     {
-        [NativeTypeName("BOOL")]
-        public int SupportsDepthAsTextureWithLessEqualComparisonFilter;
+        public BOOL SupportsDepthAsTextureWithLessEqualComparisonFilter;
     }
 }

@@ -58,9 +58,9 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
         [return: NativeTypeName("HRESULT")]
-        public int TryReclaimResources([NativeTypeName("BOOL *")] int* resourcesDiscarded)
+        public int TryReclaimResources(BOOL* resourcesDiscarded)
         {
-            return ((delegate* unmanaged<ID2D1ImageSourceFromWic*, int*, int>)(lpVtbl[5]))((ID2D1ImageSourceFromWic*)Unsafe.AsPointer(ref this), resourcesDiscarded);
+            return ((delegate* unmanaged<ID2D1ImageSourceFromWic*, BOOL*, int>)(lpVtbl[5]))((ID2D1ImageSourceFromWic*)Unsafe.AsPointer(ref this), resourcesDiscarded);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

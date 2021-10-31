@@ -9,7 +9,6 @@ namespace TerraFX.Interop
     {
         public POINT Position;
 
-        [NativeTypeName("BOOL")]
-        public int Visible;
+        public BOOL Visible;
     }
 }

@@ -7,15 +7,13 @@ namespace TerraFX.Interop
 {
     public partial struct D3D12_DEPTH_STENCIL_DESC1
     {
-        [NativeTypeName("BOOL")]
-        public int DepthEnable;
+        public BOOL DepthEnable;
 
         public D3D12_DEPTH_WRITE_MASK DepthWriteMask;
 
         public D3D12_COMPARISON_FUNC DepthFunc;
 
-        [NativeTypeName("BOOL")]
-        public int StencilEnable;
+        public BOOL StencilEnable;
 
         [NativeTypeName("UINT8")]
         public byte StencilReadMask;
@@ -27,7 +25,6 @@ namespace TerraFX.Interop
 
         public D3D12_DEPTH_STENCILOP_DESC BackFace;
 
-        [NativeTypeName("BOOL")]
-        public int DepthBoundsTestEnable;
+        public BOOL DepthBoundsTestEnable;
     }
 }

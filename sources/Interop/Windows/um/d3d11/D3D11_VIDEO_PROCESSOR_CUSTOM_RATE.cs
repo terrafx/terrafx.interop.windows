@@ -12,8 +12,7 @@ namespace TerraFX.Interop
         [NativeTypeName("UINT")]
         public uint OutputFrames;
 
-        [NativeTypeName("BOOL")]
-        public int InputInterlaced;
+        public BOOL InputInterlaced;
 
         [NativeTypeName("UINT")]
         public uint InputFramesOrFields;

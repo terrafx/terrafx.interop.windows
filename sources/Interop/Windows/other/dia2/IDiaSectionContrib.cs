@@ -91,97 +91,97 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(9)]
         [return: NativeTypeName("HRESULT")]
-        public int get_notPaged([NativeTypeName("BOOL *")] int* pRetVal)
+        public int get_notPaged(BOOL* pRetVal)
         {
-            return ((delegate* unmanaged<IDiaSectionContrib*, int*, int>)(lpVtbl[9]))((IDiaSectionContrib*)Unsafe.AsPointer(ref this), pRetVal);
+            return ((delegate* unmanaged<IDiaSectionContrib*, BOOL*, int>)(lpVtbl[9]))((IDiaSectionContrib*)Unsafe.AsPointer(ref this), pRetVal);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(10)]
         [return: NativeTypeName("HRESULT")]
-        public int get_code([NativeTypeName("BOOL *")] int* pRetVal)
+        public int get_code(BOOL* pRetVal)
         {
-            return ((delegate* unmanaged<IDiaSectionContrib*, int*, int>)(lpVtbl[10]))((IDiaSectionContrib*)Unsafe.AsPointer(ref this), pRetVal);
+            return ((delegate* unmanaged<IDiaSectionContrib*, BOOL*, int>)(lpVtbl[10]))((IDiaSectionContrib*)Unsafe.AsPointer(ref this), pRetVal);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(11)]
         [return: NativeTypeName("HRESULT")]
-        public int get_initializedData([NativeTypeName("BOOL *")] int* pRetVal)
+        public int get_initializedData(BOOL* pRetVal)
         {
-            return ((delegate* unmanaged<IDiaSectionContrib*, int*, int>)(lpVtbl[11]))((IDiaSectionContrib*)Unsafe.AsPointer(ref this), pRetVal);
+            return ((delegate* unmanaged<IDiaSectionContrib*, BOOL*, int>)(lpVtbl[11]))((IDiaSectionContrib*)Unsafe.AsPointer(ref this), pRetVal);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(12)]
         [return: NativeTypeName("HRESULT")]
-        public int get_uninitializedData([NativeTypeName("BOOL *")] int* pRetVal)
+        public int get_uninitializedData(BOOL* pRetVal)
         {
-            return ((delegate* unmanaged<IDiaSectionContrib*, int*, int>)(lpVtbl[12]))((IDiaSectionContrib*)Unsafe.AsPointer(ref this), pRetVal);
+            return ((delegate* unmanaged<IDiaSectionContrib*, BOOL*, int>)(lpVtbl[12]))((IDiaSectionContrib*)Unsafe.AsPointer(ref this), pRetVal);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(13)]
         [return: NativeTypeName("HRESULT")]
-        public int get_remove([NativeTypeName("BOOL *")] int* pRetVal)
+        public int get_remove(BOOL* pRetVal)
         {
-            return ((delegate* unmanaged<IDiaSectionContrib*, int*, int>)(lpVtbl[13]))((IDiaSectionContrib*)Unsafe.AsPointer(ref this), pRetVal);
+            return ((delegate* unmanaged<IDiaSectionContrib*, BOOL*, int>)(lpVtbl[13]))((IDiaSectionContrib*)Unsafe.AsPointer(ref this), pRetVal);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(14)]
         [return: NativeTypeName("HRESULT")]
-        public int get_comdat([NativeTypeName("BOOL *")] int* pRetVal)
+        public int get_comdat(BOOL* pRetVal)
         {
-            return ((delegate* unmanaged<IDiaSectionContrib*, int*, int>)(lpVtbl[14]))((IDiaSectionContrib*)Unsafe.AsPointer(ref this), pRetVal);
+            return ((delegate* unmanaged<IDiaSectionContrib*, BOOL*, int>)(lpVtbl[14]))((IDiaSectionContrib*)Unsafe.AsPointer(ref this), pRetVal);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(15)]
         [return: NativeTypeName("HRESULT")]
-        public int get_discardable([NativeTypeName("BOOL *")] int* pRetVal)
+        public int get_discardable(BOOL* pRetVal)
         {
-            return ((delegate* unmanaged<IDiaSectionContrib*, int*, int>)(lpVtbl[15]))((IDiaSectionContrib*)Unsafe.AsPointer(ref this), pRetVal);
+            return ((delegate* unmanaged<IDiaSectionContrib*, BOOL*, int>)(lpVtbl[15]))((IDiaSectionContrib*)Unsafe.AsPointer(ref this), pRetVal);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(16)]
         [return: NativeTypeName("HRESULT")]
-        public int get_notCached([NativeTypeName("BOOL *")] int* pRetVal)
+        public int get_notCached(BOOL* pRetVal)
         {
-            return ((delegate* unmanaged<IDiaSectionContrib*, int*, int>)(lpVtbl[16]))((IDiaSectionContrib*)Unsafe.AsPointer(ref this), pRetVal);
+            return ((delegate* unmanaged<IDiaSectionContrib*, BOOL*, int>)(lpVtbl[16]))((IDiaSectionContrib*)Unsafe.AsPointer(ref this), pRetVal);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(17)]
         [return: NativeTypeName("HRESULT")]
-        public int get_share([NativeTypeName("BOOL *")] int* pRetVal)
+        public int get_share(BOOL* pRetVal)
         {
-            return ((delegate* unmanaged<IDiaSectionContrib*, int*, int>)(lpVtbl[17]))((IDiaSectionContrib*)Unsafe.AsPointer(ref this), pRetVal);
+            return ((delegate* unmanaged<IDiaSectionContrib*, BOOL*, int>)(lpVtbl[17]))((IDiaSectionContrib*)Unsafe.AsPointer(ref this), pRetVal);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(18)]
         [return: NativeTypeName("HRESULT")]
-        public int get_execute([NativeTypeName("BOOL *")] int* pRetVal)
+        public int get_execute(BOOL* pRetVal)
         {
-            return ((delegate* unmanaged<IDiaSectionContrib*, int*, int>)(lpVtbl[18]))((IDiaSectionContrib*)Unsafe.AsPointer(ref this), pRetVal);
+            return ((delegate* unmanaged<IDiaSectionContrib*, BOOL*, int>)(lpVtbl[18]))((IDiaSectionContrib*)Unsafe.AsPointer(ref this), pRetVal);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(19)]
         [return: NativeTypeName("HRESULT")]
-        public int get_read([NativeTypeName("BOOL *")] int* pRetVal)
+        public int get_read(BOOL* pRetVal)
         {
-            return ((delegate* unmanaged<IDiaSectionContrib*, int*, int>)(lpVtbl[19]))((IDiaSectionContrib*)Unsafe.AsPointer(ref this), pRetVal);
+            return ((delegate* unmanaged<IDiaSectionContrib*, BOOL*, int>)(lpVtbl[19]))((IDiaSectionContrib*)Unsafe.AsPointer(ref this), pRetVal);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(20)]
         [return: NativeTypeName("HRESULT")]
-        public int get_write([NativeTypeName("BOOL *")] int* pRetVal)
+        public int get_write(BOOL* pRetVal)
         {
-            return ((delegate* unmanaged<IDiaSectionContrib*, int*, int>)(lpVtbl[20]))((IDiaSectionContrib*)Unsafe.AsPointer(ref this), pRetVal);
+            return ((delegate* unmanaged<IDiaSectionContrib*, BOOL*, int>)(lpVtbl[20]))((IDiaSectionContrib*)Unsafe.AsPointer(ref this), pRetVal);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -211,9 +211,9 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(24)]
         [return: NativeTypeName("HRESULT")]
-        public int get_code16bit([NativeTypeName("BOOL *")] int* pRetVal)
+        public int get_code16bit(BOOL* pRetVal)
         {
-            return ((delegate* unmanaged<IDiaSectionContrib*, int*, int>)(lpVtbl[24]))((IDiaSectionContrib*)Unsafe.AsPointer(ref this), pRetVal);
+            return ((delegate* unmanaged<IDiaSectionContrib*, BOOL*, int>)(lpVtbl[24]))((IDiaSectionContrib*)Unsafe.AsPointer(ref this), pRetVal);
         }
     }
 }

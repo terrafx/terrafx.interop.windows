@@ -43,17 +43,17 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
         [return: NativeTypeName("HRESULT")]
-        public int IsAlphabetUPS([NativeTypeName("BOOL *")] int* pfIsUPS)
+        public int IsAlphabetUPS(BOOL* pfIsUPS)
         {
-            return ((delegate* unmanaged<ISpPhoneticAlphabetSelection*, int*, int>)(lpVtbl[3]))((ISpPhoneticAlphabetSelection*)Unsafe.AsPointer(ref this), pfIsUPS);
+            return ((delegate* unmanaged<ISpPhoneticAlphabetSelection*, BOOL*, int>)(lpVtbl[3]))((ISpPhoneticAlphabetSelection*)Unsafe.AsPointer(ref this), pfIsUPS);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
         [return: NativeTypeName("HRESULT")]
-        public int SetAlphabetToUPS([NativeTypeName("BOOL")] int fForceUPS)
+        public int SetAlphabetToUPS(BOOL fForceUPS)
         {
-            return ((delegate* unmanaged<ISpPhoneticAlphabetSelection*, int, int>)(lpVtbl[4]))((ISpPhoneticAlphabetSelection*)Unsafe.AsPointer(ref this), fForceUPS);
+            return ((delegate* unmanaged<ISpPhoneticAlphabetSelection*, BOOL, int>)(lpVtbl[4]))((ISpPhoneticAlphabetSelection*)Unsafe.AsPointer(ref this), fForceUPS);
         }
     }
 }

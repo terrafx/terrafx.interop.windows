@@ -71,8 +71,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(7)]
-        [return: NativeTypeName("BOOL")]
-        public int IsSymbolFont()
+        public BOOL IsSymbolFont()
         {
             return ((delegate* unmanaged<IDWriteFont2*, int>)(lpVtbl[7]))((IDWriteFont2*)Unsafe.AsPointer(ref this));
         }
@@ -88,9 +87,9 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(9)]
         [return: NativeTypeName("HRESULT")]
-        public int GetInformationalStrings(DWRITE_INFORMATIONAL_STRING_ID informationalStringID, IDWriteLocalizedStrings** informationalStrings, [NativeTypeName("BOOL *")] int* exists)
+        public int GetInformationalStrings(DWRITE_INFORMATIONAL_STRING_ID informationalStringID, IDWriteLocalizedStrings** informationalStrings, BOOL* exists)
         {
-            return ((delegate* unmanaged<IDWriteFont2*, DWRITE_INFORMATIONAL_STRING_ID, IDWriteLocalizedStrings**, int*, int>)(lpVtbl[9]))((IDWriteFont2*)Unsafe.AsPointer(ref this), informationalStringID, informationalStrings, exists);
+            return ((delegate* unmanaged<IDWriteFont2*, DWRITE_INFORMATIONAL_STRING_ID, IDWriteLocalizedStrings**, BOOL*, int>)(lpVtbl[9]))((IDWriteFont2*)Unsafe.AsPointer(ref this), informationalStringID, informationalStrings, exists);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -110,9 +109,9 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(12)]
         [return: NativeTypeName("HRESULT")]
-        public int HasCharacter([NativeTypeName("UINT32")] uint unicodeValue, [NativeTypeName("BOOL *")] int* exists)
+        public int HasCharacter([NativeTypeName("UINT32")] uint unicodeValue, BOOL* exists)
         {
-            return ((delegate* unmanaged<IDWriteFont2*, uint, int*, int>)(lpVtbl[12]))((IDWriteFont2*)Unsafe.AsPointer(ref this), unicodeValue, exists);
+            return ((delegate* unmanaged<IDWriteFont2*, uint, BOOL*, int>)(lpVtbl[12]))((IDWriteFont2*)Unsafe.AsPointer(ref this), unicodeValue, exists);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -147,16 +146,14 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(17)]
-        [return: NativeTypeName("BOOL")]
-        public int IsMonospacedFont()
+        public BOOL IsMonospacedFont()
         {
             return ((delegate* unmanaged<IDWriteFont2*, int>)(lpVtbl[17]))((IDWriteFont2*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(18)]
-        [return: NativeTypeName("BOOL")]
-        public int IsColorFont()
+        public BOOL IsColorFont()
         {
             return ((delegate* unmanaged<IDWriteFont2*, int>)(lpVtbl[18]))((IDWriteFont2*)Unsafe.AsPointer(ref this));
         }

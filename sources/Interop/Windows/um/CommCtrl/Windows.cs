@@ -14,23 +14,20 @@ namespace TerraFX.Interop
         public static extern void InitCommonControls();
 
         [DllImport("comctl32", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int InitCommonControlsEx([NativeTypeName("const INITCOMMONCONTROLSEX *")] INITCOMMONCONTROLSEX* picce);
+        public static extern BOOL InitCommonControlsEx([NativeTypeName("const INITCOMMONCONTROLSEX *")] INITCOMMONCONTROLSEX* picce);
 
         [DllImport("comctl32", ExactSpelling = true)]
         [return: NativeTypeName("HIMAGELIST")]
         public static extern IntPtr ImageList_Create(int cx, int cy, [NativeTypeName("UINT")] uint flags, int cInitial, int cGrow);
 
         [DllImport("comctl32", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int ImageList_Destroy([NativeTypeName("HIMAGELIST")] IntPtr himl);
+        public static extern BOOL ImageList_Destroy([NativeTypeName("HIMAGELIST")] IntPtr himl);
 
         [DllImport("comctl32", ExactSpelling = true)]
         public static extern int ImageList_GetImageCount([NativeTypeName("HIMAGELIST")] IntPtr himl);
 
         [DllImport("comctl32", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int ImageList_SetImageCount([NativeTypeName("HIMAGELIST")] IntPtr himl, [NativeTypeName("UINT")] uint uNewCount);
+        public static extern BOOL ImageList_SetImageCount([NativeTypeName("HIMAGELIST")] IntPtr himl, [NativeTypeName("UINT")] uint uNewCount);
 
         [DllImport("comctl32", ExactSpelling = true)]
         public static extern int ImageList_Add([NativeTypeName("HIMAGELIST")] IntPtr himl, [NativeTypeName("HBITMAP")] IntPtr hbmImage, [NativeTypeName("HBITMAP")] IntPtr hbmMask);
@@ -47,31 +44,25 @@ namespace TerraFX.Interop
         public static extern uint ImageList_GetBkColor([NativeTypeName("HIMAGELIST")] IntPtr himl);
 
         [DllImport("comctl32", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int ImageList_SetOverlayImage([NativeTypeName("HIMAGELIST")] IntPtr himl, int iImage, int iOverlay);
+        public static extern BOOL ImageList_SetOverlayImage([NativeTypeName("HIMAGELIST")] IntPtr himl, int iImage, int iOverlay);
 
         [DllImport("comctl32", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int ImageList_Draw([NativeTypeName("HIMAGELIST")] IntPtr himl, int i, [NativeTypeName("HDC")] IntPtr hdcDst, int x, int y, [NativeTypeName("UINT")] uint fStyle);
+        public static extern BOOL ImageList_Draw([NativeTypeName("HIMAGELIST")] IntPtr himl, int i, [NativeTypeName("HDC")] IntPtr hdcDst, int x, int y, [NativeTypeName("UINT")] uint fStyle);
 
         [DllImport("comctl32", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int ImageList_Replace([NativeTypeName("HIMAGELIST")] IntPtr himl, int i, [NativeTypeName("HBITMAP")] IntPtr hbmImage, [NativeTypeName("HBITMAP")] IntPtr hbmMask);
+        public static extern BOOL ImageList_Replace([NativeTypeName("HIMAGELIST")] IntPtr himl, int i, [NativeTypeName("HBITMAP")] IntPtr hbmImage, [NativeTypeName("HBITMAP")] IntPtr hbmMask);
 
         [DllImport("comctl32", ExactSpelling = true)]
         public static extern int ImageList_AddMasked([NativeTypeName("HIMAGELIST")] IntPtr himl, [NativeTypeName("HBITMAP")] IntPtr hbmImage, [NativeTypeName("COLORREF")] uint crMask);
 
         [DllImport("comctl32", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int ImageList_DrawEx([NativeTypeName("HIMAGELIST")] IntPtr himl, int i, [NativeTypeName("HDC")] IntPtr hdcDst, int x, int y, int dx, int dy, [NativeTypeName("COLORREF")] uint rgbBk, [NativeTypeName("COLORREF")] uint rgbFg, [NativeTypeName("UINT")] uint fStyle);
+        public static extern BOOL ImageList_DrawEx([NativeTypeName("HIMAGELIST")] IntPtr himl, int i, [NativeTypeName("HDC")] IntPtr hdcDst, int x, int y, int dx, int dy, [NativeTypeName("COLORREF")] uint rgbBk, [NativeTypeName("COLORREF")] uint rgbFg, [NativeTypeName("UINT")] uint fStyle);
 
         [DllImport("comctl32", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int ImageList_DrawIndirect(IMAGELISTDRAWPARAMS* pimldp);
+        public static extern BOOL ImageList_DrawIndirect(IMAGELISTDRAWPARAMS* pimldp);
 
         [DllImport("comctl32", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int ImageList_Remove([NativeTypeName("HIMAGELIST")] IntPtr himl, int i);
+        public static extern BOOL ImageList_Remove([NativeTypeName("HIMAGELIST")] IntPtr himl, int i);
 
         [DllImport("comctl32", ExactSpelling = true)]
         [return: NativeTypeName("HICON")]
@@ -86,35 +77,28 @@ namespace TerraFX.Interop
         public static extern IntPtr ImageList_LoadImageW([NativeTypeName("HINSTANCE")] IntPtr hi, [NativeTypeName("LPCWSTR")] ushort* lpbmp, int cx, int cGrow, [NativeTypeName("COLORREF")] uint crMask, [NativeTypeName("UINT")] uint uType, [NativeTypeName("UINT")] uint uFlags);
 
         [DllImport("comctl32", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int ImageList_Copy([NativeTypeName("HIMAGELIST")] IntPtr himlDst, int iDst, [NativeTypeName("HIMAGELIST")] IntPtr himlSrc, int iSrc, [NativeTypeName("UINT")] uint uFlags);
+        public static extern BOOL ImageList_Copy([NativeTypeName("HIMAGELIST")] IntPtr himlDst, int iDst, [NativeTypeName("HIMAGELIST")] IntPtr himlSrc, int iSrc, [NativeTypeName("UINT")] uint uFlags);
 
         [DllImport("comctl32", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int ImageList_BeginDrag([NativeTypeName("HIMAGELIST")] IntPtr himlTrack, int iTrack, int dxHotspot, int dyHotspot);
+        public static extern BOOL ImageList_BeginDrag([NativeTypeName("HIMAGELIST")] IntPtr himlTrack, int iTrack, int dxHotspot, int dyHotspot);
 
         [DllImport("comctl32", ExactSpelling = true)]
         public static extern void ImageList_EndDrag();
 
         [DllImport("comctl32", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int ImageList_DragEnter([NativeTypeName("HWND")] IntPtr hwndLock, int x, int y);
+        public static extern BOOL ImageList_DragEnter([NativeTypeName("HWND")] IntPtr hwndLock, int x, int y);
 
         [DllImport("comctl32", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int ImageList_DragLeave([NativeTypeName("HWND")] IntPtr hwndLock);
+        public static extern BOOL ImageList_DragLeave([NativeTypeName("HWND")] IntPtr hwndLock);
 
         [DllImport("comctl32", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int ImageList_DragMove(int x, int y);
+        public static extern BOOL ImageList_DragMove(int x, int y);
 
         [DllImport("comctl32", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int ImageList_SetDragCursorImage([NativeTypeName("HIMAGELIST")] IntPtr himlDrag, int iDrag, int dxHotspot, int dyHotspot);
+        public static extern BOOL ImageList_SetDragCursorImage([NativeTypeName("HIMAGELIST")] IntPtr himlDrag, int iDrag, int dxHotspot, int dyHotspot);
 
         [DllImport("comctl32", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int ImageList_DragShowNolock([NativeTypeName("BOOL")] int fShow);
+        public static extern BOOL ImageList_DragShowNolock(BOOL fShow);
 
         [DllImport("comctl32", ExactSpelling = true)]
         [return: NativeTypeName("HIMAGELIST")]
@@ -125,8 +109,7 @@ namespace TerraFX.Interop
         public static extern IntPtr ImageList_Read([NativeTypeName("struct IStream *")] IStream* pstm);
 
         [DllImport("comctl32", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int ImageList_Write([NativeTypeName("HIMAGELIST")] IntPtr himl, [NativeTypeName("struct IStream *")] IStream* pstm);
+        public static extern BOOL ImageList_Write([NativeTypeName("HIMAGELIST")] IntPtr himl, [NativeTypeName("struct IStream *")] IStream* pstm);
 
         [DllImport("comctl32", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
@@ -137,16 +120,13 @@ namespace TerraFX.Interop
         public static extern int ImageList_WriteEx([NativeTypeName("HIMAGELIST")] IntPtr himl, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("struct IStream *")] IStream* pstm);
 
         [DllImport("comctl32", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int ImageList_GetIconSize([NativeTypeName("HIMAGELIST")] IntPtr himl, int* cx, int* cy);
+        public static extern BOOL ImageList_GetIconSize([NativeTypeName("HIMAGELIST")] IntPtr himl, int* cx, int* cy);
 
         [DllImport("comctl32", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int ImageList_SetIconSize([NativeTypeName("HIMAGELIST")] IntPtr himl, int cx, int cy);
+        public static extern BOOL ImageList_SetIconSize([NativeTypeName("HIMAGELIST")] IntPtr himl, int cx, int cy);
 
         [DllImport("comctl32", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int ImageList_GetImageInfo([NativeTypeName("HIMAGELIST")] IntPtr himl, int i, IMAGEINFO* pImageInfo);
+        public static extern BOOL ImageList_GetImageInfo([NativeTypeName("HIMAGELIST")] IntPtr himl, int i, IMAGEINFO* pImageInfo);
 
         [DllImport("comctl32", ExactSpelling = true)]
         [return: NativeTypeName("HIMAGELIST")]
@@ -192,21 +172,19 @@ namespace TerraFX.Interop
         public static extern void MenuHelp([NativeTypeName("UINT")] uint uMsg, [NativeTypeName("WPARAM")] nuint wParam, [NativeTypeName("LPARAM")] nint lParam, [NativeTypeName("HMENU")] IntPtr hMainMenu, [NativeTypeName("HINSTANCE")] IntPtr hInst, [NativeTypeName("HWND")] IntPtr hwndStatus, [NativeTypeName("UINT *")] uint* lpwIDs);
 
         [DllImport("comctl32", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int ShowHideMenuCtl([NativeTypeName("HWND")] IntPtr hWnd, [NativeTypeName("UINT_PTR")] nuint uFlags, [NativeTypeName("LPINT")] int* lpInfo);
+        public static extern BOOL ShowHideMenuCtl([NativeTypeName("HWND")] IntPtr hWnd, [NativeTypeName("UINT_PTR")] nuint uFlags, [NativeTypeName("LPINT")] int* lpInfo);
 
         [DllImport("comctl32", ExactSpelling = true)]
         public static extern void GetEffectiveClientRect([NativeTypeName("HWND")] IntPtr hWnd, [NativeTypeName("LPRECT")] RECT* lprc, [NativeTypeName("const INT *")] int* lpInfo);
 
         [DllImport("comctl32", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int MakeDragList([NativeTypeName("HWND")] IntPtr hLB);
+        public static extern BOOL MakeDragList([NativeTypeName("HWND")] IntPtr hLB);
 
         [DllImport("comctl32", ExactSpelling = true)]
         public static extern void DrawInsert([NativeTypeName("HWND")] IntPtr handParent, [NativeTypeName("HWND")] IntPtr hLB, int nItem);
 
         [DllImport("comctl32", ExactSpelling = true)]
-        public static extern int LBItemFromPt([NativeTypeName("HWND")] IntPtr hLB, POINT pt, [NativeTypeName("BOOL")] int bAutoScroll);
+        public static extern int LBItemFromPt([NativeTypeName("HWND")] IntPtr hLB, POINT pt, BOOL bAutoScroll);
 
         [DllImport("comctl32", ExactSpelling = true)]
         [return: NativeTypeName("HWND")]
@@ -214,7 +192,7 @@ namespace TerraFX.Interop
 
         [DllImport("comctl32", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
-        public static extern int TaskDialogIndirect([NativeTypeName("const TASKDIALOGCONFIG *")] TASKDIALOGCONFIG* pTaskConfig, int* pnButton, int* pnRadioButton, [NativeTypeName("BOOL *")] int* pfVerificationFlagChecked);
+        public static extern int TaskDialogIndirect([NativeTypeName("const TASKDIALOGCONFIG *")] TASKDIALOGCONFIG* pTaskConfig, int* pnButton, int* pnRadioButton, BOOL* pfVerificationFlagChecked);
 
         [DllImport("comctl32", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
@@ -228,64 +206,53 @@ namespace TerraFX.Interop
         public static extern ushort GetMUILanguage();
 
         [DllImport("comctl32", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int _TrackMouseEvent([NativeTypeName("LPTRACKMOUSEEVENT")] TRACKMOUSEEVENT* lpEventTrack);
+        public static extern BOOL _TrackMouseEvent([NativeTypeName("LPTRACKMOUSEEVENT")] TRACKMOUSEEVENT* lpEventTrack);
 
         [DllImport("comctl32", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int FlatSB_EnableScrollBar([NativeTypeName("HWND")] IntPtr param0, int param1, [NativeTypeName("UINT")] uint param2);
+        public static extern BOOL FlatSB_EnableScrollBar([NativeTypeName("HWND")] IntPtr param0, int param1, [NativeTypeName("UINT")] uint param2);
 
         [DllImport("comctl32", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int FlatSB_ShowScrollBar([NativeTypeName("HWND")] IntPtr param0, int code, [NativeTypeName("BOOL")] int param2);
+        public static extern BOOL FlatSB_ShowScrollBar([NativeTypeName("HWND")] IntPtr param0, int code, BOOL param2);
 
         [DllImport("comctl32", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int FlatSB_GetScrollRange([NativeTypeName("HWND")] IntPtr param0, int code, [NativeTypeName("LPINT")] int* param2, [NativeTypeName("LPINT")] int* param3);
+        public static extern BOOL FlatSB_GetScrollRange([NativeTypeName("HWND")] IntPtr param0, int code, [NativeTypeName("LPINT")] int* param2, [NativeTypeName("LPINT")] int* param3);
 
         [DllImport("comctl32", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int FlatSB_GetScrollInfo([NativeTypeName("HWND")] IntPtr param0, int code, [NativeTypeName("LPSCROLLINFO")] SCROLLINFO* param2);
+        public static extern BOOL FlatSB_GetScrollInfo([NativeTypeName("HWND")] IntPtr param0, int code, [NativeTypeName("LPSCROLLINFO")] SCROLLINFO* param2);
 
         [DllImport("comctl32", ExactSpelling = true)]
         public static extern int FlatSB_GetScrollPos([NativeTypeName("HWND")] IntPtr param0, int code);
 
         [DllImport("comctl32", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int FlatSB_GetScrollProp([NativeTypeName("HWND")] IntPtr param0, int propIndex, [NativeTypeName("LPINT")] int* param2);
+        public static extern BOOL FlatSB_GetScrollProp([NativeTypeName("HWND")] IntPtr param0, int propIndex, [NativeTypeName("LPINT")] int* param2);
 
         [DllImport("comctl32", ExactSpelling = true)]
-        public static extern int FlatSB_SetScrollPos([NativeTypeName("HWND")] IntPtr param0, int code, int pos, [NativeTypeName("BOOL")] int fRedraw);
+        public static extern int FlatSB_SetScrollPos([NativeTypeName("HWND")] IntPtr param0, int code, int pos, BOOL fRedraw);
 
         [DllImport("comctl32", ExactSpelling = true)]
-        public static extern int FlatSB_SetScrollInfo([NativeTypeName("HWND")] IntPtr param0, int code, [NativeTypeName("LPSCROLLINFO")] SCROLLINFO* psi, [NativeTypeName("BOOL")] int fRedraw);
+        public static extern int FlatSB_SetScrollInfo([NativeTypeName("HWND")] IntPtr param0, int code, [NativeTypeName("LPSCROLLINFO")] SCROLLINFO* psi, BOOL fRedraw);
 
         [DllImport("comctl32", ExactSpelling = true)]
-        public static extern int FlatSB_SetScrollRange([NativeTypeName("HWND")] IntPtr param0, int code, int min, int max, [NativeTypeName("BOOL")] int fRedraw);
+        public static extern int FlatSB_SetScrollRange([NativeTypeName("HWND")] IntPtr param0, int code, int min, int max, BOOL fRedraw);
 
         [DllImport("comctl32", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int FlatSB_SetScrollProp([NativeTypeName("HWND")] IntPtr param0, [NativeTypeName("UINT")] uint index, [NativeTypeName("INT_PTR")] nint newValue, [NativeTypeName("BOOL")] int param3);
+        public static extern BOOL FlatSB_SetScrollProp([NativeTypeName("HWND")] IntPtr param0, [NativeTypeName("UINT")] uint index, [NativeTypeName("INT_PTR")] nint newValue, BOOL param3);
 
         [DllImport("comctl32", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int InitializeFlatSB([NativeTypeName("HWND")] IntPtr param0);
+        public static extern BOOL InitializeFlatSB([NativeTypeName("HWND")] IntPtr param0);
 
         [DllImport("comctl32", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
         public static extern int UninitializeFlatSB([NativeTypeName("HWND")] IntPtr param0);
 
         [DllImport("comctl32", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SetWindowSubclass([NativeTypeName("HWND")] IntPtr hWnd, [NativeTypeName("SUBCLASSPROC")] delegate* unmanaged<IntPtr, uint, nuint, nint, nuint, nuint, nint> pfnSubclass, [NativeTypeName("UINT_PTR")] nuint uIdSubclass, [NativeTypeName("DWORD_PTR")] nuint dwRefData);
+        public static extern BOOL SetWindowSubclass([NativeTypeName("HWND")] IntPtr hWnd, [NativeTypeName("SUBCLASSPROC")] delegate* unmanaged<IntPtr, uint, nuint, nint, nuint, nuint, nint> pfnSubclass, [NativeTypeName("UINT_PTR")] nuint uIdSubclass, [NativeTypeName("DWORD_PTR")] nuint dwRefData);
 
         [DllImport("comctl32", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int GetWindowSubclass([NativeTypeName("HWND")] IntPtr hWnd, [NativeTypeName("SUBCLASSPROC")] delegate* unmanaged<IntPtr, uint, nuint, nint, nuint, nuint, nint> pfnSubclass, [NativeTypeName("UINT_PTR")] nuint uIdSubclass, [NativeTypeName("DWORD_PTR *")] nuint* pdwRefData);
+        public static extern BOOL GetWindowSubclass([NativeTypeName("HWND")] IntPtr hWnd, [NativeTypeName("SUBCLASSPROC")] delegate* unmanaged<IntPtr, uint, nuint, nint, nuint, nuint, nint> pfnSubclass, [NativeTypeName("UINT_PTR")] nuint uIdSubclass, [NativeTypeName("DWORD_PTR *")] nuint* pdwRefData);
 
         [DllImport("comctl32", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int RemoveWindowSubclass([NativeTypeName("HWND")] IntPtr hWnd, [NativeTypeName("SUBCLASSPROC")] delegate* unmanaged<IntPtr, uint, nuint, nint, nuint, nuint, nint> pfnSubclass, [NativeTypeName("UINT_PTR")] nuint uIdSubclass);
+        public static extern BOOL RemoveWindowSubclass([NativeTypeName("HWND")] IntPtr hWnd, [NativeTypeName("SUBCLASSPROC")] delegate* unmanaged<IntPtr, uint, nuint, nint, nuint, nuint, nint> pfnSubclass, [NativeTypeName("UINT_PTR")] nuint uIdSubclass);
 
         [DllImport("comctl32", ExactSpelling = true)]
         [return: NativeTypeName("LRESULT")]
@@ -6681,6 +6648,6 @@ namespace TerraFX.Interop
         public const int FSB_REGULAR_MODE = 0;
 
         [NativeTypeName("#define FlatSB_SetScrollPropPtr FlatSB_SetScrollProp")]
-        public static delegate*<IntPtr, uint, nint, int, int> FlatSB_SetScrollPropPtr => &FlatSB_SetScrollProp;
+        public static delegate*<IntPtr, uint, nint, BOOL, BOOL> FlatSB_SetScrollPropPtr => &FlatSB_SetScrollProp;
     }
 }

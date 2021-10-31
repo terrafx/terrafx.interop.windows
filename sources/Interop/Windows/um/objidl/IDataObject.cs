@@ -75,9 +75,9 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(7)]
         [return: NativeTypeName("HRESULT")]
-        public int SetData(FORMATETC* pformatetc, STGMEDIUM* pmedium, [NativeTypeName("BOOL")] int fRelease)
+        public int SetData(FORMATETC* pformatetc, STGMEDIUM* pmedium, BOOL fRelease)
         {
-            return ((delegate* unmanaged<IDataObject*, FORMATETC*, STGMEDIUM*, int, int>)(lpVtbl[7]))((IDataObject*)Unsafe.AsPointer(ref this), pformatetc, pmedium, fRelease);
+            return ((delegate* unmanaged<IDataObject*, FORMATETC*, STGMEDIUM*, BOOL, int>)(lpVtbl[7]))((IDataObject*)Unsafe.AsPointer(ref this), pformatetc, pmedium, fRelease);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

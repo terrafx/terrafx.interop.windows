@@ -99,9 +99,9 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(10)]
         [return: NativeTypeName("HRESULT")]
-        public int GetText([NativeTypeName("DWORD")] uint dwFlags, IAnchor* paStart, IAnchor* paEnd, [NativeTypeName("WCHAR *")] ushort* pchText, [NativeTypeName("ULONG")] uint cchReq, [NativeTypeName("ULONG *")] uint* pcch, [NativeTypeName("BOOL")] int fUpdateAnchor)
+        public int GetText([NativeTypeName("DWORD")] uint dwFlags, IAnchor* paStart, IAnchor* paEnd, [NativeTypeName("WCHAR *")] ushort* pchText, [NativeTypeName("ULONG")] uint cchReq, [NativeTypeName("ULONG *")] uint* pcch, BOOL fUpdateAnchor)
         {
-            return ((delegate* unmanaged<ITextStoreAnchor*, uint, IAnchor*, IAnchor*, ushort*, uint, uint*, int, int>)(lpVtbl[10]))((ITextStoreAnchor*)Unsafe.AsPointer(ref this), dwFlags, paStart, paEnd, pchText, cchReq, pcch, fUpdateAnchor);
+            return ((delegate* unmanaged<ITextStoreAnchor*, uint, IAnchor*, IAnchor*, ushort*, uint, uint*, BOOL, int>)(lpVtbl[10]))((ITextStoreAnchor*)Unsafe.AsPointer(ref this), dwFlags, paStart, paEnd, pchText, cchReq, pcch, fUpdateAnchor);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -163,9 +163,9 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(18)]
         [return: NativeTypeName("HRESULT")]
-        public int FindNextAttrTransition(IAnchor* paStart, IAnchor* paHalt, [NativeTypeName("ULONG")] uint cFilterAttrs, [NativeTypeName("const TS_ATTRID *")] Guid* paFilterAttrs, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("BOOL *")] int* pfFound, [NativeTypeName("LONG *")] int* plFoundOffset)
+        public int FindNextAttrTransition(IAnchor* paStart, IAnchor* paHalt, [NativeTypeName("ULONG")] uint cFilterAttrs, [NativeTypeName("const TS_ATTRID *")] Guid* paFilterAttrs, [NativeTypeName("DWORD")] uint dwFlags, BOOL* pfFound, [NativeTypeName("LONG *")] int* plFoundOffset)
         {
-            return ((delegate* unmanaged<ITextStoreAnchor*, IAnchor*, IAnchor*, uint, Guid*, uint, int*, int*, int>)(lpVtbl[18]))((ITextStoreAnchor*)Unsafe.AsPointer(ref this), paStart, paHalt, cFilterAttrs, paFilterAttrs, dwFlags, pfFound, plFoundOffset);
+            return ((delegate* unmanaged<ITextStoreAnchor*, IAnchor*, IAnchor*, uint, Guid*, uint, BOOL*, int*, int>)(lpVtbl[18]))((ITextStoreAnchor*)Unsafe.AsPointer(ref this), paStart, paHalt, cFilterAttrs, paFilterAttrs, dwFlags, pfFound, plFoundOffset);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -211,9 +211,9 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(24)]
         [return: NativeTypeName("HRESULT")]
-        public int GetTextExt([NativeTypeName("TsViewCookie")] uint vcView, IAnchor* paStart, IAnchor* paEnd, RECT* prc, [NativeTypeName("BOOL *")] int* pfClipped)
+        public int GetTextExt([NativeTypeName("TsViewCookie")] uint vcView, IAnchor* paStart, IAnchor* paEnd, RECT* prc, BOOL* pfClipped)
         {
-            return ((delegate* unmanaged<ITextStoreAnchor*, uint, IAnchor*, IAnchor*, RECT*, int*, int>)(lpVtbl[24]))((ITextStoreAnchor*)Unsafe.AsPointer(ref this), vcView, paStart, paEnd, prc, pfClipped);
+            return ((delegate* unmanaged<ITextStoreAnchor*, uint, IAnchor*, IAnchor*, RECT*, BOOL*, int>)(lpVtbl[24]))((ITextStoreAnchor*)Unsafe.AsPointer(ref this), vcView, paStart, paEnd, prc, pfClipped);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -235,9 +235,9 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(27)]
         [return: NativeTypeName("HRESULT")]
-        public int QueryInsertEmbedded([NativeTypeName("const GUID *")] Guid* pguidService, [NativeTypeName("const FORMATETC *")] FORMATETC* pFormatEtc, [NativeTypeName("BOOL *")] int* pfInsertable)
+        public int QueryInsertEmbedded([NativeTypeName("const GUID *")] Guid* pguidService, [NativeTypeName("const FORMATETC *")] FORMATETC* pFormatEtc, BOOL* pfInsertable)
         {
-            return ((delegate* unmanaged<ITextStoreAnchor*, Guid*, FORMATETC*, int*, int>)(lpVtbl[27]))((ITextStoreAnchor*)Unsafe.AsPointer(ref this), pguidService, pFormatEtc, pfInsertable);
+            return ((delegate* unmanaged<ITextStoreAnchor*, Guid*, FORMATETC*, BOOL*, int>)(lpVtbl[27]))((ITextStoreAnchor*)Unsafe.AsPointer(ref this), pguidService, pFormatEtc, pfInsertable);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

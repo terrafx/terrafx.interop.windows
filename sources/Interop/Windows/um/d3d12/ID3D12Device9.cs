@@ -330,9 +330,9 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(40)]
         [return: NativeTypeName("HRESULT")]
-        public int SetStablePowerState([NativeTypeName("BOOL")] int Enable)
+        public int SetStablePowerState(BOOL Enable)
         {
-            return ((delegate* unmanaged<ID3D12Device9*, int, int>)(lpVtbl[40]))((ID3D12Device9*)Unsafe.AsPointer(ref this), Enable);
+            return ((delegate* unmanaged<ID3D12Device9*, BOOL, int>)(lpVtbl[40]))((ID3D12Device9*)Unsafe.AsPointer(ref this), Enable);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -526,9 +526,9 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(65)]
         [return: NativeTypeName("HRESULT")]
-        public int SetBackgroundProcessingMode(D3D12_BACKGROUND_PROCESSING_MODE Mode, D3D12_MEASUREMENTS_ACTION MeasurementsAction, [NativeTypeName("HANDLE")] IntPtr hEventToSignalUponCompletion, [NativeTypeName("BOOL *")] int* pbFurtherMeasurementsDesired)
+        public int SetBackgroundProcessingMode(D3D12_BACKGROUND_PROCESSING_MODE Mode, D3D12_MEASUREMENTS_ACTION MeasurementsAction, [NativeTypeName("HANDLE")] IntPtr hEventToSignalUponCompletion, BOOL* pbFurtherMeasurementsDesired)
         {
-            return ((delegate* unmanaged<ID3D12Device9*, D3D12_BACKGROUND_PROCESSING_MODE, D3D12_MEASUREMENTS_ACTION, IntPtr, int*, int>)(lpVtbl[65]))((ID3D12Device9*)Unsafe.AsPointer(ref this), Mode, MeasurementsAction, hEventToSignalUponCompletion, pbFurtherMeasurementsDesired);
+            return ((delegate* unmanaged<ID3D12Device9*, D3D12_BACKGROUND_PROCESSING_MODE, D3D12_MEASUREMENTS_ACTION, IntPtr, BOOL*, int>)(lpVtbl[65]))((ID3D12Device9*)Unsafe.AsPointer(ref this), Mode, MeasurementsAction, hEventToSignalUponCompletion, pbFurtherMeasurementsDesired);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

@@ -7,10 +7,8 @@ namespace TerraFX.Interop
 {
     public partial struct D3D11_FEATURE_DATA_THREADING
     {
-        [NativeTypeName("BOOL")]
-        public int DriverConcurrentCreates;
+        public BOOL DriverConcurrentCreates;
 
-        [NativeTypeName("BOOL")]
-        public int DriverCommandLists;
+        public BOOL DriverCommandLists;
     }
 }

@@ -139,9 +139,9 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(15)]
         [return: NativeTypeName("HRESULT")]
-        public int SetRedraw([NativeTypeName("BOOL")] int bRedraw)
+        public int SetRedraw(BOOL bRedraw)
         {
-            return ((delegate* unmanaged<IShellFolderView*, int, int>)(lpVtbl[15]))((IShellFolderView*)Unsafe.AsPointer(ref this), bRedraw);
+            return ((delegate* unmanaged<IShellFolderView*, BOOL, int>)(lpVtbl[15]))((IShellFolderView*)Unsafe.AsPointer(ref this), bRedraw);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -211,9 +211,9 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(24)]
         [return: NativeTypeName("HRESULT")]
-        public int SetClipboard([NativeTypeName("BOOL")] int bMove)
+        public int SetClipboard(BOOL bMove)
         {
-            return ((delegate* unmanaged<IShellFolderView*, int, int>)(lpVtbl[24]))((IShellFolderView*)Unsafe.AsPointer(ref this), bMove);
+            return ((delegate* unmanaged<IShellFolderView*, BOOL, int>)(lpVtbl[24]))((IShellFolderView*)Unsafe.AsPointer(ref this), bMove);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

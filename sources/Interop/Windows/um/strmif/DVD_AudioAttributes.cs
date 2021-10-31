@@ -19,8 +19,7 @@ namespace TerraFX.Interop
 
         public DVD_AUDIO_LANG_EXT LanguageExtension;
 
-        [NativeTypeName("BOOL")]
-        public int fHasMultichannelInfo;
+        public BOOL fHasMultichannelInfo;
 
         [NativeTypeName("DWORD")]
         public uint dwFrequency;

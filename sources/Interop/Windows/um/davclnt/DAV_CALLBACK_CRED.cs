@@ -11,10 +11,8 @@ namespace TerraFX.Interop
 
         public DAV_CALLBACK_AUTH_UNP UNPBlob;
 
-        [NativeTypeName("BOOL")]
-        public int bAuthBlobValid;
+        public BOOL bAuthBlobValid;
 
-        [NativeTypeName("BOOL")]
-        public int bSave;
+        public BOOL bSave;
     }
 }

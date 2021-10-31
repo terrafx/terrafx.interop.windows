@@ -83,9 +83,9 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(8)]
         [return: NativeTypeName("HRESULT")]
-        public int IsEndOfStream([NativeTypeName("BOOL *")] int* pfEndOfStream)
+        public int IsEndOfStream(BOOL* pfEndOfStream)
         {
-            return ((delegate* unmanaged<IMFByteStream*, int*, int>)(lpVtbl[8]))((IMFByteStream*)Unsafe.AsPointer(ref this), pfEndOfStream);
+            return ((delegate* unmanaged<IMFByteStream*, BOOL*, int>)(lpVtbl[8]))((IMFByteStream*)Unsafe.AsPointer(ref this), pfEndOfStream);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

@@ -12,8 +12,7 @@ namespace TerraFX.Interop
         [NativeTypeName("DWORD_PTR")]
         public nuint dwUserData;
 
-        [NativeTypeName("BOOL")]
-        public int fProceedWithAuthentication;
+        public BOOL fProceedWithAuthentication;
 
         [NativeTypeName("HRESULT")]
         public int hrAuthenticationStatus;

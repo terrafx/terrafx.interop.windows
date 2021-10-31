@@ -59,17 +59,17 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
         [return: NativeTypeName("HRESULT")]
-        public int CompareItem([NativeTypeName("const GUID &")] Guid* guidKey, [NativeTypeName("const PROPVARIANT &")] PROPVARIANT* Value, [NativeTypeName("BOOL *")] int* pbResult)
+        public int CompareItem([NativeTypeName("const GUID &")] Guid* guidKey, [NativeTypeName("const PROPVARIANT &")] PROPVARIANT* Value, BOOL* pbResult)
         {
-            return ((delegate* unmanaged<IMFMediaType*, Guid*, PROPVARIANT*, int*, int>)(lpVtbl[5]))((IMFMediaType*)Unsafe.AsPointer(ref this), guidKey, Value, pbResult);
+            return ((delegate* unmanaged<IMFMediaType*, Guid*, PROPVARIANT*, BOOL*, int>)(lpVtbl[5]))((IMFMediaType*)Unsafe.AsPointer(ref this), guidKey, Value, pbResult);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
         [return: NativeTypeName("HRESULT")]
-        public int Compare(IMFAttributes* pTheirs, MF_ATTRIBUTES_MATCH_TYPE MatchType, [NativeTypeName("BOOL *")] int* pbResult)
+        public int Compare(IMFAttributes* pTheirs, MF_ATTRIBUTES_MATCH_TYPE MatchType, BOOL* pbResult)
         {
-            return ((delegate* unmanaged<IMFMediaType*, IMFAttributes*, MF_ATTRIBUTES_MATCH_TYPE, int*, int>)(lpVtbl[6]))((IMFMediaType*)Unsafe.AsPointer(ref this), pTheirs, MatchType, pbResult);
+            return ((delegate* unmanaged<IMFMediaType*, IMFAttributes*, MF_ATTRIBUTES_MATCH_TYPE, BOOL*, int>)(lpVtbl[6]))((IMFMediaType*)Unsafe.AsPointer(ref this), pTheirs, MatchType, pbResult);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -291,9 +291,9 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(34)]
         [return: NativeTypeName("HRESULT")]
-        public int IsCompressedFormat([NativeTypeName("BOOL *")] int* pfCompressed)
+        public int IsCompressedFormat(BOOL* pfCompressed)
         {
-            return ((delegate* unmanaged<IMFMediaType*, int*, int>)(lpVtbl[34]))((IMFMediaType*)Unsafe.AsPointer(ref this), pfCompressed);
+            return ((delegate* unmanaged<IMFMediaType*, BOOL*, int>)(lpVtbl[34]))((IMFMediaType*)Unsafe.AsPointer(ref this), pfCompressed);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

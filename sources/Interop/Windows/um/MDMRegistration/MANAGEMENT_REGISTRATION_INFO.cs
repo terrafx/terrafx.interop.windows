@@ -7,8 +7,7 @@ namespace TerraFX.Interop
 {
     public unsafe partial struct MANAGEMENT_REGISTRATION_INFO
     {
-        [NativeTypeName("BOOL")]
-        public int fDeviceRegisteredWithManagement;
+        public BOOL fDeviceRegisteredWithManagement;
 
         [NativeTypeName("DWORD")]
         public uint dwDeviceRegistionKind;

@@ -24,6 +24,6 @@ namespace TerraFX.Interop
         public void* descriptionData;
 
         [NativeTypeName("WS_IS_DEFAULT_VALUE_CALLBACK")]
-        public delegate* unmanaged<void*, void*, void*, uint, int*, IntPtr, int> isDefaultValueCallback;
+        public delegate* unmanaged<void*, void*, void*, uint, BOOL*, IntPtr, int> isDefaultValueCallback;
     }
 }

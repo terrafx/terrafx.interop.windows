@@ -67,9 +67,9 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
         [return: NativeTypeName("HRESULT")]
-        public int UsesCapture([NativeTypeName("BOOL *")] int* pfUsesCapture)
+        public int UsesCapture(BOOL* pfUsesCapture)
         {
-            return ((delegate* unmanaged<IScriptEventHandler*, int*, int>)(lpVtbl[6]))((IScriptEventHandler*)Unsafe.AsPointer(ref this), pfUsesCapture);
+            return ((delegate* unmanaged<IScriptEventHandler*, BOOL*, int>)(lpVtbl[6]))((IScriptEventHandler*)Unsafe.AsPointer(ref this), pfUsesCapture);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

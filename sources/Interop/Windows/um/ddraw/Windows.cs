@@ -414,19 +414,19 @@ namespace TerraFX.Interop
 
         [DllImport("ddraw", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
-        public static extern int DirectDrawEnumerateW([NativeTypeName("LPDDENUMCALLBACKW")] delegate* unmanaged<Guid*, ushort*, ushort*, void*, int> lpCallback, [NativeTypeName("LPVOID")] void* lpContext);
+        public static extern int DirectDrawEnumerateW([NativeTypeName("LPDDENUMCALLBACKW")] delegate* unmanaged<Guid*, ushort*, ushort*, void*, BOOL> lpCallback, [NativeTypeName("LPVOID")] void* lpContext);
 
         [DllImport("ddraw", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
-        public static extern int DirectDrawEnumerateA([NativeTypeName("LPDDENUMCALLBACKA")] delegate* unmanaged<Guid*, sbyte*, sbyte*, void*, int> lpCallback, [NativeTypeName("LPVOID")] void* lpContext);
+        public static extern int DirectDrawEnumerateA([NativeTypeName("LPDDENUMCALLBACKA")] delegate* unmanaged<Guid*, sbyte*, sbyte*, void*, BOOL> lpCallback, [NativeTypeName("LPVOID")] void* lpContext);
 
         [DllImport("ddraw", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
-        public static extern int DirectDrawEnumerateExW([NativeTypeName("LPDDENUMCALLBACKEXW")] delegate* unmanaged<Guid*, ushort*, ushort*, void*, IntPtr, int> lpCallback, [NativeTypeName("LPVOID")] void* lpContext, [NativeTypeName("DWORD")] uint dwFlags);
+        public static extern int DirectDrawEnumerateExW([NativeTypeName("LPDDENUMCALLBACKEXW")] delegate* unmanaged<Guid*, ushort*, ushort*, void*, IntPtr, BOOL> lpCallback, [NativeTypeName("LPVOID")] void* lpContext, [NativeTypeName("DWORD")] uint dwFlags);
 
         [DllImport("ddraw", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
-        public static extern int DirectDrawEnumerateExA([NativeTypeName("LPDDENUMCALLBACKEXA")] delegate* unmanaged<Guid*, sbyte*, sbyte*, void*, IntPtr, int> lpCallback, [NativeTypeName("LPVOID")] void* lpContext, [NativeTypeName("DWORD")] uint dwFlags);
+        public static extern int DirectDrawEnumerateExA([NativeTypeName("LPDDENUMCALLBACKEXA")] delegate* unmanaged<Guid*, sbyte*, sbyte*, void*, IntPtr, BOOL> lpCallback, [NativeTypeName("LPVOID")] void* lpContext, [NativeTypeName("DWORD")] uint dwFlags);
 
         [DllImport("ddraw", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
@@ -462,10 +462,10 @@ namespace TerraFX.Interop
         public const uint FOURCC_DXT5 = (((uint)((byte)('D')) | ((uint)((byte)('X')) << 8) | ((uint)((byte)('T')) << 16) | ((uint)((byte)('5')) << 24)));
 
         [NativeTypeName("#define DirectDrawEnumerate DirectDrawEnumerateW")]
-        public static delegate*<delegate* unmanaged<Guid*, ushort*, ushort*, void*, int>, void*, int> DirectDrawEnumerate => &DirectDrawEnumerateW;
+        public static delegate*<delegate* unmanaged<Guid*, ushort*, ushort*, void*, BOOL>, void*, int> DirectDrawEnumerate => &DirectDrawEnumerateW;
 
         [NativeTypeName("#define DirectDrawEnumerateEx DirectDrawEnumerateExW")]
-        public static delegate*<delegate* unmanaged<Guid*, ushort*, ushort*, void*, IntPtr, int>, void*, uint, int> DirectDrawEnumerateEx => &DirectDrawEnumerateExW;
+        public static delegate*<delegate* unmanaged<Guid*, ushort*, ushort*, void*, IntPtr, BOOL>, void*, uint, int> DirectDrawEnumerateEx => &DirectDrawEnumerateExW;
 
         [NativeTypeName("#define DDENUM_ATTACHEDSECONDARYDEVICES 0x00000001L")]
         public const int DDENUM_ATTACHEDSECONDARYDEVICES = 0x00000001;

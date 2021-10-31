@@ -115,9 +115,9 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(12)]
         [return: NativeTypeName("HRESULT")]
-        public int GetPort([NativeTypeName("BOOL *")] int* pfHasPort, [NativeTypeName("DWORD *")] uint* pdwPort)
+        public int GetPort(BOOL* pfHasPort, [NativeTypeName("DWORD *")] uint* pdwPort)
         {
-            return ((delegate* unmanaged<IUriBuilder*, int*, uint*, int>)(lpVtbl[12]))((IUriBuilder*)Unsafe.AsPointer(ref this), pfHasPort, pdwPort);
+            return ((delegate* unmanaged<IUriBuilder*, BOOL*, uint*, int>)(lpVtbl[12]))((IUriBuilder*)Unsafe.AsPointer(ref this), pfHasPort, pdwPort);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -179,9 +179,9 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(20)]
         [return: NativeTypeName("HRESULT")]
-        public int SetPort([NativeTypeName("BOOL")] int fHasPort, [NativeTypeName("DWORD")] uint dwNewValue)
+        public int SetPort(BOOL fHasPort, [NativeTypeName("DWORD")] uint dwNewValue)
         {
-            return ((delegate* unmanaged<IUriBuilder*, int, uint, int>)(lpVtbl[20]))((IUriBuilder*)Unsafe.AsPointer(ref this), fHasPort, dwNewValue);
+            return ((delegate* unmanaged<IUriBuilder*, BOOL, uint, int>)(lpVtbl[20]))((IUriBuilder*)Unsafe.AsPointer(ref this), fHasPort, dwNewValue);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -219,9 +219,9 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(25)]
         [return: NativeTypeName("HRESULT")]
-        public int HasBeenModified([NativeTypeName("BOOL *")] int* pfModified)
+        public int HasBeenModified(BOOL* pfModified)
         {
-            return ((delegate* unmanaged<IUriBuilder*, int*, int>)(lpVtbl[25]))((IUriBuilder*)Unsafe.AsPointer(ref this), pfModified);
+            return ((delegate* unmanaged<IUriBuilder*, BOOL*, int>)(lpVtbl[25]))((IUriBuilder*)Unsafe.AsPointer(ref this), pfModified);
         }
     }
 }

@@ -66,7 +66,7 @@ namespace TerraFX.Interop
 
         [DllImport("hlink", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
-        public static extern int HlinkParseDisplayName([NativeTypeName("LPBC")] IBindCtx* pibc, [NativeTypeName("LPCWSTR")] ushort* pwzDisplayName, [NativeTypeName("BOOL")] int fNoForceAbs, [NativeTypeName("ULONG *")] uint* pcchEaten, IMoniker** ppimk);
+        public static extern int HlinkParseDisplayName([NativeTypeName("LPBC")] IBindCtx* pibc, [NativeTypeName("LPCWSTR")] ushort* pwzDisplayName, BOOL fNoForceAbs, [NativeTypeName("ULONG *")] uint* pcchEaten, IMoniker** ppimk);
 
         [DllImport("hlink", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
@@ -78,7 +78,7 @@ namespace TerraFX.Interop
 
         [DllImport("hlink", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
-        public static extern int OleSaveToStreamEx(IUnknown* piunk, IStream* pistm, [NativeTypeName("BOOL")] int fClearDirty);
+        public static extern int OleSaveToStreamEx(IUnknown* piunk, IStream* pistm, BOOL fClearDirty);
 
         [DllImport("hlink", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]

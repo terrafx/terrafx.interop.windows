@@ -251,9 +251,9 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(29)]
         [return: NativeTypeName("HRESULT")]
-        public int SetCollectedProperties(IPropertyDescriptionList* pList, [NativeTypeName("BOOL")] int fAppendDefault)
+        public int SetCollectedProperties(IPropertyDescriptionList* pList, BOOL fAppendDefault)
         {
-            return ((delegate* unmanaged<IFileSaveDialog*, IPropertyDescriptionList*, int, int>)(lpVtbl[29]))((IFileSaveDialog*)Unsafe.AsPointer(ref this), pList, fAppendDefault);
+            return ((delegate* unmanaged<IFileSaveDialog*, IPropertyDescriptionList*, BOOL, int>)(lpVtbl[29]))((IFileSaveDialog*)Unsafe.AsPointer(ref this), pList, fAppendDefault);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

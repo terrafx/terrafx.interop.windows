@@ -7,8 +7,7 @@ namespace TerraFX.Interop
 {
     public unsafe partial struct COINSTALLER_CONTEXT_DATA64
     {
-        [NativeTypeName("BOOL")]
-        public int PostProcessing;
+        public BOOL PostProcessing;
 
         [NativeTypeName("DWORD")]
         public uint InstallResult;

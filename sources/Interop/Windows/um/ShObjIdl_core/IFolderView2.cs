@@ -155,17 +155,17 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(17)]
         [return: NativeTypeName("HRESULT")]
-        public int SetGroupBy([NativeTypeName("const PROPERTYKEY &")] PROPERTYKEY* key, [NativeTypeName("BOOL")] int fAscending)
+        public int SetGroupBy([NativeTypeName("const PROPERTYKEY &")] PROPERTYKEY* key, BOOL fAscending)
         {
-            return ((delegate* unmanaged<IFolderView2*, PROPERTYKEY*, int, int>)(lpVtbl[17]))((IFolderView2*)Unsafe.AsPointer(ref this), key, fAscending);
+            return ((delegate* unmanaged<IFolderView2*, PROPERTYKEY*, BOOL, int>)(lpVtbl[17]))((IFolderView2*)Unsafe.AsPointer(ref this), key, fAscending);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(18)]
         [return: NativeTypeName("HRESULT")]
-        public int GetGroupBy(PROPERTYKEY* pkey, [NativeTypeName("BOOL *")] int* pfAscending)
+        public int GetGroupBy(PROPERTYKEY* pkey, BOOL* pfAscending)
         {
-            return ((delegate* unmanaged<IFolderView2*, PROPERTYKEY*, int*, int>)(lpVtbl[18]))((IFolderView2*)Unsafe.AsPointer(ref this), pkey, pfAscending);
+            return ((delegate* unmanaged<IFolderView2*, PROPERTYKEY*, BOOL*, int>)(lpVtbl[18]))((IFolderView2*)Unsafe.AsPointer(ref this), pkey, pfAscending);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -259,9 +259,9 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(30)]
         [return: NativeTypeName("HRESULT")]
-        public int GetVisibleItem(int iStart, [NativeTypeName("BOOL")] int fPrevious, int* piItem)
+        public int GetVisibleItem(int iStart, BOOL fPrevious, int* piItem)
         {
-            return ((delegate* unmanaged<IFolderView2*, int, int, int*, int>)(lpVtbl[30]))((IFolderView2*)Unsafe.AsPointer(ref this), iStart, fPrevious, piItem);
+            return ((delegate* unmanaged<IFolderView2*, int, BOOL, int*, int>)(lpVtbl[30]))((IFolderView2*)Unsafe.AsPointer(ref this), iStart, fPrevious, piItem);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -275,9 +275,9 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(32)]
         [return: NativeTypeName("HRESULT")]
-        public int GetSelection([NativeTypeName("BOOL")] int fNoneImpliesFolder, IShellItemArray** ppsia)
+        public int GetSelection(BOOL fNoneImpliesFolder, IShellItemArray** ppsia)
         {
-            return ((delegate* unmanaged<IFolderView2*, int, IShellItemArray**, int>)(lpVtbl[32]))((IFolderView2*)Unsafe.AsPointer(ref this), fNoneImpliesFolder, ppsia);
+            return ((delegate* unmanaged<IFolderView2*, BOOL, IShellItemArray**, int>)(lpVtbl[32]))((IFolderView2*)Unsafe.AsPointer(ref this), fNoneImpliesFolder, ppsia);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -331,9 +331,9 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(39)]
         [return: NativeTypeName("HRESULT")]
-        public int SetRedraw([NativeTypeName("BOOL")] int fRedrawOn)
+        public int SetRedraw(BOOL fRedrawOn)
         {
-            return ((delegate* unmanaged<IFolderView2*, int, int>)(lpVtbl[39]))((IFolderView2*)Unsafe.AsPointer(ref this), fRedrawOn);
+            return ((delegate* unmanaged<IFolderView2*, BOOL, int>)(lpVtbl[39]))((IFolderView2*)Unsafe.AsPointer(ref this), fRedrawOn);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

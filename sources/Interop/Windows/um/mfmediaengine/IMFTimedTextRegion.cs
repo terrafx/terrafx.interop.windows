@@ -99,9 +99,9 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(10)]
         [return: NativeTypeName("HRESULT")]
-        public int GetClipOverflow([NativeTypeName("BOOL *")] int* clipOverflow)
+        public int GetClipOverflow(BOOL* clipOverflow)
         {
-            return ((delegate* unmanaged<IMFTimedTextRegion*, int*, int>)(lpVtbl[10]))((IMFTimedTextRegion*)Unsafe.AsPointer(ref this), clipOverflow);
+            return ((delegate* unmanaged<IMFTimedTextRegion*, BOOL*, int>)(lpVtbl[10]))((IMFTimedTextRegion*)Unsafe.AsPointer(ref this), clipOverflow);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -115,9 +115,9 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(12)]
         [return: NativeTypeName("HRESULT")]
-        public int GetWrap([NativeTypeName("BOOL *")] int* wrap)
+        public int GetWrap(BOOL* wrap)
         {
-            return ((delegate* unmanaged<IMFTimedTextRegion*, int*, int>)(lpVtbl[12]))((IMFTimedTextRegion*)Unsafe.AsPointer(ref this), wrap);
+            return ((delegate* unmanaged<IMFTimedTextRegion*, BOOL*, int>)(lpVtbl[12]))((IMFTimedTextRegion*)Unsafe.AsPointer(ref this), wrap);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

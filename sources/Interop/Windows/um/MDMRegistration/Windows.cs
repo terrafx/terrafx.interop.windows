@@ -16,19 +16,19 @@ namespace TerraFX.Interop
 
         [DllImport("mdmregistration", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
-        public static extern int IsDeviceRegisteredWithManagement([NativeTypeName("BOOL *")] int* pfIsDeviceRegisteredWithManagement, [NativeTypeName("DWORD")] uint cchUPN, [NativeTypeName("LPWSTR")] ushort* pszUPN);
+        public static extern int IsDeviceRegisteredWithManagement(BOOL* pfIsDeviceRegisteredWithManagement, [NativeTypeName("DWORD")] uint cchUPN, [NativeTypeName("LPWSTR")] ushort* pszUPN);
 
         [DllImport("mdmregistration", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
-        public static extern int IsManagementRegistrationAllowed([NativeTypeName("BOOL *")] int* pfIsManagementRegistrationAllowed);
+        public static extern int IsManagementRegistrationAllowed(BOOL* pfIsManagementRegistrationAllowed);
 
         [DllImport("mdmregistration", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
-        public static extern int IsMdmUxWithoutAadAllowed([NativeTypeName("BOOL *")] int* isEnrollmentAllowed);
+        public static extern int IsMdmUxWithoutAadAllowed(BOOL* isEnrollmentAllowed);
 
         [DllImport("mdmregistration", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
-        public static extern int SetManagedExternally([NativeTypeName("BOOL")] int IsManagedExternally);
+        public static extern int SetManagedExternally(BOOL IsManagedExternally);
 
         [DllImport("mdmregistration", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]

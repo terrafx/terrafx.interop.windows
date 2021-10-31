@@ -32,7 +32,7 @@ namespace TerraFX.Interop
 
         [DllImport("msports", ExactSpelling = true)]
         [return: NativeTypeName("LONG")]
-        public static extern int ComDBClaimPort([NativeTypeName("HCOMDB")] IntPtr HComDB, [NativeTypeName("DWORD")] uint ComNumber, [NativeTypeName("BOOL")] int ForceClaim, [NativeTypeName("PBOOL")] int* Forced);
+        public static extern int ComDBClaimPort([NativeTypeName("HCOMDB")] IntPtr HComDB, [NativeTypeName("DWORD")] uint ComNumber, BOOL ForceClaim, [NativeTypeName("PBOOL")] BOOL* Forced);
 
         [DllImport("msports", ExactSpelling = true)]
         [return: NativeTypeName("LONG")]

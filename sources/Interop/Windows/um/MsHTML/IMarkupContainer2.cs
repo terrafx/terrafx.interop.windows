@@ -51,9 +51,9 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
         [return: NativeTypeName("HRESULT")]
-        public int CreateChangeLog(IHTMLChangeSink* pChangeSink, IHTMLChangeLog** ppChangeLog, [NativeTypeName("BOOL")] int fForward, [NativeTypeName("BOOL")] int fBackward)
+        public int CreateChangeLog(IHTMLChangeSink* pChangeSink, IHTMLChangeLog** ppChangeLog, BOOL fForward, BOOL fBackward)
         {
-            return ((delegate* unmanaged<IMarkupContainer2*, IHTMLChangeSink*, IHTMLChangeLog**, int, int, int>)(lpVtbl[4]))((IMarkupContainer2*)Unsafe.AsPointer(ref this), pChangeSink, ppChangeLog, fForward, fBackward);
+            return ((delegate* unmanaged<IMarkupContainer2*, IHTMLChangeSink*, IHTMLChangeLog**, BOOL, BOOL, int>)(lpVtbl[4]))((IMarkupContainer2*)Unsafe.AsPointer(ref this), pChangeSink, ppChangeLog, fForward, fBackward);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

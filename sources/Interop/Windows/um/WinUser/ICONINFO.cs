@@ -9,8 +9,7 @@ namespace TerraFX.Interop
 {
     public partial struct ICONINFO
     {
-        [NativeTypeName("BOOL")]
-        public int fIcon;
+        public BOOL fIcon;
 
         [NativeTypeName("DWORD")]
         public uint xHotspot;

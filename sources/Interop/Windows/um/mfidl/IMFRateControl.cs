@@ -43,17 +43,17 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
         [return: NativeTypeName("HRESULT")]
-        public int SetRate([NativeTypeName("BOOL")] int fThin, float flRate)
+        public int SetRate(BOOL fThin, float flRate)
         {
-            return ((delegate* unmanaged<IMFRateControl*, int, float, int>)(lpVtbl[3]))((IMFRateControl*)Unsafe.AsPointer(ref this), fThin, flRate);
+            return ((delegate* unmanaged<IMFRateControl*, BOOL, float, int>)(lpVtbl[3]))((IMFRateControl*)Unsafe.AsPointer(ref this), fThin, flRate);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
         [return: NativeTypeName("HRESULT")]
-        public int GetRate([NativeTypeName("BOOL *")] int* pfThin, float* pflRate)
+        public int GetRate(BOOL* pfThin, float* pflRate)
         {
-            return ((delegate* unmanaged<IMFRateControl*, int*, float*, int>)(lpVtbl[4]))((IMFRateControl*)Unsafe.AsPointer(ref this), pfThin, pflRate);
+            return ((delegate* unmanaged<IMFRateControl*, BOOL*, float*, int>)(lpVtbl[4]))((IMFRateControl*)Unsafe.AsPointer(ref this), pfThin, pflRate);
         }
     }
 }

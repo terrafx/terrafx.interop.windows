@@ -67,9 +67,9 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
         [return: NativeTypeName("HRESULT")]
-        public int Save([NativeTypeName("LPSTREAM")] IStream* pStm, [NativeTypeName("BOOL")] int fClearDirty)
+        public int Save([NativeTypeName("LPSTREAM")] IStream* pStm, BOOL fClearDirty)
         {
-            return ((delegate* unmanaged<IPersistStreamInit*, IStream*, int, int>)(lpVtbl[6]))((IPersistStreamInit*)Unsafe.AsPointer(ref this), pStm, fClearDirty);
+            return ((delegate* unmanaged<IPersistStreamInit*, IStream*, BOOL, int>)(lpVtbl[6]))((IPersistStreamInit*)Unsafe.AsPointer(ref this), pStm, fClearDirty);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

@@ -42,8 +42,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("BOOL")]
-        public int ShouldDelayTheLoadEvent()
+        public BOOL ShouldDelayTheLoadEvent()
         {
             return ((delegate* unmanaged<IMFMediaEngineWebSupport*, int>)(lpVtbl[3]))((IMFMediaEngineWebSupport*)Unsafe.AsPointer(ref this));
         }

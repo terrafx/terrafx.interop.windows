@@ -10,11 +10,9 @@ namespace TerraFX.Interop
         [NativeTypeName("BYTE")]
         public byte bVersion;
 
-        [NativeTypeName("BOOL")]
-        public int fMasterOfCeremoniesInGuideVocal1;
+        public BOOL fMasterOfCeremoniesInGuideVocal1;
 
-        [NativeTypeName("BOOL")]
-        public int fDuet;
+        public BOOL fDuet;
 
         public DVD_KARAOKE_ASSIGNMENT ChannelAssignment;
 

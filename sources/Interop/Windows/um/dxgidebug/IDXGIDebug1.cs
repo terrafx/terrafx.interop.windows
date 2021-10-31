@@ -64,8 +64,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        [return: NativeTypeName("BOOL")]
-        public int IsLeakTrackingEnabledForThread()
+        public BOOL IsLeakTrackingEnabledForThread()
         {
             return ((delegate* unmanaged<IDXGIDebug1*, int>)(lpVtbl[6]))((IDXGIDebug1*)Unsafe.AsPointer(ref this));
         }

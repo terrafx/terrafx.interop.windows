@@ -43,9 +43,9 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
         [return: NativeTypeName("HRESULT")]
-        public int DoesSupportIndexing([NativeTypeName("BOOL *")] int* pfIndexingSupported)
+        public int DoesSupportIndexing(BOOL* pfIndexingSupported)
         {
-            return ((delegate* unmanaged<IWICJpegFrameDecode*, int*, int>)(lpVtbl[3]))((IWICJpegFrameDecode*)Unsafe.AsPointer(ref this), pfIndexingSupported);
+            return ((delegate* unmanaged<IWICJpegFrameDecode*, BOOL*, int>)(lpVtbl[3]))((IWICJpegFrameDecode*)Unsafe.AsPointer(ref this), pfIndexingSupported);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

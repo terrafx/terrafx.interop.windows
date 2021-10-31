@@ -10,8 +10,7 @@ namespace TerraFX.Interop
         [NativeTypeName("UINT")]
         public uint NumTiles;
 
-        [NativeTypeName("BOOL")]
-        public int bUseBox;
+        public BOOL bUseBox;
 
         [NativeTypeName("UINT")]
         public uint Width;

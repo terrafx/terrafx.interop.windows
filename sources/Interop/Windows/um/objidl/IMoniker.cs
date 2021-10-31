@@ -67,9 +67,9 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
         [return: NativeTypeName("HRESULT")]
-        public int Save(IStream* pStm, [NativeTypeName("BOOL")] int fClearDirty)
+        public int Save(IStream* pStm, BOOL fClearDirty)
         {
-            return ((delegate* unmanaged<IMoniker*, IStream*, int, int>)(lpVtbl[6]))((IMoniker*)Unsafe.AsPointer(ref this), pStm, fClearDirty);
+            return ((delegate* unmanaged<IMoniker*, IStream*, BOOL, int>)(lpVtbl[6]))((IMoniker*)Unsafe.AsPointer(ref this), pStm, fClearDirty);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -107,17 +107,17 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(11)]
         [return: NativeTypeName("HRESULT")]
-        public int ComposeWith(IMoniker* pmkRight, [NativeTypeName("BOOL")] int fOnlyIfNotGeneric, IMoniker** ppmkComposite)
+        public int ComposeWith(IMoniker* pmkRight, BOOL fOnlyIfNotGeneric, IMoniker** ppmkComposite)
         {
-            return ((delegate* unmanaged<IMoniker*, IMoniker*, int, IMoniker**, int>)(lpVtbl[11]))((IMoniker*)Unsafe.AsPointer(ref this), pmkRight, fOnlyIfNotGeneric, ppmkComposite);
+            return ((delegate* unmanaged<IMoniker*, IMoniker*, BOOL, IMoniker**, int>)(lpVtbl[11]))((IMoniker*)Unsafe.AsPointer(ref this), pmkRight, fOnlyIfNotGeneric, ppmkComposite);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(12)]
         [return: NativeTypeName("HRESULT")]
-        public int Enum([NativeTypeName("BOOL")] int fForward, IEnumMoniker** ppenumMoniker)
+        public int Enum(BOOL fForward, IEnumMoniker** ppenumMoniker)
         {
-            return ((delegate* unmanaged<IMoniker*, int, IEnumMoniker**, int>)(lpVtbl[12]))((IMoniker*)Unsafe.AsPointer(ref this), fForward, ppenumMoniker);
+            return ((delegate* unmanaged<IMoniker*, BOOL, IEnumMoniker**, int>)(lpVtbl[12]))((IMoniker*)Unsafe.AsPointer(ref this), fForward, ppenumMoniker);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

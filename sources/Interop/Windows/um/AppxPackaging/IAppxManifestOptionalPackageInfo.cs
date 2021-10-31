@@ -43,9 +43,9 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
         [return: NativeTypeName("HRESULT")]
-        public int GetIsOptionalPackage([NativeTypeName("BOOL *")] int* isOptionalPackage)
+        public int GetIsOptionalPackage(BOOL* isOptionalPackage)
         {
-            return ((delegate* unmanaged<IAppxManifestOptionalPackageInfo*, int*, int>)(lpVtbl[3]))((IAppxManifestOptionalPackageInfo*)Unsafe.AsPointer(ref this), isOptionalPackage);
+            return ((delegate* unmanaged<IAppxManifestOptionalPackageInfo*, BOOL*, int>)(lpVtbl[3]))((IAppxManifestOptionalPackageInfo*)Unsafe.AsPointer(ref this), isOptionalPackage);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

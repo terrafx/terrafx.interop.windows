@@ -51,9 +51,9 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
         [return: NativeTypeName("HRESULT")]
-        public int ContextSensitiveHelp([NativeTypeName("BOOL")] int fEnterMode)
+        public int ContextSensitiveHelp(BOOL fEnterMode)
         {
-            return ((delegate* unmanaged<IShellView3*, int, int>)(lpVtbl[4]))((IShellView3*)Unsafe.AsPointer(ref this), fEnterMode);
+            return ((delegate* unmanaged<IShellView3*, BOOL, int>)(lpVtbl[4]))((IShellView3*)Unsafe.AsPointer(ref this), fEnterMode);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -67,9 +67,9 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
         [return: NativeTypeName("HRESULT")]
-        public int EnableModeless([NativeTypeName("BOOL")] int fEnable)
+        public int EnableModeless(BOOL fEnable)
         {
-            return ((delegate* unmanaged<IShellView3*, int, int>)(lpVtbl[6]))((IShellView3*)Unsafe.AsPointer(ref this), fEnable);
+            return ((delegate* unmanaged<IShellView3*, BOOL, int>)(lpVtbl[6]))((IShellView3*)Unsafe.AsPointer(ref this), fEnable);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -115,9 +115,9 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(12)]
         [return: NativeTypeName("HRESULT")]
-        public int AddPropertySheetPages([NativeTypeName("DWORD")] uint dwReserved, [NativeTypeName("LPFNSVADDPROPSHEETPAGE")] delegate* unmanaged<IntPtr, nint, int> pfn, [NativeTypeName("LPARAM")] nint lparam)
+        public int AddPropertySheetPages([NativeTypeName("DWORD")] uint dwReserved, [NativeTypeName("LPFNSVADDPROPSHEETPAGE")] delegate* unmanaged<IntPtr, nint, BOOL> pfn, [NativeTypeName("LPARAM")] nint lparam)
         {
-            return ((delegate* unmanaged<IShellView3*, uint, delegate* unmanaged<IntPtr, nint, int>, nint, int>)(lpVtbl[12]))((IShellView3*)Unsafe.AsPointer(ref this), dwReserved, pfn, lparam);
+            return ((delegate* unmanaged<IShellView3*, uint, delegate* unmanaged<IntPtr, nint, BOOL>, nint, int>)(lpVtbl[12]))((IShellView3*)Unsafe.AsPointer(ref this), dwReserved, pfn, lparam);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

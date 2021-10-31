@@ -43,9 +43,9 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
         [return: NativeTypeName("HRESULT")]
-        public int IsWindowOnCurrentVirtualDesktop([NativeTypeName("HWND")] IntPtr topLevelWindow, [NativeTypeName("BOOL *")] int* onCurrentDesktop)
+        public int IsWindowOnCurrentVirtualDesktop([NativeTypeName("HWND")] IntPtr topLevelWindow, BOOL* onCurrentDesktop)
         {
-            return ((delegate* unmanaged<IVirtualDesktopManager*, IntPtr, int*, int>)(lpVtbl[3]))((IVirtualDesktopManager*)Unsafe.AsPointer(ref this), topLevelWindow, onCurrentDesktop);
+            return ((delegate* unmanaged<IVirtualDesktopManager*, IntPtr, BOOL*, int>)(lpVtbl[3]))((IVirtualDesktopManager*)Unsafe.AsPointer(ref this), topLevelWindow, onCurrentDesktop);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

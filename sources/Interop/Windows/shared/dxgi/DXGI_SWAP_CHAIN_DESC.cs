@@ -22,8 +22,7 @@ namespace TerraFX.Interop
         [NativeTypeName("HWND")]
         public IntPtr OutputWindow;
 
-        [NativeTypeName("BOOL")]
-        public int Windowed;
+        public BOOL Windowed;
 
         public DXGI_SWAP_EFFECT SwapEffect;
 

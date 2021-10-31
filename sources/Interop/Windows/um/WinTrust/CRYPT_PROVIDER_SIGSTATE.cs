@@ -18,11 +18,9 @@ namespace TerraFX.Interop
         [NativeTypeName("HCRYPTMSG")]
         public IntPtr hPrimarySig;
 
-        [NativeTypeName("BOOL")]
-        public int fFirstAttemptMade;
+        public BOOL fFirstAttemptMade;
 
-        [NativeTypeName("BOOL")]
-        public int fNoMoreSigs;
+        public BOOL fNoMoreSigs;
 
         [NativeTypeName("DWORD")]
         public uint cSecondarySigs;
@@ -30,8 +28,7 @@ namespace TerraFX.Interop
         [NativeTypeName("DWORD")]
         public uint dwCurrentIndex;
 
-        [NativeTypeName("BOOL")]
-        public int fSupportMultiSig;
+        public BOOL fSupportMultiSig;
 
         [NativeTypeName("DWORD")]
         public uint dwCryptoPolicySupport;
@@ -39,8 +36,7 @@ namespace TerraFX.Interop
         [NativeTypeName("DWORD")]
         public uint iAttemptCount;
 
-        [NativeTypeName("BOOL")]
-        public int fCheckedSealing;
+        public BOOL fCheckedSealing;
 
         [NativeTypeName("struct _SEALING_SIGNATURE_ATTRIBUTE *")]
         public SEALING_SIGNATURE_ATTRIBUTE* pSealingSignature;

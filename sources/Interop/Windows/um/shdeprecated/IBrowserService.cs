@@ -83,17 +83,17 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(8)]
         [return: NativeTypeName("HRESULT")]
-        public int ShowControlWindow([NativeTypeName("UINT")] uint id, [NativeTypeName("BOOL")] int fShow)
+        public int ShowControlWindow([NativeTypeName("UINT")] uint id, BOOL fShow)
         {
-            return ((delegate* unmanaged<IBrowserService*, uint, int, int>)(lpVtbl[8]))((IBrowserService*)Unsafe.AsPointer(ref this), id, fShow);
+            return ((delegate* unmanaged<IBrowserService*, uint, BOOL, int>)(lpVtbl[8]))((IBrowserService*)Unsafe.AsPointer(ref this), id, fShow);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(9)]
         [return: NativeTypeName("HRESULT")]
-        public int IsControlWindowShown([NativeTypeName("UINT")] uint id, [NativeTypeName("BOOL *")] int* pfShown)
+        public int IsControlWindowShown([NativeTypeName("UINT")] uint id, BOOL* pfShown)
         {
-            return ((delegate* unmanaged<IBrowserService*, uint, int*, int>)(lpVtbl[9]))((IBrowserService*)Unsafe.AsPointer(ref this), id, pfShown);
+            return ((delegate* unmanaged<IBrowserService*, uint, BOOL*, int>)(lpVtbl[9]))((IBrowserService*)Unsafe.AsPointer(ref this), id, pfShown);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -147,9 +147,9 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(16)]
         [return: NativeTypeName("HRESULT")]
-        public int NotifyRedirect(IShellView* psv, [NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidl, [NativeTypeName("BOOL *")] int* pfDidBrowse)
+        public int NotifyRedirect(IShellView* psv, [NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidl, BOOL* pfDidBrowse)
         {
-            return ((delegate* unmanaged<IBrowserService*, IShellView*, ITEMIDLIST*, int*, int>)(lpVtbl[16]))((IBrowserService*)Unsafe.AsPointer(ref this), psv, pidl, pfDidBrowse);
+            return ((delegate* unmanaged<IBrowserService*, IShellView*, ITEMIDLIST*, BOOL*, int>)(lpVtbl[16]))((IBrowserService*)Unsafe.AsPointer(ref this), psv, pidl, pfDidBrowse);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -235,9 +235,9 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(27)]
         [return: NativeTypeName("HRESULT")]
-        public int SetHistoryObject(IOleObject* pole, [NativeTypeName("BOOL")] int fIsLocalAnchor)
+        public int SetHistoryObject(IOleObject* pole, BOOL fIsLocalAnchor)
         {
-            return ((delegate* unmanaged<IBrowserService*, IOleObject*, int, int>)(lpVtbl[27]))((IBrowserService*)Unsafe.AsPointer(ref this), pole, fIsLocalAnchor);
+            return ((delegate* unmanaged<IBrowserService*, IOleObject*, BOOL, int>)(lpVtbl[27]))((IBrowserService*)Unsafe.AsPointer(ref this), pole, fIsLocalAnchor);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -259,9 +259,9 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(30)]
         [return: NativeTypeName("HRESULT")]
-        public int OnHttpEquiv(IShellView* psv, [NativeTypeName("BOOL")] int fDone, VARIANT* pvarargIn, VARIANT* pvarargOut)
+        public int OnHttpEquiv(IShellView* psv, BOOL fDone, VARIANT* pvarargIn, VARIANT* pvarargOut)
         {
-            return ((delegate* unmanaged<IBrowserService*, IShellView*, int, VARIANT*, VARIANT*, int>)(lpVtbl[30]))((IBrowserService*)Unsafe.AsPointer(ref this), psv, fDone, pvarargIn, pvarargOut);
+            return ((delegate* unmanaged<IBrowserService*, IShellView*, BOOL, VARIANT*, VARIANT*, int>)(lpVtbl[30]))((IBrowserService*)Unsafe.AsPointer(ref this), psv, fDone, pvarargIn, pvarargOut);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -275,9 +275,9 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(32)]
         [return: NativeTypeName("HRESULT")]
-        public int RegisterWindow([NativeTypeName("BOOL")] int fForceRegister, int swc)
+        public int RegisterWindow(BOOL fForceRegister, int swc)
         {
-            return ((delegate* unmanaged<IBrowserService*, int, int, int>)(lpVtbl[32]))((IBrowserService*)Unsafe.AsPointer(ref this), fForceRegister, swc);
+            return ((delegate* unmanaged<IBrowserService*, BOOL, int, int>)(lpVtbl[32]))((IBrowserService*)Unsafe.AsPointer(ref this), fForceRegister, swc);
         }
     }
 }

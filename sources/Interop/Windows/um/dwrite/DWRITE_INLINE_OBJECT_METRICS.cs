@@ -16,7 +16,6 @@ namespace TerraFX.Interop
         [NativeTypeName("FLOAT")]
         public float baseline;
 
-        [NativeTypeName("BOOL")]
-        public int supportsSideways;
+        public BOOL supportsSideways;
     }
 }

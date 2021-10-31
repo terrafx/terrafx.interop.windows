@@ -42,15 +42,14 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        public void EnableShaderInstrumentation([NativeTypeName("BOOL")] int bEnable)
+        public void EnableShaderInstrumentation(BOOL bEnable)
         {
-            ((delegate* unmanaged<ID3D12Tools*, int, void>)(lpVtbl[3]))((ID3D12Tools*)Unsafe.AsPointer(ref this), bEnable);
+            ((delegate* unmanaged<ID3D12Tools*, BOOL, void>)(lpVtbl[3]))((ID3D12Tools*)Unsafe.AsPointer(ref this), bEnable);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        [return: NativeTypeName("BOOL")]
-        public int ShaderInstrumentationEnabled()
+        public BOOL ShaderInstrumentationEnabled()
         {
             return ((delegate* unmanaged<ID3D12Tools*, int>)(lpVtbl[4]))((ID3D12Tools*)Unsafe.AsPointer(ref this));
         }

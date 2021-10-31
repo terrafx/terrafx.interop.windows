@@ -15,8 +15,7 @@ namespace TerraFX.Interop
 
         public POINT pt;
 
-        [NativeTypeName("BOOL")]
-        public int fNC;
+        public BOOL fNC;
 
         [NativeTypeName("PZZSTR")]
         public sbyte* lpFileList;

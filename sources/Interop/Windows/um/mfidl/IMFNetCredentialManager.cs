@@ -59,9 +59,9 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
         [return: NativeTypeName("HRESULT")]
-        public int SetGood(IMFNetCredential* pCred, [NativeTypeName("BOOL")] int fGood)
+        public int SetGood(IMFNetCredential* pCred, BOOL fGood)
         {
-            return ((delegate* unmanaged<IMFNetCredentialManager*, IMFNetCredential*, int, int>)(lpVtbl[5]))((IMFNetCredentialManager*)Unsafe.AsPointer(ref this), pCred, fGood);
+            return ((delegate* unmanaged<IMFNetCredentialManager*, IMFNetCredential*, BOOL, int>)(lpVtbl[5]))((IMFNetCredentialManager*)Unsafe.AsPointer(ref this), pCred, fGood);
         }
     }
 }

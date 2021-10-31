@@ -51,9 +51,9 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
         [return: NativeTypeName("HRESULT")]
-        public int NotifyAllocator(IMemAllocator* pAllocator, [NativeTypeName("BOOL")] int bReadOnly)
+        public int NotifyAllocator(IMemAllocator* pAllocator, BOOL bReadOnly)
         {
-            return ((delegate* unmanaged<IMemInputPin*, IMemAllocator*, int, int>)(lpVtbl[4]))((IMemInputPin*)Unsafe.AsPointer(ref this), pAllocator, bReadOnly);
+            return ((delegate* unmanaged<IMemInputPin*, IMemAllocator*, BOOL, int>)(lpVtbl[4]))((IMemInputPin*)Unsafe.AsPointer(ref this), pAllocator, bReadOnly);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

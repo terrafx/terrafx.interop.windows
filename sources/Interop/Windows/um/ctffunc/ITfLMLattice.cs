@@ -43,9 +43,9 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
         [return: NativeTypeName("HRESULT")]
-        public int QueryType([NativeTypeName("const GUID &")] Guid* rguidType, [NativeTypeName("BOOL *")] int* pfSupported)
+        public int QueryType([NativeTypeName("const GUID &")] Guid* rguidType, BOOL* pfSupported)
         {
-            return ((delegate* unmanaged<ITfLMLattice*, Guid*, int*, int>)(lpVtbl[3]))((ITfLMLattice*)Unsafe.AsPointer(ref this), rguidType, pfSupported);
+            return ((delegate* unmanaged<ITfLMLattice*, Guid*, BOOL*, int>)(lpVtbl[3]))((ITfLMLattice*)Unsafe.AsPointer(ref this), rguidType, pfSupported);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

@@ -10,17 +10,13 @@ namespace TerraFX.Interop
         [NativeTypeName("HRESULT")]
         public int hrVPEStatus;
 
-        [NativeTypeName("BOOL")]
-        public int bDvdVolInvalid;
+        public BOOL bDvdVolInvalid;
 
-        [NativeTypeName("BOOL")]
-        public int bDvdVolUnknown;
+        public BOOL bDvdVolUnknown;
 
-        [NativeTypeName("BOOL")]
-        public int bNoLine21In;
+        public BOOL bNoLine21In;
 
-        [NativeTypeName("BOOL")]
-        public int bNoLine21Out;
+        public BOOL bNoLine21Out;
 
         public int iNumStreams;
 

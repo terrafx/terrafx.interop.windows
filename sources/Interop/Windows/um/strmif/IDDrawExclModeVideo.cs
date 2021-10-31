@@ -51,9 +51,9 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
         [return: NativeTypeName("HRESULT")]
-        public int GetDDrawObject(IDirectDraw** ppDDrawObject, [NativeTypeName("BOOL *")] int* pbUsingExternal)
+        public int GetDDrawObject(IDirectDraw** ppDDrawObject, BOOL* pbUsingExternal)
         {
-            return ((delegate* unmanaged<IDDrawExclModeVideo*, IDirectDraw**, int*, int>)(lpVtbl[4]))((IDDrawExclModeVideo*)Unsafe.AsPointer(ref this), ppDDrawObject, pbUsingExternal);
+            return ((delegate* unmanaged<IDDrawExclModeVideo*, IDirectDraw**, BOOL*, int>)(lpVtbl[4]))((IDDrawExclModeVideo*)Unsafe.AsPointer(ref this), ppDDrawObject, pbUsingExternal);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -67,9 +67,9 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
         [return: NativeTypeName("HRESULT")]
-        public int GetDDrawSurface(IDirectDrawSurface** ppDDrawSurface, [NativeTypeName("BOOL *")] int* pbUsingExternal)
+        public int GetDDrawSurface(IDirectDrawSurface** ppDDrawSurface, BOOL* pbUsingExternal)
         {
-            return ((delegate* unmanaged<IDDrawExclModeVideo*, IDirectDrawSurface**, int*, int>)(lpVtbl[6]))((IDDrawExclModeVideo*)Unsafe.AsPointer(ref this), ppDDrawSurface, pbUsingExternal);
+            return ((delegate* unmanaged<IDDrawExclModeVideo*, IDirectDrawSurface**, BOOL*, int>)(lpVtbl[6]))((IDDrawExclModeVideo*)Unsafe.AsPointer(ref this), ppDDrawSurface, pbUsingExternal);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

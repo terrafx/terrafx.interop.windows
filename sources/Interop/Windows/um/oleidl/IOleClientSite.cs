@@ -75,9 +75,9 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(7)]
         [return: NativeTypeName("HRESULT")]
-        public int OnShowWindow([NativeTypeName("BOOL")] int fShow)
+        public int OnShowWindow(BOOL fShow)
         {
-            return ((delegate* unmanaged<IOleClientSite*, int, int>)(lpVtbl[7]))((IOleClientSite*)Unsafe.AsPointer(ref this), fShow);
+            return ((delegate* unmanaged<IOleClientSite*, BOOL, int>)(lpVtbl[7]))((IOleClientSite*)Unsafe.AsPointer(ref this), fShow);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

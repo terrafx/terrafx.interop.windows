@@ -459,9 +459,9 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(55)]
         [return: NativeTypeName("HRESULT")]
-        public int SetOpenStatus([NativeTypeName("HIMC")] IntPtr hIMC, [NativeTypeName("BOOL")] int fOpen)
+        public int SetOpenStatus([NativeTypeName("HIMC")] IntPtr hIMC, BOOL fOpen)
         {
-            return ((delegate* unmanaged<IActiveIMMApp*, IntPtr, int, int>)(lpVtbl[55]))((IActiveIMMApp*)Unsafe.AsPointer(ref this), hIMC, fOpen);
+            return ((delegate* unmanaged<IActiveIMMApp*, IntPtr, BOOL, int>)(lpVtbl[55]))((IActiveIMMApp*)Unsafe.AsPointer(ref this), hIMC, fOpen);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -499,9 +499,9 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(60)]
         [return: NativeTypeName("HRESULT")]
-        public int Activate([NativeTypeName("BOOL")] int fRestoreLayout)
+        public int Activate(BOOL fRestoreLayout)
         {
-            return ((delegate* unmanaged<IActiveIMMApp*, int, int>)(lpVtbl[60]))((IActiveIMMApp*)Unsafe.AsPointer(ref this), fRestoreLayout);
+            return ((delegate* unmanaged<IActiveIMMApp*, BOOL, int>)(lpVtbl[60]))((IActiveIMMApp*)Unsafe.AsPointer(ref this), fRestoreLayout);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

@@ -97,12 +97,10 @@ namespace TerraFX.Interop
         public static extern int StrFromTimeIntervalW([NativeTypeName("PWSTR")] ushort* pszOut, [NativeTypeName("UINT")] uint cchMax, [NativeTypeName("DWORD")] uint dwTimeMS, int digits);
 
         [DllImport("shlwapi", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int StrIsIntlEqualA([NativeTypeName("BOOL")] int fCaseSens, [NativeTypeName("PCSTR")] sbyte* pszString1, [NativeTypeName("PCSTR")] sbyte* pszString2, int nChar);
+        public static extern BOOL StrIsIntlEqualA(BOOL fCaseSens, [NativeTypeName("PCSTR")] sbyte* pszString1, [NativeTypeName("PCSTR")] sbyte* pszString2, int nChar);
 
         [DllImport("shlwapi", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int StrIsIntlEqualW([NativeTypeName("BOOL")] int fCaseSens, [NativeTypeName("PCWSTR")] ushort* pszString1, [NativeTypeName("PCWSTR")] ushort* pszString2, int nChar);
+        public static extern BOOL StrIsIntlEqualW(BOOL fCaseSens, [NativeTypeName("PCWSTR")] ushort* pszString1, [NativeTypeName("PCWSTR")] ushort* pszString2, int nChar);
 
         [DllImport("shlwapi", ExactSpelling = true)]
         [return: NativeTypeName("PSTR")]
@@ -181,28 +179,22 @@ namespace TerraFX.Interop
         public static extern int StrToIntW([NativeTypeName("PCWSTR")] ushort* pszSrc);
 
         [DllImport("shlwapi", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int StrToIntExA([NativeTypeName("PCSTR")] sbyte* pszString, [NativeTypeName("STIF_FLAGS")] int dwFlags, int* piRet);
+        public static extern BOOL StrToIntExA([NativeTypeName("PCSTR")] sbyte* pszString, [NativeTypeName("STIF_FLAGS")] int dwFlags, int* piRet);
 
         [DllImport("shlwapi", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int StrToIntExW([NativeTypeName("PCWSTR")] ushort* pszString, [NativeTypeName("STIF_FLAGS")] int dwFlags, int* piRet);
+        public static extern BOOL StrToIntExW([NativeTypeName("PCWSTR")] ushort* pszString, [NativeTypeName("STIF_FLAGS")] int dwFlags, int* piRet);
 
         [DllImport("shlwapi", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int StrToInt64ExA([NativeTypeName("PCSTR")] sbyte* pszString, [NativeTypeName("STIF_FLAGS")] int dwFlags, [NativeTypeName("LONGLONG *")] long* pllRet);
+        public static extern BOOL StrToInt64ExA([NativeTypeName("PCSTR")] sbyte* pszString, [NativeTypeName("STIF_FLAGS")] int dwFlags, [NativeTypeName("LONGLONG *")] long* pllRet);
 
         [DllImport("shlwapi", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int StrToInt64ExW([NativeTypeName("PCWSTR")] ushort* pszString, [NativeTypeName("STIF_FLAGS")] int dwFlags, [NativeTypeName("LONGLONG *")] long* pllRet);
+        public static extern BOOL StrToInt64ExW([NativeTypeName("PCWSTR")] ushort* pszString, [NativeTypeName("STIF_FLAGS")] int dwFlags, [NativeTypeName("LONGLONG *")] long* pllRet);
 
         [DllImport("shlwapi", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int StrTrimA([NativeTypeName("PSTR")] sbyte* psz, [NativeTypeName("PCSTR")] sbyte* pszTrimChars);
+        public static extern BOOL StrTrimA([NativeTypeName("PSTR")] sbyte* psz, [NativeTypeName("PCSTR")] sbyte* pszTrimChars);
 
         [DllImport("shlwapi", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int StrTrimW([NativeTypeName("PWSTR")] ushort* psz, [NativeTypeName("PCWSTR")] ushort* pszTrimChars);
+        public static extern BOOL StrTrimW([NativeTypeName("PWSTR")] ushort* psz, [NativeTypeName("PCWSTR")] ushort* pszTrimChars);
 
         [DllImport("shlwapi", ExactSpelling = true)]
         [return: NativeTypeName("PWSTR")]
@@ -231,12 +223,10 @@ namespace TerraFX.Interop
         public static extern sbyte* StrCatBuffA([NativeTypeName("PSTR")] sbyte* pszDest, [NativeTypeName("PCSTR")] sbyte* pszSrc, int cchDestBuffSize);
 
         [DllImport("shlwapi", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int ChrCmpIA([NativeTypeName("WORD")] ushort w1, [NativeTypeName("WORD")] ushort w2);
+        public static extern BOOL ChrCmpIA([NativeTypeName("WORD")] ushort w1, [NativeTypeName("WORD")] ushort w2);
 
         [DllImport("shlwapi", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int ChrCmpIW([NativeTypeName("WCHAR")] ushort w1, [NativeTypeName("WCHAR")] ushort w2);
+        public static extern BOOL ChrCmpIW([NativeTypeName("WCHAR")] ushort w1, [NativeTypeName("WCHAR")] ushort w2);
 
         [DllImport("shlwapi", ExactSpelling = true)]
         public static extern int wvnsprintfA([NativeTypeName("PSTR")] sbyte* pszDest, int cchDest, [NativeTypeName("PCSTR")] sbyte* pszFmt, [NativeTypeName("va_list")] sbyte* arglist);
@@ -304,12 +294,10 @@ namespace TerraFX.Interop
         public static extern int SHLoadIndirectString([NativeTypeName("PCWSTR")] ushort* pszSource, [NativeTypeName("PWSTR")] ushort* pszOutBuf, [NativeTypeName("UINT")] uint cchOutBuf, void** ppvReserved);
 
         [DllImport("shlwapi", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int IsCharSpaceA([NativeTypeName("CHAR")] sbyte wch);
+        public static extern BOOL IsCharSpaceA([NativeTypeName("CHAR")] sbyte wch);
 
         [DllImport("shlwapi", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int IsCharSpaceW([NativeTypeName("WCHAR")] ushort wch);
+        public static extern BOOL IsCharSpaceW([NativeTypeName("WCHAR")] ushort wch);
 
         [DllImport("shlwapi", ExactSpelling = true)]
         public static extern int StrCmpCA([NativeTypeName("LPCSTR")] sbyte* pszStr1, [NativeTypeName("LPCSTR")] sbyte* pszStr2);
@@ -336,12 +324,10 @@ namespace TerraFX.Interop
         public static extern int StrCmpNICW([NativeTypeName("LPCWSTR")] ushort* pszStr1, [NativeTypeName("LPCWSTR")] ushort* pszStr2, int nChar);
 
         [DllImport("shlwapi", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int IntlStrEqWorkerA([NativeTypeName("BOOL")] int fCaseSens, [NativeTypeName("LPCSTR")] sbyte* lpString1, [NativeTypeName("LPCSTR")] sbyte* lpString2, int nChar);
+        public static extern BOOL IntlStrEqWorkerA(BOOL fCaseSens, [NativeTypeName("LPCSTR")] sbyte* lpString1, [NativeTypeName("LPCSTR")] sbyte* lpString2, int nChar);
 
         [DllImport("shlwapi", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int IntlStrEqWorkerW([NativeTypeName("BOOL")] int fCaseSens, [NativeTypeName("LPCWSTR")] ushort* lpString1, [NativeTypeName("LPCWSTR")] ushort* lpString2, int nChar);
+        public static extern BOOL IntlStrEqWorkerW(BOOL fCaseSens, [NativeTypeName("LPCWSTR")] ushort* lpString1, [NativeTypeName("LPCWSTR")] ushort* lpString2, int nChar);
 
         [DllImport("shlwapi", ExactSpelling = true)]
         [return: NativeTypeName("LPSTR")]
@@ -352,20 +338,16 @@ namespace TerraFX.Interop
         public static extern ushort* PathAddBackslashW([NativeTypeName("LPWSTR")] ushort* pszPath);
 
         [DllImport("shlwapi", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int PathAddExtensionA([NativeTypeName("LPSTR")] sbyte* pszPath, [NativeTypeName("LPCSTR")] sbyte* pszExt);
+        public static extern BOOL PathAddExtensionA([NativeTypeName("LPSTR")] sbyte* pszPath, [NativeTypeName("LPCSTR")] sbyte* pszExt);
 
         [DllImport("shlwapi", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int PathAddExtensionW([NativeTypeName("LPWSTR")] ushort* pszPath, [NativeTypeName("LPCWSTR")] ushort* pszExt);
+        public static extern BOOL PathAddExtensionW([NativeTypeName("LPWSTR")] ushort* pszPath, [NativeTypeName("LPCWSTR")] ushort* pszExt);
 
         [DllImport("shlwapi", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int PathAppendA([NativeTypeName("LPSTR")] sbyte* pszPath, [NativeTypeName("LPCSTR")] sbyte* pszMore);
+        public static extern BOOL PathAppendA([NativeTypeName("LPSTR")] sbyte* pszPath, [NativeTypeName("LPCSTR")] sbyte* pszMore);
 
         [DllImport("shlwapi", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int PathAppendW([NativeTypeName("LPWSTR")] ushort* pszPath, [NativeTypeName("LPCWSTR")] ushort* pszMore);
+        public static extern BOOL PathAppendW([NativeTypeName("LPWSTR")] ushort* pszPath, [NativeTypeName("LPCWSTR")] ushort* pszMore);
 
         [DllImport("shlwapi", ExactSpelling = true)]
         [return: NativeTypeName("LPSTR")]
@@ -376,12 +358,10 @@ namespace TerraFX.Interop
         public static extern ushort* PathBuildRootW([NativeTypeName("LPWSTR")] ushort* pszRoot, int iDrive);
 
         [DllImport("shlwapi", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int PathCanonicalizeA([NativeTypeName("LPSTR")] sbyte* pszBuf, [NativeTypeName("LPCSTR")] sbyte* pszPath);
+        public static extern BOOL PathCanonicalizeA([NativeTypeName("LPSTR")] sbyte* pszBuf, [NativeTypeName("LPCSTR")] sbyte* pszPath);
 
         [DllImport("shlwapi", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int PathCanonicalizeW([NativeTypeName("LPWSTR")] ushort* pszBuf, [NativeTypeName("LPCWSTR")] ushort* pszPath);
+        public static extern BOOL PathCanonicalizeW([NativeTypeName("LPWSTR")] ushort* pszBuf, [NativeTypeName("LPCWSTR")] ushort* pszPath);
 
         [DllImport("shlwapi", ExactSpelling = true)]
         [return: NativeTypeName("LPSTR")]
@@ -392,20 +372,16 @@ namespace TerraFX.Interop
         public static extern ushort* PathCombineW([NativeTypeName("LPWSTR")] ushort* pszDest, [NativeTypeName("LPCWSTR")] ushort* pszDir, [NativeTypeName("LPCWSTR")] ushort* pszFile);
 
         [DllImport("shlwapi", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int PathCompactPathA([NativeTypeName("HDC")] IntPtr hDC, [NativeTypeName("LPSTR")] sbyte* pszPath, [NativeTypeName("UINT")] uint dx);
+        public static extern BOOL PathCompactPathA([NativeTypeName("HDC")] IntPtr hDC, [NativeTypeName("LPSTR")] sbyte* pszPath, [NativeTypeName("UINT")] uint dx);
 
         [DllImport("shlwapi", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int PathCompactPathW([NativeTypeName("HDC")] IntPtr hDC, [NativeTypeName("LPWSTR")] ushort* pszPath, [NativeTypeName("UINT")] uint dx);
+        public static extern BOOL PathCompactPathW([NativeTypeName("HDC")] IntPtr hDC, [NativeTypeName("LPWSTR")] ushort* pszPath, [NativeTypeName("UINT")] uint dx);
 
         [DllImport("shlwapi", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int PathCompactPathExA([NativeTypeName("LPSTR")] sbyte* pszOut, [NativeTypeName("LPCSTR")] sbyte* pszSrc, [NativeTypeName("UINT")] uint cchMax, [NativeTypeName("DWORD")] uint dwFlags);
+        public static extern BOOL PathCompactPathExA([NativeTypeName("LPSTR")] sbyte* pszOut, [NativeTypeName("LPCSTR")] sbyte* pszSrc, [NativeTypeName("UINT")] uint cchMax, [NativeTypeName("DWORD")] uint dwFlags);
 
         [DllImport("shlwapi", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int PathCompactPathExW([NativeTypeName("LPWSTR")] ushort* pszOut, [NativeTypeName("LPCWSTR")] ushort* pszSrc, [NativeTypeName("UINT")] uint cchMax, [NativeTypeName("DWORD")] uint dwFlags);
+        public static extern BOOL PathCompactPathExW([NativeTypeName("LPWSTR")] ushort* pszOut, [NativeTypeName("LPCWSTR")] ushort* pszSrc, [NativeTypeName("UINT")] uint cchMax, [NativeTypeName("DWORD")] uint dwFlags);
 
         [DllImport("shlwapi", ExactSpelling = true)]
         public static extern int PathCommonPrefixA([NativeTypeName("LPCSTR")] sbyte* pszFile1, [NativeTypeName("LPCSTR")] sbyte* pszFile2, [NativeTypeName("LPSTR")] sbyte* achPath);
@@ -414,12 +390,10 @@ namespace TerraFX.Interop
         public static extern int PathCommonPrefixW([NativeTypeName("LPCWSTR")] ushort* pszFile1, [NativeTypeName("LPCWSTR")] ushort* pszFile2, [NativeTypeName("LPWSTR")] ushort* achPath);
 
         [DllImport("shlwapi", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int PathFileExistsA([NativeTypeName("LPCSTR")] sbyte* pszPath);
+        public static extern BOOL PathFileExistsA([NativeTypeName("LPCSTR")] sbyte* pszPath);
 
         [DllImport("shlwapi", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int PathFileExistsW([NativeTypeName("LPCWSTR")] ushort* pszPath);
+        public static extern BOOL PathFileExistsW([NativeTypeName("LPCWSTR")] ushort* pszPath);
 
         [DllImport("shlwapi", ExactSpelling = true)]
         [return: NativeTypeName("LPSTR")]
@@ -446,12 +420,10 @@ namespace TerraFX.Interop
         public static extern ushort* PathFindNextComponentW([NativeTypeName("LPCWSTR")] ushort* pszPath);
 
         [DllImport("shlwapi", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int PathFindOnPathA([NativeTypeName("LPSTR")] sbyte* pszPath, [NativeTypeName("PZPCSTR")] sbyte** ppszOtherDirs);
+        public static extern BOOL PathFindOnPathA([NativeTypeName("LPSTR")] sbyte* pszPath, [NativeTypeName("PZPCSTR")] sbyte** ppszOtherDirs);
 
         [DllImport("shlwapi", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int PathFindOnPathW([NativeTypeName("LPWSTR")] ushort* pszPath, [NativeTypeName("PZPCWSTR")] ushort** ppszOtherDirs);
+        public static extern BOOL PathFindOnPathW([NativeTypeName("LPWSTR")] ushort* pszPath, [NativeTypeName("PZPCWSTR")] ushort** ppszOtherDirs);
 
         [DllImport("shlwapi", ExactSpelling = true)]
         [return: NativeTypeName("LPCSTR")]
@@ -470,12 +442,10 @@ namespace TerraFX.Interop
         public static extern ushort* PathGetArgsW([NativeTypeName("LPCWSTR")] ushort* pszPath);
 
         [DllImport("shlwapi", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int PathIsLFNFileSpecA([NativeTypeName("LPCSTR")] sbyte* pszName);
+        public static extern BOOL PathIsLFNFileSpecA([NativeTypeName("LPCSTR")] sbyte* pszName);
 
         [DllImport("shlwapi", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int PathIsLFNFileSpecW([NativeTypeName("LPCWSTR")] ushort* pszName);
+        public static extern BOOL PathIsLFNFileSpecW([NativeTypeName("LPCWSTR")] ushort* pszName);
 
         [DllImport("shlwapi", ExactSpelling = true)]
         [return: NativeTypeName("UINT")]
@@ -492,124 +462,94 @@ namespace TerraFX.Interop
         public static extern int PathGetDriveNumberW([NativeTypeName("LPCWSTR")] ushort* pszPath);
 
         [DllImport("shlwapi", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int PathIsDirectoryA([NativeTypeName("LPCSTR")] sbyte* pszPath);
+        public static extern BOOL PathIsDirectoryA([NativeTypeName("LPCSTR")] sbyte* pszPath);
 
         [DllImport("shlwapi", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int PathIsDirectoryW([NativeTypeName("LPCWSTR")] ushort* pszPath);
+        public static extern BOOL PathIsDirectoryW([NativeTypeName("LPCWSTR")] ushort* pszPath);
 
         [DllImport("shlwapi", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int PathIsDirectoryEmptyA([NativeTypeName("LPCSTR")] sbyte* pszPath);
+        public static extern BOOL PathIsDirectoryEmptyA([NativeTypeName("LPCSTR")] sbyte* pszPath);
 
         [DllImport("shlwapi", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int PathIsDirectoryEmptyW([NativeTypeName("LPCWSTR")] ushort* pszPath);
+        public static extern BOOL PathIsDirectoryEmptyW([NativeTypeName("LPCWSTR")] ushort* pszPath);
 
         [DllImport("shlwapi", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int PathIsFileSpecA([NativeTypeName("LPCSTR")] sbyte* pszPath);
+        public static extern BOOL PathIsFileSpecA([NativeTypeName("LPCSTR")] sbyte* pszPath);
 
         [DllImport("shlwapi", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int PathIsFileSpecW([NativeTypeName("LPCWSTR")] ushort* pszPath);
+        public static extern BOOL PathIsFileSpecW([NativeTypeName("LPCWSTR")] ushort* pszPath);
 
         [DllImport("shlwapi", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int PathIsPrefixA([NativeTypeName("LPCSTR")] sbyte* pszPrefix, [NativeTypeName("LPCSTR")] sbyte* pszPath);
+        public static extern BOOL PathIsPrefixA([NativeTypeName("LPCSTR")] sbyte* pszPrefix, [NativeTypeName("LPCSTR")] sbyte* pszPath);
 
         [DllImport("shlwapi", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int PathIsPrefixW([NativeTypeName("LPCWSTR")] ushort* pszPrefix, [NativeTypeName("LPCWSTR")] ushort* pszPath);
+        public static extern BOOL PathIsPrefixW([NativeTypeName("LPCWSTR")] ushort* pszPrefix, [NativeTypeName("LPCWSTR")] ushort* pszPath);
 
         [DllImport("shlwapi", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int PathIsRelativeA([NativeTypeName("LPCSTR")] sbyte* pszPath);
+        public static extern BOOL PathIsRelativeA([NativeTypeName("LPCSTR")] sbyte* pszPath);
 
         [DllImport("shlwapi", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int PathIsRelativeW([NativeTypeName("LPCWSTR")] ushort* pszPath);
+        public static extern BOOL PathIsRelativeW([NativeTypeName("LPCWSTR")] ushort* pszPath);
 
         [DllImport("shlwapi", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int PathIsRootA([NativeTypeName("LPCSTR")] sbyte* pszPath);
+        public static extern BOOL PathIsRootA([NativeTypeName("LPCSTR")] sbyte* pszPath);
 
         [DllImport("shlwapi", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int PathIsRootW([NativeTypeName("LPCWSTR")] ushort* pszPath);
+        public static extern BOOL PathIsRootW([NativeTypeName("LPCWSTR")] ushort* pszPath);
 
         [DllImport("shlwapi", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int PathIsSameRootA([NativeTypeName("LPCSTR")] sbyte* pszPath1, [NativeTypeName("LPCSTR")] sbyte* pszPath2);
+        public static extern BOOL PathIsSameRootA([NativeTypeName("LPCSTR")] sbyte* pszPath1, [NativeTypeName("LPCSTR")] sbyte* pszPath2);
 
         [DllImport("shlwapi", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int PathIsSameRootW([NativeTypeName("LPCWSTR")] ushort* pszPath1, [NativeTypeName("LPCWSTR")] ushort* pszPath2);
+        public static extern BOOL PathIsSameRootW([NativeTypeName("LPCWSTR")] ushort* pszPath1, [NativeTypeName("LPCWSTR")] ushort* pszPath2);
 
         [DllImport("shlwapi", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int PathIsUNCA([NativeTypeName("LPCSTR")] sbyte* pszPath);
+        public static extern BOOL PathIsUNCA([NativeTypeName("LPCSTR")] sbyte* pszPath);
 
         [DllImport("shlwapi", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int PathIsUNCW([NativeTypeName("LPCWSTR")] ushort* pszPath);
+        public static extern BOOL PathIsUNCW([NativeTypeName("LPCWSTR")] ushort* pszPath);
 
         [DllImport("shlwapi", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int PathIsNetworkPathA([NativeTypeName("LPCSTR")] sbyte* pszPath);
+        public static extern BOOL PathIsNetworkPathA([NativeTypeName("LPCSTR")] sbyte* pszPath);
 
         [DllImport("shlwapi", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int PathIsNetworkPathW([NativeTypeName("LPCWSTR")] ushort* pszPath);
+        public static extern BOOL PathIsNetworkPathW([NativeTypeName("LPCWSTR")] ushort* pszPath);
 
         [DllImport("shlwapi", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int PathIsUNCServerA([NativeTypeName("LPCSTR")] sbyte* pszPath);
+        public static extern BOOL PathIsUNCServerA([NativeTypeName("LPCSTR")] sbyte* pszPath);
 
         [DllImport("shlwapi", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int PathIsUNCServerW([NativeTypeName("LPCWSTR")] ushort* pszPath);
+        public static extern BOOL PathIsUNCServerW([NativeTypeName("LPCWSTR")] ushort* pszPath);
 
         [DllImport("shlwapi", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int PathIsUNCServerShareA([NativeTypeName("LPCSTR")] sbyte* pszPath);
+        public static extern BOOL PathIsUNCServerShareA([NativeTypeName("LPCSTR")] sbyte* pszPath);
 
         [DllImport("shlwapi", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int PathIsUNCServerShareW([NativeTypeName("LPCWSTR")] ushort* pszPath);
+        public static extern BOOL PathIsUNCServerShareW([NativeTypeName("LPCWSTR")] ushort* pszPath);
 
         [DllImport("shlwapi", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int PathIsContentTypeA([NativeTypeName("LPCSTR")] sbyte* pszPath, [NativeTypeName("LPCSTR")] sbyte* pszContentType);
+        public static extern BOOL PathIsContentTypeA([NativeTypeName("LPCSTR")] sbyte* pszPath, [NativeTypeName("LPCSTR")] sbyte* pszContentType);
 
         [DllImport("shlwapi", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int PathIsContentTypeW([NativeTypeName("LPCWSTR")] ushort* pszPath, [NativeTypeName("LPCWSTR")] ushort* pszContentType);
+        public static extern BOOL PathIsContentTypeW([NativeTypeName("LPCWSTR")] ushort* pszPath, [NativeTypeName("LPCWSTR")] ushort* pszContentType);
 
         [DllImport("shlwapi", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int PathIsURLA([NativeTypeName("LPCSTR")] sbyte* pszPath);
+        public static extern BOOL PathIsURLA([NativeTypeName("LPCSTR")] sbyte* pszPath);
 
         [DllImport("shlwapi", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int PathIsURLW([NativeTypeName("LPCWSTR")] ushort* pszPath);
+        public static extern BOOL PathIsURLW([NativeTypeName("LPCWSTR")] ushort* pszPath);
 
         [DllImport("shlwapi", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int PathMakePrettyA([NativeTypeName("LPSTR")] sbyte* pszPath);
+        public static extern BOOL PathMakePrettyA([NativeTypeName("LPSTR")] sbyte* pszPath);
 
         [DllImport("shlwapi", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int PathMakePrettyW([NativeTypeName("LPWSTR")] ushort* pszPath);
+        public static extern BOOL PathMakePrettyW([NativeTypeName("LPWSTR")] ushort* pszPath);
 
         [DllImport("shlwapi", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int PathMatchSpecA([NativeTypeName("LPCSTR")] sbyte* pszFile, [NativeTypeName("LPCSTR")] sbyte* pszSpec);
+        public static extern BOOL PathMatchSpecA([NativeTypeName("LPCSTR")] sbyte* pszFile, [NativeTypeName("LPCSTR")] sbyte* pszSpec);
 
         [DllImport("shlwapi", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int PathMatchSpecW([NativeTypeName("LPCWSTR")] ushort* pszFile, [NativeTypeName("LPCWSTR")] ushort* pszSpec);
+        public static extern BOOL PathMatchSpecW([NativeTypeName("LPCWSTR")] ushort* pszFile, [NativeTypeName("LPCWSTR")] ushort* pszSpec);
 
         [DllImport("shlwapi", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
@@ -626,20 +566,16 @@ namespace TerraFX.Interop
         public static extern int PathParseIconLocationW([NativeTypeName("LPWSTR")] ushort* pszIconFile);
 
         [DllImport("shlwapi", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int PathQuoteSpacesA([NativeTypeName("LPSTR")] sbyte* lpsz);
+        public static extern BOOL PathQuoteSpacesA([NativeTypeName("LPSTR")] sbyte* lpsz);
 
         [DllImport("shlwapi", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int PathQuoteSpacesW([NativeTypeName("LPWSTR")] ushort* lpsz);
+        public static extern BOOL PathQuoteSpacesW([NativeTypeName("LPWSTR")] ushort* lpsz);
 
         [DllImport("shlwapi", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int PathRelativePathToA([NativeTypeName("LPSTR")] sbyte* pszPath, [NativeTypeName("LPCSTR")] sbyte* pszFrom, [NativeTypeName("DWORD")] uint dwAttrFrom, [NativeTypeName("LPCSTR")] sbyte* pszTo, [NativeTypeName("DWORD")] uint dwAttrTo);
+        public static extern BOOL PathRelativePathToA([NativeTypeName("LPSTR")] sbyte* pszPath, [NativeTypeName("LPCSTR")] sbyte* pszFrom, [NativeTypeName("DWORD")] uint dwAttrFrom, [NativeTypeName("LPCSTR")] sbyte* pszTo, [NativeTypeName("DWORD")] uint dwAttrTo);
 
         [DllImport("shlwapi", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int PathRelativePathToW([NativeTypeName("LPWSTR")] ushort* pszPath, [NativeTypeName("LPCWSTR")] ushort* pszFrom, [NativeTypeName("DWORD")] uint dwAttrFrom, [NativeTypeName("LPCWSTR")] ushort* pszTo, [NativeTypeName("DWORD")] uint dwAttrTo);
+        public static extern BOOL PathRelativePathToW([NativeTypeName("LPWSTR")] ushort* pszPath, [NativeTypeName("LPCWSTR")] ushort* pszFrom, [NativeTypeName("DWORD")] uint dwAttrFrom, [NativeTypeName("LPCWSTR")] ushort* pszTo, [NativeTypeName("DWORD")] uint dwAttrTo);
 
         [DllImport("shlwapi", ExactSpelling = true)]
         public static extern void PathRemoveArgsA([NativeTypeName("LPSTR")] sbyte* pszPath);
@@ -668,28 +604,22 @@ namespace TerraFX.Interop
         public static extern void PathRemoveExtensionW([NativeTypeName("LPWSTR")] ushort* pszPath);
 
         [DllImport("shlwapi", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int PathRemoveFileSpecA([NativeTypeName("LPSTR")] sbyte* pszPath);
+        public static extern BOOL PathRemoveFileSpecA([NativeTypeName("LPSTR")] sbyte* pszPath);
 
         [DllImport("shlwapi", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int PathRemoveFileSpecW([NativeTypeName("LPWSTR")] ushort* pszPath);
+        public static extern BOOL PathRemoveFileSpecW([NativeTypeName("LPWSTR")] ushort* pszPath);
 
         [DllImport("shlwapi", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int PathRenameExtensionA([NativeTypeName("LPSTR")] sbyte* pszPath, [NativeTypeName("LPCSTR")] sbyte* pszExt);
+        public static extern BOOL PathRenameExtensionA([NativeTypeName("LPSTR")] sbyte* pszPath, [NativeTypeName("LPCSTR")] sbyte* pszExt);
 
         [DllImport("shlwapi", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int PathRenameExtensionW([NativeTypeName("LPWSTR")] ushort* pszPath, [NativeTypeName("LPCWSTR")] ushort* pszExt);
+        public static extern BOOL PathRenameExtensionW([NativeTypeName("LPWSTR")] ushort* pszPath, [NativeTypeName("LPCWSTR")] ushort* pszExt);
 
         [DllImport("shlwapi", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int PathSearchAndQualifyA([NativeTypeName("LPCSTR")] sbyte* pszPath, [NativeTypeName("LPSTR")] sbyte* pszBuf, [NativeTypeName("UINT")] uint cchBuf);
+        public static extern BOOL PathSearchAndQualifyA([NativeTypeName("LPCSTR")] sbyte* pszPath, [NativeTypeName("LPSTR")] sbyte* pszBuf, [NativeTypeName("UINT")] uint cchBuf);
 
         [DllImport("shlwapi", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int PathSearchAndQualifyW([NativeTypeName("LPCWSTR")] ushort* pszPath, [NativeTypeName("LPWSTR")] ushort* pszBuf, [NativeTypeName("UINT")] uint cchBuf);
+        public static extern BOOL PathSearchAndQualifyW([NativeTypeName("LPCWSTR")] ushort* pszPath, [NativeTypeName("LPWSTR")] ushort* pszBuf, [NativeTypeName("UINT")] uint cchBuf);
 
         [DllImport("shlwapi", ExactSpelling = true)]
         public static extern void PathSetDlgItemPathA([NativeTypeName("HWND")] IntPtr hDlg, int id, [NativeTypeName("LPCSTR")] sbyte* pszPath);
@@ -712,44 +642,34 @@ namespace TerraFX.Interop
         public static extern void PathStripPathW([NativeTypeName("LPWSTR")] ushort* pszPath);
 
         [DllImport("shlwapi", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int PathStripToRootA([NativeTypeName("LPSTR")] sbyte* pszPath);
+        public static extern BOOL PathStripToRootA([NativeTypeName("LPSTR")] sbyte* pszPath);
 
         [DllImport("shlwapi", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int PathStripToRootW([NativeTypeName("LPWSTR")] ushort* pszPath);
+        public static extern BOOL PathStripToRootW([NativeTypeName("LPWSTR")] ushort* pszPath);
 
         [DllImport("shlwapi", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int PathUnquoteSpacesA([NativeTypeName("LPSTR")] sbyte* lpsz);
+        public static extern BOOL PathUnquoteSpacesA([NativeTypeName("LPSTR")] sbyte* lpsz);
 
         [DllImport("shlwapi", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int PathUnquoteSpacesW([NativeTypeName("LPWSTR")] ushort* lpsz);
+        public static extern BOOL PathUnquoteSpacesW([NativeTypeName("LPWSTR")] ushort* lpsz);
 
         [DllImport("shlwapi", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int PathMakeSystemFolderA([NativeTypeName("LPCSTR")] sbyte* pszPath);
+        public static extern BOOL PathMakeSystemFolderA([NativeTypeName("LPCSTR")] sbyte* pszPath);
 
         [DllImport("shlwapi", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int PathMakeSystemFolderW([NativeTypeName("LPCWSTR")] ushort* pszPath);
+        public static extern BOOL PathMakeSystemFolderW([NativeTypeName("LPCWSTR")] ushort* pszPath);
 
         [DllImport("shlwapi", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int PathUnmakeSystemFolderA([NativeTypeName("LPCSTR")] sbyte* pszPath);
+        public static extern BOOL PathUnmakeSystemFolderA([NativeTypeName("LPCSTR")] sbyte* pszPath);
 
         [DllImport("shlwapi", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int PathUnmakeSystemFolderW([NativeTypeName("LPCWSTR")] ushort* pszPath);
+        public static extern BOOL PathUnmakeSystemFolderW([NativeTypeName("LPCWSTR")] ushort* pszPath);
 
         [DllImport("shlwapi", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int PathIsSystemFolderA([NativeTypeName("LPCSTR")] sbyte* pszPath, [NativeTypeName("DWORD")] uint dwAttrb);
+        public static extern BOOL PathIsSystemFolderA([NativeTypeName("LPCSTR")] sbyte* pszPath, [NativeTypeName("DWORD")] uint dwAttrb);
 
         [DllImport("shlwapi", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int PathIsSystemFolderW([NativeTypeName("LPCWSTR")] ushort* pszPath, [NativeTypeName("DWORD")] uint dwAttrb);
+        public static extern BOOL PathIsSystemFolderW([NativeTypeName("LPCWSTR")] ushort* pszPath, [NativeTypeName("DWORD")] uint dwAttrb);
 
         [DllImport("shlwapi", ExactSpelling = true)]
         public static extern void PathUndecorateA([NativeTypeName("LPSTR")] sbyte* pszPath);
@@ -758,18 +678,16 @@ namespace TerraFX.Interop
         public static extern void PathUndecorateW([NativeTypeName("LPWSTR")] ushort* pszPath);
 
         [DllImport("shlwapi", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int PathUnExpandEnvStringsA([NativeTypeName("LPCSTR")] sbyte* pszPath, [NativeTypeName("LPSTR")] sbyte* pszBuf, [NativeTypeName("UINT")] uint cchBuf);
+        public static extern BOOL PathUnExpandEnvStringsA([NativeTypeName("LPCSTR")] sbyte* pszPath, [NativeTypeName("LPSTR")] sbyte* pszBuf, [NativeTypeName("UINT")] uint cchBuf);
 
         [DllImport("shlwapi", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int PathUnExpandEnvStringsW([NativeTypeName("LPCWSTR")] ushort* pszPath, [NativeTypeName("LPWSTR")] ushort* pszBuf, [NativeTypeName("UINT")] uint cchBuf);
+        public static extern BOOL PathUnExpandEnvStringsW([NativeTypeName("LPCWSTR")] ushort* pszPath, [NativeTypeName("LPWSTR")] ushort* pszBuf, [NativeTypeName("UINT")] uint cchBuf);
 
         [DllImport("shlwapi", ExactSpelling = true)]
-        public static extern int UrlCompareA([NativeTypeName("PCSTR")] sbyte* psz1, [NativeTypeName("PCSTR")] sbyte* psz2, [NativeTypeName("BOOL")] int fIgnoreSlash);
+        public static extern int UrlCompareA([NativeTypeName("PCSTR")] sbyte* psz1, [NativeTypeName("PCSTR")] sbyte* psz2, BOOL fIgnoreSlash);
 
         [DllImport("shlwapi", ExactSpelling = true)]
-        public static extern int UrlCompareW([NativeTypeName("PCWSTR")] ushort* psz1, [NativeTypeName("PCWSTR")] ushort* psz2, [NativeTypeName("BOOL")] int fIgnoreSlash);
+        public static extern int UrlCompareW([NativeTypeName("PCWSTR")] ushort* psz1, [NativeTypeName("PCWSTR")] ushort* psz2, BOOL fIgnoreSlash);
 
         [DllImport("shlwapi", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
@@ -788,28 +706,22 @@ namespace TerraFX.Interop
         public static extern int UrlCanonicalizeW([NativeTypeName("PCWSTR")] ushort* pszUrl, [NativeTypeName("PWSTR")] ushort* pszCanonicalized, [NativeTypeName("DWORD *")] uint* pcchCanonicalized, [NativeTypeName("DWORD")] uint dwFlags);
 
         [DllImport("shlwapi", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int UrlIsOpaqueA([NativeTypeName("PCSTR")] sbyte* pszURL);
+        public static extern BOOL UrlIsOpaqueA([NativeTypeName("PCSTR")] sbyte* pszURL);
 
         [DllImport("shlwapi", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int UrlIsOpaqueW([NativeTypeName("PCWSTR")] ushort* pszURL);
+        public static extern BOOL UrlIsOpaqueW([NativeTypeName("PCWSTR")] ushort* pszURL);
 
         [DllImport("shlwapi", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int UrlIsNoHistoryA([NativeTypeName("PCSTR")] sbyte* pszURL);
+        public static extern BOOL UrlIsNoHistoryA([NativeTypeName("PCSTR")] sbyte* pszURL);
 
         [DllImport("shlwapi", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int UrlIsNoHistoryW([NativeTypeName("PCWSTR")] ushort* pszURL);
+        public static extern BOOL UrlIsNoHistoryW([NativeTypeName("PCWSTR")] ushort* pszURL);
 
         [DllImport("shlwapi", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int UrlIsA([NativeTypeName("PCSTR")] sbyte* pszUrl, URLIS UrlIs);
+        public static extern BOOL UrlIsA([NativeTypeName("PCSTR")] sbyte* pszUrl, URLIS UrlIs);
 
         [DllImport("shlwapi", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int UrlIsW([NativeTypeName("PCWSTR")] ushort* pszUrl, URLIS UrlIs);
+        public static extern BOOL UrlIsW([NativeTypeName("PCWSTR")] ushort* pszUrl, URLIS UrlIs);
 
         [DllImport("shlwapi", ExactSpelling = true)]
         [return: NativeTypeName("LPCSTR")]
@@ -952,8 +864,7 @@ namespace TerraFX.Interop
         public static extern int SHRegGetValueFromHKCUHKLM([NativeTypeName("PCWSTR")] ushort* pwszKey, [NativeTypeName("PCWSTR")] ushort* pwszValue, [NativeTypeName("SRRF")] int srrfFlags, [NativeTypeName("DWORD *")] uint* pdwType, void* pvData, [NativeTypeName("DWORD *")] uint* pcbData);
 
         [DllImport("shlwapi", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SHRegGetBoolValueFromHKCUHKLM([NativeTypeName("PCWSTR")] ushort* pszKey, [NativeTypeName("PCWSTR")] ushort* pszValue, [NativeTypeName("BOOL")] int fDefault);
+        public static extern BOOL SHRegGetBoolValueFromHKCUHKLM([NativeTypeName("PCWSTR")] ushort* pszKey, [NativeTypeName("PCWSTR")] ushort* pszValue, BOOL fDefault);
 
         [DllImport("shlwapi", ExactSpelling = true)]
         [return: NativeTypeName("LSTATUS")]
@@ -1021,19 +932,19 @@ namespace TerraFX.Interop
 
         [DllImport("shlwapi", ExactSpelling = true)]
         [return: NativeTypeName("LSTATUS")]
-        public static extern int SHRegOpenUSKeyA([NativeTypeName("LPCSTR")] sbyte* pszPath, [NativeTypeName("REGSAM")] uint samDesired, [NativeTypeName("HUSKEY")] IntPtr hRelativeUSKey, [NativeTypeName("PHUSKEY")] IntPtr* phNewUSKey, [NativeTypeName("BOOL")] int fIgnoreHKCU);
+        public static extern int SHRegOpenUSKeyA([NativeTypeName("LPCSTR")] sbyte* pszPath, [NativeTypeName("REGSAM")] uint samDesired, [NativeTypeName("HUSKEY")] IntPtr hRelativeUSKey, [NativeTypeName("PHUSKEY")] IntPtr* phNewUSKey, BOOL fIgnoreHKCU);
 
         [DllImport("shlwapi", ExactSpelling = true)]
         [return: NativeTypeName("LSTATUS")]
-        public static extern int SHRegOpenUSKeyW([NativeTypeName("LPCWSTR")] ushort* pwzPath, [NativeTypeName("REGSAM")] uint samDesired, [NativeTypeName("HUSKEY")] IntPtr hRelativeUSKey, [NativeTypeName("PHUSKEY")] IntPtr* phNewUSKey, [NativeTypeName("BOOL")] int fIgnoreHKCU);
+        public static extern int SHRegOpenUSKeyW([NativeTypeName("LPCWSTR")] ushort* pwzPath, [NativeTypeName("REGSAM")] uint samDesired, [NativeTypeName("HUSKEY")] IntPtr hRelativeUSKey, [NativeTypeName("PHUSKEY")] IntPtr* phNewUSKey, BOOL fIgnoreHKCU);
 
         [DllImport("shlwapi", ExactSpelling = true)]
         [return: NativeTypeName("LSTATUS")]
-        public static extern int SHRegQueryUSValueA([NativeTypeName("HUSKEY")] IntPtr hUSKey, [NativeTypeName("LPCSTR")] sbyte* pszValue, [NativeTypeName("DWORD *")] uint* pdwType, void* pvData, [NativeTypeName("DWORD *")] uint* pcbData, [NativeTypeName("BOOL")] int fIgnoreHKCU, void* pvDefaultData, [NativeTypeName("DWORD")] uint dwDefaultDataSize);
+        public static extern int SHRegQueryUSValueA([NativeTypeName("HUSKEY")] IntPtr hUSKey, [NativeTypeName("LPCSTR")] sbyte* pszValue, [NativeTypeName("DWORD *")] uint* pdwType, void* pvData, [NativeTypeName("DWORD *")] uint* pcbData, BOOL fIgnoreHKCU, void* pvDefaultData, [NativeTypeName("DWORD")] uint dwDefaultDataSize);
 
         [DllImport("shlwapi", ExactSpelling = true)]
         [return: NativeTypeName("LSTATUS")]
-        public static extern int SHRegQueryUSValueW([NativeTypeName("HUSKEY")] IntPtr hUSKey, [NativeTypeName("LPCWSTR")] ushort* pszValue, [NativeTypeName("DWORD *")] uint* pdwType, void* pvData, [NativeTypeName("DWORD *")] uint* pcbData, [NativeTypeName("BOOL")] int fIgnoreHKCU, void* pvDefaultData, [NativeTypeName("DWORD")] uint dwDefaultDataSize);
+        public static extern int SHRegQueryUSValueW([NativeTypeName("HUSKEY")] IntPtr hUSKey, [NativeTypeName("LPCWSTR")] ushort* pszValue, [NativeTypeName("DWORD *")] uint* pdwType, void* pvData, [NativeTypeName("DWORD *")] uint* pcbData, BOOL fIgnoreHKCU, void* pvDefaultData, [NativeTypeName("DWORD")] uint dwDefaultDataSize);
 
         [DllImport("shlwapi", ExactSpelling = true)]
         [return: NativeTypeName("LSTATUS")]
@@ -1089,11 +1000,11 @@ namespace TerraFX.Interop
 
         [DllImport("shlwapi", ExactSpelling = true)]
         [return: NativeTypeName("LSTATUS")]
-        public static extern int SHRegGetUSValueA([NativeTypeName("LPCSTR")] sbyte* pszSubKey, [NativeTypeName("LPCSTR")] sbyte* pszValue, [NativeTypeName("DWORD *")] uint* pdwType, void* pvData, [NativeTypeName("DWORD *")] uint* pcbData, [NativeTypeName("BOOL")] int fIgnoreHKCU, void* pvDefaultData, [NativeTypeName("DWORD")] uint dwDefaultDataSize);
+        public static extern int SHRegGetUSValueA([NativeTypeName("LPCSTR")] sbyte* pszSubKey, [NativeTypeName("LPCSTR")] sbyte* pszValue, [NativeTypeName("DWORD *")] uint* pdwType, void* pvData, [NativeTypeName("DWORD *")] uint* pcbData, BOOL fIgnoreHKCU, void* pvDefaultData, [NativeTypeName("DWORD")] uint dwDefaultDataSize);
 
         [DllImport("shlwapi", ExactSpelling = true)]
         [return: NativeTypeName("LSTATUS")]
-        public static extern int SHRegGetUSValueW([NativeTypeName("LPCWSTR")] ushort* pszSubKey, [NativeTypeName("LPCWSTR")] ushort* pszValue, [NativeTypeName("DWORD *")] uint* pdwType, void* pvData, [NativeTypeName("DWORD *")] uint* pcbData, [NativeTypeName("BOOL")] int fIgnoreHKCU, void* pvDefaultData, [NativeTypeName("DWORD")] uint dwDefaultDataSize);
+        public static extern int SHRegGetUSValueW([NativeTypeName("LPCWSTR")] ushort* pszSubKey, [NativeTypeName("LPCWSTR")] ushort* pszValue, [NativeTypeName("DWORD *")] uint* pdwType, void* pvData, [NativeTypeName("DWORD *")] uint* pcbData, BOOL fIgnoreHKCU, void* pvDefaultData, [NativeTypeName("DWORD")] uint dwDefaultDataSize);
 
         [DllImport("shlwapi", ExactSpelling = true)]
         [return: NativeTypeName("LSTATUS")]
@@ -1107,12 +1018,10 @@ namespace TerraFX.Interop
         public static extern int SHRegGetIntW([NativeTypeName("HKEY")] IntPtr hk, [NativeTypeName("PCWSTR")] ushort* pwzKey, int iDefault);
 
         [DllImport("shlwapi", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SHRegGetBoolUSValueA([NativeTypeName("LPCSTR")] sbyte* pszSubKey, [NativeTypeName("LPCSTR")] sbyte* pszValue, [NativeTypeName("BOOL")] int fIgnoreHKCU, [NativeTypeName("BOOL")] int fDefault);
+        public static extern BOOL SHRegGetBoolUSValueA([NativeTypeName("LPCSTR")] sbyte* pszSubKey, [NativeTypeName("LPCSTR")] sbyte* pszValue, BOOL fIgnoreHKCU, BOOL fDefault);
 
         [DllImport("shlwapi", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SHRegGetBoolUSValueW([NativeTypeName("LPCWSTR")] ushort* pszSubKey, [NativeTypeName("LPCWSTR")] ushort* pszValue, [NativeTypeName("BOOL")] int fIgnoreHKCU, [NativeTypeName("BOOL")] int fDefault);
+        public static extern BOOL SHRegGetBoolUSValueW([NativeTypeName("LPCWSTR")] ushort* pszSubKey, [NativeTypeName("LPCWSTR")] ushort* pszValue, BOOL fIgnoreHKCU, BOOL fDefault);
 
         public const int ASSOCF_NONE = 0x00000000;
         public const int ASSOCF_INIT_NOREMAPCLSID = 0x00000001;
@@ -1163,8 +1072,7 @@ namespace TerraFX.Interop
         public static extern int AssocQueryKeyW([NativeTypeName("ASSOCF")] uint flags, ASSOCKEY key, [NativeTypeName("LPCWSTR")] ushort* pszAssoc, [NativeTypeName("LPCWSTR")] ushort* pszExtra, [NativeTypeName("HKEY *")] IntPtr* phkeyOut);
 
         [DllImport("shlwapi", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int AssocIsDangerous([NativeTypeName("PCWSTR")] ushort* pszAssoc);
+        public static extern BOOL AssocIsDangerous([NativeTypeName("PCWSTR")] ushort* pszAssoc);
 
         [DllImport("shlwapi", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
@@ -1192,7 +1100,7 @@ namespace TerraFX.Interop
 
         [DllImport("shlwapi", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
-        public static extern int SHCreateStreamOnFileEx([NativeTypeName("LPCWSTR")] ushort* pszFile, [NativeTypeName("DWORD")] uint grfMode, [NativeTypeName("DWORD")] uint dwAttributes, [NativeTypeName("BOOL")] int fCreate, IStream* pstmTemplate, IStream** ppstm);
+        public static extern int SHCreateStreamOnFileEx([NativeTypeName("LPCWSTR")] ushort* pszFile, [NativeTypeName("DWORD")] uint grfMode, [NativeTypeName("DWORD")] uint dwAttributes, BOOL fCreate, IStream* pstmTemplate, IStream** ppstm);
 
         [DllImport("shlwapi", ExactSpelling = true)]
         public static extern IStream* SHCreateMemStream([NativeTypeName("const BYTE *")] byte* pInit, [NativeTypeName("UINT")] uint cbInit);
@@ -1245,7 +1153,7 @@ namespace TerraFX.Interop
 
         [DllImport("shlwapi", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
-        public static extern int ConnectToConnectionPoint(IUnknown* punk, [NativeTypeName("const IID &")] Guid* riidEvent, [NativeTypeName("BOOL")] int fConnect, IUnknown* punkTarget, [NativeTypeName("DWORD *")] uint* pdwCookie, IConnectionPoint** ppcpOut);
+        public static extern int ConnectToConnectionPoint(IUnknown* punk, [NativeTypeName("const IID &")] Guid* riidEvent, BOOL fConnect, IUnknown* punkTarget, [NativeTypeName("DWORD *")] uint* pdwCookie, IConnectionPoint** ppcpOut);
 
         [DllImport("shlwapi", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
@@ -1312,23 +1220,20 @@ namespace TerraFX.Interop
         public static extern ushort SHStripMneumonicW([NativeTypeName("LPWSTR")] ushort* pszMenu);
 
         [DllImport("shlwapi", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int IsOS([NativeTypeName("DWORD")] uint dwOS);
+        public static extern BOOL IsOS([NativeTypeName("DWORD")] uint dwOS);
 
         [DllImport("shlwapi", ExactSpelling = true)]
         [return: NativeTypeName("HANDLE")]
         public static extern IntPtr SHAllocShared([NativeTypeName("const void *")] void* pvData, [NativeTypeName("DWORD")] uint dwSize, [NativeTypeName("DWORD")] uint dwProcessId);
 
         [DllImport("shlwapi", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SHFreeShared([NativeTypeName("HANDLE")] IntPtr hData, [NativeTypeName("DWORD")] uint dwProcessId);
+        public static extern BOOL SHFreeShared([NativeTypeName("HANDLE")] IntPtr hData, [NativeTypeName("DWORD")] uint dwProcessId);
 
         [DllImport("shlwapi", ExactSpelling = true)]
         public static extern void* SHLockShared([NativeTypeName("HANDLE")] IntPtr hData, [NativeTypeName("DWORD")] uint dwProcessId);
 
         [DllImport("shlwapi", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SHUnlockShared(void* pvData);
+        public static extern BOOL SHUnlockShared(void* pvData);
 
         [DllImport("shlwapi", ExactSpelling = true)]
         [return: NativeTypeName("UINT")]
@@ -1339,8 +1244,7 @@ namespace TerraFX.Interop
         public static extern int QISearch(void* that, [NativeTypeName("LPCQITAB")] QITAB* pqit, [NativeTypeName("const IID &")] Guid* riid, void** ppv);
 
         [DllImport("shlwapi", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SHIsLowMemoryMachine([NativeTypeName("DWORD")] uint dwType);
+        public static extern BOOL SHIsLowMemoryMachine([NativeTypeName("DWORD")] uint dwType);
 
         [DllImport("shlwapi", ExactSpelling = true)]
         public static extern int GetMenuPosFromID([NativeTypeName("HMENU")] IntPtr hmenu, [NativeTypeName("UINT")] uint id);
@@ -1366,8 +1270,7 @@ namespace TerraFX.Interop
         public static extern int SHGetThreadRef(IUnknown** ppunk);
 
         [DllImport("shlwapi", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SHSkipJunction(IBindCtx* pbc, [NativeTypeName("const CLSID *")] Guid* pclsid);
+        public static extern BOOL SHSkipJunction(IBindCtx* pbc, [NativeTypeName("const CLSID *")] Guid* pclsid);
 
         public const int CTF_INSIST = 0x00000001;
         public const int CTF_THREAD_REF = 0x00000002;
@@ -1386,12 +1289,10 @@ namespace TerraFX.Interop
         public const int CTF_NOADDREFLIB = 0x00002000;
 
         [DllImport("shlwapi", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SHCreateThread([NativeTypeName("LPTHREAD_START_ROUTINE")] delegate* unmanaged<void*, uint> pfnThreadProc, void* pData, [NativeTypeName("SHCT_FLAGS")] uint flags, [NativeTypeName("LPTHREAD_START_ROUTINE")] delegate* unmanaged<void*, uint> pfnCallback);
+        public static extern BOOL SHCreateThread([NativeTypeName("LPTHREAD_START_ROUTINE")] delegate* unmanaged<void*, uint> pfnThreadProc, void* pData, [NativeTypeName("SHCT_FLAGS")] uint flags, [NativeTypeName("LPTHREAD_START_ROUTINE")] delegate* unmanaged<void*, uint> pfnCallback);
 
         [DllImport("shlwapi", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SHCreateThreadWithHandle([NativeTypeName("LPTHREAD_START_ROUTINE")] delegate* unmanaged<void*, uint> pfnThreadProc, void* pData, [NativeTypeName("SHCT_FLAGS")] uint flags, [NativeTypeName("LPTHREAD_START_ROUTINE")] delegate* unmanaged<void*, uint> pfnCallback, [NativeTypeName("HANDLE *")] IntPtr* pHandle);
+        public static extern BOOL SHCreateThreadWithHandle([NativeTypeName("LPTHREAD_START_ROUTINE")] delegate* unmanaged<void*, uint> pfnThreadProc, void* pData, [NativeTypeName("SHCT_FLAGS")] uint flags, [NativeTypeName("LPTHREAD_START_ROUTINE")] delegate* unmanaged<void*, uint> pfnCallback, [NativeTypeName("HANDLE *")] IntPtr* pHandle);
 
         [DllImport("api-ms-win-shcore-thread-l1-1-0", ExactSpelling = true)]
         public static extern void SetProcessReference(IUnknown* punk);
@@ -1417,11 +1318,10 @@ namespace TerraFX.Interop
 
         [DllImport("shlwapi", ExactSpelling = true)]
         [return: NativeTypeName("COLORREF")]
-        public static extern uint ColorAdjustLuma([NativeTypeName("COLORREF")] uint clrRGB, int n, [NativeTypeName("BOOL")] int fScale);
+        public static extern uint ColorAdjustLuma([NativeTypeName("COLORREF")] uint clrRGB, int n, BOOL fScale);
 
         [DllImport("shlwapi", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int IsInternetESCEnabled();
+        public static extern BOOL IsInternetESCEnabled();
 
         [NativeTypeName("#define STIF_DEFAULT 0x00000000L")]
         public const int STIF_DEFAULT = 0x00000000;
@@ -1442,7 +1342,7 @@ namespace TerraFX.Interop
         public static delegate*<ushort*, ushort**, int> SHLocalStrDup => &SHLocalStrDupW;
 
         [NativeTypeName("#define IsCharSpace IsCharSpaceW")]
-        public static delegate*<ushort, int> IsCharSpace => &IsCharSpaceW;
+        public static delegate*<ushort, BOOL> IsCharSpace => &IsCharSpaceW;
 
         [NativeTypeName("#define StrCmpC StrCmpCW")]
         public static delegate*<ushort*, ushort*, int> StrCmpC => &StrCmpCW;
@@ -1496,10 +1396,10 @@ namespace TerraFX.Interop
         public static delegate*<ushort*, ushort*, ushort*> StrPBrk => &StrPBrkW;
 
         [NativeTypeName("#define StrToIntEx StrToIntExW")]
-        public static delegate*<ushort*, int, int*, int> StrToIntEx => &StrToIntExW;
+        public static delegate*<ushort*, int, int*, BOOL> StrToIntEx => &StrToIntExW;
 
         [NativeTypeName("#define StrToInt64Ex StrToInt64ExW")]
-        public static delegate*<ushort*, int, long*, int> StrToInt64Ex => &StrToInt64ExW;
+        public static delegate*<ushort*, int, long*, BOOL> StrToInt64Ex => &StrToInt64ExW;
 
         [NativeTypeName("#define StrFromTimeInterval StrFromTimeIntervalW")]
         public static delegate*<ushort*, uint, uint, int, int> StrFromTimeInterval => &StrFromTimeIntervalW;
@@ -1517,13 +1417,13 @@ namespace TerraFX.Interop
         public static delegate*<ushort*, ushort*, int, ushort*> StrNCat => &StrNCatW;
 
         [NativeTypeName("#define StrTrim StrTrimW")]
-        public static delegate*<ushort*, ushort*, int> StrTrim => &StrTrimW;
+        public static delegate*<ushort*, ushort*, BOOL> StrTrim => &StrTrimW;
 
         [NativeTypeName("#define StrCatBuff StrCatBuffW")]
         public static delegate*<ushort*, ushort*, int, ushort*> StrCatBuff => &StrCatBuffW;
 
         [NativeTypeName("#define ChrCmpI ChrCmpIW")]
-        public static delegate*<ushort, ushort, int> ChrCmpI => &ChrCmpIW;
+        public static delegate*<ushort, ushort, BOOL> ChrCmpI => &ChrCmpIW;
 
         [NativeTypeName("#define wvnsprintf wvnsprintfW")]
         public static delegate*<ushort*, int, ushort*, sbyte*, int> wvnsprintf => &wvnsprintfW;
@@ -1532,7 +1432,7 @@ namespace TerraFX.Interop
         public static delegate*<ushort*, int, ushort*, int> wnsprintf => &wnsprintfW;
 
         [NativeTypeName("#define StrIsIntlEqual StrIsIntlEqualW")]
-        public static delegate*<int, ushort*, ushort*, int, int> StrIsIntlEqual => &StrIsIntlEqualW;
+        public static delegate*<BOOL, ushort*, ushort*, int, BOOL> StrIsIntlEqual => &StrIsIntlEqualW;
 
         [NativeTypeName("#define StrCmpNC StrCmpNCW")]
         public static delegate*<ushort*, ushort*, int, int> StrCmpNC => &StrCmpNCW;
@@ -1607,7 +1507,7 @@ namespace TerraFX.Interop
         public static delegate*<ushort*, ushort*> PathAddBackslash => &PathAddBackslashW;
 
         [NativeTypeName("#define PathAddExtension PathAddExtensionW")]
-        public static delegate*<ushort*, ushort*, int> PathAddExtension => &PathAddExtensionW;
+        public static delegate*<ushort*, ushort*, BOOL> PathAddExtension => &PathAddExtensionW;
 
         [NativeTypeName("#define PathBuildRoot PathBuildRootW")]
         public static delegate*<ushort*, int, ushort*> PathBuildRoot => &PathBuildRootW;
@@ -1616,7 +1516,7 @@ namespace TerraFX.Interop
         public static delegate*<ushort*, ushort*, ushort*, ushort*> PathCombine => &PathCombineW;
 
         [NativeTypeName("#define PathFileExists PathFileExistsW")]
-        public static delegate*<ushort*, int> PathFileExists => &PathFileExistsW;
+        public static delegate*<ushort*, BOOL> PathFileExists => &PathFileExistsW;
 
         [NativeTypeName("#define PathFindExtension PathFindExtensionW")]
         public static delegate*<ushort*, ushort*> PathFindExtension => &PathFindExtensionW;
@@ -1634,7 +1534,7 @@ namespace TerraFX.Interop
         public static delegate*<ushort*, ushort*> PathGetArgs => &PathGetArgsW;
 
         [NativeTypeName("#define PathIsLFNFileSpec PathIsLFNFileSpecW")]
-        public static delegate*<ushort*, int> PathIsLFNFileSpec => &PathIsLFNFileSpecW;
+        public static delegate*<ushort*, BOOL> PathIsLFNFileSpec => &PathIsLFNFileSpecW;
 
         [NativeTypeName("#define GCT_INVALID 0x0000")]
         public const int GCT_INVALID = 0x0000;
@@ -1655,40 +1555,40 @@ namespace TerraFX.Interop
         public static delegate*<ushort*, int> PathGetDriveNumber => &PathGetDriveNumberW;
 
         [NativeTypeName("#define PathIsDirectory PathIsDirectoryW")]
-        public static delegate*<ushort*, int> PathIsDirectory => &PathIsDirectoryW;
+        public static delegate*<ushort*, BOOL> PathIsDirectory => &PathIsDirectoryW;
 
         [NativeTypeName("#define PathIsDirectoryEmpty PathIsDirectoryEmptyW")]
-        public static delegate*<ushort*, int> PathIsDirectoryEmpty => &PathIsDirectoryEmptyW;
+        public static delegate*<ushort*, BOOL> PathIsDirectoryEmpty => &PathIsDirectoryEmptyW;
 
         [NativeTypeName("#define PathIsFileSpec PathIsFileSpecW")]
-        public static delegate*<ushort*, int> PathIsFileSpec => &PathIsFileSpecW;
+        public static delegate*<ushort*, BOOL> PathIsFileSpec => &PathIsFileSpecW;
 
         [NativeTypeName("#define PathIsPrefix PathIsPrefixW")]
-        public static delegate*<ushort*, ushort*, int> PathIsPrefix => &PathIsPrefixW;
+        public static delegate*<ushort*, ushort*, BOOL> PathIsPrefix => &PathIsPrefixW;
 
         [NativeTypeName("#define PathIsRelative PathIsRelativeW")]
-        public static delegate*<ushort*, int> PathIsRelative => &PathIsRelativeW;
+        public static delegate*<ushort*, BOOL> PathIsRelative => &PathIsRelativeW;
 
         [NativeTypeName("#define PathIsRoot PathIsRootW")]
-        public static delegate*<ushort*, int> PathIsRoot => &PathIsRootW;
+        public static delegate*<ushort*, BOOL> PathIsRoot => &PathIsRootW;
 
         [NativeTypeName("#define PathIsSameRoot PathIsSameRootW")]
-        public static delegate*<ushort*, ushort*, int> PathIsSameRoot => &PathIsSameRootW;
+        public static delegate*<ushort*, ushort*, BOOL> PathIsSameRoot => &PathIsSameRootW;
 
         [NativeTypeName("#define PathIsUNC PathIsUNCW")]
-        public static delegate*<ushort*, int> PathIsUNC => &PathIsUNCW;
+        public static delegate*<ushort*, BOOL> PathIsUNC => &PathIsUNCW;
 
         [NativeTypeName("#define PathIsNetworkPath PathIsNetworkPathW")]
-        public static delegate*<ushort*, int> PathIsNetworkPath => &PathIsNetworkPathW;
+        public static delegate*<ushort*, BOOL> PathIsNetworkPath => &PathIsNetworkPathW;
 
         [NativeTypeName("#define PathIsUNCServer PathIsUNCServerW")]
-        public static delegate*<ushort*, int> PathIsUNCServer => &PathIsUNCServerW;
+        public static delegate*<ushort*, BOOL> PathIsUNCServer => &PathIsUNCServerW;
 
         [NativeTypeName("#define PathIsUNCServerShare PathIsUNCServerShareW")]
-        public static delegate*<ushort*, int> PathIsUNCServerShare => &PathIsUNCServerShareW;
+        public static delegate*<ushort*, BOOL> PathIsUNCServerShare => &PathIsUNCServerShareW;
 
         [NativeTypeName("#define PathIsURL PathIsURLW")]
-        public static delegate*<ushort*, int> PathIsURL => &PathIsURLW;
+        public static delegate*<ushort*, BOOL> PathIsURL => &PathIsURLW;
 
         [NativeTypeName("#define PMSF_NORMAL 0x00000000")]
         public const int PMSF_NORMAL = 0x00000000;
@@ -1709,52 +1609,52 @@ namespace TerraFX.Interop
         public static delegate*<ushort*, void> PathStripPath => &PathStripPathW;
 
         [NativeTypeName("#define PathStripToRoot PathStripToRootW")]
-        public static delegate*<ushort*, int> PathStripToRoot => &PathStripToRootW;
+        public static delegate*<ushort*, BOOL> PathStripToRoot => &PathStripToRootW;
 
         [NativeTypeName("#define PathMakeSystemFolder PathMakeSystemFolderW")]
-        public static delegate*<ushort*, int> PathMakeSystemFolder => &PathMakeSystemFolderW;
+        public static delegate*<ushort*, BOOL> PathMakeSystemFolder => &PathMakeSystemFolderW;
 
         [NativeTypeName("#define PathUnmakeSystemFolder PathUnmakeSystemFolderW")]
-        public static delegate*<ushort*, int> PathUnmakeSystemFolder => &PathUnmakeSystemFolderW;
+        public static delegate*<ushort*, BOOL> PathUnmakeSystemFolder => &PathUnmakeSystemFolderW;
 
         [NativeTypeName("#define PathIsSystemFolder PathIsSystemFolderW")]
-        public static delegate*<ushort*, uint, int> PathIsSystemFolder => &PathIsSystemFolderW;
+        public static delegate*<ushort*, uint, BOOL> PathIsSystemFolder => &PathIsSystemFolderW;
 
         [NativeTypeName("#define PathUndecorate PathUndecorateW")]
         public static delegate*<ushort*, void> PathUndecorate => &PathUndecorateW;
 
         [NativeTypeName("#define PathUnExpandEnvStrings PathUnExpandEnvStringsW")]
-        public static delegate*<ushort*, ushort*, uint, int> PathUnExpandEnvStrings => &PathUnExpandEnvStringsW;
+        public static delegate*<ushort*, ushort*, uint, BOOL> PathUnExpandEnvStrings => &PathUnExpandEnvStringsW;
 
         [NativeTypeName("#define PathAppend PathAppendW")]
-        public static delegate*<ushort*, ushort*, int> PathAppend => &PathAppendW;
+        public static delegate*<ushort*, ushort*, BOOL> PathAppend => &PathAppendW;
 
         [NativeTypeName("#define PathCanonicalize PathCanonicalizeW")]
-        public static delegate*<ushort*, ushort*, int> PathCanonicalize => &PathCanonicalizeW;
+        public static delegate*<ushort*, ushort*, BOOL> PathCanonicalize => &PathCanonicalizeW;
 
         [NativeTypeName("#define PathCompactPath PathCompactPathW")]
-        public static delegate*<IntPtr, ushort*, uint, int> PathCompactPath => &PathCompactPathW;
+        public static delegate*<IntPtr, ushort*, uint, BOOL> PathCompactPath => &PathCompactPathW;
 
         [NativeTypeName("#define PathCompactPathEx PathCompactPathExW")]
-        public static delegate*<ushort*, ushort*, uint, uint, int> PathCompactPathEx => &PathCompactPathExW;
+        public static delegate*<ushort*, ushort*, uint, uint, BOOL> PathCompactPathEx => &PathCompactPathExW;
 
         [NativeTypeName("#define PathCommonPrefix PathCommonPrefixW")]
         public static delegate*<ushort*, ushort*, ushort*, int> PathCommonPrefix => &PathCommonPrefixW;
 
         [NativeTypeName("#define PathFindOnPath PathFindOnPathW")]
-        public static delegate*<ushort*, ushort**, int> PathFindOnPath => &PathFindOnPathW;
+        public static delegate*<ushort*, ushort**, BOOL> PathFindOnPath => &PathFindOnPathW;
 
         [NativeTypeName("#define PathGetCharType PathGetCharTypeW")]
         public static delegate*<ushort, uint> PathGetCharType => &PathGetCharTypeW;
 
         [NativeTypeName("#define PathIsContentType PathIsContentTypeW")]
-        public static delegate*<ushort*, ushort*, int> PathIsContentType => &PathIsContentTypeW;
+        public static delegate*<ushort*, ushort*, BOOL> PathIsContentType => &PathIsContentTypeW;
 
         [NativeTypeName("#define PathMakePretty PathMakePrettyW")]
-        public static delegate*<ushort*, int> PathMakePretty => &PathMakePrettyW;
+        public static delegate*<ushort*, BOOL> PathMakePretty => &PathMakePrettyW;
 
         [NativeTypeName("#define PathMatchSpec PathMatchSpecW")]
-        public static delegate*<ushort*, ushort*, int> PathMatchSpec => &PathMatchSpecW;
+        public static delegate*<ushort*, ushort*, BOOL> PathMatchSpec => &PathMatchSpecW;
 
         [NativeTypeName("#define PathMatchSpecEx PathMatchSpecExW")]
         public static delegate*<ushort*, ushort*, uint, int> PathMatchSpecEx => &PathMatchSpecExW;
@@ -1763,10 +1663,10 @@ namespace TerraFX.Interop
         public static delegate*<ushort*, int> PathParseIconLocation => &PathParseIconLocationW;
 
         [NativeTypeName("#define PathQuoteSpaces PathQuoteSpacesW")]
-        public static delegate*<ushort*, int> PathQuoteSpaces => &PathQuoteSpacesW;
+        public static delegate*<ushort*, BOOL> PathQuoteSpaces => &PathQuoteSpacesW;
 
         [NativeTypeName("#define PathRelativePathTo PathRelativePathToW")]
-        public static delegate*<ushort*, ushort*, uint, ushort*, uint, int> PathRelativePathTo => &PathRelativePathToW;
+        public static delegate*<ushort*, ushort*, uint, ushort*, uint, BOOL> PathRelativePathTo => &PathRelativePathToW;
 
         [NativeTypeName("#define PathRemoveArgs PathRemoveArgsW")]
         public static delegate*<ushort*, void> PathRemoveArgs => &PathRemoveArgsW;
@@ -1778,19 +1678,19 @@ namespace TerraFX.Interop
         public static delegate*<ushort*, void> PathRemoveExtension => &PathRemoveExtensionW;
 
         [NativeTypeName("#define PathRemoveFileSpec PathRemoveFileSpecW")]
-        public static delegate*<ushort*, int> PathRemoveFileSpec => &PathRemoveFileSpecW;
+        public static delegate*<ushort*, BOOL> PathRemoveFileSpec => &PathRemoveFileSpecW;
 
         [NativeTypeName("#define PathRenameExtension PathRenameExtensionW")]
-        public static delegate*<ushort*, ushort*, int> PathRenameExtension => &PathRenameExtensionW;
+        public static delegate*<ushort*, ushort*, BOOL> PathRenameExtension => &PathRenameExtensionW;
 
         [NativeTypeName("#define PathSearchAndQualify PathSearchAndQualifyW")]
-        public static delegate*<ushort*, ushort*, uint, int> PathSearchAndQualify => &PathSearchAndQualifyW;
+        public static delegate*<ushort*, ushort*, uint, BOOL> PathSearchAndQualify => &PathSearchAndQualifyW;
 
         [NativeTypeName("#define PathSetDlgItemPath PathSetDlgItemPathW")]
         public static delegate*<IntPtr, int, ushort*, void> PathSetDlgItemPath => &PathSetDlgItemPathW;
 
         [NativeTypeName("#define PathUnquoteSpaces PathUnquoteSpacesW")]
-        public static delegate*<ushort*, int> PathUnquoteSpaces => &PathUnquoteSpacesW;
+        public static delegate*<ushort*, BOOL> PathUnquoteSpaces => &PathUnquoteSpacesW;
 
         [NativeTypeName("#define URL_UNESCAPE 0x10000000")]
         public const int URL_UNESCAPE = 0x10000000;
@@ -1877,7 +1777,7 @@ namespace TerraFX.Interop
         public const int URL_APPLY_FORCEAPPLY = 0x00000008;
 
         [NativeTypeName("#define UrlCompare UrlCompareW")]
-        public static delegate*<ushort*, ushort*, int, int> UrlCompare => &UrlCompareW;
+        public static delegate*<ushort*, ushort*, BOOL, int> UrlCompare => &UrlCompareW;
 
         [NativeTypeName("#define UrlCombine UrlCombineW")]
         public static delegate*<ushort*, ushort*, ushort*, uint*, uint, int> UrlCombine => &UrlCombineW;
@@ -1886,7 +1786,7 @@ namespace TerraFX.Interop
         public static delegate*<ushort*, ushort*, uint*, uint, int> UrlCanonicalize => &UrlCanonicalizeW;
 
         [NativeTypeName("#define UrlIsOpaque UrlIsOpaqueW")]
-        public static delegate*<ushort*, int> UrlIsOpaque => &UrlIsOpaqueW;
+        public static delegate*<ushort*, BOOL> UrlIsOpaque => &UrlIsOpaqueW;
 
         [NativeTypeName("#define UrlGetLocation UrlGetLocationW")]
         public static delegate*<ushort*, ushort*> UrlGetLocation => &UrlGetLocationW;
@@ -1913,7 +1813,7 @@ namespace TerraFX.Interop
         public static delegate*<ushort*, ushort*, uint*, uint, int> UrlApplyScheme => &UrlApplySchemeW;
 
         [NativeTypeName("#define UrlIs UrlIsW")]
-        public static delegate*<ushort*, URLIS, int> UrlIs => &UrlIsW;
+        public static delegate*<ushort*, URLIS, BOOL> UrlIs => &UrlIsW;
 
         [NativeTypeName("#define UrlFixup UrlFixupW")]
         public static delegate*<ushort*, ushort*, uint, int> UrlFixup => &UrlFixupW;
@@ -2030,10 +1930,10 @@ namespace TerraFX.Interop
         public static delegate*<ushort*, uint, IntPtr, IntPtr*, uint, int> SHRegCreateUSKey => &SHRegCreateUSKeyW;
 
         [NativeTypeName("#define SHRegOpenUSKey SHRegOpenUSKeyW")]
-        public static delegate*<ushort*, uint, IntPtr, IntPtr*, int, int> SHRegOpenUSKey => &SHRegOpenUSKeyW;
+        public static delegate*<ushort*, uint, IntPtr, IntPtr*, BOOL, int> SHRegOpenUSKey => &SHRegOpenUSKeyW;
 
         [NativeTypeName("#define SHRegQueryUSValue SHRegQueryUSValueW")]
-        public static delegate*<IntPtr, ushort*, uint*, void*, uint*, int, void*, uint, int> SHRegQueryUSValue => &SHRegQueryUSValueW;
+        public static delegate*<IntPtr, ushort*, uint*, void*, uint*, BOOL, void*, uint, int> SHRegQueryUSValue => &SHRegQueryUSValueW;
 
         [NativeTypeName("#define SHRegWriteUSValue SHRegWriteUSValueW")]
         public static delegate*<IntPtr, ushort*, uint, void*, uint, uint, int> SHRegWriteUSValue => &SHRegWriteUSValueW;
@@ -2054,7 +1954,7 @@ namespace TerraFX.Interop
         public static delegate*<IntPtr, uint*, uint*, uint*, uint*, SHREGENUM_FLAGS, int> SHRegQueryInfoUSKey => &SHRegQueryInfoUSKeyW;
 
         [NativeTypeName("#define SHRegGetUSValue SHRegGetUSValueW")]
-        public static delegate*<ushort*, ushort*, uint*, void*, uint*, int, void*, uint, int> SHRegGetUSValue => &SHRegGetUSValueW;
+        public static delegate*<ushort*, ushort*, uint*, void*, uint*, BOOL, void*, uint, int> SHRegGetUSValue => &SHRegGetUSValueW;
 
         [NativeTypeName("#define SHRegSetUSValue SHRegSetUSValueW")]
         public static delegate*<ushort*, ushort*, uint, void*, uint, uint, int> SHRegSetUSValue => &SHRegSetUSValueW;
@@ -2063,7 +1963,7 @@ namespace TerraFX.Interop
         public static delegate*<IntPtr, ushort*, int, int> SHRegGetInt => &SHRegGetIntW;
 
         [NativeTypeName("#define SHRegGetBoolUSValue SHRegGetBoolUSValueW")]
-        public static delegate*<ushort*, ushort*, int, int, int> SHRegGetBoolUSValue => &SHRegGetBoolUSValueW;
+        public static delegate*<ushort*, ushort*, BOOL, BOOL, BOOL> SHRegGetBoolUSValue => &SHRegGetBoolUSValueW;
 
         [NativeTypeName("#define AssocQueryString AssocQueryStringW")]
         public static delegate*<uint, ASSOCSTR, ushort*, ushort*, ushort*, uint*, int> AssocQueryString => &AssocQueryStringW;

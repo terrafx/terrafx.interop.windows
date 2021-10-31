@@ -67,9 +67,9 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
         [return: NativeTypeName("HRESULT")]
-        public int Save(IStream* pStm, [NativeTypeName("BOOL")] int fClearDirty)
+        public int Save(IStream* pStm, BOOL fClearDirty)
         {
-            return ((delegate* unmanaged<IWICPersistStream*, IStream*, int, int>)(lpVtbl[6]))((IWICPersistStream*)Unsafe.AsPointer(ref this), pStm, fClearDirty);
+            return ((delegate* unmanaged<IWICPersistStream*, IStream*, BOOL, int>)(lpVtbl[6]))((IWICPersistStream*)Unsafe.AsPointer(ref this), pStm, fClearDirty);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -91,9 +91,9 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(9)]
         [return: NativeTypeName("HRESULT")]
-        public int SaveEx(IStream* pIStream, [NativeTypeName("DWORD")] uint dwPersistOptions, [NativeTypeName("BOOL")] int fClearDirty)
+        public int SaveEx(IStream* pIStream, [NativeTypeName("DWORD")] uint dwPersistOptions, BOOL fClearDirty)
         {
-            return ((delegate* unmanaged<IWICPersistStream*, IStream*, uint, int, int>)(lpVtbl[9]))((IWICPersistStream*)Unsafe.AsPointer(ref this), pIStream, dwPersistOptions, fClearDirty);
+            return ((delegate* unmanaged<IWICPersistStream*, IStream*, uint, BOOL, int>)(lpVtbl[9]))((IWICPersistStream*)Unsafe.AsPointer(ref this), pIStream, dwPersistOptions, fClearDirty);
         }
     }
 }

@@ -21,10 +21,10 @@ namespace TerraFX.Interop
         [NativeTypeName("HWND")]
         public IntPtr hwndMenu;
 
-        public int _bitfield;
+        public BOOL _bitfield;
 
         [NativeTypeName("BOOL : 1")]
-        public int fBarFocused
+        public BOOL fBarFocused
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
@@ -40,7 +40,7 @@ namespace TerraFX.Interop
         }
 
         [NativeTypeName("BOOL : 1")]
-        public int fFocused
+        public BOOL fFocused
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
@@ -56,7 +56,7 @@ namespace TerraFX.Interop
         }
 
         [NativeTypeName("BOOL : 30")]
-        public int fUnused
+        public BOOL fUnused
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get

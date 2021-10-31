@@ -14,8 +14,7 @@ namespace TerraFX.Interop
 
         public RECT DesktopCoordinates;
 
-        [NativeTypeName("BOOL")]
-        public int AttachedToDesktop;
+        public BOOL AttachedToDesktop;
 
         public DXGI_MODE_ROTATION Rotation;
 

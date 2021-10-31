@@ -43,17 +43,17 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
         [return: NativeTypeName("HRESULT")]
-        public int EvaluateUrl([NativeTypeName("BSTR")] ushort* bstrUrl, [NativeTypeName("BOOL *")] int* pfAllowed)
+        public int EvaluateUrl([NativeTypeName("BSTR")] ushort* bstrUrl, BOOL* pfAllowed)
         {
-            return ((delegate* unmanaged<ITrackingProtection*, ushort*, int*, int>)(lpVtbl[3]))((ITrackingProtection*)Unsafe.AsPointer(ref this), bstrUrl, pfAllowed);
+            return ((delegate* unmanaged<ITrackingProtection*, ushort*, BOOL*, int>)(lpVtbl[3]))((ITrackingProtection*)Unsafe.AsPointer(ref this), bstrUrl, pfAllowed);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
         [return: NativeTypeName("HRESULT")]
-        public int GetEnabled([NativeTypeName("BOOL *")] int* pfEnabled)
+        public int GetEnabled(BOOL* pfEnabled)
         {
-            return ((delegate* unmanaged<ITrackingProtection*, int*, int>)(lpVtbl[4]))((ITrackingProtection*)Unsafe.AsPointer(ref this), pfEnabled);
+            return ((delegate* unmanaged<ITrackingProtection*, BOOL*, int>)(lpVtbl[4]))((ITrackingProtection*)Unsafe.AsPointer(ref this), pfEnabled);
         }
     }
 }

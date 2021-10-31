@@ -137,8 +137,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(15)]
-        [return: NativeTypeName("BOOL")]
-        public int IsSeeking()
+        public BOOL IsSeeking()
         {
             return ((delegate* unmanaged<IMFMediaEngineEx*, int>)(lpVtbl[15]))((IMFMediaEngineEx*)Unsafe.AsPointer(ref this));
         }
@@ -174,8 +173,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(20)]
-        [return: NativeTypeName("BOOL")]
-        public int IsPaused()
+        public BOOL IsPaused()
         {
             return ((delegate* unmanaged<IMFMediaEngineEx*, int>)(lpVtbl[20]))((IMFMediaEngineEx*)Unsafe.AsPointer(ref this));
         }
@@ -228,16 +226,14 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(27)]
-        [return: NativeTypeName("BOOL")]
-        public int IsEnded()
+        public BOOL IsEnded()
         {
             return ((delegate* unmanaged<IMFMediaEngineEx*, int>)(lpVtbl[27]))((IMFMediaEngineEx*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(28)]
-        [return: NativeTypeName("BOOL")]
-        public int GetAutoPlay()
+        public BOOL GetAutoPlay()
         {
             return ((delegate* unmanaged<IMFMediaEngineEx*, int>)(lpVtbl[28]))((IMFMediaEngineEx*)Unsafe.AsPointer(ref this));
         }
@@ -245,15 +241,14 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(29)]
         [return: NativeTypeName("HRESULT")]
-        public int SetAutoPlay([NativeTypeName("BOOL")] int AutoPlay)
+        public int SetAutoPlay(BOOL AutoPlay)
         {
-            return ((delegate* unmanaged<IMFMediaEngineEx*, int, int>)(lpVtbl[29]))((IMFMediaEngineEx*)Unsafe.AsPointer(ref this), AutoPlay);
+            return ((delegate* unmanaged<IMFMediaEngineEx*, BOOL, int>)(lpVtbl[29]))((IMFMediaEngineEx*)Unsafe.AsPointer(ref this), AutoPlay);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(30)]
-        [return: NativeTypeName("BOOL")]
-        public int GetLoop()
+        public BOOL GetLoop()
         {
             return ((delegate* unmanaged<IMFMediaEngineEx*, int>)(lpVtbl[30]))((IMFMediaEngineEx*)Unsafe.AsPointer(ref this));
         }
@@ -261,9 +256,9 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(31)]
         [return: NativeTypeName("HRESULT")]
-        public int SetLoop([NativeTypeName("BOOL")] int Loop)
+        public int SetLoop(BOOL Loop)
         {
-            return ((delegate* unmanaged<IMFMediaEngineEx*, int, int>)(lpVtbl[31]))((IMFMediaEngineEx*)Unsafe.AsPointer(ref this), Loop);
+            return ((delegate* unmanaged<IMFMediaEngineEx*, BOOL, int>)(lpVtbl[31]))((IMFMediaEngineEx*)Unsafe.AsPointer(ref this), Loop);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -284,8 +279,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(34)]
-        [return: NativeTypeName("BOOL")]
-        public int GetMuted()
+        public BOOL GetMuted()
         {
             return ((delegate* unmanaged<IMFMediaEngineEx*, int>)(lpVtbl[34]))((IMFMediaEngineEx*)Unsafe.AsPointer(ref this));
         }
@@ -293,9 +287,9 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(35)]
         [return: NativeTypeName("HRESULT")]
-        public int SetMuted([NativeTypeName("BOOL")] int Muted)
+        public int SetMuted(BOOL Muted)
         {
-            return ((delegate* unmanaged<IMFMediaEngineEx*, int, int>)(lpVtbl[35]))((IMFMediaEngineEx*)Unsafe.AsPointer(ref this), Muted);
+            return ((delegate* unmanaged<IMFMediaEngineEx*, BOOL, int>)(lpVtbl[35]))((IMFMediaEngineEx*)Unsafe.AsPointer(ref this), Muted);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -315,16 +309,14 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(38)]
-        [return: NativeTypeName("BOOL")]
-        public int HasVideo()
+        public BOOL HasVideo()
         {
             return ((delegate* unmanaged<IMFMediaEngineEx*, int>)(lpVtbl[38]))((IMFMediaEngineEx*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(39)]
-        [return: NativeTypeName("BOOL")]
-        public int HasAudio()
+        public BOOL HasAudio()
         {
             return ((delegate* unmanaged<IMFMediaEngineEx*, int>)(lpVtbl[39]))((IMFMediaEngineEx*)Unsafe.AsPointer(ref this));
         }
@@ -410,8 +402,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(50)]
-        [return: NativeTypeName("BOOL")]
-        public int IsPlaybackRateSupported(double rate)
+        public BOOL IsPlaybackRateSupported(double rate)
         {
             return ((delegate* unmanaged<IMFMediaEngineEx*, double, int>)(lpVtbl[50]))((IMFMediaEngineEx*)Unsafe.AsPointer(ref this), rate);
         }
@@ -419,9 +410,9 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(51)]
         [return: NativeTypeName("HRESULT")]
-        public int FrameStep([NativeTypeName("BOOL")] int Forward)
+        public int FrameStep(BOOL Forward)
         {
-            return ((delegate* unmanaged<IMFMediaEngineEx*, int, int>)(lpVtbl[51]))((IMFMediaEngineEx*)Unsafe.AsPointer(ref this), Forward);
+            return ((delegate* unmanaged<IMFMediaEngineEx*, BOOL, int>)(lpVtbl[51]))((IMFMediaEngineEx*)Unsafe.AsPointer(ref this), Forward);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -459,17 +450,17 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(56)]
         [return: NativeTypeName("HRESULT")]
-        public int GetStreamSelection([NativeTypeName("DWORD")] uint dwStreamIndex, [NativeTypeName("BOOL *")] int* pEnabled)
+        public int GetStreamSelection([NativeTypeName("DWORD")] uint dwStreamIndex, BOOL* pEnabled)
         {
-            return ((delegate* unmanaged<IMFMediaEngineEx*, uint, int*, int>)(lpVtbl[56]))((IMFMediaEngineEx*)Unsafe.AsPointer(ref this), dwStreamIndex, pEnabled);
+            return ((delegate* unmanaged<IMFMediaEngineEx*, uint, BOOL*, int>)(lpVtbl[56]))((IMFMediaEngineEx*)Unsafe.AsPointer(ref this), dwStreamIndex, pEnabled);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(57)]
         [return: NativeTypeName("HRESULT")]
-        public int SetStreamSelection([NativeTypeName("DWORD")] uint dwStreamIndex, [NativeTypeName("BOOL")] int Enabled)
+        public int SetStreamSelection([NativeTypeName("DWORD")] uint dwStreamIndex, BOOL Enabled)
         {
-            return ((delegate* unmanaged<IMFMediaEngineEx*, uint, int, int>)(lpVtbl[57]))((IMFMediaEngineEx*)Unsafe.AsPointer(ref this), dwStreamIndex, Enabled);
+            return ((delegate* unmanaged<IMFMediaEngineEx*, uint, BOOL, int>)(lpVtbl[57]))((IMFMediaEngineEx*)Unsafe.AsPointer(ref this), dwStreamIndex, Enabled);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -483,25 +474,25 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(59)]
         [return: NativeTypeName("HRESULT")]
-        public int IsProtected([NativeTypeName("BOOL *")] int* pProtected)
+        public int IsProtected(BOOL* pProtected)
         {
-            return ((delegate* unmanaged<IMFMediaEngineEx*, int*, int>)(lpVtbl[59]))((IMFMediaEngineEx*)Unsafe.AsPointer(ref this), pProtected);
+            return ((delegate* unmanaged<IMFMediaEngineEx*, BOOL*, int>)(lpVtbl[59]))((IMFMediaEngineEx*)Unsafe.AsPointer(ref this), pProtected);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(60)]
         [return: NativeTypeName("HRESULT")]
-        public int InsertVideoEffect(IUnknown* pEffect, [NativeTypeName("BOOL")] int fOptional)
+        public int InsertVideoEffect(IUnknown* pEffect, BOOL fOptional)
         {
-            return ((delegate* unmanaged<IMFMediaEngineEx*, IUnknown*, int, int>)(lpVtbl[60]))((IMFMediaEngineEx*)Unsafe.AsPointer(ref this), pEffect, fOptional);
+            return ((delegate* unmanaged<IMFMediaEngineEx*, IUnknown*, BOOL, int>)(lpVtbl[60]))((IMFMediaEngineEx*)Unsafe.AsPointer(ref this), pEffect, fOptional);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(61)]
         [return: NativeTypeName("HRESULT")]
-        public int InsertAudioEffect(IUnknown* pEffect, [NativeTypeName("BOOL")] int fOptional)
+        public int InsertAudioEffect(IUnknown* pEffect, BOOL fOptional)
         {
-            return ((delegate* unmanaged<IMFMediaEngineEx*, IUnknown*, int, int>)(lpVtbl[61]))((IMFMediaEngineEx*)Unsafe.AsPointer(ref this), pEffect, fOptional);
+            return ((delegate* unmanaged<IMFMediaEngineEx*, IUnknown*, BOOL, int>)(lpVtbl[61]))((IMFMediaEngineEx*)Unsafe.AsPointer(ref this), pEffect, fOptional);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -538,8 +529,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(66)]
-        [return: NativeTypeName("BOOL")]
-        public int IsStereo3D()
+        public BOOL IsStereo3D()
         {
             return ((delegate* unmanaged<IMFMediaEngineEx*, int>)(lpVtbl[66]))((IMFMediaEngineEx*)Unsafe.AsPointer(ref this));
         }
@@ -579,9 +569,9 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(71)]
         [return: NativeTypeName("HRESULT")]
-        public int EnableWindowlessSwapchainMode([NativeTypeName("BOOL")] int fEnable)
+        public int EnableWindowlessSwapchainMode(BOOL fEnable)
         {
-            return ((delegate* unmanaged<IMFMediaEngineEx*, int, int>)(lpVtbl[71]))((IMFMediaEngineEx*)Unsafe.AsPointer(ref this), fEnable);
+            return ((delegate* unmanaged<IMFMediaEngineEx*, BOOL, int>)(lpVtbl[71]))((IMFMediaEngineEx*)Unsafe.AsPointer(ref this), fEnable);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -595,9 +585,9 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(73)]
         [return: NativeTypeName("HRESULT")]
-        public int EnableHorizontalMirrorMode([NativeTypeName("BOOL")] int fEnable)
+        public int EnableHorizontalMirrorMode(BOOL fEnable)
         {
-            return ((delegate* unmanaged<IMFMediaEngineEx*, int, int>)(lpVtbl[73]))((IMFMediaEngineEx*)Unsafe.AsPointer(ref this), fEnable);
+            return ((delegate* unmanaged<IMFMediaEngineEx*, BOOL, int>)(lpVtbl[73]))((IMFMediaEngineEx*)Unsafe.AsPointer(ref this), fEnable);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -635,17 +625,17 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(78)]
         [return: NativeTypeName("HRESULT")]
-        public int GetRealTimeMode([NativeTypeName("BOOL *")] int* pfEnabled)
+        public int GetRealTimeMode(BOOL* pfEnabled)
         {
-            return ((delegate* unmanaged<IMFMediaEngineEx*, int*, int>)(lpVtbl[78]))((IMFMediaEngineEx*)Unsafe.AsPointer(ref this), pfEnabled);
+            return ((delegate* unmanaged<IMFMediaEngineEx*, BOOL*, int>)(lpVtbl[78]))((IMFMediaEngineEx*)Unsafe.AsPointer(ref this), pfEnabled);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(79)]
         [return: NativeTypeName("HRESULT")]
-        public int SetRealTimeMode([NativeTypeName("BOOL")] int fEnable)
+        public int SetRealTimeMode(BOOL fEnable)
         {
-            return ((delegate* unmanaged<IMFMediaEngineEx*, int, int>)(lpVtbl[79]))((IMFMediaEngineEx*)Unsafe.AsPointer(ref this), fEnable);
+            return ((delegate* unmanaged<IMFMediaEngineEx*, BOOL, int>)(lpVtbl[79]))((IMFMediaEngineEx*)Unsafe.AsPointer(ref this), fEnable);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -659,9 +649,9 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(81)]
         [return: NativeTypeName("HRESULT")]
-        public int EnableTimeUpdateTimer([NativeTypeName("BOOL")] int fEnableTimer)
+        public int EnableTimeUpdateTimer(BOOL fEnableTimer)
         {
-            return ((delegate* unmanaged<IMFMediaEngineEx*, int, int>)(lpVtbl[81]))((IMFMediaEngineEx*)Unsafe.AsPointer(ref this), fEnableTimer);
+            return ((delegate* unmanaged<IMFMediaEngineEx*, BOOL, int>)(lpVtbl[81]))((IMFMediaEngineEx*)Unsafe.AsPointer(ref this), fEnableTimer);
         }
     }
 }

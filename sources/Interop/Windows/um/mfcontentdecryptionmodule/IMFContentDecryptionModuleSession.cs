@@ -67,9 +67,9 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
         [return: NativeTypeName("HRESULT")]
-        public int Load([NativeTypeName("LPCWSTR")] ushort* sessionId, [NativeTypeName("BOOL *")] int* loaded)
+        public int Load([NativeTypeName("LPCWSTR")] ushort* sessionId, BOOL* loaded)
         {
-            return ((delegate* unmanaged<IMFContentDecryptionModuleSession*, ushort*, int*, int>)(lpVtbl[6]))((IMFContentDecryptionModuleSession*)Unsafe.AsPointer(ref this), sessionId, loaded);
+            return ((delegate* unmanaged<IMFContentDecryptionModuleSession*, ushort*, BOOL*, int>)(lpVtbl[6]))((IMFContentDecryptionModuleSession*)Unsafe.AsPointer(ref this), sessionId, loaded);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

@@ -59,17 +59,17 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
         [return: NativeTypeName("HRESULT")]
-        public int Show([NativeTypeName("BOOL")] int bShow)
+        public int Show(BOOL bShow)
         {
-            return ((delegate* unmanaged<ITfReadingInformationUIElement*, int, int>)(lpVtbl[5]))((ITfReadingInformationUIElement*)Unsafe.AsPointer(ref this), bShow);
+            return ((delegate* unmanaged<ITfReadingInformationUIElement*, BOOL, int>)(lpVtbl[5]))((ITfReadingInformationUIElement*)Unsafe.AsPointer(ref this), bShow);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
         [return: NativeTypeName("HRESULT")]
-        public int IsShown([NativeTypeName("BOOL *")] int* pbShow)
+        public int IsShown(BOOL* pbShow)
         {
-            return ((delegate* unmanaged<ITfReadingInformationUIElement*, int*, int>)(lpVtbl[6]))((ITfReadingInformationUIElement*)Unsafe.AsPointer(ref this), pbShow);
+            return ((delegate* unmanaged<ITfReadingInformationUIElement*, BOOL*, int>)(lpVtbl[6]))((ITfReadingInformationUIElement*)Unsafe.AsPointer(ref this), pbShow);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -115,9 +115,9 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(12)]
         [return: NativeTypeName("HRESULT")]
-        public int IsVerticalOrderPreferred([NativeTypeName("BOOL *")] int* pfVertical)
+        public int IsVerticalOrderPreferred(BOOL* pfVertical)
         {
-            return ((delegate* unmanaged<ITfReadingInformationUIElement*, int*, int>)(lpVtbl[12]))((ITfReadingInformationUIElement*)Unsafe.AsPointer(ref this), pfVertical);
+            return ((delegate* unmanaged<ITfReadingInformationUIElement*, BOOL*, int>)(lpVtbl[12]))((ITfReadingInformationUIElement*)Unsafe.AsPointer(ref this), pfVertical);
         }
     }
 }

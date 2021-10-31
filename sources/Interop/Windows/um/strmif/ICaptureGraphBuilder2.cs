@@ -107,9 +107,9 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(11)]
         [return: NativeTypeName("HRESULT")]
-        public int FindPin(IUnknown* pSource, PIN_DIRECTION pindir, [NativeTypeName("const GUID *")] Guid* pCategory, [NativeTypeName("const GUID *")] Guid* pType, [NativeTypeName("BOOL")] int fUnconnected, int num, IPin** ppPin)
+        public int FindPin(IUnknown* pSource, PIN_DIRECTION pindir, [NativeTypeName("const GUID *")] Guid* pCategory, [NativeTypeName("const GUID *")] Guid* pType, BOOL fUnconnected, int num, IPin** ppPin)
         {
-            return ((delegate* unmanaged<ICaptureGraphBuilder2*, IUnknown*, PIN_DIRECTION, Guid*, Guid*, int, int, IPin**, int>)(lpVtbl[11]))((ICaptureGraphBuilder2*)Unsafe.AsPointer(ref this), pSource, pindir, pCategory, pType, fUnconnected, num, ppPin);
+            return ((delegate* unmanaged<ICaptureGraphBuilder2*, IUnknown*, PIN_DIRECTION, Guid*, Guid*, BOOL, int, IPin**, int>)(lpVtbl[11]))((ICaptureGraphBuilder2*)Unsafe.AsPointer(ref this), pSource, pindir, pCategory, pType, fUnconnected, num, ppPin);
         }
     }
 }

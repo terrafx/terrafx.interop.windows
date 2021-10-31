@@ -139,9 +139,9 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(15)]
         [return: NativeTypeName("HRESULT")]
-        public int SetId([NativeTypeName("LPCWSTR")] ushort* pszCategoryId, [NativeTypeName("LPCWSTR")] ushort* pszTokenId, [NativeTypeName("BOOL")] int fCreateIfNotExist)
+        public int SetId([NativeTypeName("LPCWSTR")] ushort* pszCategoryId, [NativeTypeName("LPCWSTR")] ushort* pszTokenId, BOOL fCreateIfNotExist)
         {
-            return ((delegate* unmanaged<ISpObjectTokenInit*, ushort*, ushort*, int, int>)(lpVtbl[15]))((ISpObjectTokenInit*)Unsafe.AsPointer(ref this), pszCategoryId, pszTokenId, fCreateIfNotExist);
+            return ((delegate* unmanaged<ISpObjectTokenInit*, ushort*, ushort*, BOOL, int>)(lpVtbl[15]))((ISpObjectTokenInit*)Unsafe.AsPointer(ref this), pszCategoryId, pszTokenId, fCreateIfNotExist);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -179,9 +179,9 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(20)]
         [return: NativeTypeName("HRESULT")]
-        public int RemoveStorageFileName([NativeTypeName("const IID &")] Guid* clsidCaller, [NativeTypeName("LPCWSTR")] ushort* pszKeyName, [NativeTypeName("BOOL")] int fDeleteFile)
+        public int RemoveStorageFileName([NativeTypeName("const IID &")] Guid* clsidCaller, [NativeTypeName("LPCWSTR")] ushort* pszKeyName, BOOL fDeleteFile)
         {
-            return ((delegate* unmanaged<ISpObjectTokenInit*, Guid*, ushort*, int, int>)(lpVtbl[20]))((ISpObjectTokenInit*)Unsafe.AsPointer(ref this), clsidCaller, pszKeyName, fDeleteFile);
+            return ((delegate* unmanaged<ISpObjectTokenInit*, Guid*, ushort*, BOOL, int>)(lpVtbl[20]))((ISpObjectTokenInit*)Unsafe.AsPointer(ref this), clsidCaller, pszKeyName, fDeleteFile);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -195,9 +195,9 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(22)]
         [return: NativeTypeName("HRESULT")]
-        public int IsUISupported([NativeTypeName("LPCWSTR")] ushort* pszTypeOfUI, void* pvExtraData, [NativeTypeName("ULONG")] uint cbExtraData, IUnknown* punkObject, [NativeTypeName("BOOL *")] int* pfSupported)
+        public int IsUISupported([NativeTypeName("LPCWSTR")] ushort* pszTypeOfUI, void* pvExtraData, [NativeTypeName("ULONG")] uint cbExtraData, IUnknown* punkObject, BOOL* pfSupported)
         {
-            return ((delegate* unmanaged<ISpObjectTokenInit*, ushort*, void*, uint, IUnknown*, int*, int>)(lpVtbl[22]))((ISpObjectTokenInit*)Unsafe.AsPointer(ref this), pszTypeOfUI, pvExtraData, cbExtraData, punkObject, pfSupported);
+            return ((delegate* unmanaged<ISpObjectTokenInit*, ushort*, void*, uint, IUnknown*, BOOL*, int>)(lpVtbl[22]))((ISpObjectTokenInit*)Unsafe.AsPointer(ref this), pszTypeOfUI, pvExtraData, cbExtraData, punkObject, pfSupported);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -211,9 +211,9 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(24)]
         [return: NativeTypeName("HRESULT")]
-        public int MatchesAttributes([NativeTypeName("LPCWSTR")] ushort* pszAttributes, [NativeTypeName("BOOL *")] int* pfMatches)
+        public int MatchesAttributes([NativeTypeName("LPCWSTR")] ushort* pszAttributes, BOOL* pfMatches)
         {
-            return ((delegate* unmanaged<ISpObjectTokenInit*, ushort*, int*, int>)(lpVtbl[24]))((ISpObjectTokenInit*)Unsafe.AsPointer(ref this), pszAttributes, pfMatches);
+            return ((delegate* unmanaged<ISpObjectTokenInit*, ushort*, BOOL*, int>)(lpVtbl[24]))((ISpObjectTokenInit*)Unsafe.AsPointer(ref this), pszAttributes, pfMatches);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

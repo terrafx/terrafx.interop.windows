@@ -75,65 +75,65 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(7)]
         [return: NativeTypeName("HRESULT")]
-        public int get_Bold([NativeTypeName("BOOL *")] int* pBold)
+        public int get_Bold(BOOL* pBold)
         {
-            return ((delegate* unmanaged<IFont*, int*, int>)(lpVtbl[7]))((IFont*)Unsafe.AsPointer(ref this), pBold);
+            return ((delegate* unmanaged<IFont*, BOOL*, int>)(lpVtbl[7]))((IFont*)Unsafe.AsPointer(ref this), pBold);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(8)]
         [return: NativeTypeName("HRESULT")]
-        public int put_Bold([NativeTypeName("BOOL")] int bold)
+        public int put_Bold(BOOL bold)
         {
-            return ((delegate* unmanaged<IFont*, int, int>)(lpVtbl[8]))((IFont*)Unsafe.AsPointer(ref this), bold);
+            return ((delegate* unmanaged<IFont*, BOOL, int>)(lpVtbl[8]))((IFont*)Unsafe.AsPointer(ref this), bold);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(9)]
         [return: NativeTypeName("HRESULT")]
-        public int get_Italic([NativeTypeName("BOOL *")] int* pItalic)
+        public int get_Italic(BOOL* pItalic)
         {
-            return ((delegate* unmanaged<IFont*, int*, int>)(lpVtbl[9]))((IFont*)Unsafe.AsPointer(ref this), pItalic);
+            return ((delegate* unmanaged<IFont*, BOOL*, int>)(lpVtbl[9]))((IFont*)Unsafe.AsPointer(ref this), pItalic);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(10)]
         [return: NativeTypeName("HRESULT")]
-        public int put_Italic([NativeTypeName("BOOL")] int italic)
+        public int put_Italic(BOOL italic)
         {
-            return ((delegate* unmanaged<IFont*, int, int>)(lpVtbl[10]))((IFont*)Unsafe.AsPointer(ref this), italic);
+            return ((delegate* unmanaged<IFont*, BOOL, int>)(lpVtbl[10]))((IFont*)Unsafe.AsPointer(ref this), italic);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(11)]
         [return: NativeTypeName("HRESULT")]
-        public int get_Underline([NativeTypeName("BOOL *")] int* pUnderline)
+        public int get_Underline(BOOL* pUnderline)
         {
-            return ((delegate* unmanaged<IFont*, int*, int>)(lpVtbl[11]))((IFont*)Unsafe.AsPointer(ref this), pUnderline);
+            return ((delegate* unmanaged<IFont*, BOOL*, int>)(lpVtbl[11]))((IFont*)Unsafe.AsPointer(ref this), pUnderline);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(12)]
         [return: NativeTypeName("HRESULT")]
-        public int put_Underline([NativeTypeName("BOOL")] int underline)
+        public int put_Underline(BOOL underline)
         {
-            return ((delegate* unmanaged<IFont*, int, int>)(lpVtbl[12]))((IFont*)Unsafe.AsPointer(ref this), underline);
+            return ((delegate* unmanaged<IFont*, BOOL, int>)(lpVtbl[12]))((IFont*)Unsafe.AsPointer(ref this), underline);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(13)]
         [return: NativeTypeName("HRESULT")]
-        public int get_Strikethrough([NativeTypeName("BOOL *")] int* pStrikethrough)
+        public int get_Strikethrough(BOOL* pStrikethrough)
         {
-            return ((delegate* unmanaged<IFont*, int*, int>)(lpVtbl[13]))((IFont*)Unsafe.AsPointer(ref this), pStrikethrough);
+            return ((delegate* unmanaged<IFont*, BOOL*, int>)(lpVtbl[13]))((IFont*)Unsafe.AsPointer(ref this), pStrikethrough);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(14)]
         [return: NativeTypeName("HRESULT")]
-        public int put_Strikethrough([NativeTypeName("BOOL")] int strikethrough)
+        public int put_Strikethrough(BOOL strikethrough)
         {
-            return ((delegate* unmanaged<IFont*, int, int>)(lpVtbl[14]))((IFont*)Unsafe.AsPointer(ref this), strikethrough);
+            return ((delegate* unmanaged<IFont*, BOOL, int>)(lpVtbl[14]))((IFont*)Unsafe.AsPointer(ref this), strikethrough);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

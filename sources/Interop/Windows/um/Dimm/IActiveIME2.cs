@@ -83,9 +83,9 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(8)]
         [return: NativeTypeName("HRESULT")]
-        public int SetActiveContext([NativeTypeName("HIMC")] IntPtr hIMC, [NativeTypeName("BOOL")] int fFlag)
+        public int SetActiveContext([NativeTypeName("HIMC")] IntPtr hIMC, BOOL fFlag)
         {
-            return ((delegate* unmanaged<IActiveIME2*, IntPtr, int, int>)(lpVtbl[8]))((IActiveIME2*)Unsafe.AsPointer(ref this), hIMC, fFlag);
+            return ((delegate* unmanaged<IActiveIME2*, IntPtr, BOOL, int>)(lpVtbl[8]))((IActiveIME2*)Unsafe.AsPointer(ref this), hIMC, fFlag);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -107,9 +107,9 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(11)]
         [return: NativeTypeName("HRESULT")]
-        public int Select([NativeTypeName("HIMC")] IntPtr hIMC, [NativeTypeName("BOOL")] int fSelect)
+        public int Select([NativeTypeName("HIMC")] IntPtr hIMC, BOOL fSelect)
         {
-            return ((delegate* unmanaged<IActiveIME2*, IntPtr, int, int>)(lpVtbl[11]))((IActiveIME2*)Unsafe.AsPointer(ref this), hIMC, fSelect);
+            return ((delegate* unmanaged<IActiveIME2*, IntPtr, BOOL, int>)(lpVtbl[11]))((IActiveIME2*)Unsafe.AsPointer(ref this), hIMC, fSelect);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -187,9 +187,9 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(21)]
         [return: NativeTypeName("HRESULT")]
-        public int Unsleep([NativeTypeName("BOOL")] int fDead)
+        public int Unsleep(BOOL fDead)
         {
-            return ((delegate* unmanaged<IActiveIME2*, int, int>)(lpVtbl[21]))((IActiveIME2*)Unsafe.AsPointer(ref this), fDead);
+            return ((delegate* unmanaged<IActiveIME2*, BOOL, int>)(lpVtbl[21]))((IActiveIME2*)Unsafe.AsPointer(ref this), fDead);
         }
     }
 }

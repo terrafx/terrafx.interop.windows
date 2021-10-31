@@ -234,16 +234,13 @@ namespace TerraFX.Interop
         public static ushort GET_XBUTTON_WPARAM([NativeTypeName("WPARAM")] nuint wParam) => HIWORD(unchecked((uint)wParam));
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [return: NativeTypeName("BOOL")]
-        public static int ExitWindows(uint dwReserved, int Code) => ExitWindowsEx(EWX_LOGOFF, 0xFFFFFFFF);
+        public static BOOL ExitWindows(uint dwReserved, int Code) => ExitWindowsEx(EWX_LOGOFF, 0xFFFFFFFF);
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [return: NativeTypeName("BOOL")]
-        public static int PostAppMessageA([NativeTypeName("DWORD")] uint idThread, [NativeTypeName("UINT")] uint wMsg, [NativeTypeName("WPARAM")] nuint wParam, [NativeTypeName("LPARAM")] nint lParam) => PostThreadMessageA(idThread, wMsg, wParam, lParam);
+        public static BOOL PostAppMessageA([NativeTypeName("DWORD")] uint idThread, [NativeTypeName("UINT")] uint wMsg, [NativeTypeName("WPARAM")] nuint wParam, [NativeTypeName("LPARAM")] nint lParam) => PostThreadMessageA(idThread, wMsg, wParam, lParam);
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [return: NativeTypeName("BOOL")]
-        public static int PostAppMessageW([NativeTypeName("DWORD")] uint idThread, [NativeTypeName("UINT")] uint wMsg, [NativeTypeName("WPARAM")] nuint wParam, [NativeTypeName("LPARAM")] nint lParam) => PostThreadMessageW(idThread, wMsg, wParam, lParam);
+        public static BOOL PostAppMessageW([NativeTypeName("DWORD")] uint idThread, [NativeTypeName("UINT")] uint wMsg, [NativeTypeName("WPARAM")] nuint wParam, [NativeTypeName("LPARAM")] nint lParam) => PostThreadMessageW(idThread, wMsg, wParam, lParam);
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HWND")]
@@ -476,8 +473,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [return: NativeTypeName("BOOL")]
-        public static int EnumTaskWindows(IntPtr hTask, [NativeTypeName("WNDENUMPROC")] delegate* unmanaged<IntPtr, nint, int> lpfn, [NativeTypeName("LPARAM")] nint lParam) => EnumThreadWindows((uint)hTask, lpfn, lParam);
+        public static BOOL EnumTaskWindows(IntPtr hTask, [NativeTypeName("WNDENUMPROC")] delegate* unmanaged<IntPtr, nint, BOOL> lpfn, [NativeTypeName("LPARAM")] nint lParam) => EnumThreadWindows((uint)hTask, lpfn, lParam);
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HWND")]

@@ -51,9 +51,9 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
         [return: NativeTypeName("HRESULT")]
-        public int Enable([NativeTypeName("BOOL")] int fEnable)
+        public int Enable(BOOL fEnable)
         {
-            return ((delegate* unmanaged<IAutoComplete2*, int, int>)(lpVtbl[4]))((IAutoComplete2*)Unsafe.AsPointer(ref this), fEnable);
+            return ((delegate* unmanaged<IAutoComplete2*, BOOL, int>)(lpVtbl[4]))((IAutoComplete2*)Unsafe.AsPointer(ref this), fEnable);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

@@ -28,7 +28,6 @@ namespace TerraFX.Interop
         [NativeTypeName("const UINT *")]
         public uint* EndPadding;
 
-        [NativeTypeName("BOOL")]
-        public int IncludePadding;
+        public BOOL IncludePadding;
     }
 }

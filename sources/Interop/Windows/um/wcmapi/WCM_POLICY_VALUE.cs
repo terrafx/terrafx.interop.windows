@@ -7,10 +7,8 @@ namespace TerraFX.Interop
 {
     public partial struct WCM_POLICY_VALUE
     {
-        [NativeTypeName("BOOL")]
-        public int fValue;
+        public BOOL fValue;
 
-        [NativeTypeName("BOOL")]
-        public int fIsGroupPolicy;
+        public BOOL fIsGroupPolicy;
     }
 }

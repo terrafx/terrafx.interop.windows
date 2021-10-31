@@ -25,8 +25,7 @@ namespace TerraFX.Interop
         public static extern nuint GlobalSize([NativeTypeName("HGLOBAL")] IntPtr hMem);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int GlobalUnlock([NativeTypeName("HGLOBAL")] IntPtr hMem);
+        public static extern BOOL GlobalUnlock([NativeTypeName("HGLOBAL")] IntPtr hMem);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("LPVOID")]
@@ -59,8 +58,7 @@ namespace TerraFX.Interop
         public static extern void* GlobalWire([NativeTypeName("HGLOBAL")] IntPtr hMem);
 
         [DllImport("kernel32", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int GlobalUnWire([NativeTypeName("HGLOBAL")] IntPtr hMem);
+        public static extern BOOL GlobalUnWire([NativeTypeName("HGLOBAL")] IntPtr hMem);
 
         [DllImport("kernel32", ExactSpelling = true)]
         public static extern void GlobalMemoryStatus([NativeTypeName("LPMEMORYSTATUS")] MEMORYSTATUS* lpBuffer);
@@ -82,8 +80,7 @@ namespace TerraFX.Interop
         public static extern IntPtr LocalHandle([NativeTypeName("LPCVOID")] void* pMem);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int LocalUnlock([NativeTypeName("HLOCAL")] IntPtr hMem);
+        public static extern BOOL LocalUnlock([NativeTypeName("HLOCAL")] IntPtr hMem);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("SIZE_T")]
@@ -106,12 +103,10 @@ namespace TerraFX.Interop
         public static extern nuint LocalCompact([NativeTypeName("UINT")] uint uMinFree);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int GetBinaryTypeA([NativeTypeName("LPCSTR")] sbyte* lpApplicationName, [NativeTypeName("LPDWORD")] uint* lpBinaryType);
+        public static extern BOOL GetBinaryTypeA([NativeTypeName("LPCSTR")] sbyte* lpApplicationName, [NativeTypeName("LPDWORD")] uint* lpBinaryType);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int GetBinaryTypeW([NativeTypeName("LPCWSTR")] ushort* lpApplicationName, [NativeTypeName("LPDWORD")] uint* lpBinaryType);
+        public static extern BOOL GetBinaryTypeW([NativeTypeName("LPCWSTR")] ushort* lpApplicationName, [NativeTypeName("LPDWORD")] uint* lpBinaryType);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("DWORD")]
@@ -126,23 +121,19 @@ namespace TerraFX.Interop
         public static extern uint GetLongPathNameTransactedW([NativeTypeName("LPCWSTR")] ushort* lpszShortPath, [NativeTypeName("LPWSTR")] ushort* lpszLongPath, [NativeTypeName("DWORD")] uint cchBuffer, [NativeTypeName("HANDLE")] IntPtr hTransaction);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int GetProcessAffinityMask([NativeTypeName("HANDLE")] IntPtr hProcess, [NativeTypeName("PDWORD_PTR")] nuint* lpProcessAffinityMask, [NativeTypeName("PDWORD_PTR")] nuint* lpSystemAffinityMask);
+        public static extern BOOL GetProcessAffinityMask([NativeTypeName("HANDLE")] IntPtr hProcess, [NativeTypeName("PDWORD_PTR")] nuint* lpProcessAffinityMask, [NativeTypeName("PDWORD_PTR")] nuint* lpSystemAffinityMask);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SetProcessAffinityMask([NativeTypeName("HANDLE")] IntPtr hProcess, [NativeTypeName("DWORD_PTR")] nuint dwProcessAffinityMask);
+        public static extern BOOL SetProcessAffinityMask([NativeTypeName("HANDLE")] IntPtr hProcess, [NativeTypeName("DWORD_PTR")] nuint dwProcessAffinityMask);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int GetProcessIoCounters([NativeTypeName("HANDLE")] IntPtr hProcess, [NativeTypeName("PIO_COUNTERS")] IO_COUNTERS* lpIoCounters);
+        public static extern BOOL GetProcessIoCounters([NativeTypeName("HANDLE")] IntPtr hProcess, [NativeTypeName("PIO_COUNTERS")] IO_COUNTERS* lpIoCounters);
 
         [DllImport("kernel32", ExactSpelling = true)]
         public static extern void FatalExit(int ExitCode);
 
         [DllImport("kernel32", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SetEnvironmentStringsA([NativeTypeName("LPCH")] sbyte* NewEnvironment);
+        public static extern BOOL SetEnvironmentStringsA([NativeTypeName("LPCH")] sbyte* NewEnvironment);
 
         [DllImport("kernel32", ExactSpelling = true)]
         public static extern void SwitchToFiber([NativeTypeName("LPVOID")] void* lpFiber);
@@ -151,8 +142,7 @@ namespace TerraFX.Interop
         public static extern void DeleteFiber([NativeTypeName("LPVOID")] void* lpFiber);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int ConvertFiberToThread();
+        public static extern BOOL ConvertFiberToThread();
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("LPVOID")]
@@ -171,28 +161,22 @@ namespace TerraFX.Interop
         public static extern void* ConvertThreadToFiber([NativeTypeName("LPVOID")] void* lpParameter);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int CreateUmsCompletionList([NativeTypeName("PUMS_COMPLETION_LIST *")] void** UmsCompletionList);
+        public static extern BOOL CreateUmsCompletionList([NativeTypeName("PUMS_COMPLETION_LIST *")] void** UmsCompletionList);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int DequeueUmsCompletionListItems([NativeTypeName("PUMS_COMPLETION_LIST")] void* UmsCompletionList, [NativeTypeName("DWORD")] uint WaitTimeOut, [NativeTypeName("PUMS_CONTEXT *")] void** UmsThreadList);
+        public static extern BOOL DequeueUmsCompletionListItems([NativeTypeName("PUMS_COMPLETION_LIST")] void* UmsCompletionList, [NativeTypeName("DWORD")] uint WaitTimeOut, [NativeTypeName("PUMS_CONTEXT *")] void** UmsThreadList);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int GetUmsCompletionListEvent([NativeTypeName("PUMS_COMPLETION_LIST")] void* UmsCompletionList, [NativeTypeName("PHANDLE")] IntPtr* UmsCompletionEvent);
+        public static extern BOOL GetUmsCompletionListEvent([NativeTypeName("PUMS_COMPLETION_LIST")] void* UmsCompletionList, [NativeTypeName("PHANDLE")] IntPtr* UmsCompletionEvent);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int ExecuteUmsThread([NativeTypeName("PUMS_CONTEXT")] void* UmsThread);
+        public static extern BOOL ExecuteUmsThread([NativeTypeName("PUMS_CONTEXT")] void* UmsThread);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int UmsThreadYield([NativeTypeName("PVOID")] void* SchedulerParam);
+        public static extern BOOL UmsThreadYield([NativeTypeName("PVOID")] void* SchedulerParam);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int DeleteUmsCompletionList([NativeTypeName("PUMS_COMPLETION_LIST")] void* UmsCompletionList);
+        public static extern BOOL DeleteUmsCompletionList([NativeTypeName("PUMS_COMPLETION_LIST")] void* UmsCompletionList);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("PUMS_CONTEXT")]
@@ -203,52 +187,41 @@ namespace TerraFX.Interop
         public static extern void* GetNextUmsListItem([NativeTypeName("PUMS_CONTEXT")] void* UmsContext);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int QueryUmsThreadInformation([NativeTypeName("PUMS_CONTEXT")] void* UmsThread, UMS_THREAD_INFO_CLASS UmsThreadInfoClass, [NativeTypeName("PVOID")] void* UmsThreadInformation, [NativeTypeName("ULONG")] uint UmsThreadInformationLength, [NativeTypeName("PULONG")] uint* ReturnLength);
+        public static extern BOOL QueryUmsThreadInformation([NativeTypeName("PUMS_CONTEXT")] void* UmsThread, UMS_THREAD_INFO_CLASS UmsThreadInfoClass, [NativeTypeName("PVOID")] void* UmsThreadInformation, [NativeTypeName("ULONG")] uint UmsThreadInformationLength, [NativeTypeName("PULONG")] uint* ReturnLength);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SetUmsThreadInformation([NativeTypeName("PUMS_CONTEXT")] void* UmsThread, UMS_THREAD_INFO_CLASS UmsThreadInfoClass, [NativeTypeName("PVOID")] void* UmsThreadInformation, [NativeTypeName("ULONG")] uint UmsThreadInformationLength);
+        public static extern BOOL SetUmsThreadInformation([NativeTypeName("PUMS_CONTEXT")] void* UmsThread, UMS_THREAD_INFO_CLASS UmsThreadInfoClass, [NativeTypeName("PVOID")] void* UmsThreadInformation, [NativeTypeName("ULONG")] uint UmsThreadInformationLength);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int DeleteUmsThreadContext([NativeTypeName("PUMS_CONTEXT")] void* UmsThread);
+        public static extern BOOL DeleteUmsThreadContext([NativeTypeName("PUMS_CONTEXT")] void* UmsThread);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int CreateUmsThreadContext([NativeTypeName("PUMS_CONTEXT *")] void** lpUmsThread);
+        public static extern BOOL CreateUmsThreadContext([NativeTypeName("PUMS_CONTEXT *")] void** lpUmsThread);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int EnterUmsSchedulingMode([NativeTypeName("PUMS_SCHEDULER_STARTUP_INFO")] UMS_SCHEDULER_STARTUP_INFO* SchedulerStartupInfo);
+        public static extern BOOL EnterUmsSchedulingMode([NativeTypeName("PUMS_SCHEDULER_STARTUP_INFO")] UMS_SCHEDULER_STARTUP_INFO* SchedulerStartupInfo);
 
         [DllImport("kernel32", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int GetUmsSystemThreadInformation([NativeTypeName("HANDLE")] IntPtr ThreadHandle, [NativeTypeName("PUMS_SYSTEM_THREAD_INFORMATION")] UMS_SYSTEM_THREAD_INFORMATION* SystemThreadInfo);
+        public static extern BOOL GetUmsSystemThreadInformation([NativeTypeName("HANDLE")] IntPtr ThreadHandle, [NativeTypeName("PUMS_SYSTEM_THREAD_INFORMATION")] UMS_SYSTEM_THREAD_INFORMATION* SystemThreadInfo);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("DWORD_PTR")]
         public static extern nuint SetThreadAffinityMask([NativeTypeName("HANDLE")] IntPtr hThread, [NativeTypeName("DWORD_PTR")] nuint dwThreadAffinityMask);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SetProcessDEPPolicy([NativeTypeName("DWORD")] uint dwFlags);
+        public static extern BOOL SetProcessDEPPolicy([NativeTypeName("DWORD")] uint dwFlags);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int GetProcessDEPPolicy([NativeTypeName("HANDLE")] IntPtr hProcess, [NativeTypeName("LPDWORD")] uint* lpFlags, [NativeTypeName("PBOOL")] int* lpPermanent);
+        public static extern BOOL GetProcessDEPPolicy([NativeTypeName("HANDLE")] IntPtr hProcess, [NativeTypeName("LPDWORD")] uint* lpFlags, [NativeTypeName("PBOOL")] BOOL* lpPermanent);
 
         [DllImport("kernel32", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int RequestWakeupLatency(LATENCY_TIME latency);
+        public static extern BOOL RequestWakeupLatency(LATENCY_TIME latency);
 
         [DllImport("kernel32", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int IsSystemResumeAutomatic();
+        public static extern BOOL IsSystemResumeAutomatic();
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int GetThreadSelectorEntry([NativeTypeName("HANDLE")] IntPtr hThread, [NativeTypeName("DWORD")] uint dwSelector, [NativeTypeName("LPLDT_ENTRY")] void* lpSelectorEntry);
+        public static extern BOOL GetThreadSelectorEntry([NativeTypeName("HANDLE")] IntPtr hThread, [NativeTypeName("DWORD")] uint dwSelector, [NativeTypeName("LPLDT_ENTRY")] void* lpSelectorEntry);
 
         [DllImport("kernel32", ExactSpelling = true)]
         [return: NativeTypeName("EXECUTION_STATE")]
@@ -259,40 +232,32 @@ namespace TerraFX.Interop
         public static extern IntPtr PowerCreateRequest([NativeTypeName("PREASON_CONTEXT")] REASON_CONTEXT* Context);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int PowerSetRequest([NativeTypeName("HANDLE")] IntPtr PowerRequest, POWER_REQUEST_TYPE RequestType);
+        public static extern BOOL PowerSetRequest([NativeTypeName("HANDLE")] IntPtr PowerRequest, POWER_REQUEST_TYPE RequestType);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int PowerClearRequest([NativeTypeName("HANDLE")] IntPtr PowerRequest, POWER_REQUEST_TYPE RequestType);
+        public static extern BOOL PowerClearRequest([NativeTypeName("HANDLE")] IntPtr PowerRequest, POWER_REQUEST_TYPE RequestType);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SetFileCompletionNotificationModes([NativeTypeName("HANDLE")] IntPtr FileHandle, [NativeTypeName("UCHAR")] byte Flags);
+        public static extern BOOL SetFileCompletionNotificationModes([NativeTypeName("HANDLE")] IntPtr FileHandle, [NativeTypeName("UCHAR")] byte Flags);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int Wow64GetThreadSelectorEntry([NativeTypeName("HANDLE")] IntPtr hThread, [NativeTypeName("DWORD")] uint dwSelector, [NativeTypeName("PWOW64_LDT_ENTRY")] WOW64_LDT_ENTRY* lpSelectorEntry);
+        public static extern BOOL Wow64GetThreadSelectorEntry([NativeTypeName("HANDLE")] IntPtr hThread, [NativeTypeName("DWORD")] uint dwSelector, [NativeTypeName("PWOW64_LDT_ENTRY")] WOW64_LDT_ENTRY* lpSelectorEntry);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int DebugSetProcessKillOnExit([NativeTypeName("BOOL")] int KillOnExit);
+        public static extern BOOL DebugSetProcessKillOnExit(BOOL KillOnExit);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int DebugBreakProcess([NativeTypeName("HANDLE")] IntPtr Process);
+        public static extern BOOL DebugBreakProcess([NativeTypeName("HANDLE")] IntPtr Process);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int PulseEvent([NativeTypeName("HANDLE")] IntPtr hEvent);
+        public static extern BOOL PulseEvent([NativeTypeName("HANDLE")] IntPtr hEvent);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("ATOM")]
         public static extern ushort GlobalDeleteAtom([NativeTypeName("ATOM")] ushort nAtom);
 
         [DllImport("kernel32", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int InitAtomTable([NativeTypeName("DWORD")] uint nSize);
+        public static extern BOOL InitAtomTable([NativeTypeName("DWORD")] uint nSize);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("ATOM")]
@@ -303,28 +268,22 @@ namespace TerraFX.Interop
         public static extern uint SetHandleCount([NativeTypeName("UINT")] uint uNumber);
 
         [DllImport("kernel32", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int RequestDeviceWakeup([NativeTypeName("HANDLE")] IntPtr hDevice);
+        public static extern BOOL RequestDeviceWakeup([NativeTypeName("HANDLE")] IntPtr hDevice);
 
         [DllImport("kernel32", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int CancelDeviceWakeupRequest([NativeTypeName("HANDLE")] IntPtr hDevice);
+        public static extern BOOL CancelDeviceWakeupRequest([NativeTypeName("HANDLE")] IntPtr hDevice);
 
         [DllImport("kernel32", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int GetDevicePowerState([NativeTypeName("HANDLE")] IntPtr hDevice, [NativeTypeName("BOOL *")] int* pfOn);
+        public static extern BOOL GetDevicePowerState([NativeTypeName("HANDLE")] IntPtr hDevice, BOOL* pfOn);
 
         [DllImport("kernel32", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SetMessageWaitingIndicator([NativeTypeName("HANDLE")] IntPtr hMsgIndicator, [NativeTypeName("ULONG")] uint ulMsgCount);
+        public static extern BOOL SetMessageWaitingIndicator([NativeTypeName("HANDLE")] IntPtr hMsgIndicator, [NativeTypeName("ULONG")] uint ulMsgCount);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SetFileShortNameA([NativeTypeName("HANDLE")] IntPtr hFile, [NativeTypeName("LPCSTR")] sbyte* lpShortName);
+        public static extern BOOL SetFileShortNameA([NativeTypeName("HANDLE")] IntPtr hFile, [NativeTypeName("LPCSTR")] sbyte* lpShortName);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SetFileShortNameW([NativeTypeName("HANDLE")] IntPtr hFile, [NativeTypeName("LPCWSTR")] ushort* lpShortName);
+        public static extern BOOL SetFileShortNameW([NativeTypeName("HANDLE")] IntPtr hFile, [NativeTypeName("LPCWSTR")] ushort* lpShortName);
 
         [DllImport("kernel32", ExactSpelling = true)]
         [return: NativeTypeName("DWORD")]
@@ -335,76 +294,58 @@ namespace TerraFX.Interop
         public static extern uint WinExec([NativeTypeName("LPCSTR")] sbyte* lpCmdLine, [NativeTypeName("UINT")] uint uCmdShow);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int ClearCommBreak([NativeTypeName("HANDLE")] IntPtr hFile);
+        public static extern BOOL ClearCommBreak([NativeTypeName("HANDLE")] IntPtr hFile);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int ClearCommError([NativeTypeName("HANDLE")] IntPtr hFile, [NativeTypeName("LPDWORD")] uint* lpErrors, [NativeTypeName("LPCOMSTAT")] COMSTAT* lpStat);
+        public static extern BOOL ClearCommError([NativeTypeName("HANDLE")] IntPtr hFile, [NativeTypeName("LPDWORD")] uint* lpErrors, [NativeTypeName("LPCOMSTAT")] COMSTAT* lpStat);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SetupComm([NativeTypeName("HANDLE")] IntPtr hFile, [NativeTypeName("DWORD")] uint dwInQueue, [NativeTypeName("DWORD")] uint dwOutQueue);
+        public static extern BOOL SetupComm([NativeTypeName("HANDLE")] IntPtr hFile, [NativeTypeName("DWORD")] uint dwInQueue, [NativeTypeName("DWORD")] uint dwOutQueue);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int EscapeCommFunction([NativeTypeName("HANDLE")] IntPtr hFile, [NativeTypeName("DWORD")] uint dwFunc);
+        public static extern BOOL EscapeCommFunction([NativeTypeName("HANDLE")] IntPtr hFile, [NativeTypeName("DWORD")] uint dwFunc);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int GetCommConfig([NativeTypeName("HANDLE")] IntPtr hCommDev, [NativeTypeName("LPCOMMCONFIG")] COMMCONFIG* lpCC, [NativeTypeName("LPDWORD")] uint* lpdwSize);
+        public static extern BOOL GetCommConfig([NativeTypeName("HANDLE")] IntPtr hCommDev, [NativeTypeName("LPCOMMCONFIG")] COMMCONFIG* lpCC, [NativeTypeName("LPDWORD")] uint* lpdwSize);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int GetCommMask([NativeTypeName("HANDLE")] IntPtr hFile, [NativeTypeName("LPDWORD")] uint* lpEvtMask);
+        public static extern BOOL GetCommMask([NativeTypeName("HANDLE")] IntPtr hFile, [NativeTypeName("LPDWORD")] uint* lpEvtMask);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int GetCommProperties([NativeTypeName("HANDLE")] IntPtr hFile, [NativeTypeName("LPCOMMPROP")] COMMPROP* lpCommProp);
+        public static extern BOOL GetCommProperties([NativeTypeName("HANDLE")] IntPtr hFile, [NativeTypeName("LPCOMMPROP")] COMMPROP* lpCommProp);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int GetCommModemStatus([NativeTypeName("HANDLE")] IntPtr hFile, [NativeTypeName("LPDWORD")] uint* lpModemStat);
+        public static extern BOOL GetCommModemStatus([NativeTypeName("HANDLE")] IntPtr hFile, [NativeTypeName("LPDWORD")] uint* lpModemStat);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int GetCommState([NativeTypeName("HANDLE")] IntPtr hFile, [NativeTypeName("LPDCB")] DCB* lpDCB);
+        public static extern BOOL GetCommState([NativeTypeName("HANDLE")] IntPtr hFile, [NativeTypeName("LPDCB")] DCB* lpDCB);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int GetCommTimeouts([NativeTypeName("HANDLE")] IntPtr hFile, [NativeTypeName("LPCOMMTIMEOUTS")] COMMTIMEOUTS* lpCommTimeouts);
+        public static extern BOOL GetCommTimeouts([NativeTypeName("HANDLE")] IntPtr hFile, [NativeTypeName("LPCOMMTIMEOUTS")] COMMTIMEOUTS* lpCommTimeouts);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int PurgeComm([NativeTypeName("HANDLE")] IntPtr hFile, [NativeTypeName("DWORD")] uint dwFlags);
+        public static extern BOOL PurgeComm([NativeTypeName("HANDLE")] IntPtr hFile, [NativeTypeName("DWORD")] uint dwFlags);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SetCommBreak([NativeTypeName("HANDLE")] IntPtr hFile);
+        public static extern BOOL SetCommBreak([NativeTypeName("HANDLE")] IntPtr hFile);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SetCommConfig([NativeTypeName("HANDLE")] IntPtr hCommDev, [NativeTypeName("LPCOMMCONFIG")] COMMCONFIG* lpCC, [NativeTypeName("DWORD")] uint dwSize);
+        public static extern BOOL SetCommConfig([NativeTypeName("HANDLE")] IntPtr hCommDev, [NativeTypeName("LPCOMMCONFIG")] COMMCONFIG* lpCC, [NativeTypeName("DWORD")] uint dwSize);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SetCommMask([NativeTypeName("HANDLE")] IntPtr hFile, [NativeTypeName("DWORD")] uint dwEvtMask);
+        public static extern BOOL SetCommMask([NativeTypeName("HANDLE")] IntPtr hFile, [NativeTypeName("DWORD")] uint dwEvtMask);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SetCommState([NativeTypeName("HANDLE")] IntPtr hFile, [NativeTypeName("LPDCB")] DCB* lpDCB);
+        public static extern BOOL SetCommState([NativeTypeName("HANDLE")] IntPtr hFile, [NativeTypeName("LPDCB")] DCB* lpDCB);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SetCommTimeouts([NativeTypeName("HANDLE")] IntPtr hFile, [NativeTypeName("LPCOMMTIMEOUTS")] COMMTIMEOUTS* lpCommTimeouts);
+        public static extern BOOL SetCommTimeouts([NativeTypeName("HANDLE")] IntPtr hFile, [NativeTypeName("LPCOMMTIMEOUTS")] COMMTIMEOUTS* lpCommTimeouts);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int TransmitCommChar([NativeTypeName("HANDLE")] IntPtr hFile, [NativeTypeName("char")] sbyte cChar);
+        public static extern BOOL TransmitCommChar([NativeTypeName("HANDLE")] IntPtr hFile, [NativeTypeName("char")] sbyte cChar);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int WaitCommEvent([NativeTypeName("HANDLE")] IntPtr hFile, [NativeTypeName("LPDWORD")] uint* lpEvtMask, [NativeTypeName("LPOVERLAPPED")] OVERLAPPED* lpOverlapped);
+        public static extern BOOL WaitCommEvent([NativeTypeName("HANDLE")] IntPtr hFile, [NativeTypeName("LPDWORD")] uint* lpEvtMask, [NativeTypeName("LPOVERLAPPED")] OVERLAPPED* lpOverlapped);
 
         [DllImport("kernelbase", ExactSpelling = true)]
         [return: NativeTypeName("HANDLE")]
@@ -416,7 +357,7 @@ namespace TerraFX.Interop
 
         [DllImport("kernel32", ExactSpelling = true)]
         [return: NativeTypeName("DWORD")]
-        public static extern uint SetTapePosition([NativeTypeName("HANDLE")] IntPtr hDevice, [NativeTypeName("DWORD")] uint dwPositionMethod, [NativeTypeName("DWORD")] uint dwPartition, [NativeTypeName("DWORD")] uint dwOffsetLow, [NativeTypeName("DWORD")] uint dwOffsetHigh, [NativeTypeName("BOOL")] int bImmediate);
+        public static extern uint SetTapePosition([NativeTypeName("HANDLE")] IntPtr hDevice, [NativeTypeName("DWORD")] uint dwPositionMethod, [NativeTypeName("DWORD")] uint dwPartition, [NativeTypeName("DWORD")] uint dwOffsetLow, [NativeTypeName("DWORD")] uint dwOffsetHigh, BOOL bImmediate);
 
         [DllImport("kernel32", ExactSpelling = true)]
         [return: NativeTypeName("DWORD")]
@@ -424,11 +365,11 @@ namespace TerraFX.Interop
 
         [DllImport("kernel32", ExactSpelling = true)]
         [return: NativeTypeName("DWORD")]
-        public static extern uint PrepareTape([NativeTypeName("HANDLE")] IntPtr hDevice, [NativeTypeName("DWORD")] uint dwOperation, [NativeTypeName("BOOL")] int bImmediate);
+        public static extern uint PrepareTape([NativeTypeName("HANDLE")] IntPtr hDevice, [NativeTypeName("DWORD")] uint dwOperation, BOOL bImmediate);
 
         [DllImport("kernel32", ExactSpelling = true)]
         [return: NativeTypeName("DWORD")]
-        public static extern uint EraseTape([NativeTypeName("HANDLE")] IntPtr hDevice, [NativeTypeName("DWORD")] uint dwEraseType, [NativeTypeName("BOOL")] int bImmediate);
+        public static extern uint EraseTape([NativeTypeName("HANDLE")] IntPtr hDevice, [NativeTypeName("DWORD")] uint dwEraseType, BOOL bImmediate);
 
         [DllImport("kernel32", ExactSpelling = true)]
         [return: NativeTypeName("DWORD")]
@@ -436,7 +377,7 @@ namespace TerraFX.Interop
 
         [DllImport("kernel32", ExactSpelling = true)]
         [return: NativeTypeName("DWORD")]
-        public static extern uint WriteTapemark([NativeTypeName("HANDLE")] IntPtr hDevice, [NativeTypeName("DWORD")] uint dwTapemarkType, [NativeTypeName("DWORD")] uint dwTapemarkCount, [NativeTypeName("BOOL")] int bImmediate);
+        public static extern uint WriteTapemark([NativeTypeName("HANDLE")] IntPtr hDevice, [NativeTypeName("DWORD")] uint dwTapemarkType, [NativeTypeName("DWORD")] uint dwTapemarkCount, BOOL bImmediate);
 
         [DllImport("kernel32", ExactSpelling = true)]
         [return: NativeTypeName("DWORD")]
@@ -457,16 +398,13 @@ namespace TerraFX.Interop
         public static extern DEP_SYSTEM_POLICY_TYPE GetSystemDEPPolicy();
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int GetSystemRegistryQuota([NativeTypeName("PDWORD")] uint* pdwQuotaAllowed, [NativeTypeName("PDWORD")] uint* pdwQuotaUsed);
+        public static extern BOOL GetSystemRegistryQuota([NativeTypeName("PDWORD")] uint* pdwQuotaAllowed, [NativeTypeName("PDWORD")] uint* pdwQuotaUsed);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int FileTimeToDosDateTime([NativeTypeName("const FILETIME *")] FILETIME* lpFileTime, [NativeTypeName("LPWORD")] ushort* lpFatDate, [NativeTypeName("LPWORD")] ushort* lpFatTime);
+        public static extern BOOL FileTimeToDosDateTime([NativeTypeName("const FILETIME *")] FILETIME* lpFileTime, [NativeTypeName("LPWORD")] ushort* lpFatDate, [NativeTypeName("LPWORD")] ushort* lpFatTime);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int DosDateTimeToFileTime([NativeTypeName("WORD")] ushort wFatDate, [NativeTypeName("WORD")] ushort wFatTime, [NativeTypeName("LPFILETIME")] FILETIME* lpFileTime);
+        public static extern BOOL DosDateTimeToFileTime([NativeTypeName("WORD")] ushort wFatDate, [NativeTypeName("WORD")] ushort wFatTime, [NativeTypeName("LPFILETIME")] FILETIME* lpFileTime);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("DWORD")]
@@ -485,36 +423,28 @@ namespace TerraFX.Interop
         public static extern IntPtr CreateMailslotW([NativeTypeName("LPCWSTR")] ushort* lpName, [NativeTypeName("DWORD")] uint nMaxMessageSize, [NativeTypeName("DWORD")] uint lReadTimeout, [NativeTypeName("LPSECURITY_ATTRIBUTES")] SECURITY_ATTRIBUTES* lpSecurityAttributes);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int GetMailslotInfo([NativeTypeName("HANDLE")] IntPtr hMailslot, [NativeTypeName("LPDWORD")] uint* lpMaxMessageSize, [NativeTypeName("LPDWORD")] uint* lpNextSize, [NativeTypeName("LPDWORD")] uint* lpMessageCount, [NativeTypeName("LPDWORD")] uint* lpReadTimeout);
+        public static extern BOOL GetMailslotInfo([NativeTypeName("HANDLE")] IntPtr hMailslot, [NativeTypeName("LPDWORD")] uint* lpMaxMessageSize, [NativeTypeName("LPDWORD")] uint* lpNextSize, [NativeTypeName("LPDWORD")] uint* lpMessageCount, [NativeTypeName("LPDWORD")] uint* lpReadTimeout);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SetMailslotInfo([NativeTypeName("HANDLE")] IntPtr hMailslot, [NativeTypeName("DWORD")] uint lReadTimeout);
+        public static extern BOOL SetMailslotInfo([NativeTypeName("HANDLE")] IntPtr hMailslot, [NativeTypeName("DWORD")] uint lReadTimeout);
 
         [DllImport("advapi32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int EncryptFileA([NativeTypeName("LPCSTR")] sbyte* lpFileName);
+        public static extern BOOL EncryptFileA([NativeTypeName("LPCSTR")] sbyte* lpFileName);
 
         [DllImport("advapi32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int EncryptFileW([NativeTypeName("LPCWSTR")] ushort* lpFileName);
+        public static extern BOOL EncryptFileW([NativeTypeName("LPCWSTR")] ushort* lpFileName);
 
         [DllImport("advapi32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int DecryptFileA([NativeTypeName("LPCSTR")] sbyte* lpFileName, [NativeTypeName("DWORD")] uint dwReserved);
+        public static extern BOOL DecryptFileA([NativeTypeName("LPCSTR")] sbyte* lpFileName, [NativeTypeName("DWORD")] uint dwReserved);
 
         [DllImport("advapi32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int DecryptFileW([NativeTypeName("LPCWSTR")] ushort* lpFileName, [NativeTypeName("DWORD")] uint dwReserved);
+        public static extern BOOL DecryptFileW([NativeTypeName("LPCWSTR")] ushort* lpFileName, [NativeTypeName("DWORD")] uint dwReserved);
 
         [DllImport("advapi32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int FileEncryptionStatusA([NativeTypeName("LPCSTR")] sbyte* lpFileName, [NativeTypeName("LPDWORD")] uint* lpStatus);
+        public static extern BOOL FileEncryptionStatusA([NativeTypeName("LPCSTR")] sbyte* lpFileName, [NativeTypeName("LPDWORD")] uint* lpStatus);
 
         [DllImport("advapi32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int FileEncryptionStatusW([NativeTypeName("LPCWSTR")] ushort* lpFileName, [NativeTypeName("LPDWORD")] uint* lpStatus);
+        public static extern BOOL FileEncryptionStatusW([NativeTypeName("LPCWSTR")] ushort* lpFileName, [NativeTypeName("LPDWORD")] uint* lpStatus);
 
         [DllImport("advapi32", ExactSpelling = true)]
         [return: NativeTypeName("DWORD")]
@@ -606,24 +536,20 @@ namespace TerraFX.Interop
         public static extern int _llseek([NativeTypeName("HFILE")] int hFile, [NativeTypeName("LONG")] int lOffset, int iOrigin);
 
         [DllImport("advapi32", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int IsTextUnicode([NativeTypeName("const void *")] void* lpv, int iSize, [NativeTypeName("LPINT")] int* lpiResult);
+        public static extern BOOL IsTextUnicode([NativeTypeName("const void *")] void* lpv, int iSize, [NativeTypeName("LPINT")] int* lpiResult);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int BackupRead([NativeTypeName("HANDLE")] IntPtr hFile, [NativeTypeName("LPBYTE")] byte* lpBuffer, [NativeTypeName("DWORD")] uint nNumberOfBytesToRead, [NativeTypeName("LPDWORD")] uint* lpNumberOfBytesRead, [NativeTypeName("BOOL")] int bAbort, [NativeTypeName("BOOL")] int bProcessSecurity, [NativeTypeName("LPVOID *")] void** lpContext);
+        public static extern BOOL BackupRead([NativeTypeName("HANDLE")] IntPtr hFile, [NativeTypeName("LPBYTE")] byte* lpBuffer, [NativeTypeName("DWORD")] uint nNumberOfBytesToRead, [NativeTypeName("LPDWORD")] uint* lpNumberOfBytesRead, BOOL bAbort, BOOL bProcessSecurity, [NativeTypeName("LPVOID *")] void** lpContext);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int BackupSeek([NativeTypeName("HANDLE")] IntPtr hFile, [NativeTypeName("DWORD")] uint dwLowBytesToSeek, [NativeTypeName("DWORD")] uint dwHighBytesToSeek, [NativeTypeName("LPDWORD")] uint* lpdwLowByteSeeked, [NativeTypeName("LPDWORD")] uint* lpdwHighByteSeeked, [NativeTypeName("LPVOID *")] void** lpContext);
+        public static extern BOOL BackupSeek([NativeTypeName("HANDLE")] IntPtr hFile, [NativeTypeName("DWORD")] uint dwLowBytesToSeek, [NativeTypeName("DWORD")] uint dwHighBytesToSeek, [NativeTypeName("LPDWORD")] uint* lpdwLowByteSeeked, [NativeTypeName("LPDWORD")] uint* lpdwHighByteSeeked, [NativeTypeName("LPVOID *")] void** lpContext);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int BackupWrite([NativeTypeName("HANDLE")] IntPtr hFile, [NativeTypeName("LPBYTE")] byte* lpBuffer, [NativeTypeName("DWORD")] uint nNumberOfBytesToWrite, [NativeTypeName("LPDWORD")] uint* lpNumberOfBytesWritten, [NativeTypeName("BOOL")] int bAbort, [NativeTypeName("BOOL")] int bProcessSecurity, [NativeTypeName("LPVOID *")] void** lpContext);
+        public static extern BOOL BackupWrite([NativeTypeName("HANDLE")] IntPtr hFile, [NativeTypeName("LPBYTE")] byte* lpBuffer, [NativeTypeName("DWORD")] uint nNumberOfBytesToWrite, [NativeTypeName("LPDWORD")] uint* lpNumberOfBytesWritten, BOOL bAbort, BOOL bProcessSecurity, [NativeTypeName("LPVOID *")] void** lpContext);
 
         [DllImport("kernel32", ExactSpelling = true)]
         [return: NativeTypeName("HANDLE")]
-        public static extern IntPtr OpenMutexA([NativeTypeName("DWORD")] uint dwDesiredAccess, [NativeTypeName("BOOL")] int bInheritHandle, [NativeTypeName("LPCSTR")] sbyte* lpName);
+        public static extern IntPtr OpenMutexA([NativeTypeName("DWORD")] uint dwDesiredAccess, BOOL bInheritHandle, [NativeTypeName("LPCSTR")] sbyte* lpName);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("HANDLE")]
@@ -631,15 +557,15 @@ namespace TerraFX.Interop
 
         [DllImport("kernel32", ExactSpelling = true)]
         [return: NativeTypeName("HANDLE")]
-        public static extern IntPtr OpenSemaphoreA([NativeTypeName("DWORD")] uint dwDesiredAccess, [NativeTypeName("BOOL")] int bInheritHandle, [NativeTypeName("LPCSTR")] sbyte* lpName);
+        public static extern IntPtr OpenSemaphoreA([NativeTypeName("DWORD")] uint dwDesiredAccess, BOOL bInheritHandle, [NativeTypeName("LPCSTR")] sbyte* lpName);
 
         [DllImport("kernel32", ExactSpelling = true)]
         [return: NativeTypeName("HANDLE")]
-        public static extern IntPtr CreateWaitableTimerA([NativeTypeName("LPSECURITY_ATTRIBUTES")] SECURITY_ATTRIBUTES* lpTimerAttributes, [NativeTypeName("BOOL")] int bManualReset, [NativeTypeName("LPCSTR")] sbyte* lpTimerName);
+        public static extern IntPtr CreateWaitableTimerA([NativeTypeName("LPSECURITY_ATTRIBUTES")] SECURITY_ATTRIBUTES* lpTimerAttributes, BOOL bManualReset, [NativeTypeName("LPCSTR")] sbyte* lpTimerName);
 
         [DllImport("kernel32", ExactSpelling = true)]
         [return: NativeTypeName("HANDLE")]
-        public static extern IntPtr OpenWaitableTimerA([NativeTypeName("DWORD")] uint dwDesiredAccess, [NativeTypeName("BOOL")] int bInheritHandle, [NativeTypeName("LPCSTR")] sbyte* lpTimerName);
+        public static extern IntPtr OpenWaitableTimerA([NativeTypeName("DWORD")] uint dwDesiredAccess, BOOL bInheritHandle, [NativeTypeName("LPCSTR")] sbyte* lpTimerName);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("HANDLE")]
@@ -659,7 +585,7 @@ namespace TerraFX.Interop
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("HANDLE")]
-        public static extern IntPtr OpenFileMappingA([NativeTypeName("DWORD")] uint dwDesiredAccess, [NativeTypeName("BOOL")] int bInheritHandle, [NativeTypeName("LPCSTR")] sbyte* lpName);
+        public static extern IntPtr OpenFileMappingA([NativeTypeName("DWORD")] uint dwDesiredAccess, BOOL bInheritHandle, [NativeTypeName("LPCSTR")] sbyte* lpName);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("DWORD")]
@@ -670,12 +596,10 @@ namespace TerraFX.Interop
         public static extern IntPtr LoadPackagedLibrary([NativeTypeName("LPCWSTR")] ushort* lpwLibFileName, [NativeTypeName("DWORD")] uint Reserved);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int QueryFullProcessImageNameA([NativeTypeName("HANDLE")] IntPtr hProcess, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("LPSTR")] sbyte* lpExeName, [NativeTypeName("PDWORD")] uint* lpdwSize);
+        public static extern BOOL QueryFullProcessImageNameA([NativeTypeName("HANDLE")] IntPtr hProcess, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("LPSTR")] sbyte* lpExeName, [NativeTypeName("PDWORD")] uint* lpdwSize);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int QueryFullProcessImageNameW([NativeTypeName("HANDLE")] IntPtr hProcess, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("LPWSTR")] ushort* lpExeName, [NativeTypeName("PDWORD")] uint* lpdwSize);
+        public static extern BOOL QueryFullProcessImageNameW([NativeTypeName("HANDLE")] IntPtr hProcess, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("LPWSTR")] ushort* lpExeName, [NativeTypeName("PDWORD")] uint* lpdwSize);
 
         [DllImport("kernel32", ExactSpelling = true)]
         public static extern void GetStartupInfoA([NativeTypeName("LPSTARTUPINFOA")] STARTUPINFOA* lpStartupInfo);
@@ -697,28 +621,22 @@ namespace TerraFX.Interop
         public static extern uint GetFirmwareEnvironmentVariableExW([NativeTypeName("LPCWSTR")] ushort* lpName, [NativeTypeName("LPCWSTR")] ushort* lpGuid, [NativeTypeName("PVOID")] void* pBuffer, [NativeTypeName("DWORD")] uint nSize, [NativeTypeName("PDWORD")] uint* pdwAttribubutes);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SetFirmwareEnvironmentVariableA([NativeTypeName("LPCSTR")] sbyte* lpName, [NativeTypeName("LPCSTR")] sbyte* lpGuid, [NativeTypeName("PVOID")] void* pValue, [NativeTypeName("DWORD")] uint nSize);
+        public static extern BOOL SetFirmwareEnvironmentVariableA([NativeTypeName("LPCSTR")] sbyte* lpName, [NativeTypeName("LPCSTR")] sbyte* lpGuid, [NativeTypeName("PVOID")] void* pValue, [NativeTypeName("DWORD")] uint nSize);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SetFirmwareEnvironmentVariableW([NativeTypeName("LPCWSTR")] ushort* lpName, [NativeTypeName("LPCWSTR")] ushort* lpGuid, [NativeTypeName("PVOID")] void* pValue, [NativeTypeName("DWORD")] uint nSize);
+        public static extern BOOL SetFirmwareEnvironmentVariableW([NativeTypeName("LPCWSTR")] ushort* lpName, [NativeTypeName("LPCWSTR")] ushort* lpGuid, [NativeTypeName("PVOID")] void* pValue, [NativeTypeName("DWORD")] uint nSize);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SetFirmwareEnvironmentVariableExA([NativeTypeName("LPCSTR")] sbyte* lpName, [NativeTypeName("LPCSTR")] sbyte* lpGuid, [NativeTypeName("PVOID")] void* pValue, [NativeTypeName("DWORD")] uint nSize, [NativeTypeName("DWORD")] uint dwAttributes);
+        public static extern BOOL SetFirmwareEnvironmentVariableExA([NativeTypeName("LPCSTR")] sbyte* lpName, [NativeTypeName("LPCSTR")] sbyte* lpGuid, [NativeTypeName("PVOID")] void* pValue, [NativeTypeName("DWORD")] uint nSize, [NativeTypeName("DWORD")] uint dwAttributes);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SetFirmwareEnvironmentVariableExW([NativeTypeName("LPCWSTR")] ushort* lpName, [NativeTypeName("LPCWSTR")] ushort* lpGuid, [NativeTypeName("PVOID")] void* pValue, [NativeTypeName("DWORD")] uint nSize, [NativeTypeName("DWORD")] uint dwAttributes);
+        public static extern BOOL SetFirmwareEnvironmentVariableExW([NativeTypeName("LPCWSTR")] ushort* lpName, [NativeTypeName("LPCWSTR")] ushort* lpGuid, [NativeTypeName("PVOID")] void* pValue, [NativeTypeName("DWORD")] uint nSize, [NativeTypeName("DWORD")] uint dwAttributes);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int GetFirmwareType([NativeTypeName("PFIRMWARE_TYPE")] FIRMWARE_TYPE* FirmwareType);
+        public static extern BOOL GetFirmwareType([NativeTypeName("PFIRMWARE_TYPE")] FIRMWARE_TYPE* FirmwareType);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int IsNativeVhdBoot([NativeTypeName("PBOOL")] int* NativeVhdBoot);
+        public static extern BOOL IsNativeVhdBoot([NativeTypeName("PBOOL")] BOOL* NativeVhdBoot);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("HRSRC")]
@@ -729,44 +647,36 @@ namespace TerraFX.Interop
         public static extern IntPtr FindResourceExA([NativeTypeName("HMODULE")] IntPtr hModule, [NativeTypeName("LPCSTR")] sbyte* lpType, [NativeTypeName("LPCSTR")] sbyte* lpName, [NativeTypeName("WORD")] ushort wLanguage);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int EnumResourceTypesA([NativeTypeName("HMODULE")] IntPtr hModule, [NativeTypeName("ENUMRESTYPEPROCA")] delegate* unmanaged<IntPtr, sbyte*, nint, int> lpEnumFunc, [NativeTypeName("LONG_PTR")] nint lParam);
+        public static extern BOOL EnumResourceTypesA([NativeTypeName("HMODULE")] IntPtr hModule, [NativeTypeName("ENUMRESTYPEPROCA")] delegate* unmanaged<IntPtr, sbyte*, nint, BOOL> lpEnumFunc, [NativeTypeName("LONG_PTR")] nint lParam);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int EnumResourceTypesW([NativeTypeName("HMODULE")] IntPtr hModule, [NativeTypeName("ENUMRESTYPEPROCW")] delegate* unmanaged<IntPtr, ushort*, nint, int> lpEnumFunc, [NativeTypeName("LONG_PTR")] nint lParam);
+        public static extern BOOL EnumResourceTypesW([NativeTypeName("HMODULE")] IntPtr hModule, [NativeTypeName("ENUMRESTYPEPROCW")] delegate* unmanaged<IntPtr, ushort*, nint, BOOL> lpEnumFunc, [NativeTypeName("LONG_PTR")] nint lParam);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int EnumResourceLanguagesA([NativeTypeName("HMODULE")] IntPtr hModule, [NativeTypeName("LPCSTR")] sbyte* lpType, [NativeTypeName("LPCSTR")] sbyte* lpName, [NativeTypeName("ENUMRESLANGPROCA")] delegate* unmanaged<IntPtr, sbyte*, sbyte*, ushort, nint, int> lpEnumFunc, [NativeTypeName("LONG_PTR")] nint lParam);
+        public static extern BOOL EnumResourceLanguagesA([NativeTypeName("HMODULE")] IntPtr hModule, [NativeTypeName("LPCSTR")] sbyte* lpType, [NativeTypeName("LPCSTR")] sbyte* lpName, [NativeTypeName("ENUMRESLANGPROCA")] delegate* unmanaged<IntPtr, sbyte*, sbyte*, ushort, nint, BOOL> lpEnumFunc, [NativeTypeName("LONG_PTR")] nint lParam);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int EnumResourceLanguagesW([NativeTypeName("HMODULE")] IntPtr hModule, [NativeTypeName("LPCWSTR")] ushort* lpType, [NativeTypeName("LPCWSTR")] ushort* lpName, [NativeTypeName("ENUMRESLANGPROCW")] delegate* unmanaged<IntPtr, ushort*, ushort*, ushort, nint, int> lpEnumFunc, [NativeTypeName("LONG_PTR")] nint lParam);
+        public static extern BOOL EnumResourceLanguagesW([NativeTypeName("HMODULE")] IntPtr hModule, [NativeTypeName("LPCWSTR")] ushort* lpType, [NativeTypeName("LPCWSTR")] ushort* lpName, [NativeTypeName("ENUMRESLANGPROCW")] delegate* unmanaged<IntPtr, ushort*, ushort*, ushort, nint, BOOL> lpEnumFunc, [NativeTypeName("LONG_PTR")] nint lParam);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("HANDLE")]
-        public static extern IntPtr BeginUpdateResourceA([NativeTypeName("LPCSTR")] sbyte* pFileName, [NativeTypeName("BOOL")] int bDeleteExistingResources);
+        public static extern IntPtr BeginUpdateResourceA([NativeTypeName("LPCSTR")] sbyte* pFileName, BOOL bDeleteExistingResources);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("HANDLE")]
-        public static extern IntPtr BeginUpdateResourceW([NativeTypeName("LPCWSTR")] ushort* pFileName, [NativeTypeName("BOOL")] int bDeleteExistingResources);
+        public static extern IntPtr BeginUpdateResourceW([NativeTypeName("LPCWSTR")] ushort* pFileName, BOOL bDeleteExistingResources);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int UpdateResourceA([NativeTypeName("HANDLE")] IntPtr hUpdate, [NativeTypeName("LPCSTR")] sbyte* lpType, [NativeTypeName("LPCSTR")] sbyte* lpName, [NativeTypeName("WORD")] ushort wLanguage, [NativeTypeName("LPVOID")] void* lpData, [NativeTypeName("DWORD")] uint cb);
+        public static extern BOOL UpdateResourceA([NativeTypeName("HANDLE")] IntPtr hUpdate, [NativeTypeName("LPCSTR")] sbyte* lpType, [NativeTypeName("LPCSTR")] sbyte* lpName, [NativeTypeName("WORD")] ushort wLanguage, [NativeTypeName("LPVOID")] void* lpData, [NativeTypeName("DWORD")] uint cb);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int UpdateResourceW([NativeTypeName("HANDLE")] IntPtr hUpdate, [NativeTypeName("LPCWSTR")] ushort* lpType, [NativeTypeName("LPCWSTR")] ushort* lpName, [NativeTypeName("WORD")] ushort wLanguage, [NativeTypeName("LPVOID")] void* lpData, [NativeTypeName("DWORD")] uint cb);
+        public static extern BOOL UpdateResourceW([NativeTypeName("HANDLE")] IntPtr hUpdate, [NativeTypeName("LPCWSTR")] ushort* lpType, [NativeTypeName("LPCWSTR")] ushort* lpName, [NativeTypeName("WORD")] ushort wLanguage, [NativeTypeName("LPVOID")] void* lpData, [NativeTypeName("DWORD")] uint cb);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int EndUpdateResourceA([NativeTypeName("HANDLE")] IntPtr hUpdate, [NativeTypeName("BOOL")] int fDiscard);
+        public static extern BOOL EndUpdateResourceA([NativeTypeName("HANDLE")] IntPtr hUpdate, BOOL fDiscard);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int EndUpdateResourceW([NativeTypeName("HANDLE")] IntPtr hUpdate, [NativeTypeName("BOOL")] int fDiscard);
+        public static extern BOOL EndUpdateResourceW([NativeTypeName("HANDLE")] IntPtr hUpdate, BOOL fDiscard);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("ATOM")]
@@ -841,12 +751,10 @@ namespace TerraFX.Interop
         public static extern uint GetProfileStringW([NativeTypeName("LPCWSTR")] ushort* lpAppName, [NativeTypeName("LPCWSTR")] ushort* lpKeyName, [NativeTypeName("LPCWSTR")] ushort* lpDefault, [NativeTypeName("LPWSTR")] ushort* lpReturnedString, [NativeTypeName("DWORD")] uint nSize);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int WriteProfileStringA([NativeTypeName("LPCSTR")] sbyte* lpAppName, [NativeTypeName("LPCSTR")] sbyte* lpKeyName, [NativeTypeName("LPCSTR")] sbyte* lpString);
+        public static extern BOOL WriteProfileStringA([NativeTypeName("LPCSTR")] sbyte* lpAppName, [NativeTypeName("LPCSTR")] sbyte* lpKeyName, [NativeTypeName("LPCSTR")] sbyte* lpString);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int WriteProfileStringW([NativeTypeName("LPCWSTR")] ushort* lpAppName, [NativeTypeName("LPCWSTR")] ushort* lpKeyName, [NativeTypeName("LPCWSTR")] ushort* lpString);
+        public static extern BOOL WriteProfileStringW([NativeTypeName("LPCWSTR")] ushort* lpAppName, [NativeTypeName("LPCWSTR")] ushort* lpKeyName, [NativeTypeName("LPCWSTR")] ushort* lpString);
 
         [DllImport("kernel32", ExactSpelling = true)]
         [return: NativeTypeName("DWORD")]
@@ -857,12 +765,10 @@ namespace TerraFX.Interop
         public static extern uint GetProfileSectionW([NativeTypeName("LPCWSTR")] ushort* lpAppName, [NativeTypeName("LPWSTR")] ushort* lpReturnedString, [NativeTypeName("DWORD")] uint nSize);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int WriteProfileSectionA([NativeTypeName("LPCSTR")] sbyte* lpAppName, [NativeTypeName("LPCSTR")] sbyte* lpString);
+        public static extern BOOL WriteProfileSectionA([NativeTypeName("LPCSTR")] sbyte* lpAppName, [NativeTypeName("LPCSTR")] sbyte* lpString);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int WriteProfileSectionW([NativeTypeName("LPCWSTR")] ushort* lpAppName, [NativeTypeName("LPCWSTR")] ushort* lpString);
+        public static extern BOOL WriteProfileSectionW([NativeTypeName("LPCWSTR")] ushort* lpAppName, [NativeTypeName("LPCWSTR")] ushort* lpString);
 
         [DllImport("kernel32", ExactSpelling = true)]
         [return: NativeTypeName("UINT")]
@@ -881,12 +787,10 @@ namespace TerraFX.Interop
         public static extern uint GetPrivateProfileStringW([NativeTypeName("LPCWSTR")] ushort* lpAppName, [NativeTypeName("LPCWSTR")] ushort* lpKeyName, [NativeTypeName("LPCWSTR")] ushort* lpDefault, [NativeTypeName("LPWSTR")] ushort* lpReturnedString, [NativeTypeName("DWORD")] uint nSize, [NativeTypeName("LPCWSTR")] ushort* lpFileName);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int WritePrivateProfileStringA([NativeTypeName("LPCSTR")] sbyte* lpAppName, [NativeTypeName("LPCSTR")] sbyte* lpKeyName, [NativeTypeName("LPCSTR")] sbyte* lpString, [NativeTypeName("LPCSTR")] sbyte* lpFileName);
+        public static extern BOOL WritePrivateProfileStringA([NativeTypeName("LPCSTR")] sbyte* lpAppName, [NativeTypeName("LPCSTR")] sbyte* lpKeyName, [NativeTypeName("LPCSTR")] sbyte* lpString, [NativeTypeName("LPCSTR")] sbyte* lpFileName);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int WritePrivateProfileStringW([NativeTypeName("LPCWSTR")] ushort* lpAppName, [NativeTypeName("LPCWSTR")] ushort* lpKeyName, [NativeTypeName("LPCWSTR")] ushort* lpString, [NativeTypeName("LPCWSTR")] ushort* lpFileName);
+        public static extern BOOL WritePrivateProfileStringW([NativeTypeName("LPCWSTR")] ushort* lpAppName, [NativeTypeName("LPCWSTR")] ushort* lpKeyName, [NativeTypeName("LPCWSTR")] ushort* lpString, [NativeTypeName("LPCWSTR")] ushort* lpFileName);
 
         [DllImport("kernel32", ExactSpelling = true)]
         [return: NativeTypeName("DWORD")]
@@ -897,12 +801,10 @@ namespace TerraFX.Interop
         public static extern uint GetPrivateProfileSectionW([NativeTypeName("LPCWSTR")] ushort* lpAppName, [NativeTypeName("LPWSTR")] ushort* lpReturnedString, [NativeTypeName("DWORD")] uint nSize, [NativeTypeName("LPCWSTR")] ushort* lpFileName);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int WritePrivateProfileSectionA([NativeTypeName("LPCSTR")] sbyte* lpAppName, [NativeTypeName("LPCSTR")] sbyte* lpString, [NativeTypeName("LPCSTR")] sbyte* lpFileName);
+        public static extern BOOL WritePrivateProfileSectionA([NativeTypeName("LPCSTR")] sbyte* lpAppName, [NativeTypeName("LPCSTR")] sbyte* lpString, [NativeTypeName("LPCSTR")] sbyte* lpFileName);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int WritePrivateProfileSectionW([NativeTypeName("LPCWSTR")] ushort* lpAppName, [NativeTypeName("LPCWSTR")] ushort* lpString, [NativeTypeName("LPCWSTR")] ushort* lpFileName);
+        public static extern BOOL WritePrivateProfileSectionW([NativeTypeName("LPCWSTR")] ushort* lpAppName, [NativeTypeName("LPCWSTR")] ushort* lpString, [NativeTypeName("LPCWSTR")] ushort* lpFileName);
 
         [DllImport("kernel32", ExactSpelling = true)]
         [return: NativeTypeName("DWORD")]
@@ -913,28 +815,22 @@ namespace TerraFX.Interop
         public static extern uint GetPrivateProfileSectionNamesW([NativeTypeName("LPWSTR")] ushort* lpszReturnBuffer, [NativeTypeName("DWORD")] uint nSize, [NativeTypeName("LPCWSTR")] ushort* lpFileName);
 
         [DllImport("kernel32", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int GetPrivateProfileStructA([NativeTypeName("LPCSTR")] sbyte* lpszSection, [NativeTypeName("LPCSTR")] sbyte* lpszKey, [NativeTypeName("LPVOID")] void* lpStruct, [NativeTypeName("UINT")] uint uSizeStruct, [NativeTypeName("LPCSTR")] sbyte* szFile);
+        public static extern BOOL GetPrivateProfileStructA([NativeTypeName("LPCSTR")] sbyte* lpszSection, [NativeTypeName("LPCSTR")] sbyte* lpszKey, [NativeTypeName("LPVOID")] void* lpStruct, [NativeTypeName("UINT")] uint uSizeStruct, [NativeTypeName("LPCSTR")] sbyte* szFile);
 
         [DllImport("kernel32", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int GetPrivateProfileStructW([NativeTypeName("LPCWSTR")] ushort* lpszSection, [NativeTypeName("LPCWSTR")] ushort* lpszKey, [NativeTypeName("LPVOID")] void* lpStruct, [NativeTypeName("UINT")] uint uSizeStruct, [NativeTypeName("LPCWSTR")] ushort* szFile);
+        public static extern BOOL GetPrivateProfileStructW([NativeTypeName("LPCWSTR")] ushort* lpszSection, [NativeTypeName("LPCWSTR")] ushort* lpszKey, [NativeTypeName("LPVOID")] void* lpStruct, [NativeTypeName("UINT")] uint uSizeStruct, [NativeTypeName("LPCWSTR")] ushort* szFile);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int WritePrivateProfileStructA([NativeTypeName("LPCSTR")] sbyte* lpszSection, [NativeTypeName("LPCSTR")] sbyte* lpszKey, [NativeTypeName("LPVOID")] void* lpStruct, [NativeTypeName("UINT")] uint uSizeStruct, [NativeTypeName("LPCSTR")] sbyte* szFile);
+        public static extern BOOL WritePrivateProfileStructA([NativeTypeName("LPCSTR")] sbyte* lpszSection, [NativeTypeName("LPCSTR")] sbyte* lpszKey, [NativeTypeName("LPVOID")] void* lpStruct, [NativeTypeName("UINT")] uint uSizeStruct, [NativeTypeName("LPCSTR")] sbyte* szFile);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int WritePrivateProfileStructW([NativeTypeName("LPCWSTR")] ushort* lpszSection, [NativeTypeName("LPCWSTR")] ushort* lpszKey, [NativeTypeName("LPVOID")] void* lpStruct, [NativeTypeName("UINT")] uint uSizeStruct, [NativeTypeName("LPCWSTR")] ushort* szFile);
+        public static extern BOOL WritePrivateProfileStructW([NativeTypeName("LPCWSTR")] ushort* lpszSection, [NativeTypeName("LPCWSTR")] ushort* lpszKey, [NativeTypeName("LPVOID")] void* lpStruct, [NativeTypeName("UINT")] uint uSizeStruct, [NativeTypeName("LPCWSTR")] ushort* szFile);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SetDllDirectoryA([NativeTypeName("LPCSTR")] sbyte* lpPathName);
+        public static extern BOOL SetDllDirectoryA([NativeTypeName("LPCSTR")] sbyte* lpPathName);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SetDllDirectoryW([NativeTypeName("LPCWSTR")] ushort* lpPathName);
+        public static extern BOOL SetDllDirectoryW([NativeTypeName("LPCWSTR")] ushort* lpPathName);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("DWORD")]
@@ -945,32 +841,25 @@ namespace TerraFX.Interop
         public static extern uint GetDllDirectoryW([NativeTypeName("DWORD")] uint nBufferLength, [NativeTypeName("LPWSTR")] ushort* lpBuffer);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SetSearchPathMode([NativeTypeName("DWORD")] uint Flags);
+        public static extern BOOL SetSearchPathMode([NativeTypeName("DWORD")] uint Flags);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int CreateDirectoryExA([NativeTypeName("LPCSTR")] sbyte* lpTemplateDirectory, [NativeTypeName("LPCSTR")] sbyte* lpNewDirectory, [NativeTypeName("LPSECURITY_ATTRIBUTES")] SECURITY_ATTRIBUTES* lpSecurityAttributes);
+        public static extern BOOL CreateDirectoryExA([NativeTypeName("LPCSTR")] sbyte* lpTemplateDirectory, [NativeTypeName("LPCSTR")] sbyte* lpNewDirectory, [NativeTypeName("LPSECURITY_ATTRIBUTES")] SECURITY_ATTRIBUTES* lpSecurityAttributes);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int CreateDirectoryExW([NativeTypeName("LPCWSTR")] ushort* lpTemplateDirectory, [NativeTypeName("LPCWSTR")] ushort* lpNewDirectory, [NativeTypeName("LPSECURITY_ATTRIBUTES")] SECURITY_ATTRIBUTES* lpSecurityAttributes);
+        public static extern BOOL CreateDirectoryExW([NativeTypeName("LPCWSTR")] ushort* lpTemplateDirectory, [NativeTypeName("LPCWSTR")] ushort* lpNewDirectory, [NativeTypeName("LPSECURITY_ATTRIBUTES")] SECURITY_ATTRIBUTES* lpSecurityAttributes);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int CreateDirectoryTransactedA([NativeTypeName("LPCSTR")] sbyte* lpTemplateDirectory, [NativeTypeName("LPCSTR")] sbyte* lpNewDirectory, [NativeTypeName("LPSECURITY_ATTRIBUTES")] SECURITY_ATTRIBUTES* lpSecurityAttributes, [NativeTypeName("HANDLE")] IntPtr hTransaction);
+        public static extern BOOL CreateDirectoryTransactedA([NativeTypeName("LPCSTR")] sbyte* lpTemplateDirectory, [NativeTypeName("LPCSTR")] sbyte* lpNewDirectory, [NativeTypeName("LPSECURITY_ATTRIBUTES")] SECURITY_ATTRIBUTES* lpSecurityAttributes, [NativeTypeName("HANDLE")] IntPtr hTransaction);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int CreateDirectoryTransactedW([NativeTypeName("LPCWSTR")] ushort* lpTemplateDirectory, [NativeTypeName("LPCWSTR")] ushort* lpNewDirectory, [NativeTypeName("LPSECURITY_ATTRIBUTES")] SECURITY_ATTRIBUTES* lpSecurityAttributes, [NativeTypeName("HANDLE")] IntPtr hTransaction);
+        public static extern BOOL CreateDirectoryTransactedW([NativeTypeName("LPCWSTR")] ushort* lpTemplateDirectory, [NativeTypeName("LPCWSTR")] ushort* lpNewDirectory, [NativeTypeName("LPSECURITY_ATTRIBUTES")] SECURITY_ATTRIBUTES* lpSecurityAttributes, [NativeTypeName("HANDLE")] IntPtr hTransaction);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int RemoveDirectoryTransactedA([NativeTypeName("LPCSTR")] sbyte* lpPathName, [NativeTypeName("HANDLE")] IntPtr hTransaction);
+        public static extern BOOL RemoveDirectoryTransactedA([NativeTypeName("LPCSTR")] sbyte* lpPathName, [NativeTypeName("HANDLE")] IntPtr hTransaction);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int RemoveDirectoryTransactedW([NativeTypeName("LPCWSTR")] ushort* lpPathName, [NativeTypeName("HANDLE")] IntPtr hTransaction);
+        public static extern BOOL RemoveDirectoryTransactedW([NativeTypeName("LPCWSTR")] ushort* lpPathName, [NativeTypeName("HANDLE")] IntPtr hTransaction);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("DWORD")]
@@ -981,8 +870,7 @@ namespace TerraFX.Interop
         public static extern uint GetFullPathNameTransactedW([NativeTypeName("LPCWSTR")] ushort* lpFileName, [NativeTypeName("DWORD")] uint nBufferLength, [NativeTypeName("LPWSTR")] ushort* lpBuffer, [NativeTypeName("LPWSTR *")] ushort** lpFilePart, [NativeTypeName("HANDLE")] IntPtr hTransaction);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int DefineDosDeviceA([NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("LPCSTR")] sbyte* lpDeviceName, [NativeTypeName("LPCSTR")] sbyte* lpTargetPath);
+        public static extern BOOL DefineDosDeviceA([NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("LPCSTR")] sbyte* lpDeviceName, [NativeTypeName("LPCSTR")] sbyte* lpTargetPath);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("DWORD")]
@@ -1001,20 +889,16 @@ namespace TerraFX.Interop
         public static extern IntPtr ReOpenFile([NativeTypeName("HANDLE")] IntPtr hOriginalFile, [NativeTypeName("DWORD")] uint dwDesiredAccess, [NativeTypeName("DWORD")] uint dwShareMode, [NativeTypeName("DWORD")] uint dwFlagsAndAttributes);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SetFileAttributesTransactedA([NativeTypeName("LPCSTR")] sbyte* lpFileName, [NativeTypeName("DWORD")] uint dwFileAttributes, [NativeTypeName("HANDLE")] IntPtr hTransaction);
+        public static extern BOOL SetFileAttributesTransactedA([NativeTypeName("LPCSTR")] sbyte* lpFileName, [NativeTypeName("DWORD")] uint dwFileAttributes, [NativeTypeName("HANDLE")] IntPtr hTransaction);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SetFileAttributesTransactedW([NativeTypeName("LPCWSTR")] ushort* lpFileName, [NativeTypeName("DWORD")] uint dwFileAttributes, [NativeTypeName("HANDLE")] IntPtr hTransaction);
+        public static extern BOOL SetFileAttributesTransactedW([NativeTypeName("LPCWSTR")] ushort* lpFileName, [NativeTypeName("DWORD")] uint dwFileAttributes, [NativeTypeName("HANDLE")] IntPtr hTransaction);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int GetFileAttributesTransactedA([NativeTypeName("LPCSTR")] sbyte* lpFileName, GET_FILEEX_INFO_LEVELS fInfoLevelId, [NativeTypeName("LPVOID")] void* lpFileInformation, [NativeTypeName("HANDLE")] IntPtr hTransaction);
+        public static extern BOOL GetFileAttributesTransactedA([NativeTypeName("LPCSTR")] sbyte* lpFileName, GET_FILEEX_INFO_LEVELS fInfoLevelId, [NativeTypeName("LPVOID")] void* lpFileInformation, [NativeTypeName("HANDLE")] IntPtr hTransaction);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int GetFileAttributesTransactedW([NativeTypeName("LPCWSTR")] ushort* lpFileName, GET_FILEEX_INFO_LEVELS fInfoLevelId, [NativeTypeName("LPVOID")] void* lpFileInformation, [NativeTypeName("HANDLE")] IntPtr hTransaction);
+        public static extern BOOL GetFileAttributesTransactedW([NativeTypeName("LPCWSTR")] ushort* lpFileName, GET_FILEEX_INFO_LEVELS fInfoLevelId, [NativeTypeName("LPVOID")] void* lpFileInformation, [NativeTypeName("HANDLE")] IntPtr hTransaction);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("DWORD")]
@@ -1025,20 +909,16 @@ namespace TerraFX.Interop
         public static extern uint GetCompressedFileSizeTransactedW([NativeTypeName("LPCWSTR")] ushort* lpFileName, [NativeTypeName("LPDWORD")] uint* lpFileSizeHigh, [NativeTypeName("HANDLE")] IntPtr hTransaction);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int DeleteFileTransactedA([NativeTypeName("LPCSTR")] sbyte* lpFileName, [NativeTypeName("HANDLE")] IntPtr hTransaction);
+        public static extern BOOL DeleteFileTransactedA([NativeTypeName("LPCSTR")] sbyte* lpFileName, [NativeTypeName("HANDLE")] IntPtr hTransaction);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int DeleteFileTransactedW([NativeTypeName("LPCWSTR")] ushort* lpFileName, [NativeTypeName("HANDLE")] IntPtr hTransaction);
+        public static extern BOOL DeleteFileTransactedW([NativeTypeName("LPCWSTR")] ushort* lpFileName, [NativeTypeName("HANDLE")] IntPtr hTransaction);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int CheckNameLegalDOS8Dot3A([NativeTypeName("LPCSTR")] sbyte* lpName, [NativeTypeName("LPSTR")] sbyte* lpOemName, [NativeTypeName("DWORD")] uint OemNameSize, [NativeTypeName("PBOOL")] int* pbNameContainsSpaces, [NativeTypeName("PBOOL")] int* pbNameLegal);
+        public static extern BOOL CheckNameLegalDOS8Dot3A([NativeTypeName("LPCSTR")] sbyte* lpName, [NativeTypeName("LPSTR")] sbyte* lpOemName, [NativeTypeName("DWORD")] uint OemNameSize, [NativeTypeName("PBOOL")] BOOL* pbNameContainsSpaces, [NativeTypeName("PBOOL")] BOOL* pbNameLegal);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int CheckNameLegalDOS8Dot3W([NativeTypeName("LPCWSTR")] ushort* lpName, [NativeTypeName("LPSTR")] sbyte* lpOemName, [NativeTypeName("DWORD")] uint OemNameSize, [NativeTypeName("PBOOL")] int* pbNameContainsSpaces, [NativeTypeName("PBOOL")] int* pbNameLegal);
+        public static extern BOOL CheckNameLegalDOS8Dot3W([NativeTypeName("LPCWSTR")] ushort* lpName, [NativeTypeName("LPSTR")] sbyte* lpOemName, [NativeTypeName("DWORD")] uint OemNameSize, [NativeTypeName("PBOOL")] BOOL* pbNameContainsSpaces, [NativeTypeName("PBOOL")] BOOL* pbNameLegal);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("HANDLE")]
@@ -1049,88 +929,68 @@ namespace TerraFX.Interop
         public static extern IntPtr FindFirstFileTransactedW([NativeTypeName("LPCWSTR")] ushort* lpFileName, FINDEX_INFO_LEVELS fInfoLevelId, [NativeTypeName("LPVOID")] void* lpFindFileData, FINDEX_SEARCH_OPS fSearchOp, [NativeTypeName("LPVOID")] void* lpSearchFilter, [NativeTypeName("DWORD")] uint dwAdditionalFlags, [NativeTypeName("HANDLE")] IntPtr hTransaction);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int CopyFileA([NativeTypeName("LPCSTR")] sbyte* lpExistingFileName, [NativeTypeName("LPCSTR")] sbyte* lpNewFileName, [NativeTypeName("BOOL")] int bFailIfExists);
+        public static extern BOOL CopyFileA([NativeTypeName("LPCSTR")] sbyte* lpExistingFileName, [NativeTypeName("LPCSTR")] sbyte* lpNewFileName, BOOL bFailIfExists);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int CopyFileW([NativeTypeName("LPCWSTR")] ushort* lpExistingFileName, [NativeTypeName("LPCWSTR")] ushort* lpNewFileName, [NativeTypeName("BOOL")] int bFailIfExists);
+        public static extern BOOL CopyFileW([NativeTypeName("LPCWSTR")] ushort* lpExistingFileName, [NativeTypeName("LPCWSTR")] ushort* lpNewFileName, BOOL bFailIfExists);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int CopyFileExA([NativeTypeName("LPCSTR")] sbyte* lpExistingFileName, [NativeTypeName("LPCSTR")] sbyte* lpNewFileName, [NativeTypeName("LPPROGRESS_ROUTINE")] delegate* unmanaged<LARGE_INTEGER, LARGE_INTEGER, LARGE_INTEGER, LARGE_INTEGER, uint, uint, IntPtr, IntPtr, void*, uint> lpProgressRoutine, [NativeTypeName("LPVOID")] void* lpData, [NativeTypeName("LPBOOL")] int* pbCancel, [NativeTypeName("DWORD")] uint dwCopyFlags);
+        public static extern BOOL CopyFileExA([NativeTypeName("LPCSTR")] sbyte* lpExistingFileName, [NativeTypeName("LPCSTR")] sbyte* lpNewFileName, [NativeTypeName("LPPROGRESS_ROUTINE")] delegate* unmanaged<LARGE_INTEGER, LARGE_INTEGER, LARGE_INTEGER, LARGE_INTEGER, uint, uint, IntPtr, IntPtr, void*, uint> lpProgressRoutine, [NativeTypeName("LPVOID")] void* lpData, [NativeTypeName("LPBOOL")] BOOL* pbCancel, [NativeTypeName("DWORD")] uint dwCopyFlags);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int CopyFileExW([NativeTypeName("LPCWSTR")] ushort* lpExistingFileName, [NativeTypeName("LPCWSTR")] ushort* lpNewFileName, [NativeTypeName("LPPROGRESS_ROUTINE")] delegate* unmanaged<LARGE_INTEGER, LARGE_INTEGER, LARGE_INTEGER, LARGE_INTEGER, uint, uint, IntPtr, IntPtr, void*, uint> lpProgressRoutine, [NativeTypeName("LPVOID")] void* lpData, [NativeTypeName("LPBOOL")] int* pbCancel, [NativeTypeName("DWORD")] uint dwCopyFlags);
+        public static extern BOOL CopyFileExW([NativeTypeName("LPCWSTR")] ushort* lpExistingFileName, [NativeTypeName("LPCWSTR")] ushort* lpNewFileName, [NativeTypeName("LPPROGRESS_ROUTINE")] delegate* unmanaged<LARGE_INTEGER, LARGE_INTEGER, LARGE_INTEGER, LARGE_INTEGER, uint, uint, IntPtr, IntPtr, void*, uint> lpProgressRoutine, [NativeTypeName("LPVOID")] void* lpData, [NativeTypeName("LPBOOL")] BOOL* pbCancel, [NativeTypeName("DWORD")] uint dwCopyFlags);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int CopyFileTransactedA([NativeTypeName("LPCSTR")] sbyte* lpExistingFileName, [NativeTypeName("LPCSTR")] sbyte* lpNewFileName, [NativeTypeName("LPPROGRESS_ROUTINE")] delegate* unmanaged<LARGE_INTEGER, LARGE_INTEGER, LARGE_INTEGER, LARGE_INTEGER, uint, uint, IntPtr, IntPtr, void*, uint> lpProgressRoutine, [NativeTypeName("LPVOID")] void* lpData, [NativeTypeName("LPBOOL")] int* pbCancel, [NativeTypeName("DWORD")] uint dwCopyFlags, [NativeTypeName("HANDLE")] IntPtr hTransaction);
+        public static extern BOOL CopyFileTransactedA([NativeTypeName("LPCSTR")] sbyte* lpExistingFileName, [NativeTypeName("LPCSTR")] sbyte* lpNewFileName, [NativeTypeName("LPPROGRESS_ROUTINE")] delegate* unmanaged<LARGE_INTEGER, LARGE_INTEGER, LARGE_INTEGER, LARGE_INTEGER, uint, uint, IntPtr, IntPtr, void*, uint> lpProgressRoutine, [NativeTypeName("LPVOID")] void* lpData, [NativeTypeName("LPBOOL")] BOOL* pbCancel, [NativeTypeName("DWORD")] uint dwCopyFlags, [NativeTypeName("HANDLE")] IntPtr hTransaction);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int CopyFileTransactedW([NativeTypeName("LPCWSTR")] ushort* lpExistingFileName, [NativeTypeName("LPCWSTR")] ushort* lpNewFileName, [NativeTypeName("LPPROGRESS_ROUTINE")] delegate* unmanaged<LARGE_INTEGER, LARGE_INTEGER, LARGE_INTEGER, LARGE_INTEGER, uint, uint, IntPtr, IntPtr, void*, uint> lpProgressRoutine, [NativeTypeName("LPVOID")] void* lpData, [NativeTypeName("LPBOOL")] int* pbCancel, [NativeTypeName("DWORD")] uint dwCopyFlags, [NativeTypeName("HANDLE")] IntPtr hTransaction);
+        public static extern BOOL CopyFileTransactedW([NativeTypeName("LPCWSTR")] ushort* lpExistingFileName, [NativeTypeName("LPCWSTR")] ushort* lpNewFileName, [NativeTypeName("LPPROGRESS_ROUTINE")] delegate* unmanaged<LARGE_INTEGER, LARGE_INTEGER, LARGE_INTEGER, LARGE_INTEGER, uint, uint, IntPtr, IntPtr, void*, uint> lpProgressRoutine, [NativeTypeName("LPVOID")] void* lpData, [NativeTypeName("LPBOOL")] BOOL* pbCancel, [NativeTypeName("DWORD")] uint dwCopyFlags, [NativeTypeName("HANDLE")] IntPtr hTransaction);
 
         [DllImport("kernel32", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
         public static extern int CopyFile2([NativeTypeName("PCWSTR")] ushort* pwszExistingFileName, [NativeTypeName("PCWSTR")] ushort* pwszNewFileName, COPYFILE2_EXTENDED_PARAMETERS* pExtendedParameters);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int MoveFileA([NativeTypeName("LPCSTR")] sbyte* lpExistingFileName, [NativeTypeName("LPCSTR")] sbyte* lpNewFileName);
+        public static extern BOOL MoveFileA([NativeTypeName("LPCSTR")] sbyte* lpExistingFileName, [NativeTypeName("LPCSTR")] sbyte* lpNewFileName);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int MoveFileW([NativeTypeName("LPCWSTR")] ushort* lpExistingFileName, [NativeTypeName("LPCWSTR")] ushort* lpNewFileName);
+        public static extern BOOL MoveFileW([NativeTypeName("LPCWSTR")] ushort* lpExistingFileName, [NativeTypeName("LPCWSTR")] ushort* lpNewFileName);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int MoveFileExA([NativeTypeName("LPCSTR")] sbyte* lpExistingFileName, [NativeTypeName("LPCSTR")] sbyte* lpNewFileName, [NativeTypeName("DWORD")] uint dwFlags);
+        public static extern BOOL MoveFileExA([NativeTypeName("LPCSTR")] sbyte* lpExistingFileName, [NativeTypeName("LPCSTR")] sbyte* lpNewFileName, [NativeTypeName("DWORD")] uint dwFlags);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int MoveFileExW([NativeTypeName("LPCWSTR")] ushort* lpExistingFileName, [NativeTypeName("LPCWSTR")] ushort* lpNewFileName, [NativeTypeName("DWORD")] uint dwFlags);
+        public static extern BOOL MoveFileExW([NativeTypeName("LPCWSTR")] ushort* lpExistingFileName, [NativeTypeName("LPCWSTR")] ushort* lpNewFileName, [NativeTypeName("DWORD")] uint dwFlags);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int MoveFileWithProgressA([NativeTypeName("LPCSTR")] sbyte* lpExistingFileName, [NativeTypeName("LPCSTR")] sbyte* lpNewFileName, [NativeTypeName("LPPROGRESS_ROUTINE")] delegate* unmanaged<LARGE_INTEGER, LARGE_INTEGER, LARGE_INTEGER, LARGE_INTEGER, uint, uint, IntPtr, IntPtr, void*, uint> lpProgressRoutine, [NativeTypeName("LPVOID")] void* lpData, [NativeTypeName("DWORD")] uint dwFlags);
+        public static extern BOOL MoveFileWithProgressA([NativeTypeName("LPCSTR")] sbyte* lpExistingFileName, [NativeTypeName("LPCSTR")] sbyte* lpNewFileName, [NativeTypeName("LPPROGRESS_ROUTINE")] delegate* unmanaged<LARGE_INTEGER, LARGE_INTEGER, LARGE_INTEGER, LARGE_INTEGER, uint, uint, IntPtr, IntPtr, void*, uint> lpProgressRoutine, [NativeTypeName("LPVOID")] void* lpData, [NativeTypeName("DWORD")] uint dwFlags);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int MoveFileWithProgressW([NativeTypeName("LPCWSTR")] ushort* lpExistingFileName, [NativeTypeName("LPCWSTR")] ushort* lpNewFileName, [NativeTypeName("LPPROGRESS_ROUTINE")] delegate* unmanaged<LARGE_INTEGER, LARGE_INTEGER, LARGE_INTEGER, LARGE_INTEGER, uint, uint, IntPtr, IntPtr, void*, uint> lpProgressRoutine, [NativeTypeName("LPVOID")] void* lpData, [NativeTypeName("DWORD")] uint dwFlags);
+        public static extern BOOL MoveFileWithProgressW([NativeTypeName("LPCWSTR")] ushort* lpExistingFileName, [NativeTypeName("LPCWSTR")] ushort* lpNewFileName, [NativeTypeName("LPPROGRESS_ROUTINE")] delegate* unmanaged<LARGE_INTEGER, LARGE_INTEGER, LARGE_INTEGER, LARGE_INTEGER, uint, uint, IntPtr, IntPtr, void*, uint> lpProgressRoutine, [NativeTypeName("LPVOID")] void* lpData, [NativeTypeName("DWORD")] uint dwFlags);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int MoveFileTransactedA([NativeTypeName("LPCSTR")] sbyte* lpExistingFileName, [NativeTypeName("LPCSTR")] sbyte* lpNewFileName, [NativeTypeName("LPPROGRESS_ROUTINE")] delegate* unmanaged<LARGE_INTEGER, LARGE_INTEGER, LARGE_INTEGER, LARGE_INTEGER, uint, uint, IntPtr, IntPtr, void*, uint> lpProgressRoutine, [NativeTypeName("LPVOID")] void* lpData, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("HANDLE")] IntPtr hTransaction);
+        public static extern BOOL MoveFileTransactedA([NativeTypeName("LPCSTR")] sbyte* lpExistingFileName, [NativeTypeName("LPCSTR")] sbyte* lpNewFileName, [NativeTypeName("LPPROGRESS_ROUTINE")] delegate* unmanaged<LARGE_INTEGER, LARGE_INTEGER, LARGE_INTEGER, LARGE_INTEGER, uint, uint, IntPtr, IntPtr, void*, uint> lpProgressRoutine, [NativeTypeName("LPVOID")] void* lpData, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("HANDLE")] IntPtr hTransaction);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int MoveFileTransactedW([NativeTypeName("LPCWSTR")] ushort* lpExistingFileName, [NativeTypeName("LPCWSTR")] ushort* lpNewFileName, [NativeTypeName("LPPROGRESS_ROUTINE")] delegate* unmanaged<LARGE_INTEGER, LARGE_INTEGER, LARGE_INTEGER, LARGE_INTEGER, uint, uint, IntPtr, IntPtr, void*, uint> lpProgressRoutine, [NativeTypeName("LPVOID")] void* lpData, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("HANDLE")] IntPtr hTransaction);
+        public static extern BOOL MoveFileTransactedW([NativeTypeName("LPCWSTR")] ushort* lpExistingFileName, [NativeTypeName("LPCWSTR")] ushort* lpNewFileName, [NativeTypeName("LPPROGRESS_ROUTINE")] delegate* unmanaged<LARGE_INTEGER, LARGE_INTEGER, LARGE_INTEGER, LARGE_INTEGER, uint, uint, IntPtr, IntPtr, void*, uint> lpProgressRoutine, [NativeTypeName("LPVOID")] void* lpData, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("HANDLE")] IntPtr hTransaction);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int ReplaceFileA([NativeTypeName("LPCSTR")] sbyte* lpReplacedFileName, [NativeTypeName("LPCSTR")] sbyte* lpReplacementFileName, [NativeTypeName("LPCSTR")] sbyte* lpBackupFileName, [NativeTypeName("DWORD")] uint dwReplaceFlags, [NativeTypeName("LPVOID")] void* lpExclude, [NativeTypeName("LPVOID")] void* lpReserved);
+        public static extern BOOL ReplaceFileA([NativeTypeName("LPCSTR")] sbyte* lpReplacedFileName, [NativeTypeName("LPCSTR")] sbyte* lpReplacementFileName, [NativeTypeName("LPCSTR")] sbyte* lpBackupFileName, [NativeTypeName("DWORD")] uint dwReplaceFlags, [NativeTypeName("LPVOID")] void* lpExclude, [NativeTypeName("LPVOID")] void* lpReserved);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int ReplaceFileW([NativeTypeName("LPCWSTR")] ushort* lpReplacedFileName, [NativeTypeName("LPCWSTR")] ushort* lpReplacementFileName, [NativeTypeName("LPCWSTR")] ushort* lpBackupFileName, [NativeTypeName("DWORD")] uint dwReplaceFlags, [NativeTypeName("LPVOID")] void* lpExclude, [NativeTypeName("LPVOID")] void* lpReserved);
+        public static extern BOOL ReplaceFileW([NativeTypeName("LPCWSTR")] ushort* lpReplacedFileName, [NativeTypeName("LPCWSTR")] ushort* lpReplacementFileName, [NativeTypeName("LPCWSTR")] ushort* lpBackupFileName, [NativeTypeName("DWORD")] uint dwReplaceFlags, [NativeTypeName("LPVOID")] void* lpExclude, [NativeTypeName("LPVOID")] void* lpReserved);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int CreateHardLinkA([NativeTypeName("LPCSTR")] sbyte* lpFileName, [NativeTypeName("LPCSTR")] sbyte* lpExistingFileName, [NativeTypeName("LPSECURITY_ATTRIBUTES")] SECURITY_ATTRIBUTES* lpSecurityAttributes);
+        public static extern BOOL CreateHardLinkA([NativeTypeName("LPCSTR")] sbyte* lpFileName, [NativeTypeName("LPCSTR")] sbyte* lpExistingFileName, [NativeTypeName("LPSECURITY_ATTRIBUTES")] SECURITY_ATTRIBUTES* lpSecurityAttributes);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int CreateHardLinkW([NativeTypeName("LPCWSTR")] ushort* lpFileName, [NativeTypeName("LPCWSTR")] ushort* lpExistingFileName, [NativeTypeName("LPSECURITY_ATTRIBUTES")] SECURITY_ATTRIBUTES* lpSecurityAttributes);
+        public static extern BOOL CreateHardLinkW([NativeTypeName("LPCWSTR")] ushort* lpFileName, [NativeTypeName("LPCWSTR")] ushort* lpExistingFileName, [NativeTypeName("LPSECURITY_ATTRIBUTES")] SECURITY_ATTRIBUTES* lpSecurityAttributes);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int CreateHardLinkTransactedA([NativeTypeName("LPCSTR")] sbyte* lpFileName, [NativeTypeName("LPCSTR")] sbyte* lpExistingFileName, [NativeTypeName("LPSECURITY_ATTRIBUTES")] SECURITY_ATTRIBUTES* lpSecurityAttributes, [NativeTypeName("HANDLE")] IntPtr hTransaction);
+        public static extern BOOL CreateHardLinkTransactedA([NativeTypeName("LPCSTR")] sbyte* lpFileName, [NativeTypeName("LPCSTR")] sbyte* lpExistingFileName, [NativeTypeName("LPSECURITY_ATTRIBUTES")] SECURITY_ATTRIBUTES* lpSecurityAttributes, [NativeTypeName("HANDLE")] IntPtr hTransaction);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int CreateHardLinkTransactedW([NativeTypeName("LPCWSTR")] ushort* lpFileName, [NativeTypeName("LPCWSTR")] ushort* lpExistingFileName, [NativeTypeName("LPSECURITY_ATTRIBUTES")] SECURITY_ATTRIBUTES* lpSecurityAttributes, [NativeTypeName("HANDLE")] IntPtr hTransaction);
+        public static extern BOOL CreateHardLinkTransactedW([NativeTypeName("LPCWSTR")] ushort* lpFileName, [NativeTypeName("LPCWSTR")] ushort* lpExistingFileName, [NativeTypeName("LPSECURITY_ATTRIBUTES")] SECURITY_ATTRIBUTES* lpSecurityAttributes, [NativeTypeName("HANDLE")] IntPtr hTransaction);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("HANDLE")]
@@ -1145,88 +1005,67 @@ namespace TerraFX.Interop
         public static extern IntPtr CreateNamedPipeA([NativeTypeName("LPCSTR")] sbyte* lpName, [NativeTypeName("DWORD")] uint dwOpenMode, [NativeTypeName("DWORD")] uint dwPipeMode, [NativeTypeName("DWORD")] uint nMaxInstances, [NativeTypeName("DWORD")] uint nOutBufferSize, [NativeTypeName("DWORD")] uint nInBufferSize, [NativeTypeName("DWORD")] uint nDefaultTimeOut, [NativeTypeName("LPSECURITY_ATTRIBUTES")] SECURITY_ATTRIBUTES* lpSecurityAttributes);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int GetNamedPipeHandleStateA([NativeTypeName("HANDLE")] IntPtr hNamedPipe, [NativeTypeName("LPDWORD")] uint* lpState, [NativeTypeName("LPDWORD")] uint* lpCurInstances, [NativeTypeName("LPDWORD")] uint* lpMaxCollectionCount, [NativeTypeName("LPDWORD")] uint* lpCollectDataTimeout, [NativeTypeName("LPSTR")] sbyte* lpUserName, [NativeTypeName("DWORD")] uint nMaxUserNameSize);
+        public static extern BOOL GetNamedPipeHandleStateA([NativeTypeName("HANDLE")] IntPtr hNamedPipe, [NativeTypeName("LPDWORD")] uint* lpState, [NativeTypeName("LPDWORD")] uint* lpCurInstances, [NativeTypeName("LPDWORD")] uint* lpMaxCollectionCount, [NativeTypeName("LPDWORD")] uint* lpCollectDataTimeout, [NativeTypeName("LPSTR")] sbyte* lpUserName, [NativeTypeName("DWORD")] uint nMaxUserNameSize);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int CallNamedPipeA([NativeTypeName("LPCSTR")] sbyte* lpNamedPipeName, [NativeTypeName("LPVOID")] void* lpInBuffer, [NativeTypeName("DWORD")] uint nInBufferSize, [NativeTypeName("LPVOID")] void* lpOutBuffer, [NativeTypeName("DWORD")] uint nOutBufferSize, [NativeTypeName("LPDWORD")] uint* lpBytesRead, [NativeTypeName("DWORD")] uint nTimeOut);
+        public static extern BOOL CallNamedPipeA([NativeTypeName("LPCSTR")] sbyte* lpNamedPipeName, [NativeTypeName("LPVOID")] void* lpInBuffer, [NativeTypeName("DWORD")] uint nInBufferSize, [NativeTypeName("LPVOID")] void* lpOutBuffer, [NativeTypeName("DWORD")] uint nOutBufferSize, [NativeTypeName("LPDWORD")] uint* lpBytesRead, [NativeTypeName("DWORD")] uint nTimeOut);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int WaitNamedPipeA([NativeTypeName("LPCSTR")] sbyte* lpNamedPipeName, [NativeTypeName("DWORD")] uint nTimeOut);
+        public static extern BOOL WaitNamedPipeA([NativeTypeName("LPCSTR")] sbyte* lpNamedPipeName, [NativeTypeName("DWORD")] uint nTimeOut);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int GetNamedPipeClientComputerNameA([NativeTypeName("HANDLE")] IntPtr Pipe, [NativeTypeName("LPSTR")] sbyte* ClientComputerName, [NativeTypeName("ULONG")] uint ClientComputerNameLength);
+        public static extern BOOL GetNamedPipeClientComputerNameA([NativeTypeName("HANDLE")] IntPtr Pipe, [NativeTypeName("LPSTR")] sbyte* ClientComputerName, [NativeTypeName("ULONG")] uint ClientComputerNameLength);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int GetNamedPipeClientProcessId([NativeTypeName("HANDLE")] IntPtr Pipe, [NativeTypeName("PULONG")] uint* ClientProcessId);
+        public static extern BOOL GetNamedPipeClientProcessId([NativeTypeName("HANDLE")] IntPtr Pipe, [NativeTypeName("PULONG")] uint* ClientProcessId);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int GetNamedPipeClientSessionId([NativeTypeName("HANDLE")] IntPtr Pipe, [NativeTypeName("PULONG")] uint* ClientSessionId);
+        public static extern BOOL GetNamedPipeClientSessionId([NativeTypeName("HANDLE")] IntPtr Pipe, [NativeTypeName("PULONG")] uint* ClientSessionId);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int GetNamedPipeServerProcessId([NativeTypeName("HANDLE")] IntPtr Pipe, [NativeTypeName("PULONG")] uint* ServerProcessId);
+        public static extern BOOL GetNamedPipeServerProcessId([NativeTypeName("HANDLE")] IntPtr Pipe, [NativeTypeName("PULONG")] uint* ServerProcessId);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int GetNamedPipeServerSessionId([NativeTypeName("HANDLE")] IntPtr Pipe, [NativeTypeName("PULONG")] uint* ServerSessionId);
+        public static extern BOOL GetNamedPipeServerSessionId([NativeTypeName("HANDLE")] IntPtr Pipe, [NativeTypeName("PULONG")] uint* ServerSessionId);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SetVolumeLabelA([NativeTypeName("LPCSTR")] sbyte* lpRootPathName, [NativeTypeName("LPCSTR")] sbyte* lpVolumeName);
+        public static extern BOOL SetVolumeLabelA([NativeTypeName("LPCSTR")] sbyte* lpRootPathName, [NativeTypeName("LPCSTR")] sbyte* lpVolumeName);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SetVolumeLabelW([NativeTypeName("LPCWSTR")] ushort* lpRootPathName, [NativeTypeName("LPCWSTR")] ushort* lpVolumeName);
+        public static extern BOOL SetVolumeLabelW([NativeTypeName("LPCWSTR")] ushort* lpRootPathName, [NativeTypeName("LPCWSTR")] ushort* lpVolumeName);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SetFileBandwidthReservation([NativeTypeName("HANDLE")] IntPtr hFile, [NativeTypeName("DWORD")] uint nPeriodMilliseconds, [NativeTypeName("DWORD")] uint nBytesPerPeriod, [NativeTypeName("BOOL")] int bDiscardable, [NativeTypeName("LPDWORD")] uint* lpTransferSize, [NativeTypeName("LPDWORD")] uint* lpNumOutstandingRequests);
+        public static extern BOOL SetFileBandwidthReservation([NativeTypeName("HANDLE")] IntPtr hFile, [NativeTypeName("DWORD")] uint nPeriodMilliseconds, [NativeTypeName("DWORD")] uint nBytesPerPeriod, BOOL bDiscardable, [NativeTypeName("LPDWORD")] uint* lpTransferSize, [NativeTypeName("LPDWORD")] uint* lpNumOutstandingRequests);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int GetFileBandwidthReservation([NativeTypeName("HANDLE")] IntPtr hFile, [NativeTypeName("LPDWORD")] uint* lpPeriodMilliseconds, [NativeTypeName("LPDWORD")] uint* lpBytesPerPeriod, [NativeTypeName("LPBOOL")] int* pDiscardable, [NativeTypeName("LPDWORD")] uint* lpTransferSize, [NativeTypeName("LPDWORD")] uint* lpNumOutstandingRequests);
+        public static extern BOOL GetFileBandwidthReservation([NativeTypeName("HANDLE")] IntPtr hFile, [NativeTypeName("LPDWORD")] uint* lpPeriodMilliseconds, [NativeTypeName("LPDWORD")] uint* lpBytesPerPeriod, [NativeTypeName("LPBOOL")] BOOL* pDiscardable, [NativeTypeName("LPDWORD")] uint* lpTransferSize, [NativeTypeName("LPDWORD")] uint* lpNumOutstandingRequests);
 
         [DllImport("advapi32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int ClearEventLogA([NativeTypeName("HANDLE")] IntPtr hEventLog, [NativeTypeName("LPCSTR")] sbyte* lpBackupFileName);
+        public static extern BOOL ClearEventLogA([NativeTypeName("HANDLE")] IntPtr hEventLog, [NativeTypeName("LPCSTR")] sbyte* lpBackupFileName);
 
         [DllImport("advapi32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int ClearEventLogW([NativeTypeName("HANDLE")] IntPtr hEventLog, [NativeTypeName("LPCWSTR")] ushort* lpBackupFileName);
+        public static extern BOOL ClearEventLogW([NativeTypeName("HANDLE")] IntPtr hEventLog, [NativeTypeName("LPCWSTR")] ushort* lpBackupFileName);
 
         [DllImport("advapi32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int BackupEventLogA([NativeTypeName("HANDLE")] IntPtr hEventLog, [NativeTypeName("LPCSTR")] sbyte* lpBackupFileName);
+        public static extern BOOL BackupEventLogA([NativeTypeName("HANDLE")] IntPtr hEventLog, [NativeTypeName("LPCSTR")] sbyte* lpBackupFileName);
 
         [DllImport("advapi32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int BackupEventLogW([NativeTypeName("HANDLE")] IntPtr hEventLog, [NativeTypeName("LPCWSTR")] ushort* lpBackupFileName);
+        public static extern BOOL BackupEventLogW([NativeTypeName("HANDLE")] IntPtr hEventLog, [NativeTypeName("LPCWSTR")] ushort* lpBackupFileName);
 
         [DllImport("advapi32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int CloseEventLog([NativeTypeName("HANDLE")] IntPtr hEventLog);
+        public static extern BOOL CloseEventLog([NativeTypeName("HANDLE")] IntPtr hEventLog);
 
         [DllImport("advapi32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int DeregisterEventSource([NativeTypeName("HANDLE")] IntPtr hEventLog);
+        public static extern BOOL DeregisterEventSource([NativeTypeName("HANDLE")] IntPtr hEventLog);
 
         [DllImport("advapi32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int NotifyChangeEventLog([NativeTypeName("HANDLE")] IntPtr hEventLog, [NativeTypeName("HANDLE")] IntPtr hEvent);
+        public static extern BOOL NotifyChangeEventLog([NativeTypeName("HANDLE")] IntPtr hEventLog, [NativeTypeName("HANDLE")] IntPtr hEvent);
 
         [DllImport("advapi32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int GetNumberOfEventLogRecords([NativeTypeName("HANDLE")] IntPtr hEventLog, [NativeTypeName("PDWORD")] uint* NumberOfRecords);
+        public static extern BOOL GetNumberOfEventLogRecords([NativeTypeName("HANDLE")] IntPtr hEventLog, [NativeTypeName("PDWORD")] uint* NumberOfRecords);
 
         [DllImport("advapi32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int GetOldestEventLogRecord([NativeTypeName("HANDLE")] IntPtr hEventLog, [NativeTypeName("PDWORD")] uint* OldestRecord);
+        public static extern BOOL GetOldestEventLogRecord([NativeTypeName("HANDLE")] IntPtr hEventLog, [NativeTypeName("PDWORD")] uint* OldestRecord);
 
         [DllImport("advapi32", ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("HANDLE")]
@@ -1253,280 +1092,213 @@ namespace TerraFX.Interop
         public static extern IntPtr OpenBackupEventLogW([NativeTypeName("LPCWSTR")] ushort* lpUNCServerName, [NativeTypeName("LPCWSTR")] ushort* lpFileName);
 
         [DllImport("advapi32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int ReadEventLogA([NativeTypeName("HANDLE")] IntPtr hEventLog, [NativeTypeName("DWORD")] uint dwReadFlags, [NativeTypeName("DWORD")] uint dwRecordOffset, [NativeTypeName("LPVOID")] void* lpBuffer, [NativeTypeName("DWORD")] uint nNumberOfBytesToRead, [NativeTypeName("DWORD *")] uint* pnBytesRead, [NativeTypeName("DWORD *")] uint* pnMinNumberOfBytesNeeded);
+        public static extern BOOL ReadEventLogA([NativeTypeName("HANDLE")] IntPtr hEventLog, [NativeTypeName("DWORD")] uint dwReadFlags, [NativeTypeName("DWORD")] uint dwRecordOffset, [NativeTypeName("LPVOID")] void* lpBuffer, [NativeTypeName("DWORD")] uint nNumberOfBytesToRead, [NativeTypeName("DWORD *")] uint* pnBytesRead, [NativeTypeName("DWORD *")] uint* pnMinNumberOfBytesNeeded);
 
         [DllImport("advapi32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int ReadEventLogW([NativeTypeName("HANDLE")] IntPtr hEventLog, [NativeTypeName("DWORD")] uint dwReadFlags, [NativeTypeName("DWORD")] uint dwRecordOffset, [NativeTypeName("LPVOID")] void* lpBuffer, [NativeTypeName("DWORD")] uint nNumberOfBytesToRead, [NativeTypeName("DWORD *")] uint* pnBytesRead, [NativeTypeName("DWORD *")] uint* pnMinNumberOfBytesNeeded);
+        public static extern BOOL ReadEventLogW([NativeTypeName("HANDLE")] IntPtr hEventLog, [NativeTypeName("DWORD")] uint dwReadFlags, [NativeTypeName("DWORD")] uint dwRecordOffset, [NativeTypeName("LPVOID")] void* lpBuffer, [NativeTypeName("DWORD")] uint nNumberOfBytesToRead, [NativeTypeName("DWORD *")] uint* pnBytesRead, [NativeTypeName("DWORD *")] uint* pnMinNumberOfBytesNeeded);
 
         [DllImport("advapi32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int ReportEventA([NativeTypeName("HANDLE")] IntPtr hEventLog, [NativeTypeName("WORD")] ushort wType, [NativeTypeName("WORD")] ushort wCategory, [NativeTypeName("DWORD")] uint dwEventID, [NativeTypeName("PSID")] void* lpUserSid, [NativeTypeName("WORD")] ushort wNumStrings, [NativeTypeName("DWORD")] uint dwDataSize, [NativeTypeName("LPCSTR *")] sbyte** lpStrings, [NativeTypeName("LPVOID")] void* lpRawData);
+        public static extern BOOL ReportEventA([NativeTypeName("HANDLE")] IntPtr hEventLog, [NativeTypeName("WORD")] ushort wType, [NativeTypeName("WORD")] ushort wCategory, [NativeTypeName("DWORD")] uint dwEventID, [NativeTypeName("PSID")] void* lpUserSid, [NativeTypeName("WORD")] ushort wNumStrings, [NativeTypeName("DWORD")] uint dwDataSize, [NativeTypeName("LPCSTR *")] sbyte** lpStrings, [NativeTypeName("LPVOID")] void* lpRawData);
 
         [DllImport("advapi32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int ReportEventW([NativeTypeName("HANDLE")] IntPtr hEventLog, [NativeTypeName("WORD")] ushort wType, [NativeTypeName("WORD")] ushort wCategory, [NativeTypeName("DWORD")] uint dwEventID, [NativeTypeName("PSID")] void* lpUserSid, [NativeTypeName("WORD")] ushort wNumStrings, [NativeTypeName("DWORD")] uint dwDataSize, [NativeTypeName("LPCWSTR *")] ushort** lpStrings, [NativeTypeName("LPVOID")] void* lpRawData);
+        public static extern BOOL ReportEventW([NativeTypeName("HANDLE")] IntPtr hEventLog, [NativeTypeName("WORD")] ushort wType, [NativeTypeName("WORD")] ushort wCategory, [NativeTypeName("DWORD")] uint dwEventID, [NativeTypeName("PSID")] void* lpUserSid, [NativeTypeName("WORD")] ushort wNumStrings, [NativeTypeName("DWORD")] uint dwDataSize, [NativeTypeName("LPCWSTR *")] ushort** lpStrings, [NativeTypeName("LPVOID")] void* lpRawData);
 
         [DllImport("advapi32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int GetEventLogInformation([NativeTypeName("HANDLE")] IntPtr hEventLog, [NativeTypeName("DWORD")] uint dwInfoLevel, [NativeTypeName("LPVOID")] void* lpBuffer, [NativeTypeName("DWORD")] uint cbBufSize, [NativeTypeName("LPDWORD")] uint* pcbBytesNeeded);
+        public static extern BOOL GetEventLogInformation([NativeTypeName("HANDLE")] IntPtr hEventLog, [NativeTypeName("DWORD")] uint dwInfoLevel, [NativeTypeName("LPVOID")] void* lpBuffer, [NativeTypeName("DWORD")] uint cbBufSize, [NativeTypeName("LPDWORD")] uint* pcbBytesNeeded);
 
         [DllImport("advapi32", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int OperationStart(OPERATION_START_PARAMETERS* OperationStartParams);
+        public static extern BOOL OperationStart(OPERATION_START_PARAMETERS* OperationStartParams);
 
         [DllImport("advapi32", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int OperationEnd(OPERATION_END_PARAMETERS* OperationEndParams);
+        public static extern BOOL OperationEnd(OPERATION_END_PARAMETERS* OperationEndParams);
 
         [DllImport("advapi32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int AccessCheckAndAuditAlarmA([NativeTypeName("LPCSTR")] sbyte* SubsystemName, [NativeTypeName("LPVOID")] void* HandleId, [NativeTypeName("LPSTR")] sbyte* ObjectTypeName, [NativeTypeName("LPSTR")] sbyte* ObjectName, [NativeTypeName("PSECURITY_DESCRIPTOR")] void* SecurityDescriptor, [NativeTypeName("DWORD")] uint DesiredAccess, [NativeTypeName("PGENERIC_MAPPING")] GENERIC_MAPPING* GenericMapping, [NativeTypeName("BOOL")] int ObjectCreation, [NativeTypeName("LPDWORD")] uint* GrantedAccess, [NativeTypeName("LPBOOL")] int* AccessStatus, [NativeTypeName("LPBOOL")] int* pfGenerateOnClose);
+        public static extern BOOL AccessCheckAndAuditAlarmA([NativeTypeName("LPCSTR")] sbyte* SubsystemName, [NativeTypeName("LPVOID")] void* HandleId, [NativeTypeName("LPSTR")] sbyte* ObjectTypeName, [NativeTypeName("LPSTR")] sbyte* ObjectName, [NativeTypeName("PSECURITY_DESCRIPTOR")] void* SecurityDescriptor, [NativeTypeName("DWORD")] uint DesiredAccess, [NativeTypeName("PGENERIC_MAPPING")] GENERIC_MAPPING* GenericMapping, BOOL ObjectCreation, [NativeTypeName("LPDWORD")] uint* GrantedAccess, [NativeTypeName("LPBOOL")] BOOL* AccessStatus, [NativeTypeName("LPBOOL")] BOOL* pfGenerateOnClose);
 
         [DllImport("advapi32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int AccessCheckByTypeAndAuditAlarmA([NativeTypeName("LPCSTR")] sbyte* SubsystemName, [NativeTypeName("LPVOID")] void* HandleId, [NativeTypeName("LPCSTR")] sbyte* ObjectTypeName, [NativeTypeName("LPCSTR")] sbyte* ObjectName, [NativeTypeName("PSECURITY_DESCRIPTOR")] void* SecurityDescriptor, [NativeTypeName("PSID")] void* PrincipalSelfSid, [NativeTypeName("DWORD")] uint DesiredAccess, AUDIT_EVENT_TYPE AuditType, [NativeTypeName("DWORD")] uint Flags, [NativeTypeName("POBJECT_TYPE_LIST")] OBJECT_TYPE_LIST* ObjectTypeList, [NativeTypeName("DWORD")] uint ObjectTypeListLength, [NativeTypeName("PGENERIC_MAPPING")] GENERIC_MAPPING* GenericMapping, [NativeTypeName("BOOL")] int ObjectCreation, [NativeTypeName("LPDWORD")] uint* GrantedAccess, [NativeTypeName("LPBOOL")] int* AccessStatus, [NativeTypeName("LPBOOL")] int* pfGenerateOnClose);
+        public static extern BOOL AccessCheckByTypeAndAuditAlarmA([NativeTypeName("LPCSTR")] sbyte* SubsystemName, [NativeTypeName("LPVOID")] void* HandleId, [NativeTypeName("LPCSTR")] sbyte* ObjectTypeName, [NativeTypeName("LPCSTR")] sbyte* ObjectName, [NativeTypeName("PSECURITY_DESCRIPTOR")] void* SecurityDescriptor, [NativeTypeName("PSID")] void* PrincipalSelfSid, [NativeTypeName("DWORD")] uint DesiredAccess, AUDIT_EVENT_TYPE AuditType, [NativeTypeName("DWORD")] uint Flags, [NativeTypeName("POBJECT_TYPE_LIST")] OBJECT_TYPE_LIST* ObjectTypeList, [NativeTypeName("DWORD")] uint ObjectTypeListLength, [NativeTypeName("PGENERIC_MAPPING")] GENERIC_MAPPING* GenericMapping, BOOL ObjectCreation, [NativeTypeName("LPDWORD")] uint* GrantedAccess, [NativeTypeName("LPBOOL")] BOOL* AccessStatus, [NativeTypeName("LPBOOL")] BOOL* pfGenerateOnClose);
 
         [DllImport("advapi32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int AccessCheckByTypeResultListAndAuditAlarmA([NativeTypeName("LPCSTR")] sbyte* SubsystemName, [NativeTypeName("LPVOID")] void* HandleId, [NativeTypeName("LPCSTR")] sbyte* ObjectTypeName, [NativeTypeName("LPCSTR")] sbyte* ObjectName, [NativeTypeName("PSECURITY_DESCRIPTOR")] void* SecurityDescriptor, [NativeTypeName("PSID")] void* PrincipalSelfSid, [NativeTypeName("DWORD")] uint DesiredAccess, AUDIT_EVENT_TYPE AuditType, [NativeTypeName("DWORD")] uint Flags, [NativeTypeName("POBJECT_TYPE_LIST")] OBJECT_TYPE_LIST* ObjectTypeList, [NativeTypeName("DWORD")] uint ObjectTypeListLength, [NativeTypeName("PGENERIC_MAPPING")] GENERIC_MAPPING* GenericMapping, [NativeTypeName("BOOL")] int ObjectCreation, [NativeTypeName("LPDWORD")] uint* GrantedAccess, [NativeTypeName("LPDWORD")] uint* AccessStatusList, [NativeTypeName("LPBOOL")] int* pfGenerateOnClose);
+        public static extern BOOL AccessCheckByTypeResultListAndAuditAlarmA([NativeTypeName("LPCSTR")] sbyte* SubsystemName, [NativeTypeName("LPVOID")] void* HandleId, [NativeTypeName("LPCSTR")] sbyte* ObjectTypeName, [NativeTypeName("LPCSTR")] sbyte* ObjectName, [NativeTypeName("PSECURITY_DESCRIPTOR")] void* SecurityDescriptor, [NativeTypeName("PSID")] void* PrincipalSelfSid, [NativeTypeName("DWORD")] uint DesiredAccess, AUDIT_EVENT_TYPE AuditType, [NativeTypeName("DWORD")] uint Flags, [NativeTypeName("POBJECT_TYPE_LIST")] OBJECT_TYPE_LIST* ObjectTypeList, [NativeTypeName("DWORD")] uint ObjectTypeListLength, [NativeTypeName("PGENERIC_MAPPING")] GENERIC_MAPPING* GenericMapping, BOOL ObjectCreation, [NativeTypeName("LPDWORD")] uint* GrantedAccess, [NativeTypeName("LPDWORD")] uint* AccessStatusList, [NativeTypeName("LPBOOL")] BOOL* pfGenerateOnClose);
 
         [DllImport("advapi32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int AccessCheckByTypeResultListAndAuditAlarmByHandleA([NativeTypeName("LPCSTR")] sbyte* SubsystemName, [NativeTypeName("LPVOID")] void* HandleId, [NativeTypeName("HANDLE")] IntPtr ClientToken, [NativeTypeName("LPCSTR")] sbyte* ObjectTypeName, [NativeTypeName("LPCSTR")] sbyte* ObjectName, [NativeTypeName("PSECURITY_DESCRIPTOR")] void* SecurityDescriptor, [NativeTypeName("PSID")] void* PrincipalSelfSid, [NativeTypeName("DWORD")] uint DesiredAccess, AUDIT_EVENT_TYPE AuditType, [NativeTypeName("DWORD")] uint Flags, [NativeTypeName("POBJECT_TYPE_LIST")] OBJECT_TYPE_LIST* ObjectTypeList, [NativeTypeName("DWORD")] uint ObjectTypeListLength, [NativeTypeName("PGENERIC_MAPPING")] GENERIC_MAPPING* GenericMapping, [NativeTypeName("BOOL")] int ObjectCreation, [NativeTypeName("LPDWORD")] uint* GrantedAccess, [NativeTypeName("LPDWORD")] uint* AccessStatusList, [NativeTypeName("LPBOOL")] int* pfGenerateOnClose);
+        public static extern BOOL AccessCheckByTypeResultListAndAuditAlarmByHandleA([NativeTypeName("LPCSTR")] sbyte* SubsystemName, [NativeTypeName("LPVOID")] void* HandleId, [NativeTypeName("HANDLE")] IntPtr ClientToken, [NativeTypeName("LPCSTR")] sbyte* ObjectTypeName, [NativeTypeName("LPCSTR")] sbyte* ObjectName, [NativeTypeName("PSECURITY_DESCRIPTOR")] void* SecurityDescriptor, [NativeTypeName("PSID")] void* PrincipalSelfSid, [NativeTypeName("DWORD")] uint DesiredAccess, AUDIT_EVENT_TYPE AuditType, [NativeTypeName("DWORD")] uint Flags, [NativeTypeName("POBJECT_TYPE_LIST")] OBJECT_TYPE_LIST* ObjectTypeList, [NativeTypeName("DWORD")] uint ObjectTypeListLength, [NativeTypeName("PGENERIC_MAPPING")] GENERIC_MAPPING* GenericMapping, BOOL ObjectCreation, [NativeTypeName("LPDWORD")] uint* GrantedAccess, [NativeTypeName("LPDWORD")] uint* AccessStatusList, [NativeTypeName("LPBOOL")] BOOL* pfGenerateOnClose);
 
         [DllImport("advapi32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int ObjectOpenAuditAlarmA([NativeTypeName("LPCSTR")] sbyte* SubsystemName, [NativeTypeName("LPVOID")] void* HandleId, [NativeTypeName("LPSTR")] sbyte* ObjectTypeName, [NativeTypeName("LPSTR")] sbyte* ObjectName, [NativeTypeName("PSECURITY_DESCRIPTOR")] void* pSecurityDescriptor, [NativeTypeName("HANDLE")] IntPtr ClientToken, [NativeTypeName("DWORD")] uint DesiredAccess, [NativeTypeName("DWORD")] uint GrantedAccess, [NativeTypeName("PPRIVILEGE_SET")] PRIVILEGE_SET* Privileges, [NativeTypeName("BOOL")] int ObjectCreation, [NativeTypeName("BOOL")] int AccessGranted, [NativeTypeName("LPBOOL")] int* GenerateOnClose);
+        public static extern BOOL ObjectOpenAuditAlarmA([NativeTypeName("LPCSTR")] sbyte* SubsystemName, [NativeTypeName("LPVOID")] void* HandleId, [NativeTypeName("LPSTR")] sbyte* ObjectTypeName, [NativeTypeName("LPSTR")] sbyte* ObjectName, [NativeTypeName("PSECURITY_DESCRIPTOR")] void* pSecurityDescriptor, [NativeTypeName("HANDLE")] IntPtr ClientToken, [NativeTypeName("DWORD")] uint DesiredAccess, [NativeTypeName("DWORD")] uint GrantedAccess, [NativeTypeName("PPRIVILEGE_SET")] PRIVILEGE_SET* Privileges, BOOL ObjectCreation, BOOL AccessGranted, [NativeTypeName("LPBOOL")] BOOL* GenerateOnClose);
 
         [DllImport("advapi32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int ObjectPrivilegeAuditAlarmA([NativeTypeName("LPCSTR")] sbyte* SubsystemName, [NativeTypeName("LPVOID")] void* HandleId, [NativeTypeName("HANDLE")] IntPtr ClientToken, [NativeTypeName("DWORD")] uint DesiredAccess, [NativeTypeName("PPRIVILEGE_SET")] PRIVILEGE_SET* Privileges, [NativeTypeName("BOOL")] int AccessGranted);
+        public static extern BOOL ObjectPrivilegeAuditAlarmA([NativeTypeName("LPCSTR")] sbyte* SubsystemName, [NativeTypeName("LPVOID")] void* HandleId, [NativeTypeName("HANDLE")] IntPtr ClientToken, [NativeTypeName("DWORD")] uint DesiredAccess, [NativeTypeName("PPRIVILEGE_SET")] PRIVILEGE_SET* Privileges, BOOL AccessGranted);
 
         [DllImport("advapi32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int ObjectCloseAuditAlarmA([NativeTypeName("LPCSTR")] sbyte* SubsystemName, [NativeTypeName("LPVOID")] void* HandleId, [NativeTypeName("BOOL")] int GenerateOnClose);
+        public static extern BOOL ObjectCloseAuditAlarmA([NativeTypeName("LPCSTR")] sbyte* SubsystemName, [NativeTypeName("LPVOID")] void* HandleId, BOOL GenerateOnClose);
 
         [DllImport("advapi32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int ObjectDeleteAuditAlarmA([NativeTypeName("LPCSTR")] sbyte* SubsystemName, [NativeTypeName("LPVOID")] void* HandleId, [NativeTypeName("BOOL")] int GenerateOnClose);
+        public static extern BOOL ObjectDeleteAuditAlarmA([NativeTypeName("LPCSTR")] sbyte* SubsystemName, [NativeTypeName("LPVOID")] void* HandleId, BOOL GenerateOnClose);
 
         [DllImport("advapi32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int PrivilegedServiceAuditAlarmA([NativeTypeName("LPCSTR")] sbyte* SubsystemName, [NativeTypeName("LPCSTR")] sbyte* ServiceName, [NativeTypeName("HANDLE")] IntPtr ClientToken, [NativeTypeName("PPRIVILEGE_SET")] PRIVILEGE_SET* Privileges, [NativeTypeName("BOOL")] int AccessGranted);
+        public static extern BOOL PrivilegedServiceAuditAlarmA([NativeTypeName("LPCSTR")] sbyte* SubsystemName, [NativeTypeName("LPCSTR")] sbyte* ServiceName, [NativeTypeName("HANDLE")] IntPtr ClientToken, [NativeTypeName("PPRIVILEGE_SET")] PRIVILEGE_SET* Privileges, BOOL AccessGranted);
 
         [DllImport("advapi32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int AddConditionalAce([NativeTypeName("PACL")] ACL* pAcl, [NativeTypeName("DWORD")] uint dwAceRevision, [NativeTypeName("DWORD")] uint AceFlags, [NativeTypeName("UCHAR")] byte AceType, [NativeTypeName("DWORD")] uint AccessMask, [NativeTypeName("PSID")] void* pSid, [NativeTypeName("PWCHAR")] ushort* ConditionStr, [NativeTypeName("DWORD *")] uint* ReturnLength);
+        public static extern BOOL AddConditionalAce([NativeTypeName("PACL")] ACL* pAcl, [NativeTypeName("DWORD")] uint dwAceRevision, [NativeTypeName("DWORD")] uint AceFlags, [NativeTypeName("UCHAR")] byte AceType, [NativeTypeName("DWORD")] uint AccessMask, [NativeTypeName("PSID")] void* pSid, [NativeTypeName("PWCHAR")] ushort* ConditionStr, [NativeTypeName("DWORD *")] uint* ReturnLength);
 
         [DllImport("advapi32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SetFileSecurityA([NativeTypeName("LPCSTR")] sbyte* lpFileName, [NativeTypeName("SECURITY_INFORMATION")] uint SecurityInformation, [NativeTypeName("PSECURITY_DESCRIPTOR")] void* pSecurityDescriptor);
+        public static extern BOOL SetFileSecurityA([NativeTypeName("LPCSTR")] sbyte* lpFileName, [NativeTypeName("SECURITY_INFORMATION")] uint SecurityInformation, [NativeTypeName("PSECURITY_DESCRIPTOR")] void* pSecurityDescriptor);
 
         [DllImport("advapi32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int GetFileSecurityA([NativeTypeName("LPCSTR")] sbyte* lpFileName, [NativeTypeName("SECURITY_INFORMATION")] uint RequestedInformation, [NativeTypeName("PSECURITY_DESCRIPTOR")] void* pSecurityDescriptor, [NativeTypeName("DWORD")] uint nLength, [NativeTypeName("LPDWORD")] uint* lpnLengthNeeded);
+        public static extern BOOL GetFileSecurityA([NativeTypeName("LPCSTR")] sbyte* lpFileName, [NativeTypeName("SECURITY_INFORMATION")] uint RequestedInformation, [NativeTypeName("PSECURITY_DESCRIPTOR")] void* pSecurityDescriptor, [NativeTypeName("DWORD")] uint nLength, [NativeTypeName("LPDWORD")] uint* lpnLengthNeeded);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int ReadDirectoryChangesW([NativeTypeName("HANDLE")] IntPtr hDirectory, [NativeTypeName("LPVOID")] void* lpBuffer, [NativeTypeName("DWORD")] uint nBufferLength, [NativeTypeName("BOOL")] int bWatchSubtree, [NativeTypeName("DWORD")] uint dwNotifyFilter, [NativeTypeName("LPDWORD")] uint* lpBytesReturned, [NativeTypeName("LPOVERLAPPED")] OVERLAPPED* lpOverlapped, [NativeTypeName("LPOVERLAPPED_COMPLETION_ROUTINE")] delegate* unmanaged<uint, uint, OVERLAPPED*, void> lpCompletionRoutine);
+        public static extern BOOL ReadDirectoryChangesW([NativeTypeName("HANDLE")] IntPtr hDirectory, [NativeTypeName("LPVOID")] void* lpBuffer, [NativeTypeName("DWORD")] uint nBufferLength, BOOL bWatchSubtree, [NativeTypeName("DWORD")] uint dwNotifyFilter, [NativeTypeName("LPDWORD")] uint* lpBytesReturned, [NativeTypeName("LPOVERLAPPED")] OVERLAPPED* lpOverlapped, [NativeTypeName("LPOVERLAPPED_COMPLETION_ROUTINE")] delegate* unmanaged<uint, uint, OVERLAPPED*, void> lpCompletionRoutine);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int ReadDirectoryChangesExW([NativeTypeName("HANDLE")] IntPtr hDirectory, [NativeTypeName("LPVOID")] void* lpBuffer, [NativeTypeName("DWORD")] uint nBufferLength, [NativeTypeName("BOOL")] int bWatchSubtree, [NativeTypeName("DWORD")] uint dwNotifyFilter, [NativeTypeName("LPDWORD")] uint* lpBytesReturned, [NativeTypeName("LPOVERLAPPED")] OVERLAPPED* lpOverlapped, [NativeTypeName("LPOVERLAPPED_COMPLETION_ROUTINE")] delegate* unmanaged<uint, uint, OVERLAPPED*, void> lpCompletionRoutine, READ_DIRECTORY_NOTIFY_INFORMATION_CLASS ReadDirectoryNotifyInformationClass);
+        public static extern BOOL ReadDirectoryChangesExW([NativeTypeName("HANDLE")] IntPtr hDirectory, [NativeTypeName("LPVOID")] void* lpBuffer, [NativeTypeName("DWORD")] uint nBufferLength, BOOL bWatchSubtree, [NativeTypeName("DWORD")] uint dwNotifyFilter, [NativeTypeName("LPDWORD")] uint* lpBytesReturned, [NativeTypeName("LPOVERLAPPED")] OVERLAPPED* lpOverlapped, [NativeTypeName("LPOVERLAPPED_COMPLETION_ROUTINE")] delegate* unmanaged<uint, uint, OVERLAPPED*, void> lpCompletionRoutine, READ_DIRECTORY_NOTIFY_INFORMATION_CLASS ReadDirectoryNotifyInformationClass);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("LPVOID")]
         public static extern void* MapViewOfFileExNuma([NativeTypeName("HANDLE")] IntPtr hFileMappingObject, [NativeTypeName("DWORD")] uint dwDesiredAccess, [NativeTypeName("DWORD")] uint dwFileOffsetHigh, [NativeTypeName("DWORD")] uint dwFileOffsetLow, [NativeTypeName("SIZE_T")] nuint dwNumberOfBytesToMap, [NativeTypeName("LPVOID")] void* lpBaseAddress, [NativeTypeName("DWORD")] uint nndPreferred);
 
         [DllImport("kernel32", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int IsBadReadPtr([NativeTypeName("const void *")] void* lp, [NativeTypeName("UINT_PTR")] nuint ucb);
+        public static extern BOOL IsBadReadPtr([NativeTypeName("const void *")] void* lp, [NativeTypeName("UINT_PTR")] nuint ucb);
 
         [DllImport("kernel32", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int IsBadWritePtr([NativeTypeName("LPVOID")] void* lp, [NativeTypeName("UINT_PTR")] nuint ucb);
+        public static extern BOOL IsBadWritePtr([NativeTypeName("LPVOID")] void* lp, [NativeTypeName("UINT_PTR")] nuint ucb);
 
         [DllImport("kernel32", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int IsBadHugeReadPtr([NativeTypeName("const void *")] void* lp, [NativeTypeName("UINT_PTR")] nuint ucb);
+        public static extern BOOL IsBadHugeReadPtr([NativeTypeName("const void *")] void* lp, [NativeTypeName("UINT_PTR")] nuint ucb);
 
         [DllImport("kernel32", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int IsBadHugeWritePtr([NativeTypeName("LPVOID")] void* lp, [NativeTypeName("UINT_PTR")] nuint ucb);
+        public static extern BOOL IsBadHugeWritePtr([NativeTypeName("LPVOID")] void* lp, [NativeTypeName("UINT_PTR")] nuint ucb);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int IsBadCodePtr([NativeTypeName("FARPROC")] IntPtr lpfn);
+        public static extern BOOL IsBadCodePtr([NativeTypeName("FARPROC")] IntPtr lpfn);
 
         [DllImport("kernel32", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int IsBadStringPtrA([NativeTypeName("LPCSTR")] sbyte* lpsz, [NativeTypeName("UINT_PTR")] nuint ucchMax);
+        public static extern BOOL IsBadStringPtrA([NativeTypeName("LPCSTR")] sbyte* lpsz, [NativeTypeName("UINT_PTR")] nuint ucchMax);
 
         [DllImport("kernel32", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int IsBadStringPtrW([NativeTypeName("LPCWSTR")] ushort* lpsz, [NativeTypeName("UINT_PTR")] nuint ucchMax);
+        public static extern BOOL IsBadStringPtrW([NativeTypeName("LPCWSTR")] ushort* lpsz, [NativeTypeName("UINT_PTR")] nuint ucchMax);
 
         [DllImport("advapi32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int LookupAccountSidA([NativeTypeName("LPCSTR")] sbyte* lpSystemName, [NativeTypeName("PSID")] void* Sid, [NativeTypeName("LPSTR")] sbyte* Name, [NativeTypeName("LPDWORD")] uint* cchName, [NativeTypeName("LPSTR")] sbyte* ReferencedDomainName, [NativeTypeName("LPDWORD")] uint* cchReferencedDomainName, [NativeTypeName("PSID_NAME_USE")] SID_NAME_USE* peUse);
+        public static extern BOOL LookupAccountSidA([NativeTypeName("LPCSTR")] sbyte* lpSystemName, [NativeTypeName("PSID")] void* Sid, [NativeTypeName("LPSTR")] sbyte* Name, [NativeTypeName("LPDWORD")] uint* cchName, [NativeTypeName("LPSTR")] sbyte* ReferencedDomainName, [NativeTypeName("LPDWORD")] uint* cchReferencedDomainName, [NativeTypeName("PSID_NAME_USE")] SID_NAME_USE* peUse);
 
         [DllImport("advapi32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int LookupAccountSidW([NativeTypeName("LPCWSTR")] ushort* lpSystemName, [NativeTypeName("PSID")] void* Sid, [NativeTypeName("LPWSTR")] ushort* Name, [NativeTypeName("LPDWORD")] uint* cchName, [NativeTypeName("LPWSTR")] ushort* ReferencedDomainName, [NativeTypeName("LPDWORD")] uint* cchReferencedDomainName, [NativeTypeName("PSID_NAME_USE")] SID_NAME_USE* peUse);
+        public static extern BOOL LookupAccountSidW([NativeTypeName("LPCWSTR")] ushort* lpSystemName, [NativeTypeName("PSID")] void* Sid, [NativeTypeName("LPWSTR")] ushort* Name, [NativeTypeName("LPDWORD")] uint* cchName, [NativeTypeName("LPWSTR")] ushort* ReferencedDomainName, [NativeTypeName("LPDWORD")] uint* cchReferencedDomainName, [NativeTypeName("PSID_NAME_USE")] SID_NAME_USE* peUse);
 
         [DllImport("advapi32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int LookupAccountNameA([NativeTypeName("LPCSTR")] sbyte* lpSystemName, [NativeTypeName("LPCSTR")] sbyte* lpAccountName, [NativeTypeName("PSID")] void* Sid, [NativeTypeName("LPDWORD")] uint* cbSid, [NativeTypeName("LPSTR")] sbyte* ReferencedDomainName, [NativeTypeName("LPDWORD")] uint* cchReferencedDomainName, [NativeTypeName("PSID_NAME_USE")] SID_NAME_USE* peUse);
+        public static extern BOOL LookupAccountNameA([NativeTypeName("LPCSTR")] sbyte* lpSystemName, [NativeTypeName("LPCSTR")] sbyte* lpAccountName, [NativeTypeName("PSID")] void* Sid, [NativeTypeName("LPDWORD")] uint* cbSid, [NativeTypeName("LPSTR")] sbyte* ReferencedDomainName, [NativeTypeName("LPDWORD")] uint* cchReferencedDomainName, [NativeTypeName("PSID_NAME_USE")] SID_NAME_USE* peUse);
 
         [DllImport("advapi32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int LookupAccountNameW([NativeTypeName("LPCWSTR")] ushort* lpSystemName, [NativeTypeName("LPCWSTR")] ushort* lpAccountName, [NativeTypeName("PSID")] void* Sid, [NativeTypeName("LPDWORD")] uint* cbSid, [NativeTypeName("LPWSTR")] ushort* ReferencedDomainName, [NativeTypeName("LPDWORD")] uint* cchReferencedDomainName, [NativeTypeName("PSID_NAME_USE")] SID_NAME_USE* peUse);
+        public static extern BOOL LookupAccountNameW([NativeTypeName("LPCWSTR")] ushort* lpSystemName, [NativeTypeName("LPCWSTR")] ushort* lpAccountName, [NativeTypeName("PSID")] void* Sid, [NativeTypeName("LPDWORD")] uint* cbSid, [NativeTypeName("LPWSTR")] ushort* ReferencedDomainName, [NativeTypeName("LPDWORD")] uint* cchReferencedDomainName, [NativeTypeName("PSID_NAME_USE")] SID_NAME_USE* peUse);
 
         [DllImport("sechost", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int LookupAccountSidLocalA([NativeTypeName("PSID")] void* Sid, [NativeTypeName("LPSTR")] sbyte* Name, [NativeTypeName("LPDWORD")] uint* cchName, [NativeTypeName("LPSTR")] sbyte* ReferencedDomainName, [NativeTypeName("LPDWORD")] uint* cchReferencedDomainName, [NativeTypeName("PSID_NAME_USE")] SID_NAME_USE* peUse);
+        public static extern BOOL LookupAccountSidLocalA([NativeTypeName("PSID")] void* Sid, [NativeTypeName("LPSTR")] sbyte* Name, [NativeTypeName("LPDWORD")] uint* cchName, [NativeTypeName("LPSTR")] sbyte* ReferencedDomainName, [NativeTypeName("LPDWORD")] uint* cchReferencedDomainName, [NativeTypeName("PSID_NAME_USE")] SID_NAME_USE* peUse);
 
         [DllImport("sechost", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int LookupAccountSidLocalW([NativeTypeName("PSID")] void* Sid, [NativeTypeName("LPWSTR")] ushort* Name, [NativeTypeName("LPDWORD")] uint* cchName, [NativeTypeName("LPWSTR")] ushort* ReferencedDomainName, [NativeTypeName("LPDWORD")] uint* cchReferencedDomainName, [NativeTypeName("PSID_NAME_USE")] SID_NAME_USE* peUse);
+        public static extern BOOL LookupAccountSidLocalW([NativeTypeName("PSID")] void* Sid, [NativeTypeName("LPWSTR")] ushort* Name, [NativeTypeName("LPDWORD")] uint* cchName, [NativeTypeName("LPWSTR")] ushort* ReferencedDomainName, [NativeTypeName("LPDWORD")] uint* cchReferencedDomainName, [NativeTypeName("PSID_NAME_USE")] SID_NAME_USE* peUse);
 
         [DllImport("advapi32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int LookupPrivilegeValueA([NativeTypeName("LPCSTR")] sbyte* lpSystemName, [NativeTypeName("LPCSTR")] sbyte* lpName, [NativeTypeName("PLUID")] LUID* lpLuid);
+        public static extern BOOL LookupPrivilegeValueA([NativeTypeName("LPCSTR")] sbyte* lpSystemName, [NativeTypeName("LPCSTR")] sbyte* lpName, [NativeTypeName("PLUID")] LUID* lpLuid);
 
         [DllImport("advapi32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int LookupPrivilegeValueW([NativeTypeName("LPCWSTR")] ushort* lpSystemName, [NativeTypeName("LPCWSTR")] ushort* lpName, [NativeTypeName("PLUID")] LUID* lpLuid);
+        public static extern BOOL LookupPrivilegeValueW([NativeTypeName("LPCWSTR")] ushort* lpSystemName, [NativeTypeName("LPCWSTR")] ushort* lpName, [NativeTypeName("PLUID")] LUID* lpLuid);
 
         [DllImport("advapi32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int LookupPrivilegeNameA([NativeTypeName("LPCSTR")] sbyte* lpSystemName, [NativeTypeName("PLUID")] LUID* lpLuid, [NativeTypeName("LPSTR")] sbyte* lpName, [NativeTypeName("LPDWORD")] uint* cchName);
+        public static extern BOOL LookupPrivilegeNameA([NativeTypeName("LPCSTR")] sbyte* lpSystemName, [NativeTypeName("PLUID")] LUID* lpLuid, [NativeTypeName("LPSTR")] sbyte* lpName, [NativeTypeName("LPDWORD")] uint* cchName);
 
         [DllImport("advapi32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int LookupPrivilegeNameW([NativeTypeName("LPCWSTR")] ushort* lpSystemName, [NativeTypeName("PLUID")] LUID* lpLuid, [NativeTypeName("LPWSTR")] ushort* lpName, [NativeTypeName("LPDWORD")] uint* cchName);
+        public static extern BOOL LookupPrivilegeNameW([NativeTypeName("LPCWSTR")] ushort* lpSystemName, [NativeTypeName("PLUID")] LUID* lpLuid, [NativeTypeName("LPWSTR")] ushort* lpName, [NativeTypeName("LPDWORD")] uint* cchName);
 
         [DllImport("advapi32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int LookupPrivilegeDisplayNameA([NativeTypeName("LPCSTR")] sbyte* lpSystemName, [NativeTypeName("LPCSTR")] sbyte* lpName, [NativeTypeName("LPSTR")] sbyte* lpDisplayName, [NativeTypeName("LPDWORD")] uint* cchDisplayName, [NativeTypeName("LPDWORD")] uint* lpLanguageId);
+        public static extern BOOL LookupPrivilegeDisplayNameA([NativeTypeName("LPCSTR")] sbyte* lpSystemName, [NativeTypeName("LPCSTR")] sbyte* lpName, [NativeTypeName("LPSTR")] sbyte* lpDisplayName, [NativeTypeName("LPDWORD")] uint* cchDisplayName, [NativeTypeName("LPDWORD")] uint* lpLanguageId);
 
         [DllImport("advapi32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int LookupPrivilegeDisplayNameW([NativeTypeName("LPCWSTR")] ushort* lpSystemName, [NativeTypeName("LPCWSTR")] ushort* lpName, [NativeTypeName("LPWSTR")] ushort* lpDisplayName, [NativeTypeName("LPDWORD")] uint* cchDisplayName, [NativeTypeName("LPDWORD")] uint* lpLanguageId);
+        public static extern BOOL LookupPrivilegeDisplayNameW([NativeTypeName("LPCWSTR")] ushort* lpSystemName, [NativeTypeName("LPCWSTR")] ushort* lpName, [NativeTypeName("LPWSTR")] ushort* lpDisplayName, [NativeTypeName("LPDWORD")] uint* cchDisplayName, [NativeTypeName("LPDWORD")] uint* lpLanguageId);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int BuildCommDCBA([NativeTypeName("LPCSTR")] sbyte* lpDef, [NativeTypeName("LPDCB")] DCB* lpDCB);
+        public static extern BOOL BuildCommDCBA([NativeTypeName("LPCSTR")] sbyte* lpDef, [NativeTypeName("LPDCB")] DCB* lpDCB);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int BuildCommDCBW([NativeTypeName("LPCWSTR")] ushort* lpDef, [NativeTypeName("LPDCB")] DCB* lpDCB);
+        public static extern BOOL BuildCommDCBW([NativeTypeName("LPCWSTR")] ushort* lpDef, [NativeTypeName("LPDCB")] DCB* lpDCB);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int BuildCommDCBAndTimeoutsA([NativeTypeName("LPCSTR")] sbyte* lpDef, [NativeTypeName("LPDCB")] DCB* lpDCB, [NativeTypeName("LPCOMMTIMEOUTS")] COMMTIMEOUTS* lpCommTimeouts);
+        public static extern BOOL BuildCommDCBAndTimeoutsA([NativeTypeName("LPCSTR")] sbyte* lpDef, [NativeTypeName("LPDCB")] DCB* lpDCB, [NativeTypeName("LPCOMMTIMEOUTS")] COMMTIMEOUTS* lpCommTimeouts);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int BuildCommDCBAndTimeoutsW([NativeTypeName("LPCWSTR")] ushort* lpDef, [NativeTypeName("LPDCB")] DCB* lpDCB, [NativeTypeName("LPCOMMTIMEOUTS")] COMMTIMEOUTS* lpCommTimeouts);
+        public static extern BOOL BuildCommDCBAndTimeoutsW([NativeTypeName("LPCWSTR")] ushort* lpDef, [NativeTypeName("LPDCB")] DCB* lpDCB, [NativeTypeName("LPCOMMTIMEOUTS")] COMMTIMEOUTS* lpCommTimeouts);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int CommConfigDialogA([NativeTypeName("LPCSTR")] sbyte* lpszName, [NativeTypeName("HWND")] IntPtr hWnd, [NativeTypeName("LPCOMMCONFIG")] COMMCONFIG* lpCC);
+        public static extern BOOL CommConfigDialogA([NativeTypeName("LPCSTR")] sbyte* lpszName, [NativeTypeName("HWND")] IntPtr hWnd, [NativeTypeName("LPCOMMCONFIG")] COMMCONFIG* lpCC);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int CommConfigDialogW([NativeTypeName("LPCWSTR")] ushort* lpszName, [NativeTypeName("HWND")] IntPtr hWnd, [NativeTypeName("LPCOMMCONFIG")] COMMCONFIG* lpCC);
+        public static extern BOOL CommConfigDialogW([NativeTypeName("LPCWSTR")] ushort* lpszName, [NativeTypeName("HWND")] IntPtr hWnd, [NativeTypeName("LPCOMMCONFIG")] COMMCONFIG* lpCC);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int GetDefaultCommConfigA([NativeTypeName("LPCSTR")] sbyte* lpszName, [NativeTypeName("LPCOMMCONFIG")] COMMCONFIG* lpCC, [NativeTypeName("LPDWORD")] uint* lpdwSize);
+        public static extern BOOL GetDefaultCommConfigA([NativeTypeName("LPCSTR")] sbyte* lpszName, [NativeTypeName("LPCOMMCONFIG")] COMMCONFIG* lpCC, [NativeTypeName("LPDWORD")] uint* lpdwSize);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int GetDefaultCommConfigW([NativeTypeName("LPCWSTR")] ushort* lpszName, [NativeTypeName("LPCOMMCONFIG")] COMMCONFIG* lpCC, [NativeTypeName("LPDWORD")] uint* lpdwSize);
+        public static extern BOOL GetDefaultCommConfigW([NativeTypeName("LPCWSTR")] ushort* lpszName, [NativeTypeName("LPCOMMCONFIG")] COMMCONFIG* lpCC, [NativeTypeName("LPDWORD")] uint* lpdwSize);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SetDefaultCommConfigA([NativeTypeName("LPCSTR")] sbyte* lpszName, [NativeTypeName("LPCOMMCONFIG")] COMMCONFIG* lpCC, [NativeTypeName("DWORD")] uint dwSize);
+        public static extern BOOL SetDefaultCommConfigA([NativeTypeName("LPCSTR")] sbyte* lpszName, [NativeTypeName("LPCOMMCONFIG")] COMMCONFIG* lpCC, [NativeTypeName("DWORD")] uint dwSize);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SetDefaultCommConfigW([NativeTypeName("LPCWSTR")] ushort* lpszName, [NativeTypeName("LPCOMMCONFIG")] COMMCONFIG* lpCC, [NativeTypeName("DWORD")] uint dwSize);
+        public static extern BOOL SetDefaultCommConfigW([NativeTypeName("LPCWSTR")] ushort* lpszName, [NativeTypeName("LPCOMMCONFIG")] COMMCONFIG* lpCC, [NativeTypeName("DWORD")] uint dwSize);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int GetComputerNameA([NativeTypeName("LPSTR")] sbyte* lpBuffer, [NativeTypeName("LPDWORD")] uint* nSize);
+        public static extern BOOL GetComputerNameA([NativeTypeName("LPSTR")] sbyte* lpBuffer, [NativeTypeName("LPDWORD")] uint* nSize);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int GetComputerNameW([NativeTypeName("LPWSTR")] ushort* lpBuffer, [NativeTypeName("LPDWORD")] uint* nSize);
+        public static extern BOOL GetComputerNameW([NativeTypeName("LPWSTR")] ushort* lpBuffer, [NativeTypeName("LPDWORD")] uint* nSize);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int DnsHostnameToComputerNameA([NativeTypeName("LPCSTR")] sbyte* Hostname, [NativeTypeName("LPSTR")] sbyte* ComputerName, [NativeTypeName("LPDWORD")] uint* nSize);
+        public static extern BOOL DnsHostnameToComputerNameA([NativeTypeName("LPCSTR")] sbyte* Hostname, [NativeTypeName("LPSTR")] sbyte* ComputerName, [NativeTypeName("LPDWORD")] uint* nSize);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int DnsHostnameToComputerNameW([NativeTypeName("LPCWSTR")] ushort* Hostname, [NativeTypeName("LPWSTR")] ushort* ComputerName, [NativeTypeName("LPDWORD")] uint* nSize);
+        public static extern BOOL DnsHostnameToComputerNameW([NativeTypeName("LPCWSTR")] ushort* Hostname, [NativeTypeName("LPWSTR")] ushort* ComputerName, [NativeTypeName("LPDWORD")] uint* nSize);
 
         [DllImport("advapi32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int GetUserNameA([NativeTypeName("LPSTR")] sbyte* lpBuffer, [NativeTypeName("LPDWORD")] uint* pcbBuffer);
+        public static extern BOOL GetUserNameA([NativeTypeName("LPSTR")] sbyte* lpBuffer, [NativeTypeName("LPDWORD")] uint* pcbBuffer);
 
         [DllImport("advapi32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int GetUserNameW([NativeTypeName("LPWSTR")] ushort* lpBuffer, [NativeTypeName("LPDWORD")] uint* pcbBuffer);
+        public static extern BOOL GetUserNameW([NativeTypeName("LPWSTR")] ushort* lpBuffer, [NativeTypeName("LPDWORD")] uint* pcbBuffer);
 
         [DllImport("advapi32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int LogonUserA([NativeTypeName("LPCSTR")] sbyte* lpszUsername, [NativeTypeName("LPCSTR")] sbyte* lpszDomain, [NativeTypeName("LPCSTR")] sbyte* lpszPassword, [NativeTypeName("DWORD")] uint dwLogonType, [NativeTypeName("DWORD")] uint dwLogonProvider, [NativeTypeName("PHANDLE")] IntPtr* phToken);
+        public static extern BOOL LogonUserA([NativeTypeName("LPCSTR")] sbyte* lpszUsername, [NativeTypeName("LPCSTR")] sbyte* lpszDomain, [NativeTypeName("LPCSTR")] sbyte* lpszPassword, [NativeTypeName("DWORD")] uint dwLogonType, [NativeTypeName("DWORD")] uint dwLogonProvider, [NativeTypeName("PHANDLE")] IntPtr* phToken);
 
         [DllImport("advapi32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int LogonUserW([NativeTypeName("LPCWSTR")] ushort* lpszUsername, [NativeTypeName("LPCWSTR")] ushort* lpszDomain, [NativeTypeName("LPCWSTR")] ushort* lpszPassword, [NativeTypeName("DWORD")] uint dwLogonType, [NativeTypeName("DWORD")] uint dwLogonProvider, [NativeTypeName("PHANDLE")] IntPtr* phToken);
+        public static extern BOOL LogonUserW([NativeTypeName("LPCWSTR")] ushort* lpszUsername, [NativeTypeName("LPCWSTR")] ushort* lpszDomain, [NativeTypeName("LPCWSTR")] ushort* lpszPassword, [NativeTypeName("DWORD")] uint dwLogonType, [NativeTypeName("DWORD")] uint dwLogonProvider, [NativeTypeName("PHANDLE")] IntPtr* phToken);
 
         [DllImport("advapi32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int LogonUserExA([NativeTypeName("LPCSTR")] sbyte* lpszUsername, [NativeTypeName("LPCSTR")] sbyte* lpszDomain, [NativeTypeName("LPCSTR")] sbyte* lpszPassword, [NativeTypeName("DWORD")] uint dwLogonType, [NativeTypeName("DWORD")] uint dwLogonProvider, [NativeTypeName("PHANDLE")] IntPtr* phToken, [NativeTypeName("PSID *")] void** ppLogonSid, [NativeTypeName("PVOID *")] void** ppProfileBuffer, [NativeTypeName("LPDWORD")] uint* pdwProfileLength, [NativeTypeName("PQUOTA_LIMITS")] QUOTA_LIMITS* pQuotaLimits);
+        public static extern BOOL LogonUserExA([NativeTypeName("LPCSTR")] sbyte* lpszUsername, [NativeTypeName("LPCSTR")] sbyte* lpszDomain, [NativeTypeName("LPCSTR")] sbyte* lpszPassword, [NativeTypeName("DWORD")] uint dwLogonType, [NativeTypeName("DWORD")] uint dwLogonProvider, [NativeTypeName("PHANDLE")] IntPtr* phToken, [NativeTypeName("PSID *")] void** ppLogonSid, [NativeTypeName("PVOID *")] void** ppProfileBuffer, [NativeTypeName("LPDWORD")] uint* pdwProfileLength, [NativeTypeName("PQUOTA_LIMITS")] QUOTA_LIMITS* pQuotaLimits);
 
         [DllImport("advapi32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int LogonUserExW([NativeTypeName("LPCWSTR")] ushort* lpszUsername, [NativeTypeName("LPCWSTR")] ushort* lpszDomain, [NativeTypeName("LPCWSTR")] ushort* lpszPassword, [NativeTypeName("DWORD")] uint dwLogonType, [NativeTypeName("DWORD")] uint dwLogonProvider, [NativeTypeName("PHANDLE")] IntPtr* phToken, [NativeTypeName("PSID *")] void** ppLogonSid, [NativeTypeName("PVOID *")] void** ppProfileBuffer, [NativeTypeName("LPDWORD")] uint* pdwProfileLength, [NativeTypeName("PQUOTA_LIMITS")] QUOTA_LIMITS* pQuotaLimits);
+        public static extern BOOL LogonUserExW([NativeTypeName("LPCWSTR")] ushort* lpszUsername, [NativeTypeName("LPCWSTR")] ushort* lpszDomain, [NativeTypeName("LPCWSTR")] ushort* lpszPassword, [NativeTypeName("DWORD")] uint dwLogonType, [NativeTypeName("DWORD")] uint dwLogonProvider, [NativeTypeName("PHANDLE")] IntPtr* phToken, [NativeTypeName("PSID *")] void** ppLogonSid, [NativeTypeName("PVOID *")] void** ppProfileBuffer, [NativeTypeName("LPDWORD")] uint* pdwProfileLength, [NativeTypeName("PQUOTA_LIMITS")] QUOTA_LIMITS* pQuotaLimits);
 
         [DllImport("advapi32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int CreateProcessWithLogonW([NativeTypeName("LPCWSTR")] ushort* lpUsername, [NativeTypeName("LPCWSTR")] ushort* lpDomain, [NativeTypeName("LPCWSTR")] ushort* lpPassword, [NativeTypeName("DWORD")] uint dwLogonFlags, [NativeTypeName("LPCWSTR")] ushort* lpApplicationName, [NativeTypeName("LPWSTR")] ushort* lpCommandLine, [NativeTypeName("DWORD")] uint dwCreationFlags, [NativeTypeName("LPVOID")] void* lpEnvironment, [NativeTypeName("LPCWSTR")] ushort* lpCurrentDirectory, [NativeTypeName("LPSTARTUPINFOW")] STARTUPINFOW* lpStartupInfo, [NativeTypeName("LPPROCESS_INFORMATION")] PROCESS_INFORMATION* lpProcessInformation);
+        public static extern BOOL CreateProcessWithLogonW([NativeTypeName("LPCWSTR")] ushort* lpUsername, [NativeTypeName("LPCWSTR")] ushort* lpDomain, [NativeTypeName("LPCWSTR")] ushort* lpPassword, [NativeTypeName("DWORD")] uint dwLogonFlags, [NativeTypeName("LPCWSTR")] ushort* lpApplicationName, [NativeTypeName("LPWSTR")] ushort* lpCommandLine, [NativeTypeName("DWORD")] uint dwCreationFlags, [NativeTypeName("LPVOID")] void* lpEnvironment, [NativeTypeName("LPCWSTR")] ushort* lpCurrentDirectory, [NativeTypeName("LPSTARTUPINFOW")] STARTUPINFOW* lpStartupInfo, [NativeTypeName("LPPROCESS_INFORMATION")] PROCESS_INFORMATION* lpProcessInformation);
 
         [DllImport("advapi32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int CreateProcessWithTokenW([NativeTypeName("HANDLE")] IntPtr hToken, [NativeTypeName("DWORD")] uint dwLogonFlags, [NativeTypeName("LPCWSTR")] ushort* lpApplicationName, [NativeTypeName("LPWSTR")] ushort* lpCommandLine, [NativeTypeName("DWORD")] uint dwCreationFlags, [NativeTypeName("LPVOID")] void* lpEnvironment, [NativeTypeName("LPCWSTR")] ushort* lpCurrentDirectory, [NativeTypeName("LPSTARTUPINFOW")] STARTUPINFOW* lpStartupInfo, [NativeTypeName("LPPROCESS_INFORMATION")] PROCESS_INFORMATION* lpProcessInformation);
+        public static extern BOOL CreateProcessWithTokenW([NativeTypeName("HANDLE")] IntPtr hToken, [NativeTypeName("DWORD")] uint dwLogonFlags, [NativeTypeName("LPCWSTR")] ushort* lpApplicationName, [NativeTypeName("LPWSTR")] ushort* lpCommandLine, [NativeTypeName("DWORD")] uint dwCreationFlags, [NativeTypeName("LPVOID")] void* lpEnvironment, [NativeTypeName("LPCWSTR")] ushort* lpCurrentDirectory, [NativeTypeName("LPSTARTUPINFOW")] STARTUPINFOW* lpStartupInfo, [NativeTypeName("LPPROCESS_INFORMATION")] PROCESS_INFORMATION* lpProcessInformation);
 
         [DllImport("advapi32", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int IsTokenUntrusted([NativeTypeName("HANDLE")] IntPtr TokenHandle);
+        public static extern BOOL IsTokenUntrusted([NativeTypeName("HANDLE")] IntPtr TokenHandle);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int RegisterWaitForSingleObject([NativeTypeName("PHANDLE")] IntPtr* phNewWaitObject, [NativeTypeName("HANDLE")] IntPtr hObject, [NativeTypeName("WAITORTIMERCALLBACK")] delegate* unmanaged<void*, byte, void> Callback, [NativeTypeName("PVOID")] void* Context, [NativeTypeName("ULONG")] uint dwMilliseconds, [NativeTypeName("ULONG")] uint dwFlags);
+        public static extern BOOL RegisterWaitForSingleObject([NativeTypeName("PHANDLE")] IntPtr* phNewWaitObject, [NativeTypeName("HANDLE")] IntPtr hObject, [NativeTypeName("WAITORTIMERCALLBACK")] delegate* unmanaged<void*, byte, void> Callback, [NativeTypeName("PVOID")] void* Context, [NativeTypeName("ULONG")] uint dwMilliseconds, [NativeTypeName("ULONG")] uint dwFlags);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int UnregisterWait([NativeTypeName("HANDLE")] IntPtr WaitHandle);
+        public static extern BOOL UnregisterWait([NativeTypeName("HANDLE")] IntPtr WaitHandle);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int BindIoCompletionCallback([NativeTypeName("HANDLE")] IntPtr FileHandle, [NativeTypeName("LPOVERLAPPED_COMPLETION_ROUTINE")] delegate* unmanaged<uint, uint, OVERLAPPED*, void> Function, [NativeTypeName("ULONG")] uint Flags);
+        public static extern BOOL BindIoCompletionCallback([NativeTypeName("HANDLE")] IntPtr FileHandle, [NativeTypeName("LPOVERLAPPED_COMPLETION_ROUTINE")] delegate* unmanaged<uint, uint, OVERLAPPED*, void> Function, [NativeTypeName("ULONG")] uint Flags);
 
         [DllImport("kernel32", ExactSpelling = true)]
         [return: NativeTypeName("HANDLE")]
-        public static extern IntPtr SetTimerQueueTimer([NativeTypeName("HANDLE")] IntPtr TimerQueue, [NativeTypeName("WAITORTIMERCALLBACK")] delegate* unmanaged<void*, byte, void> Callback, [NativeTypeName("PVOID")] void* Parameter, [NativeTypeName("DWORD")] uint DueTime, [NativeTypeName("DWORD")] uint Period, [NativeTypeName("BOOL")] int PreferIo);
+        public static extern IntPtr SetTimerQueueTimer([NativeTypeName("HANDLE")] IntPtr TimerQueue, [NativeTypeName("WAITORTIMERCALLBACK")] delegate* unmanaged<void*, byte, void> Callback, [NativeTypeName("PVOID")] void* Parameter, [NativeTypeName("DWORD")] uint DueTime, [NativeTypeName("DWORD")] uint Period, BOOL PreferIo);
 
         [DllImport("kernel32", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int CancelTimerQueueTimer([NativeTypeName("HANDLE")] IntPtr TimerQueue, [NativeTypeName("HANDLE")] IntPtr Timer);
+        public static extern BOOL CancelTimerQueueTimer([NativeTypeName("HANDLE")] IntPtr TimerQueue, [NativeTypeName("HANDLE")] IntPtr Timer);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("HANDLE")]
@@ -1541,36 +1313,28 @@ namespace TerraFX.Interop
         public static extern IntPtr CreateBoundaryDescriptorA([NativeTypeName("LPCSTR")] sbyte* Name, [NativeTypeName("ULONG")] uint Flags);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int AddIntegrityLabelToBoundaryDescriptor([NativeTypeName("HANDLE *")] IntPtr* BoundaryDescriptor, [NativeTypeName("PSID")] void* IntegrityLabel);
+        public static extern BOOL AddIntegrityLabelToBoundaryDescriptor([NativeTypeName("HANDLE *")] IntPtr* BoundaryDescriptor, [NativeTypeName("PSID")] void* IntegrityLabel);
 
         [DllImport("advapi32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int GetCurrentHwProfileA([NativeTypeName("LPHW_PROFILE_INFOA")] HW_PROFILE_INFOA* lpHwProfileInfo);
+        public static extern BOOL GetCurrentHwProfileA([NativeTypeName("LPHW_PROFILE_INFOA")] HW_PROFILE_INFOA* lpHwProfileInfo);
 
         [DllImport("advapi32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int GetCurrentHwProfileW([NativeTypeName("LPHW_PROFILE_INFOW")] HW_PROFILE_INFOW* lpHwProfileInfo);
+        public static extern BOOL GetCurrentHwProfileW([NativeTypeName("LPHW_PROFILE_INFOW")] HW_PROFILE_INFOW* lpHwProfileInfo);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int VerifyVersionInfoA([NativeTypeName("LPOSVERSIONINFOEXA")] OSVERSIONINFOEXA* lpVersionInformation, [NativeTypeName("DWORD")] uint dwTypeMask, [NativeTypeName("DWORDLONG")] ulong dwlConditionMask);
+        public static extern BOOL VerifyVersionInfoA([NativeTypeName("LPOSVERSIONINFOEXA")] OSVERSIONINFOEXA* lpVersionInformation, [NativeTypeName("DWORD")] uint dwTypeMask, [NativeTypeName("DWORDLONG")] ulong dwlConditionMask);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int VerifyVersionInfoW([NativeTypeName("LPOSVERSIONINFOEXW")] OSVERSIONINFOEXW* lpVersionInformation, [NativeTypeName("DWORD")] uint dwTypeMask, [NativeTypeName("DWORDLONG")] ulong dwlConditionMask);
+        public static extern BOOL VerifyVersionInfoW([NativeTypeName("LPOSVERSIONINFOEXW")] OSVERSIONINFOEXW* lpVersionInformation, [NativeTypeName("DWORD")] uint dwTypeMask, [NativeTypeName("DWORDLONG")] ulong dwlConditionMask);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SetSystemPowerState([NativeTypeName("BOOL")] int fSuspend, [NativeTypeName("BOOL")] int fForce);
+        public static extern BOOL SetSystemPowerState(BOOL fSuspend, BOOL fForce);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int GetSystemPowerStatus([NativeTypeName("LPSYSTEM_POWER_STATUS")] SYSTEM_POWER_STATUS* lpSystemPowerStatus);
+        public static extern BOOL GetSystemPowerStatus([NativeTypeName("LPSYSTEM_POWER_STATUS")] SYSTEM_POWER_STATUS* lpSystemPowerStatus);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int MapUserPhysicalPagesScatter([NativeTypeName("PVOID *")] void** VirtualAddresses, [NativeTypeName("ULONG_PTR")] nuint NumberOfPages, [NativeTypeName("PULONG_PTR")] nuint* PageArray);
+        public static extern BOOL MapUserPhysicalPagesScatter([NativeTypeName("PVOID *")] void** VirtualAddresses, [NativeTypeName("ULONG_PTR")] nuint NumberOfPages, [NativeTypeName("PULONG_PTR")] nuint* PageArray);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("HANDLE")]
@@ -1578,19 +1342,17 @@ namespace TerraFX.Interop
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("HANDLE")]
-        public static extern IntPtr OpenJobObjectA([NativeTypeName("DWORD")] uint dwDesiredAccess, [NativeTypeName("BOOL")] int bInheritHandle, [NativeTypeName("LPCSTR")] sbyte* lpName);
+        public static extern IntPtr OpenJobObjectA([NativeTypeName("DWORD")] uint dwDesiredAccess, BOOL bInheritHandle, [NativeTypeName("LPCSTR")] sbyte* lpName);
 
         [DllImport("kernel32", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int CreateJobSet([NativeTypeName("ULONG")] uint NumJob, [NativeTypeName("PJOB_SET_ARRAY")] JOB_SET_ARRAY* UserJobSet, [NativeTypeName("ULONG")] uint Flags);
+        public static extern BOOL CreateJobSet([NativeTypeName("ULONG")] uint NumJob, [NativeTypeName("PJOB_SET_ARRAY")] JOB_SET_ARRAY* UserJobSet, [NativeTypeName("ULONG")] uint Flags);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("HANDLE")]
         public static extern IntPtr FindFirstVolumeA([NativeTypeName("LPSTR")] sbyte* lpszVolumeName, [NativeTypeName("DWORD")] uint cchBufferLength);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int FindNextVolumeA([NativeTypeName("HANDLE")] IntPtr hFindVolume, [NativeTypeName("LPSTR")] sbyte* lpszVolumeName, [NativeTypeName("DWORD")] uint cchBufferLength);
+        public static extern BOOL FindNextVolumeA([NativeTypeName("HANDLE")] IntPtr hFindVolume, [NativeTypeName("LPSTR")] sbyte* lpszVolumeName, [NativeTypeName("DWORD")] uint cchBufferLength);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("HANDLE")]
@@ -1601,40 +1363,31 @@ namespace TerraFX.Interop
         public static extern IntPtr FindFirstVolumeMountPointW([NativeTypeName("LPCWSTR")] ushort* lpszRootPathName, [NativeTypeName("LPWSTR")] ushort* lpszVolumeMountPoint, [NativeTypeName("DWORD")] uint cchBufferLength);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int FindNextVolumeMountPointA([NativeTypeName("HANDLE")] IntPtr hFindVolumeMountPoint, [NativeTypeName("LPSTR")] sbyte* lpszVolumeMountPoint, [NativeTypeName("DWORD")] uint cchBufferLength);
+        public static extern BOOL FindNextVolumeMountPointA([NativeTypeName("HANDLE")] IntPtr hFindVolumeMountPoint, [NativeTypeName("LPSTR")] sbyte* lpszVolumeMountPoint, [NativeTypeName("DWORD")] uint cchBufferLength);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int FindNextVolumeMountPointW([NativeTypeName("HANDLE")] IntPtr hFindVolumeMountPoint, [NativeTypeName("LPWSTR")] ushort* lpszVolumeMountPoint, [NativeTypeName("DWORD")] uint cchBufferLength);
+        public static extern BOOL FindNextVolumeMountPointW([NativeTypeName("HANDLE")] IntPtr hFindVolumeMountPoint, [NativeTypeName("LPWSTR")] ushort* lpszVolumeMountPoint, [NativeTypeName("DWORD")] uint cchBufferLength);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int FindVolumeMountPointClose([NativeTypeName("HANDLE")] IntPtr hFindVolumeMountPoint);
+        public static extern BOOL FindVolumeMountPointClose([NativeTypeName("HANDLE")] IntPtr hFindVolumeMountPoint);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SetVolumeMountPointA([NativeTypeName("LPCSTR")] sbyte* lpszVolumeMountPoint, [NativeTypeName("LPCSTR")] sbyte* lpszVolumeName);
+        public static extern BOOL SetVolumeMountPointA([NativeTypeName("LPCSTR")] sbyte* lpszVolumeMountPoint, [NativeTypeName("LPCSTR")] sbyte* lpszVolumeName);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SetVolumeMountPointW([NativeTypeName("LPCWSTR")] ushort* lpszVolumeMountPoint, [NativeTypeName("LPCWSTR")] ushort* lpszVolumeName);
+        public static extern BOOL SetVolumeMountPointW([NativeTypeName("LPCWSTR")] ushort* lpszVolumeMountPoint, [NativeTypeName("LPCWSTR")] ushort* lpszVolumeName);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int DeleteVolumeMountPointA([NativeTypeName("LPCSTR")] sbyte* lpszVolumeMountPoint);
+        public static extern BOOL DeleteVolumeMountPointA([NativeTypeName("LPCSTR")] sbyte* lpszVolumeMountPoint);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int GetVolumeNameForVolumeMountPointA([NativeTypeName("LPCSTR")] sbyte* lpszVolumeMountPoint, [NativeTypeName("LPSTR")] sbyte* lpszVolumeName, [NativeTypeName("DWORD")] uint cchBufferLength);
+        public static extern BOOL GetVolumeNameForVolumeMountPointA([NativeTypeName("LPCSTR")] sbyte* lpszVolumeMountPoint, [NativeTypeName("LPSTR")] sbyte* lpszVolumeName, [NativeTypeName("DWORD")] uint cchBufferLength);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int GetVolumePathNameA([NativeTypeName("LPCSTR")] sbyte* lpszFileName, [NativeTypeName("LPSTR")] sbyte* lpszVolumePathName, [NativeTypeName("DWORD")] uint cchBufferLength);
+        public static extern BOOL GetVolumePathNameA([NativeTypeName("LPCSTR")] sbyte* lpszFileName, [NativeTypeName("LPSTR")] sbyte* lpszVolumePathName, [NativeTypeName("DWORD")] uint cchBufferLength);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int GetVolumePathNamesForVolumeNameA([NativeTypeName("LPCSTR")] sbyte* lpszVolumeName, [NativeTypeName("LPCH")] sbyte* lpszVolumePathNames, [NativeTypeName("DWORD")] uint cchBufferLength, [NativeTypeName("PDWORD")] uint* lpcchReturnLength);
+        public static extern BOOL GetVolumePathNamesForVolumeNameA([NativeTypeName("LPCSTR")] sbyte* lpszVolumeName, [NativeTypeName("LPCH")] sbyte* lpszVolumePathNames, [NativeTypeName("DWORD")] uint cchBufferLength, [NativeTypeName("PDWORD")] uint* lpcchReturnLength);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("HANDLE")]
@@ -1651,36 +1404,28 @@ namespace TerraFX.Interop
         public static extern void ReleaseActCtx([NativeTypeName("HANDLE")] IntPtr hActCtx);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int ZombifyActCtx([NativeTypeName("HANDLE")] IntPtr hActCtx);
+        public static extern BOOL ZombifyActCtx([NativeTypeName("HANDLE")] IntPtr hActCtx);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int ActivateActCtx([NativeTypeName("HANDLE")] IntPtr hActCtx, [NativeTypeName("ULONG_PTR *")] nuint* lpCookie);
+        public static extern BOOL ActivateActCtx([NativeTypeName("HANDLE")] IntPtr hActCtx, [NativeTypeName("ULONG_PTR *")] nuint* lpCookie);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int DeactivateActCtx([NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("ULONG_PTR")] nuint ulCookie);
+        public static extern BOOL DeactivateActCtx([NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("ULONG_PTR")] nuint ulCookie);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int GetCurrentActCtx([NativeTypeName("HANDLE *")] IntPtr* lphActCtx);
+        public static extern BOOL GetCurrentActCtx([NativeTypeName("HANDLE *")] IntPtr* lphActCtx);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int FindActCtxSectionStringA([NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("const GUID *")] Guid* lpExtensionGuid, [NativeTypeName("ULONG")] uint ulSectionId, [NativeTypeName("LPCSTR")] sbyte* lpStringToFind, [NativeTypeName("PACTCTX_SECTION_KEYED_DATA")] ACTCTX_SECTION_KEYED_DATA* ReturnedData);
+        public static extern BOOL FindActCtxSectionStringA([NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("const GUID *")] Guid* lpExtensionGuid, [NativeTypeName("ULONG")] uint ulSectionId, [NativeTypeName("LPCSTR")] sbyte* lpStringToFind, [NativeTypeName("PACTCTX_SECTION_KEYED_DATA")] ACTCTX_SECTION_KEYED_DATA* ReturnedData);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int FindActCtxSectionStringW([NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("const GUID *")] Guid* lpExtensionGuid, [NativeTypeName("ULONG")] uint ulSectionId, [NativeTypeName("LPCWSTR")] ushort* lpStringToFind, [NativeTypeName("PACTCTX_SECTION_KEYED_DATA")] ACTCTX_SECTION_KEYED_DATA* ReturnedData);
+        public static extern BOOL FindActCtxSectionStringW([NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("const GUID *")] Guid* lpExtensionGuid, [NativeTypeName("ULONG")] uint ulSectionId, [NativeTypeName("LPCWSTR")] ushort* lpStringToFind, [NativeTypeName("PACTCTX_SECTION_KEYED_DATA")] ACTCTX_SECTION_KEYED_DATA* ReturnedData);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int FindActCtxSectionGuid([NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("const GUID *")] Guid* lpExtensionGuid, [NativeTypeName("ULONG")] uint ulSectionId, [NativeTypeName("const GUID *")] Guid* lpGuidToFind, [NativeTypeName("PACTCTX_SECTION_KEYED_DATA")] ACTCTX_SECTION_KEYED_DATA* ReturnedData);
+        public static extern BOOL FindActCtxSectionGuid([NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("const GUID *")] Guid* lpExtensionGuid, [NativeTypeName("ULONG")] uint ulSectionId, [NativeTypeName("const GUID *")] Guid* lpGuidToFind, [NativeTypeName("PACTCTX_SECTION_KEYED_DATA")] ACTCTX_SECTION_KEYED_DATA* ReturnedData);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int QueryActCtxW([NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("HANDLE")] IntPtr hActCtx, [NativeTypeName("PVOID")] void* pvSubInstance, [NativeTypeName("ULONG")] uint ulInfoClass, [NativeTypeName("PVOID")] void* pvBuffer, [NativeTypeName("SIZE_T")] nuint cbBuffer, [NativeTypeName("SIZE_T *")] nuint* pcbWrittenOrRequired);
+        public static extern BOOL QueryActCtxW([NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("HANDLE")] IntPtr hActCtx, [NativeTypeName("PVOID")] void* pvSubInstance, [NativeTypeName("ULONG")] uint ulInfoClass, [NativeTypeName("PVOID")] void* pvBuffer, [NativeTypeName("SIZE_T")] nuint cbBuffer, [NativeTypeName("SIZE_T *")] nuint* pcbWrittenOrRequired);
 
         [DllImport("kernel32", ExactSpelling = true)]
         [return: NativeTypeName("DWORD")]
@@ -1711,32 +1456,25 @@ namespace TerraFX.Interop
         public static extern uint GetMaximumProcessorCount([NativeTypeName("WORD")] ushort GroupNumber);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int GetNumaProcessorNode([NativeTypeName("UCHAR")] byte Processor, [NativeTypeName("PUCHAR")] byte* NodeNumber);
+        public static extern BOOL GetNumaProcessorNode([NativeTypeName("UCHAR")] byte Processor, [NativeTypeName("PUCHAR")] byte* NodeNumber);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int GetNumaNodeNumberFromHandle([NativeTypeName("HANDLE")] IntPtr hFile, [NativeTypeName("PUSHORT")] ushort* NodeNumber);
+        public static extern BOOL GetNumaNodeNumberFromHandle([NativeTypeName("HANDLE")] IntPtr hFile, [NativeTypeName("PUSHORT")] ushort* NodeNumber);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int GetNumaProcessorNodeEx([NativeTypeName("PPROCESSOR_NUMBER")] PROCESSOR_NUMBER* Processor, [NativeTypeName("PUSHORT")] ushort* NodeNumber);
+        public static extern BOOL GetNumaProcessorNodeEx([NativeTypeName("PPROCESSOR_NUMBER")] PROCESSOR_NUMBER* Processor, [NativeTypeName("PUSHORT")] ushort* NodeNumber);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int GetNumaNodeProcessorMask([NativeTypeName("UCHAR")] byte Node, [NativeTypeName("PULONGLONG")] ulong* ProcessorMask);
+        public static extern BOOL GetNumaNodeProcessorMask([NativeTypeName("UCHAR")] byte Node, [NativeTypeName("PULONGLONG")] ulong* ProcessorMask);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int GetNumaAvailableMemoryNode([NativeTypeName("UCHAR")] byte Node, [NativeTypeName("PULONGLONG")] ulong* AvailableBytes);
+        public static extern BOOL GetNumaAvailableMemoryNode([NativeTypeName("UCHAR")] byte Node, [NativeTypeName("PULONGLONG")] ulong* AvailableBytes);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int GetNumaAvailableMemoryNodeEx([NativeTypeName("USHORT")] ushort Node, [NativeTypeName("PULONGLONG")] ulong* AvailableBytes);
+        public static extern BOOL GetNumaAvailableMemoryNodeEx([NativeTypeName("USHORT")] ushort Node, [NativeTypeName("PULONGLONG")] ulong* AvailableBytes);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int GetNumaProximityNode([NativeTypeName("ULONG")] uint ProximityId, [NativeTypeName("PUCHAR")] byte* NodeNumber);
+        public static extern BOOL GetNumaProximityNode([NativeTypeName("ULONG")] uint ProximityId, [NativeTypeName("PUCHAR")] byte* NodeNumber);
 
         [DllImport("kernel32", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
@@ -1764,14 +1502,13 @@ namespace TerraFX.Interop
 
         [DllImport("kernel32", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
-        public static extern int ApplicationRecoveryInProgress([NativeTypeName("PBOOL")] int* pbCancelled);
+        public static extern int ApplicationRecoveryInProgress([NativeTypeName("PBOOL")] BOOL* pbCancelled);
 
         [DllImport("kernel32", ExactSpelling = true)]
-        public static extern void ApplicationRecoveryFinished([NativeTypeName("BOOL")] int bSuccess);
+        public static extern void ApplicationRecoveryFinished(BOOL bSuccess);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int GetFileInformationByHandleEx([NativeTypeName("HANDLE")] IntPtr hFile, FILE_INFO_BY_HANDLE_CLASS FileInformationClass, [NativeTypeName("LPVOID")] void* lpFileInformation, [NativeTypeName("DWORD")] uint dwBufferSize);
+        public static extern BOOL GetFileInformationByHandleEx([NativeTypeName("HANDLE")] IntPtr hFile, FILE_INFO_BY_HANDLE_CLASS FileInformationClass, [NativeTypeName("LPVOID")] void* lpFileInformation, [NativeTypeName("DWORD")] uint dwBufferSize);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("HANDLE")]
@@ -1786,8 +1523,7 @@ namespace TerraFX.Interop
         public static extern byte CreateSymbolicLinkW([NativeTypeName("LPCWSTR")] ushort* lpSymlinkFileName, [NativeTypeName("LPCWSTR")] ushort* lpTargetFileName, [NativeTypeName("DWORD")] uint dwFlags);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int QueryActCtxSettingsW([NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("HANDLE")] IntPtr hActCtx, [NativeTypeName("PCWSTR")] ushort* settingsNameSpace, [NativeTypeName("PCWSTR")] ushort* settingName, [NativeTypeName("PWSTR")] ushort* pvBuffer, [NativeTypeName("SIZE_T")] nuint dwBuffer, [NativeTypeName("SIZE_T *")] nuint* pdwWrittenOrRequired);
+        public static extern BOOL QueryActCtxSettingsW([NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("HANDLE")] IntPtr hActCtx, [NativeTypeName("PCWSTR")] ushort* settingsNameSpace, [NativeTypeName("PCWSTR")] ushort* settingName, [NativeTypeName("PWSTR")] ushort* pvBuffer, [NativeTypeName("SIZE_T")] nuint dwBuffer, [NativeTypeName("SIZE_T *")] nuint* pdwWrittenOrRequired);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("BOOLEAN")]
@@ -1798,52 +1534,43 @@ namespace TerraFX.Interop
         public static extern byte CreateSymbolicLinkTransactedW([NativeTypeName("LPCWSTR")] ushort* lpSymlinkFileName, [NativeTypeName("LPCWSTR")] ushort* lpTargetFileName, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("HANDLE")] IntPtr hTransaction);
 
         [DllImport("kernel32", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int ReplacePartitionUnit([NativeTypeName("PWSTR")] ushort* TargetPartition, [NativeTypeName("PWSTR")] ushort* SparePartition, [NativeTypeName("ULONG")] uint Flags);
+        public static extern BOOL ReplacePartitionUnit([NativeTypeName("PWSTR")] ushort* TargetPartition, [NativeTypeName("PWSTR")] ushort* SparePartition, [NativeTypeName("ULONG")] uint Flags);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int AddSecureMemoryCacheCallback([NativeTypeName("PSECURE_MEMORY_CACHE_CALLBACK")] delegate* unmanaged<void*, nuint, byte> pfnCallBack);
+        public static extern BOOL AddSecureMemoryCacheCallback([NativeTypeName("PSECURE_MEMORY_CACHE_CALLBACK")] delegate* unmanaged<void*, nuint, byte> pfnCallBack);
 
         [DllImport("kernel32", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int RemoveSecureMemoryCacheCallback([NativeTypeName("PSECURE_MEMORY_CACHE_CALLBACK")] delegate* unmanaged<void*, nuint, byte> pfnCallBack);
+        public static extern BOOL RemoveSecureMemoryCacheCallback([NativeTypeName("PSECURE_MEMORY_CACHE_CALLBACK")] delegate* unmanaged<void*, nuint, byte> pfnCallBack);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int CopyContext([NativeTypeName("PCONTEXT")] void* Destination, [NativeTypeName("DWORD")] uint ContextFlags, [NativeTypeName("PCONTEXT")] void* Source);
+        public static extern BOOL CopyContext([NativeTypeName("PCONTEXT")] void* Destination, [NativeTypeName("DWORD")] uint ContextFlags, [NativeTypeName("PCONTEXT")] void* Source);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int InitializeContext([NativeTypeName("PVOID")] void* Buffer, [NativeTypeName("DWORD")] uint ContextFlags, [NativeTypeName("PCONTEXT *")] void** Context, [NativeTypeName("PDWORD")] uint* ContextLength);
+        public static extern BOOL InitializeContext([NativeTypeName("PVOID")] void* Buffer, [NativeTypeName("DWORD")] uint ContextFlags, [NativeTypeName("PCONTEXT *")] void** Context, [NativeTypeName("PDWORD")] uint* ContextLength);
 
         [DllImport("kernel32", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int InitializeContext2([NativeTypeName("PVOID")] void* Buffer, [NativeTypeName("DWORD")] uint ContextFlags, [NativeTypeName("PCONTEXT *")] void** Context, [NativeTypeName("PDWORD")] uint* ContextLength, [NativeTypeName("ULONG64")] ulong XStateCompactionMask);
+        public static extern BOOL InitializeContext2([NativeTypeName("PVOID")] void* Buffer, [NativeTypeName("DWORD")] uint ContextFlags, [NativeTypeName("PCONTEXT *")] void** Context, [NativeTypeName("PDWORD")] uint* ContextLength, [NativeTypeName("ULONG64")] ulong XStateCompactionMask);
 
         [DllImport("kernel32", ExactSpelling = true)]
         [return: NativeTypeName("DWORD64")]
         public static extern ulong GetEnabledXStateFeatures();
 
         [DllImport("kernel32", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int GetXStateFeaturesMask([NativeTypeName("PCONTEXT")] void* Context, [NativeTypeName("PDWORD64")] ulong* FeatureMask);
+        public static extern BOOL GetXStateFeaturesMask([NativeTypeName("PCONTEXT")] void* Context, [NativeTypeName("PDWORD64")] ulong* FeatureMask);
 
         [DllImport("kernel32", ExactSpelling = true)]
         [return: NativeTypeName("PVOID")]
         public static extern void* LocateXStateFeature([NativeTypeName("PCONTEXT")] void* Context, [NativeTypeName("DWORD")] uint FeatureId, [NativeTypeName("PDWORD")] uint* Length);
 
         [DllImport("kernel32", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SetXStateFeaturesMask([NativeTypeName("PCONTEXT")] void* Context, [NativeTypeName("DWORD64")] ulong FeatureMask);
+        public static extern BOOL SetXStateFeaturesMask([NativeTypeName("PCONTEXT")] void* Context, [NativeTypeName("DWORD64")] ulong FeatureMask);
 
         [DllImport("kernel32", ExactSpelling = true)]
         [return: NativeTypeName("DWORD64")]
         public static extern ulong GetThreadEnabledXStateFeatures();
 
         [DllImport("kernel32", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int EnableProcessOptionalXStateFeatures([NativeTypeName("DWORD64")] ulong Features);
+        public static extern BOOL EnableProcessOptionalXStateFeatures([NativeTypeName("DWORD64")] ulong Features);
 
         [DllImport("kernel32", ExactSpelling = true)]
         [return: NativeTypeName("DWORD")]
@@ -2967,7 +2694,7 @@ namespace TerraFX.Interop
         public const int SCS_64BIT_BINARY = 6;
 
         [NativeTypeName("#define GetBinaryType GetBinaryTypeW")]
-        public static delegate*<ushort*, uint*, int> GetBinaryType => &GetBinaryTypeW;
+        public static delegate*<ushort*, uint*, BOOL> GetBinaryType => &GetBinaryTypeW;
 
         [NativeTypeName("#define GetLongPathNameTransacted GetLongPathNameTransactedW")]
         public static delegate*<ushort*, ushort*, uint, IntPtr, uint> GetLongPathNameTransacted => &GetLongPathNameTransactedW;
@@ -3006,7 +2733,7 @@ namespace TerraFX.Interop
         public const int CRITICAL_SECTION_NO_DEBUG_INFO = 0x01000000;
 
         [NativeTypeName("#define SetFileShortName SetFileShortNameW")]
-        public static delegate*<IntPtr, ushort*, int> SetFileShortName => &SetFileShortNameW;
+        public static delegate*<IntPtr, ushort*, BOOL> SetFileShortName => &SetFileShortNameW;
 
         [NativeTypeName("#define HANDLE_FLAG_INHERIT 0x00000001")]
         public const int HANDLE_FLAG_INHERIT = 0x00000001;
@@ -3057,10 +2784,10 @@ namespace TerraFX.Interop
         public static delegate*<ushort*, uint, uint, SECURITY_ATTRIBUTES*, IntPtr> CreateMailslot => &CreateMailslotW;
 
         [NativeTypeName("#define EncryptFile EncryptFileW")]
-        public static delegate*<ushort*, int> EncryptFile => &EncryptFileW;
+        public static delegate*<ushort*, BOOL> EncryptFile => &EncryptFileW;
 
         [NativeTypeName("#define DecryptFile DecryptFileW")]
-        public static delegate*<ushort*, uint, int> DecryptFile => &DecryptFileW;
+        public static delegate*<ushort*, uint, BOOL> DecryptFile => &DecryptFileW;
 
         [NativeTypeName("#define FILE_ENCRYPTABLE 0")]
         public const int FILE_ENCRYPTABLE = 0;
@@ -3093,7 +2820,7 @@ namespace TerraFX.Interop
         public const int FILE_DIR_DISALLOWED = 9;
 
         [NativeTypeName("#define FileEncryptionStatus FileEncryptionStatusW")]
-        public static delegate*<ushort*, uint*, int> FileEncryptionStatus => &FileEncryptionStatusW;
+        public static delegate*<ushort*, uint*, BOOL> FileEncryptionStatus => &FileEncryptionStatusW;
 
         [NativeTypeName("#define EFS_USE_RECOVERY_KEYS (0x1)")]
         public const int EFS_USE_RECOVERY_KEYS = (0x1);
@@ -3273,7 +3000,7 @@ namespace TerraFX.Interop
         public const int PROCESS_NAME_NATIVE = 0x00000001;
 
         [NativeTypeName("#define QueryFullProcessImageName QueryFullProcessImageNameW")]
-        public static delegate*<IntPtr, uint, ushort*, uint*, int> QueryFullProcessImageName => &QueryFullProcessImageNameW;
+        public static delegate*<IntPtr, uint, ushort*, uint*, BOOL> QueryFullProcessImageName => &QueryFullProcessImageNameW;
 
         [NativeTypeName("#define PROC_THREAD_ATTRIBUTE_NUMBER 0x0000FFFF")]
         public const int PROC_THREAD_ATTRIBUTE_NUMBER = 0x0000FFFF;
@@ -3816,25 +3543,25 @@ namespace TerraFX.Interop
         public static delegate*<ushort*, ushort*, void*, uint, uint*, uint> GetFirmwareEnvironmentVariableEx => &GetFirmwareEnvironmentVariableExW;
 
         [NativeTypeName("#define SetFirmwareEnvironmentVariable SetFirmwareEnvironmentVariableW")]
-        public static delegate*<ushort*, ushort*, void*, uint, int> SetFirmwareEnvironmentVariable => &SetFirmwareEnvironmentVariableW;
+        public static delegate*<ushort*, ushort*, void*, uint, BOOL> SetFirmwareEnvironmentVariable => &SetFirmwareEnvironmentVariableW;
 
         [NativeTypeName("#define SetFirmwareEnvironmentVariableEx SetFirmwareEnvironmentVariableExW")]
-        public static delegate*<ushort*, ushort*, void*, uint, uint, int> SetFirmwareEnvironmentVariableEx => &SetFirmwareEnvironmentVariableExW;
+        public static delegate*<ushort*, ushort*, void*, uint, uint, BOOL> SetFirmwareEnvironmentVariableEx => &SetFirmwareEnvironmentVariableExW;
 
         [NativeTypeName("#define EnumResourceTypes EnumResourceTypesW")]
-        public static delegate*<IntPtr, delegate* unmanaged<IntPtr, ushort*, nint, int>, nint, int> EnumResourceTypes => &EnumResourceTypesW;
+        public static delegate*<IntPtr, delegate* unmanaged<IntPtr, ushort*, nint, BOOL>, nint, BOOL> EnumResourceTypes => &EnumResourceTypesW;
 
         [NativeTypeName("#define EnumResourceLanguages EnumResourceLanguagesW")]
-        public static delegate*<IntPtr, ushort*, ushort*, delegate* unmanaged<IntPtr, ushort*, ushort*, ushort, nint, int>, nint, int> EnumResourceLanguages => &EnumResourceLanguagesW;
+        public static delegate*<IntPtr, ushort*, ushort*, delegate* unmanaged<IntPtr, ushort*, ushort*, ushort, nint, BOOL>, nint, BOOL> EnumResourceLanguages => &EnumResourceLanguagesW;
 
         [NativeTypeName("#define BeginUpdateResource BeginUpdateResourceW")]
-        public static delegate*<ushort*, int, IntPtr> BeginUpdateResource => &BeginUpdateResourceW;
+        public static delegate*<ushort*, BOOL, IntPtr> BeginUpdateResource => &BeginUpdateResourceW;
 
         [NativeTypeName("#define UpdateResource UpdateResourceW")]
-        public static delegate*<IntPtr, ushort*, ushort*, ushort, void*, uint, int> UpdateResource => &UpdateResourceW;
+        public static delegate*<IntPtr, ushort*, ushort*, ushort, void*, uint, BOOL> UpdateResource => &UpdateResourceW;
 
         [NativeTypeName("#define EndUpdateResource EndUpdateResourceW")]
-        public static delegate*<IntPtr, int, int> EndUpdateResource => &EndUpdateResourceW;
+        public static delegate*<IntPtr, BOOL, BOOL> EndUpdateResource => &EndUpdateResourceW;
 
         [NativeTypeName("#define ATOM_FLAG_GLOBAL 0x2")]
         public const int ATOM_FLAG_GLOBAL = 0x2;
@@ -3867,13 +3594,13 @@ namespace TerraFX.Interop
         public static delegate*<ushort*, ushort*, ushort*, ushort*, uint, uint> GetProfileString => &GetProfileStringW;
 
         [NativeTypeName("#define WriteProfileString WriteProfileStringW")]
-        public static delegate*<ushort*, ushort*, ushort*, int> WriteProfileString => &WriteProfileStringW;
+        public static delegate*<ushort*, ushort*, ushort*, BOOL> WriteProfileString => &WriteProfileStringW;
 
         [NativeTypeName("#define GetProfileSection GetProfileSectionW")]
         public static delegate*<ushort*, ushort*, uint, uint> GetProfileSection => &GetProfileSectionW;
 
         [NativeTypeName("#define WriteProfileSection WriteProfileSectionW")]
-        public static delegate*<ushort*, ushort*, int> WriteProfileSection => &WriteProfileSectionW;
+        public static delegate*<ushort*, ushort*, BOOL> WriteProfileSection => &WriteProfileSectionW;
 
         [NativeTypeName("#define GetPrivateProfileInt GetPrivateProfileIntW")]
         public static delegate*<ushort*, ushort*, int, ushort*, uint> GetPrivateProfileInt => &GetPrivateProfileIntW;
@@ -3882,22 +3609,22 @@ namespace TerraFX.Interop
         public static delegate*<ushort*, ushort*, ushort*, ushort*, uint, ushort*, uint> GetPrivateProfileString => &GetPrivateProfileStringW;
 
         [NativeTypeName("#define WritePrivateProfileString WritePrivateProfileStringW")]
-        public static delegate*<ushort*, ushort*, ushort*, ushort*, int> WritePrivateProfileString => &WritePrivateProfileStringW;
+        public static delegate*<ushort*, ushort*, ushort*, ushort*, BOOL> WritePrivateProfileString => &WritePrivateProfileStringW;
 
         [NativeTypeName("#define GetPrivateProfileSection GetPrivateProfileSectionW")]
         public static delegate*<ushort*, ushort*, uint, ushort*, uint> GetPrivateProfileSection => &GetPrivateProfileSectionW;
 
         [NativeTypeName("#define WritePrivateProfileSection WritePrivateProfileSectionW")]
-        public static delegate*<ushort*, ushort*, ushort*, int> WritePrivateProfileSection => &WritePrivateProfileSectionW;
+        public static delegate*<ushort*, ushort*, ushort*, BOOL> WritePrivateProfileSection => &WritePrivateProfileSectionW;
 
         [NativeTypeName("#define GetPrivateProfileSectionNames GetPrivateProfileSectionNamesW")]
         public static delegate*<ushort*, uint, ushort*, uint> GetPrivateProfileSectionNames => &GetPrivateProfileSectionNamesW;
 
         [NativeTypeName("#define GetPrivateProfileStruct GetPrivateProfileStructW")]
-        public static delegate*<ushort*, ushort*, void*, uint, ushort*, int> GetPrivateProfileStruct => &GetPrivateProfileStructW;
+        public static delegate*<ushort*, ushort*, void*, uint, ushort*, BOOL> GetPrivateProfileStruct => &GetPrivateProfileStructW;
 
         [NativeTypeName("#define WritePrivateProfileStruct WritePrivateProfileStructW")]
-        public static delegate*<ushort*, ushort*, void*, uint, ushort*, int> WritePrivateProfileStruct => &WritePrivateProfileStructW;
+        public static delegate*<ushort*, ushort*, void*, uint, ushort*, BOOL> WritePrivateProfileStruct => &WritePrivateProfileStructW;
 
         [NativeTypeName("#define GET_SYSTEM_WOW64_DIRECTORY_NAME_A_A \"GetSystemWow64DirectoryA\"")]
         public static ReadOnlySpan<byte> GET_SYSTEM_WOW64_DIRECTORY_NAME_A_A => new byte[] { 0x47, 0x65, 0x74, 0x53, 0x79, 0x73, 0x74, 0x65, 0x6D, 0x57, 0x6F, 0x77, 0x36, 0x34, 0x44, 0x69, 0x72, 0x65, 0x63, 0x74, 0x6F, 0x72, 0x79, 0x41, 0x00 };
@@ -3927,7 +3654,7 @@ namespace TerraFX.Interop
         public const string GET_SYSTEM_WOW64_DIRECTORY_NAME_T_T = "GetSystemWow64DirectoryW";
 
         [NativeTypeName("#define SetDllDirectory SetDllDirectoryW")]
-        public static delegate*<ushort*, int> SetDllDirectory => &SetDllDirectoryW;
+        public static delegate*<ushort*, BOOL> SetDllDirectory => &SetDllDirectoryW;
 
         [NativeTypeName("#define GetDllDirectory GetDllDirectoryW")]
         public static delegate*<uint, ushort*, uint> GetDllDirectory => &GetDllDirectoryW;
@@ -3945,13 +3672,13 @@ namespace TerraFX.Interop
         public const int BASE_SEARCH_PATH_INVALID_FLAGS = ~0x18001;
 
         [NativeTypeName("#define CreateDirectoryEx CreateDirectoryExW")]
-        public static delegate*<ushort*, ushort*, SECURITY_ATTRIBUTES*, int> CreateDirectoryEx => &CreateDirectoryExW;
+        public static delegate*<ushort*, ushort*, SECURITY_ATTRIBUTES*, BOOL> CreateDirectoryEx => &CreateDirectoryExW;
 
         [NativeTypeName("#define CreateDirectoryTransacted CreateDirectoryTransactedW")]
-        public static delegate*<ushort*, ushort*, SECURITY_ATTRIBUTES*, IntPtr, int> CreateDirectoryTransacted => &CreateDirectoryTransactedW;
+        public static delegate*<ushort*, ushort*, SECURITY_ATTRIBUTES*, IntPtr, BOOL> CreateDirectoryTransacted => &CreateDirectoryTransactedW;
 
         [NativeTypeName("#define RemoveDirectoryTransacted RemoveDirectoryTransactedW")]
-        public static delegate*<ushort*, IntPtr, int> RemoveDirectoryTransacted => &RemoveDirectoryTransactedW;
+        public static delegate*<ushort*, IntPtr, BOOL> RemoveDirectoryTransacted => &RemoveDirectoryTransactedW;
 
         [NativeTypeName("#define GetFullPathNameTransacted GetFullPathNameTransactedW")]
         public static delegate*<ushort*, uint, ushort*, ushort**, IntPtr, uint> GetFullPathNameTransacted => &GetFullPathNameTransactedW;
@@ -3975,31 +3702,31 @@ namespace TerraFX.Interop
         public static delegate*<ushort*, uint, uint, SECURITY_ATTRIBUTES*, uint, uint, IntPtr, IntPtr, ushort*, void*, IntPtr> CreateFileTransacted => &CreateFileTransactedW;
 
         [NativeTypeName("#define SetFileAttributesTransacted SetFileAttributesTransactedW")]
-        public static delegate*<ushort*, uint, IntPtr, int> SetFileAttributesTransacted => &SetFileAttributesTransactedW;
+        public static delegate*<ushort*, uint, IntPtr, BOOL> SetFileAttributesTransacted => &SetFileAttributesTransactedW;
 
         [NativeTypeName("#define GetFileAttributesTransacted GetFileAttributesTransactedW")]
-        public static delegate*<ushort*, GET_FILEEX_INFO_LEVELS, void*, IntPtr, int> GetFileAttributesTransacted => &GetFileAttributesTransactedW;
+        public static delegate*<ushort*, GET_FILEEX_INFO_LEVELS, void*, IntPtr, BOOL> GetFileAttributesTransacted => &GetFileAttributesTransactedW;
 
         [NativeTypeName("#define GetCompressedFileSizeTransacted GetCompressedFileSizeTransactedW")]
         public static delegate*<ushort*, uint*, IntPtr, uint> GetCompressedFileSizeTransacted => &GetCompressedFileSizeTransactedW;
 
         [NativeTypeName("#define DeleteFileTransacted DeleteFileTransactedW")]
-        public static delegate*<ushort*, IntPtr, int> DeleteFileTransacted => &DeleteFileTransactedW;
+        public static delegate*<ushort*, IntPtr, BOOL> DeleteFileTransacted => &DeleteFileTransactedW;
 
         [NativeTypeName("#define CheckNameLegalDOS8Dot3 CheckNameLegalDOS8Dot3W")]
-        public static delegate*<ushort*, sbyte*, uint, int*, int*, int> CheckNameLegalDOS8Dot3 => &CheckNameLegalDOS8Dot3W;
+        public static delegate*<ushort*, sbyte*, uint, BOOL*, BOOL*, BOOL> CheckNameLegalDOS8Dot3 => &CheckNameLegalDOS8Dot3W;
 
         [NativeTypeName("#define FindFirstFileTransacted FindFirstFileTransactedW")]
         public static delegate*<ushort*, FINDEX_INFO_LEVELS, void*, FINDEX_SEARCH_OPS, void*, uint, IntPtr, IntPtr> FindFirstFileTransacted => &FindFirstFileTransactedW;
 
         [NativeTypeName("#define CopyFile CopyFileW")]
-        public static delegate*<ushort*, ushort*, int, int> CopyFile => &CopyFileW;
+        public static delegate*<ushort*, ushort*, BOOL, BOOL> CopyFile => &CopyFileW;
 
         [NativeTypeName("#define CopyFileEx CopyFileExW")]
-        public static delegate*<ushort*, ushort*, delegate* unmanaged<LARGE_INTEGER, LARGE_INTEGER, LARGE_INTEGER, LARGE_INTEGER, uint, uint, IntPtr, IntPtr, void*, uint>, void*, int*, uint, int> CopyFileEx => &CopyFileExW;
+        public static delegate*<ushort*, ushort*, delegate* unmanaged<LARGE_INTEGER, LARGE_INTEGER, LARGE_INTEGER, LARGE_INTEGER, uint, uint, IntPtr, IntPtr, void*, uint>, void*, BOOL*, uint, BOOL> CopyFileEx => &CopyFileExW;
 
         [NativeTypeName("#define CopyFileTransacted CopyFileTransactedW")]
-        public static delegate*<ushort*, ushort*, delegate* unmanaged<LARGE_INTEGER, LARGE_INTEGER, LARGE_INTEGER, LARGE_INTEGER, uint, uint, IntPtr, IntPtr, void*, uint>, void*, int*, uint, IntPtr, int> CopyFileTransacted => &CopyFileTransactedW;
+        public static delegate*<ushort*, ushort*, delegate* unmanaged<LARGE_INTEGER, LARGE_INTEGER, LARGE_INTEGER, LARGE_INTEGER, uint, uint, IntPtr, IntPtr, void*, uint>, void*, BOOL*, uint, IntPtr, BOOL> CopyFileTransacted => &CopyFileTransactedW;
 
         [NativeTypeName("#define COPYFILE2_MESSAGE_COPY_OFFLOAD (0x00000001L)")]
         public const int COPYFILE2_MESSAGE_COPY_OFFLOAD = (0x00000001);
@@ -4014,16 +3741,16 @@ namespace TerraFX.Interop
         public const int COPYFILE2_IO_RATE_MIN = 512;
 
         [NativeTypeName("#define MoveFile MoveFileW")]
-        public static delegate*<ushort*, ushort*, int> MoveFile => &MoveFileW;
+        public static delegate*<ushort*, ushort*, BOOL> MoveFile => &MoveFileW;
 
         [NativeTypeName("#define MoveFileEx MoveFileExW")]
-        public static delegate*<ushort*, ushort*, uint, int> MoveFileEx => &MoveFileExW;
+        public static delegate*<ushort*, ushort*, uint, BOOL> MoveFileEx => &MoveFileExW;
 
         [NativeTypeName("#define MoveFileWithProgress MoveFileWithProgressW")]
-        public static delegate*<ushort*, ushort*, delegate* unmanaged<LARGE_INTEGER, LARGE_INTEGER, LARGE_INTEGER, LARGE_INTEGER, uint, uint, IntPtr, IntPtr, void*, uint>, void*, uint, int> MoveFileWithProgress => &MoveFileWithProgressW;
+        public static delegate*<ushort*, ushort*, delegate* unmanaged<LARGE_INTEGER, LARGE_INTEGER, LARGE_INTEGER, LARGE_INTEGER, uint, uint, IntPtr, IntPtr, void*, uint>, void*, uint, BOOL> MoveFileWithProgress => &MoveFileWithProgressW;
 
         [NativeTypeName("#define MoveFileTransacted MoveFileTransactedW")]
-        public static delegate*<ushort*, ushort*, delegate* unmanaged<LARGE_INTEGER, LARGE_INTEGER, LARGE_INTEGER, LARGE_INTEGER, uint, uint, IntPtr, IntPtr, void*, uint>, void*, uint, IntPtr, int> MoveFileTransacted => &MoveFileTransactedW;
+        public static delegate*<ushort*, ushort*, delegate* unmanaged<LARGE_INTEGER, LARGE_INTEGER, LARGE_INTEGER, LARGE_INTEGER, uint, uint, IntPtr, IntPtr, void*, uint>, void*, uint, IntPtr, BOOL> MoveFileTransacted => &MoveFileTransactedW;
 
         [NativeTypeName("#define MOVEFILE_REPLACE_EXISTING 0x00000001")]
         public const int MOVEFILE_REPLACE_EXISTING = 0x00000001;
@@ -4044,22 +3771,22 @@ namespace TerraFX.Interop
         public const int MOVEFILE_FAIL_IF_NOT_TRACKABLE = 0x00000020;
 
         [NativeTypeName("#define ReplaceFile ReplaceFileW")]
-        public static delegate*<ushort*, ushort*, ushort*, uint, void*, void*, int> ReplaceFile => &ReplaceFileW;
+        public static delegate*<ushort*, ushort*, ushort*, uint, void*, void*, BOOL> ReplaceFile => &ReplaceFileW;
 
         [NativeTypeName("#define CreateHardLink CreateHardLinkW")]
-        public static delegate*<ushort*, ushort*, SECURITY_ATTRIBUTES*, int> CreateHardLink => &CreateHardLinkW;
+        public static delegate*<ushort*, ushort*, SECURITY_ATTRIBUTES*, BOOL> CreateHardLink => &CreateHardLinkW;
 
         [NativeTypeName("#define CreateHardLinkTransacted CreateHardLinkTransactedW")]
-        public static delegate*<ushort*, ushort*, SECURITY_ATTRIBUTES*, IntPtr, int> CreateHardLinkTransacted => &CreateHardLinkTransactedW;
+        public static delegate*<ushort*, ushort*, SECURITY_ATTRIBUTES*, IntPtr, BOOL> CreateHardLinkTransacted => &CreateHardLinkTransactedW;
 
         [NativeTypeName("#define SetVolumeLabel SetVolumeLabelW")]
-        public static delegate*<ushort*, ushort*, int> SetVolumeLabel => &SetVolumeLabelW;
+        public static delegate*<ushort*, ushort*, BOOL> SetVolumeLabel => &SetVolumeLabelW;
 
         [NativeTypeName("#define ClearEventLog ClearEventLogW")]
-        public static delegate*<IntPtr, ushort*, int> ClearEventLog => &ClearEventLogW;
+        public static delegate*<IntPtr, ushort*, BOOL> ClearEventLog => &ClearEventLogW;
 
         [NativeTypeName("#define BackupEventLog BackupEventLogW")]
-        public static delegate*<IntPtr, ushort*, int> BackupEventLog => &BackupEventLogW;
+        public static delegate*<IntPtr, ushort*, BOOL> BackupEventLog => &BackupEventLogW;
 
         [NativeTypeName("#define OpenEventLog OpenEventLogW")]
         public static delegate*<ushort*, ushort*, IntPtr> OpenEventLog => &OpenEventLogW;
@@ -4071,10 +3798,10 @@ namespace TerraFX.Interop
         public static delegate*<ushort*, ushort*, IntPtr> OpenBackupEventLog => &OpenBackupEventLogW;
 
         [NativeTypeName("#define ReadEventLog ReadEventLogW")]
-        public static delegate*<IntPtr, uint, uint, void*, uint, uint*, uint*, int> ReadEventLog => &ReadEventLogW;
+        public static delegate*<IntPtr, uint, uint, void*, uint, uint*, uint*, BOOL> ReadEventLog => &ReadEventLogW;
 
         [NativeTypeName("#define ReportEvent ReportEventW")]
-        public static delegate*<IntPtr, ushort, ushort, uint, void*, ushort, uint, ushort**, void*, int> ReportEvent => &ReportEventW;
+        public static delegate*<IntPtr, ushort, ushort, uint, void*, ushort, uint, ushort**, void*, BOOL> ReportEvent => &ReportEventW;
 
         [NativeTypeName("#define EVENTLOG_FULL_INFO 0")]
         public const int EVENTLOG_FULL_INFO = 0;
@@ -4089,52 +3816,52 @@ namespace TerraFX.Interop
         public const int OPERATION_END_DISCARD = 0x1;
 
         [NativeTypeName("#define IsBadStringPtr IsBadStringPtrW")]
-        public static delegate*<ushort*, nuint, int> IsBadStringPtr => &IsBadStringPtrW;
+        public static delegate*<ushort*, nuint, BOOL> IsBadStringPtr => &IsBadStringPtrW;
 
         [NativeTypeName("#define LookupAccountSid LookupAccountSidW")]
-        public static delegate*<ushort*, void*, ushort*, uint*, ushort*, uint*, SID_NAME_USE*, int> LookupAccountSid => &LookupAccountSidW;
+        public static delegate*<ushort*, void*, ushort*, uint*, ushort*, uint*, SID_NAME_USE*, BOOL> LookupAccountSid => &LookupAccountSidW;
 
         [NativeTypeName("#define LookupAccountName LookupAccountNameW")]
-        public static delegate*<ushort*, ushort*, void*, uint*, ushort*, uint*, SID_NAME_USE*, int> LookupAccountName => &LookupAccountNameW;
+        public static delegate*<ushort*, ushort*, void*, uint*, ushort*, uint*, SID_NAME_USE*, BOOL> LookupAccountName => &LookupAccountNameW;
 
         [NativeTypeName("#define LookupAccountSidLocal LookupAccountSidLocalW")]
-        public static delegate*<void*, ushort*, uint*, ushort*, uint*, SID_NAME_USE*, int> LookupAccountSidLocal => &LookupAccountSidLocalW;
+        public static delegate*<void*, ushort*, uint*, ushort*, uint*, SID_NAME_USE*, BOOL> LookupAccountSidLocal => &LookupAccountSidLocalW;
 
         [NativeTypeName("#define LookupPrivilegeValue LookupPrivilegeValueW")]
-        public static delegate*<ushort*, ushort*, LUID*, int> LookupPrivilegeValue => &LookupPrivilegeValueW;
+        public static delegate*<ushort*, ushort*, LUID*, BOOL> LookupPrivilegeValue => &LookupPrivilegeValueW;
 
         [NativeTypeName("#define LookupPrivilegeName LookupPrivilegeNameW")]
-        public static delegate*<ushort*, LUID*, ushort*, uint*, int> LookupPrivilegeName => &LookupPrivilegeNameW;
+        public static delegate*<ushort*, LUID*, ushort*, uint*, BOOL> LookupPrivilegeName => &LookupPrivilegeNameW;
 
         [NativeTypeName("#define LookupPrivilegeDisplayName LookupPrivilegeDisplayNameW")]
-        public static delegate*<ushort*, ushort*, ushort*, uint*, uint*, int> LookupPrivilegeDisplayName => &LookupPrivilegeDisplayNameW;
+        public static delegate*<ushort*, ushort*, ushort*, uint*, uint*, BOOL> LookupPrivilegeDisplayName => &LookupPrivilegeDisplayNameW;
 
         [NativeTypeName("#define BuildCommDCB BuildCommDCBW")]
-        public static delegate*<ushort*, DCB*, int> BuildCommDCB => &BuildCommDCBW;
+        public static delegate*<ushort*, DCB*, BOOL> BuildCommDCB => &BuildCommDCBW;
 
         [NativeTypeName("#define BuildCommDCBAndTimeouts BuildCommDCBAndTimeoutsW")]
-        public static delegate*<ushort*, DCB*, COMMTIMEOUTS*, int> BuildCommDCBAndTimeouts => &BuildCommDCBAndTimeoutsW;
+        public static delegate*<ushort*, DCB*, COMMTIMEOUTS*, BOOL> BuildCommDCBAndTimeouts => &BuildCommDCBAndTimeoutsW;
 
         [NativeTypeName("#define CommConfigDialog CommConfigDialogW")]
-        public static delegate*<ushort*, IntPtr, COMMCONFIG*, int> CommConfigDialog => &CommConfigDialogW;
+        public static delegate*<ushort*, IntPtr, COMMCONFIG*, BOOL> CommConfigDialog => &CommConfigDialogW;
 
         [NativeTypeName("#define GetDefaultCommConfig GetDefaultCommConfigW")]
-        public static delegate*<ushort*, COMMCONFIG*, uint*, int> GetDefaultCommConfig => &GetDefaultCommConfigW;
+        public static delegate*<ushort*, COMMCONFIG*, uint*, BOOL> GetDefaultCommConfig => &GetDefaultCommConfigW;
 
         [NativeTypeName("#define SetDefaultCommConfig SetDefaultCommConfigW")]
-        public static delegate*<ushort*, COMMCONFIG*, uint, int> SetDefaultCommConfig => &SetDefaultCommConfigW;
+        public static delegate*<ushort*, COMMCONFIG*, uint, BOOL> SetDefaultCommConfig => &SetDefaultCommConfigW;
 
         [NativeTypeName("#define MAX_COMPUTERNAME_LENGTH 15")]
         public const int MAX_COMPUTERNAME_LENGTH = 15;
 
         [NativeTypeName("#define GetComputerName GetComputerNameW")]
-        public static delegate*<ushort*, uint*, int> GetComputerName => &GetComputerNameW;
+        public static delegate*<ushort*, uint*, BOOL> GetComputerName => &GetComputerNameW;
 
         [NativeTypeName("#define DnsHostnameToComputerName DnsHostnameToComputerNameW")]
-        public static delegate*<ushort*, ushort*, uint*, int> DnsHostnameToComputerName => &DnsHostnameToComputerNameW;
+        public static delegate*<ushort*, ushort*, uint*, BOOL> DnsHostnameToComputerName => &DnsHostnameToComputerNameW;
 
         [NativeTypeName("#define GetUserName GetUserNameW")]
-        public static delegate*<ushort*, uint*, int> GetUserName => &GetUserNameW;
+        public static delegate*<ushort*, uint*, BOOL> GetUserName => &GetUserNameW;
 
         [NativeTypeName("#define LOGON32_LOGON_INTERACTIVE 2")]
         public const int LOGON32_LOGON_INTERACTIVE = 2;
@@ -4173,10 +3900,10 @@ namespace TerraFX.Interop
         public const int LOGON32_PROVIDER_VIRTUAL = 4;
 
         [NativeTypeName("#define LogonUser LogonUserW")]
-        public static delegate*<ushort*, ushort*, ushort*, uint, uint, IntPtr*, int> LogonUser => &LogonUserW;
+        public static delegate*<ushort*, ushort*, ushort*, uint, uint, IntPtr*, BOOL> LogonUser => &LogonUserW;
 
         [NativeTypeName("#define LogonUserEx LogonUserExW")]
-        public static delegate*<ushort*, ushort*, ushort*, uint, uint, IntPtr*, void**, void**, uint*, QUOTA_LIMITS*, int> LogonUserEx => &LogonUserExW;
+        public static delegate*<ushort*, ushort*, ushort*, uint, uint, IntPtr*, void**, void**, uint*, QUOTA_LIMITS*, BOOL> LogonUserEx => &LogonUserExW;
 
         [NativeTypeName("#define LOGON_WITH_PROFILE 0x00000001")]
         public const int LOGON_WITH_PROFILE = 0x00000001;
@@ -4218,10 +3945,10 @@ namespace TerraFX.Interop
         public const int DOCKINFO_USER_DOCKED = ((0x4) | (0x2));
 
         [NativeTypeName("#define GetCurrentHwProfile GetCurrentHwProfileW")]
-        public static delegate*<HW_PROFILE_INFOW*, int> GetCurrentHwProfile => &GetCurrentHwProfileW;
+        public static delegate*<HW_PROFILE_INFOW*, BOOL> GetCurrentHwProfile => &GetCurrentHwProfileW;
 
         [NativeTypeName("#define VerifyVersionInfo VerifyVersionInfoW")]
-        public static delegate*<OSVERSIONINFOEXW*, uint, ulong, int> VerifyVersionInfo => &VerifyVersionInfoW;
+        public static delegate*<OSVERSIONINFOEXW*, uint, ulong, BOOL> VerifyVersionInfo => &VerifyVersionInfoW;
 
         [NativeTypeName("#define TC_NORMAL 0")]
         public const int TC_NORMAL = 0;
@@ -4278,16 +4005,16 @@ namespace TerraFX.Interop
         public static delegate*<SECURITY_ATTRIBUTES*, ushort*, IntPtr> CreateJobObject => &CreateJobObjectW;
 
         [NativeTypeName("#define OpenJobObject OpenJobObjectW")]
-        public static delegate*<uint, int, ushort*, IntPtr> OpenJobObject => &OpenJobObjectW;
+        public static delegate*<uint, BOOL, ushort*, IntPtr> OpenJobObject => &OpenJobObjectW;
 
         [NativeTypeName("#define FindFirstVolumeMountPoint FindFirstVolumeMountPointW")]
         public static delegate*<ushort*, ushort*, uint, IntPtr> FindFirstVolumeMountPoint => &FindFirstVolumeMountPointW;
 
         [NativeTypeName("#define FindNextVolumeMountPoint FindNextVolumeMountPointW")]
-        public static delegate*<IntPtr, ushort*, uint, int> FindNextVolumeMountPoint => &FindNextVolumeMountPointW;
+        public static delegate*<IntPtr, ushort*, uint, BOOL> FindNextVolumeMountPoint => &FindNextVolumeMountPointW;
 
         [NativeTypeName("#define SetVolumeMountPoint SetVolumeMountPointW")]
-        public static delegate*<ushort*, ushort*, int> SetVolumeMountPoint => &SetVolumeMountPointW;
+        public static delegate*<ushort*, ushort*, BOOL> SetVolumeMountPoint => &SetVolumeMountPointW;
 
         [NativeTypeName("#define ACTCTX_FLAG_PROCESSOR_ARCHITECTURE_VALID (0x00000001)")]
         public const int ACTCTX_FLAG_PROCESSOR_ARCHITECTURE_VALID = (0x00000001);
@@ -4329,7 +4056,7 @@ namespace TerraFX.Interop
         public const int FIND_ACTCTX_SECTION_KEY_RETURN_ASSEMBLY_METADATA = (0x00000004);
 
         [NativeTypeName("#define FindActCtxSectionString FindActCtxSectionStringW")]
-        public static delegate*<uint, Guid*, uint, ushort*, ACTCTX_SECTION_KEYED_DATA*, int> FindActCtxSectionString => &FindActCtxSectionStringW;
+        public static delegate*<uint, Guid*, uint, ushort*, ACTCTX_SECTION_KEYED_DATA*, BOOL> FindActCtxSectionString => &FindActCtxSectionStringW;
 
         [NativeTypeName("#define ACTIVATION_CONTEXT_BASIC_INFORMATION_DEFINED 1")]
         public const int ACTIVATION_CONTEXT_BASIC_INFORMATION_DEFINED = 1;

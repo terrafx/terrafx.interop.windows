@@ -28,7 +28,6 @@ namespace TerraFX.Interop
         [NativeTypeName("UINT")]
         public uint BaseSampler;
 
-        [NativeTypeName("BOOL")]
-        public int Created;
+        public BOOL Created;
     }
 }

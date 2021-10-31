@@ -43,20 +43,17 @@ namespace TerraFX.Interop
         public static extern void LeaveCriticalSection([NativeTypeName("LPCRITICAL_SECTION")] CRITICAL_SECTION* lpCriticalSection);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int InitializeCriticalSectionAndSpinCount([NativeTypeName("LPCRITICAL_SECTION")] CRITICAL_SECTION* lpCriticalSection, [NativeTypeName("DWORD")] uint dwSpinCount);
+        public static extern BOOL InitializeCriticalSectionAndSpinCount([NativeTypeName("LPCRITICAL_SECTION")] CRITICAL_SECTION* lpCriticalSection, [NativeTypeName("DWORD")] uint dwSpinCount);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int InitializeCriticalSectionEx([NativeTypeName("LPCRITICAL_SECTION")] CRITICAL_SECTION* lpCriticalSection, [NativeTypeName("DWORD")] uint dwSpinCount, [NativeTypeName("DWORD")] uint Flags);
+        public static extern BOOL InitializeCriticalSectionEx([NativeTypeName("LPCRITICAL_SECTION")] CRITICAL_SECTION* lpCriticalSection, [NativeTypeName("DWORD")] uint dwSpinCount, [NativeTypeName("DWORD")] uint Flags);
 
         [DllImport("kernel32", ExactSpelling = true)]
         [return: NativeTypeName("DWORD")]
         public static extern uint SetCriticalSectionSpinCount([NativeTypeName("LPCRITICAL_SECTION")] CRITICAL_SECTION* lpCriticalSection, [NativeTypeName("DWORD")] uint dwSpinCount);
 
         [DllImport("kernel32", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int TryEnterCriticalSection([NativeTypeName("LPCRITICAL_SECTION")] CRITICAL_SECTION* lpCriticalSection);
+        public static extern BOOL TryEnterCriticalSection([NativeTypeName("LPCRITICAL_SECTION")] CRITICAL_SECTION* lpCriticalSection);
 
         [DllImport("kernel32", ExactSpelling = true)]
         public static extern void DeleteCriticalSection([NativeTypeName("LPCRITICAL_SECTION")] CRITICAL_SECTION* lpCriticalSection);
@@ -65,16 +62,13 @@ namespace TerraFX.Interop
         public static extern void InitOnceInitialize([NativeTypeName("PINIT_ONCE")] INIT_ONCE* InitOnce);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int InitOnceExecuteOnce([NativeTypeName("PINIT_ONCE")] INIT_ONCE* InitOnce, [NativeTypeName("PINIT_ONCE_FN")] delegate* unmanaged<INIT_ONCE*, void*, void**, int> InitFn, [NativeTypeName("PVOID")] void* Parameter, [NativeTypeName("LPVOID *")] void** Context);
+        public static extern BOOL InitOnceExecuteOnce([NativeTypeName("PINIT_ONCE")] INIT_ONCE* InitOnce, [NativeTypeName("PINIT_ONCE_FN")] delegate* unmanaged<INIT_ONCE*, void*, void**, BOOL> InitFn, [NativeTypeName("PVOID")] void* Parameter, [NativeTypeName("LPVOID *")] void** Context);
 
         [DllImport("kernel32", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int InitOnceBeginInitialize([NativeTypeName("LPINIT_ONCE")] INIT_ONCE* lpInitOnce, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("PBOOL")] int* fPending, [NativeTypeName("LPVOID *")] void** lpContext);
+        public static extern BOOL InitOnceBeginInitialize([NativeTypeName("LPINIT_ONCE")] INIT_ONCE* lpInitOnce, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("PBOOL")] BOOL* fPending, [NativeTypeName("LPVOID *")] void** lpContext);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int InitOnceComplete([NativeTypeName("LPINIT_ONCE")] INIT_ONCE* lpInitOnce, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("LPVOID")] void* lpContext);
+        public static extern BOOL InitOnceComplete([NativeTypeName("LPINIT_ONCE")] INIT_ONCE* lpInitOnce, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("LPVOID")] void* lpContext);
 
         [DllImport("kernel32", ExactSpelling = true)]
         public static extern void InitializeConditionVariable([NativeTypeName("PCONDITION_VARIABLE")] CONDITION_VARIABLE* ConditionVariable);
@@ -86,28 +80,22 @@ namespace TerraFX.Interop
         public static extern void WakeAllConditionVariable([NativeTypeName("PCONDITION_VARIABLE")] CONDITION_VARIABLE* ConditionVariable);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SleepConditionVariableCS([NativeTypeName("PCONDITION_VARIABLE")] CONDITION_VARIABLE* ConditionVariable, [NativeTypeName("PCRITICAL_SECTION")] CRITICAL_SECTION* CriticalSection, [NativeTypeName("DWORD")] uint dwMilliseconds);
+        public static extern BOOL SleepConditionVariableCS([NativeTypeName("PCONDITION_VARIABLE")] CONDITION_VARIABLE* ConditionVariable, [NativeTypeName("PCRITICAL_SECTION")] CRITICAL_SECTION* CriticalSection, [NativeTypeName("DWORD")] uint dwMilliseconds);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SleepConditionVariableSRW([NativeTypeName("PCONDITION_VARIABLE")] CONDITION_VARIABLE* ConditionVariable, [NativeTypeName("PSRWLOCK")] SRWLOCK* SRWLock, [NativeTypeName("DWORD")] uint dwMilliseconds, [NativeTypeName("ULONG")] uint Flags);
+        public static extern BOOL SleepConditionVariableSRW([NativeTypeName("PCONDITION_VARIABLE")] CONDITION_VARIABLE* ConditionVariable, [NativeTypeName("PSRWLOCK")] SRWLOCK* SRWLock, [NativeTypeName("DWORD")] uint dwMilliseconds, [NativeTypeName("ULONG")] uint Flags);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SetEvent([NativeTypeName("HANDLE")] IntPtr hEvent);
+        public static extern BOOL SetEvent([NativeTypeName("HANDLE")] IntPtr hEvent);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int ResetEvent([NativeTypeName("HANDLE")] IntPtr hEvent);
+        public static extern BOOL ResetEvent([NativeTypeName("HANDLE")] IntPtr hEvent);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int ReleaseSemaphore([NativeTypeName("HANDLE")] IntPtr hSemaphore, [NativeTypeName("LONG")] int lReleaseCount, [NativeTypeName("LPLONG")] int* lpPreviousCount);
+        public static extern BOOL ReleaseSemaphore([NativeTypeName("HANDLE")] IntPtr hSemaphore, [NativeTypeName("LONG")] int lReleaseCount, [NativeTypeName("LPLONG")] int* lpPreviousCount);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int ReleaseMutex([NativeTypeName("HANDLE")] IntPtr hMutex);
+        public static extern BOOL ReleaseMutex([NativeTypeName("HANDLE")] IntPtr hMutex);
 
         [DllImport("kernel32", ExactSpelling = true)]
         [return: NativeTypeName("DWORD")]
@@ -115,63 +103,60 @@ namespace TerraFX.Interop
 
         [DllImport("kernelbase", ExactSpelling = true)]
         [return: NativeTypeName("DWORD")]
-        public static extern uint SleepEx([NativeTypeName("DWORD")] uint dwMilliseconds, [NativeTypeName("BOOL")] int bAlertable);
+        public static extern uint SleepEx([NativeTypeName("DWORD")] uint dwMilliseconds, BOOL bAlertable);
 
         [DllImport("kernel32", ExactSpelling = true)]
         [return: NativeTypeName("DWORD")]
-        public static extern uint WaitForSingleObjectEx([NativeTypeName("HANDLE")] IntPtr hHandle, [NativeTypeName("DWORD")] uint dwMilliseconds, [NativeTypeName("BOOL")] int bAlertable);
+        public static extern uint WaitForSingleObjectEx([NativeTypeName("HANDLE")] IntPtr hHandle, [NativeTypeName("DWORD")] uint dwMilliseconds, BOOL bAlertable);
 
         [DllImport("kernel32", ExactSpelling = true)]
         [return: NativeTypeName("DWORD")]
-        public static extern uint WaitForMultipleObjectsEx([NativeTypeName("DWORD")] uint nCount, [NativeTypeName("const HANDLE *")] IntPtr* lpHandles, [NativeTypeName("BOOL")] int bWaitAll, [NativeTypeName("DWORD")] uint dwMilliseconds, [NativeTypeName("BOOL")] int bAlertable);
+        public static extern uint WaitForMultipleObjectsEx([NativeTypeName("DWORD")] uint nCount, [NativeTypeName("const HANDLE *")] IntPtr* lpHandles, BOOL bWaitAll, [NativeTypeName("DWORD")] uint dwMilliseconds, BOOL bAlertable);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("HANDLE")]
-        public static extern IntPtr CreateMutexA([NativeTypeName("LPSECURITY_ATTRIBUTES")] SECURITY_ATTRIBUTES* lpMutexAttributes, [NativeTypeName("BOOL")] int bInitialOwner, [NativeTypeName("LPCSTR")] sbyte* lpName);
+        public static extern IntPtr CreateMutexA([NativeTypeName("LPSECURITY_ATTRIBUTES")] SECURITY_ATTRIBUTES* lpMutexAttributes, BOOL bInitialOwner, [NativeTypeName("LPCSTR")] sbyte* lpName);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("HANDLE")]
-        public static extern IntPtr CreateMutexW([NativeTypeName("LPSECURITY_ATTRIBUTES")] SECURITY_ATTRIBUTES* lpMutexAttributes, [NativeTypeName("BOOL")] int bInitialOwner, [NativeTypeName("LPCWSTR")] ushort* lpName);
+        public static extern IntPtr CreateMutexW([NativeTypeName("LPSECURITY_ATTRIBUTES")] SECURITY_ATTRIBUTES* lpMutexAttributes, BOOL bInitialOwner, [NativeTypeName("LPCWSTR")] ushort* lpName);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("HANDLE")]
-        public static extern IntPtr OpenMutexW([NativeTypeName("DWORD")] uint dwDesiredAccess, [NativeTypeName("BOOL")] int bInheritHandle, [NativeTypeName("LPCWSTR")] ushort* lpName);
+        public static extern IntPtr OpenMutexW([NativeTypeName("DWORD")] uint dwDesiredAccess, BOOL bInheritHandle, [NativeTypeName("LPCWSTR")] ushort* lpName);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("HANDLE")]
-        public static extern IntPtr CreateEventA([NativeTypeName("LPSECURITY_ATTRIBUTES")] SECURITY_ATTRIBUTES* lpEventAttributes, [NativeTypeName("BOOL")] int bManualReset, [NativeTypeName("BOOL")] int bInitialState, [NativeTypeName("LPCSTR")] sbyte* lpName);
+        public static extern IntPtr CreateEventA([NativeTypeName("LPSECURITY_ATTRIBUTES")] SECURITY_ATTRIBUTES* lpEventAttributes, BOOL bManualReset, BOOL bInitialState, [NativeTypeName("LPCSTR")] sbyte* lpName);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("HANDLE")]
-        public static extern IntPtr CreateEventW([NativeTypeName("LPSECURITY_ATTRIBUTES")] SECURITY_ATTRIBUTES* lpEventAttributes, [NativeTypeName("BOOL")] int bManualReset, [NativeTypeName("BOOL")] int bInitialState, [NativeTypeName("LPCWSTR")] ushort* lpName);
+        public static extern IntPtr CreateEventW([NativeTypeName("LPSECURITY_ATTRIBUTES")] SECURITY_ATTRIBUTES* lpEventAttributes, BOOL bManualReset, BOOL bInitialState, [NativeTypeName("LPCWSTR")] ushort* lpName);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("HANDLE")]
-        public static extern IntPtr OpenEventA([NativeTypeName("DWORD")] uint dwDesiredAccess, [NativeTypeName("BOOL")] int bInheritHandle, [NativeTypeName("LPCSTR")] sbyte* lpName);
+        public static extern IntPtr OpenEventA([NativeTypeName("DWORD")] uint dwDesiredAccess, BOOL bInheritHandle, [NativeTypeName("LPCSTR")] sbyte* lpName);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("HANDLE")]
-        public static extern IntPtr OpenEventW([NativeTypeName("DWORD")] uint dwDesiredAccess, [NativeTypeName("BOOL")] int bInheritHandle, [NativeTypeName("LPCWSTR")] ushort* lpName);
+        public static extern IntPtr OpenEventW([NativeTypeName("DWORD")] uint dwDesiredAccess, BOOL bInheritHandle, [NativeTypeName("LPCWSTR")] ushort* lpName);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("HANDLE")]
-        public static extern IntPtr OpenSemaphoreW([NativeTypeName("DWORD")] uint dwDesiredAccess, [NativeTypeName("BOOL")] int bInheritHandle, [NativeTypeName("LPCWSTR")] ushort* lpName);
+        public static extern IntPtr OpenSemaphoreW([NativeTypeName("DWORD")] uint dwDesiredAccess, BOOL bInheritHandle, [NativeTypeName("LPCWSTR")] ushort* lpName);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("HANDLE")]
-        public static extern IntPtr OpenWaitableTimerW([NativeTypeName("DWORD")] uint dwDesiredAccess, [NativeTypeName("BOOL")] int bInheritHandle, [NativeTypeName("LPCWSTR")] ushort* lpTimerName);
+        public static extern IntPtr OpenWaitableTimerW([NativeTypeName("DWORD")] uint dwDesiredAccess, BOOL bInheritHandle, [NativeTypeName("LPCWSTR")] ushort* lpTimerName);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SetWaitableTimerEx([NativeTypeName("HANDLE")] IntPtr hTimer, [NativeTypeName("const LARGE_INTEGER *")] LARGE_INTEGER* lpDueTime, [NativeTypeName("LONG")] int lPeriod, [NativeTypeName("PTIMERAPCROUTINE")] delegate* unmanaged<void*, uint, uint, void> pfnCompletionRoutine, [NativeTypeName("LPVOID")] void* lpArgToCompletionRoutine, [NativeTypeName("PREASON_CONTEXT")] REASON_CONTEXT* WakeContext, [NativeTypeName("ULONG")] uint TolerableDelay);
+        public static extern BOOL SetWaitableTimerEx([NativeTypeName("HANDLE")] IntPtr hTimer, [NativeTypeName("const LARGE_INTEGER *")] LARGE_INTEGER* lpDueTime, [NativeTypeName("LONG")] int lPeriod, [NativeTypeName("PTIMERAPCROUTINE")] delegate* unmanaged<void*, uint, uint, void> pfnCompletionRoutine, [NativeTypeName("LPVOID")] void* lpArgToCompletionRoutine, [NativeTypeName("PREASON_CONTEXT")] REASON_CONTEXT* WakeContext, [NativeTypeName("ULONG")] uint TolerableDelay);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SetWaitableTimer([NativeTypeName("HANDLE")] IntPtr hTimer, [NativeTypeName("const LARGE_INTEGER *")] LARGE_INTEGER* lpDueTime, [NativeTypeName("LONG")] int lPeriod, [NativeTypeName("PTIMERAPCROUTINE")] delegate* unmanaged<void*, uint, uint, void> pfnCompletionRoutine, [NativeTypeName("LPVOID")] void* lpArgToCompletionRoutine, [NativeTypeName("BOOL")] int fResume);
+        public static extern BOOL SetWaitableTimer([NativeTypeName("HANDLE")] IntPtr hTimer, [NativeTypeName("const LARGE_INTEGER *")] LARGE_INTEGER* lpDueTime, [NativeTypeName("LONG")] int lPeriod, [NativeTypeName("PTIMERAPCROUTINE")] delegate* unmanaged<void*, uint, uint, void> pfnCompletionRoutine, [NativeTypeName("LPVOID")] void* lpArgToCompletionRoutine, BOOL fResume);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int CancelWaitableTimer([NativeTypeName("HANDLE")] IntPtr hTimer);
+        public static extern BOOL CancelWaitableTimer([NativeTypeName("HANDLE")] IntPtr hTimer);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("HANDLE")]
@@ -198,23 +183,19 @@ namespace TerraFX.Interop
         public static extern IntPtr CreateWaitableTimerExW([NativeTypeName("LPSECURITY_ATTRIBUTES")] SECURITY_ATTRIBUTES* lpTimerAttributes, [NativeTypeName("LPCWSTR")] ushort* lpTimerName, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("DWORD")] uint dwDesiredAccess);
 
         [DllImport("kernel32", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int EnterSynchronizationBarrier([NativeTypeName("LPSYNCHRONIZATION_BARRIER")] SYNCHRONIZATION_BARRIER* lpBarrier, [NativeTypeName("DWORD")] uint dwFlags);
+        public static extern BOOL EnterSynchronizationBarrier([NativeTypeName("LPSYNCHRONIZATION_BARRIER")] SYNCHRONIZATION_BARRIER* lpBarrier, [NativeTypeName("DWORD")] uint dwFlags);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int InitializeSynchronizationBarrier([NativeTypeName("LPSYNCHRONIZATION_BARRIER")] SYNCHRONIZATION_BARRIER* lpBarrier, [NativeTypeName("LONG")] int lTotalThreads, [NativeTypeName("LONG")] int lSpinCount);
+        public static extern BOOL InitializeSynchronizationBarrier([NativeTypeName("LPSYNCHRONIZATION_BARRIER")] SYNCHRONIZATION_BARRIER* lpBarrier, [NativeTypeName("LONG")] int lTotalThreads, [NativeTypeName("LONG")] int lSpinCount);
 
         [DllImport("kernel32", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int DeleteSynchronizationBarrier([NativeTypeName("LPSYNCHRONIZATION_BARRIER")] SYNCHRONIZATION_BARRIER* lpBarrier);
+        public static extern BOOL DeleteSynchronizationBarrier([NativeTypeName("LPSYNCHRONIZATION_BARRIER")] SYNCHRONIZATION_BARRIER* lpBarrier);
 
         [DllImport("kernel32", ExactSpelling = true)]
         public static extern void Sleep([NativeTypeName("DWORD")] uint dwMilliseconds);
 
         [DllImport("api-ms-win-core-synch-l1-2-0", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int WaitOnAddress([NativeTypeName("volatile void *")] void* Address, [NativeTypeName("PVOID")] void* CompareAddress, [NativeTypeName("SIZE_T")] nuint AddressSize, [NativeTypeName("DWORD")] uint dwMilliseconds);
+        public static extern BOOL WaitOnAddress([NativeTypeName("volatile void *")] void* Address, [NativeTypeName("PVOID")] void* CompareAddress, [NativeTypeName("SIZE_T")] nuint AddressSize, [NativeTypeName("DWORD")] uint dwMilliseconds);
 
         [DllImport("api-ms-win-core-synch-l1-2-0", ExactSpelling = true)]
         public static extern void WakeByAddressSingle([NativeTypeName("PVOID")] void* Address);
@@ -224,11 +205,11 @@ namespace TerraFX.Interop
 
         [DllImport("kernel32", ExactSpelling = true)]
         [return: NativeTypeName("DWORD")]
-        public static extern uint SignalObjectAndWait([NativeTypeName("HANDLE")] IntPtr hObjectToSignal, [NativeTypeName("HANDLE")] IntPtr hObjectToWaitOn, [NativeTypeName("DWORD")] uint dwMilliseconds, [NativeTypeName("BOOL")] int bAlertable);
+        public static extern uint SignalObjectAndWait([NativeTypeName("HANDLE")] IntPtr hObjectToSignal, [NativeTypeName("HANDLE")] IntPtr hObjectToWaitOn, [NativeTypeName("DWORD")] uint dwMilliseconds, BOOL bAlertable);
 
         [DllImport("kernel32", ExactSpelling = true)]
         [return: NativeTypeName("DWORD")]
-        public static extern uint WaitForMultipleObjects([NativeTypeName("DWORD")] uint nCount, [NativeTypeName("const HANDLE *")] IntPtr* lpHandles, [NativeTypeName("BOOL")] int bWaitAll, [NativeTypeName("DWORD")] uint dwMilliseconds);
+        public static extern uint WaitForMultipleObjects([NativeTypeName("DWORD")] uint nCount, [NativeTypeName("const HANDLE *")] IntPtr* lpHandles, BOOL bWaitAll, [NativeTypeName("DWORD")] uint dwMilliseconds);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("HANDLE")]
@@ -236,7 +217,7 @@ namespace TerraFX.Interop
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("HANDLE")]
-        public static extern IntPtr CreateWaitableTimerW([NativeTypeName("LPSECURITY_ATTRIBUTES")] SECURITY_ATTRIBUTES* lpTimerAttributes, [NativeTypeName("BOOL")] int bManualReset, [NativeTypeName("LPCWSTR")] ushort* lpTimerName);
+        public static extern IntPtr CreateWaitableTimerW([NativeTypeName("LPSECURITY_ATTRIBUTES")] SECURITY_ATTRIBUTES* lpTimerAttributes, BOOL bManualReset, [NativeTypeName("LPCWSTR")] ushort* lpTimerName);
 
         [NativeTypeName("#define INIT_ONCE_CHECK_ONLY RTL_RUN_ONCE_CHECK_ONLY")]
         public const uint INIT_ONCE_CHECK_ONLY = 0x00000001U;
@@ -260,22 +241,22 @@ namespace TerraFX.Interop
         public const int MUTEX_ALL_ACCESS = ((0x000F0000) | (0x00100000) | 0x0001);
 
         [NativeTypeName("#define CreateMutex CreateMutexW")]
-        public static delegate*<SECURITY_ATTRIBUTES*, int, ushort*, IntPtr> CreateMutex => &CreateMutexW;
+        public static delegate*<SECURITY_ATTRIBUTES*, BOOL, ushort*, IntPtr> CreateMutex => &CreateMutexW;
 
         [NativeTypeName("#define OpenMutex OpenMutexW")]
-        public static delegate*<uint, int, ushort*, IntPtr> OpenMutex => &OpenMutexW;
+        public static delegate*<uint, BOOL, ushort*, IntPtr> OpenMutex => &OpenMutexW;
 
         [NativeTypeName("#define CreateEvent CreateEventW")]
-        public static delegate*<SECURITY_ATTRIBUTES*, int, int, ushort*, IntPtr> CreateEvent => &CreateEventW;
+        public static delegate*<SECURITY_ATTRIBUTES*, BOOL, BOOL, ushort*, IntPtr> CreateEvent => &CreateEventW;
 
         [NativeTypeName("#define OpenEvent OpenEventW")]
-        public static delegate*<uint, int, ushort*, IntPtr> OpenEvent => &OpenEventW;
+        public static delegate*<uint, BOOL, ushort*, IntPtr> OpenEvent => &OpenEventW;
 
         [NativeTypeName("#define OpenSemaphore OpenSemaphoreW")]
-        public static delegate*<uint, int, ushort*, IntPtr> OpenSemaphore => &OpenSemaphoreW;
+        public static delegate*<uint, BOOL, ushort*, IntPtr> OpenSemaphore => &OpenSemaphoreW;
 
         [NativeTypeName("#define OpenWaitableTimer OpenWaitableTimerW")]
-        public static delegate*<uint, int, ushort*, IntPtr> OpenWaitableTimer => &OpenWaitableTimerW;
+        public static delegate*<uint, BOOL, ushort*, IntPtr> OpenWaitableTimer => &OpenWaitableTimerW;
 
         [NativeTypeName("#define CREATE_MUTEX_INITIAL_OWNER 0x00000001")]
         public const int CREATE_MUTEX_INITIAL_OWNER = 0x00000001;
@@ -317,6 +298,6 @@ namespace TerraFX.Interop
         public static delegate*<SECURITY_ATTRIBUTES*, int, int, ushort*, IntPtr> CreateSemaphore => &CreateSemaphoreW;
 
         [NativeTypeName("#define CreateWaitableTimer CreateWaitableTimerW")]
-        public static delegate*<SECURITY_ATTRIBUTES*, int, ushort*, IntPtr> CreateWaitableTimer => &CreateWaitableTimerW;
+        public static delegate*<SECURITY_ATTRIBUTES*, BOOL, ushort*, IntPtr> CreateWaitableTimer => &CreateWaitableTimerW;
     }
 }

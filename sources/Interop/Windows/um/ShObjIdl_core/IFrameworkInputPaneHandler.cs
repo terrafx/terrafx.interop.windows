@@ -43,17 +43,17 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
         [return: NativeTypeName("HRESULT")]
-        public int Showing(RECT* prcInputPaneScreenLocation, [NativeTypeName("BOOL")] int fEnsureFocusedElementInView)
+        public int Showing(RECT* prcInputPaneScreenLocation, BOOL fEnsureFocusedElementInView)
         {
-            return ((delegate* unmanaged<IFrameworkInputPaneHandler*, RECT*, int, int>)(lpVtbl[3]))((IFrameworkInputPaneHandler*)Unsafe.AsPointer(ref this), prcInputPaneScreenLocation, fEnsureFocusedElementInView);
+            return ((delegate* unmanaged<IFrameworkInputPaneHandler*, RECT*, BOOL, int>)(lpVtbl[3]))((IFrameworkInputPaneHandler*)Unsafe.AsPointer(ref this), prcInputPaneScreenLocation, fEnsureFocusedElementInView);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
         [return: NativeTypeName("HRESULT")]
-        public int Hiding([NativeTypeName("BOOL")] int fEnsureFocusedElementInView)
+        public int Hiding(BOOL fEnsureFocusedElementInView)
         {
-            return ((delegate* unmanaged<IFrameworkInputPaneHandler*, int, int>)(lpVtbl[4]))((IFrameworkInputPaneHandler*)Unsafe.AsPointer(ref this), fEnsureFocusedElementInView);
+            return ((delegate* unmanaged<IFrameworkInputPaneHandler*, BOOL, int>)(lpVtbl[4]))((IFrameworkInputPaneHandler*)Unsafe.AsPointer(ref this), fEnsureFocusedElementInView);
         }
     }
 }

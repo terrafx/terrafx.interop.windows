@@ -83,9 +83,9 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(8)]
         [return: NativeTypeName("HRESULT")]
-        public int ReadBOOL([NativeTypeName("PROPID")] uint id, [NativeTypeName("BOOL *")] int* pValue)
+        public int ReadBOOL([NativeTypeName("PROPID")] uint id, BOOL* pValue)
         {
-            return ((delegate* unmanaged<IDiaPropertyStorage*, uint, int*, int>)(lpVtbl[8]))((IDiaPropertyStorage*)Unsafe.AsPointer(ref this), id, pValue);
+            return ((delegate* unmanaged<IDiaPropertyStorage*, uint, BOOL*, int>)(lpVtbl[8]))((IDiaPropertyStorage*)Unsafe.AsPointer(ref this), id, pValue);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

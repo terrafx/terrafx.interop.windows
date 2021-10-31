@@ -59,9 +59,9 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
         [return: NativeTypeName("HRESULT")]
-        public int Show([NativeTypeName("BOOL")] int fShow)
+        public int Show(BOOL fShow)
         {
-            return ((delegate* unmanaged<ITfLangBarItemBitmap*, int, int>)(lpVtbl[5]))((ITfLangBarItemBitmap*)Unsafe.AsPointer(ref this), fShow);
+            return ((delegate* unmanaged<ITfLangBarItemBitmap*, BOOL, int>)(lpVtbl[5]))((ITfLangBarItemBitmap*)Unsafe.AsPointer(ref this), fShow);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

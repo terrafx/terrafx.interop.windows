@@ -43,9 +43,9 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
         [return: NativeTypeName("HRESULT")]
-        public int Draw(IUnknown* pD2D1DeviceContext, IUnknown* pInkStrokeIterable, [NativeTypeName("BOOL")] int fHighContrast)
+        public int Draw(IUnknown* pD2D1DeviceContext, IUnknown* pInkStrokeIterable, BOOL fHighContrast)
         {
-            return ((delegate* unmanaged<IInkD2DRenderer*, IUnknown*, IUnknown*, int, int>)(lpVtbl[3]))((IInkD2DRenderer*)Unsafe.AsPointer(ref this), pD2D1DeviceContext, pInkStrokeIterable, fHighContrast);
+            return ((delegate* unmanaged<IInkD2DRenderer*, IUnknown*, IUnknown*, BOOL, int>)(lpVtbl[3]))((IInkD2DRenderer*)Unsafe.AsPointer(ref this), pD2D1DeviceContext, pInkStrokeIterable, fHighContrast);
         }
     }
 }

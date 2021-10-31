@@ -99,25 +99,25 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(10)]
         [return: NativeTypeName("HRESULT")]
-        public int HasVideo([NativeTypeName("BOOL *")] int* pfHasVideo, [NativeTypeName("BOOL *")] int* pfSelected)
+        public int HasVideo(BOOL* pfHasVideo, BOOL* pfSelected)
         {
-            return ((delegate* unmanaged<IMFPMediaItem*, int*, int*, int>)(lpVtbl[10]))((IMFPMediaItem*)Unsafe.AsPointer(ref this), pfHasVideo, pfSelected);
+            return ((delegate* unmanaged<IMFPMediaItem*, BOOL*, BOOL*, int>)(lpVtbl[10]))((IMFPMediaItem*)Unsafe.AsPointer(ref this), pfHasVideo, pfSelected);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(11)]
         [return: NativeTypeName("HRESULT")]
-        public int HasAudio([NativeTypeName("BOOL *")] int* pfHasAudio, [NativeTypeName("BOOL *")] int* pfSelected)
+        public int HasAudio(BOOL* pfHasAudio, BOOL* pfSelected)
         {
-            return ((delegate* unmanaged<IMFPMediaItem*, int*, int*, int>)(lpVtbl[11]))((IMFPMediaItem*)Unsafe.AsPointer(ref this), pfHasAudio, pfSelected);
+            return ((delegate* unmanaged<IMFPMediaItem*, BOOL*, BOOL*, int>)(lpVtbl[11]))((IMFPMediaItem*)Unsafe.AsPointer(ref this), pfHasAudio, pfSelected);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(12)]
         [return: NativeTypeName("HRESULT")]
-        public int IsProtected([NativeTypeName("BOOL *")] int* pfProtected)
+        public int IsProtected(BOOL* pfProtected)
         {
-            return ((delegate* unmanaged<IMFPMediaItem*, int*, int>)(lpVtbl[12]))((IMFPMediaItem*)Unsafe.AsPointer(ref this), pfProtected);
+            return ((delegate* unmanaged<IMFPMediaItem*, BOOL*, int>)(lpVtbl[12]))((IMFPMediaItem*)Unsafe.AsPointer(ref this), pfProtected);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -139,17 +139,17 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(15)]
         [return: NativeTypeName("HRESULT")]
-        public int GetStreamSelection([NativeTypeName("DWORD")] uint dwStreamIndex, [NativeTypeName("BOOL *")] int* pfEnabled)
+        public int GetStreamSelection([NativeTypeName("DWORD")] uint dwStreamIndex, BOOL* pfEnabled)
         {
-            return ((delegate* unmanaged<IMFPMediaItem*, uint, int*, int>)(lpVtbl[15]))((IMFPMediaItem*)Unsafe.AsPointer(ref this), dwStreamIndex, pfEnabled);
+            return ((delegate* unmanaged<IMFPMediaItem*, uint, BOOL*, int>)(lpVtbl[15]))((IMFPMediaItem*)Unsafe.AsPointer(ref this), dwStreamIndex, pfEnabled);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(16)]
         [return: NativeTypeName("HRESULT")]
-        public int SetStreamSelection([NativeTypeName("DWORD")] uint dwStreamIndex, [NativeTypeName("BOOL")] int fEnabled)
+        public int SetStreamSelection([NativeTypeName("DWORD")] uint dwStreamIndex, BOOL fEnabled)
         {
-            return ((delegate* unmanaged<IMFPMediaItem*, uint, int, int>)(lpVtbl[16]))((IMFPMediaItem*)Unsafe.AsPointer(ref this), dwStreamIndex, fEnabled);
+            return ((delegate* unmanaged<IMFPMediaItem*, uint, BOOL, int>)(lpVtbl[16]))((IMFPMediaItem*)Unsafe.AsPointer(ref this), dwStreamIndex, fEnabled);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

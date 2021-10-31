@@ -11,8 +11,7 @@ namespace TerraFX.Interop
 
         public WS_XML_WRITER_ENCODING* textEncoding;
 
-        [NativeTypeName("BOOL")]
-        public int writeMimeHeader;
+        public BOOL writeMimeHeader;
 
         public WS_STRING boundary;
 

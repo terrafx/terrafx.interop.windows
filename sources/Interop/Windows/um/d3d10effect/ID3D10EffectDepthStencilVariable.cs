@@ -15,8 +15,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("BOOL")]
-        public int IsValid()
+        public BOOL IsValid()
         {
             return ((delegate* unmanaged<ID3D10EffectDepthStencilVariable*, int>)(lpVtbl[0]))((ID3D10EffectDepthStencilVariable*)Unsafe.AsPointer(ref this));
         }

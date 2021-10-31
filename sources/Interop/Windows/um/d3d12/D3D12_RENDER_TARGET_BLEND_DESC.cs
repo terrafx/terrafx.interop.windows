@@ -7,11 +7,9 @@ namespace TerraFX.Interop
 {
     public partial struct D3D12_RENDER_TARGET_BLEND_DESC
     {
-        [NativeTypeName("BOOL")]
-        public int BlendEnable;
+        public BOOL BlendEnable;
 
-        [NativeTypeName("BOOL")]
-        public int LogicOpEnable;
+        public BOOL LogicOpEnable;
 
         public D3D12_BLEND SrcBlend;
 

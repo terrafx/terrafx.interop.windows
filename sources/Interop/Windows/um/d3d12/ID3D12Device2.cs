@@ -330,9 +330,9 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(40)]
         [return: NativeTypeName("HRESULT")]
-        public int SetStablePowerState([NativeTypeName("BOOL")] int Enable)
+        public int SetStablePowerState(BOOL Enable)
         {
-            return ((delegate* unmanaged<ID3D12Device2*, int, int>)(lpVtbl[40]))((ID3D12Device2*)Unsafe.AsPointer(ref this), Enable);
+            return ((delegate* unmanaged<ID3D12Device2*, BOOL, int>)(lpVtbl[40]))((ID3D12Device2*)Unsafe.AsPointer(ref this), Enable);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

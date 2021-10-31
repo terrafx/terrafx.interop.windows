@@ -75,9 +75,9 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(7)]
         [return: NativeTypeName("HRESULT")]
-        public int InitWin32Event([NativeTypeName("HANDLE")] IntPtr hEvent, [NativeTypeName("BOOL")] int fCloseHandleOnRelease)
+        public int InitWin32Event([NativeTypeName("HANDLE")] IntPtr hEvent, BOOL fCloseHandleOnRelease)
         {
-            return ((delegate* unmanaged<ISpNotifyTranslator*, IntPtr, int, int>)(lpVtbl[7]))((ISpNotifyTranslator*)Unsafe.AsPointer(ref this), hEvent, fCloseHandleOnRelease);
+            return ((delegate* unmanaged<ISpNotifyTranslator*, IntPtr, BOOL, int>)(lpVtbl[7]))((ISpNotifyTranslator*)Unsafe.AsPointer(ref this), hEvent, fCloseHandleOnRelease);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

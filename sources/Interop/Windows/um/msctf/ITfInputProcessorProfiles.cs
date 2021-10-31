@@ -155,25 +155,25 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(17)]
         [return: NativeTypeName("HRESULT")]
-        public int EnableLanguageProfile([NativeTypeName("const IID &")] Guid* rclsid, [NativeTypeName("LANGID")] ushort langid, [NativeTypeName("const GUID &")] Guid* guidProfile, [NativeTypeName("BOOL")] int fEnable)
+        public int EnableLanguageProfile([NativeTypeName("const IID &")] Guid* rclsid, [NativeTypeName("LANGID")] ushort langid, [NativeTypeName("const GUID &")] Guid* guidProfile, BOOL fEnable)
         {
-            return ((delegate* unmanaged<ITfInputProcessorProfiles*, Guid*, ushort, Guid*, int, int>)(lpVtbl[17]))((ITfInputProcessorProfiles*)Unsafe.AsPointer(ref this), rclsid, langid, guidProfile, fEnable);
+            return ((delegate* unmanaged<ITfInputProcessorProfiles*, Guid*, ushort, Guid*, BOOL, int>)(lpVtbl[17]))((ITfInputProcessorProfiles*)Unsafe.AsPointer(ref this), rclsid, langid, guidProfile, fEnable);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(18)]
         [return: NativeTypeName("HRESULT")]
-        public int IsEnabledLanguageProfile([NativeTypeName("const IID &")] Guid* rclsid, [NativeTypeName("LANGID")] ushort langid, [NativeTypeName("const GUID &")] Guid* guidProfile, [NativeTypeName("BOOL *")] int* pfEnable)
+        public int IsEnabledLanguageProfile([NativeTypeName("const IID &")] Guid* rclsid, [NativeTypeName("LANGID")] ushort langid, [NativeTypeName("const GUID &")] Guid* guidProfile, BOOL* pfEnable)
         {
-            return ((delegate* unmanaged<ITfInputProcessorProfiles*, Guid*, ushort, Guid*, int*, int>)(lpVtbl[18]))((ITfInputProcessorProfiles*)Unsafe.AsPointer(ref this), rclsid, langid, guidProfile, pfEnable);
+            return ((delegate* unmanaged<ITfInputProcessorProfiles*, Guid*, ushort, Guid*, BOOL*, int>)(lpVtbl[18]))((ITfInputProcessorProfiles*)Unsafe.AsPointer(ref this), rclsid, langid, guidProfile, pfEnable);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(19)]
         [return: NativeTypeName("HRESULT")]
-        public int EnableLanguageProfileByDefault([NativeTypeName("const IID &")] Guid* rclsid, [NativeTypeName("LANGID")] ushort langid, [NativeTypeName("const GUID &")] Guid* guidProfile, [NativeTypeName("BOOL")] int fEnable)
+        public int EnableLanguageProfileByDefault([NativeTypeName("const IID &")] Guid* rclsid, [NativeTypeName("LANGID")] ushort langid, [NativeTypeName("const GUID &")] Guid* guidProfile, BOOL fEnable)
         {
-            return ((delegate* unmanaged<ITfInputProcessorProfiles*, Guid*, ushort, Guid*, int, int>)(lpVtbl[19]))((ITfInputProcessorProfiles*)Unsafe.AsPointer(ref this), rclsid, langid, guidProfile, fEnable);
+            return ((delegate* unmanaged<ITfInputProcessorProfiles*, Guid*, ushort, Guid*, BOOL, int>)(lpVtbl[19]))((ITfInputProcessorProfiles*)Unsafe.AsPointer(ref this), rclsid, langid, guidProfile, fEnable);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

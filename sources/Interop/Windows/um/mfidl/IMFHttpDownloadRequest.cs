@@ -115,9 +115,9 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(12)]
         [return: NativeTypeName("HRESULT")]
-        public int HasNullSourceOrigin([NativeTypeName("BOOL *")] int* pfNullSourceOrigin)
+        public int HasNullSourceOrigin(BOOL* pfNullSourceOrigin)
         {
-            return ((delegate* unmanaged<IMFHttpDownloadRequest*, int*, int>)(lpVtbl[12]))((IMFHttpDownloadRequest*)Unsafe.AsPointer(ref this), pfNullSourceOrigin);
+            return ((delegate* unmanaged<IMFHttpDownloadRequest*, BOOL*, int>)(lpVtbl[12]))((IMFHttpDownloadRequest*)Unsafe.AsPointer(ref this), pfNullSourceOrigin);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -139,9 +139,9 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(15)]
         [return: NativeTypeName("HRESULT")]
-        public int GetAtEndOfPayload([NativeTypeName("BOOL *")] int* pfAtEndOfPayload)
+        public int GetAtEndOfPayload(BOOL* pfAtEndOfPayload)
         {
-            return ((delegate* unmanaged<IMFHttpDownloadRequest*, int*, int>)(lpVtbl[15]))((IMFHttpDownloadRequest*)Unsafe.AsPointer(ref this), pfAtEndOfPayload);
+            return ((delegate* unmanaged<IMFHttpDownloadRequest*, BOOL*, int>)(lpVtbl[15]))((IMFHttpDownloadRequest*)Unsafe.AsPointer(ref this), pfAtEndOfPayload);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

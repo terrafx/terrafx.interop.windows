@@ -139,9 +139,9 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(15)]
         [return: NativeTypeName("HRESULT")]
-        public int SetBaseStream(ISpStreamFormat* pStream, [NativeTypeName("BOOL")] int fSetFormatToBaseStreamFormat, [NativeTypeName("BOOL")] int fWriteToBaseStream)
+        public int SetBaseStream(ISpStreamFormat* pStream, BOOL fSetFormatToBaseStreamFormat, BOOL fWriteToBaseStream)
         {
-            return ((delegate* unmanaged<ISpStreamFormatConverter*, ISpStreamFormat*, int, int, int>)(lpVtbl[15]))((ISpStreamFormatConverter*)Unsafe.AsPointer(ref this), pStream, fSetFormatToBaseStreamFormat, fWriteToBaseStream);
+            return ((delegate* unmanaged<ISpStreamFormatConverter*, ISpStreamFormat*, BOOL, BOOL, int>)(lpVtbl[15]))((ISpStreamFormatConverter*)Unsafe.AsPointer(ref this), pStream, fSetFormatToBaseStreamFormat, fWriteToBaseStream);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

@@ -59,9 +59,9 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
         [return: NativeTypeName("HRESULT")]
-        public int RegisterPin([NativeTypeName("CLSID")] Guid Filter, [NativeTypeName("LPCWSTR")] ushort* Name, [NativeTypeName("BOOL")] int bRendered, [NativeTypeName("BOOL")] int bOutput, [NativeTypeName("BOOL")] int bZero, [NativeTypeName("BOOL")] int bMany, [NativeTypeName("CLSID")] Guid ConnectsToFilter, [NativeTypeName("LPCWSTR")] ushort* ConnectsToPin)
+        public int RegisterPin([NativeTypeName("CLSID")] Guid Filter, [NativeTypeName("LPCWSTR")] ushort* Name, BOOL bRendered, BOOL bOutput, BOOL bZero, BOOL bMany, [NativeTypeName("CLSID")] Guid ConnectsToFilter, [NativeTypeName("LPCWSTR")] ushort* ConnectsToPin)
         {
-            return ((delegate* unmanaged<IFilterMapper*, Guid, ushort*, int, int, int, int, Guid, ushort*, int>)(lpVtbl[5]))((IFilterMapper*)Unsafe.AsPointer(ref this), Filter, Name, bRendered, bOutput, bZero, bMany, ConnectsToFilter, ConnectsToPin);
+            return ((delegate* unmanaged<IFilterMapper*, Guid, ushort*, BOOL, BOOL, BOOL, BOOL, Guid, ushort*, int>)(lpVtbl[5]))((IFilterMapper*)Unsafe.AsPointer(ref this), Filter, Name, bRendered, bOutput, bZero, bMany, ConnectsToFilter, ConnectsToPin);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -99,9 +99,9 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(10)]
         [return: NativeTypeName("HRESULT")]
-        public int EnumMatchingFilters(IEnumRegFilters** ppEnum, [NativeTypeName("DWORD")] uint dwMerit, [NativeTypeName("BOOL")] int bInputNeeded, [NativeTypeName("CLSID")] Guid clsInMaj, [NativeTypeName("CLSID")] Guid clsInSub, [NativeTypeName("BOOL")] int bRender, [NativeTypeName("BOOL")] int bOututNeeded, [NativeTypeName("CLSID")] Guid clsOutMaj, [NativeTypeName("CLSID")] Guid clsOutSub)
+        public int EnumMatchingFilters(IEnumRegFilters** ppEnum, [NativeTypeName("DWORD")] uint dwMerit, BOOL bInputNeeded, [NativeTypeName("CLSID")] Guid clsInMaj, [NativeTypeName("CLSID")] Guid clsInSub, BOOL bRender, BOOL bOututNeeded, [NativeTypeName("CLSID")] Guid clsOutMaj, [NativeTypeName("CLSID")] Guid clsOutSub)
         {
-            return ((delegate* unmanaged<IFilterMapper*, IEnumRegFilters**, uint, int, Guid, Guid, int, int, Guid, Guid, int>)(lpVtbl[10]))((IFilterMapper*)Unsafe.AsPointer(ref this), ppEnum, dwMerit, bInputNeeded, clsInMaj, clsInSub, bRender, bOututNeeded, clsOutMaj, clsOutSub);
+            return ((delegate* unmanaged<IFilterMapper*, IEnumRegFilters**, uint, BOOL, Guid, Guid, BOOL, BOOL, Guid, Guid, int>)(lpVtbl[10]))((IFilterMapper*)Unsafe.AsPointer(ref this), ppEnum, dwMerit, bInputNeeded, clsInMaj, clsInSub, bRender, bOututNeeded, clsOutMaj, clsOutSub);
         }
     }
 }

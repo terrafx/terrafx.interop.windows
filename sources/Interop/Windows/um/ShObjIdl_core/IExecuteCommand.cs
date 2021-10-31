@@ -75,9 +75,9 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(7)]
         [return: NativeTypeName("HRESULT")]
-        public int SetNoShowUI([NativeTypeName("BOOL")] int fNoShowUI)
+        public int SetNoShowUI(BOOL fNoShowUI)
         {
-            return ((delegate* unmanaged<IExecuteCommand*, int, int>)(lpVtbl[7]))((IExecuteCommand*)Unsafe.AsPointer(ref this), fNoShowUI);
+            return ((delegate* unmanaged<IExecuteCommand*, BOOL, int>)(lpVtbl[7]))((IExecuteCommand*)Unsafe.AsPointer(ref this), fNoShowUI);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

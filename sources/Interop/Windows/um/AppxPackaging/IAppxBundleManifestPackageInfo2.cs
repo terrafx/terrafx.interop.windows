@@ -43,25 +43,25 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
         [return: NativeTypeName("HRESULT")]
-        public int GetIsPackageReference([NativeTypeName("BOOL *")] int* isPackageReference)
+        public int GetIsPackageReference(BOOL* isPackageReference)
         {
-            return ((delegate* unmanaged<IAppxBundleManifestPackageInfo2*, int*, int>)(lpVtbl[3]))((IAppxBundleManifestPackageInfo2*)Unsafe.AsPointer(ref this), isPackageReference);
+            return ((delegate* unmanaged<IAppxBundleManifestPackageInfo2*, BOOL*, int>)(lpVtbl[3]))((IAppxBundleManifestPackageInfo2*)Unsafe.AsPointer(ref this), isPackageReference);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
         [return: NativeTypeName("HRESULT")]
-        public int GetIsNonQualifiedResourcePackage([NativeTypeName("BOOL *")] int* isNonQualifiedResourcePackage)
+        public int GetIsNonQualifiedResourcePackage(BOOL* isNonQualifiedResourcePackage)
         {
-            return ((delegate* unmanaged<IAppxBundleManifestPackageInfo2*, int*, int>)(lpVtbl[4]))((IAppxBundleManifestPackageInfo2*)Unsafe.AsPointer(ref this), isNonQualifiedResourcePackage);
+            return ((delegate* unmanaged<IAppxBundleManifestPackageInfo2*, BOOL*, int>)(lpVtbl[4]))((IAppxBundleManifestPackageInfo2*)Unsafe.AsPointer(ref this), isNonQualifiedResourcePackage);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
         [return: NativeTypeName("HRESULT")]
-        public int GetIsDefaultApplicablePackage([NativeTypeName("BOOL *")] int* isDefaultApplicablePackage)
+        public int GetIsDefaultApplicablePackage(BOOL* isDefaultApplicablePackage)
         {
-            return ((delegate* unmanaged<IAppxBundleManifestPackageInfo2*, int*, int>)(lpVtbl[5]))((IAppxBundleManifestPackageInfo2*)Unsafe.AsPointer(ref this), isDefaultApplicablePackage);
+            return ((delegate* unmanaged<IAppxBundleManifestPackageInfo2*, BOOL*, int>)(lpVtbl[5]))((IAppxBundleManifestPackageInfo2*)Unsafe.AsPointer(ref this), isDefaultApplicablePackage);
         }
     }
 }

@@ -67,9 +67,9 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
         [return: NativeTypeName("HRESULT")]
-        public int IsAutomaticSupported([NativeTypeName("BOOL *")] int* pfAutomatic)
+        public int IsAutomaticSupported(BOOL* pfAutomatic)
         {
-            return ((delegate* unmanaged<IMFContentEnabler*, int*, int>)(lpVtbl[6]))((IMFContentEnabler*)Unsafe.AsPointer(ref this), pfAutomatic);
+            return ((delegate* unmanaged<IMFContentEnabler*, BOOL*, int>)(lpVtbl[6]))((IMFContentEnabler*)Unsafe.AsPointer(ref this), pfAutomatic);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

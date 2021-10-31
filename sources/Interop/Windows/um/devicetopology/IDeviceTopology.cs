@@ -91,9 +91,9 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(9)]
         [return: NativeTypeName("HRESULT")]
-        public int GetSignalPath(IPart* pIPartFrom, IPart* pIPartTo, [NativeTypeName("BOOL")] int bRejectMixedPaths, IPartsList** ppParts)
+        public int GetSignalPath(IPart* pIPartFrom, IPart* pIPartTo, BOOL bRejectMixedPaths, IPartsList** ppParts)
         {
-            return ((delegate* unmanaged<IDeviceTopology*, IPart*, IPart*, int, IPartsList**, int>)(lpVtbl[9]))((IDeviceTopology*)Unsafe.AsPointer(ref this), pIPartFrom, pIPartTo, bRejectMixedPaths, ppParts);
+            return ((delegate* unmanaged<IDeviceTopology*, IPart*, IPart*, BOOL, IPartsList**, int>)(lpVtbl[9]))((IDeviceTopology*)Unsafe.AsPointer(ref this), pIPartFrom, pIPartTo, bRejectMixedPaths, ppParts);
         }
     }
 }

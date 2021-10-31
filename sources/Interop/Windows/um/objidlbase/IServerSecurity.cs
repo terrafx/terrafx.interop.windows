@@ -66,8 +66,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        [return: NativeTypeName("BOOL")]
-        public int IsImpersonating()
+        public BOOL IsImpersonating()
         {
             return ((delegate* unmanaged<IServerSecurity*, int>)(lpVtbl[6]))((IServerSecurity*)Unsafe.AsPointer(ref this));
         }

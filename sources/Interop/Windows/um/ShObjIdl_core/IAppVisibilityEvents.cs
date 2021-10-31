@@ -51,9 +51,9 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
         [return: NativeTypeName("HRESULT")]
-        public int LauncherVisibilityChange([NativeTypeName("BOOL")] int currentVisibleState)
+        public int LauncherVisibilityChange(BOOL currentVisibleState)
         {
-            return ((delegate* unmanaged<IAppVisibilityEvents*, int, int>)(lpVtbl[4]))((IAppVisibilityEvents*)Unsafe.AsPointer(ref this), currentVisibleState);
+            return ((delegate* unmanaged<IAppVisibilityEvents*, BOOL, int>)(lpVtbl[4]))((IAppVisibilityEvents*)Unsafe.AsPointer(ref this), currentVisibleState);
         }
     }
 }

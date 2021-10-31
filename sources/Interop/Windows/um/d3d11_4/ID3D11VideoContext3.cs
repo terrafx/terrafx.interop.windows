@@ -121,16 +121,16 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(13)]
-        public void VideoProcessorSetOutputTargetRect(ID3D11VideoProcessor* pVideoProcessor, [NativeTypeName("BOOL")] int Enable, [NativeTypeName("const RECT *")] RECT* pRect)
+        public void VideoProcessorSetOutputTargetRect(ID3D11VideoProcessor* pVideoProcessor, BOOL Enable, [NativeTypeName("const RECT *")] RECT* pRect)
         {
-            ((delegate* unmanaged<ID3D11VideoContext3*, ID3D11VideoProcessor*, int, RECT*, void>)(lpVtbl[13]))((ID3D11VideoContext3*)Unsafe.AsPointer(ref this), pVideoProcessor, Enable, pRect);
+            ((delegate* unmanaged<ID3D11VideoContext3*, ID3D11VideoProcessor*, BOOL, RECT*, void>)(lpVtbl[13]))((ID3D11VideoContext3*)Unsafe.AsPointer(ref this), pVideoProcessor, Enable, pRect);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(14)]
-        public void VideoProcessorSetOutputBackgroundColor(ID3D11VideoProcessor* pVideoProcessor, [NativeTypeName("BOOL")] int YCbCr, [NativeTypeName("const D3D11_VIDEO_COLOR *")] D3D11_VIDEO_COLOR* pColor)
+        public void VideoProcessorSetOutputBackgroundColor(ID3D11VideoProcessor* pVideoProcessor, BOOL YCbCr, [NativeTypeName("const D3D11_VIDEO_COLOR *")] D3D11_VIDEO_COLOR* pColor)
         {
-            ((delegate* unmanaged<ID3D11VideoContext3*, ID3D11VideoProcessor*, int, D3D11_VIDEO_COLOR*, void>)(lpVtbl[14]))((ID3D11VideoContext3*)Unsafe.AsPointer(ref this), pVideoProcessor, YCbCr, pColor);
+            ((delegate* unmanaged<ID3D11VideoContext3*, ID3D11VideoProcessor*, BOOL, D3D11_VIDEO_COLOR*, void>)(lpVtbl[14]))((ID3D11VideoContext3*)Unsafe.AsPointer(ref this), pVideoProcessor, YCbCr, pColor);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -149,16 +149,16 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(17)]
-        public void VideoProcessorSetOutputConstriction(ID3D11VideoProcessor* pVideoProcessor, [NativeTypeName("BOOL")] int Enable, SIZE Size)
+        public void VideoProcessorSetOutputConstriction(ID3D11VideoProcessor* pVideoProcessor, BOOL Enable, SIZE Size)
         {
-            ((delegate* unmanaged<ID3D11VideoContext3*, ID3D11VideoProcessor*, int, SIZE, void>)(lpVtbl[17]))((ID3D11VideoContext3*)Unsafe.AsPointer(ref this), pVideoProcessor, Enable, Size);
+            ((delegate* unmanaged<ID3D11VideoContext3*, ID3D11VideoProcessor*, BOOL, SIZE, void>)(lpVtbl[17]))((ID3D11VideoContext3*)Unsafe.AsPointer(ref this), pVideoProcessor, Enable, Size);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(18)]
-        public void VideoProcessorSetOutputStereoMode(ID3D11VideoProcessor* pVideoProcessor, [NativeTypeName("BOOL")] int Enable)
+        public void VideoProcessorSetOutputStereoMode(ID3D11VideoProcessor* pVideoProcessor, BOOL Enable)
         {
-            ((delegate* unmanaged<ID3D11VideoContext3*, ID3D11VideoProcessor*, int, void>)(lpVtbl[18]))((ID3D11VideoContext3*)Unsafe.AsPointer(ref this), pVideoProcessor, Enable);
+            ((delegate* unmanaged<ID3D11VideoContext3*, ID3D11VideoProcessor*, BOOL, void>)(lpVtbl[18]))((ID3D11VideoContext3*)Unsafe.AsPointer(ref this), pVideoProcessor, Enable);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -171,16 +171,16 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(20)]
-        public void VideoProcessorGetOutputTargetRect(ID3D11VideoProcessor* pVideoProcessor, [NativeTypeName("BOOL *")] int* Enabled, RECT* pRect)
+        public void VideoProcessorGetOutputTargetRect(ID3D11VideoProcessor* pVideoProcessor, BOOL* Enabled, RECT* pRect)
         {
-            ((delegate* unmanaged<ID3D11VideoContext3*, ID3D11VideoProcessor*, int*, RECT*, void>)(lpVtbl[20]))((ID3D11VideoContext3*)Unsafe.AsPointer(ref this), pVideoProcessor, Enabled, pRect);
+            ((delegate* unmanaged<ID3D11VideoContext3*, ID3D11VideoProcessor*, BOOL*, RECT*, void>)(lpVtbl[20]))((ID3D11VideoContext3*)Unsafe.AsPointer(ref this), pVideoProcessor, Enabled, pRect);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(21)]
-        public void VideoProcessorGetOutputBackgroundColor(ID3D11VideoProcessor* pVideoProcessor, [NativeTypeName("BOOL *")] int* pYCbCr, D3D11_VIDEO_COLOR* pColor)
+        public void VideoProcessorGetOutputBackgroundColor(ID3D11VideoProcessor* pVideoProcessor, BOOL* pYCbCr, D3D11_VIDEO_COLOR* pColor)
         {
-            ((delegate* unmanaged<ID3D11VideoContext3*, ID3D11VideoProcessor*, int*, D3D11_VIDEO_COLOR*, void>)(lpVtbl[21]))((ID3D11VideoContext3*)Unsafe.AsPointer(ref this), pVideoProcessor, pYCbCr, pColor);
+            ((delegate* unmanaged<ID3D11VideoContext3*, ID3D11VideoProcessor*, BOOL*, D3D11_VIDEO_COLOR*, void>)(lpVtbl[21]))((ID3D11VideoContext3*)Unsafe.AsPointer(ref this), pVideoProcessor, pYCbCr, pColor);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -199,16 +199,16 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(24)]
-        public void VideoProcessorGetOutputConstriction(ID3D11VideoProcessor* pVideoProcessor, [NativeTypeName("BOOL *")] int* pEnabled, SIZE* pSize)
+        public void VideoProcessorGetOutputConstriction(ID3D11VideoProcessor* pVideoProcessor, BOOL* pEnabled, SIZE* pSize)
         {
-            ((delegate* unmanaged<ID3D11VideoContext3*, ID3D11VideoProcessor*, int*, SIZE*, void>)(lpVtbl[24]))((ID3D11VideoContext3*)Unsafe.AsPointer(ref this), pVideoProcessor, pEnabled, pSize);
+            ((delegate* unmanaged<ID3D11VideoContext3*, ID3D11VideoProcessor*, BOOL*, SIZE*, void>)(lpVtbl[24]))((ID3D11VideoContext3*)Unsafe.AsPointer(ref this), pVideoProcessor, pEnabled, pSize);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(25)]
-        public void VideoProcessorGetOutputStereoMode(ID3D11VideoProcessor* pVideoProcessor, [NativeTypeName("BOOL *")] int* pEnabled)
+        public void VideoProcessorGetOutputStereoMode(ID3D11VideoProcessor* pVideoProcessor, BOOL* pEnabled)
         {
-            ((delegate* unmanaged<ID3D11VideoContext3*, ID3D11VideoProcessor*, int*, void>)(lpVtbl[25]))((ID3D11VideoContext3*)Unsafe.AsPointer(ref this), pVideoProcessor, pEnabled);
+            ((delegate* unmanaged<ID3D11VideoContext3*, ID3D11VideoProcessor*, BOOL*, void>)(lpVtbl[25]))((ID3D11VideoContext3*)Unsafe.AsPointer(ref this), pVideoProcessor, pEnabled);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -235,30 +235,30 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(29)]
-        public void VideoProcessorSetStreamOutputRate(ID3D11VideoProcessor* pVideoProcessor, [NativeTypeName("UINT")] uint StreamIndex, D3D11_VIDEO_PROCESSOR_OUTPUT_RATE OutputRate, [NativeTypeName("BOOL")] int RepeatFrame, [NativeTypeName("const DXGI_RATIONAL *")] DXGI_RATIONAL* pCustomRate)
+        public void VideoProcessorSetStreamOutputRate(ID3D11VideoProcessor* pVideoProcessor, [NativeTypeName("UINT")] uint StreamIndex, D3D11_VIDEO_PROCESSOR_OUTPUT_RATE OutputRate, BOOL RepeatFrame, [NativeTypeName("const DXGI_RATIONAL *")] DXGI_RATIONAL* pCustomRate)
         {
-            ((delegate* unmanaged<ID3D11VideoContext3*, ID3D11VideoProcessor*, uint, D3D11_VIDEO_PROCESSOR_OUTPUT_RATE, int, DXGI_RATIONAL*, void>)(lpVtbl[29]))((ID3D11VideoContext3*)Unsafe.AsPointer(ref this), pVideoProcessor, StreamIndex, OutputRate, RepeatFrame, pCustomRate);
+            ((delegate* unmanaged<ID3D11VideoContext3*, ID3D11VideoProcessor*, uint, D3D11_VIDEO_PROCESSOR_OUTPUT_RATE, BOOL, DXGI_RATIONAL*, void>)(lpVtbl[29]))((ID3D11VideoContext3*)Unsafe.AsPointer(ref this), pVideoProcessor, StreamIndex, OutputRate, RepeatFrame, pCustomRate);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(30)]
-        public void VideoProcessorSetStreamSourceRect(ID3D11VideoProcessor* pVideoProcessor, [NativeTypeName("UINT")] uint StreamIndex, [NativeTypeName("BOOL")] int Enable, [NativeTypeName("const RECT *")] RECT* pRect)
+        public void VideoProcessorSetStreamSourceRect(ID3D11VideoProcessor* pVideoProcessor, [NativeTypeName("UINT")] uint StreamIndex, BOOL Enable, [NativeTypeName("const RECT *")] RECT* pRect)
         {
-            ((delegate* unmanaged<ID3D11VideoContext3*, ID3D11VideoProcessor*, uint, int, RECT*, void>)(lpVtbl[30]))((ID3D11VideoContext3*)Unsafe.AsPointer(ref this), pVideoProcessor, StreamIndex, Enable, pRect);
+            ((delegate* unmanaged<ID3D11VideoContext3*, ID3D11VideoProcessor*, uint, BOOL, RECT*, void>)(lpVtbl[30]))((ID3D11VideoContext3*)Unsafe.AsPointer(ref this), pVideoProcessor, StreamIndex, Enable, pRect);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(31)]
-        public void VideoProcessorSetStreamDestRect(ID3D11VideoProcessor* pVideoProcessor, [NativeTypeName("UINT")] uint StreamIndex, [NativeTypeName("BOOL")] int Enable, [NativeTypeName("const RECT *")] RECT* pRect)
+        public void VideoProcessorSetStreamDestRect(ID3D11VideoProcessor* pVideoProcessor, [NativeTypeName("UINT")] uint StreamIndex, BOOL Enable, [NativeTypeName("const RECT *")] RECT* pRect)
         {
-            ((delegate* unmanaged<ID3D11VideoContext3*, ID3D11VideoProcessor*, uint, int, RECT*, void>)(lpVtbl[31]))((ID3D11VideoContext3*)Unsafe.AsPointer(ref this), pVideoProcessor, StreamIndex, Enable, pRect);
+            ((delegate* unmanaged<ID3D11VideoContext3*, ID3D11VideoProcessor*, uint, BOOL, RECT*, void>)(lpVtbl[31]))((ID3D11VideoContext3*)Unsafe.AsPointer(ref this), pVideoProcessor, StreamIndex, Enable, pRect);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(32)]
-        public void VideoProcessorSetStreamAlpha(ID3D11VideoProcessor* pVideoProcessor, [NativeTypeName("UINT")] uint StreamIndex, [NativeTypeName("BOOL")] int Enable, [NativeTypeName("FLOAT")] float Alpha)
+        public void VideoProcessorSetStreamAlpha(ID3D11VideoProcessor* pVideoProcessor, [NativeTypeName("UINT")] uint StreamIndex, BOOL Enable, [NativeTypeName("FLOAT")] float Alpha)
         {
-            ((delegate* unmanaged<ID3D11VideoContext3*, ID3D11VideoProcessor*, uint, int, float, void>)(lpVtbl[32]))((ID3D11VideoContext3*)Unsafe.AsPointer(ref this), pVideoProcessor, StreamIndex, Enable, Alpha);
+            ((delegate* unmanaged<ID3D11VideoContext3*, ID3D11VideoProcessor*, uint, BOOL, float, void>)(lpVtbl[32]))((ID3D11VideoContext3*)Unsafe.AsPointer(ref this), pVideoProcessor, StreamIndex, Enable, Alpha);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -270,37 +270,37 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(34)]
-        public void VideoProcessorSetStreamPixelAspectRatio(ID3D11VideoProcessor* pVideoProcessor, [NativeTypeName("UINT")] uint StreamIndex, [NativeTypeName("BOOL")] int Enable, [NativeTypeName("const DXGI_RATIONAL *")] DXGI_RATIONAL* pSourceAspectRatio, [NativeTypeName("const DXGI_RATIONAL *")] DXGI_RATIONAL* pDestinationAspectRatio)
+        public void VideoProcessorSetStreamPixelAspectRatio(ID3D11VideoProcessor* pVideoProcessor, [NativeTypeName("UINT")] uint StreamIndex, BOOL Enable, [NativeTypeName("const DXGI_RATIONAL *")] DXGI_RATIONAL* pSourceAspectRatio, [NativeTypeName("const DXGI_RATIONAL *")] DXGI_RATIONAL* pDestinationAspectRatio)
         {
-            ((delegate* unmanaged<ID3D11VideoContext3*, ID3D11VideoProcessor*, uint, int, DXGI_RATIONAL*, DXGI_RATIONAL*, void>)(lpVtbl[34]))((ID3D11VideoContext3*)Unsafe.AsPointer(ref this), pVideoProcessor, StreamIndex, Enable, pSourceAspectRatio, pDestinationAspectRatio);
+            ((delegate* unmanaged<ID3D11VideoContext3*, ID3D11VideoProcessor*, uint, BOOL, DXGI_RATIONAL*, DXGI_RATIONAL*, void>)(lpVtbl[34]))((ID3D11VideoContext3*)Unsafe.AsPointer(ref this), pVideoProcessor, StreamIndex, Enable, pSourceAspectRatio, pDestinationAspectRatio);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(35)]
-        public void VideoProcessorSetStreamLumaKey(ID3D11VideoProcessor* pVideoProcessor, [NativeTypeName("UINT")] uint StreamIndex, [NativeTypeName("BOOL")] int Enable, [NativeTypeName("FLOAT")] float Lower, [NativeTypeName("FLOAT")] float Upper)
+        public void VideoProcessorSetStreamLumaKey(ID3D11VideoProcessor* pVideoProcessor, [NativeTypeName("UINT")] uint StreamIndex, BOOL Enable, [NativeTypeName("FLOAT")] float Lower, [NativeTypeName("FLOAT")] float Upper)
         {
-            ((delegate* unmanaged<ID3D11VideoContext3*, ID3D11VideoProcessor*, uint, int, float, float, void>)(lpVtbl[35]))((ID3D11VideoContext3*)Unsafe.AsPointer(ref this), pVideoProcessor, StreamIndex, Enable, Lower, Upper);
+            ((delegate* unmanaged<ID3D11VideoContext3*, ID3D11VideoProcessor*, uint, BOOL, float, float, void>)(lpVtbl[35]))((ID3D11VideoContext3*)Unsafe.AsPointer(ref this), pVideoProcessor, StreamIndex, Enable, Lower, Upper);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(36)]
-        public void VideoProcessorSetStreamStereoFormat(ID3D11VideoProcessor* pVideoProcessor, [NativeTypeName("UINT")] uint StreamIndex, [NativeTypeName("BOOL")] int Enable, D3D11_VIDEO_PROCESSOR_STEREO_FORMAT Format, [NativeTypeName("BOOL")] int LeftViewFrame0, [NativeTypeName("BOOL")] int BaseViewFrame0, D3D11_VIDEO_PROCESSOR_STEREO_FLIP_MODE FlipMode, int MonoOffset)
+        public void VideoProcessorSetStreamStereoFormat(ID3D11VideoProcessor* pVideoProcessor, [NativeTypeName("UINT")] uint StreamIndex, BOOL Enable, D3D11_VIDEO_PROCESSOR_STEREO_FORMAT Format, BOOL LeftViewFrame0, BOOL BaseViewFrame0, D3D11_VIDEO_PROCESSOR_STEREO_FLIP_MODE FlipMode, int MonoOffset)
         {
-            ((delegate* unmanaged<ID3D11VideoContext3*, ID3D11VideoProcessor*, uint, int, D3D11_VIDEO_PROCESSOR_STEREO_FORMAT, int, int, D3D11_VIDEO_PROCESSOR_STEREO_FLIP_MODE, int, void>)(lpVtbl[36]))((ID3D11VideoContext3*)Unsafe.AsPointer(ref this), pVideoProcessor, StreamIndex, Enable, Format, LeftViewFrame0, BaseViewFrame0, FlipMode, MonoOffset);
+            ((delegate* unmanaged<ID3D11VideoContext3*, ID3D11VideoProcessor*, uint, BOOL, D3D11_VIDEO_PROCESSOR_STEREO_FORMAT, BOOL, BOOL, D3D11_VIDEO_PROCESSOR_STEREO_FLIP_MODE, int, void>)(lpVtbl[36]))((ID3D11VideoContext3*)Unsafe.AsPointer(ref this), pVideoProcessor, StreamIndex, Enable, Format, LeftViewFrame0, BaseViewFrame0, FlipMode, MonoOffset);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(37)]
-        public void VideoProcessorSetStreamAutoProcessingMode(ID3D11VideoProcessor* pVideoProcessor, [NativeTypeName("UINT")] uint StreamIndex, [NativeTypeName("BOOL")] int Enable)
+        public void VideoProcessorSetStreamAutoProcessingMode(ID3D11VideoProcessor* pVideoProcessor, [NativeTypeName("UINT")] uint StreamIndex, BOOL Enable)
         {
-            ((delegate* unmanaged<ID3D11VideoContext3*, ID3D11VideoProcessor*, uint, int, void>)(lpVtbl[37]))((ID3D11VideoContext3*)Unsafe.AsPointer(ref this), pVideoProcessor, StreamIndex, Enable);
+            ((delegate* unmanaged<ID3D11VideoContext3*, ID3D11VideoProcessor*, uint, BOOL, void>)(lpVtbl[37]))((ID3D11VideoContext3*)Unsafe.AsPointer(ref this), pVideoProcessor, StreamIndex, Enable);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(38)]
-        public void VideoProcessorSetStreamFilter(ID3D11VideoProcessor* pVideoProcessor, [NativeTypeName("UINT")] uint StreamIndex, D3D11_VIDEO_PROCESSOR_FILTER Filter, [NativeTypeName("BOOL")] int Enable, int Level)
+        public void VideoProcessorSetStreamFilter(ID3D11VideoProcessor* pVideoProcessor, [NativeTypeName("UINT")] uint StreamIndex, D3D11_VIDEO_PROCESSOR_FILTER Filter, BOOL Enable, int Level)
         {
-            ((delegate* unmanaged<ID3D11VideoContext3*, ID3D11VideoProcessor*, uint, D3D11_VIDEO_PROCESSOR_FILTER, int, int, void>)(lpVtbl[38]))((ID3D11VideoContext3*)Unsafe.AsPointer(ref this), pVideoProcessor, StreamIndex, Filter, Enable, Level);
+            ((delegate* unmanaged<ID3D11VideoContext3*, ID3D11VideoProcessor*, uint, D3D11_VIDEO_PROCESSOR_FILTER, BOOL, int, void>)(lpVtbl[38]))((ID3D11VideoContext3*)Unsafe.AsPointer(ref this), pVideoProcessor, StreamIndex, Filter, Enable, Level);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -327,30 +327,30 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(42)]
-        public void VideoProcessorGetStreamOutputRate(ID3D11VideoProcessor* pVideoProcessor, [NativeTypeName("UINT")] uint StreamIndex, D3D11_VIDEO_PROCESSOR_OUTPUT_RATE* pOutputRate, [NativeTypeName("BOOL *")] int* pRepeatFrame, DXGI_RATIONAL* pCustomRate)
+        public void VideoProcessorGetStreamOutputRate(ID3D11VideoProcessor* pVideoProcessor, [NativeTypeName("UINT")] uint StreamIndex, D3D11_VIDEO_PROCESSOR_OUTPUT_RATE* pOutputRate, BOOL* pRepeatFrame, DXGI_RATIONAL* pCustomRate)
         {
-            ((delegate* unmanaged<ID3D11VideoContext3*, ID3D11VideoProcessor*, uint, D3D11_VIDEO_PROCESSOR_OUTPUT_RATE*, int*, DXGI_RATIONAL*, void>)(lpVtbl[42]))((ID3D11VideoContext3*)Unsafe.AsPointer(ref this), pVideoProcessor, StreamIndex, pOutputRate, pRepeatFrame, pCustomRate);
+            ((delegate* unmanaged<ID3D11VideoContext3*, ID3D11VideoProcessor*, uint, D3D11_VIDEO_PROCESSOR_OUTPUT_RATE*, BOOL*, DXGI_RATIONAL*, void>)(lpVtbl[42]))((ID3D11VideoContext3*)Unsafe.AsPointer(ref this), pVideoProcessor, StreamIndex, pOutputRate, pRepeatFrame, pCustomRate);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(43)]
-        public void VideoProcessorGetStreamSourceRect(ID3D11VideoProcessor* pVideoProcessor, [NativeTypeName("UINT")] uint StreamIndex, [NativeTypeName("BOOL *")] int* pEnabled, RECT* pRect)
+        public void VideoProcessorGetStreamSourceRect(ID3D11VideoProcessor* pVideoProcessor, [NativeTypeName("UINT")] uint StreamIndex, BOOL* pEnabled, RECT* pRect)
         {
-            ((delegate* unmanaged<ID3D11VideoContext3*, ID3D11VideoProcessor*, uint, int*, RECT*, void>)(lpVtbl[43]))((ID3D11VideoContext3*)Unsafe.AsPointer(ref this), pVideoProcessor, StreamIndex, pEnabled, pRect);
+            ((delegate* unmanaged<ID3D11VideoContext3*, ID3D11VideoProcessor*, uint, BOOL*, RECT*, void>)(lpVtbl[43]))((ID3D11VideoContext3*)Unsafe.AsPointer(ref this), pVideoProcessor, StreamIndex, pEnabled, pRect);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(44)]
-        public void VideoProcessorGetStreamDestRect(ID3D11VideoProcessor* pVideoProcessor, [NativeTypeName("UINT")] uint StreamIndex, [NativeTypeName("BOOL *")] int* pEnabled, RECT* pRect)
+        public void VideoProcessorGetStreamDestRect(ID3D11VideoProcessor* pVideoProcessor, [NativeTypeName("UINT")] uint StreamIndex, BOOL* pEnabled, RECT* pRect)
         {
-            ((delegate* unmanaged<ID3D11VideoContext3*, ID3D11VideoProcessor*, uint, int*, RECT*, void>)(lpVtbl[44]))((ID3D11VideoContext3*)Unsafe.AsPointer(ref this), pVideoProcessor, StreamIndex, pEnabled, pRect);
+            ((delegate* unmanaged<ID3D11VideoContext3*, ID3D11VideoProcessor*, uint, BOOL*, RECT*, void>)(lpVtbl[44]))((ID3D11VideoContext3*)Unsafe.AsPointer(ref this), pVideoProcessor, StreamIndex, pEnabled, pRect);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(45)]
-        public void VideoProcessorGetStreamAlpha(ID3D11VideoProcessor* pVideoProcessor, [NativeTypeName("UINT")] uint StreamIndex, [NativeTypeName("BOOL *")] int* pEnabled, [NativeTypeName("FLOAT *")] float* pAlpha)
+        public void VideoProcessorGetStreamAlpha(ID3D11VideoProcessor* pVideoProcessor, [NativeTypeName("UINT")] uint StreamIndex, BOOL* pEnabled, [NativeTypeName("FLOAT *")] float* pAlpha)
         {
-            ((delegate* unmanaged<ID3D11VideoContext3*, ID3D11VideoProcessor*, uint, int*, float*, void>)(lpVtbl[45]))((ID3D11VideoContext3*)Unsafe.AsPointer(ref this), pVideoProcessor, StreamIndex, pEnabled, pAlpha);
+            ((delegate* unmanaged<ID3D11VideoContext3*, ID3D11VideoProcessor*, uint, BOOL*, float*, void>)(lpVtbl[45]))((ID3D11VideoContext3*)Unsafe.AsPointer(ref this), pVideoProcessor, StreamIndex, pEnabled, pAlpha);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -362,37 +362,37 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(47)]
-        public void VideoProcessorGetStreamPixelAspectRatio(ID3D11VideoProcessor* pVideoProcessor, [NativeTypeName("UINT")] uint StreamIndex, [NativeTypeName("BOOL *")] int* pEnabled, DXGI_RATIONAL* pSourceAspectRatio, DXGI_RATIONAL* pDestinationAspectRatio)
+        public void VideoProcessorGetStreamPixelAspectRatio(ID3D11VideoProcessor* pVideoProcessor, [NativeTypeName("UINT")] uint StreamIndex, BOOL* pEnabled, DXGI_RATIONAL* pSourceAspectRatio, DXGI_RATIONAL* pDestinationAspectRatio)
         {
-            ((delegate* unmanaged<ID3D11VideoContext3*, ID3D11VideoProcessor*, uint, int*, DXGI_RATIONAL*, DXGI_RATIONAL*, void>)(lpVtbl[47]))((ID3D11VideoContext3*)Unsafe.AsPointer(ref this), pVideoProcessor, StreamIndex, pEnabled, pSourceAspectRatio, pDestinationAspectRatio);
+            ((delegate* unmanaged<ID3D11VideoContext3*, ID3D11VideoProcessor*, uint, BOOL*, DXGI_RATIONAL*, DXGI_RATIONAL*, void>)(lpVtbl[47]))((ID3D11VideoContext3*)Unsafe.AsPointer(ref this), pVideoProcessor, StreamIndex, pEnabled, pSourceAspectRatio, pDestinationAspectRatio);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(48)]
-        public void VideoProcessorGetStreamLumaKey(ID3D11VideoProcessor* pVideoProcessor, [NativeTypeName("UINT")] uint StreamIndex, [NativeTypeName("BOOL *")] int* pEnabled, [NativeTypeName("FLOAT *")] float* pLower, [NativeTypeName("FLOAT *")] float* pUpper)
+        public void VideoProcessorGetStreamLumaKey(ID3D11VideoProcessor* pVideoProcessor, [NativeTypeName("UINT")] uint StreamIndex, BOOL* pEnabled, [NativeTypeName("FLOAT *")] float* pLower, [NativeTypeName("FLOAT *")] float* pUpper)
         {
-            ((delegate* unmanaged<ID3D11VideoContext3*, ID3D11VideoProcessor*, uint, int*, float*, float*, void>)(lpVtbl[48]))((ID3D11VideoContext3*)Unsafe.AsPointer(ref this), pVideoProcessor, StreamIndex, pEnabled, pLower, pUpper);
+            ((delegate* unmanaged<ID3D11VideoContext3*, ID3D11VideoProcessor*, uint, BOOL*, float*, float*, void>)(lpVtbl[48]))((ID3D11VideoContext3*)Unsafe.AsPointer(ref this), pVideoProcessor, StreamIndex, pEnabled, pLower, pUpper);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(49)]
-        public void VideoProcessorGetStreamStereoFormat(ID3D11VideoProcessor* pVideoProcessor, [NativeTypeName("UINT")] uint StreamIndex, [NativeTypeName("BOOL *")] int* pEnable, D3D11_VIDEO_PROCESSOR_STEREO_FORMAT* pFormat, [NativeTypeName("BOOL *")] int* pLeftViewFrame0, [NativeTypeName("BOOL *")] int* pBaseViewFrame0, D3D11_VIDEO_PROCESSOR_STEREO_FLIP_MODE* pFlipMode, int* MonoOffset)
+        public void VideoProcessorGetStreamStereoFormat(ID3D11VideoProcessor* pVideoProcessor, [NativeTypeName("UINT")] uint StreamIndex, BOOL* pEnable, D3D11_VIDEO_PROCESSOR_STEREO_FORMAT* pFormat, BOOL* pLeftViewFrame0, BOOL* pBaseViewFrame0, D3D11_VIDEO_PROCESSOR_STEREO_FLIP_MODE* pFlipMode, int* MonoOffset)
         {
-            ((delegate* unmanaged<ID3D11VideoContext3*, ID3D11VideoProcessor*, uint, int*, D3D11_VIDEO_PROCESSOR_STEREO_FORMAT*, int*, int*, D3D11_VIDEO_PROCESSOR_STEREO_FLIP_MODE*, int*, void>)(lpVtbl[49]))((ID3D11VideoContext3*)Unsafe.AsPointer(ref this), pVideoProcessor, StreamIndex, pEnable, pFormat, pLeftViewFrame0, pBaseViewFrame0, pFlipMode, MonoOffset);
+            ((delegate* unmanaged<ID3D11VideoContext3*, ID3D11VideoProcessor*, uint, BOOL*, D3D11_VIDEO_PROCESSOR_STEREO_FORMAT*, BOOL*, BOOL*, D3D11_VIDEO_PROCESSOR_STEREO_FLIP_MODE*, int*, void>)(lpVtbl[49]))((ID3D11VideoContext3*)Unsafe.AsPointer(ref this), pVideoProcessor, StreamIndex, pEnable, pFormat, pLeftViewFrame0, pBaseViewFrame0, pFlipMode, MonoOffset);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(50)]
-        public void VideoProcessorGetStreamAutoProcessingMode(ID3D11VideoProcessor* pVideoProcessor, [NativeTypeName("UINT")] uint StreamIndex, [NativeTypeName("BOOL *")] int* pEnabled)
+        public void VideoProcessorGetStreamAutoProcessingMode(ID3D11VideoProcessor* pVideoProcessor, [NativeTypeName("UINT")] uint StreamIndex, BOOL* pEnabled)
         {
-            ((delegate* unmanaged<ID3D11VideoContext3*, ID3D11VideoProcessor*, uint, int*, void>)(lpVtbl[50]))((ID3D11VideoContext3*)Unsafe.AsPointer(ref this), pVideoProcessor, StreamIndex, pEnabled);
+            ((delegate* unmanaged<ID3D11VideoContext3*, ID3D11VideoProcessor*, uint, BOOL*, void>)(lpVtbl[50]))((ID3D11VideoContext3*)Unsafe.AsPointer(ref this), pVideoProcessor, StreamIndex, pEnabled);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(51)]
-        public void VideoProcessorGetStreamFilter(ID3D11VideoProcessor* pVideoProcessor, [NativeTypeName("UINT")] uint StreamIndex, D3D11_VIDEO_PROCESSOR_FILTER Filter, [NativeTypeName("BOOL *")] int* pEnabled, int* pLevel)
+        public void VideoProcessorGetStreamFilter(ID3D11VideoProcessor* pVideoProcessor, [NativeTypeName("UINT")] uint StreamIndex, D3D11_VIDEO_PROCESSOR_FILTER Filter, BOOL* pEnabled, int* pLevel)
         {
-            ((delegate* unmanaged<ID3D11VideoContext3*, ID3D11VideoProcessor*, uint, D3D11_VIDEO_PROCESSOR_FILTER, int*, int*, void>)(lpVtbl[51]))((ID3D11VideoContext3*)Unsafe.AsPointer(ref this), pVideoProcessor, StreamIndex, Filter, pEnabled, pLevel);
+            ((delegate* unmanaged<ID3D11VideoContext3*, ID3D11VideoProcessor*, uint, D3D11_VIDEO_PROCESSOR_FILTER, BOOL*, int*, void>)(lpVtbl[51]))((ID3D11VideoContext3*)Unsafe.AsPointer(ref this), pVideoProcessor, StreamIndex, Filter, pEnabled, pLevel);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -481,16 +481,16 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(63)]
-        public void VideoProcessorSetStreamRotation(ID3D11VideoProcessor* pVideoProcessor, [NativeTypeName("UINT")] uint StreamIndex, [NativeTypeName("BOOL")] int Enable, D3D11_VIDEO_PROCESSOR_ROTATION Rotation)
+        public void VideoProcessorSetStreamRotation(ID3D11VideoProcessor* pVideoProcessor, [NativeTypeName("UINT")] uint StreamIndex, BOOL Enable, D3D11_VIDEO_PROCESSOR_ROTATION Rotation)
         {
-            ((delegate* unmanaged<ID3D11VideoContext3*, ID3D11VideoProcessor*, uint, int, D3D11_VIDEO_PROCESSOR_ROTATION, void>)(lpVtbl[63]))((ID3D11VideoContext3*)Unsafe.AsPointer(ref this), pVideoProcessor, StreamIndex, Enable, Rotation);
+            ((delegate* unmanaged<ID3D11VideoContext3*, ID3D11VideoProcessor*, uint, BOOL, D3D11_VIDEO_PROCESSOR_ROTATION, void>)(lpVtbl[63]))((ID3D11VideoContext3*)Unsafe.AsPointer(ref this), pVideoProcessor, StreamIndex, Enable, Rotation);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(64)]
-        public void VideoProcessorGetStreamRotation(ID3D11VideoProcessor* pVideoProcessor, [NativeTypeName("UINT")] uint StreamIndex, [NativeTypeName("BOOL *")] int* pEnable, D3D11_VIDEO_PROCESSOR_ROTATION* pRotation)
+        public void VideoProcessorGetStreamRotation(ID3D11VideoProcessor* pVideoProcessor, [NativeTypeName("UINT")] uint StreamIndex, BOOL* pEnable, D3D11_VIDEO_PROCESSOR_ROTATION* pRotation)
         {
-            ((delegate* unmanaged<ID3D11VideoContext3*, ID3D11VideoProcessor*, uint, int*, D3D11_VIDEO_PROCESSOR_ROTATION*, void>)(lpVtbl[64]))((ID3D11VideoContext3*)Unsafe.AsPointer(ref this), pVideoProcessor, StreamIndex, pEnable, pRotation);
+            ((delegate* unmanaged<ID3D11VideoContext3*, ID3D11VideoProcessor*, uint, BOOL*, D3D11_VIDEO_PROCESSOR_ROTATION*, void>)(lpVtbl[64]))((ID3D11VideoContext3*)Unsafe.AsPointer(ref this), pVideoProcessor, StreamIndex, pEnable, pRotation);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -542,9 +542,9 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(71)]
-        public void VideoProcessorSetOutputShaderUsage(ID3D11VideoProcessor* pVideoProcessor, [NativeTypeName("BOOL")] int ShaderUsage)
+        public void VideoProcessorSetOutputShaderUsage(ID3D11VideoProcessor* pVideoProcessor, BOOL ShaderUsage)
         {
-            ((delegate* unmanaged<ID3D11VideoContext3*, ID3D11VideoProcessor*, int, void>)(lpVtbl[71]))((ID3D11VideoContext3*)Unsafe.AsPointer(ref this), pVideoProcessor, ShaderUsage);
+            ((delegate* unmanaged<ID3D11VideoContext3*, ID3D11VideoProcessor*, BOOL, void>)(lpVtbl[71]))((ID3D11VideoContext3*)Unsafe.AsPointer(ref this), pVideoProcessor, ShaderUsage);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -556,9 +556,9 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(73)]
-        public void VideoProcessorGetOutputShaderUsage(ID3D11VideoProcessor* pVideoProcessor, [NativeTypeName("BOOL *")] int* pShaderUsage)
+        public void VideoProcessorGetOutputShaderUsage(ID3D11VideoProcessor* pVideoProcessor, BOOL* pShaderUsage)
         {
-            ((delegate* unmanaged<ID3D11VideoContext3*, ID3D11VideoProcessor*, int*, void>)(lpVtbl[73]))((ID3D11VideoContext3*)Unsafe.AsPointer(ref this), pVideoProcessor, pShaderUsage);
+            ((delegate* unmanaged<ID3D11VideoContext3*, ID3D11VideoProcessor*, BOOL*, void>)(lpVtbl[73]))((ID3D11VideoContext3*)Unsafe.AsPointer(ref this), pVideoProcessor, pShaderUsage);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -570,9 +570,9 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(75)]
-        public void VideoProcessorSetStreamMirror(ID3D11VideoProcessor* pVideoProcessor, [NativeTypeName("UINT")] uint StreamIndex, [NativeTypeName("BOOL")] int Enable, [NativeTypeName("BOOL")] int FlipHorizontal, [NativeTypeName("BOOL")] int FlipVertical)
+        public void VideoProcessorSetStreamMirror(ID3D11VideoProcessor* pVideoProcessor, [NativeTypeName("UINT")] uint StreamIndex, BOOL Enable, BOOL FlipHorizontal, BOOL FlipVertical)
         {
-            ((delegate* unmanaged<ID3D11VideoContext3*, ID3D11VideoProcessor*, uint, int, int, int, void>)(lpVtbl[75]))((ID3D11VideoContext3*)Unsafe.AsPointer(ref this), pVideoProcessor, StreamIndex, Enable, FlipHorizontal, FlipVertical);
+            ((delegate* unmanaged<ID3D11VideoContext3*, ID3D11VideoProcessor*, uint, BOOL, BOOL, BOOL, void>)(lpVtbl[75]))((ID3D11VideoContext3*)Unsafe.AsPointer(ref this), pVideoProcessor, StreamIndex, Enable, FlipHorizontal, FlipVertical);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -584,9 +584,9 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(77)]
-        public void VideoProcessorGetStreamMirror(ID3D11VideoProcessor* pVideoProcessor, [NativeTypeName("UINT")] uint StreamIndex, [NativeTypeName("BOOL *")] int* pEnable, [NativeTypeName("BOOL *")] int* pFlipHorizontal, [NativeTypeName("BOOL *")] int* pFlipVertical)
+        public void VideoProcessorGetStreamMirror(ID3D11VideoProcessor* pVideoProcessor, [NativeTypeName("UINT")] uint StreamIndex, BOOL* pEnable, BOOL* pFlipHorizontal, BOOL* pFlipVertical)
         {
-            ((delegate* unmanaged<ID3D11VideoContext3*, ID3D11VideoProcessor*, uint, int*, int*, int*, void>)(lpVtbl[77]))((ID3D11VideoContext3*)Unsafe.AsPointer(ref this), pVideoProcessor, StreamIndex, pEnable, pFlipHorizontal, pFlipVertical);
+            ((delegate* unmanaged<ID3D11VideoContext3*, ID3D11VideoProcessor*, uint, BOOL*, BOOL*, BOOL*, void>)(lpVtbl[77]))((ID3D11VideoContext3*)Unsafe.AsPointer(ref this), pVideoProcessor, StreamIndex, pEnable, pFlipHorizontal, pFlipVertical);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

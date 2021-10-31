@@ -43,25 +43,25 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
         [return: NativeTypeName("HRESULT")]
-        public int GetSlowestRate(MFRATE_DIRECTION eDirection, [NativeTypeName("BOOL")] int fThin, float* pflRate)
+        public int GetSlowestRate(MFRATE_DIRECTION eDirection, BOOL fThin, float* pflRate)
         {
-            return ((delegate* unmanaged<IMFRateSupport*, MFRATE_DIRECTION, int, float*, int>)(lpVtbl[3]))((IMFRateSupport*)Unsafe.AsPointer(ref this), eDirection, fThin, pflRate);
+            return ((delegate* unmanaged<IMFRateSupport*, MFRATE_DIRECTION, BOOL, float*, int>)(lpVtbl[3]))((IMFRateSupport*)Unsafe.AsPointer(ref this), eDirection, fThin, pflRate);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
         [return: NativeTypeName("HRESULT")]
-        public int GetFastestRate(MFRATE_DIRECTION eDirection, [NativeTypeName("BOOL")] int fThin, float* pflRate)
+        public int GetFastestRate(MFRATE_DIRECTION eDirection, BOOL fThin, float* pflRate)
         {
-            return ((delegate* unmanaged<IMFRateSupport*, MFRATE_DIRECTION, int, float*, int>)(lpVtbl[4]))((IMFRateSupport*)Unsafe.AsPointer(ref this), eDirection, fThin, pflRate);
+            return ((delegate* unmanaged<IMFRateSupport*, MFRATE_DIRECTION, BOOL, float*, int>)(lpVtbl[4]))((IMFRateSupport*)Unsafe.AsPointer(ref this), eDirection, fThin, pflRate);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
         [return: NativeTypeName("HRESULT")]
-        public int IsRateSupported([NativeTypeName("BOOL")] int fThin, float flRate, float* pflNearestSupportedRate)
+        public int IsRateSupported(BOOL fThin, float flRate, float* pflNearestSupportedRate)
         {
-            return ((delegate* unmanaged<IMFRateSupport*, int, float, float*, int>)(lpVtbl[5]))((IMFRateSupport*)Unsafe.AsPointer(ref this), fThin, flRate, pflNearestSupportedRate);
+            return ((delegate* unmanaged<IMFRateSupport*, BOOL, float, float*, int>)(lpVtbl[5]))((IMFRateSupport*)Unsafe.AsPointer(ref this), fThin, flRate, pflNearestSupportedRate);
         }
     }
 }

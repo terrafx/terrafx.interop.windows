@@ -25,7 +25,6 @@ namespace TerraFX.Interop
         [NativeTypeName("UINT")]
         public uint uFormat;
 
-        [NativeTypeName("BOOL")]
-        public int fLink;
+        public BOOL fLink;
     }
 }

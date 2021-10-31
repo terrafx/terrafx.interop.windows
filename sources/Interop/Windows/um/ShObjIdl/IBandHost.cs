@@ -43,17 +43,17 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
         [return: NativeTypeName("HRESULT")]
-        public int CreateBand([NativeTypeName("const IID &")] Guid* rclsidBand, [NativeTypeName("BOOL")] int fAvailable, [NativeTypeName("BOOL")] int fVisible, [NativeTypeName("const IID &")] Guid* riid, void** ppv)
+        public int CreateBand([NativeTypeName("const IID &")] Guid* rclsidBand, BOOL fAvailable, BOOL fVisible, [NativeTypeName("const IID &")] Guid* riid, void** ppv)
         {
-            return ((delegate* unmanaged<IBandHost*, Guid*, int, int, Guid*, void**, int>)(lpVtbl[3]))((IBandHost*)Unsafe.AsPointer(ref this), rclsidBand, fAvailable, fVisible, riid, ppv);
+            return ((delegate* unmanaged<IBandHost*, Guid*, BOOL, BOOL, Guid*, void**, int>)(lpVtbl[3]))((IBandHost*)Unsafe.AsPointer(ref this), rclsidBand, fAvailable, fVisible, riid, ppv);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
         [return: NativeTypeName("HRESULT")]
-        public int SetBandAvailability([NativeTypeName("const IID &")] Guid* rclsidBand, [NativeTypeName("BOOL")] int fAvailable)
+        public int SetBandAvailability([NativeTypeName("const IID &")] Guid* rclsidBand, BOOL fAvailable)
         {
-            return ((delegate* unmanaged<IBandHost*, Guid*, int, int>)(lpVtbl[4]))((IBandHost*)Unsafe.AsPointer(ref this), rclsidBand, fAvailable);
+            return ((delegate* unmanaged<IBandHost*, Guid*, BOOL, int>)(lpVtbl[4]))((IBandHost*)Unsafe.AsPointer(ref this), rclsidBand, fAvailable);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

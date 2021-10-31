@@ -11,16 +11,13 @@ namespace TerraFX.Interop
     public static unsafe partial class Windows
     {
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int K32EnumProcesses([NativeTypeName("DWORD *")] uint* lpidProcess, [NativeTypeName("DWORD")] uint cb, [NativeTypeName("LPDWORD")] uint* lpcbNeeded);
+        public static extern BOOL K32EnumProcesses([NativeTypeName("DWORD *")] uint* lpidProcess, [NativeTypeName("DWORD")] uint cb, [NativeTypeName("LPDWORD")] uint* lpcbNeeded);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int K32EnumProcessModules([NativeTypeName("HANDLE")] IntPtr hProcess, [NativeTypeName("HMODULE *")] IntPtr* lphModule, [NativeTypeName("DWORD")] uint cb, [NativeTypeName("LPDWORD")] uint* lpcbNeeded);
+        public static extern BOOL K32EnumProcessModules([NativeTypeName("HANDLE")] IntPtr hProcess, [NativeTypeName("HMODULE *")] IntPtr* lphModule, [NativeTypeName("DWORD")] uint cb, [NativeTypeName("LPDWORD")] uint* lpcbNeeded);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int K32EnumProcessModulesEx([NativeTypeName("HANDLE")] IntPtr hProcess, [NativeTypeName("HMODULE *")] IntPtr* lphModule, [NativeTypeName("DWORD")] uint cb, [NativeTypeName("LPDWORD")] uint* lpcbNeeded, [NativeTypeName("DWORD")] uint dwFilterFlag);
+        public static extern BOOL K32EnumProcessModulesEx([NativeTypeName("HANDLE")] IntPtr hProcess, [NativeTypeName("HMODULE *")] IntPtr* lphModule, [NativeTypeName("DWORD")] uint cb, [NativeTypeName("LPDWORD")] uint* lpcbNeeded, [NativeTypeName("DWORD")] uint dwFilterFlag);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("DWORD")]
@@ -39,24 +36,19 @@ namespace TerraFX.Interop
         public static extern uint K32GetModuleFileNameExW([NativeTypeName("HANDLE")] IntPtr hProcess, [NativeTypeName("HMODULE")] IntPtr hModule, [NativeTypeName("LPWSTR")] ushort* lpFilename, [NativeTypeName("DWORD")] uint nSize);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int K32GetModuleInformation([NativeTypeName("HANDLE")] IntPtr hProcess, [NativeTypeName("HMODULE")] IntPtr hModule, [NativeTypeName("LPMODULEINFO")] MODULEINFO* lpmodinfo, [NativeTypeName("DWORD")] uint cb);
+        public static extern BOOL K32GetModuleInformation([NativeTypeName("HANDLE")] IntPtr hProcess, [NativeTypeName("HMODULE")] IntPtr hModule, [NativeTypeName("LPMODULEINFO")] MODULEINFO* lpmodinfo, [NativeTypeName("DWORD")] uint cb);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int K32EmptyWorkingSet([NativeTypeName("HANDLE")] IntPtr hProcess);
+        public static extern BOOL K32EmptyWorkingSet([NativeTypeName("HANDLE")] IntPtr hProcess);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int K32InitializeProcessForWsWatch([NativeTypeName("HANDLE")] IntPtr hProcess);
+        public static extern BOOL K32InitializeProcessForWsWatch([NativeTypeName("HANDLE")] IntPtr hProcess);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int K32GetWsChanges([NativeTypeName("HANDLE")] IntPtr hProcess, [NativeTypeName("PPSAPI_WS_WATCH_INFORMATION")] PSAPI_WS_WATCH_INFORMATION* lpWatchInfo, [NativeTypeName("DWORD")] uint cb);
+        public static extern BOOL K32GetWsChanges([NativeTypeName("HANDLE")] IntPtr hProcess, [NativeTypeName("PPSAPI_WS_WATCH_INFORMATION")] PSAPI_WS_WATCH_INFORMATION* lpWatchInfo, [NativeTypeName("DWORD")] uint cb);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int K32GetWsChangesEx([NativeTypeName("HANDLE")] IntPtr hProcess, [NativeTypeName("PPSAPI_WS_WATCH_INFORMATION_EX")] PSAPI_WS_WATCH_INFORMATION_EX* lpWatchInfoEx, [NativeTypeName("PDWORD")] uint* cb);
+        public static extern BOOL K32GetWsChangesEx([NativeTypeName("HANDLE")] IntPtr hProcess, [NativeTypeName("PPSAPI_WS_WATCH_INFORMATION_EX")] PSAPI_WS_WATCH_INFORMATION_EX* lpWatchInfoEx, [NativeTypeName("PDWORD")] uint* cb);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("DWORD")]
@@ -67,8 +59,7 @@ namespace TerraFX.Interop
         public static extern uint K32GetMappedFileNameA([NativeTypeName("HANDLE")] IntPtr hProcess, [NativeTypeName("LPVOID")] void* lpv, [NativeTypeName("LPSTR")] sbyte* lpFilename, [NativeTypeName("DWORD")] uint nSize);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int K32EnumDeviceDrivers([NativeTypeName("LPVOID *")] void** lpImageBase, [NativeTypeName("DWORD")] uint cb, [NativeTypeName("LPDWORD")] uint* lpcbNeeded);
+        public static extern BOOL K32EnumDeviceDrivers([NativeTypeName("LPVOID *")] void** lpImageBase, [NativeTypeName("DWORD")] uint cb, [NativeTypeName("LPDWORD")] uint* lpcbNeeded);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("DWORD")]
@@ -87,28 +78,22 @@ namespace TerraFX.Interop
         public static extern uint K32GetDeviceDriverFileNameW([NativeTypeName("LPVOID")] void* ImageBase, [NativeTypeName("LPWSTR")] ushort* lpFilename, [NativeTypeName("DWORD")] uint nSize);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int K32QueryWorkingSet([NativeTypeName("HANDLE")] IntPtr hProcess, [NativeTypeName("PVOID")] void* pv, [NativeTypeName("DWORD")] uint cb);
+        public static extern BOOL K32QueryWorkingSet([NativeTypeName("HANDLE")] IntPtr hProcess, [NativeTypeName("PVOID")] void* pv, [NativeTypeName("DWORD")] uint cb);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int K32QueryWorkingSetEx([NativeTypeName("HANDLE")] IntPtr hProcess, [NativeTypeName("PVOID")] void* pv, [NativeTypeName("DWORD")] uint cb);
+        public static extern BOOL K32QueryWorkingSetEx([NativeTypeName("HANDLE")] IntPtr hProcess, [NativeTypeName("PVOID")] void* pv, [NativeTypeName("DWORD")] uint cb);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int K32GetProcessMemoryInfo([NativeTypeName("HANDLE")] IntPtr Process, [NativeTypeName("PPROCESS_MEMORY_COUNTERS")] PROCESS_MEMORY_COUNTERS* ppsmemCounters, [NativeTypeName("DWORD")] uint cb);
+        public static extern BOOL K32GetProcessMemoryInfo([NativeTypeName("HANDLE")] IntPtr Process, [NativeTypeName("PPROCESS_MEMORY_COUNTERS")] PROCESS_MEMORY_COUNTERS* ppsmemCounters, [NativeTypeName("DWORD")] uint cb);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int K32GetPerformanceInfo([NativeTypeName("PPERFORMANCE_INFORMATION")] PERFORMANCE_INFORMATION* pPerformanceInformation, [NativeTypeName("DWORD")] uint cb);
+        public static extern BOOL K32GetPerformanceInfo([NativeTypeName("PPERFORMANCE_INFORMATION")] PERFORMANCE_INFORMATION* pPerformanceInformation, [NativeTypeName("DWORD")] uint cb);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int K32EnumPageFilesW([NativeTypeName("PENUM_PAGE_FILE_CALLBACKW")] delegate* unmanaged<void*, ENUM_PAGE_FILE_INFORMATION*, ushort*, int> pCallBackRoutine, [NativeTypeName("LPVOID")] void* pContext);
+        public static extern BOOL K32EnumPageFilesW([NativeTypeName("PENUM_PAGE_FILE_CALLBACKW")] delegate* unmanaged<void*, ENUM_PAGE_FILE_INFORMATION*, ushort*, BOOL> pCallBackRoutine, [NativeTypeName("LPVOID")] void* pContext);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int K32EnumPageFilesA([NativeTypeName("PENUM_PAGE_FILE_CALLBACKA")] delegate* unmanaged<void*, ENUM_PAGE_FILE_INFORMATION*, sbyte*, int> pCallBackRoutine, [NativeTypeName("LPVOID")] void* pContext);
+        public static extern BOOL K32EnumPageFilesA([NativeTypeName("PENUM_PAGE_FILE_CALLBACKA")] delegate* unmanaged<void*, ENUM_PAGE_FILE_INFORMATION*, sbyte*, BOOL> pCallBackRoutine, [NativeTypeName("LPVOID")] void* pContext);
 
         [DllImport("kernel32", ExactSpelling = true)]
         [return: NativeTypeName("DWORD")]
@@ -134,19 +119,19 @@ namespace TerraFX.Interop
         public const int PSAPI_VERSION = 2;
 
         [NativeTypeName("#define EnumProcessModules K32EnumProcessModules")]
-        public static delegate*<IntPtr, IntPtr*, uint, uint*, int> EnumProcessModules => &K32EnumProcessModules;
+        public static delegate*<IntPtr, IntPtr*, uint, uint*, BOOL> EnumProcessModules => &K32EnumProcessModules;
 
         [NativeTypeName("#define EnumProcessModulesEx K32EnumProcessModulesEx")]
-        public static delegate*<IntPtr, IntPtr*, uint, uint*, uint, int> EnumProcessModulesEx => &K32EnumProcessModulesEx;
+        public static delegate*<IntPtr, IntPtr*, uint, uint*, uint, BOOL> EnumProcessModulesEx => &K32EnumProcessModulesEx;
 
         [NativeTypeName("#define InitializeProcessForWsWatch K32InitializeProcessForWsWatch")]
-        public static delegate*<IntPtr, int> InitializeProcessForWsWatch => &K32InitializeProcessForWsWatch;
+        public static delegate*<IntPtr, BOOL> InitializeProcessForWsWatch => &K32InitializeProcessForWsWatch;
 
         [NativeTypeName("#define GetWsChanges K32GetWsChanges")]
-        public static delegate*<IntPtr, PSAPI_WS_WATCH_INFORMATION*, uint, int> GetWsChanges => &K32GetWsChanges;
+        public static delegate*<IntPtr, PSAPI_WS_WATCH_INFORMATION*, uint, BOOL> GetWsChanges => &K32GetWsChanges;
 
         [NativeTypeName("#define GetWsChangesEx K32GetWsChangesEx")]
-        public static delegate*<IntPtr, PSAPI_WS_WATCH_INFORMATION_EX*, uint*, int> GetWsChangesEx => &K32GetWsChangesEx;
+        public static delegate*<IntPtr, PSAPI_WS_WATCH_INFORMATION_EX*, uint*, BOOL> GetWsChangesEx => &K32GetWsChangesEx;
 
         [NativeTypeName("#define GetMappedFileNameW K32GetMappedFileNameW")]
         public static delegate*<IntPtr, void*, ushort*, uint, uint> GetMappedFileNameW => &K32GetMappedFileNameW;
@@ -155,7 +140,7 @@ namespace TerraFX.Interop
         public static delegate*<IntPtr, void*, sbyte*, uint, uint> GetMappedFileNameA => &K32GetMappedFileNameA;
 
         [NativeTypeName("#define EnumDeviceDrivers K32EnumDeviceDrivers")]
-        public static delegate*<void**, uint, uint*, int> EnumDeviceDrivers => &K32EnumDeviceDrivers;
+        public static delegate*<void**, uint, uint*, BOOL> EnumDeviceDrivers => &K32EnumDeviceDrivers;
 
         [NativeTypeName("#define GetDeviceDriverBaseNameA K32GetDeviceDriverBaseNameA")]
         public static delegate*<void*, sbyte*, uint, uint> GetDeviceDriverBaseNameA => &K32GetDeviceDriverBaseNameA;
@@ -170,7 +155,7 @@ namespace TerraFX.Interop
         public static delegate*<void*, ushort*, uint, uint> GetDeviceDriverFileNameW => &K32GetDeviceDriverFileNameW;
 
         [NativeTypeName("#define GetPerformanceInfo K32GetPerformanceInfo")]
-        public static delegate*<PERFORMANCE_INFORMATION*, uint, int> GetPerformanceInfo => &K32GetPerformanceInfo;
+        public static delegate*<PERFORMANCE_INFORMATION*, uint, BOOL> GetPerformanceInfo => &K32GetPerformanceInfo;
 
         [NativeTypeName("#define GetProcessImageFileNameA K32GetProcessImageFileNameA")]
         public static delegate*<IntPtr, sbyte*, uint, uint> GetProcessImageFileNameA => &K32GetProcessImageFileNameA;
@@ -191,28 +176,28 @@ namespace TerraFX.Interop
         public static delegate*<IntPtr, IntPtr, ushort*, uint, uint> GetModuleFileNameExW => &K32GetModuleFileNameExW;
 
         [NativeTypeName("#define EmptyWorkingSet K32EmptyWorkingSet")]
-        public static delegate*<IntPtr, int> EmptyWorkingSet => &K32EmptyWorkingSet;
+        public static delegate*<IntPtr, BOOL> EmptyWorkingSet => &K32EmptyWorkingSet;
 
         [NativeTypeName("#define EnumPageFilesW K32EnumPageFilesW")]
-        public static delegate*<delegate* unmanaged<void*, ENUM_PAGE_FILE_INFORMATION*, ushort*, int>, void*, int> EnumPageFilesW => &K32EnumPageFilesW;
+        public static delegate*<delegate* unmanaged<void*, ENUM_PAGE_FILE_INFORMATION*, ushort*, BOOL>, void*, BOOL> EnumPageFilesW => &K32EnumPageFilesW;
 
         [NativeTypeName("#define EnumPageFilesA K32EnumPageFilesA")]
-        public static delegate*<delegate* unmanaged<void*, ENUM_PAGE_FILE_INFORMATION*, sbyte*, int>, void*, int> EnumPageFilesA => &K32EnumPageFilesA;
+        public static delegate*<delegate* unmanaged<void*, ENUM_PAGE_FILE_INFORMATION*, sbyte*, BOOL>, void*, BOOL> EnumPageFilesA => &K32EnumPageFilesA;
 
         [NativeTypeName("#define EnumProcesses K32EnumProcesses")]
-        public static delegate*<uint*, uint, uint*, int> EnumProcesses => &K32EnumProcesses;
+        public static delegate*<uint*, uint, uint*, BOOL> EnumProcesses => &K32EnumProcesses;
 
         [NativeTypeName("#define GetProcessMemoryInfo K32GetProcessMemoryInfo")]
-        public static delegate*<IntPtr, PROCESS_MEMORY_COUNTERS*, uint, int> GetProcessMemoryInfo => &K32GetProcessMemoryInfo;
+        public static delegate*<IntPtr, PROCESS_MEMORY_COUNTERS*, uint, BOOL> GetProcessMemoryInfo => &K32GetProcessMemoryInfo;
 
         [NativeTypeName("#define GetModuleInformation K32GetModuleInformation")]
-        public static delegate*<IntPtr, IntPtr, MODULEINFO*, uint, int> GetModuleInformation => &K32GetModuleInformation;
+        public static delegate*<IntPtr, IntPtr, MODULEINFO*, uint, BOOL> GetModuleInformation => &K32GetModuleInformation;
 
         [NativeTypeName("#define QueryWorkingSet K32QueryWorkingSet")]
-        public static delegate*<IntPtr, void*, uint, int> QueryWorkingSet => &K32QueryWorkingSet;
+        public static delegate*<IntPtr, void*, uint, BOOL> QueryWorkingSet => &K32QueryWorkingSet;
 
         [NativeTypeName("#define QueryWorkingSetEx K32QueryWorkingSetEx")]
-        public static delegate*<IntPtr, void*, uint, int> QueryWorkingSetEx => &K32QueryWorkingSetEx;
+        public static delegate*<IntPtr, void*, uint, BOOL> QueryWorkingSetEx => &K32QueryWorkingSetEx;
 
         [NativeTypeName("#define GetModuleBaseName GetModuleBaseNameW")]
         public static delegate*<IntPtr, IntPtr, ushort*, uint, uint> GetModuleBaseName => &K32GetModuleBaseNameW;
@@ -230,7 +215,7 @@ namespace TerraFX.Interop
         public static delegate*<void*, ushort*, uint, uint> GetDeviceDriverFileName => &K32GetDeviceDriverFileNameW;
 
         [NativeTypeName("#define EnumPageFiles EnumPageFilesW")]
-        public static delegate*<delegate* unmanaged<void*, ENUM_PAGE_FILE_INFORMATION*, ushort*, int>, void*, int> EnumPageFiles => &K32EnumPageFilesW;
+        public static delegate*<delegate* unmanaged<void*, ENUM_PAGE_FILE_INFORMATION*, ushort*, BOOL>, void*, BOOL> EnumPageFiles => &K32EnumPageFilesW;
 
         [NativeTypeName("#define GetProcessImageFileName GetProcessImageFileNameW")]
         public static delegate*<IntPtr, ushort*, uint, uint> GetProcessImageFileName => &K32GetProcessImageFileNameW;

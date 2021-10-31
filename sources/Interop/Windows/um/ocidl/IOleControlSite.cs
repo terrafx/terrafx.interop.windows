@@ -51,9 +51,9 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
         [return: NativeTypeName("HRESULT")]
-        public int LockInPlaceActive([NativeTypeName("BOOL")] int fLock)
+        public int LockInPlaceActive(BOOL fLock)
         {
-            return ((delegate* unmanaged<IOleControlSite*, int, int>)(lpVtbl[4]))((IOleControlSite*)Unsafe.AsPointer(ref this), fLock);
+            return ((delegate* unmanaged<IOleControlSite*, BOOL, int>)(lpVtbl[4]))((IOleControlSite*)Unsafe.AsPointer(ref this), fLock);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -83,9 +83,9 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(8)]
         [return: NativeTypeName("HRESULT")]
-        public int OnFocus([NativeTypeName("BOOL")] int fGotFocus)
+        public int OnFocus(BOOL fGotFocus)
         {
-            return ((delegate* unmanaged<IOleControlSite*, int, int>)(lpVtbl[8]))((IOleControlSite*)Unsafe.AsPointer(ref this), fGotFocus);
+            return ((delegate* unmanaged<IOleControlSite*, BOOL, int>)(lpVtbl[8]))((IOleControlSite*)Unsafe.AsPointer(ref this), fGotFocus);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

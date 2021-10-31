@@ -21,7 +21,6 @@ namespace TerraFX.Interop
 
         public DXGI_RATIONAL FrameRate;
 
-        [NativeTypeName("BOOL")]
-        public int EnableStereo;
+        public BOOL EnableStereo;
     }
 }

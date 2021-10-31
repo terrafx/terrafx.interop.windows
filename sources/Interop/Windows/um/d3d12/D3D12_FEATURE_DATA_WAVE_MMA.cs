@@ -13,8 +13,7 @@ namespace TerraFX.Interop
 
         public D3D12_WAVE_MMA_DIMENSION N;
 
-        [NativeTypeName("BOOL")]
-        public int Supported;
+        public BOOL Supported;
 
         [NativeTypeName("UINT")]
         public uint K;

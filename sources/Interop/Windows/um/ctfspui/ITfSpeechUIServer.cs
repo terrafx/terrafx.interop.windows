@@ -51,9 +51,9 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
         [return: NativeTypeName("HRESULT")]
-        public int ShowUI([NativeTypeName("BOOL")] int fShow)
+        public int ShowUI(BOOL fShow)
         {
-            return ((delegate* unmanaged<ITfSpeechUIServer*, int, int>)(lpVtbl[4]))((ITfSpeechUIServer*)Unsafe.AsPointer(ref this), fShow);
+            return ((delegate* unmanaged<ITfSpeechUIServer*, BOOL, int>)(lpVtbl[4]))((ITfSpeechUIServer*)Unsafe.AsPointer(ref this), fShow);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

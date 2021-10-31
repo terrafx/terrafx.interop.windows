@@ -236,9 +236,9 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(30)]
-        public void SetPredication(ID3D11Predicate* pPredicate, [NativeTypeName("BOOL")] int PredicateValue)
+        public void SetPredication(ID3D11Predicate* pPredicate, BOOL PredicateValue)
         {
-            ((delegate* unmanaged<ID3D11DeviceContext*, ID3D11Predicate*, int, void>)(lpVtbl[30]))((ID3D11DeviceContext*)Unsafe.AsPointer(ref this), pPredicate, PredicateValue);
+            ((delegate* unmanaged<ID3D11DeviceContext*, ID3D11Predicate*, BOOL, void>)(lpVtbl[30]))((ID3D11DeviceContext*)Unsafe.AsPointer(ref this), pPredicate, PredicateValue);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -433,9 +433,9 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(58)]
-        public void ExecuteCommandList(ID3D11CommandList* pCommandList, [NativeTypeName("BOOL")] int RestoreContextState)
+        public void ExecuteCommandList(ID3D11CommandList* pCommandList, BOOL RestoreContextState)
         {
-            ((delegate* unmanaged<ID3D11DeviceContext*, ID3D11CommandList*, int, void>)(lpVtbl[58]))((ID3D11DeviceContext*)Unsafe.AsPointer(ref this), pCommandList, RestoreContextState);
+            ((delegate* unmanaged<ID3D11DeviceContext*, ID3D11CommandList*, BOOL, void>)(lpVtbl[58]))((ID3D11DeviceContext*)Unsafe.AsPointer(ref this), pCommandList, RestoreContextState);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -629,9 +629,9 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(86)]
-        public void GetPredication(ID3D11Predicate** ppPredicate, [NativeTypeName("BOOL *")] int* pPredicateValue)
+        public void GetPredication(ID3D11Predicate** ppPredicate, BOOL* pPredicateValue)
         {
-            ((delegate* unmanaged<ID3D11DeviceContext*, ID3D11Predicate**, int*, void>)(lpVtbl[86]))((ID3D11DeviceContext*)Unsafe.AsPointer(ref this), ppPredicate, pPredicateValue);
+            ((delegate* unmanaged<ID3D11DeviceContext*, ID3D11Predicate**, BOOL*, void>)(lpVtbl[86]))((ID3D11DeviceContext*)Unsafe.AsPointer(ref this), ppPredicate, pPredicateValue);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -827,9 +827,9 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(114)]
         [return: NativeTypeName("HRESULT")]
-        public int FinishCommandList([NativeTypeName("BOOL")] int RestoreDeferredContextState, ID3D11CommandList** ppCommandList)
+        public int FinishCommandList(BOOL RestoreDeferredContextState, ID3D11CommandList** ppCommandList)
         {
-            return ((delegate* unmanaged<ID3D11DeviceContext*, int, ID3D11CommandList**, int>)(lpVtbl[114]))((ID3D11DeviceContext*)Unsafe.AsPointer(ref this), RestoreDeferredContextState, ppCommandList);
+            return ((delegate* unmanaged<ID3D11DeviceContext*, BOOL, ID3D11CommandList**, int>)(lpVtbl[114]))((ID3D11DeviceContext*)Unsafe.AsPointer(ref this), RestoreDeferredContextState, ppCommandList);
         }
     }
 }

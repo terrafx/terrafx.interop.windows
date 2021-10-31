@@ -7,7 +7,6 @@ namespace TerraFX.Interop
 {
     public partial struct D3D12_FEATURE_DATA_VIDEO_ARCHITECTURE
     {
-        [NativeTypeName("BOOL")]
-        public int IOCoherent;
+        public BOOL IOCoherent;
     }
 }

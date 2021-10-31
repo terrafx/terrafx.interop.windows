@@ -32,11 +32,10 @@ namespace TerraFX.Interop
 
         [DllImport("gamingtcui", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
-        public static extern int ProcessPendingGameUI([NativeTypeName("BOOL")] int waitForCompletion);
+        public static extern int ProcessPendingGameUI(BOOL waitForCompletion);
 
         [DllImport("gamingtcui", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int TryCancelPendingGameUI();
+        public static extern BOOL TryCancelPendingGameUI();
 
         [DllImport("gamingtcui", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
@@ -44,7 +43,7 @@ namespace TerraFX.Interop
 
         [DllImport("gamingtcui", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
-        public static extern int CheckGamingPrivilegeSilently([NativeTypeName("UINT32")] uint privilegeId, [NativeTypeName("HSTRING")] IntPtr scope, [NativeTypeName("HSTRING")] IntPtr policy, [NativeTypeName("BOOL *")] int* hasPrivilege);
+        public static extern int CheckGamingPrivilegeSilently([NativeTypeName("UINT32")] uint privilegeId, [NativeTypeName("HSTRING")] IntPtr scope, [NativeTypeName("HSTRING")] IntPtr policy, BOOL* hasPrivilege);
 
         [DllImport("gamingtcui", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
@@ -72,7 +71,7 @@ namespace TerraFX.Interop
 
         [DllImport("gamingtcui", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
-        public static extern int CheckGamingPrivilegeSilentlyForUser(IInspectable* user, [NativeTypeName("UINT32")] uint privilegeId, [NativeTypeName("HSTRING")] IntPtr scope, [NativeTypeName("HSTRING")] IntPtr policy, [NativeTypeName("BOOL *")] int* hasPrivilege);
+        public static extern int CheckGamingPrivilegeSilentlyForUser(IInspectable* user, [NativeTypeName("UINT32")] uint privilegeId, [NativeTypeName("HSTRING")] IntPtr scope, [NativeTypeName("HSTRING")] IntPtr policy, BOOL* hasPrivilege);
 
         [DllImport("gamingtcui", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]

@@ -51,9 +51,9 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
         [return: NativeTypeName("HRESULT")]
-        public int ContextSensitiveHelp([NativeTypeName("BOOL")] int fEnterMode)
+        public int ContextSensitiveHelp(BOOL fEnterMode)
         {
-            return ((delegate* unmanaged<IOleInPlaceSiteEx*, int, int>)(lpVtbl[4]))((IOleInPlaceSiteEx*)Unsafe.AsPointer(ref this), fEnterMode);
+            return ((delegate* unmanaged<IOleInPlaceSiteEx*, BOOL, int>)(lpVtbl[4]))((IOleInPlaceSiteEx*)Unsafe.AsPointer(ref this), fEnterMode);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -99,9 +99,9 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(10)]
         [return: NativeTypeName("HRESULT")]
-        public int OnUIDeactivate([NativeTypeName("BOOL")] int fUndoable)
+        public int OnUIDeactivate(BOOL fUndoable)
         {
-            return ((delegate* unmanaged<IOleInPlaceSiteEx*, int, int>)(lpVtbl[10]))((IOleInPlaceSiteEx*)Unsafe.AsPointer(ref this), fUndoable);
+            return ((delegate* unmanaged<IOleInPlaceSiteEx*, BOOL, int>)(lpVtbl[10]))((IOleInPlaceSiteEx*)Unsafe.AsPointer(ref this), fUndoable);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -139,17 +139,17 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(15)]
         [return: NativeTypeName("HRESULT")]
-        public int OnInPlaceActivateEx([NativeTypeName("BOOL *")] int* pfNoRedraw, [NativeTypeName("DWORD")] uint dwFlags)
+        public int OnInPlaceActivateEx(BOOL* pfNoRedraw, [NativeTypeName("DWORD")] uint dwFlags)
         {
-            return ((delegate* unmanaged<IOleInPlaceSiteEx*, int*, uint, int>)(lpVtbl[15]))((IOleInPlaceSiteEx*)Unsafe.AsPointer(ref this), pfNoRedraw, dwFlags);
+            return ((delegate* unmanaged<IOleInPlaceSiteEx*, BOOL*, uint, int>)(lpVtbl[15]))((IOleInPlaceSiteEx*)Unsafe.AsPointer(ref this), pfNoRedraw, dwFlags);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(16)]
         [return: NativeTypeName("HRESULT")]
-        public int OnInPlaceDeactivateEx([NativeTypeName("BOOL")] int fNoRedraw)
+        public int OnInPlaceDeactivateEx(BOOL fNoRedraw)
         {
-            return ((delegate* unmanaged<IOleInPlaceSiteEx*, int, int>)(lpVtbl[16]))((IOleInPlaceSiteEx*)Unsafe.AsPointer(ref this), fNoRedraw);
+            return ((delegate* unmanaged<IOleInPlaceSiteEx*, BOOL, int>)(lpVtbl[16]))((IOleInPlaceSiteEx*)Unsafe.AsPointer(ref this), fNoRedraw);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

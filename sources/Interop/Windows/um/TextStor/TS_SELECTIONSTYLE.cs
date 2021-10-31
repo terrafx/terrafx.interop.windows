@@ -9,7 +9,6 @@ namespace TerraFX.Interop
     {
         public TsActiveSelEnd ase;
 
-        [NativeTypeName("BOOL")]
-        public int fInterimChar;
+        public BOOL fInterimChar;
     }
 }

@@ -59,17 +59,17 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
         [return: NativeTypeName("HRESULT")]
-        public int CompareItem([NativeTypeName("const GUID &")] Guid* guidKey, [NativeTypeName("const PROPVARIANT &")] PROPVARIANT* Value, [NativeTypeName("BOOL *")] int* pbResult)
+        public int CompareItem([NativeTypeName("const GUID &")] Guid* guidKey, [NativeTypeName("const PROPVARIANT &")] PROPVARIANT* Value, BOOL* pbResult)
         {
-            return ((delegate* unmanaged<IMFSensorStream*, Guid*, PROPVARIANT*, int*, int>)(lpVtbl[5]))((IMFSensorStream*)Unsafe.AsPointer(ref this), guidKey, Value, pbResult);
+            return ((delegate* unmanaged<IMFSensorStream*, Guid*, PROPVARIANT*, BOOL*, int>)(lpVtbl[5]))((IMFSensorStream*)Unsafe.AsPointer(ref this), guidKey, Value, pbResult);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
         [return: NativeTypeName("HRESULT")]
-        public int Compare(IMFAttributes* pTheirs, MF_ATTRIBUTES_MATCH_TYPE MatchType, [NativeTypeName("BOOL *")] int* pbResult)
+        public int Compare(IMFAttributes* pTheirs, MF_ATTRIBUTES_MATCH_TYPE MatchType, BOOL* pbResult)
         {
-            return ((delegate* unmanaged<IMFSensorStream*, IMFAttributes*, MF_ATTRIBUTES_MATCH_TYPE, int*, int>)(lpVtbl[6]))((IMFSensorStream*)Unsafe.AsPointer(ref this), pTheirs, MatchType, pbResult);
+            return ((delegate* unmanaged<IMFSensorStream*, IMFAttributes*, MF_ATTRIBUTES_MATCH_TYPE, BOOL*, int>)(lpVtbl[6]))((IMFSensorStream*)Unsafe.AsPointer(ref this), pTheirs, MatchType, pbResult);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

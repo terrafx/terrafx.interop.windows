@@ -147,9 +147,9 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(16)]
         [return: NativeTypeName("HRESULT")]
-        public int OverlappedResult([NativeTypeName("LPOVERLAPPED")] OVERLAPPED* lpOverlapped, [NativeTypeName("LPDWORD")] uint* lpNumberOfBytesTransferred, [NativeTypeName("BOOL")] int bWait)
+        public int OverlappedResult([NativeTypeName("LPOVERLAPPED")] OVERLAPPED* lpOverlapped, [NativeTypeName("LPDWORD")] uint* lpNumberOfBytesTransferred, BOOL bWait)
         {
-            return ((delegate* unmanaged<IStreamAsync*, OVERLAPPED*, uint*, int, int>)(lpVtbl[16]))((IStreamAsync*)Unsafe.AsPointer(ref this), lpOverlapped, lpNumberOfBytesTransferred, bWait);
+            return ((delegate* unmanaged<IStreamAsync*, OVERLAPPED*, uint*, BOOL, int>)(lpVtbl[16]))((IStreamAsync*)Unsafe.AsPointer(ref this), lpOverlapped, lpNumberOfBytesTransferred, bWait);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

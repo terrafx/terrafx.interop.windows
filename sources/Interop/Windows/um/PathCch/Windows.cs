@@ -10,12 +10,10 @@ namespace TerraFX.Interop
     public static unsafe partial class Windows
     {
         [DllImport("kernelbase", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int PathIsUNCEx([NativeTypeName("PCWSTR")] ushort* pszPath, [NativeTypeName("PCWSTR *")] ushort** ppszServer);
+        public static extern BOOL PathIsUNCEx([NativeTypeName("PCWSTR")] ushort* pszPath, [NativeTypeName("PCWSTR *")] ushort** ppszServer);
 
         [DllImport("kernelbase", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int PathCchIsRoot([NativeTypeName("PCWSTR")] ushort* pszPath);
+        public static extern BOOL PathCchIsRoot([NativeTypeName("PCWSTR")] ushort* pszPath);
 
         [DllImport("kernelbase", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]

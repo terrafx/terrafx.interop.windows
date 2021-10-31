@@ -59,9 +59,9 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
         [return: NativeTypeName("HRESULT")]
-        public int IsSameOrigin([NativeTypeName("LPCWSTR")] ushort* wszURL, [NativeTypeName("BOOL *")] int* pfIsSameOrigin)
+        public int IsSameOrigin([NativeTypeName("LPCWSTR")] ushort* wszURL, BOOL* pfIsSameOrigin)
         {
-            return ((delegate* unmanaged<IMFNetCrossOriginSupport*, ushort*, int*, int>)(lpVtbl[5]))((IMFNetCrossOriginSupport*)Unsafe.AsPointer(ref this), wszURL, pfIsSameOrigin);
+            return ((delegate* unmanaged<IMFNetCrossOriginSupport*, ushort*, BOOL*, int>)(lpVtbl[5]))((IMFNetCrossOriginSupport*)Unsafe.AsPointer(ref this), wszURL, pfIsSameOrigin);
         }
     }
 }

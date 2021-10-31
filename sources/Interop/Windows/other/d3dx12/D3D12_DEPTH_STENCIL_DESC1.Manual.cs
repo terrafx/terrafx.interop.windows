@@ -59,7 +59,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public D3D12_DEPTH_STENCIL_DESC1([NativeTypeName("BOOL")] int depthEnable, D3D12_DEPTH_WRITE_MASK depthWriteMask, D3D12_COMPARISON_FUNC depthFunc, [NativeTypeName("BOOL")] int stencilEnable, [NativeTypeName("UINT8")] byte stencilReadMask, [NativeTypeName("UINT8")] byte stencilWriteMask, D3D12_STENCIL_OP frontStencilFailOp, D3D12_STENCIL_OP frontStencilDepthFailOp, D3D12_STENCIL_OP frontStencilPassOp, D3D12_COMPARISON_FUNC frontStencilFunc, D3D12_STENCIL_OP backStencilFailOp, D3D12_STENCIL_OP backStencilDepthFailOp, D3D12_STENCIL_OP backStencilPassOp, D3D12_COMPARISON_FUNC backStencilFunc, [NativeTypeName("BOOL")] int depthBoundsTestEnable)
+        public D3D12_DEPTH_STENCIL_DESC1(BOOL depthEnable, D3D12_DEPTH_WRITE_MASK depthWriteMask, D3D12_COMPARISON_FUNC depthFunc, BOOL stencilEnable, [NativeTypeName("UINT8")] byte stencilReadMask, [NativeTypeName("UINT8")] byte stencilWriteMask, D3D12_STENCIL_OP frontStencilFailOp, D3D12_STENCIL_OP frontStencilDepthFailOp, D3D12_STENCIL_OP frontStencilPassOp, D3D12_COMPARISON_FUNC frontStencilFunc, D3D12_STENCIL_OP backStencilFailOp, D3D12_STENCIL_OP backStencilDepthFailOp, D3D12_STENCIL_OP backStencilPassOp, D3D12_COMPARISON_FUNC backStencilFunc, BOOL depthBoundsTestEnable)
         {
             DepthEnable = depthEnable;
             DepthWriteMask = depthWriteMask;

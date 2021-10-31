@@ -99,9 +99,9 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(10)]
         [return: NativeTypeName("HRESULT")]
-        public int IsThreadFocus([NativeTypeName("BOOL *")] int* pfThreadFocus)
+        public int IsThreadFocus(BOOL* pfThreadFocus)
         {
-            return ((delegate* unmanaged<ITfThreadMgr*, int*, int>)(lpVtbl[10]))((ITfThreadMgr*)Unsafe.AsPointer(ref this), pfThreadFocus);
+            return ((delegate* unmanaged<ITfThreadMgr*, BOOL*, int>)(lpVtbl[10]))((ITfThreadMgr*)Unsafe.AsPointer(ref this), pfThreadFocus);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

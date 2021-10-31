@@ -150,8 +150,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(17)]
-        [return: NativeTypeName("BOOL")]
-        public int IsSampleFrequencyShader()
+        public BOOL IsSampleFrequencyShader()
         {
             return ((delegate* unmanaged<ID3D11ShaderReflection*, int>)(lpVtbl[17]))((ID3D11ShaderReflection*)Unsafe.AsPointer(ref this));
         }

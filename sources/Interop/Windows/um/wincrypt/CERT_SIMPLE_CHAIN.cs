@@ -21,8 +21,7 @@ namespace TerraFX.Interop
         [NativeTypeName("PCERT_TRUST_LIST_INFO")]
         public CERT_TRUST_LIST_INFO* pTrustListInfo;
 
-        [NativeTypeName("BOOL")]
-        public int fHasRevocationFreshnessTime;
+        public BOOL fHasRevocationFreshnessTime;
 
         [NativeTypeName("DWORD")]
         public uint dwRevocationFreshnessTime;

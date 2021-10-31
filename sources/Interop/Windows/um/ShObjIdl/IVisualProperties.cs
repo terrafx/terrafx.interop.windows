@@ -83,9 +83,9 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(8)]
         [return: NativeTypeName("HRESULT")]
-        public int SetFont([NativeTypeName("const LOGFONTW *")] LOGFONTW* plf, [NativeTypeName("BOOL")] int bRedraw)
+        public int SetFont([NativeTypeName("const LOGFONTW *")] LOGFONTW* plf, BOOL bRedraw)
         {
-            return ((delegate* unmanaged<IVisualProperties*, LOGFONTW*, int, int>)(lpVtbl[8]))((IVisualProperties*)Unsafe.AsPointer(ref this), plf, bRedraw);
+            return ((delegate* unmanaged<IVisualProperties*, LOGFONTW*, BOOL, int>)(lpVtbl[8]))((IVisualProperties*)Unsafe.AsPointer(ref this), plf, bRedraw);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

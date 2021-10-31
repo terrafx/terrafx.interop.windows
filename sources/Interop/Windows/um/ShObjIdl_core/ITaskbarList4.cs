@@ -83,9 +83,9 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(8)]
         [return: NativeTypeName("HRESULT")]
-        public int MarkFullscreenWindow([NativeTypeName("HWND")] IntPtr hwnd, [NativeTypeName("BOOL")] int fFullscreen)
+        public int MarkFullscreenWindow([NativeTypeName("HWND")] IntPtr hwnd, BOOL fFullscreen)
         {
-            return ((delegate* unmanaged<ITaskbarList4*, IntPtr, int, int>)(lpVtbl[8]))((ITaskbarList4*)Unsafe.AsPointer(ref this), hwnd, fFullscreen);
+            return ((delegate* unmanaged<ITaskbarList4*, IntPtr, BOOL, int>)(lpVtbl[8]))((ITaskbarList4*)Unsafe.AsPointer(ref this), hwnd, fFullscreen);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

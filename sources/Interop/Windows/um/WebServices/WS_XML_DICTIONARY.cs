@@ -17,7 +17,6 @@ namespace TerraFX.Interop
         [NativeTypeName("ULONG")]
         public uint stringCount;
 
-        [NativeTypeName("BOOL")]
-        public int isConst;
+        public BOOL isConst;
     }
 }

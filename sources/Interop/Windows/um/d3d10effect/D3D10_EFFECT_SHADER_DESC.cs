@@ -10,8 +10,7 @@ namespace TerraFX.Interop
         [NativeTypeName("const BYTE *")]
         public byte* pInputSignature;
 
-        [NativeTypeName("BOOL")]
-        public int IsInline;
+        public BOOL IsInline;
 
         [NativeTypeName("const BYTE *")]
         public byte* pBytecode;

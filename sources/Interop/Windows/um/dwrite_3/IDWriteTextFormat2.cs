@@ -250,15 +250,14 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(30)]
         [return: NativeTypeName("HRESULT")]
-        public int SetLastLineWrapping([NativeTypeName("BOOL")] int isLastLineWrappingEnabled)
+        public int SetLastLineWrapping(BOOL isLastLineWrappingEnabled)
         {
-            return ((delegate* unmanaged<IDWriteTextFormat2*, int, int>)(lpVtbl[30]))((IDWriteTextFormat2*)Unsafe.AsPointer(ref this), isLastLineWrappingEnabled);
+            return ((delegate* unmanaged<IDWriteTextFormat2*, BOOL, int>)(lpVtbl[30]))((IDWriteTextFormat2*)Unsafe.AsPointer(ref this), isLastLineWrappingEnabled);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(31)]
-        [return: NativeTypeName("BOOL")]
-        public int GetLastLineWrapping()
+        public BOOL GetLastLineWrapping()
         {
             return ((delegate* unmanaged<IDWriteTextFormat2*, int>)(lpVtbl[31]))((IDWriteTextFormat2*)Unsafe.AsPointer(ref this));
         }

@@ -51,9 +51,9 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
         [return: NativeTypeName("HRESULT")]
-        public int SetTrainingState([NativeTypeName("BOOL")] int fDoingTraining, [NativeTypeName("BOOL")] int fAdaptFromTrainingData)
+        public int SetTrainingState(BOOL fDoingTraining, BOOL fAdaptFromTrainingData)
         {
-            return ((delegate* unmanaged<ISpRecognizer2*, int, int, int>)(lpVtbl[4]))((ISpRecognizer2*)Unsafe.AsPointer(ref this), fDoingTraining, fAdaptFromTrainingData);
+            return ((delegate* unmanaged<ISpRecognizer2*, BOOL, BOOL, int>)(lpVtbl[4]))((ISpRecognizer2*)Unsafe.AsPointer(ref this), fDoingTraining, fAdaptFromTrainingData);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

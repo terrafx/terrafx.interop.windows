@@ -51,9 +51,9 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
         [return: NativeTypeName("HRESULT")]
-        public int EnableBuffering([NativeTypeName("BOOL")] int fEnable)
+        public int EnableBuffering(BOOL fEnable)
         {
-            return ((delegate* unmanaged<IMFByteStreamBuffering*, int, int>)(lpVtbl[4]))((IMFByteStreamBuffering*)Unsafe.AsPointer(ref this), fEnable);
+            return ((delegate* unmanaged<IMFByteStreamBuffering*, BOOL, int>)(lpVtbl[4]))((IMFByteStreamBuffering*)Unsafe.AsPointer(ref this), fEnable);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

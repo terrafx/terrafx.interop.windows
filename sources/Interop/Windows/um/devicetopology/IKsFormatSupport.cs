@@ -43,9 +43,9 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
         [return: NativeTypeName("HRESULT")]
-        public int IsFormatSupported([NativeTypeName("PKSDATAFORMAT")] KSDATAFORMAT* pKsFormat, [NativeTypeName("DWORD")] uint cbFormat, [NativeTypeName("BOOL *")] int* pbSupported)
+        public int IsFormatSupported([NativeTypeName("PKSDATAFORMAT")] KSDATAFORMAT* pKsFormat, [NativeTypeName("DWORD")] uint cbFormat, BOOL* pbSupported)
         {
-            return ((delegate* unmanaged<IKsFormatSupport*, KSDATAFORMAT*, uint, int*, int>)(lpVtbl[3]))((IKsFormatSupport*)Unsafe.AsPointer(ref this), pKsFormat, cbFormat, pbSupported);
+            return ((delegate* unmanaged<IKsFormatSupport*, KSDATAFORMAT*, uint, BOOL*, int>)(lpVtbl[3]))((IKsFormatSupport*)Unsafe.AsPointer(ref this), pKsFormat, cbFormat, pbSupported);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

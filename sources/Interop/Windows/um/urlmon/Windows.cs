@@ -266,7 +266,7 @@ namespace TerraFX.Interop
 
         [DllImport("urlmon", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
-        public static extern int CoInternetSetFeatureEnabled(INTERNETFEATURELIST FeatureEntry, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("BOOL")] int fEnable);
+        public static extern int CoInternetSetFeatureEnabled(INTERNETFEATURELIST FeatureEntry, [NativeTypeName("DWORD")] uint dwFlags, BOOL fEnable);
 
         [DllImport("urlmon", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
@@ -316,16 +316,13 @@ namespace TerraFX.Interop
         public static extern int SetSoftwareUpdateAdvertisementState([NativeTypeName("LPCWSTR")] ushort* szDistUnit, [NativeTypeName("DWORD")] uint dwAdState, [NativeTypeName("DWORD")] uint dwAdvertisedVersionMS, [NativeTypeName("DWORD")] uint dwAdvertisedVersionLS);
 
         [DllImport("urlmon", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int IsLoggingEnabledA([NativeTypeName("LPCSTR")] sbyte* pszUrl);
+        public static extern BOOL IsLoggingEnabledA([NativeTypeName("LPCSTR")] sbyte* pszUrl);
 
         [DllImport("urlmon", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int IsLoggingEnabledW([NativeTypeName("LPCWSTR")] ushort* pwszUrl);
+        public static extern BOOL IsLoggingEnabledW([NativeTypeName("LPCWSTR")] ushort* pwszUrl);
 
         [DllImport("urlmon", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int WriteHitLogging([NativeTypeName("LPHIT_LOGGING_INFO")] HIT_LOGGING_INFO* lpLogginginfo);
+        public static extern BOOL WriteHitLogging([NativeTypeName("LPHIT_LOGGING_INFO")] HIT_LOGGING_INFO* lpLogginginfo);
 
         [NativeTypeName("#define BINDF_DONTUSECACHE BINDF_GETNEWESTVERSION")]
         public const BINDF BINDF_DONTUSECACHE = BINDF_GETNEWESTVERSION;
@@ -1594,7 +1591,7 @@ namespace TerraFX.Interop
         public const int SOFTDIST_ADSTATE_INSTALLED = 0x00000003;
 
         [NativeTypeName("#define IsLoggingEnabled IsLoggingEnabledW")]
-        public static delegate*<ushort*, int> IsLoggingEnabled => &IsLoggingEnabledW;
+        public static delegate*<ushort*, BOOL> IsLoggingEnabled => &IsLoggingEnabledW;
 
         [NativeTypeName("#define CONFIRMSAFETYACTION_LOADOBJECT 0x00000001")]
         public const int CONFIRMSAFETYACTION_LOADOBJECT = 0x00000001;

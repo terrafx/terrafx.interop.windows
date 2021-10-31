@@ -83,9 +83,9 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(8)]
         [return: NativeTypeName("HRESULT")]
-        public int RegisterProfile([NativeTypeName("const IID &")] Guid* rclsid, [NativeTypeName("LANGID")] ushort langid, [NativeTypeName("const GUID &")] Guid* guidProfile, [NativeTypeName("const WCHAR *")] ushort* pchDesc, [NativeTypeName("ULONG")] uint cchDesc, [NativeTypeName("const WCHAR *")] ushort* pchIconFile, [NativeTypeName("ULONG")] uint cchFile, [NativeTypeName("ULONG")] uint uIconIndex, [NativeTypeName("HKL")] IntPtr hklsubstitute, [NativeTypeName("DWORD")] uint dwPreferredLayout, [NativeTypeName("BOOL")] int bEnabledByDefault, [NativeTypeName("DWORD")] uint dwFlags)
+        public int RegisterProfile([NativeTypeName("const IID &")] Guid* rclsid, [NativeTypeName("LANGID")] ushort langid, [NativeTypeName("const GUID &")] Guid* guidProfile, [NativeTypeName("const WCHAR *")] ushort* pchDesc, [NativeTypeName("ULONG")] uint cchDesc, [NativeTypeName("const WCHAR *")] ushort* pchIconFile, [NativeTypeName("ULONG")] uint cchFile, [NativeTypeName("ULONG")] uint uIconIndex, [NativeTypeName("HKL")] IntPtr hklsubstitute, [NativeTypeName("DWORD")] uint dwPreferredLayout, BOOL bEnabledByDefault, [NativeTypeName("DWORD")] uint dwFlags)
         {
-            return ((delegate* unmanaged<ITfInputProcessorProfileMgr*, Guid*, ushort, Guid*, ushort*, uint, ushort*, uint, uint, IntPtr, uint, int, uint, int>)(lpVtbl[8]))((ITfInputProcessorProfileMgr*)Unsafe.AsPointer(ref this), rclsid, langid, guidProfile, pchDesc, cchDesc, pchIconFile, cchFile, uIconIndex, hklsubstitute, dwPreferredLayout, bEnabledByDefault, dwFlags);
+            return ((delegate* unmanaged<ITfInputProcessorProfileMgr*, Guid*, ushort, Guid*, ushort*, uint, ushort*, uint, uint, IntPtr, uint, BOOL, uint, int>)(lpVtbl[8]))((ITfInputProcessorProfileMgr*)Unsafe.AsPointer(ref this), rclsid, langid, guidProfile, pchDesc, cchDesc, pchIconFile, cchFile, uIconIndex, hklsubstitute, dwPreferredLayout, bEnabledByDefault, dwFlags);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

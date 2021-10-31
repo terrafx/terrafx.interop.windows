@@ -7,11 +7,9 @@ namespace TerraFX.Interop
 {
     public partial struct USEROBJECTFLAGS
     {
-        [NativeTypeName("BOOL")]
-        public int fInherit;
+        public BOOL fInherit;
 
-        [NativeTypeName("BOOL")]
-        public int fReserved;
+        public BOOL fReserved;
 
         [NativeTypeName("DWORD")]
         public uint dwFlags;

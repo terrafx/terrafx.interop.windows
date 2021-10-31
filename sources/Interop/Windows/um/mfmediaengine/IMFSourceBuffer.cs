@@ -42,8 +42,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("BOOL")]
-        public int GetUpdating()
+        public BOOL GetUpdating()
         {
             return ((delegate* unmanaged<IMFSourceBuffer*, int>)(lpVtbl[3]))((IMFSourceBuffer*)Unsafe.AsPointer(ref this));
         }

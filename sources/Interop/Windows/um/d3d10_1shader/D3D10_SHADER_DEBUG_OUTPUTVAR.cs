@@ -28,10 +28,8 @@ namespace TerraFX.Interop
         [NativeTypeName("FLOAT")]
         public float fValueMax;
 
-        [NativeTypeName("BOOL")]
-        public int bNaNPossible;
+        public BOOL bNaNPossible;
 
-        [NativeTypeName("BOOL")]
-        public int bInfPossible;
+        public BOOL bInfPossible;
     }
 }

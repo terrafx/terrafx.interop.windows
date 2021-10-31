@@ -59,9 +59,9 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
         [return: NativeTypeName("HRESULT")]
-        public int LockContainer([NativeTypeName("BOOL")] int fLock)
+        public int LockContainer(BOOL fLock)
         {
-            return ((delegate* unmanaged<IOleItemContainer*, int, int>)(lpVtbl[5]))((IOleItemContainer*)Unsafe.AsPointer(ref this), fLock);
+            return ((delegate* unmanaged<IOleItemContainer*, BOOL, int>)(lpVtbl[5]))((IOleItemContainer*)Unsafe.AsPointer(ref this), fLock);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

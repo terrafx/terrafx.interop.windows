@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         public D3D12_VIDEO_SIZE_RANGE SizeRange;
 
-        [NativeTypeName("BOOL")]
-        public int Protected;
+        public BOOL Protected;
 
         [NativeTypeName("UINT64")]
         public ulong MotionVectorHeapMemoryPoolL0Size;

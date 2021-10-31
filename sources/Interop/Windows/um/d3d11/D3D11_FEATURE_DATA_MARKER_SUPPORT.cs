@@ -7,7 +7,6 @@ namespace TerraFX.Interop
 {
     public partial struct D3D11_FEATURE_DATA_MARKER_SUPPORT
     {
-        [NativeTypeName("BOOL")]
-        public int Profile;
+        public BOOL Profile;
     }
 }

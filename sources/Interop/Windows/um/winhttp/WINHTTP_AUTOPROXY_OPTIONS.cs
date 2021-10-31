@@ -22,7 +22,6 @@ namespace TerraFX.Interop
         [NativeTypeName("DWORD")]
         public uint dwReserved;
 
-        [NativeTypeName("BOOL")]
-        public int fAutoLogonIfChallenged;
+        public BOOL fAutoLogonIfChallenged;
     }
 }

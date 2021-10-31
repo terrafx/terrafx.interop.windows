@@ -43,17 +43,17 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
         [return: NativeTypeName("HRESULT")]
-        public int SetAsyncMode([NativeTypeName("BOOL")] int fDoOpAsync)
+        public int SetAsyncMode(BOOL fDoOpAsync)
         {
-            return ((delegate* unmanaged<IDataObjectAsyncCapability*, int, int>)(lpVtbl[3]))((IDataObjectAsyncCapability*)Unsafe.AsPointer(ref this), fDoOpAsync);
+            return ((delegate* unmanaged<IDataObjectAsyncCapability*, BOOL, int>)(lpVtbl[3]))((IDataObjectAsyncCapability*)Unsafe.AsPointer(ref this), fDoOpAsync);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
         [return: NativeTypeName("HRESULT")]
-        public int GetAsyncMode([NativeTypeName("BOOL *")] int* pfIsOpAsync)
+        public int GetAsyncMode(BOOL* pfIsOpAsync)
         {
-            return ((delegate* unmanaged<IDataObjectAsyncCapability*, int*, int>)(lpVtbl[4]))((IDataObjectAsyncCapability*)Unsafe.AsPointer(ref this), pfIsOpAsync);
+            return ((delegate* unmanaged<IDataObjectAsyncCapability*, BOOL*, int>)(lpVtbl[4]))((IDataObjectAsyncCapability*)Unsafe.AsPointer(ref this), pfIsOpAsync);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -67,9 +67,9 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
         [return: NativeTypeName("HRESULT")]
-        public int InOperation([NativeTypeName("BOOL *")] int* pfInAsyncOp)
+        public int InOperation(BOOL* pfInAsyncOp)
         {
-            return ((delegate* unmanaged<IDataObjectAsyncCapability*, int*, int>)(lpVtbl[6]))((IDataObjectAsyncCapability*)Unsafe.AsPointer(ref this), pfInAsyncOp);
+            return ((delegate* unmanaged<IDataObjectAsyncCapability*, BOOL*, int>)(lpVtbl[6]))((IDataObjectAsyncCapability*)Unsafe.AsPointer(ref this), pfInAsyncOp);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

@@ -7,10 +7,8 @@ namespace TerraFX.Interop
 {
     public partial struct AM_AC3_DOWNMIX
     {
-        [NativeTypeName("BOOL")]
-        public int fDownMix;
+        public BOOL fDownMix;
 
-        [NativeTypeName("BOOL")]
-        public int fDolbySurround;
+        public BOOL fDolbySurround;
     }
 }

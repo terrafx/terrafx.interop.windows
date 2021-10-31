@@ -51,17 +51,17 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
         [return: NativeTypeName("HRESULT")]
-        public int QueryAppIsDefault([NativeTypeName("LPCWSTR")] ushort* pszQuery, ASSOCIATIONTYPE atQueryType, ASSOCIATIONLEVEL alQueryLevel, [NativeTypeName("LPCWSTR")] ushort* pszAppRegistryName, [NativeTypeName("BOOL *")] int* pfDefault)
+        public int QueryAppIsDefault([NativeTypeName("LPCWSTR")] ushort* pszQuery, ASSOCIATIONTYPE atQueryType, ASSOCIATIONLEVEL alQueryLevel, [NativeTypeName("LPCWSTR")] ushort* pszAppRegistryName, BOOL* pfDefault)
         {
-            return ((delegate* unmanaged<IApplicationAssociationRegistration*, ushort*, ASSOCIATIONTYPE, ASSOCIATIONLEVEL, ushort*, int*, int>)(lpVtbl[4]))((IApplicationAssociationRegistration*)Unsafe.AsPointer(ref this), pszQuery, atQueryType, alQueryLevel, pszAppRegistryName, pfDefault);
+            return ((delegate* unmanaged<IApplicationAssociationRegistration*, ushort*, ASSOCIATIONTYPE, ASSOCIATIONLEVEL, ushort*, BOOL*, int>)(lpVtbl[4]))((IApplicationAssociationRegistration*)Unsafe.AsPointer(ref this), pszQuery, atQueryType, alQueryLevel, pszAppRegistryName, pfDefault);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
         [return: NativeTypeName("HRESULT")]
-        public int QueryAppIsDefaultAll(ASSOCIATIONLEVEL alQueryLevel, [NativeTypeName("LPCWSTR")] ushort* pszAppRegistryName, [NativeTypeName("BOOL *")] int* pfDefault)
+        public int QueryAppIsDefaultAll(ASSOCIATIONLEVEL alQueryLevel, [NativeTypeName("LPCWSTR")] ushort* pszAppRegistryName, BOOL* pfDefault)
         {
-            return ((delegate* unmanaged<IApplicationAssociationRegistration*, ASSOCIATIONLEVEL, ushort*, int*, int>)(lpVtbl[5]))((IApplicationAssociationRegistration*)Unsafe.AsPointer(ref this), alQueryLevel, pszAppRegistryName, pfDefault);
+            return ((delegate* unmanaged<IApplicationAssociationRegistration*, ASSOCIATIONLEVEL, ushort*, BOOL*, int>)(lpVtbl[5]))((IApplicationAssociationRegistration*)Unsafe.AsPointer(ref this), alQueryLevel, pszAppRegistryName, pfDefault);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

@@ -67,9 +67,9 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
         [return: NativeTypeName("HRESULT")]
-        public int DoesSupportTransform(WICBitmapTransformOptions dstTransform, [NativeTypeName("BOOL *")] int* pfIsSupported)
+        public int DoesSupportTransform(WICBitmapTransformOptions dstTransform, BOOL* pfIsSupported)
         {
-            return ((delegate* unmanaged<IWICBitmapSourceTransform*, WICBitmapTransformOptions, int*, int>)(lpVtbl[6]))((IWICBitmapSourceTransform*)Unsafe.AsPointer(ref this), dstTransform, pfIsSupported);
+            return ((delegate* unmanaged<IWICBitmapSourceTransform*, WICBitmapTransformOptions, BOOL*, int>)(lpVtbl[6]))((IWICBitmapSourceTransform*)Unsafe.AsPointer(ref this), dstTransform, pfIsSupported);
         }
     }
 }

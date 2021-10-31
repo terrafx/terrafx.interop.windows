@@ -31,14 +31,14 @@ namespace TerraFX.Interop
 
         [DllImport("cfgmgr32", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
-        public static extern int SwDeviceInterfaceRegister([NativeTypeName("HSWDEVICE")] IntPtr hSwDevice, [NativeTypeName("const GUID *")] Guid* pInterfaceClassGuid, [NativeTypeName("PCWSTR")] ushort* pszReferenceString, [NativeTypeName("ULONG")] uint cPropertyCount, [NativeTypeName("const DEVPROPERTY *")] DEVPROPERTY* pProperties, [NativeTypeName("BOOL")] int fEnabled, [NativeTypeName("PWSTR *")] ushort** ppszDeviceInterfaceId);
+        public static extern int SwDeviceInterfaceRegister([NativeTypeName("HSWDEVICE")] IntPtr hSwDevice, [NativeTypeName("const GUID *")] Guid* pInterfaceClassGuid, [NativeTypeName("PCWSTR")] ushort* pszReferenceString, [NativeTypeName("ULONG")] uint cPropertyCount, [NativeTypeName("const DEVPROPERTY *")] DEVPROPERTY* pProperties, BOOL fEnabled, [NativeTypeName("PWSTR *")] ushort** ppszDeviceInterfaceId);
 
         [DllImport("cfgmgr32", ExactSpelling = true)]
         public static extern void SwMemFree([NativeTypeName("PVOID")] void* pMem);
 
         [DllImport("cfgmgr32", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
-        public static extern int SwDeviceInterfaceSetState([NativeTypeName("HSWDEVICE")] IntPtr hSwDevice, [NativeTypeName("PCWSTR")] ushort* pszDeviceInterfaceId, [NativeTypeName("BOOL")] int fEnabled);
+        public static extern int SwDeviceInterfaceSetState([NativeTypeName("HSWDEVICE")] IntPtr hSwDevice, [NativeTypeName("PCWSTR")] ushort* pszDeviceInterfaceId, BOOL fEnabled);
 
         [DllImport("cfgmgr32", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]

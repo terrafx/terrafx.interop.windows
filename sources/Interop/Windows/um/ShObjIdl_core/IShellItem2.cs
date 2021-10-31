@@ -179,9 +179,9 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(20)]
         [return: NativeTypeName("HRESULT")]
-        public int GetBool([NativeTypeName("const PROPERTYKEY &")] PROPERTYKEY* key, [NativeTypeName("BOOL *")] int* pf)
+        public int GetBool([NativeTypeName("const PROPERTYKEY &")] PROPERTYKEY* key, BOOL* pf)
         {
-            return ((delegate* unmanaged<IShellItem2*, PROPERTYKEY*, int*, int>)(lpVtbl[20]))((IShellItem2*)Unsafe.AsPointer(ref this), key, pf);
+            return ((delegate* unmanaged<IShellItem2*, PROPERTYKEY*, BOOL*, int>)(lpVtbl[20]))((IShellItem2*)Unsafe.AsPointer(ref this), key, pf);
         }
     }
 }

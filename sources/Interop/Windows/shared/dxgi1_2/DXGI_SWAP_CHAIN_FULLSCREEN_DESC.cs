@@ -13,7 +13,6 @@ namespace TerraFX.Interop
 
         public DXGI_MODE_SCALING Scaling;
 
-        [NativeTypeName("BOOL")]
-        public int Windowed;
+        public BOOL Windowed;
     }
 }

@@ -23,7 +23,7 @@ namespace TerraFX.Interop
         public static extern uint XInputGetCapabilities([NativeTypeName("DWORD")] uint dwUserIndex, [NativeTypeName("DWORD")] uint dwFlags, XINPUT_CAPABILITIES* pCapabilities);
 
         [DllImport("xinput1_4", ExactSpelling = true)]
-        public static extern void XInputEnable([NativeTypeName("BOOL")] int enable);
+        public static extern void XInputEnable(BOOL enable);
 
         [DllImport("xinput1_4", ExactSpelling = true)]
         [return: NativeTypeName("DWORD")]

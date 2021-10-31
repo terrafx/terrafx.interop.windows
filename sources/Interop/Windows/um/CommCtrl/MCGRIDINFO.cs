@@ -22,8 +22,7 @@ namespace TerraFX.Interop
 
         public int iCol;
 
-        [NativeTypeName("BOOL")]
-        public int bSelected;
+        public BOOL bSelected;
 
         public SYSTEMTIME stStart;
 

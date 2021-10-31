@@ -115,17 +115,17 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(12)]
         [return: NativeTypeName("HRESULT")]
-        public int get_KeepOriginalFormat([NativeTypeName("BOOL *")] int* pKeep)
+        public int get_KeepOriginalFormat(BOOL* pKeep)
         {
-            return ((delegate* unmanaged<IPicture2*, int*, int>)(lpVtbl[12]))((IPicture2*)Unsafe.AsPointer(ref this), pKeep);
+            return ((delegate* unmanaged<IPicture2*, BOOL*, int>)(lpVtbl[12]))((IPicture2*)Unsafe.AsPointer(ref this), pKeep);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(13)]
         [return: NativeTypeName("HRESULT")]
-        public int put_KeepOriginalFormat([NativeTypeName("BOOL")] int keep)
+        public int put_KeepOriginalFormat(BOOL keep)
         {
-            return ((delegate* unmanaged<IPicture2*, int, int>)(lpVtbl[13]))((IPicture2*)Unsafe.AsPointer(ref this), keep);
+            return ((delegate* unmanaged<IPicture2*, BOOL, int>)(lpVtbl[13]))((IPicture2*)Unsafe.AsPointer(ref this), keep);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -139,9 +139,9 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(15)]
         [return: NativeTypeName("HRESULT")]
-        public int SaveAsFile([NativeTypeName("LPSTREAM")] IStream* pStream, [NativeTypeName("BOOL")] int fSaveMemCopy, [NativeTypeName("LONG *")] int* pCbSize)
+        public int SaveAsFile([NativeTypeName("LPSTREAM")] IStream* pStream, BOOL fSaveMemCopy, [NativeTypeName("LONG *")] int* pCbSize)
         {
-            return ((delegate* unmanaged<IPicture2*, IStream*, int, int*, int>)(lpVtbl[15]))((IPicture2*)Unsafe.AsPointer(ref this), pStream, fSaveMemCopy, pCbSize);
+            return ((delegate* unmanaged<IPicture2*, IStream*, BOOL, int*, int>)(lpVtbl[15]))((IPicture2*)Unsafe.AsPointer(ref this), pStream, fSaveMemCopy, pCbSize);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

@@ -58,8 +58,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        [return: NativeTypeName("BOOL")]
-        public int IsRunning()
+        public BOOL IsRunning()
         {
             return ((delegate* unmanaged<IRunnableObject*, int>)(lpVtbl[5]))((IRunnableObject*)Unsafe.AsPointer(ref this));
         }
@@ -67,17 +66,17 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
         [return: NativeTypeName("HRESULT")]
-        public int LockRunning([NativeTypeName("BOOL")] int fLock, [NativeTypeName("BOOL")] int fLastUnlockCloses)
+        public int LockRunning(BOOL fLock, BOOL fLastUnlockCloses)
         {
-            return ((delegate* unmanaged<IRunnableObject*, int, int, int>)(lpVtbl[6]))((IRunnableObject*)Unsafe.AsPointer(ref this), fLock, fLastUnlockCloses);
+            return ((delegate* unmanaged<IRunnableObject*, BOOL, BOOL, int>)(lpVtbl[6]))((IRunnableObject*)Unsafe.AsPointer(ref this), fLock, fLastUnlockCloses);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(7)]
         [return: NativeTypeName("HRESULT")]
-        public int SetContainedObject([NativeTypeName("BOOL")] int fContained)
+        public int SetContainedObject(BOOL fContained)
         {
-            return ((delegate* unmanaged<IRunnableObject*, int, int>)(lpVtbl[7]))((IRunnableObject*)Unsafe.AsPointer(ref this), fContained);
+            return ((delegate* unmanaged<IRunnableObject*, BOOL, int>)(lpVtbl[7]))((IRunnableObject*)Unsafe.AsPointer(ref this), fContained);
         }
     }
 }

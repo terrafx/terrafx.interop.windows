@@ -113,19 +113,19 @@ namespace TerraFX.Interop
 
         [DllImport("msi", ExactSpelling = true)]
         [return: NativeTypeName("UINT")]
-        public static extern uint MsiProcessAdvertiseScriptA([NativeTypeName("LPCSTR")] sbyte* szScriptFile, [NativeTypeName("LPCSTR")] sbyte* szIconFolder, [NativeTypeName("HKEY")] IntPtr hRegData, [NativeTypeName("BOOL")] int fShortcuts, [NativeTypeName("BOOL")] int fRemoveItems);
+        public static extern uint MsiProcessAdvertiseScriptA([NativeTypeName("LPCSTR")] sbyte* szScriptFile, [NativeTypeName("LPCSTR")] sbyte* szIconFolder, [NativeTypeName("HKEY")] IntPtr hRegData, BOOL fShortcuts, BOOL fRemoveItems);
 
         [DllImport("msi", ExactSpelling = true)]
         [return: NativeTypeName("UINT")]
-        public static extern uint MsiProcessAdvertiseScriptW([NativeTypeName("LPCWSTR")] ushort* szScriptFile, [NativeTypeName("LPCWSTR")] ushort* szIconFolder, [NativeTypeName("HKEY")] IntPtr hRegData, [NativeTypeName("BOOL")] int fShortcuts, [NativeTypeName("BOOL")] int fRemoveItems);
+        public static extern uint MsiProcessAdvertiseScriptW([NativeTypeName("LPCWSTR")] ushort* szScriptFile, [NativeTypeName("LPCWSTR")] ushort* szIconFolder, [NativeTypeName("HKEY")] IntPtr hRegData, BOOL fShortcuts, BOOL fRemoveItems);
 
         [DllImport("msi", ExactSpelling = true)]
         [return: NativeTypeName("UINT")]
-        public static extern uint MsiAdvertiseScriptA([NativeTypeName("LPCSTR")] sbyte* szScriptFile, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("PHKEY")] IntPtr* phRegData, [NativeTypeName("BOOL")] int fRemoveItems);
+        public static extern uint MsiAdvertiseScriptA([NativeTypeName("LPCSTR")] sbyte* szScriptFile, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("PHKEY")] IntPtr* phRegData, BOOL fRemoveItems);
 
         [DllImport("msi", ExactSpelling = true)]
         [return: NativeTypeName("UINT")]
-        public static extern uint MsiAdvertiseScriptW([NativeTypeName("LPCWSTR")] ushort* szScriptFile, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("PHKEY")] IntPtr* phRegData, [NativeTypeName("BOOL")] int fRemoveItems);
+        public static extern uint MsiAdvertiseScriptW([NativeTypeName("LPCWSTR")] ushort* szScriptFile, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("PHKEY")] IntPtr* phRegData, BOOL fRemoveItems);
 
         [DllImport("msi", ExactSpelling = true)]
         [return: NativeTypeName("UINT")]
@@ -627,11 +627,11 @@ namespace TerraFX.Interop
 
         [DllImport("msi", ExactSpelling = true)]
         [return: NativeTypeName("UINT")]
-        public static extern uint MsiIsProductElevatedA([NativeTypeName("LPCSTR")] sbyte* szProduct, [NativeTypeName("BOOL *")] int* pfElevated);
+        public static extern uint MsiIsProductElevatedA([NativeTypeName("LPCSTR")] sbyte* szProduct, BOOL* pfElevated);
 
         [DllImport("msi", ExactSpelling = true)]
         [return: NativeTypeName("UINT")]
-        public static extern uint MsiIsProductElevatedW([NativeTypeName("LPCWSTR")] ushort* szProduct, [NativeTypeName("BOOL *")] int* pfElevated);
+        public static extern uint MsiIsProductElevatedW([NativeTypeName("LPCWSTR")] ushort* szProduct, BOOL* pfElevated);
 
         [DllImport("msi", ExactSpelling = true)]
         [return: NativeTypeName("UINT")]
@@ -811,10 +811,10 @@ namespace TerraFX.Interop
         public static delegate*<ushort*, ushort*, ushort*, ushort, uint> MsiAdvertiseProduct => &MsiAdvertiseProductW;
 
         [NativeTypeName("#define MsiProcessAdvertiseScript MsiProcessAdvertiseScriptW")]
-        public static delegate*<ushort*, ushort*, IntPtr, int, int, uint> MsiProcessAdvertiseScript => &MsiProcessAdvertiseScriptW;
+        public static delegate*<ushort*, ushort*, IntPtr, BOOL, BOOL, uint> MsiProcessAdvertiseScript => &MsiProcessAdvertiseScriptW;
 
         [NativeTypeName("#define MsiAdvertiseScript MsiAdvertiseScriptW")]
-        public static delegate*<ushort*, uint, IntPtr*, int, uint> MsiAdvertiseScript => &MsiAdvertiseScriptW;
+        public static delegate*<ushort*, uint, IntPtr*, BOOL, uint> MsiAdvertiseScript => &MsiAdvertiseScriptW;
 
         [NativeTypeName("#define MsiGetProductInfoFromScript MsiGetProductInfoFromScriptW")]
         public static delegate*<ushort*, ushort*, ushort*, uint*, ushort*, uint*, ushort*, uint*, uint> MsiGetProductInfoFromScript => &MsiGetProductInfoFromScriptW;
@@ -1018,7 +1018,7 @@ namespace TerraFX.Interop
         public static delegate*<ushort*, ushort*, ushort*, ushort*, uint> MsiGetShortcutTarget => &MsiGetShortcutTargetW;
 
         [NativeTypeName("#define MsiIsProductElevated MsiIsProductElevatedW")]
-        public static delegate*<ushort*, int*, uint> MsiIsProductElevated => &MsiIsProductElevatedW;
+        public static delegate*<ushort*, BOOL*, uint> MsiIsProductElevated => &MsiIsProductElevatedW;
 
         [NativeTypeName("#define MsiNotifySidChange MsiNotifySidChangeW")]
         public static delegate*<ushort*, ushort*, uint> MsiNotifySidChange => &MsiNotifySidChangeW;

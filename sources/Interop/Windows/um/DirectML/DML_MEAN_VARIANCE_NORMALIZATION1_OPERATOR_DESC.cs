@@ -25,8 +25,7 @@ namespace TerraFX.Interop
         [NativeTypeName("const UINT *")]
         public uint* Axes;
 
-        [NativeTypeName("BOOL")]
-        public int NormalizeVariance;
+        public BOOL NormalizeVariance;
 
         [NativeTypeName("FLOAT")]
         public float Epsilon;

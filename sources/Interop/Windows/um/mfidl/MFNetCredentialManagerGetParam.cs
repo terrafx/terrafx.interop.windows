@@ -10,11 +10,9 @@ namespace TerraFX.Interop
         [NativeTypeName("HRESULT")]
         public int hrOp;
 
-        [NativeTypeName("BOOL")]
-        public int fAllowLoggedOnUser;
+        public BOOL fAllowLoggedOnUser;
 
-        [NativeTypeName("BOOL")]
-        public int fClearTextPackage;
+        public BOOL fClearTextPackage;
 
         [NativeTypeName("LPCWSTR")]
         public ushort* pszUrl;

@@ -59,25 +59,25 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
         [return: NativeTypeName("HRESULT")]
-        public int FindFontFaceReference(IDWriteFontFaceReference* fontFaceReference, [NativeTypeName("UINT32 *")] uint* listIndex, [NativeTypeName("BOOL *")] int* exists)
+        public int FindFontFaceReference(IDWriteFontFaceReference* fontFaceReference, [NativeTypeName("UINT32 *")] uint* listIndex, BOOL* exists)
         {
-            return ((delegate* unmanaged<IDWriteFontSet1*, IDWriteFontFaceReference*, uint*, int*, int>)(lpVtbl[5]))((IDWriteFontSet1*)Unsafe.AsPointer(ref this), fontFaceReference, listIndex, exists);
+            return ((delegate* unmanaged<IDWriteFontSet1*, IDWriteFontFaceReference*, uint*, BOOL*, int>)(lpVtbl[5]))((IDWriteFontSet1*)Unsafe.AsPointer(ref this), fontFaceReference, listIndex, exists);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
         [return: NativeTypeName("HRESULT")]
-        public int FindFontFace(IDWriteFontFace* fontFace, [NativeTypeName("UINT32 *")] uint* listIndex, [NativeTypeName("BOOL *")] int* exists)
+        public int FindFontFace(IDWriteFontFace* fontFace, [NativeTypeName("UINT32 *")] uint* listIndex, BOOL* exists)
         {
-            return ((delegate* unmanaged<IDWriteFontSet1*, IDWriteFontFace*, uint*, int*, int>)(lpVtbl[6]))((IDWriteFontSet1*)Unsafe.AsPointer(ref this), fontFace, listIndex, exists);
+            return ((delegate* unmanaged<IDWriteFontSet1*, IDWriteFontFace*, uint*, BOOL*, int>)(lpVtbl[6]))((IDWriteFontSet1*)Unsafe.AsPointer(ref this), fontFace, listIndex, exists);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(9)]
         [return: NativeTypeName("HRESULT")]
-        public int GetPropertyValues([NativeTypeName("UINT32")] uint listIndex, DWRITE_FONT_PROPERTY_ID propertyId, [NativeTypeName("BOOL *")] int* exists, IDWriteLocalizedStrings** values)
+        public int GetPropertyValues([NativeTypeName("UINT32")] uint listIndex, DWRITE_FONT_PROPERTY_ID propertyId, BOOL* exists, IDWriteLocalizedStrings** values)
         {
-            return ((delegate* unmanaged<IDWriteFontSet1*, uint, DWRITE_FONT_PROPERTY_ID, int*, IDWriteLocalizedStrings**, int>)(lpVtbl[9]))((IDWriteFontSet1*)Unsafe.AsPointer(ref this), listIndex, propertyId, exists, values);
+            return ((delegate* unmanaged<IDWriteFontSet1*, uint, DWRITE_FONT_PROPERTY_ID, BOOL*, IDWriteLocalizedStrings**, int>)(lpVtbl[9]))((IDWriteFontSet1*)Unsafe.AsPointer(ref this), listIndex, propertyId, exists, values);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -139,17 +139,17 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(17)]
         [return: NativeTypeName("HRESULT")]
-        public int GetFilteredFonts([NativeTypeName("const DWRITE_FONT_PROPERTY *")] DWRITE_FONT_PROPERTY* properties, [NativeTypeName("UINT32")] uint propertyCount, [NativeTypeName("BOOL")] int selectAnyProperty, IDWriteFontSet1** filteredFontSet)
+        public int GetFilteredFonts([NativeTypeName("const DWRITE_FONT_PROPERTY *")] DWRITE_FONT_PROPERTY* properties, [NativeTypeName("UINT32")] uint propertyCount, BOOL selectAnyProperty, IDWriteFontSet1** filteredFontSet)
         {
-            return ((delegate* unmanaged<IDWriteFontSet1*, DWRITE_FONT_PROPERTY*, uint, int, IDWriteFontSet1**, int>)(lpVtbl[17]))((IDWriteFontSet1*)Unsafe.AsPointer(ref this), properties, propertyCount, selectAnyProperty, filteredFontSet);
+            return ((delegate* unmanaged<IDWriteFontSet1*, DWRITE_FONT_PROPERTY*, uint, BOOL, IDWriteFontSet1**, int>)(lpVtbl[17]))((IDWriteFontSet1*)Unsafe.AsPointer(ref this), properties, propertyCount, selectAnyProperty, filteredFontSet);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(16)]
         [return: NativeTypeName("HRESULT")]
-        public int GetFilteredFonts([NativeTypeName("const DWRITE_FONT_AXIS_RANGE *")] DWRITE_FONT_AXIS_RANGE* fontAxisRanges, [NativeTypeName("UINT32")] uint fontAxisRangeCount, [NativeTypeName("BOOL")] int selectAnyRange, IDWriteFontSet1** filteredFontSet)
+        public int GetFilteredFonts([NativeTypeName("const DWRITE_FONT_AXIS_RANGE *")] DWRITE_FONT_AXIS_RANGE* fontAxisRanges, [NativeTypeName("UINT32")] uint fontAxisRangeCount, BOOL selectAnyRange, IDWriteFontSet1** filteredFontSet)
         {
-            return ((delegate* unmanaged<IDWriteFontSet1*, DWRITE_FONT_AXIS_RANGE*, uint, int, IDWriteFontSet1**, int>)(lpVtbl[16]))((IDWriteFontSet1*)Unsafe.AsPointer(ref this), fontAxisRanges, fontAxisRangeCount, selectAnyRange, filteredFontSet);
+            return ((delegate* unmanaged<IDWriteFontSet1*, DWRITE_FONT_AXIS_RANGE*, uint, BOOL, IDWriteFontSet1**, int>)(lpVtbl[16]))((IDWriteFontSet1*)Unsafe.AsPointer(ref this), fontAxisRanges, fontAxisRangeCount, selectAnyRange, filteredFontSet);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -163,17 +163,17 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(19)]
         [return: NativeTypeName("HRESULT")]
-        public int GetFilteredFontIndices([NativeTypeName("const DWRITE_FONT_PROPERTY *")] DWRITE_FONT_PROPERTY* properties, [NativeTypeName("UINT32")] uint propertyCount, [NativeTypeName("BOOL")] int selectAnyProperty, [NativeTypeName("UINT32 *")] uint* indices, [NativeTypeName("UINT32")] uint maxIndexCount, [NativeTypeName("UINT32 *")] uint* actualIndexCount)
+        public int GetFilteredFontIndices([NativeTypeName("const DWRITE_FONT_PROPERTY *")] DWRITE_FONT_PROPERTY* properties, [NativeTypeName("UINT32")] uint propertyCount, BOOL selectAnyProperty, [NativeTypeName("UINT32 *")] uint* indices, [NativeTypeName("UINT32")] uint maxIndexCount, [NativeTypeName("UINT32 *")] uint* actualIndexCount)
         {
-            return ((delegate* unmanaged<IDWriteFontSet1*, DWRITE_FONT_PROPERTY*, uint, int, uint*, uint, uint*, int>)(lpVtbl[19]))((IDWriteFontSet1*)Unsafe.AsPointer(ref this), properties, propertyCount, selectAnyProperty, indices, maxIndexCount, actualIndexCount);
+            return ((delegate* unmanaged<IDWriteFontSet1*, DWRITE_FONT_PROPERTY*, uint, BOOL, uint*, uint, uint*, int>)(lpVtbl[19]))((IDWriteFontSet1*)Unsafe.AsPointer(ref this), properties, propertyCount, selectAnyProperty, indices, maxIndexCount, actualIndexCount);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(18)]
         [return: NativeTypeName("HRESULT")]
-        public int GetFilteredFontIndices([NativeTypeName("const DWRITE_FONT_AXIS_RANGE *")] DWRITE_FONT_AXIS_RANGE* fontAxisRanges, [NativeTypeName("UINT32")] uint fontAxisRangeCount, [NativeTypeName("BOOL")] int selectAnyRange, [NativeTypeName("UINT32 *")] uint* indices, [NativeTypeName("UINT32")] uint maxIndexCount, [NativeTypeName("UINT32 *")] uint* actualIndexCount)
+        public int GetFilteredFontIndices([NativeTypeName("const DWRITE_FONT_AXIS_RANGE *")] DWRITE_FONT_AXIS_RANGE* fontAxisRanges, [NativeTypeName("UINT32")] uint fontAxisRangeCount, BOOL selectAnyRange, [NativeTypeName("UINT32 *")] uint* indices, [NativeTypeName("UINT32")] uint maxIndexCount, [NativeTypeName("UINT32 *")] uint* actualIndexCount)
         {
-            return ((delegate* unmanaged<IDWriteFontSet1*, DWRITE_FONT_AXIS_RANGE*, uint, int, uint*, uint, uint*, int>)(lpVtbl[18]))((IDWriteFontSet1*)Unsafe.AsPointer(ref this), fontAxisRanges, fontAxisRangeCount, selectAnyRange, indices, maxIndexCount, actualIndexCount);
+            return ((delegate* unmanaged<IDWriteFontSet1*, DWRITE_FONT_AXIS_RANGE*, uint, BOOL, uint*, uint, uint*, int>)(lpVtbl[18]))((IDWriteFontSet1*)Unsafe.AsPointer(ref this), fontAxisRanges, fontAxisRangeCount, selectAnyRange, indices, maxIndexCount, actualIndexCount);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

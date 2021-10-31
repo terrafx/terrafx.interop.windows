@@ -43,9 +43,9 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
         [return: NativeTypeName("HRESULT")]
-        public int ShowDropdown([NativeTypeName("BOOL")] int fShow)
+        public int ShowDropdown(BOOL fShow)
         {
-            return ((delegate* unmanaged<IHTMLSelectElementEx*, int, int>)(lpVtbl[3]))((IHTMLSelectElementEx*)Unsafe.AsPointer(ref this), fShow);
+            return ((delegate* unmanaged<IHTMLSelectElementEx*, BOOL, int>)(lpVtbl[3]))((IHTMLSelectElementEx*)Unsafe.AsPointer(ref this), fShow);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -67,9 +67,9 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
         [return: NativeTypeName("HRESULT")]
-        public int GetDropdownOpen([NativeTypeName("BOOL *")] int* pfOpen)
+        public int GetDropdownOpen(BOOL* pfOpen)
         {
-            return ((delegate* unmanaged<IHTMLSelectElementEx*, int*, int>)(lpVtbl[6]))((IHTMLSelectElementEx*)Unsafe.AsPointer(ref this), pfOpen);
+            return ((delegate* unmanaged<IHTMLSelectElementEx*, BOOL*, int>)(lpVtbl[6]))((IHTMLSelectElementEx*)Unsafe.AsPointer(ref this), pfOpen);
         }
     }
 }

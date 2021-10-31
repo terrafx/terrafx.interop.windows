@@ -43,17 +43,17 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
         [return: NativeTypeName("HRESULT")]
-        public int MoveCaretToPointer(IDisplayPointer* pDispPointer, [NativeTypeName("BOOL")] int fScrollIntoView, CARET_DIRECTION eDir)
+        public int MoveCaretToPointer(IDisplayPointer* pDispPointer, BOOL fScrollIntoView, CARET_DIRECTION eDir)
         {
-            return ((delegate* unmanaged<IHTMLCaret*, IDisplayPointer*, int, CARET_DIRECTION, int>)(lpVtbl[3]))((IHTMLCaret*)Unsafe.AsPointer(ref this), pDispPointer, fScrollIntoView, eDir);
+            return ((delegate* unmanaged<IHTMLCaret*, IDisplayPointer*, BOOL, CARET_DIRECTION, int>)(lpVtbl[3]))((IHTMLCaret*)Unsafe.AsPointer(ref this), pDispPointer, fScrollIntoView, eDir);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
         [return: NativeTypeName("HRESULT")]
-        public int MoveCaretToPointerEx(IDisplayPointer* pDispPointer, [NativeTypeName("BOOL")] int fVisible, [NativeTypeName("BOOL")] int fScrollIntoView, CARET_DIRECTION eDir)
+        public int MoveCaretToPointerEx(IDisplayPointer* pDispPointer, BOOL fVisible, BOOL fScrollIntoView, CARET_DIRECTION eDir)
         {
-            return ((delegate* unmanaged<IHTMLCaret*, IDisplayPointer*, int, int, CARET_DIRECTION, int>)(lpVtbl[4]))((IHTMLCaret*)Unsafe.AsPointer(ref this), pDispPointer, fVisible, fScrollIntoView, eDir);
+            return ((delegate* unmanaged<IHTMLCaret*, IDisplayPointer*, BOOL, BOOL, CARET_DIRECTION, int>)(lpVtbl[4]))((IHTMLCaret*)Unsafe.AsPointer(ref this), pDispPointer, fVisible, fScrollIntoView, eDir);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -75,17 +75,17 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(7)]
         [return: NativeTypeName("HRESULT")]
-        public int IsVisible([NativeTypeName("BOOL *")] int* pIsVisible)
+        public int IsVisible(BOOL* pIsVisible)
         {
-            return ((delegate* unmanaged<IHTMLCaret*, int*, int>)(lpVtbl[7]))((IHTMLCaret*)Unsafe.AsPointer(ref this), pIsVisible);
+            return ((delegate* unmanaged<IHTMLCaret*, BOOL*, int>)(lpVtbl[7]))((IHTMLCaret*)Unsafe.AsPointer(ref this), pIsVisible);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(8)]
         [return: NativeTypeName("HRESULT")]
-        public int Show([NativeTypeName("BOOL")] int fScrollIntoView)
+        public int Show(BOOL fScrollIntoView)
         {
-            return ((delegate* unmanaged<IHTMLCaret*, int, int>)(lpVtbl[8]))((IHTMLCaret*)Unsafe.AsPointer(ref this), fScrollIntoView);
+            return ((delegate* unmanaged<IHTMLCaret*, BOOL, int>)(lpVtbl[8]))((IHTMLCaret*)Unsafe.AsPointer(ref this), fScrollIntoView);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -115,9 +115,9 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(12)]
         [return: NativeTypeName("HRESULT")]
-        public int GetLocation(POINT* pPoint, [NativeTypeName("BOOL")] int fTranslate)
+        public int GetLocation(POINT* pPoint, BOOL fTranslate)
         {
-            return ((delegate* unmanaged<IHTMLCaret*, POINT*, int, int>)(lpVtbl[12]))((IHTMLCaret*)Unsafe.AsPointer(ref this), pPoint, fTranslate);
+            return ((delegate* unmanaged<IHTMLCaret*, POINT*, BOOL, int>)(lpVtbl[12]))((IHTMLCaret*)Unsafe.AsPointer(ref this), pPoint, fTranslate);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

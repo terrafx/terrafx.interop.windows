@@ -43,9 +43,9 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
         [return: NativeTypeName("HRESULT")]
-        public int OnUpdateOverlay([NativeTypeName("BOOL")] int bBefore, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("BOOL")] int bOldVisible, [NativeTypeName("const RECT *")] RECT* prcOldSrc, [NativeTypeName("const RECT *")] RECT* prcOldDest, [NativeTypeName("BOOL")] int bNewVisible, [NativeTypeName("const RECT *")] RECT* prcNewSrc, [NativeTypeName("const RECT *")] RECT* prcNewDest)
+        public int OnUpdateOverlay(BOOL bBefore, [NativeTypeName("DWORD")] uint dwFlags, BOOL bOldVisible, [NativeTypeName("const RECT *")] RECT* prcOldSrc, [NativeTypeName("const RECT *")] RECT* prcOldDest, BOOL bNewVisible, [NativeTypeName("const RECT *")] RECT* prcNewSrc, [NativeTypeName("const RECT *")] RECT* prcNewDest)
         {
-            return ((delegate* unmanaged<IDDrawExclModeVideoCallback*, int, uint, int, RECT*, RECT*, int, RECT*, RECT*, int>)(lpVtbl[3]))((IDDrawExclModeVideoCallback*)Unsafe.AsPointer(ref this), bBefore, dwFlags, bOldVisible, prcOldSrc, prcOldDest, bNewVisible, prcNewSrc, prcNewDest);
+            return ((delegate* unmanaged<IDDrawExclModeVideoCallback*, BOOL, uint, BOOL, RECT*, RECT*, BOOL, RECT*, RECT*, int>)(lpVtbl[3]))((IDDrawExclModeVideoCallback*)Unsafe.AsPointer(ref this), bBefore, dwFlags, bOldVisible, prcOldSrc, prcOldDest, bNewVisible, prcNewSrc, prcNewDest);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

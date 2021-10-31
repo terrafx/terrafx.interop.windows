@@ -37,8 +37,7 @@ namespace TerraFX.Interop
         public static extern int MIMEAssociationDialogW([NativeTypeName("HWND")] IntPtr hwndParent, [NativeTypeName("DWORD")] uint dwInFlags, [NativeTypeName("PCWSTR")] ushort* pcszFile, [NativeTypeName("PCWSTR")] ushort* pcszMIMEContentType, [NativeTypeName("PWSTR")] ushort* pszAppBuf, [NativeTypeName("UINT")] uint ucAppBufLen);
 
         [DllImport("url", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int InetIsOffline([NativeTypeName("DWORD")] uint dwFlags);
+        public static extern BOOL InetIsOffline([NativeTypeName("DWORD")] uint dwFlags);
 
         [NativeTypeName("#define E_FLAGS MAKE_SCODE(SEVERITY_ERROR, FACILITY_ITF, 0x1000)")]
         public const int E_FLAGS = unchecked((int)(((uint)(1) << 31) | ((uint)(4) << 16) | ((uint)(0x1000))));

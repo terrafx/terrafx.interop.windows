@@ -59,17 +59,17 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
         [return: NativeTypeName("HRESULT")]
-        public int SetOutputCompatibilityIndex([NativeTypeName("BOOL")] int fOldIndex)
+        public int SetOutputCompatibilityIndex(BOOL fOldIndex)
         {
-            return ((delegate* unmanaged<IConfigAviMux*, int, int>)(lpVtbl[5]))((IConfigAviMux*)Unsafe.AsPointer(ref this), fOldIndex);
+            return ((delegate* unmanaged<IConfigAviMux*, BOOL, int>)(lpVtbl[5]))((IConfigAviMux*)Unsafe.AsPointer(ref this), fOldIndex);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
         [return: NativeTypeName("HRESULT")]
-        public int GetOutputCompatibilityIndex([NativeTypeName("BOOL *")] int* pfOldIndex)
+        public int GetOutputCompatibilityIndex(BOOL* pfOldIndex)
         {
-            return ((delegate* unmanaged<IConfigAviMux*, int*, int>)(lpVtbl[6]))((IConfigAviMux*)Unsafe.AsPointer(ref this), pfOldIndex);
+            return ((delegate* unmanaged<IConfigAviMux*, BOOL*, int>)(lpVtbl[6]))((IConfigAviMux*)Unsafe.AsPointer(ref this), pfOldIndex);
         }
     }
 }

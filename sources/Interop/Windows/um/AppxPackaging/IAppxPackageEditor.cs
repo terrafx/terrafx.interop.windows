@@ -83,9 +83,9 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(8)]
         [return: NativeTypeName("HRESULT")]
-        public int UpdatePackageManifest(IStream* packageStream, IStream* updatedManifestStream, [NativeTypeName("BOOL")] int isPackageEncrypted, APPX_PACKAGE_EDITOR_UPDATE_PACKAGE_MANIFEST_OPTIONS options)
+        public int UpdatePackageManifest(IStream* packageStream, IStream* updatedManifestStream, BOOL isPackageEncrypted, APPX_PACKAGE_EDITOR_UPDATE_PACKAGE_MANIFEST_OPTIONS options)
         {
-            return ((delegate* unmanaged<IAppxPackageEditor*, IStream*, IStream*, int, APPX_PACKAGE_EDITOR_UPDATE_PACKAGE_MANIFEST_OPTIONS, int>)(lpVtbl[8]))((IAppxPackageEditor*)Unsafe.AsPointer(ref this), packageStream, updatedManifestStream, isPackageEncrypted, options);
+            return ((delegate* unmanaged<IAppxPackageEditor*, IStream*, IStream*, BOOL, APPX_PACKAGE_EDITOR_UPDATE_PACKAGE_MANIFEST_OPTIONS, int>)(lpVtbl[8]))((IAppxPackageEditor*)Unsafe.AsPointer(ref this), packageStream, updatedManifestStream, isPackageEncrypted, options);
         }
     }
 }

@@ -91,17 +91,17 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(9)]
         [return: NativeTypeName("HRESULT")]
-        public int get_JavaDSOCompatible([NativeTypeName("BOOL *")] int* fJavaDSOCompatible)
+        public int get_JavaDSOCompatible(BOOL* fJavaDSOCompatible)
         {
-            return ((delegate* unmanaged<IXMLDSOControl*, int*, int>)(lpVtbl[9]))((IXMLDSOControl*)Unsafe.AsPointer(ref this), fJavaDSOCompatible);
+            return ((delegate* unmanaged<IXMLDSOControl*, BOOL*, int>)(lpVtbl[9]))((IXMLDSOControl*)Unsafe.AsPointer(ref this), fJavaDSOCompatible);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(10)]
         [return: NativeTypeName("HRESULT")]
-        public int put_JavaDSOCompatible([NativeTypeName("BOOL")] int fJavaDSOCompatible)
+        public int put_JavaDSOCompatible(BOOL fJavaDSOCompatible)
         {
-            return ((delegate* unmanaged<IXMLDSOControl*, int, int>)(lpVtbl[10]))((IXMLDSOControl*)Unsafe.AsPointer(ref this), fJavaDSOCompatible);
+            return ((delegate* unmanaged<IXMLDSOControl*, BOOL, int>)(lpVtbl[10]))((IXMLDSOControl*)Unsafe.AsPointer(ref this), fJavaDSOCompatible);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

@@ -11,8 +11,7 @@ namespace TerraFX.Interop
 
         public WS_XML_READER_ENCODING* textEncoding;
 
-        [NativeTypeName("BOOL")]
-        public int readMimeHeader;
+        public BOOL readMimeHeader;
 
         public WS_STRING startInfo;
 

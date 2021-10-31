@@ -107,9 +107,9 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(11)]
         [return: NativeTypeName("HRESULT")]
-        public int IsPositioned([NativeTypeName("BOOL *")] int* pfPositioned)
+        public int IsPositioned(BOOL* pfPositioned)
         {
-            return ((delegate* unmanaged<IDisplayPointer*, int*, int>)(lpVtbl[11]))((IDisplayPointer*)Unsafe.AsPointer(ref this), pfPositioned);
+            return ((delegate* unmanaged<IDisplayPointer*, BOOL*, int>)(lpVtbl[11]))((IDisplayPointer*)Unsafe.AsPointer(ref this), pfPositioned);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -123,33 +123,33 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(13)]
         [return: NativeTypeName("HRESULT")]
-        public int IsEqualTo(IDisplayPointer* pDispPointer, [NativeTypeName("BOOL *")] int* pfIsEqual)
+        public int IsEqualTo(IDisplayPointer* pDispPointer, BOOL* pfIsEqual)
         {
-            return ((delegate* unmanaged<IDisplayPointer*, IDisplayPointer*, int*, int>)(lpVtbl[13]))((IDisplayPointer*)Unsafe.AsPointer(ref this), pDispPointer, pfIsEqual);
+            return ((delegate* unmanaged<IDisplayPointer*, IDisplayPointer*, BOOL*, int>)(lpVtbl[13]))((IDisplayPointer*)Unsafe.AsPointer(ref this), pDispPointer, pfIsEqual);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(14)]
         [return: NativeTypeName("HRESULT")]
-        public int IsLeftOf(IDisplayPointer* pDispPointer, [NativeTypeName("BOOL *")] int* pfIsLeftOf)
+        public int IsLeftOf(IDisplayPointer* pDispPointer, BOOL* pfIsLeftOf)
         {
-            return ((delegate* unmanaged<IDisplayPointer*, IDisplayPointer*, int*, int>)(lpVtbl[14]))((IDisplayPointer*)Unsafe.AsPointer(ref this), pDispPointer, pfIsLeftOf);
+            return ((delegate* unmanaged<IDisplayPointer*, IDisplayPointer*, BOOL*, int>)(lpVtbl[14]))((IDisplayPointer*)Unsafe.AsPointer(ref this), pDispPointer, pfIsLeftOf);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(15)]
         [return: NativeTypeName("HRESULT")]
-        public int IsRightOf(IDisplayPointer* pDispPointer, [NativeTypeName("BOOL *")] int* pfIsRightOf)
+        public int IsRightOf(IDisplayPointer* pDispPointer, BOOL* pfIsRightOf)
         {
-            return ((delegate* unmanaged<IDisplayPointer*, IDisplayPointer*, int*, int>)(lpVtbl[15]))((IDisplayPointer*)Unsafe.AsPointer(ref this), pDispPointer, pfIsRightOf);
+            return ((delegate* unmanaged<IDisplayPointer*, IDisplayPointer*, BOOL*, int>)(lpVtbl[15]))((IDisplayPointer*)Unsafe.AsPointer(ref this), pDispPointer, pfIsRightOf);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(16)]
         [return: NativeTypeName("HRESULT")]
-        public int IsAtBOL([NativeTypeName("BOOL *")] int* pfBOL)
+        public int IsAtBOL(BOOL* pfBOL)
         {
-            return ((delegate* unmanaged<IDisplayPointer*, int*, int>)(lpVtbl[16]))((IDisplayPointer*)Unsafe.AsPointer(ref this), pfBOL);
+            return ((delegate* unmanaged<IDisplayPointer*, BOOL*, int>)(lpVtbl[16]))((IDisplayPointer*)Unsafe.AsPointer(ref this), pfBOL);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

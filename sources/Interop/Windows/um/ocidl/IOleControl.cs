@@ -67,9 +67,9 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
         [return: NativeTypeName("HRESULT")]
-        public int FreezeEvents([NativeTypeName("BOOL")] int bFreeze)
+        public int FreezeEvents(BOOL bFreeze)
         {
-            return ((delegate* unmanaged<IOleControl*, int, int>)(lpVtbl[6]))((IOleControl*)Unsafe.AsPointer(ref this), bFreeze);
+            return ((delegate* unmanaged<IOleControl*, BOOL, int>)(lpVtbl[6]))((IOleControl*)Unsafe.AsPointer(ref this), bFreeze);
         }
     }
 }

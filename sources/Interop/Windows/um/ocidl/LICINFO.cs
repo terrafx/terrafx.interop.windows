@@ -10,10 +10,8 @@ namespace TerraFX.Interop
         [NativeTypeName("LONG")]
         public int cbLicInfo;
 
-        [NativeTypeName("BOOL")]
-        public int fRuntimeKeyAvail;
+        public BOOL fRuntimeKeyAvail;
 
-        [NativeTypeName("BOOL")]
-        public int fLicVerified;
+        public BOOL fLicVerified;
     }
 }

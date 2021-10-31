@@ -43,9 +43,9 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
         [return: NativeTypeName("HRESULT")]
-        public int NotifyDebugDir([NativeTypeName("BOOL")] int fExecutable, [NativeTypeName("DWORD")] uint cbData, [NativeTypeName("BYTE *")] byte* pbData)
+        public int NotifyDebugDir(BOOL fExecutable, [NativeTypeName("DWORD")] uint cbData, [NativeTypeName("BYTE *")] byte* pbData)
         {
-            return ((delegate* unmanaged<IDiaLoadCallback2*, int, uint, byte*, int>)(lpVtbl[3]))((IDiaLoadCallback2*)Unsafe.AsPointer(ref this), fExecutable, cbData, pbData);
+            return ((delegate* unmanaged<IDiaLoadCallback2*, BOOL, uint, byte*, int>)(lpVtbl[3]))((IDiaLoadCallback2*)Unsafe.AsPointer(ref this), fExecutable, cbData, pbData);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

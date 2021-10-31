@@ -16,8 +16,7 @@ namespace TerraFX.Interop
 
         public WINTRUST_DATA* pWintrustData;
 
-        [NativeTypeName("BOOL")]
-        public int fOpenedFile;
+        public BOOL fOpenedFile;
 
         [NativeTypeName("HWND")]
         public IntPtr hWndParent;
@@ -79,8 +78,7 @@ namespace TerraFX.Interop
         [NativeTypeName("char *")]
         public sbyte* pszUsageOID;
 
-        [NativeTypeName("BOOL")]
-        public int fRecallWithState;
+        public BOOL fRecallWithState;
 
         public FILETIME sftSystemTime;
 

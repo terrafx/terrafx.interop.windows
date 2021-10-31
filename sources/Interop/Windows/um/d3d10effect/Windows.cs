@@ -66,8 +66,7 @@ namespace TerraFX.Interop
         public static extern int D3D10StateBlockMaskDisableAll(D3D10_STATE_BLOCK_MASK* pMask);
 
         [DllImport("d3d10", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int D3D10StateBlockMaskGetSetting(D3D10_STATE_BLOCK_MASK* pMask, D3D10_DEVICE_STATE_TYPES StateType, [NativeTypeName("UINT")] uint Entry);
+        public static extern BOOL D3D10StateBlockMaskGetSetting(D3D10_STATE_BLOCK_MASK* pMask, D3D10_DEVICE_STATE_TYPES StateType, [NativeTypeName("UINT")] uint Entry);
 
         [DllImport("d3d10", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
@@ -562,7 +561,7 @@ namespace TerraFX.Interop
 
         [DllImport("d3d10", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
-        public static extern int D3D10DisassembleEffect(ID3D10Effect* pEffect, [NativeTypeName("BOOL")] int EnableColorCode, [NativeTypeName("ID3D10Blob **")] ID3DBlob** ppDisassembly);
+        public static extern int D3D10DisassembleEffect(ID3D10Effect* pEffect, BOOL EnableColorCode, [NativeTypeName("ID3D10Blob **")] ID3DBlob** ppDisassembly);
 
         [NativeTypeName("#define D3D10_EFFECT_COMPILE_CHILD_EFFECT (1 << 0)")]
         public const int D3D10_EFFECT_COMPILE_CHILD_EFFECT = (1 << 0);

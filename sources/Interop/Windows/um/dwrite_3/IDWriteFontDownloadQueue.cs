@@ -58,8 +58,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        [return: NativeTypeName("BOOL")]
-        public int IsEmpty()
+        public BOOL IsEmpty()
         {
             return ((delegate* unmanaged<IDWriteFontDownloadQueue*, int>)(lpVtbl[5]))((IDWriteFontDownloadQueue*)Unsafe.AsPointer(ref this));
         }

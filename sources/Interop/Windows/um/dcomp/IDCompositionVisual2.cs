@@ -147,9 +147,9 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(16)]
         [return: NativeTypeName("HRESULT")]
-        public int AddVisual(IDCompositionVisual* visual, [NativeTypeName("BOOL")] int insertAbove, IDCompositionVisual* referenceVisual)
+        public int AddVisual(IDCompositionVisual* visual, BOOL insertAbove, IDCompositionVisual* referenceVisual)
         {
-            return ((delegate* unmanaged<IDCompositionVisual2*, IDCompositionVisual*, int, IDCompositionVisual*, int>)(lpVtbl[16]))((IDCompositionVisual2*)Unsafe.AsPointer(ref this), visual, insertAbove, referenceVisual);
+            return ((delegate* unmanaged<IDCompositionVisual2*, IDCompositionVisual*, BOOL, IDCompositionVisual*, int>)(lpVtbl[16]))((IDCompositionVisual2*)Unsafe.AsPointer(ref this), visual, insertAbove, referenceVisual);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

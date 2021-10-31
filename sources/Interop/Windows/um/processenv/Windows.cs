@@ -11,20 +11,17 @@ namespace TerraFX.Interop
     public static unsafe partial class Windows
     {
         [DllImport("kernel32", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SetEnvironmentStringsW([NativeTypeName("LPWCH")] ushort* NewEnvironment);
+        public static extern BOOL SetEnvironmentStringsW([NativeTypeName("LPWCH")] ushort* NewEnvironment);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("HANDLE")]
         public static extern IntPtr GetStdHandle([NativeTypeName("DWORD")] uint nStdHandle);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SetStdHandle([NativeTypeName("DWORD")] uint nStdHandle, [NativeTypeName("HANDLE")] IntPtr hHandle);
+        public static extern BOOL SetStdHandle([NativeTypeName("DWORD")] uint nStdHandle, [NativeTypeName("HANDLE")] IntPtr hHandle);
 
         [DllImport("api-ms-win-core-processenvironment-l1-1-0", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SetStdHandleEx([NativeTypeName("DWORD")] uint nStdHandle, [NativeTypeName("HANDLE")] IntPtr hHandle, [NativeTypeName("PHANDLE")] IntPtr* phPrevValue);
+        public static extern BOOL SetStdHandleEx([NativeTypeName("DWORD")] uint nStdHandle, [NativeTypeName("HANDLE")] IntPtr hHandle, [NativeTypeName("PHANDLE")] IntPtr* phPrevValue);
 
         [DllImport("kernel32", ExactSpelling = true)]
         [return: NativeTypeName("LPSTR")]
@@ -43,12 +40,10 @@ namespace TerraFX.Interop
         public static extern ushort* GetEnvironmentStringsW();
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int FreeEnvironmentStringsA([NativeTypeName("LPCH")] sbyte* penv);
+        public static extern BOOL FreeEnvironmentStringsA([NativeTypeName("LPCH")] sbyte* penv);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int FreeEnvironmentStringsW([NativeTypeName("LPWCH")] ushort* penv);
+        public static extern BOOL FreeEnvironmentStringsW([NativeTypeName("LPWCH")] ushort* penv);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("DWORD")]
@@ -59,12 +54,10 @@ namespace TerraFX.Interop
         public static extern uint GetEnvironmentVariableW([NativeTypeName("LPCWSTR")] ushort* lpName, [NativeTypeName("LPWSTR")] ushort* lpBuffer, [NativeTypeName("DWORD")] uint nSize);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SetEnvironmentVariableA([NativeTypeName("LPCSTR")] sbyte* lpName, [NativeTypeName("LPCSTR")] sbyte* lpValue);
+        public static extern BOOL SetEnvironmentVariableA([NativeTypeName("LPCSTR")] sbyte* lpName, [NativeTypeName("LPCSTR")] sbyte* lpValue);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SetEnvironmentVariableW([NativeTypeName("LPCWSTR")] ushort* lpName, [NativeTypeName("LPCWSTR")] ushort* lpValue);
+        public static extern BOOL SetEnvironmentVariableW([NativeTypeName("LPCWSTR")] ushort* lpName, [NativeTypeName("LPCWSTR")] ushort* lpValue);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("DWORD")]
@@ -75,12 +68,10 @@ namespace TerraFX.Interop
         public static extern uint ExpandEnvironmentStringsW([NativeTypeName("LPCWSTR")] ushort* lpSrc, [NativeTypeName("LPWSTR")] ushort* lpDst, [NativeTypeName("DWORD")] uint nSize);
 
         [DllImport("kernel32", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SetCurrentDirectoryA([NativeTypeName("LPCSTR")] sbyte* lpPathName);
+        public static extern BOOL SetCurrentDirectoryA([NativeTypeName("LPCSTR")] sbyte* lpPathName);
 
         [DllImport("kernel32", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SetCurrentDirectoryW([NativeTypeName("LPCWSTR")] ushort* lpPathName);
+        public static extern BOOL SetCurrentDirectoryW([NativeTypeName("LPCWSTR")] ushort* lpPathName);
 
         [DllImport("kernel32", ExactSpelling = true)]
         [return: NativeTypeName("DWORD")]
@@ -99,15 +90,13 @@ namespace TerraFX.Interop
         public static extern uint SearchPathA([NativeTypeName("LPCSTR")] sbyte* lpPath, [NativeTypeName("LPCSTR")] sbyte* lpFileName, [NativeTypeName("LPCSTR")] sbyte* lpExtension, [NativeTypeName("DWORD")] uint nBufferLength, [NativeTypeName("LPSTR")] sbyte* lpBuffer, [NativeTypeName("LPSTR *")] sbyte** lpFilePart);
 
         [DllImport("kernel32", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int NeedCurrentDirectoryForExePathA([NativeTypeName("LPCSTR")] sbyte* ExeName);
+        public static extern BOOL NeedCurrentDirectoryForExePathA([NativeTypeName("LPCSTR")] sbyte* ExeName);
 
         [DllImport("kernel32", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int NeedCurrentDirectoryForExePathW([NativeTypeName("LPCWSTR")] ushort* ExeName);
+        public static extern BOOL NeedCurrentDirectoryForExePathW([NativeTypeName("LPCWSTR")] ushort* ExeName);
 
         [NativeTypeName("#define SetEnvironmentStrings SetEnvironmentStringsW")]
-        public static delegate*<ushort*, int> SetEnvironmentStrings => &SetEnvironmentStringsW;
+        public static delegate*<ushort*, BOOL> SetEnvironmentStrings => &SetEnvironmentStringsW;
 
         [NativeTypeName("#define GetCommandLine GetCommandLineW")]
         public static delegate*<ushort*> GetCommandLine => &GetCommandLineW;
@@ -116,19 +105,19 @@ namespace TerraFX.Interop
         public static delegate*<ushort*> GetEnvironmentStrings => &GetEnvironmentStringsW;
 
         [NativeTypeName("#define FreeEnvironmentStrings FreeEnvironmentStringsW")]
-        public static delegate*<ushort*, int> FreeEnvironmentStrings => &FreeEnvironmentStringsW;
+        public static delegate*<ushort*, BOOL> FreeEnvironmentStrings => &FreeEnvironmentStringsW;
 
         [NativeTypeName("#define GetEnvironmentVariable GetEnvironmentVariableW")]
         public static delegate*<ushort*, ushort*, uint, uint> GetEnvironmentVariable => &GetEnvironmentVariableW;
 
         [NativeTypeName("#define SetEnvironmentVariable SetEnvironmentVariableW")]
-        public static delegate*<ushort*, ushort*, int> SetEnvironmentVariable => &SetEnvironmentVariableW;
+        public static delegate*<ushort*, ushort*, BOOL> SetEnvironmentVariable => &SetEnvironmentVariableW;
 
         [NativeTypeName("#define ExpandEnvironmentStrings ExpandEnvironmentStringsW")]
         public static delegate*<ushort*, ushort*, uint, uint> ExpandEnvironmentStrings => &ExpandEnvironmentStringsW;
 
         [NativeTypeName("#define SetCurrentDirectory SetCurrentDirectoryW")]
-        public static delegate*<ushort*, int> SetCurrentDirectory => &SetCurrentDirectoryW;
+        public static delegate*<ushort*, BOOL> SetCurrentDirectory => &SetCurrentDirectoryW;
 
         [NativeTypeName("#define GetCurrentDirectory GetCurrentDirectoryW")]
         public static delegate*<uint, ushort*, uint> GetCurrentDirectory => &GetCurrentDirectoryW;
@@ -137,6 +126,6 @@ namespace TerraFX.Interop
         public static delegate*<ushort*, ushort*, ushort*, uint, ushort*, ushort**, uint> SearchPath => &SearchPathW;
 
         [NativeTypeName("#define NeedCurrentDirectoryForExePath NeedCurrentDirectoryForExePathW")]
-        public static delegate*<ushort*, int> NeedCurrentDirectoryForExePath => &NeedCurrentDirectoryForExePathW;
+        public static delegate*<ushort*, BOOL> NeedCurrentDirectoryForExePath => &NeedCurrentDirectoryForExePathW;
     }
 }

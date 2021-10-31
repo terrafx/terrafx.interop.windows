@@ -195,9 +195,9 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(22)]
         [return: NativeTypeName("HRESULT")]
-        public int Pause([NativeTypeName("BOOL")] int bState)
+        public int Pause(BOOL bState)
         {
-            return ((delegate* unmanaged<IDvdControl2*, int, int>)(lpVtbl[22]))((IDvdControl2*)Unsafe.AsPointer(ref this), bState);
+            return ((delegate* unmanaged<IDvdControl2*, BOOL, int>)(lpVtbl[22]))((IDvdControl2*)Unsafe.AsPointer(ref this), bState);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -219,9 +219,9 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(25)]
         [return: NativeTypeName("HRESULT")]
-        public int SetSubpictureState([NativeTypeName("BOOL")] int bState, [NativeTypeName("DWORD")] uint dwFlags, IDvdCmd** ppCmd)
+        public int SetSubpictureState(BOOL bState, [NativeTypeName("DWORD")] uint dwFlags, IDvdCmd** ppCmd)
         {
-            return ((delegate* unmanaged<IDvdControl2*, int, uint, IDvdCmd**, int>)(lpVtbl[25]))((IDvdControl2*)Unsafe.AsPointer(ref this), bState, dwFlags, ppCmd);
+            return ((delegate* unmanaged<IDvdControl2*, BOOL, uint, IDvdCmd**, int>)(lpVtbl[25]))((IDvdControl2*)Unsafe.AsPointer(ref this), bState, dwFlags, ppCmd);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -299,17 +299,17 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(35)]
         [return: NativeTypeName("HRESULT")]
-        public int AcceptParentalLevelChange([NativeTypeName("BOOL")] int bAccept)
+        public int AcceptParentalLevelChange(BOOL bAccept)
         {
-            return ((delegate* unmanaged<IDvdControl2*, int, int>)(lpVtbl[35]))((IDvdControl2*)Unsafe.AsPointer(ref this), bAccept);
+            return ((delegate* unmanaged<IDvdControl2*, BOOL, int>)(lpVtbl[35]))((IDvdControl2*)Unsafe.AsPointer(ref this), bAccept);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(36)]
         [return: NativeTypeName("HRESULT")]
-        public int SetOption(DVD_OPTION_FLAG flag, [NativeTypeName("BOOL")] int fState)
+        public int SetOption(DVD_OPTION_FLAG flag, BOOL fState)
         {
-            return ((delegate* unmanaged<IDvdControl2*, DVD_OPTION_FLAG, int, int>)(lpVtbl[36]))((IDvdControl2*)Unsafe.AsPointer(ref this), flag, fState);
+            return ((delegate* unmanaged<IDvdControl2*, DVD_OPTION_FLAG, BOOL, int>)(lpVtbl[36]))((IDvdControl2*)Unsafe.AsPointer(ref this), flag, fState);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

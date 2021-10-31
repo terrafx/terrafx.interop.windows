@@ -43,17 +43,17 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
         [return: NativeTypeName("HRESULT")]
-        public int AddEntry(IUnknown* punk, [NativeTypeName("BOOL")] int fIsLocalAnchor)
+        public int AddEntry(IUnknown* punk, BOOL fIsLocalAnchor)
         {
-            return ((delegate* unmanaged<ITravelLog*, IUnknown*, int, int>)(lpVtbl[3]))((ITravelLog*)Unsafe.AsPointer(ref this), punk, fIsLocalAnchor);
+            return ((delegate* unmanaged<ITravelLog*, IUnknown*, BOOL, int>)(lpVtbl[3]))((ITravelLog*)Unsafe.AsPointer(ref this), punk, fIsLocalAnchor);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
         [return: NativeTypeName("HRESULT")]
-        public int UpdateEntry(IUnknown* punk, [NativeTypeName("BOOL")] int fIsLocalAnchor)
+        public int UpdateEntry(IUnknown* punk, BOOL fIsLocalAnchor)
         {
-            return ((delegate* unmanaged<ITravelLog*, IUnknown*, int, int>)(lpVtbl[4]))((ITravelLog*)Unsafe.AsPointer(ref this), punk, fIsLocalAnchor);
+            return ((delegate* unmanaged<ITravelLog*, IUnknown*, BOOL, int>)(lpVtbl[4]))((ITravelLog*)Unsafe.AsPointer(ref this), punk, fIsLocalAnchor);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

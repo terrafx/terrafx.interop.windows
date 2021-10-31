@@ -50,8 +50,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        [return: NativeTypeName("BOOL")]
-        public int IsExternal()
+        public BOOL IsExternal()
         {
             return ((delegate* unmanaged<IMFTimedTextStyle*, int>)(lpVtbl[4]))((IMFTimedTextStyle*)Unsafe.AsPointer(ref this));
         }
@@ -91,9 +90,9 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(9)]
         [return: NativeTypeName("HRESULT")]
-        public int GetShowBackgroundAlways([NativeTypeName("BOOL *")] int* showBackgroundAlways)
+        public int GetShowBackgroundAlways(BOOL* showBackgroundAlways)
         {
-            return ((delegate* unmanaged<IMFTimedTextStyle*, int*, int>)(lpVtbl[9]))((IMFTimedTextStyle*)Unsafe.AsPointer(ref this), showBackgroundAlways);
+            return ((delegate* unmanaged<IMFTimedTextStyle*, BOOL*, int>)(lpVtbl[9]))((IMFTimedTextStyle*)Unsafe.AsPointer(ref this), showBackgroundAlways);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -107,17 +106,17 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(11)]
         [return: NativeTypeName("HRESULT")]
-        public int GetBold([NativeTypeName("BOOL *")] int* bold)
+        public int GetBold(BOOL* bold)
         {
-            return ((delegate* unmanaged<IMFTimedTextStyle*, int*, int>)(lpVtbl[11]))((IMFTimedTextStyle*)Unsafe.AsPointer(ref this), bold);
+            return ((delegate* unmanaged<IMFTimedTextStyle*, BOOL*, int>)(lpVtbl[11]))((IMFTimedTextStyle*)Unsafe.AsPointer(ref this), bold);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(12)]
         [return: NativeTypeName("HRESULT")]
-        public int GetRightToLeft([NativeTypeName("BOOL *")] int* rightToLeft)
+        public int GetRightToLeft(BOOL* rightToLeft)
         {
-            return ((delegate* unmanaged<IMFTimedTextStyle*, int*, int>)(lpVtbl[12]))((IMFTimedTextStyle*)Unsafe.AsPointer(ref this), rightToLeft);
+            return ((delegate* unmanaged<IMFTimedTextStyle*, BOOL*, int>)(lpVtbl[12]))((IMFTimedTextStyle*)Unsafe.AsPointer(ref this), rightToLeft);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

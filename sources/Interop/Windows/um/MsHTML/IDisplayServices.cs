@@ -91,9 +91,9 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(9)]
         [return: NativeTypeName("HRESULT")]
-        public int HasFlowLayout(IHTMLElement* pIElement, [NativeTypeName("BOOL *")] int* pfHasFlowLayout)
+        public int HasFlowLayout(IHTMLElement* pIElement, BOOL* pfHasFlowLayout)
         {
-            return ((delegate* unmanaged<IDisplayServices*, IHTMLElement*, int*, int>)(lpVtbl[9]))((IDisplayServices*)Unsafe.AsPointer(ref this), pIElement, pfHasFlowLayout);
+            return ((delegate* unmanaged<IDisplayServices*, IHTMLElement*, BOOL*, int>)(lpVtbl[9]))((IDisplayServices*)Unsafe.AsPointer(ref this), pIElement, pfHasFlowLayout);
         }
     }
 }

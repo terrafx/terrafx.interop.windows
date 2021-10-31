@@ -7,8 +7,7 @@ namespace TerraFX.Interop
 {
     public unsafe partial struct DXGI_GAMMA_CONTROL_CAPABILITIES
     {
-        [NativeTypeName("BOOL")]
-        public int ScaleAndOffsetSupported;
+        public BOOL ScaleAndOffsetSupported;
 
         public float MaxConvertedValue;
 

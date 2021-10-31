@@ -163,41 +163,41 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(18)]
         [return: NativeTypeName("HRESULT")]
-        public int DoesSupportAnimation([NativeTypeName("BOOL *")] int* pfSupportAnimation)
+        public int DoesSupportAnimation(BOOL* pfSupportAnimation)
         {
-            return ((delegate* unmanaged<IWICBitmapEncoderInfo*, int*, int>)(lpVtbl[18]))((IWICBitmapEncoderInfo*)Unsafe.AsPointer(ref this), pfSupportAnimation);
+            return ((delegate* unmanaged<IWICBitmapEncoderInfo*, BOOL*, int>)(lpVtbl[18]))((IWICBitmapEncoderInfo*)Unsafe.AsPointer(ref this), pfSupportAnimation);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(19)]
         [return: NativeTypeName("HRESULT")]
-        public int DoesSupportChromakey([NativeTypeName("BOOL *")] int* pfSupportChromakey)
+        public int DoesSupportChromakey(BOOL* pfSupportChromakey)
         {
-            return ((delegate* unmanaged<IWICBitmapEncoderInfo*, int*, int>)(lpVtbl[19]))((IWICBitmapEncoderInfo*)Unsafe.AsPointer(ref this), pfSupportChromakey);
+            return ((delegate* unmanaged<IWICBitmapEncoderInfo*, BOOL*, int>)(lpVtbl[19]))((IWICBitmapEncoderInfo*)Unsafe.AsPointer(ref this), pfSupportChromakey);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(20)]
         [return: NativeTypeName("HRESULT")]
-        public int DoesSupportLossless([NativeTypeName("BOOL *")] int* pfSupportLossless)
+        public int DoesSupportLossless(BOOL* pfSupportLossless)
         {
-            return ((delegate* unmanaged<IWICBitmapEncoderInfo*, int*, int>)(lpVtbl[20]))((IWICBitmapEncoderInfo*)Unsafe.AsPointer(ref this), pfSupportLossless);
+            return ((delegate* unmanaged<IWICBitmapEncoderInfo*, BOOL*, int>)(lpVtbl[20]))((IWICBitmapEncoderInfo*)Unsafe.AsPointer(ref this), pfSupportLossless);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(21)]
         [return: NativeTypeName("HRESULT")]
-        public int DoesSupportMultiframe([NativeTypeName("BOOL *")] int* pfSupportMultiframe)
+        public int DoesSupportMultiframe(BOOL* pfSupportMultiframe)
         {
-            return ((delegate* unmanaged<IWICBitmapEncoderInfo*, int*, int>)(lpVtbl[21]))((IWICBitmapEncoderInfo*)Unsafe.AsPointer(ref this), pfSupportMultiframe);
+            return ((delegate* unmanaged<IWICBitmapEncoderInfo*, BOOL*, int>)(lpVtbl[21]))((IWICBitmapEncoderInfo*)Unsafe.AsPointer(ref this), pfSupportMultiframe);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(22)]
         [return: NativeTypeName("HRESULT")]
-        public int MatchesMimeType([NativeTypeName("LPCWSTR")] ushort* wzMimeType, [NativeTypeName("BOOL *")] int* pfMatches)
+        public int MatchesMimeType([NativeTypeName("LPCWSTR")] ushort* wzMimeType, BOOL* pfMatches)
         {
-            return ((delegate* unmanaged<IWICBitmapEncoderInfo*, ushort*, int*, int>)(lpVtbl[22]))((IWICBitmapEncoderInfo*)Unsafe.AsPointer(ref this), wzMimeType, pfMatches);
+            return ((delegate* unmanaged<IWICBitmapEncoderInfo*, ushort*, BOOL*, int>)(lpVtbl[22]))((IWICBitmapEncoderInfo*)Unsafe.AsPointer(ref this), wzMimeType, pfMatches);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

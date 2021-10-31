@@ -12,16 +12,13 @@ namespace TerraFX.Interop
         [NativeTypeName("HDC")]
         public IntPtr hdc;
 
-        [NativeTypeName("BOOL")]
-        public int fErase;
+        public BOOL fErase;
 
         public RECT rcPaint;
 
-        [NativeTypeName("BOOL")]
-        public int fRestore;
+        public BOOL fRestore;
 
-        [NativeTypeName("BOOL")]
-        public int fIncUpdate;
+        public BOOL fIncUpdate;
 
         [NativeTypeName("BYTE [32]")]
         public fixed byte rgbReserved[32];

@@ -91,17 +91,17 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(9)]
         [return: NativeTypeName("HRESULT")]
-        public int Show([NativeTypeName("BOOL")] int fShow)
+        public int Show(BOOL fShow)
         {
-            return ((delegate* unmanaged<IOleDocumentView*, int, int>)(lpVtbl[9]))((IOleDocumentView*)Unsafe.AsPointer(ref this), fShow);
+            return ((delegate* unmanaged<IOleDocumentView*, BOOL, int>)(lpVtbl[9]))((IOleDocumentView*)Unsafe.AsPointer(ref this), fShow);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(10)]
         [return: NativeTypeName("HRESULT")]
-        public int UIActivate([NativeTypeName("BOOL")] int fUIActivate)
+        public int UIActivate(BOOL fUIActivate)
         {
-            return ((delegate* unmanaged<IOleDocumentView*, int, int>)(lpVtbl[10]))((IOleDocumentView*)Unsafe.AsPointer(ref this), fUIActivate);
+            return ((delegate* unmanaged<IOleDocumentView*, BOOL, int>)(lpVtbl[10]))((IOleDocumentView*)Unsafe.AsPointer(ref this), fUIActivate);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

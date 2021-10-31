@@ -51,17 +51,17 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
         [return: NativeTypeName("HRESULT")]
-        public int QueryRange(ITfRange* pRange, ITfRange** ppNewRange, [NativeTypeName("BOOL *")] int* pfAccepted)
+        public int QueryRange(ITfRange* pRange, ITfRange** ppNewRange, BOOL* pfAccepted)
         {
-            return ((delegate* unmanaged<ITfFnLMInternal*, ITfRange*, ITfRange**, int*, int>)(lpVtbl[4]))((ITfFnLMInternal*)Unsafe.AsPointer(ref this), pRange, ppNewRange, pfAccepted);
+            return ((delegate* unmanaged<ITfFnLMInternal*, ITfRange*, ITfRange**, BOOL*, int>)(lpVtbl[4]))((ITfFnLMInternal*)Unsafe.AsPointer(ref this), pRange, ppNewRange, pfAccepted);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
         [return: NativeTypeName("HRESULT")]
-        public int QueryLangID([NativeTypeName("LANGID")] ushort langid, [NativeTypeName("BOOL *")] int* pfAccepted)
+        public int QueryLangID([NativeTypeName("LANGID")] ushort langid, BOOL* pfAccepted)
         {
-            return ((delegate* unmanaged<ITfFnLMInternal*, ushort, int*, int>)(lpVtbl[5]))((ITfFnLMInternal*)Unsafe.AsPointer(ref this), langid, pfAccepted);
+            return ((delegate* unmanaged<ITfFnLMInternal*, ushort, BOOL*, int>)(lpVtbl[5]))((ITfFnLMInternal*)Unsafe.AsPointer(ref this), langid, pfAccepted);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -83,17 +83,17 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(8)]
         [return: NativeTypeName("HRESULT")]
-        public int QueryKey([NativeTypeName("BOOL")] int fUp, [NativeTypeName("WPARAM")] nuint vKey, [NativeTypeName("LPARAM")] nint lparamKeydata, [NativeTypeName("BOOL *")] int* pfInterested)
+        public int QueryKey(BOOL fUp, [NativeTypeName("WPARAM")] nuint vKey, [NativeTypeName("LPARAM")] nint lparamKeydata, BOOL* pfInterested)
         {
-            return ((delegate* unmanaged<ITfFnLMInternal*, int, nuint, nint, int*, int>)(lpVtbl[8]))((ITfFnLMInternal*)Unsafe.AsPointer(ref this), fUp, vKey, lparamKeydata, pfInterested);
+            return ((delegate* unmanaged<ITfFnLMInternal*, BOOL, nuint, nint, BOOL*, int>)(lpVtbl[8]))((ITfFnLMInternal*)Unsafe.AsPointer(ref this), fUp, vKey, lparamKeydata, pfInterested);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(9)]
         [return: NativeTypeName("HRESULT")]
-        public int InvokeKey([NativeTypeName("BOOL")] int fUp, [NativeTypeName("WPARAM")] nuint vKey, [NativeTypeName("LPARAM")] nint lparamKeyData)
+        public int InvokeKey(BOOL fUp, [NativeTypeName("WPARAM")] nuint vKey, [NativeTypeName("LPARAM")] nint lparamKeyData)
         {
-            return ((delegate* unmanaged<ITfFnLMInternal*, int, nuint, nint, int>)(lpVtbl[9]))((ITfFnLMInternal*)Unsafe.AsPointer(ref this), fUp, vKey, lparamKeyData);
+            return ((delegate* unmanaged<ITfFnLMInternal*, BOOL, nuint, nint, int>)(lpVtbl[9]))((ITfFnLMInternal*)Unsafe.AsPointer(ref this), fUp, vKey, lparamKeyData);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

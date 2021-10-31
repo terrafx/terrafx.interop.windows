@@ -17,7 +17,7 @@ namespace TerraFX.Interop
 
         [DllImport("ole32", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
-        public static extern int CreateStreamOnHGlobal([NativeTypeName("HGLOBAL")] IntPtr hGlobal, [NativeTypeName("BOOL")] int fDeleteOnRelease, [NativeTypeName("LPSTREAM *")] IStream** ppstm);
+        public static extern int CreateStreamOnHGlobal([NativeTypeName("HGLOBAL")] IntPtr hGlobal, BOOL fDeleteOnRelease, [NativeTypeName("LPSTREAM *")] IStream** ppstm);
 
         [DllImport("ole32", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
@@ -144,7 +144,7 @@ namespace TerraFX.Interop
 
         [DllImport("ole32", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
-        public static extern int CoLockObjectExternal([NativeTypeName("LPUNKNOWN")] IUnknown* pUnk, [NativeTypeName("BOOL")] int fLock, [NativeTypeName("BOOL")] int fLastUnlockReleases);
+        public static extern int CoLockObjectExternal([NativeTypeName("LPUNKNOWN")] IUnknown* pUnk, BOOL fLock, BOOL fLastUnlockReleases);
 
         [DllImport("ole32", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
@@ -155,8 +155,7 @@ namespace TerraFX.Interop
         public static extern int CoGetStdMarshalEx([NativeTypeName("LPUNKNOWN")] IUnknown* pUnkOuter, [NativeTypeName("DWORD")] uint smexflags, [NativeTypeName("LPUNKNOWN *")] IUnknown** ppUnkInner);
 
         [DllImport("ole32", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int CoIsHandlerConnected([NativeTypeName("LPUNKNOWN")] IUnknown* pUnk);
+        public static extern BOOL CoIsHandlerConnected([NativeTypeName("LPUNKNOWN")] IUnknown* pUnk);
 
         [DllImport("ole32", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]

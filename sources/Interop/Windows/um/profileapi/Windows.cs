@@ -10,11 +10,9 @@ namespace TerraFX.Interop
     public static unsafe partial class Windows
     {
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int QueryPerformanceCounter(LARGE_INTEGER* lpPerformanceCount);
+        public static extern BOOL QueryPerformanceCounter(LARGE_INTEGER* lpPerformanceCount);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int QueryPerformanceFrequency(LARGE_INTEGER* lpFrequency);
+        public static extern BOOL QueryPerformanceFrequency(LARGE_INTEGER* lpFrequency);
     }
 }

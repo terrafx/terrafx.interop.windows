@@ -58,9 +58,9 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        public void SetCached([NativeTypeName("BOOL")] int isCached)
+        public void SetCached(BOOL isCached)
         {
-            ((delegate* unmanaged<ID2D1ConcreteTransform*, int, void>)(lpVtbl[5]))((ID2D1ConcreteTransform*)Unsafe.AsPointer(ref this), isCached);
+            ((delegate* unmanaged<ID2D1ConcreteTransform*, BOOL, void>)(lpVtbl[5]))((ID2D1ConcreteTransform*)Unsafe.AsPointer(ref this), isCached);
         }
     }
 }

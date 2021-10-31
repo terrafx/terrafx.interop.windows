@@ -15,8 +15,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("BOOL")]
-        public int IsValid()
+        public BOOL IsValid()
         {
             return ((delegate* unmanaged<ID3D10EffectScalarVariable*, int>)(lpVtbl[0]))((ID3D10EffectScalarVariable*)Unsafe.AsPointer(ref this));
         }
@@ -259,33 +258,33 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(33)]
         [return: NativeTypeName("HRESULT")]
-        public int SetBool([NativeTypeName("BOOL")] int Value)
+        public int SetBool(BOOL Value)
         {
-            return ((delegate* unmanaged<ID3D10EffectScalarVariable*, int, int>)(lpVtbl[33]))((ID3D10EffectScalarVariable*)Unsafe.AsPointer(ref this), Value);
+            return ((delegate* unmanaged<ID3D10EffectScalarVariable*, BOOL, int>)(lpVtbl[33]))((ID3D10EffectScalarVariable*)Unsafe.AsPointer(ref this), Value);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(34)]
         [return: NativeTypeName("HRESULT")]
-        public int GetBool([NativeTypeName("BOOL *")] int* pValue)
+        public int GetBool(BOOL* pValue)
         {
-            return ((delegate* unmanaged<ID3D10EffectScalarVariable*, int*, int>)(lpVtbl[34]))((ID3D10EffectScalarVariable*)Unsafe.AsPointer(ref this), pValue);
+            return ((delegate* unmanaged<ID3D10EffectScalarVariable*, BOOL*, int>)(lpVtbl[34]))((ID3D10EffectScalarVariable*)Unsafe.AsPointer(ref this), pValue);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(35)]
         [return: NativeTypeName("HRESULT")]
-        public int SetBoolArray([NativeTypeName("BOOL *")] int* pData, [NativeTypeName("UINT")] uint Offset, [NativeTypeName("UINT")] uint Count)
+        public int SetBoolArray(BOOL* pData, [NativeTypeName("UINT")] uint Offset, [NativeTypeName("UINT")] uint Count)
         {
-            return ((delegate* unmanaged<ID3D10EffectScalarVariable*, int*, uint, uint, int>)(lpVtbl[35]))((ID3D10EffectScalarVariable*)Unsafe.AsPointer(ref this), pData, Offset, Count);
+            return ((delegate* unmanaged<ID3D10EffectScalarVariable*, BOOL*, uint, uint, int>)(lpVtbl[35]))((ID3D10EffectScalarVariable*)Unsafe.AsPointer(ref this), pData, Offset, Count);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(36)]
         [return: NativeTypeName("HRESULT")]
-        public int GetBoolArray([NativeTypeName("BOOL *")] int* pData, [NativeTypeName("UINT")] uint Offset, [NativeTypeName("UINT")] uint Count)
+        public int GetBoolArray(BOOL* pData, [NativeTypeName("UINT")] uint Offset, [NativeTypeName("UINT")] uint Count)
         {
-            return ((delegate* unmanaged<ID3D10EffectScalarVariable*, int*, uint, uint, int>)(lpVtbl[36]))((ID3D10EffectScalarVariable*)Unsafe.AsPointer(ref this), pData, Offset, Count);
+            return ((delegate* unmanaged<ID3D10EffectScalarVariable*, BOOL*, uint, uint, int>)(lpVtbl[36]))((ID3D10EffectScalarVariable*)Unsafe.AsPointer(ref this), pData, Offset, Count);
         }
     }
 }

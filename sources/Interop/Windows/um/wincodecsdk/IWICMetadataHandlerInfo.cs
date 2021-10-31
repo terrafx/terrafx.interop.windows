@@ -139,25 +139,25 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(15)]
         [return: NativeTypeName("HRESULT")]
-        public int DoesRequireFullStream([NativeTypeName("BOOL *")] int* pfRequiresFullStream)
+        public int DoesRequireFullStream(BOOL* pfRequiresFullStream)
         {
-            return ((delegate* unmanaged<IWICMetadataHandlerInfo*, int*, int>)(lpVtbl[15]))((IWICMetadataHandlerInfo*)Unsafe.AsPointer(ref this), pfRequiresFullStream);
+            return ((delegate* unmanaged<IWICMetadataHandlerInfo*, BOOL*, int>)(lpVtbl[15]))((IWICMetadataHandlerInfo*)Unsafe.AsPointer(ref this), pfRequiresFullStream);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(16)]
         [return: NativeTypeName("HRESULT")]
-        public int DoesSupportPadding([NativeTypeName("BOOL *")] int* pfSupportsPadding)
+        public int DoesSupportPadding(BOOL* pfSupportsPadding)
         {
-            return ((delegate* unmanaged<IWICMetadataHandlerInfo*, int*, int>)(lpVtbl[16]))((IWICMetadataHandlerInfo*)Unsafe.AsPointer(ref this), pfSupportsPadding);
+            return ((delegate* unmanaged<IWICMetadataHandlerInfo*, BOOL*, int>)(lpVtbl[16]))((IWICMetadataHandlerInfo*)Unsafe.AsPointer(ref this), pfSupportsPadding);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(17)]
         [return: NativeTypeName("HRESULT")]
-        public int DoesRequireFixedSize([NativeTypeName("BOOL *")] int* pfFixedSize)
+        public int DoesRequireFixedSize(BOOL* pfFixedSize)
         {
-            return ((delegate* unmanaged<IWICMetadataHandlerInfo*, int*, int>)(lpVtbl[17]))((IWICMetadataHandlerInfo*)Unsafe.AsPointer(ref this), pfFixedSize);
+            return ((delegate* unmanaged<IWICMetadataHandlerInfo*, BOOL*, int>)(lpVtbl[17]))((IWICMetadataHandlerInfo*)Unsafe.AsPointer(ref this), pfFixedSize);
         }
     }
 }

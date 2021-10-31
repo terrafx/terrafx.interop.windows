@@ -12,8 +12,7 @@ namespace TerraFX.Interop
         [NativeTypeName("DWORD")]
         public uint cbSize;
 
-        [NativeTypeName("BOOL")]
-        public int fIcon;
+        public BOOL fIcon;
 
         [NativeTypeName("DWORD")]
         public uint xHotspot;

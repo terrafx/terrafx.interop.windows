@@ -24,8 +24,7 @@ namespace TerraFX.Interop
         [NativeTypeName("WORD")]
         public ushort wPopupAttributes;
 
-        [NativeTypeName("BOOL")]
-        public int bFullscreenSupported;
+        public BOOL bFullscreenSupported;
 
         [NativeTypeName("COLORREF [16]")]
         public fixed uint ColorTable[16];

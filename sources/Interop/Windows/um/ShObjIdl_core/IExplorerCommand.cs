@@ -75,9 +75,9 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(7)]
         [return: NativeTypeName("HRESULT")]
-        public int GetState(IShellItemArray* psiItemArray, [NativeTypeName("BOOL")] int fOkToBeSlow, [NativeTypeName("EXPCMDSTATE *")] uint* pCmdState)
+        public int GetState(IShellItemArray* psiItemArray, BOOL fOkToBeSlow, [NativeTypeName("EXPCMDSTATE *")] uint* pCmdState)
         {
-            return ((delegate* unmanaged<IExplorerCommand*, IShellItemArray*, int, uint*, int>)(lpVtbl[7]))((IExplorerCommand*)Unsafe.AsPointer(ref this), psiItemArray, fOkToBeSlow, pCmdState);
+            return ((delegate* unmanaged<IExplorerCommand*, IShellItemArray*, BOOL, uint*, int>)(lpVtbl[7]))((IExplorerCommand*)Unsafe.AsPointer(ref this), psiItemArray, fOkToBeSlow, pCmdState);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

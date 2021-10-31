@@ -66,8 +66,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        [return: NativeTypeName("BOOL")]
-        public int HasOutput(DXC_OUT_KIND dxcOutKind)
+        public BOOL HasOutput(DXC_OUT_KIND dxcOutKind)
         {
             return ((delegate* unmanaged<IDxcResult*, DXC_OUT_KIND, int>)(lpVtbl[6]))((IDxcResult*)Unsafe.AsPointer(ref this), dxcOutKind);
         }

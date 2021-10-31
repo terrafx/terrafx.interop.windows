@@ -51,9 +51,9 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
         [return: NativeTypeName("HRESULT")]
-        public int Close(IOleParentUndoUnit* pPUU, [NativeTypeName("BOOL")] int fCommit)
+        public int Close(IOleParentUndoUnit* pPUU, BOOL fCommit)
         {
-            return ((delegate* unmanaged<IOleUndoManager*, IOleParentUndoUnit*, int, int>)(lpVtbl[4]))((IOleUndoManager*)Unsafe.AsPointer(ref this), pPUU, fCommit);
+            return ((delegate* unmanaged<IOleUndoManager*, IOleParentUndoUnit*, BOOL, int>)(lpVtbl[4]))((IOleUndoManager*)Unsafe.AsPointer(ref this), pPUU, fCommit);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -131,9 +131,9 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(14)]
         [return: NativeTypeName("HRESULT")]
-        public int Enable([NativeTypeName("BOOL")] int fEnable)
+        public int Enable(BOOL fEnable)
         {
-            return ((delegate* unmanaged<IOleUndoManager*, int, int>)(lpVtbl[14]))((IOleUndoManager*)Unsafe.AsPointer(ref this), fEnable);
+            return ((delegate* unmanaged<IOleUndoManager*, BOOL, int>)(lpVtbl[14]))((IOleUndoManager*)Unsafe.AsPointer(ref this), fEnable);
         }
     }
 }

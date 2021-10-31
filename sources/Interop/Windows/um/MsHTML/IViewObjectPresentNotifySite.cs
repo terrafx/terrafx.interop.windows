@@ -51,9 +51,9 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
         [return: NativeTypeName("HRESULT")]
-        public int IsHardwareComposition([NativeTypeName("BOOL *")] int* pIsHardwareComposition)
+        public int IsHardwareComposition(BOOL* pIsHardwareComposition)
         {
-            return ((delegate* unmanaged<IViewObjectPresentNotifySite*, int*, int>)(lpVtbl[4]))((IViewObjectPresentNotifySite*)Unsafe.AsPointer(ref this), pIsHardwareComposition);
+            return ((delegate* unmanaged<IViewObjectPresentNotifySite*, BOOL*, int>)(lpVtbl[4]))((IViewObjectPresentNotifySite*)Unsafe.AsPointer(ref this), pIsHardwareComposition);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

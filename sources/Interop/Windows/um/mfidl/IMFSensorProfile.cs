@@ -59,9 +59,9 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
         [return: NativeTypeName("HRESULT")]
-        public int IsMediaTypeSupported([NativeTypeName("UINT32")] uint StreamId, IMFMediaType* pMediaType, [NativeTypeName("BOOL *")] int* pfSupported)
+        public int IsMediaTypeSupported([NativeTypeName("UINT32")] uint StreamId, IMFMediaType* pMediaType, BOOL* pfSupported)
         {
-            return ((delegate* unmanaged<IMFSensorProfile*, uint, IMFMediaType*, int*, int>)(lpVtbl[5]))((IMFSensorProfile*)Unsafe.AsPointer(ref this), StreamId, pMediaType, pfSupported);
+            return ((delegate* unmanaged<IMFSensorProfile*, uint, IMFMediaType*, BOOL*, int>)(lpVtbl[5]))((IMFSensorProfile*)Unsafe.AsPointer(ref this), StreamId, pMediaType, pfSupported);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

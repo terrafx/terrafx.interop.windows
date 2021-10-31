@@ -7,10 +7,8 @@ namespace TerraFX.Interop
 {
     public partial struct SPC_FINANCIAL_CRITERIA
     {
-        [NativeTypeName("BOOL")]
-        public int fFinancialInfoAvailable;
+        public BOOL fFinancialInfoAvailable;
 
-        [NativeTypeName("BOOL")]
-        public int fMeetsCriteria;
+        public BOOL fMeetsCriteria;
     }
 }

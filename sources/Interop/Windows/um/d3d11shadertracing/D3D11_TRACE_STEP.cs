@@ -10,8 +10,7 @@ namespace TerraFX.Interop
         [NativeTypeName("UINT")]
         public uint ID;
 
-        [NativeTypeName("BOOL")]
-        public int InstructionActive;
+        public BOOL InstructionActive;
 
         [NativeTypeName("UINT8")]
         public byte NumRegistersWritten;

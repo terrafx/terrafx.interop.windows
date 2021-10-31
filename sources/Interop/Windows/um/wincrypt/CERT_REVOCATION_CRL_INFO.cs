@@ -19,7 +19,6 @@ namespace TerraFX.Interop
         [NativeTypeName("PCRL_ENTRY")]
         public CRL_ENTRY* pCrlEntry;
 
-        [NativeTypeName("BOOL")]
-        public int fDeltaCrlEntry;
+        public BOOL fDeltaCrlEntry;
     }
 }

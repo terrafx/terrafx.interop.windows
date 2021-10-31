@@ -91,9 +91,9 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(9)]
         [return: NativeTypeName("HRESULT")]
-        public int Enable([NativeTypeName("BOOL")] int fEnable)
+        public int Enable(BOOL fEnable)
         {
-            return ((delegate* unmanaged<ISyncMgrSyncItem*, int, int>)(lpVtbl[9]))((ISyncMgrSyncItem*)Unsafe.AsPointer(ref this), fEnable);
+            return ((delegate* unmanaged<ISyncMgrSyncItem*, BOOL, int>)(lpVtbl[9]))((ISyncMgrSyncItem*)Unsafe.AsPointer(ref this), fEnable);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

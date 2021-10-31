@@ -43,9 +43,9 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
         [return: NativeTypeName("HRESULT")]
-        public int Query(MF_HDCP_STATUS* pStatus, [NativeTypeName("BOOL *")] int* pfStatus)
+        public int Query(MF_HDCP_STATUS* pStatus, BOOL* pfStatus)
         {
-            return ((delegate* unmanaged<IMFHDCPStatus*, MF_HDCP_STATUS*, int*, int>)(lpVtbl[3]))((IMFHDCPStatus*)Unsafe.AsPointer(ref this), pStatus, pfStatus);
+            return ((delegate* unmanaged<IMFHDCPStatus*, MF_HDCP_STATUS*, BOOL*, int>)(lpVtbl[3]))((IMFHDCPStatus*)Unsafe.AsPointer(ref this), pStatus, pfStatus);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

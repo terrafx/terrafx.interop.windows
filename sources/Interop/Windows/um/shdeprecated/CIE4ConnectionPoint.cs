@@ -81,17 +81,17 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(8)]
         [return: NativeTypeName("HRESULT")]
-        internal int DoInvokeIE4([NativeTypeName("BOOL *")] int* pf, void** ppv, [NativeTypeName("DISPID")] int dispid, DISPPARAMS* pdispparams)
+        internal int DoInvokeIE4(BOOL* pf, void** ppv, [NativeTypeName("DISPID")] int dispid, DISPPARAMS* pdispparams)
         {
-            return ((delegate* unmanaged<CIE4ConnectionPoint*, int*, void**, int, DISPPARAMS*, int>)(lpVtbl[8]))((CIE4ConnectionPoint*)Unsafe.AsPointer(ref this), pf, ppv, dispid, pdispparams);
+            return ((delegate* unmanaged<CIE4ConnectionPoint*, BOOL*, void**, int, DISPPARAMS*, int>)(lpVtbl[8]))((CIE4ConnectionPoint*)Unsafe.AsPointer(ref this), pf, ppv, dispid, pdispparams);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(9)]
         [return: NativeTypeName("HRESULT")]
-        internal int DoInvokePIDLIE4([NativeTypeName("DISPID")] int dispid, [NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidl, [NativeTypeName("BOOL")] int fCanCancel)
+        internal int DoInvokePIDLIE4([NativeTypeName("DISPID")] int dispid, [NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidl, BOOL fCanCancel)
         {
-            return ((delegate* unmanaged<CIE4ConnectionPoint*, int, ITEMIDLIST*, int, int>)(lpVtbl[9]))((CIE4ConnectionPoint*)Unsafe.AsPointer(ref this), dispid, pidl, fCanCancel);
+            return ((delegate* unmanaged<CIE4ConnectionPoint*, int, ITEMIDLIST*, BOOL, int>)(lpVtbl[9]))((CIE4ConnectionPoint*)Unsafe.AsPointer(ref this), dispid, pidl, fCanCancel);
         }
     }
 }

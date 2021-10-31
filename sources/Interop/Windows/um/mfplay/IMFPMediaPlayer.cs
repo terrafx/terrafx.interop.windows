@@ -115,9 +115,9 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(12)]
         [return: NativeTypeName("HRESULT")]
-        public int GetSupportedRates([NativeTypeName("BOOL")] int fForwardDirection, float* pflSlowestRate, float* pflFastestRate)
+        public int GetSupportedRates(BOOL fForwardDirection, float* pflSlowestRate, float* pflFastestRate)
         {
-            return ((delegate* unmanaged<IMFPMediaPlayer*, int, float*, float*, int>)(lpVtbl[12]))((IMFPMediaPlayer*)Unsafe.AsPointer(ref this), fForwardDirection, pflSlowestRate, pflFastestRate);
+            return ((delegate* unmanaged<IMFPMediaPlayer*, BOOL, float*, float*, int>)(lpVtbl[12]))((IMFPMediaPlayer*)Unsafe.AsPointer(ref this), fForwardDirection, pflSlowestRate, pflFastestRate);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -131,17 +131,17 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(14)]
         [return: NativeTypeName("HRESULT")]
-        public int CreateMediaItemFromURL([NativeTypeName("LPCWSTR")] ushort* pwszURL, [NativeTypeName("BOOL")] int fSync, [NativeTypeName("DWORD_PTR")] nuint dwUserData, IMFPMediaItem** ppMediaItem)
+        public int CreateMediaItemFromURL([NativeTypeName("LPCWSTR")] ushort* pwszURL, BOOL fSync, [NativeTypeName("DWORD_PTR")] nuint dwUserData, IMFPMediaItem** ppMediaItem)
         {
-            return ((delegate* unmanaged<IMFPMediaPlayer*, ushort*, int, nuint, IMFPMediaItem**, int>)(lpVtbl[14]))((IMFPMediaPlayer*)Unsafe.AsPointer(ref this), pwszURL, fSync, dwUserData, ppMediaItem);
+            return ((delegate* unmanaged<IMFPMediaPlayer*, ushort*, BOOL, nuint, IMFPMediaItem**, int>)(lpVtbl[14]))((IMFPMediaPlayer*)Unsafe.AsPointer(ref this), pwszURL, fSync, dwUserData, ppMediaItem);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(15)]
         [return: NativeTypeName("HRESULT")]
-        public int CreateMediaItemFromObject(IUnknown* pIUnknownObj, [NativeTypeName("BOOL")] int fSync, [NativeTypeName("DWORD_PTR")] nuint dwUserData, IMFPMediaItem** ppMediaItem)
+        public int CreateMediaItemFromObject(IUnknown* pIUnknownObj, BOOL fSync, [NativeTypeName("DWORD_PTR")] nuint dwUserData, IMFPMediaItem** ppMediaItem)
         {
-            return ((delegate* unmanaged<IMFPMediaPlayer*, IUnknown*, int, nuint, IMFPMediaItem**, int>)(lpVtbl[15]))((IMFPMediaPlayer*)Unsafe.AsPointer(ref this), pIUnknownObj, fSync, dwUserData, ppMediaItem);
+            return ((delegate* unmanaged<IMFPMediaPlayer*, IUnknown*, BOOL, nuint, IMFPMediaItem**, int>)(lpVtbl[15]))((IMFPMediaPlayer*)Unsafe.AsPointer(ref this), pIUnknownObj, fSync, dwUserData, ppMediaItem);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -203,17 +203,17 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(23)]
         [return: NativeTypeName("HRESULT")]
-        public int GetMute([NativeTypeName("BOOL *")] int* pfMute)
+        public int GetMute(BOOL* pfMute)
         {
-            return ((delegate* unmanaged<IMFPMediaPlayer*, int*, int>)(lpVtbl[23]))((IMFPMediaPlayer*)Unsafe.AsPointer(ref this), pfMute);
+            return ((delegate* unmanaged<IMFPMediaPlayer*, BOOL*, int>)(lpVtbl[23]))((IMFPMediaPlayer*)Unsafe.AsPointer(ref this), pfMute);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(24)]
         [return: NativeTypeName("HRESULT")]
-        public int SetMute([NativeTypeName("BOOL")] int fMute)
+        public int SetMute(BOOL fMute)
         {
-            return ((delegate* unmanaged<IMFPMediaPlayer*, int, int>)(lpVtbl[24]))((IMFPMediaPlayer*)Unsafe.AsPointer(ref this), fMute);
+            return ((delegate* unmanaged<IMFPMediaPlayer*, BOOL, int>)(lpVtbl[24]))((IMFPMediaPlayer*)Unsafe.AsPointer(ref this), fMute);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -299,9 +299,9 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(35)]
         [return: NativeTypeName("HRESULT")]
-        public int InsertEffect(IUnknown* pEffect, [NativeTypeName("BOOL")] int fOptional)
+        public int InsertEffect(IUnknown* pEffect, BOOL fOptional)
         {
-            return ((delegate* unmanaged<IMFPMediaPlayer*, IUnknown*, int, int>)(lpVtbl[35]))((IMFPMediaPlayer*)Unsafe.AsPointer(ref this), pEffect, fOptional);
+            return ((delegate* unmanaged<IMFPMediaPlayer*, IUnknown*, BOOL, int>)(lpVtbl[35]))((IMFPMediaPlayer*)Unsafe.AsPointer(ref this), pEffect, fOptional);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

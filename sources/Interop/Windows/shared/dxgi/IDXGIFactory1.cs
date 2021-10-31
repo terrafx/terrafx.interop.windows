@@ -122,8 +122,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(13)]
-        [return: NativeTypeName("BOOL")]
-        public int IsCurrent()
+        public BOOL IsCurrent()
         {
             return ((delegate* unmanaged<IDXGIFactory1*, int>)(lpVtbl[13]))((IDXGIFactory1*)Unsafe.AsPointer(ref this));
         }

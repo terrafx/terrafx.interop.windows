@@ -132,8 +132,7 @@ namespace TerraFX.Interop
                 [NativeTypeName("LONG")]
                 public int CurrentCount;
 
-                [NativeTypeName("BOOL")]
-                public int Abandoned;
+                public BOOL Abandoned;
 
                 [NativeTypeName("DWORD")]
                 public uint OwnerProcessId;
@@ -144,11 +143,9 @@ namespace TerraFX.Interop
 
             public partial struct _Event_e__Struct
             {
-                [NativeTypeName("BOOL")]
-                public int ManualReset;
+                public BOOL ManualReset;
 
-                [NativeTypeName("BOOL")]
-                public int Signaled;
+                public BOOL Signaled;
             }
 
             public unsafe partial struct _Section_e__Struct

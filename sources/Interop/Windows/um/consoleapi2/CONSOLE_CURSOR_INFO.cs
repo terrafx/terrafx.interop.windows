@@ -10,7 +10,6 @@ namespace TerraFX.Interop
         [NativeTypeName("DWORD")]
         public uint dwSize;
 
-        [NativeTypeName("BOOL")]
-        public int bVisible;
+        public BOOL bVisible;
     }
 }

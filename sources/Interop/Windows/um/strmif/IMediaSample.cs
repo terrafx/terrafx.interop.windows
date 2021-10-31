@@ -83,9 +83,9 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(8)]
         [return: NativeTypeName("HRESULT")]
-        public int SetSyncPoint([NativeTypeName("BOOL")] int bIsSyncPoint)
+        public int SetSyncPoint(BOOL bIsSyncPoint)
         {
-            return ((delegate* unmanaged<IMediaSample*, int, int>)(lpVtbl[8]))((IMediaSample*)Unsafe.AsPointer(ref this), bIsSyncPoint);
+            return ((delegate* unmanaged<IMediaSample*, BOOL, int>)(lpVtbl[8]))((IMediaSample*)Unsafe.AsPointer(ref this), bIsSyncPoint);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -99,9 +99,9 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(10)]
         [return: NativeTypeName("HRESULT")]
-        public int SetPreroll([NativeTypeName("BOOL")] int bIsPreroll)
+        public int SetPreroll(BOOL bIsPreroll)
         {
-            return ((delegate* unmanaged<IMediaSample*, int, int>)(lpVtbl[10]))((IMediaSample*)Unsafe.AsPointer(ref this), bIsPreroll);
+            return ((delegate* unmanaged<IMediaSample*, BOOL, int>)(lpVtbl[10]))((IMediaSample*)Unsafe.AsPointer(ref this), bIsPreroll);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -147,9 +147,9 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(16)]
         [return: NativeTypeName("HRESULT")]
-        public int SetDiscontinuity([NativeTypeName("BOOL")] int bDiscontinuity)
+        public int SetDiscontinuity(BOOL bDiscontinuity)
         {
-            return ((delegate* unmanaged<IMediaSample*, int, int>)(lpVtbl[16]))((IMediaSample*)Unsafe.AsPointer(ref this), bDiscontinuity);
+            return ((delegate* unmanaged<IMediaSample*, BOOL, int>)(lpVtbl[16]))((IMediaSample*)Unsafe.AsPointer(ref this), bDiscontinuity);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

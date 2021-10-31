@@ -243,9 +243,9 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(28)]
         [return: NativeTypeName("HRESULT")]
-        public int SubpictureStreamChange([NativeTypeName("ULONG")] uint ulSubPicture, [NativeTypeName("BOOL")] int bDisplay)
+        public int SubpictureStreamChange([NativeTypeName("ULONG")] uint ulSubPicture, BOOL bDisplay)
         {
-            return ((delegate* unmanaged<IDvdControl*, uint, int, int>)(lpVtbl[28]))((IDvdControl*)Unsafe.AsPointer(ref this), ulSubPicture, bDisplay);
+            return ((delegate* unmanaged<IDvdControl*, uint, BOOL, int>)(lpVtbl[28]))((IDvdControl*)Unsafe.AsPointer(ref this), ulSubPicture, bDisplay);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

@@ -11,7 +11,6 @@ namespace TerraFX.Interop
 
         public WCM_TIME_INTERVAL Duration;
 
-        [NativeTypeName("BOOL")]
-        public int Reset;
+        public BOOL Reset;
     }
 }

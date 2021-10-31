@@ -83,9 +83,9 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(8)]
         [return: NativeTypeName("HRESULT")]
-        public int SetActiveContext([NativeTypeName("HIMC")] IntPtr hIMC, [NativeTypeName("BOOL")] int fFlag)
+        public int SetActiveContext([NativeTypeName("HIMC")] IntPtr hIMC, BOOL fFlag)
         {
-            return ((delegate* unmanaged<IActiveIME*, IntPtr, int, int>)(lpVtbl[8]))((IActiveIME*)Unsafe.AsPointer(ref this), hIMC, fFlag);
+            return ((delegate* unmanaged<IActiveIME*, IntPtr, BOOL, int>)(lpVtbl[8]))((IActiveIME*)Unsafe.AsPointer(ref this), hIMC, fFlag);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -107,9 +107,9 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(11)]
         [return: NativeTypeName("HRESULT")]
-        public int Select([NativeTypeName("HIMC")] IntPtr hIMC, [NativeTypeName("BOOL")] int fSelect)
+        public int Select([NativeTypeName("HIMC")] IntPtr hIMC, BOOL fSelect)
         {
-            return ((delegate* unmanaged<IActiveIME*, IntPtr, int, int>)(lpVtbl[11]))((IActiveIME*)Unsafe.AsPointer(ref this), hIMC, fSelect);
+            return ((delegate* unmanaged<IActiveIME*, IntPtr, BOOL, int>)(lpVtbl[11]))((IActiveIME*)Unsafe.AsPointer(ref this), hIMC, fSelect);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

@@ -219,9 +219,9 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(25)]
         [return: NativeTypeName("HRESULT")]
-        public int SetVoice(ISpVoice* pVoice, [NativeTypeName("BOOL")] int fAllowFormatChanges)
+        public int SetVoice(ISpVoice* pVoice, BOOL fAllowFormatChanges)
         {
-            return ((delegate* unmanaged<ISpRecoContext*, ISpVoice*, int, int>)(lpVtbl[25]))((ISpRecoContext*)Unsafe.AsPointer(ref this), pVoice, fAllowFormatChanges);
+            return ((delegate* unmanaged<ISpRecoContext*, ISpVoice*, BOOL, int>)(lpVtbl[25]))((ISpRecoContext*)Unsafe.AsPointer(ref this), pVoice, fAllowFormatChanges);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

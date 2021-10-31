@@ -102,8 +102,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(11)]
-        [return: NativeTypeName("BOOL")]
-        public int IsTypeSupported([NativeTypeName("BSTR")] ushort* type)
+        public BOOL IsTypeSupported([NativeTypeName("BSTR")] ushort* type)
         {
             return ((delegate* unmanaged<IMFMediaSourceExtension*, ushort*, int>)(lpVtbl[11]))((IMFMediaSourceExtension*)Unsafe.AsPointer(ref this), type);
         }

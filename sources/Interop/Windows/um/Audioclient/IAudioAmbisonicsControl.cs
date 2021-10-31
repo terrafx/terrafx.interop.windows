@@ -51,17 +51,17 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
         [return: NativeTypeName("HRESULT")]
-        public int SetHeadTracking([NativeTypeName("BOOL")] int bEnableHeadTracking)
+        public int SetHeadTracking(BOOL bEnableHeadTracking)
         {
-            return ((delegate* unmanaged<IAudioAmbisonicsControl*, int, int>)(lpVtbl[4]))((IAudioAmbisonicsControl*)Unsafe.AsPointer(ref this), bEnableHeadTracking);
+            return ((delegate* unmanaged<IAudioAmbisonicsControl*, BOOL, int>)(lpVtbl[4]))((IAudioAmbisonicsControl*)Unsafe.AsPointer(ref this), bEnableHeadTracking);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
         [return: NativeTypeName("HRESULT")]
-        public int GetHeadTracking([NativeTypeName("BOOL *")] int* pbEnableHeadTracking)
+        public int GetHeadTracking(BOOL* pbEnableHeadTracking)
         {
-            return ((delegate* unmanaged<IAudioAmbisonicsControl*, int*, int>)(lpVtbl[5]))((IAudioAmbisonicsControl*)Unsafe.AsPointer(ref this), pbEnableHeadTracking);
+            return ((delegate* unmanaged<IAudioAmbisonicsControl*, BOOL*, int>)(lpVtbl[5]))((IAudioAmbisonicsControl*)Unsafe.AsPointer(ref this), pbEnableHeadTracking);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

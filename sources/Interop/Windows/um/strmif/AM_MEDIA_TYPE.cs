@@ -15,11 +15,9 @@ namespace TerraFX.Interop
         [NativeTypeName("GUID")]
         public Guid subtype;
 
-        [NativeTypeName("BOOL")]
-        public int bFixedSizeSamples;
+        public BOOL bFixedSizeSamples;
 
-        [NativeTypeName("BOOL")]
-        public int bTemporalCompression;
+        public BOOL bTemporalCompression;
 
         [NativeTypeName("ULONG")]
         public uint lSampleSize;

@@ -44,19 +44,19 @@ namespace TerraFX.Interop
 
         [DllImport("mpr", ExactSpelling = true)]
         [return: NativeTypeName("DWORD")]
-        public static extern uint WNetCancelConnectionA([NativeTypeName("LPCSTR")] sbyte* lpName, [NativeTypeName("BOOL")] int fForce);
+        public static extern uint WNetCancelConnectionA([NativeTypeName("LPCSTR")] sbyte* lpName, BOOL fForce);
 
         [DllImport("mpr", ExactSpelling = true)]
         [return: NativeTypeName("DWORD")]
-        public static extern uint WNetCancelConnectionW([NativeTypeName("LPCWSTR")] ushort* lpName, [NativeTypeName("BOOL")] int fForce);
+        public static extern uint WNetCancelConnectionW([NativeTypeName("LPCWSTR")] ushort* lpName, BOOL fForce);
 
         [DllImport("mpr", ExactSpelling = true)]
         [return: NativeTypeName("DWORD")]
-        public static extern uint WNetCancelConnection2A([NativeTypeName("LPCSTR")] sbyte* lpName, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("BOOL")] int fForce);
+        public static extern uint WNetCancelConnection2A([NativeTypeName("LPCSTR")] sbyte* lpName, [NativeTypeName("DWORD")] uint dwFlags, BOOL fForce);
 
         [DllImport("mpr", ExactSpelling = true)]
         [return: NativeTypeName("DWORD")]
-        public static extern uint WNetCancelConnection2W([NativeTypeName("LPCWSTR")] ushort* lpName, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("BOOL")] int fForce);
+        public static extern uint WNetCancelConnection2W([NativeTypeName("LPCWSTR")] ushort* lpName, [NativeTypeName("DWORD")] uint dwFlags, BOOL fForce);
 
         [DllImport("mpr", ExactSpelling = true)]
         [return: NativeTypeName("DWORD")]
@@ -68,7 +68,7 @@ namespace TerraFX.Interop
 
         [DllImport("mpr", ExactSpelling = true)]
         [return: NativeTypeName("DWORD")]
-        public static extern uint WNetRestoreSingleConnectionW([NativeTypeName("HWND")] IntPtr hwndParent, [NativeTypeName("LPCWSTR")] ushort* lpDevice, [NativeTypeName("BOOL")] int fUseUI);
+        public static extern uint WNetRestoreSingleConnectionW([NativeTypeName("HWND")] IntPtr hwndParent, [NativeTypeName("LPCWSTR")] ushort* lpDevice, BOOL fUseUI);
 
         [DllImport("mpr", ExactSpelling = true)]
         [return: NativeTypeName("DWORD")]
@@ -354,10 +354,10 @@ namespace TerraFX.Interop
         public static delegate*<IntPtr, NETRESOURCEW*, void*, uint, uint, byte*, uint, uint> WNetAddConnection4 => &WNetAddConnection4W;
 
         [NativeTypeName("#define WNetCancelConnection WNetCancelConnectionW")]
-        public static delegate*<ushort*, int, uint> WNetCancelConnection => &WNetCancelConnectionW;
+        public static delegate*<ushort*, BOOL, uint> WNetCancelConnection => &WNetCancelConnectionW;
 
         [NativeTypeName("#define WNetCancelConnection2 WNetCancelConnection2W")]
-        public static delegate*<ushort*, uint, int, uint> WNetCancelConnection2 => &WNetCancelConnection2W;
+        public static delegate*<ushort*, uint, BOOL, uint> WNetCancelConnection2 => &WNetCancelConnection2W;
 
         [NativeTypeName("#define WNetGetConnection WNetGetConnectionW")]
         public static delegate*<ushort*, ushort*, uint*, uint> WNetGetConnection => &WNetGetConnectionW;

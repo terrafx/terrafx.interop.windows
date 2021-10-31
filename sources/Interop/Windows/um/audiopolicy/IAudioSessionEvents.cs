@@ -59,9 +59,9 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
         [return: NativeTypeName("HRESULT")]
-        public int OnSimpleVolumeChanged(float NewVolume, [NativeTypeName("BOOL")] int NewMute, [NativeTypeName("LPCGUID")] Guid* EventContext)
+        public int OnSimpleVolumeChanged(float NewVolume, BOOL NewMute, [NativeTypeName("LPCGUID")] Guid* EventContext)
         {
-            return ((delegate* unmanaged<IAudioSessionEvents*, float, int, Guid*, int>)(lpVtbl[5]))((IAudioSessionEvents*)Unsafe.AsPointer(ref this), NewVolume, NewMute, EventContext);
+            return ((delegate* unmanaged<IAudioSessionEvents*, float, BOOL, Guid*, int>)(lpVtbl[5]))((IAudioSessionEvents*)Unsafe.AsPointer(ref this), NewVolume, NewMute, EventContext);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

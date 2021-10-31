@@ -67,9 +67,9 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
         [return: NativeTypeName("HRESULT")]
-        public int Terminate([NativeTypeName("BOOL")] int bCanceled)
+        public int Terminate(BOOL bCanceled)
         {
-            return ((delegate* unmanaged<IFillLockBytes*, int, int>)(lpVtbl[6]))((IFillLockBytes*)Unsafe.AsPointer(ref this), bCanceled);
+            return ((delegate* unmanaged<IFillLockBytes*, BOOL, int>)(lpVtbl[6]))((IFillLockBytes*)Unsafe.AsPointer(ref this), bCanceled);
         }
     }
 }

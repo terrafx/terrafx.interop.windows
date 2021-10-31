@@ -91,9 +91,9 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(9)]
         [return: NativeTypeName("HRESULT")]
-        public int Load([NativeTypeName("BSTR")] ushort* bstrSessionId, [NativeTypeName("BOOL *")] int* pfLoaded)
+        public int Load([NativeTypeName("BSTR")] ushort* bstrSessionId, BOOL* pfLoaded)
         {
-            return ((delegate* unmanaged<IMFMediaKeySession2*, ushort*, int*, int>)(lpVtbl[9]))((IMFMediaKeySession2*)Unsafe.AsPointer(ref this), bstrSessionId, pfLoaded);
+            return ((delegate* unmanaged<IMFMediaKeySession2*, ushort*, BOOL*, int>)(lpVtbl[9]))((IMFMediaKeySession2*)Unsafe.AsPointer(ref this), bstrSessionId, pfLoaded);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

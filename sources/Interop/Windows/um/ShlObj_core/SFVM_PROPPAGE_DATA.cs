@@ -13,7 +13,7 @@ namespace TerraFX.Interop
         public uint dwReserved;
 
         [NativeTypeName("LPFNADDPROPSHEETPAGE")]
-        public delegate* unmanaged<IntPtr, nint, int> pfn;
+        public delegate* unmanaged<IntPtr, nint, BOOL> pfn;
 
         [NativeTypeName("LPARAM")]
         public nint lParam;

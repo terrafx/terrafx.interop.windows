@@ -153,9 +153,9 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(17)]
         [return: NativeTypeName("HRESULT")]
-        public int GetVerticalBlankStatus([NativeTypeName("LPBOOL")] int* param0)
+        public int GetVerticalBlankStatus([NativeTypeName("LPBOOL")] BOOL* param0)
         {
-            return ((delegate* unmanaged<IDirectDraw*, int*, int>)(lpVtbl[17]))((IDirectDraw*)Unsafe.AsPointer(ref this), param0);
+            return ((delegate* unmanaged<IDirectDraw*, BOOL*, int>)(lpVtbl[17]))((IDirectDraw*)Unsafe.AsPointer(ref this), param0);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

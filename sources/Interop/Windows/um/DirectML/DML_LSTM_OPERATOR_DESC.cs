@@ -50,10 +50,8 @@ namespace TerraFX.Interop
 
         public float ClipThreshold;
 
-        [NativeTypeName("BOOL")]
-        public int UseClipThreshold;
+        public BOOL UseClipThreshold;
 
-        [NativeTypeName("BOOL")]
-        public int CoupleInputForget;
+        public BOOL CoupleInputForget;
     }
 }

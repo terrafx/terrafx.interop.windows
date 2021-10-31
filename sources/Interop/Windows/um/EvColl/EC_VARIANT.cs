@@ -20,7 +20,7 @@ namespace TerraFX.Interop
         [NativeTypeName("DWORD")]
         public uint Type;
 
-        public ref int BooleanVal
+        public ref BOOL BooleanVal
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
@@ -71,7 +71,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public ref int* BooleanArr
+        public ref BOOL* BooleanArr
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
@@ -120,8 +120,7 @@ namespace TerraFX.Interop
         public unsafe partial struct _Anonymous_e__Union
         {
             [FieldOffset(0)]
-            [NativeTypeName("BOOL")]
-            public int BooleanVal;
+            public BOOL BooleanVal;
 
             [FieldOffset(0)]
             [NativeTypeName("UINT32")]
@@ -140,8 +139,7 @@ namespace TerraFX.Interop
             public byte* BinaryVal;
 
             [FieldOffset(0)]
-            [NativeTypeName("BOOL *")]
-            public int* BooleanArr;
+            public BOOL* BooleanArr;
 
             [FieldOffset(0)]
             [NativeTypeName("INT32 *")]

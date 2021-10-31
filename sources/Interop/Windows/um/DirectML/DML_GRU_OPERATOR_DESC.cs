@@ -39,7 +39,6 @@ namespace TerraFX.Interop
 
         public DML_RECURRENT_NETWORK_DIRECTION Direction;
 
-        [NativeTypeName("BOOL")]
-        public int LinearBeforeReset;
+        public BOOL LinearBeforeReset;
     }
 }

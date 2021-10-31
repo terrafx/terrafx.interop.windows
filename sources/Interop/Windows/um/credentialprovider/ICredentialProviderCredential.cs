@@ -59,9 +59,9 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
         [return: NativeTypeName("HRESULT")]
-        public int SetSelected([NativeTypeName("BOOL *")] int* pbAutoLogon)
+        public int SetSelected(BOOL* pbAutoLogon)
         {
-            return ((delegate* unmanaged<ICredentialProviderCredential*, int*, int>)(lpVtbl[5]))((ICredentialProviderCredential*)Unsafe.AsPointer(ref this), pbAutoLogon);
+            return ((delegate* unmanaged<ICredentialProviderCredential*, BOOL*, int>)(lpVtbl[5]))((ICredentialProviderCredential*)Unsafe.AsPointer(ref this), pbAutoLogon);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -99,9 +99,9 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(10)]
         [return: NativeTypeName("HRESULT")]
-        public int GetCheckboxValue([NativeTypeName("DWORD")] uint dwFieldID, [NativeTypeName("BOOL *")] int* pbChecked, [NativeTypeName("LPWSTR *")] ushort** ppszLabel)
+        public int GetCheckboxValue([NativeTypeName("DWORD")] uint dwFieldID, BOOL* pbChecked, [NativeTypeName("LPWSTR *")] ushort** ppszLabel)
         {
-            return ((delegate* unmanaged<ICredentialProviderCredential*, uint, int*, ushort**, int>)(lpVtbl[10]))((ICredentialProviderCredential*)Unsafe.AsPointer(ref this), dwFieldID, pbChecked, ppszLabel);
+            return ((delegate* unmanaged<ICredentialProviderCredential*, uint, BOOL*, ushort**, int>)(lpVtbl[10]))((ICredentialProviderCredential*)Unsafe.AsPointer(ref this), dwFieldID, pbChecked, ppszLabel);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -139,9 +139,9 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(15)]
         [return: NativeTypeName("HRESULT")]
-        public int SetCheckboxValue([NativeTypeName("DWORD")] uint dwFieldID, [NativeTypeName("BOOL")] int bChecked)
+        public int SetCheckboxValue([NativeTypeName("DWORD")] uint dwFieldID, BOOL bChecked)
         {
-            return ((delegate* unmanaged<ICredentialProviderCredential*, uint, int, int>)(lpVtbl[15]))((ICredentialProviderCredential*)Unsafe.AsPointer(ref this), dwFieldID, bChecked);
+            return ((delegate* unmanaged<ICredentialProviderCredential*, uint, BOOL, int>)(lpVtbl[15]))((ICredentialProviderCredential*)Unsafe.AsPointer(ref this), dwFieldID, bChecked);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

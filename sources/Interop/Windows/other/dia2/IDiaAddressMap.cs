@@ -43,33 +43,33 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
         [return: NativeTypeName("HRESULT")]
-        public int get_addressMapEnabled([NativeTypeName("BOOL *")] int* pRetVal)
+        public int get_addressMapEnabled(BOOL* pRetVal)
         {
-            return ((delegate* unmanaged<IDiaAddressMap*, int*, int>)(lpVtbl[3]))((IDiaAddressMap*)Unsafe.AsPointer(ref this), pRetVal);
+            return ((delegate* unmanaged<IDiaAddressMap*, BOOL*, int>)(lpVtbl[3]))((IDiaAddressMap*)Unsafe.AsPointer(ref this), pRetVal);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
         [return: NativeTypeName("HRESULT")]
-        public int put_addressMapEnabled([NativeTypeName("BOOL")] int NewVal)
+        public int put_addressMapEnabled(BOOL NewVal)
         {
-            return ((delegate* unmanaged<IDiaAddressMap*, int, int>)(lpVtbl[4]))((IDiaAddressMap*)Unsafe.AsPointer(ref this), NewVal);
+            return ((delegate* unmanaged<IDiaAddressMap*, BOOL, int>)(lpVtbl[4]))((IDiaAddressMap*)Unsafe.AsPointer(ref this), NewVal);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
         [return: NativeTypeName("HRESULT")]
-        public int get_relativeVirtualAddressEnabled([NativeTypeName("BOOL *")] int* pRetVal)
+        public int get_relativeVirtualAddressEnabled(BOOL* pRetVal)
         {
-            return ((delegate* unmanaged<IDiaAddressMap*, int*, int>)(lpVtbl[5]))((IDiaAddressMap*)Unsafe.AsPointer(ref this), pRetVal);
+            return ((delegate* unmanaged<IDiaAddressMap*, BOOL*, int>)(lpVtbl[5]))((IDiaAddressMap*)Unsafe.AsPointer(ref this), pRetVal);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
         [return: NativeTypeName("HRESULT")]
-        public int put_relativeVirtualAddressEnabled([NativeTypeName("BOOL")] int NewVal)
+        public int put_relativeVirtualAddressEnabled(BOOL NewVal)
         {
-            return ((delegate* unmanaged<IDiaAddressMap*, int, int>)(lpVtbl[6]))((IDiaAddressMap*)Unsafe.AsPointer(ref this), NewVal);
+            return ((delegate* unmanaged<IDiaAddressMap*, BOOL, int>)(lpVtbl[6]))((IDiaAddressMap*)Unsafe.AsPointer(ref this), NewVal);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -91,17 +91,17 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(9)]
         [return: NativeTypeName("HRESULT")]
-        public int set_imageHeaders([NativeTypeName("DWORD")] uint cbData, [NativeTypeName("BYTE *")] byte* pbData, [NativeTypeName("BOOL")] int originalHeaders)
+        public int set_imageHeaders([NativeTypeName("DWORD")] uint cbData, [NativeTypeName("BYTE *")] byte* pbData, BOOL originalHeaders)
         {
-            return ((delegate* unmanaged<IDiaAddressMap*, uint, byte*, int, int>)(lpVtbl[9]))((IDiaAddressMap*)Unsafe.AsPointer(ref this), cbData, pbData, originalHeaders);
+            return ((delegate* unmanaged<IDiaAddressMap*, uint, byte*, BOOL, int>)(lpVtbl[9]))((IDiaAddressMap*)Unsafe.AsPointer(ref this), cbData, pbData, originalHeaders);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(10)]
         [return: NativeTypeName("HRESULT")]
-        public int set_addressMap([NativeTypeName("DWORD")] uint cData, [NativeTypeName("struct DiaAddressMapEntry *")] DiaAddressMapEntry* pData, [NativeTypeName("BOOL")] int imageToSymbols)
+        public int set_addressMap([NativeTypeName("DWORD")] uint cData, [NativeTypeName("struct DiaAddressMapEntry *")] DiaAddressMapEntry* pData, BOOL imageToSymbols)
         {
-            return ((delegate* unmanaged<IDiaAddressMap*, uint, DiaAddressMapEntry*, int, int>)(lpVtbl[10]))((IDiaAddressMap*)Unsafe.AsPointer(ref this), cData, pData, imageToSymbols);
+            return ((delegate* unmanaged<IDiaAddressMap*, uint, DiaAddressMapEntry*, BOOL, int>)(lpVtbl[10]))((IDiaAddressMap*)Unsafe.AsPointer(ref this), cData, pData, imageToSymbols);
         }
     }
 }

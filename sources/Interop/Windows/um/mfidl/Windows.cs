@@ -2593,7 +2593,7 @@ namespace TerraFX.Interop
 
         [DllImport("mf", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
-        public static extern int MFGetTopoNodeCurrentType(IMFTopologyNode* pNode, [NativeTypeName("DWORD")] uint dwStreamIndex, [NativeTypeName("BOOL")] int fOutput, IMFMediaType** ppType);
+        public static extern int MFGetTopoNodeCurrentType(IMFTopologyNode* pNode, [NativeTypeName("DWORD")] uint dwStreamIndex, BOOL fOutput, IMFMediaType** ppType);
 
         [DllImport("mf", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
@@ -8421,7 +8421,7 @@ namespace TerraFX.Interop
 
         [DllImport("mfplat", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
-        public static extern int MFIsContentProtectionDeviceSupported([NativeTypeName("const GUID &")] Guid* ProtectionSystemId, [NativeTypeName("BOOL *")] int* isSupported);
+        public static extern int MFIsContentProtectionDeviceSupported([NativeTypeName("const GUID &")] Guid* ProtectionSystemId, BOOL* isSupported);
 
         [NativeTypeName("const IID")]
         public static ref readonly Guid MF_CONTENT_DECRYPTOR_SERVICE

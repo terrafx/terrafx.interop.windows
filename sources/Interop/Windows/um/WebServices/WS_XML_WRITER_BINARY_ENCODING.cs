@@ -14,7 +14,7 @@ namespace TerraFX.Interop
         public WS_XML_DICTIONARY* staticDictionary;
 
         [NativeTypeName("WS_DYNAMIC_STRING_CALLBACK")]
-        public delegate* unmanaged<void*, WS_XML_STRING*, int*, uint*, IntPtr, int> dynamicStringCallback;
+        public delegate* unmanaged<void*, WS_XML_STRING*, BOOL*, uint*, IntPtr, int> dynamicStringCallback;
 
         public void* dynamicStringCallbackState;
     }

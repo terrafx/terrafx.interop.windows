@@ -59,9 +59,9 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
         [return: NativeTypeName("HRESULT")]
-        public int IsTextCombined([NativeTypeName("BOOL *")] int* value)
+        public int IsTextCombined(BOOL* value)
         {
-            return ((delegate* unmanaged<IMFTimedTextStyle2*, int*, int>)(lpVtbl[5]))((IMFTimedTextStyle2*)Unsafe.AsPointer(ref this), value);
+            return ((delegate* unmanaged<IMFTimedTextStyle2*, BOOL*, int>)(lpVtbl[5]))((IMFTimedTextStyle2*)Unsafe.AsPointer(ref this), value);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

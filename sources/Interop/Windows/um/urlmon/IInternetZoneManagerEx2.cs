@@ -163,17 +163,17 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(18)]
         [return: NativeTypeName("HRESULT")]
-        public int GetZoneSecurityState([NativeTypeName("DWORD")] uint dwZoneIndex, [NativeTypeName("BOOL")] int fRespectPolicy, [NativeTypeName("LPDWORD")] uint* pdwState, [NativeTypeName("BOOL *")] int* pfPolicyEncountered)
+        public int GetZoneSecurityState([NativeTypeName("DWORD")] uint dwZoneIndex, BOOL fRespectPolicy, [NativeTypeName("LPDWORD")] uint* pdwState, BOOL* pfPolicyEncountered)
         {
-            return ((delegate* unmanaged<IInternetZoneManagerEx2*, uint, int, uint*, int*, int>)(lpVtbl[18]))((IInternetZoneManagerEx2*)Unsafe.AsPointer(ref this), dwZoneIndex, fRespectPolicy, pdwState, pfPolicyEncountered);
+            return ((delegate* unmanaged<IInternetZoneManagerEx2*, uint, BOOL, uint*, BOOL*, int>)(lpVtbl[18]))((IInternetZoneManagerEx2*)Unsafe.AsPointer(ref this), dwZoneIndex, fRespectPolicy, pdwState, pfPolicyEncountered);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(19)]
         [return: NativeTypeName("HRESULT")]
-        public int GetIESecurityState([NativeTypeName("BOOL")] int fRespectPolicy, [NativeTypeName("LPDWORD")] uint* pdwState, [NativeTypeName("BOOL *")] int* pfPolicyEncountered, [NativeTypeName("BOOL")] int fNoCache)
+        public int GetIESecurityState(BOOL fRespectPolicy, [NativeTypeName("LPDWORD")] uint* pdwState, BOOL* pfPolicyEncountered, BOOL fNoCache)
         {
-            return ((delegate* unmanaged<IInternetZoneManagerEx2*, int, uint*, int*, int, int>)(lpVtbl[19]))((IInternetZoneManagerEx2*)Unsafe.AsPointer(ref this), fRespectPolicy, pdwState, pfPolicyEncountered, fNoCache);
+            return ((delegate* unmanaged<IInternetZoneManagerEx2*, BOOL, uint*, BOOL*, BOOL, int>)(lpVtbl[19]))((IInternetZoneManagerEx2*)Unsafe.AsPointer(ref this), fRespectPolicy, pdwState, pfPolicyEncountered, fNoCache);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

@@ -51,9 +51,9 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
         [return: NativeTypeName("HRESULT")]
-        public int IsEvaluatingEdpPolicy([NativeTypeName("BOOL *")] int* value)
+        public int IsEvaluatingEdpPolicy(BOOL* value)
         {
-            return ((delegate* unmanaged<IEnterpriseDropTarget*, int*, int>)(lpVtbl[4]))((IEnterpriseDropTarget*)Unsafe.AsPointer(ref this), value);
+            return ((delegate* unmanaged<IEnterpriseDropTarget*, BOOL*, int>)(lpVtbl[4]))((IEnterpriseDropTarget*)Unsafe.AsPointer(ref this), value);
         }
     }
 }

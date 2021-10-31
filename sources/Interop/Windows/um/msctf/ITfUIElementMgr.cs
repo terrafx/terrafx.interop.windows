@@ -43,9 +43,9 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
         [return: NativeTypeName("HRESULT")]
-        public int BeginUIElement(ITfUIElement* pElement, [NativeTypeName("BOOL *")] int* pbShow, [NativeTypeName("DWORD *")] uint* pdwUIElementId)
+        public int BeginUIElement(ITfUIElement* pElement, BOOL* pbShow, [NativeTypeName("DWORD *")] uint* pdwUIElementId)
         {
-            return ((delegate* unmanaged<ITfUIElementMgr*, ITfUIElement*, int*, uint*, int>)(lpVtbl[3]))((ITfUIElementMgr*)Unsafe.AsPointer(ref this), pElement, pbShow, pdwUIElementId);
+            return ((delegate* unmanaged<ITfUIElementMgr*, ITfUIElement*, BOOL*, uint*, int>)(lpVtbl[3]))((ITfUIElementMgr*)Unsafe.AsPointer(ref this), pElement, pbShow, pdwUIElementId);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

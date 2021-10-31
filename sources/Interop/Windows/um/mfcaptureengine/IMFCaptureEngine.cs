@@ -75,9 +75,9 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(7)]
         [return: NativeTypeName("HRESULT")]
-        public int StopRecord([NativeTypeName("BOOL")] int bFinalize, [NativeTypeName("BOOL")] int bFlushUnprocessedSamples)
+        public int StopRecord(BOOL bFinalize, BOOL bFlushUnprocessedSamples)
         {
-            return ((delegate* unmanaged<IMFCaptureEngine*, int, int, int>)(lpVtbl[7]))((IMFCaptureEngine*)Unsafe.AsPointer(ref this), bFinalize, bFlushUnprocessedSamples);
+            return ((delegate* unmanaged<IMFCaptureEngine*, BOOL, BOOL, int>)(lpVtbl[7]))((IMFCaptureEngine*)Unsafe.AsPointer(ref this), bFinalize, bFlushUnprocessedSamples);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

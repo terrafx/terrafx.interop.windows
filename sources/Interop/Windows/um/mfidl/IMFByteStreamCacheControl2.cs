@@ -67,9 +67,9 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
         [return: NativeTypeName("HRESULT")]
-        public int IsBackgroundTransferActive([NativeTypeName("BOOL *")] int* pfActive)
+        public int IsBackgroundTransferActive(BOOL* pfActive)
         {
-            return ((delegate* unmanaged<IMFByteStreamCacheControl2*, int*, int>)(lpVtbl[6]))((IMFByteStreamCacheControl2*)Unsafe.AsPointer(ref this), pfActive);
+            return ((delegate* unmanaged<IMFByteStreamCacheControl2*, BOOL*, int>)(lpVtbl[6]))((IMFByteStreamCacheControl2*)Unsafe.AsPointer(ref this), pfActive);
         }
     }
 }

@@ -44,7 +44,7 @@ namespace TerraFX.Interop
 
         [DllImport("davclnt", ExactSpelling = true)]
         [return: NativeTypeName("DWORD")]
-        public static extern uint DavCancelConnectionsToServer([NativeTypeName("LPWSTR")] ushort* lpName, [NativeTypeName("BOOL")] int fForce);
+        public static extern uint DavCancelConnectionsToServer([NativeTypeName("LPWSTR")] ushort* lpName, BOOL fForce);
 
         [DllImport("davclnt", ExactSpelling = true)]
         [return: NativeTypeName("DWORD")]

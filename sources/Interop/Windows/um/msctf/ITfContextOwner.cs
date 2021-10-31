@@ -51,9 +51,9 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
         [return: NativeTypeName("HRESULT")]
-        public int GetTextExt([NativeTypeName("LONG")] int acpStart, [NativeTypeName("LONG")] int acpEnd, RECT* prc, [NativeTypeName("BOOL *")] int* pfClipped)
+        public int GetTextExt([NativeTypeName("LONG")] int acpStart, [NativeTypeName("LONG")] int acpEnd, RECT* prc, BOOL* pfClipped)
         {
-            return ((delegate* unmanaged<ITfContextOwner*, int, int, RECT*, int*, int>)(lpVtbl[4]))((ITfContextOwner*)Unsafe.AsPointer(ref this), acpStart, acpEnd, prc, pfClipped);
+            return ((delegate* unmanaged<ITfContextOwner*, int, int, RECT*, BOOL*, int>)(lpVtbl[4]))((ITfContextOwner*)Unsafe.AsPointer(ref this), acpStart, acpEnd, prc, pfClipped);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

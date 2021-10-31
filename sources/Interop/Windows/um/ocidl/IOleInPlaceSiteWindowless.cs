@@ -51,9 +51,9 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
         [return: NativeTypeName("HRESULT")]
-        public int ContextSensitiveHelp([NativeTypeName("BOOL")] int fEnterMode)
+        public int ContextSensitiveHelp(BOOL fEnterMode)
         {
-            return ((delegate* unmanaged<IOleInPlaceSiteWindowless*, int, int>)(lpVtbl[4]))((IOleInPlaceSiteWindowless*)Unsafe.AsPointer(ref this), fEnterMode);
+            return ((delegate* unmanaged<IOleInPlaceSiteWindowless*, BOOL, int>)(lpVtbl[4]))((IOleInPlaceSiteWindowless*)Unsafe.AsPointer(ref this), fEnterMode);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -99,9 +99,9 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(10)]
         [return: NativeTypeName("HRESULT")]
-        public int OnUIDeactivate([NativeTypeName("BOOL")] int fUndoable)
+        public int OnUIDeactivate(BOOL fUndoable)
         {
-            return ((delegate* unmanaged<IOleInPlaceSiteWindowless*, int, int>)(lpVtbl[10]))((IOleInPlaceSiteWindowless*)Unsafe.AsPointer(ref this), fUndoable);
+            return ((delegate* unmanaged<IOleInPlaceSiteWindowless*, BOOL, int>)(lpVtbl[10]))((IOleInPlaceSiteWindowless*)Unsafe.AsPointer(ref this), fUndoable);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -139,17 +139,17 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(15)]
         [return: NativeTypeName("HRESULT")]
-        public int OnInPlaceActivateEx([NativeTypeName("BOOL *")] int* pfNoRedraw, [NativeTypeName("DWORD")] uint dwFlags)
+        public int OnInPlaceActivateEx(BOOL* pfNoRedraw, [NativeTypeName("DWORD")] uint dwFlags)
         {
-            return ((delegate* unmanaged<IOleInPlaceSiteWindowless*, int*, uint, int>)(lpVtbl[15]))((IOleInPlaceSiteWindowless*)Unsafe.AsPointer(ref this), pfNoRedraw, dwFlags);
+            return ((delegate* unmanaged<IOleInPlaceSiteWindowless*, BOOL*, uint, int>)(lpVtbl[15]))((IOleInPlaceSiteWindowless*)Unsafe.AsPointer(ref this), pfNoRedraw, dwFlags);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(16)]
         [return: NativeTypeName("HRESULT")]
-        public int OnInPlaceDeactivateEx([NativeTypeName("BOOL")] int fNoRedraw)
+        public int OnInPlaceDeactivateEx(BOOL fNoRedraw)
         {
-            return ((delegate* unmanaged<IOleInPlaceSiteWindowless*, int, int>)(lpVtbl[16]))((IOleInPlaceSiteWindowless*)Unsafe.AsPointer(ref this), fNoRedraw);
+            return ((delegate* unmanaged<IOleInPlaceSiteWindowless*, BOOL, int>)(lpVtbl[16]))((IOleInPlaceSiteWindowless*)Unsafe.AsPointer(ref this), fNoRedraw);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -179,9 +179,9 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(20)]
         [return: NativeTypeName("HRESULT")]
-        public int SetCapture([NativeTypeName("BOOL")] int fCapture)
+        public int SetCapture(BOOL fCapture)
         {
-            return ((delegate* unmanaged<IOleInPlaceSiteWindowless*, int, int>)(lpVtbl[20]))((IOleInPlaceSiteWindowless*)Unsafe.AsPointer(ref this), fCapture);
+            return ((delegate* unmanaged<IOleInPlaceSiteWindowless*, BOOL, int>)(lpVtbl[20]))((IOleInPlaceSiteWindowless*)Unsafe.AsPointer(ref this), fCapture);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -195,9 +195,9 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(22)]
         [return: NativeTypeName("HRESULT")]
-        public int SetFocus([NativeTypeName("BOOL")] int fFocus)
+        public int SetFocus(BOOL fFocus)
         {
-            return ((delegate* unmanaged<IOleInPlaceSiteWindowless*, int, int>)(lpVtbl[22]))((IOleInPlaceSiteWindowless*)Unsafe.AsPointer(ref this), fFocus);
+            return ((delegate* unmanaged<IOleInPlaceSiteWindowless*, BOOL, int>)(lpVtbl[22]))((IOleInPlaceSiteWindowless*)Unsafe.AsPointer(ref this), fFocus);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -219,17 +219,17 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(25)]
         [return: NativeTypeName("HRESULT")]
-        public int InvalidateRect([NativeTypeName("LPCRECT")] RECT* pRect, [NativeTypeName("BOOL")] int fErase)
+        public int InvalidateRect([NativeTypeName("LPCRECT")] RECT* pRect, BOOL fErase)
         {
-            return ((delegate* unmanaged<IOleInPlaceSiteWindowless*, RECT*, int, int>)(lpVtbl[25]))((IOleInPlaceSiteWindowless*)Unsafe.AsPointer(ref this), pRect, fErase);
+            return ((delegate* unmanaged<IOleInPlaceSiteWindowless*, RECT*, BOOL, int>)(lpVtbl[25]))((IOleInPlaceSiteWindowless*)Unsafe.AsPointer(ref this), pRect, fErase);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(26)]
         [return: NativeTypeName("HRESULT")]
-        public int InvalidateRgn([NativeTypeName("HRGN")] IntPtr hRGN, [NativeTypeName("BOOL")] int fErase)
+        public int InvalidateRgn([NativeTypeName("HRGN")] IntPtr hRGN, BOOL fErase)
         {
-            return ((delegate* unmanaged<IOleInPlaceSiteWindowless*, IntPtr, int, int>)(lpVtbl[26]))((IOleInPlaceSiteWindowless*)Unsafe.AsPointer(ref this), hRGN, fErase);
+            return ((delegate* unmanaged<IOleInPlaceSiteWindowless*, IntPtr, BOOL, int>)(lpVtbl[26]))((IOleInPlaceSiteWindowless*)Unsafe.AsPointer(ref this), hRGN, fErase);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

@@ -12,8 +12,7 @@ namespace TerraFX.Interop
         [NativeTypeName("DWORD")]
         public uint dwMinimum;
 
-        [NativeTypeName("BOOL")]
-        public int fMaximum;
+        public BOOL fMaximum;
 
         [NativeTypeName("DWORD")]
         public uint dwMaximum;

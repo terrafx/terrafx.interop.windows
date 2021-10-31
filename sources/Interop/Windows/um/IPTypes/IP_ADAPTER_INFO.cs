@@ -43,8 +43,7 @@ namespace TerraFX.Interop
 
         public IP_ADDR_STRING DhcpServer;
 
-        [NativeTypeName("BOOL")]
-        public int HaveWins;
+        public BOOL HaveWins;
 
         public IP_ADDR_STRING PrimaryWinsServer;
 

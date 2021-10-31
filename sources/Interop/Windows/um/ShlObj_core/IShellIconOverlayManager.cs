@@ -75,9 +75,9 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(7)]
         [return: NativeTypeName("HRESULT")]
-        public int OverlayIndexFromImageIndex(int iImage, int* piIndex, [NativeTypeName("BOOL")] int fAdd)
+        public int OverlayIndexFromImageIndex(int iImage, int* piIndex, BOOL fAdd)
         {
-            return ((delegate* unmanaged<IShellIconOverlayManager*, int, int*, int, int>)(lpVtbl[7]))((IShellIconOverlayManager*)Unsafe.AsPointer(ref this), iImage, piIndex, fAdd);
+            return ((delegate* unmanaged<IShellIconOverlayManager*, int, int*, BOOL, int>)(lpVtbl[7]))((IShellIconOverlayManager*)Unsafe.AsPointer(ref this), iImage, piIndex, fAdd);
         }
     }
 }

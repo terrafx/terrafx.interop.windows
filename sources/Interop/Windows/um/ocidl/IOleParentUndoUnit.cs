@@ -83,9 +83,9 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(8)]
         [return: NativeTypeName("HRESULT")]
-        public int Close(IOleParentUndoUnit* pPUU, [NativeTypeName("BOOL")] int fCommit)
+        public int Close(IOleParentUndoUnit* pPUU, BOOL fCommit)
         {
-            return ((delegate* unmanaged<IOleParentUndoUnit*, IOleParentUndoUnit*, int, int>)(lpVtbl[8]))((IOleParentUndoUnit*)Unsafe.AsPointer(ref this), pPUU, fCommit);
+            return ((delegate* unmanaged<IOleParentUndoUnit*, IOleParentUndoUnit*, BOOL, int>)(lpVtbl[8]))((IOleParentUndoUnit*)Unsafe.AsPointer(ref this), pPUU, fCommit);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

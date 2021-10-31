@@ -22,31 +22,25 @@ namespace TerraFX.Interop
         public static extern void WintrustGetRegPolicyFlags([NativeTypeName("DWORD *")] uint* pdwPolicyFlags);
 
         [DllImport("wintrust", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int WintrustSetRegPolicyFlags([NativeTypeName("DWORD")] uint dwPolicyFlags);
+        public static extern BOOL WintrustSetRegPolicyFlags([NativeTypeName("DWORD")] uint dwPolicyFlags);
 
         [DllImport("wintrust", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int WintrustAddActionID([NativeTypeName("GUID *")] Guid* pgActionID, [NativeTypeName("DWORD")] uint fdwFlags, CRYPT_REGISTER_ACTIONID* psProvInfo);
+        public static extern BOOL WintrustAddActionID([NativeTypeName("GUID *")] Guid* pgActionID, [NativeTypeName("DWORD")] uint fdwFlags, CRYPT_REGISTER_ACTIONID* psProvInfo);
 
         [DllImport("wintrust", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int WintrustRemoveActionID([NativeTypeName("GUID *")] Guid* pgActionID);
+        public static extern BOOL WintrustRemoveActionID([NativeTypeName("GUID *")] Guid* pgActionID);
 
         [DllImport("wintrust", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int WintrustLoadFunctionPointers([NativeTypeName("GUID *")] Guid* pgActionID, CRYPT_PROVIDER_FUNCTIONS* pPfns);
+        public static extern BOOL WintrustLoadFunctionPointers([NativeTypeName("GUID *")] Guid* pgActionID, CRYPT_PROVIDER_FUNCTIONS* pPfns);
 
         [DllImport("wintrust", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int WintrustAddDefaultForUsage([NativeTypeName("const char *")] sbyte* pszUsageOID, CRYPT_PROVIDER_REGDEFUSAGE* psDefUsage);
+        public static extern BOOL WintrustAddDefaultForUsage([NativeTypeName("const char *")] sbyte* pszUsageOID, CRYPT_PROVIDER_REGDEFUSAGE* psDefUsage);
 
         [DllImport("wintrust", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int WintrustGetDefaultForUsage([NativeTypeName("DWORD")] uint dwAction, [NativeTypeName("const char *")] sbyte* pszUsageOID, CRYPT_PROVIDER_DEFUSAGE* psUsage);
+        public static extern BOOL WintrustGetDefaultForUsage([NativeTypeName("DWORD")] uint dwAction, [NativeTypeName("const char *")] sbyte* pszUsageOID, CRYPT_PROVIDER_DEFUSAGE* psUsage);
 
         [DllImport("wintrust", ExactSpelling = true)]
-        public static extern CRYPT_PROVIDER_SGNR* WTHelperGetProvSignerFromChain(CRYPT_PROVIDER_DATA* pProvData, [NativeTypeName("DWORD")] uint idxSigner, [NativeTypeName("BOOL")] int fCounterSigner, [NativeTypeName("DWORD")] uint idxCounterSigner);
+        public static extern CRYPT_PROVIDER_SGNR* WTHelperGetProvSignerFromChain(CRYPT_PROVIDER_DATA* pProvData, [NativeTypeName("DWORD")] uint idxSigner, BOOL fCounterSigner, [NativeTypeName("DWORD")] uint idxCounterSigner);
 
         [DllImport("wintrust", ExactSpelling = true)]
         public static extern CRYPT_PROVIDER_CERT* WTHelperGetProvCertFromChain(CRYPT_PROVIDER_SGNR* pSgnr, [NativeTypeName("DWORD")] uint idxCert);
@@ -58,23 +52,20 @@ namespace TerraFX.Interop
         public static extern CRYPT_PROVIDER_PRIVDATA* WTHelperGetProvPrivateDataFromChain(CRYPT_PROVIDER_DATA* pProvData, [NativeTypeName("GUID *")] Guid* pgProviderID);
 
         [DllImport("wintrust", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int WTHelperCertIsSelfSigned([NativeTypeName("DWORD")] uint dwEncoding, CERT_INFO* pCert);
+        public static extern BOOL WTHelperCertIsSelfSigned([NativeTypeName("DWORD")] uint dwEncoding, CERT_INFO* pCert);
 
         [DllImport("wintrust", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
         public static extern int WTHelperCertCheckValidSignature(CRYPT_PROVIDER_DATA* pProvData);
 
         [DllImport("wintrust", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int OpenPersonalTrustDBDialogEx([NativeTypeName("HWND")] IntPtr hwndParent, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("PVOID *")] void** pvReserved);
+        public static extern BOOL OpenPersonalTrustDBDialogEx([NativeTypeName("HWND")] IntPtr hwndParent, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("PVOID *")] void** pvReserved);
 
         [DllImport("wintrust", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int OpenPersonalTrustDBDialog([NativeTypeName("HWND")] IntPtr hwndParent);
+        public static extern BOOL OpenPersonalTrustDBDialog([NativeTypeName("HWND")] IntPtr hwndParent);
 
         [DllImport("wintrust", ExactSpelling = true)]
-        public static extern void WintrustSetDefaultIncludePEPageHashes([NativeTypeName("BOOL")] int fIncludePEPageHashes);
+        public static extern void WintrustSetDefaultIncludePEPageHashes(BOOL fIncludePEPageHashes);
 
         [NativeTypeName("#define WINTRUST_CONFIG_REGPATH L\"Software\\\\Microsoft\\\\Cryptography\\\\Wintrust\\\\Config\"")]
         public const string WINTRUST_CONFIG_REGPATH = "Software\\Microsoft\\Cryptography\\Wintrust\\Config";

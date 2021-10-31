@@ -10,16 +10,13 @@ namespace TerraFX.Interop
     public static unsafe partial class Windows
     {
         [DllImport("srclient", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SRSetRestorePointA([NativeTypeName("PRESTOREPOINTINFOA")] RESTOREPOINTINFOA* pRestorePtSpec, [NativeTypeName("PSTATEMGRSTATUS")] STATEMGRSTATUS* pSMgrStatus);
+        public static extern BOOL SRSetRestorePointA([NativeTypeName("PRESTOREPOINTINFOA")] RESTOREPOINTINFOA* pRestorePtSpec, [NativeTypeName("PSTATEMGRSTATUS")] STATEMGRSTATUS* pSMgrStatus);
 
         [DllImport("srclient", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SRSetRestorePointW([NativeTypeName("PRESTOREPOINTINFOW")] RESTOREPOINTINFOW* pRestorePtSpec, [NativeTypeName("PSTATEMGRSTATUS")] STATEMGRSTATUS* pSMgrStatus);
+        public static extern BOOL SRSetRestorePointW([NativeTypeName("PRESTOREPOINTINFOW")] RESTOREPOINTINFOW* pRestorePtSpec, [NativeTypeName("PSTATEMGRSTATUS")] STATEMGRSTATUS* pSMgrStatus);
 
         [DllImport("srclient", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SRSetRestorePointInternal([NativeTypeName("PRESTOREPOINTINFOW")] RESTOREPOINTINFOW* pRestorePtSpec, [NativeTypeName("PSTATEMGRSTATUS")] STATEMGRSTATUS* pSMgrStatus, [NativeTypeName("BOOL")] int fForceSurrogate);
+        public static extern BOOL SRSetRestorePointInternal([NativeTypeName("PRESTOREPOINTINFOW")] RESTOREPOINTINFOW* pRestorePtSpec, [NativeTypeName("PSTATEMGRSTATUS")] STATEMGRSTATUS* pSMgrStatus, BOOL fForceSurrogate);
 
         [DllImport("srclient", ExactSpelling = true)]
         [return: NativeTypeName("DWORD")]
@@ -119,6 +116,6 @@ namespace TerraFX.Interop
         public const int MAX_DESC_W = 256;
 
         [NativeTypeName("#define SRSetRestorePoint SRSetRestorePointW")]
-        public static delegate*<RESTOREPOINTINFOW*, STATEMGRSTATUS*, int> SRSetRestorePoint => &SRSetRestorePointW;
+        public static delegate*<RESTOREPOINTINFOW*, STATEMGRSTATUS*, BOOL> SRSetRestorePoint => &SRSetRestorePointW;
     }
 }

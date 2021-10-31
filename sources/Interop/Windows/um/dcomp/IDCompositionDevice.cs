@@ -67,9 +67,9 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
         [return: NativeTypeName("HRESULT")]
-        public int CreateTargetForHwnd([NativeTypeName("HWND")] IntPtr hwnd, [NativeTypeName("BOOL")] int topmost, IDCompositionTarget** target)
+        public int CreateTargetForHwnd([NativeTypeName("HWND")] IntPtr hwnd, BOOL topmost, IDCompositionTarget** target)
         {
-            return ((delegate* unmanaged<IDCompositionDevice*, IntPtr, int, IDCompositionTarget**, int>)(lpVtbl[6]))((IDCompositionDevice*)Unsafe.AsPointer(ref this), hwnd, topmost, target);
+            return ((delegate* unmanaged<IDCompositionDevice*, IntPtr, BOOL, IDCompositionTarget**, int>)(lpVtbl[6]))((IDCompositionDevice*)Unsafe.AsPointer(ref this), hwnd, topmost, target);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -227,9 +227,9 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(26)]
         [return: NativeTypeName("HRESULT")]
-        public int CheckDeviceState([NativeTypeName("BOOL *")] int* pfValid)
+        public int CheckDeviceState(BOOL* pfValid)
         {
-            return ((delegate* unmanaged<IDCompositionDevice*, int*, int>)(lpVtbl[26]))((IDCompositionDevice*)Unsafe.AsPointer(ref this), pfValid);
+            return ((delegate* unmanaged<IDCompositionDevice*, BOOL*, int>)(lpVtbl[26]))((IDCompositionDevice*)Unsafe.AsPointer(ref this), pfValid);
         }
     }
 }

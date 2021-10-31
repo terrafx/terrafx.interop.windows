@@ -107,17 +107,17 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(11)]
         [return: NativeTypeName("HRESULT")]
-        public int FreezeVirtualCaretPos([NativeTypeName("BOOL")] int fReCompute)
+        public int FreezeVirtualCaretPos(BOOL fReCompute)
         {
-            return ((delegate* unmanaged<IHTMLEditServices2*, int, int>)(lpVtbl[11]))((IHTMLEditServices2*)Unsafe.AsPointer(ref this), fReCompute);
+            return ((delegate* unmanaged<IHTMLEditServices2*, BOOL, int>)(lpVtbl[11]))((IHTMLEditServices2*)Unsafe.AsPointer(ref this), fReCompute);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(12)]
         [return: NativeTypeName("HRESULT")]
-        public int UnFreezeVirtualCaretPos([NativeTypeName("BOOL")] int fReset)
+        public int UnFreezeVirtualCaretPos(BOOL fReset)
         {
-            return ((delegate* unmanaged<IHTMLEditServices2*, int, int>)(lpVtbl[12]))((IHTMLEditServices2*)Unsafe.AsPointer(ref this), fReset);
+            return ((delegate* unmanaged<IHTMLEditServices2*, BOOL, int>)(lpVtbl[12]))((IHTMLEditServices2*)Unsafe.AsPointer(ref this), fReset);
         }
     }
 }

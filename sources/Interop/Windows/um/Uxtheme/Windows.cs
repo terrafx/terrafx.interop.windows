@@ -12,16 +12,13 @@ namespace TerraFX.Interop
     public static unsafe partial class Windows
     {
         [DllImport("uxtheme", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int BeginPanningFeedback([NativeTypeName("HWND")] IntPtr hwnd);
+        public static extern BOOL BeginPanningFeedback([NativeTypeName("HWND")] IntPtr hwnd);
 
         [DllImport("uxtheme", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int UpdatePanningFeedback([NativeTypeName("HWND")] IntPtr hwnd, [NativeTypeName("LONG")] int lTotalOverpanOffsetX, [NativeTypeName("LONG")] int lTotalOverpanOffsetY, [NativeTypeName("BOOL")] int fInInertia);
+        public static extern BOOL UpdatePanningFeedback([NativeTypeName("HWND")] IntPtr hwnd, [NativeTypeName("LONG")] int lTotalOverpanOffsetX, [NativeTypeName("LONG")] int lTotalOverpanOffsetY, BOOL fInInertia);
 
         [DllImport("uxtheme", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int EndPanningFeedback([NativeTypeName("HWND")] IntPtr hwnd, [NativeTypeName("BOOL")] int fAnimateBack);
+        public static extern BOOL EndPanningFeedback([NativeTypeName("HWND")] IntPtr hwnd, BOOL fAnimateBack);
 
         [DllImport("uxtheme", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
@@ -100,12 +97,10 @@ namespace TerraFX.Interop
         public static extern int DrawThemeIcon([NativeTypeName("HTHEME")] IntPtr hTheme, [NativeTypeName("HDC")] IntPtr hdc, int iPartId, int iStateId, [NativeTypeName("LPCRECT")] RECT* pRect, [NativeTypeName("HIMAGELIST")] IntPtr himl, int iImageIndex);
 
         [DllImport("uxtheme", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int IsThemePartDefined([NativeTypeName("HTHEME")] IntPtr hTheme, int iPartId, int iStateId);
+        public static extern BOOL IsThemePartDefined([NativeTypeName("HTHEME")] IntPtr hTheme, int iPartId, int iStateId);
 
         [DllImport("uxtheme", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int IsThemeBackgroundPartiallyTransparent([NativeTypeName("HTHEME")] IntPtr hTheme, int iPartId, int iStateId);
+        public static extern BOOL IsThemeBackgroundPartiallyTransparent([NativeTypeName("HTHEME")] IntPtr hTheme, int iPartId, int iStateId);
 
         [DllImport("uxtheme", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
@@ -121,7 +116,7 @@ namespace TerraFX.Interop
 
         [DllImport("uxtheme", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
-        public static extern int GetThemeBool([NativeTypeName("HTHEME")] IntPtr hTheme, int iPartId, int iStateId, int iPropId, [NativeTypeName("BOOL *")] int* pfVal);
+        public static extern int GetThemeBool([NativeTypeName("HTHEME")] IntPtr hTheme, int iPartId, int iStateId, int iPropId, BOOL* pfVal);
 
         [DllImport("uxtheme", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
@@ -172,8 +167,7 @@ namespace TerraFX.Interop
         public static extern IntPtr GetThemeSysColorBrush([NativeTypeName("HTHEME")] IntPtr hTheme, int iColorId);
 
         [DllImport("uxtheme", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int GetThemeSysBool([NativeTypeName("HTHEME")] IntPtr hTheme, int iBoolId);
+        public static extern BOOL GetThemeSysBool([NativeTypeName("HTHEME")] IntPtr hTheme, int iBoolId);
 
         [DllImport("uxtheme", ExactSpelling = true)]
         public static extern int GetThemeSysSize([NativeTypeName("HTHEME")] IntPtr hTheme, int iSizeId);
@@ -191,12 +185,10 @@ namespace TerraFX.Interop
         public static extern int GetThemeSysInt([NativeTypeName("HTHEME")] IntPtr hTheme, int iIntId, int* piValue);
 
         [DllImport("uxtheme", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int IsThemeActive();
+        public static extern BOOL IsThemeActive();
 
         [DllImport("uxtheme", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int IsAppThemed();
+        public static extern BOOL IsAppThemed();
 
         [DllImport("uxtheme", ExactSpelling = true)]
         [return: NativeTypeName("HTHEME")]
@@ -207,8 +199,7 @@ namespace TerraFX.Interop
         public static extern int EnableThemeDialogTexture([NativeTypeName("HWND")] IntPtr hwnd, [NativeTypeName("DWORD")] uint dwFlags);
 
         [DllImport("uxtheme", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int IsThemeDialogTextureEnabled([NativeTypeName("HWND")] IntPtr hwnd);
+        public static extern BOOL IsThemeDialogTextureEnabled([NativeTypeName("HWND")] IntPtr hwnd);
 
         [DllImport("uxtheme", ExactSpelling = true)]
         [return: NativeTypeName("DWORD")]
@@ -231,7 +222,7 @@ namespace TerraFX.Interop
 
         [DllImport("uxtheme", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
-        public static extern int EnableTheming([NativeTypeName("BOOL")] int fEnable);
+        public static extern int EnableTheming(BOOL fEnable);
 
         [DllImport("uxtheme", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
@@ -267,7 +258,7 @@ namespace TerraFX.Interop
 
         [DllImport("uxtheme", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
-        public static extern int EndBufferedPaint([NativeTypeName("HPAINTBUFFER")] IntPtr hBufferedPaint, [NativeTypeName("BOOL")] int fUpdateTarget);
+        public static extern int EndBufferedPaint([NativeTypeName("HPAINTBUFFER")] IntPtr hBufferedPaint, BOOL fUpdateTarget);
 
         [DllImport("uxtheme", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
@@ -303,15 +294,13 @@ namespace TerraFX.Interop
 
         [DllImport("uxtheme", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
-        public static extern int EndBufferedAnimation([NativeTypeName("HANIMATIONBUFFER")] IntPtr hbpAnimation, [NativeTypeName("BOOL")] int fUpdateTarget);
+        public static extern int EndBufferedAnimation([NativeTypeName("HANIMATIONBUFFER")] IntPtr hbpAnimation, BOOL fUpdateTarget);
 
         [DllImport("uxtheme", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int BufferedPaintRenderAnimation([NativeTypeName("HWND")] IntPtr hwnd, [NativeTypeName("HDC")] IntPtr hdcTarget);
+        public static extern BOOL BufferedPaintRenderAnimation([NativeTypeName("HWND")] IntPtr hwnd, [NativeTypeName("HDC")] IntPtr hdcTarget);
 
         [DllImport("uxtheme", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int IsCompositionActive();
+        public static extern BOOL IsCompositionActive();
 
         [DllImport("uxtheme", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]

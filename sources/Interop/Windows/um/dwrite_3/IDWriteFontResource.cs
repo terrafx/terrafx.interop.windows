@@ -113,8 +113,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(12)]
-        [return: NativeTypeName("BOOL")]
-        public int HasVariations()
+        public BOOL HasVariations()
         {
             return ((delegate* unmanaged<IDWriteFontResource*, int>)(lpVtbl[12]))((IDWriteFontResource*)Unsafe.AsPointer(ref this));
         }

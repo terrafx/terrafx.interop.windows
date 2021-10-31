@@ -47,11 +47,11 @@ namespace TerraFX.Interop
 
         [DllImport("tbs", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
-        public static extern int GetDeviceID([NativeTypeName("PBYTE")] byte* pbWindowsAIK, [NativeTypeName("UINT32")] uint cbWindowsAIK, [NativeTypeName("PUINT32")] uint* pcbResult, [NativeTypeName("BOOL *")] int* pfProtectedByTPM);
+        public static extern int GetDeviceID([NativeTypeName("PBYTE")] byte* pbWindowsAIK, [NativeTypeName("UINT32")] uint cbWindowsAIK, [NativeTypeName("PUINT32")] uint* pcbResult, BOOL* pfProtectedByTPM);
 
         [DllImport("tbs", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
-        public static extern int GetDeviceIDString([NativeTypeName("PWSTR")] ushort* pszWindowsAIK, [NativeTypeName("UINT32")] uint cchWindowsAIK, [NativeTypeName("PUINT32")] uint* pcchResult, [NativeTypeName("BOOL *")] int* pfProtectedByTPM);
+        public static extern int GetDeviceIDString([NativeTypeName("PWSTR")] ushort* pszWindowsAIK, [NativeTypeName("UINT32")] uint cchWindowsAIK, [NativeTypeName("PUINT32")] uint* pcchResult, BOOL* pfProtectedByTPM);
 
         [DllImport("tbs", ExactSpelling = true)]
         [return: NativeTypeName("TBS_RESULT")]

@@ -7,8 +7,7 @@ namespace TerraFX.Interop
 {
     public unsafe partial struct D3D11_VIDEO_PROCESSOR_STREAM
     {
-        [NativeTypeName("BOOL")]
-        public int Enable;
+        public BOOL Enable;
 
         [NativeTypeName("UINT")]
         public uint OutputIndex;

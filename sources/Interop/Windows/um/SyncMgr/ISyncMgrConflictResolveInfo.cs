@@ -59,9 +59,9 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
         [return: NativeTypeName("HRESULT")]
-        public int GetPresenterChoice(SYNCMGR_PRESENTER_CHOICE* pnPresenterChoice, [NativeTypeName("BOOL *")] int* pfApplyToAll)
+        public int GetPresenterChoice(SYNCMGR_PRESENTER_CHOICE* pnPresenterChoice, BOOL* pfApplyToAll)
         {
-            return ((delegate* unmanaged<ISyncMgrConflictResolveInfo*, SYNCMGR_PRESENTER_CHOICE*, int*, int>)(lpVtbl[5]))((ISyncMgrConflictResolveInfo*)Unsafe.AsPointer(ref this), pnPresenterChoice, pfApplyToAll);
+            return ((delegate* unmanaged<ISyncMgrConflictResolveInfo*, SYNCMGR_PRESENTER_CHOICE*, BOOL*, int>)(lpVtbl[5]))((ISyncMgrConflictResolveInfo*)Unsafe.AsPointer(ref this), pnPresenterChoice, pfApplyToAll);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -91,9 +91,9 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(9)]
         [return: NativeTypeName("HRESULT")]
-        public int SetPresenterChoice(SYNCMGR_PRESENTER_CHOICE nPresenterChoice, [NativeTypeName("BOOL")] int fApplyToAll)
+        public int SetPresenterChoice(SYNCMGR_PRESENTER_CHOICE nPresenterChoice, BOOL fApplyToAll)
         {
-            return ((delegate* unmanaged<ISyncMgrConflictResolveInfo*, SYNCMGR_PRESENTER_CHOICE, int, int>)(lpVtbl[9]))((ISyncMgrConflictResolveInfo*)Unsafe.AsPointer(ref this), nPresenterChoice, fApplyToAll);
+            return ((delegate* unmanaged<ISyncMgrConflictResolveInfo*, SYNCMGR_PRESENTER_CHOICE, BOOL, int>)(lpVtbl[9]))((ISyncMgrConflictResolveInfo*)Unsafe.AsPointer(ref this), nPresenterChoice, fApplyToAll);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
