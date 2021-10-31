@@ -4,27 +4,45 @@ using System;
 
 namespace TerraFX.Interop
 {
-    public partial struct HCERT_SERVER_OCSP_RESPONSE : IEquatable<HCERT_SERVER_OCSP_RESPONSE>
+    public unsafe partial struct HCERT_SERVER_OCSP_RESPONSE : IEquatable<HCERT_SERVER_OCSP_RESPONSE>
     {
         public readonly nint Value;
 
         public HCERT_SERVER_OCSP_RESPONSE(nint value)
         {
-            Value = value;
+            Value = ((nint)(value));
+        }
+
+        public HCERT_SERVER_OCSP_RESPONSE(nuint value)
+        {
+            Value = ((nint)(value));
+        }
+
+        public HCERT_SERVER_OCSP_RESPONSE(void* value)
+        {
+            Value = ((nint)(value));
         }
 
         public static bool operator ==(HCERT_SERVER_OCSP_RESPONSE left, HCERT_SERVER_OCSP_RESPONSE right) => left.Value == right.Value;
 
         public static bool operator !=(HCERT_SERVER_OCSP_RESPONSE left, HCERT_SERVER_OCSP_RESPONSE right) => left.Value != right.Value;
 
-        public static implicit operator HCERT_SERVER_OCSP_RESPONSE(nint value) => new HCERT_SERVER_OCSP_RESPONSE(value);
+        public static explicit operator HCERT_SERVER_OCSP_RESPONSE(nint value) => new HCERT_SERVER_OCSP_RESPONSE(value);
 
-        public static implicit operator nint(HCERT_SERVER_OCSP_RESPONSE value) => value.Value;
+        public static explicit operator HCERT_SERVER_OCSP_RESPONSE(nuint value) => new HCERT_SERVER_OCSP_RESPONSE(value);
+
+        public static explicit operator HCERT_SERVER_OCSP_RESPONSE(void* value) => new HCERT_SERVER_OCSP_RESPONSE(value);
+
+        public static implicit operator nint(HCERT_SERVER_OCSP_RESPONSE value) => (nint)(value.Value);
+
+        public static implicit operator nuint(HCERT_SERVER_OCSP_RESPONSE value) => (nuint)(value.Value);
+
+        public static implicit operator void*(HCERT_SERVER_OCSP_RESPONSE value) => (void*)(value.Value);
 
         public override bool Equals(object? obj) => (obj is HCERT_SERVER_OCSP_RESPONSE other) && Equals(other);
 
         public bool Equals(HCERT_SERVER_OCSP_RESPONSE other) => (this == other);
 
-        public override int GetHashCode() => Value.GetHashCode();
+        public override int GetHashCode() => ((nuint)(Value)).GetHashCode();
     }
 }

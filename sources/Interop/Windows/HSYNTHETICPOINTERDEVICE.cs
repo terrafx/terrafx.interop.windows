@@ -4,27 +4,45 @@ using System;
 
 namespace TerraFX.Interop
 {
-    public partial struct HSYNTHETICPOINTERDEVICE : IEquatable<HSYNTHETICPOINTERDEVICE>
+    public unsafe partial struct HSYNTHETICPOINTERDEVICE : IEquatable<HSYNTHETICPOINTERDEVICE>
     {
         public readonly nint Value;
 
         public HSYNTHETICPOINTERDEVICE(nint value)
         {
-            Value = value;
+            Value = ((nint)(value));
+        }
+
+        public HSYNTHETICPOINTERDEVICE(nuint value)
+        {
+            Value = ((nint)(value));
+        }
+
+        public HSYNTHETICPOINTERDEVICE(void* value)
+        {
+            Value = ((nint)(value));
         }
 
         public static bool operator ==(HSYNTHETICPOINTERDEVICE left, HSYNTHETICPOINTERDEVICE right) => left.Value == right.Value;
 
         public static bool operator !=(HSYNTHETICPOINTERDEVICE left, HSYNTHETICPOINTERDEVICE right) => left.Value != right.Value;
 
-        public static implicit operator HSYNTHETICPOINTERDEVICE(nint value) => new HSYNTHETICPOINTERDEVICE(value);
+        public static explicit operator HSYNTHETICPOINTERDEVICE(nint value) => new HSYNTHETICPOINTERDEVICE(value);
 
-        public static implicit operator nint(HSYNTHETICPOINTERDEVICE value) => value.Value;
+        public static explicit operator HSYNTHETICPOINTERDEVICE(nuint value) => new HSYNTHETICPOINTERDEVICE(value);
+
+        public static explicit operator HSYNTHETICPOINTERDEVICE(void* value) => new HSYNTHETICPOINTERDEVICE(value);
+
+        public static implicit operator nint(HSYNTHETICPOINTERDEVICE value) => (nint)(value.Value);
+
+        public static implicit operator nuint(HSYNTHETICPOINTERDEVICE value) => (nuint)(value.Value);
+
+        public static implicit operator void*(HSYNTHETICPOINTERDEVICE value) => (void*)(value.Value);
 
         public override bool Equals(object? obj) => (obj is HSYNTHETICPOINTERDEVICE other) && Equals(other);
 
         public bool Equals(HSYNTHETICPOINTERDEVICE other) => (this == other);
 
-        public override int GetHashCode() => Value.GetHashCode();
+        public override int GetHashCode() => ((nuint)(Value)).GetHashCode();
     }
 }

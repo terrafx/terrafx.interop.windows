@@ -4,27 +4,45 @@ using System;
 
 namespace TerraFX.Interop
 {
-    public partial struct HPALETTE : IEquatable<HPALETTE>
+    public unsafe partial struct HPALETTE : IEquatable<HPALETTE>
     {
         public readonly nint Value;
 
         public HPALETTE(nint value)
         {
-            Value = value;
+            Value = ((nint)(value));
+        }
+
+        public HPALETTE(nuint value)
+        {
+            Value = ((nint)(value));
+        }
+
+        public HPALETTE(void* value)
+        {
+            Value = ((nint)(value));
         }
 
         public static bool operator ==(HPALETTE left, HPALETTE right) => left.Value == right.Value;
 
         public static bool operator !=(HPALETTE left, HPALETTE right) => left.Value != right.Value;
 
-        public static implicit operator HPALETTE(nint value) => new HPALETTE(value);
+        public static explicit operator HPALETTE(nint value) => new HPALETTE(value);
 
-        public static implicit operator nint(HPALETTE value) => value.Value;
+        public static explicit operator HPALETTE(nuint value) => new HPALETTE(value);
+
+        public static explicit operator HPALETTE(void* value) => new HPALETTE(value);
+
+        public static implicit operator nint(HPALETTE value) => (nint)(value.Value);
+
+        public static implicit operator nuint(HPALETTE value) => (nuint)(value.Value);
+
+        public static implicit operator void*(HPALETTE value) => (void*)(value.Value);
 
         public override bool Equals(object? obj) => (obj is HPALETTE other) && Equals(other);
 
         public bool Equals(HPALETTE other) => (this == other);
 
-        public override int GetHashCode() => Value.GetHashCode();
+        public override int GetHashCode() => ((nuint)(Value)).GetHashCode();
     }
 }

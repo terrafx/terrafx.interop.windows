@@ -4,27 +4,45 @@ using System;
 
 namespace TerraFX.Interop
 {
-    public partial struct ROPARAMIIDHANDLE : IEquatable<ROPARAMIIDHANDLE>
+    public unsafe partial struct ROPARAMIIDHANDLE : IEquatable<ROPARAMIIDHANDLE>
     {
         public readonly nint Value;
 
         public ROPARAMIIDHANDLE(nint value)
         {
-            Value = value;
+            Value = ((nint)(value));
+        }
+
+        public ROPARAMIIDHANDLE(nuint value)
+        {
+            Value = ((nint)(value));
+        }
+
+        public ROPARAMIIDHANDLE(void* value)
+        {
+            Value = ((nint)(value));
         }
 
         public static bool operator ==(ROPARAMIIDHANDLE left, ROPARAMIIDHANDLE right) => left.Value == right.Value;
 
         public static bool operator !=(ROPARAMIIDHANDLE left, ROPARAMIIDHANDLE right) => left.Value != right.Value;
 
-        public static implicit operator ROPARAMIIDHANDLE(nint value) => new ROPARAMIIDHANDLE(value);
+        public static explicit operator ROPARAMIIDHANDLE(nint value) => new ROPARAMIIDHANDLE(value);
 
-        public static implicit operator nint(ROPARAMIIDHANDLE value) => value.Value;
+        public static explicit operator ROPARAMIIDHANDLE(nuint value) => new ROPARAMIIDHANDLE(value);
+
+        public static explicit operator ROPARAMIIDHANDLE(void* value) => new ROPARAMIIDHANDLE(value);
+
+        public static implicit operator nint(ROPARAMIIDHANDLE value) => (nint)(value.Value);
+
+        public static implicit operator nuint(ROPARAMIIDHANDLE value) => (nuint)(value.Value);
+
+        public static implicit operator void*(ROPARAMIIDHANDLE value) => (void*)(value.Value);
 
         public override bool Equals(object? obj) => (obj is ROPARAMIIDHANDLE other) && Equals(other);
 
         public bool Equals(ROPARAMIIDHANDLE other) => (this == other);
 
-        public override int GetHashCode() => Value.GetHashCode();
+        public override int GetHashCode() => ((nuint)(Value)).GetHashCode();
     }
 }

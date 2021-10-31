@@ -4,27 +4,45 @@ using System;
 
 namespace TerraFX.Interop
 {
-    public partial struct HPSSWALK : IEquatable<HPSSWALK>
+    public unsafe partial struct HPSSWALK : IEquatable<HPSSWALK>
     {
         public readonly nint Value;
 
         public HPSSWALK(nint value)
         {
-            Value = value;
+            Value = ((nint)(value));
+        }
+
+        public HPSSWALK(nuint value)
+        {
+            Value = ((nint)(value));
+        }
+
+        public HPSSWALK(void* value)
+        {
+            Value = ((nint)(value));
         }
 
         public static bool operator ==(HPSSWALK left, HPSSWALK right) => left.Value == right.Value;
 
         public static bool operator !=(HPSSWALK left, HPSSWALK right) => left.Value != right.Value;
 
-        public static implicit operator HPSSWALK(nint value) => new HPSSWALK(value);
+        public static explicit operator HPSSWALK(nint value) => new HPSSWALK(value);
 
-        public static implicit operator nint(HPSSWALK value) => value.Value;
+        public static explicit operator HPSSWALK(nuint value) => new HPSSWALK(value);
+
+        public static explicit operator HPSSWALK(void* value) => new HPSSWALK(value);
+
+        public static implicit operator nint(HPSSWALK value) => (nint)(value.Value);
+
+        public static implicit operator nuint(HPSSWALK value) => (nuint)(value.Value);
+
+        public static implicit operator void*(HPSSWALK value) => (void*)(value.Value);
 
         public override bool Equals(object? obj) => (obj is HPSSWALK other) && Equals(other);
 
         public bool Equals(HPSSWALK other) => (this == other);
 
-        public override int GetHashCode() => Value.GetHashCode();
+        public override int GetHashCode() => ((nuint)(Value)).GetHashCode();
     }
 }

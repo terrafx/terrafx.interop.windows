@@ -4,27 +4,45 @@ using System;
 
 namespace TerraFX.Interop
 {
-    public partial struct HGLRC : IEquatable<HGLRC>
+    public unsafe partial struct HGLRC : IEquatable<HGLRC>
     {
         public readonly nint Value;
 
         public HGLRC(nint value)
         {
-            Value = value;
+            Value = ((nint)(value));
+        }
+
+        public HGLRC(nuint value)
+        {
+            Value = ((nint)(value));
+        }
+
+        public HGLRC(void* value)
+        {
+            Value = ((nint)(value));
         }
 
         public static bool operator ==(HGLRC left, HGLRC right) => left.Value == right.Value;
 
         public static bool operator !=(HGLRC left, HGLRC right) => left.Value != right.Value;
 
-        public static implicit operator HGLRC(nint value) => new HGLRC(value);
+        public static explicit operator HGLRC(nint value) => new HGLRC(value);
 
-        public static implicit operator nint(HGLRC value) => value.Value;
+        public static explicit operator HGLRC(nuint value) => new HGLRC(value);
+
+        public static explicit operator HGLRC(void* value) => new HGLRC(value);
+
+        public static implicit operator nint(HGLRC value) => (nint)(value.Value);
+
+        public static implicit operator nuint(HGLRC value) => (nuint)(value.Value);
+
+        public static implicit operator void*(HGLRC value) => (void*)(value.Value);
 
         public override bool Equals(object? obj) => (obj is HGLRC other) && Equals(other);
 
         public bool Equals(HGLRC other) => (this == other);
 
-        public override int GetHashCode() => Value.GetHashCode();
+        public override int GetHashCode() => ((nuint)(Value)).GetHashCode();
     }
 }

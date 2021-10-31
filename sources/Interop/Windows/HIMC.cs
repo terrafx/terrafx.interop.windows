@@ -4,27 +4,45 @@ using System;
 
 namespace TerraFX.Interop
 {
-    public partial struct HIMC : IEquatable<HIMC>
+    public unsafe partial struct HIMC : IEquatable<HIMC>
     {
         public readonly nint Value;
 
         public HIMC(nint value)
         {
-            Value = value;
+            Value = ((nint)(value));
+        }
+
+        public HIMC(nuint value)
+        {
+            Value = ((nint)(value));
+        }
+
+        public HIMC(void* value)
+        {
+            Value = ((nint)(value));
         }
 
         public static bool operator ==(HIMC left, HIMC right) => left.Value == right.Value;
 
         public static bool operator !=(HIMC left, HIMC right) => left.Value != right.Value;
 
-        public static implicit operator HIMC(nint value) => new HIMC(value);
+        public static explicit operator HIMC(nint value) => new HIMC(value);
 
-        public static implicit operator nint(HIMC value) => value.Value;
+        public static explicit operator HIMC(nuint value) => new HIMC(value);
+
+        public static explicit operator HIMC(void* value) => new HIMC(value);
+
+        public static implicit operator nint(HIMC value) => (nint)(value.Value);
+
+        public static implicit operator nuint(HIMC value) => (nuint)(value.Value);
+
+        public static implicit operator void*(HIMC value) => (void*)(value.Value);
 
         public override bool Equals(object? obj) => (obj is HIMC other) && Equals(other);
 
         public bool Equals(HIMC other) => (this == other);
 
-        public override int GetHashCode() => Value.GetHashCode();
+        public override int GetHashCode() => ((nuint)(Value)).GetHashCode();
     }
 }

@@ -4,27 +4,45 @@ using System;
 
 namespace TerraFX.Interop
 {
-    public partial struct HWAVEOUT : IEquatable<HWAVEOUT>
+    public unsafe partial struct HWAVEOUT : IEquatable<HWAVEOUT>
     {
         public readonly nint Value;
 
         public HWAVEOUT(nint value)
         {
-            Value = value;
+            Value = ((nint)(value));
+        }
+
+        public HWAVEOUT(nuint value)
+        {
+            Value = ((nint)(value));
+        }
+
+        public HWAVEOUT(void* value)
+        {
+            Value = ((nint)(value));
         }
 
         public static bool operator ==(HWAVEOUT left, HWAVEOUT right) => left.Value == right.Value;
 
         public static bool operator !=(HWAVEOUT left, HWAVEOUT right) => left.Value != right.Value;
 
-        public static implicit operator HWAVEOUT(nint value) => new HWAVEOUT(value);
+        public static explicit operator HWAVEOUT(nint value) => new HWAVEOUT(value);
 
-        public static implicit operator nint(HWAVEOUT value) => value.Value;
+        public static explicit operator HWAVEOUT(nuint value) => new HWAVEOUT(value);
+
+        public static explicit operator HWAVEOUT(void* value) => new HWAVEOUT(value);
+
+        public static implicit operator nint(HWAVEOUT value) => (nint)(value.Value);
+
+        public static implicit operator nuint(HWAVEOUT value) => (nuint)(value.Value);
+
+        public static implicit operator void*(HWAVEOUT value) => (void*)(value.Value);
 
         public override bool Equals(object? obj) => (obj is HWAVEOUT other) && Equals(other);
 
         public bool Equals(HWAVEOUT other) => (this == other);
 
-        public override int GetHashCode() => Value.GetHashCode();
+        public override int GetHashCode() => ((nuint)(Value)).GetHashCode();
     }
 }

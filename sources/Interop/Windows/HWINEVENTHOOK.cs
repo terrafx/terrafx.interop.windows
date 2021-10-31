@@ -4,27 +4,45 @@ using System;
 
 namespace TerraFX.Interop
 {
-    public partial struct HWINEVENTHOOK : IEquatable<HWINEVENTHOOK>
+    public unsafe partial struct HWINEVENTHOOK : IEquatable<HWINEVENTHOOK>
     {
         public readonly nint Value;
 
         public HWINEVENTHOOK(nint value)
         {
-            Value = value;
+            Value = ((nint)(value));
+        }
+
+        public HWINEVENTHOOK(nuint value)
+        {
+            Value = ((nint)(value));
+        }
+
+        public HWINEVENTHOOK(void* value)
+        {
+            Value = ((nint)(value));
         }
 
         public static bool operator ==(HWINEVENTHOOK left, HWINEVENTHOOK right) => left.Value == right.Value;
 
         public static bool operator !=(HWINEVENTHOOK left, HWINEVENTHOOK right) => left.Value != right.Value;
 
-        public static implicit operator HWINEVENTHOOK(nint value) => new HWINEVENTHOOK(value);
+        public static explicit operator HWINEVENTHOOK(nint value) => new HWINEVENTHOOK(value);
 
-        public static implicit operator nint(HWINEVENTHOOK value) => value.Value;
+        public static explicit operator HWINEVENTHOOK(nuint value) => new HWINEVENTHOOK(value);
+
+        public static explicit operator HWINEVENTHOOK(void* value) => new HWINEVENTHOOK(value);
+
+        public static implicit operator nint(HWINEVENTHOOK value) => (nint)(value.Value);
+
+        public static implicit operator nuint(HWINEVENTHOOK value) => (nuint)(value.Value);
+
+        public static implicit operator void*(HWINEVENTHOOK value) => (void*)(value.Value);
 
         public override bool Equals(object? obj) => (obj is HWINEVENTHOOK other) && Equals(other);
 
         public bool Equals(HWINEVENTHOOK other) => (this == other);
 
-        public override int GetHashCode() => Value.GetHashCode();
+        public override int GetHashCode() => ((nuint)(Value)).GetHashCode();
     }
 }

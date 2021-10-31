@@ -4,27 +4,45 @@ using System;
 
 namespace TerraFX.Interop
 {
-    public partial struct HDEVNOTIFY : IEquatable<HDEVNOTIFY>
+    public unsafe partial struct HDEVNOTIFY : IEquatable<HDEVNOTIFY>
     {
         public readonly nint Value;
 
         public HDEVNOTIFY(nint value)
         {
-            Value = value;
+            Value = ((nint)(value));
+        }
+
+        public HDEVNOTIFY(nuint value)
+        {
+            Value = ((nint)(value));
+        }
+
+        public HDEVNOTIFY(void* value)
+        {
+            Value = ((nint)(value));
         }
 
         public static bool operator ==(HDEVNOTIFY left, HDEVNOTIFY right) => left.Value == right.Value;
 
         public static bool operator !=(HDEVNOTIFY left, HDEVNOTIFY right) => left.Value != right.Value;
 
-        public static implicit operator HDEVNOTIFY(nint value) => new HDEVNOTIFY(value);
+        public static explicit operator HDEVNOTIFY(nint value) => new HDEVNOTIFY(value);
 
-        public static implicit operator nint(HDEVNOTIFY value) => value.Value;
+        public static explicit operator HDEVNOTIFY(nuint value) => new HDEVNOTIFY(value);
+
+        public static explicit operator HDEVNOTIFY(void* value) => new HDEVNOTIFY(value);
+
+        public static implicit operator nint(HDEVNOTIFY value) => (nint)(value.Value);
+
+        public static implicit operator nuint(HDEVNOTIFY value) => (nuint)(value.Value);
+
+        public static implicit operator void*(HDEVNOTIFY value) => (void*)(value.Value);
 
         public override bool Equals(object? obj) => (obj is HDEVNOTIFY other) && Equals(other);
 
         public bool Equals(HDEVNOTIFY other) => (this == other);
 
-        public override int GetHashCode() => Value.GetHashCode();
+        public override int GetHashCode() => ((nuint)(Value)).GetHashCode();
     }
 }

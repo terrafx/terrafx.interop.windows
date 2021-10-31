@@ -4,27 +4,45 @@ using System;
 
 namespace TerraFX.Interop
 {
-    public partial struct HCOLORSPACE : IEquatable<HCOLORSPACE>
+    public unsafe partial struct HCOLORSPACE : IEquatable<HCOLORSPACE>
     {
         public readonly nint Value;
 
         public HCOLORSPACE(nint value)
         {
-            Value = value;
+            Value = ((nint)(value));
+        }
+
+        public HCOLORSPACE(nuint value)
+        {
+            Value = ((nint)(value));
+        }
+
+        public HCOLORSPACE(void* value)
+        {
+            Value = ((nint)(value));
         }
 
         public static bool operator ==(HCOLORSPACE left, HCOLORSPACE right) => left.Value == right.Value;
 
         public static bool operator !=(HCOLORSPACE left, HCOLORSPACE right) => left.Value != right.Value;
 
-        public static implicit operator HCOLORSPACE(nint value) => new HCOLORSPACE(value);
+        public static explicit operator HCOLORSPACE(nint value) => new HCOLORSPACE(value);
 
-        public static implicit operator nint(HCOLORSPACE value) => value.Value;
+        public static explicit operator HCOLORSPACE(nuint value) => new HCOLORSPACE(value);
+
+        public static explicit operator HCOLORSPACE(void* value) => new HCOLORSPACE(value);
+
+        public static implicit operator nint(HCOLORSPACE value) => (nint)(value.Value);
+
+        public static implicit operator nuint(HCOLORSPACE value) => (nuint)(value.Value);
+
+        public static implicit operator void*(HCOLORSPACE value) => (void*)(value.Value);
 
         public override bool Equals(object? obj) => (obj is HCOLORSPACE other) && Equals(other);
 
         public bool Equals(HCOLORSPACE other) => (this == other);
 
-        public override int GetHashCode() => Value.GetHashCode();
+        public override int GetHashCode() => ((nuint)(Value)).GetHashCode();
     }
 }

@@ -19,11 +19,11 @@ namespace TerraFX.Interop
 
         [DllImport("hid", ExactSpelling = true)]
         [return: NativeTypeName("BOOLEAN")]
-        public static extern byte HidD_GetPreparsedData(HANDLE HidDeviceObject, [NativeTypeName("PHIDP_PREPARSED_DATA *")] IntPtr* PreparsedData);
+        public static extern byte HidD_GetPreparsedData(HANDLE HidDeviceObject, PHIDP_PREPARSED_DATA* PreparsedData);
 
         [DllImport("hid", ExactSpelling = true)]
         [return: NativeTypeName("BOOLEAN")]
-        public static extern byte HidD_FreePreparsedData([NativeTypeName("PHIDP_PREPARSED_DATA")] IntPtr PreparsedData);
+        public static extern byte HidD_FreePreparsedData(PHIDP_PREPARSED_DATA PreparsedData);
 
         [DllImport("hid", ExactSpelling = true)]
         [return: NativeTypeName("BOOLEAN")]

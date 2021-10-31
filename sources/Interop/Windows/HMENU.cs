@@ -4,27 +4,45 @@ using System;
 
 namespace TerraFX.Interop
 {
-    public partial struct HMENU : IEquatable<HMENU>
+    public unsafe partial struct HMENU : IEquatable<HMENU>
     {
         public readonly nint Value;
 
         public HMENU(nint value)
         {
-            Value = value;
+            Value = ((nint)(value));
+        }
+
+        public HMENU(nuint value)
+        {
+            Value = ((nint)(value));
+        }
+
+        public HMENU(void* value)
+        {
+            Value = ((nint)(value));
         }
 
         public static bool operator ==(HMENU left, HMENU right) => left.Value == right.Value;
 
         public static bool operator !=(HMENU left, HMENU right) => left.Value != right.Value;
 
-        public static implicit operator HMENU(nint value) => new HMENU(value);
+        public static explicit operator HMENU(nint value) => new HMENU(value);
 
-        public static implicit operator nint(HMENU value) => value.Value;
+        public static explicit operator HMENU(nuint value) => new HMENU(value);
+
+        public static explicit operator HMENU(void* value) => new HMENU(value);
+
+        public static implicit operator nint(HMENU value) => (nint)(value.Value);
+
+        public static implicit operator nuint(HMENU value) => (nuint)(value.Value);
+
+        public static implicit operator void*(HMENU value) => (void*)(value.Value);
 
         public override bool Equals(object? obj) => (obj is HMENU other) && Equals(other);
 
         public bool Equals(HMENU other) => (this == other);
 
-        public override int GetHashCode() => Value.GetHashCode();
+        public override int GetHashCode() => ((nuint)(Value)).GetHashCode();
     }
 }

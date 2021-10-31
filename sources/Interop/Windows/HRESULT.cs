@@ -13,9 +13,18 @@ namespace TerraFX.Interop
             Value = value;
         }
 
+        public HRESULT(uint value)
+        {
+            Value = ((int)(value));
+        }
+
         public static bool operator ==(HRESULT left, HRESULT right) => left.Value == right.Value;
 
         public static bool operator !=(HRESULT left, HRESULT right) => left.Value != right.Value;
+
+        public static explicit operator HRESULT(uint value) => newHRESULT(value);
+
+        public static explicit operator uint(HRESULT value) => (uint)(value.Value);
 
         public static implicit operator HRESULT(int value) => new HRESULT(value);
 

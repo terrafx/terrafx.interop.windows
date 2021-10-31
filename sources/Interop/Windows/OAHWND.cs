@@ -4,27 +4,45 @@ using System;
 
 namespace TerraFX.Interop
 {
-    public partial struct OAHWND : IEquatable<OAHWND>
+    public unsafe partial struct OAHWND : IEquatable<OAHWND>
     {
         public readonly nint Value;
 
         public OAHWND(nint value)
         {
-            Value = value;
+            Value = ((nint)(value));
+        }
+
+        public OAHWND(nuint value)
+        {
+            Value = ((nint)(value));
+        }
+
+        public OAHWND(void* value)
+        {
+            Value = ((nint)(value));
         }
 
         public static bool operator ==(OAHWND left, OAHWND right) => left.Value == right.Value;
 
         public static bool operator !=(OAHWND left, OAHWND right) => left.Value != right.Value;
 
-        public static implicit operator OAHWND(nint value) => new OAHWND(value);
+        public static explicit operator OAHWND(nint value) => new OAHWND(value);
 
-        public static implicit operator nint(OAHWND value) => value.Value;
+        public static explicit operator OAHWND(nuint value) => new OAHWND(value);
+
+        public static explicit operator OAHWND(void* value) => new OAHWND(value);
+
+        public static implicit operator nint(OAHWND value) => (nint)(value.Value);
+
+        public static implicit operator nuint(OAHWND value) => (nuint)(value.Value);
+
+        public static implicit operator void*(OAHWND value) => (void*)(value.Value);
 
         public override bool Equals(object? obj) => (obj is OAHWND other) && Equals(other);
 
         public bool Equals(OAHWND other) => (this == other);
 
-        public override int GetHashCode() => Value.GetHashCode();
+        public override int GetHashCode() => ((nuint)(Value)).GetHashCode();
     }
 }

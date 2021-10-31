@@ -3,15 +3,12 @@
 // Ported from um/WinBase.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-using System;
-
 namespace TerraFX.Interop
 {
     public partial struct STARTUPINFOEXA
     {
         public STARTUPINFOA StartupInfo;
 
-        [NativeTypeName("LPPROC_THREAD_ATTRIBUTE_LIST")]
-        public IntPtr lpAttributeList;
+        public LPPROC_THREAD_ATTRIBUTE_LIST lpAttributeList;
     }
 }

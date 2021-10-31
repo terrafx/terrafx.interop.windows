@@ -4,27 +4,45 @@ using System;
 
 namespace TerraFX.Interop
 {
-    public partial struct HDSKSPC : IEquatable<HDSKSPC>
+    public unsafe partial struct HDSKSPC : IEquatable<HDSKSPC>
     {
         public readonly nint Value;
 
         public HDSKSPC(nint value)
         {
-            Value = value;
+            Value = ((nint)(value));
+        }
+
+        public HDSKSPC(nuint value)
+        {
+            Value = ((nint)(value));
+        }
+
+        public HDSKSPC(void* value)
+        {
+            Value = ((nint)(value));
         }
 
         public static bool operator ==(HDSKSPC left, HDSKSPC right) => left.Value == right.Value;
 
         public static bool operator !=(HDSKSPC left, HDSKSPC right) => left.Value != right.Value;
 
-        public static implicit operator HDSKSPC(nint value) => new HDSKSPC(value);
+        public static explicit operator HDSKSPC(nint value) => new HDSKSPC(value);
 
-        public static implicit operator nint(HDSKSPC value) => value.Value;
+        public static explicit operator HDSKSPC(nuint value) => new HDSKSPC(value);
+
+        public static explicit operator HDSKSPC(void* value) => new HDSKSPC(value);
+
+        public static implicit operator nint(HDSKSPC value) => (nint)(value.Value);
+
+        public static implicit operator nuint(HDSKSPC value) => (nuint)(value.Value);
+
+        public static implicit operator void*(HDSKSPC value) => (void*)(value.Value);
 
         public override bool Equals(object? obj) => (obj is HDSKSPC other) && Equals(other);
 
         public bool Equals(HDSKSPC other) => (this == other);
 
-        public override int GetHashCode() => Value.GetHashCode();
+        public override int GetHashCode() => ((nuint)(Value)).GetHashCode();
     }
 }

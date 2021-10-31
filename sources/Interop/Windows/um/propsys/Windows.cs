@@ -109,10 +109,10 @@ namespace TerraFX.Interop
         public static extern HRESULT PSGetPropertySystem([NativeTypeName("const IID &")] Guid* riid, void** ppv);
 
         [DllImport("propsys", ExactSpelling = true)]
-        public static extern HRESULT PSGetPropertyFromPropertyStorage([NativeTypeName("PCUSERIALIZEDPROPSTORAGE")] IntPtr psps, [NativeTypeName("DWORD")] uint cb, [NativeTypeName("const PROPERTYKEY &")] PROPERTYKEY* rpkey, PROPVARIANT* ppropvar);
+        public static extern HRESULT PSGetPropertyFromPropertyStorage(PCUSERIALIZEDPROPSTORAGE psps, [NativeTypeName("DWORD")] uint cb, [NativeTypeName("const PROPERTYKEY &")] PROPERTYKEY* rpkey, PROPVARIANT* ppropvar);
 
         [DllImport("propsys", ExactSpelling = true)]
-        public static extern HRESULT PSGetNamedPropertyFromPropertyStorage([NativeTypeName("PCUSERIALIZEDPROPSTORAGE")] IntPtr psps, [NativeTypeName("DWORD")] uint cb, [NativeTypeName("LPCWSTR")] ushort* pszName, PROPVARIANT* ppropvar);
+        public static extern HRESULT PSGetNamedPropertyFromPropertyStorage(PCUSERIALIZEDPROPSTORAGE psps, [NativeTypeName("DWORD")] uint cb, [NativeTypeName("LPCWSTR")] ushort* pszName, PROPVARIANT* ppropvar);
 
         [DllImport("propsys", ExactSpelling = true)]
         public static extern HRESULT PSPropertyBag_ReadType(IPropertyBag* propBag, [NativeTypeName("LPCWSTR")] ushort* propName, VARIANT* var, [NativeTypeName("VARTYPE")] ushort type);

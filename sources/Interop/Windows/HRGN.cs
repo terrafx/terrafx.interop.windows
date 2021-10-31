@@ -4,27 +4,45 @@ using System;
 
 namespace TerraFX.Interop
 {
-    public partial struct HRGN : IEquatable<HRGN>
+    public unsafe partial struct HRGN : IEquatable<HRGN>
     {
         public readonly nint Value;
 
         public HRGN(nint value)
         {
-            Value = value;
+            Value = ((nint)(value));
+        }
+
+        public HRGN(nuint value)
+        {
+            Value = ((nint)(value));
+        }
+
+        public HRGN(void* value)
+        {
+            Value = ((nint)(value));
         }
 
         public static bool operator ==(HRGN left, HRGN right) => left.Value == right.Value;
 
         public static bool operator !=(HRGN left, HRGN right) => left.Value != right.Value;
 
-        public static implicit operator HRGN(nint value) => new HRGN(value);
+        public static explicit operator HRGN(nint value) => new HRGN(value);
 
-        public static implicit operator nint(HRGN value) => value.Value;
+        public static explicit operator HRGN(nuint value) => new HRGN(value);
+
+        public static explicit operator HRGN(void* value) => new HRGN(value);
+
+        public static implicit operator nint(HRGN value) => (nint)(value.Value);
+
+        public static implicit operator nuint(HRGN value) => (nuint)(value.Value);
+
+        public static implicit operator void*(HRGN value) => (void*)(value.Value);
 
         public override bool Equals(object? obj) => (obj is HRGN other) && Equals(other);
 
         public bool Equals(HRGN other) => (this == other);
 
-        public override int GetHashCode() => Value.GetHashCode();
+        public override int GetHashCode() => ((nuint)(Value)).GetHashCode();
     }
 }

@@ -4,27 +4,45 @@ using System;
 
 namespace TerraFX.Interop
 {
-    public partial struct HINF : IEquatable<HINF>
+    public unsafe partial struct HINF : IEquatable<HINF>
     {
         public readonly nint Value;
 
         public HINF(nint value)
         {
-            Value = value;
+            Value = ((nint)(value));
+        }
+
+        public HINF(nuint value)
+        {
+            Value = ((nint)(value));
+        }
+
+        public HINF(void* value)
+        {
+            Value = ((nint)(value));
         }
 
         public static bool operator ==(HINF left, HINF right) => left.Value == right.Value;
 
         public static bool operator !=(HINF left, HINF right) => left.Value != right.Value;
 
-        public static implicit operator HINF(nint value) => new HINF(value);
+        public static explicit operator HINF(nint value) => new HINF(value);
 
-        public static implicit operator nint(HINF value) => value.Value;
+        public static explicit operator HINF(nuint value) => new HINF(value);
+
+        public static explicit operator HINF(void* value) => new HINF(value);
+
+        public static implicit operator nint(HINF value) => (nint)(value.Value);
+
+        public static implicit operator nuint(HINF value) => (nuint)(value.Value);
+
+        public static implicit operator void*(HINF value) => (void*)(value.Value);
 
         public override bool Equals(object? obj) => (obj is HINF other) && Equals(other);
 
         public bool Equals(HINF other) => (this == other);
 
-        public override int GetHashCode() => Value.GetHashCode();
+        public override int GetHashCode() => ((nuint)(Value)).GetHashCode();
     }
 }

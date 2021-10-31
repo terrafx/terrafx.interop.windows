@@ -4,27 +4,45 @@ using System;
 
 namespace TerraFX.Interop
 {
-    public partial struct HDESK : IEquatable<HDESK>
+    public unsafe partial struct HDESK : IEquatable<HDESK>
     {
         public readonly nint Value;
 
         public HDESK(nint value)
         {
-            Value = value;
+            Value = ((nint)(value));
+        }
+
+        public HDESK(nuint value)
+        {
+            Value = ((nint)(value));
+        }
+
+        public HDESK(void* value)
+        {
+            Value = ((nint)(value));
         }
 
         public static bool operator ==(HDESK left, HDESK right) => left.Value == right.Value;
 
         public static bool operator !=(HDESK left, HDESK right) => left.Value != right.Value;
 
-        public static implicit operator HDESK(nint value) => new HDESK(value);
+        public static explicit operator HDESK(nint value) => new HDESK(value);
 
-        public static implicit operator nint(HDESK value) => value.Value;
+        public static explicit operator HDESK(nuint value) => new HDESK(value);
+
+        public static explicit operator HDESK(void* value) => new HDESK(value);
+
+        public static implicit operator nint(HDESK value) => (nint)(value.Value);
+
+        public static implicit operator nuint(HDESK value) => (nuint)(value.Value);
+
+        public static implicit operator void*(HDESK value) => (void*)(value.Value);
 
         public override bool Equals(object? obj) => (obj is HDESK other) && Equals(other);
 
         public bool Equals(HDESK other) => (this == other);
 
-        public override int GetHashCode() => Value.GetHashCode();
+        public override int GetHashCode() => ((nuint)(Value)).GetHashCode();
     }
 }

@@ -7,9 +7,5 @@ namespace TerraFX.Interop
         public bool FAILED => Windows.FAILED(Value);
 
         public bool SUCCEEDED => Windows.SUCCEEDED(Value);
-
-        public static explicit operator HRESULT(uint value) => new HRESULT((int)(value));
-
-        public static explicit operator uint(HRESULT value) => (uint)(value.Value);
     }
 }

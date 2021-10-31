@@ -4,27 +4,45 @@ using System;
 
 namespace TerraFX.Interop
 {
-    public partial struct ASYNCCOMPLETIONHANDLE : IEquatable<ASYNCCOMPLETIONHANDLE>
+    public unsafe partial struct ASYNCCOMPLETIONHANDLE : IEquatable<ASYNCCOMPLETIONHANDLE>
     {
-        public readonly nuint Value;
+        public readonly nint Value;
+
+        public ASYNCCOMPLETIONHANDLE(nint value)
+        {
+            Value = ((nint)(value));
+        }
 
         public ASYNCCOMPLETIONHANDLE(nuint value)
         {
-            Value = value;
+            Value = ((nint)(value));
+        }
+
+        public ASYNCCOMPLETIONHANDLE(void* value)
+        {
+            Value = ((nint)(value));
         }
 
         public static bool operator ==(ASYNCCOMPLETIONHANDLE left, ASYNCCOMPLETIONHANDLE right) => left.Value == right.Value;
 
         public static bool operator !=(ASYNCCOMPLETIONHANDLE left, ASYNCCOMPLETIONHANDLE right) => left.Value != right.Value;
 
-        public static implicit operator ASYNCCOMPLETIONHANDLE(nuint value) => new ASYNCCOMPLETIONHANDLE(value);
+        public static explicit operator ASYNCCOMPLETIONHANDLE(nint value) => new ASYNCCOMPLETIONHANDLE(value);
 
-        public static implicit operator nuint(ASYNCCOMPLETIONHANDLE value) => value.Value;
+        public static explicit operator ASYNCCOMPLETIONHANDLE(nuint value) => new ASYNCCOMPLETIONHANDLE(value);
+
+        public static explicit operator ASYNCCOMPLETIONHANDLE(void* value) => new ASYNCCOMPLETIONHANDLE(value);
+
+        public static implicit operator nint(ASYNCCOMPLETIONHANDLE value) => (nint)(value.Value);
+
+        public static implicit operator nuint(ASYNCCOMPLETIONHANDLE value) => (nuint)(value.Value);
+
+        public static implicit operator void*(ASYNCCOMPLETIONHANDLE value) => (void*)(value.Value);
 
         public override bool Equals(object? obj) => (obj is ASYNCCOMPLETIONHANDLE other) && Equals(other);
 
         public bool Equals(ASYNCCOMPLETIONHANDLE other) => (this == other);
 
-        public override int GetHashCode() => Value.GetHashCode();
+        public override int GetHashCode() => ((nuint)(Value)).GetHashCode();
     }
 }

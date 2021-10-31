@@ -4,27 +4,45 @@ using System;
 
 namespace TerraFX.Interop
 {
-    public partial struct HCRYPTDEFAULTCONTEXT : IEquatable<HCRYPTDEFAULTCONTEXT>
+    public unsafe partial struct HCRYPTDEFAULTCONTEXT : IEquatable<HCRYPTDEFAULTCONTEXT>
     {
         public readonly nint Value;
 
         public HCRYPTDEFAULTCONTEXT(nint value)
         {
-            Value = value;
+            Value = ((nint)(value));
+        }
+
+        public HCRYPTDEFAULTCONTEXT(nuint value)
+        {
+            Value = ((nint)(value));
+        }
+
+        public HCRYPTDEFAULTCONTEXT(void* value)
+        {
+            Value = ((nint)(value));
         }
 
         public static bool operator ==(HCRYPTDEFAULTCONTEXT left, HCRYPTDEFAULTCONTEXT right) => left.Value == right.Value;
 
         public static bool operator !=(HCRYPTDEFAULTCONTEXT left, HCRYPTDEFAULTCONTEXT right) => left.Value != right.Value;
 
-        public static implicit operator HCRYPTDEFAULTCONTEXT(nint value) => new HCRYPTDEFAULTCONTEXT(value);
+        public static explicit operator HCRYPTDEFAULTCONTEXT(nint value) => new HCRYPTDEFAULTCONTEXT(value);
 
-        public static implicit operator nint(HCRYPTDEFAULTCONTEXT value) => value.Value;
+        public static explicit operator HCRYPTDEFAULTCONTEXT(nuint value) => new HCRYPTDEFAULTCONTEXT(value);
+
+        public static explicit operator HCRYPTDEFAULTCONTEXT(void* value) => new HCRYPTDEFAULTCONTEXT(value);
+
+        public static implicit operator nint(HCRYPTDEFAULTCONTEXT value) => (nint)(value.Value);
+
+        public static implicit operator nuint(HCRYPTDEFAULTCONTEXT value) => (nuint)(value.Value);
+
+        public static implicit operator void*(HCRYPTDEFAULTCONTEXT value) => (void*)(value.Value);
 
         public override bool Equals(object? obj) => (obj is HCRYPTDEFAULTCONTEXT other) && Equals(other);
 
         public bool Equals(HCRYPTDEFAULTCONTEXT other) => (this == other);
 
-        public override int GetHashCode() => Value.GetHashCode();
+        public override int GetHashCode() => ((nuint)(Value)).GetHashCode();
     }
 }

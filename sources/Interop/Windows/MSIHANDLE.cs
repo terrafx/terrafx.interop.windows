@@ -13,9 +13,18 @@ namespace TerraFX.Interop
             Value = value;
         }
 
+        public MSIHANDLE(int value)
+        {
+            Value = ((uint)(value));
+        }
+
         public static bool operator ==(MSIHANDLE left, MSIHANDLE right) => left.Value == right.Value;
 
         public static bool operator !=(MSIHANDLE left, MSIHANDLE right) => left.Value != right.Value;
+
+        public static explicit operator MSIHANDLE(int value) => newMSIHANDLE(value);
+
+        public static explicit operator int(MSIHANDLE value) => (int)(value.Value);
 
         public static implicit operator MSIHANDLE(uint value) => new MSIHANDLE(value);
 

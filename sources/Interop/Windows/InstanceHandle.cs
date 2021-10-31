@@ -13,9 +13,18 @@ namespace TerraFX.Interop
             Value = value;
         }
 
+        public InstanceHandle(long value)
+        {
+            Value = ((ulong)(value));
+        }
+
         public static bool operator ==(InstanceHandle left, InstanceHandle right) => left.Value == right.Value;
 
         public static bool operator !=(InstanceHandle left, InstanceHandle right) => left.Value != right.Value;
+
+        public static explicit operator InstanceHandle(long value) => newInstanceHandle(value);
+
+        public static explicit operator long(InstanceHandle value) => (long)(value.Value);
 
         public static implicit operator InstanceHandle(ulong value) => new InstanceHandle(value);
 
