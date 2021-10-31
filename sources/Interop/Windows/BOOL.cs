@@ -22,7 +22,7 @@ namespace TerraFX.Interop
 
         public static bool operator !=(BOOL left, BOOL right) => left.Value != right.Value;
 
-        public static explicit operator bool(BOOL value) => value.Value != 0;
+        public static implicit operator bool(BOOL value) => value.Value != 0;
 
         public static implicit operator BOOL(int value) => new BOOL(value);
 
