@@ -33,7 +33,7 @@ namespace TerraFX.Samples.DirectX.D3D12
                 ID3D12GraphicsCommandList* bundle;
 
                 var iid = IID_ID3D12GraphicsCommandList;
-                ThrowIfFailed(nameof(ID3D12Device.CreateCommandList), D3DDevice->CreateCommandList(nodeMask: 0, D3D12_COMMAND_LIST_TYPE_BUNDLE, _bundleAllocator, PipelineState, &iid, (void**)&bundle));
+                ThrowIfFailed(D3DDevice->CreateCommandList(nodeMask: 0, D3D12_COMMAND_LIST_TYPE_BUNDLE, _bundleAllocator, PipelineState, &iid, (void**)&bundle));
 
                 bundle->SetGraphicsRootSignature(RootSignature);
                 bundle->IASetPrimitiveTopology(D3D_PRIMITIVE_TOPOLOGY_TRIANGLELIST);
@@ -44,7 +44,7 @@ namespace TerraFX.Samples.DirectX.D3D12
                 }
 
                 bundle->DrawInstanced(3, 1, 0, 0);
-                ThrowIfFailed(nameof(ID3D12GraphicsCommandList.Close), bundle->Close());
+                ThrowIfFailed(bundle->Close());
 
                 return bundle;
             }
@@ -54,7 +54,7 @@ namespace TerraFX.Samples.DirectX.D3D12
                 ID3D12CommandAllocator* bundleAllocator;
 
                 var iid = IID_ID3D12CommandAllocator;
-                ThrowIfFailed(nameof(ID3D12Device.CreateCommandAllocator), D3DDevice->CreateCommandAllocator(D3D12_COMMAND_LIST_TYPE_BUNDLE, &iid, (void**)&bundleAllocator));
+                ThrowIfFailed(D3DDevice->CreateCommandAllocator(D3D12_COMMAND_LIST_TYPE_BUNDLE, &iid, (void**)&bundleAllocator));
 
                 return bundleAllocator;
             }

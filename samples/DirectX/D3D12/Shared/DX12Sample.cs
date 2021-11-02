@@ -22,6 +22,8 @@ namespace TerraFX.Samples.DirectX.D3D12
 {
     public abstract unsafe class DX12Sample : DXSample
     {
+        private readonly ID3D12CommandAllocator*[] _commandAllocators;
+
         private ID3D12Device* _d3dDevice;
         private IDXGIAdapter1* _dxgiAdapter;
         private IDXGIFactory4* _dxgiFactory;
@@ -31,7 +33,6 @@ namespace TerraFX.Samples.DirectX.D3D12
         private ID3D12DescriptorHeap* _rtvHeap;
         private ID3D12DescriptorHeap* _dsvHeap;
         private ID3D12CommandQueue* _commandQueue;
-        private ID3D12CommandAllocator*[] _commandAllocators;
         private D3D12_VIEWPORT _viewport;
         private RECT _scissorRect;
         private uint _rtvDescriptorSize;
@@ -101,15 +102,15 @@ namespace TerraFX.Samples.DirectX.D3D12
             PopulateGraphicsCommandList();
             ExecuteGraphicsCommandList();
 
-            ThrowIfFailed(nameof(IDXGISwapChain3.Present), _swapChain->Present(SyncInterval: 1, Flags: 0));
+            ThrowIfFailed(_swapChain->Present(SyncInterval: 1, Flags: 0));
             WaitForGpu(moveToNextFrame: true);
 
             void PopulateGraphicsCommandList()
             {
                 WaitForGpu(moveToNextFrame: false);
 
-                ThrowIfFailed(nameof(ID3D12CommandAllocator.Reset), CommandAllocator->Reset());
-                ThrowIfFailed(nameof(ID3D12GraphicsCommandList.Reset), GraphicsCommandList->Reset(CommandAllocator, PipelineState));
+                ThrowIfFailed(CommandAllocator->Reset());
+                ThrowIfFailed(GraphicsCommandList->Reset(CommandAllocator, PipelineState));
 
                 SetGraphicsCommandListState();
 
@@ -128,13 +129,13 @@ namespace TerraFX.Samples.DirectX.D3D12
                 Draw();
                 TransitionForPresent();
 
-                ThrowIfFailed(nameof(ID3D12GraphicsCommandList.Close), GraphicsCommandList->Close());
+                ThrowIfFailed(GraphicsCommandList->Close());
             }
         }
 
         protected virtual void CreateAssets()
         {
-            ThrowIfFailed(nameof(ID3D12GraphicsCommandList.Close), GraphicsCommandList->Close());
+            ThrowIfFailed(GraphicsCommandList->Close());
             ExecuteGraphicsCommandList();
             WaitForGpu(moveToNextFrame: false);
         }
@@ -151,7 +152,7 @@ namespace TerraFX.Samples.DirectX.D3D12
             var clearValue = new D3D12_CLEAR_VALUE(DepthBufferFormat, 1.0f, 0);
 
             var iid = IID_ID3D12Resource;
-            ThrowIfFailed(nameof(ID3D12Device.CreateCommittedResource), D3DDevice->CreateCommittedResource(&heapProperties, D3D12_HEAP_FLAG_NONE, &resourceDesc, D3D12_RESOURCE_STATE_DEPTH_WRITE, &clearValue, &iid, (void**)&depthStencil));
+            ThrowIfFailed(D3DDevice->CreateCommittedResource(&heapProperties, D3D12_HEAP_FLAG_NONE, &resourceDesc, D3D12_RESOURCE_STATE_DEPTH_WRITE, &clearValue, &iid, (void**)&depthStencil));
 
             var dsvDesc = new D3D12_DEPTH_STENCIL_VIEW_DESC {
                 Format = DepthBufferFormat,
@@ -177,7 +178,7 @@ namespace TerraFX.Samples.DirectX.D3D12
                 ID3D12DescriptorHeap* dsvHeap;
 
                 var iid = IID_ID3D12DescriptorHeap;
-                ThrowIfFailed(nameof(ID3D12Device.CreateDescriptorHeap), D3DDevice->CreateDescriptorHeap(&dsvHeapDesc, &iid, (void**)&dsvHeap));
+                ThrowIfFailed(D3DDevice->CreateDescriptorHeap(&dsvHeapDesc, &iid, (void**)&dsvHeap));
 
                 return dsvHeap;
             }
@@ -192,7 +193,7 @@ namespace TerraFX.Samples.DirectX.D3D12
                 ID3D12DescriptorHeap* rtvHeap;
 
                 var iid = IID_ID3D12DescriptorHeap;
-                ThrowIfFailed(nameof(ID3D12Device.CreateDescriptorHeap), D3DDevice->CreateDescriptorHeap(&rtvHeapDesc, &iid, (void**)&rtvHeap));
+                ThrowIfFailed(D3DDevice->CreateDescriptorHeap(&rtvHeapDesc, &iid, (void**)&rtvHeap));
 
                 rtvDescriptorSize = D3DDevice->GetDescriptorHandleIncrementSize(D3D12_DESCRIPTOR_HEAP_TYPE_RTV);
                 return rtvHeap;
@@ -208,7 +209,7 @@ namespace TerraFX.Samples.DirectX.D3D12
 
             CreateDescriptorHeaps();
 
-            for (int i = 0; i < FrameCount; i++)
+            for (var i = 0; i < FrameCount; i++)
             {
                 _commandAllocators[i] = CreateCommandAllocator();
             }
@@ -221,8 +222,8 @@ namespace TerraFX.Samples.DirectX.D3D12
             _pipelineState = CreatePipelineState();
             _graphicsCommandLists = CreateGraphicsCommandLists();
 
-            ThrowIfFailed(nameof(ID3D12CommandAllocator.Reset), CommandAllocator->Reset());
-            ThrowIfFailed(nameof(ID3D12GraphicsCommandList.Reset), GraphicsCommandList->Reset(CommandAllocator, PipelineState));
+            ThrowIfFailed(CommandAllocator->Reset());
+            ThrowIfFailed(GraphicsCommandList->Reset(CommandAllocator, PipelineState));
 
             CreateAssets();
 
@@ -231,7 +232,7 @@ namespace TerraFX.Samples.DirectX.D3D12
                 ID3D12CommandAllocator* commandAllocator;
 
                 var iid = IID_ID3D12CommandAllocator;
-                ThrowIfFailed(nameof(ID3D12Device.CreateCommandAllocator), D3DDevice->CreateCommandAllocator(D3D12_COMMAND_LIST_TYPE_DIRECT, &iid, (void**)&commandAllocator));
+                ThrowIfFailed(D3DDevice->CreateCommandAllocator(D3D12_COMMAND_LIST_TYPE_DIRECT, &iid, (void**)&commandAllocator));
 
                 return commandAllocator;
             }
@@ -243,7 +244,7 @@ namespace TerraFX.Samples.DirectX.D3D12
                 ID3D12CommandQueue* commandQueue;
 
                 var iid = IID_ID3D12CommandQueue;
-                ThrowIfFailed(nameof(ID3D12Device.CreateCommandQueue), D3DDevice->CreateCommandQueue(&queueDesc, &iid, (void**)&commandQueue));
+                ThrowIfFailed(D3DDevice->CreateCommandQueue(&queueDesc, &iid, (void**)&commandQueue));
 
                 return commandQueue;
             }
@@ -253,7 +254,7 @@ namespace TerraFX.Samples.DirectX.D3D12
                 ID3D12Device* d3dDevice;
 
                 var iid = IID_ID3D12Device;
-                ThrowIfFailed(nameof(D3D12CreateDevice), D3D12CreateDevice((IUnknown*)_dxgiAdapter, D3D_FEATURE_LEVEL_11_0, &iid, (void**)&d3dDevice));
+                ThrowIfFailed(D3D12CreateDevice((IUnknown*)_dxgiAdapter, D3D_FEATURE_LEVEL_11_0, &iid, (void**)&d3dDevice));
 
                 return d3dDevice;
             }
@@ -265,7 +266,7 @@ namespace TerraFX.Samples.DirectX.D3D12
                 IDXGIFactory4* dxgiFactory;
 
                 var iid = IID_IDXGIFactory4;
-                ThrowIfFailed(nameof(CreateDXGIFactory2), CreateDXGIFactory2(dxgiFactoryFlags, &iid, (void**)&dxgiFactory));
+                ThrowIfFailed(CreateDXGIFactory2(dxgiFactoryFlags, &iid, (void**)&dxgiFactory));
 
                 return dxgiFactory;
             }
@@ -275,7 +276,7 @@ namespace TerraFX.Samples.DirectX.D3D12
                 ID3D12Fence* fence;
 
                 var iid = IID_ID3D12Fence;
-                ThrowIfFailed(nameof(ID3D12Device.CreateFence), D3DDevice->CreateFence(InitialValue: 0, D3D12_FENCE_FLAG_NONE, &iid, (void**)&fence));
+                ThrowIfFailed(D3DDevice->CreateFence(InitialValue: 0, D3D12_FENCE_FLAG_NONE, &iid, (void**)&fence));
 
                 return fence;
             }
@@ -304,14 +305,14 @@ namespace TerraFX.Samples.DirectX.D3D12
             {
                 var graphicsCommandLists = new ID3D12GraphicsCommandList*[FrameCount];
 
-                for (uint i = 0u; i < FrameCount; i++)
+                for (var i = 0u; i < FrameCount; i++)
                 {
                     ID3D12GraphicsCommandList* graphicsCommandList;
 
                     var iid = IID_ID3D12GraphicsCommandList;
-                    ThrowIfFailed(nameof(ID3D12Device.CreateCommandList), D3DDevice->CreateCommandList(nodeMask: 0, D3D12_COMMAND_LIST_TYPE_DIRECT, _commandAllocators[i], PipelineState, &iid, (void**)&graphicsCommandList));
+                    ThrowIfFailed(D3DDevice->CreateCommandList(nodeMask: 0, D3D12_COMMAND_LIST_TYPE_DIRECT, _commandAllocators[i], PipelineState, &iid, (void**)&graphicsCommandList));
 
-                    ThrowIfFailed(nameof(ID3D12GraphicsCommandList.Close), graphicsCommandList->Close());
+                    ThrowIfFailed(graphicsCommandList->Close());
                     graphicsCommandLists[i] = graphicsCommandList;
                 }
 
@@ -325,7 +326,7 @@ namespace TerraFX.Samples.DirectX.D3D12
                     IDXGIAdapter1* adapter;
 
                     var iid = IID_IDXGIAdapter;
-                    ThrowIfFailed(nameof(IDXGIFactory4.EnumWarpAdapter), _dxgiFactory->EnumWarpAdapter(&iid, (void**)&adapter));
+                    ThrowIfFailed(_dxgiFactory->EnumWarpAdapter(&iid, (void**)&adapter));
 
                     return adapter;
                 }
@@ -364,7 +365,7 @@ namespace TerraFX.Samples.DirectX.D3D12
             for (var i = 0u; i < FrameCount; i++)
             {
                 D3DDevice->CreateRenderTargetView(_renderTargets[i], pDesc: null, rtvHandle);
-                rtvHandle.Offset(1, RTVDescriptorSize);
+                _ = rtvHandle.Offset(1, RTVDescriptorSize);
             }
         }
 
@@ -385,7 +386,7 @@ namespace TerraFX.Samples.DirectX.D3D12
                 for (var i = 0u; i < FrameCount; i++)
                 {
                     ID3D12Resource* renderTarget;
-                    ThrowIfFailed(nameof(IDXGISwapChain3.GetBuffer), SwapChain->GetBuffer(i, &iid, (void**)&renderTarget));
+                    ThrowIfFailed(SwapChain->GetBuffer(i, &iid, (void**)&renderTarget));
                     renderTargets[unchecked((int)i)] = renderTarget;
                 }
 
@@ -409,7 +410,7 @@ namespace TerraFX.Samples.DirectX.D3D12
 
             if (_swapChain != null)
             {
-                ThrowIfFailed(nameof(IDXGISwapChain3.ResizeBuffers), _swapChain->ResizeBuffers(FrameCount, (uint)Size.Width, (uint)Size.Height, BackBufferFormat, 0));
+                ThrowIfFailed(_swapChain->ResizeBuffers(FrameCount, (uint)Size.Width, (uint)Size.Height, BackBufferFormat, 0));
             }
             else
             {
@@ -448,7 +449,7 @@ namespace TerraFX.Samples.DirectX.D3D12
                     SampleDesc = new DXGI_SAMPLE_DESC(count: 1, quality: 0),
                 };
 
-                ThrowIfFailed(nameof(IDXGIFactory4.CreateSwapChainForHwnd), DxgiFactory->CreateSwapChainForHwnd(
+                ThrowIfFailed(DxgiFactory->CreateSwapChainForHwnd(
                     (IUnknown*)_commandQueue,         // Swap chain needs the queue so that it can force a flush on it.
                     Hwnd,
                     &swapChainDesc,
@@ -460,7 +461,7 @@ namespace TerraFX.Samples.DirectX.D3D12
                 IDXGISwapChain3* swapChain3;
 
                 var iid = IID_IDXGISwapChain3;
-                ThrowIfFailed(nameof(IDXGISwapChain1.QueryInterface), swapChain.Get()->QueryInterface(&iid, (void**)&swapChain3));
+                ThrowIfFailed(swapChain.Get()->QueryInterface(&iid, (void**)&swapChain3));
 
                 return swapChain3;
             }
@@ -591,9 +592,9 @@ namespace TerraFX.Samples.DirectX.D3D12
             {
                 var fenceEvent = _fenceEvent;
 
-                if (fenceEvent != (HANDLE)(NULL))
+                if (fenceEvent != HANDLE.NULL)
                 {
-                    _fenceEvent = (HANDLE)(NULL);
+                    _fenceEvent = HANDLE.NULL;
                     _ = CloseHandle(_fenceEvent);
                 }
             }
@@ -730,7 +731,7 @@ namespace TerraFX.Samples.DirectX.D3D12
         private void WaitForGpu(bool moveToNextFrame)
         {
             // Schedule a Signal command in the queue.
-            ThrowIfFailed(nameof(ID3D12CommandQueue.Signal), CommandQueue->Signal(Fence, FenceValue));
+            ThrowIfFailed(CommandQueue->Signal(Fence, FenceValue));
 
             if (moveToNextFrame)
             {
@@ -740,7 +741,7 @@ namespace TerraFX.Samples.DirectX.D3D12
             if (!moveToNextFrame || (Fence->GetCompletedValue() < FenceValue))
             {
                 // Wait until the fence has been crossed.
-                ThrowIfFailed(nameof(ID3D12Fence.SetEventOnCompletion), Fence->SetEventOnCompletion(FenceValue, FenceEvent));
+                ThrowIfFailed(Fence->SetEventOnCompletion(FenceValue, FenceEvent));
                 _ = WaitForSingleObjectEx(FenceEvent, INFINITE, FALSE);
             }
 

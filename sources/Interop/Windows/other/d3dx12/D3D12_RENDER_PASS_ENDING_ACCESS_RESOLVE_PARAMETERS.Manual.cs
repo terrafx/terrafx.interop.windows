@@ -12,30 +12,40 @@ namespace TerraFX.Interop
         public static bool operator ==([NativeTypeName("const D3D12_RENDER_PASS_ENDING_ACCESS_RESOLVE_PARAMETERS &")] in D3D12_RENDER_PASS_ENDING_ACCESS_RESOLVE_PARAMETERS a, [NativeTypeName("const D3D12_RENDER_PASS_ENDING_ACCESS_RESOLVE_PARAMETERS &")] in D3D12_RENDER_PASS_ENDING_ACCESS_RESOLVE_PARAMETERS b)
         {
             if (a.pSrcResource != b.pSrcResource)
+            {
                 return false;
+            }
 
             if (a.pDstResource != b.pDstResource)
+            {
                 return false;
+            }
 
             if (a.SubresourceCount != b.SubresourceCount)
+            {
                 return false;
+            }
 
             if (a.Format != b.Format)
+            {
                 return false;
+            }
 
             if (a.ResolveMode != b.ResolveMode)
+            {
                 return false;
+            }
 
             if (a.PreserveResolveSource != b.PreserveResolveSource)
+            {
                 return false;
+            }
 
             return true;
         }
 
         public static bool operator !=([NativeTypeName("const D3D12_RENDER_PASS_ENDING_ACCESS_RESOLVE_PARAMETERS &")] in D3D12_RENDER_PASS_ENDING_ACCESS_RESOLVE_PARAMETERS a, [NativeTypeName("const D3D12_RENDER_PASS_ENDING_ACCESS_RESOLVE_PARAMETERS &")] in D3D12_RENDER_PASS_ENDING_ACCESS_RESOLVE_PARAMETERS b)
-        {
-            return !(a == b);
-        }
+            => !(a == b);
 
         public override bool Equals(object? obj) => (obj is D3D12_RENDER_PASS_ENDING_ACCESS_RESOLVE_PARAMETERS other) && Equals(other);
 

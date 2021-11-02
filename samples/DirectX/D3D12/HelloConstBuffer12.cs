@@ -63,7 +63,7 @@ namespace TerraFX.Samples.DirectX.D3D12
                 var bufferDesc = D3D12_RESOURCE_DESC.Buffer(1024 * 64);
 
                 var iid = IID_ID3D12Resource;
-                ThrowIfFailed(nameof(ID3D12Device.CreateCommittedResource), D3DDevice->CreateCommittedResource(&heapProperties, D3D12_HEAP_FLAG_NONE, &bufferDesc, D3D12_RESOURCE_STATE_GENERIC_READ, pOptimizedClearValue: null, &iid, (void**)&constantBuffer));
+                ThrowIfFailed(D3DDevice->CreateCommittedResource(&heapProperties, D3D12_HEAP_FLAG_NONE, &bufferDesc, D3D12_RESOURCE_STATE_GENERIC_READ, pOptimizedClearValue: null, &iid, (void**)&constantBuffer));
 
                 var cbvDesc = new D3D12_CONSTANT_BUFFER_VIEW_DESC {
                     BufferLocation = constantBuffer->GetGPUVirtualAddress(),
@@ -77,7 +77,7 @@ namespace TerraFX.Samples.DirectX.D3D12
                 fixed (byte** pConstantBufferDataBegin = &constantBufferDataBegin)
                 {
                     var readRange = new D3D12_RANGE(); // We do not intend to read from this resource on the CPU.
-                    ThrowIfFailed(nameof(ID3D12Resource.Map), constantBuffer->Map(Subresource: 0, &readRange, (void**)pConstantBufferDataBegin));
+                    ThrowIfFailed(constantBuffer->Map(Subresource: 0, &readRange, (void**)pConstantBufferDataBegin));
                     Unsafe.CopyBlock(ref constantBufferDataBegin[0], ref Unsafe.As<SceneConstantBuffer, byte>(ref _constantBufferData), (uint)sizeof(SceneConstantBuffer));
                 }
 
@@ -101,7 +101,7 @@ namespace TerraFX.Samples.DirectX.D3D12
                 ID3D12DescriptorHeap* cbvHeap;
 
                 var iid = IID_ID3D12DescriptorHeap;
-                ThrowIfFailed(nameof(ID3D12Device.CreateDescriptorHeap), D3DDevice->CreateDescriptorHeap(&cbvHeapDesc, &iid, (void**)&cbvHeap));
+                ThrowIfFailed(D3DDevice->CreateDescriptorHeap(&cbvHeapDesc, &iid, (void**)&cbvHeap));
 
                 return cbvHeap;
             }
@@ -122,11 +122,11 @@ namespace TerraFX.Samples.DirectX.D3D12
             {
                 var entryPoint = 0x00006E69614D5356;    // VSMain
                 var target = 0x0000305F355F7376;        // vs_5_0
-                ThrowIfFailed(nameof(D3DCompileFromFile), D3DCompileFromFile((ushort*)fileName, pDefines: null, pInclude: null, (sbyte*)&entryPoint, (sbyte*)&target, compileFlags, Flags2: 0, vertexShader.GetAddressOf(), ppErrorMsgs: null));
+                ThrowIfFailed(D3DCompileFromFile((ushort*)fileName, pDefines: null, pInclude: null, (sbyte*)&entryPoint, (sbyte*)&target, compileFlags, Flags2: 0, vertexShader.GetAddressOf(), ppErrorMsgs: null));
 
                 entryPoint = 0x00006E69614D5350;        // PSMain
                 target = 0x0000305F355F7370;            // ps_5_0
-                ThrowIfFailed(nameof(D3DCompileFromFile), D3DCompileFromFile((ushort*)fileName, pDefines: null, pInclude: null, (sbyte*)&entryPoint, (sbyte*)&target, compileFlags, Flags2: 0, pixelShader.GetAddressOf(), ppErrorMsgs: null));
+                ThrowIfFailed(D3DCompileFromFile((ushort*)fileName, pDefines: null, pInclude: null, (sbyte*)&entryPoint, (sbyte*)&target, compileFlags, Flags2: 0, pixelShader.GetAddressOf(), ppErrorMsgs: null));
             }
 
             // Define the vertex input layout.
@@ -178,7 +178,7 @@ namespace TerraFX.Samples.DirectX.D3D12
             ID3D12PipelineState* pipelineState;
 
             var iid = IID_ID3D12PipelineState;
-            ThrowIfFailed(nameof(ID3D12Device.CreateGraphicsPipelineState), D3DDevice->CreateGraphicsPipelineState(&psoDesc, &iid, (void**)&pipelineState));
+            ThrowIfFailed(D3DDevice->CreateGraphicsPipelineState(&psoDesc, &iid, (void**)&pipelineState));
 
             return pipelineState;
         }
@@ -217,12 +217,12 @@ namespace TerraFX.Samples.DirectX.D3D12
             var rootSignatureDesc = new D3D12_VERSIONED_ROOT_SIGNATURE_DESC();
             rootSignatureDesc.Init_1_1(RootParametersCount, rootParameters, 0, null, rootSignatureFlags);
 
-            ThrowIfFailed(nameof(D3D12SerializeRootSignature), D3D12SerializeVersionedRootSignature(&rootSignatureDesc, featureData.HighestVersion, signature.GetAddressOf(), error.GetAddressOf()));
+            ThrowIfFailed(D3D12SerializeVersionedRootSignature(&rootSignatureDesc, featureData.HighestVersion, signature.GetAddressOf(), error.GetAddressOf()));
 
             ID3D12RootSignature* rootSignature;
 
             var iid = IID_ID3D12RootSignature;
-            ThrowIfFailed(nameof(ID3D12Device.CreateRootSignature), D3DDevice->CreateRootSignature(0, signature.Get()->GetBufferPointer(), signature.Get()->GetBufferSize(), &iid, (void**)&rootSignature));
+            ThrowIfFailed(D3DDevice->CreateRootSignature(0, signature.Get()->GetBufferPointer(), signature.Get()->GetBufferSize(), &iid, (void**)&rootSignature));
 
             return rootSignature;
         }

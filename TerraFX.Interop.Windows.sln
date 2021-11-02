@@ -432,6 +432,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{EFB05081
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Interop", "Interop", "{7E31C739-2787-44ED-8304-7EFCEE1A2B2C}"
+	ProjectSection(SolutionItems) = preProject
+		tests\Interop\.editorconfig = tests\Interop\.editorconfig
+	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Windows", "Windows", "{83A9C646-8419-4C1C-886C-5340C90A7D5B}"
 EndProject

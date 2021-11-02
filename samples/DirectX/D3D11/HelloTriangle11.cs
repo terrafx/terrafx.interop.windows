@@ -40,15 +40,15 @@ namespace TerraFX.Samples.DirectX.D3D11
                 {
                     var entryPoint = 0x00006E69614D5356;    // VSMain
                     var target = 0x0000305F345F7376;        // vs_4_0
-                    ThrowIfFailed(nameof(D3DCompileFromFile), D3DCompileFromFile((ushort*)fileName, null, null, (sbyte*)&entryPoint, (sbyte*)&target, 0, 0, vertexShaderBlob.GetAddressOf(), null));
+                    ThrowIfFailed(D3DCompileFromFile((ushort*)fileName, null, null, (sbyte*)&entryPoint, (sbyte*)&target, 0, 0, vertexShaderBlob.GetAddressOf(), null));
 
-                    ThrowIfFailed(nameof(ID3D11Device.CreateVertexShader), D3DDevice->CreateVertexShader(vertexShaderBlob.Get()->GetBufferPointer(), vertexShaderBlob.Get()->GetBufferSize(), pClassLinkage: null, vertexShader));
+                    ThrowIfFailed(D3DDevice->CreateVertexShader(vertexShaderBlob.Get()->GetBufferPointer(), vertexShaderBlob.Get()->GetBufferSize(), pClassLinkage: null, vertexShader));
 
                     entryPoint = 0x00006E69614D5350;        // PSMain
                     target = 0x0000305F345F7370;            // ps_4_0
-                    ThrowIfFailed(nameof(D3DCompileFromFile), D3DCompileFromFile((ushort*)fileName, null, null, (sbyte*)&entryPoint, (sbyte*)&target, 0, 0, pixelShaderBlob.GetAddressOf(), null));
+                    ThrowIfFailed(D3DCompileFromFile((ushort*)fileName, null, null, (sbyte*)&entryPoint, (sbyte*)&target, 0, 0, pixelShaderBlob.GetAddressOf(), null));
 
-                    ThrowIfFailed(nameof(ID3D11Device.CreatePixelShader), D3DDevice->CreatePixelShader(pixelShaderBlob.Get()->GetBufferPointer(), pixelShaderBlob.Get()->GetBufferSize(), pClassLinkage: null, pixelShader));
+                    ThrowIfFailed(D3DDevice->CreatePixelShader(pixelShaderBlob.Get()->GetBufferPointer(), pixelShaderBlob.Get()->GetBufferSize(), pClassLinkage: null, pixelShader));
                 }
 
                 var inputElementDescs = stackalloc D3D11_INPUT_ELEMENT_DESC[2];
@@ -80,7 +80,7 @@ namespace TerraFX.Samples.DirectX.D3D11
                 }
 
                 ID3D11InputLayout* inputLayout;
-                ThrowIfFailed(nameof(ID3D11Device.CreateInputLayout), D3DDevice->CreateInputLayout(inputElementDescs, NumElements: 2, vertexShaderBlob.Get()->GetBufferPointer(), vertexShaderBlob.Get()->GetBufferSize(), &inputLayout));
+                ThrowIfFailed(D3DDevice->CreateInputLayout(inputElementDescs, NumElements: 2, vertexShaderBlob.Get()->GetBufferPointer(), vertexShaderBlob.Get()->GetBufferSize(), &inputLayout));
                 return inputLayout;
             }
         }
@@ -121,7 +121,7 @@ namespace TerraFX.Samples.DirectX.D3D11
             };
 
             ID3D11Buffer* vertexBuffer;
-            ThrowIfFailed(nameof(ID3D11Device.CreateBuffer), D3DDevice->CreateBuffer(&vertexBufferDesc, &vertexBufferData, &vertexBuffer));
+            ThrowIfFailed(D3DDevice->CreateBuffer(&vertexBufferDesc, &vertexBufferData, &vertexBuffer));
             return vertexBuffer;
         }
 
