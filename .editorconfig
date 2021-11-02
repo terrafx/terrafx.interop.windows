@@ -46,6 +46,13 @@ indent_style = tab
 file_header_template = Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
 ###############################################################################
+# Set dotnet diagnostic rules to:
+#    disable any parent diagnostic rules since they are not applicable to interop
+###############################################################################
+dotnet_diagnostic.CA1069.severity = none
+dotnet_diagnostic.CA1401.severity = none
+
+###############################################################################
 # Set dotnet naming rules to:
 #    require async methods be pascal case suffixed with Async
 #    require const fields and locals be pascal case
