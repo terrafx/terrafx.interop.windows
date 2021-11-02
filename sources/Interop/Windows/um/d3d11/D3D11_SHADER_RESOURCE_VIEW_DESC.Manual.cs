@@ -193,7 +193,9 @@ namespace TerraFX.Interop
                 {
                     arraySize = TexDesc.ArraySize - firstArraySlice;
                     if (D3D11_SRV_DIMENSION_TEXTURECUBEARRAY == viewDimension)
+                    {
                         arraySize /= 6;
+                    }
                 }
             }
 

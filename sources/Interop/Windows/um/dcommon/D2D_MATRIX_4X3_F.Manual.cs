@@ -1,4 +1,4 @@
-// Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
+// Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License._d in the repository root for more information.
 
 // Ported from um/d2d1_1helper.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
@@ -14,20 +14,20 @@ namespace TerraFX.Interop
     {
         public D2D_MATRIX_4X3_F(float m11, float m12, float m13, float m21, float m22, float m23, float m31, float m32, float m33, float m41, float m42, float m43)
         {
-            this = default;
+            Unsafe.SkipInit(out this);
 
-            Anonymous.Anonymous._11 = m11;
-            Anonymous.Anonymous._12 = m12;
-            Anonymous.Anonymous._13 = m13;
-            Anonymous.Anonymous._21 = m21;
-            Anonymous.Anonymous._22 = m22;
-            Anonymous.Anonymous._23 = m23;
-            Anonymous.Anonymous._31 = m31;
-            Anonymous.Anonymous._32 = m32;
-            Anonymous.Anonymous._33 = m33;
-            Anonymous.Anonymous._41 = m41;
-            Anonymous.Anonymous._42 = m42;
-            Anonymous.Anonymous._43 = m43;
+            _11 = m11;
+            _12 = m12;
+            _13 = m13;
+            _21 = m21;
+            _22 = m22;
+            _23 = m23;
+            _31 = m31;
+            _32 = m32;
+            _33 = m33;
+            _41 = m41;
+            _42 = m42;
+            _43 = m43;
         }
 
         public static ref readonly D2D_MATRIX_4X3_F Identity
@@ -57,13 +57,14 @@ namespace TerraFX.Interop
 
         public static bool operator ==([NativeTypeName("const D2D_MATRIX_4X3_F &")] in D2D_MATRIX_4X3_F l, [NativeTypeName("const D2D_MATRIX_4X3_F &")] in D2D_MATRIX_4X3_F r)
         {
-            return l.Anonymous.Anonymous._11 == r.Anonymous.Anonymous._11 && l.Anonymous.Anonymous._12 == r.Anonymous.Anonymous._12 && l.Anonymous.Anonymous._13 == r.Anonymous.Anonymous._13 && l.Anonymous.Anonymous._21 == r.Anonymous.Anonymous._21 && l.Anonymous.Anonymous._22 == r.Anonymous.Anonymous._22 && l.Anonymous.Anonymous._23 == r.Anonymous.Anonymous._23 && l.Anonymous.Anonymous._31 == r.Anonymous.Anonymous._31 && l.Anonymous.Anonymous._32 == r.Anonymous.Anonymous._32 && l.Anonymous.Anonymous._33 == r.Anonymous.Anonymous._33 && l.Anonymous.Anonymous._41 == r.Anonymous.Anonymous._41 && l.Anonymous.Anonymous._42 == r.Anonymous.Anonymous._42 && l.Anonymous.Anonymous._43 == r.Anonymous.Anonymous._43;
+            return (l._11 == r._11) && (l._12 == r._12) && (l._13 == r._13)
+                && (l._21 == r._21) && (l._22 == r._22) && (l._23 == r._23)
+                && (l._31 == r._31) && (l._32 == r._32) && (l._33 == r._33)
+                && (l._41 == r._41) && (l._42 == r._42) && (l._43 == r._43);
         }
 
         public static bool operator !=([NativeTypeName("const D2D_MATRIX_4X3_F &")] in D2D_MATRIX_4X3_F l, [NativeTypeName("const D2D_MATRIX_4X3_F &")] in D2D_MATRIX_4X3_F r)
-        {
-            return !(l == r);
-        }
+            => !(l == r);
 
         public bool Equals(D2D_MATRIX_4X3_F other) => this == other;
 
@@ -73,18 +74,18 @@ namespace TerraFX.Interop
         {
             var hashCode = new HashCode();
             {
-                hashCode.Add(Anonymous.Anonymous._11);
-                hashCode.Add(Anonymous.Anonymous._12);
-                hashCode.Add(Anonymous.Anonymous._13);
-                hashCode.Add(Anonymous.Anonymous._21);
-                hashCode.Add(Anonymous.Anonymous._22);
-                hashCode.Add(Anonymous.Anonymous._23);
-                hashCode.Add(Anonymous.Anonymous._31);
-                hashCode.Add(Anonymous.Anonymous._32);
-                hashCode.Add(Anonymous.Anonymous._33);
-                hashCode.Add(Anonymous.Anonymous._41);
-                hashCode.Add(Anonymous.Anonymous._42);
-                hashCode.Add(Anonymous.Anonymous._43);
+                hashCode.Add(_11);
+                hashCode.Add(_12);
+                hashCode.Add(_13);
+                hashCode.Add(_21);
+                hashCode.Add(_22);
+                hashCode.Add(_23);
+                hashCode.Add(_31);
+                hashCode.Add(_32);
+                hashCode.Add(_33);
+                hashCode.Add(_41);
+                hashCode.Add(_42);
+                hashCode.Add(_43);
             }
             return hashCode.ToHashCode();
         }

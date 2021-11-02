@@ -17,13 +17,12 @@ namespace TerraFX.Interop
 
         public static bool operator ==([NativeTypeName("const D2D1_SIZE_U &")] in D2D_SIZE_U l, [NativeTypeName("const D2D1_SIZE_U &")] in D2D_SIZE_U r)
         {
-            return l.width == r.width && l.height == r.height;
+            return (l.width == r.width)
+                && (l.height == r.height);
         }
 
         public static bool operator !=([NativeTypeName("const D2D1_SIZE_U &")] in D2D_SIZE_U l, [NativeTypeName("const D2D1_SIZE_U &")] in D2D_SIZE_U r)
-        {
-            return !(l == r);
-        }
+            => !(l == r);
 
         public bool Equals(D2D_SIZE_U other) => this == other;
 

@@ -1,4 +1,4 @@
-// Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
+// Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License._d in the repository root for more information.
 
 // Ported from um/d2d1_1helper.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
@@ -15,24 +15,24 @@ namespace TerraFX.Interop
     {
         public D2D_MATRIX_4X4_F(float m11, float m12, float m13, float m14, float m21, float m22, float m23, float m24, float m31, float m32, float m33, float m34, float m41, float m42, float m43, float m44)
         {
-            this = default;
+            Unsafe.SkipInit(out this);
 
-            Anonymous.Anonymous._11 = m11;
-            Anonymous.Anonymous._12 = m12;
-            Anonymous.Anonymous._13 = m13;
-            Anonymous.Anonymous._14 = m14;
-            Anonymous.Anonymous._21 = m21;
-            Anonymous.Anonymous._22 = m22;
-            Anonymous.Anonymous._23 = m23;
-            Anonymous.Anonymous._24 = m24;
-            Anonymous.Anonymous._31 = m31;
-            Anonymous.Anonymous._32 = m32;
-            Anonymous.Anonymous._33 = m33;
-            Anonymous.Anonymous._34 = m34;
-            Anonymous.Anonymous._41 = m41;
-            Anonymous.Anonymous._42 = m42;
-            Anonymous.Anonymous._43 = m43;
-            Anonymous.Anonymous._44 = m44;
+            _11 = m11;
+            _12 = m12;
+            _13 = m13;
+            _14 = m14;
+            _21 = m21;
+            _22 = m22;
+            _23 = m23;
+            _24 = m24;
+            _31 = m31;
+            _32 = m32;
+            _33 = m33;
+            _34 = m34;
+            _41 = m41;
+            _42 = m42;
+            _43 = m43;
+            _44 = m44;
         }
 
         public static ref readonly D2D_MATRIX_4X4_F Identity
@@ -66,34 +66,35 @@ namespace TerraFX.Interop
 
         public static bool operator ==([NativeTypeName("const D2D1_MATRIX_4X4_F &")] in D2D_MATRIX_4X4_F l, [NativeTypeName("const D2D1_MATRIX_4X4_F &")] in D2D_MATRIX_4X4_F r)
         {
-            return l.Anonymous.Anonymous._11 == r.Anonymous.Anonymous._11 && l.Anonymous.Anonymous._12 == r.Anonymous.Anonymous._12 && l.Anonymous.Anonymous._13 == r.Anonymous.Anonymous._13 && l.Anonymous.Anonymous._14 == r.Anonymous.Anonymous._14 && l.Anonymous.Anonymous._21 == r.Anonymous.Anonymous._21 && l.Anonymous.Anonymous._22 == r.Anonymous.Anonymous._22 && l.Anonymous.Anonymous._23 == r.Anonymous.Anonymous._23 && l.Anonymous.Anonymous._24 == r.Anonymous.Anonymous._24 && l.Anonymous.Anonymous._31 == r.Anonymous.Anonymous._31 && l.Anonymous.Anonymous._32 == r.Anonymous.Anonymous._32 && l.Anonymous.Anonymous._33 == r.Anonymous.Anonymous._33 && l.Anonymous.Anonymous._34 == r.Anonymous.Anonymous._34 && l.Anonymous.Anonymous._41 == r.Anonymous.Anonymous._41 && l.Anonymous.Anonymous._42 == r.Anonymous.Anonymous._42 && l.Anonymous.Anonymous._43 == r.Anonymous.Anonymous._43 && l.Anonymous.Anonymous._44 == r.Anonymous.Anonymous._44;
+            return (l._11 == r._11) && (l._12 == r._12) && (l._13 == r._13) && (l._14 == r._14)
+                && (l._21 == r._21) && (l._22 == r._22) && (l._23 == r._23) && (l._24 == r._24)
+                && (l._31 == r._31) && (l._32 == r._32) && (l._33 == r._33) && (l._34 == r._34)
+                && (l._41 == r._41) && (l._42 == r._42) && (l._43 == r._43) && (l._44 == r._44);
         }
 
         public static bool operator !=([NativeTypeName("const D2D1_MATRIX_4X4_F &")] in D2D_MATRIX_4X4_F l, [NativeTypeName("const D2D1_MATRIX_4X4_F &")] in D2D_MATRIX_4X4_F r)
-        {
-            return !(l == r);
-        }
+            => !(l == r);
 
         public static D2D_MATRIX_4X4_F Translation(float x, float y, float z)
         {
             D2D_MATRIX_4X4_F translation = default;
 
-            translation.Anonymous.Anonymous._11 = 1.0f;
-            translation.Anonymous.Anonymous._12 = 0.0f;
-            translation.Anonymous.Anonymous._13 = 0.0f;
-            translation.Anonymous.Anonymous._14 = 0.0f;
-            translation.Anonymous.Anonymous._21 = 0.0f;
-            translation.Anonymous.Anonymous._22 = 1.0f;
-            translation.Anonymous.Anonymous._23 = 0.0f;
-            translation.Anonymous.Anonymous._24 = 0.0f;
-            translation.Anonymous.Anonymous._31 = 0.0f;
-            translation.Anonymous.Anonymous._32 = 0.0f;
-            translation.Anonymous.Anonymous._33 = 1.0f;
-            translation.Anonymous.Anonymous._34 = 0.0f;
-            translation.Anonymous.Anonymous._41 = x;
-            translation.Anonymous.Anonymous._42 = y;
-            translation.Anonymous.Anonymous._43 = z;
-            translation.Anonymous.Anonymous._44 = 1.0f;
+            translation._11 = 1.0f;
+            translation._12 = 0.0f;
+            translation._13 = 0.0f;
+            translation._14 = 0.0f;
+            translation._21 = 0.0f;
+            translation._22 = 1.0f;
+            translation._23 = 0.0f;
+            translation._24 = 0.0f;
+            translation._31 = 0.0f;
+            translation._32 = 0.0f;
+            translation._33 = 1.0f;
+            translation._34 = 0.0f;
+            translation._41 = x;
+            translation._42 = y;
+            translation._43 = z;
+            translation._44 = 1.0f;
 
             return translation;
         }
@@ -102,22 +103,22 @@ namespace TerraFX.Interop
         {
             D2D_MATRIX_4X4_F scale = default;
 
-            scale.Anonymous.Anonymous._11 = x;
-            scale.Anonymous.Anonymous._12 = 0.0f;
-            scale.Anonymous.Anonymous._13 = 0.0f;
-            scale.Anonymous.Anonymous._14 = 0.0f;
-            scale.Anonymous.Anonymous._21 = 0.0f;
-            scale.Anonymous.Anonymous._22 = y;
-            scale.Anonymous.Anonymous._23 = 0.0f;
-            scale.Anonymous.Anonymous._24 = 0.0f;
-            scale.Anonymous.Anonymous._31 = 0.0f;
-            scale.Anonymous.Anonymous._32 = 0.0f;
-            scale.Anonymous.Anonymous._33 = z;
-            scale.Anonymous.Anonymous._34 = 0.0f;
-            scale.Anonymous.Anonymous._41 = 0.0f;
-            scale.Anonymous.Anonymous._42 = 0.0f;
-            scale.Anonymous.Anonymous._43 = 0.0f;
-            scale.Anonymous.Anonymous._44 = 1.0f;
+            scale._11 = x;
+            scale._12 = 0.0f;
+            scale._13 = 0.0f;
+            scale._14 = 0.0f;
+            scale._21 = 0.0f;
+            scale._22 = y;
+            scale._23 = 0.0f;
+            scale._24 = 0.0f;
+            scale._31 = 0.0f;
+            scale._32 = 0.0f;
+            scale._33 = z;
+            scale._34 = 0.0f;
+            scale._41 = 0.0f;
+            scale._42 = 0.0f;
+            scale._43 = 0.0f;
+            scale._44 = 1.0f;
 
             return scale;
         }
@@ -219,10 +220,10 @@ namespace TerraFX.Interop
         {
             get
             {
-                float minor1 = Anonymous.Anonymous._41 * (Anonymous.Anonymous._12 * (Anonymous.Anonymous._23 * Anonymous.Anonymous._34 - Anonymous.Anonymous._33 * Anonymous.Anonymous._24) - Anonymous.Anonymous._13 * (Anonymous.Anonymous._22 * Anonymous.Anonymous._34 - Anonymous.Anonymous._24 * Anonymous.Anonymous._32) + Anonymous.Anonymous._14 * (Anonymous.Anonymous._22 * Anonymous.Anonymous._33 - Anonymous.Anonymous._23 * Anonymous.Anonymous._32));
-                float minor2 = Anonymous.Anonymous._42 * (Anonymous.Anonymous._11 * (Anonymous.Anonymous._21 * Anonymous.Anonymous._34 - Anonymous.Anonymous._31 * Anonymous.Anonymous._24) - Anonymous.Anonymous._13 * (Anonymous.Anonymous._21 * Anonymous.Anonymous._34 - Anonymous.Anonymous._24 * Anonymous.Anonymous._31) + Anonymous.Anonymous._14 * (Anonymous.Anonymous._21 * Anonymous.Anonymous._33 - Anonymous.Anonymous._23 * Anonymous.Anonymous._31));
-                float minor3 = Anonymous.Anonymous._43 * (Anonymous.Anonymous._11 * (Anonymous.Anonymous._22 * Anonymous.Anonymous._34 - Anonymous.Anonymous._32 * Anonymous.Anonymous._24) - Anonymous.Anonymous._12 * (Anonymous.Anonymous._21 * Anonymous.Anonymous._34 - Anonymous.Anonymous._24 * Anonymous.Anonymous._31) + Anonymous.Anonymous._14 * (Anonymous.Anonymous._21 * Anonymous.Anonymous._32 - Anonymous.Anonymous._22 * Anonymous.Anonymous._31));
-                float minor4 = Anonymous.Anonymous._44 * (Anonymous.Anonymous._11 * (Anonymous.Anonymous._22 * Anonymous.Anonymous._33 - Anonymous.Anonymous._32 * Anonymous.Anonymous._23) - Anonymous.Anonymous._12 * (Anonymous.Anonymous._21 * Anonymous.Anonymous._33 - Anonymous.Anonymous._23 * Anonymous.Anonymous._31) + Anonymous.Anonymous._13 * (Anonymous.Anonymous._21 * Anonymous.Anonymous._32 - Anonymous.Anonymous._22 * Anonymous.Anonymous._31));
+                float minor1 = _41 * (_12 * (_23 * _34 - _33 * _24) - _13 * (_22 * _34 - _24 * _32) + _14 * (_22 * _33 - _23 * _32));
+                float minor2 = _42 * (_11 * (_21 * _34 - _31 * _24) - _13 * (_21 * _34 - _24 * _31) + _14 * (_21 * _33 - _23 * _31));
+                float minor3 = _43 * (_11 * (_22 * _34 - _32 * _24) - _12 * (_21 * _34 - _24 * _31) + _14 * (_21 * _32 - _22 * _31));
+                float minor4 = _44 * (_11 * (_22 * _33 - _32 * _23) - _12 * (_21 * _33 - _23 * _31) + _13 * (_21 * _32 - _22 * _31));
 
                 return minor1 - minor2 + minor3 - minor4;
             }
@@ -232,28 +233,31 @@ namespace TerraFX.Interop
         {
             get
             {
-                return Anonymous.Anonymous._11 == 1.0f && Anonymous.Anonymous._12 == 0.0f && Anonymous.Anonymous._13 == 0.0f && Anonymous.Anonymous._14 == 0.0f && Anonymous.Anonymous._21 == 0.0f && Anonymous.Anonymous._22 == 1.0f && Anonymous.Anonymous._23 == 0.0f && Anonymous.Anonymous._24 == 0.0f && Anonymous.Anonymous._31 == 0.0f && Anonymous.Anonymous._32 == 0.0f && Anonymous.Anonymous._33 == 1.0f && Anonymous.Anonymous._34 == 0.0f && Anonymous.Anonymous._41 == 0.0f && Anonymous.Anonymous._42 == 0.0f && Anonymous.Anonymous._43 == 0.0f && Anonymous.Anonymous._44 == 1.0f;
+                return (_11 == 1.0f) && (_12 == 0.0f) && (_13 == 0.0f) && (_14 == 0.0f)
+                    && (_21 == 0.0f) && (_22 == 1.0f) && (_23 == 0.0f) && (_24 == 0.0f)
+                    && (_31 == 0.0f) && (_32 == 0.0f) && (_33 == 1.0f) && (_34 == 0.0f)
+                    && (_41 == 0.0f) && (_42 == 0.0f) && (_43 == 0.0f) && (_44 == 1.0f);
             }
         }
 
         public void SetProduct([NativeTypeName("const D2D1_MATRIX_4x4_F &")] in D2D_MATRIX_4X4_F a, [NativeTypeName("const D2D1_MATRIX_4x4_F &")] in D2D_MATRIX_4X4_F b)
         {
-            Anonymous.Anonymous._11 = a.Anonymous.Anonymous._11 * b.Anonymous.Anonymous._11 + a.Anonymous.Anonymous._12 * b.Anonymous.Anonymous._21 + a.Anonymous.Anonymous._13 * b.Anonymous.Anonymous._31 + a.Anonymous.Anonymous._14 * b.Anonymous.Anonymous._41;
-            Anonymous.Anonymous._12 = a.Anonymous.Anonymous._11 * b.Anonymous.Anonymous._12 + a.Anonymous.Anonymous._12 * b.Anonymous.Anonymous._22 + a.Anonymous.Anonymous._13 * b.Anonymous.Anonymous._32 + a.Anonymous.Anonymous._14 * b.Anonymous.Anonymous._42;
-            Anonymous.Anonymous._13 = a.Anonymous.Anonymous._11 * b.Anonymous.Anonymous._13 + a.Anonymous.Anonymous._12 * b.Anonymous.Anonymous._23 + a.Anonymous.Anonymous._13 * b.Anonymous.Anonymous._33 + a.Anonymous.Anonymous._14 * b.Anonymous.Anonymous._43;
-            Anonymous.Anonymous._14 = a.Anonymous.Anonymous._11 * b.Anonymous.Anonymous._14 + a.Anonymous.Anonymous._12 * b.Anonymous.Anonymous._24 + a.Anonymous.Anonymous._13 * b.Anonymous.Anonymous._34 + a.Anonymous.Anonymous._14 * b.Anonymous.Anonymous._44;
-            Anonymous.Anonymous._21 = a.Anonymous.Anonymous._21 * b.Anonymous.Anonymous._11 + a.Anonymous.Anonymous._22 * b.Anonymous.Anonymous._21 + a.Anonymous.Anonymous._23 * b.Anonymous.Anonymous._31 + a.Anonymous.Anonymous._24 * b.Anonymous.Anonymous._41;
-            Anonymous.Anonymous._22 = a.Anonymous.Anonymous._21 * b.Anonymous.Anonymous._12 + a.Anonymous.Anonymous._22 * b.Anonymous.Anonymous._22 + a.Anonymous.Anonymous._23 * b.Anonymous.Anonymous._32 + a.Anonymous.Anonymous._24 * b.Anonymous.Anonymous._42;
-            Anonymous.Anonymous._23 = a.Anonymous.Anonymous._21 * b.Anonymous.Anonymous._13 + a.Anonymous.Anonymous._22 * b.Anonymous.Anonymous._23 + a.Anonymous.Anonymous._23 * b.Anonymous.Anonymous._33 + a.Anonymous.Anonymous._24 * b.Anonymous.Anonymous._43;
-            Anonymous.Anonymous._24 = a.Anonymous.Anonymous._21 * b.Anonymous.Anonymous._14 + a.Anonymous.Anonymous._22 * b.Anonymous.Anonymous._24 + a.Anonymous.Anonymous._23 * b.Anonymous.Anonymous._34 + a.Anonymous.Anonymous._24 * b.Anonymous.Anonymous._44;
-            Anonymous.Anonymous._31 = a.Anonymous.Anonymous._31 * b.Anonymous.Anonymous._11 + a.Anonymous.Anonymous._32 * b.Anonymous.Anonymous._21 + a.Anonymous.Anonymous._33 * b.Anonymous.Anonymous._31 + a.Anonymous.Anonymous._34 * b.Anonymous.Anonymous._41;
-            Anonymous.Anonymous._32 = a.Anonymous.Anonymous._31 * b.Anonymous.Anonymous._12 + a.Anonymous.Anonymous._32 * b.Anonymous.Anonymous._22 + a.Anonymous.Anonymous._33 * b.Anonymous.Anonymous._32 + a.Anonymous.Anonymous._34 * b.Anonymous.Anonymous._42;
-            Anonymous.Anonymous._33 = a.Anonymous.Anonymous._31 * b.Anonymous.Anonymous._13 + a.Anonymous.Anonymous._32 * b.Anonymous.Anonymous._23 + a.Anonymous.Anonymous._33 * b.Anonymous.Anonymous._33 + a.Anonymous.Anonymous._34 * b.Anonymous.Anonymous._43;
-            Anonymous.Anonymous._34 = a.Anonymous.Anonymous._31 * b.Anonymous.Anonymous._14 + a.Anonymous.Anonymous._32 * b.Anonymous.Anonymous._24 + a.Anonymous.Anonymous._33 * b.Anonymous.Anonymous._34 + a.Anonymous.Anonymous._34 * b.Anonymous.Anonymous._44;
-            Anonymous.Anonymous._41 = a.Anonymous.Anonymous._41 * b.Anonymous.Anonymous._11 + a.Anonymous.Anonymous._42 * b.Anonymous.Anonymous._21 + a.Anonymous.Anonymous._43 * b.Anonymous.Anonymous._31 + a.Anonymous.Anonymous._44 * b.Anonymous.Anonymous._41;
-            Anonymous.Anonymous._42 = a.Anonymous.Anonymous._41 * b.Anonymous.Anonymous._12 + a.Anonymous.Anonymous._42 * b.Anonymous.Anonymous._22 + a.Anonymous.Anonymous._43 * b.Anonymous.Anonymous._32 + a.Anonymous.Anonymous._44 * b.Anonymous.Anonymous._42;
-            Anonymous.Anonymous._43 = a.Anonymous.Anonymous._41 * b.Anonymous.Anonymous._13 + a.Anonymous.Anonymous._42 * b.Anonymous.Anonymous._23 + a.Anonymous.Anonymous._43 * b.Anonymous.Anonymous._33 + a.Anonymous.Anonymous._44 * b.Anonymous.Anonymous._43;
-            Anonymous.Anonymous._44 = a.Anonymous.Anonymous._41 * b.Anonymous.Anonymous._14 + a.Anonymous.Anonymous._42 * b.Anonymous.Anonymous._24 + a.Anonymous.Anonymous._43 * b.Anonymous.Anonymous._34 + a.Anonymous.Anonymous._44 * b.Anonymous.Anonymous._44;
+            _11 = a._11 * b._11 + a._12 * b._21 + a._13 * b._31 + a._14 * b._41;
+            _12 = a._11 * b._12 + a._12 * b._22 + a._13 * b._32 + a._14 * b._42;
+            _13 = a._11 * b._13 + a._12 * b._23 + a._13 * b._33 + a._14 * b._43;
+            _14 = a._11 * b._14 + a._12 * b._24 + a._13 * b._34 + a._14 * b._44;
+            _21 = a._21 * b._11 + a._22 * b._21 + a._23 * b._31 + a._24 * b._41;
+            _22 = a._21 * b._12 + a._22 * b._22 + a._23 * b._32 + a._24 * b._42;
+            _23 = a._21 * b._13 + a._22 * b._23 + a._23 * b._33 + a._24 * b._43;
+            _24 = a._21 * b._14 + a._22 * b._24 + a._23 * b._34 + a._24 * b._44;
+            _31 = a._31 * b._11 + a._32 * b._21 + a._33 * b._31 + a._34 * b._41;
+            _32 = a._31 * b._12 + a._32 * b._22 + a._33 * b._32 + a._34 * b._42;
+            _33 = a._31 * b._13 + a._32 * b._23 + a._33 * b._33 + a._34 * b._43;
+            _34 = a._31 * b._14 + a._32 * b._24 + a._33 * b._34 + a._34 * b._44;
+            _41 = a._41 * b._11 + a._42 * b._21 + a._43 * b._31 + a._44 * b._41;
+            _42 = a._41 * b._12 + a._42 * b._22 + a._43 * b._32 + a._44 * b._42;
+            _43 = a._41 * b._13 + a._42 * b._23 + a._43 * b._33 + a._44 * b._43;
+            _44 = a._41 * b._14 + a._42 * b._24 + a._43 * b._34 + a._44 * b._44;
         }
 
         public static D2D_MATRIX_4X4_F operator *([NativeTypeName("const D2D1_MATRIX_4x4_F &")] in D2D_MATRIX_4X4_F a, [NativeTypeName("const D2D1_MATRIX_4x4_F &")] in D2D_MATRIX_4X4_F b)
@@ -273,22 +277,22 @@ namespace TerraFX.Interop
         {
             var hashCode = new HashCode();
             {
-                hashCode.Add(Anonymous.Anonymous._11);
-                hashCode.Add(Anonymous.Anonymous._12);
-                hashCode.Add(Anonymous.Anonymous._13);
-                hashCode.Add(Anonymous.Anonymous._14);
-                hashCode.Add(Anonymous.Anonymous._21);
-                hashCode.Add(Anonymous.Anonymous._22);
-                hashCode.Add(Anonymous.Anonymous._23);
-                hashCode.Add(Anonymous.Anonymous._24);
-                hashCode.Add(Anonymous.Anonymous._31);
-                hashCode.Add(Anonymous.Anonymous._32);
-                hashCode.Add(Anonymous.Anonymous._33);
-                hashCode.Add(Anonymous.Anonymous._34);
-                hashCode.Add(Anonymous.Anonymous._41);
-                hashCode.Add(Anonymous.Anonymous._42);
-                hashCode.Add(Anonymous.Anonymous._43);
-                hashCode.Add(Anonymous.Anonymous._44);
+                hashCode.Add(_11);
+                hashCode.Add(_12);
+                hashCode.Add(_13);
+                hashCode.Add(_14);
+                hashCode.Add(_21);
+                hashCode.Add(_22);
+                hashCode.Add(_23);
+                hashCode.Add(_24);
+                hashCode.Add(_31);
+                hashCode.Add(_32);
+                hashCode.Add(_33);
+                hashCode.Add(_34);
+                hashCode.Add(_41);
+                hashCode.Add(_42);
+                hashCode.Add(_43);
+                hashCode.Add(_44);
             }
             return hashCode.ToHashCode();
         }

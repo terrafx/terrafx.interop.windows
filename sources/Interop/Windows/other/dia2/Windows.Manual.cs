@@ -8,7 +8,7 @@ namespace TerraFX.Interop
     public static partial class Windows
     {
         // __MIDL___MIDL_itf_dia2_0000_0000_0001 
-        public const int E_PDB_OK = unchecked((int)(((uint)1 << 31) | ((uint)0x6d << 16) | 1));
+        public const int E_PDB_OK = unchecked((int)((1u << 31) | (0x6Du << 16) | 1));
         public const int E_PDB_USAGE = E_PDB_OK + 1;
         public const int E_PDB_OUT_OF_MEMORY = E_PDB_USAGE + 1;
         public const int E_PDB_FILE_SYSTEM = E_PDB_OUT_OF_MEMORY + 1;
@@ -37,7 +37,7 @@ namespace TerraFX.Interop
         public const int E_PDB_MAX = E_PDB_OBJECT_DISPOSED + 1;
 
         // __MIDL___MIDL_itf_dia2_0000_0033_0001
-        public const int E_DIA_INPROLOG = unchecked((int)(((uint)1 << 31) | ((uint)0x6d << 16) | 100));
+        public const int E_DIA_INPROLOG = unchecked((int)((1u << 31) | (0x6Du << 16) | 100));
         public const int E_DIA_SYNTAX = E_DIA_INPROLOG + 1;
         public const int E_DIA_FRAME_ACCESS = E_DIA_SYNTAX + 1;
         public const int E_DIA_VALUE = E_DIA_FRAME_ACCESS + 1;

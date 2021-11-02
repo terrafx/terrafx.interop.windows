@@ -63,9 +63,7 @@ namespace TerraFX.Interop
         }
 
         public static bool operator !=(D3D12_ROOT_SIGNATURE_DESC1 left, D3D12_ROOT_SIGNATURE_DESC1 right)
-        {
-            return !(left == right);
-        }
+            => !(left == right);
 
         public void Init(uint numParameters, [NativeTypeName("const D3D12_ROOT_PARAMETER1 *")] D3D12_ROOT_PARAMETER1* _pParameters, uint numStaticSamplers = 0, [NativeTypeName("const D3D12_STATIC_SAMPLER_DESC *")] D3D12_STATIC_SAMPLER_DESC* _pStaticSamplers = null, D3D12_ROOT_SIGNATURE_FLAGS flags = D3D12_ROOT_SIGNATURE_FLAG_NONE)
         {

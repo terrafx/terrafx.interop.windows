@@ -174,13 +174,16 @@ namespace TerraFX.Interop
 
         public static bool operator ==(in D3D11_VIEWPORT l, in D3D11_VIEWPORT r)
         {
-            return l.TopLeftX == r.TopLeftX && l.TopLeftY == r.TopLeftY && l.Width == r.Width && l.Height == r.Height && l.MinDepth == r.MinDepth && l.MaxDepth == r.MaxDepth;
+            return (l.TopLeftX == r.TopLeftX)
+                && (l.TopLeftY == r.TopLeftY)
+                && (l.Width == r.Width)
+                && (l.Height == r.Height)
+                && (l.MinDepth == r.MinDepth)
+                && (l.MaxDepth == r.MaxDepth);
         }
 
         public static bool operator !=(in D3D11_VIEWPORT l, in D3D11_VIEWPORT r)
-        {
-            return !(l == r);
-        }
+            => !(l == r);
 
         public override bool Equals(object? obj) => (obj is D3D11_VIEWPORT other) && Equals(other);
 

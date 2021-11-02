@@ -6,13 +6,8 @@ namespace TerraFX.Interop
 {
     public unsafe partial struct HBITMAP : IEquatable<HBITMAP>
     {
-        public HBITMAP(HGDIOBJ value)
-        {
-            Value = value.Value;
-        }
+        public static explicit operator HBITMAP(HGDIOBJ value) => new HBITMAP(value.Value);
 
-        public static explicit operator HBITMAP(HGDIOBJ value) => new HBITMAP(value);
-
-        public static implicit operator HGDIOBJ(HBITMAP value) => (HGDIOBJ)(value.Value);
+        public static implicit operator HGDIOBJ(HBITMAP value) => new HGDIOBJ(value.Value);
     }
 }

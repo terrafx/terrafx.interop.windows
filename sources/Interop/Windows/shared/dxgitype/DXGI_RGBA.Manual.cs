@@ -9,9 +9,9 @@ namespace TerraFX.Interop
     {
         public DXGI_RGBA([NativeTypeName("UINT32")] uint rgb, float a = 1.0f)
         {
-            this.r = (float)((rgb & sc_redMask) >> (int)sc_redShift) / 255.0f;
-            this.g = (float)((rgb & sc_greenMask) >> (int)sc_greenShift) / 255.0f;
-            this.b = (float)((rgb & sc_blueMask) >> (int)sc_blueShift) / 255.0f;
+            r = (float)((rgb & sc_redMask) >> (int)sc_redShift) / 255.0f;
+            g = (float)((rgb & sc_greenMask) >> (int)sc_greenShift) / 255.0f;
+            b = (float)((rgb & sc_blueMask) >> (int)sc_blueShift) / 255.0f;
             this.a = a;
         }
 

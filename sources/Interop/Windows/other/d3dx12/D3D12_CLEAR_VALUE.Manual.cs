@@ -4,6 +4,7 @@
 // Original source is Copyright © Microsoft. All rights reserved. Licensed under the MIT License (MIT).
 
 using System;
+using System.Runtime.CompilerServices;
 using static TerraFX.Interop.DXGI_FORMAT;
 
 namespace TerraFX.Interop
@@ -12,7 +13,7 @@ namespace TerraFX.Interop
     {
         public D3D12_CLEAR_VALUE(DXGI_FORMAT format, [NativeTypeName("const FLOAT [4]")] float* color)
         {
-            this = default;
+            Unsafe.SkipInit(out this);
 
             Format = format;
             Anonymous.Color[0] = color[0];
@@ -31,7 +32,9 @@ namespace TerraFX.Interop
         public static bool operator ==([NativeTypeName("const D3D12_CLEAR_VALUE &")] in D3D12_CLEAR_VALUE a, [NativeTypeName("const D3D12_CLEAR_VALUE &")] in D3D12_CLEAR_VALUE b)
         {
             if (a.Format != b.Format)
+            {
                 return false;
+            }
 
             if (a.Format == DXGI_FORMAT_D24_UNORM_S8_UINT || a.Format == DXGI_FORMAT_D16_UNORM || a.Format == DXGI_FORMAT_D32_FLOAT || a.Format == DXGI_FORMAT_D32_FLOAT_S8X24_UINT)
             {
@@ -44,9 +47,7 @@ namespace TerraFX.Interop
         }
 
         public static bool operator !=([NativeTypeName("const D3D12_CLEAR_VALUE &")] in D3D12_CLEAR_VALUE a, [NativeTypeName("const D3D12_CLEAR_VALUE &")] in D3D12_CLEAR_VALUE b)
-        {
-            return !(a == b);
-        }
+            => !(a == b);
 
         public override bool Equals(object? obj) => (obj is D3D12_CLEAR_VALUE other) && Equals(other);
 

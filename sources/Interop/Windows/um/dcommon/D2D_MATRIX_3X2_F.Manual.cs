@@ -13,16 +13,16 @@ namespace TerraFX.Interop
 {
     public unsafe partial struct D2D_MATRIX_3X2_F : IEquatable<D2D_MATRIX_3X2_F>
     {
-        public D2D_MATRIX_3X2_F(float m11, float m12, float m21, float m22, float m31, float m32)
+        public D2D_MATRIX_3X2_F(float m11, float m12, float m21, float m22, float dx, float dy)
         {
-            this = default;
+            Unsafe.SkipInit(out this);
 
-            Anonymous.Anonymous2._11 = m11;
-            Anonymous.Anonymous2._12 = m12;
-            Anonymous.Anonymous2._21 = m21;
-            Anonymous.Anonymous2._22 = m22;
-            Anonymous.Anonymous2._31 = m31;
-            Anonymous.Anonymous2._32 = m32;
+            this.m11 = m11;
+            this.m12 = m12;
+            this.m21 = m21;
+            this.m22 = m22;
+            this.dx = dx;
+            this.dy = dy;
         }
 
         public static ref readonly D2D_MATRIX_3X2_F Identity
@@ -48,12 +48,12 @@ namespace TerraFX.Interop
         {
             D2D_MATRIX_3X2_F translation = default;
 
-            translation.Anonymous.Anonymous2._11 = 1.0f;
-            translation.Anonymous.Anonymous2._12 = 0.0f;
-            translation.Anonymous.Anonymous2._21 = 0.0f;
-            translation.Anonymous.Anonymous2._22 = 1.0f;
-            translation.Anonymous.Anonymous2._31 = size.width;
-            translation.Anonymous.Anonymous2._32 = size.height;
+            translation.m11 = 1.0f;
+            translation.m12 = 0.0f;
+            translation.m21 = 0.0f;
+            translation.m22 = 1.0f;
+            translation.dx = size.width;
+            translation.dy = size.height;
 
             return translation;
         }
@@ -67,12 +67,12 @@ namespace TerraFX.Interop
         {
             D2D_MATRIX_3X2_F scale = default;
 
-            scale.Anonymous.Anonymous2._11 = size.width;
-            scale.Anonymous.Anonymous2._12 = 0.0f;
-            scale.Anonymous.Anonymous2._21 = 0.0f;
-            scale.Anonymous.Anonymous2._22 = size.height;
-            scale.Anonymous.Anonymous2._31 = center.x - size.width * center.x;
-            scale.Anonymous.Anonymous2._32 = center.y - size.height * center.y;
+            scale.m11 = size.width;
+            scale.m12 = 0.0f;
+            scale.m21 = 0.0f;
+            scale.m22 = size.height;
+            scale.dx = center.x - size.width * center.x;
+            scale.dy = center.y - size.height * center.y;
 
             return scale;
         }
@@ -85,9 +85,7 @@ namespace TerraFX.Interop
         public static D2D_MATRIX_3X2_F Rotation(float angle, D2D_POINT_2F center = default)
         {
             D2D_MATRIX_3X2_F rotation;
-
             D2D1MakeRotateMatrix(angle, center, &rotation);
-
             return rotation;
         }
 
@@ -101,12 +99,7 @@ namespace TerraFX.Interop
         }
 
         public readonly float Determinant
-        {
-            get
-            {
-                return (Anonymous.Anonymous2._11 * Anonymous.Anonymous2._22) - (Anonymous.Anonymous2._12 * Anonymous.Anonymous2._21);
-            }
-        }
+            => (Anonymous.Anonymous1.m11 * Anonymous.Anonymous1.m22) - (Anonymous.Anonymous1.m12 * Anonymous.Anonymous1.m21);
             
         public readonly bool IsInvertible
         {
@@ -131,18 +124,20 @@ namespace TerraFX.Interop
         {
             get
             {
-                return Anonymous.Anonymous2._11 == 1.0f && Anonymous.Anonymous2._12 == 0.0f && Anonymous.Anonymous2._21 == 0.0f && Anonymous.Anonymous2._22 == 1.0f && Anonymous.Anonymous2._31 == 0.0f && Anonymous.Anonymous2._32 == 0.0f;
+                return (Anonymous.Anonymous1.m11 == 1.0f) && (Anonymous.Anonymous1.m12 == 0.0f)
+                    && (Anonymous.Anonymous1.m21 == 0.0f) && (Anonymous.Anonymous1.m22 == 1.0f)
+                    && (Anonymous.Anonymous1.dx == 0.0f) && (Anonymous.Anonymous1.dy == 0.0f);
             }
         }
 
         public void SetProduct([NativeTypeName("const D2D1_MATRIX_3X2 &")] in D2D_MATRIX_3X2_F a, [NativeTypeName("const D2D1_MATRIX_3X2 &")] in D2D_MATRIX_3X2_F b)
         {
-            Anonymous.Anonymous2._11 = (a.Anonymous.Anonymous2._11 * b.Anonymous.Anonymous2._11) + (a.Anonymous.Anonymous2._12 * b.Anonymous.Anonymous2._21);
-            Anonymous.Anonymous2._12 = (a.Anonymous.Anonymous2._11 * b.Anonymous.Anonymous2._12) + (a.Anonymous.Anonymous2._12 * b.Anonymous.Anonymous2._22);
-            Anonymous.Anonymous2._21 = (a.Anonymous.Anonymous2._21 * b.Anonymous.Anonymous2._11) + (a.Anonymous.Anonymous2._22 * b.Anonymous.Anonymous2._21);
-            Anonymous.Anonymous2._22 = (a.Anonymous.Anonymous2._21 * b.Anonymous.Anonymous2._12) + (a.Anonymous.Anonymous2._22 * b.Anonymous.Anonymous2._22);
-            Anonymous.Anonymous2._31 = (a.Anonymous.Anonymous2._31 * b.Anonymous.Anonymous2._11) + (a.Anonymous.Anonymous2._32 * b.Anonymous.Anonymous2._21) + b.Anonymous.Anonymous2._31;
-            Anonymous.Anonymous2._32 = (a.Anonymous.Anonymous2._31 * b.Anonymous.Anonymous2._12) + (a.Anonymous.Anonymous2._32 * b.Anonymous.Anonymous2._22) + b.Anonymous.Anonymous2._32;
+            m11 = (a.m11 * b.m11) + (a.m12 * b.m21);
+            m12 = (a.m11 * b.m12) + (a.m12 * b.m22);
+            m21 = (a.m21 * b.m11) + (a.m22 * b.m21);
+            m22 = (a.m21 * b.m12) + (a.m22 * b.m22);
+            dx = (a.dx * b.m11) + (a.dy * b.m21) + b.dx;
+            dy = (a.dx * b.m12) + (a.dy * b.m22) + b.dy;
         }
 
         public static D2D_MATRIX_3X2_F operator *([NativeTypeName("const D2D1_MATRIX_3X2_F &")] in D2D_MATRIX_3X2_F a, [NativeTypeName("const D2D1_MATRIX_3X2_F &")] in D2D_MATRIX_3X2_F b)
@@ -158,31 +153,29 @@ namespace TerraFX.Interop
         {
             D2D_POINT_2F result = new D2D_POINT_2F
             {
-                x = point.x * Anonymous.Anonymous2._11 + point.y * Anonymous.Anonymous2._21 + Anonymous.Anonymous2._31,
-                y= point.x * Anonymous.Anonymous2._12 + point.y * Anonymous.Anonymous2._22 + Anonymous.Anonymous2._32,
+                x = (point.x * Anonymous.Anonymous1.m11) + (point.y * Anonymous.Anonymous1.m21) + Anonymous.Anonymous1.dx,
+                y = (point.x * Anonymous.Anonymous1.m12) + (point.y * Anonymous.Anonymous1.m22) + Anonymous.Anonymous1.dy,
             };
             return result;
         }
 
         public static D2D_POINT_2F operator *([NativeTypeName("const D2D1_POINT_2F &")] in D2D_POINT_2F point, [NativeTypeName("const D2D1_MATRIX_3X2_F &")] in D2D_MATRIX_3X2_F matrix)
-        {
-            return matrix.TransformPoint(point);
-        }
+            => matrix.TransformPoint(point);
 
         public static bool operator ==(D2D_MATRIX_3X2_F l, D2D_MATRIX_3X2_F r)
         {
-            return l.Anonymous.Anonymous2._11 == r.Anonymous.Anonymous2._11 && l.Anonymous.Anonymous2._12 == r.Anonymous.Anonymous2._12 && l.Anonymous.Anonymous2._21 == r.Anonymous.Anonymous2._21 && l.Anonymous.Anonymous2._22 == r.Anonymous.Anonymous2._22 && l.Anonymous.Anonymous2._31 == r.Anonymous.Anonymous2._31 && l.Anonymous.Anonymous2._32 == r.Anonymous.Anonymous2._32;
+            return (l.m11 == r.m11) && (l.m12 == r.m12)
+                && (l.m21 == r.m21) && (l.m22 == r.m22)
+                && (l.dx == r.dx) && (l.dy == r.dy);
         }
 
         public static bool operator !=(D2D_MATRIX_3X2_F l, D2D_MATRIX_3X2_F r)
-        {
-            return !(l == r);
-        }
+            => !(l == r);
 
         public bool Equals(D2D_MATRIX_3X2_F other) => this == other;
 
         public override bool Equals(object? obj) => (obj is D2D_MATRIX_3X2_F other) && this == other;
 
-        public override int GetHashCode() => HashCode.Combine(Anonymous.Anonymous2._11, Anonymous.Anonymous2._12, Anonymous.Anonymous2._21, Anonymous.Anonymous2._22, Anonymous.Anonymous2._31, Anonymous.Anonymous2._32);
+        public override int GetHashCode() => HashCode.Combine(m11, m12, m21, m22, dx, dy);
     }
 }

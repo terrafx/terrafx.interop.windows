@@ -3,6 +3,7 @@
 // Ported from d3dx12.h in DirectX-Graphics-Samples commit a7a87f1853b5540f10920518021d91ae641033fb
 // Original source is Copyright © Microsoft. All rights reserved. Licensed under the MIT License (MIT).
 
+using System.Runtime.CompilerServices;
 using static TerraFX.Interop.D3D12_TEXTURE_COPY_TYPE;
 
 namespace TerraFX.Interop
@@ -11,7 +12,7 @@ namespace TerraFX.Interop
     {
         public D3D12_TEXTURE_COPY_LOCATION(ID3D12Resource* pRes)
         {
-            this = default;
+            Unsafe.SkipInit(out this);
 
             pResource = pRes;
             Type = D3D12_TEXTURE_COPY_TYPE_SUBRESOURCE_INDEX;
@@ -20,7 +21,7 @@ namespace TerraFX.Interop
 
         public D3D12_TEXTURE_COPY_LOCATION(ID3D12Resource* pRes, [NativeTypeName("D3D12_PLACED_SUBRESOURCE_FOOTPRINT const &")] in D3D12_PLACED_SUBRESOURCE_FOOTPRINT Footprint)
         {
-            this = default;
+            Unsafe.SkipInit(out this);
 
             pResource = pRes;
             Type = D3D12_TEXTURE_COPY_TYPE_PLACED_FOOTPRINT;
@@ -28,7 +29,7 @@ namespace TerraFX.Interop
         }
         public D3D12_TEXTURE_COPY_LOCATION(ID3D12Resource* pRes, uint Sub)
         {
-            this = default;
+            Unsafe.SkipInit(out this);
 
             pResource = pRes;
             Type = D3D12_TEXTURE_COPY_TYPE_SUBRESOURCE_INDEX;

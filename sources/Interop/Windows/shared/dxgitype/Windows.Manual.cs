@@ -7,8 +7,8 @@ namespace TerraFX.Interop
 {
     public static partial class Windows
     {
-        public static int MAKE_DXGI_HRESULT(int code) => MAKE_HRESULT(1, _FACDXGI, code);
+        public static HRESULT MAKE_DXGI_HRESULT(int code) => MAKE_HRESULT(1, _FACDXGI, code);
 
-        public static int MAKE_DXGI_STATUS(int code) => MAKE_HRESULT(0, _FACDXGI, code);
+        public static HRESULT MAKE_DXGI_STATUS(int code) => MAKE_HRESULT(0, _FACDXGI, code);
     }
 }

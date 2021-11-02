@@ -273,22 +273,22 @@ namespace TerraFX.Interop
             return hwndRenderTargetProperties;
         }
 
-        public static D2D1_LAYER_PARAMETERS LayerParameters([NativeTypeName("ID2D1Geometry *"), Optional] ID2D1Geometry* geometricMask, [Optional] D2D1_ANTIALIAS_MODE maskAntialiasMode, float opacity = 1.0f, [NativeTypeName("ID2D1Brush *")] ID2D1Brush* opacityBrush = null, D2D1_LAYER_OPTIONS layerOptions = D2D1_LAYER_OPTIONS_NONE)
+        public static D2D1_LAYER_PARAMETERS LayerParameters([Optional] ID2D1Geometry* geometricMask, [Optional] D2D1_ANTIALIAS_MODE maskAntialiasMode, float opacity = 1.0f, ID2D1Brush* opacityBrush = null, D2D1_LAYER_OPTIONS layerOptions = D2D1_LAYER_OPTIONS_NONE)
         {
             return LayerParameters(InfiniteRect, geometricMask, maskAntialiasMode, IdentityMatrix, opacity, opacityBrush, layerOptions);
         }
 
-        public static D2D1_LAYER_PARAMETERS LayerParameters([NativeTypeName("const D2D1_RECT_F")] in D2D_RECT_F contentBounds, [NativeTypeName("ID2D1Geometry *"), Optional] ID2D1Geometry* geometricMask, [Optional] D2D1_ANTIALIAS_MODE maskAntialiasMode, float opacity = 1.0f, [NativeTypeName("ID2D1Brush *")] ID2D1Brush* opacityBrush = null, D2D1_LAYER_OPTIONS layerOptions = D2D1_LAYER_OPTIONS_NONE)
+        public static D2D1_LAYER_PARAMETERS LayerParameters([NativeTypeName("const D2D1_RECT_F")] in D2D_RECT_F contentBounds, [Optional] ID2D1Geometry* geometricMask, [Optional] D2D1_ANTIALIAS_MODE maskAntialiasMode, float opacity = 1.0f, ID2D1Brush* opacityBrush = null, D2D1_LAYER_OPTIONS layerOptions = D2D1_LAYER_OPTIONS_NONE)
         {
             return LayerParameters(contentBounds, geometricMask, maskAntialiasMode, IdentityMatrix, opacity, opacityBrush, layerOptions);
         }
 
-        public static D2D1_LAYER_PARAMETERS LayerParameters([NativeTypeName("ID2D1Geometry *"), Optional] ID2D1Geometry* geometricMask, [Optional] D2D1_ANTIALIAS_MODE maskAntialiasMode, [NativeTypeName("D2D1_MATRIX_3X2_F")] D2D_MATRIX_3X2_F maskTransform, float opacity = 1.0f, [NativeTypeName("ID2D1Brush *")] ID2D1Brush* opacityBrush = null, D2D1_LAYER_OPTIONS layerOptions = D2D1_LAYER_OPTIONS_NONE)
+        public static D2D1_LAYER_PARAMETERS LayerParameters([Optional] ID2D1Geometry* geometricMask, [Optional] D2D1_ANTIALIAS_MODE maskAntialiasMode, [NativeTypeName("D2D1_MATRIX_3X2_F")] D2D_MATRIX_3X2_F maskTransform, float opacity = 1.0f, ID2D1Brush* opacityBrush = null, D2D1_LAYER_OPTIONS layerOptions = D2D1_LAYER_OPTIONS_NONE)
         {
             return LayerParameters(InfiniteRect, geometricMask, maskAntialiasMode, maskTransform, opacity, opacityBrush, layerOptions);
         }
 
-        public static D2D1_LAYER_PARAMETERS LayerParameters([NativeTypeName("const D2D1_RECT_F")] in D2D_RECT_F contentBounds, [NativeTypeName("ID2D1Geometry *"), Optional] ID2D1Geometry* geometricMask, [Optional] D2D1_ANTIALIAS_MODE maskAntialiasMode, [NativeTypeName("D2D1_MATRIX_3X2_F")] D2D_MATRIX_3X2_F maskTransform, float opacity = 1.0f, [NativeTypeName("ID2D1Brush *")] ID2D1Brush *opacityBrush = null, D2D1_LAYER_OPTIONS layerOptions = D2D1_LAYER_OPTIONS_NONE)
+        public static D2D1_LAYER_PARAMETERS LayerParameters([NativeTypeName("const D2D1_RECT_F")] in D2D_RECT_F contentBounds, [Optional] ID2D1Geometry* geometricMask, [Optional] D2D1_ANTIALIAS_MODE maskAntialiasMode, [NativeTypeName("D2D1_MATRIX_3X2_F")] D2D_MATRIX_3X2_F maskTransform, float opacity = 1.0f, ID2D1Brush *opacityBrush = null, D2D1_LAYER_OPTIONS layerOptions = D2D1_LAYER_OPTIONS_NONE)
         {
             D2D1_LAYER_PARAMETERS layerParameters = default;
 

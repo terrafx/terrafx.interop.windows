@@ -801,7 +801,9 @@ namespace TerraFX.Interop
                 int index = (int)(-4.0 * Math.Log10(pI3DL2->DecayHFRatio));
 
                 if (index < -8)
+                {
                     index = -8;
+                }
 
                 pNative->LowEQGain = (byte)((index < 0) ? index + 8 : 8);
                 pNative->HighEQGain = 8;
@@ -812,7 +814,9 @@ namespace TerraFX.Interop
                 int index = (int)(4.0 * Math.Log10(pI3DL2->DecayHFRatio));
 
                 if (index < -8)
+                {
                     index = -8;
+                }
 
                 pNative->LowEQGain = 8;
                 pNative->HighEQGain = (byte)((index < 0) ? index + 8 : 8);

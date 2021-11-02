@@ -81,30 +81,30 @@ namespace TerraFX.Interop
 
         public static uint D3D12_GET_COARSE_SHADING_RATE_Y_AXIS(uint y) => y & D3D12_SHADING_RATE_VALID_MASK;
 
-        public static int D3D12ReflectLibrary(void* pSrcData, nuint SrcDataSize, ID3D12LibraryReflection** ppReflector)
+        public static HRESULT D3D12ReflectLibrary(void* pSrcData, nuint SrcDataSize, ID3D12LibraryReflection** ppReflector)
         {
             var iid = IID_ID3D12LibraryReflection;
             return D3DReflectLibrary(pSrcData, SrcDataSize, &iid, (void**)ppReflector);
         }
 
-        public static int D3D_SET_OBJECT_NAME_N_A(ID3D12Object* pObject, uint Chars, sbyte* pName)
+        public static HRESULT D3D_SET_OBJECT_NAME_N_A(ID3D12Object* pObject, uint Chars, sbyte* pName)
         {
             var guid = WKPDID_D3DDebugObjectName;
             return pObject->SetPrivateData(&guid, Chars, pName);
         }
 
-        public static int D3D_SET_OBJECT_NAME_A(ID3D12Object* pObject, sbyte* pName)
+        public static HRESULT D3D_SET_OBJECT_NAME_A(ID3D12Object* pObject, sbyte* pName)
         {
             return D3D_SET_OBJECT_NAME_N_A(pObject, (uint)lstrlenA(pName), pName);
         }
 
-        public static int D3D_SET_OBJECT_NAME_N_W(ID3D12Object* pObject, uint Chars, ushort* pName)
+        public static HRESULT D3D_SET_OBJECT_NAME_N_W(ID3D12Object* pObject, uint Chars, ushort* pName)
         {
             var guid = WKPDID_D3DDebugObjectNameW;
             return pObject->SetPrivateData(&guid, Chars * 2, pName);
         }
 
-        public static int D3D_SET_OBJECT_NAME_W(ID3D12Object* pObject, ushort* pName)
+        public static HRESULT D3D_SET_OBJECT_NAME_W(ID3D12Object* pObject, ushort* pName)
         {
             return D3D_SET_OBJECT_NAME_N_W(pObject, (uint)lstrlenW(pName), pName);
         }

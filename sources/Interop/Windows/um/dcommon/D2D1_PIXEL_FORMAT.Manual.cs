@@ -29,9 +29,9 @@ namespace TerraFX.Interop
             }
         }
 
-        public D2D1_PIXEL_FORMAT(DXGI_FORMAT dxgiFormat = DXGI_FORMAT_UNKNOWN, D2D1_ALPHA_MODE alphaMode = D2D1_ALPHA_MODE_UNKNOWN)
+        public D2D1_PIXEL_FORMAT(DXGI_FORMAT format = DXGI_FORMAT_UNKNOWN, D2D1_ALPHA_MODE alphaMode = D2D1_ALPHA_MODE_UNKNOWN)
         {
-            this.format = dxgiFormat;
+            this.format = format;
             this.alphaMode = alphaMode;
         }
     }

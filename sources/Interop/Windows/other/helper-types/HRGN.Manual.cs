@@ -6,13 +6,8 @@ namespace TerraFX.Interop
 {
     public unsafe partial struct HRGN : IEquatable<HRGN>
     {
-        public HRGN(HGDIOBJ value)
-        {
-            Value = value.Value;
-        }
+        public static explicit operator HRGN(HGDIOBJ value) => new HRGN(value.Value);
 
-        public static explicit operator HRGN(HGDIOBJ value) => new HRGN(value);
-
-        public static implicit operator HGDIOBJ(HRGN value) => (HGDIOBJ)(value.Value);
+        public static implicit operator HGDIOBJ(HRGN value) => new HGDIOBJ(value.Value);
     }
 }

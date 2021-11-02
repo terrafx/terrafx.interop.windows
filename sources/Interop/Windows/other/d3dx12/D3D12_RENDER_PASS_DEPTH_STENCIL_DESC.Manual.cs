@@ -12,27 +12,35 @@ namespace TerraFX.Interop
         public static bool operator ==([NativeTypeName("const D3D12_RENDER_PASS_DEPTH_STENCIL_DESC &")] in D3D12_RENDER_PASS_DEPTH_STENCIL_DESC a, [NativeTypeName("const D3D12_RENDER_PASS_DEPTH_STENCIL_DESC &")] in D3D12_RENDER_PASS_DEPTH_STENCIL_DESC b)
         {
             if (a.cpuDescriptor.ptr != b.cpuDescriptor.ptr)
+            {
                 return false;
+            }
 
             if (!(a.DepthBeginningAccess == b.DepthBeginningAccess))
+            {
                 return false;
+            }
 
             if (!(a.StencilBeginningAccess == b.StencilBeginningAccess))
+            {
                 return false;
+            }
 
             if (!(a.DepthEndingAccess == b.DepthEndingAccess))
+            {
                 return false;
+            }
 
             if (!(a.StencilEndingAccess == b.StencilEndingAccess))
+            {
                 return false;
+            }
 
             return true;
         }
 
         public static bool operator !=([NativeTypeName("const D3D12_RENDER_PASS_DEPTH_STENCIL_DESC &")] in D3D12_RENDER_PASS_DEPTH_STENCIL_DESC a, [NativeTypeName("const D3D12_RENDER_PASS_DEPTH_STENCIL_DESC &")] in D3D12_RENDER_PASS_DEPTH_STENCIL_DESC b)
-        {
-            return !(a == b);
-        }
+            => !(a == b);
 
         public override bool Equals(object? obj) => (obj is D3D12_RENDER_PASS_DEPTH_STENCIL_DESC other) && Equals(other);
 

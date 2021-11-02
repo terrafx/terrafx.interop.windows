@@ -17,13 +17,12 @@ namespace TerraFX.Interop
 
         public static bool operator ==([NativeTypeName("const SIZE &")] in SIZE l, [NativeTypeName("const SIZE &")] in SIZE r)
         {
-            return l.cx == r.cx && l.cy == r.cy;
+            return (l.cx == r.cx)
+                && (l.cy == r.cy);
         }
 
         public static bool operator !=([NativeTypeName("const SIZE &")] in SIZE l, [NativeTypeName("const SIZE &")] in SIZE r)
-        {
-            return !(l == r);
-        }
+            => !(l == r);
 
         public override bool Equals(object? obj) => (obj is SIZE other) && Equals(other);
 

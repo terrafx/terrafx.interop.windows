@@ -16,17 +16,16 @@ namespace TerraFX.Interop
         [DllImport("comctl32", EntryPoint = "CreateToolbarEx", ExactSpelling = true, SetLastError = true)]
         public static extern HWND CreateToolbarEx64(HWND hwnd, [NativeTypeName("DWORD")] uint ws, uint wID, int nBitmaps, HINSTANCE hBMInst, [NativeTypeName("UINT_PTR")] nuint wBMID, [NativeTypeName("LPCTBBUTTON")] TBBUTTON64* lpButtons, int iNumButtons, int dxButton, int dyButton, int dxBitmap, int dyBitmap, uint uStructSize);
 
-        public static int FlatSB_GetScrollPropPtr(HWND param0, int propIndex, int* param2)
+        public static BOOL FlatSB_GetScrollPropPtr(HWND param0, int propIndex, nint* param2)
         {
             if (sizeof(nint) == 4)
             {
-                return FlatSB_GetScrollProp(param0, propIndex, param2);
+                return FlatSB_GetScrollProp(param0, propIndex, (int*)param2);
             }
             else
             {
                 [DllImport("comctl32", EntryPoint = "FlatSB_GetScrollPropPtr", ExactSpelling = true)]
-                [return: NativeTypeName("LONG_PTR")]
-                static extern int _FlatSB_GetScrollPropPtr(HWND param0, int propIndex, int* param2);
+                static extern BOOL _FlatSB_GetScrollPropPtr(HWND param0, int propIndex, nint* param2);
 
                 return _FlatSB_GetScrollPropPtr(param0, propIndex, param2);
             }
