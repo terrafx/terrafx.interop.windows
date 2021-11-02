@@ -31,19 +31,19 @@ namespace TerraFX.Interop
 
         public static explicit operator HCERTCHAINENGINE(byte value) => new HCERTCHAINENGINE((nint)(value));
 
-        public static implicit operator byte(HCERTCHAINENGINE value) => (byte)(value.Value);
+        public static explicit operator byte(HCERTCHAINENGINE value) => (byte)(value.Value);
 
         public static explicit operator HCERTCHAINENGINE(short value) => new HCERTCHAINENGINE((nint)(value));
 
-        public static implicit operator short(HCERTCHAINENGINE value) => (short)(value.Value);
+        public static explicit operator short(HCERTCHAINENGINE value) => (short)(value.Value);
 
         public static explicit operator HCERTCHAINENGINE(int value) => new HCERTCHAINENGINE((nint)(value));
 
-        public static implicit operator int(HCERTCHAINENGINE value) => (int)(value.Value);
+        public static explicit operator int(HCERTCHAINENGINE value) => (int)(value.Value);
 
         public static explicit operator HCERTCHAINENGINE(long value) => new HCERTCHAINENGINE((nint)(value));
 
-        public static explicit operator long(HCERTCHAINENGINE value) => (long)(value.Value);
+        public static implicit operator long(HCERTCHAINENGINE value) => (long)(value.Value);
 
         public static explicit operator HCERTCHAINENGINE(nint value) => new HCERTCHAINENGINE((nint)(value));
 
@@ -51,19 +51,19 @@ namespace TerraFX.Interop
 
         public static explicit operator HCERTCHAINENGINE(sbyte value) => new HCERTCHAINENGINE((nint)(value));
 
-        public static implicit operator sbyte(HCERTCHAINENGINE value) => (sbyte)(value.Value);
+        public static explicit operator sbyte(HCERTCHAINENGINE value) => (sbyte)(value.Value);
 
         public static explicit operator HCERTCHAINENGINE(ushort value) => new HCERTCHAINENGINE((nint)(value));
 
-        public static implicit operator ushort(HCERTCHAINENGINE value) => (ushort)(value.Value);
+        public static explicit operator ushort(HCERTCHAINENGINE value) => (ushort)(value.Value);
 
         public static explicit operator HCERTCHAINENGINE(uint value) => new HCERTCHAINENGINE((nint)(value));
 
-        public static implicit operator uint(HCERTCHAINENGINE value) => (uint)(value.Value);
+        public static explicit operator uint(HCERTCHAINENGINE value) => (uint)(value.Value);
 
         public static explicit operator HCERTCHAINENGINE(ulong value) => new HCERTCHAINENGINE((nint)(value));
 
-        public static explicit operator ulong(HCERTCHAINENGINE value) => (ulong)(value.Value);
+        public static implicit operator ulong(HCERTCHAINENGINE value) => (ulong)(value.Value);
 
         public static explicit operator HCERTCHAINENGINE(nuint value) => new HCERTCHAINENGINE((nint)(value));
 

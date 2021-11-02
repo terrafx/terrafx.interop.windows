@@ -31,19 +31,19 @@ namespace TerraFX.Interop
 
         public static explicit operator HAMSISESSION(byte value) => new HAMSISESSION((nint)(value));
 
-        public static implicit operator byte(HAMSISESSION value) => (byte)(value.Value);
+        public static explicit operator byte(HAMSISESSION value) => (byte)(value.Value);
 
         public static explicit operator HAMSISESSION(short value) => new HAMSISESSION((nint)(value));
 
-        public static implicit operator short(HAMSISESSION value) => (short)(value.Value);
+        public static explicit operator short(HAMSISESSION value) => (short)(value.Value);
 
         public static explicit operator HAMSISESSION(int value) => new HAMSISESSION((nint)(value));
 
-        public static implicit operator int(HAMSISESSION value) => (int)(value.Value);
+        public static explicit operator int(HAMSISESSION value) => (int)(value.Value);
 
         public static explicit operator HAMSISESSION(long value) => new HAMSISESSION((nint)(value));
 
-        public static explicit operator long(HAMSISESSION value) => (long)(value.Value);
+        public static implicit operator long(HAMSISESSION value) => (long)(value.Value);
 
         public static explicit operator HAMSISESSION(nint value) => new HAMSISESSION((nint)(value));
 
@@ -51,19 +51,19 @@ namespace TerraFX.Interop
 
         public static explicit operator HAMSISESSION(sbyte value) => new HAMSISESSION((nint)(value));
 
-        public static implicit operator sbyte(HAMSISESSION value) => (sbyte)(value.Value);
+        public static explicit operator sbyte(HAMSISESSION value) => (sbyte)(value.Value);
 
         public static explicit operator HAMSISESSION(ushort value) => new HAMSISESSION((nint)(value));
 
-        public static implicit operator ushort(HAMSISESSION value) => (ushort)(value.Value);
+        public static explicit operator ushort(HAMSISESSION value) => (ushort)(value.Value);
 
         public static explicit operator HAMSISESSION(uint value) => new HAMSISESSION((nint)(value));
 
-        public static implicit operator uint(HAMSISESSION value) => (uint)(value.Value);
+        public static explicit operator uint(HAMSISESSION value) => (uint)(value.Value);
 
         public static explicit operator HAMSISESSION(ulong value) => new HAMSISESSION((nint)(value));
 
-        public static explicit operator ulong(HAMSISESSION value) => (ulong)(value.Value);
+        public static implicit operator ulong(HAMSISESSION value) => (ulong)(value.Value);
 
         public static explicit operator HAMSISESSION(nuint value) => new HAMSISESSION((nint)(value));
 

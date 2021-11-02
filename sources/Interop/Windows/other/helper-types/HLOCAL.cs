@@ -31,19 +31,19 @@ namespace TerraFX.Interop
 
         public static explicit operator HLOCAL(byte value) => new HLOCAL((nint)(value));
 
-        public static implicit operator byte(HLOCAL value) => (byte)(value.Value);
+        public static explicit operator byte(HLOCAL value) => (byte)(value.Value);
 
         public static explicit operator HLOCAL(short value) => new HLOCAL((nint)(value));
 
-        public static implicit operator short(HLOCAL value) => (short)(value.Value);
+        public static explicit operator short(HLOCAL value) => (short)(value.Value);
 
         public static explicit operator HLOCAL(int value) => new HLOCAL((nint)(value));
 
-        public static implicit operator int(HLOCAL value) => (int)(value.Value);
+        public static explicit operator int(HLOCAL value) => (int)(value.Value);
 
         public static explicit operator HLOCAL(long value) => new HLOCAL((nint)(value));
 
-        public static explicit operator long(HLOCAL value) => (long)(value.Value);
+        public static implicit operator long(HLOCAL value) => (long)(value.Value);
 
         public static explicit operator HLOCAL(nint value) => new HLOCAL((nint)(value));
 
@@ -51,19 +51,19 @@ namespace TerraFX.Interop
 
         public static explicit operator HLOCAL(sbyte value) => new HLOCAL((nint)(value));
 
-        public static implicit operator sbyte(HLOCAL value) => (sbyte)(value.Value);
+        public static explicit operator sbyte(HLOCAL value) => (sbyte)(value.Value);
 
         public static explicit operator HLOCAL(ushort value) => new HLOCAL((nint)(value));
 
-        public static implicit operator ushort(HLOCAL value) => (ushort)(value.Value);
+        public static explicit operator ushort(HLOCAL value) => (ushort)(value.Value);
 
         public static explicit operator HLOCAL(uint value) => new HLOCAL((nint)(value));
 
-        public static implicit operator uint(HLOCAL value) => (uint)(value.Value);
+        public static explicit operator uint(HLOCAL value) => (uint)(value.Value);
 
         public static explicit operator HLOCAL(ulong value) => new HLOCAL((nint)(value));
 
-        public static explicit operator ulong(HLOCAL value) => (ulong)(value.Value);
+        public static implicit operator ulong(HLOCAL value) => (ulong)(value.Value);
 
         public static explicit operator HLOCAL(nuint value) => new HLOCAL((nint)(value));
 

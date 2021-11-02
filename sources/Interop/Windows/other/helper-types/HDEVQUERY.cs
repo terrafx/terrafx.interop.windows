@@ -31,19 +31,19 @@ namespace TerraFX.Interop
 
         public static explicit operator HDEVQUERY(byte value) => new HDEVQUERY((nint)(value));
 
-        public static implicit operator byte(HDEVQUERY value) => (byte)(value.Value);
+        public static explicit operator byte(HDEVQUERY value) => (byte)(value.Value);
 
         public static explicit operator HDEVQUERY(short value) => new HDEVQUERY((nint)(value));
 
-        public static implicit operator short(HDEVQUERY value) => (short)(value.Value);
+        public static explicit operator short(HDEVQUERY value) => (short)(value.Value);
 
         public static explicit operator HDEVQUERY(int value) => new HDEVQUERY((nint)(value));
 
-        public static implicit operator int(HDEVQUERY value) => (int)(value.Value);
+        public static explicit operator int(HDEVQUERY value) => (int)(value.Value);
 
         public static explicit operator HDEVQUERY(long value) => new HDEVQUERY((nint)(value));
 
-        public static explicit operator long(HDEVQUERY value) => (long)(value.Value);
+        public static implicit operator long(HDEVQUERY value) => (long)(value.Value);
 
         public static explicit operator HDEVQUERY(nint value) => new HDEVQUERY((nint)(value));
 
@@ -51,19 +51,19 @@ namespace TerraFX.Interop
 
         public static explicit operator HDEVQUERY(sbyte value) => new HDEVQUERY((nint)(value));
 
-        public static implicit operator sbyte(HDEVQUERY value) => (sbyte)(value.Value);
+        public static explicit operator sbyte(HDEVQUERY value) => (sbyte)(value.Value);
 
         public static explicit operator HDEVQUERY(ushort value) => new HDEVQUERY((nint)(value));
 
-        public static implicit operator ushort(HDEVQUERY value) => (ushort)(value.Value);
+        public static explicit operator ushort(HDEVQUERY value) => (ushort)(value.Value);
 
         public static explicit operator HDEVQUERY(uint value) => new HDEVQUERY((nint)(value));
 
-        public static implicit operator uint(HDEVQUERY value) => (uint)(value.Value);
+        public static explicit operator uint(HDEVQUERY value) => (uint)(value.Value);
 
         public static explicit operator HDEVQUERY(ulong value) => new HDEVQUERY((nint)(value));
 
-        public static explicit operator ulong(HDEVQUERY value) => (ulong)(value.Value);
+        public static implicit operator ulong(HDEVQUERY value) => (ulong)(value.Value);
 
         public static explicit operator HDEVQUERY(nuint value) => new HDEVQUERY((nint)(value));
 

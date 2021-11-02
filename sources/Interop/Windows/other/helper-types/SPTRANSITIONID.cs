@@ -31,19 +31,19 @@ namespace TerraFX.Interop
 
         public static explicit operator SPTRANSITIONID(byte value) => new SPTRANSITIONID((nint)(value));
 
-        public static implicit operator byte(SPTRANSITIONID value) => (byte)(value.Value);
+        public static explicit operator byte(SPTRANSITIONID value) => (byte)(value.Value);
 
         public static explicit operator SPTRANSITIONID(short value) => new SPTRANSITIONID((nint)(value));
 
-        public static implicit operator short(SPTRANSITIONID value) => (short)(value.Value);
+        public static explicit operator short(SPTRANSITIONID value) => (short)(value.Value);
 
         public static explicit operator SPTRANSITIONID(int value) => new SPTRANSITIONID((nint)(value));
 
-        public static implicit operator int(SPTRANSITIONID value) => (int)(value.Value);
+        public static explicit operator int(SPTRANSITIONID value) => (int)(value.Value);
 
         public static explicit operator SPTRANSITIONID(long value) => new SPTRANSITIONID((nint)(value));
 
-        public static explicit operator long(SPTRANSITIONID value) => (long)(value.Value);
+        public static implicit operator long(SPTRANSITIONID value) => (long)(value.Value);
 
         public static explicit operator SPTRANSITIONID(nint value) => new SPTRANSITIONID((nint)(value));
 
@@ -51,19 +51,19 @@ namespace TerraFX.Interop
 
         public static explicit operator SPTRANSITIONID(sbyte value) => new SPTRANSITIONID((nint)(value));
 
-        public static implicit operator sbyte(SPTRANSITIONID value) => (sbyte)(value.Value);
+        public static explicit operator sbyte(SPTRANSITIONID value) => (sbyte)(value.Value);
 
         public static explicit operator SPTRANSITIONID(ushort value) => new SPTRANSITIONID((nint)(value));
 
-        public static implicit operator ushort(SPTRANSITIONID value) => (ushort)(value.Value);
+        public static explicit operator ushort(SPTRANSITIONID value) => (ushort)(value.Value);
 
         public static explicit operator SPTRANSITIONID(uint value) => new SPTRANSITIONID((nint)(value));
 
-        public static implicit operator uint(SPTRANSITIONID value) => (uint)(value.Value);
+        public static explicit operator uint(SPTRANSITIONID value) => (uint)(value.Value);
 
         public static explicit operator SPTRANSITIONID(ulong value) => new SPTRANSITIONID((nint)(value));
 
-        public static explicit operator ulong(SPTRANSITIONID value) => (ulong)(value.Value);
+        public static implicit operator ulong(SPTRANSITIONID value) => (ulong)(value.Value);
 
         public static explicit operator SPTRANSITIONID(nuint value) => new SPTRANSITIONID((nint)(value));
 

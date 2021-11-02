@@ -31,19 +31,19 @@ namespace TerraFX.Interop
 
         public static explicit operator DHPDEV(byte value) => new DHPDEV((nint)(value));
 
-        public static implicit operator byte(DHPDEV value) => (byte)(value.Value);
+        public static explicit operator byte(DHPDEV value) => (byte)(value.Value);
 
         public static explicit operator DHPDEV(short value) => new DHPDEV((nint)(value));
 
-        public static implicit operator short(DHPDEV value) => (short)(value.Value);
+        public static explicit operator short(DHPDEV value) => (short)(value.Value);
 
         public static explicit operator DHPDEV(int value) => new DHPDEV((nint)(value));
 
-        public static implicit operator int(DHPDEV value) => (int)(value.Value);
+        public static explicit operator int(DHPDEV value) => (int)(value.Value);
 
         public static explicit operator DHPDEV(long value) => new DHPDEV((nint)(value));
 
-        public static explicit operator long(DHPDEV value) => (long)(value.Value);
+        public static implicit operator long(DHPDEV value) => (long)(value.Value);
 
         public static explicit operator DHPDEV(nint value) => new DHPDEV((nint)(value));
 
@@ -51,19 +51,19 @@ namespace TerraFX.Interop
 
         public static explicit operator DHPDEV(sbyte value) => new DHPDEV((nint)(value));
 
-        public static implicit operator sbyte(DHPDEV value) => (sbyte)(value.Value);
+        public static explicit operator sbyte(DHPDEV value) => (sbyte)(value.Value);
 
         public static explicit operator DHPDEV(ushort value) => new DHPDEV((nint)(value));
 
-        public static implicit operator ushort(DHPDEV value) => (ushort)(value.Value);
+        public static explicit operator ushort(DHPDEV value) => (ushort)(value.Value);
 
         public static explicit operator DHPDEV(uint value) => new DHPDEV((nint)(value));
 
-        public static implicit operator uint(DHPDEV value) => (uint)(value.Value);
+        public static explicit operator uint(DHPDEV value) => (uint)(value.Value);
 
         public static explicit operator DHPDEV(ulong value) => new DHPDEV((nint)(value));
 
-        public static explicit operator ulong(DHPDEV value) => (ulong)(value.Value);
+        public static implicit operator ulong(DHPDEV value) => (ulong)(value.Value);
 
         public static explicit operator DHPDEV(nuint value) => new DHPDEV((nint)(value));
 

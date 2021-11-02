@@ -31,19 +31,19 @@ namespace TerraFX.Interop
 
         public static explicit operator HSURF(byte value) => new HSURF((nint)(value));
 
-        public static implicit operator byte(HSURF value) => (byte)(value.Value);
+        public static explicit operator byte(HSURF value) => (byte)(value.Value);
 
         public static explicit operator HSURF(short value) => new HSURF((nint)(value));
 
-        public static implicit operator short(HSURF value) => (short)(value.Value);
+        public static explicit operator short(HSURF value) => (short)(value.Value);
 
         public static explicit operator HSURF(int value) => new HSURF((nint)(value));
 
-        public static implicit operator int(HSURF value) => (int)(value.Value);
+        public static explicit operator int(HSURF value) => (int)(value.Value);
 
         public static explicit operator HSURF(long value) => new HSURF((nint)(value));
 
-        public static explicit operator long(HSURF value) => (long)(value.Value);
+        public static implicit operator long(HSURF value) => (long)(value.Value);
 
         public static explicit operator HSURF(nint value) => new HSURF((nint)(value));
 
@@ -51,19 +51,19 @@ namespace TerraFX.Interop
 
         public static explicit operator HSURF(sbyte value) => new HSURF((nint)(value));
 
-        public static implicit operator sbyte(HSURF value) => (sbyte)(value.Value);
+        public static explicit operator sbyte(HSURF value) => (sbyte)(value.Value);
 
         public static explicit operator HSURF(ushort value) => new HSURF((nint)(value));
 
-        public static implicit operator ushort(HSURF value) => (ushort)(value.Value);
+        public static explicit operator ushort(HSURF value) => (ushort)(value.Value);
 
         public static explicit operator HSURF(uint value) => new HSURF((nint)(value));
 
-        public static implicit operator uint(HSURF value) => (uint)(value.Value);
+        public static explicit operator uint(HSURF value) => (uint)(value.Value);
 
         public static explicit operator HSURF(ulong value) => new HSURF((nint)(value));
 
-        public static explicit operator ulong(HSURF value) => (ulong)(value.Value);
+        public static implicit operator ulong(HSURF value) => (ulong)(value.Value);
 
         public static explicit operator HSURF(nuint value) => new HSURF((nint)(value));
 

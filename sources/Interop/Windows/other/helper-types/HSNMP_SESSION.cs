@@ -31,19 +31,19 @@ namespace TerraFX.Interop
 
         public static explicit operator HSNMP_SESSION(byte value) => new HSNMP_SESSION((nint)(value));
 
-        public static implicit operator byte(HSNMP_SESSION value) => (byte)(value.Value);
+        public static explicit operator byte(HSNMP_SESSION value) => (byte)(value.Value);
 
         public static explicit operator HSNMP_SESSION(short value) => new HSNMP_SESSION((nint)(value));
 
-        public static implicit operator short(HSNMP_SESSION value) => (short)(value.Value);
+        public static explicit operator short(HSNMP_SESSION value) => (short)(value.Value);
 
         public static explicit operator HSNMP_SESSION(int value) => new HSNMP_SESSION((nint)(value));
 
-        public static implicit operator int(HSNMP_SESSION value) => (int)(value.Value);
+        public static explicit operator int(HSNMP_SESSION value) => (int)(value.Value);
 
         public static explicit operator HSNMP_SESSION(long value) => new HSNMP_SESSION((nint)(value));
 
-        public static explicit operator long(HSNMP_SESSION value) => (long)(value.Value);
+        public static implicit operator long(HSNMP_SESSION value) => (long)(value.Value);
 
         public static explicit operator HSNMP_SESSION(nint value) => new HSNMP_SESSION((nint)(value));
 
@@ -51,19 +51,19 @@ namespace TerraFX.Interop
 
         public static explicit operator HSNMP_SESSION(sbyte value) => new HSNMP_SESSION((nint)(value));
 
-        public static implicit operator sbyte(HSNMP_SESSION value) => (sbyte)(value.Value);
+        public static explicit operator sbyte(HSNMP_SESSION value) => (sbyte)(value.Value);
 
         public static explicit operator HSNMP_SESSION(ushort value) => new HSNMP_SESSION((nint)(value));
 
-        public static implicit operator ushort(HSNMP_SESSION value) => (ushort)(value.Value);
+        public static explicit operator ushort(HSNMP_SESSION value) => (ushort)(value.Value);
 
         public static explicit operator HSNMP_SESSION(uint value) => new HSNMP_SESSION((nint)(value));
 
-        public static implicit operator uint(HSNMP_SESSION value) => (uint)(value.Value);
+        public static explicit operator uint(HSNMP_SESSION value) => (uint)(value.Value);
 
         public static explicit operator HSNMP_SESSION(ulong value) => new HSNMP_SESSION((nint)(value));
 
-        public static explicit operator ulong(HSNMP_SESSION value) => (ulong)(value.Value);
+        public static implicit operator ulong(HSNMP_SESSION value) => (ulong)(value.Value);
 
         public static explicit operator HSNMP_SESSION(nuint value) => new HSNMP_SESSION((nint)(value));
 

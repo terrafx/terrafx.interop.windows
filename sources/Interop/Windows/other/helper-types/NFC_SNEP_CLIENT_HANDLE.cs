@@ -31,19 +31,19 @@ namespace TerraFX.Interop
 
         public static explicit operator NFC_SNEP_CLIENT_HANDLE(byte value) => new NFC_SNEP_CLIENT_HANDLE((nint)(value));
 
-        public static implicit operator byte(NFC_SNEP_CLIENT_HANDLE value) => (byte)(value.Value);
+        public static explicit operator byte(NFC_SNEP_CLIENT_HANDLE value) => (byte)(value.Value);
 
         public static explicit operator NFC_SNEP_CLIENT_HANDLE(short value) => new NFC_SNEP_CLIENT_HANDLE((nint)(value));
 
-        public static implicit operator short(NFC_SNEP_CLIENT_HANDLE value) => (short)(value.Value);
+        public static explicit operator short(NFC_SNEP_CLIENT_HANDLE value) => (short)(value.Value);
 
         public static explicit operator NFC_SNEP_CLIENT_HANDLE(int value) => new NFC_SNEP_CLIENT_HANDLE((nint)(value));
 
-        public static implicit operator int(NFC_SNEP_CLIENT_HANDLE value) => (int)(value.Value);
+        public static explicit operator int(NFC_SNEP_CLIENT_HANDLE value) => (int)(value.Value);
 
         public static explicit operator NFC_SNEP_CLIENT_HANDLE(long value) => new NFC_SNEP_CLIENT_HANDLE((nint)(value));
 
-        public static explicit operator long(NFC_SNEP_CLIENT_HANDLE value) => (long)(value.Value);
+        public static implicit operator long(NFC_SNEP_CLIENT_HANDLE value) => (long)(value.Value);
 
         public static explicit operator NFC_SNEP_CLIENT_HANDLE(nint value) => new NFC_SNEP_CLIENT_HANDLE((nint)(value));
 
@@ -51,19 +51,19 @@ namespace TerraFX.Interop
 
         public static explicit operator NFC_SNEP_CLIENT_HANDLE(sbyte value) => new NFC_SNEP_CLIENT_HANDLE((nint)(value));
 
-        public static implicit operator sbyte(NFC_SNEP_CLIENT_HANDLE value) => (sbyte)(value.Value);
+        public static explicit operator sbyte(NFC_SNEP_CLIENT_HANDLE value) => (sbyte)(value.Value);
 
         public static explicit operator NFC_SNEP_CLIENT_HANDLE(ushort value) => new NFC_SNEP_CLIENT_HANDLE((nint)(value));
 
-        public static implicit operator ushort(NFC_SNEP_CLIENT_HANDLE value) => (ushort)(value.Value);
+        public static explicit operator ushort(NFC_SNEP_CLIENT_HANDLE value) => (ushort)(value.Value);
 
         public static explicit operator NFC_SNEP_CLIENT_HANDLE(uint value) => new NFC_SNEP_CLIENT_HANDLE((nint)(value));
 
-        public static implicit operator uint(NFC_SNEP_CLIENT_HANDLE value) => (uint)(value.Value);
+        public static explicit operator uint(NFC_SNEP_CLIENT_HANDLE value) => (uint)(value.Value);
 
         public static explicit operator NFC_SNEP_CLIENT_HANDLE(ulong value) => new NFC_SNEP_CLIENT_HANDLE((nint)(value));
 
-        public static explicit operator ulong(NFC_SNEP_CLIENT_HANDLE value) => (ulong)(value.Value);
+        public static implicit operator ulong(NFC_SNEP_CLIENT_HANDLE value) => (ulong)(value.Value);
 
         public static explicit operator NFC_SNEP_CLIENT_HANDLE(nuint value) => new NFC_SNEP_CLIENT_HANDLE((nint)(value));
 

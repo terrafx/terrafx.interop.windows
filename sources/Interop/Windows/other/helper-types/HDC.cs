@@ -31,19 +31,19 @@ namespace TerraFX.Interop
 
         public static explicit operator HDC(byte value) => new HDC((nint)(value));
 
-        public static implicit operator byte(HDC value) => (byte)(value.Value);
+        public static explicit operator byte(HDC value) => (byte)(value.Value);
 
         public static explicit operator HDC(short value) => new HDC((nint)(value));
 
-        public static implicit operator short(HDC value) => (short)(value.Value);
+        public static explicit operator short(HDC value) => (short)(value.Value);
 
         public static explicit operator HDC(int value) => new HDC((nint)(value));
 
-        public static implicit operator int(HDC value) => (int)(value.Value);
+        public static explicit operator int(HDC value) => (int)(value.Value);
 
         public static explicit operator HDC(long value) => new HDC((nint)(value));
 
-        public static explicit operator long(HDC value) => (long)(value.Value);
+        public static implicit operator long(HDC value) => (long)(value.Value);
 
         public static explicit operator HDC(nint value) => new HDC((nint)(value));
 
@@ -51,19 +51,19 @@ namespace TerraFX.Interop
 
         public static explicit operator HDC(sbyte value) => new HDC((nint)(value));
 
-        public static implicit operator sbyte(HDC value) => (sbyte)(value.Value);
+        public static explicit operator sbyte(HDC value) => (sbyte)(value.Value);
 
         public static explicit operator HDC(ushort value) => new HDC((nint)(value));
 
-        public static implicit operator ushort(HDC value) => (ushort)(value.Value);
+        public static explicit operator ushort(HDC value) => (ushort)(value.Value);
 
         public static explicit operator HDC(uint value) => new HDC((nint)(value));
 
-        public static implicit operator uint(HDC value) => (uint)(value.Value);
+        public static explicit operator uint(HDC value) => (uint)(value.Value);
 
         public static explicit operator HDC(ulong value) => new HDC((nint)(value));
 
-        public static explicit operator ulong(HDC value) => (ulong)(value.Value);
+        public static implicit operator ulong(HDC value) => (ulong)(value.Value);
 
         public static explicit operator HDC(nuint value) => new HDC((nint)(value));
 

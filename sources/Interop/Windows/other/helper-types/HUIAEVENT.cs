@@ -31,19 +31,19 @@ namespace TerraFX.Interop
 
         public static explicit operator HUIAEVENT(byte value) => new HUIAEVENT((nint)(value));
 
-        public static implicit operator byte(HUIAEVENT value) => (byte)(value.Value);
+        public static explicit operator byte(HUIAEVENT value) => (byte)(value.Value);
 
         public static explicit operator HUIAEVENT(short value) => new HUIAEVENT((nint)(value));
 
-        public static implicit operator short(HUIAEVENT value) => (short)(value.Value);
+        public static explicit operator short(HUIAEVENT value) => (short)(value.Value);
 
         public static explicit operator HUIAEVENT(int value) => new HUIAEVENT((nint)(value));
 
-        public static implicit operator int(HUIAEVENT value) => (int)(value.Value);
+        public static explicit operator int(HUIAEVENT value) => (int)(value.Value);
 
         public static explicit operator HUIAEVENT(long value) => new HUIAEVENT((nint)(value));
 
-        public static explicit operator long(HUIAEVENT value) => (long)(value.Value);
+        public static implicit operator long(HUIAEVENT value) => (long)(value.Value);
 
         public static explicit operator HUIAEVENT(nint value) => new HUIAEVENT((nint)(value));
 
@@ -51,19 +51,19 @@ namespace TerraFX.Interop
 
         public static explicit operator HUIAEVENT(sbyte value) => new HUIAEVENT((nint)(value));
 
-        public static implicit operator sbyte(HUIAEVENT value) => (sbyte)(value.Value);
+        public static explicit operator sbyte(HUIAEVENT value) => (sbyte)(value.Value);
 
         public static explicit operator HUIAEVENT(ushort value) => new HUIAEVENT((nint)(value));
 
-        public static implicit operator ushort(HUIAEVENT value) => (ushort)(value.Value);
+        public static explicit operator ushort(HUIAEVENT value) => (ushort)(value.Value);
 
         public static explicit operator HUIAEVENT(uint value) => new HUIAEVENT((nint)(value));
 
-        public static implicit operator uint(HUIAEVENT value) => (uint)(value.Value);
+        public static explicit operator uint(HUIAEVENT value) => (uint)(value.Value);
 
         public static explicit operator HUIAEVENT(ulong value) => new HUIAEVENT((nint)(value));
 
-        public static explicit operator ulong(HUIAEVENT value) => (ulong)(value.Value);
+        public static implicit operator ulong(HUIAEVENT value) => (ulong)(value.Value);
 
         public static explicit operator HUIAEVENT(nuint value) => new HUIAEVENT((nint)(value));
 

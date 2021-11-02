@@ -31,19 +31,19 @@ namespace TerraFX.Interop
 
         public static explicit operator PDH_HCOUNTER(byte value) => new PDH_HCOUNTER((nint)(value));
 
-        public static implicit operator byte(PDH_HCOUNTER value) => (byte)(value.Value);
+        public static explicit operator byte(PDH_HCOUNTER value) => (byte)(value.Value);
 
         public static explicit operator PDH_HCOUNTER(short value) => new PDH_HCOUNTER((nint)(value));
 
-        public static implicit operator short(PDH_HCOUNTER value) => (short)(value.Value);
+        public static explicit operator short(PDH_HCOUNTER value) => (short)(value.Value);
 
         public static explicit operator PDH_HCOUNTER(int value) => new PDH_HCOUNTER((nint)(value));
 
-        public static implicit operator int(PDH_HCOUNTER value) => (int)(value.Value);
+        public static explicit operator int(PDH_HCOUNTER value) => (int)(value.Value);
 
         public static explicit operator PDH_HCOUNTER(long value) => new PDH_HCOUNTER((nint)(value));
 
-        public static explicit operator long(PDH_HCOUNTER value) => (long)(value.Value);
+        public static implicit operator long(PDH_HCOUNTER value) => (long)(value.Value);
 
         public static explicit operator PDH_HCOUNTER(nint value) => new PDH_HCOUNTER((nint)(value));
 
@@ -51,19 +51,19 @@ namespace TerraFX.Interop
 
         public static explicit operator PDH_HCOUNTER(sbyte value) => new PDH_HCOUNTER((nint)(value));
 
-        public static implicit operator sbyte(PDH_HCOUNTER value) => (sbyte)(value.Value);
+        public static explicit operator sbyte(PDH_HCOUNTER value) => (sbyte)(value.Value);
 
         public static explicit operator PDH_HCOUNTER(ushort value) => new PDH_HCOUNTER((nint)(value));
 
-        public static implicit operator ushort(PDH_HCOUNTER value) => (ushort)(value.Value);
+        public static explicit operator ushort(PDH_HCOUNTER value) => (ushort)(value.Value);
 
         public static explicit operator PDH_HCOUNTER(uint value) => new PDH_HCOUNTER((nint)(value));
 
-        public static implicit operator uint(PDH_HCOUNTER value) => (uint)(value.Value);
+        public static explicit operator uint(PDH_HCOUNTER value) => (uint)(value.Value);
 
         public static explicit operator PDH_HCOUNTER(ulong value) => new PDH_HCOUNTER((nint)(value));
 
-        public static explicit operator ulong(PDH_HCOUNTER value) => (ulong)(value.Value);
+        public static implicit operator ulong(PDH_HCOUNTER value) => (ulong)(value.Value);
 
         public static explicit operator PDH_HCOUNTER(nuint value) => new PDH_HCOUNTER((nint)(value));
 

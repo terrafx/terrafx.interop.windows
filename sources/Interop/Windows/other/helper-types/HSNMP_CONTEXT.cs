@@ -31,19 +31,19 @@ namespace TerraFX.Interop
 
         public static explicit operator HSNMP_CONTEXT(byte value) => new HSNMP_CONTEXT((nint)(value));
 
-        public static implicit operator byte(HSNMP_CONTEXT value) => (byte)(value.Value);
+        public static explicit operator byte(HSNMP_CONTEXT value) => (byte)(value.Value);
 
         public static explicit operator HSNMP_CONTEXT(short value) => new HSNMP_CONTEXT((nint)(value));
 
-        public static implicit operator short(HSNMP_CONTEXT value) => (short)(value.Value);
+        public static explicit operator short(HSNMP_CONTEXT value) => (short)(value.Value);
 
         public static explicit operator HSNMP_CONTEXT(int value) => new HSNMP_CONTEXT((nint)(value));
 
-        public static implicit operator int(HSNMP_CONTEXT value) => (int)(value.Value);
+        public static explicit operator int(HSNMP_CONTEXT value) => (int)(value.Value);
 
         public static explicit operator HSNMP_CONTEXT(long value) => new HSNMP_CONTEXT((nint)(value));
 
-        public static explicit operator long(HSNMP_CONTEXT value) => (long)(value.Value);
+        public static implicit operator long(HSNMP_CONTEXT value) => (long)(value.Value);
 
         public static explicit operator HSNMP_CONTEXT(nint value) => new HSNMP_CONTEXT((nint)(value));
 
@@ -51,19 +51,19 @@ namespace TerraFX.Interop
 
         public static explicit operator HSNMP_CONTEXT(sbyte value) => new HSNMP_CONTEXT((nint)(value));
 
-        public static implicit operator sbyte(HSNMP_CONTEXT value) => (sbyte)(value.Value);
+        public static explicit operator sbyte(HSNMP_CONTEXT value) => (sbyte)(value.Value);
 
         public static explicit operator HSNMP_CONTEXT(ushort value) => new HSNMP_CONTEXT((nint)(value));
 
-        public static implicit operator ushort(HSNMP_CONTEXT value) => (ushort)(value.Value);
+        public static explicit operator ushort(HSNMP_CONTEXT value) => (ushort)(value.Value);
 
         public static explicit operator HSNMP_CONTEXT(uint value) => new HSNMP_CONTEXT((nint)(value));
 
-        public static implicit operator uint(HSNMP_CONTEXT value) => (uint)(value.Value);
+        public static explicit operator uint(HSNMP_CONTEXT value) => (uint)(value.Value);
 
         public static explicit operator HSNMP_CONTEXT(ulong value) => new HSNMP_CONTEXT((nint)(value));
 
-        public static explicit operator ulong(HSNMP_CONTEXT value) => (ulong)(value.Value);
+        public static implicit operator ulong(HSNMP_CONTEXT value) => (ulong)(value.Value);
 
         public static explicit operator HSNMP_CONTEXT(nuint value) => new HSNMP_CONTEXT((nint)(value));
 

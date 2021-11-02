@@ -31,19 +31,19 @@ namespace TerraFX.Interop
 
         public static explicit operator HDIAGNOSTIC_REPORT(byte value) => new HDIAGNOSTIC_REPORT((nint)(value));
 
-        public static implicit operator byte(HDIAGNOSTIC_REPORT value) => (byte)(value.Value);
+        public static explicit operator byte(HDIAGNOSTIC_REPORT value) => (byte)(value.Value);
 
         public static explicit operator HDIAGNOSTIC_REPORT(short value) => new HDIAGNOSTIC_REPORT((nint)(value));
 
-        public static implicit operator short(HDIAGNOSTIC_REPORT value) => (short)(value.Value);
+        public static explicit operator short(HDIAGNOSTIC_REPORT value) => (short)(value.Value);
 
         public static explicit operator HDIAGNOSTIC_REPORT(int value) => new HDIAGNOSTIC_REPORT((nint)(value));
 
-        public static implicit operator int(HDIAGNOSTIC_REPORT value) => (int)(value.Value);
+        public static explicit operator int(HDIAGNOSTIC_REPORT value) => (int)(value.Value);
 
         public static explicit operator HDIAGNOSTIC_REPORT(long value) => new HDIAGNOSTIC_REPORT((nint)(value));
 
-        public static explicit operator long(HDIAGNOSTIC_REPORT value) => (long)(value.Value);
+        public static implicit operator long(HDIAGNOSTIC_REPORT value) => (long)(value.Value);
 
         public static explicit operator HDIAGNOSTIC_REPORT(nint value) => new HDIAGNOSTIC_REPORT((nint)(value));
 
@@ -51,19 +51,19 @@ namespace TerraFX.Interop
 
         public static explicit operator HDIAGNOSTIC_REPORT(sbyte value) => new HDIAGNOSTIC_REPORT((nint)(value));
 
-        public static implicit operator sbyte(HDIAGNOSTIC_REPORT value) => (sbyte)(value.Value);
+        public static explicit operator sbyte(HDIAGNOSTIC_REPORT value) => (sbyte)(value.Value);
 
         public static explicit operator HDIAGNOSTIC_REPORT(ushort value) => new HDIAGNOSTIC_REPORT((nint)(value));
 
-        public static implicit operator ushort(HDIAGNOSTIC_REPORT value) => (ushort)(value.Value);
+        public static explicit operator ushort(HDIAGNOSTIC_REPORT value) => (ushort)(value.Value);
 
         public static explicit operator HDIAGNOSTIC_REPORT(uint value) => new HDIAGNOSTIC_REPORT((nint)(value));
 
-        public static implicit operator uint(HDIAGNOSTIC_REPORT value) => (uint)(value.Value);
+        public static explicit operator uint(HDIAGNOSTIC_REPORT value) => (uint)(value.Value);
 
         public static explicit operator HDIAGNOSTIC_REPORT(ulong value) => new HDIAGNOSTIC_REPORT((nint)(value));
 
-        public static explicit operator ulong(HDIAGNOSTIC_REPORT value) => (ulong)(value.Value);
+        public static implicit operator ulong(HDIAGNOSTIC_REPORT value) => (ulong)(value.Value);
 
         public static explicit operator HDIAGNOSTIC_REPORT(nuint value) => new HDIAGNOSTIC_REPORT((nint)(value));
 

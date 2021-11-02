@@ -31,19 +31,19 @@ namespace TerraFX.Interop
 
         public static explicit operator BLUETOOTH_GATT_EVENT_HANDLE(byte value) => new BLUETOOTH_GATT_EVENT_HANDLE((nint)(value));
 
-        public static implicit operator byte(BLUETOOTH_GATT_EVENT_HANDLE value) => (byte)(value.Value);
+        public static explicit operator byte(BLUETOOTH_GATT_EVENT_HANDLE value) => (byte)(value.Value);
 
         public static explicit operator BLUETOOTH_GATT_EVENT_HANDLE(short value) => new BLUETOOTH_GATT_EVENT_HANDLE((nint)(value));
 
-        public static implicit operator short(BLUETOOTH_GATT_EVENT_HANDLE value) => (short)(value.Value);
+        public static explicit operator short(BLUETOOTH_GATT_EVENT_HANDLE value) => (short)(value.Value);
 
         public static explicit operator BLUETOOTH_GATT_EVENT_HANDLE(int value) => new BLUETOOTH_GATT_EVENT_HANDLE((nint)(value));
 
-        public static implicit operator int(BLUETOOTH_GATT_EVENT_HANDLE value) => (int)(value.Value);
+        public static explicit operator int(BLUETOOTH_GATT_EVENT_HANDLE value) => (int)(value.Value);
 
         public static explicit operator BLUETOOTH_GATT_EVENT_HANDLE(long value) => new BLUETOOTH_GATT_EVENT_HANDLE((nint)(value));
 
-        public static explicit operator long(BLUETOOTH_GATT_EVENT_HANDLE value) => (long)(value.Value);
+        public static implicit operator long(BLUETOOTH_GATT_EVENT_HANDLE value) => (long)(value.Value);
 
         public static explicit operator BLUETOOTH_GATT_EVENT_HANDLE(nint value) => new BLUETOOTH_GATT_EVENT_HANDLE((nint)(value));
 
@@ -51,19 +51,19 @@ namespace TerraFX.Interop
 
         public static explicit operator BLUETOOTH_GATT_EVENT_HANDLE(sbyte value) => new BLUETOOTH_GATT_EVENT_HANDLE((nint)(value));
 
-        public static implicit operator sbyte(BLUETOOTH_GATT_EVENT_HANDLE value) => (sbyte)(value.Value);
+        public static explicit operator sbyte(BLUETOOTH_GATT_EVENT_HANDLE value) => (sbyte)(value.Value);
 
         public static explicit operator BLUETOOTH_GATT_EVENT_HANDLE(ushort value) => new BLUETOOTH_GATT_EVENT_HANDLE((nint)(value));
 
-        public static implicit operator ushort(BLUETOOTH_GATT_EVENT_HANDLE value) => (ushort)(value.Value);
+        public static explicit operator ushort(BLUETOOTH_GATT_EVENT_HANDLE value) => (ushort)(value.Value);
 
         public static explicit operator BLUETOOTH_GATT_EVENT_HANDLE(uint value) => new BLUETOOTH_GATT_EVENT_HANDLE((nint)(value));
 
-        public static implicit operator uint(BLUETOOTH_GATT_EVENT_HANDLE value) => (uint)(value.Value);
+        public static explicit operator uint(BLUETOOTH_GATT_EVENT_HANDLE value) => (uint)(value.Value);
 
         public static explicit operator BLUETOOTH_GATT_EVENT_HANDLE(ulong value) => new BLUETOOTH_GATT_EVENT_HANDLE((nint)(value));
 
-        public static explicit operator ulong(BLUETOOTH_GATT_EVENT_HANDLE value) => (ulong)(value.Value);
+        public static implicit operator ulong(BLUETOOTH_GATT_EVENT_HANDLE value) => (ulong)(value.Value);
 
         public static explicit operator BLUETOOTH_GATT_EVENT_HANDLE(nuint value) => new BLUETOOTH_GATT_EVENT_HANDLE((nint)(value));
 

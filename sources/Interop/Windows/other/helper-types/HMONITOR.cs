@@ -31,19 +31,19 @@ namespace TerraFX.Interop
 
         public static explicit operator HMONITOR(byte value) => new HMONITOR((nint)(value));
 
-        public static implicit operator byte(HMONITOR value) => (byte)(value.Value);
+        public static explicit operator byte(HMONITOR value) => (byte)(value.Value);
 
         public static explicit operator HMONITOR(short value) => new HMONITOR((nint)(value));
 
-        public static implicit operator short(HMONITOR value) => (short)(value.Value);
+        public static explicit operator short(HMONITOR value) => (short)(value.Value);
 
         public static explicit operator HMONITOR(int value) => new HMONITOR((nint)(value));
 
-        public static implicit operator int(HMONITOR value) => (int)(value.Value);
+        public static explicit operator int(HMONITOR value) => (int)(value.Value);
 
         public static explicit operator HMONITOR(long value) => new HMONITOR((nint)(value));
 
-        public static explicit operator long(HMONITOR value) => (long)(value.Value);
+        public static implicit operator long(HMONITOR value) => (long)(value.Value);
 
         public static explicit operator HMONITOR(nint value) => new HMONITOR((nint)(value));
 
@@ -51,19 +51,19 @@ namespace TerraFX.Interop
 
         public static explicit operator HMONITOR(sbyte value) => new HMONITOR((nint)(value));
 
-        public static implicit operator sbyte(HMONITOR value) => (sbyte)(value.Value);
+        public static explicit operator sbyte(HMONITOR value) => (sbyte)(value.Value);
 
         public static explicit operator HMONITOR(ushort value) => new HMONITOR((nint)(value));
 
-        public static implicit operator ushort(HMONITOR value) => (ushort)(value.Value);
+        public static explicit operator ushort(HMONITOR value) => (ushort)(value.Value);
 
         public static explicit operator HMONITOR(uint value) => new HMONITOR((nint)(value));
 
-        public static implicit operator uint(HMONITOR value) => (uint)(value.Value);
+        public static explicit operator uint(HMONITOR value) => (uint)(value.Value);
 
         public static explicit operator HMONITOR(ulong value) => new HMONITOR((nint)(value));
 
-        public static explicit operator ulong(HMONITOR value) => (ulong)(value.Value);
+        public static implicit operator ulong(HMONITOR value) => (ulong)(value.Value);
 
         public static explicit operator HMONITOR(nuint value) => new HMONITOR((nint)(value));
 

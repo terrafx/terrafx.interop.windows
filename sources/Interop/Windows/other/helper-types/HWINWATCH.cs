@@ -31,19 +31,19 @@ namespace TerraFX.Interop
 
         public static explicit operator HWINWATCH(byte value) => new HWINWATCH((nint)(value));
 
-        public static implicit operator byte(HWINWATCH value) => (byte)(value.Value);
+        public static explicit operator byte(HWINWATCH value) => (byte)(value.Value);
 
         public static explicit operator HWINWATCH(short value) => new HWINWATCH((nint)(value));
 
-        public static implicit operator short(HWINWATCH value) => (short)(value.Value);
+        public static explicit operator short(HWINWATCH value) => (short)(value.Value);
 
         public static explicit operator HWINWATCH(int value) => new HWINWATCH((nint)(value));
 
-        public static implicit operator int(HWINWATCH value) => (int)(value.Value);
+        public static explicit operator int(HWINWATCH value) => (int)(value.Value);
 
         public static explicit operator HWINWATCH(long value) => new HWINWATCH((nint)(value));
 
-        public static explicit operator long(HWINWATCH value) => (long)(value.Value);
+        public static implicit operator long(HWINWATCH value) => (long)(value.Value);
 
         public static explicit operator HWINWATCH(nint value) => new HWINWATCH((nint)(value));
 
@@ -51,19 +51,19 @@ namespace TerraFX.Interop
 
         public static explicit operator HWINWATCH(sbyte value) => new HWINWATCH((nint)(value));
 
-        public static implicit operator sbyte(HWINWATCH value) => (sbyte)(value.Value);
+        public static explicit operator sbyte(HWINWATCH value) => (sbyte)(value.Value);
 
         public static explicit operator HWINWATCH(ushort value) => new HWINWATCH((nint)(value));
 
-        public static implicit operator ushort(HWINWATCH value) => (ushort)(value.Value);
+        public static explicit operator ushort(HWINWATCH value) => (ushort)(value.Value);
 
         public static explicit operator HWINWATCH(uint value) => new HWINWATCH((nint)(value));
 
-        public static implicit operator uint(HWINWATCH value) => (uint)(value.Value);
+        public static explicit operator uint(HWINWATCH value) => (uint)(value.Value);
 
         public static explicit operator HWINWATCH(ulong value) => new HWINWATCH((nint)(value));
 
-        public static explicit operator ulong(HWINWATCH value) => (ulong)(value.Value);
+        public static implicit operator ulong(HWINWATCH value) => (ulong)(value.Value);
 
         public static explicit operator HWINWATCH(nuint value) => new HWINWATCH((nint)(value));
 

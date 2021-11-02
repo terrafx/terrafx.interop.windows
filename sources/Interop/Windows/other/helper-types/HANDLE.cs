@@ -27,19 +27,19 @@ namespace TerraFX.Interop
 
         public static explicit operator HANDLE(byte value) => new HANDLE((nint)(value));
 
-        public static implicit operator byte(HANDLE value) => (byte)(value.Value);
+        public static explicit operator byte(HANDLE value) => (byte)(value.Value);
 
         public static explicit operator HANDLE(short value) => new HANDLE((nint)(value));
 
-        public static implicit operator short(HANDLE value) => (short)(value.Value);
+        public static explicit operator short(HANDLE value) => (short)(value.Value);
 
         public static explicit operator HANDLE(int value) => new HANDLE((nint)(value));
 
-        public static implicit operator int(HANDLE value) => (int)(value.Value);
+        public static explicit operator int(HANDLE value) => (int)(value.Value);
 
         public static explicit operator HANDLE(long value) => new HANDLE((nint)(value));
 
-        public static explicit operator long(HANDLE value) => (long)(value.Value);
+        public static implicit operator long(HANDLE value) => (long)(value.Value);
 
         public static explicit operator HANDLE(nint value) => new HANDLE((nint)(value));
 
@@ -47,19 +47,19 @@ namespace TerraFX.Interop
 
         public static explicit operator HANDLE(sbyte value) => new HANDLE((nint)(value));
 
-        public static implicit operator sbyte(HANDLE value) => (sbyte)(value.Value);
+        public static explicit operator sbyte(HANDLE value) => (sbyte)(value.Value);
 
         public static explicit operator HANDLE(ushort value) => new HANDLE((nint)(value));
 
-        public static implicit operator ushort(HANDLE value) => (ushort)(value.Value);
+        public static explicit operator ushort(HANDLE value) => (ushort)(value.Value);
 
         public static explicit operator HANDLE(uint value) => new HANDLE((nint)(value));
 
-        public static implicit operator uint(HANDLE value) => (uint)(value.Value);
+        public static explicit operator uint(HANDLE value) => (uint)(value.Value);
 
         public static explicit operator HANDLE(ulong value) => new HANDLE((nint)(value));
 
-        public static explicit operator ulong(HANDLE value) => (ulong)(value.Value);
+        public static implicit operator ulong(HANDLE value) => (ulong)(value.Value);
 
         public static explicit operator HANDLE(nuint value) => new HANDLE((nint)(value));
 

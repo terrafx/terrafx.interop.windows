@@ -31,19 +31,19 @@ namespace TerraFX.Interop
 
         public static explicit operator HCMTRANSFORM(byte value) => new HCMTRANSFORM((nint)(value));
 
-        public static implicit operator byte(HCMTRANSFORM value) => (byte)(value.Value);
+        public static explicit operator byte(HCMTRANSFORM value) => (byte)(value.Value);
 
         public static explicit operator HCMTRANSFORM(short value) => new HCMTRANSFORM((nint)(value));
 
-        public static implicit operator short(HCMTRANSFORM value) => (short)(value.Value);
+        public static explicit operator short(HCMTRANSFORM value) => (short)(value.Value);
 
         public static explicit operator HCMTRANSFORM(int value) => new HCMTRANSFORM((nint)(value));
 
-        public static implicit operator int(HCMTRANSFORM value) => (int)(value.Value);
+        public static explicit operator int(HCMTRANSFORM value) => (int)(value.Value);
 
         public static explicit operator HCMTRANSFORM(long value) => new HCMTRANSFORM((nint)(value));
 
-        public static explicit operator long(HCMTRANSFORM value) => (long)(value.Value);
+        public static implicit operator long(HCMTRANSFORM value) => (long)(value.Value);
 
         public static explicit operator HCMTRANSFORM(nint value) => new HCMTRANSFORM((nint)(value));
 
@@ -51,19 +51,19 @@ namespace TerraFX.Interop
 
         public static explicit operator HCMTRANSFORM(sbyte value) => new HCMTRANSFORM((nint)(value));
 
-        public static implicit operator sbyte(HCMTRANSFORM value) => (sbyte)(value.Value);
+        public static explicit operator sbyte(HCMTRANSFORM value) => (sbyte)(value.Value);
 
         public static explicit operator HCMTRANSFORM(ushort value) => new HCMTRANSFORM((nint)(value));
 
-        public static implicit operator ushort(HCMTRANSFORM value) => (ushort)(value.Value);
+        public static explicit operator ushort(HCMTRANSFORM value) => (ushort)(value.Value);
 
         public static explicit operator HCMTRANSFORM(uint value) => new HCMTRANSFORM((nint)(value));
 
-        public static implicit operator uint(HCMTRANSFORM value) => (uint)(value.Value);
+        public static explicit operator uint(HCMTRANSFORM value) => (uint)(value.Value);
 
         public static explicit operator HCMTRANSFORM(ulong value) => new HCMTRANSFORM((nint)(value));
 
-        public static explicit operator ulong(HCMTRANSFORM value) => (ulong)(value.Value);
+        public static implicit operator ulong(HCMTRANSFORM value) => (ulong)(value.Value);
 
         public static explicit operator HCMTRANSFORM(nuint value) => new HCMTRANSFORM((nint)(value));
 

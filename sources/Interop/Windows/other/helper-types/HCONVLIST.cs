@@ -31,19 +31,19 @@ namespace TerraFX.Interop
 
         public static explicit operator HCONVLIST(byte value) => new HCONVLIST((nint)(value));
 
-        public static implicit operator byte(HCONVLIST value) => (byte)(value.Value);
+        public static explicit operator byte(HCONVLIST value) => (byte)(value.Value);
 
         public static explicit operator HCONVLIST(short value) => new HCONVLIST((nint)(value));
 
-        public static implicit operator short(HCONVLIST value) => (short)(value.Value);
+        public static explicit operator short(HCONVLIST value) => (short)(value.Value);
 
         public static explicit operator HCONVLIST(int value) => new HCONVLIST((nint)(value));
 
-        public static implicit operator int(HCONVLIST value) => (int)(value.Value);
+        public static explicit operator int(HCONVLIST value) => (int)(value.Value);
 
         public static explicit operator HCONVLIST(long value) => new HCONVLIST((nint)(value));
 
-        public static explicit operator long(HCONVLIST value) => (long)(value.Value);
+        public static implicit operator long(HCONVLIST value) => (long)(value.Value);
 
         public static explicit operator HCONVLIST(nint value) => new HCONVLIST((nint)(value));
 
@@ -51,19 +51,19 @@ namespace TerraFX.Interop
 
         public static explicit operator HCONVLIST(sbyte value) => new HCONVLIST((nint)(value));
 
-        public static implicit operator sbyte(HCONVLIST value) => (sbyte)(value.Value);
+        public static explicit operator sbyte(HCONVLIST value) => (sbyte)(value.Value);
 
         public static explicit operator HCONVLIST(ushort value) => new HCONVLIST((nint)(value));
 
-        public static implicit operator ushort(HCONVLIST value) => (ushort)(value.Value);
+        public static explicit operator ushort(HCONVLIST value) => (ushort)(value.Value);
 
         public static explicit operator HCONVLIST(uint value) => new HCONVLIST((nint)(value));
 
-        public static implicit operator uint(HCONVLIST value) => (uint)(value.Value);
+        public static explicit operator uint(HCONVLIST value) => (uint)(value.Value);
 
         public static explicit operator HCONVLIST(ulong value) => new HCONVLIST((nint)(value));
 
-        public static explicit operator ulong(HCONVLIST value) => (ulong)(value.Value);
+        public static implicit operator ulong(HCONVLIST value) => (ulong)(value.Value);
 
         public static explicit operator HCONVLIST(nuint value) => new HCONVLIST((nint)(value));
 

@@ -31,19 +31,19 @@ namespace TerraFX.Interop
 
         public static explicit operator NFC_REMOTE_DEV_HANDLE(byte value) => new NFC_REMOTE_DEV_HANDLE((nint)(value));
 
-        public static implicit operator byte(NFC_REMOTE_DEV_HANDLE value) => (byte)(value.Value);
+        public static explicit operator byte(NFC_REMOTE_DEV_HANDLE value) => (byte)(value.Value);
 
         public static explicit operator NFC_REMOTE_DEV_HANDLE(short value) => new NFC_REMOTE_DEV_HANDLE((nint)(value));
 
-        public static implicit operator short(NFC_REMOTE_DEV_HANDLE value) => (short)(value.Value);
+        public static explicit operator short(NFC_REMOTE_DEV_HANDLE value) => (short)(value.Value);
 
         public static explicit operator NFC_REMOTE_DEV_HANDLE(int value) => new NFC_REMOTE_DEV_HANDLE((nint)(value));
 
-        public static implicit operator int(NFC_REMOTE_DEV_HANDLE value) => (int)(value.Value);
+        public static explicit operator int(NFC_REMOTE_DEV_HANDLE value) => (int)(value.Value);
 
         public static explicit operator NFC_REMOTE_DEV_HANDLE(long value) => new NFC_REMOTE_DEV_HANDLE((nint)(value));
 
-        public static explicit operator long(NFC_REMOTE_DEV_HANDLE value) => (long)(value.Value);
+        public static implicit operator long(NFC_REMOTE_DEV_HANDLE value) => (long)(value.Value);
 
         public static explicit operator NFC_REMOTE_DEV_HANDLE(nint value) => new NFC_REMOTE_DEV_HANDLE((nint)(value));
 
@@ -51,19 +51,19 @@ namespace TerraFX.Interop
 
         public static explicit operator NFC_REMOTE_DEV_HANDLE(sbyte value) => new NFC_REMOTE_DEV_HANDLE((nint)(value));
 
-        public static implicit operator sbyte(NFC_REMOTE_DEV_HANDLE value) => (sbyte)(value.Value);
+        public static explicit operator sbyte(NFC_REMOTE_DEV_HANDLE value) => (sbyte)(value.Value);
 
         public static explicit operator NFC_REMOTE_DEV_HANDLE(ushort value) => new NFC_REMOTE_DEV_HANDLE((nint)(value));
 
-        public static implicit operator ushort(NFC_REMOTE_DEV_HANDLE value) => (ushort)(value.Value);
+        public static explicit operator ushort(NFC_REMOTE_DEV_HANDLE value) => (ushort)(value.Value);
 
         public static explicit operator NFC_REMOTE_DEV_HANDLE(uint value) => new NFC_REMOTE_DEV_HANDLE((nint)(value));
 
-        public static implicit operator uint(NFC_REMOTE_DEV_HANDLE value) => (uint)(value.Value);
+        public static explicit operator uint(NFC_REMOTE_DEV_HANDLE value) => (uint)(value.Value);
 
         public static explicit operator NFC_REMOTE_DEV_HANDLE(ulong value) => new NFC_REMOTE_DEV_HANDLE((nint)(value));
 
-        public static explicit operator ulong(NFC_REMOTE_DEV_HANDLE value) => (ulong)(value.Value);
+        public static implicit operator ulong(NFC_REMOTE_DEV_HANDLE value) => (ulong)(value.Value);
 
         public static explicit operator NFC_REMOTE_DEV_HANDLE(nuint value) => new NFC_REMOTE_DEV_HANDLE((nint)(value));
 

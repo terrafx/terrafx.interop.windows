@@ -31,19 +31,19 @@ namespace TerraFX.Interop
 
         public static explicit operator HUIAPATTERNOBJECT(byte value) => new HUIAPATTERNOBJECT((nint)(value));
 
-        public static implicit operator byte(HUIAPATTERNOBJECT value) => (byte)(value.Value);
+        public static explicit operator byte(HUIAPATTERNOBJECT value) => (byte)(value.Value);
 
         public static explicit operator HUIAPATTERNOBJECT(short value) => new HUIAPATTERNOBJECT((nint)(value));
 
-        public static implicit operator short(HUIAPATTERNOBJECT value) => (short)(value.Value);
+        public static explicit operator short(HUIAPATTERNOBJECT value) => (short)(value.Value);
 
         public static explicit operator HUIAPATTERNOBJECT(int value) => new HUIAPATTERNOBJECT((nint)(value));
 
-        public static implicit operator int(HUIAPATTERNOBJECT value) => (int)(value.Value);
+        public static explicit operator int(HUIAPATTERNOBJECT value) => (int)(value.Value);
 
         public static explicit operator HUIAPATTERNOBJECT(long value) => new HUIAPATTERNOBJECT((nint)(value));
 
-        public static explicit operator long(HUIAPATTERNOBJECT value) => (long)(value.Value);
+        public static implicit operator long(HUIAPATTERNOBJECT value) => (long)(value.Value);
 
         public static explicit operator HUIAPATTERNOBJECT(nint value) => new HUIAPATTERNOBJECT((nint)(value));
 
@@ -51,19 +51,19 @@ namespace TerraFX.Interop
 
         public static explicit operator HUIAPATTERNOBJECT(sbyte value) => new HUIAPATTERNOBJECT((nint)(value));
 
-        public static implicit operator sbyte(HUIAPATTERNOBJECT value) => (sbyte)(value.Value);
+        public static explicit operator sbyte(HUIAPATTERNOBJECT value) => (sbyte)(value.Value);
 
         public static explicit operator HUIAPATTERNOBJECT(ushort value) => new HUIAPATTERNOBJECT((nint)(value));
 
-        public static implicit operator ushort(HUIAPATTERNOBJECT value) => (ushort)(value.Value);
+        public static explicit operator ushort(HUIAPATTERNOBJECT value) => (ushort)(value.Value);
 
         public static explicit operator HUIAPATTERNOBJECT(uint value) => new HUIAPATTERNOBJECT((nint)(value));
 
-        public static implicit operator uint(HUIAPATTERNOBJECT value) => (uint)(value.Value);
+        public static explicit operator uint(HUIAPATTERNOBJECT value) => (uint)(value.Value);
 
         public static explicit operator HUIAPATTERNOBJECT(ulong value) => new HUIAPATTERNOBJECT((nint)(value));
 
-        public static explicit operator ulong(HUIAPATTERNOBJECT value) => (ulong)(value.Value);
+        public static implicit operator ulong(HUIAPATTERNOBJECT value) => (ulong)(value.Value);
 
         public static explicit operator HUIAPATTERNOBJECT(nuint value) => new HUIAPATTERNOBJECT((nint)(value));
 

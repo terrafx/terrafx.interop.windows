@@ -31,19 +31,19 @@ namespace TerraFX.Interop
 
         public static explicit operator HBRUSH(byte value) => new HBRUSH((nint)(value));
 
-        public static implicit operator byte(HBRUSH value) => (byte)(value.Value);
+        public static explicit operator byte(HBRUSH value) => (byte)(value.Value);
 
         public static explicit operator HBRUSH(short value) => new HBRUSH((nint)(value));
 
-        public static implicit operator short(HBRUSH value) => (short)(value.Value);
+        public static explicit operator short(HBRUSH value) => (short)(value.Value);
 
         public static explicit operator HBRUSH(int value) => new HBRUSH((nint)(value));
 
-        public static implicit operator int(HBRUSH value) => (int)(value.Value);
+        public static explicit operator int(HBRUSH value) => (int)(value.Value);
 
         public static explicit operator HBRUSH(long value) => new HBRUSH((nint)(value));
 
-        public static explicit operator long(HBRUSH value) => (long)(value.Value);
+        public static implicit operator long(HBRUSH value) => (long)(value.Value);
 
         public static explicit operator HBRUSH(nint value) => new HBRUSH((nint)(value));
 
@@ -51,19 +51,19 @@ namespace TerraFX.Interop
 
         public static explicit operator HBRUSH(sbyte value) => new HBRUSH((nint)(value));
 
-        public static implicit operator sbyte(HBRUSH value) => (sbyte)(value.Value);
+        public static explicit operator sbyte(HBRUSH value) => (sbyte)(value.Value);
 
         public static explicit operator HBRUSH(ushort value) => new HBRUSH((nint)(value));
 
-        public static implicit operator ushort(HBRUSH value) => (ushort)(value.Value);
+        public static explicit operator ushort(HBRUSH value) => (ushort)(value.Value);
 
         public static explicit operator HBRUSH(uint value) => new HBRUSH((nint)(value));
 
-        public static implicit operator uint(HBRUSH value) => (uint)(value.Value);
+        public static explicit operator uint(HBRUSH value) => (uint)(value.Value);
 
         public static explicit operator HBRUSH(ulong value) => new HBRUSH((nint)(value));
 
-        public static explicit operator ulong(HBRUSH value) => (ulong)(value.Value);
+        public static implicit operator ulong(HBRUSH value) => (ulong)(value.Value);
 
         public static explicit operator HBRUSH(nuint value) => new HBRUSH((nint)(value));
 

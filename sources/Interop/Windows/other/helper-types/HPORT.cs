@@ -31,19 +31,19 @@ namespace TerraFX.Interop
 
         public static explicit operator HPORT(byte value) => new HPORT((nint)(value));
 
-        public static implicit operator byte(HPORT value) => (byte)(value.Value);
+        public static explicit operator byte(HPORT value) => (byte)(value.Value);
 
         public static explicit operator HPORT(short value) => new HPORT((nint)(value));
 
-        public static implicit operator short(HPORT value) => (short)(value.Value);
+        public static explicit operator short(HPORT value) => (short)(value.Value);
 
         public static explicit operator HPORT(int value) => new HPORT((nint)(value));
 
-        public static implicit operator int(HPORT value) => (int)(value.Value);
+        public static explicit operator int(HPORT value) => (int)(value.Value);
 
         public static explicit operator HPORT(long value) => new HPORT((nint)(value));
 
-        public static explicit operator long(HPORT value) => (long)(value.Value);
+        public static implicit operator long(HPORT value) => (long)(value.Value);
 
         public static explicit operator HPORT(nint value) => new HPORT((nint)(value));
 
@@ -51,19 +51,19 @@ namespace TerraFX.Interop
 
         public static explicit operator HPORT(sbyte value) => new HPORT((nint)(value));
 
-        public static implicit operator sbyte(HPORT value) => (sbyte)(value.Value);
+        public static explicit operator sbyte(HPORT value) => (sbyte)(value.Value);
 
         public static explicit operator HPORT(ushort value) => new HPORT((nint)(value));
 
-        public static implicit operator ushort(HPORT value) => (ushort)(value.Value);
+        public static explicit operator ushort(HPORT value) => (ushort)(value.Value);
 
         public static explicit operator HPORT(uint value) => new HPORT((nint)(value));
 
-        public static implicit operator uint(HPORT value) => (uint)(value.Value);
+        public static explicit operator uint(HPORT value) => (uint)(value.Value);
 
         public static explicit operator HPORT(ulong value) => new HPORT((nint)(value));
 
-        public static explicit operator ulong(HPORT value) => (ulong)(value.Value);
+        public static implicit operator ulong(HPORT value) => (ulong)(value.Value);
 
         public static explicit operator HPORT(nuint value) => new HPORT((nint)(value));
 

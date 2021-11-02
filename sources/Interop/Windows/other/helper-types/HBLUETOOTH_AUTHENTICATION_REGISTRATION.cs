@@ -31,19 +31,19 @@ namespace TerraFX.Interop
 
         public static explicit operator HBLUETOOTH_AUTHENTICATION_REGISTRATION(byte value) => new HBLUETOOTH_AUTHENTICATION_REGISTRATION((nint)(value));
 
-        public static implicit operator byte(HBLUETOOTH_AUTHENTICATION_REGISTRATION value) => (byte)(value.Value);
+        public static explicit operator byte(HBLUETOOTH_AUTHENTICATION_REGISTRATION value) => (byte)(value.Value);
 
         public static explicit operator HBLUETOOTH_AUTHENTICATION_REGISTRATION(short value) => new HBLUETOOTH_AUTHENTICATION_REGISTRATION((nint)(value));
 
-        public static implicit operator short(HBLUETOOTH_AUTHENTICATION_REGISTRATION value) => (short)(value.Value);
+        public static explicit operator short(HBLUETOOTH_AUTHENTICATION_REGISTRATION value) => (short)(value.Value);
 
         public static explicit operator HBLUETOOTH_AUTHENTICATION_REGISTRATION(int value) => new HBLUETOOTH_AUTHENTICATION_REGISTRATION((nint)(value));
 
-        public static implicit operator int(HBLUETOOTH_AUTHENTICATION_REGISTRATION value) => (int)(value.Value);
+        public static explicit operator int(HBLUETOOTH_AUTHENTICATION_REGISTRATION value) => (int)(value.Value);
 
         public static explicit operator HBLUETOOTH_AUTHENTICATION_REGISTRATION(long value) => new HBLUETOOTH_AUTHENTICATION_REGISTRATION((nint)(value));
 
-        public static explicit operator long(HBLUETOOTH_AUTHENTICATION_REGISTRATION value) => (long)(value.Value);
+        public static implicit operator long(HBLUETOOTH_AUTHENTICATION_REGISTRATION value) => (long)(value.Value);
 
         public static explicit operator HBLUETOOTH_AUTHENTICATION_REGISTRATION(nint value) => new HBLUETOOTH_AUTHENTICATION_REGISTRATION((nint)(value));
 
@@ -51,19 +51,19 @@ namespace TerraFX.Interop
 
         public static explicit operator HBLUETOOTH_AUTHENTICATION_REGISTRATION(sbyte value) => new HBLUETOOTH_AUTHENTICATION_REGISTRATION((nint)(value));
 
-        public static implicit operator sbyte(HBLUETOOTH_AUTHENTICATION_REGISTRATION value) => (sbyte)(value.Value);
+        public static explicit operator sbyte(HBLUETOOTH_AUTHENTICATION_REGISTRATION value) => (sbyte)(value.Value);
 
         public static explicit operator HBLUETOOTH_AUTHENTICATION_REGISTRATION(ushort value) => new HBLUETOOTH_AUTHENTICATION_REGISTRATION((nint)(value));
 
-        public static implicit operator ushort(HBLUETOOTH_AUTHENTICATION_REGISTRATION value) => (ushort)(value.Value);
+        public static explicit operator ushort(HBLUETOOTH_AUTHENTICATION_REGISTRATION value) => (ushort)(value.Value);
 
         public static explicit operator HBLUETOOTH_AUTHENTICATION_REGISTRATION(uint value) => new HBLUETOOTH_AUTHENTICATION_REGISTRATION((nint)(value));
 
-        public static implicit operator uint(HBLUETOOTH_AUTHENTICATION_REGISTRATION value) => (uint)(value.Value);
+        public static explicit operator uint(HBLUETOOTH_AUTHENTICATION_REGISTRATION value) => (uint)(value.Value);
 
         public static explicit operator HBLUETOOTH_AUTHENTICATION_REGISTRATION(ulong value) => new HBLUETOOTH_AUTHENTICATION_REGISTRATION((nint)(value));
 
-        public static explicit operator ulong(HBLUETOOTH_AUTHENTICATION_REGISTRATION value) => (ulong)(value.Value);
+        public static implicit operator ulong(HBLUETOOTH_AUTHENTICATION_REGISTRATION value) => (ulong)(value.Value);
 
         public static explicit operator HBLUETOOTH_AUTHENTICATION_REGISTRATION(nuint value) => new HBLUETOOTH_AUTHENTICATION_REGISTRATION((nint)(value));
 

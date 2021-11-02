@@ -31,19 +31,19 @@ namespace TerraFX.Interop
 
         public static explicit operator CO_DEVICE_CATALOG_COOKIE(byte value) => new CO_DEVICE_CATALOG_COOKIE((nint)(value));
 
-        public static implicit operator byte(CO_DEVICE_CATALOG_COOKIE value) => (byte)(value.Value);
+        public static explicit operator byte(CO_DEVICE_CATALOG_COOKIE value) => (byte)(value.Value);
 
         public static explicit operator CO_DEVICE_CATALOG_COOKIE(short value) => new CO_DEVICE_CATALOG_COOKIE((nint)(value));
 
-        public static implicit operator short(CO_DEVICE_CATALOG_COOKIE value) => (short)(value.Value);
+        public static explicit operator short(CO_DEVICE_CATALOG_COOKIE value) => (short)(value.Value);
 
         public static explicit operator CO_DEVICE_CATALOG_COOKIE(int value) => new CO_DEVICE_CATALOG_COOKIE((nint)(value));
 
-        public static implicit operator int(CO_DEVICE_CATALOG_COOKIE value) => (int)(value.Value);
+        public static explicit operator int(CO_DEVICE_CATALOG_COOKIE value) => (int)(value.Value);
 
         public static explicit operator CO_DEVICE_CATALOG_COOKIE(long value) => new CO_DEVICE_CATALOG_COOKIE((nint)(value));
 
-        public static explicit operator long(CO_DEVICE_CATALOG_COOKIE value) => (long)(value.Value);
+        public static implicit operator long(CO_DEVICE_CATALOG_COOKIE value) => (long)(value.Value);
 
         public static explicit operator CO_DEVICE_CATALOG_COOKIE(nint value) => new CO_DEVICE_CATALOG_COOKIE((nint)(value));
 
@@ -51,19 +51,19 @@ namespace TerraFX.Interop
 
         public static explicit operator CO_DEVICE_CATALOG_COOKIE(sbyte value) => new CO_DEVICE_CATALOG_COOKIE((nint)(value));
 
-        public static implicit operator sbyte(CO_DEVICE_CATALOG_COOKIE value) => (sbyte)(value.Value);
+        public static explicit operator sbyte(CO_DEVICE_CATALOG_COOKIE value) => (sbyte)(value.Value);
 
         public static explicit operator CO_DEVICE_CATALOG_COOKIE(ushort value) => new CO_DEVICE_CATALOG_COOKIE((nint)(value));
 
-        public static implicit operator ushort(CO_DEVICE_CATALOG_COOKIE value) => (ushort)(value.Value);
+        public static explicit operator ushort(CO_DEVICE_CATALOG_COOKIE value) => (ushort)(value.Value);
 
         public static explicit operator CO_DEVICE_CATALOG_COOKIE(uint value) => new CO_DEVICE_CATALOG_COOKIE((nint)(value));
 
-        public static implicit operator uint(CO_DEVICE_CATALOG_COOKIE value) => (uint)(value.Value);
+        public static explicit operator uint(CO_DEVICE_CATALOG_COOKIE value) => (uint)(value.Value);
 
         public static explicit operator CO_DEVICE_CATALOG_COOKIE(ulong value) => new CO_DEVICE_CATALOG_COOKIE((nint)(value));
 
-        public static explicit operator ulong(CO_DEVICE_CATALOG_COOKIE value) => (ulong)(value.Value);
+        public static implicit operator ulong(CO_DEVICE_CATALOG_COOKIE value) => (ulong)(value.Value);
 
         public static explicit operator CO_DEVICE_CATALOG_COOKIE(nuint value) => new CO_DEVICE_CATALOG_COOKIE((nint)(value));
 

@@ -31,19 +31,19 @@ namespace TerraFX.Interop
 
         public static explicit operator HMIXEROBJ(byte value) => new HMIXEROBJ((nint)(value));
 
-        public static implicit operator byte(HMIXEROBJ value) => (byte)(value.Value);
+        public static explicit operator byte(HMIXEROBJ value) => (byte)(value.Value);
 
         public static explicit operator HMIXEROBJ(short value) => new HMIXEROBJ((nint)(value));
 
-        public static implicit operator short(HMIXEROBJ value) => (short)(value.Value);
+        public static explicit operator short(HMIXEROBJ value) => (short)(value.Value);
 
         public static explicit operator HMIXEROBJ(int value) => new HMIXEROBJ((nint)(value));
 
-        public static implicit operator int(HMIXEROBJ value) => (int)(value.Value);
+        public static explicit operator int(HMIXEROBJ value) => (int)(value.Value);
 
         public static explicit operator HMIXEROBJ(long value) => new HMIXEROBJ((nint)(value));
 
-        public static explicit operator long(HMIXEROBJ value) => (long)(value.Value);
+        public static implicit operator long(HMIXEROBJ value) => (long)(value.Value);
 
         public static explicit operator HMIXEROBJ(nint value) => new HMIXEROBJ((nint)(value));
 
@@ -51,19 +51,19 @@ namespace TerraFX.Interop
 
         public static explicit operator HMIXEROBJ(sbyte value) => new HMIXEROBJ((nint)(value));
 
-        public static implicit operator sbyte(HMIXEROBJ value) => (sbyte)(value.Value);
+        public static explicit operator sbyte(HMIXEROBJ value) => (sbyte)(value.Value);
 
         public static explicit operator HMIXEROBJ(ushort value) => new HMIXEROBJ((nint)(value));
 
-        public static implicit operator ushort(HMIXEROBJ value) => (ushort)(value.Value);
+        public static explicit operator ushort(HMIXEROBJ value) => (ushort)(value.Value);
 
         public static explicit operator HMIXEROBJ(uint value) => new HMIXEROBJ((nint)(value));
 
-        public static implicit operator uint(HMIXEROBJ value) => (uint)(value.Value);
+        public static explicit operator uint(HMIXEROBJ value) => (uint)(value.Value);
 
         public static explicit operator HMIXEROBJ(ulong value) => new HMIXEROBJ((nint)(value));
 
-        public static explicit operator ulong(HMIXEROBJ value) => (ulong)(value.Value);
+        public static implicit operator ulong(HMIXEROBJ value) => (ulong)(value.Value);
 
         public static explicit operator HMIXEROBJ(nuint value) => new HMIXEROBJ((nint)(value));
 

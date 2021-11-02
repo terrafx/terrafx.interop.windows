@@ -31,19 +31,19 @@ namespace TerraFX.Interop
 
         public static explicit operator HDRVOBJ(byte value) => new HDRVOBJ((nint)(value));
 
-        public static implicit operator byte(HDRVOBJ value) => (byte)(value.Value);
+        public static explicit operator byte(HDRVOBJ value) => (byte)(value.Value);
 
         public static explicit operator HDRVOBJ(short value) => new HDRVOBJ((nint)(value));
 
-        public static implicit operator short(HDRVOBJ value) => (short)(value.Value);
+        public static explicit operator short(HDRVOBJ value) => (short)(value.Value);
 
         public static explicit operator HDRVOBJ(int value) => new HDRVOBJ((nint)(value));
 
-        public static implicit operator int(HDRVOBJ value) => (int)(value.Value);
+        public static explicit operator int(HDRVOBJ value) => (int)(value.Value);
 
         public static explicit operator HDRVOBJ(long value) => new HDRVOBJ((nint)(value));
 
-        public static explicit operator long(HDRVOBJ value) => (long)(value.Value);
+        public static implicit operator long(HDRVOBJ value) => (long)(value.Value);
 
         public static explicit operator HDRVOBJ(nint value) => new HDRVOBJ((nint)(value));
 
@@ -51,19 +51,19 @@ namespace TerraFX.Interop
 
         public static explicit operator HDRVOBJ(sbyte value) => new HDRVOBJ((nint)(value));
 
-        public static implicit operator sbyte(HDRVOBJ value) => (sbyte)(value.Value);
+        public static explicit operator sbyte(HDRVOBJ value) => (sbyte)(value.Value);
 
         public static explicit operator HDRVOBJ(ushort value) => new HDRVOBJ((nint)(value));
 
-        public static implicit operator ushort(HDRVOBJ value) => (ushort)(value.Value);
+        public static explicit operator ushort(HDRVOBJ value) => (ushort)(value.Value);
 
         public static explicit operator HDRVOBJ(uint value) => new HDRVOBJ((nint)(value));
 
-        public static implicit operator uint(HDRVOBJ value) => (uint)(value.Value);
+        public static explicit operator uint(HDRVOBJ value) => (uint)(value.Value);
 
         public static explicit operator HDRVOBJ(ulong value) => new HDRVOBJ((nint)(value));
 
-        public static explicit operator ulong(HDRVOBJ value) => (ulong)(value.Value);
+        public static implicit operator ulong(HDRVOBJ value) => (ulong)(value.Value);
 
         public static explicit operator HDRVOBJ(nuint value) => new HDRVOBJ((nint)(value));
 

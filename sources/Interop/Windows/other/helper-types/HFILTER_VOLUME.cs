@@ -31,19 +31,19 @@ namespace TerraFX.Interop
 
         public static explicit operator HFILTER_VOLUME(byte value) => new HFILTER_VOLUME((nint)(value));
 
-        public static implicit operator byte(HFILTER_VOLUME value) => (byte)(value.Value);
+        public static explicit operator byte(HFILTER_VOLUME value) => (byte)(value.Value);
 
         public static explicit operator HFILTER_VOLUME(short value) => new HFILTER_VOLUME((nint)(value));
 
-        public static implicit operator short(HFILTER_VOLUME value) => (short)(value.Value);
+        public static explicit operator short(HFILTER_VOLUME value) => (short)(value.Value);
 
         public static explicit operator HFILTER_VOLUME(int value) => new HFILTER_VOLUME((nint)(value));
 
-        public static implicit operator int(HFILTER_VOLUME value) => (int)(value.Value);
+        public static explicit operator int(HFILTER_VOLUME value) => (int)(value.Value);
 
         public static explicit operator HFILTER_VOLUME(long value) => new HFILTER_VOLUME((nint)(value));
 
-        public static explicit operator long(HFILTER_VOLUME value) => (long)(value.Value);
+        public static implicit operator long(HFILTER_VOLUME value) => (long)(value.Value);
 
         public static explicit operator HFILTER_VOLUME(nint value) => new HFILTER_VOLUME((nint)(value));
 
@@ -51,19 +51,19 @@ namespace TerraFX.Interop
 
         public static explicit operator HFILTER_VOLUME(sbyte value) => new HFILTER_VOLUME((nint)(value));
 
-        public static implicit operator sbyte(HFILTER_VOLUME value) => (sbyte)(value.Value);
+        public static explicit operator sbyte(HFILTER_VOLUME value) => (sbyte)(value.Value);
 
         public static explicit operator HFILTER_VOLUME(ushort value) => new HFILTER_VOLUME((nint)(value));
 
-        public static implicit operator ushort(HFILTER_VOLUME value) => (ushort)(value.Value);
+        public static explicit operator ushort(HFILTER_VOLUME value) => (ushort)(value.Value);
 
         public static explicit operator HFILTER_VOLUME(uint value) => new HFILTER_VOLUME((nint)(value));
 
-        public static implicit operator uint(HFILTER_VOLUME value) => (uint)(value.Value);
+        public static explicit operator uint(HFILTER_VOLUME value) => (uint)(value.Value);
 
         public static explicit operator HFILTER_VOLUME(ulong value) => new HFILTER_VOLUME((nint)(value));
 
-        public static explicit operator ulong(HFILTER_VOLUME value) => (ulong)(value.Value);
+        public static implicit operator ulong(HFILTER_VOLUME value) => (ulong)(value.Value);
 
         public static explicit operator HFILTER_VOLUME(nuint value) => new HFILTER_VOLUME((nint)(value));
 

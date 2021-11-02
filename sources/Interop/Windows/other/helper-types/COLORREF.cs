@@ -17,45 +17,45 @@ namespace TerraFX.Interop
 
         public static bool operator !=(COLORREF left, COLORREF right) => left.Value != right.Value;
 
-        public static explicit operator COLORREF(byte value) => new COLORREF((uint)(value));
+        public static implicit operator COLORREF(byte value) => new COLORREF((uint)(value));
 
-        public static implicit operator byte(COLORREF value) => (byte)(value.Value);
+        public static explicit operator byte(COLORREF value) => (byte)(value.Value);
 
-        public static explicit operator COLORREF(short value) => new COLORREF((uint)(value));
+        public static implicit operator COLORREF(short value) => new COLORREF((uint)(value));
 
-        public static implicit operator short(COLORREF value) => (short)(value.Value);
+        public static explicit operator short(COLORREF value) => (short)(value.Value);
 
         public static explicit operator COLORREF(int value) => new COLORREF((uint)(value));
 
         public static explicit operator int(COLORREF value) => (int)(value.Value);
 
-        public static implicit operator COLORREF(long value) => new COLORREF((uint)(value));
+        public static explicit operator COLORREF(long value) => new COLORREF((uint)(value));
 
-        public static explicit operator long(COLORREF value) => (long)(value.Value);
+        public static implicit operator long(COLORREF value) => (long)(value.Value);
 
-        public static implicit operator COLORREF(nint value) => new COLORREF((uint)(value));
+        public static explicit operator COLORREF(nint value) => new COLORREF((uint)(value));
 
-        public static explicit operator nint(COLORREF value) => (nint)(value.Value);
+        public static implicit operator nint(COLORREF value) => (nint)(value.Value);
 
-        public static explicit operator COLORREF(sbyte value) => new COLORREF((uint)(value));
+        public static implicit operator COLORREF(sbyte value) => new COLORREF((uint)(value));
 
-        public static implicit operator sbyte(COLORREF value) => (sbyte)(value.Value);
+        public static explicit operator sbyte(COLORREF value) => (sbyte)(value.Value);
 
-        public static explicit operator COLORREF(ushort value) => new COLORREF((uint)(value));
+        public static implicit operator COLORREF(ushort value) => new COLORREF((uint)(value));
 
-        public static implicit operator ushort(COLORREF value) => (ushort)(value.Value);
+        public static explicit operator ushort(COLORREF value) => (ushort)(value.Value);
 
         public static implicit operator COLORREF(uint value) => new COLORREF((uint)(value));
 
         public static implicit operator uint(COLORREF value) => (uint)(value.Value);
 
-        public static implicit operator COLORREF(ulong value) => new COLORREF((uint)(value));
+        public static explicit operator COLORREF(ulong value) => new COLORREF((uint)(value));
 
-        public static explicit operator ulong(COLORREF value) => (ulong)(value.Value);
+        public static implicit operator ulong(COLORREF value) => (ulong)(value.Value);
 
-        public static implicit operator COLORREF(nuint value) => new COLORREF((uint)(value));
+        public static explicit operator COLORREF(nuint value) => new COLORREF((uint)(value));
 
-        public static explicit operator nuint(COLORREF value) => (nuint)(value.Value);
+        public static implicit operator nuint(COLORREF value) => (nuint)(value.Value);
 
         public override bool Equals(object? obj) => (obj is COLORREF other) && Equals(other);
 

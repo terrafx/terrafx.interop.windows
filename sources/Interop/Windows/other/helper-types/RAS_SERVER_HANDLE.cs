@@ -31,19 +31,19 @@ namespace TerraFX.Interop
 
         public static explicit operator RAS_SERVER_HANDLE(byte value) => new RAS_SERVER_HANDLE((nint)(value));
 
-        public static implicit operator byte(RAS_SERVER_HANDLE value) => (byte)(value.Value);
+        public static explicit operator byte(RAS_SERVER_HANDLE value) => (byte)(value.Value);
 
         public static explicit operator RAS_SERVER_HANDLE(short value) => new RAS_SERVER_HANDLE((nint)(value));
 
-        public static implicit operator short(RAS_SERVER_HANDLE value) => (short)(value.Value);
+        public static explicit operator short(RAS_SERVER_HANDLE value) => (short)(value.Value);
 
         public static explicit operator RAS_SERVER_HANDLE(int value) => new RAS_SERVER_HANDLE((nint)(value));
 
-        public static implicit operator int(RAS_SERVER_HANDLE value) => (int)(value.Value);
+        public static explicit operator int(RAS_SERVER_HANDLE value) => (int)(value.Value);
 
         public static explicit operator RAS_SERVER_HANDLE(long value) => new RAS_SERVER_HANDLE((nint)(value));
 
-        public static explicit operator long(RAS_SERVER_HANDLE value) => (long)(value.Value);
+        public static implicit operator long(RAS_SERVER_HANDLE value) => (long)(value.Value);
 
         public static explicit operator RAS_SERVER_HANDLE(nint value) => new RAS_SERVER_HANDLE((nint)(value));
 
@@ -51,19 +51,19 @@ namespace TerraFX.Interop
 
         public static explicit operator RAS_SERVER_HANDLE(sbyte value) => new RAS_SERVER_HANDLE((nint)(value));
 
-        public static implicit operator sbyte(RAS_SERVER_HANDLE value) => (sbyte)(value.Value);
+        public static explicit operator sbyte(RAS_SERVER_HANDLE value) => (sbyte)(value.Value);
 
         public static explicit operator RAS_SERVER_HANDLE(ushort value) => new RAS_SERVER_HANDLE((nint)(value));
 
-        public static implicit operator ushort(RAS_SERVER_HANDLE value) => (ushort)(value.Value);
+        public static explicit operator ushort(RAS_SERVER_HANDLE value) => (ushort)(value.Value);
 
         public static explicit operator RAS_SERVER_HANDLE(uint value) => new RAS_SERVER_HANDLE((nint)(value));
 
-        public static implicit operator uint(RAS_SERVER_HANDLE value) => (uint)(value.Value);
+        public static explicit operator uint(RAS_SERVER_HANDLE value) => (uint)(value.Value);
 
         public static explicit operator RAS_SERVER_HANDLE(ulong value) => new RAS_SERVER_HANDLE((nint)(value));
 
-        public static explicit operator ulong(RAS_SERVER_HANDLE value) => (ulong)(value.Value);
+        public static implicit operator ulong(RAS_SERVER_HANDLE value) => (ulong)(value.Value);
 
         public static explicit operator RAS_SERVER_HANDLE(nuint value) => new RAS_SERVER_HANDLE((nint)(value));
 

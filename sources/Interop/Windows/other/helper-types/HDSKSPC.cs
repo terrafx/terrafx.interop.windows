@@ -31,19 +31,19 @@ namespace TerraFX.Interop
 
         public static explicit operator HDSKSPC(byte value) => new HDSKSPC((nint)(value));
 
-        public static implicit operator byte(HDSKSPC value) => (byte)(value.Value);
+        public static explicit operator byte(HDSKSPC value) => (byte)(value.Value);
 
         public static explicit operator HDSKSPC(short value) => new HDSKSPC((nint)(value));
 
-        public static implicit operator short(HDSKSPC value) => (short)(value.Value);
+        public static explicit operator short(HDSKSPC value) => (short)(value.Value);
 
         public static explicit operator HDSKSPC(int value) => new HDSKSPC((nint)(value));
 
-        public static implicit operator int(HDSKSPC value) => (int)(value.Value);
+        public static explicit operator int(HDSKSPC value) => (int)(value.Value);
 
         public static explicit operator HDSKSPC(long value) => new HDSKSPC((nint)(value));
 
-        public static explicit operator long(HDSKSPC value) => (long)(value.Value);
+        public static implicit operator long(HDSKSPC value) => (long)(value.Value);
 
         public static explicit operator HDSKSPC(nint value) => new HDSKSPC((nint)(value));
 
@@ -51,19 +51,19 @@ namespace TerraFX.Interop
 
         public static explicit operator HDSKSPC(sbyte value) => new HDSKSPC((nint)(value));
 
-        public static implicit operator sbyte(HDSKSPC value) => (sbyte)(value.Value);
+        public static explicit operator sbyte(HDSKSPC value) => (sbyte)(value.Value);
 
         public static explicit operator HDSKSPC(ushort value) => new HDSKSPC((nint)(value));
 
-        public static implicit operator ushort(HDSKSPC value) => (ushort)(value.Value);
+        public static explicit operator ushort(HDSKSPC value) => (ushort)(value.Value);
 
         public static explicit operator HDSKSPC(uint value) => new HDSKSPC((nint)(value));
 
-        public static implicit operator uint(HDSKSPC value) => (uint)(value.Value);
+        public static explicit operator uint(HDSKSPC value) => (uint)(value.Value);
 
         public static explicit operator HDSKSPC(ulong value) => new HDSKSPC((nint)(value));
 
-        public static explicit operator ulong(HDSKSPC value) => (ulong)(value.Value);
+        public static implicit operator ulong(HDSKSPC value) => (ulong)(value.Value);
 
         public static explicit operator HDSKSPC(nuint value) => new HDSKSPC((nint)(value));
 

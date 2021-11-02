@@ -31,19 +31,19 @@ namespace TerraFX.Interop
 
         public static explicit operator D3DKMDT_HMONITORDESCRIPTORSET(byte value) => new D3DKMDT_HMONITORDESCRIPTORSET((nint)(value));
 
-        public static implicit operator byte(D3DKMDT_HMONITORDESCRIPTORSET value) => (byte)(value.Value);
+        public static explicit operator byte(D3DKMDT_HMONITORDESCRIPTORSET value) => (byte)(value.Value);
 
         public static explicit operator D3DKMDT_HMONITORDESCRIPTORSET(short value) => new D3DKMDT_HMONITORDESCRIPTORSET((nint)(value));
 
-        public static implicit operator short(D3DKMDT_HMONITORDESCRIPTORSET value) => (short)(value.Value);
+        public static explicit operator short(D3DKMDT_HMONITORDESCRIPTORSET value) => (short)(value.Value);
 
         public static explicit operator D3DKMDT_HMONITORDESCRIPTORSET(int value) => new D3DKMDT_HMONITORDESCRIPTORSET((nint)(value));
 
-        public static implicit operator int(D3DKMDT_HMONITORDESCRIPTORSET value) => (int)(value.Value);
+        public static explicit operator int(D3DKMDT_HMONITORDESCRIPTORSET value) => (int)(value.Value);
 
         public static explicit operator D3DKMDT_HMONITORDESCRIPTORSET(long value) => new D3DKMDT_HMONITORDESCRIPTORSET((nint)(value));
 
-        public static explicit operator long(D3DKMDT_HMONITORDESCRIPTORSET value) => (long)(value.Value);
+        public static implicit operator long(D3DKMDT_HMONITORDESCRIPTORSET value) => (long)(value.Value);
 
         public static explicit operator D3DKMDT_HMONITORDESCRIPTORSET(nint value) => new D3DKMDT_HMONITORDESCRIPTORSET((nint)(value));
 
@@ -51,19 +51,19 @@ namespace TerraFX.Interop
 
         public static explicit operator D3DKMDT_HMONITORDESCRIPTORSET(sbyte value) => new D3DKMDT_HMONITORDESCRIPTORSET((nint)(value));
 
-        public static implicit operator sbyte(D3DKMDT_HMONITORDESCRIPTORSET value) => (sbyte)(value.Value);
+        public static explicit operator sbyte(D3DKMDT_HMONITORDESCRIPTORSET value) => (sbyte)(value.Value);
 
         public static explicit operator D3DKMDT_HMONITORDESCRIPTORSET(ushort value) => new D3DKMDT_HMONITORDESCRIPTORSET((nint)(value));
 
-        public static implicit operator ushort(D3DKMDT_HMONITORDESCRIPTORSET value) => (ushort)(value.Value);
+        public static explicit operator ushort(D3DKMDT_HMONITORDESCRIPTORSET value) => (ushort)(value.Value);
 
         public static explicit operator D3DKMDT_HMONITORDESCRIPTORSET(uint value) => new D3DKMDT_HMONITORDESCRIPTORSET((nint)(value));
 
-        public static implicit operator uint(D3DKMDT_HMONITORDESCRIPTORSET value) => (uint)(value.Value);
+        public static explicit operator uint(D3DKMDT_HMONITORDESCRIPTORSET value) => (uint)(value.Value);
 
         public static explicit operator D3DKMDT_HMONITORDESCRIPTORSET(ulong value) => new D3DKMDT_HMONITORDESCRIPTORSET((nint)(value));
 
-        public static explicit operator ulong(D3DKMDT_HMONITORDESCRIPTORSET value) => (ulong)(value.Value);
+        public static implicit operator ulong(D3DKMDT_HMONITORDESCRIPTORSET value) => (ulong)(value.Value);
 
         public static explicit operator D3DKMDT_HMONITORDESCRIPTORSET(nuint value) => new D3DKMDT_HMONITORDESCRIPTORSET((nint)(value));
 

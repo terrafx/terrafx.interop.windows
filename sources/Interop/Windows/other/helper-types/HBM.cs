@@ -31,19 +31,19 @@ namespace TerraFX.Interop
 
         public static explicit operator HBM(byte value) => new HBM((nint)(value));
 
-        public static implicit operator byte(HBM value) => (byte)(value.Value);
+        public static explicit operator byte(HBM value) => (byte)(value.Value);
 
         public static explicit operator HBM(short value) => new HBM((nint)(value));
 
-        public static implicit operator short(HBM value) => (short)(value.Value);
+        public static explicit operator short(HBM value) => (short)(value.Value);
 
         public static explicit operator HBM(int value) => new HBM((nint)(value));
 
-        public static implicit operator int(HBM value) => (int)(value.Value);
+        public static explicit operator int(HBM value) => (int)(value.Value);
 
         public static explicit operator HBM(long value) => new HBM((nint)(value));
 
-        public static explicit operator long(HBM value) => (long)(value.Value);
+        public static implicit operator long(HBM value) => (long)(value.Value);
 
         public static explicit operator HBM(nint value) => new HBM((nint)(value));
 
@@ -51,19 +51,19 @@ namespace TerraFX.Interop
 
         public static explicit operator HBM(sbyte value) => new HBM((nint)(value));
 
-        public static implicit operator sbyte(HBM value) => (sbyte)(value.Value);
+        public static explicit operator sbyte(HBM value) => (sbyte)(value.Value);
 
         public static explicit operator HBM(ushort value) => new HBM((nint)(value));
 
-        public static implicit operator ushort(HBM value) => (ushort)(value.Value);
+        public static explicit operator ushort(HBM value) => (ushort)(value.Value);
 
         public static explicit operator HBM(uint value) => new HBM((nint)(value));
 
-        public static implicit operator uint(HBM value) => (uint)(value.Value);
+        public static explicit operator uint(HBM value) => (uint)(value.Value);
 
         public static explicit operator HBM(ulong value) => new HBM((nint)(value));
 
-        public static explicit operator ulong(HBM value) => (ulong)(value.Value);
+        public static implicit operator ulong(HBM value) => (ulong)(value.Value);
 
         public static explicit operator HBM(nuint value) => new HBM((nint)(value));
 

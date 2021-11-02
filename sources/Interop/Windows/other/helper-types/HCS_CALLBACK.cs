@@ -31,19 +31,19 @@ namespace TerraFX.Interop
 
         public static explicit operator HCS_CALLBACK(byte value) => new HCS_CALLBACK((nint)(value));
 
-        public static implicit operator byte(HCS_CALLBACK value) => (byte)(value.Value);
+        public static explicit operator byte(HCS_CALLBACK value) => (byte)(value.Value);
 
         public static explicit operator HCS_CALLBACK(short value) => new HCS_CALLBACK((nint)(value));
 
-        public static implicit operator short(HCS_CALLBACK value) => (short)(value.Value);
+        public static explicit operator short(HCS_CALLBACK value) => (short)(value.Value);
 
         public static explicit operator HCS_CALLBACK(int value) => new HCS_CALLBACK((nint)(value));
 
-        public static implicit operator int(HCS_CALLBACK value) => (int)(value.Value);
+        public static explicit operator int(HCS_CALLBACK value) => (int)(value.Value);
 
         public static explicit operator HCS_CALLBACK(long value) => new HCS_CALLBACK((nint)(value));
 
-        public static explicit operator long(HCS_CALLBACK value) => (long)(value.Value);
+        public static implicit operator long(HCS_CALLBACK value) => (long)(value.Value);
 
         public static explicit operator HCS_CALLBACK(nint value) => new HCS_CALLBACK((nint)(value));
 
@@ -51,19 +51,19 @@ namespace TerraFX.Interop
 
         public static explicit operator HCS_CALLBACK(sbyte value) => new HCS_CALLBACK((nint)(value));
 
-        public static implicit operator sbyte(HCS_CALLBACK value) => (sbyte)(value.Value);
+        public static explicit operator sbyte(HCS_CALLBACK value) => (sbyte)(value.Value);
 
         public static explicit operator HCS_CALLBACK(ushort value) => new HCS_CALLBACK((nint)(value));
 
-        public static implicit operator ushort(HCS_CALLBACK value) => (ushort)(value.Value);
+        public static explicit operator ushort(HCS_CALLBACK value) => (ushort)(value.Value);
 
         public static explicit operator HCS_CALLBACK(uint value) => new HCS_CALLBACK((nint)(value));
 
-        public static implicit operator uint(HCS_CALLBACK value) => (uint)(value.Value);
+        public static explicit operator uint(HCS_CALLBACK value) => (uint)(value.Value);
 
         public static explicit operator HCS_CALLBACK(ulong value) => new HCS_CALLBACK((nint)(value));
 
-        public static explicit operator ulong(HCS_CALLBACK value) => (ulong)(value.Value);
+        public static implicit operator ulong(HCS_CALLBACK value) => (ulong)(value.Value);
 
         public static explicit operator HCS_CALLBACK(nuint value) => new HCS_CALLBACK((nint)(value));
 

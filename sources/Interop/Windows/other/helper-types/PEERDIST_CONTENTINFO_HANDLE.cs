@@ -31,19 +31,19 @@ namespace TerraFX.Interop
 
         public static explicit operator PEERDIST_CONTENTINFO_HANDLE(byte value) => new PEERDIST_CONTENTINFO_HANDLE((nint)(value));
 
-        public static implicit operator byte(PEERDIST_CONTENTINFO_HANDLE value) => (byte)(value.Value);
+        public static explicit operator byte(PEERDIST_CONTENTINFO_HANDLE value) => (byte)(value.Value);
 
         public static explicit operator PEERDIST_CONTENTINFO_HANDLE(short value) => new PEERDIST_CONTENTINFO_HANDLE((nint)(value));
 
-        public static implicit operator short(PEERDIST_CONTENTINFO_HANDLE value) => (short)(value.Value);
+        public static explicit operator short(PEERDIST_CONTENTINFO_HANDLE value) => (short)(value.Value);
 
         public static explicit operator PEERDIST_CONTENTINFO_HANDLE(int value) => new PEERDIST_CONTENTINFO_HANDLE((nint)(value));
 
-        public static implicit operator int(PEERDIST_CONTENTINFO_HANDLE value) => (int)(value.Value);
+        public static explicit operator int(PEERDIST_CONTENTINFO_HANDLE value) => (int)(value.Value);
 
         public static explicit operator PEERDIST_CONTENTINFO_HANDLE(long value) => new PEERDIST_CONTENTINFO_HANDLE((nint)(value));
 
-        public static explicit operator long(PEERDIST_CONTENTINFO_HANDLE value) => (long)(value.Value);
+        public static implicit operator long(PEERDIST_CONTENTINFO_HANDLE value) => (long)(value.Value);
 
         public static explicit operator PEERDIST_CONTENTINFO_HANDLE(nint value) => new PEERDIST_CONTENTINFO_HANDLE((nint)(value));
 
@@ -51,19 +51,19 @@ namespace TerraFX.Interop
 
         public static explicit operator PEERDIST_CONTENTINFO_HANDLE(sbyte value) => new PEERDIST_CONTENTINFO_HANDLE((nint)(value));
 
-        public static implicit operator sbyte(PEERDIST_CONTENTINFO_HANDLE value) => (sbyte)(value.Value);
+        public static explicit operator sbyte(PEERDIST_CONTENTINFO_HANDLE value) => (sbyte)(value.Value);
 
         public static explicit operator PEERDIST_CONTENTINFO_HANDLE(ushort value) => new PEERDIST_CONTENTINFO_HANDLE((nint)(value));
 
-        public static implicit operator ushort(PEERDIST_CONTENTINFO_HANDLE value) => (ushort)(value.Value);
+        public static explicit operator ushort(PEERDIST_CONTENTINFO_HANDLE value) => (ushort)(value.Value);
 
         public static explicit operator PEERDIST_CONTENTINFO_HANDLE(uint value) => new PEERDIST_CONTENTINFO_HANDLE((nint)(value));
 
-        public static implicit operator uint(PEERDIST_CONTENTINFO_HANDLE value) => (uint)(value.Value);
+        public static explicit operator uint(PEERDIST_CONTENTINFO_HANDLE value) => (uint)(value.Value);
 
         public static explicit operator PEERDIST_CONTENTINFO_HANDLE(ulong value) => new PEERDIST_CONTENTINFO_HANDLE((nint)(value));
 
-        public static explicit operator ulong(PEERDIST_CONTENTINFO_HANDLE value) => (ulong)(value.Value);
+        public static implicit operator ulong(PEERDIST_CONTENTINFO_HANDLE value) => (ulong)(value.Value);
 
         public static explicit operator PEERDIST_CONTENTINFO_HANDLE(nuint value) => new PEERDIST_CONTENTINFO_HANDLE((nint)(value));
 

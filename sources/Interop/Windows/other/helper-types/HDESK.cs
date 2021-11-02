@@ -31,19 +31,19 @@ namespace TerraFX.Interop
 
         public static explicit operator HDESK(byte value) => new HDESK((nint)(value));
 
-        public static implicit operator byte(HDESK value) => (byte)(value.Value);
+        public static explicit operator byte(HDESK value) => (byte)(value.Value);
 
         public static explicit operator HDESK(short value) => new HDESK((nint)(value));
 
-        public static implicit operator short(HDESK value) => (short)(value.Value);
+        public static explicit operator short(HDESK value) => (short)(value.Value);
 
         public static explicit operator HDESK(int value) => new HDESK((nint)(value));
 
-        public static implicit operator int(HDESK value) => (int)(value.Value);
+        public static explicit operator int(HDESK value) => (int)(value.Value);
 
         public static explicit operator HDESK(long value) => new HDESK((nint)(value));
 
-        public static explicit operator long(HDESK value) => (long)(value.Value);
+        public static implicit operator long(HDESK value) => (long)(value.Value);
 
         public static explicit operator HDESK(nint value) => new HDESK((nint)(value));
 
@@ -51,19 +51,19 @@ namespace TerraFX.Interop
 
         public static explicit operator HDESK(sbyte value) => new HDESK((nint)(value));
 
-        public static implicit operator sbyte(HDESK value) => (sbyte)(value.Value);
+        public static explicit operator sbyte(HDESK value) => (sbyte)(value.Value);
 
         public static explicit operator HDESK(ushort value) => new HDESK((nint)(value));
 
-        public static implicit operator ushort(HDESK value) => (ushort)(value.Value);
+        public static explicit operator ushort(HDESK value) => (ushort)(value.Value);
 
         public static explicit operator HDESK(uint value) => new HDESK((nint)(value));
 
-        public static implicit operator uint(HDESK value) => (uint)(value.Value);
+        public static explicit operator uint(HDESK value) => (uint)(value.Value);
 
         public static explicit operator HDESK(ulong value) => new HDESK((nint)(value));
 
-        public static explicit operator ulong(HDESK value) => (ulong)(value.Value);
+        public static implicit operator ulong(HDESK value) => (ulong)(value.Value);
 
         public static explicit operator HDESK(nuint value) => new HDESK((nint)(value));
 

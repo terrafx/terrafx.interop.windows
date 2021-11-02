@@ -31,19 +31,19 @@ namespace TerraFX.Interop
 
         public static explicit operator HCERT_SERVER_OCSP_RESPONSE(byte value) => new HCERT_SERVER_OCSP_RESPONSE((nint)(value));
 
-        public static implicit operator byte(HCERT_SERVER_OCSP_RESPONSE value) => (byte)(value.Value);
+        public static explicit operator byte(HCERT_SERVER_OCSP_RESPONSE value) => (byte)(value.Value);
 
         public static explicit operator HCERT_SERVER_OCSP_RESPONSE(short value) => new HCERT_SERVER_OCSP_RESPONSE((nint)(value));
 
-        public static implicit operator short(HCERT_SERVER_OCSP_RESPONSE value) => (short)(value.Value);
+        public static explicit operator short(HCERT_SERVER_OCSP_RESPONSE value) => (short)(value.Value);
 
         public static explicit operator HCERT_SERVER_OCSP_RESPONSE(int value) => new HCERT_SERVER_OCSP_RESPONSE((nint)(value));
 
-        public static implicit operator int(HCERT_SERVER_OCSP_RESPONSE value) => (int)(value.Value);
+        public static explicit operator int(HCERT_SERVER_OCSP_RESPONSE value) => (int)(value.Value);
 
         public static explicit operator HCERT_SERVER_OCSP_RESPONSE(long value) => new HCERT_SERVER_OCSP_RESPONSE((nint)(value));
 
-        public static explicit operator long(HCERT_SERVER_OCSP_RESPONSE value) => (long)(value.Value);
+        public static implicit operator long(HCERT_SERVER_OCSP_RESPONSE value) => (long)(value.Value);
 
         public static explicit operator HCERT_SERVER_OCSP_RESPONSE(nint value) => new HCERT_SERVER_OCSP_RESPONSE((nint)(value));
 
@@ -51,19 +51,19 @@ namespace TerraFX.Interop
 
         public static explicit operator HCERT_SERVER_OCSP_RESPONSE(sbyte value) => new HCERT_SERVER_OCSP_RESPONSE((nint)(value));
 
-        public static implicit operator sbyte(HCERT_SERVER_OCSP_RESPONSE value) => (sbyte)(value.Value);
+        public static explicit operator sbyte(HCERT_SERVER_OCSP_RESPONSE value) => (sbyte)(value.Value);
 
         public static explicit operator HCERT_SERVER_OCSP_RESPONSE(ushort value) => new HCERT_SERVER_OCSP_RESPONSE((nint)(value));
 
-        public static implicit operator ushort(HCERT_SERVER_OCSP_RESPONSE value) => (ushort)(value.Value);
+        public static explicit operator ushort(HCERT_SERVER_OCSP_RESPONSE value) => (ushort)(value.Value);
 
         public static explicit operator HCERT_SERVER_OCSP_RESPONSE(uint value) => new HCERT_SERVER_OCSP_RESPONSE((nint)(value));
 
-        public static implicit operator uint(HCERT_SERVER_OCSP_RESPONSE value) => (uint)(value.Value);
+        public static explicit operator uint(HCERT_SERVER_OCSP_RESPONSE value) => (uint)(value.Value);
 
         public static explicit operator HCERT_SERVER_OCSP_RESPONSE(ulong value) => new HCERT_SERVER_OCSP_RESPONSE((nint)(value));
 
-        public static explicit operator ulong(HCERT_SERVER_OCSP_RESPONSE value) => (ulong)(value.Value);
+        public static implicit operator ulong(HCERT_SERVER_OCSP_RESPONSE value) => (ulong)(value.Value);
 
         public static explicit operator HCERT_SERVER_OCSP_RESPONSE(nuint value) => new HCERT_SERVER_OCSP_RESPONSE((nint)(value));
 

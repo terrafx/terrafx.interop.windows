@@ -31,19 +31,19 @@ namespace TerraFX.Interop
 
         public static explicit operator RHANDLE(byte value) => new RHANDLE((nint)(value));
 
-        public static implicit operator byte(RHANDLE value) => (byte)(value.Value);
+        public static explicit operator byte(RHANDLE value) => (byte)(value.Value);
 
         public static explicit operator RHANDLE(short value) => new RHANDLE((nint)(value));
 
-        public static implicit operator short(RHANDLE value) => (short)(value.Value);
+        public static explicit operator short(RHANDLE value) => (short)(value.Value);
 
         public static explicit operator RHANDLE(int value) => new RHANDLE((nint)(value));
 
-        public static implicit operator int(RHANDLE value) => (int)(value.Value);
+        public static explicit operator int(RHANDLE value) => (int)(value.Value);
 
         public static explicit operator RHANDLE(long value) => new RHANDLE((nint)(value));
 
-        public static explicit operator long(RHANDLE value) => (long)(value.Value);
+        public static implicit operator long(RHANDLE value) => (long)(value.Value);
 
         public static explicit operator RHANDLE(nint value) => new RHANDLE((nint)(value));
 
@@ -51,19 +51,19 @@ namespace TerraFX.Interop
 
         public static explicit operator RHANDLE(sbyte value) => new RHANDLE((nint)(value));
 
-        public static implicit operator sbyte(RHANDLE value) => (sbyte)(value.Value);
+        public static explicit operator sbyte(RHANDLE value) => (sbyte)(value.Value);
 
         public static explicit operator RHANDLE(ushort value) => new RHANDLE((nint)(value));
 
-        public static implicit operator ushort(RHANDLE value) => (ushort)(value.Value);
+        public static explicit operator ushort(RHANDLE value) => (ushort)(value.Value);
 
         public static explicit operator RHANDLE(uint value) => new RHANDLE((nint)(value));
 
-        public static implicit operator uint(RHANDLE value) => (uint)(value.Value);
+        public static explicit operator uint(RHANDLE value) => (uint)(value.Value);
 
         public static explicit operator RHANDLE(ulong value) => new RHANDLE((nint)(value));
 
-        public static explicit operator ulong(RHANDLE value) => (ulong)(value.Value);
+        public static implicit operator ulong(RHANDLE value) => (ulong)(value.Value);
 
         public static explicit operator RHANDLE(nuint value) => new RHANDLE((nint)(value));
 

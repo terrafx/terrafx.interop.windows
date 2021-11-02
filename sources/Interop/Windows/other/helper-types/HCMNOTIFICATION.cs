@@ -31,19 +31,19 @@ namespace TerraFX.Interop
 
         public static explicit operator HCMNOTIFICATION(byte value) => new HCMNOTIFICATION((nint)(value));
 
-        public static implicit operator byte(HCMNOTIFICATION value) => (byte)(value.Value);
+        public static explicit operator byte(HCMNOTIFICATION value) => (byte)(value.Value);
 
         public static explicit operator HCMNOTIFICATION(short value) => new HCMNOTIFICATION((nint)(value));
 
-        public static implicit operator short(HCMNOTIFICATION value) => (short)(value.Value);
+        public static explicit operator short(HCMNOTIFICATION value) => (short)(value.Value);
 
         public static explicit operator HCMNOTIFICATION(int value) => new HCMNOTIFICATION((nint)(value));
 
-        public static implicit operator int(HCMNOTIFICATION value) => (int)(value.Value);
+        public static explicit operator int(HCMNOTIFICATION value) => (int)(value.Value);
 
         public static explicit operator HCMNOTIFICATION(long value) => new HCMNOTIFICATION((nint)(value));
 
-        public static explicit operator long(HCMNOTIFICATION value) => (long)(value.Value);
+        public static implicit operator long(HCMNOTIFICATION value) => (long)(value.Value);
 
         public static explicit operator HCMNOTIFICATION(nint value) => new HCMNOTIFICATION((nint)(value));
 
@@ -51,19 +51,19 @@ namespace TerraFX.Interop
 
         public static explicit operator HCMNOTIFICATION(sbyte value) => new HCMNOTIFICATION((nint)(value));
 
-        public static implicit operator sbyte(HCMNOTIFICATION value) => (sbyte)(value.Value);
+        public static explicit operator sbyte(HCMNOTIFICATION value) => (sbyte)(value.Value);
 
         public static explicit operator HCMNOTIFICATION(ushort value) => new HCMNOTIFICATION((nint)(value));
 
-        public static implicit operator ushort(HCMNOTIFICATION value) => (ushort)(value.Value);
+        public static explicit operator ushort(HCMNOTIFICATION value) => (ushort)(value.Value);
 
         public static explicit operator HCMNOTIFICATION(uint value) => new HCMNOTIFICATION((nint)(value));
 
-        public static implicit operator uint(HCMNOTIFICATION value) => (uint)(value.Value);
+        public static explicit operator uint(HCMNOTIFICATION value) => (uint)(value.Value);
 
         public static explicit operator HCMNOTIFICATION(ulong value) => new HCMNOTIFICATION((nint)(value));
 
-        public static explicit operator ulong(HCMNOTIFICATION value) => (ulong)(value.Value);
+        public static implicit operator ulong(HCMNOTIFICATION value) => (ulong)(value.Value);
 
         public static explicit operator HCMNOTIFICATION(nuint value) => new HCMNOTIFICATION((nint)(value));
 

@@ -31,19 +31,19 @@ namespace TerraFX.Interop
 
         public static explicit operator HRECOALT(byte value) => new HRECOALT((nint)(value));
 
-        public static implicit operator byte(HRECOALT value) => (byte)(value.Value);
+        public static explicit operator byte(HRECOALT value) => (byte)(value.Value);
 
         public static explicit operator HRECOALT(short value) => new HRECOALT((nint)(value));
 
-        public static implicit operator short(HRECOALT value) => (short)(value.Value);
+        public static explicit operator short(HRECOALT value) => (short)(value.Value);
 
         public static explicit operator HRECOALT(int value) => new HRECOALT((nint)(value));
 
-        public static implicit operator int(HRECOALT value) => (int)(value.Value);
+        public static explicit operator int(HRECOALT value) => (int)(value.Value);
 
         public static explicit operator HRECOALT(long value) => new HRECOALT((nint)(value));
 
-        public static explicit operator long(HRECOALT value) => (long)(value.Value);
+        public static implicit operator long(HRECOALT value) => (long)(value.Value);
 
         public static explicit operator HRECOALT(nint value) => new HRECOALT((nint)(value));
 
@@ -51,19 +51,19 @@ namespace TerraFX.Interop
 
         public static explicit operator HRECOALT(sbyte value) => new HRECOALT((nint)(value));
 
-        public static implicit operator sbyte(HRECOALT value) => (sbyte)(value.Value);
+        public static explicit operator sbyte(HRECOALT value) => (sbyte)(value.Value);
 
         public static explicit operator HRECOALT(ushort value) => new HRECOALT((nint)(value));
 
-        public static implicit operator ushort(HRECOALT value) => (ushort)(value.Value);
+        public static explicit operator ushort(HRECOALT value) => (ushort)(value.Value);
 
         public static explicit operator HRECOALT(uint value) => new HRECOALT((nint)(value));
 
-        public static implicit operator uint(HRECOALT value) => (uint)(value.Value);
+        public static explicit operator uint(HRECOALT value) => (uint)(value.Value);
 
         public static explicit operator HRECOALT(ulong value) => new HRECOALT((nint)(value));
 
-        public static explicit operator ulong(HRECOALT value) => (ulong)(value.Value);
+        public static implicit operator ulong(HRECOALT value) => (ulong)(value.Value);
 
         public static explicit operator HRECOALT(nuint value) => new HRECOALT((nint)(value));
 

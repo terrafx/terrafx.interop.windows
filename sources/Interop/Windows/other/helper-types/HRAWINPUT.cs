@@ -31,19 +31,19 @@ namespace TerraFX.Interop
 
         public static explicit operator HRAWINPUT(byte value) => new HRAWINPUT((nint)(value));
 
-        public static implicit operator byte(HRAWINPUT value) => (byte)(value.Value);
+        public static explicit operator byte(HRAWINPUT value) => (byte)(value.Value);
 
         public static explicit operator HRAWINPUT(short value) => new HRAWINPUT((nint)(value));
 
-        public static implicit operator short(HRAWINPUT value) => (short)(value.Value);
+        public static explicit operator short(HRAWINPUT value) => (short)(value.Value);
 
         public static explicit operator HRAWINPUT(int value) => new HRAWINPUT((nint)(value));
 
-        public static implicit operator int(HRAWINPUT value) => (int)(value.Value);
+        public static explicit operator int(HRAWINPUT value) => (int)(value.Value);
 
         public static explicit operator HRAWINPUT(long value) => new HRAWINPUT((nint)(value));
 
-        public static explicit operator long(HRAWINPUT value) => (long)(value.Value);
+        public static implicit operator long(HRAWINPUT value) => (long)(value.Value);
 
         public static explicit operator HRAWINPUT(nint value) => new HRAWINPUT((nint)(value));
 
@@ -51,19 +51,19 @@ namespace TerraFX.Interop
 
         public static explicit operator HRAWINPUT(sbyte value) => new HRAWINPUT((nint)(value));
 
-        public static implicit operator sbyte(HRAWINPUT value) => (sbyte)(value.Value);
+        public static explicit operator sbyte(HRAWINPUT value) => (sbyte)(value.Value);
 
         public static explicit operator HRAWINPUT(ushort value) => new HRAWINPUT((nint)(value));
 
-        public static implicit operator ushort(HRAWINPUT value) => (ushort)(value.Value);
+        public static explicit operator ushort(HRAWINPUT value) => (ushort)(value.Value);
 
         public static explicit operator HRAWINPUT(uint value) => new HRAWINPUT((nint)(value));
 
-        public static implicit operator uint(HRAWINPUT value) => (uint)(value.Value);
+        public static explicit operator uint(HRAWINPUT value) => (uint)(value.Value);
 
         public static explicit operator HRAWINPUT(ulong value) => new HRAWINPUT((nint)(value));
 
-        public static explicit operator ulong(HRAWINPUT value) => (ulong)(value.Value);
+        public static implicit operator ulong(HRAWINPUT value) => (ulong)(value.Value);
 
         public static explicit operator HRAWINPUT(nuint value) => new HRAWINPUT((nint)(value));
 

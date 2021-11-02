@@ -31,19 +31,19 @@ namespace TerraFX.Interop
 
         public static explicit operator HIFTIMESTAMPCHANGE(byte value) => new HIFTIMESTAMPCHANGE((nint)(value));
 
-        public static implicit operator byte(HIFTIMESTAMPCHANGE value) => (byte)(value.Value);
+        public static explicit operator byte(HIFTIMESTAMPCHANGE value) => (byte)(value.Value);
 
         public static explicit operator HIFTIMESTAMPCHANGE(short value) => new HIFTIMESTAMPCHANGE((nint)(value));
 
-        public static implicit operator short(HIFTIMESTAMPCHANGE value) => (short)(value.Value);
+        public static explicit operator short(HIFTIMESTAMPCHANGE value) => (short)(value.Value);
 
         public static explicit operator HIFTIMESTAMPCHANGE(int value) => new HIFTIMESTAMPCHANGE((nint)(value));
 
-        public static implicit operator int(HIFTIMESTAMPCHANGE value) => (int)(value.Value);
+        public static explicit operator int(HIFTIMESTAMPCHANGE value) => (int)(value.Value);
 
         public static explicit operator HIFTIMESTAMPCHANGE(long value) => new HIFTIMESTAMPCHANGE((nint)(value));
 
-        public static explicit operator long(HIFTIMESTAMPCHANGE value) => (long)(value.Value);
+        public static implicit operator long(HIFTIMESTAMPCHANGE value) => (long)(value.Value);
 
         public static explicit operator HIFTIMESTAMPCHANGE(nint value) => new HIFTIMESTAMPCHANGE((nint)(value));
 
@@ -51,19 +51,19 @@ namespace TerraFX.Interop
 
         public static explicit operator HIFTIMESTAMPCHANGE(sbyte value) => new HIFTIMESTAMPCHANGE((nint)(value));
 
-        public static implicit operator sbyte(HIFTIMESTAMPCHANGE value) => (sbyte)(value.Value);
+        public static explicit operator sbyte(HIFTIMESTAMPCHANGE value) => (sbyte)(value.Value);
 
         public static explicit operator HIFTIMESTAMPCHANGE(ushort value) => new HIFTIMESTAMPCHANGE((nint)(value));
 
-        public static implicit operator ushort(HIFTIMESTAMPCHANGE value) => (ushort)(value.Value);
+        public static explicit operator ushort(HIFTIMESTAMPCHANGE value) => (ushort)(value.Value);
 
         public static explicit operator HIFTIMESTAMPCHANGE(uint value) => new HIFTIMESTAMPCHANGE((nint)(value));
 
-        public static implicit operator uint(HIFTIMESTAMPCHANGE value) => (uint)(value.Value);
+        public static explicit operator uint(HIFTIMESTAMPCHANGE value) => (uint)(value.Value);
 
         public static explicit operator HIFTIMESTAMPCHANGE(ulong value) => new HIFTIMESTAMPCHANGE((nint)(value));
 
-        public static explicit operator ulong(HIFTIMESTAMPCHANGE value) => (ulong)(value.Value);
+        public static implicit operator ulong(HIFTIMESTAMPCHANGE value) => (ulong)(value.Value);
 
         public static explicit operator HIFTIMESTAMPCHANGE(nuint value) => new HIFTIMESTAMPCHANGE((nint)(value));
 

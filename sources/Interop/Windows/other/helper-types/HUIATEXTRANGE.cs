@@ -31,19 +31,19 @@ namespace TerraFX.Interop
 
         public static explicit operator HUIATEXTRANGE(byte value) => new HUIATEXTRANGE((nint)(value));
 
-        public static implicit operator byte(HUIATEXTRANGE value) => (byte)(value.Value);
+        public static explicit operator byte(HUIATEXTRANGE value) => (byte)(value.Value);
 
         public static explicit operator HUIATEXTRANGE(short value) => new HUIATEXTRANGE((nint)(value));
 
-        public static implicit operator short(HUIATEXTRANGE value) => (short)(value.Value);
+        public static explicit operator short(HUIATEXTRANGE value) => (short)(value.Value);
 
         public static explicit operator HUIATEXTRANGE(int value) => new HUIATEXTRANGE((nint)(value));
 
-        public static implicit operator int(HUIATEXTRANGE value) => (int)(value.Value);
+        public static explicit operator int(HUIATEXTRANGE value) => (int)(value.Value);
 
         public static explicit operator HUIATEXTRANGE(long value) => new HUIATEXTRANGE((nint)(value));
 
-        public static explicit operator long(HUIATEXTRANGE value) => (long)(value.Value);
+        public static implicit operator long(HUIATEXTRANGE value) => (long)(value.Value);
 
         public static explicit operator HUIATEXTRANGE(nint value) => new HUIATEXTRANGE((nint)(value));
 
@@ -51,19 +51,19 @@ namespace TerraFX.Interop
 
         public static explicit operator HUIATEXTRANGE(sbyte value) => new HUIATEXTRANGE((nint)(value));
 
-        public static implicit operator sbyte(HUIATEXTRANGE value) => (sbyte)(value.Value);
+        public static explicit operator sbyte(HUIATEXTRANGE value) => (sbyte)(value.Value);
 
         public static explicit operator HUIATEXTRANGE(ushort value) => new HUIATEXTRANGE((nint)(value));
 
-        public static implicit operator ushort(HUIATEXTRANGE value) => (ushort)(value.Value);
+        public static explicit operator ushort(HUIATEXTRANGE value) => (ushort)(value.Value);
 
         public static explicit operator HUIATEXTRANGE(uint value) => new HUIATEXTRANGE((nint)(value));
 
-        public static implicit operator uint(HUIATEXTRANGE value) => (uint)(value.Value);
+        public static explicit operator uint(HUIATEXTRANGE value) => (uint)(value.Value);
 
         public static explicit operator HUIATEXTRANGE(ulong value) => new HUIATEXTRANGE((nint)(value));
 
-        public static explicit operator ulong(HUIATEXTRANGE value) => (ulong)(value.Value);
+        public static implicit operator ulong(HUIATEXTRANGE value) => (ulong)(value.Value);
 
         public static explicit operator HUIATEXTRANGE(nuint value) => new HUIATEXTRANGE((nint)(value));
 

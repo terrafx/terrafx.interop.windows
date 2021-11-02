@@ -31,19 +31,19 @@ namespace TerraFX.Interop
 
         public static explicit operator HPSSWALK(byte value) => new HPSSWALK((nint)(value));
 
-        public static implicit operator byte(HPSSWALK value) => (byte)(value.Value);
+        public static explicit operator byte(HPSSWALK value) => (byte)(value.Value);
 
         public static explicit operator HPSSWALK(short value) => new HPSSWALK((nint)(value));
 
-        public static implicit operator short(HPSSWALK value) => (short)(value.Value);
+        public static explicit operator short(HPSSWALK value) => (short)(value.Value);
 
         public static explicit operator HPSSWALK(int value) => new HPSSWALK((nint)(value));
 
-        public static implicit operator int(HPSSWALK value) => (int)(value.Value);
+        public static explicit operator int(HPSSWALK value) => (int)(value.Value);
 
         public static explicit operator HPSSWALK(long value) => new HPSSWALK((nint)(value));
 
-        public static explicit operator long(HPSSWALK value) => (long)(value.Value);
+        public static implicit operator long(HPSSWALK value) => (long)(value.Value);
 
         public static explicit operator HPSSWALK(nint value) => new HPSSWALK((nint)(value));
 
@@ -51,19 +51,19 @@ namespace TerraFX.Interop
 
         public static explicit operator HPSSWALK(sbyte value) => new HPSSWALK((nint)(value));
 
-        public static implicit operator sbyte(HPSSWALK value) => (sbyte)(value.Value);
+        public static explicit operator sbyte(HPSSWALK value) => (sbyte)(value.Value);
 
         public static explicit operator HPSSWALK(ushort value) => new HPSSWALK((nint)(value));
 
-        public static implicit operator ushort(HPSSWALK value) => (ushort)(value.Value);
+        public static explicit operator ushort(HPSSWALK value) => (ushort)(value.Value);
 
         public static explicit operator HPSSWALK(uint value) => new HPSSWALK((nint)(value));
 
-        public static implicit operator uint(HPSSWALK value) => (uint)(value.Value);
+        public static explicit operator uint(HPSSWALK value) => (uint)(value.Value);
 
         public static explicit operator HPSSWALK(ulong value) => new HPSSWALK((nint)(value));
 
-        public static explicit operator ulong(HPSSWALK value) => (ulong)(value.Value);
+        public static implicit operator ulong(HPSSWALK value) => (ulong)(value.Value);
 
         public static explicit operator HPSSWALK(nuint value) => new HPSSWALK((nint)(value));
 

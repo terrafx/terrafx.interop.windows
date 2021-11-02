@@ -31,19 +31,19 @@ namespace TerraFX.Interop
 
         public static explicit operator LPM_HANDLE(byte value) => new LPM_HANDLE((nint)(value));
 
-        public static implicit operator byte(LPM_HANDLE value) => (byte)(value.Value);
+        public static explicit operator byte(LPM_HANDLE value) => (byte)(value.Value);
 
         public static explicit operator LPM_HANDLE(short value) => new LPM_HANDLE((nint)(value));
 
-        public static implicit operator short(LPM_HANDLE value) => (short)(value.Value);
+        public static explicit operator short(LPM_HANDLE value) => (short)(value.Value);
 
         public static explicit operator LPM_HANDLE(int value) => new LPM_HANDLE((nint)(value));
 
-        public static implicit operator int(LPM_HANDLE value) => (int)(value.Value);
+        public static explicit operator int(LPM_HANDLE value) => (int)(value.Value);
 
         public static explicit operator LPM_HANDLE(long value) => new LPM_HANDLE((nint)(value));
 
-        public static explicit operator long(LPM_HANDLE value) => (long)(value.Value);
+        public static implicit operator long(LPM_HANDLE value) => (long)(value.Value);
 
         public static explicit operator LPM_HANDLE(nint value) => new LPM_HANDLE((nint)(value));
 
@@ -51,19 +51,19 @@ namespace TerraFX.Interop
 
         public static explicit operator LPM_HANDLE(sbyte value) => new LPM_HANDLE((nint)(value));
 
-        public static implicit operator sbyte(LPM_HANDLE value) => (sbyte)(value.Value);
+        public static explicit operator sbyte(LPM_HANDLE value) => (sbyte)(value.Value);
 
         public static explicit operator LPM_HANDLE(ushort value) => new LPM_HANDLE((nint)(value));
 
-        public static implicit operator ushort(LPM_HANDLE value) => (ushort)(value.Value);
+        public static explicit operator ushort(LPM_HANDLE value) => (ushort)(value.Value);
 
         public static explicit operator LPM_HANDLE(uint value) => new LPM_HANDLE((nint)(value));
 
-        public static implicit operator uint(LPM_HANDLE value) => (uint)(value.Value);
+        public static explicit operator uint(LPM_HANDLE value) => (uint)(value.Value);
 
         public static explicit operator LPM_HANDLE(ulong value) => new LPM_HANDLE((nint)(value));
 
-        public static explicit operator ulong(LPM_HANDLE value) => (ulong)(value.Value);
+        public static implicit operator ulong(LPM_HANDLE value) => (ulong)(value.Value);
 
         public static explicit operator LPM_HANDLE(nuint value) => new LPM_HANDLE((nint)(value));
 

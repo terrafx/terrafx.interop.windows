@@ -31,19 +31,19 @@ namespace TerraFX.Interop
 
         public static explicit operator HSYNTHETICPOINTERDEVICE(byte value) => new HSYNTHETICPOINTERDEVICE((nint)(value));
 
-        public static implicit operator byte(HSYNTHETICPOINTERDEVICE value) => (byte)(value.Value);
+        public static explicit operator byte(HSYNTHETICPOINTERDEVICE value) => (byte)(value.Value);
 
         public static explicit operator HSYNTHETICPOINTERDEVICE(short value) => new HSYNTHETICPOINTERDEVICE((nint)(value));
 
-        public static implicit operator short(HSYNTHETICPOINTERDEVICE value) => (short)(value.Value);
+        public static explicit operator short(HSYNTHETICPOINTERDEVICE value) => (short)(value.Value);
 
         public static explicit operator HSYNTHETICPOINTERDEVICE(int value) => new HSYNTHETICPOINTERDEVICE((nint)(value));
 
-        public static implicit operator int(HSYNTHETICPOINTERDEVICE value) => (int)(value.Value);
+        public static explicit operator int(HSYNTHETICPOINTERDEVICE value) => (int)(value.Value);
 
         public static explicit operator HSYNTHETICPOINTERDEVICE(long value) => new HSYNTHETICPOINTERDEVICE((nint)(value));
 
-        public static explicit operator long(HSYNTHETICPOINTERDEVICE value) => (long)(value.Value);
+        public static implicit operator long(HSYNTHETICPOINTERDEVICE value) => (long)(value.Value);
 
         public static explicit operator HSYNTHETICPOINTERDEVICE(nint value) => new HSYNTHETICPOINTERDEVICE((nint)(value));
 
@@ -51,19 +51,19 @@ namespace TerraFX.Interop
 
         public static explicit operator HSYNTHETICPOINTERDEVICE(sbyte value) => new HSYNTHETICPOINTERDEVICE((nint)(value));
 
-        public static implicit operator sbyte(HSYNTHETICPOINTERDEVICE value) => (sbyte)(value.Value);
+        public static explicit operator sbyte(HSYNTHETICPOINTERDEVICE value) => (sbyte)(value.Value);
 
         public static explicit operator HSYNTHETICPOINTERDEVICE(ushort value) => new HSYNTHETICPOINTERDEVICE((nint)(value));
 
-        public static implicit operator ushort(HSYNTHETICPOINTERDEVICE value) => (ushort)(value.Value);
+        public static explicit operator ushort(HSYNTHETICPOINTERDEVICE value) => (ushort)(value.Value);
 
         public static explicit operator HSYNTHETICPOINTERDEVICE(uint value) => new HSYNTHETICPOINTERDEVICE((nint)(value));
 
-        public static implicit operator uint(HSYNTHETICPOINTERDEVICE value) => (uint)(value.Value);
+        public static explicit operator uint(HSYNTHETICPOINTERDEVICE value) => (uint)(value.Value);
 
         public static explicit operator HSYNTHETICPOINTERDEVICE(ulong value) => new HSYNTHETICPOINTERDEVICE((nint)(value));
 
-        public static explicit operator ulong(HSYNTHETICPOINTERDEVICE value) => (ulong)(value.Value);
+        public static implicit operator ulong(HSYNTHETICPOINTERDEVICE value) => (ulong)(value.Value);
 
         public static explicit operator HSYNTHETICPOINTERDEVICE(nuint value) => new HSYNTHETICPOINTERDEVICE((nint)(value));
 

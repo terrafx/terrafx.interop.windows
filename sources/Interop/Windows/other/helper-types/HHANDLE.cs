@@ -31,19 +31,19 @@ namespace TerraFX.Interop
 
         public static explicit operator HHANDLE(byte value) => new HHANDLE((nint)(value));
 
-        public static implicit operator byte(HHANDLE value) => (byte)(value.Value);
+        public static explicit operator byte(HHANDLE value) => (byte)(value.Value);
 
         public static explicit operator HHANDLE(short value) => new HHANDLE((nint)(value));
 
-        public static implicit operator short(HHANDLE value) => (short)(value.Value);
+        public static explicit operator short(HHANDLE value) => (short)(value.Value);
 
         public static explicit operator HHANDLE(int value) => new HHANDLE((nint)(value));
 
-        public static implicit operator int(HHANDLE value) => (int)(value.Value);
+        public static explicit operator int(HHANDLE value) => (int)(value.Value);
 
         public static explicit operator HHANDLE(long value) => new HHANDLE((nint)(value));
 
-        public static explicit operator long(HHANDLE value) => (long)(value.Value);
+        public static implicit operator long(HHANDLE value) => (long)(value.Value);
 
         public static explicit operator HHANDLE(nint value) => new HHANDLE((nint)(value));
 
@@ -51,19 +51,19 @@ namespace TerraFX.Interop
 
         public static explicit operator HHANDLE(sbyte value) => new HHANDLE((nint)(value));
 
-        public static implicit operator sbyte(HHANDLE value) => (sbyte)(value.Value);
+        public static explicit operator sbyte(HHANDLE value) => (sbyte)(value.Value);
 
         public static explicit operator HHANDLE(ushort value) => new HHANDLE((nint)(value));
 
-        public static implicit operator ushort(HHANDLE value) => (ushort)(value.Value);
+        public static explicit operator ushort(HHANDLE value) => (ushort)(value.Value);
 
         public static explicit operator HHANDLE(uint value) => new HHANDLE((nint)(value));
 
-        public static implicit operator uint(HHANDLE value) => (uint)(value.Value);
+        public static explicit operator uint(HHANDLE value) => (uint)(value.Value);
 
         public static explicit operator HHANDLE(ulong value) => new HHANDLE((nint)(value));
 
-        public static explicit operator ulong(HHANDLE value) => (ulong)(value.Value);
+        public static implicit operator ulong(HHANDLE value) => (ulong)(value.Value);
 
         public static explicit operator HHANDLE(nuint value) => new HHANDLE((nint)(value));
 

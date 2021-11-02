@@ -31,19 +31,19 @@ namespace TerraFX.Interop
 
         public static explicit operator HENHMETAFILE(byte value) => new HENHMETAFILE((nint)(value));
 
-        public static implicit operator byte(HENHMETAFILE value) => (byte)(value.Value);
+        public static explicit operator byte(HENHMETAFILE value) => (byte)(value.Value);
 
         public static explicit operator HENHMETAFILE(short value) => new HENHMETAFILE((nint)(value));
 
-        public static implicit operator short(HENHMETAFILE value) => (short)(value.Value);
+        public static explicit operator short(HENHMETAFILE value) => (short)(value.Value);
 
         public static explicit operator HENHMETAFILE(int value) => new HENHMETAFILE((nint)(value));
 
-        public static implicit operator int(HENHMETAFILE value) => (int)(value.Value);
+        public static explicit operator int(HENHMETAFILE value) => (int)(value.Value);
 
         public static explicit operator HENHMETAFILE(long value) => new HENHMETAFILE((nint)(value));
 
-        public static explicit operator long(HENHMETAFILE value) => (long)(value.Value);
+        public static implicit operator long(HENHMETAFILE value) => (long)(value.Value);
 
         public static explicit operator HENHMETAFILE(nint value) => new HENHMETAFILE((nint)(value));
 
@@ -51,19 +51,19 @@ namespace TerraFX.Interop
 
         public static explicit operator HENHMETAFILE(sbyte value) => new HENHMETAFILE((nint)(value));
 
-        public static implicit operator sbyte(HENHMETAFILE value) => (sbyte)(value.Value);
+        public static explicit operator sbyte(HENHMETAFILE value) => (sbyte)(value.Value);
 
         public static explicit operator HENHMETAFILE(ushort value) => new HENHMETAFILE((nint)(value));
 
-        public static implicit operator ushort(HENHMETAFILE value) => (ushort)(value.Value);
+        public static explicit operator ushort(HENHMETAFILE value) => (ushort)(value.Value);
 
         public static explicit operator HENHMETAFILE(uint value) => new HENHMETAFILE((nint)(value));
 
-        public static implicit operator uint(HENHMETAFILE value) => (uint)(value.Value);
+        public static explicit operator uint(HENHMETAFILE value) => (uint)(value.Value);
 
         public static explicit operator HENHMETAFILE(ulong value) => new HENHMETAFILE((nint)(value));
 
-        public static explicit operator ulong(HENHMETAFILE value) => (ulong)(value.Value);
+        public static implicit operator ulong(HENHMETAFILE value) => (ulong)(value.Value);
 
         public static explicit operator HENHMETAFILE(nuint value) => new HENHMETAFILE((nint)(value));
 

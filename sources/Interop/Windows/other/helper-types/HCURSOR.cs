@@ -31,19 +31,19 @@ namespace TerraFX.Interop
 
         public static explicit operator HCURSOR(byte value) => new HCURSOR((nint)(value));
 
-        public static implicit operator byte(HCURSOR value) => (byte)(value.Value);
+        public static explicit operator byte(HCURSOR value) => (byte)(value.Value);
 
         public static explicit operator HCURSOR(short value) => new HCURSOR((nint)(value));
 
-        public static implicit operator short(HCURSOR value) => (short)(value.Value);
+        public static explicit operator short(HCURSOR value) => (short)(value.Value);
 
         public static explicit operator HCURSOR(int value) => new HCURSOR((nint)(value));
 
-        public static implicit operator int(HCURSOR value) => (int)(value.Value);
+        public static explicit operator int(HCURSOR value) => (int)(value.Value);
 
         public static explicit operator HCURSOR(long value) => new HCURSOR((nint)(value));
 
-        public static explicit operator long(HCURSOR value) => (long)(value.Value);
+        public static implicit operator long(HCURSOR value) => (long)(value.Value);
 
         public static explicit operator HCURSOR(nint value) => new HCURSOR((nint)(value));
 
@@ -51,19 +51,19 @@ namespace TerraFX.Interop
 
         public static explicit operator HCURSOR(sbyte value) => new HCURSOR((nint)(value));
 
-        public static implicit operator sbyte(HCURSOR value) => (sbyte)(value.Value);
+        public static explicit operator sbyte(HCURSOR value) => (sbyte)(value.Value);
 
         public static explicit operator HCURSOR(ushort value) => new HCURSOR((nint)(value));
 
-        public static implicit operator ushort(HCURSOR value) => (ushort)(value.Value);
+        public static explicit operator ushort(HCURSOR value) => (ushort)(value.Value);
 
         public static explicit operator HCURSOR(uint value) => new HCURSOR((nint)(value));
 
-        public static implicit operator uint(HCURSOR value) => (uint)(value.Value);
+        public static explicit operator uint(HCURSOR value) => (uint)(value.Value);
 
         public static explicit operator HCURSOR(ulong value) => new HCURSOR((nint)(value));
 
-        public static explicit operator ulong(HCURSOR value) => (ulong)(value.Value);
+        public static implicit operator ulong(HCURSOR value) => (ulong)(value.Value);
 
         public static explicit operator HCURSOR(nuint value) => new HCURSOR((nint)(value));
 

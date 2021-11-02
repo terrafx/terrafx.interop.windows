@@ -31,19 +31,19 @@ namespace TerraFX.Interop
 
         public static explicit operator HDPA(byte value) => new HDPA((nint)(value));
 
-        public static implicit operator byte(HDPA value) => (byte)(value.Value);
+        public static explicit operator byte(HDPA value) => (byte)(value.Value);
 
         public static explicit operator HDPA(short value) => new HDPA((nint)(value));
 
-        public static implicit operator short(HDPA value) => (short)(value.Value);
+        public static explicit operator short(HDPA value) => (short)(value.Value);
 
         public static explicit operator HDPA(int value) => new HDPA((nint)(value));
 
-        public static implicit operator int(HDPA value) => (int)(value.Value);
+        public static explicit operator int(HDPA value) => (int)(value.Value);
 
         public static explicit operator HDPA(long value) => new HDPA((nint)(value));
 
-        public static explicit operator long(HDPA value) => (long)(value.Value);
+        public static implicit operator long(HDPA value) => (long)(value.Value);
 
         public static explicit operator HDPA(nint value) => new HDPA((nint)(value));
 
@@ -51,19 +51,19 @@ namespace TerraFX.Interop
 
         public static explicit operator HDPA(sbyte value) => new HDPA((nint)(value));
 
-        public static implicit operator sbyte(HDPA value) => (sbyte)(value.Value);
+        public static explicit operator sbyte(HDPA value) => (sbyte)(value.Value);
 
         public static explicit operator HDPA(ushort value) => new HDPA((nint)(value));
 
-        public static implicit operator ushort(HDPA value) => (ushort)(value.Value);
+        public static explicit operator ushort(HDPA value) => (ushort)(value.Value);
 
         public static explicit operator HDPA(uint value) => new HDPA((nint)(value));
 
-        public static implicit operator uint(HDPA value) => (uint)(value.Value);
+        public static explicit operator uint(HDPA value) => (uint)(value.Value);
 
         public static explicit operator HDPA(ulong value) => new HDPA((nint)(value));
 
-        public static explicit operator ulong(HDPA value) => (ulong)(value.Value);
+        public static implicit operator ulong(HDPA value) => (ulong)(value.Value);
 
         public static explicit operator HDPA(nuint value) => new HDPA((nint)(value));
 

@@ -31,19 +31,19 @@ namespace TerraFX.Interop
 
         public static explicit operator AUTHZ_CAP_CHANGE_SUBSCRIPTION_HANDLE(byte value) => new AUTHZ_CAP_CHANGE_SUBSCRIPTION_HANDLE((nint)(value));
 
-        public static implicit operator byte(AUTHZ_CAP_CHANGE_SUBSCRIPTION_HANDLE value) => (byte)(value.Value);
+        public static explicit operator byte(AUTHZ_CAP_CHANGE_SUBSCRIPTION_HANDLE value) => (byte)(value.Value);
 
         public static explicit operator AUTHZ_CAP_CHANGE_SUBSCRIPTION_HANDLE(short value) => new AUTHZ_CAP_CHANGE_SUBSCRIPTION_HANDLE((nint)(value));
 
-        public static implicit operator short(AUTHZ_CAP_CHANGE_SUBSCRIPTION_HANDLE value) => (short)(value.Value);
+        public static explicit operator short(AUTHZ_CAP_CHANGE_SUBSCRIPTION_HANDLE value) => (short)(value.Value);
 
         public static explicit operator AUTHZ_CAP_CHANGE_SUBSCRIPTION_HANDLE(int value) => new AUTHZ_CAP_CHANGE_SUBSCRIPTION_HANDLE((nint)(value));
 
-        public static implicit operator int(AUTHZ_CAP_CHANGE_SUBSCRIPTION_HANDLE value) => (int)(value.Value);
+        public static explicit operator int(AUTHZ_CAP_CHANGE_SUBSCRIPTION_HANDLE value) => (int)(value.Value);
 
         public static explicit operator AUTHZ_CAP_CHANGE_SUBSCRIPTION_HANDLE(long value) => new AUTHZ_CAP_CHANGE_SUBSCRIPTION_HANDLE((nint)(value));
 
-        public static explicit operator long(AUTHZ_CAP_CHANGE_SUBSCRIPTION_HANDLE value) => (long)(value.Value);
+        public static implicit operator long(AUTHZ_CAP_CHANGE_SUBSCRIPTION_HANDLE value) => (long)(value.Value);
 
         public static explicit operator AUTHZ_CAP_CHANGE_SUBSCRIPTION_HANDLE(nint value) => new AUTHZ_CAP_CHANGE_SUBSCRIPTION_HANDLE((nint)(value));
 
@@ -51,19 +51,19 @@ namespace TerraFX.Interop
 
         public static explicit operator AUTHZ_CAP_CHANGE_SUBSCRIPTION_HANDLE(sbyte value) => new AUTHZ_CAP_CHANGE_SUBSCRIPTION_HANDLE((nint)(value));
 
-        public static implicit operator sbyte(AUTHZ_CAP_CHANGE_SUBSCRIPTION_HANDLE value) => (sbyte)(value.Value);
+        public static explicit operator sbyte(AUTHZ_CAP_CHANGE_SUBSCRIPTION_HANDLE value) => (sbyte)(value.Value);
 
         public static explicit operator AUTHZ_CAP_CHANGE_SUBSCRIPTION_HANDLE(ushort value) => new AUTHZ_CAP_CHANGE_SUBSCRIPTION_HANDLE((nint)(value));
 
-        public static implicit operator ushort(AUTHZ_CAP_CHANGE_SUBSCRIPTION_HANDLE value) => (ushort)(value.Value);
+        public static explicit operator ushort(AUTHZ_CAP_CHANGE_SUBSCRIPTION_HANDLE value) => (ushort)(value.Value);
 
         public static explicit operator AUTHZ_CAP_CHANGE_SUBSCRIPTION_HANDLE(uint value) => new AUTHZ_CAP_CHANGE_SUBSCRIPTION_HANDLE((nint)(value));
 
-        public static implicit operator uint(AUTHZ_CAP_CHANGE_SUBSCRIPTION_HANDLE value) => (uint)(value.Value);
+        public static explicit operator uint(AUTHZ_CAP_CHANGE_SUBSCRIPTION_HANDLE value) => (uint)(value.Value);
 
         public static explicit operator AUTHZ_CAP_CHANGE_SUBSCRIPTION_HANDLE(ulong value) => new AUTHZ_CAP_CHANGE_SUBSCRIPTION_HANDLE((nint)(value));
 
-        public static explicit operator ulong(AUTHZ_CAP_CHANGE_SUBSCRIPTION_HANDLE value) => (ulong)(value.Value);
+        public static implicit operator ulong(AUTHZ_CAP_CHANGE_SUBSCRIPTION_HANDLE value) => (ulong)(value.Value);
 
         public static explicit operator AUTHZ_CAP_CHANGE_SUBSCRIPTION_HANDLE(nuint value) => new AUTHZ_CAP_CHANGE_SUBSCRIPTION_HANDLE((nint)(value));
 

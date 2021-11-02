@@ -31,19 +31,19 @@ namespace TerraFX.Interop
 
         public static explicit operator HBLUETOOTH_CONTAINER_ELEMENT(byte value) => new HBLUETOOTH_CONTAINER_ELEMENT((nint)(value));
 
-        public static implicit operator byte(HBLUETOOTH_CONTAINER_ELEMENT value) => (byte)(value.Value);
+        public static explicit operator byte(HBLUETOOTH_CONTAINER_ELEMENT value) => (byte)(value.Value);
 
         public static explicit operator HBLUETOOTH_CONTAINER_ELEMENT(short value) => new HBLUETOOTH_CONTAINER_ELEMENT((nint)(value));
 
-        public static implicit operator short(HBLUETOOTH_CONTAINER_ELEMENT value) => (short)(value.Value);
+        public static explicit operator short(HBLUETOOTH_CONTAINER_ELEMENT value) => (short)(value.Value);
 
         public static explicit operator HBLUETOOTH_CONTAINER_ELEMENT(int value) => new HBLUETOOTH_CONTAINER_ELEMENT((nint)(value));
 
-        public static implicit operator int(HBLUETOOTH_CONTAINER_ELEMENT value) => (int)(value.Value);
+        public static explicit operator int(HBLUETOOTH_CONTAINER_ELEMENT value) => (int)(value.Value);
 
         public static explicit operator HBLUETOOTH_CONTAINER_ELEMENT(long value) => new HBLUETOOTH_CONTAINER_ELEMENT((nint)(value));
 
-        public static explicit operator long(HBLUETOOTH_CONTAINER_ELEMENT value) => (long)(value.Value);
+        public static implicit operator long(HBLUETOOTH_CONTAINER_ELEMENT value) => (long)(value.Value);
 
         public static explicit operator HBLUETOOTH_CONTAINER_ELEMENT(nint value) => new HBLUETOOTH_CONTAINER_ELEMENT((nint)(value));
 
@@ -51,19 +51,19 @@ namespace TerraFX.Interop
 
         public static explicit operator HBLUETOOTH_CONTAINER_ELEMENT(sbyte value) => new HBLUETOOTH_CONTAINER_ELEMENT((nint)(value));
 
-        public static implicit operator sbyte(HBLUETOOTH_CONTAINER_ELEMENT value) => (sbyte)(value.Value);
+        public static explicit operator sbyte(HBLUETOOTH_CONTAINER_ELEMENT value) => (sbyte)(value.Value);
 
         public static explicit operator HBLUETOOTH_CONTAINER_ELEMENT(ushort value) => new HBLUETOOTH_CONTAINER_ELEMENT((nint)(value));
 
-        public static implicit operator ushort(HBLUETOOTH_CONTAINER_ELEMENT value) => (ushort)(value.Value);
+        public static explicit operator ushort(HBLUETOOTH_CONTAINER_ELEMENT value) => (ushort)(value.Value);
 
         public static explicit operator HBLUETOOTH_CONTAINER_ELEMENT(uint value) => new HBLUETOOTH_CONTAINER_ELEMENT((nint)(value));
 
-        public static implicit operator uint(HBLUETOOTH_CONTAINER_ELEMENT value) => (uint)(value.Value);
+        public static explicit operator uint(HBLUETOOTH_CONTAINER_ELEMENT value) => (uint)(value.Value);
 
         public static explicit operator HBLUETOOTH_CONTAINER_ELEMENT(ulong value) => new HBLUETOOTH_CONTAINER_ELEMENT((nint)(value));
 
-        public static explicit operator ulong(HBLUETOOTH_CONTAINER_ELEMENT value) => (ulong)(value.Value);
+        public static implicit operator ulong(HBLUETOOTH_CONTAINER_ELEMENT value) => (ulong)(value.Value);
 
         public static explicit operator HBLUETOOTH_CONTAINER_ELEMENT(nuint value) => new HBLUETOOTH_CONTAINER_ELEMENT((nint)(value));
 

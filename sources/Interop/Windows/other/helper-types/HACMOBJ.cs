@@ -31,19 +31,19 @@ namespace TerraFX.Interop
 
         public static explicit operator HACMOBJ(byte value) => new HACMOBJ((nint)(value));
 
-        public static implicit operator byte(HACMOBJ value) => (byte)(value.Value);
+        public static explicit operator byte(HACMOBJ value) => (byte)(value.Value);
 
         public static explicit operator HACMOBJ(short value) => new HACMOBJ((nint)(value));
 
-        public static implicit operator short(HACMOBJ value) => (short)(value.Value);
+        public static explicit operator short(HACMOBJ value) => (short)(value.Value);
 
         public static explicit operator HACMOBJ(int value) => new HACMOBJ((nint)(value));
 
-        public static implicit operator int(HACMOBJ value) => (int)(value.Value);
+        public static explicit operator int(HACMOBJ value) => (int)(value.Value);
 
         public static explicit operator HACMOBJ(long value) => new HACMOBJ((nint)(value));
 
-        public static explicit operator long(HACMOBJ value) => (long)(value.Value);
+        public static implicit operator long(HACMOBJ value) => (long)(value.Value);
 
         public static explicit operator HACMOBJ(nint value) => new HACMOBJ((nint)(value));
 
@@ -51,19 +51,19 @@ namespace TerraFX.Interop
 
         public static explicit operator HACMOBJ(sbyte value) => new HACMOBJ((nint)(value));
 
-        public static implicit operator sbyte(HACMOBJ value) => (sbyte)(value.Value);
+        public static explicit operator sbyte(HACMOBJ value) => (sbyte)(value.Value);
 
         public static explicit operator HACMOBJ(ushort value) => new HACMOBJ((nint)(value));
 
-        public static implicit operator ushort(HACMOBJ value) => (ushort)(value.Value);
+        public static explicit operator ushort(HACMOBJ value) => (ushort)(value.Value);
 
         public static explicit operator HACMOBJ(uint value) => new HACMOBJ((nint)(value));
 
-        public static implicit operator uint(HACMOBJ value) => (uint)(value.Value);
+        public static explicit operator uint(HACMOBJ value) => (uint)(value.Value);
 
         public static explicit operator HACMOBJ(ulong value) => new HACMOBJ((nint)(value));
 
-        public static explicit operator ulong(HACMOBJ value) => (ulong)(value.Value);
+        public static implicit operator ulong(HACMOBJ value) => (ulong)(value.Value);
 
         public static explicit operator HACMOBJ(nuint value) => new HACMOBJ((nint)(value));
 

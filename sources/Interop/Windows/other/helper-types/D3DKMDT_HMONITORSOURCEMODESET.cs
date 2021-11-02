@@ -31,19 +31,19 @@ namespace TerraFX.Interop
 
         public static explicit operator D3DKMDT_HMONITORSOURCEMODESET(byte value) => new D3DKMDT_HMONITORSOURCEMODESET((nint)(value));
 
-        public static implicit operator byte(D3DKMDT_HMONITORSOURCEMODESET value) => (byte)(value.Value);
+        public static explicit operator byte(D3DKMDT_HMONITORSOURCEMODESET value) => (byte)(value.Value);
 
         public static explicit operator D3DKMDT_HMONITORSOURCEMODESET(short value) => new D3DKMDT_HMONITORSOURCEMODESET((nint)(value));
 
-        public static implicit operator short(D3DKMDT_HMONITORSOURCEMODESET value) => (short)(value.Value);
+        public static explicit operator short(D3DKMDT_HMONITORSOURCEMODESET value) => (short)(value.Value);
 
         public static explicit operator D3DKMDT_HMONITORSOURCEMODESET(int value) => new D3DKMDT_HMONITORSOURCEMODESET((nint)(value));
 
-        public static implicit operator int(D3DKMDT_HMONITORSOURCEMODESET value) => (int)(value.Value);
+        public static explicit operator int(D3DKMDT_HMONITORSOURCEMODESET value) => (int)(value.Value);
 
         public static explicit operator D3DKMDT_HMONITORSOURCEMODESET(long value) => new D3DKMDT_HMONITORSOURCEMODESET((nint)(value));
 
-        public static explicit operator long(D3DKMDT_HMONITORSOURCEMODESET value) => (long)(value.Value);
+        public static implicit operator long(D3DKMDT_HMONITORSOURCEMODESET value) => (long)(value.Value);
 
         public static explicit operator D3DKMDT_HMONITORSOURCEMODESET(nint value) => new D3DKMDT_HMONITORSOURCEMODESET((nint)(value));
 
@@ -51,19 +51,19 @@ namespace TerraFX.Interop
 
         public static explicit operator D3DKMDT_HMONITORSOURCEMODESET(sbyte value) => new D3DKMDT_HMONITORSOURCEMODESET((nint)(value));
 
-        public static implicit operator sbyte(D3DKMDT_HMONITORSOURCEMODESET value) => (sbyte)(value.Value);
+        public static explicit operator sbyte(D3DKMDT_HMONITORSOURCEMODESET value) => (sbyte)(value.Value);
 
         public static explicit operator D3DKMDT_HMONITORSOURCEMODESET(ushort value) => new D3DKMDT_HMONITORSOURCEMODESET((nint)(value));
 
-        public static implicit operator ushort(D3DKMDT_HMONITORSOURCEMODESET value) => (ushort)(value.Value);
+        public static explicit operator ushort(D3DKMDT_HMONITORSOURCEMODESET value) => (ushort)(value.Value);
 
         public static explicit operator D3DKMDT_HMONITORSOURCEMODESET(uint value) => new D3DKMDT_HMONITORSOURCEMODESET((nint)(value));
 
-        public static implicit operator uint(D3DKMDT_HMONITORSOURCEMODESET value) => (uint)(value.Value);
+        public static explicit operator uint(D3DKMDT_HMONITORSOURCEMODESET value) => (uint)(value.Value);
 
         public static explicit operator D3DKMDT_HMONITORSOURCEMODESET(ulong value) => new D3DKMDT_HMONITORSOURCEMODESET((nint)(value));
 
-        public static explicit operator ulong(D3DKMDT_HMONITORSOURCEMODESET value) => (ulong)(value.Value);
+        public static implicit operator ulong(D3DKMDT_HMONITORSOURCEMODESET value) => (ulong)(value.Value);
 
         public static explicit operator D3DKMDT_HMONITORSOURCEMODESET(nuint value) => new D3DKMDT_HMONITORSOURCEMODESET((nint)(value));
 

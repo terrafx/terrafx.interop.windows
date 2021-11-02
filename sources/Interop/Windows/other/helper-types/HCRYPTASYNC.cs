@@ -31,19 +31,19 @@ namespace TerraFX.Interop
 
         public static explicit operator HCRYPTASYNC(byte value) => new HCRYPTASYNC((nint)(value));
 
-        public static implicit operator byte(HCRYPTASYNC value) => (byte)(value.Value);
+        public static explicit operator byte(HCRYPTASYNC value) => (byte)(value.Value);
 
         public static explicit operator HCRYPTASYNC(short value) => new HCRYPTASYNC((nint)(value));
 
-        public static implicit operator short(HCRYPTASYNC value) => (short)(value.Value);
+        public static explicit operator short(HCRYPTASYNC value) => (short)(value.Value);
 
         public static explicit operator HCRYPTASYNC(int value) => new HCRYPTASYNC((nint)(value));
 
-        public static implicit operator int(HCRYPTASYNC value) => (int)(value.Value);
+        public static explicit operator int(HCRYPTASYNC value) => (int)(value.Value);
 
         public static explicit operator HCRYPTASYNC(long value) => new HCRYPTASYNC((nint)(value));
 
-        public static explicit operator long(HCRYPTASYNC value) => (long)(value.Value);
+        public static implicit operator long(HCRYPTASYNC value) => (long)(value.Value);
 
         public static explicit operator HCRYPTASYNC(nint value) => new HCRYPTASYNC((nint)(value));
 
@@ -51,19 +51,19 @@ namespace TerraFX.Interop
 
         public static explicit operator HCRYPTASYNC(sbyte value) => new HCRYPTASYNC((nint)(value));
 
-        public static implicit operator sbyte(HCRYPTASYNC value) => (sbyte)(value.Value);
+        public static explicit operator sbyte(HCRYPTASYNC value) => (sbyte)(value.Value);
 
         public static explicit operator HCRYPTASYNC(ushort value) => new HCRYPTASYNC((nint)(value));
 
-        public static implicit operator ushort(HCRYPTASYNC value) => (ushort)(value.Value);
+        public static explicit operator ushort(HCRYPTASYNC value) => (ushort)(value.Value);
 
         public static explicit operator HCRYPTASYNC(uint value) => new HCRYPTASYNC((nint)(value));
 
-        public static implicit operator uint(HCRYPTASYNC value) => (uint)(value.Value);
+        public static explicit operator uint(HCRYPTASYNC value) => (uint)(value.Value);
 
         public static explicit operator HCRYPTASYNC(ulong value) => new HCRYPTASYNC((nint)(value));
 
-        public static explicit operator ulong(HCRYPTASYNC value) => (ulong)(value.Value);
+        public static implicit operator ulong(HCRYPTASYNC value) => (ulong)(value.Value);
 
         public static explicit operator HCRYPTASYNC(nuint value) => new HCRYPTASYNC((nint)(value));
 

@@ -31,19 +31,19 @@ namespace TerraFX.Interop
 
         public static explicit operator EVT_OBJECT_ARRAY_PROPERTY_HANDLE(byte value) => new EVT_OBJECT_ARRAY_PROPERTY_HANDLE((nint)(value));
 
-        public static implicit operator byte(EVT_OBJECT_ARRAY_PROPERTY_HANDLE value) => (byte)(value.Value);
+        public static explicit operator byte(EVT_OBJECT_ARRAY_PROPERTY_HANDLE value) => (byte)(value.Value);
 
         public static explicit operator EVT_OBJECT_ARRAY_PROPERTY_HANDLE(short value) => new EVT_OBJECT_ARRAY_PROPERTY_HANDLE((nint)(value));
 
-        public static implicit operator short(EVT_OBJECT_ARRAY_PROPERTY_HANDLE value) => (short)(value.Value);
+        public static explicit operator short(EVT_OBJECT_ARRAY_PROPERTY_HANDLE value) => (short)(value.Value);
 
         public static explicit operator EVT_OBJECT_ARRAY_PROPERTY_HANDLE(int value) => new EVT_OBJECT_ARRAY_PROPERTY_HANDLE((nint)(value));
 
-        public static implicit operator int(EVT_OBJECT_ARRAY_PROPERTY_HANDLE value) => (int)(value.Value);
+        public static explicit operator int(EVT_OBJECT_ARRAY_PROPERTY_HANDLE value) => (int)(value.Value);
 
         public static explicit operator EVT_OBJECT_ARRAY_PROPERTY_HANDLE(long value) => new EVT_OBJECT_ARRAY_PROPERTY_HANDLE((nint)(value));
 
-        public static explicit operator long(EVT_OBJECT_ARRAY_PROPERTY_HANDLE value) => (long)(value.Value);
+        public static implicit operator long(EVT_OBJECT_ARRAY_PROPERTY_HANDLE value) => (long)(value.Value);
 
         public static explicit operator EVT_OBJECT_ARRAY_PROPERTY_HANDLE(nint value) => new EVT_OBJECT_ARRAY_PROPERTY_HANDLE((nint)(value));
 
@@ -51,19 +51,19 @@ namespace TerraFX.Interop
 
         public static explicit operator EVT_OBJECT_ARRAY_PROPERTY_HANDLE(sbyte value) => new EVT_OBJECT_ARRAY_PROPERTY_HANDLE((nint)(value));
 
-        public static implicit operator sbyte(EVT_OBJECT_ARRAY_PROPERTY_HANDLE value) => (sbyte)(value.Value);
+        public static explicit operator sbyte(EVT_OBJECT_ARRAY_PROPERTY_HANDLE value) => (sbyte)(value.Value);
 
         public static explicit operator EVT_OBJECT_ARRAY_PROPERTY_HANDLE(ushort value) => new EVT_OBJECT_ARRAY_PROPERTY_HANDLE((nint)(value));
 
-        public static implicit operator ushort(EVT_OBJECT_ARRAY_PROPERTY_HANDLE value) => (ushort)(value.Value);
+        public static explicit operator ushort(EVT_OBJECT_ARRAY_PROPERTY_HANDLE value) => (ushort)(value.Value);
 
         public static explicit operator EVT_OBJECT_ARRAY_PROPERTY_HANDLE(uint value) => new EVT_OBJECT_ARRAY_PROPERTY_HANDLE((nint)(value));
 
-        public static implicit operator uint(EVT_OBJECT_ARRAY_PROPERTY_HANDLE value) => (uint)(value.Value);
+        public static explicit operator uint(EVT_OBJECT_ARRAY_PROPERTY_HANDLE value) => (uint)(value.Value);
 
         public static explicit operator EVT_OBJECT_ARRAY_PROPERTY_HANDLE(ulong value) => new EVT_OBJECT_ARRAY_PROPERTY_HANDLE((nint)(value));
 
-        public static explicit operator ulong(EVT_OBJECT_ARRAY_PROPERTY_HANDLE value) => (ulong)(value.Value);
+        public static implicit operator ulong(EVT_OBJECT_ARRAY_PROPERTY_HANDLE value) => (ulong)(value.Value);
 
         public static explicit operator EVT_OBJECT_ARRAY_PROPERTY_HANDLE(nuint value) => new EVT_OBJECT_ARRAY_PROPERTY_HANDLE((nint)(value));
 

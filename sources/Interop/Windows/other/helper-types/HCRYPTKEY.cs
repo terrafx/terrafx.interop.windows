@@ -31,19 +31,19 @@ namespace TerraFX.Interop
 
         public static explicit operator HCRYPTKEY(byte value) => new HCRYPTKEY((nint)(value));
 
-        public static implicit operator byte(HCRYPTKEY value) => (byte)(value.Value);
+        public static explicit operator byte(HCRYPTKEY value) => (byte)(value.Value);
 
         public static explicit operator HCRYPTKEY(short value) => new HCRYPTKEY((nint)(value));
 
-        public static implicit operator short(HCRYPTKEY value) => (short)(value.Value);
+        public static explicit operator short(HCRYPTKEY value) => (short)(value.Value);
 
         public static explicit operator HCRYPTKEY(int value) => new HCRYPTKEY((nint)(value));
 
-        public static implicit operator int(HCRYPTKEY value) => (int)(value.Value);
+        public static explicit operator int(HCRYPTKEY value) => (int)(value.Value);
 
         public static explicit operator HCRYPTKEY(long value) => new HCRYPTKEY((nint)(value));
 
-        public static explicit operator long(HCRYPTKEY value) => (long)(value.Value);
+        public static implicit operator long(HCRYPTKEY value) => (long)(value.Value);
 
         public static explicit operator HCRYPTKEY(nint value) => new HCRYPTKEY((nint)(value));
 
@@ -51,19 +51,19 @@ namespace TerraFX.Interop
 
         public static explicit operator HCRYPTKEY(sbyte value) => new HCRYPTKEY((nint)(value));
 
-        public static implicit operator sbyte(HCRYPTKEY value) => (sbyte)(value.Value);
+        public static explicit operator sbyte(HCRYPTKEY value) => (sbyte)(value.Value);
 
         public static explicit operator HCRYPTKEY(ushort value) => new HCRYPTKEY((nint)(value));
 
-        public static implicit operator ushort(HCRYPTKEY value) => (ushort)(value.Value);
+        public static explicit operator ushort(HCRYPTKEY value) => (ushort)(value.Value);
 
         public static explicit operator HCRYPTKEY(uint value) => new HCRYPTKEY((nint)(value));
 
-        public static implicit operator uint(HCRYPTKEY value) => (uint)(value.Value);
+        public static explicit operator uint(HCRYPTKEY value) => (uint)(value.Value);
 
         public static explicit operator HCRYPTKEY(ulong value) => new HCRYPTKEY((nint)(value));
 
-        public static explicit operator ulong(HCRYPTKEY value) => (ulong)(value.Value);
+        public static implicit operator ulong(HCRYPTKEY value) => (ulong)(value.Value);
 
         public static explicit operator HCRYPTKEY(nuint value) => new HCRYPTKEY((nint)(value));
 

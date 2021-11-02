@@ -31,19 +31,19 @@ namespace TerraFX.Interop
 
         public static explicit operator HTASK(byte value) => new HTASK((nint)(value));
 
-        public static implicit operator byte(HTASK value) => (byte)(value.Value);
+        public static explicit operator byte(HTASK value) => (byte)(value.Value);
 
         public static explicit operator HTASK(short value) => new HTASK((nint)(value));
 
-        public static implicit operator short(HTASK value) => (short)(value.Value);
+        public static explicit operator short(HTASK value) => (short)(value.Value);
 
         public static explicit operator HTASK(int value) => new HTASK((nint)(value));
 
-        public static implicit operator int(HTASK value) => (int)(value.Value);
+        public static explicit operator int(HTASK value) => (int)(value.Value);
 
         public static explicit operator HTASK(long value) => new HTASK((nint)(value));
 
-        public static explicit operator long(HTASK value) => (long)(value.Value);
+        public static implicit operator long(HTASK value) => (long)(value.Value);
 
         public static explicit operator HTASK(nint value) => new HTASK((nint)(value));
 
@@ -51,19 +51,19 @@ namespace TerraFX.Interop
 
         public static explicit operator HTASK(sbyte value) => new HTASK((nint)(value));
 
-        public static implicit operator sbyte(HTASK value) => (sbyte)(value.Value);
+        public static explicit operator sbyte(HTASK value) => (sbyte)(value.Value);
 
         public static explicit operator HTASK(ushort value) => new HTASK((nint)(value));
 
-        public static implicit operator ushort(HTASK value) => (ushort)(value.Value);
+        public static explicit operator ushort(HTASK value) => (ushort)(value.Value);
 
         public static explicit operator HTASK(uint value) => new HTASK((nint)(value));
 
-        public static implicit operator uint(HTASK value) => (uint)(value.Value);
+        public static explicit operator uint(HTASK value) => (uint)(value.Value);
 
         public static explicit operator HTASK(ulong value) => new HTASK((nint)(value));
 
-        public static explicit operator ulong(HTASK value) => (ulong)(value.Value);
+        public static implicit operator ulong(HTASK value) => (ulong)(value.Value);
 
         public static explicit operator HTASK(nuint value) => new HTASK((nint)(value));
 

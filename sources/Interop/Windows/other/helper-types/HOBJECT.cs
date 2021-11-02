@@ -31,19 +31,19 @@ namespace TerraFX.Interop
 
         public static explicit operator HOBJECT(byte value) => new HOBJECT((nint)(value));
 
-        public static implicit operator byte(HOBJECT value) => (byte)(value.Value);
+        public static explicit operator byte(HOBJECT value) => (byte)(value.Value);
 
         public static explicit operator HOBJECT(short value) => new HOBJECT((nint)(value));
 
-        public static implicit operator short(HOBJECT value) => (short)(value.Value);
+        public static explicit operator short(HOBJECT value) => (short)(value.Value);
 
         public static explicit operator HOBJECT(int value) => new HOBJECT((nint)(value));
 
-        public static implicit operator int(HOBJECT value) => (int)(value.Value);
+        public static explicit operator int(HOBJECT value) => (int)(value.Value);
 
         public static explicit operator HOBJECT(long value) => new HOBJECT((nint)(value));
 
-        public static explicit operator long(HOBJECT value) => (long)(value.Value);
+        public static implicit operator long(HOBJECT value) => (long)(value.Value);
 
         public static explicit operator HOBJECT(nint value) => new HOBJECT((nint)(value));
 
@@ -51,19 +51,19 @@ namespace TerraFX.Interop
 
         public static explicit operator HOBJECT(sbyte value) => new HOBJECT((nint)(value));
 
-        public static implicit operator sbyte(HOBJECT value) => (sbyte)(value.Value);
+        public static explicit operator sbyte(HOBJECT value) => (sbyte)(value.Value);
 
         public static explicit operator HOBJECT(ushort value) => new HOBJECT((nint)(value));
 
-        public static implicit operator ushort(HOBJECT value) => (ushort)(value.Value);
+        public static explicit operator ushort(HOBJECT value) => (ushort)(value.Value);
 
         public static explicit operator HOBJECT(uint value) => new HOBJECT((nint)(value));
 
-        public static implicit operator uint(HOBJECT value) => (uint)(value.Value);
+        public static explicit operator uint(HOBJECT value) => (uint)(value.Value);
 
         public static explicit operator HOBJECT(ulong value) => new HOBJECT((nint)(value));
 
-        public static explicit operator ulong(HOBJECT value) => (ulong)(value.Value);
+        public static implicit operator ulong(HOBJECT value) => (ulong)(value.Value);
 
         public static explicit operator HOBJECT(nuint value) => new HOBJECT((nint)(value));
 

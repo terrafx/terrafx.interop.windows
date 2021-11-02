@@ -31,19 +31,19 @@ namespace TerraFX.Interop
 
         public static explicit operator HPROFILE(byte value) => new HPROFILE((nint)(value));
 
-        public static implicit operator byte(HPROFILE value) => (byte)(value.Value);
+        public static explicit operator byte(HPROFILE value) => (byte)(value.Value);
 
         public static explicit operator HPROFILE(short value) => new HPROFILE((nint)(value));
 
-        public static implicit operator short(HPROFILE value) => (short)(value.Value);
+        public static explicit operator short(HPROFILE value) => (short)(value.Value);
 
         public static explicit operator HPROFILE(int value) => new HPROFILE((nint)(value));
 
-        public static implicit operator int(HPROFILE value) => (int)(value.Value);
+        public static explicit operator int(HPROFILE value) => (int)(value.Value);
 
         public static explicit operator HPROFILE(long value) => new HPROFILE((nint)(value));
 
-        public static explicit operator long(HPROFILE value) => (long)(value.Value);
+        public static implicit operator long(HPROFILE value) => (long)(value.Value);
 
         public static explicit operator HPROFILE(nint value) => new HPROFILE((nint)(value));
 
@@ -51,19 +51,19 @@ namespace TerraFX.Interop
 
         public static explicit operator HPROFILE(sbyte value) => new HPROFILE((nint)(value));
 
-        public static implicit operator sbyte(HPROFILE value) => (sbyte)(value.Value);
+        public static explicit operator sbyte(HPROFILE value) => (sbyte)(value.Value);
 
         public static explicit operator HPROFILE(ushort value) => new HPROFILE((nint)(value));
 
-        public static implicit operator ushort(HPROFILE value) => (ushort)(value.Value);
+        public static explicit operator ushort(HPROFILE value) => (ushort)(value.Value);
 
         public static explicit operator HPROFILE(uint value) => new HPROFILE((nint)(value));
 
-        public static implicit operator uint(HPROFILE value) => (uint)(value.Value);
+        public static explicit operator uint(HPROFILE value) => (uint)(value.Value);
 
         public static explicit operator HPROFILE(ulong value) => new HPROFILE((nint)(value));
 
-        public static explicit operator ulong(HPROFILE value) => (ulong)(value.Value);
+        public static implicit operator ulong(HPROFILE value) => (ulong)(value.Value);
 
         public static explicit operator HPROFILE(nuint value) => new HPROFILE((nint)(value));
 

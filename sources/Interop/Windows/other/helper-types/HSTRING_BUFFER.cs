@@ -31,19 +31,19 @@ namespace TerraFX.Interop
 
         public static explicit operator HSTRING_BUFFER(byte value) => new HSTRING_BUFFER((nint)(value));
 
-        public static implicit operator byte(HSTRING_BUFFER value) => (byte)(value.Value);
+        public static explicit operator byte(HSTRING_BUFFER value) => (byte)(value.Value);
 
         public static explicit operator HSTRING_BUFFER(short value) => new HSTRING_BUFFER((nint)(value));
 
-        public static implicit operator short(HSTRING_BUFFER value) => (short)(value.Value);
+        public static explicit operator short(HSTRING_BUFFER value) => (short)(value.Value);
 
         public static explicit operator HSTRING_BUFFER(int value) => new HSTRING_BUFFER((nint)(value));
 
-        public static implicit operator int(HSTRING_BUFFER value) => (int)(value.Value);
+        public static explicit operator int(HSTRING_BUFFER value) => (int)(value.Value);
 
         public static explicit operator HSTRING_BUFFER(long value) => new HSTRING_BUFFER((nint)(value));
 
-        public static explicit operator long(HSTRING_BUFFER value) => (long)(value.Value);
+        public static implicit operator long(HSTRING_BUFFER value) => (long)(value.Value);
 
         public static explicit operator HSTRING_BUFFER(nint value) => new HSTRING_BUFFER((nint)(value));
 
@@ -51,19 +51,19 @@ namespace TerraFX.Interop
 
         public static explicit operator HSTRING_BUFFER(sbyte value) => new HSTRING_BUFFER((nint)(value));
 
-        public static implicit operator sbyte(HSTRING_BUFFER value) => (sbyte)(value.Value);
+        public static explicit operator sbyte(HSTRING_BUFFER value) => (sbyte)(value.Value);
 
         public static explicit operator HSTRING_BUFFER(ushort value) => new HSTRING_BUFFER((nint)(value));
 
-        public static implicit operator ushort(HSTRING_BUFFER value) => (ushort)(value.Value);
+        public static explicit operator ushort(HSTRING_BUFFER value) => (ushort)(value.Value);
 
         public static explicit operator HSTRING_BUFFER(uint value) => new HSTRING_BUFFER((nint)(value));
 
-        public static implicit operator uint(HSTRING_BUFFER value) => (uint)(value.Value);
+        public static explicit operator uint(HSTRING_BUFFER value) => (uint)(value.Value);
 
         public static explicit operator HSTRING_BUFFER(ulong value) => new HSTRING_BUFFER((nint)(value));
 
-        public static explicit operator ulong(HSTRING_BUFFER value) => (ulong)(value.Value);
+        public static implicit operator ulong(HSTRING_BUFFER value) => (ulong)(value.Value);
 
         public static explicit operator HSTRING_BUFFER(nuint value) => new HSTRING_BUFFER((nint)(value));
 

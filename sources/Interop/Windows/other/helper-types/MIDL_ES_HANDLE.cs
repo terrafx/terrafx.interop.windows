@@ -31,19 +31,19 @@ namespace TerraFX.Interop
 
         public static explicit operator MIDL_ES_HANDLE(byte value) => new MIDL_ES_HANDLE((nint)(value));
 
-        public static implicit operator byte(MIDL_ES_HANDLE value) => (byte)(value.Value);
+        public static explicit operator byte(MIDL_ES_HANDLE value) => (byte)(value.Value);
 
         public static explicit operator MIDL_ES_HANDLE(short value) => new MIDL_ES_HANDLE((nint)(value));
 
-        public static implicit operator short(MIDL_ES_HANDLE value) => (short)(value.Value);
+        public static explicit operator short(MIDL_ES_HANDLE value) => (short)(value.Value);
 
         public static explicit operator MIDL_ES_HANDLE(int value) => new MIDL_ES_HANDLE((nint)(value));
 
-        public static implicit operator int(MIDL_ES_HANDLE value) => (int)(value.Value);
+        public static explicit operator int(MIDL_ES_HANDLE value) => (int)(value.Value);
 
         public static explicit operator MIDL_ES_HANDLE(long value) => new MIDL_ES_HANDLE((nint)(value));
 
-        public static explicit operator long(MIDL_ES_HANDLE value) => (long)(value.Value);
+        public static implicit operator long(MIDL_ES_HANDLE value) => (long)(value.Value);
 
         public static explicit operator MIDL_ES_HANDLE(nint value) => new MIDL_ES_HANDLE((nint)(value));
 
@@ -51,19 +51,19 @@ namespace TerraFX.Interop
 
         public static explicit operator MIDL_ES_HANDLE(sbyte value) => new MIDL_ES_HANDLE((nint)(value));
 
-        public static implicit operator sbyte(MIDL_ES_HANDLE value) => (sbyte)(value.Value);
+        public static explicit operator sbyte(MIDL_ES_HANDLE value) => (sbyte)(value.Value);
 
         public static explicit operator MIDL_ES_HANDLE(ushort value) => new MIDL_ES_HANDLE((nint)(value));
 
-        public static implicit operator ushort(MIDL_ES_HANDLE value) => (ushort)(value.Value);
+        public static explicit operator ushort(MIDL_ES_HANDLE value) => (ushort)(value.Value);
 
         public static explicit operator MIDL_ES_HANDLE(uint value) => new MIDL_ES_HANDLE((nint)(value));
 
-        public static implicit operator uint(MIDL_ES_HANDLE value) => (uint)(value.Value);
+        public static explicit operator uint(MIDL_ES_HANDLE value) => (uint)(value.Value);
 
         public static explicit operator MIDL_ES_HANDLE(ulong value) => new MIDL_ES_HANDLE((nint)(value));
 
-        public static explicit operator ulong(MIDL_ES_HANDLE value) => (ulong)(value.Value);
+        public static implicit operator ulong(MIDL_ES_HANDLE value) => (ulong)(value.Value);
 
         public static explicit operator MIDL_ES_HANDLE(nuint value) => new MIDL_ES_HANDLE((nint)(value));
 

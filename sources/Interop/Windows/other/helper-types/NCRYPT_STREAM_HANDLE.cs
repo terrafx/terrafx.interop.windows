@@ -31,19 +31,19 @@ namespace TerraFX.Interop
 
         public static explicit operator NCRYPT_STREAM_HANDLE(byte value) => new NCRYPT_STREAM_HANDLE((nint)(value));
 
-        public static implicit operator byte(NCRYPT_STREAM_HANDLE value) => (byte)(value.Value);
+        public static explicit operator byte(NCRYPT_STREAM_HANDLE value) => (byte)(value.Value);
 
         public static explicit operator NCRYPT_STREAM_HANDLE(short value) => new NCRYPT_STREAM_HANDLE((nint)(value));
 
-        public static implicit operator short(NCRYPT_STREAM_HANDLE value) => (short)(value.Value);
+        public static explicit operator short(NCRYPT_STREAM_HANDLE value) => (short)(value.Value);
 
         public static explicit operator NCRYPT_STREAM_HANDLE(int value) => new NCRYPT_STREAM_HANDLE((nint)(value));
 
-        public static implicit operator int(NCRYPT_STREAM_HANDLE value) => (int)(value.Value);
+        public static explicit operator int(NCRYPT_STREAM_HANDLE value) => (int)(value.Value);
 
         public static explicit operator NCRYPT_STREAM_HANDLE(long value) => new NCRYPT_STREAM_HANDLE((nint)(value));
 
-        public static explicit operator long(NCRYPT_STREAM_HANDLE value) => (long)(value.Value);
+        public static implicit operator long(NCRYPT_STREAM_HANDLE value) => (long)(value.Value);
 
         public static explicit operator NCRYPT_STREAM_HANDLE(nint value) => new NCRYPT_STREAM_HANDLE((nint)(value));
 
@@ -51,19 +51,19 @@ namespace TerraFX.Interop
 
         public static explicit operator NCRYPT_STREAM_HANDLE(sbyte value) => new NCRYPT_STREAM_HANDLE((nint)(value));
 
-        public static implicit operator sbyte(NCRYPT_STREAM_HANDLE value) => (sbyte)(value.Value);
+        public static explicit operator sbyte(NCRYPT_STREAM_HANDLE value) => (sbyte)(value.Value);
 
         public static explicit operator NCRYPT_STREAM_HANDLE(ushort value) => new NCRYPT_STREAM_HANDLE((nint)(value));
 
-        public static implicit operator ushort(NCRYPT_STREAM_HANDLE value) => (ushort)(value.Value);
+        public static explicit operator ushort(NCRYPT_STREAM_HANDLE value) => (ushort)(value.Value);
 
         public static explicit operator NCRYPT_STREAM_HANDLE(uint value) => new NCRYPT_STREAM_HANDLE((nint)(value));
 
-        public static implicit operator uint(NCRYPT_STREAM_HANDLE value) => (uint)(value.Value);
+        public static explicit operator uint(NCRYPT_STREAM_HANDLE value) => (uint)(value.Value);
 
         public static explicit operator NCRYPT_STREAM_HANDLE(ulong value) => new NCRYPT_STREAM_HANDLE((nint)(value));
 
-        public static explicit operator ulong(NCRYPT_STREAM_HANDLE value) => (ulong)(value.Value);
+        public static implicit operator ulong(NCRYPT_STREAM_HANDLE value) => (ulong)(value.Value);
 
         public static explicit operator NCRYPT_STREAM_HANDLE(nuint value) => new NCRYPT_STREAM_HANDLE((nint)(value));
 

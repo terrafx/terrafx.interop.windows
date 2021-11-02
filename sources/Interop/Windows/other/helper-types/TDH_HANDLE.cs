@@ -31,19 +31,19 @@ namespace TerraFX.Interop
 
         public static explicit operator TDH_HANDLE(byte value) => new TDH_HANDLE((nint)(value));
 
-        public static implicit operator byte(TDH_HANDLE value) => (byte)(value.Value);
+        public static explicit operator byte(TDH_HANDLE value) => (byte)(value.Value);
 
         public static explicit operator TDH_HANDLE(short value) => new TDH_HANDLE((nint)(value));
 
-        public static implicit operator short(TDH_HANDLE value) => (short)(value.Value);
+        public static explicit operator short(TDH_HANDLE value) => (short)(value.Value);
 
         public static explicit operator TDH_HANDLE(int value) => new TDH_HANDLE((nint)(value));
 
-        public static implicit operator int(TDH_HANDLE value) => (int)(value.Value);
+        public static explicit operator int(TDH_HANDLE value) => (int)(value.Value);
 
         public static explicit operator TDH_HANDLE(long value) => new TDH_HANDLE((nint)(value));
 
-        public static explicit operator long(TDH_HANDLE value) => (long)(value.Value);
+        public static implicit operator long(TDH_HANDLE value) => (long)(value.Value);
 
         public static explicit operator TDH_HANDLE(nint value) => new TDH_HANDLE((nint)(value));
 
@@ -51,19 +51,19 @@ namespace TerraFX.Interop
 
         public static explicit operator TDH_HANDLE(sbyte value) => new TDH_HANDLE((nint)(value));
 
-        public static implicit operator sbyte(TDH_HANDLE value) => (sbyte)(value.Value);
+        public static explicit operator sbyte(TDH_HANDLE value) => (sbyte)(value.Value);
 
         public static explicit operator TDH_HANDLE(ushort value) => new TDH_HANDLE((nint)(value));
 
-        public static implicit operator ushort(TDH_HANDLE value) => (ushort)(value.Value);
+        public static explicit operator ushort(TDH_HANDLE value) => (ushort)(value.Value);
 
         public static explicit operator TDH_HANDLE(uint value) => new TDH_HANDLE((nint)(value));
 
-        public static implicit operator uint(TDH_HANDLE value) => (uint)(value.Value);
+        public static explicit operator uint(TDH_HANDLE value) => (uint)(value.Value);
 
         public static explicit operator TDH_HANDLE(ulong value) => new TDH_HANDLE((nint)(value));
 
-        public static explicit operator ulong(TDH_HANDLE value) => (ulong)(value.Value);
+        public static implicit operator ulong(TDH_HANDLE value) => (ulong)(value.Value);
 
         public static explicit operator TDH_HANDLE(nuint value) => new TDH_HANDLE((nint)(value));
 

@@ -31,19 +31,19 @@ namespace TerraFX.Interop
 
         public static explicit operator HCERTSTOREPROV(byte value) => new HCERTSTOREPROV((nint)(value));
 
-        public static implicit operator byte(HCERTSTOREPROV value) => (byte)(value.Value);
+        public static explicit operator byte(HCERTSTOREPROV value) => (byte)(value.Value);
 
         public static explicit operator HCERTSTOREPROV(short value) => new HCERTSTOREPROV((nint)(value));
 
-        public static implicit operator short(HCERTSTOREPROV value) => (short)(value.Value);
+        public static explicit operator short(HCERTSTOREPROV value) => (short)(value.Value);
 
         public static explicit operator HCERTSTOREPROV(int value) => new HCERTSTOREPROV((nint)(value));
 
-        public static implicit operator int(HCERTSTOREPROV value) => (int)(value.Value);
+        public static explicit operator int(HCERTSTOREPROV value) => (int)(value.Value);
 
         public static explicit operator HCERTSTOREPROV(long value) => new HCERTSTOREPROV((nint)(value));
 
-        public static explicit operator long(HCERTSTOREPROV value) => (long)(value.Value);
+        public static implicit operator long(HCERTSTOREPROV value) => (long)(value.Value);
 
         public static explicit operator HCERTSTOREPROV(nint value) => new HCERTSTOREPROV((nint)(value));
 
@@ -51,19 +51,19 @@ namespace TerraFX.Interop
 
         public static explicit operator HCERTSTOREPROV(sbyte value) => new HCERTSTOREPROV((nint)(value));
 
-        public static implicit operator sbyte(HCERTSTOREPROV value) => (sbyte)(value.Value);
+        public static explicit operator sbyte(HCERTSTOREPROV value) => (sbyte)(value.Value);
 
         public static explicit operator HCERTSTOREPROV(ushort value) => new HCERTSTOREPROV((nint)(value));
 
-        public static implicit operator ushort(HCERTSTOREPROV value) => (ushort)(value.Value);
+        public static explicit operator ushort(HCERTSTOREPROV value) => (ushort)(value.Value);
 
         public static explicit operator HCERTSTOREPROV(uint value) => new HCERTSTOREPROV((nint)(value));
 
-        public static implicit operator uint(HCERTSTOREPROV value) => (uint)(value.Value);
+        public static explicit operator uint(HCERTSTOREPROV value) => (uint)(value.Value);
 
         public static explicit operator HCERTSTOREPROV(ulong value) => new HCERTSTOREPROV((nint)(value));
 
-        public static explicit operator ulong(HCERTSTOREPROV value) => (ulong)(value.Value);
+        public static implicit operator ulong(HCERTSTOREPROV value) => (ulong)(value.Value);
 
         public static explicit operator HCERTSTOREPROV(nuint value) => new HCERTSTOREPROV((nint)(value));
 

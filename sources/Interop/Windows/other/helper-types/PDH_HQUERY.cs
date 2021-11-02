@@ -31,19 +31,19 @@ namespace TerraFX.Interop
 
         public static explicit operator PDH_HQUERY(byte value) => new PDH_HQUERY((nint)(value));
 
-        public static implicit operator byte(PDH_HQUERY value) => (byte)(value.Value);
+        public static explicit operator byte(PDH_HQUERY value) => (byte)(value.Value);
 
         public static explicit operator PDH_HQUERY(short value) => new PDH_HQUERY((nint)(value));
 
-        public static implicit operator short(PDH_HQUERY value) => (short)(value.Value);
+        public static explicit operator short(PDH_HQUERY value) => (short)(value.Value);
 
         public static explicit operator PDH_HQUERY(int value) => new PDH_HQUERY((nint)(value));
 
-        public static implicit operator int(PDH_HQUERY value) => (int)(value.Value);
+        public static explicit operator int(PDH_HQUERY value) => (int)(value.Value);
 
         public static explicit operator PDH_HQUERY(long value) => new PDH_HQUERY((nint)(value));
 
-        public static explicit operator long(PDH_HQUERY value) => (long)(value.Value);
+        public static implicit operator long(PDH_HQUERY value) => (long)(value.Value);
 
         public static explicit operator PDH_HQUERY(nint value) => new PDH_HQUERY((nint)(value));
 
@@ -51,19 +51,19 @@ namespace TerraFX.Interop
 
         public static explicit operator PDH_HQUERY(sbyte value) => new PDH_HQUERY((nint)(value));
 
-        public static implicit operator sbyte(PDH_HQUERY value) => (sbyte)(value.Value);
+        public static explicit operator sbyte(PDH_HQUERY value) => (sbyte)(value.Value);
 
         public static explicit operator PDH_HQUERY(ushort value) => new PDH_HQUERY((nint)(value));
 
-        public static implicit operator ushort(PDH_HQUERY value) => (ushort)(value.Value);
+        public static explicit operator ushort(PDH_HQUERY value) => (ushort)(value.Value);
 
         public static explicit operator PDH_HQUERY(uint value) => new PDH_HQUERY((nint)(value));
 
-        public static implicit operator uint(PDH_HQUERY value) => (uint)(value.Value);
+        public static explicit operator uint(PDH_HQUERY value) => (uint)(value.Value);
 
         public static explicit operator PDH_HQUERY(ulong value) => new PDH_HQUERY((nint)(value));
 
-        public static explicit operator ulong(PDH_HQUERY value) => (ulong)(value.Value);
+        public static implicit operator ulong(PDH_HQUERY value) => (ulong)(value.Value);
 
         public static explicit operator PDH_HQUERY(nuint value) => new PDH_HQUERY((nint)(value));
 

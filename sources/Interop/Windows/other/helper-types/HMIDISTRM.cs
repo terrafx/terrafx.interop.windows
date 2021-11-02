@@ -31,19 +31,19 @@ namespace TerraFX.Interop
 
         public static explicit operator HMIDISTRM(byte value) => new HMIDISTRM((nint)(value));
 
-        public static implicit operator byte(HMIDISTRM value) => (byte)(value.Value);
+        public static explicit operator byte(HMIDISTRM value) => (byte)(value.Value);
 
         public static explicit operator HMIDISTRM(short value) => new HMIDISTRM((nint)(value));
 
-        public static implicit operator short(HMIDISTRM value) => (short)(value.Value);
+        public static explicit operator short(HMIDISTRM value) => (short)(value.Value);
 
         public static explicit operator HMIDISTRM(int value) => new HMIDISTRM((nint)(value));
 
-        public static implicit operator int(HMIDISTRM value) => (int)(value.Value);
+        public static explicit operator int(HMIDISTRM value) => (int)(value.Value);
 
         public static explicit operator HMIDISTRM(long value) => new HMIDISTRM((nint)(value));
 
-        public static explicit operator long(HMIDISTRM value) => (long)(value.Value);
+        public static implicit operator long(HMIDISTRM value) => (long)(value.Value);
 
         public static explicit operator HMIDISTRM(nint value) => new HMIDISTRM((nint)(value));
 
@@ -51,19 +51,19 @@ namespace TerraFX.Interop
 
         public static explicit operator HMIDISTRM(sbyte value) => new HMIDISTRM((nint)(value));
 
-        public static implicit operator sbyte(HMIDISTRM value) => (sbyte)(value.Value);
+        public static explicit operator sbyte(HMIDISTRM value) => (sbyte)(value.Value);
 
         public static explicit operator HMIDISTRM(ushort value) => new HMIDISTRM((nint)(value));
 
-        public static implicit operator ushort(HMIDISTRM value) => (ushort)(value.Value);
+        public static explicit operator ushort(HMIDISTRM value) => (ushort)(value.Value);
 
         public static explicit operator HMIDISTRM(uint value) => new HMIDISTRM((nint)(value));
 
-        public static implicit operator uint(HMIDISTRM value) => (uint)(value.Value);
+        public static explicit operator uint(HMIDISTRM value) => (uint)(value.Value);
 
         public static explicit operator HMIDISTRM(ulong value) => new HMIDISTRM((nint)(value));
 
-        public static explicit operator ulong(HMIDISTRM value) => (ulong)(value.Value);
+        public static implicit operator ulong(HMIDISTRM value) => (ulong)(value.Value);
 
         public static explicit operator HMIDISTRM(nuint value) => new HMIDISTRM((nint)(value));
 

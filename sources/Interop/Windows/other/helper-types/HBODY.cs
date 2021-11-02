@@ -31,19 +31,19 @@ namespace TerraFX.Interop
 
         public static explicit operator HBODY(byte value) => new HBODY((nint)(value));
 
-        public static implicit operator byte(HBODY value) => (byte)(value.Value);
+        public static explicit operator byte(HBODY value) => (byte)(value.Value);
 
         public static explicit operator HBODY(short value) => new HBODY((nint)(value));
 
-        public static implicit operator short(HBODY value) => (short)(value.Value);
+        public static explicit operator short(HBODY value) => (short)(value.Value);
 
         public static explicit operator HBODY(int value) => new HBODY((nint)(value));
 
-        public static implicit operator int(HBODY value) => (int)(value.Value);
+        public static explicit operator int(HBODY value) => (int)(value.Value);
 
         public static explicit operator HBODY(long value) => new HBODY((nint)(value));
 
-        public static explicit operator long(HBODY value) => (long)(value.Value);
+        public static implicit operator long(HBODY value) => (long)(value.Value);
 
         public static explicit operator HBODY(nint value) => new HBODY((nint)(value));
 
@@ -51,19 +51,19 @@ namespace TerraFX.Interop
 
         public static explicit operator HBODY(sbyte value) => new HBODY((nint)(value));
 
-        public static implicit operator sbyte(HBODY value) => (sbyte)(value.Value);
+        public static explicit operator sbyte(HBODY value) => (sbyte)(value.Value);
 
         public static explicit operator HBODY(ushort value) => new HBODY((nint)(value));
 
-        public static implicit operator ushort(HBODY value) => (ushort)(value.Value);
+        public static explicit operator ushort(HBODY value) => (ushort)(value.Value);
 
         public static explicit operator HBODY(uint value) => new HBODY((nint)(value));
 
-        public static implicit operator uint(HBODY value) => (uint)(value.Value);
+        public static explicit operator uint(HBODY value) => (uint)(value.Value);
 
         public static explicit operator HBODY(ulong value) => new HBODY((nint)(value));
 
-        public static explicit operator ulong(HBODY value) => (ulong)(value.Value);
+        public static implicit operator ulong(HBODY value) => (ulong)(value.Value);
 
         public static explicit operator HBODY(nuint value) => new HBODY((nint)(value));
 

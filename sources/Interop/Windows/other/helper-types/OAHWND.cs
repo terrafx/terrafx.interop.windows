@@ -25,19 +25,19 @@ namespace TerraFX.Interop
 
         public static explicit operator OAHWND(byte value) => new OAHWND((nint)(value));
 
-        public static implicit operator byte(OAHWND value) => (byte)(value.Value);
+        public static explicit operator byte(OAHWND value) => (byte)(value.Value);
 
         public static explicit operator OAHWND(short value) => new OAHWND((nint)(value));
 
-        public static implicit operator short(OAHWND value) => (short)(value.Value);
+        public static explicit operator short(OAHWND value) => (short)(value.Value);
 
         public static explicit operator OAHWND(int value) => new OAHWND((nint)(value));
 
-        public static implicit operator int(OAHWND value) => (int)(value.Value);
+        public static explicit operator int(OAHWND value) => (int)(value.Value);
 
         public static explicit operator OAHWND(long value) => new OAHWND((nint)(value));
 
-        public static explicit operator long(OAHWND value) => (long)(value.Value);
+        public static implicit operator long(OAHWND value) => (long)(value.Value);
 
         public static explicit operator OAHWND(nint value) => new OAHWND((nint)(value));
 
@@ -45,19 +45,19 @@ namespace TerraFX.Interop
 
         public static explicit operator OAHWND(sbyte value) => new OAHWND((nint)(value));
 
-        public static implicit operator sbyte(OAHWND value) => (sbyte)(value.Value);
+        public static explicit operator sbyte(OAHWND value) => (sbyte)(value.Value);
 
         public static explicit operator OAHWND(ushort value) => new OAHWND((nint)(value));
 
-        public static implicit operator ushort(OAHWND value) => (ushort)(value.Value);
+        public static explicit operator ushort(OAHWND value) => (ushort)(value.Value);
 
         public static explicit operator OAHWND(uint value) => new OAHWND((nint)(value));
 
-        public static implicit operator uint(OAHWND value) => (uint)(value.Value);
+        public static explicit operator uint(OAHWND value) => (uint)(value.Value);
 
         public static explicit operator OAHWND(ulong value) => new OAHWND((nint)(value));
 
-        public static explicit operator ulong(OAHWND value) => (ulong)(value.Value);
+        public static implicit operator ulong(OAHWND value) => (ulong)(value.Value);
 
         public static explicit operator OAHWND(nuint value) => new OAHWND((nint)(value));
 

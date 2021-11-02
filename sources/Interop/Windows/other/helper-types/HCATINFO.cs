@@ -31,19 +31,19 @@ namespace TerraFX.Interop
 
         public static explicit operator HCATINFO(byte value) => new HCATINFO((nint)(value));
 
-        public static implicit operator byte(HCATINFO value) => (byte)(value.Value);
+        public static explicit operator byte(HCATINFO value) => (byte)(value.Value);
 
         public static explicit operator HCATINFO(short value) => new HCATINFO((nint)(value));
 
-        public static implicit operator short(HCATINFO value) => (short)(value.Value);
+        public static explicit operator short(HCATINFO value) => (short)(value.Value);
 
         public static explicit operator HCATINFO(int value) => new HCATINFO((nint)(value));
 
-        public static implicit operator int(HCATINFO value) => (int)(value.Value);
+        public static explicit operator int(HCATINFO value) => (int)(value.Value);
 
         public static explicit operator HCATINFO(long value) => new HCATINFO((nint)(value));
 
-        public static explicit operator long(HCATINFO value) => (long)(value.Value);
+        public static implicit operator long(HCATINFO value) => (long)(value.Value);
 
         public static explicit operator HCATINFO(nint value) => new HCATINFO((nint)(value));
 
@@ -51,19 +51,19 @@ namespace TerraFX.Interop
 
         public static explicit operator HCATINFO(sbyte value) => new HCATINFO((nint)(value));
 
-        public static implicit operator sbyte(HCATINFO value) => (sbyte)(value.Value);
+        public static explicit operator sbyte(HCATINFO value) => (sbyte)(value.Value);
 
         public static explicit operator HCATINFO(ushort value) => new HCATINFO((nint)(value));
 
-        public static implicit operator ushort(HCATINFO value) => (ushort)(value.Value);
+        public static explicit operator ushort(HCATINFO value) => (ushort)(value.Value);
 
         public static explicit operator HCATINFO(uint value) => new HCATINFO((nint)(value));
 
-        public static implicit operator uint(HCATINFO value) => (uint)(value.Value);
+        public static explicit operator uint(HCATINFO value) => (uint)(value.Value);
 
         public static explicit operator HCATINFO(ulong value) => new HCATINFO((nint)(value));
 
-        public static explicit operator ulong(HCATINFO value) => (ulong)(value.Value);
+        public static implicit operator ulong(HCATINFO value) => (ulong)(value.Value);
 
         public static explicit operator HCATINFO(nuint value) => new HCATINFO((nint)(value));
 

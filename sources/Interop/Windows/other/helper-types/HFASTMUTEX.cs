@@ -31,19 +31,19 @@ namespace TerraFX.Interop
 
         public static explicit operator HFASTMUTEX(byte value) => new HFASTMUTEX((nint)(value));
 
-        public static implicit operator byte(HFASTMUTEX value) => (byte)(value.Value);
+        public static explicit operator byte(HFASTMUTEX value) => (byte)(value.Value);
 
         public static explicit operator HFASTMUTEX(short value) => new HFASTMUTEX((nint)(value));
 
-        public static implicit operator short(HFASTMUTEX value) => (short)(value.Value);
+        public static explicit operator short(HFASTMUTEX value) => (short)(value.Value);
 
         public static explicit operator HFASTMUTEX(int value) => new HFASTMUTEX((nint)(value));
 
-        public static implicit operator int(HFASTMUTEX value) => (int)(value.Value);
+        public static explicit operator int(HFASTMUTEX value) => (int)(value.Value);
 
         public static explicit operator HFASTMUTEX(long value) => new HFASTMUTEX((nint)(value));
 
-        public static explicit operator long(HFASTMUTEX value) => (long)(value.Value);
+        public static implicit operator long(HFASTMUTEX value) => (long)(value.Value);
 
         public static explicit operator HFASTMUTEX(nint value) => new HFASTMUTEX((nint)(value));
 
@@ -51,19 +51,19 @@ namespace TerraFX.Interop
 
         public static explicit operator HFASTMUTEX(sbyte value) => new HFASTMUTEX((nint)(value));
 
-        public static implicit operator sbyte(HFASTMUTEX value) => (sbyte)(value.Value);
+        public static explicit operator sbyte(HFASTMUTEX value) => (sbyte)(value.Value);
 
         public static explicit operator HFASTMUTEX(ushort value) => new HFASTMUTEX((nint)(value));
 
-        public static implicit operator ushort(HFASTMUTEX value) => (ushort)(value.Value);
+        public static explicit operator ushort(HFASTMUTEX value) => (ushort)(value.Value);
 
         public static explicit operator HFASTMUTEX(uint value) => new HFASTMUTEX((nint)(value));
 
-        public static implicit operator uint(HFASTMUTEX value) => (uint)(value.Value);
+        public static explicit operator uint(HFASTMUTEX value) => (uint)(value.Value);
 
         public static explicit operator HFASTMUTEX(ulong value) => new HFASTMUTEX((nint)(value));
 
-        public static explicit operator ulong(HFASTMUTEX value) => (ulong)(value.Value);
+        public static implicit operator ulong(HFASTMUTEX value) => (ulong)(value.Value);
 
         public static explicit operator HFASTMUTEX(nuint value) => new HFASTMUTEX((nint)(value));
 

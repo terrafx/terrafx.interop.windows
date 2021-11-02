@@ -31,19 +31,19 @@ namespace TerraFX.Interop
 
         public static explicit operator HPTPROVIDER(byte value) => new HPTPROVIDER((nint)(value));
 
-        public static implicit operator byte(HPTPROVIDER value) => (byte)(value.Value);
+        public static explicit operator byte(HPTPROVIDER value) => (byte)(value.Value);
 
         public static explicit operator HPTPROVIDER(short value) => new HPTPROVIDER((nint)(value));
 
-        public static implicit operator short(HPTPROVIDER value) => (short)(value.Value);
+        public static explicit operator short(HPTPROVIDER value) => (short)(value.Value);
 
         public static explicit operator HPTPROVIDER(int value) => new HPTPROVIDER((nint)(value));
 
-        public static implicit operator int(HPTPROVIDER value) => (int)(value.Value);
+        public static explicit operator int(HPTPROVIDER value) => (int)(value.Value);
 
         public static explicit operator HPTPROVIDER(long value) => new HPTPROVIDER((nint)(value));
 
-        public static explicit operator long(HPTPROVIDER value) => (long)(value.Value);
+        public static implicit operator long(HPTPROVIDER value) => (long)(value.Value);
 
         public static explicit operator HPTPROVIDER(nint value) => new HPTPROVIDER((nint)(value));
 
@@ -51,19 +51,19 @@ namespace TerraFX.Interop
 
         public static explicit operator HPTPROVIDER(sbyte value) => new HPTPROVIDER((nint)(value));
 
-        public static implicit operator sbyte(HPTPROVIDER value) => (sbyte)(value.Value);
+        public static explicit operator sbyte(HPTPROVIDER value) => (sbyte)(value.Value);
 
         public static explicit operator HPTPROVIDER(ushort value) => new HPTPROVIDER((nint)(value));
 
-        public static implicit operator ushort(HPTPROVIDER value) => (ushort)(value.Value);
+        public static explicit operator ushort(HPTPROVIDER value) => (ushort)(value.Value);
 
         public static explicit operator HPTPROVIDER(uint value) => new HPTPROVIDER((nint)(value));
 
-        public static implicit operator uint(HPTPROVIDER value) => (uint)(value.Value);
+        public static explicit operator uint(HPTPROVIDER value) => (uint)(value.Value);
 
         public static explicit operator HPTPROVIDER(ulong value) => new HPTPROVIDER((nint)(value));
 
-        public static explicit operator ulong(HPTPROVIDER value) => (ulong)(value.Value);
+        public static implicit operator ulong(HPTPROVIDER value) => (ulong)(value.Value);
 
         public static explicit operator HPTPROVIDER(nuint value) => new HPTPROVIDER((nint)(value));
 

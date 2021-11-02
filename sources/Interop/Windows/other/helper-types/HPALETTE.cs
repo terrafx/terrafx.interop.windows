@@ -31,19 +31,19 @@ namespace TerraFX.Interop
 
         public static explicit operator HPALETTE(byte value) => new HPALETTE((nint)(value));
 
-        public static implicit operator byte(HPALETTE value) => (byte)(value.Value);
+        public static explicit operator byte(HPALETTE value) => (byte)(value.Value);
 
         public static explicit operator HPALETTE(short value) => new HPALETTE((nint)(value));
 
-        public static implicit operator short(HPALETTE value) => (short)(value.Value);
+        public static explicit operator short(HPALETTE value) => (short)(value.Value);
 
         public static explicit operator HPALETTE(int value) => new HPALETTE((nint)(value));
 
-        public static implicit operator int(HPALETTE value) => (int)(value.Value);
+        public static explicit operator int(HPALETTE value) => (int)(value.Value);
 
         public static explicit operator HPALETTE(long value) => new HPALETTE((nint)(value));
 
-        public static explicit operator long(HPALETTE value) => (long)(value.Value);
+        public static implicit operator long(HPALETTE value) => (long)(value.Value);
 
         public static explicit operator HPALETTE(nint value) => new HPALETTE((nint)(value));
 
@@ -51,19 +51,19 @@ namespace TerraFX.Interop
 
         public static explicit operator HPALETTE(sbyte value) => new HPALETTE((nint)(value));
 
-        public static implicit operator sbyte(HPALETTE value) => (sbyte)(value.Value);
+        public static explicit operator sbyte(HPALETTE value) => (sbyte)(value.Value);
 
         public static explicit operator HPALETTE(ushort value) => new HPALETTE((nint)(value));
 
-        public static implicit operator ushort(HPALETTE value) => (ushort)(value.Value);
+        public static explicit operator ushort(HPALETTE value) => (ushort)(value.Value);
 
         public static explicit operator HPALETTE(uint value) => new HPALETTE((nint)(value));
 
-        public static implicit operator uint(HPALETTE value) => (uint)(value.Value);
+        public static explicit operator uint(HPALETTE value) => (uint)(value.Value);
 
         public static explicit operator HPALETTE(ulong value) => new HPALETTE((nint)(value));
 
-        public static explicit operator ulong(HPALETTE value) => (ulong)(value.Value);
+        public static implicit operator ulong(HPALETTE value) => (ulong)(value.Value);
 
         public static explicit operator HPALETTE(nuint value) => new HPALETTE((nint)(value));
 

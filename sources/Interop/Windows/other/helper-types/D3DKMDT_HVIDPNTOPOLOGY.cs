@@ -31,19 +31,19 @@ namespace TerraFX.Interop
 
         public static explicit operator D3DKMDT_HVIDPNTOPOLOGY(byte value) => new D3DKMDT_HVIDPNTOPOLOGY((nint)(value));
 
-        public static implicit operator byte(D3DKMDT_HVIDPNTOPOLOGY value) => (byte)(value.Value);
+        public static explicit operator byte(D3DKMDT_HVIDPNTOPOLOGY value) => (byte)(value.Value);
 
         public static explicit operator D3DKMDT_HVIDPNTOPOLOGY(short value) => new D3DKMDT_HVIDPNTOPOLOGY((nint)(value));
 
-        public static implicit operator short(D3DKMDT_HVIDPNTOPOLOGY value) => (short)(value.Value);
+        public static explicit operator short(D3DKMDT_HVIDPNTOPOLOGY value) => (short)(value.Value);
 
         public static explicit operator D3DKMDT_HVIDPNTOPOLOGY(int value) => new D3DKMDT_HVIDPNTOPOLOGY((nint)(value));
 
-        public static implicit operator int(D3DKMDT_HVIDPNTOPOLOGY value) => (int)(value.Value);
+        public static explicit operator int(D3DKMDT_HVIDPNTOPOLOGY value) => (int)(value.Value);
 
         public static explicit operator D3DKMDT_HVIDPNTOPOLOGY(long value) => new D3DKMDT_HVIDPNTOPOLOGY((nint)(value));
 
-        public static explicit operator long(D3DKMDT_HVIDPNTOPOLOGY value) => (long)(value.Value);
+        public static implicit operator long(D3DKMDT_HVIDPNTOPOLOGY value) => (long)(value.Value);
 
         public static explicit operator D3DKMDT_HVIDPNTOPOLOGY(nint value) => new D3DKMDT_HVIDPNTOPOLOGY((nint)(value));
 
@@ -51,19 +51,19 @@ namespace TerraFX.Interop
 
         public static explicit operator D3DKMDT_HVIDPNTOPOLOGY(sbyte value) => new D3DKMDT_HVIDPNTOPOLOGY((nint)(value));
 
-        public static implicit operator sbyte(D3DKMDT_HVIDPNTOPOLOGY value) => (sbyte)(value.Value);
+        public static explicit operator sbyte(D3DKMDT_HVIDPNTOPOLOGY value) => (sbyte)(value.Value);
 
         public static explicit operator D3DKMDT_HVIDPNTOPOLOGY(ushort value) => new D3DKMDT_HVIDPNTOPOLOGY((nint)(value));
 
-        public static implicit operator ushort(D3DKMDT_HVIDPNTOPOLOGY value) => (ushort)(value.Value);
+        public static explicit operator ushort(D3DKMDT_HVIDPNTOPOLOGY value) => (ushort)(value.Value);
 
         public static explicit operator D3DKMDT_HVIDPNTOPOLOGY(uint value) => new D3DKMDT_HVIDPNTOPOLOGY((nint)(value));
 
-        public static implicit operator uint(D3DKMDT_HVIDPNTOPOLOGY value) => (uint)(value.Value);
+        public static explicit operator uint(D3DKMDT_HVIDPNTOPOLOGY value) => (uint)(value.Value);
 
         public static explicit operator D3DKMDT_HVIDPNTOPOLOGY(ulong value) => new D3DKMDT_HVIDPNTOPOLOGY((nint)(value));
 
-        public static explicit operator ulong(D3DKMDT_HVIDPNTOPOLOGY value) => (ulong)(value.Value);
+        public static implicit operator ulong(D3DKMDT_HVIDPNTOPOLOGY value) => (ulong)(value.Value);
 
         public static explicit operator D3DKMDT_HVIDPNTOPOLOGY(nuint value) => new D3DKMDT_HVIDPNTOPOLOGY((nint)(value));
 

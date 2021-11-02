@@ -31,19 +31,19 @@ namespace TerraFX.Interop
 
         public static explicit operator HCOLORSPACE(byte value) => new HCOLORSPACE((nint)(value));
 
-        public static implicit operator byte(HCOLORSPACE value) => (byte)(value.Value);
+        public static explicit operator byte(HCOLORSPACE value) => (byte)(value.Value);
 
         public static explicit operator HCOLORSPACE(short value) => new HCOLORSPACE((nint)(value));
 
-        public static implicit operator short(HCOLORSPACE value) => (short)(value.Value);
+        public static explicit operator short(HCOLORSPACE value) => (short)(value.Value);
 
         public static explicit operator HCOLORSPACE(int value) => new HCOLORSPACE((nint)(value));
 
-        public static implicit operator int(HCOLORSPACE value) => (int)(value.Value);
+        public static explicit operator int(HCOLORSPACE value) => (int)(value.Value);
 
         public static explicit operator HCOLORSPACE(long value) => new HCOLORSPACE((nint)(value));
 
-        public static explicit operator long(HCOLORSPACE value) => (long)(value.Value);
+        public static implicit operator long(HCOLORSPACE value) => (long)(value.Value);
 
         public static explicit operator HCOLORSPACE(nint value) => new HCOLORSPACE((nint)(value));
 
@@ -51,19 +51,19 @@ namespace TerraFX.Interop
 
         public static explicit operator HCOLORSPACE(sbyte value) => new HCOLORSPACE((nint)(value));
 
-        public static implicit operator sbyte(HCOLORSPACE value) => (sbyte)(value.Value);
+        public static explicit operator sbyte(HCOLORSPACE value) => (sbyte)(value.Value);
 
         public static explicit operator HCOLORSPACE(ushort value) => new HCOLORSPACE((nint)(value));
 
-        public static implicit operator ushort(HCOLORSPACE value) => (ushort)(value.Value);
+        public static explicit operator ushort(HCOLORSPACE value) => (ushort)(value.Value);
 
         public static explicit operator HCOLORSPACE(uint value) => new HCOLORSPACE((nint)(value));
 
-        public static implicit operator uint(HCOLORSPACE value) => (uint)(value.Value);
+        public static explicit operator uint(HCOLORSPACE value) => (uint)(value.Value);
 
         public static explicit operator HCOLORSPACE(ulong value) => new HCOLORSPACE((nint)(value));
 
-        public static explicit operator ulong(HCOLORSPACE value) => (ulong)(value.Value);
+        public static implicit operator ulong(HCOLORSPACE value) => (ulong)(value.Value);
 
         public static explicit operator HCOLORSPACE(nuint value) => new HCOLORSPACE((nint)(value));
 

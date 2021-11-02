@@ -31,19 +31,19 @@ namespace TerraFX.Interop
 
         public static explicit operator HUMPD(byte value) => new HUMPD((nint)(value));
 
-        public static implicit operator byte(HUMPD value) => (byte)(value.Value);
+        public static explicit operator byte(HUMPD value) => (byte)(value.Value);
 
         public static explicit operator HUMPD(short value) => new HUMPD((nint)(value));
 
-        public static implicit operator short(HUMPD value) => (short)(value.Value);
+        public static explicit operator short(HUMPD value) => (short)(value.Value);
 
         public static explicit operator HUMPD(int value) => new HUMPD((nint)(value));
 
-        public static implicit operator int(HUMPD value) => (int)(value.Value);
+        public static explicit operator int(HUMPD value) => (int)(value.Value);
 
         public static explicit operator HUMPD(long value) => new HUMPD((nint)(value));
 
-        public static explicit operator long(HUMPD value) => (long)(value.Value);
+        public static implicit operator long(HUMPD value) => (long)(value.Value);
 
         public static explicit operator HUMPD(nint value) => new HUMPD((nint)(value));
 
@@ -51,19 +51,19 @@ namespace TerraFX.Interop
 
         public static explicit operator HUMPD(sbyte value) => new HUMPD((nint)(value));
 
-        public static implicit operator sbyte(HUMPD value) => (sbyte)(value.Value);
+        public static explicit operator sbyte(HUMPD value) => (sbyte)(value.Value);
 
         public static explicit operator HUMPD(ushort value) => new HUMPD((nint)(value));
 
-        public static implicit operator ushort(HUMPD value) => (ushort)(value.Value);
+        public static explicit operator ushort(HUMPD value) => (ushort)(value.Value);
 
         public static explicit operator HUMPD(uint value) => new HUMPD((nint)(value));
 
-        public static implicit operator uint(HUMPD value) => (uint)(value.Value);
+        public static explicit operator uint(HUMPD value) => (uint)(value.Value);
 
         public static explicit operator HUMPD(ulong value) => new HUMPD((nint)(value));
 
-        public static explicit operator ulong(HUMPD value) => (ulong)(value.Value);
+        public static implicit operator ulong(HUMPD value) => (ulong)(value.Value);
 
         public static explicit operator HUMPD(nuint value) => new HUMPD((nint)(value));
 

@@ -31,19 +31,19 @@ namespace TerraFX.Interop
 
         public static explicit operator HSNMP_PDU(byte value) => new HSNMP_PDU((nint)(value));
 
-        public static implicit operator byte(HSNMP_PDU value) => (byte)(value.Value);
+        public static explicit operator byte(HSNMP_PDU value) => (byte)(value.Value);
 
         public static explicit operator HSNMP_PDU(short value) => new HSNMP_PDU((nint)(value));
 
-        public static implicit operator short(HSNMP_PDU value) => (short)(value.Value);
+        public static explicit operator short(HSNMP_PDU value) => (short)(value.Value);
 
         public static explicit operator HSNMP_PDU(int value) => new HSNMP_PDU((nint)(value));
 
-        public static implicit operator int(HSNMP_PDU value) => (int)(value.Value);
+        public static explicit operator int(HSNMP_PDU value) => (int)(value.Value);
 
         public static explicit operator HSNMP_PDU(long value) => new HSNMP_PDU((nint)(value));
 
-        public static explicit operator long(HSNMP_PDU value) => (long)(value.Value);
+        public static implicit operator long(HSNMP_PDU value) => (long)(value.Value);
 
         public static explicit operator HSNMP_PDU(nint value) => new HSNMP_PDU((nint)(value));
 
@@ -51,19 +51,19 @@ namespace TerraFX.Interop
 
         public static explicit operator HSNMP_PDU(sbyte value) => new HSNMP_PDU((nint)(value));
 
-        public static implicit operator sbyte(HSNMP_PDU value) => (sbyte)(value.Value);
+        public static explicit operator sbyte(HSNMP_PDU value) => (sbyte)(value.Value);
 
         public static explicit operator HSNMP_PDU(ushort value) => new HSNMP_PDU((nint)(value));
 
-        public static implicit operator ushort(HSNMP_PDU value) => (ushort)(value.Value);
+        public static explicit operator ushort(HSNMP_PDU value) => (ushort)(value.Value);
 
         public static explicit operator HSNMP_PDU(uint value) => new HSNMP_PDU((nint)(value));
 
-        public static implicit operator uint(HSNMP_PDU value) => (uint)(value.Value);
+        public static explicit operator uint(HSNMP_PDU value) => (uint)(value.Value);
 
         public static explicit operator HSNMP_PDU(ulong value) => new HSNMP_PDU((nint)(value));
 
-        public static explicit operator ulong(HSNMP_PDU value) => (ulong)(value.Value);
+        public static implicit operator ulong(HSNMP_PDU value) => (ulong)(value.Value);
 
         public static explicit operator HSNMP_PDU(nuint value) => new HSNMP_PDU((nint)(value));
 

@@ -31,19 +31,19 @@ namespace TerraFX.Interop
 
         public static explicit operator HDEVINFO(byte value) => new HDEVINFO((nint)(value));
 
-        public static implicit operator byte(HDEVINFO value) => (byte)(value.Value);
+        public static explicit operator byte(HDEVINFO value) => (byte)(value.Value);
 
         public static explicit operator HDEVINFO(short value) => new HDEVINFO((nint)(value));
 
-        public static implicit operator short(HDEVINFO value) => (short)(value.Value);
+        public static explicit operator short(HDEVINFO value) => (short)(value.Value);
 
         public static explicit operator HDEVINFO(int value) => new HDEVINFO((nint)(value));
 
-        public static implicit operator int(HDEVINFO value) => (int)(value.Value);
+        public static explicit operator int(HDEVINFO value) => (int)(value.Value);
 
         public static explicit operator HDEVINFO(long value) => new HDEVINFO((nint)(value));
 
-        public static explicit operator long(HDEVINFO value) => (long)(value.Value);
+        public static implicit operator long(HDEVINFO value) => (long)(value.Value);
 
         public static explicit operator HDEVINFO(nint value) => new HDEVINFO((nint)(value));
 
@@ -51,19 +51,19 @@ namespace TerraFX.Interop
 
         public static explicit operator HDEVINFO(sbyte value) => new HDEVINFO((nint)(value));
 
-        public static implicit operator sbyte(HDEVINFO value) => (sbyte)(value.Value);
+        public static explicit operator sbyte(HDEVINFO value) => (sbyte)(value.Value);
 
         public static explicit operator HDEVINFO(ushort value) => new HDEVINFO((nint)(value));
 
-        public static implicit operator ushort(HDEVINFO value) => (ushort)(value.Value);
+        public static explicit operator ushort(HDEVINFO value) => (ushort)(value.Value);
 
         public static explicit operator HDEVINFO(uint value) => new HDEVINFO((nint)(value));
 
-        public static implicit operator uint(HDEVINFO value) => (uint)(value.Value);
+        public static explicit operator uint(HDEVINFO value) => (uint)(value.Value);
 
         public static explicit operator HDEVINFO(ulong value) => new HDEVINFO((nint)(value));
 
-        public static explicit operator ulong(HDEVINFO value) => (ulong)(value.Value);
+        public static implicit operator ulong(HDEVINFO value) => (ulong)(value.Value);
 
         public static explicit operator HDEVINFO(nuint value) => new HDEVINFO((nint)(value));
 

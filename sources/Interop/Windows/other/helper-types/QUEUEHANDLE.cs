@@ -31,19 +31,19 @@ namespace TerraFX.Interop
 
         public static explicit operator QUEUEHANDLE(byte value) => new QUEUEHANDLE((nint)(value));
 
-        public static implicit operator byte(QUEUEHANDLE value) => (byte)(value.Value);
+        public static explicit operator byte(QUEUEHANDLE value) => (byte)(value.Value);
 
         public static explicit operator QUEUEHANDLE(short value) => new QUEUEHANDLE((nint)(value));
 
-        public static implicit operator short(QUEUEHANDLE value) => (short)(value.Value);
+        public static explicit operator short(QUEUEHANDLE value) => (short)(value.Value);
 
         public static explicit operator QUEUEHANDLE(int value) => new QUEUEHANDLE((nint)(value));
 
-        public static implicit operator int(QUEUEHANDLE value) => (int)(value.Value);
+        public static explicit operator int(QUEUEHANDLE value) => (int)(value.Value);
 
         public static explicit operator QUEUEHANDLE(long value) => new QUEUEHANDLE((nint)(value));
 
-        public static explicit operator long(QUEUEHANDLE value) => (long)(value.Value);
+        public static implicit operator long(QUEUEHANDLE value) => (long)(value.Value);
 
         public static explicit operator QUEUEHANDLE(nint value) => new QUEUEHANDLE((nint)(value));
 
@@ -51,19 +51,19 @@ namespace TerraFX.Interop
 
         public static explicit operator QUEUEHANDLE(sbyte value) => new QUEUEHANDLE((nint)(value));
 
-        public static implicit operator sbyte(QUEUEHANDLE value) => (sbyte)(value.Value);
+        public static explicit operator sbyte(QUEUEHANDLE value) => (sbyte)(value.Value);
 
         public static explicit operator QUEUEHANDLE(ushort value) => new QUEUEHANDLE((nint)(value));
 
-        public static implicit operator ushort(QUEUEHANDLE value) => (ushort)(value.Value);
+        public static explicit operator ushort(QUEUEHANDLE value) => (ushort)(value.Value);
 
         public static explicit operator QUEUEHANDLE(uint value) => new QUEUEHANDLE((nint)(value));
 
-        public static implicit operator uint(QUEUEHANDLE value) => (uint)(value.Value);
+        public static explicit operator uint(QUEUEHANDLE value) => (uint)(value.Value);
 
         public static explicit operator QUEUEHANDLE(ulong value) => new QUEUEHANDLE((nint)(value));
 
-        public static explicit operator ulong(QUEUEHANDLE value) => (ulong)(value.Value);
+        public static implicit operator ulong(QUEUEHANDLE value) => (ulong)(value.Value);
 
         public static explicit operator QUEUEHANDLE(nuint value) => new QUEUEHANDLE((nint)(value));
 

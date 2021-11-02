@@ -31,19 +31,19 @@ namespace TerraFX.Interop
 
         public static explicit operator HDIAGNOSTIC_DATA_QUERY_SESSION(byte value) => new HDIAGNOSTIC_DATA_QUERY_SESSION((nint)(value));
 
-        public static implicit operator byte(HDIAGNOSTIC_DATA_QUERY_SESSION value) => (byte)(value.Value);
+        public static explicit operator byte(HDIAGNOSTIC_DATA_QUERY_SESSION value) => (byte)(value.Value);
 
         public static explicit operator HDIAGNOSTIC_DATA_QUERY_SESSION(short value) => new HDIAGNOSTIC_DATA_QUERY_SESSION((nint)(value));
 
-        public static implicit operator short(HDIAGNOSTIC_DATA_QUERY_SESSION value) => (short)(value.Value);
+        public static explicit operator short(HDIAGNOSTIC_DATA_QUERY_SESSION value) => (short)(value.Value);
 
         public static explicit operator HDIAGNOSTIC_DATA_QUERY_SESSION(int value) => new HDIAGNOSTIC_DATA_QUERY_SESSION((nint)(value));
 
-        public static implicit operator int(HDIAGNOSTIC_DATA_QUERY_SESSION value) => (int)(value.Value);
+        public static explicit operator int(HDIAGNOSTIC_DATA_QUERY_SESSION value) => (int)(value.Value);
 
         public static explicit operator HDIAGNOSTIC_DATA_QUERY_SESSION(long value) => new HDIAGNOSTIC_DATA_QUERY_SESSION((nint)(value));
 
-        public static explicit operator long(HDIAGNOSTIC_DATA_QUERY_SESSION value) => (long)(value.Value);
+        public static implicit operator long(HDIAGNOSTIC_DATA_QUERY_SESSION value) => (long)(value.Value);
 
         public static explicit operator HDIAGNOSTIC_DATA_QUERY_SESSION(nint value) => new HDIAGNOSTIC_DATA_QUERY_SESSION((nint)(value));
 
@@ -51,19 +51,19 @@ namespace TerraFX.Interop
 
         public static explicit operator HDIAGNOSTIC_DATA_QUERY_SESSION(sbyte value) => new HDIAGNOSTIC_DATA_QUERY_SESSION((nint)(value));
 
-        public static implicit operator sbyte(HDIAGNOSTIC_DATA_QUERY_SESSION value) => (sbyte)(value.Value);
+        public static explicit operator sbyte(HDIAGNOSTIC_DATA_QUERY_SESSION value) => (sbyte)(value.Value);
 
         public static explicit operator HDIAGNOSTIC_DATA_QUERY_SESSION(ushort value) => new HDIAGNOSTIC_DATA_QUERY_SESSION((nint)(value));
 
-        public static implicit operator ushort(HDIAGNOSTIC_DATA_QUERY_SESSION value) => (ushort)(value.Value);
+        public static explicit operator ushort(HDIAGNOSTIC_DATA_QUERY_SESSION value) => (ushort)(value.Value);
 
         public static explicit operator HDIAGNOSTIC_DATA_QUERY_SESSION(uint value) => new HDIAGNOSTIC_DATA_QUERY_SESSION((nint)(value));
 
-        public static implicit operator uint(HDIAGNOSTIC_DATA_QUERY_SESSION value) => (uint)(value.Value);
+        public static explicit operator uint(HDIAGNOSTIC_DATA_QUERY_SESSION value) => (uint)(value.Value);
 
         public static explicit operator HDIAGNOSTIC_DATA_QUERY_SESSION(ulong value) => new HDIAGNOSTIC_DATA_QUERY_SESSION((nint)(value));
 
-        public static explicit operator ulong(HDIAGNOSTIC_DATA_QUERY_SESSION value) => (ulong)(value.Value);
+        public static implicit operator ulong(HDIAGNOSTIC_DATA_QUERY_SESSION value) => (ulong)(value.Value);
 
         public static explicit operator HDIAGNOSTIC_DATA_QUERY_SESSION(nuint value) => new HDIAGNOSTIC_DATA_QUERY_SESSION((nint)(value));
 

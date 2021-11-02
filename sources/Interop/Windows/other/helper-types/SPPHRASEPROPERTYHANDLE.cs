@@ -31,19 +31,19 @@ namespace TerraFX.Interop
 
         public static explicit operator SPPHRASEPROPERTYHANDLE(byte value) => new SPPHRASEPROPERTYHANDLE((nint)(value));
 
-        public static implicit operator byte(SPPHRASEPROPERTYHANDLE value) => (byte)(value.Value);
+        public static explicit operator byte(SPPHRASEPROPERTYHANDLE value) => (byte)(value.Value);
 
         public static explicit operator SPPHRASEPROPERTYHANDLE(short value) => new SPPHRASEPROPERTYHANDLE((nint)(value));
 
-        public static implicit operator short(SPPHRASEPROPERTYHANDLE value) => (short)(value.Value);
+        public static explicit operator short(SPPHRASEPROPERTYHANDLE value) => (short)(value.Value);
 
         public static explicit operator SPPHRASEPROPERTYHANDLE(int value) => new SPPHRASEPROPERTYHANDLE((nint)(value));
 
-        public static implicit operator int(SPPHRASEPROPERTYHANDLE value) => (int)(value.Value);
+        public static explicit operator int(SPPHRASEPROPERTYHANDLE value) => (int)(value.Value);
 
         public static explicit operator SPPHRASEPROPERTYHANDLE(long value) => new SPPHRASEPROPERTYHANDLE((nint)(value));
 
-        public static explicit operator long(SPPHRASEPROPERTYHANDLE value) => (long)(value.Value);
+        public static implicit operator long(SPPHRASEPROPERTYHANDLE value) => (long)(value.Value);
 
         public static explicit operator SPPHRASEPROPERTYHANDLE(nint value) => new SPPHRASEPROPERTYHANDLE((nint)(value));
 
@@ -51,19 +51,19 @@ namespace TerraFX.Interop
 
         public static explicit operator SPPHRASEPROPERTYHANDLE(sbyte value) => new SPPHRASEPROPERTYHANDLE((nint)(value));
 
-        public static implicit operator sbyte(SPPHRASEPROPERTYHANDLE value) => (sbyte)(value.Value);
+        public static explicit operator sbyte(SPPHRASEPROPERTYHANDLE value) => (sbyte)(value.Value);
 
         public static explicit operator SPPHRASEPROPERTYHANDLE(ushort value) => new SPPHRASEPROPERTYHANDLE((nint)(value));
 
-        public static implicit operator ushort(SPPHRASEPROPERTYHANDLE value) => (ushort)(value.Value);
+        public static explicit operator ushort(SPPHRASEPROPERTYHANDLE value) => (ushort)(value.Value);
 
         public static explicit operator SPPHRASEPROPERTYHANDLE(uint value) => new SPPHRASEPROPERTYHANDLE((nint)(value));
 
-        public static implicit operator uint(SPPHRASEPROPERTYHANDLE value) => (uint)(value.Value);
+        public static explicit operator uint(SPPHRASEPROPERTYHANDLE value) => (uint)(value.Value);
 
         public static explicit operator SPPHRASEPROPERTYHANDLE(ulong value) => new SPPHRASEPROPERTYHANDLE((nint)(value));
 
-        public static explicit operator ulong(SPPHRASEPROPERTYHANDLE value) => (ulong)(value.Value);
+        public static implicit operator ulong(SPPHRASEPROPERTYHANDLE value) => (ulong)(value.Value);
 
         public static explicit operator SPPHRASEPROPERTYHANDLE(nuint value) => new SPPHRASEPROPERTYHANDLE((nint)(value));
 

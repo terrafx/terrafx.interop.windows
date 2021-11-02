@@ -31,19 +31,19 @@ namespace TerraFX.Interop
 
         public static explicit operator SPPHRASERULEHANDLE(byte value) => new SPPHRASERULEHANDLE((nint)(value));
 
-        public static implicit operator byte(SPPHRASERULEHANDLE value) => (byte)(value.Value);
+        public static explicit operator byte(SPPHRASERULEHANDLE value) => (byte)(value.Value);
 
         public static explicit operator SPPHRASERULEHANDLE(short value) => new SPPHRASERULEHANDLE((nint)(value));
 
-        public static implicit operator short(SPPHRASERULEHANDLE value) => (short)(value.Value);
+        public static explicit operator short(SPPHRASERULEHANDLE value) => (short)(value.Value);
 
         public static explicit operator SPPHRASERULEHANDLE(int value) => new SPPHRASERULEHANDLE((nint)(value));
 
-        public static implicit operator int(SPPHRASERULEHANDLE value) => (int)(value.Value);
+        public static explicit operator int(SPPHRASERULEHANDLE value) => (int)(value.Value);
 
         public static explicit operator SPPHRASERULEHANDLE(long value) => new SPPHRASERULEHANDLE((nint)(value));
 
-        public static explicit operator long(SPPHRASERULEHANDLE value) => (long)(value.Value);
+        public static implicit operator long(SPPHRASERULEHANDLE value) => (long)(value.Value);
 
         public static explicit operator SPPHRASERULEHANDLE(nint value) => new SPPHRASERULEHANDLE((nint)(value));
 
@@ -51,19 +51,19 @@ namespace TerraFX.Interop
 
         public static explicit operator SPPHRASERULEHANDLE(sbyte value) => new SPPHRASERULEHANDLE((nint)(value));
 
-        public static implicit operator sbyte(SPPHRASERULEHANDLE value) => (sbyte)(value.Value);
+        public static explicit operator sbyte(SPPHRASERULEHANDLE value) => (sbyte)(value.Value);
 
         public static explicit operator SPPHRASERULEHANDLE(ushort value) => new SPPHRASERULEHANDLE((nint)(value));
 
-        public static implicit operator ushort(SPPHRASERULEHANDLE value) => (ushort)(value.Value);
+        public static explicit operator ushort(SPPHRASERULEHANDLE value) => (ushort)(value.Value);
 
         public static explicit operator SPPHRASERULEHANDLE(uint value) => new SPPHRASERULEHANDLE((nint)(value));
 
-        public static implicit operator uint(SPPHRASERULEHANDLE value) => (uint)(value.Value);
+        public static explicit operator uint(SPPHRASERULEHANDLE value) => (uint)(value.Value);
 
         public static explicit operator SPPHRASERULEHANDLE(ulong value) => new SPPHRASERULEHANDLE((nint)(value));
 
-        public static explicit operator ulong(SPPHRASERULEHANDLE value) => (ulong)(value.Value);
+        public static implicit operator ulong(SPPHRASERULEHANDLE value) => (ulong)(value.Value);
 
         public static explicit operator SPPHRASERULEHANDLE(nuint value) => new SPPHRASERULEHANDLE((nint)(value));
 

@@ -31,19 +31,19 @@ namespace TerraFX.Interop
 
         public static explicit operator HPSXA(byte value) => new HPSXA((nint)(value));
 
-        public static implicit operator byte(HPSXA value) => (byte)(value.Value);
+        public static explicit operator byte(HPSXA value) => (byte)(value.Value);
 
         public static explicit operator HPSXA(short value) => new HPSXA((nint)(value));
 
-        public static implicit operator short(HPSXA value) => (short)(value.Value);
+        public static explicit operator short(HPSXA value) => (short)(value.Value);
 
         public static explicit operator HPSXA(int value) => new HPSXA((nint)(value));
 
-        public static implicit operator int(HPSXA value) => (int)(value.Value);
+        public static explicit operator int(HPSXA value) => (int)(value.Value);
 
         public static explicit operator HPSXA(long value) => new HPSXA((nint)(value));
 
-        public static explicit operator long(HPSXA value) => (long)(value.Value);
+        public static implicit operator long(HPSXA value) => (long)(value.Value);
 
         public static explicit operator HPSXA(nint value) => new HPSXA((nint)(value));
 
@@ -51,19 +51,19 @@ namespace TerraFX.Interop
 
         public static explicit operator HPSXA(sbyte value) => new HPSXA((nint)(value));
 
-        public static implicit operator sbyte(HPSXA value) => (sbyte)(value.Value);
+        public static explicit operator sbyte(HPSXA value) => (sbyte)(value.Value);
 
         public static explicit operator HPSXA(ushort value) => new HPSXA((nint)(value));
 
-        public static implicit operator ushort(HPSXA value) => (ushort)(value.Value);
+        public static explicit operator ushort(HPSXA value) => (ushort)(value.Value);
 
         public static explicit operator HPSXA(uint value) => new HPSXA((nint)(value));
 
-        public static implicit operator uint(HPSXA value) => (uint)(value.Value);
+        public static explicit operator uint(HPSXA value) => (uint)(value.Value);
 
         public static explicit operator HPSXA(ulong value) => new HPSXA((nint)(value));
 
-        public static explicit operator ulong(HPSXA value) => (ulong)(value.Value);
+        public static implicit operator ulong(HPSXA value) => (ulong)(value.Value);
 
         public static explicit operator HPSXA(nuint value) => new HPSXA((nint)(value));
 

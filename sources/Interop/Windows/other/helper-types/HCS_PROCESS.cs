@@ -31,19 +31,19 @@ namespace TerraFX.Interop
 
         public static explicit operator HCS_PROCESS(byte value) => new HCS_PROCESS((nint)(value));
 
-        public static implicit operator byte(HCS_PROCESS value) => (byte)(value.Value);
+        public static explicit operator byte(HCS_PROCESS value) => (byte)(value.Value);
 
         public static explicit operator HCS_PROCESS(short value) => new HCS_PROCESS((nint)(value));
 
-        public static implicit operator short(HCS_PROCESS value) => (short)(value.Value);
+        public static explicit operator short(HCS_PROCESS value) => (short)(value.Value);
 
         public static explicit operator HCS_PROCESS(int value) => new HCS_PROCESS((nint)(value));
 
-        public static implicit operator int(HCS_PROCESS value) => (int)(value.Value);
+        public static explicit operator int(HCS_PROCESS value) => (int)(value.Value);
 
         public static explicit operator HCS_PROCESS(long value) => new HCS_PROCESS((nint)(value));
 
-        public static explicit operator long(HCS_PROCESS value) => (long)(value.Value);
+        public static implicit operator long(HCS_PROCESS value) => (long)(value.Value);
 
         public static explicit operator HCS_PROCESS(nint value) => new HCS_PROCESS((nint)(value));
 
@@ -51,19 +51,19 @@ namespace TerraFX.Interop
 
         public static explicit operator HCS_PROCESS(sbyte value) => new HCS_PROCESS((nint)(value));
 
-        public static implicit operator sbyte(HCS_PROCESS value) => (sbyte)(value.Value);
+        public static explicit operator sbyte(HCS_PROCESS value) => (sbyte)(value.Value);
 
         public static explicit operator HCS_PROCESS(ushort value) => new HCS_PROCESS((nint)(value));
 
-        public static implicit operator ushort(HCS_PROCESS value) => (ushort)(value.Value);
+        public static explicit operator ushort(HCS_PROCESS value) => (ushort)(value.Value);
 
         public static explicit operator HCS_PROCESS(uint value) => new HCS_PROCESS((nint)(value));
 
-        public static implicit operator uint(HCS_PROCESS value) => (uint)(value.Value);
+        public static explicit operator uint(HCS_PROCESS value) => (uint)(value.Value);
 
         public static explicit operator HCS_PROCESS(ulong value) => new HCS_PROCESS((nint)(value));
 
-        public static explicit operator ulong(HCS_PROCESS value) => (ulong)(value.Value);
+        public static implicit operator ulong(HCS_PROCESS value) => (ulong)(value.Value);
 
         public static explicit operator HCS_PROCESS(nuint value) => new HCS_PROCESS((nint)(value));
 

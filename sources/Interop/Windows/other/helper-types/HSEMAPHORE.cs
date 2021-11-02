@@ -31,19 +31,19 @@ namespace TerraFX.Interop
 
         public static explicit operator HSEMAPHORE(byte value) => new HSEMAPHORE((nint)(value));
 
-        public static implicit operator byte(HSEMAPHORE value) => (byte)(value.Value);
+        public static explicit operator byte(HSEMAPHORE value) => (byte)(value.Value);
 
         public static explicit operator HSEMAPHORE(short value) => new HSEMAPHORE((nint)(value));
 
-        public static implicit operator short(HSEMAPHORE value) => (short)(value.Value);
+        public static explicit operator short(HSEMAPHORE value) => (short)(value.Value);
 
         public static explicit operator HSEMAPHORE(int value) => new HSEMAPHORE((nint)(value));
 
-        public static implicit operator int(HSEMAPHORE value) => (int)(value.Value);
+        public static explicit operator int(HSEMAPHORE value) => (int)(value.Value);
 
         public static explicit operator HSEMAPHORE(long value) => new HSEMAPHORE((nint)(value));
 
-        public static explicit operator long(HSEMAPHORE value) => (long)(value.Value);
+        public static implicit operator long(HSEMAPHORE value) => (long)(value.Value);
 
         public static explicit operator HSEMAPHORE(nint value) => new HSEMAPHORE((nint)(value));
 
@@ -51,19 +51,19 @@ namespace TerraFX.Interop
 
         public static explicit operator HSEMAPHORE(sbyte value) => new HSEMAPHORE((nint)(value));
 
-        public static implicit operator sbyte(HSEMAPHORE value) => (sbyte)(value.Value);
+        public static explicit operator sbyte(HSEMAPHORE value) => (sbyte)(value.Value);
 
         public static explicit operator HSEMAPHORE(ushort value) => new HSEMAPHORE((nint)(value));
 
-        public static implicit operator ushort(HSEMAPHORE value) => (ushort)(value.Value);
+        public static explicit operator ushort(HSEMAPHORE value) => (ushort)(value.Value);
 
         public static explicit operator HSEMAPHORE(uint value) => new HSEMAPHORE((nint)(value));
 
-        public static implicit operator uint(HSEMAPHORE value) => (uint)(value.Value);
+        public static explicit operator uint(HSEMAPHORE value) => (uint)(value.Value);
 
         public static explicit operator HSEMAPHORE(ulong value) => new HSEMAPHORE((nint)(value));
 
-        public static explicit operator ulong(HSEMAPHORE value) => (ulong)(value.Value);
+        public static implicit operator ulong(HSEMAPHORE value) => (ulong)(value.Value);
 
         public static explicit operator HSEMAPHORE(nuint value) => new HSEMAPHORE((nint)(value));
 

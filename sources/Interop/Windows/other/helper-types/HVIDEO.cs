@@ -31,19 +31,19 @@ namespace TerraFX.Interop
 
         public static explicit operator HVIDEO(byte value) => new HVIDEO((nint)(value));
 
-        public static implicit operator byte(HVIDEO value) => (byte)(value.Value);
+        public static explicit operator byte(HVIDEO value) => (byte)(value.Value);
 
         public static explicit operator HVIDEO(short value) => new HVIDEO((nint)(value));
 
-        public static implicit operator short(HVIDEO value) => (short)(value.Value);
+        public static explicit operator short(HVIDEO value) => (short)(value.Value);
 
         public static explicit operator HVIDEO(int value) => new HVIDEO((nint)(value));
 
-        public static implicit operator int(HVIDEO value) => (int)(value.Value);
+        public static explicit operator int(HVIDEO value) => (int)(value.Value);
 
         public static explicit operator HVIDEO(long value) => new HVIDEO((nint)(value));
 
-        public static explicit operator long(HVIDEO value) => (long)(value.Value);
+        public static implicit operator long(HVIDEO value) => (long)(value.Value);
 
         public static explicit operator HVIDEO(nint value) => new HVIDEO((nint)(value));
 
@@ -51,19 +51,19 @@ namespace TerraFX.Interop
 
         public static explicit operator HVIDEO(sbyte value) => new HVIDEO((nint)(value));
 
-        public static implicit operator sbyte(HVIDEO value) => (sbyte)(value.Value);
+        public static explicit operator sbyte(HVIDEO value) => (sbyte)(value.Value);
 
         public static explicit operator HVIDEO(ushort value) => new HVIDEO((nint)(value));
 
-        public static implicit operator ushort(HVIDEO value) => (ushort)(value.Value);
+        public static explicit operator ushort(HVIDEO value) => (ushort)(value.Value);
 
         public static explicit operator HVIDEO(uint value) => new HVIDEO((nint)(value));
 
-        public static implicit operator uint(HVIDEO value) => (uint)(value.Value);
+        public static explicit operator uint(HVIDEO value) => (uint)(value.Value);
 
         public static explicit operator HVIDEO(ulong value) => new HVIDEO((nint)(value));
 
-        public static explicit operator ulong(HVIDEO value) => (ulong)(value.Value);
+        public static implicit operator ulong(HVIDEO value) => (ulong)(value.Value);
 
         public static explicit operator HVIDEO(nuint value) => new HVIDEO((nint)(value));
 

@@ -31,19 +31,19 @@ namespace TerraFX.Interop
 
         public static explicit operator HEMF(byte value) => new HEMF((nint)(value));
 
-        public static implicit operator byte(HEMF value) => (byte)(value.Value);
+        public static explicit operator byte(HEMF value) => (byte)(value.Value);
 
         public static explicit operator HEMF(short value) => new HEMF((nint)(value));
 
-        public static implicit operator short(HEMF value) => (short)(value.Value);
+        public static explicit operator short(HEMF value) => (short)(value.Value);
 
         public static explicit operator HEMF(int value) => new HEMF((nint)(value));
 
-        public static implicit operator int(HEMF value) => (int)(value.Value);
+        public static explicit operator int(HEMF value) => (int)(value.Value);
 
         public static explicit operator HEMF(long value) => new HEMF((nint)(value));
 
-        public static explicit operator long(HEMF value) => (long)(value.Value);
+        public static implicit operator long(HEMF value) => (long)(value.Value);
 
         public static explicit operator HEMF(nint value) => new HEMF((nint)(value));
 
@@ -51,19 +51,19 @@ namespace TerraFX.Interop
 
         public static explicit operator HEMF(sbyte value) => new HEMF((nint)(value));
 
-        public static implicit operator sbyte(HEMF value) => (sbyte)(value.Value);
+        public static explicit operator sbyte(HEMF value) => (sbyte)(value.Value);
 
         public static explicit operator HEMF(ushort value) => new HEMF((nint)(value));
 
-        public static implicit operator ushort(HEMF value) => (ushort)(value.Value);
+        public static explicit operator ushort(HEMF value) => (ushort)(value.Value);
 
         public static explicit operator HEMF(uint value) => new HEMF((nint)(value));
 
-        public static implicit operator uint(HEMF value) => (uint)(value.Value);
+        public static explicit operator uint(HEMF value) => (uint)(value.Value);
 
         public static explicit operator HEMF(ulong value) => new HEMF((nint)(value));
 
-        public static explicit operator ulong(HEMF value) => (ulong)(value.Value);
+        public static implicit operator ulong(HEMF value) => (ulong)(value.Value);
 
         public static explicit operator HEMF(nuint value) => new HEMF((nint)(value));
 

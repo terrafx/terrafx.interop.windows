@@ -31,19 +31,19 @@ namespace TerraFX.Interop
 
         public static explicit operator SPGRAMMARHANDLE(byte value) => new SPGRAMMARHANDLE((nint)(value));
 
-        public static implicit operator byte(SPGRAMMARHANDLE value) => (byte)(value.Value);
+        public static explicit operator byte(SPGRAMMARHANDLE value) => (byte)(value.Value);
 
         public static explicit operator SPGRAMMARHANDLE(short value) => new SPGRAMMARHANDLE((nint)(value));
 
-        public static implicit operator short(SPGRAMMARHANDLE value) => (short)(value.Value);
+        public static explicit operator short(SPGRAMMARHANDLE value) => (short)(value.Value);
 
         public static explicit operator SPGRAMMARHANDLE(int value) => new SPGRAMMARHANDLE((nint)(value));
 
-        public static implicit operator int(SPGRAMMARHANDLE value) => (int)(value.Value);
+        public static explicit operator int(SPGRAMMARHANDLE value) => (int)(value.Value);
 
         public static explicit operator SPGRAMMARHANDLE(long value) => new SPGRAMMARHANDLE((nint)(value));
 
-        public static explicit operator long(SPGRAMMARHANDLE value) => (long)(value.Value);
+        public static implicit operator long(SPGRAMMARHANDLE value) => (long)(value.Value);
 
         public static explicit operator SPGRAMMARHANDLE(nint value) => new SPGRAMMARHANDLE((nint)(value));
 
@@ -51,19 +51,19 @@ namespace TerraFX.Interop
 
         public static explicit operator SPGRAMMARHANDLE(sbyte value) => new SPGRAMMARHANDLE((nint)(value));
 
-        public static implicit operator sbyte(SPGRAMMARHANDLE value) => (sbyte)(value.Value);
+        public static explicit operator sbyte(SPGRAMMARHANDLE value) => (sbyte)(value.Value);
 
         public static explicit operator SPGRAMMARHANDLE(ushort value) => new SPGRAMMARHANDLE((nint)(value));
 
-        public static implicit operator ushort(SPGRAMMARHANDLE value) => (ushort)(value.Value);
+        public static explicit operator ushort(SPGRAMMARHANDLE value) => (ushort)(value.Value);
 
         public static explicit operator SPGRAMMARHANDLE(uint value) => new SPGRAMMARHANDLE((nint)(value));
 
-        public static implicit operator uint(SPGRAMMARHANDLE value) => (uint)(value.Value);
+        public static explicit operator uint(SPGRAMMARHANDLE value) => (uint)(value.Value);
 
         public static explicit operator SPGRAMMARHANDLE(ulong value) => new SPGRAMMARHANDLE((nint)(value));
 
-        public static explicit operator ulong(SPGRAMMARHANDLE value) => (ulong)(value.Value);
+        public static implicit operator ulong(SPGRAMMARHANDLE value) => (ulong)(value.Value);
 
         public static explicit operator SPGRAMMARHANDLE(nuint value) => new SPGRAMMARHANDLE((nint)(value));
 

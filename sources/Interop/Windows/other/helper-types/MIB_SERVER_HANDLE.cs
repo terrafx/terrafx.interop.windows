@@ -31,19 +31,19 @@ namespace TerraFX.Interop
 
         public static explicit operator MIB_SERVER_HANDLE(byte value) => new MIB_SERVER_HANDLE((nint)(value));
 
-        public static implicit operator byte(MIB_SERVER_HANDLE value) => (byte)(value.Value);
+        public static explicit operator byte(MIB_SERVER_HANDLE value) => (byte)(value.Value);
 
         public static explicit operator MIB_SERVER_HANDLE(short value) => new MIB_SERVER_HANDLE((nint)(value));
 
-        public static implicit operator short(MIB_SERVER_HANDLE value) => (short)(value.Value);
+        public static explicit operator short(MIB_SERVER_HANDLE value) => (short)(value.Value);
 
         public static explicit operator MIB_SERVER_HANDLE(int value) => new MIB_SERVER_HANDLE((nint)(value));
 
-        public static implicit operator int(MIB_SERVER_HANDLE value) => (int)(value.Value);
+        public static explicit operator int(MIB_SERVER_HANDLE value) => (int)(value.Value);
 
         public static explicit operator MIB_SERVER_HANDLE(long value) => new MIB_SERVER_HANDLE((nint)(value));
 
-        public static explicit operator long(MIB_SERVER_HANDLE value) => (long)(value.Value);
+        public static implicit operator long(MIB_SERVER_HANDLE value) => (long)(value.Value);
 
         public static explicit operator MIB_SERVER_HANDLE(nint value) => new MIB_SERVER_HANDLE((nint)(value));
 
@@ -51,19 +51,19 @@ namespace TerraFX.Interop
 
         public static explicit operator MIB_SERVER_HANDLE(sbyte value) => new MIB_SERVER_HANDLE((nint)(value));
 
-        public static implicit operator sbyte(MIB_SERVER_HANDLE value) => (sbyte)(value.Value);
+        public static explicit operator sbyte(MIB_SERVER_HANDLE value) => (sbyte)(value.Value);
 
         public static explicit operator MIB_SERVER_HANDLE(ushort value) => new MIB_SERVER_HANDLE((nint)(value));
 
-        public static implicit operator ushort(MIB_SERVER_HANDLE value) => (ushort)(value.Value);
+        public static explicit operator ushort(MIB_SERVER_HANDLE value) => (ushort)(value.Value);
 
         public static explicit operator MIB_SERVER_HANDLE(uint value) => new MIB_SERVER_HANDLE((nint)(value));
 
-        public static implicit operator uint(MIB_SERVER_HANDLE value) => (uint)(value.Value);
+        public static explicit operator uint(MIB_SERVER_HANDLE value) => (uint)(value.Value);
 
         public static explicit operator MIB_SERVER_HANDLE(ulong value) => new MIB_SERVER_HANDLE((nint)(value));
 
-        public static explicit operator ulong(MIB_SERVER_HANDLE value) => (ulong)(value.Value);
+        public static implicit operator ulong(MIB_SERVER_HANDLE value) => (ulong)(value.Value);
 
         public static explicit operator MIB_SERVER_HANDLE(nuint value) => new MIB_SERVER_HANDLE((nint)(value));
 

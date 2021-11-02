@@ -31,19 +31,19 @@ namespace TerraFX.Interop
 
         public static explicit operator HREPORT(byte value) => new HREPORT((nint)(value));
 
-        public static implicit operator byte(HREPORT value) => (byte)(value.Value);
+        public static explicit operator byte(HREPORT value) => (byte)(value.Value);
 
         public static explicit operator HREPORT(short value) => new HREPORT((nint)(value));
 
-        public static implicit operator short(HREPORT value) => (short)(value.Value);
+        public static explicit operator short(HREPORT value) => (short)(value.Value);
 
         public static explicit operator HREPORT(int value) => new HREPORT((nint)(value));
 
-        public static implicit operator int(HREPORT value) => (int)(value.Value);
+        public static explicit operator int(HREPORT value) => (int)(value.Value);
 
         public static explicit operator HREPORT(long value) => new HREPORT((nint)(value));
 
-        public static explicit operator long(HREPORT value) => (long)(value.Value);
+        public static implicit operator long(HREPORT value) => (long)(value.Value);
 
         public static explicit operator HREPORT(nint value) => new HREPORT((nint)(value));
 
@@ -51,19 +51,19 @@ namespace TerraFX.Interop
 
         public static explicit operator HREPORT(sbyte value) => new HREPORT((nint)(value));
 
-        public static implicit operator sbyte(HREPORT value) => (sbyte)(value.Value);
+        public static explicit operator sbyte(HREPORT value) => (sbyte)(value.Value);
 
         public static explicit operator HREPORT(ushort value) => new HREPORT((nint)(value));
 
-        public static implicit operator ushort(HREPORT value) => (ushort)(value.Value);
+        public static explicit operator ushort(HREPORT value) => (ushort)(value.Value);
 
         public static explicit operator HREPORT(uint value) => new HREPORT((nint)(value));
 
-        public static implicit operator uint(HREPORT value) => (uint)(value.Value);
+        public static explicit operator uint(HREPORT value) => (uint)(value.Value);
 
         public static explicit operator HREPORT(ulong value) => new HREPORT((nint)(value));
 
-        public static explicit operator ulong(HREPORT value) => (ulong)(value.Value);
+        public static implicit operator ulong(HREPORT value) => (ulong)(value.Value);
 
         public static explicit operator HREPORT(nuint value) => new HREPORT((nint)(value));
 

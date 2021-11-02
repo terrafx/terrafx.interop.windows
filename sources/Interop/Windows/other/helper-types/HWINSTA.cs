@@ -31,19 +31,19 @@ namespace TerraFX.Interop
 
         public static explicit operator HWINSTA(byte value) => new HWINSTA((nint)(value));
 
-        public static implicit operator byte(HWINSTA value) => (byte)(value.Value);
+        public static explicit operator byte(HWINSTA value) => (byte)(value.Value);
 
         public static explicit operator HWINSTA(short value) => new HWINSTA((nint)(value));
 
-        public static implicit operator short(HWINSTA value) => (short)(value.Value);
+        public static explicit operator short(HWINSTA value) => (short)(value.Value);
 
         public static explicit operator HWINSTA(int value) => new HWINSTA((nint)(value));
 
-        public static implicit operator int(HWINSTA value) => (int)(value.Value);
+        public static explicit operator int(HWINSTA value) => (int)(value.Value);
 
         public static explicit operator HWINSTA(long value) => new HWINSTA((nint)(value));
 
-        public static explicit operator long(HWINSTA value) => (long)(value.Value);
+        public static implicit operator long(HWINSTA value) => (long)(value.Value);
 
         public static explicit operator HWINSTA(nint value) => new HWINSTA((nint)(value));
 
@@ -51,19 +51,19 @@ namespace TerraFX.Interop
 
         public static explicit operator HWINSTA(sbyte value) => new HWINSTA((nint)(value));
 
-        public static implicit operator sbyte(HWINSTA value) => (sbyte)(value.Value);
+        public static explicit operator sbyte(HWINSTA value) => (sbyte)(value.Value);
 
         public static explicit operator HWINSTA(ushort value) => new HWINSTA((nint)(value));
 
-        public static implicit operator ushort(HWINSTA value) => (ushort)(value.Value);
+        public static explicit operator ushort(HWINSTA value) => (ushort)(value.Value);
 
         public static explicit operator HWINSTA(uint value) => new HWINSTA((nint)(value));
 
-        public static implicit operator uint(HWINSTA value) => (uint)(value.Value);
+        public static explicit operator uint(HWINSTA value) => (uint)(value.Value);
 
         public static explicit operator HWINSTA(ulong value) => new HWINSTA((nint)(value));
 
-        public static explicit operator ulong(HWINSTA value) => (ulong)(value.Value);
+        public static implicit operator ulong(HWINSTA value) => (ulong)(value.Value);
 
         public static explicit operator HWINSTA(nuint value) => new HWINSTA((nint)(value));
 

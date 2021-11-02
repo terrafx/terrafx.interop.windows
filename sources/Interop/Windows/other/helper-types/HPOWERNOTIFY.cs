@@ -31,19 +31,19 @@ namespace TerraFX.Interop
 
         public static explicit operator HPOWERNOTIFY(byte value) => new HPOWERNOTIFY((nint)(value));
 
-        public static implicit operator byte(HPOWERNOTIFY value) => (byte)(value.Value);
+        public static explicit operator byte(HPOWERNOTIFY value) => (byte)(value.Value);
 
         public static explicit operator HPOWERNOTIFY(short value) => new HPOWERNOTIFY((nint)(value));
 
-        public static implicit operator short(HPOWERNOTIFY value) => (short)(value.Value);
+        public static explicit operator short(HPOWERNOTIFY value) => (short)(value.Value);
 
         public static explicit operator HPOWERNOTIFY(int value) => new HPOWERNOTIFY((nint)(value));
 
-        public static implicit operator int(HPOWERNOTIFY value) => (int)(value.Value);
+        public static explicit operator int(HPOWERNOTIFY value) => (int)(value.Value);
 
         public static explicit operator HPOWERNOTIFY(long value) => new HPOWERNOTIFY((nint)(value));
 
-        public static explicit operator long(HPOWERNOTIFY value) => (long)(value.Value);
+        public static implicit operator long(HPOWERNOTIFY value) => (long)(value.Value);
 
         public static explicit operator HPOWERNOTIFY(nint value) => new HPOWERNOTIFY((nint)(value));
 
@@ -51,19 +51,19 @@ namespace TerraFX.Interop
 
         public static explicit operator HPOWERNOTIFY(sbyte value) => new HPOWERNOTIFY((nint)(value));
 
-        public static implicit operator sbyte(HPOWERNOTIFY value) => (sbyte)(value.Value);
+        public static explicit operator sbyte(HPOWERNOTIFY value) => (sbyte)(value.Value);
 
         public static explicit operator HPOWERNOTIFY(ushort value) => new HPOWERNOTIFY((nint)(value));
 
-        public static implicit operator ushort(HPOWERNOTIFY value) => (ushort)(value.Value);
+        public static explicit operator ushort(HPOWERNOTIFY value) => (ushort)(value.Value);
 
         public static explicit operator HPOWERNOTIFY(uint value) => new HPOWERNOTIFY((nint)(value));
 
-        public static implicit operator uint(HPOWERNOTIFY value) => (uint)(value.Value);
+        public static explicit operator uint(HPOWERNOTIFY value) => (uint)(value.Value);
 
         public static explicit operator HPOWERNOTIFY(ulong value) => new HPOWERNOTIFY((nint)(value));
 
-        public static explicit operator ulong(HPOWERNOTIFY value) => (ulong)(value.Value);
+        public static implicit operator ulong(HPOWERNOTIFY value) => (ulong)(value.Value);
 
         public static explicit operator HPOWERNOTIFY(nuint value) => new HPOWERNOTIFY((nint)(value));
 

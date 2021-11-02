@@ -31,19 +31,19 @@ namespace TerraFX.Interop
 
         public static explicit operator HACMDRIVERID(byte value) => new HACMDRIVERID((nint)(value));
 
-        public static implicit operator byte(HACMDRIVERID value) => (byte)(value.Value);
+        public static explicit operator byte(HACMDRIVERID value) => (byte)(value.Value);
 
         public static explicit operator HACMDRIVERID(short value) => new HACMDRIVERID((nint)(value));
 
-        public static implicit operator short(HACMDRIVERID value) => (short)(value.Value);
+        public static explicit operator short(HACMDRIVERID value) => (short)(value.Value);
 
         public static explicit operator HACMDRIVERID(int value) => new HACMDRIVERID((nint)(value));
 
-        public static implicit operator int(HACMDRIVERID value) => (int)(value.Value);
+        public static explicit operator int(HACMDRIVERID value) => (int)(value.Value);
 
         public static explicit operator HACMDRIVERID(long value) => new HACMDRIVERID((nint)(value));
 
-        public static explicit operator long(HACMDRIVERID value) => (long)(value.Value);
+        public static implicit operator long(HACMDRIVERID value) => (long)(value.Value);
 
         public static explicit operator HACMDRIVERID(nint value) => new HACMDRIVERID((nint)(value));
 
@@ -51,19 +51,19 @@ namespace TerraFX.Interop
 
         public static explicit operator HACMDRIVERID(sbyte value) => new HACMDRIVERID((nint)(value));
 
-        public static implicit operator sbyte(HACMDRIVERID value) => (sbyte)(value.Value);
+        public static explicit operator sbyte(HACMDRIVERID value) => (sbyte)(value.Value);
 
         public static explicit operator HACMDRIVERID(ushort value) => new HACMDRIVERID((nint)(value));
 
-        public static implicit operator ushort(HACMDRIVERID value) => (ushort)(value.Value);
+        public static explicit operator ushort(HACMDRIVERID value) => (ushort)(value.Value);
 
         public static explicit operator HACMDRIVERID(uint value) => new HACMDRIVERID((nint)(value));
 
-        public static implicit operator uint(HACMDRIVERID value) => (uint)(value.Value);
+        public static explicit operator uint(HACMDRIVERID value) => (uint)(value.Value);
 
         public static explicit operator HACMDRIVERID(ulong value) => new HACMDRIVERID((nint)(value));
 
-        public static explicit operator ulong(HACMDRIVERID value) => (ulong)(value.Value);
+        public static implicit operator ulong(HACMDRIVERID value) => (ulong)(value.Value);
 
         public static explicit operator HACMDRIVERID(nuint value) => new HACMDRIVERID((nint)(value));
 

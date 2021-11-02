@@ -31,19 +31,19 @@ namespace TerraFX.Interop
 
         public static explicit operator EC_HANDLE(byte value) => new EC_HANDLE((nint)(value));
 
-        public static implicit operator byte(EC_HANDLE value) => (byte)(value.Value);
+        public static explicit operator byte(EC_HANDLE value) => (byte)(value.Value);
 
         public static explicit operator EC_HANDLE(short value) => new EC_HANDLE((nint)(value));
 
-        public static implicit operator short(EC_HANDLE value) => (short)(value.Value);
+        public static explicit operator short(EC_HANDLE value) => (short)(value.Value);
 
         public static explicit operator EC_HANDLE(int value) => new EC_HANDLE((nint)(value));
 
-        public static implicit operator int(EC_HANDLE value) => (int)(value.Value);
+        public static explicit operator int(EC_HANDLE value) => (int)(value.Value);
 
         public static explicit operator EC_HANDLE(long value) => new EC_HANDLE((nint)(value));
 
-        public static explicit operator long(EC_HANDLE value) => (long)(value.Value);
+        public static implicit operator long(EC_HANDLE value) => (long)(value.Value);
 
         public static explicit operator EC_HANDLE(nint value) => new EC_HANDLE((nint)(value));
 
@@ -51,19 +51,19 @@ namespace TerraFX.Interop
 
         public static explicit operator EC_HANDLE(sbyte value) => new EC_HANDLE((nint)(value));
 
-        public static implicit operator sbyte(EC_HANDLE value) => (sbyte)(value.Value);
+        public static explicit operator sbyte(EC_HANDLE value) => (sbyte)(value.Value);
 
         public static explicit operator EC_HANDLE(ushort value) => new EC_HANDLE((nint)(value));
 
-        public static implicit operator ushort(EC_HANDLE value) => (ushort)(value.Value);
+        public static explicit operator ushort(EC_HANDLE value) => (ushort)(value.Value);
 
         public static explicit operator EC_HANDLE(uint value) => new EC_HANDLE((nint)(value));
 
-        public static implicit operator uint(EC_HANDLE value) => (uint)(value.Value);
+        public static explicit operator uint(EC_HANDLE value) => (uint)(value.Value);
 
         public static explicit operator EC_HANDLE(ulong value) => new EC_HANDLE((nint)(value));
 
-        public static explicit operator ulong(EC_HANDLE value) => (ulong)(value.Value);
+        public static implicit operator ulong(EC_HANDLE value) => (ulong)(value.Value);
 
         public static explicit operator EC_HANDLE(nuint value) => new EC_HANDLE((nint)(value));
 

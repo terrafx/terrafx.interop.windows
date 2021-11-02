@@ -31,19 +31,19 @@ namespace TerraFX.Interop
 
         public static explicit operator HCRYPTPROV_LEGACY(byte value) => new HCRYPTPROV_LEGACY((nint)(value));
 
-        public static implicit operator byte(HCRYPTPROV_LEGACY value) => (byte)(value.Value);
+        public static explicit operator byte(HCRYPTPROV_LEGACY value) => (byte)(value.Value);
 
         public static explicit operator HCRYPTPROV_LEGACY(short value) => new HCRYPTPROV_LEGACY((nint)(value));
 
-        public static implicit operator short(HCRYPTPROV_LEGACY value) => (short)(value.Value);
+        public static explicit operator short(HCRYPTPROV_LEGACY value) => (short)(value.Value);
 
         public static explicit operator HCRYPTPROV_LEGACY(int value) => new HCRYPTPROV_LEGACY((nint)(value));
 
-        public static implicit operator int(HCRYPTPROV_LEGACY value) => (int)(value.Value);
+        public static explicit operator int(HCRYPTPROV_LEGACY value) => (int)(value.Value);
 
         public static explicit operator HCRYPTPROV_LEGACY(long value) => new HCRYPTPROV_LEGACY((nint)(value));
 
-        public static explicit operator long(HCRYPTPROV_LEGACY value) => (long)(value.Value);
+        public static implicit operator long(HCRYPTPROV_LEGACY value) => (long)(value.Value);
 
         public static explicit operator HCRYPTPROV_LEGACY(nint value) => new HCRYPTPROV_LEGACY((nint)(value));
 
@@ -51,19 +51,19 @@ namespace TerraFX.Interop
 
         public static explicit operator HCRYPTPROV_LEGACY(sbyte value) => new HCRYPTPROV_LEGACY((nint)(value));
 
-        public static implicit operator sbyte(HCRYPTPROV_LEGACY value) => (sbyte)(value.Value);
+        public static explicit operator sbyte(HCRYPTPROV_LEGACY value) => (sbyte)(value.Value);
 
         public static explicit operator HCRYPTPROV_LEGACY(ushort value) => new HCRYPTPROV_LEGACY((nint)(value));
 
-        public static implicit operator ushort(HCRYPTPROV_LEGACY value) => (ushort)(value.Value);
+        public static explicit operator ushort(HCRYPTPROV_LEGACY value) => (ushort)(value.Value);
 
         public static explicit operator HCRYPTPROV_LEGACY(uint value) => new HCRYPTPROV_LEGACY((nint)(value));
 
-        public static implicit operator uint(HCRYPTPROV_LEGACY value) => (uint)(value.Value);
+        public static explicit operator uint(HCRYPTPROV_LEGACY value) => (uint)(value.Value);
 
         public static explicit operator HCRYPTPROV_LEGACY(ulong value) => new HCRYPTPROV_LEGACY((nint)(value));
 
-        public static explicit operator ulong(HCRYPTPROV_LEGACY value) => (ulong)(value.Value);
+        public static implicit operator ulong(HCRYPTPROV_LEGACY value) => (ulong)(value.Value);
 
         public static explicit operator HCRYPTPROV_LEGACY(nuint value) => new HCRYPTPROV_LEGACY((nint)(value));
 

@@ -31,19 +31,19 @@ namespace TerraFX.Interop
 
         public static explicit operator HWAVEIN(byte value) => new HWAVEIN((nint)(value));
 
-        public static implicit operator byte(HWAVEIN value) => (byte)(value.Value);
+        public static explicit operator byte(HWAVEIN value) => (byte)(value.Value);
 
         public static explicit operator HWAVEIN(short value) => new HWAVEIN((nint)(value));
 
-        public static implicit operator short(HWAVEIN value) => (short)(value.Value);
+        public static explicit operator short(HWAVEIN value) => (short)(value.Value);
 
         public static explicit operator HWAVEIN(int value) => new HWAVEIN((nint)(value));
 
-        public static implicit operator int(HWAVEIN value) => (int)(value.Value);
+        public static explicit operator int(HWAVEIN value) => (int)(value.Value);
 
         public static explicit operator HWAVEIN(long value) => new HWAVEIN((nint)(value));
 
-        public static explicit operator long(HWAVEIN value) => (long)(value.Value);
+        public static implicit operator long(HWAVEIN value) => (long)(value.Value);
 
         public static explicit operator HWAVEIN(nint value) => new HWAVEIN((nint)(value));
 
@@ -51,19 +51,19 @@ namespace TerraFX.Interop
 
         public static explicit operator HWAVEIN(sbyte value) => new HWAVEIN((nint)(value));
 
-        public static implicit operator sbyte(HWAVEIN value) => (sbyte)(value.Value);
+        public static explicit operator sbyte(HWAVEIN value) => (sbyte)(value.Value);
 
         public static explicit operator HWAVEIN(ushort value) => new HWAVEIN((nint)(value));
 
-        public static implicit operator ushort(HWAVEIN value) => (ushort)(value.Value);
+        public static explicit operator ushort(HWAVEIN value) => (ushort)(value.Value);
 
         public static explicit operator HWAVEIN(uint value) => new HWAVEIN((nint)(value));
 
-        public static implicit operator uint(HWAVEIN value) => (uint)(value.Value);
+        public static explicit operator uint(HWAVEIN value) => (uint)(value.Value);
 
         public static explicit operator HWAVEIN(ulong value) => new HWAVEIN((nint)(value));
 
-        public static explicit operator ulong(HWAVEIN value) => (ulong)(value.Value);
+        public static implicit operator ulong(HWAVEIN value) => (ulong)(value.Value);
 
         public static explicit operator HWAVEIN(nuint value) => new HWAVEIN((nint)(value));
 

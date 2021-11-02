@@ -31,19 +31,19 @@ namespace TerraFX.Interop
 
         public static explicit operator HMIDI(byte value) => new HMIDI((nint)(value));
 
-        public static implicit operator byte(HMIDI value) => (byte)(value.Value);
+        public static explicit operator byte(HMIDI value) => (byte)(value.Value);
 
         public static explicit operator HMIDI(short value) => new HMIDI((nint)(value));
 
-        public static implicit operator short(HMIDI value) => (short)(value.Value);
+        public static explicit operator short(HMIDI value) => (short)(value.Value);
 
         public static explicit operator HMIDI(int value) => new HMIDI((nint)(value));
 
-        public static implicit operator int(HMIDI value) => (int)(value.Value);
+        public static explicit operator int(HMIDI value) => (int)(value.Value);
 
         public static explicit operator HMIDI(long value) => new HMIDI((nint)(value));
 
-        public static explicit operator long(HMIDI value) => (long)(value.Value);
+        public static implicit operator long(HMIDI value) => (long)(value.Value);
 
         public static explicit operator HMIDI(nint value) => new HMIDI((nint)(value));
 
@@ -51,19 +51,19 @@ namespace TerraFX.Interop
 
         public static explicit operator HMIDI(sbyte value) => new HMIDI((nint)(value));
 
-        public static implicit operator sbyte(HMIDI value) => (sbyte)(value.Value);
+        public static explicit operator sbyte(HMIDI value) => (sbyte)(value.Value);
 
         public static explicit operator HMIDI(ushort value) => new HMIDI((nint)(value));
 
-        public static implicit operator ushort(HMIDI value) => (ushort)(value.Value);
+        public static explicit operator ushort(HMIDI value) => (ushort)(value.Value);
 
         public static explicit operator HMIDI(uint value) => new HMIDI((nint)(value));
 
-        public static implicit operator uint(HMIDI value) => (uint)(value.Value);
+        public static explicit operator uint(HMIDI value) => (uint)(value.Value);
 
         public static explicit operator HMIDI(ulong value) => new HMIDI((nint)(value));
 
-        public static explicit operator ulong(HMIDI value) => (ulong)(value.Value);
+        public static implicit operator ulong(HMIDI value) => (ulong)(value.Value);
 
         public static explicit operator HMIDI(nuint value) => new HMIDI((nint)(value));
 

@@ -31,19 +31,19 @@ namespace TerraFX.Interop
 
         public static explicit operator HCRYPTHASH(byte value) => new HCRYPTHASH((nint)(value));
 
-        public static implicit operator byte(HCRYPTHASH value) => (byte)(value.Value);
+        public static explicit operator byte(HCRYPTHASH value) => (byte)(value.Value);
 
         public static explicit operator HCRYPTHASH(short value) => new HCRYPTHASH((nint)(value));
 
-        public static implicit operator short(HCRYPTHASH value) => (short)(value.Value);
+        public static explicit operator short(HCRYPTHASH value) => (short)(value.Value);
 
         public static explicit operator HCRYPTHASH(int value) => new HCRYPTHASH((nint)(value));
 
-        public static implicit operator int(HCRYPTHASH value) => (int)(value.Value);
+        public static explicit operator int(HCRYPTHASH value) => (int)(value.Value);
 
         public static explicit operator HCRYPTHASH(long value) => new HCRYPTHASH((nint)(value));
 
-        public static explicit operator long(HCRYPTHASH value) => (long)(value.Value);
+        public static implicit operator long(HCRYPTHASH value) => (long)(value.Value);
 
         public static explicit operator HCRYPTHASH(nint value) => new HCRYPTHASH((nint)(value));
 
@@ -51,19 +51,19 @@ namespace TerraFX.Interop
 
         public static explicit operator HCRYPTHASH(sbyte value) => new HCRYPTHASH((nint)(value));
 
-        public static implicit operator sbyte(HCRYPTHASH value) => (sbyte)(value.Value);
+        public static explicit operator sbyte(HCRYPTHASH value) => (sbyte)(value.Value);
 
         public static explicit operator HCRYPTHASH(ushort value) => new HCRYPTHASH((nint)(value));
 
-        public static implicit operator ushort(HCRYPTHASH value) => (ushort)(value.Value);
+        public static explicit operator ushort(HCRYPTHASH value) => (ushort)(value.Value);
 
         public static explicit operator HCRYPTHASH(uint value) => new HCRYPTHASH((nint)(value));
 
-        public static implicit operator uint(HCRYPTHASH value) => (uint)(value.Value);
+        public static explicit operator uint(HCRYPTHASH value) => (uint)(value.Value);
 
         public static explicit operator HCRYPTHASH(ulong value) => new HCRYPTHASH((nint)(value));
 
-        public static explicit operator ulong(HCRYPTHASH value) => (ulong)(value.Value);
+        public static implicit operator ulong(HCRYPTHASH value) => (ulong)(value.Value);
 
         public static explicit operator HCRYPTHASH(nuint value) => new HCRYPTHASH((nint)(value));
 

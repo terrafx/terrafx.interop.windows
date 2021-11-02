@@ -31,19 +31,19 @@ namespace TerraFX.Interop
 
         public static explicit operator WEB_SOCKET_HANDLE(byte value) => new WEB_SOCKET_HANDLE((nint)(value));
 
-        public static implicit operator byte(WEB_SOCKET_HANDLE value) => (byte)(value.Value);
+        public static explicit operator byte(WEB_SOCKET_HANDLE value) => (byte)(value.Value);
 
         public static explicit operator WEB_SOCKET_HANDLE(short value) => new WEB_SOCKET_HANDLE((nint)(value));
 
-        public static implicit operator short(WEB_SOCKET_HANDLE value) => (short)(value.Value);
+        public static explicit operator short(WEB_SOCKET_HANDLE value) => (short)(value.Value);
 
         public static explicit operator WEB_SOCKET_HANDLE(int value) => new WEB_SOCKET_HANDLE((nint)(value));
 
-        public static implicit operator int(WEB_SOCKET_HANDLE value) => (int)(value.Value);
+        public static explicit operator int(WEB_SOCKET_HANDLE value) => (int)(value.Value);
 
         public static explicit operator WEB_SOCKET_HANDLE(long value) => new WEB_SOCKET_HANDLE((nint)(value));
 
-        public static explicit operator long(WEB_SOCKET_HANDLE value) => (long)(value.Value);
+        public static implicit operator long(WEB_SOCKET_HANDLE value) => (long)(value.Value);
 
         public static explicit operator WEB_SOCKET_HANDLE(nint value) => new WEB_SOCKET_HANDLE((nint)(value));
 
@@ -51,19 +51,19 @@ namespace TerraFX.Interop
 
         public static explicit operator WEB_SOCKET_HANDLE(sbyte value) => new WEB_SOCKET_HANDLE((nint)(value));
 
-        public static implicit operator sbyte(WEB_SOCKET_HANDLE value) => (sbyte)(value.Value);
+        public static explicit operator sbyte(WEB_SOCKET_HANDLE value) => (sbyte)(value.Value);
 
         public static explicit operator WEB_SOCKET_HANDLE(ushort value) => new WEB_SOCKET_HANDLE((nint)(value));
 
-        public static implicit operator ushort(WEB_SOCKET_HANDLE value) => (ushort)(value.Value);
+        public static explicit operator ushort(WEB_SOCKET_HANDLE value) => (ushort)(value.Value);
 
         public static explicit operator WEB_SOCKET_HANDLE(uint value) => new WEB_SOCKET_HANDLE((nint)(value));
 
-        public static implicit operator uint(WEB_SOCKET_HANDLE value) => (uint)(value.Value);
+        public static explicit operator uint(WEB_SOCKET_HANDLE value) => (uint)(value.Value);
 
         public static explicit operator WEB_SOCKET_HANDLE(ulong value) => new WEB_SOCKET_HANDLE((nint)(value));
 
-        public static explicit operator ulong(WEB_SOCKET_HANDLE value) => (ulong)(value.Value);
+        public static implicit operator ulong(WEB_SOCKET_HANDLE value) => (ulong)(value.Value);
 
         public static explicit operator WEB_SOCKET_HANDLE(nuint value) => new WEB_SOCKET_HANDLE((nint)(value));
 

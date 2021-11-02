@@ -31,19 +31,19 @@ namespace TerraFX.Interop
 
         public static explicit operator HGLRC(byte value) => new HGLRC((nint)(value));
 
-        public static implicit operator byte(HGLRC value) => (byte)(value.Value);
+        public static explicit operator byte(HGLRC value) => (byte)(value.Value);
 
         public static explicit operator HGLRC(short value) => new HGLRC((nint)(value));
 
-        public static implicit operator short(HGLRC value) => (short)(value.Value);
+        public static explicit operator short(HGLRC value) => (short)(value.Value);
 
         public static explicit operator HGLRC(int value) => new HGLRC((nint)(value));
 
-        public static implicit operator int(HGLRC value) => (int)(value.Value);
+        public static explicit operator int(HGLRC value) => (int)(value.Value);
 
         public static explicit operator HGLRC(long value) => new HGLRC((nint)(value));
 
-        public static explicit operator long(HGLRC value) => (long)(value.Value);
+        public static implicit operator long(HGLRC value) => (long)(value.Value);
 
         public static explicit operator HGLRC(nint value) => new HGLRC((nint)(value));
 
@@ -51,19 +51,19 @@ namespace TerraFX.Interop
 
         public static explicit operator HGLRC(sbyte value) => new HGLRC((nint)(value));
 
-        public static implicit operator sbyte(HGLRC value) => (sbyte)(value.Value);
+        public static explicit operator sbyte(HGLRC value) => (sbyte)(value.Value);
 
         public static explicit operator HGLRC(ushort value) => new HGLRC((nint)(value));
 
-        public static implicit operator ushort(HGLRC value) => (ushort)(value.Value);
+        public static explicit operator ushort(HGLRC value) => (ushort)(value.Value);
 
         public static explicit operator HGLRC(uint value) => new HGLRC((nint)(value));
 
-        public static implicit operator uint(HGLRC value) => (uint)(value.Value);
+        public static explicit operator uint(HGLRC value) => (uint)(value.Value);
 
         public static explicit operator HGLRC(ulong value) => new HGLRC((nint)(value));
 
-        public static explicit operator ulong(HGLRC value) => (ulong)(value.Value);
+        public static implicit operator ulong(HGLRC value) => (ulong)(value.Value);
 
         public static explicit operator HGLRC(nuint value) => new HGLRC((nint)(value));
 

@@ -31,19 +31,19 @@ namespace TerraFX.Interop
 
         public static explicit operator HTRANSFORM(byte value) => new HTRANSFORM((nint)(value));
 
-        public static implicit operator byte(HTRANSFORM value) => (byte)(value.Value);
+        public static explicit operator byte(HTRANSFORM value) => (byte)(value.Value);
 
         public static explicit operator HTRANSFORM(short value) => new HTRANSFORM((nint)(value));
 
-        public static implicit operator short(HTRANSFORM value) => (short)(value.Value);
+        public static explicit operator short(HTRANSFORM value) => (short)(value.Value);
 
         public static explicit operator HTRANSFORM(int value) => new HTRANSFORM((nint)(value));
 
-        public static implicit operator int(HTRANSFORM value) => (int)(value.Value);
+        public static explicit operator int(HTRANSFORM value) => (int)(value.Value);
 
         public static explicit operator HTRANSFORM(long value) => new HTRANSFORM((nint)(value));
 
-        public static explicit operator long(HTRANSFORM value) => (long)(value.Value);
+        public static implicit operator long(HTRANSFORM value) => (long)(value.Value);
 
         public static explicit operator HTRANSFORM(nint value) => new HTRANSFORM((nint)(value));
 
@@ -51,19 +51,19 @@ namespace TerraFX.Interop
 
         public static explicit operator HTRANSFORM(sbyte value) => new HTRANSFORM((nint)(value));
 
-        public static implicit operator sbyte(HTRANSFORM value) => (sbyte)(value.Value);
+        public static explicit operator sbyte(HTRANSFORM value) => (sbyte)(value.Value);
 
         public static explicit operator HTRANSFORM(ushort value) => new HTRANSFORM((nint)(value));
 
-        public static implicit operator ushort(HTRANSFORM value) => (ushort)(value.Value);
+        public static explicit operator ushort(HTRANSFORM value) => (ushort)(value.Value);
 
         public static explicit operator HTRANSFORM(uint value) => new HTRANSFORM((nint)(value));
 
-        public static implicit operator uint(HTRANSFORM value) => (uint)(value.Value);
+        public static explicit operator uint(HTRANSFORM value) => (uint)(value.Value);
 
         public static explicit operator HTRANSFORM(ulong value) => new HTRANSFORM((nint)(value));
 
-        public static explicit operator ulong(HTRANSFORM value) => (ulong)(value.Value);
+        public static implicit operator ulong(HTRANSFORM value) => (ulong)(value.Value);
 
         public static explicit operator HTRANSFORM(nuint value) => new HTRANSFORM((nint)(value));
 

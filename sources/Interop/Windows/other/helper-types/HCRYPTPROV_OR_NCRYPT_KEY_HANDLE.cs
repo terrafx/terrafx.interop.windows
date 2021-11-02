@@ -31,19 +31,19 @@ namespace TerraFX.Interop
 
         public static explicit operator HCRYPTPROV_OR_NCRYPT_KEY_HANDLE(byte value) => new HCRYPTPROV_OR_NCRYPT_KEY_HANDLE((nint)(value));
 
-        public static implicit operator byte(HCRYPTPROV_OR_NCRYPT_KEY_HANDLE value) => (byte)(value.Value);
+        public static explicit operator byte(HCRYPTPROV_OR_NCRYPT_KEY_HANDLE value) => (byte)(value.Value);
 
         public static explicit operator HCRYPTPROV_OR_NCRYPT_KEY_HANDLE(short value) => new HCRYPTPROV_OR_NCRYPT_KEY_HANDLE((nint)(value));
 
-        public static implicit operator short(HCRYPTPROV_OR_NCRYPT_KEY_HANDLE value) => (short)(value.Value);
+        public static explicit operator short(HCRYPTPROV_OR_NCRYPT_KEY_HANDLE value) => (short)(value.Value);
 
         public static explicit operator HCRYPTPROV_OR_NCRYPT_KEY_HANDLE(int value) => new HCRYPTPROV_OR_NCRYPT_KEY_HANDLE((nint)(value));
 
-        public static implicit operator int(HCRYPTPROV_OR_NCRYPT_KEY_HANDLE value) => (int)(value.Value);
+        public static explicit operator int(HCRYPTPROV_OR_NCRYPT_KEY_HANDLE value) => (int)(value.Value);
 
         public static explicit operator HCRYPTPROV_OR_NCRYPT_KEY_HANDLE(long value) => new HCRYPTPROV_OR_NCRYPT_KEY_HANDLE((nint)(value));
 
-        public static explicit operator long(HCRYPTPROV_OR_NCRYPT_KEY_HANDLE value) => (long)(value.Value);
+        public static implicit operator long(HCRYPTPROV_OR_NCRYPT_KEY_HANDLE value) => (long)(value.Value);
 
         public static explicit operator HCRYPTPROV_OR_NCRYPT_KEY_HANDLE(nint value) => new HCRYPTPROV_OR_NCRYPT_KEY_HANDLE((nint)(value));
 
@@ -51,19 +51,19 @@ namespace TerraFX.Interop
 
         public static explicit operator HCRYPTPROV_OR_NCRYPT_KEY_HANDLE(sbyte value) => new HCRYPTPROV_OR_NCRYPT_KEY_HANDLE((nint)(value));
 
-        public static implicit operator sbyte(HCRYPTPROV_OR_NCRYPT_KEY_HANDLE value) => (sbyte)(value.Value);
+        public static explicit operator sbyte(HCRYPTPROV_OR_NCRYPT_KEY_HANDLE value) => (sbyte)(value.Value);
 
         public static explicit operator HCRYPTPROV_OR_NCRYPT_KEY_HANDLE(ushort value) => new HCRYPTPROV_OR_NCRYPT_KEY_HANDLE((nint)(value));
 
-        public static implicit operator ushort(HCRYPTPROV_OR_NCRYPT_KEY_HANDLE value) => (ushort)(value.Value);
+        public static explicit operator ushort(HCRYPTPROV_OR_NCRYPT_KEY_HANDLE value) => (ushort)(value.Value);
 
         public static explicit operator HCRYPTPROV_OR_NCRYPT_KEY_HANDLE(uint value) => new HCRYPTPROV_OR_NCRYPT_KEY_HANDLE((nint)(value));
 
-        public static implicit operator uint(HCRYPTPROV_OR_NCRYPT_KEY_HANDLE value) => (uint)(value.Value);
+        public static explicit operator uint(HCRYPTPROV_OR_NCRYPT_KEY_HANDLE value) => (uint)(value.Value);
 
         public static explicit operator HCRYPTPROV_OR_NCRYPT_KEY_HANDLE(ulong value) => new HCRYPTPROV_OR_NCRYPT_KEY_HANDLE((nint)(value));
 
-        public static explicit operator ulong(HCRYPTPROV_OR_NCRYPT_KEY_HANDLE value) => (ulong)(value.Value);
+        public static implicit operator ulong(HCRYPTPROV_OR_NCRYPT_KEY_HANDLE value) => (ulong)(value.Value);
 
         public static explicit operator HCRYPTPROV_OR_NCRYPT_KEY_HANDLE(nuint value) => new HCRYPTPROV_OR_NCRYPT_KEY_HANDLE((nint)(value));
 

@@ -31,19 +31,19 @@ namespace TerraFX.Interop
 
         public static explicit operator HINF(byte value) => new HINF((nint)(value));
 
-        public static implicit operator byte(HINF value) => (byte)(value.Value);
+        public static explicit operator byte(HINF value) => (byte)(value.Value);
 
         public static explicit operator HINF(short value) => new HINF((nint)(value));
 
-        public static implicit operator short(HINF value) => (short)(value.Value);
+        public static explicit operator short(HINF value) => (short)(value.Value);
 
         public static explicit operator HINF(int value) => new HINF((nint)(value));
 
-        public static implicit operator int(HINF value) => (int)(value.Value);
+        public static explicit operator int(HINF value) => (int)(value.Value);
 
         public static explicit operator HINF(long value) => new HINF((nint)(value));
 
-        public static explicit operator long(HINF value) => (long)(value.Value);
+        public static implicit operator long(HINF value) => (long)(value.Value);
 
         public static explicit operator HINF(nint value) => new HINF((nint)(value));
 
@@ -51,19 +51,19 @@ namespace TerraFX.Interop
 
         public static explicit operator HINF(sbyte value) => new HINF((nint)(value));
 
-        public static implicit operator sbyte(HINF value) => (sbyte)(value.Value);
+        public static explicit operator sbyte(HINF value) => (sbyte)(value.Value);
 
         public static explicit operator HINF(ushort value) => new HINF((nint)(value));
 
-        public static implicit operator ushort(HINF value) => (ushort)(value.Value);
+        public static explicit operator ushort(HINF value) => (ushort)(value.Value);
 
         public static explicit operator HINF(uint value) => new HINF((nint)(value));
 
-        public static implicit operator uint(HINF value) => (uint)(value.Value);
+        public static explicit operator uint(HINF value) => (uint)(value.Value);
 
         public static explicit operator HINF(ulong value) => new HINF((nint)(value));
 
-        public static explicit operator ulong(HINF value) => (ulong)(value.Value);
+        public static implicit operator ulong(HINF value) => (ulong)(value.Value);
 
         public static explicit operator HINF(nuint value) => new HINF((nint)(value));
 

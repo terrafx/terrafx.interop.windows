@@ -31,19 +31,19 @@ namespace TerraFX.Interop
 
         public static explicit operator HPCON(byte value) => new HPCON((nint)(value));
 
-        public static implicit operator byte(HPCON value) => (byte)(value.Value);
+        public static explicit operator byte(HPCON value) => (byte)(value.Value);
 
         public static explicit operator HPCON(short value) => new HPCON((nint)(value));
 
-        public static implicit operator short(HPCON value) => (short)(value.Value);
+        public static explicit operator short(HPCON value) => (short)(value.Value);
 
         public static explicit operator HPCON(int value) => new HPCON((nint)(value));
 
-        public static implicit operator int(HPCON value) => (int)(value.Value);
+        public static explicit operator int(HPCON value) => (int)(value.Value);
 
         public static explicit operator HPCON(long value) => new HPCON((nint)(value));
 
-        public static explicit operator long(HPCON value) => (long)(value.Value);
+        public static implicit operator long(HPCON value) => (long)(value.Value);
 
         public static explicit operator HPCON(nint value) => new HPCON((nint)(value));
 
@@ -51,19 +51,19 @@ namespace TerraFX.Interop
 
         public static explicit operator HPCON(sbyte value) => new HPCON((nint)(value));
 
-        public static implicit operator sbyte(HPCON value) => (sbyte)(value.Value);
+        public static explicit operator sbyte(HPCON value) => (sbyte)(value.Value);
 
         public static explicit operator HPCON(ushort value) => new HPCON((nint)(value));
 
-        public static implicit operator ushort(HPCON value) => (ushort)(value.Value);
+        public static explicit operator ushort(HPCON value) => (ushort)(value.Value);
 
         public static explicit operator HPCON(uint value) => new HPCON((nint)(value));
 
-        public static implicit operator uint(HPCON value) => (uint)(value.Value);
+        public static explicit operator uint(HPCON value) => (uint)(value.Value);
 
         public static explicit operator HPCON(ulong value) => new HPCON((nint)(value));
 
-        public static explicit operator ulong(HPCON value) => (ulong)(value.Value);
+        public static implicit operator ulong(HPCON value) => (ulong)(value.Value);
 
         public static explicit operator HPCON(nuint value) => new HPCON((nint)(value));
 

@@ -31,19 +31,19 @@ namespace TerraFX.Interop
 
         public static explicit operator SPRULEHANDLE(byte value) => new SPRULEHANDLE((nint)(value));
 
-        public static implicit operator byte(SPRULEHANDLE value) => (byte)(value.Value);
+        public static explicit operator byte(SPRULEHANDLE value) => (byte)(value.Value);
 
         public static explicit operator SPRULEHANDLE(short value) => new SPRULEHANDLE((nint)(value));
 
-        public static implicit operator short(SPRULEHANDLE value) => (short)(value.Value);
+        public static explicit operator short(SPRULEHANDLE value) => (short)(value.Value);
 
         public static explicit operator SPRULEHANDLE(int value) => new SPRULEHANDLE((nint)(value));
 
-        public static implicit operator int(SPRULEHANDLE value) => (int)(value.Value);
+        public static explicit operator int(SPRULEHANDLE value) => (int)(value.Value);
 
         public static explicit operator SPRULEHANDLE(long value) => new SPRULEHANDLE((nint)(value));
 
-        public static explicit operator long(SPRULEHANDLE value) => (long)(value.Value);
+        public static implicit operator long(SPRULEHANDLE value) => (long)(value.Value);
 
         public static explicit operator SPRULEHANDLE(nint value) => new SPRULEHANDLE((nint)(value));
 
@@ -51,19 +51,19 @@ namespace TerraFX.Interop
 
         public static explicit operator SPRULEHANDLE(sbyte value) => new SPRULEHANDLE((nint)(value));
 
-        public static implicit operator sbyte(SPRULEHANDLE value) => (sbyte)(value.Value);
+        public static explicit operator sbyte(SPRULEHANDLE value) => (sbyte)(value.Value);
 
         public static explicit operator SPRULEHANDLE(ushort value) => new SPRULEHANDLE((nint)(value));
 
-        public static implicit operator ushort(SPRULEHANDLE value) => (ushort)(value.Value);
+        public static explicit operator ushort(SPRULEHANDLE value) => (ushort)(value.Value);
 
         public static explicit operator SPRULEHANDLE(uint value) => new SPRULEHANDLE((nint)(value));
 
-        public static implicit operator uint(SPRULEHANDLE value) => (uint)(value.Value);
+        public static explicit operator uint(SPRULEHANDLE value) => (uint)(value.Value);
 
         public static explicit operator SPRULEHANDLE(ulong value) => new SPRULEHANDLE((nint)(value));
 
-        public static explicit operator ulong(SPRULEHANDLE value) => (ulong)(value.Value);
+        public static implicit operator ulong(SPRULEHANDLE value) => (ulong)(value.Value);
 
         public static explicit operator SPRULEHANDLE(nuint value) => new SPRULEHANDLE((nint)(value));
 

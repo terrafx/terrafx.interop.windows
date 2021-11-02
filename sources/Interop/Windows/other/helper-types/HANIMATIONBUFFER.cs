@@ -31,19 +31,19 @@ namespace TerraFX.Interop
 
         public static explicit operator HANIMATIONBUFFER(byte value) => new HANIMATIONBUFFER((nint)(value));
 
-        public static implicit operator byte(HANIMATIONBUFFER value) => (byte)(value.Value);
+        public static explicit operator byte(HANIMATIONBUFFER value) => (byte)(value.Value);
 
         public static explicit operator HANIMATIONBUFFER(short value) => new HANIMATIONBUFFER((nint)(value));
 
-        public static implicit operator short(HANIMATIONBUFFER value) => (short)(value.Value);
+        public static explicit operator short(HANIMATIONBUFFER value) => (short)(value.Value);
 
         public static explicit operator HANIMATIONBUFFER(int value) => new HANIMATIONBUFFER((nint)(value));
 
-        public static implicit operator int(HANIMATIONBUFFER value) => (int)(value.Value);
+        public static explicit operator int(HANIMATIONBUFFER value) => (int)(value.Value);
 
         public static explicit operator HANIMATIONBUFFER(long value) => new HANIMATIONBUFFER((nint)(value));
 
-        public static explicit operator long(HANIMATIONBUFFER value) => (long)(value.Value);
+        public static implicit operator long(HANIMATIONBUFFER value) => (long)(value.Value);
 
         public static explicit operator HANIMATIONBUFFER(nint value) => new HANIMATIONBUFFER((nint)(value));
 
@@ -51,19 +51,19 @@ namespace TerraFX.Interop
 
         public static explicit operator HANIMATIONBUFFER(sbyte value) => new HANIMATIONBUFFER((nint)(value));
 
-        public static implicit operator sbyte(HANIMATIONBUFFER value) => (sbyte)(value.Value);
+        public static explicit operator sbyte(HANIMATIONBUFFER value) => (sbyte)(value.Value);
 
         public static explicit operator HANIMATIONBUFFER(ushort value) => new HANIMATIONBUFFER((nint)(value));
 
-        public static implicit operator ushort(HANIMATIONBUFFER value) => (ushort)(value.Value);
+        public static explicit operator ushort(HANIMATIONBUFFER value) => (ushort)(value.Value);
 
         public static explicit operator HANIMATIONBUFFER(uint value) => new HANIMATIONBUFFER((nint)(value));
 
-        public static implicit operator uint(HANIMATIONBUFFER value) => (uint)(value.Value);
+        public static explicit operator uint(HANIMATIONBUFFER value) => (uint)(value.Value);
 
         public static explicit operator HANIMATIONBUFFER(ulong value) => new HANIMATIONBUFFER((nint)(value));
 
-        public static explicit operator ulong(HANIMATIONBUFFER value) => (ulong)(value.Value);
+        public static implicit operator ulong(HANIMATIONBUFFER value) => (ulong)(value.Value);
 
         public static explicit operator HANIMATIONBUFFER(nuint value) => new HANIMATIONBUFFER((nint)(value));
 

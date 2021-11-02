@@ -31,19 +31,19 @@ namespace TerraFX.Interop
 
         public static explicit operator HRECOLATTICE(byte value) => new HRECOLATTICE((nint)(value));
 
-        public static implicit operator byte(HRECOLATTICE value) => (byte)(value.Value);
+        public static explicit operator byte(HRECOLATTICE value) => (byte)(value.Value);
 
         public static explicit operator HRECOLATTICE(short value) => new HRECOLATTICE((nint)(value));
 
-        public static implicit operator short(HRECOLATTICE value) => (short)(value.Value);
+        public static explicit operator short(HRECOLATTICE value) => (short)(value.Value);
 
         public static explicit operator HRECOLATTICE(int value) => new HRECOLATTICE((nint)(value));
 
-        public static implicit operator int(HRECOLATTICE value) => (int)(value.Value);
+        public static explicit operator int(HRECOLATTICE value) => (int)(value.Value);
 
         public static explicit operator HRECOLATTICE(long value) => new HRECOLATTICE((nint)(value));
 
-        public static explicit operator long(HRECOLATTICE value) => (long)(value.Value);
+        public static implicit operator long(HRECOLATTICE value) => (long)(value.Value);
 
         public static explicit operator HRECOLATTICE(nint value) => new HRECOLATTICE((nint)(value));
 
@@ -51,19 +51,19 @@ namespace TerraFX.Interop
 
         public static explicit operator HRECOLATTICE(sbyte value) => new HRECOLATTICE((nint)(value));
 
-        public static implicit operator sbyte(HRECOLATTICE value) => (sbyte)(value.Value);
+        public static explicit operator sbyte(HRECOLATTICE value) => (sbyte)(value.Value);
 
         public static explicit operator HRECOLATTICE(ushort value) => new HRECOLATTICE((nint)(value));
 
-        public static implicit operator ushort(HRECOLATTICE value) => (ushort)(value.Value);
+        public static explicit operator ushort(HRECOLATTICE value) => (ushort)(value.Value);
 
         public static explicit operator HRECOLATTICE(uint value) => new HRECOLATTICE((nint)(value));
 
-        public static implicit operator uint(HRECOLATTICE value) => (uint)(value.Value);
+        public static explicit operator uint(HRECOLATTICE value) => (uint)(value.Value);
 
         public static explicit operator HRECOLATTICE(ulong value) => new HRECOLATTICE((nint)(value));
 
-        public static explicit operator ulong(HRECOLATTICE value) => (ulong)(value.Value);
+        public static implicit operator ulong(HRECOLATTICE value) => (ulong)(value.Value);
 
         public static explicit operator HRECOLATTICE(nuint value) => new HRECOLATTICE((nint)(value));
 

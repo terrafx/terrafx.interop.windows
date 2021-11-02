@@ -31,19 +31,19 @@ namespace TerraFX.Interop
 
         public static explicit operator SAFER_LEVEL_HANDLE(byte value) => new SAFER_LEVEL_HANDLE((nint)(value));
 
-        public static implicit operator byte(SAFER_LEVEL_HANDLE value) => (byte)(value.Value);
+        public static explicit operator byte(SAFER_LEVEL_HANDLE value) => (byte)(value.Value);
 
         public static explicit operator SAFER_LEVEL_HANDLE(short value) => new SAFER_LEVEL_HANDLE((nint)(value));
 
-        public static implicit operator short(SAFER_LEVEL_HANDLE value) => (short)(value.Value);
+        public static explicit operator short(SAFER_LEVEL_HANDLE value) => (short)(value.Value);
 
         public static explicit operator SAFER_LEVEL_HANDLE(int value) => new SAFER_LEVEL_HANDLE((nint)(value));
 
-        public static implicit operator int(SAFER_LEVEL_HANDLE value) => (int)(value.Value);
+        public static explicit operator int(SAFER_LEVEL_HANDLE value) => (int)(value.Value);
 
         public static explicit operator SAFER_LEVEL_HANDLE(long value) => new SAFER_LEVEL_HANDLE((nint)(value));
 
-        public static explicit operator long(SAFER_LEVEL_HANDLE value) => (long)(value.Value);
+        public static implicit operator long(SAFER_LEVEL_HANDLE value) => (long)(value.Value);
 
         public static explicit operator SAFER_LEVEL_HANDLE(nint value) => new SAFER_LEVEL_HANDLE((nint)(value));
 
@@ -51,19 +51,19 @@ namespace TerraFX.Interop
 
         public static explicit operator SAFER_LEVEL_HANDLE(sbyte value) => new SAFER_LEVEL_HANDLE((nint)(value));
 
-        public static implicit operator sbyte(SAFER_LEVEL_HANDLE value) => (sbyte)(value.Value);
+        public static explicit operator sbyte(SAFER_LEVEL_HANDLE value) => (sbyte)(value.Value);
 
         public static explicit operator SAFER_LEVEL_HANDLE(ushort value) => new SAFER_LEVEL_HANDLE((nint)(value));
 
-        public static implicit operator ushort(SAFER_LEVEL_HANDLE value) => (ushort)(value.Value);
+        public static explicit operator ushort(SAFER_LEVEL_HANDLE value) => (ushort)(value.Value);
 
         public static explicit operator SAFER_LEVEL_HANDLE(uint value) => new SAFER_LEVEL_HANDLE((nint)(value));
 
-        public static implicit operator uint(SAFER_LEVEL_HANDLE value) => (uint)(value.Value);
+        public static explicit operator uint(SAFER_LEVEL_HANDLE value) => (uint)(value.Value);
 
         public static explicit operator SAFER_LEVEL_HANDLE(ulong value) => new SAFER_LEVEL_HANDLE((nint)(value));
 
-        public static explicit operator ulong(SAFER_LEVEL_HANDLE value) => (ulong)(value.Value);
+        public static implicit operator ulong(SAFER_LEVEL_HANDLE value) => (ulong)(value.Value);
 
         public static explicit operator SAFER_LEVEL_HANDLE(nuint value) => new SAFER_LEVEL_HANDLE((nint)(value));
 

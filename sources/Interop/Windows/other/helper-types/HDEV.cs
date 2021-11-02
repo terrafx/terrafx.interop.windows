@@ -31,19 +31,19 @@ namespace TerraFX.Interop
 
         public static explicit operator HDEV(byte value) => new HDEV((nint)(value));
 
-        public static implicit operator byte(HDEV value) => (byte)(value.Value);
+        public static explicit operator byte(HDEV value) => (byte)(value.Value);
 
         public static explicit operator HDEV(short value) => new HDEV((nint)(value));
 
-        public static implicit operator short(HDEV value) => (short)(value.Value);
+        public static explicit operator short(HDEV value) => (short)(value.Value);
 
         public static explicit operator HDEV(int value) => new HDEV((nint)(value));
 
-        public static implicit operator int(HDEV value) => (int)(value.Value);
+        public static explicit operator int(HDEV value) => (int)(value.Value);
 
         public static explicit operator HDEV(long value) => new HDEV((nint)(value));
 
-        public static explicit operator long(HDEV value) => (long)(value.Value);
+        public static implicit operator long(HDEV value) => (long)(value.Value);
 
         public static explicit operator HDEV(nint value) => new HDEV((nint)(value));
 
@@ -51,19 +51,19 @@ namespace TerraFX.Interop
 
         public static explicit operator HDEV(sbyte value) => new HDEV((nint)(value));
 
-        public static implicit operator sbyte(HDEV value) => (sbyte)(value.Value);
+        public static explicit operator sbyte(HDEV value) => (sbyte)(value.Value);
 
         public static explicit operator HDEV(ushort value) => new HDEV((nint)(value));
 
-        public static implicit operator ushort(HDEV value) => (ushort)(value.Value);
+        public static explicit operator ushort(HDEV value) => (ushort)(value.Value);
 
         public static explicit operator HDEV(uint value) => new HDEV((nint)(value));
 
-        public static implicit operator uint(HDEV value) => (uint)(value.Value);
+        public static explicit operator uint(HDEV value) => (uint)(value.Value);
 
         public static explicit operator HDEV(ulong value) => new HDEV((nint)(value));
 
-        public static explicit operator ulong(HDEV value) => (ulong)(value.Value);
+        public static implicit operator ulong(HDEV value) => (ulong)(value.Value);
 
         public static explicit operator HDEV(nuint value) => new HDEV((nint)(value));
 

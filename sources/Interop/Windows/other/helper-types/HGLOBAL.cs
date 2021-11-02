@@ -31,19 +31,19 @@ namespace TerraFX.Interop
 
         public static explicit operator HGLOBAL(byte value) => new HGLOBAL((nint)(value));
 
-        public static implicit operator byte(HGLOBAL value) => (byte)(value.Value);
+        public static explicit operator byte(HGLOBAL value) => (byte)(value.Value);
 
         public static explicit operator HGLOBAL(short value) => new HGLOBAL((nint)(value));
 
-        public static implicit operator short(HGLOBAL value) => (short)(value.Value);
+        public static explicit operator short(HGLOBAL value) => (short)(value.Value);
 
         public static explicit operator HGLOBAL(int value) => new HGLOBAL((nint)(value));
 
-        public static implicit operator int(HGLOBAL value) => (int)(value.Value);
+        public static explicit operator int(HGLOBAL value) => (int)(value.Value);
 
         public static explicit operator HGLOBAL(long value) => new HGLOBAL((nint)(value));
 
-        public static explicit operator long(HGLOBAL value) => (long)(value.Value);
+        public static implicit operator long(HGLOBAL value) => (long)(value.Value);
 
         public static explicit operator HGLOBAL(nint value) => new HGLOBAL((nint)(value));
 
@@ -51,19 +51,19 @@ namespace TerraFX.Interop
 
         public static explicit operator HGLOBAL(sbyte value) => new HGLOBAL((nint)(value));
 
-        public static implicit operator sbyte(HGLOBAL value) => (sbyte)(value.Value);
+        public static explicit operator sbyte(HGLOBAL value) => (sbyte)(value.Value);
 
         public static explicit operator HGLOBAL(ushort value) => new HGLOBAL((nint)(value));
 
-        public static implicit operator ushort(HGLOBAL value) => (ushort)(value.Value);
+        public static explicit operator ushort(HGLOBAL value) => (ushort)(value.Value);
 
         public static explicit operator HGLOBAL(uint value) => new HGLOBAL((nint)(value));
 
-        public static implicit operator uint(HGLOBAL value) => (uint)(value.Value);
+        public static explicit operator uint(HGLOBAL value) => (uint)(value.Value);
 
         public static explicit operator HGLOBAL(ulong value) => new HGLOBAL((nint)(value));
 
-        public static explicit operator ulong(HGLOBAL value) => (ulong)(value.Value);
+        public static implicit operator ulong(HGLOBAL value) => (ulong)(value.Value);
 
         public static explicit operator HGLOBAL(nuint value) => new HGLOBAL((nint)(value));
 

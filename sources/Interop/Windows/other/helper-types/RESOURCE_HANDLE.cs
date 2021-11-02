@@ -31,19 +31,19 @@ namespace TerraFX.Interop
 
         public static explicit operator RESOURCE_HANDLE(byte value) => new RESOURCE_HANDLE((nint)(value));
 
-        public static implicit operator byte(RESOURCE_HANDLE value) => (byte)(value.Value);
+        public static explicit operator byte(RESOURCE_HANDLE value) => (byte)(value.Value);
 
         public static explicit operator RESOURCE_HANDLE(short value) => new RESOURCE_HANDLE((nint)(value));
 
-        public static implicit operator short(RESOURCE_HANDLE value) => (short)(value.Value);
+        public static explicit operator short(RESOURCE_HANDLE value) => (short)(value.Value);
 
         public static explicit operator RESOURCE_HANDLE(int value) => new RESOURCE_HANDLE((nint)(value));
 
-        public static implicit operator int(RESOURCE_HANDLE value) => (int)(value.Value);
+        public static explicit operator int(RESOURCE_HANDLE value) => (int)(value.Value);
 
         public static explicit operator RESOURCE_HANDLE(long value) => new RESOURCE_HANDLE((nint)(value));
 
-        public static explicit operator long(RESOURCE_HANDLE value) => (long)(value.Value);
+        public static implicit operator long(RESOURCE_HANDLE value) => (long)(value.Value);
 
         public static explicit operator RESOURCE_HANDLE(nint value) => new RESOURCE_HANDLE((nint)(value));
 
@@ -51,19 +51,19 @@ namespace TerraFX.Interop
 
         public static explicit operator RESOURCE_HANDLE(sbyte value) => new RESOURCE_HANDLE((nint)(value));
 
-        public static implicit operator sbyte(RESOURCE_HANDLE value) => (sbyte)(value.Value);
+        public static explicit operator sbyte(RESOURCE_HANDLE value) => (sbyte)(value.Value);
 
         public static explicit operator RESOURCE_HANDLE(ushort value) => new RESOURCE_HANDLE((nint)(value));
 
-        public static implicit operator ushort(RESOURCE_HANDLE value) => (ushort)(value.Value);
+        public static explicit operator ushort(RESOURCE_HANDLE value) => (ushort)(value.Value);
 
         public static explicit operator RESOURCE_HANDLE(uint value) => new RESOURCE_HANDLE((nint)(value));
 
-        public static implicit operator uint(RESOURCE_HANDLE value) => (uint)(value.Value);
+        public static explicit operator uint(RESOURCE_HANDLE value) => (uint)(value.Value);
 
         public static explicit operator RESOURCE_HANDLE(ulong value) => new RESOURCE_HANDLE((nint)(value));
 
-        public static explicit operator ulong(RESOURCE_HANDLE value) => (ulong)(value.Value);
+        public static implicit operator ulong(RESOURCE_HANDLE value) => (ulong)(value.Value);
 
         public static explicit operator RESOURCE_HANDLE(nuint value) => new RESOURCE_HANDLE((nint)(value));
 

@@ -25,19 +25,19 @@ namespace TerraFX.Interop
 
         public static explicit operator ASYNCCOMPLETIONHANDLE(byte value) => new ASYNCCOMPLETIONHANDLE((nuint)(value));
 
-        public static implicit operator byte(ASYNCCOMPLETIONHANDLE value) => (byte)(value.Value);
+        public static explicit operator byte(ASYNCCOMPLETIONHANDLE value) => (byte)(value.Value);
 
         public static explicit operator ASYNCCOMPLETIONHANDLE(short value) => new ASYNCCOMPLETIONHANDLE((nuint)(value));
 
-        public static implicit operator short(ASYNCCOMPLETIONHANDLE value) => (short)(value.Value);
+        public static explicit operator short(ASYNCCOMPLETIONHANDLE value) => (short)(value.Value);
 
         public static explicit operator ASYNCCOMPLETIONHANDLE(int value) => new ASYNCCOMPLETIONHANDLE((nuint)(value));
 
-        public static implicit operator int(ASYNCCOMPLETIONHANDLE value) => (int)(value.Value);
+        public static explicit operator int(ASYNCCOMPLETIONHANDLE value) => (int)(value.Value);
 
         public static explicit operator ASYNCCOMPLETIONHANDLE(long value) => new ASYNCCOMPLETIONHANDLE((nuint)(value));
 
-        public static explicit operator long(ASYNCCOMPLETIONHANDLE value) => (long)(value.Value);
+        public static implicit operator long(ASYNCCOMPLETIONHANDLE value) => (long)(value.Value);
 
         public static explicit operator ASYNCCOMPLETIONHANDLE(nint value) => new ASYNCCOMPLETIONHANDLE((nuint)(value));
 
@@ -45,19 +45,19 @@ namespace TerraFX.Interop
 
         public static explicit operator ASYNCCOMPLETIONHANDLE(sbyte value) => new ASYNCCOMPLETIONHANDLE((nuint)(value));
 
-        public static implicit operator sbyte(ASYNCCOMPLETIONHANDLE value) => (sbyte)(value.Value);
+        public static explicit operator sbyte(ASYNCCOMPLETIONHANDLE value) => (sbyte)(value.Value);
 
         public static explicit operator ASYNCCOMPLETIONHANDLE(ushort value) => new ASYNCCOMPLETIONHANDLE((nuint)(value));
 
-        public static implicit operator ushort(ASYNCCOMPLETIONHANDLE value) => (ushort)(value.Value);
+        public static explicit operator ushort(ASYNCCOMPLETIONHANDLE value) => (ushort)(value.Value);
 
         public static explicit operator ASYNCCOMPLETIONHANDLE(uint value) => new ASYNCCOMPLETIONHANDLE((nuint)(value));
 
-        public static implicit operator uint(ASYNCCOMPLETIONHANDLE value) => (uint)(value.Value);
+        public static explicit operator uint(ASYNCCOMPLETIONHANDLE value) => (uint)(value.Value);
 
         public static explicit operator ASYNCCOMPLETIONHANDLE(ulong value) => new ASYNCCOMPLETIONHANDLE((nuint)(value));
 
-        public static explicit operator ulong(ASYNCCOMPLETIONHANDLE value) => (ulong)(value.Value);
+        public static implicit operator ulong(ASYNCCOMPLETIONHANDLE value) => (ulong)(value.Value);
 
         public static explicit operator ASYNCCOMPLETIONHANDLE(nuint value) => new ASYNCCOMPLETIONHANDLE((nuint)(value));
 

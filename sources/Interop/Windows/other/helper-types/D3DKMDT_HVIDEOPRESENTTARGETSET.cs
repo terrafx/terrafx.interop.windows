@@ -31,19 +31,19 @@ namespace TerraFX.Interop
 
         public static explicit operator D3DKMDT_HVIDEOPRESENTTARGETSET(byte value) => new D3DKMDT_HVIDEOPRESENTTARGETSET((nint)(value));
 
-        public static implicit operator byte(D3DKMDT_HVIDEOPRESENTTARGETSET value) => (byte)(value.Value);
+        public static explicit operator byte(D3DKMDT_HVIDEOPRESENTTARGETSET value) => (byte)(value.Value);
 
         public static explicit operator D3DKMDT_HVIDEOPRESENTTARGETSET(short value) => new D3DKMDT_HVIDEOPRESENTTARGETSET((nint)(value));
 
-        public static implicit operator short(D3DKMDT_HVIDEOPRESENTTARGETSET value) => (short)(value.Value);
+        public static explicit operator short(D3DKMDT_HVIDEOPRESENTTARGETSET value) => (short)(value.Value);
 
         public static explicit operator D3DKMDT_HVIDEOPRESENTTARGETSET(int value) => new D3DKMDT_HVIDEOPRESENTTARGETSET((nint)(value));
 
-        public static implicit operator int(D3DKMDT_HVIDEOPRESENTTARGETSET value) => (int)(value.Value);
+        public static explicit operator int(D3DKMDT_HVIDEOPRESENTTARGETSET value) => (int)(value.Value);
 
         public static explicit operator D3DKMDT_HVIDEOPRESENTTARGETSET(long value) => new D3DKMDT_HVIDEOPRESENTTARGETSET((nint)(value));
 
-        public static explicit operator long(D3DKMDT_HVIDEOPRESENTTARGETSET value) => (long)(value.Value);
+        public static implicit operator long(D3DKMDT_HVIDEOPRESENTTARGETSET value) => (long)(value.Value);
 
         public static explicit operator D3DKMDT_HVIDEOPRESENTTARGETSET(nint value) => new D3DKMDT_HVIDEOPRESENTTARGETSET((nint)(value));
 
@@ -51,19 +51,19 @@ namespace TerraFX.Interop
 
         public static explicit operator D3DKMDT_HVIDEOPRESENTTARGETSET(sbyte value) => new D3DKMDT_HVIDEOPRESENTTARGETSET((nint)(value));
 
-        public static implicit operator sbyte(D3DKMDT_HVIDEOPRESENTTARGETSET value) => (sbyte)(value.Value);
+        public static explicit operator sbyte(D3DKMDT_HVIDEOPRESENTTARGETSET value) => (sbyte)(value.Value);
 
         public static explicit operator D3DKMDT_HVIDEOPRESENTTARGETSET(ushort value) => new D3DKMDT_HVIDEOPRESENTTARGETSET((nint)(value));
 
-        public static implicit operator ushort(D3DKMDT_HVIDEOPRESENTTARGETSET value) => (ushort)(value.Value);
+        public static explicit operator ushort(D3DKMDT_HVIDEOPRESENTTARGETSET value) => (ushort)(value.Value);
 
         public static explicit operator D3DKMDT_HVIDEOPRESENTTARGETSET(uint value) => new D3DKMDT_HVIDEOPRESENTTARGETSET((nint)(value));
 
-        public static implicit operator uint(D3DKMDT_HVIDEOPRESENTTARGETSET value) => (uint)(value.Value);
+        public static explicit operator uint(D3DKMDT_HVIDEOPRESENTTARGETSET value) => (uint)(value.Value);
 
         public static explicit operator D3DKMDT_HVIDEOPRESENTTARGETSET(ulong value) => new D3DKMDT_HVIDEOPRESENTTARGETSET((nint)(value));
 
-        public static explicit operator ulong(D3DKMDT_HVIDEOPRESENTTARGETSET value) => (ulong)(value.Value);
+        public static implicit operator ulong(D3DKMDT_HVIDEOPRESENTTARGETSET value) => (ulong)(value.Value);
 
         public static explicit operator D3DKMDT_HVIDEOPRESENTTARGETSET(nuint value) => new D3DKMDT_HVIDEOPRESENTTARGETSET((nint)(value));
 

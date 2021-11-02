@@ -31,19 +31,19 @@ namespace TerraFX.Interop
 
         public static explicit operator HKL(byte value) => new HKL((nint)(value));
 
-        public static implicit operator byte(HKL value) => (byte)(value.Value);
+        public static explicit operator byte(HKL value) => (byte)(value.Value);
 
         public static explicit operator HKL(short value) => new HKL((nint)(value));
 
-        public static implicit operator short(HKL value) => (short)(value.Value);
+        public static explicit operator short(HKL value) => (short)(value.Value);
 
         public static explicit operator HKL(int value) => new HKL((nint)(value));
 
-        public static implicit operator int(HKL value) => (int)(value.Value);
+        public static explicit operator int(HKL value) => (int)(value.Value);
 
         public static explicit operator HKL(long value) => new HKL((nint)(value));
 
-        public static explicit operator long(HKL value) => (long)(value.Value);
+        public static implicit operator long(HKL value) => (long)(value.Value);
 
         public static explicit operator HKL(nint value) => new HKL((nint)(value));
 
@@ -51,19 +51,19 @@ namespace TerraFX.Interop
 
         public static explicit operator HKL(sbyte value) => new HKL((nint)(value));
 
-        public static implicit operator sbyte(HKL value) => (sbyte)(value.Value);
+        public static explicit operator sbyte(HKL value) => (sbyte)(value.Value);
 
         public static explicit operator HKL(ushort value) => new HKL((nint)(value));
 
-        public static implicit operator ushort(HKL value) => (ushort)(value.Value);
+        public static explicit operator ushort(HKL value) => (ushort)(value.Value);
 
         public static explicit operator HKL(uint value) => new HKL((nint)(value));
 
-        public static implicit operator uint(HKL value) => (uint)(value.Value);
+        public static explicit operator uint(HKL value) => (uint)(value.Value);
 
         public static explicit operator HKL(ulong value) => new HKL((nint)(value));
 
-        public static explicit operator ulong(HKL value) => (ulong)(value.Value);
+        public static implicit operator ulong(HKL value) => (ulong)(value.Value);
 
         public static explicit operator HKL(nuint value) => new HKL((nint)(value));
 

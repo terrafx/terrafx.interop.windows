@@ -31,19 +31,19 @@ namespace TerraFX.Interop
 
         public static explicit operator COMPRESSOR_HANDLE(byte value) => new COMPRESSOR_HANDLE((nint)(value));
 
-        public static implicit operator byte(COMPRESSOR_HANDLE value) => (byte)(value.Value);
+        public static explicit operator byte(COMPRESSOR_HANDLE value) => (byte)(value.Value);
 
         public static explicit operator COMPRESSOR_HANDLE(short value) => new COMPRESSOR_HANDLE((nint)(value));
 
-        public static implicit operator short(COMPRESSOR_HANDLE value) => (short)(value.Value);
+        public static explicit operator short(COMPRESSOR_HANDLE value) => (short)(value.Value);
 
         public static explicit operator COMPRESSOR_HANDLE(int value) => new COMPRESSOR_HANDLE((nint)(value));
 
-        public static implicit operator int(COMPRESSOR_HANDLE value) => (int)(value.Value);
+        public static explicit operator int(COMPRESSOR_HANDLE value) => (int)(value.Value);
 
         public static explicit operator COMPRESSOR_HANDLE(long value) => new COMPRESSOR_HANDLE((nint)(value));
 
-        public static explicit operator long(COMPRESSOR_HANDLE value) => (long)(value.Value);
+        public static implicit operator long(COMPRESSOR_HANDLE value) => (long)(value.Value);
 
         public static explicit operator COMPRESSOR_HANDLE(nint value) => new COMPRESSOR_HANDLE((nint)(value));
 
@@ -51,19 +51,19 @@ namespace TerraFX.Interop
 
         public static explicit operator COMPRESSOR_HANDLE(sbyte value) => new COMPRESSOR_HANDLE((nint)(value));
 
-        public static implicit operator sbyte(COMPRESSOR_HANDLE value) => (sbyte)(value.Value);
+        public static explicit operator sbyte(COMPRESSOR_HANDLE value) => (sbyte)(value.Value);
 
         public static explicit operator COMPRESSOR_HANDLE(ushort value) => new COMPRESSOR_HANDLE((nint)(value));
 
-        public static implicit operator ushort(COMPRESSOR_HANDLE value) => (ushort)(value.Value);
+        public static explicit operator ushort(COMPRESSOR_HANDLE value) => (ushort)(value.Value);
 
         public static explicit operator COMPRESSOR_HANDLE(uint value) => new COMPRESSOR_HANDLE((nint)(value));
 
-        public static implicit operator uint(COMPRESSOR_HANDLE value) => (uint)(value.Value);
+        public static explicit operator uint(COMPRESSOR_HANDLE value) => (uint)(value.Value);
 
         public static explicit operator COMPRESSOR_HANDLE(ulong value) => new COMPRESSOR_HANDLE((nint)(value));
 
-        public static explicit operator ulong(COMPRESSOR_HANDLE value) => (ulong)(value.Value);
+        public static implicit operator ulong(COMPRESSOR_HANDLE value) => (ulong)(value.Value);
 
         public static explicit operator COMPRESSOR_HANDLE(nuint value) => new COMPRESSOR_HANDLE((nint)(value));
 

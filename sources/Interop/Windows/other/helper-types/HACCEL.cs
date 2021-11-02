@@ -31,19 +31,19 @@ namespace TerraFX.Interop
 
         public static explicit operator HACCEL(byte value) => new HACCEL((nint)(value));
 
-        public static implicit operator byte(HACCEL value) => (byte)(value.Value);
+        public static explicit operator byte(HACCEL value) => (byte)(value.Value);
 
         public static explicit operator HACCEL(short value) => new HACCEL((nint)(value));
 
-        public static implicit operator short(HACCEL value) => (short)(value.Value);
+        public static explicit operator short(HACCEL value) => (short)(value.Value);
 
         public static explicit operator HACCEL(int value) => new HACCEL((nint)(value));
 
-        public static implicit operator int(HACCEL value) => (int)(value.Value);
+        public static explicit operator int(HACCEL value) => (int)(value.Value);
 
         public static explicit operator HACCEL(long value) => new HACCEL((nint)(value));
 
-        public static explicit operator long(HACCEL value) => (long)(value.Value);
+        public static implicit operator long(HACCEL value) => (long)(value.Value);
 
         public static explicit operator HACCEL(nint value) => new HACCEL((nint)(value));
 
@@ -51,19 +51,19 @@ namespace TerraFX.Interop
 
         public static explicit operator HACCEL(sbyte value) => new HACCEL((nint)(value));
 
-        public static implicit operator sbyte(HACCEL value) => (sbyte)(value.Value);
+        public static explicit operator sbyte(HACCEL value) => (sbyte)(value.Value);
 
         public static explicit operator HACCEL(ushort value) => new HACCEL((nint)(value));
 
-        public static implicit operator ushort(HACCEL value) => (ushort)(value.Value);
+        public static explicit operator ushort(HACCEL value) => (ushort)(value.Value);
 
         public static explicit operator HACCEL(uint value) => new HACCEL((nint)(value));
 
-        public static implicit operator uint(HACCEL value) => (uint)(value.Value);
+        public static explicit operator uint(HACCEL value) => (uint)(value.Value);
 
         public static explicit operator HACCEL(ulong value) => new HACCEL((nint)(value));
 
-        public static explicit operator ulong(HACCEL value) => (ulong)(value.Value);
+        public static implicit operator ulong(HACCEL value) => (ulong)(value.Value);
 
         public static explicit operator HACCEL(nuint value) => new HACCEL((nint)(value));
 

@@ -25,19 +25,19 @@ namespace TerraFX.Interop
 
         public static explicit operator PTP_CLEANUP_GROUP(byte value) => new PTP_CLEANUP_GROUP((nint)(value));
 
-        public static implicit operator byte(PTP_CLEANUP_GROUP value) => (byte)(value.Value);
+        public static explicit operator byte(PTP_CLEANUP_GROUP value) => (byte)(value.Value);
 
         public static explicit operator PTP_CLEANUP_GROUP(short value) => new PTP_CLEANUP_GROUP((nint)(value));
 
-        public static implicit operator short(PTP_CLEANUP_GROUP value) => (short)(value.Value);
+        public static explicit operator short(PTP_CLEANUP_GROUP value) => (short)(value.Value);
 
         public static explicit operator PTP_CLEANUP_GROUP(int value) => new PTP_CLEANUP_GROUP((nint)(value));
 
-        public static implicit operator int(PTP_CLEANUP_GROUP value) => (int)(value.Value);
+        public static explicit operator int(PTP_CLEANUP_GROUP value) => (int)(value.Value);
 
         public static explicit operator PTP_CLEANUP_GROUP(long value) => new PTP_CLEANUP_GROUP((nint)(value));
 
-        public static explicit operator long(PTP_CLEANUP_GROUP value) => (long)(value.Value);
+        public static implicit operator long(PTP_CLEANUP_GROUP value) => (long)(value.Value);
 
         public static explicit operator PTP_CLEANUP_GROUP(nint value) => new PTP_CLEANUP_GROUP((nint)(value));
 
@@ -45,19 +45,19 @@ namespace TerraFX.Interop
 
         public static explicit operator PTP_CLEANUP_GROUP(sbyte value) => new PTP_CLEANUP_GROUP((nint)(value));
 
-        public static implicit operator sbyte(PTP_CLEANUP_GROUP value) => (sbyte)(value.Value);
+        public static explicit operator sbyte(PTP_CLEANUP_GROUP value) => (sbyte)(value.Value);
 
         public static explicit operator PTP_CLEANUP_GROUP(ushort value) => new PTP_CLEANUP_GROUP((nint)(value));
 
-        public static implicit operator ushort(PTP_CLEANUP_GROUP value) => (ushort)(value.Value);
+        public static explicit operator ushort(PTP_CLEANUP_GROUP value) => (ushort)(value.Value);
 
         public static explicit operator PTP_CLEANUP_GROUP(uint value) => new PTP_CLEANUP_GROUP((nint)(value));
 
-        public static implicit operator uint(PTP_CLEANUP_GROUP value) => (uint)(value.Value);
+        public static explicit operator uint(PTP_CLEANUP_GROUP value) => (uint)(value.Value);
 
         public static explicit operator PTP_CLEANUP_GROUP(ulong value) => new PTP_CLEANUP_GROUP((nint)(value));
 
-        public static explicit operator ulong(PTP_CLEANUP_GROUP value) => (ulong)(value.Value);
+        public static implicit operator ulong(PTP_CLEANUP_GROUP value) => (ulong)(value.Value);
 
         public static explicit operator PTP_CLEANUP_GROUP(nuint value) => new PTP_CLEANUP_GROUP((nint)(value));
 

@@ -31,19 +31,19 @@ namespace TerraFX.Interop
 
         public static explicit operator HCOMDB(byte value) => new HCOMDB((nint)(value));
 
-        public static implicit operator byte(HCOMDB value) => (byte)(value.Value);
+        public static explicit operator byte(HCOMDB value) => (byte)(value.Value);
 
         public static explicit operator HCOMDB(short value) => new HCOMDB((nint)(value));
 
-        public static implicit operator short(HCOMDB value) => (short)(value.Value);
+        public static explicit operator short(HCOMDB value) => (short)(value.Value);
 
         public static explicit operator HCOMDB(int value) => new HCOMDB((nint)(value));
 
-        public static implicit operator int(HCOMDB value) => (int)(value.Value);
+        public static explicit operator int(HCOMDB value) => (int)(value.Value);
 
         public static explicit operator HCOMDB(long value) => new HCOMDB((nint)(value));
 
-        public static explicit operator long(HCOMDB value) => (long)(value.Value);
+        public static implicit operator long(HCOMDB value) => (long)(value.Value);
 
         public static explicit operator HCOMDB(nint value) => new HCOMDB((nint)(value));
 
@@ -51,19 +51,19 @@ namespace TerraFX.Interop
 
         public static explicit operator HCOMDB(sbyte value) => new HCOMDB((nint)(value));
 
-        public static implicit operator sbyte(HCOMDB value) => (sbyte)(value.Value);
+        public static explicit operator sbyte(HCOMDB value) => (sbyte)(value.Value);
 
         public static explicit operator HCOMDB(ushort value) => new HCOMDB((nint)(value));
 
-        public static implicit operator ushort(HCOMDB value) => (ushort)(value.Value);
+        public static explicit operator ushort(HCOMDB value) => (ushort)(value.Value);
 
         public static explicit operator HCOMDB(uint value) => new HCOMDB((nint)(value));
 
-        public static implicit operator uint(HCOMDB value) => (uint)(value.Value);
+        public static explicit operator uint(HCOMDB value) => (uint)(value.Value);
 
         public static explicit operator HCOMDB(ulong value) => new HCOMDB((nint)(value));
 
-        public static explicit operator ulong(HCOMDB value) => (ulong)(value.Value);
+        public static implicit operator ulong(HCOMDB value) => (ulong)(value.Value);
 
         public static explicit operator HCOMDB(nuint value) => new HCOMDB((nint)(value));
 

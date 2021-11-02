@@ -31,19 +31,19 @@ namespace TerraFX.Interop
 
         public static explicit operator HPEN(byte value) => new HPEN((nint)(value));
 
-        public static implicit operator byte(HPEN value) => (byte)(value.Value);
+        public static explicit operator byte(HPEN value) => (byte)(value.Value);
 
         public static explicit operator HPEN(short value) => new HPEN((nint)(value));
 
-        public static implicit operator short(HPEN value) => (short)(value.Value);
+        public static explicit operator short(HPEN value) => (short)(value.Value);
 
         public static explicit operator HPEN(int value) => new HPEN((nint)(value));
 
-        public static implicit operator int(HPEN value) => (int)(value.Value);
+        public static explicit operator int(HPEN value) => (int)(value.Value);
 
         public static explicit operator HPEN(long value) => new HPEN((nint)(value));
 
-        public static explicit operator long(HPEN value) => (long)(value.Value);
+        public static implicit operator long(HPEN value) => (long)(value.Value);
 
         public static explicit operator HPEN(nint value) => new HPEN((nint)(value));
 
@@ -51,19 +51,19 @@ namespace TerraFX.Interop
 
         public static explicit operator HPEN(sbyte value) => new HPEN((nint)(value));
 
-        public static implicit operator sbyte(HPEN value) => (sbyte)(value.Value);
+        public static explicit operator sbyte(HPEN value) => (sbyte)(value.Value);
 
         public static explicit operator HPEN(ushort value) => new HPEN((nint)(value));
 
-        public static implicit operator ushort(HPEN value) => (ushort)(value.Value);
+        public static explicit operator ushort(HPEN value) => (ushort)(value.Value);
 
         public static explicit operator HPEN(uint value) => new HPEN((nint)(value));
 
-        public static implicit operator uint(HPEN value) => (uint)(value.Value);
+        public static explicit operator uint(HPEN value) => (uint)(value.Value);
 
         public static explicit operator HPEN(ulong value) => new HPEN((nint)(value));
 
-        public static explicit operator ulong(HPEN value) => (ulong)(value.Value);
+        public static implicit operator ulong(HPEN value) => (ulong)(value.Value);
 
         public static explicit operator HPEN(nuint value) => new HPEN((nint)(value));
 

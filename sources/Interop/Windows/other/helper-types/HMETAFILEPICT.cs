@@ -31,19 +31,19 @@ namespace TerraFX.Interop
 
         public static explicit operator HMETAFILEPICT(byte value) => new HMETAFILEPICT((nint)(value));
 
-        public static implicit operator byte(HMETAFILEPICT value) => (byte)(value.Value);
+        public static explicit operator byte(HMETAFILEPICT value) => (byte)(value.Value);
 
         public static explicit operator HMETAFILEPICT(short value) => new HMETAFILEPICT((nint)(value));
 
-        public static implicit operator short(HMETAFILEPICT value) => (short)(value.Value);
+        public static explicit operator short(HMETAFILEPICT value) => (short)(value.Value);
 
         public static explicit operator HMETAFILEPICT(int value) => new HMETAFILEPICT((nint)(value));
 
-        public static implicit operator int(HMETAFILEPICT value) => (int)(value.Value);
+        public static explicit operator int(HMETAFILEPICT value) => (int)(value.Value);
 
         public static explicit operator HMETAFILEPICT(long value) => new HMETAFILEPICT((nint)(value));
 
-        public static explicit operator long(HMETAFILEPICT value) => (long)(value.Value);
+        public static implicit operator long(HMETAFILEPICT value) => (long)(value.Value);
 
         public static explicit operator HMETAFILEPICT(nint value) => new HMETAFILEPICT((nint)(value));
 
@@ -51,19 +51,19 @@ namespace TerraFX.Interop
 
         public static explicit operator HMETAFILEPICT(sbyte value) => new HMETAFILEPICT((nint)(value));
 
-        public static implicit operator sbyte(HMETAFILEPICT value) => (sbyte)(value.Value);
+        public static explicit operator sbyte(HMETAFILEPICT value) => (sbyte)(value.Value);
 
         public static explicit operator HMETAFILEPICT(ushort value) => new HMETAFILEPICT((nint)(value));
 
-        public static implicit operator ushort(HMETAFILEPICT value) => (ushort)(value.Value);
+        public static explicit operator ushort(HMETAFILEPICT value) => (ushort)(value.Value);
 
         public static explicit operator HMETAFILEPICT(uint value) => new HMETAFILEPICT((nint)(value));
 
-        public static implicit operator uint(HMETAFILEPICT value) => (uint)(value.Value);
+        public static explicit operator uint(HMETAFILEPICT value) => (uint)(value.Value);
 
         public static explicit operator HMETAFILEPICT(ulong value) => new HMETAFILEPICT((nint)(value));
 
-        public static explicit operator ulong(HMETAFILEPICT value) => (ulong)(value.Value);
+        public static implicit operator ulong(HMETAFILEPICT value) => (ulong)(value.Value);
 
         public static explicit operator HMETAFILEPICT(nuint value) => new HMETAFILEPICT((nint)(value));
 

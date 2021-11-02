@@ -31,19 +31,19 @@ namespace TerraFX.Interop
 
         public static explicit operator HMENU(byte value) => new HMENU((nint)(value));
 
-        public static implicit operator byte(HMENU value) => (byte)(value.Value);
+        public static explicit operator byte(HMENU value) => (byte)(value.Value);
 
         public static explicit operator HMENU(short value) => new HMENU((nint)(value));
 
-        public static implicit operator short(HMENU value) => (short)(value.Value);
+        public static explicit operator short(HMENU value) => (short)(value.Value);
 
         public static explicit operator HMENU(int value) => new HMENU((nint)(value));
 
-        public static implicit operator int(HMENU value) => (int)(value.Value);
+        public static explicit operator int(HMENU value) => (int)(value.Value);
 
         public static explicit operator HMENU(long value) => new HMENU((nint)(value));
 
-        public static explicit operator long(HMENU value) => (long)(value.Value);
+        public static implicit operator long(HMENU value) => (long)(value.Value);
 
         public static explicit operator HMENU(nint value) => new HMENU((nint)(value));
 
@@ -51,19 +51,19 @@ namespace TerraFX.Interop
 
         public static explicit operator HMENU(sbyte value) => new HMENU((nint)(value));
 
-        public static implicit operator sbyte(HMENU value) => (sbyte)(value.Value);
+        public static explicit operator sbyte(HMENU value) => (sbyte)(value.Value);
 
         public static explicit operator HMENU(ushort value) => new HMENU((nint)(value));
 
-        public static implicit operator ushort(HMENU value) => (ushort)(value.Value);
+        public static explicit operator ushort(HMENU value) => (ushort)(value.Value);
 
         public static explicit operator HMENU(uint value) => new HMENU((nint)(value));
 
-        public static implicit operator uint(HMENU value) => (uint)(value.Value);
+        public static explicit operator uint(HMENU value) => (uint)(value.Value);
 
         public static explicit operator HMENU(ulong value) => new HMENU((nint)(value));
 
-        public static explicit operator ulong(HMENU value) => (ulong)(value.Value);
+        public static implicit operator ulong(HMENU value) => (ulong)(value.Value);
 
         public static explicit operator HMENU(nuint value) => new HMENU((nint)(value));
 

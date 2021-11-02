@@ -31,19 +31,19 @@ namespace TerraFX.Interop
 
         public static explicit operator MPR_SERVER_HANDLE(byte value) => new MPR_SERVER_HANDLE((nint)(value));
 
-        public static implicit operator byte(MPR_SERVER_HANDLE value) => (byte)(value.Value);
+        public static explicit operator byte(MPR_SERVER_HANDLE value) => (byte)(value.Value);
 
         public static explicit operator MPR_SERVER_HANDLE(short value) => new MPR_SERVER_HANDLE((nint)(value));
 
-        public static implicit operator short(MPR_SERVER_HANDLE value) => (short)(value.Value);
+        public static explicit operator short(MPR_SERVER_HANDLE value) => (short)(value.Value);
 
         public static explicit operator MPR_SERVER_HANDLE(int value) => new MPR_SERVER_HANDLE((nint)(value));
 
-        public static implicit operator int(MPR_SERVER_HANDLE value) => (int)(value.Value);
+        public static explicit operator int(MPR_SERVER_HANDLE value) => (int)(value.Value);
 
         public static explicit operator MPR_SERVER_HANDLE(long value) => new MPR_SERVER_HANDLE((nint)(value));
 
-        public static explicit operator long(MPR_SERVER_HANDLE value) => (long)(value.Value);
+        public static implicit operator long(MPR_SERVER_HANDLE value) => (long)(value.Value);
 
         public static explicit operator MPR_SERVER_HANDLE(nint value) => new MPR_SERVER_HANDLE((nint)(value));
 
@@ -51,19 +51,19 @@ namespace TerraFX.Interop
 
         public static explicit operator MPR_SERVER_HANDLE(sbyte value) => new MPR_SERVER_HANDLE((nint)(value));
 
-        public static implicit operator sbyte(MPR_SERVER_HANDLE value) => (sbyte)(value.Value);
+        public static explicit operator sbyte(MPR_SERVER_HANDLE value) => (sbyte)(value.Value);
 
         public static explicit operator MPR_SERVER_HANDLE(ushort value) => new MPR_SERVER_HANDLE((nint)(value));
 
-        public static implicit operator ushort(MPR_SERVER_HANDLE value) => (ushort)(value.Value);
+        public static explicit operator ushort(MPR_SERVER_HANDLE value) => (ushort)(value.Value);
 
         public static explicit operator MPR_SERVER_HANDLE(uint value) => new MPR_SERVER_HANDLE((nint)(value));
 
-        public static implicit operator uint(MPR_SERVER_HANDLE value) => (uint)(value.Value);
+        public static explicit operator uint(MPR_SERVER_HANDLE value) => (uint)(value.Value);
 
         public static explicit operator MPR_SERVER_HANDLE(ulong value) => new MPR_SERVER_HANDLE((nint)(value));
 
-        public static explicit operator ulong(MPR_SERVER_HANDLE value) => (ulong)(value.Value);
+        public static implicit operator ulong(MPR_SERVER_HANDLE value) => (ulong)(value.Value);
 
         public static explicit operator MPR_SERVER_HANDLE(nuint value) => new MPR_SERVER_HANDLE((nint)(value));
 

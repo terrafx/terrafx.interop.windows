@@ -31,19 +31,19 @@ namespace TerraFX.Interop
 
         public static explicit operator HFILTER_INSTANCE(byte value) => new HFILTER_INSTANCE((nint)(value));
 
-        public static implicit operator byte(HFILTER_INSTANCE value) => (byte)(value.Value);
+        public static explicit operator byte(HFILTER_INSTANCE value) => (byte)(value.Value);
 
         public static explicit operator HFILTER_INSTANCE(short value) => new HFILTER_INSTANCE((nint)(value));
 
-        public static implicit operator short(HFILTER_INSTANCE value) => (short)(value.Value);
+        public static explicit operator short(HFILTER_INSTANCE value) => (short)(value.Value);
 
         public static explicit operator HFILTER_INSTANCE(int value) => new HFILTER_INSTANCE((nint)(value));
 
-        public static implicit operator int(HFILTER_INSTANCE value) => (int)(value.Value);
+        public static explicit operator int(HFILTER_INSTANCE value) => (int)(value.Value);
 
         public static explicit operator HFILTER_INSTANCE(long value) => new HFILTER_INSTANCE((nint)(value));
 
-        public static explicit operator long(HFILTER_INSTANCE value) => (long)(value.Value);
+        public static implicit operator long(HFILTER_INSTANCE value) => (long)(value.Value);
 
         public static explicit operator HFILTER_INSTANCE(nint value) => new HFILTER_INSTANCE((nint)(value));
 
@@ -51,19 +51,19 @@ namespace TerraFX.Interop
 
         public static explicit operator HFILTER_INSTANCE(sbyte value) => new HFILTER_INSTANCE((nint)(value));
 
-        public static implicit operator sbyte(HFILTER_INSTANCE value) => (sbyte)(value.Value);
+        public static explicit operator sbyte(HFILTER_INSTANCE value) => (sbyte)(value.Value);
 
         public static explicit operator HFILTER_INSTANCE(ushort value) => new HFILTER_INSTANCE((nint)(value));
 
-        public static implicit operator ushort(HFILTER_INSTANCE value) => (ushort)(value.Value);
+        public static explicit operator ushort(HFILTER_INSTANCE value) => (ushort)(value.Value);
 
         public static explicit operator HFILTER_INSTANCE(uint value) => new HFILTER_INSTANCE((nint)(value));
 
-        public static implicit operator uint(HFILTER_INSTANCE value) => (uint)(value.Value);
+        public static explicit operator uint(HFILTER_INSTANCE value) => (uint)(value.Value);
 
         public static explicit operator HFILTER_INSTANCE(ulong value) => new HFILTER_INSTANCE((nint)(value));
 
-        public static explicit operator ulong(HFILTER_INSTANCE value) => (ulong)(value.Value);
+        public static implicit operator ulong(HFILTER_INSTANCE value) => (ulong)(value.Value);
 
         public static explicit operator HFILTER_INSTANCE(nuint value) => new HFILTER_INSTANCE((nint)(value));
 

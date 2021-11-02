@@ -31,19 +31,19 @@ namespace TerraFX.Interop
 
         public static explicit operator GLOBALHANDLE(byte value) => new GLOBALHANDLE((nint)(value));
 
-        public static implicit operator byte(GLOBALHANDLE value) => (byte)(value.Value);
+        public static explicit operator byte(GLOBALHANDLE value) => (byte)(value.Value);
 
         public static explicit operator GLOBALHANDLE(short value) => new GLOBALHANDLE((nint)(value));
 
-        public static implicit operator short(GLOBALHANDLE value) => (short)(value.Value);
+        public static explicit operator short(GLOBALHANDLE value) => (short)(value.Value);
 
         public static explicit operator GLOBALHANDLE(int value) => new GLOBALHANDLE((nint)(value));
 
-        public static implicit operator int(GLOBALHANDLE value) => (int)(value.Value);
+        public static explicit operator int(GLOBALHANDLE value) => (int)(value.Value);
 
         public static explicit operator GLOBALHANDLE(long value) => new GLOBALHANDLE((nint)(value));
 
-        public static explicit operator long(GLOBALHANDLE value) => (long)(value.Value);
+        public static implicit operator long(GLOBALHANDLE value) => (long)(value.Value);
 
         public static explicit operator GLOBALHANDLE(nint value) => new GLOBALHANDLE((nint)(value));
 
@@ -51,19 +51,19 @@ namespace TerraFX.Interop
 
         public static explicit operator GLOBALHANDLE(sbyte value) => new GLOBALHANDLE((nint)(value));
 
-        public static implicit operator sbyte(GLOBALHANDLE value) => (sbyte)(value.Value);
+        public static explicit operator sbyte(GLOBALHANDLE value) => (sbyte)(value.Value);
 
         public static explicit operator GLOBALHANDLE(ushort value) => new GLOBALHANDLE((nint)(value));
 
-        public static implicit operator ushort(GLOBALHANDLE value) => (ushort)(value.Value);
+        public static explicit operator ushort(GLOBALHANDLE value) => (ushort)(value.Value);
 
         public static explicit operator GLOBALHANDLE(uint value) => new GLOBALHANDLE((nint)(value));
 
-        public static implicit operator uint(GLOBALHANDLE value) => (uint)(value.Value);
+        public static explicit operator uint(GLOBALHANDLE value) => (uint)(value.Value);
 
         public static explicit operator GLOBALHANDLE(ulong value) => new GLOBALHANDLE((nint)(value));
 
-        public static explicit operator ulong(GLOBALHANDLE value) => (ulong)(value.Value);
+        public static implicit operator ulong(GLOBALHANDLE value) => (ulong)(value.Value);
 
         public static explicit operator GLOBALHANDLE(nuint value) => new GLOBALHANDLE((nint)(value));
 

@@ -31,19 +31,19 @@ namespace TerraFX.Interop
 
         public static explicit operator SPRECOCONTEXTHANDLE(byte value) => new SPRECOCONTEXTHANDLE((nint)(value));
 
-        public static implicit operator byte(SPRECOCONTEXTHANDLE value) => (byte)(value.Value);
+        public static explicit operator byte(SPRECOCONTEXTHANDLE value) => (byte)(value.Value);
 
         public static explicit operator SPRECOCONTEXTHANDLE(short value) => new SPRECOCONTEXTHANDLE((nint)(value));
 
-        public static implicit operator short(SPRECOCONTEXTHANDLE value) => (short)(value.Value);
+        public static explicit operator short(SPRECOCONTEXTHANDLE value) => (short)(value.Value);
 
         public static explicit operator SPRECOCONTEXTHANDLE(int value) => new SPRECOCONTEXTHANDLE((nint)(value));
 
-        public static implicit operator int(SPRECOCONTEXTHANDLE value) => (int)(value.Value);
+        public static explicit operator int(SPRECOCONTEXTHANDLE value) => (int)(value.Value);
 
         public static explicit operator SPRECOCONTEXTHANDLE(long value) => new SPRECOCONTEXTHANDLE((nint)(value));
 
-        public static explicit operator long(SPRECOCONTEXTHANDLE value) => (long)(value.Value);
+        public static implicit operator long(SPRECOCONTEXTHANDLE value) => (long)(value.Value);
 
         public static explicit operator SPRECOCONTEXTHANDLE(nint value) => new SPRECOCONTEXTHANDLE((nint)(value));
 
@@ -51,19 +51,19 @@ namespace TerraFX.Interop
 
         public static explicit operator SPRECOCONTEXTHANDLE(sbyte value) => new SPRECOCONTEXTHANDLE((nint)(value));
 
-        public static implicit operator sbyte(SPRECOCONTEXTHANDLE value) => (sbyte)(value.Value);
+        public static explicit operator sbyte(SPRECOCONTEXTHANDLE value) => (sbyte)(value.Value);
 
         public static explicit operator SPRECOCONTEXTHANDLE(ushort value) => new SPRECOCONTEXTHANDLE((nint)(value));
 
-        public static implicit operator ushort(SPRECOCONTEXTHANDLE value) => (ushort)(value.Value);
+        public static explicit operator ushort(SPRECOCONTEXTHANDLE value) => (ushort)(value.Value);
 
         public static explicit operator SPRECOCONTEXTHANDLE(uint value) => new SPRECOCONTEXTHANDLE((nint)(value));
 
-        public static implicit operator uint(SPRECOCONTEXTHANDLE value) => (uint)(value.Value);
+        public static explicit operator uint(SPRECOCONTEXTHANDLE value) => (uint)(value.Value);
 
         public static explicit operator SPRECOCONTEXTHANDLE(ulong value) => new SPRECOCONTEXTHANDLE((nint)(value));
 
-        public static explicit operator ulong(SPRECOCONTEXTHANDLE value) => (ulong)(value.Value);
+        public static implicit operator ulong(SPRECOCONTEXTHANDLE value) => (ulong)(value.Value);
 
         public static explicit operator SPRECOCONTEXTHANDLE(nuint value) => new SPRECOCONTEXTHANDLE((nint)(value));
 

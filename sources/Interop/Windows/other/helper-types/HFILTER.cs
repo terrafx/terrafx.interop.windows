@@ -31,19 +31,19 @@ namespace TerraFX.Interop
 
         public static explicit operator HFILTER(byte value) => new HFILTER((nint)(value));
 
-        public static implicit operator byte(HFILTER value) => (byte)(value.Value);
+        public static explicit operator byte(HFILTER value) => (byte)(value.Value);
 
         public static explicit operator HFILTER(short value) => new HFILTER((nint)(value));
 
-        public static implicit operator short(HFILTER value) => (short)(value.Value);
+        public static explicit operator short(HFILTER value) => (short)(value.Value);
 
         public static explicit operator HFILTER(int value) => new HFILTER((nint)(value));
 
-        public static implicit operator int(HFILTER value) => (int)(value.Value);
+        public static explicit operator int(HFILTER value) => (int)(value.Value);
 
         public static explicit operator HFILTER(long value) => new HFILTER((nint)(value));
 
-        public static explicit operator long(HFILTER value) => (long)(value.Value);
+        public static implicit operator long(HFILTER value) => (long)(value.Value);
 
         public static explicit operator HFILTER(nint value) => new HFILTER((nint)(value));
 
@@ -51,19 +51,19 @@ namespace TerraFX.Interop
 
         public static explicit operator HFILTER(sbyte value) => new HFILTER((nint)(value));
 
-        public static implicit operator sbyte(HFILTER value) => (sbyte)(value.Value);
+        public static explicit operator sbyte(HFILTER value) => (sbyte)(value.Value);
 
         public static explicit operator HFILTER(ushort value) => new HFILTER((nint)(value));
 
-        public static implicit operator ushort(HFILTER value) => (ushort)(value.Value);
+        public static explicit operator ushort(HFILTER value) => (ushort)(value.Value);
 
         public static explicit operator HFILTER(uint value) => new HFILTER((nint)(value));
 
-        public static implicit operator uint(HFILTER value) => (uint)(value.Value);
+        public static explicit operator uint(HFILTER value) => (uint)(value.Value);
 
         public static explicit operator HFILTER(ulong value) => new HFILTER((nint)(value));
 
-        public static explicit operator ulong(HFILTER value) => (ulong)(value.Value);
+        public static implicit operator ulong(HFILTER value) => (ulong)(value.Value);
 
         public static explicit operator HFILTER(nuint value) => new HFILTER((nint)(value));
 

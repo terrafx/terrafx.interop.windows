@@ -31,19 +31,19 @@ namespace TerraFX.Interop
 
         public static explicit operator HRECOCONTEXT(byte value) => new HRECOCONTEXT((nint)(value));
 
-        public static implicit operator byte(HRECOCONTEXT value) => (byte)(value.Value);
+        public static explicit operator byte(HRECOCONTEXT value) => (byte)(value.Value);
 
         public static explicit operator HRECOCONTEXT(short value) => new HRECOCONTEXT((nint)(value));
 
-        public static implicit operator short(HRECOCONTEXT value) => (short)(value.Value);
+        public static explicit operator short(HRECOCONTEXT value) => (short)(value.Value);
 
         public static explicit operator HRECOCONTEXT(int value) => new HRECOCONTEXT((nint)(value));
 
-        public static implicit operator int(HRECOCONTEXT value) => (int)(value.Value);
+        public static explicit operator int(HRECOCONTEXT value) => (int)(value.Value);
 
         public static explicit operator HRECOCONTEXT(long value) => new HRECOCONTEXT((nint)(value));
 
-        public static explicit operator long(HRECOCONTEXT value) => (long)(value.Value);
+        public static implicit operator long(HRECOCONTEXT value) => (long)(value.Value);
 
         public static explicit operator HRECOCONTEXT(nint value) => new HRECOCONTEXT((nint)(value));
 
@@ -51,19 +51,19 @@ namespace TerraFX.Interop
 
         public static explicit operator HRECOCONTEXT(sbyte value) => new HRECOCONTEXT((nint)(value));
 
-        public static implicit operator sbyte(HRECOCONTEXT value) => (sbyte)(value.Value);
+        public static explicit operator sbyte(HRECOCONTEXT value) => (sbyte)(value.Value);
 
         public static explicit operator HRECOCONTEXT(ushort value) => new HRECOCONTEXT((nint)(value));
 
-        public static implicit operator ushort(HRECOCONTEXT value) => (ushort)(value.Value);
+        public static explicit operator ushort(HRECOCONTEXT value) => (ushort)(value.Value);
 
         public static explicit operator HRECOCONTEXT(uint value) => new HRECOCONTEXT((nint)(value));
 
-        public static implicit operator uint(HRECOCONTEXT value) => (uint)(value.Value);
+        public static explicit operator uint(HRECOCONTEXT value) => (uint)(value.Value);
 
         public static explicit operator HRECOCONTEXT(ulong value) => new HRECOCONTEXT((nint)(value));
 
-        public static explicit operator ulong(HRECOCONTEXT value) => (ulong)(value.Value);
+        public static implicit operator ulong(HRECOCONTEXT value) => (ulong)(value.Value);
 
         public static explicit operator HRECOCONTEXT(nuint value) => new HRECOCONTEXT((nint)(value));
 

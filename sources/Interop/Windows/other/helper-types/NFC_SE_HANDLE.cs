@@ -31,19 +31,19 @@ namespace TerraFX.Interop
 
         public static explicit operator NFC_SE_HANDLE(byte value) => new NFC_SE_HANDLE((nint)(value));
 
-        public static implicit operator byte(NFC_SE_HANDLE value) => (byte)(value.Value);
+        public static explicit operator byte(NFC_SE_HANDLE value) => (byte)(value.Value);
 
         public static explicit operator NFC_SE_HANDLE(short value) => new NFC_SE_HANDLE((nint)(value));
 
-        public static implicit operator short(NFC_SE_HANDLE value) => (short)(value.Value);
+        public static explicit operator short(NFC_SE_HANDLE value) => (short)(value.Value);
 
         public static explicit operator NFC_SE_HANDLE(int value) => new NFC_SE_HANDLE((nint)(value));
 
-        public static implicit operator int(NFC_SE_HANDLE value) => (int)(value.Value);
+        public static explicit operator int(NFC_SE_HANDLE value) => (int)(value.Value);
 
         public static explicit operator NFC_SE_HANDLE(long value) => new NFC_SE_HANDLE((nint)(value));
 
-        public static explicit operator long(NFC_SE_HANDLE value) => (long)(value.Value);
+        public static implicit operator long(NFC_SE_HANDLE value) => (long)(value.Value);
 
         public static explicit operator NFC_SE_HANDLE(nint value) => new NFC_SE_HANDLE((nint)(value));
 
@@ -51,19 +51,19 @@ namespace TerraFX.Interop
 
         public static explicit operator NFC_SE_HANDLE(sbyte value) => new NFC_SE_HANDLE((nint)(value));
 
-        public static implicit operator sbyte(NFC_SE_HANDLE value) => (sbyte)(value.Value);
+        public static explicit operator sbyte(NFC_SE_HANDLE value) => (sbyte)(value.Value);
 
         public static explicit operator NFC_SE_HANDLE(ushort value) => new NFC_SE_HANDLE((nint)(value));
 
-        public static implicit operator ushort(NFC_SE_HANDLE value) => (ushort)(value.Value);
+        public static explicit operator ushort(NFC_SE_HANDLE value) => (ushort)(value.Value);
 
         public static explicit operator NFC_SE_HANDLE(uint value) => new NFC_SE_HANDLE((nint)(value));
 
-        public static implicit operator uint(NFC_SE_HANDLE value) => (uint)(value.Value);
+        public static explicit operator uint(NFC_SE_HANDLE value) => (uint)(value.Value);
 
         public static explicit operator NFC_SE_HANDLE(ulong value) => new NFC_SE_HANDLE((nint)(value));
 
-        public static explicit operator ulong(NFC_SE_HANDLE value) => (ulong)(value.Value);
+        public static implicit operator ulong(NFC_SE_HANDLE value) => (ulong)(value.Value);
 
         public static explicit operator NFC_SE_HANDLE(nuint value) => new NFC_SE_HANDLE((nint)(value));
 

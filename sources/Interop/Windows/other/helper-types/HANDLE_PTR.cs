@@ -25,19 +25,19 @@ namespace TerraFX.Interop
 
         public static explicit operator HANDLE_PTR(byte value) => new HANDLE_PTR((nuint)(value));
 
-        public static implicit operator byte(HANDLE_PTR value) => (byte)(value.Value);
+        public static explicit operator byte(HANDLE_PTR value) => (byte)(value.Value);
 
         public static explicit operator HANDLE_PTR(short value) => new HANDLE_PTR((nuint)(value));
 
-        public static implicit operator short(HANDLE_PTR value) => (short)(value.Value);
+        public static explicit operator short(HANDLE_PTR value) => (short)(value.Value);
 
         public static explicit operator HANDLE_PTR(int value) => new HANDLE_PTR((nuint)(value));
 
-        public static implicit operator int(HANDLE_PTR value) => (int)(value.Value);
+        public static explicit operator int(HANDLE_PTR value) => (int)(value.Value);
 
         public static explicit operator HANDLE_PTR(long value) => new HANDLE_PTR((nuint)(value));
 
-        public static explicit operator long(HANDLE_PTR value) => (long)(value.Value);
+        public static implicit operator long(HANDLE_PTR value) => (long)(value.Value);
 
         public static explicit operator HANDLE_PTR(nint value) => new HANDLE_PTR((nuint)(value));
 
@@ -45,19 +45,19 @@ namespace TerraFX.Interop
 
         public static explicit operator HANDLE_PTR(sbyte value) => new HANDLE_PTR((nuint)(value));
 
-        public static implicit operator sbyte(HANDLE_PTR value) => (sbyte)(value.Value);
+        public static explicit operator sbyte(HANDLE_PTR value) => (sbyte)(value.Value);
 
         public static explicit operator HANDLE_PTR(ushort value) => new HANDLE_PTR((nuint)(value));
 
-        public static implicit operator ushort(HANDLE_PTR value) => (ushort)(value.Value);
+        public static explicit operator ushort(HANDLE_PTR value) => (ushort)(value.Value);
 
         public static explicit operator HANDLE_PTR(uint value) => new HANDLE_PTR((nuint)(value));
 
-        public static implicit operator uint(HANDLE_PTR value) => (uint)(value.Value);
+        public static explicit operator uint(HANDLE_PTR value) => (uint)(value.Value);
 
         public static explicit operator HANDLE_PTR(ulong value) => new HANDLE_PTR((nuint)(value));
 
-        public static explicit operator ulong(HANDLE_PTR value) => (ulong)(value.Value);
+        public static implicit operator ulong(HANDLE_PTR value) => (ulong)(value.Value);
 
         public static explicit operator HANDLE_PTR(nuint value) => new HANDLE_PTR((nuint)(value));
 

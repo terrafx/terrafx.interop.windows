@@ -31,19 +31,19 @@ namespace TerraFX.Interop
 
         public static explicit operator HWAVE(byte value) => new HWAVE((nint)(value));
 
-        public static implicit operator byte(HWAVE value) => (byte)(value.Value);
+        public static explicit operator byte(HWAVE value) => (byte)(value.Value);
 
         public static explicit operator HWAVE(short value) => new HWAVE((nint)(value));
 
-        public static implicit operator short(HWAVE value) => (short)(value.Value);
+        public static explicit operator short(HWAVE value) => (short)(value.Value);
 
         public static explicit operator HWAVE(int value) => new HWAVE((nint)(value));
 
-        public static implicit operator int(HWAVE value) => (int)(value.Value);
+        public static explicit operator int(HWAVE value) => (int)(value.Value);
 
         public static explicit operator HWAVE(long value) => new HWAVE((nint)(value));
 
-        public static explicit operator long(HWAVE value) => (long)(value.Value);
+        public static implicit operator long(HWAVE value) => (long)(value.Value);
 
         public static explicit operator HWAVE(nint value) => new HWAVE((nint)(value));
 
@@ -51,19 +51,19 @@ namespace TerraFX.Interop
 
         public static explicit operator HWAVE(sbyte value) => new HWAVE((nint)(value));
 
-        public static implicit operator sbyte(HWAVE value) => (sbyte)(value.Value);
+        public static explicit operator sbyte(HWAVE value) => (sbyte)(value.Value);
 
         public static explicit operator HWAVE(ushort value) => new HWAVE((nint)(value));
 
-        public static implicit operator ushort(HWAVE value) => (ushort)(value.Value);
+        public static explicit operator ushort(HWAVE value) => (ushort)(value.Value);
 
         public static explicit operator HWAVE(uint value) => new HWAVE((nint)(value));
 
-        public static implicit operator uint(HWAVE value) => (uint)(value.Value);
+        public static explicit operator uint(HWAVE value) => (uint)(value.Value);
 
         public static explicit operator HWAVE(ulong value) => new HWAVE((nint)(value));
 
-        public static explicit operator ulong(HWAVE value) => (ulong)(value.Value);
+        public static implicit operator ulong(HWAVE value) => (ulong)(value.Value);
 
         public static explicit operator HWAVE(nuint value) => new HWAVE((nint)(value));
 

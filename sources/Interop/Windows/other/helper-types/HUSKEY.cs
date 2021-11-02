@@ -31,19 +31,19 @@ namespace TerraFX.Interop
 
         public static explicit operator HUSKEY(byte value) => new HUSKEY((nint)(value));
 
-        public static implicit operator byte(HUSKEY value) => (byte)(value.Value);
+        public static explicit operator byte(HUSKEY value) => (byte)(value.Value);
 
         public static explicit operator HUSKEY(short value) => new HUSKEY((nint)(value));
 
-        public static implicit operator short(HUSKEY value) => (short)(value.Value);
+        public static explicit operator short(HUSKEY value) => (short)(value.Value);
 
         public static explicit operator HUSKEY(int value) => new HUSKEY((nint)(value));
 
-        public static implicit operator int(HUSKEY value) => (int)(value.Value);
+        public static explicit operator int(HUSKEY value) => (int)(value.Value);
 
         public static explicit operator HUSKEY(long value) => new HUSKEY((nint)(value));
 
-        public static explicit operator long(HUSKEY value) => (long)(value.Value);
+        public static implicit operator long(HUSKEY value) => (long)(value.Value);
 
         public static explicit operator HUSKEY(nint value) => new HUSKEY((nint)(value));
 
@@ -51,19 +51,19 @@ namespace TerraFX.Interop
 
         public static explicit operator HUSKEY(sbyte value) => new HUSKEY((nint)(value));
 
-        public static implicit operator sbyte(HUSKEY value) => (sbyte)(value.Value);
+        public static explicit operator sbyte(HUSKEY value) => (sbyte)(value.Value);
 
         public static explicit operator HUSKEY(ushort value) => new HUSKEY((nint)(value));
 
-        public static implicit operator ushort(HUSKEY value) => (ushort)(value.Value);
+        public static explicit operator ushort(HUSKEY value) => (ushort)(value.Value);
 
         public static explicit operator HUSKEY(uint value) => new HUSKEY((nint)(value));
 
-        public static implicit operator uint(HUSKEY value) => (uint)(value.Value);
+        public static explicit operator uint(HUSKEY value) => (uint)(value.Value);
 
         public static explicit operator HUSKEY(ulong value) => new HUSKEY((nint)(value));
 
-        public static explicit operator ulong(HUSKEY value) => (ulong)(value.Value);
+        public static implicit operator ulong(HUSKEY value) => (ulong)(value.Value);
 
         public static explicit operator HUSKEY(nuint value) => new HUSKEY((nint)(value));
 

@@ -31,19 +31,19 @@ namespace TerraFX.Interop
 
         public static explicit operator HMIDIIN(byte value) => new HMIDIIN((nint)(value));
 
-        public static implicit operator byte(HMIDIIN value) => (byte)(value.Value);
+        public static explicit operator byte(HMIDIIN value) => (byte)(value.Value);
 
         public static explicit operator HMIDIIN(short value) => new HMIDIIN((nint)(value));
 
-        public static implicit operator short(HMIDIIN value) => (short)(value.Value);
+        public static explicit operator short(HMIDIIN value) => (short)(value.Value);
 
         public static explicit operator HMIDIIN(int value) => new HMIDIIN((nint)(value));
 
-        public static implicit operator int(HMIDIIN value) => (int)(value.Value);
+        public static explicit operator int(HMIDIIN value) => (int)(value.Value);
 
         public static explicit operator HMIDIIN(long value) => new HMIDIIN((nint)(value));
 
-        public static explicit operator long(HMIDIIN value) => (long)(value.Value);
+        public static implicit operator long(HMIDIIN value) => (long)(value.Value);
 
         public static explicit operator HMIDIIN(nint value) => new HMIDIIN((nint)(value));
 
@@ -51,19 +51,19 @@ namespace TerraFX.Interop
 
         public static explicit operator HMIDIIN(sbyte value) => new HMIDIIN((nint)(value));
 
-        public static implicit operator sbyte(HMIDIIN value) => (sbyte)(value.Value);
+        public static explicit operator sbyte(HMIDIIN value) => (sbyte)(value.Value);
 
         public static explicit operator HMIDIIN(ushort value) => new HMIDIIN((nint)(value));
 
-        public static implicit operator ushort(HMIDIIN value) => (ushort)(value.Value);
+        public static explicit operator ushort(HMIDIIN value) => (ushort)(value.Value);
 
         public static explicit operator HMIDIIN(uint value) => new HMIDIIN((nint)(value));
 
-        public static implicit operator uint(HMIDIIN value) => (uint)(value.Value);
+        public static explicit operator uint(HMIDIIN value) => (uint)(value.Value);
 
         public static explicit operator HMIDIIN(ulong value) => new HMIDIIN((nint)(value));
 
-        public static explicit operator ulong(HMIDIIN value) => (ulong)(value.Value);
+        public static implicit operator ulong(HMIDIIN value) => (ulong)(value.Value);
 
         public static explicit operator HMIDIIN(nuint value) => new HMIDIIN((nint)(value));
 

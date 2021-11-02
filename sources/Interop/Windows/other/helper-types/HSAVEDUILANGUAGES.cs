@@ -31,19 +31,19 @@ namespace TerraFX.Interop
 
         public static explicit operator HSAVEDUILANGUAGES(byte value) => new HSAVEDUILANGUAGES((nint)(value));
 
-        public static implicit operator byte(HSAVEDUILANGUAGES value) => (byte)(value.Value);
+        public static explicit operator byte(HSAVEDUILANGUAGES value) => (byte)(value.Value);
 
         public static explicit operator HSAVEDUILANGUAGES(short value) => new HSAVEDUILANGUAGES((nint)(value));
 
-        public static implicit operator short(HSAVEDUILANGUAGES value) => (short)(value.Value);
+        public static explicit operator short(HSAVEDUILANGUAGES value) => (short)(value.Value);
 
         public static explicit operator HSAVEDUILANGUAGES(int value) => new HSAVEDUILANGUAGES((nint)(value));
 
-        public static implicit operator int(HSAVEDUILANGUAGES value) => (int)(value.Value);
+        public static explicit operator int(HSAVEDUILANGUAGES value) => (int)(value.Value);
 
         public static explicit operator HSAVEDUILANGUAGES(long value) => new HSAVEDUILANGUAGES((nint)(value));
 
-        public static explicit operator long(HSAVEDUILANGUAGES value) => (long)(value.Value);
+        public static implicit operator long(HSAVEDUILANGUAGES value) => (long)(value.Value);
 
         public static explicit operator HSAVEDUILANGUAGES(nint value) => new HSAVEDUILANGUAGES((nint)(value));
 
@@ -51,19 +51,19 @@ namespace TerraFX.Interop
 
         public static explicit operator HSAVEDUILANGUAGES(sbyte value) => new HSAVEDUILANGUAGES((nint)(value));
 
-        public static implicit operator sbyte(HSAVEDUILANGUAGES value) => (sbyte)(value.Value);
+        public static explicit operator sbyte(HSAVEDUILANGUAGES value) => (sbyte)(value.Value);
 
         public static explicit operator HSAVEDUILANGUAGES(ushort value) => new HSAVEDUILANGUAGES((nint)(value));
 
-        public static implicit operator ushort(HSAVEDUILANGUAGES value) => (ushort)(value.Value);
+        public static explicit operator ushort(HSAVEDUILANGUAGES value) => (ushort)(value.Value);
 
         public static explicit operator HSAVEDUILANGUAGES(uint value) => new HSAVEDUILANGUAGES((nint)(value));
 
-        public static implicit operator uint(HSAVEDUILANGUAGES value) => (uint)(value.Value);
+        public static explicit operator uint(HSAVEDUILANGUAGES value) => (uint)(value.Value);
 
         public static explicit operator HSAVEDUILANGUAGES(ulong value) => new HSAVEDUILANGUAGES((nint)(value));
 
-        public static explicit operator ulong(HSAVEDUILANGUAGES value) => (ulong)(value.Value);
+        public static implicit operator ulong(HSAVEDUILANGUAGES value) => (ulong)(value.Value);
 
         public static explicit operator HSAVEDUILANGUAGES(nuint value) => new HSAVEDUILANGUAGES((nint)(value));
 

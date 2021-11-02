@@ -31,19 +31,19 @@ namespace TerraFX.Interop
 
         public static explicit operator HIMC(byte value) => new HIMC((nint)(value));
 
-        public static implicit operator byte(HIMC value) => (byte)(value.Value);
+        public static explicit operator byte(HIMC value) => (byte)(value.Value);
 
         public static explicit operator HIMC(short value) => new HIMC((nint)(value));
 
-        public static implicit operator short(HIMC value) => (short)(value.Value);
+        public static explicit operator short(HIMC value) => (short)(value.Value);
 
         public static explicit operator HIMC(int value) => new HIMC((nint)(value));
 
-        public static implicit operator int(HIMC value) => (int)(value.Value);
+        public static explicit operator int(HIMC value) => (int)(value.Value);
 
         public static explicit operator HIMC(long value) => new HIMC((nint)(value));
 
-        public static explicit operator long(HIMC value) => (long)(value.Value);
+        public static implicit operator long(HIMC value) => (long)(value.Value);
 
         public static explicit operator HIMC(nint value) => new HIMC((nint)(value));
 
@@ -51,19 +51,19 @@ namespace TerraFX.Interop
 
         public static explicit operator HIMC(sbyte value) => new HIMC((nint)(value));
 
-        public static implicit operator sbyte(HIMC value) => (sbyte)(value.Value);
+        public static explicit operator sbyte(HIMC value) => (sbyte)(value.Value);
 
         public static explicit operator HIMC(ushort value) => new HIMC((nint)(value));
 
-        public static implicit operator ushort(HIMC value) => (ushort)(value.Value);
+        public static explicit operator ushort(HIMC value) => (ushort)(value.Value);
 
         public static explicit operator HIMC(uint value) => new HIMC((nint)(value));
 
-        public static implicit operator uint(HIMC value) => (uint)(value.Value);
+        public static explicit operator uint(HIMC value) => (uint)(value.Value);
 
         public static explicit operator HIMC(ulong value) => new HIMC((nint)(value));
 
-        public static explicit operator ulong(HIMC value) => (ulong)(value.Value);
+        public static implicit operator ulong(HIMC value) => (ulong)(value.Value);
 
         public static explicit operator HIMC(nuint value) => new HIMC((nint)(value));
 

@@ -31,19 +31,19 @@ namespace TerraFX.Interop
 
         public static explicit operator HTHUMBNAIL(byte value) => new HTHUMBNAIL((nint)(value));
 
-        public static implicit operator byte(HTHUMBNAIL value) => (byte)(value.Value);
+        public static explicit operator byte(HTHUMBNAIL value) => (byte)(value.Value);
 
         public static explicit operator HTHUMBNAIL(short value) => new HTHUMBNAIL((nint)(value));
 
-        public static implicit operator short(HTHUMBNAIL value) => (short)(value.Value);
+        public static explicit operator short(HTHUMBNAIL value) => (short)(value.Value);
 
         public static explicit operator HTHUMBNAIL(int value) => new HTHUMBNAIL((nint)(value));
 
-        public static implicit operator int(HTHUMBNAIL value) => (int)(value.Value);
+        public static explicit operator int(HTHUMBNAIL value) => (int)(value.Value);
 
         public static explicit operator HTHUMBNAIL(long value) => new HTHUMBNAIL((nint)(value));
 
-        public static explicit operator long(HTHUMBNAIL value) => (long)(value.Value);
+        public static implicit operator long(HTHUMBNAIL value) => (long)(value.Value);
 
         public static explicit operator HTHUMBNAIL(nint value) => new HTHUMBNAIL((nint)(value));
 
@@ -51,19 +51,19 @@ namespace TerraFX.Interop
 
         public static explicit operator HTHUMBNAIL(sbyte value) => new HTHUMBNAIL((nint)(value));
 
-        public static implicit operator sbyte(HTHUMBNAIL value) => (sbyte)(value.Value);
+        public static explicit operator sbyte(HTHUMBNAIL value) => (sbyte)(value.Value);
 
         public static explicit operator HTHUMBNAIL(ushort value) => new HTHUMBNAIL((nint)(value));
 
-        public static implicit operator ushort(HTHUMBNAIL value) => (ushort)(value.Value);
+        public static explicit operator ushort(HTHUMBNAIL value) => (ushort)(value.Value);
 
         public static explicit operator HTHUMBNAIL(uint value) => new HTHUMBNAIL((nint)(value));
 
-        public static implicit operator uint(HTHUMBNAIL value) => (uint)(value.Value);
+        public static explicit operator uint(HTHUMBNAIL value) => (uint)(value.Value);
 
         public static explicit operator HTHUMBNAIL(ulong value) => new HTHUMBNAIL((nint)(value));
 
-        public static explicit operator ulong(HTHUMBNAIL value) => (ulong)(value.Value);
+        public static implicit operator ulong(HTHUMBNAIL value) => (ulong)(value.Value);
 
         public static explicit operator HTHUMBNAIL(nuint value) => new HTHUMBNAIL((nint)(value));
 

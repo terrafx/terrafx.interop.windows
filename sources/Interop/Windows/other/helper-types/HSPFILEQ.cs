@@ -31,19 +31,19 @@ namespace TerraFX.Interop
 
         public static explicit operator HSPFILEQ(byte value) => new HSPFILEQ((nint)(value));
 
-        public static implicit operator byte(HSPFILEQ value) => (byte)(value.Value);
+        public static explicit operator byte(HSPFILEQ value) => (byte)(value.Value);
 
         public static explicit operator HSPFILEQ(short value) => new HSPFILEQ((nint)(value));
 
-        public static implicit operator short(HSPFILEQ value) => (short)(value.Value);
+        public static explicit operator short(HSPFILEQ value) => (short)(value.Value);
 
         public static explicit operator HSPFILEQ(int value) => new HSPFILEQ((nint)(value));
 
-        public static implicit operator int(HSPFILEQ value) => (int)(value.Value);
+        public static explicit operator int(HSPFILEQ value) => (int)(value.Value);
 
         public static explicit operator HSPFILEQ(long value) => new HSPFILEQ((nint)(value));
 
-        public static explicit operator long(HSPFILEQ value) => (long)(value.Value);
+        public static implicit operator long(HSPFILEQ value) => (long)(value.Value);
 
         public static explicit operator HSPFILEQ(nint value) => new HSPFILEQ((nint)(value));
 
@@ -51,19 +51,19 @@ namespace TerraFX.Interop
 
         public static explicit operator HSPFILEQ(sbyte value) => new HSPFILEQ((nint)(value));
 
-        public static implicit operator sbyte(HSPFILEQ value) => (sbyte)(value.Value);
+        public static explicit operator sbyte(HSPFILEQ value) => (sbyte)(value.Value);
 
         public static explicit operator HSPFILEQ(ushort value) => new HSPFILEQ((nint)(value));
 
-        public static implicit operator ushort(HSPFILEQ value) => (ushort)(value.Value);
+        public static explicit operator ushort(HSPFILEQ value) => (ushort)(value.Value);
 
         public static explicit operator HSPFILEQ(uint value) => new HSPFILEQ((nint)(value));
 
-        public static implicit operator uint(HSPFILEQ value) => (uint)(value.Value);
+        public static explicit operator uint(HSPFILEQ value) => (uint)(value.Value);
 
         public static explicit operator HSPFILEQ(ulong value) => new HSPFILEQ((nint)(value));
 
-        public static explicit operator ulong(HSPFILEQ value) => (ulong)(value.Value);
+        public static implicit operator ulong(HSPFILEQ value) => (ulong)(value.Value);
 
         public static explicit operator HSPFILEQ(nuint value) => new HSPFILEQ((nint)(value));
 

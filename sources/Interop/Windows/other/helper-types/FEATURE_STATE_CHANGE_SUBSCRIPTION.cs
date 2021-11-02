@@ -31,19 +31,19 @@ namespace TerraFX.Interop
 
         public static explicit operator FEATURE_STATE_CHANGE_SUBSCRIPTION(byte value) => new FEATURE_STATE_CHANGE_SUBSCRIPTION((nint)(value));
 
-        public static implicit operator byte(FEATURE_STATE_CHANGE_SUBSCRIPTION value) => (byte)(value.Value);
+        public static explicit operator byte(FEATURE_STATE_CHANGE_SUBSCRIPTION value) => (byte)(value.Value);
 
         public static explicit operator FEATURE_STATE_CHANGE_SUBSCRIPTION(short value) => new FEATURE_STATE_CHANGE_SUBSCRIPTION((nint)(value));
 
-        public static implicit operator short(FEATURE_STATE_CHANGE_SUBSCRIPTION value) => (short)(value.Value);
+        public static explicit operator short(FEATURE_STATE_CHANGE_SUBSCRIPTION value) => (short)(value.Value);
 
         public static explicit operator FEATURE_STATE_CHANGE_SUBSCRIPTION(int value) => new FEATURE_STATE_CHANGE_SUBSCRIPTION((nint)(value));
 
-        public static implicit operator int(FEATURE_STATE_CHANGE_SUBSCRIPTION value) => (int)(value.Value);
+        public static explicit operator int(FEATURE_STATE_CHANGE_SUBSCRIPTION value) => (int)(value.Value);
 
         public static explicit operator FEATURE_STATE_CHANGE_SUBSCRIPTION(long value) => new FEATURE_STATE_CHANGE_SUBSCRIPTION((nint)(value));
 
-        public static explicit operator long(FEATURE_STATE_CHANGE_SUBSCRIPTION value) => (long)(value.Value);
+        public static implicit operator long(FEATURE_STATE_CHANGE_SUBSCRIPTION value) => (long)(value.Value);
 
         public static explicit operator FEATURE_STATE_CHANGE_SUBSCRIPTION(nint value) => new FEATURE_STATE_CHANGE_SUBSCRIPTION((nint)(value));
 
@@ -51,19 +51,19 @@ namespace TerraFX.Interop
 
         public static explicit operator FEATURE_STATE_CHANGE_SUBSCRIPTION(sbyte value) => new FEATURE_STATE_CHANGE_SUBSCRIPTION((nint)(value));
 
-        public static implicit operator sbyte(FEATURE_STATE_CHANGE_SUBSCRIPTION value) => (sbyte)(value.Value);
+        public static explicit operator sbyte(FEATURE_STATE_CHANGE_SUBSCRIPTION value) => (sbyte)(value.Value);
 
         public static explicit operator FEATURE_STATE_CHANGE_SUBSCRIPTION(ushort value) => new FEATURE_STATE_CHANGE_SUBSCRIPTION((nint)(value));
 
-        public static implicit operator ushort(FEATURE_STATE_CHANGE_SUBSCRIPTION value) => (ushort)(value.Value);
+        public static explicit operator ushort(FEATURE_STATE_CHANGE_SUBSCRIPTION value) => (ushort)(value.Value);
 
         public static explicit operator FEATURE_STATE_CHANGE_SUBSCRIPTION(uint value) => new FEATURE_STATE_CHANGE_SUBSCRIPTION((nint)(value));
 
-        public static implicit operator uint(FEATURE_STATE_CHANGE_SUBSCRIPTION value) => (uint)(value.Value);
+        public static explicit operator uint(FEATURE_STATE_CHANGE_SUBSCRIPTION value) => (uint)(value.Value);
 
         public static explicit operator FEATURE_STATE_CHANGE_SUBSCRIPTION(ulong value) => new FEATURE_STATE_CHANGE_SUBSCRIPTION((nint)(value));
 
-        public static explicit operator ulong(FEATURE_STATE_CHANGE_SUBSCRIPTION value) => (ulong)(value.Value);
+        public static implicit operator ulong(FEATURE_STATE_CHANGE_SUBSCRIPTION value) => (ulong)(value.Value);
 
         public static explicit operator FEATURE_STATE_CHANGE_SUBSCRIPTION(nuint value) => new FEATURE_STATE_CHANGE_SUBSCRIPTION((nint)(value));
 

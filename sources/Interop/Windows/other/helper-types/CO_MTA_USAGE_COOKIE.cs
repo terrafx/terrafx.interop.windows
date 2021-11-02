@@ -31,19 +31,19 @@ namespace TerraFX.Interop
 
         public static explicit operator CO_MTA_USAGE_COOKIE(byte value) => new CO_MTA_USAGE_COOKIE((nint)(value));
 
-        public static implicit operator byte(CO_MTA_USAGE_COOKIE value) => (byte)(value.Value);
+        public static explicit operator byte(CO_MTA_USAGE_COOKIE value) => (byte)(value.Value);
 
         public static explicit operator CO_MTA_USAGE_COOKIE(short value) => new CO_MTA_USAGE_COOKIE((nint)(value));
 
-        public static implicit operator short(CO_MTA_USAGE_COOKIE value) => (short)(value.Value);
+        public static explicit operator short(CO_MTA_USAGE_COOKIE value) => (short)(value.Value);
 
         public static explicit operator CO_MTA_USAGE_COOKIE(int value) => new CO_MTA_USAGE_COOKIE((nint)(value));
 
-        public static implicit operator int(CO_MTA_USAGE_COOKIE value) => (int)(value.Value);
+        public static explicit operator int(CO_MTA_USAGE_COOKIE value) => (int)(value.Value);
 
         public static explicit operator CO_MTA_USAGE_COOKIE(long value) => new CO_MTA_USAGE_COOKIE((nint)(value));
 
-        public static explicit operator long(CO_MTA_USAGE_COOKIE value) => (long)(value.Value);
+        public static implicit operator long(CO_MTA_USAGE_COOKIE value) => (long)(value.Value);
 
         public static explicit operator CO_MTA_USAGE_COOKIE(nint value) => new CO_MTA_USAGE_COOKIE((nint)(value));
 
@@ -51,19 +51,19 @@ namespace TerraFX.Interop
 
         public static explicit operator CO_MTA_USAGE_COOKIE(sbyte value) => new CO_MTA_USAGE_COOKIE((nint)(value));
 
-        public static implicit operator sbyte(CO_MTA_USAGE_COOKIE value) => (sbyte)(value.Value);
+        public static explicit operator sbyte(CO_MTA_USAGE_COOKIE value) => (sbyte)(value.Value);
 
         public static explicit operator CO_MTA_USAGE_COOKIE(ushort value) => new CO_MTA_USAGE_COOKIE((nint)(value));
 
-        public static implicit operator ushort(CO_MTA_USAGE_COOKIE value) => (ushort)(value.Value);
+        public static explicit operator ushort(CO_MTA_USAGE_COOKIE value) => (ushort)(value.Value);
 
         public static explicit operator CO_MTA_USAGE_COOKIE(uint value) => new CO_MTA_USAGE_COOKIE((nint)(value));
 
-        public static implicit operator uint(CO_MTA_USAGE_COOKIE value) => (uint)(value.Value);
+        public static explicit operator uint(CO_MTA_USAGE_COOKIE value) => (uint)(value.Value);
 
         public static explicit operator CO_MTA_USAGE_COOKIE(ulong value) => new CO_MTA_USAGE_COOKIE((nint)(value));
 
-        public static explicit operator ulong(CO_MTA_USAGE_COOKIE value) => (ulong)(value.Value);
+        public static implicit operator ulong(CO_MTA_USAGE_COOKIE value) => (ulong)(value.Value);
 
         public static explicit operator CO_MTA_USAGE_COOKIE(nuint value) => new CO_MTA_USAGE_COOKIE((nint)(value));
 

@@ -31,19 +31,19 @@ namespace TerraFX.Interop
 
         public static explicit operator HCONV(byte value) => new HCONV((nint)(value));
 
-        public static implicit operator byte(HCONV value) => (byte)(value.Value);
+        public static explicit operator byte(HCONV value) => (byte)(value.Value);
 
         public static explicit operator HCONV(short value) => new HCONV((nint)(value));
 
-        public static implicit operator short(HCONV value) => (short)(value.Value);
+        public static explicit operator short(HCONV value) => (short)(value.Value);
 
         public static explicit operator HCONV(int value) => new HCONV((nint)(value));
 
-        public static implicit operator int(HCONV value) => (int)(value.Value);
+        public static explicit operator int(HCONV value) => (int)(value.Value);
 
         public static explicit operator HCONV(long value) => new HCONV((nint)(value));
 
-        public static explicit operator long(HCONV value) => (long)(value.Value);
+        public static implicit operator long(HCONV value) => (long)(value.Value);
 
         public static explicit operator HCONV(nint value) => new HCONV((nint)(value));
 
@@ -51,19 +51,19 @@ namespace TerraFX.Interop
 
         public static explicit operator HCONV(sbyte value) => new HCONV((nint)(value));
 
-        public static implicit operator sbyte(HCONV value) => (sbyte)(value.Value);
+        public static explicit operator sbyte(HCONV value) => (sbyte)(value.Value);
 
         public static explicit operator HCONV(ushort value) => new HCONV((nint)(value));
 
-        public static implicit operator ushort(HCONV value) => (ushort)(value.Value);
+        public static explicit operator ushort(HCONV value) => (ushort)(value.Value);
 
         public static explicit operator HCONV(uint value) => new HCONV((nint)(value));
 
-        public static implicit operator uint(HCONV value) => (uint)(value.Value);
+        public static explicit operator uint(HCONV value) => (uint)(value.Value);
 
         public static explicit operator HCONV(ulong value) => new HCONV((nint)(value));
 
-        public static explicit operator ulong(HCONV value) => (ulong)(value.Value);
+        public static implicit operator ulong(HCONV value) => (ulong)(value.Value);
 
         public static explicit operator HCONV(nuint value) => new HCONV((nint)(value));
 

@@ -31,19 +31,19 @@ namespace TerraFX.Interop
 
         public static explicit operator PDH_HLOG(byte value) => new PDH_HLOG((nint)(value));
 
-        public static implicit operator byte(PDH_HLOG value) => (byte)(value.Value);
+        public static explicit operator byte(PDH_HLOG value) => (byte)(value.Value);
 
         public static explicit operator PDH_HLOG(short value) => new PDH_HLOG((nint)(value));
 
-        public static implicit operator short(PDH_HLOG value) => (short)(value.Value);
+        public static explicit operator short(PDH_HLOG value) => (short)(value.Value);
 
         public static explicit operator PDH_HLOG(int value) => new PDH_HLOG((nint)(value));
 
-        public static implicit operator int(PDH_HLOG value) => (int)(value.Value);
+        public static explicit operator int(PDH_HLOG value) => (int)(value.Value);
 
         public static explicit operator PDH_HLOG(long value) => new PDH_HLOG((nint)(value));
 
-        public static explicit operator long(PDH_HLOG value) => (long)(value.Value);
+        public static implicit operator long(PDH_HLOG value) => (long)(value.Value);
 
         public static explicit operator PDH_HLOG(nint value) => new PDH_HLOG((nint)(value));
 
@@ -51,19 +51,19 @@ namespace TerraFX.Interop
 
         public static explicit operator PDH_HLOG(sbyte value) => new PDH_HLOG((nint)(value));
 
-        public static implicit operator sbyte(PDH_HLOG value) => (sbyte)(value.Value);
+        public static explicit operator sbyte(PDH_HLOG value) => (sbyte)(value.Value);
 
         public static explicit operator PDH_HLOG(ushort value) => new PDH_HLOG((nint)(value));
 
-        public static implicit operator ushort(PDH_HLOG value) => (ushort)(value.Value);
+        public static explicit operator ushort(PDH_HLOG value) => (ushort)(value.Value);
 
         public static explicit operator PDH_HLOG(uint value) => new PDH_HLOG((nint)(value));
 
-        public static implicit operator uint(PDH_HLOG value) => (uint)(value.Value);
+        public static explicit operator uint(PDH_HLOG value) => (uint)(value.Value);
 
         public static explicit operator PDH_HLOG(ulong value) => new PDH_HLOG((nint)(value));
 
-        public static explicit operator ulong(PDH_HLOG value) => (ulong)(value.Value);
+        public static implicit operator ulong(PDH_HLOG value) => (ulong)(value.Value);
 
         public static explicit operator PDH_HLOG(nuint value) => new PDH_HLOG((nint)(value));
 

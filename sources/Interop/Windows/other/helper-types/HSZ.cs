@@ -31,19 +31,19 @@ namespace TerraFX.Interop
 
         public static explicit operator HSZ(byte value) => new HSZ((nint)(value));
 
-        public static implicit operator byte(HSZ value) => (byte)(value.Value);
+        public static explicit operator byte(HSZ value) => (byte)(value.Value);
 
         public static explicit operator HSZ(short value) => new HSZ((nint)(value));
 
-        public static implicit operator short(HSZ value) => (short)(value.Value);
+        public static explicit operator short(HSZ value) => (short)(value.Value);
 
         public static explicit operator HSZ(int value) => new HSZ((nint)(value));
 
-        public static implicit operator int(HSZ value) => (int)(value.Value);
+        public static explicit operator int(HSZ value) => (int)(value.Value);
 
         public static explicit operator HSZ(long value) => new HSZ((nint)(value));
 
-        public static explicit operator long(HSZ value) => (long)(value.Value);
+        public static implicit operator long(HSZ value) => (long)(value.Value);
 
         public static explicit operator HSZ(nint value) => new HSZ((nint)(value));
 
@@ -51,19 +51,19 @@ namespace TerraFX.Interop
 
         public static explicit operator HSZ(sbyte value) => new HSZ((nint)(value));
 
-        public static implicit operator sbyte(HSZ value) => (sbyte)(value.Value);
+        public static explicit operator sbyte(HSZ value) => (sbyte)(value.Value);
 
         public static explicit operator HSZ(ushort value) => new HSZ((nint)(value));
 
-        public static implicit operator ushort(HSZ value) => (ushort)(value.Value);
+        public static explicit operator ushort(HSZ value) => (ushort)(value.Value);
 
         public static explicit operator HSZ(uint value) => new HSZ((nint)(value));
 
-        public static implicit operator uint(HSZ value) => (uint)(value.Value);
+        public static explicit operator uint(HSZ value) => (uint)(value.Value);
 
         public static explicit operator HSZ(ulong value) => new HSZ((nint)(value));
 
-        public static explicit operator ulong(HSZ value) => (ulong)(value.Value);
+        public static implicit operator ulong(HSZ value) => (ulong)(value.Value);
 
         public static explicit operator HSZ(nuint value) => new HSZ((nint)(value));
 

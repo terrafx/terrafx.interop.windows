@@ -31,19 +31,19 @@ namespace TerraFX.Interop
 
         public static explicit operator HWND(byte value) => new HWND((nint)(value));
 
-        public static implicit operator byte(HWND value) => (byte)(value.Value);
+        public static explicit operator byte(HWND value) => (byte)(value.Value);
 
         public static explicit operator HWND(short value) => new HWND((nint)(value));
 
-        public static implicit operator short(HWND value) => (short)(value.Value);
+        public static explicit operator short(HWND value) => (short)(value.Value);
 
         public static explicit operator HWND(int value) => new HWND((nint)(value));
 
-        public static implicit operator int(HWND value) => (int)(value.Value);
+        public static explicit operator int(HWND value) => (int)(value.Value);
 
         public static explicit operator HWND(long value) => new HWND((nint)(value));
 
-        public static explicit operator long(HWND value) => (long)(value.Value);
+        public static implicit operator long(HWND value) => (long)(value.Value);
 
         public static explicit operator HWND(nint value) => new HWND((nint)(value));
 
@@ -51,19 +51,19 @@ namespace TerraFX.Interop
 
         public static explicit operator HWND(sbyte value) => new HWND((nint)(value));
 
-        public static implicit operator sbyte(HWND value) => (sbyte)(value.Value);
+        public static explicit operator sbyte(HWND value) => (sbyte)(value.Value);
 
         public static explicit operator HWND(ushort value) => new HWND((nint)(value));
 
-        public static implicit operator ushort(HWND value) => (ushort)(value.Value);
+        public static explicit operator ushort(HWND value) => (ushort)(value.Value);
 
         public static explicit operator HWND(uint value) => new HWND((nint)(value));
 
-        public static implicit operator uint(HWND value) => (uint)(value.Value);
+        public static explicit operator uint(HWND value) => (uint)(value.Value);
 
         public static explicit operator HWND(ulong value) => new HWND((nint)(value));
 
-        public static explicit operator ulong(HWND value) => (ulong)(value.Value);
+        public static implicit operator ulong(HWND value) => (ulong)(value.Value);
 
         public static explicit operator HWND(nuint value) => new HWND((nint)(value));
 

@@ -31,19 +31,19 @@ namespace TerraFX.Interop
 
         public static explicit operator D3DKMDT_HMONITORFREQUENCYRANGESET(byte value) => new D3DKMDT_HMONITORFREQUENCYRANGESET((nint)(value));
 
-        public static implicit operator byte(D3DKMDT_HMONITORFREQUENCYRANGESET value) => (byte)(value.Value);
+        public static explicit operator byte(D3DKMDT_HMONITORFREQUENCYRANGESET value) => (byte)(value.Value);
 
         public static explicit operator D3DKMDT_HMONITORFREQUENCYRANGESET(short value) => new D3DKMDT_HMONITORFREQUENCYRANGESET((nint)(value));
 
-        public static implicit operator short(D3DKMDT_HMONITORFREQUENCYRANGESET value) => (short)(value.Value);
+        public static explicit operator short(D3DKMDT_HMONITORFREQUENCYRANGESET value) => (short)(value.Value);
 
         public static explicit operator D3DKMDT_HMONITORFREQUENCYRANGESET(int value) => new D3DKMDT_HMONITORFREQUENCYRANGESET((nint)(value));
 
-        public static implicit operator int(D3DKMDT_HMONITORFREQUENCYRANGESET value) => (int)(value.Value);
+        public static explicit operator int(D3DKMDT_HMONITORFREQUENCYRANGESET value) => (int)(value.Value);
 
         public static explicit operator D3DKMDT_HMONITORFREQUENCYRANGESET(long value) => new D3DKMDT_HMONITORFREQUENCYRANGESET((nint)(value));
 
-        public static explicit operator long(D3DKMDT_HMONITORFREQUENCYRANGESET value) => (long)(value.Value);
+        public static implicit operator long(D3DKMDT_HMONITORFREQUENCYRANGESET value) => (long)(value.Value);
 
         public static explicit operator D3DKMDT_HMONITORFREQUENCYRANGESET(nint value) => new D3DKMDT_HMONITORFREQUENCYRANGESET((nint)(value));
 
@@ -51,19 +51,19 @@ namespace TerraFX.Interop
 
         public static explicit operator D3DKMDT_HMONITORFREQUENCYRANGESET(sbyte value) => new D3DKMDT_HMONITORFREQUENCYRANGESET((nint)(value));
 
-        public static implicit operator sbyte(D3DKMDT_HMONITORFREQUENCYRANGESET value) => (sbyte)(value.Value);
+        public static explicit operator sbyte(D3DKMDT_HMONITORFREQUENCYRANGESET value) => (sbyte)(value.Value);
 
         public static explicit operator D3DKMDT_HMONITORFREQUENCYRANGESET(ushort value) => new D3DKMDT_HMONITORFREQUENCYRANGESET((nint)(value));
 
-        public static implicit operator ushort(D3DKMDT_HMONITORFREQUENCYRANGESET value) => (ushort)(value.Value);
+        public static explicit operator ushort(D3DKMDT_HMONITORFREQUENCYRANGESET value) => (ushort)(value.Value);
 
         public static explicit operator D3DKMDT_HMONITORFREQUENCYRANGESET(uint value) => new D3DKMDT_HMONITORFREQUENCYRANGESET((nint)(value));
 
-        public static implicit operator uint(D3DKMDT_HMONITORFREQUENCYRANGESET value) => (uint)(value.Value);
+        public static explicit operator uint(D3DKMDT_HMONITORFREQUENCYRANGESET value) => (uint)(value.Value);
 
         public static explicit operator D3DKMDT_HMONITORFREQUENCYRANGESET(ulong value) => new D3DKMDT_HMONITORFREQUENCYRANGESET((nint)(value));
 
-        public static explicit operator ulong(D3DKMDT_HMONITORFREQUENCYRANGESET value) => (ulong)(value.Value);
+        public static implicit operator ulong(D3DKMDT_HMONITORFREQUENCYRANGESET value) => (ulong)(value.Value);
 
         public static explicit operator D3DKMDT_HMONITORFREQUENCYRANGESET(nuint value) => new D3DKMDT_HMONITORFREQUENCYRANGESET((nint)(value));
 

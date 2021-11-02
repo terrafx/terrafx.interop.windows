@@ -31,19 +31,19 @@ namespace TerraFX.Interop
 
         public static explicit operator HTHEME(byte value) => new HTHEME((nint)(value));
 
-        public static implicit operator byte(HTHEME value) => (byte)(value.Value);
+        public static explicit operator byte(HTHEME value) => (byte)(value.Value);
 
         public static explicit operator HTHEME(short value) => new HTHEME((nint)(value));
 
-        public static implicit operator short(HTHEME value) => (short)(value.Value);
+        public static explicit operator short(HTHEME value) => (short)(value.Value);
 
         public static explicit operator HTHEME(int value) => new HTHEME((nint)(value));
 
-        public static implicit operator int(HTHEME value) => (int)(value.Value);
+        public static explicit operator int(HTHEME value) => (int)(value.Value);
 
         public static explicit operator HTHEME(long value) => new HTHEME((nint)(value));
 
-        public static explicit operator long(HTHEME value) => (long)(value.Value);
+        public static implicit operator long(HTHEME value) => (long)(value.Value);
 
         public static explicit operator HTHEME(nint value) => new HTHEME((nint)(value));
 
@@ -51,19 +51,19 @@ namespace TerraFX.Interop
 
         public static explicit operator HTHEME(sbyte value) => new HTHEME((nint)(value));
 
-        public static implicit operator sbyte(HTHEME value) => (sbyte)(value.Value);
+        public static explicit operator sbyte(HTHEME value) => (sbyte)(value.Value);
 
         public static explicit operator HTHEME(ushort value) => new HTHEME((nint)(value));
 
-        public static implicit operator ushort(HTHEME value) => (ushort)(value.Value);
+        public static explicit operator ushort(HTHEME value) => (ushort)(value.Value);
 
         public static explicit operator HTHEME(uint value) => new HTHEME((nint)(value));
 
-        public static implicit operator uint(HTHEME value) => (uint)(value.Value);
+        public static explicit operator uint(HTHEME value) => (uint)(value.Value);
 
         public static explicit operator HTHEME(ulong value) => new HTHEME((nint)(value));
 
-        public static explicit operator ulong(HTHEME value) => (ulong)(value.Value);
+        public static implicit operator ulong(HTHEME value) => (ulong)(value.Value);
 
         public static explicit operator HTHEME(nuint value) => new HTHEME((nint)(value));
 

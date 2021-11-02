@@ -31,19 +31,19 @@ namespace TerraFX.Interop
 
         public static explicit operator HIMAGELIST(byte value) => new HIMAGELIST((nint)(value));
 
-        public static implicit operator byte(HIMAGELIST value) => (byte)(value.Value);
+        public static explicit operator byte(HIMAGELIST value) => (byte)(value.Value);
 
         public static explicit operator HIMAGELIST(short value) => new HIMAGELIST((nint)(value));
 
-        public static implicit operator short(HIMAGELIST value) => (short)(value.Value);
+        public static explicit operator short(HIMAGELIST value) => (short)(value.Value);
 
         public static explicit operator HIMAGELIST(int value) => new HIMAGELIST((nint)(value));
 
-        public static implicit operator int(HIMAGELIST value) => (int)(value.Value);
+        public static explicit operator int(HIMAGELIST value) => (int)(value.Value);
 
         public static explicit operator HIMAGELIST(long value) => new HIMAGELIST((nint)(value));
 
-        public static explicit operator long(HIMAGELIST value) => (long)(value.Value);
+        public static implicit operator long(HIMAGELIST value) => (long)(value.Value);
 
         public static explicit operator HIMAGELIST(nint value) => new HIMAGELIST((nint)(value));
 
@@ -51,19 +51,19 @@ namespace TerraFX.Interop
 
         public static explicit operator HIMAGELIST(sbyte value) => new HIMAGELIST((nint)(value));
 
-        public static implicit operator sbyte(HIMAGELIST value) => (sbyte)(value.Value);
+        public static explicit operator sbyte(HIMAGELIST value) => (sbyte)(value.Value);
 
         public static explicit operator HIMAGELIST(ushort value) => new HIMAGELIST((nint)(value));
 
-        public static implicit operator ushort(HIMAGELIST value) => (ushort)(value.Value);
+        public static explicit operator ushort(HIMAGELIST value) => (ushort)(value.Value);
 
         public static explicit operator HIMAGELIST(uint value) => new HIMAGELIST((nint)(value));
 
-        public static implicit operator uint(HIMAGELIST value) => (uint)(value.Value);
+        public static explicit operator uint(HIMAGELIST value) => (uint)(value.Value);
 
         public static explicit operator HIMAGELIST(ulong value) => new HIMAGELIST((nint)(value));
 
-        public static explicit operator ulong(HIMAGELIST value) => (ulong)(value.Value);
+        public static implicit operator ulong(HIMAGELIST value) => (ulong)(value.Value);
 
         public static explicit operator HIMAGELIST(nuint value) => new HIMAGELIST((nint)(value));
 

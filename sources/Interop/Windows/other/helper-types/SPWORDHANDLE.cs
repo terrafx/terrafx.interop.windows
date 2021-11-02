@@ -31,19 +31,19 @@ namespace TerraFX.Interop
 
         public static explicit operator SPWORDHANDLE(byte value) => new SPWORDHANDLE((nint)(value));
 
-        public static implicit operator byte(SPWORDHANDLE value) => (byte)(value.Value);
+        public static explicit operator byte(SPWORDHANDLE value) => (byte)(value.Value);
 
         public static explicit operator SPWORDHANDLE(short value) => new SPWORDHANDLE((nint)(value));
 
-        public static implicit operator short(SPWORDHANDLE value) => (short)(value.Value);
+        public static explicit operator short(SPWORDHANDLE value) => (short)(value.Value);
 
         public static explicit operator SPWORDHANDLE(int value) => new SPWORDHANDLE((nint)(value));
 
-        public static implicit operator int(SPWORDHANDLE value) => (int)(value.Value);
+        public static explicit operator int(SPWORDHANDLE value) => (int)(value.Value);
 
         public static explicit operator SPWORDHANDLE(long value) => new SPWORDHANDLE((nint)(value));
 
-        public static explicit operator long(SPWORDHANDLE value) => (long)(value.Value);
+        public static implicit operator long(SPWORDHANDLE value) => (long)(value.Value);
 
         public static explicit operator SPWORDHANDLE(nint value) => new SPWORDHANDLE((nint)(value));
 
@@ -51,19 +51,19 @@ namespace TerraFX.Interop
 
         public static explicit operator SPWORDHANDLE(sbyte value) => new SPWORDHANDLE((nint)(value));
 
-        public static implicit operator sbyte(SPWORDHANDLE value) => (sbyte)(value.Value);
+        public static explicit operator sbyte(SPWORDHANDLE value) => (sbyte)(value.Value);
 
         public static explicit operator SPWORDHANDLE(ushort value) => new SPWORDHANDLE((nint)(value));
 
-        public static implicit operator ushort(SPWORDHANDLE value) => (ushort)(value.Value);
+        public static explicit operator ushort(SPWORDHANDLE value) => (ushort)(value.Value);
 
         public static explicit operator SPWORDHANDLE(uint value) => new SPWORDHANDLE((nint)(value));
 
-        public static implicit operator uint(SPWORDHANDLE value) => (uint)(value.Value);
+        public static explicit operator uint(SPWORDHANDLE value) => (uint)(value.Value);
 
         public static explicit operator SPWORDHANDLE(ulong value) => new SPWORDHANDLE((nint)(value));
 
-        public static explicit operator ulong(SPWORDHANDLE value) => (ulong)(value.Value);
+        public static implicit operator ulong(SPWORDHANDLE value) => (ulong)(value.Value);
 
         public static explicit operator SPWORDHANDLE(nuint value) => new SPWORDHANDLE((nint)(value));
 

@@ -31,19 +31,19 @@ namespace TerraFX.Interop
 
         public static explicit operator HBLUETOOTH_RADIO_FIND(byte value) => new HBLUETOOTH_RADIO_FIND((nint)(value));
 
-        public static implicit operator byte(HBLUETOOTH_RADIO_FIND value) => (byte)(value.Value);
+        public static explicit operator byte(HBLUETOOTH_RADIO_FIND value) => (byte)(value.Value);
 
         public static explicit operator HBLUETOOTH_RADIO_FIND(short value) => new HBLUETOOTH_RADIO_FIND((nint)(value));
 
-        public static implicit operator short(HBLUETOOTH_RADIO_FIND value) => (short)(value.Value);
+        public static explicit operator short(HBLUETOOTH_RADIO_FIND value) => (short)(value.Value);
 
         public static explicit operator HBLUETOOTH_RADIO_FIND(int value) => new HBLUETOOTH_RADIO_FIND((nint)(value));
 
-        public static implicit operator int(HBLUETOOTH_RADIO_FIND value) => (int)(value.Value);
+        public static explicit operator int(HBLUETOOTH_RADIO_FIND value) => (int)(value.Value);
 
         public static explicit operator HBLUETOOTH_RADIO_FIND(long value) => new HBLUETOOTH_RADIO_FIND((nint)(value));
 
-        public static explicit operator long(HBLUETOOTH_RADIO_FIND value) => (long)(value.Value);
+        public static implicit operator long(HBLUETOOTH_RADIO_FIND value) => (long)(value.Value);
 
         public static explicit operator HBLUETOOTH_RADIO_FIND(nint value) => new HBLUETOOTH_RADIO_FIND((nint)(value));
 
@@ -51,19 +51,19 @@ namespace TerraFX.Interop
 
         public static explicit operator HBLUETOOTH_RADIO_FIND(sbyte value) => new HBLUETOOTH_RADIO_FIND((nint)(value));
 
-        public static implicit operator sbyte(HBLUETOOTH_RADIO_FIND value) => (sbyte)(value.Value);
+        public static explicit operator sbyte(HBLUETOOTH_RADIO_FIND value) => (sbyte)(value.Value);
 
         public static explicit operator HBLUETOOTH_RADIO_FIND(ushort value) => new HBLUETOOTH_RADIO_FIND((nint)(value));
 
-        public static implicit operator ushort(HBLUETOOTH_RADIO_FIND value) => (ushort)(value.Value);
+        public static explicit operator ushort(HBLUETOOTH_RADIO_FIND value) => (ushort)(value.Value);
 
         public static explicit operator HBLUETOOTH_RADIO_FIND(uint value) => new HBLUETOOTH_RADIO_FIND((nint)(value));
 
-        public static implicit operator uint(HBLUETOOTH_RADIO_FIND value) => (uint)(value.Value);
+        public static explicit operator uint(HBLUETOOTH_RADIO_FIND value) => (uint)(value.Value);
 
         public static explicit operator HBLUETOOTH_RADIO_FIND(ulong value) => new HBLUETOOTH_RADIO_FIND((nint)(value));
 
-        public static explicit operator ulong(HBLUETOOTH_RADIO_FIND value) => (ulong)(value.Value);
+        public static implicit operator ulong(HBLUETOOTH_RADIO_FIND value) => (ulong)(value.Value);
 
         public static explicit operator HBLUETOOTH_RADIO_FIND(nuint value) => new HBLUETOOTH_RADIO_FIND((nint)(value));
 

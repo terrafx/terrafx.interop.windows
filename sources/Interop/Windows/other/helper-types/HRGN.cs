@@ -31,19 +31,19 @@ namespace TerraFX.Interop
 
         public static explicit operator HRGN(byte value) => new HRGN((nint)(value));
 
-        public static implicit operator byte(HRGN value) => (byte)(value.Value);
+        public static explicit operator byte(HRGN value) => (byte)(value.Value);
 
         public static explicit operator HRGN(short value) => new HRGN((nint)(value));
 
-        public static implicit operator short(HRGN value) => (short)(value.Value);
+        public static explicit operator short(HRGN value) => (short)(value.Value);
 
         public static explicit operator HRGN(int value) => new HRGN((nint)(value));
 
-        public static implicit operator int(HRGN value) => (int)(value.Value);
+        public static explicit operator int(HRGN value) => (int)(value.Value);
 
         public static explicit operator HRGN(long value) => new HRGN((nint)(value));
 
-        public static explicit operator long(HRGN value) => (long)(value.Value);
+        public static implicit operator long(HRGN value) => (long)(value.Value);
 
         public static explicit operator HRGN(nint value) => new HRGN((nint)(value));
 
@@ -51,19 +51,19 @@ namespace TerraFX.Interop
 
         public static explicit operator HRGN(sbyte value) => new HRGN((nint)(value));
 
-        public static implicit operator sbyte(HRGN value) => (sbyte)(value.Value);
+        public static explicit operator sbyte(HRGN value) => (sbyte)(value.Value);
 
         public static explicit operator HRGN(ushort value) => new HRGN((nint)(value));
 
-        public static implicit operator ushort(HRGN value) => (ushort)(value.Value);
+        public static explicit operator ushort(HRGN value) => (ushort)(value.Value);
 
         public static explicit operator HRGN(uint value) => new HRGN((nint)(value));
 
-        public static implicit operator uint(HRGN value) => (uint)(value.Value);
+        public static explicit operator uint(HRGN value) => (uint)(value.Value);
 
         public static explicit operator HRGN(ulong value) => new HRGN((nint)(value));
 
-        public static explicit operator ulong(HRGN value) => (ulong)(value.Value);
+        public static implicit operator ulong(HRGN value) => (ulong)(value.Value);
 
         public static explicit operator HRGN(nuint value) => new HRGN((nint)(value));
 

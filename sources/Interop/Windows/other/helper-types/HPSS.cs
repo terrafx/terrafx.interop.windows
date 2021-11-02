@@ -31,19 +31,19 @@ namespace TerraFX.Interop
 
         public static explicit operator HPSS(byte value) => new HPSS((nint)(value));
 
-        public static implicit operator byte(HPSS value) => (byte)(value.Value);
+        public static explicit operator byte(HPSS value) => (byte)(value.Value);
 
         public static explicit operator HPSS(short value) => new HPSS((nint)(value));
 
-        public static implicit operator short(HPSS value) => (short)(value.Value);
+        public static explicit operator short(HPSS value) => (short)(value.Value);
 
         public static explicit operator HPSS(int value) => new HPSS((nint)(value));
 
-        public static implicit operator int(HPSS value) => (int)(value.Value);
+        public static explicit operator int(HPSS value) => (int)(value.Value);
 
         public static explicit operator HPSS(long value) => new HPSS((nint)(value));
 
-        public static explicit operator long(HPSS value) => (long)(value.Value);
+        public static implicit operator long(HPSS value) => (long)(value.Value);
 
         public static explicit operator HPSS(nint value) => new HPSS((nint)(value));
 
@@ -51,19 +51,19 @@ namespace TerraFX.Interop
 
         public static explicit operator HPSS(sbyte value) => new HPSS((nint)(value));
 
-        public static implicit operator sbyte(HPSS value) => (sbyte)(value.Value);
+        public static explicit operator sbyte(HPSS value) => (sbyte)(value.Value);
 
         public static explicit operator HPSS(ushort value) => new HPSS((nint)(value));
 
-        public static implicit operator ushort(HPSS value) => (ushort)(value.Value);
+        public static explicit operator ushort(HPSS value) => (ushort)(value.Value);
 
         public static explicit operator HPSS(uint value) => new HPSS((nint)(value));
 
-        public static implicit operator uint(HPSS value) => (uint)(value.Value);
+        public static explicit operator uint(HPSS value) => (uint)(value.Value);
 
         public static explicit operator HPSS(ulong value) => new HPSS((nint)(value));
 
-        public static explicit operator ulong(HPSS value) => (ulong)(value.Value);
+        public static implicit operator ulong(HPSS value) => (ulong)(value.Value);
 
         public static explicit operator HPSS(nuint value) => new HPSS((nint)(value));
 

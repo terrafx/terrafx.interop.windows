@@ -31,19 +31,19 @@ namespace TerraFX.Interop
 
         public static explicit operator HCRYPTOIDFUNCSET(byte value) => new HCRYPTOIDFUNCSET((nint)(value));
 
-        public static implicit operator byte(HCRYPTOIDFUNCSET value) => (byte)(value.Value);
+        public static explicit operator byte(HCRYPTOIDFUNCSET value) => (byte)(value.Value);
 
         public static explicit operator HCRYPTOIDFUNCSET(short value) => new HCRYPTOIDFUNCSET((nint)(value));
 
-        public static implicit operator short(HCRYPTOIDFUNCSET value) => (short)(value.Value);
+        public static explicit operator short(HCRYPTOIDFUNCSET value) => (short)(value.Value);
 
         public static explicit operator HCRYPTOIDFUNCSET(int value) => new HCRYPTOIDFUNCSET((nint)(value));
 
-        public static implicit operator int(HCRYPTOIDFUNCSET value) => (int)(value.Value);
+        public static explicit operator int(HCRYPTOIDFUNCSET value) => (int)(value.Value);
 
         public static explicit operator HCRYPTOIDFUNCSET(long value) => new HCRYPTOIDFUNCSET((nint)(value));
 
-        public static explicit operator long(HCRYPTOIDFUNCSET value) => (long)(value.Value);
+        public static implicit operator long(HCRYPTOIDFUNCSET value) => (long)(value.Value);
 
         public static explicit operator HCRYPTOIDFUNCSET(nint value) => new HCRYPTOIDFUNCSET((nint)(value));
 
@@ -51,19 +51,19 @@ namespace TerraFX.Interop
 
         public static explicit operator HCRYPTOIDFUNCSET(sbyte value) => new HCRYPTOIDFUNCSET((nint)(value));
 
-        public static implicit operator sbyte(HCRYPTOIDFUNCSET value) => (sbyte)(value.Value);
+        public static explicit operator sbyte(HCRYPTOIDFUNCSET value) => (sbyte)(value.Value);
 
         public static explicit operator HCRYPTOIDFUNCSET(ushort value) => new HCRYPTOIDFUNCSET((nint)(value));
 
-        public static implicit operator ushort(HCRYPTOIDFUNCSET value) => (ushort)(value.Value);
+        public static explicit operator ushort(HCRYPTOIDFUNCSET value) => (ushort)(value.Value);
 
         public static explicit operator HCRYPTOIDFUNCSET(uint value) => new HCRYPTOIDFUNCSET((nint)(value));
 
-        public static implicit operator uint(HCRYPTOIDFUNCSET value) => (uint)(value.Value);
+        public static explicit operator uint(HCRYPTOIDFUNCSET value) => (uint)(value.Value);
 
         public static explicit operator HCRYPTOIDFUNCSET(ulong value) => new HCRYPTOIDFUNCSET((nint)(value));
 
-        public static explicit operator ulong(HCRYPTOIDFUNCSET value) => (ulong)(value.Value);
+        public static implicit operator ulong(HCRYPTOIDFUNCSET value) => (ulong)(value.Value);
 
         public static explicit operator HCRYPTOIDFUNCSET(nuint value) => new HCRYPTOIDFUNCSET((nint)(value));
 

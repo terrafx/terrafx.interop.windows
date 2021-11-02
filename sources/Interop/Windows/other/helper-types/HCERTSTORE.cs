@@ -31,19 +31,19 @@ namespace TerraFX.Interop
 
         public static explicit operator HCERTSTORE(byte value) => new HCERTSTORE((nint)(value));
 
-        public static implicit operator byte(HCERTSTORE value) => (byte)(value.Value);
+        public static explicit operator byte(HCERTSTORE value) => (byte)(value.Value);
 
         public static explicit operator HCERTSTORE(short value) => new HCERTSTORE((nint)(value));
 
-        public static implicit operator short(HCERTSTORE value) => (short)(value.Value);
+        public static explicit operator short(HCERTSTORE value) => (short)(value.Value);
 
         public static explicit operator HCERTSTORE(int value) => new HCERTSTORE((nint)(value));
 
-        public static implicit operator int(HCERTSTORE value) => (int)(value.Value);
+        public static explicit operator int(HCERTSTORE value) => (int)(value.Value);
 
         public static explicit operator HCERTSTORE(long value) => new HCERTSTORE((nint)(value));
 
-        public static explicit operator long(HCERTSTORE value) => (long)(value.Value);
+        public static implicit operator long(HCERTSTORE value) => (long)(value.Value);
 
         public static explicit operator HCERTSTORE(nint value) => new HCERTSTORE((nint)(value));
 
@@ -51,19 +51,19 @@ namespace TerraFX.Interop
 
         public static explicit operator HCERTSTORE(sbyte value) => new HCERTSTORE((nint)(value));
 
-        public static implicit operator sbyte(HCERTSTORE value) => (sbyte)(value.Value);
+        public static explicit operator sbyte(HCERTSTORE value) => (sbyte)(value.Value);
 
         public static explicit operator HCERTSTORE(ushort value) => new HCERTSTORE((nint)(value));
 
-        public static implicit operator ushort(HCERTSTORE value) => (ushort)(value.Value);
+        public static explicit operator ushort(HCERTSTORE value) => (ushort)(value.Value);
 
         public static explicit operator HCERTSTORE(uint value) => new HCERTSTORE((nint)(value));
 
-        public static implicit operator uint(HCERTSTORE value) => (uint)(value.Value);
+        public static explicit operator uint(HCERTSTORE value) => (uint)(value.Value);
 
         public static explicit operator HCERTSTORE(ulong value) => new HCERTSTORE((nint)(value));
 
-        public static explicit operator ulong(HCERTSTORE value) => (ulong)(value.Value);
+        public static implicit operator ulong(HCERTSTORE value) => (ulong)(value.Value);
 
         public static explicit operator HCERTSTORE(nuint value) => new HCERTSTORE((nint)(value));
 

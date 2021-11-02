@@ -31,19 +31,19 @@ namespace TerraFX.Interop
 
         public static explicit operator HMETAFILE(byte value) => new HMETAFILE((nint)(value));
 
-        public static implicit operator byte(HMETAFILE value) => (byte)(value.Value);
+        public static explicit operator byte(HMETAFILE value) => (byte)(value.Value);
 
         public static explicit operator HMETAFILE(short value) => new HMETAFILE((nint)(value));
 
-        public static implicit operator short(HMETAFILE value) => (short)(value.Value);
+        public static explicit operator short(HMETAFILE value) => (short)(value.Value);
 
         public static explicit operator HMETAFILE(int value) => new HMETAFILE((nint)(value));
 
-        public static implicit operator int(HMETAFILE value) => (int)(value.Value);
+        public static explicit operator int(HMETAFILE value) => (int)(value.Value);
 
         public static explicit operator HMETAFILE(long value) => new HMETAFILE((nint)(value));
 
-        public static explicit operator long(HMETAFILE value) => (long)(value.Value);
+        public static implicit operator long(HMETAFILE value) => (long)(value.Value);
 
         public static explicit operator HMETAFILE(nint value) => new HMETAFILE((nint)(value));
 
@@ -51,19 +51,19 @@ namespace TerraFX.Interop
 
         public static explicit operator HMETAFILE(sbyte value) => new HMETAFILE((nint)(value));
 
-        public static implicit operator sbyte(HMETAFILE value) => (sbyte)(value.Value);
+        public static explicit operator sbyte(HMETAFILE value) => (sbyte)(value.Value);
 
         public static explicit operator HMETAFILE(ushort value) => new HMETAFILE((nint)(value));
 
-        public static implicit operator ushort(HMETAFILE value) => (ushort)(value.Value);
+        public static explicit operator ushort(HMETAFILE value) => (ushort)(value.Value);
 
         public static explicit operator HMETAFILE(uint value) => new HMETAFILE((nint)(value));
 
-        public static implicit operator uint(HMETAFILE value) => (uint)(value.Value);
+        public static explicit operator uint(HMETAFILE value) => (uint)(value.Value);
 
         public static explicit operator HMETAFILE(ulong value) => new HMETAFILE((nint)(value));
 
-        public static explicit operator ulong(HMETAFILE value) => (ulong)(value.Value);
+        public static implicit operator ulong(HMETAFILE value) => (ulong)(value.Value);
 
         public static explicit operator HMETAFILE(nuint value) => new HMETAFILE((nint)(value));
 

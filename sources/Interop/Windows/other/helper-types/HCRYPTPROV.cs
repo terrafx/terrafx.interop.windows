@@ -31,19 +31,19 @@ namespace TerraFX.Interop
 
         public static explicit operator HCRYPTPROV(byte value) => new HCRYPTPROV((nint)(value));
 
-        public static implicit operator byte(HCRYPTPROV value) => (byte)(value.Value);
+        public static explicit operator byte(HCRYPTPROV value) => (byte)(value.Value);
 
         public static explicit operator HCRYPTPROV(short value) => new HCRYPTPROV((nint)(value));
 
-        public static implicit operator short(HCRYPTPROV value) => (short)(value.Value);
+        public static explicit operator short(HCRYPTPROV value) => (short)(value.Value);
 
         public static explicit operator HCRYPTPROV(int value) => new HCRYPTPROV((nint)(value));
 
-        public static implicit operator int(HCRYPTPROV value) => (int)(value.Value);
+        public static explicit operator int(HCRYPTPROV value) => (int)(value.Value);
 
         public static explicit operator HCRYPTPROV(long value) => new HCRYPTPROV((nint)(value));
 
-        public static explicit operator long(HCRYPTPROV value) => (long)(value.Value);
+        public static implicit operator long(HCRYPTPROV value) => (long)(value.Value);
 
         public static explicit operator HCRYPTPROV(nint value) => new HCRYPTPROV((nint)(value));
 
@@ -51,19 +51,19 @@ namespace TerraFX.Interop
 
         public static explicit operator HCRYPTPROV(sbyte value) => new HCRYPTPROV((nint)(value));
 
-        public static implicit operator sbyte(HCRYPTPROV value) => (sbyte)(value.Value);
+        public static explicit operator sbyte(HCRYPTPROV value) => (sbyte)(value.Value);
 
         public static explicit operator HCRYPTPROV(ushort value) => new HCRYPTPROV((nint)(value));
 
-        public static implicit operator ushort(HCRYPTPROV value) => (ushort)(value.Value);
+        public static explicit operator ushort(HCRYPTPROV value) => (ushort)(value.Value);
 
         public static explicit operator HCRYPTPROV(uint value) => new HCRYPTPROV((nint)(value));
 
-        public static implicit operator uint(HCRYPTPROV value) => (uint)(value.Value);
+        public static explicit operator uint(HCRYPTPROV value) => (uint)(value.Value);
 
         public static explicit operator HCRYPTPROV(ulong value) => new HCRYPTPROV((nint)(value));
 
-        public static explicit operator ulong(HCRYPTPROV value) => (ulong)(value.Value);
+        public static implicit operator ulong(HCRYPTPROV value) => (ulong)(value.Value);
 
         public static explicit operator HCRYPTPROV(nuint value) => new HCRYPTPROV((nint)(value));
 

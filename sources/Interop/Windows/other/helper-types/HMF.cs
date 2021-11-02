@@ -31,19 +31,19 @@ namespace TerraFX.Interop
 
         public static explicit operator HMF(byte value) => new HMF((nint)(value));
 
-        public static implicit operator byte(HMF value) => (byte)(value.Value);
+        public static explicit operator byte(HMF value) => (byte)(value.Value);
 
         public static explicit operator HMF(short value) => new HMF((nint)(value));
 
-        public static implicit operator short(HMF value) => (short)(value.Value);
+        public static explicit operator short(HMF value) => (short)(value.Value);
 
         public static explicit operator HMF(int value) => new HMF((nint)(value));
 
-        public static implicit operator int(HMF value) => (int)(value.Value);
+        public static explicit operator int(HMF value) => (int)(value.Value);
 
         public static explicit operator HMF(long value) => new HMF((nint)(value));
 
-        public static explicit operator long(HMF value) => (long)(value.Value);
+        public static implicit operator long(HMF value) => (long)(value.Value);
 
         public static explicit operator HMF(nint value) => new HMF((nint)(value));
 
@@ -51,19 +51,19 @@ namespace TerraFX.Interop
 
         public static explicit operator HMF(sbyte value) => new HMF((nint)(value));
 
-        public static implicit operator sbyte(HMF value) => (sbyte)(value.Value);
+        public static explicit operator sbyte(HMF value) => (sbyte)(value.Value);
 
         public static explicit operator HMF(ushort value) => new HMF((nint)(value));
 
-        public static implicit operator ushort(HMF value) => (ushort)(value.Value);
+        public static explicit operator ushort(HMF value) => (ushort)(value.Value);
 
         public static explicit operator HMF(uint value) => new HMF((nint)(value));
 
-        public static implicit operator uint(HMF value) => (uint)(value.Value);
+        public static explicit operator uint(HMF value) => (uint)(value.Value);
 
         public static explicit operator HMF(ulong value) => new HMF((nint)(value));
 
-        public static explicit operator ulong(HMF value) => (ulong)(value.Value);
+        public static implicit operator ulong(HMF value) => (ulong)(value.Value);
 
         public static explicit operator HMF(nuint value) => new HMF((nint)(value));
 

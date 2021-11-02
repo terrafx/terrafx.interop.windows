@@ -31,19 +31,19 @@ namespace TerraFX.Interop
 
         public static explicit operator HADDRESS(byte value) => new HADDRESS((nint)(value));
 
-        public static implicit operator byte(HADDRESS value) => (byte)(value.Value);
+        public static explicit operator byte(HADDRESS value) => (byte)(value.Value);
 
         public static explicit operator HADDRESS(short value) => new HADDRESS((nint)(value));
 
-        public static implicit operator short(HADDRESS value) => (short)(value.Value);
+        public static explicit operator short(HADDRESS value) => (short)(value.Value);
 
         public static explicit operator HADDRESS(int value) => new HADDRESS((nint)(value));
 
-        public static implicit operator int(HADDRESS value) => (int)(value.Value);
+        public static explicit operator int(HADDRESS value) => (int)(value.Value);
 
         public static explicit operator HADDRESS(long value) => new HADDRESS((nint)(value));
 
-        public static explicit operator long(HADDRESS value) => (long)(value.Value);
+        public static implicit operator long(HADDRESS value) => (long)(value.Value);
 
         public static explicit operator HADDRESS(nint value) => new HADDRESS((nint)(value));
 
@@ -51,19 +51,19 @@ namespace TerraFX.Interop
 
         public static explicit operator HADDRESS(sbyte value) => new HADDRESS((nint)(value));
 
-        public static implicit operator sbyte(HADDRESS value) => (sbyte)(value.Value);
+        public static explicit operator sbyte(HADDRESS value) => (sbyte)(value.Value);
 
         public static explicit operator HADDRESS(ushort value) => new HADDRESS((nint)(value));
 
-        public static implicit operator ushort(HADDRESS value) => (ushort)(value.Value);
+        public static explicit operator ushort(HADDRESS value) => (ushort)(value.Value);
 
         public static explicit operator HADDRESS(uint value) => new HADDRESS((nint)(value));
 
-        public static implicit operator uint(HADDRESS value) => (uint)(value.Value);
+        public static explicit operator uint(HADDRESS value) => (uint)(value.Value);
 
         public static explicit operator HADDRESS(ulong value) => new HADDRESS((nint)(value));
 
-        public static explicit operator ulong(HADDRESS value) => (ulong)(value.Value);
+        public static implicit operator ulong(HADDRESS value) => (ulong)(value.Value);
 
         public static explicit operator HADDRESS(nuint value) => new HADDRESS((nint)(value));
 

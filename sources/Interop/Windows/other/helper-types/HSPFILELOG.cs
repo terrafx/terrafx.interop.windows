@@ -31,19 +31,19 @@ namespace TerraFX.Interop
 
         public static explicit operator HSPFILELOG(byte value) => new HSPFILELOG((nint)(value));
 
-        public static implicit operator byte(HSPFILELOG value) => (byte)(value.Value);
+        public static explicit operator byte(HSPFILELOG value) => (byte)(value.Value);
 
         public static explicit operator HSPFILELOG(short value) => new HSPFILELOG((nint)(value));
 
-        public static implicit operator short(HSPFILELOG value) => (short)(value.Value);
+        public static explicit operator short(HSPFILELOG value) => (short)(value.Value);
 
         public static explicit operator HSPFILELOG(int value) => new HSPFILELOG((nint)(value));
 
-        public static implicit operator int(HSPFILELOG value) => (int)(value.Value);
+        public static explicit operator int(HSPFILELOG value) => (int)(value.Value);
 
         public static explicit operator HSPFILELOG(long value) => new HSPFILELOG((nint)(value));
 
-        public static explicit operator long(HSPFILELOG value) => (long)(value.Value);
+        public static implicit operator long(HSPFILELOG value) => (long)(value.Value);
 
         public static explicit operator HSPFILELOG(nint value) => new HSPFILELOG((nint)(value));
 
@@ -51,19 +51,19 @@ namespace TerraFX.Interop
 
         public static explicit operator HSPFILELOG(sbyte value) => new HSPFILELOG((nint)(value));
 
-        public static implicit operator sbyte(HSPFILELOG value) => (sbyte)(value.Value);
+        public static explicit operator sbyte(HSPFILELOG value) => (sbyte)(value.Value);
 
         public static explicit operator HSPFILELOG(ushort value) => new HSPFILELOG((nint)(value));
 
-        public static implicit operator ushort(HSPFILELOG value) => (ushort)(value.Value);
+        public static explicit operator ushort(HSPFILELOG value) => (ushort)(value.Value);
 
         public static explicit operator HSPFILELOG(uint value) => new HSPFILELOG((nint)(value));
 
-        public static implicit operator uint(HSPFILELOG value) => (uint)(value.Value);
+        public static explicit operator uint(HSPFILELOG value) => (uint)(value.Value);
 
         public static explicit operator HSPFILELOG(ulong value) => new HSPFILELOG((nint)(value));
 
-        public static explicit operator ulong(HSPFILELOG value) => (ulong)(value.Value);
+        public static implicit operator ulong(HSPFILELOG value) => (ulong)(value.Value);
 
         public static explicit operator HSPFILELOG(nuint value) => new HSPFILELOG((nint)(value));
 

@@ -31,19 +31,19 @@ namespace TerraFX.Interop
 
         public static explicit operator HTREEITEM(byte value) => new HTREEITEM((nint)(value));
 
-        public static implicit operator byte(HTREEITEM value) => (byte)(value.Value);
+        public static explicit operator byte(HTREEITEM value) => (byte)(value.Value);
 
         public static explicit operator HTREEITEM(short value) => new HTREEITEM((nint)(value));
 
-        public static implicit operator short(HTREEITEM value) => (short)(value.Value);
+        public static explicit operator short(HTREEITEM value) => (short)(value.Value);
 
         public static explicit operator HTREEITEM(int value) => new HTREEITEM((nint)(value));
 
-        public static implicit operator int(HTREEITEM value) => (int)(value.Value);
+        public static explicit operator int(HTREEITEM value) => (int)(value.Value);
 
         public static explicit operator HTREEITEM(long value) => new HTREEITEM((nint)(value));
 
-        public static explicit operator long(HTREEITEM value) => (long)(value.Value);
+        public static implicit operator long(HTREEITEM value) => (long)(value.Value);
 
         public static explicit operator HTREEITEM(nint value) => new HTREEITEM((nint)(value));
 
@@ -51,19 +51,19 @@ namespace TerraFX.Interop
 
         public static explicit operator HTREEITEM(sbyte value) => new HTREEITEM((nint)(value));
 
-        public static implicit operator sbyte(HTREEITEM value) => (sbyte)(value.Value);
+        public static explicit operator sbyte(HTREEITEM value) => (sbyte)(value.Value);
 
         public static explicit operator HTREEITEM(ushort value) => new HTREEITEM((nint)(value));
 
-        public static implicit operator ushort(HTREEITEM value) => (ushort)(value.Value);
+        public static explicit operator ushort(HTREEITEM value) => (ushort)(value.Value);
 
         public static explicit operator HTREEITEM(uint value) => new HTREEITEM((nint)(value));
 
-        public static implicit operator uint(HTREEITEM value) => (uint)(value.Value);
+        public static explicit operator uint(HTREEITEM value) => (uint)(value.Value);
 
         public static explicit operator HTREEITEM(ulong value) => new HTREEITEM((nint)(value));
 
-        public static explicit operator ulong(HTREEITEM value) => (ulong)(value.Value);
+        public static implicit operator ulong(HTREEITEM value) => (ulong)(value.Value);
 
         public static explicit operator HTREEITEM(nuint value) => new HTREEITEM((nint)(value));
 

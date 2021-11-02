@@ -31,19 +31,19 @@ namespace TerraFX.Interop
 
         public static explicit operator USB_CHANGE_REGISTRATION_HANDLE(byte value) => new USB_CHANGE_REGISTRATION_HANDLE((nint)(value));
 
-        public static implicit operator byte(USB_CHANGE_REGISTRATION_HANDLE value) => (byte)(value.Value);
+        public static explicit operator byte(USB_CHANGE_REGISTRATION_HANDLE value) => (byte)(value.Value);
 
         public static explicit operator USB_CHANGE_REGISTRATION_HANDLE(short value) => new USB_CHANGE_REGISTRATION_HANDLE((nint)(value));
 
-        public static implicit operator short(USB_CHANGE_REGISTRATION_HANDLE value) => (short)(value.Value);
+        public static explicit operator short(USB_CHANGE_REGISTRATION_HANDLE value) => (short)(value.Value);
 
         public static explicit operator USB_CHANGE_REGISTRATION_HANDLE(int value) => new USB_CHANGE_REGISTRATION_HANDLE((nint)(value));
 
-        public static implicit operator int(USB_CHANGE_REGISTRATION_HANDLE value) => (int)(value.Value);
+        public static explicit operator int(USB_CHANGE_REGISTRATION_HANDLE value) => (int)(value.Value);
 
         public static explicit operator USB_CHANGE_REGISTRATION_HANDLE(long value) => new USB_CHANGE_REGISTRATION_HANDLE((nint)(value));
 
-        public static explicit operator long(USB_CHANGE_REGISTRATION_HANDLE value) => (long)(value.Value);
+        public static implicit operator long(USB_CHANGE_REGISTRATION_HANDLE value) => (long)(value.Value);
 
         public static explicit operator USB_CHANGE_REGISTRATION_HANDLE(nint value) => new USB_CHANGE_REGISTRATION_HANDLE((nint)(value));
 
@@ -51,19 +51,19 @@ namespace TerraFX.Interop
 
         public static explicit operator USB_CHANGE_REGISTRATION_HANDLE(sbyte value) => new USB_CHANGE_REGISTRATION_HANDLE((nint)(value));
 
-        public static implicit operator sbyte(USB_CHANGE_REGISTRATION_HANDLE value) => (sbyte)(value.Value);
+        public static explicit operator sbyte(USB_CHANGE_REGISTRATION_HANDLE value) => (sbyte)(value.Value);
 
         public static explicit operator USB_CHANGE_REGISTRATION_HANDLE(ushort value) => new USB_CHANGE_REGISTRATION_HANDLE((nint)(value));
 
-        public static implicit operator ushort(USB_CHANGE_REGISTRATION_HANDLE value) => (ushort)(value.Value);
+        public static explicit operator ushort(USB_CHANGE_REGISTRATION_HANDLE value) => (ushort)(value.Value);
 
         public static explicit operator USB_CHANGE_REGISTRATION_HANDLE(uint value) => new USB_CHANGE_REGISTRATION_HANDLE((nint)(value));
 
-        public static implicit operator uint(USB_CHANGE_REGISTRATION_HANDLE value) => (uint)(value.Value);
+        public static explicit operator uint(USB_CHANGE_REGISTRATION_HANDLE value) => (uint)(value.Value);
 
         public static explicit operator USB_CHANGE_REGISTRATION_HANDLE(ulong value) => new USB_CHANGE_REGISTRATION_HANDLE((nint)(value));
 
-        public static explicit operator ulong(USB_CHANGE_REGISTRATION_HANDLE value) => (ulong)(value.Value);
+        public static implicit operator ulong(USB_CHANGE_REGISTRATION_HANDLE value) => (ulong)(value.Value);
 
         public static explicit operator USB_CHANGE_REGISTRATION_HANDLE(nuint value) => new USB_CHANGE_REGISTRATION_HANDLE((nint)(value));
 

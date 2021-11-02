@@ -31,19 +31,19 @@ namespace TerraFX.Interop
 
         public static explicit operator HSTR(byte value) => new HSTR((nint)(value));
 
-        public static implicit operator byte(HSTR value) => (byte)(value.Value);
+        public static explicit operator byte(HSTR value) => (byte)(value.Value);
 
         public static explicit operator HSTR(short value) => new HSTR((nint)(value));
 
-        public static implicit operator short(HSTR value) => (short)(value.Value);
+        public static explicit operator short(HSTR value) => (short)(value.Value);
 
         public static explicit operator HSTR(int value) => new HSTR((nint)(value));
 
-        public static implicit operator int(HSTR value) => (int)(value.Value);
+        public static explicit operator int(HSTR value) => (int)(value.Value);
 
         public static explicit operator HSTR(long value) => new HSTR((nint)(value));
 
-        public static explicit operator long(HSTR value) => (long)(value.Value);
+        public static implicit operator long(HSTR value) => (long)(value.Value);
 
         public static explicit operator HSTR(nint value) => new HSTR((nint)(value));
 
@@ -51,19 +51,19 @@ namespace TerraFX.Interop
 
         public static explicit operator HSTR(sbyte value) => new HSTR((nint)(value));
 
-        public static implicit operator sbyte(HSTR value) => (sbyte)(value.Value);
+        public static explicit operator sbyte(HSTR value) => (sbyte)(value.Value);
 
         public static explicit operator HSTR(ushort value) => new HSTR((nint)(value));
 
-        public static implicit operator ushort(HSTR value) => (ushort)(value.Value);
+        public static explicit operator ushort(HSTR value) => (ushort)(value.Value);
 
         public static explicit operator HSTR(uint value) => new HSTR((nint)(value));
 
-        public static implicit operator uint(HSTR value) => (uint)(value.Value);
+        public static explicit operator uint(HSTR value) => (uint)(value.Value);
 
         public static explicit operator HSTR(ulong value) => new HSTR((nint)(value));
 
-        public static explicit operator ulong(HSTR value) => (ulong)(value.Value);
+        public static implicit operator ulong(HSTR value) => (ulong)(value.Value);
 
         public static explicit operator HSTR(nuint value) => new HSTR((nint)(value));
 

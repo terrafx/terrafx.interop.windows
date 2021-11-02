@@ -31,19 +31,19 @@ namespace TerraFX.Interop
 
         public static explicit operator HIC(byte value) => new HIC((nint)(value));
 
-        public static implicit operator byte(HIC value) => (byte)(value.Value);
+        public static explicit operator byte(HIC value) => (byte)(value.Value);
 
         public static explicit operator HIC(short value) => new HIC((nint)(value));
 
-        public static implicit operator short(HIC value) => (short)(value.Value);
+        public static explicit operator short(HIC value) => (short)(value.Value);
 
         public static explicit operator HIC(int value) => new HIC((nint)(value));
 
-        public static implicit operator int(HIC value) => (int)(value.Value);
+        public static explicit operator int(HIC value) => (int)(value.Value);
 
         public static explicit operator HIC(long value) => new HIC((nint)(value));
 
-        public static explicit operator long(HIC value) => (long)(value.Value);
+        public static implicit operator long(HIC value) => (long)(value.Value);
 
         public static explicit operator HIC(nint value) => new HIC((nint)(value));
 
@@ -51,19 +51,19 @@ namespace TerraFX.Interop
 
         public static explicit operator HIC(sbyte value) => new HIC((nint)(value));
 
-        public static implicit operator sbyte(HIC value) => (sbyte)(value.Value);
+        public static explicit operator sbyte(HIC value) => (sbyte)(value.Value);
 
         public static explicit operator HIC(ushort value) => new HIC((nint)(value));
 
-        public static implicit operator ushort(HIC value) => (ushort)(value.Value);
+        public static explicit operator ushort(HIC value) => (ushort)(value.Value);
 
         public static explicit operator HIC(uint value) => new HIC((nint)(value));
 
-        public static implicit operator uint(HIC value) => (uint)(value.Value);
+        public static explicit operator uint(HIC value) => (uint)(value.Value);
 
         public static explicit operator HIC(ulong value) => new HIC((nint)(value));
 
-        public static explicit operator ulong(HIC value) => (ulong)(value.Value);
+        public static implicit operator ulong(HIC value) => (ulong)(value.Value);
 
         public static explicit operator HIC(nuint value) => new HIC((nint)(value));
 

@@ -31,19 +31,19 @@ namespace TerraFX.Interop
 
         public static explicit operator HSWDEVICE(byte value) => new HSWDEVICE((nint)(value));
 
-        public static implicit operator byte(HSWDEVICE value) => (byte)(value.Value);
+        public static explicit operator byte(HSWDEVICE value) => (byte)(value.Value);
 
         public static explicit operator HSWDEVICE(short value) => new HSWDEVICE((nint)(value));
 
-        public static implicit operator short(HSWDEVICE value) => (short)(value.Value);
+        public static explicit operator short(HSWDEVICE value) => (short)(value.Value);
 
         public static explicit operator HSWDEVICE(int value) => new HSWDEVICE((nint)(value));
 
-        public static implicit operator int(HSWDEVICE value) => (int)(value.Value);
+        public static explicit operator int(HSWDEVICE value) => (int)(value.Value);
 
         public static explicit operator HSWDEVICE(long value) => new HSWDEVICE((nint)(value));
 
-        public static explicit operator long(HSWDEVICE value) => (long)(value.Value);
+        public static implicit operator long(HSWDEVICE value) => (long)(value.Value);
 
         public static explicit operator HSWDEVICE(nint value) => new HSWDEVICE((nint)(value));
 
@@ -51,19 +51,19 @@ namespace TerraFX.Interop
 
         public static explicit operator HSWDEVICE(sbyte value) => new HSWDEVICE((nint)(value));
 
-        public static implicit operator sbyte(HSWDEVICE value) => (sbyte)(value.Value);
+        public static explicit operator sbyte(HSWDEVICE value) => (sbyte)(value.Value);
 
         public static explicit operator HSWDEVICE(ushort value) => new HSWDEVICE((nint)(value));
 
-        public static implicit operator ushort(HSWDEVICE value) => (ushort)(value.Value);
+        public static explicit operator ushort(HSWDEVICE value) => (ushort)(value.Value);
 
         public static explicit operator HSWDEVICE(uint value) => new HSWDEVICE((nint)(value));
 
-        public static implicit operator uint(HSWDEVICE value) => (uint)(value.Value);
+        public static explicit operator uint(HSWDEVICE value) => (uint)(value.Value);
 
         public static explicit operator HSWDEVICE(ulong value) => new HSWDEVICE((nint)(value));
 
-        public static explicit operator ulong(HSWDEVICE value) => (ulong)(value.Value);
+        public static implicit operator ulong(HSWDEVICE value) => (ulong)(value.Value);
 
         public static explicit operator HSWDEVICE(nuint value) => new HSWDEVICE((nint)(value));
 

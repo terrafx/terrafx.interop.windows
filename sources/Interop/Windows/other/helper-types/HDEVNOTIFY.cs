@@ -31,19 +31,19 @@ namespace TerraFX.Interop
 
         public static explicit operator HDEVNOTIFY(byte value) => new HDEVNOTIFY((nint)(value));
 
-        public static implicit operator byte(HDEVNOTIFY value) => (byte)(value.Value);
+        public static explicit operator byte(HDEVNOTIFY value) => (byte)(value.Value);
 
         public static explicit operator HDEVNOTIFY(short value) => new HDEVNOTIFY((nint)(value));
 
-        public static implicit operator short(HDEVNOTIFY value) => (short)(value.Value);
+        public static explicit operator short(HDEVNOTIFY value) => (short)(value.Value);
 
         public static explicit operator HDEVNOTIFY(int value) => new HDEVNOTIFY((nint)(value));
 
-        public static implicit operator int(HDEVNOTIFY value) => (int)(value.Value);
+        public static explicit operator int(HDEVNOTIFY value) => (int)(value.Value);
 
         public static explicit operator HDEVNOTIFY(long value) => new HDEVNOTIFY((nint)(value));
 
-        public static explicit operator long(HDEVNOTIFY value) => (long)(value.Value);
+        public static implicit operator long(HDEVNOTIFY value) => (long)(value.Value);
 
         public static explicit operator HDEVNOTIFY(nint value) => new HDEVNOTIFY((nint)(value));
 
@@ -51,19 +51,19 @@ namespace TerraFX.Interop
 
         public static explicit operator HDEVNOTIFY(sbyte value) => new HDEVNOTIFY((nint)(value));
 
-        public static implicit operator sbyte(HDEVNOTIFY value) => (sbyte)(value.Value);
+        public static explicit operator sbyte(HDEVNOTIFY value) => (sbyte)(value.Value);
 
         public static explicit operator HDEVNOTIFY(ushort value) => new HDEVNOTIFY((nint)(value));
 
-        public static implicit operator ushort(HDEVNOTIFY value) => (ushort)(value.Value);
+        public static explicit operator ushort(HDEVNOTIFY value) => (ushort)(value.Value);
 
         public static explicit operator HDEVNOTIFY(uint value) => new HDEVNOTIFY((nint)(value));
 
-        public static implicit operator uint(HDEVNOTIFY value) => (uint)(value.Value);
+        public static explicit operator uint(HDEVNOTIFY value) => (uint)(value.Value);
 
         public static explicit operator HDEVNOTIFY(ulong value) => new HDEVNOTIFY((nint)(value));
 
-        public static explicit operator ulong(HDEVNOTIFY value) => (ulong)(value.Value);
+        public static implicit operator ulong(HDEVNOTIFY value) => (ulong)(value.Value);
 
         public static explicit operator HDEVNOTIFY(nuint value) => new HDEVNOTIFY((nint)(value));
 

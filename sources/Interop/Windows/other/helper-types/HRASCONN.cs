@@ -31,19 +31,19 @@ namespace TerraFX.Interop
 
         public static explicit operator HRASCONN(byte value) => new HRASCONN((nint)(value));
 
-        public static implicit operator byte(HRASCONN value) => (byte)(value.Value);
+        public static explicit operator byte(HRASCONN value) => (byte)(value.Value);
 
         public static explicit operator HRASCONN(short value) => new HRASCONN((nint)(value));
 
-        public static implicit operator short(HRASCONN value) => (short)(value.Value);
+        public static explicit operator short(HRASCONN value) => (short)(value.Value);
 
         public static explicit operator HRASCONN(int value) => new HRASCONN((nint)(value));
 
-        public static implicit operator int(HRASCONN value) => (int)(value.Value);
+        public static explicit operator int(HRASCONN value) => (int)(value.Value);
 
         public static explicit operator HRASCONN(long value) => new HRASCONN((nint)(value));
 
-        public static explicit operator long(HRASCONN value) => (long)(value.Value);
+        public static implicit operator long(HRASCONN value) => (long)(value.Value);
 
         public static explicit operator HRASCONN(nint value) => new HRASCONN((nint)(value));
 
@@ -51,19 +51,19 @@ namespace TerraFX.Interop
 
         public static explicit operator HRASCONN(sbyte value) => new HRASCONN((nint)(value));
 
-        public static implicit operator sbyte(HRASCONN value) => (sbyte)(value.Value);
+        public static explicit operator sbyte(HRASCONN value) => (sbyte)(value.Value);
 
         public static explicit operator HRASCONN(ushort value) => new HRASCONN((nint)(value));
 
-        public static implicit operator ushort(HRASCONN value) => (ushort)(value.Value);
+        public static explicit operator ushort(HRASCONN value) => (ushort)(value.Value);
 
         public static explicit operator HRASCONN(uint value) => new HRASCONN((nint)(value));
 
-        public static implicit operator uint(HRASCONN value) => (uint)(value.Value);
+        public static explicit operator uint(HRASCONN value) => (uint)(value.Value);
 
         public static explicit operator HRASCONN(ulong value) => new HRASCONN((nint)(value));
 
-        public static explicit operator ulong(HRASCONN value) => (ulong)(value.Value);
+        public static implicit operator ulong(HRASCONN value) => (ulong)(value.Value);
 
         public static explicit operator HRASCONN(nuint value) => new HRASCONN((nint)(value));
 

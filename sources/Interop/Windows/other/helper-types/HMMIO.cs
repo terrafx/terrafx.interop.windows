@@ -31,19 +31,19 @@ namespace TerraFX.Interop
 
         public static explicit operator HMMIO(byte value) => new HMMIO((nint)(value));
 
-        public static implicit operator byte(HMMIO value) => (byte)(value.Value);
+        public static explicit operator byte(HMMIO value) => (byte)(value.Value);
 
         public static explicit operator HMMIO(short value) => new HMMIO((nint)(value));
 
-        public static implicit operator short(HMMIO value) => (short)(value.Value);
+        public static explicit operator short(HMMIO value) => (short)(value.Value);
 
         public static explicit operator HMMIO(int value) => new HMMIO((nint)(value));
 
-        public static implicit operator int(HMMIO value) => (int)(value.Value);
+        public static explicit operator int(HMMIO value) => (int)(value.Value);
 
         public static explicit operator HMMIO(long value) => new HMMIO((nint)(value));
 
-        public static explicit operator long(HMMIO value) => (long)(value.Value);
+        public static implicit operator long(HMMIO value) => (long)(value.Value);
 
         public static explicit operator HMMIO(nint value) => new HMMIO((nint)(value));
 
@@ -51,19 +51,19 @@ namespace TerraFX.Interop
 
         public static explicit operator HMMIO(sbyte value) => new HMMIO((nint)(value));
 
-        public static implicit operator sbyte(HMMIO value) => (sbyte)(value.Value);
+        public static explicit operator sbyte(HMMIO value) => (sbyte)(value.Value);
 
         public static explicit operator HMMIO(ushort value) => new HMMIO((nint)(value));
 
-        public static implicit operator ushort(HMMIO value) => (ushort)(value.Value);
+        public static explicit operator ushort(HMMIO value) => (ushort)(value.Value);
 
         public static explicit operator HMMIO(uint value) => new HMMIO((nint)(value));
 
-        public static implicit operator uint(HMMIO value) => (uint)(value.Value);
+        public static explicit operator uint(HMMIO value) => (uint)(value.Value);
 
         public static explicit operator HMMIO(ulong value) => new HMMIO((nint)(value));
 
-        public static explicit operator ulong(HMMIO value) => (ulong)(value.Value);
+        public static implicit operator ulong(HMMIO value) => (ulong)(value.Value);
 
         public static explicit operator HMMIO(nuint value) => new HMMIO((nint)(value));
 

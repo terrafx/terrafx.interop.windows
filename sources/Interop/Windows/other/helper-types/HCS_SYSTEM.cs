@@ -31,19 +31,19 @@ namespace TerraFX.Interop
 
         public static explicit operator HCS_SYSTEM(byte value) => new HCS_SYSTEM((nint)(value));
 
-        public static implicit operator byte(HCS_SYSTEM value) => (byte)(value.Value);
+        public static explicit operator byte(HCS_SYSTEM value) => (byte)(value.Value);
 
         public static explicit operator HCS_SYSTEM(short value) => new HCS_SYSTEM((nint)(value));
 
-        public static implicit operator short(HCS_SYSTEM value) => (short)(value.Value);
+        public static explicit operator short(HCS_SYSTEM value) => (short)(value.Value);
 
         public static explicit operator HCS_SYSTEM(int value) => new HCS_SYSTEM((nint)(value));
 
-        public static implicit operator int(HCS_SYSTEM value) => (int)(value.Value);
+        public static explicit operator int(HCS_SYSTEM value) => (int)(value.Value);
 
         public static explicit operator HCS_SYSTEM(long value) => new HCS_SYSTEM((nint)(value));
 
-        public static explicit operator long(HCS_SYSTEM value) => (long)(value.Value);
+        public static implicit operator long(HCS_SYSTEM value) => (long)(value.Value);
 
         public static explicit operator HCS_SYSTEM(nint value) => new HCS_SYSTEM((nint)(value));
 
@@ -51,19 +51,19 @@ namespace TerraFX.Interop
 
         public static explicit operator HCS_SYSTEM(sbyte value) => new HCS_SYSTEM((nint)(value));
 
-        public static implicit operator sbyte(HCS_SYSTEM value) => (sbyte)(value.Value);
+        public static explicit operator sbyte(HCS_SYSTEM value) => (sbyte)(value.Value);
 
         public static explicit operator HCS_SYSTEM(ushort value) => new HCS_SYSTEM((nint)(value));
 
-        public static implicit operator ushort(HCS_SYSTEM value) => (ushort)(value.Value);
+        public static explicit operator ushort(HCS_SYSTEM value) => (ushort)(value.Value);
 
         public static explicit operator HCS_SYSTEM(uint value) => new HCS_SYSTEM((nint)(value));
 
-        public static implicit operator uint(HCS_SYSTEM value) => (uint)(value.Value);
+        public static explicit operator uint(HCS_SYSTEM value) => (uint)(value.Value);
 
         public static explicit operator HCS_SYSTEM(ulong value) => new HCS_SYSTEM((nint)(value));
 
-        public static explicit operator ulong(HCS_SYSTEM value) => (ulong)(value.Value);
+        public static implicit operator ulong(HCS_SYSTEM value) => (ulong)(value.Value);
 
         public static explicit operator HCS_SYSTEM(nuint value) => new HCS_SYSTEM((nint)(value));
 

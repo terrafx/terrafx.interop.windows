@@ -31,19 +31,19 @@ namespace TerraFX.Interop
 
         public static explicit operator HSNMP_VBL(byte value) => new HSNMP_VBL((nint)(value));
 
-        public static implicit operator byte(HSNMP_VBL value) => (byte)(value.Value);
+        public static explicit operator byte(HSNMP_VBL value) => (byte)(value.Value);
 
         public static explicit operator HSNMP_VBL(short value) => new HSNMP_VBL((nint)(value));
 
-        public static implicit operator short(HSNMP_VBL value) => (short)(value.Value);
+        public static explicit operator short(HSNMP_VBL value) => (short)(value.Value);
 
         public static explicit operator HSNMP_VBL(int value) => new HSNMP_VBL((nint)(value));
 
-        public static implicit operator int(HSNMP_VBL value) => (int)(value.Value);
+        public static explicit operator int(HSNMP_VBL value) => (int)(value.Value);
 
         public static explicit operator HSNMP_VBL(long value) => new HSNMP_VBL((nint)(value));
 
-        public static explicit operator long(HSNMP_VBL value) => (long)(value.Value);
+        public static implicit operator long(HSNMP_VBL value) => (long)(value.Value);
 
         public static explicit operator HSNMP_VBL(nint value) => new HSNMP_VBL((nint)(value));
 
@@ -51,19 +51,19 @@ namespace TerraFX.Interop
 
         public static explicit operator HSNMP_VBL(sbyte value) => new HSNMP_VBL((nint)(value));
 
-        public static implicit operator sbyte(HSNMP_VBL value) => (sbyte)(value.Value);
+        public static explicit operator sbyte(HSNMP_VBL value) => (sbyte)(value.Value);
 
         public static explicit operator HSNMP_VBL(ushort value) => new HSNMP_VBL((nint)(value));
 
-        public static implicit operator ushort(HSNMP_VBL value) => (ushort)(value.Value);
+        public static explicit operator ushort(HSNMP_VBL value) => (ushort)(value.Value);
 
         public static explicit operator HSNMP_VBL(uint value) => new HSNMP_VBL((nint)(value));
 
-        public static implicit operator uint(HSNMP_VBL value) => (uint)(value.Value);
+        public static explicit operator uint(HSNMP_VBL value) => (uint)(value.Value);
 
         public static explicit operator HSNMP_VBL(ulong value) => new HSNMP_VBL((nint)(value));
 
-        public static explicit operator ulong(HSNMP_VBL value) => (ulong)(value.Value);
+        public static implicit operator ulong(HSNMP_VBL value) => (ulong)(value.Value);
 
         public static explicit operator HSNMP_VBL(nuint value) => new HSNMP_VBL((nint)(value));
 

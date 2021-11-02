@@ -31,19 +31,19 @@ namespace TerraFX.Interop
 
         public static explicit operator APARTMENT_SHUTDOWN_REGISTRATION_COOKIE(byte value) => new APARTMENT_SHUTDOWN_REGISTRATION_COOKIE((nint)(value));
 
-        public static implicit operator byte(APARTMENT_SHUTDOWN_REGISTRATION_COOKIE value) => (byte)(value.Value);
+        public static explicit operator byte(APARTMENT_SHUTDOWN_REGISTRATION_COOKIE value) => (byte)(value.Value);
 
         public static explicit operator APARTMENT_SHUTDOWN_REGISTRATION_COOKIE(short value) => new APARTMENT_SHUTDOWN_REGISTRATION_COOKIE((nint)(value));
 
-        public static implicit operator short(APARTMENT_SHUTDOWN_REGISTRATION_COOKIE value) => (short)(value.Value);
+        public static explicit operator short(APARTMENT_SHUTDOWN_REGISTRATION_COOKIE value) => (short)(value.Value);
 
         public static explicit operator APARTMENT_SHUTDOWN_REGISTRATION_COOKIE(int value) => new APARTMENT_SHUTDOWN_REGISTRATION_COOKIE((nint)(value));
 
-        public static implicit operator int(APARTMENT_SHUTDOWN_REGISTRATION_COOKIE value) => (int)(value.Value);
+        public static explicit operator int(APARTMENT_SHUTDOWN_REGISTRATION_COOKIE value) => (int)(value.Value);
 
         public static explicit operator APARTMENT_SHUTDOWN_REGISTRATION_COOKIE(long value) => new APARTMENT_SHUTDOWN_REGISTRATION_COOKIE((nint)(value));
 
-        public static explicit operator long(APARTMENT_SHUTDOWN_REGISTRATION_COOKIE value) => (long)(value.Value);
+        public static implicit operator long(APARTMENT_SHUTDOWN_REGISTRATION_COOKIE value) => (long)(value.Value);
 
         public static explicit operator APARTMENT_SHUTDOWN_REGISTRATION_COOKIE(nint value) => new APARTMENT_SHUTDOWN_REGISTRATION_COOKIE((nint)(value));
 
@@ -51,19 +51,19 @@ namespace TerraFX.Interop
 
         public static explicit operator APARTMENT_SHUTDOWN_REGISTRATION_COOKIE(sbyte value) => new APARTMENT_SHUTDOWN_REGISTRATION_COOKIE((nint)(value));
 
-        public static implicit operator sbyte(APARTMENT_SHUTDOWN_REGISTRATION_COOKIE value) => (sbyte)(value.Value);
+        public static explicit operator sbyte(APARTMENT_SHUTDOWN_REGISTRATION_COOKIE value) => (sbyte)(value.Value);
 
         public static explicit operator APARTMENT_SHUTDOWN_REGISTRATION_COOKIE(ushort value) => new APARTMENT_SHUTDOWN_REGISTRATION_COOKIE((nint)(value));
 
-        public static implicit operator ushort(APARTMENT_SHUTDOWN_REGISTRATION_COOKIE value) => (ushort)(value.Value);
+        public static explicit operator ushort(APARTMENT_SHUTDOWN_REGISTRATION_COOKIE value) => (ushort)(value.Value);
 
         public static explicit operator APARTMENT_SHUTDOWN_REGISTRATION_COOKIE(uint value) => new APARTMENT_SHUTDOWN_REGISTRATION_COOKIE((nint)(value));
 
-        public static implicit operator uint(APARTMENT_SHUTDOWN_REGISTRATION_COOKIE value) => (uint)(value.Value);
+        public static explicit operator uint(APARTMENT_SHUTDOWN_REGISTRATION_COOKIE value) => (uint)(value.Value);
 
         public static explicit operator APARTMENT_SHUTDOWN_REGISTRATION_COOKIE(ulong value) => new APARTMENT_SHUTDOWN_REGISTRATION_COOKIE((nint)(value));
 
-        public static explicit operator ulong(APARTMENT_SHUTDOWN_REGISTRATION_COOKIE value) => (ulong)(value.Value);
+        public static implicit operator ulong(APARTMENT_SHUTDOWN_REGISTRATION_COOKIE value) => (ulong)(value.Value);
 
         public static explicit operator APARTMENT_SHUTDOWN_REGISTRATION_COOKIE(nuint value) => new APARTMENT_SHUTDOWN_REGISTRATION_COOKIE((nint)(value));
 

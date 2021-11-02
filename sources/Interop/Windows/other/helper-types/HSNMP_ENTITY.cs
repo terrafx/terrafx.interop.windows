@@ -31,19 +31,19 @@ namespace TerraFX.Interop
 
         public static explicit operator HSNMP_ENTITY(byte value) => new HSNMP_ENTITY((nint)(value));
 
-        public static implicit operator byte(HSNMP_ENTITY value) => (byte)(value.Value);
+        public static explicit operator byte(HSNMP_ENTITY value) => (byte)(value.Value);
 
         public static explicit operator HSNMP_ENTITY(short value) => new HSNMP_ENTITY((nint)(value));
 
-        public static implicit operator short(HSNMP_ENTITY value) => (short)(value.Value);
+        public static explicit operator short(HSNMP_ENTITY value) => (short)(value.Value);
 
         public static explicit operator HSNMP_ENTITY(int value) => new HSNMP_ENTITY((nint)(value));
 
-        public static implicit operator int(HSNMP_ENTITY value) => (int)(value.Value);
+        public static explicit operator int(HSNMP_ENTITY value) => (int)(value.Value);
 
         public static explicit operator HSNMP_ENTITY(long value) => new HSNMP_ENTITY((nint)(value));
 
-        public static explicit operator long(HSNMP_ENTITY value) => (long)(value.Value);
+        public static implicit operator long(HSNMP_ENTITY value) => (long)(value.Value);
 
         public static explicit operator HSNMP_ENTITY(nint value) => new HSNMP_ENTITY((nint)(value));
 
@@ -51,19 +51,19 @@ namespace TerraFX.Interop
 
         public static explicit operator HSNMP_ENTITY(sbyte value) => new HSNMP_ENTITY((nint)(value));
 
-        public static implicit operator sbyte(HSNMP_ENTITY value) => (sbyte)(value.Value);
+        public static explicit operator sbyte(HSNMP_ENTITY value) => (sbyte)(value.Value);
 
         public static explicit operator HSNMP_ENTITY(ushort value) => new HSNMP_ENTITY((nint)(value));
 
-        public static implicit operator ushort(HSNMP_ENTITY value) => (ushort)(value.Value);
+        public static explicit operator ushort(HSNMP_ENTITY value) => (ushort)(value.Value);
 
         public static explicit operator HSNMP_ENTITY(uint value) => new HSNMP_ENTITY((nint)(value));
 
-        public static implicit operator uint(HSNMP_ENTITY value) => (uint)(value.Value);
+        public static explicit operator uint(HSNMP_ENTITY value) => (uint)(value.Value);
 
         public static explicit operator HSNMP_ENTITY(ulong value) => new HSNMP_ENTITY((nint)(value));
 
-        public static explicit operator ulong(HSNMP_ENTITY value) => (ulong)(value.Value);
+        public static implicit operator ulong(HSNMP_ENTITY value) => (ulong)(value.Value);
 
         public static explicit operator HSNMP_ENTITY(nuint value) => new HSNMP_ENTITY((nint)(value));
 

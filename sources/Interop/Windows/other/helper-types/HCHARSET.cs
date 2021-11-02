@@ -31,19 +31,19 @@ namespace TerraFX.Interop
 
         public static explicit operator HCHARSET(byte value) => new HCHARSET((nint)(value));
 
-        public static implicit operator byte(HCHARSET value) => (byte)(value.Value);
+        public static explicit operator byte(HCHARSET value) => (byte)(value.Value);
 
         public static explicit operator HCHARSET(short value) => new HCHARSET((nint)(value));
 
-        public static implicit operator short(HCHARSET value) => (short)(value.Value);
+        public static explicit operator short(HCHARSET value) => (short)(value.Value);
 
         public static explicit operator HCHARSET(int value) => new HCHARSET((nint)(value));
 
-        public static implicit operator int(HCHARSET value) => (int)(value.Value);
+        public static explicit operator int(HCHARSET value) => (int)(value.Value);
 
         public static explicit operator HCHARSET(long value) => new HCHARSET((nint)(value));
 
-        public static explicit operator long(HCHARSET value) => (long)(value.Value);
+        public static implicit operator long(HCHARSET value) => (long)(value.Value);
 
         public static explicit operator HCHARSET(nint value) => new HCHARSET((nint)(value));
 
@@ -51,19 +51,19 @@ namespace TerraFX.Interop
 
         public static explicit operator HCHARSET(sbyte value) => new HCHARSET((nint)(value));
 
-        public static implicit operator sbyte(HCHARSET value) => (sbyte)(value.Value);
+        public static explicit operator sbyte(HCHARSET value) => (sbyte)(value.Value);
 
         public static explicit operator HCHARSET(ushort value) => new HCHARSET((nint)(value));
 
-        public static implicit operator ushort(HCHARSET value) => (ushort)(value.Value);
+        public static explicit operator ushort(HCHARSET value) => (ushort)(value.Value);
 
         public static explicit operator HCHARSET(uint value) => new HCHARSET((nint)(value));
 
-        public static implicit operator uint(HCHARSET value) => (uint)(value.Value);
+        public static explicit operator uint(HCHARSET value) => (uint)(value.Value);
 
         public static explicit operator HCHARSET(ulong value) => new HCHARSET((nint)(value));
 
-        public static explicit operator ulong(HCHARSET value) => (ulong)(value.Value);
+        public static implicit operator ulong(HCHARSET value) => (ulong)(value.Value);
 
         public static explicit operator HCHARSET(nuint value) => new HCHARSET((nint)(value));
 

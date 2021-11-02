@@ -31,19 +31,19 @@ namespace TerraFX.Interop
 
         public static explicit operator HRECOGNIZER(byte value) => new HRECOGNIZER((nint)(value));
 
-        public static implicit operator byte(HRECOGNIZER value) => (byte)(value.Value);
+        public static explicit operator byte(HRECOGNIZER value) => (byte)(value.Value);
 
         public static explicit operator HRECOGNIZER(short value) => new HRECOGNIZER((nint)(value));
 
-        public static implicit operator short(HRECOGNIZER value) => (short)(value.Value);
+        public static explicit operator short(HRECOGNIZER value) => (short)(value.Value);
 
         public static explicit operator HRECOGNIZER(int value) => new HRECOGNIZER((nint)(value));
 
-        public static implicit operator int(HRECOGNIZER value) => (int)(value.Value);
+        public static explicit operator int(HRECOGNIZER value) => (int)(value.Value);
 
         public static explicit operator HRECOGNIZER(long value) => new HRECOGNIZER((nint)(value));
 
-        public static explicit operator long(HRECOGNIZER value) => (long)(value.Value);
+        public static implicit operator long(HRECOGNIZER value) => (long)(value.Value);
 
         public static explicit operator HRECOGNIZER(nint value) => new HRECOGNIZER((nint)(value));
 
@@ -51,19 +51,19 @@ namespace TerraFX.Interop
 
         public static explicit operator HRECOGNIZER(sbyte value) => new HRECOGNIZER((nint)(value));
 
-        public static implicit operator sbyte(HRECOGNIZER value) => (sbyte)(value.Value);
+        public static explicit operator sbyte(HRECOGNIZER value) => (sbyte)(value.Value);
 
         public static explicit operator HRECOGNIZER(ushort value) => new HRECOGNIZER((nint)(value));
 
-        public static implicit operator ushort(HRECOGNIZER value) => (ushort)(value.Value);
+        public static explicit operator ushort(HRECOGNIZER value) => (ushort)(value.Value);
 
         public static explicit operator HRECOGNIZER(uint value) => new HRECOGNIZER((nint)(value));
 
-        public static implicit operator uint(HRECOGNIZER value) => (uint)(value.Value);
+        public static explicit operator uint(HRECOGNIZER value) => (uint)(value.Value);
 
         public static explicit operator HRECOGNIZER(ulong value) => new HRECOGNIZER((nint)(value));
 
-        public static explicit operator ulong(HRECOGNIZER value) => (ulong)(value.Value);
+        public static implicit operator ulong(HRECOGNIZER value) => (ulong)(value.Value);
 
         public static explicit operator HRECOGNIZER(nuint value) => new HRECOGNIZER((nint)(value));
 

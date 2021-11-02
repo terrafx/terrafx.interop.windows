@@ -31,19 +31,19 @@ namespace TerraFX.Interop
 
         public static explicit operator HUIANODE(byte value) => new HUIANODE((nint)(value));
 
-        public static implicit operator byte(HUIANODE value) => (byte)(value.Value);
+        public static explicit operator byte(HUIANODE value) => (byte)(value.Value);
 
         public static explicit operator HUIANODE(short value) => new HUIANODE((nint)(value));
 
-        public static implicit operator short(HUIANODE value) => (short)(value.Value);
+        public static explicit operator short(HUIANODE value) => (short)(value.Value);
 
         public static explicit operator HUIANODE(int value) => new HUIANODE((nint)(value));
 
-        public static implicit operator int(HUIANODE value) => (int)(value.Value);
+        public static explicit operator int(HUIANODE value) => (int)(value.Value);
 
         public static explicit operator HUIANODE(long value) => new HUIANODE((nint)(value));
 
-        public static explicit operator long(HUIANODE value) => (long)(value.Value);
+        public static implicit operator long(HUIANODE value) => (long)(value.Value);
 
         public static explicit operator HUIANODE(nint value) => new HUIANODE((nint)(value));
 
@@ -51,19 +51,19 @@ namespace TerraFX.Interop
 
         public static explicit operator HUIANODE(sbyte value) => new HUIANODE((nint)(value));
 
-        public static implicit operator sbyte(HUIANODE value) => (sbyte)(value.Value);
+        public static explicit operator sbyte(HUIANODE value) => (sbyte)(value.Value);
 
         public static explicit operator HUIANODE(ushort value) => new HUIANODE((nint)(value));
 
-        public static implicit operator ushort(HUIANODE value) => (ushort)(value.Value);
+        public static explicit operator ushort(HUIANODE value) => (ushort)(value.Value);
 
         public static explicit operator HUIANODE(uint value) => new HUIANODE((nint)(value));
 
-        public static implicit operator uint(HUIANODE value) => (uint)(value.Value);
+        public static explicit operator uint(HUIANODE value) => (uint)(value.Value);
 
         public static explicit operator HUIANODE(ulong value) => new HUIANODE((nint)(value));
 
-        public static explicit operator ulong(HUIANODE value) => (ulong)(value.Value);
+        public static implicit operator ulong(HUIANODE value) => (ulong)(value.Value);
 
         public static explicit operator HUIANODE(nuint value) => new HUIANODE((nint)(value));
 

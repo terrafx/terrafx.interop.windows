@@ -31,19 +31,19 @@ namespace TerraFX.Interop
 
         public static explicit operator HGDIOBJ(byte value) => new HGDIOBJ((nint)(value));
 
-        public static implicit operator byte(HGDIOBJ value) => (byte)(value.Value);
+        public static explicit operator byte(HGDIOBJ value) => (byte)(value.Value);
 
         public static explicit operator HGDIOBJ(short value) => new HGDIOBJ((nint)(value));
 
-        public static implicit operator short(HGDIOBJ value) => (short)(value.Value);
+        public static explicit operator short(HGDIOBJ value) => (short)(value.Value);
 
         public static explicit operator HGDIOBJ(int value) => new HGDIOBJ((nint)(value));
 
-        public static implicit operator int(HGDIOBJ value) => (int)(value.Value);
+        public static explicit operator int(HGDIOBJ value) => (int)(value.Value);
 
         public static explicit operator HGDIOBJ(long value) => new HGDIOBJ((nint)(value));
 
-        public static explicit operator long(HGDIOBJ value) => (long)(value.Value);
+        public static implicit operator long(HGDIOBJ value) => (long)(value.Value);
 
         public static explicit operator HGDIOBJ(nint value) => new HGDIOBJ((nint)(value));
 
@@ -51,19 +51,19 @@ namespace TerraFX.Interop
 
         public static explicit operator HGDIOBJ(sbyte value) => new HGDIOBJ((nint)(value));
 
-        public static implicit operator sbyte(HGDIOBJ value) => (sbyte)(value.Value);
+        public static explicit operator sbyte(HGDIOBJ value) => (sbyte)(value.Value);
 
         public static explicit operator HGDIOBJ(ushort value) => new HGDIOBJ((nint)(value));
 
-        public static implicit operator ushort(HGDIOBJ value) => (ushort)(value.Value);
+        public static explicit operator ushort(HGDIOBJ value) => (ushort)(value.Value);
 
         public static explicit operator HGDIOBJ(uint value) => new HGDIOBJ((nint)(value));
 
-        public static implicit operator uint(HGDIOBJ value) => (uint)(value.Value);
+        public static explicit operator uint(HGDIOBJ value) => (uint)(value.Value);
 
         public static explicit operator HGDIOBJ(ulong value) => new HGDIOBJ((nint)(value));
 
-        public static explicit operator ulong(HGDIOBJ value) => (ulong)(value.Value);
+        public static implicit operator ulong(HGDIOBJ value) => (ulong)(value.Value);
 
         public static explicit operator HGDIOBJ(nuint value) => new HGDIOBJ((nint)(value));
 

@@ -31,19 +31,19 @@ namespace TerraFX.Interop
 
         public static explicit operator HKEY(byte value) => new HKEY((nint)(value));
 
-        public static implicit operator byte(HKEY value) => (byte)(value.Value);
+        public static explicit operator byte(HKEY value) => (byte)(value.Value);
 
         public static explicit operator HKEY(short value) => new HKEY((nint)(value));
 
-        public static implicit operator short(HKEY value) => (short)(value.Value);
+        public static explicit operator short(HKEY value) => (short)(value.Value);
 
         public static explicit operator HKEY(int value) => new HKEY((nint)(value));
 
-        public static implicit operator int(HKEY value) => (int)(value.Value);
+        public static explicit operator int(HKEY value) => (int)(value.Value);
 
         public static explicit operator HKEY(long value) => new HKEY((nint)(value));
 
-        public static explicit operator long(HKEY value) => (long)(value.Value);
+        public static implicit operator long(HKEY value) => (long)(value.Value);
 
         public static explicit operator HKEY(nint value) => new HKEY((nint)(value));
 
@@ -51,19 +51,19 @@ namespace TerraFX.Interop
 
         public static explicit operator HKEY(sbyte value) => new HKEY((nint)(value));
 
-        public static implicit operator sbyte(HKEY value) => (sbyte)(value.Value);
+        public static explicit operator sbyte(HKEY value) => (sbyte)(value.Value);
 
         public static explicit operator HKEY(ushort value) => new HKEY((nint)(value));
 
-        public static implicit operator ushort(HKEY value) => (ushort)(value.Value);
+        public static explicit operator ushort(HKEY value) => (ushort)(value.Value);
 
         public static explicit operator HKEY(uint value) => new HKEY((nint)(value));
 
-        public static implicit operator uint(HKEY value) => (uint)(value.Value);
+        public static explicit operator uint(HKEY value) => (uint)(value.Value);
 
         public static explicit operator HKEY(ulong value) => new HKEY((nint)(value));
 
-        public static explicit operator ulong(HKEY value) => (ulong)(value.Value);
+        public static implicit operator ulong(HKEY value) => (ulong)(value.Value);
 
         public static explicit operator HKEY(nuint value) => new HKEY((nint)(value));
 

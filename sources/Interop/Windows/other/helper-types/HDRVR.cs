@@ -31,19 +31,19 @@ namespace TerraFX.Interop
 
         public static explicit operator HDRVR(byte value) => new HDRVR((nint)(value));
 
-        public static implicit operator byte(HDRVR value) => (byte)(value.Value);
+        public static explicit operator byte(HDRVR value) => (byte)(value.Value);
 
         public static explicit operator HDRVR(short value) => new HDRVR((nint)(value));
 
-        public static implicit operator short(HDRVR value) => (short)(value.Value);
+        public static explicit operator short(HDRVR value) => (short)(value.Value);
 
         public static explicit operator HDRVR(int value) => new HDRVR((nint)(value));
 
-        public static implicit operator int(HDRVR value) => (int)(value.Value);
+        public static explicit operator int(HDRVR value) => (int)(value.Value);
 
         public static explicit operator HDRVR(long value) => new HDRVR((nint)(value));
 
-        public static explicit operator long(HDRVR value) => (long)(value.Value);
+        public static implicit operator long(HDRVR value) => (long)(value.Value);
 
         public static explicit operator HDRVR(nint value) => new HDRVR((nint)(value));
 
@@ -51,19 +51,19 @@ namespace TerraFX.Interop
 
         public static explicit operator HDRVR(sbyte value) => new HDRVR((nint)(value));
 
-        public static implicit operator sbyte(HDRVR value) => (sbyte)(value.Value);
+        public static explicit operator sbyte(HDRVR value) => (sbyte)(value.Value);
 
         public static explicit operator HDRVR(ushort value) => new HDRVR((nint)(value));
 
-        public static implicit operator ushort(HDRVR value) => (ushort)(value.Value);
+        public static explicit operator ushort(HDRVR value) => (ushort)(value.Value);
 
         public static explicit operator HDRVR(uint value) => new HDRVR((nint)(value));
 
-        public static implicit operator uint(HDRVR value) => (uint)(value.Value);
+        public static explicit operator uint(HDRVR value) => (uint)(value.Value);
 
         public static explicit operator HDRVR(ulong value) => new HDRVR((nint)(value));
 
-        public static explicit operator ulong(HDRVR value) => (ulong)(value.Value);
+        public static implicit operator ulong(HDRVR value) => (ulong)(value.Value);
 
         public static explicit operator HDRVR(nuint value) => new HDRVR((nint)(value));
 

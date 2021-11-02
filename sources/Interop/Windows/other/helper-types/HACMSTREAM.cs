@@ -31,19 +31,19 @@ namespace TerraFX.Interop
 
         public static explicit operator HACMSTREAM(byte value) => new HACMSTREAM((nint)(value));
 
-        public static implicit operator byte(HACMSTREAM value) => (byte)(value.Value);
+        public static explicit operator byte(HACMSTREAM value) => (byte)(value.Value);
 
         public static explicit operator HACMSTREAM(short value) => new HACMSTREAM((nint)(value));
 
-        public static implicit operator short(HACMSTREAM value) => (short)(value.Value);
+        public static explicit operator short(HACMSTREAM value) => (short)(value.Value);
 
         public static explicit operator HACMSTREAM(int value) => new HACMSTREAM((nint)(value));
 
-        public static implicit operator int(HACMSTREAM value) => (int)(value.Value);
+        public static explicit operator int(HACMSTREAM value) => (int)(value.Value);
 
         public static explicit operator HACMSTREAM(long value) => new HACMSTREAM((nint)(value));
 
-        public static explicit operator long(HACMSTREAM value) => (long)(value.Value);
+        public static implicit operator long(HACMSTREAM value) => (long)(value.Value);
 
         public static explicit operator HACMSTREAM(nint value) => new HACMSTREAM((nint)(value));
 
@@ -51,19 +51,19 @@ namespace TerraFX.Interop
 
         public static explicit operator HACMSTREAM(sbyte value) => new HACMSTREAM((nint)(value));
 
-        public static implicit operator sbyte(HACMSTREAM value) => (sbyte)(value.Value);
+        public static explicit operator sbyte(HACMSTREAM value) => (sbyte)(value.Value);
 
         public static explicit operator HACMSTREAM(ushort value) => new HACMSTREAM((nint)(value));
 
-        public static implicit operator ushort(HACMSTREAM value) => (ushort)(value.Value);
+        public static explicit operator ushort(HACMSTREAM value) => (ushort)(value.Value);
 
         public static explicit operator HACMSTREAM(uint value) => new HACMSTREAM((nint)(value));
 
-        public static implicit operator uint(HACMSTREAM value) => (uint)(value.Value);
+        public static explicit operator uint(HACMSTREAM value) => (uint)(value.Value);
 
         public static explicit operator HACMSTREAM(ulong value) => new HACMSTREAM((nint)(value));
 
-        public static explicit operator ulong(HACMSTREAM value) => (ulong)(value.Value);
+        public static implicit operator ulong(HACMSTREAM value) => (ulong)(value.Value);
 
         public static explicit operator HACMSTREAM(nuint value) => new HACMSTREAM((nint)(value));
 

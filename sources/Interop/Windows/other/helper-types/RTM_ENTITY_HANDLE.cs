@@ -25,19 +25,19 @@ namespace TerraFX.Interop
 
         public static explicit operator RTM_ENTITY_HANDLE(byte value) => new RTM_ENTITY_HANDLE((nint)(value));
 
-        public static implicit operator byte(RTM_ENTITY_HANDLE value) => (byte)(value.Value);
+        public static explicit operator byte(RTM_ENTITY_HANDLE value) => (byte)(value.Value);
 
         public static explicit operator RTM_ENTITY_HANDLE(short value) => new RTM_ENTITY_HANDLE((nint)(value));
 
-        public static implicit operator short(RTM_ENTITY_HANDLE value) => (short)(value.Value);
+        public static explicit operator short(RTM_ENTITY_HANDLE value) => (short)(value.Value);
 
         public static explicit operator RTM_ENTITY_HANDLE(int value) => new RTM_ENTITY_HANDLE((nint)(value));
 
-        public static implicit operator int(RTM_ENTITY_HANDLE value) => (int)(value.Value);
+        public static explicit operator int(RTM_ENTITY_HANDLE value) => (int)(value.Value);
 
         public static explicit operator RTM_ENTITY_HANDLE(long value) => new RTM_ENTITY_HANDLE((nint)(value));
 
-        public static explicit operator long(RTM_ENTITY_HANDLE value) => (long)(value.Value);
+        public static implicit operator long(RTM_ENTITY_HANDLE value) => (long)(value.Value);
 
         public static explicit operator RTM_ENTITY_HANDLE(nint value) => new RTM_ENTITY_HANDLE((nint)(value));
 
@@ -45,19 +45,19 @@ namespace TerraFX.Interop
 
         public static explicit operator RTM_ENTITY_HANDLE(sbyte value) => new RTM_ENTITY_HANDLE((nint)(value));
 
-        public static implicit operator sbyte(RTM_ENTITY_HANDLE value) => (sbyte)(value.Value);
+        public static explicit operator sbyte(RTM_ENTITY_HANDLE value) => (sbyte)(value.Value);
 
         public static explicit operator RTM_ENTITY_HANDLE(ushort value) => new RTM_ENTITY_HANDLE((nint)(value));
 
-        public static implicit operator ushort(RTM_ENTITY_HANDLE value) => (ushort)(value.Value);
+        public static explicit operator ushort(RTM_ENTITY_HANDLE value) => (ushort)(value.Value);
 
         public static explicit operator RTM_ENTITY_HANDLE(uint value) => new RTM_ENTITY_HANDLE((nint)(value));
 
-        public static implicit operator uint(RTM_ENTITY_HANDLE value) => (uint)(value.Value);
+        public static explicit operator uint(RTM_ENTITY_HANDLE value) => (uint)(value.Value);
 
         public static explicit operator RTM_ENTITY_HANDLE(ulong value) => new RTM_ENTITY_HANDLE((nint)(value));
 
-        public static explicit operator ulong(RTM_ENTITY_HANDLE value) => (ulong)(value.Value);
+        public static implicit operator ulong(RTM_ENTITY_HANDLE value) => (ulong)(value.Value);
 
         public static explicit operator RTM_ENTITY_HANDLE(nuint value) => new RTM_ENTITY_HANDLE((nint)(value));
 

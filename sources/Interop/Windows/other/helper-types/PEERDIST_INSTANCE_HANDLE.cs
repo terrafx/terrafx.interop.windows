@@ -31,19 +31,19 @@ namespace TerraFX.Interop
 
         public static explicit operator PEERDIST_INSTANCE_HANDLE(byte value) => new PEERDIST_INSTANCE_HANDLE((nint)(value));
 
-        public static implicit operator byte(PEERDIST_INSTANCE_HANDLE value) => (byte)(value.Value);
+        public static explicit operator byte(PEERDIST_INSTANCE_HANDLE value) => (byte)(value.Value);
 
         public static explicit operator PEERDIST_INSTANCE_HANDLE(short value) => new PEERDIST_INSTANCE_HANDLE((nint)(value));
 
-        public static implicit operator short(PEERDIST_INSTANCE_HANDLE value) => (short)(value.Value);
+        public static explicit operator short(PEERDIST_INSTANCE_HANDLE value) => (short)(value.Value);
 
         public static explicit operator PEERDIST_INSTANCE_HANDLE(int value) => new PEERDIST_INSTANCE_HANDLE((nint)(value));
 
-        public static implicit operator int(PEERDIST_INSTANCE_HANDLE value) => (int)(value.Value);
+        public static explicit operator int(PEERDIST_INSTANCE_HANDLE value) => (int)(value.Value);
 
         public static explicit operator PEERDIST_INSTANCE_HANDLE(long value) => new PEERDIST_INSTANCE_HANDLE((nint)(value));
 
-        public static explicit operator long(PEERDIST_INSTANCE_HANDLE value) => (long)(value.Value);
+        public static implicit operator long(PEERDIST_INSTANCE_HANDLE value) => (long)(value.Value);
 
         public static explicit operator PEERDIST_INSTANCE_HANDLE(nint value) => new PEERDIST_INSTANCE_HANDLE((nint)(value));
 
@@ -51,19 +51,19 @@ namespace TerraFX.Interop
 
         public static explicit operator PEERDIST_INSTANCE_HANDLE(sbyte value) => new PEERDIST_INSTANCE_HANDLE((nint)(value));
 
-        public static implicit operator sbyte(PEERDIST_INSTANCE_HANDLE value) => (sbyte)(value.Value);
+        public static explicit operator sbyte(PEERDIST_INSTANCE_HANDLE value) => (sbyte)(value.Value);
 
         public static explicit operator PEERDIST_INSTANCE_HANDLE(ushort value) => new PEERDIST_INSTANCE_HANDLE((nint)(value));
 
-        public static implicit operator ushort(PEERDIST_INSTANCE_HANDLE value) => (ushort)(value.Value);
+        public static explicit operator ushort(PEERDIST_INSTANCE_HANDLE value) => (ushort)(value.Value);
 
         public static explicit operator PEERDIST_INSTANCE_HANDLE(uint value) => new PEERDIST_INSTANCE_HANDLE((nint)(value));
 
-        public static implicit operator uint(PEERDIST_INSTANCE_HANDLE value) => (uint)(value.Value);
+        public static explicit operator uint(PEERDIST_INSTANCE_HANDLE value) => (uint)(value.Value);
 
         public static explicit operator PEERDIST_INSTANCE_HANDLE(ulong value) => new PEERDIST_INSTANCE_HANDLE((nint)(value));
 
-        public static explicit operator ulong(PEERDIST_INSTANCE_HANDLE value) => (ulong)(value.Value);
+        public static implicit operator ulong(PEERDIST_INSTANCE_HANDLE value) => (ulong)(value.Value);
 
         public static explicit operator PEERDIST_INSTANCE_HANDLE(nuint value) => new PEERDIST_INSTANCE_HANDLE((nint)(value));
 

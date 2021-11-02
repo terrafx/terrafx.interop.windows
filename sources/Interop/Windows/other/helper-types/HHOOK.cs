@@ -31,19 +31,19 @@ namespace TerraFX.Interop
 
         public static explicit operator HHOOK(byte value) => new HHOOK((nint)(value));
 
-        public static implicit operator byte(HHOOK value) => (byte)(value.Value);
+        public static explicit operator byte(HHOOK value) => (byte)(value.Value);
 
         public static explicit operator HHOOK(short value) => new HHOOK((nint)(value));
 
-        public static implicit operator short(HHOOK value) => (short)(value.Value);
+        public static explicit operator short(HHOOK value) => (short)(value.Value);
 
         public static explicit operator HHOOK(int value) => new HHOOK((nint)(value));
 
-        public static implicit operator int(HHOOK value) => (int)(value.Value);
+        public static explicit operator int(HHOOK value) => (int)(value.Value);
 
         public static explicit operator HHOOK(long value) => new HHOOK((nint)(value));
 
-        public static explicit operator long(HHOOK value) => (long)(value.Value);
+        public static implicit operator long(HHOOK value) => (long)(value.Value);
 
         public static explicit operator HHOOK(nint value) => new HHOOK((nint)(value));
 
@@ -51,19 +51,19 @@ namespace TerraFX.Interop
 
         public static explicit operator HHOOK(sbyte value) => new HHOOK((nint)(value));
 
-        public static implicit operator sbyte(HHOOK value) => (sbyte)(value.Value);
+        public static explicit operator sbyte(HHOOK value) => (sbyte)(value.Value);
 
         public static explicit operator HHOOK(ushort value) => new HHOOK((nint)(value));
 
-        public static implicit operator ushort(HHOOK value) => (ushort)(value.Value);
+        public static explicit operator ushort(HHOOK value) => (ushort)(value.Value);
 
         public static explicit operator HHOOK(uint value) => new HHOOK((nint)(value));
 
-        public static implicit operator uint(HHOOK value) => (uint)(value.Value);
+        public static explicit operator uint(HHOOK value) => (uint)(value.Value);
 
         public static explicit operator HHOOK(ulong value) => new HHOOK((nint)(value));
 
-        public static explicit operator ulong(HHOOK value) => (ulong)(value.Value);
+        public static implicit operator ulong(HHOOK value) => (ulong)(value.Value);
 
         public static explicit operator HHOOK(nuint value) => new HHOOK((nint)(value));
 

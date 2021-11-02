@@ -31,19 +31,19 @@ namespace TerraFX.Interop
 
         public static explicit operator DHSURF(byte value) => new DHSURF((nint)(value));
 
-        public static implicit operator byte(DHSURF value) => (byte)(value.Value);
+        public static explicit operator byte(DHSURF value) => (byte)(value.Value);
 
         public static explicit operator DHSURF(short value) => new DHSURF((nint)(value));
 
-        public static implicit operator short(DHSURF value) => (short)(value.Value);
+        public static explicit operator short(DHSURF value) => (short)(value.Value);
 
         public static explicit operator DHSURF(int value) => new DHSURF((nint)(value));
 
-        public static implicit operator int(DHSURF value) => (int)(value.Value);
+        public static explicit operator int(DHSURF value) => (int)(value.Value);
 
         public static explicit operator DHSURF(long value) => new DHSURF((nint)(value));
 
-        public static explicit operator long(DHSURF value) => (long)(value.Value);
+        public static implicit operator long(DHSURF value) => (long)(value.Value);
 
         public static explicit operator DHSURF(nint value) => new DHSURF((nint)(value));
 
@@ -51,19 +51,19 @@ namespace TerraFX.Interop
 
         public static explicit operator DHSURF(sbyte value) => new DHSURF((nint)(value));
 
-        public static implicit operator sbyte(DHSURF value) => (sbyte)(value.Value);
+        public static explicit operator sbyte(DHSURF value) => (sbyte)(value.Value);
 
         public static explicit operator DHSURF(ushort value) => new DHSURF((nint)(value));
 
-        public static implicit operator ushort(DHSURF value) => (ushort)(value.Value);
+        public static explicit operator ushort(DHSURF value) => (ushort)(value.Value);
 
         public static explicit operator DHSURF(uint value) => new DHSURF((nint)(value));
 
-        public static implicit operator uint(DHSURF value) => (uint)(value.Value);
+        public static explicit operator uint(DHSURF value) => (uint)(value.Value);
 
         public static explicit operator DHSURF(ulong value) => new DHSURF((nint)(value));
 
-        public static explicit operator ulong(DHSURF value) => (ulong)(value.Value);
+        public static implicit operator ulong(DHSURF value) => (ulong)(value.Value);
 
         public static explicit operator DHSURF(nuint value) => new DHSURF((nint)(value));
 

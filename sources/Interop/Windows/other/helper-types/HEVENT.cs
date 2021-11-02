@@ -31,19 +31,19 @@ namespace TerraFX.Interop
 
         public static explicit operator HEVENT(byte value) => new HEVENT((nint)(value));
 
-        public static implicit operator byte(HEVENT value) => (byte)(value.Value);
+        public static explicit operator byte(HEVENT value) => (byte)(value.Value);
 
         public static explicit operator HEVENT(short value) => new HEVENT((nint)(value));
 
-        public static implicit operator short(HEVENT value) => (short)(value.Value);
+        public static explicit operator short(HEVENT value) => (short)(value.Value);
 
         public static explicit operator HEVENT(int value) => new HEVENT((nint)(value));
 
-        public static implicit operator int(HEVENT value) => (int)(value.Value);
+        public static explicit operator int(HEVENT value) => (int)(value.Value);
 
         public static explicit operator HEVENT(long value) => new HEVENT((nint)(value));
 
-        public static explicit operator long(HEVENT value) => (long)(value.Value);
+        public static implicit operator long(HEVENT value) => (long)(value.Value);
 
         public static explicit operator HEVENT(nint value) => new HEVENT((nint)(value));
 
@@ -51,19 +51,19 @@ namespace TerraFX.Interop
 
         public static explicit operator HEVENT(sbyte value) => new HEVENT((nint)(value));
 
-        public static implicit operator sbyte(HEVENT value) => (sbyte)(value.Value);
+        public static explicit operator sbyte(HEVENT value) => (sbyte)(value.Value);
 
         public static explicit operator HEVENT(ushort value) => new HEVENT((nint)(value));
 
-        public static implicit operator ushort(HEVENT value) => (ushort)(value.Value);
+        public static explicit operator ushort(HEVENT value) => (ushort)(value.Value);
 
         public static explicit operator HEVENT(uint value) => new HEVENT((nint)(value));
 
-        public static implicit operator uint(HEVENT value) => (uint)(value.Value);
+        public static explicit operator uint(HEVENT value) => (uint)(value.Value);
 
         public static explicit operator HEVENT(ulong value) => new HEVENT((nint)(value));
 
-        public static explicit operator ulong(HEVENT value) => (ulong)(value.Value);
+        public static implicit operator ulong(HEVENT value) => (ulong)(value.Value);
 
         public static explicit operator HEVENT(nuint value) => new HEVENT((nint)(value));
 

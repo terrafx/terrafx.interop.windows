@@ -31,19 +31,19 @@ namespace TerraFX.Interop
 
         public static explicit operator ROPARAMIIDHANDLE(byte value) => new ROPARAMIIDHANDLE((nint)(value));
 
-        public static implicit operator byte(ROPARAMIIDHANDLE value) => (byte)(value.Value);
+        public static explicit operator byte(ROPARAMIIDHANDLE value) => (byte)(value.Value);
 
         public static explicit operator ROPARAMIIDHANDLE(short value) => new ROPARAMIIDHANDLE((nint)(value));
 
-        public static implicit operator short(ROPARAMIIDHANDLE value) => (short)(value.Value);
+        public static explicit operator short(ROPARAMIIDHANDLE value) => (short)(value.Value);
 
         public static explicit operator ROPARAMIIDHANDLE(int value) => new ROPARAMIIDHANDLE((nint)(value));
 
-        public static implicit operator int(ROPARAMIIDHANDLE value) => (int)(value.Value);
+        public static explicit operator int(ROPARAMIIDHANDLE value) => (int)(value.Value);
 
         public static explicit operator ROPARAMIIDHANDLE(long value) => new ROPARAMIIDHANDLE((nint)(value));
 
-        public static explicit operator long(ROPARAMIIDHANDLE value) => (long)(value.Value);
+        public static implicit operator long(ROPARAMIIDHANDLE value) => (long)(value.Value);
 
         public static explicit operator ROPARAMIIDHANDLE(nint value) => new ROPARAMIIDHANDLE((nint)(value));
 
@@ -51,19 +51,19 @@ namespace TerraFX.Interop
 
         public static explicit operator ROPARAMIIDHANDLE(sbyte value) => new ROPARAMIIDHANDLE((nint)(value));
 
-        public static implicit operator sbyte(ROPARAMIIDHANDLE value) => (sbyte)(value.Value);
+        public static explicit operator sbyte(ROPARAMIIDHANDLE value) => (sbyte)(value.Value);
 
         public static explicit operator ROPARAMIIDHANDLE(ushort value) => new ROPARAMIIDHANDLE((nint)(value));
 
-        public static implicit operator ushort(ROPARAMIIDHANDLE value) => (ushort)(value.Value);
+        public static explicit operator ushort(ROPARAMIIDHANDLE value) => (ushort)(value.Value);
 
         public static explicit operator ROPARAMIIDHANDLE(uint value) => new ROPARAMIIDHANDLE((nint)(value));
 
-        public static implicit operator uint(ROPARAMIIDHANDLE value) => (uint)(value.Value);
+        public static explicit operator uint(ROPARAMIIDHANDLE value) => (uint)(value.Value);
 
         public static explicit operator ROPARAMIIDHANDLE(ulong value) => new ROPARAMIIDHANDLE((nint)(value));
 
-        public static explicit operator ulong(ROPARAMIIDHANDLE value) => (ulong)(value.Value);
+        public static implicit operator ulong(ROPARAMIIDHANDLE value) => (ulong)(value.Value);
 
         public static explicit operator ROPARAMIIDHANDLE(nuint value) => new ROPARAMIIDHANDLE((nint)(value));
 

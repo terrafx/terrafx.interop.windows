@@ -31,19 +31,19 @@ namespace TerraFX.Interop
 
         public static explicit operator HINSTANCE(byte value) => new HINSTANCE((nint)(value));
 
-        public static implicit operator byte(HINSTANCE value) => (byte)(value.Value);
+        public static explicit operator byte(HINSTANCE value) => (byte)(value.Value);
 
         public static explicit operator HINSTANCE(short value) => new HINSTANCE((nint)(value));
 
-        public static implicit operator short(HINSTANCE value) => (short)(value.Value);
+        public static explicit operator short(HINSTANCE value) => (short)(value.Value);
 
         public static explicit operator HINSTANCE(int value) => new HINSTANCE((nint)(value));
 
-        public static implicit operator int(HINSTANCE value) => (int)(value.Value);
+        public static explicit operator int(HINSTANCE value) => (int)(value.Value);
 
         public static explicit operator HINSTANCE(long value) => new HINSTANCE((nint)(value));
 
-        public static explicit operator long(HINSTANCE value) => (long)(value.Value);
+        public static implicit operator long(HINSTANCE value) => (long)(value.Value);
 
         public static explicit operator HINSTANCE(nint value) => new HINSTANCE((nint)(value));
 
@@ -51,19 +51,19 @@ namespace TerraFX.Interop
 
         public static explicit operator HINSTANCE(sbyte value) => new HINSTANCE((nint)(value));
 
-        public static implicit operator sbyte(HINSTANCE value) => (sbyte)(value.Value);
+        public static explicit operator sbyte(HINSTANCE value) => (sbyte)(value.Value);
 
         public static explicit operator HINSTANCE(ushort value) => new HINSTANCE((nint)(value));
 
-        public static implicit operator ushort(HINSTANCE value) => (ushort)(value.Value);
+        public static explicit operator ushort(HINSTANCE value) => (ushort)(value.Value);
 
         public static explicit operator HINSTANCE(uint value) => new HINSTANCE((nint)(value));
 
-        public static implicit operator uint(HINSTANCE value) => (uint)(value.Value);
+        public static explicit operator uint(HINSTANCE value) => (uint)(value.Value);
 
         public static explicit operator HINSTANCE(ulong value) => new HINSTANCE((nint)(value));
 
-        public static explicit operator ulong(HINSTANCE value) => (ulong)(value.Value);
+        public static implicit operator ulong(HINSTANCE value) => (ulong)(value.Value);
 
         public static explicit operator HINSTANCE(nuint value) => new HINSTANCE((nint)(value));
 

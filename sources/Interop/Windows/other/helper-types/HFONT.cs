@@ -31,19 +31,19 @@ namespace TerraFX.Interop
 
         public static explicit operator HFONT(byte value) => new HFONT((nint)(value));
 
-        public static implicit operator byte(HFONT value) => (byte)(value.Value);
+        public static explicit operator byte(HFONT value) => (byte)(value.Value);
 
         public static explicit operator HFONT(short value) => new HFONT((nint)(value));
 
-        public static implicit operator short(HFONT value) => (short)(value.Value);
+        public static explicit operator short(HFONT value) => (short)(value.Value);
 
         public static explicit operator HFONT(int value) => new HFONT((nint)(value));
 
-        public static implicit operator int(HFONT value) => (int)(value.Value);
+        public static explicit operator int(HFONT value) => (int)(value.Value);
 
         public static explicit operator HFONT(long value) => new HFONT((nint)(value));
 
-        public static explicit operator long(HFONT value) => (long)(value.Value);
+        public static implicit operator long(HFONT value) => (long)(value.Value);
 
         public static explicit operator HFONT(nint value) => new HFONT((nint)(value));
 
@@ -51,19 +51,19 @@ namespace TerraFX.Interop
 
         public static explicit operator HFONT(sbyte value) => new HFONT((nint)(value));
 
-        public static implicit operator sbyte(HFONT value) => (sbyte)(value.Value);
+        public static explicit operator sbyte(HFONT value) => (sbyte)(value.Value);
 
         public static explicit operator HFONT(ushort value) => new HFONT((nint)(value));
 
-        public static implicit operator ushort(HFONT value) => (ushort)(value.Value);
+        public static explicit operator ushort(HFONT value) => (ushort)(value.Value);
 
         public static explicit operator HFONT(uint value) => new HFONT((nint)(value));
 
-        public static implicit operator uint(HFONT value) => (uint)(value.Value);
+        public static explicit operator uint(HFONT value) => (uint)(value.Value);
 
         public static explicit operator HFONT(ulong value) => new HFONT((nint)(value));
 
-        public static explicit operator ulong(HFONT value) => (ulong)(value.Value);
+        public static implicit operator ulong(HFONT value) => (ulong)(value.Value);
 
         public static explicit operator HFONT(nuint value) => new HFONT((nint)(value));
 

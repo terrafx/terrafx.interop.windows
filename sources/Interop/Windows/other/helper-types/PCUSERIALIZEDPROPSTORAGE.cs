@@ -25,19 +25,19 @@ namespace TerraFX.Interop
 
         public static explicit operator PCUSERIALIZEDPROPSTORAGE(byte value) => new PCUSERIALIZEDPROPSTORAGE((nint)(value));
 
-        public static implicit operator byte(PCUSERIALIZEDPROPSTORAGE value) => (byte)(value.Value);
+        public static explicit operator byte(PCUSERIALIZEDPROPSTORAGE value) => (byte)(value.Value);
 
         public static explicit operator PCUSERIALIZEDPROPSTORAGE(short value) => new PCUSERIALIZEDPROPSTORAGE((nint)(value));
 
-        public static implicit operator short(PCUSERIALIZEDPROPSTORAGE value) => (short)(value.Value);
+        public static explicit operator short(PCUSERIALIZEDPROPSTORAGE value) => (short)(value.Value);
 
         public static explicit operator PCUSERIALIZEDPROPSTORAGE(int value) => new PCUSERIALIZEDPROPSTORAGE((nint)(value));
 
-        public static implicit operator int(PCUSERIALIZEDPROPSTORAGE value) => (int)(value.Value);
+        public static explicit operator int(PCUSERIALIZEDPROPSTORAGE value) => (int)(value.Value);
 
         public static explicit operator PCUSERIALIZEDPROPSTORAGE(long value) => new PCUSERIALIZEDPROPSTORAGE((nint)(value));
 
-        public static explicit operator long(PCUSERIALIZEDPROPSTORAGE value) => (long)(value.Value);
+        public static implicit operator long(PCUSERIALIZEDPROPSTORAGE value) => (long)(value.Value);
 
         public static explicit operator PCUSERIALIZEDPROPSTORAGE(nint value) => new PCUSERIALIZEDPROPSTORAGE((nint)(value));
 
@@ -45,19 +45,19 @@ namespace TerraFX.Interop
 
         public static explicit operator PCUSERIALIZEDPROPSTORAGE(sbyte value) => new PCUSERIALIZEDPROPSTORAGE((nint)(value));
 
-        public static implicit operator sbyte(PCUSERIALIZEDPROPSTORAGE value) => (sbyte)(value.Value);
+        public static explicit operator sbyte(PCUSERIALIZEDPROPSTORAGE value) => (sbyte)(value.Value);
 
         public static explicit operator PCUSERIALIZEDPROPSTORAGE(ushort value) => new PCUSERIALIZEDPROPSTORAGE((nint)(value));
 
-        public static implicit operator ushort(PCUSERIALIZEDPROPSTORAGE value) => (ushort)(value.Value);
+        public static explicit operator ushort(PCUSERIALIZEDPROPSTORAGE value) => (ushort)(value.Value);
 
         public static explicit operator PCUSERIALIZEDPROPSTORAGE(uint value) => new PCUSERIALIZEDPROPSTORAGE((nint)(value));
 
-        public static implicit operator uint(PCUSERIALIZEDPROPSTORAGE value) => (uint)(value.Value);
+        public static explicit operator uint(PCUSERIALIZEDPROPSTORAGE value) => (uint)(value.Value);
 
         public static explicit operator PCUSERIALIZEDPROPSTORAGE(ulong value) => new PCUSERIALIZEDPROPSTORAGE((nint)(value));
 
-        public static explicit operator ulong(PCUSERIALIZEDPROPSTORAGE value) => (ulong)(value.Value);
+        public static implicit operator ulong(PCUSERIALIZEDPROPSTORAGE value) => (ulong)(value.Value);
 
         public static explicit operator PCUSERIALIZEDPROPSTORAGE(nuint value) => new PCUSERIALIZEDPROPSTORAGE((nint)(value));
 

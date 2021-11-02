@@ -31,19 +31,19 @@ namespace TerraFX.Interop
 
         public static explicit operator HDDEDATA(byte value) => new HDDEDATA((nint)(value));
 
-        public static implicit operator byte(HDDEDATA value) => (byte)(value.Value);
+        public static explicit operator byte(HDDEDATA value) => (byte)(value.Value);
 
         public static explicit operator HDDEDATA(short value) => new HDDEDATA((nint)(value));
 
-        public static implicit operator short(HDDEDATA value) => (short)(value.Value);
+        public static explicit operator short(HDDEDATA value) => (short)(value.Value);
 
         public static explicit operator HDDEDATA(int value) => new HDDEDATA((nint)(value));
 
-        public static implicit operator int(HDDEDATA value) => (int)(value.Value);
+        public static explicit operator int(HDDEDATA value) => (int)(value.Value);
 
         public static explicit operator HDDEDATA(long value) => new HDDEDATA((nint)(value));
 
-        public static explicit operator long(HDDEDATA value) => (long)(value.Value);
+        public static implicit operator long(HDDEDATA value) => (long)(value.Value);
 
         public static explicit operator HDDEDATA(nint value) => new HDDEDATA((nint)(value));
 
@@ -51,19 +51,19 @@ namespace TerraFX.Interop
 
         public static explicit operator HDDEDATA(sbyte value) => new HDDEDATA((nint)(value));
 
-        public static implicit operator sbyte(HDDEDATA value) => (sbyte)(value.Value);
+        public static explicit operator sbyte(HDDEDATA value) => (sbyte)(value.Value);
 
         public static explicit operator HDDEDATA(ushort value) => new HDDEDATA((nint)(value));
 
-        public static implicit operator ushort(HDDEDATA value) => (ushort)(value.Value);
+        public static explicit operator ushort(HDDEDATA value) => (ushort)(value.Value);
 
         public static explicit operator HDDEDATA(uint value) => new HDDEDATA((nint)(value));
 
-        public static implicit operator uint(HDDEDATA value) => (uint)(value.Value);
+        public static explicit operator uint(HDDEDATA value) => (uint)(value.Value);
 
         public static explicit operator HDDEDATA(ulong value) => new HDDEDATA((nint)(value));
 
-        public static explicit operator ulong(HDDEDATA value) => (ulong)(value.Value);
+        public static implicit operator ulong(HDDEDATA value) => (ulong)(value.Value);
 
         public static explicit operator HDDEDATA(nuint value) => new HDDEDATA((nint)(value));
 

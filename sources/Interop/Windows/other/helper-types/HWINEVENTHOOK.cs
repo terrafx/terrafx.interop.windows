@@ -31,19 +31,19 @@ namespace TerraFX.Interop
 
         public static explicit operator HWINEVENTHOOK(byte value) => new HWINEVENTHOOK((nint)(value));
 
-        public static implicit operator byte(HWINEVENTHOOK value) => (byte)(value.Value);
+        public static explicit operator byte(HWINEVENTHOOK value) => (byte)(value.Value);
 
         public static explicit operator HWINEVENTHOOK(short value) => new HWINEVENTHOOK((nint)(value));
 
-        public static implicit operator short(HWINEVENTHOOK value) => (short)(value.Value);
+        public static explicit operator short(HWINEVENTHOOK value) => (short)(value.Value);
 
         public static explicit operator HWINEVENTHOOK(int value) => new HWINEVENTHOOK((nint)(value));
 
-        public static implicit operator int(HWINEVENTHOOK value) => (int)(value.Value);
+        public static explicit operator int(HWINEVENTHOOK value) => (int)(value.Value);
 
         public static explicit operator HWINEVENTHOOK(long value) => new HWINEVENTHOOK((nint)(value));
 
-        public static explicit operator long(HWINEVENTHOOK value) => (long)(value.Value);
+        public static implicit operator long(HWINEVENTHOOK value) => (long)(value.Value);
 
         public static explicit operator HWINEVENTHOOK(nint value) => new HWINEVENTHOOK((nint)(value));
 
@@ -51,19 +51,19 @@ namespace TerraFX.Interop
 
         public static explicit operator HWINEVENTHOOK(sbyte value) => new HWINEVENTHOOK((nint)(value));
 
-        public static implicit operator sbyte(HWINEVENTHOOK value) => (sbyte)(value.Value);
+        public static explicit operator sbyte(HWINEVENTHOOK value) => (sbyte)(value.Value);
 
         public static explicit operator HWINEVENTHOOK(ushort value) => new HWINEVENTHOOK((nint)(value));
 
-        public static implicit operator ushort(HWINEVENTHOOK value) => (ushort)(value.Value);
+        public static explicit operator ushort(HWINEVENTHOOK value) => (ushort)(value.Value);
 
         public static explicit operator HWINEVENTHOOK(uint value) => new HWINEVENTHOOK((nint)(value));
 
-        public static implicit operator uint(HWINEVENTHOOK value) => (uint)(value.Value);
+        public static explicit operator uint(HWINEVENTHOOK value) => (uint)(value.Value);
 
         public static explicit operator HWINEVENTHOOK(ulong value) => new HWINEVENTHOOK((nint)(value));
 
-        public static explicit operator ulong(HWINEVENTHOOK value) => (ulong)(value.Value);
+        public static implicit operator ulong(HWINEVENTHOOK value) => (ulong)(value.Value);
 
         public static explicit operator HWINEVENTHOOK(nuint value) => new HWINEVENTHOOK((nint)(value));
 

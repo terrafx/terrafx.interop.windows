@@ -31,19 +31,19 @@ namespace TerraFX.Interop
 
         public static explicit operator LOCALHANDLE(byte value) => new LOCALHANDLE((nint)(value));
 
-        public static implicit operator byte(LOCALHANDLE value) => (byte)(value.Value);
+        public static explicit operator byte(LOCALHANDLE value) => (byte)(value.Value);
 
         public static explicit operator LOCALHANDLE(short value) => new LOCALHANDLE((nint)(value));
 
-        public static implicit operator short(LOCALHANDLE value) => (short)(value.Value);
+        public static explicit operator short(LOCALHANDLE value) => (short)(value.Value);
 
         public static explicit operator LOCALHANDLE(int value) => new LOCALHANDLE((nint)(value));
 
-        public static implicit operator int(LOCALHANDLE value) => (int)(value.Value);
+        public static explicit operator int(LOCALHANDLE value) => (int)(value.Value);
 
         public static explicit operator LOCALHANDLE(long value) => new LOCALHANDLE((nint)(value));
 
-        public static explicit operator long(LOCALHANDLE value) => (long)(value.Value);
+        public static implicit operator long(LOCALHANDLE value) => (long)(value.Value);
 
         public static explicit operator LOCALHANDLE(nint value) => new LOCALHANDLE((nint)(value));
 
@@ -51,19 +51,19 @@ namespace TerraFX.Interop
 
         public static explicit operator LOCALHANDLE(sbyte value) => new LOCALHANDLE((nint)(value));
 
-        public static implicit operator sbyte(LOCALHANDLE value) => (sbyte)(value.Value);
+        public static explicit operator sbyte(LOCALHANDLE value) => (sbyte)(value.Value);
 
         public static explicit operator LOCALHANDLE(ushort value) => new LOCALHANDLE((nint)(value));
 
-        public static implicit operator ushort(LOCALHANDLE value) => (ushort)(value.Value);
+        public static explicit operator ushort(LOCALHANDLE value) => (ushort)(value.Value);
 
         public static explicit operator LOCALHANDLE(uint value) => new LOCALHANDLE((nint)(value));
 
-        public static implicit operator uint(LOCALHANDLE value) => (uint)(value.Value);
+        public static explicit operator uint(LOCALHANDLE value) => (uint)(value.Value);
 
         public static explicit operator LOCALHANDLE(ulong value) => new LOCALHANDLE((nint)(value));
 
-        public static explicit operator ulong(LOCALHANDLE value) => (ulong)(value.Value);
+        public static implicit operator ulong(LOCALHANDLE value) => (ulong)(value.Value);
 
         public static explicit operator LOCALHANDLE(nuint value) => new LOCALHANDLE((nint)(value));
 

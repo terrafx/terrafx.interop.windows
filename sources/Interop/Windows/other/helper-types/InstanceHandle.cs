@@ -17,45 +17,45 @@ namespace TerraFX.Interop
 
         public static bool operator !=(InstanceHandle left, InstanceHandle right) => left.Value != right.Value;
 
-        public static explicit operator InstanceHandle(byte value) => new InstanceHandle((ulong)(value));
+        public static implicit operator InstanceHandle(byte value) => new InstanceHandle((ulong)(value));
 
-        public static implicit operator byte(InstanceHandle value) => (byte)(value.Value);
+        public static explicit operator byte(InstanceHandle value) => (byte)(value.Value);
 
-        public static explicit operator InstanceHandle(short value) => new InstanceHandle((ulong)(value));
+        public static implicit operator InstanceHandle(short value) => new InstanceHandle((ulong)(value));
 
-        public static implicit operator short(InstanceHandle value) => (short)(value.Value);
+        public static explicit operator short(InstanceHandle value) => (short)(value.Value);
 
-        public static explicit operator InstanceHandle(int value) => new InstanceHandle((ulong)(value));
+        public static implicit operator InstanceHandle(int value) => new InstanceHandle((ulong)(value));
 
-        public static implicit operator int(InstanceHandle value) => (int)(value.Value);
+        public static explicit operator int(InstanceHandle value) => (int)(value.Value);
 
         public static explicit operator InstanceHandle(long value) => new InstanceHandle((ulong)(value));
 
         public static explicit operator long(InstanceHandle value) => (long)(value.Value);
 
-        public static explicit operator InstanceHandle(nint value) => new InstanceHandle((ulong)(value));
+        public static implicit operator InstanceHandle(nint value) => new InstanceHandle((ulong)(value));
 
-        public static implicit operator nint(InstanceHandle value) => (nint)(value.Value);
+        public static explicit operator nint(InstanceHandle value) => (nint)(value.Value);
 
-        public static explicit operator InstanceHandle(sbyte value) => new InstanceHandle((ulong)(value));
+        public static implicit operator InstanceHandle(sbyte value) => new InstanceHandle((ulong)(value));
 
-        public static implicit operator sbyte(InstanceHandle value) => (sbyte)(value.Value);
+        public static explicit operator sbyte(InstanceHandle value) => (sbyte)(value.Value);
 
-        public static explicit operator InstanceHandle(ushort value) => new InstanceHandle((ulong)(value));
+        public static implicit operator InstanceHandle(ushort value) => new InstanceHandle((ulong)(value));
 
-        public static implicit operator ushort(InstanceHandle value) => (ushort)(value.Value);
+        public static explicit operator ushort(InstanceHandle value) => (ushort)(value.Value);
 
-        public static explicit operator InstanceHandle(uint value) => new InstanceHandle((ulong)(value));
+        public static implicit operator InstanceHandle(uint value) => new InstanceHandle((ulong)(value));
 
-        public static implicit operator uint(InstanceHandle value) => (uint)(value.Value);
+        public static explicit operator uint(InstanceHandle value) => (uint)(value.Value);
 
         public static implicit operator InstanceHandle(ulong value) => new InstanceHandle((ulong)(value));
 
         public static implicit operator ulong(InstanceHandle value) => (ulong)(value.Value);
 
-        public static explicit operator InstanceHandle(nuint value) => new InstanceHandle((ulong)(value));
+        public static implicit operator InstanceHandle(nuint value) => new InstanceHandle((ulong)(value));
 
-        public static implicit operator nuint(InstanceHandle value) => (nuint)(value.Value);
+        public static explicit operator nuint(InstanceHandle value) => (nuint)(value.Value);
 
         public override bool Equals(object? obj) => (obj is InstanceHandle other) && Equals(other);
 

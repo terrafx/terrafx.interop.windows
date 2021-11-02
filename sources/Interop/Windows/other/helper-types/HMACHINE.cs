@@ -31,19 +31,19 @@ namespace TerraFX.Interop
 
         public static explicit operator HMACHINE(byte value) => new HMACHINE((nint)(value));
 
-        public static implicit operator byte(HMACHINE value) => (byte)(value.Value);
+        public static explicit operator byte(HMACHINE value) => (byte)(value.Value);
 
         public static explicit operator HMACHINE(short value) => new HMACHINE((nint)(value));
 
-        public static implicit operator short(HMACHINE value) => (short)(value.Value);
+        public static explicit operator short(HMACHINE value) => (short)(value.Value);
 
         public static explicit operator HMACHINE(int value) => new HMACHINE((nint)(value));
 
-        public static implicit operator int(HMACHINE value) => (int)(value.Value);
+        public static explicit operator int(HMACHINE value) => (int)(value.Value);
 
         public static explicit operator HMACHINE(long value) => new HMACHINE((nint)(value));
 
-        public static explicit operator long(HMACHINE value) => (long)(value.Value);
+        public static implicit operator long(HMACHINE value) => (long)(value.Value);
 
         public static explicit operator HMACHINE(nint value) => new HMACHINE((nint)(value));
 
@@ -51,19 +51,19 @@ namespace TerraFX.Interop
 
         public static explicit operator HMACHINE(sbyte value) => new HMACHINE((nint)(value));
 
-        public static implicit operator sbyte(HMACHINE value) => (sbyte)(value.Value);
+        public static explicit operator sbyte(HMACHINE value) => (sbyte)(value.Value);
 
         public static explicit operator HMACHINE(ushort value) => new HMACHINE((nint)(value));
 
-        public static implicit operator ushort(HMACHINE value) => (ushort)(value.Value);
+        public static explicit operator ushort(HMACHINE value) => (ushort)(value.Value);
 
         public static explicit operator HMACHINE(uint value) => new HMACHINE((nint)(value));
 
-        public static implicit operator uint(HMACHINE value) => (uint)(value.Value);
+        public static explicit operator uint(HMACHINE value) => (uint)(value.Value);
 
         public static explicit operator HMACHINE(ulong value) => new HMACHINE((nint)(value));
 
-        public static explicit operator ulong(HMACHINE value) => (ulong)(value.Value);
+        public static implicit operator ulong(HMACHINE value) => (ulong)(value.Value);
 
         public static explicit operator HMACHINE(nuint value) => new HMACHINE((nint)(value));
 

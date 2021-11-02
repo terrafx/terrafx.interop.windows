@@ -31,19 +31,19 @@ namespace TerraFX.Interop
 
         public static explicit operator AUTHZ_RESOURCE_MANAGER_HANDLE(byte value) => new AUTHZ_RESOURCE_MANAGER_HANDLE((nint)(value));
 
-        public static implicit operator byte(AUTHZ_RESOURCE_MANAGER_HANDLE value) => (byte)(value.Value);
+        public static explicit operator byte(AUTHZ_RESOURCE_MANAGER_HANDLE value) => (byte)(value.Value);
 
         public static explicit operator AUTHZ_RESOURCE_MANAGER_HANDLE(short value) => new AUTHZ_RESOURCE_MANAGER_HANDLE((nint)(value));
 
-        public static implicit operator short(AUTHZ_RESOURCE_MANAGER_HANDLE value) => (short)(value.Value);
+        public static explicit operator short(AUTHZ_RESOURCE_MANAGER_HANDLE value) => (short)(value.Value);
 
         public static explicit operator AUTHZ_RESOURCE_MANAGER_HANDLE(int value) => new AUTHZ_RESOURCE_MANAGER_HANDLE((nint)(value));
 
-        public static implicit operator int(AUTHZ_RESOURCE_MANAGER_HANDLE value) => (int)(value.Value);
+        public static explicit operator int(AUTHZ_RESOURCE_MANAGER_HANDLE value) => (int)(value.Value);
 
         public static explicit operator AUTHZ_RESOURCE_MANAGER_HANDLE(long value) => new AUTHZ_RESOURCE_MANAGER_HANDLE((nint)(value));
 
-        public static explicit operator long(AUTHZ_RESOURCE_MANAGER_HANDLE value) => (long)(value.Value);
+        public static implicit operator long(AUTHZ_RESOURCE_MANAGER_HANDLE value) => (long)(value.Value);
 
         public static explicit operator AUTHZ_RESOURCE_MANAGER_HANDLE(nint value) => new AUTHZ_RESOURCE_MANAGER_HANDLE((nint)(value));
 
@@ -51,19 +51,19 @@ namespace TerraFX.Interop
 
         public static explicit operator AUTHZ_RESOURCE_MANAGER_HANDLE(sbyte value) => new AUTHZ_RESOURCE_MANAGER_HANDLE((nint)(value));
 
-        public static implicit operator sbyte(AUTHZ_RESOURCE_MANAGER_HANDLE value) => (sbyte)(value.Value);
+        public static explicit operator sbyte(AUTHZ_RESOURCE_MANAGER_HANDLE value) => (sbyte)(value.Value);
 
         public static explicit operator AUTHZ_RESOURCE_MANAGER_HANDLE(ushort value) => new AUTHZ_RESOURCE_MANAGER_HANDLE((nint)(value));
 
-        public static implicit operator ushort(AUTHZ_RESOURCE_MANAGER_HANDLE value) => (ushort)(value.Value);
+        public static explicit operator ushort(AUTHZ_RESOURCE_MANAGER_HANDLE value) => (ushort)(value.Value);
 
         public static explicit operator AUTHZ_RESOURCE_MANAGER_HANDLE(uint value) => new AUTHZ_RESOURCE_MANAGER_HANDLE((nint)(value));
 
-        public static implicit operator uint(AUTHZ_RESOURCE_MANAGER_HANDLE value) => (uint)(value.Value);
+        public static explicit operator uint(AUTHZ_RESOURCE_MANAGER_HANDLE value) => (uint)(value.Value);
 
         public static explicit operator AUTHZ_RESOURCE_MANAGER_HANDLE(ulong value) => new AUTHZ_RESOURCE_MANAGER_HANDLE((nint)(value));
 
-        public static explicit operator ulong(AUTHZ_RESOURCE_MANAGER_HANDLE value) => (ulong)(value.Value);
+        public static implicit operator ulong(AUTHZ_RESOURCE_MANAGER_HANDLE value) => (ulong)(value.Value);
 
         public static explicit operator AUTHZ_RESOURCE_MANAGER_HANDLE(nuint value) => new AUTHZ_RESOURCE_MANAGER_HANDLE((nint)(value));
 

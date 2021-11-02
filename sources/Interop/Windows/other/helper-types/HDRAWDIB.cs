@@ -31,19 +31,19 @@ namespace TerraFX.Interop
 
         public static explicit operator HDRAWDIB(byte value) => new HDRAWDIB((nint)(value));
 
-        public static implicit operator byte(HDRAWDIB value) => (byte)(value.Value);
+        public static explicit operator byte(HDRAWDIB value) => (byte)(value.Value);
 
         public static explicit operator HDRAWDIB(short value) => new HDRAWDIB((nint)(value));
 
-        public static implicit operator short(HDRAWDIB value) => (short)(value.Value);
+        public static explicit operator short(HDRAWDIB value) => (short)(value.Value);
 
         public static explicit operator HDRAWDIB(int value) => new HDRAWDIB((nint)(value));
 
-        public static implicit operator int(HDRAWDIB value) => (int)(value.Value);
+        public static explicit operator int(HDRAWDIB value) => (int)(value.Value);
 
         public static explicit operator HDRAWDIB(long value) => new HDRAWDIB((nint)(value));
 
-        public static explicit operator long(HDRAWDIB value) => (long)(value.Value);
+        public static implicit operator long(HDRAWDIB value) => (long)(value.Value);
 
         public static explicit operator HDRAWDIB(nint value) => new HDRAWDIB((nint)(value));
 
@@ -51,19 +51,19 @@ namespace TerraFX.Interop
 
         public static explicit operator HDRAWDIB(sbyte value) => new HDRAWDIB((nint)(value));
 
-        public static implicit operator sbyte(HDRAWDIB value) => (sbyte)(value.Value);
+        public static explicit operator sbyte(HDRAWDIB value) => (sbyte)(value.Value);
 
         public static explicit operator HDRAWDIB(ushort value) => new HDRAWDIB((nint)(value));
 
-        public static implicit operator ushort(HDRAWDIB value) => (ushort)(value.Value);
+        public static explicit operator ushort(HDRAWDIB value) => (ushort)(value.Value);
 
         public static explicit operator HDRAWDIB(uint value) => new HDRAWDIB((nint)(value));
 
-        public static implicit operator uint(HDRAWDIB value) => (uint)(value.Value);
+        public static explicit operator uint(HDRAWDIB value) => (uint)(value.Value);
 
         public static explicit operator HDRAWDIB(ulong value) => new HDRAWDIB((nint)(value));
 
-        public static explicit operator ulong(HDRAWDIB value) => (ulong)(value.Value);
+        public static implicit operator ulong(HDRAWDIB value) => (ulong)(value.Value);
 
         public static explicit operator HDRAWDIB(nuint value) => new HDRAWDIB((nint)(value));
 

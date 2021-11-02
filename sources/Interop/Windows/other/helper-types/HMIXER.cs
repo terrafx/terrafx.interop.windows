@@ -31,19 +31,19 @@ namespace TerraFX.Interop
 
         public static explicit operator HMIXER(byte value) => new HMIXER((nint)(value));
 
-        public static implicit operator byte(HMIXER value) => (byte)(value.Value);
+        public static explicit operator byte(HMIXER value) => (byte)(value.Value);
 
         public static explicit operator HMIXER(short value) => new HMIXER((nint)(value));
 
-        public static implicit operator short(HMIXER value) => (short)(value.Value);
+        public static explicit operator short(HMIXER value) => (short)(value.Value);
 
         public static explicit operator HMIXER(int value) => new HMIXER((nint)(value));
 
-        public static implicit operator int(HMIXER value) => (int)(value.Value);
+        public static explicit operator int(HMIXER value) => (int)(value.Value);
 
         public static explicit operator HMIXER(long value) => new HMIXER((nint)(value));
 
-        public static explicit operator long(HMIXER value) => (long)(value.Value);
+        public static implicit operator long(HMIXER value) => (long)(value.Value);
 
         public static explicit operator HMIXER(nint value) => new HMIXER((nint)(value));
 
@@ -51,19 +51,19 @@ namespace TerraFX.Interop
 
         public static explicit operator HMIXER(sbyte value) => new HMIXER((nint)(value));
 
-        public static implicit operator sbyte(HMIXER value) => (sbyte)(value.Value);
+        public static explicit operator sbyte(HMIXER value) => (sbyte)(value.Value);
 
         public static explicit operator HMIXER(ushort value) => new HMIXER((nint)(value));
 
-        public static implicit operator ushort(HMIXER value) => (ushort)(value.Value);
+        public static explicit operator ushort(HMIXER value) => (ushort)(value.Value);
 
         public static explicit operator HMIXER(uint value) => new HMIXER((nint)(value));
 
-        public static implicit operator uint(HMIXER value) => (uint)(value.Value);
+        public static explicit operator uint(HMIXER value) => (uint)(value.Value);
 
         public static explicit operator HMIXER(ulong value) => new HMIXER((nint)(value));
 
-        public static explicit operator ulong(HMIXER value) => (ulong)(value.Value);
+        public static implicit operator ulong(HMIXER value) => (ulong)(value.Value);
 
         public static explicit operator HMIXER(nuint value) => new HMIXER((nint)(value));
 

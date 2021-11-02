@@ -31,19 +31,19 @@ namespace TerraFX.Interop
 
         public static explicit operator HMIDIOUT(byte value) => new HMIDIOUT((nint)(value));
 
-        public static implicit operator byte(HMIDIOUT value) => (byte)(value.Value);
+        public static explicit operator byte(HMIDIOUT value) => (byte)(value.Value);
 
         public static explicit operator HMIDIOUT(short value) => new HMIDIOUT((nint)(value));
 
-        public static implicit operator short(HMIDIOUT value) => (short)(value.Value);
+        public static explicit operator short(HMIDIOUT value) => (short)(value.Value);
 
         public static explicit operator HMIDIOUT(int value) => new HMIDIOUT((nint)(value));
 
-        public static implicit operator int(HMIDIOUT value) => (int)(value.Value);
+        public static explicit operator int(HMIDIOUT value) => (int)(value.Value);
 
         public static explicit operator HMIDIOUT(long value) => new HMIDIOUT((nint)(value));
 
-        public static explicit operator long(HMIDIOUT value) => (long)(value.Value);
+        public static implicit operator long(HMIDIOUT value) => (long)(value.Value);
 
         public static explicit operator HMIDIOUT(nint value) => new HMIDIOUT((nint)(value));
 
@@ -51,19 +51,19 @@ namespace TerraFX.Interop
 
         public static explicit operator HMIDIOUT(sbyte value) => new HMIDIOUT((nint)(value));
 
-        public static implicit operator sbyte(HMIDIOUT value) => (sbyte)(value.Value);
+        public static explicit operator sbyte(HMIDIOUT value) => (sbyte)(value.Value);
 
         public static explicit operator HMIDIOUT(ushort value) => new HMIDIOUT((nint)(value));
 
-        public static implicit operator ushort(HMIDIOUT value) => (ushort)(value.Value);
+        public static explicit operator ushort(HMIDIOUT value) => (ushort)(value.Value);
 
         public static explicit operator HMIDIOUT(uint value) => new HMIDIOUT((nint)(value));
 
-        public static implicit operator uint(HMIDIOUT value) => (uint)(value.Value);
+        public static explicit operator uint(HMIDIOUT value) => (uint)(value.Value);
 
         public static explicit operator HMIDIOUT(ulong value) => new HMIDIOUT((nint)(value));
 
-        public static explicit operator ulong(HMIDIOUT value) => (ulong)(value.Value);
+        public static implicit operator ulong(HMIDIOUT value) => (ulong)(value.Value);
 
         public static explicit operator HMIDIOUT(nuint value) => new HMIDIOUT((nint)(value));
 

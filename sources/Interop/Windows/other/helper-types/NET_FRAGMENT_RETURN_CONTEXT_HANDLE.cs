@@ -31,19 +31,19 @@ namespace TerraFX.Interop
 
         public static explicit operator NET_FRAGMENT_RETURN_CONTEXT_HANDLE(byte value) => new NET_FRAGMENT_RETURN_CONTEXT_HANDLE((nint)(value));
 
-        public static implicit operator byte(NET_FRAGMENT_RETURN_CONTEXT_HANDLE value) => (byte)(value.Value);
+        public static explicit operator byte(NET_FRAGMENT_RETURN_CONTEXT_HANDLE value) => (byte)(value.Value);
 
         public static explicit operator NET_FRAGMENT_RETURN_CONTEXT_HANDLE(short value) => new NET_FRAGMENT_RETURN_CONTEXT_HANDLE((nint)(value));
 
-        public static implicit operator short(NET_FRAGMENT_RETURN_CONTEXT_HANDLE value) => (short)(value.Value);
+        public static explicit operator short(NET_FRAGMENT_RETURN_CONTEXT_HANDLE value) => (short)(value.Value);
 
         public static explicit operator NET_FRAGMENT_RETURN_CONTEXT_HANDLE(int value) => new NET_FRAGMENT_RETURN_CONTEXT_HANDLE((nint)(value));
 
-        public static implicit operator int(NET_FRAGMENT_RETURN_CONTEXT_HANDLE value) => (int)(value.Value);
+        public static explicit operator int(NET_FRAGMENT_RETURN_CONTEXT_HANDLE value) => (int)(value.Value);
 
         public static explicit operator NET_FRAGMENT_RETURN_CONTEXT_HANDLE(long value) => new NET_FRAGMENT_RETURN_CONTEXT_HANDLE((nint)(value));
 
-        public static explicit operator long(NET_FRAGMENT_RETURN_CONTEXT_HANDLE value) => (long)(value.Value);
+        public static implicit operator long(NET_FRAGMENT_RETURN_CONTEXT_HANDLE value) => (long)(value.Value);
 
         public static explicit operator NET_FRAGMENT_RETURN_CONTEXT_HANDLE(nint value) => new NET_FRAGMENT_RETURN_CONTEXT_HANDLE((nint)(value));
 
@@ -51,19 +51,19 @@ namespace TerraFX.Interop
 
         public static explicit operator NET_FRAGMENT_RETURN_CONTEXT_HANDLE(sbyte value) => new NET_FRAGMENT_RETURN_CONTEXT_HANDLE((nint)(value));
 
-        public static implicit operator sbyte(NET_FRAGMENT_RETURN_CONTEXT_HANDLE value) => (sbyte)(value.Value);
+        public static explicit operator sbyte(NET_FRAGMENT_RETURN_CONTEXT_HANDLE value) => (sbyte)(value.Value);
 
         public static explicit operator NET_FRAGMENT_RETURN_CONTEXT_HANDLE(ushort value) => new NET_FRAGMENT_RETURN_CONTEXT_HANDLE((nint)(value));
 
-        public static implicit operator ushort(NET_FRAGMENT_RETURN_CONTEXT_HANDLE value) => (ushort)(value.Value);
+        public static explicit operator ushort(NET_FRAGMENT_RETURN_CONTEXT_HANDLE value) => (ushort)(value.Value);
 
         public static explicit operator NET_FRAGMENT_RETURN_CONTEXT_HANDLE(uint value) => new NET_FRAGMENT_RETURN_CONTEXT_HANDLE((nint)(value));
 
-        public static implicit operator uint(NET_FRAGMENT_RETURN_CONTEXT_HANDLE value) => (uint)(value.Value);
+        public static explicit operator uint(NET_FRAGMENT_RETURN_CONTEXT_HANDLE value) => (uint)(value.Value);
 
         public static explicit operator NET_FRAGMENT_RETURN_CONTEXT_HANDLE(ulong value) => new NET_FRAGMENT_RETURN_CONTEXT_HANDLE((nint)(value));
 
-        public static explicit operator ulong(NET_FRAGMENT_RETURN_CONTEXT_HANDLE value) => (ulong)(value.Value);
+        public static implicit operator ulong(NET_FRAGMENT_RETURN_CONTEXT_HANDLE value) => (ulong)(value.Value);
 
         public static explicit operator NET_FRAGMENT_RETURN_CONTEXT_HANDLE(nuint value) => new NET_FRAGMENT_RETURN_CONTEXT_HANDLE((nint)(value));
 

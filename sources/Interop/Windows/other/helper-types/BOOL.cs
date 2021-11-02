@@ -29,45 +29,45 @@ namespace TerraFX.Interop
 
         public static bool operator true(BOOL value) => value.Value != 0;
 
-        public static explicit operator BOOL(byte value) => new BOOL((int)(value));
+        public static implicit operator BOOL(byte value) => new BOOL((int)(value));
 
-        public static implicit operator byte(BOOL value) => (byte)(value.Value);
+        public static explicit operator byte(BOOL value) => (byte)(value.Value);
 
-        public static explicit operator BOOL(short value) => new BOOL((int)(value));
+        public static implicit operator BOOL(short value) => new BOOL((int)(value));
 
-        public static implicit operator short(BOOL value) => (short)(value.Value);
+        public static explicit operator short(BOOL value) => (short)(value.Value);
 
         public static implicit operator BOOL(int value) => new BOOL((int)(value));
 
         public static implicit operator int(BOOL value) => (int)(value.Value);
 
-        public static implicit operator BOOL(long value) => new BOOL((int)(value));
+        public static explicit operator BOOL(long value) => new BOOL((int)(value));
 
-        public static explicit operator long(BOOL value) => (long)(value.Value);
+        public static implicit operator long(BOOL value) => (long)(value.Value);
 
-        public static implicit operator BOOL(nint value) => new BOOL((int)(value));
+        public static explicit operator BOOL(nint value) => new BOOL((int)(value));
 
-        public static explicit operator nint(BOOL value) => (nint)(value.Value);
+        public static implicit operator nint(BOOL value) => (nint)(value.Value);
 
-        public static explicit operator BOOL(sbyte value) => new BOOL((int)(value));
+        public static implicit operator BOOL(sbyte value) => new BOOL((int)(value));
 
-        public static implicit operator sbyte(BOOL value) => (sbyte)(value.Value);
+        public static explicit operator sbyte(BOOL value) => (sbyte)(value.Value);
 
-        public static explicit operator BOOL(ushort value) => new BOOL((int)(value));
+        public static implicit operator BOOL(ushort value) => new BOOL((int)(value));
 
-        public static implicit operator ushort(BOOL value) => (ushort)(value.Value);
+        public static explicit operator ushort(BOOL value) => (ushort)(value.Value);
 
         public static explicit operator BOOL(uint value) => new BOOL((int)(value));
 
         public static explicit operator uint(BOOL value) => (uint)(value.Value);
 
-        public static implicit operator BOOL(ulong value) => new BOOL((int)(value));
+        public static explicit operator BOOL(ulong value) => new BOOL((int)(value));
 
-        public static explicit operator ulong(BOOL value) => (ulong)(value.Value);
+        public static implicit operator ulong(BOOL value) => (ulong)(value.Value);
 
-        public static implicit operator BOOL(nuint value) => new BOOL((int)(value));
+        public static explicit operator BOOL(nuint value) => new BOOL((int)(value));
 
-        public static explicit operator nuint(BOOL value) => (nuint)(value.Value);
+        public static implicit operator nuint(BOOL value) => (nuint)(value.Value);
 
         public override bool Equals(object? obj) => (obj is BOOL other) && Equals(other);
 

@@ -31,19 +31,19 @@ namespace TerraFX.Interop
 
         public static explicit operator SPSTATEHANDLE(byte value) => new SPSTATEHANDLE((nint)(value));
 
-        public static implicit operator byte(SPSTATEHANDLE value) => (byte)(value.Value);
+        public static explicit operator byte(SPSTATEHANDLE value) => (byte)(value.Value);
 
         public static explicit operator SPSTATEHANDLE(short value) => new SPSTATEHANDLE((nint)(value));
 
-        public static implicit operator short(SPSTATEHANDLE value) => (short)(value.Value);
+        public static explicit operator short(SPSTATEHANDLE value) => (short)(value.Value);
 
         public static explicit operator SPSTATEHANDLE(int value) => new SPSTATEHANDLE((nint)(value));
 
-        public static implicit operator int(SPSTATEHANDLE value) => (int)(value.Value);
+        public static explicit operator int(SPSTATEHANDLE value) => (int)(value.Value);
 
         public static explicit operator SPSTATEHANDLE(long value) => new SPSTATEHANDLE((nint)(value));
 
-        public static explicit operator long(SPSTATEHANDLE value) => (long)(value.Value);
+        public static implicit operator long(SPSTATEHANDLE value) => (long)(value.Value);
 
         public static explicit operator SPSTATEHANDLE(nint value) => new SPSTATEHANDLE((nint)(value));
 
@@ -51,19 +51,19 @@ namespace TerraFX.Interop
 
         public static explicit operator SPSTATEHANDLE(sbyte value) => new SPSTATEHANDLE((nint)(value));
 
-        public static implicit operator sbyte(SPSTATEHANDLE value) => (sbyte)(value.Value);
+        public static explicit operator sbyte(SPSTATEHANDLE value) => (sbyte)(value.Value);
 
         public static explicit operator SPSTATEHANDLE(ushort value) => new SPSTATEHANDLE((nint)(value));
 
-        public static implicit operator ushort(SPSTATEHANDLE value) => (ushort)(value.Value);
+        public static explicit operator ushort(SPSTATEHANDLE value) => (ushort)(value.Value);
 
         public static explicit operator SPSTATEHANDLE(uint value) => new SPSTATEHANDLE((nint)(value));
 
-        public static implicit operator uint(SPSTATEHANDLE value) => (uint)(value.Value);
+        public static explicit operator uint(SPSTATEHANDLE value) => (uint)(value.Value);
 
         public static explicit operator SPSTATEHANDLE(ulong value) => new SPSTATEHANDLE((nint)(value));
 
-        public static explicit operator ulong(SPSTATEHANDLE value) => (ulong)(value.Value);
+        public static implicit operator ulong(SPSTATEHANDLE value) => (ulong)(value.Value);
 
         public static explicit operator SPSTATEHANDLE(nuint value) => new SPSTATEHANDLE((nint)(value));
 

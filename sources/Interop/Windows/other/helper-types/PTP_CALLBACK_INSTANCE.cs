@@ -25,19 +25,19 @@ namespace TerraFX.Interop
 
         public static explicit operator PTP_CALLBACK_INSTANCE(byte value) => new PTP_CALLBACK_INSTANCE((nint)(value));
 
-        public static implicit operator byte(PTP_CALLBACK_INSTANCE value) => (byte)(value.Value);
+        public static explicit operator byte(PTP_CALLBACK_INSTANCE value) => (byte)(value.Value);
 
         public static explicit operator PTP_CALLBACK_INSTANCE(short value) => new PTP_CALLBACK_INSTANCE((nint)(value));
 
-        public static implicit operator short(PTP_CALLBACK_INSTANCE value) => (short)(value.Value);
+        public static explicit operator short(PTP_CALLBACK_INSTANCE value) => (short)(value.Value);
 
         public static explicit operator PTP_CALLBACK_INSTANCE(int value) => new PTP_CALLBACK_INSTANCE((nint)(value));
 
-        public static implicit operator int(PTP_CALLBACK_INSTANCE value) => (int)(value.Value);
+        public static explicit operator int(PTP_CALLBACK_INSTANCE value) => (int)(value.Value);
 
         public static explicit operator PTP_CALLBACK_INSTANCE(long value) => new PTP_CALLBACK_INSTANCE((nint)(value));
 
-        public static explicit operator long(PTP_CALLBACK_INSTANCE value) => (long)(value.Value);
+        public static implicit operator long(PTP_CALLBACK_INSTANCE value) => (long)(value.Value);
 
         public static explicit operator PTP_CALLBACK_INSTANCE(nint value) => new PTP_CALLBACK_INSTANCE((nint)(value));
 
@@ -45,19 +45,19 @@ namespace TerraFX.Interop
 
         public static explicit operator PTP_CALLBACK_INSTANCE(sbyte value) => new PTP_CALLBACK_INSTANCE((nint)(value));
 
-        public static implicit operator sbyte(PTP_CALLBACK_INSTANCE value) => (sbyte)(value.Value);
+        public static explicit operator sbyte(PTP_CALLBACK_INSTANCE value) => (sbyte)(value.Value);
 
         public static explicit operator PTP_CALLBACK_INSTANCE(ushort value) => new PTP_CALLBACK_INSTANCE((nint)(value));
 
-        public static implicit operator ushort(PTP_CALLBACK_INSTANCE value) => (ushort)(value.Value);
+        public static explicit operator ushort(PTP_CALLBACK_INSTANCE value) => (ushort)(value.Value);
 
         public static explicit operator PTP_CALLBACK_INSTANCE(uint value) => new PTP_CALLBACK_INSTANCE((nint)(value));
 
-        public static implicit operator uint(PTP_CALLBACK_INSTANCE value) => (uint)(value.Value);
+        public static explicit operator uint(PTP_CALLBACK_INSTANCE value) => (uint)(value.Value);
 
         public static explicit operator PTP_CALLBACK_INSTANCE(ulong value) => new PTP_CALLBACK_INSTANCE((nint)(value));
 
-        public static explicit operator ulong(PTP_CALLBACK_INSTANCE value) => (ulong)(value.Value);
+        public static implicit operator ulong(PTP_CALLBACK_INSTANCE value) => (ulong)(value.Value);
 
         public static explicit operator PTP_CALLBACK_INSTANCE(nuint value) => new PTP_CALLBACK_INSTANCE((nint)(value));
 
