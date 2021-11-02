@@ -55,9 +55,9 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        public HRESULT OnKeyDown([NativeTypeName("WPARAM")] nuint wParam, [NativeTypeName("LPARAM")] nint lParam, BOOL* pfEaten)
+        public HRESULT OnKeyDown(WPARAM wParam, LPARAM lParam, BOOL* pfEaten)
         {
-            return ((delegate* unmanaged<ITfIntegratableCandidateListUIElement*, nuint, nint, BOOL*, int>)(lpVtbl[5]))((ITfIntegratableCandidateListUIElement*)Unsafe.AsPointer(ref this), wParam, lParam, pfEaten);
+            return ((delegate* unmanaged<ITfIntegratableCandidateListUIElement*, WPARAM, LPARAM, BOOL*, int>)(lpVtbl[5]))((ITfIntegratableCandidateListUIElement*)Unsafe.AsPointer(ref this), wParam, lParam, pfEaten);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

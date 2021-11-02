@@ -35,7 +35,7 @@ namespace TerraFX.Interop
         public _Anonymous3_e__Union Anonymous3;
 
         [NativeTypeName("PFNPROPSHEETCALLBACK")]
-        public delegate* unmanaged<HWND, uint, nint, int> pfnCallback;
+        public delegate* unmanaged<HWND, uint, LPARAM, int> pfnCallback;
 
         public ref HICON hIcon
         {

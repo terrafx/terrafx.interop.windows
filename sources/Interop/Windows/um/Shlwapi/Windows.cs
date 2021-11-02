@@ -1137,12 +1137,10 @@ namespace TerraFX.Interop
         public static extern int SHMessageBoxCheckW(HWND hwnd, [NativeTypeName("LPCWSTR")] ushort* pszText, [NativeTypeName("LPCWSTR")] ushort* pszCaption, uint uType, int iDefault, [NativeTypeName("LPCWSTR")] ushort* pszRegVal);
 
         [DllImport("shlwapi", ExactSpelling = true)]
-        [return: NativeTypeName("LRESULT")]
-        public static extern nint SHSendMessageBroadcastA(uint uMsg, [NativeTypeName("WPARAM")] nuint wParam, [NativeTypeName("LPARAM")] nint lParam);
+        public static extern LRESULT SHSendMessageBroadcastA(uint uMsg, WPARAM wParam, LPARAM lParam);
 
         [DllImport("shlwapi", ExactSpelling = true)]
-        [return: NativeTypeName("LRESULT")]
-        public static extern nint SHSendMessageBroadcastW(uint uMsg, [NativeTypeName("WPARAM")] nuint wParam, [NativeTypeName("LPARAM")] nint lParam);
+        public static extern LRESULT SHSendMessageBroadcastW(uint uMsg, WPARAM wParam, LPARAM lParam);
 
         [DllImport("shlwapi", ExactSpelling = true)]
         [return: NativeTypeName("CHAR")]
@@ -1232,15 +1230,13 @@ namespace TerraFX.Interop
         public static extern HPALETTE SHCreateShellPalette(HDC hdc);
 
         [DllImport("shlwapi", ExactSpelling = true)]
-        public static extern void ColorRGBToHLS([NativeTypeName("COLORREF")] uint clrRGB, [NativeTypeName("WORD *")] ushort* pwHue, [NativeTypeName("WORD *")] ushort* pwLuminance, [NativeTypeName("WORD *")] ushort* pwSaturation);
+        public static extern void ColorRGBToHLS(COLORREF clrRGB, [NativeTypeName("WORD *")] ushort* pwHue, [NativeTypeName("WORD *")] ushort* pwLuminance, [NativeTypeName("WORD *")] ushort* pwSaturation);
 
         [DllImport("shlwapi", ExactSpelling = true)]
-        [return: NativeTypeName("COLORREF")]
-        public static extern uint ColorHLSToRGB([NativeTypeName("WORD")] ushort wHue, [NativeTypeName("WORD")] ushort wLuminance, [NativeTypeName("WORD")] ushort wSaturation);
+        public static extern COLORREF ColorHLSToRGB([NativeTypeName("WORD")] ushort wHue, [NativeTypeName("WORD")] ushort wLuminance, [NativeTypeName("WORD")] ushort wSaturation);
 
         [DllImport("shlwapi", ExactSpelling = true)]
-        [return: NativeTypeName("COLORREF")]
-        public static extern uint ColorAdjustLuma([NativeTypeName("COLORREF")] uint clrRGB, int n, BOOL fScale);
+        public static extern COLORREF ColorAdjustLuma(COLORREF clrRGB, int n, BOOL fScale);
 
         [DllImport("shlwapi", ExactSpelling = true)]
         public static extern BOOL IsInternetESCEnabled();
@@ -1975,7 +1971,7 @@ namespace TerraFX.Interop
         public static delegate*<HWND, ushort*, ushort*, uint, int, ushort*, int> SHMessageBoxCheck => &SHMessageBoxCheckW;
 
         [NativeTypeName("#define SHSendMessageBroadcast SHSendMessageBroadcastW")]
-        public static delegate*<uint, nuint, nint, nint> SHSendMessageBroadcast => &SHSendMessageBroadcastW;
+        public static delegate*<uint, WPARAM, LPARAM, LRESULT> SHSendMessageBroadcast => &SHSendMessageBroadcastW;
 
         [NativeTypeName("#define SHStripMneumonic SHStripMneumonicW")]
         public static delegate*<ushort*, ushort> SHStripMneumonic => &SHStripMneumonicW;

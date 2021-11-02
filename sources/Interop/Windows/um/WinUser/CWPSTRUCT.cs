@@ -7,11 +7,9 @@ namespace TerraFX.Interop
 {
     public partial struct CWPSTRUCT
     {
-        [NativeTypeName("LPARAM")]
-        public nint lParam;
+        public LPARAM lParam;
 
-        [NativeTypeName("WPARAM")]
-        public nuint wParam;
+        public WPARAM wParam;
 
         public uint message;
 

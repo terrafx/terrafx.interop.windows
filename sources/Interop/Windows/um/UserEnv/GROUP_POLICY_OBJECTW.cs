@@ -27,8 +27,7 @@ namespace TerraFX.Interop
 
         public GPO_LINK GPOLink;
 
-        [NativeTypeName("LPARAM")]
-        public nint lParam;
+        public LPARAM lParam;
 
         [NativeTypeName("struct _GROUP_POLICY_OBJECTW *")]
         public GROUP_POLICY_OBJECTW* pNext;
@@ -39,8 +38,7 @@ namespace TerraFX.Interop
         [NativeTypeName("LPWSTR")]
         public ushort* lpExtensions;
 
-        [NativeTypeName("LPARAM")]
-        public nint lParam2;
+        public LPARAM lParam2;
 
         [NativeTypeName("LPWSTR")]
         public ushort* lpLink;

@@ -62,16 +62,16 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        public HRESULT HandleMenuMsg(uint uMsg, [NativeTypeName("WPARAM")] nuint wParam, [NativeTypeName("LPARAM")] nint lParam)
+        public HRESULT HandleMenuMsg(uint uMsg, WPARAM wParam, LPARAM lParam)
         {
-            return ((delegate* unmanaged<IContextMenu3*, uint, nuint, nint, int>)(lpVtbl[6]))((IContextMenu3*)Unsafe.AsPointer(ref this), uMsg, wParam, lParam);
+            return ((delegate* unmanaged<IContextMenu3*, uint, WPARAM, LPARAM, int>)(lpVtbl[6]))((IContextMenu3*)Unsafe.AsPointer(ref this), uMsg, wParam, lParam);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(7)]
-        public HRESULT HandleMenuMsg2(uint uMsg, [NativeTypeName("WPARAM")] nuint wParam, [NativeTypeName("LPARAM")] nint lParam, [NativeTypeName("LRESULT *")] nint* plResult)
+        public HRESULT HandleMenuMsg2(uint uMsg, WPARAM wParam, LPARAM lParam, LRESULT* plResult)
         {
-            return ((delegate* unmanaged<IContextMenu3*, uint, nuint, nint, nint*, int>)(lpVtbl[7]))((IContextMenu3*)Unsafe.AsPointer(ref this), uMsg, wParam, lParam, plResult);
+            return ((delegate* unmanaged<IContextMenu3*, uint, WPARAM, LPARAM, LRESULT*, int>)(lpVtbl[7]))((IContextMenu3*)Unsafe.AsPointer(ref this), uMsg, wParam, lParam, plResult);
         }
     }
 }

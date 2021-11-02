@@ -118,30 +118,30 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(14)]
-        public HRESULT SetBorderColor([NativeTypeName("COLORREF")] uint Clr)
+        public HRESULT SetBorderColor(COLORREF Clr)
         {
-            return ((delegate* unmanaged<IVMRWindowlessControl*, uint, int>)(lpVtbl[14]))((IVMRWindowlessControl*)Unsafe.AsPointer(ref this), Clr);
+            return ((delegate* unmanaged<IVMRWindowlessControl*, COLORREF, int>)(lpVtbl[14]))((IVMRWindowlessControl*)Unsafe.AsPointer(ref this), Clr);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(15)]
-        public HRESULT GetBorderColor([NativeTypeName("COLORREF *")] uint* lpClr)
+        public HRESULT GetBorderColor(COLORREF* lpClr)
         {
-            return ((delegate* unmanaged<IVMRWindowlessControl*, uint*, int>)(lpVtbl[15]))((IVMRWindowlessControl*)Unsafe.AsPointer(ref this), lpClr);
+            return ((delegate* unmanaged<IVMRWindowlessControl*, COLORREF*, int>)(lpVtbl[15]))((IVMRWindowlessControl*)Unsafe.AsPointer(ref this), lpClr);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(16)]
-        public HRESULT SetColorKey([NativeTypeName("COLORREF")] uint Clr)
+        public HRESULT SetColorKey(COLORREF Clr)
         {
-            return ((delegate* unmanaged<IVMRWindowlessControl*, uint, int>)(lpVtbl[16]))((IVMRWindowlessControl*)Unsafe.AsPointer(ref this), Clr);
+            return ((delegate* unmanaged<IVMRWindowlessControl*, COLORREF, int>)(lpVtbl[16]))((IVMRWindowlessControl*)Unsafe.AsPointer(ref this), Clr);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(17)]
-        public HRESULT GetColorKey([NativeTypeName("COLORREF *")] uint* lpClr)
+        public HRESULT GetColorKey(COLORREF* lpClr)
         {
-            return ((delegate* unmanaged<IVMRWindowlessControl*, uint*, int>)(lpVtbl[17]))((IVMRWindowlessControl*)Unsafe.AsPointer(ref this), lpClr);
+            return ((delegate* unmanaged<IVMRWindowlessControl*, COLORREF*, int>)(lpVtbl[17]))((IVMRWindowlessControl*)Unsafe.AsPointer(ref this), lpClr);
         }
     }
 }

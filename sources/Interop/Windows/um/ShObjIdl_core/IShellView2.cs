@@ -104,9 +104,9 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(12)]
-        public HRESULT AddPropertySheetPages([NativeTypeName("DWORD")] uint dwReserved, [NativeTypeName("LPFNSVADDPROPSHEETPAGE")] delegate* unmanaged<HPROPSHEETPAGE, nint, BOOL> pfn, [NativeTypeName("LPARAM")] nint lparam)
+        public HRESULT AddPropertySheetPages([NativeTypeName("DWORD")] uint dwReserved, [NativeTypeName("LPFNSVADDPROPSHEETPAGE")] delegate* unmanaged<HPROPSHEETPAGE, LPARAM, BOOL> pfn, LPARAM lparam)
         {
-            return ((delegate* unmanaged<IShellView2*, uint, delegate* unmanaged<HPROPSHEETPAGE, nint, BOOL>, nint, int>)(lpVtbl[12]))((IShellView2*)Unsafe.AsPointer(ref this), dwReserved, pfn, lparam);
+            return ((delegate* unmanaged<IShellView2*, uint, delegate* unmanaged<HPROPSHEETPAGE, LPARAM, BOOL>, LPARAM, int>)(lpVtbl[12]))((IShellView2*)Unsafe.AsPointer(ref this), dwReserved, pfn, lparam);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

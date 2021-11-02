@@ -90,16 +90,16 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(10)]
-        public HRESULT EscapeA(HKL hKL, HIMC hIMC, uint uEscape, [NativeTypeName("LPVOID")] void* pData, [NativeTypeName("LRESULT *")] nint* plResult)
+        public HRESULT EscapeA(HKL hKL, HIMC hIMC, uint uEscape, [NativeTypeName("LPVOID")] void* pData, LRESULT* plResult)
         {
-            return ((delegate* unmanaged<IActiveIMMIME*, HKL, HIMC, uint, void*, nint*, int>)(lpVtbl[10]))((IActiveIMMIME*)Unsafe.AsPointer(ref this), hKL, hIMC, uEscape, pData, plResult);
+            return ((delegate* unmanaged<IActiveIMMIME*, HKL, HIMC, uint, void*, LRESULT*, int>)(lpVtbl[10]))((IActiveIMMIME*)Unsafe.AsPointer(ref this), hKL, hIMC, uEscape, pData, plResult);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(11)]
-        public HRESULT EscapeW(HKL hKL, HIMC hIMC, uint uEscape, [NativeTypeName("LPVOID")] void* pData, [NativeTypeName("LRESULT *")] nint* plResult)
+        public HRESULT EscapeW(HKL hKL, HIMC hIMC, uint uEscape, [NativeTypeName("LPVOID")] void* pData, LRESULT* plResult)
         {
-            return ((delegate* unmanaged<IActiveIMMIME*, HKL, HIMC, uint, void*, nint*, int>)(lpVtbl[11]))((IActiveIMMIME*)Unsafe.AsPointer(ref this), hKL, hIMC, uEscape, pData, plResult);
+            return ((delegate* unmanaged<IActiveIMMIME*, HKL, HIMC, uint, void*, LRESULT*, int>)(lpVtbl[11]))((IActiveIMMIME*)Unsafe.AsPointer(ref this), hKL, hIMC, uEscape, pData, plResult);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -314,16 +314,16 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(42)]
-        public HRESULT IsUIMessageA(HWND hWndIME, uint msg, [NativeTypeName("WPARAM")] nuint wParam, [NativeTypeName("LPARAM")] nint lParam)
+        public HRESULT IsUIMessageA(HWND hWndIME, uint msg, WPARAM wParam, LPARAM lParam)
         {
-            return ((delegate* unmanaged<IActiveIMMIME*, HWND, uint, nuint, nint, int>)(lpVtbl[42]))((IActiveIMMIME*)Unsafe.AsPointer(ref this), hWndIME, msg, wParam, lParam);
+            return ((delegate* unmanaged<IActiveIMMIME*, HWND, uint, WPARAM, LPARAM, int>)(lpVtbl[42]))((IActiveIMMIME*)Unsafe.AsPointer(ref this), hWndIME, msg, wParam, lParam);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(43)]
-        public HRESULT IsUIMessageW(HWND hWndIME, uint msg, [NativeTypeName("WPARAM")] nuint wParam, [NativeTypeName("LPARAM")] nint lParam)
+        public HRESULT IsUIMessageW(HWND hWndIME, uint msg, WPARAM wParam, LPARAM lParam)
         {
-            return ((delegate* unmanaged<IActiveIMMIME*, HWND, uint, nuint, nint, int>)(lpVtbl[43]))((IActiveIMMIME*)Unsafe.AsPointer(ref this), hWndIME, msg, wParam, lParam);
+            return ((delegate* unmanaged<IActiveIMMIME*, HWND, uint, WPARAM, LPARAM, int>)(lpVtbl[43]))((IActiveIMMIME*)Unsafe.AsPointer(ref this), hWndIME, msg, wParam, lParam);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -622,30 +622,30 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(86)]
-        public HRESULT RequestMessageA(HIMC hIMC, [NativeTypeName("WPARAM")] nuint wParam, [NativeTypeName("LPARAM")] nint lParam, [NativeTypeName("LRESULT *")] nint* plResult)
+        public HRESULT RequestMessageA(HIMC hIMC, WPARAM wParam, LPARAM lParam, LRESULT* plResult)
         {
-            return ((delegate* unmanaged<IActiveIMMIME*, HIMC, nuint, nint, nint*, int>)(lpVtbl[86]))((IActiveIMMIME*)Unsafe.AsPointer(ref this), hIMC, wParam, lParam, plResult);
+            return ((delegate* unmanaged<IActiveIMMIME*, HIMC, WPARAM, LPARAM, LRESULT*, int>)(lpVtbl[86]))((IActiveIMMIME*)Unsafe.AsPointer(ref this), hIMC, wParam, lParam, plResult);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(87)]
-        public HRESULT RequestMessageW(HIMC hIMC, [NativeTypeName("WPARAM")] nuint wParam, [NativeTypeName("LPARAM")] nint lParam, [NativeTypeName("LRESULT *")] nint* plResult)
+        public HRESULT RequestMessageW(HIMC hIMC, WPARAM wParam, LPARAM lParam, LRESULT* plResult)
         {
-            return ((delegate* unmanaged<IActiveIMMIME*, HIMC, nuint, nint, nint*, int>)(lpVtbl[87]))((IActiveIMMIME*)Unsafe.AsPointer(ref this), hIMC, wParam, lParam, plResult);
+            return ((delegate* unmanaged<IActiveIMMIME*, HIMC, WPARAM, LPARAM, LRESULT*, int>)(lpVtbl[87]))((IActiveIMMIME*)Unsafe.AsPointer(ref this), hIMC, wParam, lParam, plResult);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(88)]
-        public HRESULT SendIMCA(HWND hWnd, uint uMsg, [NativeTypeName("WPARAM")] nuint wParam, [NativeTypeName("LPARAM")] nint lParam, [NativeTypeName("LRESULT *")] nint* plResult)
+        public HRESULT SendIMCA(HWND hWnd, uint uMsg, WPARAM wParam, LPARAM lParam, LRESULT* plResult)
         {
-            return ((delegate* unmanaged<IActiveIMMIME*, HWND, uint, nuint, nint, nint*, int>)(lpVtbl[88]))((IActiveIMMIME*)Unsafe.AsPointer(ref this), hWnd, uMsg, wParam, lParam, plResult);
+            return ((delegate* unmanaged<IActiveIMMIME*, HWND, uint, WPARAM, LPARAM, LRESULT*, int>)(lpVtbl[88]))((IActiveIMMIME*)Unsafe.AsPointer(ref this), hWnd, uMsg, wParam, lParam, plResult);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(89)]
-        public HRESULT SendIMCW(HWND hWnd, uint uMsg, [NativeTypeName("WPARAM")] nuint wParam, [NativeTypeName("LPARAM")] nint lParam, [NativeTypeName("LRESULT *")] nint* plResult)
+        public HRESULT SendIMCW(HWND hWnd, uint uMsg, WPARAM wParam, LPARAM lParam, LRESULT* plResult)
         {
-            return ((delegate* unmanaged<IActiveIMMIME*, HWND, uint, nuint, nint, nint*, int>)(lpVtbl[89]))((IActiveIMMIME*)Unsafe.AsPointer(ref this), hWnd, uMsg, wParam, lParam, plResult);
+            return ((delegate* unmanaged<IActiveIMMIME*, HWND, uint, WPARAM, LPARAM, LRESULT*, int>)(lpVtbl[89]))((IActiveIMMIME*)Unsafe.AsPointer(ref this), hWnd, uMsg, wParam, lParam, plResult);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

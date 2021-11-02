@@ -76,16 +76,16 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(8)]
-        public HRESULT SetBackgroundColor([NativeTypeName("COLORREF")] uint color)
+        public HRESULT SetBackgroundColor(COLORREF color)
         {
-            return ((delegate* unmanaged<IDesktopWallpaper*, uint, int>)(lpVtbl[8]))((IDesktopWallpaper*)Unsafe.AsPointer(ref this), color);
+            return ((delegate* unmanaged<IDesktopWallpaper*, COLORREF, int>)(lpVtbl[8]))((IDesktopWallpaper*)Unsafe.AsPointer(ref this), color);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(9)]
-        public HRESULT GetBackgroundColor([NativeTypeName("COLORREF *")] uint* color)
+        public HRESULT GetBackgroundColor(COLORREF* color)
         {
-            return ((delegate* unmanaged<IDesktopWallpaper*, uint*, int>)(lpVtbl[9]))((IDesktopWallpaper*)Unsafe.AsPointer(ref this), color);
+            return ((delegate* unmanaged<IDesktopWallpaper*, COLORREF*, int>)(lpVtbl[9]))((IDesktopWallpaper*)Unsafe.AsPointer(ref this), color);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

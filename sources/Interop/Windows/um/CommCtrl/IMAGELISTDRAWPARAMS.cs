@@ -28,11 +28,9 @@ namespace TerraFX.Interop
 
         public int yBitmap;
 
-        [NativeTypeName("COLORREF")]
-        public uint rgbBk;
+        public COLORREF rgbBk;
 
-        [NativeTypeName("COLORREF")]
-        public uint rgbFg;
+        public COLORREF rgbFg;
 
         public uint fStyle;
 
@@ -45,7 +43,6 @@ namespace TerraFX.Interop
         [NativeTypeName("DWORD")]
         public uint Frame;
 
-        [NativeTypeName("COLORREF")]
-        public uint crEffect;
+        public COLORREF crEffect;
     }
 }

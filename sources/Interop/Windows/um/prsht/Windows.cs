@@ -27,10 +27,10 @@ namespace TerraFX.Interop
         public static extern nint PropertySheetW([NativeTypeName("LPCPROPSHEETHEADERW")] PROPSHEETHEADERW_V2* param0);
 
         [NativeTypeName("#define SNDMSG ::SendMessage")]
-        public static delegate*<HWND, uint, nuint, nint, nint> SNDMSG => &SendMessageW;
+        public static delegate*<HWND, uint, WPARAM, LPARAM, LRESULT> SNDMSG => &SendMessageW;
 
         [NativeTypeName("#define PSTMSG ::PostMessage")]
-        public static delegate*<HWND, uint, nuint, nint, BOOL> PSTMSG => &PostMessageW;
+        public static delegate*<HWND, uint, WPARAM, LPARAM, BOOL> PSTMSG => &PostMessageW;
 
         [NativeTypeName("#define MAXPROPPAGES 100")]
         public const int MAXPROPPAGES = 100;

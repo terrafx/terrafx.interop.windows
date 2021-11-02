@@ -23,8 +23,7 @@ namespace TerraFX.Interop
         [NativeTypeName("LPWSTR")]
         public ushort* lpszText;
 
-        [NativeTypeName("LPARAM")]
-        public nint lParam;
+        public LPARAM lParam;
 
         public void* lpReserved;
     }

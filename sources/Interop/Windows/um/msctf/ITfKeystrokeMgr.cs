@@ -62,30 +62,30 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        public HRESULT TestKeyDown([NativeTypeName("WPARAM")] nuint wParam, [NativeTypeName("LPARAM")] nint lParam, BOOL* pfEaten)
+        public HRESULT TestKeyDown(WPARAM wParam, LPARAM lParam, BOOL* pfEaten)
         {
-            return ((delegate* unmanaged<ITfKeystrokeMgr*, nuint, nint, BOOL*, int>)(lpVtbl[6]))((ITfKeystrokeMgr*)Unsafe.AsPointer(ref this), wParam, lParam, pfEaten);
+            return ((delegate* unmanaged<ITfKeystrokeMgr*, WPARAM, LPARAM, BOOL*, int>)(lpVtbl[6]))((ITfKeystrokeMgr*)Unsafe.AsPointer(ref this), wParam, lParam, pfEaten);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(7)]
-        public HRESULT TestKeyUp([NativeTypeName("WPARAM")] nuint wParam, [NativeTypeName("LPARAM")] nint lParam, BOOL* pfEaten)
+        public HRESULT TestKeyUp(WPARAM wParam, LPARAM lParam, BOOL* pfEaten)
         {
-            return ((delegate* unmanaged<ITfKeystrokeMgr*, nuint, nint, BOOL*, int>)(lpVtbl[7]))((ITfKeystrokeMgr*)Unsafe.AsPointer(ref this), wParam, lParam, pfEaten);
+            return ((delegate* unmanaged<ITfKeystrokeMgr*, WPARAM, LPARAM, BOOL*, int>)(lpVtbl[7]))((ITfKeystrokeMgr*)Unsafe.AsPointer(ref this), wParam, lParam, pfEaten);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(8)]
-        public HRESULT KeyDown([NativeTypeName("WPARAM")] nuint wParam, [NativeTypeName("LPARAM")] nint lParam, BOOL* pfEaten)
+        public HRESULT KeyDown(WPARAM wParam, LPARAM lParam, BOOL* pfEaten)
         {
-            return ((delegate* unmanaged<ITfKeystrokeMgr*, nuint, nint, BOOL*, int>)(lpVtbl[8]))((ITfKeystrokeMgr*)Unsafe.AsPointer(ref this), wParam, lParam, pfEaten);
+            return ((delegate* unmanaged<ITfKeystrokeMgr*, WPARAM, LPARAM, BOOL*, int>)(lpVtbl[8]))((ITfKeystrokeMgr*)Unsafe.AsPointer(ref this), wParam, lParam, pfEaten);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(9)]
-        public HRESULT KeyUp([NativeTypeName("WPARAM")] nuint wParam, [NativeTypeName("LPARAM")] nint lParam, BOOL* pfEaten)
+        public HRESULT KeyUp(WPARAM wParam, LPARAM lParam, BOOL* pfEaten)
         {
-            return ((delegate* unmanaged<ITfKeystrokeMgr*, nuint, nint, BOOL*, int>)(lpVtbl[9]))((ITfKeystrokeMgr*)Unsafe.AsPointer(ref this), wParam, lParam, pfEaten);
+            return ((delegate* unmanaged<ITfKeystrokeMgr*, WPARAM, LPARAM, BOOL*, int>)(lpVtbl[9]))((ITfKeystrokeMgr*)Unsafe.AsPointer(ref this), wParam, lParam, pfEaten);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

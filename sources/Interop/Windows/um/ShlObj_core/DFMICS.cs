@@ -13,8 +13,7 @@ namespace TerraFX.Interop
         [NativeTypeName("DWORD")]
         public uint fMask;
 
-        [NativeTypeName("LPARAM")]
-        public nint lParam;
+        public LPARAM lParam;
 
         public uint idCmdFirst;
 

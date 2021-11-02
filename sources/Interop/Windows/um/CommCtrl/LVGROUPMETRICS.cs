@@ -19,22 +19,16 @@ namespace TerraFX.Interop
 
         public uint Bottom;
 
-        [NativeTypeName("COLORREF")]
-        public uint crLeft;
+        public COLORREF crLeft;
 
-        [NativeTypeName("COLORREF")]
-        public uint crTop;
+        public COLORREF crTop;
 
-        [NativeTypeName("COLORREF")]
-        public uint crRight;
+        public COLORREF crRight;
 
-        [NativeTypeName("COLORREF")]
-        public uint crBottom;
+        public COLORREF crBottom;
 
-        [NativeTypeName("COLORREF")]
-        public uint crHeader;
+        public COLORREF crHeader;
 
-        [NativeTypeName("COLORREF")]
-        public uint crFooter;
+        public COLORREF crFooter;
     }
 }

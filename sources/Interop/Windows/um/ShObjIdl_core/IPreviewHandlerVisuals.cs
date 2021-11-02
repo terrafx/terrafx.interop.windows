@@ -41,9 +41,9 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        public HRESULT SetBackgroundColor([NativeTypeName("COLORREF")] uint color)
+        public HRESULT SetBackgroundColor(COLORREF color)
         {
-            return ((delegate* unmanaged<IPreviewHandlerVisuals*, uint, int>)(lpVtbl[3]))((IPreviewHandlerVisuals*)Unsafe.AsPointer(ref this), color);
+            return ((delegate* unmanaged<IPreviewHandlerVisuals*, COLORREF, int>)(lpVtbl[3]))((IPreviewHandlerVisuals*)Unsafe.AsPointer(ref this), color);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -55,9 +55,9 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        public HRESULT SetTextColor([NativeTypeName("COLORREF")] uint color)
+        public HRESULT SetTextColor(COLORREF color)
         {
-            return ((delegate* unmanaged<IPreviewHandlerVisuals*, uint, int>)(lpVtbl[5]))((IPreviewHandlerVisuals*)Unsafe.AsPointer(ref this), color);
+            return ((delegate* unmanaged<IPreviewHandlerVisuals*, COLORREF, int>)(lpVtbl[5]))((IPreviewHandlerVisuals*)Unsafe.AsPointer(ref this), color);
         }
     }
 }

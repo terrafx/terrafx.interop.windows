@@ -12,7 +12,7 @@ namespace TerraFX.Interop
         public uint style;
 
         [NativeTypeName("WNDPROC")]
-        public delegate* unmanaged<HWND, uint, nuint, nint, nint> lpfnWndProc;
+        public delegate* unmanaged<HWND, uint, WPARAM, LPARAM, LRESULT> lpfnWndProc;
 
         public int cbClsExtra;
 

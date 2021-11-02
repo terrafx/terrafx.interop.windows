@@ -76,9 +76,9 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(8)]
-        public HRESULT SetBorderColor([NativeTypeName("COLORREF")] uint clrBorder)
+        public HRESULT SetBorderColor(COLORREF clrBorder)
         {
-            return ((delegate* unmanaged<IVMRSurfaceAllocatorNotify*, uint, int>)(lpVtbl[8]))((IVMRSurfaceAllocatorNotify*)Unsafe.AsPointer(ref this), clrBorder);
+            return ((delegate* unmanaged<IVMRSurfaceAllocatorNotify*, COLORREF, int>)(lpVtbl[8]))((IVMRSurfaceAllocatorNotify*)Unsafe.AsPointer(ref this), clrBorder);
         }
     }
 }

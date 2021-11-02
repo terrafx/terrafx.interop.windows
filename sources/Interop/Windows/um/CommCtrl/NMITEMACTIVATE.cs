@@ -21,8 +21,7 @@ namespace TerraFX.Interop
 
         public POINT ptAction;
 
-        [NativeTypeName("LPARAM")]
-        public nint lParam;
+        public LPARAM lParam;
 
         public uint uKeyFlags;
     }

@@ -24,7 +24,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public ref uint cr
+        public ref COLORREF cr
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
@@ -40,8 +40,7 @@ namespace TerraFX.Interop
             public int nIndex;
 
             [FieldOffset(0)]
-            [NativeTypeName("COLORREF")]
-            public uint cr;
+            public COLORREF cr;
         }
     }
 }

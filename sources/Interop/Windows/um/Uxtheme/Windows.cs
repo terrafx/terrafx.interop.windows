@@ -83,7 +83,7 @@ namespace TerraFX.Interop
         public static extern BOOL IsThemeBackgroundPartiallyTransparent(HTHEME hTheme, int iPartId, int iStateId);
 
         [DllImport("uxtheme", ExactSpelling = true)]
-        public static extern HRESULT GetThemeColor(HTHEME hTheme, int iPartId, int iStateId, int iPropId, [NativeTypeName("COLORREF *")] uint* pColor);
+        public static extern HRESULT GetThemeColor(HTHEME hTheme, int iPartId, int iStateId, int iPropId, COLORREF* pColor);
 
         [DllImport("uxtheme", ExactSpelling = true)]
         public static extern HRESULT GetThemeMetric(HTHEME hTheme, HDC hdc, int iPartId, int iStateId, int iPropId, int* piVal);
@@ -125,8 +125,7 @@ namespace TerraFX.Interop
         public static extern HRESULT GetThemeFilename(HTHEME hTheme, int iPartId, int iStateId, int iPropId, [NativeTypeName("LPWSTR")] ushort* pszThemeFileName, int cchMaxBuffChars);
 
         [DllImport("uxtheme", ExactSpelling = true)]
-        [return: NativeTypeName("COLORREF")]
-        public static extern uint GetThemeSysColor(HTHEME hTheme, int iColorId);
+        public static extern COLORREF GetThemeSysColor(HTHEME hTheme, int iColorId);
 
         [DllImport("uxtheme", ExactSpelling = true)]
         public static extern HBRUSH GetThemeSysColorBrush(HTHEME hTheme, int iColorId);

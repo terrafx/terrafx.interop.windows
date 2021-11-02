@@ -28,10 +28,9 @@ namespace TerraFX.Interop
         public ushort* pszTitle;
 
         [NativeTypeName("DLGPROC")]
-        public delegate* unmanaged<HWND, uint, nuint, nint, nint> pfnDlgProc;
+        public delegate* unmanaged<HWND, uint, WPARAM, LPARAM, nint> pfnDlgProc;
 
-        [NativeTypeName("LPARAM")]
-        public nint lParam;
+        public LPARAM lParam;
 
         [NativeTypeName("LPFNPSPCALLBACKW")]
         public delegate* unmanaged<HWND, uint, PROPSHEETPAGEW*, uint> pfnCallback;

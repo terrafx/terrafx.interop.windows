@@ -21,7 +21,6 @@ namespace TerraFX.Interop
 
         public uint uItemState;
 
-        [NativeTypeName("LPARAM")]
-        public nint lItemlParam;
+        public LPARAM lItemlParam;
     }
 }

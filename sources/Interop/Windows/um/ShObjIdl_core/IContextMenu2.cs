@@ -62,9 +62,9 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        public HRESULT HandleMenuMsg(uint uMsg, [NativeTypeName("WPARAM")] nuint wParam, [NativeTypeName("LPARAM")] nint lParam)
+        public HRESULT HandleMenuMsg(uint uMsg, WPARAM wParam, LPARAM lParam)
         {
-            return ((delegate* unmanaged<IContextMenu2*, uint, nuint, nint, int>)(lpVtbl[6]))((IContextMenu2*)Unsafe.AsPointer(ref this), uMsg, wParam, lParam);
+            return ((delegate* unmanaged<IContextMenu2*, uint, WPARAM, LPARAM, int>)(lpVtbl[6]))((IContextMenu2*)Unsafe.AsPointer(ref this), uMsg, wParam, lParam);
         }
     }
 }

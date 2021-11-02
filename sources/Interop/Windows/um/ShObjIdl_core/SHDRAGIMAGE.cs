@@ -13,7 +13,6 @@ namespace TerraFX.Interop
 
         public HBITMAP hbmpDragImage;
 
-        [NativeTypeName("COLORREF")]
-        public uint crColorKey;
+        public COLORREF crColorKey;
     }
 }

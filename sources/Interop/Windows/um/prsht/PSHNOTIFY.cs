@@ -9,7 +9,6 @@ namespace TerraFX.Interop
     {
         public NMHDR hdr;
 
-        [NativeTypeName("LPARAM")]
-        public nint lParam;
+        public LPARAM lParam;
     }
 }

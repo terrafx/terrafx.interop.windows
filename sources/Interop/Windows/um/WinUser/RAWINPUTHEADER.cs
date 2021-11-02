@@ -15,7 +15,6 @@ namespace TerraFX.Interop
 
         public HANDLE hDevice;
 
-        [NativeTypeName("WPARAM")]
-        public nuint wParam;
+        public WPARAM wParam;
     }
 }

@@ -249,32 +249,32 @@ namespace TerraFX.Interop
         public static HWND CreateWindowW([NativeTypeName("LPCWSTR")] ushort* lpClassName, [NativeTypeName("LPCWSTR")] ushort* lpWindowName, [NativeTypeName("DWORD")] uint dwStyle, int x, int y, int nWidth, int nHeight, HWND hWndParent, HMENU hMenu, HINSTANCE hInstance, [NativeTypeName("LPVOID")] void* lpParam) => CreateWindowExW(0, lpClassName, lpWindowName, dwStyle, x, y, nWidth, nHeight, hWndParent, hMenu, hInstance, lpParam);
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static HWND CreateDialogA(HINSTANCE hInstance, [NativeTypeName("LPCSTR")] sbyte* lpName, HWND hWndParent, [NativeTypeName("DLGPROC")] delegate* unmanaged<HWND, uint, nuint, nint, nint> lpDialogFunc) => CreateDialogParamA(hInstance, lpName, hWndParent, lpDialogFunc, dwInitParam: 0);
+        public static HWND CreateDialogA(HINSTANCE hInstance, [NativeTypeName("LPCSTR")] sbyte* lpName, HWND hWndParent, [NativeTypeName("DLGPROC")] delegate* unmanaged<HWND, uint, WPARAM, LPARAM, nint> lpDialogFunc) => CreateDialogParamA(hInstance, lpName, hWndParent, lpDialogFunc, dwInitParam: 0);
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static HWND CreateDialogW(HINSTANCE hInstance, [NativeTypeName("LPCWSTR")] ushort* lpName, HWND hWndParent, [NativeTypeName("DLGPROC")] delegate* unmanaged<HWND, uint, nuint, nint, nint> lpDialogFunc) => CreateDialogParamW(hInstance, lpName, hWndParent, lpDialogFunc, dwInitParam: 0);
+        public static HWND CreateDialogW(HINSTANCE hInstance, [NativeTypeName("LPCWSTR")] ushort* lpName, HWND hWndParent, [NativeTypeName("DLGPROC")] delegate* unmanaged<HWND, uint, WPARAM, LPARAM, nint> lpDialogFunc) => CreateDialogParamW(hInstance, lpName, hWndParent, lpDialogFunc, dwInitParam: 0);
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static HWND CreateDialogIndirectA(HINSTANCE hInstance, [NativeTypeName("LPCDLGTEMPLATEW")] DLGTEMPLATE* lpTemplate, HWND hWndParent, [NativeTypeName("DLGPROC")] delegate* unmanaged<HWND, uint, nuint, nint, nint> lpDialogFunc) => CreateDialogIndirectParamA(hInstance, lpTemplate, hWndParent, lpDialogFunc, dwInitParam: 0);
+        public static HWND CreateDialogIndirectA(HINSTANCE hInstance, [NativeTypeName("LPCDLGTEMPLATEW")] DLGTEMPLATE* lpTemplate, HWND hWndParent, [NativeTypeName("DLGPROC")] delegate* unmanaged<HWND, uint, WPARAM, LPARAM, nint> lpDialogFunc) => CreateDialogIndirectParamA(hInstance, lpTemplate, hWndParent, lpDialogFunc, dwInitParam: 0);
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static HWND CreateDialogIndirectW(HINSTANCE hInstance, [NativeTypeName("LPCDLGTEMPLATEW")] DLGTEMPLATE* lpTemplate, HWND hWndParent, [NativeTypeName("DLGPROC")] delegate* unmanaged<HWND, uint, nuint, nint, nint> lpDialogFunc) => CreateDialogIndirectParamW(hInstance, lpTemplate, hWndParent, lpDialogFunc, dwInitParam: 0);
-
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [return: NativeTypeName("INT_PTR")]
-        public static IntPtr DialogBoxA(HINSTANCE hInstance, [NativeTypeName("LPCSTR")] sbyte* lpTemplate, HWND hWndParent, [NativeTypeName("DLGPROC")] delegate* unmanaged<HWND, uint, nuint, nint, nint> lpDialogFunc) => DialogBoxParamA(hInstance, lpTemplate, hWndParent, lpDialogFunc, dwInitParam: 0);
+        public static HWND CreateDialogIndirectW(HINSTANCE hInstance, [NativeTypeName("LPCDLGTEMPLATEW")] DLGTEMPLATE* lpTemplate, HWND hWndParent, [NativeTypeName("DLGPROC")] delegate* unmanaged<HWND, uint, WPARAM, LPARAM, nint> lpDialogFunc) => CreateDialogIndirectParamW(hInstance, lpTemplate, hWndParent, lpDialogFunc, dwInitParam: 0);
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("INT_PTR")]
-        public static IntPtr DialogBoxW(HINSTANCE hInstance, [NativeTypeName("LPCWSTR")] ushort* lpTemplate, HWND hWndParent, [NativeTypeName("DLGPROC")] delegate* unmanaged<HWND, uint, nuint, nint, nint> lpDialogFunc) => DialogBoxParamW(hInstance, lpTemplate, hWndParent, lpDialogFunc, dwInitParam: 0);
+        public static IntPtr DialogBoxA(HINSTANCE hInstance, [NativeTypeName("LPCSTR")] sbyte* lpTemplate, HWND hWndParent, [NativeTypeName("DLGPROC")] delegate* unmanaged<HWND, uint, WPARAM, LPARAM, nint> lpDialogFunc) => DialogBoxParamA(hInstance, lpTemplate, hWndParent, lpDialogFunc, dwInitParam: 0);
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("INT_PTR")]
-        public static IntPtr DialogBoxIndirectA(HINSTANCE hInstance, [NativeTypeName("LPCDLGTEMPLATEA")] DLGTEMPLATE* lpTemplate, HWND hWndParent, [NativeTypeName("DLGPROC")] delegate* unmanaged<HWND, uint, nuint, nint, nint> lpDialogFunc) => DialogBoxIndirectParamA(hInstance, lpTemplate, hWndParent, lpDialogFunc, dwInitParam: 0);
+        public static IntPtr DialogBoxW(HINSTANCE hInstance, [NativeTypeName("LPCWSTR")] ushort* lpTemplate, HWND hWndParent, [NativeTypeName("DLGPROC")] delegate* unmanaged<HWND, uint, WPARAM, LPARAM, nint> lpDialogFunc) => DialogBoxParamW(hInstance, lpTemplate, hWndParent, lpDialogFunc, dwInitParam: 0);
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("INT_PTR")]
-        public static IntPtr DialogBoxIndirectW(HINSTANCE hInstance, [NativeTypeName("LPCDLGTEMPLATEW")] DLGTEMPLATE* lpTemplate, HWND hWndParent, [NativeTypeName("DLGPROC")] delegate* unmanaged<HWND, uint, nuint, nint, nint> lpDialogFunc) => DialogBoxIndirectParamW(hInstance, lpTemplate, hWndParent, lpDialogFunc, dwInitParam: 0);
+        public static IntPtr DialogBoxIndirectA(HINSTANCE hInstance, [NativeTypeName("LPCDLGTEMPLATEA")] DLGTEMPLATE* lpTemplate, HWND hWndParent, [NativeTypeName("DLGPROC")] delegate* unmanaged<HWND, uint, WPARAM, LPARAM, nint> lpDialogFunc) => DialogBoxIndirectParamA(hInstance, lpTemplate, hWndParent, lpDialogFunc, dwInitParam: 0);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [return: NativeTypeName("INT_PTR")]
+        public static IntPtr DialogBoxIndirectW(HINSTANCE hInstance, [NativeTypeName("LPCDLGTEMPLATEW")] DLGTEMPLATE* lpTemplate, HWND hWndParent, [NativeTypeName("DLGPROC")] delegate* unmanaged<HWND, uint, WPARAM, LPARAM, nint> lpDialogFunc) => DialogBoxIndirectParamW(hInstance, lpTemplate, hWndParent, lpDialogFunc, dwInitParam: 0);
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static int TOUCH_COORD_TO_PIXEL(int l) => l / 100;
@@ -467,7 +467,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static BOOL EnumTaskWindows(IntPtr hTask, [NativeTypeName("WNDENUMPROC")] delegate* unmanaged<HWND, nint, BOOL> lpfn, [NativeTypeName("LPARAM")] nint lParam) => EnumThreadWindows((uint)hTask, lpfn, lParam);
+        public static BOOL EnumTaskWindows(IntPtr hTask, [NativeTypeName("WNDENUMPROC")] delegate* unmanaged<HWND, LPARAM, BOOL> lpfn, [NativeTypeName("LPARAM")] nint lParam) => EnumThreadWindows((uint)hTask, lpfn, lParam);
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static HWND GetNextWindow(HWND hWnd, ushort wCmd) => GetWindow(hWnd, wCmd);

@@ -9,7 +9,6 @@ namespace TerraFX.Interop
     {
         public EMR emr;
 
-        [NativeTypeName("COLORREF")]
-        public uint crColor;
+        public COLORREF crColor;
     }
 }

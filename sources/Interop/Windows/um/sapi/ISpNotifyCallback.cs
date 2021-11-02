@@ -13,9 +13,9 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        public HRESULT NotifyCallback([NativeTypeName("WPARAM")] nuint wParam, [NativeTypeName("LPARAM")] nint lParam)
+        public HRESULT NotifyCallback(WPARAM wParam, LPARAM lParam)
         {
-            return ((delegate* unmanaged<ISpNotifyCallback*, nuint, nint, int>)(lpVtbl[0]))((ISpNotifyCallback*)Unsafe.AsPointer(ref this), wParam, lParam);
+            return ((delegate* unmanaged<ISpNotifyCallback*, WPARAM, LPARAM, int>)(lpVtbl[0]))((ISpNotifyCallback*)Unsafe.AsPointer(ref this), wParam, lParam);
         }
     }
 }

@@ -7,14 +7,11 @@ namespace TerraFX.Interop
 {
     public partial struct CWPRETSTRUCT
     {
-        [NativeTypeName("LRESULT")]
-        public nint lResult;
+        public LRESULT lResult;
 
-        [NativeTypeName("LPARAM")]
-        public nint lParam;
+        public LPARAM lParam;
 
-        [NativeTypeName("WPARAM")]
-        public nuint wParam;
+        public WPARAM wParam;
 
         public uint message;
 

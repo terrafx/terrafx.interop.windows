@@ -12,8 +12,7 @@ namespace TerraFX.Interop
         [NativeTypeName("LPCSTR")]
         public sbyte* psz;
 
-        [NativeTypeName("LPARAM")]
-        public nint lParam;
+        public LPARAM lParam;
 
         public POINT pt;
 

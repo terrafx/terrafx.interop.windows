@@ -41,16 +41,16 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        public HRESULT Rearrange([NativeTypeName("LPARAM")] nint lParamSort)
+        public HRESULT Rearrange(LPARAM lParamSort)
         {
-            return ((delegate* unmanaged<IShellFolderView*, nint, int>)(lpVtbl[3]))((IShellFolderView*)Unsafe.AsPointer(ref this), lParamSort);
+            return ((delegate* unmanaged<IShellFolderView*, LPARAM, int>)(lpVtbl[3]))((IShellFolderView*)Unsafe.AsPointer(ref this), lParamSort);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        public HRESULT GetArrangeParam([NativeTypeName("LPARAM *")] nint* plParamSort)
+        public HRESULT GetArrangeParam(LPARAM* plParamSort)
         {
-            return ((delegate* unmanaged<IShellFolderView*, nint*, int>)(lpVtbl[4]))((IShellFolderView*)Unsafe.AsPointer(ref this), plParamSort);
+            return ((delegate* unmanaged<IShellFolderView*, LPARAM*, int>)(lpVtbl[4]))((IShellFolderView*)Unsafe.AsPointer(ref this), plParamSort);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

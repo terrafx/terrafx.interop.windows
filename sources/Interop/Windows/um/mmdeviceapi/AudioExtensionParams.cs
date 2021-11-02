@@ -7,8 +7,7 @@ namespace TerraFX.Interop
 {
     public unsafe partial struct AudioExtensionParams
     {
-        [NativeTypeName("LPARAM")]
-        public nint AddPageParam;
+        public LPARAM AddPageParam;
 
         public IMMDevice* pEndpoint;
 

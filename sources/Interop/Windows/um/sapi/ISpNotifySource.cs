@@ -48,23 +48,23 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        public HRESULT SetNotifyWindowMessage(HWND hWnd, uint Msg, [NativeTypeName("WPARAM")] nuint wParam, [NativeTypeName("LPARAM")] nint lParam)
+        public HRESULT SetNotifyWindowMessage(HWND hWnd, uint Msg, WPARAM wParam, LPARAM lParam)
         {
-            return ((delegate* unmanaged<ISpNotifySource*, HWND, uint, nuint, nint, int>)(lpVtbl[4]))((ISpNotifySource*)Unsafe.AsPointer(ref this), hWnd, Msg, wParam, lParam);
+            return ((delegate* unmanaged<ISpNotifySource*, HWND, uint, WPARAM, LPARAM, int>)(lpVtbl[4]))((ISpNotifySource*)Unsafe.AsPointer(ref this), hWnd, Msg, wParam, lParam);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        public HRESULT SetNotifyCallbackFunction([NativeTypeName("SPNOTIFYCALLBACK *")] delegate* unmanaged<nuint, nint, void> pfnCallback, [NativeTypeName("WPARAM")] nuint wParam, [NativeTypeName("LPARAM")] nint lParam)
+        public HRESULT SetNotifyCallbackFunction([NativeTypeName("SPNOTIFYCALLBACK *")] delegate* unmanaged<WPARAM, LPARAM, void> pfnCallback, WPARAM wParam, LPARAM lParam)
         {
-            return ((delegate* unmanaged<ISpNotifySource*, delegate* unmanaged<nuint, nint, void>, nuint, nint, int>)(lpVtbl[5]))((ISpNotifySource*)Unsafe.AsPointer(ref this), pfnCallback, wParam, lParam);
+            return ((delegate* unmanaged<ISpNotifySource*, delegate* unmanaged<WPARAM, LPARAM, void>, WPARAM, LPARAM, int>)(lpVtbl[5]))((ISpNotifySource*)Unsafe.AsPointer(ref this), pfnCallback, wParam, lParam);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        public HRESULT SetNotifyCallbackInterface(ISpNotifyCallback* pSpCallback, [NativeTypeName("WPARAM")] nuint wParam, [NativeTypeName("LPARAM")] nint lParam)
+        public HRESULT SetNotifyCallbackInterface(ISpNotifyCallback* pSpCallback, WPARAM wParam, LPARAM lParam)
         {
-            return ((delegate* unmanaged<ISpNotifySource*, ISpNotifyCallback*, nuint, nint, int>)(lpVtbl[6]))((ISpNotifySource*)Unsafe.AsPointer(ref this), pSpCallback, wParam, lParam);
+            return ((delegate* unmanaged<ISpNotifySource*, ISpNotifyCallback*, WPARAM, LPARAM, int>)(lpVtbl[6]))((ISpNotifySource*)Unsafe.AsPointer(ref this), pSpCallback, wParam, lParam);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

@@ -41,9 +41,9 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        public HRESULT MessageSFVCB(uint uMsg, [NativeTypeName("WPARAM")] nuint wParam, [NativeTypeName("LPARAM")] nint lParam)
+        public HRESULT MessageSFVCB(uint uMsg, WPARAM wParam, LPARAM lParam)
         {
-            return ((delegate* unmanaged<IShellFolderViewCB*, uint, nuint, nint, int>)(lpVtbl[3]))((IShellFolderViewCB*)Unsafe.AsPointer(ref this), uMsg, wParam, lParam);
+            return ((delegate* unmanaged<IShellFolderViewCB*, uint, WPARAM, LPARAM, int>)(lpVtbl[3]))((IShellFolderViewCB*)Unsafe.AsPointer(ref this), uMsg, wParam, lParam);
         }
     }
 }

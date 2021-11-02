@@ -20,7 +20,7 @@ namespace TerraFX.Interop
         public const uint c_DwmMaxAdapters = 16;
 
         [DllImport("dwmapi", ExactSpelling = true)]
-        public static extern BOOL DwmDefWindowProc(HWND hWnd, uint msg, [NativeTypeName("WPARAM")] nuint wParam, [NativeTypeName("LPARAM")] nint lParam, [NativeTypeName("LRESULT *")] nint* plResult);
+        public static extern BOOL DwmDefWindowProc(HWND hWnd, uint msg, WPARAM wParam, LPARAM lParam, LRESULT* plResult);
 
         [DllImport("dwmapi", ExactSpelling = true)]
         public static extern HRESULT DwmEnableBlurBehindWindow(HWND hWnd, [NativeTypeName("const DWM_BLURBEHIND *")] DWM_BLURBEHIND* pBlurBehind);

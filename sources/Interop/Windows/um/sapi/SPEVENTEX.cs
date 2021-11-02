@@ -49,11 +49,9 @@ namespace TerraFX.Interop
         [NativeTypeName("ULONGLONG")]
         public ulong ullAudioStreamOffset;
 
-        [NativeTypeName("WPARAM")]
-        public nuint wParam;
+        public WPARAM wParam;
 
-        [NativeTypeName("LPARAM")]
-        public nint lParam;
+        public LPARAM lParam;
 
         [NativeTypeName("ULONGLONG")]
         public ulong ullAudioTimeOffset;

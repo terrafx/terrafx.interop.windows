@@ -13,14 +13,11 @@ namespace TerraFX.Interop
         [NativeTypeName("DWORD")]
         public uint dwFlags;
 
-        [NativeTypeName("COLORREF")]
-        public uint crText;
+        public COLORREF crText;
 
-        [NativeTypeName("COLORREF")]
-        public uint crBorder;
+        public COLORREF crBorder;
 
-        [NativeTypeName("COLORREF")]
-        public uint crShadow;
+        public COLORREF crShadow;
 
         public int iTextShadowType;
 
@@ -39,9 +36,8 @@ namespace TerraFX.Interop
         public int iGlowSize;
 
         [NativeTypeName("DTT_CALLBACK_PROC")]
-        public delegate* unmanaged<HDC, ushort*, int, RECT*, uint, nint, int> pfnDrawTextCallback;
+        public delegate* unmanaged<HDC, ushort*, int, RECT*, uint, LPARAM, int> pfnDrawTextCallback;
 
-        [NativeTypeName("LPARAM")]
-        public nint lParam;
+        public LPARAM lParam;
     }
 }

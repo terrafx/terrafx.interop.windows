@@ -1,0 +1,69 @@
+// Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
+
+using System;
+
+namespace TerraFX.Interop
+{
+    public partial struct LRESULT : IEquatable<LRESULT>
+    {
+        public readonly nint Value;
+
+        public LRESULT(nint value)
+        {
+            Value = value;
+        }
+
+        public static bool operator ==(LRESULT left, LRESULT right) => left.Value == right.Value;
+
+        public static bool operator !=(LRESULT left, LRESULT right) => left.Value != right.Value;
+
+        public static explicit operator LRESULT(byte value) => new LRESULT((nint)(value));
+
+        public static implicit operator byte(LRESULT value) => (byte)(value.Value);
+
+        public static explicit operator LRESULT(short value) => new LRESULT((nint)(value));
+
+        public static implicit operator short(LRESULT value) => (short)(value.Value);
+
+        public static explicit operator LRESULT(int value) => new LRESULT((nint)(value));
+
+        public static implicit operator int(LRESULT value) => (int)(value.Value);
+
+        public static implicit operator LRESULT(long value) => new LRESULT((nint)(value));
+
+        public static explicit operator long(LRESULT value) => (long)(value.Value);
+
+        public static implicit operator LRESULT(nint value) => new LRESULT((nint)(value));
+
+        public static implicit operator nint(LRESULT value) => (nint)(value.Value);
+
+        public static explicit operator LRESULT(sbyte value) => new LRESULT((nint)(value));
+
+        public static implicit operator sbyte(LRESULT value) => (sbyte)(value.Value);
+
+        public static explicit operator LRESULT(ushort value) => new LRESULT((nint)(value));
+
+        public static implicit operator ushort(LRESULT value) => (ushort)(value.Value);
+
+        public static explicit operator LRESULT(uint value) => new LRESULT((nint)(value));
+
+        public static implicit operator uint(LRESULT value) => (uint)(value.Value);
+
+        public static implicit operator LRESULT(ulong value) => new LRESULT((nint)(value));
+
+        public static explicit operator ulong(LRESULT value) => (ulong)(value.Value);
+
+        public static explicit operator LRESULT(nuint value) => new LRESULT((nint)(value));
+
+        public static explicit operator nuint(LRESULT value) => (nuint)(value.Value);
+
+        public override bool Equals(object? obj) => (obj is LRESULT other) && Equals(other);
+
+        public bool Equals(LRESULT other) => (this == other);
+
+        public override int GetHashCode() => Value.GetHashCode();
+
+        public override string ToString() => Value.ToString();
+
+    }
+}

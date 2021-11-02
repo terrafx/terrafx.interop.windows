@@ -252,10 +252,9 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(33)]
-        [return: NativeTypeName("LRESULT")]
-        public nint WndProcBS(HWND hwnd, uint uMsg, [NativeTypeName("WPARAM")] nuint wParam, [NativeTypeName("LPARAM")] nint lParam)
+        public LRESULT WndProcBS(HWND hwnd, uint uMsg, WPARAM wParam, LPARAM lParam)
         {
-            return ((delegate* unmanaged<IBrowserService3*, HWND, uint, nuint, nint, nint>)(lpVtbl[33]))((IBrowserService3*)Unsafe.AsPointer(ref this), hwnd, uMsg, wParam, lParam);
+            return ((delegate* unmanaged<IBrowserService3*, HWND, uint, WPARAM, LPARAM, nint>)(lpVtbl[33]))((IBrowserService3*)Unsafe.AsPointer(ref this), hwnd, uMsg, wParam, lParam);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -274,9 +273,9 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(36)]
-        public HRESULT OnSize([NativeTypeName("WPARAM")] nuint wParam)
+        public HRESULT OnSize(WPARAM wParam)
         {
-            return ((delegate* unmanaged<IBrowserService3*, nuint, int>)(lpVtbl[36]))((IBrowserService3*)Unsafe.AsPointer(ref this), wParam);
+            return ((delegate* unmanaged<IBrowserService3*, WPARAM, int>)(lpVtbl[36]))((IBrowserService3*)Unsafe.AsPointer(ref this), wParam);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -288,10 +287,9 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(38)]
-        [return: NativeTypeName("LRESULT")]
-        public nint OnCommand([NativeTypeName("WPARAM")] nuint wParam, [NativeTypeName("LPARAM")] nint lParam)
+        public LRESULT OnCommand(WPARAM wParam, LPARAM lParam)
         {
-            return ((delegate* unmanaged<IBrowserService3*, nuint, nint, nint>)(lpVtbl[38]))((IBrowserService3*)Unsafe.AsPointer(ref this), wParam, lParam);
+            return ((delegate* unmanaged<IBrowserService3*, WPARAM, LPARAM, nint>)(lpVtbl[38]))((IBrowserService3*)Unsafe.AsPointer(ref this), wParam, lParam);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -303,8 +301,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(40)]
-        [return: NativeTypeName("LRESULT")]
-        public nint OnNotify([NativeTypeName("struct tagNMHDR *")] NMHDR* pnm)
+        public LRESULT OnNotify([NativeTypeName("struct tagNMHDR *")] NMHDR* pnm)
         {
             return ((delegate* unmanaged<IBrowserService3*, NMHDR*, nint>)(lpVtbl[40]))((IBrowserService3*)Unsafe.AsPointer(ref this), pnm);
         }
@@ -501,9 +498,9 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(68)]
-        public HRESULT _SendChildren(HWND hwndBar, BOOL fBroadcast, uint uMsg, [NativeTypeName("WPARAM")] nuint wParam, [NativeTypeName("LPARAM")] nint lParam)
+        public HRESULT _SendChildren(HWND hwndBar, BOOL fBroadcast, uint uMsg, WPARAM wParam, LPARAM lParam)
         {
-            return ((delegate* unmanaged<IBrowserService3*, HWND, BOOL, uint, nuint, nint, int>)(lpVtbl[68]))((IBrowserService3*)Unsafe.AsPointer(ref this), hwndBar, fBroadcast, uMsg, wParam, lParam);
+            return ((delegate* unmanaged<IBrowserService3*, HWND, BOOL, uint, WPARAM, LPARAM, int>)(lpVtbl[68]))((IBrowserService3*)Unsafe.AsPointer(ref this), hwndBar, fBroadcast, uMsg, wParam, lParam);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -592,10 +589,9 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(81)]
-        [return: NativeTypeName("LRESULT")]
-        public nint ForwardViewMsg(uint uMsg, [NativeTypeName("WPARAM")] nuint wParam, [NativeTypeName("LPARAM")] nint lParam)
+        public LRESULT ForwardViewMsg(uint uMsg, WPARAM wParam, LPARAM lParam)
         {
-            return ((delegate* unmanaged<IBrowserService3*, uint, nuint, nint, nint>)(lpVtbl[81]))((IBrowserService3*)Unsafe.AsPointer(ref this), uMsg, wParam, lParam);
+            return ((delegate* unmanaged<IBrowserService3*, uint, WPARAM, LPARAM, nint>)(lpVtbl[81]))((IBrowserService3*)Unsafe.AsPointer(ref this), uMsg, wParam, lParam);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

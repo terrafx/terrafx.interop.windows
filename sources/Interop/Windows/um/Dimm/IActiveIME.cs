@@ -69,9 +69,9 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(7)]
-        public HRESULT Escape(HIMC hIMC, uint uEscape, void* pData, [NativeTypeName("LRESULT *")] nint* plResult)
+        public HRESULT Escape(HIMC hIMC, uint uEscape, void* pData, LRESULT* plResult)
         {
-            return ((delegate* unmanaged<IActiveIME*, HIMC, uint, void*, nint*, int>)(lpVtbl[7]))((IActiveIME*)Unsafe.AsPointer(ref this), hIMC, uEscape, pData, plResult);
+            return ((delegate* unmanaged<IActiveIME*, HIMC, uint, void*, LRESULT*, int>)(lpVtbl[7]))((IActiveIME*)Unsafe.AsPointer(ref this), hIMC, uEscape, pData, plResult);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

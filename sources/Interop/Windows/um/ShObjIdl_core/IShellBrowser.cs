@@ -118,9 +118,9 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(14)]
-        public HRESULT SendControlMsg(uint id, uint uMsg, [NativeTypeName("WPARAM")] nuint wParam, [NativeTypeName("LPARAM")] nint lParam, [NativeTypeName("LRESULT *")] nint* pret)
+        public HRESULT SendControlMsg(uint id, uint uMsg, WPARAM wParam, LPARAM lParam, LRESULT* pret)
         {
-            return ((delegate* unmanaged<IShellBrowser*, uint, uint, nuint, nint, nint*, int>)(lpVtbl[14]))((IShellBrowser*)Unsafe.AsPointer(ref this), id, uMsg, wParam, lParam, pret);
+            return ((delegate* unmanaged<IShellBrowser*, uint, uint, WPARAM, LPARAM, LRESULT*, int>)(lpVtbl[14]))((IShellBrowser*)Unsafe.AsPointer(ref this), id, uMsg, wParam, lParam, pret);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

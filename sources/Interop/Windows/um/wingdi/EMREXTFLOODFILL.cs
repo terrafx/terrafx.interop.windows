@@ -11,8 +11,7 @@ namespace TerraFX.Interop
 
         public POINTL ptlStart;
 
-        [NativeTypeName("COLORREF")]
-        public uint crColor;
+        public COLORREF crColor;
 
         [NativeTypeName("DWORD")]
         public uint iMode;
