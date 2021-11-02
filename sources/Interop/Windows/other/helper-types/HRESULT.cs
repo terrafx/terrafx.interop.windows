@@ -4,7 +4,7 @@ using System;
 
 namespace TerraFX.Interop
 {
-    public partial struct HRESULT : IComparable, IComparable<HRESULT>, IEquatable<HRESULT>, IFormattable
+    public unsafe partial struct HRESULT : IComparable, IComparable<HRESULT>, IEquatable<HRESULT>, IFormattable
     {
         public readonly int Value;
 
@@ -59,11 +59,11 @@ namespace TerraFX.Interop
 
         public static explicit operator HRESULT(ulong value) => new HRESULT((int)(value));
 
-        public static implicit operator ulong(HRESULT value) => (ulong)(value.Value);
+        public static explicit operator ulong(HRESULT value) => (ulong)(value.Value);
 
         public static explicit operator HRESULT(nuint value) => new HRESULT((int)(value));
 
-        public static implicit operator nuint(HRESULT value) => (nuint)(value.Value);
+        public static explicit operator nuint(HRESULT value) => (nuint)(value.Value);
 
         public int CompareTo(object? obj)
         {
@@ -83,7 +83,7 @@ namespace TerraFX.Interop
 
         public override int GetHashCode() => Value.GetHashCode();
 
-        public override string ToString() => Value.ToString();
+        public override string ToString() => Value.ToString("X8");
 
         public string ToString(string? format, IFormatProvider? formatProvider) => Value.ToString(format, formatProvider);
 

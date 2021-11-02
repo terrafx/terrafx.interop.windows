@@ -4,7 +4,7 @@ using System;
 
 namespace TerraFX.Interop
 {
-    public partial struct LPARAM : IComparable, IComparable<LPARAM>, IEquatable<LPARAM>, IFormattable
+    public unsafe partial struct LPARAM : IComparable, IComparable<LPARAM>, IEquatable<LPARAM>, IFormattable
     {
         public readonly nint Value;
 
@@ -83,7 +83,7 @@ namespace TerraFX.Interop
 
         public override int GetHashCode() => Value.GetHashCode();
 
-        public override string ToString() => Value.ToString();
+        public override string ToString() => Value.ToString((sizeof(nint) == 4) ? "X8" : "X16");
 
         public string ToString(string? format, IFormatProvider? formatProvider) => Value.ToString(format, formatProvider);
 

@@ -4,7 +4,7 @@ using System;
 
 namespace TerraFX.Interop
 {
-    public partial struct WPARAM : IComparable, IComparable<WPARAM>, IEquatable<WPARAM>, IFormattable
+    public unsafe partial struct WPARAM : IComparable, IComparable<WPARAM>, IEquatable<WPARAM>, IFormattable
     {
         public readonly nuint Value;
 
@@ -29,11 +29,11 @@ namespace TerraFX.Interop
 
         public static explicit operator byte(WPARAM value) => (byte)(value.Value);
 
-        public static implicit operator WPARAM(short value) => new WPARAM((nuint)(value));
+        public static explicit operator WPARAM(short value) => new WPARAM((nuint)(value));
 
         public static explicit operator short(WPARAM value) => (short)(value.Value);
 
-        public static implicit operator WPARAM(int value) => new WPARAM((nuint)(value));
+        public static explicit operator WPARAM(int value) => new WPARAM((nuint)(value));
 
         public static explicit operator int(WPARAM value) => (int)(value.Value);
 
@@ -45,7 +45,7 @@ namespace TerraFX.Interop
 
         public static explicit operator nint(WPARAM value) => (nint)(value.Value);
 
-        public static implicit operator WPARAM(sbyte value) => new WPARAM((nuint)(value));
+        public static explicit operator WPARAM(sbyte value) => new WPARAM((nuint)(value));
 
         public static explicit operator sbyte(WPARAM value) => (sbyte)(value.Value);
 
@@ -83,7 +83,7 @@ namespace TerraFX.Interop
 
         public override int GetHashCode() => Value.GetHashCode();
 
-        public override string ToString() => Value.ToString();
+        public override string ToString() => Value.ToString((sizeof(nint) == 4) ? "X8" : "X16");
 
         public string ToString(string? format, IFormatProvider? formatProvider) => Value.ToString(format, formatProvider);
 

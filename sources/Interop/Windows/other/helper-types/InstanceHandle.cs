@@ -4,7 +4,7 @@ using System;
 
 namespace TerraFX.Interop
 {
-    public partial struct InstanceHandle : IComparable, IComparable<InstanceHandle>, IEquatable<InstanceHandle>, IFormattable
+    public unsafe partial struct InstanceHandle : IComparable, IComparable<InstanceHandle>, IEquatable<InstanceHandle>, IFormattable
     {
         public readonly ulong Value;
 
@@ -29,11 +29,11 @@ namespace TerraFX.Interop
 
         public static explicit operator byte(InstanceHandle value) => (byte)(value.Value);
 
-        public static implicit operator InstanceHandle(short value) => new InstanceHandle((ulong)(value));
+        public static explicit operator InstanceHandle(short value) => new InstanceHandle((ulong)(value));
 
         public static explicit operator short(InstanceHandle value) => (short)(value.Value);
 
-        public static implicit operator InstanceHandle(int value) => new InstanceHandle((ulong)(value));
+        public static explicit operator InstanceHandle(int value) => new InstanceHandle((ulong)(value));
 
         public static explicit operator int(InstanceHandle value) => (int)(value.Value);
 
@@ -41,11 +41,11 @@ namespace TerraFX.Interop
 
         public static explicit operator long(InstanceHandle value) => (long)(value.Value);
 
-        public static implicit operator InstanceHandle(nint value) => new InstanceHandle((ulong)(value));
+        public static explicit operator InstanceHandle(nint value) => new InstanceHandle((ulong)(value));
 
         public static explicit operator nint(InstanceHandle value) => (nint)(value.Value);
 
-        public static implicit operator InstanceHandle(sbyte value) => new InstanceHandle((ulong)(value));
+        public static explicit operator InstanceHandle(sbyte value) => new InstanceHandle((ulong)(value));
 
         public static explicit operator sbyte(InstanceHandle value) => (sbyte)(value.Value);
 
@@ -83,7 +83,7 @@ namespace TerraFX.Interop
 
         public override int GetHashCode() => Value.GetHashCode();
 
-        public override string ToString() => Value.ToString();
+        public override string ToString() => Value.ToString("X16");
 
         public string ToString(string? format, IFormatProvider? formatProvider) => Value.ToString(format, formatProvider);
 

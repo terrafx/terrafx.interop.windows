@@ -4,7 +4,7 @@ using System;
 
 namespace TerraFX.Interop
 {
-    public partial struct MSIHANDLE : IComparable, IComparable<MSIHANDLE>, IEquatable<MSIHANDLE>, IFormattable
+    public unsafe partial struct MSIHANDLE : IComparable, IComparable<MSIHANDLE>, IEquatable<MSIHANDLE>, IFormattable
     {
         public readonly uint Value;
 
@@ -29,7 +29,7 @@ namespace TerraFX.Interop
 
         public static explicit operator byte(MSIHANDLE value) => (byte)(value.Value);
 
-        public static implicit operator MSIHANDLE(short value) => new MSIHANDLE((uint)(value));
+        public static explicit operator MSIHANDLE(short value) => new MSIHANDLE((uint)(value));
 
         public static explicit operator short(MSIHANDLE value) => (short)(value.Value);
 
@@ -45,7 +45,7 @@ namespace TerraFX.Interop
 
         public static implicit operator nint(MSIHANDLE value) => (nint)(value.Value);
 
-        public static implicit operator MSIHANDLE(sbyte value) => new MSIHANDLE((uint)(value));
+        public static explicit operator MSIHANDLE(sbyte value) => new MSIHANDLE((uint)(value));
 
         public static explicit operator sbyte(MSIHANDLE value) => (sbyte)(value.Value);
 
@@ -83,7 +83,7 @@ namespace TerraFX.Interop
 
         public override int GetHashCode() => Value.GetHashCode();
 
-        public override string ToString() => Value.ToString();
+        public override string ToString() => Value.ToString("X8");
 
         public string ToString(string? format, IFormatProvider? formatProvider) => Value.ToString(format, formatProvider);
 

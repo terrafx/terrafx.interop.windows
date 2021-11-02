@@ -71,11 +71,11 @@ namespace TerraFX.Interop
 
         public static explicit operator BOOL(ulong value) => new BOOL((int)(value));
 
-        public static implicit operator ulong(BOOL value) => (ulong)(value.Value);
+        public static explicit operator ulong(BOOL value) => (ulong)(value.Value);
 
         public static explicit operator BOOL(nuint value) => new BOOL((int)(value));
 
-        public static implicit operator nuint(BOOL value) => (nuint)(value.Value);
+        public static explicit operator nuint(BOOL value) => (nuint)(value.Value);
 
         public int CompareTo(object? obj)
         {
