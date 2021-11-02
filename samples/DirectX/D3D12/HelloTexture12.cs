@@ -72,7 +72,7 @@ namespace TerraFX.Samples.DirectX.D3D12
 
                 var heapProperties = new D3D12_HEAP_PROPERTIES(D3D12_HEAP_TYPE_DEFAULT);
                 var iid = IID_ID3D12Resource;
-                ThrowIfFailed(nameof(ID3D12Device.CreateCommittedResource), D3DDevice->CreateCommittedResource(
+                ThrowIfFailed(D3DDevice->CreateCommittedResource(
                     &heapProperties,
                     D3D12_HEAP_FLAG_NONE,
                     &textureDesc,
@@ -87,7 +87,7 @@ namespace TerraFX.Samples.DirectX.D3D12
                 // Create the GPU upload buffer.
                 heapProperties = new D3D12_HEAP_PROPERTIES(D3D12_HEAP_TYPE_UPLOAD);
                 var bufferDesc = D3D12_RESOURCE_DESC.Buffer(uploadBufferSize);
-                ThrowIfFailed(nameof(ID3D12Device.CreateCommittedResource), D3DDevice->CreateCommittedResource(
+                ThrowIfFailed(D3DDevice->CreateCommittedResource(
                     &heapProperties,
                     D3D12_HEAP_FLAG_NONE,
                     &bufferDesc,
@@ -111,7 +111,7 @@ namespace TerraFX.Samples.DirectX.D3D12
                         SlicePitch = (nint)slicePitch,
                     };
                 }
-                UpdateSubresources(GraphicsCommandList, texture, textureUploadHeap, 0, 0, 1, &textureSubresourceData);
+                _ = UpdateSubresources(GraphicsCommandList, texture, textureUploadHeap, 0, 0, 1, &textureSubresourceData);
                 var barrier = D3D12_RESOURCE_BARRIER.InitTransition(texture, D3D12_RESOURCE_STATE_COPY_DEST, D3D12_RESOURCE_STATE_PIXEL_SHADER_RESOURCE);
                 GraphicsCommandList->ResourceBarrier(1, &barrier);
 
@@ -182,7 +182,7 @@ namespace TerraFX.Samples.DirectX.D3D12
                 ID3D12DescriptorHeap* srvHeap;
 
                 var iid = IID_ID3D12DescriptorHeap;
-                ThrowIfFailed(nameof(ID3D12Device.CreateDescriptorHeap), D3DDevice->CreateDescriptorHeap(&srvHeapDesc, &iid, (void**)&srvHeap));
+                ThrowIfFailed(D3DDevice->CreateDescriptorHeap(&srvHeapDesc, &iid, (void**)&srvHeap));
 
                 return srvHeap;
             }
@@ -203,11 +203,11 @@ namespace TerraFX.Samples.DirectX.D3D12
             {
                 var entryPoint = 0x00006E69614D5356;    // VSMain
                 var target = 0x0000305F355F7376;        // vs_5_0
-                ThrowIfFailed(nameof(D3DCompileFromFile), D3DCompileFromFile((ushort*)fileName, pDefines: null, pInclude: null, (sbyte*)&entryPoint, (sbyte*)&target, compileFlags, Flags2: 0, vertexShader.GetAddressOf(), ppErrorMsgs: null));
+                ThrowIfFailed(D3DCompileFromFile((ushort*)fileName, pDefines: null, pInclude: null, (sbyte*)&entryPoint, (sbyte*)&target, compileFlags, Flags2: 0, vertexShader.GetAddressOf(), ppErrorMsgs: null));
 
                 entryPoint = 0x00006E69614D5350;        // PSMain
                 target = 0x0000305F355F7370;            // ps_5_0
-                ThrowIfFailed(nameof(D3DCompileFromFile), D3DCompileFromFile((ushort*)fileName, pDefines: null, pInclude: null, (sbyte*)&entryPoint, (sbyte*)&target, compileFlags, Flags2: 0, pixelShader.GetAddressOf(), ppErrorMsgs: null));
+                ThrowIfFailed(D3DCompileFromFile((ushort*)fileName, pDefines: null, pInclude: null, (sbyte*)&entryPoint, (sbyte*)&target, compileFlags, Flags2: 0, pixelShader.GetAddressOf(), ppErrorMsgs: null));
             }
 
             // Define the vertex input layout.
@@ -262,7 +262,7 @@ namespace TerraFX.Samples.DirectX.D3D12
             ID3D12PipelineState* pipelineState;
 
             var iid = IID_ID3D12PipelineState;
-            ThrowIfFailed(nameof(ID3D12Device.CreateGraphicsPipelineState), D3DDevice->CreateGraphicsPipelineState(&psoDesc, &iid, (void**)&pipelineState));
+            ThrowIfFailed(D3DDevice->CreateGraphicsPipelineState(&psoDesc, &iid, (void**)&pipelineState));
 
             return pipelineState;
         }
@@ -309,13 +309,13 @@ namespace TerraFX.Samples.DirectX.D3D12
             var rootSignatureDesc = new D3D12_VERSIONED_ROOT_SIGNATURE_DESC();
             rootSignatureDesc.Init_1_1(RootParametersCount, rootParameters, 1, &sampler, D3D12_ROOT_SIGNATURE_FLAG_ALLOW_INPUT_ASSEMBLER_INPUT_LAYOUT);
 
-            ThrowIfFailed(nameof(D3D12SerializeVersionedRootSignature), D3D12SerializeVersionedRootSignature(
+            ThrowIfFailed(D3D12SerializeVersionedRootSignature(
                 &rootSignatureDesc, featureData.HighestVersion, signature.GetAddressOf(), error.GetAddressOf()));
 
             ID3D12RootSignature* rootSignature;
 
             var iid = IID_ID3D12RootSignature;
-            ThrowIfFailed(nameof(ID3D12Device.CreateRootSignature), D3DDevice->CreateRootSignature(0, signature.Get()->GetBufferPointer(), signature.Get()->GetBufferSize(), &iid, (void**)&rootSignature));
+            ThrowIfFailed(D3DDevice->CreateRootSignature(0, signature.Get()->GetBufferPointer(), signature.Get()->GetBufferSize(), &iid, (void**)&rootSignature));
 
             return rootSignature;
         }
@@ -351,7 +351,7 @@ namespace TerraFX.Samples.DirectX.D3D12
             var bufferDesc = D3D12_RESOURCE_DESC.Buffer(vertexBufferSize);
 
             var iid = IID_ID3D12Resource;
-            ThrowIfFailed(nameof(ID3D12Device.CreateCommittedResource), D3DDevice->CreateCommittedResource(
+            ThrowIfFailed(D3DDevice->CreateCommittedResource(
                 &heapProperties,
                 D3D12_HEAP_FLAG_NONE,
                 &bufferDesc,
@@ -364,7 +364,7 @@ namespace TerraFX.Samples.DirectX.D3D12
             // Copy the triangle data to the vertex buffer.
             var readRange = new D3D12_RANGE();
             byte* pVertexDataBegin;
-            ThrowIfFailed(nameof(ID3D12Resource.Map), vertexBuffer->Map(Subresource: 0, &readRange, (void**)&pVertexDataBegin));
+            ThrowIfFailed(vertexBuffer->Map(Subresource: 0, &readRange, (void**)&pVertexDataBegin));
             Unsafe.CopyBlock(pVertexDataBegin, triangleVertices, vertexBufferSize);
             vertexBuffer->Unmap(0, null);
 

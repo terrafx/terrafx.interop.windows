@@ -57,11 +57,11 @@ namespace TerraFX.Samples.DirectX.D3D12
             {
                 var entryPoint = 0x00006E69614D5356;    // VSMain
                 var target = 0x0000305F355F7376;        // vs_5_0
-                ThrowIfFailed(nameof(D3DCompileFromFile), D3DCompileFromFile((ushort*)fileName, pDefines: null, pInclude: null, (sbyte*)&entryPoint, (sbyte*)&target, compileFlags, Flags2: 0, vertexShader.GetAddressOf(), ppErrorMsgs: null));
+                ThrowIfFailed(D3DCompileFromFile((ushort*)fileName, pDefines: null, pInclude: null, (sbyte*)&entryPoint, (sbyte*)&target, compileFlags, Flags2: 0, vertexShader.GetAddressOf(), ppErrorMsgs: null));
 
                 entryPoint = 0x00006E69614D5350;        // PSMain
                 target = 0x0000305F355F7370;            // ps_5_0
-                ThrowIfFailed(nameof(D3DCompileFromFile), D3DCompileFromFile((ushort*)fileName, pDefines: null, pInclude: null, (sbyte*)&entryPoint, (sbyte*)&target, compileFlags, Flags2: 0, pixelShader.GetAddressOf(), ppErrorMsgs: null));
+                ThrowIfFailed(D3DCompileFromFile((ushort*)fileName, pDefines: null, pInclude: null, (sbyte*)&entryPoint, (sbyte*)&target, compileFlags, Flags2: 0, pixelShader.GetAddressOf(), ppErrorMsgs: null));
             }
 
             // Define the vertex input layout.
@@ -113,7 +113,7 @@ namespace TerraFX.Samples.DirectX.D3D12
             ID3D12PipelineState* pipelineState;
 
             var iid = IID_ID3D12PipelineState;
-            ThrowIfFailed(nameof(ID3D12Device.CreateGraphicsPipelineState), D3DDevice->CreateGraphicsPipelineState(&psoDesc, &iid, (void**)&pipelineState));
+            ThrowIfFailed(D3DDevice->CreateGraphicsPipelineState(&psoDesc, &iid, (void**)&pipelineState));
 
             return pipelineState;
         }
@@ -127,12 +127,12 @@ namespace TerraFX.Samples.DirectX.D3D12
                 Flags = D3D12_ROOT_SIGNATURE_FLAG_ALLOW_INPUT_ASSEMBLER_INPUT_LAYOUT
             };
 
-            ThrowIfFailed(nameof(D3D12SerializeRootSignature), D3D12SerializeRootSignature(&rootSignatureDesc, D3D_ROOT_SIGNATURE_VERSION_1, signature.GetAddressOf(), error.GetAddressOf()));
+            ThrowIfFailed(D3D12SerializeRootSignature(&rootSignatureDesc, D3D_ROOT_SIGNATURE_VERSION_1, signature.GetAddressOf(), error.GetAddressOf()));
 
             ID3D12RootSignature* rootSignature;
 
             var iid = IID_ID3D12RootSignature;
-            ThrowIfFailed(nameof(ID3D12Device.CreateRootSignature), D3DDevice->CreateRootSignature(nodeMask: 0, signature.Get()->GetBufferPointer(), signature.Get()->GetBufferSize(), &iid, (void**)&rootSignature));
+            ThrowIfFailed(D3DDevice->CreateRootSignature(nodeMask: 0, signature.Get()->GetBufferPointer(), signature.Get()->GetBufferSize(), &iid, (void**)&rootSignature));
 
             return rootSignature;
         }
@@ -168,7 +168,7 @@ namespace TerraFX.Samples.DirectX.D3D12
             var bufferDesc = D3D12_RESOURCE_DESC.Buffer(vertexBufferSize);
 
             var iid = IID_ID3D12Resource;
-            ThrowIfFailed(nameof(ID3D12Device.CreateCommittedResource), D3DDevice->CreateCommittedResource(
+            ThrowIfFailed(D3DDevice->CreateCommittedResource(
                 &heapProperties,
                 D3D12_HEAP_FLAG_NONE,
                 &bufferDesc,
@@ -182,7 +182,7 @@ namespace TerraFX.Samples.DirectX.D3D12
             var readRange = new D3D12_RANGE();
 
             byte* pVertexDataBegin;
-            ThrowIfFailed(nameof(ID3D12Resource.Map), vertexBuffer->Map(Subresource: 0, &readRange, (void**)&pVertexDataBegin));
+            ThrowIfFailed(vertexBuffer->Map(Subresource: 0, &readRange, (void**)&pVertexDataBegin));
             Unsafe.CopyBlock(pVertexDataBegin, triangleVertices, vertexBufferSize);
             vertexBuffer->Unmap(0, null);
 

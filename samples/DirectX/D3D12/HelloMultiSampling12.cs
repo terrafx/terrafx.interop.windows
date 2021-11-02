@@ -43,7 +43,7 @@ namespace TerraFX.Samples.DirectX.D3D12
                     Format = BackBufferFormat,
                     SampleCount = value,
                 };
-                ThrowIfFailed(nameof(ID3D12Device.CheckFeatureSupport), D3DDevice->CheckFeatureSupport(D3D12_FEATURE_MULTISAMPLE_QUALITY_LEVELS, &msaa, (uint)sizeof(D3D12_FEATURE_DATA_MULTISAMPLE_QUALITY_LEVELS)));
+                ThrowIfFailed(D3DDevice->CheckFeatureSupport(D3D12_FEATURE_MULTISAMPLE_QUALITY_LEVELS, &msaa, (uint)sizeof(D3D12_FEATURE_DATA_MULTISAMPLE_QUALITY_LEVELS)));
 
                 if (msaa.NumQualityLevels == 0)
                 {
@@ -74,7 +74,7 @@ namespace TerraFX.Samples.DirectX.D3D12
             var clearValue = new D3D12_CLEAR_VALUE(DepthBufferFormat, 1.0f, 0);
 
             var iid = IID_ID3D12Resource;
-            ThrowIfFailed(nameof(ID3D12Device.CreateCommittedResource), D3DDevice->CreateCommittedResource(&heapProperties, D3D12_HEAP_FLAG_NONE, &resourceDesc, D3D12_RESOURCE_STATE_DEPTH_WRITE, &clearValue, &iid, (void**)&depthStencil));
+            ThrowIfFailed(D3DDevice->CreateCommittedResource(&heapProperties, D3D12_HEAP_FLAG_NONE, &resourceDesc, D3D12_RESOURCE_STATE_DEPTH_WRITE, &clearValue, &iid, (void**)&depthStencil));
 
             var dsvDesc = new D3D12_DEPTH_STENCIL_VIEW_DESC {
                 Format = DepthBufferFormat,
@@ -92,7 +92,7 @@ namespace TerraFX.Samples.DirectX.D3D12
             for (var i = 0u; i < FrameCount; i++)
             {
                 D3DDevice->CreateRenderTargetView(_msaaRenderTargets[i], pDesc: null, rtvHandle);
-                rtvHandle.Offset(1, RTVDescriptorSize);
+                _ = rtvHandle.Offset(1, RTVDescriptorSize);
             }
         }
 
@@ -123,10 +123,10 @@ namespace TerraFX.Samples.DirectX.D3D12
 
                 var iid = IID_ID3D12Resource;
 
-                for (uint i = 0u; i < FrameCount; i++)
+                for (var i = 0u; i < FrameCount; i++)
                 {
                     ID3D12Resource* msaaRenderTarget;
-                    ThrowIfFailed(nameof(ID3D12Device.CreateCommittedResource), D3DDevice->CreateCommittedResource(&heapProperties, D3D12_HEAP_FLAG_NONE, &desc, D3D12_RESOURCE_STATE_RENDER_TARGET, &clearValue, &iid, (void**)&msaaRenderTarget));
+                    ThrowIfFailed(D3DDevice->CreateCommittedResource(&heapProperties, D3D12_HEAP_FLAG_NONE, &desc, D3D12_RESOURCE_STATE_RENDER_TARGET, &clearValue, &iid, (void**)&msaaRenderTarget));
                     msaaRenderTargets[i] = msaaRenderTarget;
                 }
 
