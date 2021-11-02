@@ -6,16 +6,16 @@ namespace TerraFX.Interop
 {
     public unsafe partial struct HSNMP_VBL : IComparable, IComparable<HSNMP_VBL>, IEquatable<HSNMP_VBL>, IFormattable
     {
-        public readonly nint Value;
+        public readonly void* Value;
 
-        public HSNMP_VBL(nint value)
+        public HSNMP_VBL(void* value)
         {
             Value = value;
         }
 
-        public static HSNMP_VBL INVALID_VALUE => new HSNMP_VBL(-1);
+        public static HSNMP_VBL INVALID_VALUE => new HSNMP_VBL((void*)(-1));
 
-        public static HSNMP_VBL NULL => new HSNMP_VBL(0);
+        public static HSNMP_VBL NULL => new HSNMP_VBL(null);
 
         public static bool operator ==(HSNMP_VBL left, HSNMP_VBL right) => left.Value == right.Value;
 
@@ -29,53 +29,53 @@ namespace TerraFX.Interop
 
         public static bool operator >=(HSNMP_VBL left, HSNMP_VBL right) => left.Value >= right.Value;
 
-        public static explicit operator HSNMP_VBL(void* value) => new HSNMP_VBL((nint)(value));
+        public static explicit operator HSNMP_VBL(void* value) => new HSNMP_VBL(value);
 
-        public static implicit operator void*(HSNMP_VBL value) => (void*)(value.Value);
+        public static implicit operator void*(HSNMP_VBL value) => value.Value;
 
         public static explicit operator HSNMP_VBL(HANDLE value) => new HSNMP_VBL(value);
 
         public static implicit operator HANDLE(HSNMP_VBL value) => new HANDLE(value.Value);
 
-        public static explicit operator HSNMP_VBL(byte value) => new HSNMP_VBL((nint)(value));
+        public static explicit operator HSNMP_VBL(byte value) => new HSNMP_VBL((void*)(value));
 
         public static explicit operator byte(HSNMP_VBL value) => (byte)(value.Value);
 
-        public static explicit operator HSNMP_VBL(short value) => new HSNMP_VBL((nint)(value));
+        public static explicit operator HSNMP_VBL(short value) => new HSNMP_VBL((void*)(value));
 
         public static explicit operator short(HSNMP_VBL value) => (short)(value.Value);
 
-        public static explicit operator HSNMP_VBL(int value) => new HSNMP_VBL((nint)(value));
+        public static explicit operator HSNMP_VBL(int value) => new HSNMP_VBL((void*)(value));
 
         public static explicit operator int(HSNMP_VBL value) => (int)(value.Value);
 
-        public static explicit operator HSNMP_VBL(long value) => new HSNMP_VBL((nint)(value));
+        public static explicit operator HSNMP_VBL(long value) => new HSNMP_VBL((void*)(value));
 
-        public static implicit operator long(HSNMP_VBL value) => value.Value;
+        public static explicit operator long(HSNMP_VBL value) => (long)(value.Value);
 
-        public static explicit operator HSNMP_VBL(nint value) => new HSNMP_VBL((nint)(value));
+        public static explicit operator HSNMP_VBL(nint value) => new HSNMP_VBL((void*)(value));
 
-        public static implicit operator nint(HSNMP_VBL value) => value.Value;
+        public static implicit operator nint(HSNMP_VBL value) => (nint)(value.Value);
 
-        public static explicit operator HSNMP_VBL(sbyte value) => new HSNMP_VBL((nint)(value));
+        public static explicit operator HSNMP_VBL(sbyte value) => new HSNMP_VBL((void*)(value));
 
         public static explicit operator sbyte(HSNMP_VBL value) => (sbyte)(value.Value);
 
-        public static explicit operator HSNMP_VBL(ushort value) => new HSNMP_VBL((nint)(value));
+        public static explicit operator HSNMP_VBL(ushort value) => new HSNMP_VBL((void*)(value));
 
         public static explicit operator ushort(HSNMP_VBL value) => (ushort)(value.Value);
 
-        public static explicit operator HSNMP_VBL(uint value) => new HSNMP_VBL((nint)(value));
+        public static explicit operator HSNMP_VBL(uint value) => new HSNMP_VBL((void*)(value));
 
         public static explicit operator uint(HSNMP_VBL value) => (uint)(value.Value);
 
-        public static explicit operator HSNMP_VBL(ulong value) => new HSNMP_VBL((nint)(value));
+        public static explicit operator HSNMP_VBL(ulong value) => new HSNMP_VBL((void*)(value));
 
         public static explicit operator ulong(HSNMP_VBL value) => (ulong)(value.Value);
 
-        public static explicit operator HSNMP_VBL(nuint value) => new HSNMP_VBL((nint)(value));
+        public static explicit operator HSNMP_VBL(nuint value) => new HSNMP_VBL((void*)(value));
 
-        public static explicit operator nuint(HSNMP_VBL value) => (nuint)(value.Value);
+        public static implicit operator nuint(HSNMP_VBL value) => (nuint)(value.Value);
 
         public int CompareTo(object? obj)
         {
@@ -87,16 +87,16 @@ namespace TerraFX.Interop
             return (obj is null) ? 1 : throw new ArgumentException("obj is not an instance of HSNMP_VBL.");
         }
 
-        public int CompareTo(HSNMP_VBL other) => Value.CompareTo(other.Value);
+        public int CompareTo(HSNMP_VBL other) => ((nuint)(Value)).CompareTo((nuint)(other.Value));
 
         public override bool Equals(object? obj) => (obj is HSNMP_VBL other) && Equals(other);
 
-        public bool Equals(HSNMP_VBL other) => Value.Equals(other.Value);
+        public bool Equals(HSNMP_VBL other) => ((nuint)(Value)).Equals((nuint)(other.Value));
 
-        public override int GetHashCode() => Value.GetHashCode();
+        public override int GetHashCode() => ((nuint)(Value)).GetHashCode();
 
-        public override string ToString() => Value.ToString((sizeof(nint) == 4) ? "X8" : "X16");
+        public override string ToString() => ((nuint)(Value)).ToString((sizeof(nint) == 4) ? "X8" : "X16");
 
-        public string ToString(string? format, IFormatProvider? formatProvider) => Value.ToString(format, formatProvider);
+        public string ToString(string? format, IFormatProvider? formatProvider) => ((nuint)(Value)).ToString(format, formatProvider);
     }
 }

@@ -6,16 +6,16 @@ namespace TerraFX.Interop
 {
     public unsafe partial struct HBITMAP : IComparable, IComparable<HBITMAP>, IEquatable<HBITMAP>, IFormattable
     {
-        public readonly nint Value;
+        public readonly void* Value;
 
-        public HBITMAP(nint value)
+        public HBITMAP(void* value)
         {
             Value = value;
         }
 
-        public static HBITMAP INVALID_VALUE => new HBITMAP(-1);
+        public static HBITMAP INVALID_VALUE => new HBITMAP((void*)(-1));
 
-        public static HBITMAP NULL => new HBITMAP(0);
+        public static HBITMAP NULL => new HBITMAP(null);
 
         public static bool operator ==(HBITMAP left, HBITMAP right) => left.Value == right.Value;
 
@@ -29,53 +29,53 @@ namespace TerraFX.Interop
 
         public static bool operator >=(HBITMAP left, HBITMAP right) => left.Value >= right.Value;
 
-        public static explicit operator HBITMAP(void* value) => new HBITMAP((nint)(value));
+        public static explicit operator HBITMAP(void* value) => new HBITMAP(value);
 
-        public static implicit operator void*(HBITMAP value) => (void*)(value.Value);
+        public static implicit operator void*(HBITMAP value) => value.Value;
 
         public static explicit operator HBITMAP(HANDLE value) => new HBITMAP(value);
 
         public static implicit operator HANDLE(HBITMAP value) => new HANDLE(value.Value);
 
-        public static explicit operator HBITMAP(byte value) => new HBITMAP((nint)(value));
+        public static explicit operator HBITMAP(byte value) => new HBITMAP((void*)(value));
 
         public static explicit operator byte(HBITMAP value) => (byte)(value.Value);
 
-        public static explicit operator HBITMAP(short value) => new HBITMAP((nint)(value));
+        public static explicit operator HBITMAP(short value) => new HBITMAP((void*)(value));
 
         public static explicit operator short(HBITMAP value) => (short)(value.Value);
 
-        public static explicit operator HBITMAP(int value) => new HBITMAP((nint)(value));
+        public static explicit operator HBITMAP(int value) => new HBITMAP((void*)(value));
 
         public static explicit operator int(HBITMAP value) => (int)(value.Value);
 
-        public static explicit operator HBITMAP(long value) => new HBITMAP((nint)(value));
+        public static explicit operator HBITMAP(long value) => new HBITMAP((void*)(value));
 
-        public static implicit operator long(HBITMAP value) => value.Value;
+        public static explicit operator long(HBITMAP value) => (long)(value.Value);
 
-        public static explicit operator HBITMAP(nint value) => new HBITMAP((nint)(value));
+        public static explicit operator HBITMAP(nint value) => new HBITMAP((void*)(value));
 
-        public static implicit operator nint(HBITMAP value) => value.Value;
+        public static implicit operator nint(HBITMAP value) => (nint)(value.Value);
 
-        public static explicit operator HBITMAP(sbyte value) => new HBITMAP((nint)(value));
+        public static explicit operator HBITMAP(sbyte value) => new HBITMAP((void*)(value));
 
         public static explicit operator sbyte(HBITMAP value) => (sbyte)(value.Value);
 
-        public static explicit operator HBITMAP(ushort value) => new HBITMAP((nint)(value));
+        public static explicit operator HBITMAP(ushort value) => new HBITMAP((void*)(value));
 
         public static explicit operator ushort(HBITMAP value) => (ushort)(value.Value);
 
-        public static explicit operator HBITMAP(uint value) => new HBITMAP((nint)(value));
+        public static explicit operator HBITMAP(uint value) => new HBITMAP((void*)(value));
 
         public static explicit operator uint(HBITMAP value) => (uint)(value.Value);
 
-        public static explicit operator HBITMAP(ulong value) => new HBITMAP((nint)(value));
+        public static explicit operator HBITMAP(ulong value) => new HBITMAP((void*)(value));
 
         public static explicit operator ulong(HBITMAP value) => (ulong)(value.Value);
 
-        public static explicit operator HBITMAP(nuint value) => new HBITMAP((nint)(value));
+        public static explicit operator HBITMAP(nuint value) => new HBITMAP((void*)(value));
 
-        public static explicit operator nuint(HBITMAP value) => (nuint)(value.Value);
+        public static implicit operator nuint(HBITMAP value) => (nuint)(value.Value);
 
         public int CompareTo(object? obj)
         {
@@ -87,16 +87,16 @@ namespace TerraFX.Interop
             return (obj is null) ? 1 : throw new ArgumentException("obj is not an instance of HBITMAP.");
         }
 
-        public int CompareTo(HBITMAP other) => Value.CompareTo(other.Value);
+        public int CompareTo(HBITMAP other) => ((nuint)(Value)).CompareTo((nuint)(other.Value));
 
         public override bool Equals(object? obj) => (obj is HBITMAP other) && Equals(other);
 
-        public bool Equals(HBITMAP other) => Value.Equals(other.Value);
+        public bool Equals(HBITMAP other) => ((nuint)(Value)).Equals((nuint)(other.Value));
 
-        public override int GetHashCode() => Value.GetHashCode();
+        public override int GetHashCode() => ((nuint)(Value)).GetHashCode();
 
-        public override string ToString() => Value.ToString((sizeof(nint) == 4) ? "X8" : "X16");
+        public override string ToString() => ((nuint)(Value)).ToString((sizeof(nint) == 4) ? "X8" : "X16");
 
-        public string ToString(string? format, IFormatProvider? formatProvider) => Value.ToString(format, formatProvider);
+        public string ToString(string? format, IFormatProvider? formatProvider) => ((nuint)(Value)).ToString(format, formatProvider);
     }
 }

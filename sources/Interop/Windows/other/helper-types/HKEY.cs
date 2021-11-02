@@ -6,16 +6,16 @@ namespace TerraFX.Interop
 {
     public unsafe partial struct HKEY : IComparable, IComparable<HKEY>, IEquatable<HKEY>, IFormattable
     {
-        public readonly nint Value;
+        public readonly void* Value;
 
-        public HKEY(nint value)
+        public HKEY(void* value)
         {
             Value = value;
         }
 
-        public static HKEY INVALID_VALUE => new HKEY(-1);
+        public static HKEY INVALID_VALUE => new HKEY((void*)(-1));
 
-        public static HKEY NULL => new HKEY(0);
+        public static HKEY NULL => new HKEY(null);
 
         public static bool operator ==(HKEY left, HKEY right) => left.Value == right.Value;
 
@@ -29,53 +29,53 @@ namespace TerraFX.Interop
 
         public static bool operator >=(HKEY left, HKEY right) => left.Value >= right.Value;
 
-        public static explicit operator HKEY(void* value) => new HKEY((nint)(value));
+        public static explicit operator HKEY(void* value) => new HKEY(value);
 
-        public static implicit operator void*(HKEY value) => (void*)(value.Value);
+        public static implicit operator void*(HKEY value) => value.Value;
 
         public static explicit operator HKEY(HANDLE value) => new HKEY(value);
 
         public static implicit operator HANDLE(HKEY value) => new HANDLE(value.Value);
 
-        public static explicit operator HKEY(byte value) => new HKEY((nint)(value));
+        public static explicit operator HKEY(byte value) => new HKEY((void*)(value));
 
         public static explicit operator byte(HKEY value) => (byte)(value.Value);
 
-        public static explicit operator HKEY(short value) => new HKEY((nint)(value));
+        public static explicit operator HKEY(short value) => new HKEY((void*)(value));
 
         public static explicit operator short(HKEY value) => (short)(value.Value);
 
-        public static explicit operator HKEY(int value) => new HKEY((nint)(value));
+        public static explicit operator HKEY(int value) => new HKEY((void*)(value));
 
         public static explicit operator int(HKEY value) => (int)(value.Value);
 
-        public static explicit operator HKEY(long value) => new HKEY((nint)(value));
+        public static explicit operator HKEY(long value) => new HKEY((void*)(value));
 
-        public static implicit operator long(HKEY value) => value.Value;
+        public static explicit operator long(HKEY value) => (long)(value.Value);
 
-        public static explicit operator HKEY(nint value) => new HKEY((nint)(value));
+        public static explicit operator HKEY(nint value) => new HKEY((void*)(value));
 
-        public static implicit operator nint(HKEY value) => value.Value;
+        public static implicit operator nint(HKEY value) => (nint)(value.Value);
 
-        public static explicit operator HKEY(sbyte value) => new HKEY((nint)(value));
+        public static explicit operator HKEY(sbyte value) => new HKEY((void*)(value));
 
         public static explicit operator sbyte(HKEY value) => (sbyte)(value.Value);
 
-        public static explicit operator HKEY(ushort value) => new HKEY((nint)(value));
+        public static explicit operator HKEY(ushort value) => new HKEY((void*)(value));
 
         public static explicit operator ushort(HKEY value) => (ushort)(value.Value);
 
-        public static explicit operator HKEY(uint value) => new HKEY((nint)(value));
+        public static explicit operator HKEY(uint value) => new HKEY((void*)(value));
 
         public static explicit operator uint(HKEY value) => (uint)(value.Value);
 
-        public static explicit operator HKEY(ulong value) => new HKEY((nint)(value));
+        public static explicit operator HKEY(ulong value) => new HKEY((void*)(value));
 
         public static explicit operator ulong(HKEY value) => (ulong)(value.Value);
 
-        public static explicit operator HKEY(nuint value) => new HKEY((nint)(value));
+        public static explicit operator HKEY(nuint value) => new HKEY((void*)(value));
 
-        public static explicit operator nuint(HKEY value) => (nuint)(value.Value);
+        public static implicit operator nuint(HKEY value) => (nuint)(value.Value);
 
         public int CompareTo(object? obj)
         {
@@ -87,16 +87,16 @@ namespace TerraFX.Interop
             return (obj is null) ? 1 : throw new ArgumentException("obj is not an instance of HKEY.");
         }
 
-        public int CompareTo(HKEY other) => Value.CompareTo(other.Value);
+        public int CompareTo(HKEY other) => ((nuint)(Value)).CompareTo((nuint)(other.Value));
 
         public override bool Equals(object? obj) => (obj is HKEY other) && Equals(other);
 
-        public bool Equals(HKEY other) => Value.Equals(other.Value);
+        public bool Equals(HKEY other) => ((nuint)(Value)).Equals((nuint)(other.Value));
 
-        public override int GetHashCode() => Value.GetHashCode();
+        public override int GetHashCode() => ((nuint)(Value)).GetHashCode();
 
-        public override string ToString() => Value.ToString((sizeof(nint) == 4) ? "X8" : "X16");
+        public override string ToString() => ((nuint)(Value)).ToString((sizeof(nint) == 4) ? "X8" : "X16");
 
-        public string ToString(string? format, IFormatProvider? formatProvider) => Value.ToString(format, formatProvider);
+        public string ToString(string? format, IFormatProvider? formatProvider) => ((nuint)(Value)).ToString(format, formatProvider);
     }
 }

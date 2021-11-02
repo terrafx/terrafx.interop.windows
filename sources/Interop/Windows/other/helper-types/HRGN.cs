@@ -6,16 +6,16 @@ namespace TerraFX.Interop
 {
     public unsafe partial struct HRGN : IComparable, IComparable<HRGN>, IEquatable<HRGN>, IFormattable
     {
-        public readonly nint Value;
+        public readonly void* Value;
 
-        public HRGN(nint value)
+        public HRGN(void* value)
         {
             Value = value;
         }
 
-        public static HRGN INVALID_VALUE => new HRGN(-1);
+        public static HRGN INVALID_VALUE => new HRGN((void*)(-1));
 
-        public static HRGN NULL => new HRGN(0);
+        public static HRGN NULL => new HRGN(null);
 
         public static bool operator ==(HRGN left, HRGN right) => left.Value == right.Value;
 
@@ -29,53 +29,53 @@ namespace TerraFX.Interop
 
         public static bool operator >=(HRGN left, HRGN right) => left.Value >= right.Value;
 
-        public static explicit operator HRGN(void* value) => new HRGN((nint)(value));
+        public static explicit operator HRGN(void* value) => new HRGN(value);
 
-        public static implicit operator void*(HRGN value) => (void*)(value.Value);
+        public static implicit operator void*(HRGN value) => value.Value;
 
         public static explicit operator HRGN(HANDLE value) => new HRGN(value);
 
         public static implicit operator HANDLE(HRGN value) => new HANDLE(value.Value);
 
-        public static explicit operator HRGN(byte value) => new HRGN((nint)(value));
+        public static explicit operator HRGN(byte value) => new HRGN((void*)(value));
 
         public static explicit operator byte(HRGN value) => (byte)(value.Value);
 
-        public static explicit operator HRGN(short value) => new HRGN((nint)(value));
+        public static explicit operator HRGN(short value) => new HRGN((void*)(value));
 
         public static explicit operator short(HRGN value) => (short)(value.Value);
 
-        public static explicit operator HRGN(int value) => new HRGN((nint)(value));
+        public static explicit operator HRGN(int value) => new HRGN((void*)(value));
 
         public static explicit operator int(HRGN value) => (int)(value.Value);
 
-        public static explicit operator HRGN(long value) => new HRGN((nint)(value));
+        public static explicit operator HRGN(long value) => new HRGN((void*)(value));
 
-        public static implicit operator long(HRGN value) => value.Value;
+        public static explicit operator long(HRGN value) => (long)(value.Value);
 
-        public static explicit operator HRGN(nint value) => new HRGN((nint)(value));
+        public static explicit operator HRGN(nint value) => new HRGN((void*)(value));
 
-        public static implicit operator nint(HRGN value) => value.Value;
+        public static implicit operator nint(HRGN value) => (nint)(value.Value);
 
-        public static explicit operator HRGN(sbyte value) => new HRGN((nint)(value));
+        public static explicit operator HRGN(sbyte value) => new HRGN((void*)(value));
 
         public static explicit operator sbyte(HRGN value) => (sbyte)(value.Value);
 
-        public static explicit operator HRGN(ushort value) => new HRGN((nint)(value));
+        public static explicit operator HRGN(ushort value) => new HRGN((void*)(value));
 
         public static explicit operator ushort(HRGN value) => (ushort)(value.Value);
 
-        public static explicit operator HRGN(uint value) => new HRGN((nint)(value));
+        public static explicit operator HRGN(uint value) => new HRGN((void*)(value));
 
         public static explicit operator uint(HRGN value) => (uint)(value.Value);
 
-        public static explicit operator HRGN(ulong value) => new HRGN((nint)(value));
+        public static explicit operator HRGN(ulong value) => new HRGN((void*)(value));
 
         public static explicit operator ulong(HRGN value) => (ulong)(value.Value);
 
-        public static explicit operator HRGN(nuint value) => new HRGN((nint)(value));
+        public static explicit operator HRGN(nuint value) => new HRGN((void*)(value));
 
-        public static explicit operator nuint(HRGN value) => (nuint)(value.Value);
+        public static implicit operator nuint(HRGN value) => (nuint)(value.Value);
 
         public int CompareTo(object? obj)
         {
@@ -87,16 +87,16 @@ namespace TerraFX.Interop
             return (obj is null) ? 1 : throw new ArgumentException("obj is not an instance of HRGN.");
         }
 
-        public int CompareTo(HRGN other) => Value.CompareTo(other.Value);
+        public int CompareTo(HRGN other) => ((nuint)(Value)).CompareTo((nuint)(other.Value));
 
         public override bool Equals(object? obj) => (obj is HRGN other) && Equals(other);
 
-        public bool Equals(HRGN other) => Value.Equals(other.Value);
+        public bool Equals(HRGN other) => ((nuint)(Value)).Equals((nuint)(other.Value));
 
-        public override int GetHashCode() => Value.GetHashCode();
+        public override int GetHashCode() => ((nuint)(Value)).GetHashCode();
 
-        public override string ToString() => Value.ToString((sizeof(nint) == 4) ? "X8" : "X16");
+        public override string ToString() => ((nuint)(Value)).ToString((sizeof(nint) == 4) ? "X8" : "X16");
 
-        public string ToString(string? format, IFormatProvider? formatProvider) => Value.ToString(format, formatProvider);
+        public string ToString(string? format, IFormatProvider? formatProvider) => ((nuint)(Value)).ToString(format, formatProvider);
     }
 }

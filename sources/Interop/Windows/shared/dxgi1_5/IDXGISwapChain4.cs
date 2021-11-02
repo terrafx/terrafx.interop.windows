@@ -253,7 +253,7 @@ namespace TerraFX.Interop
         [VtblIndex(33)]
         public HANDLE GetFrameLatencyWaitableObject()
         {
-            return ((HANDLE)(((delegate* unmanaged<IDXGISwapChain4*, nint>)(lpVtbl[33]))((IDXGISwapChain4*)Unsafe.AsPointer(ref this))));
+            return ((HANDLE)(((delegate* unmanaged<IDXGISwapChain4*, void*>)(lpVtbl[33]))((IDXGISwapChain4*)Unsafe.AsPointer(ref this))));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

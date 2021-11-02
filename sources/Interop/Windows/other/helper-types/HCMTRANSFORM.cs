@@ -6,16 +6,16 @@ namespace TerraFX.Interop
 {
     public unsafe partial struct HCMTRANSFORM : IComparable, IComparable<HCMTRANSFORM>, IEquatable<HCMTRANSFORM>, IFormattable
     {
-        public readonly nint Value;
+        public readonly void* Value;
 
-        public HCMTRANSFORM(nint value)
+        public HCMTRANSFORM(void* value)
         {
             Value = value;
         }
 
-        public static HCMTRANSFORM INVALID_VALUE => new HCMTRANSFORM(-1);
+        public static HCMTRANSFORM INVALID_VALUE => new HCMTRANSFORM((void*)(-1));
 
-        public static HCMTRANSFORM NULL => new HCMTRANSFORM(0);
+        public static HCMTRANSFORM NULL => new HCMTRANSFORM(null);
 
         public static bool operator ==(HCMTRANSFORM left, HCMTRANSFORM right) => left.Value == right.Value;
 
@@ -29,53 +29,53 @@ namespace TerraFX.Interop
 
         public static bool operator >=(HCMTRANSFORM left, HCMTRANSFORM right) => left.Value >= right.Value;
 
-        public static explicit operator HCMTRANSFORM(void* value) => new HCMTRANSFORM((nint)(value));
+        public static explicit operator HCMTRANSFORM(void* value) => new HCMTRANSFORM(value);
 
-        public static implicit operator void*(HCMTRANSFORM value) => (void*)(value.Value);
+        public static implicit operator void*(HCMTRANSFORM value) => value.Value;
 
         public static explicit operator HCMTRANSFORM(HANDLE value) => new HCMTRANSFORM(value);
 
         public static implicit operator HANDLE(HCMTRANSFORM value) => new HANDLE(value.Value);
 
-        public static explicit operator HCMTRANSFORM(byte value) => new HCMTRANSFORM((nint)(value));
+        public static explicit operator HCMTRANSFORM(byte value) => new HCMTRANSFORM((void*)(value));
 
         public static explicit operator byte(HCMTRANSFORM value) => (byte)(value.Value);
 
-        public static explicit operator HCMTRANSFORM(short value) => new HCMTRANSFORM((nint)(value));
+        public static explicit operator HCMTRANSFORM(short value) => new HCMTRANSFORM((void*)(value));
 
         public static explicit operator short(HCMTRANSFORM value) => (short)(value.Value);
 
-        public static explicit operator HCMTRANSFORM(int value) => new HCMTRANSFORM((nint)(value));
+        public static explicit operator HCMTRANSFORM(int value) => new HCMTRANSFORM((void*)(value));
 
         public static explicit operator int(HCMTRANSFORM value) => (int)(value.Value);
 
-        public static explicit operator HCMTRANSFORM(long value) => new HCMTRANSFORM((nint)(value));
+        public static explicit operator HCMTRANSFORM(long value) => new HCMTRANSFORM((void*)(value));
 
-        public static implicit operator long(HCMTRANSFORM value) => value.Value;
+        public static explicit operator long(HCMTRANSFORM value) => (long)(value.Value);
 
-        public static explicit operator HCMTRANSFORM(nint value) => new HCMTRANSFORM((nint)(value));
+        public static explicit operator HCMTRANSFORM(nint value) => new HCMTRANSFORM((void*)(value));
 
-        public static implicit operator nint(HCMTRANSFORM value) => value.Value;
+        public static implicit operator nint(HCMTRANSFORM value) => (nint)(value.Value);
 
-        public static explicit operator HCMTRANSFORM(sbyte value) => new HCMTRANSFORM((nint)(value));
+        public static explicit operator HCMTRANSFORM(sbyte value) => new HCMTRANSFORM((void*)(value));
 
         public static explicit operator sbyte(HCMTRANSFORM value) => (sbyte)(value.Value);
 
-        public static explicit operator HCMTRANSFORM(ushort value) => new HCMTRANSFORM((nint)(value));
+        public static explicit operator HCMTRANSFORM(ushort value) => new HCMTRANSFORM((void*)(value));
 
         public static explicit operator ushort(HCMTRANSFORM value) => (ushort)(value.Value);
 
-        public static explicit operator HCMTRANSFORM(uint value) => new HCMTRANSFORM((nint)(value));
+        public static explicit operator HCMTRANSFORM(uint value) => new HCMTRANSFORM((void*)(value));
 
         public static explicit operator uint(HCMTRANSFORM value) => (uint)(value.Value);
 
-        public static explicit operator HCMTRANSFORM(ulong value) => new HCMTRANSFORM((nint)(value));
+        public static explicit operator HCMTRANSFORM(ulong value) => new HCMTRANSFORM((void*)(value));
 
         public static explicit operator ulong(HCMTRANSFORM value) => (ulong)(value.Value);
 
-        public static explicit operator HCMTRANSFORM(nuint value) => new HCMTRANSFORM((nint)(value));
+        public static explicit operator HCMTRANSFORM(nuint value) => new HCMTRANSFORM((void*)(value));
 
-        public static explicit operator nuint(HCMTRANSFORM value) => (nuint)(value.Value);
+        public static implicit operator nuint(HCMTRANSFORM value) => (nuint)(value.Value);
 
         public int CompareTo(object? obj)
         {
@@ -87,16 +87,16 @@ namespace TerraFX.Interop
             return (obj is null) ? 1 : throw new ArgumentException("obj is not an instance of HCMTRANSFORM.");
         }
 
-        public int CompareTo(HCMTRANSFORM other) => Value.CompareTo(other.Value);
+        public int CompareTo(HCMTRANSFORM other) => ((nuint)(Value)).CompareTo((nuint)(other.Value));
 
         public override bool Equals(object? obj) => (obj is HCMTRANSFORM other) && Equals(other);
 
-        public bool Equals(HCMTRANSFORM other) => Value.Equals(other.Value);
+        public bool Equals(HCMTRANSFORM other) => ((nuint)(Value)).Equals((nuint)(other.Value));
 
-        public override int GetHashCode() => Value.GetHashCode();
+        public override int GetHashCode() => ((nuint)(Value)).GetHashCode();
 
-        public override string ToString() => Value.ToString((sizeof(nint) == 4) ? "X8" : "X16");
+        public override string ToString() => ((nuint)(Value)).ToString((sizeof(nint) == 4) ? "X8" : "X16");
 
-        public string ToString(string? format, IFormatProvider? formatProvider) => Value.ToString(format, formatProvider);
+        public string ToString(string? format, IFormatProvider? formatProvider) => ((nuint)(Value)).ToString(format, formatProvider);
     }
 }

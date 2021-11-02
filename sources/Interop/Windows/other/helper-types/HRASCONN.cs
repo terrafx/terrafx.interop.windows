@@ -6,16 +6,16 @@ namespace TerraFX.Interop
 {
     public unsafe partial struct HRASCONN : IComparable, IComparable<HRASCONN>, IEquatable<HRASCONN>, IFormattable
     {
-        public readonly nint Value;
+        public readonly void* Value;
 
-        public HRASCONN(nint value)
+        public HRASCONN(void* value)
         {
             Value = value;
         }
 
-        public static HRASCONN INVALID_VALUE => new HRASCONN(-1);
+        public static HRASCONN INVALID_VALUE => new HRASCONN((void*)(-1));
 
-        public static HRASCONN NULL => new HRASCONN(0);
+        public static HRASCONN NULL => new HRASCONN(null);
 
         public static bool operator ==(HRASCONN left, HRASCONN right) => left.Value == right.Value;
 
@@ -29,53 +29,53 @@ namespace TerraFX.Interop
 
         public static bool operator >=(HRASCONN left, HRASCONN right) => left.Value >= right.Value;
 
-        public static explicit operator HRASCONN(void* value) => new HRASCONN((nint)(value));
+        public static explicit operator HRASCONN(void* value) => new HRASCONN(value);
 
-        public static implicit operator void*(HRASCONN value) => (void*)(value.Value);
+        public static implicit operator void*(HRASCONN value) => value.Value;
 
         public static explicit operator HRASCONN(HANDLE value) => new HRASCONN(value);
 
         public static implicit operator HANDLE(HRASCONN value) => new HANDLE(value.Value);
 
-        public static explicit operator HRASCONN(byte value) => new HRASCONN((nint)(value));
+        public static explicit operator HRASCONN(byte value) => new HRASCONN((void*)(value));
 
         public static explicit operator byte(HRASCONN value) => (byte)(value.Value);
 
-        public static explicit operator HRASCONN(short value) => new HRASCONN((nint)(value));
+        public static explicit operator HRASCONN(short value) => new HRASCONN((void*)(value));
 
         public static explicit operator short(HRASCONN value) => (short)(value.Value);
 
-        public static explicit operator HRASCONN(int value) => new HRASCONN((nint)(value));
+        public static explicit operator HRASCONN(int value) => new HRASCONN((void*)(value));
 
         public static explicit operator int(HRASCONN value) => (int)(value.Value);
 
-        public static explicit operator HRASCONN(long value) => new HRASCONN((nint)(value));
+        public static explicit operator HRASCONN(long value) => new HRASCONN((void*)(value));
 
-        public static implicit operator long(HRASCONN value) => value.Value;
+        public static explicit operator long(HRASCONN value) => (long)(value.Value);
 
-        public static explicit operator HRASCONN(nint value) => new HRASCONN((nint)(value));
+        public static explicit operator HRASCONN(nint value) => new HRASCONN((void*)(value));
 
-        public static implicit operator nint(HRASCONN value) => value.Value;
+        public static implicit operator nint(HRASCONN value) => (nint)(value.Value);
 
-        public static explicit operator HRASCONN(sbyte value) => new HRASCONN((nint)(value));
+        public static explicit operator HRASCONN(sbyte value) => new HRASCONN((void*)(value));
 
         public static explicit operator sbyte(HRASCONN value) => (sbyte)(value.Value);
 
-        public static explicit operator HRASCONN(ushort value) => new HRASCONN((nint)(value));
+        public static explicit operator HRASCONN(ushort value) => new HRASCONN((void*)(value));
 
         public static explicit operator ushort(HRASCONN value) => (ushort)(value.Value);
 
-        public static explicit operator HRASCONN(uint value) => new HRASCONN((nint)(value));
+        public static explicit operator HRASCONN(uint value) => new HRASCONN((void*)(value));
 
         public static explicit operator uint(HRASCONN value) => (uint)(value.Value);
 
-        public static explicit operator HRASCONN(ulong value) => new HRASCONN((nint)(value));
+        public static explicit operator HRASCONN(ulong value) => new HRASCONN((void*)(value));
 
         public static explicit operator ulong(HRASCONN value) => (ulong)(value.Value);
 
-        public static explicit operator HRASCONN(nuint value) => new HRASCONN((nint)(value));
+        public static explicit operator HRASCONN(nuint value) => new HRASCONN((void*)(value));
 
-        public static explicit operator nuint(HRASCONN value) => (nuint)(value.Value);
+        public static implicit operator nuint(HRASCONN value) => (nuint)(value.Value);
 
         public int CompareTo(object? obj)
         {
@@ -87,16 +87,16 @@ namespace TerraFX.Interop
             return (obj is null) ? 1 : throw new ArgumentException("obj is not an instance of HRASCONN.");
         }
 
-        public int CompareTo(HRASCONN other) => Value.CompareTo(other.Value);
+        public int CompareTo(HRASCONN other) => ((nuint)(Value)).CompareTo((nuint)(other.Value));
 
         public override bool Equals(object? obj) => (obj is HRASCONN other) && Equals(other);
 
-        public bool Equals(HRASCONN other) => Value.Equals(other.Value);
+        public bool Equals(HRASCONN other) => ((nuint)(Value)).Equals((nuint)(other.Value));
 
-        public override int GetHashCode() => Value.GetHashCode();
+        public override int GetHashCode() => ((nuint)(Value)).GetHashCode();
 
-        public override string ToString() => Value.ToString((sizeof(nint) == 4) ? "X8" : "X16");
+        public override string ToString() => ((nuint)(Value)).ToString((sizeof(nint) == 4) ? "X8" : "X16");
 
-        public string ToString(string? format, IFormatProvider? formatProvider) => Value.ToString(format, formatProvider);
+        public string ToString(string? format, IFormatProvider? formatProvider) => ((nuint)(Value)).ToString(format, formatProvider);
     }
 }

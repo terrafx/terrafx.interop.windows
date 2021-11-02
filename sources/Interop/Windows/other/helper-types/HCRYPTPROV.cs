@@ -6,16 +6,16 @@ namespace TerraFX.Interop
 {
     public unsafe partial struct HCRYPTPROV : IComparable, IComparable<HCRYPTPROV>, IEquatable<HCRYPTPROV>, IFormattable
     {
-        public readonly nint Value;
+        public readonly void* Value;
 
-        public HCRYPTPROV(nint value)
+        public HCRYPTPROV(void* value)
         {
             Value = value;
         }
 
-        public static HCRYPTPROV INVALID_VALUE => new HCRYPTPROV(-1);
+        public static HCRYPTPROV INVALID_VALUE => new HCRYPTPROV((void*)(-1));
 
-        public static HCRYPTPROV NULL => new HCRYPTPROV(0);
+        public static HCRYPTPROV NULL => new HCRYPTPROV(null);
 
         public static bool operator ==(HCRYPTPROV left, HCRYPTPROV right) => left.Value == right.Value;
 
@@ -29,53 +29,53 @@ namespace TerraFX.Interop
 
         public static bool operator >=(HCRYPTPROV left, HCRYPTPROV right) => left.Value >= right.Value;
 
-        public static explicit operator HCRYPTPROV(void* value) => new HCRYPTPROV((nint)(value));
+        public static explicit operator HCRYPTPROV(void* value) => new HCRYPTPROV(value);
 
-        public static implicit operator void*(HCRYPTPROV value) => (void*)(value.Value);
+        public static implicit operator void*(HCRYPTPROV value) => value.Value;
 
         public static explicit operator HCRYPTPROV(HANDLE value) => new HCRYPTPROV(value);
 
         public static implicit operator HANDLE(HCRYPTPROV value) => new HANDLE(value.Value);
 
-        public static explicit operator HCRYPTPROV(byte value) => new HCRYPTPROV((nint)(value));
+        public static explicit operator HCRYPTPROV(byte value) => new HCRYPTPROV((void*)(value));
 
         public static explicit operator byte(HCRYPTPROV value) => (byte)(value.Value);
 
-        public static explicit operator HCRYPTPROV(short value) => new HCRYPTPROV((nint)(value));
+        public static explicit operator HCRYPTPROV(short value) => new HCRYPTPROV((void*)(value));
 
         public static explicit operator short(HCRYPTPROV value) => (short)(value.Value);
 
-        public static explicit operator HCRYPTPROV(int value) => new HCRYPTPROV((nint)(value));
+        public static explicit operator HCRYPTPROV(int value) => new HCRYPTPROV((void*)(value));
 
         public static explicit operator int(HCRYPTPROV value) => (int)(value.Value);
 
-        public static explicit operator HCRYPTPROV(long value) => new HCRYPTPROV((nint)(value));
+        public static explicit operator HCRYPTPROV(long value) => new HCRYPTPROV((void*)(value));
 
-        public static implicit operator long(HCRYPTPROV value) => value.Value;
+        public static explicit operator long(HCRYPTPROV value) => (long)(value.Value);
 
-        public static explicit operator HCRYPTPROV(nint value) => new HCRYPTPROV((nint)(value));
+        public static explicit operator HCRYPTPROV(nint value) => new HCRYPTPROV((void*)(value));
 
-        public static implicit operator nint(HCRYPTPROV value) => value.Value;
+        public static implicit operator nint(HCRYPTPROV value) => (nint)(value.Value);
 
-        public static explicit operator HCRYPTPROV(sbyte value) => new HCRYPTPROV((nint)(value));
+        public static explicit operator HCRYPTPROV(sbyte value) => new HCRYPTPROV((void*)(value));
 
         public static explicit operator sbyte(HCRYPTPROV value) => (sbyte)(value.Value);
 
-        public static explicit operator HCRYPTPROV(ushort value) => new HCRYPTPROV((nint)(value));
+        public static explicit operator HCRYPTPROV(ushort value) => new HCRYPTPROV((void*)(value));
 
         public static explicit operator ushort(HCRYPTPROV value) => (ushort)(value.Value);
 
-        public static explicit operator HCRYPTPROV(uint value) => new HCRYPTPROV((nint)(value));
+        public static explicit operator HCRYPTPROV(uint value) => new HCRYPTPROV((void*)(value));
 
         public static explicit operator uint(HCRYPTPROV value) => (uint)(value.Value);
 
-        public static explicit operator HCRYPTPROV(ulong value) => new HCRYPTPROV((nint)(value));
+        public static explicit operator HCRYPTPROV(ulong value) => new HCRYPTPROV((void*)(value));
 
         public static explicit operator ulong(HCRYPTPROV value) => (ulong)(value.Value);
 
-        public static explicit operator HCRYPTPROV(nuint value) => new HCRYPTPROV((nint)(value));
+        public static explicit operator HCRYPTPROV(nuint value) => new HCRYPTPROV((void*)(value));
 
-        public static explicit operator nuint(HCRYPTPROV value) => (nuint)(value.Value);
+        public static implicit operator nuint(HCRYPTPROV value) => (nuint)(value.Value);
 
         public int CompareTo(object? obj)
         {
@@ -87,16 +87,16 @@ namespace TerraFX.Interop
             return (obj is null) ? 1 : throw new ArgumentException("obj is not an instance of HCRYPTPROV.");
         }
 
-        public int CompareTo(HCRYPTPROV other) => Value.CompareTo(other.Value);
+        public int CompareTo(HCRYPTPROV other) => ((nuint)(Value)).CompareTo((nuint)(other.Value));
 
         public override bool Equals(object? obj) => (obj is HCRYPTPROV other) && Equals(other);
 
-        public bool Equals(HCRYPTPROV other) => Value.Equals(other.Value);
+        public bool Equals(HCRYPTPROV other) => ((nuint)(Value)).Equals((nuint)(other.Value));
 
-        public override int GetHashCode() => Value.GetHashCode();
+        public override int GetHashCode() => ((nuint)(Value)).GetHashCode();
 
-        public override string ToString() => Value.ToString((sizeof(nint) == 4) ? "X8" : "X16");
+        public override string ToString() => ((nuint)(Value)).ToString((sizeof(nint) == 4) ? "X8" : "X16");
 
-        public string ToString(string? format, IFormatProvider? formatProvider) => Value.ToString(format, formatProvider);
+        public string ToString(string? format, IFormatProvider? formatProvider) => ((nuint)(Value)).ToString(format, formatProvider);
     }
 }

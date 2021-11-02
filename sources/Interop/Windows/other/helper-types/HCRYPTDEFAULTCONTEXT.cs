@@ -6,16 +6,16 @@ namespace TerraFX.Interop
 {
     public unsafe partial struct HCRYPTDEFAULTCONTEXT : IComparable, IComparable<HCRYPTDEFAULTCONTEXT>, IEquatable<HCRYPTDEFAULTCONTEXT>, IFormattable
     {
-        public readonly nint Value;
+        public readonly void* Value;
 
-        public HCRYPTDEFAULTCONTEXT(nint value)
+        public HCRYPTDEFAULTCONTEXT(void* value)
         {
             Value = value;
         }
 
-        public static HCRYPTDEFAULTCONTEXT INVALID_VALUE => new HCRYPTDEFAULTCONTEXT(-1);
+        public static HCRYPTDEFAULTCONTEXT INVALID_VALUE => new HCRYPTDEFAULTCONTEXT((void*)(-1));
 
-        public static HCRYPTDEFAULTCONTEXT NULL => new HCRYPTDEFAULTCONTEXT(0);
+        public static HCRYPTDEFAULTCONTEXT NULL => new HCRYPTDEFAULTCONTEXT(null);
 
         public static bool operator ==(HCRYPTDEFAULTCONTEXT left, HCRYPTDEFAULTCONTEXT right) => left.Value == right.Value;
 
@@ -29,53 +29,53 @@ namespace TerraFX.Interop
 
         public static bool operator >=(HCRYPTDEFAULTCONTEXT left, HCRYPTDEFAULTCONTEXT right) => left.Value >= right.Value;
 
-        public static explicit operator HCRYPTDEFAULTCONTEXT(void* value) => new HCRYPTDEFAULTCONTEXT((nint)(value));
+        public static explicit operator HCRYPTDEFAULTCONTEXT(void* value) => new HCRYPTDEFAULTCONTEXT(value);
 
-        public static implicit operator void*(HCRYPTDEFAULTCONTEXT value) => (void*)(value.Value);
+        public static implicit operator void*(HCRYPTDEFAULTCONTEXT value) => value.Value;
 
         public static explicit operator HCRYPTDEFAULTCONTEXT(HANDLE value) => new HCRYPTDEFAULTCONTEXT(value);
 
         public static implicit operator HANDLE(HCRYPTDEFAULTCONTEXT value) => new HANDLE(value.Value);
 
-        public static explicit operator HCRYPTDEFAULTCONTEXT(byte value) => new HCRYPTDEFAULTCONTEXT((nint)(value));
+        public static explicit operator HCRYPTDEFAULTCONTEXT(byte value) => new HCRYPTDEFAULTCONTEXT((void*)(value));
 
         public static explicit operator byte(HCRYPTDEFAULTCONTEXT value) => (byte)(value.Value);
 
-        public static explicit operator HCRYPTDEFAULTCONTEXT(short value) => new HCRYPTDEFAULTCONTEXT((nint)(value));
+        public static explicit operator HCRYPTDEFAULTCONTEXT(short value) => new HCRYPTDEFAULTCONTEXT((void*)(value));
 
         public static explicit operator short(HCRYPTDEFAULTCONTEXT value) => (short)(value.Value);
 
-        public static explicit operator HCRYPTDEFAULTCONTEXT(int value) => new HCRYPTDEFAULTCONTEXT((nint)(value));
+        public static explicit operator HCRYPTDEFAULTCONTEXT(int value) => new HCRYPTDEFAULTCONTEXT((void*)(value));
 
         public static explicit operator int(HCRYPTDEFAULTCONTEXT value) => (int)(value.Value);
 
-        public static explicit operator HCRYPTDEFAULTCONTEXT(long value) => new HCRYPTDEFAULTCONTEXT((nint)(value));
+        public static explicit operator HCRYPTDEFAULTCONTEXT(long value) => new HCRYPTDEFAULTCONTEXT((void*)(value));
 
-        public static implicit operator long(HCRYPTDEFAULTCONTEXT value) => value.Value;
+        public static explicit operator long(HCRYPTDEFAULTCONTEXT value) => (long)(value.Value);
 
-        public static explicit operator HCRYPTDEFAULTCONTEXT(nint value) => new HCRYPTDEFAULTCONTEXT((nint)(value));
+        public static explicit operator HCRYPTDEFAULTCONTEXT(nint value) => new HCRYPTDEFAULTCONTEXT((void*)(value));
 
-        public static implicit operator nint(HCRYPTDEFAULTCONTEXT value) => value.Value;
+        public static implicit operator nint(HCRYPTDEFAULTCONTEXT value) => (nint)(value.Value);
 
-        public static explicit operator HCRYPTDEFAULTCONTEXT(sbyte value) => new HCRYPTDEFAULTCONTEXT((nint)(value));
+        public static explicit operator HCRYPTDEFAULTCONTEXT(sbyte value) => new HCRYPTDEFAULTCONTEXT((void*)(value));
 
         public static explicit operator sbyte(HCRYPTDEFAULTCONTEXT value) => (sbyte)(value.Value);
 
-        public static explicit operator HCRYPTDEFAULTCONTEXT(ushort value) => new HCRYPTDEFAULTCONTEXT((nint)(value));
+        public static explicit operator HCRYPTDEFAULTCONTEXT(ushort value) => new HCRYPTDEFAULTCONTEXT((void*)(value));
 
         public static explicit operator ushort(HCRYPTDEFAULTCONTEXT value) => (ushort)(value.Value);
 
-        public static explicit operator HCRYPTDEFAULTCONTEXT(uint value) => new HCRYPTDEFAULTCONTEXT((nint)(value));
+        public static explicit operator HCRYPTDEFAULTCONTEXT(uint value) => new HCRYPTDEFAULTCONTEXT((void*)(value));
 
         public static explicit operator uint(HCRYPTDEFAULTCONTEXT value) => (uint)(value.Value);
 
-        public static explicit operator HCRYPTDEFAULTCONTEXT(ulong value) => new HCRYPTDEFAULTCONTEXT((nint)(value));
+        public static explicit operator HCRYPTDEFAULTCONTEXT(ulong value) => new HCRYPTDEFAULTCONTEXT((void*)(value));
 
         public static explicit operator ulong(HCRYPTDEFAULTCONTEXT value) => (ulong)(value.Value);
 
-        public static explicit operator HCRYPTDEFAULTCONTEXT(nuint value) => new HCRYPTDEFAULTCONTEXT((nint)(value));
+        public static explicit operator HCRYPTDEFAULTCONTEXT(nuint value) => new HCRYPTDEFAULTCONTEXT((void*)(value));
 
-        public static explicit operator nuint(HCRYPTDEFAULTCONTEXT value) => (nuint)(value.Value);
+        public static implicit operator nuint(HCRYPTDEFAULTCONTEXT value) => (nuint)(value.Value);
 
         public int CompareTo(object? obj)
         {
@@ -87,16 +87,16 @@ namespace TerraFX.Interop
             return (obj is null) ? 1 : throw new ArgumentException("obj is not an instance of HCRYPTDEFAULTCONTEXT.");
         }
 
-        public int CompareTo(HCRYPTDEFAULTCONTEXT other) => Value.CompareTo(other.Value);
+        public int CompareTo(HCRYPTDEFAULTCONTEXT other) => ((nuint)(Value)).CompareTo((nuint)(other.Value));
 
         public override bool Equals(object? obj) => (obj is HCRYPTDEFAULTCONTEXT other) && Equals(other);
 
-        public bool Equals(HCRYPTDEFAULTCONTEXT other) => Value.Equals(other.Value);
+        public bool Equals(HCRYPTDEFAULTCONTEXT other) => ((nuint)(Value)).Equals((nuint)(other.Value));
 
-        public override int GetHashCode() => Value.GetHashCode();
+        public override int GetHashCode() => ((nuint)(Value)).GetHashCode();
 
-        public override string ToString() => Value.ToString((sizeof(nint) == 4) ? "X8" : "X16");
+        public override string ToString() => ((nuint)(Value)).ToString((sizeof(nint) == 4) ? "X8" : "X16");
 
-        public string ToString(string? format, IFormatProvider? formatProvider) => Value.ToString(format, formatProvider);
+        public string ToString(string? format, IFormatProvider? formatProvider) => ((nuint)(Value)).ToString(format, formatProvider);
     }
 }

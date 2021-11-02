@@ -6,16 +6,16 @@ namespace TerraFX.Interop
 {
     public unsafe partial struct HUIAPATTERNOBJECT : IComparable, IComparable<HUIAPATTERNOBJECT>, IEquatable<HUIAPATTERNOBJECT>, IFormattable
     {
-        public readonly nint Value;
+        public readonly void* Value;
 
-        public HUIAPATTERNOBJECT(nint value)
+        public HUIAPATTERNOBJECT(void* value)
         {
             Value = value;
         }
 
-        public static HUIAPATTERNOBJECT INVALID_VALUE => new HUIAPATTERNOBJECT(-1);
+        public static HUIAPATTERNOBJECT INVALID_VALUE => new HUIAPATTERNOBJECT((void*)(-1));
 
-        public static HUIAPATTERNOBJECT NULL => new HUIAPATTERNOBJECT(0);
+        public static HUIAPATTERNOBJECT NULL => new HUIAPATTERNOBJECT(null);
 
         public static bool operator ==(HUIAPATTERNOBJECT left, HUIAPATTERNOBJECT right) => left.Value == right.Value;
 
@@ -29,53 +29,53 @@ namespace TerraFX.Interop
 
         public static bool operator >=(HUIAPATTERNOBJECT left, HUIAPATTERNOBJECT right) => left.Value >= right.Value;
 
-        public static explicit operator HUIAPATTERNOBJECT(void* value) => new HUIAPATTERNOBJECT((nint)(value));
+        public static explicit operator HUIAPATTERNOBJECT(void* value) => new HUIAPATTERNOBJECT(value);
 
-        public static implicit operator void*(HUIAPATTERNOBJECT value) => (void*)(value.Value);
+        public static implicit operator void*(HUIAPATTERNOBJECT value) => value.Value;
 
         public static explicit operator HUIAPATTERNOBJECT(HANDLE value) => new HUIAPATTERNOBJECT(value);
 
         public static implicit operator HANDLE(HUIAPATTERNOBJECT value) => new HANDLE(value.Value);
 
-        public static explicit operator HUIAPATTERNOBJECT(byte value) => new HUIAPATTERNOBJECT((nint)(value));
+        public static explicit operator HUIAPATTERNOBJECT(byte value) => new HUIAPATTERNOBJECT((void*)(value));
 
         public static explicit operator byte(HUIAPATTERNOBJECT value) => (byte)(value.Value);
 
-        public static explicit operator HUIAPATTERNOBJECT(short value) => new HUIAPATTERNOBJECT((nint)(value));
+        public static explicit operator HUIAPATTERNOBJECT(short value) => new HUIAPATTERNOBJECT((void*)(value));
 
         public static explicit operator short(HUIAPATTERNOBJECT value) => (short)(value.Value);
 
-        public static explicit operator HUIAPATTERNOBJECT(int value) => new HUIAPATTERNOBJECT((nint)(value));
+        public static explicit operator HUIAPATTERNOBJECT(int value) => new HUIAPATTERNOBJECT((void*)(value));
 
         public static explicit operator int(HUIAPATTERNOBJECT value) => (int)(value.Value);
 
-        public static explicit operator HUIAPATTERNOBJECT(long value) => new HUIAPATTERNOBJECT((nint)(value));
+        public static explicit operator HUIAPATTERNOBJECT(long value) => new HUIAPATTERNOBJECT((void*)(value));
 
-        public static implicit operator long(HUIAPATTERNOBJECT value) => value.Value;
+        public static explicit operator long(HUIAPATTERNOBJECT value) => (long)(value.Value);
 
-        public static explicit operator HUIAPATTERNOBJECT(nint value) => new HUIAPATTERNOBJECT((nint)(value));
+        public static explicit operator HUIAPATTERNOBJECT(nint value) => new HUIAPATTERNOBJECT((void*)(value));
 
-        public static implicit operator nint(HUIAPATTERNOBJECT value) => value.Value;
+        public static implicit operator nint(HUIAPATTERNOBJECT value) => (nint)(value.Value);
 
-        public static explicit operator HUIAPATTERNOBJECT(sbyte value) => new HUIAPATTERNOBJECT((nint)(value));
+        public static explicit operator HUIAPATTERNOBJECT(sbyte value) => new HUIAPATTERNOBJECT((void*)(value));
 
         public static explicit operator sbyte(HUIAPATTERNOBJECT value) => (sbyte)(value.Value);
 
-        public static explicit operator HUIAPATTERNOBJECT(ushort value) => new HUIAPATTERNOBJECT((nint)(value));
+        public static explicit operator HUIAPATTERNOBJECT(ushort value) => new HUIAPATTERNOBJECT((void*)(value));
 
         public static explicit operator ushort(HUIAPATTERNOBJECT value) => (ushort)(value.Value);
 
-        public static explicit operator HUIAPATTERNOBJECT(uint value) => new HUIAPATTERNOBJECT((nint)(value));
+        public static explicit operator HUIAPATTERNOBJECT(uint value) => new HUIAPATTERNOBJECT((void*)(value));
 
         public static explicit operator uint(HUIAPATTERNOBJECT value) => (uint)(value.Value);
 
-        public static explicit operator HUIAPATTERNOBJECT(ulong value) => new HUIAPATTERNOBJECT((nint)(value));
+        public static explicit operator HUIAPATTERNOBJECT(ulong value) => new HUIAPATTERNOBJECT((void*)(value));
 
         public static explicit operator ulong(HUIAPATTERNOBJECT value) => (ulong)(value.Value);
 
-        public static explicit operator HUIAPATTERNOBJECT(nuint value) => new HUIAPATTERNOBJECT((nint)(value));
+        public static explicit operator HUIAPATTERNOBJECT(nuint value) => new HUIAPATTERNOBJECT((void*)(value));
 
-        public static explicit operator nuint(HUIAPATTERNOBJECT value) => (nuint)(value.Value);
+        public static implicit operator nuint(HUIAPATTERNOBJECT value) => (nuint)(value.Value);
 
         public int CompareTo(object? obj)
         {
@@ -87,16 +87,16 @@ namespace TerraFX.Interop
             return (obj is null) ? 1 : throw new ArgumentException("obj is not an instance of HUIAPATTERNOBJECT.");
         }
 
-        public int CompareTo(HUIAPATTERNOBJECT other) => Value.CompareTo(other.Value);
+        public int CompareTo(HUIAPATTERNOBJECT other) => ((nuint)(Value)).CompareTo((nuint)(other.Value));
 
         public override bool Equals(object? obj) => (obj is HUIAPATTERNOBJECT other) && Equals(other);
 
-        public bool Equals(HUIAPATTERNOBJECT other) => Value.Equals(other.Value);
+        public bool Equals(HUIAPATTERNOBJECT other) => ((nuint)(Value)).Equals((nuint)(other.Value));
 
-        public override int GetHashCode() => Value.GetHashCode();
+        public override int GetHashCode() => ((nuint)(Value)).GetHashCode();
 
-        public override string ToString() => Value.ToString((sizeof(nint) == 4) ? "X8" : "X16");
+        public override string ToString() => ((nuint)(Value)).ToString((sizeof(nint) == 4) ? "X8" : "X16");
 
-        public string ToString(string? format, IFormatProvider? formatProvider) => Value.ToString(format, formatProvider);
+        public string ToString(string? format, IFormatProvider? formatProvider) => ((nuint)(Value)).ToString(format, formatProvider);
     }
 }

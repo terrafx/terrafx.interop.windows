@@ -85,7 +85,7 @@ namespace TerraFX.Interop
         [VtblIndex(9)]
         public HANDLE GetNotifyEventHandle()
         {
-            return ((HANDLE)(((delegate* unmanaged<ISpEventSource*, nint>)(lpVtbl[9]))((ISpEventSource*)Unsafe.AsPointer(ref this))));
+            return ((HANDLE)(((delegate* unmanaged<ISpEventSource*, void*>)(lpVtbl[9]))((ISpEventSource*)Unsafe.AsPointer(ref this))));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
