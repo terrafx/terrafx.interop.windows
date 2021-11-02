@@ -6,13 +6,8 @@ namespace TerraFX.Interop
 {
     public unsafe partial struct HPALETTE : IEquatable<HPALETTE>
     {
-        public HPALETTE(HGDIOBJ value)
-        {
-            Value = value.Value;
-        }
+        public static explicit operator HPALETTE(HGDIOBJ value) => new HPALETTE(value.Value);
 
-        public static explicit operator HPALETTE(HGDIOBJ value) => new HPALETTE(value);
-
-        public static implicit operator HGDIOBJ(HPALETTE value) => (HGDIOBJ)(value.Value);
+        public static implicit operator HGDIOBJ(HPALETTE value) => new HGDIOBJ(value.Value);
     }
 }

@@ -12,10 +12,7 @@ namespace TerraFX.Interop
         /// <summary>Raised whenever a native library is loaded by TerraFX.Interop.Windows. Handlers can be added to this event to customize how libraries are loaded, and they will be used first whenever a new native library is being resolved.</summary>
         public static event DllImportResolver? ResolveLibrary;
 
-        /// <summary>Initializes the DLL resolver for the current assembly.</summary>
-        /// <returns>Just <see langword="null"/>, this method is only used to skip the static constructor and keep this type as <see langword="beforefieldinit"/>.</returns>
-        [ModuleInitializer]
-        internal static void SetDllImportResolver()
+        static Windows()
         {
             NativeLibrary.SetDllImportResolver(Assembly.GetExecutingAssembly(), OnDllImport);
         }

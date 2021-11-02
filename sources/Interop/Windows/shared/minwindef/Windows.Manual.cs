@@ -14,37 +14,43 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("WORD")]
         public static ushort MAKEWORD([NativeTypeName("DWORD_PTR")] nuint a, [NativeTypeName("DWORD_PTR")] nuint b)
-            => ((ushort)(((byte)(((nuint)(a)) & 0xff)) | ((ushort)((byte)(((nuint)(b)) & 0xff))) << 8));
+            => unchecked((ushort)(((byte)(((nuint)(a)) & 0xff)) | ((ushort)((byte)(((nuint)(b)) & 0xff))) << 8));
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static ushort MAKEWORD(nint a, nint b) => unchecked(MAKEWORD((nuint)(a), (nuint)(b)));
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("LONG")]
         public static int MAKELONG([NativeTypeName("DWORD_PTR")] nuint a, [NativeTypeName("DWORD_PTR")] nuint b)
-            => ((int)(((ushort)(((nuint)(a)) & 0xffff)) | ((uint)((ushort)(((nuint)(b)) & 0xffff))) << 16));
+            => unchecked((int)(((ushort)(((nuint)(a)) & 0xffff)) | ((uint)((ushort)(((nuint)(b)) & 0xffff))) << 16));
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static int MAKELONG(nint a, nint b) => unchecked(MAKEWORD((nuint)(a), (nuint)(b)));
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("WORD")]
-        public static ushort LOWORD([NativeTypeName("DWORD_PTR")] nuint l) => ((ushort)(((nuint)(l)) & 0xffff));
+        public static ushort LOWORD([NativeTypeName("DWORD_PTR")] nuint l) => unchecked((ushort)(((nuint)(l)) & 0xffff));
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static ushort LOWORD(nint l) => LOWORD((nuint)(l));
+        public static ushort LOWORD(nint l) => unchecked(LOWORD((nuint)(l)));
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("WORD")]
         public static ushort HIWORD([NativeTypeName("DWORD_PTR")] nuint l) => ((ushort)((((nuint)(l)) >> 16) & 0xffff));
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static ushort HIWORD(nint l) => HIWORD((nuint)(l));
+        public static ushort HIWORD(nint l) => unchecked(HIWORD((nuint)(l)));
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static byte LOBYTE([NativeTypeName("DWORD_PTR")] nuint w) => ((byte)(((nuint)(w)) & 0xff));
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static byte LOBYTE(nint w) => LOBYTE((nuint)(w));
+        public static byte LOBYTE(nint w) => unchecked(LOBYTE((nuint)(w)));
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static byte HIBYTE([NativeTypeName("DWORD_PTR")] nuint w) => ((byte)((((nuint)(w)) >> 8) & 0xff));
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static byte HIBYTE(nint w) => HIBYTE((nuint)(w));
+        public static byte HIBYTE(nint w) => unchecked(HIBYTE((nuint)(w)));
     }
 }

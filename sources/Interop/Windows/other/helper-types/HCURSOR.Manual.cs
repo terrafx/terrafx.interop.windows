@@ -4,13 +4,8 @@ namespace TerraFX.Interop
 {
     public unsafe partial struct HCURSOR
     {
-        public HCURSOR(HICON value)
-        {
-            Value = value.Value;
-        }
+        public static explicit operator HCURSOR(HICON value) => new HCURSOR(value.Value);
 
-        public static explicit operator HCURSOR(HICON value) => new HCURSOR(value);
-
-        public static implicit operator HICON(HCURSOR value) => (HICON)(value.Value);
+        public static implicit operator HICON(HCURSOR value) => new HICON(value.Value);
     }
 }

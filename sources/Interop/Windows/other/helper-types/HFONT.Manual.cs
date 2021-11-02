@@ -6,13 +6,8 @@ namespace TerraFX.Interop
 {
     public unsafe partial struct HFONT : IEquatable<HFONT>
     {
-        public HFONT(HGDIOBJ value)
-        {
-            Value = value.Value;
-        }
+        public static explicit operator HFONT(HGDIOBJ value) => new HFONT(value.Value);
 
-        public static explicit operator HFONT(HGDIOBJ value) => new HFONT(value);
-
-        public static implicit operator HGDIOBJ(HFONT value) => (HGDIOBJ)(value.Value);
+        public static implicit operator HGDIOBJ(HFONT value) => new HGDIOBJ(value.Value);
     }
 }

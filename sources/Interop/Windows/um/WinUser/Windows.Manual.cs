@@ -186,22 +186,31 @@ namespace TerraFX.Interop
         public static POINT POINTSTOPOINT(POINTS pts)
         {
             return new POINT {
-                x = (short)LOWORD(*(uint*)&pts),
-                y = (short)HIWORD(*(uint*)&pts),
+                x = unchecked((int)(short)LOWORD(*(int*)&pts)),
+                y = unchecked((int)(short)HIWORD(*(int*)&pts)),
             };
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static int POINTTOPOINTS(POINTS pt) => MAKELONG((ushort)pt.x, (ushort)pt.y);
+        public static int POINTTOPOINTS(POINTS pt) => unchecked(MAKELONG((nuint)(short)pt.x, (nuint)(short)pt.y));
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static WPARAM MAKEWPARAM(ushort l, ushort h) => (nuint)MAKELONG(l, h);
+        public static WPARAM MAKEWPARAM([NativeTypeName("DWORD_PTR")] nuint l, [NativeTypeName("DWORD_PTR")] nuint h) => unchecked((WPARAM)(uint)MAKELONG(l, h));
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static LPARAM MAKELPARAM(ushort l, ushort h) => MAKELONG(l, h);
+        public static WPARAM MAKEWPARAM(nint l, nint h) => unchecked(MAKEWPARAM((nuint)(l), (nuint)(h)));
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static LRESULT MAKELRESULT(ushort l, ushort h) => MAKELONG(l, h);
+        public static LPARAM MAKELPARAM([NativeTypeName("DWORD_PTR")] nuint l, [NativeTypeName("DWORD_PTR")] nuint h) => unchecked((LPARAM)(uint)MAKELONG(l, h));
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static LPARAM MAKELPARAM(nint l, nint h) => unchecked(MAKELPARAM((nuint)(l), (nuint)(h)));
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static LRESULT MAKELRESULT([NativeTypeName("DWORD_PTR")] nuint l, [NativeTypeName("DWORD_PTR")] nuint h) => unchecked((LRESULT)(uint)MAKELONG(l, h));
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static LRESULT MAKELRESULT(nint l, nint h) => unchecked(MAKELRESULT((nuint)(l), (nuint)(h)));
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static short GET_APPCOMMAND_LPARAM(LPARAM lParam) => unchecked((short)(HIWORD((uint)lParam) & ~FAPPCOMMAND_MASK));

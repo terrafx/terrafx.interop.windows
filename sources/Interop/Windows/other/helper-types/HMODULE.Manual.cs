@@ -4,13 +4,8 @@ namespace TerraFX.Interop
 {
     public unsafe partial struct HMODULE
     {
-        public HMODULE(HINSTANCE value)
-        {
-            Value = value.Value;
-        }
+        public static explicit operator HMODULE(HINSTANCE value) => new HMODULE(value.Value);
 
-        public static explicit operator HMODULE(HINSTANCE value) => new HMODULE(value);
-
-        public static implicit operator HINSTANCE(HMODULE value) => (HINSTANCE)(value.Value);
+        public static implicit operator HINSTANCE(HMODULE value) => new HINSTANCE(value.Value);
     }
 }

@@ -6,13 +6,8 @@ namespace TerraFX.Interop
 {
     public unsafe partial struct HPEN : IEquatable<HPEN>
     {
-        public HPEN(HGDIOBJ value)
-        {
-            Value = value.Value;
-        }
+        public static explicit operator HPEN(HGDIOBJ value) => new HPEN(value.Value);
 
-        public static explicit operator HPEN(HGDIOBJ value) => new HPEN(value);
-
-        public static implicit operator HGDIOBJ(HPEN value) => (HGDIOBJ)(value.Value);
+        public static implicit operator HGDIOBJ(HPEN value) => new HGDIOBJ(value.Value);
     }
 }
