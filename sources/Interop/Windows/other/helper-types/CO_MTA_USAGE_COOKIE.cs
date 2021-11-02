@@ -4,7 +4,7 @@ using System;
 
 namespace TerraFX.Interop
 {
-    public unsafe partial struct CO_MTA_USAGE_COOKIE : IEquatable<CO_MTA_USAGE_COOKIE>
+    public unsafe partial struct CO_MTA_USAGE_COOKIE : IComparable, IComparable<CO_MTA_USAGE_COOKIE>, IEquatable<CO_MTA_USAGE_COOKIE>, IFormattable
     {
         public readonly nint Value;
 
@@ -20,6 +20,14 @@ namespace TerraFX.Interop
         public static bool operator ==(CO_MTA_USAGE_COOKIE left, CO_MTA_USAGE_COOKIE right) => left.Value == right.Value;
 
         public static bool operator !=(CO_MTA_USAGE_COOKIE left, CO_MTA_USAGE_COOKIE right) => left.Value != right.Value;
+
+        public static bool operator <(CO_MTA_USAGE_COOKIE left, CO_MTA_USAGE_COOKIE right) => left.Value < right.Value;
+
+        public static bool operator <=(CO_MTA_USAGE_COOKIE left, CO_MTA_USAGE_COOKIE right) => left.Value <= right.Value;
+
+        public static bool operator >(CO_MTA_USAGE_COOKIE left, CO_MTA_USAGE_COOKIE right) => left.Value > right.Value;
+
+        public static bool operator >=(CO_MTA_USAGE_COOKIE left, CO_MTA_USAGE_COOKIE right) => left.Value >= right.Value;
 
         public static explicit operator CO_MTA_USAGE_COOKIE(void* value) => new CO_MTA_USAGE_COOKIE((nint)(value));
 
@@ -69,13 +77,27 @@ namespace TerraFX.Interop
 
         public static explicit operator nuint(CO_MTA_USAGE_COOKIE value) => (nuint)(value.Value);
 
+        public int CompareTo(object? obj)
+        {
+            if (obj is CO_MTA_USAGE_COOKIE other)
+            {
+                return CompareTo(other);
+            }
+
+            return (obj is null) ? 1 : throw new ArgumentException("obj is not an instance of CO_MTA_USAGE_COOKIE.");
+        }
+
+        public int CompareTo(CO_MTA_USAGE_COOKIE other) => Value.CompareTo(other.Value);
+
         public override bool Equals(object? obj) => (obj is CO_MTA_USAGE_COOKIE other) && Equals(other);
 
-        public bool Equals(CO_MTA_USAGE_COOKIE other) => (this == other);
+        public bool Equals(CO_MTA_USAGE_COOKIE other) => Value.Equals(other.Value);
 
         public override int GetHashCode() => Value.GetHashCode();
 
-        public override string ToString() => Value.ToString();
+        public override string ToString() => Value.ToString((sizeof(nint) == 4) ? "X8" : "X16");
+
+        public string ToString(string? format, IFormatProvider? formatProvider) => Value.ToString(format, formatProvider);
 
     }
 }

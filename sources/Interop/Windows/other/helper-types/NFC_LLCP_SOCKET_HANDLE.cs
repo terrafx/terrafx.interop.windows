@@ -4,7 +4,7 @@ using System;
 
 namespace TerraFX.Interop
 {
-    public unsafe partial struct NFC_LLCP_SOCKET_HANDLE : IEquatable<NFC_LLCP_SOCKET_HANDLE>
+    public unsafe partial struct NFC_LLCP_SOCKET_HANDLE : IComparable, IComparable<NFC_LLCP_SOCKET_HANDLE>, IEquatable<NFC_LLCP_SOCKET_HANDLE>, IFormattable
     {
         public readonly nint Value;
 
@@ -20,6 +20,14 @@ namespace TerraFX.Interop
         public static bool operator ==(NFC_LLCP_SOCKET_HANDLE left, NFC_LLCP_SOCKET_HANDLE right) => left.Value == right.Value;
 
         public static bool operator !=(NFC_LLCP_SOCKET_HANDLE left, NFC_LLCP_SOCKET_HANDLE right) => left.Value != right.Value;
+
+        public static bool operator <(NFC_LLCP_SOCKET_HANDLE left, NFC_LLCP_SOCKET_HANDLE right) => left.Value < right.Value;
+
+        public static bool operator <=(NFC_LLCP_SOCKET_HANDLE left, NFC_LLCP_SOCKET_HANDLE right) => left.Value <= right.Value;
+
+        public static bool operator >(NFC_LLCP_SOCKET_HANDLE left, NFC_LLCP_SOCKET_HANDLE right) => left.Value > right.Value;
+
+        public static bool operator >=(NFC_LLCP_SOCKET_HANDLE left, NFC_LLCP_SOCKET_HANDLE right) => left.Value >= right.Value;
 
         public static explicit operator NFC_LLCP_SOCKET_HANDLE(void* value) => new NFC_LLCP_SOCKET_HANDLE((nint)(value));
 
@@ -69,13 +77,27 @@ namespace TerraFX.Interop
 
         public static explicit operator nuint(NFC_LLCP_SOCKET_HANDLE value) => (nuint)(value.Value);
 
+        public int CompareTo(object? obj)
+        {
+            if (obj is NFC_LLCP_SOCKET_HANDLE other)
+            {
+                return CompareTo(other);
+            }
+
+            return (obj is null) ? 1 : throw new ArgumentException("obj is not an instance of NFC_LLCP_SOCKET_HANDLE.");
+        }
+
+        public int CompareTo(NFC_LLCP_SOCKET_HANDLE other) => Value.CompareTo(other.Value);
+
         public override bool Equals(object? obj) => (obj is NFC_LLCP_SOCKET_HANDLE other) && Equals(other);
 
-        public bool Equals(NFC_LLCP_SOCKET_HANDLE other) => (this == other);
+        public bool Equals(NFC_LLCP_SOCKET_HANDLE other) => Value.Equals(other.Value);
 
         public override int GetHashCode() => Value.GetHashCode();
 
-        public override string ToString() => Value.ToString();
+        public override string ToString() => Value.ToString((sizeof(nint) == 4) ? "X8" : "X16");
+
+        public string ToString(string? format, IFormatProvider? formatProvider) => Value.ToString(format, formatProvider);
 
     }
 }

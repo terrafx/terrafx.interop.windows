@@ -4,7 +4,7 @@ using System;
 
 namespace TerraFX.Interop
 {
-    public unsafe partial struct HBODY : IEquatable<HBODY>
+    public unsafe partial struct HBODY : IComparable, IComparable<HBODY>, IEquatable<HBODY>, IFormattable
     {
         public readonly nint Value;
 
@@ -20,6 +20,14 @@ namespace TerraFX.Interop
         public static bool operator ==(HBODY left, HBODY right) => left.Value == right.Value;
 
         public static bool operator !=(HBODY left, HBODY right) => left.Value != right.Value;
+
+        public static bool operator <(HBODY left, HBODY right) => left.Value < right.Value;
+
+        public static bool operator <=(HBODY left, HBODY right) => left.Value <= right.Value;
+
+        public static bool operator >(HBODY left, HBODY right) => left.Value > right.Value;
+
+        public static bool operator >=(HBODY left, HBODY right) => left.Value >= right.Value;
 
         public static explicit operator HBODY(void* value) => new HBODY((nint)(value));
 
@@ -69,13 +77,27 @@ namespace TerraFX.Interop
 
         public static explicit operator nuint(HBODY value) => (nuint)(value.Value);
 
+        public int CompareTo(object? obj)
+        {
+            if (obj is HBODY other)
+            {
+                return CompareTo(other);
+            }
+
+            return (obj is null) ? 1 : throw new ArgumentException("obj is not an instance of HBODY.");
+        }
+
+        public int CompareTo(HBODY other) => Value.CompareTo(other.Value);
+
         public override bool Equals(object? obj) => (obj is HBODY other) && Equals(other);
 
-        public bool Equals(HBODY other) => (this == other);
+        public bool Equals(HBODY other) => Value.Equals(other.Value);
 
         public override int GetHashCode() => Value.GetHashCode();
 
-        public override string ToString() => Value.ToString();
+        public override string ToString() => Value.ToString((sizeof(nint) == 4) ? "X8" : "X16");
+
+        public string ToString(string? format, IFormatProvider? formatProvider) => Value.ToString(format, formatProvider);
 
     }
 }

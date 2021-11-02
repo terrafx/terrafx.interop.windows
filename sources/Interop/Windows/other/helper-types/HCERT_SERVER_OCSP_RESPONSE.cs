@@ -4,7 +4,7 @@ using System;
 
 namespace TerraFX.Interop
 {
-    public unsafe partial struct HCERT_SERVER_OCSP_RESPONSE : IEquatable<HCERT_SERVER_OCSP_RESPONSE>
+    public unsafe partial struct HCERT_SERVER_OCSP_RESPONSE : IComparable, IComparable<HCERT_SERVER_OCSP_RESPONSE>, IEquatable<HCERT_SERVER_OCSP_RESPONSE>, IFormattable
     {
         public readonly nint Value;
 
@@ -20,6 +20,14 @@ namespace TerraFX.Interop
         public static bool operator ==(HCERT_SERVER_OCSP_RESPONSE left, HCERT_SERVER_OCSP_RESPONSE right) => left.Value == right.Value;
 
         public static bool operator !=(HCERT_SERVER_OCSP_RESPONSE left, HCERT_SERVER_OCSP_RESPONSE right) => left.Value != right.Value;
+
+        public static bool operator <(HCERT_SERVER_OCSP_RESPONSE left, HCERT_SERVER_OCSP_RESPONSE right) => left.Value < right.Value;
+
+        public static bool operator <=(HCERT_SERVER_OCSP_RESPONSE left, HCERT_SERVER_OCSP_RESPONSE right) => left.Value <= right.Value;
+
+        public static bool operator >(HCERT_SERVER_OCSP_RESPONSE left, HCERT_SERVER_OCSP_RESPONSE right) => left.Value > right.Value;
+
+        public static bool operator >=(HCERT_SERVER_OCSP_RESPONSE left, HCERT_SERVER_OCSP_RESPONSE right) => left.Value >= right.Value;
 
         public static explicit operator HCERT_SERVER_OCSP_RESPONSE(void* value) => new HCERT_SERVER_OCSP_RESPONSE((nint)(value));
 
@@ -69,13 +77,27 @@ namespace TerraFX.Interop
 
         public static explicit operator nuint(HCERT_SERVER_OCSP_RESPONSE value) => (nuint)(value.Value);
 
+        public int CompareTo(object? obj)
+        {
+            if (obj is HCERT_SERVER_OCSP_RESPONSE other)
+            {
+                return CompareTo(other);
+            }
+
+            return (obj is null) ? 1 : throw new ArgumentException("obj is not an instance of HCERT_SERVER_OCSP_RESPONSE.");
+        }
+
+        public int CompareTo(HCERT_SERVER_OCSP_RESPONSE other) => Value.CompareTo(other.Value);
+
         public override bool Equals(object? obj) => (obj is HCERT_SERVER_OCSP_RESPONSE other) && Equals(other);
 
-        public bool Equals(HCERT_SERVER_OCSP_RESPONSE other) => (this == other);
+        public bool Equals(HCERT_SERVER_OCSP_RESPONSE other) => Value.Equals(other.Value);
 
         public override int GetHashCode() => Value.GetHashCode();
 
-        public override string ToString() => Value.ToString();
+        public override string ToString() => Value.ToString((sizeof(nint) == 4) ? "X8" : "X16");
+
+        public string ToString(string? format, IFormatProvider? formatProvider) => Value.ToString(format, formatProvider);
 
     }
 }

@@ -4,7 +4,7 @@ using System;
 
 namespace TerraFX.Interop
 {
-    public unsafe partial struct HSPFILEQ : IEquatable<HSPFILEQ>
+    public unsafe partial struct HSPFILEQ : IComparable, IComparable<HSPFILEQ>, IEquatable<HSPFILEQ>, IFormattable
     {
         public readonly nint Value;
 
@@ -20,6 +20,14 @@ namespace TerraFX.Interop
         public static bool operator ==(HSPFILEQ left, HSPFILEQ right) => left.Value == right.Value;
 
         public static bool operator !=(HSPFILEQ left, HSPFILEQ right) => left.Value != right.Value;
+
+        public static bool operator <(HSPFILEQ left, HSPFILEQ right) => left.Value < right.Value;
+
+        public static bool operator <=(HSPFILEQ left, HSPFILEQ right) => left.Value <= right.Value;
+
+        public static bool operator >(HSPFILEQ left, HSPFILEQ right) => left.Value > right.Value;
+
+        public static bool operator >=(HSPFILEQ left, HSPFILEQ right) => left.Value >= right.Value;
 
         public static explicit operator HSPFILEQ(void* value) => new HSPFILEQ((nint)(value));
 
@@ -69,13 +77,27 @@ namespace TerraFX.Interop
 
         public static explicit operator nuint(HSPFILEQ value) => (nuint)(value.Value);
 
+        public int CompareTo(object? obj)
+        {
+            if (obj is HSPFILEQ other)
+            {
+                return CompareTo(other);
+            }
+
+            return (obj is null) ? 1 : throw new ArgumentException("obj is not an instance of HSPFILEQ.");
+        }
+
+        public int CompareTo(HSPFILEQ other) => Value.CompareTo(other.Value);
+
         public override bool Equals(object? obj) => (obj is HSPFILEQ other) && Equals(other);
 
-        public bool Equals(HSPFILEQ other) => (this == other);
+        public bool Equals(HSPFILEQ other) => Value.Equals(other.Value);
 
         public override int GetHashCode() => Value.GetHashCode();
 
-        public override string ToString() => Value.ToString();
+        public override string ToString() => Value.ToString((sizeof(nint) == 4) ? "X8" : "X16");
+
+        public string ToString(string? format, IFormatProvider? formatProvider) => Value.ToString(format, formatProvider);
 
     }
 }

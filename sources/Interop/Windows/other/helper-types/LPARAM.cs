@@ -4,7 +4,7 @@ using System;
 
 namespace TerraFX.Interop
 {
-    public partial struct LPARAM : IEquatable<LPARAM>
+    public partial struct LPARAM : IComparable, IComparable<LPARAM>, IEquatable<LPARAM>, IFormattable
     {
         public readonly nint Value;
 
@@ -16,6 +16,14 @@ namespace TerraFX.Interop
         public static bool operator ==(LPARAM left, LPARAM right) => left.Value == right.Value;
 
         public static bool operator !=(LPARAM left, LPARAM right) => left.Value != right.Value;
+
+        public static bool operator <(LPARAM left, LPARAM right) => left.Value < right.Value;
+
+        public static bool operator <=(LPARAM left, LPARAM right) => left.Value <= right.Value;
+
+        public static bool operator >(LPARAM left, LPARAM right) => left.Value > right.Value;
+
+        public static bool operator >=(LPARAM left, LPARAM right) => left.Value >= right.Value;
 
         public static implicit operator LPARAM(byte value) => new LPARAM((nint)(value));
 
@@ -57,13 +65,27 @@ namespace TerraFX.Interop
 
         public static explicit operator nuint(LPARAM value) => (nuint)(value.Value);
 
+        public int CompareTo(object? obj)
+        {
+            if (obj is LPARAM other)
+            {
+                return CompareTo(other);
+            }
+
+            return (obj is null) ? 1 : throw new ArgumentException("obj is not an instance of LPARAM.");
+        }
+
+        public int CompareTo(LPARAM other) => Value.CompareTo(other.Value);
+
         public override bool Equals(object? obj) => (obj is LPARAM other) && Equals(other);
 
-        public bool Equals(LPARAM other) => (this == other);
+        public bool Equals(LPARAM other) => Value.Equals(other.Value);
 
         public override int GetHashCode() => Value.GetHashCode();
 
         public override string ToString() => Value.ToString();
+
+        public string ToString(string? format, IFormatProvider? formatProvider) => Value.ToString(format, formatProvider);
 
     }
 }

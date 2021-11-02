@@ -4,7 +4,7 @@ using System;
 
 namespace TerraFX.Interop
 {
-    public unsafe partial struct HMF : IEquatable<HMF>
+    public unsafe partial struct HMF : IComparable, IComparable<HMF>, IEquatable<HMF>, IFormattable
     {
         public readonly nint Value;
 
@@ -20,6 +20,14 @@ namespace TerraFX.Interop
         public static bool operator ==(HMF left, HMF right) => left.Value == right.Value;
 
         public static bool operator !=(HMF left, HMF right) => left.Value != right.Value;
+
+        public static bool operator <(HMF left, HMF right) => left.Value < right.Value;
+
+        public static bool operator <=(HMF left, HMF right) => left.Value <= right.Value;
+
+        public static bool operator >(HMF left, HMF right) => left.Value > right.Value;
+
+        public static bool operator >=(HMF left, HMF right) => left.Value >= right.Value;
 
         public static explicit operator HMF(void* value) => new HMF((nint)(value));
 
@@ -69,13 +77,27 @@ namespace TerraFX.Interop
 
         public static explicit operator nuint(HMF value) => (nuint)(value.Value);
 
+        public int CompareTo(object? obj)
+        {
+            if (obj is HMF other)
+            {
+                return CompareTo(other);
+            }
+
+            return (obj is null) ? 1 : throw new ArgumentException("obj is not an instance of HMF.");
+        }
+
+        public int CompareTo(HMF other) => Value.CompareTo(other.Value);
+
         public override bool Equals(object? obj) => (obj is HMF other) && Equals(other);
 
-        public bool Equals(HMF other) => (this == other);
+        public bool Equals(HMF other) => Value.Equals(other.Value);
 
         public override int GetHashCode() => Value.GetHashCode();
 
-        public override string ToString() => Value.ToString();
+        public override string ToString() => Value.ToString((sizeof(nint) == 4) ? "X8" : "X16");
+
+        public string ToString(string? format, IFormatProvider? formatProvider) => Value.ToString(format, formatProvider);
 
     }
 }

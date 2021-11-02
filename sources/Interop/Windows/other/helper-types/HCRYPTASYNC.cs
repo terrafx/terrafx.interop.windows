@@ -4,7 +4,7 @@ using System;
 
 namespace TerraFX.Interop
 {
-    public unsafe partial struct HCRYPTASYNC : IEquatable<HCRYPTASYNC>
+    public unsafe partial struct HCRYPTASYNC : IComparable, IComparable<HCRYPTASYNC>, IEquatable<HCRYPTASYNC>, IFormattable
     {
         public readonly nint Value;
 
@@ -20,6 +20,14 @@ namespace TerraFX.Interop
         public static bool operator ==(HCRYPTASYNC left, HCRYPTASYNC right) => left.Value == right.Value;
 
         public static bool operator !=(HCRYPTASYNC left, HCRYPTASYNC right) => left.Value != right.Value;
+
+        public static bool operator <(HCRYPTASYNC left, HCRYPTASYNC right) => left.Value < right.Value;
+
+        public static bool operator <=(HCRYPTASYNC left, HCRYPTASYNC right) => left.Value <= right.Value;
+
+        public static bool operator >(HCRYPTASYNC left, HCRYPTASYNC right) => left.Value > right.Value;
+
+        public static bool operator >=(HCRYPTASYNC left, HCRYPTASYNC right) => left.Value >= right.Value;
 
         public static explicit operator HCRYPTASYNC(void* value) => new HCRYPTASYNC((nint)(value));
 
@@ -69,13 +77,27 @@ namespace TerraFX.Interop
 
         public static explicit operator nuint(HCRYPTASYNC value) => (nuint)(value.Value);
 
+        public int CompareTo(object? obj)
+        {
+            if (obj is HCRYPTASYNC other)
+            {
+                return CompareTo(other);
+            }
+
+            return (obj is null) ? 1 : throw new ArgumentException("obj is not an instance of HCRYPTASYNC.");
+        }
+
+        public int CompareTo(HCRYPTASYNC other) => Value.CompareTo(other.Value);
+
         public override bool Equals(object? obj) => (obj is HCRYPTASYNC other) && Equals(other);
 
-        public bool Equals(HCRYPTASYNC other) => (this == other);
+        public bool Equals(HCRYPTASYNC other) => Value.Equals(other.Value);
 
         public override int GetHashCode() => Value.GetHashCode();
 
-        public override string ToString() => Value.ToString();
+        public override string ToString() => Value.ToString((sizeof(nint) == 4) ? "X8" : "X16");
+
+        public string ToString(string? format, IFormatProvider? formatProvider) => Value.ToString(format, formatProvider);
 
     }
 }

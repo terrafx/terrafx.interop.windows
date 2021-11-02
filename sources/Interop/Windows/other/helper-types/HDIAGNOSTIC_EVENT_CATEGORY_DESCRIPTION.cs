@@ -4,7 +4,7 @@ using System;
 
 namespace TerraFX.Interop
 {
-    public unsafe partial struct HDIAGNOSTIC_EVENT_CATEGORY_DESCRIPTION : IEquatable<HDIAGNOSTIC_EVENT_CATEGORY_DESCRIPTION>
+    public unsafe partial struct HDIAGNOSTIC_EVENT_CATEGORY_DESCRIPTION : IComparable, IComparable<HDIAGNOSTIC_EVENT_CATEGORY_DESCRIPTION>, IEquatable<HDIAGNOSTIC_EVENT_CATEGORY_DESCRIPTION>, IFormattable
     {
         public readonly nint Value;
 
@@ -20,6 +20,14 @@ namespace TerraFX.Interop
         public static bool operator ==(HDIAGNOSTIC_EVENT_CATEGORY_DESCRIPTION left, HDIAGNOSTIC_EVENT_CATEGORY_DESCRIPTION right) => left.Value == right.Value;
 
         public static bool operator !=(HDIAGNOSTIC_EVENT_CATEGORY_DESCRIPTION left, HDIAGNOSTIC_EVENT_CATEGORY_DESCRIPTION right) => left.Value != right.Value;
+
+        public static bool operator <(HDIAGNOSTIC_EVENT_CATEGORY_DESCRIPTION left, HDIAGNOSTIC_EVENT_CATEGORY_DESCRIPTION right) => left.Value < right.Value;
+
+        public static bool operator <=(HDIAGNOSTIC_EVENT_CATEGORY_DESCRIPTION left, HDIAGNOSTIC_EVENT_CATEGORY_DESCRIPTION right) => left.Value <= right.Value;
+
+        public static bool operator >(HDIAGNOSTIC_EVENT_CATEGORY_DESCRIPTION left, HDIAGNOSTIC_EVENT_CATEGORY_DESCRIPTION right) => left.Value > right.Value;
+
+        public static bool operator >=(HDIAGNOSTIC_EVENT_CATEGORY_DESCRIPTION left, HDIAGNOSTIC_EVENT_CATEGORY_DESCRIPTION right) => left.Value >= right.Value;
 
         public static explicit operator HDIAGNOSTIC_EVENT_CATEGORY_DESCRIPTION(void* value) => new HDIAGNOSTIC_EVENT_CATEGORY_DESCRIPTION((nint)(value));
 
@@ -69,13 +77,27 @@ namespace TerraFX.Interop
 
         public static explicit operator nuint(HDIAGNOSTIC_EVENT_CATEGORY_DESCRIPTION value) => (nuint)(value.Value);
 
+        public int CompareTo(object? obj)
+        {
+            if (obj is HDIAGNOSTIC_EVENT_CATEGORY_DESCRIPTION other)
+            {
+                return CompareTo(other);
+            }
+
+            return (obj is null) ? 1 : throw new ArgumentException("obj is not an instance of HDIAGNOSTIC_EVENT_CATEGORY_DESCRIPTION.");
+        }
+
+        public int CompareTo(HDIAGNOSTIC_EVENT_CATEGORY_DESCRIPTION other) => Value.CompareTo(other.Value);
+
         public override bool Equals(object? obj) => (obj is HDIAGNOSTIC_EVENT_CATEGORY_DESCRIPTION other) && Equals(other);
 
-        public bool Equals(HDIAGNOSTIC_EVENT_CATEGORY_DESCRIPTION other) => (this == other);
+        public bool Equals(HDIAGNOSTIC_EVENT_CATEGORY_DESCRIPTION other) => Value.Equals(other.Value);
 
         public override int GetHashCode() => Value.GetHashCode();
 
-        public override string ToString() => Value.ToString();
+        public override string ToString() => Value.ToString((sizeof(nint) == 4) ? "X8" : "X16");
+
+        public string ToString(string? format, IFormatProvider? formatProvider) => Value.ToString(format, formatProvider);
 
     }
 }

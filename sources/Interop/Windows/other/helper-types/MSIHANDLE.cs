@@ -4,7 +4,7 @@ using System;
 
 namespace TerraFX.Interop
 {
-    public partial struct MSIHANDLE : IEquatable<MSIHANDLE>
+    public partial struct MSIHANDLE : IComparable, IComparable<MSIHANDLE>, IEquatable<MSIHANDLE>, IFormattable
     {
         public readonly uint Value;
 
@@ -16,6 +16,14 @@ namespace TerraFX.Interop
         public static bool operator ==(MSIHANDLE left, MSIHANDLE right) => left.Value == right.Value;
 
         public static bool operator !=(MSIHANDLE left, MSIHANDLE right) => left.Value != right.Value;
+
+        public static bool operator <(MSIHANDLE left, MSIHANDLE right) => left.Value < right.Value;
+
+        public static bool operator <=(MSIHANDLE left, MSIHANDLE right) => left.Value <= right.Value;
+
+        public static bool operator >(MSIHANDLE left, MSIHANDLE right) => left.Value > right.Value;
+
+        public static bool operator >=(MSIHANDLE left, MSIHANDLE right) => left.Value >= right.Value;
 
         public static implicit operator MSIHANDLE(byte value) => new MSIHANDLE((uint)(value));
 
@@ -57,13 +65,27 @@ namespace TerraFX.Interop
 
         public static implicit operator nuint(MSIHANDLE value) => (nuint)(value.Value);
 
+        public int CompareTo(object? obj)
+        {
+            if (obj is MSIHANDLE other)
+            {
+                return CompareTo(other);
+            }
+
+            return (obj is null) ? 1 : throw new ArgumentException("obj is not an instance of MSIHANDLE.");
+        }
+
+        public int CompareTo(MSIHANDLE other) => Value.CompareTo(other.Value);
+
         public override bool Equals(object? obj) => (obj is MSIHANDLE other) && Equals(other);
 
-        public bool Equals(MSIHANDLE other) => (this == other);
+        public bool Equals(MSIHANDLE other) => Value.Equals(other.Value);
 
         public override int GetHashCode() => Value.GetHashCode();
 
         public override string ToString() => Value.ToString();
+
+        public string ToString(string? format, IFormatProvider? formatProvider) => Value.ToString(format, formatProvider);
 
     }
 }

@@ -4,7 +4,7 @@ using System;
 
 namespace TerraFX.Interop
 {
-    public unsafe partial struct D3DKMDT_HVIDPNSOURCEMODESET : IEquatable<D3DKMDT_HVIDPNSOURCEMODESET>
+    public unsafe partial struct D3DKMDT_HVIDPNSOURCEMODESET : IComparable, IComparable<D3DKMDT_HVIDPNSOURCEMODESET>, IEquatable<D3DKMDT_HVIDPNSOURCEMODESET>, IFormattable
     {
         public readonly nint Value;
 
@@ -20,6 +20,14 @@ namespace TerraFX.Interop
         public static bool operator ==(D3DKMDT_HVIDPNSOURCEMODESET left, D3DKMDT_HVIDPNSOURCEMODESET right) => left.Value == right.Value;
 
         public static bool operator !=(D3DKMDT_HVIDPNSOURCEMODESET left, D3DKMDT_HVIDPNSOURCEMODESET right) => left.Value != right.Value;
+
+        public static bool operator <(D3DKMDT_HVIDPNSOURCEMODESET left, D3DKMDT_HVIDPNSOURCEMODESET right) => left.Value < right.Value;
+
+        public static bool operator <=(D3DKMDT_HVIDPNSOURCEMODESET left, D3DKMDT_HVIDPNSOURCEMODESET right) => left.Value <= right.Value;
+
+        public static bool operator >(D3DKMDT_HVIDPNSOURCEMODESET left, D3DKMDT_HVIDPNSOURCEMODESET right) => left.Value > right.Value;
+
+        public static bool operator >=(D3DKMDT_HVIDPNSOURCEMODESET left, D3DKMDT_HVIDPNSOURCEMODESET right) => left.Value >= right.Value;
 
         public static explicit operator D3DKMDT_HVIDPNSOURCEMODESET(void* value) => new D3DKMDT_HVIDPNSOURCEMODESET((nint)(value));
 
@@ -69,13 +77,27 @@ namespace TerraFX.Interop
 
         public static explicit operator nuint(D3DKMDT_HVIDPNSOURCEMODESET value) => (nuint)(value.Value);
 
+        public int CompareTo(object? obj)
+        {
+            if (obj is D3DKMDT_HVIDPNSOURCEMODESET other)
+            {
+                return CompareTo(other);
+            }
+
+            return (obj is null) ? 1 : throw new ArgumentException("obj is not an instance of D3DKMDT_HVIDPNSOURCEMODESET.");
+        }
+
+        public int CompareTo(D3DKMDT_HVIDPNSOURCEMODESET other) => Value.CompareTo(other.Value);
+
         public override bool Equals(object? obj) => (obj is D3DKMDT_HVIDPNSOURCEMODESET other) && Equals(other);
 
-        public bool Equals(D3DKMDT_HVIDPNSOURCEMODESET other) => (this == other);
+        public bool Equals(D3DKMDT_HVIDPNSOURCEMODESET other) => Value.Equals(other.Value);
 
         public override int GetHashCode() => Value.GetHashCode();
 
-        public override string ToString() => Value.ToString();
+        public override string ToString() => Value.ToString((sizeof(nint) == 4) ? "X8" : "X16");
+
+        public string ToString(string? format, IFormatProvider? formatProvider) => Value.ToString(format, formatProvider);
 
     }
 }

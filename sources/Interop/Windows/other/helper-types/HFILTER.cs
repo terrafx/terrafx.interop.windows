@@ -4,7 +4,7 @@ using System;
 
 namespace TerraFX.Interop
 {
-    public unsafe partial struct HFILTER : IEquatable<HFILTER>
+    public unsafe partial struct HFILTER : IComparable, IComparable<HFILTER>, IEquatable<HFILTER>, IFormattable
     {
         public readonly nint Value;
 
@@ -20,6 +20,14 @@ namespace TerraFX.Interop
         public static bool operator ==(HFILTER left, HFILTER right) => left.Value == right.Value;
 
         public static bool operator !=(HFILTER left, HFILTER right) => left.Value != right.Value;
+
+        public static bool operator <(HFILTER left, HFILTER right) => left.Value < right.Value;
+
+        public static bool operator <=(HFILTER left, HFILTER right) => left.Value <= right.Value;
+
+        public static bool operator >(HFILTER left, HFILTER right) => left.Value > right.Value;
+
+        public static bool operator >=(HFILTER left, HFILTER right) => left.Value >= right.Value;
 
         public static explicit operator HFILTER(void* value) => new HFILTER((nint)(value));
 
@@ -69,13 +77,27 @@ namespace TerraFX.Interop
 
         public static explicit operator nuint(HFILTER value) => (nuint)(value.Value);
 
+        public int CompareTo(object? obj)
+        {
+            if (obj is HFILTER other)
+            {
+                return CompareTo(other);
+            }
+
+            return (obj is null) ? 1 : throw new ArgumentException("obj is not an instance of HFILTER.");
+        }
+
+        public int CompareTo(HFILTER other) => Value.CompareTo(other.Value);
+
         public override bool Equals(object? obj) => (obj is HFILTER other) && Equals(other);
 
-        public bool Equals(HFILTER other) => (this == other);
+        public bool Equals(HFILTER other) => Value.Equals(other.Value);
 
         public override int GetHashCode() => Value.GetHashCode();
 
-        public override string ToString() => Value.ToString();
+        public override string ToString() => Value.ToString((sizeof(nint) == 4) ? "X8" : "X16");
+
+        public string ToString(string? format, IFormatProvider? formatProvider) => Value.ToString(format, formatProvider);
 
     }
 }

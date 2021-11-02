@@ -4,7 +4,7 @@ using System;
 
 namespace TerraFX.Interop
 {
-    public unsafe partial struct HSNMP_CONTEXT : IEquatable<HSNMP_CONTEXT>
+    public unsafe partial struct HSNMP_CONTEXT : IComparable, IComparable<HSNMP_CONTEXT>, IEquatable<HSNMP_CONTEXT>, IFormattable
     {
         public readonly nint Value;
 
@@ -20,6 +20,14 @@ namespace TerraFX.Interop
         public static bool operator ==(HSNMP_CONTEXT left, HSNMP_CONTEXT right) => left.Value == right.Value;
 
         public static bool operator !=(HSNMP_CONTEXT left, HSNMP_CONTEXT right) => left.Value != right.Value;
+
+        public static bool operator <(HSNMP_CONTEXT left, HSNMP_CONTEXT right) => left.Value < right.Value;
+
+        public static bool operator <=(HSNMP_CONTEXT left, HSNMP_CONTEXT right) => left.Value <= right.Value;
+
+        public static bool operator >(HSNMP_CONTEXT left, HSNMP_CONTEXT right) => left.Value > right.Value;
+
+        public static bool operator >=(HSNMP_CONTEXT left, HSNMP_CONTEXT right) => left.Value >= right.Value;
 
         public static explicit operator HSNMP_CONTEXT(void* value) => new HSNMP_CONTEXT((nint)(value));
 
@@ -69,13 +77,27 @@ namespace TerraFX.Interop
 
         public static explicit operator nuint(HSNMP_CONTEXT value) => (nuint)(value.Value);
 
+        public int CompareTo(object? obj)
+        {
+            if (obj is HSNMP_CONTEXT other)
+            {
+                return CompareTo(other);
+            }
+
+            return (obj is null) ? 1 : throw new ArgumentException("obj is not an instance of HSNMP_CONTEXT.");
+        }
+
+        public int CompareTo(HSNMP_CONTEXT other) => Value.CompareTo(other.Value);
+
         public override bool Equals(object? obj) => (obj is HSNMP_CONTEXT other) && Equals(other);
 
-        public bool Equals(HSNMP_CONTEXT other) => (this == other);
+        public bool Equals(HSNMP_CONTEXT other) => Value.Equals(other.Value);
 
         public override int GetHashCode() => Value.GetHashCode();
 
-        public override string ToString() => Value.ToString();
+        public override string ToString() => Value.ToString((sizeof(nint) == 4) ? "X8" : "X16");
+
+        public string ToString(string? format, IFormatProvider? formatProvider) => Value.ToString(format, formatProvider);
 
     }
 }

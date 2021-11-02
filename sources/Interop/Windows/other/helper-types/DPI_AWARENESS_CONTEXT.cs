@@ -4,7 +4,7 @@ using System;
 
 namespace TerraFX.Interop
 {
-    public unsafe partial struct DPI_AWARENESS_CONTEXT : IEquatable<DPI_AWARENESS_CONTEXT>
+    public unsafe partial struct DPI_AWARENESS_CONTEXT : IComparable, IComparable<DPI_AWARENESS_CONTEXT>, IEquatable<DPI_AWARENESS_CONTEXT>, IFormattable
     {
         public readonly nint Value;
 
@@ -20,6 +20,14 @@ namespace TerraFX.Interop
         public static bool operator ==(DPI_AWARENESS_CONTEXT left, DPI_AWARENESS_CONTEXT right) => left.Value == right.Value;
 
         public static bool operator !=(DPI_AWARENESS_CONTEXT left, DPI_AWARENESS_CONTEXT right) => left.Value != right.Value;
+
+        public static bool operator <(DPI_AWARENESS_CONTEXT left, DPI_AWARENESS_CONTEXT right) => left.Value < right.Value;
+
+        public static bool operator <=(DPI_AWARENESS_CONTEXT left, DPI_AWARENESS_CONTEXT right) => left.Value <= right.Value;
+
+        public static bool operator >(DPI_AWARENESS_CONTEXT left, DPI_AWARENESS_CONTEXT right) => left.Value > right.Value;
+
+        public static bool operator >=(DPI_AWARENESS_CONTEXT left, DPI_AWARENESS_CONTEXT right) => left.Value >= right.Value;
 
         public static explicit operator DPI_AWARENESS_CONTEXT(void* value) => new DPI_AWARENESS_CONTEXT((nint)(value));
 
@@ -69,13 +77,27 @@ namespace TerraFX.Interop
 
         public static explicit operator nuint(DPI_AWARENESS_CONTEXT value) => (nuint)(value.Value);
 
+        public int CompareTo(object? obj)
+        {
+            if (obj is DPI_AWARENESS_CONTEXT other)
+            {
+                return CompareTo(other);
+            }
+
+            return (obj is null) ? 1 : throw new ArgumentException("obj is not an instance of DPI_AWARENESS_CONTEXT.");
+        }
+
+        public int CompareTo(DPI_AWARENESS_CONTEXT other) => Value.CompareTo(other.Value);
+
         public override bool Equals(object? obj) => (obj is DPI_AWARENESS_CONTEXT other) && Equals(other);
 
-        public bool Equals(DPI_AWARENESS_CONTEXT other) => (this == other);
+        public bool Equals(DPI_AWARENESS_CONTEXT other) => Value.Equals(other.Value);
 
         public override int GetHashCode() => Value.GetHashCode();
 
-        public override string ToString() => Value.ToString();
+        public override string ToString() => Value.ToString((sizeof(nint) == 4) ? "X8" : "X16");
+
+        public string ToString(string? format, IFormatProvider? formatProvider) => Value.ToString(format, formatProvider);
 
     }
 }

@@ -4,7 +4,7 @@ using System;
 
 namespace TerraFX.Interop
 {
-    public unsafe partial struct LPPROC_THREAD_ATTRIBUTE_LIST : IEquatable<LPPROC_THREAD_ATTRIBUTE_LIST>
+    public unsafe partial struct LPPROC_THREAD_ATTRIBUTE_LIST : IComparable, IComparable<LPPROC_THREAD_ATTRIBUTE_LIST>, IEquatable<LPPROC_THREAD_ATTRIBUTE_LIST>, IFormattable
     {
         public readonly nint Value;
 
@@ -18,6 +18,14 @@ namespace TerraFX.Interop
         public static bool operator ==(LPPROC_THREAD_ATTRIBUTE_LIST left, LPPROC_THREAD_ATTRIBUTE_LIST right) => left.Value == right.Value;
 
         public static bool operator !=(LPPROC_THREAD_ATTRIBUTE_LIST left, LPPROC_THREAD_ATTRIBUTE_LIST right) => left.Value != right.Value;
+
+        public static bool operator <(LPPROC_THREAD_ATTRIBUTE_LIST left, LPPROC_THREAD_ATTRIBUTE_LIST right) => left.Value < right.Value;
+
+        public static bool operator <=(LPPROC_THREAD_ATTRIBUTE_LIST left, LPPROC_THREAD_ATTRIBUTE_LIST right) => left.Value <= right.Value;
+
+        public static bool operator >(LPPROC_THREAD_ATTRIBUTE_LIST left, LPPROC_THREAD_ATTRIBUTE_LIST right) => left.Value > right.Value;
+
+        public static bool operator >=(LPPROC_THREAD_ATTRIBUTE_LIST left, LPPROC_THREAD_ATTRIBUTE_LIST right) => left.Value >= right.Value;
 
         public static explicit operator LPPROC_THREAD_ATTRIBUTE_LIST(void* value) => new LPPROC_THREAD_ATTRIBUTE_LIST((nint)(value));
 
@@ -63,13 +71,27 @@ namespace TerraFX.Interop
 
         public static explicit operator nuint(LPPROC_THREAD_ATTRIBUTE_LIST value) => (nuint)(value.Value);
 
+        public int CompareTo(object? obj)
+        {
+            if (obj is LPPROC_THREAD_ATTRIBUTE_LIST other)
+            {
+                return CompareTo(other);
+            }
+
+            return (obj is null) ? 1 : throw new ArgumentException("obj is not an instance of LPPROC_THREAD_ATTRIBUTE_LIST.");
+        }
+
+        public int CompareTo(LPPROC_THREAD_ATTRIBUTE_LIST other) => Value.CompareTo(other.Value);
+
         public override bool Equals(object? obj) => (obj is LPPROC_THREAD_ATTRIBUTE_LIST other) && Equals(other);
 
-        public bool Equals(LPPROC_THREAD_ATTRIBUTE_LIST other) => (this == other);
+        public bool Equals(LPPROC_THREAD_ATTRIBUTE_LIST other) => Value.Equals(other.Value);
 
         public override int GetHashCode() => Value.GetHashCode();
 
-        public override string ToString() => Value.ToString();
+        public override string ToString() => Value.ToString((sizeof(nint) == 4) ? "X8" : "X16");
+
+        public string ToString(string? format, IFormatProvider? formatProvider) => Value.ToString(format, formatProvider);
 
     }
 }

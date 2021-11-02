@@ -4,7 +4,7 @@ using System;
 
 namespace TerraFX.Interop
 {
-    public unsafe partial struct AUTHZ_RESOURCE_MANAGER_HANDLE : IEquatable<AUTHZ_RESOURCE_MANAGER_HANDLE>
+    public unsafe partial struct AUTHZ_RESOURCE_MANAGER_HANDLE : IComparable, IComparable<AUTHZ_RESOURCE_MANAGER_HANDLE>, IEquatable<AUTHZ_RESOURCE_MANAGER_HANDLE>, IFormattable
     {
         public readonly nint Value;
 
@@ -20,6 +20,14 @@ namespace TerraFX.Interop
         public static bool operator ==(AUTHZ_RESOURCE_MANAGER_HANDLE left, AUTHZ_RESOURCE_MANAGER_HANDLE right) => left.Value == right.Value;
 
         public static bool operator !=(AUTHZ_RESOURCE_MANAGER_HANDLE left, AUTHZ_RESOURCE_MANAGER_HANDLE right) => left.Value != right.Value;
+
+        public static bool operator <(AUTHZ_RESOURCE_MANAGER_HANDLE left, AUTHZ_RESOURCE_MANAGER_HANDLE right) => left.Value < right.Value;
+
+        public static bool operator <=(AUTHZ_RESOURCE_MANAGER_HANDLE left, AUTHZ_RESOURCE_MANAGER_HANDLE right) => left.Value <= right.Value;
+
+        public static bool operator >(AUTHZ_RESOURCE_MANAGER_HANDLE left, AUTHZ_RESOURCE_MANAGER_HANDLE right) => left.Value > right.Value;
+
+        public static bool operator >=(AUTHZ_RESOURCE_MANAGER_HANDLE left, AUTHZ_RESOURCE_MANAGER_HANDLE right) => left.Value >= right.Value;
 
         public static explicit operator AUTHZ_RESOURCE_MANAGER_HANDLE(void* value) => new AUTHZ_RESOURCE_MANAGER_HANDLE((nint)(value));
 
@@ -69,13 +77,27 @@ namespace TerraFX.Interop
 
         public static explicit operator nuint(AUTHZ_RESOURCE_MANAGER_HANDLE value) => (nuint)(value.Value);
 
+        public int CompareTo(object? obj)
+        {
+            if (obj is AUTHZ_RESOURCE_MANAGER_HANDLE other)
+            {
+                return CompareTo(other);
+            }
+
+            return (obj is null) ? 1 : throw new ArgumentException("obj is not an instance of AUTHZ_RESOURCE_MANAGER_HANDLE.");
+        }
+
+        public int CompareTo(AUTHZ_RESOURCE_MANAGER_HANDLE other) => Value.CompareTo(other.Value);
+
         public override bool Equals(object? obj) => (obj is AUTHZ_RESOURCE_MANAGER_HANDLE other) && Equals(other);
 
-        public bool Equals(AUTHZ_RESOURCE_MANAGER_HANDLE other) => (this == other);
+        public bool Equals(AUTHZ_RESOURCE_MANAGER_HANDLE other) => Value.Equals(other.Value);
 
         public override int GetHashCode() => Value.GetHashCode();
 
-        public override string ToString() => Value.ToString();
+        public override string ToString() => Value.ToString((sizeof(nint) == 4) ? "X8" : "X16");
+
+        public string ToString(string? format, IFormatProvider? formatProvider) => Value.ToString(format, formatProvider);
 
     }
 }

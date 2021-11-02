@@ -4,7 +4,7 @@ using System;
 
 namespace TerraFX.Interop
 {
-    public partial struct WPARAM : IEquatable<WPARAM>
+    public partial struct WPARAM : IComparable, IComparable<WPARAM>, IEquatable<WPARAM>, IFormattable
     {
         public readonly nuint Value;
 
@@ -16,6 +16,14 @@ namespace TerraFX.Interop
         public static bool operator ==(WPARAM left, WPARAM right) => left.Value == right.Value;
 
         public static bool operator !=(WPARAM left, WPARAM right) => left.Value != right.Value;
+
+        public static bool operator <(WPARAM left, WPARAM right) => left.Value < right.Value;
+
+        public static bool operator <=(WPARAM left, WPARAM right) => left.Value <= right.Value;
+
+        public static bool operator >(WPARAM left, WPARAM right) => left.Value > right.Value;
+
+        public static bool operator >=(WPARAM left, WPARAM right) => left.Value >= right.Value;
 
         public static implicit operator WPARAM(byte value) => new WPARAM((nuint)(value));
 
@@ -57,13 +65,27 @@ namespace TerraFX.Interop
 
         public static implicit operator nuint(WPARAM value) => (nuint)(value.Value);
 
+        public int CompareTo(object? obj)
+        {
+            if (obj is WPARAM other)
+            {
+                return CompareTo(other);
+            }
+
+            return (obj is null) ? 1 : throw new ArgumentException("obj is not an instance of WPARAM.");
+        }
+
+        public int CompareTo(WPARAM other) => Value.CompareTo(other.Value);
+
         public override bool Equals(object? obj) => (obj is WPARAM other) && Equals(other);
 
-        public bool Equals(WPARAM other) => (this == other);
+        public bool Equals(WPARAM other) => Value.Equals(other.Value);
 
         public override int GetHashCode() => Value.GetHashCode();
 
         public override string ToString() => Value.ToString();
+
+        public string ToString(string? format, IFormatProvider? formatProvider) => Value.ToString(format, formatProvider);
 
     }
 }

@@ -4,7 +4,7 @@ using System;
 
 namespace TerraFX.Interop
 {
-    public unsafe partial struct RAS_SERVER_HANDLE : IEquatable<RAS_SERVER_HANDLE>
+    public unsafe partial struct RAS_SERVER_HANDLE : IComparable, IComparable<RAS_SERVER_HANDLE>, IEquatable<RAS_SERVER_HANDLE>, IFormattable
     {
         public readonly nint Value;
 
@@ -20,6 +20,14 @@ namespace TerraFX.Interop
         public static bool operator ==(RAS_SERVER_HANDLE left, RAS_SERVER_HANDLE right) => left.Value == right.Value;
 
         public static bool operator !=(RAS_SERVER_HANDLE left, RAS_SERVER_HANDLE right) => left.Value != right.Value;
+
+        public static bool operator <(RAS_SERVER_HANDLE left, RAS_SERVER_HANDLE right) => left.Value < right.Value;
+
+        public static bool operator <=(RAS_SERVER_HANDLE left, RAS_SERVER_HANDLE right) => left.Value <= right.Value;
+
+        public static bool operator >(RAS_SERVER_HANDLE left, RAS_SERVER_HANDLE right) => left.Value > right.Value;
+
+        public static bool operator >=(RAS_SERVER_HANDLE left, RAS_SERVER_HANDLE right) => left.Value >= right.Value;
 
         public static explicit operator RAS_SERVER_HANDLE(void* value) => new RAS_SERVER_HANDLE((nint)(value));
 
@@ -69,13 +77,27 @@ namespace TerraFX.Interop
 
         public static explicit operator nuint(RAS_SERVER_HANDLE value) => (nuint)(value.Value);
 
+        public int CompareTo(object? obj)
+        {
+            if (obj is RAS_SERVER_HANDLE other)
+            {
+                return CompareTo(other);
+            }
+
+            return (obj is null) ? 1 : throw new ArgumentException("obj is not an instance of RAS_SERVER_HANDLE.");
+        }
+
+        public int CompareTo(RAS_SERVER_HANDLE other) => Value.CompareTo(other.Value);
+
         public override bool Equals(object? obj) => (obj is RAS_SERVER_HANDLE other) && Equals(other);
 
-        public bool Equals(RAS_SERVER_HANDLE other) => (this == other);
+        public bool Equals(RAS_SERVER_HANDLE other) => Value.Equals(other.Value);
 
         public override int GetHashCode() => Value.GetHashCode();
 
-        public override string ToString() => Value.ToString();
+        public override string ToString() => Value.ToString((sizeof(nint) == 4) ? "X8" : "X16");
+
+        public string ToString(string? format, IFormatProvider? formatProvider) => Value.ToString(format, formatProvider);
 
     }
 }

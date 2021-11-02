@@ -4,7 +4,7 @@ using System;
 
 namespace TerraFX.Interop
 {
-    public unsafe partial struct PCUSERIALIZEDPROPSTORAGE : IEquatable<PCUSERIALIZEDPROPSTORAGE>
+    public unsafe partial struct PCUSERIALIZEDPROPSTORAGE : IComparable, IComparable<PCUSERIALIZEDPROPSTORAGE>, IEquatable<PCUSERIALIZEDPROPSTORAGE>, IFormattable
     {
         public readonly nint Value;
 
@@ -18,6 +18,14 @@ namespace TerraFX.Interop
         public static bool operator ==(PCUSERIALIZEDPROPSTORAGE left, PCUSERIALIZEDPROPSTORAGE right) => left.Value == right.Value;
 
         public static bool operator !=(PCUSERIALIZEDPROPSTORAGE left, PCUSERIALIZEDPROPSTORAGE right) => left.Value != right.Value;
+
+        public static bool operator <(PCUSERIALIZEDPROPSTORAGE left, PCUSERIALIZEDPROPSTORAGE right) => left.Value < right.Value;
+
+        public static bool operator <=(PCUSERIALIZEDPROPSTORAGE left, PCUSERIALIZEDPROPSTORAGE right) => left.Value <= right.Value;
+
+        public static bool operator >(PCUSERIALIZEDPROPSTORAGE left, PCUSERIALIZEDPROPSTORAGE right) => left.Value > right.Value;
+
+        public static bool operator >=(PCUSERIALIZEDPROPSTORAGE left, PCUSERIALIZEDPROPSTORAGE right) => left.Value >= right.Value;
 
         public static explicit operator PCUSERIALIZEDPROPSTORAGE(void* value) => new PCUSERIALIZEDPROPSTORAGE((nint)(value));
 
@@ -63,13 +71,27 @@ namespace TerraFX.Interop
 
         public static explicit operator nuint(PCUSERIALIZEDPROPSTORAGE value) => (nuint)(value.Value);
 
+        public int CompareTo(object? obj)
+        {
+            if (obj is PCUSERIALIZEDPROPSTORAGE other)
+            {
+                return CompareTo(other);
+            }
+
+            return (obj is null) ? 1 : throw new ArgumentException("obj is not an instance of PCUSERIALIZEDPROPSTORAGE.");
+        }
+
+        public int CompareTo(PCUSERIALIZEDPROPSTORAGE other) => Value.CompareTo(other.Value);
+
         public override bool Equals(object? obj) => (obj is PCUSERIALIZEDPROPSTORAGE other) && Equals(other);
 
-        public bool Equals(PCUSERIALIZEDPROPSTORAGE other) => (this == other);
+        public bool Equals(PCUSERIALIZEDPROPSTORAGE other) => Value.Equals(other.Value);
 
         public override int GetHashCode() => Value.GetHashCode();
 
-        public override string ToString() => Value.ToString();
+        public override string ToString() => Value.ToString((sizeof(nint) == 4) ? "X8" : "X16");
+
+        public string ToString(string? format, IFormatProvider? formatProvider) => Value.ToString(format, formatProvider);
 
     }
 }

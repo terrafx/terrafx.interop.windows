@@ -4,7 +4,7 @@ using System;
 
 namespace TerraFX.Interop
 {
-    public unsafe partial struct HACMDRIVERID : IEquatable<HACMDRIVERID>
+    public unsafe partial struct HACMDRIVERID : IComparable, IComparable<HACMDRIVERID>, IEquatable<HACMDRIVERID>, IFormattable
     {
         public readonly nint Value;
 
@@ -20,6 +20,14 @@ namespace TerraFX.Interop
         public static bool operator ==(HACMDRIVERID left, HACMDRIVERID right) => left.Value == right.Value;
 
         public static bool operator !=(HACMDRIVERID left, HACMDRIVERID right) => left.Value != right.Value;
+
+        public static bool operator <(HACMDRIVERID left, HACMDRIVERID right) => left.Value < right.Value;
+
+        public static bool operator <=(HACMDRIVERID left, HACMDRIVERID right) => left.Value <= right.Value;
+
+        public static bool operator >(HACMDRIVERID left, HACMDRIVERID right) => left.Value > right.Value;
+
+        public static bool operator >=(HACMDRIVERID left, HACMDRIVERID right) => left.Value >= right.Value;
 
         public static explicit operator HACMDRIVERID(void* value) => new HACMDRIVERID((nint)(value));
 
@@ -69,13 +77,27 @@ namespace TerraFX.Interop
 
         public static explicit operator nuint(HACMDRIVERID value) => (nuint)(value.Value);
 
+        public int CompareTo(object? obj)
+        {
+            if (obj is HACMDRIVERID other)
+            {
+                return CompareTo(other);
+            }
+
+            return (obj is null) ? 1 : throw new ArgumentException("obj is not an instance of HACMDRIVERID.");
+        }
+
+        public int CompareTo(HACMDRIVERID other) => Value.CompareTo(other.Value);
+
         public override bool Equals(object? obj) => (obj is HACMDRIVERID other) && Equals(other);
 
-        public bool Equals(HACMDRIVERID other) => (this == other);
+        public bool Equals(HACMDRIVERID other) => Value.Equals(other.Value);
 
         public override int GetHashCode() => Value.GetHashCode();
 
-        public override string ToString() => Value.ToString();
+        public override string ToString() => Value.ToString((sizeof(nint) == 4) ? "X8" : "X16");
+
+        public string ToString(string? format, IFormatProvider? formatProvider) => Value.ToString(format, formatProvider);
 
     }
 }

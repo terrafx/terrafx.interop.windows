@@ -4,7 +4,7 @@ using System;
 
 namespace TerraFX.Interop
 {
-    public unsafe partial struct HPSS : IEquatable<HPSS>
+    public unsafe partial struct HPSS : IComparable, IComparable<HPSS>, IEquatable<HPSS>, IFormattable
     {
         public readonly nint Value;
 
@@ -20,6 +20,14 @@ namespace TerraFX.Interop
         public static bool operator ==(HPSS left, HPSS right) => left.Value == right.Value;
 
         public static bool operator !=(HPSS left, HPSS right) => left.Value != right.Value;
+
+        public static bool operator <(HPSS left, HPSS right) => left.Value < right.Value;
+
+        public static bool operator <=(HPSS left, HPSS right) => left.Value <= right.Value;
+
+        public static bool operator >(HPSS left, HPSS right) => left.Value > right.Value;
+
+        public static bool operator >=(HPSS left, HPSS right) => left.Value >= right.Value;
 
         public static explicit operator HPSS(void* value) => new HPSS((nint)(value));
 
@@ -69,13 +77,27 @@ namespace TerraFX.Interop
 
         public static explicit operator nuint(HPSS value) => (nuint)(value.Value);
 
+        public int CompareTo(object? obj)
+        {
+            if (obj is HPSS other)
+            {
+                return CompareTo(other);
+            }
+
+            return (obj is null) ? 1 : throw new ArgumentException("obj is not an instance of HPSS.");
+        }
+
+        public int CompareTo(HPSS other) => Value.CompareTo(other.Value);
+
         public override bool Equals(object? obj) => (obj is HPSS other) && Equals(other);
 
-        public bool Equals(HPSS other) => (this == other);
+        public bool Equals(HPSS other) => Value.Equals(other.Value);
 
         public override int GetHashCode() => Value.GetHashCode();
 
-        public override string ToString() => Value.ToString();
+        public override string ToString() => Value.ToString((sizeof(nint) == 4) ? "X8" : "X16");
+
+        public string ToString(string? format, IFormatProvider? formatProvider) => Value.ToString(format, formatProvider);
 
     }
 }

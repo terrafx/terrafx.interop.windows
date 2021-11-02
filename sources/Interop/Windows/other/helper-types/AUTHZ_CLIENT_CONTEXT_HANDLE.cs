@@ -4,7 +4,7 @@ using System;
 
 namespace TerraFX.Interop
 {
-    public unsafe partial struct AUTHZ_CLIENT_CONTEXT_HANDLE : IEquatable<AUTHZ_CLIENT_CONTEXT_HANDLE>
+    public unsafe partial struct AUTHZ_CLIENT_CONTEXT_HANDLE : IComparable, IComparable<AUTHZ_CLIENT_CONTEXT_HANDLE>, IEquatable<AUTHZ_CLIENT_CONTEXT_HANDLE>, IFormattable
     {
         public readonly nint Value;
 
@@ -20,6 +20,14 @@ namespace TerraFX.Interop
         public static bool operator ==(AUTHZ_CLIENT_CONTEXT_HANDLE left, AUTHZ_CLIENT_CONTEXT_HANDLE right) => left.Value == right.Value;
 
         public static bool operator !=(AUTHZ_CLIENT_CONTEXT_HANDLE left, AUTHZ_CLIENT_CONTEXT_HANDLE right) => left.Value != right.Value;
+
+        public static bool operator <(AUTHZ_CLIENT_CONTEXT_HANDLE left, AUTHZ_CLIENT_CONTEXT_HANDLE right) => left.Value < right.Value;
+
+        public static bool operator <=(AUTHZ_CLIENT_CONTEXT_HANDLE left, AUTHZ_CLIENT_CONTEXT_HANDLE right) => left.Value <= right.Value;
+
+        public static bool operator >(AUTHZ_CLIENT_CONTEXT_HANDLE left, AUTHZ_CLIENT_CONTEXT_HANDLE right) => left.Value > right.Value;
+
+        public static bool operator >=(AUTHZ_CLIENT_CONTEXT_HANDLE left, AUTHZ_CLIENT_CONTEXT_HANDLE right) => left.Value >= right.Value;
 
         public static explicit operator AUTHZ_CLIENT_CONTEXT_HANDLE(void* value) => new AUTHZ_CLIENT_CONTEXT_HANDLE((nint)(value));
 
@@ -69,13 +77,27 @@ namespace TerraFX.Interop
 
         public static explicit operator nuint(AUTHZ_CLIENT_CONTEXT_HANDLE value) => (nuint)(value.Value);
 
+        public int CompareTo(object? obj)
+        {
+            if (obj is AUTHZ_CLIENT_CONTEXT_HANDLE other)
+            {
+                return CompareTo(other);
+            }
+
+            return (obj is null) ? 1 : throw new ArgumentException("obj is not an instance of AUTHZ_CLIENT_CONTEXT_HANDLE.");
+        }
+
+        public int CompareTo(AUTHZ_CLIENT_CONTEXT_HANDLE other) => Value.CompareTo(other.Value);
+
         public override bool Equals(object? obj) => (obj is AUTHZ_CLIENT_CONTEXT_HANDLE other) && Equals(other);
 
-        public bool Equals(AUTHZ_CLIENT_CONTEXT_HANDLE other) => (this == other);
+        public bool Equals(AUTHZ_CLIENT_CONTEXT_HANDLE other) => Value.Equals(other.Value);
 
         public override int GetHashCode() => Value.GetHashCode();
 
-        public override string ToString() => Value.ToString();
+        public override string ToString() => Value.ToString((sizeof(nint) == 4) ? "X8" : "X16");
+
+        public string ToString(string? format, IFormatProvider? formatProvider) => Value.ToString(format, formatProvider);
 
     }
 }

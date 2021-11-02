@@ -4,7 +4,7 @@ using System;
 
 namespace TerraFX.Interop
 {
-    public unsafe partial struct PTP_CALLBACK_INSTANCE : IEquatable<PTP_CALLBACK_INSTANCE>
+    public unsafe partial struct PTP_CALLBACK_INSTANCE : IComparable, IComparable<PTP_CALLBACK_INSTANCE>, IEquatable<PTP_CALLBACK_INSTANCE>, IFormattable
     {
         public readonly nint Value;
 
@@ -18,6 +18,14 @@ namespace TerraFX.Interop
         public static bool operator ==(PTP_CALLBACK_INSTANCE left, PTP_CALLBACK_INSTANCE right) => left.Value == right.Value;
 
         public static bool operator !=(PTP_CALLBACK_INSTANCE left, PTP_CALLBACK_INSTANCE right) => left.Value != right.Value;
+
+        public static bool operator <(PTP_CALLBACK_INSTANCE left, PTP_CALLBACK_INSTANCE right) => left.Value < right.Value;
+
+        public static bool operator <=(PTP_CALLBACK_INSTANCE left, PTP_CALLBACK_INSTANCE right) => left.Value <= right.Value;
+
+        public static bool operator >(PTP_CALLBACK_INSTANCE left, PTP_CALLBACK_INSTANCE right) => left.Value > right.Value;
+
+        public static bool operator >=(PTP_CALLBACK_INSTANCE left, PTP_CALLBACK_INSTANCE right) => left.Value >= right.Value;
 
         public static explicit operator PTP_CALLBACK_INSTANCE(void* value) => new PTP_CALLBACK_INSTANCE((nint)(value));
 
@@ -63,13 +71,27 @@ namespace TerraFX.Interop
 
         public static explicit operator nuint(PTP_CALLBACK_INSTANCE value) => (nuint)(value.Value);
 
+        public int CompareTo(object? obj)
+        {
+            if (obj is PTP_CALLBACK_INSTANCE other)
+            {
+                return CompareTo(other);
+            }
+
+            return (obj is null) ? 1 : throw new ArgumentException("obj is not an instance of PTP_CALLBACK_INSTANCE.");
+        }
+
+        public int CompareTo(PTP_CALLBACK_INSTANCE other) => Value.CompareTo(other.Value);
+
         public override bool Equals(object? obj) => (obj is PTP_CALLBACK_INSTANCE other) && Equals(other);
 
-        public bool Equals(PTP_CALLBACK_INSTANCE other) => (this == other);
+        public bool Equals(PTP_CALLBACK_INSTANCE other) => Value.Equals(other.Value);
 
         public override int GetHashCode() => Value.GetHashCode();
 
-        public override string ToString() => Value.ToString();
+        public override string ToString() => Value.ToString((sizeof(nint) == 4) ? "X8" : "X16");
+
+        public string ToString(string? format, IFormatProvider? formatProvider) => Value.ToString(format, formatProvider);
 
     }
 }

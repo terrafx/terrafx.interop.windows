@@ -4,7 +4,7 @@ using System;
 
 namespace TerraFX.Interop
 {
-    public unsafe partial struct HBLUETOOTH_RADIO_FIND : IEquatable<HBLUETOOTH_RADIO_FIND>
+    public unsafe partial struct HBLUETOOTH_RADIO_FIND : IComparable, IComparable<HBLUETOOTH_RADIO_FIND>, IEquatable<HBLUETOOTH_RADIO_FIND>, IFormattable
     {
         public readonly nint Value;
 
@@ -20,6 +20,14 @@ namespace TerraFX.Interop
         public static bool operator ==(HBLUETOOTH_RADIO_FIND left, HBLUETOOTH_RADIO_FIND right) => left.Value == right.Value;
 
         public static bool operator !=(HBLUETOOTH_RADIO_FIND left, HBLUETOOTH_RADIO_FIND right) => left.Value != right.Value;
+
+        public static bool operator <(HBLUETOOTH_RADIO_FIND left, HBLUETOOTH_RADIO_FIND right) => left.Value < right.Value;
+
+        public static bool operator <=(HBLUETOOTH_RADIO_FIND left, HBLUETOOTH_RADIO_FIND right) => left.Value <= right.Value;
+
+        public static bool operator >(HBLUETOOTH_RADIO_FIND left, HBLUETOOTH_RADIO_FIND right) => left.Value > right.Value;
+
+        public static bool operator >=(HBLUETOOTH_RADIO_FIND left, HBLUETOOTH_RADIO_FIND right) => left.Value >= right.Value;
 
         public static explicit operator HBLUETOOTH_RADIO_FIND(void* value) => new HBLUETOOTH_RADIO_FIND((nint)(value));
 
@@ -69,13 +77,27 @@ namespace TerraFX.Interop
 
         public static explicit operator nuint(HBLUETOOTH_RADIO_FIND value) => (nuint)(value.Value);
 
+        public int CompareTo(object? obj)
+        {
+            if (obj is HBLUETOOTH_RADIO_FIND other)
+            {
+                return CompareTo(other);
+            }
+
+            return (obj is null) ? 1 : throw new ArgumentException("obj is not an instance of HBLUETOOTH_RADIO_FIND.");
+        }
+
+        public int CompareTo(HBLUETOOTH_RADIO_FIND other) => Value.CompareTo(other.Value);
+
         public override bool Equals(object? obj) => (obj is HBLUETOOTH_RADIO_FIND other) && Equals(other);
 
-        public bool Equals(HBLUETOOTH_RADIO_FIND other) => (this == other);
+        public bool Equals(HBLUETOOTH_RADIO_FIND other) => Value.Equals(other.Value);
 
         public override int GetHashCode() => Value.GetHashCode();
 
-        public override string ToString() => Value.ToString();
+        public override string ToString() => Value.ToString((sizeof(nint) == 4) ? "X8" : "X16");
+
+        public string ToString(string? format, IFormatProvider? formatProvider) => Value.ToString(format, formatProvider);
 
     }
 }

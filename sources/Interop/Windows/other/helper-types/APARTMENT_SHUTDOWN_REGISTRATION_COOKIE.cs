@@ -4,7 +4,7 @@ using System;
 
 namespace TerraFX.Interop
 {
-    public unsafe partial struct APARTMENT_SHUTDOWN_REGISTRATION_COOKIE : IEquatable<APARTMENT_SHUTDOWN_REGISTRATION_COOKIE>
+    public unsafe partial struct APARTMENT_SHUTDOWN_REGISTRATION_COOKIE : IComparable, IComparable<APARTMENT_SHUTDOWN_REGISTRATION_COOKIE>, IEquatable<APARTMENT_SHUTDOWN_REGISTRATION_COOKIE>, IFormattable
     {
         public readonly nint Value;
 
@@ -20,6 +20,14 @@ namespace TerraFX.Interop
         public static bool operator ==(APARTMENT_SHUTDOWN_REGISTRATION_COOKIE left, APARTMENT_SHUTDOWN_REGISTRATION_COOKIE right) => left.Value == right.Value;
 
         public static bool operator !=(APARTMENT_SHUTDOWN_REGISTRATION_COOKIE left, APARTMENT_SHUTDOWN_REGISTRATION_COOKIE right) => left.Value != right.Value;
+
+        public static bool operator <(APARTMENT_SHUTDOWN_REGISTRATION_COOKIE left, APARTMENT_SHUTDOWN_REGISTRATION_COOKIE right) => left.Value < right.Value;
+
+        public static bool operator <=(APARTMENT_SHUTDOWN_REGISTRATION_COOKIE left, APARTMENT_SHUTDOWN_REGISTRATION_COOKIE right) => left.Value <= right.Value;
+
+        public static bool operator >(APARTMENT_SHUTDOWN_REGISTRATION_COOKIE left, APARTMENT_SHUTDOWN_REGISTRATION_COOKIE right) => left.Value > right.Value;
+
+        public static bool operator >=(APARTMENT_SHUTDOWN_REGISTRATION_COOKIE left, APARTMENT_SHUTDOWN_REGISTRATION_COOKIE right) => left.Value >= right.Value;
 
         public static explicit operator APARTMENT_SHUTDOWN_REGISTRATION_COOKIE(void* value) => new APARTMENT_SHUTDOWN_REGISTRATION_COOKIE((nint)(value));
 
@@ -69,13 +77,27 @@ namespace TerraFX.Interop
 
         public static explicit operator nuint(APARTMENT_SHUTDOWN_REGISTRATION_COOKIE value) => (nuint)(value.Value);
 
+        public int CompareTo(object? obj)
+        {
+            if (obj is APARTMENT_SHUTDOWN_REGISTRATION_COOKIE other)
+            {
+                return CompareTo(other);
+            }
+
+            return (obj is null) ? 1 : throw new ArgumentException("obj is not an instance of APARTMENT_SHUTDOWN_REGISTRATION_COOKIE.");
+        }
+
+        public int CompareTo(APARTMENT_SHUTDOWN_REGISTRATION_COOKIE other) => Value.CompareTo(other.Value);
+
         public override bool Equals(object? obj) => (obj is APARTMENT_SHUTDOWN_REGISTRATION_COOKIE other) && Equals(other);
 
-        public bool Equals(APARTMENT_SHUTDOWN_REGISTRATION_COOKIE other) => (this == other);
+        public bool Equals(APARTMENT_SHUTDOWN_REGISTRATION_COOKIE other) => Value.Equals(other.Value);
 
         public override int GetHashCode() => Value.GetHashCode();
 
-        public override string ToString() => Value.ToString();
+        public override string ToString() => Value.ToString((sizeof(nint) == 4) ? "X8" : "X16");
+
+        public string ToString(string? format, IFormatProvider? formatProvider) => Value.ToString(format, formatProvider);
 
     }
 }

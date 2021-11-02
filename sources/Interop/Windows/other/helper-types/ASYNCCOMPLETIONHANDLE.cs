@@ -4,7 +4,7 @@ using System;
 
 namespace TerraFX.Interop
 {
-    public unsafe partial struct ASYNCCOMPLETIONHANDLE : IEquatable<ASYNCCOMPLETIONHANDLE>
+    public unsafe partial struct ASYNCCOMPLETIONHANDLE : IComparable, IComparable<ASYNCCOMPLETIONHANDLE>, IEquatable<ASYNCCOMPLETIONHANDLE>, IFormattable
     {
         public readonly nuint Value;
 
@@ -18,6 +18,14 @@ namespace TerraFX.Interop
         public static bool operator ==(ASYNCCOMPLETIONHANDLE left, ASYNCCOMPLETIONHANDLE right) => left.Value == right.Value;
 
         public static bool operator !=(ASYNCCOMPLETIONHANDLE left, ASYNCCOMPLETIONHANDLE right) => left.Value != right.Value;
+
+        public static bool operator <(ASYNCCOMPLETIONHANDLE left, ASYNCCOMPLETIONHANDLE right) => left.Value < right.Value;
+
+        public static bool operator <=(ASYNCCOMPLETIONHANDLE left, ASYNCCOMPLETIONHANDLE right) => left.Value <= right.Value;
+
+        public static bool operator >(ASYNCCOMPLETIONHANDLE left, ASYNCCOMPLETIONHANDLE right) => left.Value > right.Value;
+
+        public static bool operator >=(ASYNCCOMPLETIONHANDLE left, ASYNCCOMPLETIONHANDLE right) => left.Value >= right.Value;
 
         public static explicit operator ASYNCCOMPLETIONHANDLE(void* value) => new ASYNCCOMPLETIONHANDLE((nuint)(value));
 
@@ -63,13 +71,27 @@ namespace TerraFX.Interop
 
         public static implicit operator nuint(ASYNCCOMPLETIONHANDLE value) => (nuint)(value.Value);
 
+        public int CompareTo(object? obj)
+        {
+            if (obj is ASYNCCOMPLETIONHANDLE other)
+            {
+                return CompareTo(other);
+            }
+
+            return (obj is null) ? 1 : throw new ArgumentException("obj is not an instance of ASYNCCOMPLETIONHANDLE.");
+        }
+
+        public int CompareTo(ASYNCCOMPLETIONHANDLE other) => Value.CompareTo(other.Value);
+
         public override bool Equals(object? obj) => (obj is ASYNCCOMPLETIONHANDLE other) && Equals(other);
 
-        public bool Equals(ASYNCCOMPLETIONHANDLE other) => (this == other);
+        public bool Equals(ASYNCCOMPLETIONHANDLE other) => Value.Equals(other.Value);
 
         public override int GetHashCode() => Value.GetHashCode();
 
-        public override string ToString() => Value.ToString();
+        public override string ToString() => Value.ToString((sizeof(nint) == 4) ? "X8" : "X16");
+
+        public string ToString(string? format, IFormatProvider? formatProvider) => Value.ToString(format, formatProvider);
 
     }
 }

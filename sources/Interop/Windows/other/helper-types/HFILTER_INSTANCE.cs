@@ -4,7 +4,7 @@ using System;
 
 namespace TerraFX.Interop
 {
-    public unsafe partial struct HFILTER_INSTANCE : IEquatable<HFILTER_INSTANCE>
+    public unsafe partial struct HFILTER_INSTANCE : IComparable, IComparable<HFILTER_INSTANCE>, IEquatable<HFILTER_INSTANCE>, IFormattable
     {
         public readonly nint Value;
 
@@ -20,6 +20,14 @@ namespace TerraFX.Interop
         public static bool operator ==(HFILTER_INSTANCE left, HFILTER_INSTANCE right) => left.Value == right.Value;
 
         public static bool operator !=(HFILTER_INSTANCE left, HFILTER_INSTANCE right) => left.Value != right.Value;
+
+        public static bool operator <(HFILTER_INSTANCE left, HFILTER_INSTANCE right) => left.Value < right.Value;
+
+        public static bool operator <=(HFILTER_INSTANCE left, HFILTER_INSTANCE right) => left.Value <= right.Value;
+
+        public static bool operator >(HFILTER_INSTANCE left, HFILTER_INSTANCE right) => left.Value > right.Value;
+
+        public static bool operator >=(HFILTER_INSTANCE left, HFILTER_INSTANCE right) => left.Value >= right.Value;
 
         public static explicit operator HFILTER_INSTANCE(void* value) => new HFILTER_INSTANCE((nint)(value));
 
@@ -69,13 +77,27 @@ namespace TerraFX.Interop
 
         public static explicit operator nuint(HFILTER_INSTANCE value) => (nuint)(value.Value);
 
+        public int CompareTo(object? obj)
+        {
+            if (obj is HFILTER_INSTANCE other)
+            {
+                return CompareTo(other);
+            }
+
+            return (obj is null) ? 1 : throw new ArgumentException("obj is not an instance of HFILTER_INSTANCE.");
+        }
+
+        public int CompareTo(HFILTER_INSTANCE other) => Value.CompareTo(other.Value);
+
         public override bool Equals(object? obj) => (obj is HFILTER_INSTANCE other) && Equals(other);
 
-        public bool Equals(HFILTER_INSTANCE other) => (this == other);
+        public bool Equals(HFILTER_INSTANCE other) => Value.Equals(other.Value);
 
         public override int GetHashCode() => Value.GetHashCode();
 
-        public override string ToString() => Value.ToString();
+        public override string ToString() => Value.ToString((sizeof(nint) == 4) ? "X8" : "X16");
+
+        public string ToString(string? format, IFormatProvider? formatProvider) => Value.ToString(format, formatProvider);
 
     }
 }

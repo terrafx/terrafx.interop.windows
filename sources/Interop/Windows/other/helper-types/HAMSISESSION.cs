@@ -4,7 +4,7 @@ using System;
 
 namespace TerraFX.Interop
 {
-    public unsafe partial struct HAMSISESSION : IEquatable<HAMSISESSION>
+    public unsafe partial struct HAMSISESSION : IComparable, IComparable<HAMSISESSION>, IEquatable<HAMSISESSION>, IFormattable
     {
         public readonly nint Value;
 
@@ -20,6 +20,14 @@ namespace TerraFX.Interop
         public static bool operator ==(HAMSISESSION left, HAMSISESSION right) => left.Value == right.Value;
 
         public static bool operator !=(HAMSISESSION left, HAMSISESSION right) => left.Value != right.Value;
+
+        public static bool operator <(HAMSISESSION left, HAMSISESSION right) => left.Value < right.Value;
+
+        public static bool operator <=(HAMSISESSION left, HAMSISESSION right) => left.Value <= right.Value;
+
+        public static bool operator >(HAMSISESSION left, HAMSISESSION right) => left.Value > right.Value;
+
+        public static bool operator >=(HAMSISESSION left, HAMSISESSION right) => left.Value >= right.Value;
 
         public static explicit operator HAMSISESSION(void* value) => new HAMSISESSION((nint)(value));
 
@@ -69,13 +77,27 @@ namespace TerraFX.Interop
 
         public static explicit operator nuint(HAMSISESSION value) => (nuint)(value.Value);
 
+        public int CompareTo(object? obj)
+        {
+            if (obj is HAMSISESSION other)
+            {
+                return CompareTo(other);
+            }
+
+            return (obj is null) ? 1 : throw new ArgumentException("obj is not an instance of HAMSISESSION.");
+        }
+
+        public int CompareTo(HAMSISESSION other) => Value.CompareTo(other.Value);
+
         public override bool Equals(object? obj) => (obj is HAMSISESSION other) && Equals(other);
 
-        public bool Equals(HAMSISESSION other) => (this == other);
+        public bool Equals(HAMSISESSION other) => Value.Equals(other.Value);
 
         public override int GetHashCode() => Value.GetHashCode();
 
-        public override string ToString() => Value.ToString();
+        public override string ToString() => Value.ToString((sizeof(nint) == 4) ? "X8" : "X16");
+
+        public string ToString(string? format, IFormatProvider? formatProvider) => Value.ToString(format, formatProvider);
 
     }
 }

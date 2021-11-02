@@ -4,7 +4,7 @@ using System;
 
 namespace TerraFX.Interop
 {
-    public partial struct BOOL : IEquatable<BOOL>
+    public partial struct BOOL : IComparable, IComparable<BOOL>, IEquatable<BOOL>, IFormattable
     {
         public readonly int Value;
 
@@ -20,6 +20,14 @@ namespace TerraFX.Interop
         public static bool operator ==(BOOL left, BOOL right) => left.Value == right.Value;
 
         public static bool operator !=(BOOL left, BOOL right) => left.Value != right.Value;
+
+        public static bool operator <(BOOL left, BOOL right) => left.Value < right.Value;
+
+        public static bool operator <=(BOOL left, BOOL right) => left.Value <= right.Value;
+
+        public static bool operator >(BOOL left, BOOL right) => left.Value > right.Value;
+
+        public static bool operator >=(BOOL left, BOOL right) => left.Value >= right.Value;
 
         public static implicit operator bool(BOOL value) => value.Value != 0;
 
@@ -69,13 +77,27 @@ namespace TerraFX.Interop
 
         public static implicit operator nuint(BOOL value) => (nuint)(value.Value);
 
+        public int CompareTo(object? obj)
+        {
+            if (obj is BOOL other)
+            {
+                return CompareTo(other);
+            }
+
+            return (obj is null) ? 1 : throw new ArgumentException("obj is not an instance of BOOL.");
+        }
+
+        public int CompareTo(BOOL other) => Value.CompareTo(other.Value);
+
         public override bool Equals(object? obj) => (obj is BOOL other) && Equals(other);
 
-        public bool Equals(BOOL other) => (this == other);
+        public bool Equals(BOOL other) => Value.Equals(other.Value);
 
         public override int GetHashCode() => Value.GetHashCode();
 
         public override string ToString() => Value.ToString();
+
+        public string ToString(string? format, IFormatProvider? formatProvider) => Value.ToString(format, formatProvider);
 
     }
 }

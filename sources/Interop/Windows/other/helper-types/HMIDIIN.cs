@@ -4,7 +4,7 @@ using System;
 
 namespace TerraFX.Interop
 {
-    public unsafe partial struct HMIDIIN : IEquatable<HMIDIIN>
+    public unsafe partial struct HMIDIIN : IComparable, IComparable<HMIDIIN>, IEquatable<HMIDIIN>, IFormattable
     {
         public readonly nint Value;
 
@@ -20,6 +20,14 @@ namespace TerraFX.Interop
         public static bool operator ==(HMIDIIN left, HMIDIIN right) => left.Value == right.Value;
 
         public static bool operator !=(HMIDIIN left, HMIDIIN right) => left.Value != right.Value;
+
+        public static bool operator <(HMIDIIN left, HMIDIIN right) => left.Value < right.Value;
+
+        public static bool operator <=(HMIDIIN left, HMIDIIN right) => left.Value <= right.Value;
+
+        public static bool operator >(HMIDIIN left, HMIDIIN right) => left.Value > right.Value;
+
+        public static bool operator >=(HMIDIIN left, HMIDIIN right) => left.Value >= right.Value;
 
         public static explicit operator HMIDIIN(void* value) => new HMIDIIN((nint)(value));
 
@@ -69,13 +77,27 @@ namespace TerraFX.Interop
 
         public static explicit operator nuint(HMIDIIN value) => (nuint)(value.Value);
 
+        public int CompareTo(object? obj)
+        {
+            if (obj is HMIDIIN other)
+            {
+                return CompareTo(other);
+            }
+
+            return (obj is null) ? 1 : throw new ArgumentException("obj is not an instance of HMIDIIN.");
+        }
+
+        public int CompareTo(HMIDIIN other) => Value.CompareTo(other.Value);
+
         public override bool Equals(object? obj) => (obj is HMIDIIN other) && Equals(other);
 
-        public bool Equals(HMIDIIN other) => (this == other);
+        public bool Equals(HMIDIIN other) => Value.Equals(other.Value);
 
         public override int GetHashCode() => Value.GetHashCode();
 
-        public override string ToString() => Value.ToString();
+        public override string ToString() => Value.ToString((sizeof(nint) == 4) ? "X8" : "X16");
+
+        public string ToString(string? format, IFormatProvider? formatProvider) => Value.ToString(format, formatProvider);
 
     }
 }

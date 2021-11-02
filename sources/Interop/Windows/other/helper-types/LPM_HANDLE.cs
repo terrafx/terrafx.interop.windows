@@ -4,7 +4,7 @@ using System;
 
 namespace TerraFX.Interop
 {
-    public unsafe partial struct LPM_HANDLE : IEquatable<LPM_HANDLE>
+    public unsafe partial struct LPM_HANDLE : IComparable, IComparable<LPM_HANDLE>, IEquatable<LPM_HANDLE>, IFormattable
     {
         public readonly nint Value;
 
@@ -20,6 +20,14 @@ namespace TerraFX.Interop
         public static bool operator ==(LPM_HANDLE left, LPM_HANDLE right) => left.Value == right.Value;
 
         public static bool operator !=(LPM_HANDLE left, LPM_HANDLE right) => left.Value != right.Value;
+
+        public static bool operator <(LPM_HANDLE left, LPM_HANDLE right) => left.Value < right.Value;
+
+        public static bool operator <=(LPM_HANDLE left, LPM_HANDLE right) => left.Value <= right.Value;
+
+        public static bool operator >(LPM_HANDLE left, LPM_HANDLE right) => left.Value > right.Value;
+
+        public static bool operator >=(LPM_HANDLE left, LPM_HANDLE right) => left.Value >= right.Value;
 
         public static explicit operator LPM_HANDLE(void* value) => new LPM_HANDLE((nint)(value));
 
@@ -69,13 +77,27 @@ namespace TerraFX.Interop
 
         public static explicit operator nuint(LPM_HANDLE value) => (nuint)(value.Value);
 
+        public int CompareTo(object? obj)
+        {
+            if (obj is LPM_HANDLE other)
+            {
+                return CompareTo(other);
+            }
+
+            return (obj is null) ? 1 : throw new ArgumentException("obj is not an instance of LPM_HANDLE.");
+        }
+
+        public int CompareTo(LPM_HANDLE other) => Value.CompareTo(other.Value);
+
         public override bool Equals(object? obj) => (obj is LPM_HANDLE other) && Equals(other);
 
-        public bool Equals(LPM_HANDLE other) => (this == other);
+        public bool Equals(LPM_HANDLE other) => Value.Equals(other.Value);
 
         public override int GetHashCode() => Value.GetHashCode();
 
-        public override string ToString() => Value.ToString();
+        public override string ToString() => Value.ToString((sizeof(nint) == 4) ? "X8" : "X16");
+
+        public string ToString(string? format, IFormatProvider? formatProvider) => Value.ToString(format, formatProvider);
 
     }
 }

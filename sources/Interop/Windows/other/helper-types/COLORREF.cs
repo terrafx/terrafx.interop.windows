@@ -4,7 +4,7 @@ using System;
 
 namespace TerraFX.Interop
 {
-    public partial struct COLORREF : IEquatable<COLORREF>
+    public unsafe partial struct COLORREF : IComparable, IComparable<COLORREF>, IEquatable<COLORREF>, IFormattable
     {
         public readonly uint Value;
 
@@ -16,6 +16,14 @@ namespace TerraFX.Interop
         public static bool operator ==(COLORREF left, COLORREF right) => left.Value == right.Value;
 
         public static bool operator !=(COLORREF left, COLORREF right) => left.Value != right.Value;
+
+        public static bool operator <(COLORREF left, COLORREF right) => left.Value < right.Value;
+
+        public static bool operator <=(COLORREF left, COLORREF right) => left.Value <= right.Value;
+
+        public static bool operator >(COLORREF left, COLORREF right) => left.Value > right.Value;
+
+        public static bool operator >=(COLORREF left, COLORREF right) => left.Value >= right.Value;
 
         public static implicit operator COLORREF(byte value) => new COLORREF((uint)(value));
 
@@ -57,13 +65,27 @@ namespace TerraFX.Interop
 
         public static implicit operator nuint(COLORREF value) => (nuint)(value.Value);
 
+        public int CompareTo(object? obj)
+        {
+            if (obj is COLORREF other)
+            {
+                return CompareTo(other);
+            }
+
+            return (obj is null) ? 1 : throw new ArgumentException("obj is not an instance of COLORREF.");
+        }
+
+        public int CompareTo(COLORREF other) => Value.CompareTo(other.Value);
+
         public override bool Equals(object? obj) => (obj is COLORREF other) && Equals(other);
 
-        public bool Equals(COLORREF other) => (this == other);
+        public bool Equals(COLORREF other) => Value.Equals(other.Value);
 
         public override int GetHashCode() => Value.GetHashCode();
 
-        public override string ToString() => Value.ToString();
+        public override string ToString() => Value.ToString("X8");
+
+        public string ToString(string? format, IFormatProvider? formatProvider) => Value.ToString(format, formatProvider);
 
     }
 }

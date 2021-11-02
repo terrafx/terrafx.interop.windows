@@ -4,7 +4,7 @@ using System;
 
 namespace TerraFX.Interop
 {
-    public unsafe partial struct EVT_OBJECT_ARRAY_PROPERTY_HANDLE : IEquatable<EVT_OBJECT_ARRAY_PROPERTY_HANDLE>
+    public unsafe partial struct EVT_OBJECT_ARRAY_PROPERTY_HANDLE : IComparable, IComparable<EVT_OBJECT_ARRAY_PROPERTY_HANDLE>, IEquatable<EVT_OBJECT_ARRAY_PROPERTY_HANDLE>, IFormattable
     {
         public readonly nint Value;
 
@@ -20,6 +20,14 @@ namespace TerraFX.Interop
         public static bool operator ==(EVT_OBJECT_ARRAY_PROPERTY_HANDLE left, EVT_OBJECT_ARRAY_PROPERTY_HANDLE right) => left.Value == right.Value;
 
         public static bool operator !=(EVT_OBJECT_ARRAY_PROPERTY_HANDLE left, EVT_OBJECT_ARRAY_PROPERTY_HANDLE right) => left.Value != right.Value;
+
+        public static bool operator <(EVT_OBJECT_ARRAY_PROPERTY_HANDLE left, EVT_OBJECT_ARRAY_PROPERTY_HANDLE right) => left.Value < right.Value;
+
+        public static bool operator <=(EVT_OBJECT_ARRAY_PROPERTY_HANDLE left, EVT_OBJECT_ARRAY_PROPERTY_HANDLE right) => left.Value <= right.Value;
+
+        public static bool operator >(EVT_OBJECT_ARRAY_PROPERTY_HANDLE left, EVT_OBJECT_ARRAY_PROPERTY_HANDLE right) => left.Value > right.Value;
+
+        public static bool operator >=(EVT_OBJECT_ARRAY_PROPERTY_HANDLE left, EVT_OBJECT_ARRAY_PROPERTY_HANDLE right) => left.Value >= right.Value;
 
         public static explicit operator EVT_OBJECT_ARRAY_PROPERTY_HANDLE(void* value) => new EVT_OBJECT_ARRAY_PROPERTY_HANDLE((nint)(value));
 
@@ -69,13 +77,27 @@ namespace TerraFX.Interop
 
         public static explicit operator nuint(EVT_OBJECT_ARRAY_PROPERTY_HANDLE value) => (nuint)(value.Value);
 
+        public int CompareTo(object? obj)
+        {
+            if (obj is EVT_OBJECT_ARRAY_PROPERTY_HANDLE other)
+            {
+                return CompareTo(other);
+            }
+
+            return (obj is null) ? 1 : throw new ArgumentException("obj is not an instance of EVT_OBJECT_ARRAY_PROPERTY_HANDLE.");
+        }
+
+        public int CompareTo(EVT_OBJECT_ARRAY_PROPERTY_HANDLE other) => Value.CompareTo(other.Value);
+
         public override bool Equals(object? obj) => (obj is EVT_OBJECT_ARRAY_PROPERTY_HANDLE other) && Equals(other);
 
-        public bool Equals(EVT_OBJECT_ARRAY_PROPERTY_HANDLE other) => (this == other);
+        public bool Equals(EVT_OBJECT_ARRAY_PROPERTY_HANDLE other) => Value.Equals(other.Value);
 
         public override int GetHashCode() => Value.GetHashCode();
 
-        public override string ToString() => Value.ToString();
+        public override string ToString() => Value.ToString((sizeof(nint) == 4) ? "X8" : "X16");
+
+        public string ToString(string? format, IFormatProvider? formatProvider) => Value.ToString(format, formatProvider);
 
     }
 }

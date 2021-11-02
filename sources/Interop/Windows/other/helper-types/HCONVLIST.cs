@@ -4,7 +4,7 @@ using System;
 
 namespace TerraFX.Interop
 {
-    public unsafe partial struct HCONVLIST : IEquatable<HCONVLIST>
+    public unsafe partial struct HCONVLIST : IComparable, IComparable<HCONVLIST>, IEquatable<HCONVLIST>, IFormattable
     {
         public readonly nint Value;
 
@@ -20,6 +20,14 @@ namespace TerraFX.Interop
         public static bool operator ==(HCONVLIST left, HCONVLIST right) => left.Value == right.Value;
 
         public static bool operator !=(HCONVLIST left, HCONVLIST right) => left.Value != right.Value;
+
+        public static bool operator <(HCONVLIST left, HCONVLIST right) => left.Value < right.Value;
+
+        public static bool operator <=(HCONVLIST left, HCONVLIST right) => left.Value <= right.Value;
+
+        public static bool operator >(HCONVLIST left, HCONVLIST right) => left.Value > right.Value;
+
+        public static bool operator >=(HCONVLIST left, HCONVLIST right) => left.Value >= right.Value;
 
         public static explicit operator HCONVLIST(void* value) => new HCONVLIST((nint)(value));
 
@@ -69,13 +77,27 @@ namespace TerraFX.Interop
 
         public static explicit operator nuint(HCONVLIST value) => (nuint)(value.Value);
 
+        public int CompareTo(object? obj)
+        {
+            if (obj is HCONVLIST other)
+            {
+                return CompareTo(other);
+            }
+
+            return (obj is null) ? 1 : throw new ArgumentException("obj is not an instance of HCONVLIST.");
+        }
+
+        public int CompareTo(HCONVLIST other) => Value.CompareTo(other.Value);
+
         public override bool Equals(object? obj) => (obj is HCONVLIST other) && Equals(other);
 
-        public bool Equals(HCONVLIST other) => (this == other);
+        public bool Equals(HCONVLIST other) => Value.Equals(other.Value);
 
         public override int GetHashCode() => Value.GetHashCode();
 
-        public override string ToString() => Value.ToString();
+        public override string ToString() => Value.ToString((sizeof(nint) == 4) ? "X8" : "X16");
+
+        public string ToString(string? format, IFormatProvider? formatProvider) => Value.ToString(format, formatProvider);
 
     }
 }

@@ -4,7 +4,7 @@ using System;
 
 namespace TerraFX.Interop
 {
-    public unsafe partial struct NCRYPT_STREAM_HANDLE : IEquatable<NCRYPT_STREAM_HANDLE>
+    public unsafe partial struct NCRYPT_STREAM_HANDLE : IComparable, IComparable<NCRYPT_STREAM_HANDLE>, IEquatable<NCRYPT_STREAM_HANDLE>, IFormattable
     {
         public readonly nint Value;
 
@@ -20,6 +20,14 @@ namespace TerraFX.Interop
         public static bool operator ==(NCRYPT_STREAM_HANDLE left, NCRYPT_STREAM_HANDLE right) => left.Value == right.Value;
 
         public static bool operator !=(NCRYPT_STREAM_HANDLE left, NCRYPT_STREAM_HANDLE right) => left.Value != right.Value;
+
+        public static bool operator <(NCRYPT_STREAM_HANDLE left, NCRYPT_STREAM_HANDLE right) => left.Value < right.Value;
+
+        public static bool operator <=(NCRYPT_STREAM_HANDLE left, NCRYPT_STREAM_HANDLE right) => left.Value <= right.Value;
+
+        public static bool operator >(NCRYPT_STREAM_HANDLE left, NCRYPT_STREAM_HANDLE right) => left.Value > right.Value;
+
+        public static bool operator >=(NCRYPT_STREAM_HANDLE left, NCRYPT_STREAM_HANDLE right) => left.Value >= right.Value;
 
         public static explicit operator NCRYPT_STREAM_HANDLE(void* value) => new NCRYPT_STREAM_HANDLE((nint)(value));
 
@@ -69,13 +77,27 @@ namespace TerraFX.Interop
 
         public static explicit operator nuint(NCRYPT_STREAM_HANDLE value) => (nuint)(value.Value);
 
+        public int CompareTo(object? obj)
+        {
+            if (obj is NCRYPT_STREAM_HANDLE other)
+            {
+                return CompareTo(other);
+            }
+
+            return (obj is null) ? 1 : throw new ArgumentException("obj is not an instance of NCRYPT_STREAM_HANDLE.");
+        }
+
+        public int CompareTo(NCRYPT_STREAM_HANDLE other) => Value.CompareTo(other.Value);
+
         public override bool Equals(object? obj) => (obj is NCRYPT_STREAM_HANDLE other) && Equals(other);
 
-        public bool Equals(NCRYPT_STREAM_HANDLE other) => (this == other);
+        public bool Equals(NCRYPT_STREAM_HANDLE other) => Value.Equals(other.Value);
 
         public override int GetHashCode() => Value.GetHashCode();
 
-        public override string ToString() => Value.ToString();
+        public override string ToString() => Value.ToString((sizeof(nint) == 4) ? "X8" : "X16");
+
+        public string ToString(string? format, IFormatProvider? formatProvider) => Value.ToString(format, formatProvider);
 
     }
 }

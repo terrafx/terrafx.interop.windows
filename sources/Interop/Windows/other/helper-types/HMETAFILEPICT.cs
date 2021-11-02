@@ -4,7 +4,7 @@ using System;
 
 namespace TerraFX.Interop
 {
-    public unsafe partial struct HMETAFILEPICT : IEquatable<HMETAFILEPICT>
+    public unsafe partial struct HMETAFILEPICT : IComparable, IComparable<HMETAFILEPICT>, IEquatable<HMETAFILEPICT>, IFormattable
     {
         public readonly nint Value;
 
@@ -20,6 +20,14 @@ namespace TerraFX.Interop
         public static bool operator ==(HMETAFILEPICT left, HMETAFILEPICT right) => left.Value == right.Value;
 
         public static bool operator !=(HMETAFILEPICT left, HMETAFILEPICT right) => left.Value != right.Value;
+
+        public static bool operator <(HMETAFILEPICT left, HMETAFILEPICT right) => left.Value < right.Value;
+
+        public static bool operator <=(HMETAFILEPICT left, HMETAFILEPICT right) => left.Value <= right.Value;
+
+        public static bool operator >(HMETAFILEPICT left, HMETAFILEPICT right) => left.Value > right.Value;
+
+        public static bool operator >=(HMETAFILEPICT left, HMETAFILEPICT right) => left.Value >= right.Value;
 
         public static explicit operator HMETAFILEPICT(void* value) => new HMETAFILEPICT((nint)(value));
 
@@ -69,13 +77,27 @@ namespace TerraFX.Interop
 
         public static explicit operator nuint(HMETAFILEPICT value) => (nuint)(value.Value);
 
+        public int CompareTo(object? obj)
+        {
+            if (obj is HMETAFILEPICT other)
+            {
+                return CompareTo(other);
+            }
+
+            return (obj is null) ? 1 : throw new ArgumentException("obj is not an instance of HMETAFILEPICT.");
+        }
+
+        public int CompareTo(HMETAFILEPICT other) => Value.CompareTo(other.Value);
+
         public override bool Equals(object? obj) => (obj is HMETAFILEPICT other) && Equals(other);
 
-        public bool Equals(HMETAFILEPICT other) => (this == other);
+        public bool Equals(HMETAFILEPICT other) => Value.Equals(other.Value);
 
         public override int GetHashCode() => Value.GetHashCode();
 
-        public override string ToString() => Value.ToString();
+        public override string ToString() => Value.ToString((sizeof(nint) == 4) ? "X8" : "X16");
+
+        public string ToString(string? format, IFormatProvider? formatProvider) => Value.ToString(format, formatProvider);
 
     }
 }

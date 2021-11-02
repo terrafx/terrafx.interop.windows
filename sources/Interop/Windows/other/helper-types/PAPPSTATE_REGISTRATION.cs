@@ -4,7 +4,7 @@ using System;
 
 namespace TerraFX.Interop
 {
-    public unsafe partial struct PAPPSTATE_REGISTRATION : IEquatable<PAPPSTATE_REGISTRATION>
+    public unsafe partial struct PAPPSTATE_REGISTRATION : IComparable, IComparable<PAPPSTATE_REGISTRATION>, IEquatable<PAPPSTATE_REGISTRATION>, IFormattable
     {
         public readonly nint Value;
 
@@ -18,6 +18,14 @@ namespace TerraFX.Interop
         public static bool operator ==(PAPPSTATE_REGISTRATION left, PAPPSTATE_REGISTRATION right) => left.Value == right.Value;
 
         public static bool operator !=(PAPPSTATE_REGISTRATION left, PAPPSTATE_REGISTRATION right) => left.Value != right.Value;
+
+        public static bool operator <(PAPPSTATE_REGISTRATION left, PAPPSTATE_REGISTRATION right) => left.Value < right.Value;
+
+        public static bool operator <=(PAPPSTATE_REGISTRATION left, PAPPSTATE_REGISTRATION right) => left.Value <= right.Value;
+
+        public static bool operator >(PAPPSTATE_REGISTRATION left, PAPPSTATE_REGISTRATION right) => left.Value > right.Value;
+
+        public static bool operator >=(PAPPSTATE_REGISTRATION left, PAPPSTATE_REGISTRATION right) => left.Value >= right.Value;
 
         public static explicit operator PAPPSTATE_REGISTRATION(void* value) => new PAPPSTATE_REGISTRATION((nint)(value));
 
@@ -63,13 +71,27 @@ namespace TerraFX.Interop
 
         public static explicit operator nuint(PAPPSTATE_REGISTRATION value) => (nuint)(value.Value);
 
+        public int CompareTo(object? obj)
+        {
+            if (obj is PAPPSTATE_REGISTRATION other)
+            {
+                return CompareTo(other);
+            }
+
+            return (obj is null) ? 1 : throw new ArgumentException("obj is not an instance of PAPPSTATE_REGISTRATION.");
+        }
+
+        public int CompareTo(PAPPSTATE_REGISTRATION other) => Value.CompareTo(other.Value);
+
         public override bool Equals(object? obj) => (obj is PAPPSTATE_REGISTRATION other) && Equals(other);
 
-        public bool Equals(PAPPSTATE_REGISTRATION other) => (this == other);
+        public bool Equals(PAPPSTATE_REGISTRATION other) => Value.Equals(other.Value);
 
         public override int GetHashCode() => Value.GetHashCode();
 
-        public override string ToString() => Value.ToString();
+        public override string ToString() => Value.ToString((sizeof(nint) == 4) ? "X8" : "X16");
+
+        public string ToString(string? format, IFormatProvider? formatProvider) => Value.ToString(format, formatProvider);
 
     }
 }

@@ -4,7 +4,7 @@ using System;
 
 namespace TerraFX.Interop
 {
-    public unsafe partial struct HTTP_PUSH_WAIT_HANDLE : IEquatable<HTTP_PUSH_WAIT_HANDLE>
+    public unsafe partial struct HTTP_PUSH_WAIT_HANDLE : IComparable, IComparable<HTTP_PUSH_WAIT_HANDLE>, IEquatable<HTTP_PUSH_WAIT_HANDLE>, IFormattable
     {
         public readonly nint Value;
 
@@ -20,6 +20,14 @@ namespace TerraFX.Interop
         public static bool operator ==(HTTP_PUSH_WAIT_HANDLE left, HTTP_PUSH_WAIT_HANDLE right) => left.Value == right.Value;
 
         public static bool operator !=(HTTP_PUSH_WAIT_HANDLE left, HTTP_PUSH_WAIT_HANDLE right) => left.Value != right.Value;
+
+        public static bool operator <(HTTP_PUSH_WAIT_HANDLE left, HTTP_PUSH_WAIT_HANDLE right) => left.Value < right.Value;
+
+        public static bool operator <=(HTTP_PUSH_WAIT_HANDLE left, HTTP_PUSH_WAIT_HANDLE right) => left.Value <= right.Value;
+
+        public static bool operator >(HTTP_PUSH_WAIT_HANDLE left, HTTP_PUSH_WAIT_HANDLE right) => left.Value > right.Value;
+
+        public static bool operator >=(HTTP_PUSH_WAIT_HANDLE left, HTTP_PUSH_WAIT_HANDLE right) => left.Value >= right.Value;
 
         public static explicit operator HTTP_PUSH_WAIT_HANDLE(void* value) => new HTTP_PUSH_WAIT_HANDLE((nint)(value));
 
@@ -69,13 +77,27 @@ namespace TerraFX.Interop
 
         public static explicit operator nuint(HTTP_PUSH_WAIT_HANDLE value) => (nuint)(value.Value);
 
+        public int CompareTo(object? obj)
+        {
+            if (obj is HTTP_PUSH_WAIT_HANDLE other)
+            {
+                return CompareTo(other);
+            }
+
+            return (obj is null) ? 1 : throw new ArgumentException("obj is not an instance of HTTP_PUSH_WAIT_HANDLE.");
+        }
+
+        public int CompareTo(HTTP_PUSH_WAIT_HANDLE other) => Value.CompareTo(other.Value);
+
         public override bool Equals(object? obj) => (obj is HTTP_PUSH_WAIT_HANDLE other) && Equals(other);
 
-        public bool Equals(HTTP_PUSH_WAIT_HANDLE other) => (this == other);
+        public bool Equals(HTTP_PUSH_WAIT_HANDLE other) => Value.Equals(other.Value);
 
         public override int GetHashCode() => Value.GetHashCode();
 
-        public override string ToString() => Value.ToString();
+        public override string ToString() => Value.ToString((sizeof(nint) == 4) ? "X8" : "X16");
+
+        public string ToString(string? format, IFormatProvider? formatProvider) => Value.ToString(format, formatProvider);
 
     }
 }

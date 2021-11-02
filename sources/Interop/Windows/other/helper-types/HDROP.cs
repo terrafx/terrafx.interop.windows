@@ -4,7 +4,7 @@ using System;
 
 namespace TerraFX.Interop
 {
-    public unsafe partial struct HDROP : IEquatable<HDROP>
+    public unsafe partial struct HDROP : IComparable, IComparable<HDROP>, IEquatable<HDROP>, IFormattable
     {
         public readonly nint Value;
 
@@ -20,6 +20,14 @@ namespace TerraFX.Interop
         public static bool operator ==(HDROP left, HDROP right) => left.Value == right.Value;
 
         public static bool operator !=(HDROP left, HDROP right) => left.Value != right.Value;
+
+        public static bool operator <(HDROP left, HDROP right) => left.Value < right.Value;
+
+        public static bool operator <=(HDROP left, HDROP right) => left.Value <= right.Value;
+
+        public static bool operator >(HDROP left, HDROP right) => left.Value > right.Value;
+
+        public static bool operator >=(HDROP left, HDROP right) => left.Value >= right.Value;
 
         public static explicit operator HDROP(void* value) => new HDROP((nint)(value));
 
@@ -69,13 +77,27 @@ namespace TerraFX.Interop
 
         public static explicit operator nuint(HDROP value) => (nuint)(value.Value);
 
+        public int CompareTo(object? obj)
+        {
+            if (obj is HDROP other)
+            {
+                return CompareTo(other);
+            }
+
+            return (obj is null) ? 1 : throw new ArgumentException("obj is not an instance of HDROP.");
+        }
+
+        public int CompareTo(HDROP other) => Value.CompareTo(other.Value);
+
         public override bool Equals(object? obj) => (obj is HDROP other) && Equals(other);
 
-        public bool Equals(HDROP other) => (this == other);
+        public bool Equals(HDROP other) => Value.Equals(other.Value);
 
         public override int GetHashCode() => Value.GetHashCode();
 
-        public override string ToString() => Value.ToString();
+        public override string ToString() => Value.ToString((sizeof(nint) == 4) ? "X8" : "X16");
+
+        public string ToString(string? format, IFormatProvider? formatProvider) => Value.ToString(format, formatProvider);
 
     }
 }

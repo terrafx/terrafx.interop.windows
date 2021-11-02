@@ -4,7 +4,7 @@ using System;
 
 namespace TerraFX.Interop
 {
-    public unsafe partial struct PEERDIST_CONTENTINFO_HANDLE : IEquatable<PEERDIST_CONTENTINFO_HANDLE>
+    public unsafe partial struct PEERDIST_CONTENTINFO_HANDLE : IComparable, IComparable<PEERDIST_CONTENTINFO_HANDLE>, IEquatable<PEERDIST_CONTENTINFO_HANDLE>, IFormattable
     {
         public readonly nint Value;
 
@@ -20,6 +20,14 @@ namespace TerraFX.Interop
         public static bool operator ==(PEERDIST_CONTENTINFO_HANDLE left, PEERDIST_CONTENTINFO_HANDLE right) => left.Value == right.Value;
 
         public static bool operator !=(PEERDIST_CONTENTINFO_HANDLE left, PEERDIST_CONTENTINFO_HANDLE right) => left.Value != right.Value;
+
+        public static bool operator <(PEERDIST_CONTENTINFO_HANDLE left, PEERDIST_CONTENTINFO_HANDLE right) => left.Value < right.Value;
+
+        public static bool operator <=(PEERDIST_CONTENTINFO_HANDLE left, PEERDIST_CONTENTINFO_HANDLE right) => left.Value <= right.Value;
+
+        public static bool operator >(PEERDIST_CONTENTINFO_HANDLE left, PEERDIST_CONTENTINFO_HANDLE right) => left.Value > right.Value;
+
+        public static bool operator >=(PEERDIST_CONTENTINFO_HANDLE left, PEERDIST_CONTENTINFO_HANDLE right) => left.Value >= right.Value;
 
         public static explicit operator PEERDIST_CONTENTINFO_HANDLE(void* value) => new PEERDIST_CONTENTINFO_HANDLE((nint)(value));
 
@@ -69,13 +77,27 @@ namespace TerraFX.Interop
 
         public static explicit operator nuint(PEERDIST_CONTENTINFO_HANDLE value) => (nuint)(value.Value);
 
+        public int CompareTo(object? obj)
+        {
+            if (obj is PEERDIST_CONTENTINFO_HANDLE other)
+            {
+                return CompareTo(other);
+            }
+
+            return (obj is null) ? 1 : throw new ArgumentException("obj is not an instance of PEERDIST_CONTENTINFO_HANDLE.");
+        }
+
+        public int CompareTo(PEERDIST_CONTENTINFO_HANDLE other) => Value.CompareTo(other.Value);
+
         public override bool Equals(object? obj) => (obj is PEERDIST_CONTENTINFO_HANDLE other) && Equals(other);
 
-        public bool Equals(PEERDIST_CONTENTINFO_HANDLE other) => (this == other);
+        public bool Equals(PEERDIST_CONTENTINFO_HANDLE other) => Value.Equals(other.Value);
 
         public override int GetHashCode() => Value.GetHashCode();
 
-        public override string ToString() => Value.ToString();
+        public override string ToString() => Value.ToString((sizeof(nint) == 4) ? "X8" : "X16");
+
+        public string ToString(string? format, IFormatProvider? formatProvider) => Value.ToString(format, formatProvider);
 
     }
 }

@@ -4,7 +4,7 @@ using System;
 
 namespace TerraFX.Interop
 {
-    public unsafe partial struct PACKAGE_INFO_REFERENCE : IEquatable<PACKAGE_INFO_REFERENCE>
+    public unsafe partial struct PACKAGE_INFO_REFERENCE : IComparable, IComparable<PACKAGE_INFO_REFERENCE>, IEquatable<PACKAGE_INFO_REFERENCE>, IFormattable
     {
         public readonly nint Value;
 
@@ -18,6 +18,14 @@ namespace TerraFX.Interop
         public static bool operator ==(PACKAGE_INFO_REFERENCE left, PACKAGE_INFO_REFERENCE right) => left.Value == right.Value;
 
         public static bool operator !=(PACKAGE_INFO_REFERENCE left, PACKAGE_INFO_REFERENCE right) => left.Value != right.Value;
+
+        public static bool operator <(PACKAGE_INFO_REFERENCE left, PACKAGE_INFO_REFERENCE right) => left.Value < right.Value;
+
+        public static bool operator <=(PACKAGE_INFO_REFERENCE left, PACKAGE_INFO_REFERENCE right) => left.Value <= right.Value;
+
+        public static bool operator >(PACKAGE_INFO_REFERENCE left, PACKAGE_INFO_REFERENCE right) => left.Value > right.Value;
+
+        public static bool operator >=(PACKAGE_INFO_REFERENCE left, PACKAGE_INFO_REFERENCE right) => left.Value >= right.Value;
 
         public static explicit operator PACKAGE_INFO_REFERENCE(void* value) => new PACKAGE_INFO_REFERENCE((nint)(value));
 
@@ -63,13 +71,27 @@ namespace TerraFX.Interop
 
         public static explicit operator nuint(PACKAGE_INFO_REFERENCE value) => (nuint)(value.Value);
 
+        public int CompareTo(object? obj)
+        {
+            if (obj is PACKAGE_INFO_REFERENCE other)
+            {
+                return CompareTo(other);
+            }
+
+            return (obj is null) ? 1 : throw new ArgumentException("obj is not an instance of PACKAGE_INFO_REFERENCE.");
+        }
+
+        public int CompareTo(PACKAGE_INFO_REFERENCE other) => Value.CompareTo(other.Value);
+
         public override bool Equals(object? obj) => (obj is PACKAGE_INFO_REFERENCE other) && Equals(other);
 
-        public bool Equals(PACKAGE_INFO_REFERENCE other) => (this == other);
+        public bool Equals(PACKAGE_INFO_REFERENCE other) => Value.Equals(other.Value);
 
         public override int GetHashCode() => Value.GetHashCode();
 
-        public override string ToString() => Value.ToString();
+        public override string ToString() => Value.ToString((sizeof(nint) == 4) ? "X8" : "X16");
+
+        public string ToString(string? format, IFormatProvider? formatProvider) => Value.ToString(format, formatProvider);
 
     }
 }

@@ -4,7 +4,7 @@ using System;
 
 namespace TerraFX.Interop
 {
-    public unsafe partial struct PTP_CLEANUP_GROUP : IEquatable<PTP_CLEANUP_GROUP>
+    public unsafe partial struct PTP_CLEANUP_GROUP : IComparable, IComparable<PTP_CLEANUP_GROUP>, IEquatable<PTP_CLEANUP_GROUP>, IFormattable
     {
         public readonly nint Value;
 
@@ -18,6 +18,14 @@ namespace TerraFX.Interop
         public static bool operator ==(PTP_CLEANUP_GROUP left, PTP_CLEANUP_GROUP right) => left.Value == right.Value;
 
         public static bool operator !=(PTP_CLEANUP_GROUP left, PTP_CLEANUP_GROUP right) => left.Value != right.Value;
+
+        public static bool operator <(PTP_CLEANUP_GROUP left, PTP_CLEANUP_GROUP right) => left.Value < right.Value;
+
+        public static bool operator <=(PTP_CLEANUP_GROUP left, PTP_CLEANUP_GROUP right) => left.Value <= right.Value;
+
+        public static bool operator >(PTP_CLEANUP_GROUP left, PTP_CLEANUP_GROUP right) => left.Value > right.Value;
+
+        public static bool operator >=(PTP_CLEANUP_GROUP left, PTP_CLEANUP_GROUP right) => left.Value >= right.Value;
 
         public static explicit operator PTP_CLEANUP_GROUP(void* value) => new PTP_CLEANUP_GROUP((nint)(value));
 
@@ -63,13 +71,27 @@ namespace TerraFX.Interop
 
         public static explicit operator nuint(PTP_CLEANUP_GROUP value) => (nuint)(value.Value);
 
+        public int CompareTo(object? obj)
+        {
+            if (obj is PTP_CLEANUP_GROUP other)
+            {
+                return CompareTo(other);
+            }
+
+            return (obj is null) ? 1 : throw new ArgumentException("obj is not an instance of PTP_CLEANUP_GROUP.");
+        }
+
+        public int CompareTo(PTP_CLEANUP_GROUP other) => Value.CompareTo(other.Value);
+
         public override bool Equals(object? obj) => (obj is PTP_CLEANUP_GROUP other) && Equals(other);
 
-        public bool Equals(PTP_CLEANUP_GROUP other) => (this == other);
+        public bool Equals(PTP_CLEANUP_GROUP other) => Value.Equals(other.Value);
 
         public override int GetHashCode() => Value.GetHashCode();
 
-        public override string ToString() => Value.ToString();
+        public override string ToString() => Value.ToString((sizeof(nint) == 4) ? "X8" : "X16");
+
+        public string ToString(string? format, IFormatProvider? formatProvider) => Value.ToString(format, formatProvider);
 
     }
 }

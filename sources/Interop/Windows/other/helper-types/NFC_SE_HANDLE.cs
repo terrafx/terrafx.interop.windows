@@ -4,7 +4,7 @@ using System;
 
 namespace TerraFX.Interop
 {
-    public unsafe partial struct NFC_SE_HANDLE : IEquatable<NFC_SE_HANDLE>
+    public unsafe partial struct NFC_SE_HANDLE : IComparable, IComparable<NFC_SE_HANDLE>, IEquatable<NFC_SE_HANDLE>, IFormattable
     {
         public readonly nint Value;
 
@@ -20,6 +20,14 @@ namespace TerraFX.Interop
         public static bool operator ==(NFC_SE_HANDLE left, NFC_SE_HANDLE right) => left.Value == right.Value;
 
         public static bool operator !=(NFC_SE_HANDLE left, NFC_SE_HANDLE right) => left.Value != right.Value;
+
+        public static bool operator <(NFC_SE_HANDLE left, NFC_SE_HANDLE right) => left.Value < right.Value;
+
+        public static bool operator <=(NFC_SE_HANDLE left, NFC_SE_HANDLE right) => left.Value <= right.Value;
+
+        public static bool operator >(NFC_SE_HANDLE left, NFC_SE_HANDLE right) => left.Value > right.Value;
+
+        public static bool operator >=(NFC_SE_HANDLE left, NFC_SE_HANDLE right) => left.Value >= right.Value;
 
         public static explicit operator NFC_SE_HANDLE(void* value) => new NFC_SE_HANDLE((nint)(value));
 
@@ -69,13 +77,27 @@ namespace TerraFX.Interop
 
         public static explicit operator nuint(NFC_SE_HANDLE value) => (nuint)(value.Value);
 
+        public int CompareTo(object? obj)
+        {
+            if (obj is NFC_SE_HANDLE other)
+            {
+                return CompareTo(other);
+            }
+
+            return (obj is null) ? 1 : throw new ArgumentException("obj is not an instance of NFC_SE_HANDLE.");
+        }
+
+        public int CompareTo(NFC_SE_HANDLE other) => Value.CompareTo(other.Value);
+
         public override bool Equals(object? obj) => (obj is NFC_SE_HANDLE other) && Equals(other);
 
-        public bool Equals(NFC_SE_HANDLE other) => (this == other);
+        public bool Equals(NFC_SE_HANDLE other) => Value.Equals(other.Value);
 
         public override int GetHashCode() => Value.GetHashCode();
 
-        public override string ToString() => Value.ToString();
+        public override string ToString() => Value.ToString((sizeof(nint) == 4) ? "X8" : "X16");
+
+        public string ToString(string? format, IFormatProvider? formatProvider) => Value.ToString(format, formatProvider);
 
     }
 }

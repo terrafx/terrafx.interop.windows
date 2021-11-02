@@ -4,7 +4,7 @@ using System;
 
 namespace TerraFX.Interop
 {
-    public unsafe partial struct PRJ_NAMESPACE_VIRTUALIZATION_CONTEXT : IEquatable<PRJ_NAMESPACE_VIRTUALIZATION_CONTEXT>
+    public unsafe partial struct PRJ_NAMESPACE_VIRTUALIZATION_CONTEXT : IComparable, IComparable<PRJ_NAMESPACE_VIRTUALIZATION_CONTEXT>, IEquatable<PRJ_NAMESPACE_VIRTUALIZATION_CONTEXT>, IFormattable
     {
         public readonly nint Value;
 
@@ -20,6 +20,14 @@ namespace TerraFX.Interop
         public static bool operator ==(PRJ_NAMESPACE_VIRTUALIZATION_CONTEXT left, PRJ_NAMESPACE_VIRTUALIZATION_CONTEXT right) => left.Value == right.Value;
 
         public static bool operator !=(PRJ_NAMESPACE_VIRTUALIZATION_CONTEXT left, PRJ_NAMESPACE_VIRTUALIZATION_CONTEXT right) => left.Value != right.Value;
+
+        public static bool operator <(PRJ_NAMESPACE_VIRTUALIZATION_CONTEXT left, PRJ_NAMESPACE_VIRTUALIZATION_CONTEXT right) => left.Value < right.Value;
+
+        public static bool operator <=(PRJ_NAMESPACE_VIRTUALIZATION_CONTEXT left, PRJ_NAMESPACE_VIRTUALIZATION_CONTEXT right) => left.Value <= right.Value;
+
+        public static bool operator >(PRJ_NAMESPACE_VIRTUALIZATION_CONTEXT left, PRJ_NAMESPACE_VIRTUALIZATION_CONTEXT right) => left.Value > right.Value;
+
+        public static bool operator >=(PRJ_NAMESPACE_VIRTUALIZATION_CONTEXT left, PRJ_NAMESPACE_VIRTUALIZATION_CONTEXT right) => left.Value >= right.Value;
 
         public static explicit operator PRJ_NAMESPACE_VIRTUALIZATION_CONTEXT(void* value) => new PRJ_NAMESPACE_VIRTUALIZATION_CONTEXT((nint)(value));
 
@@ -69,13 +77,27 @@ namespace TerraFX.Interop
 
         public static explicit operator nuint(PRJ_NAMESPACE_VIRTUALIZATION_CONTEXT value) => (nuint)(value.Value);
 
+        public int CompareTo(object? obj)
+        {
+            if (obj is PRJ_NAMESPACE_VIRTUALIZATION_CONTEXT other)
+            {
+                return CompareTo(other);
+            }
+
+            return (obj is null) ? 1 : throw new ArgumentException("obj is not an instance of PRJ_NAMESPACE_VIRTUALIZATION_CONTEXT.");
+        }
+
+        public int CompareTo(PRJ_NAMESPACE_VIRTUALIZATION_CONTEXT other) => Value.CompareTo(other.Value);
+
         public override bool Equals(object? obj) => (obj is PRJ_NAMESPACE_VIRTUALIZATION_CONTEXT other) && Equals(other);
 
-        public bool Equals(PRJ_NAMESPACE_VIRTUALIZATION_CONTEXT other) => (this == other);
+        public bool Equals(PRJ_NAMESPACE_VIRTUALIZATION_CONTEXT other) => Value.Equals(other.Value);
 
         public override int GetHashCode() => Value.GetHashCode();
 
-        public override string ToString() => Value.ToString();
+        public override string ToString() => Value.ToString((sizeof(nint) == 4) ? "X8" : "X16");
+
+        public string ToString(string? format, IFormatProvider? formatProvider) => Value.ToString(format, formatProvider);
 
     }
 }

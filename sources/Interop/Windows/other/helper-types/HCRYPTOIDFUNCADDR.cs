@@ -4,7 +4,7 @@ using System;
 
 namespace TerraFX.Interop
 {
-    public unsafe partial struct HCRYPTOIDFUNCADDR : IEquatable<HCRYPTOIDFUNCADDR>
+    public unsafe partial struct HCRYPTOIDFUNCADDR : IComparable, IComparable<HCRYPTOIDFUNCADDR>, IEquatable<HCRYPTOIDFUNCADDR>, IFormattable
     {
         public readonly nint Value;
 
@@ -20,6 +20,14 @@ namespace TerraFX.Interop
         public static bool operator ==(HCRYPTOIDFUNCADDR left, HCRYPTOIDFUNCADDR right) => left.Value == right.Value;
 
         public static bool operator !=(HCRYPTOIDFUNCADDR left, HCRYPTOIDFUNCADDR right) => left.Value != right.Value;
+
+        public static bool operator <(HCRYPTOIDFUNCADDR left, HCRYPTOIDFUNCADDR right) => left.Value < right.Value;
+
+        public static bool operator <=(HCRYPTOIDFUNCADDR left, HCRYPTOIDFUNCADDR right) => left.Value <= right.Value;
+
+        public static bool operator >(HCRYPTOIDFUNCADDR left, HCRYPTOIDFUNCADDR right) => left.Value > right.Value;
+
+        public static bool operator >=(HCRYPTOIDFUNCADDR left, HCRYPTOIDFUNCADDR right) => left.Value >= right.Value;
 
         public static explicit operator HCRYPTOIDFUNCADDR(void* value) => new HCRYPTOIDFUNCADDR((nint)(value));
 
@@ -69,13 +77,27 @@ namespace TerraFX.Interop
 
         public static explicit operator nuint(HCRYPTOIDFUNCADDR value) => (nuint)(value.Value);
 
+        public int CompareTo(object? obj)
+        {
+            if (obj is HCRYPTOIDFUNCADDR other)
+            {
+                return CompareTo(other);
+            }
+
+            return (obj is null) ? 1 : throw new ArgumentException("obj is not an instance of HCRYPTOIDFUNCADDR.");
+        }
+
+        public int CompareTo(HCRYPTOIDFUNCADDR other) => Value.CompareTo(other.Value);
+
         public override bool Equals(object? obj) => (obj is HCRYPTOIDFUNCADDR other) && Equals(other);
 
-        public bool Equals(HCRYPTOIDFUNCADDR other) => (this == other);
+        public bool Equals(HCRYPTOIDFUNCADDR other) => Value.Equals(other.Value);
 
         public override int GetHashCode() => Value.GetHashCode();
 
-        public override string ToString() => Value.ToString();
+        public override string ToString() => Value.ToString((sizeof(nint) == 4) ? "X8" : "X16");
+
+        public string ToString(string? format, IFormatProvider? formatProvider) => Value.ToString(format, formatProvider);
 
     }
 }

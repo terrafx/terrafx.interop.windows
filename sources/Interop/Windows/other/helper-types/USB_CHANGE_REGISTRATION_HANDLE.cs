@@ -4,7 +4,7 @@ using System;
 
 namespace TerraFX.Interop
 {
-    public unsafe partial struct USB_CHANGE_REGISTRATION_HANDLE : IEquatable<USB_CHANGE_REGISTRATION_HANDLE>
+    public unsafe partial struct USB_CHANGE_REGISTRATION_HANDLE : IComparable, IComparable<USB_CHANGE_REGISTRATION_HANDLE>, IEquatable<USB_CHANGE_REGISTRATION_HANDLE>, IFormattable
     {
         public readonly nint Value;
 
@@ -20,6 +20,14 @@ namespace TerraFX.Interop
         public static bool operator ==(USB_CHANGE_REGISTRATION_HANDLE left, USB_CHANGE_REGISTRATION_HANDLE right) => left.Value == right.Value;
 
         public static bool operator !=(USB_CHANGE_REGISTRATION_HANDLE left, USB_CHANGE_REGISTRATION_HANDLE right) => left.Value != right.Value;
+
+        public static bool operator <(USB_CHANGE_REGISTRATION_HANDLE left, USB_CHANGE_REGISTRATION_HANDLE right) => left.Value < right.Value;
+
+        public static bool operator <=(USB_CHANGE_REGISTRATION_HANDLE left, USB_CHANGE_REGISTRATION_HANDLE right) => left.Value <= right.Value;
+
+        public static bool operator >(USB_CHANGE_REGISTRATION_HANDLE left, USB_CHANGE_REGISTRATION_HANDLE right) => left.Value > right.Value;
+
+        public static bool operator >=(USB_CHANGE_REGISTRATION_HANDLE left, USB_CHANGE_REGISTRATION_HANDLE right) => left.Value >= right.Value;
 
         public static explicit operator USB_CHANGE_REGISTRATION_HANDLE(void* value) => new USB_CHANGE_REGISTRATION_HANDLE((nint)(value));
 
@@ -69,13 +77,27 @@ namespace TerraFX.Interop
 
         public static explicit operator nuint(USB_CHANGE_REGISTRATION_HANDLE value) => (nuint)(value.Value);
 
+        public int CompareTo(object? obj)
+        {
+            if (obj is USB_CHANGE_REGISTRATION_HANDLE other)
+            {
+                return CompareTo(other);
+            }
+
+            return (obj is null) ? 1 : throw new ArgumentException("obj is not an instance of USB_CHANGE_REGISTRATION_HANDLE.");
+        }
+
+        public int CompareTo(USB_CHANGE_REGISTRATION_HANDLE other) => Value.CompareTo(other.Value);
+
         public override bool Equals(object? obj) => (obj is USB_CHANGE_REGISTRATION_HANDLE other) && Equals(other);
 
-        public bool Equals(USB_CHANGE_REGISTRATION_HANDLE other) => (this == other);
+        public bool Equals(USB_CHANGE_REGISTRATION_HANDLE other) => Value.Equals(other.Value);
 
         public override int GetHashCode() => Value.GetHashCode();
 
-        public override string ToString() => Value.ToString();
+        public override string ToString() => Value.ToString((sizeof(nint) == 4) ? "X8" : "X16");
+
+        public string ToString(string? format, IFormatProvider? formatProvider) => Value.ToString(format, formatProvider);
 
     }
 }

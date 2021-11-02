@@ -4,7 +4,7 @@ using System;
 
 namespace TerraFX.Interop
 {
-    public unsafe partial struct PDH_HCOUNTER : IEquatable<PDH_HCOUNTER>
+    public unsafe partial struct PDH_HCOUNTER : IComparable, IComparable<PDH_HCOUNTER>, IEquatable<PDH_HCOUNTER>, IFormattable
     {
         public readonly nint Value;
 
@@ -20,6 +20,14 @@ namespace TerraFX.Interop
         public static bool operator ==(PDH_HCOUNTER left, PDH_HCOUNTER right) => left.Value == right.Value;
 
         public static bool operator !=(PDH_HCOUNTER left, PDH_HCOUNTER right) => left.Value != right.Value;
+
+        public static bool operator <(PDH_HCOUNTER left, PDH_HCOUNTER right) => left.Value < right.Value;
+
+        public static bool operator <=(PDH_HCOUNTER left, PDH_HCOUNTER right) => left.Value <= right.Value;
+
+        public static bool operator >(PDH_HCOUNTER left, PDH_HCOUNTER right) => left.Value > right.Value;
+
+        public static bool operator >=(PDH_HCOUNTER left, PDH_HCOUNTER right) => left.Value >= right.Value;
 
         public static explicit operator PDH_HCOUNTER(void* value) => new PDH_HCOUNTER((nint)(value));
 
@@ -69,13 +77,27 @@ namespace TerraFX.Interop
 
         public static explicit operator nuint(PDH_HCOUNTER value) => (nuint)(value.Value);
 
+        public int CompareTo(object? obj)
+        {
+            if (obj is PDH_HCOUNTER other)
+            {
+                return CompareTo(other);
+            }
+
+            return (obj is null) ? 1 : throw new ArgumentException("obj is not an instance of PDH_HCOUNTER.");
+        }
+
+        public int CompareTo(PDH_HCOUNTER other) => Value.CompareTo(other.Value);
+
         public override bool Equals(object? obj) => (obj is PDH_HCOUNTER other) && Equals(other);
 
-        public bool Equals(PDH_HCOUNTER other) => (this == other);
+        public bool Equals(PDH_HCOUNTER other) => Value.Equals(other.Value);
 
         public override int GetHashCode() => Value.GetHashCode();
 
-        public override string ToString() => Value.ToString();
+        public override string ToString() => Value.ToString((sizeof(nint) == 4) ? "X8" : "X16");
+
+        public string ToString(string? format, IFormatProvider? formatProvider) => Value.ToString(format, formatProvider);
 
     }
 }

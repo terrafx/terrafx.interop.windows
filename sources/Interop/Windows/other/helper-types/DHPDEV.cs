@@ -4,7 +4,7 @@ using System;
 
 namespace TerraFX.Interop
 {
-    public unsafe partial struct DHPDEV : IEquatable<DHPDEV>
+    public unsafe partial struct DHPDEV : IComparable, IComparable<DHPDEV>, IEquatable<DHPDEV>, IFormattable
     {
         public readonly nint Value;
 
@@ -20,6 +20,14 @@ namespace TerraFX.Interop
         public static bool operator ==(DHPDEV left, DHPDEV right) => left.Value == right.Value;
 
         public static bool operator !=(DHPDEV left, DHPDEV right) => left.Value != right.Value;
+
+        public static bool operator <(DHPDEV left, DHPDEV right) => left.Value < right.Value;
+
+        public static bool operator <=(DHPDEV left, DHPDEV right) => left.Value <= right.Value;
+
+        public static bool operator >(DHPDEV left, DHPDEV right) => left.Value > right.Value;
+
+        public static bool operator >=(DHPDEV left, DHPDEV right) => left.Value >= right.Value;
 
         public static explicit operator DHPDEV(void* value) => new DHPDEV((nint)(value));
 
@@ -69,13 +77,27 @@ namespace TerraFX.Interop
 
         public static explicit operator nuint(DHPDEV value) => (nuint)(value.Value);
 
+        public int CompareTo(object? obj)
+        {
+            if (obj is DHPDEV other)
+            {
+                return CompareTo(other);
+            }
+
+            return (obj is null) ? 1 : throw new ArgumentException("obj is not an instance of DHPDEV.");
+        }
+
+        public int CompareTo(DHPDEV other) => Value.CompareTo(other.Value);
+
         public override bool Equals(object? obj) => (obj is DHPDEV other) && Equals(other);
 
-        public bool Equals(DHPDEV other) => (this == other);
+        public bool Equals(DHPDEV other) => Value.Equals(other.Value);
 
         public override int GetHashCode() => Value.GetHashCode();
 
-        public override string ToString() => Value.ToString();
+        public override string ToString() => Value.ToString((sizeof(nint) == 4) ? "X8" : "X16");
+
+        public string ToString(string? format, IFormatProvider? formatProvider) => Value.ToString(format, formatProvider);
 
     }
 }

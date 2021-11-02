@@ -4,7 +4,7 @@ using System;
 
 namespace TerraFX.Interop
 {
-    public unsafe partial struct RO_REGISTRATION_COOKIE : IEquatable<RO_REGISTRATION_COOKIE>
+    public unsafe partial struct RO_REGISTRATION_COOKIE : IComparable, IComparable<RO_REGISTRATION_COOKIE>, IEquatable<RO_REGISTRATION_COOKIE>, IFormattable
     {
         public readonly nint Value;
 
@@ -18,6 +18,14 @@ namespace TerraFX.Interop
         public static bool operator ==(RO_REGISTRATION_COOKIE left, RO_REGISTRATION_COOKIE right) => left.Value == right.Value;
 
         public static bool operator !=(RO_REGISTRATION_COOKIE left, RO_REGISTRATION_COOKIE right) => left.Value != right.Value;
+
+        public static bool operator <(RO_REGISTRATION_COOKIE left, RO_REGISTRATION_COOKIE right) => left.Value < right.Value;
+
+        public static bool operator <=(RO_REGISTRATION_COOKIE left, RO_REGISTRATION_COOKIE right) => left.Value <= right.Value;
+
+        public static bool operator >(RO_REGISTRATION_COOKIE left, RO_REGISTRATION_COOKIE right) => left.Value > right.Value;
+
+        public static bool operator >=(RO_REGISTRATION_COOKIE left, RO_REGISTRATION_COOKIE right) => left.Value >= right.Value;
 
         public static explicit operator RO_REGISTRATION_COOKIE(void* value) => new RO_REGISTRATION_COOKIE((nint)(value));
 
@@ -63,13 +71,27 @@ namespace TerraFX.Interop
 
         public static explicit operator nuint(RO_REGISTRATION_COOKIE value) => (nuint)(value.Value);
 
+        public int CompareTo(object? obj)
+        {
+            if (obj is RO_REGISTRATION_COOKIE other)
+            {
+                return CompareTo(other);
+            }
+
+            return (obj is null) ? 1 : throw new ArgumentException("obj is not an instance of RO_REGISTRATION_COOKIE.");
+        }
+
+        public int CompareTo(RO_REGISTRATION_COOKIE other) => Value.CompareTo(other.Value);
+
         public override bool Equals(object? obj) => (obj is RO_REGISTRATION_COOKIE other) && Equals(other);
 
-        public bool Equals(RO_REGISTRATION_COOKIE other) => (this == other);
+        public bool Equals(RO_REGISTRATION_COOKIE other) => Value.Equals(other.Value);
 
         public override int GetHashCode() => Value.GetHashCode();
 
-        public override string ToString() => Value.ToString();
+        public override string ToString() => Value.ToString((sizeof(nint) == 4) ? "X8" : "X16");
+
+        public string ToString(string? format, IFormatProvider? formatProvider) => Value.ToString(format, formatProvider);
 
     }
 }

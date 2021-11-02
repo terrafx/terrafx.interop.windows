@@ -4,7 +4,7 @@ using System;
 
 namespace TerraFX.Interop
 {
-    public partial struct HRESULT : IEquatable<HRESULT>
+    public partial struct HRESULT : IComparable, IComparable<HRESULT>, IEquatable<HRESULT>, IFormattable
     {
         public readonly int Value;
 
@@ -16,6 +16,14 @@ namespace TerraFX.Interop
         public static bool operator ==(HRESULT left, HRESULT right) => left.Value == right.Value;
 
         public static bool operator !=(HRESULT left, HRESULT right) => left.Value != right.Value;
+
+        public static bool operator <(HRESULT left, HRESULT right) => left.Value < right.Value;
+
+        public static bool operator <=(HRESULT left, HRESULT right) => left.Value <= right.Value;
+
+        public static bool operator >(HRESULT left, HRESULT right) => left.Value > right.Value;
+
+        public static bool operator >=(HRESULT left, HRESULT right) => left.Value >= right.Value;
 
         public static implicit operator HRESULT(byte value) => new HRESULT((int)(value));
 
@@ -57,13 +65,27 @@ namespace TerraFX.Interop
 
         public static implicit operator nuint(HRESULT value) => (nuint)(value.Value);
 
+        public int CompareTo(object? obj)
+        {
+            if (obj is HRESULT other)
+            {
+                return CompareTo(other);
+            }
+
+            return (obj is null) ? 1 : throw new ArgumentException("obj is not an instance of HRESULT.");
+        }
+
+        public int CompareTo(HRESULT other) => Value.CompareTo(other.Value);
+
         public override bool Equals(object? obj) => (obj is HRESULT other) && Equals(other);
 
-        public bool Equals(HRESULT other) => (this == other);
+        public bool Equals(HRESULT other) => Value.Equals(other.Value);
 
         public override int GetHashCode() => Value.GetHashCode();
 
         public override string ToString() => Value.ToString();
+
+        public string ToString(string? format, IFormatProvider? formatProvider) => Value.ToString(format, formatProvider);
 
     }
 }

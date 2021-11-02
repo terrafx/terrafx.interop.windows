@@ -4,7 +4,7 @@ using System;
 
 namespace TerraFX.Interop
 {
-    public unsafe partial struct HEVENT : IEquatable<HEVENT>
+    public unsafe partial struct HEVENT : IComparable, IComparable<HEVENT>, IEquatable<HEVENT>, IFormattable
     {
         public readonly nint Value;
 
@@ -20,6 +20,14 @@ namespace TerraFX.Interop
         public static bool operator ==(HEVENT left, HEVENT right) => left.Value == right.Value;
 
         public static bool operator !=(HEVENT left, HEVENT right) => left.Value != right.Value;
+
+        public static bool operator <(HEVENT left, HEVENT right) => left.Value < right.Value;
+
+        public static bool operator <=(HEVENT left, HEVENT right) => left.Value <= right.Value;
+
+        public static bool operator >(HEVENT left, HEVENT right) => left.Value > right.Value;
+
+        public static bool operator >=(HEVENT left, HEVENT right) => left.Value >= right.Value;
 
         public static explicit operator HEVENT(void* value) => new HEVENT((nint)(value));
 
@@ -69,13 +77,27 @@ namespace TerraFX.Interop
 
         public static explicit operator nuint(HEVENT value) => (nuint)(value.Value);
 
+        public int CompareTo(object? obj)
+        {
+            if (obj is HEVENT other)
+            {
+                return CompareTo(other);
+            }
+
+            return (obj is null) ? 1 : throw new ArgumentException("obj is not an instance of HEVENT.");
+        }
+
+        public int CompareTo(HEVENT other) => Value.CompareTo(other.Value);
+
         public override bool Equals(object? obj) => (obj is HEVENT other) && Equals(other);
 
-        public bool Equals(HEVENT other) => (this == other);
+        public bool Equals(HEVENT other) => Value.Equals(other.Value);
 
         public override int GetHashCode() => Value.GetHashCode();
 
-        public override string ToString() => Value.ToString();
+        public override string ToString() => Value.ToString((sizeof(nint) == 4) ? "X8" : "X16");
+
+        public string ToString(string? format, IFormatProvider? formatProvider) => Value.ToString(format, formatProvider);
 
     }
 }

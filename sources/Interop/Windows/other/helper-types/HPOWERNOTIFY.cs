@@ -4,7 +4,7 @@ using System;
 
 namespace TerraFX.Interop
 {
-    public unsafe partial struct HPOWERNOTIFY : IEquatable<HPOWERNOTIFY>
+    public unsafe partial struct HPOWERNOTIFY : IComparable, IComparable<HPOWERNOTIFY>, IEquatable<HPOWERNOTIFY>, IFormattable
     {
         public readonly nint Value;
 
@@ -20,6 +20,14 @@ namespace TerraFX.Interop
         public static bool operator ==(HPOWERNOTIFY left, HPOWERNOTIFY right) => left.Value == right.Value;
 
         public static bool operator !=(HPOWERNOTIFY left, HPOWERNOTIFY right) => left.Value != right.Value;
+
+        public static bool operator <(HPOWERNOTIFY left, HPOWERNOTIFY right) => left.Value < right.Value;
+
+        public static bool operator <=(HPOWERNOTIFY left, HPOWERNOTIFY right) => left.Value <= right.Value;
+
+        public static bool operator >(HPOWERNOTIFY left, HPOWERNOTIFY right) => left.Value > right.Value;
+
+        public static bool operator >=(HPOWERNOTIFY left, HPOWERNOTIFY right) => left.Value >= right.Value;
 
         public static explicit operator HPOWERNOTIFY(void* value) => new HPOWERNOTIFY((nint)(value));
 
@@ -69,13 +77,27 @@ namespace TerraFX.Interop
 
         public static explicit operator nuint(HPOWERNOTIFY value) => (nuint)(value.Value);
 
+        public int CompareTo(object? obj)
+        {
+            if (obj is HPOWERNOTIFY other)
+            {
+                return CompareTo(other);
+            }
+
+            return (obj is null) ? 1 : throw new ArgumentException("obj is not an instance of HPOWERNOTIFY.");
+        }
+
+        public int CompareTo(HPOWERNOTIFY other) => Value.CompareTo(other.Value);
+
         public override bool Equals(object? obj) => (obj is HPOWERNOTIFY other) && Equals(other);
 
-        public bool Equals(HPOWERNOTIFY other) => (this == other);
+        public bool Equals(HPOWERNOTIFY other) => Value.Equals(other.Value);
 
         public override int GetHashCode() => Value.GetHashCode();
 
-        public override string ToString() => Value.ToString();
+        public override string ToString() => Value.ToString((sizeof(nint) == 4) ? "X8" : "X16");
+
+        public string ToString(string? format, IFormatProvider? formatProvider) => Value.ToString(format, formatProvider);
 
     }
 }
