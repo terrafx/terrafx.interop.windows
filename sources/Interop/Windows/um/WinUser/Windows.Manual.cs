@@ -510,7 +510,7 @@ namespace TerraFX.Interop
         public static ushort GID_ROTATE_ANGLE_TO_ARGUMENT(ushort _arg_) => (ushort)((_arg_ + (2.0 * 3.14159265)) / (4.0 * 3.14159265) * 65535.0);
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static double GID_ROTATE_ANGLE_FROM_ARGUMENT(double  _arg_) => (_arg_ / 65535.0 * 4.0 * 3.14159265) - (2.0 * 3.14159265);
+        public static double GID_ROTATE_ANGLE_FROM_ARGUMENT(double _arg_) => (_arg_ / 65535.0 * 4.0 * 3.14159265) - (2.0 * 3.14159265);
 
         [NativeTypeName("#define HWND_BROADCAST ((HWND)0xffff)")]
         public static HWND HWND_BROADCAST => ((HWND)(0xffff));

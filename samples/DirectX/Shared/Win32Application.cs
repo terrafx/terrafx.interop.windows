@@ -43,7 +43,7 @@ namespace TerraFX.Samples.DirectX
                     style = CS_HREDRAW | CS_VREDRAW,
                     lpfnWndProc = &WindowProc,
                     hInstance = hInstance,
-                    hCursor = LoadCursorW((HINSTANCE)(NULL), (ushort*)IDC_ARROW),
+                    hCursor = LoadCursorW(HINSTANCE.NULL, (ushort*)IDC_ARROW),
                     lpszClassName = (ushort*)lpszClassName
                 };
                 _ = RegisterClassExW(&windowClass);
@@ -58,8 +58,8 @@ namespace TerraFX.Samples.DirectX
                     CW_USEDEFAULT,
                     CW_USEDEFAULT,
                     CW_USEDEFAULT,
-                    (HWND)(NULL),                       // We have no parent window.
-                    (HMENU)(NULL),                      // We aren't using menus.
+                    HWND.NULL,                       // We have no parent window.
+                    HMENU.NULL,                      // We aren't using menus.
                     hInstance,
                     ((IntPtr)GCHandle.Alloc(sample)).ToPointer()
                 );
@@ -71,7 +71,7 @@ namespace TerraFX.Samples.DirectX
             // Initialize the sample. OnInit is defined in each child-implementation of DXSample.
             var backgroundColor = new Vector4(0.0f, 0.2f, 0.4f, 1.0f);
 
-            var size = new Size((windowRect.right - windowRect.left), (windowRect.bottom - windowRect.top));
+            var size = new Size(windowRect.right - windowRect.left, windowRect.bottom - windowRect.top);
             sample.OnInit(DXGI_FORMAT_UNKNOWN, backgroundColor, DXGI_FORMAT_UNKNOWN, 1.0f, 2, s_hwnd, true, size, useWarpDevice);
 
             _ = ShowWindow(s_hwnd, nCmdShow);
@@ -116,7 +116,7 @@ namespace TerraFX.Samples.DirectX
             {
                 // Process any messages in the queue.
 
-                while (PeekMessageW(lpMsg, hWnd: (HWND)(NULL), wMsgFilterMin: WM_NULL, wMsgFilterMax: WM_NULL, PM_REMOVE) != FALSE)
+                while (PeekMessageW(lpMsg, hWnd: HWND.NULL, wMsgFilterMin: WM_NULL, wMsgFilterMax: WM_NULL, PM_REMOVE) != FALSE)
                 {
                     _ = TranslateMessage(lpMsg);
                     _ = DispatchMessageW(lpMsg);
@@ -126,7 +126,7 @@ namespace TerraFX.Samples.DirectX
 
         // Main message handler for the sample
         [UnmanagedCallersOnly]
-        private static nint WindowProc(HWND hWnd, uint message, nuint wParam, nint lParam)
+        private static LRESULT WindowProc(HWND hWnd, uint message, WPARAM wParam, LPARAM lParam)
         {
             var handle = GetWindowLongPtrW(hWnd, GWLP_USERDATA);
             var pSample = (handle != 0) ? (DXSample?)GCHandle.FromIntPtr(handle).Target : null;
