@@ -8,70 +8,74 @@ namespace TerraFX.Interop
     {
         public readonly nint Value;
 
-        public static HUIATEXTRANGE NULL => (HUIATEXTRANGE)(0);
-
-        public HUIATEXTRANGE(int value)
-        {
-            Value = ((nint)(value));
-        }
-
-        public HUIATEXTRANGE(uint value)
-        {
-            Value = ((nint)(value));
-        }
-
         public HUIATEXTRANGE(nint value)
         {
-            Value = ((nint)(value));
+            Value = value;
         }
 
-        public HUIATEXTRANGE(nuint value)
-        {
-            Value = ((nint)(value));
-        }
+        public static HUIATEXTRANGE INVALID_HANDLE_VALUE => new HUIATEXTRANGE(-1);
 
-        public HUIATEXTRANGE(void* value)
-        {
-            Value = ((nint)(value));
-        }
-
-        public HUIATEXTRANGE(HANDLE value)
-        {
-            Value = value.Value;
-        }
+        public static HUIATEXTRANGE NULL => new HUIATEXTRANGE(0);
 
         public static bool operator ==(HUIATEXTRANGE left, HUIATEXTRANGE right) => left.Value == right.Value;
 
         public static bool operator !=(HUIATEXTRANGE left, HUIATEXTRANGE right) => left.Value != right.Value;
 
-        public static explicit operator HUIATEXTRANGE(int value) => new HUIATEXTRANGE(value);
-
-        public static explicit operator HUIATEXTRANGE(uint value) => new HUIATEXTRANGE(value);
-
-        public static explicit operator HUIATEXTRANGE(nint value) => new HUIATEXTRANGE(value);
-
-        public static explicit operator HUIATEXTRANGE(nuint value) => new HUIATEXTRANGE(value);
-
-        public static explicit operator HUIATEXTRANGE(void* value) => new HUIATEXTRANGE(value);
-
-        public static explicit operator HUIATEXTRANGE(HANDLE value) => new HUIATEXTRANGE(value);
-
-        public static explicit operator int(HUIATEXTRANGE value) => (int)(value.Value);
-
-        public static explicit operator uint(HUIATEXTRANGE value) => (uint)(value.Value);
-
-        public static implicit operator nint(HUIATEXTRANGE value) => (nint)(value.Value);
-
-        public static implicit operator nuint(HUIATEXTRANGE value) => (nuint)(value.Value);
+        public static explicit operator HUIATEXTRANGE(void* value) => new HUIATEXTRANGE((nint)(value));
 
         public static implicit operator void*(HUIATEXTRANGE value) => (void*)(value.Value);
 
-        public static implicit operator HANDLE(HUIATEXTRANGE value) => (HANDLE)(value.Value);
+        public static explicit operator HUIATEXTRANGE(HANDLE value) => new HUIATEXTRANGE(value);
+
+        public static implicit operator HANDLE(HUIATEXTRANGE value) => new HUIATEXTRANGE(value);
+
+        public static explicit operator HUIATEXTRANGE(byte value) => new HUIATEXTRANGE((nint)(value));
+
+        public static implicit operator byte(HUIATEXTRANGE value) => (byte)(value.Value);
+
+        public static explicit operator HUIATEXTRANGE(short value) => new HUIATEXTRANGE((nint)(value));
+
+        public static implicit operator short(HUIATEXTRANGE value) => (short)(value.Value);
+
+        public static explicit operator HUIATEXTRANGE(int value) => new HUIATEXTRANGE((nint)(value));
+
+        public static implicit operator int(HUIATEXTRANGE value) => (int)(value.Value);
+
+        public static explicit operator HUIATEXTRANGE(long value) => new HUIATEXTRANGE((nint)(value));
+
+        public static explicit operator long(HUIATEXTRANGE value) => (long)(value.Value);
+
+        public static explicit operator HUIATEXTRANGE(nint value) => new HUIATEXTRANGE((nint)(value));
+
+        public static implicit operator nint(HUIATEXTRANGE value) => (nint)(value.Value);
+
+        public static explicit operator HUIATEXTRANGE(sbyte value) => new HUIATEXTRANGE((nint)(value));
+
+        public static implicit operator sbyte(HUIATEXTRANGE value) => (sbyte)(value.Value);
+
+        public static explicit operator HUIATEXTRANGE(ushort value) => new HUIATEXTRANGE((nint)(value));
+
+        public static implicit operator ushort(HUIATEXTRANGE value) => (ushort)(value.Value);
+
+        public static explicit operator HUIATEXTRANGE(uint value) => new HUIATEXTRANGE((nint)(value));
+
+        public static implicit operator uint(HUIATEXTRANGE value) => (uint)(value.Value);
+
+        public static explicit operator HUIATEXTRANGE(ulong value) => new HUIATEXTRANGE((nint)(value));
+
+        public static explicit operator ulong(HUIATEXTRANGE value) => (ulong)(value.Value);
+
+        public static explicit operator HUIATEXTRANGE(nuint value) => new HUIATEXTRANGE((nint)(value));
+
+        public static explicit operator nuint(HUIATEXTRANGE value) => (nuint)(value.Value);
 
         public override bool Equals(object? obj) => (obj is HUIATEXTRANGE other) && Equals(other);
 
         public bool Equals(HUIATEXTRANGE other) => (this == other);
 
-        public override int GetHashCode() => ((nuint)(Value)).GetHashCode();
+        public override int GetHashCode() => Value.GetHashCode();
+
+        public override string ToString() => Value.ToString();
+
     }
 }

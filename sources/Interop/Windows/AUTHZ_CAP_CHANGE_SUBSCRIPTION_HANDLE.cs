@@ -8,70 +8,74 @@ namespace TerraFX.Interop
     {
         public readonly nint Value;
 
-        public static AUTHZ_CAP_CHANGE_SUBSCRIPTION_HANDLE NULL => (AUTHZ_CAP_CHANGE_SUBSCRIPTION_HANDLE)(0);
-
-        public AUTHZ_CAP_CHANGE_SUBSCRIPTION_HANDLE(int value)
-        {
-            Value = ((nint)(value));
-        }
-
-        public AUTHZ_CAP_CHANGE_SUBSCRIPTION_HANDLE(uint value)
-        {
-            Value = ((nint)(value));
-        }
-
         public AUTHZ_CAP_CHANGE_SUBSCRIPTION_HANDLE(nint value)
         {
-            Value = ((nint)(value));
+            Value = value;
         }
 
-        public AUTHZ_CAP_CHANGE_SUBSCRIPTION_HANDLE(nuint value)
-        {
-            Value = ((nint)(value));
-        }
+        public static AUTHZ_CAP_CHANGE_SUBSCRIPTION_HANDLE INVALID_HANDLE_VALUE => new AUTHZ_CAP_CHANGE_SUBSCRIPTION_HANDLE(-1);
 
-        public AUTHZ_CAP_CHANGE_SUBSCRIPTION_HANDLE(void* value)
-        {
-            Value = ((nint)(value));
-        }
-
-        public AUTHZ_CAP_CHANGE_SUBSCRIPTION_HANDLE(HANDLE value)
-        {
-            Value = value.Value;
-        }
+        public static AUTHZ_CAP_CHANGE_SUBSCRIPTION_HANDLE NULL => new AUTHZ_CAP_CHANGE_SUBSCRIPTION_HANDLE(0);
 
         public static bool operator ==(AUTHZ_CAP_CHANGE_SUBSCRIPTION_HANDLE left, AUTHZ_CAP_CHANGE_SUBSCRIPTION_HANDLE right) => left.Value == right.Value;
 
         public static bool operator !=(AUTHZ_CAP_CHANGE_SUBSCRIPTION_HANDLE left, AUTHZ_CAP_CHANGE_SUBSCRIPTION_HANDLE right) => left.Value != right.Value;
 
-        public static explicit operator AUTHZ_CAP_CHANGE_SUBSCRIPTION_HANDLE(int value) => new AUTHZ_CAP_CHANGE_SUBSCRIPTION_HANDLE(value);
-
-        public static explicit operator AUTHZ_CAP_CHANGE_SUBSCRIPTION_HANDLE(uint value) => new AUTHZ_CAP_CHANGE_SUBSCRIPTION_HANDLE(value);
-
-        public static explicit operator AUTHZ_CAP_CHANGE_SUBSCRIPTION_HANDLE(nint value) => new AUTHZ_CAP_CHANGE_SUBSCRIPTION_HANDLE(value);
-
-        public static explicit operator AUTHZ_CAP_CHANGE_SUBSCRIPTION_HANDLE(nuint value) => new AUTHZ_CAP_CHANGE_SUBSCRIPTION_HANDLE(value);
-
-        public static explicit operator AUTHZ_CAP_CHANGE_SUBSCRIPTION_HANDLE(void* value) => new AUTHZ_CAP_CHANGE_SUBSCRIPTION_HANDLE(value);
-
-        public static explicit operator AUTHZ_CAP_CHANGE_SUBSCRIPTION_HANDLE(HANDLE value) => new AUTHZ_CAP_CHANGE_SUBSCRIPTION_HANDLE(value);
-
-        public static explicit operator int(AUTHZ_CAP_CHANGE_SUBSCRIPTION_HANDLE value) => (int)(value.Value);
-
-        public static explicit operator uint(AUTHZ_CAP_CHANGE_SUBSCRIPTION_HANDLE value) => (uint)(value.Value);
-
-        public static implicit operator nint(AUTHZ_CAP_CHANGE_SUBSCRIPTION_HANDLE value) => (nint)(value.Value);
-
-        public static implicit operator nuint(AUTHZ_CAP_CHANGE_SUBSCRIPTION_HANDLE value) => (nuint)(value.Value);
+        public static explicit operator AUTHZ_CAP_CHANGE_SUBSCRIPTION_HANDLE(void* value) => new AUTHZ_CAP_CHANGE_SUBSCRIPTION_HANDLE((nint)(value));
 
         public static implicit operator void*(AUTHZ_CAP_CHANGE_SUBSCRIPTION_HANDLE value) => (void*)(value.Value);
 
-        public static implicit operator HANDLE(AUTHZ_CAP_CHANGE_SUBSCRIPTION_HANDLE value) => (HANDLE)(value.Value);
+        public static explicit operator AUTHZ_CAP_CHANGE_SUBSCRIPTION_HANDLE(HANDLE value) => new AUTHZ_CAP_CHANGE_SUBSCRIPTION_HANDLE(value);
+
+        public static implicit operator HANDLE(AUTHZ_CAP_CHANGE_SUBSCRIPTION_HANDLE value) => new AUTHZ_CAP_CHANGE_SUBSCRIPTION_HANDLE(value);
+
+        public static explicit operator AUTHZ_CAP_CHANGE_SUBSCRIPTION_HANDLE(byte value) => new AUTHZ_CAP_CHANGE_SUBSCRIPTION_HANDLE((nint)(value));
+
+        public static implicit operator byte(AUTHZ_CAP_CHANGE_SUBSCRIPTION_HANDLE value) => (byte)(value.Value);
+
+        public static explicit operator AUTHZ_CAP_CHANGE_SUBSCRIPTION_HANDLE(short value) => new AUTHZ_CAP_CHANGE_SUBSCRIPTION_HANDLE((nint)(value));
+
+        public static implicit operator short(AUTHZ_CAP_CHANGE_SUBSCRIPTION_HANDLE value) => (short)(value.Value);
+
+        public static explicit operator AUTHZ_CAP_CHANGE_SUBSCRIPTION_HANDLE(int value) => new AUTHZ_CAP_CHANGE_SUBSCRIPTION_HANDLE((nint)(value));
+
+        public static implicit operator int(AUTHZ_CAP_CHANGE_SUBSCRIPTION_HANDLE value) => (int)(value.Value);
+
+        public static explicit operator AUTHZ_CAP_CHANGE_SUBSCRIPTION_HANDLE(long value) => new AUTHZ_CAP_CHANGE_SUBSCRIPTION_HANDLE((nint)(value));
+
+        public static explicit operator long(AUTHZ_CAP_CHANGE_SUBSCRIPTION_HANDLE value) => (long)(value.Value);
+
+        public static explicit operator AUTHZ_CAP_CHANGE_SUBSCRIPTION_HANDLE(nint value) => new AUTHZ_CAP_CHANGE_SUBSCRIPTION_HANDLE((nint)(value));
+
+        public static implicit operator nint(AUTHZ_CAP_CHANGE_SUBSCRIPTION_HANDLE value) => (nint)(value.Value);
+
+        public static explicit operator AUTHZ_CAP_CHANGE_SUBSCRIPTION_HANDLE(sbyte value) => new AUTHZ_CAP_CHANGE_SUBSCRIPTION_HANDLE((nint)(value));
+
+        public static implicit operator sbyte(AUTHZ_CAP_CHANGE_SUBSCRIPTION_HANDLE value) => (sbyte)(value.Value);
+
+        public static explicit operator AUTHZ_CAP_CHANGE_SUBSCRIPTION_HANDLE(ushort value) => new AUTHZ_CAP_CHANGE_SUBSCRIPTION_HANDLE((nint)(value));
+
+        public static implicit operator ushort(AUTHZ_CAP_CHANGE_SUBSCRIPTION_HANDLE value) => (ushort)(value.Value);
+
+        public static explicit operator AUTHZ_CAP_CHANGE_SUBSCRIPTION_HANDLE(uint value) => new AUTHZ_CAP_CHANGE_SUBSCRIPTION_HANDLE((nint)(value));
+
+        public static implicit operator uint(AUTHZ_CAP_CHANGE_SUBSCRIPTION_HANDLE value) => (uint)(value.Value);
+
+        public static explicit operator AUTHZ_CAP_CHANGE_SUBSCRIPTION_HANDLE(ulong value) => new AUTHZ_CAP_CHANGE_SUBSCRIPTION_HANDLE((nint)(value));
+
+        public static explicit operator ulong(AUTHZ_CAP_CHANGE_SUBSCRIPTION_HANDLE value) => (ulong)(value.Value);
+
+        public static explicit operator AUTHZ_CAP_CHANGE_SUBSCRIPTION_HANDLE(nuint value) => new AUTHZ_CAP_CHANGE_SUBSCRIPTION_HANDLE((nint)(value));
+
+        public static explicit operator nuint(AUTHZ_CAP_CHANGE_SUBSCRIPTION_HANDLE value) => (nuint)(value.Value);
 
         public override bool Equals(object? obj) => (obj is AUTHZ_CAP_CHANGE_SUBSCRIPTION_HANDLE other) && Equals(other);
 
         public bool Equals(AUTHZ_CAP_CHANGE_SUBSCRIPTION_HANDLE other) => (this == other);
 
-        public override int GetHashCode() => ((nuint)(Value)).GetHashCode();
+        public override int GetHashCode() => Value.GetHashCode();
+
+        public override string ToString() => Value.ToString();
+
     }
 }

@@ -8,70 +8,74 @@ namespace TerraFX.Interop
     {
         public readonly nint Value;
 
-        public static HINTERACTIONCONTEXT NULL => (HINTERACTIONCONTEXT)(0);
-
-        public HINTERACTIONCONTEXT(int value)
-        {
-            Value = ((nint)(value));
-        }
-
-        public HINTERACTIONCONTEXT(uint value)
-        {
-            Value = ((nint)(value));
-        }
-
         public HINTERACTIONCONTEXT(nint value)
         {
-            Value = ((nint)(value));
+            Value = value;
         }
 
-        public HINTERACTIONCONTEXT(nuint value)
-        {
-            Value = ((nint)(value));
-        }
+        public static HINTERACTIONCONTEXT INVALID_HANDLE_VALUE => new HINTERACTIONCONTEXT(-1);
 
-        public HINTERACTIONCONTEXT(void* value)
-        {
-            Value = ((nint)(value));
-        }
-
-        public HINTERACTIONCONTEXT(HANDLE value)
-        {
-            Value = value.Value;
-        }
+        public static HINTERACTIONCONTEXT NULL => new HINTERACTIONCONTEXT(0);
 
         public static bool operator ==(HINTERACTIONCONTEXT left, HINTERACTIONCONTEXT right) => left.Value == right.Value;
 
         public static bool operator !=(HINTERACTIONCONTEXT left, HINTERACTIONCONTEXT right) => left.Value != right.Value;
 
-        public static explicit operator HINTERACTIONCONTEXT(int value) => new HINTERACTIONCONTEXT(value);
-
-        public static explicit operator HINTERACTIONCONTEXT(uint value) => new HINTERACTIONCONTEXT(value);
-
-        public static explicit operator HINTERACTIONCONTEXT(nint value) => new HINTERACTIONCONTEXT(value);
-
-        public static explicit operator HINTERACTIONCONTEXT(nuint value) => new HINTERACTIONCONTEXT(value);
-
-        public static explicit operator HINTERACTIONCONTEXT(void* value) => new HINTERACTIONCONTEXT(value);
-
-        public static explicit operator HINTERACTIONCONTEXT(HANDLE value) => new HINTERACTIONCONTEXT(value);
-
-        public static explicit operator int(HINTERACTIONCONTEXT value) => (int)(value.Value);
-
-        public static explicit operator uint(HINTERACTIONCONTEXT value) => (uint)(value.Value);
-
-        public static implicit operator nint(HINTERACTIONCONTEXT value) => (nint)(value.Value);
-
-        public static implicit operator nuint(HINTERACTIONCONTEXT value) => (nuint)(value.Value);
+        public static explicit operator HINTERACTIONCONTEXT(void* value) => new HINTERACTIONCONTEXT((nint)(value));
 
         public static implicit operator void*(HINTERACTIONCONTEXT value) => (void*)(value.Value);
 
-        public static implicit operator HANDLE(HINTERACTIONCONTEXT value) => (HANDLE)(value.Value);
+        public static explicit operator HINTERACTIONCONTEXT(HANDLE value) => new HINTERACTIONCONTEXT(value);
+
+        public static implicit operator HANDLE(HINTERACTIONCONTEXT value) => new HINTERACTIONCONTEXT(value);
+
+        public static explicit operator HINTERACTIONCONTEXT(byte value) => new HINTERACTIONCONTEXT((nint)(value));
+
+        public static implicit operator byte(HINTERACTIONCONTEXT value) => (byte)(value.Value);
+
+        public static explicit operator HINTERACTIONCONTEXT(short value) => new HINTERACTIONCONTEXT((nint)(value));
+
+        public static implicit operator short(HINTERACTIONCONTEXT value) => (short)(value.Value);
+
+        public static explicit operator HINTERACTIONCONTEXT(int value) => new HINTERACTIONCONTEXT((nint)(value));
+
+        public static implicit operator int(HINTERACTIONCONTEXT value) => (int)(value.Value);
+
+        public static explicit operator HINTERACTIONCONTEXT(long value) => new HINTERACTIONCONTEXT((nint)(value));
+
+        public static explicit operator long(HINTERACTIONCONTEXT value) => (long)(value.Value);
+
+        public static explicit operator HINTERACTIONCONTEXT(nint value) => new HINTERACTIONCONTEXT((nint)(value));
+
+        public static implicit operator nint(HINTERACTIONCONTEXT value) => (nint)(value.Value);
+
+        public static explicit operator HINTERACTIONCONTEXT(sbyte value) => new HINTERACTIONCONTEXT((nint)(value));
+
+        public static implicit operator sbyte(HINTERACTIONCONTEXT value) => (sbyte)(value.Value);
+
+        public static explicit operator HINTERACTIONCONTEXT(ushort value) => new HINTERACTIONCONTEXT((nint)(value));
+
+        public static implicit operator ushort(HINTERACTIONCONTEXT value) => (ushort)(value.Value);
+
+        public static explicit operator HINTERACTIONCONTEXT(uint value) => new HINTERACTIONCONTEXT((nint)(value));
+
+        public static implicit operator uint(HINTERACTIONCONTEXT value) => (uint)(value.Value);
+
+        public static explicit operator HINTERACTIONCONTEXT(ulong value) => new HINTERACTIONCONTEXT((nint)(value));
+
+        public static explicit operator ulong(HINTERACTIONCONTEXT value) => (ulong)(value.Value);
+
+        public static explicit operator HINTERACTIONCONTEXT(nuint value) => new HINTERACTIONCONTEXT((nint)(value));
+
+        public static explicit operator nuint(HINTERACTIONCONTEXT value) => (nuint)(value.Value);
 
         public override bool Equals(object? obj) => (obj is HINTERACTIONCONTEXT other) && Equals(other);
 
         public bool Equals(HINTERACTIONCONTEXT other) => (this == other);
 
-        public override int GetHashCode() => ((nuint)(Value)).GetHashCode();
+        public override int GetHashCode() => Value.GetHashCode();
+
+        public override string ToString() => Value.ToString();
+
     }
 }

@@ -8,70 +8,74 @@ namespace TerraFX.Interop
     {
         public readonly nint Value;
 
-        public static PRJ_DIR_ENTRY_BUFFER_HANDLE NULL => (PRJ_DIR_ENTRY_BUFFER_HANDLE)(0);
-
-        public PRJ_DIR_ENTRY_BUFFER_HANDLE(int value)
-        {
-            Value = ((nint)(value));
-        }
-
-        public PRJ_DIR_ENTRY_BUFFER_HANDLE(uint value)
-        {
-            Value = ((nint)(value));
-        }
-
         public PRJ_DIR_ENTRY_BUFFER_HANDLE(nint value)
         {
-            Value = ((nint)(value));
+            Value = value;
         }
 
-        public PRJ_DIR_ENTRY_BUFFER_HANDLE(nuint value)
-        {
-            Value = ((nint)(value));
-        }
+        public static PRJ_DIR_ENTRY_BUFFER_HANDLE INVALID_HANDLE_VALUE => new PRJ_DIR_ENTRY_BUFFER_HANDLE(-1);
 
-        public PRJ_DIR_ENTRY_BUFFER_HANDLE(void* value)
-        {
-            Value = ((nint)(value));
-        }
-
-        public PRJ_DIR_ENTRY_BUFFER_HANDLE(HANDLE value)
-        {
-            Value = value.Value;
-        }
+        public static PRJ_DIR_ENTRY_BUFFER_HANDLE NULL => new PRJ_DIR_ENTRY_BUFFER_HANDLE(0);
 
         public static bool operator ==(PRJ_DIR_ENTRY_BUFFER_HANDLE left, PRJ_DIR_ENTRY_BUFFER_HANDLE right) => left.Value == right.Value;
 
         public static bool operator !=(PRJ_DIR_ENTRY_BUFFER_HANDLE left, PRJ_DIR_ENTRY_BUFFER_HANDLE right) => left.Value != right.Value;
 
-        public static explicit operator PRJ_DIR_ENTRY_BUFFER_HANDLE(int value) => new PRJ_DIR_ENTRY_BUFFER_HANDLE(value);
-
-        public static explicit operator PRJ_DIR_ENTRY_BUFFER_HANDLE(uint value) => new PRJ_DIR_ENTRY_BUFFER_HANDLE(value);
-
-        public static explicit operator PRJ_DIR_ENTRY_BUFFER_HANDLE(nint value) => new PRJ_DIR_ENTRY_BUFFER_HANDLE(value);
-
-        public static explicit operator PRJ_DIR_ENTRY_BUFFER_HANDLE(nuint value) => new PRJ_DIR_ENTRY_BUFFER_HANDLE(value);
-
-        public static explicit operator PRJ_DIR_ENTRY_BUFFER_HANDLE(void* value) => new PRJ_DIR_ENTRY_BUFFER_HANDLE(value);
-
-        public static explicit operator PRJ_DIR_ENTRY_BUFFER_HANDLE(HANDLE value) => new PRJ_DIR_ENTRY_BUFFER_HANDLE(value);
-
-        public static explicit operator int(PRJ_DIR_ENTRY_BUFFER_HANDLE value) => (int)(value.Value);
-
-        public static explicit operator uint(PRJ_DIR_ENTRY_BUFFER_HANDLE value) => (uint)(value.Value);
-
-        public static implicit operator nint(PRJ_DIR_ENTRY_BUFFER_HANDLE value) => (nint)(value.Value);
-
-        public static implicit operator nuint(PRJ_DIR_ENTRY_BUFFER_HANDLE value) => (nuint)(value.Value);
+        public static explicit operator PRJ_DIR_ENTRY_BUFFER_HANDLE(void* value) => new PRJ_DIR_ENTRY_BUFFER_HANDLE((nint)(value));
 
         public static implicit operator void*(PRJ_DIR_ENTRY_BUFFER_HANDLE value) => (void*)(value.Value);
 
-        public static implicit operator HANDLE(PRJ_DIR_ENTRY_BUFFER_HANDLE value) => (HANDLE)(value.Value);
+        public static explicit operator PRJ_DIR_ENTRY_BUFFER_HANDLE(HANDLE value) => new PRJ_DIR_ENTRY_BUFFER_HANDLE(value);
+
+        public static implicit operator HANDLE(PRJ_DIR_ENTRY_BUFFER_HANDLE value) => new PRJ_DIR_ENTRY_BUFFER_HANDLE(value);
+
+        public static explicit operator PRJ_DIR_ENTRY_BUFFER_HANDLE(byte value) => new PRJ_DIR_ENTRY_BUFFER_HANDLE((nint)(value));
+
+        public static implicit operator byte(PRJ_DIR_ENTRY_BUFFER_HANDLE value) => (byte)(value.Value);
+
+        public static explicit operator PRJ_DIR_ENTRY_BUFFER_HANDLE(short value) => new PRJ_DIR_ENTRY_BUFFER_HANDLE((nint)(value));
+
+        public static implicit operator short(PRJ_DIR_ENTRY_BUFFER_HANDLE value) => (short)(value.Value);
+
+        public static explicit operator PRJ_DIR_ENTRY_BUFFER_HANDLE(int value) => new PRJ_DIR_ENTRY_BUFFER_HANDLE((nint)(value));
+
+        public static implicit operator int(PRJ_DIR_ENTRY_BUFFER_HANDLE value) => (int)(value.Value);
+
+        public static explicit operator PRJ_DIR_ENTRY_BUFFER_HANDLE(long value) => new PRJ_DIR_ENTRY_BUFFER_HANDLE((nint)(value));
+
+        public static explicit operator long(PRJ_DIR_ENTRY_BUFFER_HANDLE value) => (long)(value.Value);
+
+        public static explicit operator PRJ_DIR_ENTRY_BUFFER_HANDLE(nint value) => new PRJ_DIR_ENTRY_BUFFER_HANDLE((nint)(value));
+
+        public static implicit operator nint(PRJ_DIR_ENTRY_BUFFER_HANDLE value) => (nint)(value.Value);
+
+        public static explicit operator PRJ_DIR_ENTRY_BUFFER_HANDLE(sbyte value) => new PRJ_DIR_ENTRY_BUFFER_HANDLE((nint)(value));
+
+        public static implicit operator sbyte(PRJ_DIR_ENTRY_BUFFER_HANDLE value) => (sbyte)(value.Value);
+
+        public static explicit operator PRJ_DIR_ENTRY_BUFFER_HANDLE(ushort value) => new PRJ_DIR_ENTRY_BUFFER_HANDLE((nint)(value));
+
+        public static implicit operator ushort(PRJ_DIR_ENTRY_BUFFER_HANDLE value) => (ushort)(value.Value);
+
+        public static explicit operator PRJ_DIR_ENTRY_BUFFER_HANDLE(uint value) => new PRJ_DIR_ENTRY_BUFFER_HANDLE((nint)(value));
+
+        public static implicit operator uint(PRJ_DIR_ENTRY_BUFFER_HANDLE value) => (uint)(value.Value);
+
+        public static explicit operator PRJ_DIR_ENTRY_BUFFER_HANDLE(ulong value) => new PRJ_DIR_ENTRY_BUFFER_HANDLE((nint)(value));
+
+        public static explicit operator ulong(PRJ_DIR_ENTRY_BUFFER_HANDLE value) => (ulong)(value.Value);
+
+        public static explicit operator PRJ_DIR_ENTRY_BUFFER_HANDLE(nuint value) => new PRJ_DIR_ENTRY_BUFFER_HANDLE((nint)(value));
+
+        public static explicit operator nuint(PRJ_DIR_ENTRY_BUFFER_HANDLE value) => (nuint)(value.Value);
 
         public override bool Equals(object? obj) => (obj is PRJ_DIR_ENTRY_BUFFER_HANDLE other) && Equals(other);
 
         public bool Equals(PRJ_DIR_ENTRY_BUFFER_HANDLE other) => (this == other);
 
-        public override int GetHashCode() => ((nuint)(Value)).GetHashCode();
+        public override int GetHashCode() => Value.GetHashCode();
+
+        public override string ToString() => Value.ToString();
+
     }
 }

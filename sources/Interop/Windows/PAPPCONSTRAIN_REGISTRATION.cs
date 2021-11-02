@@ -6,61 +6,70 @@ namespace TerraFX.Interop
 {
     public unsafe partial struct PAPPCONSTRAIN_REGISTRATION : IEquatable<PAPPCONSTRAIN_REGISTRATION>
     {
-        public readonly void* Value;
-
-        public PAPPCONSTRAIN_REGISTRATION(int value)
-        {
-            Value = ((void*)(value));
-        }
-
-        public PAPPCONSTRAIN_REGISTRATION(uint value)
-        {
-            Value = ((void*)(value));
-        }
+        public readonly nint Value;
 
         public PAPPCONSTRAIN_REGISTRATION(nint value)
         {
-            Value = ((void*)(value));
+            Value = value;
         }
 
-        public PAPPCONSTRAIN_REGISTRATION(nuint value)
-        {
-            Value = ((void*)(value));
-        }
-
-        public PAPPCONSTRAIN_REGISTRATION(void* value)
-        {
-            Value = ((void*)(value));
-        }
+        public static PAPPCONSTRAIN_REGISTRATION NULL => new PAPPCONSTRAIN_REGISTRATION(0);
 
         public static bool operator ==(PAPPCONSTRAIN_REGISTRATION left, PAPPCONSTRAIN_REGISTRATION right) => left.Value == right.Value;
 
         public static bool operator !=(PAPPCONSTRAIN_REGISTRATION left, PAPPCONSTRAIN_REGISTRATION right) => left.Value != right.Value;
 
-        public static explicit operator PAPPCONSTRAIN_REGISTRATION(int value) => new PAPPCONSTRAIN_REGISTRATION(value);
+        public static explicit operator PAPPCONSTRAIN_REGISTRATION(void* value) => new PAPPCONSTRAIN_REGISTRATION((nint)(value));
 
-        public static explicit operator PAPPCONSTRAIN_REGISTRATION(uint value) => new PAPPCONSTRAIN_REGISTRATION(value);
+        public static implicit operator void*(PAPPCONSTRAIN_REGISTRATION value) => (void*)(value.Value);
 
-        public static explicit operator PAPPCONSTRAIN_REGISTRATION(nint value) => new PAPPCONSTRAIN_REGISTRATION(value);
+        public static explicit operator PAPPCONSTRAIN_REGISTRATION(byte value) => new PAPPCONSTRAIN_REGISTRATION((nint)(value));
 
-        public static explicit operator PAPPCONSTRAIN_REGISTRATION(nuint value) => new PAPPCONSTRAIN_REGISTRATION(value);
+        public static implicit operator byte(PAPPCONSTRAIN_REGISTRATION value) => (byte)(value.Value);
 
-        public static explicit operator PAPPCONSTRAIN_REGISTRATION(void* value) => new PAPPCONSTRAIN_REGISTRATION(value);
+        public static explicit operator PAPPCONSTRAIN_REGISTRATION(short value) => new PAPPCONSTRAIN_REGISTRATION((nint)(value));
 
-        public static explicit operator int(PAPPCONSTRAIN_REGISTRATION value) => (int)(value.Value);
+        public static implicit operator short(PAPPCONSTRAIN_REGISTRATION value) => (short)(value.Value);
 
-        public static explicit operator uint(PAPPCONSTRAIN_REGISTRATION value) => (uint)(value.Value);
+        public static explicit operator PAPPCONSTRAIN_REGISTRATION(int value) => new PAPPCONSTRAIN_REGISTRATION((nint)(value));
+
+        public static implicit operator int(PAPPCONSTRAIN_REGISTRATION value) => (int)(value.Value);
+
+        public static explicit operator PAPPCONSTRAIN_REGISTRATION(long value) => new PAPPCONSTRAIN_REGISTRATION((nint)(value));
+
+        public static explicit operator long(PAPPCONSTRAIN_REGISTRATION value) => (long)(value.Value);
+
+        public static explicit operator PAPPCONSTRAIN_REGISTRATION(nint value) => new PAPPCONSTRAIN_REGISTRATION((nint)(value));
 
         public static implicit operator nint(PAPPCONSTRAIN_REGISTRATION value) => (nint)(value.Value);
 
-        public static implicit operator nuint(PAPPCONSTRAIN_REGISTRATION value) => (nuint)(value.Value);
+        public static explicit operator PAPPCONSTRAIN_REGISTRATION(sbyte value) => new PAPPCONSTRAIN_REGISTRATION((nint)(value));
 
-        public static implicit operator void*(PAPPCONSTRAIN_REGISTRATION value) => (void*)(value.Value);
+        public static implicit operator sbyte(PAPPCONSTRAIN_REGISTRATION value) => (sbyte)(value.Value);
+
+        public static explicit operator PAPPCONSTRAIN_REGISTRATION(ushort value) => new PAPPCONSTRAIN_REGISTRATION((nint)(value));
+
+        public static implicit operator ushort(PAPPCONSTRAIN_REGISTRATION value) => (ushort)(value.Value);
+
+        public static explicit operator PAPPCONSTRAIN_REGISTRATION(uint value) => new PAPPCONSTRAIN_REGISTRATION((nint)(value));
+
+        public static implicit operator uint(PAPPCONSTRAIN_REGISTRATION value) => (uint)(value.Value);
+
+        public static explicit operator PAPPCONSTRAIN_REGISTRATION(ulong value) => new PAPPCONSTRAIN_REGISTRATION((nint)(value));
+
+        public static explicit operator ulong(PAPPCONSTRAIN_REGISTRATION value) => (ulong)(value.Value);
+
+        public static explicit operator PAPPCONSTRAIN_REGISTRATION(nuint value) => new PAPPCONSTRAIN_REGISTRATION((nint)(value));
+
+        public static explicit operator nuint(PAPPCONSTRAIN_REGISTRATION value) => (nuint)(value.Value);
 
         public override bool Equals(object? obj) => (obj is PAPPCONSTRAIN_REGISTRATION other) && Equals(other);
 
         public bool Equals(PAPPCONSTRAIN_REGISTRATION other) => (this == other);
 
-        public override int GetHashCode() => ((nuint)(Value)).GetHashCode();
+        public override int GetHashCode() => Value.GetHashCode();
+
+        public override string ToString() => Value.ToString();
+
     }
 }

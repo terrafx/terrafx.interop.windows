@@ -13,8 +13,7 @@ namespace TerraFX.Interop
         [NativeTypeName("_WTD_GENERIC_CHAIN_POLICY_CREATE_INFO::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/SoftPub.h:160:5)")]
         public _Anonymous_e__Union Anonymous;
 
-        [NativeTypeName("HCERTCHAINENGINE")]
-        public HANDLE hChainEngine;
+        public HCERTCHAINENGINE hChainEngine;
 
         [NativeTypeName("PCERT_CHAIN_PARA")]
         public CERT_CHAIN_PARA* pChainPara;

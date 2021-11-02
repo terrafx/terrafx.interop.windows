@@ -8,70 +8,74 @@ namespace TerraFX.Interop
     {
         public readonly nint Value;
 
-        public static HSYNTHETICPOINTERDEVICE NULL => (HSYNTHETICPOINTERDEVICE)(0);
-
-        public HSYNTHETICPOINTERDEVICE(int value)
-        {
-            Value = ((nint)(value));
-        }
-
-        public HSYNTHETICPOINTERDEVICE(uint value)
-        {
-            Value = ((nint)(value));
-        }
-
         public HSYNTHETICPOINTERDEVICE(nint value)
         {
-            Value = ((nint)(value));
+            Value = value;
         }
 
-        public HSYNTHETICPOINTERDEVICE(nuint value)
-        {
-            Value = ((nint)(value));
-        }
+        public static HSYNTHETICPOINTERDEVICE INVALID_HANDLE_VALUE => new HSYNTHETICPOINTERDEVICE(-1);
 
-        public HSYNTHETICPOINTERDEVICE(void* value)
-        {
-            Value = ((nint)(value));
-        }
-
-        public HSYNTHETICPOINTERDEVICE(HANDLE value)
-        {
-            Value = value.Value;
-        }
+        public static HSYNTHETICPOINTERDEVICE NULL => new HSYNTHETICPOINTERDEVICE(0);
 
         public static bool operator ==(HSYNTHETICPOINTERDEVICE left, HSYNTHETICPOINTERDEVICE right) => left.Value == right.Value;
 
         public static bool operator !=(HSYNTHETICPOINTERDEVICE left, HSYNTHETICPOINTERDEVICE right) => left.Value != right.Value;
 
-        public static explicit operator HSYNTHETICPOINTERDEVICE(int value) => new HSYNTHETICPOINTERDEVICE(value);
-
-        public static explicit operator HSYNTHETICPOINTERDEVICE(uint value) => new HSYNTHETICPOINTERDEVICE(value);
-
-        public static explicit operator HSYNTHETICPOINTERDEVICE(nint value) => new HSYNTHETICPOINTERDEVICE(value);
-
-        public static explicit operator HSYNTHETICPOINTERDEVICE(nuint value) => new HSYNTHETICPOINTERDEVICE(value);
-
-        public static explicit operator HSYNTHETICPOINTERDEVICE(void* value) => new HSYNTHETICPOINTERDEVICE(value);
-
-        public static explicit operator HSYNTHETICPOINTERDEVICE(HANDLE value) => new HSYNTHETICPOINTERDEVICE(value);
-
-        public static explicit operator int(HSYNTHETICPOINTERDEVICE value) => (int)(value.Value);
-
-        public static explicit operator uint(HSYNTHETICPOINTERDEVICE value) => (uint)(value.Value);
-
-        public static implicit operator nint(HSYNTHETICPOINTERDEVICE value) => (nint)(value.Value);
-
-        public static implicit operator nuint(HSYNTHETICPOINTERDEVICE value) => (nuint)(value.Value);
+        public static explicit operator HSYNTHETICPOINTERDEVICE(void* value) => new HSYNTHETICPOINTERDEVICE((nint)(value));
 
         public static implicit operator void*(HSYNTHETICPOINTERDEVICE value) => (void*)(value.Value);
 
-        public static implicit operator HANDLE(HSYNTHETICPOINTERDEVICE value) => (HANDLE)(value.Value);
+        public static explicit operator HSYNTHETICPOINTERDEVICE(HANDLE value) => new HSYNTHETICPOINTERDEVICE(value);
+
+        public static implicit operator HANDLE(HSYNTHETICPOINTERDEVICE value) => new HSYNTHETICPOINTERDEVICE(value);
+
+        public static explicit operator HSYNTHETICPOINTERDEVICE(byte value) => new HSYNTHETICPOINTERDEVICE((nint)(value));
+
+        public static implicit operator byte(HSYNTHETICPOINTERDEVICE value) => (byte)(value.Value);
+
+        public static explicit operator HSYNTHETICPOINTERDEVICE(short value) => new HSYNTHETICPOINTERDEVICE((nint)(value));
+
+        public static implicit operator short(HSYNTHETICPOINTERDEVICE value) => (short)(value.Value);
+
+        public static explicit operator HSYNTHETICPOINTERDEVICE(int value) => new HSYNTHETICPOINTERDEVICE((nint)(value));
+
+        public static implicit operator int(HSYNTHETICPOINTERDEVICE value) => (int)(value.Value);
+
+        public static explicit operator HSYNTHETICPOINTERDEVICE(long value) => new HSYNTHETICPOINTERDEVICE((nint)(value));
+
+        public static explicit operator long(HSYNTHETICPOINTERDEVICE value) => (long)(value.Value);
+
+        public static explicit operator HSYNTHETICPOINTERDEVICE(nint value) => new HSYNTHETICPOINTERDEVICE((nint)(value));
+
+        public static implicit operator nint(HSYNTHETICPOINTERDEVICE value) => (nint)(value.Value);
+
+        public static explicit operator HSYNTHETICPOINTERDEVICE(sbyte value) => new HSYNTHETICPOINTERDEVICE((nint)(value));
+
+        public static implicit operator sbyte(HSYNTHETICPOINTERDEVICE value) => (sbyte)(value.Value);
+
+        public static explicit operator HSYNTHETICPOINTERDEVICE(ushort value) => new HSYNTHETICPOINTERDEVICE((nint)(value));
+
+        public static implicit operator ushort(HSYNTHETICPOINTERDEVICE value) => (ushort)(value.Value);
+
+        public static explicit operator HSYNTHETICPOINTERDEVICE(uint value) => new HSYNTHETICPOINTERDEVICE((nint)(value));
+
+        public static implicit operator uint(HSYNTHETICPOINTERDEVICE value) => (uint)(value.Value);
+
+        public static explicit operator HSYNTHETICPOINTERDEVICE(ulong value) => new HSYNTHETICPOINTERDEVICE((nint)(value));
+
+        public static explicit operator ulong(HSYNTHETICPOINTERDEVICE value) => (ulong)(value.Value);
+
+        public static explicit operator HSYNTHETICPOINTERDEVICE(nuint value) => new HSYNTHETICPOINTERDEVICE((nint)(value));
+
+        public static explicit operator nuint(HSYNTHETICPOINTERDEVICE value) => (nuint)(value.Value);
 
         public override bool Equals(object? obj) => (obj is HSYNTHETICPOINTERDEVICE other) && Equals(other);
 
         public bool Equals(HSYNTHETICPOINTERDEVICE other) => (this == other);
 
-        public override int GetHashCode() => ((nuint)(Value)).GetHashCode();
+        public override int GetHashCode() => Value.GetHashCode();
+
+        public override string ToString() => Value.ToString();
+
     }
 }

@@ -8,70 +8,74 @@ namespace TerraFX.Interop
     {
         public readonly nint Value;
 
-        public static HSTR NULL => (HSTR)(0);
-
-        public HSTR(int value)
-        {
-            Value = ((nint)(value));
-        }
-
-        public HSTR(uint value)
-        {
-            Value = ((nint)(value));
-        }
-
         public HSTR(nint value)
         {
-            Value = ((nint)(value));
+            Value = value;
         }
 
-        public HSTR(nuint value)
-        {
-            Value = ((nint)(value));
-        }
+        public static HSTR INVALID_HANDLE_VALUE => new HSTR(-1);
 
-        public HSTR(void* value)
-        {
-            Value = ((nint)(value));
-        }
-
-        public HSTR(HANDLE value)
-        {
-            Value = value.Value;
-        }
+        public static HSTR NULL => new HSTR(0);
 
         public static bool operator ==(HSTR left, HSTR right) => left.Value == right.Value;
 
         public static bool operator !=(HSTR left, HSTR right) => left.Value != right.Value;
 
-        public static explicit operator HSTR(int value) => new HSTR(value);
-
-        public static explicit operator HSTR(uint value) => new HSTR(value);
-
-        public static explicit operator HSTR(nint value) => new HSTR(value);
-
-        public static explicit operator HSTR(nuint value) => new HSTR(value);
-
-        public static explicit operator HSTR(void* value) => new HSTR(value);
-
-        public static explicit operator HSTR(HANDLE value) => new HSTR(value);
-
-        public static explicit operator int(HSTR value) => (int)(value.Value);
-
-        public static explicit operator uint(HSTR value) => (uint)(value.Value);
-
-        public static implicit operator nint(HSTR value) => (nint)(value.Value);
-
-        public static implicit operator nuint(HSTR value) => (nuint)(value.Value);
+        public static explicit operator HSTR(void* value) => new HSTR((nint)(value));
 
         public static implicit operator void*(HSTR value) => (void*)(value.Value);
 
-        public static implicit operator HANDLE(HSTR value) => (HANDLE)(value.Value);
+        public static explicit operator HSTR(HANDLE value) => new HSTR(value);
+
+        public static implicit operator HANDLE(HSTR value) => new HSTR(value);
+
+        public static explicit operator HSTR(byte value) => new HSTR((nint)(value));
+
+        public static implicit operator byte(HSTR value) => (byte)(value.Value);
+
+        public static explicit operator HSTR(short value) => new HSTR((nint)(value));
+
+        public static implicit operator short(HSTR value) => (short)(value.Value);
+
+        public static explicit operator HSTR(int value) => new HSTR((nint)(value));
+
+        public static implicit operator int(HSTR value) => (int)(value.Value);
+
+        public static explicit operator HSTR(long value) => new HSTR((nint)(value));
+
+        public static explicit operator long(HSTR value) => (long)(value.Value);
+
+        public static explicit operator HSTR(nint value) => new HSTR((nint)(value));
+
+        public static implicit operator nint(HSTR value) => (nint)(value.Value);
+
+        public static explicit operator HSTR(sbyte value) => new HSTR((nint)(value));
+
+        public static implicit operator sbyte(HSTR value) => (sbyte)(value.Value);
+
+        public static explicit operator HSTR(ushort value) => new HSTR((nint)(value));
+
+        public static implicit operator ushort(HSTR value) => (ushort)(value.Value);
+
+        public static explicit operator HSTR(uint value) => new HSTR((nint)(value));
+
+        public static implicit operator uint(HSTR value) => (uint)(value.Value);
+
+        public static explicit operator HSTR(ulong value) => new HSTR((nint)(value));
+
+        public static explicit operator ulong(HSTR value) => (ulong)(value.Value);
+
+        public static explicit operator HSTR(nuint value) => new HSTR((nint)(value));
+
+        public static explicit operator nuint(HSTR value) => (nuint)(value.Value);
 
         public override bool Equals(object? obj) => (obj is HSTR other) && Equals(other);
 
         public bool Equals(HSTR other) => (this == other);
 
-        public override int GetHashCode() => ((nuint)(Value)).GetHashCode();
+        public override int GetHashCode() => Value.GetHashCode();
+
+        public override string ToString() => Value.ToString();
+
     }
 }

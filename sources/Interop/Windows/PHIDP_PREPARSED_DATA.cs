@@ -6,61 +6,70 @@ namespace TerraFX.Interop
 {
     public unsafe partial struct PHIDP_PREPARSED_DATA : IEquatable<PHIDP_PREPARSED_DATA>
     {
-        public readonly void* Value;
-
-        public PHIDP_PREPARSED_DATA(int value)
-        {
-            Value = ((void*)(value));
-        }
-
-        public PHIDP_PREPARSED_DATA(uint value)
-        {
-            Value = ((void*)(value));
-        }
+        public readonly nint Value;
 
         public PHIDP_PREPARSED_DATA(nint value)
         {
-            Value = ((void*)(value));
+            Value = value;
         }
 
-        public PHIDP_PREPARSED_DATA(nuint value)
-        {
-            Value = ((void*)(value));
-        }
-
-        public PHIDP_PREPARSED_DATA(void* value)
-        {
-            Value = ((void*)(value));
-        }
+        public static PHIDP_PREPARSED_DATA NULL => new PHIDP_PREPARSED_DATA(0);
 
         public static bool operator ==(PHIDP_PREPARSED_DATA left, PHIDP_PREPARSED_DATA right) => left.Value == right.Value;
 
         public static bool operator !=(PHIDP_PREPARSED_DATA left, PHIDP_PREPARSED_DATA right) => left.Value != right.Value;
 
-        public static explicit operator PHIDP_PREPARSED_DATA(int value) => new PHIDP_PREPARSED_DATA(value);
+        public static explicit operator PHIDP_PREPARSED_DATA(void* value) => new PHIDP_PREPARSED_DATA((nint)(value));
 
-        public static explicit operator PHIDP_PREPARSED_DATA(uint value) => new PHIDP_PREPARSED_DATA(value);
+        public static implicit operator void*(PHIDP_PREPARSED_DATA value) => (void*)(value.Value);
 
-        public static explicit operator PHIDP_PREPARSED_DATA(nint value) => new PHIDP_PREPARSED_DATA(value);
+        public static explicit operator PHIDP_PREPARSED_DATA(byte value) => new PHIDP_PREPARSED_DATA((nint)(value));
 
-        public static explicit operator PHIDP_PREPARSED_DATA(nuint value) => new PHIDP_PREPARSED_DATA(value);
+        public static implicit operator byte(PHIDP_PREPARSED_DATA value) => (byte)(value.Value);
 
-        public static explicit operator PHIDP_PREPARSED_DATA(void* value) => new PHIDP_PREPARSED_DATA(value);
+        public static explicit operator PHIDP_PREPARSED_DATA(short value) => new PHIDP_PREPARSED_DATA((nint)(value));
 
-        public static explicit operator int(PHIDP_PREPARSED_DATA value) => (int)(value.Value);
+        public static implicit operator short(PHIDP_PREPARSED_DATA value) => (short)(value.Value);
 
-        public static explicit operator uint(PHIDP_PREPARSED_DATA value) => (uint)(value.Value);
+        public static explicit operator PHIDP_PREPARSED_DATA(int value) => new PHIDP_PREPARSED_DATA((nint)(value));
+
+        public static implicit operator int(PHIDP_PREPARSED_DATA value) => (int)(value.Value);
+
+        public static explicit operator PHIDP_PREPARSED_DATA(long value) => new PHIDP_PREPARSED_DATA((nint)(value));
+
+        public static explicit operator long(PHIDP_PREPARSED_DATA value) => (long)(value.Value);
+
+        public static explicit operator PHIDP_PREPARSED_DATA(nint value) => new PHIDP_PREPARSED_DATA((nint)(value));
 
         public static implicit operator nint(PHIDP_PREPARSED_DATA value) => (nint)(value.Value);
 
-        public static implicit operator nuint(PHIDP_PREPARSED_DATA value) => (nuint)(value.Value);
+        public static explicit operator PHIDP_PREPARSED_DATA(sbyte value) => new PHIDP_PREPARSED_DATA((nint)(value));
 
-        public static implicit operator void*(PHIDP_PREPARSED_DATA value) => (void*)(value.Value);
+        public static implicit operator sbyte(PHIDP_PREPARSED_DATA value) => (sbyte)(value.Value);
+
+        public static explicit operator PHIDP_PREPARSED_DATA(ushort value) => new PHIDP_PREPARSED_DATA((nint)(value));
+
+        public static implicit operator ushort(PHIDP_PREPARSED_DATA value) => (ushort)(value.Value);
+
+        public static explicit operator PHIDP_PREPARSED_DATA(uint value) => new PHIDP_PREPARSED_DATA((nint)(value));
+
+        public static implicit operator uint(PHIDP_PREPARSED_DATA value) => (uint)(value.Value);
+
+        public static explicit operator PHIDP_PREPARSED_DATA(ulong value) => new PHIDP_PREPARSED_DATA((nint)(value));
+
+        public static explicit operator ulong(PHIDP_PREPARSED_DATA value) => (ulong)(value.Value);
+
+        public static explicit operator PHIDP_PREPARSED_DATA(nuint value) => new PHIDP_PREPARSED_DATA((nint)(value));
+
+        public static explicit operator nuint(PHIDP_PREPARSED_DATA value) => (nuint)(value.Value);
 
         public override bool Equals(object? obj) => (obj is PHIDP_PREPARSED_DATA other) && Equals(other);
 
         public bool Equals(PHIDP_PREPARSED_DATA other) => (this == other);
 
-        public override int GetHashCode() => ((nuint)(Value)).GetHashCode();
+        public override int GetHashCode() => Value.GetHashCode();
+
+        public override string ToString() => Value.ToString();
+
     }
 }

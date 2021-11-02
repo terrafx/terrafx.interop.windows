@@ -8,70 +8,74 @@ namespace TerraFX.Interop
     {
         public readonly nint Value;
 
-        public static D3DKMDT_HMONITORSOURCEMODESET NULL => (D3DKMDT_HMONITORSOURCEMODESET)(0);
-
-        public D3DKMDT_HMONITORSOURCEMODESET(int value)
-        {
-            Value = ((nint)(value));
-        }
-
-        public D3DKMDT_HMONITORSOURCEMODESET(uint value)
-        {
-            Value = ((nint)(value));
-        }
-
         public D3DKMDT_HMONITORSOURCEMODESET(nint value)
         {
-            Value = ((nint)(value));
+            Value = value;
         }
 
-        public D3DKMDT_HMONITORSOURCEMODESET(nuint value)
-        {
-            Value = ((nint)(value));
-        }
+        public static D3DKMDT_HMONITORSOURCEMODESET INVALID_HANDLE_VALUE => new D3DKMDT_HMONITORSOURCEMODESET(-1);
 
-        public D3DKMDT_HMONITORSOURCEMODESET(void* value)
-        {
-            Value = ((nint)(value));
-        }
-
-        public D3DKMDT_HMONITORSOURCEMODESET(HANDLE value)
-        {
-            Value = value.Value;
-        }
+        public static D3DKMDT_HMONITORSOURCEMODESET NULL => new D3DKMDT_HMONITORSOURCEMODESET(0);
 
         public static bool operator ==(D3DKMDT_HMONITORSOURCEMODESET left, D3DKMDT_HMONITORSOURCEMODESET right) => left.Value == right.Value;
 
         public static bool operator !=(D3DKMDT_HMONITORSOURCEMODESET left, D3DKMDT_HMONITORSOURCEMODESET right) => left.Value != right.Value;
 
-        public static explicit operator D3DKMDT_HMONITORSOURCEMODESET(int value) => new D3DKMDT_HMONITORSOURCEMODESET(value);
-
-        public static explicit operator D3DKMDT_HMONITORSOURCEMODESET(uint value) => new D3DKMDT_HMONITORSOURCEMODESET(value);
-
-        public static explicit operator D3DKMDT_HMONITORSOURCEMODESET(nint value) => new D3DKMDT_HMONITORSOURCEMODESET(value);
-
-        public static explicit operator D3DKMDT_HMONITORSOURCEMODESET(nuint value) => new D3DKMDT_HMONITORSOURCEMODESET(value);
-
-        public static explicit operator D3DKMDT_HMONITORSOURCEMODESET(void* value) => new D3DKMDT_HMONITORSOURCEMODESET(value);
-
-        public static explicit operator D3DKMDT_HMONITORSOURCEMODESET(HANDLE value) => new D3DKMDT_HMONITORSOURCEMODESET(value);
-
-        public static explicit operator int(D3DKMDT_HMONITORSOURCEMODESET value) => (int)(value.Value);
-
-        public static explicit operator uint(D3DKMDT_HMONITORSOURCEMODESET value) => (uint)(value.Value);
-
-        public static implicit operator nint(D3DKMDT_HMONITORSOURCEMODESET value) => (nint)(value.Value);
-
-        public static implicit operator nuint(D3DKMDT_HMONITORSOURCEMODESET value) => (nuint)(value.Value);
+        public static explicit operator D3DKMDT_HMONITORSOURCEMODESET(void* value) => new D3DKMDT_HMONITORSOURCEMODESET((nint)(value));
 
         public static implicit operator void*(D3DKMDT_HMONITORSOURCEMODESET value) => (void*)(value.Value);
 
-        public static implicit operator HANDLE(D3DKMDT_HMONITORSOURCEMODESET value) => (HANDLE)(value.Value);
+        public static explicit operator D3DKMDT_HMONITORSOURCEMODESET(HANDLE value) => new D3DKMDT_HMONITORSOURCEMODESET(value);
+
+        public static implicit operator HANDLE(D3DKMDT_HMONITORSOURCEMODESET value) => new D3DKMDT_HMONITORSOURCEMODESET(value);
+
+        public static explicit operator D3DKMDT_HMONITORSOURCEMODESET(byte value) => new D3DKMDT_HMONITORSOURCEMODESET((nint)(value));
+
+        public static implicit operator byte(D3DKMDT_HMONITORSOURCEMODESET value) => (byte)(value.Value);
+
+        public static explicit operator D3DKMDT_HMONITORSOURCEMODESET(short value) => new D3DKMDT_HMONITORSOURCEMODESET((nint)(value));
+
+        public static implicit operator short(D3DKMDT_HMONITORSOURCEMODESET value) => (short)(value.Value);
+
+        public static explicit operator D3DKMDT_HMONITORSOURCEMODESET(int value) => new D3DKMDT_HMONITORSOURCEMODESET((nint)(value));
+
+        public static implicit operator int(D3DKMDT_HMONITORSOURCEMODESET value) => (int)(value.Value);
+
+        public static explicit operator D3DKMDT_HMONITORSOURCEMODESET(long value) => new D3DKMDT_HMONITORSOURCEMODESET((nint)(value));
+
+        public static explicit operator long(D3DKMDT_HMONITORSOURCEMODESET value) => (long)(value.Value);
+
+        public static explicit operator D3DKMDT_HMONITORSOURCEMODESET(nint value) => new D3DKMDT_HMONITORSOURCEMODESET((nint)(value));
+
+        public static implicit operator nint(D3DKMDT_HMONITORSOURCEMODESET value) => (nint)(value.Value);
+
+        public static explicit operator D3DKMDT_HMONITORSOURCEMODESET(sbyte value) => new D3DKMDT_HMONITORSOURCEMODESET((nint)(value));
+
+        public static implicit operator sbyte(D3DKMDT_HMONITORSOURCEMODESET value) => (sbyte)(value.Value);
+
+        public static explicit operator D3DKMDT_HMONITORSOURCEMODESET(ushort value) => new D3DKMDT_HMONITORSOURCEMODESET((nint)(value));
+
+        public static implicit operator ushort(D3DKMDT_HMONITORSOURCEMODESET value) => (ushort)(value.Value);
+
+        public static explicit operator D3DKMDT_HMONITORSOURCEMODESET(uint value) => new D3DKMDT_HMONITORSOURCEMODESET((nint)(value));
+
+        public static implicit operator uint(D3DKMDT_HMONITORSOURCEMODESET value) => (uint)(value.Value);
+
+        public static explicit operator D3DKMDT_HMONITORSOURCEMODESET(ulong value) => new D3DKMDT_HMONITORSOURCEMODESET((nint)(value));
+
+        public static explicit operator ulong(D3DKMDT_HMONITORSOURCEMODESET value) => (ulong)(value.Value);
+
+        public static explicit operator D3DKMDT_HMONITORSOURCEMODESET(nuint value) => new D3DKMDT_HMONITORSOURCEMODESET((nint)(value));
+
+        public static explicit operator nuint(D3DKMDT_HMONITORSOURCEMODESET value) => (nuint)(value.Value);
 
         public override bool Equals(object? obj) => (obj is D3DKMDT_HMONITORSOURCEMODESET other) && Equals(other);
 
         public bool Equals(D3DKMDT_HMONITORSOURCEMODESET other) => (this == other);
 
-        public override int GetHashCode() => ((nuint)(Value)).GetHashCode();
+        public override int GetHashCode() => Value.GetHashCode();
+
+        public override string ToString() => Value.ToString();
+
     }
 }

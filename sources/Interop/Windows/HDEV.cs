@@ -8,70 +8,74 @@ namespace TerraFX.Interop
     {
         public readonly nint Value;
 
-        public static HDEV NULL => (HDEV)(0);
-
-        public HDEV(int value)
-        {
-            Value = ((nint)(value));
-        }
-
-        public HDEV(uint value)
-        {
-            Value = ((nint)(value));
-        }
-
         public HDEV(nint value)
         {
-            Value = ((nint)(value));
+            Value = value;
         }
 
-        public HDEV(nuint value)
-        {
-            Value = ((nint)(value));
-        }
+        public static HDEV INVALID_HANDLE_VALUE => new HDEV(-1);
 
-        public HDEV(void* value)
-        {
-            Value = ((nint)(value));
-        }
-
-        public HDEV(HANDLE value)
-        {
-            Value = value.Value;
-        }
+        public static HDEV NULL => new HDEV(0);
 
         public static bool operator ==(HDEV left, HDEV right) => left.Value == right.Value;
 
         public static bool operator !=(HDEV left, HDEV right) => left.Value != right.Value;
 
-        public static explicit operator HDEV(int value) => new HDEV(value);
-
-        public static explicit operator HDEV(uint value) => new HDEV(value);
-
-        public static explicit operator HDEV(nint value) => new HDEV(value);
-
-        public static explicit operator HDEV(nuint value) => new HDEV(value);
-
-        public static explicit operator HDEV(void* value) => new HDEV(value);
-
-        public static explicit operator HDEV(HANDLE value) => new HDEV(value);
-
-        public static explicit operator int(HDEV value) => (int)(value.Value);
-
-        public static explicit operator uint(HDEV value) => (uint)(value.Value);
-
-        public static implicit operator nint(HDEV value) => (nint)(value.Value);
-
-        public static implicit operator nuint(HDEV value) => (nuint)(value.Value);
+        public static explicit operator HDEV(void* value) => new HDEV((nint)(value));
 
         public static implicit operator void*(HDEV value) => (void*)(value.Value);
 
-        public static implicit operator HANDLE(HDEV value) => (HANDLE)(value.Value);
+        public static explicit operator HDEV(HANDLE value) => new HDEV(value);
+
+        public static implicit operator HANDLE(HDEV value) => new HDEV(value);
+
+        public static explicit operator HDEV(byte value) => new HDEV((nint)(value));
+
+        public static implicit operator byte(HDEV value) => (byte)(value.Value);
+
+        public static explicit operator HDEV(short value) => new HDEV((nint)(value));
+
+        public static implicit operator short(HDEV value) => (short)(value.Value);
+
+        public static explicit operator HDEV(int value) => new HDEV((nint)(value));
+
+        public static implicit operator int(HDEV value) => (int)(value.Value);
+
+        public static explicit operator HDEV(long value) => new HDEV((nint)(value));
+
+        public static explicit operator long(HDEV value) => (long)(value.Value);
+
+        public static explicit operator HDEV(nint value) => new HDEV((nint)(value));
+
+        public static implicit operator nint(HDEV value) => (nint)(value.Value);
+
+        public static explicit operator HDEV(sbyte value) => new HDEV((nint)(value));
+
+        public static implicit operator sbyte(HDEV value) => (sbyte)(value.Value);
+
+        public static explicit operator HDEV(ushort value) => new HDEV((nint)(value));
+
+        public static implicit operator ushort(HDEV value) => (ushort)(value.Value);
+
+        public static explicit operator HDEV(uint value) => new HDEV((nint)(value));
+
+        public static implicit operator uint(HDEV value) => (uint)(value.Value);
+
+        public static explicit operator HDEV(ulong value) => new HDEV((nint)(value));
+
+        public static explicit operator ulong(HDEV value) => (ulong)(value.Value);
+
+        public static explicit operator HDEV(nuint value) => new HDEV((nint)(value));
+
+        public static explicit operator nuint(HDEV value) => (nuint)(value.Value);
 
         public override bool Equals(object? obj) => (obj is HDEV other) && Equals(other);
 
         public bool Equals(HDEV other) => (this == other);
 
-        public override int GetHashCode() => ((nuint)(Value)).GetHashCode();
+        public override int GetHashCode() => Value.GetHashCode();
+
+        public override string ToString() => Value.ToString();
+
     }
 }

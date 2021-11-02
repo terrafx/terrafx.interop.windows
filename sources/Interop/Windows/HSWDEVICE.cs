@@ -8,70 +8,74 @@ namespace TerraFX.Interop
     {
         public readonly nint Value;
 
-        public static HSWDEVICE NULL => (HSWDEVICE)(0);
-
-        public HSWDEVICE(int value)
-        {
-            Value = ((nint)(value));
-        }
-
-        public HSWDEVICE(uint value)
-        {
-            Value = ((nint)(value));
-        }
-
         public HSWDEVICE(nint value)
         {
-            Value = ((nint)(value));
+            Value = value;
         }
 
-        public HSWDEVICE(nuint value)
-        {
-            Value = ((nint)(value));
-        }
+        public static HSWDEVICE INVALID_HANDLE_VALUE => new HSWDEVICE(-1);
 
-        public HSWDEVICE(void* value)
-        {
-            Value = ((nint)(value));
-        }
-
-        public HSWDEVICE(HANDLE value)
-        {
-            Value = value.Value;
-        }
+        public static HSWDEVICE NULL => new HSWDEVICE(0);
 
         public static bool operator ==(HSWDEVICE left, HSWDEVICE right) => left.Value == right.Value;
 
         public static bool operator !=(HSWDEVICE left, HSWDEVICE right) => left.Value != right.Value;
 
-        public static explicit operator HSWDEVICE(int value) => new HSWDEVICE(value);
-
-        public static explicit operator HSWDEVICE(uint value) => new HSWDEVICE(value);
-
-        public static explicit operator HSWDEVICE(nint value) => new HSWDEVICE(value);
-
-        public static explicit operator HSWDEVICE(nuint value) => new HSWDEVICE(value);
-
-        public static explicit operator HSWDEVICE(void* value) => new HSWDEVICE(value);
-
-        public static explicit operator HSWDEVICE(HANDLE value) => new HSWDEVICE(value);
-
-        public static explicit operator int(HSWDEVICE value) => (int)(value.Value);
-
-        public static explicit operator uint(HSWDEVICE value) => (uint)(value.Value);
-
-        public static implicit operator nint(HSWDEVICE value) => (nint)(value.Value);
-
-        public static implicit operator nuint(HSWDEVICE value) => (nuint)(value.Value);
+        public static explicit operator HSWDEVICE(void* value) => new HSWDEVICE((nint)(value));
 
         public static implicit operator void*(HSWDEVICE value) => (void*)(value.Value);
 
-        public static implicit operator HANDLE(HSWDEVICE value) => (HANDLE)(value.Value);
+        public static explicit operator HSWDEVICE(HANDLE value) => new HSWDEVICE(value);
+
+        public static implicit operator HANDLE(HSWDEVICE value) => new HSWDEVICE(value);
+
+        public static explicit operator HSWDEVICE(byte value) => new HSWDEVICE((nint)(value));
+
+        public static implicit operator byte(HSWDEVICE value) => (byte)(value.Value);
+
+        public static explicit operator HSWDEVICE(short value) => new HSWDEVICE((nint)(value));
+
+        public static implicit operator short(HSWDEVICE value) => (short)(value.Value);
+
+        public static explicit operator HSWDEVICE(int value) => new HSWDEVICE((nint)(value));
+
+        public static implicit operator int(HSWDEVICE value) => (int)(value.Value);
+
+        public static explicit operator HSWDEVICE(long value) => new HSWDEVICE((nint)(value));
+
+        public static explicit operator long(HSWDEVICE value) => (long)(value.Value);
+
+        public static explicit operator HSWDEVICE(nint value) => new HSWDEVICE((nint)(value));
+
+        public static implicit operator nint(HSWDEVICE value) => (nint)(value.Value);
+
+        public static explicit operator HSWDEVICE(sbyte value) => new HSWDEVICE((nint)(value));
+
+        public static implicit operator sbyte(HSWDEVICE value) => (sbyte)(value.Value);
+
+        public static explicit operator HSWDEVICE(ushort value) => new HSWDEVICE((nint)(value));
+
+        public static implicit operator ushort(HSWDEVICE value) => (ushort)(value.Value);
+
+        public static explicit operator HSWDEVICE(uint value) => new HSWDEVICE((nint)(value));
+
+        public static implicit operator uint(HSWDEVICE value) => (uint)(value.Value);
+
+        public static explicit operator HSWDEVICE(ulong value) => new HSWDEVICE((nint)(value));
+
+        public static explicit operator ulong(HSWDEVICE value) => (ulong)(value.Value);
+
+        public static explicit operator HSWDEVICE(nuint value) => new HSWDEVICE((nint)(value));
+
+        public static explicit operator nuint(HSWDEVICE value) => (nuint)(value.Value);
 
         public override bool Equals(object? obj) => (obj is HSWDEVICE other) && Equals(other);
 
         public bool Equals(HSWDEVICE other) => (this == other);
 
-        public override int GetHashCode() => ((nuint)(Value)).GetHashCode();
+        public override int GetHashCode() => Value.GetHashCode();
+
+        public override string ToString() => Value.ToString();
+
     }
 }

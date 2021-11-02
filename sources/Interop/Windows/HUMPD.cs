@@ -8,70 +8,74 @@ namespace TerraFX.Interop
     {
         public readonly nint Value;
 
-        public static HUMPD NULL => (HUMPD)(0);
-
-        public HUMPD(int value)
-        {
-            Value = ((nint)(value));
-        }
-
-        public HUMPD(uint value)
-        {
-            Value = ((nint)(value));
-        }
-
         public HUMPD(nint value)
         {
-            Value = ((nint)(value));
+            Value = value;
         }
 
-        public HUMPD(nuint value)
-        {
-            Value = ((nint)(value));
-        }
+        public static HUMPD INVALID_HANDLE_VALUE => new HUMPD(-1);
 
-        public HUMPD(void* value)
-        {
-            Value = ((nint)(value));
-        }
-
-        public HUMPD(HANDLE value)
-        {
-            Value = value.Value;
-        }
+        public static HUMPD NULL => new HUMPD(0);
 
         public static bool operator ==(HUMPD left, HUMPD right) => left.Value == right.Value;
 
         public static bool operator !=(HUMPD left, HUMPD right) => left.Value != right.Value;
 
-        public static explicit operator HUMPD(int value) => new HUMPD(value);
-
-        public static explicit operator HUMPD(uint value) => new HUMPD(value);
-
-        public static explicit operator HUMPD(nint value) => new HUMPD(value);
-
-        public static explicit operator HUMPD(nuint value) => new HUMPD(value);
-
-        public static explicit operator HUMPD(void* value) => new HUMPD(value);
-
-        public static explicit operator HUMPD(HANDLE value) => new HUMPD(value);
-
-        public static explicit operator int(HUMPD value) => (int)(value.Value);
-
-        public static explicit operator uint(HUMPD value) => (uint)(value.Value);
-
-        public static implicit operator nint(HUMPD value) => (nint)(value.Value);
-
-        public static implicit operator nuint(HUMPD value) => (nuint)(value.Value);
+        public static explicit operator HUMPD(void* value) => new HUMPD((nint)(value));
 
         public static implicit operator void*(HUMPD value) => (void*)(value.Value);
 
-        public static implicit operator HANDLE(HUMPD value) => (HANDLE)(value.Value);
+        public static explicit operator HUMPD(HANDLE value) => new HUMPD(value);
+
+        public static implicit operator HANDLE(HUMPD value) => new HUMPD(value);
+
+        public static explicit operator HUMPD(byte value) => new HUMPD((nint)(value));
+
+        public static implicit operator byte(HUMPD value) => (byte)(value.Value);
+
+        public static explicit operator HUMPD(short value) => new HUMPD((nint)(value));
+
+        public static implicit operator short(HUMPD value) => (short)(value.Value);
+
+        public static explicit operator HUMPD(int value) => new HUMPD((nint)(value));
+
+        public static implicit operator int(HUMPD value) => (int)(value.Value);
+
+        public static explicit operator HUMPD(long value) => new HUMPD((nint)(value));
+
+        public static explicit operator long(HUMPD value) => (long)(value.Value);
+
+        public static explicit operator HUMPD(nint value) => new HUMPD((nint)(value));
+
+        public static implicit operator nint(HUMPD value) => (nint)(value.Value);
+
+        public static explicit operator HUMPD(sbyte value) => new HUMPD((nint)(value));
+
+        public static implicit operator sbyte(HUMPD value) => (sbyte)(value.Value);
+
+        public static explicit operator HUMPD(ushort value) => new HUMPD((nint)(value));
+
+        public static implicit operator ushort(HUMPD value) => (ushort)(value.Value);
+
+        public static explicit operator HUMPD(uint value) => new HUMPD((nint)(value));
+
+        public static implicit operator uint(HUMPD value) => (uint)(value.Value);
+
+        public static explicit operator HUMPD(ulong value) => new HUMPD((nint)(value));
+
+        public static explicit operator ulong(HUMPD value) => (ulong)(value.Value);
+
+        public static explicit operator HUMPD(nuint value) => new HUMPD((nint)(value));
+
+        public static explicit operator nuint(HUMPD value) => (nuint)(value.Value);
 
         public override bool Equals(object? obj) => (obj is HUMPD other) && Equals(other);
 
         public bool Equals(HUMPD other) => (this == other);
 
-        public override int GetHashCode() => ((nuint)(Value)).GetHashCode();
+        public override int GetHashCode() => Value.GetHashCode();
+
+        public override string ToString() => Value.ToString();
+
     }
 }

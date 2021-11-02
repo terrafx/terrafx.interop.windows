@@ -8,70 +8,74 @@ namespace TerraFX.Interop
     {
         public readonly nint Value;
 
-        public static HAMSICONTEXT NULL => (HAMSICONTEXT)(0);
-
-        public HAMSICONTEXT(int value)
-        {
-            Value = ((nint)(value));
-        }
-
-        public HAMSICONTEXT(uint value)
-        {
-            Value = ((nint)(value));
-        }
-
         public HAMSICONTEXT(nint value)
         {
-            Value = ((nint)(value));
+            Value = value;
         }
 
-        public HAMSICONTEXT(nuint value)
-        {
-            Value = ((nint)(value));
-        }
+        public static HAMSICONTEXT INVALID_HANDLE_VALUE => new HAMSICONTEXT(-1);
 
-        public HAMSICONTEXT(void* value)
-        {
-            Value = ((nint)(value));
-        }
-
-        public HAMSICONTEXT(HANDLE value)
-        {
-            Value = value.Value;
-        }
+        public static HAMSICONTEXT NULL => new HAMSICONTEXT(0);
 
         public static bool operator ==(HAMSICONTEXT left, HAMSICONTEXT right) => left.Value == right.Value;
 
         public static bool operator !=(HAMSICONTEXT left, HAMSICONTEXT right) => left.Value != right.Value;
 
-        public static explicit operator HAMSICONTEXT(int value) => new HAMSICONTEXT(value);
-
-        public static explicit operator HAMSICONTEXT(uint value) => new HAMSICONTEXT(value);
-
-        public static explicit operator HAMSICONTEXT(nint value) => new HAMSICONTEXT(value);
-
-        public static explicit operator HAMSICONTEXT(nuint value) => new HAMSICONTEXT(value);
-
-        public static explicit operator HAMSICONTEXT(void* value) => new HAMSICONTEXT(value);
-
-        public static explicit operator HAMSICONTEXT(HANDLE value) => new HAMSICONTEXT(value);
-
-        public static explicit operator int(HAMSICONTEXT value) => (int)(value.Value);
-
-        public static explicit operator uint(HAMSICONTEXT value) => (uint)(value.Value);
-
-        public static implicit operator nint(HAMSICONTEXT value) => (nint)(value.Value);
-
-        public static implicit operator nuint(HAMSICONTEXT value) => (nuint)(value.Value);
+        public static explicit operator HAMSICONTEXT(void* value) => new HAMSICONTEXT((nint)(value));
 
         public static implicit operator void*(HAMSICONTEXT value) => (void*)(value.Value);
 
-        public static implicit operator HANDLE(HAMSICONTEXT value) => (HANDLE)(value.Value);
+        public static explicit operator HAMSICONTEXT(HANDLE value) => new HAMSICONTEXT(value);
+
+        public static implicit operator HANDLE(HAMSICONTEXT value) => new HAMSICONTEXT(value);
+
+        public static explicit operator HAMSICONTEXT(byte value) => new HAMSICONTEXT((nint)(value));
+
+        public static implicit operator byte(HAMSICONTEXT value) => (byte)(value.Value);
+
+        public static explicit operator HAMSICONTEXT(short value) => new HAMSICONTEXT((nint)(value));
+
+        public static implicit operator short(HAMSICONTEXT value) => (short)(value.Value);
+
+        public static explicit operator HAMSICONTEXT(int value) => new HAMSICONTEXT((nint)(value));
+
+        public static implicit operator int(HAMSICONTEXT value) => (int)(value.Value);
+
+        public static explicit operator HAMSICONTEXT(long value) => new HAMSICONTEXT((nint)(value));
+
+        public static explicit operator long(HAMSICONTEXT value) => (long)(value.Value);
+
+        public static explicit operator HAMSICONTEXT(nint value) => new HAMSICONTEXT((nint)(value));
+
+        public static implicit operator nint(HAMSICONTEXT value) => (nint)(value.Value);
+
+        public static explicit operator HAMSICONTEXT(sbyte value) => new HAMSICONTEXT((nint)(value));
+
+        public static implicit operator sbyte(HAMSICONTEXT value) => (sbyte)(value.Value);
+
+        public static explicit operator HAMSICONTEXT(ushort value) => new HAMSICONTEXT((nint)(value));
+
+        public static implicit operator ushort(HAMSICONTEXT value) => (ushort)(value.Value);
+
+        public static explicit operator HAMSICONTEXT(uint value) => new HAMSICONTEXT((nint)(value));
+
+        public static implicit operator uint(HAMSICONTEXT value) => (uint)(value.Value);
+
+        public static explicit operator HAMSICONTEXT(ulong value) => new HAMSICONTEXT((nint)(value));
+
+        public static explicit operator ulong(HAMSICONTEXT value) => (ulong)(value.Value);
+
+        public static explicit operator HAMSICONTEXT(nuint value) => new HAMSICONTEXT((nint)(value));
+
+        public static explicit operator nuint(HAMSICONTEXT value) => (nuint)(value.Value);
 
         public override bool Equals(object? obj) => (obj is HAMSICONTEXT other) && Equals(other);
 
         public bool Equals(HAMSICONTEXT other) => (this == other);
 
-        public override int GetHashCode() => ((nuint)(Value)).GetHashCode();
+        public override int GetHashCode() => Value.GetHashCode();
+
+        public override string ToString() => Value.ToString();
+
     }
 }

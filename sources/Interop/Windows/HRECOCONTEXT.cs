@@ -8,70 +8,74 @@ namespace TerraFX.Interop
     {
         public readonly nint Value;
 
-        public static HRECOCONTEXT NULL => (HRECOCONTEXT)(0);
-
-        public HRECOCONTEXT(int value)
-        {
-            Value = ((nint)(value));
-        }
-
-        public HRECOCONTEXT(uint value)
-        {
-            Value = ((nint)(value));
-        }
-
         public HRECOCONTEXT(nint value)
         {
-            Value = ((nint)(value));
+            Value = value;
         }
 
-        public HRECOCONTEXT(nuint value)
-        {
-            Value = ((nint)(value));
-        }
+        public static HRECOCONTEXT INVALID_HANDLE_VALUE => new HRECOCONTEXT(-1);
 
-        public HRECOCONTEXT(void* value)
-        {
-            Value = ((nint)(value));
-        }
-
-        public HRECOCONTEXT(HANDLE value)
-        {
-            Value = value.Value;
-        }
+        public static HRECOCONTEXT NULL => new HRECOCONTEXT(0);
 
         public static bool operator ==(HRECOCONTEXT left, HRECOCONTEXT right) => left.Value == right.Value;
 
         public static bool operator !=(HRECOCONTEXT left, HRECOCONTEXT right) => left.Value != right.Value;
 
-        public static explicit operator HRECOCONTEXT(int value) => new HRECOCONTEXT(value);
-
-        public static explicit operator HRECOCONTEXT(uint value) => new HRECOCONTEXT(value);
-
-        public static explicit operator HRECOCONTEXT(nint value) => new HRECOCONTEXT(value);
-
-        public static explicit operator HRECOCONTEXT(nuint value) => new HRECOCONTEXT(value);
-
-        public static explicit operator HRECOCONTEXT(void* value) => new HRECOCONTEXT(value);
-
-        public static explicit operator HRECOCONTEXT(HANDLE value) => new HRECOCONTEXT(value);
-
-        public static explicit operator int(HRECOCONTEXT value) => (int)(value.Value);
-
-        public static explicit operator uint(HRECOCONTEXT value) => (uint)(value.Value);
-
-        public static implicit operator nint(HRECOCONTEXT value) => (nint)(value.Value);
-
-        public static implicit operator nuint(HRECOCONTEXT value) => (nuint)(value.Value);
+        public static explicit operator HRECOCONTEXT(void* value) => new HRECOCONTEXT((nint)(value));
 
         public static implicit operator void*(HRECOCONTEXT value) => (void*)(value.Value);
 
-        public static implicit operator HANDLE(HRECOCONTEXT value) => (HANDLE)(value.Value);
+        public static explicit operator HRECOCONTEXT(HANDLE value) => new HRECOCONTEXT(value);
+
+        public static implicit operator HANDLE(HRECOCONTEXT value) => new HRECOCONTEXT(value);
+
+        public static explicit operator HRECOCONTEXT(byte value) => new HRECOCONTEXT((nint)(value));
+
+        public static implicit operator byte(HRECOCONTEXT value) => (byte)(value.Value);
+
+        public static explicit operator HRECOCONTEXT(short value) => new HRECOCONTEXT((nint)(value));
+
+        public static implicit operator short(HRECOCONTEXT value) => (short)(value.Value);
+
+        public static explicit operator HRECOCONTEXT(int value) => new HRECOCONTEXT((nint)(value));
+
+        public static implicit operator int(HRECOCONTEXT value) => (int)(value.Value);
+
+        public static explicit operator HRECOCONTEXT(long value) => new HRECOCONTEXT((nint)(value));
+
+        public static explicit operator long(HRECOCONTEXT value) => (long)(value.Value);
+
+        public static explicit operator HRECOCONTEXT(nint value) => new HRECOCONTEXT((nint)(value));
+
+        public static implicit operator nint(HRECOCONTEXT value) => (nint)(value.Value);
+
+        public static explicit operator HRECOCONTEXT(sbyte value) => new HRECOCONTEXT((nint)(value));
+
+        public static implicit operator sbyte(HRECOCONTEXT value) => (sbyte)(value.Value);
+
+        public static explicit operator HRECOCONTEXT(ushort value) => new HRECOCONTEXT((nint)(value));
+
+        public static implicit operator ushort(HRECOCONTEXT value) => (ushort)(value.Value);
+
+        public static explicit operator HRECOCONTEXT(uint value) => new HRECOCONTEXT((nint)(value));
+
+        public static implicit operator uint(HRECOCONTEXT value) => (uint)(value.Value);
+
+        public static explicit operator HRECOCONTEXT(ulong value) => new HRECOCONTEXT((nint)(value));
+
+        public static explicit operator ulong(HRECOCONTEXT value) => (ulong)(value.Value);
+
+        public static explicit operator HRECOCONTEXT(nuint value) => new HRECOCONTEXT((nint)(value));
+
+        public static explicit operator nuint(HRECOCONTEXT value) => (nuint)(value.Value);
 
         public override bool Equals(object? obj) => (obj is HRECOCONTEXT other) && Equals(other);
 
         public bool Equals(HRECOCONTEXT other) => (this == other);
 
-        public override int GetHashCode() => ((nuint)(Value)).GetHashCode();
+        public override int GetHashCode() => Value.GetHashCode();
+
+        public override string ToString() => Value.ToString();
+
     }
 }

@@ -8,70 +8,74 @@ namespace TerraFX.Interop
     {
         public readonly nint Value;
 
-        public static CIMFS_STREAM_HANDLE NULL => (CIMFS_STREAM_HANDLE)(0);
-
-        public CIMFS_STREAM_HANDLE(int value)
-        {
-            Value = ((nint)(value));
-        }
-
-        public CIMFS_STREAM_HANDLE(uint value)
-        {
-            Value = ((nint)(value));
-        }
-
         public CIMFS_STREAM_HANDLE(nint value)
         {
-            Value = ((nint)(value));
+            Value = value;
         }
 
-        public CIMFS_STREAM_HANDLE(nuint value)
-        {
-            Value = ((nint)(value));
-        }
+        public static CIMFS_STREAM_HANDLE INVALID_HANDLE_VALUE => new CIMFS_STREAM_HANDLE(-1);
 
-        public CIMFS_STREAM_HANDLE(void* value)
-        {
-            Value = ((nint)(value));
-        }
-
-        public CIMFS_STREAM_HANDLE(HANDLE value)
-        {
-            Value = value.Value;
-        }
+        public static CIMFS_STREAM_HANDLE NULL => new CIMFS_STREAM_HANDLE(0);
 
         public static bool operator ==(CIMFS_STREAM_HANDLE left, CIMFS_STREAM_HANDLE right) => left.Value == right.Value;
 
         public static bool operator !=(CIMFS_STREAM_HANDLE left, CIMFS_STREAM_HANDLE right) => left.Value != right.Value;
 
-        public static explicit operator CIMFS_STREAM_HANDLE(int value) => new CIMFS_STREAM_HANDLE(value);
-
-        public static explicit operator CIMFS_STREAM_HANDLE(uint value) => new CIMFS_STREAM_HANDLE(value);
-
-        public static explicit operator CIMFS_STREAM_HANDLE(nint value) => new CIMFS_STREAM_HANDLE(value);
-
-        public static explicit operator CIMFS_STREAM_HANDLE(nuint value) => new CIMFS_STREAM_HANDLE(value);
-
-        public static explicit operator CIMFS_STREAM_HANDLE(void* value) => new CIMFS_STREAM_HANDLE(value);
-
-        public static explicit operator CIMFS_STREAM_HANDLE(HANDLE value) => new CIMFS_STREAM_HANDLE(value);
-
-        public static explicit operator int(CIMFS_STREAM_HANDLE value) => (int)(value.Value);
-
-        public static explicit operator uint(CIMFS_STREAM_HANDLE value) => (uint)(value.Value);
-
-        public static implicit operator nint(CIMFS_STREAM_HANDLE value) => (nint)(value.Value);
-
-        public static implicit operator nuint(CIMFS_STREAM_HANDLE value) => (nuint)(value.Value);
+        public static explicit operator CIMFS_STREAM_HANDLE(void* value) => new CIMFS_STREAM_HANDLE((nint)(value));
 
         public static implicit operator void*(CIMFS_STREAM_HANDLE value) => (void*)(value.Value);
 
-        public static implicit operator HANDLE(CIMFS_STREAM_HANDLE value) => (HANDLE)(value.Value);
+        public static explicit operator CIMFS_STREAM_HANDLE(HANDLE value) => new CIMFS_STREAM_HANDLE(value);
+
+        public static implicit operator HANDLE(CIMFS_STREAM_HANDLE value) => new CIMFS_STREAM_HANDLE(value);
+
+        public static explicit operator CIMFS_STREAM_HANDLE(byte value) => new CIMFS_STREAM_HANDLE((nint)(value));
+
+        public static implicit operator byte(CIMFS_STREAM_HANDLE value) => (byte)(value.Value);
+
+        public static explicit operator CIMFS_STREAM_HANDLE(short value) => new CIMFS_STREAM_HANDLE((nint)(value));
+
+        public static implicit operator short(CIMFS_STREAM_HANDLE value) => (short)(value.Value);
+
+        public static explicit operator CIMFS_STREAM_HANDLE(int value) => new CIMFS_STREAM_HANDLE((nint)(value));
+
+        public static implicit operator int(CIMFS_STREAM_HANDLE value) => (int)(value.Value);
+
+        public static explicit operator CIMFS_STREAM_HANDLE(long value) => new CIMFS_STREAM_HANDLE((nint)(value));
+
+        public static explicit operator long(CIMFS_STREAM_HANDLE value) => (long)(value.Value);
+
+        public static explicit operator CIMFS_STREAM_HANDLE(nint value) => new CIMFS_STREAM_HANDLE((nint)(value));
+
+        public static implicit operator nint(CIMFS_STREAM_HANDLE value) => (nint)(value.Value);
+
+        public static explicit operator CIMFS_STREAM_HANDLE(sbyte value) => new CIMFS_STREAM_HANDLE((nint)(value));
+
+        public static implicit operator sbyte(CIMFS_STREAM_HANDLE value) => (sbyte)(value.Value);
+
+        public static explicit operator CIMFS_STREAM_HANDLE(ushort value) => new CIMFS_STREAM_HANDLE((nint)(value));
+
+        public static implicit operator ushort(CIMFS_STREAM_HANDLE value) => (ushort)(value.Value);
+
+        public static explicit operator CIMFS_STREAM_HANDLE(uint value) => new CIMFS_STREAM_HANDLE((nint)(value));
+
+        public static implicit operator uint(CIMFS_STREAM_HANDLE value) => (uint)(value.Value);
+
+        public static explicit operator CIMFS_STREAM_HANDLE(ulong value) => new CIMFS_STREAM_HANDLE((nint)(value));
+
+        public static explicit operator ulong(CIMFS_STREAM_HANDLE value) => (ulong)(value.Value);
+
+        public static explicit operator CIMFS_STREAM_HANDLE(nuint value) => new CIMFS_STREAM_HANDLE((nint)(value));
+
+        public static explicit operator nuint(CIMFS_STREAM_HANDLE value) => (nuint)(value.Value);
 
         public override bool Equals(object? obj) => (obj is CIMFS_STREAM_HANDLE other) && Equals(other);
 
         public bool Equals(CIMFS_STREAM_HANDLE other) => (this == other);
 
-        public override int GetHashCode() => ((nuint)(Value)).GetHashCode();
+        public override int GetHashCode() => Value.GetHashCode();
+
+        public override string ToString() => Value.ToString();
+
     }
 }

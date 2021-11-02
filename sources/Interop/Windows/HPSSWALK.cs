@@ -8,70 +8,74 @@ namespace TerraFX.Interop
     {
         public readonly nint Value;
 
-        public static HPSSWALK NULL => (HPSSWALK)(0);
-
-        public HPSSWALK(int value)
-        {
-            Value = ((nint)(value));
-        }
-
-        public HPSSWALK(uint value)
-        {
-            Value = ((nint)(value));
-        }
-
         public HPSSWALK(nint value)
         {
-            Value = ((nint)(value));
+            Value = value;
         }
 
-        public HPSSWALK(nuint value)
-        {
-            Value = ((nint)(value));
-        }
+        public static HPSSWALK INVALID_HANDLE_VALUE => new HPSSWALK(-1);
 
-        public HPSSWALK(void* value)
-        {
-            Value = ((nint)(value));
-        }
-
-        public HPSSWALK(HANDLE value)
-        {
-            Value = value.Value;
-        }
+        public static HPSSWALK NULL => new HPSSWALK(0);
 
         public static bool operator ==(HPSSWALK left, HPSSWALK right) => left.Value == right.Value;
 
         public static bool operator !=(HPSSWALK left, HPSSWALK right) => left.Value != right.Value;
 
-        public static explicit operator HPSSWALK(int value) => new HPSSWALK(value);
-
-        public static explicit operator HPSSWALK(uint value) => new HPSSWALK(value);
-
-        public static explicit operator HPSSWALK(nint value) => new HPSSWALK(value);
-
-        public static explicit operator HPSSWALK(nuint value) => new HPSSWALK(value);
-
-        public static explicit operator HPSSWALK(void* value) => new HPSSWALK(value);
-
-        public static explicit operator HPSSWALK(HANDLE value) => new HPSSWALK(value);
-
-        public static explicit operator int(HPSSWALK value) => (int)(value.Value);
-
-        public static explicit operator uint(HPSSWALK value) => (uint)(value.Value);
-
-        public static implicit operator nint(HPSSWALK value) => (nint)(value.Value);
-
-        public static implicit operator nuint(HPSSWALK value) => (nuint)(value.Value);
+        public static explicit operator HPSSWALK(void* value) => new HPSSWALK((nint)(value));
 
         public static implicit operator void*(HPSSWALK value) => (void*)(value.Value);
 
-        public static implicit operator HANDLE(HPSSWALK value) => (HANDLE)(value.Value);
+        public static explicit operator HPSSWALK(HANDLE value) => new HPSSWALK(value);
+
+        public static implicit operator HANDLE(HPSSWALK value) => new HPSSWALK(value);
+
+        public static explicit operator HPSSWALK(byte value) => new HPSSWALK((nint)(value));
+
+        public static implicit operator byte(HPSSWALK value) => (byte)(value.Value);
+
+        public static explicit operator HPSSWALK(short value) => new HPSSWALK((nint)(value));
+
+        public static implicit operator short(HPSSWALK value) => (short)(value.Value);
+
+        public static explicit operator HPSSWALK(int value) => new HPSSWALK((nint)(value));
+
+        public static implicit operator int(HPSSWALK value) => (int)(value.Value);
+
+        public static explicit operator HPSSWALK(long value) => new HPSSWALK((nint)(value));
+
+        public static explicit operator long(HPSSWALK value) => (long)(value.Value);
+
+        public static explicit operator HPSSWALK(nint value) => new HPSSWALK((nint)(value));
+
+        public static implicit operator nint(HPSSWALK value) => (nint)(value.Value);
+
+        public static explicit operator HPSSWALK(sbyte value) => new HPSSWALK((nint)(value));
+
+        public static implicit operator sbyte(HPSSWALK value) => (sbyte)(value.Value);
+
+        public static explicit operator HPSSWALK(ushort value) => new HPSSWALK((nint)(value));
+
+        public static implicit operator ushort(HPSSWALK value) => (ushort)(value.Value);
+
+        public static explicit operator HPSSWALK(uint value) => new HPSSWALK((nint)(value));
+
+        public static implicit operator uint(HPSSWALK value) => (uint)(value.Value);
+
+        public static explicit operator HPSSWALK(ulong value) => new HPSSWALK((nint)(value));
+
+        public static explicit operator ulong(HPSSWALK value) => (ulong)(value.Value);
+
+        public static explicit operator HPSSWALK(nuint value) => new HPSSWALK((nint)(value));
+
+        public static explicit operator nuint(HPSSWALK value) => (nuint)(value.Value);
 
         public override bool Equals(object? obj) => (obj is HPSSWALK other) && Equals(other);
 
         public bool Equals(HPSSWALK other) => (this == other);
 
-        public override int GetHashCode() => ((nuint)(Value)).GetHashCode();
+        public override int GetHashCode() => Value.GetHashCode();
+
+        public override string ToString() => Value.ToString();
+
     }
 }

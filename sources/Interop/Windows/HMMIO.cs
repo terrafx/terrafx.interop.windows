@@ -8,70 +8,74 @@ namespace TerraFX.Interop
     {
         public readonly nint Value;
 
-        public static HMMIO NULL => (HMMIO)(0);
-
-        public HMMIO(int value)
-        {
-            Value = ((nint)(value));
-        }
-
-        public HMMIO(uint value)
-        {
-            Value = ((nint)(value));
-        }
-
         public HMMIO(nint value)
         {
-            Value = ((nint)(value));
+            Value = value;
         }
 
-        public HMMIO(nuint value)
-        {
-            Value = ((nint)(value));
-        }
+        public static HMMIO INVALID_HANDLE_VALUE => new HMMIO(-1);
 
-        public HMMIO(void* value)
-        {
-            Value = ((nint)(value));
-        }
-
-        public HMMIO(HANDLE value)
-        {
-            Value = value.Value;
-        }
+        public static HMMIO NULL => new HMMIO(0);
 
         public static bool operator ==(HMMIO left, HMMIO right) => left.Value == right.Value;
 
         public static bool operator !=(HMMIO left, HMMIO right) => left.Value != right.Value;
 
-        public static explicit operator HMMIO(int value) => new HMMIO(value);
-
-        public static explicit operator HMMIO(uint value) => new HMMIO(value);
-
-        public static explicit operator HMMIO(nint value) => new HMMIO(value);
-
-        public static explicit operator HMMIO(nuint value) => new HMMIO(value);
-
-        public static explicit operator HMMIO(void* value) => new HMMIO(value);
-
-        public static explicit operator HMMIO(HANDLE value) => new HMMIO(value);
-
-        public static explicit operator int(HMMIO value) => (int)(value.Value);
-
-        public static explicit operator uint(HMMIO value) => (uint)(value.Value);
-
-        public static implicit operator nint(HMMIO value) => (nint)(value.Value);
-
-        public static implicit operator nuint(HMMIO value) => (nuint)(value.Value);
+        public static explicit operator HMMIO(void* value) => new HMMIO((nint)(value));
 
         public static implicit operator void*(HMMIO value) => (void*)(value.Value);
 
-        public static implicit operator HANDLE(HMMIO value) => (HANDLE)(value.Value);
+        public static explicit operator HMMIO(HANDLE value) => new HMMIO(value);
+
+        public static implicit operator HANDLE(HMMIO value) => new HMMIO(value);
+
+        public static explicit operator HMMIO(byte value) => new HMMIO((nint)(value));
+
+        public static implicit operator byte(HMMIO value) => (byte)(value.Value);
+
+        public static explicit operator HMMIO(short value) => new HMMIO((nint)(value));
+
+        public static implicit operator short(HMMIO value) => (short)(value.Value);
+
+        public static explicit operator HMMIO(int value) => new HMMIO((nint)(value));
+
+        public static implicit operator int(HMMIO value) => (int)(value.Value);
+
+        public static explicit operator HMMIO(long value) => new HMMIO((nint)(value));
+
+        public static explicit operator long(HMMIO value) => (long)(value.Value);
+
+        public static explicit operator HMMIO(nint value) => new HMMIO((nint)(value));
+
+        public static implicit operator nint(HMMIO value) => (nint)(value.Value);
+
+        public static explicit operator HMMIO(sbyte value) => new HMMIO((nint)(value));
+
+        public static implicit operator sbyte(HMMIO value) => (sbyte)(value.Value);
+
+        public static explicit operator HMMIO(ushort value) => new HMMIO((nint)(value));
+
+        public static implicit operator ushort(HMMIO value) => (ushort)(value.Value);
+
+        public static explicit operator HMMIO(uint value) => new HMMIO((nint)(value));
+
+        public static implicit operator uint(HMMIO value) => (uint)(value.Value);
+
+        public static explicit operator HMMIO(ulong value) => new HMMIO((nint)(value));
+
+        public static explicit operator ulong(HMMIO value) => (ulong)(value.Value);
+
+        public static explicit operator HMMIO(nuint value) => new HMMIO((nint)(value));
+
+        public static explicit operator nuint(HMMIO value) => (nuint)(value.Value);
 
         public override bool Equals(object? obj) => (obj is HMMIO other) && Equals(other);
 
         public bool Equals(HMMIO other) => (this == other);
 
-        public override int GetHashCode() => ((nuint)(Value)).GetHashCode();
+        public override int GetHashCode() => Value.GetHashCode();
+
+        public override string ToString() => Value.ToString();
+
     }
 }

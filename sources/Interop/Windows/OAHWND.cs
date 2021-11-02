@@ -8,59 +8,68 @@ namespace TerraFX.Interop
     {
         public readonly nint Value;
 
-        public OAHWND(int value)
-        {
-            Value = ((nint)(value));
-        }
-
-        public OAHWND(uint value)
-        {
-            Value = ((nint)(value));
-        }
-
         public OAHWND(nint value)
         {
-            Value = ((nint)(value));
+            Value = value;
         }
 
-        public OAHWND(nuint value)
-        {
-            Value = ((nint)(value));
-        }
-
-        public OAHWND(void* value)
-        {
-            Value = ((nint)(value));
-        }
+        public static OAHWND NULL => new OAHWND(0);
 
         public static bool operator ==(OAHWND left, OAHWND right) => left.Value == right.Value;
 
         public static bool operator !=(OAHWND left, OAHWND right) => left.Value != right.Value;
 
-        public static explicit operator OAHWND(int value) => new OAHWND(value);
+        public static explicit operator OAHWND(void* value) => new OAHWND((nint)(value));
 
-        public static explicit operator OAHWND(uint value) => new OAHWND(value);
+        public static implicit operator void*(OAHWND value) => (void*)(value.Value);
 
-        public static explicit operator OAHWND(nint value) => new OAHWND(value);
+        public static explicit operator OAHWND(byte value) => new OAHWND((nint)(value));
 
-        public static explicit operator OAHWND(nuint value) => new OAHWND(value);
+        public static implicit operator byte(OAHWND value) => (byte)(value.Value);
 
-        public static explicit operator OAHWND(void* value) => new OAHWND(value);
+        public static explicit operator OAHWND(short value) => new OAHWND((nint)(value));
 
-        public static explicit operator int(OAHWND value) => (int)(value.Value);
+        public static implicit operator short(OAHWND value) => (short)(value.Value);
 
-        public static explicit operator uint(OAHWND value) => (uint)(value.Value);
+        public static explicit operator OAHWND(int value) => new OAHWND((nint)(value));
+
+        public static implicit operator int(OAHWND value) => (int)(value.Value);
+
+        public static explicit operator OAHWND(long value) => new OAHWND((nint)(value));
+
+        public static explicit operator long(OAHWND value) => (long)(value.Value);
+
+        public static explicit operator OAHWND(nint value) => new OAHWND((nint)(value));
 
         public static implicit operator nint(OAHWND value) => (nint)(value.Value);
 
-        public static implicit operator nuint(OAHWND value) => (nuint)(value.Value);
+        public static explicit operator OAHWND(sbyte value) => new OAHWND((nint)(value));
 
-        public static implicit operator void*(OAHWND value) => (void*)(value.Value);
+        public static implicit operator sbyte(OAHWND value) => (sbyte)(value.Value);
+
+        public static explicit operator OAHWND(ushort value) => new OAHWND((nint)(value));
+
+        public static implicit operator ushort(OAHWND value) => (ushort)(value.Value);
+
+        public static explicit operator OAHWND(uint value) => new OAHWND((nint)(value));
+
+        public static implicit operator uint(OAHWND value) => (uint)(value.Value);
+
+        public static explicit operator OAHWND(ulong value) => new OAHWND((nint)(value));
+
+        public static explicit operator ulong(OAHWND value) => (ulong)(value.Value);
+
+        public static explicit operator OAHWND(nuint value) => new OAHWND((nint)(value));
+
+        public static explicit operator nuint(OAHWND value) => (nuint)(value.Value);
 
         public override bool Equals(object? obj) => (obj is OAHWND other) && Equals(other);
 
         public bool Equals(OAHWND other) => (this == other);
 
-        public override int GetHashCode() => ((nuint)(Value)).GetHashCode();
+        public override int GetHashCode() => Value.GetHashCode();
+
+        public override string ToString() => Value.ToString();
+
     }
 }

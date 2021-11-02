@@ -8,70 +8,74 @@ namespace TerraFX.Interop
     {
         public readonly nint Value;
 
-        public static HGDIOBJ NULL => (HGDIOBJ)(0);
-
-        public HGDIOBJ(int value)
-        {
-            Value = ((nint)(value));
-        }
-
-        public HGDIOBJ(uint value)
-        {
-            Value = ((nint)(value));
-        }
-
         public HGDIOBJ(nint value)
         {
-            Value = ((nint)(value));
+            Value = value;
         }
 
-        public HGDIOBJ(nuint value)
-        {
-            Value = ((nint)(value));
-        }
+        public static HGDIOBJ INVALID_HANDLE_VALUE => new HGDIOBJ(-1);
 
-        public HGDIOBJ(void* value)
-        {
-            Value = ((nint)(value));
-        }
-
-        public HGDIOBJ(HANDLE value)
-        {
-            Value = value.Value;
-        }
+        public static HGDIOBJ NULL => new HGDIOBJ(0);
 
         public static bool operator ==(HGDIOBJ left, HGDIOBJ right) => left.Value == right.Value;
 
         public static bool operator !=(HGDIOBJ left, HGDIOBJ right) => left.Value != right.Value;
 
-        public static explicit operator HGDIOBJ(int value) => new HGDIOBJ(value);
-
-        public static explicit operator HGDIOBJ(uint value) => new HGDIOBJ(value);
-
-        public static explicit operator HGDIOBJ(nint value) => new HGDIOBJ(value);
-
-        public static explicit operator HGDIOBJ(nuint value) => new HGDIOBJ(value);
-
-        public static explicit operator HGDIOBJ(void* value) => new HGDIOBJ(value);
-
-        public static explicit operator HGDIOBJ(HANDLE value) => new HGDIOBJ(value);
-
-        public static explicit operator int(HGDIOBJ value) => (int)(value.Value);
-
-        public static explicit operator uint(HGDIOBJ value) => (uint)(value.Value);
-
-        public static implicit operator nint(HGDIOBJ value) => (nint)(value.Value);
-
-        public static implicit operator nuint(HGDIOBJ value) => (nuint)(value.Value);
+        public static explicit operator HGDIOBJ(void* value) => new HGDIOBJ((nint)(value));
 
         public static implicit operator void*(HGDIOBJ value) => (void*)(value.Value);
 
-        public static implicit operator HANDLE(HGDIOBJ value) => (HANDLE)(value.Value);
+        public static explicit operator HGDIOBJ(HANDLE value) => new HGDIOBJ(value);
+
+        public static implicit operator HANDLE(HGDIOBJ value) => new HGDIOBJ(value);
+
+        public static explicit operator HGDIOBJ(byte value) => new HGDIOBJ((nint)(value));
+
+        public static implicit operator byte(HGDIOBJ value) => (byte)(value.Value);
+
+        public static explicit operator HGDIOBJ(short value) => new HGDIOBJ((nint)(value));
+
+        public static implicit operator short(HGDIOBJ value) => (short)(value.Value);
+
+        public static explicit operator HGDIOBJ(int value) => new HGDIOBJ((nint)(value));
+
+        public static implicit operator int(HGDIOBJ value) => (int)(value.Value);
+
+        public static explicit operator HGDIOBJ(long value) => new HGDIOBJ((nint)(value));
+
+        public static explicit operator long(HGDIOBJ value) => (long)(value.Value);
+
+        public static explicit operator HGDIOBJ(nint value) => new HGDIOBJ((nint)(value));
+
+        public static implicit operator nint(HGDIOBJ value) => (nint)(value.Value);
+
+        public static explicit operator HGDIOBJ(sbyte value) => new HGDIOBJ((nint)(value));
+
+        public static implicit operator sbyte(HGDIOBJ value) => (sbyte)(value.Value);
+
+        public static explicit operator HGDIOBJ(ushort value) => new HGDIOBJ((nint)(value));
+
+        public static implicit operator ushort(HGDIOBJ value) => (ushort)(value.Value);
+
+        public static explicit operator HGDIOBJ(uint value) => new HGDIOBJ((nint)(value));
+
+        public static implicit operator uint(HGDIOBJ value) => (uint)(value.Value);
+
+        public static explicit operator HGDIOBJ(ulong value) => new HGDIOBJ((nint)(value));
+
+        public static explicit operator ulong(HGDIOBJ value) => (ulong)(value.Value);
+
+        public static explicit operator HGDIOBJ(nuint value) => new HGDIOBJ((nint)(value));
+
+        public static explicit operator nuint(HGDIOBJ value) => (nuint)(value.Value);
 
         public override bool Equals(object? obj) => (obj is HGDIOBJ other) && Equals(other);
 
         public bool Equals(HGDIOBJ other) => (this == other);
 
-        public override int GetHashCode() => ((nuint)(Value)).GetHashCode();
+        public override int GetHashCode() => Value.GetHashCode();
+
+        public override string ToString() => Value.ToString();
+
     }
 }

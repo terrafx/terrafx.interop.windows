@@ -8,70 +8,74 @@ namespace TerraFX.Interop
     {
         public readonly nint Value;
 
-        public static HMODULE NULL => (HMODULE)(0);
-
-        public HMODULE(int value)
-        {
-            Value = ((nint)(value));
-        }
-
-        public HMODULE(uint value)
-        {
-            Value = ((nint)(value));
-        }
-
         public HMODULE(nint value)
         {
-            Value = ((nint)(value));
+            Value = value;
         }
 
-        public HMODULE(nuint value)
-        {
-            Value = ((nint)(value));
-        }
+        public static HMODULE INVALID_HANDLE_VALUE => new HMODULE(-1);
 
-        public HMODULE(void* value)
-        {
-            Value = ((nint)(value));
-        }
-
-        public HMODULE(HANDLE value)
-        {
-            Value = value.Value;
-        }
+        public static HMODULE NULL => new HMODULE(0);
 
         public static bool operator ==(HMODULE left, HMODULE right) => left.Value == right.Value;
 
         public static bool operator !=(HMODULE left, HMODULE right) => left.Value != right.Value;
 
-        public static explicit operator HMODULE(int value) => new HMODULE(value);
-
-        public static explicit operator HMODULE(uint value) => new HMODULE(value);
-
-        public static explicit operator HMODULE(nint value) => new HMODULE(value);
-
-        public static explicit operator HMODULE(nuint value) => new HMODULE(value);
-
-        public static explicit operator HMODULE(void* value) => new HMODULE(value);
-
-        public static explicit operator HMODULE(HANDLE value) => new HMODULE(value);
-
-        public static explicit operator int(HMODULE value) => (int)(value.Value);
-
-        public static explicit operator uint(HMODULE value) => (uint)(value.Value);
-
-        public static implicit operator nint(HMODULE value) => (nint)(value.Value);
-
-        public static implicit operator nuint(HMODULE value) => (nuint)(value.Value);
+        public static explicit operator HMODULE(void* value) => new HMODULE((nint)(value));
 
         public static implicit operator void*(HMODULE value) => (void*)(value.Value);
 
-        public static implicit operator HANDLE(HMODULE value) => (HANDLE)(value.Value);
+        public static explicit operator HMODULE(HANDLE value) => new HMODULE(value);
+
+        public static implicit operator HANDLE(HMODULE value) => new HMODULE(value);
+
+        public static explicit operator HMODULE(byte value) => new HMODULE((nint)(value));
+
+        public static implicit operator byte(HMODULE value) => (byte)(value.Value);
+
+        public static explicit operator HMODULE(short value) => new HMODULE((nint)(value));
+
+        public static implicit operator short(HMODULE value) => (short)(value.Value);
+
+        public static explicit operator HMODULE(int value) => new HMODULE((nint)(value));
+
+        public static implicit operator int(HMODULE value) => (int)(value.Value);
+
+        public static explicit operator HMODULE(long value) => new HMODULE((nint)(value));
+
+        public static explicit operator long(HMODULE value) => (long)(value.Value);
+
+        public static explicit operator HMODULE(nint value) => new HMODULE((nint)(value));
+
+        public static implicit operator nint(HMODULE value) => (nint)(value.Value);
+
+        public static explicit operator HMODULE(sbyte value) => new HMODULE((nint)(value));
+
+        public static implicit operator sbyte(HMODULE value) => (sbyte)(value.Value);
+
+        public static explicit operator HMODULE(ushort value) => new HMODULE((nint)(value));
+
+        public static implicit operator ushort(HMODULE value) => (ushort)(value.Value);
+
+        public static explicit operator HMODULE(uint value) => new HMODULE((nint)(value));
+
+        public static implicit operator uint(HMODULE value) => (uint)(value.Value);
+
+        public static explicit operator HMODULE(ulong value) => new HMODULE((nint)(value));
+
+        public static explicit operator ulong(HMODULE value) => (ulong)(value.Value);
+
+        public static explicit operator HMODULE(nuint value) => new HMODULE((nint)(value));
+
+        public static explicit operator nuint(HMODULE value) => (nuint)(value.Value);
 
         public override bool Equals(object? obj) => (obj is HMODULE other) && Equals(other);
 
         public bool Equals(HMODULE other) => (this == other);
 
-        public override int GetHashCode() => ((nuint)(Value)).GetHashCode();
+        public override int GetHashCode() => Value.GetHashCode();
+
+        public override string ToString() => Value.ToString();
+
     }
 }

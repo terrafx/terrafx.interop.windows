@@ -8,70 +8,74 @@ namespace TerraFX.Interop
     {
         public readonly nint Value;
 
-        public static HACMOBJ NULL => (HACMOBJ)(0);
-
-        public HACMOBJ(int value)
-        {
-            Value = ((nint)(value));
-        }
-
-        public HACMOBJ(uint value)
-        {
-            Value = ((nint)(value));
-        }
-
         public HACMOBJ(nint value)
         {
-            Value = ((nint)(value));
+            Value = value;
         }
 
-        public HACMOBJ(nuint value)
-        {
-            Value = ((nint)(value));
-        }
+        public static HACMOBJ INVALID_HANDLE_VALUE => new HACMOBJ(-1);
 
-        public HACMOBJ(void* value)
-        {
-            Value = ((nint)(value));
-        }
-
-        public HACMOBJ(HANDLE value)
-        {
-            Value = value.Value;
-        }
+        public static HACMOBJ NULL => new HACMOBJ(0);
 
         public static bool operator ==(HACMOBJ left, HACMOBJ right) => left.Value == right.Value;
 
         public static bool operator !=(HACMOBJ left, HACMOBJ right) => left.Value != right.Value;
 
-        public static explicit operator HACMOBJ(int value) => new HACMOBJ(value);
-
-        public static explicit operator HACMOBJ(uint value) => new HACMOBJ(value);
-
-        public static explicit operator HACMOBJ(nint value) => new HACMOBJ(value);
-
-        public static explicit operator HACMOBJ(nuint value) => new HACMOBJ(value);
-
-        public static explicit operator HACMOBJ(void* value) => new HACMOBJ(value);
-
-        public static explicit operator HACMOBJ(HANDLE value) => new HACMOBJ(value);
-
-        public static explicit operator int(HACMOBJ value) => (int)(value.Value);
-
-        public static explicit operator uint(HACMOBJ value) => (uint)(value.Value);
-
-        public static implicit operator nint(HACMOBJ value) => (nint)(value.Value);
-
-        public static implicit operator nuint(HACMOBJ value) => (nuint)(value.Value);
+        public static explicit operator HACMOBJ(void* value) => new HACMOBJ((nint)(value));
 
         public static implicit operator void*(HACMOBJ value) => (void*)(value.Value);
 
-        public static implicit operator HANDLE(HACMOBJ value) => (HANDLE)(value.Value);
+        public static explicit operator HACMOBJ(HANDLE value) => new HACMOBJ(value);
+
+        public static implicit operator HANDLE(HACMOBJ value) => new HACMOBJ(value);
+
+        public static explicit operator HACMOBJ(byte value) => new HACMOBJ((nint)(value));
+
+        public static implicit operator byte(HACMOBJ value) => (byte)(value.Value);
+
+        public static explicit operator HACMOBJ(short value) => new HACMOBJ((nint)(value));
+
+        public static implicit operator short(HACMOBJ value) => (short)(value.Value);
+
+        public static explicit operator HACMOBJ(int value) => new HACMOBJ((nint)(value));
+
+        public static implicit operator int(HACMOBJ value) => (int)(value.Value);
+
+        public static explicit operator HACMOBJ(long value) => new HACMOBJ((nint)(value));
+
+        public static explicit operator long(HACMOBJ value) => (long)(value.Value);
+
+        public static explicit operator HACMOBJ(nint value) => new HACMOBJ((nint)(value));
+
+        public static implicit operator nint(HACMOBJ value) => (nint)(value.Value);
+
+        public static explicit operator HACMOBJ(sbyte value) => new HACMOBJ((nint)(value));
+
+        public static implicit operator sbyte(HACMOBJ value) => (sbyte)(value.Value);
+
+        public static explicit operator HACMOBJ(ushort value) => new HACMOBJ((nint)(value));
+
+        public static implicit operator ushort(HACMOBJ value) => (ushort)(value.Value);
+
+        public static explicit operator HACMOBJ(uint value) => new HACMOBJ((nint)(value));
+
+        public static implicit operator uint(HACMOBJ value) => (uint)(value.Value);
+
+        public static explicit operator HACMOBJ(ulong value) => new HACMOBJ((nint)(value));
+
+        public static explicit operator ulong(HACMOBJ value) => (ulong)(value.Value);
+
+        public static explicit operator HACMOBJ(nuint value) => new HACMOBJ((nint)(value));
+
+        public static explicit operator nuint(HACMOBJ value) => (nuint)(value.Value);
 
         public override bool Equals(object? obj) => (obj is HACMOBJ other) && Equals(other);
 
         public bool Equals(HACMOBJ other) => (this == other);
 
-        public override int GetHashCode() => ((nuint)(Value)).GetHashCode();
+        public override int GetHashCode() => Value.GetHashCode();
+
+        public override string ToString() => Value.ToString();
+
     }
 }

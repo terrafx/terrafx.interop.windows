@@ -8,70 +8,74 @@ namespace TerraFX.Interop
     {
         public readonly nint Value;
 
-        public static D3DKMDT_HMONITORFREQUENCYRANGESET NULL => (D3DKMDT_HMONITORFREQUENCYRANGESET)(0);
-
-        public D3DKMDT_HMONITORFREQUENCYRANGESET(int value)
-        {
-            Value = ((nint)(value));
-        }
-
-        public D3DKMDT_HMONITORFREQUENCYRANGESET(uint value)
-        {
-            Value = ((nint)(value));
-        }
-
         public D3DKMDT_HMONITORFREQUENCYRANGESET(nint value)
         {
-            Value = ((nint)(value));
+            Value = value;
         }
 
-        public D3DKMDT_HMONITORFREQUENCYRANGESET(nuint value)
-        {
-            Value = ((nint)(value));
-        }
+        public static D3DKMDT_HMONITORFREQUENCYRANGESET INVALID_HANDLE_VALUE => new D3DKMDT_HMONITORFREQUENCYRANGESET(-1);
 
-        public D3DKMDT_HMONITORFREQUENCYRANGESET(void* value)
-        {
-            Value = ((nint)(value));
-        }
-
-        public D3DKMDT_HMONITORFREQUENCYRANGESET(HANDLE value)
-        {
-            Value = value.Value;
-        }
+        public static D3DKMDT_HMONITORFREQUENCYRANGESET NULL => new D3DKMDT_HMONITORFREQUENCYRANGESET(0);
 
         public static bool operator ==(D3DKMDT_HMONITORFREQUENCYRANGESET left, D3DKMDT_HMONITORFREQUENCYRANGESET right) => left.Value == right.Value;
 
         public static bool operator !=(D3DKMDT_HMONITORFREQUENCYRANGESET left, D3DKMDT_HMONITORFREQUENCYRANGESET right) => left.Value != right.Value;
 
-        public static explicit operator D3DKMDT_HMONITORFREQUENCYRANGESET(int value) => new D3DKMDT_HMONITORFREQUENCYRANGESET(value);
-
-        public static explicit operator D3DKMDT_HMONITORFREQUENCYRANGESET(uint value) => new D3DKMDT_HMONITORFREQUENCYRANGESET(value);
-
-        public static explicit operator D3DKMDT_HMONITORFREQUENCYRANGESET(nint value) => new D3DKMDT_HMONITORFREQUENCYRANGESET(value);
-
-        public static explicit operator D3DKMDT_HMONITORFREQUENCYRANGESET(nuint value) => new D3DKMDT_HMONITORFREQUENCYRANGESET(value);
-
-        public static explicit operator D3DKMDT_HMONITORFREQUENCYRANGESET(void* value) => new D3DKMDT_HMONITORFREQUENCYRANGESET(value);
-
-        public static explicit operator D3DKMDT_HMONITORFREQUENCYRANGESET(HANDLE value) => new D3DKMDT_HMONITORFREQUENCYRANGESET(value);
-
-        public static explicit operator int(D3DKMDT_HMONITORFREQUENCYRANGESET value) => (int)(value.Value);
-
-        public static explicit operator uint(D3DKMDT_HMONITORFREQUENCYRANGESET value) => (uint)(value.Value);
-
-        public static implicit operator nint(D3DKMDT_HMONITORFREQUENCYRANGESET value) => (nint)(value.Value);
-
-        public static implicit operator nuint(D3DKMDT_HMONITORFREQUENCYRANGESET value) => (nuint)(value.Value);
+        public static explicit operator D3DKMDT_HMONITORFREQUENCYRANGESET(void* value) => new D3DKMDT_HMONITORFREQUENCYRANGESET((nint)(value));
 
         public static implicit operator void*(D3DKMDT_HMONITORFREQUENCYRANGESET value) => (void*)(value.Value);
 
-        public static implicit operator HANDLE(D3DKMDT_HMONITORFREQUENCYRANGESET value) => (HANDLE)(value.Value);
+        public static explicit operator D3DKMDT_HMONITORFREQUENCYRANGESET(HANDLE value) => new D3DKMDT_HMONITORFREQUENCYRANGESET(value);
+
+        public static implicit operator HANDLE(D3DKMDT_HMONITORFREQUENCYRANGESET value) => new D3DKMDT_HMONITORFREQUENCYRANGESET(value);
+
+        public static explicit operator D3DKMDT_HMONITORFREQUENCYRANGESET(byte value) => new D3DKMDT_HMONITORFREQUENCYRANGESET((nint)(value));
+
+        public static implicit operator byte(D3DKMDT_HMONITORFREQUENCYRANGESET value) => (byte)(value.Value);
+
+        public static explicit operator D3DKMDT_HMONITORFREQUENCYRANGESET(short value) => new D3DKMDT_HMONITORFREQUENCYRANGESET((nint)(value));
+
+        public static implicit operator short(D3DKMDT_HMONITORFREQUENCYRANGESET value) => (short)(value.Value);
+
+        public static explicit operator D3DKMDT_HMONITORFREQUENCYRANGESET(int value) => new D3DKMDT_HMONITORFREQUENCYRANGESET((nint)(value));
+
+        public static implicit operator int(D3DKMDT_HMONITORFREQUENCYRANGESET value) => (int)(value.Value);
+
+        public static explicit operator D3DKMDT_HMONITORFREQUENCYRANGESET(long value) => new D3DKMDT_HMONITORFREQUENCYRANGESET((nint)(value));
+
+        public static explicit operator long(D3DKMDT_HMONITORFREQUENCYRANGESET value) => (long)(value.Value);
+
+        public static explicit operator D3DKMDT_HMONITORFREQUENCYRANGESET(nint value) => new D3DKMDT_HMONITORFREQUENCYRANGESET((nint)(value));
+
+        public static implicit operator nint(D3DKMDT_HMONITORFREQUENCYRANGESET value) => (nint)(value.Value);
+
+        public static explicit operator D3DKMDT_HMONITORFREQUENCYRANGESET(sbyte value) => new D3DKMDT_HMONITORFREQUENCYRANGESET((nint)(value));
+
+        public static implicit operator sbyte(D3DKMDT_HMONITORFREQUENCYRANGESET value) => (sbyte)(value.Value);
+
+        public static explicit operator D3DKMDT_HMONITORFREQUENCYRANGESET(ushort value) => new D3DKMDT_HMONITORFREQUENCYRANGESET((nint)(value));
+
+        public static implicit operator ushort(D3DKMDT_HMONITORFREQUENCYRANGESET value) => (ushort)(value.Value);
+
+        public static explicit operator D3DKMDT_HMONITORFREQUENCYRANGESET(uint value) => new D3DKMDT_HMONITORFREQUENCYRANGESET((nint)(value));
+
+        public static implicit operator uint(D3DKMDT_HMONITORFREQUENCYRANGESET value) => (uint)(value.Value);
+
+        public static explicit operator D3DKMDT_HMONITORFREQUENCYRANGESET(ulong value) => new D3DKMDT_HMONITORFREQUENCYRANGESET((nint)(value));
+
+        public static explicit operator ulong(D3DKMDT_HMONITORFREQUENCYRANGESET value) => (ulong)(value.Value);
+
+        public static explicit operator D3DKMDT_HMONITORFREQUENCYRANGESET(nuint value) => new D3DKMDT_HMONITORFREQUENCYRANGESET((nint)(value));
+
+        public static explicit operator nuint(D3DKMDT_HMONITORFREQUENCYRANGESET value) => (nuint)(value.Value);
 
         public override bool Equals(object? obj) => (obj is D3DKMDT_HMONITORFREQUENCYRANGESET other) && Equals(other);
 
         public bool Equals(D3DKMDT_HMONITORFREQUENCYRANGESET other) => (this == other);
 
-        public override int GetHashCode() => ((nuint)(Value)).GetHashCode();
+        public override int GetHashCode() => Value.GetHashCode();
+
+        public override string ToString() => Value.ToString();
+
     }
 }

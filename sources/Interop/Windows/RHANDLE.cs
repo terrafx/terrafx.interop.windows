@@ -8,70 +8,74 @@ namespace TerraFX.Interop
     {
         public readonly nint Value;
 
-        public static RHANDLE NULL => (RHANDLE)(0);
-
-        public RHANDLE(int value)
-        {
-            Value = ((nint)(value));
-        }
-
-        public RHANDLE(uint value)
-        {
-            Value = ((nint)(value));
-        }
-
         public RHANDLE(nint value)
         {
-            Value = ((nint)(value));
+            Value = value;
         }
 
-        public RHANDLE(nuint value)
-        {
-            Value = ((nint)(value));
-        }
+        public static RHANDLE INVALID_HANDLE_VALUE => new RHANDLE(-1);
 
-        public RHANDLE(void* value)
-        {
-            Value = ((nint)(value));
-        }
-
-        public RHANDLE(HANDLE value)
-        {
-            Value = value.Value;
-        }
+        public static RHANDLE NULL => new RHANDLE(0);
 
         public static bool operator ==(RHANDLE left, RHANDLE right) => left.Value == right.Value;
 
         public static bool operator !=(RHANDLE left, RHANDLE right) => left.Value != right.Value;
 
-        public static explicit operator RHANDLE(int value) => new RHANDLE(value);
-
-        public static explicit operator RHANDLE(uint value) => new RHANDLE(value);
-
-        public static explicit operator RHANDLE(nint value) => new RHANDLE(value);
-
-        public static explicit operator RHANDLE(nuint value) => new RHANDLE(value);
-
-        public static explicit operator RHANDLE(void* value) => new RHANDLE(value);
-
-        public static explicit operator RHANDLE(HANDLE value) => new RHANDLE(value);
-
-        public static explicit operator int(RHANDLE value) => (int)(value.Value);
-
-        public static explicit operator uint(RHANDLE value) => (uint)(value.Value);
-
-        public static implicit operator nint(RHANDLE value) => (nint)(value.Value);
-
-        public static implicit operator nuint(RHANDLE value) => (nuint)(value.Value);
+        public static explicit operator RHANDLE(void* value) => new RHANDLE((nint)(value));
 
         public static implicit operator void*(RHANDLE value) => (void*)(value.Value);
 
-        public static implicit operator HANDLE(RHANDLE value) => (HANDLE)(value.Value);
+        public static explicit operator RHANDLE(HANDLE value) => new RHANDLE(value);
+
+        public static implicit operator HANDLE(RHANDLE value) => new RHANDLE(value);
+
+        public static explicit operator RHANDLE(byte value) => new RHANDLE((nint)(value));
+
+        public static implicit operator byte(RHANDLE value) => (byte)(value.Value);
+
+        public static explicit operator RHANDLE(short value) => new RHANDLE((nint)(value));
+
+        public static implicit operator short(RHANDLE value) => (short)(value.Value);
+
+        public static explicit operator RHANDLE(int value) => new RHANDLE((nint)(value));
+
+        public static implicit operator int(RHANDLE value) => (int)(value.Value);
+
+        public static explicit operator RHANDLE(long value) => new RHANDLE((nint)(value));
+
+        public static explicit operator long(RHANDLE value) => (long)(value.Value);
+
+        public static explicit operator RHANDLE(nint value) => new RHANDLE((nint)(value));
+
+        public static implicit operator nint(RHANDLE value) => (nint)(value.Value);
+
+        public static explicit operator RHANDLE(sbyte value) => new RHANDLE((nint)(value));
+
+        public static implicit operator sbyte(RHANDLE value) => (sbyte)(value.Value);
+
+        public static explicit operator RHANDLE(ushort value) => new RHANDLE((nint)(value));
+
+        public static implicit operator ushort(RHANDLE value) => (ushort)(value.Value);
+
+        public static explicit operator RHANDLE(uint value) => new RHANDLE((nint)(value));
+
+        public static implicit operator uint(RHANDLE value) => (uint)(value.Value);
+
+        public static explicit operator RHANDLE(ulong value) => new RHANDLE((nint)(value));
+
+        public static explicit operator ulong(RHANDLE value) => (ulong)(value.Value);
+
+        public static explicit operator RHANDLE(nuint value) => new RHANDLE((nint)(value));
+
+        public static explicit operator nuint(RHANDLE value) => (nuint)(value.Value);
 
         public override bool Equals(object? obj) => (obj is RHANDLE other) && Equals(other);
 
         public bool Equals(RHANDLE other) => (this == other);
 
-        public override int GetHashCode() => ((nuint)(Value)).GetHashCode();
+        public override int GetHashCode() => Value.GetHashCode();
+
+        public override string ToString() => Value.ToString();
+
     }
 }

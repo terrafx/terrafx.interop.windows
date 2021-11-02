@@ -8,70 +8,74 @@ namespace TerraFX.Interop
     {
         public readonly nint Value;
 
-        public static HMIDISTRM NULL => (HMIDISTRM)(0);
-
-        public HMIDISTRM(int value)
-        {
-            Value = ((nint)(value));
-        }
-
-        public HMIDISTRM(uint value)
-        {
-            Value = ((nint)(value));
-        }
-
         public HMIDISTRM(nint value)
         {
-            Value = ((nint)(value));
+            Value = value;
         }
 
-        public HMIDISTRM(nuint value)
-        {
-            Value = ((nint)(value));
-        }
+        public static HMIDISTRM INVALID_HANDLE_VALUE => new HMIDISTRM(-1);
 
-        public HMIDISTRM(void* value)
-        {
-            Value = ((nint)(value));
-        }
-
-        public HMIDISTRM(HANDLE value)
-        {
-            Value = value.Value;
-        }
+        public static HMIDISTRM NULL => new HMIDISTRM(0);
 
         public static bool operator ==(HMIDISTRM left, HMIDISTRM right) => left.Value == right.Value;
 
         public static bool operator !=(HMIDISTRM left, HMIDISTRM right) => left.Value != right.Value;
 
-        public static explicit operator HMIDISTRM(int value) => new HMIDISTRM(value);
-
-        public static explicit operator HMIDISTRM(uint value) => new HMIDISTRM(value);
-
-        public static explicit operator HMIDISTRM(nint value) => new HMIDISTRM(value);
-
-        public static explicit operator HMIDISTRM(nuint value) => new HMIDISTRM(value);
-
-        public static explicit operator HMIDISTRM(void* value) => new HMIDISTRM(value);
-
-        public static explicit operator HMIDISTRM(HANDLE value) => new HMIDISTRM(value);
-
-        public static explicit operator int(HMIDISTRM value) => (int)(value.Value);
-
-        public static explicit operator uint(HMIDISTRM value) => (uint)(value.Value);
-
-        public static implicit operator nint(HMIDISTRM value) => (nint)(value.Value);
-
-        public static implicit operator nuint(HMIDISTRM value) => (nuint)(value.Value);
+        public static explicit operator HMIDISTRM(void* value) => new HMIDISTRM((nint)(value));
 
         public static implicit operator void*(HMIDISTRM value) => (void*)(value.Value);
 
-        public static implicit operator HANDLE(HMIDISTRM value) => (HANDLE)(value.Value);
+        public static explicit operator HMIDISTRM(HANDLE value) => new HMIDISTRM(value);
+
+        public static implicit operator HANDLE(HMIDISTRM value) => new HMIDISTRM(value);
+
+        public static explicit operator HMIDISTRM(byte value) => new HMIDISTRM((nint)(value));
+
+        public static implicit operator byte(HMIDISTRM value) => (byte)(value.Value);
+
+        public static explicit operator HMIDISTRM(short value) => new HMIDISTRM((nint)(value));
+
+        public static implicit operator short(HMIDISTRM value) => (short)(value.Value);
+
+        public static explicit operator HMIDISTRM(int value) => new HMIDISTRM((nint)(value));
+
+        public static implicit operator int(HMIDISTRM value) => (int)(value.Value);
+
+        public static explicit operator HMIDISTRM(long value) => new HMIDISTRM((nint)(value));
+
+        public static explicit operator long(HMIDISTRM value) => (long)(value.Value);
+
+        public static explicit operator HMIDISTRM(nint value) => new HMIDISTRM((nint)(value));
+
+        public static implicit operator nint(HMIDISTRM value) => (nint)(value.Value);
+
+        public static explicit operator HMIDISTRM(sbyte value) => new HMIDISTRM((nint)(value));
+
+        public static implicit operator sbyte(HMIDISTRM value) => (sbyte)(value.Value);
+
+        public static explicit operator HMIDISTRM(ushort value) => new HMIDISTRM((nint)(value));
+
+        public static implicit operator ushort(HMIDISTRM value) => (ushort)(value.Value);
+
+        public static explicit operator HMIDISTRM(uint value) => new HMIDISTRM((nint)(value));
+
+        public static implicit operator uint(HMIDISTRM value) => (uint)(value.Value);
+
+        public static explicit operator HMIDISTRM(ulong value) => new HMIDISTRM((nint)(value));
+
+        public static explicit operator ulong(HMIDISTRM value) => (ulong)(value.Value);
+
+        public static explicit operator HMIDISTRM(nuint value) => new HMIDISTRM((nint)(value));
+
+        public static explicit operator nuint(HMIDISTRM value) => (nuint)(value.Value);
 
         public override bool Equals(object? obj) => (obj is HMIDISTRM other) && Equals(other);
 
         public bool Equals(HMIDISTRM other) => (this == other);
 
-        public override int GetHashCode() => ((nuint)(Value)).GetHashCode();
+        public override int GetHashCode() => Value.GetHashCode();
+
+        public override string ToString() => Value.ToString();
+
     }
 }

@@ -8,70 +8,74 @@ namespace TerraFX.Interop
     {
         public readonly nint Value;
 
-        public static HWINEVENTHOOK NULL => (HWINEVENTHOOK)(0);
-
-        public HWINEVENTHOOK(int value)
-        {
-            Value = ((nint)(value));
-        }
-
-        public HWINEVENTHOOK(uint value)
-        {
-            Value = ((nint)(value));
-        }
-
         public HWINEVENTHOOK(nint value)
         {
-            Value = ((nint)(value));
+            Value = value;
         }
 
-        public HWINEVENTHOOK(nuint value)
-        {
-            Value = ((nint)(value));
-        }
+        public static HWINEVENTHOOK INVALID_HANDLE_VALUE => new HWINEVENTHOOK(-1);
 
-        public HWINEVENTHOOK(void* value)
-        {
-            Value = ((nint)(value));
-        }
-
-        public HWINEVENTHOOK(HANDLE value)
-        {
-            Value = value.Value;
-        }
+        public static HWINEVENTHOOK NULL => new HWINEVENTHOOK(0);
 
         public static bool operator ==(HWINEVENTHOOK left, HWINEVENTHOOK right) => left.Value == right.Value;
 
         public static bool operator !=(HWINEVENTHOOK left, HWINEVENTHOOK right) => left.Value != right.Value;
 
-        public static explicit operator HWINEVENTHOOK(int value) => new HWINEVENTHOOK(value);
-
-        public static explicit operator HWINEVENTHOOK(uint value) => new HWINEVENTHOOK(value);
-
-        public static explicit operator HWINEVENTHOOK(nint value) => new HWINEVENTHOOK(value);
-
-        public static explicit operator HWINEVENTHOOK(nuint value) => new HWINEVENTHOOK(value);
-
-        public static explicit operator HWINEVENTHOOK(void* value) => new HWINEVENTHOOK(value);
-
-        public static explicit operator HWINEVENTHOOK(HANDLE value) => new HWINEVENTHOOK(value);
-
-        public static explicit operator int(HWINEVENTHOOK value) => (int)(value.Value);
-
-        public static explicit operator uint(HWINEVENTHOOK value) => (uint)(value.Value);
-
-        public static implicit operator nint(HWINEVENTHOOK value) => (nint)(value.Value);
-
-        public static implicit operator nuint(HWINEVENTHOOK value) => (nuint)(value.Value);
+        public static explicit operator HWINEVENTHOOK(void* value) => new HWINEVENTHOOK((nint)(value));
 
         public static implicit operator void*(HWINEVENTHOOK value) => (void*)(value.Value);
 
-        public static implicit operator HANDLE(HWINEVENTHOOK value) => (HANDLE)(value.Value);
+        public static explicit operator HWINEVENTHOOK(HANDLE value) => new HWINEVENTHOOK(value);
+
+        public static implicit operator HANDLE(HWINEVENTHOOK value) => new HWINEVENTHOOK(value);
+
+        public static explicit operator HWINEVENTHOOK(byte value) => new HWINEVENTHOOK((nint)(value));
+
+        public static implicit operator byte(HWINEVENTHOOK value) => (byte)(value.Value);
+
+        public static explicit operator HWINEVENTHOOK(short value) => new HWINEVENTHOOK((nint)(value));
+
+        public static implicit operator short(HWINEVENTHOOK value) => (short)(value.Value);
+
+        public static explicit operator HWINEVENTHOOK(int value) => new HWINEVENTHOOK((nint)(value));
+
+        public static implicit operator int(HWINEVENTHOOK value) => (int)(value.Value);
+
+        public static explicit operator HWINEVENTHOOK(long value) => new HWINEVENTHOOK((nint)(value));
+
+        public static explicit operator long(HWINEVENTHOOK value) => (long)(value.Value);
+
+        public static explicit operator HWINEVENTHOOK(nint value) => new HWINEVENTHOOK((nint)(value));
+
+        public static implicit operator nint(HWINEVENTHOOK value) => (nint)(value.Value);
+
+        public static explicit operator HWINEVENTHOOK(sbyte value) => new HWINEVENTHOOK((nint)(value));
+
+        public static implicit operator sbyte(HWINEVENTHOOK value) => (sbyte)(value.Value);
+
+        public static explicit operator HWINEVENTHOOK(ushort value) => new HWINEVENTHOOK((nint)(value));
+
+        public static implicit operator ushort(HWINEVENTHOOK value) => (ushort)(value.Value);
+
+        public static explicit operator HWINEVENTHOOK(uint value) => new HWINEVENTHOOK((nint)(value));
+
+        public static implicit operator uint(HWINEVENTHOOK value) => (uint)(value.Value);
+
+        public static explicit operator HWINEVENTHOOK(ulong value) => new HWINEVENTHOOK((nint)(value));
+
+        public static explicit operator ulong(HWINEVENTHOOK value) => (ulong)(value.Value);
+
+        public static explicit operator HWINEVENTHOOK(nuint value) => new HWINEVENTHOOK((nint)(value));
+
+        public static explicit operator nuint(HWINEVENTHOOK value) => (nuint)(value.Value);
 
         public override bool Equals(object? obj) => (obj is HWINEVENTHOOK other) && Equals(other);
 
         public bool Equals(HWINEVENTHOOK other) => (this == other);
 
-        public override int GetHashCode() => ((nuint)(Value)).GetHashCode();
+        public override int GetHashCode() => Value.GetHashCode();
+
+        public override string ToString() => Value.ToString();
+
     }
 }

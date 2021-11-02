@@ -8,70 +8,74 @@ namespace TerraFX.Interop
     {
         public readonly nint Value;
 
-        public static HDRVOBJ NULL => (HDRVOBJ)(0);
-
-        public HDRVOBJ(int value)
-        {
-            Value = ((nint)(value));
-        }
-
-        public HDRVOBJ(uint value)
-        {
-            Value = ((nint)(value));
-        }
-
         public HDRVOBJ(nint value)
         {
-            Value = ((nint)(value));
+            Value = value;
         }
 
-        public HDRVOBJ(nuint value)
-        {
-            Value = ((nint)(value));
-        }
+        public static HDRVOBJ INVALID_HANDLE_VALUE => new HDRVOBJ(-1);
 
-        public HDRVOBJ(void* value)
-        {
-            Value = ((nint)(value));
-        }
-
-        public HDRVOBJ(HANDLE value)
-        {
-            Value = value.Value;
-        }
+        public static HDRVOBJ NULL => new HDRVOBJ(0);
 
         public static bool operator ==(HDRVOBJ left, HDRVOBJ right) => left.Value == right.Value;
 
         public static bool operator !=(HDRVOBJ left, HDRVOBJ right) => left.Value != right.Value;
 
-        public static explicit operator HDRVOBJ(int value) => new HDRVOBJ(value);
-
-        public static explicit operator HDRVOBJ(uint value) => new HDRVOBJ(value);
-
-        public static explicit operator HDRVOBJ(nint value) => new HDRVOBJ(value);
-
-        public static explicit operator HDRVOBJ(nuint value) => new HDRVOBJ(value);
-
-        public static explicit operator HDRVOBJ(void* value) => new HDRVOBJ(value);
-
-        public static explicit operator HDRVOBJ(HANDLE value) => new HDRVOBJ(value);
-
-        public static explicit operator int(HDRVOBJ value) => (int)(value.Value);
-
-        public static explicit operator uint(HDRVOBJ value) => (uint)(value.Value);
-
-        public static implicit operator nint(HDRVOBJ value) => (nint)(value.Value);
-
-        public static implicit operator nuint(HDRVOBJ value) => (nuint)(value.Value);
+        public static explicit operator HDRVOBJ(void* value) => new HDRVOBJ((nint)(value));
 
         public static implicit operator void*(HDRVOBJ value) => (void*)(value.Value);
 
-        public static implicit operator HANDLE(HDRVOBJ value) => (HANDLE)(value.Value);
+        public static explicit operator HDRVOBJ(HANDLE value) => new HDRVOBJ(value);
+
+        public static implicit operator HANDLE(HDRVOBJ value) => new HDRVOBJ(value);
+
+        public static explicit operator HDRVOBJ(byte value) => new HDRVOBJ((nint)(value));
+
+        public static implicit operator byte(HDRVOBJ value) => (byte)(value.Value);
+
+        public static explicit operator HDRVOBJ(short value) => new HDRVOBJ((nint)(value));
+
+        public static implicit operator short(HDRVOBJ value) => (short)(value.Value);
+
+        public static explicit operator HDRVOBJ(int value) => new HDRVOBJ((nint)(value));
+
+        public static implicit operator int(HDRVOBJ value) => (int)(value.Value);
+
+        public static explicit operator HDRVOBJ(long value) => new HDRVOBJ((nint)(value));
+
+        public static explicit operator long(HDRVOBJ value) => (long)(value.Value);
+
+        public static explicit operator HDRVOBJ(nint value) => new HDRVOBJ((nint)(value));
+
+        public static implicit operator nint(HDRVOBJ value) => (nint)(value.Value);
+
+        public static explicit operator HDRVOBJ(sbyte value) => new HDRVOBJ((nint)(value));
+
+        public static implicit operator sbyte(HDRVOBJ value) => (sbyte)(value.Value);
+
+        public static explicit operator HDRVOBJ(ushort value) => new HDRVOBJ((nint)(value));
+
+        public static implicit operator ushort(HDRVOBJ value) => (ushort)(value.Value);
+
+        public static explicit operator HDRVOBJ(uint value) => new HDRVOBJ((nint)(value));
+
+        public static implicit operator uint(HDRVOBJ value) => (uint)(value.Value);
+
+        public static explicit operator HDRVOBJ(ulong value) => new HDRVOBJ((nint)(value));
+
+        public static explicit operator ulong(HDRVOBJ value) => (ulong)(value.Value);
+
+        public static explicit operator HDRVOBJ(nuint value) => new HDRVOBJ((nint)(value));
+
+        public static explicit operator nuint(HDRVOBJ value) => (nuint)(value.Value);
 
         public override bool Equals(object? obj) => (obj is HDRVOBJ other) && Equals(other);
 
         public bool Equals(HDRVOBJ other) => (this == other);
 
-        public override int GetHashCode() => ((nuint)(Value)).GetHashCode();
+        public override int GetHashCode() => Value.GetHashCode();
+
+        public override string ToString() => Value.ToString();
+
     }
 }

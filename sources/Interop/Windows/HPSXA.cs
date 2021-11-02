@@ -8,70 +8,74 @@ namespace TerraFX.Interop
     {
         public readonly nint Value;
 
-        public static HPSXA NULL => (HPSXA)(0);
-
-        public HPSXA(int value)
-        {
-            Value = ((nint)(value));
-        }
-
-        public HPSXA(uint value)
-        {
-            Value = ((nint)(value));
-        }
-
         public HPSXA(nint value)
         {
-            Value = ((nint)(value));
+            Value = value;
         }
 
-        public HPSXA(nuint value)
-        {
-            Value = ((nint)(value));
-        }
+        public static HPSXA INVALID_HANDLE_VALUE => new HPSXA(-1);
 
-        public HPSXA(void* value)
-        {
-            Value = ((nint)(value));
-        }
-
-        public HPSXA(HANDLE value)
-        {
-            Value = value.Value;
-        }
+        public static HPSXA NULL => new HPSXA(0);
 
         public static bool operator ==(HPSXA left, HPSXA right) => left.Value == right.Value;
 
         public static bool operator !=(HPSXA left, HPSXA right) => left.Value != right.Value;
 
-        public static explicit operator HPSXA(int value) => new HPSXA(value);
-
-        public static explicit operator HPSXA(uint value) => new HPSXA(value);
-
-        public static explicit operator HPSXA(nint value) => new HPSXA(value);
-
-        public static explicit operator HPSXA(nuint value) => new HPSXA(value);
-
-        public static explicit operator HPSXA(void* value) => new HPSXA(value);
-
-        public static explicit operator HPSXA(HANDLE value) => new HPSXA(value);
-
-        public static explicit operator int(HPSXA value) => (int)(value.Value);
-
-        public static explicit operator uint(HPSXA value) => (uint)(value.Value);
-
-        public static implicit operator nint(HPSXA value) => (nint)(value.Value);
-
-        public static implicit operator nuint(HPSXA value) => (nuint)(value.Value);
+        public static explicit operator HPSXA(void* value) => new HPSXA((nint)(value));
 
         public static implicit operator void*(HPSXA value) => (void*)(value.Value);
 
-        public static implicit operator HANDLE(HPSXA value) => (HANDLE)(value.Value);
+        public static explicit operator HPSXA(HANDLE value) => new HPSXA(value);
+
+        public static implicit operator HANDLE(HPSXA value) => new HPSXA(value);
+
+        public static explicit operator HPSXA(byte value) => new HPSXA((nint)(value));
+
+        public static implicit operator byte(HPSXA value) => (byte)(value.Value);
+
+        public static explicit operator HPSXA(short value) => new HPSXA((nint)(value));
+
+        public static implicit operator short(HPSXA value) => (short)(value.Value);
+
+        public static explicit operator HPSXA(int value) => new HPSXA((nint)(value));
+
+        public static implicit operator int(HPSXA value) => (int)(value.Value);
+
+        public static explicit operator HPSXA(long value) => new HPSXA((nint)(value));
+
+        public static explicit operator long(HPSXA value) => (long)(value.Value);
+
+        public static explicit operator HPSXA(nint value) => new HPSXA((nint)(value));
+
+        public static implicit operator nint(HPSXA value) => (nint)(value.Value);
+
+        public static explicit operator HPSXA(sbyte value) => new HPSXA((nint)(value));
+
+        public static implicit operator sbyte(HPSXA value) => (sbyte)(value.Value);
+
+        public static explicit operator HPSXA(ushort value) => new HPSXA((nint)(value));
+
+        public static implicit operator ushort(HPSXA value) => (ushort)(value.Value);
+
+        public static explicit operator HPSXA(uint value) => new HPSXA((nint)(value));
+
+        public static implicit operator uint(HPSXA value) => (uint)(value.Value);
+
+        public static explicit operator HPSXA(ulong value) => new HPSXA((nint)(value));
+
+        public static explicit operator ulong(HPSXA value) => (ulong)(value.Value);
+
+        public static explicit operator HPSXA(nuint value) => new HPSXA((nint)(value));
+
+        public static explicit operator nuint(HPSXA value) => (nuint)(value.Value);
 
         public override bool Equals(object? obj) => (obj is HPSXA other) && Equals(other);
 
         public bool Equals(HPSXA other) => (this == other);
 
-        public override int GetHashCode() => ((nuint)(Value)).GetHashCode();
+        public override int GetHashCode() => Value.GetHashCode();
+
+        public override string ToString() => Value.ToString();
+
     }
 }

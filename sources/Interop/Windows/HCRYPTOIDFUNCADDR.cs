@@ -6,61 +6,76 @@ namespace TerraFX.Interop
 {
     public unsafe partial struct HCRYPTOIDFUNCADDR : IEquatable<HCRYPTOIDFUNCADDR>
     {
-        public readonly void* Value;
-
-        public HCRYPTOIDFUNCADDR(int value)
-        {
-            Value = ((void*)(value));
-        }
-
-        public HCRYPTOIDFUNCADDR(uint value)
-        {
-            Value = ((void*)(value));
-        }
+        public readonly nint Value;
 
         public HCRYPTOIDFUNCADDR(nint value)
         {
-            Value = ((void*)(value));
+            Value = value;
         }
 
-        public HCRYPTOIDFUNCADDR(nuint value)
-        {
-            Value = ((void*)(value));
-        }
+        public static HCRYPTOIDFUNCADDR INVALID_HANDLE_VALUE => new HCRYPTOIDFUNCADDR(-1);
 
-        public HCRYPTOIDFUNCADDR(void* value)
-        {
-            Value = ((void*)(value));
-        }
+        public static HCRYPTOIDFUNCADDR NULL => new HCRYPTOIDFUNCADDR(0);
 
         public static bool operator ==(HCRYPTOIDFUNCADDR left, HCRYPTOIDFUNCADDR right) => left.Value == right.Value;
 
         public static bool operator !=(HCRYPTOIDFUNCADDR left, HCRYPTOIDFUNCADDR right) => left.Value != right.Value;
 
-        public static explicit operator HCRYPTOIDFUNCADDR(int value) => new HCRYPTOIDFUNCADDR(value);
+        public static explicit operator HCRYPTOIDFUNCADDR(void* value) => new HCRYPTOIDFUNCADDR((nint)(value));
 
-        public static explicit operator HCRYPTOIDFUNCADDR(uint value) => new HCRYPTOIDFUNCADDR(value);
+        public static implicit operator void*(HCRYPTOIDFUNCADDR value) => (void*)(value.Value);
 
-        public static explicit operator HCRYPTOIDFUNCADDR(nint value) => new HCRYPTOIDFUNCADDR(value);
+        public static explicit operator HCRYPTOIDFUNCADDR(HANDLE value) => new HCRYPTOIDFUNCADDR(value);
 
-        public static explicit operator HCRYPTOIDFUNCADDR(nuint value) => new HCRYPTOIDFUNCADDR(value);
+        public static implicit operator HANDLE(HCRYPTOIDFUNCADDR value) => new HCRYPTOIDFUNCADDR(value);
 
-        public static explicit operator HCRYPTOIDFUNCADDR(void* value) => new HCRYPTOIDFUNCADDR(value);
+        public static explicit operator HCRYPTOIDFUNCADDR(byte value) => new HCRYPTOIDFUNCADDR((nint)(value));
 
-        public static explicit operator int(HCRYPTOIDFUNCADDR value) => (int)(value.Value);
+        public static implicit operator byte(HCRYPTOIDFUNCADDR value) => (byte)(value.Value);
 
-        public static explicit operator uint(HCRYPTOIDFUNCADDR value) => (uint)(value.Value);
+        public static explicit operator HCRYPTOIDFUNCADDR(short value) => new HCRYPTOIDFUNCADDR((nint)(value));
+
+        public static implicit operator short(HCRYPTOIDFUNCADDR value) => (short)(value.Value);
+
+        public static explicit operator HCRYPTOIDFUNCADDR(int value) => new HCRYPTOIDFUNCADDR((nint)(value));
+
+        public static implicit operator int(HCRYPTOIDFUNCADDR value) => (int)(value.Value);
+
+        public static explicit operator HCRYPTOIDFUNCADDR(long value) => new HCRYPTOIDFUNCADDR((nint)(value));
+
+        public static explicit operator long(HCRYPTOIDFUNCADDR value) => (long)(value.Value);
+
+        public static explicit operator HCRYPTOIDFUNCADDR(nint value) => new HCRYPTOIDFUNCADDR((nint)(value));
 
         public static implicit operator nint(HCRYPTOIDFUNCADDR value) => (nint)(value.Value);
 
-        public static implicit operator nuint(HCRYPTOIDFUNCADDR value) => (nuint)(value.Value);
+        public static explicit operator HCRYPTOIDFUNCADDR(sbyte value) => new HCRYPTOIDFUNCADDR((nint)(value));
 
-        public static implicit operator void*(HCRYPTOIDFUNCADDR value) => (void*)(value.Value);
+        public static implicit operator sbyte(HCRYPTOIDFUNCADDR value) => (sbyte)(value.Value);
+
+        public static explicit operator HCRYPTOIDFUNCADDR(ushort value) => new HCRYPTOIDFUNCADDR((nint)(value));
+
+        public static implicit operator ushort(HCRYPTOIDFUNCADDR value) => (ushort)(value.Value);
+
+        public static explicit operator HCRYPTOIDFUNCADDR(uint value) => new HCRYPTOIDFUNCADDR((nint)(value));
+
+        public static implicit operator uint(HCRYPTOIDFUNCADDR value) => (uint)(value.Value);
+
+        public static explicit operator HCRYPTOIDFUNCADDR(ulong value) => new HCRYPTOIDFUNCADDR((nint)(value));
+
+        public static explicit operator ulong(HCRYPTOIDFUNCADDR value) => (ulong)(value.Value);
+
+        public static explicit operator HCRYPTOIDFUNCADDR(nuint value) => new HCRYPTOIDFUNCADDR((nint)(value));
+
+        public static explicit operator nuint(HCRYPTOIDFUNCADDR value) => (nuint)(value.Value);
 
         public override bool Equals(object? obj) => (obj is HCRYPTOIDFUNCADDR other) && Equals(other);
 
         public bool Equals(HCRYPTOIDFUNCADDR other) => (this == other);
 
-        public override int GetHashCode() => ((nuint)(Value)).GetHashCode();
+        public override int GetHashCode() => Value.GetHashCode();
+
+        public override string ToString() => Value.ToString();
+
     }
 }

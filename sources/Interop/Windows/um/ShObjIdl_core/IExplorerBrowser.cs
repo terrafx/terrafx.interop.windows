@@ -55,9 +55,9 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        public HRESULT SetRect([NativeTypeName("HDWP *")] HANDLE* phdwp, RECT rcBrowser)
+        public HRESULT SetRect(HDWP* phdwp, RECT rcBrowser)
         {
-            return ((delegate* unmanaged<IExplorerBrowser*, HANDLE*, RECT, int>)(lpVtbl[5]))((IExplorerBrowser*)Unsafe.AsPointer(ref this), phdwp, rcBrowser);
+            return ((delegate* unmanaged<IExplorerBrowser*, HDWP*, RECT, int>)(lpVtbl[5]))((IExplorerBrowser*)Unsafe.AsPointer(ref this), phdwp, rcBrowser);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

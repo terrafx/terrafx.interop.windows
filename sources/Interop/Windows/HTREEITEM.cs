@@ -6,61 +6,76 @@ namespace TerraFX.Interop
 {
     public unsafe partial struct HTREEITEM : IEquatable<HTREEITEM>
     {
-        public readonly void* Value;
-
-        public HTREEITEM(int value)
-        {
-            Value = ((void*)(value));
-        }
-
-        public HTREEITEM(uint value)
-        {
-            Value = ((void*)(value));
-        }
+        public readonly nint Value;
 
         public HTREEITEM(nint value)
         {
-            Value = ((void*)(value));
+            Value = value;
         }
 
-        public HTREEITEM(nuint value)
-        {
-            Value = ((void*)(value));
-        }
+        public static HTREEITEM INVALID_HANDLE_VALUE => new HTREEITEM(-1);
 
-        public HTREEITEM(void* value)
-        {
-            Value = ((void*)(value));
-        }
+        public static HTREEITEM NULL => new HTREEITEM(0);
 
         public static bool operator ==(HTREEITEM left, HTREEITEM right) => left.Value == right.Value;
 
         public static bool operator !=(HTREEITEM left, HTREEITEM right) => left.Value != right.Value;
 
-        public static explicit operator HTREEITEM(int value) => new HTREEITEM(value);
+        public static explicit operator HTREEITEM(void* value) => new HTREEITEM((nint)(value));
 
-        public static explicit operator HTREEITEM(uint value) => new HTREEITEM(value);
+        public static implicit operator void*(HTREEITEM value) => (void*)(value.Value);
 
-        public static explicit operator HTREEITEM(nint value) => new HTREEITEM(value);
+        public static explicit operator HTREEITEM(HANDLE value) => new HTREEITEM(value);
 
-        public static explicit operator HTREEITEM(nuint value) => new HTREEITEM(value);
+        public static implicit operator HANDLE(HTREEITEM value) => new HTREEITEM(value);
 
-        public static explicit operator HTREEITEM(void* value) => new HTREEITEM(value);
+        public static explicit operator HTREEITEM(byte value) => new HTREEITEM((nint)(value));
 
-        public static explicit operator int(HTREEITEM value) => (int)(value.Value);
+        public static implicit operator byte(HTREEITEM value) => (byte)(value.Value);
 
-        public static explicit operator uint(HTREEITEM value) => (uint)(value.Value);
+        public static explicit operator HTREEITEM(short value) => new HTREEITEM((nint)(value));
+
+        public static implicit operator short(HTREEITEM value) => (short)(value.Value);
+
+        public static explicit operator HTREEITEM(int value) => new HTREEITEM((nint)(value));
+
+        public static implicit operator int(HTREEITEM value) => (int)(value.Value);
+
+        public static explicit operator HTREEITEM(long value) => new HTREEITEM((nint)(value));
+
+        public static explicit operator long(HTREEITEM value) => (long)(value.Value);
+
+        public static explicit operator HTREEITEM(nint value) => new HTREEITEM((nint)(value));
 
         public static implicit operator nint(HTREEITEM value) => (nint)(value.Value);
 
-        public static implicit operator nuint(HTREEITEM value) => (nuint)(value.Value);
+        public static explicit operator HTREEITEM(sbyte value) => new HTREEITEM((nint)(value));
 
-        public static implicit operator void*(HTREEITEM value) => (void*)(value.Value);
+        public static implicit operator sbyte(HTREEITEM value) => (sbyte)(value.Value);
+
+        public static explicit operator HTREEITEM(ushort value) => new HTREEITEM((nint)(value));
+
+        public static implicit operator ushort(HTREEITEM value) => (ushort)(value.Value);
+
+        public static explicit operator HTREEITEM(uint value) => new HTREEITEM((nint)(value));
+
+        public static implicit operator uint(HTREEITEM value) => (uint)(value.Value);
+
+        public static explicit operator HTREEITEM(ulong value) => new HTREEITEM((nint)(value));
+
+        public static explicit operator ulong(HTREEITEM value) => (ulong)(value.Value);
+
+        public static explicit operator HTREEITEM(nuint value) => new HTREEITEM((nint)(value));
+
+        public static explicit operator nuint(HTREEITEM value) => (nuint)(value.Value);
 
         public override bool Equals(object? obj) => (obj is HTREEITEM other) && Equals(other);
 
         public bool Equals(HTREEITEM other) => (this == other);
 
-        public override int GetHashCode() => ((nuint)(Value)).GetHashCode();
+        public override int GetHashCode() => Value.GetHashCode();
+
+        public override string ToString() => Value.ToString();
+
     }
 }

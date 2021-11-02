@@ -8,70 +8,74 @@ namespace TerraFX.Interop
     {
         public readonly nint Value;
 
-        public static HCS_PROCESS NULL => (HCS_PROCESS)(0);
-
-        public HCS_PROCESS(int value)
-        {
-            Value = ((nint)(value));
-        }
-
-        public HCS_PROCESS(uint value)
-        {
-            Value = ((nint)(value));
-        }
-
         public HCS_PROCESS(nint value)
         {
-            Value = ((nint)(value));
+            Value = value;
         }
 
-        public HCS_PROCESS(nuint value)
-        {
-            Value = ((nint)(value));
-        }
+        public static HCS_PROCESS INVALID_HANDLE_VALUE => new HCS_PROCESS(-1);
 
-        public HCS_PROCESS(void* value)
-        {
-            Value = ((nint)(value));
-        }
-
-        public HCS_PROCESS(HANDLE value)
-        {
-            Value = value.Value;
-        }
+        public static HCS_PROCESS NULL => new HCS_PROCESS(0);
 
         public static bool operator ==(HCS_PROCESS left, HCS_PROCESS right) => left.Value == right.Value;
 
         public static bool operator !=(HCS_PROCESS left, HCS_PROCESS right) => left.Value != right.Value;
 
-        public static explicit operator HCS_PROCESS(int value) => new HCS_PROCESS(value);
-
-        public static explicit operator HCS_PROCESS(uint value) => new HCS_PROCESS(value);
-
-        public static explicit operator HCS_PROCESS(nint value) => new HCS_PROCESS(value);
-
-        public static explicit operator HCS_PROCESS(nuint value) => new HCS_PROCESS(value);
-
-        public static explicit operator HCS_PROCESS(void* value) => new HCS_PROCESS(value);
-
-        public static explicit operator HCS_PROCESS(HANDLE value) => new HCS_PROCESS(value);
-
-        public static explicit operator int(HCS_PROCESS value) => (int)(value.Value);
-
-        public static explicit operator uint(HCS_PROCESS value) => (uint)(value.Value);
-
-        public static implicit operator nint(HCS_PROCESS value) => (nint)(value.Value);
-
-        public static implicit operator nuint(HCS_PROCESS value) => (nuint)(value.Value);
+        public static explicit operator HCS_PROCESS(void* value) => new HCS_PROCESS((nint)(value));
 
         public static implicit operator void*(HCS_PROCESS value) => (void*)(value.Value);
 
-        public static implicit operator HANDLE(HCS_PROCESS value) => (HANDLE)(value.Value);
+        public static explicit operator HCS_PROCESS(HANDLE value) => new HCS_PROCESS(value);
+
+        public static implicit operator HANDLE(HCS_PROCESS value) => new HCS_PROCESS(value);
+
+        public static explicit operator HCS_PROCESS(byte value) => new HCS_PROCESS((nint)(value));
+
+        public static implicit operator byte(HCS_PROCESS value) => (byte)(value.Value);
+
+        public static explicit operator HCS_PROCESS(short value) => new HCS_PROCESS((nint)(value));
+
+        public static implicit operator short(HCS_PROCESS value) => (short)(value.Value);
+
+        public static explicit operator HCS_PROCESS(int value) => new HCS_PROCESS((nint)(value));
+
+        public static implicit operator int(HCS_PROCESS value) => (int)(value.Value);
+
+        public static explicit operator HCS_PROCESS(long value) => new HCS_PROCESS((nint)(value));
+
+        public static explicit operator long(HCS_PROCESS value) => (long)(value.Value);
+
+        public static explicit operator HCS_PROCESS(nint value) => new HCS_PROCESS((nint)(value));
+
+        public static implicit operator nint(HCS_PROCESS value) => (nint)(value.Value);
+
+        public static explicit operator HCS_PROCESS(sbyte value) => new HCS_PROCESS((nint)(value));
+
+        public static implicit operator sbyte(HCS_PROCESS value) => (sbyte)(value.Value);
+
+        public static explicit operator HCS_PROCESS(ushort value) => new HCS_PROCESS((nint)(value));
+
+        public static implicit operator ushort(HCS_PROCESS value) => (ushort)(value.Value);
+
+        public static explicit operator HCS_PROCESS(uint value) => new HCS_PROCESS((nint)(value));
+
+        public static implicit operator uint(HCS_PROCESS value) => (uint)(value.Value);
+
+        public static explicit operator HCS_PROCESS(ulong value) => new HCS_PROCESS((nint)(value));
+
+        public static explicit operator ulong(HCS_PROCESS value) => (ulong)(value.Value);
+
+        public static explicit operator HCS_PROCESS(nuint value) => new HCS_PROCESS((nint)(value));
+
+        public static explicit operator nuint(HCS_PROCESS value) => (nuint)(value.Value);
 
         public override bool Equals(object? obj) => (obj is HCS_PROCESS other) && Equals(other);
 
         public bool Equals(HCS_PROCESS other) => (this == other);
 
-        public override int GetHashCode() => ((nuint)(Value)).GetHashCode();
+        public override int GetHashCode() => Value.GetHashCode();
+
+        public override string ToString() => Value.ToString();
+
     }
 }

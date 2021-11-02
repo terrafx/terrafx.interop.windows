@@ -8,70 +8,74 @@ namespace TerraFX.Interop
     {
         public readonly nint Value;
 
-        public static HRECOWORDLIST NULL => (HRECOWORDLIST)(0);
-
-        public HRECOWORDLIST(int value)
-        {
-            Value = ((nint)(value));
-        }
-
-        public HRECOWORDLIST(uint value)
-        {
-            Value = ((nint)(value));
-        }
-
         public HRECOWORDLIST(nint value)
         {
-            Value = ((nint)(value));
+            Value = value;
         }
 
-        public HRECOWORDLIST(nuint value)
-        {
-            Value = ((nint)(value));
-        }
+        public static HRECOWORDLIST INVALID_HANDLE_VALUE => new HRECOWORDLIST(-1);
 
-        public HRECOWORDLIST(void* value)
-        {
-            Value = ((nint)(value));
-        }
-
-        public HRECOWORDLIST(HANDLE value)
-        {
-            Value = value.Value;
-        }
+        public static HRECOWORDLIST NULL => new HRECOWORDLIST(0);
 
         public static bool operator ==(HRECOWORDLIST left, HRECOWORDLIST right) => left.Value == right.Value;
 
         public static bool operator !=(HRECOWORDLIST left, HRECOWORDLIST right) => left.Value != right.Value;
 
-        public static explicit operator HRECOWORDLIST(int value) => new HRECOWORDLIST(value);
-
-        public static explicit operator HRECOWORDLIST(uint value) => new HRECOWORDLIST(value);
-
-        public static explicit operator HRECOWORDLIST(nint value) => new HRECOWORDLIST(value);
-
-        public static explicit operator HRECOWORDLIST(nuint value) => new HRECOWORDLIST(value);
-
-        public static explicit operator HRECOWORDLIST(void* value) => new HRECOWORDLIST(value);
-
-        public static explicit operator HRECOWORDLIST(HANDLE value) => new HRECOWORDLIST(value);
-
-        public static explicit operator int(HRECOWORDLIST value) => (int)(value.Value);
-
-        public static explicit operator uint(HRECOWORDLIST value) => (uint)(value.Value);
-
-        public static implicit operator nint(HRECOWORDLIST value) => (nint)(value.Value);
-
-        public static implicit operator nuint(HRECOWORDLIST value) => (nuint)(value.Value);
+        public static explicit operator HRECOWORDLIST(void* value) => new HRECOWORDLIST((nint)(value));
 
         public static implicit operator void*(HRECOWORDLIST value) => (void*)(value.Value);
 
-        public static implicit operator HANDLE(HRECOWORDLIST value) => (HANDLE)(value.Value);
+        public static explicit operator HRECOWORDLIST(HANDLE value) => new HRECOWORDLIST(value);
+
+        public static implicit operator HANDLE(HRECOWORDLIST value) => new HRECOWORDLIST(value);
+
+        public static explicit operator HRECOWORDLIST(byte value) => new HRECOWORDLIST((nint)(value));
+
+        public static implicit operator byte(HRECOWORDLIST value) => (byte)(value.Value);
+
+        public static explicit operator HRECOWORDLIST(short value) => new HRECOWORDLIST((nint)(value));
+
+        public static implicit operator short(HRECOWORDLIST value) => (short)(value.Value);
+
+        public static explicit operator HRECOWORDLIST(int value) => new HRECOWORDLIST((nint)(value));
+
+        public static implicit operator int(HRECOWORDLIST value) => (int)(value.Value);
+
+        public static explicit operator HRECOWORDLIST(long value) => new HRECOWORDLIST((nint)(value));
+
+        public static explicit operator long(HRECOWORDLIST value) => (long)(value.Value);
+
+        public static explicit operator HRECOWORDLIST(nint value) => new HRECOWORDLIST((nint)(value));
+
+        public static implicit operator nint(HRECOWORDLIST value) => (nint)(value.Value);
+
+        public static explicit operator HRECOWORDLIST(sbyte value) => new HRECOWORDLIST((nint)(value));
+
+        public static implicit operator sbyte(HRECOWORDLIST value) => (sbyte)(value.Value);
+
+        public static explicit operator HRECOWORDLIST(ushort value) => new HRECOWORDLIST((nint)(value));
+
+        public static implicit operator ushort(HRECOWORDLIST value) => (ushort)(value.Value);
+
+        public static explicit operator HRECOWORDLIST(uint value) => new HRECOWORDLIST((nint)(value));
+
+        public static implicit operator uint(HRECOWORDLIST value) => (uint)(value.Value);
+
+        public static explicit operator HRECOWORDLIST(ulong value) => new HRECOWORDLIST((nint)(value));
+
+        public static explicit operator ulong(HRECOWORDLIST value) => (ulong)(value.Value);
+
+        public static explicit operator HRECOWORDLIST(nuint value) => new HRECOWORDLIST((nint)(value));
+
+        public static explicit operator nuint(HRECOWORDLIST value) => (nuint)(value.Value);
 
         public override bool Equals(object? obj) => (obj is HRECOWORDLIST other) && Equals(other);
 
         public bool Equals(HRECOWORDLIST other) => (this == other);
 
-        public override int GetHashCode() => ((nuint)(Value)).GetHashCode();
+        public override int GetHashCode() => Value.GetHashCode();
+
+        public override string ToString() => Value.ToString();
+
     }
 }

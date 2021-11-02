@@ -8,70 +8,74 @@ namespace TerraFX.Interop
     {
         public readonly nint Value;
 
-        public static HAMSISESSION NULL => (HAMSISESSION)(0);
-
-        public HAMSISESSION(int value)
-        {
-            Value = ((nint)(value));
-        }
-
-        public HAMSISESSION(uint value)
-        {
-            Value = ((nint)(value));
-        }
-
         public HAMSISESSION(nint value)
         {
-            Value = ((nint)(value));
+            Value = value;
         }
 
-        public HAMSISESSION(nuint value)
-        {
-            Value = ((nint)(value));
-        }
+        public static HAMSISESSION INVALID_HANDLE_VALUE => new HAMSISESSION(-1);
 
-        public HAMSISESSION(void* value)
-        {
-            Value = ((nint)(value));
-        }
-
-        public HAMSISESSION(HANDLE value)
-        {
-            Value = value.Value;
-        }
+        public static HAMSISESSION NULL => new HAMSISESSION(0);
 
         public static bool operator ==(HAMSISESSION left, HAMSISESSION right) => left.Value == right.Value;
 
         public static bool operator !=(HAMSISESSION left, HAMSISESSION right) => left.Value != right.Value;
 
-        public static explicit operator HAMSISESSION(int value) => new HAMSISESSION(value);
-
-        public static explicit operator HAMSISESSION(uint value) => new HAMSISESSION(value);
-
-        public static explicit operator HAMSISESSION(nint value) => new HAMSISESSION(value);
-
-        public static explicit operator HAMSISESSION(nuint value) => new HAMSISESSION(value);
-
-        public static explicit operator HAMSISESSION(void* value) => new HAMSISESSION(value);
-
-        public static explicit operator HAMSISESSION(HANDLE value) => new HAMSISESSION(value);
-
-        public static explicit operator int(HAMSISESSION value) => (int)(value.Value);
-
-        public static explicit operator uint(HAMSISESSION value) => (uint)(value.Value);
-
-        public static implicit operator nint(HAMSISESSION value) => (nint)(value.Value);
-
-        public static implicit operator nuint(HAMSISESSION value) => (nuint)(value.Value);
+        public static explicit operator HAMSISESSION(void* value) => new HAMSISESSION((nint)(value));
 
         public static implicit operator void*(HAMSISESSION value) => (void*)(value.Value);
 
-        public static implicit operator HANDLE(HAMSISESSION value) => (HANDLE)(value.Value);
+        public static explicit operator HAMSISESSION(HANDLE value) => new HAMSISESSION(value);
+
+        public static implicit operator HANDLE(HAMSISESSION value) => new HAMSISESSION(value);
+
+        public static explicit operator HAMSISESSION(byte value) => new HAMSISESSION((nint)(value));
+
+        public static implicit operator byte(HAMSISESSION value) => (byte)(value.Value);
+
+        public static explicit operator HAMSISESSION(short value) => new HAMSISESSION((nint)(value));
+
+        public static implicit operator short(HAMSISESSION value) => (short)(value.Value);
+
+        public static explicit operator HAMSISESSION(int value) => new HAMSISESSION((nint)(value));
+
+        public static implicit operator int(HAMSISESSION value) => (int)(value.Value);
+
+        public static explicit operator HAMSISESSION(long value) => new HAMSISESSION((nint)(value));
+
+        public static explicit operator long(HAMSISESSION value) => (long)(value.Value);
+
+        public static explicit operator HAMSISESSION(nint value) => new HAMSISESSION((nint)(value));
+
+        public static implicit operator nint(HAMSISESSION value) => (nint)(value.Value);
+
+        public static explicit operator HAMSISESSION(sbyte value) => new HAMSISESSION((nint)(value));
+
+        public static implicit operator sbyte(HAMSISESSION value) => (sbyte)(value.Value);
+
+        public static explicit operator HAMSISESSION(ushort value) => new HAMSISESSION((nint)(value));
+
+        public static implicit operator ushort(HAMSISESSION value) => (ushort)(value.Value);
+
+        public static explicit operator HAMSISESSION(uint value) => new HAMSISESSION((nint)(value));
+
+        public static implicit operator uint(HAMSISESSION value) => (uint)(value.Value);
+
+        public static explicit operator HAMSISESSION(ulong value) => new HAMSISESSION((nint)(value));
+
+        public static explicit operator ulong(HAMSISESSION value) => (ulong)(value.Value);
+
+        public static explicit operator HAMSISESSION(nuint value) => new HAMSISESSION((nint)(value));
+
+        public static explicit operator nuint(HAMSISESSION value) => (nuint)(value.Value);
 
         public override bool Equals(object? obj) => (obj is HAMSISESSION other) && Equals(other);
 
         public bool Equals(HAMSISESSION other) => (this == other);
 
-        public override int GetHashCode() => ((nuint)(Value)).GetHashCode();
+        public override int GetHashCode() => Value.GetHashCode();
+
+        public override string ToString() => Value.ToString();
+
     }
 }

@@ -8,70 +8,74 @@ namespace TerraFX.Interop
     {
         public readonly nint Value;
 
-        public static HLSURF NULL => (HLSURF)(0);
-
-        public HLSURF(int value)
-        {
-            Value = ((nint)(value));
-        }
-
-        public HLSURF(uint value)
-        {
-            Value = ((nint)(value));
-        }
-
         public HLSURF(nint value)
         {
-            Value = ((nint)(value));
+            Value = value;
         }
 
-        public HLSURF(nuint value)
-        {
-            Value = ((nint)(value));
-        }
+        public static HLSURF INVALID_HANDLE_VALUE => new HLSURF(-1);
 
-        public HLSURF(void* value)
-        {
-            Value = ((nint)(value));
-        }
-
-        public HLSURF(HANDLE value)
-        {
-            Value = value.Value;
-        }
+        public static HLSURF NULL => new HLSURF(0);
 
         public static bool operator ==(HLSURF left, HLSURF right) => left.Value == right.Value;
 
         public static bool operator !=(HLSURF left, HLSURF right) => left.Value != right.Value;
 
-        public static explicit operator HLSURF(int value) => new HLSURF(value);
-
-        public static explicit operator HLSURF(uint value) => new HLSURF(value);
-
-        public static explicit operator HLSURF(nint value) => new HLSURF(value);
-
-        public static explicit operator HLSURF(nuint value) => new HLSURF(value);
-
-        public static explicit operator HLSURF(void* value) => new HLSURF(value);
-
-        public static explicit operator HLSURF(HANDLE value) => new HLSURF(value);
-
-        public static explicit operator int(HLSURF value) => (int)(value.Value);
-
-        public static explicit operator uint(HLSURF value) => (uint)(value.Value);
-
-        public static implicit operator nint(HLSURF value) => (nint)(value.Value);
-
-        public static implicit operator nuint(HLSURF value) => (nuint)(value.Value);
+        public static explicit operator HLSURF(void* value) => new HLSURF((nint)(value));
 
         public static implicit operator void*(HLSURF value) => (void*)(value.Value);
 
-        public static implicit operator HANDLE(HLSURF value) => (HANDLE)(value.Value);
+        public static explicit operator HLSURF(HANDLE value) => new HLSURF(value);
+
+        public static implicit operator HANDLE(HLSURF value) => new HLSURF(value);
+
+        public static explicit operator HLSURF(byte value) => new HLSURF((nint)(value));
+
+        public static implicit operator byte(HLSURF value) => (byte)(value.Value);
+
+        public static explicit operator HLSURF(short value) => new HLSURF((nint)(value));
+
+        public static implicit operator short(HLSURF value) => (short)(value.Value);
+
+        public static explicit operator HLSURF(int value) => new HLSURF((nint)(value));
+
+        public static implicit operator int(HLSURF value) => (int)(value.Value);
+
+        public static explicit operator HLSURF(long value) => new HLSURF((nint)(value));
+
+        public static explicit operator long(HLSURF value) => (long)(value.Value);
+
+        public static explicit operator HLSURF(nint value) => new HLSURF((nint)(value));
+
+        public static implicit operator nint(HLSURF value) => (nint)(value.Value);
+
+        public static explicit operator HLSURF(sbyte value) => new HLSURF((nint)(value));
+
+        public static implicit operator sbyte(HLSURF value) => (sbyte)(value.Value);
+
+        public static explicit operator HLSURF(ushort value) => new HLSURF((nint)(value));
+
+        public static implicit operator ushort(HLSURF value) => (ushort)(value.Value);
+
+        public static explicit operator HLSURF(uint value) => new HLSURF((nint)(value));
+
+        public static implicit operator uint(HLSURF value) => (uint)(value.Value);
+
+        public static explicit operator HLSURF(ulong value) => new HLSURF((nint)(value));
+
+        public static explicit operator ulong(HLSURF value) => (ulong)(value.Value);
+
+        public static explicit operator HLSURF(nuint value) => new HLSURF((nint)(value));
+
+        public static explicit operator nuint(HLSURF value) => (nuint)(value.Value);
 
         public override bool Equals(object? obj) => (obj is HLSURF other) && Equals(other);
 
         public bool Equals(HLSURF other) => (this == other);
 
-        public override int GetHashCode() => ((nuint)(Value)).GetHashCode();
+        public override int GetHashCode() => Value.GetHashCode();
+
+        public override string ToString() => Value.ToString();
+
     }
 }

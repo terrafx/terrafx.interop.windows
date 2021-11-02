@@ -8,70 +8,74 @@ namespace TerraFX.Interop
     {
         public readonly nint Value;
 
-        public static HMIDI NULL => (HMIDI)(0);
-
-        public HMIDI(int value)
-        {
-            Value = ((nint)(value));
-        }
-
-        public HMIDI(uint value)
-        {
-            Value = ((nint)(value));
-        }
-
         public HMIDI(nint value)
         {
-            Value = ((nint)(value));
+            Value = value;
         }
 
-        public HMIDI(nuint value)
-        {
-            Value = ((nint)(value));
-        }
+        public static HMIDI INVALID_HANDLE_VALUE => new HMIDI(-1);
 
-        public HMIDI(void* value)
-        {
-            Value = ((nint)(value));
-        }
-
-        public HMIDI(HANDLE value)
-        {
-            Value = value.Value;
-        }
+        public static HMIDI NULL => new HMIDI(0);
 
         public static bool operator ==(HMIDI left, HMIDI right) => left.Value == right.Value;
 
         public static bool operator !=(HMIDI left, HMIDI right) => left.Value != right.Value;
 
-        public static explicit operator HMIDI(int value) => new HMIDI(value);
-
-        public static explicit operator HMIDI(uint value) => new HMIDI(value);
-
-        public static explicit operator HMIDI(nint value) => new HMIDI(value);
-
-        public static explicit operator HMIDI(nuint value) => new HMIDI(value);
-
-        public static explicit operator HMIDI(void* value) => new HMIDI(value);
-
-        public static explicit operator HMIDI(HANDLE value) => new HMIDI(value);
-
-        public static explicit operator int(HMIDI value) => (int)(value.Value);
-
-        public static explicit operator uint(HMIDI value) => (uint)(value.Value);
-
-        public static implicit operator nint(HMIDI value) => (nint)(value.Value);
-
-        public static implicit operator nuint(HMIDI value) => (nuint)(value.Value);
+        public static explicit operator HMIDI(void* value) => new HMIDI((nint)(value));
 
         public static implicit operator void*(HMIDI value) => (void*)(value.Value);
 
-        public static implicit operator HANDLE(HMIDI value) => (HANDLE)(value.Value);
+        public static explicit operator HMIDI(HANDLE value) => new HMIDI(value);
+
+        public static implicit operator HANDLE(HMIDI value) => new HMIDI(value);
+
+        public static explicit operator HMIDI(byte value) => new HMIDI((nint)(value));
+
+        public static implicit operator byte(HMIDI value) => (byte)(value.Value);
+
+        public static explicit operator HMIDI(short value) => new HMIDI((nint)(value));
+
+        public static implicit operator short(HMIDI value) => (short)(value.Value);
+
+        public static explicit operator HMIDI(int value) => new HMIDI((nint)(value));
+
+        public static implicit operator int(HMIDI value) => (int)(value.Value);
+
+        public static explicit operator HMIDI(long value) => new HMIDI((nint)(value));
+
+        public static explicit operator long(HMIDI value) => (long)(value.Value);
+
+        public static explicit operator HMIDI(nint value) => new HMIDI((nint)(value));
+
+        public static implicit operator nint(HMIDI value) => (nint)(value.Value);
+
+        public static explicit operator HMIDI(sbyte value) => new HMIDI((nint)(value));
+
+        public static implicit operator sbyte(HMIDI value) => (sbyte)(value.Value);
+
+        public static explicit operator HMIDI(ushort value) => new HMIDI((nint)(value));
+
+        public static implicit operator ushort(HMIDI value) => (ushort)(value.Value);
+
+        public static explicit operator HMIDI(uint value) => new HMIDI((nint)(value));
+
+        public static implicit operator uint(HMIDI value) => (uint)(value.Value);
+
+        public static explicit operator HMIDI(ulong value) => new HMIDI((nint)(value));
+
+        public static explicit operator ulong(HMIDI value) => (ulong)(value.Value);
+
+        public static explicit operator HMIDI(nuint value) => new HMIDI((nint)(value));
+
+        public static explicit operator nuint(HMIDI value) => (nuint)(value.Value);
 
         public override bool Equals(object? obj) => (obj is HMIDI other) && Equals(other);
 
         public bool Equals(HMIDI other) => (this == other);
 
-        public override int GetHashCode() => ((nuint)(Value)).GetHashCode();
+        public override int GetHashCode() => Value.GetHashCode();
+
+        public override string ToString() => Value.ToString();
+
     }
 }

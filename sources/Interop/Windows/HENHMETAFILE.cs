@@ -8,70 +8,74 @@ namespace TerraFX.Interop
     {
         public readonly nint Value;
 
-        public static HENHMETAFILE NULL => (HENHMETAFILE)(0);
-
-        public HENHMETAFILE(int value)
-        {
-            Value = ((nint)(value));
-        }
-
-        public HENHMETAFILE(uint value)
-        {
-            Value = ((nint)(value));
-        }
-
         public HENHMETAFILE(nint value)
         {
-            Value = ((nint)(value));
+            Value = value;
         }
 
-        public HENHMETAFILE(nuint value)
-        {
-            Value = ((nint)(value));
-        }
+        public static HENHMETAFILE INVALID_HANDLE_VALUE => new HENHMETAFILE(-1);
 
-        public HENHMETAFILE(void* value)
-        {
-            Value = ((nint)(value));
-        }
-
-        public HENHMETAFILE(HANDLE value)
-        {
-            Value = value.Value;
-        }
+        public static HENHMETAFILE NULL => new HENHMETAFILE(0);
 
         public static bool operator ==(HENHMETAFILE left, HENHMETAFILE right) => left.Value == right.Value;
 
         public static bool operator !=(HENHMETAFILE left, HENHMETAFILE right) => left.Value != right.Value;
 
-        public static explicit operator HENHMETAFILE(int value) => new HENHMETAFILE(value);
-
-        public static explicit operator HENHMETAFILE(uint value) => new HENHMETAFILE(value);
-
-        public static explicit operator HENHMETAFILE(nint value) => new HENHMETAFILE(value);
-
-        public static explicit operator HENHMETAFILE(nuint value) => new HENHMETAFILE(value);
-
-        public static explicit operator HENHMETAFILE(void* value) => new HENHMETAFILE(value);
-
-        public static explicit operator HENHMETAFILE(HANDLE value) => new HENHMETAFILE(value);
-
-        public static explicit operator int(HENHMETAFILE value) => (int)(value.Value);
-
-        public static explicit operator uint(HENHMETAFILE value) => (uint)(value.Value);
-
-        public static implicit operator nint(HENHMETAFILE value) => (nint)(value.Value);
-
-        public static implicit operator nuint(HENHMETAFILE value) => (nuint)(value.Value);
+        public static explicit operator HENHMETAFILE(void* value) => new HENHMETAFILE((nint)(value));
 
         public static implicit operator void*(HENHMETAFILE value) => (void*)(value.Value);
 
-        public static implicit operator HANDLE(HENHMETAFILE value) => (HANDLE)(value.Value);
+        public static explicit operator HENHMETAFILE(HANDLE value) => new HENHMETAFILE(value);
+
+        public static implicit operator HANDLE(HENHMETAFILE value) => new HENHMETAFILE(value);
+
+        public static explicit operator HENHMETAFILE(byte value) => new HENHMETAFILE((nint)(value));
+
+        public static implicit operator byte(HENHMETAFILE value) => (byte)(value.Value);
+
+        public static explicit operator HENHMETAFILE(short value) => new HENHMETAFILE((nint)(value));
+
+        public static implicit operator short(HENHMETAFILE value) => (short)(value.Value);
+
+        public static explicit operator HENHMETAFILE(int value) => new HENHMETAFILE((nint)(value));
+
+        public static implicit operator int(HENHMETAFILE value) => (int)(value.Value);
+
+        public static explicit operator HENHMETAFILE(long value) => new HENHMETAFILE((nint)(value));
+
+        public static explicit operator long(HENHMETAFILE value) => (long)(value.Value);
+
+        public static explicit operator HENHMETAFILE(nint value) => new HENHMETAFILE((nint)(value));
+
+        public static implicit operator nint(HENHMETAFILE value) => (nint)(value.Value);
+
+        public static explicit operator HENHMETAFILE(sbyte value) => new HENHMETAFILE((nint)(value));
+
+        public static implicit operator sbyte(HENHMETAFILE value) => (sbyte)(value.Value);
+
+        public static explicit operator HENHMETAFILE(ushort value) => new HENHMETAFILE((nint)(value));
+
+        public static implicit operator ushort(HENHMETAFILE value) => (ushort)(value.Value);
+
+        public static explicit operator HENHMETAFILE(uint value) => new HENHMETAFILE((nint)(value));
+
+        public static implicit operator uint(HENHMETAFILE value) => (uint)(value.Value);
+
+        public static explicit operator HENHMETAFILE(ulong value) => new HENHMETAFILE((nint)(value));
+
+        public static explicit operator ulong(HENHMETAFILE value) => (ulong)(value.Value);
+
+        public static explicit operator HENHMETAFILE(nuint value) => new HENHMETAFILE((nint)(value));
+
+        public static explicit operator nuint(HENHMETAFILE value) => (nuint)(value.Value);
 
         public override bool Equals(object? obj) => (obj is HENHMETAFILE other) && Equals(other);
 
         public bool Equals(HENHMETAFILE other) => (this == other);
 
-        public override int GetHashCode() => ((nuint)(Value)).GetHashCode();
+        public override int GetHashCode() => Value.GetHashCode();
+
+        public override string ToString() => Value.ToString();
+
     }
 }

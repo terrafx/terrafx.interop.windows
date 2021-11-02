@@ -8,70 +8,74 @@ namespace TerraFX.Interop
     {
         public readonly nint Value;
 
-        public static WEB_SOCKET_HANDLE NULL => (WEB_SOCKET_HANDLE)(0);
-
-        public WEB_SOCKET_HANDLE(int value)
-        {
-            Value = ((nint)(value));
-        }
-
-        public WEB_SOCKET_HANDLE(uint value)
-        {
-            Value = ((nint)(value));
-        }
-
         public WEB_SOCKET_HANDLE(nint value)
         {
-            Value = ((nint)(value));
+            Value = value;
         }
 
-        public WEB_SOCKET_HANDLE(nuint value)
-        {
-            Value = ((nint)(value));
-        }
+        public static WEB_SOCKET_HANDLE INVALID_HANDLE_VALUE => new WEB_SOCKET_HANDLE(-1);
 
-        public WEB_SOCKET_HANDLE(void* value)
-        {
-            Value = ((nint)(value));
-        }
-
-        public WEB_SOCKET_HANDLE(HANDLE value)
-        {
-            Value = value.Value;
-        }
+        public static WEB_SOCKET_HANDLE NULL => new WEB_SOCKET_HANDLE(0);
 
         public static bool operator ==(WEB_SOCKET_HANDLE left, WEB_SOCKET_HANDLE right) => left.Value == right.Value;
 
         public static bool operator !=(WEB_SOCKET_HANDLE left, WEB_SOCKET_HANDLE right) => left.Value != right.Value;
 
-        public static explicit operator WEB_SOCKET_HANDLE(int value) => new WEB_SOCKET_HANDLE(value);
-
-        public static explicit operator WEB_SOCKET_HANDLE(uint value) => new WEB_SOCKET_HANDLE(value);
-
-        public static explicit operator WEB_SOCKET_HANDLE(nint value) => new WEB_SOCKET_HANDLE(value);
-
-        public static explicit operator WEB_SOCKET_HANDLE(nuint value) => new WEB_SOCKET_HANDLE(value);
-
-        public static explicit operator WEB_SOCKET_HANDLE(void* value) => new WEB_SOCKET_HANDLE(value);
-
-        public static explicit operator WEB_SOCKET_HANDLE(HANDLE value) => new WEB_SOCKET_HANDLE(value);
-
-        public static explicit operator int(WEB_SOCKET_HANDLE value) => (int)(value.Value);
-
-        public static explicit operator uint(WEB_SOCKET_HANDLE value) => (uint)(value.Value);
-
-        public static implicit operator nint(WEB_SOCKET_HANDLE value) => (nint)(value.Value);
-
-        public static implicit operator nuint(WEB_SOCKET_HANDLE value) => (nuint)(value.Value);
+        public static explicit operator WEB_SOCKET_HANDLE(void* value) => new WEB_SOCKET_HANDLE((nint)(value));
 
         public static implicit operator void*(WEB_SOCKET_HANDLE value) => (void*)(value.Value);
 
-        public static implicit operator HANDLE(WEB_SOCKET_HANDLE value) => (HANDLE)(value.Value);
+        public static explicit operator WEB_SOCKET_HANDLE(HANDLE value) => new WEB_SOCKET_HANDLE(value);
+
+        public static implicit operator HANDLE(WEB_SOCKET_HANDLE value) => new WEB_SOCKET_HANDLE(value);
+
+        public static explicit operator WEB_SOCKET_HANDLE(byte value) => new WEB_SOCKET_HANDLE((nint)(value));
+
+        public static implicit operator byte(WEB_SOCKET_HANDLE value) => (byte)(value.Value);
+
+        public static explicit operator WEB_SOCKET_HANDLE(short value) => new WEB_SOCKET_HANDLE((nint)(value));
+
+        public static implicit operator short(WEB_SOCKET_HANDLE value) => (short)(value.Value);
+
+        public static explicit operator WEB_SOCKET_HANDLE(int value) => new WEB_SOCKET_HANDLE((nint)(value));
+
+        public static implicit operator int(WEB_SOCKET_HANDLE value) => (int)(value.Value);
+
+        public static explicit operator WEB_SOCKET_HANDLE(long value) => new WEB_SOCKET_HANDLE((nint)(value));
+
+        public static explicit operator long(WEB_SOCKET_HANDLE value) => (long)(value.Value);
+
+        public static explicit operator WEB_SOCKET_HANDLE(nint value) => new WEB_SOCKET_HANDLE((nint)(value));
+
+        public static implicit operator nint(WEB_SOCKET_HANDLE value) => (nint)(value.Value);
+
+        public static explicit operator WEB_SOCKET_HANDLE(sbyte value) => new WEB_SOCKET_HANDLE((nint)(value));
+
+        public static implicit operator sbyte(WEB_SOCKET_HANDLE value) => (sbyte)(value.Value);
+
+        public static explicit operator WEB_SOCKET_HANDLE(ushort value) => new WEB_SOCKET_HANDLE((nint)(value));
+
+        public static implicit operator ushort(WEB_SOCKET_HANDLE value) => (ushort)(value.Value);
+
+        public static explicit operator WEB_SOCKET_HANDLE(uint value) => new WEB_SOCKET_HANDLE((nint)(value));
+
+        public static implicit operator uint(WEB_SOCKET_HANDLE value) => (uint)(value.Value);
+
+        public static explicit operator WEB_SOCKET_HANDLE(ulong value) => new WEB_SOCKET_HANDLE((nint)(value));
+
+        public static explicit operator ulong(WEB_SOCKET_HANDLE value) => (ulong)(value.Value);
+
+        public static explicit operator WEB_SOCKET_HANDLE(nuint value) => new WEB_SOCKET_HANDLE((nint)(value));
+
+        public static explicit operator nuint(WEB_SOCKET_HANDLE value) => (nuint)(value.Value);
 
         public override bool Equals(object? obj) => (obj is WEB_SOCKET_HANDLE other) && Equals(other);
 
         public bool Equals(WEB_SOCKET_HANDLE other) => (this == other);
 
-        public override int GetHashCode() => ((nuint)(Value)).GetHashCode();
+        public override int GetHashCode() => Value.GetHashCode();
+
+        public override string ToString() => Value.ToString();
+
     }
 }

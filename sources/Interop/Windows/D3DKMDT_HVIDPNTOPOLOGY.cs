@@ -8,70 +8,74 @@ namespace TerraFX.Interop
     {
         public readonly nint Value;
 
-        public static D3DKMDT_HVIDPNTOPOLOGY NULL => (D3DKMDT_HVIDPNTOPOLOGY)(0);
-
-        public D3DKMDT_HVIDPNTOPOLOGY(int value)
-        {
-            Value = ((nint)(value));
-        }
-
-        public D3DKMDT_HVIDPNTOPOLOGY(uint value)
-        {
-            Value = ((nint)(value));
-        }
-
         public D3DKMDT_HVIDPNTOPOLOGY(nint value)
         {
-            Value = ((nint)(value));
+            Value = value;
         }
 
-        public D3DKMDT_HVIDPNTOPOLOGY(nuint value)
-        {
-            Value = ((nint)(value));
-        }
+        public static D3DKMDT_HVIDPNTOPOLOGY INVALID_HANDLE_VALUE => new D3DKMDT_HVIDPNTOPOLOGY(-1);
 
-        public D3DKMDT_HVIDPNTOPOLOGY(void* value)
-        {
-            Value = ((nint)(value));
-        }
-
-        public D3DKMDT_HVIDPNTOPOLOGY(HANDLE value)
-        {
-            Value = value.Value;
-        }
+        public static D3DKMDT_HVIDPNTOPOLOGY NULL => new D3DKMDT_HVIDPNTOPOLOGY(0);
 
         public static bool operator ==(D3DKMDT_HVIDPNTOPOLOGY left, D3DKMDT_HVIDPNTOPOLOGY right) => left.Value == right.Value;
 
         public static bool operator !=(D3DKMDT_HVIDPNTOPOLOGY left, D3DKMDT_HVIDPNTOPOLOGY right) => left.Value != right.Value;
 
-        public static explicit operator D3DKMDT_HVIDPNTOPOLOGY(int value) => new D3DKMDT_HVIDPNTOPOLOGY(value);
-
-        public static explicit operator D3DKMDT_HVIDPNTOPOLOGY(uint value) => new D3DKMDT_HVIDPNTOPOLOGY(value);
-
-        public static explicit operator D3DKMDT_HVIDPNTOPOLOGY(nint value) => new D3DKMDT_HVIDPNTOPOLOGY(value);
-
-        public static explicit operator D3DKMDT_HVIDPNTOPOLOGY(nuint value) => new D3DKMDT_HVIDPNTOPOLOGY(value);
-
-        public static explicit operator D3DKMDT_HVIDPNTOPOLOGY(void* value) => new D3DKMDT_HVIDPNTOPOLOGY(value);
-
-        public static explicit operator D3DKMDT_HVIDPNTOPOLOGY(HANDLE value) => new D3DKMDT_HVIDPNTOPOLOGY(value);
-
-        public static explicit operator int(D3DKMDT_HVIDPNTOPOLOGY value) => (int)(value.Value);
-
-        public static explicit operator uint(D3DKMDT_HVIDPNTOPOLOGY value) => (uint)(value.Value);
-
-        public static implicit operator nint(D3DKMDT_HVIDPNTOPOLOGY value) => (nint)(value.Value);
-
-        public static implicit operator nuint(D3DKMDT_HVIDPNTOPOLOGY value) => (nuint)(value.Value);
+        public static explicit operator D3DKMDT_HVIDPNTOPOLOGY(void* value) => new D3DKMDT_HVIDPNTOPOLOGY((nint)(value));
 
         public static implicit operator void*(D3DKMDT_HVIDPNTOPOLOGY value) => (void*)(value.Value);
 
-        public static implicit operator HANDLE(D3DKMDT_HVIDPNTOPOLOGY value) => (HANDLE)(value.Value);
+        public static explicit operator D3DKMDT_HVIDPNTOPOLOGY(HANDLE value) => new D3DKMDT_HVIDPNTOPOLOGY(value);
+
+        public static implicit operator HANDLE(D3DKMDT_HVIDPNTOPOLOGY value) => new D3DKMDT_HVIDPNTOPOLOGY(value);
+
+        public static explicit operator D3DKMDT_HVIDPNTOPOLOGY(byte value) => new D3DKMDT_HVIDPNTOPOLOGY((nint)(value));
+
+        public static implicit operator byte(D3DKMDT_HVIDPNTOPOLOGY value) => (byte)(value.Value);
+
+        public static explicit operator D3DKMDT_HVIDPNTOPOLOGY(short value) => new D3DKMDT_HVIDPNTOPOLOGY((nint)(value));
+
+        public static implicit operator short(D3DKMDT_HVIDPNTOPOLOGY value) => (short)(value.Value);
+
+        public static explicit operator D3DKMDT_HVIDPNTOPOLOGY(int value) => new D3DKMDT_HVIDPNTOPOLOGY((nint)(value));
+
+        public static implicit operator int(D3DKMDT_HVIDPNTOPOLOGY value) => (int)(value.Value);
+
+        public static explicit operator D3DKMDT_HVIDPNTOPOLOGY(long value) => new D3DKMDT_HVIDPNTOPOLOGY((nint)(value));
+
+        public static explicit operator long(D3DKMDT_HVIDPNTOPOLOGY value) => (long)(value.Value);
+
+        public static explicit operator D3DKMDT_HVIDPNTOPOLOGY(nint value) => new D3DKMDT_HVIDPNTOPOLOGY((nint)(value));
+
+        public static implicit operator nint(D3DKMDT_HVIDPNTOPOLOGY value) => (nint)(value.Value);
+
+        public static explicit operator D3DKMDT_HVIDPNTOPOLOGY(sbyte value) => new D3DKMDT_HVIDPNTOPOLOGY((nint)(value));
+
+        public static implicit operator sbyte(D3DKMDT_HVIDPNTOPOLOGY value) => (sbyte)(value.Value);
+
+        public static explicit operator D3DKMDT_HVIDPNTOPOLOGY(ushort value) => new D3DKMDT_HVIDPNTOPOLOGY((nint)(value));
+
+        public static implicit operator ushort(D3DKMDT_HVIDPNTOPOLOGY value) => (ushort)(value.Value);
+
+        public static explicit operator D3DKMDT_HVIDPNTOPOLOGY(uint value) => new D3DKMDT_HVIDPNTOPOLOGY((nint)(value));
+
+        public static implicit operator uint(D3DKMDT_HVIDPNTOPOLOGY value) => (uint)(value.Value);
+
+        public static explicit operator D3DKMDT_HVIDPNTOPOLOGY(ulong value) => new D3DKMDT_HVIDPNTOPOLOGY((nint)(value));
+
+        public static explicit operator ulong(D3DKMDT_HVIDPNTOPOLOGY value) => (ulong)(value.Value);
+
+        public static explicit operator D3DKMDT_HVIDPNTOPOLOGY(nuint value) => new D3DKMDT_HVIDPNTOPOLOGY((nint)(value));
+
+        public static explicit operator nuint(D3DKMDT_HVIDPNTOPOLOGY value) => (nuint)(value.Value);
 
         public override bool Equals(object? obj) => (obj is D3DKMDT_HVIDPNTOPOLOGY other) && Equals(other);
 
         public bool Equals(D3DKMDT_HVIDPNTOPOLOGY other) => (this == other);
 
-        public override int GetHashCode() => ((nuint)(Value)).GetHashCode();
+        public override int GetHashCode() => Value.GetHashCode();
+
+        public override string ToString() => Value.ToString();
+
     }
 }

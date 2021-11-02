@@ -8,70 +8,74 @@ namespace TerraFX.Interop
     {
         public readonly nint Value;
 
-        public static SPPHRASEPROPERTYHANDLE NULL => (SPPHRASEPROPERTYHANDLE)(0);
-
-        public SPPHRASEPROPERTYHANDLE(int value)
-        {
-            Value = ((nint)(value));
-        }
-
-        public SPPHRASEPROPERTYHANDLE(uint value)
-        {
-            Value = ((nint)(value));
-        }
-
         public SPPHRASEPROPERTYHANDLE(nint value)
         {
-            Value = ((nint)(value));
+            Value = value;
         }
 
-        public SPPHRASEPROPERTYHANDLE(nuint value)
-        {
-            Value = ((nint)(value));
-        }
+        public static SPPHRASEPROPERTYHANDLE INVALID_HANDLE_VALUE => new SPPHRASEPROPERTYHANDLE(-1);
 
-        public SPPHRASEPROPERTYHANDLE(void* value)
-        {
-            Value = ((nint)(value));
-        }
-
-        public SPPHRASEPROPERTYHANDLE(HANDLE value)
-        {
-            Value = value.Value;
-        }
+        public static SPPHRASEPROPERTYHANDLE NULL => new SPPHRASEPROPERTYHANDLE(0);
 
         public static bool operator ==(SPPHRASEPROPERTYHANDLE left, SPPHRASEPROPERTYHANDLE right) => left.Value == right.Value;
 
         public static bool operator !=(SPPHRASEPROPERTYHANDLE left, SPPHRASEPROPERTYHANDLE right) => left.Value != right.Value;
 
-        public static explicit operator SPPHRASEPROPERTYHANDLE(int value) => new SPPHRASEPROPERTYHANDLE(value);
-
-        public static explicit operator SPPHRASEPROPERTYHANDLE(uint value) => new SPPHRASEPROPERTYHANDLE(value);
-
-        public static explicit operator SPPHRASEPROPERTYHANDLE(nint value) => new SPPHRASEPROPERTYHANDLE(value);
-
-        public static explicit operator SPPHRASEPROPERTYHANDLE(nuint value) => new SPPHRASEPROPERTYHANDLE(value);
-
-        public static explicit operator SPPHRASEPROPERTYHANDLE(void* value) => new SPPHRASEPROPERTYHANDLE(value);
-
-        public static explicit operator SPPHRASEPROPERTYHANDLE(HANDLE value) => new SPPHRASEPROPERTYHANDLE(value);
-
-        public static explicit operator int(SPPHRASEPROPERTYHANDLE value) => (int)(value.Value);
-
-        public static explicit operator uint(SPPHRASEPROPERTYHANDLE value) => (uint)(value.Value);
-
-        public static implicit operator nint(SPPHRASEPROPERTYHANDLE value) => (nint)(value.Value);
-
-        public static implicit operator nuint(SPPHRASEPROPERTYHANDLE value) => (nuint)(value.Value);
+        public static explicit operator SPPHRASEPROPERTYHANDLE(void* value) => new SPPHRASEPROPERTYHANDLE((nint)(value));
 
         public static implicit operator void*(SPPHRASEPROPERTYHANDLE value) => (void*)(value.Value);
 
-        public static implicit operator HANDLE(SPPHRASEPROPERTYHANDLE value) => (HANDLE)(value.Value);
+        public static explicit operator SPPHRASEPROPERTYHANDLE(HANDLE value) => new SPPHRASEPROPERTYHANDLE(value);
+
+        public static implicit operator HANDLE(SPPHRASEPROPERTYHANDLE value) => new SPPHRASEPROPERTYHANDLE(value);
+
+        public static explicit operator SPPHRASEPROPERTYHANDLE(byte value) => new SPPHRASEPROPERTYHANDLE((nint)(value));
+
+        public static implicit operator byte(SPPHRASEPROPERTYHANDLE value) => (byte)(value.Value);
+
+        public static explicit operator SPPHRASEPROPERTYHANDLE(short value) => new SPPHRASEPROPERTYHANDLE((nint)(value));
+
+        public static implicit operator short(SPPHRASEPROPERTYHANDLE value) => (short)(value.Value);
+
+        public static explicit operator SPPHRASEPROPERTYHANDLE(int value) => new SPPHRASEPROPERTYHANDLE((nint)(value));
+
+        public static implicit operator int(SPPHRASEPROPERTYHANDLE value) => (int)(value.Value);
+
+        public static explicit operator SPPHRASEPROPERTYHANDLE(long value) => new SPPHRASEPROPERTYHANDLE((nint)(value));
+
+        public static explicit operator long(SPPHRASEPROPERTYHANDLE value) => (long)(value.Value);
+
+        public static explicit operator SPPHRASEPROPERTYHANDLE(nint value) => new SPPHRASEPROPERTYHANDLE((nint)(value));
+
+        public static implicit operator nint(SPPHRASEPROPERTYHANDLE value) => (nint)(value.Value);
+
+        public static explicit operator SPPHRASEPROPERTYHANDLE(sbyte value) => new SPPHRASEPROPERTYHANDLE((nint)(value));
+
+        public static implicit operator sbyte(SPPHRASEPROPERTYHANDLE value) => (sbyte)(value.Value);
+
+        public static explicit operator SPPHRASEPROPERTYHANDLE(ushort value) => new SPPHRASEPROPERTYHANDLE((nint)(value));
+
+        public static implicit operator ushort(SPPHRASEPROPERTYHANDLE value) => (ushort)(value.Value);
+
+        public static explicit operator SPPHRASEPROPERTYHANDLE(uint value) => new SPPHRASEPROPERTYHANDLE((nint)(value));
+
+        public static implicit operator uint(SPPHRASEPROPERTYHANDLE value) => (uint)(value.Value);
+
+        public static explicit operator SPPHRASEPROPERTYHANDLE(ulong value) => new SPPHRASEPROPERTYHANDLE((nint)(value));
+
+        public static explicit operator ulong(SPPHRASEPROPERTYHANDLE value) => (ulong)(value.Value);
+
+        public static explicit operator SPPHRASEPROPERTYHANDLE(nuint value) => new SPPHRASEPROPERTYHANDLE((nint)(value));
+
+        public static explicit operator nuint(SPPHRASEPROPERTYHANDLE value) => (nuint)(value.Value);
 
         public override bool Equals(object? obj) => (obj is SPPHRASEPROPERTYHANDLE other) && Equals(other);
 
         public bool Equals(SPPHRASEPROPERTYHANDLE other) => (this == other);
 
-        public override int GetHashCode() => ((nuint)(Value)).GetHashCode();
+        public override int GetHashCode() => Value.GetHashCode();
+
+        public override string ToString() => Value.ToString();
+
     }
 }

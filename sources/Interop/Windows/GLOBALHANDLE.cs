@@ -1,0 +1,81 @@
+// Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
+
+using System;
+
+namespace TerraFX.Interop
+{
+    public unsafe partial struct GLOBALHANDLE : IEquatable<GLOBALHANDLE>
+    {
+        public readonly nint Value;
+
+        public GLOBALHANDLE(nint value)
+        {
+            Value = value;
+        }
+
+        public static GLOBALHANDLE INVALID_HANDLE_VALUE => new GLOBALHANDLE(-1);
+
+        public static GLOBALHANDLE NULL => new GLOBALHANDLE(0);
+
+        public static bool operator ==(GLOBALHANDLE left, GLOBALHANDLE right) => left.Value == right.Value;
+
+        public static bool operator !=(GLOBALHANDLE left, GLOBALHANDLE right) => left.Value != right.Value;
+
+        public static explicit operator GLOBALHANDLE(void* value) => new GLOBALHANDLE((nint)(value));
+
+        public static implicit operator void*(GLOBALHANDLE value) => (void*)(value.Value);
+
+        public static explicit operator GLOBALHANDLE(HANDLE value) => new GLOBALHANDLE(value);
+
+        public static implicit operator HANDLE(GLOBALHANDLE value) => new GLOBALHANDLE(value);
+
+        public static explicit operator GLOBALHANDLE(byte value) => new GLOBALHANDLE((nint)(value));
+
+        public static implicit operator byte(GLOBALHANDLE value) => (byte)(value.Value);
+
+        public static explicit operator GLOBALHANDLE(short value) => new GLOBALHANDLE((nint)(value));
+
+        public static implicit operator short(GLOBALHANDLE value) => (short)(value.Value);
+
+        public static explicit operator GLOBALHANDLE(int value) => new GLOBALHANDLE((nint)(value));
+
+        public static implicit operator int(GLOBALHANDLE value) => (int)(value.Value);
+
+        public static explicit operator GLOBALHANDLE(long value) => new GLOBALHANDLE((nint)(value));
+
+        public static explicit operator long(GLOBALHANDLE value) => (long)(value.Value);
+
+        public static explicit operator GLOBALHANDLE(nint value) => new GLOBALHANDLE((nint)(value));
+
+        public static implicit operator nint(GLOBALHANDLE value) => (nint)(value.Value);
+
+        public static explicit operator GLOBALHANDLE(sbyte value) => new GLOBALHANDLE((nint)(value));
+
+        public static implicit operator sbyte(GLOBALHANDLE value) => (sbyte)(value.Value);
+
+        public static explicit operator GLOBALHANDLE(ushort value) => new GLOBALHANDLE((nint)(value));
+
+        public static implicit operator ushort(GLOBALHANDLE value) => (ushort)(value.Value);
+
+        public static explicit operator GLOBALHANDLE(uint value) => new GLOBALHANDLE((nint)(value));
+
+        public static implicit operator uint(GLOBALHANDLE value) => (uint)(value.Value);
+
+        public static explicit operator GLOBALHANDLE(ulong value) => new GLOBALHANDLE((nint)(value));
+
+        public static explicit operator ulong(GLOBALHANDLE value) => (ulong)(value.Value);
+
+        public static explicit operator GLOBALHANDLE(nuint value) => new GLOBALHANDLE((nint)(value));
+
+        public static explicit operator nuint(GLOBALHANDLE value) => (nuint)(value.Value);
+
+        public override bool Equals(object? obj) => (obj is GLOBALHANDLE other) && Equals(other);
+
+        public bool Equals(GLOBALHANDLE other) => (this == other);
+
+        public override int GetHashCode() => Value.GetHashCode();
+
+        public override string ToString() => Value.ToString();
+
+    }
+}

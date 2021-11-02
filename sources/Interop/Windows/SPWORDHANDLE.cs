@@ -8,70 +8,74 @@ namespace TerraFX.Interop
     {
         public readonly nint Value;
 
-        public static SPWORDHANDLE NULL => (SPWORDHANDLE)(0);
-
-        public SPWORDHANDLE(int value)
-        {
-            Value = ((nint)(value));
-        }
-
-        public SPWORDHANDLE(uint value)
-        {
-            Value = ((nint)(value));
-        }
-
         public SPWORDHANDLE(nint value)
         {
-            Value = ((nint)(value));
+            Value = value;
         }
 
-        public SPWORDHANDLE(nuint value)
-        {
-            Value = ((nint)(value));
-        }
+        public static SPWORDHANDLE INVALID_HANDLE_VALUE => new SPWORDHANDLE(-1);
 
-        public SPWORDHANDLE(void* value)
-        {
-            Value = ((nint)(value));
-        }
-
-        public SPWORDHANDLE(HANDLE value)
-        {
-            Value = value.Value;
-        }
+        public static SPWORDHANDLE NULL => new SPWORDHANDLE(0);
 
         public static bool operator ==(SPWORDHANDLE left, SPWORDHANDLE right) => left.Value == right.Value;
 
         public static bool operator !=(SPWORDHANDLE left, SPWORDHANDLE right) => left.Value != right.Value;
 
-        public static explicit operator SPWORDHANDLE(int value) => new SPWORDHANDLE(value);
-
-        public static explicit operator SPWORDHANDLE(uint value) => new SPWORDHANDLE(value);
-
-        public static explicit operator SPWORDHANDLE(nint value) => new SPWORDHANDLE(value);
-
-        public static explicit operator SPWORDHANDLE(nuint value) => new SPWORDHANDLE(value);
-
-        public static explicit operator SPWORDHANDLE(void* value) => new SPWORDHANDLE(value);
-
-        public static explicit operator SPWORDHANDLE(HANDLE value) => new SPWORDHANDLE(value);
-
-        public static explicit operator int(SPWORDHANDLE value) => (int)(value.Value);
-
-        public static explicit operator uint(SPWORDHANDLE value) => (uint)(value.Value);
-
-        public static implicit operator nint(SPWORDHANDLE value) => (nint)(value.Value);
-
-        public static implicit operator nuint(SPWORDHANDLE value) => (nuint)(value.Value);
+        public static explicit operator SPWORDHANDLE(void* value) => new SPWORDHANDLE((nint)(value));
 
         public static implicit operator void*(SPWORDHANDLE value) => (void*)(value.Value);
 
-        public static implicit operator HANDLE(SPWORDHANDLE value) => (HANDLE)(value.Value);
+        public static explicit operator SPWORDHANDLE(HANDLE value) => new SPWORDHANDLE(value);
+
+        public static implicit operator HANDLE(SPWORDHANDLE value) => new SPWORDHANDLE(value);
+
+        public static explicit operator SPWORDHANDLE(byte value) => new SPWORDHANDLE((nint)(value));
+
+        public static implicit operator byte(SPWORDHANDLE value) => (byte)(value.Value);
+
+        public static explicit operator SPWORDHANDLE(short value) => new SPWORDHANDLE((nint)(value));
+
+        public static implicit operator short(SPWORDHANDLE value) => (short)(value.Value);
+
+        public static explicit operator SPWORDHANDLE(int value) => new SPWORDHANDLE((nint)(value));
+
+        public static implicit operator int(SPWORDHANDLE value) => (int)(value.Value);
+
+        public static explicit operator SPWORDHANDLE(long value) => new SPWORDHANDLE((nint)(value));
+
+        public static explicit operator long(SPWORDHANDLE value) => (long)(value.Value);
+
+        public static explicit operator SPWORDHANDLE(nint value) => new SPWORDHANDLE((nint)(value));
+
+        public static implicit operator nint(SPWORDHANDLE value) => (nint)(value.Value);
+
+        public static explicit operator SPWORDHANDLE(sbyte value) => new SPWORDHANDLE((nint)(value));
+
+        public static implicit operator sbyte(SPWORDHANDLE value) => (sbyte)(value.Value);
+
+        public static explicit operator SPWORDHANDLE(ushort value) => new SPWORDHANDLE((nint)(value));
+
+        public static implicit operator ushort(SPWORDHANDLE value) => (ushort)(value.Value);
+
+        public static explicit operator SPWORDHANDLE(uint value) => new SPWORDHANDLE((nint)(value));
+
+        public static implicit operator uint(SPWORDHANDLE value) => (uint)(value.Value);
+
+        public static explicit operator SPWORDHANDLE(ulong value) => new SPWORDHANDLE((nint)(value));
+
+        public static explicit operator ulong(SPWORDHANDLE value) => (ulong)(value.Value);
+
+        public static explicit operator SPWORDHANDLE(nuint value) => new SPWORDHANDLE((nint)(value));
+
+        public static explicit operator nuint(SPWORDHANDLE value) => (nuint)(value.Value);
 
         public override bool Equals(object? obj) => (obj is SPWORDHANDLE other) && Equals(other);
 
         public bool Equals(SPWORDHANDLE other) => (this == other);
 
-        public override int GetHashCode() => ((nuint)(Value)).GetHashCode();
+        public override int GetHashCode() => Value.GetHashCode();
+
+        public override string ToString() => Value.ToString();
+
     }
 }

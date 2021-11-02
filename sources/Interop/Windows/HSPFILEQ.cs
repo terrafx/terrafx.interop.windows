@@ -6,61 +6,76 @@ namespace TerraFX.Interop
 {
     public unsafe partial struct HSPFILEQ : IEquatable<HSPFILEQ>
     {
-        public readonly void* Value;
-
-        public HSPFILEQ(int value)
-        {
-            Value = ((void*)(value));
-        }
-
-        public HSPFILEQ(uint value)
-        {
-            Value = ((void*)(value));
-        }
+        public readonly nint Value;
 
         public HSPFILEQ(nint value)
         {
-            Value = ((void*)(value));
+            Value = value;
         }
 
-        public HSPFILEQ(nuint value)
-        {
-            Value = ((void*)(value));
-        }
+        public static HSPFILEQ INVALID_HANDLE_VALUE => new HSPFILEQ(-1);
 
-        public HSPFILEQ(void* value)
-        {
-            Value = ((void*)(value));
-        }
+        public static HSPFILEQ NULL => new HSPFILEQ(0);
 
         public static bool operator ==(HSPFILEQ left, HSPFILEQ right) => left.Value == right.Value;
 
         public static bool operator !=(HSPFILEQ left, HSPFILEQ right) => left.Value != right.Value;
 
-        public static explicit operator HSPFILEQ(int value) => new HSPFILEQ(value);
+        public static explicit operator HSPFILEQ(void* value) => new HSPFILEQ((nint)(value));
 
-        public static explicit operator HSPFILEQ(uint value) => new HSPFILEQ(value);
+        public static implicit operator void*(HSPFILEQ value) => (void*)(value.Value);
 
-        public static explicit operator HSPFILEQ(nint value) => new HSPFILEQ(value);
+        public static explicit operator HSPFILEQ(HANDLE value) => new HSPFILEQ(value);
 
-        public static explicit operator HSPFILEQ(nuint value) => new HSPFILEQ(value);
+        public static implicit operator HANDLE(HSPFILEQ value) => new HSPFILEQ(value);
 
-        public static explicit operator HSPFILEQ(void* value) => new HSPFILEQ(value);
+        public static explicit operator HSPFILEQ(byte value) => new HSPFILEQ((nint)(value));
 
-        public static explicit operator int(HSPFILEQ value) => (int)(value.Value);
+        public static implicit operator byte(HSPFILEQ value) => (byte)(value.Value);
 
-        public static explicit operator uint(HSPFILEQ value) => (uint)(value.Value);
+        public static explicit operator HSPFILEQ(short value) => new HSPFILEQ((nint)(value));
+
+        public static implicit operator short(HSPFILEQ value) => (short)(value.Value);
+
+        public static explicit operator HSPFILEQ(int value) => new HSPFILEQ((nint)(value));
+
+        public static implicit operator int(HSPFILEQ value) => (int)(value.Value);
+
+        public static explicit operator HSPFILEQ(long value) => new HSPFILEQ((nint)(value));
+
+        public static explicit operator long(HSPFILEQ value) => (long)(value.Value);
+
+        public static explicit operator HSPFILEQ(nint value) => new HSPFILEQ((nint)(value));
 
         public static implicit operator nint(HSPFILEQ value) => (nint)(value.Value);
 
-        public static implicit operator nuint(HSPFILEQ value) => (nuint)(value.Value);
+        public static explicit operator HSPFILEQ(sbyte value) => new HSPFILEQ((nint)(value));
 
-        public static implicit operator void*(HSPFILEQ value) => (void*)(value.Value);
+        public static implicit operator sbyte(HSPFILEQ value) => (sbyte)(value.Value);
+
+        public static explicit operator HSPFILEQ(ushort value) => new HSPFILEQ((nint)(value));
+
+        public static implicit operator ushort(HSPFILEQ value) => (ushort)(value.Value);
+
+        public static explicit operator HSPFILEQ(uint value) => new HSPFILEQ((nint)(value));
+
+        public static implicit operator uint(HSPFILEQ value) => (uint)(value.Value);
+
+        public static explicit operator HSPFILEQ(ulong value) => new HSPFILEQ((nint)(value));
+
+        public static explicit operator ulong(HSPFILEQ value) => (ulong)(value.Value);
+
+        public static explicit operator HSPFILEQ(nuint value) => new HSPFILEQ((nint)(value));
+
+        public static explicit operator nuint(HSPFILEQ value) => (nuint)(value.Value);
 
         public override bool Equals(object? obj) => (obj is HSPFILEQ other) && Equals(other);
 
         public bool Equals(HSPFILEQ other) => (this == other);
 
-        public override int GetHashCode() => ((nuint)(Value)).GetHashCode();
+        public override int GetHashCode() => Value.GetHashCode();
+
+        public override string ToString() => Value.ToString();
+
     }
 }

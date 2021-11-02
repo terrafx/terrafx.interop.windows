@@ -1,0 +1,81 @@
+// Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
+
+using System;
+
+namespace TerraFX.Interop
+{
+    public unsafe partial struct PDH_HCOUNTER : IEquatable<PDH_HCOUNTER>
+    {
+        public readonly nint Value;
+
+        public PDH_HCOUNTER(nint value)
+        {
+            Value = value;
+        }
+
+        public static PDH_HCOUNTER INVALID_HANDLE_VALUE => new PDH_HCOUNTER(-1);
+
+        public static PDH_HCOUNTER NULL => new PDH_HCOUNTER(0);
+
+        public static bool operator ==(PDH_HCOUNTER left, PDH_HCOUNTER right) => left.Value == right.Value;
+
+        public static bool operator !=(PDH_HCOUNTER left, PDH_HCOUNTER right) => left.Value != right.Value;
+
+        public static explicit operator PDH_HCOUNTER(void* value) => new PDH_HCOUNTER((nint)(value));
+
+        public static implicit operator void*(PDH_HCOUNTER value) => (void*)(value.Value);
+
+        public static explicit operator PDH_HCOUNTER(HANDLE value) => new PDH_HCOUNTER(value);
+
+        public static implicit operator HANDLE(PDH_HCOUNTER value) => new PDH_HCOUNTER(value);
+
+        public static explicit operator PDH_HCOUNTER(byte value) => new PDH_HCOUNTER((nint)(value));
+
+        public static implicit operator byte(PDH_HCOUNTER value) => (byte)(value.Value);
+
+        public static explicit operator PDH_HCOUNTER(short value) => new PDH_HCOUNTER((nint)(value));
+
+        public static implicit operator short(PDH_HCOUNTER value) => (short)(value.Value);
+
+        public static explicit operator PDH_HCOUNTER(int value) => new PDH_HCOUNTER((nint)(value));
+
+        public static implicit operator int(PDH_HCOUNTER value) => (int)(value.Value);
+
+        public static explicit operator PDH_HCOUNTER(long value) => new PDH_HCOUNTER((nint)(value));
+
+        public static explicit operator long(PDH_HCOUNTER value) => (long)(value.Value);
+
+        public static explicit operator PDH_HCOUNTER(nint value) => new PDH_HCOUNTER((nint)(value));
+
+        public static implicit operator nint(PDH_HCOUNTER value) => (nint)(value.Value);
+
+        public static explicit operator PDH_HCOUNTER(sbyte value) => new PDH_HCOUNTER((nint)(value));
+
+        public static implicit operator sbyte(PDH_HCOUNTER value) => (sbyte)(value.Value);
+
+        public static explicit operator PDH_HCOUNTER(ushort value) => new PDH_HCOUNTER((nint)(value));
+
+        public static implicit operator ushort(PDH_HCOUNTER value) => (ushort)(value.Value);
+
+        public static explicit operator PDH_HCOUNTER(uint value) => new PDH_HCOUNTER((nint)(value));
+
+        public static implicit operator uint(PDH_HCOUNTER value) => (uint)(value.Value);
+
+        public static explicit operator PDH_HCOUNTER(ulong value) => new PDH_HCOUNTER((nint)(value));
+
+        public static explicit operator ulong(PDH_HCOUNTER value) => (ulong)(value.Value);
+
+        public static explicit operator PDH_HCOUNTER(nuint value) => new PDH_HCOUNTER((nint)(value));
+
+        public static explicit operator nuint(PDH_HCOUNTER value) => (nuint)(value.Value);
+
+        public override bool Equals(object? obj) => (obj is PDH_HCOUNTER other) && Equals(other);
+
+        public bool Equals(PDH_HCOUNTER other) => (this == other);
+
+        public override int GetHashCode() => Value.GetHashCode();
+
+        public override string ToString() => Value.ToString();
+
+    }
+}

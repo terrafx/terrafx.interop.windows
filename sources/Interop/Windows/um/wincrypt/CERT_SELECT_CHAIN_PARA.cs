@@ -7,8 +7,7 @@ namespace TerraFX.Interop
 {
     public unsafe partial struct CERT_SELECT_CHAIN_PARA
     {
-        [NativeTypeName("HCERTCHAINENGINE")]
-        public HANDLE hChainEngine;
+        public HCERTCHAINENGINE hChainEngine;
 
         [NativeTypeName("PFILETIME")]
         public FILETIME* pTime;

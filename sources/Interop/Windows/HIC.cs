@@ -8,70 +8,74 @@ namespace TerraFX.Interop
     {
         public readonly nint Value;
 
-        public static HIC NULL => (HIC)(0);
-
-        public HIC(int value)
-        {
-            Value = ((nint)(value));
-        }
-
-        public HIC(uint value)
-        {
-            Value = ((nint)(value));
-        }
-
         public HIC(nint value)
         {
-            Value = ((nint)(value));
+            Value = value;
         }
 
-        public HIC(nuint value)
-        {
-            Value = ((nint)(value));
-        }
+        public static HIC INVALID_HANDLE_VALUE => new HIC(-1);
 
-        public HIC(void* value)
-        {
-            Value = ((nint)(value));
-        }
-
-        public HIC(HANDLE value)
-        {
-            Value = value.Value;
-        }
+        public static HIC NULL => new HIC(0);
 
         public static bool operator ==(HIC left, HIC right) => left.Value == right.Value;
 
         public static bool operator !=(HIC left, HIC right) => left.Value != right.Value;
 
-        public static explicit operator HIC(int value) => new HIC(value);
-
-        public static explicit operator HIC(uint value) => new HIC(value);
-
-        public static explicit operator HIC(nint value) => new HIC(value);
-
-        public static explicit operator HIC(nuint value) => new HIC(value);
-
-        public static explicit operator HIC(void* value) => new HIC(value);
-
-        public static explicit operator HIC(HANDLE value) => new HIC(value);
-
-        public static explicit operator int(HIC value) => (int)(value.Value);
-
-        public static explicit operator uint(HIC value) => (uint)(value.Value);
-
-        public static implicit operator nint(HIC value) => (nint)(value.Value);
-
-        public static implicit operator nuint(HIC value) => (nuint)(value.Value);
+        public static explicit operator HIC(void* value) => new HIC((nint)(value));
 
         public static implicit operator void*(HIC value) => (void*)(value.Value);
 
-        public static implicit operator HANDLE(HIC value) => (HANDLE)(value.Value);
+        public static explicit operator HIC(HANDLE value) => new HIC(value);
+
+        public static implicit operator HANDLE(HIC value) => new HIC(value);
+
+        public static explicit operator HIC(byte value) => new HIC((nint)(value));
+
+        public static implicit operator byte(HIC value) => (byte)(value.Value);
+
+        public static explicit operator HIC(short value) => new HIC((nint)(value));
+
+        public static implicit operator short(HIC value) => (short)(value.Value);
+
+        public static explicit operator HIC(int value) => new HIC((nint)(value));
+
+        public static implicit operator int(HIC value) => (int)(value.Value);
+
+        public static explicit operator HIC(long value) => new HIC((nint)(value));
+
+        public static explicit operator long(HIC value) => (long)(value.Value);
+
+        public static explicit operator HIC(nint value) => new HIC((nint)(value));
+
+        public static implicit operator nint(HIC value) => (nint)(value.Value);
+
+        public static explicit operator HIC(sbyte value) => new HIC((nint)(value));
+
+        public static implicit operator sbyte(HIC value) => (sbyte)(value.Value);
+
+        public static explicit operator HIC(ushort value) => new HIC((nint)(value));
+
+        public static implicit operator ushort(HIC value) => (ushort)(value.Value);
+
+        public static explicit operator HIC(uint value) => new HIC((nint)(value));
+
+        public static implicit operator uint(HIC value) => (uint)(value.Value);
+
+        public static explicit operator HIC(ulong value) => new HIC((nint)(value));
+
+        public static explicit operator ulong(HIC value) => (ulong)(value.Value);
+
+        public static explicit operator HIC(nuint value) => new HIC((nint)(value));
+
+        public static explicit operator nuint(HIC value) => (nuint)(value.Value);
 
         public override bool Equals(object? obj) => (obj is HIC other) && Equals(other);
 
         public bool Equals(HIC other) => (this == other);
 
-        public override int GetHashCode() => ((nuint)(Value)).GetHashCode();
+        public override int GetHashCode() => Value.GetHashCode();
+
+        public override string ToString() => Value.ToString();
+
     }
 }

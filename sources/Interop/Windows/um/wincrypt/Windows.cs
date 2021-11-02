@@ -717,16 +717,16 @@ namespace TerraFX.Interop
         public static extern BOOL CryptCreateAsyncHandle([NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("PHCRYPTASYNC")] HANDLE* phAsync);
 
         [DllImport("crypt32", ExactSpelling = true)]
-        public static extern BOOL CryptGetAsyncParam([NativeTypeName("HCRYPTASYNC")] HANDLE hAsync, [NativeTypeName("LPSTR")] sbyte* pszParamOid, [NativeTypeName("LPVOID *")] void** ppvParam, [NativeTypeName("PFN_CRYPT_ASYNC_PARAM_FREE_FUNC *")] delegate* unmanaged<sbyte*, void*, void>* ppfnFree);
+        public static extern BOOL CryptGetAsyncParam(HCRYPTASYNC hAsync, [NativeTypeName("LPSTR")] sbyte* pszParamOid, [NativeTypeName("LPVOID *")] void** ppvParam, [NativeTypeName("PFN_CRYPT_ASYNC_PARAM_FREE_FUNC *")] delegate* unmanaged<sbyte*, void*, void>* ppfnFree);
 
         [DllImport("crypt32", ExactSpelling = true)]
-        public static extern BOOL CryptCloseAsyncHandle([NativeTypeName("HCRYPTASYNC")] HANDLE hAsync);
+        public static extern BOOL CryptCloseAsyncHandle(HCRYPTASYNC hAsync);
 
         [DllImport("cryptnet", ExactSpelling = true)]
-        public static extern BOOL CryptRetrieveObjectByUrlA([NativeTypeName("LPCSTR")] sbyte* pszUrl, [NativeTypeName("LPCSTR")] sbyte* pszObjectOid, [NativeTypeName("DWORD")] uint dwRetrievalFlags, [NativeTypeName("DWORD")] uint dwTimeout, [NativeTypeName("LPVOID *")] void** ppvObject, [NativeTypeName("HCRYPTASYNC")] HANDLE hAsyncRetrieve, [NativeTypeName("PCRYPT_CREDENTIALS")] CRYPT_CREDENTIALS* pCredentials, [NativeTypeName("LPVOID")] void* pvVerify, [NativeTypeName("PCRYPT_RETRIEVE_AUX_INFO")] CRYPT_RETRIEVE_AUX_INFO* pAuxInfo);
+        public static extern BOOL CryptRetrieveObjectByUrlA([NativeTypeName("LPCSTR")] sbyte* pszUrl, [NativeTypeName("LPCSTR")] sbyte* pszObjectOid, [NativeTypeName("DWORD")] uint dwRetrievalFlags, [NativeTypeName("DWORD")] uint dwTimeout, [NativeTypeName("LPVOID *")] void** ppvObject, HCRYPTASYNC hAsyncRetrieve, [NativeTypeName("PCRYPT_CREDENTIALS")] CRYPT_CREDENTIALS* pCredentials, [NativeTypeName("LPVOID")] void* pvVerify, [NativeTypeName("PCRYPT_RETRIEVE_AUX_INFO")] CRYPT_RETRIEVE_AUX_INFO* pAuxInfo);
 
         [DllImport("cryptnet", ExactSpelling = true)]
-        public static extern BOOL CryptRetrieveObjectByUrlW([NativeTypeName("LPCWSTR")] ushort* pszUrl, [NativeTypeName("LPCSTR")] sbyte* pszObjectOid, [NativeTypeName("DWORD")] uint dwRetrievalFlags, [NativeTypeName("DWORD")] uint dwTimeout, [NativeTypeName("LPVOID *")] void** ppvObject, [NativeTypeName("HCRYPTASYNC")] HANDLE hAsyncRetrieve, [NativeTypeName("PCRYPT_CREDENTIALS")] CRYPT_CREDENTIALS* pCredentials, [NativeTypeName("LPVOID")] void* pvVerify, [NativeTypeName("PCRYPT_RETRIEVE_AUX_INFO")] CRYPT_RETRIEVE_AUX_INFO* pAuxInfo);
+        public static extern BOOL CryptRetrieveObjectByUrlW([NativeTypeName("LPCWSTR")] ushort* pszUrl, [NativeTypeName("LPCSTR")] sbyte* pszObjectOid, [NativeTypeName("DWORD")] uint dwRetrievalFlags, [NativeTypeName("DWORD")] uint dwTimeout, [NativeTypeName("LPVOID *")] void** ppvObject, HCRYPTASYNC hAsyncRetrieve, [NativeTypeName("PCRYPT_CREDENTIALS")] CRYPT_CREDENTIALS* pCredentials, [NativeTypeName("LPVOID")] void* pvVerify, [NativeTypeName("PCRYPT_RETRIEVE_AUX_INFO")] CRYPT_RETRIEVE_AUX_INFO* pAuxInfo);
 
         [DllImport("cryptnet", ExactSpelling = true)]
         public static extern BOOL CryptInstallCancelRetrieval([NativeTypeName("PFN_CRYPT_CANCEL_RETRIEVAL")] delegate* unmanaged<uint, void*, BOOL> pfnCancel, [NativeTypeName("const void *")] void* pvArg, [NativeTypeName("DWORD")] uint dwFlags, void* pvReserved);
@@ -735,7 +735,7 @@ namespace TerraFX.Interop
         public static extern BOOL CryptUninstallCancelRetrieval([NativeTypeName("DWORD")] uint dwFlags, void* pvReserved);
 
         [DllImport("cryptnet", ExactSpelling = true)]
-        public static extern BOOL CryptCancelAsyncRetrieval([NativeTypeName("HCRYPTASYNC")] HANDLE hAsyncRetrieval);
+        public static extern BOOL CryptCancelAsyncRetrieval(HCRYPTASYNC hAsyncRetrieval);
 
         [DllImport("cryptnet", ExactSpelling = true, SetLastError = true)]
         public static extern BOOL CryptGetObjectUrl([NativeTypeName("LPCSTR")] sbyte* pszUrlOid, [NativeTypeName("LPVOID")] void* pvPara, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("PCRYPT_URL_ARRAY")] CRYPT_URL_ARRAY* pUrlArray, [NativeTypeName("DWORD *")] uint* pcbUrlArray, [NativeTypeName("PCRYPT_URL_INFO")] CRYPT_URL_INFO* pUrlInfo, [NativeTypeName("DWORD *")] uint* pcbUrlInfo, [NativeTypeName("LPVOID")] void* pvReserved);
@@ -763,16 +763,16 @@ namespace TerraFX.Interop
         public static extern BOOL CryptCreateKeyIdentifierFromCSP([NativeTypeName("DWORD")] uint dwCertEncodingType, [NativeTypeName("LPCSTR")] sbyte* pszPubKeyOID, [NativeTypeName("const PUBLICKEYSTRUC *")] PUBLICKEYSTRUC* pPubKeyStruc, [NativeTypeName("DWORD")] uint cbPubKeyStruc, [NativeTypeName("DWORD")] uint dwFlags, void* pvReserved, byte* pbHash, [NativeTypeName("DWORD *")] uint* pcbHash);
 
         [DllImport("crypt32", ExactSpelling = true, SetLastError = true)]
-        public static extern BOOL CertCreateCertificateChainEngine([NativeTypeName("PCERT_CHAIN_ENGINE_CONFIG")] CERT_CHAIN_ENGINE_CONFIG* pConfig, [NativeTypeName("HCERTCHAINENGINE *")] HANDLE* phChainEngine);
+        public static extern BOOL CertCreateCertificateChainEngine([NativeTypeName("PCERT_CHAIN_ENGINE_CONFIG")] CERT_CHAIN_ENGINE_CONFIG* pConfig, HCERTCHAINENGINE* phChainEngine);
 
         [DllImport("crypt32", ExactSpelling = true)]
-        public static extern void CertFreeCertificateChainEngine([NativeTypeName("HCERTCHAINENGINE")] HANDLE hChainEngine);
+        public static extern void CertFreeCertificateChainEngine(HCERTCHAINENGINE hChainEngine);
 
         [DllImport("crypt32", ExactSpelling = true, SetLastError = true)]
-        public static extern BOOL CertResyncCertificateChainEngine([NativeTypeName("HCERTCHAINENGINE")] HANDLE hChainEngine);
+        public static extern BOOL CertResyncCertificateChainEngine(HCERTCHAINENGINE hChainEngine);
 
         [DllImport("crypt32", ExactSpelling = true, SetLastError = true)]
-        public static extern BOOL CertGetCertificateChain([NativeTypeName("HCERTCHAINENGINE")] HANDLE hChainEngine, [NativeTypeName("PCCERT_CONTEXT")] CERT_CONTEXT* pCertContext, [NativeTypeName("LPFILETIME")] FILETIME* pTime, HCERTSTORE hAdditionalStore, [NativeTypeName("PCERT_CHAIN_PARA")] CERT_CHAIN_PARA* pChainPara, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("LPVOID")] void* pvReserved, [NativeTypeName("PCCERT_CHAIN_CONTEXT *")] CERT_CHAIN_CONTEXT** ppChainContext);
+        public static extern BOOL CertGetCertificateChain(HCERTCHAINENGINE hChainEngine, [NativeTypeName("PCCERT_CONTEXT")] CERT_CONTEXT* pCertContext, [NativeTypeName("LPFILETIME")] FILETIME* pTime, HCERTSTORE hAdditionalStore, [NativeTypeName("PCERT_CHAIN_PARA")] CERT_CHAIN_PARA* pChainPara, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("LPVOID")] void* pvReserved, [NativeTypeName("PCCERT_CHAIN_CONTEXT *")] CERT_CHAIN_CONTEXT** ppChainContext);
 
         [DllImport("crypt32", ExactSpelling = true)]
         public static extern void CertFreeCertificateChain([NativeTypeName("PCCERT_CHAIN_CONTEXT")] CERT_CHAIN_CONTEXT* pChainContext);
@@ -7171,7 +7171,7 @@ namespace TerraFX.Interop
         public const int CRYPT_RETRIEVE_MAX_ERROR_CONTENT_LENGTH = 0x1000;
 
         [NativeTypeName("#define CryptRetrieveObjectByUrl CryptRetrieveObjectByUrlW")]
-        public static delegate*<ushort*, sbyte*, uint, uint, void**, HANDLE, CRYPT_CREDENTIALS*, void*, CRYPT_RETRIEVE_AUX_INFO*, BOOL> CryptRetrieveObjectByUrl => &CryptRetrieveObjectByUrlW;
+        public static delegate*<ushort*, sbyte*, uint, uint, void**, HCRYPTASYNC, CRYPT_CREDENTIALS*, void*, CRYPT_RETRIEVE_AUX_INFO*, BOOL> CryptRetrieveObjectByUrl => &CryptRetrieveObjectByUrlW;
 
         [NativeTypeName("#define CRYPT_PARAM_ASYNC_RETRIEVAL_COMPLETION ((LPCSTR)1)")]
         public static sbyte* CRYPT_PARAM_ASYNC_RETRIEVAL_COMPLETION => ((sbyte*)(1));

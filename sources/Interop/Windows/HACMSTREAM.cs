@@ -8,70 +8,74 @@ namespace TerraFX.Interop
     {
         public readonly nint Value;
 
-        public static HACMSTREAM NULL => (HACMSTREAM)(0);
-
-        public HACMSTREAM(int value)
-        {
-            Value = ((nint)(value));
-        }
-
-        public HACMSTREAM(uint value)
-        {
-            Value = ((nint)(value));
-        }
-
         public HACMSTREAM(nint value)
         {
-            Value = ((nint)(value));
+            Value = value;
         }
 
-        public HACMSTREAM(nuint value)
-        {
-            Value = ((nint)(value));
-        }
+        public static HACMSTREAM INVALID_HANDLE_VALUE => new HACMSTREAM(-1);
 
-        public HACMSTREAM(void* value)
-        {
-            Value = ((nint)(value));
-        }
-
-        public HACMSTREAM(HANDLE value)
-        {
-            Value = value.Value;
-        }
+        public static HACMSTREAM NULL => new HACMSTREAM(0);
 
         public static bool operator ==(HACMSTREAM left, HACMSTREAM right) => left.Value == right.Value;
 
         public static bool operator !=(HACMSTREAM left, HACMSTREAM right) => left.Value != right.Value;
 
-        public static explicit operator HACMSTREAM(int value) => new HACMSTREAM(value);
-
-        public static explicit operator HACMSTREAM(uint value) => new HACMSTREAM(value);
-
-        public static explicit operator HACMSTREAM(nint value) => new HACMSTREAM(value);
-
-        public static explicit operator HACMSTREAM(nuint value) => new HACMSTREAM(value);
-
-        public static explicit operator HACMSTREAM(void* value) => new HACMSTREAM(value);
-
-        public static explicit operator HACMSTREAM(HANDLE value) => new HACMSTREAM(value);
-
-        public static explicit operator int(HACMSTREAM value) => (int)(value.Value);
-
-        public static explicit operator uint(HACMSTREAM value) => (uint)(value.Value);
-
-        public static implicit operator nint(HACMSTREAM value) => (nint)(value.Value);
-
-        public static implicit operator nuint(HACMSTREAM value) => (nuint)(value.Value);
+        public static explicit operator HACMSTREAM(void* value) => new HACMSTREAM((nint)(value));
 
         public static implicit operator void*(HACMSTREAM value) => (void*)(value.Value);
 
-        public static implicit operator HANDLE(HACMSTREAM value) => (HANDLE)(value.Value);
+        public static explicit operator HACMSTREAM(HANDLE value) => new HACMSTREAM(value);
+
+        public static implicit operator HANDLE(HACMSTREAM value) => new HACMSTREAM(value);
+
+        public static explicit operator HACMSTREAM(byte value) => new HACMSTREAM((nint)(value));
+
+        public static implicit operator byte(HACMSTREAM value) => (byte)(value.Value);
+
+        public static explicit operator HACMSTREAM(short value) => new HACMSTREAM((nint)(value));
+
+        public static implicit operator short(HACMSTREAM value) => (short)(value.Value);
+
+        public static explicit operator HACMSTREAM(int value) => new HACMSTREAM((nint)(value));
+
+        public static implicit operator int(HACMSTREAM value) => (int)(value.Value);
+
+        public static explicit operator HACMSTREAM(long value) => new HACMSTREAM((nint)(value));
+
+        public static explicit operator long(HACMSTREAM value) => (long)(value.Value);
+
+        public static explicit operator HACMSTREAM(nint value) => new HACMSTREAM((nint)(value));
+
+        public static implicit operator nint(HACMSTREAM value) => (nint)(value.Value);
+
+        public static explicit operator HACMSTREAM(sbyte value) => new HACMSTREAM((nint)(value));
+
+        public static implicit operator sbyte(HACMSTREAM value) => (sbyte)(value.Value);
+
+        public static explicit operator HACMSTREAM(ushort value) => new HACMSTREAM((nint)(value));
+
+        public static implicit operator ushort(HACMSTREAM value) => (ushort)(value.Value);
+
+        public static explicit operator HACMSTREAM(uint value) => new HACMSTREAM((nint)(value));
+
+        public static implicit operator uint(HACMSTREAM value) => (uint)(value.Value);
+
+        public static explicit operator HACMSTREAM(ulong value) => new HACMSTREAM((nint)(value));
+
+        public static explicit operator ulong(HACMSTREAM value) => (ulong)(value.Value);
+
+        public static explicit operator HACMSTREAM(nuint value) => new HACMSTREAM((nint)(value));
+
+        public static explicit operator nuint(HACMSTREAM value) => (nuint)(value.Value);
 
         public override bool Equals(object? obj) => (obj is HACMSTREAM other) && Equals(other);
 
         public bool Equals(HACMSTREAM other) => (this == other);
 
-        public override int GetHashCode() => ((nuint)(Value)).GetHashCode();
+        public override int GetHashCode() => Value.GetHashCode();
+
+        public override string ToString() => Value.ToString();
+
     }
 }

@@ -8,70 +8,74 @@ namespace TerraFX.Interop
     {
         public readonly nint Value;
 
-        public static HTASK NULL => (HTASK)(0);
-
-        public HTASK(int value)
-        {
-            Value = ((nint)(value));
-        }
-
-        public HTASK(uint value)
-        {
-            Value = ((nint)(value));
-        }
-
         public HTASK(nint value)
         {
-            Value = ((nint)(value));
+            Value = value;
         }
 
-        public HTASK(nuint value)
-        {
-            Value = ((nint)(value));
-        }
+        public static HTASK INVALID_HANDLE_VALUE => new HTASK(-1);
 
-        public HTASK(void* value)
-        {
-            Value = ((nint)(value));
-        }
-
-        public HTASK(HANDLE value)
-        {
-            Value = value.Value;
-        }
+        public static HTASK NULL => new HTASK(0);
 
         public static bool operator ==(HTASK left, HTASK right) => left.Value == right.Value;
 
         public static bool operator !=(HTASK left, HTASK right) => left.Value != right.Value;
 
-        public static explicit operator HTASK(int value) => new HTASK(value);
-
-        public static explicit operator HTASK(uint value) => new HTASK(value);
-
-        public static explicit operator HTASK(nint value) => new HTASK(value);
-
-        public static explicit operator HTASK(nuint value) => new HTASK(value);
-
-        public static explicit operator HTASK(void* value) => new HTASK(value);
-
-        public static explicit operator HTASK(HANDLE value) => new HTASK(value);
-
-        public static explicit operator int(HTASK value) => (int)(value.Value);
-
-        public static explicit operator uint(HTASK value) => (uint)(value.Value);
-
-        public static implicit operator nint(HTASK value) => (nint)(value.Value);
-
-        public static implicit operator nuint(HTASK value) => (nuint)(value.Value);
+        public static explicit operator HTASK(void* value) => new HTASK((nint)(value));
 
         public static implicit operator void*(HTASK value) => (void*)(value.Value);
 
-        public static implicit operator HANDLE(HTASK value) => (HANDLE)(value.Value);
+        public static explicit operator HTASK(HANDLE value) => new HTASK(value);
+
+        public static implicit operator HANDLE(HTASK value) => new HTASK(value);
+
+        public static explicit operator HTASK(byte value) => new HTASK((nint)(value));
+
+        public static implicit operator byte(HTASK value) => (byte)(value.Value);
+
+        public static explicit operator HTASK(short value) => new HTASK((nint)(value));
+
+        public static implicit operator short(HTASK value) => (short)(value.Value);
+
+        public static explicit operator HTASK(int value) => new HTASK((nint)(value));
+
+        public static implicit operator int(HTASK value) => (int)(value.Value);
+
+        public static explicit operator HTASK(long value) => new HTASK((nint)(value));
+
+        public static explicit operator long(HTASK value) => (long)(value.Value);
+
+        public static explicit operator HTASK(nint value) => new HTASK((nint)(value));
+
+        public static implicit operator nint(HTASK value) => (nint)(value.Value);
+
+        public static explicit operator HTASK(sbyte value) => new HTASK((nint)(value));
+
+        public static implicit operator sbyte(HTASK value) => (sbyte)(value.Value);
+
+        public static explicit operator HTASK(ushort value) => new HTASK((nint)(value));
+
+        public static implicit operator ushort(HTASK value) => (ushort)(value.Value);
+
+        public static explicit operator HTASK(uint value) => new HTASK((nint)(value));
+
+        public static implicit operator uint(HTASK value) => (uint)(value.Value);
+
+        public static explicit operator HTASK(ulong value) => new HTASK((nint)(value));
+
+        public static explicit operator ulong(HTASK value) => (ulong)(value.Value);
+
+        public static explicit operator HTASK(nuint value) => new HTASK((nint)(value));
+
+        public static explicit operator nuint(HTASK value) => (nuint)(value.Value);
 
         public override bool Equals(object? obj) => (obj is HTASK other) && Equals(other);
 
         public bool Equals(HTASK other) => (this == other);
 
-        public override int GetHashCode() => ((nuint)(Value)).GetHashCode();
+        public override int GetHashCode() => Value.GetHashCode();
+
+        public override string ToString() => Value.ToString();
+
     }
 }

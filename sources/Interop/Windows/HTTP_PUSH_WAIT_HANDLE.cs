@@ -8,70 +8,74 @@ namespace TerraFX.Interop
     {
         public readonly nint Value;
 
-        public static HTTP_PUSH_WAIT_HANDLE NULL => (HTTP_PUSH_WAIT_HANDLE)(0);
-
-        public HTTP_PUSH_WAIT_HANDLE(int value)
-        {
-            Value = ((nint)(value));
-        }
-
-        public HTTP_PUSH_WAIT_HANDLE(uint value)
-        {
-            Value = ((nint)(value));
-        }
-
         public HTTP_PUSH_WAIT_HANDLE(nint value)
         {
-            Value = ((nint)(value));
+            Value = value;
         }
 
-        public HTTP_PUSH_WAIT_HANDLE(nuint value)
-        {
-            Value = ((nint)(value));
-        }
+        public static HTTP_PUSH_WAIT_HANDLE INVALID_HANDLE_VALUE => new HTTP_PUSH_WAIT_HANDLE(-1);
 
-        public HTTP_PUSH_WAIT_HANDLE(void* value)
-        {
-            Value = ((nint)(value));
-        }
-
-        public HTTP_PUSH_WAIT_HANDLE(HANDLE value)
-        {
-            Value = value.Value;
-        }
+        public static HTTP_PUSH_WAIT_HANDLE NULL => new HTTP_PUSH_WAIT_HANDLE(0);
 
         public static bool operator ==(HTTP_PUSH_WAIT_HANDLE left, HTTP_PUSH_WAIT_HANDLE right) => left.Value == right.Value;
 
         public static bool operator !=(HTTP_PUSH_WAIT_HANDLE left, HTTP_PUSH_WAIT_HANDLE right) => left.Value != right.Value;
 
-        public static explicit operator HTTP_PUSH_WAIT_HANDLE(int value) => new HTTP_PUSH_WAIT_HANDLE(value);
-
-        public static explicit operator HTTP_PUSH_WAIT_HANDLE(uint value) => new HTTP_PUSH_WAIT_HANDLE(value);
-
-        public static explicit operator HTTP_PUSH_WAIT_HANDLE(nint value) => new HTTP_PUSH_WAIT_HANDLE(value);
-
-        public static explicit operator HTTP_PUSH_WAIT_HANDLE(nuint value) => new HTTP_PUSH_WAIT_HANDLE(value);
-
-        public static explicit operator HTTP_PUSH_WAIT_HANDLE(void* value) => new HTTP_PUSH_WAIT_HANDLE(value);
-
-        public static explicit operator HTTP_PUSH_WAIT_HANDLE(HANDLE value) => new HTTP_PUSH_WAIT_HANDLE(value);
-
-        public static explicit operator int(HTTP_PUSH_WAIT_HANDLE value) => (int)(value.Value);
-
-        public static explicit operator uint(HTTP_PUSH_WAIT_HANDLE value) => (uint)(value.Value);
-
-        public static implicit operator nint(HTTP_PUSH_WAIT_HANDLE value) => (nint)(value.Value);
-
-        public static implicit operator nuint(HTTP_PUSH_WAIT_HANDLE value) => (nuint)(value.Value);
+        public static explicit operator HTTP_PUSH_WAIT_HANDLE(void* value) => new HTTP_PUSH_WAIT_HANDLE((nint)(value));
 
         public static implicit operator void*(HTTP_PUSH_WAIT_HANDLE value) => (void*)(value.Value);
 
-        public static implicit operator HANDLE(HTTP_PUSH_WAIT_HANDLE value) => (HANDLE)(value.Value);
+        public static explicit operator HTTP_PUSH_WAIT_HANDLE(HANDLE value) => new HTTP_PUSH_WAIT_HANDLE(value);
+
+        public static implicit operator HANDLE(HTTP_PUSH_WAIT_HANDLE value) => new HTTP_PUSH_WAIT_HANDLE(value);
+
+        public static explicit operator HTTP_PUSH_WAIT_HANDLE(byte value) => new HTTP_PUSH_WAIT_HANDLE((nint)(value));
+
+        public static implicit operator byte(HTTP_PUSH_WAIT_HANDLE value) => (byte)(value.Value);
+
+        public static explicit operator HTTP_PUSH_WAIT_HANDLE(short value) => new HTTP_PUSH_WAIT_HANDLE((nint)(value));
+
+        public static implicit operator short(HTTP_PUSH_WAIT_HANDLE value) => (short)(value.Value);
+
+        public static explicit operator HTTP_PUSH_WAIT_HANDLE(int value) => new HTTP_PUSH_WAIT_HANDLE((nint)(value));
+
+        public static implicit operator int(HTTP_PUSH_WAIT_HANDLE value) => (int)(value.Value);
+
+        public static explicit operator HTTP_PUSH_WAIT_HANDLE(long value) => new HTTP_PUSH_WAIT_HANDLE((nint)(value));
+
+        public static explicit operator long(HTTP_PUSH_WAIT_HANDLE value) => (long)(value.Value);
+
+        public static explicit operator HTTP_PUSH_WAIT_HANDLE(nint value) => new HTTP_PUSH_WAIT_HANDLE((nint)(value));
+
+        public static implicit operator nint(HTTP_PUSH_WAIT_HANDLE value) => (nint)(value.Value);
+
+        public static explicit operator HTTP_PUSH_WAIT_HANDLE(sbyte value) => new HTTP_PUSH_WAIT_HANDLE((nint)(value));
+
+        public static implicit operator sbyte(HTTP_PUSH_WAIT_HANDLE value) => (sbyte)(value.Value);
+
+        public static explicit operator HTTP_PUSH_WAIT_HANDLE(ushort value) => new HTTP_PUSH_WAIT_HANDLE((nint)(value));
+
+        public static implicit operator ushort(HTTP_PUSH_WAIT_HANDLE value) => (ushort)(value.Value);
+
+        public static explicit operator HTTP_PUSH_WAIT_HANDLE(uint value) => new HTTP_PUSH_WAIT_HANDLE((nint)(value));
+
+        public static implicit operator uint(HTTP_PUSH_WAIT_HANDLE value) => (uint)(value.Value);
+
+        public static explicit operator HTTP_PUSH_WAIT_HANDLE(ulong value) => new HTTP_PUSH_WAIT_HANDLE((nint)(value));
+
+        public static explicit operator ulong(HTTP_PUSH_WAIT_HANDLE value) => (ulong)(value.Value);
+
+        public static explicit operator HTTP_PUSH_WAIT_HANDLE(nuint value) => new HTTP_PUSH_WAIT_HANDLE((nint)(value));
+
+        public static explicit operator nuint(HTTP_PUSH_WAIT_HANDLE value) => (nuint)(value.Value);
 
         public override bool Equals(object? obj) => (obj is HTTP_PUSH_WAIT_HANDLE other) && Equals(other);
 
         public bool Equals(HTTP_PUSH_WAIT_HANDLE other) => (this == other);
 
-        public override int GetHashCode() => ((nuint)(Value)).GetHashCode();
+        public override int GetHashCode() => Value.GetHashCode();
+
+        public override string ToString() => Value.ToString();
+
     }
 }

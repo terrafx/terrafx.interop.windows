@@ -8,70 +8,74 @@ namespace TerraFX.Interop
     {
         public readonly nint Value;
 
-        public static HEVENT NULL => (HEVENT)(0);
-
-        public HEVENT(int value)
-        {
-            Value = ((nint)(value));
-        }
-
-        public HEVENT(uint value)
-        {
-            Value = ((nint)(value));
-        }
-
         public HEVENT(nint value)
         {
-            Value = ((nint)(value));
+            Value = value;
         }
 
-        public HEVENT(nuint value)
-        {
-            Value = ((nint)(value));
-        }
+        public static HEVENT INVALID_HANDLE_VALUE => new HEVENT(-1);
 
-        public HEVENT(void* value)
-        {
-            Value = ((nint)(value));
-        }
-
-        public HEVENT(HANDLE value)
-        {
-            Value = value.Value;
-        }
+        public static HEVENT NULL => new HEVENT(0);
 
         public static bool operator ==(HEVENT left, HEVENT right) => left.Value == right.Value;
 
         public static bool operator !=(HEVENT left, HEVENT right) => left.Value != right.Value;
 
-        public static explicit operator HEVENT(int value) => new HEVENT(value);
-
-        public static explicit operator HEVENT(uint value) => new HEVENT(value);
-
-        public static explicit operator HEVENT(nint value) => new HEVENT(value);
-
-        public static explicit operator HEVENT(nuint value) => new HEVENT(value);
-
-        public static explicit operator HEVENT(void* value) => new HEVENT(value);
-
-        public static explicit operator HEVENT(HANDLE value) => new HEVENT(value);
-
-        public static explicit operator int(HEVENT value) => (int)(value.Value);
-
-        public static explicit operator uint(HEVENT value) => (uint)(value.Value);
-
-        public static implicit operator nint(HEVENT value) => (nint)(value.Value);
-
-        public static implicit operator nuint(HEVENT value) => (nuint)(value.Value);
+        public static explicit operator HEVENT(void* value) => new HEVENT((nint)(value));
 
         public static implicit operator void*(HEVENT value) => (void*)(value.Value);
 
-        public static implicit operator HANDLE(HEVENT value) => (HANDLE)(value.Value);
+        public static explicit operator HEVENT(HANDLE value) => new HEVENT(value);
+
+        public static implicit operator HANDLE(HEVENT value) => new HEVENT(value);
+
+        public static explicit operator HEVENT(byte value) => new HEVENT((nint)(value));
+
+        public static implicit operator byte(HEVENT value) => (byte)(value.Value);
+
+        public static explicit operator HEVENT(short value) => new HEVENT((nint)(value));
+
+        public static implicit operator short(HEVENT value) => (short)(value.Value);
+
+        public static explicit operator HEVENT(int value) => new HEVENT((nint)(value));
+
+        public static implicit operator int(HEVENT value) => (int)(value.Value);
+
+        public static explicit operator HEVENT(long value) => new HEVENT((nint)(value));
+
+        public static explicit operator long(HEVENT value) => (long)(value.Value);
+
+        public static explicit operator HEVENT(nint value) => new HEVENT((nint)(value));
+
+        public static implicit operator nint(HEVENT value) => (nint)(value.Value);
+
+        public static explicit operator HEVENT(sbyte value) => new HEVENT((nint)(value));
+
+        public static implicit operator sbyte(HEVENT value) => (sbyte)(value.Value);
+
+        public static explicit operator HEVENT(ushort value) => new HEVENT((nint)(value));
+
+        public static implicit operator ushort(HEVENT value) => (ushort)(value.Value);
+
+        public static explicit operator HEVENT(uint value) => new HEVENT((nint)(value));
+
+        public static implicit operator uint(HEVENT value) => (uint)(value.Value);
+
+        public static explicit operator HEVENT(ulong value) => new HEVENT((nint)(value));
+
+        public static explicit operator ulong(HEVENT value) => (ulong)(value.Value);
+
+        public static explicit operator HEVENT(nuint value) => new HEVENT((nint)(value));
+
+        public static explicit operator nuint(HEVENT value) => (nuint)(value.Value);
 
         public override bool Equals(object? obj) => (obj is HEVENT other) && Equals(other);
 
         public bool Equals(HEVENT other) => (this == other);
 
-        public override int GetHashCode() => ((nuint)(Value)).GetHashCode();
+        public override int GetHashCode() => Value.GetHashCode();
+
+        public override string ToString() => Value.ToString();
+
     }
 }

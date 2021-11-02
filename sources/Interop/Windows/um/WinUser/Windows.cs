@@ -459,15 +459,13 @@ namespace TerraFX.Interop
         public static extern BOOL SetWindowDisplayAffinity(HWND hWnd, [NativeTypeName("DWORD")] uint dwAffinity);
 
         [DllImport("user32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("HDWP")]
-        public static extern HANDLE BeginDeferWindowPos(int nNumWindows);
+        public static extern HDWP BeginDeferWindowPos(int nNumWindows);
 
         [DllImport("user32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("HDWP")]
-        public static extern HANDLE DeferWindowPos([NativeTypeName("HDWP")] HANDLE hWinPosInfo, HWND hWnd, HWND hWndInsertAfter, int x, int y, int cx, int cy, uint uFlags);
+        public static extern HDWP DeferWindowPos(HDWP hWinPosInfo, HWND hWnd, HWND hWndInsertAfter, int x, int y, int cx, int cy, uint uFlags);
 
         [DllImport("user32", ExactSpelling = true, SetLastError = true)]
-        public static extern BOOL EndDeferWindowPos([NativeTypeName("HDWP")] HANDLE hWinPosInfo);
+        public static extern BOOL EndDeferWindowPos(HDWP hWinPosInfo);
 
         [DllImport("user32", ExactSpelling = true)]
         public static extern BOOL IsWindowVisible(HWND hWnd);

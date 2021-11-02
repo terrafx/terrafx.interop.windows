@@ -8,59 +8,70 @@ namespace TerraFX.Interop
     {
         public readonly nint Value;
 
-        public HANDLE(int value)
-        {
-            Value = ((nint)(value));
-        }
-
-        public HANDLE(uint value)
-        {
-            Value = ((nint)(value));
-        }
-
         public HANDLE(nint value)
         {
-            Value = ((nint)(value));
+            Value = value;
         }
 
-        public HANDLE(nuint value)
-        {
-            Value = ((nint)(value));
-        }
+        public static HANDLE INVALID_HANDLE_VALUE => new HANDLE(-1);
 
-        public HANDLE(void* value)
-        {
-            Value = ((nint)(value));
-        }
+        public static HANDLE NULL => new HANDLE(0);
 
         public static bool operator ==(HANDLE left, HANDLE right) => left.Value == right.Value;
 
         public static bool operator !=(HANDLE left, HANDLE right) => left.Value != right.Value;
 
-        public static explicit operator HANDLE(int value) => new HANDLE(value);
+        public static explicit operator HANDLE(void* value) => new HANDLE((nint)(value));
 
-        public static explicit operator HANDLE(uint value) => new HANDLE(value);
+        public static implicit operator void*(HANDLE value) => (void*)(value.Value);
 
-        public static explicit operator HANDLE(nint value) => new HANDLE(value);
+        public static explicit operator HANDLE(byte value) => new HANDLE((nint)(value));
 
-        public static explicit operator HANDLE(nuint value) => new HANDLE(value);
+        public static implicit operator byte(HANDLE value) => (byte)(value.Value);
 
-        public static explicit operator HANDLE(void* value) => new HANDLE(value);
+        public static explicit operator HANDLE(short value) => new HANDLE((nint)(value));
 
-        public static explicit operator int(HANDLE value) => (int)(value.Value);
+        public static implicit operator short(HANDLE value) => (short)(value.Value);
 
-        public static explicit operator uint(HANDLE value) => (uint)(value.Value);
+        public static explicit operator HANDLE(int value) => new HANDLE((nint)(value));
+
+        public static implicit operator int(HANDLE value) => (int)(value.Value);
+
+        public static explicit operator HANDLE(long value) => new HANDLE((nint)(value));
+
+        public static explicit operator long(HANDLE value) => (long)(value.Value);
+
+        public static explicit operator HANDLE(nint value) => new HANDLE((nint)(value));
 
         public static implicit operator nint(HANDLE value) => (nint)(value.Value);
 
-        public static implicit operator nuint(HANDLE value) => (nuint)(value.Value);
+        public static explicit operator HANDLE(sbyte value) => new HANDLE((nint)(value));
 
-        public static implicit operator void*(HANDLE value) => (void*)(value.Value);
+        public static implicit operator sbyte(HANDLE value) => (sbyte)(value.Value);
+
+        public static explicit operator HANDLE(ushort value) => new HANDLE((nint)(value));
+
+        public static implicit operator ushort(HANDLE value) => (ushort)(value.Value);
+
+        public static explicit operator HANDLE(uint value) => new HANDLE((nint)(value));
+
+        public static implicit operator uint(HANDLE value) => (uint)(value.Value);
+
+        public static explicit operator HANDLE(ulong value) => new HANDLE((nint)(value));
+
+        public static explicit operator ulong(HANDLE value) => (ulong)(value.Value);
+
+        public static explicit operator HANDLE(nuint value) => new HANDLE((nint)(value));
+
+        public static explicit operator nuint(HANDLE value) => (nuint)(value.Value);
 
         public override bool Equals(object? obj) => (obj is HANDLE other) && Equals(other);
 
         public bool Equals(HANDLE other) => (this == other);
 
-        public override int GetHashCode() => ((nuint)(Value)).GetHashCode();
+        public override int GetHashCode() => Value.GetHashCode();
+
+        public override string ToString() => Value.ToString();
+
     }
 }

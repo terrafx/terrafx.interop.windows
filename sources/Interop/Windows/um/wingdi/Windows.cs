@@ -74,7 +74,7 @@ namespace TerraFX.Interop
         public static extern HBITMAP CreateDIBitmap(HDC hdc, [NativeTypeName("const BITMAPINFOHEADER *")] BITMAPINFOHEADER* pbmih, [NativeTypeName("DWORD")] uint flInit, [NativeTypeName("const void *")] void* pjBits, [NativeTypeName("const BITMAPINFO *")] BITMAPINFO* pbmi, uint iUsage);
 
         [DllImport("gdi32", ExactSpelling = true)]
-        public static extern HBRUSH CreateDIBPatternBrush([NativeTypeName("HGLOBAL")] HANDLE h, uint iUsage);
+        public static extern HBRUSH CreateDIBPatternBrush(HGLOBAL h, uint iUsage);
 
         [DllImport("gdi32", ExactSpelling = true)]
         public static extern HBRUSH CreateDIBPatternBrushPt([NativeTypeName("const void *")] void* lpPackedDIB, uint iUsage);

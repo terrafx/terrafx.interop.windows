@@ -8,70 +8,74 @@ namespace TerraFX.Interop
     {
         public readonly nint Value;
 
-        public static HSZ NULL => (HSZ)(0);
-
-        public HSZ(int value)
-        {
-            Value = ((nint)(value));
-        }
-
-        public HSZ(uint value)
-        {
-            Value = ((nint)(value));
-        }
-
         public HSZ(nint value)
         {
-            Value = ((nint)(value));
+            Value = value;
         }
 
-        public HSZ(nuint value)
-        {
-            Value = ((nint)(value));
-        }
+        public static HSZ INVALID_HANDLE_VALUE => new HSZ(-1);
 
-        public HSZ(void* value)
-        {
-            Value = ((nint)(value));
-        }
-
-        public HSZ(HANDLE value)
-        {
-            Value = value.Value;
-        }
+        public static HSZ NULL => new HSZ(0);
 
         public static bool operator ==(HSZ left, HSZ right) => left.Value == right.Value;
 
         public static bool operator !=(HSZ left, HSZ right) => left.Value != right.Value;
 
-        public static explicit operator HSZ(int value) => new HSZ(value);
-
-        public static explicit operator HSZ(uint value) => new HSZ(value);
-
-        public static explicit operator HSZ(nint value) => new HSZ(value);
-
-        public static explicit operator HSZ(nuint value) => new HSZ(value);
-
-        public static explicit operator HSZ(void* value) => new HSZ(value);
-
-        public static explicit operator HSZ(HANDLE value) => new HSZ(value);
-
-        public static explicit operator int(HSZ value) => (int)(value.Value);
-
-        public static explicit operator uint(HSZ value) => (uint)(value.Value);
-
-        public static implicit operator nint(HSZ value) => (nint)(value.Value);
-
-        public static implicit operator nuint(HSZ value) => (nuint)(value.Value);
+        public static explicit operator HSZ(void* value) => new HSZ((nint)(value));
 
         public static implicit operator void*(HSZ value) => (void*)(value.Value);
 
-        public static implicit operator HANDLE(HSZ value) => (HANDLE)(value.Value);
+        public static explicit operator HSZ(HANDLE value) => new HSZ(value);
+
+        public static implicit operator HANDLE(HSZ value) => new HSZ(value);
+
+        public static explicit operator HSZ(byte value) => new HSZ((nint)(value));
+
+        public static implicit operator byte(HSZ value) => (byte)(value.Value);
+
+        public static explicit operator HSZ(short value) => new HSZ((nint)(value));
+
+        public static implicit operator short(HSZ value) => (short)(value.Value);
+
+        public static explicit operator HSZ(int value) => new HSZ((nint)(value));
+
+        public static implicit operator int(HSZ value) => (int)(value.Value);
+
+        public static explicit operator HSZ(long value) => new HSZ((nint)(value));
+
+        public static explicit operator long(HSZ value) => (long)(value.Value);
+
+        public static explicit operator HSZ(nint value) => new HSZ((nint)(value));
+
+        public static implicit operator nint(HSZ value) => (nint)(value.Value);
+
+        public static explicit operator HSZ(sbyte value) => new HSZ((nint)(value));
+
+        public static implicit operator sbyte(HSZ value) => (sbyte)(value.Value);
+
+        public static explicit operator HSZ(ushort value) => new HSZ((nint)(value));
+
+        public static implicit operator ushort(HSZ value) => (ushort)(value.Value);
+
+        public static explicit operator HSZ(uint value) => new HSZ((nint)(value));
+
+        public static implicit operator uint(HSZ value) => (uint)(value.Value);
+
+        public static explicit operator HSZ(ulong value) => new HSZ((nint)(value));
+
+        public static explicit operator ulong(HSZ value) => (ulong)(value.Value);
+
+        public static explicit operator HSZ(nuint value) => new HSZ((nint)(value));
+
+        public static explicit operator nuint(HSZ value) => (nuint)(value.Value);
 
         public override bool Equals(object? obj) => (obj is HSZ other) && Equals(other);
 
         public bool Equals(HSZ other) => (this == other);
 
-        public override int GetHashCode() => ((nuint)(Value)).GetHashCode();
+        public override int GetHashCode() => Value.GetHashCode();
+
+        public override string ToString() => Value.ToString();
+
     }
 }

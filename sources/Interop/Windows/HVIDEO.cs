@@ -8,70 +8,74 @@ namespace TerraFX.Interop
     {
         public readonly nint Value;
 
-        public static HVIDEO NULL => (HVIDEO)(0);
-
-        public HVIDEO(int value)
-        {
-            Value = ((nint)(value));
-        }
-
-        public HVIDEO(uint value)
-        {
-            Value = ((nint)(value));
-        }
-
         public HVIDEO(nint value)
         {
-            Value = ((nint)(value));
+            Value = value;
         }
 
-        public HVIDEO(nuint value)
-        {
-            Value = ((nint)(value));
-        }
+        public static HVIDEO INVALID_HANDLE_VALUE => new HVIDEO(-1);
 
-        public HVIDEO(void* value)
-        {
-            Value = ((nint)(value));
-        }
-
-        public HVIDEO(HANDLE value)
-        {
-            Value = value.Value;
-        }
+        public static HVIDEO NULL => new HVIDEO(0);
 
         public static bool operator ==(HVIDEO left, HVIDEO right) => left.Value == right.Value;
 
         public static bool operator !=(HVIDEO left, HVIDEO right) => left.Value != right.Value;
 
-        public static explicit operator HVIDEO(int value) => new HVIDEO(value);
-
-        public static explicit operator HVIDEO(uint value) => new HVIDEO(value);
-
-        public static explicit operator HVIDEO(nint value) => new HVIDEO(value);
-
-        public static explicit operator HVIDEO(nuint value) => new HVIDEO(value);
-
-        public static explicit operator HVIDEO(void* value) => new HVIDEO(value);
-
-        public static explicit operator HVIDEO(HANDLE value) => new HVIDEO(value);
-
-        public static explicit operator int(HVIDEO value) => (int)(value.Value);
-
-        public static explicit operator uint(HVIDEO value) => (uint)(value.Value);
-
-        public static implicit operator nint(HVIDEO value) => (nint)(value.Value);
-
-        public static implicit operator nuint(HVIDEO value) => (nuint)(value.Value);
+        public static explicit operator HVIDEO(void* value) => new HVIDEO((nint)(value));
 
         public static implicit operator void*(HVIDEO value) => (void*)(value.Value);
 
-        public static implicit operator HANDLE(HVIDEO value) => (HANDLE)(value.Value);
+        public static explicit operator HVIDEO(HANDLE value) => new HVIDEO(value);
+
+        public static implicit operator HANDLE(HVIDEO value) => new HVIDEO(value);
+
+        public static explicit operator HVIDEO(byte value) => new HVIDEO((nint)(value));
+
+        public static implicit operator byte(HVIDEO value) => (byte)(value.Value);
+
+        public static explicit operator HVIDEO(short value) => new HVIDEO((nint)(value));
+
+        public static implicit operator short(HVIDEO value) => (short)(value.Value);
+
+        public static explicit operator HVIDEO(int value) => new HVIDEO((nint)(value));
+
+        public static implicit operator int(HVIDEO value) => (int)(value.Value);
+
+        public static explicit operator HVIDEO(long value) => new HVIDEO((nint)(value));
+
+        public static explicit operator long(HVIDEO value) => (long)(value.Value);
+
+        public static explicit operator HVIDEO(nint value) => new HVIDEO((nint)(value));
+
+        public static implicit operator nint(HVIDEO value) => (nint)(value.Value);
+
+        public static explicit operator HVIDEO(sbyte value) => new HVIDEO((nint)(value));
+
+        public static implicit operator sbyte(HVIDEO value) => (sbyte)(value.Value);
+
+        public static explicit operator HVIDEO(ushort value) => new HVIDEO((nint)(value));
+
+        public static implicit operator ushort(HVIDEO value) => (ushort)(value.Value);
+
+        public static explicit operator HVIDEO(uint value) => new HVIDEO((nint)(value));
+
+        public static implicit operator uint(HVIDEO value) => (uint)(value.Value);
+
+        public static explicit operator HVIDEO(ulong value) => new HVIDEO((nint)(value));
+
+        public static explicit operator ulong(HVIDEO value) => (ulong)(value.Value);
+
+        public static explicit operator HVIDEO(nuint value) => new HVIDEO((nint)(value));
+
+        public static explicit operator nuint(HVIDEO value) => (nuint)(value.Value);
 
         public override bool Equals(object? obj) => (obj is HVIDEO other) && Equals(other);
 
         public bool Equals(HVIDEO other) => (this == other);
 
-        public override int GetHashCode() => ((nuint)(Value)).GetHashCode();
+        public override int GetHashCode() => Value.GetHashCode();
+
+        public override string ToString() => Value.ToString();
+
     }
 }

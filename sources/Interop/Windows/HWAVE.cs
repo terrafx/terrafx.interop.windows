@@ -8,70 +8,74 @@ namespace TerraFX.Interop
     {
         public readonly nint Value;
 
-        public static HWAVE NULL => (HWAVE)(0);
-
-        public HWAVE(int value)
-        {
-            Value = ((nint)(value));
-        }
-
-        public HWAVE(uint value)
-        {
-            Value = ((nint)(value));
-        }
-
         public HWAVE(nint value)
         {
-            Value = ((nint)(value));
+            Value = value;
         }
 
-        public HWAVE(nuint value)
-        {
-            Value = ((nint)(value));
-        }
+        public static HWAVE INVALID_HANDLE_VALUE => new HWAVE(-1);
 
-        public HWAVE(void* value)
-        {
-            Value = ((nint)(value));
-        }
-
-        public HWAVE(HANDLE value)
-        {
-            Value = value.Value;
-        }
+        public static HWAVE NULL => new HWAVE(0);
 
         public static bool operator ==(HWAVE left, HWAVE right) => left.Value == right.Value;
 
         public static bool operator !=(HWAVE left, HWAVE right) => left.Value != right.Value;
 
-        public static explicit operator HWAVE(int value) => new HWAVE(value);
-
-        public static explicit operator HWAVE(uint value) => new HWAVE(value);
-
-        public static explicit operator HWAVE(nint value) => new HWAVE(value);
-
-        public static explicit operator HWAVE(nuint value) => new HWAVE(value);
-
-        public static explicit operator HWAVE(void* value) => new HWAVE(value);
-
-        public static explicit operator HWAVE(HANDLE value) => new HWAVE(value);
-
-        public static explicit operator int(HWAVE value) => (int)(value.Value);
-
-        public static explicit operator uint(HWAVE value) => (uint)(value.Value);
-
-        public static implicit operator nint(HWAVE value) => (nint)(value.Value);
-
-        public static implicit operator nuint(HWAVE value) => (nuint)(value.Value);
+        public static explicit operator HWAVE(void* value) => new HWAVE((nint)(value));
 
         public static implicit operator void*(HWAVE value) => (void*)(value.Value);
 
-        public static implicit operator HANDLE(HWAVE value) => (HANDLE)(value.Value);
+        public static explicit operator HWAVE(HANDLE value) => new HWAVE(value);
+
+        public static implicit operator HANDLE(HWAVE value) => new HWAVE(value);
+
+        public static explicit operator HWAVE(byte value) => new HWAVE((nint)(value));
+
+        public static implicit operator byte(HWAVE value) => (byte)(value.Value);
+
+        public static explicit operator HWAVE(short value) => new HWAVE((nint)(value));
+
+        public static implicit operator short(HWAVE value) => (short)(value.Value);
+
+        public static explicit operator HWAVE(int value) => new HWAVE((nint)(value));
+
+        public static implicit operator int(HWAVE value) => (int)(value.Value);
+
+        public static explicit operator HWAVE(long value) => new HWAVE((nint)(value));
+
+        public static explicit operator long(HWAVE value) => (long)(value.Value);
+
+        public static explicit operator HWAVE(nint value) => new HWAVE((nint)(value));
+
+        public static implicit operator nint(HWAVE value) => (nint)(value.Value);
+
+        public static explicit operator HWAVE(sbyte value) => new HWAVE((nint)(value));
+
+        public static implicit operator sbyte(HWAVE value) => (sbyte)(value.Value);
+
+        public static explicit operator HWAVE(ushort value) => new HWAVE((nint)(value));
+
+        public static implicit operator ushort(HWAVE value) => (ushort)(value.Value);
+
+        public static explicit operator HWAVE(uint value) => new HWAVE((nint)(value));
+
+        public static implicit operator uint(HWAVE value) => (uint)(value.Value);
+
+        public static explicit operator HWAVE(ulong value) => new HWAVE((nint)(value));
+
+        public static explicit operator ulong(HWAVE value) => (ulong)(value.Value);
+
+        public static explicit operator HWAVE(nuint value) => new HWAVE((nint)(value));
+
+        public static explicit operator nuint(HWAVE value) => (nuint)(value.Value);
 
         public override bool Equals(object? obj) => (obj is HWAVE other) && Equals(other);
 
         public bool Equals(HWAVE other) => (this == other);
 
-        public override int GetHashCode() => ((nuint)(Value)).GetHashCode();
+        public override int GetHashCode() => Value.GetHashCode();
+
+        public override string ToString() => Value.ToString();
+
     }
 }

@@ -8,70 +8,74 @@ namespace TerraFX.Interop
     {
         public readonly nint Value;
 
-        public static HPALETTE NULL => (HPALETTE)(0);
-
-        public HPALETTE(int value)
-        {
-            Value = ((nint)(value));
-        }
-
-        public HPALETTE(uint value)
-        {
-            Value = ((nint)(value));
-        }
-
         public HPALETTE(nint value)
         {
-            Value = ((nint)(value));
+            Value = value;
         }
 
-        public HPALETTE(nuint value)
-        {
-            Value = ((nint)(value));
-        }
+        public static HPALETTE INVALID_HANDLE_VALUE => new HPALETTE(-1);
 
-        public HPALETTE(void* value)
-        {
-            Value = ((nint)(value));
-        }
-
-        public HPALETTE(HANDLE value)
-        {
-            Value = value.Value;
-        }
+        public static HPALETTE NULL => new HPALETTE(0);
 
         public static bool operator ==(HPALETTE left, HPALETTE right) => left.Value == right.Value;
 
         public static bool operator !=(HPALETTE left, HPALETTE right) => left.Value != right.Value;
 
-        public static explicit operator HPALETTE(int value) => new HPALETTE(value);
-
-        public static explicit operator HPALETTE(uint value) => new HPALETTE(value);
-
-        public static explicit operator HPALETTE(nint value) => new HPALETTE(value);
-
-        public static explicit operator HPALETTE(nuint value) => new HPALETTE(value);
-
-        public static explicit operator HPALETTE(void* value) => new HPALETTE(value);
-
-        public static explicit operator HPALETTE(HANDLE value) => new HPALETTE(value);
-
-        public static explicit operator int(HPALETTE value) => (int)(value.Value);
-
-        public static explicit operator uint(HPALETTE value) => (uint)(value.Value);
-
-        public static implicit operator nint(HPALETTE value) => (nint)(value.Value);
-
-        public static implicit operator nuint(HPALETTE value) => (nuint)(value.Value);
+        public static explicit operator HPALETTE(void* value) => new HPALETTE((nint)(value));
 
         public static implicit operator void*(HPALETTE value) => (void*)(value.Value);
 
-        public static implicit operator HANDLE(HPALETTE value) => (HANDLE)(value.Value);
+        public static explicit operator HPALETTE(HANDLE value) => new HPALETTE(value);
+
+        public static implicit operator HANDLE(HPALETTE value) => new HPALETTE(value);
+
+        public static explicit operator HPALETTE(byte value) => new HPALETTE((nint)(value));
+
+        public static implicit operator byte(HPALETTE value) => (byte)(value.Value);
+
+        public static explicit operator HPALETTE(short value) => new HPALETTE((nint)(value));
+
+        public static implicit operator short(HPALETTE value) => (short)(value.Value);
+
+        public static explicit operator HPALETTE(int value) => new HPALETTE((nint)(value));
+
+        public static implicit operator int(HPALETTE value) => (int)(value.Value);
+
+        public static explicit operator HPALETTE(long value) => new HPALETTE((nint)(value));
+
+        public static explicit operator long(HPALETTE value) => (long)(value.Value);
+
+        public static explicit operator HPALETTE(nint value) => new HPALETTE((nint)(value));
+
+        public static implicit operator nint(HPALETTE value) => (nint)(value.Value);
+
+        public static explicit operator HPALETTE(sbyte value) => new HPALETTE((nint)(value));
+
+        public static implicit operator sbyte(HPALETTE value) => (sbyte)(value.Value);
+
+        public static explicit operator HPALETTE(ushort value) => new HPALETTE((nint)(value));
+
+        public static implicit operator ushort(HPALETTE value) => (ushort)(value.Value);
+
+        public static explicit operator HPALETTE(uint value) => new HPALETTE((nint)(value));
+
+        public static implicit operator uint(HPALETTE value) => (uint)(value.Value);
+
+        public static explicit operator HPALETTE(ulong value) => new HPALETTE((nint)(value));
+
+        public static explicit operator ulong(HPALETTE value) => (ulong)(value.Value);
+
+        public static explicit operator HPALETTE(nuint value) => new HPALETTE((nint)(value));
+
+        public static explicit operator nuint(HPALETTE value) => (nuint)(value.Value);
 
         public override bool Equals(object? obj) => (obj is HPALETTE other) && Equals(other);
 
         public bool Equals(HPALETTE other) => (this == other);
 
-        public override int GetHashCode() => ((nuint)(Value)).GetHashCode();
+        public override int GetHashCode() => Value.GetHashCode();
+
+        public override string ToString() => Value.ToString();
+
     }
 }

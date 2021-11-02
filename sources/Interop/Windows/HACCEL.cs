@@ -8,70 +8,74 @@ namespace TerraFX.Interop
     {
         public readonly nint Value;
 
-        public static HACCEL NULL => (HACCEL)(0);
-
-        public HACCEL(int value)
-        {
-            Value = ((nint)(value));
-        }
-
-        public HACCEL(uint value)
-        {
-            Value = ((nint)(value));
-        }
-
         public HACCEL(nint value)
         {
-            Value = ((nint)(value));
+            Value = value;
         }
 
-        public HACCEL(nuint value)
-        {
-            Value = ((nint)(value));
-        }
+        public static HACCEL INVALID_HANDLE_VALUE => new HACCEL(-1);
 
-        public HACCEL(void* value)
-        {
-            Value = ((nint)(value));
-        }
-
-        public HACCEL(HANDLE value)
-        {
-            Value = value.Value;
-        }
+        public static HACCEL NULL => new HACCEL(0);
 
         public static bool operator ==(HACCEL left, HACCEL right) => left.Value == right.Value;
 
         public static bool operator !=(HACCEL left, HACCEL right) => left.Value != right.Value;
 
-        public static explicit operator HACCEL(int value) => new HACCEL(value);
-
-        public static explicit operator HACCEL(uint value) => new HACCEL(value);
-
-        public static explicit operator HACCEL(nint value) => new HACCEL(value);
-
-        public static explicit operator HACCEL(nuint value) => new HACCEL(value);
-
-        public static explicit operator HACCEL(void* value) => new HACCEL(value);
-
-        public static explicit operator HACCEL(HANDLE value) => new HACCEL(value);
-
-        public static explicit operator int(HACCEL value) => (int)(value.Value);
-
-        public static explicit operator uint(HACCEL value) => (uint)(value.Value);
-
-        public static implicit operator nint(HACCEL value) => (nint)(value.Value);
-
-        public static implicit operator nuint(HACCEL value) => (nuint)(value.Value);
+        public static explicit operator HACCEL(void* value) => new HACCEL((nint)(value));
 
         public static implicit operator void*(HACCEL value) => (void*)(value.Value);
 
-        public static implicit operator HANDLE(HACCEL value) => (HANDLE)(value.Value);
+        public static explicit operator HACCEL(HANDLE value) => new HACCEL(value);
+
+        public static implicit operator HANDLE(HACCEL value) => new HACCEL(value);
+
+        public static explicit operator HACCEL(byte value) => new HACCEL((nint)(value));
+
+        public static implicit operator byte(HACCEL value) => (byte)(value.Value);
+
+        public static explicit operator HACCEL(short value) => new HACCEL((nint)(value));
+
+        public static implicit operator short(HACCEL value) => (short)(value.Value);
+
+        public static explicit operator HACCEL(int value) => new HACCEL((nint)(value));
+
+        public static implicit operator int(HACCEL value) => (int)(value.Value);
+
+        public static explicit operator HACCEL(long value) => new HACCEL((nint)(value));
+
+        public static explicit operator long(HACCEL value) => (long)(value.Value);
+
+        public static explicit operator HACCEL(nint value) => new HACCEL((nint)(value));
+
+        public static implicit operator nint(HACCEL value) => (nint)(value.Value);
+
+        public static explicit operator HACCEL(sbyte value) => new HACCEL((nint)(value));
+
+        public static implicit operator sbyte(HACCEL value) => (sbyte)(value.Value);
+
+        public static explicit operator HACCEL(ushort value) => new HACCEL((nint)(value));
+
+        public static implicit operator ushort(HACCEL value) => (ushort)(value.Value);
+
+        public static explicit operator HACCEL(uint value) => new HACCEL((nint)(value));
+
+        public static implicit operator uint(HACCEL value) => (uint)(value.Value);
+
+        public static explicit operator HACCEL(ulong value) => new HACCEL((nint)(value));
+
+        public static explicit operator ulong(HACCEL value) => (ulong)(value.Value);
+
+        public static explicit operator HACCEL(nuint value) => new HACCEL((nint)(value));
+
+        public static explicit operator nuint(HACCEL value) => (nuint)(value.Value);
 
         public override bool Equals(object? obj) => (obj is HACCEL other) && Equals(other);
 
         public bool Equals(HACCEL other) => (this == other);
 
-        public override int GetHashCode() => ((nuint)(Value)).GetHashCode();
+        public override int GetHashCode() => Value.GetHashCode();
+
+        public override string ToString() => Value.ToString();
+
     }
 }

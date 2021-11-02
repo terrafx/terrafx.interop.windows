@@ -8,70 +8,74 @@ namespace TerraFX.Interop
     {
         public readonly nint Value;
 
-        public static HDESK NULL => (HDESK)(0);
-
-        public HDESK(int value)
-        {
-            Value = ((nint)(value));
-        }
-
-        public HDESK(uint value)
-        {
-            Value = ((nint)(value));
-        }
-
         public HDESK(nint value)
         {
-            Value = ((nint)(value));
+            Value = value;
         }
 
-        public HDESK(nuint value)
-        {
-            Value = ((nint)(value));
-        }
+        public static HDESK INVALID_HANDLE_VALUE => new HDESK(-1);
 
-        public HDESK(void* value)
-        {
-            Value = ((nint)(value));
-        }
-
-        public HDESK(HANDLE value)
-        {
-            Value = value.Value;
-        }
+        public static HDESK NULL => new HDESK(0);
 
         public static bool operator ==(HDESK left, HDESK right) => left.Value == right.Value;
 
         public static bool operator !=(HDESK left, HDESK right) => left.Value != right.Value;
 
-        public static explicit operator HDESK(int value) => new HDESK(value);
-
-        public static explicit operator HDESK(uint value) => new HDESK(value);
-
-        public static explicit operator HDESK(nint value) => new HDESK(value);
-
-        public static explicit operator HDESK(nuint value) => new HDESK(value);
-
-        public static explicit operator HDESK(void* value) => new HDESK(value);
-
-        public static explicit operator HDESK(HANDLE value) => new HDESK(value);
-
-        public static explicit operator int(HDESK value) => (int)(value.Value);
-
-        public static explicit operator uint(HDESK value) => (uint)(value.Value);
-
-        public static implicit operator nint(HDESK value) => (nint)(value.Value);
-
-        public static implicit operator nuint(HDESK value) => (nuint)(value.Value);
+        public static explicit operator HDESK(void* value) => new HDESK((nint)(value));
 
         public static implicit operator void*(HDESK value) => (void*)(value.Value);
 
-        public static implicit operator HANDLE(HDESK value) => (HANDLE)(value.Value);
+        public static explicit operator HDESK(HANDLE value) => new HDESK(value);
+
+        public static implicit operator HANDLE(HDESK value) => new HDESK(value);
+
+        public static explicit operator HDESK(byte value) => new HDESK((nint)(value));
+
+        public static implicit operator byte(HDESK value) => (byte)(value.Value);
+
+        public static explicit operator HDESK(short value) => new HDESK((nint)(value));
+
+        public static implicit operator short(HDESK value) => (short)(value.Value);
+
+        public static explicit operator HDESK(int value) => new HDESK((nint)(value));
+
+        public static implicit operator int(HDESK value) => (int)(value.Value);
+
+        public static explicit operator HDESK(long value) => new HDESK((nint)(value));
+
+        public static explicit operator long(HDESK value) => (long)(value.Value);
+
+        public static explicit operator HDESK(nint value) => new HDESK((nint)(value));
+
+        public static implicit operator nint(HDESK value) => (nint)(value.Value);
+
+        public static explicit operator HDESK(sbyte value) => new HDESK((nint)(value));
+
+        public static implicit operator sbyte(HDESK value) => (sbyte)(value.Value);
+
+        public static explicit operator HDESK(ushort value) => new HDESK((nint)(value));
+
+        public static implicit operator ushort(HDESK value) => (ushort)(value.Value);
+
+        public static explicit operator HDESK(uint value) => new HDESK((nint)(value));
+
+        public static implicit operator uint(HDESK value) => (uint)(value.Value);
+
+        public static explicit operator HDESK(ulong value) => new HDESK((nint)(value));
+
+        public static explicit operator ulong(HDESK value) => (ulong)(value.Value);
+
+        public static explicit operator HDESK(nuint value) => new HDESK((nint)(value));
+
+        public static explicit operator nuint(HDESK value) => (nuint)(value.Value);
 
         public override bool Equals(object? obj) => (obj is HDESK other) && Equals(other);
 
         public bool Equals(HDESK other) => (this == other);
 
-        public override int GetHashCode() => ((nuint)(Value)).GetHashCode();
+        public override int GetHashCode() => Value.GetHashCode();
+
+        public override string ToString() => Value.ToString();
+
     }
 }

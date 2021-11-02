@@ -8,70 +8,74 @@ namespace TerraFX.Interop
     {
         public readonly nint Value;
 
-        public static HWAVEOUT NULL => (HWAVEOUT)(0);
-
-        public HWAVEOUT(int value)
-        {
-            Value = ((nint)(value));
-        }
-
-        public HWAVEOUT(uint value)
-        {
-            Value = ((nint)(value));
-        }
-
         public HWAVEOUT(nint value)
         {
-            Value = ((nint)(value));
+            Value = value;
         }
 
-        public HWAVEOUT(nuint value)
-        {
-            Value = ((nint)(value));
-        }
+        public static HWAVEOUT INVALID_HANDLE_VALUE => new HWAVEOUT(-1);
 
-        public HWAVEOUT(void* value)
-        {
-            Value = ((nint)(value));
-        }
-
-        public HWAVEOUT(HANDLE value)
-        {
-            Value = value.Value;
-        }
+        public static HWAVEOUT NULL => new HWAVEOUT(0);
 
         public static bool operator ==(HWAVEOUT left, HWAVEOUT right) => left.Value == right.Value;
 
         public static bool operator !=(HWAVEOUT left, HWAVEOUT right) => left.Value != right.Value;
 
-        public static explicit operator HWAVEOUT(int value) => new HWAVEOUT(value);
-
-        public static explicit operator HWAVEOUT(uint value) => new HWAVEOUT(value);
-
-        public static explicit operator HWAVEOUT(nint value) => new HWAVEOUT(value);
-
-        public static explicit operator HWAVEOUT(nuint value) => new HWAVEOUT(value);
-
-        public static explicit operator HWAVEOUT(void* value) => new HWAVEOUT(value);
-
-        public static explicit operator HWAVEOUT(HANDLE value) => new HWAVEOUT(value);
-
-        public static explicit operator int(HWAVEOUT value) => (int)(value.Value);
-
-        public static explicit operator uint(HWAVEOUT value) => (uint)(value.Value);
-
-        public static implicit operator nint(HWAVEOUT value) => (nint)(value.Value);
-
-        public static implicit operator nuint(HWAVEOUT value) => (nuint)(value.Value);
+        public static explicit operator HWAVEOUT(void* value) => new HWAVEOUT((nint)(value));
 
         public static implicit operator void*(HWAVEOUT value) => (void*)(value.Value);
 
-        public static implicit operator HANDLE(HWAVEOUT value) => (HANDLE)(value.Value);
+        public static explicit operator HWAVEOUT(HANDLE value) => new HWAVEOUT(value);
+
+        public static implicit operator HANDLE(HWAVEOUT value) => new HWAVEOUT(value);
+
+        public static explicit operator HWAVEOUT(byte value) => new HWAVEOUT((nint)(value));
+
+        public static implicit operator byte(HWAVEOUT value) => (byte)(value.Value);
+
+        public static explicit operator HWAVEOUT(short value) => new HWAVEOUT((nint)(value));
+
+        public static implicit operator short(HWAVEOUT value) => (short)(value.Value);
+
+        public static explicit operator HWAVEOUT(int value) => new HWAVEOUT((nint)(value));
+
+        public static implicit operator int(HWAVEOUT value) => (int)(value.Value);
+
+        public static explicit operator HWAVEOUT(long value) => new HWAVEOUT((nint)(value));
+
+        public static explicit operator long(HWAVEOUT value) => (long)(value.Value);
+
+        public static explicit operator HWAVEOUT(nint value) => new HWAVEOUT((nint)(value));
+
+        public static implicit operator nint(HWAVEOUT value) => (nint)(value.Value);
+
+        public static explicit operator HWAVEOUT(sbyte value) => new HWAVEOUT((nint)(value));
+
+        public static implicit operator sbyte(HWAVEOUT value) => (sbyte)(value.Value);
+
+        public static explicit operator HWAVEOUT(ushort value) => new HWAVEOUT((nint)(value));
+
+        public static implicit operator ushort(HWAVEOUT value) => (ushort)(value.Value);
+
+        public static explicit operator HWAVEOUT(uint value) => new HWAVEOUT((nint)(value));
+
+        public static implicit operator uint(HWAVEOUT value) => (uint)(value.Value);
+
+        public static explicit operator HWAVEOUT(ulong value) => new HWAVEOUT((nint)(value));
+
+        public static explicit operator ulong(HWAVEOUT value) => (ulong)(value.Value);
+
+        public static explicit operator HWAVEOUT(nuint value) => new HWAVEOUT((nint)(value));
+
+        public static explicit operator nuint(HWAVEOUT value) => (nuint)(value.Value);
 
         public override bool Equals(object? obj) => (obj is HWAVEOUT other) && Equals(other);
 
         public bool Equals(HWAVEOUT other) => (this == other);
 
-        public override int GetHashCode() => ((nuint)(Value)).GetHashCode();
+        public override int GetHashCode() => Value.GetHashCode();
+
+        public override string ToString() => Value.ToString();
+
     }
 }

@@ -8,70 +8,74 @@ namespace TerraFX.Interop
     {
         public readonly nint Value;
 
-        public static HBODY NULL => (HBODY)(0);
-
-        public HBODY(int value)
-        {
-            Value = ((nint)(value));
-        }
-
-        public HBODY(uint value)
-        {
-            Value = ((nint)(value));
-        }
-
         public HBODY(nint value)
         {
-            Value = ((nint)(value));
+            Value = value;
         }
 
-        public HBODY(nuint value)
-        {
-            Value = ((nint)(value));
-        }
+        public static HBODY INVALID_HANDLE_VALUE => new HBODY(-1);
 
-        public HBODY(void* value)
-        {
-            Value = ((nint)(value));
-        }
-
-        public HBODY(HANDLE value)
-        {
-            Value = value.Value;
-        }
+        public static HBODY NULL => new HBODY(0);
 
         public static bool operator ==(HBODY left, HBODY right) => left.Value == right.Value;
 
         public static bool operator !=(HBODY left, HBODY right) => left.Value != right.Value;
 
-        public static explicit operator HBODY(int value) => new HBODY(value);
-
-        public static explicit operator HBODY(uint value) => new HBODY(value);
-
-        public static explicit operator HBODY(nint value) => new HBODY(value);
-
-        public static explicit operator HBODY(nuint value) => new HBODY(value);
-
-        public static explicit operator HBODY(void* value) => new HBODY(value);
-
-        public static explicit operator HBODY(HANDLE value) => new HBODY(value);
-
-        public static explicit operator int(HBODY value) => (int)(value.Value);
-
-        public static explicit operator uint(HBODY value) => (uint)(value.Value);
-
-        public static implicit operator nint(HBODY value) => (nint)(value.Value);
-
-        public static implicit operator nuint(HBODY value) => (nuint)(value.Value);
+        public static explicit operator HBODY(void* value) => new HBODY((nint)(value));
 
         public static implicit operator void*(HBODY value) => (void*)(value.Value);
 
-        public static implicit operator HANDLE(HBODY value) => (HANDLE)(value.Value);
+        public static explicit operator HBODY(HANDLE value) => new HBODY(value);
+
+        public static implicit operator HANDLE(HBODY value) => new HBODY(value);
+
+        public static explicit operator HBODY(byte value) => new HBODY((nint)(value));
+
+        public static implicit operator byte(HBODY value) => (byte)(value.Value);
+
+        public static explicit operator HBODY(short value) => new HBODY((nint)(value));
+
+        public static implicit operator short(HBODY value) => (short)(value.Value);
+
+        public static explicit operator HBODY(int value) => new HBODY((nint)(value));
+
+        public static implicit operator int(HBODY value) => (int)(value.Value);
+
+        public static explicit operator HBODY(long value) => new HBODY((nint)(value));
+
+        public static explicit operator long(HBODY value) => (long)(value.Value);
+
+        public static explicit operator HBODY(nint value) => new HBODY((nint)(value));
+
+        public static implicit operator nint(HBODY value) => (nint)(value.Value);
+
+        public static explicit operator HBODY(sbyte value) => new HBODY((nint)(value));
+
+        public static implicit operator sbyte(HBODY value) => (sbyte)(value.Value);
+
+        public static explicit operator HBODY(ushort value) => new HBODY((nint)(value));
+
+        public static implicit operator ushort(HBODY value) => (ushort)(value.Value);
+
+        public static explicit operator HBODY(uint value) => new HBODY((nint)(value));
+
+        public static implicit operator uint(HBODY value) => (uint)(value.Value);
+
+        public static explicit operator HBODY(ulong value) => new HBODY((nint)(value));
+
+        public static explicit operator ulong(HBODY value) => (ulong)(value.Value);
+
+        public static explicit operator HBODY(nuint value) => new HBODY((nint)(value));
+
+        public static explicit operator nuint(HBODY value) => (nuint)(value.Value);
 
         public override bool Equals(object? obj) => (obj is HBODY other) && Equals(other);
 
         public bool Equals(HBODY other) => (this == other);
 
-        public override int GetHashCode() => ((nuint)(Value)).GetHashCode();
+        public override int GetHashCode() => Value.GetHashCode();
+
+        public override string ToString() => Value.ToString();
+
     }
 }

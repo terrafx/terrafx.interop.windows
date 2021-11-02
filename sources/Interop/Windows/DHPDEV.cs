@@ -8,70 +8,74 @@ namespace TerraFX.Interop
     {
         public readonly nint Value;
 
-        public static DHPDEV NULL => (DHPDEV)(0);
-
-        public DHPDEV(int value)
-        {
-            Value = ((nint)(value));
-        }
-
-        public DHPDEV(uint value)
-        {
-            Value = ((nint)(value));
-        }
-
         public DHPDEV(nint value)
         {
-            Value = ((nint)(value));
+            Value = value;
         }
 
-        public DHPDEV(nuint value)
-        {
-            Value = ((nint)(value));
-        }
+        public static DHPDEV INVALID_HANDLE_VALUE => new DHPDEV(-1);
 
-        public DHPDEV(void* value)
-        {
-            Value = ((nint)(value));
-        }
-
-        public DHPDEV(HANDLE value)
-        {
-            Value = value.Value;
-        }
+        public static DHPDEV NULL => new DHPDEV(0);
 
         public static bool operator ==(DHPDEV left, DHPDEV right) => left.Value == right.Value;
 
         public static bool operator !=(DHPDEV left, DHPDEV right) => left.Value != right.Value;
 
-        public static explicit operator DHPDEV(int value) => new DHPDEV(value);
-
-        public static explicit operator DHPDEV(uint value) => new DHPDEV(value);
-
-        public static explicit operator DHPDEV(nint value) => new DHPDEV(value);
-
-        public static explicit operator DHPDEV(nuint value) => new DHPDEV(value);
-
-        public static explicit operator DHPDEV(void* value) => new DHPDEV(value);
-
-        public static explicit operator DHPDEV(HANDLE value) => new DHPDEV(value);
-
-        public static explicit operator int(DHPDEV value) => (int)(value.Value);
-
-        public static explicit operator uint(DHPDEV value) => (uint)(value.Value);
-
-        public static implicit operator nint(DHPDEV value) => (nint)(value.Value);
-
-        public static implicit operator nuint(DHPDEV value) => (nuint)(value.Value);
+        public static explicit operator DHPDEV(void* value) => new DHPDEV((nint)(value));
 
         public static implicit operator void*(DHPDEV value) => (void*)(value.Value);
 
-        public static implicit operator HANDLE(DHPDEV value) => (HANDLE)(value.Value);
+        public static explicit operator DHPDEV(HANDLE value) => new DHPDEV(value);
+
+        public static implicit operator HANDLE(DHPDEV value) => new DHPDEV(value);
+
+        public static explicit operator DHPDEV(byte value) => new DHPDEV((nint)(value));
+
+        public static implicit operator byte(DHPDEV value) => (byte)(value.Value);
+
+        public static explicit operator DHPDEV(short value) => new DHPDEV((nint)(value));
+
+        public static implicit operator short(DHPDEV value) => (short)(value.Value);
+
+        public static explicit operator DHPDEV(int value) => new DHPDEV((nint)(value));
+
+        public static implicit operator int(DHPDEV value) => (int)(value.Value);
+
+        public static explicit operator DHPDEV(long value) => new DHPDEV((nint)(value));
+
+        public static explicit operator long(DHPDEV value) => (long)(value.Value);
+
+        public static explicit operator DHPDEV(nint value) => new DHPDEV((nint)(value));
+
+        public static implicit operator nint(DHPDEV value) => (nint)(value.Value);
+
+        public static explicit operator DHPDEV(sbyte value) => new DHPDEV((nint)(value));
+
+        public static implicit operator sbyte(DHPDEV value) => (sbyte)(value.Value);
+
+        public static explicit operator DHPDEV(ushort value) => new DHPDEV((nint)(value));
+
+        public static implicit operator ushort(DHPDEV value) => (ushort)(value.Value);
+
+        public static explicit operator DHPDEV(uint value) => new DHPDEV((nint)(value));
+
+        public static implicit operator uint(DHPDEV value) => (uint)(value.Value);
+
+        public static explicit operator DHPDEV(ulong value) => new DHPDEV((nint)(value));
+
+        public static explicit operator ulong(DHPDEV value) => (ulong)(value.Value);
+
+        public static explicit operator DHPDEV(nuint value) => new DHPDEV((nint)(value));
+
+        public static explicit operator nuint(DHPDEV value) => (nuint)(value.Value);
 
         public override bool Equals(object? obj) => (obj is DHPDEV other) && Equals(other);
 
         public bool Equals(DHPDEV other) => (this == other);
 
-        public override int GetHashCode() => ((nuint)(Value)).GetHashCode();
+        public override int GetHashCode() => Value.GetHashCode();
+
+        public override string ToString() => Value.ToString();
+
     }
 }

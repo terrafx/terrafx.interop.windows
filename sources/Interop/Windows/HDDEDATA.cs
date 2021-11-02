@@ -8,70 +8,74 @@ namespace TerraFX.Interop
     {
         public readonly nint Value;
 
-        public static HDDEDATA NULL => (HDDEDATA)(0);
-
-        public HDDEDATA(int value)
-        {
-            Value = ((nint)(value));
-        }
-
-        public HDDEDATA(uint value)
-        {
-            Value = ((nint)(value));
-        }
-
         public HDDEDATA(nint value)
         {
-            Value = ((nint)(value));
+            Value = value;
         }
 
-        public HDDEDATA(nuint value)
-        {
-            Value = ((nint)(value));
-        }
+        public static HDDEDATA INVALID_HANDLE_VALUE => new HDDEDATA(-1);
 
-        public HDDEDATA(void* value)
-        {
-            Value = ((nint)(value));
-        }
-
-        public HDDEDATA(HANDLE value)
-        {
-            Value = value.Value;
-        }
+        public static HDDEDATA NULL => new HDDEDATA(0);
 
         public static bool operator ==(HDDEDATA left, HDDEDATA right) => left.Value == right.Value;
 
         public static bool operator !=(HDDEDATA left, HDDEDATA right) => left.Value != right.Value;
 
-        public static explicit operator HDDEDATA(int value) => new HDDEDATA(value);
-
-        public static explicit operator HDDEDATA(uint value) => new HDDEDATA(value);
-
-        public static explicit operator HDDEDATA(nint value) => new HDDEDATA(value);
-
-        public static explicit operator HDDEDATA(nuint value) => new HDDEDATA(value);
-
-        public static explicit operator HDDEDATA(void* value) => new HDDEDATA(value);
-
-        public static explicit operator HDDEDATA(HANDLE value) => new HDDEDATA(value);
-
-        public static explicit operator int(HDDEDATA value) => (int)(value.Value);
-
-        public static explicit operator uint(HDDEDATA value) => (uint)(value.Value);
-
-        public static implicit operator nint(HDDEDATA value) => (nint)(value.Value);
-
-        public static implicit operator nuint(HDDEDATA value) => (nuint)(value.Value);
+        public static explicit operator HDDEDATA(void* value) => new HDDEDATA((nint)(value));
 
         public static implicit operator void*(HDDEDATA value) => (void*)(value.Value);
 
-        public static implicit operator HANDLE(HDDEDATA value) => (HANDLE)(value.Value);
+        public static explicit operator HDDEDATA(HANDLE value) => new HDDEDATA(value);
+
+        public static implicit operator HANDLE(HDDEDATA value) => new HDDEDATA(value);
+
+        public static explicit operator HDDEDATA(byte value) => new HDDEDATA((nint)(value));
+
+        public static implicit operator byte(HDDEDATA value) => (byte)(value.Value);
+
+        public static explicit operator HDDEDATA(short value) => new HDDEDATA((nint)(value));
+
+        public static implicit operator short(HDDEDATA value) => (short)(value.Value);
+
+        public static explicit operator HDDEDATA(int value) => new HDDEDATA((nint)(value));
+
+        public static implicit operator int(HDDEDATA value) => (int)(value.Value);
+
+        public static explicit operator HDDEDATA(long value) => new HDDEDATA((nint)(value));
+
+        public static explicit operator long(HDDEDATA value) => (long)(value.Value);
+
+        public static explicit operator HDDEDATA(nint value) => new HDDEDATA((nint)(value));
+
+        public static implicit operator nint(HDDEDATA value) => (nint)(value.Value);
+
+        public static explicit operator HDDEDATA(sbyte value) => new HDDEDATA((nint)(value));
+
+        public static implicit operator sbyte(HDDEDATA value) => (sbyte)(value.Value);
+
+        public static explicit operator HDDEDATA(ushort value) => new HDDEDATA((nint)(value));
+
+        public static implicit operator ushort(HDDEDATA value) => (ushort)(value.Value);
+
+        public static explicit operator HDDEDATA(uint value) => new HDDEDATA((nint)(value));
+
+        public static implicit operator uint(HDDEDATA value) => (uint)(value.Value);
+
+        public static explicit operator HDDEDATA(ulong value) => new HDDEDATA((nint)(value));
+
+        public static explicit operator ulong(HDDEDATA value) => (ulong)(value.Value);
+
+        public static explicit operator HDDEDATA(nuint value) => new HDDEDATA((nint)(value));
+
+        public static explicit operator nuint(HDDEDATA value) => (nuint)(value.Value);
 
         public override bool Equals(object? obj) => (obj is HDDEDATA other) && Equals(other);
 
         public bool Equals(HDDEDATA other) => (this == other);
 
-        public override int GetHashCode() => ((nuint)(Value)).GetHashCode();
+        public override int GetHashCode() => Value.GetHashCode();
+
+        public override string ToString() => Value.ToString();
+
     }
 }

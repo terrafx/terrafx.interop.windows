@@ -8,70 +8,74 @@ namespace TerraFX.Interop
     {
         public readonly nint Value;
 
-        public static HCOLORSPACE NULL => (HCOLORSPACE)(0);
-
-        public HCOLORSPACE(int value)
-        {
-            Value = ((nint)(value));
-        }
-
-        public HCOLORSPACE(uint value)
-        {
-            Value = ((nint)(value));
-        }
-
         public HCOLORSPACE(nint value)
         {
-            Value = ((nint)(value));
+            Value = value;
         }
 
-        public HCOLORSPACE(nuint value)
-        {
-            Value = ((nint)(value));
-        }
+        public static HCOLORSPACE INVALID_HANDLE_VALUE => new HCOLORSPACE(-1);
 
-        public HCOLORSPACE(void* value)
-        {
-            Value = ((nint)(value));
-        }
-
-        public HCOLORSPACE(HANDLE value)
-        {
-            Value = value.Value;
-        }
+        public static HCOLORSPACE NULL => new HCOLORSPACE(0);
 
         public static bool operator ==(HCOLORSPACE left, HCOLORSPACE right) => left.Value == right.Value;
 
         public static bool operator !=(HCOLORSPACE left, HCOLORSPACE right) => left.Value != right.Value;
 
-        public static explicit operator HCOLORSPACE(int value) => new HCOLORSPACE(value);
-
-        public static explicit operator HCOLORSPACE(uint value) => new HCOLORSPACE(value);
-
-        public static explicit operator HCOLORSPACE(nint value) => new HCOLORSPACE(value);
-
-        public static explicit operator HCOLORSPACE(nuint value) => new HCOLORSPACE(value);
-
-        public static explicit operator HCOLORSPACE(void* value) => new HCOLORSPACE(value);
-
-        public static explicit operator HCOLORSPACE(HANDLE value) => new HCOLORSPACE(value);
-
-        public static explicit operator int(HCOLORSPACE value) => (int)(value.Value);
-
-        public static explicit operator uint(HCOLORSPACE value) => (uint)(value.Value);
-
-        public static implicit operator nint(HCOLORSPACE value) => (nint)(value.Value);
-
-        public static implicit operator nuint(HCOLORSPACE value) => (nuint)(value.Value);
+        public static explicit operator HCOLORSPACE(void* value) => new HCOLORSPACE((nint)(value));
 
         public static implicit operator void*(HCOLORSPACE value) => (void*)(value.Value);
 
-        public static implicit operator HANDLE(HCOLORSPACE value) => (HANDLE)(value.Value);
+        public static explicit operator HCOLORSPACE(HANDLE value) => new HCOLORSPACE(value);
+
+        public static implicit operator HANDLE(HCOLORSPACE value) => new HCOLORSPACE(value);
+
+        public static explicit operator HCOLORSPACE(byte value) => new HCOLORSPACE((nint)(value));
+
+        public static implicit operator byte(HCOLORSPACE value) => (byte)(value.Value);
+
+        public static explicit operator HCOLORSPACE(short value) => new HCOLORSPACE((nint)(value));
+
+        public static implicit operator short(HCOLORSPACE value) => (short)(value.Value);
+
+        public static explicit operator HCOLORSPACE(int value) => new HCOLORSPACE((nint)(value));
+
+        public static implicit operator int(HCOLORSPACE value) => (int)(value.Value);
+
+        public static explicit operator HCOLORSPACE(long value) => new HCOLORSPACE((nint)(value));
+
+        public static explicit operator long(HCOLORSPACE value) => (long)(value.Value);
+
+        public static explicit operator HCOLORSPACE(nint value) => new HCOLORSPACE((nint)(value));
+
+        public static implicit operator nint(HCOLORSPACE value) => (nint)(value.Value);
+
+        public static explicit operator HCOLORSPACE(sbyte value) => new HCOLORSPACE((nint)(value));
+
+        public static implicit operator sbyte(HCOLORSPACE value) => (sbyte)(value.Value);
+
+        public static explicit operator HCOLORSPACE(ushort value) => new HCOLORSPACE((nint)(value));
+
+        public static implicit operator ushort(HCOLORSPACE value) => (ushort)(value.Value);
+
+        public static explicit operator HCOLORSPACE(uint value) => new HCOLORSPACE((nint)(value));
+
+        public static implicit operator uint(HCOLORSPACE value) => (uint)(value.Value);
+
+        public static explicit operator HCOLORSPACE(ulong value) => new HCOLORSPACE((nint)(value));
+
+        public static explicit operator ulong(HCOLORSPACE value) => (ulong)(value.Value);
+
+        public static explicit operator HCOLORSPACE(nuint value) => new HCOLORSPACE((nint)(value));
+
+        public static explicit operator nuint(HCOLORSPACE value) => (nuint)(value.Value);
 
         public override bool Equals(object? obj) => (obj is HCOLORSPACE other) && Equals(other);
 
         public bool Equals(HCOLORSPACE other) => (this == other);
 
-        public override int GetHashCode() => ((nuint)(Value)).GetHashCode();
+        public override int GetHashCode() => Value.GetHashCode();
+
+        public override string ToString() => Value.ToString();
+
     }
 }

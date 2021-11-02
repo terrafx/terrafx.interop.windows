@@ -6,61 +6,76 @@ namespace TerraFX.Interop
 {
     public unsafe partial struct HINF : IEquatable<HINF>
     {
-        public readonly void* Value;
-
-        public HINF(int value)
-        {
-            Value = ((void*)(value));
-        }
-
-        public HINF(uint value)
-        {
-            Value = ((void*)(value));
-        }
+        public readonly nint Value;
 
         public HINF(nint value)
         {
-            Value = ((void*)(value));
+            Value = value;
         }
 
-        public HINF(nuint value)
-        {
-            Value = ((void*)(value));
-        }
+        public static HINF INVALID_HANDLE_VALUE => new HINF(-1);
 
-        public HINF(void* value)
-        {
-            Value = ((void*)(value));
-        }
+        public static HINF NULL => new HINF(0);
 
         public static bool operator ==(HINF left, HINF right) => left.Value == right.Value;
 
         public static bool operator !=(HINF left, HINF right) => left.Value != right.Value;
 
-        public static explicit operator HINF(int value) => new HINF(value);
+        public static explicit operator HINF(void* value) => new HINF((nint)(value));
 
-        public static explicit operator HINF(uint value) => new HINF(value);
+        public static implicit operator void*(HINF value) => (void*)(value.Value);
 
-        public static explicit operator HINF(nint value) => new HINF(value);
+        public static explicit operator HINF(HANDLE value) => new HINF(value);
 
-        public static explicit operator HINF(nuint value) => new HINF(value);
+        public static implicit operator HANDLE(HINF value) => new HINF(value);
 
-        public static explicit operator HINF(void* value) => new HINF(value);
+        public static explicit operator HINF(byte value) => new HINF((nint)(value));
 
-        public static explicit operator int(HINF value) => (int)(value.Value);
+        public static implicit operator byte(HINF value) => (byte)(value.Value);
 
-        public static explicit operator uint(HINF value) => (uint)(value.Value);
+        public static explicit operator HINF(short value) => new HINF((nint)(value));
+
+        public static implicit operator short(HINF value) => (short)(value.Value);
+
+        public static explicit operator HINF(int value) => new HINF((nint)(value));
+
+        public static implicit operator int(HINF value) => (int)(value.Value);
+
+        public static explicit operator HINF(long value) => new HINF((nint)(value));
+
+        public static explicit operator long(HINF value) => (long)(value.Value);
+
+        public static explicit operator HINF(nint value) => new HINF((nint)(value));
 
         public static implicit operator nint(HINF value) => (nint)(value.Value);
 
-        public static implicit operator nuint(HINF value) => (nuint)(value.Value);
+        public static explicit operator HINF(sbyte value) => new HINF((nint)(value));
 
-        public static implicit operator void*(HINF value) => (void*)(value.Value);
+        public static implicit operator sbyte(HINF value) => (sbyte)(value.Value);
+
+        public static explicit operator HINF(ushort value) => new HINF((nint)(value));
+
+        public static implicit operator ushort(HINF value) => (ushort)(value.Value);
+
+        public static explicit operator HINF(uint value) => new HINF((nint)(value));
+
+        public static implicit operator uint(HINF value) => (uint)(value.Value);
+
+        public static explicit operator HINF(ulong value) => new HINF((nint)(value));
+
+        public static explicit operator ulong(HINF value) => (ulong)(value.Value);
+
+        public static explicit operator HINF(nuint value) => new HINF((nint)(value));
+
+        public static explicit operator nuint(HINF value) => (nuint)(value.Value);
 
         public override bool Equals(object? obj) => (obj is HINF other) && Equals(other);
 
         public bool Equals(HINF other) => (this == other);
 
-        public override int GetHashCode() => ((nuint)(Value)).GetHashCode();
+        public override int GetHashCode() => Value.GetHashCode();
+
+        public override string ToString() => Value.ToString();
+
     }
 }

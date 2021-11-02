@@ -8,70 +8,74 @@ namespace TerraFX.Interop
     {
         public readonly nint Value;
 
-        public static D3DKMDT_HVIDPNTARGETMODESET NULL => (D3DKMDT_HVIDPNTARGETMODESET)(0);
-
-        public D3DKMDT_HVIDPNTARGETMODESET(int value)
-        {
-            Value = ((nint)(value));
-        }
-
-        public D3DKMDT_HVIDPNTARGETMODESET(uint value)
-        {
-            Value = ((nint)(value));
-        }
-
         public D3DKMDT_HVIDPNTARGETMODESET(nint value)
         {
-            Value = ((nint)(value));
+            Value = value;
         }
 
-        public D3DKMDT_HVIDPNTARGETMODESET(nuint value)
-        {
-            Value = ((nint)(value));
-        }
+        public static D3DKMDT_HVIDPNTARGETMODESET INVALID_HANDLE_VALUE => new D3DKMDT_HVIDPNTARGETMODESET(-1);
 
-        public D3DKMDT_HVIDPNTARGETMODESET(void* value)
-        {
-            Value = ((nint)(value));
-        }
-
-        public D3DKMDT_HVIDPNTARGETMODESET(HANDLE value)
-        {
-            Value = value.Value;
-        }
+        public static D3DKMDT_HVIDPNTARGETMODESET NULL => new D3DKMDT_HVIDPNTARGETMODESET(0);
 
         public static bool operator ==(D3DKMDT_HVIDPNTARGETMODESET left, D3DKMDT_HVIDPNTARGETMODESET right) => left.Value == right.Value;
 
         public static bool operator !=(D3DKMDT_HVIDPNTARGETMODESET left, D3DKMDT_HVIDPNTARGETMODESET right) => left.Value != right.Value;
 
-        public static explicit operator D3DKMDT_HVIDPNTARGETMODESET(int value) => new D3DKMDT_HVIDPNTARGETMODESET(value);
-
-        public static explicit operator D3DKMDT_HVIDPNTARGETMODESET(uint value) => new D3DKMDT_HVIDPNTARGETMODESET(value);
-
-        public static explicit operator D3DKMDT_HVIDPNTARGETMODESET(nint value) => new D3DKMDT_HVIDPNTARGETMODESET(value);
-
-        public static explicit operator D3DKMDT_HVIDPNTARGETMODESET(nuint value) => new D3DKMDT_HVIDPNTARGETMODESET(value);
-
-        public static explicit operator D3DKMDT_HVIDPNTARGETMODESET(void* value) => new D3DKMDT_HVIDPNTARGETMODESET(value);
-
-        public static explicit operator D3DKMDT_HVIDPNTARGETMODESET(HANDLE value) => new D3DKMDT_HVIDPNTARGETMODESET(value);
-
-        public static explicit operator int(D3DKMDT_HVIDPNTARGETMODESET value) => (int)(value.Value);
-
-        public static explicit operator uint(D3DKMDT_HVIDPNTARGETMODESET value) => (uint)(value.Value);
-
-        public static implicit operator nint(D3DKMDT_HVIDPNTARGETMODESET value) => (nint)(value.Value);
-
-        public static implicit operator nuint(D3DKMDT_HVIDPNTARGETMODESET value) => (nuint)(value.Value);
+        public static explicit operator D3DKMDT_HVIDPNTARGETMODESET(void* value) => new D3DKMDT_HVIDPNTARGETMODESET((nint)(value));
 
         public static implicit operator void*(D3DKMDT_HVIDPNTARGETMODESET value) => (void*)(value.Value);
 
-        public static implicit operator HANDLE(D3DKMDT_HVIDPNTARGETMODESET value) => (HANDLE)(value.Value);
+        public static explicit operator D3DKMDT_HVIDPNTARGETMODESET(HANDLE value) => new D3DKMDT_HVIDPNTARGETMODESET(value);
+
+        public static implicit operator HANDLE(D3DKMDT_HVIDPNTARGETMODESET value) => new D3DKMDT_HVIDPNTARGETMODESET(value);
+
+        public static explicit operator D3DKMDT_HVIDPNTARGETMODESET(byte value) => new D3DKMDT_HVIDPNTARGETMODESET((nint)(value));
+
+        public static implicit operator byte(D3DKMDT_HVIDPNTARGETMODESET value) => (byte)(value.Value);
+
+        public static explicit operator D3DKMDT_HVIDPNTARGETMODESET(short value) => new D3DKMDT_HVIDPNTARGETMODESET((nint)(value));
+
+        public static implicit operator short(D3DKMDT_HVIDPNTARGETMODESET value) => (short)(value.Value);
+
+        public static explicit operator D3DKMDT_HVIDPNTARGETMODESET(int value) => new D3DKMDT_HVIDPNTARGETMODESET((nint)(value));
+
+        public static implicit operator int(D3DKMDT_HVIDPNTARGETMODESET value) => (int)(value.Value);
+
+        public static explicit operator D3DKMDT_HVIDPNTARGETMODESET(long value) => new D3DKMDT_HVIDPNTARGETMODESET((nint)(value));
+
+        public static explicit operator long(D3DKMDT_HVIDPNTARGETMODESET value) => (long)(value.Value);
+
+        public static explicit operator D3DKMDT_HVIDPNTARGETMODESET(nint value) => new D3DKMDT_HVIDPNTARGETMODESET((nint)(value));
+
+        public static implicit operator nint(D3DKMDT_HVIDPNTARGETMODESET value) => (nint)(value.Value);
+
+        public static explicit operator D3DKMDT_HVIDPNTARGETMODESET(sbyte value) => new D3DKMDT_HVIDPNTARGETMODESET((nint)(value));
+
+        public static implicit operator sbyte(D3DKMDT_HVIDPNTARGETMODESET value) => (sbyte)(value.Value);
+
+        public static explicit operator D3DKMDT_HVIDPNTARGETMODESET(ushort value) => new D3DKMDT_HVIDPNTARGETMODESET((nint)(value));
+
+        public static implicit operator ushort(D3DKMDT_HVIDPNTARGETMODESET value) => (ushort)(value.Value);
+
+        public static explicit operator D3DKMDT_HVIDPNTARGETMODESET(uint value) => new D3DKMDT_HVIDPNTARGETMODESET((nint)(value));
+
+        public static implicit operator uint(D3DKMDT_HVIDPNTARGETMODESET value) => (uint)(value.Value);
+
+        public static explicit operator D3DKMDT_HVIDPNTARGETMODESET(ulong value) => new D3DKMDT_HVIDPNTARGETMODESET((nint)(value));
+
+        public static explicit operator ulong(D3DKMDT_HVIDPNTARGETMODESET value) => (ulong)(value.Value);
+
+        public static explicit operator D3DKMDT_HVIDPNTARGETMODESET(nuint value) => new D3DKMDT_HVIDPNTARGETMODESET((nint)(value));
+
+        public static explicit operator nuint(D3DKMDT_HVIDPNTARGETMODESET value) => (nuint)(value.Value);
 
         public override bool Equals(object? obj) => (obj is D3DKMDT_HVIDPNTARGETMODESET other) && Equals(other);
 
         public bool Equals(D3DKMDT_HVIDPNTARGETMODESET other) => (this == other);
 
-        public override int GetHashCode() => ((nuint)(Value)).GetHashCode();
+        public override int GetHashCode() => Value.GetHashCode();
+
+        public override string ToString() => Value.ToString();
+
     }
 }

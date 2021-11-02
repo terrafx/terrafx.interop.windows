@@ -8,70 +8,74 @@ namespace TerraFX.Interop
     {
         public readonly nint Value;
 
-        public static HIMCC NULL => (HIMCC)(0);
-
-        public HIMCC(int value)
-        {
-            Value = ((nint)(value));
-        }
-
-        public HIMCC(uint value)
-        {
-            Value = ((nint)(value));
-        }
-
         public HIMCC(nint value)
         {
-            Value = ((nint)(value));
+            Value = value;
         }
 
-        public HIMCC(nuint value)
-        {
-            Value = ((nint)(value));
-        }
+        public static HIMCC INVALID_HANDLE_VALUE => new HIMCC(-1);
 
-        public HIMCC(void* value)
-        {
-            Value = ((nint)(value));
-        }
-
-        public HIMCC(HANDLE value)
-        {
-            Value = value.Value;
-        }
+        public static HIMCC NULL => new HIMCC(0);
 
         public static bool operator ==(HIMCC left, HIMCC right) => left.Value == right.Value;
 
         public static bool operator !=(HIMCC left, HIMCC right) => left.Value != right.Value;
 
-        public static explicit operator HIMCC(int value) => new HIMCC(value);
-
-        public static explicit operator HIMCC(uint value) => new HIMCC(value);
-
-        public static explicit operator HIMCC(nint value) => new HIMCC(value);
-
-        public static explicit operator HIMCC(nuint value) => new HIMCC(value);
-
-        public static explicit operator HIMCC(void* value) => new HIMCC(value);
-
-        public static explicit operator HIMCC(HANDLE value) => new HIMCC(value);
-
-        public static explicit operator int(HIMCC value) => (int)(value.Value);
-
-        public static explicit operator uint(HIMCC value) => (uint)(value.Value);
-
-        public static implicit operator nint(HIMCC value) => (nint)(value.Value);
-
-        public static implicit operator nuint(HIMCC value) => (nuint)(value.Value);
+        public static explicit operator HIMCC(void* value) => new HIMCC((nint)(value));
 
         public static implicit operator void*(HIMCC value) => (void*)(value.Value);
 
-        public static implicit operator HANDLE(HIMCC value) => (HANDLE)(value.Value);
+        public static explicit operator HIMCC(HANDLE value) => new HIMCC(value);
+
+        public static implicit operator HANDLE(HIMCC value) => new HIMCC(value);
+
+        public static explicit operator HIMCC(byte value) => new HIMCC((nint)(value));
+
+        public static implicit operator byte(HIMCC value) => (byte)(value.Value);
+
+        public static explicit operator HIMCC(short value) => new HIMCC((nint)(value));
+
+        public static implicit operator short(HIMCC value) => (short)(value.Value);
+
+        public static explicit operator HIMCC(int value) => new HIMCC((nint)(value));
+
+        public static implicit operator int(HIMCC value) => (int)(value.Value);
+
+        public static explicit operator HIMCC(long value) => new HIMCC((nint)(value));
+
+        public static explicit operator long(HIMCC value) => (long)(value.Value);
+
+        public static explicit operator HIMCC(nint value) => new HIMCC((nint)(value));
+
+        public static implicit operator nint(HIMCC value) => (nint)(value.Value);
+
+        public static explicit operator HIMCC(sbyte value) => new HIMCC((nint)(value));
+
+        public static implicit operator sbyte(HIMCC value) => (sbyte)(value.Value);
+
+        public static explicit operator HIMCC(ushort value) => new HIMCC((nint)(value));
+
+        public static implicit operator ushort(HIMCC value) => (ushort)(value.Value);
+
+        public static explicit operator HIMCC(uint value) => new HIMCC((nint)(value));
+
+        public static implicit operator uint(HIMCC value) => (uint)(value.Value);
+
+        public static explicit operator HIMCC(ulong value) => new HIMCC((nint)(value));
+
+        public static explicit operator ulong(HIMCC value) => (ulong)(value.Value);
+
+        public static explicit operator HIMCC(nuint value) => new HIMCC((nint)(value));
+
+        public static explicit operator nuint(HIMCC value) => (nuint)(value.Value);
 
         public override bool Equals(object? obj) => (obj is HIMCC other) && Equals(other);
 
         public bool Equals(HIMCC other) => (this == other);
 
-        public override int GetHashCode() => ((nuint)(Value)).GetHashCode();
+        public override int GetHashCode() => Value.GetHashCode();
+
+        public override string ToString() => Value.ToString();
+
     }
 }
