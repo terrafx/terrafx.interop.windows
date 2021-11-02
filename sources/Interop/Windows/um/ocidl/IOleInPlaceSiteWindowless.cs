@@ -223,9 +223,9 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(29)]
-        public HRESULT OnDefWindowMessage(uint msg, [NativeTypeName("WPARAM")] nuint wParam, [NativeTypeName("LPARAM")] nint lParam, [NativeTypeName("LRESULT *")] nint* plResult)
+        public HRESULT OnDefWindowMessage(uint msg, WPARAM wParam, LPARAM lParam, LRESULT* plResult)
         {
-            return ((delegate* unmanaged<IOleInPlaceSiteWindowless*, uint, nuint, nint, nint*, int>)(lpVtbl[29]))((IOleInPlaceSiteWindowless*)Unsafe.AsPointer(ref this), msg, wParam, lParam, plResult);
+            return ((delegate* unmanaged<IOleInPlaceSiteWindowless*, uint, WPARAM, LPARAM, LRESULT*, int>)(lpVtbl[29]))((IOleInPlaceSiteWindowless*)Unsafe.AsPointer(ref this), msg, wParam, lParam, plResult);
         }
     }
 }

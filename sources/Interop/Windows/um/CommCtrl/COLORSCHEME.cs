@@ -10,10 +10,8 @@ namespace TerraFX.Interop
         [NativeTypeName("DWORD")]
         public uint dwSize;
 
-        [NativeTypeName("COLORREF")]
-        public uint clrBtnHighlight;
+        public COLORREF clrBtnHighlight;
 
-        [NativeTypeName("COLORREF")]
-        public uint clrBtnShadow;
+        public COLORREF clrBtnShadow;
     }
 }

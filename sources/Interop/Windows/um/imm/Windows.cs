@@ -127,12 +127,10 @@ namespace TerraFX.Interop
         public static extern BOOL ImmConfigureIMEW(HKL param0, HWND param1, [NativeTypeName("DWORD")] uint param2, [NativeTypeName("LPVOID")] void* param3);
 
         [DllImport("imm32", ExactSpelling = true)]
-        [return: NativeTypeName("LRESULT")]
-        public static extern nint ImmEscapeA(HKL param0, HIMC param1, uint param2, [NativeTypeName("LPVOID")] void* param3);
+        public static extern LRESULT ImmEscapeA(HKL param0, HIMC param1, uint param2, [NativeTypeName("LPVOID")] void* param3);
 
         [DllImport("imm32", ExactSpelling = true)]
-        [return: NativeTypeName("LRESULT")]
-        public static extern nint ImmEscapeW(HKL param0, HIMC param1, uint param2, [NativeTypeName("LPVOID")] void* param3);
+        public static extern LRESULT ImmEscapeW(HKL param0, HIMC param1, uint param2, [NativeTypeName("LPVOID")] void* param3);
 
         [DllImport("imm32", ExactSpelling = true)]
         [return: NativeTypeName("DWORD")]
@@ -164,10 +162,10 @@ namespace TerraFX.Interop
         public static extern BOOL ImmSetCandidateWindow(HIMC param0, [NativeTypeName("LPCANDIDATEFORM")] CANDIDATEFORM* lpCandidate);
 
         [DllImport("imm32", ExactSpelling = true)]
-        public static extern BOOL ImmIsUIMessageA(HWND param0, uint param1, [NativeTypeName("WPARAM")] nuint param2, [NativeTypeName("LPARAM")] nint param3);
+        public static extern BOOL ImmIsUIMessageA(HWND param0, uint param1, WPARAM param2, LPARAM param3);
 
         [DllImport("imm32", ExactSpelling = true)]
-        public static extern BOOL ImmIsUIMessageW(HWND param0, uint param1, [NativeTypeName("WPARAM")] nuint param2, [NativeTypeName("LPARAM")] nint param3);
+        public static extern BOOL ImmIsUIMessageW(HWND param0, uint param1, WPARAM param2, LPARAM param3);
 
         [DllImport("imm32", ExactSpelling = true)]
         public static extern uint ImmGetVirtualKey(HWND param0);
@@ -200,7 +198,7 @@ namespace TerraFX.Interop
         public static extern BOOL ImmDisableIME([NativeTypeName("DWORD")] uint param0);
 
         [DllImport("imm32", ExactSpelling = true)]
-        public static extern BOOL ImmEnumInputContext([NativeTypeName("DWORD")] uint idThread, [NativeTypeName("IMCENUMPROC")] delegate* unmanaged<HIMC, nint, BOOL> lpfn, [NativeTypeName("LPARAM")] nint lParam);
+        public static extern BOOL ImmEnumInputContext([NativeTypeName("DWORD")] uint idThread, [NativeTypeName("IMCENUMPROC")] delegate* unmanaged<HIMC, LPARAM, BOOL> lpfn, LPARAM lParam);
 
         [DllImport("imm32", ExactSpelling = true)]
         [return: NativeTypeName("DWORD")]
@@ -256,13 +254,13 @@ namespace TerraFX.Interop
         public static delegate*<HKL, HWND, uint, void*, BOOL> ImmConfigureIME => &ImmConfigureIMEW;
 
         [NativeTypeName("#define ImmEscape ImmEscapeW")]
-        public static delegate*<HKL, HIMC, uint, void*, nint> ImmEscape => &ImmEscapeW;
+        public static delegate*<HKL, HIMC, uint, void*, LRESULT> ImmEscape => &ImmEscapeW;
 
         [NativeTypeName("#define ImmGetConversionList ImmGetConversionListW")]
         public static delegate*<HKL, HIMC, ushort*, CANDIDATELIST*, uint, uint, uint> ImmGetConversionList => &ImmGetConversionListW;
 
         [NativeTypeName("#define ImmIsUIMessage ImmIsUIMessageW")]
-        public static delegate*<HWND, uint, nuint, nint, BOOL> ImmIsUIMessage => &ImmIsUIMessageW;
+        public static delegate*<HWND, uint, WPARAM, LPARAM, BOOL> ImmIsUIMessage => &ImmIsUIMessageW;
 
         [NativeTypeName("#define ImmRegisterWord ImmRegisterWordW")]
         public static delegate*<HKL, ushort*, uint, ushort*, BOOL> ImmRegisterWord => &ImmRegisterWordW;

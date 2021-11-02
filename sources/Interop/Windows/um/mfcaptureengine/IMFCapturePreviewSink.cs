@@ -90,9 +90,9 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(10)]
-        public HRESULT UpdateVideo([NativeTypeName("const MFVideoNormalizedRect *")] MFVideoNormalizedRect* pSrc, [NativeTypeName("const RECT *")] RECT* pDst, [NativeTypeName("const COLORREF *")] uint* pBorderClr)
+        public HRESULT UpdateVideo([NativeTypeName("const MFVideoNormalizedRect *")] MFVideoNormalizedRect* pSrc, [NativeTypeName("const RECT *")] RECT* pDst, [NativeTypeName("const COLORREF *")] COLORREF* pBorderClr)
         {
-            return ((delegate* unmanaged<IMFCapturePreviewSink*, MFVideoNormalizedRect*, RECT*, uint*, int>)(lpVtbl[10]))((IMFCapturePreviewSink*)Unsafe.AsPointer(ref this), pSrc, pDst, pBorderClr);
+            return ((delegate* unmanaged<IMFCapturePreviewSink*, MFVideoNormalizedRect*, RECT*, COLORREF*, int>)(lpVtbl[10]))((IMFCapturePreviewSink*)Unsafe.AsPointer(ref this), pSrc, pDst, pBorderClr);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

@@ -62,9 +62,9 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        public HRESULT OnModalInput([NativeTypeName("DWORD")] uint dwThreadId, uint uMsg, [NativeTypeName("WPARAM")] nuint wParam, [NativeTypeName("LPARAM")] nint lParam)
+        public HRESULT OnModalInput([NativeTypeName("DWORD")] uint dwThreadId, uint uMsg, WPARAM wParam, LPARAM lParam)
         {
-            return ((delegate* unmanaged<ITfLangBarEventSink*, uint, uint, nuint, nint, int>)(lpVtbl[6]))((ITfLangBarEventSink*)Unsafe.AsPointer(ref this), dwThreadId, uMsg, wParam, lParam);
+            return ((delegate* unmanaged<ITfLangBarEventSink*, uint, uint, WPARAM, LPARAM, int>)(lpVtbl[6]))((ITfLangBarEventSink*)Unsafe.AsPointer(ref this), dwThreadId, uMsg, wParam, lParam);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

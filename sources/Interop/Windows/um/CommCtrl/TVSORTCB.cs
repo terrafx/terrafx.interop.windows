@@ -10,9 +10,8 @@ namespace TerraFX.Interop
         public HTREEITEM hParent;
 
         [NativeTypeName("PFNTVCOMPARE")]
-        public delegate* unmanaged<nint, nint, nint, int> lpfnCompare;
+        public delegate* unmanaged<LPARAM, LPARAM, LPARAM, int> lpfnCompare;
 
-        [NativeTypeName("LPARAM")]
-        public nint lParam;
+        public LPARAM lParam;
     }
 }

@@ -41,16 +41,16 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        public HRESULT OnKeyTraceDown([NativeTypeName("WPARAM")] nuint wParam, [NativeTypeName("LPARAM")] nint lParam)
+        public HRESULT OnKeyTraceDown(WPARAM wParam, LPARAM lParam)
         {
-            return ((delegate* unmanaged<ITfKeyTraceEventSink*, nuint, nint, int>)(lpVtbl[3]))((ITfKeyTraceEventSink*)Unsafe.AsPointer(ref this), wParam, lParam);
+            return ((delegate* unmanaged<ITfKeyTraceEventSink*, WPARAM, LPARAM, int>)(lpVtbl[3]))((ITfKeyTraceEventSink*)Unsafe.AsPointer(ref this), wParam, lParam);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        public HRESULT OnKeyTraceUp([NativeTypeName("WPARAM")] nuint wParam, [NativeTypeName("LPARAM")] nint lParam)
+        public HRESULT OnKeyTraceUp(WPARAM wParam, LPARAM lParam)
         {
-            return ((delegate* unmanaged<ITfKeyTraceEventSink*, nuint, nint, int>)(lpVtbl[4]))((ITfKeyTraceEventSink*)Unsafe.AsPointer(ref this), wParam, lParam);
+            return ((delegate* unmanaged<ITfKeyTraceEventSink*, WPARAM, LPARAM, int>)(lpVtbl[4]))((ITfKeyTraceEventSink*)Unsafe.AsPointer(ref this), wParam, lParam);
         }
     }
 }

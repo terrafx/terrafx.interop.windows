@@ -26,7 +26,6 @@ namespace TerraFX.Interop
         [NativeTypeName("DWORD")]
         public uint style;
 
-        [NativeTypeName("LPARAM")]
-        public nint lParam;
+        public LPARAM lParam;
     }
 }

@@ -45,7 +45,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public ref HANDLE hGlobal
+        public ref HGLOBAL hGlobal
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
@@ -94,8 +94,7 @@ namespace TerraFX.Interop
             public HENHMETAFILE hEnhMetaFile;
 
             [FieldOffset(0)]
-            [NativeTypeName("HGLOBAL")]
-            public HANDLE hGlobal;
+            public HGLOBAL hGlobal;
 
             [FieldOffset(0)]
             [NativeTypeName("LPOLESTR")]

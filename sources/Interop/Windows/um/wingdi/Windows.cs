@@ -74,7 +74,7 @@ namespace TerraFX.Interop
         public static extern HBITMAP CreateDIBitmap(HDC hdc, [NativeTypeName("const BITMAPINFOHEADER *")] BITMAPINFOHEADER* pbmih, [NativeTypeName("DWORD")] uint flInit, [NativeTypeName("const void *")] void* pjBits, [NativeTypeName("const BITMAPINFO *")] BITMAPINFO* pbmi, uint iUsage);
 
         [DllImport("gdi32", ExactSpelling = true)]
-        public static extern HBRUSH CreateDIBPatternBrush([NativeTypeName("HGLOBAL")] HANDLE h, uint iUsage);
+        public static extern HBRUSH CreateDIBPatternBrush(HGLOBAL h, uint iUsage);
 
         [DllImport("gdi32", ExactSpelling = true)]
         public static extern HBRUSH CreateDIBPatternBrushPt([NativeTypeName("const void *")] void* lpPackedDIB, uint iUsage);
@@ -98,7 +98,7 @@ namespace TerraFX.Interop
         public static extern HFONT CreateFontW(int cHeight, int cWidth, int cEscapement, int cOrientation, int cWeight, [NativeTypeName("DWORD")] uint bItalic, [NativeTypeName("DWORD")] uint bUnderline, [NativeTypeName("DWORD")] uint bStrikeOut, [NativeTypeName("DWORD")] uint iCharSet, [NativeTypeName("DWORD")] uint iOutPrecision, [NativeTypeName("DWORD")] uint iClipPrecision, [NativeTypeName("DWORD")] uint iQuality, [NativeTypeName("DWORD")] uint iPitchAndFamily, [NativeTypeName("LPCWSTR")] ushort* pszFaceName);
 
         [DllImport("gdi32", ExactSpelling = true)]
-        public static extern HBRUSH CreateHatchBrush(int iHatch, [NativeTypeName("COLORREF")] uint color);
+        public static extern HBRUSH CreateHatchBrush(int iHatch, COLORREF color);
 
         [DllImport("gdi32", ExactSpelling = true)]
         public static extern HDC CreateICA([NativeTypeName("LPCSTR")] sbyte* pszDriver, [NativeTypeName("LPCSTR")] sbyte* pszDevice, [NativeTypeName("LPCSTR")] sbyte* pszPort, [NativeTypeName("const DEVMODEA *")] DEVMODEA* pdm);
@@ -116,7 +116,7 @@ namespace TerraFX.Interop
         public static extern HPALETTE CreatePalette([NativeTypeName("const LOGPALETTE *")] LOGPALETTE* plpal);
 
         [DllImport("gdi32", ExactSpelling = true)]
-        public static extern HPEN CreatePen(int iStyle, int cWidth, [NativeTypeName("COLORREF")] uint color);
+        public static extern HPEN CreatePen(int iStyle, int cWidth, COLORREF color);
 
         [DllImport("gdi32", ExactSpelling = true)]
         public static extern HPEN CreatePenIndirect([NativeTypeName("const LOGPEN *")] LOGPEN* plpen);
@@ -143,7 +143,7 @@ namespace TerraFX.Interop
         public static extern BOOL CreateScalableFontResourceW([NativeTypeName("DWORD")] uint fdwHidden, [NativeTypeName("LPCWSTR")] ushort* lpszFont, [NativeTypeName("LPCWSTR")] ushort* lpszFile, [NativeTypeName("LPCWSTR")] ushort* lpszPath);
 
         [DllImport("gdi32", ExactSpelling = true)]
-        public static extern HBRUSH CreateSolidBrush([NativeTypeName("COLORREF")] uint color);
+        public static extern HBRUSH CreateSolidBrush(COLORREF color);
 
         [DllImport("gdi32", ExactSpelling = true)]
         public static extern BOOL DeleteDC(HDC hdc);
@@ -164,25 +164,25 @@ namespace TerraFX.Interop
         public static extern BOOL Ellipse(HDC hdc, int left, int top, int right, int bottom);
 
         [DllImport("gdi32", ExactSpelling = true)]
-        public static extern int EnumFontFamiliesExA(HDC hdc, [NativeTypeName("LPLOGFONTA")] LOGFONTA* lpLogfont, [NativeTypeName("FONTENUMPROCA")] delegate* unmanaged<LOGFONTA*, TEXTMETRICA*, uint, nint, int> lpProc, [NativeTypeName("LPARAM")] nint lParam, [NativeTypeName("DWORD")] uint dwFlags);
+        public static extern int EnumFontFamiliesExA(HDC hdc, [NativeTypeName("LPLOGFONTA")] LOGFONTA* lpLogfont, [NativeTypeName("FONTENUMPROCA")] delegate* unmanaged<LOGFONTA*, TEXTMETRICA*, uint, LPARAM, int> lpProc, LPARAM lParam, [NativeTypeName("DWORD")] uint dwFlags);
 
         [DllImport("gdi32", ExactSpelling = true)]
-        public static extern int EnumFontFamiliesExW(HDC hdc, [NativeTypeName("LPLOGFONTW")] LOGFONTW* lpLogfont, [NativeTypeName("FONTENUMPROCW")] delegate* unmanaged<LOGFONTW*, TEXTMETRICW*, uint, nint, int> lpProc, [NativeTypeName("LPARAM")] nint lParam, [NativeTypeName("DWORD")] uint dwFlags);
+        public static extern int EnumFontFamiliesExW(HDC hdc, [NativeTypeName("LPLOGFONTW")] LOGFONTW* lpLogfont, [NativeTypeName("FONTENUMPROCW")] delegate* unmanaged<LOGFONTW*, TEXTMETRICW*, uint, LPARAM, int> lpProc, LPARAM lParam, [NativeTypeName("DWORD")] uint dwFlags);
 
         [DllImport("gdi32", ExactSpelling = true)]
-        public static extern int EnumFontFamiliesA(HDC hdc, [NativeTypeName("LPCSTR")] sbyte* lpLogfont, [NativeTypeName("FONTENUMPROCA")] delegate* unmanaged<LOGFONTA*, TEXTMETRICA*, uint, nint, int> lpProc, [NativeTypeName("LPARAM")] nint lParam);
+        public static extern int EnumFontFamiliesA(HDC hdc, [NativeTypeName("LPCSTR")] sbyte* lpLogfont, [NativeTypeName("FONTENUMPROCA")] delegate* unmanaged<LOGFONTA*, TEXTMETRICA*, uint, LPARAM, int> lpProc, LPARAM lParam);
 
         [DllImport("gdi32", ExactSpelling = true)]
-        public static extern int EnumFontFamiliesW(HDC hdc, [NativeTypeName("LPCWSTR")] ushort* lpLogfont, [NativeTypeName("FONTENUMPROCW")] delegate* unmanaged<LOGFONTW*, TEXTMETRICW*, uint, nint, int> lpProc, [NativeTypeName("LPARAM")] nint lParam);
+        public static extern int EnumFontFamiliesW(HDC hdc, [NativeTypeName("LPCWSTR")] ushort* lpLogfont, [NativeTypeName("FONTENUMPROCW")] delegate* unmanaged<LOGFONTW*, TEXTMETRICW*, uint, LPARAM, int> lpProc, LPARAM lParam);
 
         [DllImport("gdi32", ExactSpelling = true)]
-        public static extern int EnumFontsA(HDC hdc, [NativeTypeName("LPCSTR")] sbyte* lpLogfont, [NativeTypeName("FONTENUMPROCA")] delegate* unmanaged<LOGFONTA*, TEXTMETRICA*, uint, nint, int> lpProc, [NativeTypeName("LPARAM")] nint lParam);
+        public static extern int EnumFontsA(HDC hdc, [NativeTypeName("LPCSTR")] sbyte* lpLogfont, [NativeTypeName("FONTENUMPROCA")] delegate* unmanaged<LOGFONTA*, TEXTMETRICA*, uint, LPARAM, int> lpProc, LPARAM lParam);
 
         [DllImport("gdi32", ExactSpelling = true)]
-        public static extern int EnumFontsW(HDC hdc, [NativeTypeName("LPCWSTR")] ushort* lpLogfont, [NativeTypeName("FONTENUMPROCW")] delegate* unmanaged<LOGFONTW*, TEXTMETRICW*, uint, nint, int> lpProc, [NativeTypeName("LPARAM")] nint lParam);
+        public static extern int EnumFontsW(HDC hdc, [NativeTypeName("LPCWSTR")] ushort* lpLogfont, [NativeTypeName("FONTENUMPROCW")] delegate* unmanaged<LOGFONTW*, TEXTMETRICW*, uint, LPARAM, int> lpProc, LPARAM lParam);
 
         [DllImport("gdi32", ExactSpelling = true)]
-        public static extern int EnumObjects(HDC hdc, int nType, [NativeTypeName("GOBJENUMPROC")] delegate* unmanaged<void*, nint, int> lpFunc, [NativeTypeName("LPARAM")] nint lParam);
+        public static extern int EnumObjects(HDC hdc, int nType, [NativeTypeName("GOBJENUMPROC")] delegate* unmanaged<void*, LPARAM, int> lpFunc, LPARAM lParam);
 
         [DllImport("gdi32", ExactSpelling = true)]
         public static extern BOOL EqualRgn(HRGN hrgn1, HRGN hrgn2);
@@ -200,13 +200,13 @@ namespace TerraFX.Interop
         public static extern HRGN ExtCreateRegion([NativeTypeName("const XFORM *")] XFORM* lpx, [NativeTypeName("DWORD")] uint nCount, [NativeTypeName("const RGNDATA *")] RGNDATA* lpData);
 
         [DllImport("gdi32", ExactSpelling = true)]
-        public static extern BOOL ExtFloodFill(HDC hdc, int x, int y, [NativeTypeName("COLORREF")] uint color, uint type);
+        public static extern BOOL ExtFloodFill(HDC hdc, int x, int y, COLORREF color, uint type);
 
         [DllImport("gdi32", ExactSpelling = true)]
         public static extern BOOL FillRgn(HDC hdc, HRGN hrgn, HBRUSH hbr);
 
         [DllImport("gdi32", ExactSpelling = true)]
-        public static extern BOOL FloodFill(HDC hdc, int x, int y, [NativeTypeName("COLORREF")] uint color);
+        public static extern BOOL FloodFill(HDC hdc, int x, int y, COLORREF color);
 
         [DllImport("gdi32", ExactSpelling = true)]
         public static extern BOOL FrameRgn(HDC hdc, HRGN hrgn, HBRUSH hbr, int w, int h);
@@ -218,16 +218,13 @@ namespace TerraFX.Interop
         public static extern BOOL GetAspectRatioFilterEx(HDC hdc, [NativeTypeName("LPSIZE")] SIZE* lpsize);
 
         [DllImport("gdi32", ExactSpelling = true)]
-        [return: NativeTypeName("COLORREF")]
-        public static extern uint GetBkColor(HDC hdc);
+        public static extern COLORREF GetBkColor(HDC hdc);
 
         [DllImport("gdi32", ExactSpelling = true)]
-        [return: NativeTypeName("COLORREF")]
-        public static extern uint GetDCBrushColor(HDC hdc);
+        public static extern COLORREF GetDCBrushColor(HDC hdc);
 
         [DllImport("gdi32", ExactSpelling = true)]
-        [return: NativeTypeName("COLORREF")]
-        public static extern uint GetDCPenColor(HDC hdc);
+        public static extern COLORREF GetDCPenColor(HDC hdc);
 
         [DllImport("gdi32", ExactSpelling = true)]
         public static extern int GetBkMode(HDC hdc);
@@ -324,11 +321,10 @@ namespace TerraFX.Interop
         public static extern HMETAFILE GetMetaFileW([NativeTypeName("LPCWSTR")] ushort* lpName);
 
         [DllImport("gdi32", ExactSpelling = true)]
-        [return: NativeTypeName("COLORREF")]
-        public static extern uint GetNearestColor(HDC hdc, [NativeTypeName("COLORREF")] uint color);
+        public static extern COLORREF GetNearestColor(HDC hdc, COLORREF color);
 
         [DllImport("gdi32", ExactSpelling = true)]
-        public static extern uint GetNearestPaletteIndex(HPALETTE h, [NativeTypeName("COLORREF")] uint color);
+        public static extern uint GetNearestPaletteIndex(HPALETTE h, COLORREF color);
 
         [DllImport("gdi32", ExactSpelling = true)]
         [return: NativeTypeName("DWORD")]
@@ -344,8 +340,7 @@ namespace TerraFX.Interop
         public static extern uint GetPaletteEntries(HPALETTE hpal, uint iStart, uint cEntries, [NativeTypeName("LPPALETTEENTRY")] PALETTEENTRY* pPalEntries);
 
         [DllImport("gdi32", ExactSpelling = true)]
-        [return: NativeTypeName("COLORREF")]
-        public static extern uint GetPixel(HDC hdc, int x, int y);
+        public static extern COLORREF GetPixel(HDC hdc, int x, int y);
 
         [DllImport("gdi32", ExactSpelling = true, SetLastError = true)]
         public static extern int GetPixelFormat(HDC hdc);
@@ -385,8 +380,7 @@ namespace TerraFX.Interop
         public static extern uint GetTextAlign(HDC hdc);
 
         [DllImport("gdi32", ExactSpelling = true)]
-        [return: NativeTypeName("COLORREF")]
-        public static extern uint GetTextColor(HDC hdc);
+        public static extern COLORREF GetTextColor(HDC hdc);
 
         [DllImport("gdi32", ExactSpelling = true)]
         public static extern BOOL GetTextExtentPointA(HDC hdc, [NativeTypeName("LPCSTR")] sbyte* lpString, int c, [NativeTypeName("LPSIZE")] SIZE* lpsz);
@@ -494,7 +488,7 @@ namespace TerraFX.Interop
         public static extern BOOL InvertRgn(HDC hdc, HRGN hrgn);
 
         [DllImport("gdi32", ExactSpelling = true)]
-        public static extern BOOL LineDDA(int xStart, int yStart, int xEnd, int yEnd, [NativeTypeName("LINEDDAPROC")] delegate* unmanaged<int, int, nint, void> lpProc, [NativeTypeName("LPARAM")] nint data);
+        public static extern BOOL LineDDA(int xStart, int yStart, int xEnd, int yEnd, [NativeTypeName("LINEDDAPROC")] delegate* unmanaged<int, int, LPARAM, void> lpProc, LPARAM data);
 
         [DllImport("gdi32", ExactSpelling = true)]
         public static extern BOOL LineTo(HDC hdc, int x, int y);
@@ -584,16 +578,13 @@ namespace TerraFX.Interop
         public static extern HPALETTE SelectPalette(HDC hdc, HPALETTE hPal, BOOL bForceBkgd);
 
         [DllImport("gdi32", ExactSpelling = true)]
-        [return: NativeTypeName("COLORREF")]
-        public static extern uint SetBkColor(HDC hdc, [NativeTypeName("COLORREF")] uint color);
+        public static extern COLORREF SetBkColor(HDC hdc, COLORREF color);
 
         [DllImport("gdi32", ExactSpelling = true)]
-        [return: NativeTypeName("COLORREF")]
-        public static extern uint SetDCBrushColor(HDC hdc, [NativeTypeName("COLORREF")] uint color);
+        public static extern COLORREF SetDCBrushColor(HDC hdc, COLORREF color);
 
         [DllImport("gdi32", ExactSpelling = true)]
-        [return: NativeTypeName("COLORREF")]
-        public static extern uint SetDCPenColor(HDC hdc, [NativeTypeName("COLORREF")] uint color);
+        public static extern COLORREF SetDCPenColor(HDC hdc, COLORREF color);
 
         [DllImport("gdi32", ExactSpelling = true)]
         public static extern int SetBkMode(HDC hdc, int mode);
@@ -636,11 +627,10 @@ namespace TerraFX.Interop
         public static extern uint SetPaletteEntries(HPALETTE hpal, uint iStart, uint cEntries, [NativeTypeName("const PALETTEENTRY *")] PALETTEENTRY* pPalEntries);
 
         [DllImport("gdi32", ExactSpelling = true)]
-        [return: NativeTypeName("COLORREF")]
-        public static extern uint SetPixel(HDC hdc, int x, int y, [NativeTypeName("COLORREF")] uint color);
+        public static extern COLORREF SetPixel(HDC hdc, int x, int y, COLORREF color);
 
         [DllImport("gdi32", ExactSpelling = true)]
-        public static extern BOOL SetPixelV(HDC hdc, int x, int y, [NativeTypeName("COLORREF")] uint color);
+        public static extern BOOL SetPixelV(HDC hdc, int x, int y, COLORREF color);
 
         [DllImport("gdi32", ExactSpelling = true, SetLastError = true)]
         public static extern BOOL SetPixelFormat(HDC hdc, int format, [NativeTypeName("const PIXELFORMATDESCRIPTOR *")] PIXELFORMATDESCRIPTOR* ppfd);
@@ -670,8 +660,7 @@ namespace TerraFX.Interop
         public static extern int SetTextCharacterExtra(HDC hdc, int extra);
 
         [DllImport("gdi32", ExactSpelling = true)]
-        [return: NativeTypeName("COLORREF")]
-        public static extern uint SetTextColor(HDC hdc, [NativeTypeName("COLORREF")] uint color);
+        public static extern COLORREF SetTextColor(HDC hdc, COLORREF color);
 
         [DllImport("gdi32", ExactSpelling = true)]
         public static extern uint SetTextAlign(HDC hdc, uint align);
@@ -704,7 +693,7 @@ namespace TerraFX.Interop
         public static extern BOOL PlayMetaFileRecord(HDC hdc, [NativeTypeName("LPHANDLETABLE")] HANDLETABLE* lpHandleTable, [NativeTypeName("LPMETARECORD")] METARECORD* lpMR, uint noObjs);
 
         [DllImport("gdi32", ExactSpelling = true)]
-        public static extern BOOL EnumMetaFile(HDC hdc, HMETAFILE hmf, [NativeTypeName("MFENUMPROC")] delegate* unmanaged<HDC, HANDLETABLE*, METARECORD*, int, nint, int> proc, [NativeTypeName("LPARAM")] nint param3);
+        public static extern BOOL EnumMetaFile(HDC hdc, HMETAFILE hmf, [NativeTypeName("MFENUMPROC")] delegate* unmanaged<HDC, HANDLETABLE*, METARECORD*, int, LPARAM, int> proc, LPARAM param3);
 
         [DllImport("gdi32", ExactSpelling = true)]
         public static extern HENHMETAFILE CloseEnhMetaFile(HDC hdc);
@@ -725,7 +714,7 @@ namespace TerraFX.Interop
         public static extern BOOL DeleteEnhMetaFile(HENHMETAFILE hmf);
 
         [DllImport("gdi32", ExactSpelling = true)]
-        public static extern BOOL EnumEnhMetaFile(HDC hdc, HENHMETAFILE hmf, [NativeTypeName("ENHMFENUMPROC")] delegate* unmanaged<HDC, HANDLETABLE*, ENHMETARECORD*, int, nint, int> proc, [NativeTypeName("LPVOID")] void* param3, [NativeTypeName("const RECT *")] RECT* lpRect);
+        public static extern BOOL EnumEnhMetaFile(HDC hdc, HENHMETAFILE hmf, [NativeTypeName("ENHMFENUMPROC")] delegate* unmanaged<HDC, HANDLETABLE*, ENHMETARECORD*, int, LPARAM, int> proc, [NativeTypeName("LPVOID")] void* param3, [NativeTypeName("const RECT *")] RECT* lpRect);
 
         [DllImport("gdi32", ExactSpelling = true)]
         public static extern HENHMETAFILE GetEnhMetaFileA([NativeTypeName("LPCSTR")] sbyte* lpName);
@@ -1053,10 +1042,10 @@ namespace TerraFX.Interop
         public static extern BOOL ColorMatchToTarget(HDC hdc, HDC hdcTarget, [NativeTypeName("DWORD")] uint action);
 
         [DllImport("gdi32", ExactSpelling = true)]
-        public static extern int EnumICMProfilesA(HDC hdc, [NativeTypeName("ICMENUMPROCA")] delegate* unmanaged<sbyte*, nint, int> proc, [NativeTypeName("LPARAM")] nint param2);
+        public static extern int EnumICMProfilesA(HDC hdc, [NativeTypeName("ICMENUMPROCA")] delegate* unmanaged<sbyte*, LPARAM, int> proc, LPARAM param2);
 
         [DllImport("gdi32", ExactSpelling = true)]
-        public static extern int EnumICMProfilesW(HDC hdc, [NativeTypeName("ICMENUMPROCW")] delegate* unmanaged<ushort*, nint, int> proc, [NativeTypeName("LPARAM")] nint param2);
+        public static extern int EnumICMProfilesW(HDC hdc, [NativeTypeName("ICMENUMPROCW")] delegate* unmanaged<ushort*, LPARAM, int> proc, LPARAM param2);
 
         [DllImport("gdi32", ExactSpelling = true)]
         public static extern BOOL UpdateICMRegKeyA([NativeTypeName("DWORD")] uint reserved, [NativeTypeName("LPSTR")] sbyte* lpszCMID, [NativeTypeName("LPSTR")] sbyte* lpszFileName, uint command);
@@ -1114,10 +1103,10 @@ namespace TerraFX.Interop
         public static extern BOOL wglDescribeLayerPlane(HDC param0, int param1, int param2, uint param3, [NativeTypeName("LPLAYERPLANEDESCRIPTOR")] LAYERPLANEDESCRIPTOR* param4);
 
         [DllImport("opengl32", ExactSpelling = true, SetLastError = true)]
-        public static extern int wglSetLayerPaletteEntries(HDC param0, int param1, int param2, int param3, [NativeTypeName("const COLORREF *")] uint* param4);
+        public static extern int wglSetLayerPaletteEntries(HDC param0, int param1, int param2, int param3, [NativeTypeName("const COLORREF *")] COLORREF* param4);
 
         [DllImport("opengl32", ExactSpelling = true, SetLastError = true)]
-        public static extern int wglGetLayerPaletteEntries(HDC param0, int param1, int param2, int param3, [NativeTypeName("COLORREF *")] uint* param4);
+        public static extern int wglGetLayerPaletteEntries(HDC param0, int param1, int param2, int param3, COLORREF* param4);
 
         [DllImport("opengl32", ExactSpelling = true, SetLastError = true)]
         public static extern BOOL wglRealizeLayerPalette(HDC param0, int param1, BOOL param2);
@@ -4784,13 +4773,13 @@ namespace TerraFX.Interop
         public const int DCBA_FACEDOWNRIGHT = 0x0103;
 
         [NativeTypeName("#define EnumFontFamiliesEx EnumFontFamiliesExW")]
-        public static delegate*<HDC, LOGFONTW*, delegate* unmanaged<LOGFONTW*, TEXTMETRICW*, uint, nint, int>, nint, uint, int> EnumFontFamiliesEx => &EnumFontFamiliesExW;
+        public static delegate*<HDC, LOGFONTW*, delegate* unmanaged<LOGFONTW*, TEXTMETRICW*, uint, LPARAM, int>, LPARAM, uint, int> EnumFontFamiliesEx => &EnumFontFamiliesExW;
 
         [NativeTypeName("#define EnumFontFamilies EnumFontFamiliesW")]
-        public static delegate*<HDC, ushort*, delegate* unmanaged<LOGFONTW*, TEXTMETRICW*, uint, nint, int>, nint, int> EnumFontFamilies => &EnumFontFamiliesW;
+        public static delegate*<HDC, ushort*, delegate* unmanaged<LOGFONTW*, TEXTMETRICW*, uint, LPARAM, int>, LPARAM, int> EnumFontFamilies => &EnumFontFamiliesW;
 
         [NativeTypeName("#define EnumFonts EnumFontsW")]
-        public static delegate*<HDC, ushort*, delegate* unmanaged<LOGFONTW*, TEXTMETRICW*, uint, nint, int>, nint, int> EnumFonts => &EnumFontsW;
+        public static delegate*<HDC, ushort*, delegate* unmanaged<LOGFONTW*, TEXTMETRICW*, uint, LPARAM, int>, LPARAM, int> EnumFonts => &EnumFontsW;
 
         [NativeTypeName("#define GetCharWidth GetCharWidthW")]
         public static delegate*<HDC, uint, uint, int*, BOOL> GetCharWidth => &GetCharWidthW;
@@ -5036,7 +5025,7 @@ namespace TerraFX.Interop
         public static delegate*<HDC, ushort*, BOOL> SetICMProfile => &SetICMProfileW;
 
         [NativeTypeName("#define EnumICMProfiles EnumICMProfilesW")]
-        public static delegate*<HDC, delegate* unmanaged<ushort*, nint, int>, nint, int> EnumICMProfiles => &EnumICMProfilesW;
+        public static delegate*<HDC, delegate* unmanaged<ushort*, LPARAM, int>, LPARAM, int> EnumICMProfiles => &EnumICMProfilesW;
 
         [NativeTypeName("#define UpdateICMRegKey UpdateICMRegKeyW")]
         public static delegate*<uint, ushort*, ushort*, uint, BOOL> UpdateICMRegKey => &UpdateICMRegKeyW;

@@ -24,8 +24,7 @@ namespace TerraFX.Interop
 
         public int iImage;
 
-        [NativeTypeName("LPARAM")]
-        public nint lParam;
+        public LPARAM lParam;
 
         public int iIndent;
 

@@ -48,23 +48,23 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        public HRESULT SetNotifyWindowMessage(HWND hWnd, uint Msg, [NativeTypeName("WPARAM")] nuint wParam, [NativeTypeName("LPARAM")] nint lParam)
+        public HRESULT SetNotifyWindowMessage(HWND hWnd, uint Msg, WPARAM wParam, LPARAM lParam)
         {
-            return ((delegate* unmanaged<ISpRecoContext*, HWND, uint, nuint, nint, int>)(lpVtbl[4]))((ISpRecoContext*)Unsafe.AsPointer(ref this), hWnd, Msg, wParam, lParam);
+            return ((delegate* unmanaged<ISpRecoContext*, HWND, uint, WPARAM, LPARAM, int>)(lpVtbl[4]))((ISpRecoContext*)Unsafe.AsPointer(ref this), hWnd, Msg, wParam, lParam);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        public HRESULT SetNotifyCallbackFunction([NativeTypeName("SPNOTIFYCALLBACK *")] delegate* unmanaged<nuint, nint, void> pfnCallback, [NativeTypeName("WPARAM")] nuint wParam, [NativeTypeName("LPARAM")] nint lParam)
+        public HRESULT SetNotifyCallbackFunction([NativeTypeName("SPNOTIFYCALLBACK *")] delegate* unmanaged<WPARAM, LPARAM, void> pfnCallback, WPARAM wParam, LPARAM lParam)
         {
-            return ((delegate* unmanaged<ISpRecoContext*, delegate* unmanaged<nuint, nint, void>, nuint, nint, int>)(lpVtbl[5]))((ISpRecoContext*)Unsafe.AsPointer(ref this), pfnCallback, wParam, lParam);
+            return ((delegate* unmanaged<ISpRecoContext*, delegate* unmanaged<WPARAM, LPARAM, void>, WPARAM, LPARAM, int>)(lpVtbl[5]))((ISpRecoContext*)Unsafe.AsPointer(ref this), pfnCallback, wParam, lParam);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        public HRESULT SetNotifyCallbackInterface(ISpNotifyCallback* pSpCallback, [NativeTypeName("WPARAM")] nuint wParam, [NativeTypeName("LPARAM")] nint lParam)
+        public HRESULT SetNotifyCallbackInterface(ISpNotifyCallback* pSpCallback, WPARAM wParam, LPARAM lParam)
         {
-            return ((delegate* unmanaged<ISpRecoContext*, ISpNotifyCallback*, nuint, nint, int>)(lpVtbl[6]))((ISpRecoContext*)Unsafe.AsPointer(ref this), pSpCallback, wParam, lParam);
+            return ((delegate* unmanaged<ISpRecoContext*, ISpNotifyCallback*, WPARAM, LPARAM, int>)(lpVtbl[6]))((ISpRecoContext*)Unsafe.AsPointer(ref this), pSpCallback, wParam, lParam);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -167,9 +167,9 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(21)]
-        public HRESULT Bookmark(SPBOOKMARKOPTIONS Options, [NativeTypeName("ULONGLONG")] ulong ullStreamPosition, [NativeTypeName("LPARAM")] nint lparamEvent)
+        public HRESULT Bookmark(SPBOOKMARKOPTIONS Options, [NativeTypeName("ULONGLONG")] ulong ullStreamPosition, LPARAM lparamEvent)
         {
-            return ((delegate* unmanaged<ISpRecoContext*, SPBOOKMARKOPTIONS, ulong, nint, int>)(lpVtbl[21]))((ISpRecoContext*)Unsafe.AsPointer(ref this), Options, ullStreamPosition, lparamEvent);
+            return ((delegate* unmanaged<ISpRecoContext*, SPBOOKMARKOPTIONS, ulong, LPARAM, int>)(lpVtbl[21]))((ISpRecoContext*)Unsafe.AsPointer(ref this), Options, ullStreamPosition, lparamEvent);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

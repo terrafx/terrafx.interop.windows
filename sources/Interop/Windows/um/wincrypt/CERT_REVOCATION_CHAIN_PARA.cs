@@ -10,8 +10,7 @@ namespace TerraFX.Interop
         [NativeTypeName("DWORD")]
         public uint cbSize;
 
-        [NativeTypeName("HCERTCHAINENGINE")]
-        public HANDLE hChainEngine;
+        public HCERTCHAINENGINE hChainEngine;
 
         public HCERTSTORE hAdditionalStore;
 

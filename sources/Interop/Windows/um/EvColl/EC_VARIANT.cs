@@ -91,7 +91,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public ref HANDLE PropertyHandleVal
+        public ref EC_OBJECT_ARRAY_PROPERTY_HANDLE PropertyHandleVal
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
@@ -134,8 +134,7 @@ namespace TerraFX.Interop
             public ushort** StringArr;
 
             [FieldOffset(0)]
-            [NativeTypeName("EC_OBJECT_ARRAY_PROPERTY_HANDLE")]
-            public HANDLE PropertyHandleVal;
+            public EC_OBJECT_ARRAY_PROPERTY_HANDLE PropertyHandleVal;
         }
     }
 }

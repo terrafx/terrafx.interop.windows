@@ -20,7 +20,7 @@ namespace TerraFX.Interop
         public const uint c_DwmMaxAdapters = 16;
 
         [DllImport("dwmapi", ExactSpelling = true)]
-        public static extern BOOL DwmDefWindowProc(HWND hWnd, uint msg, [NativeTypeName("WPARAM")] nuint wParam, [NativeTypeName("LPARAM")] nint lParam, [NativeTypeName("LRESULT *")] nint* plResult);
+        public static extern BOOL DwmDefWindowProc(HWND hWnd, uint msg, WPARAM wParam, LPARAM lParam, LRESULT* plResult);
 
         [DllImport("dwmapi", ExactSpelling = true)]
         public static extern HRESULT DwmEnableBlurBehindWindow(HWND hWnd, [NativeTypeName("const DWM_BLURBEHIND *")] DWM_BLURBEHIND* pBlurBehind);
@@ -50,10 +50,10 @@ namespace TerraFX.Interop
         public static extern HRESULT DwmModifyPreviousDxFrameDuration(HWND hwnd, int cRefreshes, BOOL fRelative);
 
         [DllImport("dwmapi", ExactSpelling = true)]
-        public static extern HRESULT DwmQueryThumbnailSourceSize([NativeTypeName("HTHUMBNAIL")] HANDLE hThumbnail, [NativeTypeName("PSIZE")] SIZE* pSize);
+        public static extern HRESULT DwmQueryThumbnailSourceSize(HTHUMBNAIL hThumbnail, [NativeTypeName("PSIZE")] SIZE* pSize);
 
         [DllImport("dwmapi", ExactSpelling = true)]
-        public static extern HRESULT DwmRegisterThumbnail(HWND hwndDestination, HWND hwndSource, [NativeTypeName("PHTHUMBNAIL")] HANDLE* phThumbnailId);
+        public static extern HRESULT DwmRegisterThumbnail(HWND hwndDestination, HWND hwndSource, [NativeTypeName("PHTHUMBNAIL")] HTHUMBNAIL* phThumbnailId);
 
         [DllImport("dwmapi", ExactSpelling = true)]
         public static extern HRESULT DwmSetDxFrameDuration(HWND hwnd, int cRefreshes);
@@ -65,10 +65,10 @@ namespace TerraFX.Interop
         public static extern HRESULT DwmSetWindowAttribute(HWND hwnd, [NativeTypeName("DWORD")] uint dwAttribute, [NativeTypeName("LPCVOID")] void* pvAttribute, [NativeTypeName("DWORD")] uint cbAttribute);
 
         [DllImport("dwmapi", ExactSpelling = true)]
-        public static extern HRESULT DwmUnregisterThumbnail([NativeTypeName("HTHUMBNAIL")] HANDLE hThumbnailId);
+        public static extern HRESULT DwmUnregisterThumbnail(HTHUMBNAIL hThumbnailId);
 
         [DllImport("dwmapi", ExactSpelling = true)]
-        public static extern HRESULT DwmUpdateThumbnailProperties([NativeTypeName("HTHUMBNAIL")] HANDLE hThumbnailId, [NativeTypeName("const DWM_THUMBNAIL_PROPERTIES *")] DWM_THUMBNAIL_PROPERTIES* ptnProperties);
+        public static extern HRESULT DwmUpdateThumbnailProperties(HTHUMBNAIL hThumbnailId, [NativeTypeName("const DWM_THUMBNAIL_PROPERTIES *")] DWM_THUMBNAIL_PROPERTIES* ptnProperties);
 
         [DllImport("dwmapi", ExactSpelling = true)]
         public static extern HRESULT DwmSetIconicThumbnail(HWND hwnd, HBITMAP hbmp, [NativeTypeName("DWORD")] uint dwSITFlags);

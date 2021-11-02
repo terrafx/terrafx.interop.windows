@@ -11,7 +11,6 @@ namespace TerraFX.Interop
 
         public POINTL ptlPixel;
 
-        [NativeTypeName("COLORREF")]
-        public uint crColor;
+        public COLORREF crColor;
     }
 }

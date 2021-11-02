@@ -13,11 +13,9 @@ namespace TerraFX.Interop
 
         public uint fStyle;
 
-        [NativeTypeName("COLORREF")]
-        public uint clrFore;
+        public COLORREF clrFore;
 
-        [NativeTypeName("COLORREF")]
-        public uint clrBack;
+        public COLORREF clrBack;
 
         [NativeTypeName("LPWSTR")]
         public ushort* lpText;
@@ -46,8 +44,7 @@ namespace TerraFX.Interop
 
         public uint cxIdeal;
 
-        [NativeTypeName("LPARAM")]
-        public nint lParam;
+        public LPARAM lParam;
 
         public uint cxHeader;
 

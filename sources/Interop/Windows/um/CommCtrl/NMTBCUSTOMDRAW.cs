@@ -15,23 +15,17 @@ namespace TerraFX.Interop
 
         public HPEN hpenLines;
 
-        [NativeTypeName("COLORREF")]
-        public uint clrText;
+        public COLORREF clrText;
 
-        [NativeTypeName("COLORREF")]
-        public uint clrMark;
+        public COLORREF clrMark;
 
-        [NativeTypeName("COLORREF")]
-        public uint clrTextHighlight;
+        public COLORREF clrTextHighlight;
 
-        [NativeTypeName("COLORREF")]
-        public uint clrBtnFace;
+        public COLORREF clrBtnFace;
 
-        [NativeTypeName("COLORREF")]
-        public uint clrBtnHighlight;
+        public COLORREF clrBtnHighlight;
 
-        [NativeTypeName("COLORREF")]
-        public uint clrHighlightHotTrack;
+        public COLORREF clrHighlightHotTrack;
 
         public RECT rcText;
 

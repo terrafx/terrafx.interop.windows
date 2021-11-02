@@ -26,7 +26,7 @@ namespace TerraFX.Interop
         public static extern void FreeLibraryAndExitThread(HMODULE hLibModule, [NativeTypeName("DWORD")] uint dwExitCode);
 
         [DllImport("kernel32", ExactSpelling = true)]
-        public static extern BOOL FreeResource([NativeTypeName("HGLOBAL")] HANDLE hResData);
+        public static extern BOOL FreeResource(HGLOBAL hResData);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("DWORD")]
@@ -59,12 +59,11 @@ namespace TerraFX.Interop
         public static extern HMODULE LoadLibraryExW([NativeTypeName("LPCWSTR")] ushort* lpLibFileName, HANDLE hFile, [NativeTypeName("DWORD")] uint dwFlags);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("HGLOBAL")]
-        public static extern HANDLE LoadResource(HMODULE hModule, HRSRC hResInfo);
+        public static extern HGLOBAL LoadResource(HMODULE hModule, HRSRC hResInfo);
 
         [DllImport("kernel32", ExactSpelling = true)]
         [return: NativeTypeName("LPVOID")]
-        public static extern void* LockResource([NativeTypeName("HGLOBAL")] HANDLE hResData);
+        public static extern void* LockResource(HGLOBAL hResData);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("DWORD")]

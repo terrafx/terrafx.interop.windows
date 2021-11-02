@@ -19,12 +19,10 @@ namespace TerraFX.Interop
         public static extern BOOL ImmGenerateMessage(HIMC param0);
 
         [DllImport("imm32", ExactSpelling = true)]
-        [return: NativeTypeName("LRESULT")]
-        public static extern nint ImmRequestMessageA(HIMC param0, [NativeTypeName("WPARAM")] nuint param1, [NativeTypeName("LPARAM")] nint param2);
+        public static extern LRESULT ImmRequestMessageA(HIMC param0, WPARAM param1, LPARAM param2);
 
         [DllImport("imm32", ExactSpelling = true)]
-        [return: NativeTypeName("LRESULT")]
-        public static extern nint ImmRequestMessageW(HIMC param0, [NativeTypeName("WPARAM")] nuint param1, [NativeTypeName("LPARAM")] nint param2);
+        public static extern LRESULT ImmRequestMessageW(HIMC param0, WPARAM param1, LPARAM param2);
 
         [DllImport("imm32", ExactSpelling = true)]
         public static extern HWND ImmCreateSoftKeyboard(uint param0, HWND param1, int param2, int param3);
@@ -71,7 +69,7 @@ namespace TerraFX.Interop
         public static extern uint ImmGetIMCCSize(HIMCC param0);
 
         [NativeTypeName("#define ImmRequestMessage ImmRequestMessageW")]
-        public static delegate*<HIMC, nuint, nint, nint> ImmRequestMessage => &ImmRequestMessageW;
+        public static delegate*<HIMC, WPARAM, LPARAM, LRESULT> ImmRequestMessage => &ImmRequestMessageW;
 
         [NativeTypeName("#define IMMGWL_IMC 0")]
         public const int IMMGWL_IMC = 0;

@@ -48,9 +48,9 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        public HRESULT TranslateMenuMessage(MSG* pmsg, [NativeTypeName("LRESULT *")] nint* plRet)
+        public HRESULT TranslateMenuMessage(MSG* pmsg, LRESULT* plRet)
         {
-            return ((delegate* unmanaged<IMenuBand*, MSG*, nint*, int>)(lpVtbl[4]))((IMenuBand*)Unsafe.AsPointer(ref this), pmsg, plRet);
+            return ((delegate* unmanaged<IMenuBand*, MSG*, LRESULT*, int>)(lpVtbl[4]))((IMenuBand*)Unsafe.AsPointer(ref this), pmsg, plRet);
         }
     }
 }

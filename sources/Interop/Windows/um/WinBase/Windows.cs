@@ -13,88 +13,80 @@ namespace TerraFX.Interop
     public static unsafe partial class Windows
     {
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("HGLOBAL")]
-        public static extern HANDLE GlobalAlloc(uint uFlags, [NativeTypeName("SIZE_T")] nuint dwBytes);
+        public static extern HGLOBAL GlobalAlloc(uint uFlags, [NativeTypeName("SIZE_T")] nuint dwBytes);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("HGLOBAL")]
-        public static extern HANDLE GlobalReAlloc([NativeTypeName("HGLOBAL")] HANDLE hMem, [NativeTypeName("SIZE_T")] nuint dwBytes, uint uFlags);
+        public static extern HGLOBAL GlobalReAlloc(HGLOBAL hMem, [NativeTypeName("SIZE_T")] nuint dwBytes, uint uFlags);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("SIZE_T")]
-        public static extern nuint GlobalSize([NativeTypeName("HGLOBAL")] HANDLE hMem);
+        public static extern nuint GlobalSize(HGLOBAL hMem);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
-        public static extern BOOL GlobalUnlock([NativeTypeName("HGLOBAL")] HANDLE hMem);
+        public static extern BOOL GlobalUnlock(HGLOBAL hMem);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("LPVOID")]
-        public static extern void* GlobalLock([NativeTypeName("HGLOBAL")] HANDLE hMem);
+        public static extern void* GlobalLock(HGLOBAL hMem);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
-        public static extern uint GlobalFlags([NativeTypeName("HGLOBAL")] HANDLE hMem);
+        public static extern uint GlobalFlags(HGLOBAL hMem);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("HGLOBAL")]
-        public static extern HANDLE GlobalHandle([NativeTypeName("LPCVOID")] void* pMem);
+        public static extern HGLOBAL GlobalHandle([NativeTypeName("LPCVOID")] void* pMem);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("HGLOBAL")]
-        public static extern HANDLE GlobalFree([NativeTypeName("HGLOBAL")] HANDLE hMem);
+        public static extern HGLOBAL GlobalFree(HGLOBAL hMem);
 
         [DllImport("kernel32", ExactSpelling = true)]
         [return: NativeTypeName("SIZE_T")]
         public static extern nuint GlobalCompact([NativeTypeName("DWORD")] uint dwMinFree);
 
         [DllImport("kernel32", ExactSpelling = true)]
-        public static extern void GlobalFix([NativeTypeName("HGLOBAL")] HANDLE hMem);
+        public static extern void GlobalFix(HGLOBAL hMem);
 
         [DllImport("kernel32", ExactSpelling = true)]
-        public static extern void GlobalUnfix([NativeTypeName("HGLOBAL")] HANDLE hMem);
+        public static extern void GlobalUnfix(HGLOBAL hMem);
 
         [DllImport("kernel32", ExactSpelling = true)]
         [return: NativeTypeName("LPVOID")]
-        public static extern void* GlobalWire([NativeTypeName("HGLOBAL")] HANDLE hMem);
+        public static extern void* GlobalWire(HGLOBAL hMem);
 
         [DllImport("kernel32", ExactSpelling = true)]
-        public static extern BOOL GlobalUnWire([NativeTypeName("HGLOBAL")] HANDLE hMem);
+        public static extern BOOL GlobalUnWire(HGLOBAL hMem);
 
         [DllImport("kernel32", ExactSpelling = true)]
         public static extern void GlobalMemoryStatus([NativeTypeName("LPMEMORYSTATUS")] MEMORYSTATUS* lpBuffer);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("HLOCAL")]
-        public static extern HANDLE LocalAlloc(uint uFlags, [NativeTypeName("SIZE_T")] nuint uBytes);
+        public static extern HLOCAL LocalAlloc(uint uFlags, [NativeTypeName("SIZE_T")] nuint uBytes);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("HLOCAL")]
-        public static extern HANDLE LocalReAlloc([NativeTypeName("HLOCAL")] HANDLE hMem, [NativeTypeName("SIZE_T")] nuint uBytes, uint uFlags);
+        public static extern HLOCAL LocalReAlloc(HLOCAL hMem, [NativeTypeName("SIZE_T")] nuint uBytes, uint uFlags);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("LPVOID")]
-        public static extern void* LocalLock([NativeTypeName("HLOCAL")] HANDLE hMem);
+        public static extern void* LocalLock(HLOCAL hMem);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("HLOCAL")]
-        public static extern HANDLE LocalHandle([NativeTypeName("LPCVOID")] void* pMem);
+        public static extern HLOCAL LocalHandle([NativeTypeName("LPCVOID")] void* pMem);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
-        public static extern BOOL LocalUnlock([NativeTypeName("HLOCAL")] HANDLE hMem);
+        public static extern BOOL LocalUnlock(HLOCAL hMem);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("SIZE_T")]
-        public static extern nuint LocalSize([NativeTypeName("HLOCAL")] HANDLE hMem);
+        public static extern nuint LocalSize(HLOCAL hMem);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
-        public static extern uint LocalFlags([NativeTypeName("HLOCAL")] HANDLE hMem);
+        public static extern uint LocalFlags(HLOCAL hMem);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("HLOCAL")]
-        public static extern HANDLE LocalFree([NativeTypeName("HLOCAL")] HANDLE hMem);
+        public static extern HLOCAL LocalFree(HLOCAL hMem);
 
         [DllImport("kernel32", ExactSpelling = true)]
         [return: NativeTypeName("SIZE_T")]
-        public static extern nuint LocalShrink([NativeTypeName("HLOCAL")] HANDLE hMem, uint cbNewSize);
+        public static extern nuint LocalShrink(HLOCAL hMem, uint cbNewSize);
 
         [DllImport("kernel32", ExactSpelling = true)]
         [return: NativeTypeName("SIZE_T")]

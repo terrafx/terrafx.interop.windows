@@ -15,8 +15,7 @@ namespace TerraFX.Interop
 
         public uint elpBrushStyle;
 
-        [NativeTypeName("COLORREF")]
-        public uint elpColor;
+        public COLORREF elpColor;
 
         [NativeTypeName("ULONG_PTR")]
         public nuint elpHatch;

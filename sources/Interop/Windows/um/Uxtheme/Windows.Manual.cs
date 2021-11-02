@@ -9,7 +9,7 @@ namespace TerraFX.Interop
 {
     public static unsafe partial class Windows
     {
-        public static int BufferedPaintMakeOpaque(HANDLE hBufferedPaint, RECT* prc) => BufferedPaintSetAlpha(hBufferedPaint, prc, 255);
+        public static int BufferedPaintMakeOpaque(HPAINTBUFFER hBufferedPaint, RECT* prc) => BufferedPaintSetAlpha(hBufferedPaint, prc, 255);
 
         public static int SetWindowThemeNonClientAttributes(HWND hwnd, uint dwMask, uint dwAttributes)
         {

@@ -13,10 +13,8 @@ namespace TerraFX.Interop
         [NativeTypeName("DWORD")]
         public uint PaletteIndex;
 
-        [NativeTypeName("COLORREF")]
-        public uint LowColorValue;
+        public COLORREF LowColorValue;
 
-        [NativeTypeName("COLORREF")]
-        public uint HighColorValue;
+        public COLORREF HighColorValue;
     }
 }

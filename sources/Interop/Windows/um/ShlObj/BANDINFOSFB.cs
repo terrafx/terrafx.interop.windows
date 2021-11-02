@@ -16,14 +16,11 @@ namespace TerraFX.Interop
         [NativeTypeName("DWORD")]
         public uint dwState;
 
-        [NativeTypeName("COLORREF")]
-        public uint crBkgnd;
+        public COLORREF crBkgnd;
 
-        [NativeTypeName("COLORREF")]
-        public uint crBtnLt;
+        public COLORREF crBtnLt;
 
-        [NativeTypeName("COLORREF")]
-        public uint crBtnDk;
+        public COLORREF crBtnDk;
 
         [NativeTypeName("WORD")]
         public ushort wViewMode;

@@ -24,7 +24,6 @@ namespace TerraFX.Interop
         [NativeTypeName("DWORD")]
         public uint dwModeFlags;
 
-        [NativeTypeName("COLORREF")]
-        public uint crBkgnd;
+        public COLORREF crBkgnd;
     }
 }

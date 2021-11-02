@@ -9,8 +9,7 @@ namespace TerraFX.Interop
     {
         public uint lbStyle;
 
-        [NativeTypeName("COLORREF")]
-        public uint lbColor;
+        public COLORREF lbColor;
 
         [NativeTypeName("ULONG")]
         public uint lbHatch;

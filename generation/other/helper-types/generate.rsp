@@ -5,6 +5,6 @@ generate-helper-types
 --file
 other-helper-types.h
 --output
-../../../sources/Interop/Windows
+../../../sources/Interop/Windows/other/helper-types
 --test-output
-../../../tests/Interop/Windows
+../../../tests/Interop/Windows/other/helper-types

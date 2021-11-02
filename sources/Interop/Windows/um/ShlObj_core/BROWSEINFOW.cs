@@ -21,10 +21,9 @@ namespace TerraFX.Interop
         public uint ulFlags;
 
         [NativeTypeName("BFFCALLBACK")]
-        public delegate* unmanaged<HWND, uint, nint, nint, int> lpfn;
+        public delegate* unmanaged<HWND, uint, LPARAM, LPARAM, int> lpfn;
 
-        [NativeTypeName("LPARAM")]
-        public nint lParam;
+        public LPARAM lParam;
 
         public int iImage;
     }

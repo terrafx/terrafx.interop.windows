@@ -313,10 +313,10 @@ namespace TerraFX.Interop
         public static extern void SHDestroyPropSheetExtArray(HPSXA hpsxa);
 
         [DllImport("shell32", ExactSpelling = true)]
-        public static extern uint SHAddFromPropSheetExtArray(HPSXA hpsxa, [NativeTypeName("LPFNADDPROPSHEETPAGE")] delegate* unmanaged<HPROPSHEETPAGE, nint, BOOL> lpfnAddPage, [NativeTypeName("LPARAM")] nint lParam);
+        public static extern uint SHAddFromPropSheetExtArray(HPSXA hpsxa, [NativeTypeName("LPFNADDPROPSHEETPAGE")] delegate* unmanaged<HPROPSHEETPAGE, LPARAM, BOOL> lpfnAddPage, LPARAM lParam);
 
         [DllImport("shell32", ExactSpelling = true)]
-        public static extern uint SHReplaceFromPropSheetExtArray(HPSXA hpsxa, uint uPageID, [NativeTypeName("LPFNADDPROPSHEETPAGE")] delegate* unmanaged<HPROPSHEETPAGE, nint, BOOL> lpfnReplaceWith, [NativeTypeName("LPARAM")] nint lParam);
+        public static extern uint SHReplaceFromPropSheetExtArray(HPSXA hpsxa, uint uPageID, [NativeTypeName("LPFNADDPROPSHEETPAGE")] delegate* unmanaged<HPROPSHEETPAGE, LPARAM, BOOL> lpfnReplaceWith, LPARAM lParam);
 
         [DllImport("shell32", ExactSpelling = true)]
         public static extern IStream* OpenRegStream(HKEY hkey, [NativeTypeName("PCWSTR")] ushort* pszSubkey, [NativeTypeName("PCWSTR")] ushort* pszValue, [NativeTypeName("DWORD")] uint grfMode);
@@ -386,14 +386,13 @@ namespace TerraFX.Interop
         public static extern BOOL IsUserAnAdmin();
 
         [DllImport("shell32", ExactSpelling = true)]
-        [return: NativeTypeName("LRESULT")]
-        public static extern nint SHShellFolderView_Message(HWND hwndMain, uint uMsg, [NativeTypeName("LPARAM")] nint lParam);
+        public static extern LRESULT SHShellFolderView_Message(HWND hwndMain, uint uMsg, LPARAM lParam);
 
         [DllImport("shell32", ExactSpelling = true)]
         public static extern HRESULT SHCreateShellFolderView([NativeTypeName("const SFV_CREATE *")] SFV_CREATE* pcsfv, IShellView** ppsv);
 
         [DllImport("shell32", ExactSpelling = true)]
-        public static extern HRESULT CDefFolderMenu_Create2([NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidlFolder, HWND hwnd, uint cidl, [NativeTypeName("LPCITEMIDLIST *")] ITEMIDLIST** apidl, IShellFolder* psf, [NativeTypeName("LPFNDFMCALLBACK")] delegate* unmanaged<IShellFolder*, HWND, IDataObject*, uint, nuint, nint, HRESULT> pfn, uint nKeys, [NativeTypeName("const HKEY *")] HKEY* ahkeys, IContextMenu** ppcm);
+        public static extern HRESULT CDefFolderMenu_Create2([NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidlFolder, HWND hwnd, uint cidl, [NativeTypeName("LPCITEMIDLIST *")] ITEMIDLIST** apidl, IShellFolder* psf, [NativeTypeName("LPFNDFMCALLBACK")] delegate* unmanaged<IShellFolder*, HWND, IDataObject*, uint, WPARAM, LPARAM, HRESULT> pfn, uint nKeys, [NativeTypeName("const HKEY *")] HKEY* ahkeys, IContextMenu** ppcm);
 
         [DllImport("shell32", ExactSpelling = true)]
         public static extern HRESULT SHCreateDefaultContextMenu([NativeTypeName("const DEFCONTEXTMENU *")] DEFCONTEXTMENU* pdcm, [NativeTypeName("const IID &")] Guid* riid, void** ppv);

@@ -56,7 +56,6 @@ namespace TerraFX.Interop
 
         public byte bReserved;
 
-        [NativeTypeName("COLORREF")]
-        public uint crTransparent;
+        public COLORREF crTransparent;
     }
 }

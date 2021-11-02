@@ -90,9 +90,9 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(10)]
-        public HRESULT SetMenu(HMENU hmenuShared, [NativeTypeName("HOLEMENU")] HANDLE holemenu, HWND hwndActiveObject)
+        public HRESULT SetMenu(HMENU hmenuShared, [NativeTypeName("HOLEMENU")] HGLOBAL holemenu, HWND hwndActiveObject)
         {
-            return ((delegate* unmanaged<IOleInPlaceFrame*, HMENU, HANDLE, HWND, int>)(lpVtbl[10]))((IOleInPlaceFrame*)Unsafe.AsPointer(ref this), hmenuShared, holemenu, hwndActiveObject);
+            return ((delegate* unmanaged<IOleInPlaceFrame*, HMENU, HGLOBAL, HWND, int>)(lpVtbl[10]))((IOleInPlaceFrame*)Unsafe.AsPointer(ref this), hmenuShared, holemenu, hwndActiveObject);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

@@ -34,8 +34,7 @@ namespace TerraFX.Interop
 
         public XFORM xformSrc;
 
-        [NativeTypeName("COLORREF")]
-        public uint crBkColorSrc;
+        public COLORREF crBkColorSrc;
 
         [NativeTypeName("DWORD")]
         public uint iUsageSrc;

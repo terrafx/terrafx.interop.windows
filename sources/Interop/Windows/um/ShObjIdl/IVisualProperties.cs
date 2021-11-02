@@ -48,16 +48,16 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        public HRESULT SetColor(VPCOLORFLAGS vpcf, [NativeTypeName("COLORREF")] uint cr)
+        public HRESULT SetColor(VPCOLORFLAGS vpcf, COLORREF cr)
         {
-            return ((delegate* unmanaged<IVisualProperties*, VPCOLORFLAGS, uint, int>)(lpVtbl[4]))((IVisualProperties*)Unsafe.AsPointer(ref this), vpcf, cr);
+            return ((delegate* unmanaged<IVisualProperties*, VPCOLORFLAGS, COLORREF, int>)(lpVtbl[4]))((IVisualProperties*)Unsafe.AsPointer(ref this), vpcf, cr);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        public HRESULT GetColor(VPCOLORFLAGS vpcf, [NativeTypeName("COLORREF *")] uint* pcr)
+        public HRESULT GetColor(VPCOLORFLAGS vpcf, COLORREF* pcr)
         {
-            return ((delegate* unmanaged<IVisualProperties*, VPCOLORFLAGS, uint*, int>)(lpVtbl[5]))((IVisualProperties*)Unsafe.AsPointer(ref this), vpcf, pcr);
+            return ((delegate* unmanaged<IVisualProperties*, VPCOLORFLAGS, COLORREF*, int>)(lpVtbl[5]))((IVisualProperties*)Unsafe.AsPointer(ref this), vpcf, pcr);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

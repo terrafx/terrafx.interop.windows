@@ -41,30 +41,30 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        public HRESULT OnKeyDown([NativeTypeName("WPARAM")] nuint wParam, [NativeTypeName("LPARAM")] nint lParam, BOOL* pfEaten)
+        public HRESULT OnKeyDown(WPARAM wParam, LPARAM lParam, BOOL* pfEaten)
         {
-            return ((delegate* unmanaged<ITfContextKeyEventSink*, nuint, nint, BOOL*, int>)(lpVtbl[3]))((ITfContextKeyEventSink*)Unsafe.AsPointer(ref this), wParam, lParam, pfEaten);
+            return ((delegate* unmanaged<ITfContextKeyEventSink*, WPARAM, LPARAM, BOOL*, int>)(lpVtbl[3]))((ITfContextKeyEventSink*)Unsafe.AsPointer(ref this), wParam, lParam, pfEaten);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        public HRESULT OnKeyUp([NativeTypeName("WPARAM")] nuint wParam, [NativeTypeName("LPARAM")] nint lParam, BOOL* pfEaten)
+        public HRESULT OnKeyUp(WPARAM wParam, LPARAM lParam, BOOL* pfEaten)
         {
-            return ((delegate* unmanaged<ITfContextKeyEventSink*, nuint, nint, BOOL*, int>)(lpVtbl[4]))((ITfContextKeyEventSink*)Unsafe.AsPointer(ref this), wParam, lParam, pfEaten);
+            return ((delegate* unmanaged<ITfContextKeyEventSink*, WPARAM, LPARAM, BOOL*, int>)(lpVtbl[4]))((ITfContextKeyEventSink*)Unsafe.AsPointer(ref this), wParam, lParam, pfEaten);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        public HRESULT OnTestKeyDown([NativeTypeName("WPARAM")] nuint wParam, [NativeTypeName("LPARAM")] nint lParam, BOOL* pfEaten)
+        public HRESULT OnTestKeyDown(WPARAM wParam, LPARAM lParam, BOOL* pfEaten)
         {
-            return ((delegate* unmanaged<ITfContextKeyEventSink*, nuint, nint, BOOL*, int>)(lpVtbl[5]))((ITfContextKeyEventSink*)Unsafe.AsPointer(ref this), wParam, lParam, pfEaten);
+            return ((delegate* unmanaged<ITfContextKeyEventSink*, WPARAM, LPARAM, BOOL*, int>)(lpVtbl[5]))((ITfContextKeyEventSink*)Unsafe.AsPointer(ref this), wParam, lParam, pfEaten);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        public HRESULT OnTestKeyUp([NativeTypeName("WPARAM")] nuint wParam, [NativeTypeName("LPARAM")] nint lParam, BOOL* pfEaten)
+        public HRESULT OnTestKeyUp(WPARAM wParam, LPARAM lParam, BOOL* pfEaten)
         {
-            return ((delegate* unmanaged<ITfContextKeyEventSink*, nuint, nint, BOOL*, int>)(lpVtbl[6]))((ITfContextKeyEventSink*)Unsafe.AsPointer(ref this), wParam, lParam, pfEaten);
+            return ((delegate* unmanaged<ITfContextKeyEventSink*, WPARAM, LPARAM, BOOL*, int>)(lpVtbl[6]))((ITfContextKeyEventSink*)Unsafe.AsPointer(ref this), wParam, lParam, pfEaten);
         }
     }
 }

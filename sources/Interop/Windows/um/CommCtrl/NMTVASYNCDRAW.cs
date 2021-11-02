@@ -15,8 +15,7 @@ namespace TerraFX.Interop
 
         public HTREEITEM hItem;
 
-        [NativeTypeName("LPARAM")]
-        public nint lParam;
+        public LPARAM lParam;
 
         [NativeTypeName("DWORD")]
         public uint dwRetFlags;

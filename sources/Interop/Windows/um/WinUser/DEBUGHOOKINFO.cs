@@ -13,11 +13,9 @@ namespace TerraFX.Interop
         [NativeTypeName("DWORD")]
         public uint idThreadInstaller;
 
-        [NativeTypeName("LPARAM")]
-        public nint lParam;
+        public LPARAM lParam;
 
-        [NativeTypeName("WPARAM")]
-        public nuint wParam;
+        public WPARAM wParam;
 
         public int code;
     }

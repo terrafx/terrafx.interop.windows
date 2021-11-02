@@ -19,7 +19,6 @@ namespace TerraFX.Interop
 
         public uint uFlags;
 
-        [NativeTypeName("LPARAM")]
-        public nint lParam;
+        public LPARAM lParam;
     }
 }

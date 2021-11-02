@@ -11,7 +11,6 @@ namespace TerraFX.Interop
 
         public POINT lopnWidth;
 
-        [NativeTypeName("COLORREF")]
-        public uint lopnColor;
+        public COLORREF lopnColor;
     }
 }

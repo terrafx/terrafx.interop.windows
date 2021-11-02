@@ -7,10 +7,8 @@ namespace TerraFX.Interop
 {
     public partial struct COLORMAP
     {
-        [NativeTypeName("COLORREF")]
-        public uint from;
+        public COLORREF from;
 
-        [NativeTypeName("COLORREF")]
-        public uint to;
+        public COLORREF to;
     }
 }

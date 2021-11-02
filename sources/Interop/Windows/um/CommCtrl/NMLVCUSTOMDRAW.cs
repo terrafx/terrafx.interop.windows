@@ -9,19 +9,16 @@ namespace TerraFX.Interop
     {
         public NMCUSTOMDRAW nmcd;
 
-        [NativeTypeName("COLORREF")]
-        public uint clrText;
+        public COLORREF clrText;
 
-        [NativeTypeName("COLORREF")]
-        public uint clrTextBk;
+        public COLORREF clrTextBk;
 
         public int iSubItem;
 
         [NativeTypeName("DWORD")]
         public uint dwItemType;
 
-        [NativeTypeName("COLORREF")]
-        public uint clrFace;
+        public COLORREF clrFace;
 
         public int iIconEffect;
 

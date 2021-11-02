@@ -17,7 +17,6 @@ namespace TerraFX.Interop
 
         public POINT pt;
 
-        [NativeTypeName("LPARAM")]
-        public nint dwHitInfo;
+        public LPARAM dwHitInfo;
     }
 }

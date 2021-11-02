@@ -69,9 +69,9 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(7)]
-        public HRESULT AddMasked(HBITMAP hbmImage, [NativeTypeName("COLORREF")] uint crMask, int* pi)
+        public HRESULT AddMasked(HBITMAP hbmImage, COLORREF crMask, int* pi)
         {
-            return ((delegate* unmanaged<IImageList*, HBITMAP, uint, int*, int>)(lpVtbl[7]))((IImageList*)Unsafe.AsPointer(ref this), hbmImage, crMask, pi);
+            return ((delegate* unmanaged<IImageList*, HBITMAP, COLORREF, int*, int>)(lpVtbl[7]))((IImageList*)Unsafe.AsPointer(ref this), hbmImage, crMask, pi);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -160,16 +160,16 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(20)]
-        public HRESULT SetBkColor([NativeTypeName("COLORREF")] uint clrBk, [NativeTypeName("COLORREF *")] uint* pclr)
+        public HRESULT SetBkColor(COLORREF clrBk, COLORREF* pclr)
         {
-            return ((delegate* unmanaged<IImageList*, uint, uint*, int>)(lpVtbl[20]))((IImageList*)Unsafe.AsPointer(ref this), clrBk, pclr);
+            return ((delegate* unmanaged<IImageList*, COLORREF, COLORREF*, int>)(lpVtbl[20]))((IImageList*)Unsafe.AsPointer(ref this), clrBk, pclr);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(21)]
-        public HRESULT GetBkColor([NativeTypeName("COLORREF *")] uint* pclr)
+        public HRESULT GetBkColor(COLORREF* pclr)
         {
-            return ((delegate* unmanaged<IImageList*, uint*, int>)(lpVtbl[21]))((IImageList*)Unsafe.AsPointer(ref this), pclr);
+            return ((delegate* unmanaged<IImageList*, COLORREF*, int>)(lpVtbl[21]))((IImageList*)Unsafe.AsPointer(ref this), pclr);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

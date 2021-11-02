@@ -76,16 +76,16 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(8)]
-        public HRESULT QueryKey(BOOL fUp, [NativeTypeName("WPARAM")] nuint vKey, [NativeTypeName("LPARAM")] nint lparamKeydata, BOOL* pfInterested)
+        public HRESULT QueryKey(BOOL fUp, WPARAM vKey, LPARAM lparamKeydata, BOOL* pfInterested)
         {
-            return ((delegate* unmanaged<ITfFnLMProcessor*, BOOL, nuint, nint, BOOL*, int>)(lpVtbl[8]))((ITfFnLMProcessor*)Unsafe.AsPointer(ref this), fUp, vKey, lparamKeydata, pfInterested);
+            return ((delegate* unmanaged<ITfFnLMProcessor*, BOOL, WPARAM, LPARAM, BOOL*, int>)(lpVtbl[8]))((ITfFnLMProcessor*)Unsafe.AsPointer(ref this), fUp, vKey, lparamKeydata, pfInterested);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(9)]
-        public HRESULT InvokeKey(BOOL fUp, [NativeTypeName("WPARAM")] nuint vKey, [NativeTypeName("LPARAM")] nint lparamKeyData)
+        public HRESULT InvokeKey(BOOL fUp, WPARAM vKey, LPARAM lparamKeyData)
         {
-            return ((delegate* unmanaged<ITfFnLMProcessor*, BOOL, nuint, nint, int>)(lpVtbl[9]))((ITfFnLMProcessor*)Unsafe.AsPointer(ref this), fUp, vKey, lparamKeyData);
+            return ((delegate* unmanaged<ITfFnLMProcessor*, BOOL, WPARAM, LPARAM, int>)(lpVtbl[9]))((ITfFnLMProcessor*)Unsafe.AsPointer(ref this), fUp, vKey, lparamKeyData);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

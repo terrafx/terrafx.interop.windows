@@ -35,12 +35,10 @@ namespace TerraFX.Interop
         public static extern int ImageList_ReplaceIcon(HIMAGELIST himl, int i, HICON hicon);
 
         [DllImport("comctl32", ExactSpelling = true)]
-        [return: NativeTypeName("COLORREF")]
-        public static extern uint ImageList_SetBkColor(HIMAGELIST himl, [NativeTypeName("COLORREF")] uint clrBk);
+        public static extern COLORREF ImageList_SetBkColor(HIMAGELIST himl, COLORREF clrBk);
 
         [DllImport("comctl32", ExactSpelling = true)]
-        [return: NativeTypeName("COLORREF")]
-        public static extern uint ImageList_GetBkColor(HIMAGELIST himl);
+        public static extern COLORREF ImageList_GetBkColor(HIMAGELIST himl);
 
         [DllImport("comctl32", ExactSpelling = true)]
         public static extern BOOL ImageList_SetOverlayImage(HIMAGELIST himl, int iImage, int iOverlay);
@@ -52,10 +50,10 @@ namespace TerraFX.Interop
         public static extern BOOL ImageList_Replace(HIMAGELIST himl, int i, HBITMAP hbmImage, HBITMAP hbmMask);
 
         [DllImport("comctl32", ExactSpelling = true)]
-        public static extern int ImageList_AddMasked(HIMAGELIST himl, HBITMAP hbmImage, [NativeTypeName("COLORREF")] uint crMask);
+        public static extern int ImageList_AddMasked(HIMAGELIST himl, HBITMAP hbmImage, COLORREF crMask);
 
         [DllImport("comctl32", ExactSpelling = true)]
-        public static extern BOOL ImageList_DrawEx(HIMAGELIST himl, int i, HDC hdcDst, int x, int y, int dx, int dy, [NativeTypeName("COLORREF")] uint rgbBk, [NativeTypeName("COLORREF")] uint rgbFg, uint fStyle);
+        public static extern BOOL ImageList_DrawEx(HIMAGELIST himl, int i, HDC hdcDst, int x, int y, int dx, int dy, COLORREF rgbBk, COLORREF rgbFg, uint fStyle);
 
         [DllImport("comctl32", ExactSpelling = true)]
         public static extern BOOL ImageList_DrawIndirect(IMAGELISTDRAWPARAMS* pimldp);
@@ -67,10 +65,10 @@ namespace TerraFX.Interop
         public static extern HICON ImageList_GetIcon(HIMAGELIST himl, int i, uint flags);
 
         [DllImport("comctl32", ExactSpelling = true)]
-        public static extern HIMAGELIST ImageList_LoadImageA(HINSTANCE hi, [NativeTypeName("LPCSTR")] sbyte* lpbmp, int cx, int cGrow, [NativeTypeName("COLORREF")] uint crMask, uint uType, uint uFlags);
+        public static extern HIMAGELIST ImageList_LoadImageA(HINSTANCE hi, [NativeTypeName("LPCSTR")] sbyte* lpbmp, int cx, int cGrow, COLORREF crMask, uint uType, uint uFlags);
 
         [DllImport("comctl32", ExactSpelling = true)]
-        public static extern HIMAGELIST ImageList_LoadImageW(HINSTANCE hi, [NativeTypeName("LPCWSTR")] ushort* lpbmp, int cx, int cGrow, [NativeTypeName("COLORREF")] uint crMask, uint uType, uint uFlags);
+        public static extern HIMAGELIST ImageList_LoadImageW(HINSTANCE hi, [NativeTypeName("LPCWSTR")] ushort* lpbmp, int cx, int cGrow, COLORREF crMask, uint uType, uint uFlags);
 
         [DllImport("comctl32", ExactSpelling = true)]
         public static extern BOOL ImageList_Copy(HIMAGELIST himlDst, int iDst, HIMAGELIST himlSrc, int iSrc, uint uFlags);
@@ -153,7 +151,7 @@ namespace TerraFX.Interop
         public static extern HWND CreateStatusWindowW([NativeTypeName("LONG")] int style, [NativeTypeName("LPCWSTR")] ushort* lpszText, HWND hwndParent, uint wID);
 
         [DllImport("comctl32", ExactSpelling = true)]
-        public static extern void MenuHelp(uint uMsg, [NativeTypeName("WPARAM")] nuint wParam, [NativeTypeName("LPARAM")] nint lParam, HMENU hMainMenu, HINSTANCE hInst, HWND hwndStatus, uint* lpwIDs);
+        public static extern void MenuHelp(uint uMsg, WPARAM wParam, LPARAM lParam, HMENU hMainMenu, HINSTANCE hInst, HWND hwndStatus, uint* lpwIDs);
 
         [DllImport("comctl32", ExactSpelling = true)]
         public static extern BOOL ShowHideMenuCtl(HWND hWnd, [NativeTypeName("UINT_PTR")] nuint uFlags, [NativeTypeName("LPINT")] int* lpInfo);
@@ -226,17 +224,16 @@ namespace TerraFX.Interop
         public static extern HRESULT UninitializeFlatSB(HWND param0);
 
         [DllImport("comctl32", ExactSpelling = true)]
-        public static extern BOOL SetWindowSubclass(HWND hWnd, [NativeTypeName("SUBCLASSPROC")] delegate* unmanaged<HWND, uint, nuint, nint, nuint, nuint, nint> pfnSubclass, [NativeTypeName("UINT_PTR")] nuint uIdSubclass, [NativeTypeName("DWORD_PTR")] nuint dwRefData);
+        public static extern BOOL SetWindowSubclass(HWND hWnd, [NativeTypeName("SUBCLASSPROC")] delegate* unmanaged<HWND, uint, WPARAM, LPARAM, nuint, nuint, LRESULT> pfnSubclass, [NativeTypeName("UINT_PTR")] nuint uIdSubclass, [NativeTypeName("DWORD_PTR")] nuint dwRefData);
 
         [DllImport("comctl32", ExactSpelling = true)]
-        public static extern BOOL GetWindowSubclass(HWND hWnd, [NativeTypeName("SUBCLASSPROC")] delegate* unmanaged<HWND, uint, nuint, nint, nuint, nuint, nint> pfnSubclass, [NativeTypeName("UINT_PTR")] nuint uIdSubclass, [NativeTypeName("DWORD_PTR *")] nuint* pdwRefData);
+        public static extern BOOL GetWindowSubclass(HWND hWnd, [NativeTypeName("SUBCLASSPROC")] delegate* unmanaged<HWND, uint, WPARAM, LPARAM, nuint, nuint, LRESULT> pfnSubclass, [NativeTypeName("UINT_PTR")] nuint uIdSubclass, [NativeTypeName("DWORD_PTR *")] nuint* pdwRefData);
 
         [DllImport("comctl32", ExactSpelling = true)]
-        public static extern BOOL RemoveWindowSubclass(HWND hWnd, [NativeTypeName("SUBCLASSPROC")] delegate* unmanaged<HWND, uint, nuint, nint, nuint, nuint, nint> pfnSubclass, [NativeTypeName("UINT_PTR")] nuint uIdSubclass);
+        public static extern BOOL RemoveWindowSubclass(HWND hWnd, [NativeTypeName("SUBCLASSPROC")] delegate* unmanaged<HWND, uint, WPARAM, LPARAM, nuint, nuint, LRESULT> pfnSubclass, [NativeTypeName("UINT_PTR")] nuint uIdSubclass);
 
         [DllImport("comctl32", ExactSpelling = true)]
-        [return: NativeTypeName("LRESULT")]
-        public static extern nint DefSubclassProc(HWND hWnd, uint uMsg, [NativeTypeName("WPARAM")] nuint wParam, [NativeTypeName("LPARAM")] nint lParam);
+        public static extern LRESULT DefSubclassProc(HWND hWnd, uint uMsg, WPARAM wParam, LPARAM lParam);
 
         [DllImport("comctl32", ExactSpelling = true)]
         public static extern HRESULT LoadIconMetric(HINSTANCE hinst, [NativeTypeName("PCWSTR")] ushort* pszName, int lims, HICON* phico);
@@ -245,7 +242,7 @@ namespace TerraFX.Interop
         public static extern HRESULT LoadIconWithScaleDown(HINSTANCE hinst, [NativeTypeName("PCWSTR")] ushort* pszName, int cx, int cy, HICON* phico);
 
         [DllImport("comctl32", ExactSpelling = true)]
-        public static extern int DrawShadowText(HDC hdc, [NativeTypeName("LPCWSTR")] ushort* pszText, uint cch, RECT* prc, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("COLORREF")] uint crText, [NativeTypeName("COLORREF")] uint crShadow, int ixOffset, int iyOffset);
+        public static extern int DrawShadowText(HDC hdc, [NativeTypeName("LPCWSTR")] ushort* pszText, uint cch, RECT* prc, [NativeTypeName("DWORD")] uint dwFlags, COLORREF crText, COLORREF crShadow, int ixOffset, int iyOffset);
 
         [NativeTypeName("#define ICC_LISTVIEW_CLASSES 0x00000001")]
         public const int ICC_LISTVIEW_CLASSES = 0x00000001;
@@ -794,7 +791,7 @@ namespace TerraFX.Interop
         public const int ILGT_ASYNC = 0x00000001;
 
         [NativeTypeName("#define ImageList_LoadImage ImageList_LoadImageW")]
-        public static delegate*<HINSTANCE, ushort*, int, int, uint, uint, uint, HIMAGELIST> ImageList_LoadImage => &ImageList_LoadImageW;
+        public static delegate*<HINSTANCE, ushort*, int, int, COLORREF, uint, uint, HIMAGELIST> ImageList_LoadImage => &ImageList_LoadImageW;
 
         [NativeTypeName("#define ILCF_MOVE (0x00000000)")]
         public const int ILCF_MOVE = (0x00000000);

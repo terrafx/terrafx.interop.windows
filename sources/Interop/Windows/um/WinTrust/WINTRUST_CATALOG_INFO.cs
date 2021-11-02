@@ -32,7 +32,6 @@ namespace TerraFX.Interop
         [NativeTypeName("PCCTL_CONTEXT")]
         public CTL_CONTEXT* pcCatalogContext;
 
-        [NativeTypeName("HCATADMIN")]
-        public HANDLE hCatAdmin;
+        public HCATADMIN hCatAdmin;
     }
 }

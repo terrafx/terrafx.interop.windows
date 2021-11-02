@@ -83,16 +83,16 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(9)]
-        public HRESULT SetBackgroundClr([NativeTypeName("COLORREF")] uint ClrBkg)
+        public HRESULT SetBackgroundClr(COLORREF ClrBkg)
         {
-            return ((delegate* unmanaged<IVMRMixerControl*, uint, int>)(lpVtbl[9]))((IVMRMixerControl*)Unsafe.AsPointer(ref this), ClrBkg);
+            return ((delegate* unmanaged<IVMRMixerControl*, COLORREF, int>)(lpVtbl[9]))((IVMRMixerControl*)Unsafe.AsPointer(ref this), ClrBkg);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(10)]
-        public HRESULT GetBackgroundClr([NativeTypeName("COLORREF *")] uint* lpClrBkg)
+        public HRESULT GetBackgroundClr(COLORREF* lpClrBkg)
         {
-            return ((delegate* unmanaged<IVMRMixerControl*, uint*, int>)(lpVtbl[10]))((IVMRMixerControl*)Unsafe.AsPointer(ref this), lpClrBkg);
+            return ((delegate* unmanaged<IVMRMixerControl*, COLORREF*, int>)(lpVtbl[10]))((IVMRMixerControl*)Unsafe.AsPointer(ref this), lpClrBkg);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

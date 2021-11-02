@@ -13,8 +13,7 @@ namespace TerraFX.Interop
 
         public uint wID;
 
-        [NativeTypeName("LPARAM")]
-        public nint lParam;
+        public LPARAM lParam;
 
         public uint uMsg;
 

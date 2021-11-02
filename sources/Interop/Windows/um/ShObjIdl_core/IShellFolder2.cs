@@ -69,9 +69,9 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(7)]
-        public HRESULT CompareIDs([NativeTypeName("LPARAM")] nint lParam, [NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidl1, [NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidl2)
+        public HRESULT CompareIDs(LPARAM lParam, [NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidl1, [NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidl2)
         {
-            return ((delegate* unmanaged<IShellFolder2*, nint, ITEMIDLIST*, ITEMIDLIST*, int>)(lpVtbl[7]))((IShellFolder2*)Unsafe.AsPointer(ref this), lParam, pidl1, pidl2);
+            return ((delegate* unmanaged<IShellFolder2*, LPARAM, ITEMIDLIST*, ITEMIDLIST*, int>)(lpVtbl[7]))((IShellFolder2*)Unsafe.AsPointer(ref this), lParam, pidl1, pidl2);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

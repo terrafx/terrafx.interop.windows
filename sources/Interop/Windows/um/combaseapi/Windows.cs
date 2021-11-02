@@ -15,10 +15,10 @@ namespace TerraFX.Interop
         public static extern HRESULT CoGetMalloc([NativeTypeName("DWORD")] uint dwMemContext, [NativeTypeName("LPMALLOC *")] IMalloc** ppMalloc);
 
         [DllImport("ole32", ExactSpelling = true)]
-        public static extern HRESULT CreateStreamOnHGlobal([NativeTypeName("HGLOBAL")] HANDLE hGlobal, BOOL fDeleteOnRelease, [NativeTypeName("LPSTREAM *")] IStream** ppstm);
+        public static extern HRESULT CreateStreamOnHGlobal(HGLOBAL hGlobal, BOOL fDeleteOnRelease, [NativeTypeName("LPSTREAM *")] IStream** ppstm);
 
         [DllImport("ole32", ExactSpelling = true)]
-        public static extern HRESULT GetHGlobalFromStream([NativeTypeName("LPSTREAM")] IStream* pstm, [NativeTypeName("HGLOBAL *")] HANDLE* phglobal);
+        public static extern HRESULT GetHGlobalFromStream([NativeTypeName("LPSTREAM")] IStream* pstm, HGLOBAL* phglobal);
 
         [DllImport("ole32", ExactSpelling = true)]
         public static extern void CoUninitialize();

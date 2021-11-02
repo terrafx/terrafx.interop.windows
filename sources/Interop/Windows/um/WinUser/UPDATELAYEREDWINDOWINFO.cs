@@ -23,8 +23,7 @@ namespace TerraFX.Interop
         [NativeTypeName("const POINT *")]
         public POINT* pptSrc;
 
-        [NativeTypeName("COLORREF")]
-        public uint crKey;
+        public COLORREF crKey;
 
         [NativeTypeName("const BLENDFUNCTION *")]
         public BLENDFUNCTION* pblend;

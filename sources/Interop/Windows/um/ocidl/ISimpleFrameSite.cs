@@ -41,16 +41,16 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        public HRESULT PreMessageFilter(HWND hWnd, uint msg, [NativeTypeName("WPARAM")] nuint wp, [NativeTypeName("LPARAM")] nint lp, [NativeTypeName("LRESULT *")] nint* plResult, [NativeTypeName("DWORD *")] uint* pdwCookie)
+        public HRESULT PreMessageFilter(HWND hWnd, uint msg, WPARAM wp, LPARAM lp, LRESULT* plResult, [NativeTypeName("DWORD *")] uint* pdwCookie)
         {
-            return ((delegate* unmanaged<ISimpleFrameSite*, HWND, uint, nuint, nint, nint*, uint*, int>)(lpVtbl[3]))((ISimpleFrameSite*)Unsafe.AsPointer(ref this), hWnd, msg, wp, lp, plResult, pdwCookie);
+            return ((delegate* unmanaged<ISimpleFrameSite*, HWND, uint, WPARAM, LPARAM, LRESULT*, uint*, int>)(lpVtbl[3]))((ISimpleFrameSite*)Unsafe.AsPointer(ref this), hWnd, msg, wp, lp, plResult, pdwCookie);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        public HRESULT PostMessageFilter(HWND hWnd, uint msg, [NativeTypeName("WPARAM")] nuint wp, [NativeTypeName("LPARAM")] nint lp, [NativeTypeName("LRESULT *")] nint* plResult, [NativeTypeName("DWORD")] uint dwCookie)
+        public HRESULT PostMessageFilter(HWND hWnd, uint msg, WPARAM wp, LPARAM lp, LRESULT* plResult, [NativeTypeName("DWORD")] uint dwCookie)
         {
-            return ((delegate* unmanaged<ISimpleFrameSite*, HWND, uint, nuint, nint, nint*, uint, int>)(lpVtbl[4]))((ISimpleFrameSite*)Unsafe.AsPointer(ref this), hWnd, msg, wp, lp, plResult, dwCookie);
+            return ((delegate* unmanaged<ISimpleFrameSite*, HWND, uint, WPARAM, LPARAM, LRESULT*, uint, int>)(lpVtbl[4]))((ISimpleFrameSite*)Unsafe.AsPointer(ref this), hWnd, msg, wp, lp, plResult, dwCookie);
         }
     }
 }

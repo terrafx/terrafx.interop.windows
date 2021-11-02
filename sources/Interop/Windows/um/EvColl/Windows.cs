@@ -10,42 +10,40 @@ namespace TerraFX.Interop
     public static unsafe partial class Windows
     {
         [DllImport("wecapi", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("EC_HANDLE")]
-        public static extern HANDLE EcOpenSubscriptionEnum([NativeTypeName("DWORD")] uint Flags);
+        public static extern EC_HANDLE EcOpenSubscriptionEnum([NativeTypeName("DWORD")] uint Flags);
 
         [DllImport("wecapi", ExactSpelling = true)]
-        public static extern BOOL EcEnumNextSubscription([NativeTypeName("EC_HANDLE")] HANDLE SubscriptionEnum, [NativeTypeName("DWORD")] uint SubscriptionNameBufferSize, [NativeTypeName("LPWSTR")] ushort* SubscriptionNameBuffer, [NativeTypeName("PDWORD")] uint* SubscriptionNameBufferUsed);
+        public static extern BOOL EcEnumNextSubscription(EC_HANDLE SubscriptionEnum, [NativeTypeName("DWORD")] uint SubscriptionNameBufferSize, [NativeTypeName("LPWSTR")] ushort* SubscriptionNameBuffer, [NativeTypeName("PDWORD")] uint* SubscriptionNameBufferUsed);
 
         [DllImport("wecapi", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("EC_HANDLE")]
-        public static extern HANDLE EcOpenSubscription([NativeTypeName("LPCWSTR")] ushort* SubscriptionName, [NativeTypeName("DWORD")] uint AccessMask, [NativeTypeName("DWORD")] uint Flags);
+        public static extern EC_HANDLE EcOpenSubscription([NativeTypeName("LPCWSTR")] ushort* SubscriptionName, [NativeTypeName("DWORD")] uint AccessMask, [NativeTypeName("DWORD")] uint Flags);
 
         [DllImport("wecapi", ExactSpelling = true)]
-        public static extern BOOL EcSetSubscriptionProperty([NativeTypeName("EC_HANDLE")] HANDLE Subscription, EC_SUBSCRIPTION_PROPERTY_ID PropertyId, [NativeTypeName("DWORD")] uint Flags, [NativeTypeName("PEC_VARIANT")] EC_VARIANT* PropertyValue);
+        public static extern BOOL EcSetSubscriptionProperty(EC_HANDLE Subscription, EC_SUBSCRIPTION_PROPERTY_ID PropertyId, [NativeTypeName("DWORD")] uint Flags, [NativeTypeName("PEC_VARIANT")] EC_VARIANT* PropertyValue);
 
         [DllImport("wecapi", ExactSpelling = true)]
-        public static extern BOOL EcGetSubscriptionProperty([NativeTypeName("EC_HANDLE")] HANDLE Subscription, EC_SUBSCRIPTION_PROPERTY_ID PropertyId, [NativeTypeName("DWORD")] uint Flags, [NativeTypeName("DWORD")] uint PropertyValueBufferSize, [NativeTypeName("PEC_VARIANT")] EC_VARIANT* PropertyValueBuffer, [NativeTypeName("PDWORD")] uint* PropertyValueBufferUsed);
+        public static extern BOOL EcGetSubscriptionProperty(EC_HANDLE Subscription, EC_SUBSCRIPTION_PROPERTY_ID PropertyId, [NativeTypeName("DWORD")] uint Flags, [NativeTypeName("DWORD")] uint PropertyValueBufferSize, [NativeTypeName("PEC_VARIANT")] EC_VARIANT* PropertyValueBuffer, [NativeTypeName("PDWORD")] uint* PropertyValueBufferUsed);
 
         [DllImport("wecapi", ExactSpelling = true)]
-        public static extern BOOL EcSaveSubscription([NativeTypeName("EC_HANDLE")] HANDLE Subscription, [NativeTypeName("DWORD")] uint Flags);
+        public static extern BOOL EcSaveSubscription(EC_HANDLE Subscription, [NativeTypeName("DWORD")] uint Flags);
 
         [DllImport("wecapi", ExactSpelling = true)]
         public static extern BOOL EcDeleteSubscription([NativeTypeName("LPCWSTR")] ushort* SubscriptionName, [NativeTypeName("DWORD")] uint Flags);
 
         [DllImport("wecapi", ExactSpelling = true)]
-        public static extern BOOL EcGetObjectArraySize([NativeTypeName("EC_OBJECT_ARRAY_PROPERTY_HANDLE")] HANDLE ObjectArray, [NativeTypeName("PDWORD")] uint* ObjectArraySize);
+        public static extern BOOL EcGetObjectArraySize(EC_OBJECT_ARRAY_PROPERTY_HANDLE ObjectArray, [NativeTypeName("PDWORD")] uint* ObjectArraySize);
 
         [DllImport("wecapi", ExactSpelling = true)]
-        public static extern BOOL EcSetObjectArrayProperty([NativeTypeName("EC_OBJECT_ARRAY_PROPERTY_HANDLE")] HANDLE ObjectArray, EC_SUBSCRIPTION_PROPERTY_ID PropertyId, [NativeTypeName("DWORD")] uint ArrayIndex, [NativeTypeName("DWORD")] uint Flags, [NativeTypeName("PEC_VARIANT")] EC_VARIANT* PropertyValue);
+        public static extern BOOL EcSetObjectArrayProperty(EC_OBJECT_ARRAY_PROPERTY_HANDLE ObjectArray, EC_SUBSCRIPTION_PROPERTY_ID PropertyId, [NativeTypeName("DWORD")] uint ArrayIndex, [NativeTypeName("DWORD")] uint Flags, [NativeTypeName("PEC_VARIANT")] EC_VARIANT* PropertyValue);
 
         [DllImport("wecapi", ExactSpelling = true)]
-        public static extern BOOL EcGetObjectArrayProperty([NativeTypeName("EC_OBJECT_ARRAY_PROPERTY_HANDLE")] HANDLE ObjectArray, EC_SUBSCRIPTION_PROPERTY_ID PropertyId, [NativeTypeName("DWORD")] uint ArrayIndex, [NativeTypeName("DWORD")] uint Flags, [NativeTypeName("DWORD")] uint PropertyValueBufferSize, [NativeTypeName("PEC_VARIANT")] EC_VARIANT* PropertyValueBuffer, [NativeTypeName("PDWORD")] uint* PropertyValueBufferUsed);
+        public static extern BOOL EcGetObjectArrayProperty(EC_OBJECT_ARRAY_PROPERTY_HANDLE ObjectArray, EC_SUBSCRIPTION_PROPERTY_ID PropertyId, [NativeTypeName("DWORD")] uint ArrayIndex, [NativeTypeName("DWORD")] uint Flags, [NativeTypeName("DWORD")] uint PropertyValueBufferSize, [NativeTypeName("PEC_VARIANT")] EC_VARIANT* PropertyValueBuffer, [NativeTypeName("PDWORD")] uint* PropertyValueBufferUsed);
 
         [DllImport("wecapi", ExactSpelling = true)]
-        public static extern BOOL EcInsertObjectArrayElement([NativeTypeName("EC_OBJECT_ARRAY_PROPERTY_HANDLE")] HANDLE ObjectArray, [NativeTypeName("DWORD")] uint ArrayIndex);
+        public static extern BOOL EcInsertObjectArrayElement(EC_OBJECT_ARRAY_PROPERTY_HANDLE ObjectArray, [NativeTypeName("DWORD")] uint ArrayIndex);
 
         [DllImport("wecapi", ExactSpelling = true)]
-        public static extern BOOL EcRemoveObjectArrayElement([NativeTypeName("EC_OBJECT_ARRAY_PROPERTY_HANDLE")] HANDLE ObjectArray, [NativeTypeName("DWORD")] uint ArrayIndex);
+        public static extern BOOL EcRemoveObjectArrayElement(EC_OBJECT_ARRAY_PROPERTY_HANDLE ObjectArray, [NativeTypeName("DWORD")] uint ArrayIndex);
 
         [DllImport("wecapi", ExactSpelling = true)]
         public static extern BOOL EcGetSubscriptionRunTimeStatus([NativeTypeName("LPCWSTR")] ushort* SubscriptionName, EC_SUBSCRIPTION_RUNTIME_STATUS_INFO_ID StatusInfoId, [NativeTypeName("LPCWSTR")] ushort* EventSourceName, [NativeTypeName("DWORD")] uint Flags, [NativeTypeName("DWORD")] uint StatusValueBufferSize, [NativeTypeName("PEC_VARIANT")] EC_VARIANT* StatusValueBuffer, [NativeTypeName("PDWORD")] uint* StatusValueBufferUsed);
@@ -54,7 +52,7 @@ namespace TerraFX.Interop
         public static extern BOOL EcRetrySubscription([NativeTypeName("LPCWSTR")] ushort* SubscriptionName, [NativeTypeName("LPCWSTR")] ushort* EventSourceName, [NativeTypeName("DWORD")] uint Flags);
 
         [DllImport("wecapi", ExactSpelling = true)]
-        public static extern BOOL EcClose([NativeTypeName("EC_HANDLE")] HANDLE Object);
+        public static extern BOOL EcClose(EC_HANDLE Object);
 
         [NativeTypeName("#define EC_VARIANT_TYPE_MASK 0x7f")]
         public const int EC_VARIANT_TYPE_MASK = 0x7f;

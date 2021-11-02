@@ -16,7 +16,6 @@ namespace TerraFX.Interop
 
         public HTREEITEM hItem;
 
-        [NativeTypeName("LPARAM")]
-        public nint lParam;
+        public LPARAM lParam;
     }
 }

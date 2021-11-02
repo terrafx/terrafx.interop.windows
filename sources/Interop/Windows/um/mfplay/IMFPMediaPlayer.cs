@@ -251,16 +251,16 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(33)]
-        public HRESULT SetBorderColor([NativeTypeName("COLORREF")] uint Clr)
+        public HRESULT SetBorderColor(COLORREF Clr)
         {
-            return ((delegate* unmanaged<IMFPMediaPlayer*, uint, int>)(lpVtbl[33]))((IMFPMediaPlayer*)Unsafe.AsPointer(ref this), Clr);
+            return ((delegate* unmanaged<IMFPMediaPlayer*, COLORREF, int>)(lpVtbl[33]))((IMFPMediaPlayer*)Unsafe.AsPointer(ref this), Clr);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(34)]
-        public HRESULT GetBorderColor([NativeTypeName("COLORREF *")] uint* pClr)
+        public HRESULT GetBorderColor(COLORREF* pClr)
         {
-            return ((delegate* unmanaged<IMFPMediaPlayer*, uint*, int>)(lpVtbl[34]))((IMFPMediaPlayer*)Unsafe.AsPointer(ref this), pClr);
+            return ((delegate* unmanaged<IMFPMediaPlayer*, COLORREF*, int>)(lpVtbl[34]))((IMFPMediaPlayer*)Unsafe.AsPointer(ref this), pClr);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

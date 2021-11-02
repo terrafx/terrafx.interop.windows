@@ -21,7 +21,6 @@ namespace TerraFX.Interop
 
         public float fAlpha;
 
-        [NativeTypeName("COLORREF")]
-        public uint clrSrcKey;
+        public COLORREF clrSrcKey;
     }
 }
