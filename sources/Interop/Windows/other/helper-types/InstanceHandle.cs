@@ -86,6 +86,5 @@ namespace TerraFX.Interop
         public override string ToString() => Value.ToString("X16");
 
         public string ToString(string? format, IFormatProvider? formatProvider) => Value.ToString(format, formatProvider);
-
     }
 }
