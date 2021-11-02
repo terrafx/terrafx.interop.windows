@@ -374,7 +374,7 @@ namespace TerraFX.Interop
             => fn((hwnd), WM_SETTEXT, 0u, (LPARAM)(ushort*)(lpszText));
 
         /* INT Cls_OnGetText(HWND hwnd, int cchTextMax, LPTSTR lpszText) */
-        public static LRESULT HANDLE_WM_GETTEXT(HWND hwnd, WPARAM wParam, LPARAM lParam, delegate*<HWND, int,ushort*, int> fn)
+        public static LRESULT HANDLE_WM_GETTEXT(HWND hwnd, WPARAM wParam, LPARAM lParam, delegate*<HWND, int, ushort*, int> fn)
             => (LRESULT)(uint)(int)fn((hwnd), (int)(wParam), (ushort*)(lParam));
 
         public static int FORWARD_WM_GETTEXT(HWND hwnd, int cchTextMax, ushort* lpszText, delegate*<HWND, uint, WPARAM, LPARAM, LRESULT> fn)
@@ -466,7 +466,7 @@ namespace TerraFX.Interop
             => (LRESULT)(uint)(BOOL)fn((hwnd), (HDC)(wParam));
 
         public static BOOL FORWARD_WM_ERASEBKGND(HWND hwnd, HDC hdc, delegate*<HWND, uint, WPARAM, LPARAM, LRESULT> fn)
-            => (BOOL)(uint)fn((hwnd), WM_ERASEBKGND, (WPARAM)(HDC) (hdc), 0);
+            => (BOOL)(uint)fn((hwnd), WM_ERASEBKGND, (WPARAM)(HDC)(hdc), 0);
 
         /* BOOL Cls_OnIconEraseBkgnd(HWND hwnd, HDC hdc) */
         public static LRESULT HANDLE_WM_ICONERASEBKGND(HWND hwnd, WPARAM wParam, LPARAM lParam, delegate*<HWND, HDC, BOOL> fn)
@@ -641,7 +641,7 @@ namespace TerraFX.Interop
         }
 
         public static void FORWARD_WM_SYSDEADCHAR(HWND hwnd, ushort ch, int cRepeat, delegate*<HWND, uint, WPARAM, LPARAM, LRESULT> fn)
-            => fn((hwnd), WM_SYSDEADCHAR, (WPARAM)(ushort )(ch), MAKELPARAM((cRepeat), 0));
+            => fn((hwnd), WM_SYSDEADCHAR, (WPARAM)(ushort)(ch), MAKELPARAM((cRepeat), 0));
 
         /* void Cls_OnMouseMove(HWND hwnd, int x, int y, UINT keyFlags) */
         public static LRESULT HANDLE_WM_MOUSEMOVE(HWND hwnd, WPARAM wParam, LPARAM lParam, delegate*<HWND, int, int, uint, void> fn)
@@ -1182,7 +1182,7 @@ namespace TerraFX.Interop
             => (HWND)(nuint)fn((hwnd), WM_MDIGETACTIVE, 0u, 0);
 
         /* HMENU Cls_MDISetMenu(HWND hwnd, BOOL fRefresh, HMENU hmenuFrame, HMENU hmenuWindow) */
-        public static LRESULT HANDLE_WM_MDISETMENU(HWND hwnd, WPARAM wParam, LPARAM lParam, delegate*<HWND,BOOL, HMENU, HMENU, HMENU> fn)
+        public static LRESULT HANDLE_WM_MDISETMENU(HWND hwnd, WPARAM wParam, LPARAM lParam, delegate*<HWND, BOOL, HMENU, HMENU, HMENU> fn)
             => (LRESULT)(nuint)fn((hwnd), (BOOL)(wParam), (HMENU)(wParam), (HMENU)(lParam));
 
         public static HMENU FORWARD_WM_MDISETMENU(HWND hwnd, BOOL fRefresh, HMENU hmenuFrame, HMENU hmenuWindow, delegate*<HWND, uint, WPARAM, LPARAM, LRESULT> fn)
@@ -1307,7 +1307,7 @@ namespace TerraFX.Interop
         }
 
         public static void FORWARD_WM_DRAWITEM(HWND hwnd, DRAWITEMSTRUCT* lpDrawItem, delegate*<HWND, uint, WPARAM, LPARAM, LRESULT> fn)
-            => fn((hwnd), WM_DRAWITEM, (WPARAM)(((DRAWITEMSTRUCT*)lpDrawItem)->CtlID), (LPARAM) (DRAWITEMSTRUCT*)(lpDrawItem));
+            => fn((hwnd), WM_DRAWITEM, (WPARAM)(((DRAWITEMSTRUCT*)lpDrawItem)->CtlID), (LPARAM)(DRAWITEMSTRUCT*)(lpDrawItem));
 
         /* void Cls_OnMeasureItem(HWND hwnd, MEASUREITEMSTRUCT * lpMeasureItem) */
         public static LRESULT HANDLE_WM_MEASUREITEM(HWND hwnd, WPARAM wParam, LPARAM lParam, delegate*<HWND, MEASUREITEMSTRUCT*, void> fn)
@@ -1327,14 +1327,14 @@ namespace TerraFX.Interop
         }
 
         public static void FORWARD_WM_DELETEITEM(HWND hwnd, DELETEITEMSTRUCT* lpDeleteItem, delegate*<HWND, uint, WPARAM, LPARAM, LRESULT> fn)
-            => fn((hwnd), WM_DELETEITEM, (WPARAM)(((DELETEITEMSTRUCT*)(lpDeleteItem))->CtlID), (LPARAM) (DELETEITEMSTRUCT*)(lpDeleteItem));
+            => fn((hwnd), WM_DELETEITEM, (WPARAM)(((DELETEITEMSTRUCT*)(lpDeleteItem))->CtlID), (LPARAM)(DELETEITEMSTRUCT*)(lpDeleteItem));
 
         /* int Cls_OnCompareItem(HWND hwnd, const COMPAREITEMSTRUCT * lpCompareItem) */
         public static LRESULT HANDLE_WM_COMPAREITEM(HWND hwnd, WPARAM wParam, LPARAM lParam, delegate*<HWND, COMPAREITEMSTRUCT*, int> fn)
             => (LRESULT)(uint)(int)fn((hwnd), (COMPAREITEMSTRUCT*)(lParam));
 
         public static int FORWARD_WM_COMPAREITEM(HWND hwnd, COMPAREITEMSTRUCT* lpCompareItem, delegate*<HWND, uint, WPARAM, LPARAM, LRESULT> fn)
-            => (int)(uint)fn((hwnd), WM_COMPAREITEM, (WPARAM)(((COMPAREITEMSTRUCT*)(lpCompareItem))->CtlID), (LPARAM) (COMPAREITEMSTRUCT*)(lpCompareItem));
+            => (int)(uint)fn((hwnd), WM_COMPAREITEM, (WPARAM)(((COMPAREITEMSTRUCT*)(lpCompareItem))->CtlID), (LPARAM)(COMPAREITEMSTRUCT*)(lpCompareItem));
 
         /* int Cls_OnVkeyToItem(HWND hwnd, UINT vk, HWND hwndListbox, int iCaret) */
         public static LRESULT HANDLE_WM_VKEYTOITEM(HWND hwnd, WPARAM wParam, LPARAM lParam, delegate*<HWND, uint, HWND, int, int> fn)
