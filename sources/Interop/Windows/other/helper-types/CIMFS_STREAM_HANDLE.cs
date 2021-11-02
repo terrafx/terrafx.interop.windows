@@ -63,7 +63,7 @@ namespace TerraFX.Interop
 
         public static explicit operator CIMFS_STREAM_HANDLE(ulong value) => new CIMFS_STREAM_HANDLE((nint)(value));
 
-        public static implicit operator ulong(CIMFS_STREAM_HANDLE value) => (ulong)(value.Value);
+        public static explicit operator ulong(CIMFS_STREAM_HANDLE value) => (ulong)(value.Value);
 
         public static explicit operator CIMFS_STREAM_HANDLE(nuint value) => new CIMFS_STREAM_HANDLE((nint)(value));
 

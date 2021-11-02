@@ -63,7 +63,7 @@ namespace TerraFX.Interop
 
         public static explicit operator HICON(ulong value) => new HICON((nint)(value));
 
-        public static implicit operator ulong(HICON value) => (ulong)(value.Value);
+        public static explicit operator ulong(HICON value) => (ulong)(value.Value);
 
         public static explicit operator HICON(nuint value) => new HICON((nint)(value));
 

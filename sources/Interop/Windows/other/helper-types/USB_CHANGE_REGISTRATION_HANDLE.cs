@@ -63,7 +63,7 @@ namespace TerraFX.Interop
 
         public static explicit operator USB_CHANGE_REGISTRATION_HANDLE(ulong value) => new USB_CHANGE_REGISTRATION_HANDLE((nint)(value));
 
-        public static implicit operator ulong(USB_CHANGE_REGISTRATION_HANDLE value) => (ulong)(value.Value);
+        public static explicit operator ulong(USB_CHANGE_REGISTRATION_HANDLE value) => (ulong)(value.Value);
 
         public static explicit operator USB_CHANGE_REGISTRATION_HANDLE(nuint value) => new USB_CHANGE_REGISTRATION_HANDLE((nint)(value));
 

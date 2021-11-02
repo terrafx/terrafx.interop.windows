@@ -63,7 +63,7 @@ namespace TerraFX.Interop
 
         public static explicit operator HIMCC(ulong value) => new HIMCC((nint)(value));
 
-        public static implicit operator ulong(HIMCC value) => (ulong)(value.Value);
+        public static explicit operator ulong(HIMCC value) => (ulong)(value.Value);
 
         public static explicit operator HIMCC(nuint value) => new HIMCC((nint)(value));
 

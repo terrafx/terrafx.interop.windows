@@ -63,7 +63,7 @@ namespace TerraFX.Interop
 
         public static explicit operator RAS_SERVER_HANDLE(ulong value) => new RAS_SERVER_HANDLE((nint)(value));
 
-        public static implicit operator ulong(RAS_SERVER_HANDLE value) => (ulong)(value.Value);
+        public static explicit operator ulong(RAS_SERVER_HANDLE value) => (ulong)(value.Value);
 
         public static explicit operator RAS_SERVER_HANDLE(nuint value) => new RAS_SERVER_HANDLE((nint)(value));
 

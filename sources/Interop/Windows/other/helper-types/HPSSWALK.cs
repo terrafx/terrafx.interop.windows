@@ -63,7 +63,7 @@ namespace TerraFX.Interop
 
         public static explicit operator HPSSWALK(ulong value) => new HPSSWALK((nint)(value));
 
-        public static implicit operator ulong(HPSSWALK value) => (ulong)(value.Value);
+        public static explicit operator ulong(HPSSWALK value) => (ulong)(value.Value);
 
         public static explicit operator HPSSWALK(nuint value) => new HPSSWALK((nint)(value));
 

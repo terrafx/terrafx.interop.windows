@@ -63,7 +63,7 @@ namespace TerraFX.Interop
 
         public static explicit operator HOBJECT(ulong value) => new HOBJECT((nint)(value));
 
-        public static implicit operator ulong(HOBJECT value) => (ulong)(value.Value);
+        public static explicit operator ulong(HOBJECT value) => (ulong)(value.Value);
 
         public static explicit operator HOBJECT(nuint value) => new HOBJECT((nint)(value));
 

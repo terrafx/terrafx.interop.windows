@@ -63,7 +63,7 @@ namespace TerraFX.Interop
 
         public static explicit operator HRECOGNIZER(ulong value) => new HRECOGNIZER((nint)(value));
 
-        public static implicit operator ulong(HRECOGNIZER value) => (ulong)(value.Value);
+        public static explicit operator ulong(HRECOGNIZER value) => (ulong)(value.Value);
 
         public static explicit operator HRECOGNIZER(nuint value) => new HRECOGNIZER((nint)(value));
 

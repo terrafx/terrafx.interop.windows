@@ -63,7 +63,7 @@ namespace TerraFX.Interop
 
         public static explicit operator HDC(ulong value) => new HDC((nint)(value));
 
-        public static implicit operator ulong(HDC value) => (ulong)(value.Value);
+        public static explicit operator ulong(HDC value) => (ulong)(value.Value);
 
         public static explicit operator HDC(nuint value) => new HDC((nint)(value));
 

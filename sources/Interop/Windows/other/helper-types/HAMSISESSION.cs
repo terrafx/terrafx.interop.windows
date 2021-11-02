@@ -63,7 +63,7 @@ namespace TerraFX.Interop
 
         public static explicit operator HAMSISESSION(ulong value) => new HAMSISESSION((nint)(value));
 
-        public static implicit operator ulong(HAMSISESSION value) => (ulong)(value.Value);
+        public static explicit operator ulong(HAMSISESSION value) => (ulong)(value.Value);
 
         public static explicit operator HAMSISESSION(nuint value) => new HAMSISESSION((nint)(value));
 

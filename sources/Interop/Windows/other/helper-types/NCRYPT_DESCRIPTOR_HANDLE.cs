@@ -63,7 +63,7 @@ namespace TerraFX.Interop
 
         public static explicit operator NCRYPT_DESCRIPTOR_HANDLE(ulong value) => new NCRYPT_DESCRIPTOR_HANDLE((nint)(value));
 
-        public static implicit operator ulong(NCRYPT_DESCRIPTOR_HANDLE value) => (ulong)(value.Value);
+        public static explicit operator ulong(NCRYPT_DESCRIPTOR_HANDLE value) => (ulong)(value.Value);
 
         public static explicit operator NCRYPT_DESCRIPTOR_HANDLE(nuint value) => new NCRYPT_DESCRIPTOR_HANDLE((nint)(value));
 

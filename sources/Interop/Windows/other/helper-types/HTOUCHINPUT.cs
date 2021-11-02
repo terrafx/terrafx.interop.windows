@@ -63,7 +63,7 @@ namespace TerraFX.Interop
 
         public static explicit operator HTOUCHINPUT(ulong value) => new HTOUCHINPUT((nint)(value));
 
-        public static implicit operator ulong(HTOUCHINPUT value) => (ulong)(value.Value);
+        public static explicit operator ulong(HTOUCHINPUT value) => (ulong)(value.Value);
 
         public static explicit operator HTOUCHINPUT(nuint value) => new HTOUCHINPUT((nint)(value));
 

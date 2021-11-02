@@ -63,7 +63,7 @@ namespace TerraFX.Interop
 
         public static explicit operator HMIDIOUT(ulong value) => new HMIDIOUT((nint)(value));
 
-        public static implicit operator ulong(HMIDIOUT value) => (ulong)(value.Value);
+        public static explicit operator ulong(HMIDIOUT value) => (ulong)(value.Value);
 
         public static explicit operator HMIDIOUT(nuint value) => new HMIDIOUT((nint)(value));
 

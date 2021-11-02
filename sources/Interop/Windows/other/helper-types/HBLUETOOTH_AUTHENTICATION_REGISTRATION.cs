@@ -63,7 +63,7 @@ namespace TerraFX.Interop
 
         public static explicit operator HBLUETOOTH_AUTHENTICATION_REGISTRATION(ulong value) => new HBLUETOOTH_AUTHENTICATION_REGISTRATION((nint)(value));
 
-        public static implicit operator ulong(HBLUETOOTH_AUTHENTICATION_REGISTRATION value) => (ulong)(value.Value);
+        public static explicit operator ulong(HBLUETOOTH_AUTHENTICATION_REGISTRATION value) => (ulong)(value.Value);
 
         public static explicit operator HBLUETOOTH_AUTHENTICATION_REGISTRATION(nuint value) => new HBLUETOOTH_AUTHENTICATION_REGISTRATION((nint)(value));
 

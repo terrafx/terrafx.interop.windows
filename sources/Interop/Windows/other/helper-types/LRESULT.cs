@@ -51,7 +51,7 @@ namespace TerraFX.Interop
 
         public static explicit operator LRESULT(ulong value) => new LRESULT((nint)(value));
 
-        public static implicit operator ulong(LRESULT value) => (ulong)(value.Value);
+        public static explicit operator ulong(LRESULT value) => (ulong)(value.Value);
 
         public static explicit operator LRESULT(nuint value) => new LRESULT((nint)(value));
 

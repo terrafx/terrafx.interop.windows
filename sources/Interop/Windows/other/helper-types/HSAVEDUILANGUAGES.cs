@@ -63,7 +63,7 @@ namespace TerraFX.Interop
 
         public static explicit operator HSAVEDUILANGUAGES(ulong value) => new HSAVEDUILANGUAGES((nint)(value));
 
-        public static implicit operator ulong(HSAVEDUILANGUAGES value) => (ulong)(value.Value);
+        public static explicit operator ulong(HSAVEDUILANGUAGES value) => (ulong)(value.Value);
 
         public static explicit operator HSAVEDUILANGUAGES(nuint value) => new HSAVEDUILANGUAGES((nint)(value));
 

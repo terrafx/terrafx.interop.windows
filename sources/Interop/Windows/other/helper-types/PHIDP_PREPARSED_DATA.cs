@@ -57,7 +57,7 @@ namespace TerraFX.Interop
 
         public static explicit operator PHIDP_PREPARSED_DATA(ulong value) => new PHIDP_PREPARSED_DATA((nint)(value));
 
-        public static implicit operator ulong(PHIDP_PREPARSED_DATA value) => (ulong)(value.Value);
+        public static explicit operator ulong(PHIDP_PREPARSED_DATA value) => (ulong)(value.Value);
 
         public static explicit operator PHIDP_PREPARSED_DATA(nuint value) => new PHIDP_PREPARSED_DATA((nint)(value));
 

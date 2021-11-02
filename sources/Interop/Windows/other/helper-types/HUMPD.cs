@@ -63,7 +63,7 @@ namespace TerraFX.Interop
 
         public static explicit operator HUMPD(ulong value) => new HUMPD((nint)(value));
 
-        public static implicit operator ulong(HUMPD value) => (ulong)(value.Value);
+        public static explicit operator ulong(HUMPD value) => (ulong)(value.Value);
 
         public static explicit operator HUMPD(nuint value) => new HUMPD((nint)(value));
 

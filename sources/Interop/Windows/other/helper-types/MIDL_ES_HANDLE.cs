@@ -63,7 +63,7 @@ namespace TerraFX.Interop
 
         public static explicit operator MIDL_ES_HANDLE(ulong value) => new MIDL_ES_HANDLE((nint)(value));
 
-        public static implicit operator ulong(MIDL_ES_HANDLE value) => (ulong)(value.Value);
+        public static explicit operator ulong(MIDL_ES_HANDLE value) => (ulong)(value.Value);
 
         public static explicit operator MIDL_ES_HANDLE(nuint value) => new MIDL_ES_HANDLE((nint)(value));
 

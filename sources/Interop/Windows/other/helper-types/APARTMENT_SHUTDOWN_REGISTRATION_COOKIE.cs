@@ -63,7 +63,7 @@ namespace TerraFX.Interop
 
         public static explicit operator APARTMENT_SHUTDOWN_REGISTRATION_COOKIE(ulong value) => new APARTMENT_SHUTDOWN_REGISTRATION_COOKIE((nint)(value));
 
-        public static implicit operator ulong(APARTMENT_SHUTDOWN_REGISTRATION_COOKIE value) => (ulong)(value.Value);
+        public static explicit operator ulong(APARTMENT_SHUTDOWN_REGISTRATION_COOKIE value) => (ulong)(value.Value);
 
         public static explicit operator APARTMENT_SHUTDOWN_REGISTRATION_COOKIE(nuint value) => new APARTMENT_SHUTDOWN_REGISTRATION_COOKIE((nint)(value));
 

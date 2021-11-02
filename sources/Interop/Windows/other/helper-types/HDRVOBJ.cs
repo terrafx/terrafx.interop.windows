@@ -63,7 +63,7 @@ namespace TerraFX.Interop
 
         public static explicit operator HDRVOBJ(ulong value) => new HDRVOBJ((nint)(value));
 
-        public static implicit operator ulong(HDRVOBJ value) => (ulong)(value.Value);
+        public static explicit operator ulong(HDRVOBJ value) => (ulong)(value.Value);
 
         public static explicit operator HDRVOBJ(nuint value) => new HDRVOBJ((nint)(value));
 

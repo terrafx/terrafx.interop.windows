@@ -63,7 +63,7 @@ namespace TerraFX.Interop
 
         public static explicit operator HCURSOR(ulong value) => new HCURSOR((nint)(value));
 
-        public static implicit operator ulong(HCURSOR value) => (ulong)(value.Value);
+        public static explicit operator ulong(HCURSOR value) => (ulong)(value.Value);
 
         public static explicit operator HCURSOR(nuint value) => new HCURSOR((nint)(value));
 

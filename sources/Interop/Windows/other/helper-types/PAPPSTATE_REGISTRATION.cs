@@ -57,7 +57,7 @@ namespace TerraFX.Interop
 
         public static explicit operator PAPPSTATE_REGISTRATION(ulong value) => new PAPPSTATE_REGISTRATION((nint)(value));
 
-        public static implicit operator ulong(PAPPSTATE_REGISTRATION value) => (ulong)(value.Value);
+        public static explicit operator ulong(PAPPSTATE_REGISTRATION value) => (ulong)(value.Value);
 
         public static explicit operator PAPPSTATE_REGISTRATION(nuint value) => new PAPPSTATE_REGISTRATION((nint)(value));
 

@@ -63,7 +63,7 @@ namespace TerraFX.Interop
 
         public static explicit operator HIFTIMESTAMPCHANGE(ulong value) => new HIFTIMESTAMPCHANGE((nint)(value));
 
-        public static implicit operator ulong(HIFTIMESTAMPCHANGE value) => (ulong)(value.Value);
+        public static explicit operator ulong(HIFTIMESTAMPCHANGE value) => (ulong)(value.Value);
 
         public static explicit operator HIFTIMESTAMPCHANGE(nuint value) => new HIFTIMESTAMPCHANGE((nint)(value));
 

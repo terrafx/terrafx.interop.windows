@@ -63,7 +63,7 @@ namespace TerraFX.Interop
 
         public static explicit operator HRECOALT(ulong value) => new HRECOALT((nint)(value));
 
-        public static implicit operator ulong(HRECOALT value) => (ulong)(value.Value);
+        public static explicit operator ulong(HRECOALT value) => (ulong)(value.Value);
 
         public static explicit operator HRECOALT(nuint value) => new HRECOALT((nint)(value));
 

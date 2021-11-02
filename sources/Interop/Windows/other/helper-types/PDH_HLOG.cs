@@ -63,7 +63,7 @@ namespace TerraFX.Interop
 
         public static explicit operator PDH_HLOG(ulong value) => new PDH_HLOG((nint)(value));
 
-        public static implicit operator ulong(PDH_HLOG value) => (ulong)(value.Value);
+        public static explicit operator ulong(PDH_HLOG value) => (ulong)(value.Value);
 
         public static explicit operator PDH_HLOG(nuint value) => new PDH_HLOG((nint)(value));
 

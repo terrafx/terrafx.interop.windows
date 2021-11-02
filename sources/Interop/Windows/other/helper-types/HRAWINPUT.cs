@@ -63,7 +63,7 @@ namespace TerraFX.Interop
 
         public static explicit operator HRAWINPUT(ulong value) => new HRAWINPUT((nint)(value));
 
-        public static implicit operator ulong(HRAWINPUT value) => (ulong)(value.Value);
+        public static explicit operator ulong(HRAWINPUT value) => (ulong)(value.Value);
 
         public static explicit operator HRAWINPUT(nuint value) => new HRAWINPUT((nint)(value));
 

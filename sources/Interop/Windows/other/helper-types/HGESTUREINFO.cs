@@ -63,7 +63,7 @@ namespace TerraFX.Interop
 
         public static explicit operator HGESTUREINFO(ulong value) => new HGESTUREINFO((nint)(value));
 
-        public static implicit operator ulong(HGESTUREINFO value) => (ulong)(value.Value);
+        public static explicit operator ulong(HGESTUREINFO value) => (ulong)(value.Value);
 
         public static explicit operator HGESTUREINFO(nuint value) => new HGESTUREINFO((nint)(value));
 

@@ -63,7 +63,7 @@ namespace TerraFX.Interop
 
         public static explicit operator SC_HANDLE(ulong value) => new SC_HANDLE((nint)(value));
 
-        public static implicit operator ulong(SC_HANDLE value) => (ulong)(value.Value);
+        public static explicit operator ulong(SC_HANDLE value) => (ulong)(value.Value);
 
         public static explicit operator SC_HANDLE(nuint value) => new SC_HANDLE((nint)(value));
 

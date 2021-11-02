@@ -63,7 +63,7 @@ namespace TerraFX.Interop
 
         public static explicit operator HDIAGNOSTIC_REPORT(ulong value) => new HDIAGNOSTIC_REPORT((nint)(value));
 
-        public static implicit operator ulong(HDIAGNOSTIC_REPORT value) => (ulong)(value.Value);
+        public static explicit operator ulong(HDIAGNOSTIC_REPORT value) => (ulong)(value.Value);
 
         public static explicit operator HDIAGNOSTIC_REPORT(nuint value) => new HDIAGNOSTIC_REPORT((nint)(value));
 

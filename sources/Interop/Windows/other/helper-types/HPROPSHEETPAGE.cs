@@ -63,7 +63,7 @@ namespace TerraFX.Interop
 
         public static explicit operator HPROPSHEETPAGE(ulong value) => new HPROPSHEETPAGE((nint)(value));
 
-        public static implicit operator ulong(HPROPSHEETPAGE value) => (ulong)(value.Value);
+        public static explicit operator ulong(HPROPSHEETPAGE value) => (ulong)(value.Value);
 
         public static explicit operator HPROPSHEETPAGE(nuint value) => new HPROPSHEETPAGE((nint)(value));
 

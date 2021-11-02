@@ -63,7 +63,7 @@ namespace TerraFX.Interop
 
         public static explicit operator HANIMATIONBUFFER(ulong value) => new HANIMATIONBUFFER((nint)(value));
 
-        public static implicit operator ulong(HANIMATIONBUFFER value) => (ulong)(value.Value);
+        public static explicit operator ulong(HANIMATIONBUFFER value) => (ulong)(value.Value);
 
         public static explicit operator HANIMATIONBUFFER(nuint value) => new HANIMATIONBUFFER((nint)(value));
 

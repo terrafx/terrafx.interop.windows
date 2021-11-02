@@ -63,7 +63,7 @@ namespace TerraFX.Interop
 
         public static explicit operator HINTERACTIONCONTEXT(ulong value) => new HINTERACTIONCONTEXT((nint)(value));
 
-        public static implicit operator ulong(HINTERACTIONCONTEXT value) => (ulong)(value.Value);
+        public static explicit operator ulong(HINTERACTIONCONTEXT value) => (ulong)(value.Value);
 
         public static explicit operator HINTERACTIONCONTEXT(nuint value) => new HINTERACTIONCONTEXT((nint)(value));
 

@@ -63,7 +63,7 @@ namespace TerraFX.Interop
 
         public static explicit operator HWAVEOUT(ulong value) => new HWAVEOUT((nint)(value));
 
-        public static implicit operator ulong(HWAVEOUT value) => (ulong)(value.Value);
+        public static explicit operator ulong(HWAVEOUT value) => (ulong)(value.Value);
 
         public static explicit operator HWAVEOUT(nuint value) => new HWAVEOUT((nint)(value));
 

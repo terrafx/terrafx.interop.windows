@@ -63,7 +63,7 @@ namespace TerraFX.Interop
 
         public static explicit operator HPROFILE(ulong value) => new HPROFILE((nint)(value));
 
-        public static implicit operator ulong(HPROFILE value) => (ulong)(value.Value);
+        public static explicit operator ulong(HPROFILE value) => (ulong)(value.Value);
 
         public static explicit operator HPROFILE(nuint value) => new HPROFILE((nint)(value));
 

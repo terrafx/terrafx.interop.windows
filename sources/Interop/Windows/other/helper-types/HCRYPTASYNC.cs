@@ -63,7 +63,7 @@ namespace TerraFX.Interop
 
         public static explicit operator HCRYPTASYNC(ulong value) => new HCRYPTASYNC((nint)(value));
 
-        public static implicit operator ulong(HCRYPTASYNC value) => (ulong)(value.Value);
+        public static explicit operator ulong(HCRYPTASYNC value) => (ulong)(value.Value);
 
         public static explicit operator HCRYPTASYNC(nuint value) => new HCRYPTASYNC((nint)(value));
 

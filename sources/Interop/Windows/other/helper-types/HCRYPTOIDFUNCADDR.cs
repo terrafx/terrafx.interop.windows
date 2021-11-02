@@ -63,7 +63,7 @@ namespace TerraFX.Interop
 
         public static explicit operator HCRYPTOIDFUNCADDR(ulong value) => new HCRYPTOIDFUNCADDR((nint)(value));
 
-        public static implicit operator ulong(HCRYPTOIDFUNCADDR value) => (ulong)(value.Value);
+        public static explicit operator ulong(HCRYPTOIDFUNCADDR value) => (ulong)(value.Value);
 
         public static explicit operator HCRYPTOIDFUNCADDR(nuint value) => new HCRYPTOIDFUNCADDR((nint)(value));
 

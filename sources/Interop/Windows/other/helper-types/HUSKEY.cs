@@ -63,7 +63,7 @@ namespace TerraFX.Interop
 
         public static explicit operator HUSKEY(ulong value) => new HUSKEY((nint)(value));
 
-        public static implicit operator ulong(HUSKEY value) => (ulong)(value.Value);
+        public static explicit operator ulong(HUSKEY value) => (ulong)(value.Value);
 
         public static explicit operator HUSKEY(nuint value) => new HUSKEY((nint)(value));
 

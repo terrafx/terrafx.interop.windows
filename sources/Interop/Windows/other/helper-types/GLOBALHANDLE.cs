@@ -63,7 +63,7 @@ namespace TerraFX.Interop
 
         public static explicit operator GLOBALHANDLE(ulong value) => new GLOBALHANDLE((nint)(value));
 
-        public static implicit operator ulong(GLOBALHANDLE value) => (ulong)(value.Value);
+        public static explicit operator ulong(GLOBALHANDLE value) => (ulong)(value.Value);
 
         public static explicit operator GLOBALHANDLE(nuint value) => new GLOBALHANDLE((nint)(value));
 

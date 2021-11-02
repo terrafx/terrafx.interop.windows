@@ -63,7 +63,7 @@ namespace TerraFX.Interop
 
         public static explicit operator HACMSTREAM(ulong value) => new HACMSTREAM((nint)(value));
 
-        public static implicit operator ulong(HACMSTREAM value) => (ulong)(value.Value);
+        public static explicit operator ulong(HACMSTREAM value) => (ulong)(value.Value);
 
         public static explicit operator HACMSTREAM(nuint value) => new HACMSTREAM((nint)(value));
 

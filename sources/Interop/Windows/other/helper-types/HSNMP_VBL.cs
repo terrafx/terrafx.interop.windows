@@ -63,7 +63,7 @@ namespace TerraFX.Interop
 
         public static explicit operator HSNMP_VBL(ulong value) => new HSNMP_VBL((nint)(value));
 
-        public static implicit operator ulong(HSNMP_VBL value) => (ulong)(value.Value);
+        public static explicit operator ulong(HSNMP_VBL value) => (ulong)(value.Value);
 
         public static explicit operator HSNMP_VBL(nuint value) => new HSNMP_VBL((nint)(value));
 

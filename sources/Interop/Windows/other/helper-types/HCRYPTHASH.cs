@@ -63,7 +63,7 @@ namespace TerraFX.Interop
 
         public static explicit operator HCRYPTHASH(ulong value) => new HCRYPTHASH((nint)(value));
 
-        public static implicit operator ulong(HCRYPTHASH value) => (ulong)(value.Value);
+        public static explicit operator ulong(HCRYPTHASH value) => (ulong)(value.Value);
 
         public static explicit operator HCRYPTHASH(nuint value) => new HCRYPTHASH((nint)(value));
 

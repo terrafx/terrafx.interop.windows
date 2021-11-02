@@ -63,7 +63,7 @@ namespace TerraFX.Interop
 
         public static explicit operator HMETAFILEPICT(ulong value) => new HMETAFILEPICT((nint)(value));
 
-        public static implicit operator ulong(HMETAFILEPICT value) => (ulong)(value.Value);
+        public static explicit operator ulong(HMETAFILEPICT value) => (ulong)(value.Value);
 
         public static explicit operator HMETAFILEPICT(nuint value) => new HMETAFILEPICT((nint)(value));
 

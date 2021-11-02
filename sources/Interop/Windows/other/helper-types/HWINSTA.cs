@@ -63,7 +63,7 @@ namespace TerraFX.Interop
 
         public static explicit operator HWINSTA(ulong value) => new HWINSTA((nint)(value));
 
-        public static implicit operator ulong(HWINSTA value) => (ulong)(value.Value);
+        public static explicit operator ulong(HWINSTA value) => (ulong)(value.Value);
 
         public static explicit operator HWINSTA(nuint value) => new HWINSTA((nint)(value));
 

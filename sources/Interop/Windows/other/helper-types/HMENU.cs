@@ -63,7 +63,7 @@ namespace TerraFX.Interop
 
         public static explicit operator HMENU(ulong value) => new HMENU((nint)(value));
 
-        public static implicit operator ulong(HMENU value) => (ulong)(value.Value);
+        public static explicit operator ulong(HMENU value) => (ulong)(value.Value);
 
         public static explicit operator HMENU(nuint value) => new HMENU((nint)(value));
 

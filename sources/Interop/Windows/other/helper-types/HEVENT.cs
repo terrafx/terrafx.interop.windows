@@ -63,7 +63,7 @@ namespace TerraFX.Interop
 
         public static explicit operator HEVENT(ulong value) => new HEVENT((nint)(value));
 
-        public static implicit operator ulong(HEVENT value) => (ulong)(value.Value);
+        public static explicit operator ulong(HEVENT value) => (ulong)(value.Value);
 
         public static explicit operator HEVENT(nuint value) => new HEVENT((nint)(value));
 

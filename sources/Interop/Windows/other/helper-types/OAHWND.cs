@@ -57,7 +57,7 @@ namespace TerraFX.Interop
 
         public static explicit operator OAHWND(ulong value) => new OAHWND((nint)(value));
 
-        public static implicit operator ulong(OAHWND value) => (ulong)(value.Value);
+        public static explicit operator ulong(OAHWND value) => (ulong)(value.Value);
 
         public static explicit operator OAHWND(nuint value) => new OAHWND((nint)(value));
 

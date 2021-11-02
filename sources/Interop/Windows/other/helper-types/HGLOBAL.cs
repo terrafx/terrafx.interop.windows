@@ -63,7 +63,7 @@ namespace TerraFX.Interop
 
         public static explicit operator HGLOBAL(ulong value) => new HGLOBAL((nint)(value));
 
-        public static implicit operator ulong(HGLOBAL value) => (ulong)(value.Value);
+        public static explicit operator ulong(HGLOBAL value) => (ulong)(value.Value);
 
         public static explicit operator HGLOBAL(nuint value) => new HGLOBAL((nint)(value));
 

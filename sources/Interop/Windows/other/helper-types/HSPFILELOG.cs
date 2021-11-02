@@ -63,7 +63,7 @@ namespace TerraFX.Interop
 
         public static explicit operator HSPFILELOG(ulong value) => new HSPFILELOG((nint)(value));
 
-        public static implicit operator ulong(HSPFILELOG value) => (ulong)(value.Value);
+        public static explicit operator ulong(HSPFILELOG value) => (ulong)(value.Value);
 
         public static explicit operator HSPFILELOG(nuint value) => new HSPFILELOG((nint)(value));
 

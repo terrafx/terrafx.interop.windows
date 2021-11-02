@@ -63,7 +63,7 @@ namespace TerraFX.Interop
 
         public static explicit operator D3DKMDT_HVIDEOPRESENTSOURCESET(ulong value) => new D3DKMDT_HVIDEOPRESENTSOURCESET((nint)(value));
 
-        public static implicit operator ulong(D3DKMDT_HVIDEOPRESENTSOURCESET value) => (ulong)(value.Value);
+        public static explicit operator ulong(D3DKMDT_HVIDEOPRESENTSOURCESET value) => (ulong)(value.Value);
 
         public static explicit operator D3DKMDT_HVIDEOPRESENTSOURCESET(nuint value) => new D3DKMDT_HVIDEOPRESENTSOURCESET((nint)(value));
 

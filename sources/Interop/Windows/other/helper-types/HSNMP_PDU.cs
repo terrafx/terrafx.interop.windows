@@ -63,7 +63,7 @@ namespace TerraFX.Interop
 
         public static explicit operator HSNMP_PDU(ulong value) => new HSNMP_PDU((nint)(value));
 
-        public static implicit operator ulong(HSNMP_PDU value) => (ulong)(value.Value);
+        public static explicit operator ulong(HSNMP_PDU value) => (ulong)(value.Value);
 
         public static explicit operator HSNMP_PDU(nuint value) => new HSNMP_PDU((nint)(value));
 

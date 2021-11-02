@@ -63,7 +63,7 @@ namespace TerraFX.Interop
 
         public static explicit operator HLOCAL(ulong value) => new HLOCAL((nint)(value));
 
-        public static implicit operator ulong(HLOCAL value) => (ulong)(value.Value);
+        public static explicit operator ulong(HLOCAL value) => (ulong)(value.Value);
 
         public static explicit operator HLOCAL(nuint value) => new HLOCAL((nint)(value));
 

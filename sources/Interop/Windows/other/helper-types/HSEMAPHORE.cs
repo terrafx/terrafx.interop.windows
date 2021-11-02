@@ -63,7 +63,7 @@ namespace TerraFX.Interop
 
         public static explicit operator HSEMAPHORE(ulong value) => new HSEMAPHORE((nint)(value));
 
-        public static implicit operator ulong(HSEMAPHORE value) => (ulong)(value.Value);
+        public static explicit operator ulong(HSEMAPHORE value) => (ulong)(value.Value);
 
         public static explicit operator HSEMAPHORE(nuint value) => new HSEMAPHORE((nint)(value));
 

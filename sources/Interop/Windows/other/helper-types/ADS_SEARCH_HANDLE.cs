@@ -63,7 +63,7 @@ namespace TerraFX.Interop
 
         public static explicit operator ADS_SEARCH_HANDLE(ulong value) => new ADS_SEARCH_HANDLE((nint)(value));
 
-        public static implicit operator ulong(ADS_SEARCH_HANDLE value) => (ulong)(value.Value);
+        public static explicit operator ulong(ADS_SEARCH_HANDLE value) => (ulong)(value.Value);
 
         public static explicit operator ADS_SEARCH_HANDLE(nuint value) => new ADS_SEARCH_HANDLE((nint)(value));
 

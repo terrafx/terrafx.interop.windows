@@ -63,7 +63,7 @@ namespace TerraFX.Interop
 
         public static explicit operator HUIAPATTERNOBJECT(ulong value) => new HUIAPATTERNOBJECT((nint)(value));
 
-        public static implicit operator ulong(HUIAPATTERNOBJECT value) => (ulong)(value.Value);
+        public static explicit operator ulong(HUIAPATTERNOBJECT value) => (ulong)(value.Value);
 
         public static explicit operator HUIAPATTERNOBJECT(nuint value) => new HUIAPATTERNOBJECT((nint)(value));
 

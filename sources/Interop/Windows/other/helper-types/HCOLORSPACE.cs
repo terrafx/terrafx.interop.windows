@@ -63,7 +63,7 @@ namespace TerraFX.Interop
 
         public static explicit operator HCOLORSPACE(ulong value) => new HCOLORSPACE((nint)(value));
 
-        public static implicit operator ulong(HCOLORSPACE value) => (ulong)(value.Value);
+        public static explicit operator ulong(HCOLORSPACE value) => (ulong)(value.Value);
 
         public static explicit operator HCOLORSPACE(nuint value) => new HCOLORSPACE((nint)(value));
 

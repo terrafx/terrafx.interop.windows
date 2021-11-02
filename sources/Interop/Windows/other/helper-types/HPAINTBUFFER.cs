@@ -63,7 +63,7 @@ namespace TerraFX.Interop
 
         public static explicit operator HPAINTBUFFER(ulong value) => new HPAINTBUFFER((nint)(value));
 
-        public static implicit operator ulong(HPAINTBUFFER value) => (ulong)(value.Value);
+        public static explicit operator ulong(HPAINTBUFFER value) => (ulong)(value.Value);
 
         public static explicit operator HPAINTBUFFER(nuint value) => new HPAINTBUFFER((nint)(value));
 

@@ -63,7 +63,7 @@ namespace TerraFX.Interop
 
         public static explicit operator SPTRANSITIONID(ulong value) => new SPTRANSITIONID((nint)(value));
 
-        public static implicit operator ulong(SPTRANSITIONID value) => (ulong)(value.Value);
+        public static explicit operator ulong(SPTRANSITIONID value) => (ulong)(value.Value);
 
         public static explicit operator SPTRANSITIONID(nuint value) => new SPTRANSITIONID((nint)(value));
 

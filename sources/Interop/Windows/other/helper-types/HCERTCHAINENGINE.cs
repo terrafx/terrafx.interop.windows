@@ -63,7 +63,7 @@ namespace TerraFX.Interop
 
         public static explicit operator HCERTCHAINENGINE(ulong value) => new HCERTCHAINENGINE((nint)(value));
 
-        public static implicit operator ulong(HCERTCHAINENGINE value) => (ulong)(value.Value);
+        public static explicit operator ulong(HCERTCHAINENGINE value) => (ulong)(value.Value);
 
         public static explicit operator HCERTCHAINENGINE(nuint value) => new HCERTCHAINENGINE((nint)(value));
 

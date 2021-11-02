@@ -63,7 +63,7 @@ namespace TerraFX.Interop
 
         public static explicit operator HIMAGELIST(ulong value) => new HIMAGELIST((nint)(value));
 
-        public static implicit operator ulong(HIMAGELIST value) => (ulong)(value.Value);
+        public static explicit operator ulong(HIMAGELIST value) => (ulong)(value.Value);
 
         public static explicit operator HIMAGELIST(nuint value) => new HIMAGELIST((nint)(value));
 

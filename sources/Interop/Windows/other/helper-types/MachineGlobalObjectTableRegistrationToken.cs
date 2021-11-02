@@ -57,7 +57,7 @@ namespace TerraFX.Interop
 
         public static explicit operator MachineGlobalObjectTableRegistrationToken(ulong value) => new MachineGlobalObjectTableRegistrationToken((nint)(value));
 
-        public static implicit operator ulong(MachineGlobalObjectTableRegistrationToken value) => (ulong)(value.Value);
+        public static explicit operator ulong(MachineGlobalObjectTableRegistrationToken value) => (ulong)(value.Value);
 
         public static explicit operator MachineGlobalObjectTableRegistrationToken(nuint value) => new MachineGlobalObjectTableRegistrationToken((nint)(value));
 

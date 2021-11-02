@@ -63,7 +63,7 @@ namespace TerraFX.Interop
 
         public static explicit operator HMONITOR(ulong value) => new HMONITOR((nint)(value));
 
-        public static implicit operator ulong(HMONITOR value) => (ulong)(value.Value);
+        public static explicit operator ulong(HMONITOR value) => (ulong)(value.Value);
 
         public static explicit operator HMONITOR(nuint value) => new HMONITOR((nint)(value));
 

@@ -57,7 +57,7 @@ namespace TerraFX.Interop
 
         public static explicit operator PAPPCONSTRAIN_REGISTRATION(ulong value) => new PAPPCONSTRAIN_REGISTRATION((nint)(value));
 
-        public static implicit operator ulong(PAPPCONSTRAIN_REGISTRATION value) => (ulong)(value.Value);
+        public static explicit operator ulong(PAPPCONSTRAIN_REGISTRATION value) => (ulong)(value.Value);
 
         public static explicit operator PAPPCONSTRAIN_REGISTRATION(nuint value) => new PAPPCONSTRAIN_REGISTRATION((nint)(value));
 

@@ -63,7 +63,7 @@ namespace TerraFX.Interop
 
         public static explicit operator HEMF(ulong value) => new HEMF((nint)(value));
 
-        public static implicit operator ulong(HEMF value) => (ulong)(value.Value);
+        public static explicit operator ulong(HEMF value) => (ulong)(value.Value);
 
         public static explicit operator HEMF(nuint value) => new HEMF((nint)(value));
 

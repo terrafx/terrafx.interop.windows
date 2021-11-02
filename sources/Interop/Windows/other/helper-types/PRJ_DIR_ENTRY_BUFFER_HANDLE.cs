@@ -63,7 +63,7 @@ namespace TerraFX.Interop
 
         public static explicit operator PRJ_DIR_ENTRY_BUFFER_HANDLE(ulong value) => new PRJ_DIR_ENTRY_BUFFER_HANDLE((nint)(value));
 
-        public static implicit operator ulong(PRJ_DIR_ENTRY_BUFFER_HANDLE value) => (ulong)(value.Value);
+        public static explicit operator ulong(PRJ_DIR_ENTRY_BUFFER_HANDLE value) => (ulong)(value.Value);
 
         public static explicit operator PRJ_DIR_ENTRY_BUFFER_HANDLE(nuint value) => new PRJ_DIR_ENTRY_BUFFER_HANDLE((nint)(value));
 

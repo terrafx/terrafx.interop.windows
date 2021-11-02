@@ -63,7 +63,7 @@ namespace TerraFX.Interop
 
         public static explicit operator HHOOK(ulong value) => new HHOOK((nint)(value));
 
-        public static implicit operator ulong(HHOOK value) => (ulong)(value.Value);
+        public static explicit operator ulong(HHOOK value) => (ulong)(value.Value);
 
         public static explicit operator HHOOK(nuint value) => new HHOOK((nint)(value));
 

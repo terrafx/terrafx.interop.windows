@@ -63,7 +63,7 @@ namespace TerraFX.Interop
 
         public static explicit operator SPRECOCONTEXTHANDLE(ulong value) => new SPRECOCONTEXTHANDLE((nint)(value));
 
-        public static implicit operator ulong(SPRECOCONTEXTHANDLE value) => (ulong)(value.Value);
+        public static explicit operator ulong(SPRECOCONTEXTHANDLE value) => (ulong)(value.Value);
 
         public static explicit operator SPRECOCONTEXTHANDLE(nuint value) => new SPRECOCONTEXTHANDLE((nint)(value));
 

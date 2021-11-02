@@ -63,7 +63,7 @@ namespace TerraFX.Interop
 
         public static explicit operator HWINWATCH(ulong value) => new HWINWATCH((nint)(value));
 
-        public static implicit operator ulong(HWINWATCH value) => (ulong)(value.Value);
+        public static explicit operator ulong(HWINWATCH value) => (ulong)(value.Value);
 
         public static explicit operator HWINWATCH(nuint value) => new HWINWATCH((nint)(value));
 

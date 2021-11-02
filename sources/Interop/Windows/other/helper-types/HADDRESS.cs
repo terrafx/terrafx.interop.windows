@@ -63,7 +63,7 @@ namespace TerraFX.Interop
 
         public static explicit operator HADDRESS(ulong value) => new HADDRESS((nint)(value));
 
-        public static implicit operator ulong(HADDRESS value) => (ulong)(value.Value);
+        public static explicit operator ulong(HADDRESS value) => (ulong)(value.Value);
 
         public static explicit operator HADDRESS(nuint value) => new HADDRESS((nint)(value));
 

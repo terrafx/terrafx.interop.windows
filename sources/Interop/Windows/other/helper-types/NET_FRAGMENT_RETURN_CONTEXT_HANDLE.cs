@@ -63,7 +63,7 @@ namespace TerraFX.Interop
 
         public static explicit operator NET_FRAGMENT_RETURN_CONTEXT_HANDLE(ulong value) => new NET_FRAGMENT_RETURN_CONTEXT_HANDLE((nint)(value));
 
-        public static implicit operator ulong(NET_FRAGMENT_RETURN_CONTEXT_HANDLE value) => (ulong)(value.Value);
+        public static explicit operator ulong(NET_FRAGMENT_RETURN_CONTEXT_HANDLE value) => (ulong)(value.Value);
 
         public static explicit operator NET_FRAGMENT_RETURN_CONTEXT_HANDLE(nuint value) => new NET_FRAGMENT_RETURN_CONTEXT_HANDLE((nint)(value));
 

@@ -63,7 +63,7 @@ namespace TerraFX.Interop
 
         public static explicit operator HDROP(ulong value) => new HDROP((nint)(value));
 
-        public static implicit operator ulong(HDROP value) => (ulong)(value.Value);
+        public static explicit operator ulong(HDROP value) => (ulong)(value.Value);
 
         public static explicit operator HDROP(nuint value) => new HDROP((nint)(value));
 

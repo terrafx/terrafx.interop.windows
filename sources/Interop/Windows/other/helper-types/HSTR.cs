@@ -63,7 +63,7 @@ namespace TerraFX.Interop
 
         public static explicit operator HSTR(ulong value) => new HSTR((nint)(value));
 
-        public static implicit operator ulong(HSTR value) => (ulong)(value.Value);
+        public static explicit operator ulong(HSTR value) => (ulong)(value.Value);
 
         public static explicit operator HSTR(nuint value) => new HSTR((nint)(value));
 

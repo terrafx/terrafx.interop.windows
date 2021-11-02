@@ -63,7 +63,7 @@ namespace TerraFX.Interop
 
         public static explicit operator HHEADERROW(ulong value) => new HHEADERROW((nint)(value));
 
-        public static implicit operator ulong(HHEADERROW value) => (ulong)(value.Value);
+        public static explicit operator ulong(HHEADERROW value) => (ulong)(value.Value);
 
         public static explicit operator HHEADERROW(nuint value) => new HHEADERROW((nint)(value));
 

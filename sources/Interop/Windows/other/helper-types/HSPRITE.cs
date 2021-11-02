@@ -63,7 +63,7 @@ namespace TerraFX.Interop
 
         public static explicit operator HSPRITE(ulong value) => new HSPRITE((nint)(value));
 
-        public static implicit operator ulong(HSPRITE value) => (ulong)(value.Value);
+        public static explicit operator ulong(HSPRITE value) => (ulong)(value.Value);
 
         public static explicit operator HSPRITE(nuint value) => new HSPRITE((nint)(value));
 

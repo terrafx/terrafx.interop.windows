@@ -57,7 +57,7 @@ namespace TerraFX.Interop
 
         public static explicit operator LPPROC_THREAD_ATTRIBUTE_LIST(ulong value) => new LPPROC_THREAD_ATTRIBUTE_LIST((nint)(value));
 
-        public static implicit operator ulong(LPPROC_THREAD_ATTRIBUTE_LIST value) => (ulong)(value.Value);
+        public static explicit operator ulong(LPPROC_THREAD_ATTRIBUTE_LIST value) => (ulong)(value.Value);
 
         public static explicit operator LPPROC_THREAD_ATTRIBUTE_LIST(nuint value) => new LPPROC_THREAD_ATTRIBUTE_LIST((nint)(value));
 

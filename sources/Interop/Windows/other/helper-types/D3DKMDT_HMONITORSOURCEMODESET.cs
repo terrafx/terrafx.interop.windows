@@ -63,7 +63,7 @@ namespace TerraFX.Interop
 
         public static explicit operator D3DKMDT_HMONITORSOURCEMODESET(ulong value) => new D3DKMDT_HMONITORSOURCEMODESET((nint)(value));
 
-        public static implicit operator ulong(D3DKMDT_HMONITORSOURCEMODESET value) => (ulong)(value.Value);
+        public static explicit operator ulong(D3DKMDT_HMONITORSOURCEMODESET value) => (ulong)(value.Value);
 
         public static explicit operator D3DKMDT_HMONITORSOURCEMODESET(nuint value) => new D3DKMDT_HMONITORSOURCEMODESET((nint)(value));
 

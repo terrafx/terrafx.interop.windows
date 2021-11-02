@@ -63,7 +63,7 @@ namespace TerraFX.Interop
 
         public static explicit operator HACCEL(ulong value) => new HACCEL((nint)(value));
 
-        public static implicit operator ulong(HACCEL value) => (ulong)(value.Value);
+        public static explicit operator ulong(HACCEL value) => (ulong)(value.Value);
 
         public static explicit operator HACCEL(nuint value) => new HACCEL((nint)(value));
 

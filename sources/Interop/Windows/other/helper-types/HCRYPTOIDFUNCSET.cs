@@ -63,7 +63,7 @@ namespace TerraFX.Interop
 
         public static explicit operator HCRYPTOIDFUNCSET(ulong value) => new HCRYPTOIDFUNCSET((nint)(value));
 
-        public static implicit operator ulong(HCRYPTOIDFUNCSET value) => (ulong)(value.Value);
+        public static explicit operator ulong(HCRYPTOIDFUNCSET value) => (ulong)(value.Value);
 
         public static explicit operator HCRYPTOIDFUNCSET(nuint value) => new HCRYPTOIDFUNCSET((nint)(value));
 

@@ -63,7 +63,7 @@ namespace TerraFX.Interop
 
         public static explicit operator HWAVEIN(ulong value) => new HWAVEIN((nint)(value));
 
-        public static implicit operator ulong(HWAVEIN value) => (ulong)(value.Value);
+        public static explicit operator ulong(HWAVEIN value) => (ulong)(value.Value);
 
         public static explicit operator HWAVEIN(nuint value) => new HWAVEIN((nint)(value));
 

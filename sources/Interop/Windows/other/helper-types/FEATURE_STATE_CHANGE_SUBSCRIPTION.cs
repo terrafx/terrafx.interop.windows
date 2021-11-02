@@ -63,7 +63,7 @@ namespace TerraFX.Interop
 
         public static explicit operator FEATURE_STATE_CHANGE_SUBSCRIPTION(ulong value) => new FEATURE_STATE_CHANGE_SUBSCRIPTION((nint)(value));
 
-        public static implicit operator ulong(FEATURE_STATE_CHANGE_SUBSCRIPTION value) => (ulong)(value.Value);
+        public static explicit operator ulong(FEATURE_STATE_CHANGE_SUBSCRIPTION value) => (ulong)(value.Value);
 
         public static explicit operator FEATURE_STATE_CHANGE_SUBSCRIPTION(nuint value) => new FEATURE_STATE_CHANGE_SUBSCRIPTION((nint)(value));
 

@@ -63,7 +63,7 @@ namespace TerraFX.Interop
 
         public static explicit operator HPORT(ulong value) => new HPORT((nint)(value));
 
-        public static implicit operator ulong(HPORT value) => (ulong)(value.Value);
+        public static explicit operator ulong(HPORT value) => (ulong)(value.Value);
 
         public static explicit operator HPORT(nuint value) => new HPORT((nint)(value));
 

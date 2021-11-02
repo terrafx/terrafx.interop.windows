@@ -63,7 +63,7 @@ namespace TerraFX.Interop
 
         public static explicit operator HCRYPTPROV_OR_NCRYPT_KEY_HANDLE(ulong value) => new HCRYPTPROV_OR_NCRYPT_KEY_HANDLE((nint)(value));
 
-        public static implicit operator ulong(HCRYPTPROV_OR_NCRYPT_KEY_HANDLE value) => (ulong)(value.Value);
+        public static explicit operator ulong(HCRYPTPROV_OR_NCRYPT_KEY_HANDLE value) => (ulong)(value.Value);
 
         public static explicit operator HCRYPTPROV_OR_NCRYPT_KEY_HANDLE(nuint value) => new HCRYPTPROV_OR_NCRYPT_KEY_HANDLE((nint)(value));
 

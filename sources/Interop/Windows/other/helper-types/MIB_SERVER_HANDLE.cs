@@ -63,7 +63,7 @@ namespace TerraFX.Interop
 
         public static explicit operator MIB_SERVER_HANDLE(ulong value) => new MIB_SERVER_HANDLE((nint)(value));
 
-        public static implicit operator ulong(MIB_SERVER_HANDLE value) => (ulong)(value.Value);
+        public static explicit operator ulong(MIB_SERVER_HANDLE value) => (ulong)(value.Value);
 
         public static explicit operator MIB_SERVER_HANDLE(nuint value) => new MIB_SERVER_HANDLE((nint)(value));
 

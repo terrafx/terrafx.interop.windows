@@ -63,7 +63,7 @@ namespace TerraFX.Interop
 
         public static explicit operator MPR_SERVER_HANDLE(ulong value) => new MPR_SERVER_HANDLE((nint)(value));
 
-        public static implicit operator ulong(MPR_SERVER_HANDLE value) => (ulong)(value.Value);
+        public static explicit operator ulong(MPR_SERVER_HANDLE value) => (ulong)(value.Value);
 
         public static explicit operator MPR_SERVER_HANDLE(nuint value) => new MPR_SERVER_HANDLE((nint)(value));
 

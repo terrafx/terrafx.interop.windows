@@ -63,7 +63,7 @@ namespace TerraFX.Interop
 
         public static explicit operator SPPHRASERULEHANDLE(ulong value) => new SPPHRASERULEHANDLE((nint)(value));
 
-        public static implicit operator ulong(SPPHRASERULEHANDLE value) => (ulong)(value.Value);
+        public static explicit operator ulong(SPPHRASERULEHANDLE value) => (ulong)(value.Value);
 
         public static explicit operator SPPHRASERULEHANDLE(nuint value) => new SPPHRASERULEHANDLE((nint)(value));
 

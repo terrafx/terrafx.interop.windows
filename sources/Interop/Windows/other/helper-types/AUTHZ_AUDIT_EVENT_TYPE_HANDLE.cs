@@ -63,7 +63,7 @@ namespace TerraFX.Interop
 
         public static explicit operator AUTHZ_AUDIT_EVENT_TYPE_HANDLE(ulong value) => new AUTHZ_AUDIT_EVENT_TYPE_HANDLE((nint)(value));
 
-        public static implicit operator ulong(AUTHZ_AUDIT_EVENT_TYPE_HANDLE value) => (ulong)(value.Value);
+        public static explicit operator ulong(AUTHZ_AUDIT_EVENT_TYPE_HANDLE value) => (ulong)(value.Value);
 
         public static explicit operator AUTHZ_AUDIT_EVENT_TYPE_HANDLE(nuint value) => new AUTHZ_AUDIT_EVENT_TYPE_HANDLE((nint)(value));
 

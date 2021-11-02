@@ -63,7 +63,7 @@ namespace TerraFX.Interop
 
         public static explicit operator PDH_HQUERY(ulong value) => new PDH_HQUERY((nint)(value));
 
-        public static implicit operator ulong(PDH_HQUERY value) => (ulong)(value.Value);
+        public static explicit operator ulong(PDH_HQUERY value) => (ulong)(value.Value);
 
         public static explicit operator PDH_HQUERY(nuint value) => new PDH_HQUERY((nint)(value));
 

@@ -63,7 +63,7 @@ namespace TerraFX.Interop
 
         public static explicit operator HCMTRANSFORM(ulong value) => new HCMTRANSFORM((nint)(value));
 
-        public static implicit operator ulong(HCMTRANSFORM value) => (ulong)(value.Value);
+        public static explicit operator ulong(HCMTRANSFORM value) => (ulong)(value.Value);
 
         public static explicit operator HCMTRANSFORM(nuint value) => new HCMTRANSFORM((nint)(value));
 

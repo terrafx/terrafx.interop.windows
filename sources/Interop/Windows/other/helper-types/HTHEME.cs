@@ -63,7 +63,7 @@ namespace TerraFX.Interop
 
         public static explicit operator HTHEME(ulong value) => new HTHEME((nint)(value));
 
-        public static implicit operator ulong(HTHEME value) => (ulong)(value.Value);
+        public static explicit operator ulong(HTHEME value) => (ulong)(value.Value);
 
         public static explicit operator HTHEME(nuint value) => new HTHEME((nint)(value));
 

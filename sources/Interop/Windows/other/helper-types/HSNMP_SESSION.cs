@@ -63,7 +63,7 @@ namespace TerraFX.Interop
 
         public static explicit operator HSNMP_SESSION(ulong value) => new HSNMP_SESSION((nint)(value));
 
-        public static implicit operator ulong(HSNMP_SESSION value) => (ulong)(value.Value);
+        public static explicit operator ulong(HSNMP_SESSION value) => (ulong)(value.Value);
 
         public static explicit operator HSNMP_SESSION(nuint value) => new HSNMP_SESSION((nint)(value));
 

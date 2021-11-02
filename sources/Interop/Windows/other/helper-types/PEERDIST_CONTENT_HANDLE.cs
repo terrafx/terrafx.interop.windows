@@ -63,7 +63,7 @@ namespace TerraFX.Interop
 
         public static explicit operator PEERDIST_CONTENT_HANDLE(ulong value) => new PEERDIST_CONTENT_HANDLE((nint)(value));
 
-        public static implicit operator ulong(PEERDIST_CONTENT_HANDLE value) => (ulong)(value.Value);
+        public static explicit operator ulong(PEERDIST_CONTENT_HANDLE value) => (ulong)(value.Value);
 
         public static explicit operator PEERDIST_CONTENT_HANDLE(nuint value) => new PEERDIST_CONTENT_HANDLE((nint)(value));
 

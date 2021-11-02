@@ -63,7 +63,7 @@ namespace TerraFX.Interop
 
         public static explicit operator HKL(ulong value) => new HKL((nint)(value));
 
-        public static implicit operator ulong(HKL value) => (ulong)(value.Value);
+        public static explicit operator ulong(HKL value) => (ulong)(value.Value);
 
         public static explicit operator HKL(nuint value) => new HKL((nint)(value));
 

@@ -63,7 +63,7 @@ namespace TerraFX.Interop
 
         public static explicit operator D3DKMDT_HVIDPN(ulong value) => new D3DKMDT_HVIDPN((nint)(value));
 
-        public static implicit operator ulong(D3DKMDT_HVIDPN value) => (ulong)(value.Value);
+        public static explicit operator ulong(D3DKMDT_HVIDPN value) => (ulong)(value.Value);
 
         public static explicit operator D3DKMDT_HVIDPN(nuint value) => new D3DKMDT_HVIDPN((nint)(value));
 

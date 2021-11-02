@@ -63,7 +63,7 @@ namespace TerraFX.Interop
 
         public static explicit operator WEB_SOCKET_HANDLE(ulong value) => new WEB_SOCKET_HANDLE((nint)(value));
 
-        public static implicit operator ulong(WEB_SOCKET_HANDLE value) => (ulong)(value.Value);
+        public static explicit operator ulong(WEB_SOCKET_HANDLE value) => (ulong)(value.Value);
 
         public static explicit operator WEB_SOCKET_HANDLE(nuint value) => new WEB_SOCKET_HANDLE((nint)(value));
 

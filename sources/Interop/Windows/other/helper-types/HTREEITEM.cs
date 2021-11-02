@@ -63,7 +63,7 @@ namespace TerraFX.Interop
 
         public static explicit operator HTREEITEM(ulong value) => new HTREEITEM((nint)(value));
 
-        public static implicit operator ulong(HTREEITEM value) => (ulong)(value.Value);
+        public static explicit operator ulong(HTREEITEM value) => (ulong)(value.Value);
 
         public static explicit operator HTREEITEM(nuint value) => new HTREEITEM((nint)(value));
 

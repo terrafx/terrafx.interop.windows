@@ -63,7 +63,7 @@ namespace TerraFX.Interop
 
         public static explicit operator HTASK(ulong value) => new HTASK((nint)(value));
 
-        public static implicit operator ulong(HTASK value) => (ulong)(value.Value);
+        public static explicit operator ulong(HTASK value) => (ulong)(value.Value);
 
         public static explicit operator HTASK(nuint value) => new HTASK((nint)(value));
 

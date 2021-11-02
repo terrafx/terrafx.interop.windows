@@ -63,7 +63,7 @@ namespace TerraFX.Interop
 
         public static explicit operator HINF(ulong value) => new HINF((nint)(value));
 
-        public static implicit operator ulong(HINF value) => (ulong)(value.Value);
+        public static explicit operator ulong(HINF value) => (ulong)(value.Value);
 
         public static explicit operator HINF(nuint value) => new HINF((nint)(value));
 

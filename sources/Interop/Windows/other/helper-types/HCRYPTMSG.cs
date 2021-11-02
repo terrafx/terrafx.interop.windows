@@ -63,7 +63,7 @@ namespace TerraFX.Interop
 
         public static explicit operator HCRYPTMSG(ulong value) => new HCRYPTMSG((nint)(value));
 
-        public static implicit operator ulong(HCRYPTMSG value) => (ulong)(value.Value);
+        public static explicit operator ulong(HCRYPTMSG value) => (ulong)(value.Value);
 
         public static explicit operator HCRYPTMSG(nuint value) => new HCRYPTMSG((nint)(value));
 

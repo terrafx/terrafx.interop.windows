@@ -63,7 +63,7 @@ namespace TerraFX.Interop
 
         public static explicit operator HGDIOBJ(ulong value) => new HGDIOBJ((nint)(value));
 
-        public static implicit operator ulong(HGDIOBJ value) => (ulong)(value.Value);
+        public static explicit operator ulong(HGDIOBJ value) => (ulong)(value.Value);
 
         public static explicit operator HGDIOBJ(nuint value) => new HGDIOBJ((nint)(value));
 

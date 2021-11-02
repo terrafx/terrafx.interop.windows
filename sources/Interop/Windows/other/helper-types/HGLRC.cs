@@ -63,7 +63,7 @@ namespace TerraFX.Interop
 
         public static explicit operator HGLRC(ulong value) => new HGLRC((nint)(value));
 
-        public static implicit operator ulong(HGLRC value) => (ulong)(value.Value);
+        public static explicit operator ulong(HGLRC value) => (ulong)(value.Value);
 
         public static explicit operator HGLRC(nuint value) => new HGLRC((nint)(value));
 

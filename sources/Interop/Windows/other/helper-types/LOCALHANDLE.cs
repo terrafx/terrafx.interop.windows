@@ -63,7 +63,7 @@ namespace TerraFX.Interop
 
         public static explicit operator LOCALHANDLE(ulong value) => new LOCALHANDLE((nint)(value));
 
-        public static implicit operator ulong(LOCALHANDLE value) => (ulong)(value.Value);
+        public static explicit operator ulong(LOCALHANDLE value) => (ulong)(value.Value);
 
         public static explicit operator LOCALHANDLE(nuint value) => new LOCALHANDLE((nint)(value));
 

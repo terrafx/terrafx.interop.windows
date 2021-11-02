@@ -63,7 +63,7 @@ namespace TerraFX.Interop
 
         public static explicit operator HIC(ulong value) => new HIC((nint)(value));
 
-        public static implicit operator ulong(HIC value) => (ulong)(value.Value);
+        public static explicit operator ulong(HIC value) => (ulong)(value.Value);
 
         public static explicit operator HIC(nuint value) => new HIC((nint)(value));
 

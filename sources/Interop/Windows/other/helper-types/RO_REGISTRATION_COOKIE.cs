@@ -57,7 +57,7 @@ namespace TerraFX.Interop
 
         public static explicit operator RO_REGISTRATION_COOKIE(ulong value) => new RO_REGISTRATION_COOKIE((nint)(value));
 
-        public static implicit operator ulong(RO_REGISTRATION_COOKIE value) => (ulong)(value.Value);
+        public static explicit operator ulong(RO_REGISTRATION_COOKIE value) => (ulong)(value.Value);
 
         public static explicit operator RO_REGISTRATION_COOKIE(nuint value) => new RO_REGISTRATION_COOKIE((nint)(value));
 

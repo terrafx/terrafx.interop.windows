@@ -63,7 +63,7 @@ namespace TerraFX.Interop
 
         public static explicit operator HFILTER_VOLUME(ulong value) => new HFILTER_VOLUME((nint)(value));
 
-        public static implicit operator ulong(HFILTER_VOLUME value) => (ulong)(value.Value);
+        public static explicit operator ulong(HFILTER_VOLUME value) => (ulong)(value.Value);
 
         public static explicit operator HFILTER_VOLUME(nuint value) => new HFILTER_VOLUME((nint)(value));
 

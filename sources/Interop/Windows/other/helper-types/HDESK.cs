@@ -63,7 +63,7 @@ namespace TerraFX.Interop
 
         public static explicit operator HDESK(ulong value) => new HDESK((nint)(value));
 
-        public static implicit operator ulong(HDESK value) => (ulong)(value.Value);
+        public static explicit operator ulong(HDESK value) => (ulong)(value.Value);
 
         public static explicit operator HDESK(nuint value) => new HDESK((nint)(value));
 

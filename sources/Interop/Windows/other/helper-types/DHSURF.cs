@@ -63,7 +63,7 @@ namespace TerraFX.Interop
 
         public static explicit operator DHSURF(ulong value) => new DHSURF((nint)(value));
 
-        public static implicit operator ulong(DHSURF value) => (ulong)(value.Value);
+        public static explicit operator ulong(DHSURF value) => (ulong)(value.Value);
 
         public static explicit operator DHSURF(nuint value) => new DHSURF((nint)(value));
 

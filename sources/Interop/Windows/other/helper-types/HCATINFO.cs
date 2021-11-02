@@ -63,7 +63,7 @@ namespace TerraFX.Interop
 
         public static explicit operator HCATINFO(ulong value) => new HCATINFO((nint)(value));
 
-        public static implicit operator ulong(HCATINFO value) => (ulong)(value.Value);
+        public static explicit operator ulong(HCATINFO value) => (ulong)(value.Value);
 
         public static explicit operator HCATINFO(nuint value) => new HCATINFO((nint)(value));
 

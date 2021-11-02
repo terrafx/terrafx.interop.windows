@@ -63,7 +63,7 @@ namespace TerraFX.Interop
 
         public static explicit operator HDIAGNOSTIC_EVENT_CATEGORY_DESCRIPTION(ulong value) => new HDIAGNOSTIC_EVENT_CATEGORY_DESCRIPTION((nint)(value));
 
-        public static implicit operator ulong(HDIAGNOSTIC_EVENT_CATEGORY_DESCRIPTION value) => (ulong)(value.Value);
+        public static explicit operator ulong(HDIAGNOSTIC_EVENT_CATEGORY_DESCRIPTION value) => (ulong)(value.Value);
 
         public static explicit operator HDIAGNOSTIC_EVENT_CATEGORY_DESCRIPTION(nuint value) => new HDIAGNOSTIC_EVENT_CATEGORY_DESCRIPTION((nint)(value));
 

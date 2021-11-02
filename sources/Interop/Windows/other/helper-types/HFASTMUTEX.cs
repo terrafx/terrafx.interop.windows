@@ -63,7 +63,7 @@ namespace TerraFX.Interop
 
         public static explicit operator HFASTMUTEX(ulong value) => new HFASTMUTEX((nint)(value));
 
-        public static implicit operator ulong(HFASTMUTEX value) => (ulong)(value.Value);
+        public static explicit operator ulong(HFASTMUTEX value) => (ulong)(value.Value);
 
         public static explicit operator HFASTMUTEX(nuint value) => new HFASTMUTEX((nint)(value));
 

@@ -63,7 +63,7 @@ namespace TerraFX.Interop
 
         public static explicit operator HPALETTE(ulong value) => new HPALETTE((nint)(value));
 
-        public static implicit operator ulong(HPALETTE value) => (ulong)(value.Value);
+        public static explicit operator ulong(HPALETTE value) => (ulong)(value.Value);
 
         public static explicit operator HPALETTE(nuint value) => new HPALETTE((nint)(value));
 

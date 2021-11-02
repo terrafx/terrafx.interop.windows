@@ -31,7 +31,7 @@ namespace TerraFX.Interop
 
         public static explicit operator WPARAM(long value) => new WPARAM((nuint)(value));
 
-        public static implicit operator long(WPARAM value) => (long)(value.Value);
+        public static explicit operator long(WPARAM value) => (long)(value.Value);
 
         public static explicit operator WPARAM(nint value) => new WPARAM((nuint)(value));
 

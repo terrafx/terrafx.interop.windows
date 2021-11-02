@@ -63,7 +63,7 @@ namespace TerraFX.Interop
 
         public static explicit operator HCS_SYSTEM(ulong value) => new HCS_SYSTEM((nint)(value));
 
-        public static implicit operator ulong(HCS_SYSTEM value) => (ulong)(value.Value);
+        public static explicit operator ulong(HCS_SYSTEM value) => (ulong)(value.Value);
 
         public static explicit operator HCS_SYSTEM(nuint value) => new HCS_SYSTEM((nint)(value));
 

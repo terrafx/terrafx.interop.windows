@@ -63,7 +63,7 @@ namespace TerraFX.Interop
 
         public static explicit operator HINTERNET(ulong value) => new HINTERNET((nint)(value));
 
-        public static implicit operator ulong(HINTERNET value) => (ulong)(value.Value);
+        public static explicit operator ulong(HINTERNET value) => (ulong)(value.Value);
 
         public static explicit operator HINTERNET(nuint value) => new HINTERNET((nint)(value));
 

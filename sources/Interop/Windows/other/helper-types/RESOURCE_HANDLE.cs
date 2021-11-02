@@ -63,7 +63,7 @@ namespace TerraFX.Interop
 
         public static explicit operator RESOURCE_HANDLE(ulong value) => new RESOURCE_HANDLE((nint)(value));
 
-        public static implicit operator ulong(RESOURCE_HANDLE value) => (ulong)(value.Value);
+        public static explicit operator ulong(RESOURCE_HANDLE value) => (ulong)(value.Value);
 
         public static explicit operator RESOURCE_HANDLE(nuint value) => new RESOURCE_HANDLE((nint)(value));
 

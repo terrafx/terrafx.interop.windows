@@ -63,7 +63,7 @@ namespace TerraFX.Interop
 
         public static explicit operator HRSRC(ulong value) => new HRSRC((nint)(value));
 
-        public static implicit operator ulong(HRSRC value) => (ulong)(value.Value);
+        public static explicit operator ulong(HRSRC value) => (ulong)(value.Value);
 
         public static explicit operator HRSRC(nuint value) => new HRSRC((nint)(value));
 

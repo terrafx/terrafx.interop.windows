@@ -63,7 +63,7 @@ namespace TerraFX.Interop
 
         public static explicit operator CO_DEVICE_CATALOG_COOKIE(ulong value) => new CO_DEVICE_CATALOG_COOKIE((nint)(value));
 
-        public static implicit operator ulong(CO_DEVICE_CATALOG_COOKIE value) => (ulong)(value.Value);
+        public static explicit operator ulong(CO_DEVICE_CATALOG_COOKIE value) => (ulong)(value.Value);
 
         public static explicit operator CO_DEVICE_CATALOG_COOKIE(nuint value) => new CO_DEVICE_CATALOG_COOKIE((nint)(value));
 

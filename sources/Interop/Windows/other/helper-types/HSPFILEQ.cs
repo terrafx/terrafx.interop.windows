@@ -63,7 +63,7 @@ namespace TerraFX.Interop
 
         public static explicit operator HSPFILEQ(ulong value) => new HSPFILEQ((nint)(value));
 
-        public static implicit operator ulong(HSPFILEQ value) => (ulong)(value.Value);
+        public static explicit operator ulong(HSPFILEQ value) => (ulong)(value.Value);
 
         public static explicit operator HSPFILEQ(nuint value) => new HSPFILEQ((nint)(value));
 

@@ -63,7 +63,7 @@ namespace TerraFX.Interop
 
         public static explicit operator HDSKSPC(ulong value) => new HDSKSPC((nint)(value));
 
-        public static implicit operator ulong(HDSKSPC value) => (ulong)(value.Value);
+        public static explicit operator ulong(HDSKSPC value) => (ulong)(value.Value);
 
         public static explicit operator HDSKSPC(nuint value) => new HDSKSPC((nint)(value));
 

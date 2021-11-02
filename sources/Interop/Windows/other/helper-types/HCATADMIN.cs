@@ -63,7 +63,7 @@ namespace TerraFX.Interop
 
         public static explicit operator HCATADMIN(ulong value) => new HCATADMIN((nint)(value));
 
-        public static implicit operator ulong(HCATADMIN value) => (ulong)(value.Value);
+        public static explicit operator ulong(HCATADMIN value) => (ulong)(value.Value);
 
         public static explicit operator HCATADMIN(nuint value) => new HCATADMIN((nint)(value));
 

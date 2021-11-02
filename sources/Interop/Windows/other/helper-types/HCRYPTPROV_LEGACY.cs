@@ -63,7 +63,7 @@ namespace TerraFX.Interop
 
         public static explicit operator HCRYPTPROV_LEGACY(ulong value) => new HCRYPTPROV_LEGACY((nint)(value));
 
-        public static implicit operator ulong(HCRYPTPROV_LEGACY value) => (ulong)(value.Value);
+        public static explicit operator ulong(HCRYPTPROV_LEGACY value) => (ulong)(value.Value);
 
         public static explicit operator HCRYPTPROV_LEGACY(nuint value) => new HCRYPTPROV_LEGACY((nint)(value));
 

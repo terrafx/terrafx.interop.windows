@@ -63,7 +63,7 @@ namespace TerraFX.Interop
 
         public static explicit operator ROPARAMIIDHANDLE(ulong value) => new ROPARAMIIDHANDLE((nint)(value));
 
-        public static implicit operator ulong(ROPARAMIIDHANDLE value) => (ulong)(value.Value);
+        public static explicit operator ulong(ROPARAMIIDHANDLE value) => (ulong)(value.Value);
 
         public static explicit operator ROPARAMIIDHANDLE(nuint value) => new ROPARAMIIDHANDLE((nint)(value));
 

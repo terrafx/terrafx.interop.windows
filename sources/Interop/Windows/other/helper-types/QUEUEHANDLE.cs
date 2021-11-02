@@ -63,7 +63,7 @@ namespace TerraFX.Interop
 
         public static explicit operator QUEUEHANDLE(ulong value) => new QUEUEHANDLE((nint)(value));
 
-        public static implicit operator ulong(QUEUEHANDLE value) => (ulong)(value.Value);
+        public static explicit operator ulong(QUEUEHANDLE value) => (ulong)(value.Value);
 
         public static explicit operator QUEUEHANDLE(nuint value) => new QUEUEHANDLE((nint)(value));
 

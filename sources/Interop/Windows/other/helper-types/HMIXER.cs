@@ -63,7 +63,7 @@ namespace TerraFX.Interop
 
         public static explicit operator HMIXER(ulong value) => new HMIXER((nint)(value));
 
-        public static implicit operator ulong(HMIXER value) => (ulong)(value.Value);
+        public static explicit operator ulong(HMIXER value) => (ulong)(value.Value);
 
         public static explicit operator HMIXER(nuint value) => new HMIXER((nint)(value));
 

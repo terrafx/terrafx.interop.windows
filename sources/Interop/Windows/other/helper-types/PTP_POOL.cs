@@ -57,7 +57,7 @@ namespace TerraFX.Interop
 
         public static explicit operator PTP_POOL(ulong value) => new PTP_POOL((nint)(value));
 
-        public static implicit operator ulong(PTP_POOL value) => (ulong)(value.Value);
+        public static explicit operator ulong(PTP_POOL value) => (ulong)(value.Value);
 
         public static explicit operator PTP_POOL(nuint value) => new PTP_POOL((nint)(value));
 

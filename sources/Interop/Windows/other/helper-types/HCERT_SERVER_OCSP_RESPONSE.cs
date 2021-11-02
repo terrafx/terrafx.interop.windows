@@ -63,7 +63,7 @@ namespace TerraFX.Interop
 
         public static explicit operator HCERT_SERVER_OCSP_RESPONSE(ulong value) => new HCERT_SERVER_OCSP_RESPONSE((nint)(value));
 
-        public static implicit operator ulong(HCERT_SERVER_OCSP_RESPONSE value) => (ulong)(value.Value);
+        public static explicit operator ulong(HCERT_SERVER_OCSP_RESPONSE value) => (ulong)(value.Value);
 
         public static explicit operator HCERT_SERVER_OCSP_RESPONSE(nuint value) => new HCERT_SERVER_OCSP_RESPONSE((nint)(value));
 

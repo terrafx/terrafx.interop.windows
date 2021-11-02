@@ -63,7 +63,7 @@ namespace TerraFX.Interop
 
         public static explicit operator HCONVLIST(ulong value) => new HCONVLIST((nint)(value));
 
-        public static implicit operator ulong(HCONVLIST value) => (ulong)(value.Value);
+        public static explicit operator ulong(HCONVLIST value) => (ulong)(value.Value);
 
         public static explicit operator HCONVLIST(nuint value) => new HCONVLIST((nint)(value));
 

@@ -63,7 +63,7 @@ namespace TerraFX.Interop
 
         public static explicit operator HREPORT(ulong value) => new HREPORT((nint)(value));
 
-        public static implicit operator ulong(HREPORT value) => (ulong)(value.Value);
+        public static explicit operator ulong(HREPORT value) => (ulong)(value.Value);
 
         public static explicit operator HREPORT(nuint value) => new HREPORT((nint)(value));
 

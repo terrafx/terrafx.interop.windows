@@ -63,7 +63,7 @@ namespace TerraFX.Interop
 
         public static explicit operator HSYNTHETICPOINTERDEVICE(ulong value) => new HSYNTHETICPOINTERDEVICE((nint)(value));
 
-        public static implicit operator ulong(HSYNTHETICPOINTERDEVICE value) => (ulong)(value.Value);
+        public static explicit operator ulong(HSYNTHETICPOINTERDEVICE value) => (ulong)(value.Value);
 
         public static explicit operator HSYNTHETICPOINTERDEVICE(nuint value) => new HSYNTHETICPOINTERDEVICE((nint)(value));
 

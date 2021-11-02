@@ -63,7 +63,7 @@ namespace TerraFX.Interop
 
         public static explicit operator D3DKMDT_HVIDPNTARGETMODESET(ulong value) => new D3DKMDT_HVIDPNTARGETMODESET((nint)(value));
 
-        public static implicit operator ulong(D3DKMDT_HVIDPNTARGETMODESET value) => (ulong)(value.Value);
+        public static explicit operator ulong(D3DKMDT_HVIDPNTARGETMODESET value) => (ulong)(value.Value);
 
         public static explicit operator D3DKMDT_HVIDPNTARGETMODESET(nuint value) => new D3DKMDT_HVIDPNTARGETMODESET((nint)(value));
 

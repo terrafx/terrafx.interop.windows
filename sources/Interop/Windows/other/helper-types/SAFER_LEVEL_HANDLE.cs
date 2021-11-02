@@ -63,7 +63,7 @@ namespace TerraFX.Interop
 
         public static explicit operator SAFER_LEVEL_HANDLE(ulong value) => new SAFER_LEVEL_HANDLE((nint)(value));
 
-        public static implicit operator ulong(SAFER_LEVEL_HANDLE value) => (ulong)(value.Value);
+        public static explicit operator ulong(SAFER_LEVEL_HANDLE value) => (ulong)(value.Value);
 
         public static explicit operator SAFER_LEVEL_HANDLE(nuint value) => new SAFER_LEVEL_HANDLE((nint)(value));
 

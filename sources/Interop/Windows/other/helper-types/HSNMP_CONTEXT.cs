@@ -63,7 +63,7 @@ namespace TerraFX.Interop
 
         public static explicit operator HSNMP_CONTEXT(ulong value) => new HSNMP_CONTEXT((nint)(value));
 
-        public static implicit operator ulong(HSNMP_CONTEXT value) => (ulong)(value.Value);
+        public static explicit operator ulong(HSNMP_CONTEXT value) => (ulong)(value.Value);
 
         public static explicit operator HSNMP_CONTEXT(nuint value) => new HSNMP_CONTEXT((nint)(value));
 

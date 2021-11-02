@@ -63,7 +63,7 @@ namespace TerraFX.Interop
 
         public static explicit operator HCERTSTOREPROV(ulong value) => new HCERTSTOREPROV((nint)(value));
 
-        public static implicit operator ulong(HCERTSTOREPROV value) => (ulong)(value.Value);
+        public static explicit operator ulong(HCERTSTOREPROV value) => (ulong)(value.Value);
 
         public static explicit operator HCERTSTOREPROV(nuint value) => new HCERTSTOREPROV((nint)(value));
 

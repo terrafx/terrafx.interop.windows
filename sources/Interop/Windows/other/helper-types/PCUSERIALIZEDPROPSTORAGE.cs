@@ -57,7 +57,7 @@ namespace TerraFX.Interop
 
         public static explicit operator PCUSERIALIZEDPROPSTORAGE(ulong value) => new PCUSERIALIZEDPROPSTORAGE((nint)(value));
 
-        public static implicit operator ulong(PCUSERIALIZEDPROPSTORAGE value) => (ulong)(value.Value);
+        public static explicit operator ulong(PCUSERIALIZEDPROPSTORAGE value) => (ulong)(value.Value);
 
         public static explicit operator PCUSERIALIZEDPROPSTORAGE(nuint value) => new PCUSERIALIZEDPROPSTORAGE((nint)(value));
 

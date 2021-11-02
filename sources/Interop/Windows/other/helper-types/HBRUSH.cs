@@ -63,7 +63,7 @@ namespace TerraFX.Interop
 
         public static explicit operator HBRUSH(ulong value) => new HBRUSH((nint)(value));
 
-        public static implicit operator ulong(HBRUSH value) => (ulong)(value.Value);
+        public static explicit operator ulong(HBRUSH value) => (ulong)(value.Value);
 
         public static explicit operator HBRUSH(nuint value) => new HBRUSH((nint)(value));
 

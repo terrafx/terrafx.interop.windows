@@ -63,7 +63,7 @@ namespace TerraFX.Interop
 
         public static explicit operator HBM(ulong value) => new HBM((nint)(value));
 
-        public static implicit operator ulong(HBM value) => (ulong)(value.Value);
+        public static explicit operator ulong(HBM value) => (ulong)(value.Value);
 
         public static explicit operator HBM(nuint value) => new HBM((nint)(value));
 

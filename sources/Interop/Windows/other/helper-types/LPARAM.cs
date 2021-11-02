@@ -51,7 +51,7 @@ namespace TerraFX.Interop
 
         public static explicit operator LPARAM(ulong value) => new LPARAM((nint)(value));
 
-        public static implicit operator ulong(LPARAM value) => (ulong)(value.Value);
+        public static explicit operator ulong(LPARAM value) => (ulong)(value.Value);
 
         public static explicit operator LPARAM(nuint value) => new LPARAM((nint)(value));
 

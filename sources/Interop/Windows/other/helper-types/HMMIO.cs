@@ -63,7 +63,7 @@ namespace TerraFX.Interop
 
         public static explicit operator HMMIO(ulong value) => new HMMIO((nint)(value));
 
-        public static implicit operator ulong(HMMIO value) => (ulong)(value.Value);
+        public static explicit operator ulong(HMMIO value) => (ulong)(value.Value);
 
         public static explicit operator HMMIO(nuint value) => new HMMIO((nint)(value));
 

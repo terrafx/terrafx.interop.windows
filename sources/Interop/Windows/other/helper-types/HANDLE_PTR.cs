@@ -37,7 +37,7 @@ namespace TerraFX.Interop
 
         public static explicit operator HANDLE_PTR(long value) => new HANDLE_PTR((nuint)(value));
 
-        public static implicit operator long(HANDLE_PTR value) => (long)(value.Value);
+        public static explicit operator long(HANDLE_PTR value) => (long)(value.Value);
 
         public static explicit operator HANDLE_PTR(nint value) => new HANDLE_PTR((nuint)(value));
 

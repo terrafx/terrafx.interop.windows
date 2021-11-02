@@ -63,7 +63,7 @@ namespace TerraFX.Interop
 
         public static explicit operator HDDEDATA(ulong value) => new HDDEDATA((nint)(value));
 
-        public static implicit operator ulong(HDDEDATA value) => (ulong)(value.Value);
+        public static explicit operator ulong(HDDEDATA value) => (ulong)(value.Value);
 
         public static explicit operator HDDEDATA(nuint value) => new HDDEDATA((nint)(value));
 

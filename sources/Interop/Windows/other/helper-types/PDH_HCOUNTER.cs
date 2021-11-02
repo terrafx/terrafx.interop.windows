@@ -63,7 +63,7 @@ namespace TerraFX.Interop
 
         public static explicit operator PDH_HCOUNTER(ulong value) => new PDH_HCOUNTER((nint)(value));
 
-        public static implicit operator ulong(PDH_HCOUNTER value) => (ulong)(value.Value);
+        public static explicit operator ulong(PDH_HCOUNTER value) => (ulong)(value.Value);
 
         public static explicit operator PDH_HCOUNTER(nuint value) => new PDH_HCOUNTER((nint)(value));
 

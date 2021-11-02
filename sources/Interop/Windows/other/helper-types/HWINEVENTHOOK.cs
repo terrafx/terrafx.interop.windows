@@ -63,7 +63,7 @@ namespace TerraFX.Interop
 
         public static explicit operator HWINEVENTHOOK(ulong value) => new HWINEVENTHOOK((nint)(value));
 
-        public static implicit operator ulong(HWINEVENTHOOK value) => (ulong)(value.Value);
+        public static explicit operator ulong(HWINEVENTHOOK value) => (ulong)(value.Value);
 
         public static explicit operator HWINEVENTHOOK(nuint value) => new HWINEVENTHOOK((nint)(value));
 

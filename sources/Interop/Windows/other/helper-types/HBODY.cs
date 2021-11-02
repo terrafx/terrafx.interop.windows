@@ -63,7 +63,7 @@ namespace TerraFX.Interop
 
         public static explicit operator HBODY(ulong value) => new HBODY((nint)(value));
 
-        public static implicit operator ulong(HBODY value) => (ulong)(value.Value);
+        public static explicit operator ulong(HBODY value) => (ulong)(value.Value);
 
         public static explicit operator HBODY(nuint value) => new HBODY((nint)(value));
 

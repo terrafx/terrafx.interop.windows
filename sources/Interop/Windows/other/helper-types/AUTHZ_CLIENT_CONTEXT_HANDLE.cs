@@ -63,7 +63,7 @@ namespace TerraFX.Interop
 
         public static explicit operator AUTHZ_CLIENT_CONTEXT_HANDLE(ulong value) => new AUTHZ_CLIENT_CONTEXT_HANDLE((nint)(value));
 
-        public static implicit operator ulong(AUTHZ_CLIENT_CONTEXT_HANDLE value) => (ulong)(value.Value);
+        public static explicit operator ulong(AUTHZ_CLIENT_CONTEXT_HANDLE value) => (ulong)(value.Value);
 
         public static explicit operator AUTHZ_CLIENT_CONTEXT_HANDLE(nuint value) => new AUTHZ_CLIENT_CONTEXT_HANDLE((nint)(value));
 

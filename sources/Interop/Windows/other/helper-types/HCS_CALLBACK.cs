@@ -63,7 +63,7 @@ namespace TerraFX.Interop
 
         public static explicit operator HCS_CALLBACK(ulong value) => new HCS_CALLBACK((nint)(value));
 
-        public static implicit operator ulong(HCS_CALLBACK value) => (ulong)(value.Value);
+        public static explicit operator ulong(HCS_CALLBACK value) => (ulong)(value.Value);
 
         public static explicit operator HCS_CALLBACK(nuint value) => new HCS_CALLBACK((nint)(value));
 

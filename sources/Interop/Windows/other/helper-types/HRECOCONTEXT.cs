@@ -63,7 +63,7 @@ namespace TerraFX.Interop
 
         public static explicit operator HRECOCONTEXT(ulong value) => new HRECOCONTEXT((nint)(value));
 
-        public static implicit operator ulong(HRECOCONTEXT value) => (ulong)(value.Value);
+        public static explicit operator ulong(HRECOCONTEXT value) => (ulong)(value.Value);
 
         public static explicit operator HRECOCONTEXT(nuint value) => new HRECOCONTEXT((nint)(value));
 

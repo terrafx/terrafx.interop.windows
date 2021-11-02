@@ -63,7 +63,7 @@ namespace TerraFX.Interop
 
         public static explicit operator SERVICE_STATUS_HANDLE(ulong value) => new SERVICE_STATUS_HANDLE((nint)(value));
 
-        public static implicit operator ulong(SERVICE_STATUS_HANDLE value) => (ulong)(value.Value);
+        public static explicit operator ulong(SERVICE_STATUS_HANDLE value) => (ulong)(value.Value);
 
         public static explicit operator SERVICE_STATUS_HANDLE(nuint value) => new SERVICE_STATUS_HANDLE((nint)(value));
 

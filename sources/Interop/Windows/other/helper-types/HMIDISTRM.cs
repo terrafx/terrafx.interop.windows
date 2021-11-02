@@ -63,7 +63,7 @@ namespace TerraFX.Interop
 
         public static explicit operator HMIDISTRM(ulong value) => new HMIDISTRM((nint)(value));
 
-        public static implicit operator ulong(HMIDISTRM value) => (ulong)(value.Value);
+        public static explicit operator ulong(HMIDISTRM value) => (ulong)(value.Value);
 
         public static explicit operator HMIDISTRM(nuint value) => new HMIDISTRM((nint)(value));
 

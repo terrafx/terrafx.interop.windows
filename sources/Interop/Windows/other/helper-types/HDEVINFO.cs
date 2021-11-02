@@ -63,7 +63,7 @@ namespace TerraFX.Interop
 
         public static explicit operator HDEVINFO(ulong value) => new HDEVINFO((nint)(value));
 
-        public static implicit operator ulong(HDEVINFO value) => (ulong)(value.Value);
+        public static explicit operator ulong(HDEVINFO value) => (ulong)(value.Value);
 
         public static explicit operator HDEVINFO(nuint value) => new HDEVINFO((nint)(value));
 

@@ -63,7 +63,7 @@ namespace TerraFX.Interop
 
         public static explicit operator HTHUMBNAIL(ulong value) => new HTHUMBNAIL((nint)(value));
 
-        public static implicit operator ulong(HTHUMBNAIL value) => (ulong)(value.Value);
+        public static explicit operator ulong(HTHUMBNAIL value) => (ulong)(value.Value);
 
         public static explicit operator HTHUMBNAIL(nuint value) => new HTHUMBNAIL((nint)(value));
 

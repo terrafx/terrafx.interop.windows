@@ -63,7 +63,7 @@ namespace TerraFX.Interop
 
         public static explicit operator HRECOWORDLIST(ulong value) => new HRECOWORDLIST((nint)(value));
 
-        public static implicit operator ulong(HRECOWORDLIST value) => (ulong)(value.Value);
+        public static explicit operator ulong(HRECOWORDLIST value) => (ulong)(value.Value);
 
         public static explicit operator HRECOWORDLIST(nuint value) => new HRECOWORDLIST((nint)(value));
 

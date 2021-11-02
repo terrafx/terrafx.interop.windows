@@ -63,7 +63,7 @@ namespace TerraFX.Interop
 
         public static explicit operator HBLUETOOTH_CONTAINER_ELEMENT(ulong value) => new HBLUETOOTH_CONTAINER_ELEMENT((nint)(value));
 
-        public static implicit operator ulong(HBLUETOOTH_CONTAINER_ELEMENT value) => (ulong)(value.Value);
+        public static explicit operator ulong(HBLUETOOTH_CONTAINER_ELEMENT value) => (ulong)(value.Value);
 
         public static explicit operator HBLUETOOTH_CONTAINER_ELEMENT(nuint value) => new HBLUETOOTH_CONTAINER_ELEMENT((nint)(value));
 

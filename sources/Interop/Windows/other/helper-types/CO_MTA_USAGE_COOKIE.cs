@@ -63,7 +63,7 @@ namespace TerraFX.Interop
 
         public static explicit operator CO_MTA_USAGE_COOKIE(ulong value) => new CO_MTA_USAGE_COOKIE((nint)(value));
 
-        public static implicit operator ulong(CO_MTA_USAGE_COOKIE value) => (ulong)(value.Value);
+        public static explicit operator ulong(CO_MTA_USAGE_COOKIE value) => (ulong)(value.Value);
 
         public static explicit operator CO_MTA_USAGE_COOKIE(nuint value) => new CO_MTA_USAGE_COOKIE((nint)(value));
 

@@ -63,7 +63,7 @@ namespace TerraFX.Interop
 
         public static explicit operator HAMSICONTEXT(ulong value) => new HAMSICONTEXT((nint)(value));
 
-        public static implicit operator ulong(HAMSICONTEXT value) => (ulong)(value.Value);
+        public static explicit operator ulong(HAMSICONTEXT value) => (ulong)(value.Value);
 
         public static explicit operator HAMSICONTEXT(nuint value) => new HAMSICONTEXT((nint)(value));
 

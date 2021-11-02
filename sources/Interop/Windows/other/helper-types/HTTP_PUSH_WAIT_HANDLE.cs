@@ -63,7 +63,7 @@ namespace TerraFX.Interop
 
         public static explicit operator HTTP_PUSH_WAIT_HANDLE(ulong value) => new HTTP_PUSH_WAIT_HANDLE((nint)(value));
 
-        public static implicit operator ulong(HTTP_PUSH_WAIT_HANDLE value) => (ulong)(value.Value);
+        public static explicit operator ulong(HTTP_PUSH_WAIT_HANDLE value) => (ulong)(value.Value);
 
         public static explicit operator HTTP_PUSH_WAIT_HANDLE(nuint value) => new HTTP_PUSH_WAIT_HANDLE((nint)(value));
 

@@ -63,7 +63,7 @@ namespace TerraFX.Interop
 
         public static explicit operator EVT_OBJECT_ARRAY_PROPERTY_HANDLE(ulong value) => new EVT_OBJECT_ARRAY_PROPERTY_HANDLE((nint)(value));
 
-        public static implicit operator ulong(EVT_OBJECT_ARRAY_PROPERTY_HANDLE value) => (ulong)(value.Value);
+        public static explicit operator ulong(EVT_OBJECT_ARRAY_PROPERTY_HANDLE value) => (ulong)(value.Value);
 
         public static explicit operator EVT_OBJECT_ARRAY_PROPERTY_HANDLE(nuint value) => new EVT_OBJECT_ARRAY_PROPERTY_HANDLE((nint)(value));
 

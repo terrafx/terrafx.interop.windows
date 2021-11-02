@@ -63,7 +63,7 @@ namespace TerraFX.Interop
 
         public static explicit operator HSWDEVICE(ulong value) => new HSWDEVICE((nint)(value));
 
-        public static implicit operator ulong(HSWDEVICE value) => (ulong)(value.Value);
+        public static explicit operator ulong(HSWDEVICE value) => (ulong)(value.Value);
 
         public static explicit operator HSWDEVICE(nuint value) => new HSWDEVICE((nint)(value));
 

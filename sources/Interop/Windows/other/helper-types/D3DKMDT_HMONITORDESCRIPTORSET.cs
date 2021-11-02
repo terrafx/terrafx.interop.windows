@@ -63,7 +63,7 @@ namespace TerraFX.Interop
 
         public static explicit operator D3DKMDT_HMONITORDESCRIPTORSET(ulong value) => new D3DKMDT_HMONITORDESCRIPTORSET((nint)(value));
 
-        public static implicit operator ulong(D3DKMDT_HMONITORDESCRIPTORSET value) => (ulong)(value.Value);
+        public static explicit operator ulong(D3DKMDT_HMONITORDESCRIPTORSET value) => (ulong)(value.Value);
 
         public static explicit operator D3DKMDT_HMONITORDESCRIPTORSET(nuint value) => new D3DKMDT_HMONITORDESCRIPTORSET((nint)(value));
 

@@ -63,7 +63,7 @@ namespace TerraFX.Interop
 
         public static explicit operator EVT_HANDLE(ulong value) => new EVT_HANDLE((nint)(value));
 
-        public static implicit operator ulong(EVT_HANDLE value) => (ulong)(value.Value);
+        public static explicit operator ulong(EVT_HANDLE value) => (ulong)(value.Value);
 
         public static explicit operator EVT_HANDLE(nuint value) => new EVT_HANDLE((nint)(value));
 

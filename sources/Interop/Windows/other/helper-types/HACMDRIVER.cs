@@ -63,7 +63,7 @@ namespace TerraFX.Interop
 
         public static explicit operator HACMDRIVER(ulong value) => new HACMDRIVER((nint)(value));
 
-        public static implicit operator ulong(HACMDRIVER value) => (ulong)(value.Value);
+        public static explicit operator ulong(HACMDRIVER value) => (ulong)(value.Value);
 
         public static explicit operator HACMDRIVER(nuint value) => new HACMDRIVER((nint)(value));
 

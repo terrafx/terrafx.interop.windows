@@ -63,7 +63,7 @@ namespace TerraFX.Interop
 
         public static explicit operator RHANDLE(ulong value) => new RHANDLE((nint)(value));
 
-        public static implicit operator ulong(RHANDLE value) => (ulong)(value.Value);
+        public static explicit operator ulong(RHANDLE value) => (ulong)(value.Value);
 
         public static explicit operator RHANDLE(nuint value) => new RHANDLE((nint)(value));
 

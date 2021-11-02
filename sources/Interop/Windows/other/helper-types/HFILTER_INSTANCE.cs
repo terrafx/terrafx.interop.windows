@@ -63,7 +63,7 @@ namespace TerraFX.Interop
 
         public static explicit operator HFILTER_INSTANCE(ulong value) => new HFILTER_INSTANCE((nint)(value));
 
-        public static implicit operator ulong(HFILTER_INSTANCE value) => (ulong)(value.Value);
+        public static explicit operator ulong(HFILTER_INSTANCE value) => (ulong)(value.Value);
 
         public static explicit operator HFILTER_INSTANCE(nuint value) => new HFILTER_INSTANCE((nint)(value));
 

@@ -63,7 +63,7 @@ namespace TerraFX.Interop
 
         public static explicit operator DPI_AWARENESS_CONTEXT(ulong value) => new DPI_AWARENESS_CONTEXT((nint)(value));
 
-        public static implicit operator ulong(DPI_AWARENESS_CONTEXT value) => (ulong)(value.Value);
+        public static explicit operator ulong(DPI_AWARENESS_CONTEXT value) => (ulong)(value.Value);
 
         public static explicit operator DPI_AWARENESS_CONTEXT(nuint value) => new DPI_AWARENESS_CONTEXT((nint)(value));
 

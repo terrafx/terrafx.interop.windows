@@ -63,7 +63,7 @@ namespace TerraFX.Interop
 
         public static explicit operator HRASCONN(ulong value) => new HRASCONN((nint)(value));
 
-        public static implicit operator ulong(HRASCONN value) => (ulong)(value.Value);
+        public static explicit operator ulong(HRASCONN value) => (ulong)(value.Value);
 
         public static explicit operator HRASCONN(nuint value) => new HRASCONN((nint)(value));
 

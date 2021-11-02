@@ -63,7 +63,7 @@ namespace TerraFX.Interop
 
         public static explicit operator HPTPROVIDER(ulong value) => new HPTPROVIDER((nint)(value));
 
-        public static implicit operator ulong(HPTPROVIDER value) => (ulong)(value.Value);
+        public static explicit operator ulong(HPTPROVIDER value) => (ulong)(value.Value);
 
         public static explicit operator HPTPROVIDER(nuint value) => new HPTPROVIDER((nint)(value));
 

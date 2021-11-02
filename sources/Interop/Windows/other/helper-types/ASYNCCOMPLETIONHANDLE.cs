@@ -37,7 +37,7 @@ namespace TerraFX.Interop
 
         public static explicit operator ASYNCCOMPLETIONHANDLE(long value) => new ASYNCCOMPLETIONHANDLE((nuint)(value));
 
-        public static implicit operator long(ASYNCCOMPLETIONHANDLE value) => (long)(value.Value);
+        public static explicit operator long(ASYNCCOMPLETIONHANDLE value) => (long)(value.Value);
 
         public static explicit operator ASYNCCOMPLETIONHANDLE(nint value) => new ASYNCCOMPLETIONHANDLE((nuint)(value));
 

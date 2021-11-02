@@ -63,7 +63,7 @@ namespace TerraFX.Interop
 
         public static explicit operator HPOWERNOTIFY(ulong value) => new HPOWERNOTIFY((nint)(value));
 
-        public static implicit operator ulong(HPOWERNOTIFY value) => (ulong)(value.Value);
+        public static explicit operator ulong(HPOWERNOTIFY value) => (ulong)(value.Value);
 
         public static explicit operator HPOWERNOTIFY(nuint value) => new HPOWERNOTIFY((nint)(value));
 

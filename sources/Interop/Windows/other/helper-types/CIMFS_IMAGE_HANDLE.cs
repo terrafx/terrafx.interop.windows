@@ -63,7 +63,7 @@ namespace TerraFX.Interop
 
         public static explicit operator CIMFS_IMAGE_HANDLE(ulong value) => new CIMFS_IMAGE_HANDLE((nint)(value));
 
-        public static implicit operator ulong(CIMFS_IMAGE_HANDLE value) => (ulong)(value.Value);
+        public static explicit operator ulong(CIMFS_IMAGE_HANDLE value) => (ulong)(value.Value);
 
         public static explicit operator CIMFS_IMAGE_HANDLE(nuint value) => new CIMFS_IMAGE_HANDLE((nint)(value));
 

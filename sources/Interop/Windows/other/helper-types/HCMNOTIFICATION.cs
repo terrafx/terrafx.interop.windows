@@ -63,7 +63,7 @@ namespace TerraFX.Interop
 
         public static explicit operator HCMNOTIFICATION(ulong value) => new HCMNOTIFICATION((nint)(value));
 
-        public static implicit operator ulong(HCMNOTIFICATION value) => (ulong)(value.Value);
+        public static explicit operator ulong(HCMNOTIFICATION value) => (ulong)(value.Value);
 
         public static explicit operator HCMNOTIFICATION(nuint value) => new HCMNOTIFICATION((nint)(value));
 

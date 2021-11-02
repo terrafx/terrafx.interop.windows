@@ -63,7 +63,7 @@ namespace TerraFX.Interop
 
         public static explicit operator HBLUETOOTH_DEVICE_FIND(ulong value) => new HBLUETOOTH_DEVICE_FIND((nint)(value));
 
-        public static implicit operator ulong(HBLUETOOTH_DEVICE_FIND value) => (ulong)(value.Value);
+        public static explicit operator ulong(HBLUETOOTH_DEVICE_FIND value) => (ulong)(value.Value);
 
         public static explicit operator HBLUETOOTH_DEVICE_FIND(nuint value) => new HBLUETOOTH_DEVICE_FIND((nint)(value));
 

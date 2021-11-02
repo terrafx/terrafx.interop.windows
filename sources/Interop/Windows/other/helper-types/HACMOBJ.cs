@@ -63,7 +63,7 @@ namespace TerraFX.Interop
 
         public static explicit operator HACMOBJ(ulong value) => new HACMOBJ((nint)(value));
 
-        public static implicit operator ulong(HACMOBJ value) => (ulong)(value.Value);
+        public static explicit operator ulong(HACMOBJ value) => (ulong)(value.Value);
 
         public static explicit operator HACMOBJ(nuint value) => new HACMOBJ((nint)(value));
 

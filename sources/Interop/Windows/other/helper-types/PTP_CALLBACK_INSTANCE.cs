@@ -57,7 +57,7 @@ namespace TerraFX.Interop
 
         public static explicit operator PTP_CALLBACK_INSTANCE(ulong value) => new PTP_CALLBACK_INSTANCE((nint)(value));
 
-        public static implicit operator ulong(PTP_CALLBACK_INSTANCE value) => (ulong)(value.Value);
+        public static explicit operator ulong(PTP_CALLBACK_INSTANCE value) => (ulong)(value.Value);
 
         public static explicit operator PTP_CALLBACK_INSTANCE(nuint value) => new PTP_CALLBACK_INSTANCE((nint)(value));
 

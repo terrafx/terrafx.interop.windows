@@ -63,7 +63,7 @@ namespace TerraFX.Interop
 
         public static explicit operator HPCON(ulong value) => new HPCON((nint)(value));
 
-        public static implicit operator ulong(HPCON value) => (ulong)(value.Value);
+        public static explicit operator ulong(HPCON value) => (ulong)(value.Value);
 
         public static explicit operator HPCON(nuint value) => new HPCON((nint)(value));
 

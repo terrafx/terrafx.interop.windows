@@ -57,7 +57,7 @@ namespace TerraFX.Interop
 
         public static explicit operator PTP_CLEANUP_GROUP(ulong value) => new PTP_CLEANUP_GROUP((nint)(value));
 
-        public static implicit operator ulong(PTP_CLEANUP_GROUP value) => (ulong)(value.Value);
+        public static explicit operator ulong(PTP_CLEANUP_GROUP value) => (ulong)(value.Value);
 
         public static explicit operator PTP_CLEANUP_GROUP(nuint value) => new PTP_CLEANUP_GROUP((nint)(value));
 

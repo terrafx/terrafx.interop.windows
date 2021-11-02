@@ -63,7 +63,7 @@ namespace TerraFX.Interop
 
         public static explicit operator HRECOLATTICE(ulong value) => new HRECOLATTICE((nint)(value));
 
-        public static implicit operator ulong(HRECOLATTICE value) => (ulong)(value.Value);
+        public static explicit operator ulong(HRECOLATTICE value) => (ulong)(value.Value);
 
         public static explicit operator HRECOLATTICE(nuint value) => new HRECOLATTICE((nint)(value));
 

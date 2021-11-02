@@ -63,7 +63,7 @@ namespace TerraFX.Interop
 
         public static explicit operator HDIAGNOSTIC_EVENT_PRODUCER_DESCRIPTION(ulong value) => new HDIAGNOSTIC_EVENT_PRODUCER_DESCRIPTION((nint)(value));
 
-        public static implicit operator ulong(HDIAGNOSTIC_EVENT_PRODUCER_DESCRIPTION value) => (ulong)(value.Value);
+        public static explicit operator ulong(HDIAGNOSTIC_EVENT_PRODUCER_DESCRIPTION value) => (ulong)(value.Value);
 
         public static explicit operator HDIAGNOSTIC_EVENT_PRODUCER_DESCRIPTION(nuint value) => new HDIAGNOSTIC_EVENT_PRODUCER_DESCRIPTION((nint)(value));
 

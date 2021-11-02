@@ -63,7 +63,7 @@ namespace TerraFX.Interop
 
         public static explicit operator SPSTATEHANDLE(ulong value) => new SPSTATEHANDLE((nint)(value));
 
-        public static implicit operator ulong(SPSTATEHANDLE value) => (ulong)(value.Value);
+        public static explicit operator ulong(SPSTATEHANDLE value) => (ulong)(value.Value);
 
         public static explicit operator SPSTATEHANDLE(nuint value) => new SPSTATEHANDLE((nint)(value));
 

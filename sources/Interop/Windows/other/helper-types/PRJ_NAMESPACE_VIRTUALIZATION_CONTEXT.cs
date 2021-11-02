@@ -63,7 +63,7 @@ namespace TerraFX.Interop
 
         public static explicit operator PRJ_NAMESPACE_VIRTUALIZATION_CONTEXT(ulong value) => new PRJ_NAMESPACE_VIRTUALIZATION_CONTEXT((nint)(value));
 
-        public static implicit operator ulong(PRJ_NAMESPACE_VIRTUALIZATION_CONTEXT value) => (ulong)(value.Value);
+        public static explicit operator ulong(PRJ_NAMESPACE_VIRTUALIZATION_CONTEXT value) => (ulong)(value.Value);
 
         public static explicit operator PRJ_NAMESPACE_VIRTUALIZATION_CONTEXT(nuint value) => new PRJ_NAMESPACE_VIRTUALIZATION_CONTEXT((nint)(value));
 

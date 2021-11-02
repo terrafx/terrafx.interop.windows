@@ -63,7 +63,7 @@ namespace TerraFX.Interop
 
         public static explicit operator HMIDI(ulong value) => new HMIDI((nint)(value));
 
-        public static implicit operator ulong(HMIDI value) => (ulong)(value.Value);
+        public static explicit operator ulong(HMIDI value) => (ulong)(value.Value);
 
         public static explicit operator HMIDI(nuint value) => new HMIDI((nint)(value));
 

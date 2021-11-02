@@ -63,7 +63,7 @@ namespace TerraFX.Interop
 
         public static explicit operator HMACHINE(ulong value) => new HMACHINE((nint)(value));
 
-        public static implicit operator ulong(HMACHINE value) => (ulong)(value.Value);
+        public static explicit operator ulong(HMACHINE value) => (ulong)(value.Value);
 
         public static explicit operator HMACHINE(nuint value) => new HMACHINE((nint)(value));
 

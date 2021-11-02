@@ -57,7 +57,7 @@ namespace TerraFX.Interop
 
         public static explicit operator RTM_ENTITY_HANDLE(ulong value) => new RTM_ENTITY_HANDLE((nint)(value));
 
-        public static implicit operator ulong(RTM_ENTITY_HANDLE value) => (ulong)(value.Value);
+        public static explicit operator ulong(RTM_ENTITY_HANDLE value) => (ulong)(value.Value);
 
         public static explicit operator RTM_ENTITY_HANDLE(nuint value) => new RTM_ENTITY_HANDLE((nint)(value));
 

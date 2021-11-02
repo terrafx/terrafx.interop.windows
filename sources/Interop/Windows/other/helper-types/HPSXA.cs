@@ -63,7 +63,7 @@ namespace TerraFX.Interop
 
         public static explicit operator HPSXA(ulong value) => new HPSXA((nint)(value));
 
-        public static implicit operator ulong(HPSXA value) => (ulong)(value.Value);
+        public static explicit operator ulong(HPSXA value) => (ulong)(value.Value);
 
         public static explicit operator HPSXA(nuint value) => new HPSXA((nint)(value));
 

@@ -63,7 +63,7 @@ namespace TerraFX.Interop
 
         public static explicit operator HDWP(ulong value) => new HDWP((nint)(value));
 
-        public static implicit operator ulong(HDWP value) => (ulong)(value.Value);
+        public static explicit operator ulong(HDWP value) => (ulong)(value.Value);
 
         public static explicit operator HDWP(nuint value) => new HDWP((nint)(value));
 

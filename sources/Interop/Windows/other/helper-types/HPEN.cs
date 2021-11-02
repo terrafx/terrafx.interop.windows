@@ -63,7 +63,7 @@ namespace TerraFX.Interop
 
         public static explicit operator HPEN(ulong value) => new HPEN((nint)(value));
 
-        public static implicit operator ulong(HPEN value) => (ulong)(value.Value);
+        public static explicit operator ulong(HPEN value) => (ulong)(value.Value);
 
         public static explicit operator HPEN(nuint value) => new HPEN((nint)(value));
 

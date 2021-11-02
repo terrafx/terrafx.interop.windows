@@ -63,7 +63,7 @@ namespace TerraFX.Interop
 
         public static explicit operator HRGN(ulong value) => new HRGN((nint)(value));
 
-        public static implicit operator ulong(HRGN value) => (ulong)(value.Value);
+        public static explicit operator ulong(HRGN value) => (ulong)(value.Value);
 
         public static explicit operator HRGN(nuint value) => new HRGN((nint)(value));
 

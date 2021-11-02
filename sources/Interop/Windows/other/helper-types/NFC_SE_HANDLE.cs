@@ -63,7 +63,7 @@ namespace TerraFX.Interop
 
         public static explicit operator NFC_SE_HANDLE(ulong value) => new NFC_SE_HANDLE((nint)(value));
 
-        public static implicit operator ulong(NFC_SE_HANDLE value) => (ulong)(value.Value);
+        public static explicit operator ulong(NFC_SE_HANDLE value) => (ulong)(value.Value);
 
         public static explicit operator NFC_SE_HANDLE(nuint value) => new NFC_SE_HANDLE((nint)(value));
 

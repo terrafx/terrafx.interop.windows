@@ -63,7 +63,7 @@ namespace TerraFX.Interop
 
         public static explicit operator HFONT(ulong value) => new HFONT((nint)(value));
 
-        public static implicit operator ulong(HFONT value) => (ulong)(value.Value);
+        public static explicit operator ulong(HFONT value) => (ulong)(value.Value);
 
         public static explicit operator HFONT(nuint value) => new HFONT((nint)(value));
 

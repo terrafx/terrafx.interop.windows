@@ -63,7 +63,7 @@ namespace TerraFX.Interop
 
         public static explicit operator HCHARSET(ulong value) => new HCHARSET((nint)(value));
 
-        public static implicit operator ulong(HCHARSET value) => (ulong)(value.Value);
+        public static explicit operator ulong(HCHARSET value) => (ulong)(value.Value);
 
         public static explicit operator HCHARSET(nuint value) => new HCHARSET((nint)(value));
 

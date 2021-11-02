@@ -57,7 +57,7 @@ namespace TerraFX.Interop
 
         public static explicit operator PACKAGE_INFO_REFERENCE(ulong value) => new PACKAGE_INFO_REFERENCE((nint)(value));
 
-        public static implicit operator ulong(PACKAGE_INFO_REFERENCE value) => (ulong)(value.Value);
+        public static explicit operator ulong(PACKAGE_INFO_REFERENCE value) => (ulong)(value.Value);
 
         public static explicit operator PACKAGE_INFO_REFERENCE(nuint value) => new PACKAGE_INFO_REFERENCE((nint)(value));
 

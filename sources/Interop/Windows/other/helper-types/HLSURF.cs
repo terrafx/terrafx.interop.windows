@@ -63,7 +63,7 @@ namespace TerraFX.Interop
 
         public static explicit operator HLSURF(ulong value) => new HLSURF((nint)(value));
 
-        public static implicit operator ulong(HLSURF value) => (ulong)(value.Value);
+        public static explicit operator ulong(HLSURF value) => (ulong)(value.Value);
 
         public static explicit operator HLSURF(nuint value) => new HLSURF((nint)(value));
 

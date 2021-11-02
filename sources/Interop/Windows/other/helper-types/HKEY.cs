@@ -63,7 +63,7 @@ namespace TerraFX.Interop
 
         public static explicit operator HKEY(ulong value) => new HKEY((nint)(value));
 
-        public static implicit operator ulong(HKEY value) => (ulong)(value.Value);
+        public static explicit operator ulong(HKEY value) => (ulong)(value.Value);
 
         public static explicit operator HKEY(nuint value) => new HKEY((nint)(value));
 

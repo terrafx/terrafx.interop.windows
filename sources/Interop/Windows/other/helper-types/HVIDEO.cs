@@ -63,7 +63,7 @@ namespace TerraFX.Interop
 
         public static explicit operator HVIDEO(ulong value) => new HVIDEO((nint)(value));
 
-        public static implicit operator ulong(HVIDEO value) => (ulong)(value.Value);
+        public static explicit operator ulong(HVIDEO value) => (ulong)(value.Value);
 
         public static explicit operator HVIDEO(nuint value) => new HVIDEO((nint)(value));
 
