@@ -27,7 +27,7 @@ namespace TerraFX.Interop
 
         public static explicit operator HRECOWORDLIST(HANDLE value) => new HRECOWORDLIST(value);
 
-        public static implicit operator HANDLE(HRECOWORDLIST value) => new HRECOWORDLIST(value);
+        public static implicit operator HANDLE(HRECOWORDLIST value) => new HANDLE(value.Value);
 
         public static explicit operator HRECOWORDLIST(byte value) => new HRECOWORDLIST((nint)(value));
 

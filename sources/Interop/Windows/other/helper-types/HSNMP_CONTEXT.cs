@@ -27,7 +27,7 @@ namespace TerraFX.Interop
 
         public static explicit operator HSNMP_CONTEXT(HANDLE value) => new HSNMP_CONTEXT(value);
 
-        public static implicit operator HANDLE(HSNMP_CONTEXT value) => new HSNMP_CONTEXT(value);
+        public static implicit operator HANDLE(HSNMP_CONTEXT value) => new HANDLE(value.Value);
 
         public static explicit operator HSNMP_CONTEXT(byte value) => new HSNMP_CONTEXT((nint)(value));
 

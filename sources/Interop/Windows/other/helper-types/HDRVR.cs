@@ -27,7 +27,7 @@ namespace TerraFX.Interop
 
         public static explicit operator HDRVR(HANDLE value) => new HDRVR(value);
 
-        public static implicit operator HANDLE(HDRVR value) => new HDRVR(value);
+        public static implicit operator HANDLE(HDRVR value) => new HANDLE(value.Value);
 
         public static explicit operator HDRVR(byte value) => new HDRVR((nint)(value));
 

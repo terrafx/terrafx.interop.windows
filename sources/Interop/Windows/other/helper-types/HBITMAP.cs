@@ -27,7 +27,7 @@ namespace TerraFX.Interop
 
         public static explicit operator HBITMAP(HANDLE value) => new HBITMAP(value);
 
-        public static implicit operator HANDLE(HBITMAP value) => new HBITMAP(value);
+        public static implicit operator HANDLE(HBITMAP value) => new HANDLE(value.Value);
 
         public static explicit operator HBITMAP(byte value) => new HBITMAP((nint)(value));
 

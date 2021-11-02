@@ -27,7 +27,7 @@ namespace TerraFX.Interop
 
         public static explicit operator HMMIO(HANDLE value) => new HMMIO(value);
 
-        public static implicit operator HANDLE(HMMIO value) => new HMMIO(value);
+        public static implicit operator HANDLE(HMMIO value) => new HANDLE(value.Value);
 
         public static explicit operator HMMIO(byte value) => new HMMIO((nint)(value));
 

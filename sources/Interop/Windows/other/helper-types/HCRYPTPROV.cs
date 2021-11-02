@@ -27,7 +27,7 @@ namespace TerraFX.Interop
 
         public static explicit operator HCRYPTPROV(HANDLE value) => new HCRYPTPROV(value);
 
-        public static implicit operator HANDLE(HCRYPTPROV value) => new HCRYPTPROV(value);
+        public static implicit operator HANDLE(HCRYPTPROV value) => new HANDLE(value.Value);
 
         public static explicit operator HCRYPTPROV(byte value) => new HCRYPTPROV((nint)(value));
 

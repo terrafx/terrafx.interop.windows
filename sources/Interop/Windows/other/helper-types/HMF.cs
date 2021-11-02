@@ -27,7 +27,7 @@ namespace TerraFX.Interop
 
         public static explicit operator HMF(HANDLE value) => new HMF(value);
 
-        public static implicit operator HANDLE(HMF value) => new HMF(value);
+        public static implicit operator HANDLE(HMF value) => new HANDLE(value.Value);
 
         public static explicit operator HMF(byte value) => new HMF((nint)(value));
 

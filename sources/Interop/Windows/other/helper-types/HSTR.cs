@@ -27,7 +27,7 @@ namespace TerraFX.Interop
 
         public static explicit operator HSTR(HANDLE value) => new HSTR(value);
 
-        public static implicit operator HANDLE(HSTR value) => new HSTR(value);
+        public static implicit operator HANDLE(HSTR value) => new HANDLE(value.Value);
 
         public static explicit operator HSTR(byte value) => new HSTR((nint)(value));
 

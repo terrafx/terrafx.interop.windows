@@ -27,7 +27,7 @@ namespace TerraFX.Interop
 
         public static explicit operator HGDIOBJ(HANDLE value) => new HGDIOBJ(value);
 
-        public static implicit operator HANDLE(HGDIOBJ value) => new HGDIOBJ(value);
+        public static implicit operator HANDLE(HGDIOBJ value) => new HANDLE(value.Value);
 
         public static explicit operator HGDIOBJ(byte value) => new HGDIOBJ((nint)(value));
 

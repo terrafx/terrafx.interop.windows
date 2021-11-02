@@ -27,7 +27,7 @@ namespace TerraFX.Interop
 
         public static explicit operator HFONT(HANDLE value) => new HFONT(value);
 
-        public static implicit operator HANDLE(HFONT value) => new HFONT(value);
+        public static implicit operator HANDLE(HFONT value) => new HANDLE(value.Value);
 
         public static explicit operator HFONT(byte value) => new HFONT((nint)(value));
 

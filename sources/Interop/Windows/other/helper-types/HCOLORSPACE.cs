@@ -27,7 +27,7 @@ namespace TerraFX.Interop
 
         public static explicit operator HCOLORSPACE(HANDLE value) => new HCOLORSPACE(value);
 
-        public static implicit operator HANDLE(HCOLORSPACE value) => new HCOLORSPACE(value);
+        public static implicit operator HANDLE(HCOLORSPACE value) => new HANDLE(value.Value);
 
         public static explicit operator HCOLORSPACE(byte value) => new HCOLORSPACE((nint)(value));
 

@@ -27,7 +27,7 @@ namespace TerraFX.Interop
 
         public static explicit operator HCRYPTDEFAULTCONTEXT(HANDLE value) => new HCRYPTDEFAULTCONTEXT(value);
 
-        public static implicit operator HANDLE(HCRYPTDEFAULTCONTEXT value) => new HCRYPTDEFAULTCONTEXT(value);
+        public static implicit operator HANDLE(HCRYPTDEFAULTCONTEXT value) => new HANDLE(value.Value);
 
         public static explicit operator HCRYPTDEFAULTCONTEXT(byte value) => new HCRYPTDEFAULTCONTEXT((nint)(value));
 

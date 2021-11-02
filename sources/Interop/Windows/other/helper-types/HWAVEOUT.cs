@@ -27,7 +27,7 @@ namespace TerraFX.Interop
 
         public static explicit operator HWAVEOUT(HANDLE value) => new HWAVEOUT(value);
 
-        public static implicit operator HANDLE(HWAVEOUT value) => new HWAVEOUT(value);
+        public static implicit operator HANDLE(HWAVEOUT value) => new HANDLE(value.Value);
 
         public static explicit operator HWAVEOUT(byte value) => new HWAVEOUT((nint)(value));
 

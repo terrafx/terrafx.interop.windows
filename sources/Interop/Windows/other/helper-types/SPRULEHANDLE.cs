@@ -27,7 +27,7 @@ namespace TerraFX.Interop
 
         public static explicit operator SPRULEHANDLE(HANDLE value) => new SPRULEHANDLE(value);
 
-        public static implicit operator HANDLE(SPRULEHANDLE value) => new SPRULEHANDLE(value);
+        public static implicit operator HANDLE(SPRULEHANDLE value) => new HANDLE(value.Value);
 
         public static explicit operator SPRULEHANDLE(byte value) => new SPRULEHANDLE((nint)(value));
 

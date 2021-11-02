@@ -27,7 +27,7 @@ namespace TerraFX.Interop
 
         public static explicit operator HMONITOR(HANDLE value) => new HMONITOR(value);
 
-        public static implicit operator HANDLE(HMONITOR value) => new HMONITOR(value);
+        public static implicit operator HANDLE(HMONITOR value) => new HANDLE(value.Value);
 
         public static explicit operator HMONITOR(byte value) => new HMONITOR((nint)(value));
 

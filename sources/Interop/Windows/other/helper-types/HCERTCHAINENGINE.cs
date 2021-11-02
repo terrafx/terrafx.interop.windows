@@ -27,7 +27,7 @@ namespace TerraFX.Interop
 
         public static explicit operator HCERTCHAINENGINE(HANDLE value) => new HCERTCHAINENGINE(value);
 
-        public static implicit operator HANDLE(HCERTCHAINENGINE value) => new HCERTCHAINENGINE(value);
+        public static implicit operator HANDLE(HCERTCHAINENGINE value) => new HANDLE(value.Value);
 
         public static explicit operator HCERTCHAINENGINE(byte value) => new HCERTCHAINENGINE((nint)(value));
 

@@ -27,7 +27,7 @@ namespace TerraFX.Interop
 
         public static explicit operator GLOBALHANDLE(HANDLE value) => new GLOBALHANDLE(value);
 
-        public static implicit operator HANDLE(GLOBALHANDLE value) => new GLOBALHANDLE(value);
+        public static implicit operator HANDLE(GLOBALHANDLE value) => new HANDLE(value.Value);
 
         public static explicit operator GLOBALHANDLE(byte value) => new GLOBALHANDLE((nint)(value));
 

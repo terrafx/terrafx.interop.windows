@@ -27,7 +27,7 @@ namespace TerraFX.Interop
 
         public static explicit operator HTOUCHINPUT(HANDLE value) => new HTOUCHINPUT(value);
 
-        public static implicit operator HANDLE(HTOUCHINPUT value) => new HTOUCHINPUT(value);
+        public static implicit operator HANDLE(HTOUCHINPUT value) => new HANDLE(value.Value);
 
         public static explicit operator HTOUCHINPUT(byte value) => new HTOUCHINPUT((nint)(value));
 

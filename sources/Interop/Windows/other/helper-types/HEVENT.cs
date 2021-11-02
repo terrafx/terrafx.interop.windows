@@ -27,7 +27,7 @@ namespace TerraFX.Interop
 
         public static explicit operator HEVENT(HANDLE value) => new HEVENT(value);
 
-        public static implicit operator HANDLE(HEVENT value) => new HEVENT(value);
+        public static implicit operator HANDLE(HEVENT value) => new HANDLE(value.Value);
 
         public static explicit operator HEVENT(byte value) => new HEVENT((nint)(value));
 

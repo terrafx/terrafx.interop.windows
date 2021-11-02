@@ -27,7 +27,7 @@ namespace TerraFX.Interop
 
         public static explicit operator HKEY(HANDLE value) => new HKEY(value);
 
-        public static implicit operator HANDLE(HKEY value) => new HKEY(value);
+        public static implicit operator HANDLE(HKEY value) => new HANDLE(value.Value);
 
         public static explicit operator HKEY(byte value) => new HKEY((nint)(value));
 

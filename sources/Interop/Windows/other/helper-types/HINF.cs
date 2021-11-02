@@ -27,7 +27,7 @@ namespace TerraFX.Interop
 
         public static explicit operator HINF(HANDLE value) => new HINF(value);
 
-        public static implicit operator HANDLE(HINF value) => new HINF(value);
+        public static implicit operator HANDLE(HINF value) => new HANDLE(value.Value);
 
         public static explicit operator HINF(byte value) => new HINF((nint)(value));
 

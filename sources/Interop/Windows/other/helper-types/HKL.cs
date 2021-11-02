@@ -27,7 +27,7 @@ namespace TerraFX.Interop
 
         public static explicit operator HKL(HANDLE value) => new HKL(value);
 
-        public static implicit operator HANDLE(HKL value) => new HKL(value);
+        public static implicit operator HANDLE(HKL value) => new HANDLE(value.Value);
 
         public static explicit operator HKL(byte value) => new HKL((nint)(value));
 

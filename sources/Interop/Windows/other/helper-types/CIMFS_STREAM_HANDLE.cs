@@ -27,7 +27,7 @@ namespace TerraFX.Interop
 
         public static explicit operator CIMFS_STREAM_HANDLE(HANDLE value) => new CIMFS_STREAM_HANDLE(value);
 
-        public static implicit operator HANDLE(CIMFS_STREAM_HANDLE value) => new CIMFS_STREAM_HANDLE(value);
+        public static implicit operator HANDLE(CIMFS_STREAM_HANDLE value) => new HANDLE(value.Value);
 
         public static explicit operator CIMFS_STREAM_HANDLE(byte value) => new CIMFS_STREAM_HANDLE((nint)(value));
 

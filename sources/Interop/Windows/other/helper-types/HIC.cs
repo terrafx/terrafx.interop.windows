@@ -27,7 +27,7 @@ namespace TerraFX.Interop
 
         public static explicit operator HIC(HANDLE value) => new HIC(value);
 
-        public static implicit operator HANDLE(HIC value) => new HIC(value);
+        public static implicit operator HANDLE(HIC value) => new HANDLE(value.Value);
 
         public static explicit operator HIC(byte value) => new HIC((nint)(value));
 

@@ -27,7 +27,7 @@ namespace TerraFX.Interop
 
         public static explicit operator HTHEME(HANDLE value) => new HTHEME(value);
 
-        public static implicit operator HANDLE(HTHEME value) => new HTHEME(value);
+        public static implicit operator HANDLE(HTHEME value) => new HANDLE(value.Value);
 
         public static explicit operator HTHEME(byte value) => new HTHEME((nint)(value));
 

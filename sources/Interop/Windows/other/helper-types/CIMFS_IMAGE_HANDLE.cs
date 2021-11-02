@@ -27,7 +27,7 @@ namespace TerraFX.Interop
 
         public static explicit operator CIMFS_IMAGE_HANDLE(HANDLE value) => new CIMFS_IMAGE_HANDLE(value);
 
-        public static implicit operator HANDLE(CIMFS_IMAGE_HANDLE value) => new CIMFS_IMAGE_HANDLE(value);
+        public static implicit operator HANDLE(CIMFS_IMAGE_HANDLE value) => new HANDLE(value.Value);
 
         public static explicit operator CIMFS_IMAGE_HANDLE(byte value) => new CIMFS_IMAGE_HANDLE((nint)(value));
 

@@ -27,7 +27,7 @@ namespace TerraFX.Interop
 
         public static explicit operator HCRYPTKEY(HANDLE value) => new HCRYPTKEY(value);
 
-        public static implicit operator HANDLE(HCRYPTKEY value) => new HCRYPTKEY(value);
+        public static implicit operator HANDLE(HCRYPTKEY value) => new HANDLE(value.Value);
 
         public static explicit operator HCRYPTKEY(byte value) => new HCRYPTKEY((nint)(value));
 

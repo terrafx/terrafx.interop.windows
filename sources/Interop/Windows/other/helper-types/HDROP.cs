@@ -27,7 +27,7 @@ namespace TerraFX.Interop
 
         public static explicit operator HDROP(HANDLE value) => new HDROP(value);
 
-        public static implicit operator HANDLE(HDROP value) => new HDROP(value);
+        public static implicit operator HANDLE(HDROP value) => new HANDLE(value.Value);
 
         public static explicit operator HDROP(byte value) => new HDROP((nint)(value));
 

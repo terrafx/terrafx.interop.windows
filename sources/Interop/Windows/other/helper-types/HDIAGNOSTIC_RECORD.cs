@@ -27,7 +27,7 @@ namespace TerraFX.Interop
 
         public static explicit operator HDIAGNOSTIC_RECORD(HANDLE value) => new HDIAGNOSTIC_RECORD(value);
 
-        public static implicit operator HANDLE(HDIAGNOSTIC_RECORD value) => new HDIAGNOSTIC_RECORD(value);
+        public static implicit operator HANDLE(HDIAGNOSTIC_RECORD value) => new HANDLE(value.Value);
 
         public static explicit operator HDIAGNOSTIC_RECORD(byte value) => new HDIAGNOSTIC_RECORD((nint)(value));
 

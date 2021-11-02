@@ -27,7 +27,7 @@ namespace TerraFX.Interop
 
         public static explicit operator HDEVQUERY(HANDLE value) => new HDEVQUERY(value);
 
-        public static implicit operator HANDLE(HDEVQUERY value) => new HDEVQUERY(value);
+        public static implicit operator HANDLE(HDEVQUERY value) => new HANDLE(value.Value);
 
         public static explicit operator HDEVQUERY(byte value) => new HDEVQUERY((nint)(value));
 

@@ -27,7 +27,7 @@ namespace TerraFX.Interop
 
         public static explicit operator HSNMP_VBL(HANDLE value) => new HSNMP_VBL(value);
 
-        public static implicit operator HANDLE(HSNMP_VBL value) => new HSNMP_VBL(value);
+        public static implicit operator HANDLE(HSNMP_VBL value) => new HANDLE(value.Value);
 
         public static explicit operator HSNMP_VBL(byte value) => new HSNMP_VBL((nint)(value));
 

@@ -27,7 +27,7 @@ namespace TerraFX.Interop
 
         public static explicit operator HBLUETOOTH_DEVICE_FIND(HANDLE value) => new HBLUETOOTH_DEVICE_FIND(value);
 
-        public static implicit operator HANDLE(HBLUETOOTH_DEVICE_FIND value) => new HBLUETOOTH_DEVICE_FIND(value);
+        public static implicit operator HANDLE(HBLUETOOTH_DEVICE_FIND value) => new HANDLE(value.Value);
 
         public static explicit operator HBLUETOOTH_DEVICE_FIND(byte value) => new HBLUETOOTH_DEVICE_FIND((nint)(value));
 

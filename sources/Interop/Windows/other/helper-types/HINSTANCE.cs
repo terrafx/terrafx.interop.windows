@@ -27,7 +27,7 @@ namespace TerraFX.Interop
 
         public static explicit operator HINSTANCE(HANDLE value) => new HINSTANCE(value);
 
-        public static implicit operator HANDLE(HINSTANCE value) => new HINSTANCE(value);
+        public static implicit operator HANDLE(HINSTANCE value) => new HANDLE(value.Value);
 
         public static explicit operator HINSTANCE(byte value) => new HINSTANCE((nint)(value));
 

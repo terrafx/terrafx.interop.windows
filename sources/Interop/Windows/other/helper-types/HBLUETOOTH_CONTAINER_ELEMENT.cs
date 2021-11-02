@@ -27,7 +27,7 @@ namespace TerraFX.Interop
 
         public static explicit operator HBLUETOOTH_CONTAINER_ELEMENT(HANDLE value) => new HBLUETOOTH_CONTAINER_ELEMENT(value);
 
-        public static implicit operator HANDLE(HBLUETOOTH_CONTAINER_ELEMENT value) => new HBLUETOOTH_CONTAINER_ELEMENT(value);
+        public static implicit operator HANDLE(HBLUETOOTH_CONTAINER_ELEMENT value) => new HANDLE(value.Value);
 
         public static explicit operator HBLUETOOTH_CONTAINER_ELEMENT(byte value) => new HBLUETOOTH_CONTAINER_ELEMENT((nint)(value));
 

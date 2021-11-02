@@ -27,7 +27,7 @@ namespace TerraFX.Interop
 
         public static explicit operator HLOCAL(HANDLE value) => new HLOCAL(value);
 
-        public static implicit operator HANDLE(HLOCAL value) => new HLOCAL(value);
+        public static implicit operator HANDLE(HLOCAL value) => new HANDLE(value.Value);
 
         public static explicit operator HLOCAL(byte value) => new HLOCAL((nint)(value));
 

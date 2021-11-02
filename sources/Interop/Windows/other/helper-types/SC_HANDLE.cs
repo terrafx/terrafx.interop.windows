@@ -27,7 +27,7 @@ namespace TerraFX.Interop
 
         public static explicit operator SC_HANDLE(HANDLE value) => new SC_HANDLE(value);
 
-        public static implicit operator HANDLE(SC_HANDLE value) => new SC_HANDLE(value);
+        public static implicit operator HANDLE(SC_HANDLE value) => new HANDLE(value.Value);
 
         public static explicit operator SC_HANDLE(byte value) => new SC_HANDLE((nint)(value));
 

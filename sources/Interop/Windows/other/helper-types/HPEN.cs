@@ -27,7 +27,7 @@ namespace TerraFX.Interop
 
         public static explicit operator HPEN(HANDLE value) => new HPEN(value);
 
-        public static implicit operator HANDLE(HPEN value) => new HPEN(value);
+        public static implicit operator HANDLE(HPEN value) => new HANDLE(value.Value);
 
         public static explicit operator HPEN(byte value) => new HPEN((nint)(value));
 

@@ -27,7 +27,7 @@ namespace TerraFX.Interop
 
         public static explicit operator HACCEL(HANDLE value) => new HACCEL(value);
 
-        public static implicit operator HANDLE(HACCEL value) => new HACCEL(value);
+        public static implicit operator HANDLE(HACCEL value) => new HANDLE(value.Value);
 
         public static explicit operator HACCEL(byte value) => new HACCEL((nint)(value));
 

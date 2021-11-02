@@ -27,7 +27,7 @@ namespace TerraFX.Interop
 
         public static explicit operator HCRYPTMSG(HANDLE value) => new HCRYPTMSG(value);
 
-        public static implicit operator HANDLE(HCRYPTMSG value) => new HCRYPTMSG(value);
+        public static implicit operator HANDLE(HCRYPTMSG value) => new HANDLE(value.Value);
 
         public static explicit operator HCRYPTMSG(byte value) => new HCRYPTMSG((nint)(value));
 

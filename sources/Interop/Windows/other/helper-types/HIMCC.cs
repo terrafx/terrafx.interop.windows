@@ -27,7 +27,7 @@ namespace TerraFX.Interop
 
         public static explicit operator HIMCC(HANDLE value) => new HIMCC(value);
 
-        public static implicit operator HANDLE(HIMCC value) => new HIMCC(value);
+        public static implicit operator HANDLE(HIMCC value) => new HANDLE(value.Value);
 
         public static explicit operator HIMCC(byte value) => new HIMCC((nint)(value));
 

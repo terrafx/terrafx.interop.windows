@@ -27,7 +27,7 @@ namespace TerraFX.Interop
 
         public static explicit operator HRECOCONTEXT(HANDLE value) => new HRECOCONTEXT(value);
 
-        public static implicit operator HANDLE(HRECOCONTEXT value) => new HRECOCONTEXT(value);
+        public static implicit operator HANDLE(HRECOCONTEXT value) => new HANDLE(value.Value);
 
         public static explicit operator HRECOCONTEXT(byte value) => new HRECOCONTEXT((nint)(value));
 

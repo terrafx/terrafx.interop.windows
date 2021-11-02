@@ -27,7 +27,7 @@ namespace TerraFX.Interop
 
         public static explicit operator NET_FRAGMENT_RETURN_CONTEXT_HANDLE(HANDLE value) => new NET_FRAGMENT_RETURN_CONTEXT_HANDLE(value);
 
-        public static implicit operator HANDLE(NET_FRAGMENT_RETURN_CONTEXT_HANDLE value) => new NET_FRAGMENT_RETURN_CONTEXT_HANDLE(value);
+        public static implicit operator HANDLE(NET_FRAGMENT_RETURN_CONTEXT_HANDLE value) => new HANDLE(value.Value);
 
         public static explicit operator NET_FRAGMENT_RETURN_CONTEXT_HANDLE(byte value) => new NET_FRAGMENT_RETURN_CONTEXT_HANDLE((nint)(value));
 

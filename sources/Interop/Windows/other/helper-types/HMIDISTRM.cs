@@ -27,7 +27,7 @@ namespace TerraFX.Interop
 
         public static explicit operator HMIDISTRM(HANDLE value) => new HMIDISTRM(value);
 
-        public static implicit operator HANDLE(HMIDISTRM value) => new HMIDISTRM(value);
+        public static implicit operator HANDLE(HMIDISTRM value) => new HANDLE(value.Value);
 
         public static explicit operator HMIDISTRM(byte value) => new HMIDISTRM((nint)(value));
 

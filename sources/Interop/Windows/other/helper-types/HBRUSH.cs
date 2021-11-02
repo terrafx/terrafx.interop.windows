@@ -27,7 +27,7 @@ namespace TerraFX.Interop
 
         public static explicit operator HBRUSH(HANDLE value) => new HBRUSH(value);
 
-        public static implicit operator HANDLE(HBRUSH value) => new HBRUSH(value);
+        public static implicit operator HANDLE(HBRUSH value) => new HANDLE(value.Value);
 
         public static explicit operator HBRUSH(byte value) => new HBRUSH((nint)(value));
 

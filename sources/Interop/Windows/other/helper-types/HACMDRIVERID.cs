@@ -27,7 +27,7 @@ namespace TerraFX.Interop
 
         public static explicit operator HACMDRIVERID(HANDLE value) => new HACMDRIVERID(value);
 
-        public static implicit operator HANDLE(HACMDRIVERID value) => new HACMDRIVERID(value);
+        public static implicit operator HANDLE(HACMDRIVERID value) => new HANDLE(value.Value);
 
         public static explicit operator HACMDRIVERID(byte value) => new HACMDRIVERID((nint)(value));
 

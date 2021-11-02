@@ -27,7 +27,7 @@ namespace TerraFX.Interop
 
         public static explicit operator PEERDIST_INSTANCE_HANDLE(HANDLE value) => new PEERDIST_INSTANCE_HANDLE(value);
 
-        public static implicit operator HANDLE(PEERDIST_INSTANCE_HANDLE value) => new PEERDIST_INSTANCE_HANDLE(value);
+        public static implicit operator HANDLE(PEERDIST_INSTANCE_HANDLE value) => new HANDLE(value.Value);
 
         public static explicit operator PEERDIST_INSTANCE_HANDLE(byte value) => new PEERDIST_INSTANCE_HANDLE((nint)(value));
 

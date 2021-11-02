@@ -27,7 +27,7 @@ namespace TerraFX.Interop
 
         public static explicit operator HCATADMIN(HANDLE value) => new HCATADMIN(value);
 
-        public static implicit operator HANDLE(HCATADMIN value) => new HCATADMIN(value);
+        public static implicit operator HANDLE(HCATADMIN value) => new HANDLE(value.Value);
 
         public static explicit operator HCATADMIN(byte value) => new HCATADMIN((nint)(value));
 

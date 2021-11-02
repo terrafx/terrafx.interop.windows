@@ -27,7 +27,7 @@ namespace TerraFX.Interop
 
         public static explicit operator FEATURE_STATE_CHANGE_SUBSCRIPTION(HANDLE value) => new FEATURE_STATE_CHANGE_SUBSCRIPTION(value);
 
-        public static implicit operator HANDLE(FEATURE_STATE_CHANGE_SUBSCRIPTION value) => new FEATURE_STATE_CHANGE_SUBSCRIPTION(value);
+        public static implicit operator HANDLE(FEATURE_STATE_CHANGE_SUBSCRIPTION value) => new HANDLE(value.Value);
 
         public static explicit operator FEATURE_STATE_CHANGE_SUBSCRIPTION(byte value) => new FEATURE_STATE_CHANGE_SUBSCRIPTION((nint)(value));
 

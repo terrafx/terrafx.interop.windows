@@ -27,7 +27,7 @@ namespace TerraFX.Interop
 
         public static explicit operator HPSXA(HANDLE value) => new HPSXA(value);
 
-        public static implicit operator HANDLE(HPSXA value) => new HPSXA(value);
+        public static implicit operator HANDLE(HPSXA value) => new HANDLE(value.Value);
 
         public static explicit operator HPSXA(byte value) => new HPSXA((nint)(value));
 

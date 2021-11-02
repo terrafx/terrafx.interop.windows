@@ -27,7 +27,7 @@ namespace TerraFX.Interop
 
         public static explicit operator HRAWINPUT(HANDLE value) => new HRAWINPUT(value);
 
-        public static implicit operator HANDLE(HRAWINPUT value) => new HRAWINPUT(value);
+        public static implicit operator HANDLE(HRAWINPUT value) => new HANDLE(value.Value);
 
         public static explicit operator HRAWINPUT(byte value) => new HRAWINPUT((nint)(value));
 

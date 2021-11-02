@@ -27,7 +27,7 @@ namespace TerraFX.Interop
 
         public static explicit operator HCMNOTIFICATION(HANDLE value) => new HCMNOTIFICATION(value);
 
-        public static implicit operator HANDLE(HCMNOTIFICATION value) => new HCMNOTIFICATION(value);
+        public static implicit operator HANDLE(HCMNOTIFICATION value) => new HANDLE(value.Value);
 
         public static explicit operator HCMNOTIFICATION(byte value) => new HCMNOTIFICATION((nint)(value));
 

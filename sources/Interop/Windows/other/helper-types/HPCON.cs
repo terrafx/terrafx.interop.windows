@@ -27,7 +27,7 @@ namespace TerraFX.Interop
 
         public static explicit operator HPCON(HANDLE value) => new HPCON(value);
 
-        public static implicit operator HANDLE(HPCON value) => new HPCON(value);
+        public static implicit operator HANDLE(HPCON value) => new HANDLE(value.Value);
 
         public static explicit operator HPCON(byte value) => new HPCON((nint)(value));
 

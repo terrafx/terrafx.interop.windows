@@ -27,7 +27,7 @@ namespace TerraFX.Interop
 
         public static explicit operator HPSS(HANDLE value) => new HPSS(value);
 
-        public static implicit operator HANDLE(HPSS value) => new HPSS(value);
+        public static implicit operator HANDLE(HPSS value) => new HANDLE(value.Value);
 
         public static explicit operator HPSS(byte value) => new HPSS((nint)(value));
 

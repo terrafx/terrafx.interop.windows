@@ -27,7 +27,7 @@ namespace TerraFX.Interop
 
         public static explicit operator HWINWATCH(HANDLE value) => new HWINWATCH(value);
 
-        public static implicit operator HANDLE(HWINWATCH value) => new HWINWATCH(value);
+        public static implicit operator HANDLE(HWINWATCH value) => new HANDLE(value.Value);
 
         public static explicit operator HWINWATCH(byte value) => new HWINWATCH((nint)(value));
 

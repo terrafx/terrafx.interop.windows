@@ -27,7 +27,7 @@ namespace TerraFX.Interop
 
         public static explicit operator HSTRING_BUFFER(HANDLE value) => new HSTRING_BUFFER(value);
 
-        public static implicit operator HANDLE(HSTRING_BUFFER value) => new HSTRING_BUFFER(value);
+        public static implicit operator HANDLE(HSTRING_BUFFER value) => new HANDLE(value.Value);
 
         public static explicit operator HSTRING_BUFFER(byte value) => new HSTRING_BUFFER((nint)(value));
 

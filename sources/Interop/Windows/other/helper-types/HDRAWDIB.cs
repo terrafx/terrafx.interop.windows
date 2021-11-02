@@ -27,7 +27,7 @@ namespace TerraFX.Interop
 
         public static explicit operator HDRAWDIB(HANDLE value) => new HDRAWDIB(value);
 
-        public static implicit operator HANDLE(HDRAWDIB value) => new HDRAWDIB(value);
+        public static implicit operator HANDLE(HDRAWDIB value) => new HANDLE(value.Value);
 
         public static explicit operator HDRAWDIB(byte value) => new HDRAWDIB((nint)(value));
 

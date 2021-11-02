@@ -27,7 +27,7 @@ namespace TerraFX.Interop
 
         public static explicit operator HPROFILE(HANDLE value) => new HPROFILE(value);
 
-        public static implicit operator HANDLE(HPROFILE value) => new HPROFILE(value);
+        public static implicit operator HANDLE(HPROFILE value) => new HANDLE(value.Value);
 
         public static explicit operator HPROFILE(byte value) => new HPROFILE((nint)(value));
 

@@ -27,7 +27,7 @@ namespace TerraFX.Interop
 
         public static explicit operator HANIMATIONBUFFER(HANDLE value) => new HANIMATIONBUFFER(value);
 
-        public static implicit operator HANDLE(HANIMATIONBUFFER value) => new HANIMATIONBUFFER(value);
+        public static implicit operator HANDLE(HANIMATIONBUFFER value) => new HANDLE(value.Value);
 
         public static explicit operator HANIMATIONBUFFER(byte value) => new HANIMATIONBUFFER((nint)(value));
 

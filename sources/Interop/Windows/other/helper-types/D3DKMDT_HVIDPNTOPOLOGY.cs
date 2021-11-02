@@ -27,7 +27,7 @@ namespace TerraFX.Interop
 
         public static explicit operator D3DKMDT_HVIDPNTOPOLOGY(HANDLE value) => new D3DKMDT_HVIDPNTOPOLOGY(value);
 
-        public static implicit operator HANDLE(D3DKMDT_HVIDPNTOPOLOGY value) => new D3DKMDT_HVIDPNTOPOLOGY(value);
+        public static implicit operator HANDLE(D3DKMDT_HVIDPNTOPOLOGY value) => new HANDLE(value.Value);
 
         public static explicit operator D3DKMDT_HVIDPNTOPOLOGY(byte value) => new D3DKMDT_HVIDPNTOPOLOGY((nint)(value));
 

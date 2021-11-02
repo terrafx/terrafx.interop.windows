@@ -27,7 +27,7 @@ namespace TerraFX.Interop
 
         public static explicit operator USB_CHANGE_REGISTRATION_HANDLE(HANDLE value) => new USB_CHANGE_REGISTRATION_HANDLE(value);
 
-        public static implicit operator HANDLE(USB_CHANGE_REGISTRATION_HANDLE value) => new USB_CHANGE_REGISTRATION_HANDLE(value);
+        public static implicit operator HANDLE(USB_CHANGE_REGISTRATION_HANDLE value) => new HANDLE(value.Value);
 
         public static explicit operator USB_CHANGE_REGISTRATION_HANDLE(byte value) => new USB_CHANGE_REGISTRATION_HANDLE((nint)(value));
 

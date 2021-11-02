@@ -27,7 +27,7 @@ namespace TerraFX.Interop
 
         public static explicit operator HCRYPTASYNC(HANDLE value) => new HCRYPTASYNC(value);
 
-        public static implicit operator HANDLE(HCRYPTASYNC value) => new HCRYPTASYNC(value);
+        public static implicit operator HANDLE(HCRYPTASYNC value) => new HANDLE(value.Value);
 
         public static explicit operator HCRYPTASYNC(byte value) => new HCRYPTASYNC((nint)(value));
 

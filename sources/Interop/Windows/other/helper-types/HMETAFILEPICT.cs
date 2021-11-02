@@ -27,7 +27,7 @@ namespace TerraFX.Interop
 
         public static explicit operator HMETAFILEPICT(HANDLE value) => new HMETAFILEPICT(value);
 
-        public static implicit operator HANDLE(HMETAFILEPICT value) => new HMETAFILEPICT(value);
+        public static implicit operator HANDLE(HMETAFILEPICT value) => new HANDLE(value.Value);
 
         public static explicit operator HMETAFILEPICT(byte value) => new HMETAFILEPICT((nint)(value));
 

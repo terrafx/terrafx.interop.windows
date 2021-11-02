@@ -27,7 +27,7 @@ namespace TerraFX.Interop
 
         public static explicit operator HAMSICONTEXT(HANDLE value) => new HAMSICONTEXT(value);
 
-        public static implicit operator HANDLE(HAMSICONTEXT value) => new HAMSICONTEXT(value);
+        public static implicit operator HANDLE(HAMSICONTEXT value) => new HANDLE(value.Value);
 
         public static explicit operator HAMSICONTEXT(byte value) => new HAMSICONTEXT((nint)(value));
 

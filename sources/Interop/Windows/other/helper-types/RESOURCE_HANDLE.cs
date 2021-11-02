@@ -27,7 +27,7 @@ namespace TerraFX.Interop
 
         public static explicit operator RESOURCE_HANDLE(HANDLE value) => new RESOURCE_HANDLE(value);
 
-        public static implicit operator HANDLE(RESOURCE_HANDLE value) => new RESOURCE_HANDLE(value);
+        public static implicit operator HANDLE(RESOURCE_HANDLE value) => new HANDLE(value.Value);
 
         public static explicit operator RESOURCE_HANDLE(byte value) => new RESOURCE_HANDLE((nint)(value));
 

@@ -27,7 +27,7 @@ namespace TerraFX.Interop
 
         public static explicit operator SPGRAMMARHANDLE(HANDLE value) => new SPGRAMMARHANDLE(value);
 
-        public static implicit operator HANDLE(SPGRAMMARHANDLE value) => new SPGRAMMARHANDLE(value);
+        public static implicit operator HANDLE(SPGRAMMARHANDLE value) => new HANDLE(value.Value);
 
         public static explicit operator SPGRAMMARHANDLE(byte value) => new SPGRAMMARHANDLE((nint)(value));
 

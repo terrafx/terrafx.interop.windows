@@ -27,7 +27,7 @@ namespace TerraFX.Interop
 
         public static explicit operator SPTRANSITIONID(HANDLE value) => new SPTRANSITIONID(value);
 
-        public static implicit operator HANDLE(SPTRANSITIONID value) => new SPTRANSITIONID(value);
+        public static implicit operator HANDLE(SPTRANSITIONID value) => new HANDLE(value.Value);
 
         public static explicit operator SPTRANSITIONID(byte value) => new SPTRANSITIONID((nint)(value));
 

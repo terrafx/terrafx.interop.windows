@@ -27,7 +27,7 @@ namespace TerraFX.Interop
 
         public static explicit operator AUTHZ_CLIENT_CONTEXT_HANDLE(HANDLE value) => new AUTHZ_CLIENT_CONTEXT_HANDLE(value);
 
-        public static implicit operator HANDLE(AUTHZ_CLIENT_CONTEXT_HANDLE value) => new AUTHZ_CLIENT_CONTEXT_HANDLE(value);
+        public static implicit operator HANDLE(AUTHZ_CLIENT_CONTEXT_HANDLE value) => new HANDLE(value.Value);
 
         public static explicit operator AUTHZ_CLIENT_CONTEXT_HANDLE(byte value) => new AUTHZ_CLIENT_CONTEXT_HANDLE((nint)(value));
 

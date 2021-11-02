@@ -27,7 +27,7 @@ namespace TerraFX.Interop
 
         public static explicit operator HCATINFO(HANDLE value) => new HCATINFO(value);
 
-        public static implicit operator HANDLE(HCATINFO value) => new HCATINFO(value);
+        public static implicit operator HANDLE(HCATINFO value) => new HANDLE(value.Value);
 
         public static explicit operator HCATINFO(byte value) => new HCATINFO((nint)(value));
 

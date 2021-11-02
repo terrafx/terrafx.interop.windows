@@ -27,7 +27,7 @@ namespace TerraFX.Interop
 
         public static explicit operator HRECOLATTICE(HANDLE value) => new HRECOLATTICE(value);
 
-        public static implicit operator HANDLE(HRECOLATTICE value) => new HRECOLATTICE(value);
+        public static implicit operator HANDLE(HRECOLATTICE value) => new HANDLE(value.Value);
 
         public static explicit operator HRECOLATTICE(byte value) => new HRECOLATTICE((nint)(value));
 

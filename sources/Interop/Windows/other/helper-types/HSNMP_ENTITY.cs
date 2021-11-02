@@ -27,7 +27,7 @@ namespace TerraFX.Interop
 
         public static explicit operator HSNMP_ENTITY(HANDLE value) => new HSNMP_ENTITY(value);
 
-        public static implicit operator HANDLE(HSNMP_ENTITY value) => new HSNMP_ENTITY(value);
+        public static implicit operator HANDLE(HSNMP_ENTITY value) => new HANDLE(value.Value);
 
         public static explicit operator HSNMP_ENTITY(byte value) => new HSNMP_ENTITY((nint)(value));
 

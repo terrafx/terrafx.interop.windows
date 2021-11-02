@@ -27,7 +27,7 @@ namespace TerraFX.Interop
 
         public static explicit operator HDIAGNOSTIC_EVENT_TAG_DESCRIPTION(HANDLE value) => new HDIAGNOSTIC_EVENT_TAG_DESCRIPTION(value);
 
-        public static implicit operator HANDLE(HDIAGNOSTIC_EVENT_TAG_DESCRIPTION value) => new HDIAGNOSTIC_EVENT_TAG_DESCRIPTION(value);
+        public static implicit operator HANDLE(HDIAGNOSTIC_EVENT_TAG_DESCRIPTION value) => new HANDLE(value.Value);
 
         public static explicit operator HDIAGNOSTIC_EVENT_TAG_DESCRIPTION(byte value) => new HDIAGNOSTIC_EVENT_TAG_DESCRIPTION((nint)(value));
 

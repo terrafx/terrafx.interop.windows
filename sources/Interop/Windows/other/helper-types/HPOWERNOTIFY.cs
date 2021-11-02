@@ -27,7 +27,7 @@ namespace TerraFX.Interop
 
         public static explicit operator HPOWERNOTIFY(HANDLE value) => new HPOWERNOTIFY(value);
 
-        public static implicit operator HANDLE(HPOWERNOTIFY value) => new HPOWERNOTIFY(value);
+        public static implicit operator HANDLE(HPOWERNOTIFY value) => new HANDLE(value.Value);
 
         public static explicit operator HPOWERNOTIFY(byte value) => new HPOWERNOTIFY((nint)(value));
 

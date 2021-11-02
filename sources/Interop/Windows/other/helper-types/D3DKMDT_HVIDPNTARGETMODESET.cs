@@ -27,7 +27,7 @@ namespace TerraFX.Interop
 
         public static explicit operator D3DKMDT_HVIDPNTARGETMODESET(HANDLE value) => new D3DKMDT_HVIDPNTARGETMODESET(value);
 
-        public static implicit operator HANDLE(D3DKMDT_HVIDPNTARGETMODESET value) => new D3DKMDT_HVIDPNTARGETMODESET(value);
+        public static implicit operator HANDLE(D3DKMDT_HVIDPNTARGETMODESET value) => new HANDLE(value.Value);
 
         public static explicit operator D3DKMDT_HVIDPNTARGETMODESET(byte value) => new D3DKMDT_HVIDPNTARGETMODESET((nint)(value));
 

@@ -27,7 +27,7 @@ namespace TerraFX.Interop
 
         public static explicit operator MIDL_ES_HANDLE(HANDLE value) => new MIDL_ES_HANDLE(value);
 
-        public static implicit operator HANDLE(MIDL_ES_HANDLE value) => new MIDL_ES_HANDLE(value);
+        public static implicit operator HANDLE(MIDL_ES_HANDLE value) => new HANDLE(value.Value);
 
         public static explicit operator MIDL_ES_HANDLE(byte value) => new MIDL_ES_HANDLE((nint)(value));
 

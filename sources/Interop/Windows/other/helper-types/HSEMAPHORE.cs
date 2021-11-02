@@ -27,7 +27,7 @@ namespace TerraFX.Interop
 
         public static explicit operator HSEMAPHORE(HANDLE value) => new HSEMAPHORE(value);
 
-        public static implicit operator HANDLE(HSEMAPHORE value) => new HSEMAPHORE(value);
+        public static implicit operator HANDLE(HSEMAPHORE value) => new HANDLE(value.Value);
 
         public static explicit operator HSEMAPHORE(byte value) => new HSEMAPHORE((nint)(value));
 

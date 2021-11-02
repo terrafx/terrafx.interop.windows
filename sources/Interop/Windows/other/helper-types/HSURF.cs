@@ -27,7 +27,7 @@ namespace TerraFX.Interop
 
         public static explicit operator HSURF(HANDLE value) => new HSURF(value);
 
-        public static implicit operator HANDLE(HSURF value) => new HSURF(value);
+        public static implicit operator HANDLE(HSURF value) => new HANDLE(value.Value);
 
         public static explicit operator HSURF(byte value) => new HSURF((nint)(value));
 

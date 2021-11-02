@@ -27,7 +27,7 @@ namespace TerraFX.Interop
 
         public static explicit operator HSPFILELOG(HANDLE value) => new HSPFILELOG(value);
 
-        public static implicit operator HANDLE(HSPFILELOG value) => new HSPFILELOG(value);
+        public static implicit operator HANDLE(HSPFILELOG value) => new HANDLE(value.Value);
 
         public static explicit operator HSPFILELOG(byte value) => new HSPFILELOG((nint)(value));
 

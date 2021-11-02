@@ -27,7 +27,7 @@ namespace TerraFX.Interop
 
         public static explicit operator HSYNTHETICPOINTERDEVICE(HANDLE value) => new HSYNTHETICPOINTERDEVICE(value);
 
-        public static implicit operator HANDLE(HSYNTHETICPOINTERDEVICE value) => new HSYNTHETICPOINTERDEVICE(value);
+        public static implicit operator HANDLE(HSYNTHETICPOINTERDEVICE value) => new HANDLE(value.Value);
 
         public static explicit operator HSYNTHETICPOINTERDEVICE(byte value) => new HSYNTHETICPOINTERDEVICE((nint)(value));
 

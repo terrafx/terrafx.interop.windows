@@ -27,7 +27,7 @@ namespace TerraFX.Interop
 
         public static explicit operator HMIXER(HANDLE value) => new HMIXER(value);
 
-        public static implicit operator HANDLE(HMIXER value) => new HMIXER(value);
+        public static implicit operator HANDLE(HMIXER value) => new HANDLE(value.Value);
 
         public static explicit operator HMIXER(byte value) => new HMIXER((nint)(value));
 

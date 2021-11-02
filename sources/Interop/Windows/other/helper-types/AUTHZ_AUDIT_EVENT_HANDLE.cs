@@ -27,7 +27,7 @@ namespace TerraFX.Interop
 
         public static explicit operator AUTHZ_AUDIT_EVENT_HANDLE(HANDLE value) => new AUTHZ_AUDIT_EVENT_HANDLE(value);
 
-        public static implicit operator HANDLE(AUTHZ_AUDIT_EVENT_HANDLE value) => new AUTHZ_AUDIT_EVENT_HANDLE(value);
+        public static implicit operator HANDLE(AUTHZ_AUDIT_EVENT_HANDLE value) => new HANDLE(value.Value);
 
         public static explicit operator AUTHZ_AUDIT_EVENT_HANDLE(byte value) => new AUTHZ_AUDIT_EVENT_HANDLE((nint)(value));
 

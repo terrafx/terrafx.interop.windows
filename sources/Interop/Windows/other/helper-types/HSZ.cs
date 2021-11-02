@@ -27,7 +27,7 @@ namespace TerraFX.Interop
 
         public static explicit operator HSZ(HANDLE value) => new HSZ(value);
 
-        public static implicit operator HANDLE(HSZ value) => new HSZ(value);
+        public static implicit operator HANDLE(HSZ value) => new HANDLE(value.Value);
 
         public static explicit operator HSZ(byte value) => new HSZ((nint)(value));
 

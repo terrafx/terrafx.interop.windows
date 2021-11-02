@@ -27,7 +27,7 @@ namespace TerraFX.Interop
 
         public static explicit operator HCONVLIST(HANDLE value) => new HCONVLIST(value);
 
-        public static implicit operator HANDLE(HCONVLIST value) => new HCONVLIST(value);
+        public static implicit operator HANDLE(HCONVLIST value) => new HANDLE(value.Value);
 
         public static explicit operator HCONVLIST(byte value) => new HCONVLIST((nint)(value));
 

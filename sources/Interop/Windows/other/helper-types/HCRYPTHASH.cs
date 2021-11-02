@@ -27,7 +27,7 @@ namespace TerraFX.Interop
 
         public static explicit operator HCRYPTHASH(HANDLE value) => new HCRYPTHASH(value);
 
-        public static implicit operator HANDLE(HCRYPTHASH value) => new HCRYPTHASH(value);
+        public static implicit operator HANDLE(HCRYPTHASH value) => new HANDLE(value.Value);
 
         public static explicit operator HCRYPTHASH(byte value) => new HCRYPTHASH((nint)(value));
 

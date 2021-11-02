@@ -27,7 +27,7 @@ namespace TerraFX.Interop
 
         public static explicit operator HPROPSHEETPAGE(HANDLE value) => new HPROPSHEETPAGE(value);
 
-        public static implicit operator HANDLE(HPROPSHEETPAGE value) => new HPROPSHEETPAGE(value);
+        public static implicit operator HANDLE(HPROPSHEETPAGE value) => new HANDLE(value.Value);
 
         public static explicit operator HPROPSHEETPAGE(byte value) => new HPROPSHEETPAGE((nint)(value));
 

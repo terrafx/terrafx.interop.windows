@@ -27,7 +27,7 @@ namespace TerraFX.Interop
 
         public static explicit operator HCERT_SERVER_OCSP_RESPONSE(HANDLE value) => new HCERT_SERVER_OCSP_RESPONSE(value);
 
-        public static implicit operator HANDLE(HCERT_SERVER_OCSP_RESPONSE value) => new HCERT_SERVER_OCSP_RESPONSE(value);
+        public static implicit operator HANDLE(HCERT_SERVER_OCSP_RESPONSE value) => new HANDLE(value.Value);
 
         public static explicit operator HCERT_SERVER_OCSP_RESPONSE(byte value) => new HCERT_SERVER_OCSP_RESPONSE((nint)(value));
 

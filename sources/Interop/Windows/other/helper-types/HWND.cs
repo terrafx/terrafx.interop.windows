@@ -27,7 +27,7 @@ namespace TerraFX.Interop
 
         public static explicit operator HWND(HANDLE value) => new HWND(value);
 
-        public static implicit operator HANDLE(HWND value) => new HWND(value);
+        public static implicit operator HANDLE(HWND value) => new HANDLE(value.Value);
 
         public static explicit operator HWND(byte value) => new HWND((nint)(value));
 

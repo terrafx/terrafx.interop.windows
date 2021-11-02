@@ -27,7 +27,7 @@ namespace TerraFX.Interop
 
         public static explicit operator HFILTER(HANDLE value) => new HFILTER(value);
 
-        public static implicit operator HANDLE(HFILTER value) => new HFILTER(value);
+        public static implicit operator HANDLE(HFILTER value) => new HANDLE(value.Value);
 
         public static explicit operator HFILTER(byte value) => new HFILTER((nint)(value));
 

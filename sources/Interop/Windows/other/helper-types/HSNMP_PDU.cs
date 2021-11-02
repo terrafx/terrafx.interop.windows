@@ -27,7 +27,7 @@ namespace TerraFX.Interop
 
         public static explicit operator HSNMP_PDU(HANDLE value) => new HSNMP_PDU(value);
 
-        public static implicit operator HANDLE(HSNMP_PDU value) => new HSNMP_PDU(value);
+        public static implicit operator HANDLE(HSNMP_PDU value) => new HANDLE(value.Value);
 
         public static explicit operator HSNMP_PDU(byte value) => new HSNMP_PDU((nint)(value));
 

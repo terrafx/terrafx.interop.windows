@@ -27,7 +27,7 @@ namespace TerraFX.Interop
 
         public static explicit operator LPM_HANDLE(HANDLE value) => new LPM_HANDLE(value);
 
-        public static implicit operator HANDLE(LPM_HANDLE value) => new LPM_HANDLE(value);
+        public static implicit operator HANDLE(LPM_HANDLE value) => new HANDLE(value.Value);
 
         public static explicit operator LPM_HANDLE(byte value) => new LPM_HANDLE((nint)(value));
 

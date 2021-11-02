@@ -27,7 +27,7 @@ namespace TerraFX.Interop
 
         public static explicit operator HUIATEXTRANGE(HANDLE value) => new HUIATEXTRANGE(value);
 
-        public static implicit operator HANDLE(HUIATEXTRANGE value) => new HUIATEXTRANGE(value);
+        public static implicit operator HANDLE(HUIATEXTRANGE value) => new HANDLE(value.Value);
 
         public static explicit operator HUIATEXTRANGE(byte value) => new HUIATEXTRANGE((nint)(value));
 

@@ -27,7 +27,7 @@ namespace TerraFX.Interop
 
         public static explicit operator HCOMDB(HANDLE value) => new HCOMDB(value);
 
-        public static implicit operator HANDLE(HCOMDB value) => new HCOMDB(value);
+        public static implicit operator HANDLE(HCOMDB value) => new HANDLE(value.Value);
 
         public static explicit operator HCOMDB(byte value) => new HCOMDB((nint)(value));
 

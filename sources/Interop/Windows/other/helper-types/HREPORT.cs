@@ -27,7 +27,7 @@ namespace TerraFX.Interop
 
         public static explicit operator HREPORT(HANDLE value) => new HREPORT(value);
 
-        public static implicit operator HANDLE(HREPORT value) => new HREPORT(value);
+        public static implicit operator HANDLE(HREPORT value) => new HANDLE(value.Value);
 
         public static explicit operator HREPORT(byte value) => new HREPORT((nint)(value));
 

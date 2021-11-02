@@ -27,7 +27,7 @@ namespace TerraFX.Interop
 
         public static explicit operator HMODULE(HANDLE value) => new HMODULE(value);
 
-        public static implicit operator HANDLE(HMODULE value) => new HMODULE(value);
+        public static implicit operator HANDLE(HMODULE value) => new HANDLE(value.Value);
 
         public static explicit operator HMODULE(byte value) => new HMODULE((nint)(value));
 

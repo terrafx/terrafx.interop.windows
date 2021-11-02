@@ -27,7 +27,7 @@ namespace TerraFX.Interop
 
         public static explicit operator HMACHINE(HANDLE value) => new HMACHINE(value);
 
-        public static implicit operator HANDLE(HMACHINE value) => new HMACHINE(value);
+        public static implicit operator HANDLE(HMACHINE value) => new HANDLE(value.Value);
 
         public static explicit operator HMACHINE(byte value) => new HMACHINE((nint)(value));
 

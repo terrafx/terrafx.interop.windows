@@ -27,7 +27,7 @@ namespace TerraFX.Interop
 
         public static explicit operator MIB_SERVER_HANDLE(HANDLE value) => new MIB_SERVER_HANDLE(value);
 
-        public static implicit operator HANDLE(MIB_SERVER_HANDLE value) => new MIB_SERVER_HANDLE(value);
+        public static implicit operator HANDLE(MIB_SERVER_HANDLE value) => new HANDLE(value.Value);
 
         public static explicit operator MIB_SERVER_HANDLE(byte value) => new MIB_SERVER_HANDLE((nint)(value));
 

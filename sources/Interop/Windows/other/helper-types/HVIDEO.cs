@@ -27,7 +27,7 @@ namespace TerraFX.Interop
 
         public static explicit operator HVIDEO(HANDLE value) => new HVIDEO(value);
 
-        public static implicit operator HANDLE(HVIDEO value) => new HVIDEO(value);
+        public static implicit operator HANDLE(HVIDEO value) => new HANDLE(value.Value);
 
         public static explicit operator HVIDEO(byte value) => new HVIDEO((nint)(value));
 

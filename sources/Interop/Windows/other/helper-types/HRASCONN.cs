@@ -27,7 +27,7 @@ namespace TerraFX.Interop
 
         public static explicit operator HRASCONN(HANDLE value) => new HRASCONN(value);
 
-        public static implicit operator HANDLE(HRASCONN value) => new HRASCONN(value);
+        public static implicit operator HANDLE(HRASCONN value) => new HANDLE(value.Value);
 
         public static explicit operator HRASCONN(byte value) => new HRASCONN((nint)(value));
 

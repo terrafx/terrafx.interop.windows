@@ -27,7 +27,7 @@ namespace TerraFX.Interop
 
         public static explicit operator EVT_HANDLE(HANDLE value) => new EVT_HANDLE(value);
 
-        public static implicit operator HANDLE(EVT_HANDLE value) => new EVT_HANDLE(value);
+        public static implicit operator HANDLE(EVT_HANDLE value) => new HANDLE(value.Value);
 
         public static explicit operator EVT_HANDLE(byte value) => new EVT_HANDLE((nint)(value));
 

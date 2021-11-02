@@ -27,7 +27,7 @@ namespace TerraFX.Interop
 
         public static explicit operator HENHMETAFILE(HANDLE value) => new HENHMETAFILE(value);
 
-        public static implicit operator HANDLE(HENHMETAFILE value) => new HENHMETAFILE(value);
+        public static implicit operator HANDLE(HENHMETAFILE value) => new HANDLE(value.Value);
 
         public static explicit operator HENHMETAFILE(byte value) => new HENHMETAFILE((nint)(value));
 

@@ -27,7 +27,7 @@ namespace TerraFX.Interop
 
         public static explicit operator AUTHZ_RESOURCE_MANAGER_HANDLE(HANDLE value) => new AUTHZ_RESOURCE_MANAGER_HANDLE(value);
 
-        public static implicit operator HANDLE(AUTHZ_RESOURCE_MANAGER_HANDLE value) => new AUTHZ_RESOURCE_MANAGER_HANDLE(value);
+        public static implicit operator HANDLE(AUTHZ_RESOURCE_MANAGER_HANDLE value) => new HANDLE(value.Value);
 
         public static explicit operator AUTHZ_RESOURCE_MANAGER_HANDLE(byte value) => new AUTHZ_RESOURCE_MANAGER_HANDLE((nint)(value));
 

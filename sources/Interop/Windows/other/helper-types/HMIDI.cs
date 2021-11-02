@@ -27,7 +27,7 @@ namespace TerraFX.Interop
 
         public static explicit operator HMIDI(HANDLE value) => new HMIDI(value);
 
-        public static implicit operator HANDLE(HMIDI value) => new HMIDI(value);
+        public static implicit operator HANDLE(HMIDI value) => new HANDLE(value.Value);
 
         public static explicit operator HMIDI(byte value) => new HMIDI((nint)(value));
 

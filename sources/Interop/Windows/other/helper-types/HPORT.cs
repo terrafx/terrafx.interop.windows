@@ -27,7 +27,7 @@ namespace TerraFX.Interop
 
         public static explicit operator HPORT(HANDLE value) => new HPORT(value);
 
-        public static implicit operator HANDLE(HPORT value) => new HPORT(value);
+        public static implicit operator HANDLE(HPORT value) => new HANDLE(value.Value);
 
         public static explicit operator HPORT(byte value) => new HPORT((nint)(value));
 

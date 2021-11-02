@@ -27,7 +27,7 @@ namespace TerraFX.Interop
 
         public static explicit operator HTREEITEM(HANDLE value) => new HTREEITEM(value);
 
-        public static implicit operator HANDLE(HTREEITEM value) => new HTREEITEM(value);
+        public static implicit operator HANDLE(HTREEITEM value) => new HANDLE(value.Value);
 
         public static explicit operator HTREEITEM(byte value) => new HTREEITEM((nint)(value));
 

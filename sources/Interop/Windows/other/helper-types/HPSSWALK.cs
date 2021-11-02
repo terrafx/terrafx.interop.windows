@@ -27,7 +27,7 @@ namespace TerraFX.Interop
 
         public static explicit operator HPSSWALK(HANDLE value) => new HPSSWALK(value);
 
-        public static implicit operator HANDLE(HPSSWALK value) => new HPSSWALK(value);
+        public static implicit operator HANDLE(HPSSWALK value) => new HANDLE(value.Value);
 
         public static explicit operator HPSSWALK(byte value) => new HPSSWALK((nint)(value));
 

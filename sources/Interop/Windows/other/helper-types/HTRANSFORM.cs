@@ -27,7 +27,7 @@ namespace TerraFX.Interop
 
         public static explicit operator HTRANSFORM(HANDLE value) => new HTRANSFORM(value);
 
-        public static implicit operator HANDLE(HTRANSFORM value) => new HTRANSFORM(value);
+        public static implicit operator HANDLE(HTRANSFORM value) => new HANDLE(value.Value);
 
         public static explicit operator HTRANSFORM(byte value) => new HTRANSFORM((nint)(value));
 

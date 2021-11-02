@@ -27,7 +27,7 @@ namespace TerraFX.Interop
 
         public static explicit operator D3DKMDT_HMONITORSOURCEMODESET(HANDLE value) => new D3DKMDT_HMONITORSOURCEMODESET(value);
 
-        public static implicit operator HANDLE(D3DKMDT_HMONITORSOURCEMODESET value) => new D3DKMDT_HMONITORSOURCEMODESET(value);
+        public static implicit operator HANDLE(D3DKMDT_HMONITORSOURCEMODESET value) => new HANDLE(value.Value);
 
         public static explicit operator D3DKMDT_HMONITORSOURCEMODESET(byte value) => new D3DKMDT_HMONITORSOURCEMODESET((nint)(value));
 

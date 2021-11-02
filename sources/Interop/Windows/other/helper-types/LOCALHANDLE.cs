@@ -27,7 +27,7 @@ namespace TerraFX.Interop
 
         public static explicit operator LOCALHANDLE(HANDLE value) => new LOCALHANDLE(value);
 
-        public static implicit operator HANDLE(LOCALHANDLE value) => new LOCALHANDLE(value);
+        public static implicit operator HANDLE(LOCALHANDLE value) => new HANDLE(value.Value);
 
         public static explicit operator LOCALHANDLE(byte value) => new LOCALHANDLE((nint)(value));
 

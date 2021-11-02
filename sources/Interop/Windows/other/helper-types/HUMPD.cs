@@ -27,7 +27,7 @@ namespace TerraFX.Interop
 
         public static explicit operator HUMPD(HANDLE value) => new HUMPD(value);
 
-        public static implicit operator HANDLE(HUMPD value) => new HUMPD(value);
+        public static implicit operator HANDLE(HUMPD value) => new HANDLE(value.Value);
 
         public static explicit operator HUMPD(byte value) => new HUMPD((nint)(value));
 

@@ -27,7 +27,7 @@ namespace TerraFX.Interop
 
         public static explicit operator HSPRITE(HANDLE value) => new HSPRITE(value);
 
-        public static implicit operator HANDLE(HSPRITE value) => new HSPRITE(value);
+        public static implicit operator HANDLE(HSPRITE value) => new HANDLE(value.Value);
 
         public static explicit operator HSPRITE(byte value) => new HSPRITE((nint)(value));
 

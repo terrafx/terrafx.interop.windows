@@ -27,7 +27,7 @@ namespace TerraFX.Interop
 
         public static explicit operator HSNMP_SESSION(HANDLE value) => new HSNMP_SESSION(value);
 
-        public static implicit operator HANDLE(HSNMP_SESSION value) => new HSNMP_SESSION(value);
+        public static implicit operator HANDLE(HSNMP_SESSION value) => new HANDLE(value.Value);
 
         public static explicit operator HSNMP_SESSION(byte value) => new HSNMP_SESSION((nint)(value));
 

@@ -27,7 +27,7 @@ namespace TerraFX.Interop
 
         public static explicit operator HDEV(HANDLE value) => new HDEV(value);
 
-        public static implicit operator HANDLE(HDEV value) => new HDEV(value);
+        public static implicit operator HANDLE(HDEV value) => new HANDLE(value.Value);
 
         public static explicit operator HDEV(byte value) => new HDEV((nint)(value));
 

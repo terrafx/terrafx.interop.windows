@@ -27,7 +27,7 @@ namespace TerraFX.Interop
 
         public static explicit operator HDEVNOTIFY(HANDLE value) => new HDEVNOTIFY(value);
 
-        public static implicit operator HANDLE(HDEVNOTIFY value) => new HDEVNOTIFY(value);
+        public static implicit operator HANDLE(HDEVNOTIFY value) => new HANDLE(value.Value);
 
         public static explicit operator HDEVNOTIFY(byte value) => new HDEVNOTIFY((nint)(value));
 

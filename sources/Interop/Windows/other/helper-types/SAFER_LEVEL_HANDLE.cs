@@ -27,7 +27,7 @@ namespace TerraFX.Interop
 
         public static explicit operator SAFER_LEVEL_HANDLE(HANDLE value) => new SAFER_LEVEL_HANDLE(value);
 
-        public static implicit operator HANDLE(SAFER_LEVEL_HANDLE value) => new SAFER_LEVEL_HANDLE(value);
+        public static implicit operator HANDLE(SAFER_LEVEL_HANDLE value) => new HANDLE(value.Value);
 
         public static explicit operator SAFER_LEVEL_HANDLE(byte value) => new SAFER_LEVEL_HANDLE((nint)(value));
 

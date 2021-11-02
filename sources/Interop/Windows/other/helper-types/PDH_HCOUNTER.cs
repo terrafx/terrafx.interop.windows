@@ -27,7 +27,7 @@ namespace TerraFX.Interop
 
         public static explicit operator PDH_HCOUNTER(HANDLE value) => new PDH_HCOUNTER(value);
 
-        public static implicit operator HANDLE(PDH_HCOUNTER value) => new PDH_HCOUNTER(value);
+        public static implicit operator HANDLE(PDH_HCOUNTER value) => new HANDLE(value.Value);
 
         public static explicit operator PDH_HCOUNTER(byte value) => new PDH_HCOUNTER((nint)(value));
 

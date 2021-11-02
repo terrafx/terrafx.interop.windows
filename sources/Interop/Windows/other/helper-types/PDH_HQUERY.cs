@@ -27,7 +27,7 @@ namespace TerraFX.Interop
 
         public static explicit operator PDH_HQUERY(HANDLE value) => new PDH_HQUERY(value);
 
-        public static implicit operator HANDLE(PDH_HQUERY value) => new PDH_HQUERY(value);
+        public static implicit operator HANDLE(PDH_HQUERY value) => new HANDLE(value.Value);
 
         public static explicit operator PDH_HQUERY(byte value) => new PDH_HQUERY((nint)(value));
 

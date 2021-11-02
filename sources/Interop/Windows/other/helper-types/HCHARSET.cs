@@ -27,7 +27,7 @@ namespace TerraFX.Interop
 
         public static explicit operator HCHARSET(HANDLE value) => new HCHARSET(value);
 
-        public static implicit operator HANDLE(HCHARSET value) => new HCHARSET(value);
+        public static implicit operator HANDLE(HCHARSET value) => new HANDLE(value.Value);
 
         public static explicit operator HCHARSET(byte value) => new HCHARSET((nint)(value));
 

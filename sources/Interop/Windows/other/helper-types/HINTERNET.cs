@@ -27,7 +27,7 @@ namespace TerraFX.Interop
 
         public static explicit operator HINTERNET(HANDLE value) => new HINTERNET(value);
 
-        public static implicit operator HANDLE(HINTERNET value) => new HINTERNET(value);
+        public static implicit operator HANDLE(HINTERNET value) => new HANDLE(value.Value);
 
         public static explicit operator HINTERNET(byte value) => new HINTERNET((nint)(value));
 

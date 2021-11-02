@@ -27,7 +27,7 @@ namespace TerraFX.Interop
 
         public static explicit operator HDC(HANDLE value) => new HDC(value);
 
-        public static implicit operator HANDLE(HDC value) => new HDC(value);
+        public static implicit operator HANDLE(HDC value) => new HANDLE(value.Value);
 
         public static explicit operator HDC(byte value) => new HDC((nint)(value));
 

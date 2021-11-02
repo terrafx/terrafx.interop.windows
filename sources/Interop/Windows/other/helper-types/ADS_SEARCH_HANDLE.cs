@@ -27,7 +27,7 @@ namespace TerraFX.Interop
 
         public static explicit operator ADS_SEARCH_HANDLE(HANDLE value) => new ADS_SEARCH_HANDLE(value);
 
-        public static implicit operator HANDLE(ADS_SEARCH_HANDLE value) => new ADS_SEARCH_HANDLE(value);
+        public static implicit operator HANDLE(ADS_SEARCH_HANDLE value) => new HANDLE(value.Value);
 
         public static explicit operator ADS_SEARCH_HANDLE(byte value) => new ADS_SEARCH_HANDLE((nint)(value));
 

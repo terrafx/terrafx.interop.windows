@@ -27,7 +27,7 @@ namespace TerraFX.Interop
 
         public static explicit operator HTHUMBNAIL(HANDLE value) => new HTHUMBNAIL(value);
 
-        public static implicit operator HANDLE(HTHUMBNAIL value) => new HTHUMBNAIL(value);
+        public static implicit operator HANDLE(HTHUMBNAIL value) => new HANDLE(value.Value);
 
         public static explicit operator HTHUMBNAIL(byte value) => new HTHUMBNAIL((nint)(value));
 

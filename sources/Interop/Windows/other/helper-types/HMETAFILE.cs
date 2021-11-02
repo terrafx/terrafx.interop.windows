@@ -27,7 +27,7 @@ namespace TerraFX.Interop
 
         public static explicit operator HMETAFILE(HANDLE value) => new HMETAFILE(value);
 
-        public static implicit operator HANDLE(HMETAFILE value) => new HMETAFILE(value);
+        public static implicit operator HANDLE(HMETAFILE value) => new HANDLE(value.Value);
 
         public static explicit operator HMETAFILE(byte value) => new HMETAFILE((nint)(value));
 

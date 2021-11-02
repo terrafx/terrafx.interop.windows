@@ -27,7 +27,7 @@ namespace TerraFX.Interop
 
         public static explicit operator HPALETTE(HANDLE value) => new HPALETTE(value);
 
-        public static implicit operator HANDLE(HPALETTE value) => new HPALETTE(value);
+        public static implicit operator HANDLE(HPALETTE value) => new HANDLE(value.Value);
 
         public static explicit operator HPALETTE(byte value) => new HPALETTE((nint)(value));
 

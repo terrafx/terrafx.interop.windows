@@ -27,7 +27,7 @@ namespace TerraFX.Interop
 
         public static explicit operator HIMAGELIST(HANDLE value) => new HIMAGELIST(value);
 
-        public static implicit operator HANDLE(HIMAGELIST value) => new HIMAGELIST(value);
+        public static implicit operator HANDLE(HIMAGELIST value) => new HANDLE(value.Value);
 
         public static explicit operator HIMAGELIST(byte value) => new HIMAGELIST((nint)(value));
 

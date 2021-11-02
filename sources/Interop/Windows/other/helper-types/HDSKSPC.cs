@@ -27,7 +27,7 @@ namespace TerraFX.Interop
 
         public static explicit operator HDSKSPC(HANDLE value) => new HDSKSPC(value);
 
-        public static implicit operator HANDLE(HDSKSPC value) => new HDSKSPC(value);
+        public static implicit operator HANDLE(HDSKSPC value) => new HANDLE(value.Value);
 
         public static explicit operator HDSKSPC(byte value) => new HDSKSPC((nint)(value));
 

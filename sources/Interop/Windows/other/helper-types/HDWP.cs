@@ -27,7 +27,7 @@ namespace TerraFX.Interop
 
         public static explicit operator HDWP(HANDLE value) => new HDWP(value);
 
-        public static implicit operator HANDLE(HDWP value) => new HDWP(value);
+        public static implicit operator HANDLE(HDWP value) => new HANDLE(value.Value);
 
         public static explicit operator HDWP(byte value) => new HDWP((nint)(value));
 

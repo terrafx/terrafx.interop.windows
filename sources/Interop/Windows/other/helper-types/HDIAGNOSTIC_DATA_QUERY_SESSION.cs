@@ -27,7 +27,7 @@ namespace TerraFX.Interop
 
         public static explicit operator HDIAGNOSTIC_DATA_QUERY_SESSION(HANDLE value) => new HDIAGNOSTIC_DATA_QUERY_SESSION(value);
 
-        public static implicit operator HANDLE(HDIAGNOSTIC_DATA_QUERY_SESSION value) => new HDIAGNOSTIC_DATA_QUERY_SESSION(value);
+        public static implicit operator HANDLE(HDIAGNOSTIC_DATA_QUERY_SESSION value) => new HANDLE(value.Value);
 
         public static explicit operator HDIAGNOSTIC_DATA_QUERY_SESSION(byte value) => new HDIAGNOSTIC_DATA_QUERY_SESSION((nint)(value));
 

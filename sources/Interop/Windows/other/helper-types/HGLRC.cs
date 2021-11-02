@@ -27,7 +27,7 @@ namespace TerraFX.Interop
 
         public static explicit operator HGLRC(HANDLE value) => new HGLRC(value);
 
-        public static implicit operator HANDLE(HGLRC value) => new HGLRC(value);
+        public static implicit operator HANDLE(HGLRC value) => new HANDLE(value.Value);
 
         public static explicit operator HGLRC(byte value) => new HGLRC((nint)(value));
 

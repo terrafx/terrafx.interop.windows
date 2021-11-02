@@ -27,7 +27,7 @@ namespace TerraFX.Interop
 
         public static explicit operator HTTP_PUSH_WAIT_HANDLE(HANDLE value) => new HTTP_PUSH_WAIT_HANDLE(value);
 
-        public static implicit operator HANDLE(HTTP_PUSH_WAIT_HANDLE value) => new HTTP_PUSH_WAIT_HANDLE(value);
+        public static implicit operator HANDLE(HTTP_PUSH_WAIT_HANDLE value) => new HANDLE(value.Value);
 
         public static explicit operator HTTP_PUSH_WAIT_HANDLE(byte value) => new HTTP_PUSH_WAIT_HANDLE((nint)(value));
 

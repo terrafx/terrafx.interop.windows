@@ -27,7 +27,7 @@ namespace TerraFX.Interop
 
         public static explicit operator DPI_AWARENESS_CONTEXT(HANDLE value) => new DPI_AWARENESS_CONTEXT(value);
 
-        public static implicit operator HANDLE(DPI_AWARENESS_CONTEXT value) => new DPI_AWARENESS_CONTEXT(value);
+        public static implicit operator HANDLE(DPI_AWARENESS_CONTEXT value) => new HANDLE(value.Value);
 
         public static explicit operator DPI_AWARENESS_CONTEXT(byte value) => new DPI_AWARENESS_CONTEXT((nint)(value));
 

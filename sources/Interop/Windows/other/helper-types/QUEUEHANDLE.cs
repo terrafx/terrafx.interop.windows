@@ -27,7 +27,7 @@ namespace TerraFX.Interop
 
         public static explicit operator QUEUEHANDLE(HANDLE value) => new QUEUEHANDLE(value);
 
-        public static implicit operator HANDLE(QUEUEHANDLE value) => new QUEUEHANDLE(value);
+        public static implicit operator HANDLE(QUEUEHANDLE value) => new HANDLE(value.Value);
 
         public static explicit operator QUEUEHANDLE(byte value) => new QUEUEHANDLE((nint)(value));
 

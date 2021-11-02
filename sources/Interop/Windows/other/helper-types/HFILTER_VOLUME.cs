@@ -27,7 +27,7 @@ namespace TerraFX.Interop
 
         public static explicit operator HFILTER_VOLUME(HANDLE value) => new HFILTER_VOLUME(value);
 
-        public static implicit operator HANDLE(HFILTER_VOLUME value) => new HFILTER_VOLUME(value);
+        public static implicit operator HANDLE(HFILTER_VOLUME value) => new HANDLE(value.Value);
 
         public static explicit operator HFILTER_VOLUME(byte value) => new HFILTER_VOLUME((nint)(value));
 

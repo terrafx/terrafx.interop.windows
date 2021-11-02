@@ -27,7 +27,7 @@ namespace TerraFX.Interop
 
         public static explicit operator HUIAPATTERNOBJECT(HANDLE value) => new HUIAPATTERNOBJECT(value);
 
-        public static implicit operator HANDLE(HUIAPATTERNOBJECT value) => new HUIAPATTERNOBJECT(value);
+        public static implicit operator HANDLE(HUIAPATTERNOBJECT value) => new HANDLE(value.Value);
 
         public static explicit operator HUIAPATTERNOBJECT(byte value) => new HUIAPATTERNOBJECT((nint)(value));
 

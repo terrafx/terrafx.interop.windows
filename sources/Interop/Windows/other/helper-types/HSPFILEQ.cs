@@ -27,7 +27,7 @@ namespace TerraFX.Interop
 
         public static explicit operator HSPFILEQ(HANDLE value) => new HSPFILEQ(value);
 
-        public static implicit operator HANDLE(HSPFILEQ value) => new HSPFILEQ(value);
+        public static implicit operator HANDLE(HSPFILEQ value) => new HANDLE(value.Value);
 
         public static explicit operator HSPFILEQ(byte value) => new HSPFILEQ((nint)(value));
 

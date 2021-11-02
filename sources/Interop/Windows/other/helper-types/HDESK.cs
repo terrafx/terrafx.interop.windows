@@ -27,7 +27,7 @@ namespace TerraFX.Interop
 
         public static explicit operator HDESK(HANDLE value) => new HDESK(value);
 
-        public static implicit operator HANDLE(HDESK value) => new HDESK(value);
+        public static implicit operator HANDLE(HDESK value) => new HANDLE(value.Value);
 
         public static explicit operator HDESK(byte value) => new HDESK((nint)(value));
 

@@ -27,7 +27,7 @@ namespace TerraFX.Interop
 
         public static explicit operator HPAINTBUFFER(HANDLE value) => new HPAINTBUFFER(value);
 
-        public static implicit operator HANDLE(HPAINTBUFFER value) => new HPAINTBUFFER(value);
+        public static implicit operator HANDLE(HPAINTBUFFER value) => new HANDLE(value.Value);
 
         public static explicit operator HPAINTBUFFER(byte value) => new HPAINTBUFFER((nint)(value));
 

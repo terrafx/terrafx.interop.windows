@@ -27,7 +27,7 @@ namespace TerraFX.Interop
 
         public static explicit operator HDPA(HANDLE value) => new HDPA(value);
 
-        public static implicit operator HANDLE(HDPA value) => new HDPA(value);
+        public static implicit operator HANDLE(HDPA value) => new HANDLE(value.Value);
 
         public static explicit operator HDPA(byte value) => new HDPA((nint)(value));
 

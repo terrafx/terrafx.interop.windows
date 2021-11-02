@@ -27,7 +27,7 @@ namespace TerraFX.Interop
 
         public static explicit operator HCONV(HANDLE value) => new HCONV(value);
 
-        public static implicit operator HANDLE(HCONV value) => new HCONV(value);
+        public static implicit operator HANDLE(HCONV value) => new HANDLE(value.Value);
 
         public static explicit operator HCONV(byte value) => new HCONV((nint)(value));
 

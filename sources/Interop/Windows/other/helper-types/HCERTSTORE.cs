@@ -27,7 +27,7 @@ namespace TerraFX.Interop
 
         public static explicit operator HCERTSTORE(HANDLE value) => new HCERTSTORE(value);
 
-        public static implicit operator HANDLE(HCERTSTORE value) => new HCERTSTORE(value);
+        public static implicit operator HANDLE(HCERTSTORE value) => new HANDLE(value.Value);
 
         public static explicit operator HCERTSTORE(byte value) => new HCERTSTORE((nint)(value));
 

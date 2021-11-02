@@ -27,7 +27,7 @@ namespace TerraFX.Interop
 
         public static explicit operator HCRYPTOIDFUNCSET(HANDLE value) => new HCRYPTOIDFUNCSET(value);
 
-        public static implicit operator HANDLE(HCRYPTOIDFUNCSET value) => new HCRYPTOIDFUNCSET(value);
+        public static implicit operator HANDLE(HCRYPTOIDFUNCSET value) => new HANDLE(value.Value);
 
         public static explicit operator HCRYPTOIDFUNCSET(byte value) => new HCRYPTOIDFUNCSET((nint)(value));
 

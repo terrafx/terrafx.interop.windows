@@ -27,7 +27,7 @@ namespace TerraFX.Interop
 
         public static explicit operator HOBJECT(HANDLE value) => new HOBJECT(value);
 
-        public static implicit operator HANDLE(HOBJECT value) => new HOBJECT(value);
+        public static implicit operator HANDLE(HOBJECT value) => new HANDLE(value.Value);
 
         public static explicit operator HOBJECT(byte value) => new HOBJECT((nint)(value));
 

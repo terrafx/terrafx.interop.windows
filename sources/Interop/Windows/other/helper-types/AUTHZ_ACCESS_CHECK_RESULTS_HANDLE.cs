@@ -27,7 +27,7 @@ namespace TerraFX.Interop
 
         public static explicit operator AUTHZ_ACCESS_CHECK_RESULTS_HANDLE(HANDLE value) => new AUTHZ_ACCESS_CHECK_RESULTS_HANDLE(value);
 
-        public static implicit operator HANDLE(AUTHZ_ACCESS_CHECK_RESULTS_HANDLE value) => new AUTHZ_ACCESS_CHECK_RESULTS_HANDLE(value);
+        public static implicit operator HANDLE(AUTHZ_ACCESS_CHECK_RESULTS_HANDLE value) => new HANDLE(value.Value);
 
         public static explicit operator AUTHZ_ACCESS_CHECK_RESULTS_HANDLE(byte value) => new AUTHZ_ACCESS_CHECK_RESULTS_HANDLE((nint)(value));
 

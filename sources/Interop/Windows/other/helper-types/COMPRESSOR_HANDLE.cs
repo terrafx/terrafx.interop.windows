@@ -27,7 +27,7 @@ namespace TerraFX.Interop
 
         public static explicit operator COMPRESSOR_HANDLE(HANDLE value) => new COMPRESSOR_HANDLE(value);
 
-        public static implicit operator HANDLE(COMPRESSOR_HANDLE value) => new COMPRESSOR_HANDLE(value);
+        public static implicit operator HANDLE(COMPRESSOR_HANDLE value) => new HANDLE(value.Value);
 
         public static explicit operator COMPRESSOR_HANDLE(byte value) => new COMPRESSOR_HANDLE((nint)(value));
 

@@ -27,7 +27,7 @@ namespace TerraFX.Interop
 
         public static explicit operator HCS_CALLBACK(HANDLE value) => new HCS_CALLBACK(value);
 
-        public static implicit operator HANDLE(HCS_CALLBACK value) => new HCS_CALLBACK(value);
+        public static implicit operator HANDLE(HCS_CALLBACK value) => new HANDLE(value.Value);
 
         public static explicit operator HCS_CALLBACK(byte value) => new HCS_CALLBACK((nint)(value));
 

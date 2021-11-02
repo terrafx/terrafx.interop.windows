@@ -27,7 +27,7 @@ namespace TerraFX.Interop
 
         public static explicit operator EVT_OBJECT_ARRAY_PROPERTY_HANDLE(HANDLE value) => new EVT_OBJECT_ARRAY_PROPERTY_HANDLE(value);
 
-        public static implicit operator HANDLE(EVT_OBJECT_ARRAY_PROPERTY_HANDLE value) => new EVT_OBJECT_ARRAY_PROPERTY_HANDLE(value);
+        public static implicit operator HANDLE(EVT_OBJECT_ARRAY_PROPERTY_HANDLE value) => new HANDLE(value.Value);
 
         public static explicit operator EVT_OBJECT_ARRAY_PROPERTY_HANDLE(byte value) => new EVT_OBJECT_ARRAY_PROPERTY_HANDLE((nint)(value));
 

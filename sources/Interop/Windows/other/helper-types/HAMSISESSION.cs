@@ -27,7 +27,7 @@ namespace TerraFX.Interop
 
         public static explicit operator HAMSISESSION(HANDLE value) => new HAMSISESSION(value);
 
-        public static implicit operator HANDLE(HAMSISESSION value) => new HAMSISESSION(value);
+        public static implicit operator HANDLE(HAMSISESSION value) => new HANDLE(value.Value);
 
         public static explicit operator HAMSISESSION(byte value) => new HAMSISESSION((nint)(value));
 

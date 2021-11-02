@@ -27,7 +27,7 @@ namespace TerraFX.Interop
 
         public static explicit operator NFC_SE_HANDLE(HANDLE value) => new NFC_SE_HANDLE(value);
 
-        public static implicit operator HANDLE(NFC_SE_HANDLE value) => new NFC_SE_HANDLE(value);
+        public static implicit operator HANDLE(NFC_SE_HANDLE value) => new HANDLE(value.Value);
 
         public static explicit operator NFC_SE_HANDLE(byte value) => new NFC_SE_HANDLE((nint)(value));
 

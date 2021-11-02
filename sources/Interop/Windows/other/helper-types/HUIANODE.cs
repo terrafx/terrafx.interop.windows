@@ -27,7 +27,7 @@ namespace TerraFX.Interop
 
         public static explicit operator HUIANODE(HANDLE value) => new HUIANODE(value);
 
-        public static implicit operator HANDLE(HUIANODE value) => new HUIANODE(value);
+        public static implicit operator HANDLE(HUIANODE value) => new HANDLE(value.Value);
 
         public static explicit operator HUIANODE(byte value) => new HUIANODE((nint)(value));
 

@@ -27,7 +27,7 @@ namespace TerraFX.Interop
 
         public static explicit operator HMIDIOUT(HANDLE value) => new HMIDIOUT(value);
 
-        public static implicit operator HANDLE(HMIDIOUT value) => new HMIDIOUT(value);
+        public static implicit operator HANDLE(HMIDIOUT value) => new HANDLE(value.Value);
 
         public static explicit operator HMIDIOUT(byte value) => new HMIDIOUT((nint)(value));
 

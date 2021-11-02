@@ -27,7 +27,7 @@ namespace TerraFX.Interop
 
         public static explicit operator HPTPROVIDER(HANDLE value) => new HPTPROVIDER(value);
 
-        public static implicit operator HANDLE(HPTPROVIDER value) => new HPTPROVIDER(value);
+        public static implicit operator HANDLE(HPTPROVIDER value) => new HANDLE(value.Value);
 
         public static explicit operator HPTPROVIDER(byte value) => new HPTPROVIDER((nint)(value));
 

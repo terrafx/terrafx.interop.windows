@@ -27,7 +27,7 @@ namespace TerraFX.Interop
 
         public static explicit operator HCMTRANSFORM(HANDLE value) => new HCMTRANSFORM(value);
 
-        public static implicit operator HANDLE(HCMTRANSFORM value) => new HCMTRANSFORM(value);
+        public static implicit operator HANDLE(HCMTRANSFORM value) => new HANDLE(value.Value);
 
         public static explicit operator HCMTRANSFORM(byte value) => new HCMTRANSFORM((nint)(value));
 

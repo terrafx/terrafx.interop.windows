@@ -27,7 +27,7 @@ namespace TerraFX.Interop
 
         public static explicit operator HUSKEY(HANDLE value) => new HUSKEY(value);
 
-        public static implicit operator HANDLE(HUSKEY value) => new HUSKEY(value);
+        public static implicit operator HANDLE(HUSKEY value) => new HANDLE(value.Value);
 
         public static explicit operator HUSKEY(byte value) => new HUSKEY((nint)(value));
 

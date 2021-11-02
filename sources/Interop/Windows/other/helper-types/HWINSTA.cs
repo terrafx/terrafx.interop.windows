@@ -27,7 +27,7 @@ namespace TerraFX.Interop
 
         public static explicit operator HWINSTA(HANDLE value) => new HWINSTA(value);
 
-        public static implicit operator HANDLE(HWINSTA value) => new HWINSTA(value);
+        public static implicit operator HANDLE(HWINSTA value) => new HANDLE(value.Value);
 
         public static explicit operator HWINSTA(byte value) => new HWINSTA((nint)(value));
 

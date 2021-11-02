@@ -27,7 +27,7 @@ namespace TerraFX.Interop
 
         public static explicit operator HADDRESS(HANDLE value) => new HADDRESS(value);
 
-        public static implicit operator HANDLE(HADDRESS value) => new HADDRESS(value);
+        public static implicit operator HANDLE(HADDRESS value) => new HANDLE(value.Value);
 
         public static explicit operator HADDRESS(byte value) => new HADDRESS((nint)(value));
 

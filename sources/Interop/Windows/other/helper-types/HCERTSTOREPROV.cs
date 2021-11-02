@@ -27,7 +27,7 @@ namespace TerraFX.Interop
 
         public static explicit operator HCERTSTOREPROV(HANDLE value) => new HCERTSTOREPROV(value);
 
-        public static implicit operator HANDLE(HCERTSTOREPROV value) => new HCERTSTOREPROV(value);
+        public static implicit operator HANDLE(HCERTSTOREPROV value) => new HANDLE(value.Value);
 
         public static explicit operator HCERTSTOREPROV(byte value) => new HCERTSTOREPROV((nint)(value));
 

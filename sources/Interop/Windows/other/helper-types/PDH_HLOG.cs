@@ -27,7 +27,7 @@ namespace TerraFX.Interop
 
         public static explicit operator PDH_HLOG(HANDLE value) => new PDH_HLOG(value);
 
-        public static implicit operator HANDLE(PDH_HLOG value) => new PDH_HLOG(value);
+        public static implicit operator HANDLE(PDH_HLOG value) => new HANDLE(value.Value);
 
         public static explicit operator PDH_HLOG(byte value) => new PDH_HLOG((nint)(value));
 

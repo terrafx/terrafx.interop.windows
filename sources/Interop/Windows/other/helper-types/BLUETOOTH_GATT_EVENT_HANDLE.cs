@@ -27,7 +27,7 @@ namespace TerraFX.Interop
 
         public static explicit operator BLUETOOTH_GATT_EVENT_HANDLE(HANDLE value) => new BLUETOOTH_GATT_EVENT_HANDLE(value);
 
-        public static implicit operator HANDLE(BLUETOOTH_GATT_EVENT_HANDLE value) => new BLUETOOTH_GATT_EVENT_HANDLE(value);
+        public static implicit operator HANDLE(BLUETOOTH_GATT_EVENT_HANDLE value) => new HANDLE(value.Value);
 
         public static explicit operator BLUETOOTH_GATT_EVENT_HANDLE(byte value) => new BLUETOOTH_GATT_EVENT_HANDLE((nint)(value));
 

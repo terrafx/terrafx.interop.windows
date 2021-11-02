@@ -27,7 +27,7 @@ namespace TerraFX.Interop
 
         public static explicit operator HRECOGNIZER(HANDLE value) => new HRECOGNIZER(value);
 
-        public static implicit operator HANDLE(HRECOGNIZER value) => new HRECOGNIZER(value);
+        public static implicit operator HANDLE(HRECOGNIZER value) => new HANDLE(value.Value);
 
         public static explicit operator HRECOGNIZER(byte value) => new HRECOGNIZER((nint)(value));
 

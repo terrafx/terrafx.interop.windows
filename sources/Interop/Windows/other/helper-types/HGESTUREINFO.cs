@@ -27,7 +27,7 @@ namespace TerraFX.Interop
 
         public static explicit operator HGESTUREINFO(HANDLE value) => new HGESTUREINFO(value);
 
-        public static implicit operator HANDLE(HGESTUREINFO value) => new HGESTUREINFO(value);
+        public static implicit operator HANDLE(HGESTUREINFO value) => new HANDLE(value.Value);
 
         public static explicit operator HGESTUREINFO(byte value) => new HGESTUREINFO((nint)(value));
 
