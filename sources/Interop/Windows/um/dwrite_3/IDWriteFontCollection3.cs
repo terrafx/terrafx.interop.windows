@@ -114,7 +114,7 @@ namespace TerraFX.Interop
         [VtblIndex(13)]
         public HANDLE GetExpirationEvent()
         {
-            return ((HANDLE)(((delegate* unmanaged<IDWriteFontCollection3*, nint>)(lpVtbl[13]))((IDWriteFontCollection3*)Unsafe.AsPointer(ref this))));
+            return ((HANDLE)(((delegate* unmanaged<IDWriteFontCollection3*, void*>)(lpVtbl[13]))((IDWriteFontCollection3*)Unsafe.AsPointer(ref this))));
         }
     }
 }

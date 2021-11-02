@@ -6,16 +6,16 @@ namespace TerraFX.Interop
 {
     public unsafe partial struct D3DKMDT_HVIDEOPRESENTSOURCESET : IComparable, IComparable<D3DKMDT_HVIDEOPRESENTSOURCESET>, IEquatable<D3DKMDT_HVIDEOPRESENTSOURCESET>, IFormattable
     {
-        public readonly nint Value;
+        public readonly void* Value;
 
-        public D3DKMDT_HVIDEOPRESENTSOURCESET(nint value)
+        public D3DKMDT_HVIDEOPRESENTSOURCESET(void* value)
         {
             Value = value;
         }
 
-        public static D3DKMDT_HVIDEOPRESENTSOURCESET INVALID_VALUE => new D3DKMDT_HVIDEOPRESENTSOURCESET(-1);
+        public static D3DKMDT_HVIDEOPRESENTSOURCESET INVALID_VALUE => new D3DKMDT_HVIDEOPRESENTSOURCESET((void*)(-1));
 
-        public static D3DKMDT_HVIDEOPRESENTSOURCESET NULL => new D3DKMDT_HVIDEOPRESENTSOURCESET(0);
+        public static D3DKMDT_HVIDEOPRESENTSOURCESET NULL => new D3DKMDT_HVIDEOPRESENTSOURCESET(null);
 
         public static bool operator ==(D3DKMDT_HVIDEOPRESENTSOURCESET left, D3DKMDT_HVIDEOPRESENTSOURCESET right) => left.Value == right.Value;
 
@@ -29,53 +29,53 @@ namespace TerraFX.Interop
 
         public static bool operator >=(D3DKMDT_HVIDEOPRESENTSOURCESET left, D3DKMDT_HVIDEOPRESENTSOURCESET right) => left.Value >= right.Value;
 
-        public static explicit operator D3DKMDT_HVIDEOPRESENTSOURCESET(void* value) => new D3DKMDT_HVIDEOPRESENTSOURCESET((nint)(value));
+        public static explicit operator D3DKMDT_HVIDEOPRESENTSOURCESET(void* value) => new D3DKMDT_HVIDEOPRESENTSOURCESET(value);
 
-        public static implicit operator void*(D3DKMDT_HVIDEOPRESENTSOURCESET value) => (void*)(value.Value);
+        public static implicit operator void*(D3DKMDT_HVIDEOPRESENTSOURCESET value) => value.Value;
 
         public static explicit operator D3DKMDT_HVIDEOPRESENTSOURCESET(HANDLE value) => new D3DKMDT_HVIDEOPRESENTSOURCESET(value);
 
         public static implicit operator HANDLE(D3DKMDT_HVIDEOPRESENTSOURCESET value) => new HANDLE(value.Value);
 
-        public static explicit operator D3DKMDT_HVIDEOPRESENTSOURCESET(byte value) => new D3DKMDT_HVIDEOPRESENTSOURCESET((nint)(value));
+        public static explicit operator D3DKMDT_HVIDEOPRESENTSOURCESET(byte value) => new D3DKMDT_HVIDEOPRESENTSOURCESET((void*)(value));
 
         public static explicit operator byte(D3DKMDT_HVIDEOPRESENTSOURCESET value) => (byte)(value.Value);
 
-        public static explicit operator D3DKMDT_HVIDEOPRESENTSOURCESET(short value) => new D3DKMDT_HVIDEOPRESENTSOURCESET((nint)(value));
+        public static explicit operator D3DKMDT_HVIDEOPRESENTSOURCESET(short value) => new D3DKMDT_HVIDEOPRESENTSOURCESET((void*)(value));
 
         public static explicit operator short(D3DKMDT_HVIDEOPRESENTSOURCESET value) => (short)(value.Value);
 
-        public static explicit operator D3DKMDT_HVIDEOPRESENTSOURCESET(int value) => new D3DKMDT_HVIDEOPRESENTSOURCESET((nint)(value));
+        public static explicit operator D3DKMDT_HVIDEOPRESENTSOURCESET(int value) => new D3DKMDT_HVIDEOPRESENTSOURCESET((void*)(value));
 
         public static explicit operator int(D3DKMDT_HVIDEOPRESENTSOURCESET value) => (int)(value.Value);
 
-        public static explicit operator D3DKMDT_HVIDEOPRESENTSOURCESET(long value) => new D3DKMDT_HVIDEOPRESENTSOURCESET((nint)(value));
+        public static explicit operator D3DKMDT_HVIDEOPRESENTSOURCESET(long value) => new D3DKMDT_HVIDEOPRESENTSOURCESET((void*)(value));
 
-        public static implicit operator long(D3DKMDT_HVIDEOPRESENTSOURCESET value) => value.Value;
+        public static explicit operator long(D3DKMDT_HVIDEOPRESENTSOURCESET value) => (long)(value.Value);
 
-        public static explicit operator D3DKMDT_HVIDEOPRESENTSOURCESET(nint value) => new D3DKMDT_HVIDEOPRESENTSOURCESET((nint)(value));
+        public static explicit operator D3DKMDT_HVIDEOPRESENTSOURCESET(nint value) => new D3DKMDT_HVIDEOPRESENTSOURCESET((void*)(value));
 
-        public static implicit operator nint(D3DKMDT_HVIDEOPRESENTSOURCESET value) => value.Value;
+        public static implicit operator nint(D3DKMDT_HVIDEOPRESENTSOURCESET value) => (nint)(value.Value);
 
-        public static explicit operator D3DKMDT_HVIDEOPRESENTSOURCESET(sbyte value) => new D3DKMDT_HVIDEOPRESENTSOURCESET((nint)(value));
+        public static explicit operator D3DKMDT_HVIDEOPRESENTSOURCESET(sbyte value) => new D3DKMDT_HVIDEOPRESENTSOURCESET((void*)(value));
 
         public static explicit operator sbyte(D3DKMDT_HVIDEOPRESENTSOURCESET value) => (sbyte)(value.Value);
 
-        public static explicit operator D3DKMDT_HVIDEOPRESENTSOURCESET(ushort value) => new D3DKMDT_HVIDEOPRESENTSOURCESET((nint)(value));
+        public static explicit operator D3DKMDT_HVIDEOPRESENTSOURCESET(ushort value) => new D3DKMDT_HVIDEOPRESENTSOURCESET((void*)(value));
 
         public static explicit operator ushort(D3DKMDT_HVIDEOPRESENTSOURCESET value) => (ushort)(value.Value);
 
-        public static explicit operator D3DKMDT_HVIDEOPRESENTSOURCESET(uint value) => new D3DKMDT_HVIDEOPRESENTSOURCESET((nint)(value));
+        public static explicit operator D3DKMDT_HVIDEOPRESENTSOURCESET(uint value) => new D3DKMDT_HVIDEOPRESENTSOURCESET((void*)(value));
 
         public static explicit operator uint(D3DKMDT_HVIDEOPRESENTSOURCESET value) => (uint)(value.Value);
 
-        public static explicit operator D3DKMDT_HVIDEOPRESENTSOURCESET(ulong value) => new D3DKMDT_HVIDEOPRESENTSOURCESET((nint)(value));
+        public static explicit operator D3DKMDT_HVIDEOPRESENTSOURCESET(ulong value) => new D3DKMDT_HVIDEOPRESENTSOURCESET((void*)(value));
 
         public static explicit operator ulong(D3DKMDT_HVIDEOPRESENTSOURCESET value) => (ulong)(value.Value);
 
-        public static explicit operator D3DKMDT_HVIDEOPRESENTSOURCESET(nuint value) => new D3DKMDT_HVIDEOPRESENTSOURCESET((nint)(value));
+        public static explicit operator D3DKMDT_HVIDEOPRESENTSOURCESET(nuint value) => new D3DKMDT_HVIDEOPRESENTSOURCESET((void*)(value));
 
-        public static explicit operator nuint(D3DKMDT_HVIDEOPRESENTSOURCESET value) => (nuint)(value.Value);
+        public static implicit operator nuint(D3DKMDT_HVIDEOPRESENTSOURCESET value) => (nuint)(value.Value);
 
         public int CompareTo(object? obj)
         {
@@ -87,16 +87,16 @@ namespace TerraFX.Interop
             return (obj is null) ? 1 : throw new ArgumentException("obj is not an instance of D3DKMDT_HVIDEOPRESENTSOURCESET.");
         }
 
-        public int CompareTo(D3DKMDT_HVIDEOPRESENTSOURCESET other) => Value.CompareTo(other.Value);
+        public int CompareTo(D3DKMDT_HVIDEOPRESENTSOURCESET other) => ((nuint)(Value)).CompareTo((nuint)(other.Value));
 
         public override bool Equals(object? obj) => (obj is D3DKMDT_HVIDEOPRESENTSOURCESET other) && Equals(other);
 
-        public bool Equals(D3DKMDT_HVIDEOPRESENTSOURCESET other) => Value.Equals(other.Value);
+        public bool Equals(D3DKMDT_HVIDEOPRESENTSOURCESET other) => ((nuint)(Value)).Equals((nuint)(other.Value));
 
-        public override int GetHashCode() => Value.GetHashCode();
+        public override int GetHashCode() => ((nuint)(Value)).GetHashCode();
 
-        public override string ToString() => Value.ToString((sizeof(nint) == 4) ? "X8" : "X16");
+        public override string ToString() => ((nuint)(Value)).ToString((sizeof(nint) == 4) ? "X8" : "X16");
 
-        public string ToString(string? format, IFormatProvider? formatProvider) => Value.ToString(format, formatProvider);
+        public string ToString(string? format, IFormatProvider? formatProvider) => ((nuint)(Value)).ToString(format, formatProvider);
     }
 }

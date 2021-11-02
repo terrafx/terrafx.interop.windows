@@ -26,13 +26,13 @@ namespace TerraFX.Interop
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
-                return _bitfield & 0x1;
+                return (BOOL)(_bitfield & 0x1);
             }
 
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             set
             {
-                _bitfield = (_bitfield & ~0x1) | (value & 0x1);
+                _bitfield = (_bitfield & ~0x1) | ((BOOL)(value) & 0x1);
             }
         }
 
@@ -42,13 +42,13 @@ namespace TerraFX.Interop
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
-                return (_bitfield >> 1) & 0x1;
+                return (BOOL)((_bitfield >> 1) & 0x1);
             }
 
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             set
             {
-                _bitfield = (_bitfield & ~(0x1 << 1)) | ((value & 0x1) << 1);
+                _bitfield = (_bitfield & ~(0x1 << 1)) | (((BOOL)(value) & 0x1) << 1);
             }
         }
 
@@ -58,13 +58,13 @@ namespace TerraFX.Interop
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
-                return (_bitfield >> 2) & 0x3FFFFFFF;
+                return (BOOL)((_bitfield >> 2) & 0x3FFFFFFF);
             }
 
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             set
             {
-                _bitfield = (_bitfield & ~(0x3FFFFFFF << 2)) | ((value & 0x3FFFFFFF) << 2);
+                _bitfield = (_bitfield & ~(0x3FFFFFFF << 2)) | (((BOOL)(value) & 0x3FFFFFFF) << 2);
             }
         }
     }

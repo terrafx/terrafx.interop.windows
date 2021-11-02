@@ -6,16 +6,16 @@ namespace TerraFX.Interop
 {
     public unsafe partial struct HSPFILEQ : IComparable, IComparable<HSPFILEQ>, IEquatable<HSPFILEQ>, IFormattable
     {
-        public readonly nint Value;
+        public readonly void* Value;
 
-        public HSPFILEQ(nint value)
+        public HSPFILEQ(void* value)
         {
             Value = value;
         }
 
-        public static HSPFILEQ INVALID_VALUE => new HSPFILEQ(-1);
+        public static HSPFILEQ INVALID_VALUE => new HSPFILEQ((void*)(-1));
 
-        public static HSPFILEQ NULL => new HSPFILEQ(0);
+        public static HSPFILEQ NULL => new HSPFILEQ(null);
 
         public static bool operator ==(HSPFILEQ left, HSPFILEQ right) => left.Value == right.Value;
 
@@ -29,53 +29,53 @@ namespace TerraFX.Interop
 
         public static bool operator >=(HSPFILEQ left, HSPFILEQ right) => left.Value >= right.Value;
 
-        public static explicit operator HSPFILEQ(void* value) => new HSPFILEQ((nint)(value));
+        public static explicit operator HSPFILEQ(void* value) => new HSPFILEQ(value);
 
-        public static implicit operator void*(HSPFILEQ value) => (void*)(value.Value);
+        public static implicit operator void*(HSPFILEQ value) => value.Value;
 
         public static explicit operator HSPFILEQ(HANDLE value) => new HSPFILEQ(value);
 
         public static implicit operator HANDLE(HSPFILEQ value) => new HANDLE(value.Value);
 
-        public static explicit operator HSPFILEQ(byte value) => new HSPFILEQ((nint)(value));
+        public static explicit operator HSPFILEQ(byte value) => new HSPFILEQ((void*)(value));
 
         public static explicit operator byte(HSPFILEQ value) => (byte)(value.Value);
 
-        public static explicit operator HSPFILEQ(short value) => new HSPFILEQ((nint)(value));
+        public static explicit operator HSPFILEQ(short value) => new HSPFILEQ((void*)(value));
 
         public static explicit operator short(HSPFILEQ value) => (short)(value.Value);
 
-        public static explicit operator HSPFILEQ(int value) => new HSPFILEQ((nint)(value));
+        public static explicit operator HSPFILEQ(int value) => new HSPFILEQ((void*)(value));
 
         public static explicit operator int(HSPFILEQ value) => (int)(value.Value);
 
-        public static explicit operator HSPFILEQ(long value) => new HSPFILEQ((nint)(value));
+        public static explicit operator HSPFILEQ(long value) => new HSPFILEQ((void*)(value));
 
-        public static implicit operator long(HSPFILEQ value) => value.Value;
+        public static explicit operator long(HSPFILEQ value) => (long)(value.Value);
 
-        public static explicit operator HSPFILEQ(nint value) => new HSPFILEQ((nint)(value));
+        public static explicit operator HSPFILEQ(nint value) => new HSPFILEQ((void*)(value));
 
-        public static implicit operator nint(HSPFILEQ value) => value.Value;
+        public static implicit operator nint(HSPFILEQ value) => (nint)(value.Value);
 
-        public static explicit operator HSPFILEQ(sbyte value) => new HSPFILEQ((nint)(value));
+        public static explicit operator HSPFILEQ(sbyte value) => new HSPFILEQ((void*)(value));
 
         public static explicit operator sbyte(HSPFILEQ value) => (sbyte)(value.Value);
 
-        public static explicit operator HSPFILEQ(ushort value) => new HSPFILEQ((nint)(value));
+        public static explicit operator HSPFILEQ(ushort value) => new HSPFILEQ((void*)(value));
 
         public static explicit operator ushort(HSPFILEQ value) => (ushort)(value.Value);
 
-        public static explicit operator HSPFILEQ(uint value) => new HSPFILEQ((nint)(value));
+        public static explicit operator HSPFILEQ(uint value) => new HSPFILEQ((void*)(value));
 
         public static explicit operator uint(HSPFILEQ value) => (uint)(value.Value);
 
-        public static explicit operator HSPFILEQ(ulong value) => new HSPFILEQ((nint)(value));
+        public static explicit operator HSPFILEQ(ulong value) => new HSPFILEQ((void*)(value));
 
         public static explicit operator ulong(HSPFILEQ value) => (ulong)(value.Value);
 
-        public static explicit operator HSPFILEQ(nuint value) => new HSPFILEQ((nint)(value));
+        public static explicit operator HSPFILEQ(nuint value) => new HSPFILEQ((void*)(value));
 
-        public static explicit operator nuint(HSPFILEQ value) => (nuint)(value.Value);
+        public static implicit operator nuint(HSPFILEQ value) => (nuint)(value.Value);
 
         public int CompareTo(object? obj)
         {
@@ -87,16 +87,16 @@ namespace TerraFX.Interop
             return (obj is null) ? 1 : throw new ArgumentException("obj is not an instance of HSPFILEQ.");
         }
 
-        public int CompareTo(HSPFILEQ other) => Value.CompareTo(other.Value);
+        public int CompareTo(HSPFILEQ other) => ((nuint)(Value)).CompareTo((nuint)(other.Value));
 
         public override bool Equals(object? obj) => (obj is HSPFILEQ other) && Equals(other);
 
-        public bool Equals(HSPFILEQ other) => Value.Equals(other.Value);
+        public bool Equals(HSPFILEQ other) => ((nuint)(Value)).Equals((nuint)(other.Value));
 
-        public override int GetHashCode() => Value.GetHashCode();
+        public override int GetHashCode() => ((nuint)(Value)).GetHashCode();
 
-        public override string ToString() => Value.ToString((sizeof(nint) == 4) ? "X8" : "X16");
+        public override string ToString() => ((nuint)(Value)).ToString((sizeof(nint) == 4) ? "X8" : "X16");
 
-        public string ToString(string? format, IFormatProvider? formatProvider) => Value.ToString(format, formatProvider);
+        public string ToString(string? format, IFormatProvider? formatProvider) => ((nuint)(Value)).ToString(format, formatProvider);
     }
 }

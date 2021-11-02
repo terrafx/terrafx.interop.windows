@@ -6,14 +6,14 @@ namespace TerraFX.Interop
 {
     public unsafe partial struct ASYNCCOMPLETIONHANDLE : IComparable, IComparable<ASYNCCOMPLETIONHANDLE>, IEquatable<ASYNCCOMPLETIONHANDLE>, IFormattable
     {
-        public readonly nuint Value;
+        public readonly void* Value;
 
-        public ASYNCCOMPLETIONHANDLE(nuint value)
+        public ASYNCCOMPLETIONHANDLE(void* value)
         {
             Value = value;
         }
 
-        public static ASYNCCOMPLETIONHANDLE NULL => new ASYNCCOMPLETIONHANDLE(0);
+        public static ASYNCCOMPLETIONHANDLE NULL => new ASYNCCOMPLETIONHANDLE(null);
 
         public static bool operator ==(ASYNCCOMPLETIONHANDLE left, ASYNCCOMPLETIONHANDLE right) => left.Value == right.Value;
 
@@ -27,49 +27,49 @@ namespace TerraFX.Interop
 
         public static bool operator >=(ASYNCCOMPLETIONHANDLE left, ASYNCCOMPLETIONHANDLE right) => left.Value >= right.Value;
 
-        public static explicit operator ASYNCCOMPLETIONHANDLE(void* value) => new ASYNCCOMPLETIONHANDLE((nuint)(value));
+        public static explicit operator ASYNCCOMPLETIONHANDLE(void* value) => new ASYNCCOMPLETIONHANDLE(value);
 
-        public static implicit operator void*(ASYNCCOMPLETIONHANDLE value) => (void*)(value.Value);
+        public static implicit operator void*(ASYNCCOMPLETIONHANDLE value) => value.Value;
 
-        public static explicit operator ASYNCCOMPLETIONHANDLE(byte value) => new ASYNCCOMPLETIONHANDLE((nuint)(value));
+        public static explicit operator ASYNCCOMPLETIONHANDLE(byte value) => new ASYNCCOMPLETIONHANDLE((void*)(value));
 
         public static explicit operator byte(ASYNCCOMPLETIONHANDLE value) => (byte)(value.Value);
 
-        public static explicit operator ASYNCCOMPLETIONHANDLE(short value) => new ASYNCCOMPLETIONHANDLE((nuint)(value));
+        public static explicit operator ASYNCCOMPLETIONHANDLE(short value) => new ASYNCCOMPLETIONHANDLE((void*)(value));
 
         public static explicit operator short(ASYNCCOMPLETIONHANDLE value) => (short)(value.Value);
 
-        public static explicit operator ASYNCCOMPLETIONHANDLE(int value) => new ASYNCCOMPLETIONHANDLE((nuint)(value));
+        public static explicit operator ASYNCCOMPLETIONHANDLE(int value) => new ASYNCCOMPLETIONHANDLE((void*)(value));
 
         public static explicit operator int(ASYNCCOMPLETIONHANDLE value) => (int)(value.Value);
 
-        public static explicit operator ASYNCCOMPLETIONHANDLE(long value) => new ASYNCCOMPLETIONHANDLE((nuint)(value));
+        public static explicit operator ASYNCCOMPLETIONHANDLE(long value) => new ASYNCCOMPLETIONHANDLE((void*)(value));
 
         public static explicit operator long(ASYNCCOMPLETIONHANDLE value) => (long)(value.Value);
 
-        public static explicit operator ASYNCCOMPLETIONHANDLE(nint value) => new ASYNCCOMPLETIONHANDLE((nuint)(value));
+        public static explicit operator ASYNCCOMPLETIONHANDLE(nint value) => new ASYNCCOMPLETIONHANDLE((void*)(value));
 
-        public static explicit operator nint(ASYNCCOMPLETIONHANDLE value) => (nint)(value.Value);
+        public static implicit operator nint(ASYNCCOMPLETIONHANDLE value) => (nint)(value.Value);
 
-        public static explicit operator ASYNCCOMPLETIONHANDLE(sbyte value) => new ASYNCCOMPLETIONHANDLE((nuint)(value));
+        public static explicit operator ASYNCCOMPLETIONHANDLE(sbyte value) => new ASYNCCOMPLETIONHANDLE((void*)(value));
 
         public static explicit operator sbyte(ASYNCCOMPLETIONHANDLE value) => (sbyte)(value.Value);
 
-        public static explicit operator ASYNCCOMPLETIONHANDLE(ushort value) => new ASYNCCOMPLETIONHANDLE((nuint)(value));
+        public static explicit operator ASYNCCOMPLETIONHANDLE(ushort value) => new ASYNCCOMPLETIONHANDLE((void*)(value));
 
         public static explicit operator ushort(ASYNCCOMPLETIONHANDLE value) => (ushort)(value.Value);
 
-        public static explicit operator ASYNCCOMPLETIONHANDLE(uint value) => new ASYNCCOMPLETIONHANDLE((nuint)(value));
+        public static explicit operator ASYNCCOMPLETIONHANDLE(uint value) => new ASYNCCOMPLETIONHANDLE((void*)(value));
 
         public static explicit operator uint(ASYNCCOMPLETIONHANDLE value) => (uint)(value.Value);
 
-        public static explicit operator ASYNCCOMPLETIONHANDLE(ulong value) => new ASYNCCOMPLETIONHANDLE((nuint)(value));
+        public static explicit operator ASYNCCOMPLETIONHANDLE(ulong value) => new ASYNCCOMPLETIONHANDLE((void*)(value));
 
-        public static implicit operator ulong(ASYNCCOMPLETIONHANDLE value) => value.Value;
+        public static explicit operator ulong(ASYNCCOMPLETIONHANDLE value) => (ulong)(value.Value);
 
-        public static explicit operator ASYNCCOMPLETIONHANDLE(nuint value) => new ASYNCCOMPLETIONHANDLE((nuint)(value));
+        public static explicit operator ASYNCCOMPLETIONHANDLE(nuint value) => new ASYNCCOMPLETIONHANDLE((void*)(value));
 
-        public static implicit operator nuint(ASYNCCOMPLETIONHANDLE value) => value.Value;
+        public static implicit operator nuint(ASYNCCOMPLETIONHANDLE value) => (nuint)(value.Value);
 
         public int CompareTo(object? obj)
         {
@@ -81,16 +81,16 @@ namespace TerraFX.Interop
             return (obj is null) ? 1 : throw new ArgumentException("obj is not an instance of ASYNCCOMPLETIONHANDLE.");
         }
 
-        public int CompareTo(ASYNCCOMPLETIONHANDLE other) => Value.CompareTo(other.Value);
+        public int CompareTo(ASYNCCOMPLETIONHANDLE other) => ((nuint)(Value)).CompareTo((nuint)(other.Value));
 
         public override bool Equals(object? obj) => (obj is ASYNCCOMPLETIONHANDLE other) && Equals(other);
 
-        public bool Equals(ASYNCCOMPLETIONHANDLE other) => Value.Equals(other.Value);
+        public bool Equals(ASYNCCOMPLETIONHANDLE other) => ((nuint)(Value)).Equals((nuint)(other.Value));
 
-        public override int GetHashCode() => Value.GetHashCode();
+        public override int GetHashCode() => ((nuint)(Value)).GetHashCode();
 
-        public override string ToString() => Value.ToString((sizeof(nint) == 4) ? "X8" : "X16");
+        public override string ToString() => ((nuint)(Value)).ToString((sizeof(nint) == 4) ? "X8" : "X16");
 
-        public string ToString(string? format, IFormatProvider? formatProvider) => Value.ToString(format, formatProvider);
+        public string ToString(string? format, IFormatProvider? formatProvider) => ((nuint)(Value)).ToString(format, formatProvider);
     }
 }

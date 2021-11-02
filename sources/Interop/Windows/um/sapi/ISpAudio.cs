@@ -169,7 +169,7 @@ namespace TerraFX.Interop
         [VtblIndex(21)]
         public HANDLE EventHandle()
         {
-            return ((HANDLE)(((delegate* unmanaged<ISpAudio*, nint>)(lpVtbl[21]))((ISpAudio*)Unsafe.AsPointer(ref this))));
+            return ((HANDLE)(((delegate* unmanaged<ISpAudio*, void*>)(lpVtbl[21]))((ISpAudio*)Unsafe.AsPointer(ref this))));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

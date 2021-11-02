@@ -522,7 +522,7 @@ namespace TerraFX.Interop
         [VtblIndex(59)]
         public HWND GetHwnd()
         {
-            return ((HWND)(((delegate* unmanaged<ID2D1HwndRenderTarget*, nint>)(lpVtbl[59]))((ID2D1HwndRenderTarget*)Unsafe.AsPointer(ref this))));
+            return ((HWND)(((delegate* unmanaged<ID2D1HwndRenderTarget*, void*>)(lpVtbl[59]))((ID2D1HwndRenderTarget*)Unsafe.AsPointer(ref this))));
         }
     }
 }
