@@ -107,8 +107,7 @@ namespace TerraFX.Interop
             }
         }
 
-        [NativeTypeName("LPARAM")]
-        public ref nint lParam
+        public ref LPARAM lParam
         {
             get
             {

@@ -54,21 +54,9 @@ namespace TerraFX.Interop
             return new D3D12_RESOURCE_DESC(D3D12_RESOURCE_DIMENSION_TEXTURE3D, alignment, width, height, depth, mipLevels, format, 1, 0, layout, flags);
         }
 
-        public ushort Depth
-        {
-            get
-            {
-                return (Dimension == D3D12_RESOURCE_DIMENSION_TEXTURE3D ? DepthOrArraySize : (ushort)1);
-            }
-        }
+        public ushort Depth => ((Dimension == D3D12_RESOURCE_DIMENSION_TEXTURE3D) ? DepthOrArraySize : (ushort)(1));
 
-        public ushort ArraySize
-        {
-            get
-            {
-                return (Dimension != D3D12_RESOURCE_DIMENSION_TEXTURE3D ? DepthOrArraySize : (ushort)1);
-            }
-        }
+        public ushort ArraySize => ((Dimension != D3D12_RESOURCE_DIMENSION_TEXTURE3D) ? DepthOrArraySize : (ushort)(1));
 
         public byte GetPlaneCount(ID3D12Device* pDevice)
         {
@@ -87,13 +75,21 @@ namespace TerraFX.Interop
 
         public static bool operator ==([NativeTypeName("const D3D12_RESOURCE_DESC &")] in D3D12_RESOURCE_DESC l, [NativeTypeName("const D3D12_RESOURCE_DESC &")] in D3D12_RESOURCE_DESC r)
         {
-            return l.Dimension == r.Dimension && l.Alignment == r.Alignment && l.Width == r.Width && l.Height == r.Height && l.DepthOrArraySize == r.DepthOrArraySize && l.MipLevels == r.MipLevels && l.Format == r.Format && l.SampleDesc.Count == r.SampleDesc.Count && l.SampleDesc.Quality == r.SampleDesc.Quality && l.Layout == r.Layout && l.Flags == r.Flags;
+            return (l.Dimension == r.Dimension)
+                && (l.Alignment == r.Alignment)
+                && (l.Width == r.Width)
+                && (l.Height == r.Height)
+                && (l.DepthOrArraySize == r.DepthOrArraySize)
+                && (l.MipLevels == r.MipLevels)
+                && (l.Format == r.Format)
+                && (l.SampleDesc.Count == r.SampleDesc.Count)
+                && (l.SampleDesc.Quality == r.SampleDesc.Quality)
+                && (l.Layout == r.Layout)
+                && (l.Flags == r.Flags);
         }
 
         public static bool operator !=([NativeTypeName("const D3D12_RESOURCE_DESC &")] in D3D12_RESOURCE_DESC l, [NativeTypeName("const D3D12_RESOURCE_DESC &")] in D3D12_RESOURCE_DESC r)
-        {
-            return !(l == r);
-        }
+            => !(l == r);
 
         public override bool Equals(object? obj) => (obj is D3D12_RESOURCE_DESC other) && Equals(other);
 

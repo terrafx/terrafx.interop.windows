@@ -17,7 +17,7 @@ namespace TerraFX.Interop
             where T : unmanaged
         {
             T value;
-            int ignoreHr = GetValueByName(propertyName, (byte*)&value, unchecked((uint)sizeof(T)));
+            _ = GetValueByName(propertyName, (byte*)&value, unchecked((uint)sizeof(T)));
             return value;
         }
 
@@ -45,7 +45,7 @@ namespace TerraFX.Interop
             where U : unmanaged
         {
             T value;
-            int ignoreHr = GetValue((uint)(object)index, (byte*)&value, unchecked((uint)sizeof(T)));
+            _ = GetValue((uint)(object)index, (byte*)&value, unchecked((uint)sizeof(T)));
             return value;
         }
 

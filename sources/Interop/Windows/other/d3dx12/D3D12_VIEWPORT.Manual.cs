@@ -13,13 +13,16 @@ namespace TerraFX.Interop
     {
         public static bool operator ==([NativeTypeName("const D3D12_VIEWPORT &")] in D3D12_VIEWPORT l, [NativeTypeName("const D3D12_VIEWPORT &")] in D3D12_VIEWPORT r)
         {
-            return l.TopLeftX == r.TopLeftX && l.TopLeftY == r.TopLeftY && l.Width == r.Width && l.Height == r.Height && l.MinDepth == r.MinDepth && l.MaxDepth == r.MaxDepth;
+            return (l.TopLeftX == r.TopLeftX)
+                && (l.TopLeftY == r.TopLeftY)
+                && (l.Width == r.Width)
+                && (l.Height == r.Height)
+                && (l.MinDepth == r.MinDepth)
+                && (l.MaxDepth == r.MaxDepth);
         }
 
         public static bool operator !=([NativeTypeName("const D3D12_VIEWPORT &")] in D3D12_VIEWPORT l, [NativeTypeName("const D3D12_VIEWPORT &")] in D3D12_VIEWPORT r)
-        {
-            return !(l == r);
-        }
+            => !(l == r);
 
         public D3D12_VIEWPORT(float topLeftX, float topLeftY, float width, float height, float minDepth = D3D12_MIN_DEPTH, float maxDepth = D3D12_MAX_DEPTH)
         {

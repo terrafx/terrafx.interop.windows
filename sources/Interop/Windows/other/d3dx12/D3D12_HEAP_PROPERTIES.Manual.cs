@@ -34,19 +34,23 @@ namespace TerraFX.Interop
         {
             get
             {
-                return Type == D3D12_HEAP_TYPE_UPLOAD || Type == D3D12_HEAP_TYPE_READBACK || (Type == D3D12_HEAP_TYPE_CUSTOM && (CPUPageProperty == D3D12_CPU_PAGE_PROPERTY_WRITE_COMBINE || CPUPageProperty == D3D12_CPU_PAGE_PROPERTY_WRITE_BACK));
+                return (Type == D3D12_HEAP_TYPE_UPLOAD)
+                    || (Type == D3D12_HEAP_TYPE_READBACK)
+                    || ((Type == D3D12_HEAP_TYPE_CUSTOM) && ((CPUPageProperty == D3D12_CPU_PAGE_PROPERTY_WRITE_COMBINE) || (CPUPageProperty == D3D12_CPU_PAGE_PROPERTY_WRITE_BACK)));
             }
         }
 
         public static bool operator ==([NativeTypeName("const D3D12_HEAP_PROPERTIES &")] in D3D12_HEAP_PROPERTIES l, [NativeTypeName("const D3D12_HEAP_PROPERTIES &")] in D3D12_HEAP_PROPERTIES r)
         {
-            return l.Type == r.Type && l.CPUPageProperty == r.CPUPageProperty && l.MemoryPoolPreference == r.MemoryPoolPreference && l.CreationNodeMask == r.CreationNodeMask && l.VisibleNodeMask == r.VisibleNodeMask;
+            return (l.Type == r.Type)
+                && (l.CPUPageProperty == r.CPUPageProperty)
+                && (l.MemoryPoolPreference == r.MemoryPoolPreference)
+                && (l.CreationNodeMask == r.CreationNodeMask)
+                && (l.VisibleNodeMask == r.VisibleNodeMask);
         }
 
         public static bool operator !=([NativeTypeName("const D3D12_HEAP_PROPERTIES &")] in D3D12_HEAP_PROPERTIES l, [NativeTypeName("const D3D12_HEAP_PROPERTIES &")] in D3D12_HEAP_PROPERTIES r)
-        {
-            return !(l == r);
-        }
+            => !(l == r);
 
         public override bool Equals(object? obj) => (obj is D3D12_HEAP_PROPERTIES other) && Equals(other);
 

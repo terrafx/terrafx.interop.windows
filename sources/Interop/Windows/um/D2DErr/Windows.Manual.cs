@@ -7,8 +7,8 @@ namespace TerraFX.Interop
 {
     public static partial class Windows
     {
-        public static int MAKE_D2DHR(int sev, int code) => MAKE_HRESULT(sev, FACILITY_D2D, code);
+        public static HRESULT MAKE_D2DHR(int sev, int code) => MAKE_HRESULT(sev, FACILITY_D2D, code);
 
-        public static int MAKE_D2DHR_ERR(int code) => MAKE_D2DHR(1, code);
+        public static HRESULT MAKE_D2DHR_ERR(int code) => MAKE_D2DHR(1, code);
     }
 }

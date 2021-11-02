@@ -34,14 +34,10 @@ namespace TerraFX.Interop
         }
 
         public static bool operator ==([NativeTypeName("const D3D12_CPU_DESCRIPTOR_HANDLE &")] in D3D12_CPU_DESCRIPTOR_HANDLE l, [NativeTypeName("const D3D12_CPU_DESCRIPTOR_HANDLE &")] in D3D12_CPU_DESCRIPTOR_HANDLE r)
-        {
-            return (l.ptr == r.ptr);
-        }
+            => (l.ptr == r.ptr);
 
         public static bool operator !=([NativeTypeName("const D3D12_CPU_DESCRIPTOR_HANDLE &")] in D3D12_CPU_DESCRIPTOR_HANDLE l, [NativeTypeName("const D3D12_CPU_DESCRIPTOR_HANDLE &")] in D3D12_CPU_DESCRIPTOR_HANDLE r)
-        {
-            return (l.ptr != r.ptr);
-        }
+            => (l.ptr != r.ptr);
 
         public void InitOffsetted([NativeTypeName("const D3D12_CPU_DESCRIPTOR_HANDLE &")] in D3D12_CPU_DESCRIPTOR_HANDLE @base, int offsetScaledByIncrementSize)
         {

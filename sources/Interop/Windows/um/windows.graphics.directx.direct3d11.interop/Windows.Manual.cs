@@ -17,23 +17,23 @@ namespace TerraFX.Interop
             return inspectableSurface;
         }
 
-        public static int GetDXGIInterfaceFromObject(IInspectable* @object, Guid* iid, void** p)
+        public static HRESULT GetDXGIInterfaceFromObject(IInspectable* @object, Guid* iid, void** p)
         {
             IDirect3DDxgiInterfaceAccess* dxgiInterfaceAccess;
 
             var dxgi_iid = IID_IDirect3DDxgiInterfaceAccess;
-            int hr = @object->QueryInterface(&dxgi_iid, (void**) &dxgiInterfaceAccess);
+            HRESULT hr = @object->QueryInterface(&dxgi_iid, (void**) &dxgiInterfaceAccess);
 
             if (SUCCEEDED(hr))
             {
                 hr = dxgiInterfaceAccess->GetInterface(iid, p);
             }
 
-            dxgiInterfaceAccess->Release();
+            _ = dxgiInterfaceAccess->Release();
             return hr;
         }
 
-        public static int GetDXGIInterface<DXGI_TYPE>(IInspectable* @object, DXGI_TYPE** dxgi)
+        public static HRESULT GetDXGIInterface<DXGI_TYPE>(IInspectable* @object, DXGI_TYPE** dxgi)
             where DXGI_TYPE : unmanaged
         {
             var guid = typeof(DXGI_TYPE).GUID;

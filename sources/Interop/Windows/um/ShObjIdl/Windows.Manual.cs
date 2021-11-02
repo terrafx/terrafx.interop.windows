@@ -16,7 +16,7 @@ namespace TerraFX.Interop
         {
             *ppszResolvedPath = null;
             ITEMIDLIST* pidlFolder = SHSimpleIDListFromPath(pszFolderPath);
-            int hr = unchecked((pidlFolder) != null ? ((int)(0)) : ((int)(0x80070057)));
+            HRESULT hr = unchecked((pidlFolder) != null ? ((int)(0)) : ((int)(0x80070057)));
 
             if (((unchecked((int)(hr))) >= 0))
             {
@@ -31,10 +31,10 @@ namespace TerraFX.Interop
                     if (((unchecked((int)(hr))) >= 0))
                     {
                         unchecked(hr) = psiResolved->GetDisplayName(SIGDN_DESKTOPABSOLUTEPARSING, ppszResolvedPath);
-                        psiResolved->Release();
+                        _ = psiResolved->Release();
                     }
 
-                    psiFolder->Release();
+                    _ = psiFolder->Release();
                 }
 
                 CoTaskMemFree(pidlFolder);

@@ -195,52 +195,49 @@ namespace TerraFX.Interop
         public static int POINTTOPOINTS(POINTS pt) => MAKELONG((ushort)pt.x, (ushort)pt.y);
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [return: NativeTypeName("WPARAM")]
-        public static nuint MAKEWPARAM(ushort l, ushort h) => (nuint)MAKELONG(l, h);
+        public static WPARAM MAKEWPARAM(ushort l, ushort h) => (nuint)MAKELONG(l, h);
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [return: NativeTypeName("LPARAM")]
-        public static nint MAKELPARAM(ushort l, ushort h) => MAKELONG(l, h);
+        public static LPARAM MAKELPARAM(ushort l, ushort h) => MAKELONG(l, h);
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [return: NativeTypeName("LRESULT")]
-        public static nint MAKELRESULT(ushort l, ushort h) => MAKELONG(l, h);
+        public static LRESULT MAKELRESULT(ushort l, ushort h) => MAKELONG(l, h);
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static short GET_APPCOMMAND_LPARAM([NativeTypeName("LPARAM")] nint lParam) => unchecked((short)(HIWORD((uint)lParam) & ~FAPPCOMMAND_MASK));
+        public static short GET_APPCOMMAND_LPARAM(LPARAM lParam) => unchecked((short)(HIWORD((uint)lParam) & ~FAPPCOMMAND_MASK));
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static ushort GET_DEVICE_LPARAM([NativeTypeName("LPARAM")] nint lParam) => unchecked((ushort)(HIWORD((uint)lParam) & FAPPCOMMAND_MASK));
+        public static ushort GET_DEVICE_LPARAM(LPARAM lParam) => unchecked((ushort)(HIWORD((uint)lParam) & FAPPCOMMAND_MASK));
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static ushort GET_MOUSEORKEY_LPARAM([NativeTypeName("LPARAM")] nint lParam) => GET_DEVICE_LPARAM(lParam);
+        public static ushort GET_MOUSEORKEY_LPARAM(LPARAM lParam) => GET_DEVICE_LPARAM(lParam);
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static ushort GET_FLAGS_LPARAM([NativeTypeName("LPARAM")] nint lParam) => LOWORD(unchecked((uint)lParam));
+        public static ushort GET_FLAGS_LPARAM(LPARAM lParam) => LOWORD(unchecked((uint)lParam));
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static ushort GET_KEYSTATE_LPARAM([NativeTypeName("LPARAM")] nint lParam) => GET_FLAGS_LPARAM(lParam);
+        public static ushort GET_KEYSTATE_LPARAM(LPARAM lParam) => GET_FLAGS_LPARAM(lParam);
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static short GET_WHEEL_DELTA_WPARAM([NativeTypeName("WPARAM")] nuint wParam) => unchecked((short)HIWORD((uint)wParam));
+        public static short GET_WHEEL_DELTA_WPARAM(WPARAM wParam) => unchecked((short)HIWORD((uint)wParam));
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static ushort GET_KEYSTATE_WPARAM([NativeTypeName("WPARAM")] nuint wParam) => LOWORD(unchecked((uint)wParam));
+        public static ushort GET_KEYSTATE_WPARAM(WPARAM wParam) => LOWORD(unchecked((uint)wParam));
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static short GET_NCHITTEST_WPARAM([NativeTypeName("WPARAM")] nuint wParam) => unchecked((short)LOWORD((uint)wParam));
+        public static short GET_NCHITTEST_WPARAM(WPARAM wParam) => unchecked((short)LOWORD((uint)wParam));
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static ushort GET_XBUTTON_WPARAM([NativeTypeName("WPARAM")] nuint wParam) => HIWORD(unchecked((uint)wParam));
+        public static ushort GET_XBUTTON_WPARAM(WPARAM wParam) => HIWORD(unchecked((uint)wParam));
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static BOOL ExitWindows(uint dwReserved, int Code) => ExitWindowsEx(EWX_LOGOFF, 0xFFFFFFFF);
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static BOOL PostAppMessageA([NativeTypeName("DWORD")] uint idThread, uint wMsg, [NativeTypeName("WPARAM")] nuint wParam, [NativeTypeName("LPARAM")] nint lParam) => PostThreadMessageA(idThread, wMsg, wParam, lParam);
+        public static BOOL PostAppMessageA([NativeTypeName("DWORD")] uint idThread, uint wMsg, WPARAM wParam, LPARAM lParam) => PostThreadMessageA(idThread, wMsg, wParam, lParam);
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static BOOL PostAppMessageW([NativeTypeName("DWORD")] uint idThread, uint wMsg, [NativeTypeName("WPARAM")] nuint wParam, [NativeTypeName("LPARAM")] nint lParam) => PostThreadMessageW(idThread, wMsg, wParam, lParam);
+        public static BOOL PostAppMessageW([NativeTypeName("DWORD")] uint idThread, uint wMsg, WPARAM wParam, LPARAM lParam) => PostThreadMessageW(idThread, wMsg, wParam, lParam);
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static HWND CreateWindowA([NativeTypeName("LPCSTR")] sbyte* lpClassName, [NativeTypeName("LPCSTR")] sbyte* lpWindowName, [NativeTypeName("DWORD")] uint dwStyle, int x, int y, int nWidth, int nHeight, HWND hWndParent, HMENU hMenu, HINSTANCE hInstance, [NativeTypeName("LPVOID")] void* lpParam) => CreateWindowExA(0, lpClassName, lpWindowName, dwStyle, x, y,nWidth, nHeight, hWndParent, hMenu, hInstance, lpParam);
@@ -280,43 +277,43 @@ namespace TerraFX.Interop
         public static int TOUCH_COORD_TO_PIXEL(int l) => l / 100;
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static ushort GET_POINTERID_WPARAM([NativeTypeName("WPARAM")] nuint wParam) => LOWORD(unchecked((uint)wParam));
+        public static ushort GET_POINTERID_WPARAM(WPARAM wParam) => LOWORD(unchecked((uint)wParam));
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static bool IS_POINTER_FLAG_SET_WPARAM([NativeTypeName("WPARAM")] nuint wParam, uint flag) => (HIWORD(unchecked((uint)wParam)) & flag) == flag;
+        public static bool IS_POINTER_FLAG_SET_WPARAM(WPARAM wParam, uint flag) => (HIWORD(unchecked((uint)wParam)) & flag) == flag;
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static bool IS_POINTER_NEW_WPARAM([NativeTypeName("WPARAM")] nuint wParam) => IS_POINTER_FLAG_SET_WPARAM(wParam, POINTER_MESSAGE_FLAG_NEW);
+        public static bool IS_POINTER_NEW_WPARAM(WPARAM wParam) => IS_POINTER_FLAG_SET_WPARAM(wParam, POINTER_MESSAGE_FLAG_NEW);
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static bool IS_POINTER_INRANGE_WPARAM([NativeTypeName("WPARAM")] nuint wParam) => IS_POINTER_FLAG_SET_WPARAM(wParam, POINTER_MESSAGE_FLAG_INRANGE);
+        public static bool IS_POINTER_INRANGE_WPARAM(WPARAM wParam) => IS_POINTER_FLAG_SET_WPARAM(wParam, POINTER_MESSAGE_FLAG_INRANGE);
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static bool IS_POINTER_INCONTACT_WPARAM([NativeTypeName("WPARAM")] nuint wParam) => IS_POINTER_FLAG_SET_WPARAM(wParam, POINTER_MESSAGE_FLAG_INCONTACT);
+        public static bool IS_POINTER_INCONTACT_WPARAM(WPARAM wParam) => IS_POINTER_FLAG_SET_WPARAM(wParam, POINTER_MESSAGE_FLAG_INCONTACT);
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static bool IS_POINTER_FIRSTBUTTON_WPARAM([NativeTypeName("WPARAM")] nuint wParam) => IS_POINTER_FLAG_SET_WPARAM(wParam, POINTER_MESSAGE_FLAG_FIRSTBUTTON);
+        public static bool IS_POINTER_FIRSTBUTTON_WPARAM(WPARAM wParam) => IS_POINTER_FLAG_SET_WPARAM(wParam, POINTER_MESSAGE_FLAG_FIRSTBUTTON);
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static bool IS_POINTER_SECONDBUTTON_WPARAM([NativeTypeName("WPARAM")] nuint wParam) => IS_POINTER_FLAG_SET_WPARAM(wParam, POINTER_MESSAGE_FLAG_SECONDBUTTON);
+        public static bool IS_POINTER_SECONDBUTTON_WPARAM(WPARAM wParam) => IS_POINTER_FLAG_SET_WPARAM(wParam, POINTER_MESSAGE_FLAG_SECONDBUTTON);
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static bool IS_POINTER_THIRDBUTTON_WPARAM([NativeTypeName("WPARAM")] nuint wParam) => IS_POINTER_FLAG_SET_WPARAM(wParam, POINTER_MESSAGE_FLAG_THIRDBUTTON);
+        public static bool IS_POINTER_THIRDBUTTON_WPARAM(WPARAM wParam) => IS_POINTER_FLAG_SET_WPARAM(wParam, POINTER_MESSAGE_FLAG_THIRDBUTTON);
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static bool IS_POINTER_FOURTHBUTTON_WPARAM([NativeTypeName("WPARAM")] nuint wParam) => IS_POINTER_FLAG_SET_WPARAM(wParam, POINTER_MESSAGE_FLAG_FOURTHBUTTON);
+        public static bool IS_POINTER_FOURTHBUTTON_WPARAM(WPARAM wParam) => IS_POINTER_FLAG_SET_WPARAM(wParam, POINTER_MESSAGE_FLAG_FOURTHBUTTON);
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static bool IS_POINTER_FIFTHBUTTON_WPARAM([NativeTypeName("WPARAM")] nuint wParam) => IS_POINTER_FLAG_SET_WPARAM(wParam, POINTER_MESSAGE_FLAG_FIFTHBUTTON);
+        public static bool IS_POINTER_FIFTHBUTTON_WPARAM(WPARAM wParam) => IS_POINTER_FLAG_SET_WPARAM(wParam, POINTER_MESSAGE_FLAG_FIFTHBUTTON);
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static bool IS_POINTER_PRIMARY_WPARAM([NativeTypeName("WPARAM")] nuint wParam) => IS_POINTER_FLAG_SET_WPARAM(wParam, POINTER_MESSAGE_FLAG_PRIMARY);
+        public static bool IS_POINTER_PRIMARY_WPARAM(WPARAM wParam) => IS_POINTER_FLAG_SET_WPARAM(wParam, POINTER_MESSAGE_FLAG_PRIMARY);
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static bool HAS_POINTER_CONFIDENCE_WPARAM([NativeTypeName("WPARAM")] nuint wParam) => IS_POINTER_FLAG_SET_WPARAM(wParam, POINTER_MESSAGE_FLAG_CONFIDENCE);
+        public static bool HAS_POINTER_CONFIDENCE_WPARAM(WPARAM wParam) => IS_POINTER_FLAG_SET_WPARAM(wParam, POINTER_MESSAGE_FLAG_CONFIDENCE);
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static bool IS_POINTER_CANCELED_WPARAM([NativeTypeName("WPARAM")] nuint wParam) => IS_POINTER_FLAG_SET_WPARAM(wParam, POINTER_MESSAGE_FLAG_CANCELED);
+        public static bool IS_POINTER_CANCELED_WPARAM(WPARAM wParam) => IS_POINTER_FLAG_SET_WPARAM(wParam, POINTER_MESSAGE_FLAG_CANCELED);
 
         [NativeTypeName("#define GetWindowLongPtr GetWindowLongPtrW")]
         public static delegate*<HWND, int, nint> GetWindowLongPtr => &GetWindowLongPtrW;
@@ -467,7 +464,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static BOOL EnumTaskWindows(IntPtr hTask, [NativeTypeName("WNDENUMPROC")] delegate* unmanaged<HWND, LPARAM, BOOL> lpfn, [NativeTypeName("LPARAM")] nint lParam) => EnumThreadWindows((uint)hTask, lpfn, lParam);
+        public static BOOL EnumTaskWindows(IntPtr hTask, [NativeTypeName("WNDENUMPROC")] delegate* unmanaged<HWND, LPARAM, BOOL> lpfn, LPARAM lParam) => EnumThreadWindows((uint)hTask, lpfn, lParam);
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static HWND GetNextWindow(HWND hWnd, ushort wCmd) => GetWindow(hWnd, wCmd);
@@ -482,14 +479,13 @@ namespace TerraFX.Interop
         public static HANDLE GetWindowTask(HWND hWnd) => (HANDLE)GetWindowThreadProcessId(hWnd, null);
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [return: NativeTypeName("LRESULT")]
-        public static IntPtr DefHookProc(int nCode, [NativeTypeName("WPARAM")] nuint wParam, [NativeTypeName("LPARAM")] nint lParam, HHOOK phhk) => CallNextHookEx(phhk, nCode, wParam, lParam);
+        public static LRESULT DefHookProc(int nCode, WPARAM wParam, LPARAM lParam, HHOOK phhk) => CallNextHookEx(phhk, nCode, wParam, lParam);
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static int GET_SC_WPARAM([NativeTypeName("WPARAM")] nuint wParam) => unchecked((int)(wParam & 0xFFF0));
+        public static int GET_SC_WPARAM(WPARAM wParam) => unchecked((int)(wParam & 0xFFF0));
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static nuint GET_RAWINPUT_CODE_WPARAM([NativeTypeName("WPARAM")] nuint wParam) => wParam & 0xFF;
+        public static nuint GET_RAWINPUT_CODE_WPARAM(WPARAM wParam) => wParam & (nuint)(0xFFu);
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static nint RAWINPUT_ALIGN(nint x) => (x + sizeof(nint) - 1) & ~(sizeof(nint) - 1);
@@ -501,10 +497,10 @@ namespace TerraFX.Interop
         public static int RIDEV_EXMODE(int mode) => mode & RIDEV_EXMODEMASK;
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static ushort GET_DEVICE_CHANGE_WPARAM([NativeTypeName("WPARAM")] nuint wParam) => LOWORD(unchecked((uint)wParam));
+        public static ushort GET_DEVICE_CHANGE_WPARAM(WPARAM wParam) => LOWORD(unchecked((uint)wParam));
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static ushort GET_DEVICE_CHANGE_LPARAM([NativeTypeName("LPARAM")] nint lParam) => LOWORD(unchecked((uint)lParam));
+        public static ushort GET_DEVICE_CHANGE_LPARAM(LPARAM lParam) => LOWORD(unchecked((uint)lParam));
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static ushort GID_ROTATE_ANGLE_TO_ARGUMENT(ushort _arg_) => (ushort)((_arg_ + (2.0 * 3.14159265)) / (4.0 * 3.14159265) * 65535.0);

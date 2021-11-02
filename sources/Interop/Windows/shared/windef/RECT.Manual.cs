@@ -19,13 +19,14 @@ namespace TerraFX.Interop
 
         public static bool operator ==([NativeTypeName("const RECT &")] in RECT l, [NativeTypeName("const RECT &")] in RECT r)
         {
-            return l.left == r.left && l.top == r.top && l.right == r.right && l.bottom == r.bottom;
+            return (l.left == r.left)
+                && (l.top == r.top)
+                && (l.right == r.right)
+                && (l.bottom == r.bottom);
         }
 
         public static bool operator !=([NativeTypeName("const RECT &")] in RECT l, [NativeTypeName("const RECT &")] in RECT r)
-        {
-            return !(l == r);
-        }
+            => !(l == r);
 
         public override bool Equals(object? obj) => (obj is RECT other) && Equals(other);
 

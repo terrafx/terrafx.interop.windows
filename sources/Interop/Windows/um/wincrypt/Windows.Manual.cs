@@ -8,12 +8,12 @@ namespace TerraFX.Interop
     public static unsafe partial class Windows
     {
         [NativeTypeName("#define HCCE_CURRENT_USER ((HCERTCHAINENGINE)NULL)")]
-        public static HANDLE HCCE_CURRENT_USER => ((HANDLE)(NULL));
+        public static HCERTCHAINENGINE HCCE_CURRENT_USER => ((HCERTCHAINENGINE)(NULL));
 
         [NativeTypeName("#define HCCE_LOCAL_MACHINE ((HCERTCHAINENGINE)0x1)")]
-        public static HANDLE HCCE_LOCAL_MACHINE => ((HANDLE)(0x1));
+        public static HCERTCHAINENGINE HCCE_LOCAL_MACHINE => ((HCERTCHAINENGINE)(0x1));
 
         [NativeTypeName("#define HCCE_SERIAL_LOCAL_MACHINE ((HCERTCHAINENGINE)0x2)")]
-        public static HANDLE HCCE_SERIAL_LOCAL_MACHINE => ((HANDLE)(0x2));
+        public static HCERTCHAINENGINE HCCE_SERIAL_LOCAL_MACHINE => ((HCERTCHAINENGINE)(0x2));
     }
 }

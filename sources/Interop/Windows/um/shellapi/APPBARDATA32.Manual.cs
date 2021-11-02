@@ -21,7 +21,6 @@ namespace TerraFX.Interop
 
         public RECT rc;
 
-        [NativeTypeName("LPARAM")]
-        public nint lParam;
+        public LPARAM lParam;
     }
 }

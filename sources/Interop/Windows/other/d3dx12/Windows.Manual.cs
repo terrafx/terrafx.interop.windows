@@ -84,9 +84,9 @@ namespace TerraFX.Interop
             ID3D12Device* pDevice = null;
             var iid = IID_ID3D12Device;
 
-            pDestinationResource->GetDevice(&iid, (void**)&pDevice);
+            _ = pDestinationResource->GetDevice(&iid, (void**)&pDevice);
             pDevice->GetCopyableFootprints(&Desc, FirstSubresource, NumSubresources, 0, null, null, null, &RequiredSize);
-            pDevice->Release();
+            _ = pDevice->Release();
 
             return RequiredSize;
         }
@@ -102,7 +102,7 @@ namespace TerraFX.Interop
             }
 
             byte* pData;
-            int hr = pIntermediate->Map(0, null, (void**)&pData);
+            HRESULT hr = pIntermediate->Map(0, null, (void**)&pData);
 
             if (FAILED(hr))
             {
@@ -112,7 +112,9 @@ namespace TerraFX.Interop
             for (var i = 0u; i < NumSubresources; ++i)
             {
                 if (pRowSizesInBytes[i] > unchecked((nuint)(-1)))
+                {
                     return 0;
+                }
 
                 D3D12_MEMCPY_DEST DestData = new D3D12_MEMCPY_DEST
                 {
@@ -167,12 +169,12 @@ namespace TerraFX.Interop
             ID3D12Device* pDevice = null;
             var iid = IID_ID3D12Device;
 
-            pDestinationResource->GetDevice(&iid, (void**)&pDevice);
+            _ = pDestinationResource->GetDevice(&iid, (void**)&pDevice);
             pDevice->GetCopyableFootprints(&Desc, FirstSubresource, NumSubresources, IntermediateOffset, pLayouts, pNumRows, pRowSizesInBytes, &RequiredSize);
-            pDevice->Release();
+            _ = pDevice->Release();
 
             ulong Result = UpdateSubresources(pCmdList, pDestinationResource, pIntermediate, FirstSubresource, NumSubresources, RequiredSize, pLayouts, pNumRows, pRowSizesInBytes, pSrcData);
-            HeapFree(GetProcessHeap(), 0, pMem);
+            _ = HeapFree(GetProcessHeap(), 0, pMem);
             return Result;
         }
 
@@ -202,12 +204,12 @@ namespace TerraFX.Interop
             ID3D12Device* pDevice = null;
             var iid = IID_ID3D12Device;
 
-            pDestinationResource->GetDevice(&iid, (void**)&pDevice);
+            _ = pDestinationResource->GetDevice(&iid, (void**)&pDevice);
             pDevice->GetCopyableFootprints(&Desc, FirstSubresource, NumSubresources, IntermediateOffset, pLayouts, pNumRows, pRowSizesInBytes, &RequiredSize);
-            pDevice->Release();
+            _ = pDevice->Release();
 
             ulong Result = UpdateSubresources(pCmdList, pDestinationResource, pIntermediate, FirstSubresource, NumSubresources, RequiredSize, pLayouts, pNumRows, pRowSizesInBytes, pResourceData, pSrcData);
-            HeapFree(GetProcessHeap(), 0, pMem);
+            _ = HeapFree(GetProcessHeap(), 0, pMem);
             return Result;
         }
 
@@ -223,9 +225,9 @@ namespace TerraFX.Interop
             ID3D12Device* pDevice = null;
             var iid = IID_ID3D12Device;
 
-            pDestinationResource->GetDevice(&iid, (void**)&pDevice);
+            _ = pDestinationResource->GetDevice(&iid, (void**)&pDevice);
             pDevice->GetCopyableFootprints(&Desc, FirstSubresource, NumSubresources, IntermediateOffset, Layouts, NumRows, RowSizesInBytes, &RequiredSize);
-            pDevice->Release();
+            _ = pDevice->Release();
 
             return UpdateSubresources(pCmdList, pDestinationResource, pIntermediate, FirstSubresource, NumSubresources, RequiredSize, Layouts, NumRows, RowSizesInBytes, pSrcData);
         }
@@ -242,9 +244,9 @@ namespace TerraFX.Interop
             ID3D12Device* pDevice = null;
             var iid = IID_ID3D12Device;
 
-            pDestinationResource->GetDevice(&iid, (void**)&pDevice);
+            _ = pDestinationResource->GetDevice(&iid, (void**)&pDevice);
             pDevice->GetCopyableFootprints(&Desc, FirstSubresource, NumSubresources, IntermediateOffset, Layouts, NumRows, RowSizesInBytes, &RequiredSize);
-            pDevice->Release();
+            _ = pDevice->Release();
 
             return UpdateSubresources(pCmdList, pDestinationResource, pIntermediate, FirstSubresource, NumSubresources, RequiredSize, Layouts, NumRows, RowSizesInBytes, pResourceData, pSrcData);
         }
@@ -272,7 +274,7 @@ namespace TerraFX.Interop
 
                         case D3D_ROOT_SIGNATURE_VERSION_1_1:
                         {
-                            int hr = S_OK;
+                            HRESULT hr = S_OK;
                             ref readonly D3D12_ROOT_SIGNATURE_DESC1 desc_1_1 = ref pRootSignatureDesc->Anonymous.Desc_1_1;
 
                             nuint ParametersSize = (uint)sizeof(D3D12_ROOT_PARAMETER) * desc_1_1.NumParameters;
@@ -356,11 +358,11 @@ namespace TerraFX.Interop
                                 {
                                     if (desc_1_1.pParameters[n].ParameterType == D3D12_ROOT_PARAMETER_TYPE_DESCRIPTOR_TABLE)
                                     {
-                                        HeapFree(GetProcessHeap(), 0, (void*)pParameters_1_0[n].Anonymous.DescriptorTable.pDescriptorRanges);
+                                        _ = HeapFree(GetProcessHeap(), 0, (void*)pParameters_1_0[n].Anonymous.DescriptorTable.pDescriptorRanges);
                                     }
                                 }
 
-                                HeapFree(GetProcessHeap(), 0, pParameters);
+                                _ = HeapFree(GetProcessHeap(), 0, pParameters);
                             }
 
                             return hr;

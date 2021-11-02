@@ -10,7 +10,7 @@ namespace TerraFX.Interop
 {
     public static unsafe partial class Windows
     {
-        public static IntPtr HGDI_ERROR => unchecked(((nint)((nint)(0xFFFFFFFF))));
+        public static HANDLE HGDI_ERROR => (HANDLE)(-1);
 
         public const int GDIREGISTERDDRAWPACKETVERSION = 0x1;
 
@@ -18,44 +18,40 @@ namespace TerraFX.Interop
         public static uint MAKEROP4(uint fore, uint back) => ((back << 8) & 0xFF000000) | fore;
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static byte GetKValue([NativeTypeName("COLORREF")]uint cmyk) => (byte)cmyk;
+        public static byte GetKValue(COLORREF cmyk) => (byte)cmyk;
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static byte GetYValue([NativeTypeName("COLORREF")]uint cmyk) => (byte)(cmyk >> 8);
+        public static byte GetYValue(COLORREF cmyk) => (byte)(cmyk >> 8);
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static byte GetMValue([NativeTypeName("COLORREF")]uint cmyk) => (byte)(cmyk >> 16);
+        public static byte GetMValue(COLORREF cmyk) => (byte)(cmyk >> 16);
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static byte GetCValue([NativeTypeName("COLORREF")] uint cmyk) => (byte)(cmyk >> 24);
+        public static byte GetCValue(COLORREF cmyk) => (byte)(cmyk >> 24);
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [return: NativeTypeName("COLORREF")]
-        public static uint CMYK(byte c, byte m, byte y, byte k) => k | ((uint)y << 8) | (((uint)m) << 16) | (((uint)c) << 24);
+        public static COLORREF CMYK(byte c, byte m, byte y, byte k) => k | ((uint)y << 8) | (((uint)m) << 16) | (((uint)c) << 24);
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static POINTS MAKEPOINTS(int l) => *(POINTS*)&l;
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [return: NativeTypeName("COLORREF")]
-        public static uint RGB(byte r, byte g, byte b) => r | ((uint)g << 8) | (((uint)b) << 16);
+        public static COLORREF RGB(byte r, byte g, byte b) => r | ((uint)g << 8) | (((uint)b) << 16);
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [return: NativeTypeName("COLORREF")]
-        public static uint PALETTERGB(byte r, byte g, byte b) => 0x02000000 | RGB(r, g, b);
+        public static COLORREF PALETTERGB(byte r, byte g, byte b) => 0x02000000 | RGB(r, g, b);
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [return: NativeTypeName("COLORREF")]
-        public static uint PALETTEINDEX(ushort i) => 0x01000000 | (uint)i;
+        public static COLORREF PALETTEINDEX(ushort i) => 0x01000000 | (uint)i;
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static byte GetRValue([NativeTypeName("COLORREF")] uint rgb) => LOBYTE((ushort)rgb);
+        public static byte GetRValue(COLORREF rgb) => LOBYTE((ushort)rgb);
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static byte GetGValue([NativeTypeName("COLORREF")] uint rgb) => LOBYTE((ushort)(rgb >> 8));
+        public static byte GetGValue(COLORREF rgb) => LOBYTE((ushort)(rgb >> 8));
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static byte GetBValue([NativeTypeName("COLORREF")] uint rgb) => LOBYTE((ushort)(rgb >> 16));
+        public static byte GetBValue(COLORREF rgb) => LOBYTE((ushort)(rgb >> 16));
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static uint GDI_WIDTHBYTES(uint bits) => ((bits + 31) & ~31u) / 8;

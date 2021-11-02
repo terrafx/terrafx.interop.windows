@@ -25,7 +25,7 @@ namespace TerraFX.Interop
         {
             *ppv = null;
             IShellLibrary* plib;
-            int hr;
+            HRESULT hr;
 
             fixed (Guid* rclsid = &CLSID_ShellLibrary)
             {
@@ -40,7 +40,7 @@ namespace TerraFX.Interop
                     hr = plib->QueryInterface(riid, ppv);
                 }
 
-                plib->Release();
+                _ = plib->Release();
             }
 
             return hr;
@@ -50,7 +50,7 @@ namespace TerraFX.Interop
         {
             *ppv = null;
             IShellLibrary* plib;
-            int hr;
+            HRESULT hr;
 
             fixed (Guid* rclsid = &CLSID_ShellLibrary)
             {
@@ -65,7 +65,7 @@ namespace TerraFX.Interop
                     hr = plib->QueryInterface(riid, ppv);
                 }
 
-                plib->Release();
+                _ = plib->Release();
             }
 
             return hr;
@@ -75,12 +75,12 @@ namespace TerraFX.Interop
         {
             *ppv = null;
             IShellItem* psiLibrary;
-            int hr = SHCreateItemFromParsingName(pszParsingName, null, __uuidof<IShellItem>(), (void**)(&psiLibrary));
+            HRESULT hr = SHCreateItemFromParsingName(pszParsingName, null, __uuidof<IShellItem>(), (void**)(&psiLibrary));
 
             if ((((int)(hr)) >= 0))
             {
                 hr = SHLoadLibraryFromItem(psiLibrary, grfMode, riid, ppv);
-                psiLibrary->Release();
+                _ = psiLibrary->Release();
             }
 
             return hr;
@@ -89,12 +89,12 @@ namespace TerraFX.Interop
         public static HRESULT SHAddFolderPathToLibrary(IShellLibrary* plib, [NativeTypeName("PCWSTR")] ushort* pszFolderPath)
         {
             IShellItem* psiFolder;
-            int hr = SHCreateItemFromParsingName(pszFolderPath, null, __uuidof<IShellItem>(), (void**)(&psiFolder));
+            HRESULT hr = SHCreateItemFromParsingName(pszFolderPath, null, __uuidof<IShellItem>(), (void**)(&psiFolder));
 
             if ((((int)(hr)) >= 0))
             {
                 hr = plib->AddFolder(psiFolder);
-                psiFolder->Release();
+                _ = psiFolder->Release();
             }
 
             return hr;
@@ -103,7 +103,7 @@ namespace TerraFX.Interop
         public static HRESULT SHRemoveFolderPathFromLibrary(IShellLibrary* plib, [NativeTypeName("PCWSTR")] ushort* pszFolderPath)
         {
             ITEMIDLIST* pidlFolder = SHSimpleIDListFromPath(pszFolderPath);
-            int hr = unchecked((pidlFolder) != null ? ((int)(0)) : ((int)(0x80070057)));
+            HRESULT hr = unchecked((pidlFolder) != null ? ((int)(0)) : ((int)(0x80070057)));
 
             if (((unchecked((int)(hr))) >= 0))
             {
@@ -113,7 +113,7 @@ namespace TerraFX.Interop
                 if (((unchecked((int)(hr))) >= 0))
                 {
                     unchecked(hr) = plib->RemoveFolder(psiFolder);
-                    psiFolder->Release();
+                    _ = psiFolder->Release();
                 }
 
                 CoTaskMemFree(pidlFolder);
@@ -130,7 +130,7 @@ namespace TerraFX.Interop
             }
 
             IShellItem* psiFolder;
-            int hr = SHCreateItemFromParsingName(pszFolderPath, null, __uuidof<IShellItem>(), (void**)(&psiFolder));
+            HRESULT hr = SHCreateItemFromParsingName(pszFolderPath, null, __uuidof<IShellItem>(), (void**)(&psiFolder));
 
             if ((((int)(hr)) >= 0))
             {
@@ -144,10 +144,10 @@ namespace TerraFX.Interop
                         hr = psiSavedTo->GetDisplayName(SIGDN_DESKTOPABSOLUTEPARSING, ppszSavedToPath);
                     }
 
-                    psiSavedTo->Release();
+                    _ = psiSavedTo->Release();
                 }
 
-                psiFolder->Release();
+                _ = psiFolder->Release();
             }
 
             return hr;
@@ -159,11 +159,11 @@ namespace TerraFX.Interop
             {
                 if (hwndDelegate != (nint)(0))
                 {
-                    SetPropW(hwndSource, (ushort*)(lpString), (HANDLE)(hwndDelegate));
+                    _ = SetPropW(hwndSource, (ushort*)(lpString), (HANDLE)(hwndDelegate));
                 }
                 else
                 {
-                    RemovePropW(hwndSource, (ushort*)(lpString));
+                    _ = RemovePropW(hwndSource, (ushort*)(lpString));
                 }
             }
         }

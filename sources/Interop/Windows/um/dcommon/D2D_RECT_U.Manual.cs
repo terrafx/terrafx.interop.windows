@@ -19,13 +19,14 @@ namespace TerraFX.Interop
 
         public static bool operator ==([NativeTypeName("const D2D1_RECT_U &")] in D2D_RECT_U l, [NativeTypeName("const D2D1_RECT_U &")] in D2D_RECT_U r)
         {
-            return l.left == r.left && l.top == r.top && l.right == r.right && l.bottom == r.bottom;
+            return (l.left == r.left)
+                && (l.top == r.top)
+                && (l.right == r.right)
+                && (l.bottom == r.bottom);
         }
 
         public static bool operator !=([NativeTypeName("const D2D1_RECT_U &")] in D2D_RECT_U l, [NativeTypeName("const D2D1_RECT_U &")] in D2D_RECT_U r)
-        {
-            return !(l == r);
-        }
+            => !(l == r);
 
         public static D2D_RECT_U Infinite
         {

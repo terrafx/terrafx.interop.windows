@@ -58,23 +58,18 @@ namespace TerraFX.Interop
             Flags = flags;
         }
 
-        public bool IsCPUAccessible
-        {
-            get
-            {
-                return Properties.IsCPUAccessible;
-            }
-        }
+        public bool IsCPUAccessible => Properties.IsCPUAccessible;
 
         public static bool operator ==([NativeTypeName("const D3D12_HEAP_DESC &")] in D3D12_HEAP_DESC l, [NativeTypeName("const D3D12_HEAP_DESC &")] in D3D12_HEAP_DESC r)
         {
-            return l.SizeInBytes == r.SizeInBytes && l.Properties == r.Properties && l.Alignment == r.Alignment && l.Flags == r.Flags;
+            return (l.SizeInBytes == r.SizeInBytes)
+                && (l.Properties == r.Properties)
+                && (l.Alignment == r.Alignment)
+                && (l.Flags == r.Flags);
         }
 
         public static bool operator !=([NativeTypeName("const D3D12_HEAP_DESC &")] in D3D12_HEAP_DESC l, [NativeTypeName("const D3D12_HEAP_DESC &")] in D3D12_HEAP_DESC r)
-        {
-            return !(l == r);
-        }
+            => !(l == r);
 
         public override bool Equals(object? obj) => (obj is D3D12_HEAP_DESC other) && Equals(other);
 

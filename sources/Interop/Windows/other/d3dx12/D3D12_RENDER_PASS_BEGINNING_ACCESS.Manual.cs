@@ -13,18 +13,20 @@ namespace TerraFX.Interop
         public static bool operator ==([NativeTypeName("const D3D12_RENDER_PASS_BEGINNING_ACCESS &")] in D3D12_RENDER_PASS_BEGINNING_ACCESS a, [NativeTypeName("const D3D12_RENDER_PASS_BEGINNING_ACCESS &")] in D3D12_RENDER_PASS_BEGINNING_ACCESS b)
         {
             if (a.Type != b.Type)
+            {
                 return false;
+            }
 
             if (a.Type == D3D12_RENDER_PASS_BEGINNING_ACCESS_TYPE_CLEAR && !(a.Anonymous.Clear == b.Anonymous.Clear))
+            {
                 return false;
+            }
 
             return true;
         }
 
         public static bool operator !=([NativeTypeName("const D3D12_RENDER_PASS_BEGINNING_ACCESS &")] in D3D12_RENDER_PASS_BEGINNING_ACCESS a, [NativeTypeName("const D3D12_RENDER_PASS_BEGINNING_ACCESS &")] in D3D12_RENDER_PASS_BEGINNING_ACCESS b)
-        {
-            return !(a == b);
-        }
+            => !(a == b);
 
         public override bool Equals(object? obj) => (obj is D3D12_RENDER_PASS_BEGINNING_ACCESS other) && Equals(other);
 

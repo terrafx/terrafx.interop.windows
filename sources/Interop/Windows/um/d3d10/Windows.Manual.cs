@@ -9,15 +9,9 @@ namespace TerraFX.Interop
 {
     public static partial class Windows
     {
-        public static int MAKE_D3D10_HRESULT(int code)
-        {
-            return MAKE_HRESULT(1, _FACD3D10, code);
-        }
+        public static HRESULT MAKE_D3D10_HRESULT(int code) => MAKE_HRESULT(1, _FACD3D10, code);
         
-        public static int MAKE_D3D10_STATUS(int code)
-        {
-            return MAKE_HRESULT(0, _FACD3D10, code);
-        }
+        public static HRESULT MAKE_D3D10_STATUS(int code) => MAKE_HRESULT(0, _FACD3D10, code);
 
         public static D3D10_FILTER D3D10_ENCODE_BASIC_FILTER(int min, int mag, int mip, bool bComparison)
         {
@@ -44,9 +38,9 @@ namespace TerraFX.Interop
             return ((D3D10_FILTER_TYPE)(((int)(d3d10Filter) >> (0)) & (0x3)));
         }
 
-        public static int D3D10_DECODE_IS_COMPARISON_FILTER(D3D10_FILTER d3d10Filter)
+        public static bool D3D10_DECODE_IS_COMPARISON_FILTER(D3D10_FILTER d3d10Filter)
         {
-            return ((int)(d3d10Filter) & (0x80));
+            return ((int)(d3d10Filter) & (0x80)) != 0;
         }
 
         public static bool D3D10_DECODE_IS_ANISOTROPIC_FILTER(D3D10_FILTER d3d10Filter)

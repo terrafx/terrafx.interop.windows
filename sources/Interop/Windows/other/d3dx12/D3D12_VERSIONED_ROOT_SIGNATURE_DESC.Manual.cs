@@ -16,7 +16,7 @@ namespace TerraFX.Interop
     {
         public D3D12_VERSIONED_ROOT_SIGNATURE_DESC([NativeTypeName("const D3D12_ROOT_SIGNATURE_DESC &")] in D3D12_ROOT_SIGNATURE_DESC o)
         {
-            this = default;
+            Unsafe.SkipInit(out this);
 
             Version = D3D_ROOT_SIGNATURE_VERSION_1_0;
             Anonymous.Desc_1_0 = o;
@@ -24,7 +24,7 @@ namespace TerraFX.Interop
 
         public D3D12_VERSIONED_ROOT_SIGNATURE_DESC([NativeTypeName("const D3D12_ROOT_SIGNATURE_DESC1 &")] in D3D12_ROOT_SIGNATURE_DESC1 o)
         {
-            this = default;
+            Unsafe.SkipInit(out this);
 
             Version = D3D_ROOT_SIGNATURE_VERSION_1_1;
             Anonymous.Desc_1_1 = o;

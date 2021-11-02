@@ -25,14 +25,14 @@ namespace TerraFX.Interop
 
         public const uint D2D1_INTERPOLATION_MODE_DEFINITION_MIPMAP_LINEAR = 7;
 
-        public static HRESULT D2D1CreateFactory<Factory>(D2D1_FACTORY_TYPE factoryType, [NativeTypeName("void **")] void** factory)
+        public static HRESULT D2D1CreateFactory<Factory>(D2D1_FACTORY_TYPE factoryType, void** factory)
             where Factory : unmanaged
         {
             var iid = typeof(Factory).GUID;
             return D2D1CreateFactory(factoryType, &iid, null, factory);
         }
 
-        public static HRESULT D2D1CreateFactory<Factory>(D2D1_FACTORY_TYPE factoryType, [NativeTypeName("const D2D1_FACTORY_OPTIONS *")] D2D1_FACTORY_OPTIONS* pFactoryOptions, [NativeTypeName("void **")] void** factory)
+        public static HRESULT D2D1CreateFactory<Factory>(D2D1_FACTORY_TYPE factoryType, [NativeTypeName("const D2D1_FACTORY_OPTIONS *")] D2D1_FACTORY_OPTIONS* pFactoryOptions, void** factory)
             where Factory : unmanaged
         {
             var iid = typeof(Factory).GUID;

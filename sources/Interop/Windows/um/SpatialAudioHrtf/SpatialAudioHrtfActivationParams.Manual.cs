@@ -25,16 +25,12 @@ namespace TerraFX.Interop
 
         public HANDLE EventHandle;
 
-        [NativeTypeName("ISpatialAudioObjectRenderStreamNotify *")]
         public ISpatialAudioObjectRenderStreamNotify* NotifyObject;
 
-        [NativeTypeName("SpatialAudioHrtfDistanceDecay *")]
         public SpatialAudioHrtfDistanceDecay* DistanceDecay;
 
-        [NativeTypeName("SpatialAudioHrtfDirectivityUnion *")]
         public SpatialAudioHrtfDirectivityUnion* Directivity;
 
-        [NativeTypeName("SpatialAudioHrtfEnvironmentType *")]
         public SpatialAudioHrtfEnvironmentType* Environment;
 
         [NativeTypeName("SpatialAudioHrtfOrientation *")]

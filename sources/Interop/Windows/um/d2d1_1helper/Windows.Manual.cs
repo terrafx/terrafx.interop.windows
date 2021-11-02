@@ -80,22 +80,22 @@ namespace TerraFX.Interop
             return bitmapProperties;
         }
 
-        public static D2D1_LAYER_PARAMETERS1 LayerParameters1([NativeTypeName("ID2D1Geometry *"), Optional] ID2D1Geometry* geometricMask, [Optional] D2D1_ANTIALIAS_MODE maskAntialiasMode, float opacity = 1.0f, [NativeTypeName("ID2D1Brush *")] ID2D1Brush* opacityBrush = null, D2D1_LAYER_OPTIONS1 layerOptions = D2D1_LAYER_OPTIONS1_NONE)
+        public static D2D1_LAYER_PARAMETERS1 LayerParameters1([Optional] ID2D1Geometry* geometricMask, [Optional] D2D1_ANTIALIAS_MODE maskAntialiasMode, float opacity = 1.0f, ID2D1Brush* opacityBrush = null, D2D1_LAYER_OPTIONS1 layerOptions = D2D1_LAYER_OPTIONS1_NONE)
         {
             return LayerParameters1(InfiniteRect, geometricMask, maskAntialiasMode, IdentityMatrix, opacity, opacityBrush, layerOptions);
         }
 
-        public static D2D1_LAYER_PARAMETERS1 LayerParameters1([NativeTypeName("const D2D1_RECT_F")] in D2D_RECT_F contentBounds, [NativeTypeName("ID2D1Geometry *"), Optional] ID2D1Geometry* geometricMask, [Optional] D2D1_ANTIALIAS_MODE maskAntialiasMode, float opacity = 1.0f, [NativeTypeName("ID2D1Brush *")] ID2D1Brush* opacityBrush = null, D2D1_LAYER_OPTIONS1 layerOptions = D2D1_LAYER_OPTIONS1_NONE)
+        public static D2D1_LAYER_PARAMETERS1 LayerParameters1([NativeTypeName("const D2D1_RECT_F")] in D2D_RECT_F contentBounds, [Optional] ID2D1Geometry* geometricMask, [Optional] D2D1_ANTIALIAS_MODE maskAntialiasMode, float opacity = 1.0f, ID2D1Brush* opacityBrush = null, D2D1_LAYER_OPTIONS1 layerOptions = D2D1_LAYER_OPTIONS1_NONE)
         {
             return LayerParameters1(contentBounds, geometricMask, maskAntialiasMode, IdentityMatrix, opacity, opacityBrush, layerOptions);
         }
 
-        public static D2D1_LAYER_PARAMETERS1 LayerParameters1([NativeTypeName("ID2D1Geometry *"), Optional] ID2D1Geometry* geometricMask, [Optional] D2D1_ANTIALIAS_MODE maskAntialiasMode, [NativeTypeName("D2D1_MATRIX_3X2_F")] D2D_MATRIX_3X2_F maskTransform, float opacity = 1.0f, [NativeTypeName("ID2D1Brush *")] ID2D1Brush* opacityBrush = null, D2D1_LAYER_OPTIONS1 layerOptions = D2D1_LAYER_OPTIONS1_NONE)
+        public static D2D1_LAYER_PARAMETERS1 LayerParameters1([Optional] ID2D1Geometry* geometricMask, [Optional] D2D1_ANTIALIAS_MODE maskAntialiasMode, [NativeTypeName("D2D1_MATRIX_3X2_F")] D2D_MATRIX_3X2_F maskTransform, float opacity = 1.0f, ID2D1Brush* opacityBrush = null, D2D1_LAYER_OPTIONS1 layerOptions = D2D1_LAYER_OPTIONS1_NONE)
         {
             return LayerParameters1(InfiniteRect, geometricMask, maskAntialiasMode, maskTransform, opacity, opacityBrush, layerOptions);
         }
 
-        public static D2D1_LAYER_PARAMETERS1 LayerParameters1([NativeTypeName("const D2D1_RECT_F")] in D2D_RECT_F contentBounds, [NativeTypeName("ID2D1Geometry *"), Optional] ID2D1Geometry* geometricMask, [Optional] D2D1_ANTIALIAS_MODE maskAntialiasMode, [NativeTypeName("D2D1_MATRIX_3X2_F")] D2D_MATRIX_3X2_F maskTransform, float opacity = 1.0f, [NativeTypeName("ID2D1Brush *")] ID2D1Brush* opacityBrush = null, D2D1_LAYER_OPTIONS1 layerOptions = D2D1_LAYER_OPTIONS1_NONE)
+        public static D2D1_LAYER_PARAMETERS1 LayerParameters1([NativeTypeName("const D2D1_RECT_F")] in D2D_RECT_F contentBounds, [Optional] ID2D1Geometry* geometricMask, [Optional] D2D1_ANTIALIAS_MODE maskAntialiasMode, [NativeTypeName("D2D1_MATRIX_3X2_F")] D2D_MATRIX_3X2_F maskTransform, float opacity = 1.0f, ID2D1Brush* opacityBrush = null, D2D1_LAYER_OPTIONS1 layerOptions = D2D1_LAYER_OPTIONS1_NONE)
         {
             D2D1_LAYER_PARAMETERS1 layerParameters = default;
 
@@ -170,7 +170,7 @@ namespace TerraFX.Interop
             return renderingControls;
         }
 
-        public static D2D1_EFFECT_INPUT_DESCRIPTION EffectInputDescription([NativeTypeName("ID2D1Effect *")] ID2D1Effect* effect, [NativeTypeName("UINT32")] uint inputIndex, [NativeTypeName("D2D1_RECT_F")] D2D_RECT_F inputRectangle)
+        public static D2D1_EFFECT_INPUT_DESCRIPTION EffectInputDescription(ID2D1Effect* effect, [NativeTypeName("UINT32")] uint inputIndex, [NativeTypeName("D2D1_RECT_F")] D2D_RECT_F inputRectangle)
         {
             D2D1_EFFECT_INPUT_DESCRIPTION description;
 
@@ -252,9 +252,9 @@ namespace TerraFX.Interop
             return rect;
         }
 
-        public static HRESULT SetDpiCompensatedEffectInput([NativeTypeName("ID2D1DeviceContext *")] ID2D1DeviceContext *deviceContext, [NativeTypeName("ID2D1Effect *")] ID2D1Effect *effect, [NativeTypeName("UINT32")] uint inputIndex, [NativeTypeName("ID2D1Bitmap *")] ID2D1Bitmap* inputBitmap, D2D1_INTERPOLATION_MODE interpolationMode = D2D1_INTERPOLATION_MODE_LINEAR, D2D1_BORDER_MODE borderMode = D2D1_BORDER_MODE_HARD)
+        public static HRESULT SetDpiCompensatedEffectInput(ID2D1DeviceContext *deviceContext, ID2D1Effect *effect, [NativeTypeName("UINT32")] uint inputIndex, ID2D1Bitmap* inputBitmap, D2D1_INTERPOLATION_MODE interpolationMode = D2D1_INTERPOLATION_MODE_LINEAR, D2D1_BORDER_MODE borderMode = D2D1_BORDER_MODE_HARD)
         {
-            int hr = S_OK;
+            HRESULT hr = S_OK;
             ID2D1Effect *dpiCompensationEffect = null;
 
             if (inputBitmap != null)
@@ -295,7 +295,7 @@ namespace TerraFX.Interop
 
                 if (dpiCompensationEffect != null)
                 {
-                    dpiCompensationEffect->Release();
+                    _ = dpiCompensationEffect->Release();
                 }
             }
 

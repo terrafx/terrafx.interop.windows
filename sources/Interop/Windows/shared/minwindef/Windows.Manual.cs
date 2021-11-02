@@ -13,11 +13,13 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("WORD")]
-        public static ushort MAKEWORD([NativeTypeName("DWORD_PTR")] nuint a, [NativeTypeName("DWORD_PTR")] nuint b) => ((ushort)(((byte)(((nuint)(a)) & 0xff)) | ((ushort)((byte)(((nuint)(b)) & 0xff))) << 8));
+        public static ushort MAKEWORD([NativeTypeName("DWORD_PTR")] nuint a, [NativeTypeName("DWORD_PTR")] nuint b)
+            => ((ushort)(((byte)(((nuint)(a)) & 0xff)) | ((ushort)((byte)(((nuint)(b)) & 0xff))) << 8));
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("LONG")]
-        public static int MAKELONG([NativeTypeName("DWORD_PTR")] nuint a, [NativeTypeName("DWORD_PTR")] nuint b) => ((int)(((ushort)(((nuint)(a)) & 0xffff)) | ((uint)((ushort)(((nuint)(b)) & 0xffff))) << 16));
+        public static int MAKELONG([NativeTypeName("DWORD_PTR")] nuint a, [NativeTypeName("DWORD_PTR")] nuint b)
+            => ((int)(((ushort)(((nuint)(a)) & 0xffff)) | ((uint)((ushort)(((nuint)(b)) & 0xffff))) << 16));
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("WORD")]

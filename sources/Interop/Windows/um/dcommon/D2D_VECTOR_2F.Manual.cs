@@ -17,13 +17,12 @@ namespace TerraFX.Interop
 
         public static bool operator ==([NativeTypeName("const D2D_VECTOR_2F &")] in D2D_VECTOR_2F l, [NativeTypeName("const D2D_VECTOR_2F &")] in D2D_VECTOR_2F r)
         {
-            return l.x == r.x && l.y == r.y;
+            return (l.x == r.x)
+                && (l.y == r.y);
         }
 
         public static bool operator !=([NativeTypeName("const D2D_VECTOR_2F &")] in D2D_VECTOR_2F l, [NativeTypeName("const D2D_VECTOR_2F &")] in D2D_VECTOR_2F r)
-        {
-            return !(l == r);
-        }
+            => !(l == r);
 
         public bool Equals(D2D_VECTOR_2F other) => this == other;
 

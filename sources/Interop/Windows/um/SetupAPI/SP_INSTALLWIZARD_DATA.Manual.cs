@@ -128,8 +128,7 @@ namespace TerraFX.Interop
             }
         }
 
-        [NativeTypeName("LPARAM")]
-        public ref nint PrivateData
+        public ref LPARAM PrivateData
         {
             get
             {
