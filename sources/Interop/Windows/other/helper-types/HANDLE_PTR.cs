@@ -65,11 +65,11 @@ namespace TerraFX.Interop
 
         public static explicit operator HANDLE_PTR(ulong value) => new HANDLE_PTR((nuint)(value));
 
-        public static implicit operator ulong(HANDLE_PTR value) => (ulong)(value.Value);
+        public static implicit operator ulong(HANDLE_PTR value) => value.Value;
 
         public static explicit operator HANDLE_PTR(nuint value) => new HANDLE_PTR((nuint)(value));
 
-        public static implicit operator nuint(HANDLE_PTR value) => (nuint)(value.Value);
+        public static implicit operator nuint(HANDLE_PTR value) => value.Value;
 
         public int CompareTo(object? obj)
         {

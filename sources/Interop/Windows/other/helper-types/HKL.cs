@@ -51,11 +51,11 @@ namespace TerraFX.Interop
 
         public static explicit operator HKL(long value) => new HKL((nint)(value));
 
-        public static implicit operator long(HKL value) => (long)(value.Value);
+        public static implicit operator long(HKL value) => value.Value;
 
         public static explicit operator HKL(nint value) => new HKL((nint)(value));
 
-        public static implicit operator nint(HKL value) => (nint)(value.Value);
+        public static implicit operator nint(HKL value) => value.Value;
 
         public static explicit operator HKL(sbyte value) => new HKL((nint)(value));
 

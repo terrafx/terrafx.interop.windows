@@ -51,11 +51,11 @@ namespace TerraFX.Interop
 
         public static explicit operator HCRYPTOIDFUNCADDR(long value) => new HCRYPTOIDFUNCADDR((nint)(value));
 
-        public static implicit operator long(HCRYPTOIDFUNCADDR value) => (long)(value.Value);
+        public static implicit operator long(HCRYPTOIDFUNCADDR value) => value.Value;
 
         public static explicit operator HCRYPTOIDFUNCADDR(nint value) => new HCRYPTOIDFUNCADDR((nint)(value));
 
-        public static implicit operator nint(HCRYPTOIDFUNCADDR value) => (nint)(value.Value);
+        public static implicit operator nint(HCRYPTOIDFUNCADDR value) => value.Value;
 
         public static explicit operator HCRYPTOIDFUNCADDR(sbyte value) => new HCRYPTOIDFUNCADDR((nint)(value));
 

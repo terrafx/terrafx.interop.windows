@@ -51,11 +51,11 @@ namespace TerraFX.Interop
 
         public static explicit operator GLOBALHANDLE(long value) => new GLOBALHANDLE((nint)(value));
 
-        public static implicit operator long(GLOBALHANDLE value) => (long)(value.Value);
+        public static implicit operator long(GLOBALHANDLE value) => value.Value;
 
         public static explicit operator GLOBALHANDLE(nint value) => new GLOBALHANDLE((nint)(value));
 
-        public static implicit operator nint(GLOBALHANDLE value) => (nint)(value.Value);
+        public static implicit operator nint(GLOBALHANDLE value) => value.Value;
 
         public static explicit operator GLOBALHANDLE(sbyte value) => new GLOBALHANDLE((nint)(value));
 

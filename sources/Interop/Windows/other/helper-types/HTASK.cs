@@ -51,11 +51,11 @@ namespace TerraFX.Interop
 
         public static explicit operator HTASK(long value) => new HTASK((nint)(value));
 
-        public static implicit operator long(HTASK value) => (long)(value.Value);
+        public static implicit operator long(HTASK value) => value.Value;
 
         public static explicit operator HTASK(nint value) => new HTASK((nint)(value));
 
-        public static implicit operator nint(HTASK value) => (nint)(value.Value);
+        public static implicit operator nint(HTASK value) => value.Value;
 
         public static explicit operator HTASK(sbyte value) => new HTASK((nint)(value));
 

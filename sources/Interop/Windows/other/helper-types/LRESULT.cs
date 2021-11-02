@@ -25,31 +25,31 @@ namespace TerraFX.Interop
 
         public static bool operator >=(LRESULT left, LRESULT right) => left.Value >= right.Value;
 
-        public static implicit operator LRESULT(byte value) => new LRESULT((nint)(value));
+        public static implicit operator LRESULT(byte value) => new LRESULT(value);
 
         public static explicit operator byte(LRESULT value) => (byte)(value.Value);
 
-        public static implicit operator LRESULT(short value) => new LRESULT((nint)(value));
+        public static implicit operator LRESULT(short value) => new LRESULT(value);
 
         public static explicit operator short(LRESULT value) => (short)(value.Value);
 
-        public static implicit operator LRESULT(int value) => new LRESULT((nint)(value));
+        public static implicit operator LRESULT(int value) => new LRESULT(value);
 
         public static explicit operator int(LRESULT value) => (int)(value.Value);
 
         public static explicit operator LRESULT(long value) => new LRESULT((nint)(value));
 
-        public static implicit operator long(LRESULT value) => (long)(value.Value);
+        public static implicit operator long(LRESULT value) => value.Value;
 
-        public static implicit operator LRESULT(nint value) => new LRESULT((nint)(value));
+        public static implicit operator LRESULT(nint value) => new LRESULT(value);
 
-        public static implicit operator nint(LRESULT value) => (nint)(value.Value);
+        public static implicit operator nint(LRESULT value) => value.Value;
 
-        public static implicit operator LRESULT(sbyte value) => new LRESULT((nint)(value));
+        public static implicit operator LRESULT(sbyte value) => new LRESULT(value);
 
         public static explicit operator sbyte(LRESULT value) => (sbyte)(value.Value);
 
-        public static implicit operator LRESULT(ushort value) => new LRESULT((nint)(value));
+        public static implicit operator LRESULT(ushort value) => new LRESULT(value);
 
         public static explicit operator ushort(LRESULT value) => (ushort)(value.Value);
 

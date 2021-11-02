@@ -51,11 +51,11 @@ namespace TerraFX.Interop
 
         public static explicit operator HRGN(long value) => new HRGN((nint)(value));
 
-        public static implicit operator long(HRGN value) => (long)(value.Value);
+        public static implicit operator long(HRGN value) => value.Value;
 
         public static explicit operator HRGN(nint value) => new HRGN((nint)(value));
 
-        public static implicit operator nint(HRGN value) => (nint)(value.Value);
+        public static implicit operator nint(HRGN value) => value.Value;
 
         public static explicit operator HRGN(sbyte value) => new HRGN((nint)(value));
 

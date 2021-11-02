@@ -51,11 +51,11 @@ namespace TerraFX.Interop
 
         public static explicit operator HINSTANCE(long value) => new HINSTANCE((nint)(value));
 
-        public static implicit operator long(HINSTANCE value) => (long)(value.Value);
+        public static implicit operator long(HINSTANCE value) => value.Value;
 
         public static explicit operator HINSTANCE(nint value) => new HINSTANCE((nint)(value));
 
-        public static implicit operator nint(HINSTANCE value) => (nint)(value.Value);
+        public static implicit operator nint(HINSTANCE value) => value.Value;
 
         public static explicit operator HINSTANCE(sbyte value) => new HINSTANCE((nint)(value));
 

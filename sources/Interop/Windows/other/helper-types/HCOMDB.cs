@@ -51,11 +51,11 @@ namespace TerraFX.Interop
 
         public static explicit operator HCOMDB(long value) => new HCOMDB((nint)(value));
 
-        public static implicit operator long(HCOMDB value) => (long)(value.Value);
+        public static implicit operator long(HCOMDB value) => value.Value;
 
         public static explicit operator HCOMDB(nint value) => new HCOMDB((nint)(value));
 
-        public static implicit operator nint(HCOMDB value) => (nint)(value.Value);
+        public static implicit operator nint(HCOMDB value) => value.Value;
 
         public static explicit operator HCOMDB(sbyte value) => new HCOMDB((nint)(value));
 

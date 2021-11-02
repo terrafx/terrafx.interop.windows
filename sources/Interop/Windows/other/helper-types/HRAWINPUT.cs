@@ -51,11 +51,11 @@ namespace TerraFX.Interop
 
         public static explicit operator HRAWINPUT(long value) => new HRAWINPUT((nint)(value));
 
-        public static implicit operator long(HRAWINPUT value) => (long)(value.Value);
+        public static implicit operator long(HRAWINPUT value) => value.Value;
 
         public static explicit operator HRAWINPUT(nint value) => new HRAWINPUT((nint)(value));
 
-        public static implicit operator nint(HRAWINPUT value) => (nint)(value.Value);
+        public static implicit operator nint(HRAWINPUT value) => value.Value;
 
         public static explicit operator HRAWINPUT(sbyte value) => new HRAWINPUT((nint)(value));
 

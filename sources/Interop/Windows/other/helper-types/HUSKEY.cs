@@ -51,11 +51,11 @@ namespace TerraFX.Interop
 
         public static explicit operator HUSKEY(long value) => new HUSKEY((nint)(value));
 
-        public static implicit operator long(HUSKEY value) => (long)(value.Value);
+        public static implicit operator long(HUSKEY value) => value.Value;
 
         public static explicit operator HUSKEY(nint value) => new HUSKEY((nint)(value));
 
-        public static implicit operator nint(HUSKEY value) => (nint)(value.Value);
+        public static implicit operator nint(HUSKEY value) => value.Value;
 
         public static explicit operator HUSKEY(sbyte value) => new HUSKEY((nint)(value));
 

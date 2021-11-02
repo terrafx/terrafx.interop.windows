@@ -51,11 +51,11 @@ namespace TerraFX.Interop
 
         public static explicit operator HLSURF(long value) => new HLSURF((nint)(value));
 
-        public static implicit operator long(HLSURF value) => (long)(value.Value);
+        public static implicit operator long(HLSURF value) => value.Value;
 
         public static explicit operator HLSURF(nint value) => new HLSURF((nint)(value));
 
-        public static implicit operator nint(HLSURF value) => (nint)(value.Value);
+        public static implicit operator nint(HLSURF value) => value.Value;
 
         public static explicit operator HLSURF(sbyte value) => new HLSURF((nint)(value));
 

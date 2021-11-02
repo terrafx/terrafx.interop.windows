@@ -51,11 +51,11 @@ namespace TerraFX.Interop
 
         public static explicit operator HCMTRANSFORM(long value) => new HCMTRANSFORM((nint)(value));
 
-        public static implicit operator long(HCMTRANSFORM value) => (long)(value.Value);
+        public static implicit operator long(HCMTRANSFORM value) => value.Value;
 
         public static explicit operator HCMTRANSFORM(nint value) => new HCMTRANSFORM((nint)(value));
 
-        public static implicit operator nint(HCMTRANSFORM value) => (nint)(value.Value);
+        public static implicit operator nint(HCMTRANSFORM value) => value.Value;
 
         public static explicit operator HCMTRANSFORM(sbyte value) => new HCMTRANSFORM((nint)(value));
 

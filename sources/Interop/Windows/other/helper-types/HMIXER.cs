@@ -51,11 +51,11 @@ namespace TerraFX.Interop
 
         public static explicit operator HMIXER(long value) => new HMIXER((nint)(value));
 
-        public static implicit operator long(HMIXER value) => (long)(value.Value);
+        public static implicit operator long(HMIXER value) => value.Value;
 
         public static explicit operator HMIXER(nint value) => new HMIXER((nint)(value));
 
-        public static implicit operator nint(HMIXER value) => (nint)(value.Value);
+        public static implicit operator nint(HMIXER value) => value.Value;
 
         public static explicit operator HMIXER(sbyte value) => new HMIXER((nint)(value));
 

@@ -51,11 +51,11 @@ namespace TerraFX.Interop
 
         public static explicit operator HMETAFILEPICT(long value) => new HMETAFILEPICT((nint)(value));
 
-        public static implicit operator long(HMETAFILEPICT value) => (long)(value.Value);
+        public static implicit operator long(HMETAFILEPICT value) => value.Value;
 
         public static explicit operator HMETAFILEPICT(nint value) => new HMETAFILEPICT((nint)(value));
 
-        public static implicit operator nint(HMETAFILEPICT value) => (nint)(value.Value);
+        public static implicit operator nint(HMETAFILEPICT value) => value.Value;
 
         public static explicit operator HMETAFILEPICT(sbyte value) => new HMETAFILEPICT((nint)(value));
 

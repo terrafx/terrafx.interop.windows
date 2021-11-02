@@ -51,11 +51,11 @@ namespace TerraFX.Interop
 
         public static explicit operator HINF(long value) => new HINF((nint)(value));
 
-        public static implicit operator long(HINF value) => (long)(value.Value);
+        public static implicit operator long(HINF value) => value.Value;
 
         public static explicit operator HINF(nint value) => new HINF((nint)(value));
 
-        public static implicit operator nint(HINF value) => (nint)(value.Value);
+        public static implicit operator nint(HINF value) => value.Value;
 
         public static explicit operator HINF(sbyte value) => new HINF((nint)(value));
 

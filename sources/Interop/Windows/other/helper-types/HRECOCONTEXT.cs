@@ -51,11 +51,11 @@ namespace TerraFX.Interop
 
         public static explicit operator HRECOCONTEXT(long value) => new HRECOCONTEXT((nint)(value));
 
-        public static implicit operator long(HRECOCONTEXT value) => (long)(value.Value);
+        public static implicit operator long(HRECOCONTEXT value) => value.Value;
 
         public static explicit operator HRECOCONTEXT(nint value) => new HRECOCONTEXT((nint)(value));
 
-        public static implicit operator nint(HRECOCONTEXT value) => (nint)(value.Value);
+        public static implicit operator nint(HRECOCONTEXT value) => value.Value;
 
         public static explicit operator HRECOCONTEXT(sbyte value) => new HRECOCONTEXT((nint)(value));
 

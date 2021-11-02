@@ -51,11 +51,11 @@ namespace TerraFX.Interop
 
         public static explicit operator HMODULE(long value) => new HMODULE((nint)(value));
 
-        public static implicit operator long(HMODULE value) => (long)(value.Value);
+        public static implicit operator long(HMODULE value) => value.Value;
 
         public static explicit operator HMODULE(nint value) => new HMODULE((nint)(value));
 
-        public static implicit operator nint(HMODULE value) => (nint)(value.Value);
+        public static implicit operator nint(HMODULE value) => value.Value;
 
         public static explicit operator HMODULE(sbyte value) => new HMODULE((nint)(value));
 

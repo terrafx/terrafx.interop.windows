@@ -51,11 +51,11 @@ namespace TerraFX.Interop
 
         public static explicit operator HHANDLE(long value) => new HHANDLE((nint)(value));
 
-        public static implicit operator long(HHANDLE value) => (long)(value.Value);
+        public static implicit operator long(HHANDLE value) => value.Value;
 
         public static explicit operator HHANDLE(nint value) => new HHANDLE((nint)(value));
 
-        public static implicit operator nint(HHANDLE value) => (nint)(value.Value);
+        public static implicit operator nint(HHANDLE value) => value.Value;
 
         public static explicit operator HHANDLE(sbyte value) => new HHANDLE((nint)(value));
 

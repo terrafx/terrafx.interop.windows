@@ -25,7 +25,7 @@ namespace TerraFX.Interop
 
         public static bool operator >=(WPARAM left, WPARAM right) => left.Value >= right.Value;
 
-        public static implicit operator WPARAM(byte value) => new WPARAM((nuint)(value));
+        public static implicit operator WPARAM(byte value) => new WPARAM(value);
 
         public static explicit operator byte(WPARAM value) => (byte)(value.Value);
 
@@ -49,21 +49,21 @@ namespace TerraFX.Interop
 
         public static explicit operator sbyte(WPARAM value) => (sbyte)(value.Value);
 
-        public static implicit operator WPARAM(ushort value) => new WPARAM((nuint)(value));
+        public static implicit operator WPARAM(ushort value) => new WPARAM(value);
 
         public static explicit operator ushort(WPARAM value) => (ushort)(value.Value);
 
-        public static implicit operator WPARAM(uint value) => new WPARAM((nuint)(value));
+        public static implicit operator WPARAM(uint value) => new WPARAM(value);
 
         public static explicit operator uint(WPARAM value) => (uint)(value.Value);
 
         public static explicit operator WPARAM(ulong value) => new WPARAM((nuint)(value));
 
-        public static implicit operator ulong(WPARAM value) => (ulong)(value.Value);
+        public static implicit operator ulong(WPARAM value) => value.Value;
 
-        public static implicit operator WPARAM(nuint value) => new WPARAM((nuint)(value));
+        public static implicit operator WPARAM(nuint value) => new WPARAM(value);
 
-        public static implicit operator nuint(WPARAM value) => (nuint)(value.Value);
+        public static implicit operator nuint(WPARAM value) => value.Value;
 
         public int CompareTo(object? obj)
         {

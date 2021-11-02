@@ -51,11 +51,11 @@ namespace TerraFX.Interop
 
         public static explicit operator PDH_HLOG(long value) => new PDH_HLOG((nint)(value));
 
-        public static implicit operator long(PDH_HLOG value) => (long)(value.Value);
+        public static implicit operator long(PDH_HLOG value) => value.Value;
 
         public static explicit operator PDH_HLOG(nint value) => new PDH_HLOG((nint)(value));
 
-        public static implicit operator nint(PDH_HLOG value) => (nint)(value.Value);
+        public static implicit operator nint(PDH_HLOG value) => value.Value;
 
         public static explicit operator PDH_HLOG(sbyte value) => new PDH_HLOG((nint)(value));
 

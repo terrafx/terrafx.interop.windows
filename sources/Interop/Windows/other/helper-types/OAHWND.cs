@@ -45,11 +45,11 @@ namespace TerraFX.Interop
 
         public static explicit operator OAHWND(long value) => new OAHWND((nint)(value));
 
-        public static implicit operator long(OAHWND value) => (long)(value.Value);
+        public static implicit operator long(OAHWND value) => value.Value;
 
         public static explicit operator OAHWND(nint value) => new OAHWND((nint)(value));
 
-        public static implicit operator nint(OAHWND value) => (nint)(value.Value);
+        public static implicit operator nint(OAHWND value) => value.Value;
 
         public static explicit operator OAHWND(sbyte value) => new OAHWND((nint)(value));
 

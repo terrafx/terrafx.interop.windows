@@ -51,11 +51,11 @@ namespace TerraFX.Interop
 
         public static explicit operator HCRYPTHASH(long value) => new HCRYPTHASH((nint)(value));
 
-        public static implicit operator long(HCRYPTHASH value) => (long)(value.Value);
+        public static implicit operator long(HCRYPTHASH value) => value.Value;
 
         public static explicit operator HCRYPTHASH(nint value) => new HCRYPTHASH((nint)(value));
 
-        public static implicit operator nint(HCRYPTHASH value) => (nint)(value.Value);
+        public static implicit operator nint(HCRYPTHASH value) => value.Value;
 
         public static explicit operator HCRYPTHASH(sbyte value) => new HCRYPTHASH((nint)(value));
 

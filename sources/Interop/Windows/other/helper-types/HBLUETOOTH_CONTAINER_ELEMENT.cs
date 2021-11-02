@@ -51,11 +51,11 @@ namespace TerraFX.Interop
 
         public static explicit operator HBLUETOOTH_CONTAINER_ELEMENT(long value) => new HBLUETOOTH_CONTAINER_ELEMENT((nint)(value));
 
-        public static implicit operator long(HBLUETOOTH_CONTAINER_ELEMENT value) => (long)(value.Value);
+        public static implicit operator long(HBLUETOOTH_CONTAINER_ELEMENT value) => value.Value;
 
         public static explicit operator HBLUETOOTH_CONTAINER_ELEMENT(nint value) => new HBLUETOOTH_CONTAINER_ELEMENT((nint)(value));
 
-        public static implicit operator nint(HBLUETOOTH_CONTAINER_ELEMENT value) => (nint)(value.Value);
+        public static implicit operator nint(HBLUETOOTH_CONTAINER_ELEMENT value) => value.Value;
 
         public static explicit operator HBLUETOOTH_CONTAINER_ELEMENT(sbyte value) => new HBLUETOOTH_CONTAINER_ELEMENT((nint)(value));
 

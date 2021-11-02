@@ -51,11 +51,11 @@ namespace TerraFX.Interop
 
         public static explicit operator HDDEDATA(long value) => new HDDEDATA((nint)(value));
 
-        public static implicit operator long(HDDEDATA value) => (long)(value.Value);
+        public static implicit operator long(HDDEDATA value) => value.Value;
 
         public static explicit operator HDDEDATA(nint value) => new HDDEDATA((nint)(value));
 
-        public static implicit operator nint(HDDEDATA value) => (nint)(value.Value);
+        public static implicit operator nint(HDDEDATA value) => value.Value;
 
         public static explicit operator HDDEDATA(sbyte value) => new HDDEDATA((nint)(value));
 

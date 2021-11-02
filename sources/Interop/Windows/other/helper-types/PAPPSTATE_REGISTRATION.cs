@@ -45,11 +45,11 @@ namespace TerraFX.Interop
 
         public static explicit operator PAPPSTATE_REGISTRATION(long value) => new PAPPSTATE_REGISTRATION((nint)(value));
 
-        public static implicit operator long(PAPPSTATE_REGISTRATION value) => (long)(value.Value);
+        public static implicit operator long(PAPPSTATE_REGISTRATION value) => value.Value;
 
         public static explicit operator PAPPSTATE_REGISTRATION(nint value) => new PAPPSTATE_REGISTRATION((nint)(value));
 
-        public static implicit operator nint(PAPPSTATE_REGISTRATION value) => (nint)(value.Value);
+        public static implicit operator nint(PAPPSTATE_REGISTRATION value) => value.Value;
 
         public static explicit operator PAPPSTATE_REGISTRATION(sbyte value) => new PAPPSTATE_REGISTRATION((nint)(value));
 

@@ -51,11 +51,11 @@ namespace TerraFX.Interop
 
         public static explicit operator MPR_SERVER_HANDLE(long value) => new MPR_SERVER_HANDLE((nint)(value));
 
-        public static implicit operator long(MPR_SERVER_HANDLE value) => (long)(value.Value);
+        public static implicit operator long(MPR_SERVER_HANDLE value) => value.Value;
 
         public static explicit operator MPR_SERVER_HANDLE(nint value) => new MPR_SERVER_HANDLE((nint)(value));
 
-        public static implicit operator nint(MPR_SERVER_HANDLE value) => (nint)(value.Value);
+        public static implicit operator nint(MPR_SERVER_HANDLE value) => value.Value;
 
         public static explicit operator MPR_SERVER_HANDLE(sbyte value) => new MPR_SERVER_HANDLE((nint)(value));
 

@@ -51,11 +51,11 @@ namespace TerraFX.Interop
 
         public static explicit operator HDRVOBJ(long value) => new HDRVOBJ((nint)(value));
 
-        public static implicit operator long(HDRVOBJ value) => (long)(value.Value);
+        public static implicit operator long(HDRVOBJ value) => value.Value;
 
         public static explicit operator HDRVOBJ(nint value) => new HDRVOBJ((nint)(value));
 
-        public static implicit operator nint(HDRVOBJ value) => (nint)(value.Value);
+        public static implicit operator nint(HDRVOBJ value) => value.Value;
 
         public static explicit operator HDRVOBJ(sbyte value) => new HDRVOBJ((nint)(value));
 

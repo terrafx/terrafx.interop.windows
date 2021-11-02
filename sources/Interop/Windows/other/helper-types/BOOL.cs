@@ -37,31 +37,31 @@ namespace TerraFX.Interop
 
         public static bool operator true(BOOL value) => value.Value != 0;
 
-        public static implicit operator BOOL(byte value) => new BOOL((int)(value));
+        public static implicit operator BOOL(byte value) => new BOOL(value);
 
         public static explicit operator byte(BOOL value) => (byte)(value.Value);
 
-        public static implicit operator BOOL(short value) => new BOOL((int)(value));
+        public static implicit operator BOOL(short value) => new BOOL(value);
 
         public static explicit operator short(BOOL value) => (short)(value.Value);
 
-        public static implicit operator BOOL(int value) => new BOOL((int)(value));
+        public static implicit operator BOOL(int value) => new BOOL(value);
 
-        public static implicit operator int(BOOL value) => (int)(value.Value);
+        public static implicit operator int(BOOL value) => value.Value;
 
         public static explicit operator BOOL(long value) => new BOOL((int)(value));
 
-        public static implicit operator long(BOOL value) => (long)(value.Value);
+        public static implicit operator long(BOOL value) => value.Value;
 
         public static explicit operator BOOL(nint value) => new BOOL((int)(value));
 
-        public static implicit operator nint(BOOL value) => (nint)(value.Value);
+        public static implicit operator nint(BOOL value) => value.Value;
 
-        public static implicit operator BOOL(sbyte value) => new BOOL((int)(value));
+        public static implicit operator BOOL(sbyte value) => new BOOL(value);
 
         public static explicit operator sbyte(BOOL value) => (sbyte)(value.Value);
 
-        public static implicit operator BOOL(ushort value) => new BOOL((int)(value));
+        public static implicit operator BOOL(ushort value) => new BOOL(value);
 
         public static explicit operator ushort(BOOL value) => (ushort)(value.Value);
 

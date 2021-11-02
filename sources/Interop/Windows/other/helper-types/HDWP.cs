@@ -51,11 +51,11 @@ namespace TerraFX.Interop
 
         public static explicit operator HDWP(long value) => new HDWP((nint)(value));
 
-        public static implicit operator long(HDWP value) => (long)(value.Value);
+        public static implicit operator long(HDWP value) => value.Value;
 
         public static explicit operator HDWP(nint value) => new HDWP((nint)(value));
 
-        public static implicit operator nint(HDWP value) => (nint)(value.Value);
+        public static implicit operator nint(HDWP value) => value.Value;
 
         public static explicit operator HDWP(sbyte value) => new HDWP((nint)(value));
 

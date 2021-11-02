@@ -51,11 +51,11 @@ namespace TerraFX.Interop
 
         public static explicit operator HSNMP_CONTEXT(long value) => new HSNMP_CONTEXT((nint)(value));
 
-        public static implicit operator long(HSNMP_CONTEXT value) => (long)(value.Value);
+        public static implicit operator long(HSNMP_CONTEXT value) => value.Value;
 
         public static explicit operator HSNMP_CONTEXT(nint value) => new HSNMP_CONTEXT((nint)(value));
 
-        public static implicit operator nint(HSNMP_CONTEXT value) => (nint)(value.Value);
+        public static implicit operator nint(HSNMP_CONTEXT value) => value.Value;
 
         public static explicit operator HSNMP_CONTEXT(sbyte value) => new HSNMP_CONTEXT((nint)(value));
 

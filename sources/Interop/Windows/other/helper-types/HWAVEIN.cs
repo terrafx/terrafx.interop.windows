@@ -51,11 +51,11 @@ namespace TerraFX.Interop
 
         public static explicit operator HWAVEIN(long value) => new HWAVEIN((nint)(value));
 
-        public static implicit operator long(HWAVEIN value) => (long)(value.Value);
+        public static implicit operator long(HWAVEIN value) => value.Value;
 
         public static explicit operator HWAVEIN(nint value) => new HWAVEIN((nint)(value));
 
-        public static implicit operator nint(HWAVEIN value) => (nint)(value.Value);
+        public static implicit operator nint(HWAVEIN value) => value.Value;
 
         public static explicit operator HWAVEIN(sbyte value) => new HWAVEIN((nint)(value));
 

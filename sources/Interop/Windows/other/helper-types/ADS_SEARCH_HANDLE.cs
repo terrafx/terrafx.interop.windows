@@ -51,11 +51,11 @@ namespace TerraFX.Interop
 
         public static explicit operator ADS_SEARCH_HANDLE(long value) => new ADS_SEARCH_HANDLE((nint)(value));
 
-        public static implicit operator long(ADS_SEARCH_HANDLE value) => (long)(value.Value);
+        public static implicit operator long(ADS_SEARCH_HANDLE value) => value.Value;
 
         public static explicit operator ADS_SEARCH_HANDLE(nint value) => new ADS_SEARCH_HANDLE((nint)(value));
 
-        public static implicit operator nint(ADS_SEARCH_HANDLE value) => (nint)(value.Value);
+        public static implicit operator nint(ADS_SEARCH_HANDLE value) => value.Value;
 
         public static explicit operator ADS_SEARCH_HANDLE(sbyte value) => new ADS_SEARCH_HANDLE((nint)(value));
 

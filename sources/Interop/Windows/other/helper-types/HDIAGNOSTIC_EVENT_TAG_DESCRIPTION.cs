@@ -51,11 +51,11 @@ namespace TerraFX.Interop
 
         public static explicit operator HDIAGNOSTIC_EVENT_TAG_DESCRIPTION(long value) => new HDIAGNOSTIC_EVENT_TAG_DESCRIPTION((nint)(value));
 
-        public static implicit operator long(HDIAGNOSTIC_EVENT_TAG_DESCRIPTION value) => (long)(value.Value);
+        public static implicit operator long(HDIAGNOSTIC_EVENT_TAG_DESCRIPTION value) => value.Value;
 
         public static explicit operator HDIAGNOSTIC_EVENT_TAG_DESCRIPTION(nint value) => new HDIAGNOSTIC_EVENT_TAG_DESCRIPTION((nint)(value));
 
-        public static implicit operator nint(HDIAGNOSTIC_EVENT_TAG_DESCRIPTION value) => (nint)(value.Value);
+        public static implicit operator nint(HDIAGNOSTIC_EVENT_TAG_DESCRIPTION value) => value.Value;
 
         public static explicit operator HDIAGNOSTIC_EVENT_TAG_DESCRIPTION(sbyte value) => new HDIAGNOSTIC_EVENT_TAG_DESCRIPTION((nint)(value));
 

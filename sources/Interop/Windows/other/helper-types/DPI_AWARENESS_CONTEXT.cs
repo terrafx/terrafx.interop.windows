@@ -51,11 +51,11 @@ namespace TerraFX.Interop
 
         public static explicit operator DPI_AWARENESS_CONTEXT(long value) => new DPI_AWARENESS_CONTEXT((nint)(value));
 
-        public static implicit operator long(DPI_AWARENESS_CONTEXT value) => (long)(value.Value);
+        public static implicit operator long(DPI_AWARENESS_CONTEXT value) => value.Value;
 
         public static explicit operator DPI_AWARENESS_CONTEXT(nint value) => new DPI_AWARENESS_CONTEXT((nint)(value));
 
-        public static implicit operator nint(DPI_AWARENESS_CONTEXT value) => (nint)(value.Value);
+        public static implicit operator nint(DPI_AWARENESS_CONTEXT value) => value.Value;
 
         public static explicit operator DPI_AWARENESS_CONTEXT(sbyte value) => new DPI_AWARENESS_CONTEXT((nint)(value));
 

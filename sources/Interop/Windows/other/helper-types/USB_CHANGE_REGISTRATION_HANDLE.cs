@@ -51,11 +51,11 @@ namespace TerraFX.Interop
 
         public static explicit operator USB_CHANGE_REGISTRATION_HANDLE(long value) => new USB_CHANGE_REGISTRATION_HANDLE((nint)(value));
 
-        public static implicit operator long(USB_CHANGE_REGISTRATION_HANDLE value) => (long)(value.Value);
+        public static implicit operator long(USB_CHANGE_REGISTRATION_HANDLE value) => value.Value;
 
         public static explicit operator USB_CHANGE_REGISTRATION_HANDLE(nint value) => new USB_CHANGE_REGISTRATION_HANDLE((nint)(value));
 
-        public static implicit operator nint(USB_CHANGE_REGISTRATION_HANDLE value) => (nint)(value.Value);
+        public static implicit operator nint(USB_CHANGE_REGISTRATION_HANDLE value) => value.Value;
 
         public static explicit operator USB_CHANGE_REGISTRATION_HANDLE(sbyte value) => new USB_CHANGE_REGISTRATION_HANDLE((nint)(value));
 

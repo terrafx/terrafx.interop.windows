@@ -51,11 +51,11 @@ namespace TerraFX.Interop
 
         public static explicit operator HMIDIIN(long value) => new HMIDIIN((nint)(value));
 
-        public static implicit operator long(HMIDIIN value) => (long)(value.Value);
+        public static implicit operator long(HMIDIIN value) => value.Value;
 
         public static explicit operator HMIDIIN(nint value) => new HMIDIIN((nint)(value));
 
-        public static implicit operator nint(HMIDIIN value) => (nint)(value.Value);
+        public static implicit operator nint(HMIDIIN value) => value.Value;
 
         public static explicit operator HMIDIIN(sbyte value) => new HMIDIIN((nint)(value));
 

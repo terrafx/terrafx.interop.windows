@@ -51,11 +51,11 @@ namespace TerraFX.Interop
 
         public static explicit operator RESOURCE_HANDLE(long value) => new RESOURCE_HANDLE((nint)(value));
 
-        public static implicit operator long(RESOURCE_HANDLE value) => (long)(value.Value);
+        public static implicit operator long(RESOURCE_HANDLE value) => value.Value;
 
         public static explicit operator RESOURCE_HANDLE(nint value) => new RESOURCE_HANDLE((nint)(value));
 
-        public static implicit operator nint(RESOURCE_HANDLE value) => (nint)(value.Value);
+        public static implicit operator nint(RESOURCE_HANDLE value) => value.Value;
 
         public static explicit operator RESOURCE_HANDLE(sbyte value) => new RESOURCE_HANDLE((nint)(value));
 

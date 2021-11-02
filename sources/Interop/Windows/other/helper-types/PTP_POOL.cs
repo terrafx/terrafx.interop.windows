@@ -45,11 +45,11 @@ namespace TerraFX.Interop
 
         public static explicit operator PTP_POOL(long value) => new PTP_POOL((nint)(value));
 
-        public static implicit operator long(PTP_POOL value) => (long)(value.Value);
+        public static implicit operator long(PTP_POOL value) => value.Value;
 
         public static explicit operator PTP_POOL(nint value) => new PTP_POOL((nint)(value));
 
-        public static implicit operator nint(PTP_POOL value) => (nint)(value.Value);
+        public static implicit operator nint(PTP_POOL value) => value.Value;
 
         public static explicit operator PTP_POOL(sbyte value) => new PTP_POOL((nint)(value));
 

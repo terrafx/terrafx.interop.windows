@@ -51,11 +51,11 @@ namespace TerraFX.Interop
 
         public static explicit operator HSWDEVICE(long value) => new HSWDEVICE((nint)(value));
 
-        public static implicit operator long(HSWDEVICE value) => (long)(value.Value);
+        public static implicit operator long(HSWDEVICE value) => value.Value;
 
         public static explicit operator HSWDEVICE(nint value) => new HSWDEVICE((nint)(value));
 
-        public static implicit operator nint(HSWDEVICE value) => (nint)(value.Value);
+        public static implicit operator nint(HSWDEVICE value) => value.Value;
 
         public static explicit operator HSWDEVICE(sbyte value) => new HSWDEVICE((nint)(value));
 

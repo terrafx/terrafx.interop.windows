@@ -51,11 +51,11 @@ namespace TerraFX.Interop
 
         public static explicit operator HPOWERNOTIFY(long value) => new HPOWERNOTIFY((nint)(value));
 
-        public static implicit operator long(HPOWERNOTIFY value) => (long)(value.Value);
+        public static implicit operator long(HPOWERNOTIFY value) => value.Value;
 
         public static explicit operator HPOWERNOTIFY(nint value) => new HPOWERNOTIFY((nint)(value));
 
-        public static implicit operator nint(HPOWERNOTIFY value) => (nint)(value.Value);
+        public static implicit operator nint(HPOWERNOTIFY value) => value.Value;
 
         public static explicit operator HPOWERNOTIFY(sbyte value) => new HPOWERNOTIFY((nint)(value));
 

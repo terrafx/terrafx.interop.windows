@@ -51,11 +51,11 @@ namespace TerraFX.Interop
 
         public static explicit operator HCERTCHAINENGINE(long value) => new HCERTCHAINENGINE((nint)(value));
 
-        public static implicit operator long(HCERTCHAINENGINE value) => (long)(value.Value);
+        public static implicit operator long(HCERTCHAINENGINE value) => value.Value;
 
         public static explicit operator HCERTCHAINENGINE(nint value) => new HCERTCHAINENGINE((nint)(value));
 
-        public static implicit operator nint(HCERTCHAINENGINE value) => (nint)(value.Value);
+        public static implicit operator nint(HCERTCHAINENGINE value) => value.Value;
 
         public static explicit operator HCERTCHAINENGINE(sbyte value) => new HCERTCHAINENGINE((nint)(value));
 

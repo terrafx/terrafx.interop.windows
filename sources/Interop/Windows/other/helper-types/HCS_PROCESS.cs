@@ -51,11 +51,11 @@ namespace TerraFX.Interop
 
         public static explicit operator HCS_PROCESS(long value) => new HCS_PROCESS((nint)(value));
 
-        public static implicit operator long(HCS_PROCESS value) => (long)(value.Value);
+        public static implicit operator long(HCS_PROCESS value) => value.Value;
 
         public static explicit operator HCS_PROCESS(nint value) => new HCS_PROCESS((nint)(value));
 
-        public static implicit operator nint(HCS_PROCESS value) => (nint)(value.Value);
+        public static implicit operator nint(HCS_PROCESS value) => value.Value;
 
         public static explicit operator HCS_PROCESS(sbyte value) => new HCS_PROCESS((nint)(value));
 

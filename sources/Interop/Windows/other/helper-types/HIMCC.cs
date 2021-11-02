@@ -51,11 +51,11 @@ namespace TerraFX.Interop
 
         public static explicit operator HIMCC(long value) => new HIMCC((nint)(value));
 
-        public static implicit operator long(HIMCC value) => (long)(value.Value);
+        public static implicit operator long(HIMCC value) => value.Value;
 
         public static explicit operator HIMCC(nint value) => new HIMCC((nint)(value));
 
-        public static implicit operator nint(HIMCC value) => (nint)(value.Value);
+        public static implicit operator nint(HIMCC value) => value.Value;
 
         public static explicit operator HIMCC(sbyte value) => new HIMCC((nint)(value));
 

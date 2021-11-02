@@ -51,11 +51,11 @@ namespace TerraFX.Interop
 
         public static explicit operator NFC_LLCP_SOCKET_HANDLE(long value) => new NFC_LLCP_SOCKET_HANDLE((nint)(value));
 
-        public static implicit operator long(NFC_LLCP_SOCKET_HANDLE value) => (long)(value.Value);
+        public static implicit operator long(NFC_LLCP_SOCKET_HANDLE value) => value.Value;
 
         public static explicit operator NFC_LLCP_SOCKET_HANDLE(nint value) => new NFC_LLCP_SOCKET_HANDLE((nint)(value));
 
-        public static implicit operator nint(NFC_LLCP_SOCKET_HANDLE value) => (nint)(value.Value);
+        public static implicit operator nint(NFC_LLCP_SOCKET_HANDLE value) => value.Value;
 
         public static explicit operator NFC_LLCP_SOCKET_HANDLE(sbyte value) => new NFC_LLCP_SOCKET_HANDLE((nint)(value));
 

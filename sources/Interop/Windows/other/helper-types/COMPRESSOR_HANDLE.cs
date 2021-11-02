@@ -51,11 +51,11 @@ namespace TerraFX.Interop
 
         public static explicit operator COMPRESSOR_HANDLE(long value) => new COMPRESSOR_HANDLE((nint)(value));
 
-        public static implicit operator long(COMPRESSOR_HANDLE value) => (long)(value.Value);
+        public static implicit operator long(COMPRESSOR_HANDLE value) => value.Value;
 
         public static explicit operator COMPRESSOR_HANDLE(nint value) => new COMPRESSOR_HANDLE((nint)(value));
 
-        public static implicit operator nint(COMPRESSOR_HANDLE value) => (nint)(value.Value);
+        public static implicit operator nint(COMPRESSOR_HANDLE value) => value.Value;
 
         public static explicit operator COMPRESSOR_HANDLE(sbyte value) => new COMPRESSOR_HANDLE((nint)(value));
 

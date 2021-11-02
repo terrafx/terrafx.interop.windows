@@ -51,11 +51,11 @@ namespace TerraFX.Interop
 
         public static explicit operator D3DKMDT_HMONITORDESCRIPTORSET(long value) => new D3DKMDT_HMONITORDESCRIPTORSET((nint)(value));
 
-        public static implicit operator long(D3DKMDT_HMONITORDESCRIPTORSET value) => (long)(value.Value);
+        public static implicit operator long(D3DKMDT_HMONITORDESCRIPTORSET value) => value.Value;
 
         public static explicit operator D3DKMDT_HMONITORDESCRIPTORSET(nint value) => new D3DKMDT_HMONITORDESCRIPTORSET((nint)(value));
 
-        public static implicit operator nint(D3DKMDT_HMONITORDESCRIPTORSET value) => (nint)(value.Value);
+        public static implicit operator nint(D3DKMDT_HMONITORDESCRIPTORSET value) => value.Value;
 
         public static explicit operator D3DKMDT_HMONITORDESCRIPTORSET(sbyte value) => new D3DKMDT_HMONITORDESCRIPTORSET((nint)(value));
 

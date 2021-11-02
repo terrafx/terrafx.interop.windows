@@ -51,11 +51,11 @@ namespace TerraFX.Interop
 
         public static explicit operator HSPFILEQ(long value) => new HSPFILEQ((nint)(value));
 
-        public static implicit operator long(HSPFILEQ value) => (long)(value.Value);
+        public static implicit operator long(HSPFILEQ value) => value.Value;
 
         public static explicit operator HSPFILEQ(nint value) => new HSPFILEQ((nint)(value));
 
-        public static implicit operator nint(HSPFILEQ value) => (nint)(value.Value);
+        public static implicit operator nint(HSPFILEQ value) => value.Value;
 
         public static explicit operator HSPFILEQ(sbyte value) => new HSPFILEQ((nint)(value));
 

@@ -51,11 +51,11 @@ namespace TerraFX.Interop
 
         public static explicit operator SPTRANSITIONID(long value) => new SPTRANSITIONID((nint)(value));
 
-        public static implicit operator long(SPTRANSITIONID value) => (long)(value.Value);
+        public static implicit operator long(SPTRANSITIONID value) => value.Value;
 
         public static explicit operator SPTRANSITIONID(nint value) => new SPTRANSITIONID((nint)(value));
 
-        public static implicit operator nint(SPTRANSITIONID value) => (nint)(value.Value);
+        public static implicit operator nint(SPTRANSITIONID value) => value.Value;
 
         public static explicit operator SPTRANSITIONID(sbyte value) => new SPTRANSITIONID((nint)(value));
 

@@ -51,11 +51,11 @@ namespace TerraFX.Interop
 
         public static explicit operator APARTMENT_SHUTDOWN_REGISTRATION_COOKIE(long value) => new APARTMENT_SHUTDOWN_REGISTRATION_COOKIE((nint)(value));
 
-        public static implicit operator long(APARTMENT_SHUTDOWN_REGISTRATION_COOKIE value) => (long)(value.Value);
+        public static implicit operator long(APARTMENT_SHUTDOWN_REGISTRATION_COOKIE value) => value.Value;
 
         public static explicit operator APARTMENT_SHUTDOWN_REGISTRATION_COOKIE(nint value) => new APARTMENT_SHUTDOWN_REGISTRATION_COOKIE((nint)(value));
 
-        public static implicit operator nint(APARTMENT_SHUTDOWN_REGISTRATION_COOKIE value) => (nint)(value.Value);
+        public static implicit operator nint(APARTMENT_SHUTDOWN_REGISTRATION_COOKIE value) => value.Value;
 
         public static explicit operator APARTMENT_SHUTDOWN_REGISTRATION_COOKIE(sbyte value) => new APARTMENT_SHUTDOWN_REGISTRATION_COOKIE((nint)(value));
 

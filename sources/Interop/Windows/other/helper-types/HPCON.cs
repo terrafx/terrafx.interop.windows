@@ -51,11 +51,11 @@ namespace TerraFX.Interop
 
         public static explicit operator HPCON(long value) => new HPCON((nint)(value));
 
-        public static implicit operator long(HPCON value) => (long)(value.Value);
+        public static implicit operator long(HPCON value) => value.Value;
 
         public static explicit operator HPCON(nint value) => new HPCON((nint)(value));
 
-        public static implicit operator nint(HPCON value) => (nint)(value.Value);
+        public static implicit operator nint(HPCON value) => value.Value;
 
         public static explicit operator HPCON(sbyte value) => new HPCON((nint)(value));
 

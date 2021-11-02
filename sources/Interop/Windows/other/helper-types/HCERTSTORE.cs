@@ -51,11 +51,11 @@ namespace TerraFX.Interop
 
         public static explicit operator HCERTSTORE(long value) => new HCERTSTORE((nint)(value));
 
-        public static implicit operator long(HCERTSTORE value) => (long)(value.Value);
+        public static implicit operator long(HCERTSTORE value) => value.Value;
 
         public static explicit operator HCERTSTORE(nint value) => new HCERTSTORE((nint)(value));
 
-        public static implicit operator nint(HCERTSTORE value) => (nint)(value.Value);
+        public static implicit operator nint(HCERTSTORE value) => value.Value;
 
         public static explicit operator HCERTSTORE(sbyte value) => new HCERTSTORE((nint)(value));
 

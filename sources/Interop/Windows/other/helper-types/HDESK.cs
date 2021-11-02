@@ -51,11 +51,11 @@ namespace TerraFX.Interop
 
         public static explicit operator HDESK(long value) => new HDESK((nint)(value));
 
-        public static implicit operator long(HDESK value) => (long)(value.Value);
+        public static implicit operator long(HDESK value) => value.Value;
 
         public static explicit operator HDESK(nint value) => new HDESK((nint)(value));
 
-        public static implicit operator nint(HDESK value) => (nint)(value.Value);
+        public static implicit operator nint(HDESK value) => value.Value;
 
         public static explicit operator HDESK(sbyte value) => new HDESK((nint)(value));
 

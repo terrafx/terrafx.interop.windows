@@ -51,11 +51,11 @@ namespace TerraFX.Interop
 
         public static explicit operator NFC_SE_HANDLE(long value) => new NFC_SE_HANDLE((nint)(value));
 
-        public static implicit operator long(NFC_SE_HANDLE value) => (long)(value.Value);
+        public static implicit operator long(NFC_SE_HANDLE value) => value.Value;
 
         public static explicit operator NFC_SE_HANDLE(nint value) => new NFC_SE_HANDLE((nint)(value));
 
-        public static implicit operator nint(NFC_SE_HANDLE value) => (nint)(value.Value);
+        public static implicit operator nint(NFC_SE_HANDLE value) => value.Value;
 
         public static explicit operator NFC_SE_HANDLE(sbyte value) => new NFC_SE_HANDLE((nint)(value));
 

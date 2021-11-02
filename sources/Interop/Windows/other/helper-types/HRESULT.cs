@@ -25,31 +25,31 @@ namespace TerraFX.Interop
 
         public static bool operator >=(HRESULT left, HRESULT right) => left.Value >= right.Value;
 
-        public static implicit operator HRESULT(byte value) => new HRESULT((int)(value));
+        public static implicit operator HRESULT(byte value) => new HRESULT(value);
 
         public static explicit operator byte(HRESULT value) => (byte)(value.Value);
 
-        public static implicit operator HRESULT(short value) => new HRESULT((int)(value));
+        public static implicit operator HRESULT(short value) => new HRESULT(value);
 
         public static explicit operator short(HRESULT value) => (short)(value.Value);
 
-        public static implicit operator HRESULT(int value) => new HRESULT((int)(value));
+        public static implicit operator HRESULT(int value) => new HRESULT(value);
 
-        public static implicit operator int(HRESULT value) => (int)(value.Value);
+        public static implicit operator int(HRESULT value) => value.Value;
 
         public static explicit operator HRESULT(long value) => new HRESULT((int)(value));
 
-        public static implicit operator long(HRESULT value) => (long)(value.Value);
+        public static implicit operator long(HRESULT value) => value.Value;
 
         public static explicit operator HRESULT(nint value) => new HRESULT((int)(value));
 
-        public static implicit operator nint(HRESULT value) => (nint)(value.Value);
+        public static implicit operator nint(HRESULT value) => value.Value;
 
-        public static implicit operator HRESULT(sbyte value) => new HRESULT((int)(value));
+        public static implicit operator HRESULT(sbyte value) => new HRESULT(value);
 
         public static explicit operator sbyte(HRESULT value) => (sbyte)(value.Value);
 
-        public static implicit operator HRESULT(ushort value) => new HRESULT((int)(value));
+        public static implicit operator HRESULT(ushort value) => new HRESULT(value);
 
         public static explicit operator ushort(HRESULT value) => (ushort)(value.Value);
 

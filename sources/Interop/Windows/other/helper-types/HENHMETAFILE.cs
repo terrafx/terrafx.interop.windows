@@ -51,11 +51,11 @@ namespace TerraFX.Interop
 
         public static explicit operator HENHMETAFILE(long value) => new HENHMETAFILE((nint)(value));
 
-        public static implicit operator long(HENHMETAFILE value) => (long)(value.Value);
+        public static implicit operator long(HENHMETAFILE value) => value.Value;
 
         public static explicit operator HENHMETAFILE(nint value) => new HENHMETAFILE((nint)(value));
 
-        public static implicit operator nint(HENHMETAFILE value) => (nint)(value.Value);
+        public static implicit operator nint(HENHMETAFILE value) => value.Value;
 
         public static explicit operator HENHMETAFILE(sbyte value) => new HENHMETAFILE((nint)(value));
 

@@ -51,11 +51,11 @@ namespace TerraFX.Interop
 
         public static explicit operator RHANDLE(long value) => new RHANDLE((nint)(value));
 
-        public static implicit operator long(RHANDLE value) => (long)(value.Value);
+        public static implicit operator long(RHANDLE value) => value.Value;
 
         public static explicit operator RHANDLE(nint value) => new RHANDLE((nint)(value));
 
-        public static implicit operator nint(RHANDLE value) => (nint)(value.Value);
+        public static implicit operator nint(RHANDLE value) => value.Value;
 
         public static explicit operator RHANDLE(sbyte value) => new RHANDLE((nint)(value));
 

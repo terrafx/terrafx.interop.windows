@@ -51,11 +51,11 @@ namespace TerraFX.Interop
 
         public static explicit operator HBLUETOOTH_DEVICE_FIND(long value) => new HBLUETOOTH_DEVICE_FIND((nint)(value));
 
-        public static implicit operator long(HBLUETOOTH_DEVICE_FIND value) => (long)(value.Value);
+        public static implicit operator long(HBLUETOOTH_DEVICE_FIND value) => value.Value;
 
         public static explicit operator HBLUETOOTH_DEVICE_FIND(nint value) => new HBLUETOOTH_DEVICE_FIND((nint)(value));
 
-        public static implicit operator nint(HBLUETOOTH_DEVICE_FIND value) => (nint)(value.Value);
+        public static implicit operator nint(HBLUETOOTH_DEVICE_FIND value) => value.Value;
 
         public static explicit operator HBLUETOOTH_DEVICE_FIND(sbyte value) => new HBLUETOOTH_DEVICE_FIND((nint)(value));
 

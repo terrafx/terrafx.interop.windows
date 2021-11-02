@@ -51,11 +51,11 @@ namespace TerraFX.Interop
 
         public static explicit operator SPRECOCONTEXTHANDLE(long value) => new SPRECOCONTEXTHANDLE((nint)(value));
 
-        public static implicit operator long(SPRECOCONTEXTHANDLE value) => (long)(value.Value);
+        public static implicit operator long(SPRECOCONTEXTHANDLE value) => value.Value;
 
         public static explicit operator SPRECOCONTEXTHANDLE(nint value) => new SPRECOCONTEXTHANDLE((nint)(value));
 
-        public static implicit operator nint(SPRECOCONTEXTHANDLE value) => (nint)(value.Value);
+        public static implicit operator nint(SPRECOCONTEXTHANDLE value) => value.Value;
 
         public static explicit operator SPRECOCONTEXTHANDLE(sbyte value) => new SPRECOCONTEXTHANDLE((nint)(value));
 

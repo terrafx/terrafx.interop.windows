@@ -51,11 +51,11 @@ namespace TerraFX.Interop
 
         public static explicit operator HFONT(long value) => new HFONT((nint)(value));
 
-        public static implicit operator long(HFONT value) => (long)(value.Value);
+        public static implicit operator long(HFONT value) => value.Value;
 
         public static explicit operator HFONT(nint value) => new HFONT((nint)(value));
 
-        public static implicit operator nint(HFONT value) => (nint)(value.Value);
+        public static implicit operator nint(HFONT value) => value.Value;
 
         public static explicit operator HFONT(sbyte value) => new HFONT((nint)(value));
 

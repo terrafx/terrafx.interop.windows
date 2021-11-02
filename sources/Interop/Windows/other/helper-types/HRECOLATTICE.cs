@@ -51,11 +51,11 @@ namespace TerraFX.Interop
 
         public static explicit operator HRECOLATTICE(long value) => new HRECOLATTICE((nint)(value));
 
-        public static implicit operator long(HRECOLATTICE value) => (long)(value.Value);
+        public static implicit operator long(HRECOLATTICE value) => value.Value;
 
         public static explicit operator HRECOLATTICE(nint value) => new HRECOLATTICE((nint)(value));
 
-        public static implicit operator nint(HRECOLATTICE value) => (nint)(value.Value);
+        public static implicit operator nint(HRECOLATTICE value) => value.Value;
 
         public static explicit operator HRECOLATTICE(sbyte value) => new HRECOLATTICE((nint)(value));
 

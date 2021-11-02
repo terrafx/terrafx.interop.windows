@@ -51,11 +51,11 @@ namespace TerraFX.Interop
 
         public static explicit operator HPROPSHEETPAGE(long value) => new HPROPSHEETPAGE((nint)(value));
 
-        public static implicit operator long(HPROPSHEETPAGE value) => (long)(value.Value);
+        public static implicit operator long(HPROPSHEETPAGE value) => value.Value;
 
         public static explicit operator HPROPSHEETPAGE(nint value) => new HPROPSHEETPAGE((nint)(value));
 
-        public static implicit operator nint(HPROPSHEETPAGE value) => (nint)(value.Value);
+        public static implicit operator nint(HPROPSHEETPAGE value) => value.Value;
 
         public static explicit operator HPROPSHEETPAGE(sbyte value) => new HPROPSHEETPAGE((nint)(value));
 

@@ -51,11 +51,11 @@ namespace TerraFX.Interop
 
         public static explicit operator HINTERNET(long value) => new HINTERNET((nint)(value));
 
-        public static implicit operator long(HINTERNET value) => (long)(value.Value);
+        public static implicit operator long(HINTERNET value) => value.Value;
 
         public static explicit operator HINTERNET(nint value) => new HINTERNET((nint)(value));
 
-        public static implicit operator nint(HINTERNET value) => (nint)(value.Value);
+        public static implicit operator nint(HINTERNET value) => value.Value;
 
         public static explicit operator HINTERNET(sbyte value) => new HINTERNET((nint)(value));
 

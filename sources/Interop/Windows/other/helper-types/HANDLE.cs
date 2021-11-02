@@ -47,11 +47,11 @@ namespace TerraFX.Interop
 
         public static explicit operator HANDLE(long value) => new HANDLE((nint)(value));
 
-        public static implicit operator long(HANDLE value) => (long)(value.Value);
+        public static implicit operator long(HANDLE value) => value.Value;
 
         public static explicit operator HANDLE(nint value) => new HANDLE((nint)(value));
 
-        public static implicit operator nint(HANDLE value) => (nint)(value.Value);
+        public static implicit operator nint(HANDLE value) => value.Value;
 
         public static explicit operator HANDLE(sbyte value) => new HANDLE((nint)(value));
 

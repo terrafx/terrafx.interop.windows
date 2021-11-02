@@ -51,11 +51,11 @@ namespace TerraFX.Interop
 
         public static explicit operator HCRYPTDEFAULTCONTEXT(long value) => new HCRYPTDEFAULTCONTEXT((nint)(value));
 
-        public static implicit operator long(HCRYPTDEFAULTCONTEXT value) => (long)(value.Value);
+        public static implicit operator long(HCRYPTDEFAULTCONTEXT value) => value.Value;
 
         public static explicit operator HCRYPTDEFAULTCONTEXT(nint value) => new HCRYPTDEFAULTCONTEXT((nint)(value));
 
-        public static implicit operator nint(HCRYPTDEFAULTCONTEXT value) => (nint)(value.Value);
+        public static implicit operator nint(HCRYPTDEFAULTCONTEXT value) => value.Value;
 
         public static explicit operator HCRYPTDEFAULTCONTEXT(sbyte value) => new HCRYPTDEFAULTCONTEXT((nint)(value));
 

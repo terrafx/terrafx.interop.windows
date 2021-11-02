@@ -51,11 +51,11 @@ namespace TerraFX.Interop
 
         public static explicit operator HUIAPATTERNOBJECT(long value) => new HUIAPATTERNOBJECT((nint)(value));
 
-        public static implicit operator long(HUIAPATTERNOBJECT value) => (long)(value.Value);
+        public static implicit operator long(HUIAPATTERNOBJECT value) => value.Value;
 
         public static explicit operator HUIAPATTERNOBJECT(nint value) => new HUIAPATTERNOBJECT((nint)(value));
 
-        public static implicit operator nint(HUIAPATTERNOBJECT value) => (nint)(value.Value);
+        public static implicit operator nint(HUIAPATTERNOBJECT value) => value.Value;
 
         public static explicit operator HUIAPATTERNOBJECT(sbyte value) => new HUIAPATTERNOBJECT((nint)(value));
 

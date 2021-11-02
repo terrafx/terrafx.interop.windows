@@ -51,11 +51,11 @@ namespace TerraFX.Interop
 
         public static explicit operator HBODY(long value) => new HBODY((nint)(value));
 
-        public static implicit operator long(HBODY value) => (long)(value.Value);
+        public static implicit operator long(HBODY value) => value.Value;
 
         public static explicit operator HBODY(nint value) => new HBODY((nint)(value));
 
-        public static implicit operator nint(HBODY value) => (nint)(value.Value);
+        public static implicit operator nint(HBODY value) => value.Value;
 
         public static explicit operator HBODY(sbyte value) => new HBODY((nint)(value));
 

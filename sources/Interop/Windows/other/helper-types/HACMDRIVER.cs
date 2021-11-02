@@ -51,11 +51,11 @@ namespace TerraFX.Interop
 
         public static explicit operator HACMDRIVER(long value) => new HACMDRIVER((nint)(value));
 
-        public static implicit operator long(HACMDRIVER value) => (long)(value.Value);
+        public static implicit operator long(HACMDRIVER value) => value.Value;
 
         public static explicit operator HACMDRIVER(nint value) => new HACMDRIVER((nint)(value));
 
-        public static implicit operator nint(HACMDRIVER value) => (nint)(value.Value);
+        public static implicit operator nint(HACMDRIVER value) => value.Value;
 
         public static explicit operator HACMDRIVER(sbyte value) => new HACMDRIVER((nint)(value));
 

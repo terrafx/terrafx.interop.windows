@@ -51,11 +51,11 @@ namespace TerraFX.Interop
 
         public static explicit operator HWINEVENTHOOK(long value) => new HWINEVENTHOOK((nint)(value));
 
-        public static implicit operator long(HWINEVENTHOOK value) => (long)(value.Value);
+        public static implicit operator long(HWINEVENTHOOK value) => value.Value;
 
         public static explicit operator HWINEVENTHOOK(nint value) => new HWINEVENTHOOK((nint)(value));
 
-        public static implicit operator nint(HWINEVENTHOOK value) => (nint)(value.Value);
+        public static implicit operator nint(HWINEVENTHOOK value) => value.Value;
 
         public static explicit operator HWINEVENTHOOK(sbyte value) => new HWINEVENTHOOK((nint)(value));
 

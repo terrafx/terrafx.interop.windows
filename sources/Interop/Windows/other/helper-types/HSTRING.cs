@@ -51,11 +51,11 @@ namespace TerraFX.Interop
 
         public static explicit operator HSTRING(long value) => new HSTRING((nint)(value));
 
-        public static implicit operator long(HSTRING value) => (long)(value.Value);
+        public static implicit operator long(HSTRING value) => value.Value;
 
         public static explicit operator HSTRING(nint value) => new HSTRING((nint)(value));
 
-        public static implicit operator nint(HSTRING value) => (nint)(value.Value);
+        public static implicit operator nint(HSTRING value) => value.Value;
 
         public static explicit operator HSTRING(sbyte value) => new HSTRING((nint)(value));
 

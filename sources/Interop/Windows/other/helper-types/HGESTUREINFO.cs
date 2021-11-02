@@ -51,11 +51,11 @@ namespace TerraFX.Interop
 
         public static explicit operator HGESTUREINFO(long value) => new HGESTUREINFO((nint)(value));
 
-        public static implicit operator long(HGESTUREINFO value) => (long)(value.Value);
+        public static implicit operator long(HGESTUREINFO value) => value.Value;
 
         public static explicit operator HGESTUREINFO(nint value) => new HGESTUREINFO((nint)(value));
 
-        public static implicit operator nint(HGESTUREINFO value) => (nint)(value.Value);
+        public static implicit operator nint(HGESTUREINFO value) => value.Value;
 
         public static explicit operator HGESTUREINFO(sbyte value) => new HGESTUREINFO((nint)(value));
 

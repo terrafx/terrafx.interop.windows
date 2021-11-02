@@ -51,11 +51,11 @@ namespace TerraFX.Interop
 
         public static explicit operator SPSTATEHANDLE(long value) => new SPSTATEHANDLE((nint)(value));
 
-        public static implicit operator long(SPSTATEHANDLE value) => (long)(value.Value);
+        public static implicit operator long(SPSTATEHANDLE value) => value.Value;
 
         public static explicit operator SPSTATEHANDLE(nint value) => new SPSTATEHANDLE((nint)(value));
 
-        public static implicit operator nint(SPSTATEHANDLE value) => (nint)(value.Value);
+        public static implicit operator nint(SPSTATEHANDLE value) => value.Value;
 
         public static explicit operator SPSTATEHANDLE(sbyte value) => new SPSTATEHANDLE((nint)(value));
 

@@ -51,11 +51,11 @@ namespace TerraFX.Interop
 
         public static explicit operator HCRYPTPROV_LEGACY(long value) => new HCRYPTPROV_LEGACY((nint)(value));
 
-        public static implicit operator long(HCRYPTPROV_LEGACY value) => (long)(value.Value);
+        public static implicit operator long(HCRYPTPROV_LEGACY value) => value.Value;
 
         public static explicit operator HCRYPTPROV_LEGACY(nint value) => new HCRYPTPROV_LEGACY((nint)(value));
 
-        public static implicit operator nint(HCRYPTPROV_LEGACY value) => (nint)(value.Value);
+        public static implicit operator nint(HCRYPTPROV_LEGACY value) => value.Value;
 
         public static explicit operator HCRYPTPROV_LEGACY(sbyte value) => new HCRYPTPROV_LEGACY((nint)(value));
 

@@ -25,7 +25,7 @@ namespace TerraFX.Interop
 
         public static bool operator >=(InstanceHandle left, InstanceHandle right) => left.Value >= right.Value;
 
-        public static implicit operator InstanceHandle(byte value) => new InstanceHandle((ulong)(value));
+        public static implicit operator InstanceHandle(byte value) => new InstanceHandle(value);
 
         public static explicit operator byte(InstanceHandle value) => (byte)(value.Value);
 
@@ -49,19 +49,19 @@ namespace TerraFX.Interop
 
         public static explicit operator sbyte(InstanceHandle value) => (sbyte)(value.Value);
 
-        public static implicit operator InstanceHandle(ushort value) => new InstanceHandle((ulong)(value));
+        public static implicit operator InstanceHandle(ushort value) => new InstanceHandle(value);
 
         public static explicit operator ushort(InstanceHandle value) => (ushort)(value.Value);
 
-        public static implicit operator InstanceHandle(uint value) => new InstanceHandle((ulong)(value));
+        public static implicit operator InstanceHandle(uint value) => new InstanceHandle(value);
 
         public static explicit operator uint(InstanceHandle value) => (uint)(value.Value);
 
-        public static implicit operator InstanceHandle(ulong value) => new InstanceHandle((ulong)(value));
+        public static implicit operator InstanceHandle(ulong value) => new InstanceHandle(value);
 
-        public static implicit operator ulong(InstanceHandle value) => (ulong)(value.Value);
+        public static implicit operator ulong(InstanceHandle value) => value.Value;
 
-        public static implicit operator InstanceHandle(nuint value) => new InstanceHandle((ulong)(value));
+        public static implicit operator InstanceHandle(nuint value) => new InstanceHandle(value);
 
         public static explicit operator nuint(InstanceHandle value) => (nuint)(value.Value);
 

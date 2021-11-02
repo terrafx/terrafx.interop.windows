@@ -51,11 +51,11 @@ namespace TerraFX.Interop
 
         public static explicit operator HCERT_SERVER_OCSP_RESPONSE(long value) => new HCERT_SERVER_OCSP_RESPONSE((nint)(value));
 
-        public static implicit operator long(HCERT_SERVER_OCSP_RESPONSE value) => (long)(value.Value);
+        public static implicit operator long(HCERT_SERVER_OCSP_RESPONSE value) => value.Value;
 
         public static explicit operator HCERT_SERVER_OCSP_RESPONSE(nint value) => new HCERT_SERVER_OCSP_RESPONSE((nint)(value));
 
-        public static implicit operator nint(HCERT_SERVER_OCSP_RESPONSE value) => (nint)(value.Value);
+        public static implicit operator nint(HCERT_SERVER_OCSP_RESPONSE value) => value.Value;
 
         public static explicit operator HCERT_SERVER_OCSP_RESPONSE(sbyte value) => new HCERT_SERVER_OCSP_RESPONSE((nint)(value));
 

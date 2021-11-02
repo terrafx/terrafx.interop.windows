@@ -51,11 +51,11 @@ namespace TerraFX.Interop
 
         public static explicit operator HOBJECT(long value) => new HOBJECT((nint)(value));
 
-        public static implicit operator long(HOBJECT value) => (long)(value.Value);
+        public static implicit operator long(HOBJECT value) => value.Value;
 
         public static explicit operator HOBJECT(nint value) => new HOBJECT((nint)(value));
 
-        public static implicit operator nint(HOBJECT value) => (nint)(value.Value);
+        public static implicit operator nint(HOBJECT value) => value.Value;
 
         public static explicit operator HOBJECT(sbyte value) => new HOBJECT((nint)(value));
 

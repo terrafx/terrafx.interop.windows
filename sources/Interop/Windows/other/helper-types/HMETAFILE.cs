@@ -51,11 +51,11 @@ namespace TerraFX.Interop
 
         public static explicit operator HMETAFILE(long value) => new HMETAFILE((nint)(value));
 
-        public static implicit operator long(HMETAFILE value) => (long)(value.Value);
+        public static implicit operator long(HMETAFILE value) => value.Value;
 
         public static explicit operator HMETAFILE(nint value) => new HMETAFILE((nint)(value));
 
-        public static implicit operator nint(HMETAFILE value) => (nint)(value.Value);
+        public static implicit operator nint(HMETAFILE value) => value.Value;
 
         public static explicit operator HMETAFILE(sbyte value) => new HMETAFILE((nint)(value));
 

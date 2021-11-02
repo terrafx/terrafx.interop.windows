@@ -51,11 +51,11 @@ namespace TerraFX.Interop
 
         public static explicit operator HDIAGNOSTIC_REPORT(long value) => new HDIAGNOSTIC_REPORT((nint)(value));
 
-        public static implicit operator long(HDIAGNOSTIC_REPORT value) => (long)(value.Value);
+        public static implicit operator long(HDIAGNOSTIC_REPORT value) => value.Value;
 
         public static explicit operator HDIAGNOSTIC_REPORT(nint value) => new HDIAGNOSTIC_REPORT((nint)(value));
 
-        public static implicit operator nint(HDIAGNOSTIC_REPORT value) => (nint)(value.Value);
+        public static implicit operator nint(HDIAGNOSTIC_REPORT value) => value.Value;
 
         public static explicit operator HDIAGNOSTIC_REPORT(sbyte value) => new HDIAGNOSTIC_REPORT((nint)(value));
 

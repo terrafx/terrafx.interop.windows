@@ -45,11 +45,11 @@ namespace TerraFX.Interop
 
         public static explicit operator PHIDP_PREPARSED_DATA(long value) => new PHIDP_PREPARSED_DATA((nint)(value));
 
-        public static implicit operator long(PHIDP_PREPARSED_DATA value) => (long)(value.Value);
+        public static implicit operator long(PHIDP_PREPARSED_DATA value) => value.Value;
 
         public static explicit operator PHIDP_PREPARSED_DATA(nint value) => new PHIDP_PREPARSED_DATA((nint)(value));
 
-        public static implicit operator nint(PHIDP_PREPARSED_DATA value) => (nint)(value.Value);
+        public static implicit operator nint(PHIDP_PREPARSED_DATA value) => value.Value;
 
         public static explicit operator PHIDP_PREPARSED_DATA(sbyte value) => new PHIDP_PREPARSED_DATA((nint)(value));
 

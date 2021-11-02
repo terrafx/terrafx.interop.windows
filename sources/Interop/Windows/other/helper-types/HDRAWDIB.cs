@@ -51,11 +51,11 @@ namespace TerraFX.Interop
 
         public static explicit operator HDRAWDIB(long value) => new HDRAWDIB((nint)(value));
 
-        public static implicit operator long(HDRAWDIB value) => (long)(value.Value);
+        public static implicit operator long(HDRAWDIB value) => value.Value;
 
         public static explicit operator HDRAWDIB(nint value) => new HDRAWDIB((nint)(value));
 
-        public static implicit operator nint(HDRAWDIB value) => (nint)(value.Value);
+        public static implicit operator nint(HDRAWDIB value) => value.Value;
 
         public static explicit operator HDRAWDIB(sbyte value) => new HDRAWDIB((nint)(value));
 

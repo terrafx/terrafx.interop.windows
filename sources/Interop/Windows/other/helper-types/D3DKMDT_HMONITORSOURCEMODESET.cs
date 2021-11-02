@@ -51,11 +51,11 @@ namespace TerraFX.Interop
 
         public static explicit operator D3DKMDT_HMONITORSOURCEMODESET(long value) => new D3DKMDT_HMONITORSOURCEMODESET((nint)(value));
 
-        public static implicit operator long(D3DKMDT_HMONITORSOURCEMODESET value) => (long)(value.Value);
+        public static implicit operator long(D3DKMDT_HMONITORSOURCEMODESET value) => value.Value;
 
         public static explicit operator D3DKMDT_HMONITORSOURCEMODESET(nint value) => new D3DKMDT_HMONITORSOURCEMODESET((nint)(value));
 
-        public static implicit operator nint(D3DKMDT_HMONITORSOURCEMODESET value) => (nint)(value.Value);
+        public static implicit operator nint(D3DKMDT_HMONITORSOURCEMODESET value) => value.Value;
 
         public static explicit operator D3DKMDT_HMONITORSOURCEMODESET(sbyte value) => new D3DKMDT_HMONITORSOURCEMODESET((nint)(value));
 

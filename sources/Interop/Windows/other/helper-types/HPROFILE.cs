@@ -51,11 +51,11 @@ namespace TerraFX.Interop
 
         public static explicit operator HPROFILE(long value) => new HPROFILE((nint)(value));
 
-        public static implicit operator long(HPROFILE value) => (long)(value.Value);
+        public static implicit operator long(HPROFILE value) => value.Value;
 
         public static explicit operator HPROFILE(nint value) => new HPROFILE((nint)(value));
 
-        public static implicit operator nint(HPROFILE value) => (nint)(value.Value);
+        public static implicit operator nint(HPROFILE value) => value.Value;
 
         public static explicit operator HPROFILE(sbyte value) => new HPROFILE((nint)(value));
 

@@ -51,11 +51,11 @@ namespace TerraFX.Interop
 
         public static explicit operator HPEN(long value) => new HPEN((nint)(value));
 
-        public static implicit operator long(HPEN value) => (long)(value.Value);
+        public static implicit operator long(HPEN value) => value.Value;
 
         public static explicit operator HPEN(nint value) => new HPEN((nint)(value));
 
-        public static implicit operator nint(HPEN value) => (nint)(value.Value);
+        public static implicit operator nint(HPEN value) => value.Value;
 
         public static explicit operator HPEN(sbyte value) => new HPEN((nint)(value));
 

@@ -51,11 +51,11 @@ namespace TerraFX.Interop
 
         public static explicit operator HCRYPTOIDFUNCSET(long value) => new HCRYPTOIDFUNCSET((nint)(value));
 
-        public static implicit operator long(HCRYPTOIDFUNCSET value) => (long)(value.Value);
+        public static implicit operator long(HCRYPTOIDFUNCSET value) => value.Value;
 
         public static explicit operator HCRYPTOIDFUNCSET(nint value) => new HCRYPTOIDFUNCSET((nint)(value));
 
-        public static implicit operator nint(HCRYPTOIDFUNCSET value) => (nint)(value.Value);
+        public static implicit operator nint(HCRYPTOIDFUNCSET value) => value.Value;
 
         public static explicit operator HCRYPTOIDFUNCSET(sbyte value) => new HCRYPTOIDFUNCSET((nint)(value));
 

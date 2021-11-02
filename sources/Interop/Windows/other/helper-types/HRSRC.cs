@@ -51,11 +51,11 @@ namespace TerraFX.Interop
 
         public static explicit operator HRSRC(long value) => new HRSRC((nint)(value));
 
-        public static implicit operator long(HRSRC value) => (long)(value.Value);
+        public static implicit operator long(HRSRC value) => value.Value;
 
         public static explicit operator HRSRC(nint value) => new HRSRC((nint)(value));
 
-        public static implicit operator nint(HRSRC value) => (nint)(value.Value);
+        public static implicit operator nint(HRSRC value) => value.Value;
 
         public static explicit operator HRSRC(sbyte value) => new HRSRC((nint)(value));
 

@@ -51,11 +51,11 @@ namespace TerraFX.Interop
 
         public static explicit operator NET_FRAGMENT_RETURN_CONTEXT_HANDLE(long value) => new NET_FRAGMENT_RETURN_CONTEXT_HANDLE((nint)(value));
 
-        public static implicit operator long(NET_FRAGMENT_RETURN_CONTEXT_HANDLE value) => (long)(value.Value);
+        public static implicit operator long(NET_FRAGMENT_RETURN_CONTEXT_HANDLE value) => value.Value;
 
         public static explicit operator NET_FRAGMENT_RETURN_CONTEXT_HANDLE(nint value) => new NET_FRAGMENT_RETURN_CONTEXT_HANDLE((nint)(value));
 
-        public static implicit operator nint(NET_FRAGMENT_RETURN_CONTEXT_HANDLE value) => (nint)(value.Value);
+        public static implicit operator nint(NET_FRAGMENT_RETURN_CONTEXT_HANDLE value) => value.Value;
 
         public static explicit operator NET_FRAGMENT_RETURN_CONTEXT_HANDLE(sbyte value) => new NET_FRAGMENT_RETURN_CONTEXT_HANDLE((nint)(value));
 

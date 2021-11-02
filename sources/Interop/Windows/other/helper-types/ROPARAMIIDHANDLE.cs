@@ -51,11 +51,11 @@ namespace TerraFX.Interop
 
         public static explicit operator ROPARAMIIDHANDLE(long value) => new ROPARAMIIDHANDLE((nint)(value));
 
-        public static implicit operator long(ROPARAMIIDHANDLE value) => (long)(value.Value);
+        public static implicit operator long(ROPARAMIIDHANDLE value) => value.Value;
 
         public static explicit operator ROPARAMIIDHANDLE(nint value) => new ROPARAMIIDHANDLE((nint)(value));
 
-        public static implicit operator nint(ROPARAMIIDHANDLE value) => (nint)(value.Value);
+        public static implicit operator nint(ROPARAMIIDHANDLE value) => value.Value;
 
         public static explicit operator ROPARAMIIDHANDLE(sbyte value) => new ROPARAMIIDHANDLE((nint)(value));
 

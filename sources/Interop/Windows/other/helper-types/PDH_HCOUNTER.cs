@@ -51,11 +51,11 @@ namespace TerraFX.Interop
 
         public static explicit operator PDH_HCOUNTER(long value) => new PDH_HCOUNTER((nint)(value));
 
-        public static implicit operator long(PDH_HCOUNTER value) => (long)(value.Value);
+        public static implicit operator long(PDH_HCOUNTER value) => value.Value;
 
         public static explicit operator PDH_HCOUNTER(nint value) => new PDH_HCOUNTER((nint)(value));
 
-        public static implicit operator nint(PDH_HCOUNTER value) => (nint)(value.Value);
+        public static implicit operator nint(PDH_HCOUNTER value) => value.Value;
 
         public static explicit operator PDH_HCOUNTER(sbyte value) => new PDH_HCOUNTER((nint)(value));
 

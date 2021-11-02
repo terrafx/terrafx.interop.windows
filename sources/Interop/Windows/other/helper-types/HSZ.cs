@@ -51,11 +51,11 @@ namespace TerraFX.Interop
 
         public static explicit operator HSZ(long value) => new HSZ((nint)(value));
 
-        public static implicit operator long(HSZ value) => (long)(value.Value);
+        public static implicit operator long(HSZ value) => value.Value;
 
         public static explicit operator HSZ(nint value) => new HSZ((nint)(value));
 
-        public static implicit operator nint(HSZ value) => (nint)(value.Value);
+        public static implicit operator nint(HSZ value) => value.Value;
 
         public static explicit operator HSZ(sbyte value) => new HSZ((nint)(value));
 

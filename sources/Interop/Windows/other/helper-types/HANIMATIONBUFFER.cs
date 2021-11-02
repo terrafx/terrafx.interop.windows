@@ -51,11 +51,11 @@ namespace TerraFX.Interop
 
         public static explicit operator HANIMATIONBUFFER(long value) => new HANIMATIONBUFFER((nint)(value));
 
-        public static implicit operator long(HANIMATIONBUFFER value) => (long)(value.Value);
+        public static implicit operator long(HANIMATIONBUFFER value) => value.Value;
 
         public static explicit operator HANIMATIONBUFFER(nint value) => new HANIMATIONBUFFER((nint)(value));
 
-        public static implicit operator nint(HANIMATIONBUFFER value) => (nint)(value.Value);
+        public static implicit operator nint(HANIMATIONBUFFER value) => value.Value;
 
         public static explicit operator HANIMATIONBUFFER(sbyte value) => new HANIMATIONBUFFER((nint)(value));
 

@@ -51,11 +51,11 @@ namespace TerraFX.Interop
 
         public static explicit operator SPPHRASEPROPERTYHANDLE(long value) => new SPPHRASEPROPERTYHANDLE((nint)(value));
 
-        public static implicit operator long(SPPHRASEPROPERTYHANDLE value) => (long)(value.Value);
+        public static implicit operator long(SPPHRASEPROPERTYHANDLE value) => value.Value;
 
         public static explicit operator SPPHRASEPROPERTYHANDLE(nint value) => new SPPHRASEPROPERTYHANDLE((nint)(value));
 
-        public static implicit operator nint(SPPHRASEPROPERTYHANDLE value) => (nint)(value.Value);
+        public static implicit operator nint(SPPHRASEPROPERTYHANDLE value) => value.Value;
 
         public static explicit operator SPPHRASEPROPERTYHANDLE(sbyte value) => new SPPHRASEPROPERTYHANDLE((nint)(value));
 

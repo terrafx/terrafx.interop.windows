@@ -25,31 +25,31 @@ namespace TerraFX.Interop
 
         public static bool operator >=(LPARAM left, LPARAM right) => left.Value >= right.Value;
 
-        public static implicit operator LPARAM(byte value) => new LPARAM((nint)(value));
+        public static implicit operator LPARAM(byte value) => new LPARAM(value);
 
         public static explicit operator byte(LPARAM value) => (byte)(value.Value);
 
-        public static implicit operator LPARAM(short value) => new LPARAM((nint)(value));
+        public static implicit operator LPARAM(short value) => new LPARAM(value);
 
         public static explicit operator short(LPARAM value) => (short)(value.Value);
 
-        public static implicit operator LPARAM(int value) => new LPARAM((nint)(value));
+        public static implicit operator LPARAM(int value) => new LPARAM(value);
 
         public static explicit operator int(LPARAM value) => (int)(value.Value);
 
         public static explicit operator LPARAM(long value) => new LPARAM((nint)(value));
 
-        public static implicit operator long(LPARAM value) => (long)(value.Value);
+        public static implicit operator long(LPARAM value) => value.Value;
 
-        public static implicit operator LPARAM(nint value) => new LPARAM((nint)(value));
+        public static implicit operator LPARAM(nint value) => new LPARAM(value);
 
-        public static implicit operator nint(LPARAM value) => (nint)(value.Value);
+        public static implicit operator nint(LPARAM value) => value.Value;
 
-        public static implicit operator LPARAM(sbyte value) => new LPARAM((nint)(value));
+        public static implicit operator LPARAM(sbyte value) => new LPARAM(value);
 
         public static explicit operator sbyte(LPARAM value) => (sbyte)(value.Value);
 
-        public static implicit operator LPARAM(ushort value) => new LPARAM((nint)(value));
+        public static implicit operator LPARAM(ushort value) => new LPARAM(value);
 
         public static explicit operator ushort(LPARAM value) => (ushort)(value.Value);
 

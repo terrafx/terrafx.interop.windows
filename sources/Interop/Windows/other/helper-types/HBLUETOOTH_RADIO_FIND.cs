@@ -51,11 +51,11 @@ namespace TerraFX.Interop
 
         public static explicit operator HBLUETOOTH_RADIO_FIND(long value) => new HBLUETOOTH_RADIO_FIND((nint)(value));
 
-        public static implicit operator long(HBLUETOOTH_RADIO_FIND value) => (long)(value.Value);
+        public static implicit operator long(HBLUETOOTH_RADIO_FIND value) => value.Value;
 
         public static explicit operator HBLUETOOTH_RADIO_FIND(nint value) => new HBLUETOOTH_RADIO_FIND((nint)(value));
 
-        public static implicit operator nint(HBLUETOOTH_RADIO_FIND value) => (nint)(value.Value);
+        public static implicit operator nint(HBLUETOOTH_RADIO_FIND value) => value.Value;
 
         public static explicit operator HBLUETOOTH_RADIO_FIND(sbyte value) => new HBLUETOOTH_RADIO_FIND((nint)(value));
 

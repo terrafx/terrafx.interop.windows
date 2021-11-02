@@ -51,11 +51,11 @@ namespace TerraFX.Interop
 
         public static explicit operator HACCEL(long value) => new HACCEL((nint)(value));
 
-        public static implicit operator long(HACCEL value) => (long)(value.Value);
+        public static implicit operator long(HACCEL value) => value.Value;
 
         public static explicit operator HACCEL(nint value) => new HACCEL((nint)(value));
 
-        public static implicit operator nint(HACCEL value) => (nint)(value.Value);
+        public static implicit operator nint(HACCEL value) => value.Value;
 
         public static explicit operator HACCEL(sbyte value) => new HACCEL((nint)(value));
 

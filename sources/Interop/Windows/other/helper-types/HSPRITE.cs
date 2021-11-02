@@ -51,11 +51,11 @@ namespace TerraFX.Interop
 
         public static explicit operator HSPRITE(long value) => new HSPRITE((nint)(value));
 
-        public static implicit operator long(HSPRITE value) => (long)(value.Value);
+        public static implicit operator long(HSPRITE value) => value.Value;
 
         public static explicit operator HSPRITE(nint value) => new HSPRITE((nint)(value));
 
-        public static implicit operator nint(HSPRITE value) => (nint)(value.Value);
+        public static implicit operator nint(HSPRITE value) => value.Value;
 
         public static explicit operator HSPRITE(sbyte value) => new HSPRITE((nint)(value));
 

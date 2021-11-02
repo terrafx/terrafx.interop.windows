@@ -51,11 +51,11 @@ namespace TerraFX.Interop
 
         public static explicit operator HSNMP_VBL(long value) => new HSNMP_VBL((nint)(value));
 
-        public static implicit operator long(HSNMP_VBL value) => (long)(value.Value);
+        public static implicit operator long(HSNMP_VBL value) => value.Value;
 
         public static explicit operator HSNMP_VBL(nint value) => new HSNMP_VBL((nint)(value));
 
-        public static implicit operator nint(HSNMP_VBL value) => (nint)(value.Value);
+        public static implicit operator nint(HSNMP_VBL value) => value.Value;
 
         public static explicit operator HSNMP_VBL(sbyte value) => new HSNMP_VBL((nint)(value));
 

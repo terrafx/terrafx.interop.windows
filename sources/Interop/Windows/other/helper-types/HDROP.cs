@@ -51,11 +51,11 @@ namespace TerraFX.Interop
 
         public static explicit operator HDROP(long value) => new HDROP((nint)(value));
 
-        public static implicit operator long(HDROP value) => (long)(value.Value);
+        public static implicit operator long(HDROP value) => value.Value;
 
         public static explicit operator HDROP(nint value) => new HDROP((nint)(value));
 
-        public static implicit operator nint(HDROP value) => (nint)(value.Value);
+        public static implicit operator nint(HDROP value) => value.Value;
 
         public static explicit operator HDROP(sbyte value) => new HDROP((nint)(value));
 

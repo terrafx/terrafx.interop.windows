@@ -51,11 +51,11 @@ namespace TerraFX.Interop
 
         public static explicit operator HHOOK(long value) => new HHOOK((nint)(value));
 
-        public static implicit operator long(HHOOK value) => (long)(value.Value);
+        public static implicit operator long(HHOOK value) => value.Value;
 
         public static explicit operator HHOOK(nint value) => new HHOOK((nint)(value));
 
-        public static implicit operator nint(HHOOK value) => (nint)(value.Value);
+        public static implicit operator nint(HHOOK value) => value.Value;
 
         public static explicit operator HHOOK(sbyte value) => new HHOOK((nint)(value));
 

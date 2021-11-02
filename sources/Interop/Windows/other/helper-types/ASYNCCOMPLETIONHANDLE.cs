@@ -65,11 +65,11 @@ namespace TerraFX.Interop
 
         public static explicit operator ASYNCCOMPLETIONHANDLE(ulong value) => new ASYNCCOMPLETIONHANDLE((nuint)(value));
 
-        public static implicit operator ulong(ASYNCCOMPLETIONHANDLE value) => (ulong)(value.Value);
+        public static implicit operator ulong(ASYNCCOMPLETIONHANDLE value) => value.Value;
 
         public static explicit operator ASYNCCOMPLETIONHANDLE(nuint value) => new ASYNCCOMPLETIONHANDLE((nuint)(value));
 
-        public static implicit operator nuint(ASYNCCOMPLETIONHANDLE value) => (nuint)(value.Value);
+        public static implicit operator nuint(ASYNCCOMPLETIONHANDLE value) => value.Value;
 
         public int CompareTo(object? obj)
         {

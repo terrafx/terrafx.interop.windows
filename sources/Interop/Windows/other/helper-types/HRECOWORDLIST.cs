@@ -51,11 +51,11 @@ namespace TerraFX.Interop
 
         public static explicit operator HRECOWORDLIST(long value) => new HRECOWORDLIST((nint)(value));
 
-        public static implicit operator long(HRECOWORDLIST value) => (long)(value.Value);
+        public static implicit operator long(HRECOWORDLIST value) => value.Value;
 
         public static explicit operator HRECOWORDLIST(nint value) => new HRECOWORDLIST((nint)(value));
 
-        public static implicit operator nint(HRECOWORDLIST value) => (nint)(value.Value);
+        public static implicit operator nint(HRECOWORDLIST value) => value.Value;
 
         public static explicit operator HRECOWORDLIST(sbyte value) => new HRECOWORDLIST((nint)(value));
 

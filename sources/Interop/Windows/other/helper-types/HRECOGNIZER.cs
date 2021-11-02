@@ -51,11 +51,11 @@ namespace TerraFX.Interop
 
         public static explicit operator HRECOGNIZER(long value) => new HRECOGNIZER((nint)(value));
 
-        public static implicit operator long(HRECOGNIZER value) => (long)(value.Value);
+        public static implicit operator long(HRECOGNIZER value) => value.Value;
 
         public static explicit operator HRECOGNIZER(nint value) => new HRECOGNIZER((nint)(value));
 
-        public static implicit operator nint(HRECOGNIZER value) => (nint)(value.Value);
+        public static implicit operator nint(HRECOGNIZER value) => value.Value;
 
         public static explicit operator HRECOGNIZER(sbyte value) => new HRECOGNIZER((nint)(value));
 

@@ -51,11 +51,11 @@ namespace TerraFX.Interop
 
         public static explicit operator HMMIO(long value) => new HMMIO((nint)(value));
 
-        public static implicit operator long(HMMIO value) => (long)(value.Value);
+        public static implicit operator long(HMMIO value) => value.Value;
 
         public static explicit operator HMMIO(nint value) => new HMMIO((nint)(value));
 
-        public static implicit operator nint(HMMIO value) => (nint)(value.Value);
+        public static implicit operator nint(HMMIO value) => value.Value;
 
         public static explicit operator HMMIO(sbyte value) => new HMMIO((nint)(value));
 

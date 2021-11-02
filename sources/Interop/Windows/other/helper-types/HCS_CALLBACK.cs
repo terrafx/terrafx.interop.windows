@@ -51,11 +51,11 @@ namespace TerraFX.Interop
 
         public static explicit operator HCS_CALLBACK(long value) => new HCS_CALLBACK((nint)(value));
 
-        public static implicit operator long(HCS_CALLBACK value) => (long)(value.Value);
+        public static implicit operator long(HCS_CALLBACK value) => value.Value;
 
         public static explicit operator HCS_CALLBACK(nint value) => new HCS_CALLBACK((nint)(value));
 
-        public static implicit operator nint(HCS_CALLBACK value) => (nint)(value.Value);
+        public static implicit operator nint(HCS_CALLBACK value) => value.Value;
 
         public static explicit operator HCS_CALLBACK(sbyte value) => new HCS_CALLBACK((nint)(value));
 

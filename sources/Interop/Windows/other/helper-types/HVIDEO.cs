@@ -51,11 +51,11 @@ namespace TerraFX.Interop
 
         public static explicit operator HVIDEO(long value) => new HVIDEO((nint)(value));
 
-        public static implicit operator long(HVIDEO value) => (long)(value.Value);
+        public static implicit operator long(HVIDEO value) => value.Value;
 
         public static explicit operator HVIDEO(nint value) => new HVIDEO((nint)(value));
 
-        public static implicit operator nint(HVIDEO value) => (nint)(value.Value);
+        public static implicit operator nint(HVIDEO value) => value.Value;
 
         public static explicit operator HVIDEO(sbyte value) => new HVIDEO((nint)(value));
 

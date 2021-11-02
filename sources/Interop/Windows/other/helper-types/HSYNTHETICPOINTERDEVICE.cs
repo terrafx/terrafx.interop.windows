@@ -51,11 +51,11 @@ namespace TerraFX.Interop
 
         public static explicit operator HSYNTHETICPOINTERDEVICE(long value) => new HSYNTHETICPOINTERDEVICE((nint)(value));
 
-        public static implicit operator long(HSYNTHETICPOINTERDEVICE value) => (long)(value.Value);
+        public static implicit operator long(HSYNTHETICPOINTERDEVICE value) => value.Value;
 
         public static explicit operator HSYNTHETICPOINTERDEVICE(nint value) => new HSYNTHETICPOINTERDEVICE((nint)(value));
 
-        public static implicit operator nint(HSYNTHETICPOINTERDEVICE value) => (nint)(value.Value);
+        public static implicit operator nint(HSYNTHETICPOINTERDEVICE value) => value.Value;
 
         public static explicit operator HSYNTHETICPOINTERDEVICE(sbyte value) => new HSYNTHETICPOINTERDEVICE((nint)(value));
 

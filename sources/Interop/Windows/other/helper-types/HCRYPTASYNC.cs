@@ -51,11 +51,11 @@ namespace TerraFX.Interop
 
         public static explicit operator HCRYPTASYNC(long value) => new HCRYPTASYNC((nint)(value));
 
-        public static implicit operator long(HCRYPTASYNC value) => (long)(value.Value);
+        public static implicit operator long(HCRYPTASYNC value) => value.Value;
 
         public static explicit operator HCRYPTASYNC(nint value) => new HCRYPTASYNC((nint)(value));
 
-        public static implicit operator nint(HCRYPTASYNC value) => (nint)(value.Value);
+        public static implicit operator nint(HCRYPTASYNC value) => value.Value;
 
         public static explicit operator HCRYPTASYNC(sbyte value) => new HCRYPTASYNC((nint)(value));
 

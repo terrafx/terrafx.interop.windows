@@ -51,11 +51,11 @@ namespace TerraFX.Interop
 
         public static explicit operator PEERDIST_INSTANCE_HANDLE(long value) => new PEERDIST_INSTANCE_HANDLE((nint)(value));
 
-        public static implicit operator long(PEERDIST_INSTANCE_HANDLE value) => (long)(value.Value);
+        public static implicit operator long(PEERDIST_INSTANCE_HANDLE value) => value.Value;
 
         public static explicit operator PEERDIST_INSTANCE_HANDLE(nint value) => new PEERDIST_INSTANCE_HANDLE((nint)(value));
 
-        public static implicit operator nint(PEERDIST_INSTANCE_HANDLE value) => (nint)(value.Value);
+        public static implicit operator nint(PEERDIST_INSTANCE_HANDLE value) => value.Value;
 
         public static explicit operator PEERDIST_INSTANCE_HANDLE(sbyte value) => new PEERDIST_INSTANCE_HANDLE((nint)(value));
 

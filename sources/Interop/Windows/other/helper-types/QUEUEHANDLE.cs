@@ -51,11 +51,11 @@ namespace TerraFX.Interop
 
         public static explicit operator QUEUEHANDLE(long value) => new QUEUEHANDLE((nint)(value));
 
-        public static implicit operator long(QUEUEHANDLE value) => (long)(value.Value);
+        public static implicit operator long(QUEUEHANDLE value) => value.Value;
 
         public static explicit operator QUEUEHANDLE(nint value) => new QUEUEHANDLE((nint)(value));
 
-        public static implicit operator nint(QUEUEHANDLE value) => (nint)(value.Value);
+        public static implicit operator nint(QUEUEHANDLE value) => value.Value;
 
         public static explicit operator QUEUEHANDLE(sbyte value) => new QUEUEHANDLE((nint)(value));
 

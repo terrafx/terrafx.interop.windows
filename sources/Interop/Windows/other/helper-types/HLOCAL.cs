@@ -51,11 +51,11 @@ namespace TerraFX.Interop
 
         public static explicit operator HLOCAL(long value) => new HLOCAL((nint)(value));
 
-        public static implicit operator long(HLOCAL value) => (long)(value.Value);
+        public static implicit operator long(HLOCAL value) => value.Value;
 
         public static explicit operator HLOCAL(nint value) => new HLOCAL((nint)(value));
 
-        public static implicit operator nint(HLOCAL value) => (nint)(value.Value);
+        public static implicit operator nint(HLOCAL value) => value.Value;
 
         public static explicit operator HLOCAL(sbyte value) => new HLOCAL((nint)(value));
 

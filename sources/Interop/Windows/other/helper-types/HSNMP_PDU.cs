@@ -51,11 +51,11 @@ namespace TerraFX.Interop
 
         public static explicit operator HSNMP_PDU(long value) => new HSNMP_PDU((nint)(value));
 
-        public static implicit operator long(HSNMP_PDU value) => (long)(value.Value);
+        public static implicit operator long(HSNMP_PDU value) => value.Value;
 
         public static explicit operator HSNMP_PDU(nint value) => new HSNMP_PDU((nint)(value));
 
-        public static implicit operator nint(HSNMP_PDU value) => (nint)(value.Value);
+        public static implicit operator nint(HSNMP_PDU value) => value.Value;
 
         public static explicit operator HSNMP_PDU(sbyte value) => new HSNMP_PDU((nint)(value));
 

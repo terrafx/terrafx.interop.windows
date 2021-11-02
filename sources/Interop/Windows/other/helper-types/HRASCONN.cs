@@ -51,11 +51,11 @@ namespace TerraFX.Interop
 
         public static explicit operator HRASCONN(long value) => new HRASCONN((nint)(value));
 
-        public static implicit operator long(HRASCONN value) => (long)(value.Value);
+        public static implicit operator long(HRASCONN value) => value.Value;
 
         public static explicit operator HRASCONN(nint value) => new HRASCONN((nint)(value));
 
-        public static implicit operator nint(HRASCONN value) => (nint)(value.Value);
+        public static implicit operator nint(HRASCONN value) => value.Value;
 
         public static explicit operator HRASCONN(sbyte value) => new HRASCONN((nint)(value));
 

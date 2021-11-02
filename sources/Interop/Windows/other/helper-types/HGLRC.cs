@@ -51,11 +51,11 @@ namespace TerraFX.Interop
 
         public static explicit operator HGLRC(long value) => new HGLRC((nint)(value));
 
-        public static implicit operator long(HGLRC value) => (long)(value.Value);
+        public static implicit operator long(HGLRC value) => value.Value;
 
         public static explicit operator HGLRC(nint value) => new HGLRC((nint)(value));
 
-        public static implicit operator nint(HGLRC value) => (nint)(value.Value);
+        public static implicit operator nint(HGLRC value) => value.Value;
 
         public static explicit operator HGLRC(sbyte value) => new HGLRC((nint)(value));
 

@@ -51,11 +51,11 @@ namespace TerraFX.Interop
 
         public static explicit operator HPAINTBUFFER(long value) => new HPAINTBUFFER((nint)(value));
 
-        public static implicit operator long(HPAINTBUFFER value) => (long)(value.Value);
+        public static implicit operator long(HPAINTBUFFER value) => value.Value;
 
         public static explicit operator HPAINTBUFFER(nint value) => new HPAINTBUFFER((nint)(value));
 
-        public static implicit operator nint(HPAINTBUFFER value) => (nint)(value.Value);
+        public static implicit operator nint(HPAINTBUFFER value) => value.Value;
 
         public static explicit operator HPAINTBUFFER(sbyte value) => new HPAINTBUFFER((nint)(value));
 

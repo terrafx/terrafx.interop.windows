@@ -51,11 +51,11 @@ namespace TerraFX.Interop
 
         public static explicit operator HCOLORSPACE(long value) => new HCOLORSPACE((nint)(value));
 
-        public static implicit operator long(HCOLORSPACE value) => (long)(value.Value);
+        public static implicit operator long(HCOLORSPACE value) => value.Value;
 
         public static explicit operator HCOLORSPACE(nint value) => new HCOLORSPACE((nint)(value));
 
-        public static implicit operator nint(HCOLORSPACE value) => (nint)(value.Value);
+        public static implicit operator nint(HCOLORSPACE value) => value.Value;
 
         public static explicit operator HCOLORSPACE(sbyte value) => new HCOLORSPACE((nint)(value));
 

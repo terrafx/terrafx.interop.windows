@@ -51,11 +51,11 @@ namespace TerraFX.Interop
 
         public static explicit operator HDPA(long value) => new HDPA((nint)(value));
 
-        public static implicit operator long(HDPA value) => (long)(value.Value);
+        public static implicit operator long(HDPA value) => value.Value;
 
         public static explicit operator HDPA(nint value) => new HDPA((nint)(value));
 
-        public static implicit operator nint(HDPA value) => (nint)(value.Value);
+        public static implicit operator nint(HDPA value) => value.Value;
 
         public static explicit operator HDPA(sbyte value) => new HDPA((nint)(value));
 

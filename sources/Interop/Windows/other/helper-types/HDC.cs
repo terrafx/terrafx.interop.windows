@@ -51,11 +51,11 @@ namespace TerraFX.Interop
 
         public static explicit operator HDC(long value) => new HDC((nint)(value));
 
-        public static implicit operator long(HDC value) => (long)(value.Value);
+        public static implicit operator long(HDC value) => value.Value;
 
         public static explicit operator HDC(nint value) => new HDC((nint)(value));
 
-        public static implicit operator nint(HDC value) => (nint)(value.Value);
+        public static implicit operator nint(HDC value) => value.Value;
 
         public static explicit operator HDC(sbyte value) => new HDC((nint)(value));
 

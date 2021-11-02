@@ -51,11 +51,11 @@ namespace TerraFX.Interop
 
         public static explicit operator HPTPROVIDER(long value) => new HPTPROVIDER((nint)(value));
 
-        public static implicit operator long(HPTPROVIDER value) => (long)(value.Value);
+        public static implicit operator long(HPTPROVIDER value) => value.Value;
 
         public static explicit operator HPTPROVIDER(nint value) => new HPTPROVIDER((nint)(value));
 
-        public static implicit operator nint(HPTPROVIDER value) => (nint)(value.Value);
+        public static implicit operator nint(HPTPROVIDER value) => value.Value;
 
         public static explicit operator HPTPROVIDER(sbyte value) => new HPTPROVIDER((nint)(value));
 

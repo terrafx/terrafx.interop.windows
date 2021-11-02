@@ -51,11 +51,11 @@ namespace TerraFX.Interop
 
         public static explicit operator HGLOBAL(long value) => new HGLOBAL((nint)(value));
 
-        public static implicit operator long(HGLOBAL value) => (long)(value.Value);
+        public static implicit operator long(HGLOBAL value) => value.Value;
 
         public static explicit operator HGLOBAL(nint value) => new HGLOBAL((nint)(value));
 
-        public static implicit operator nint(HGLOBAL value) => (nint)(value.Value);
+        public static implicit operator nint(HGLOBAL value) => value.Value;
 
         public static explicit operator HGLOBAL(sbyte value) => new HGLOBAL((nint)(value));
 

@@ -51,11 +51,11 @@ namespace TerraFX.Interop
 
         public static explicit operator HUIATEXTRANGE(long value) => new HUIATEXTRANGE((nint)(value));
 
-        public static implicit operator long(HUIATEXTRANGE value) => (long)(value.Value);
+        public static implicit operator long(HUIATEXTRANGE value) => value.Value;
 
         public static explicit operator HUIATEXTRANGE(nint value) => new HUIATEXTRANGE((nint)(value));
 
-        public static implicit operator nint(HUIATEXTRANGE value) => (nint)(value.Value);
+        public static implicit operator nint(HUIATEXTRANGE value) => value.Value;
 
         public static explicit operator HUIATEXTRANGE(sbyte value) => new HUIATEXTRANGE((nint)(value));
 

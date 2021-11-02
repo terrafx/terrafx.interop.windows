@@ -51,11 +51,11 @@ namespace TerraFX.Interop
 
         public static explicit operator HWND(long value) => new HWND((nint)(value));
 
-        public static implicit operator long(HWND value) => (long)(value.Value);
+        public static implicit operator long(HWND value) => value.Value;
 
         public static explicit operator HWND(nint value) => new HWND((nint)(value));
 
-        public static implicit operator nint(HWND value) => (nint)(value.Value);
+        public static implicit operator nint(HWND value) => value.Value;
 
         public static explicit operator HWND(sbyte value) => new HWND((nint)(value));
 

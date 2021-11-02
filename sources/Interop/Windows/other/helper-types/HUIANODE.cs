@@ -51,11 +51,11 @@ namespace TerraFX.Interop
 
         public static explicit operator HUIANODE(long value) => new HUIANODE((nint)(value));
 
-        public static implicit operator long(HUIANODE value) => (long)(value.Value);
+        public static implicit operator long(HUIANODE value) => value.Value;
 
         public static explicit operator HUIANODE(nint value) => new HUIANODE((nint)(value));
 
-        public static implicit operator nint(HUIANODE value) => (nint)(value.Value);
+        public static implicit operator nint(HUIANODE value) => value.Value;
 
         public static explicit operator HUIANODE(sbyte value) => new HUIANODE((nint)(value));
 

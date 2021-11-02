@@ -51,11 +51,11 @@ namespace TerraFX.Interop
 
         public static explicit operator HFILTER_VOLUME(long value) => new HFILTER_VOLUME((nint)(value));
 
-        public static implicit operator long(HFILTER_VOLUME value) => (long)(value.Value);
+        public static implicit operator long(HFILTER_VOLUME value) => value.Value;
 
         public static explicit operator HFILTER_VOLUME(nint value) => new HFILTER_VOLUME((nint)(value));
 
-        public static implicit operator nint(HFILTER_VOLUME value) => (nint)(value.Value);
+        public static implicit operator nint(HFILTER_VOLUME value) => value.Value;
 
         public static explicit operator HFILTER_VOLUME(sbyte value) => new HFILTER_VOLUME((nint)(value));
 

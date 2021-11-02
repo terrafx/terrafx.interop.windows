@@ -51,11 +51,11 @@ namespace TerraFX.Interop
 
         public static explicit operator WEB_SOCKET_HANDLE(long value) => new WEB_SOCKET_HANDLE((nint)(value));
 
-        public static implicit operator long(WEB_SOCKET_HANDLE value) => (long)(value.Value);
+        public static implicit operator long(WEB_SOCKET_HANDLE value) => value.Value;
 
         public static explicit operator WEB_SOCKET_HANDLE(nint value) => new WEB_SOCKET_HANDLE((nint)(value));
 
-        public static implicit operator nint(WEB_SOCKET_HANDLE value) => (nint)(value.Value);
+        public static implicit operator nint(WEB_SOCKET_HANDLE value) => value.Value;
 
         public static explicit operator WEB_SOCKET_HANDLE(sbyte value) => new WEB_SOCKET_HANDLE((nint)(value));
 

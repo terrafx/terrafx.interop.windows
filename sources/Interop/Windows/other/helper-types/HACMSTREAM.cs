@@ -51,11 +51,11 @@ namespace TerraFX.Interop
 
         public static explicit operator HACMSTREAM(long value) => new HACMSTREAM((nint)(value));
 
-        public static implicit operator long(HACMSTREAM value) => (long)(value.Value);
+        public static implicit operator long(HACMSTREAM value) => value.Value;
 
         public static explicit operator HACMSTREAM(nint value) => new HACMSTREAM((nint)(value));
 
-        public static implicit operator nint(HACMSTREAM value) => (nint)(value.Value);
+        public static implicit operator nint(HACMSTREAM value) => value.Value;
 
         public static explicit operator HACMSTREAM(sbyte value) => new HACMSTREAM((nint)(value));
 

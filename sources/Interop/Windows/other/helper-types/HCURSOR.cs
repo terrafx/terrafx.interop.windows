@@ -51,11 +51,11 @@ namespace TerraFX.Interop
 
         public static explicit operator HCURSOR(long value) => new HCURSOR((nint)(value));
 
-        public static implicit operator long(HCURSOR value) => (long)(value.Value);
+        public static implicit operator long(HCURSOR value) => value.Value;
 
         public static explicit operator HCURSOR(nint value) => new HCURSOR((nint)(value));
 
-        public static implicit operator nint(HCURSOR value) => (nint)(value.Value);
+        public static implicit operator nint(HCURSOR value) => value.Value;
 
         public static explicit operator HCURSOR(sbyte value) => new HCURSOR((nint)(value));
 

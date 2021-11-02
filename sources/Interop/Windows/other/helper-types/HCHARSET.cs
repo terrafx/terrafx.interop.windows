@@ -51,11 +51,11 @@ namespace TerraFX.Interop
 
         public static explicit operator HCHARSET(long value) => new HCHARSET((nint)(value));
 
-        public static implicit operator long(HCHARSET value) => (long)(value.Value);
+        public static implicit operator long(HCHARSET value) => value.Value;
 
         public static explicit operator HCHARSET(nint value) => new HCHARSET((nint)(value));
 
-        public static implicit operator nint(HCHARSET value) => (nint)(value.Value);
+        public static implicit operator nint(HCHARSET value) => value.Value;
 
         public static explicit operator HCHARSET(sbyte value) => new HCHARSET((nint)(value));
 

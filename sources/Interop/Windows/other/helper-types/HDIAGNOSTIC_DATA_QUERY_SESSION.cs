@@ -51,11 +51,11 @@ namespace TerraFX.Interop
 
         public static explicit operator HDIAGNOSTIC_DATA_QUERY_SESSION(long value) => new HDIAGNOSTIC_DATA_QUERY_SESSION((nint)(value));
 
-        public static implicit operator long(HDIAGNOSTIC_DATA_QUERY_SESSION value) => (long)(value.Value);
+        public static implicit operator long(HDIAGNOSTIC_DATA_QUERY_SESSION value) => value.Value;
 
         public static explicit operator HDIAGNOSTIC_DATA_QUERY_SESSION(nint value) => new HDIAGNOSTIC_DATA_QUERY_SESSION((nint)(value));
 
-        public static implicit operator nint(HDIAGNOSTIC_DATA_QUERY_SESSION value) => (nint)(value.Value);
+        public static implicit operator nint(HDIAGNOSTIC_DATA_QUERY_SESSION value) => value.Value;
 
         public static explicit operator HDIAGNOSTIC_DATA_QUERY_SESSION(sbyte value) => new HDIAGNOSTIC_DATA_QUERY_SESSION((nint)(value));
 

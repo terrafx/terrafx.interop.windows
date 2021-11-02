@@ -45,11 +45,11 @@ namespace TerraFX.Interop
 
         public static explicit operator MachineGlobalObjectTableRegistrationToken(long value) => new MachineGlobalObjectTableRegistrationToken((nint)(value));
 
-        public static implicit operator long(MachineGlobalObjectTableRegistrationToken value) => (long)(value.Value);
+        public static implicit operator long(MachineGlobalObjectTableRegistrationToken value) => value.Value;
 
         public static explicit operator MachineGlobalObjectTableRegistrationToken(nint value) => new MachineGlobalObjectTableRegistrationToken((nint)(value));
 
-        public static implicit operator nint(MachineGlobalObjectTableRegistrationToken value) => (nint)(value.Value);
+        public static implicit operator nint(MachineGlobalObjectTableRegistrationToken value) => value.Value;
 
         public static explicit operator MachineGlobalObjectTableRegistrationToken(sbyte value) => new MachineGlobalObjectTableRegistrationToken((nint)(value));
 

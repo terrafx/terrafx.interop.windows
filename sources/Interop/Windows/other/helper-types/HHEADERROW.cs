@@ -51,11 +51,11 @@ namespace TerraFX.Interop
 
         public static explicit operator HHEADERROW(long value) => new HHEADERROW((nint)(value));
 
-        public static implicit operator long(HHEADERROW value) => (long)(value.Value);
+        public static implicit operator long(HHEADERROW value) => value.Value;
 
         public static explicit operator HHEADERROW(nint value) => new HHEADERROW((nint)(value));
 
-        public static implicit operator nint(HHEADERROW value) => (nint)(value.Value);
+        public static implicit operator nint(HHEADERROW value) => value.Value;
 
         public static explicit operator HHEADERROW(sbyte value) => new HHEADERROW((nint)(value));
 

@@ -51,11 +51,11 @@ namespace TerraFX.Interop
 
         public static explicit operator SPRULEHANDLE(long value) => new SPRULEHANDLE((nint)(value));
 
-        public static implicit operator long(SPRULEHANDLE value) => (long)(value.Value);
+        public static implicit operator long(SPRULEHANDLE value) => value.Value;
 
         public static explicit operator SPRULEHANDLE(nint value) => new SPRULEHANDLE((nint)(value));
 
-        public static implicit operator nint(SPRULEHANDLE value) => (nint)(value.Value);
+        public static implicit operator nint(SPRULEHANDLE value) => value.Value;
 
         public static explicit operator SPRULEHANDLE(sbyte value) => new SPRULEHANDLE((nint)(value));
 

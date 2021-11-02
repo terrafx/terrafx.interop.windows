@@ -51,11 +51,11 @@ namespace TerraFX.Interop
 
         public static explicit operator HDEVQUERY(long value) => new HDEVQUERY((nint)(value));
 
-        public static implicit operator long(HDEVQUERY value) => (long)(value.Value);
+        public static implicit operator long(HDEVQUERY value) => value.Value;
 
         public static explicit operator HDEVQUERY(nint value) => new HDEVQUERY((nint)(value));
 
-        public static implicit operator nint(HDEVQUERY value) => (nint)(value.Value);
+        public static implicit operator nint(HDEVQUERY value) => value.Value;
 
         public static explicit operator HDEVQUERY(sbyte value) => new HDEVQUERY((nint)(value));
 

@@ -51,11 +51,11 @@ namespace TerraFX.Interop
 
         public static explicit operator HMACHINE(long value) => new HMACHINE((nint)(value));
 
-        public static implicit operator long(HMACHINE value) => (long)(value.Value);
+        public static implicit operator long(HMACHINE value) => value.Value;
 
         public static explicit operator HMACHINE(nint value) => new HMACHINE((nint)(value));
 
-        public static implicit operator nint(HMACHINE value) => (nint)(value.Value);
+        public static implicit operator nint(HMACHINE value) => value.Value;
 
         public static explicit operator HMACHINE(sbyte value) => new HMACHINE((nint)(value));
 

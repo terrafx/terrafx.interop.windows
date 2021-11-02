@@ -51,11 +51,11 @@ namespace TerraFX.Interop
 
         public static explicit operator HCMNOTIFICATION(long value) => new HCMNOTIFICATION((nint)(value));
 
-        public static implicit operator long(HCMNOTIFICATION value) => (long)(value.Value);
+        public static implicit operator long(HCMNOTIFICATION value) => value.Value;
 
         public static explicit operator HCMNOTIFICATION(nint value) => new HCMNOTIFICATION((nint)(value));
 
-        public static implicit operator nint(HCMNOTIFICATION value) => (nint)(value.Value);
+        public static implicit operator nint(HCMNOTIFICATION value) => value.Value;
 
         public static explicit operator HCMNOTIFICATION(sbyte value) => new HCMNOTIFICATION((nint)(value));
 

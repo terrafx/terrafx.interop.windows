@@ -51,11 +51,11 @@ namespace TerraFX.Interop
 
         public static explicit operator HEVENT(long value) => new HEVENT((nint)(value));
 
-        public static implicit operator long(HEVENT value) => (long)(value.Value);
+        public static implicit operator long(HEVENT value) => value.Value;
 
         public static explicit operator HEVENT(nint value) => new HEVENT((nint)(value));
 
-        public static implicit operator nint(HEVENT value) => (nint)(value.Value);
+        public static implicit operator nint(HEVENT value) => value.Value;
 
         public static explicit operator HEVENT(sbyte value) => new HEVENT((nint)(value));
 

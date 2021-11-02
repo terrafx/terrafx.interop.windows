@@ -51,11 +51,11 @@ namespace TerraFX.Interop
 
         public static explicit operator EC_HANDLE(long value) => new EC_HANDLE((nint)(value));
 
-        public static implicit operator long(EC_HANDLE value) => (long)(value.Value);
+        public static implicit operator long(EC_HANDLE value) => value.Value;
 
         public static explicit operator EC_HANDLE(nint value) => new EC_HANDLE((nint)(value));
 
-        public static implicit operator nint(EC_HANDLE value) => (nint)(value.Value);
+        public static implicit operator nint(EC_HANDLE value) => value.Value;
 
         public static explicit operator EC_HANDLE(sbyte value) => new EC_HANDLE((nint)(value));
 

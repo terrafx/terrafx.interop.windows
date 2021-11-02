@@ -51,11 +51,11 @@ namespace TerraFX.Interop
 
         public static explicit operator PDH_HQUERY(long value) => new PDH_HQUERY((nint)(value));
 
-        public static implicit operator long(PDH_HQUERY value) => (long)(value.Value);
+        public static implicit operator long(PDH_HQUERY value) => value.Value;
 
         public static explicit operator PDH_HQUERY(nint value) => new PDH_HQUERY((nint)(value));
 
-        public static implicit operator nint(PDH_HQUERY value) => (nint)(value.Value);
+        public static implicit operator nint(PDH_HQUERY value) => value.Value;
 
         public static explicit operator PDH_HQUERY(sbyte value) => new PDH_HQUERY((nint)(value));
 

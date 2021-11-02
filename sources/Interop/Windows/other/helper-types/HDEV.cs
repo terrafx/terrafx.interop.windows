@@ -51,11 +51,11 @@ namespace TerraFX.Interop
 
         public static explicit operator HDEV(long value) => new HDEV((nint)(value));
 
-        public static implicit operator long(HDEV value) => (long)(value.Value);
+        public static implicit operator long(HDEV value) => value.Value;
 
         public static explicit operator HDEV(nint value) => new HDEV((nint)(value));
 
-        public static implicit operator nint(HDEV value) => (nint)(value.Value);
+        public static implicit operator nint(HDEV value) => value.Value;
 
         public static explicit operator HDEV(sbyte value) => new HDEV((nint)(value));
 

@@ -51,11 +51,11 @@ namespace TerraFX.Interop
 
         public static explicit operator HBRUSH(long value) => new HBRUSH((nint)(value));
 
-        public static implicit operator long(HBRUSH value) => (long)(value.Value);
+        public static implicit operator long(HBRUSH value) => value.Value;
 
         public static explicit operator HBRUSH(nint value) => new HBRUSH((nint)(value));
 
-        public static implicit operator nint(HBRUSH value) => (nint)(value.Value);
+        public static implicit operator nint(HBRUSH value) => value.Value;
 
         public static explicit operator HBRUSH(sbyte value) => new HBRUSH((nint)(value));
 

@@ -51,11 +51,11 @@ namespace TerraFX.Interop
 
         public static explicit operator AUTHZ_RESOURCE_MANAGER_HANDLE(long value) => new AUTHZ_RESOURCE_MANAGER_HANDLE((nint)(value));
 
-        public static implicit operator long(AUTHZ_RESOURCE_MANAGER_HANDLE value) => (long)(value.Value);
+        public static implicit operator long(AUTHZ_RESOURCE_MANAGER_HANDLE value) => value.Value;
 
         public static explicit operator AUTHZ_RESOURCE_MANAGER_HANDLE(nint value) => new AUTHZ_RESOURCE_MANAGER_HANDLE((nint)(value));
 
-        public static implicit operator nint(AUTHZ_RESOURCE_MANAGER_HANDLE value) => (nint)(value.Value);
+        public static implicit operator nint(AUTHZ_RESOURCE_MANAGER_HANDLE value) => value.Value;
 
         public static explicit operator AUTHZ_RESOURCE_MANAGER_HANDLE(sbyte value) => new AUTHZ_RESOURCE_MANAGER_HANDLE((nint)(value));
 

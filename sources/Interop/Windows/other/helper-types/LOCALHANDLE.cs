@@ -51,11 +51,11 @@ namespace TerraFX.Interop
 
         public static explicit operator LOCALHANDLE(long value) => new LOCALHANDLE((nint)(value));
 
-        public static implicit operator long(LOCALHANDLE value) => (long)(value.Value);
+        public static implicit operator long(LOCALHANDLE value) => value.Value;
 
         public static explicit operator LOCALHANDLE(nint value) => new LOCALHANDLE((nint)(value));
 
-        public static implicit operator nint(LOCALHANDLE value) => (nint)(value.Value);
+        public static implicit operator nint(LOCALHANDLE value) => value.Value;
 
         public static explicit operator LOCALHANDLE(sbyte value) => new LOCALHANDLE((nint)(value));
 

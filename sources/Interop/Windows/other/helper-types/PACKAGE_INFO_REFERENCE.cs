@@ -45,11 +45,11 @@ namespace TerraFX.Interop
 
         public static explicit operator PACKAGE_INFO_REFERENCE(long value) => new PACKAGE_INFO_REFERENCE((nint)(value));
 
-        public static implicit operator long(PACKAGE_INFO_REFERENCE value) => (long)(value.Value);
+        public static implicit operator long(PACKAGE_INFO_REFERENCE value) => value.Value;
 
         public static explicit operator PACKAGE_INFO_REFERENCE(nint value) => new PACKAGE_INFO_REFERENCE((nint)(value));
 
-        public static implicit operator nint(PACKAGE_INFO_REFERENCE value) => (nint)(value.Value);
+        public static implicit operator nint(PACKAGE_INFO_REFERENCE value) => value.Value;
 
         public static explicit operator PACKAGE_INFO_REFERENCE(sbyte value) => new PACKAGE_INFO_REFERENCE((nint)(value));
 

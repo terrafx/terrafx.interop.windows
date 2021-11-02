@@ -51,11 +51,11 @@ namespace TerraFX.Interop
 
         public static explicit operator HACMOBJ(long value) => new HACMOBJ((nint)(value));
 
-        public static implicit operator long(HACMOBJ value) => (long)(value.Value);
+        public static implicit operator long(HACMOBJ value) => value.Value;
 
         public static explicit operator HACMOBJ(nint value) => new HACMOBJ((nint)(value));
 
-        public static implicit operator nint(HACMOBJ value) => (nint)(value.Value);
+        public static implicit operator nint(HACMOBJ value) => value.Value;
 
         public static explicit operator HACMOBJ(sbyte value) => new HACMOBJ((nint)(value));
 

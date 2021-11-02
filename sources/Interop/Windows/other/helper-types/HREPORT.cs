@@ -51,11 +51,11 @@ namespace TerraFX.Interop
 
         public static explicit operator HREPORT(long value) => new HREPORT((nint)(value));
 
-        public static implicit operator long(HREPORT value) => (long)(value.Value);
+        public static implicit operator long(HREPORT value) => value.Value;
 
         public static explicit operator HREPORT(nint value) => new HREPORT((nint)(value));
 
-        public static implicit operator nint(HREPORT value) => (nint)(value.Value);
+        public static implicit operator nint(HREPORT value) => value.Value;
 
         public static explicit operator HREPORT(sbyte value) => new HREPORT((nint)(value));
 

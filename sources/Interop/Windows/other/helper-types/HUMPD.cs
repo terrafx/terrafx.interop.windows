@@ -51,11 +51,11 @@ namespace TerraFX.Interop
 
         public static explicit operator HUMPD(long value) => new HUMPD((nint)(value));
 
-        public static implicit operator long(HUMPD value) => (long)(value.Value);
+        public static implicit operator long(HUMPD value) => value.Value;
 
         public static explicit operator HUMPD(nint value) => new HUMPD((nint)(value));
 
-        public static implicit operator nint(HUMPD value) => (nint)(value.Value);
+        public static implicit operator nint(HUMPD value) => value.Value;
 
         public static explicit operator HUMPD(sbyte value) => new HUMPD((nint)(value));
 

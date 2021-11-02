@@ -51,11 +51,11 @@ namespace TerraFX.Interop
 
         public static explicit operator D3DKMDT_HVIDPNTOPOLOGY(long value) => new D3DKMDT_HVIDPNTOPOLOGY((nint)(value));
 
-        public static implicit operator long(D3DKMDT_HVIDPNTOPOLOGY value) => (long)(value.Value);
+        public static implicit operator long(D3DKMDT_HVIDPNTOPOLOGY value) => value.Value;
 
         public static explicit operator D3DKMDT_HVIDPNTOPOLOGY(nint value) => new D3DKMDT_HVIDPNTOPOLOGY((nint)(value));
 
-        public static implicit operator nint(D3DKMDT_HVIDPNTOPOLOGY value) => (nint)(value.Value);
+        public static implicit operator nint(D3DKMDT_HVIDPNTOPOLOGY value) => value.Value;
 
         public static explicit operator D3DKMDT_HVIDPNTOPOLOGY(sbyte value) => new D3DKMDT_HVIDPNTOPOLOGY((nint)(value));
 

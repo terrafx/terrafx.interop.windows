@@ -51,11 +51,11 @@ namespace TerraFX.Interop
 
         public static explicit operator HMONITOR(long value) => new HMONITOR((nint)(value));
 
-        public static implicit operator long(HMONITOR value) => (long)(value.Value);
+        public static implicit operator long(HMONITOR value) => value.Value;
 
         public static explicit operator HMONITOR(nint value) => new HMONITOR((nint)(value));
 
-        public static implicit operator nint(HMONITOR value) => (nint)(value.Value);
+        public static implicit operator nint(HMONITOR value) => value.Value;
 
         public static explicit operator HMONITOR(sbyte value) => new HMONITOR((nint)(value));
 

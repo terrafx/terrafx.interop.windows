@@ -51,11 +51,11 @@ namespace TerraFX.Interop
 
         public static explicit operator PRJ_DIR_ENTRY_BUFFER_HANDLE(long value) => new PRJ_DIR_ENTRY_BUFFER_HANDLE((nint)(value));
 
-        public static implicit operator long(PRJ_DIR_ENTRY_BUFFER_HANDLE value) => (long)(value.Value);
+        public static implicit operator long(PRJ_DIR_ENTRY_BUFFER_HANDLE value) => value.Value;
 
         public static explicit operator PRJ_DIR_ENTRY_BUFFER_HANDLE(nint value) => new PRJ_DIR_ENTRY_BUFFER_HANDLE((nint)(value));
 
-        public static implicit operator nint(PRJ_DIR_ENTRY_BUFFER_HANDLE value) => (nint)(value.Value);
+        public static implicit operator nint(PRJ_DIR_ENTRY_BUFFER_HANDLE value) => value.Value;
 
         public static explicit operator PRJ_DIR_ENTRY_BUFFER_HANDLE(sbyte value) => new PRJ_DIR_ENTRY_BUFFER_HANDLE((nint)(value));
 

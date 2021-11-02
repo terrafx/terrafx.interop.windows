@@ -51,11 +51,11 @@ namespace TerraFX.Interop
 
         public static explicit operator HPORT(long value) => new HPORT((nint)(value));
 
-        public static implicit operator long(HPORT value) => (long)(value.Value);
+        public static implicit operator long(HPORT value) => value.Value;
 
         public static explicit operator HPORT(nint value) => new HPORT((nint)(value));
 
-        public static implicit operator nint(HPORT value) => (nint)(value.Value);
+        public static implicit operator nint(HPORT value) => value.Value;
 
         public static explicit operator HPORT(sbyte value) => new HPORT((nint)(value));
 

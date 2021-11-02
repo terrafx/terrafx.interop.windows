@@ -51,11 +51,11 @@ namespace TerraFX.Interop
 
         public static explicit operator HIMAGELIST(long value) => new HIMAGELIST((nint)(value));
 
-        public static implicit operator long(HIMAGELIST value) => (long)(value.Value);
+        public static implicit operator long(HIMAGELIST value) => value.Value;
 
         public static explicit operator HIMAGELIST(nint value) => new HIMAGELIST((nint)(value));
 
-        public static implicit operator nint(HIMAGELIST value) => (nint)(value.Value);
+        public static implicit operator nint(HIMAGELIST value) => value.Value;
 
         public static explicit operator HIMAGELIST(sbyte value) => new HIMAGELIST((nint)(value));
 

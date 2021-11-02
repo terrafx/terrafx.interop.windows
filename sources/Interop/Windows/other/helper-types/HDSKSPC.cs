@@ -51,11 +51,11 @@ namespace TerraFX.Interop
 
         public static explicit operator HDSKSPC(long value) => new HDSKSPC((nint)(value));
 
-        public static implicit operator long(HDSKSPC value) => (long)(value.Value);
+        public static implicit operator long(HDSKSPC value) => value.Value;
 
         public static explicit operator HDSKSPC(nint value) => new HDSKSPC((nint)(value));
 
-        public static implicit operator nint(HDSKSPC value) => (nint)(value.Value);
+        public static implicit operator nint(HDSKSPC value) => value.Value;
 
         public static explicit operator HDSKSPC(sbyte value) => new HDSKSPC((nint)(value));
 

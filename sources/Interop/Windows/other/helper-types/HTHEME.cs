@@ -51,11 +51,11 @@ namespace TerraFX.Interop
 
         public static explicit operator HTHEME(long value) => new HTHEME((nint)(value));
 
-        public static implicit operator long(HTHEME value) => (long)(value.Value);
+        public static implicit operator long(HTHEME value) => value.Value;
 
         public static explicit operator HTHEME(nint value) => new HTHEME((nint)(value));
 
-        public static implicit operator nint(HTHEME value) => (nint)(value.Value);
+        public static implicit operator nint(HTHEME value) => value.Value;
 
         public static explicit operator HTHEME(sbyte value) => new HTHEME((nint)(value));
 

@@ -51,11 +51,11 @@ namespace TerraFX.Interop
 
         public static explicit operator NFC_SNEP_SERVER_CONNECTION_HANDLE(long value) => new NFC_SNEP_SERVER_CONNECTION_HANDLE((nint)(value));
 
-        public static implicit operator long(NFC_SNEP_SERVER_CONNECTION_HANDLE value) => (long)(value.Value);
+        public static implicit operator long(NFC_SNEP_SERVER_CONNECTION_HANDLE value) => value.Value;
 
         public static explicit operator NFC_SNEP_SERVER_CONNECTION_HANDLE(nint value) => new NFC_SNEP_SERVER_CONNECTION_HANDLE((nint)(value));
 
-        public static implicit operator nint(NFC_SNEP_SERVER_CONNECTION_HANDLE value) => (nint)(value.Value);
+        public static implicit operator nint(NFC_SNEP_SERVER_CONNECTION_HANDLE value) => value.Value;
 
         public static explicit operator NFC_SNEP_SERVER_CONNECTION_HANDLE(sbyte value) => new NFC_SNEP_SERVER_CONNECTION_HANDLE((nint)(value));
 

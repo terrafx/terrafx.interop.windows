@@ -51,11 +51,11 @@ namespace TerraFX.Interop
 
         public static explicit operator HCONVLIST(long value) => new HCONVLIST((nint)(value));
 
-        public static implicit operator long(HCONVLIST value) => (long)(value.Value);
+        public static implicit operator long(HCONVLIST value) => value.Value;
 
         public static explicit operator HCONVLIST(nint value) => new HCONVLIST((nint)(value));
 
-        public static implicit operator nint(HCONVLIST value) => (nint)(value.Value);
+        public static implicit operator nint(HCONVLIST value) => value.Value;
 
         public static explicit operator HCONVLIST(sbyte value) => new HCONVLIST((nint)(value));
 

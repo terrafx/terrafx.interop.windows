@@ -25,7 +25,7 @@ namespace TerraFX.Interop
 
         public static bool operator >=(COLORREF left, COLORREF right) => left.Value >= right.Value;
 
-        public static implicit operator COLORREF(byte value) => new COLORREF((uint)(value));
+        public static implicit operator COLORREF(byte value) => new COLORREF(value);
 
         public static explicit operator byte(COLORREF value) => (byte)(value.Value);
 
@@ -39,7 +39,7 @@ namespace TerraFX.Interop
 
         public static explicit operator COLORREF(long value) => new COLORREF((uint)(value));
 
-        public static implicit operator long(COLORREF value) => (long)(value.Value);
+        public static implicit operator long(COLORREF value) => value.Value;
 
         public static explicit operator COLORREF(nint value) => new COLORREF((uint)(value));
 
@@ -49,21 +49,21 @@ namespace TerraFX.Interop
 
         public static explicit operator sbyte(COLORREF value) => (sbyte)(value.Value);
 
-        public static implicit operator COLORREF(ushort value) => new COLORREF((uint)(value));
+        public static implicit operator COLORREF(ushort value) => new COLORREF(value);
 
         public static explicit operator ushort(COLORREF value) => (ushort)(value.Value);
 
-        public static implicit operator COLORREF(uint value) => new COLORREF((uint)(value));
+        public static implicit operator COLORREF(uint value) => new COLORREF(value);
 
-        public static implicit operator uint(COLORREF value) => (uint)(value.Value);
+        public static implicit operator uint(COLORREF value) => value.Value;
 
         public static explicit operator COLORREF(ulong value) => new COLORREF((uint)(value));
 
-        public static implicit operator ulong(COLORREF value) => (ulong)(value.Value);
+        public static implicit operator ulong(COLORREF value) => value.Value;
 
         public static explicit operator COLORREF(nuint value) => new COLORREF((uint)(value));
 
-        public static implicit operator nuint(COLORREF value) => (nuint)(value.Value);
+        public static implicit operator nuint(COLORREF value) => value.Value;
 
         public int CompareTo(object? obj)
         {

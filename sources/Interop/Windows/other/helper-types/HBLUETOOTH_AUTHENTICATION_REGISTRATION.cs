@@ -51,11 +51,11 @@ namespace TerraFX.Interop
 
         public static explicit operator HBLUETOOTH_AUTHENTICATION_REGISTRATION(long value) => new HBLUETOOTH_AUTHENTICATION_REGISTRATION((nint)(value));
 
-        public static implicit operator long(HBLUETOOTH_AUTHENTICATION_REGISTRATION value) => (long)(value.Value);
+        public static implicit operator long(HBLUETOOTH_AUTHENTICATION_REGISTRATION value) => value.Value;
 
         public static explicit operator HBLUETOOTH_AUTHENTICATION_REGISTRATION(nint value) => new HBLUETOOTH_AUTHENTICATION_REGISTRATION((nint)(value));
 
-        public static implicit operator nint(HBLUETOOTH_AUTHENTICATION_REGISTRATION value) => (nint)(value.Value);
+        public static implicit operator nint(HBLUETOOTH_AUTHENTICATION_REGISTRATION value) => value.Value;
 
         public static explicit operator HBLUETOOTH_AUTHENTICATION_REGISTRATION(sbyte value) => new HBLUETOOTH_AUTHENTICATION_REGISTRATION((nint)(value));
 

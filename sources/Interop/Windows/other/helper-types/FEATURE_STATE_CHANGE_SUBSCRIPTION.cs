@@ -51,11 +51,11 @@ namespace TerraFX.Interop
 
         public static explicit operator FEATURE_STATE_CHANGE_SUBSCRIPTION(long value) => new FEATURE_STATE_CHANGE_SUBSCRIPTION((nint)(value));
 
-        public static implicit operator long(FEATURE_STATE_CHANGE_SUBSCRIPTION value) => (long)(value.Value);
+        public static implicit operator long(FEATURE_STATE_CHANGE_SUBSCRIPTION value) => value.Value;
 
         public static explicit operator FEATURE_STATE_CHANGE_SUBSCRIPTION(nint value) => new FEATURE_STATE_CHANGE_SUBSCRIPTION((nint)(value));
 
-        public static implicit operator nint(FEATURE_STATE_CHANGE_SUBSCRIPTION value) => (nint)(value.Value);
+        public static implicit operator nint(FEATURE_STATE_CHANGE_SUBSCRIPTION value) => value.Value;
 
         public static explicit operator FEATURE_STATE_CHANGE_SUBSCRIPTION(sbyte value) => new FEATURE_STATE_CHANGE_SUBSCRIPTION((nint)(value));
 

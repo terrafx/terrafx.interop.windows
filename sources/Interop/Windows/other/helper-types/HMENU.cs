@@ -51,11 +51,11 @@ namespace TerraFX.Interop
 
         public static explicit operator HMENU(long value) => new HMENU((nint)(value));
 
-        public static implicit operator long(HMENU value) => (long)(value.Value);
+        public static implicit operator long(HMENU value) => value.Value;
 
         public static explicit operator HMENU(nint value) => new HMENU((nint)(value));
 
-        public static implicit operator nint(HMENU value) => (nint)(value.Value);
+        public static implicit operator nint(HMENU value) => value.Value;
 
         public static explicit operator HMENU(sbyte value) => new HMENU((nint)(value));
 

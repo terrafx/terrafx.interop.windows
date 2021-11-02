@@ -51,11 +51,11 @@ namespace TerraFX.Interop
 
         public static explicit operator HPSS(long value) => new HPSS((nint)(value));
 
-        public static implicit operator long(HPSS value) => (long)(value.Value);
+        public static implicit operator long(HPSS value) => value.Value;
 
         public static explicit operator HPSS(nint value) => new HPSS((nint)(value));
 
-        public static implicit operator nint(HPSS value) => (nint)(value.Value);
+        public static implicit operator nint(HPSS value) => value.Value;
 
         public static explicit operator HPSS(sbyte value) => new HPSS((nint)(value));
 

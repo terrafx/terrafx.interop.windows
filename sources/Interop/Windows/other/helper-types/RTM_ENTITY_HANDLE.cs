@@ -45,11 +45,11 @@ namespace TerraFX.Interop
 
         public static explicit operator RTM_ENTITY_HANDLE(long value) => new RTM_ENTITY_HANDLE((nint)(value));
 
-        public static implicit operator long(RTM_ENTITY_HANDLE value) => (long)(value.Value);
+        public static implicit operator long(RTM_ENTITY_HANDLE value) => value.Value;
 
         public static explicit operator RTM_ENTITY_HANDLE(nint value) => new RTM_ENTITY_HANDLE((nint)(value));
 
-        public static implicit operator nint(RTM_ENTITY_HANDLE value) => (nint)(value.Value);
+        public static implicit operator nint(RTM_ENTITY_HANDLE value) => value.Value;
 
         public static explicit operator RTM_ENTITY_HANDLE(sbyte value) => new RTM_ENTITY_HANDLE((nint)(value));
 

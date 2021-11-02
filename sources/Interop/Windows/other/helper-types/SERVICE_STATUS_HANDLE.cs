@@ -51,11 +51,11 @@ namespace TerraFX.Interop
 
         public static explicit operator SERVICE_STATUS_HANDLE(long value) => new SERVICE_STATUS_HANDLE((nint)(value));
 
-        public static implicit operator long(SERVICE_STATUS_HANDLE value) => (long)(value.Value);
+        public static implicit operator long(SERVICE_STATUS_HANDLE value) => value.Value;
 
         public static explicit operator SERVICE_STATUS_HANDLE(nint value) => new SERVICE_STATUS_HANDLE((nint)(value));
 
-        public static implicit operator nint(SERVICE_STATUS_HANDLE value) => (nint)(value.Value);
+        public static implicit operator nint(SERVICE_STATUS_HANDLE value) => value.Value;
 
         public static explicit operator SERVICE_STATUS_HANDLE(sbyte value) => new SERVICE_STATUS_HANDLE((nint)(value));
 

@@ -51,11 +51,11 @@ namespace TerraFX.Interop
 
         public static explicit operator CO_DEVICE_CATALOG_COOKIE(long value) => new CO_DEVICE_CATALOG_COOKIE((nint)(value));
 
-        public static implicit operator long(CO_DEVICE_CATALOG_COOKIE value) => (long)(value.Value);
+        public static implicit operator long(CO_DEVICE_CATALOG_COOKIE value) => value.Value;
 
         public static explicit operator CO_DEVICE_CATALOG_COOKIE(nint value) => new CO_DEVICE_CATALOG_COOKIE((nint)(value));
 
-        public static implicit operator nint(CO_DEVICE_CATALOG_COOKIE value) => (nint)(value.Value);
+        public static implicit operator nint(CO_DEVICE_CATALOG_COOKIE value) => value.Value;
 
         public static explicit operator CO_DEVICE_CATALOG_COOKIE(sbyte value) => new CO_DEVICE_CATALOG_COOKIE((nint)(value));
 

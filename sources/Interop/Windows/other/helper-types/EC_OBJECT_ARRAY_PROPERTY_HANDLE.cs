@@ -51,11 +51,11 @@ namespace TerraFX.Interop
 
         public static explicit operator EC_OBJECT_ARRAY_PROPERTY_HANDLE(long value) => new EC_OBJECT_ARRAY_PROPERTY_HANDLE((nint)(value));
 
-        public static implicit operator long(EC_OBJECT_ARRAY_PROPERTY_HANDLE value) => (long)(value.Value);
+        public static implicit operator long(EC_OBJECT_ARRAY_PROPERTY_HANDLE value) => value.Value;
 
         public static explicit operator EC_OBJECT_ARRAY_PROPERTY_HANDLE(nint value) => new EC_OBJECT_ARRAY_PROPERTY_HANDLE((nint)(value));
 
-        public static implicit operator nint(EC_OBJECT_ARRAY_PROPERTY_HANDLE value) => (nint)(value.Value);
+        public static implicit operator nint(EC_OBJECT_ARRAY_PROPERTY_HANDLE value) => value.Value;
 
         public static explicit operator EC_OBJECT_ARRAY_PROPERTY_HANDLE(sbyte value) => new EC_OBJECT_ARRAY_PROPERTY_HANDLE((nint)(value));
 

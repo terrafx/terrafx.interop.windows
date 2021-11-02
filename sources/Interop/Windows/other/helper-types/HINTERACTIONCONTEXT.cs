@@ -51,11 +51,11 @@ namespace TerraFX.Interop
 
         public static explicit operator HINTERACTIONCONTEXT(long value) => new HINTERACTIONCONTEXT((nint)(value));
 
-        public static implicit operator long(HINTERACTIONCONTEXT value) => (long)(value.Value);
+        public static implicit operator long(HINTERACTIONCONTEXT value) => value.Value;
 
         public static explicit operator HINTERACTIONCONTEXT(nint value) => new HINTERACTIONCONTEXT((nint)(value));
 
-        public static implicit operator nint(HINTERACTIONCONTEXT value) => (nint)(value.Value);
+        public static implicit operator nint(HINTERACTIONCONTEXT value) => value.Value;
 
         public static explicit operator HINTERACTIONCONTEXT(sbyte value) => new HINTERACTIONCONTEXT((nint)(value));
 

@@ -51,11 +51,11 @@ namespace TerraFX.Interop
 
         public static explicit operator HRECOALT(long value) => new HRECOALT((nint)(value));
 
-        public static implicit operator long(HRECOALT value) => (long)(value.Value);
+        public static implicit operator long(HRECOALT value) => value.Value;
 
         public static explicit operator HRECOALT(nint value) => new HRECOALT((nint)(value));
 
-        public static implicit operator nint(HRECOALT value) => (nint)(value.Value);
+        public static implicit operator nint(HRECOALT value) => value.Value;
 
         public static explicit operator HRECOALT(sbyte value) => new HRECOALT((nint)(value));
 

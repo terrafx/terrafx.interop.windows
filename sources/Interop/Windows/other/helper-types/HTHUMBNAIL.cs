@@ -51,11 +51,11 @@ namespace TerraFX.Interop
 
         public static explicit operator HTHUMBNAIL(long value) => new HTHUMBNAIL((nint)(value));
 
-        public static implicit operator long(HTHUMBNAIL value) => (long)(value.Value);
+        public static implicit operator long(HTHUMBNAIL value) => value.Value;
 
         public static explicit operator HTHUMBNAIL(nint value) => new HTHUMBNAIL((nint)(value));
 
-        public static implicit operator nint(HTHUMBNAIL value) => (nint)(value.Value);
+        public static implicit operator nint(HTHUMBNAIL value) => value.Value;
 
         public static explicit operator HTHUMBNAIL(sbyte value) => new HTHUMBNAIL((nint)(value));
 

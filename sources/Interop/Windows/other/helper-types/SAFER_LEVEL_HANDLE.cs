@@ -51,11 +51,11 @@ namespace TerraFX.Interop
 
         public static explicit operator SAFER_LEVEL_HANDLE(long value) => new SAFER_LEVEL_HANDLE((nint)(value));
 
-        public static implicit operator long(SAFER_LEVEL_HANDLE value) => (long)(value.Value);
+        public static implicit operator long(SAFER_LEVEL_HANDLE value) => value.Value;
 
         public static explicit operator SAFER_LEVEL_HANDLE(nint value) => new SAFER_LEVEL_HANDLE((nint)(value));
 
-        public static implicit operator nint(SAFER_LEVEL_HANDLE value) => (nint)(value.Value);
+        public static implicit operator nint(SAFER_LEVEL_HANDLE value) => value.Value;
 
         public static explicit operator SAFER_LEVEL_HANDLE(sbyte value) => new SAFER_LEVEL_HANDLE((nint)(value));
 

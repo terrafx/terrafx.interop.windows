@@ -51,11 +51,11 @@ namespace TerraFX.Interop
 
         public static explicit operator HKEY(long value) => new HKEY((nint)(value));
 
-        public static implicit operator long(HKEY value) => (long)(value.Value);
+        public static implicit operator long(HKEY value) => value.Value;
 
         public static explicit operator HKEY(nint value) => new HKEY((nint)(value));
 
-        public static implicit operator nint(HKEY value) => (nint)(value.Value);
+        public static implicit operator nint(HKEY value) => value.Value;
 
         public static explicit operator HKEY(sbyte value) => new HKEY((nint)(value));
 

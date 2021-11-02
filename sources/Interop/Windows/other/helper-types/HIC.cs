@@ -51,11 +51,11 @@ namespace TerraFX.Interop
 
         public static explicit operator HIC(long value) => new HIC((nint)(value));
 
-        public static implicit operator long(HIC value) => (long)(value.Value);
+        public static implicit operator long(HIC value) => value.Value;
 
         public static explicit operator HIC(nint value) => new HIC((nint)(value));
 
-        public static implicit operator nint(HIC value) => (nint)(value.Value);
+        public static implicit operator nint(HIC value) => value.Value;
 
         public static explicit operator HIC(sbyte value) => new HIC((nint)(value));
 

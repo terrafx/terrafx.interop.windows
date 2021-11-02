@@ -51,11 +51,11 @@ namespace TerraFX.Interop
 
         public static explicit operator SPWORDHANDLE(long value) => new SPWORDHANDLE((nint)(value));
 
-        public static implicit operator long(SPWORDHANDLE value) => (long)(value.Value);
+        public static implicit operator long(SPWORDHANDLE value) => value.Value;
 
         public static explicit operator SPWORDHANDLE(nint value) => new SPWORDHANDLE((nint)(value));
 
-        public static implicit operator nint(SPWORDHANDLE value) => (nint)(value.Value);
+        public static implicit operator nint(SPWORDHANDLE value) => value.Value;
 
         public static explicit operator SPWORDHANDLE(sbyte value) => new SPWORDHANDLE((nint)(value));
 

@@ -51,11 +51,11 @@ namespace TerraFX.Interop
 
         public static explicit operator HSEMAPHORE(long value) => new HSEMAPHORE((nint)(value));
 
-        public static implicit operator long(HSEMAPHORE value) => (long)(value.Value);
+        public static implicit operator long(HSEMAPHORE value) => value.Value;
 
         public static explicit operator HSEMAPHORE(nint value) => new HSEMAPHORE((nint)(value));
 
-        public static implicit operator nint(HSEMAPHORE value) => (nint)(value.Value);
+        public static implicit operator nint(HSEMAPHORE value) => value.Value;
 
         public static explicit operator HSEMAPHORE(sbyte value) => new HSEMAPHORE((nint)(value));
 

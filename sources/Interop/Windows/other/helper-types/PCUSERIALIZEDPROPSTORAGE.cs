@@ -45,11 +45,11 @@ namespace TerraFX.Interop
 
         public static explicit operator PCUSERIALIZEDPROPSTORAGE(long value) => new PCUSERIALIZEDPROPSTORAGE((nint)(value));
 
-        public static implicit operator long(PCUSERIALIZEDPROPSTORAGE value) => (long)(value.Value);
+        public static implicit operator long(PCUSERIALIZEDPROPSTORAGE value) => value.Value;
 
         public static explicit operator PCUSERIALIZEDPROPSTORAGE(nint value) => new PCUSERIALIZEDPROPSTORAGE((nint)(value));
 
-        public static implicit operator nint(PCUSERIALIZEDPROPSTORAGE value) => (nint)(value.Value);
+        public static implicit operator nint(PCUSERIALIZEDPROPSTORAGE value) => value.Value;
 
         public static explicit operator PCUSERIALIZEDPROPSTORAGE(sbyte value) => new PCUSERIALIZEDPROPSTORAGE((nint)(value));
 

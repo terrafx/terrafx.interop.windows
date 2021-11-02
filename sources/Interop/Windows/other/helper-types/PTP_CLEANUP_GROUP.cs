@@ -45,11 +45,11 @@ namespace TerraFX.Interop
 
         public static explicit operator PTP_CLEANUP_GROUP(long value) => new PTP_CLEANUP_GROUP((nint)(value));
 
-        public static implicit operator long(PTP_CLEANUP_GROUP value) => (long)(value.Value);
+        public static implicit operator long(PTP_CLEANUP_GROUP value) => value.Value;
 
         public static explicit operator PTP_CLEANUP_GROUP(nint value) => new PTP_CLEANUP_GROUP((nint)(value));
 
-        public static implicit operator nint(PTP_CLEANUP_GROUP value) => (nint)(value.Value);
+        public static implicit operator nint(PTP_CLEANUP_GROUP value) => value.Value;
 
         public static explicit operator PTP_CLEANUP_GROUP(sbyte value) => new PTP_CLEANUP_GROUP((nint)(value));
 

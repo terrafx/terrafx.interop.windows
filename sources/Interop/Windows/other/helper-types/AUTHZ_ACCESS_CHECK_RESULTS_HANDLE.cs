@@ -51,11 +51,11 @@ namespace TerraFX.Interop
 
         public static explicit operator AUTHZ_ACCESS_CHECK_RESULTS_HANDLE(long value) => new AUTHZ_ACCESS_CHECK_RESULTS_HANDLE((nint)(value));
 
-        public static implicit operator long(AUTHZ_ACCESS_CHECK_RESULTS_HANDLE value) => (long)(value.Value);
+        public static implicit operator long(AUTHZ_ACCESS_CHECK_RESULTS_HANDLE value) => value.Value;
 
         public static explicit operator AUTHZ_ACCESS_CHECK_RESULTS_HANDLE(nint value) => new AUTHZ_ACCESS_CHECK_RESULTS_HANDLE((nint)(value));
 
-        public static implicit operator nint(AUTHZ_ACCESS_CHECK_RESULTS_HANDLE value) => (nint)(value.Value);
+        public static implicit operator nint(AUTHZ_ACCESS_CHECK_RESULTS_HANDLE value) => value.Value;
 
         public static explicit operator AUTHZ_ACCESS_CHECK_RESULTS_HANDLE(sbyte value) => new AUTHZ_ACCESS_CHECK_RESULTS_HANDLE((nint)(value));
 

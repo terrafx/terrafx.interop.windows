@@ -51,11 +51,11 @@ namespace TerraFX.Interop
 
         public static explicit operator HCRYPTPROV_OR_NCRYPT_KEY_HANDLE(long value) => new HCRYPTPROV_OR_NCRYPT_KEY_HANDLE((nint)(value));
 
-        public static implicit operator long(HCRYPTPROV_OR_NCRYPT_KEY_HANDLE value) => (long)(value.Value);
+        public static implicit operator long(HCRYPTPROV_OR_NCRYPT_KEY_HANDLE value) => value.Value;
 
         public static explicit operator HCRYPTPROV_OR_NCRYPT_KEY_HANDLE(nint value) => new HCRYPTPROV_OR_NCRYPT_KEY_HANDLE((nint)(value));
 
-        public static implicit operator nint(HCRYPTPROV_OR_NCRYPT_KEY_HANDLE value) => (nint)(value.Value);
+        public static implicit operator nint(HCRYPTPROV_OR_NCRYPT_KEY_HANDLE value) => value.Value;
 
         public static explicit operator HCRYPTPROV_OR_NCRYPT_KEY_HANDLE(sbyte value) => new HCRYPTPROV_OR_NCRYPT_KEY_HANDLE((nint)(value));
 

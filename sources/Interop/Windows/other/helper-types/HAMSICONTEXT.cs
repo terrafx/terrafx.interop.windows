@@ -51,11 +51,11 @@ namespace TerraFX.Interop
 
         public static explicit operator HAMSICONTEXT(long value) => new HAMSICONTEXT((nint)(value));
 
-        public static implicit operator long(HAMSICONTEXT value) => (long)(value.Value);
+        public static implicit operator long(HAMSICONTEXT value) => value.Value;
 
         public static explicit operator HAMSICONTEXT(nint value) => new HAMSICONTEXT((nint)(value));
 
-        public static implicit operator nint(HAMSICONTEXT value) => (nint)(value.Value);
+        public static implicit operator nint(HAMSICONTEXT value) => value.Value;
 
         public static explicit operator HAMSICONTEXT(sbyte value) => new HAMSICONTEXT((nint)(value));
 

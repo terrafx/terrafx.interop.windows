@@ -51,11 +51,11 @@ namespace TerraFX.Interop
 
         public static explicit operator CO_MTA_USAGE_COOKIE(long value) => new CO_MTA_USAGE_COOKIE((nint)(value));
 
-        public static implicit operator long(CO_MTA_USAGE_COOKIE value) => (long)(value.Value);
+        public static implicit operator long(CO_MTA_USAGE_COOKIE value) => value.Value;
 
         public static explicit operator CO_MTA_USAGE_COOKIE(nint value) => new CO_MTA_USAGE_COOKIE((nint)(value));
 
-        public static implicit operator nint(CO_MTA_USAGE_COOKIE value) => (nint)(value.Value);
+        public static implicit operator nint(CO_MTA_USAGE_COOKIE value) => value.Value;
 
         public static explicit operator CO_MTA_USAGE_COOKIE(sbyte value) => new CO_MTA_USAGE_COOKIE((nint)(value));
 

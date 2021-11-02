@@ -51,11 +51,11 @@ namespace TerraFX.Interop
 
         public static explicit operator HGDIOBJ(long value) => new HGDIOBJ((nint)(value));
 
-        public static implicit operator long(HGDIOBJ value) => (long)(value.Value);
+        public static implicit operator long(HGDIOBJ value) => value.Value;
 
         public static explicit operator HGDIOBJ(nint value) => new HGDIOBJ((nint)(value));
 
-        public static implicit operator nint(HGDIOBJ value) => (nint)(value.Value);
+        public static implicit operator nint(HGDIOBJ value) => value.Value;
 
         public static explicit operator HGDIOBJ(sbyte value) => new HGDIOBJ((nint)(value));
 

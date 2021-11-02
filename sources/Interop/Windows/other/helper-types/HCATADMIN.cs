@@ -51,11 +51,11 @@ namespace TerraFX.Interop
 
         public static explicit operator HCATADMIN(long value) => new HCATADMIN((nint)(value));
 
-        public static implicit operator long(HCATADMIN value) => (long)(value.Value);
+        public static implicit operator long(HCATADMIN value) => value.Value;
 
         public static explicit operator HCATADMIN(nint value) => new HCATADMIN((nint)(value));
 
-        public static implicit operator nint(HCATADMIN value) => (nint)(value.Value);
+        public static implicit operator nint(HCATADMIN value) => value.Value;
 
         public static explicit operator HCATADMIN(sbyte value) => new HCATADMIN((nint)(value));
 

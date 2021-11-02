@@ -51,11 +51,11 @@ namespace TerraFX.Interop
 
         public static explicit operator HADDRESS(long value) => new HADDRESS((nint)(value));
 
-        public static implicit operator long(HADDRESS value) => (long)(value.Value);
+        public static implicit operator long(HADDRESS value) => value.Value;
 
         public static explicit operator HADDRESS(nint value) => new HADDRESS((nint)(value));
 
-        public static implicit operator nint(HADDRESS value) => (nint)(value.Value);
+        public static implicit operator nint(HADDRESS value) => value.Value;
 
         public static explicit operator HADDRESS(sbyte value) => new HADDRESS((nint)(value));
 

@@ -51,11 +51,11 @@ namespace TerraFX.Interop
 
         public static explicit operator HCATINFO(long value) => new HCATINFO((nint)(value));
 
-        public static implicit operator long(HCATINFO value) => (long)(value.Value);
+        public static implicit operator long(HCATINFO value) => value.Value;
 
         public static explicit operator HCATINFO(nint value) => new HCATINFO((nint)(value));
 
-        public static implicit operator nint(HCATINFO value) => (nint)(value.Value);
+        public static implicit operator nint(HCATINFO value) => value.Value;
 
         public static explicit operator HCATINFO(sbyte value) => new HCATINFO((nint)(value));
 

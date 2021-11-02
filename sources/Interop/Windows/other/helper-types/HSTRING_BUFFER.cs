@@ -51,11 +51,11 @@ namespace TerraFX.Interop
 
         public static explicit operator HSTRING_BUFFER(long value) => new HSTRING_BUFFER((nint)(value));
 
-        public static implicit operator long(HSTRING_BUFFER value) => (long)(value.Value);
+        public static implicit operator long(HSTRING_BUFFER value) => value.Value;
 
         public static explicit operator HSTRING_BUFFER(nint value) => new HSTRING_BUFFER((nint)(value));
 
-        public static implicit operator nint(HSTRING_BUFFER value) => (nint)(value.Value);
+        public static implicit operator nint(HSTRING_BUFFER value) => value.Value;
 
         public static explicit operator HSTRING_BUFFER(sbyte value) => new HSTRING_BUFFER((nint)(value));
 

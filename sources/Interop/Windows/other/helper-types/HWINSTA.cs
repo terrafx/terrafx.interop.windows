@@ -51,11 +51,11 @@ namespace TerraFX.Interop
 
         public static explicit operator HWINSTA(long value) => new HWINSTA((nint)(value));
 
-        public static implicit operator long(HWINSTA value) => (long)(value.Value);
+        public static implicit operator long(HWINSTA value) => value.Value;
 
         public static explicit operator HWINSTA(nint value) => new HWINSTA((nint)(value));
 
-        public static implicit operator nint(HWINSTA value) => (nint)(value.Value);
+        public static implicit operator nint(HWINSTA value) => value.Value;
 
         public static explicit operator HWINSTA(sbyte value) => new HWINSTA((nint)(value));
 

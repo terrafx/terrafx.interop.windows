@@ -51,11 +51,11 @@ namespace TerraFX.Interop
 
         public static explicit operator CIMFS_STREAM_HANDLE(long value) => new CIMFS_STREAM_HANDLE((nint)(value));
 
-        public static implicit operator long(CIMFS_STREAM_HANDLE value) => (long)(value.Value);
+        public static implicit operator long(CIMFS_STREAM_HANDLE value) => value.Value;
 
         public static explicit operator CIMFS_STREAM_HANDLE(nint value) => new CIMFS_STREAM_HANDLE((nint)(value));
 
-        public static implicit operator nint(CIMFS_STREAM_HANDLE value) => (nint)(value.Value);
+        public static implicit operator nint(CIMFS_STREAM_HANDLE value) => value.Value;
 
         public static explicit operator CIMFS_STREAM_HANDLE(sbyte value) => new CIMFS_STREAM_HANDLE((nint)(value));
 

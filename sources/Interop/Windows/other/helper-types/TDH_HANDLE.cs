@@ -51,11 +51,11 @@ namespace TerraFX.Interop
 
         public static explicit operator TDH_HANDLE(long value) => new TDH_HANDLE((nint)(value));
 
-        public static implicit operator long(TDH_HANDLE value) => (long)(value.Value);
+        public static implicit operator long(TDH_HANDLE value) => value.Value;
 
         public static explicit operator TDH_HANDLE(nint value) => new TDH_HANDLE((nint)(value));
 
-        public static implicit operator nint(TDH_HANDLE value) => (nint)(value.Value);
+        public static implicit operator nint(TDH_HANDLE value) => value.Value;
 
         public static explicit operator TDH_HANDLE(sbyte value) => new TDH_HANDLE((nint)(value));
 

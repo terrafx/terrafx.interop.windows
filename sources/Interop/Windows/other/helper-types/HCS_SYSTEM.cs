@@ -51,11 +51,11 @@ namespace TerraFX.Interop
 
         public static explicit operator HCS_SYSTEM(long value) => new HCS_SYSTEM((nint)(value));
 
-        public static implicit operator long(HCS_SYSTEM value) => (long)(value.Value);
+        public static implicit operator long(HCS_SYSTEM value) => value.Value;
 
         public static explicit operator HCS_SYSTEM(nint value) => new HCS_SYSTEM((nint)(value));
 
-        public static implicit operator nint(HCS_SYSTEM value) => (nint)(value.Value);
+        public static implicit operator nint(HCS_SYSTEM value) => value.Value;
 
         public static explicit operator HCS_SYSTEM(sbyte value) => new HCS_SYSTEM((nint)(value));
 

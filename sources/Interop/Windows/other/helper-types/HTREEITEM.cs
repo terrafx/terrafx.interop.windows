@@ -51,11 +51,11 @@ namespace TerraFX.Interop
 
         public static explicit operator HTREEITEM(long value) => new HTREEITEM((nint)(value));
 
-        public static implicit operator long(HTREEITEM value) => (long)(value.Value);
+        public static implicit operator long(HTREEITEM value) => value.Value;
 
         public static explicit operator HTREEITEM(nint value) => new HTREEITEM((nint)(value));
 
-        public static implicit operator nint(HTREEITEM value) => (nint)(value.Value);
+        public static implicit operator nint(HTREEITEM value) => value.Value;
 
         public static explicit operator HTREEITEM(sbyte value) => new HTREEITEM((nint)(value));
 

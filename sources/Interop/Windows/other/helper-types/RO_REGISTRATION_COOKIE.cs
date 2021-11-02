@@ -45,11 +45,11 @@ namespace TerraFX.Interop
 
         public static explicit operator RO_REGISTRATION_COOKIE(long value) => new RO_REGISTRATION_COOKIE((nint)(value));
 
-        public static implicit operator long(RO_REGISTRATION_COOKIE value) => (long)(value.Value);
+        public static implicit operator long(RO_REGISTRATION_COOKIE value) => value.Value;
 
         public static explicit operator RO_REGISTRATION_COOKIE(nint value) => new RO_REGISTRATION_COOKIE((nint)(value));
 
-        public static implicit operator nint(RO_REGISTRATION_COOKIE value) => (nint)(value.Value);
+        public static implicit operator nint(RO_REGISTRATION_COOKIE value) => value.Value;
 
         public static explicit operator RO_REGISTRATION_COOKIE(sbyte value) => new RO_REGISTRATION_COOKIE((nint)(value));
 

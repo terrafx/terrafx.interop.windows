@@ -51,11 +51,11 @@ namespace TerraFX.Interop
 
         public static explicit operator HFILTER_INSTANCE(long value) => new HFILTER_INSTANCE((nint)(value));
 
-        public static implicit operator long(HFILTER_INSTANCE value) => (long)(value.Value);
+        public static implicit operator long(HFILTER_INSTANCE value) => value.Value;
 
         public static explicit operator HFILTER_INSTANCE(nint value) => new HFILTER_INSTANCE((nint)(value));
 
-        public static implicit operator nint(HFILTER_INSTANCE value) => (nint)(value.Value);
+        public static implicit operator nint(HFILTER_INSTANCE value) => value.Value;
 
         public static explicit operator HFILTER_INSTANCE(sbyte value) => new HFILTER_INSTANCE((nint)(value));
 

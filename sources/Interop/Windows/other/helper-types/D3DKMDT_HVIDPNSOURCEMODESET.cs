@@ -51,11 +51,11 @@ namespace TerraFX.Interop
 
         public static explicit operator D3DKMDT_HVIDPNSOURCEMODESET(long value) => new D3DKMDT_HVIDPNSOURCEMODESET((nint)(value));
 
-        public static implicit operator long(D3DKMDT_HVIDPNSOURCEMODESET value) => (long)(value.Value);
+        public static implicit operator long(D3DKMDT_HVIDPNSOURCEMODESET value) => value.Value;
 
         public static explicit operator D3DKMDT_HVIDPNSOURCEMODESET(nint value) => new D3DKMDT_HVIDPNSOURCEMODESET((nint)(value));
 
-        public static implicit operator nint(D3DKMDT_HVIDPNSOURCEMODESET value) => (nint)(value.Value);
+        public static implicit operator nint(D3DKMDT_HVIDPNSOURCEMODESET value) => value.Value;
 
         public static explicit operator D3DKMDT_HVIDPNSOURCEMODESET(sbyte value) => new D3DKMDT_HVIDPNSOURCEMODESET((nint)(value));
 

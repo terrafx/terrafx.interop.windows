@@ -51,11 +51,11 @@ namespace TerraFX.Interop
 
         public static explicit operator HSNMP_SESSION(long value) => new HSNMP_SESSION((nint)(value));
 
-        public static implicit operator long(HSNMP_SESSION value) => (long)(value.Value);
+        public static implicit operator long(HSNMP_SESSION value) => value.Value;
 
         public static explicit operator HSNMP_SESSION(nint value) => new HSNMP_SESSION((nint)(value));
 
-        public static implicit operator nint(HSNMP_SESSION value) => (nint)(value.Value);
+        public static implicit operator nint(HSNMP_SESSION value) => value.Value;
 
         public static explicit operator HSNMP_SESSION(sbyte value) => new HSNMP_SESSION((nint)(value));
 
