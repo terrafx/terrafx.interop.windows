@@ -53,7 +53,7 @@ namespace TerraFX.Interop
 
         public static explicit operator ushort(LRESULT value) => (ushort)(value.Value);
 
-        public static implicit operator LRESULT(uint value) => new LRESULT((nint)(value));
+        public static explicit operator LRESULT(uint value) => new LRESULT((nint)(value));
 
         public static explicit operator uint(LRESULT value) => (uint)(value.Value);
 

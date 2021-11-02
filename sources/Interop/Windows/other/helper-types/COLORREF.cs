@@ -43,7 +43,7 @@ namespace TerraFX.Interop
 
         public static explicit operator COLORREF(nint value) => new COLORREF((uint)(value));
 
-        public static implicit operator nint(COLORREF value) => (nint)(value.Value);
+        public static explicit operator nint(COLORREF value) => (nint)(value.Value);
 
         public static explicit operator COLORREF(sbyte value) => new COLORREF((uint)(value));
 

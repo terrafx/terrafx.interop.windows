@@ -53,7 +53,7 @@ namespace TerraFX.Interop
 
         public static explicit operator ushort(LPARAM value) => (ushort)(value.Value);
 
-        public static implicit operator LPARAM(uint value) => new LPARAM((nint)(value));
+        public static explicit operator LPARAM(uint value) => new LPARAM((nint)(value));
 
         public static explicit operator uint(LPARAM value) => (uint)(value.Value);
 

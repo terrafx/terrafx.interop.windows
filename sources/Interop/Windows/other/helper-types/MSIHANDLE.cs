@@ -43,7 +43,7 @@ namespace TerraFX.Interop
 
         public static explicit operator MSIHANDLE(nint value) => new MSIHANDLE((uint)(value));
 
-        public static implicit operator nint(MSIHANDLE value) => (nint)(value.Value);
+        public static explicit operator nint(MSIHANDLE value) => (nint)(value.Value);
 
         public static explicit operator MSIHANDLE(sbyte value) => new MSIHANDLE((uint)(value));
 
