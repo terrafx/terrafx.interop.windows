@@ -13,7 +13,7 @@ namespace TerraFX.Interop
             Value = value;
         }
 
-        public static CIMFS_IMAGE_HANDLE INVALID_HANDLE_VALUE => new CIMFS_IMAGE_HANDLE(-1);
+        public static CIMFS_IMAGE_HANDLE INVALID_VALUE => new CIMFS_IMAGE_HANDLE(-1);
 
         public static CIMFS_IMAGE_HANDLE NULL => new CIMFS_IMAGE_HANDLE(0);
 

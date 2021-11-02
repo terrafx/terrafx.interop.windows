@@ -13,7 +13,7 @@ namespace TerraFX.Interop
             Value = value;
         }
 
-        public static HMIDI INVALID_HANDLE_VALUE => new HMIDI(-1);
+        public static HMIDI INVALID_VALUE => new HMIDI(-1);
 
         public static HMIDI NULL => new HMIDI(0);
 

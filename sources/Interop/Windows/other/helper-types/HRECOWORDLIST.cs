@@ -13,7 +13,7 @@ namespace TerraFX.Interop
             Value = value;
         }
 
-        public static HRECOWORDLIST INVALID_HANDLE_VALUE => new HRECOWORDLIST(-1);
+        public static HRECOWORDLIST INVALID_VALUE => new HRECOWORDLIST(-1);
 
         public static HRECOWORDLIST NULL => new HRECOWORDLIST(0);
 

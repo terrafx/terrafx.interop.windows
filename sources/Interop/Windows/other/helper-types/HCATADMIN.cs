@@ -13,7 +13,7 @@ namespace TerraFX.Interop
             Value = value;
         }
 
-        public static HCATADMIN INVALID_HANDLE_VALUE => new HCATADMIN(-1);
+        public static HCATADMIN INVALID_VALUE => new HCATADMIN(-1);
 
         public static HCATADMIN NULL => new HCATADMIN(0);
 

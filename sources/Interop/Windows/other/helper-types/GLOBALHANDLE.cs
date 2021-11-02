@@ -13,7 +13,7 @@ namespace TerraFX.Interop
             Value = value;
         }
 
-        public static GLOBALHANDLE INVALID_HANDLE_VALUE => new GLOBALHANDLE(-1);
+        public static GLOBALHANDLE INVALID_VALUE => new GLOBALHANDLE(-1);
 
         public static GLOBALHANDLE NULL => new GLOBALHANDLE(0);
 

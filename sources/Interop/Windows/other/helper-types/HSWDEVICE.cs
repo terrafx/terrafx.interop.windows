@@ -13,7 +13,7 @@ namespace TerraFX.Interop
             Value = value;
         }
 
-        public static HSWDEVICE INVALID_HANDLE_VALUE => new HSWDEVICE(-1);
+        public static HSWDEVICE INVALID_VALUE => new HSWDEVICE(-1);
 
         public static HSWDEVICE NULL => new HSWDEVICE(0);
 

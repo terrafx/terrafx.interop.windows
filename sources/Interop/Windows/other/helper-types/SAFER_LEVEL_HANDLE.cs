@@ -13,7 +13,7 @@ namespace TerraFX.Interop
             Value = value;
         }
 
-        public static SAFER_LEVEL_HANDLE INVALID_HANDLE_VALUE => new SAFER_LEVEL_HANDLE(-1);
+        public static SAFER_LEVEL_HANDLE INVALID_VALUE => new SAFER_LEVEL_HANDLE(-1);
 
         public static SAFER_LEVEL_HANDLE NULL => new SAFER_LEVEL_HANDLE(0);
 

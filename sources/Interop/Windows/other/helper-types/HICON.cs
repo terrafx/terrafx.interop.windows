@@ -13,7 +13,7 @@ namespace TerraFX.Interop
             Value = value;
         }
 
-        public static HICON INVALID_HANDLE_VALUE => new HICON(-1);
+        public static HICON INVALID_VALUE => new HICON(-1);
 
         public static HICON NULL => new HICON(0);
 

@@ -13,7 +13,7 @@ namespace TerraFX.Interop
             Value = value;
         }
 
-        public static SPSTATEHANDLE INVALID_HANDLE_VALUE => new SPSTATEHANDLE(-1);
+        public static SPSTATEHANDLE INVALID_VALUE => new SPSTATEHANDLE(-1);
 
         public static SPSTATEHANDLE NULL => new SPSTATEHANDLE(0);
 

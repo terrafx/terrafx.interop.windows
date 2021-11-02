@@ -13,7 +13,7 @@ namespace TerraFX.Interop
             Value = value;
         }
 
-        public static HCERTCHAINENGINE INVALID_HANDLE_VALUE => new HCERTCHAINENGINE(-1);
+        public static HCERTCHAINENGINE INVALID_VALUE => new HCERTCHAINENGINE(-1);
 
         public static HCERTCHAINENGINE NULL => new HCERTCHAINENGINE(0);
 

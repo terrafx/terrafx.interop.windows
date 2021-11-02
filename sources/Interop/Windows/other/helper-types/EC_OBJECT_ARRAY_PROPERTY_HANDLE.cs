@@ -13,7 +13,7 @@ namespace TerraFX.Interop
             Value = value;
         }
 
-        public static EC_OBJECT_ARRAY_PROPERTY_HANDLE INVALID_HANDLE_VALUE => new EC_OBJECT_ARRAY_PROPERTY_HANDLE(-1);
+        public static EC_OBJECT_ARRAY_PROPERTY_HANDLE INVALID_VALUE => new EC_OBJECT_ARRAY_PROPERTY_HANDLE(-1);
 
         public static EC_OBJECT_ARRAY_PROPERTY_HANDLE NULL => new EC_OBJECT_ARRAY_PROPERTY_HANDLE(0);
 

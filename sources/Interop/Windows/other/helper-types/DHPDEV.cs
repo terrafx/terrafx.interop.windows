@@ -13,7 +13,7 @@ namespace TerraFX.Interop
             Value = value;
         }
 
-        public static DHPDEV INVALID_HANDLE_VALUE => new DHPDEV(-1);
+        public static DHPDEV INVALID_VALUE => new DHPDEV(-1);
 
         public static DHPDEV NULL => new DHPDEV(0);
 

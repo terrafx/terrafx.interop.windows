@@ -13,7 +13,7 @@ namespace TerraFX.Interop
             Value = value;
         }
 
-        public static HIMC INVALID_HANDLE_VALUE => new HIMC(-1);
+        public static HIMC INVALID_VALUE => new HIMC(-1);
 
         public static HIMC NULL => new HIMC(0);
 

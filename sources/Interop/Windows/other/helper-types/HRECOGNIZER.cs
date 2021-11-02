@@ -13,7 +13,7 @@ namespace TerraFX.Interop
             Value = value;
         }
 
-        public static HRECOGNIZER INVALID_HANDLE_VALUE => new HRECOGNIZER(-1);
+        public static HRECOGNIZER INVALID_VALUE => new HRECOGNIZER(-1);
 
         public static HRECOGNIZER NULL => new HRECOGNIZER(0);
 

@@ -13,7 +13,7 @@ namespace TerraFX.Interop
             Value = value;
         }
 
-        public static D3DKMDT_HVIDPNTOPOLOGY INVALID_HANDLE_VALUE => new D3DKMDT_HVIDPNTOPOLOGY(-1);
+        public static D3DKMDT_HVIDPNTOPOLOGY INVALID_VALUE => new D3DKMDT_HVIDPNTOPOLOGY(-1);
 
         public static D3DKMDT_HVIDPNTOPOLOGY NULL => new D3DKMDT_HVIDPNTOPOLOGY(0);
 

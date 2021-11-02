@@ -13,7 +13,7 @@ namespace TerraFX.Interop
             Value = value;
         }
 
-        public static HHOOK INVALID_HANDLE_VALUE => new HHOOK(-1);
+        public static HHOOK INVALID_VALUE => new HHOOK(-1);
 
         public static HHOOK NULL => new HHOOK(0);
 

@@ -13,7 +13,7 @@ namespace TerraFX.Interop
             Value = value;
         }
 
-        public static HWINSTA INVALID_HANDLE_VALUE => new HWINSTA(-1);
+        public static HWINSTA INVALID_VALUE => new HWINSTA(-1);
 
         public static HWINSTA NULL => new HWINSTA(0);
 

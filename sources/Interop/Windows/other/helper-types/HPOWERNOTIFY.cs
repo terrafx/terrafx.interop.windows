@@ -13,7 +13,7 @@ namespace TerraFX.Interop
             Value = value;
         }
 
-        public static HPOWERNOTIFY INVALID_HANDLE_VALUE => new HPOWERNOTIFY(-1);
+        public static HPOWERNOTIFY INVALID_VALUE => new HPOWERNOTIFY(-1);
 
         public static HPOWERNOTIFY NULL => new HPOWERNOTIFY(0);
 

@@ -13,7 +13,7 @@ namespace TerraFX.Interop
             Value = value;
         }
 
-        public static HCERTSTOREPROV INVALID_HANDLE_VALUE => new HCERTSTOREPROV(-1);
+        public static HCERTSTOREPROV INVALID_VALUE => new HCERTSTOREPROV(-1);
 
         public static HCERTSTOREPROV NULL => new HCERTSTOREPROV(0);
 

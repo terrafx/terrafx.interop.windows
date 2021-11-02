@@ -13,7 +13,7 @@ namespace TerraFX.Interop
             Value = value;
         }
 
-        public static HIMAGELIST INVALID_HANDLE_VALUE => new HIMAGELIST(-1);
+        public static HIMAGELIST INVALID_VALUE => new HIMAGELIST(-1);
 
         public static HIMAGELIST NULL => new HIMAGELIST(0);
 

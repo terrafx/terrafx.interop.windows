@@ -13,7 +13,7 @@ namespace TerraFX.Interop
             Value = value;
         }
 
-        public static HHEADERROW INVALID_HANDLE_VALUE => new HHEADERROW(-1);
+        public static HHEADERROW INVALID_VALUE => new HHEADERROW(-1);
 
         public static HHEADERROW NULL => new HHEADERROW(0);
 

@@ -13,7 +13,7 @@ namespace TerraFX.Interop
             Value = value;
         }
 
-        public static HCOMDB INVALID_HANDLE_VALUE => new HCOMDB(-1);
+        public static HCOMDB INVALID_VALUE => new HCOMDB(-1);
 
         public static HCOMDB NULL => new HCOMDB(0);
 

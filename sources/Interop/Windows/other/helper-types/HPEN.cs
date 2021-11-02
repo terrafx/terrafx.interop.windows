@@ -13,7 +13,7 @@ namespace TerraFX.Interop
             Value = value;
         }
 
-        public static HPEN INVALID_HANDLE_VALUE => new HPEN(-1);
+        public static HPEN INVALID_VALUE => new HPEN(-1);
 
         public static HPEN NULL => new HPEN(0);
 

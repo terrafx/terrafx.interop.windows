@@ -13,7 +13,7 @@ namespace TerraFX.Interop
             Value = value;
         }
 
-        public static HCRYPTOIDFUNCADDR INVALID_HANDLE_VALUE => new HCRYPTOIDFUNCADDR(-1);
+        public static HCRYPTOIDFUNCADDR INVALID_VALUE => new HCRYPTOIDFUNCADDR(-1);
 
         public static HCRYPTOIDFUNCADDR NULL => new HCRYPTOIDFUNCADDR(0);
 

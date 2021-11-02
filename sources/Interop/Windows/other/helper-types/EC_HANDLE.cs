@@ -13,7 +13,7 @@ namespace TerraFX.Interop
             Value = value;
         }
 
-        public static EC_HANDLE INVALID_HANDLE_VALUE => new EC_HANDLE(-1);
+        public static EC_HANDLE INVALID_VALUE => new EC_HANDLE(-1);
 
         public static EC_HANDLE NULL => new EC_HANDLE(0);
 

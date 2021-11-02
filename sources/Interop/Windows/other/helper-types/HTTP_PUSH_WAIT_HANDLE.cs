@@ -13,7 +13,7 @@ namespace TerraFX.Interop
             Value = value;
         }
 
-        public static HTTP_PUSH_WAIT_HANDLE INVALID_HANDLE_VALUE => new HTTP_PUSH_WAIT_HANDLE(-1);
+        public static HTTP_PUSH_WAIT_HANDLE INVALID_VALUE => new HTTP_PUSH_WAIT_HANDLE(-1);
 
         public static HTTP_PUSH_WAIT_HANDLE NULL => new HTTP_PUSH_WAIT_HANDLE(0);
 

@@ -13,7 +13,7 @@ namespace TerraFX.Interop
             Value = value;
         }
 
-        public static HPAINTBUFFER INVALID_HANDLE_VALUE => new HPAINTBUFFER(-1);
+        public static HPAINTBUFFER INVALID_VALUE => new HPAINTBUFFER(-1);
 
         public static HPAINTBUFFER NULL => new HPAINTBUFFER(0);
 

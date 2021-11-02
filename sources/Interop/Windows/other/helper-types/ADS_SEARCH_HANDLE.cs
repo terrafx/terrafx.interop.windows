@@ -13,7 +13,7 @@ namespace TerraFX.Interop
             Value = value;
         }
 
-        public static ADS_SEARCH_HANDLE INVALID_HANDLE_VALUE => new ADS_SEARCH_HANDLE(-1);
+        public static ADS_SEARCH_HANDLE INVALID_VALUE => new ADS_SEARCH_HANDLE(-1);
 
         public static ADS_SEARCH_HANDLE NULL => new ADS_SEARCH_HANDLE(0);
 

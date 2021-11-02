@@ -13,7 +13,7 @@ namespace TerraFX.Interop
             Value = value;
         }
 
-        public static CIMFS_STREAM_HANDLE INVALID_HANDLE_VALUE => new CIMFS_STREAM_HANDLE(-1);
+        public static CIMFS_STREAM_HANDLE INVALID_VALUE => new CIMFS_STREAM_HANDLE(-1);
 
         public static CIMFS_STREAM_HANDLE NULL => new CIMFS_STREAM_HANDLE(0);
 

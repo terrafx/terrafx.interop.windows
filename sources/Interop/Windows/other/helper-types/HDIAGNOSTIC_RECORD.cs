@@ -13,7 +13,7 @@ namespace TerraFX.Interop
             Value = value;
         }
 
-        public static HDIAGNOSTIC_RECORD INVALID_HANDLE_VALUE => new HDIAGNOSTIC_RECORD(-1);
+        public static HDIAGNOSTIC_RECORD INVALID_VALUE => new HDIAGNOSTIC_RECORD(-1);
 
         public static HDIAGNOSTIC_RECORD NULL => new HDIAGNOSTIC_RECORD(0);
 

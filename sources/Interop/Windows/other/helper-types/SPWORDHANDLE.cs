@@ -13,7 +13,7 @@ namespace TerraFX.Interop
             Value = value;
         }
 
-        public static SPWORDHANDLE INVALID_HANDLE_VALUE => new SPWORDHANDLE(-1);
+        public static SPWORDHANDLE INVALID_VALUE => new SPWORDHANDLE(-1);
 
         public static SPWORDHANDLE NULL => new SPWORDHANDLE(0);
 

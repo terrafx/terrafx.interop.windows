@@ -13,7 +13,7 @@ namespace TerraFX.Interop
             Value = value;
         }
 
-        public static HTRANSFORM INVALID_HANDLE_VALUE => new HTRANSFORM(-1);
+        public static HTRANSFORM INVALID_VALUE => new HTRANSFORM(-1);
 
         public static HTRANSFORM NULL => new HTRANSFORM(0);
 

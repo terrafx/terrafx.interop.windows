@@ -13,7 +13,7 @@ namespace TerraFX.Interop
             Value = value;
         }
 
-        public static HSNMP_CONTEXT INVALID_HANDLE_VALUE => new HSNMP_CONTEXT(-1);
+        public static HSNMP_CONTEXT INVALID_VALUE => new HSNMP_CONTEXT(-1);
 
         public static HSNMP_CONTEXT NULL => new HSNMP_CONTEXT(0);
 

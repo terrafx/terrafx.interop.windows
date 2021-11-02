@@ -13,7 +13,7 @@ namespace TerraFX.Interop
             Value = value;
         }
 
-        public static HIFTIMESTAMPCHANGE INVALID_HANDLE_VALUE => new HIFTIMESTAMPCHANGE(-1);
+        public static HIFTIMESTAMPCHANGE INVALID_VALUE => new HIFTIMESTAMPCHANGE(-1);
 
         public static HIFTIMESTAMPCHANGE NULL => new HIFTIMESTAMPCHANGE(0);
 

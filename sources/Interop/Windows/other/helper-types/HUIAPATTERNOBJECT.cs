@@ -13,7 +13,7 @@ namespace TerraFX.Interop
             Value = value;
         }
 
-        public static HUIAPATTERNOBJECT INVALID_HANDLE_VALUE => new HUIAPATTERNOBJECT(-1);
+        public static HUIAPATTERNOBJECT INVALID_VALUE => new HUIAPATTERNOBJECT(-1);
 
         public static HUIAPATTERNOBJECT NULL => new HUIAPATTERNOBJECT(0);
 

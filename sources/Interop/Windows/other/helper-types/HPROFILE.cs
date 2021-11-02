@@ -13,7 +13,7 @@ namespace TerraFX.Interop
             Value = value;
         }
 
-        public static HPROFILE INVALID_HANDLE_VALUE => new HPROFILE(-1);
+        public static HPROFILE INVALID_VALUE => new HPROFILE(-1);
 
         public static HPROFILE NULL => new HPROFILE(0);
 

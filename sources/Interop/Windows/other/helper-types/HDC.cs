@@ -13,7 +13,7 @@ namespace TerraFX.Interop
             Value = value;
         }
 
-        public static HDC INVALID_HANDLE_VALUE => new HDC(-1);
+        public static HDC INVALID_VALUE => new HDC(-1);
 
         public static HDC NULL => new HDC(0);
 

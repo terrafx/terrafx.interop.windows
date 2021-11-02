@@ -13,7 +13,7 @@ namespace TerraFX.Interop
             Value = value;
         }
 
-        public static HUIATEXTRANGE INVALID_HANDLE_VALUE => new HUIATEXTRANGE(-1);
+        public static HUIATEXTRANGE INVALID_VALUE => new HUIATEXTRANGE(-1);
 
         public static HUIATEXTRANGE NULL => new HUIATEXTRANGE(0);
 

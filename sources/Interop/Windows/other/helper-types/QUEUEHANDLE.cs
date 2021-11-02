@@ -13,7 +13,7 @@ namespace TerraFX.Interop
             Value = value;
         }
 
-        public static QUEUEHANDLE INVALID_HANDLE_VALUE => new QUEUEHANDLE(-1);
+        public static QUEUEHANDLE INVALID_VALUE => new QUEUEHANDLE(-1);
 
         public static QUEUEHANDLE NULL => new QUEUEHANDLE(0);
 

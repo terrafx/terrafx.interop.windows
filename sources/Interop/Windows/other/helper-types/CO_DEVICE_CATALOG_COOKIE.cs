@@ -13,7 +13,7 @@ namespace TerraFX.Interop
             Value = value;
         }
 
-        public static CO_DEVICE_CATALOG_COOKIE INVALID_HANDLE_VALUE => new CO_DEVICE_CATALOG_COOKIE(-1);
+        public static CO_DEVICE_CATALOG_COOKIE INVALID_VALUE => new CO_DEVICE_CATALOG_COOKIE(-1);
 
         public static CO_DEVICE_CATALOG_COOKIE NULL => new CO_DEVICE_CATALOG_COOKIE(0);
 

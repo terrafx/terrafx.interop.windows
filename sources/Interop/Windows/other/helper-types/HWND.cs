@@ -13,7 +13,7 @@ namespace TerraFX.Interop
             Value = value;
         }
 
-        public static HWND INVALID_HANDLE_VALUE => new HWND(-1);
+        public static HWND INVALID_VALUE => new HWND(-1);
 
         public static HWND NULL => new HWND(0);
 

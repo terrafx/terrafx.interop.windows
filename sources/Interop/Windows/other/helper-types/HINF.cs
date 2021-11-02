@@ -13,7 +13,7 @@ namespace TerraFX.Interop
             Value = value;
         }
 
-        public static HINF INVALID_HANDLE_VALUE => new HINF(-1);
+        public static HINF INVALID_VALUE => new HINF(-1);
 
         public static HINF NULL => new HINF(0);
 

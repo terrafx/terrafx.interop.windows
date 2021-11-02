@@ -13,7 +13,7 @@ namespace TerraFX.Interop
             Value = value;
         }
 
-        public static HMACHINE INVALID_HANDLE_VALUE => new HMACHINE(-1);
+        public static HMACHINE INVALID_VALUE => new HMACHINE(-1);
 
         public static HMACHINE NULL => new HMACHINE(0);
 

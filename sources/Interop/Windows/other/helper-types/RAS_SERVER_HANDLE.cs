@@ -13,7 +13,7 @@ namespace TerraFX.Interop
             Value = value;
         }
 
-        public static RAS_SERVER_HANDLE INVALID_HANDLE_VALUE => new RAS_SERVER_HANDLE(-1);
+        public static RAS_SERVER_HANDLE INVALID_VALUE => new RAS_SERVER_HANDLE(-1);
 
         public static RAS_SERVER_HANDLE NULL => new RAS_SERVER_HANDLE(0);
 

@@ -13,7 +13,7 @@ namespace TerraFX.Interop
             Value = value;
         }
 
-        public static HPORT INVALID_HANDLE_VALUE => new HPORT(-1);
+        public static HPORT INVALID_VALUE => new HPORT(-1);
 
         public static HPORT NULL => new HPORT(0);
 

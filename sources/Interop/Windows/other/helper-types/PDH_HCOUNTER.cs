@@ -13,7 +13,7 @@ namespace TerraFX.Interop
             Value = value;
         }
 
-        public static PDH_HCOUNTER INVALID_HANDLE_VALUE => new PDH_HCOUNTER(-1);
+        public static PDH_HCOUNTER INVALID_VALUE => new PDH_HCOUNTER(-1);
 
         public static PDH_HCOUNTER NULL => new PDH_HCOUNTER(0);
 

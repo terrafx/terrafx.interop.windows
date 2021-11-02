@@ -13,7 +13,7 @@ namespace TerraFX.Interop
             Value = value;
         }
 
-        public static HAMSISESSION INVALID_HANDLE_VALUE => new HAMSISESSION(-1);
+        public static HAMSISESSION INVALID_VALUE => new HAMSISESSION(-1);
 
         public static HAMSISESSION NULL => new HAMSISESSION(0);
 

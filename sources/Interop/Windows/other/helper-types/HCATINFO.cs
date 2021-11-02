@@ -13,7 +13,7 @@ namespace TerraFX.Interop
             Value = value;
         }
 
-        public static HCATINFO INVALID_HANDLE_VALUE => new HCATINFO(-1);
+        public static HCATINFO INVALID_VALUE => new HCATINFO(-1);
 
         public static HCATINFO NULL => new HCATINFO(0);
 

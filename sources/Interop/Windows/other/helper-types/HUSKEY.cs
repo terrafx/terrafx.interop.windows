@@ -13,7 +13,7 @@ namespace TerraFX.Interop
             Value = value;
         }
 
-        public static HUSKEY INVALID_HANDLE_VALUE => new HUSKEY(-1);
+        public static HUSKEY INVALID_VALUE => new HUSKEY(-1);
 
         public static HUSKEY NULL => new HUSKEY(0);
 

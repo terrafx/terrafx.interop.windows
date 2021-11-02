@@ -13,7 +13,7 @@ namespace TerraFX.Interop
             Value = value;
         }
 
-        public static HDSKSPC INVALID_HANDLE_VALUE => new HDSKSPC(-1);
+        public static HDSKSPC INVALID_VALUE => new HDSKSPC(-1);
 
         public static HDSKSPC NULL => new HDSKSPC(0);
 

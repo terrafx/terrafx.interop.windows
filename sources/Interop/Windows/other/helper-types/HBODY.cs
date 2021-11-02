@@ -13,7 +13,7 @@ namespace TerraFX.Interop
             Value = value;
         }
 
-        public static HBODY INVALID_HANDLE_VALUE => new HBODY(-1);
+        public static HBODY INVALID_VALUE => new HBODY(-1);
 
         public static HBODY NULL => new HBODY(0);
 

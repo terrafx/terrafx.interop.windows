@@ -13,7 +13,7 @@ namespace TerraFX.Interop
             Value = value;
         }
 
-        public static HCERT_SERVER_OCSP_RESPONSE INVALID_HANDLE_VALUE => new HCERT_SERVER_OCSP_RESPONSE(-1);
+        public static HCERT_SERVER_OCSP_RESPONSE INVALID_VALUE => new HCERT_SERVER_OCSP_RESPONSE(-1);
 
         public static HCERT_SERVER_OCSP_RESPONSE NULL => new HCERT_SERVER_OCSP_RESPONSE(0);
 

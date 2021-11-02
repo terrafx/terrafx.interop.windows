@@ -13,7 +13,7 @@ namespace TerraFX.Interop
             Value = value;
         }
 
-        public static HGLRC INVALID_HANDLE_VALUE => new HGLRC(-1);
+        public static HGLRC INVALID_VALUE => new HGLRC(-1);
 
         public static HGLRC NULL => new HGLRC(0);
 

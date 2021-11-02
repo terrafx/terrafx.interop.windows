@@ -13,7 +13,7 @@ namespace TerraFX.Interop
             Value = value;
         }
 
-        public static DPI_AWARENESS_CONTEXT INVALID_HANDLE_VALUE => new DPI_AWARENESS_CONTEXT(-1);
+        public static DPI_AWARENESS_CONTEXT INVALID_VALUE => new DPI_AWARENESS_CONTEXT(-1);
 
         public static DPI_AWARENESS_CONTEXT NULL => new DPI_AWARENESS_CONTEXT(0);
 

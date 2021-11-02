@@ -13,7 +13,7 @@ namespace TerraFX.Interop
             Value = value;
         }
 
-        public static HDESK INVALID_HANDLE_VALUE => new HDESK(-1);
+        public static HDESK INVALID_VALUE => new HDESK(-1);
 
         public static HDESK NULL => new HDESK(0);
 

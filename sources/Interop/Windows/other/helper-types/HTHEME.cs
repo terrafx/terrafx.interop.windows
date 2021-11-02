@@ -13,7 +13,7 @@ namespace TerraFX.Interop
             Value = value;
         }
 
-        public static HTHEME INVALID_HANDLE_VALUE => new HTHEME(-1);
+        public static HTHEME INVALID_VALUE => new HTHEME(-1);
 
         public static HTHEME NULL => new HTHEME(0);
 

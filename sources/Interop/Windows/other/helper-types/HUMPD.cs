@@ -13,7 +13,7 @@ namespace TerraFX.Interop
             Value = value;
         }
 
-        public static HUMPD INVALID_HANDLE_VALUE => new HUMPD(-1);
+        public static HUMPD INVALID_VALUE => new HUMPD(-1);
 
         public static HUMPD NULL => new HUMPD(0);
 

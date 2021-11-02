@@ -13,7 +13,7 @@ namespace TerraFX.Interop
             Value = value;
         }
 
-        public static HDRAWDIB INVALID_HANDLE_VALUE => new HDRAWDIB(-1);
+        public static HDRAWDIB INVALID_VALUE => new HDRAWDIB(-1);
 
         public static HDRAWDIB NULL => new HDRAWDIB(0);
 

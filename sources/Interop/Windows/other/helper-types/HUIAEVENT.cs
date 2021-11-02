@@ -13,7 +13,7 @@ namespace TerraFX.Interop
             Value = value;
         }
 
-        public static HUIAEVENT INVALID_HANDLE_VALUE => new HUIAEVENT(-1);
+        public static HUIAEVENT INVALID_VALUE => new HUIAEVENT(-1);
 
         public static HUIAEVENT NULL => new HUIAEVENT(0);
 

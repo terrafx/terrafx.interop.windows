@@ -13,7 +13,7 @@ namespace TerraFX.Interop
             Value = value;
         }
 
-        public static RESOURCE_HANDLE INVALID_HANDLE_VALUE => new RESOURCE_HANDLE(-1);
+        public static RESOURCE_HANDLE INVALID_VALUE => new RESOURCE_HANDLE(-1);
 
         public static RESOURCE_HANDLE NULL => new RESOURCE_HANDLE(0);
 

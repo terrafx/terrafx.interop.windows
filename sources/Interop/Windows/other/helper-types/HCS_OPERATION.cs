@@ -13,7 +13,7 @@ namespace TerraFX.Interop
             Value = value;
         }
 
-        public static HCS_OPERATION INVALID_HANDLE_VALUE => new HCS_OPERATION(-1);
+        public static HCS_OPERATION INVALID_VALUE => new HCS_OPERATION(-1);
 
         public static HCS_OPERATION NULL => new HCS_OPERATION(0);
 

@@ -13,7 +13,7 @@ namespace TerraFX.Interop
             Value = value;
         }
 
-        public static HACMSTREAM INVALID_HANDLE_VALUE => new HACMSTREAM(-1);
+        public static HACMSTREAM INVALID_VALUE => new HACMSTREAM(-1);
 
         public static HACMSTREAM NULL => new HACMSTREAM(0);
 

@@ -13,7 +13,7 @@ namespace TerraFX.Interop
             Value = value;
         }
 
-        public static HWAVEOUT INVALID_HANDLE_VALUE => new HWAVEOUT(-1);
+        public static HWAVEOUT INVALID_VALUE => new HWAVEOUT(-1);
 
         public static HWAVEOUT NULL => new HWAVEOUT(0);
 

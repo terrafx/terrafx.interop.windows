@@ -13,7 +13,7 @@ namespace TerraFX.Interop
             Value = value;
         }
 
-        public static HVIDEO INVALID_HANDLE_VALUE => new HVIDEO(-1);
+        public static HVIDEO INVALID_VALUE => new HVIDEO(-1);
 
         public static HVIDEO NULL => new HVIDEO(0);
 

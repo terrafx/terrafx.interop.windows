@@ -13,7 +13,7 @@ namespace TerraFX.Interop
             Value = value;
         }
 
-        public static HOBJECT INVALID_HANDLE_VALUE => new HOBJECT(-1);
+        public static HOBJECT INVALID_VALUE => new HOBJECT(-1);
 
         public static HOBJECT NULL => new HOBJECT(0);
 

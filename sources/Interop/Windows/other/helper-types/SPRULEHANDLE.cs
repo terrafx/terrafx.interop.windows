@@ -13,7 +13,7 @@ namespace TerraFX.Interop
             Value = value;
         }
 
-        public static SPRULEHANDLE INVALID_HANDLE_VALUE => new SPRULEHANDLE(-1);
+        public static SPRULEHANDLE INVALID_VALUE => new SPRULEHANDLE(-1);
 
         public static SPRULEHANDLE NULL => new SPRULEHANDLE(0);
 

@@ -13,7 +13,7 @@ namespace TerraFX.Interop
             Value = value;
         }
 
-        public static HDROP INVALID_HANDLE_VALUE => new HDROP(-1);
+        public static HDROP INVALID_VALUE => new HDROP(-1);
 
         public static HDROP NULL => new HDROP(0);
 

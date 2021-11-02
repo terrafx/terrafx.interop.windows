@@ -13,7 +13,7 @@ namespace TerraFX.Interop
             Value = value;
         }
 
-        public static HWINWATCH INVALID_HANDLE_VALUE => new HWINWATCH(-1);
+        public static HWINWATCH INVALID_VALUE => new HWINWATCH(-1);
 
         public static HWINWATCH NULL => new HWINWATCH(0);
 

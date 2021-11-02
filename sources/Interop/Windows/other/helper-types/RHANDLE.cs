@@ -13,7 +13,7 @@ namespace TerraFX.Interop
             Value = value;
         }
 
-        public static RHANDLE INVALID_HANDLE_VALUE => new RHANDLE(-1);
+        public static RHANDLE INVALID_VALUE => new RHANDLE(-1);
 
         public static RHANDLE NULL => new RHANDLE(0);
 

@@ -13,7 +13,7 @@ namespace TerraFX.Interop
             Value = value;
         }
 
-        public static HSPFILELOG INVALID_HANDLE_VALUE => new HSPFILELOG(-1);
+        public static HSPFILELOG INVALID_VALUE => new HSPFILELOG(-1);
 
         public static HSPFILELOG NULL => new HSPFILELOG(0);
 

@@ -13,7 +13,7 @@ namespace TerraFX.Interop
             Value = value;
         }
 
-        public static COMPRESSOR_HANDLE INVALID_HANDLE_VALUE => new COMPRESSOR_HANDLE(-1);
+        public static COMPRESSOR_HANDLE INVALID_VALUE => new COMPRESSOR_HANDLE(-1);
 
         public static COMPRESSOR_HANDLE NULL => new COMPRESSOR_HANDLE(0);
 

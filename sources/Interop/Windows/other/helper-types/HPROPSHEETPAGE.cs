@@ -13,7 +13,7 @@ namespace TerraFX.Interop
             Value = value;
         }
 
-        public static HPROPSHEETPAGE INVALID_HANDLE_VALUE => new HPROPSHEETPAGE(-1);
+        public static HPROPSHEETPAGE INVALID_VALUE => new HPROPSHEETPAGE(-1);
 
         public static HPROPSHEETPAGE NULL => new HPROPSHEETPAGE(0);
 

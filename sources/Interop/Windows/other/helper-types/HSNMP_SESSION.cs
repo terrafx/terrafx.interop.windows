@@ -13,7 +13,7 @@ namespace TerraFX.Interop
             Value = value;
         }
 
-        public static HSNMP_SESSION INVALID_HANDLE_VALUE => new HSNMP_SESSION(-1);
+        public static HSNMP_SESSION INVALID_VALUE => new HSNMP_SESSION(-1);
 
         public static HSNMP_SESSION NULL => new HSNMP_SESSION(0);
 

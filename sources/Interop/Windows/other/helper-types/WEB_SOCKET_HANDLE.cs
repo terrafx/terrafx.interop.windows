@@ -13,7 +13,7 @@ namespace TerraFX.Interop
             Value = value;
         }
 
-        public static WEB_SOCKET_HANDLE INVALID_HANDLE_VALUE => new WEB_SOCKET_HANDLE(-1);
+        public static WEB_SOCKET_HANDLE INVALID_VALUE => new WEB_SOCKET_HANDLE(-1);
 
         public static WEB_SOCKET_HANDLE NULL => new WEB_SOCKET_HANDLE(0);
 

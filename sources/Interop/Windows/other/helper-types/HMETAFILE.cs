@@ -13,7 +13,7 @@ namespace TerraFX.Interop
             Value = value;
         }
 
-        public static HMETAFILE INVALID_HANDLE_VALUE => new HMETAFILE(-1);
+        public static HMETAFILE INVALID_VALUE => new HMETAFILE(-1);
 
         public static HMETAFILE NULL => new HMETAFILE(0);
 

@@ -13,7 +13,7 @@ namespace TerraFX.Interop
             Value = value;
         }
 
-        public static HACCEL INVALID_HANDLE_VALUE => new HACCEL(-1);
+        public static HACCEL INVALID_VALUE => new HACCEL(-1);
 
         public static HACCEL NULL => new HACCEL(0);
 

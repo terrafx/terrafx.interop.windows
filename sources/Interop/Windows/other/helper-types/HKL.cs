@@ -13,7 +13,7 @@ namespace TerraFX.Interop
             Value = value;
         }
 
-        public static HKL INVALID_HANDLE_VALUE => new HKL(-1);
+        public static HKL INVALID_VALUE => new HKL(-1);
 
         public static HKL NULL => new HKL(0);
 

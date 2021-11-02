@@ -13,7 +13,7 @@ namespace TerraFX.Interop
             Value = value;
         }
 
-        public static HPTPROVIDER INVALID_HANDLE_VALUE => new HPTPROVIDER(-1);
+        public static HPTPROVIDER INVALID_VALUE => new HPTPROVIDER(-1);
 
         public static HPTPROVIDER NULL => new HPTPROVIDER(0);
 

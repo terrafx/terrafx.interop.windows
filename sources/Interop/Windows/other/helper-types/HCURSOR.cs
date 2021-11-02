@@ -13,7 +13,7 @@ namespace TerraFX.Interop
             Value = value;
         }
 
-        public static HCURSOR INVALID_HANDLE_VALUE => new HCURSOR(-1);
+        public static HCURSOR INVALID_VALUE => new HCURSOR(-1);
 
         public static HCURSOR NULL => new HCURSOR(0);
 

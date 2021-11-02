@@ -13,7 +13,7 @@ namespace TerraFX.Interop
             Value = value;
         }
 
-        public static HDEV INVALID_HANDLE_VALUE => new HDEV(-1);
+        public static HDEV INVALID_VALUE => new HDEV(-1);
 
         public static HDEV NULL => new HDEV(0);
 

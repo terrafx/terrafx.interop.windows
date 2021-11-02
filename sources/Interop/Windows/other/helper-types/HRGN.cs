@@ -13,7 +13,7 @@ namespace TerraFX.Interop
             Value = value;
         }
 
-        public static HRGN INVALID_HANDLE_VALUE => new HRGN(-1);
+        public static HRGN INVALID_VALUE => new HRGN(-1);
 
         public static HRGN NULL => new HRGN(0);
 

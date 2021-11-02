@@ -13,7 +13,7 @@ namespace TerraFX.Interop
             Value = value;
         }
 
-        public static HFILTER_VOLUME INVALID_HANDLE_VALUE => new HFILTER_VOLUME(-1);
+        public static HFILTER_VOLUME INVALID_VALUE => new HFILTER_VOLUME(-1);
 
         public static HFILTER_VOLUME NULL => new HFILTER_VOLUME(0);
 

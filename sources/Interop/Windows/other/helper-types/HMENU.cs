@@ -13,7 +13,7 @@ namespace TerraFX.Interop
             Value = value;
         }
 
-        public static HMENU INVALID_HANDLE_VALUE => new HMENU(-1);
+        public static HMENU INVALID_VALUE => new HMENU(-1);
 
         public static HMENU NULL => new HMENU(0);
 

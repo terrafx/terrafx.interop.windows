@@ -13,7 +13,7 @@ namespace TerraFX.Interop
             Value = value;
         }
 
-        public static HCRYPTOIDFUNCSET INVALID_HANDLE_VALUE => new HCRYPTOIDFUNCSET(-1);
+        public static HCRYPTOIDFUNCSET INVALID_VALUE => new HCRYPTOIDFUNCSET(-1);
 
         public static HCRYPTOIDFUNCSET NULL => new HCRYPTOIDFUNCSET(0);
 

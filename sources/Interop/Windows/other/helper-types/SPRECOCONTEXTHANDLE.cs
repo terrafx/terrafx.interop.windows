@@ -13,7 +13,7 @@ namespace TerraFX.Interop
             Value = value;
         }
 
-        public static SPRECOCONTEXTHANDLE INVALID_HANDLE_VALUE => new SPRECOCONTEXTHANDLE(-1);
+        public static SPRECOCONTEXTHANDLE INVALID_VALUE => new SPRECOCONTEXTHANDLE(-1);
 
         public static SPRECOCONTEXTHANDLE NULL => new SPRECOCONTEXTHANDLE(0);
 

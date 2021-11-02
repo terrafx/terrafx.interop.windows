@@ -13,7 +13,7 @@ namespace TerraFX.Interop
             Value = value;
         }
 
-        public static HGESTUREINFO INVALID_HANDLE_VALUE => new HGESTUREINFO(-1);
+        public static HGESTUREINFO INVALID_VALUE => new HGESTUREINFO(-1);
 
         public static HGESTUREINFO NULL => new HGESTUREINFO(0);
 

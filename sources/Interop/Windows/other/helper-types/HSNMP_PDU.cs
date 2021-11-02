@@ -13,7 +13,7 @@ namespace TerraFX.Interop
             Value = value;
         }
 
-        public static HSNMP_PDU INVALID_HANDLE_VALUE => new HSNMP_PDU(-1);
+        public static HSNMP_PDU INVALID_VALUE => new HSNMP_PDU(-1);
 
         public static HSNMP_PDU NULL => new HSNMP_PDU(0);
 

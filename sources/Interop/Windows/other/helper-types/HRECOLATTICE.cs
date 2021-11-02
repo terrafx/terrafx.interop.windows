@@ -13,7 +13,7 @@ namespace TerraFX.Interop
             Value = value;
         }
 
-        public static HRECOLATTICE INVALID_HANDLE_VALUE => new HRECOLATTICE(-1);
+        public static HRECOLATTICE INVALID_VALUE => new HRECOLATTICE(-1);
 
         public static HRECOLATTICE NULL => new HRECOLATTICE(0);
 

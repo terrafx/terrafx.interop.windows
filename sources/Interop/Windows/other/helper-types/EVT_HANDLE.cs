@@ -13,7 +13,7 @@ namespace TerraFX.Interop
             Value = value;
         }
 
-        public static EVT_HANDLE INVALID_HANDLE_VALUE => new EVT_HANDLE(-1);
+        public static EVT_HANDLE INVALID_VALUE => new EVT_HANDLE(-1);
 
         public static EVT_HANDLE NULL => new EVT_HANDLE(0);
 

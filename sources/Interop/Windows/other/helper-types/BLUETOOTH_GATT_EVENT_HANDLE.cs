@@ -13,7 +13,7 @@ namespace TerraFX.Interop
             Value = value;
         }
 
-        public static BLUETOOTH_GATT_EVENT_HANDLE INVALID_HANDLE_VALUE => new BLUETOOTH_GATT_EVENT_HANDLE(-1);
+        public static BLUETOOTH_GATT_EVENT_HANDLE INVALID_VALUE => new BLUETOOTH_GATT_EVENT_HANDLE(-1);
 
         public static BLUETOOTH_GATT_EVENT_HANDLE NULL => new BLUETOOTH_GATT_EVENT_HANDLE(0);
 

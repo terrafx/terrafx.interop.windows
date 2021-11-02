@@ -13,7 +13,7 @@ namespace TerraFX.Interop
             Value = value;
         }
 
-        public static AUTHZ_AUDIT_EVENT_HANDLE INVALID_HANDLE_VALUE => new AUTHZ_AUDIT_EVENT_HANDLE(-1);
+        public static AUTHZ_AUDIT_EVENT_HANDLE INVALID_VALUE => new AUTHZ_AUDIT_EVENT_HANDLE(-1);
 
         public static AUTHZ_AUDIT_EVENT_HANDLE NULL => new AUTHZ_AUDIT_EVENT_HANDLE(0);
 

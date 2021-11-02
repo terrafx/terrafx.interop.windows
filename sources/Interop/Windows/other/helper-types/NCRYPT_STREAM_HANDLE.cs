@@ -13,7 +13,7 @@ namespace TerraFX.Interop
             Value = value;
         }
 
-        public static NCRYPT_STREAM_HANDLE INVALID_HANDLE_VALUE => new NCRYPT_STREAM_HANDLE(-1);
+        public static NCRYPT_STREAM_HANDLE INVALID_VALUE => new NCRYPT_STREAM_HANDLE(-1);
 
         public static NCRYPT_STREAM_HANDLE NULL => new NCRYPT_STREAM_HANDLE(0);
 

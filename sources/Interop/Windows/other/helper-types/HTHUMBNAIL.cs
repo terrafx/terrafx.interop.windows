@@ -13,7 +13,7 @@ namespace TerraFX.Interop
             Value = value;
         }
 
-        public static HTHUMBNAIL INVALID_HANDLE_VALUE => new HTHUMBNAIL(-1);
+        public static HTHUMBNAIL INVALID_VALUE => new HTHUMBNAIL(-1);
 
         public static HTHUMBNAIL NULL => new HTHUMBNAIL(0);
 

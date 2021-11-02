@@ -13,7 +13,7 @@ namespace TerraFX.Interop
             Value = value;
         }
 
-        public static HPSS INVALID_HANDLE_VALUE => new HPSS(-1);
+        public static HPSS INVALID_VALUE => new HPSS(-1);
 
         public static HPSS NULL => new HPSS(0);
 

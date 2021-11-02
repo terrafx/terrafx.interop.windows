@@ -13,7 +13,7 @@ namespace TerraFX.Interop
             Value = value;
         }
 
-        public static HPALETTE INVALID_HANDLE_VALUE => new HPALETTE(-1);
+        public static HPALETTE INVALID_VALUE => new HPALETTE(-1);
 
         public static HPALETTE NULL => new HPALETTE(0);
 

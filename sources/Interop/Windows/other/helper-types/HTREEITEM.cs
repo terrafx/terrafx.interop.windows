@@ -13,7 +13,7 @@ namespace TerraFX.Interop
             Value = value;
         }
 
-        public static HTREEITEM INVALID_HANDLE_VALUE => new HTREEITEM(-1);
+        public static HTREEITEM INVALID_VALUE => new HTREEITEM(-1);
 
         public static HTREEITEM NULL => new HTREEITEM(0);
 

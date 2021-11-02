@@ -13,7 +13,7 @@ namespace TerraFX.Interop
             Value = value;
         }
 
-        public static HDRVOBJ INVALID_HANDLE_VALUE => new HDRVOBJ(-1);
+        public static HDRVOBJ INVALID_VALUE => new HDRVOBJ(-1);
 
         public static HDRVOBJ NULL => new HDRVOBJ(0);
 

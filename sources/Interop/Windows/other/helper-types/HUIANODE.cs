@@ -13,7 +13,7 @@ namespace TerraFX.Interop
             Value = value;
         }
 
-        public static HUIANODE INVALID_HANDLE_VALUE => new HUIANODE(-1);
+        public static HUIANODE INVALID_VALUE => new HUIANODE(-1);
 
         public static HUIANODE NULL => new HUIANODE(0);
 

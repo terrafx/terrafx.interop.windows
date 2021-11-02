@@ -13,7 +13,7 @@ namespace TerraFX.Interop
             Value = value;
         }
 
-        public static PEERDIST_CONTENTINFO_HANDLE INVALID_HANDLE_VALUE => new PEERDIST_CONTENTINFO_HANDLE(-1);
+        public static PEERDIST_CONTENTINFO_HANDLE INVALID_VALUE => new PEERDIST_CONTENTINFO_HANDLE(-1);
 
         public static PEERDIST_CONTENTINFO_HANDLE NULL => new PEERDIST_CONTENTINFO_HANDLE(0);
 

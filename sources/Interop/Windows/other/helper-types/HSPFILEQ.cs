@@ -13,7 +13,7 @@ namespace TerraFX.Interop
             Value = value;
         }
 
-        public static HSPFILEQ INVALID_HANDLE_VALUE => new HSPFILEQ(-1);
+        public static HSPFILEQ INVALID_VALUE => new HSPFILEQ(-1);
 
         public static HSPFILEQ NULL => new HSPFILEQ(0);
 

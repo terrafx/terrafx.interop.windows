@@ -13,7 +13,7 @@ namespace TerraFX.Interop
             Value = value;
         }
 
-        public static HCMNOTIFICATION INVALID_HANDLE_VALUE => new HCMNOTIFICATION(-1);
+        public static HCMNOTIFICATION INVALID_VALUE => new HCMNOTIFICATION(-1);
 
         public static HCMNOTIFICATION NULL => new HCMNOTIFICATION(0);
 

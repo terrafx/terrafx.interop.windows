@@ -13,7 +13,7 @@ namespace TerraFX.Interop
             Value = value;
         }
 
-        public static HRASCONN INVALID_HANDLE_VALUE => new HRASCONN(-1);
+        public static HRASCONN INVALID_VALUE => new HRASCONN(-1);
 
         public static HRASCONN NULL => new HRASCONN(0);
 

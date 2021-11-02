@@ -13,7 +13,7 @@ namespace TerraFX.Interop
             Value = value;
         }
 
-        public static HSPRITE INVALID_HANDLE_VALUE => new HSPRITE(-1);
+        public static HSPRITE INVALID_VALUE => new HSPRITE(-1);
 
         public static HSPRITE NULL => new HSPRITE(0);
 

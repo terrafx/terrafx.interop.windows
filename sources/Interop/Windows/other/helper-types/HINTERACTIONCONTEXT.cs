@@ -13,7 +13,7 @@ namespace TerraFX.Interop
             Value = value;
         }
 
-        public static HINTERACTIONCONTEXT INVALID_HANDLE_VALUE => new HINTERACTIONCONTEXT(-1);
+        public static HINTERACTIONCONTEXT INVALID_VALUE => new HINTERACTIONCONTEXT(-1);
 
         public static HINTERACTIONCONTEXT NULL => new HINTERACTIONCONTEXT(0);
 

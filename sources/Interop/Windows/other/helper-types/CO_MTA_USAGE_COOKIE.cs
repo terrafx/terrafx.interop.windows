@@ -13,7 +13,7 @@ namespace TerraFX.Interop
             Value = value;
         }
 
-        public static CO_MTA_USAGE_COOKIE INVALID_HANDLE_VALUE => new CO_MTA_USAGE_COOKIE(-1);
+        public static CO_MTA_USAGE_COOKIE INVALID_VALUE => new CO_MTA_USAGE_COOKIE(-1);
 
         public static CO_MTA_USAGE_COOKIE NULL => new CO_MTA_USAGE_COOKIE(0);
 

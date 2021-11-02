@@ -13,7 +13,7 @@ namespace TerraFX.Interop
             Value = value;
         }
 
-        public static MIDL_ES_HANDLE INVALID_HANDLE_VALUE => new MIDL_ES_HANDLE(-1);
+        public static MIDL_ES_HANDLE INVALID_VALUE => new MIDL_ES_HANDLE(-1);
 
         public static MIDL_ES_HANDLE NULL => new MIDL_ES_HANDLE(0);
 

@@ -13,7 +13,7 @@ namespace TerraFX.Interop
             Value = value;
         }
 
-        public static LPM_HANDLE INVALID_HANDLE_VALUE => new LPM_HANDLE(-1);
+        public static LPM_HANDLE INVALID_VALUE => new LPM_HANDLE(-1);
 
         public static LPM_HANDLE NULL => new LPM_HANDLE(0);
 

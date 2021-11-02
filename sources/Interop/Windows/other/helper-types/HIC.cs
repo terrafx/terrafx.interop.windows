@@ -13,7 +13,7 @@ namespace TerraFX.Interop
             Value = value;
         }
 
-        public static HIC INVALID_HANDLE_VALUE => new HIC(-1);
+        public static HIC INVALID_VALUE => new HIC(-1);
 
         public static HIC NULL => new HIC(0);
 

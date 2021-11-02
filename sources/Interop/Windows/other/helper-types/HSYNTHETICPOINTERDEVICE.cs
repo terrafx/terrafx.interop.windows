@@ -13,7 +13,7 @@ namespace TerraFX.Interop
             Value = value;
         }
 
-        public static HSYNTHETICPOINTERDEVICE INVALID_HANDLE_VALUE => new HSYNTHETICPOINTERDEVICE(-1);
+        public static HSYNTHETICPOINTERDEVICE INVALID_VALUE => new HSYNTHETICPOINTERDEVICE(-1);
 
         public static HSYNTHETICPOINTERDEVICE NULL => new HSYNTHETICPOINTERDEVICE(0);
 

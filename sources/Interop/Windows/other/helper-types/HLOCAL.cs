@@ -13,7 +13,7 @@ namespace TerraFX.Interop
             Value = value;
         }
 
-        public static HLOCAL INVALID_HANDLE_VALUE => new HLOCAL(-1);
+        public static HLOCAL INVALID_VALUE => new HLOCAL(-1);
 
         public static HLOCAL NULL => new HLOCAL(0);
 

@@ -13,7 +13,7 @@ namespace TerraFX.Interop
             Value = value;
         }
 
-        public static HINSTANCE INVALID_HANDLE_VALUE => new HINSTANCE(-1);
+        public static HINSTANCE INVALID_VALUE => new HINSTANCE(-1);
 
         public static HINSTANCE NULL => new HINSTANCE(0);
 

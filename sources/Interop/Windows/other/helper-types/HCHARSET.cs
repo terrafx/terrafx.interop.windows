@@ -13,7 +13,7 @@ namespace TerraFX.Interop
             Value = value;
         }
 
-        public static HCHARSET INVALID_HANDLE_VALUE => new HCHARSET(-1);
+        public static HCHARSET INVALID_VALUE => new HCHARSET(-1);
 
         public static HCHARSET NULL => new HCHARSET(0);
 

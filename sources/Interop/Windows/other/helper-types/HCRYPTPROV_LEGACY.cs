@@ -13,7 +13,7 @@ namespace TerraFX.Interop
             Value = value;
         }
 
-        public static HCRYPTPROV_LEGACY INVALID_HANDLE_VALUE => new HCRYPTPROV_LEGACY(-1);
+        public static HCRYPTPROV_LEGACY INVALID_VALUE => new HCRYPTPROV_LEGACY(-1);
 
         public static HCRYPTPROV_LEGACY NULL => new HCRYPTPROV_LEGACY(0);
 

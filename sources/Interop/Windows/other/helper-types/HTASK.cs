@@ -13,7 +13,7 @@ namespace TerraFX.Interop
             Value = value;
         }
 
-        public static HTASK INVALID_HANDLE_VALUE => new HTASK(-1);
+        public static HTASK INVALID_VALUE => new HTASK(-1);
 
         public static HTASK NULL => new HTASK(0);
 

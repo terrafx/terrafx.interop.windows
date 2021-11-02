@@ -13,7 +13,7 @@ namespace TerraFX.Interop
             Value = value;
         }
 
-        public static AUTHZ_CLIENT_CONTEXT_HANDLE INVALID_HANDLE_VALUE => new AUTHZ_CLIENT_CONTEXT_HANDLE(-1);
+        public static AUTHZ_CLIENT_CONTEXT_HANDLE INVALID_VALUE => new AUTHZ_CLIENT_CONTEXT_HANDLE(-1);
 
         public static AUTHZ_CLIENT_CONTEXT_HANDLE NULL => new AUTHZ_CLIENT_CONTEXT_HANDLE(0);
 

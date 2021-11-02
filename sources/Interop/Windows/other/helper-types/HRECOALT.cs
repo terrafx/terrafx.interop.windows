@@ -13,7 +13,7 @@ namespace TerraFX.Interop
             Value = value;
         }
 
-        public static HRECOALT INVALID_HANDLE_VALUE => new HRECOALT(-1);
+        public static HRECOALT INVALID_VALUE => new HRECOALT(-1);
 
         public static HRECOALT NULL => new HRECOALT(0);
 

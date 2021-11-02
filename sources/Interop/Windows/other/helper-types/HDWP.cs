@@ -13,7 +13,7 @@ namespace TerraFX.Interop
             Value = value;
         }
 
-        public static HDWP INVALID_HANDLE_VALUE => new HDWP(-1);
+        public static HDWP INVALID_VALUE => new HDWP(-1);
 
         public static HDWP NULL => new HDWP(0);
 

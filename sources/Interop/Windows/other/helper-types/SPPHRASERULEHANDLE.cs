@@ -13,7 +13,7 @@ namespace TerraFX.Interop
             Value = value;
         }
 
-        public static SPPHRASERULEHANDLE INVALID_HANDLE_VALUE => new SPPHRASERULEHANDLE(-1);
+        public static SPPHRASERULEHANDLE INVALID_VALUE => new SPPHRASERULEHANDLE(-1);
 
         public static SPPHRASERULEHANDLE NULL => new SPPHRASERULEHANDLE(0);
 

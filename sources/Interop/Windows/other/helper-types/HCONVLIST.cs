@@ -13,7 +13,7 @@ namespace TerraFX.Interop
             Value = value;
         }
 
-        public static HCONVLIST INVALID_HANDLE_VALUE => new HCONVLIST(-1);
+        public static HCONVLIST INVALID_VALUE => new HCONVLIST(-1);
 
         public static HCONVLIST NULL => new HCONVLIST(0);
 

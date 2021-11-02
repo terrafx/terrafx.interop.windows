@@ -13,7 +13,7 @@ namespace TerraFX.Interop
             Value = value;
         }
 
-        public static HANIMATIONBUFFER INVALID_HANDLE_VALUE => new HANIMATIONBUFFER(-1);
+        public static HANIMATIONBUFFER INVALID_VALUE => new HANIMATIONBUFFER(-1);
 
         public static HANIMATIONBUFFER NULL => new HANIMATIONBUFFER(0);
 

@@ -13,7 +13,7 @@ namespace TerraFX.Interop
             Value = value;
         }
 
-        public static ROPARAMIIDHANDLE INVALID_HANDLE_VALUE => new ROPARAMIIDHANDLE(-1);
+        public static ROPARAMIIDHANDLE INVALID_VALUE => new ROPARAMIIDHANDLE(-1);
 
         public static ROPARAMIIDHANDLE NULL => new ROPARAMIIDHANDLE(0);
 

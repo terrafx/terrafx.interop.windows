@@ -13,7 +13,7 @@ namespace TerraFX.Interop
             Value = value;
         }
 
-        public static HADDRESS INVALID_HANDLE_VALUE => new HADDRESS(-1);
+        public static HADDRESS INVALID_VALUE => new HADDRESS(-1);
 
         public static HADDRESS NULL => new HADDRESS(0);
 

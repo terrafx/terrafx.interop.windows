@@ -13,7 +13,7 @@ namespace TerraFX.Interop
             Value = value;
         }
 
-        public static HCOLORSPACE INVALID_HANDLE_VALUE => new HCOLORSPACE(-1);
+        public static HCOLORSPACE INVALID_VALUE => new HCOLORSPACE(-1);
 
         public static HCOLORSPACE NULL => new HCOLORSPACE(0);
 

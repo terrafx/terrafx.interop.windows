@@ -13,7 +13,7 @@ namespace TerraFX.Interop
             Value = value;
         }
 
-        public static HRAWINPUT INVALID_HANDLE_VALUE => new HRAWINPUT(-1);
+        public static HRAWINPUT INVALID_VALUE => new HRAWINPUT(-1);
 
         public static HRAWINPUT NULL => new HRAWINPUT(0);
 

@@ -13,7 +13,7 @@ namespace TerraFX.Interop
             Value = value;
         }
 
-        public static HFASTMUTEX INVALID_HANDLE_VALUE => new HFASTMUTEX(-1);
+        public static HFASTMUTEX INVALID_VALUE => new HFASTMUTEX(-1);
 
         public static HFASTMUTEX NULL => new HFASTMUTEX(0);
 

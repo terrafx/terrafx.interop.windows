@@ -13,7 +13,7 @@ namespace TerraFX.Interop
             Value = value;
         }
 
-        public static SPTRANSITIONID INVALID_HANDLE_VALUE => new SPTRANSITIONID(-1);
+        public static SPTRANSITIONID INVALID_VALUE => new SPTRANSITIONID(-1);
 
         public static SPTRANSITIONID NULL => new SPTRANSITIONID(0);
 

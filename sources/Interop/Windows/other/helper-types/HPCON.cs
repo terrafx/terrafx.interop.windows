@@ -13,7 +13,7 @@ namespace TerraFX.Interop
             Value = value;
         }
 
-        public static HPCON INVALID_HANDLE_VALUE => new HPCON(-1);
+        public static HPCON INVALID_VALUE => new HPCON(-1);
 
         public static HPCON NULL => new HPCON(0);
 

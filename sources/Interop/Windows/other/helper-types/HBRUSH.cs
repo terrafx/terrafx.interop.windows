@@ -13,7 +13,7 @@ namespace TerraFX.Interop
             Value = value;
         }
 
-        public static HBRUSH INVALID_HANDLE_VALUE => new HBRUSH(-1);
+        public static HBRUSH INVALID_VALUE => new HBRUSH(-1);
 
         public static HBRUSH NULL => new HBRUSH(0);
 

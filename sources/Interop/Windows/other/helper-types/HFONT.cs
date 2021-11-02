@@ -13,7 +13,7 @@ namespace TerraFX.Interop
             Value = value;
         }
 
-        public static HFONT INVALID_HANDLE_VALUE => new HFONT(-1);
+        public static HFONT INVALID_VALUE => new HFONT(-1);
 
         public static HFONT NULL => new HFONT(0);
 

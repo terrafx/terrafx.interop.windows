@@ -13,7 +13,7 @@ namespace TerraFX.Interop
             Value = value;
         }
 
-        public static HMONITOR INVALID_HANDLE_VALUE => new HMONITOR(-1);
+        public static HMONITOR INVALID_VALUE => new HMONITOR(-1);
 
         public static HMONITOR NULL => new HMONITOR(0);
 

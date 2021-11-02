@@ -13,7 +13,7 @@ namespace TerraFX.Interop
             Value = value;
         }
 
-        public static HKEY INVALID_HANDLE_VALUE => new HKEY(-1);
+        public static HKEY INVALID_VALUE => new HKEY(-1);
 
         public static HKEY NULL => new HKEY(0);
 

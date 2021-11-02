@@ -13,7 +13,7 @@ namespace TerraFX.Interop
             Value = value;
         }
 
-        public static HTOUCHINPUT INVALID_HANDLE_VALUE => new HTOUCHINPUT(-1);
+        public static HTOUCHINPUT INVALID_VALUE => new HTOUCHINPUT(-1);
 
         public static HTOUCHINPUT NULL => new HTOUCHINPUT(0);
 

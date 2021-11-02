@@ -13,7 +13,7 @@ namespace TerraFX.Interop
             Value = value;
         }
 
-        public static PRJ_DIR_ENTRY_BUFFER_HANDLE INVALID_HANDLE_VALUE => new PRJ_DIR_ENTRY_BUFFER_HANDLE(-1);
+        public static PRJ_DIR_ENTRY_BUFFER_HANDLE INVALID_VALUE => new PRJ_DIR_ENTRY_BUFFER_HANDLE(-1);
 
         public static PRJ_DIR_ENTRY_BUFFER_HANDLE NULL => new PRJ_DIR_ENTRY_BUFFER_HANDLE(0);
 

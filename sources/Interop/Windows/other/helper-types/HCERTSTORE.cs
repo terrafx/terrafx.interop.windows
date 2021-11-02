@@ -13,7 +13,7 @@ namespace TerraFX.Interop
             Value = value;
         }
 
-        public static HCERTSTORE INVALID_HANDLE_VALUE => new HCERTSTORE(-1);
+        public static HCERTSTORE INVALID_VALUE => new HCERTSTORE(-1);
 
         public static HCERTSTORE NULL => new HCERTSTORE(0);
 

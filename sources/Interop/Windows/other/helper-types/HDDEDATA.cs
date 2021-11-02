@@ -13,7 +13,7 @@ namespace TerraFX.Interop
             Value = value;
         }
 
-        public static HDDEDATA INVALID_HANDLE_VALUE => new HDDEDATA(-1);
+        public static HDDEDATA INVALID_VALUE => new HDDEDATA(-1);
 
         public static HDDEDATA NULL => new HDDEDATA(0);
 

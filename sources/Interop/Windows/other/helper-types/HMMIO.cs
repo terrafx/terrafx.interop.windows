@@ -13,7 +13,7 @@ namespace TerraFX.Interop
             Value = value;
         }
 
-        public static HMMIO INVALID_HANDLE_VALUE => new HMMIO(-1);
+        public static HMMIO INVALID_VALUE => new HMMIO(-1);
 
         public static HMMIO NULL => new HMMIO(0);
 

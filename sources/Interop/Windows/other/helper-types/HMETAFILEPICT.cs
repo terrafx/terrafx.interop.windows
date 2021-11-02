@@ -13,7 +13,7 @@ namespace TerraFX.Interop
             Value = value;
         }
 
-        public static HMETAFILEPICT INVALID_HANDLE_VALUE => new HMETAFILEPICT(-1);
+        public static HMETAFILEPICT INVALID_VALUE => new HMETAFILEPICT(-1);
 
         public static HMETAFILEPICT NULL => new HMETAFILEPICT(0);
 

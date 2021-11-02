@@ -13,7 +13,7 @@ namespace TerraFX.Interop
             Value = value;
         }
 
-        public static SERVICE_STATUS_HANDLE INVALID_HANDLE_VALUE => new SERVICE_STATUS_HANDLE(-1);
+        public static SERVICE_STATUS_HANDLE INVALID_VALUE => new SERVICE_STATUS_HANDLE(-1);
 
         public static SERVICE_STATUS_HANDLE NULL => new SERVICE_STATUS_HANDLE(0);
 

@@ -13,7 +13,7 @@ namespace TerraFX.Interop
             Value = value;
         }
 
-        public static HDPA INVALID_HANDLE_VALUE => new HDPA(-1);
+        public static HDPA INVALID_VALUE => new HDPA(-1);
 
         public static HDPA NULL => new HDPA(0);
 

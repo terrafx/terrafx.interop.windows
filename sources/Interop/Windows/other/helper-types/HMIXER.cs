@@ -13,7 +13,7 @@ namespace TerraFX.Interop
             Value = value;
         }
 
-        public static HMIXER INVALID_HANDLE_VALUE => new HMIXER(-1);
+        public static HMIXER INVALID_VALUE => new HMIXER(-1);
 
         public static HMIXER NULL => new HMIXER(0);
 

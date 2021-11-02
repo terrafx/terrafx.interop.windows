@@ -13,7 +13,7 @@ namespace TerraFX.Interop
             Value = value;
         }
 
-        public static NFC_REMOTE_DEV_HANDLE INVALID_HANDLE_VALUE => new NFC_REMOTE_DEV_HANDLE(-1);
+        public static NFC_REMOTE_DEV_HANDLE INVALID_VALUE => new NFC_REMOTE_DEV_HANDLE(-1);
 
         public static NFC_REMOTE_DEV_HANDLE NULL => new NFC_REMOTE_DEV_HANDLE(0);
 

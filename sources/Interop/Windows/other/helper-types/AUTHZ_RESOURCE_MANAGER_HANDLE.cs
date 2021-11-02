@@ -13,7 +13,7 @@ namespace TerraFX.Interop
             Value = value;
         }
 
-        public static AUTHZ_RESOURCE_MANAGER_HANDLE INVALID_HANDLE_VALUE => new AUTHZ_RESOURCE_MANAGER_HANDLE(-1);
+        public static AUTHZ_RESOURCE_MANAGER_HANDLE INVALID_VALUE => new AUTHZ_RESOURCE_MANAGER_HANDLE(-1);
 
         public static AUTHZ_RESOURCE_MANAGER_HANDLE NULL => new AUTHZ_RESOURCE_MANAGER_HANDLE(0);
 

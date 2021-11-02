@@ -13,7 +13,7 @@ namespace TerraFX.Interop
             Value = value;
         }
 
-        public static MIB_SERVER_HANDLE INVALID_HANDLE_VALUE => new MIB_SERVER_HANDLE(-1);
+        public static MIB_SERVER_HANDLE INVALID_VALUE => new MIB_SERVER_HANDLE(-1);
 
         public static MIB_SERVER_HANDLE NULL => new MIB_SERVER_HANDLE(0);
 

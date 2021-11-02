@@ -13,7 +13,7 @@ namespace TerraFX.Interop
             Value = value;
         }
 
-        public static NFC_LLCP_SOCKET_HANDLE INVALID_HANDLE_VALUE => new NFC_LLCP_SOCKET_HANDLE(-1);
+        public static NFC_LLCP_SOCKET_HANDLE INVALID_VALUE => new NFC_LLCP_SOCKET_HANDLE(-1);
 
         public static NFC_LLCP_SOCKET_HANDLE NULL => new NFC_LLCP_SOCKET_HANDLE(0);
 

@@ -13,7 +13,7 @@ namespace TerraFX.Interop
             Value = value;
         }
 
-        public static HINTERNET INVALID_HANDLE_VALUE => new HINTERNET(-1);
+        public static HINTERNET INVALID_VALUE => new HINTERNET(-1);
 
         public static HINTERNET NULL => new HINTERNET(0);
 

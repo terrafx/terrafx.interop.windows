@@ -13,7 +13,7 @@ namespace TerraFX.Interop
             Value = value;
         }
 
-        public static HSAVEDUILANGUAGES INVALID_HANDLE_VALUE => new HSAVEDUILANGUAGES(-1);
+        public static HSAVEDUILANGUAGES INVALID_VALUE => new HSAVEDUILANGUAGES(-1);
 
         public static HSAVEDUILANGUAGES NULL => new HSAVEDUILANGUAGES(0);
 

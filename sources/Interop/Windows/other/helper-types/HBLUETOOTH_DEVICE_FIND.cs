@@ -13,7 +13,7 @@ namespace TerraFX.Interop
             Value = value;
         }
 
-        public static HBLUETOOTH_DEVICE_FIND INVALID_HANDLE_VALUE => new HBLUETOOTH_DEVICE_FIND(-1);
+        public static HBLUETOOTH_DEVICE_FIND INVALID_VALUE => new HBLUETOOTH_DEVICE_FIND(-1);
 
         public static HBLUETOOTH_DEVICE_FIND NULL => new HBLUETOOTH_DEVICE_FIND(0);
 

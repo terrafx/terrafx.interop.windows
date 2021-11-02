@@ -13,7 +13,7 @@ namespace TerraFX.Interop
             Value = value;
         }
 
-        public static PDH_HQUERY INVALID_HANDLE_VALUE => new PDH_HQUERY(-1);
+        public static PDH_HQUERY INVALID_VALUE => new PDH_HQUERY(-1);
 
         public static PDH_HQUERY NULL => new PDH_HQUERY(0);
 

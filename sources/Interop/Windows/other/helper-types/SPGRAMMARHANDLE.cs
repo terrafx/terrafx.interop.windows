@@ -13,7 +13,7 @@ namespace TerraFX.Interop
             Value = value;
         }
 
-        public static SPGRAMMARHANDLE INVALID_HANDLE_VALUE => new SPGRAMMARHANDLE(-1);
+        public static SPGRAMMARHANDLE INVALID_VALUE => new SPGRAMMARHANDLE(-1);
 
         public static SPGRAMMARHANDLE NULL => new SPGRAMMARHANDLE(0);
 

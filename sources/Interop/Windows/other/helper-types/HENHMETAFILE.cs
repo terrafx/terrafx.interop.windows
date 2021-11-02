@@ -13,7 +13,7 @@ namespace TerraFX.Interop
             Value = value;
         }
 
-        public static HENHMETAFILE INVALID_HANDLE_VALUE => new HENHMETAFILE(-1);
+        public static HENHMETAFILE INVALID_VALUE => new HENHMETAFILE(-1);
 
         public static HENHMETAFILE NULL => new HENHMETAFILE(0);
 

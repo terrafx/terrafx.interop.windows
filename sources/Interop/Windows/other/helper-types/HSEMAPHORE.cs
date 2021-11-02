@@ -13,7 +13,7 @@ namespace TerraFX.Interop
             Value = value;
         }
 
-        public static HSEMAPHORE INVALID_HANDLE_VALUE => new HSEMAPHORE(-1);
+        public static HSEMAPHORE INVALID_VALUE => new HSEMAPHORE(-1);
 
         public static HSEMAPHORE NULL => new HSEMAPHORE(0);
 

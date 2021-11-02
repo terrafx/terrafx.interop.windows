@@ -13,7 +13,7 @@ namespace TerraFX.Interop
             Value = value;
         }
 
-        public static HACMOBJ INVALID_HANDLE_VALUE => new HACMOBJ(-1);
+        public static HACMOBJ INVALID_VALUE => new HACMOBJ(-1);
 
         public static HACMOBJ NULL => new HACMOBJ(0);
 

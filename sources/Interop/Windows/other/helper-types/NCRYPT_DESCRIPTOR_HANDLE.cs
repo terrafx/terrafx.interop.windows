@@ -13,7 +13,7 @@ namespace TerraFX.Interop
             Value = value;
         }
 
-        public static NCRYPT_DESCRIPTOR_HANDLE INVALID_HANDLE_VALUE => new NCRYPT_DESCRIPTOR_HANDLE(-1);
+        public static NCRYPT_DESCRIPTOR_HANDLE INVALID_VALUE => new NCRYPT_DESCRIPTOR_HANDLE(-1);
 
         public static NCRYPT_DESCRIPTOR_HANDLE NULL => new NCRYPT_DESCRIPTOR_HANDLE(0);
 

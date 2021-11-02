@@ -13,7 +13,7 @@ namespace TerraFX.Interop
             Value = value;
         }
 
-        public static HBITMAP INVALID_HANDLE_VALUE => new HBITMAP(-1);
+        public static HBITMAP INVALID_VALUE => new HBITMAP(-1);
 
         public static HBITMAP NULL => new HBITMAP(0);
 

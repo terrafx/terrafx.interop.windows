@@ -13,7 +13,7 @@ namespace TerraFX.Interop
             Value = value;
         }
 
-        public static HWINEVENTHOOK INVALID_HANDLE_VALUE => new HWINEVENTHOOK(-1);
+        public static HWINEVENTHOOK INVALID_VALUE => new HWINEVENTHOOK(-1);
 
         public static HWINEVENTHOOK NULL => new HWINEVENTHOOK(0);
 

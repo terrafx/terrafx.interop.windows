@@ -13,7 +13,7 @@ namespace TerraFX.Interop
             Value = value;
         }
 
-        public static HCRYPTASYNC INVALID_HANDLE_VALUE => new HCRYPTASYNC(-1);
+        public static HCRYPTASYNC INVALID_VALUE => new HCRYPTASYNC(-1);
 
         public static HCRYPTASYNC NULL => new HCRYPTASYNC(0);
 

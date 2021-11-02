@@ -13,7 +13,7 @@ namespace TerraFX.Interop
             Value = value;
         }
 
-        public static HDRVR INVALID_HANDLE_VALUE => new HDRVR(-1);
+        public static HDRVR INVALID_VALUE => new HDRVR(-1);
 
         public static HDRVR NULL => new HDRVR(0);
 

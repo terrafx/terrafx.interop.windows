@@ -13,7 +13,7 @@ namespace TerraFX.Interop
             Value = value;
         }
 
-        public static HACMDRIVERID INVALID_HANDLE_VALUE => new HACMDRIVERID(-1);
+        public static HACMDRIVERID INVALID_VALUE => new HACMDRIVERID(-1);
 
         public static HACMDRIVERID NULL => new HACMDRIVERID(0);
 

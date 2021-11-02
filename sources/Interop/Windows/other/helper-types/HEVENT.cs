@@ -13,7 +13,7 @@ namespace TerraFX.Interop
             Value = value;
         }
 
-        public static HEVENT INVALID_HANDLE_VALUE => new HEVENT(-1);
+        public static HEVENT INVALID_VALUE => new HEVENT(-1);
 
         public static HEVENT NULL => new HEVENT(0);
 
