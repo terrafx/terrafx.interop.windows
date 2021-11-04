@@ -45,5 +45,20 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<ISwapChainPanelNative*, IDXGISwapChain*, int>)(lpVtbl[3]))((ISwapChainPanelNative*)Unsafe.AsPointer(ref this), swapChain);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISwapChainPanelNative*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ISwapChainPanelNative*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ISwapChainPanelNative*, uint> Release;
+
+            [NativeTypeName("HRESULT (IDXGISwapChain *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISwapChainPanelNative*, IDXGISwapChain*, int> SetSwapChain;
+        }
     }
 }

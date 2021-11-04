@@ -66,5 +66,29 @@ namespace TerraFX.Interop
         {
             ((delegate* unmanaged<ID3D12DeviceRemovedExtendedDataSettings1*, D3D12_DRED_ENABLEMENT, void>)(lpVtbl[6]))((ID3D12DeviceRemovedExtendedDataSettings1*)Unsafe.AsPointer(ref this), Enablement);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D12DeviceRemovedExtendedDataSettings1*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D12DeviceRemovedExtendedDataSettings1*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D12DeviceRemovedExtendedDataSettings1*, uint> Release;
+
+            [NativeTypeName("void (D3D12_DRED_ENABLEMENT) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D12DeviceRemovedExtendedDataSettings1*, D3D12_DRED_ENABLEMENT, void> SetAutoBreadcrumbsEnablement;
+
+            [NativeTypeName("void (D3D12_DRED_ENABLEMENT) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D12DeviceRemovedExtendedDataSettings1*, D3D12_DRED_ENABLEMENT, void> SetPageFaultEnablement;
+
+            [NativeTypeName("void (D3D12_DRED_ENABLEMENT) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D12DeviceRemovedExtendedDataSettings1*, D3D12_DRED_ENABLEMENT, void> SetWatsonDumpEnablement;
+
+            [NativeTypeName("void (D3D12_DRED_ENABLEMENT) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D12DeviceRemovedExtendedDataSettings1*, D3D12_DRED_ENABLEMENT, void> SetBreadcrumbContextEnablement;
+        }
     }
 }

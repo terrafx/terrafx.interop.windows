@@ -45,5 +45,20 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IInputPanelConfiguration*, int>)(lpVtbl[3]))((IInputPanelConfiguration*)Unsafe.AsPointer(ref this));
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IInputPanelConfiguration*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IInputPanelConfiguration*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IInputPanelConfiguration*, uint> Release;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IInputPanelConfiguration*, int> EnableFocusTracking;
+        }
     }
 }

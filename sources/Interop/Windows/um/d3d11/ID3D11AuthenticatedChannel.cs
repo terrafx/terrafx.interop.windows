@@ -87,5 +87,38 @@ namespace TerraFX.Interop
         {
             ((delegate* unmanaged<ID3D11AuthenticatedChannel*, HANDLE*, void>)(lpVtbl[9]))((ID3D11AuthenticatedChannel*)Unsafe.AsPointer(ref this), pChannelHandle);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D11AuthenticatedChannel*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D11AuthenticatedChannel*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D11AuthenticatedChannel*, uint> Release;
+
+            [NativeTypeName("void (ID3D11Device **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D11AuthenticatedChannel*, ID3D11Device**, void> GetDevice;
+
+            [NativeTypeName("HRESULT (const GUID &, UINT *, void *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D11AuthenticatedChannel*, Guid*, uint*, void*, int> GetPrivateData;
+
+            [NativeTypeName("HRESULT (const GUID &, UINT, const void *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D11AuthenticatedChannel*, Guid*, uint, void*, int> SetPrivateData;
+
+            [NativeTypeName("HRESULT (const GUID &, const IUnknown *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D11AuthenticatedChannel*, Guid*, IUnknown*, int> SetPrivateDataInterface;
+
+            [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D11AuthenticatedChannel*, uint*, int> GetCertificateSize;
+
+            [NativeTypeName("HRESULT (UINT, BYTE *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D11AuthenticatedChannel*, uint, byte*, int> GetCertificate;
+
+            [NativeTypeName("void (HANDLE *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D11AuthenticatedChannel*, HANDLE*, void> GetChannelHandle;
+        }
     }
 }

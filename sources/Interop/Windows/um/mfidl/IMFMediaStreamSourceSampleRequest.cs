@@ -45,5 +45,20 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IMFMediaStreamSourceSampleRequest*, IMFSample*, int>)(lpVtbl[3]))((IMFMediaStreamSourceSampleRequest*)Unsafe.AsPointer(ref this), value);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFMediaStreamSourceSampleRequest*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFMediaStreamSourceSampleRequest*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFMediaStreamSourceSampleRequest*, uint> Release;
+
+            [NativeTypeName("HRESULT (IMFSample *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFMediaStreamSourceSampleRequest*, IMFSample*, int> SetSample;
+        }
     }
 }

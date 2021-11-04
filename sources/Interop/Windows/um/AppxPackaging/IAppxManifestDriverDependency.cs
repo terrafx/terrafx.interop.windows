@@ -45,5 +45,20 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IAppxManifestDriverDependency*, IAppxManifestDriverConstraintsEnumerator**, int>)(lpVtbl[3]))((IAppxManifestDriverDependency*)Unsafe.AsPointer(ref this), driverConstraints);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAppxManifestDriverDependency*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IAppxManifestDriverDependency*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IAppxManifestDriverDependency*, uint> Release;
+
+            [NativeTypeName("HRESULT (IAppxManifestDriverConstraintsEnumerator **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAppxManifestDriverDependency*, IAppxManifestDriverConstraintsEnumerator**, int> GetDriverConstraints;
+        }
     }
 }

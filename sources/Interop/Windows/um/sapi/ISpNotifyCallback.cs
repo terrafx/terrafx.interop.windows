@@ -17,5 +17,11 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<ISpNotifyCallback*, WPARAM, LPARAM, int>)(lpVtbl[0]))((ISpNotifyCallback*)Unsafe.AsPointer(ref this), wParam, lParam);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (WPARAM, LPARAM) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpNotifyCallback*, WPARAM, LPARAM, int> NotifyCallback;
+        }
     }
 }

@@ -52,5 +52,23 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<ITfSystemLangBarItemText*, ushort**, int>)(lpVtbl[4]))((ITfSystemLangBarItemText*)Unsafe.AsPointer(ref this), pbstrText);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfSystemLangBarItemText*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfSystemLangBarItemText*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfSystemLangBarItemText*, uint> Release;
+
+            [NativeTypeName("HRESULT (const WCHAR *, ULONG) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfSystemLangBarItemText*, ushort*, uint, int> SetItemText;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfSystemLangBarItemText*, ushort**, int> GetItemText;
+        }
     }
 }

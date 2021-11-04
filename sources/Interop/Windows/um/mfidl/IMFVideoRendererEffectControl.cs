@@ -45,5 +45,20 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IMFVideoRendererEffectControl*, IUnknown*, int>)(lpVtbl[3]))((IMFVideoRendererEffectControl*)Unsafe.AsPointer(ref this), pAppServiceConnection);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFVideoRendererEffectControl*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFVideoRendererEffectControl*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFVideoRendererEffectControl*, uint> Release;
+
+            [NativeTypeName("HRESULT (IUnknown *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFVideoRendererEffectControl*, IUnknown*, int> OnAppServiceConnectionEstablished;
+        }
     }
 }

@@ -88,5 +88,38 @@ namespace TerraFX.Interop
         {
             ((delegate* unmanaged<IMLOperatorTensor*, IUnknown**, void>)(lpVtbl[9]))((IMLOperatorTensor*)Unsafe.AsPointer(ref this), dataInterface);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMLOperatorTensor*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMLOperatorTensor*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMLOperatorTensor*, uint> Release;
+
+            [NativeTypeName("uint32_t () const noexcept __attribute__((stdcall))")]
+            public delegate* unmanaged<IMLOperatorTensor*, uint> GetDimensionCount;
+
+            [NativeTypeName("HRESULT (uint32_t, uint32_t *) const noexcept __attribute__((stdcall))")]
+            public delegate* unmanaged<IMLOperatorTensor*, uint, uint*, int> GetShape;
+
+            [NativeTypeName("MLOperatorTensorDataType () const noexcept __attribute__((stdcall))")]
+            public delegate* unmanaged<IMLOperatorTensor*, MLOperatorTensorDataType> GetTensorDataType;
+
+            [NativeTypeName("bool () const noexcept __attribute__((stdcall))")]
+            public delegate* unmanaged<IMLOperatorTensor*, byte> IsCpuData;
+
+            [NativeTypeName("bool () const noexcept __attribute__((stdcall))")]
+            public delegate* unmanaged<IMLOperatorTensor*, byte> IsDataInterface;
+
+            [NativeTypeName("void *() noexcept __attribute__((stdcall))")]
+            public delegate* unmanaged<IMLOperatorTensor*, void*> GetData;
+
+            [NativeTypeName("void (IUnknown **) noexcept __attribute__((stdcall))")]
+            public delegate* unmanaged<IMLOperatorTensor*, IUnknown**, void> GetDataInterface;
+        }
     }
 }

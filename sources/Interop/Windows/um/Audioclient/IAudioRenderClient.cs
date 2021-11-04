@@ -52,5 +52,23 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IAudioRenderClient*, uint, uint, int>)(lpVtbl[4]))((IAudioRenderClient*)Unsafe.AsPointer(ref this), NumFramesWritten, dwFlags);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAudioRenderClient*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IAudioRenderClient*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IAudioRenderClient*, uint> Release;
+
+            [NativeTypeName("HRESULT (UINT32, BYTE **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAudioRenderClient*, uint, byte**, int> GetBuffer;
+
+            [NativeTypeName("HRESULT (UINT32, DWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAudioRenderClient*, uint, uint, int> ReleaseBuffer;
+        }
     }
 }

@@ -52,5 +52,23 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IAppVisibilityEvents*, BOOL, int>)(lpVtbl[4]))((IAppVisibilityEvents*)Unsafe.AsPointer(ref this), currentVisibleState);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAppVisibilityEvents*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IAppVisibilityEvents*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IAppVisibilityEvents*, uint> Release;
+
+            [NativeTypeName("HRESULT (HMONITOR, MONITOR_APP_VISIBILITY, MONITOR_APP_VISIBILITY) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAppVisibilityEvents*, HMONITOR, MONITOR_APP_VISIBILITY, MONITOR_APP_VISIBILITY, int> AppVisibilityOnMonitorChanged;
+
+            [NativeTypeName("HRESULT (BOOL) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAppVisibilityEvents*, BOOL, int> LauncherVisibilityChange;
+        }
     }
 }

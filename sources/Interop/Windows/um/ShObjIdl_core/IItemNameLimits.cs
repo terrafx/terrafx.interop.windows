@@ -52,5 +52,23 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IItemNameLimits*, ushort*, int*, int>)(lpVtbl[4]))((IItemNameLimits*)Unsafe.AsPointer(ref this), pszName, piMaxNameLen);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IItemNameLimits*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IItemNameLimits*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IItemNameLimits*, uint> Release;
+
+            [NativeTypeName("HRESULT (LPWSTR *, LPWSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IItemNameLimits*, ushort**, ushort**, int> GetValidCharacters;
+
+            [NativeTypeName("HRESULT (LPCWSTR, int *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IItemNameLimits*, ushort*, int*, int> GetMaxLength;
+        }
     }
 }

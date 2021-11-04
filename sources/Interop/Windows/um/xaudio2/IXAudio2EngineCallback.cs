@@ -31,5 +31,17 @@ namespace TerraFX.Interop
         {
             ((delegate* unmanaged<IXAudio2EngineCallback*, HRESULT, void>)(lpVtbl[2]))((IXAudio2EngineCallback*)Unsafe.AsPointer(ref this), Error);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("void () __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IXAudio2EngineCallback*, void> OnProcessingPassStart;
+
+            [NativeTypeName("void () __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IXAudio2EngineCallback*, void> OnProcessingPassEnd;
+
+            [NativeTypeName("void (HRESULT) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IXAudio2EngineCallback*, HRESULT, void> OnCriticalError;
+        }
     }
 }

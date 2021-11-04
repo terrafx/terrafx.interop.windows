@@ -52,5 +52,23 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IBurnVerification*, IMAPI_BURN_VERIFICATION_LEVEL*, int>)(lpVtbl[4]))((IBurnVerification*)Unsafe.AsPointer(ref this), value);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IBurnVerification*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IBurnVerification*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IBurnVerification*, uint> Release;
+
+            [NativeTypeName("HRESULT (IMAPI_BURN_VERIFICATION_LEVEL) __attribute__((stdcall))")]
+            public delegate* unmanaged<IBurnVerification*, IMAPI_BURN_VERIFICATION_LEVEL, int> put_BurnVerificationLevel;
+
+            [NativeTypeName("HRESULT (IMAPI_BURN_VERIFICATION_LEVEL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IBurnVerification*, IMAPI_BURN_VERIFICATION_LEVEL*, int> get_BurnVerificationLevel;
+        }
     }
 }

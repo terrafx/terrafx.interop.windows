@@ -157,5 +157,68 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IMediaSeeking*, long*, int>)(lpVtbl[19]))((IMediaSeeking*)Unsafe.AsPointer(ref this), pllPreroll);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMediaSeeking*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMediaSeeking*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMediaSeeking*, uint> Release;
+
+            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMediaSeeking*, uint*, int> GetCapabilities;
+
+            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMediaSeeking*, uint*, int> CheckCapabilities;
+
+            [NativeTypeName("HRESULT (const GUID *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMediaSeeking*, Guid*, int> IsFormatSupported;
+
+            [NativeTypeName("HRESULT (GUID *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMediaSeeking*, Guid*, int> QueryPreferredFormat;
+
+            [NativeTypeName("HRESULT (GUID *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMediaSeeking*, Guid*, int> GetTimeFormat;
+
+            [NativeTypeName("HRESULT (const GUID *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMediaSeeking*, Guid*, int> IsUsingTimeFormat;
+
+            [NativeTypeName("HRESULT (const GUID *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMediaSeeking*, Guid*, int> SetTimeFormat;
+
+            [NativeTypeName("HRESULT (LONGLONG *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMediaSeeking*, long*, int> GetDuration;
+
+            [NativeTypeName("HRESULT (LONGLONG *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMediaSeeking*, long*, int> GetStopPosition;
+
+            [NativeTypeName("HRESULT (LONGLONG *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMediaSeeking*, long*, int> GetCurrentPosition;
+
+            [NativeTypeName("HRESULT (LONGLONG *, const GUID *, LONGLONG, const GUID *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMediaSeeking*, long*, Guid*, long, Guid*, int> ConvertTimeFormat;
+
+            [NativeTypeName("HRESULT (LONGLONG *, DWORD, LONGLONG *, DWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMediaSeeking*, long*, uint, long*, uint, int> SetPositions;
+
+            [NativeTypeName("HRESULT (LONGLONG *, LONGLONG *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMediaSeeking*, long*, long*, int> GetPositions;
+
+            [NativeTypeName("HRESULT (LONGLONG *, LONGLONG *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMediaSeeking*, long*, long*, int> GetAvailable;
+
+            [NativeTypeName("HRESULT (double) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMediaSeeking*, double, int> SetRate;
+
+            [NativeTypeName("HRESULT (double *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMediaSeeking*, double*, int> GetRate;
+
+            [NativeTypeName("HRESULT (LONGLONG *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMediaSeeking*, long*, int> GetPreroll;
+        }
     }
 }

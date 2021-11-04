@@ -45,5 +45,20 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<ID3D12CommandQueueDownlevel*, ID3D12GraphicsCommandList*, ID3D12Resource*, HWND, D3D12_DOWNLEVEL_PRESENT_FLAGS, int>)(lpVtbl[3]))((ID3D12CommandQueueDownlevel*)Unsafe.AsPointer(ref this), pOpenCommandList, pSourceTex2D, hWindow, Flags);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D12CommandQueueDownlevel*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D12CommandQueueDownlevel*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D12CommandQueueDownlevel*, uint> Release;
+
+            [NativeTypeName("HRESULT (ID3D12GraphicsCommandList *, ID3D12Resource *, HWND, D3D12_DOWNLEVEL_PRESENT_FLAGS) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D12CommandQueueDownlevel*, ID3D12GraphicsCommandList*, ID3D12Resource*, HWND, D3D12_DOWNLEVEL_PRESENT_FLAGS, int> Present;
+        }
     }
 }

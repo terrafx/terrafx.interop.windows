@@ -185,5 +185,80 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IOleObject*, LOGPALETTE*, int>)(lpVtbl[23]))((IOleObject*)Unsafe.AsPointer(ref this), pLogpal);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IOleObject*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IOleObject*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IOleObject*, uint> Release;
+
+            [NativeTypeName("HRESULT (IOleClientSite *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IOleObject*, IOleClientSite*, int> SetClientSite;
+
+            [NativeTypeName("HRESULT (IOleClientSite **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IOleObject*, IOleClientSite**, int> GetClientSite;
+
+            [NativeTypeName("HRESULT (LPCOLESTR, LPCOLESTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IOleObject*, ushort*, ushort*, int> SetHostNames;
+
+            [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<IOleObject*, uint, int> Close;
+
+            [NativeTypeName("HRESULT (DWORD, IMoniker *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IOleObject*, uint, IMoniker*, int> SetMoniker;
+
+            [NativeTypeName("HRESULT (DWORD, DWORD, IMoniker **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IOleObject*, uint, uint, IMoniker**, int> GetMoniker;
+
+            [NativeTypeName("HRESULT (IDataObject *, BOOL, DWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<IOleObject*, IDataObject*, BOOL, uint, int> InitFromData;
+
+            [NativeTypeName("HRESULT (DWORD, IDataObject **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IOleObject*, uint, IDataObject**, int> GetClipboardData;
+
+            [NativeTypeName("HRESULT (LONG, LPMSG, IOleClientSite *, LONG, HWND, LPCRECT) __attribute__((stdcall))")]
+            public delegate* unmanaged<IOleObject*, int, MSG*, IOleClientSite*, int, HWND, RECT*, int> DoVerb;
+
+            [NativeTypeName("HRESULT (IEnumOLEVERB **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IOleObject*, IEnumOLEVERB**, int> EnumVerbs;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IOleObject*, int> Update;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IOleObject*, int> IsUpToDate;
+
+            [NativeTypeName("HRESULT (CLSID *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IOleObject*, Guid*, int> GetUserClassID;
+
+            [NativeTypeName("HRESULT (DWORD, LPOLESTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IOleObject*, uint, ushort**, int> GetUserType;
+
+            [NativeTypeName("HRESULT (DWORD, SIZEL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IOleObject*, uint, SIZE*, int> SetExtent;
+
+            [NativeTypeName("HRESULT (DWORD, SIZEL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IOleObject*, uint, SIZE*, int> GetExtent;
+
+            [NativeTypeName("HRESULT (IAdviseSink *, DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IOleObject*, IAdviseSink*, uint*, int> Advise;
+
+            [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<IOleObject*, uint, int> Unadvise;
+
+            [NativeTypeName("HRESULT (IEnumSTATDATA **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IOleObject*, IEnumSTATDATA**, int> EnumAdvise;
+
+            [NativeTypeName("HRESULT (DWORD, DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IOleObject*, uint, uint*, int> GetMiscStatus;
+
+            [NativeTypeName("HRESULT (LOGPALETTE *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IOleObject*, LOGPALETTE*, int> SetColorScheme;
+        }
     }
 }

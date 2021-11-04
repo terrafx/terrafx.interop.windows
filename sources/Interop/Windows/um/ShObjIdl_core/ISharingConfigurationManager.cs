@@ -87,5 +87,38 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<ISharingConfigurationManager*, int>)(lpVtbl[9]))((ISharingConfigurationManager*)Unsafe.AsPointer(ref this));
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISharingConfigurationManager*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ISharingConfigurationManager*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ISharingConfigurationManager*, uint> Release;
+
+            [NativeTypeName("HRESULT (DEF_SHARE_ID, SHARE_ROLE) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISharingConfigurationManager*, DEF_SHARE_ID, SHARE_ROLE, int> CreateShare;
+
+            [NativeTypeName("HRESULT (DEF_SHARE_ID) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISharingConfigurationManager*, DEF_SHARE_ID, int> DeleteShare;
+
+            [NativeTypeName("HRESULT (DEF_SHARE_ID) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISharingConfigurationManager*, DEF_SHARE_ID, int> ShareExists;
+
+            [NativeTypeName("HRESULT (DEF_SHARE_ID, SHARE_ROLE *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISharingConfigurationManager*, DEF_SHARE_ID, SHARE_ROLE*, int> GetSharePermissions;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<ISharingConfigurationManager*, int> SharePrinters;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<ISharingConfigurationManager*, int> StopSharingPrinters;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<ISharingConfigurationManager*, int> ArePrintersShared;
+        }
     }
 }

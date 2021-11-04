@@ -66,5 +66,29 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IEnumProgressItems*, IEnumProgressItems**, int>)(lpVtbl[6]))((IEnumProgressItems*)Unsafe.AsPointer(ref this), ppEnum);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IEnumProgressItems*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IEnumProgressItems*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IEnumProgressItems*, uint> Release;
+
+            [NativeTypeName("HRESULT (ULONG, IProgressItem **, ULONG *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IEnumProgressItems*, uint, IProgressItem**, uint*, int> Next;
+
+            [NativeTypeName("HRESULT (ULONG) __attribute__((stdcall))")]
+            public delegate* unmanaged<IEnumProgressItems*, uint, int> Skip;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IEnumProgressItems*, int> Reset;
+
+            [NativeTypeName("HRESULT (IEnumProgressItems **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IEnumProgressItems*, IEnumProgressItems**, int> Clone;
+        }
     }
 }

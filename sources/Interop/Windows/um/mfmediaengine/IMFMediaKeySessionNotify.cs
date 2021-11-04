@@ -59,5 +59,26 @@ namespace TerraFX.Interop
         {
             ((delegate* unmanaged<IMFMediaKeySessionNotify*, ushort, uint, void>)(lpVtbl[5]))((IMFMediaKeySessionNotify*)Unsafe.AsPointer(ref this), code, systemCode);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFMediaKeySessionNotify*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFMediaKeySessionNotify*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFMediaKeySessionNotify*, uint> Release;
+
+            [NativeTypeName("void (BSTR, const BYTE *, DWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFMediaKeySessionNotify*, ushort*, byte*, uint, void> KeyMessage;
+
+            [NativeTypeName("void () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFMediaKeySessionNotify*, void> KeyAdded;
+
+            [NativeTypeName("void (USHORT, DWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFMediaKeySessionNotify*, ushort, uint, void> KeyError;
+        }
     }
 }

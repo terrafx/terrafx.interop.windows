@@ -339,5 +339,146 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IVideoWindow*, int*, int>)(lpVtbl[45]))((IVideoWindow*)Unsafe.AsPointer(ref this), CursorHidden);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IVideoWindow*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IVideoWindow*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IVideoWindow*, uint> Release;
+
+            [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IVideoWindow*, uint*, int> GetTypeInfoCount;
+
+            [NativeTypeName("HRESULT (UINT, LCID, ITypeInfo **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IVideoWindow*, uint, uint, ITypeInfo**, int> GetTypeInfo;
+
+            [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IVideoWindow*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+
+            [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IVideoWindow*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
+
+            [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IVideoWindow*, ushort*, int> put_Caption;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IVideoWindow*, ushort**, int> get_Caption;
+
+            [NativeTypeName("HRESULT (long) __attribute__((stdcall))")]
+            public delegate* unmanaged<IVideoWindow*, int, int> put_WindowStyle;
+
+            [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IVideoWindow*, int*, int> get_WindowStyle;
+
+            [NativeTypeName("HRESULT (long) __attribute__((stdcall))")]
+            public delegate* unmanaged<IVideoWindow*, int, int> put_WindowStyleEx;
+
+            [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IVideoWindow*, int*, int> get_WindowStyleEx;
+
+            [NativeTypeName("HRESULT (long) __attribute__((stdcall))")]
+            public delegate* unmanaged<IVideoWindow*, int, int> put_AutoShow;
+
+            [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IVideoWindow*, int*, int> get_AutoShow;
+
+            [NativeTypeName("HRESULT (long) __attribute__((stdcall))")]
+            public delegate* unmanaged<IVideoWindow*, int, int> put_WindowState;
+
+            [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IVideoWindow*, int*, int> get_WindowState;
+
+            [NativeTypeName("HRESULT (long) __attribute__((stdcall))")]
+            public delegate* unmanaged<IVideoWindow*, int, int> put_BackgroundPalette;
+
+            [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IVideoWindow*, int*, int> get_BackgroundPalette;
+
+            [NativeTypeName("HRESULT (long) __attribute__((stdcall))")]
+            public delegate* unmanaged<IVideoWindow*, int, int> put_Visible;
+
+            [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IVideoWindow*, int*, int> get_Visible;
+
+            [NativeTypeName("HRESULT (long) __attribute__((stdcall))")]
+            public delegate* unmanaged<IVideoWindow*, int, int> put_Left;
+
+            [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IVideoWindow*, int*, int> get_Left;
+
+            [NativeTypeName("HRESULT (long) __attribute__((stdcall))")]
+            public delegate* unmanaged<IVideoWindow*, int, int> put_Width;
+
+            [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IVideoWindow*, int*, int> get_Width;
+
+            [NativeTypeName("HRESULT (long) __attribute__((stdcall))")]
+            public delegate* unmanaged<IVideoWindow*, int, int> put_Top;
+
+            [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IVideoWindow*, int*, int> get_Top;
+
+            [NativeTypeName("HRESULT (long) __attribute__((stdcall))")]
+            public delegate* unmanaged<IVideoWindow*, int, int> put_Height;
+
+            [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IVideoWindow*, int*, int> get_Height;
+
+            [NativeTypeName("HRESULT (OAHWND) __attribute__((stdcall))")]
+            public delegate* unmanaged<IVideoWindow*, OAHWND, int> put_Owner;
+
+            [NativeTypeName("HRESULT (OAHWND *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IVideoWindow*, OAHWND*, int> get_Owner;
+
+            [NativeTypeName("HRESULT (OAHWND) __attribute__((stdcall))")]
+            public delegate* unmanaged<IVideoWindow*, OAHWND, int> put_MessageDrain;
+
+            [NativeTypeName("HRESULT (OAHWND *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IVideoWindow*, OAHWND*, int> get_MessageDrain;
+
+            [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IVideoWindow*, int*, int> get_BorderColor;
+
+            [NativeTypeName("HRESULT (long) __attribute__((stdcall))")]
+            public delegate* unmanaged<IVideoWindow*, int, int> put_BorderColor;
+
+            [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IVideoWindow*, int*, int> get_FullScreenMode;
+
+            [NativeTypeName("HRESULT (long) __attribute__((stdcall))")]
+            public delegate* unmanaged<IVideoWindow*, int, int> put_FullScreenMode;
+
+            [NativeTypeName("HRESULT (long) __attribute__((stdcall))")]
+            public delegate* unmanaged<IVideoWindow*, int, int> SetWindowForeground;
+
+            [NativeTypeName("HRESULT (OAHWND, long, LONG_PTR, LONG_PTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IVideoWindow*, OAHWND, int, nint, nint, int> NotifyOwnerMessage;
+
+            [NativeTypeName("HRESULT (long, long, long, long) __attribute__((stdcall))")]
+            public delegate* unmanaged<IVideoWindow*, int, int, int, int, int> SetWindowPosition;
+
+            [NativeTypeName("HRESULT (long *, long *, long *, long *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IVideoWindow*, int*, int*, int*, int*, int> GetWindowPosition;
+
+            [NativeTypeName("HRESULT (long *, long *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IVideoWindow*, int*, int*, int> GetMinIdealImageSize;
+
+            [NativeTypeName("HRESULT (long *, long *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IVideoWindow*, int*, int*, int> GetMaxIdealImageSize;
+
+            [NativeTypeName("HRESULT (long *, long *, long *, long *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IVideoWindow*, int*, int*, int*, int*, int> GetRestorePosition;
+
+            [NativeTypeName("HRESULT (long) __attribute__((stdcall))")]
+            public delegate* unmanaged<IVideoWindow*, int, int> HideCursor;
+
+            [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IVideoWindow*, int*, int> IsCursorHidden;
+        }
     }
 }

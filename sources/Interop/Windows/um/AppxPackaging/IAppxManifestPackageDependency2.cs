@@ -66,5 +66,29 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IAppxManifestPackageDependency2*, ushort*, int>)(lpVtbl[6]))((IAppxManifestPackageDependency2*)Unsafe.AsPointer(ref this), maxMajorVersionTested);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAppxManifestPackageDependency2*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IAppxManifestPackageDependency2*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IAppxManifestPackageDependency2*, uint> Release;
+
+            [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAppxManifestPackageDependency2*, ushort**, int> GetName;
+
+            [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAppxManifestPackageDependency2*, ushort**, int> GetPublisher;
+
+            [NativeTypeName("HRESULT (UINT64 *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAppxManifestPackageDependency2*, ulong*, int> GetMinVersion;
+
+            [NativeTypeName("HRESULT (UINT16 *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAppxManifestPackageDependency2*, ushort*, int> GetMaxMajorVersionTested;
+        }
     }
 }

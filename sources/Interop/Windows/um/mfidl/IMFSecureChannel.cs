@@ -52,5 +52,23 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IMFSecureChannel*, byte*, uint, int>)(lpVtbl[4]))((IMFSecureChannel*)Unsafe.AsPointer(ref this), pbEncryptedSessionKey, cbSessionKey);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFSecureChannel*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFSecureChannel*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFSecureChannel*, uint> Release;
+
+            [NativeTypeName("HRESULT (BYTE **, DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFSecureChannel*, byte**, uint*, int> GetCertificate;
+
+            [NativeTypeName("HRESULT (BYTE *, DWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFSecureChannel*, byte*, uint, int> SetupSession;
+        }
     }
 }

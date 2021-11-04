@@ -150,5 +150,65 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<ISpeechDataKey*, int, ushort**, int>)(lpVtbl[18]))((ISpeechDataKey*)Unsafe.AsPointer(ref this), Index, ValueName);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpeechDataKey*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpeechDataKey*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpeechDataKey*, uint> Release;
+
+            [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpeechDataKey*, uint*, int> GetTypeInfoCount;
+
+            [NativeTypeName("HRESULT (UINT, LCID, ITypeInfo **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpeechDataKey*, uint, uint, ITypeInfo**, int> GetTypeInfo;
+
+            [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpeechDataKey*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+
+            [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpeechDataKey*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
+
+            [NativeTypeName("HRESULT (const BSTR, VARIANT) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpeechDataKey*, ushort*, VARIANT, int> SetBinaryValue;
+
+            [NativeTypeName("HRESULT (const BSTR, VARIANT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpeechDataKey*, ushort*, VARIANT*, int> GetBinaryValue;
+
+            [NativeTypeName("HRESULT (const BSTR, const BSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpeechDataKey*, ushort*, ushort*, int> SetStringValue;
+
+            [NativeTypeName("HRESULT (const BSTR, BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpeechDataKey*, ushort*, ushort**, int> GetStringValue;
+
+            [NativeTypeName("HRESULT (const BSTR, long) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpeechDataKey*, ushort*, int, int> SetLongValue;
+
+            [NativeTypeName("HRESULT (const BSTR, long *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpeechDataKey*, ushort*, int*, int> GetLongValue;
+
+            [NativeTypeName("HRESULT (const BSTR, ISpeechDataKey **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpeechDataKey*, ushort*, ISpeechDataKey**, int> OpenKey;
+
+            [NativeTypeName("HRESULT (const BSTR, ISpeechDataKey **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpeechDataKey*, ushort*, ISpeechDataKey**, int> CreateKey;
+
+            [NativeTypeName("HRESULT (const BSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpeechDataKey*, ushort*, int> DeleteKey;
+
+            [NativeTypeName("HRESULT (const BSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpeechDataKey*, ushort*, int> DeleteValue;
+
+            [NativeTypeName("HRESULT (long, BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpeechDataKey*, int, ushort**, int> EnumKeys;
+
+            [NativeTypeName("HRESULT (long, BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpeechDataKey*, int, ushort**, int> EnumValues;
+        }
     }
 }

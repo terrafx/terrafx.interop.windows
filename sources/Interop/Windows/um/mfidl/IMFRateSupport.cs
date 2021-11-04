@@ -59,5 +59,26 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IMFRateSupport*, BOOL, float, float*, int>)(lpVtbl[5]))((IMFRateSupport*)Unsafe.AsPointer(ref this), fThin, flRate, pflNearestSupportedRate);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFRateSupport*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFRateSupport*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFRateSupport*, uint> Release;
+
+            [NativeTypeName("HRESULT (MFRATE_DIRECTION, BOOL, float *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFRateSupport*, MFRATE_DIRECTION, BOOL, float*, int> GetSlowestRate;
+
+            [NativeTypeName("HRESULT (MFRATE_DIRECTION, BOOL, float *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFRateSupport*, MFRATE_DIRECTION, BOOL, float*, int> GetFastestRate;
+
+            [NativeTypeName("HRESULT (BOOL, float, float *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFRateSupport*, BOOL, float, float*, int> IsRateSupported;
+        }
     }
 }

@@ -122,5 +122,53 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IMFSourceBuffer*, double, double, int>)(lpVtbl[14]))((IMFSourceBuffer*)Unsafe.AsPointer(ref this), start, end);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFSourceBuffer*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFSourceBuffer*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFSourceBuffer*, uint> Release;
+
+            [NativeTypeName("BOOL () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFSourceBuffer*, int> GetUpdating;
+
+            [NativeTypeName("HRESULT (IMFMediaTimeRange **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFSourceBuffer*, IMFMediaTimeRange**, int> GetBuffered;
+
+            [NativeTypeName("double () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFSourceBuffer*, double> GetTimeStampOffset;
+
+            [NativeTypeName("HRESULT (double) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFSourceBuffer*, double, int> SetTimeStampOffset;
+
+            [NativeTypeName("double () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFSourceBuffer*, double> GetAppendWindowStart;
+
+            [NativeTypeName("HRESULT (double) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFSourceBuffer*, double, int> SetAppendWindowStart;
+
+            [NativeTypeName("double () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFSourceBuffer*, double> GetAppendWindowEnd;
+
+            [NativeTypeName("HRESULT (double) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFSourceBuffer*, double, int> SetAppendWindowEnd;
+
+            [NativeTypeName("HRESULT (const BYTE *, DWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFSourceBuffer*, byte*, uint, int> Append;
+
+            [NativeTypeName("HRESULT (IMFByteStream *, DWORDLONG *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFSourceBuffer*, IMFByteStream*, ulong*, int> AppendByteStream;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFSourceBuffer*, int> Abort;
+
+            [NativeTypeName("HRESULT (double, double) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFSourceBuffer*, double, double, int> Remove;
+        }
     }
 }

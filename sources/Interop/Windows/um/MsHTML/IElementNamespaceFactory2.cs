@@ -52,5 +52,23 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IElementNamespaceFactory2*, IElementNamespace*, ushort*, int>)(lpVtbl[4]))((IElementNamespaceFactory2*)Unsafe.AsPointer(ref this), pNamespace, bstrImplementation);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IElementNamespaceFactory2*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IElementNamespaceFactory2*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IElementNamespaceFactory2*, uint> Release;
+
+            [NativeTypeName("HRESULT (IElementNamespace *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IElementNamespaceFactory2*, IElementNamespace*, int> Create;
+
+            [NativeTypeName("HRESULT (IElementNamespace *, BSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IElementNamespaceFactory2*, IElementNamespace*, ushort*, int> CreateWithImplementation;
+        }
     }
 }

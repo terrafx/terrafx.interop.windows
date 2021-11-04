@@ -80,5 +80,35 @@ namespace TerraFX.Interop
         {
             ((delegate* unmanaged<ID3D11UnorderedAccessView*, D3D11_UNORDERED_ACCESS_VIEW_DESC*, void>)(lpVtbl[8]))((ID3D11UnorderedAccessView*)Unsafe.AsPointer(ref this), pDesc);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D11UnorderedAccessView*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D11UnorderedAccessView*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D11UnorderedAccessView*, uint> Release;
+
+            [NativeTypeName("void (ID3D11Device **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D11UnorderedAccessView*, ID3D11Device**, void> GetDevice;
+
+            [NativeTypeName("HRESULT (const GUID &, UINT *, void *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D11UnorderedAccessView*, Guid*, uint*, void*, int> GetPrivateData;
+
+            [NativeTypeName("HRESULT (const GUID &, UINT, const void *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D11UnorderedAccessView*, Guid*, uint, void*, int> SetPrivateData;
+
+            [NativeTypeName("HRESULT (const GUID &, const IUnknown *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D11UnorderedAccessView*, Guid*, IUnknown*, int> SetPrivateDataInterface;
+
+            [NativeTypeName("void (ID3D11Resource **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D11UnorderedAccessView*, ID3D11Resource**, void> GetResource;
+
+            [NativeTypeName("void (D3D11_UNORDERED_ACCESS_VIEW_DESC *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D11UnorderedAccessView*, D3D11_UNORDERED_ACCESS_VIEW_DESC*, void> GetDesc;
+        }
     }
 }

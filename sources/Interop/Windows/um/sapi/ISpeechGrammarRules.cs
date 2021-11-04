@@ -122,5 +122,53 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<ISpeechGrammarRules*, ushort**, VARIANT*, int>)(lpVtbl[14]))((ISpeechGrammarRules*)Unsafe.AsPointer(ref this), ErrorText, SaveStream);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpeechGrammarRules*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpeechGrammarRules*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpeechGrammarRules*, uint> Release;
+
+            [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpeechGrammarRules*, uint*, int> GetTypeInfoCount;
+
+            [NativeTypeName("HRESULT (UINT, LCID, ITypeInfo **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpeechGrammarRules*, uint, uint, ITypeInfo**, int> GetTypeInfo;
+
+            [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpeechGrammarRules*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+
+            [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpeechGrammarRules*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
+
+            [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpeechGrammarRules*, int*, int> get_Count;
+
+            [NativeTypeName("HRESULT (VARIANT, ISpeechGrammarRule **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpeechGrammarRules*, VARIANT, ISpeechGrammarRule**, int> FindRule;
+
+            [NativeTypeName("HRESULT (long, ISpeechGrammarRule **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpeechGrammarRules*, int, ISpeechGrammarRule**, int> Item;
+
+            [NativeTypeName("HRESULT (IUnknown **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpeechGrammarRules*, IUnknown**, int> get__NewEnum;
+
+            [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpeechGrammarRules*, short*, int> get_Dynamic;
+
+            [NativeTypeName("HRESULT (BSTR, SpeechRuleAttributes, long, ISpeechGrammarRule **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpeechGrammarRules*, ushort*, SpeechRuleAttributes, int, ISpeechGrammarRule**, int> Add;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpeechGrammarRules*, int> Commit;
+
+            [NativeTypeName("HRESULT (BSTR *, VARIANT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpeechGrammarRules*, ushort**, VARIANT*, int> CommitAndSave;
+        }
     }
 }

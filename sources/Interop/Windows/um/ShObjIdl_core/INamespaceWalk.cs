@@ -52,5 +52,23 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<INamespaceWalk*, uint*, ITEMIDLIST***, int>)(lpVtbl[4]))((INamespaceWalk*)Unsafe.AsPointer(ref this), pcItems, prgpidl);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<INamespaceWalk*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<INamespaceWalk*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<INamespaceWalk*, uint> Release;
+
+            [NativeTypeName("HRESULT (IUnknown *, DWORD, int, INamespaceWalkCB *) __attribute__((stdcall))")]
+            public delegate* unmanaged<INamespaceWalk*, IUnknown*, uint, int, INamespaceWalkCB*, int> Walk;
+
+            [NativeTypeName("HRESULT (UINT *, LPITEMIDLIST **) __attribute__((stdcall))")]
+            public delegate* unmanaged<INamespaceWalk*, uint*, ITEMIDLIST***, int> GetIDArrayResult;
+        }
     }
 }

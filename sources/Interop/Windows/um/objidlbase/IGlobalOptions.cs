@@ -52,5 +52,23 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IGlobalOptions*, GLOBALOPT_PROPERTIES, nuint*, int>)(lpVtbl[4]))((IGlobalOptions*)Unsafe.AsPointer(ref this), dwProperty, pdwValue);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IGlobalOptions*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IGlobalOptions*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IGlobalOptions*, uint> Release;
+
+            [NativeTypeName("HRESULT (GLOBALOPT_PROPERTIES, ULONG_PTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IGlobalOptions*, GLOBALOPT_PROPERTIES, nuint, int> Set;
+
+            [NativeTypeName("HRESULT (GLOBALOPT_PROPERTIES, ULONG_PTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IGlobalOptions*, GLOBALOPT_PROPERTIES, nuint*, int> Query;
+        }
     }
 }

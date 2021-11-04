@@ -129,5 +129,56 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IMediaEventEx*, int*, int>)(lpVtbl[15]))((IMediaEventEx*)Unsafe.AsPointer(ref this), lplNoNotifyFlags);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMediaEventEx*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMediaEventEx*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMediaEventEx*, uint> Release;
+
+            [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMediaEventEx*, uint*, int> GetTypeInfoCount;
+
+            [NativeTypeName("HRESULT (UINT, LCID, ITypeInfo **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMediaEventEx*, uint, uint, ITypeInfo**, int> GetTypeInfo;
+
+            [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMediaEventEx*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+
+            [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMediaEventEx*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
+
+            [NativeTypeName("HRESULT (OAEVENT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMediaEventEx*, nint*, int> GetEventHandle;
+
+            [NativeTypeName("HRESULT (long *, LONG_PTR *, LONG_PTR *, long) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMediaEventEx*, int*, nint*, nint*, int, int> GetEvent;
+
+            [NativeTypeName("HRESULT (long, long *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMediaEventEx*, int, int*, int> WaitForCompletion;
+
+            [NativeTypeName("HRESULT (long) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMediaEventEx*, int, int> CancelDefaultHandling;
+
+            [NativeTypeName("HRESULT (long) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMediaEventEx*, int, int> RestoreDefaultHandling;
+
+            [NativeTypeName("HRESULT (long, LONG_PTR, LONG_PTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMediaEventEx*, int, nint, nint, int> FreeEventParams;
+
+            [NativeTypeName("HRESULT (OAHWND, long, LONG_PTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMediaEventEx*, OAHWND, int, nint, int> SetNotifyWindow;
+
+            [NativeTypeName("HRESULT (long) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMediaEventEx*, int, int> SetNotifyFlags;
+
+            [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMediaEventEx*, int*, int> GetNotifyFlags;
+        }
     }
 }

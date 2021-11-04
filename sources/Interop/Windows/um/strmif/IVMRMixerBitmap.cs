@@ -59,5 +59,26 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IVMRMixerBitmap*, VMRALPHABITMAP*, int>)(lpVtbl[5]))((IVMRMixerBitmap*)Unsafe.AsPointer(ref this), pBmpParms);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IVMRMixerBitmap*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IVMRMixerBitmap*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IVMRMixerBitmap*, uint> Release;
+
+            [NativeTypeName("HRESULT (const VMRALPHABITMAP *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IVMRMixerBitmap*, VMRALPHABITMAP*, int> SetAlphaBitmap;
+
+            [NativeTypeName("HRESULT (PVMRALPHABITMAP) __attribute__((stdcall))")]
+            public delegate* unmanaged<IVMRMixerBitmap*, VMRALPHABITMAP*, int> UpdateAlphaBitmapParameters;
+
+            [NativeTypeName("HRESULT (PVMRALPHABITMAP) __attribute__((stdcall))")]
+            public delegate* unmanaged<IVMRMixerBitmap*, VMRALPHABITMAP*, int> GetAlphaBitmapParameters;
+        }
     }
 }

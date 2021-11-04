@@ -45,5 +45,20 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IAppxBundleManifestReader2*, IAppxBundleManifestOptionalBundleInfoEnumerator**, int>)(lpVtbl[3]))((IAppxBundleManifestReader2*)Unsafe.AsPointer(ref this), optionalBundles);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAppxBundleManifestReader2*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IAppxBundleManifestReader2*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IAppxBundleManifestReader2*, uint> Release;
+
+            [NativeTypeName("HRESULT (IAppxBundleManifestOptionalBundleInfoEnumerator **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAppxBundleManifestReader2*, IAppxBundleManifestOptionalBundleInfoEnumerator**, int> GetOptionalBundles;
+        }
     }
 }

@@ -45,5 +45,20 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IMFRemoteDesktopPlugin*, IMFTopology*, int>)(lpVtbl[3]))((IMFRemoteDesktopPlugin*)Unsafe.AsPointer(ref this), pTopology);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFRemoteDesktopPlugin*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFRemoteDesktopPlugin*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFRemoteDesktopPlugin*, uint> Release;
+
+            [NativeTypeName("HRESULT (IMFTopology *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFRemoteDesktopPlugin*, IMFTopology*, int> UpdateTopology;
+        }
     }
 }

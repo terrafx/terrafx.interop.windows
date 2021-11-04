@@ -87,5 +87,38 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IMFMediaKeys2*, HRESULT, HRESULT*, int>)(lpVtbl[9]))((IMFMediaKeys2*)Unsafe.AsPointer(ref this), systemCode, code);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFMediaKeys2*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFMediaKeys2*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFMediaKeys2*, uint> Release;
+
+            [NativeTypeName("HRESULT (BSTR, const BYTE *, DWORD, const BYTE *, DWORD, IMFMediaKeySessionNotify *, IMFMediaKeySession **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFMediaKeys2*, ushort*, byte*, uint, byte*, uint, IMFMediaKeySessionNotify*, IMFMediaKeySession**, int> CreateSession;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFMediaKeys2*, ushort**, int> get_KeySystem;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFMediaKeys2*, int> Shutdown;
+
+            [NativeTypeName("HRESULT (IMFCdmSuspendNotify **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFMediaKeys2*, IMFCdmSuspendNotify**, int> GetSuspendNotify;
+
+            [NativeTypeName("HRESULT (MF_MEDIAKEYSESSION_TYPE, IMFMediaKeySessionNotify2 *, IMFMediaKeySession2 **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFMediaKeys2*, MF_MEDIAKEYSESSION_TYPE, IMFMediaKeySessionNotify2*, IMFMediaKeySession2**, int> CreateSession2;
+
+            [NativeTypeName("HRESULT (const BYTE *, DWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFMediaKeys2*, byte*, uint, int> SetServerCertificate;
+
+            [NativeTypeName("HRESULT (HRESULT, HRESULT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFMediaKeys2*, HRESULT, HRESULT*, int> GetDOMException;
+        }
     }
 }

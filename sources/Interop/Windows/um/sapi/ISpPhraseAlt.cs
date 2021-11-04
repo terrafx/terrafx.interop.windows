@@ -80,5 +80,35 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<ISpPhraseAlt*, int>)(lpVtbl[8]))((ISpPhraseAlt*)Unsafe.AsPointer(ref this));
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpPhraseAlt*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpPhraseAlt*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpPhraseAlt*, uint> Release;
+
+            [NativeTypeName("HRESULT (SPPHRASE **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpPhraseAlt*, SPPHRASE**, int> GetPhrase;
+
+            [NativeTypeName("HRESULT (SPSERIALIZEDPHRASE **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpPhraseAlt*, SPSERIALIZEDPHRASE**, int> GetSerializedPhrase;
+
+            [NativeTypeName("HRESULT (ULONG, ULONG, BOOL, LPWSTR *, BYTE *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpPhraseAlt*, uint, uint, BOOL, ushort**, byte*, int> GetText;
+
+            [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpPhraseAlt*, uint, int> Discard;
+
+            [NativeTypeName("HRESULT (ISpPhrase **, ULONG *, ULONG *, ULONG *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpPhraseAlt*, ISpPhrase**, uint*, uint*, uint*, int> GetAltInfo;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpPhraseAlt*, int> Commit;
+        }
     }
 }

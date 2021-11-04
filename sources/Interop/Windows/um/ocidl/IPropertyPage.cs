@@ -115,5 +115,50 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IPropertyPage*, MSG*, int>)(lpVtbl[13]))((IPropertyPage*)Unsafe.AsPointer(ref this), pMsg);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IPropertyPage*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IPropertyPage*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IPropertyPage*, uint> Release;
+
+            [NativeTypeName("HRESULT (IPropertyPageSite *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IPropertyPage*, IPropertyPageSite*, int> SetPageSite;
+
+            [NativeTypeName("HRESULT (HWND, LPCRECT, BOOL) __attribute__((stdcall))")]
+            public delegate* unmanaged<IPropertyPage*, HWND, RECT*, BOOL, int> Activate;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IPropertyPage*, int> Deactivate;
+
+            [NativeTypeName("HRESULT (PROPPAGEINFO *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IPropertyPage*, PROPPAGEINFO*, int> GetPageInfo;
+
+            [NativeTypeName("HRESULT (ULONG, IUnknown **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IPropertyPage*, uint, IUnknown**, int> SetObjects;
+
+            [NativeTypeName("HRESULT (UINT) __attribute__((stdcall))")]
+            public delegate* unmanaged<IPropertyPage*, uint, int> Show;
+
+            [NativeTypeName("HRESULT (LPCRECT) __attribute__((stdcall))")]
+            public delegate* unmanaged<IPropertyPage*, RECT*, int> Move;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IPropertyPage*, int> IsPageDirty;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IPropertyPage*, int> Apply;
+
+            [NativeTypeName("HRESULT (LPCOLESTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IPropertyPage*, ushort*, int> Help;
+
+            [NativeTypeName("HRESULT (MSG *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IPropertyPage*, MSG*, int> TranslateAccelerator;
+        }
     }
 }

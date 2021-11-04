@@ -122,5 +122,53 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<ISpStreamFormat*, Guid*, WAVEFORMATEX**, int>)(lpVtbl[14]))((ISpStreamFormat*)Unsafe.AsPointer(ref this), pguidFormatId, ppCoMemWaveFormatEx);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpStreamFormat*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpStreamFormat*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpStreamFormat*, uint> Release;
+
+            [NativeTypeName("HRESULT (void *, ULONG, ULONG *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpStreamFormat*, void*, uint, uint*, int> Read;
+
+            [NativeTypeName("HRESULT (const void *, ULONG, ULONG *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpStreamFormat*, void*, uint, uint*, int> Write;
+
+            [NativeTypeName("HRESULT (LARGE_INTEGER, DWORD, ULARGE_INTEGER *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpStreamFormat*, LARGE_INTEGER, uint, ULARGE_INTEGER*, int> Seek;
+
+            [NativeTypeName("HRESULT (ULARGE_INTEGER) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpStreamFormat*, ULARGE_INTEGER, int> SetSize;
+
+            [NativeTypeName("HRESULT (IStream *, ULARGE_INTEGER, ULARGE_INTEGER *, ULARGE_INTEGER *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpStreamFormat*, IStream*, ULARGE_INTEGER, ULARGE_INTEGER*, ULARGE_INTEGER*, int> CopyTo;
+
+            [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpStreamFormat*, uint, int> Commit;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpStreamFormat*, int> Revert;
+
+            [NativeTypeName("HRESULT (ULARGE_INTEGER, ULARGE_INTEGER, DWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpStreamFormat*, ULARGE_INTEGER, ULARGE_INTEGER, uint, int> LockRegion;
+
+            [NativeTypeName("HRESULT (ULARGE_INTEGER, ULARGE_INTEGER, DWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpStreamFormat*, ULARGE_INTEGER, ULARGE_INTEGER, uint, int> UnlockRegion;
+
+            [NativeTypeName("HRESULT (STATSTG *, DWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpStreamFormat*, STATSTG*, uint, int> Stat;
+
+            [NativeTypeName("HRESULT (IStream **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpStreamFormat*, IStream**, int> Clone;
+
+            [NativeTypeName("HRESULT (GUID *, WAVEFORMATEX **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpStreamFormat*, Guid*, WAVEFORMATEX**, int> GetFormat;
+        }
     }
 }

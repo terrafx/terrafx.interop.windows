@@ -45,5 +45,20 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IMFMediaSourceTopologyProvider*, IMFPresentationDescriptor*, IMFTopology**, int>)(lpVtbl[3]))((IMFMediaSourceTopologyProvider*)Unsafe.AsPointer(ref this), pPresentationDescriptor, ppTopology);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFMediaSourceTopologyProvider*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFMediaSourceTopologyProvider*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFMediaSourceTopologyProvider*, uint> Release;
+
+            [NativeTypeName("HRESULT (IMFPresentationDescriptor *, IMFTopology **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFMediaSourceTopologyProvider*, IMFPresentationDescriptor*, IMFTopology**, int> GetMediaSourceTopology;
+        }
     }
 }

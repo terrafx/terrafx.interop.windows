@@ -108,5 +108,47 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IOverlay*, int>)(lpVtbl[12]))((IOverlay*)Unsafe.AsPointer(ref this));
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IOverlay*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IOverlay*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IOverlay*, uint> Release;
+
+            [NativeTypeName("HRESULT (DWORD *, PALETTEENTRY **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IOverlay*, uint*, PALETTEENTRY**, int> GetPalette;
+
+            [NativeTypeName("HRESULT (DWORD, PALETTEENTRY *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IOverlay*, uint, PALETTEENTRY*, int> SetPalette;
+
+            [NativeTypeName("HRESULT (COLORKEY *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IOverlay*, COLORKEY*, int> GetDefaultColorKey;
+
+            [NativeTypeName("HRESULT (COLORKEY *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IOverlay*, COLORKEY*, int> GetColorKey;
+
+            [NativeTypeName("HRESULT (COLORKEY *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IOverlay*, COLORKEY*, int> SetColorKey;
+
+            [NativeTypeName("HRESULT (HWND *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IOverlay*, HWND*, int> GetWindowHandle;
+
+            [NativeTypeName("HRESULT (RECT *, RECT *, RGNDATA **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IOverlay*, RECT*, RECT*, RGNDATA**, int> GetClipList;
+
+            [NativeTypeName("HRESULT (RECT *, RECT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IOverlay*, RECT*, RECT*, int> GetVideoPosition;
+
+            [NativeTypeName("HRESULT (IOverlayNotify *, DWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<IOverlay*, IOverlayNotify*, uint, int> Advise;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IOverlay*, int> Unadvise;
+        }
     }
 }

@@ -73,5 +73,32 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IColumnManager*, PROPERTYKEY*, uint, int>)(lpVtbl[7]))((IColumnManager*)Unsafe.AsPointer(ref this), rgkeyOrder, cVisible);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IColumnManager*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IColumnManager*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IColumnManager*, uint> Release;
+
+            [NativeTypeName("HRESULT (const PROPERTYKEY &, const CM_COLUMNINFO *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IColumnManager*, PROPERTYKEY*, CM_COLUMNINFO*, int> SetColumnInfo;
+
+            [NativeTypeName("HRESULT (const PROPERTYKEY &, CM_COLUMNINFO *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IColumnManager*, PROPERTYKEY*, CM_COLUMNINFO*, int> GetColumnInfo;
+
+            [NativeTypeName("HRESULT (CM_ENUM_FLAGS, UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IColumnManager*, CM_ENUM_FLAGS, uint*, int> GetColumnCount;
+
+            [NativeTypeName("HRESULT (CM_ENUM_FLAGS, PROPERTYKEY *, UINT) __attribute__((stdcall))")]
+            public delegate* unmanaged<IColumnManager*, CM_ENUM_FLAGS, PROPERTYKEY*, uint, int> GetColumns;
+
+            [NativeTypeName("HRESULT (const PROPERTYKEY *, UINT) __attribute__((stdcall))")]
+            public delegate* unmanaged<IColumnManager*, PROPERTYKEY*, uint, int> SetColumns;
+        }
     }
 }

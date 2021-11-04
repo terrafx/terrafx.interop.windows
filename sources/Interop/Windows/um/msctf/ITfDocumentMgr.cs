@@ -80,5 +80,35 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<ITfDocumentMgr*, IEnumTfContexts**, int>)(lpVtbl[8]))((ITfDocumentMgr*)Unsafe.AsPointer(ref this), ppEnum);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfDocumentMgr*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfDocumentMgr*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfDocumentMgr*, uint> Release;
+
+            [NativeTypeName("HRESULT (TfClientId, DWORD, IUnknown *, ITfContext **, TfEditCookie *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfDocumentMgr*, uint, uint, IUnknown*, ITfContext**, uint*, int> CreateContext;
+
+            [NativeTypeName("HRESULT (ITfContext *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfDocumentMgr*, ITfContext*, int> Push;
+
+            [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfDocumentMgr*, uint, int> Pop;
+
+            [NativeTypeName("HRESULT (ITfContext **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfDocumentMgr*, ITfContext**, int> GetTop;
+
+            [NativeTypeName("HRESULT (ITfContext **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfDocumentMgr*, ITfContext**, int> GetBase;
+
+            [NativeTypeName("HRESULT (IEnumTfContexts **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfDocumentMgr*, IEnumTfContexts**, int> EnumContexts;
+        }
     }
 }

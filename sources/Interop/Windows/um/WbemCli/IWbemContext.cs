@@ -101,5 +101,44 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IWbemContext*, int>)(lpVtbl[11]))((IWbemContext*)Unsafe.AsPointer(ref this));
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWbemContext*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IWbemContext*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IWbemContext*, uint> Release;
+
+            [NativeTypeName("HRESULT (IWbemContext **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWbemContext*, IWbemContext**, int> Clone;
+
+            [NativeTypeName("HRESULT (long, SAFEARRAY **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWbemContext*, int, SAFEARRAY**, int> GetNames;
+
+            [NativeTypeName("HRESULT (long) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWbemContext*, int, int> BeginEnumeration;
+
+            [NativeTypeName("HRESULT (long, BSTR *, VARIANT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWbemContext*, int, ushort**, VARIANT*, int> Next;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IWbemContext*, int> EndEnumeration;
+
+            [NativeTypeName("HRESULT (LPCWSTR, long, VARIANT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWbemContext*, ushort*, int, VARIANT*, int> SetValue;
+
+            [NativeTypeName("HRESULT (LPCWSTR, long, VARIANT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWbemContext*, ushort*, int, VARIANT*, int> GetValue;
+
+            [NativeTypeName("HRESULT (LPCWSTR, long) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWbemContext*, ushort*, int, int> DeleteValue;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IWbemContext*, int> DeleteAll;
+        }
     }
 }

@@ -73,5 +73,32 @@ namespace TerraFX.Interop
         {
             ((delegate* unmanaged<ID3D12Debug4*, void>)(lpVtbl[7]))((ID3D12Debug4*)Unsafe.AsPointer(ref this));
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D12Debug4*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D12Debug4*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D12Debug4*, uint> Release;
+
+            [NativeTypeName("void () __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D12Debug4*, void> EnableDebugLayer;
+
+            [NativeTypeName("void (BOOL) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D12Debug4*, BOOL, void> SetEnableGPUBasedValidation;
+
+            [NativeTypeName("void (BOOL) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D12Debug4*, BOOL, void> SetEnableSynchronizedCommandQueueValidation;
+
+            [NativeTypeName("void (D3D12_GPU_BASED_VALIDATION_FLAGS) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D12Debug4*, D3D12_GPU_BASED_VALIDATION_FLAGS, void> SetGPUBasedValidationFlags;
+
+            [NativeTypeName("void () __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D12Debug4*, void> DisableDebugLayer;
+        }
     }
 }

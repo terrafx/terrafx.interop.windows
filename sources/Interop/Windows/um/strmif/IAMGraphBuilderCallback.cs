@@ -52,5 +52,23 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IAMGraphBuilderCallback*, IBaseFilter*, int>)(lpVtbl[4]))((IAMGraphBuilderCallback*)Unsafe.AsPointer(ref this), pFil);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAMGraphBuilderCallback*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IAMGraphBuilderCallback*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IAMGraphBuilderCallback*, uint> Release;
+
+            [NativeTypeName("HRESULT (IMoniker *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAMGraphBuilderCallback*, IMoniker*, int> SelectedFilter;
+
+            [NativeTypeName("HRESULT (IBaseFilter *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAMGraphBuilderCallback*, IBaseFilter*, int> CreatedFilter;
+        }
     }
 }

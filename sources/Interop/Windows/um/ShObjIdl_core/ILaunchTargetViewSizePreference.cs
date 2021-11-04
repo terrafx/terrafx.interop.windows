@@ -45,5 +45,20 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<ILaunchTargetViewSizePreference*, APPLICATION_VIEW_SIZE_PREFERENCE*, int>)(lpVtbl[3]))((ILaunchTargetViewSizePreference*)Unsafe.AsPointer(ref this), targetSizeOnLaunch);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ILaunchTargetViewSizePreference*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ILaunchTargetViewSizePreference*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ILaunchTargetViewSizePreference*, uint> Release;
+
+            [NativeTypeName("HRESULT (APPLICATION_VIEW_SIZE_PREFERENCE *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ILaunchTargetViewSizePreference*, APPLICATION_VIEW_SIZE_PREFERENCE*, int> GetTargetViewSizePreference;
+        }
     }
 }

@@ -45,5 +45,20 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<ILanguageExceptionErrorInfo*, IUnknown**, int>)(lpVtbl[3]))((ILanguageExceptionErrorInfo*)Unsafe.AsPointer(ref this), languageException);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ILanguageExceptionErrorInfo*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ILanguageExceptionErrorInfo*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ILanguageExceptionErrorInfo*, uint> Release;
+
+            [NativeTypeName("HRESULT (IUnknown **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ILanguageExceptionErrorInfo*, IUnknown**, int> GetLanguageException;
+        }
     }
 }

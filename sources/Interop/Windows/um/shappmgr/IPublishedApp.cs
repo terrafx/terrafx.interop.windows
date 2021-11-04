@@ -94,5 +94,41 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IPublishedApp*, int>)(lpVtbl[10]))((IPublishedApp*)Unsafe.AsPointer(ref this));
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IPublishedApp*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IPublishedApp*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IPublishedApp*, uint> Release;
+
+            [NativeTypeName("HRESULT (PAPPINFODATA) __attribute__((stdcall))")]
+            public delegate* unmanaged<IPublishedApp*, APPINFODATA*, int> GetAppInfo;
+
+            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IPublishedApp*, uint*, int> GetPossibleActions;
+
+            [NativeTypeName("HRESULT (PSLOWAPPINFO) __attribute__((stdcall))")]
+            public delegate* unmanaged<IPublishedApp*, SLOWAPPINFO*, int> GetSlowAppInfo;
+
+            [NativeTypeName("HRESULT (PSLOWAPPINFO) __attribute__((stdcall))")]
+            public delegate* unmanaged<IPublishedApp*, SLOWAPPINFO*, int> GetCachedSlowAppInfo;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IPublishedApp*, int> IsInstalled;
+
+            [NativeTypeName("HRESULT (LPSYSTEMTIME) __attribute__((stdcall))")]
+            public delegate* unmanaged<IPublishedApp*, SYSTEMTIME*, int> Install;
+
+            [NativeTypeName("HRESULT (PPUBAPPINFO) __attribute__((stdcall))")]
+            public delegate* unmanaged<IPublishedApp*, PUBAPPINFO*, int> GetPublishedAppInfo;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IPublishedApp*, int> Unschedule;
+        }
     }
 }

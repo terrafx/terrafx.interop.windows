@@ -52,5 +52,23 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IMFMediaEngineEME*, IMFMediaKeys*, int>)(lpVtbl[4]))((IMFMediaEngineEME*)Unsafe.AsPointer(ref this), keys);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFMediaEngineEME*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFMediaEngineEME*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFMediaEngineEME*, uint> Release;
+
+            [NativeTypeName("HRESULT (IMFMediaKeys **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFMediaEngineEME*, IMFMediaKeys**, int> get_Keys;
+
+            [NativeTypeName("HRESULT (IMFMediaKeys *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFMediaEngineEME*, IMFMediaKeys*, int> SetMediaKeys;
+        }
     }
 }

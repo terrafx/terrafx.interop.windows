@@ -73,5 +73,32 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IHlinkTarget*, ushort*, ushort**, int>)(lpVtbl[7]))((IHlinkTarget*)Unsafe.AsPointer(ref this), pwzLocation, ppwzFriendlyName);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHlinkTarget*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IHlinkTarget*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IHlinkTarget*, uint> Release;
+
+            [NativeTypeName("HRESULT (IHlinkBrowseContext *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHlinkTarget*, IHlinkBrowseContext*, int> SetBrowseContext;
+
+            [NativeTypeName("HRESULT (IHlinkBrowseContext **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHlinkTarget*, IHlinkBrowseContext**, int> GetBrowseContext;
+
+            [NativeTypeName("HRESULT (DWORD, LPCWSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHlinkTarget*, uint, ushort*, int> Navigate;
+
+            [NativeTypeName("HRESULT (LPCWSTR, DWORD, IMoniker **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHlinkTarget*, ushort*, uint, IMoniker**, int> GetMoniker;
+
+            [NativeTypeName("HRESULT (LPCWSTR, LPWSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHlinkTarget*, ushort*, ushort**, int> GetFriendlyName;
+        }
     }
 }

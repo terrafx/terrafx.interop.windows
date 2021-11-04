@@ -101,5 +101,44 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IMFMediaSink*, int>)(lpVtbl[11]))((IMFMediaSink*)Unsafe.AsPointer(ref this));
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFMediaSink*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFMediaSink*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFMediaSink*, uint> Release;
+
+            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFMediaSink*, uint*, int> GetCharacteristics;
+
+            [NativeTypeName("HRESULT (DWORD, IMFMediaType *, IMFStreamSink **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFMediaSink*, uint, IMFMediaType*, IMFStreamSink**, int> AddStreamSink;
+
+            [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFMediaSink*, uint, int> RemoveStreamSink;
+
+            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFMediaSink*, uint*, int> GetStreamSinkCount;
+
+            [NativeTypeName("HRESULT (DWORD, IMFStreamSink **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFMediaSink*, uint, IMFStreamSink**, int> GetStreamSinkByIndex;
+
+            [NativeTypeName("HRESULT (DWORD, IMFStreamSink **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFMediaSink*, uint, IMFStreamSink**, int> GetStreamSinkById;
+
+            [NativeTypeName("HRESULT (IMFPresentationClock *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFMediaSink*, IMFPresentationClock*, int> SetPresentationClock;
+
+            [NativeTypeName("HRESULT (IMFPresentationClock **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFMediaSink*, IMFPresentationClock**, int> GetPresentationClock;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFMediaSink*, int> Shutdown;
+        }
     }
 }

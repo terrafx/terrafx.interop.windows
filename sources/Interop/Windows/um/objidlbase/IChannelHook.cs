@@ -80,5 +80,35 @@ namespace TerraFX.Interop
         {
             ((delegate* unmanaged<IChannelHook*, Guid*, Guid*, uint*, void*, HRESULT, void>)(lpVtbl[8]))((IChannelHook*)Unsafe.AsPointer(ref this), uExtent, riid, pDataSize, pDataBuffer, hrFault);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IChannelHook*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IChannelHook*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IChannelHook*, uint> Release;
+
+            [NativeTypeName("void (const GUID &, const IID &, ULONG *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IChannelHook*, Guid*, Guid*, uint*, void> ClientGetSize;
+
+            [NativeTypeName("void (const GUID &, const IID &, ULONG *, void *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IChannelHook*, Guid*, Guid*, uint*, void*, void> ClientFillBuffer;
+
+            [NativeTypeName("void (const GUID &, const IID &, ULONG, void *, DWORD, HRESULT) __attribute__((stdcall))")]
+            public delegate* unmanaged<IChannelHook*, Guid*, Guid*, uint, void*, uint, HRESULT, void> ClientNotify;
+
+            [NativeTypeName("void (const GUID &, const IID &, ULONG, void *, DWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<IChannelHook*, Guid*, Guid*, uint, void*, uint, void> ServerNotify;
+
+            [NativeTypeName("void (const GUID &, const IID &, HRESULT, ULONG *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IChannelHook*, Guid*, Guid*, HRESULT, uint*, void> ServerGetSize;
+
+            [NativeTypeName("void (const GUID &, const IID &, ULONG *, void *, HRESULT) __attribute__((stdcall))")]
+            public delegate* unmanaged<IChannelHook*, Guid*, Guid*, uint*, void*, HRESULT, void> ServerFillBuffer;
+        }
     }
 }

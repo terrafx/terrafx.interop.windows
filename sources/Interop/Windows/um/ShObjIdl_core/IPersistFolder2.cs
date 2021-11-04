@@ -59,5 +59,26 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IPersistFolder2*, ITEMIDLIST**, int>)(lpVtbl[5]))((IPersistFolder2*)Unsafe.AsPointer(ref this), ppidl);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IPersistFolder2*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IPersistFolder2*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IPersistFolder2*, uint> Release;
+
+            [NativeTypeName("HRESULT (CLSID *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IPersistFolder2*, Guid*, int> GetClassID;
+
+            [NativeTypeName("HRESULT (LPCITEMIDLIST) __attribute__((stdcall))")]
+            public delegate* unmanaged<IPersistFolder2*, ITEMIDLIST*, int> Initialize;
+
+            [NativeTypeName("HRESULT (LPITEMIDLIST *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IPersistFolder2*, ITEMIDLIST**, int> GetCurFolder;
+        }
     }
 }

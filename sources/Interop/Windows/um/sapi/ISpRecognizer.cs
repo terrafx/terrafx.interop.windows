@@ -178,5 +178,77 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<ISpRecognizer*, ISpPhrase*, int>)(lpVtbl[22]))((ISpRecognizer*)Unsafe.AsPointer(ref this), pPhrase);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpRecognizer*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpRecognizer*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpRecognizer*, uint> Release;
+
+            [NativeTypeName("HRESULT (LPCWSTR, LONG) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpRecognizer*, ushort*, int, int> SetPropertyNum;
+
+            [NativeTypeName("HRESULT (LPCWSTR, LONG *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpRecognizer*, ushort*, int*, int> GetPropertyNum;
+
+            [NativeTypeName("HRESULT (LPCWSTR, LPCWSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpRecognizer*, ushort*, ushort*, int> SetPropertyString;
+
+            [NativeTypeName("HRESULT (LPCWSTR, LPWSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpRecognizer*, ushort*, ushort**, int> GetPropertyString;
+
+            [NativeTypeName("HRESULT (ISpObjectToken *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpRecognizer*, ISpObjectToken*, int> SetRecognizer;
+
+            [NativeTypeName("HRESULT (ISpObjectToken **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpRecognizer*, ISpObjectToken**, int> GetRecognizer;
+
+            [NativeTypeName("HRESULT (IUnknown *, BOOL) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpRecognizer*, IUnknown*, BOOL, int> SetInput;
+
+            [NativeTypeName("HRESULT (ISpObjectToken **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpRecognizer*, ISpObjectToken**, int> GetInputObjectToken;
+
+            [NativeTypeName("HRESULT (ISpStreamFormat **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpRecognizer*, ISpStreamFormat**, int> GetInputStream;
+
+            [NativeTypeName("HRESULT (ISpRecoContext **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpRecognizer*, ISpRecoContext**, int> CreateRecoContext;
+
+            [NativeTypeName("HRESULT (ISpObjectToken **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpRecognizer*, ISpObjectToken**, int> GetRecoProfile;
+
+            [NativeTypeName("HRESULT (ISpObjectToken *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpRecognizer*, ISpObjectToken*, int> SetRecoProfile;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpRecognizer*, int> IsSharedInstance;
+
+            [NativeTypeName("HRESULT (SPRECOSTATE *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpRecognizer*, SPRECOSTATE*, int> GetRecoState;
+
+            [NativeTypeName("HRESULT (SPRECOSTATE) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpRecognizer*, SPRECOSTATE, int> SetRecoState;
+
+            [NativeTypeName("HRESULT (SPRECOGNIZERSTATUS *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpRecognizer*, SPRECOGNIZERSTATUS*, int> GetStatus;
+
+            [NativeTypeName("HRESULT (SPSTREAMFORMATTYPE, GUID *, WAVEFORMATEX **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpRecognizer*, SPSTREAMFORMATTYPE, Guid*, WAVEFORMATEX**, int> GetFormat;
+
+            [NativeTypeName("HRESULT (LPCWSTR, void *, ULONG, BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpRecognizer*, ushort*, void*, uint, BOOL*, int> IsUISupported;
+
+            [NativeTypeName("HRESULT (HWND, LPCWSTR, LPCWSTR, void *, ULONG) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpRecognizer*, HWND, ushort*, ushort*, void*, uint, int> DisplayUI;
+
+            [NativeTypeName("HRESULT (ISpPhrase *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpRecognizer*, ISpPhrase*, int> EmulateRecognition;
+        }
     }
 }

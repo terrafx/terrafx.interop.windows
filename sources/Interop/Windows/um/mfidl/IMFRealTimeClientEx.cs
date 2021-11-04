@@ -59,5 +59,26 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IMFRealTimeClientEx*, uint, int, int>)(lpVtbl[5]))((IMFRealTimeClientEx*)Unsafe.AsPointer(ref this), dwMultithreadedWorkQueueId, lWorkItemBasePriority);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFRealTimeClientEx*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFRealTimeClientEx*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFRealTimeClientEx*, uint> Release;
+
+            [NativeTypeName("HRESULT (DWORD *, LPCWSTR, LONG) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFRealTimeClientEx*, uint*, ushort*, int, int> RegisterThreadsEx;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFRealTimeClientEx*, int> UnregisterThreads;
+
+            [NativeTypeName("HRESULT (DWORD, LONG) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFRealTimeClientEx*, uint, int, int> SetWorkQueueEx;
+        }
     }
 }

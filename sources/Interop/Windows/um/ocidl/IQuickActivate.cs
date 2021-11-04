@@ -59,5 +59,26 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IQuickActivate*, SIZE*, int>)(lpVtbl[5]))((IQuickActivate*)Unsafe.AsPointer(ref this), pSizel);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IQuickActivate*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IQuickActivate*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IQuickActivate*, uint> Release;
+
+            [NativeTypeName("HRESULT (QACONTAINER *, QACONTROL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IQuickActivate*, QACONTAINER*, QACONTROL*, int> QuickActivate;
+
+            [NativeTypeName("HRESULT (LPSIZEL) __attribute__((stdcall))")]
+            public delegate* unmanaged<IQuickActivate*, SIZE*, int> SetContentExtent;
+
+            [NativeTypeName("HRESULT (LPSIZEL) __attribute__((stdcall))")]
+            public delegate* unmanaged<IQuickActivate*, SIZE*, int> GetContentExtent;
+        }
     }
 }

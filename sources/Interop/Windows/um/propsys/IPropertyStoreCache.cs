@@ -101,5 +101,44 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IPropertyStoreCache*, PROPERTYKEY*, PROPVARIANT*, PSC_STATE, int>)(lpVtbl[11]))((IPropertyStoreCache*)Unsafe.AsPointer(ref this), key, ppropvar, state);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IPropertyStoreCache*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IPropertyStoreCache*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IPropertyStoreCache*, uint> Release;
+
+            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IPropertyStoreCache*, uint*, int> GetCount;
+
+            [NativeTypeName("HRESULT (DWORD, PROPERTYKEY *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IPropertyStoreCache*, uint, PROPERTYKEY*, int> GetAt;
+
+            [NativeTypeName("HRESULT (const PROPERTYKEY &, PROPVARIANT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IPropertyStoreCache*, PROPERTYKEY*, PROPVARIANT*, int> GetValue;
+
+            [NativeTypeName("HRESULT (const PROPERTYKEY &, const PROPVARIANT &) __attribute__((stdcall))")]
+            public delegate* unmanaged<IPropertyStoreCache*, PROPERTYKEY*, PROPVARIANT*, int> SetValue;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IPropertyStoreCache*, int> Commit;
+
+            [NativeTypeName("HRESULT (const PROPERTYKEY &, PSC_STATE *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IPropertyStoreCache*, PROPERTYKEY*, PSC_STATE*, int> GetState;
+
+            [NativeTypeName("HRESULT (const PROPERTYKEY &, PROPVARIANT *, PSC_STATE *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IPropertyStoreCache*, PROPERTYKEY*, PROPVARIANT*, PSC_STATE*, int> GetValueAndState;
+
+            [NativeTypeName("HRESULT (const PROPERTYKEY &, PSC_STATE) __attribute__((stdcall))")]
+            public delegate* unmanaged<IPropertyStoreCache*, PROPERTYKEY*, PSC_STATE, int> SetState;
+
+            [NativeTypeName("HRESULT (const PROPERTYKEY &, const PROPVARIANT *, PSC_STATE) __attribute__((stdcall))")]
+            public delegate* unmanaged<IPropertyStoreCache*, PROPERTYKEY*, PROPVARIANT*, PSC_STATE, int> SetValueAndState;
+        }
     }
 }

@@ -81,5 +81,35 @@ namespace TerraFX.Interop
         {
             ((delegate* unmanaged<IMFSensorProfileCollection*, SENSORPROFILEID*, void>)(lpVtbl[8]))((IMFSensorProfileCollection*)Unsafe.AsPointer(ref this), ProfileId);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFSensorProfileCollection*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFSensorProfileCollection*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFSensorProfileCollection*, uint> Release;
+
+            [NativeTypeName("DWORD () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFSensorProfileCollection*, uint> GetProfileCount;
+
+            [NativeTypeName("HRESULT (DWORD, IMFSensorProfile **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFSensorProfileCollection*, uint, IMFSensorProfile**, int> GetProfile;
+
+            [NativeTypeName("HRESULT (IMFSensorProfile *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFSensorProfileCollection*, IMFSensorProfile*, int> AddProfile;
+
+            [NativeTypeName("HRESULT (SENSORPROFILEID *, IMFSensorProfile **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFSensorProfileCollection*, SENSORPROFILEID*, IMFSensorProfile**, int> FindProfile;
+
+            [NativeTypeName("void (DWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFSensorProfileCollection*, uint, void> RemoveProfileByIndex;
+
+            [NativeTypeName("void (SENSORPROFILEID *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFSensorProfileCollection*, SENSORPROFILEID*, void> RemoveProfile;
+        }
     }
 }

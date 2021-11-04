@@ -59,5 +59,26 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IAppxFilesEnumerator*, BOOL*, int>)(lpVtbl[5]))((IAppxFilesEnumerator*)Unsafe.AsPointer(ref this), hasNext);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAppxFilesEnumerator*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IAppxFilesEnumerator*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IAppxFilesEnumerator*, uint> Release;
+
+            [NativeTypeName("HRESULT (IAppxFile **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAppxFilesEnumerator*, IAppxFile**, int> GetCurrent;
+
+            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAppxFilesEnumerator*, BOOL*, int> GetHasCurrent;
+
+            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAppxFilesEnumerator*, BOOL*, int> MoveNext;
+        }
     }
 }

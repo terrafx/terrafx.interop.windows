@@ -143,5 +143,62 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IVMRWindowlessControl*, COLORREF*, int>)(lpVtbl[17]))((IVMRWindowlessControl*)Unsafe.AsPointer(ref this), lpClr);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IVMRWindowlessControl*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IVMRWindowlessControl*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IVMRWindowlessControl*, uint> Release;
+
+            [NativeTypeName("HRESULT (LONG *, LONG *, LONG *, LONG *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IVMRWindowlessControl*, int*, int*, int*, int*, int> GetNativeVideoSize;
+
+            [NativeTypeName("HRESULT (LONG *, LONG *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IVMRWindowlessControl*, int*, int*, int> GetMinIdealVideoSize;
+
+            [NativeTypeName("HRESULT (LONG *, LONG *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IVMRWindowlessControl*, int*, int*, int> GetMaxIdealVideoSize;
+
+            [NativeTypeName("HRESULT (const LPRECT, const LPRECT) __attribute__((stdcall))")]
+            public delegate* unmanaged<IVMRWindowlessControl*, RECT*, RECT*, int> SetVideoPosition;
+
+            [NativeTypeName("HRESULT (LPRECT, LPRECT) __attribute__((stdcall))")]
+            public delegate* unmanaged<IVMRWindowlessControl*, RECT*, RECT*, int> GetVideoPosition;
+
+            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IVMRWindowlessControl*, uint*, int> GetAspectRatioMode;
+
+            [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<IVMRWindowlessControl*, uint, int> SetAspectRatioMode;
+
+            [NativeTypeName("HRESULT (HWND) __attribute__((stdcall))")]
+            public delegate* unmanaged<IVMRWindowlessControl*, HWND, int> SetVideoClippingWindow;
+
+            [NativeTypeName("HRESULT (HWND, HDC) __attribute__((stdcall))")]
+            public delegate* unmanaged<IVMRWindowlessControl*, HWND, HDC, int> RepaintVideo;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IVMRWindowlessControl*, int> DisplayModeChanged;
+
+            [NativeTypeName("HRESULT (BYTE **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IVMRWindowlessControl*, byte**, int> GetCurrentImage;
+
+            [NativeTypeName("HRESULT (COLORREF) __attribute__((stdcall))")]
+            public delegate* unmanaged<IVMRWindowlessControl*, COLORREF, int> SetBorderColor;
+
+            [NativeTypeName("HRESULT (COLORREF *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IVMRWindowlessControl*, COLORREF*, int> GetBorderColor;
+
+            [NativeTypeName("HRESULT (COLORREF) __attribute__((stdcall))")]
+            public delegate* unmanaged<IVMRWindowlessControl*, COLORREF, int> SetColorKey;
+
+            [NativeTypeName("HRESULT (COLORREF *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IVMRWindowlessControl*, COLORREF*, int> GetColorKey;
+        }
     }
 }

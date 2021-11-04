@@ -73,5 +73,32 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IMarkupTextFrags*, IMarkupPointer*, int*, BOOL*, int>)(lpVtbl[7]))((IMarkupTextFrags*)Unsafe.AsPointer(ref this), pPointerFind, piFrag, pfFragFound);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMarkupTextFrags*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMarkupTextFrags*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMarkupTextFrags*, uint> Release;
+
+            [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMarkupTextFrags*, int*, int> GetTextFragCount;
+
+            [NativeTypeName("HRESULT (long, BSTR *, IMarkupPointer *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMarkupTextFrags*, int, ushort**, IMarkupPointer*, int> GetTextFrag;
+
+            [NativeTypeName("HRESULT (long) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMarkupTextFrags*, int, int> RemoveTextFrag;
+
+            [NativeTypeName("HRESULT (long, BSTR, IMarkupPointer *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMarkupTextFrags*, int, ushort*, IMarkupPointer*, int> InsertTextFrag;
+
+            [NativeTypeName("HRESULT (IMarkupPointer *, long *, BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMarkupTextFrags*, IMarkupPointer*, int*, BOOL*, int> FindTextFragFromMarkupPointer;
+        }
     }
 }

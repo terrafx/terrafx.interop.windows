@@ -66,5 +66,29 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IShellTaskScheduler*, uint, uint, int>)(lpVtbl[6]))((IShellTaskScheduler*)Unsafe.AsPointer(ref this), dwReleaseStatus, dwThreadTimeout);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellTaskScheduler*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellTaskScheduler*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellTaskScheduler*, uint> Release;
+
+            [NativeTypeName("HRESULT (IRunnableTask *, const TASKOWNERID &, DWORD_PTR, DWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellTaskScheduler*, IRunnableTask*, Guid*, nuint, uint, int> AddTask;
+
+            [NativeTypeName("HRESULT (const TASKOWNERID &, DWORD_PTR, BOOL) __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellTaskScheduler*, Guid*, nuint, BOOL, int> RemoveTasks;
+
+            [NativeTypeName("UINT (const TASKOWNERID &) __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellTaskScheduler*, Guid*, uint> CountTasks;
+
+            [NativeTypeName("HRESULT (DWORD, DWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellTaskScheduler*, uint, uint, int> Status;
+        }
     }
 }

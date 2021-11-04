@@ -87,5 +87,38 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IDiaInjectedSource*, uint, uint*, byte*, int>)(lpVtbl[9]))((IDiaInjectedSource*)Unsafe.AsPointer(ref this), cbData, pcbData, pbData);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaInjectedSource*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaInjectedSource*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaInjectedSource*, uint> Release;
+
+            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaInjectedSource*, uint*, int> get_crc;
+
+            [NativeTypeName("HRESULT (ULONGLONG *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaInjectedSource*, ulong*, int> get_length;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaInjectedSource*, ushort**, int> get_filename;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaInjectedSource*, ushort**, int> get_objectFilename;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaInjectedSource*, ushort**, int> get_virtualFilename;
+
+            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaInjectedSource*, uint*, int> get_sourceCompression;
+
+            [NativeTypeName("HRESULT (DWORD, DWORD *, BYTE *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaInjectedSource*, uint, uint*, byte*, int> get_source;
+        }
     }
 }

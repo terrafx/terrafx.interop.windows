@@ -59,5 +59,26 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IMachineGlobalObjectTable*, MachineGlobalObjectTableRegistrationToken, int>)(lpVtbl[5]))((IMachineGlobalObjectTable*)Unsafe.AsPointer(ref this), token);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMachineGlobalObjectTable*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMachineGlobalObjectTable*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMachineGlobalObjectTable*, uint> Release;
+
+            [NativeTypeName("HRESULT (const IID &, LPCWSTR, IUnknown *, MachineGlobalObjectTableRegistrationToken *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMachineGlobalObjectTable*, Guid*, ushort*, IUnknown*, MachineGlobalObjectTableRegistrationToken*, int> RegisterObject;
+
+            [NativeTypeName("HRESULT (const IID &, LPCWSTR, const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMachineGlobalObjectTable*, Guid*, ushort*, Guid*, void**, int> GetObjectW;
+
+            [NativeTypeName("HRESULT (MachineGlobalObjectTableRegistrationToken) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMachineGlobalObjectTable*, MachineGlobalObjectTableRegistrationToken, int> RevokeObject;
+        }
     }
 }

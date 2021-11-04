@@ -73,5 +73,32 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<ICreateErrorInfo*, uint, int>)(lpVtbl[7]))((ICreateErrorInfo*)Unsafe.AsPointer(ref this), dwHelpContext);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ICreateErrorInfo*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ICreateErrorInfo*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ICreateErrorInfo*, uint> Release;
+
+            [NativeTypeName("HRESULT (const GUID &) __attribute__((stdcall))")]
+            public delegate* unmanaged<ICreateErrorInfo*, Guid*, int> SetGUID;
+
+            [NativeTypeName("HRESULT (LPOLESTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<ICreateErrorInfo*, ushort*, int> SetSource;
+
+            [NativeTypeName("HRESULT (LPOLESTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<ICreateErrorInfo*, ushort*, int> SetDescription;
+
+            [NativeTypeName("HRESULT (LPOLESTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<ICreateErrorInfo*, ushort*, int> SetHelpFile;
+
+            [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<ICreateErrorInfo*, uint, int> SetHelpContext;
+        }
     }
 }

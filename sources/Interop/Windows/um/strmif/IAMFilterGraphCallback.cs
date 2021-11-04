@@ -43,5 +43,20 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IAMFilterGraphCallback*, IPin*, int>)(lpVtbl[3]))((IAMFilterGraphCallback*)Unsafe.AsPointer(ref this), pPin);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAMFilterGraphCallback*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IAMFilterGraphCallback*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IAMFilterGraphCallback*, uint> Release;
+
+            [NativeTypeName("HRESULT (IPin *)")]
+            public delegate* unmanaged<IAMFilterGraphCallback*, IPin*, int> UnableToRender;
+        }
     }
 }

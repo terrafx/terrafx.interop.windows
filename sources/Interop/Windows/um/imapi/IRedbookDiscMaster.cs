@@ -94,5 +94,41 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IRedbookDiscMaster*, int>)(lpVtbl[10]))((IRedbookDiscMaster*)Unsafe.AsPointer(ref this));
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IRedbookDiscMaster*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IRedbookDiscMaster*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IRedbookDiscMaster*, uint> Release;
+
+            [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IRedbookDiscMaster*, int*, int> GetTotalAudioTracks;
+
+            [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IRedbookDiscMaster*, int*, int> GetTotalAudioBlocks;
+
+            [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IRedbookDiscMaster*, int*, int> GetUsedAudioBlocks;
+
+            [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IRedbookDiscMaster*, int*, int> GetAvailableAudioTrackBlocks;
+
+            [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IRedbookDiscMaster*, int*, int> GetAudioBlockSize;
+
+            [NativeTypeName("HRESULT (long) __attribute__((stdcall))")]
+            public delegate* unmanaged<IRedbookDiscMaster*, int, int> CreateAudioTrack;
+
+            [NativeTypeName("HRESULT (byte *, long) __attribute__((stdcall))")]
+            public delegate* unmanaged<IRedbookDiscMaster*, byte*, int, int> AddAudioTrackBlocks;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IRedbookDiscMaster*, int> CloseAudioTrack;
+        }
     }
 }

@@ -101,5 +101,44 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IDiaLoadCallback2*, int>)(lpVtbl[11]))((IDiaLoadCallback2*)Unsafe.AsPointer(ref this));
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaLoadCallback2*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaLoadCallback2*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaLoadCallback2*, uint> Release;
+
+            [NativeTypeName("HRESULT (BOOL, DWORD, BYTE *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaLoadCallback2*, BOOL, uint, byte*, int> NotifyDebugDir;
+
+            [NativeTypeName("HRESULT (LPCOLESTR, HRESULT) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaLoadCallback2*, ushort*, HRESULT, int> NotifyOpenDBG;
+
+            [NativeTypeName("HRESULT (LPCOLESTR, HRESULT) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaLoadCallback2*, ushort*, HRESULT, int> NotifyOpenPDB;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaLoadCallback2*, int> RestrictRegistryAccess;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaLoadCallback2*, int> RestrictSymbolServerAccess;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaLoadCallback2*, int> RestrictOriginalPathAccess;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaLoadCallback2*, int> RestrictReferencePathAccess;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaLoadCallback2*, int> RestrictDBGAccess;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaLoadCallback2*, int> RestrictSystemRootAccess;
+        }
     }
 }

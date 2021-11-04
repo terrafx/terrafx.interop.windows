@@ -52,5 +52,23 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<AsyncIMultiQI*, MULTI_QI*, int>)(lpVtbl[4]))((AsyncIMultiQI*)Unsafe.AsPointer(ref this), pMQIs);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<AsyncIMultiQI*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<AsyncIMultiQI*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<AsyncIMultiQI*, uint> Release;
+
+            [NativeTypeName("HRESULT (ULONG, MULTI_QI *) __attribute__((stdcall))")]
+            public delegate* unmanaged<AsyncIMultiQI*, uint, MULTI_QI*, int> Begin_QueryMultipleInterfaces;
+
+            [NativeTypeName("HRESULT (MULTI_QI *) __attribute__((stdcall))")]
+            public delegate* unmanaged<AsyncIMultiQI*, MULTI_QI*, int> Finish_QueryMultipleInterfaces;
+        }
     }
 }

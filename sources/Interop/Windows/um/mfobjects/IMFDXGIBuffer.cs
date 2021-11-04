@@ -66,5 +66,29 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IMFDXGIBuffer*, Guid*, IUnknown*, int>)(lpVtbl[6]))((IMFDXGIBuffer*)Unsafe.AsPointer(ref this), guid, pUnkData);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFDXGIBuffer*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFDXGIBuffer*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFDXGIBuffer*, uint> Release;
+
+            [NativeTypeName("HRESULT (const IID &, LPVOID *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFDXGIBuffer*, Guid*, void**, int> GetResource;
+
+            [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFDXGIBuffer*, uint*, int> GetSubresourceIndex;
+
+            [NativeTypeName("HRESULT (const IID &, const IID &, LPVOID *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFDXGIBuffer*, Guid*, Guid*, void**, int> GetUnknown;
+
+            [NativeTypeName("HRESULT (const IID &, IUnknown *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFDXGIBuffer*, Guid*, IUnknown*, int> SetUnknown;
+        }
     }
 }

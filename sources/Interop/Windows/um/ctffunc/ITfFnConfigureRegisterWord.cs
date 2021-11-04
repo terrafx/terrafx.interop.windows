@@ -52,5 +52,23 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<ITfFnConfigureRegisterWord*, HWND, ushort, Guid*, ushort*, int>)(lpVtbl[4]))((ITfFnConfigureRegisterWord*)Unsafe.AsPointer(ref this), hwndParent, langid, rguidProfile, bstrRegistered);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfFnConfigureRegisterWord*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfFnConfigureRegisterWord*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfFnConfigureRegisterWord*, uint> Release;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfFnConfigureRegisterWord*, ushort**, int> GetDisplayName;
+
+            [NativeTypeName("HRESULT (HWND, LANGID, const GUID &, BSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfFnConfigureRegisterWord*, HWND, ushort, Guid*, ushort*, int> Show;
+        }
     }
 }

@@ -45,5 +45,20 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IContextMenuCB*, IShellFolder*, HWND, IDataObject*, uint, WPARAM, LPARAM, int>)(lpVtbl[3]))((IContextMenuCB*)Unsafe.AsPointer(ref this), psf, hwndOwner, pdtobj, uMsg, wParam, lParam);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IContextMenuCB*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IContextMenuCB*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IContextMenuCB*, uint> Release;
+
+            [NativeTypeName("HRESULT (IShellFolder *, HWND, IDataObject *, UINT, WPARAM, LPARAM) __attribute__((stdcall))")]
+            public delegate* unmanaged<IContextMenuCB*, IShellFolder*, HWND, IDataObject*, uint, WPARAM, LPARAM, int> CallBack;
+        }
     }
 }

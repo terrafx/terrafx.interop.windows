@@ -59,5 +59,26 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<ITfFnLangProfileUtil*, ushort, BOOL*, int>)(lpVtbl[5]))((ITfFnLangProfileUtil*)Unsafe.AsPointer(ref this), langid, pfAvailable);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfFnLangProfileUtil*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfFnLangProfileUtil*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfFnLangProfileUtil*, uint> Release;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfFnLangProfileUtil*, ushort**, int> GetDisplayName;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfFnLangProfileUtil*, int> RegisterActiveProfiles;
+
+            [NativeTypeName("HRESULT (LANGID, BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfFnLangProfileUtil*, ushort, BOOL*, int> IsProfileAvailableForLang;
+        }
     }
 }

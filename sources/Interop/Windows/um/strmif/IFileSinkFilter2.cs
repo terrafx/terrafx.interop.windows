@@ -66,5 +66,29 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IFileSinkFilter2*, uint*, int>)(lpVtbl[6]))((IFileSinkFilter2*)Unsafe.AsPointer(ref this), pdwFlags);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFileSinkFilter2*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IFileSinkFilter2*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IFileSinkFilter2*, uint> Release;
+
+            [NativeTypeName("HRESULT (LPCOLESTR, const AM_MEDIA_TYPE *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFileSinkFilter2*, ushort*, AM_MEDIA_TYPE*, int> SetFileName;
+
+            [NativeTypeName("HRESULT (LPOLESTR *, AM_MEDIA_TYPE *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFileSinkFilter2*, ushort**, AM_MEDIA_TYPE*, int> GetCurFile;
+
+            [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFileSinkFilter2*, uint, int> SetMode;
+
+            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFileSinkFilter2*, uint*, int> GetMode;
+        }
     }
 }

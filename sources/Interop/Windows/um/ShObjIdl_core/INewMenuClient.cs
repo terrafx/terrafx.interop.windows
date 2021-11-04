@@ -52,5 +52,23 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<INewMenuClient*, ITEMIDLIST*, int, int>)(lpVtbl[4]))((INewMenuClient*)Unsafe.AsPointer(ref this), pidlItem, flags);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<INewMenuClient*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<INewMenuClient*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<INewMenuClient*, uint> Release;
+
+            [NativeTypeName("HRESULT (NMCII_FLAGS *) __attribute__((stdcall))")]
+            public delegate* unmanaged<INewMenuClient*, int*, int> IncludeItems;
+
+            [NativeTypeName("HRESULT (LPCITEMIDLIST, NMCSAEI_FLAGS) __attribute__((stdcall))")]
+            public delegate* unmanaged<INewMenuClient*, ITEMIDLIST*, int, int> SelectAndEditItem;
+        }
     }
 }

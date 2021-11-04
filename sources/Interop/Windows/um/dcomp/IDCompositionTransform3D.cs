@@ -38,5 +38,17 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IDCompositionTransform3D*, uint>)(lpVtbl[2]))((IDCompositionTransform3D*)Unsafe.AsPointer(ref this));
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDCompositionTransform3D*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDCompositionTransform3D*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDCompositionTransform3D*, uint> Release;
+        }
     }
 }

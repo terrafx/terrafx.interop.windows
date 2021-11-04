@@ -45,5 +45,20 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IMMDeviceActivator*, Guid*, IMMDevice*, PROPVARIANT*, void**, int>)(lpVtbl[3]))((IMMDeviceActivator*)Unsafe.AsPointer(ref this), iid, pDevice, pActivationParams, ppInterface);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMMDeviceActivator*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMMDeviceActivator*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMMDeviceActivator*, uint> Release;
+
+            [NativeTypeName("HRESULT (const IID &, IMMDevice *, PROPVARIANT *, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMMDeviceActivator*, Guid*, IMMDevice*, PROPVARIANT*, void**, int> Activate;
+        }
     }
 }

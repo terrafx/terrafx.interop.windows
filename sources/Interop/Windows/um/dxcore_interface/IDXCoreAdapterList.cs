@@ -81,5 +81,35 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IDXCoreAdapterList*, DXCoreAdapterPreference, byte>)(lpVtbl[8]))((IDXCoreAdapterList*)Unsafe.AsPointer(ref this), preference) != 0;
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDXCoreAdapterList*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDXCoreAdapterList*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDXCoreAdapterList*, uint> Release;
+
+            [NativeTypeName("HRESULT (uint32_t, const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDXCoreAdapterList*, uint, Guid*, void**, int> GetAdapter;
+
+            [NativeTypeName("uint32_t () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDXCoreAdapterList*, uint> GetAdapterCount;
+
+            [NativeTypeName("bool () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDXCoreAdapterList*, byte> IsStale;
+
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDXCoreAdapterList*, Guid*, void**, int> GetFactory;
+
+            [NativeTypeName("HRESULT (uint32_t, const DXCoreAdapterPreference *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDXCoreAdapterList*, uint, DXCoreAdapterPreference*, int> Sort;
+
+            [NativeTypeName("bool (DXCoreAdapterPreference) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDXCoreAdapterList*, DXCoreAdapterPreference, byte> IsAdapterPreferenceSupported;
+        }
     }
 }

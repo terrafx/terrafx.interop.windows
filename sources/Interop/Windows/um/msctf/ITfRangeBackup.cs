@@ -45,5 +45,20 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<ITfRangeBackup*, uint, ITfRange*, int>)(lpVtbl[3]))((ITfRangeBackup*)Unsafe.AsPointer(ref this), ec, pRange);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfRangeBackup*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfRangeBackup*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfRangeBackup*, uint> Release;
+
+            [NativeTypeName("HRESULT (TfEditCookie, ITfRange *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfRangeBackup*, uint, ITfRange*, int> Restore;
+        }
     }
 }

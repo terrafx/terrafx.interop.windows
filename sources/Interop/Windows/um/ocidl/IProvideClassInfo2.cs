@@ -52,5 +52,23 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IProvideClassInfo2*, uint, Guid*, int>)(lpVtbl[4]))((IProvideClassInfo2*)Unsafe.AsPointer(ref this), dwGuidKind, pGUID);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IProvideClassInfo2*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IProvideClassInfo2*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IProvideClassInfo2*, uint> Release;
+
+            [NativeTypeName("HRESULT (ITypeInfo **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IProvideClassInfo2*, ITypeInfo**, int> GetClassInfo;
+
+            [NativeTypeName("HRESULT (DWORD, GUID *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IProvideClassInfo2*, uint, Guid*, int> GetGUID;
+        }
     }
 }

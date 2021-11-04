@@ -73,5 +73,32 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IHlinkFrame*, uint, IMoniker*, ushort*, ushort*, int>)(lpVtbl[7]))((IHlinkFrame*)Unsafe.AsPointer(ref this), uHLID, pimkTarget, pwzLocation, pwzFriendlyName);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHlinkFrame*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IHlinkFrame*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IHlinkFrame*, uint> Release;
+
+            [NativeTypeName("HRESULT (IHlinkBrowseContext *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHlinkFrame*, IHlinkBrowseContext*, int> SetBrowseContext;
+
+            [NativeTypeName("HRESULT (IHlinkBrowseContext **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHlinkFrame*, IHlinkBrowseContext**, int> GetBrowseContext;
+
+            [NativeTypeName("HRESULT (DWORD, LPBC, IBindStatusCallback *, IHlink *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHlinkFrame*, uint, IBindCtx*, IBindStatusCallback*, IHlink*, int> Navigate;
+
+            [NativeTypeName("HRESULT (DWORD, IMoniker *, LPCWSTR, LPCWSTR, DWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHlinkFrame*, uint, IMoniker*, ushort*, ushort*, uint, int> OnNavigate;
+
+            [NativeTypeName("HRESULT (ULONG, IMoniker *, LPCWSTR, LPCWSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHlinkFrame*, uint, IMoniker*, ushort*, ushort*, int> UpdateHlink;
+        }
     }
 }

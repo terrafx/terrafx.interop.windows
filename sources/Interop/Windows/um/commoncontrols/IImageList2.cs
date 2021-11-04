@@ -325,5 +325,140 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IImageList2*, int, IImageList*, int, IUnknown*, uint, int>)(lpVtbl[43]))((IImageList2*)Unsafe.AsPointer(ref this), i, pil, iSrc, punk, dwFlags);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IImageList2*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IImageList2*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IImageList2*, uint> Release;
+
+            [NativeTypeName("HRESULT (HBITMAP, HBITMAP, int *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IImageList2*, HBITMAP, HBITMAP, int*, int> Add;
+
+            [NativeTypeName("HRESULT (int, HICON, int *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IImageList2*, int, HICON, int*, int> ReplaceIcon;
+
+            [NativeTypeName("HRESULT (int, int) __attribute__((stdcall))")]
+            public delegate* unmanaged<IImageList2*, int, int, int> SetOverlayImage;
+
+            [NativeTypeName("HRESULT (int, HBITMAP, HBITMAP) __attribute__((stdcall))")]
+            public delegate* unmanaged<IImageList2*, int, HBITMAP, HBITMAP, int> Replace;
+
+            [NativeTypeName("HRESULT (HBITMAP, COLORREF, int *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IImageList2*, HBITMAP, COLORREF, int*, int> AddMasked;
+
+            [NativeTypeName("HRESULT (IMAGELISTDRAWPARAMS *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IImageList2*, IMAGELISTDRAWPARAMS*, int> Draw;
+
+            [NativeTypeName("HRESULT (int) __attribute__((stdcall))")]
+            public delegate* unmanaged<IImageList2*, int, int> Remove;
+
+            [NativeTypeName("HRESULT (int, UINT, HICON *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IImageList2*, int, uint, HICON*, int> GetIcon;
+
+            [NativeTypeName("HRESULT (int, IMAGEINFO *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IImageList2*, int, IMAGEINFO*, int> GetImageInfo;
+
+            [NativeTypeName("HRESULT (int, IUnknown *, int, UINT) __attribute__((stdcall))")]
+            public delegate* unmanaged<IImageList2*, int, IUnknown*, int, uint, int> Copy;
+
+            [NativeTypeName("HRESULT (int, IUnknown *, int, int, int, const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IImageList2*, int, IUnknown*, int, int, int, Guid*, void**, int> Merge;
+
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IImageList2*, Guid*, void**, int> Clone;
+
+            [NativeTypeName("HRESULT (int, RECT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IImageList2*, int, RECT*, int> GetImageRect;
+
+            [NativeTypeName("HRESULT (int *, int *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IImageList2*, int*, int*, int> GetIconSize;
+
+            [NativeTypeName("HRESULT (int, int) __attribute__((stdcall))")]
+            public delegate* unmanaged<IImageList2*, int, int, int> SetIconSize;
+
+            [NativeTypeName("HRESULT (int *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IImageList2*, int*, int> GetImageCount;
+
+            [NativeTypeName("HRESULT (UINT) __attribute__((stdcall))")]
+            public delegate* unmanaged<IImageList2*, uint, int> SetImageCount;
+
+            [NativeTypeName("HRESULT (COLORREF, COLORREF *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IImageList2*, COLORREF, COLORREF*, int> SetBkColor;
+
+            [NativeTypeName("HRESULT (COLORREF *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IImageList2*, COLORREF*, int> GetBkColor;
+
+            [NativeTypeName("HRESULT (int, int, int) __attribute__((stdcall))")]
+            public delegate* unmanaged<IImageList2*, int, int, int, int> BeginDrag;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IImageList2*, int> EndDrag;
+
+            [NativeTypeName("HRESULT (HWND, int, int) __attribute__((stdcall))")]
+            public delegate* unmanaged<IImageList2*, HWND, int, int, int> DragEnter;
+
+            [NativeTypeName("HRESULT (HWND) __attribute__((stdcall))")]
+            public delegate* unmanaged<IImageList2*, HWND, int> DragLeave;
+
+            [NativeTypeName("HRESULT (int, int) __attribute__((stdcall))")]
+            public delegate* unmanaged<IImageList2*, int, int, int> DragMove;
+
+            [NativeTypeName("HRESULT (IUnknown *, int, int, int) __attribute__((stdcall))")]
+            public delegate* unmanaged<IImageList2*, IUnknown*, int, int, int, int> SetDragCursorImage;
+
+            [NativeTypeName("HRESULT (BOOL) __attribute__((stdcall))")]
+            public delegate* unmanaged<IImageList2*, BOOL, int> DragShowNolock;
+
+            [NativeTypeName("HRESULT (POINT *, POINT *, const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IImageList2*, POINT*, POINT*, Guid*, void**, int> GetDragImage;
+
+            [NativeTypeName("HRESULT (int, DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IImageList2*, int, uint*, int> GetItemFlags;
+
+            [NativeTypeName("HRESULT (int, int *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IImageList2*, int, int*, int> GetOverlayImage;
+
+            [NativeTypeName("HRESULT (int, int) __attribute__((stdcall))")]
+            public delegate* unmanaged<IImageList2*, int, int, int> Resize;
+
+            [NativeTypeName("HRESULT (int, DWORD, int *, int *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IImageList2*, int, uint, int*, int*, int> GetOriginalSize;
+
+            [NativeTypeName("HRESULT (int, int, int) __attribute__((stdcall))")]
+            public delegate* unmanaged<IImageList2*, int, int, int, int> SetOriginalSize;
+
+            [NativeTypeName("HRESULT (IUnknown *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IImageList2*, IUnknown*, int> SetCallback;
+
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IImageList2*, Guid*, void**, int> GetCallback;
+
+            [NativeTypeName("HRESULT (int, DWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<IImageList2*, int, uint, int> ForceImagePresent;
+
+            [NativeTypeName("HRESULT (int, int, DWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<IImageList2*, int, int, uint, int> DiscardImages;
+
+            [NativeTypeName("HRESULT (IMAGELISTDRAWPARAMS *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IImageList2*, IMAGELISTDRAWPARAMS*, int> PreloadImages;
+
+            [NativeTypeName("HRESULT (IMAGELISTSTATS *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IImageList2*, IMAGELISTSTATS*, int> GetStatistics;
+
+            [NativeTypeName("HRESULT (int, int, UINT, int, int) __attribute__((stdcall))")]
+            public delegate* unmanaged<IImageList2*, int, int, uint, int, int, int> Initialize;
+
+            [NativeTypeName("HRESULT (int, HBITMAP, HBITMAP, IUnknown *, DWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<IImageList2*, int, HBITMAP, HBITMAP, IUnknown*, uint, int> Replace2;
+
+            [NativeTypeName("HRESULT (int, IImageList *, int, IUnknown *, DWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<IImageList2*, int, IImageList*, int, IUnknown*, uint, int> ReplaceFromImageList;
+        }
     }
 }

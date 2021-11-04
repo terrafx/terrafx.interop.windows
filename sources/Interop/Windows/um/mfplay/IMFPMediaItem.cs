@@ -171,5 +171,74 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IMFPMediaItem*, IPropertyStore**, int>)(lpVtbl[21]))((IMFPMediaItem*)Unsafe.AsPointer(ref this), ppMetadataStore);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFPMediaItem*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFPMediaItem*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFPMediaItem*, uint> Release;
+
+            [NativeTypeName("HRESULT (IMFPMediaPlayer **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFPMediaItem*, IMFPMediaPlayer**, int> GetMediaPlayer;
+
+            [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFPMediaItem*, ushort**, int> GetURL;
+
+            [NativeTypeName("HRESULT (IUnknown **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFPMediaItem*, IUnknown**, int> GetObject;
+
+            [NativeTypeName("HRESULT (DWORD_PTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFPMediaItem*, nuint*, int> GetUserData;
+
+            [NativeTypeName("HRESULT (DWORD_PTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFPMediaItem*, nuint, int> SetUserData;
+
+            [NativeTypeName("HRESULT (GUID *, PROPVARIANT *, GUID *, PROPVARIANT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFPMediaItem*, Guid*, PROPVARIANT*, Guid*, PROPVARIANT*, int> GetStartStopPosition;
+
+            [NativeTypeName("HRESULT (const GUID *, const PROPVARIANT *, const GUID *, const PROPVARIANT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFPMediaItem*, Guid*, PROPVARIANT*, Guid*, PROPVARIANT*, int> SetStartStopPosition;
+
+            [NativeTypeName("HRESULT (BOOL *, BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFPMediaItem*, BOOL*, BOOL*, int> HasVideo;
+
+            [NativeTypeName("HRESULT (BOOL *, BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFPMediaItem*, BOOL*, BOOL*, int> HasAudio;
+
+            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFPMediaItem*, BOOL*, int> IsProtected;
+
+            [NativeTypeName("HRESULT (const GUID &, PROPVARIANT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFPMediaItem*, Guid*, PROPVARIANT*, int> GetDuration;
+
+            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFPMediaItem*, uint*, int> GetNumberOfStreams;
+
+            [NativeTypeName("HRESULT (DWORD, BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFPMediaItem*, uint, BOOL*, int> GetStreamSelection;
+
+            [NativeTypeName("HRESULT (DWORD, BOOL) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFPMediaItem*, uint, BOOL, int> SetStreamSelection;
+
+            [NativeTypeName("HRESULT (DWORD, const GUID &, PROPVARIANT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFPMediaItem*, uint, Guid*, PROPVARIANT*, int> GetStreamAttribute;
+
+            [NativeTypeName("HRESULT (const GUID &, PROPVARIANT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFPMediaItem*, Guid*, PROPVARIANT*, int> GetPresentationAttribute;
+
+            [NativeTypeName("HRESULT (MFP_MEDIAITEM_CHARACTERISTICS *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFPMediaItem*, uint*, int> GetCharacteristics;
+
+            [NativeTypeName("HRESULT (DWORD, IUnknown *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFPMediaItem*, uint, IUnknown*, int> SetStreamSink;
+
+            [NativeTypeName("HRESULT (IPropertyStore **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFPMediaItem*, IPropertyStore**, int> GetMetadata;
+        }
     }
 }

@@ -66,5 +66,29 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IEnumExplorerCommand*, IEnumExplorerCommand**, int>)(lpVtbl[6]))((IEnumExplorerCommand*)Unsafe.AsPointer(ref this), ppenum);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IEnumExplorerCommand*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IEnumExplorerCommand*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IEnumExplorerCommand*, uint> Release;
+
+            [NativeTypeName("HRESULT (ULONG, IExplorerCommand **, ULONG *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IEnumExplorerCommand*, uint, IExplorerCommand**, uint*, int> Next;
+
+            [NativeTypeName("HRESULT (ULONG) __attribute__((stdcall))")]
+            public delegate* unmanaged<IEnumExplorerCommand*, uint, int> Skip;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IEnumExplorerCommand*, int> Reset;
+
+            [NativeTypeName("HRESULT (IEnumExplorerCommand **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IEnumExplorerCommand*, IEnumExplorerCommand**, int> Clone;
+        }
     }
 }

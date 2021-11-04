@@ -52,5 +52,23 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<ITfKeyTraceEventSink*, WPARAM, LPARAM, int>)(lpVtbl[4]))((ITfKeyTraceEventSink*)Unsafe.AsPointer(ref this), wParam, lParam);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfKeyTraceEventSink*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfKeyTraceEventSink*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfKeyTraceEventSink*, uint> Release;
+
+            [NativeTypeName("HRESULT (WPARAM, LPARAM) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfKeyTraceEventSink*, WPARAM, LPARAM, int> OnKeyTraceDown;
+
+            [NativeTypeName("HRESULT (WPARAM, LPARAM) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfKeyTraceEventSink*, WPARAM, LPARAM, int> OnKeyTraceUp;
+        }
     }
 }

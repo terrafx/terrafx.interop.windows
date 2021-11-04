@@ -59,5 +59,26 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IStorageProviderHandler*, ushort*, IStorageProviderPropertyHandler**, int>)(lpVtbl[5]))((IStorageProviderHandler*)Unsafe.AsPointer(ref this), fileId, propertyHandler);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IStorageProviderHandler*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IStorageProviderHandler*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IStorageProviderHandler*, uint> Release;
+
+            [NativeTypeName("HRESULT (LPCWSTR, IStorageProviderPropertyHandler **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IStorageProviderHandler*, ushort*, IStorageProviderPropertyHandler**, int> GetPropertyHandlerFromPath;
+
+            [NativeTypeName("HRESULT (LPCWSTR, IStorageProviderPropertyHandler **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IStorageProviderHandler*, ushort*, IStorageProviderPropertyHandler**, int> GetPropertyHandlerFromUri;
+
+            [NativeTypeName("HRESULT (LPCWSTR, IStorageProviderPropertyHandler **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IStorageProviderHandler*, ushort*, IStorageProviderPropertyHandler**, int> GetPropertyHandlerFromFileId;
+        }
     }
 }

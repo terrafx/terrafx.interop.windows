@@ -101,5 +101,44 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IOleParentUndoUnit*, uint*, int>)(lpVtbl[11]))((IOleParentUndoUnit*)Unsafe.AsPointer(ref this), pdwState);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IOleParentUndoUnit*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IOleParentUndoUnit*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IOleParentUndoUnit*, uint> Release;
+
+            [NativeTypeName("HRESULT (IOleUndoManager *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IOleParentUndoUnit*, IOleUndoManager*, int> Do;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IOleParentUndoUnit*, ushort**, int> GetDescription;
+
+            [NativeTypeName("HRESULT (CLSID *, LONG *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IOleParentUndoUnit*, Guid*, int*, int> GetUnitType;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IOleParentUndoUnit*, int> OnNextAdd;
+
+            [NativeTypeName("HRESULT (IOleParentUndoUnit *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IOleParentUndoUnit*, IOleParentUndoUnit*, int> Open;
+
+            [NativeTypeName("HRESULT (IOleParentUndoUnit *, BOOL) __attribute__((stdcall))")]
+            public delegate* unmanaged<IOleParentUndoUnit*, IOleParentUndoUnit*, BOOL, int> Close;
+
+            [NativeTypeName("HRESULT (IOleUndoUnit *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IOleParentUndoUnit*, IOleUndoUnit*, int> Add;
+
+            [NativeTypeName("HRESULT (IOleUndoUnit *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IOleParentUndoUnit*, IOleUndoUnit*, int> FindUnit;
+
+            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IOleParentUndoUnit*, uint*, int> GetParentState;
+        }
     }
 }

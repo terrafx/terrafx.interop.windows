@@ -87,5 +87,38 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IMFContentDecryptionModule*, Guid**, uint*, int>)(lpVtbl[9]))((IMFContentDecryptionModule*)Unsafe.AsPointer(ref this), systemIds, count);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFContentDecryptionModule*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFContentDecryptionModule*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFContentDecryptionModule*, uint> Release;
+
+            [NativeTypeName("HRESULT (IMFContentEnabler *, IMFAsyncResult *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFContentDecryptionModule*, IMFContentEnabler*, IMFAsyncResult*, int> SetContentEnabler;
+
+            [NativeTypeName("HRESULT (IMFCdmSuspendNotify **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFContentDecryptionModule*, IMFCdmSuspendNotify**, int> GetSuspendNotify;
+
+            [NativeTypeName("HRESULT (IMFPMPHostApp *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFContentDecryptionModule*, IMFPMPHostApp*, int> SetPMPHostApp;
+
+            [NativeTypeName("HRESULT (MF_MEDIAKEYSESSION_TYPE, IMFContentDecryptionModuleSessionCallbacks *, IMFContentDecryptionModuleSession **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFContentDecryptionModule*, MF_MEDIAKEYSESSION_TYPE, IMFContentDecryptionModuleSessionCallbacks*, IMFContentDecryptionModuleSession**, int> CreateSession;
+
+            [NativeTypeName("HRESULT (const BYTE *, DWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFContentDecryptionModule*, byte*, uint, int> SetServerCertificate;
+
+            [NativeTypeName("HRESULT (const BYTE *, DWORD, IMFTrustedInput **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFContentDecryptionModule*, byte*, uint, IMFTrustedInput**, int> CreateTrustedInput;
+
+            [NativeTypeName("HRESULT (GUID **, DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFContentDecryptionModule*, Guid**, uint*, int> GetProtectionSystemIds;
+        }
     }
 }

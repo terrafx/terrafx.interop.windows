@@ -45,5 +45,20 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<ICanvasPixelArrayData*, byte**, uint*, int>)(lpVtbl[3]))((ICanvasPixelArrayData*)Unsafe.AsPointer(ref this), ppBuffer, pBufferLength);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ICanvasPixelArrayData*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ICanvasPixelArrayData*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ICanvasPixelArrayData*, uint> Release;
+
+            [NativeTypeName("HRESULT (BYTE **, ULONG *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ICanvasPixelArrayData*, byte**, uint*, int> GetBufferPointer;
+        }
     }
 }

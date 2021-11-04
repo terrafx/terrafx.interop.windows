@@ -125,5 +125,53 @@ namespace TerraFX.Interop
         {
             ((delegate* unmanaged<IMallocSpy*, void>)(lpVtbl[14]))((IMallocSpy*)Unsafe.AsPointer(ref this));
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMallocSpy*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMallocSpy*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMallocSpy*, uint> Release;
+
+            [NativeTypeName("SIZE_T (SIZE_T) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMallocSpy*, nuint, nuint> PreAlloc;
+
+            [NativeTypeName("void *(void *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMallocSpy*, void*, void*> PostAlloc;
+
+            [NativeTypeName("void *(void *, BOOL) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMallocSpy*, void*, BOOL, void*> PreFree;
+
+            [NativeTypeName("void (BOOL) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMallocSpy*, BOOL, void> PostFree;
+
+            [NativeTypeName("SIZE_T (void *, SIZE_T, void **, BOOL) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMallocSpy*, void*, nuint, void**, BOOL, nuint> PreRealloc;
+
+            [NativeTypeName("void *(void *, BOOL) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMallocSpy*, void*, BOOL, void*> PostRealloc;
+
+            [NativeTypeName("void *(void *, BOOL) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMallocSpy*, void*, BOOL, void*> PreGetSize;
+
+            [NativeTypeName("SIZE_T (SIZE_T, BOOL) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMallocSpy*, nuint, BOOL, nuint> PostGetSize;
+
+            [NativeTypeName("void *(void *, BOOL) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMallocSpy*, void*, BOOL, void*> PreDidAlloc;
+
+            [NativeTypeName("int (void *, BOOL, int) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMallocSpy*, void*, BOOL, int, int> PostDidAlloc;
+
+            [NativeTypeName("void () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMallocSpy*, void> PreHeapMinimize;
+
+            [NativeTypeName("void () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMallocSpy*, void> PostHeapMinimize;
+        }
     }
 }

@@ -136,5 +136,59 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<ITfKeystrokeMgr*, ITfContext*, Guid*, BOOL*, int>)(lpVtbl[16]))((ITfKeystrokeMgr*)Unsafe.AsPointer(ref this), pic, rguid, pfEaten);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfKeystrokeMgr*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfKeystrokeMgr*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfKeystrokeMgr*, uint> Release;
+
+            [NativeTypeName("HRESULT (TfClientId, ITfKeyEventSink *, BOOL) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfKeystrokeMgr*, uint, ITfKeyEventSink*, BOOL, int> AdviseKeyEventSink;
+
+            [NativeTypeName("HRESULT (TfClientId) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfKeystrokeMgr*, uint, int> UnadviseKeyEventSink;
+
+            [NativeTypeName("HRESULT (CLSID *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfKeystrokeMgr*, Guid*, int> GetForeground;
+
+            [NativeTypeName("HRESULT (WPARAM, LPARAM, BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfKeystrokeMgr*, WPARAM, LPARAM, BOOL*, int> TestKeyDown;
+
+            [NativeTypeName("HRESULT (WPARAM, LPARAM, BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfKeystrokeMgr*, WPARAM, LPARAM, BOOL*, int> TestKeyUp;
+
+            [NativeTypeName("HRESULT (WPARAM, LPARAM, BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfKeystrokeMgr*, WPARAM, LPARAM, BOOL*, int> KeyDown;
+
+            [NativeTypeName("HRESULT (WPARAM, LPARAM, BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfKeystrokeMgr*, WPARAM, LPARAM, BOOL*, int> KeyUp;
+
+            [NativeTypeName("HRESULT (ITfContext *, const TF_PRESERVEDKEY *, GUID *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfKeystrokeMgr*, ITfContext*, TF_PRESERVEDKEY*, Guid*, int> GetPreservedKey;
+
+            [NativeTypeName("HRESULT (const GUID &, const TF_PRESERVEDKEY *, BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfKeystrokeMgr*, Guid*, TF_PRESERVEDKEY*, BOOL*, int> IsPreservedKey;
+
+            [NativeTypeName("HRESULT (TfClientId, const GUID &, const TF_PRESERVEDKEY *, const WCHAR *, ULONG) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfKeystrokeMgr*, uint, Guid*, TF_PRESERVEDKEY*, ushort*, uint, int> PreserveKey;
+
+            [NativeTypeName("HRESULT (const GUID &, const TF_PRESERVEDKEY *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfKeystrokeMgr*, Guid*, TF_PRESERVEDKEY*, int> UnpreserveKey;
+
+            [NativeTypeName("HRESULT (const GUID &, const WCHAR *, ULONG) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfKeystrokeMgr*, Guid*, ushort*, uint, int> SetPreservedKeyDescription;
+
+            [NativeTypeName("HRESULT (const GUID &, BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfKeystrokeMgr*, Guid*, ushort**, int> GetPreservedKeyDescription;
+
+            [NativeTypeName("HRESULT (ITfContext *, const GUID &, BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfKeystrokeMgr*, ITfContext*, Guid*, BOOL*, int> SimulatePreservedKey;
+        }
     }
 }

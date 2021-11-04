@@ -199,5 +199,86 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IUriBuilder*, BOOL*, int>)(lpVtbl[25]))((IUriBuilder*)Unsafe.AsPointer(ref this), pfModified);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IUriBuilder*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IUriBuilder*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IUriBuilder*, uint> Release;
+
+            [NativeTypeName("HRESULT (DWORD, DWORD_PTR, IUri **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IUriBuilder*, uint, nuint, IUri**, int> CreateUriSimple;
+
+            [NativeTypeName("HRESULT (DWORD, DWORD, DWORD_PTR, IUri **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IUriBuilder*, uint, uint, nuint, IUri**, int> CreateUri;
+
+            [NativeTypeName("HRESULT (DWORD, DWORD, DWORD, DWORD_PTR, IUri **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IUriBuilder*, uint, uint, uint, nuint, IUri**, int> CreateUriWithFlags;
+
+            [NativeTypeName("HRESULT (IUri **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IUriBuilder*, IUri**, int> GetIUri;
+
+            [NativeTypeName("HRESULT (IUri *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IUriBuilder*, IUri*, int> SetIUri;
+
+            [NativeTypeName("HRESULT (DWORD *, LPCWSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IUriBuilder*, uint*, ushort**, int> GetFragment;
+
+            [NativeTypeName("HRESULT (DWORD *, LPCWSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IUriBuilder*, uint*, ushort**, int> GetHost;
+
+            [NativeTypeName("HRESULT (DWORD *, LPCWSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IUriBuilder*, uint*, ushort**, int> GetPassword;
+
+            [NativeTypeName("HRESULT (DWORD *, LPCWSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IUriBuilder*, uint*, ushort**, int> GetPath;
+
+            [NativeTypeName("HRESULT (BOOL *, DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IUriBuilder*, BOOL*, uint*, int> GetPort;
+
+            [NativeTypeName("HRESULT (DWORD *, LPCWSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IUriBuilder*, uint*, ushort**, int> GetQuery;
+
+            [NativeTypeName("HRESULT (DWORD *, LPCWSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IUriBuilder*, uint*, ushort**, int> GetSchemeName;
+
+            [NativeTypeName("HRESULT (DWORD *, LPCWSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IUriBuilder*, uint*, ushort**, int> GetUserName;
+
+            [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IUriBuilder*, ushort*, int> SetFragment;
+
+            [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IUriBuilder*, ushort*, int> SetHost;
+
+            [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IUriBuilder*, ushort*, int> SetPassword;
+
+            [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IUriBuilder*, ushort*, int> SetPath;
+
+            [NativeTypeName("HRESULT (BOOL, DWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<IUriBuilder*, BOOL, uint, int> SetPort;
+
+            [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IUriBuilder*, ushort*, int> SetQuery;
+
+            [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IUriBuilder*, ushort*, int> SetSchemeName;
+
+            [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IUriBuilder*, ushort*, int> SetUserName;
+
+            [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<IUriBuilder*, uint, int> RemoveProperties;
+
+            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IUriBuilder*, BOOL*, int> HasBeenModified;
+        }
     }
 }

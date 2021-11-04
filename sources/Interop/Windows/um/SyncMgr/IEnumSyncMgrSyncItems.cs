@@ -66,5 +66,29 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IEnumSyncMgrSyncItems*, IEnumSyncMgrSyncItems**, int>)(lpVtbl[6]))((IEnumSyncMgrSyncItems*)Unsafe.AsPointer(ref this), ppenum);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IEnumSyncMgrSyncItems*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IEnumSyncMgrSyncItems*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IEnumSyncMgrSyncItems*, uint> Release;
+
+            [NativeTypeName("HRESULT (ULONG, ISyncMgrSyncItem **, ULONG *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IEnumSyncMgrSyncItems*, uint, ISyncMgrSyncItem**, uint*, int> Next;
+
+            [NativeTypeName("HRESULT (ULONG) __attribute__((stdcall))")]
+            public delegate* unmanaged<IEnumSyncMgrSyncItems*, uint, int> Skip;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IEnumSyncMgrSyncItems*, int> Reset;
+
+            [NativeTypeName("HRESULT (IEnumSyncMgrSyncItems **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IEnumSyncMgrSyncItems*, IEnumSyncMgrSyncItems**, int> Clone;
+        }
     }
 }

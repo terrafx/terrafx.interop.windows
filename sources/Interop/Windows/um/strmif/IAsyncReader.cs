@@ -94,5 +94,41 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IAsyncReader*, int>)(lpVtbl[10]))((IAsyncReader*)Unsafe.AsPointer(ref this));
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAsyncReader*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IAsyncReader*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IAsyncReader*, uint> Release;
+
+            [NativeTypeName("HRESULT (IMemAllocator *, ALLOCATOR_PROPERTIES *, IMemAllocator **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAsyncReader*, IMemAllocator*, ALLOCATOR_PROPERTIES*, IMemAllocator**, int> RequestAllocator;
+
+            [NativeTypeName("HRESULT (IMediaSample *, DWORD_PTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAsyncReader*, IMediaSample*, nuint, int> Request;
+
+            [NativeTypeName("HRESULT (DWORD, IMediaSample **, DWORD_PTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAsyncReader*, uint, IMediaSample**, nuint*, int> WaitForNext;
+
+            [NativeTypeName("HRESULT (IMediaSample *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAsyncReader*, IMediaSample*, int> SyncReadAligned;
+
+            [NativeTypeName("HRESULT (LONGLONG, LONG, BYTE *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAsyncReader*, long, int, byte*, int> SyncRead;
+
+            [NativeTypeName("HRESULT (LONGLONG *, LONGLONG *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAsyncReader*, long*, long*, int> Length;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IAsyncReader*, int> BeginFlush;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IAsyncReader*, int> EndFlush;
+        }
     }
 }

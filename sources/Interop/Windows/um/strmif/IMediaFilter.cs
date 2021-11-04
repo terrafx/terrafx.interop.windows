@@ -87,5 +87,38 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IMediaFilter*, IReferenceClock**, int>)(lpVtbl[9]))((IMediaFilter*)Unsafe.AsPointer(ref this), pClock);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMediaFilter*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMediaFilter*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMediaFilter*, uint> Release;
+
+            [NativeTypeName("HRESULT (CLSID *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMediaFilter*, Guid*, int> GetClassID;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMediaFilter*, int> Stop;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMediaFilter*, int> Pause;
+
+            [NativeTypeName("HRESULT (REFERENCE_TIME) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMediaFilter*, long, int> Run;
+
+            [NativeTypeName("HRESULT (DWORD, FILTER_STATE *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMediaFilter*, uint, FILTER_STATE*, int> GetState;
+
+            [NativeTypeName("HRESULT (IReferenceClock *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMediaFilter*, IReferenceClock*, int> SetSyncSource;
+
+            [NativeTypeName("HRESULT (IReferenceClock **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMediaFilter*, IReferenceClock**, int> GetSyncSource;
+        }
     }
 }

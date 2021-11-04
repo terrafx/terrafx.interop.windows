@@ -157,5 +157,68 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IDXGIDevice4*, uint, IDXGIResource**, DXGI_RECLAIM_RESOURCE_RESULTS*, int>)(lpVtbl[19]))((IDXGIDevice4*)Unsafe.AsPointer(ref this), NumResources, ppResources, pResults);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDXGIDevice4*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDXGIDevice4*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDXGIDevice4*, uint> Release;
+
+            [NativeTypeName("HRESULT (const GUID &, UINT, const void *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDXGIDevice4*, Guid*, uint, void*, int> SetPrivateData;
+
+            [NativeTypeName("HRESULT (const GUID &, const IUnknown *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDXGIDevice4*, Guid*, IUnknown*, int> SetPrivateDataInterface;
+
+            [NativeTypeName("HRESULT (const GUID &, UINT *, void *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDXGIDevice4*, Guid*, uint*, void*, int> GetPrivateData;
+
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDXGIDevice4*, Guid*, void**, int> GetParent;
+
+            [NativeTypeName("HRESULT (IDXGIAdapter **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDXGIDevice4*, IDXGIAdapter**, int> GetAdapter;
+
+            [NativeTypeName("HRESULT (const DXGI_SURFACE_DESC *, UINT, DXGI_USAGE, const DXGI_SHARED_RESOURCE *, IDXGISurface **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDXGIDevice4*, DXGI_SURFACE_DESC*, uint, uint, DXGI_SHARED_RESOURCE*, IDXGISurface**, int> CreateSurface;
+
+            [NativeTypeName("HRESULT (IUnknown *const *, DXGI_RESIDENCY *, UINT) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDXGIDevice4*, IUnknown**, DXGI_RESIDENCY*, uint, int> QueryResourceResidency;
+
+            [NativeTypeName("HRESULT (INT) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDXGIDevice4*, int, int> SetGPUThreadPriority;
+
+            [NativeTypeName("HRESULT (INT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDXGIDevice4*, int*, int> GetGPUThreadPriority;
+
+            [NativeTypeName("HRESULT (UINT) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDXGIDevice4*, uint, int> SetMaximumFrameLatency;
+
+            [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDXGIDevice4*, uint*, int> GetMaximumFrameLatency;
+
+            [NativeTypeName("HRESULT (UINT, IDXGIResource *const *, DXGI_OFFER_RESOURCE_PRIORITY) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDXGIDevice4*, uint, IDXGIResource**, DXGI_OFFER_RESOURCE_PRIORITY, int> OfferResources;
+
+            [NativeTypeName("HRESULT (UINT, IDXGIResource *const *, BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDXGIDevice4*, uint, IDXGIResource**, BOOL*, int> ReclaimResources;
+
+            [NativeTypeName("HRESULT (HANDLE) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDXGIDevice4*, HANDLE, int> EnqueueSetEvent;
+
+            [NativeTypeName("void () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDXGIDevice4*, void> Trim;
+
+            [NativeTypeName("HRESULT (UINT, IDXGIResource *const *, DXGI_OFFER_RESOURCE_PRIORITY, UINT) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDXGIDevice4*, uint, IDXGIResource**, DXGI_OFFER_RESOURCE_PRIORITY, uint, int> OfferResources1;
+
+            [NativeTypeName("HRESULT (UINT, IDXGIResource *const *, DXGI_RECLAIM_RESOURCE_RESULTS *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDXGIDevice4*, uint, IDXGIResource**, DXGI_RECLAIM_RESOURCE_RESULTS*, int> ReclaimResources1;
+        }
     }
 }

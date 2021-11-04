@@ -73,5 +73,32 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IWebWizardExtension*, ushort*, int>)(lpVtbl[7]))((IWebWizardExtension*)Unsafe.AsPointer(ref this), pszErrorURL);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWebWizardExtension*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IWebWizardExtension*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IWebWizardExtension*, uint> Release;
+
+            [NativeTypeName("HRESULT (HPROPSHEETPAGE *, UINT, UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWebWizardExtension*, HPROPSHEETPAGE*, uint, uint*, int> AddPages;
+
+            [NativeTypeName("HRESULT (HPROPSHEETPAGE *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWebWizardExtension*, HPROPSHEETPAGE*, int> GetFirstPage;
+
+            [NativeTypeName("HRESULT (HPROPSHEETPAGE *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWebWizardExtension*, HPROPSHEETPAGE*, int> GetLastPage;
+
+            [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWebWizardExtension*, ushort*, int> SetInitialURL;
+
+            [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWebWizardExtension*, ushort*, int> SetErrorURL;
+        }
     }
 }

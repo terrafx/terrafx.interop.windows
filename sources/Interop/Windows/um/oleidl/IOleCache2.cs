@@ -87,5 +87,38 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IOleCache2*, uint, int>)(lpVtbl[9]))((IOleCache2*)Unsafe.AsPointer(ref this), dwDiscardOptions);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IOleCache2*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IOleCache2*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IOleCache2*, uint> Release;
+
+            [NativeTypeName("HRESULT (FORMATETC *, DWORD, DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IOleCache2*, FORMATETC*, uint, uint*, int> Cache;
+
+            [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<IOleCache2*, uint, int> Uncache;
+
+            [NativeTypeName("HRESULT (IEnumSTATDATA **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IOleCache2*, IEnumSTATDATA**, int> EnumCache;
+
+            [NativeTypeName("HRESULT (IDataObject *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IOleCache2*, IDataObject*, int> InitCache;
+
+            [NativeTypeName("HRESULT (FORMATETC *, STGMEDIUM *, BOOL) __attribute__((stdcall))")]
+            public delegate* unmanaged<IOleCache2*, FORMATETC*, STGMEDIUM*, BOOL, int> SetData;
+
+            [NativeTypeName("HRESULT (LPDATAOBJECT, DWORD, LPVOID) __attribute__((stdcall))")]
+            public delegate* unmanaged<IOleCache2*, IDataObject*, uint, void*, int> UpdateCache;
+
+            [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<IOleCache2*, uint, int> DiscardCache;
+        }
     }
 }

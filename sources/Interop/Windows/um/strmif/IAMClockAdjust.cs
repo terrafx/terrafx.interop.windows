@@ -45,5 +45,20 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IAMClockAdjust*, long, int>)(lpVtbl[3]))((IAMClockAdjust*)Unsafe.AsPointer(ref this), rtDelta);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAMClockAdjust*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IAMClockAdjust*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IAMClockAdjust*, uint> Release;
+
+            [NativeTypeName("HRESULT (REFERENCE_TIME) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAMClockAdjust*, long, int> SetClockDelta;
+        }
     }
 }

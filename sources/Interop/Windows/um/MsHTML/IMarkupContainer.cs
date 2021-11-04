@@ -45,5 +45,20 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IMarkupContainer*, IHTMLDocument2**, int>)(lpVtbl[3]))((IMarkupContainer*)Unsafe.AsPointer(ref this), ppDoc);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMarkupContainer*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMarkupContainer*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMarkupContainer*, uint> Release;
+
+            [NativeTypeName("HRESULT (IHTMLDocument2 **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMarkupContainer*, IHTMLDocument2**, int> OwningDoc;
+        }
     }
 }

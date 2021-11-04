@@ -143,5 +143,62 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IStreamConcatenate*, IStream**, uint, int>)(lpVtbl[17]))((IStreamConcatenate*)Unsafe.AsPointer(ref this), streams, streamCount);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IStreamConcatenate*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IStreamConcatenate*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IStreamConcatenate*, uint> Release;
+
+            [NativeTypeName("HRESULT (void *, ULONG, ULONG *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IStreamConcatenate*, void*, uint, uint*, int> Read;
+
+            [NativeTypeName("HRESULT (const void *, ULONG, ULONG *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IStreamConcatenate*, void*, uint, uint*, int> Write;
+
+            [NativeTypeName("HRESULT (LARGE_INTEGER, DWORD, ULARGE_INTEGER *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IStreamConcatenate*, LARGE_INTEGER, uint, ULARGE_INTEGER*, int> Seek;
+
+            [NativeTypeName("HRESULT (ULARGE_INTEGER) __attribute__((stdcall))")]
+            public delegate* unmanaged<IStreamConcatenate*, ULARGE_INTEGER, int> SetSize;
+
+            [NativeTypeName("HRESULT (IStream *, ULARGE_INTEGER, ULARGE_INTEGER *, ULARGE_INTEGER *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IStreamConcatenate*, IStream*, ULARGE_INTEGER, ULARGE_INTEGER*, ULARGE_INTEGER*, int> CopyTo;
+
+            [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<IStreamConcatenate*, uint, int> Commit;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IStreamConcatenate*, int> Revert;
+
+            [NativeTypeName("HRESULT (ULARGE_INTEGER, ULARGE_INTEGER, DWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<IStreamConcatenate*, ULARGE_INTEGER, ULARGE_INTEGER, uint, int> LockRegion;
+
+            [NativeTypeName("HRESULT (ULARGE_INTEGER, ULARGE_INTEGER, DWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<IStreamConcatenate*, ULARGE_INTEGER, ULARGE_INTEGER, uint, int> UnlockRegion;
+
+            [NativeTypeName("HRESULT (STATSTG *, DWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<IStreamConcatenate*, STATSTG*, uint, int> Stat;
+
+            [NativeTypeName("HRESULT (IStream **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IStreamConcatenate*, IStream**, int> Clone;
+
+            [NativeTypeName("HRESULT (IStream *, IStream *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IStreamConcatenate*, IStream*, IStream*, int> Initialize;
+
+            [NativeTypeName("HRESULT (IStream **, ULONG) __attribute__((stdcall))")]
+            public delegate* unmanaged<IStreamConcatenate*, IStream**, uint, int> Initialize2;
+
+            [NativeTypeName("HRESULT (IStream *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IStreamConcatenate*, IStream*, int> Append;
+
+            [NativeTypeName("HRESULT (IStream **, ULONG) __attribute__((stdcall))")]
+            public delegate* unmanaged<IStreamConcatenate*, IStream**, uint, int> Append2;
+        }
     }
 }

@@ -80,5 +80,35 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<ITfKeyEventSink*, ITfContext*, Guid*, BOOL*, int>)(lpVtbl[8]))((ITfKeyEventSink*)Unsafe.AsPointer(ref this), pic, rguid, pfEaten);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfKeyEventSink*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfKeyEventSink*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfKeyEventSink*, uint> Release;
+
+            [NativeTypeName("HRESULT (BOOL) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfKeyEventSink*, BOOL, int> OnSetFocus;
+
+            [NativeTypeName("HRESULT (ITfContext *, WPARAM, LPARAM, BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfKeyEventSink*, ITfContext*, WPARAM, LPARAM, BOOL*, int> OnTestKeyDown;
+
+            [NativeTypeName("HRESULT (ITfContext *, WPARAM, LPARAM, BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfKeyEventSink*, ITfContext*, WPARAM, LPARAM, BOOL*, int> OnTestKeyUp;
+
+            [NativeTypeName("HRESULT (ITfContext *, WPARAM, LPARAM, BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfKeyEventSink*, ITfContext*, WPARAM, LPARAM, BOOL*, int> OnKeyDown;
+
+            [NativeTypeName("HRESULT (ITfContext *, WPARAM, LPARAM, BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfKeyEventSink*, ITfContext*, WPARAM, LPARAM, BOOL*, int> OnKeyUp;
+
+            [NativeTypeName("HRESULT (ITfContext *, const GUID &, BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfKeyEventSink*, ITfContext*, Guid*, BOOL*, int> OnPreservedKey;
+        }
     }
 }

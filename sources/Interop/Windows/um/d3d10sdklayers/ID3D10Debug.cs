@@ -87,5 +87,38 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<ID3D10Debug*, int>)(lpVtbl[9]))((ID3D10Debug*)Unsafe.AsPointer(ref this));
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D10Debug*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D10Debug*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D10Debug*, uint> Release;
+
+            [NativeTypeName("HRESULT (UINT) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D10Debug*, uint, int> SetFeatureMask;
+
+            [NativeTypeName("UINT () __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D10Debug*, uint> GetFeatureMask;
+
+            [NativeTypeName("HRESULT (UINT) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D10Debug*, uint, int> SetPresentPerRenderOpDelay;
+
+            [NativeTypeName("UINT () __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D10Debug*, uint> GetPresentPerRenderOpDelay;
+
+            [NativeTypeName("HRESULT (IDXGISwapChain *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D10Debug*, IDXGISwapChain*, int> SetSwapChain;
+
+            [NativeTypeName("HRESULT (IDXGISwapChain **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D10Debug*, IDXGISwapChain**, int> GetSwapChain;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D10Debug*, int> Validate;
+        }
     }
 }

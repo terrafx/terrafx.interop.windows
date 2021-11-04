@@ -45,5 +45,20 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IInputObjectSite*, IUnknown*, BOOL, int>)(lpVtbl[3]))((IInputObjectSite*)Unsafe.AsPointer(ref this), punkObj, fSetFocus);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IInputObjectSite*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IInputObjectSite*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IInputObjectSite*, uint> Release;
+
+            [NativeTypeName("HRESULT (IUnknown *, BOOL) __attribute__((stdcall))")]
+            public delegate* unmanaged<IInputObjectSite*, IUnknown*, BOOL, int> OnFocusChangeIS;
+        }
     }
 }

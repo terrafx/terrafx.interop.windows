@@ -514,5 +514,221 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<ICanvasRenderingContext2D*, ICanvasImageData*, float, float, VARIANT, VARIANT, VARIANT, VARIANT, int>)(lpVtbl[70]))((ICanvasRenderingContext2D*)Unsafe.AsPointer(ref this), imagedata, dx, dy, dirtyX, dirtyY, dirtyWidth, dirtyHeight);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ICanvasRenderingContext2D*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ICanvasRenderingContext2D*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ICanvasRenderingContext2D*, uint> Release;
+
+            [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ICanvasRenderingContext2D*, uint*, int> GetTypeInfoCount;
+
+            [NativeTypeName("HRESULT (UINT, LCID, ITypeInfo **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ICanvasRenderingContext2D*, uint, uint, ITypeInfo**, int> GetTypeInfo;
+
+            [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ICanvasRenderingContext2D*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+
+            [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ICanvasRenderingContext2D*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
+
+            [NativeTypeName("HRESULT (IHTMLCanvasElement **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ICanvasRenderingContext2D*, IHTMLCanvasElement**, int> get_canvas;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<ICanvasRenderingContext2D*, int> restore;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<ICanvasRenderingContext2D*, int> save;
+
+            [NativeTypeName("HRESULT (float) __attribute__((stdcall))")]
+            public delegate* unmanaged<ICanvasRenderingContext2D*, float, int> rotate;
+
+            [NativeTypeName("HRESULT (float, float) __attribute__((stdcall))")]
+            public delegate* unmanaged<ICanvasRenderingContext2D*, float, float, int> scale;
+
+            [NativeTypeName("HRESULT (float, float, float, float, float, float) __attribute__((stdcall))")]
+            public delegate* unmanaged<ICanvasRenderingContext2D*, float, float, float, float, float, float, int> setTransform;
+
+            [NativeTypeName("HRESULT (float, float, float, float, float, float) __attribute__((stdcall))")]
+            public delegate* unmanaged<ICanvasRenderingContext2D*, float, float, float, float, float, float, int> transform;
+
+            [NativeTypeName("HRESULT (float, float) __attribute__((stdcall))")]
+            public delegate* unmanaged<ICanvasRenderingContext2D*, float, float, int> translate;
+
+            [NativeTypeName("HRESULT (float) __attribute__((stdcall))")]
+            public delegate* unmanaged<ICanvasRenderingContext2D*, float, int> put_globalAlpha;
+
+            [NativeTypeName("HRESULT (float *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ICanvasRenderingContext2D*, float*, int> get_globalAlpha;
+
+            [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<ICanvasRenderingContext2D*, ushort*, int> put_globalCompositeOperation;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ICanvasRenderingContext2D*, ushort**, int> get_globalCompositeOperation;
+
+            [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
+            public delegate* unmanaged<ICanvasRenderingContext2D*, VARIANT, int> put_fillStyle;
+
+            [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ICanvasRenderingContext2D*, VARIANT*, int> get_fillStyle;
+
+            [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
+            public delegate* unmanaged<ICanvasRenderingContext2D*, VARIANT, int> put_strokeStyle;
+
+            [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ICanvasRenderingContext2D*, VARIANT*, int> get_strokeStyle;
+
+            [NativeTypeName("HRESULT (float, float, float, float, ICanvasGradient **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ICanvasRenderingContext2D*, float, float, float, float, ICanvasGradient**, int> createLinearGradient;
+
+            [NativeTypeName("HRESULT (float, float, float, float, float, float, ICanvasGradient **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ICanvasRenderingContext2D*, float, float, float, float, float, float, ICanvasGradient**, int> createRadialGradient;
+
+            [NativeTypeName("HRESULT (IDispatch *, VARIANT, ICanvasPattern **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ICanvasRenderingContext2D*, IDispatch*, VARIANT, ICanvasPattern**, int> createPattern;
+
+            [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<ICanvasRenderingContext2D*, ushort*, int> put_lineCap;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ICanvasRenderingContext2D*, ushort**, int> get_lineCap;
+
+            [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<ICanvasRenderingContext2D*, ushort*, int> put_lineJoin;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ICanvasRenderingContext2D*, ushort**, int> get_lineJoin;
+
+            [NativeTypeName("HRESULT (float) __attribute__((stdcall))")]
+            public delegate* unmanaged<ICanvasRenderingContext2D*, float, int> put_lineWidth;
+
+            [NativeTypeName("HRESULT (float *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ICanvasRenderingContext2D*, float*, int> get_lineWidth;
+
+            [NativeTypeName("HRESULT (float) __attribute__((stdcall))")]
+            public delegate* unmanaged<ICanvasRenderingContext2D*, float, int> put_miterLimit;
+
+            [NativeTypeName("HRESULT (float *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ICanvasRenderingContext2D*, float*, int> get_miterLimit;
+
+            [NativeTypeName("HRESULT (float) __attribute__((stdcall))")]
+            public delegate* unmanaged<ICanvasRenderingContext2D*, float, int> put_shadowBlur;
+
+            [NativeTypeName("HRESULT (float *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ICanvasRenderingContext2D*, float*, int> get_shadowBlur;
+
+            [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<ICanvasRenderingContext2D*, ushort*, int> put_shadowColor;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ICanvasRenderingContext2D*, ushort**, int> get_shadowColor;
+
+            [NativeTypeName("HRESULT (float) __attribute__((stdcall))")]
+            public delegate* unmanaged<ICanvasRenderingContext2D*, float, int> put_shadowOffsetX;
+
+            [NativeTypeName("HRESULT (float *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ICanvasRenderingContext2D*, float*, int> get_shadowOffsetX;
+
+            [NativeTypeName("HRESULT (float) __attribute__((stdcall))")]
+            public delegate* unmanaged<ICanvasRenderingContext2D*, float, int> put_shadowOffsetY;
+
+            [NativeTypeName("HRESULT (float *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ICanvasRenderingContext2D*, float*, int> get_shadowOffsetY;
+
+            [NativeTypeName("HRESULT (float, float, float, float) __attribute__((stdcall))")]
+            public delegate* unmanaged<ICanvasRenderingContext2D*, float, float, float, float, int> clearRect;
+
+            [NativeTypeName("HRESULT (float, float, float, float) __attribute__((stdcall))")]
+            public delegate* unmanaged<ICanvasRenderingContext2D*, float, float, float, float, int> fillRect;
+
+            [NativeTypeName("HRESULT (float, float, float, float) __attribute__((stdcall))")]
+            public delegate* unmanaged<ICanvasRenderingContext2D*, float, float, float, float, int> strokeRect;
+
+            [NativeTypeName("HRESULT (float, float, float, float, float, BOOL) __attribute__((stdcall))")]
+            public delegate* unmanaged<ICanvasRenderingContext2D*, float, float, float, float, float, BOOL, int> arc;
+
+            [NativeTypeName("HRESULT (float, float, float, float, float) __attribute__((stdcall))")]
+            public delegate* unmanaged<ICanvasRenderingContext2D*, float, float, float, float, float, int> arcTo;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<ICanvasRenderingContext2D*, int> beginPath;
+
+            [NativeTypeName("HRESULT (float, float, float, float, float, float) __attribute__((stdcall))")]
+            public delegate* unmanaged<ICanvasRenderingContext2D*, float, float, float, float, float, float, int> bezierCurveTo;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<ICanvasRenderingContext2D*, int> clip;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<ICanvasRenderingContext2D*, int> closePath;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<ICanvasRenderingContext2D*, int> fill;
+
+            [NativeTypeName("HRESULT (float, float) __attribute__((stdcall))")]
+            public delegate* unmanaged<ICanvasRenderingContext2D*, float, float, int> lineTo;
+
+            [NativeTypeName("HRESULT (float, float) __attribute__((stdcall))")]
+            public delegate* unmanaged<ICanvasRenderingContext2D*, float, float, int> moveTo;
+
+            [NativeTypeName("HRESULT (float, float, float, float) __attribute__((stdcall))")]
+            public delegate* unmanaged<ICanvasRenderingContext2D*, float, float, float, float, int> quadraticCurveTo;
+
+            [NativeTypeName("HRESULT (float, float, float, float) __attribute__((stdcall))")]
+            public delegate* unmanaged<ICanvasRenderingContext2D*, float, float, float, float, int> rect;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<ICanvasRenderingContext2D*, int> stroke;
+
+            [NativeTypeName("HRESULT (float, float, VARIANT_BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ICanvasRenderingContext2D*, float, float, short*, int> isPointInPath;
+
+            [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<ICanvasRenderingContext2D*, ushort*, int> put_font;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ICanvasRenderingContext2D*, ushort**, int> get_font;
+
+            [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<ICanvasRenderingContext2D*, ushort*, int> put_textAlign;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ICanvasRenderingContext2D*, ushort**, int> get_textAlign;
+
+            [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<ICanvasRenderingContext2D*, ushort*, int> put_textBaseline;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ICanvasRenderingContext2D*, ushort**, int> get_textBaseline;
+
+            [NativeTypeName("HRESULT (BSTR, float, float, VARIANT) __attribute__((stdcall))")]
+            public delegate* unmanaged<ICanvasRenderingContext2D*, ushort*, float, float, VARIANT, int> fillText;
+
+            [NativeTypeName("HRESULT (BSTR, ICanvasTextMetrics **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ICanvasRenderingContext2D*, ushort*, ICanvasTextMetrics**, int> measureText;
+
+            [NativeTypeName("HRESULT (BSTR, float, float, VARIANT) __attribute__((stdcall))")]
+            public delegate* unmanaged<ICanvasRenderingContext2D*, ushort*, float, float, VARIANT, int> strokeText;
+
+            [NativeTypeName("HRESULT (IDispatch *, VARIANT, VARIANT, VARIANT, VARIANT, VARIANT, VARIANT, VARIANT, VARIANT) __attribute__((stdcall))")]
+            public delegate* unmanaged<ICanvasRenderingContext2D*, IDispatch*, VARIANT, VARIANT, VARIANT, VARIANT, VARIANT, VARIANT, VARIANT, VARIANT, int> drawImage;
+
+            [NativeTypeName("HRESULT (VARIANT, VARIANT, ICanvasImageData **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ICanvasRenderingContext2D*, VARIANT, VARIANT, ICanvasImageData**, int> createImageData;
+
+            [NativeTypeName("HRESULT (float, float, float, float, ICanvasImageData **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ICanvasRenderingContext2D*, float, float, float, float, ICanvasImageData**, int> getImageData;
+
+            [NativeTypeName("HRESULT (ICanvasImageData *, float, float, VARIANT, VARIANT, VARIANT, VARIANT) __attribute__((stdcall))")]
+            public delegate* unmanaged<ICanvasRenderingContext2D*, ICanvasImageData*, float, float, VARIANT, VARIANT, VARIANT, VARIANT, int> putImageData;
+        }
     }
 }

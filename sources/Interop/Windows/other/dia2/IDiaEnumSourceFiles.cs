@@ -87,5 +87,38 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IDiaEnumSourceFiles*, IDiaEnumSourceFiles**, int>)(lpVtbl[9]))((IDiaEnumSourceFiles*)Unsafe.AsPointer(ref this), ppenum);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaEnumSourceFiles*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaEnumSourceFiles*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaEnumSourceFiles*, uint> Release;
+
+            [NativeTypeName("HRESULT (IUnknown **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaEnumSourceFiles*, IUnknown**, int> get__NewEnum;
+
+            [NativeTypeName("HRESULT (LONG *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaEnumSourceFiles*, int*, int> get_Count;
+
+            [NativeTypeName("HRESULT (DWORD, IDiaSourceFile **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaEnumSourceFiles*, uint, IDiaSourceFile**, int> Item;
+
+            [NativeTypeName("HRESULT (ULONG, IDiaSourceFile **, ULONG *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaEnumSourceFiles*, uint, IDiaSourceFile**, uint*, int> Next;
+
+            [NativeTypeName("HRESULT (ULONG) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaEnumSourceFiles*, uint, int> Skip;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaEnumSourceFiles*, int> Reset;
+
+            [NativeTypeName("HRESULT (IDiaEnumSourceFiles **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaEnumSourceFiles*, IDiaEnumSourceFiles**, int> Clone;
+        }
     }
 }

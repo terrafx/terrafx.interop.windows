@@ -381,5 +381,164 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IInertiaProcessor*, uint, int>)(lpVtbl[51]))((IInertiaProcessor*)Unsafe.AsPointer(ref this), timestamp);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IInertiaProcessor*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IInertiaProcessor*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IInertiaProcessor*, uint> Release;
+
+            [NativeTypeName("HRESULT (FLOAT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IInertiaProcessor*, float*, int> get_InitialOriginX;
+
+            [NativeTypeName("HRESULT (FLOAT) __attribute__((stdcall))")]
+            public delegate* unmanaged<IInertiaProcessor*, float, int> put_InitialOriginX;
+
+            [NativeTypeName("HRESULT (FLOAT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IInertiaProcessor*, float*, int> get_InitialOriginY;
+
+            [NativeTypeName("HRESULT (FLOAT) __attribute__((stdcall))")]
+            public delegate* unmanaged<IInertiaProcessor*, float, int> put_InitialOriginY;
+
+            [NativeTypeName("HRESULT (FLOAT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IInertiaProcessor*, float*, int> get_InitialVelocityX;
+
+            [NativeTypeName("HRESULT (FLOAT) __attribute__((stdcall))")]
+            public delegate* unmanaged<IInertiaProcessor*, float, int> put_InitialVelocityX;
+
+            [NativeTypeName("HRESULT (FLOAT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IInertiaProcessor*, float*, int> get_InitialVelocityY;
+
+            [NativeTypeName("HRESULT (FLOAT) __attribute__((stdcall))")]
+            public delegate* unmanaged<IInertiaProcessor*, float, int> put_InitialVelocityY;
+
+            [NativeTypeName("HRESULT (FLOAT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IInertiaProcessor*, float*, int> get_InitialAngularVelocity;
+
+            [NativeTypeName("HRESULT (FLOAT) __attribute__((stdcall))")]
+            public delegate* unmanaged<IInertiaProcessor*, float, int> put_InitialAngularVelocity;
+
+            [NativeTypeName("HRESULT (FLOAT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IInertiaProcessor*, float*, int> get_InitialExpansionVelocity;
+
+            [NativeTypeName("HRESULT (FLOAT) __attribute__((stdcall))")]
+            public delegate* unmanaged<IInertiaProcessor*, float, int> put_InitialExpansionVelocity;
+
+            [NativeTypeName("HRESULT (FLOAT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IInertiaProcessor*, float*, int> get_InitialRadius;
+
+            [NativeTypeName("HRESULT (FLOAT) __attribute__((stdcall))")]
+            public delegate* unmanaged<IInertiaProcessor*, float, int> put_InitialRadius;
+
+            [NativeTypeName("HRESULT (FLOAT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IInertiaProcessor*, float*, int> get_BoundaryLeft;
+
+            [NativeTypeName("HRESULT (FLOAT) __attribute__((stdcall))")]
+            public delegate* unmanaged<IInertiaProcessor*, float, int> put_BoundaryLeft;
+
+            [NativeTypeName("HRESULT (FLOAT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IInertiaProcessor*, float*, int> get_BoundaryTop;
+
+            [NativeTypeName("HRESULT (FLOAT) __attribute__((stdcall))")]
+            public delegate* unmanaged<IInertiaProcessor*, float, int> put_BoundaryTop;
+
+            [NativeTypeName("HRESULT (FLOAT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IInertiaProcessor*, float*, int> get_BoundaryRight;
+
+            [NativeTypeName("HRESULT (FLOAT) __attribute__((stdcall))")]
+            public delegate* unmanaged<IInertiaProcessor*, float, int> put_BoundaryRight;
+
+            [NativeTypeName("HRESULT (FLOAT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IInertiaProcessor*, float*, int> get_BoundaryBottom;
+
+            [NativeTypeName("HRESULT (FLOAT) __attribute__((stdcall))")]
+            public delegate* unmanaged<IInertiaProcessor*, float, int> put_BoundaryBottom;
+
+            [NativeTypeName("HRESULT (FLOAT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IInertiaProcessor*, float*, int> get_ElasticMarginLeft;
+
+            [NativeTypeName("HRESULT (FLOAT) __attribute__((stdcall))")]
+            public delegate* unmanaged<IInertiaProcessor*, float, int> put_ElasticMarginLeft;
+
+            [NativeTypeName("HRESULT (FLOAT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IInertiaProcessor*, float*, int> get_ElasticMarginTop;
+
+            [NativeTypeName("HRESULT (FLOAT) __attribute__((stdcall))")]
+            public delegate* unmanaged<IInertiaProcessor*, float, int> put_ElasticMarginTop;
+
+            [NativeTypeName("HRESULT (FLOAT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IInertiaProcessor*, float*, int> get_ElasticMarginRight;
+
+            [NativeTypeName("HRESULT (FLOAT) __attribute__((stdcall))")]
+            public delegate* unmanaged<IInertiaProcessor*, float, int> put_ElasticMarginRight;
+
+            [NativeTypeName("HRESULT (FLOAT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IInertiaProcessor*, float*, int> get_ElasticMarginBottom;
+
+            [NativeTypeName("HRESULT (FLOAT) __attribute__((stdcall))")]
+            public delegate* unmanaged<IInertiaProcessor*, float, int> put_ElasticMarginBottom;
+
+            [NativeTypeName("HRESULT (FLOAT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IInertiaProcessor*, float*, int> get_DesiredDisplacement;
+
+            [NativeTypeName("HRESULT (FLOAT) __attribute__((stdcall))")]
+            public delegate* unmanaged<IInertiaProcessor*, float, int> put_DesiredDisplacement;
+
+            [NativeTypeName("HRESULT (FLOAT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IInertiaProcessor*, float*, int> get_DesiredRotation;
+
+            [NativeTypeName("HRESULT (FLOAT) __attribute__((stdcall))")]
+            public delegate* unmanaged<IInertiaProcessor*, float, int> put_DesiredRotation;
+
+            [NativeTypeName("HRESULT (FLOAT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IInertiaProcessor*, float*, int> get_DesiredExpansion;
+
+            [NativeTypeName("HRESULT (FLOAT) __attribute__((stdcall))")]
+            public delegate* unmanaged<IInertiaProcessor*, float, int> put_DesiredExpansion;
+
+            [NativeTypeName("HRESULT (FLOAT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IInertiaProcessor*, float*, int> get_DesiredDeceleration;
+
+            [NativeTypeName("HRESULT (FLOAT) __attribute__((stdcall))")]
+            public delegate* unmanaged<IInertiaProcessor*, float, int> put_DesiredDeceleration;
+
+            [NativeTypeName("HRESULT (FLOAT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IInertiaProcessor*, float*, int> get_DesiredAngularDeceleration;
+
+            [NativeTypeName("HRESULT (FLOAT) __attribute__((stdcall))")]
+            public delegate* unmanaged<IInertiaProcessor*, float, int> put_DesiredAngularDeceleration;
+
+            [NativeTypeName("HRESULT (FLOAT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IInertiaProcessor*, float*, int> get_DesiredExpansionDeceleration;
+
+            [NativeTypeName("HRESULT (FLOAT) __attribute__((stdcall))")]
+            public delegate* unmanaged<IInertiaProcessor*, float, int> put_DesiredExpansionDeceleration;
+
+            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IInertiaProcessor*, uint*, int> get_InitialTimestamp;
+
+            [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<IInertiaProcessor*, uint, int> put_InitialTimestamp;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IInertiaProcessor*, int> Reset;
+
+            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IInertiaProcessor*, BOOL*, int> Process;
+
+            [NativeTypeName("HRESULT (DWORD, BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IInertiaProcessor*, uint, BOOL*, int> ProcessTime;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IInertiaProcessor*, int> Complete;
+
+            [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<IInertiaProcessor*, uint, int> CompleteTime;
+        }
     }
 }

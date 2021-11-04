@@ -81,5 +81,35 @@ namespace TerraFX.Interop
             D3D12_VIDEO_DECODER_DESC result;
             return *((delegate* unmanaged<ID3D12VideoDecoder*, D3D12_VIDEO_DECODER_DESC*, D3D12_VIDEO_DECODER_DESC*>)(lpVtbl[8]))((ID3D12VideoDecoder*)Unsafe.AsPointer(ref this), &result);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D12VideoDecoder*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D12VideoDecoder*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D12VideoDecoder*, uint> Release;
+
+            [NativeTypeName("HRESULT (const GUID &, UINT *, void *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D12VideoDecoder*, Guid*, uint*, void*, int> GetPrivateData;
+
+            [NativeTypeName("HRESULT (const GUID &, UINT, const void *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D12VideoDecoder*, Guid*, uint, void*, int> SetPrivateData;
+
+            [NativeTypeName("HRESULT (const GUID &, const IUnknown *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D12VideoDecoder*, Guid*, IUnknown*, int> SetPrivateDataInterface;
+
+            [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D12VideoDecoder*, ushort*, int> SetName;
+
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D12VideoDecoder*, Guid*, void**, int> GetDevice;
+
+            [NativeTypeName("D3D12_VIDEO_DECODER_DESC () __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D12VideoDecoder*, D3D12_VIDEO_DECODER_DESC*, D3D12_VIDEO_DECODER_DESC*> GetDesc;
+        }
     }
 }

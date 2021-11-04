@@ -101,5 +101,44 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<ITfLangBarMgr*, uint*, int>)(lpVtbl[11]))((ITfLangBarMgr*)Unsafe.AsPointer(ref this), pdwFlags);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfLangBarMgr*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfLangBarMgr*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfLangBarMgr*, uint> Release;
+
+            [NativeTypeName("HRESULT (ITfLangBarEventSink *, HWND, DWORD, DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfLangBarMgr*, ITfLangBarEventSink*, HWND, uint, uint*, int> AdviseEventSink;
+
+            [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfLangBarMgr*, uint, int> UnadviseEventSink;
+
+            [NativeTypeName("HRESULT (DWORD, DWORD, const IID &, IUnknown **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfLangBarMgr*, uint, uint, Guid*, IUnknown**, int> GetThreadMarshalInterface;
+
+            [NativeTypeName("HRESULT (DWORD, ITfLangBarItemMgr **, DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfLangBarMgr*, uint, ITfLangBarItemMgr**, uint*, int> GetThreadLangBarItemMgr;
+
+            [NativeTypeName("HRESULT (DWORD, ITfInputProcessorProfiles **, DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfLangBarMgr*, uint, ITfInputProcessorProfiles**, uint*, int> GetInputProcessorProfiles;
+
+            [NativeTypeName("HRESULT (DWORD *, BOOL) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfLangBarMgr*, uint*, BOOL, int> RestoreLastFocus;
+
+            [NativeTypeName("HRESULT (ITfLangBarEventSink *, DWORD, DWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfLangBarMgr*, ITfLangBarEventSink*, uint, uint, int> SetModalInput;
+
+            [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfLangBarMgr*, uint, int> ShowFloating;
+
+            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfLangBarMgr*, uint*, int> GetShowFloatingStatus;
+        }
     }
 }

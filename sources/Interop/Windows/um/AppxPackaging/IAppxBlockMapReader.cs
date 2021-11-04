@@ -66,5 +66,29 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IAppxBlockMapReader*, IStream**, int>)(lpVtbl[6]))((IAppxBlockMapReader*)Unsafe.AsPointer(ref this), blockMapStream);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAppxBlockMapReader*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IAppxBlockMapReader*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IAppxBlockMapReader*, uint> Release;
+
+            [NativeTypeName("HRESULT (LPCWSTR, IAppxBlockMapFile **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAppxBlockMapReader*, ushort*, IAppxBlockMapFile**, int> GetFile;
+
+            [NativeTypeName("HRESULT (IAppxBlockMapFilesEnumerator **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAppxBlockMapReader*, IAppxBlockMapFilesEnumerator**, int> GetFiles;
+
+            [NativeTypeName("HRESULT (IUri **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAppxBlockMapReader*, IUri**, int> GetHashMethod;
+
+            [NativeTypeName("HRESULT (IStream **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAppxBlockMapReader*, IStream**, int> GetStream;
+        }
     }
 }

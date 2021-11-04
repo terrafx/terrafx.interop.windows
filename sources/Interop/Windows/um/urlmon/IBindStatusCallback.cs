@@ -94,5 +94,41 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IBindStatusCallback*, Guid*, IUnknown*, int>)(lpVtbl[10]))((IBindStatusCallback*)Unsafe.AsPointer(ref this), riid, punk);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IBindStatusCallback*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IBindStatusCallback*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IBindStatusCallback*, uint> Release;
+
+            [NativeTypeName("HRESULT (DWORD, IBinding *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IBindStatusCallback*, uint, IBinding*, int> OnStartBinding;
+
+            [NativeTypeName("HRESULT (LONG *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IBindStatusCallback*, int*, int> GetPriority;
+
+            [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<IBindStatusCallback*, uint, int> OnLowResource;
+
+            [NativeTypeName("HRESULT (ULONG, ULONG, ULONG, LPCWSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IBindStatusCallback*, uint, uint, uint, ushort*, int> OnProgress;
+
+            [NativeTypeName("HRESULT (HRESULT, LPCWSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IBindStatusCallback*, HRESULT, ushort*, int> OnStopBinding;
+
+            [NativeTypeName("HRESULT (DWORD *, BINDINFO *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IBindStatusCallback*, uint*, BINDINFO*, int> GetBindInfo;
+
+            [NativeTypeName("HRESULT (DWORD, DWORD, FORMATETC *, STGMEDIUM *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IBindStatusCallback*, uint, uint, FORMATETC*, STGMEDIUM*, int> OnDataAvailable;
+
+            [NativeTypeName("HRESULT (const IID &, IUnknown *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IBindStatusCallback*, Guid*, IUnknown*, int> OnObjectAvailable;
+        }
     }
 }

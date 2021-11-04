@@ -108,5 +108,47 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IShellItemResources*, int>)(lpVtbl[12]))((IShellItemResources*)Unsafe.AsPointer(ref this));
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellItemResources*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellItemResources*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellItemResources*, uint> Release;
+
+            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellItemResources*, uint*, int> GetAttributes;
+
+            [NativeTypeName("HRESULT (ULONGLONG *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellItemResources*, ulong*, int> GetSize;
+
+            [NativeTypeName("HRESULT (FILETIME *, FILETIME *, FILETIME *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellItemResources*, FILETIME*, FILETIME*, FILETIME*, int> GetTimes;
+
+            [NativeTypeName("HRESULT (const FILETIME *, const FILETIME *, const FILETIME *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellItemResources*, FILETIME*, FILETIME*, FILETIME*, int> SetTimes;
+
+            [NativeTypeName("HRESULT (const SHELL_ITEM_RESOURCE *, LPWSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellItemResources*, SHELL_ITEM_RESOURCE*, ushort**, int> GetResourceDescription;
+
+            [NativeTypeName("HRESULT (IEnumResources **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellItemResources*, IEnumResources**, int> EnumResources;
+
+            [NativeTypeName("HRESULT (const SHELL_ITEM_RESOURCE *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellItemResources*, SHELL_ITEM_RESOURCE*, int> SupportsResource;
+
+            [NativeTypeName("HRESULT (const SHELL_ITEM_RESOURCE *, const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellItemResources*, SHELL_ITEM_RESOURCE*, Guid*, void**, int> OpenResource;
+
+            [NativeTypeName("HRESULT (const SHELL_ITEM_RESOURCE *, const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellItemResources*, SHELL_ITEM_RESOURCE*, Guid*, void**, int> CreateResource;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellItemResources*, int> MarkForDelete;
+        }
     }
 }

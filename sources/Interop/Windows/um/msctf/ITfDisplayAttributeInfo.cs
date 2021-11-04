@@ -73,5 +73,32 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<ITfDisplayAttributeInfo*, int>)(lpVtbl[7]))((ITfDisplayAttributeInfo*)Unsafe.AsPointer(ref this));
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfDisplayAttributeInfo*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfDisplayAttributeInfo*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfDisplayAttributeInfo*, uint> Release;
+
+            [NativeTypeName("HRESULT (GUID *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfDisplayAttributeInfo*, Guid*, int> GetGUID;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfDisplayAttributeInfo*, ushort**, int> GetDescription;
+
+            [NativeTypeName("HRESULT (TF_DISPLAYATTRIBUTE *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfDisplayAttributeInfo*, TF_DISPLAYATTRIBUTE*, int> GetAttributeInfo;
+
+            [NativeTypeName("HRESULT (const TF_DISPLAYATTRIBUTE *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfDisplayAttributeInfo*, TF_DISPLAYATTRIBUTE*, int> SetAttributeInfo;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfDisplayAttributeInfo*, int> Reset;
+        }
     }
 }

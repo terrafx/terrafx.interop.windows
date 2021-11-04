@@ -52,5 +52,23 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IQualityControl*, IQualityControl*, int>)(lpVtbl[4]))((IQualityControl*)Unsafe.AsPointer(ref this), piqc);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IQualityControl*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IQualityControl*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IQualityControl*, uint> Release;
+
+            [NativeTypeName("HRESULT (IBaseFilter *, Quality) __attribute__((stdcall))")]
+            public delegate* unmanaged<IQualityControl*, IBaseFilter*, Quality, int> Notify;
+
+            [NativeTypeName("HRESULT (IQualityControl *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IQualityControl*, IQualityControl*, int> SetSink;
+        }
     }
 }

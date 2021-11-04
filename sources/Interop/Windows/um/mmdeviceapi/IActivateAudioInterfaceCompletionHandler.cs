@@ -45,5 +45,20 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IActivateAudioInterfaceCompletionHandler*, IActivateAudioInterfaceAsyncOperation*, int>)(lpVtbl[3]))((IActivateAudioInterfaceCompletionHandler*)Unsafe.AsPointer(ref this), activateOperation);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IActivateAudioInterfaceCompletionHandler*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IActivateAudioInterfaceCompletionHandler*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IActivateAudioInterfaceCompletionHandler*, uint> Release;
+
+            [NativeTypeName("HRESULT (IActivateAudioInterfaceAsyncOperation *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IActivateAudioInterfaceCompletionHandler*, IActivateAudioInterfaceAsyncOperation*, int> ActivateCompleted;
+        }
     }
 }

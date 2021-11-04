@@ -129,5 +129,56 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<ISVGStringList*, ushort*, ushort**, int>)(lpVtbl[15]))((ISVGStringList*)Unsafe.AsPointer(ref this), newItem, ppResult);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISVGStringList*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ISVGStringList*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ISVGStringList*, uint> Release;
+
+            [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISVGStringList*, uint*, int> GetTypeInfoCount;
+
+            [NativeTypeName("HRESULT (UINT, LCID, ITypeInfo **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISVGStringList*, uint, uint, ITypeInfo**, int> GetTypeInfo;
+
+            [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISVGStringList*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+
+            [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISVGStringList*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
+
+            [NativeTypeName("HRESULT (long) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISVGStringList*, int, int> put_numberOfItems;
+
+            [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISVGStringList*, int*, int> get_numberOfItems;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<ISVGStringList*, int> clear;
+
+            [NativeTypeName("HRESULT (BSTR, BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISVGStringList*, ushort*, ushort**, int> initialize;
+
+            [NativeTypeName("HRESULT (long, BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISVGStringList*, int, ushort**, int> getItem;
+
+            [NativeTypeName("HRESULT (BSTR, long, BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISVGStringList*, ushort*, int, ushort**, int> insertItemBefore;
+
+            [NativeTypeName("HRESULT (BSTR, long, BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISVGStringList*, ushort*, int, ushort**, int> replaceItem;
+
+            [NativeTypeName("HRESULT (long, BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISVGStringList*, int, ushort**, int> removeItem;
+
+            [NativeTypeName("HRESULT (BSTR, BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISVGStringList*, ushort*, ushort**, int> appendItem;
+        }
     }
 }

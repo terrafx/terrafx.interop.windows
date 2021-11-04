@@ -66,5 +66,29 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IBanneredBar*, HBITMAP*, int>)(lpVtbl[6]))((IBanneredBar*)Unsafe.AsPointer(ref this), phBitmap);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IBanneredBar*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IBanneredBar*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IBanneredBar*, uint> Release;
+
+            [NativeTypeName("HRESULT (DWORD) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IBanneredBar*, uint, int> SetIconSize;
+
+            [NativeTypeName("HRESULT (DWORD *) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IBanneredBar*, uint*, int> GetIconSize;
+
+            [NativeTypeName("HRESULT (HBITMAP) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IBanneredBar*, HBITMAP, int> SetBitmap;
+
+            [NativeTypeName("HRESULT (HBITMAP *) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IBanneredBar*, HBITMAP*, int> GetBitmap;
+        }
     }
 }

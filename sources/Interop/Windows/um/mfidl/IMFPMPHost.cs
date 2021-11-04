@@ -59,5 +59,26 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IMFPMPHost*, Guid*, IStream*, Guid*, void**, int>)(lpVtbl[5]))((IMFPMPHost*)Unsafe.AsPointer(ref this), clsid, pStream, riid, ppv);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFPMPHost*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFPMPHost*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFPMPHost*, uint> Release;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFPMPHost*, int> LockProcess;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFPMPHost*, int> UnlockProcess;
+
+            [NativeTypeName("HRESULT (const IID &, IStream *, const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFPMPHost*, Guid*, IStream*, Guid*, void**, int> CreateObjectByCLSID;
+        }
     }
 }

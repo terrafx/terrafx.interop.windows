@@ -45,5 +45,20 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<ILaunchTargetMonitor*, HMONITOR*, int>)(lpVtbl[3]))((ILaunchTargetMonitor*)Unsafe.AsPointer(ref this), monitor);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ILaunchTargetMonitor*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ILaunchTargetMonitor*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ILaunchTargetMonitor*, uint> Release;
+
+            [NativeTypeName("HRESULT (HMONITOR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ILaunchTargetMonitor*, HMONITOR*, int> GetMonitor;
+        }
     }
 }

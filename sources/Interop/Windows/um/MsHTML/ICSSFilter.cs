@@ -52,5 +52,23 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<ICSSFilter*, int, int>)(lpVtbl[4]))((ICSSFilter*)Unsafe.AsPointer(ref this), dispid);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ICSSFilter*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ICSSFilter*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ICSSFilter*, uint> Release;
+
+            [NativeTypeName("HRESULT (ICSSFilterSite *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ICSSFilter*, ICSSFilterSite*, int> SetSite;
+
+            [NativeTypeName("HRESULT (LONG) __attribute__((stdcall))")]
+            public delegate* unmanaged<ICSSFilter*, int, int> OnAmbientPropertyChange;
+        }
     }
 }

@@ -45,5 +45,20 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IInitializeWithPropertyStore*, IPropertyStore*, int>)(lpVtbl[3]))((IInitializeWithPropertyStore*)Unsafe.AsPointer(ref this), pps);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IInitializeWithPropertyStore*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IInitializeWithPropertyStore*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IInitializeWithPropertyStore*, uint> Release;
+
+            [NativeTypeName("HRESULT (IPropertyStore *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IInitializeWithPropertyStore*, IPropertyStore*, int> Initialize;
+        }
     }
 }

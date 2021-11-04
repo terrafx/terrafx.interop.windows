@@ -59,5 +59,26 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<ITfFnPlayBack*, ITfRange*, int>)(lpVtbl[5]))((ITfFnPlayBack*)Unsafe.AsPointer(ref this), pRange);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfFnPlayBack*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfFnPlayBack*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfFnPlayBack*, uint> Release;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfFnPlayBack*, ushort**, int> GetDisplayName;
+
+            [NativeTypeName("HRESULT (ITfRange *, ITfRange **, BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfFnPlayBack*, ITfRange*, ITfRange**, BOOL*, int> QueryRange;
+
+            [NativeTypeName("HRESULT (ITfRange *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfFnPlayBack*, ITfRange*, int> Play;
+        }
     }
 }

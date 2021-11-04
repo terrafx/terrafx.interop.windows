@@ -73,5 +73,32 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IMFNetCredential*, BOOL*, int>)(lpVtbl[7]))((IMFNetCredential*)Unsafe.AsPointer(ref this), pfLoggedOnUser);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFNetCredential*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFNetCredential*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFNetCredential*, uint> Release;
+
+            [NativeTypeName("HRESULT (BYTE *, DWORD, BOOL) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFNetCredential*, byte*, uint, BOOL, int> SetUser;
+
+            [NativeTypeName("HRESULT (BYTE *, DWORD, BOOL) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFNetCredential*, byte*, uint, BOOL, int> SetPassword;
+
+            [NativeTypeName("HRESULT (BYTE *, DWORD *, BOOL) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFNetCredential*, byte*, uint*, BOOL, int> GetUser;
+
+            [NativeTypeName("HRESULT (BYTE *, DWORD *, BOOL) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFNetCredential*, byte*, uint*, BOOL, int> GetPassword;
+
+            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFNetCredential*, BOOL*, int> LoggedOnUser;
+        }
     }
 }

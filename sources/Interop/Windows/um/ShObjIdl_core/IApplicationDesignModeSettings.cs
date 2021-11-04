@@ -80,5 +80,35 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IApplicationDesignModeSettings*, EDGE_GESTURE_KIND, int>)(lpVtbl[8]))((IApplicationDesignModeSettings*)Unsafe.AsPointer(ref this), edgeGestureKind);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IApplicationDesignModeSettings*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IApplicationDesignModeSettings*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IApplicationDesignModeSettings*, uint> Release;
+
+            [NativeTypeName("HRESULT (SIZE) __attribute__((stdcall))")]
+            public delegate* unmanaged<IApplicationDesignModeSettings*, SIZE, int> SetNativeDisplaySize;
+
+            [NativeTypeName("HRESULT (DEVICE_SCALE_FACTOR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IApplicationDesignModeSettings*, DEVICE_SCALE_FACTOR, int> SetScaleFactor;
+
+            [NativeTypeName("HRESULT (APPLICATION_VIEW_STATE) __attribute__((stdcall))")]
+            public delegate* unmanaged<IApplicationDesignModeSettings*, APPLICATION_VIEW_STATE, int> SetApplicationViewState;
+
+            [NativeTypeName("HRESULT (SIZE *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IApplicationDesignModeSettings*, SIZE*, int> ComputeApplicationSize;
+
+            [NativeTypeName("HRESULT (APPLICATION_VIEW_STATE, SIZE, DEVICE_SCALE_FACTOR, BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IApplicationDesignModeSettings*, APPLICATION_VIEW_STATE, SIZE, DEVICE_SCALE_FACTOR, BOOL*, int> IsApplicationViewStateSupported;
+
+            [NativeTypeName("HRESULT (EDGE_GESTURE_KIND) __attribute__((stdcall))")]
+            public delegate* unmanaged<IApplicationDesignModeSettings*, EDGE_GESTURE_KIND, int> TriggerEdgeGesture;
+        }
     }
 }

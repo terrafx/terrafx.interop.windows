@@ -101,5 +101,44 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IMF2DBuffer2*, IMF2DBuffer2*, int>)(lpVtbl[11]))((IMF2DBuffer2*)Unsafe.AsPointer(ref this), pDestBuffer);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMF2DBuffer2*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMF2DBuffer2*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMF2DBuffer2*, uint> Release;
+
+            [NativeTypeName("HRESULT (BYTE **, LONG *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMF2DBuffer2*, byte**, int*, int> Lock2D;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMF2DBuffer2*, int> Unlock2D;
+
+            [NativeTypeName("HRESULT (BYTE **, LONG *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMF2DBuffer2*, byte**, int*, int> GetScanline0AndPitch;
+
+            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMF2DBuffer2*, BOOL*, int> IsContiguousFormat;
+
+            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMF2DBuffer2*, uint*, int> GetContiguousLength;
+
+            [NativeTypeName("HRESULT (BYTE *, DWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMF2DBuffer2*, byte*, uint, int> ContiguousCopyTo;
+
+            [NativeTypeName("HRESULT (const BYTE *, DWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMF2DBuffer2*, byte*, uint, int> ContiguousCopyFrom;
+
+            [NativeTypeName("HRESULT (MF2DBuffer_LockFlags, BYTE **, LONG *, BYTE **, DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMF2DBuffer2*, MF2DBuffer_LockFlags, byte**, int*, byte**, uint*, int> Lock2DSize;
+
+            [NativeTypeName("HRESULT (IMF2DBuffer2 *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMF2DBuffer2*, IMF2DBuffer2*, int> Copy2DTo;
+        }
     }
 }

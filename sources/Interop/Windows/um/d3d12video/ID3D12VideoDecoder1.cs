@@ -88,5 +88,38 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<ID3D12VideoDecoder1*, Guid*, void**, int>)(lpVtbl[9]))((ID3D12VideoDecoder1*)Unsafe.AsPointer(ref this), riid, ppProtectedSession);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D12VideoDecoder1*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D12VideoDecoder1*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D12VideoDecoder1*, uint> Release;
+
+            [NativeTypeName("HRESULT (const GUID &, UINT *, void *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D12VideoDecoder1*, Guid*, uint*, void*, int> GetPrivateData;
+
+            [NativeTypeName("HRESULT (const GUID &, UINT, const void *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D12VideoDecoder1*, Guid*, uint, void*, int> SetPrivateData;
+
+            [NativeTypeName("HRESULT (const GUID &, const IUnknown *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D12VideoDecoder1*, Guid*, IUnknown*, int> SetPrivateDataInterface;
+
+            [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D12VideoDecoder1*, ushort*, int> SetName;
+
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D12VideoDecoder1*, Guid*, void**, int> GetDevice;
+
+            [NativeTypeName("D3D12_VIDEO_DECODER_DESC () __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D12VideoDecoder1*, D3D12_VIDEO_DECODER_DESC*, D3D12_VIDEO_DECODER_DESC*> GetDesc;
+
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D12VideoDecoder1*, Guid*, void**, int> GetProtectedResourceSession;
+        }
     }
 }

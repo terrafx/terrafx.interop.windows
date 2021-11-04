@@ -185,5 +185,80 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IWICBitmapEncoderInfo*, IWICBitmapEncoder**, int>)(lpVtbl[23]))((IWICBitmapEncoderInfo*)Unsafe.AsPointer(ref this), ppIBitmapEncoder);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWICBitmapEncoderInfo*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IWICBitmapEncoderInfo*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IWICBitmapEncoderInfo*, uint> Release;
+
+            [NativeTypeName("HRESULT (WICComponentType *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWICBitmapEncoderInfo*, WICComponentType*, int> GetComponentType;
+
+            [NativeTypeName("HRESULT (CLSID *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWICBitmapEncoderInfo*, Guid*, int> GetCLSID;
+
+            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWICBitmapEncoderInfo*, uint*, int> GetSigningStatus;
+
+            [NativeTypeName("HRESULT (UINT, WCHAR *, UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWICBitmapEncoderInfo*, uint, ushort*, uint*, int> GetAuthor;
+
+            [NativeTypeName("HRESULT (GUID *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWICBitmapEncoderInfo*, Guid*, int> GetVendorGUID;
+
+            [NativeTypeName("HRESULT (UINT, WCHAR *, UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWICBitmapEncoderInfo*, uint, ushort*, uint*, int> GetVersion;
+
+            [NativeTypeName("HRESULT (UINT, WCHAR *, UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWICBitmapEncoderInfo*, uint, ushort*, uint*, int> GetSpecVersion;
+
+            [NativeTypeName("HRESULT (UINT, WCHAR *, UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWICBitmapEncoderInfo*, uint, ushort*, uint*, int> GetFriendlyName;
+
+            [NativeTypeName("HRESULT (GUID *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWICBitmapEncoderInfo*, Guid*, int> GetContainerFormat;
+
+            [NativeTypeName("HRESULT (UINT, GUID *, UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWICBitmapEncoderInfo*, uint, Guid*, uint*, int> GetPixelFormats;
+
+            [NativeTypeName("HRESULT (UINT, WCHAR *, UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWICBitmapEncoderInfo*, uint, ushort*, uint*, int> GetColorManagementVersion;
+
+            [NativeTypeName("HRESULT (UINT, WCHAR *, UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWICBitmapEncoderInfo*, uint, ushort*, uint*, int> GetDeviceManufacturer;
+
+            [NativeTypeName("HRESULT (UINT, WCHAR *, UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWICBitmapEncoderInfo*, uint, ushort*, uint*, int> GetDeviceModels;
+
+            [NativeTypeName("HRESULT (UINT, WCHAR *, UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWICBitmapEncoderInfo*, uint, ushort*, uint*, int> GetMimeTypes;
+
+            [NativeTypeName("HRESULT (UINT, WCHAR *, UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWICBitmapEncoderInfo*, uint, ushort*, uint*, int> GetFileExtensions;
+
+            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWICBitmapEncoderInfo*, BOOL*, int> DoesSupportAnimation;
+
+            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWICBitmapEncoderInfo*, BOOL*, int> DoesSupportChromakey;
+
+            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWICBitmapEncoderInfo*, BOOL*, int> DoesSupportLossless;
+
+            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWICBitmapEncoderInfo*, BOOL*, int> DoesSupportMultiframe;
+
+            [NativeTypeName("HRESULT (LPCWSTR, BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWICBitmapEncoderInfo*, ushort*, BOOL*, int> MatchesMimeType;
+
+            [NativeTypeName("HRESULT (IWICBitmapEncoder **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWICBitmapEncoderInfo*, IWICBitmapEncoder**, int> CreateInstance;
+        }
     }
 }

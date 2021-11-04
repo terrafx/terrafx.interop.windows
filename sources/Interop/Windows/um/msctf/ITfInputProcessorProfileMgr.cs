@@ -94,5 +94,41 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<ITfInputProcessorProfileMgr*, Guid*, TF_INPUTPROCESSORPROFILE*, int>)(lpVtbl[10]))((ITfInputProcessorProfileMgr*)Unsafe.AsPointer(ref this), catid, pProfile);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfInputProcessorProfileMgr*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfInputProcessorProfileMgr*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfInputProcessorProfileMgr*, uint> Release;
+
+            [NativeTypeName("HRESULT (DWORD, LANGID, const IID &, const GUID &, HKL, DWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfInputProcessorProfileMgr*, uint, ushort, Guid*, Guid*, HKL, uint, int> ActivateProfile;
+
+            [NativeTypeName("HRESULT (DWORD, LANGID, const IID &, const GUID &, HKL, DWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfInputProcessorProfileMgr*, uint, ushort, Guid*, Guid*, HKL, uint, int> DeactivateProfile;
+
+            [NativeTypeName("HRESULT (DWORD, LANGID, const IID &, const GUID &, HKL, TF_INPUTPROCESSORPROFILE *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfInputProcessorProfileMgr*, uint, ushort, Guid*, Guid*, HKL, TF_INPUTPROCESSORPROFILE*, int> GetProfile;
+
+            [NativeTypeName("HRESULT (LANGID, IEnumTfInputProcessorProfiles **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfInputProcessorProfileMgr*, ushort, IEnumTfInputProcessorProfiles**, int> EnumProfiles;
+
+            [NativeTypeName("HRESULT (const IID &, DWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfInputProcessorProfileMgr*, Guid*, uint, int> ReleaseInputProcessor;
+
+            [NativeTypeName("HRESULT (const IID &, LANGID, const GUID &, const WCHAR *, ULONG, const WCHAR *, ULONG, ULONG, HKL, DWORD, BOOL, DWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfInputProcessorProfileMgr*, Guid*, ushort, Guid*, ushort*, uint, ushort*, uint, uint, HKL, uint, BOOL, uint, int> RegisterProfile;
+
+            [NativeTypeName("HRESULT (const IID &, LANGID, const GUID &, DWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfInputProcessorProfileMgr*, Guid*, ushort, Guid*, uint, int> UnregisterProfile;
+
+            [NativeTypeName("HRESULT (const GUID &, TF_INPUTPROCESSORPROFILE *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfInputProcessorProfileMgr*, Guid*, TF_INPUTPROCESSORPROFILE*, int> GetActiveProfile;
+        }
     }
 }

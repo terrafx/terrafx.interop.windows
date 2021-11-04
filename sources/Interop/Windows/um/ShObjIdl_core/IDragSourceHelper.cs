@@ -52,5 +52,23 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IDragSourceHelper*, HWND, POINT*, IDataObject*, int>)(lpVtbl[4]))((IDragSourceHelper*)Unsafe.AsPointer(ref this), hwnd, ppt, pDataObject);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDragSourceHelper*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDragSourceHelper*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDragSourceHelper*, uint> Release;
+
+            [NativeTypeName("HRESULT (LPSHDRAGIMAGE, IDataObject *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDragSourceHelper*, SHDRAGIMAGE*, IDataObject*, int> InitializeFromBitmap;
+
+            [NativeTypeName("HRESULT (HWND, POINT *, IDataObject *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDragSourceHelper*, HWND, POINT*, IDataObject*, int> InitializeFromWindow;
+        }
     }
 }

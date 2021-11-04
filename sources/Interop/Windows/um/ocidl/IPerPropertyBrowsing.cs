@@ -66,5 +66,29 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IPerPropertyBrowsing*, int, uint, VARIANT*, int>)(lpVtbl[6]))((IPerPropertyBrowsing*)Unsafe.AsPointer(ref this), dispID, dwCookie, pVarOut);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IPerPropertyBrowsing*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IPerPropertyBrowsing*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IPerPropertyBrowsing*, uint> Release;
+
+            [NativeTypeName("HRESULT (DISPID, BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IPerPropertyBrowsing*, int, ushort**, int> GetDisplayString;
+
+            [NativeTypeName("HRESULT (DISPID, CLSID *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IPerPropertyBrowsing*, int, Guid*, int> MapPropertyToPage;
+
+            [NativeTypeName("HRESULT (DISPID, CALPOLESTR *, CADWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IPerPropertyBrowsing*, int, CALPOLESTR*, CADWORD*, int> GetPredefinedStrings;
+
+            [NativeTypeName("HRESULT (DISPID, DWORD, VARIANT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IPerPropertyBrowsing*, int, uint, VARIANT*, int> GetPredefinedValue;
+        }
     }
 }

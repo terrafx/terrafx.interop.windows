@@ -80,5 +80,35 @@ namespace TerraFX.Interop
         {
             ((delegate* unmanaged<IAdviseSinkEx*, uint, void>)(lpVtbl[8]))((IAdviseSinkEx*)Unsafe.AsPointer(ref this), dwViewStatus);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAdviseSinkEx*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IAdviseSinkEx*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IAdviseSinkEx*, uint> Release;
+
+            [NativeTypeName("void (FORMATETC *, STGMEDIUM *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAdviseSinkEx*, FORMATETC*, STGMEDIUM*, void> OnDataChange;
+
+            [NativeTypeName("void (DWORD, LONG) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAdviseSinkEx*, uint, int, void> OnViewChange;
+
+            [NativeTypeName("void (IMoniker *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAdviseSinkEx*, IMoniker*, void> OnRename;
+
+            [NativeTypeName("void () __attribute__((stdcall))")]
+            public delegate* unmanaged<IAdviseSinkEx*, void> OnSave;
+
+            [NativeTypeName("void () __attribute__((stdcall))")]
+            public delegate* unmanaged<IAdviseSinkEx*, void> OnClose;
+
+            [NativeTypeName("void (DWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAdviseSinkEx*, uint, void> OnViewStatusChange;
+        }
     }
 }

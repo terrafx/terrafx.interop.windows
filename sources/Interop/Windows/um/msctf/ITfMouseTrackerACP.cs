@@ -52,5 +52,23 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<ITfMouseTrackerACP*, uint, int>)(lpVtbl[4]))((ITfMouseTrackerACP*)Unsafe.AsPointer(ref this), dwCookie);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfMouseTrackerACP*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfMouseTrackerACP*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfMouseTrackerACP*, uint> Release;
+
+            [NativeTypeName("HRESULT (ITfRangeACP *, ITfMouseSink *, DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfMouseTrackerACP*, ITfRangeACP*, ITfMouseSink*, uint*, int> AdviseMouseSink;
+
+            [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfMouseTrackerACP*, uint, int> UnadviseMouseSink;
+        }
     }
 }

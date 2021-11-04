@@ -59,5 +59,26 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IAMStreamControl*, AM_STREAM_INFO*, int>)(lpVtbl[5]))((IAMStreamControl*)Unsafe.AsPointer(ref this), pInfo);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAMStreamControl*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IAMStreamControl*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IAMStreamControl*, uint> Release;
+
+            [NativeTypeName("HRESULT (const REFERENCE_TIME *, DWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAMStreamControl*, long*, uint, int> StartAt;
+
+            [NativeTypeName("HRESULT (const REFERENCE_TIME *, BOOL, DWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAMStreamControl*, long*, BOOL, uint, int> StopAt;
+
+            [NativeTypeName("HRESULT (AM_STREAM_INFO *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAMStreamControl*, AM_STREAM_INFO*, int> GetInfo;
+        }
     }
 }

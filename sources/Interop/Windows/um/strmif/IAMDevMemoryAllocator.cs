@@ -73,5 +73,32 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IAMDevMemoryAllocator*, IUnknown**, IUnknown*, int>)(lpVtbl[7]))((IAMDevMemoryAllocator*)Unsafe.AsPointer(ref this), ppUnkInnner, pUnkOuter);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAMDevMemoryAllocator*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IAMDevMemoryAllocator*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IAMDevMemoryAllocator*, uint> Release;
+
+            [NativeTypeName("HRESULT (DWORD *, DWORD *, DWORD *, DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAMDevMemoryAllocator*, uint*, uint*, uint*, uint*, int> GetInfo;
+
+            [NativeTypeName("HRESULT (const BYTE *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAMDevMemoryAllocator*, byte*, int> CheckMemory;
+
+            [NativeTypeName("HRESULT (BYTE **, DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAMDevMemoryAllocator*, byte**, uint*, int> Alloc;
+
+            [NativeTypeName("HRESULT (BYTE *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAMDevMemoryAllocator*, byte*, int> Free;
+
+            [NativeTypeName("HRESULT (IUnknown **, IUnknown *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAMDevMemoryAllocator*, IUnknown**, IUnknown*, int> GetDevMemoryObject;
+        }
     }
 }

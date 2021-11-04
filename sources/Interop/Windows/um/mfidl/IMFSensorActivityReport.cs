@@ -66,5 +66,29 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IMFSensorActivityReport*, uint, IMFSensorProcessActivity**, int>)(lpVtbl[6]))((IMFSensorActivityReport*)Unsafe.AsPointer(ref this), Index, ppProcessActivity);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFSensorActivityReport*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFSensorActivityReport*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFSensorActivityReport*, uint> Release;
+
+            [NativeTypeName("HRESULT (LPWSTR, ULONG, ULONG *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFSensorActivityReport*, ushort*, uint, uint*, int> GetFriendlyName;
+
+            [NativeTypeName("HRESULT (LPWSTR, ULONG, ULONG *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFSensorActivityReport*, ushort*, uint, uint*, int> GetSymbolicLink;
+
+            [NativeTypeName("HRESULT (ULONG *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFSensorActivityReport*, uint*, int> GetProcessCount;
+
+            [NativeTypeName("HRESULT (ULONG, IMFSensorProcessActivity **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFSensorActivityReport*, uint, IMFSensorProcessActivity**, int> GetProcessActivity;
+        }
     }
 }

@@ -62,5 +62,26 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IMessageFilter*, HTASK, uint, uint, uint>)(lpVtbl[5]))((IMessageFilter*)Unsafe.AsPointer(ref this), htaskCallee, dwTickCount, dwPendingType);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMessageFilter*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMessageFilter*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMessageFilter*, uint> Release;
+
+            [NativeTypeName("DWORD (DWORD, HTASK, DWORD, LPINTERFACEINFO) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMessageFilter*, uint, HTASK, uint, INTERFACEINFO*, uint> HandleInComingCall;
+
+            [NativeTypeName("DWORD (HTASK, DWORD, DWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMessageFilter*, HTASK, uint, uint, uint> RetryRejectedCall;
+
+            [NativeTypeName("DWORD (HTASK, DWORD, DWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMessageFilter*, HTASK, uint, uint, uint> MessagePending;
+        }
     }
 }

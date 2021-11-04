@@ -80,5 +80,35 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IVMRSurfaceAllocatorNotify*, COLORREF, int>)(lpVtbl[8]))((IVMRSurfaceAllocatorNotify*)Unsafe.AsPointer(ref this), clrBorder);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IVMRSurfaceAllocatorNotify*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IVMRSurfaceAllocatorNotify*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IVMRSurfaceAllocatorNotify*, uint> Release;
+
+            [NativeTypeName("HRESULT (DWORD_PTR, IVMRSurfaceAllocator *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IVMRSurfaceAllocatorNotify*, nuint, IVMRSurfaceAllocator*, int> AdviseSurfaceAllocator;
+
+            [NativeTypeName("HRESULT (LPDIRECTDRAW7, HMONITOR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IVMRSurfaceAllocatorNotify*, IDirectDraw7*, HMONITOR, int> SetDDrawDevice;
+
+            [NativeTypeName("HRESULT (LPDIRECTDRAW7, HMONITOR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IVMRSurfaceAllocatorNotify*, IDirectDraw7*, HMONITOR, int> ChangeDDrawDevice;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IVMRSurfaceAllocatorNotify*, int> RestoreDDrawSurfaces;
+
+            [NativeTypeName("HRESULT (LONG, LONG_PTR, LONG_PTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IVMRSurfaceAllocatorNotify*, int, nint, nint, int> NotifyEvent;
+
+            [NativeTypeName("HRESULT (COLORREF) __attribute__((stdcall))")]
+            public delegate* unmanaged<IVMRSurfaceAllocatorNotify*, COLORREF, int> SetBorderColor;
+        }
     }
 }

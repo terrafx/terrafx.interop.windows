@@ -80,5 +80,35 @@ namespace TerraFX.Interop
         {
             ((delegate* unmanaged<ID2D1ImageSourceFromWic*, IWICBitmapSource**, void>)(lpVtbl[8]))((ID2D1ImageSourceFromWic*)Unsafe.AsPointer(ref this), wicBitmapSource);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID2D1ImageSourceFromWic*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ID2D1ImageSourceFromWic*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ID2D1ImageSourceFromWic*, uint> Release;
+
+            [NativeTypeName("void (ID2D1Factory **) const __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID2D1ImageSourceFromWic*, ID2D1Factory**, void> GetFactory;
+
+            [NativeTypeName("HRESULT () __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID2D1ImageSourceFromWic*, int> OfferResources;
+
+            [NativeTypeName("HRESULT (BOOL *) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID2D1ImageSourceFromWic*, BOOL*, int> TryReclaimResources;
+
+            [NativeTypeName("HRESULT (const D2D1_RECT_U *) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID2D1ImageSourceFromWic*, D2D_RECT_U*, int> EnsureCached;
+
+            [NativeTypeName("HRESULT (const D2D1_RECT_U *) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID2D1ImageSourceFromWic*, D2D_RECT_U*, int> TrimCache;
+
+            [NativeTypeName("void (IWICBitmapSource **) const __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID2D1ImageSourceFromWic*, IWICBitmapSource**, void> GetSource;
+        }
     }
 }

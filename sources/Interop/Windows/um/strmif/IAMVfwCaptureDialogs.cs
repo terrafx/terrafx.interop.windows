@@ -59,5 +59,26 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IAMVfwCaptureDialogs*, int, int, int, int, int>)(lpVtbl[5]))((IAMVfwCaptureDialogs*)Unsafe.AsPointer(ref this), iDialog, uMsg, dw1, dw2);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAMVfwCaptureDialogs*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IAMVfwCaptureDialogs*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IAMVfwCaptureDialogs*, uint> Release;
+
+            [NativeTypeName("HRESULT (int) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAMVfwCaptureDialogs*, int, int> HasDialog;
+
+            [NativeTypeName("HRESULT (int, HWND) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAMVfwCaptureDialogs*, int, HWND, int> ShowDialog;
+
+            [NativeTypeName("HRESULT (int, int, long, long) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAMVfwCaptureDialogs*, int, int, int, int, int> SendDriverMessage;
+        }
     }
 }

@@ -157,5 +157,68 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IWICMetadataWriterInfo*, IWICMetadataWriter**, int>)(lpVtbl[19]))((IWICMetadataWriterInfo*)Unsafe.AsPointer(ref this), ppIWriter);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWICMetadataWriterInfo*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IWICMetadataWriterInfo*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IWICMetadataWriterInfo*, uint> Release;
+
+            [NativeTypeName("HRESULT (WICComponentType *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWICMetadataWriterInfo*, WICComponentType*, int> GetComponentType;
+
+            [NativeTypeName("HRESULT (CLSID *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWICMetadataWriterInfo*, Guid*, int> GetCLSID;
+
+            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWICMetadataWriterInfo*, uint*, int> GetSigningStatus;
+
+            [NativeTypeName("HRESULT (UINT, WCHAR *, UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWICMetadataWriterInfo*, uint, ushort*, uint*, int> GetAuthor;
+
+            [NativeTypeName("HRESULT (GUID *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWICMetadataWriterInfo*, Guid*, int> GetVendorGUID;
+
+            [NativeTypeName("HRESULT (UINT, WCHAR *, UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWICMetadataWriterInfo*, uint, ushort*, uint*, int> GetVersion;
+
+            [NativeTypeName("HRESULT (UINT, WCHAR *, UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWICMetadataWriterInfo*, uint, ushort*, uint*, int> GetSpecVersion;
+
+            [NativeTypeName("HRESULT (UINT, WCHAR *, UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWICMetadataWriterInfo*, uint, ushort*, uint*, int> GetFriendlyName;
+
+            [NativeTypeName("HRESULT (GUID *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWICMetadataWriterInfo*, Guid*, int> GetMetadataFormat;
+
+            [NativeTypeName("HRESULT (UINT, GUID *, UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWICMetadataWriterInfo*, uint, Guid*, uint*, int> GetContainerFormats;
+
+            [NativeTypeName("HRESULT (UINT, WCHAR *, UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWICMetadataWriterInfo*, uint, ushort*, uint*, int> GetDeviceManufacturer;
+
+            [NativeTypeName("HRESULT (UINT, WCHAR *, UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWICMetadataWriterInfo*, uint, ushort*, uint*, int> GetDeviceModels;
+
+            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWICMetadataWriterInfo*, BOOL*, int> DoesRequireFullStream;
+
+            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWICMetadataWriterInfo*, BOOL*, int> DoesSupportPadding;
+
+            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWICMetadataWriterInfo*, BOOL*, int> DoesRequireFixedSize;
+
+            [NativeTypeName("HRESULT (const GUID &, UINT, WICMetadataHeader *, UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWICMetadataWriterInfo*, Guid*, uint, WICMetadataHeader*, uint*, int> GetHeader;
+
+            [NativeTypeName("HRESULT (IWICMetadataWriter **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWICMetadataWriterInfo*, IWICMetadataWriter**, int> CreateInstance;
+        }
     }
 }

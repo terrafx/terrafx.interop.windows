@@ -59,5 +59,26 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IMFByteStreamTimeSeek*, ulong*, ulong*, ulong*, int>)(lpVtbl[5]))((IMFByteStreamTimeSeek*)Unsafe.AsPointer(ref this), pqwStartTime, pqwStopTime, pqwDuration);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFByteStreamTimeSeek*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFByteStreamTimeSeek*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFByteStreamTimeSeek*, uint> Release;
+
+            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFByteStreamTimeSeek*, BOOL*, int> IsTimeSeekSupported;
+
+            [NativeTypeName("HRESULT (QWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFByteStreamTimeSeek*, ulong, int> TimeSeek;
+
+            [NativeTypeName("HRESULT (QWORD *, QWORD *, QWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFByteStreamTimeSeek*, ulong*, ulong*, ulong*, int> GetTimeSeekResult;
+        }
     }
 }

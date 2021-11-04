@@ -94,5 +94,41 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IDirectManipulationManager2*, Guid*, Guid*, void**, int>)(lpVtbl[10]))((IDirectManipulationManager2*)Unsafe.AsPointer(ref this), clsid, riid, @object);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDirectManipulationManager2*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDirectManipulationManager2*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDirectManipulationManager2*, uint> Release;
+
+            [NativeTypeName("HRESULT (HWND) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDirectManipulationManager2*, HWND, int> Activate;
+
+            [NativeTypeName("HRESULT (HWND) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDirectManipulationManager2*, HWND, int> Deactivate;
+
+            [NativeTypeName("HRESULT (HWND, HWND, DIRECTMANIPULATION_HITTEST_TYPE) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDirectManipulationManager2*, HWND, HWND, DIRECTMANIPULATION_HITTEST_TYPE, int> RegisterHitTestTarget;
+
+            [NativeTypeName("HRESULT (const MSG *, BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDirectManipulationManager2*, MSG*, BOOL*, int> ProcessInput;
+
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDirectManipulationManager2*, Guid*, void**, int> GetUpdateManager;
+
+            [NativeTypeName("HRESULT (IDirectManipulationFrameInfoProvider *, HWND, const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDirectManipulationManager2*, IDirectManipulationFrameInfoProvider*, HWND, Guid*, void**, int> CreateViewport;
+
+            [NativeTypeName("HRESULT (IDirectManipulationFrameInfoProvider *, const IID &, const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDirectManipulationManager2*, IDirectManipulationFrameInfoProvider*, Guid*, Guid*, void**, int> CreateContent;
+
+            [NativeTypeName("HRESULT (const IID &, const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDirectManipulationManager2*, Guid*, Guid*, void**, int> CreateBehavior;
+        }
     }
 }

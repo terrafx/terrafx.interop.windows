@@ -101,5 +101,44 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IMFSensorDevice*, MFSensorDeviceMode*, int>)(lpVtbl[11]))((IMFSensorDevice*)Unsafe.AsPointer(ref this), peMode);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFSensorDevice*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFSensorDevice*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFSensorDevice*, uint> Release;
+
+            [NativeTypeName("HRESULT (ULONGLONG *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFSensorDevice*, ulong*, int> GetDeviceId;
+
+            [NativeTypeName("HRESULT (MFSensorDeviceType *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFSensorDevice*, MFSensorDeviceType*, int> GetDeviceType;
+
+            [NativeTypeName("HRESULT (ULONGLONG *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFSensorDevice*, ulong*, int> GetFlags;
+
+            [NativeTypeName("HRESULT (LPWSTR, LONG, LONG *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFSensorDevice*, ushort*, int, int*, int> GetSymbolicLink;
+
+            [NativeTypeName("HRESULT (IMFAttributes **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFSensorDevice*, IMFAttributes**, int> GetDeviceAttributes;
+
+            [NativeTypeName("HRESULT (MFSensorStreamType, DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFSensorDevice*, MFSensorStreamType, uint*, int> GetStreamAttributesCount;
+
+            [NativeTypeName("HRESULT (MFSensorStreamType, DWORD, IMFAttributes **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFSensorDevice*, MFSensorStreamType, uint, IMFAttributes**, int> GetStreamAttributes;
+
+            [NativeTypeName("HRESULT (MFSensorDeviceMode) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFSensorDevice*, MFSensorDeviceMode, int> SetSensorDeviceMode;
+
+            [NativeTypeName("HRESULT (MFSensorDeviceMode *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFSensorDevice*, MFSensorDeviceMode*, int> GetSensorDeviceMode;
+        }
     }
 }

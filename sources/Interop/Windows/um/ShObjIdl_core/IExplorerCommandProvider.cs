@@ -52,5 +52,23 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IExplorerCommandProvider*, Guid*, Guid*, void**, int>)(lpVtbl[4]))((IExplorerCommandProvider*)Unsafe.AsPointer(ref this), rguidCommandId, riid, ppv);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IExplorerCommandProvider*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IExplorerCommandProvider*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IExplorerCommandProvider*, uint> Release;
+
+            [NativeTypeName("HRESULT (IUnknown *, const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IExplorerCommandProvider*, IUnknown*, Guid*, void**, int> GetCommands;
+
+            [NativeTypeName("HRESULT (const GUID &, const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IExplorerCommandProvider*, Guid*, Guid*, void**, int> GetCommand;
+        }
     }
 }

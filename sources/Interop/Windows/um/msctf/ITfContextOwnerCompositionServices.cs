@@ -73,5 +73,32 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<ITfContextOwnerCompositionServices*, ITfCompositionView*, int>)(lpVtbl[7]))((ITfContextOwnerCompositionServices*)Unsafe.AsPointer(ref this), pComposition);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfContextOwnerCompositionServices*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfContextOwnerCompositionServices*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfContextOwnerCompositionServices*, uint> Release;
+
+            [NativeTypeName("HRESULT (TfEditCookie, ITfRange *, ITfCompositionSink *, ITfComposition **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfContextOwnerCompositionServices*, uint, ITfRange*, ITfCompositionSink*, ITfComposition**, int> StartComposition;
+
+            [NativeTypeName("HRESULT (IEnumITfCompositionView **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfContextOwnerCompositionServices*, IEnumITfCompositionView**, int> EnumCompositions;
+
+            [NativeTypeName("HRESULT (TfEditCookie, ITfRange *, IEnumITfCompositionView **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfContextOwnerCompositionServices*, uint, ITfRange*, IEnumITfCompositionView**, int> FindComposition;
+
+            [NativeTypeName("HRESULT (TfEditCookie, ITfCompositionView *, ITfCompositionSink *, ITfComposition **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfContextOwnerCompositionServices*, uint, ITfCompositionView*, ITfCompositionSink*, ITfComposition**, int> TakeOwnership;
+
+            [NativeTypeName("HRESULT (ITfCompositionView *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfContextOwnerCompositionServices*, ITfCompositionView*, int> TerminateComposition;
+        }
     }
 }

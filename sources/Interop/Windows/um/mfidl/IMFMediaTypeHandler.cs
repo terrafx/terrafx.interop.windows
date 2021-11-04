@@ -80,5 +80,35 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IMFMediaTypeHandler*, Guid*, int>)(lpVtbl[8]))((IMFMediaTypeHandler*)Unsafe.AsPointer(ref this), pguidMajorType);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFMediaTypeHandler*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFMediaTypeHandler*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFMediaTypeHandler*, uint> Release;
+
+            [NativeTypeName("HRESULT (IMFMediaType *, IMFMediaType **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFMediaTypeHandler*, IMFMediaType*, IMFMediaType**, int> IsMediaTypeSupported;
+
+            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFMediaTypeHandler*, uint*, int> GetMediaTypeCount;
+
+            [NativeTypeName("HRESULT (DWORD, IMFMediaType **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFMediaTypeHandler*, uint, IMFMediaType**, int> GetMediaTypeByIndex;
+
+            [NativeTypeName("HRESULT (IMFMediaType *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFMediaTypeHandler*, IMFMediaType*, int> SetCurrentMediaType;
+
+            [NativeTypeName("HRESULT (IMFMediaType **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFMediaTypeHandler*, IMFMediaType**, int> GetCurrentMediaType;
+
+            [NativeTypeName("HRESULT (GUID *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFMediaTypeHandler*, Guid*, int> GetMajorType;
+        }
     }
 }

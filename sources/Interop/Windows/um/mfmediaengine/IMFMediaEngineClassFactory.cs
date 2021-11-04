@@ -59,5 +59,26 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IMFMediaEngineClassFactory*, IMFMediaError**, int>)(lpVtbl[5]))((IMFMediaEngineClassFactory*)Unsafe.AsPointer(ref this), ppError);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFMediaEngineClassFactory*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFMediaEngineClassFactory*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFMediaEngineClassFactory*, uint> Release;
+
+            [NativeTypeName("HRESULT (DWORD, IMFAttributes *, IMFMediaEngine **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFMediaEngineClassFactory*, uint, IMFAttributes*, IMFMediaEngine**, int> CreateInstance;
+
+            [NativeTypeName("HRESULT (IMFMediaTimeRange **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFMediaEngineClassFactory*, IMFMediaTimeRange**, int> CreateTimeRange;
+
+            [NativeTypeName("HRESULT (IMFMediaError **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFMediaEngineClassFactory*, IMFMediaError**, int> CreateError;
+        }
     }
 }

@@ -73,5 +73,32 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<ICastingController*, uint, int>)(lpVtbl[7]))((ICastingController*)Unsafe.AsPointer(ref this), cookie);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ICastingController*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ICastingController*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ICastingController*, uint> Release;
+
+            [NativeTypeName("HRESULT (IUnknown *, IUnknown *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ICastingController*, IUnknown*, IUnknown*, int> Initialize;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<ICastingController*, int> Connect;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<ICastingController*, int> Disconnect;
+
+            [NativeTypeName("HRESULT (ICastingEventHandler *, DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ICastingController*, ICastingEventHandler*, uint*, int> Advise;
+
+            [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<ICastingController*, uint, int> UnAdvise;
+        }
     }
 }

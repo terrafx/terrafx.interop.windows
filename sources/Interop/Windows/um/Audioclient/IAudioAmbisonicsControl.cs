@@ -66,5 +66,29 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IAudioAmbisonicsControl*, float, float, float, float, int>)(lpVtbl[6]))((IAudioAmbisonicsControl*)Unsafe.AsPointer(ref this), X, Y, Z, W);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAudioAmbisonicsControl*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IAudioAmbisonicsControl*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IAudioAmbisonicsControl*, uint> Release;
+
+            [NativeTypeName("HRESULT (const AMBISONICS_PARAMS *, UINT32) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAudioAmbisonicsControl*, AMBISONICS_PARAMS*, uint, int> SetData;
+
+            [NativeTypeName("HRESULT (BOOL) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAudioAmbisonicsControl*, BOOL, int> SetHeadTracking;
+
+            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAudioAmbisonicsControl*, BOOL*, int> GetHeadTracking;
+
+            [NativeTypeName("HRESULT (float, float, float, float) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAudioAmbisonicsControl*, float, float, float, float, int> SetRotation;
+        }
     }
 }

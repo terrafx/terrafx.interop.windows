@@ -66,5 +66,29 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IComThreadingInfo*, Guid*, int>)(lpVtbl[6]))((IComThreadingInfo*)Unsafe.AsPointer(ref this), rguid);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IComThreadingInfo*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IComThreadingInfo*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IComThreadingInfo*, uint> Release;
+
+            [NativeTypeName("HRESULT (APTTYPE *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IComThreadingInfo*, APTTYPE*, int> GetCurrentApartmentType;
+
+            [NativeTypeName("HRESULT (THDTYPE *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IComThreadingInfo*, THDTYPE*, int> GetCurrentThreadType;
+
+            [NativeTypeName("HRESULT (GUID *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IComThreadingInfo*, Guid*, int> GetCurrentLogicalThreadId;
+
+            [NativeTypeName("HRESULT (const GUID &) __attribute__((stdcall))")]
+            public delegate* unmanaged<IComThreadingInfo*, Guid*, int> SetCurrentLogicalThreadId;
+        }
     }
 }

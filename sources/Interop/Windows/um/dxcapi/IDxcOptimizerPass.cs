@@ -73,5 +73,32 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IDxcOptimizerPass*, uint, ushort**, int>)(lpVtbl[7]))((IDxcOptimizerPass*)Unsafe.AsPointer(ref this), argIndex, ppResult);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDxcOptimizerPass*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDxcOptimizerPass*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDxcOptimizerPass*, uint> Release;
+
+            [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDxcOptimizerPass*, ushort**, int> GetOptionName;
+
+            [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDxcOptimizerPass*, ushort**, int> GetDescription;
+
+            [NativeTypeName("HRESULT (UINT32 *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDxcOptimizerPass*, uint*, int> GetOptionArgCount;
+
+            [NativeTypeName("HRESULT (UINT32, LPWSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDxcOptimizerPass*, uint, ushort**, int> GetOptionArgName;
+
+            [NativeTypeName("HRESULT (UINT32, LPWSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDxcOptimizerPass*, uint, ushort**, int> GetOptionArgDescription;
+        }
     }
 }

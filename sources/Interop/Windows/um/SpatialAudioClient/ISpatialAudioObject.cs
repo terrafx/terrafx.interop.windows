@@ -80,5 +80,35 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<ISpatialAudioObject*, float, int>)(lpVtbl[8]))((ISpatialAudioObject*)Unsafe.AsPointer(ref this), volume);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpatialAudioObject*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpatialAudioObject*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpatialAudioObject*, uint> Release;
+
+            [NativeTypeName("HRESULT (BYTE **, UINT32 *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpatialAudioObject*, byte**, uint*, int> GetBuffer;
+
+            [NativeTypeName("HRESULT (UINT32) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpatialAudioObject*, uint, int> SetEndOfStream;
+
+            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpatialAudioObject*, BOOL*, int> IsActive;
+
+            [NativeTypeName("HRESULT (AudioObjectType *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpatialAudioObject*, AudioObjectType*, int> GetAudioObjectType;
+
+            [NativeTypeName("HRESULT (float, float, float) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpatialAudioObject*, float, float, float, int> SetPosition;
+
+            [NativeTypeName("HRESULT (float) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpatialAudioObject*, float, int> SetVolume;
+        }
     }
 }

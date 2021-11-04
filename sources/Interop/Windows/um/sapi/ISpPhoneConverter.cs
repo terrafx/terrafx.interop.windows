@@ -66,5 +66,29 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<ISpPhoneConverter*, ushort*, ushort*, int>)(lpVtbl[6]))((ISpPhoneConverter*)Unsafe.AsPointer(ref this), pId, pszPhone);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpPhoneConverter*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpPhoneConverter*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpPhoneConverter*, uint> Release;
+
+            [NativeTypeName("HRESULT (ISpObjectToken *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpPhoneConverter*, ISpObjectToken*, int> SetObjectToken;
+
+            [NativeTypeName("HRESULT (ISpObjectToken **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpPhoneConverter*, ISpObjectToken**, int> GetObjectToken;
+
+            [NativeTypeName("HRESULT (LPCWSTR, SPPHONEID *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpPhoneConverter*, ushort*, ushort*, int> PhoneToId;
+
+            [NativeTypeName("HRESULT (PCSPPHONEID, WCHAR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpPhoneConverter*, ushort*, ushort*, int> IdToPhone;
+        }
     }
 }

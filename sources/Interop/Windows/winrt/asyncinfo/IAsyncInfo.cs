@@ -94,5 +94,41 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IAsyncInfo*, int>)(lpVtbl[10]))((IAsyncInfo*)Unsafe.AsPointer(ref this));
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAsyncInfo*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IAsyncInfo*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IAsyncInfo*, uint> Release;
+
+            [NativeTypeName("HRESULT (ULONG *, IID **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAsyncInfo*, uint*, Guid**, int> GetIids;
+
+            [NativeTypeName("HRESULT (HSTRING *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAsyncInfo*, HSTRING*, int> GetRuntimeClassName;
+
+            [NativeTypeName("HRESULT (TrustLevel *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAsyncInfo*, TrustLevel*, int> GetTrustLevel;
+
+            [NativeTypeName("HRESULT (unsigned int *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAsyncInfo*, uint*, int> get_Id;
+
+            [NativeTypeName("HRESULT (ABI::Windows::Foundation::AsyncStatus *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAsyncInfo*, AsyncStatus*, int> get_Status;
+
+            [NativeTypeName("HRESULT (HRESULT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAsyncInfo*, HRESULT*, int> get_ErrorCode;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IAsyncInfo*, int> Cancel;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IAsyncInfo*, int> Close;
+        }
     }
 }

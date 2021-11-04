@@ -73,5 +73,32 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<INamespaceWalkCB2*, HRESULT, int>)(lpVtbl[7]))((INamespaceWalkCB2*)Unsafe.AsPointer(ref this), hr);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<INamespaceWalkCB2*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<INamespaceWalkCB2*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<INamespaceWalkCB2*, uint> Release;
+
+            [NativeTypeName("HRESULT (IShellFolder *, LPCITEMIDLIST) __attribute__((stdcall))")]
+            public delegate* unmanaged<INamespaceWalkCB2*, IShellFolder*, ITEMIDLIST*, int> FoundItem;
+
+            [NativeTypeName("HRESULT (IShellFolder *, LPCITEMIDLIST) __attribute__((stdcall))")]
+            public delegate* unmanaged<INamespaceWalkCB2*, IShellFolder*, ITEMIDLIST*, int> EnterFolder;
+
+            [NativeTypeName("HRESULT (IShellFolder *, LPCITEMIDLIST) __attribute__((stdcall))")]
+            public delegate* unmanaged<INamespaceWalkCB2*, IShellFolder*, ITEMIDLIST*, int> LeaveFolder;
+
+            [NativeTypeName("HRESULT (LPWSTR *, LPWSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<INamespaceWalkCB2*, ushort**, ushort**, int> InitializeProgressDialog;
+
+            [NativeTypeName("HRESULT (HRESULT) __attribute__((stdcall))")]
+            public delegate* unmanaged<INamespaceWalkCB2*, HRESULT, int> WalkComplete;
+        }
     }
 }

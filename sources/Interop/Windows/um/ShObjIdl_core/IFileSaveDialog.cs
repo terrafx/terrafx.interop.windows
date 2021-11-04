@@ -241,5 +241,104 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IFileSaveDialog*, IShellItem*, IPropertyStore*, HWND, IFileOperationProgressSink*, int>)(lpVtbl[31]))((IFileSaveDialog*)Unsafe.AsPointer(ref this), psi, pStore, hwnd, pSink);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFileSaveDialog*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IFileSaveDialog*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IFileSaveDialog*, uint> Release;
+
+            [NativeTypeName("HRESULT (HWND) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFileSaveDialog*, HWND, int> Show;
+
+            [NativeTypeName("HRESULT (UINT, const COMDLG_FILTERSPEC *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFileSaveDialog*, uint, COMDLG_FILTERSPEC*, int> SetFileTypes;
+
+            [NativeTypeName("HRESULT (UINT) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFileSaveDialog*, uint, int> SetFileTypeIndex;
+
+            [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFileSaveDialog*, uint*, int> GetFileTypeIndex;
+
+            [NativeTypeName("HRESULT (IFileDialogEvents *, DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFileSaveDialog*, IFileDialogEvents*, uint*, int> Advise;
+
+            [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFileSaveDialog*, uint, int> Unadvise;
+
+            [NativeTypeName("HRESULT (FILEOPENDIALOGOPTIONS) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFileSaveDialog*, uint, int> SetOptions;
+
+            [NativeTypeName("HRESULT (FILEOPENDIALOGOPTIONS *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFileSaveDialog*, uint*, int> GetOptions;
+
+            [NativeTypeName("HRESULT (IShellItem *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFileSaveDialog*, IShellItem*, int> SetDefaultFolder;
+
+            [NativeTypeName("HRESULT (IShellItem *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFileSaveDialog*, IShellItem*, int> SetFolder;
+
+            [NativeTypeName("HRESULT (IShellItem **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFileSaveDialog*, IShellItem**, int> GetFolder;
+
+            [NativeTypeName("HRESULT (IShellItem **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFileSaveDialog*, IShellItem**, int> GetCurrentSelection;
+
+            [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFileSaveDialog*, ushort*, int> SetFileName;
+
+            [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFileSaveDialog*, ushort**, int> GetFileName;
+
+            [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFileSaveDialog*, ushort*, int> SetTitle;
+
+            [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFileSaveDialog*, ushort*, int> SetOkButtonLabel;
+
+            [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFileSaveDialog*, ushort*, int> SetFileNameLabel;
+
+            [NativeTypeName("HRESULT (IShellItem **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFileSaveDialog*, IShellItem**, int> GetResult;
+
+            [NativeTypeName("HRESULT (IShellItem *, FDAP) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFileSaveDialog*, IShellItem*, FDAP, int> AddPlace;
+
+            [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFileSaveDialog*, ushort*, int> SetDefaultExtension;
+
+            [NativeTypeName("HRESULT (HRESULT) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFileSaveDialog*, HRESULT, int> Close;
+
+            [NativeTypeName("HRESULT (const GUID &) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFileSaveDialog*, Guid*, int> SetClientGuid;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IFileSaveDialog*, int> ClearClientData;
+
+            [NativeTypeName("HRESULT (IShellItemFilter *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFileSaveDialog*, IShellItemFilter*, int> SetFilter;
+
+            [NativeTypeName("HRESULT (IShellItem *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFileSaveDialog*, IShellItem*, int> SetSaveAsItem;
+
+            [NativeTypeName("HRESULT (IPropertyStore *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFileSaveDialog*, IPropertyStore*, int> SetProperties;
+
+            [NativeTypeName("HRESULT (IPropertyDescriptionList *, BOOL) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFileSaveDialog*, IPropertyDescriptionList*, BOOL, int> SetCollectedProperties;
+
+            [NativeTypeName("HRESULT (IPropertyStore **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFileSaveDialog*, IPropertyStore**, int> GetProperties;
+
+            [NativeTypeName("HRESULT (IShellItem *, IPropertyStore *, HWND, IFileOperationProgressSink *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFileSaveDialog*, IShellItem*, IPropertyStore*, HWND, IFileOperationProgressSink*, int> ApplyProperties;
+        }
     }
 }

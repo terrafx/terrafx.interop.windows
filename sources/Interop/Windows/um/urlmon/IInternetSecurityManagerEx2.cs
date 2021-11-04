@@ -129,5 +129,56 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IInternetSecurityManagerEx2*, IUri*, Guid*, byte**, uint*, byte*, uint, nuint, int>)(lpVtbl[15]))((IInternetSecurityManagerEx2*)Unsafe.AsPointer(ref this), pUri, guidKey, ppPolicy, pcbPolicy, pContext, cbContext, dwReserved);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IInternetSecurityManagerEx2*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IInternetSecurityManagerEx2*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IInternetSecurityManagerEx2*, uint> Release;
+
+            [NativeTypeName("HRESULT (IInternetSecurityMgrSite *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IInternetSecurityManagerEx2*, IInternetSecurityMgrSite*, int> SetSecuritySite;
+
+            [NativeTypeName("HRESULT (IInternetSecurityMgrSite **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IInternetSecurityManagerEx2*, IInternetSecurityMgrSite**, int> GetSecuritySite;
+
+            [NativeTypeName("HRESULT (LPCWSTR, DWORD *, DWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<IInternetSecurityManagerEx2*, ushort*, uint*, uint, int> MapUrlToZone;
+
+            [NativeTypeName("HRESULT (LPCWSTR, BYTE *, DWORD *, DWORD_PTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IInternetSecurityManagerEx2*, ushort*, byte*, uint*, nuint, int> GetSecurityId;
+
+            [NativeTypeName("HRESULT (LPCWSTR, DWORD, BYTE *, DWORD, BYTE *, DWORD, DWORD, DWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<IInternetSecurityManagerEx2*, ushort*, uint, byte*, uint, byte*, uint, uint, uint, int> ProcessUrlAction;
+
+            [NativeTypeName("HRESULT (LPCWSTR, const GUID &, BYTE **, DWORD *, BYTE *, DWORD, DWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<IInternetSecurityManagerEx2*, ushort*, Guid*, byte**, uint*, byte*, uint, uint, int> QueryCustomPolicy;
+
+            [NativeTypeName("HRESULT (DWORD, LPCWSTR, DWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<IInternetSecurityManagerEx2*, uint, ushort*, uint, int> SetZoneMapping;
+
+            [NativeTypeName("HRESULT (DWORD, IEnumString **, DWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<IInternetSecurityManagerEx2*, uint, IEnumString**, uint, int> GetZoneMappings;
+
+            [NativeTypeName("HRESULT (LPCWSTR, DWORD, BYTE *, DWORD, BYTE *, DWORD, DWORD, DWORD, DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IInternetSecurityManagerEx2*, ushort*, uint, byte*, uint, byte*, uint, uint, uint, uint*, int> ProcessUrlActionEx;
+
+            [NativeTypeName("HRESULT (IUri *, DWORD *, DWORD, LPWSTR *, DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IInternetSecurityManagerEx2*, IUri*, uint*, uint, ushort**, uint*, int> MapUrlToZoneEx2;
+
+            [NativeTypeName("HRESULT (IUri *, DWORD, BYTE *, DWORD, BYTE *, DWORD, DWORD, DWORD_PTR, DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IInternetSecurityManagerEx2*, IUri*, uint, byte*, uint, byte*, uint, uint, nuint, uint*, int> ProcessUrlActionEx2;
+
+            [NativeTypeName("HRESULT (IUri *, BYTE *, DWORD *, DWORD_PTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IInternetSecurityManagerEx2*, IUri*, byte*, uint*, nuint, int> GetSecurityIdEx2;
+
+            [NativeTypeName("HRESULT (IUri *, const GUID &, BYTE **, DWORD *, BYTE *, DWORD, DWORD_PTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IInternetSecurityManagerEx2*, IUri*, Guid*, byte**, uint*, byte*, uint, nuint, int> QueryCustomPolicyEx2;
+        }
     }
 }

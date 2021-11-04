@@ -80,5 +80,35 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<ITfContextOwner*, Guid*, VARIANT*, int>)(lpVtbl[8]))((ITfContextOwner*)Unsafe.AsPointer(ref this), rguidAttribute, pvarValue);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfContextOwner*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfContextOwner*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfContextOwner*, uint> Release;
+
+            [NativeTypeName("HRESULT (const POINT *, DWORD, LONG *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfContextOwner*, POINT*, uint, int*, int> GetACPFromPoint;
+
+            [NativeTypeName("HRESULT (LONG, LONG, RECT *, BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfContextOwner*, int, int, RECT*, BOOL*, int> GetTextExt;
+
+            [NativeTypeName("HRESULT (RECT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfContextOwner*, RECT*, int> GetScreenExt;
+
+            [NativeTypeName("HRESULT (TF_STATUS *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfContextOwner*, TS_STATUS*, int> GetStatus;
+
+            [NativeTypeName("HRESULT (HWND *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfContextOwner*, HWND*, int> GetWnd;
+
+            [NativeTypeName("HRESULT (const GUID &, VARIANT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfContextOwner*, Guid*, VARIANT*, int> GetAttribute;
+        }
     }
 }

@@ -66,5 +66,29 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IExplorerBrowserEvents*, ITEMIDLIST*, int>)(lpVtbl[6]))((IExplorerBrowserEvents*)Unsafe.AsPointer(ref this), pidlFolder);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IExplorerBrowserEvents*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IExplorerBrowserEvents*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IExplorerBrowserEvents*, uint> Release;
+
+            [NativeTypeName("HRESULT (LPCITEMIDLIST) __attribute__((stdcall))")]
+            public delegate* unmanaged<IExplorerBrowserEvents*, ITEMIDLIST*, int> OnNavigationPending;
+
+            [NativeTypeName("HRESULT (IShellView *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IExplorerBrowserEvents*, IShellView*, int> OnViewCreated;
+
+            [NativeTypeName("HRESULT (LPCITEMIDLIST) __attribute__((stdcall))")]
+            public delegate* unmanaged<IExplorerBrowserEvents*, ITEMIDLIST*, int> OnNavigationComplete;
+
+            [NativeTypeName("HRESULT (LPCITEMIDLIST) __attribute__((stdcall))")]
+            public delegate* unmanaged<IExplorerBrowserEvents*, ITEMIDLIST*, int> OnNavigationFailed;
+        }
     }
 }

@@ -80,5 +80,35 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IMFQualityAdvise2*, IMFMediaEvent*, uint*, int>)(lpVtbl[8]))((IMFQualityAdvise2*)Unsafe.AsPointer(ref this), pEvent, pdwFlags);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFQualityAdvise2*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFQualityAdvise2*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFQualityAdvise2*, uint> Release;
+
+            [NativeTypeName("HRESULT (MF_QUALITY_DROP_MODE) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFQualityAdvise2*, MF_QUALITY_DROP_MODE, int> SetDropMode;
+
+            [NativeTypeName("HRESULT (MF_QUALITY_LEVEL) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFQualityAdvise2*, MF_QUALITY_LEVEL, int> SetQualityLevel;
+
+            [NativeTypeName("HRESULT (MF_QUALITY_DROP_MODE *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFQualityAdvise2*, MF_QUALITY_DROP_MODE*, int> GetDropMode;
+
+            [NativeTypeName("HRESULT (MF_QUALITY_LEVEL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFQualityAdvise2*, MF_QUALITY_LEVEL*, int> GetQualityLevel;
+
+            [NativeTypeName("HRESULT (LONGLONG) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFQualityAdvise2*, long, int> DropTime;
+
+            [NativeTypeName("HRESULT (IMFMediaEvent *, DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFQualityAdvise2*, IMFMediaEvent*, uint*, int> NotifyQualityEvent;
+        }
     }
 }

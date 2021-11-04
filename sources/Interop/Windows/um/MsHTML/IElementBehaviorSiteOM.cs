@@ -80,5 +80,35 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IElementBehaviorSiteOM*, ushort*, int>)(lpVtbl[8]))((IElementBehaviorSiteOM*)Unsafe.AsPointer(ref this), pchUrn);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IElementBehaviorSiteOM*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IElementBehaviorSiteOM*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IElementBehaviorSiteOM*, uint> Release;
+
+            [NativeTypeName("HRESULT (LPOLESTR, LONG, LONG *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IElementBehaviorSiteOM*, ushort*, int, int*, int> RegisterEvent;
+
+            [NativeTypeName("HRESULT (LPOLESTR, LONG *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IElementBehaviorSiteOM*, ushort*, int*, int> GetEventCookie;
+
+            [NativeTypeName("HRESULT (LONG, IHTMLEventObj *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IElementBehaviorSiteOM*, int, IHTMLEventObj*, int> FireEvent;
+
+            [NativeTypeName("HRESULT (IHTMLEventObj **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IElementBehaviorSiteOM*, IHTMLEventObj**, int> CreateEventObject;
+
+            [NativeTypeName("HRESULT (LPOLESTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IElementBehaviorSiteOM*, ushort*, int> RegisterName;
+
+            [NativeTypeName("HRESULT (LPOLESTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IElementBehaviorSiteOM*, ushort*, int> RegisterUrn;
+        }
     }
 }

@@ -61,5 +61,29 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<ID3D12FunctionReflection*, int, ID3D12FunctionParameterReflection*>)(lpVtbl[6]))((ID3D12FunctionReflection*)Unsafe.AsPointer(ref this), ParameterIndex);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (D3D12_FUNCTION_DESC *) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D12FunctionReflection*, D3D12_FUNCTION_DESC*, int> GetDesc;
+
+            [NativeTypeName("ID3D12ShaderReflectionConstantBuffer *(UINT) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D12FunctionReflection*, uint, ID3D12ShaderReflectionConstantBuffer*> GetConstantBufferByIndex;
+
+            [NativeTypeName("ID3D12ShaderReflectionConstantBuffer *(LPCSTR) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D12FunctionReflection*, sbyte*, ID3D12ShaderReflectionConstantBuffer*> GetConstantBufferByName;
+
+            [NativeTypeName("HRESULT (UINT, D3D12_SHADER_INPUT_BIND_DESC *) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D12FunctionReflection*, uint, D3D12_SHADER_INPUT_BIND_DESC*, int> GetResourceBindingDesc;
+
+            [NativeTypeName("ID3D12ShaderReflectionVariable *(LPCSTR) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D12FunctionReflection*, sbyte*, ID3D12ShaderReflectionVariable*> GetVariableByName;
+
+            [NativeTypeName("HRESULT (LPCSTR, D3D12_SHADER_INPUT_BIND_DESC *) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D12FunctionReflection*, sbyte*, D3D12_SHADER_INPUT_BIND_DESC*, int> GetResourceBindingDescByName;
+
+            [NativeTypeName("ID3D12FunctionParameterReflection *(INT) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D12FunctionReflection*, int, ID3D12FunctionParameterReflection*> GetFunctionParameter;
+        }
     }
 }

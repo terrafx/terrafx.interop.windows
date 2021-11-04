@@ -136,5 +136,59 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IMFSourceReaderEx*, uint, uint, Guid*, IMFTransform**, int>)(lpVtbl[16]))((IMFSourceReaderEx*)Unsafe.AsPointer(ref this), dwStreamIndex, dwTransformIndex, pGuidCategory, ppTransform);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFSourceReaderEx*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFSourceReaderEx*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFSourceReaderEx*, uint> Release;
+
+            [NativeTypeName("HRESULT (DWORD, BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFSourceReaderEx*, uint, BOOL*, int> GetStreamSelection;
+
+            [NativeTypeName("HRESULT (DWORD, BOOL) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFSourceReaderEx*, uint, BOOL, int> SetStreamSelection;
+
+            [NativeTypeName("HRESULT (DWORD, DWORD, IMFMediaType **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFSourceReaderEx*, uint, uint, IMFMediaType**, int> GetNativeMediaType;
+
+            [NativeTypeName("HRESULT (DWORD, IMFMediaType **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFSourceReaderEx*, uint, IMFMediaType**, int> GetCurrentMediaType;
+
+            [NativeTypeName("HRESULT (DWORD, DWORD *, IMFMediaType *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFSourceReaderEx*, uint, uint*, IMFMediaType*, int> SetCurrentMediaType;
+
+            [NativeTypeName("HRESULT (const GUID &, const PROPVARIANT &) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFSourceReaderEx*, Guid*, PROPVARIANT*, int> SetCurrentPosition;
+
+            [NativeTypeName("HRESULT (DWORD, DWORD, DWORD *, DWORD *, LONGLONG *, IMFSample **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFSourceReaderEx*, uint, uint, uint*, uint*, long*, IMFSample**, int> ReadSample;
+
+            [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFSourceReaderEx*, uint, int> Flush;
+
+            [NativeTypeName("HRESULT (DWORD, const GUID &, const IID &, LPVOID *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFSourceReaderEx*, uint, Guid*, Guid*, void**, int> GetServiceForStream;
+
+            [NativeTypeName("HRESULT (DWORD, const GUID &, PROPVARIANT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFSourceReaderEx*, uint, Guid*, PROPVARIANT*, int> GetPresentationAttribute;
+
+            [NativeTypeName("HRESULT (DWORD, IMFMediaType *, DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFSourceReaderEx*, uint, IMFMediaType*, uint*, int> SetNativeMediaType;
+
+            [NativeTypeName("HRESULT (DWORD, IUnknown *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFSourceReaderEx*, uint, IUnknown*, int> AddTransformForStream;
+
+            [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFSourceReaderEx*, uint, int> RemoveAllTransformsForStream;
+
+            [NativeTypeName("HRESULT (DWORD, DWORD, GUID *, IMFTransform **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFSourceReaderEx*, uint, uint, Guid*, IMFTransform**, int> GetTransformForStream;
+        }
     }
 }

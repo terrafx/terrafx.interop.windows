@@ -80,5 +80,35 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IMFMediaEngineClassFactoryEx*, ushort*, ushort*, BOOL*, int>)(lpVtbl[8]))((IMFMediaEngineClassFactoryEx*)Unsafe.AsPointer(ref this), type, keySystem, isSupported);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFMediaEngineClassFactoryEx*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFMediaEngineClassFactoryEx*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFMediaEngineClassFactoryEx*, uint> Release;
+
+            [NativeTypeName("HRESULT (DWORD, IMFAttributes *, IMFMediaEngine **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFMediaEngineClassFactoryEx*, uint, IMFAttributes*, IMFMediaEngine**, int> CreateInstance;
+
+            [NativeTypeName("HRESULT (IMFMediaTimeRange **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFMediaEngineClassFactoryEx*, IMFMediaTimeRange**, int> CreateTimeRange;
+
+            [NativeTypeName("HRESULT (IMFMediaError **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFMediaEngineClassFactoryEx*, IMFMediaError**, int> CreateError;
+
+            [NativeTypeName("HRESULT (DWORD, IMFAttributes *, IMFMediaSourceExtension **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFMediaEngineClassFactoryEx*, uint, IMFAttributes*, IMFMediaSourceExtension**, int> CreateMediaSourceExtension;
+
+            [NativeTypeName("HRESULT (BSTR, BSTR, IMFMediaKeys **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFMediaEngineClassFactoryEx*, ushort*, ushort*, IMFMediaKeys**, int> CreateMediaKeys;
+
+            [NativeTypeName("HRESULT (BSTR, BSTR, BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFMediaEngineClassFactoryEx*, ushort*, ushort*, BOOL*, int> IsTypeSupported;
+        }
     }
 }

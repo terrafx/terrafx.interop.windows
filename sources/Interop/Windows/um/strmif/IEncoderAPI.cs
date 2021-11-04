@@ -87,5 +87,38 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IEncoderAPI*, Guid*, VARIANT*, int>)(lpVtbl[9]))((IEncoderAPI*)Unsafe.AsPointer(ref this), Api, Value);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IEncoderAPI*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IEncoderAPI*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IEncoderAPI*, uint> Release;
+
+            [NativeTypeName("HRESULT (const GUID *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IEncoderAPI*, Guid*, int> IsSupported;
+
+            [NativeTypeName("HRESULT (const GUID *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IEncoderAPI*, Guid*, int> IsAvailable;
+
+            [NativeTypeName("HRESULT (const GUID *, VARIANT *, VARIANT *, VARIANT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IEncoderAPI*, Guid*, VARIANT*, VARIANT*, VARIANT*, int> GetParameterRange;
+
+            [NativeTypeName("HRESULT (const GUID *, VARIANT **, ULONG *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IEncoderAPI*, Guid*, VARIANT**, uint*, int> GetParameterValues;
+
+            [NativeTypeName("HRESULT (const GUID *, VARIANT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IEncoderAPI*, Guid*, VARIANT*, int> GetDefaultValue;
+
+            [NativeTypeName("HRESULT (const GUID *, VARIANT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IEncoderAPI*, Guid*, VARIANT*, int> GetValue;
+
+            [NativeTypeName("HRESULT (const GUID *, VARIANT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IEncoderAPI*, Guid*, VARIANT*, int> SetValue;
+        }
     }
 }

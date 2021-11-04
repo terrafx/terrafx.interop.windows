@@ -81,5 +81,35 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IMFMediaTimeRange*, int>)(lpVtbl[8]))((IMFMediaTimeRange*)Unsafe.AsPointer(ref this));
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFMediaTimeRange*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFMediaTimeRange*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFMediaTimeRange*, uint> Release;
+
+            [NativeTypeName("DWORD () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFMediaTimeRange*, uint> GetLength;
+
+            [NativeTypeName("HRESULT (DWORD, double *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFMediaTimeRange*, uint, double*, int> GetStart;
+
+            [NativeTypeName("HRESULT (DWORD, double *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFMediaTimeRange*, uint, double*, int> GetEnd;
+
+            [NativeTypeName("BOOL (double) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFMediaTimeRange*, double, int> ContainsTime;
+
+            [NativeTypeName("HRESULT (double, double) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFMediaTimeRange*, double, double, int> AddRange;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFMediaTimeRange*, int> Clear;
+        }
     }
 }

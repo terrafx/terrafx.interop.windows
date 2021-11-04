@@ -73,5 +73,32 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<ID2D1InkStyle*, D2D1_INK_NIB_SHAPE>)(lpVtbl[7]))((ID2D1InkStyle*)Unsafe.AsPointer(ref this));
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID2D1InkStyle*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ID2D1InkStyle*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ID2D1InkStyle*, uint> Release;
+
+            [NativeTypeName("void (ID2D1Factory **) const __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID2D1InkStyle*, ID2D1Factory**, void> GetFactory;
+
+            [NativeTypeName("void (const D2D1_MATRIX_3X2_F *) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID2D1InkStyle*, D2D_MATRIX_3X2_F*, void> SetNibTransform;
+
+            [NativeTypeName("void (D2D1_MATRIX_3X2_F *) const __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID2D1InkStyle*, D2D_MATRIX_3X2_F*, void> GetNibTransform;
+
+            [NativeTypeName("void (D2D1_INK_NIB_SHAPE) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID2D1InkStyle*, D2D1_INK_NIB_SHAPE, void> SetNibShape;
+
+            [NativeTypeName("D2D1_INK_NIB_SHAPE () const __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID2D1InkStyle*, D2D1_INK_NIB_SHAPE> GetNibShape;
+        }
     }
 }

@@ -52,5 +52,23 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IStreamBuilder*, IPin*, IGraphBuilder*, int>)(lpVtbl[4]))((IStreamBuilder*)Unsafe.AsPointer(ref this), ppinOut, pGraph);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IStreamBuilder*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IStreamBuilder*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IStreamBuilder*, uint> Release;
+
+            [NativeTypeName("HRESULT (IPin *, IGraphBuilder *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IStreamBuilder*, IPin*, IGraphBuilder*, int> Render;
+
+            [NativeTypeName("HRESULT (IPin *, IGraphBuilder *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IStreamBuilder*, IPin*, IGraphBuilder*, int> Backout;
+        }
     }
 }

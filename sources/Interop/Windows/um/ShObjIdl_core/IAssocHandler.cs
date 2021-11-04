@@ -87,5 +87,38 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IAssocHandler*, IDataObject*, IAssocHandlerInvoker**, int>)(lpVtbl[9]))((IAssocHandler*)Unsafe.AsPointer(ref this), pdo, ppInvoker);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAssocHandler*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IAssocHandler*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IAssocHandler*, uint> Release;
+
+            [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAssocHandler*, ushort**, int> GetName;
+
+            [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAssocHandler*, ushort**, int> GetUIName;
+
+            [NativeTypeName("HRESULT (LPWSTR *, int *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAssocHandler*, ushort**, int*, int> GetIconLocation;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IAssocHandler*, int> IsRecommended;
+
+            [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAssocHandler*, ushort*, int> MakeDefault;
+
+            [NativeTypeName("HRESULT (IDataObject *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAssocHandler*, IDataObject*, int> Invoke;
+
+            [NativeTypeName("HRESULT (IDataObject *, IAssocHandlerInvoker **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAssocHandler*, IDataObject*, IAssocHandlerInvoker**, int> CreateInvoker;
+        }
     }
 }

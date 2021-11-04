@@ -45,5 +45,20 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<ITfPreservedKeyNotifySink*, TF_PRESERVEDKEY*, int>)(lpVtbl[3]))((ITfPreservedKeyNotifySink*)Unsafe.AsPointer(ref this), pprekey);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfPreservedKeyNotifySink*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfPreservedKeyNotifySink*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfPreservedKeyNotifySink*, uint> Release;
+
+            [NativeTypeName("HRESULT (const TF_PRESERVEDKEY *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfPreservedKeyNotifySink*, TF_PRESERVEDKEY*, int> OnUpdated;
+        }
     }
 }

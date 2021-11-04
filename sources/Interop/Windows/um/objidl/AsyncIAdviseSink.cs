@@ -108,5 +108,47 @@ namespace TerraFX.Interop
         {
             ((delegate* unmanaged<AsyncIAdviseSink*, void>)(lpVtbl[12]))((AsyncIAdviseSink*)Unsafe.AsPointer(ref this));
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<AsyncIAdviseSink*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<AsyncIAdviseSink*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<AsyncIAdviseSink*, uint> Release;
+
+            [NativeTypeName("void (FORMATETC *, STGMEDIUM *) __attribute__((stdcall))")]
+            public delegate* unmanaged<AsyncIAdviseSink*, FORMATETC*, STGMEDIUM*, void> Begin_OnDataChange;
+
+            [NativeTypeName("void () __attribute__((stdcall))")]
+            public delegate* unmanaged<AsyncIAdviseSink*, void> Finish_OnDataChange;
+
+            [NativeTypeName("void (DWORD, LONG) __attribute__((stdcall))")]
+            public delegate* unmanaged<AsyncIAdviseSink*, uint, int, void> Begin_OnViewChange;
+
+            [NativeTypeName("void () __attribute__((stdcall))")]
+            public delegate* unmanaged<AsyncIAdviseSink*, void> Finish_OnViewChange;
+
+            [NativeTypeName("void (IMoniker *) __attribute__((stdcall))")]
+            public delegate* unmanaged<AsyncIAdviseSink*, IMoniker*, void> Begin_OnRename;
+
+            [NativeTypeName("void () __attribute__((stdcall))")]
+            public delegate* unmanaged<AsyncIAdviseSink*, void> Finish_OnRename;
+
+            [NativeTypeName("void () __attribute__((stdcall))")]
+            public delegate* unmanaged<AsyncIAdviseSink*, void> Begin_OnSave;
+
+            [NativeTypeName("void () __attribute__((stdcall))")]
+            public delegate* unmanaged<AsyncIAdviseSink*, void> Finish_OnSave;
+
+            [NativeTypeName("void () __attribute__((stdcall))")]
+            public delegate* unmanaged<AsyncIAdviseSink*, void> Begin_OnClose;
+
+            [NativeTypeName("void () __attribute__((stdcall))")]
+            public delegate* unmanaged<AsyncIAdviseSink*, void> Finish_OnClose;
+        }
     }
 }

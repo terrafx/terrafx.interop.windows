@@ -59,5 +59,26 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<INameSpaceTreeAccessible*, IShellItem*, VARIANT*, int>)(lpVtbl[5]))((INameSpaceTreeAccessible*)Unsafe.AsPointer(ref this), psi, pvarRole);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<INameSpaceTreeAccessible*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<INameSpaceTreeAccessible*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<INameSpaceTreeAccessible*, uint> Release;
+
+            [NativeTypeName("HRESULT (IShellItem *, BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<INameSpaceTreeAccessible*, IShellItem*, ushort**, int> OnGetDefaultAccessibilityAction;
+
+            [NativeTypeName("HRESULT (IShellItem *) __attribute__((stdcall))")]
+            public delegate* unmanaged<INameSpaceTreeAccessible*, IShellItem*, int> OnDoDefaultAccessibilityAction;
+
+            [NativeTypeName("HRESULT (IShellItem *, VARIANT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<INameSpaceTreeAccessible*, IShellItem*, VARIANT*, int> OnGetAccessibilityRole;
+        }
     }
 }

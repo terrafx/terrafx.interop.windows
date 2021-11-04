@@ -59,5 +59,26 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<ISurfaceImageSourceNative*, int>)(lpVtbl[5]))((ISurfaceImageSourceNative*)Unsafe.AsPointer(ref this));
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISurfaceImageSourceNative*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ISurfaceImageSourceNative*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ISurfaceImageSourceNative*, uint> Release;
+
+            [NativeTypeName("HRESULT (IDXGIDevice *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISurfaceImageSourceNative*, IDXGIDevice*, int> SetDevice;
+
+            [NativeTypeName("HRESULT (RECT, IDXGISurface **, POINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISurfaceImageSourceNative*, RECT, IDXGISurface**, POINT*, int> BeginDraw;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<ISurfaceImageSourceNative*, int> EndDraw;
+        }
     }
 }

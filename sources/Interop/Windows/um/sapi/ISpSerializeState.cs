@@ -52,5 +52,23 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<ISpSerializeState*, byte*, uint, uint, int>)(lpVtbl[4]))((ISpSerializeState*)Unsafe.AsPointer(ref this), pbData, ulSize, dwReserved);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpSerializeState*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpSerializeState*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpSerializeState*, uint> Release;
+
+            [NativeTypeName("HRESULT (BYTE **, ULONG *, DWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpSerializeState*, byte**, uint*, uint, int> GetSerializedState;
+
+            [NativeTypeName("HRESULT (BYTE *, ULONG, DWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpSerializeState*, byte*, uint, uint, int> SetSerializedState;
+        }
     }
 }

@@ -77,5 +77,32 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IDxcBlobUtf8*, nuint>)(lpVtbl[7]))((IDxcBlobUtf8*)Unsafe.AsPointer(ref this));
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDxcBlobUtf8*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDxcBlobUtf8*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDxcBlobUtf8*, uint> Release;
+
+            [NativeTypeName("LPVOID () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDxcBlobUtf8*, void*> GetBufferPointer;
+
+            [NativeTypeName("SIZE_T () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDxcBlobUtf8*, nuint> GetBufferSize;
+
+            [NativeTypeName("HRESULT (BOOL *, UINT32 *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDxcBlobUtf8*, BOOL*, uint*, int> GetEncoding;
+
+            [NativeTypeName("LPCSTR () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDxcBlobUtf8*, sbyte*> GetStringPointer;
+
+            [NativeTypeName("SIZE_T () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDxcBlobUtf8*, nuint> GetStringLength;
+        }
     }
 }

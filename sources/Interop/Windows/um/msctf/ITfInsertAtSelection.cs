@@ -52,5 +52,23 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<ITfInsertAtSelection*, uint, uint, IDataObject*, ITfRange**, int>)(lpVtbl[4]))((ITfInsertAtSelection*)Unsafe.AsPointer(ref this), ec, dwFlags, pDataObject, ppRange);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfInsertAtSelection*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfInsertAtSelection*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfInsertAtSelection*, uint> Release;
+
+            [NativeTypeName("HRESULT (TfEditCookie, DWORD, const WCHAR *, LONG, ITfRange **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfInsertAtSelection*, uint, uint, ushort*, int, ITfRange**, int> InsertTextAtSelection;
+
+            [NativeTypeName("HRESULT (TfEditCookie, DWORD, IDataObject *, ITfRange **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfInsertAtSelection*, uint, uint, IDataObject*, ITfRange**, int> InsertEmbeddedAtSelection;
+        }
     }
 }

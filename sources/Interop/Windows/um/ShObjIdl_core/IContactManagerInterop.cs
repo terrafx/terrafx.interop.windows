@@ -45,5 +45,20 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IContactManagerInterop*, HWND, IUnknown*, RECT*, FLYOUT_PLACEMENT, int>)(lpVtbl[3]))((IContactManagerInterop*)Unsafe.AsPointer(ref this), appWindow, contact, selection, preferredPlacement);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IContactManagerInterop*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IContactManagerInterop*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IContactManagerInterop*, uint> Release;
+
+            [NativeTypeName("HRESULT (HWND, IUnknown *, const RECT *, FLYOUT_PLACEMENT) __attribute__((stdcall))")]
+            public delegate* unmanaged<IContactManagerInterop*, HWND, IUnknown*, RECT*, FLYOUT_PLACEMENT, int> ShowContactCardForWindow;
+        }
     }
 }

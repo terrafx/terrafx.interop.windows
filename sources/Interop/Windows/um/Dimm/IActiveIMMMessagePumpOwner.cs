@@ -73,5 +73,32 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IActiveIMMMessagePumpOwner*, uint, int>)(lpVtbl[7]))((IActiveIMMMessagePumpOwner*)Unsafe.AsPointer(ref this), dwCookie);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IActiveIMMMessagePumpOwner*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IActiveIMMMessagePumpOwner*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IActiveIMMMessagePumpOwner*, uint> Release;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IActiveIMMMessagePumpOwner*, int> Start;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IActiveIMMMessagePumpOwner*, int> End;
+
+            [NativeTypeName("HRESULT (const MSG *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IActiveIMMMessagePumpOwner*, MSG*, int> OnTranslateMessage;
+
+            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IActiveIMMMessagePumpOwner*, uint*, int> Pause;
+
+            [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<IActiveIMMMessagePumpOwner*, uint, int> Resume;
+        }
     }
 }

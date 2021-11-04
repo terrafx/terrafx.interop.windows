@@ -52,5 +52,23 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IConnectionPointContainer*, Guid*, IConnectionPoint**, int>)(lpVtbl[4]))((IConnectionPointContainer*)Unsafe.AsPointer(ref this), riid, ppCP);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IConnectionPointContainer*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IConnectionPointContainer*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IConnectionPointContainer*, uint> Release;
+
+            [NativeTypeName("HRESULT (IEnumConnectionPoints **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IConnectionPointContainer*, IEnumConnectionPoints**, int> EnumConnectionPoints;
+
+            [NativeTypeName("HRESULT (const IID &, IConnectionPoint **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IConnectionPointContainer*, Guid*, IConnectionPoint**, int> FindConnectionPoint;
+        }
     }
 }

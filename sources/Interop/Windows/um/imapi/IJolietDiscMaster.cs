@@ -80,5 +80,35 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IJolietDiscMaster*, IPropertyStorage*, int>)(lpVtbl[8]))((IJolietDiscMaster*)Unsafe.AsPointer(ref this), pPropStg);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IJolietDiscMaster*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IJolietDiscMaster*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IJolietDiscMaster*, uint> Release;
+
+            [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IJolietDiscMaster*, int*, int> GetTotalDataBlocks;
+
+            [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IJolietDiscMaster*, int*, int> GetUsedDataBlocks;
+
+            [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IJolietDiscMaster*, int*, int> GetDataBlockSize;
+
+            [NativeTypeName("HRESULT (IStorage *, long) __attribute__((stdcall))")]
+            public delegate* unmanaged<IJolietDiscMaster*, IStorage*, int, int> AddData;
+
+            [NativeTypeName("HRESULT (IPropertyStorage **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IJolietDiscMaster*, IPropertyStorage**, int> GetJolietProperties;
+
+            [NativeTypeName("HRESULT (IPropertyStorage *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IJolietDiscMaster*, IPropertyStorage*, int> SetJolietProperties;
+        }
     }
 }

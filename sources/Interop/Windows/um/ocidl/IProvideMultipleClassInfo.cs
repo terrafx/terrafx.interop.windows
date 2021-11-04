@@ -66,5 +66,29 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IProvideMultipleClassInfo*, uint, uint, ITypeInfo**, uint*, uint*, Guid*, Guid*, int>)(lpVtbl[6]))((IProvideMultipleClassInfo*)Unsafe.AsPointer(ref this), iti, dwFlags, pptiCoClass, pdwTIFlags, pcdispidReserved, piidPrimary, piidSource);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IProvideMultipleClassInfo*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IProvideMultipleClassInfo*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IProvideMultipleClassInfo*, uint> Release;
+
+            [NativeTypeName("HRESULT (ITypeInfo **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IProvideMultipleClassInfo*, ITypeInfo**, int> GetClassInfo;
+
+            [NativeTypeName("HRESULT (DWORD, GUID *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IProvideMultipleClassInfo*, uint, Guid*, int> GetGUID;
+
+            [NativeTypeName("HRESULT (ULONG *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IProvideMultipleClassInfo*, uint*, int> GetMultiTypeInfoCount;
+
+            [NativeTypeName("HRESULT (ULONG, DWORD, ITypeInfo **, DWORD *, ULONG *, IID *, IID *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IProvideMultipleClassInfo*, uint, uint, ITypeInfo**, uint*, uint*, Guid*, Guid*, int> GetInfoOfIndex;
+        }
     }
 }

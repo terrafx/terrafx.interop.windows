@@ -318,5 +318,137 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IDvdControl2*, uint, DVD_SUBPICTURE_LANG_EXT, int>)(lpVtbl[42]))((IDvdControl2*)Unsafe.AsPointer(ref this), Language, subpictureExtension);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDvdControl2*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDvdControl2*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDvdControl2*, uint> Release;
+
+            [NativeTypeName("HRESULT (ULONG, DWORD, IDvdCmd **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDvdControl2*, uint, uint, IDvdCmd**, int> PlayTitle;
+
+            [NativeTypeName("HRESULT (ULONG, ULONG, DWORD, IDvdCmd **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDvdControl2*, uint, uint, uint, IDvdCmd**, int> PlayChapterInTitle;
+
+            [NativeTypeName("HRESULT (ULONG, DVD_HMSF_TIMECODE *, DWORD, IDvdCmd **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDvdControl2*, uint, DVD_HMSF_TIMECODE*, uint, IDvdCmd**, int> PlayAtTimeInTitle;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDvdControl2*, int> Stop;
+
+            [NativeTypeName("HRESULT (DWORD, IDvdCmd **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDvdControl2*, uint, IDvdCmd**, int> ReturnFromSubmenu;
+
+            [NativeTypeName("HRESULT (DVD_HMSF_TIMECODE *, DWORD, IDvdCmd **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDvdControl2*, DVD_HMSF_TIMECODE*, uint, IDvdCmd**, int> PlayAtTime;
+
+            [NativeTypeName("HRESULT (ULONG, DWORD, IDvdCmd **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDvdControl2*, uint, uint, IDvdCmd**, int> PlayChapter;
+
+            [NativeTypeName("HRESULT (DWORD, IDvdCmd **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDvdControl2*, uint, IDvdCmd**, int> PlayPrevChapter;
+
+            [NativeTypeName("HRESULT (DWORD, IDvdCmd **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDvdControl2*, uint, IDvdCmd**, int> ReplayChapter;
+
+            [NativeTypeName("HRESULT (DWORD, IDvdCmd **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDvdControl2*, uint, IDvdCmd**, int> PlayNextChapter;
+
+            [NativeTypeName("HRESULT (double, DWORD, IDvdCmd **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDvdControl2*, double, uint, IDvdCmd**, int> PlayForwards;
+
+            [NativeTypeName("HRESULT (double, DWORD, IDvdCmd **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDvdControl2*, double, uint, IDvdCmd**, int> PlayBackwards;
+
+            [NativeTypeName("HRESULT (DVD_MENU_ID, DWORD, IDvdCmd **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDvdControl2*, DVD_MENU_ID, uint, IDvdCmd**, int> ShowMenu;
+
+            [NativeTypeName("HRESULT (DWORD, IDvdCmd **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDvdControl2*, uint, IDvdCmd**, int> Resume;
+
+            [NativeTypeName("HRESULT (DVD_RELATIVE_BUTTON) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDvdControl2*, DVD_RELATIVE_BUTTON, int> SelectRelativeButton;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDvdControl2*, int> ActivateButton;
+
+            [NativeTypeName("HRESULT (ULONG) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDvdControl2*, uint, int> SelectButton;
+
+            [NativeTypeName("HRESULT (ULONG) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDvdControl2*, uint, int> SelectAndActivateButton;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDvdControl2*, int> StillOff;
+
+            [NativeTypeName("HRESULT (BOOL) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDvdControl2*, BOOL, int> Pause;
+
+            [NativeTypeName("HRESULT (ULONG, DWORD, IDvdCmd **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDvdControl2*, uint, uint, IDvdCmd**, int> SelectAudioStream;
+
+            [NativeTypeName("HRESULT (ULONG, DWORD, IDvdCmd **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDvdControl2*, uint, uint, IDvdCmd**, int> SelectSubpictureStream;
+
+            [NativeTypeName("HRESULT (BOOL, DWORD, IDvdCmd **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDvdControl2*, BOOL, uint, IDvdCmd**, int> SetSubpictureState;
+
+            [NativeTypeName("HRESULT (ULONG, DWORD, IDvdCmd **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDvdControl2*, uint, uint, IDvdCmd**, int> SelectAngle;
+
+            [NativeTypeName("HRESULT (ULONG) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDvdControl2*, uint, int> SelectParentalLevel;
+
+            [NativeTypeName("HRESULT (BYTE *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDvdControl2*, byte*, int> SelectParentalCountry;
+
+            [NativeTypeName("HRESULT (ULONG) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDvdControl2*, uint, int> SelectKaraokeAudioPresentationMode;
+
+            [NativeTypeName("HRESULT (ULONG) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDvdControl2*, uint, int> SelectVideoModePreference;
+
+            [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDvdControl2*, ushort*, int> SetDVDDirectory;
+
+            [NativeTypeName("HRESULT (POINT) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDvdControl2*, POINT, int> ActivateAtPosition;
+
+            [NativeTypeName("HRESULT (POINT) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDvdControl2*, POINT, int> SelectAtPosition;
+
+            [NativeTypeName("HRESULT (ULONG, ULONG, ULONG, DWORD, IDvdCmd **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDvdControl2*, uint, uint, uint, uint, IDvdCmd**, int> PlayChaptersAutoStop;
+
+            [NativeTypeName("HRESULT (BOOL) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDvdControl2*, BOOL, int> AcceptParentalLevelChange;
+
+            [NativeTypeName("HRESULT (DVD_OPTION_FLAG, BOOL) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDvdControl2*, DVD_OPTION_FLAG, BOOL, int> SetOption;
+
+            [NativeTypeName("HRESULT (IDvdState *, DWORD, IDvdCmd **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDvdControl2*, IDvdState*, uint, IDvdCmd**, int> SetState;
+
+            [NativeTypeName("HRESULT (ULONG, DVD_HMSF_TIMECODE *, DVD_HMSF_TIMECODE *, DWORD, IDvdCmd **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDvdControl2*, uint, DVD_HMSF_TIMECODE*, DVD_HMSF_TIMECODE*, uint, IDvdCmd**, int> PlayPeriodInTitleAutoStop;
+
+            [NativeTypeName("HRESULT (ULONG, WORD, DWORD, IDvdCmd **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDvdControl2*, uint, ushort, uint, IDvdCmd**, int> SetGPRM;
+
+            [NativeTypeName("HRESULT (LCID) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDvdControl2*, uint, int> SelectDefaultMenuLanguage;
+
+            [NativeTypeName("HRESULT (LCID, DVD_AUDIO_LANG_EXT) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDvdControl2*, uint, DVD_AUDIO_LANG_EXT, int> SelectDefaultAudioLanguage;
+
+            [NativeTypeName("HRESULT (LCID, DVD_SUBPICTURE_LANG_EXT) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDvdControl2*, uint, DVD_SUBPICTURE_LANG_EXT, int> SelectDefaultSubpictureLanguage;
+        }
     }
 }

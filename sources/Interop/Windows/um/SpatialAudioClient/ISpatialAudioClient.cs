@@ -94,5 +94,41 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<ISpatialAudioClient*, PROPVARIANT*, Guid*, void**, int>)(lpVtbl[10]))((ISpatialAudioClient*)Unsafe.AsPointer(ref this), activationParams, riid, stream);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpatialAudioClient*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpatialAudioClient*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpatialAudioClient*, uint> Release;
+
+            [NativeTypeName("HRESULT (AudioObjectType, float *, float *, float *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpatialAudioClient*, AudioObjectType, float*, float*, float*, int> GetStaticObjectPosition;
+
+            [NativeTypeName("HRESULT (AudioObjectType *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpatialAudioClient*, AudioObjectType*, int> GetNativeStaticObjectTypeMask;
+
+            [NativeTypeName("HRESULT (UINT32 *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpatialAudioClient*, uint*, int> GetMaxDynamicObjectCount;
+
+            [NativeTypeName("HRESULT (IAudioFormatEnumerator **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpatialAudioClient*, IAudioFormatEnumerator**, int> GetSupportedAudioObjectFormatEnumerator;
+
+            [NativeTypeName("HRESULT (const WAVEFORMATEX *, UINT32 *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpatialAudioClient*, WAVEFORMATEX*, uint*, int> GetMaxFrameCount;
+
+            [NativeTypeName("HRESULT (const WAVEFORMATEX *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpatialAudioClient*, WAVEFORMATEX*, int> IsAudioObjectFormatSupported;
+
+            [NativeTypeName("HRESULT (const IID &, const PROPVARIANT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpatialAudioClient*, Guid*, PROPVARIANT*, int> IsSpatialAudioStreamAvailable;
+
+            [NativeTypeName("HRESULT (const PROPVARIANT *, const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpatialAudioClient*, PROPVARIANT*, Guid*, void**, int> ActivateSpatialAudioStream;
+        }
     }
 }

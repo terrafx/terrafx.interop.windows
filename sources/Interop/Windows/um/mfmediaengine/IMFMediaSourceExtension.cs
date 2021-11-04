@@ -108,5 +108,47 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IMFMediaSourceExtension*, uint, IMFSourceBuffer*>)(lpVtbl[12]))((IMFMediaSourceExtension*)Unsafe.AsPointer(ref this), dwStreamIndex);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFMediaSourceExtension*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFMediaSourceExtension*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFMediaSourceExtension*, uint> Release;
+
+            [NativeTypeName("IMFSourceBufferList *() __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFMediaSourceExtension*, IMFSourceBufferList*> GetSourceBuffers;
+
+            [NativeTypeName("IMFSourceBufferList *() __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFMediaSourceExtension*, IMFSourceBufferList*> GetActiveSourceBuffers;
+
+            [NativeTypeName("MF_MSE_READY () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFMediaSourceExtension*, MF_MSE_READY> GetReadyState;
+
+            [NativeTypeName("double () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFMediaSourceExtension*, double> GetDuration;
+
+            [NativeTypeName("HRESULT (double) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFMediaSourceExtension*, double, int> SetDuration;
+
+            [NativeTypeName("HRESULT (BSTR, IMFSourceBufferNotify *, IMFSourceBuffer **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFMediaSourceExtension*, ushort*, IMFSourceBufferNotify*, IMFSourceBuffer**, int> AddSourceBuffer;
+
+            [NativeTypeName("HRESULT (IMFSourceBuffer *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFMediaSourceExtension*, IMFSourceBuffer*, int> RemoveSourceBuffer;
+
+            [NativeTypeName("HRESULT (MF_MSE_ERROR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFMediaSourceExtension*, MF_MSE_ERROR, int> SetEndOfStream;
+
+            [NativeTypeName("BOOL (BSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFMediaSourceExtension*, ushort*, int> IsTypeSupported;
+
+            [NativeTypeName("IMFSourceBuffer *(DWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFMediaSourceExtension*, uint, IMFSourceBuffer*> GetSourceBuffer;
+        }
     }
 }

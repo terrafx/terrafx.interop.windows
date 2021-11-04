@@ -164,5 +164,71 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<ITfInputProcessorProfiles*, Guid*, ushort, Guid*, HKL, int>)(lpVtbl[20]))((ITfInputProcessorProfiles*)Unsafe.AsPointer(ref this), rclsid, langid, guidProfile, hKL);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfInputProcessorProfiles*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfInputProcessorProfiles*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfInputProcessorProfiles*, uint> Release;
+
+            [NativeTypeName("HRESULT (const IID &) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfInputProcessorProfiles*, Guid*, int> Register;
+
+            [NativeTypeName("HRESULT (const IID &) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfInputProcessorProfiles*, Guid*, int> Unregister;
+
+            [NativeTypeName("HRESULT (const IID &, LANGID, const GUID &, const WCHAR *, ULONG, const WCHAR *, ULONG, ULONG) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfInputProcessorProfiles*, Guid*, ushort, Guid*, ushort*, uint, ushort*, uint, uint, int> AddLanguageProfile;
+
+            [NativeTypeName("HRESULT (const IID &, LANGID, const GUID &) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfInputProcessorProfiles*, Guid*, ushort, Guid*, int> RemoveLanguageProfile;
+
+            [NativeTypeName("HRESULT (IEnumGUID **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfInputProcessorProfiles*, IEnumGUID**, int> EnumInputProcessorInfo;
+
+            [NativeTypeName("HRESULT (LANGID, const GUID &, CLSID *, GUID *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfInputProcessorProfiles*, ushort, Guid*, Guid*, Guid*, int> GetDefaultLanguageProfile;
+
+            [NativeTypeName("HRESULT (LANGID, const IID &, const GUID &) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfInputProcessorProfiles*, ushort, Guid*, Guid*, int> SetDefaultLanguageProfile;
+
+            [NativeTypeName("HRESULT (const IID &, LANGID, const GUID &) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfInputProcessorProfiles*, Guid*, ushort, Guid*, int> ActivateLanguageProfile;
+
+            [NativeTypeName("HRESULT (const IID &, LANGID *, GUID *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfInputProcessorProfiles*, Guid*, ushort*, Guid*, int> GetActiveLanguageProfile;
+
+            [NativeTypeName("HRESULT (const IID &, LANGID, const GUID &, BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfInputProcessorProfiles*, Guid*, ushort, Guid*, ushort**, int> GetLanguageProfileDescription;
+
+            [NativeTypeName("HRESULT (LANGID *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfInputProcessorProfiles*, ushort*, int> GetCurrentLanguage;
+
+            [NativeTypeName("HRESULT (LANGID) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfInputProcessorProfiles*, ushort, int> ChangeCurrentLanguage;
+
+            [NativeTypeName("HRESULT (LANGID **, ULONG *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfInputProcessorProfiles*, ushort**, uint*, int> GetLanguageList;
+
+            [NativeTypeName("HRESULT (LANGID, IEnumTfLanguageProfiles **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfInputProcessorProfiles*, ushort, IEnumTfLanguageProfiles**, int> EnumLanguageProfiles;
+
+            [NativeTypeName("HRESULT (const IID &, LANGID, const GUID &, BOOL) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfInputProcessorProfiles*, Guid*, ushort, Guid*, BOOL, int> EnableLanguageProfile;
+
+            [NativeTypeName("HRESULT (const IID &, LANGID, const GUID &, BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfInputProcessorProfiles*, Guid*, ushort, Guid*, BOOL*, int> IsEnabledLanguageProfile;
+
+            [NativeTypeName("HRESULT (const IID &, LANGID, const GUID &, BOOL) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfInputProcessorProfiles*, Guid*, ushort, Guid*, BOOL, int> EnableLanguageProfileByDefault;
+
+            [NativeTypeName("HRESULT (const IID &, LANGID, const GUID &, HKL) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfInputProcessorProfiles*, Guid*, ushort, Guid*, HKL, int> SubstituteKeyboardLayout;
+        }
     }
 }

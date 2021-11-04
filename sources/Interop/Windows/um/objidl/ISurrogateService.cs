@@ -73,5 +73,32 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<ISurrogateService*, ShutdownType, int>)(lpVtbl[7]))((ISurrogateService*)Unsafe.AsPointer(ref this), shutdownType);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISurrogateService*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ISurrogateService*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ISurrogateService*, uint> Release;
+
+            [NativeTypeName("HRESULT (const GUID &, IProcessLock *, BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISurrogateService*, Guid*, IProcessLock*, BOOL*, int> Init;
+
+            [NativeTypeName("HRESULT (const GUID &, ApplicationType) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISurrogateService*, Guid*, ApplicationType, int> ApplicationLaunch;
+
+            [NativeTypeName("HRESULT (const GUID &) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISurrogateService*, Guid*, int> ApplicationFree;
+
+            [NativeTypeName("HRESULT (ULONG) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISurrogateService*, uint, int> CatalogRefresh;
+
+            [NativeTypeName("HRESULT (ShutdownType) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISurrogateService*, ShutdownType, int> ProcessShutdown;
+        }
     }
 }

@@ -45,5 +45,20 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<ICredentialProviderEvents*, nuint, int>)(lpVtbl[3]))((ICredentialProviderEvents*)Unsafe.AsPointer(ref this), upAdviseContext);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ICredentialProviderEvents*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ICredentialProviderEvents*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ICredentialProviderEvents*, uint> Release;
+
+            [NativeTypeName("HRESULT (UINT_PTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<ICredentialProviderEvents*, nuint, int> CredentialsChanged;
+        }
     }
 }

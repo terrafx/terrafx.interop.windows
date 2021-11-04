@@ -45,5 +45,20 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IAudioSessionNotification*, IAudioSessionControl*, int>)(lpVtbl[3]))((IAudioSessionNotification*)Unsafe.AsPointer(ref this), NewSession);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAudioSessionNotification*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IAudioSessionNotification*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IAudioSessionNotification*, uint> Release;
+
+            [NativeTypeName("HRESULT (IAudioSessionControl *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAudioSessionNotification*, IAudioSessionControl*, int> OnSessionCreated;
+        }
     }
 }

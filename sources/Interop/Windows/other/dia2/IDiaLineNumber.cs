@@ -136,5 +136,59 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IDiaLineNumber*, uint*, int>)(lpVtbl[16]))((IDiaLineNumber*)Unsafe.AsPointer(ref this), pRetVal);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaLineNumber*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaLineNumber*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaLineNumber*, uint> Release;
+
+            [NativeTypeName("HRESULT (IDiaSymbol **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaLineNumber*, IDiaSymbol**, int> get_compiland;
+
+            [NativeTypeName("HRESULT (IDiaSourceFile **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaLineNumber*, IDiaSourceFile**, int> get_sourceFile;
+
+            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaLineNumber*, uint*, int> get_lineNumber;
+
+            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaLineNumber*, uint*, int> get_lineNumberEnd;
+
+            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaLineNumber*, uint*, int> get_columnNumber;
+
+            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaLineNumber*, uint*, int> get_columnNumberEnd;
+
+            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaLineNumber*, uint*, int> get_addressSection;
+
+            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaLineNumber*, uint*, int> get_addressOffset;
+
+            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaLineNumber*, uint*, int> get_relativeVirtualAddress;
+
+            [NativeTypeName("HRESULT (ULONGLONG *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaLineNumber*, ulong*, int> get_virtualAddress;
+
+            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaLineNumber*, uint*, int> get_length;
+
+            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaLineNumber*, uint*, int> get_sourceFileId;
+
+            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaLineNumber*, BOOL*, int> get_statement;
+
+            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaLineNumber*, uint*, int> get_compilandId;
+        }
     }
 }

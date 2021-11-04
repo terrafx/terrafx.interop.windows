@@ -94,5 +94,41 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<ISVGAnimatedPreserveAspectRatio*, ISVGPreserveAspectRatio**, int>)(lpVtbl[10]))((ISVGAnimatedPreserveAspectRatio*)Unsafe.AsPointer(ref this), p);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISVGAnimatedPreserveAspectRatio*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ISVGAnimatedPreserveAspectRatio*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ISVGAnimatedPreserveAspectRatio*, uint> Release;
+
+            [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISVGAnimatedPreserveAspectRatio*, uint*, int> GetTypeInfoCount;
+
+            [NativeTypeName("HRESULT (UINT, LCID, ITypeInfo **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISVGAnimatedPreserveAspectRatio*, uint, uint, ITypeInfo**, int> GetTypeInfo;
+
+            [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISVGAnimatedPreserveAspectRatio*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+
+            [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISVGAnimatedPreserveAspectRatio*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
+
+            [NativeTypeName("HRESULT (ISVGPreserveAspectRatio *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISVGAnimatedPreserveAspectRatio*, ISVGPreserveAspectRatio*, int> putref_baseVal;
+
+            [NativeTypeName("HRESULT (ISVGPreserveAspectRatio **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISVGAnimatedPreserveAspectRatio*, ISVGPreserveAspectRatio**, int> get_baseVal;
+
+            [NativeTypeName("HRESULT (ISVGPreserveAspectRatio *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISVGAnimatedPreserveAspectRatio*, ISVGPreserveAspectRatio*, int> putref_animVal;
+
+            [NativeTypeName("HRESULT (ISVGPreserveAspectRatio **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISVGAnimatedPreserveAspectRatio*, ISVGPreserveAspectRatio**, int> get_animVal;
+        }
     }
 }

@@ -80,5 +80,35 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<INewShortcutHookW*, ushort*, int, int>)(lpVtbl[8]))((INewShortcutHookW*)Unsafe.AsPointer(ref this), pszExtension, cchExtension);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<INewShortcutHookW*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<INewShortcutHookW*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<INewShortcutHookW*, uint> Release;
+
+            [NativeTypeName("HRESULT (PCWSTR, HWND) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<INewShortcutHookW*, ushort*, HWND, int> SetReferent;
+
+            [NativeTypeName("HRESULT (PWSTR, int) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<INewShortcutHookW*, ushort*, int, int> GetReferent;
+
+            [NativeTypeName("HRESULT (PCWSTR) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<INewShortcutHookW*, ushort*, int> SetFolder;
+
+            [NativeTypeName("HRESULT (PWSTR, int) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<INewShortcutHookW*, ushort*, int, int> GetFolder;
+
+            [NativeTypeName("HRESULT (PWSTR, int) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<INewShortcutHookW*, ushort*, int, int> GetName;
+
+            [NativeTypeName("HRESULT (PWSTR, int) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<INewShortcutHookW*, ushort*, int, int> GetExtension;
+        }
     }
 }

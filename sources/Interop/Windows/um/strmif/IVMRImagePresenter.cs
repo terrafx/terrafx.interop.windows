@@ -59,5 +59,26 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IVMRImagePresenter*, nuint, VMRPRESENTATIONINFO*, int>)(lpVtbl[5]))((IVMRImagePresenter*)Unsafe.AsPointer(ref this), dwUserID, lpPresInfo);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IVMRImagePresenter*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IVMRImagePresenter*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IVMRImagePresenter*, uint> Release;
+
+            [NativeTypeName("HRESULT (DWORD_PTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IVMRImagePresenter*, nuint, int> StartPresenting;
+
+            [NativeTypeName("HRESULT (DWORD_PTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IVMRImagePresenter*, nuint, int> StopPresenting;
+
+            [NativeTypeName("HRESULT (DWORD_PTR, VMRPRESENTATIONINFO *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IVMRImagePresenter*, nuint, VMRPRESENTATIONINFO*, int> PresentImage;
+        }
     }
 }

@@ -458,5 +458,197 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IHTMLEventObj2*, IHTMLDataTransfer**, int>)(lpVtbl[62]))((IHTMLEventObj2*)Unsafe.AsPointer(ref this), p);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLEventObj2*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLEventObj2*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLEventObj2*, uint> Release;
+
+            [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLEventObj2*, uint*, int> GetTypeInfoCount;
+
+            [NativeTypeName("HRESULT (UINT, LCID, ITypeInfo **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLEventObj2*, uint, uint, ITypeInfo**, int> GetTypeInfo;
+
+            [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLEventObj2*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+
+            [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLEventObj2*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
+
+            [NativeTypeName("HRESULT (BSTR, VARIANT, LONG) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLEventObj2*, ushort*, VARIANT, int, int> setAttribute;
+
+            [NativeTypeName("HRESULT (BSTR, LONG, VARIANT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLEventObj2*, ushort*, int, VARIANT*, int> getAttribute;
+
+            [NativeTypeName("HRESULT (BSTR, LONG, VARIANT_BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLEventObj2*, ushort*, int, short*, int> removeAttribute;
+
+            [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLEventObj2*, ushort*, int> put_propertyName;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLEventObj2*, ushort**, int> get_propertyName;
+
+            [NativeTypeName("HRESULT (IHTMLBookmarkCollection *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLEventObj2*, IHTMLBookmarkCollection*, int> putref_bookmarks;
+
+            [NativeTypeName("HRESULT (IHTMLBookmarkCollection **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLEventObj2*, IHTMLBookmarkCollection**, int> get_bookmarks;
+
+            [NativeTypeName("HRESULT (IDispatch *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLEventObj2*, IDispatch*, int> putref_recordset;
+
+            [NativeTypeName("HRESULT (IDispatch **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLEventObj2*, IDispatch**, int> get_recordset;
+
+            [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLEventObj2*, ushort*, int> put_dataFld;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLEventObj2*, ushort**, int> get_dataFld;
+
+            [NativeTypeName("HRESULT (IHTMLElementCollection *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLEventObj2*, IHTMLElementCollection*, int> putref_boundElements;
+
+            [NativeTypeName("HRESULT (IHTMLElementCollection **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLEventObj2*, IHTMLElementCollection**, int> get_boundElements;
+
+            [NativeTypeName("HRESULT (VARIANT_BOOL) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLEventObj2*, short, int> put_repeat;
+
+            [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLEventObj2*, short*, int> get_repeat;
+
+            [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLEventObj2*, ushort*, int> put_srcUrn;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLEventObj2*, ushort**, int> get_srcUrn;
+
+            [NativeTypeName("HRESULT (IHTMLElement *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLEventObj2*, IHTMLElement*, int> putref_srcElement;
+
+            [NativeTypeName("HRESULT (IHTMLElement **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLEventObj2*, IHTMLElement**, int> get_srcElement;
+
+            [NativeTypeName("HRESULT (VARIANT_BOOL) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLEventObj2*, short, int> put_altKey;
+
+            [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLEventObj2*, short*, int> get_altKey;
+
+            [NativeTypeName("HRESULT (VARIANT_BOOL) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLEventObj2*, short, int> put_ctrlKey;
+
+            [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLEventObj2*, short*, int> get_ctrlKey;
+
+            [NativeTypeName("HRESULT (VARIANT_BOOL) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLEventObj2*, short, int> put_shiftKey;
+
+            [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLEventObj2*, short*, int> get_shiftKey;
+
+            [NativeTypeName("HRESULT (IHTMLElement *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLEventObj2*, IHTMLElement*, int> putref_fromElement;
+
+            [NativeTypeName("HRESULT (IHTMLElement **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLEventObj2*, IHTMLElement**, int> get_fromElement;
+
+            [NativeTypeName("HRESULT (IHTMLElement *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLEventObj2*, IHTMLElement*, int> putref_toElement;
+
+            [NativeTypeName("HRESULT (IHTMLElement **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLEventObj2*, IHTMLElement**, int> get_toElement;
+
+            [NativeTypeName("HRESULT (long) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLEventObj2*, int, int> put_button;
+
+            [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLEventObj2*, int*, int> get_button;
+
+            [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLEventObj2*, ushort*, int> put_type;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLEventObj2*, ushort**, int> get_type;
+
+            [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLEventObj2*, ushort*, int> put_qualifier;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLEventObj2*, ushort**, int> get_qualifier;
+
+            [NativeTypeName("HRESULT (long) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLEventObj2*, int, int> put_reason;
+
+            [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLEventObj2*, int*, int> get_reason;
+
+            [NativeTypeName("HRESULT (long) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLEventObj2*, int, int> put_x;
+
+            [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLEventObj2*, int*, int> get_x;
+
+            [NativeTypeName("HRESULT (long) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLEventObj2*, int, int> put_y;
+
+            [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLEventObj2*, int*, int> get_y;
+
+            [NativeTypeName("HRESULT (long) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLEventObj2*, int, int> put_clientX;
+
+            [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLEventObj2*, int*, int> get_clientX;
+
+            [NativeTypeName("HRESULT (long) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLEventObj2*, int, int> put_clientY;
+
+            [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLEventObj2*, int*, int> get_clientY;
+
+            [NativeTypeName("HRESULT (long) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLEventObj2*, int, int> put_offsetX;
+
+            [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLEventObj2*, int*, int> get_offsetX;
+
+            [NativeTypeName("HRESULT (long) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLEventObj2*, int, int> put_offsetY;
+
+            [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLEventObj2*, int*, int> get_offsetY;
+
+            [NativeTypeName("HRESULT (long) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLEventObj2*, int, int> put_screenX;
+
+            [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLEventObj2*, int*, int> get_screenX;
+
+            [NativeTypeName("HRESULT (long) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLEventObj2*, int, int> put_screenY;
+
+            [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLEventObj2*, int*, int> get_screenY;
+
+            [NativeTypeName("HRESULT (IDispatch *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLEventObj2*, IDispatch*, int> putref_srcFilter;
+
+            [NativeTypeName("HRESULT (IDispatch **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLEventObj2*, IDispatch**, int> get_srcFilter;
+
+            [NativeTypeName("HRESULT (IHTMLDataTransfer **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLEventObj2*, IHTMLDataTransfer**, int> get_dataTransfer;
+        }
     }
 }

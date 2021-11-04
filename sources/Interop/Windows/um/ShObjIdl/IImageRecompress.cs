@@ -45,5 +45,20 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IImageRecompress*, IShellItem*, int, int, int, IStorage*, IStream**, int>)(lpVtbl[3]))((IImageRecompress*)Unsafe.AsPointer(ref this), psi, cx, cy, iQuality, pstg, ppstrmOut);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IImageRecompress*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IImageRecompress*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IImageRecompress*, uint> Release;
+
+            [NativeTypeName("HRESULT (IShellItem *, int, int, int, IStorage *, IStream **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IImageRecompress*, IShellItem*, int, int, int, IStorage*, IStream**, int> RecompressImage;
+        }
     }
 }

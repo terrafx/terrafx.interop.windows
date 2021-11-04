@@ -45,5 +45,20 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IExecuteCommandApplicationHostEnvironment*, AHE_TYPE*, int>)(lpVtbl[3]))((IExecuteCommandApplicationHostEnvironment*)Unsafe.AsPointer(ref this), pahe);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IExecuteCommandApplicationHostEnvironment*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IExecuteCommandApplicationHostEnvironment*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IExecuteCommandApplicationHostEnvironment*, uint> Release;
+
+            [NativeTypeName("HRESULT (AHE_TYPE *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IExecuteCommandApplicationHostEnvironment*, AHE_TYPE*, int> GetValue;
+        }
     }
 }

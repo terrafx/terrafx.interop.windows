@@ -87,5 +87,38 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IVideoEncoder*, Guid*, VARIANT*, int>)(lpVtbl[9]))((IVideoEncoder*)Unsafe.AsPointer(ref this), Api, Value);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IVideoEncoder*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IVideoEncoder*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IVideoEncoder*, uint> Release;
+
+            [NativeTypeName("HRESULT (const GUID *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IVideoEncoder*, Guid*, int> IsSupported;
+
+            [NativeTypeName("HRESULT (const GUID *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IVideoEncoder*, Guid*, int> IsAvailable;
+
+            [NativeTypeName("HRESULT (const GUID *, VARIANT *, VARIANT *, VARIANT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IVideoEncoder*, Guid*, VARIANT*, VARIANT*, VARIANT*, int> GetParameterRange;
+
+            [NativeTypeName("HRESULT (const GUID *, VARIANT **, ULONG *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IVideoEncoder*, Guid*, VARIANT**, uint*, int> GetParameterValues;
+
+            [NativeTypeName("HRESULT (const GUID *, VARIANT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IVideoEncoder*, Guid*, VARIANT*, int> GetDefaultValue;
+
+            [NativeTypeName("HRESULT (const GUID *, VARIANT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IVideoEncoder*, Guid*, VARIANT*, int> GetValue;
+
+            [NativeTypeName("HRESULT (const GUID *, VARIANT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IVideoEncoder*, Guid*, VARIANT*, int> SetValue;
+        }
     }
 }

@@ -73,5 +73,32 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IAccDictionary*, Guid*, uint, VARIANT, ushort**, uint*, int>)(lpVtbl[7]))((IAccDictionary*)Unsafe.AsPointer(ref this), Term, lcid, varValue, pbstrResult, plcid);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAccDictionary*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IAccDictionary*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IAccDictionary*, uint> Release;
+
+            [NativeTypeName("HRESULT (const GUID &, LCID, BSTR *, LCID *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAccDictionary*, Guid*, uint, ushort**, uint*, int> GetLocalizedString;
+
+            [NativeTypeName("HRESULT (const GUID &, GUID *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAccDictionary*, Guid*, Guid*, int> GetParentTerm;
+
+            [NativeTypeName("HRESULT (const GUID &, BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAccDictionary*, Guid*, ushort**, int> GetMnemonicString;
+
+            [NativeTypeName("HRESULT (BSTR, GUID *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAccDictionary*, ushort*, Guid*, int> LookupMnemonicTerm;
+
+            [NativeTypeName("HRESULT (const GUID &, LCID, VARIANT, BSTR *, LCID *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAccDictionary*, Guid*, uint, VARIANT, ushort**, uint*, int> ConvertValueToString;
+        }
     }
 }

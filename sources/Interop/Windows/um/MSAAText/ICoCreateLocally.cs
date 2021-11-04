@@ -45,5 +45,20 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<ICoCreateLocally*, Guid*, uint, Guid*, IUnknown**, Guid*, IUnknown*, VARIANT, int>)(lpVtbl[3]))((ICoCreateLocally*)Unsafe.AsPointer(ref this), rclsid, dwClsContext, riid, punk, riidParam, punkParam, varParam);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ICoCreateLocally*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ICoCreateLocally*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ICoCreateLocally*, uint> Release;
+
+            [NativeTypeName("HRESULT (const IID &, DWORD, const IID &, IUnknown **, const IID &, IUnknown *, VARIANT) __attribute__((stdcall))")]
+            public delegate* unmanaged<ICoCreateLocally*, Guid*, uint, Guid*, IUnknown**, Guid*, IUnknown*, VARIANT, int> CoCreateLocally;
+        }
     }
 }

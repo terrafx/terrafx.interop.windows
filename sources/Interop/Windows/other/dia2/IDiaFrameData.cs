@@ -164,5 +164,71 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IDiaFrameData*, IDiaStackWalkFrame*, int>)(lpVtbl[20]))((IDiaFrameData*)Unsafe.AsPointer(ref this), frame);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaFrameData*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaFrameData*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaFrameData*, uint> Release;
+
+            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaFrameData*, uint*, int> get_addressSection;
+
+            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaFrameData*, uint*, int> get_addressOffset;
+
+            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaFrameData*, uint*, int> get_relativeVirtualAddress;
+
+            [NativeTypeName("HRESULT (ULONGLONG *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaFrameData*, ulong*, int> get_virtualAddress;
+
+            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaFrameData*, uint*, int> get_lengthBlock;
+
+            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaFrameData*, uint*, int> get_lengthLocals;
+
+            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaFrameData*, uint*, int> get_lengthParams;
+
+            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaFrameData*, uint*, int> get_maxStack;
+
+            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaFrameData*, uint*, int> get_lengthProlog;
+
+            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaFrameData*, uint*, int> get_lengthSavedRegisters;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaFrameData*, ushort**, int> get_program;
+
+            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaFrameData*, BOOL*, int> get_systemExceptionHandling;
+
+            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaFrameData*, BOOL*, int> get_cplusplusExceptionHandling;
+
+            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaFrameData*, BOOL*, int> get_functionStart;
+
+            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaFrameData*, BOOL*, int> get_allocatesBasePointer;
+
+            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaFrameData*, uint*, int> get_type;
+
+            [NativeTypeName("HRESULT (IDiaFrameData **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaFrameData*, IDiaFrameData**, int> get_functionParent;
+
+            [NativeTypeName("HRESULT (IDiaStackWalkFrame *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaFrameData*, IDiaStackWalkFrame*, int> execute;
+        }
     }
 }

@@ -73,5 +73,32 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IWebAuthenticationCoreManagerInterop*, HWND, IInspectable*, IInspectable*, Guid*, void**, int>)(lpVtbl[7]))((IWebAuthenticationCoreManagerInterop*)Unsafe.AsPointer(ref this), appWindow, request, webAccount, riid, asyncInfo);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWebAuthenticationCoreManagerInterop*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IWebAuthenticationCoreManagerInterop*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IWebAuthenticationCoreManagerInterop*, uint> Release;
+
+            [NativeTypeName("HRESULT (ULONG *, IID **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWebAuthenticationCoreManagerInterop*, uint*, Guid**, int> GetIids;
+
+            [NativeTypeName("HRESULT (HSTRING *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWebAuthenticationCoreManagerInterop*, HSTRING*, int> GetRuntimeClassName;
+
+            [NativeTypeName("HRESULT (TrustLevel *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWebAuthenticationCoreManagerInterop*, TrustLevel*, int> GetTrustLevel;
+
+            [NativeTypeName("HRESULT (HWND, IInspectable *, const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWebAuthenticationCoreManagerInterop*, HWND, IInspectable*, Guid*, void**, int> RequestTokenForWindowAsync;
+
+            [NativeTypeName("HRESULT (HWND, IInspectable *, IInspectable *, const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWebAuthenticationCoreManagerInterop*, HWND, IInspectable*, IInspectable*, Guid*, void**, int> RequestTokenWithWebAccountForWindowAsync;
+        }
     }
 }

@@ -52,5 +52,23 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<ICompositorDesktopInterop*, uint, int>)(lpVtbl[4]))((ICompositorDesktopInterop*)Unsafe.AsPointer(ref this), threadId);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ICompositorDesktopInterop*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ICompositorDesktopInterop*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ICompositorDesktopInterop*, uint> Release;
+
+            [NativeTypeName("HRESULT (HWND, BOOL, ABI::Windows::UI::Composition::Desktop::IDesktopWindowTarget **) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<ICompositorDesktopInterop*, HWND, BOOL, void**, int> CreateDesktopWindowTarget;
+
+            [NativeTypeName("HRESULT (DWORD) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<ICompositorDesktopInterop*, uint, int> EnsureOnThread;
+        }
     }
 }

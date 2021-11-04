@@ -73,5 +73,32 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IAppxFactory*, IStream*, ushort*, IAppxBlockMapReader**, int>)(lpVtbl[7]))((IAppxFactory*)Unsafe.AsPointer(ref this), blockMapStream, signatureFileName, blockMapReader);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAppxFactory*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IAppxFactory*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IAppxFactory*, uint> Release;
+
+            [NativeTypeName("HRESULT (IStream *, APPX_PACKAGE_SETTINGS *, IAppxPackageWriter **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAppxFactory*, IStream*, APPX_PACKAGE_SETTINGS*, IAppxPackageWriter**, int> CreatePackageWriter;
+
+            [NativeTypeName("HRESULT (IStream *, IAppxPackageReader **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAppxFactory*, IStream*, IAppxPackageReader**, int> CreatePackageReader;
+
+            [NativeTypeName("HRESULT (IStream *, IAppxManifestReader **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAppxFactory*, IStream*, IAppxManifestReader**, int> CreateManifestReader;
+
+            [NativeTypeName("HRESULT (IStream *, IAppxBlockMapReader **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAppxFactory*, IStream*, IAppxBlockMapReader**, int> CreateBlockMapReader;
+
+            [NativeTypeName("HRESULT (IStream *, LPCWSTR, IAppxBlockMapReader **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAppxFactory*, IStream*, ushort*, IAppxBlockMapReader**, int> CreateValidatedBlockMapReader;
+        }
     }
 }

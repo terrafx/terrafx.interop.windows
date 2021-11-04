@@ -122,5 +122,53 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IHTMLCaret*, CARET_DIRECTION, int>)(lpVtbl[14]))((IHTMLCaret*)Unsafe.AsPointer(ref this), eDir);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLCaret*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLCaret*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLCaret*, uint> Release;
+
+            [NativeTypeName("HRESULT (IDisplayPointer *, BOOL, CARET_DIRECTION) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLCaret*, IDisplayPointer*, BOOL, CARET_DIRECTION, int> MoveCaretToPointer;
+
+            [NativeTypeName("HRESULT (IDisplayPointer *, BOOL, BOOL, CARET_DIRECTION) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLCaret*, IDisplayPointer*, BOOL, BOOL, CARET_DIRECTION, int> MoveCaretToPointerEx;
+
+            [NativeTypeName("HRESULT (IMarkupPointer *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLCaret*, IMarkupPointer*, int> MoveMarkupPointerToCaret;
+
+            [NativeTypeName("HRESULT (IDisplayPointer *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLCaret*, IDisplayPointer*, int> MoveDisplayPointerToCaret;
+
+            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLCaret*, BOOL*, int> IsVisible;
+
+            [NativeTypeName("HRESULT (BOOL) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLCaret*, BOOL, int> Show;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLCaret*, int> Hide;
+
+            [NativeTypeName("HRESULT (OLECHAR *, LONG) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLCaret*, ushort*, int, int> InsertText;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLCaret*, int> ScrollIntoView;
+
+            [NativeTypeName("HRESULT (POINT *, BOOL) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLCaret*, POINT*, BOOL, int> GetLocation;
+
+            [NativeTypeName("HRESULT (CARET_DIRECTION *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLCaret*, CARET_DIRECTION*, int> GetCaretDirection;
+
+            [NativeTypeName("HRESULT (CARET_DIRECTION) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLCaret*, CARET_DIRECTION, int> SetCaretDirection;
+        }
     }
 }

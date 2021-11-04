@@ -151,5 +151,65 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IRecordInfo*, void*, int>)(lpVtbl[18]))((IRecordInfo*)Unsafe.AsPointer(ref this), pvRecord);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IRecordInfo*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IRecordInfo*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IRecordInfo*, uint> Release;
+
+            [NativeTypeName("HRESULT (PVOID) __attribute__((stdcall))")]
+            public delegate* unmanaged<IRecordInfo*, void*, int> RecordInit;
+
+            [NativeTypeName("HRESULT (PVOID) __attribute__((stdcall))")]
+            public delegate* unmanaged<IRecordInfo*, void*, int> RecordClear;
+
+            [NativeTypeName("HRESULT (PVOID, PVOID) __attribute__((stdcall))")]
+            public delegate* unmanaged<IRecordInfo*, void*, void*, int> RecordCopy;
+
+            [NativeTypeName("HRESULT (GUID *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IRecordInfo*, Guid*, int> GetGuid;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IRecordInfo*, ushort**, int> GetName;
+
+            [NativeTypeName("HRESULT (ULONG *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IRecordInfo*, uint*, int> GetSize;
+
+            [NativeTypeName("HRESULT (ITypeInfo **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IRecordInfo*, ITypeInfo**, int> GetTypeInfo;
+
+            [NativeTypeName("HRESULT (PVOID, LPCOLESTR, VARIANT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IRecordInfo*, void*, ushort*, VARIANT*, int> GetField;
+
+            [NativeTypeName("HRESULT (PVOID, LPCOLESTR, VARIANT *, PVOID *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IRecordInfo*, void*, ushort*, VARIANT*, void**, int> GetFieldNoCopy;
+
+            [NativeTypeName("HRESULT (ULONG, PVOID, LPCOLESTR, VARIANT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IRecordInfo*, uint, void*, ushort*, VARIANT*, int> PutField;
+
+            [NativeTypeName("HRESULT (ULONG, PVOID, LPCOLESTR, VARIANT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IRecordInfo*, uint, void*, ushort*, VARIANT*, int> PutFieldNoCopy;
+
+            [NativeTypeName("HRESULT (ULONG *, BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IRecordInfo*, uint*, ushort**, int> GetFieldNames;
+
+            [NativeTypeName("BOOL (IRecordInfo *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IRecordInfo*, IRecordInfo*, int> IsMatchingType;
+
+            [NativeTypeName("PVOID () __attribute__((stdcall))")]
+            public delegate* unmanaged<IRecordInfo*, void*> RecordCreate;
+
+            [NativeTypeName("HRESULT (PVOID, PVOID *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IRecordInfo*, void*, void**, int> RecordCreateCopy;
+
+            [NativeTypeName("HRESULT (PVOID) __attribute__((stdcall))")]
+            public delegate* unmanaged<IRecordInfo*, void*, int> RecordDestroy;
+        }
     }
 }

@@ -66,5 +66,29 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IAMVfwCompressDialogs*, int, int, int, int>)(lpVtbl[6]))((IAMVfwCompressDialogs*)Unsafe.AsPointer(ref this), uMsg, dw1, dw2);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAMVfwCompressDialogs*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IAMVfwCompressDialogs*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IAMVfwCompressDialogs*, uint> Release;
+
+            [NativeTypeName("HRESULT (int, HWND) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAMVfwCompressDialogs*, int, HWND, int> ShowDialog;
+
+            [NativeTypeName("HRESULT (LPVOID, int *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAMVfwCompressDialogs*, void*, int*, int> GetState;
+
+            [NativeTypeName("HRESULT (LPVOID, int) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAMVfwCompressDialogs*, void*, int, int> SetState;
+
+            [NativeTypeName("HRESULT (int, long, long) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAMVfwCompressDialogs*, int, int, int, int> SendDriverMessage;
+        }
     }
 }

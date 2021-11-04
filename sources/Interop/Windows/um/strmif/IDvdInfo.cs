@@ -199,5 +199,86 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IDvdInfo*, sbyte*, uint, uint*, int>)(lpVtbl[25]))((IDvdInfo*)Unsafe.AsPointer(ref this), pRoot, ulBufSize, pulActualSize);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDvdInfo*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDvdInfo*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDvdInfo*, uint> Release;
+
+            [NativeTypeName("HRESULT (DVD_DOMAIN *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDvdInfo*, DVD_DOMAIN*, int> GetCurrentDomain;
+
+            [NativeTypeName("HRESULT (DVD_PLAYBACK_LOCATION *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDvdInfo*, DVD_PLAYBACK_LOCATION*, int> GetCurrentLocation;
+
+            [NativeTypeName("HRESULT (ULONG *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDvdInfo*, uint*, int> GetTotalTitleTime;
+
+            [NativeTypeName("HRESULT (ULONG *, ULONG *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDvdInfo*, uint*, uint*, int> GetCurrentButton;
+
+            [NativeTypeName("HRESULT (ULONG *, ULONG *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDvdInfo*, uint*, uint*, int> GetCurrentAngle;
+
+            [NativeTypeName("HRESULT (ULONG *, ULONG *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDvdInfo*, uint*, uint*, int> GetCurrentAudio;
+
+            [NativeTypeName("HRESULT (ULONG *, ULONG *, BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDvdInfo*, uint*, uint*, BOOL*, int> GetCurrentSubpicture;
+
+            [NativeTypeName("HRESULT (VALID_UOP_SOMTHING_OR_OTHER *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDvdInfo*, uint*, int> GetCurrentUOPS;
+
+            [NativeTypeName("HRESULT (SPRMARRAY *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDvdInfo*, ushort**, int> GetAllSPRMs;
+
+            [NativeTypeName("HRESULT (GPRMARRAY *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDvdInfo*, ushort**, int> GetAllGPRMs;
+
+            [NativeTypeName("HRESULT (ULONG, LCID *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDvdInfo*, uint, uint*, int> GetAudioLanguage;
+
+            [NativeTypeName("HRESULT (ULONG, LCID *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDvdInfo*, uint, uint*, int> GetSubpictureLanguage;
+
+            [NativeTypeName("HRESULT (ULONG, DVD_ATR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDvdInfo*, uint, DVD_ATR*, int> GetTitleAttributes;
+
+            [NativeTypeName("HRESULT (DVD_ATR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDvdInfo*, DVD_ATR*, int> GetVMGAttributes;
+
+            [NativeTypeName("HRESULT (DVD_VideoATR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDvdInfo*, byte**, int> GetCurrentVideoAttributes;
+
+            [NativeTypeName("HRESULT (DVD_AudioATR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDvdInfo*, byte**, int> GetCurrentAudioAttributes;
+
+            [NativeTypeName("HRESULT (DVD_SubpictureATR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDvdInfo*, byte**, int> GetCurrentSubpictureAttributes;
+
+            [NativeTypeName("HRESULT (ULONG *, ULONG *, DVD_DISC_SIDE *, ULONG *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDvdInfo*, uint*, uint*, DVD_DISC_SIDE*, uint*, int> GetCurrentVolumeInfo;
+
+            [NativeTypeName("HRESULT (BYTE *, ULONG, ULONG *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDvdInfo*, byte*, uint, uint*, int> GetDVDTextInfo;
+
+            [NativeTypeName("HRESULT (ULONG *, ULONG *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDvdInfo*, uint*, uint*, int> GetPlayerParentalLevel;
+
+            [NativeTypeName("HRESULT (ULONG, ULONG *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDvdInfo*, uint, uint*, int> GetNumberOfChapters;
+
+            [NativeTypeName("HRESULT (ULONG, ULONG *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDvdInfo*, uint, uint*, int> GetTitleParentalLevels;
+
+            [NativeTypeName("HRESULT (LPSTR, ULONG, ULONG *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDvdInfo*, sbyte*, uint, uint*, int> GetRoot;
+        }
     }
 }

@@ -59,5 +59,26 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<ITfFnPropertyUIStatus*, Guid*, uint, int>)(lpVtbl[5]))((ITfFnPropertyUIStatus*)Unsafe.AsPointer(ref this), refguidProp, dw);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfFnPropertyUIStatus*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfFnPropertyUIStatus*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfFnPropertyUIStatus*, uint> Release;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfFnPropertyUIStatus*, ushort**, int> GetDisplayName;
+
+            [NativeTypeName("HRESULT (const GUID &, DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfFnPropertyUIStatus*, Guid*, uint*, int> GetStatus;
+
+            [NativeTypeName("HRESULT (const GUID &, DWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfFnPropertyUIStatus*, Guid*, uint, int> SetStatus;
+        }
     }
 }

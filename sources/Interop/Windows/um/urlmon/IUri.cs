@@ -213,5 +213,92 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IUri*, IUri*, BOOL*, int>)(lpVtbl[27]))((IUri*)Unsafe.AsPointer(ref this), pUri, pfEqual);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IUri*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IUri*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IUri*, uint> Release;
+
+            [NativeTypeName("HRESULT (Uri_PROPERTY, BSTR *, DWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<IUri*, Uri_PROPERTY, ushort**, uint, int> GetPropertyBSTR;
+
+            [NativeTypeName("HRESULT (Uri_PROPERTY, DWORD *, DWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<IUri*, Uri_PROPERTY, uint*, uint, int> GetPropertyLength;
+
+            [NativeTypeName("HRESULT (Uri_PROPERTY, DWORD *, DWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<IUri*, Uri_PROPERTY, uint*, uint, int> GetPropertyDWORD;
+
+            [NativeTypeName("HRESULT (Uri_PROPERTY, BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IUri*, Uri_PROPERTY, BOOL*, int> HasProperty;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IUri*, ushort**, int> GetAbsoluteUri;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IUri*, ushort**, int> GetAuthority;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IUri*, ushort**, int> GetDisplayUri;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IUri*, ushort**, int> GetDomain;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IUri*, ushort**, int> GetExtension;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IUri*, ushort**, int> GetFragment;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IUri*, ushort**, int> GetHost;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IUri*, ushort**, int> GetPassword;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IUri*, ushort**, int> GetPath;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IUri*, ushort**, int> GetPathAndQuery;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IUri*, ushort**, int> GetQuery;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IUri*, ushort**, int> GetRawUri;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IUri*, ushort**, int> GetSchemeName;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IUri*, ushort**, int> GetUserInfo;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IUri*, ushort**, int> GetUserName;
+
+            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IUri*, uint*, int> GetHostType;
+
+            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IUri*, uint*, int> GetPort;
+
+            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IUri*, uint*, int> GetScheme;
+
+            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IUri*, uint*, int> GetZone;
+
+            [NativeTypeName("HRESULT (LPDWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<IUri*, uint*, int> GetProperties;
+
+            [NativeTypeName("HRESULT (IUri *, BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IUri*, IUri*, BOOL*, int> IsEqual;
+        }
     }
 }

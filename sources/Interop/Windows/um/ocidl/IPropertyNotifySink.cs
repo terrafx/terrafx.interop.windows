@@ -52,5 +52,23 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IPropertyNotifySink*, int, int>)(lpVtbl[4]))((IPropertyNotifySink*)Unsafe.AsPointer(ref this), dispID);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IPropertyNotifySink*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IPropertyNotifySink*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IPropertyNotifySink*, uint> Release;
+
+            [NativeTypeName("HRESULT (DISPID) __attribute__((stdcall))")]
+            public delegate* unmanaged<IPropertyNotifySink*, int, int> OnChanged;
+
+            [NativeTypeName("HRESULT (DISPID) __attribute__((stdcall))")]
+            public delegate* unmanaged<IPropertyNotifySink*, int, int> OnRequestEdit;
+        }
     }
 }

@@ -185,5 +185,80 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IMediaObject*, int, int>)(lpVtbl[23]))((IMediaObject*)Unsafe.AsPointer(ref this), bLock);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMediaObject*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMediaObject*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMediaObject*, uint> Release;
+
+            [NativeTypeName("HRESULT (DWORD *, DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMediaObject*, uint*, uint*, int> GetStreamCount;
+
+            [NativeTypeName("HRESULT (DWORD, DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMediaObject*, uint, uint*, int> GetInputStreamInfo;
+
+            [NativeTypeName("HRESULT (DWORD, DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMediaObject*, uint, uint*, int> GetOutputStreamInfo;
+
+            [NativeTypeName("HRESULT (DWORD, DWORD, DMO_MEDIA_TYPE *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMediaObject*, uint, uint, DMO_MEDIA_TYPE*, int> GetInputType;
+
+            [NativeTypeName("HRESULT (DWORD, DWORD, DMO_MEDIA_TYPE *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMediaObject*, uint, uint, DMO_MEDIA_TYPE*, int> GetOutputType;
+
+            [NativeTypeName("HRESULT (DWORD, const DMO_MEDIA_TYPE *, DWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMediaObject*, uint, DMO_MEDIA_TYPE*, uint, int> SetInputType;
+
+            [NativeTypeName("HRESULT (DWORD, const DMO_MEDIA_TYPE *, DWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMediaObject*, uint, DMO_MEDIA_TYPE*, uint, int> SetOutputType;
+
+            [NativeTypeName("HRESULT (DWORD, DMO_MEDIA_TYPE *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMediaObject*, uint, DMO_MEDIA_TYPE*, int> GetInputCurrentType;
+
+            [NativeTypeName("HRESULT (DWORD, DMO_MEDIA_TYPE *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMediaObject*, uint, DMO_MEDIA_TYPE*, int> GetOutputCurrentType;
+
+            [NativeTypeName("HRESULT (DWORD, DWORD *, DWORD *, DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMediaObject*, uint, uint*, uint*, uint*, int> GetInputSizeInfo;
+
+            [NativeTypeName("HRESULT (DWORD, DWORD *, DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMediaObject*, uint, uint*, uint*, int> GetOutputSizeInfo;
+
+            [NativeTypeName("HRESULT (DWORD, REFERENCE_TIME *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMediaObject*, uint, long*, int> GetInputMaxLatency;
+
+            [NativeTypeName("HRESULT (DWORD, REFERENCE_TIME) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMediaObject*, uint, long, int> SetInputMaxLatency;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMediaObject*, int> Flush;
+
+            [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMediaObject*, uint, int> Discontinuity;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMediaObject*, int> AllocateStreamingResources;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMediaObject*, int> FreeStreamingResources;
+
+            [NativeTypeName("HRESULT (DWORD, DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMediaObject*, uint, uint*, int> GetInputStatus;
+
+            [NativeTypeName("HRESULT (DWORD, IMediaBuffer *, DWORD, REFERENCE_TIME, REFERENCE_TIME) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMediaObject*, uint, IMediaBuffer*, uint, long, long, int> ProcessInput;
+
+            [NativeTypeName("HRESULT (DWORD, DWORD, DMO_OUTPUT_DATA_BUFFER *, DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMediaObject*, uint, uint, DMO_OUTPUT_DATA_BUFFER*, uint*, int> ProcessOutput;
+
+            [NativeTypeName("HRESULT (LONG) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMediaObject*, int, int> Lock;
+        }
     }
 }

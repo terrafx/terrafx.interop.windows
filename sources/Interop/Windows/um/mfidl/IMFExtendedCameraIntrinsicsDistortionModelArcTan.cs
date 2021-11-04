@@ -52,5 +52,23 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IMFExtendedCameraIntrinsicsDistortionModelArcTan*, MFCameraIntrinsic_DistortionModelArcTan*, int>)(lpVtbl[4]))((IMFExtendedCameraIntrinsicsDistortionModelArcTan*)Unsafe.AsPointer(ref this), pDistortionModel);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFExtendedCameraIntrinsicsDistortionModelArcTan*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFExtendedCameraIntrinsicsDistortionModelArcTan*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFExtendedCameraIntrinsicsDistortionModelArcTan*, uint> Release;
+
+            [NativeTypeName("HRESULT (MFCameraIntrinsic_DistortionModelArcTan *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFExtendedCameraIntrinsicsDistortionModelArcTan*, MFCameraIntrinsic_DistortionModelArcTan*, int> GetDistortionModel;
+
+            [NativeTypeName("HRESULT (const MFCameraIntrinsic_DistortionModelArcTan *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFExtendedCameraIntrinsicsDistortionModelArcTan*, MFCameraIntrinsic_DistortionModelArcTan*, int> SetDistortionModel;
+        }
     }
 }

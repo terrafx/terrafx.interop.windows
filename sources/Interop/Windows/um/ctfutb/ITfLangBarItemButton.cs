@@ -101,5 +101,44 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<ITfLangBarItemButton*, ushort**, int>)(lpVtbl[11]))((ITfLangBarItemButton*)Unsafe.AsPointer(ref this), pbstrText);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfLangBarItemButton*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfLangBarItemButton*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfLangBarItemButton*, uint> Release;
+
+            [NativeTypeName("HRESULT (TF_LANGBARITEMINFO *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfLangBarItemButton*, TF_LANGBARITEMINFO*, int> GetInfo;
+
+            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfLangBarItemButton*, uint*, int> GetStatus;
+
+            [NativeTypeName("HRESULT (BOOL) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfLangBarItemButton*, BOOL, int> Show;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfLangBarItemButton*, ushort**, int> GetTooltipString;
+
+            [NativeTypeName("HRESULT (TfLBIClick, POINT, const RECT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfLangBarItemButton*, TfLBIClick, POINT, RECT*, int> OnClick;
+
+            [NativeTypeName("HRESULT (ITfMenu *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfLangBarItemButton*, ITfMenu*, int> InitMenu;
+
+            [NativeTypeName("HRESULT (UINT) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfLangBarItemButton*, uint, int> OnMenuSelect;
+
+            [NativeTypeName("HRESULT (HICON *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfLangBarItemButton*, HICON*, int> GetIcon;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfLangBarItemButton*, ushort**, int> GetText;
+        }
     }
 }

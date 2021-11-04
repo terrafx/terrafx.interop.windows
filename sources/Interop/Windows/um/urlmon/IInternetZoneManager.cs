@@ -122,5 +122,53 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IInternetZoneManager*, uint, uint, uint, int>)(lpVtbl[14]))((IInternetZoneManager*)Unsafe.AsPointer(ref this), dwTemplate, dwZone, dwReserved);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IInternetZoneManager*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IInternetZoneManager*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IInternetZoneManager*, uint> Release;
+
+            [NativeTypeName("HRESULT (DWORD, ZONEATTRIBUTES *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IInternetZoneManager*, uint, ZONEATTRIBUTES*, int> GetZoneAttributes;
+
+            [NativeTypeName("HRESULT (DWORD, ZONEATTRIBUTES *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IInternetZoneManager*, uint, ZONEATTRIBUTES*, int> SetZoneAttributes;
+
+            [NativeTypeName("HRESULT (DWORD, const GUID &, BYTE **, DWORD *, URLZONEREG) __attribute__((stdcall))")]
+            public delegate* unmanaged<IInternetZoneManager*, uint, Guid*, byte**, uint*, URLZONEREG, int> GetZoneCustomPolicy;
+
+            [NativeTypeName("HRESULT (DWORD, const GUID &, BYTE *, DWORD, URLZONEREG) __attribute__((stdcall))")]
+            public delegate* unmanaged<IInternetZoneManager*, uint, Guid*, byte*, uint, URLZONEREG, int> SetZoneCustomPolicy;
+
+            [NativeTypeName("HRESULT (DWORD, DWORD, BYTE *, DWORD, URLZONEREG) __attribute__((stdcall))")]
+            public delegate* unmanaged<IInternetZoneManager*, uint, uint, byte*, uint, URLZONEREG, int> GetZoneActionPolicy;
+
+            [NativeTypeName("HRESULT (DWORD, DWORD, BYTE *, DWORD, URLZONEREG) __attribute__((stdcall))")]
+            public delegate* unmanaged<IInternetZoneManager*, uint, uint, byte*, uint, URLZONEREG, int> SetZoneActionPolicy;
+
+            [NativeTypeName("HRESULT (DWORD, HWND, LPCWSTR, LPCWSTR, DWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<IInternetZoneManager*, uint, HWND, ushort*, ushort*, uint, int> PromptAction;
+
+            [NativeTypeName("HRESULT (DWORD, LPCWSTR, LPCWSTR, DWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<IInternetZoneManager*, uint, ushort*, ushort*, uint, int> LogAction;
+
+            [NativeTypeName("HRESULT (DWORD *, DWORD *, DWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<IInternetZoneManager*, uint*, uint*, uint, int> CreateZoneEnumerator;
+
+            [NativeTypeName("HRESULT (DWORD, DWORD, DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IInternetZoneManager*, uint, uint, uint*, int> GetZoneAt;
+
+            [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<IInternetZoneManager*, uint, int> DestroyZoneEnumerator;
+
+            [NativeTypeName("HRESULT (DWORD, DWORD, DWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<IInternetZoneManager*, uint, uint, uint, int> CopyTemplatePoliciesToZone;
+        }
     }
 }

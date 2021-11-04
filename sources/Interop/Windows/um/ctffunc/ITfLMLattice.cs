@@ -52,5 +52,23 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<ITfLMLattice*, uint, Guid*, IEnumTfLatticeElements**, int>)(lpVtbl[4]))((ITfLMLattice*)Unsafe.AsPointer(ref this), dwFrameStart, rguidType, ppEnum);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfLMLattice*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfLMLattice*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfLMLattice*, uint> Release;
+
+            [NativeTypeName("HRESULT (const GUID &, BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfLMLattice*, Guid*, BOOL*, int> QueryType;
+
+            [NativeTypeName("HRESULT (DWORD, const GUID &, IEnumTfLatticeElements **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfLMLattice*, uint, Guid*, IEnumTfLatticeElements**, int> EnumLatticeElements;
+        }
     }
 }

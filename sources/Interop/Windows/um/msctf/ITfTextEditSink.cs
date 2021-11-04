@@ -45,5 +45,20 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<ITfTextEditSink*, ITfContext*, uint, ITfEditRecord*, int>)(lpVtbl[3]))((ITfTextEditSink*)Unsafe.AsPointer(ref this), pic, ecReadOnly, pEditRecord);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfTextEditSink*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfTextEditSink*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfTextEditSink*, uint> Release;
+
+            [NativeTypeName("HRESULT (ITfContext *, TfEditCookie, ITfEditRecord *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfTextEditSink*, ITfContext*, uint, ITfEditRecord*, int> OnEndEdit;
+        }
     }
 }

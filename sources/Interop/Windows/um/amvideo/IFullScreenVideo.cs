@@ -155,5 +155,68 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IFullScreenVideo*, int>)(lpVtbl[19]))((IFullScreenVideo*)Unsafe.AsPointer(ref this));
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFullScreenVideo*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IFullScreenVideo*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IFullScreenVideo*, uint> Release;
+
+            [NativeTypeName("HRESULT (long *) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFullScreenVideo*, int*, int> CountModes;
+
+            [NativeTypeName("HRESULT (long, long *, long *, long *) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFullScreenVideo*, int, int*, int*, int*, int> GetModeInfo;
+
+            [NativeTypeName("HRESULT (long *) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFullScreenVideo*, int*, int> GetCurrentMode;
+
+            [NativeTypeName("HRESULT (long) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFullScreenVideo*, int, int> IsModeAvailable;
+
+            [NativeTypeName("HRESULT (long) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFullScreenVideo*, int, int> IsModeEnabled;
+
+            [NativeTypeName("HRESULT (long, long) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFullScreenVideo*, int, int, int> SetEnabled;
+
+            [NativeTypeName("HRESULT (long *) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFullScreenVideo*, int*, int> GetClipFactor;
+
+            [NativeTypeName("HRESULT (long) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFullScreenVideo*, int, int> SetClipFactor;
+
+            [NativeTypeName("HRESULT (HWND) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFullScreenVideo*, HWND, int> SetMessageDrain;
+
+            [NativeTypeName("HRESULT (HWND *) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFullScreenVideo*, HWND*, int> GetMessageDrain;
+
+            [NativeTypeName("HRESULT (long) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFullScreenVideo*, int, int> SetMonitor;
+
+            [NativeTypeName("HRESULT (long *) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFullScreenVideo*, int*, int> GetMonitor;
+
+            [NativeTypeName("HRESULT (long) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFullScreenVideo*, int, int> HideOnDeactivate;
+
+            [NativeTypeName("HRESULT () __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFullScreenVideo*, int> IsHideOnDeactivate;
+
+            [NativeTypeName("HRESULT (BSTR) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFullScreenVideo*, ushort*, int> SetCaption;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFullScreenVideo*, ushort**, int> GetCaption;
+
+            [NativeTypeName("HRESULT () __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFullScreenVideo*, int> SetDefault;
+        }
     }
 }

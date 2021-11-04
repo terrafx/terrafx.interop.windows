@@ -45,5 +45,20 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IThumbnailHandlerFactory*, ITEMIDLIST*, IBindCtx*, Guid*, void**, int>)(lpVtbl[3]))((IThumbnailHandlerFactory*)Unsafe.AsPointer(ref this), pidlChild, pbc, riid, ppv);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IThumbnailHandlerFactory*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IThumbnailHandlerFactory*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IThumbnailHandlerFactory*, uint> Release;
+
+            [NativeTypeName("HRESULT (LPCITEMIDLIST, IBindCtx *, const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IThumbnailHandlerFactory*, ITEMIDLIST*, IBindCtx*, Guid*, void**, int> GetThumbnailHandler;
+        }
     }
 }

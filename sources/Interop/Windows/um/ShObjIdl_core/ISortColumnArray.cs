@@ -59,5 +59,26 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<ISortColumnArray*, SORT_ORDER_TYPE*, int>)(lpVtbl[5]))((ISortColumnArray*)Unsafe.AsPointer(ref this), type);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISortColumnArray*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ISortColumnArray*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ISortColumnArray*, uint> Release;
+
+            [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISortColumnArray*, uint*, int> GetCount;
+
+            [NativeTypeName("HRESULT (UINT, SORTCOLUMN *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISortColumnArray*, uint, SORTCOLUMN*, int> GetAt;
+
+            [NativeTypeName("HRESULT (enum SORT_ORDER_TYPE *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISortColumnArray*, SORT_ORDER_TYPE*, int> GetSortType;
+        }
     }
 }

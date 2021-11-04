@@ -66,5 +66,29 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IWbemBackupRestoreEx*, int>)(lpVtbl[6]))((IWbemBackupRestoreEx*)Unsafe.AsPointer(ref this));
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWbemBackupRestoreEx*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IWbemBackupRestoreEx*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IWbemBackupRestoreEx*, uint> Release;
+
+            [NativeTypeName("HRESULT (LPCWSTR, long) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWbemBackupRestoreEx*, ushort*, int, int> Backup;
+
+            [NativeTypeName("HRESULT (LPCWSTR, long) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWbemBackupRestoreEx*, ushort*, int, int> Restore;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IWbemBackupRestoreEx*, int> Pause;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IWbemBackupRestoreEx*, int> Resume;
+        }
     }
 }

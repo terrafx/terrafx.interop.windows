@@ -73,5 +73,32 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IUserNotification*, ushort*, int>)(lpVtbl[7]))((IUserNotification*)Unsafe.AsPointer(ref this), pszSoundName);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IUserNotification*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IUserNotification*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IUserNotification*, uint> Release;
+
+            [NativeTypeName("HRESULT (LPCWSTR, LPCWSTR, DWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<IUserNotification*, ushort*, ushort*, uint, int> SetBalloonInfo;
+
+            [NativeTypeName("HRESULT (DWORD, DWORD, UINT) __attribute__((stdcall))")]
+            public delegate* unmanaged<IUserNotification*, uint, uint, uint, int> SetBalloonRetry;
+
+            [NativeTypeName("HRESULT (HICON, LPCWSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IUserNotification*, HICON, ushort*, int> SetIconInfo;
+
+            [NativeTypeName("HRESULT (IQueryContinue *, DWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<IUserNotification*, IQueryContinue*, uint, int> Show;
+
+            [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IUserNotification*, ushort*, int> PlaySoundW;
+        }
     }
 }

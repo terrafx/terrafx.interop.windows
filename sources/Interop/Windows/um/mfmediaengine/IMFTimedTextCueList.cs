@@ -88,5 +88,38 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IMFTimedTextCueList*, IMFTimedTextCue*, int>)(lpVtbl[9]))((IMFTimedTextCueList*)Unsafe.AsPointer(ref this), cue);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFTimedTextCueList*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFTimedTextCueList*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFTimedTextCueList*, uint> Release;
+
+            [NativeTypeName("DWORD () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFTimedTextCueList*, uint> GetLength;
+
+            [NativeTypeName("HRESULT (DWORD, IMFTimedTextCue **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFTimedTextCueList*, uint, IMFTimedTextCue**, int> GetCueByIndex;
+
+            [NativeTypeName("HRESULT (DWORD, IMFTimedTextCue **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFTimedTextCueList*, uint, IMFTimedTextCue**, int> GetCueById;
+
+            [NativeTypeName("HRESULT (LPCWSTR, IMFTimedTextCue **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFTimedTextCueList*, ushort*, IMFTimedTextCue**, int> GetCueByOriginalId;
+
+            [NativeTypeName("HRESULT (double, double, LPCWSTR, IMFTimedTextCue **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFTimedTextCueList*, double, double, ushort*, IMFTimedTextCue**, int> AddTextCue;
+
+            [NativeTypeName("HRESULT (double, double, const BYTE *, DWORD, IMFTimedTextCue **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFTimedTextCueList*, double, double, byte*, uint, IMFTimedTextCue**, int> AddDataCue;
+
+            [NativeTypeName("HRESULT (IMFTimedTextCue *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFTimedTextCueList*, IMFTimedTextCue*, int> RemoveCue;
+        }
     }
 }

@@ -59,5 +59,26 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IAppxContentGroupsEnumerator*, BOOL*, int>)(lpVtbl[5]))((IAppxContentGroupsEnumerator*)Unsafe.AsPointer(ref this), hasNext);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAppxContentGroupsEnumerator*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IAppxContentGroupsEnumerator*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IAppxContentGroupsEnumerator*, uint> Release;
+
+            [NativeTypeName("HRESULT (IAppxContentGroup **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAppxContentGroupsEnumerator*, IAppxContentGroup**, int> GetCurrent;
+
+            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAppxContentGroupsEnumerator*, BOOL*, int> GetHasCurrent;
+
+            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAppxContentGroupsEnumerator*, BOOL*, int> MoveNext;
+        }
     }
 }

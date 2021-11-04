@@ -52,5 +52,23 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<ITrackingProtection*, BOOL*, int>)(lpVtbl[4]))((ITrackingProtection*)Unsafe.AsPointer(ref this), pfEnabled);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITrackingProtection*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ITrackingProtection*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ITrackingProtection*, uint> Release;
+
+            [NativeTypeName("HRESULT (BSTR, BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITrackingProtection*, ushort*, BOOL*, int> EvaluateUrl;
+
+            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITrackingProtection*, BOOL*, int> GetEnabled;
+        }
     }
 }

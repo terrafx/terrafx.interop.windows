@@ -52,5 +52,23 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IMFRateControl*, BOOL*, float*, int>)(lpVtbl[4]))((IMFRateControl*)Unsafe.AsPointer(ref this), pfThin, pflRate);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFRateControl*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFRateControl*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFRateControl*, uint> Release;
+
+            [NativeTypeName("HRESULT (BOOL, float) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFRateControl*, BOOL, float, int> SetRate;
+
+            [NativeTypeName("HRESULT (BOOL *, float *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFRateControl*, BOOL*, float*, int> GetRate;
+        }
     }
 }

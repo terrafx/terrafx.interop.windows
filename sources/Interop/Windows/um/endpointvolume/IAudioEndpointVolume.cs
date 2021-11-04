@@ -164,5 +164,71 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IAudioEndpointVolume*, float*, float*, float*, int>)(lpVtbl[20]))((IAudioEndpointVolume*)Unsafe.AsPointer(ref this), pflVolumeMindB, pflVolumeMaxdB, pflVolumeIncrementdB);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAudioEndpointVolume*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IAudioEndpointVolume*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IAudioEndpointVolume*, uint> Release;
+
+            [NativeTypeName("HRESULT (IAudioEndpointVolumeCallback *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAudioEndpointVolume*, IAudioEndpointVolumeCallback*, int> RegisterControlChangeNotify;
+
+            [NativeTypeName("HRESULT (IAudioEndpointVolumeCallback *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAudioEndpointVolume*, IAudioEndpointVolumeCallback*, int> UnregisterControlChangeNotify;
+
+            [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAudioEndpointVolume*, uint*, int> GetChannelCount;
+
+            [NativeTypeName("HRESULT (float, LPCGUID) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAudioEndpointVolume*, float, Guid*, int> SetMasterVolumeLevel;
+
+            [NativeTypeName("HRESULT (float, LPCGUID) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAudioEndpointVolume*, float, Guid*, int> SetMasterVolumeLevelScalar;
+
+            [NativeTypeName("HRESULT (float *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAudioEndpointVolume*, float*, int> GetMasterVolumeLevel;
+
+            [NativeTypeName("HRESULT (float *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAudioEndpointVolume*, float*, int> GetMasterVolumeLevelScalar;
+
+            [NativeTypeName("HRESULT (UINT, float, LPCGUID) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAudioEndpointVolume*, uint, float, Guid*, int> SetChannelVolumeLevel;
+
+            [NativeTypeName("HRESULT (UINT, float, LPCGUID) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAudioEndpointVolume*, uint, float, Guid*, int> SetChannelVolumeLevelScalar;
+
+            [NativeTypeName("HRESULT (UINT, float *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAudioEndpointVolume*, uint, float*, int> GetChannelVolumeLevel;
+
+            [NativeTypeName("HRESULT (UINT, float *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAudioEndpointVolume*, uint, float*, int> GetChannelVolumeLevelScalar;
+
+            [NativeTypeName("HRESULT (BOOL, LPCGUID) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAudioEndpointVolume*, BOOL, Guid*, int> SetMute;
+
+            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAudioEndpointVolume*, BOOL*, int> GetMute;
+
+            [NativeTypeName("HRESULT (UINT *, UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAudioEndpointVolume*, uint*, uint*, int> GetVolumeStepInfo;
+
+            [NativeTypeName("HRESULT (LPCGUID) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAudioEndpointVolume*, Guid*, int> VolumeStepUp;
+
+            [NativeTypeName("HRESULT (LPCGUID) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAudioEndpointVolume*, Guid*, int> VolumeStepDown;
+
+            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAudioEndpointVolume*, uint*, int> QueryHardwareSupport;
+
+            [NativeTypeName("HRESULT (float *, float *, float *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAudioEndpointVolume*, float*, float*, float*, int> GetVolumeRange;
+        }
     }
 }

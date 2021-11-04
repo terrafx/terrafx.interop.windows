@@ -45,5 +45,20 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<ISeekingPassThru*, BOOL, IPin*, int>)(lpVtbl[3]))((ISeekingPassThru*)Unsafe.AsPointer(ref this), bSupportRendering, pPin);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISeekingPassThru*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ISeekingPassThru*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ISeekingPassThru*, uint> Release;
+
+            [NativeTypeName("HRESULT (BOOL, IPin *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISeekingPassThru*, BOOL, IPin*, int> Init;
+        }
     }
 }

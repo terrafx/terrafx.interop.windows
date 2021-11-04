@@ -73,5 +73,32 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<ISyncMgrConflict*, Guid*, void**, int>)(lpVtbl[7]))((ISyncMgrConflict*)Unsafe.AsPointer(ref this), riid, ppvResolutionHandler);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISyncMgrConflict*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ISyncMgrConflict*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ISyncMgrConflict*, uint> Release;
+
+            [NativeTypeName("HRESULT (const PROPERTYKEY &, PROPVARIANT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISyncMgrConflict*, PROPERTYKEY*, PROPVARIANT*, int> GetProperty;
+
+            [NativeTypeName("HRESULT (SYNCMGR_CONFLICT_ID_INFO *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISyncMgrConflict*, SYNCMGR_CONFLICT_ID_INFO*, int> GetConflictIdInfo;
+
+            [NativeTypeName("HRESULT (ISyncMgrConflictItems **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISyncMgrConflict*, ISyncMgrConflictItems**, int> GetItemsArray;
+
+            [NativeTypeName("HRESULT (ISyncMgrConflictResolveInfo *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISyncMgrConflict*, ISyncMgrConflictResolveInfo*, int> Resolve;
+
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISyncMgrConflict*, Guid*, void**, int> GetResolutionHandler;
+        }
     }
 }

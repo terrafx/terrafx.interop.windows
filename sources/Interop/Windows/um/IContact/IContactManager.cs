@@ -80,5 +80,35 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IContactManager*, IContactCollection**, int>)(lpVtbl[8]))((IContactManager*)Unsafe.AsPointer(ref this), ppContactCollection);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IContactManager*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IContactManager*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IContactManager*, uint> Release;
+
+            [NativeTypeName("HRESULT (LPCWSTR, LPCWSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IContactManager*, ushort*, ushort*, int> Initialize;
+
+            [NativeTypeName("HRESULT (LPCWSTR, IContact **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IContactManager*, ushort*, IContact**, int> Load;
+
+            [NativeTypeName("HRESULT (LPCWSTR, LPCWSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IContactManager*, ushort*, ushort*, int> MergeContactIDs;
+
+            [NativeTypeName("HRESULT (IContact **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IContactManager*, IContact**, int> GetMeContact;
+
+            [NativeTypeName("HRESULT (IContact *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IContactManager*, IContact*, int> SetMeContact;
+
+            [NativeTypeName("HRESULT (IContactCollection **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IContactManager*, IContactCollection**, int> GetContactCollection;
+        }
     }
 }

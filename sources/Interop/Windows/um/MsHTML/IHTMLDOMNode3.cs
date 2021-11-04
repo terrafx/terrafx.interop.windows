@@ -185,5 +185,80 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IHTMLDOMNode3*, ushort*, VARIANT, short*, int>)(lpVtbl[23]))((IHTMLDOMNode3*)Unsafe.AsPointer(ref this), feature, version, pfisSupported);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLDOMNode3*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLDOMNode3*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLDOMNode3*, uint> Release;
+
+            [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLDOMNode3*, uint*, int> GetTypeInfoCount;
+
+            [NativeTypeName("HRESULT (UINT, LCID, ITypeInfo **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLDOMNode3*, uint, uint, ITypeInfo**, int> GetTypeInfo;
+
+            [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLDOMNode3*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+
+            [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLDOMNode3*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
+
+            [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLDOMNode3*, VARIANT, int> put_prefix;
+
+            [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLDOMNode3*, VARIANT*, int> get_prefix;
+
+            [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLDOMNode3*, VARIANT*, int> get_localName;
+
+            [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLDOMNode3*, VARIANT*, int> get_namespaceURI;
+
+            [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLDOMNode3*, VARIANT, int> put_textContent;
+
+            [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLDOMNode3*, VARIANT*, int> get_textContent;
+
+            [NativeTypeName("HRESULT (IHTMLDOMNode3 *, VARIANT_BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLDOMNode3*, IHTMLDOMNode3*, short*, int> isEqualNode;
+
+            [NativeTypeName("HRESULT (VARIANT *, VARIANT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLDOMNode3*, VARIANT*, VARIANT*, int> lookupNamespaceURI;
+
+            [NativeTypeName("HRESULT (VARIANT *, VARIANT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLDOMNode3*, VARIANT*, VARIANT*, int> lookupPrefix;
+
+            [NativeTypeName("HRESULT (VARIANT *, VARIANT_BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLDOMNode3*, VARIANT*, short*, int> isDefaultNamespace;
+
+            [NativeTypeName("HRESULT (IHTMLDOMNode *, IHTMLDOMNode **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLDOMNode3*, IHTMLDOMNode*, IHTMLDOMNode**, int> appendChild;
+
+            [NativeTypeName("HRESULT (IHTMLDOMNode *, VARIANT, IHTMLDOMNode **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLDOMNode3*, IHTMLDOMNode*, VARIANT, IHTMLDOMNode**, int> insertBefore;
+
+            [NativeTypeName("HRESULT (IHTMLDOMNode *, IHTMLDOMNode **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLDOMNode3*, IHTMLDOMNode*, IHTMLDOMNode**, int> removeChild;
+
+            [NativeTypeName("HRESULT (IHTMLDOMNode *, IHTMLDOMNode *, IHTMLDOMNode **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLDOMNode3*, IHTMLDOMNode*, IHTMLDOMNode*, IHTMLDOMNode**, int> replaceChild;
+
+            [NativeTypeName("HRESULT (IHTMLDOMNode3 *, VARIANT_BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLDOMNode3*, IHTMLDOMNode3*, short*, int> isSameNode;
+
+            [NativeTypeName("HRESULT (IHTMLDOMNode *, USHORT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLDOMNode3*, IHTMLDOMNode*, ushort*, int> compareDocumentPosition;
+
+            [NativeTypeName("HRESULT (BSTR, VARIANT, VARIANT_BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLDOMNode3*, ushort*, VARIANT, short*, int> isSupported;
+        }
     }
 }

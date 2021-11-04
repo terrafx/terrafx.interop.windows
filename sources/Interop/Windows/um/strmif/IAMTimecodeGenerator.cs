@@ -80,5 +80,35 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IAMTimecodeGenerator*, TIMECODE_SAMPLE*, int>)(lpVtbl[8]))((IAMTimecodeGenerator*)Unsafe.AsPointer(ref this), pTimecodeSample);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAMTimecodeGenerator*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IAMTimecodeGenerator*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IAMTimecodeGenerator*, uint> Release;
+
+            [NativeTypeName("HRESULT (long, long *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAMTimecodeGenerator*, int, int*, int> GetTCGMode;
+
+            [NativeTypeName("HRESULT (long, long) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAMTimecodeGenerator*, int, int, int> SetTCGMode;
+
+            [NativeTypeName("HRESULT (long) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAMTimecodeGenerator*, int, int> put_VITCLine;
+
+            [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAMTimecodeGenerator*, int*, int> get_VITCLine;
+
+            [NativeTypeName("HRESULT (PTIMECODE_SAMPLE) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAMTimecodeGenerator*, TIMECODE_SAMPLE*, int> SetTimecode;
+
+            [NativeTypeName("HRESULT (PTIMECODE_SAMPLE) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAMTimecodeGenerator*, TIMECODE_SAMPLE*, int> GetTimecode;
+        }
     }
 }

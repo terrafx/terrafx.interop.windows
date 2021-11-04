@@ -38,5 +38,17 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<ID3D11LinkingNode*, uint>)(lpVtbl[2]))((ID3D11LinkingNode*)Unsafe.AsPointer(ref this));
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D11LinkingNode*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D11LinkingNode*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D11LinkingNode*, uint> Release;
+        }
     }
 }

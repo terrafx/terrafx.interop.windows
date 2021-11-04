@@ -87,5 +87,38 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IAMPluginControl*, ushort*, int>)(lpVtbl[9]))((IAMPluginControl*)Unsafe.AsPointer(ref this), dllName);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAMPluginControl*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IAMPluginControl*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IAMPluginControl*, uint> Release;
+
+            [NativeTypeName("HRESULT (const GUID &, CLSID *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAMPluginControl*, Guid*, Guid*, int> GetPreferredClsid;
+
+            [NativeTypeName("HRESULT (DWORD, GUID *, CLSID *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAMPluginControl*, uint, Guid*, Guid*, int> GetPreferredClsidByIndex;
+
+            [NativeTypeName("HRESULT (const GUID &, const CLSID *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAMPluginControl*, Guid*, Guid*, int> SetPreferredClsid;
+
+            [NativeTypeName("HRESULT (const IID &) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAMPluginControl*, Guid*, int> IsDisabled;
+
+            [NativeTypeName("HRESULT (DWORD, CLSID *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAMPluginControl*, uint, Guid*, int> GetDisabledByIndex;
+
+            [NativeTypeName("HRESULT (const IID &, BOOL) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAMPluginControl*, Guid*, BOOL, int> SetDisabled;
+
+            [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAMPluginControl*, ushort*, int> IsLegacyDisabled;
+        }
     }
 }

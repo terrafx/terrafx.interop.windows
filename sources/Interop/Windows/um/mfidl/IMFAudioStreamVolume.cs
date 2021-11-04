@@ -73,5 +73,32 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IMFAudioStreamVolume*, uint, float*, int>)(lpVtbl[7]))((IMFAudioStreamVolume*)Unsafe.AsPointer(ref this), dwCount, pfVolumes);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFAudioStreamVolume*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFAudioStreamVolume*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFAudioStreamVolume*, uint> Release;
+
+            [NativeTypeName("HRESULT (UINT32 *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFAudioStreamVolume*, uint*, int> GetChannelCount;
+
+            [NativeTypeName("HRESULT (UINT32, const float) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFAudioStreamVolume*, uint, float, int> SetChannelVolume;
+
+            [NativeTypeName("HRESULT (UINT32, float *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFAudioStreamVolume*, uint, float*, int> GetChannelVolume;
+
+            [NativeTypeName("HRESULT (UINT32, const float *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFAudioStreamVolume*, uint, float*, int> SetAllVolumes;
+
+            [NativeTypeName("HRESULT (UINT32, float *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFAudioStreamVolume*, uint, float*, int> GetAllVolumes;
+        }
     }
 }

@@ -66,5 +66,29 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IInternetProtocolSink*, HRESULT, uint, ushort*, int>)(lpVtbl[6]))((IInternetProtocolSink*)Unsafe.AsPointer(ref this), hrResult, dwError, szResult);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IInternetProtocolSink*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IInternetProtocolSink*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IInternetProtocolSink*, uint> Release;
+
+            [NativeTypeName("HRESULT (PROTOCOLDATA *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IInternetProtocolSink*, PROTOCOLDATA*, int> Switch;
+
+            [NativeTypeName("HRESULT (ULONG, LPCWSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IInternetProtocolSink*, uint, ushort*, int> ReportProgress;
+
+            [NativeTypeName("HRESULT (DWORD, ULONG, ULONG) __attribute__((stdcall))")]
+            public delegate* unmanaged<IInternetProtocolSink*, uint, uint, uint, int> ReportData;
+
+            [NativeTypeName("HRESULT (HRESULT, DWORD, LPCWSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IInternetProtocolSink*, HRESULT, uint, ushort*, int> ReportResult;
+        }
     }
 }

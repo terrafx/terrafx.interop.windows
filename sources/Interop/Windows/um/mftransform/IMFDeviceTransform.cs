@@ -178,5 +178,77 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IMFDeviceTransform*, uint, uint, int>)(lpVtbl[22]))((IMFDeviceTransform*)Unsafe.AsPointer(ref this), dwStreamIndex, dwFlags);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFDeviceTransform*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFDeviceTransform*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFDeviceTransform*, uint> Release;
+
+            [NativeTypeName("HRESULT (IMFAttributes *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFDeviceTransform*, IMFAttributes*, int> InitializeTransform;
+
+            [NativeTypeName("HRESULT (DWORD, DWORD, IMFMediaType **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFDeviceTransform*, uint, uint, IMFMediaType**, int> GetInputAvailableType;
+
+            [NativeTypeName("HRESULT (DWORD, IMFMediaType **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFDeviceTransform*, uint, IMFMediaType**, int> GetInputCurrentType;
+
+            [NativeTypeName("HRESULT (DWORD, IMFAttributes **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFDeviceTransform*, uint, IMFAttributes**, int> GetInputStreamAttributes;
+
+            [NativeTypeName("HRESULT (DWORD, DWORD, IMFMediaType **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFDeviceTransform*, uint, uint, IMFMediaType**, int> GetOutputAvailableType;
+
+            [NativeTypeName("HRESULT (DWORD, IMFMediaType **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFDeviceTransform*, uint, IMFMediaType**, int> GetOutputCurrentType;
+
+            [NativeTypeName("HRESULT (DWORD, IMFAttributes **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFDeviceTransform*, uint, IMFAttributes**, int> GetOutputStreamAttributes;
+
+            [NativeTypeName("HRESULT (DWORD *, DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFDeviceTransform*, uint*, uint*, int> GetStreamCount;
+
+            [NativeTypeName("HRESULT (DWORD, DWORD *, DWORD, DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFDeviceTransform*, uint, uint*, uint, uint*, int> GetStreamIDs;
+
+            [NativeTypeName("HRESULT (DWORD, IMFMediaEvent *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFDeviceTransform*, uint, IMFMediaEvent*, int> ProcessEvent;
+
+            [NativeTypeName("HRESULT (DWORD, IMFSample *, DWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFDeviceTransform*, uint, IMFSample*, uint, int> ProcessInput;
+
+            [NativeTypeName("HRESULT (MFT_MESSAGE_TYPE, ULONG_PTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFDeviceTransform*, MFT_MESSAGE_TYPE, nuint, int> ProcessMessage;
+
+            [NativeTypeName("HRESULT (DWORD, DWORD, MFT_OUTPUT_DATA_BUFFER *, DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFDeviceTransform*, uint, uint, MFT_OUTPUT_DATA_BUFFER*, uint*, int> ProcessOutput;
+
+            [NativeTypeName("HRESULT (DWORD, IMFMediaType *, DeviceStreamState, DWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFDeviceTransform*, uint, IMFMediaType*, DeviceStreamState, uint, int> SetInputStreamState;
+
+            [NativeTypeName("HRESULT (DWORD, DeviceStreamState *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFDeviceTransform*, uint, DeviceStreamState*, int> GetInputStreamState;
+
+            [NativeTypeName("HRESULT (DWORD, IMFMediaType *, DeviceStreamState, DWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFDeviceTransform*, uint, IMFMediaType*, DeviceStreamState, uint, int> SetOutputStreamState;
+
+            [NativeTypeName("HRESULT (DWORD, DeviceStreamState *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFDeviceTransform*, uint, DeviceStreamState*, int> GetOutputStreamState;
+
+            [NativeTypeName("HRESULT (DWORD, DeviceStreamState *, IMFMediaType **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFDeviceTransform*, uint, DeviceStreamState*, IMFMediaType**, int> GetInputStreamPreferredState;
+
+            [NativeTypeName("HRESULT (DWORD, DWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFDeviceTransform*, uint, uint, int> FlushInputStream;
+
+            [NativeTypeName("HRESULT (DWORD, DWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFDeviceTransform*, uint, uint, int> FlushOutputStream;
+        }
     }
 }

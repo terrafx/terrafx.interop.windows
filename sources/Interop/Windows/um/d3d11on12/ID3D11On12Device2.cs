@@ -80,5 +80,35 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<ID3D11On12Device2*, ID3D11Resource*, uint, ulong*, ID3D12Fence**, int>)(lpVtbl[8]))((ID3D11On12Device2*)Unsafe.AsPointer(ref this), pResource11, NumSync, pSignalValues, ppFences);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D11On12Device2*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D11On12Device2*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D11On12Device2*, uint> Release;
+
+            [NativeTypeName("HRESULT (IUnknown *, const D3D11_RESOURCE_FLAGS *, D3D12_RESOURCE_STATES, D3D12_RESOURCE_STATES, const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D11On12Device2*, IUnknown*, D3D11_RESOURCE_FLAGS*, D3D12_RESOURCE_STATES, D3D12_RESOURCE_STATES, Guid*, void**, int> CreateWrappedResource;
+
+            [NativeTypeName("void (ID3D11Resource *const *, UINT) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D11On12Device2*, ID3D11Resource**, uint, void> ReleaseWrappedResources;
+
+            [NativeTypeName("void (ID3D11Resource *const *, UINT) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D11On12Device2*, ID3D11Resource**, uint, void> AcquireWrappedResources;
+
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D11On12Device2*, Guid*, void**, int> GetD3D12Device;
+
+            [NativeTypeName("HRESULT (ID3D11Resource *, ID3D12CommandQueue *, const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D11On12Device2*, ID3D11Resource*, ID3D12CommandQueue*, Guid*, void**, int> UnwrapUnderlyingResource;
+
+            [NativeTypeName("HRESULT (ID3D11Resource *, UINT, UINT64 *, ID3D12Fence **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D11On12Device2*, ID3D11Resource*, uint, ulong*, ID3D12Fence**, int> ReturnUnderlyingResource;
+        }
     }
 }

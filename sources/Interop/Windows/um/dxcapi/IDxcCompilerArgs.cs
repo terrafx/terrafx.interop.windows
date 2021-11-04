@@ -75,5 +75,32 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IDxcCompilerArgs*, DxcDefine*, uint, int>)(lpVtbl[7]))((IDxcCompilerArgs*)Unsafe.AsPointer(ref this), pDefines, defineCount);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDxcCompilerArgs*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDxcCompilerArgs*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDxcCompilerArgs*, uint> Release;
+
+            [NativeTypeName("LPCWSTR *() __attribute__((stdcall))")]
+            public delegate* unmanaged<IDxcCompilerArgs*, ushort**> GetArguments;
+
+            [NativeTypeName("UINT32 () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDxcCompilerArgs*, uint> GetCount;
+
+            [NativeTypeName("HRESULT (LPCWSTR *, UINT32) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDxcCompilerArgs*, ushort**, uint, int> AddArguments;
+
+            [NativeTypeName("HRESULT (LPCSTR *, UINT32) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDxcCompilerArgs*, sbyte**, uint, int> AddArgumentsUTF8;
+
+            [NativeTypeName("HRESULT (const DxcDefine *, UINT32) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDxcCompilerArgs*, DxcDefine*, uint, int> AddDefines;
+        }
     }
 }

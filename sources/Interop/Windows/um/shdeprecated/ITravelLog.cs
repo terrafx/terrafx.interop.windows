@@ -116,5 +116,50 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<ITravelLog*, int>)(lpVtbl[13]))((ITravelLog*)Unsafe.AsPointer(ref this));
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITravelLog*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ITravelLog*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ITravelLog*, uint> Release;
+
+            [NativeTypeName("HRESULT (IUnknown *, BOOL) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITravelLog*, IUnknown*, BOOL, int> AddEntry;
+
+            [NativeTypeName("HRESULT (IUnknown *, BOOL) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITravelLog*, IUnknown*, BOOL, int> UpdateEntry;
+
+            [NativeTypeName("HRESULT (IUnknown *, IUnknown *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITravelLog*, IUnknown*, IUnknown*, int> UpdateExternal;
+
+            [NativeTypeName("HRESULT (IUnknown *, int) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITravelLog*, IUnknown*, int, int> Travel;
+
+            [NativeTypeName("HRESULT (IUnknown *, int, ITravelEntry **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITravelLog*, IUnknown*, int, ITravelEntry**, int> GetTravelEntry;
+
+            [NativeTypeName("HRESULT (IUnknown *, LPCITEMIDLIST, ITravelEntry **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITravelLog*, IUnknown*, ITEMIDLIST*, ITravelEntry**, int> FindTravelEntry;
+
+            [NativeTypeName("HRESULT (IUnknown *, int, int, LPWSTR, DWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITravelLog*, IUnknown*, int, int, ushort*, uint, int> GetToolTipText;
+
+            [NativeTypeName("HRESULT (IUnknown *, HMENU, int, int, int, DWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITravelLog*, IUnknown*, HMENU, int, int, int, uint, int> InsertMenuEntries;
+
+            [NativeTypeName("HRESULT (ITravelLog **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITravelLog*, ITravelLog**, int> Clone;
+
+            [NativeTypeName("DWORD (IUnknown *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITravelLog*, IUnknown*, uint> CountEntries;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<ITravelLog*, int> Revert;
+        }
     }
 }

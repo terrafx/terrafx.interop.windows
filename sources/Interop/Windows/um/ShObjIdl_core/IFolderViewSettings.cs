@@ -87,5 +87,38 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IFolderViewSettings*, uint*, int>)(lpVtbl[9]))((IFolderViewSettings*)Unsafe.AsPointer(ref this), pcVisibleRows);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFolderViewSettings*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IFolderViewSettings*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IFolderViewSettings*, uint> Release;
+
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFolderViewSettings*, Guid*, void**, int> GetColumnPropertyList;
+
+            [NativeTypeName("HRESULT (PROPERTYKEY *, BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFolderViewSettings*, PROPERTYKEY*, BOOL*, int> GetGroupByProperty;
+
+            [NativeTypeName("HRESULT (FOLDERLOGICALVIEWMODE *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFolderViewSettings*, FOLDERLOGICALVIEWMODE*, int> GetViewMode;
+
+            [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFolderViewSettings*, uint*, int> GetIconSize;
+
+            [NativeTypeName("HRESULT (FOLDERFLAGS *, FOLDERFLAGS *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFolderViewSettings*, FOLDERFLAGS*, FOLDERFLAGS*, int> GetFolderFlags;
+
+            [NativeTypeName("HRESULT (SORTCOLUMN *, UINT, UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFolderViewSettings*, SORTCOLUMN*, uint, uint*, int> GetSortColumns;
+
+            [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFolderViewSettings*, uint*, int> GetGroupSubsetCount;
+        }
     }
 }

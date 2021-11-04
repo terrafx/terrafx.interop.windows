@@ -101,5 +101,44 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IWICMetadataBlockWriter*, uint, int>)(lpVtbl[11]))((IWICMetadataBlockWriter*)Unsafe.AsPointer(ref this), nIndex);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWICMetadataBlockWriter*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IWICMetadataBlockWriter*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IWICMetadataBlockWriter*, uint> Release;
+
+            [NativeTypeName("HRESULT (GUID *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWICMetadataBlockWriter*, Guid*, int> GetContainerFormat;
+
+            [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWICMetadataBlockWriter*, uint*, int> GetCount;
+
+            [NativeTypeName("HRESULT (UINT, IWICMetadataReader **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWICMetadataBlockWriter*, uint, IWICMetadataReader**, int> GetReaderByIndex;
+
+            [NativeTypeName("HRESULT (IEnumUnknown **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWICMetadataBlockWriter*, IEnumUnknown**, int> GetEnumerator;
+
+            [NativeTypeName("HRESULT (IWICMetadataBlockReader *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWICMetadataBlockWriter*, IWICMetadataBlockReader*, int> InitializeFromBlockReader;
+
+            [NativeTypeName("HRESULT (UINT, IWICMetadataWriter **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWICMetadataBlockWriter*, uint, IWICMetadataWriter**, int> GetWriterByIndex;
+
+            [NativeTypeName("HRESULT (IWICMetadataWriter *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWICMetadataBlockWriter*, IWICMetadataWriter*, int> AddWriter;
+
+            [NativeTypeName("HRESULT (UINT, IWICMetadataWriter *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWICMetadataBlockWriter*, uint, IWICMetadataWriter*, int> SetWriterByIndex;
+
+            [NativeTypeName("HRESULT (UINT) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWICMetadataBlockWriter*, uint, int> RemoveWriterByIndex;
+        }
     }
 }

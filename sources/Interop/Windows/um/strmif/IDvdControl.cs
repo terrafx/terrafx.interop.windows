@@ -283,5 +283,122 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IDvdControl*, uint, uint, uint, int>)(lpVtbl[37]))((IDvdControl*)Unsafe.AsPointer(ref this), ulTitle, ulChapter, ulChaptersToPlay);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDvdControl*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDvdControl*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDvdControl*, uint> Release;
+
+            [NativeTypeName("HRESULT (ULONG) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDvdControl*, uint, int> TitlePlay;
+
+            [NativeTypeName("HRESULT (ULONG, ULONG) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDvdControl*, uint, uint, int> ChapterPlay;
+
+            [NativeTypeName("HRESULT (ULONG, ULONG) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDvdControl*, uint, uint, int> TimePlay;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDvdControl*, int> StopForResume;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDvdControl*, int> GoUp;
+
+            [NativeTypeName("HRESULT (ULONG) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDvdControl*, uint, int> TimeSearch;
+
+            [NativeTypeName("HRESULT (ULONG) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDvdControl*, uint, int> ChapterSearch;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDvdControl*, int> PrevPGSearch;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDvdControl*, int> TopPGSearch;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDvdControl*, int> NextPGSearch;
+
+            [NativeTypeName("HRESULT (double) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDvdControl*, double, int> ForwardScan;
+
+            [NativeTypeName("HRESULT (double) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDvdControl*, double, int> BackwardScan;
+
+            [NativeTypeName("HRESULT (DVD_MENU_ID) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDvdControl*, DVD_MENU_ID, int> MenuCall;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDvdControl*, int> Resume;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDvdControl*, int> UpperButtonSelect;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDvdControl*, int> LowerButtonSelect;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDvdControl*, int> LeftButtonSelect;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDvdControl*, int> RightButtonSelect;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDvdControl*, int> ButtonActivate;
+
+            [NativeTypeName("HRESULT (ULONG) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDvdControl*, uint, int> ButtonSelectAndActivate;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDvdControl*, int> StillOff;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDvdControl*, int> PauseOn;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDvdControl*, int> PauseOff;
+
+            [NativeTypeName("HRESULT (LCID) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDvdControl*, uint, int> MenuLanguageSelect;
+
+            [NativeTypeName("HRESULT (ULONG) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDvdControl*, uint, int> AudioStreamChange;
+
+            [NativeTypeName("HRESULT (ULONG, BOOL) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDvdControl*, uint, BOOL, int> SubpictureStreamChange;
+
+            [NativeTypeName("HRESULT (ULONG) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDvdControl*, uint, int> AngleChange;
+
+            [NativeTypeName("HRESULT (ULONG) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDvdControl*, uint, int> ParentalLevelSelect;
+
+            [NativeTypeName("HRESULT (WORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDvdControl*, ushort, int> ParentalCountrySelect;
+
+            [NativeTypeName("HRESULT (ULONG) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDvdControl*, uint, int> KaraokeAudioPresentationModeChange;
+
+            [NativeTypeName("HRESULT (ULONG) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDvdControl*, uint, int> VideoModePreferrence;
+
+            [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDvdControl*, ushort*, int> SetRoot;
+
+            [NativeTypeName("HRESULT (POINT) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDvdControl*, POINT, int> MouseActivate;
+
+            [NativeTypeName("HRESULT (POINT) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDvdControl*, POINT, int> MouseSelect;
+
+            [NativeTypeName("HRESULT (ULONG, ULONG, ULONG) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDvdControl*, uint, uint, uint, int> ChapterPlayAutoStop;
+        }
     }
 }

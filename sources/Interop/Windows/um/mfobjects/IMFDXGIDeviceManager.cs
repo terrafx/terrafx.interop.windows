@@ -87,5 +87,38 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IMFDXGIDeviceManager*, HANDLE, BOOL, int>)(lpVtbl[9]))((IMFDXGIDeviceManager*)Unsafe.AsPointer(ref this), hDevice, fSaveState);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFDXGIDeviceManager*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFDXGIDeviceManager*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFDXGIDeviceManager*, uint> Release;
+
+            [NativeTypeName("HRESULT (HANDLE) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFDXGIDeviceManager*, HANDLE, int> CloseDeviceHandle;
+
+            [NativeTypeName("HRESULT (HANDLE, const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFDXGIDeviceManager*, HANDLE, Guid*, void**, int> GetVideoService;
+
+            [NativeTypeName("HRESULT (HANDLE, const IID &, void **, BOOL) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFDXGIDeviceManager*, HANDLE, Guid*, void**, BOOL, int> LockDevice;
+
+            [NativeTypeName("HRESULT (HANDLE *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFDXGIDeviceManager*, HANDLE*, int> OpenDeviceHandle;
+
+            [NativeTypeName("HRESULT (IUnknown *, UINT) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFDXGIDeviceManager*, IUnknown*, uint, int> ResetDevice;
+
+            [NativeTypeName("HRESULT (HANDLE) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFDXGIDeviceManager*, HANDLE, int> TestDevice;
+
+            [NativeTypeName("HRESULT (HANDLE, BOOL) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFDXGIDeviceManager*, HANDLE, BOOL, int> UnlockDevice;
+        }
     }
 }

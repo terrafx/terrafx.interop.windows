@@ -87,5 +87,38 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IDiaEnumSectionContribs*, IDiaEnumSectionContribs**, int>)(lpVtbl[9]))((IDiaEnumSectionContribs*)Unsafe.AsPointer(ref this), ppenum);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaEnumSectionContribs*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaEnumSectionContribs*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaEnumSectionContribs*, uint> Release;
+
+            [NativeTypeName("HRESULT (IUnknown **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaEnumSectionContribs*, IUnknown**, int> get__NewEnum;
+
+            [NativeTypeName("HRESULT (LONG *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaEnumSectionContribs*, int*, int> get_Count;
+
+            [NativeTypeName("HRESULT (DWORD, IDiaSectionContrib **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaEnumSectionContribs*, uint, IDiaSectionContrib**, int> Item;
+
+            [NativeTypeName("HRESULT (ULONG, IDiaSectionContrib **, ULONG *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaEnumSectionContribs*, uint, IDiaSectionContrib**, uint*, int> Next;
+
+            [NativeTypeName("HRESULT (ULONG) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaEnumSectionContribs*, uint, int> Skip;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaEnumSectionContribs*, int> Reset;
+
+            [NativeTypeName("HRESULT (IDiaEnumSectionContribs **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaEnumSectionContribs*, IDiaEnumSectionContribs**, int> Clone;
+        }
     }
 }

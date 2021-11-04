@@ -66,5 +66,29 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<ISimpleAudioVolume*, BOOL*, int>)(lpVtbl[6]))((ISimpleAudioVolume*)Unsafe.AsPointer(ref this), pbMute);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISimpleAudioVolume*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ISimpleAudioVolume*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ISimpleAudioVolume*, uint> Release;
+
+            [NativeTypeName("HRESULT (float, LPCGUID) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISimpleAudioVolume*, float, Guid*, int> SetMasterVolume;
+
+            [NativeTypeName("HRESULT (float *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISimpleAudioVolume*, float*, int> GetMasterVolume;
+
+            [NativeTypeName("HRESULT (const BOOL, LPCGUID) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISimpleAudioVolume*, BOOL, Guid*, int> SetMute;
+
+            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISimpleAudioVolume*, BOOL*, int> GetMute;
+        }
     }
 }

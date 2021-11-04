@@ -45,5 +45,20 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IMFDLNASinkInit*, IMFByteStream*, BOOL, int>)(lpVtbl[3]))((IMFDLNASinkInit*)Unsafe.AsPointer(ref this), pByteStream, fPal);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFDLNASinkInit*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFDLNASinkInit*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFDLNASinkInit*, uint> Release;
+
+            [NativeTypeName("HRESULT (IMFByteStream *, BOOL) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFDLNASinkInit*, IMFByteStream*, BOOL, int> Initialize;
+        }
     }
 }

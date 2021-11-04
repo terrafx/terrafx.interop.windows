@@ -172,5 +172,74 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<ID3D11ShaderReflection*, ulong>)(lpVtbl[21]))((ID3D11ShaderReflection*)Unsafe.AsPointer(ref this));
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D11ShaderReflection*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D11ShaderReflection*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D11ShaderReflection*, uint> Release;
+
+            [NativeTypeName("HRESULT (D3D11_SHADER_DESC *) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D11ShaderReflection*, D3D11_SHADER_DESC*, int> GetDesc;
+
+            [NativeTypeName("ID3D11ShaderReflectionConstantBuffer *(UINT) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D11ShaderReflection*, uint, ID3D11ShaderReflectionConstantBuffer*> GetConstantBufferByIndex;
+
+            [NativeTypeName("ID3D11ShaderReflectionConstantBuffer *(LPCSTR) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D11ShaderReflection*, sbyte*, ID3D11ShaderReflectionConstantBuffer*> GetConstantBufferByName;
+
+            [NativeTypeName("HRESULT (UINT, D3D11_SHADER_INPUT_BIND_DESC *) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D11ShaderReflection*, uint, D3D11_SHADER_INPUT_BIND_DESC*, int> GetResourceBindingDesc;
+
+            [NativeTypeName("HRESULT (UINT, D3D11_SIGNATURE_PARAMETER_DESC *) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D11ShaderReflection*, uint, D3D11_SIGNATURE_PARAMETER_DESC*, int> GetInputParameterDesc;
+
+            [NativeTypeName("HRESULT (UINT, D3D11_SIGNATURE_PARAMETER_DESC *) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D11ShaderReflection*, uint, D3D11_SIGNATURE_PARAMETER_DESC*, int> GetOutputParameterDesc;
+
+            [NativeTypeName("HRESULT (UINT, D3D11_SIGNATURE_PARAMETER_DESC *) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D11ShaderReflection*, uint, D3D11_SIGNATURE_PARAMETER_DESC*, int> GetPatchConstantParameterDesc;
+
+            [NativeTypeName("ID3D11ShaderReflectionVariable *(LPCSTR) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D11ShaderReflection*, sbyte*, ID3D11ShaderReflectionVariable*> GetVariableByName;
+
+            [NativeTypeName("HRESULT (LPCSTR, D3D11_SHADER_INPUT_BIND_DESC *) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D11ShaderReflection*, sbyte*, D3D11_SHADER_INPUT_BIND_DESC*, int> GetResourceBindingDescByName;
+
+            [NativeTypeName("UINT () __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D11ShaderReflection*, uint> GetMovInstructionCount;
+
+            [NativeTypeName("UINT () __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D11ShaderReflection*, uint> GetMovcInstructionCount;
+
+            [NativeTypeName("UINT () __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D11ShaderReflection*, uint> GetConversionInstructionCount;
+
+            [NativeTypeName("UINT () __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D11ShaderReflection*, uint> GetBitwiseInstructionCount;
+
+            [NativeTypeName("D3D_PRIMITIVE () __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D11ShaderReflection*, D3D_PRIMITIVE> GetGSInputPrimitive;
+
+            [NativeTypeName("BOOL () __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D11ShaderReflection*, int> IsSampleFrequencyShader;
+
+            [NativeTypeName("UINT () __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D11ShaderReflection*, uint> GetNumInterfaceSlots;
+
+            [NativeTypeName("HRESULT (enum D3D_FEATURE_LEVEL *) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D11ShaderReflection*, D3D_FEATURE_LEVEL*, int> GetMinFeatureLevel;
+
+            [NativeTypeName("UINT (UINT *, UINT *, UINT *) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D11ShaderReflection*, uint*, uint*, uint*, uint> GetThreadGroupSize;
+
+            [NativeTypeName("UINT64 () __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D11ShaderReflection*, ulong> GetRequiresFlags;
+        }
     }
 }

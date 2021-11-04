@@ -87,5 +87,38 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<ITravelLogStg*, int, ITravelLogEntry**, int>)(lpVtbl[9]))((ITravelLogStg*)Unsafe.AsPointer(ref this), iOffset, ptle);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITravelLogStg*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ITravelLogStg*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ITravelLogStg*, uint> Release;
+
+            [NativeTypeName("HRESULT (LPCWSTR, LPCWSTR, ITravelLogEntry *, BOOL, ITravelLogEntry **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITravelLogStg*, ushort*, ushort*, ITravelLogEntry*, BOOL, ITravelLogEntry**, int> CreateEntry;
+
+            [NativeTypeName("HRESULT (ITravelLogEntry *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITravelLogStg*, ITravelLogEntry*, int> TravelTo;
+
+            [NativeTypeName("HRESULT (TLENUMF, IEnumTravelLogEntry **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITravelLogStg*, uint, IEnumTravelLogEntry**, int> EnumEntries;
+
+            [NativeTypeName("HRESULT (TLENUMF, LPCWSTR, IEnumTravelLogEntry **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITravelLogStg*, uint, ushort*, IEnumTravelLogEntry**, int> FindEntries;
+
+            [NativeTypeName("HRESULT (TLENUMF, DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITravelLogStg*, uint, uint*, int> GetCount;
+
+            [NativeTypeName("HRESULT (ITravelLogEntry *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITravelLogStg*, ITravelLogEntry*, int> RemoveEntry;
+
+            [NativeTypeName("HRESULT (int, ITravelLogEntry **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITravelLogStg*, int, ITravelLogEntry**, int> GetRelativeEntry;
+        }
     }
 }

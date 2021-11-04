@@ -66,5 +66,29 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IDxcContainerBuilder*, IDxcOperationResult**, int>)(lpVtbl[6]))((IDxcContainerBuilder*)Unsafe.AsPointer(ref this), ppResult);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDxcContainerBuilder*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDxcContainerBuilder*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDxcContainerBuilder*, uint> Release;
+
+            [NativeTypeName("HRESULT (IDxcBlob *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDxcContainerBuilder*, IDxcBlob*, int> Load;
+
+            [NativeTypeName("HRESULT (UINT32, IDxcBlob *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDxcContainerBuilder*, uint, IDxcBlob*, int> AddPart;
+
+            [NativeTypeName("HRESULT (UINT32) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDxcContainerBuilder*, uint, int> RemovePart;
+
+            [NativeTypeName("HRESULT (IDxcOperationResult **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDxcContainerBuilder*, IDxcOperationResult**, int> SerializeContainer;
+        }
     }
 }

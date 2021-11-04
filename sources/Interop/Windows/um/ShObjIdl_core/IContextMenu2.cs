@@ -66,5 +66,29 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IContextMenu2*, uint, WPARAM, LPARAM, int>)(lpVtbl[6]))((IContextMenu2*)Unsafe.AsPointer(ref this), uMsg, wParam, lParam);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IContextMenu2*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IContextMenu2*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IContextMenu2*, uint> Release;
+
+            [NativeTypeName("HRESULT (HMENU, UINT, UINT, UINT, UINT) __attribute__((stdcall))")]
+            public delegate* unmanaged<IContextMenu2*, HMENU, uint, uint, uint, uint, int> QueryContextMenu;
+
+            [NativeTypeName("HRESULT (CMINVOKECOMMANDINFO *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IContextMenu2*, CMINVOKECOMMANDINFO*, int> InvokeCommand;
+
+            [NativeTypeName("HRESULT (UINT_PTR, UINT, UINT *, CHAR *, UINT) __attribute__((stdcall))")]
+            public delegate* unmanaged<IContextMenu2*, nuint, uint, uint*, sbyte*, uint, int> GetCommandString;
+
+            [NativeTypeName("HRESULT (UINT, WPARAM, LPARAM) __attribute__((stdcall))")]
+            public delegate* unmanaged<IContextMenu2*, uint, WPARAM, LPARAM, int> HandleMenuMsg;
+        }
     }
 }

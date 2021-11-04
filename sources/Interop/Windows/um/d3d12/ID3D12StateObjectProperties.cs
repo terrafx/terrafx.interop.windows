@@ -68,5 +68,29 @@ namespace TerraFX.Interop
         {
             ((delegate* unmanaged<ID3D12StateObjectProperties*, ulong, void>)(lpVtbl[6]))((ID3D12StateObjectProperties*)Unsafe.AsPointer(ref this), PipelineStackSizeInBytes);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D12StateObjectProperties*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D12StateObjectProperties*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D12StateObjectProperties*, uint> Release;
+
+            [NativeTypeName("void *(LPCWSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D12StateObjectProperties*, ushort*, void*> GetShaderIdentifier;
+
+            [NativeTypeName("UINT64 (LPCWSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D12StateObjectProperties*, ushort*, ulong> GetShaderStackSize;
+
+            [NativeTypeName("UINT64 () __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D12StateObjectProperties*, ulong> GetPipelineStackSize;
+
+            [NativeTypeName("void (UINT64) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D12StateObjectProperties*, ulong, void> SetPipelineStackSize;
+        }
     }
 }

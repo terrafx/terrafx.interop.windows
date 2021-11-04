@@ -311,5 +311,134 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IDvdInfo2*, uint, BOOL*, int>)(lpVtbl[41]))((IDvdInfo2*)Unsafe.AsPointer(ref this), ulStreamNum, pbEnabled);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDvdInfo2*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDvdInfo2*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDvdInfo2*, uint> Release;
+
+            [NativeTypeName("HRESULT (DVD_DOMAIN *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDvdInfo2*, DVD_DOMAIN*, int> GetCurrentDomain;
+
+            [NativeTypeName("HRESULT (DVD_PLAYBACK_LOCATION2 *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDvdInfo2*, DVD_PLAYBACK_LOCATION2*, int> GetCurrentLocation;
+
+            [NativeTypeName("HRESULT (DVD_HMSF_TIMECODE *, ULONG *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDvdInfo2*, DVD_HMSF_TIMECODE*, uint*, int> GetTotalTitleTime;
+
+            [NativeTypeName("HRESULT (ULONG *, ULONG *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDvdInfo2*, uint*, uint*, int> GetCurrentButton;
+
+            [NativeTypeName("HRESULT (ULONG *, ULONG *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDvdInfo2*, uint*, uint*, int> GetCurrentAngle;
+
+            [NativeTypeName("HRESULT (ULONG *, ULONG *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDvdInfo2*, uint*, uint*, int> GetCurrentAudio;
+
+            [NativeTypeName("HRESULT (ULONG *, ULONG *, BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDvdInfo2*, uint*, uint*, BOOL*, int> GetCurrentSubpicture;
+
+            [NativeTypeName("HRESULT (ULONG *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDvdInfo2*, uint*, int> GetCurrentUOPS;
+
+            [NativeTypeName("HRESULT (SPRMARRAY *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDvdInfo2*, ushort**, int> GetAllSPRMs;
+
+            [NativeTypeName("HRESULT (GPRMARRAY *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDvdInfo2*, ushort**, int> GetAllGPRMs;
+
+            [NativeTypeName("HRESULT (ULONG, LCID *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDvdInfo2*, uint, uint*, int> GetAudioLanguage;
+
+            [NativeTypeName("HRESULT (ULONG, LCID *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDvdInfo2*, uint, uint*, int> GetSubpictureLanguage;
+
+            [NativeTypeName("HRESULT (ULONG, DVD_MenuAttributes *, DVD_TitleAttributes *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDvdInfo2*, uint, DVD_MenuAttributes*, DVD_TitleAttributes*, int> GetTitleAttributes;
+
+            [NativeTypeName("HRESULT (DVD_MenuAttributes *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDvdInfo2*, DVD_MenuAttributes*, int> GetVMGAttributes;
+
+            [NativeTypeName("HRESULT (DVD_VideoAttributes *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDvdInfo2*, DVD_VideoAttributes*, int> GetCurrentVideoAttributes;
+
+            [NativeTypeName("HRESULT (ULONG, DVD_AudioAttributes *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDvdInfo2*, uint, DVD_AudioAttributes*, int> GetAudioAttributes;
+
+            [NativeTypeName("HRESULT (ULONG, DVD_KaraokeAttributes *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDvdInfo2*, uint, DVD_KaraokeAttributes*, int> GetKaraokeAttributes;
+
+            [NativeTypeName("HRESULT (ULONG, DVD_SubpictureAttributes *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDvdInfo2*, uint, DVD_SubpictureAttributes*, int> GetSubpictureAttributes;
+
+            [NativeTypeName("HRESULT (ULONG *, ULONG *, DVD_DISC_SIDE *, ULONG *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDvdInfo2*, uint*, uint*, DVD_DISC_SIDE*, uint*, int> GetDVDVolumeInfo;
+
+            [NativeTypeName("HRESULT (ULONG *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDvdInfo2*, uint*, int> GetDVDTextNumberOfLanguages;
+
+            [NativeTypeName("HRESULT (ULONG, ULONG *, LCID *, enum DVD_TextCharSet *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDvdInfo2*, uint, uint*, uint*, DVD_TextCharSet*, int> GetDVDTextLanguageInfo;
+
+            [NativeTypeName("HRESULT (ULONG, ULONG, BYTE *, ULONG, ULONG *, enum DVD_TextStringType *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDvdInfo2*, uint, uint, byte*, uint, uint*, DVD_TextStringType*, int> GetDVDTextStringAsNative;
+
+            [NativeTypeName("HRESULT (ULONG, ULONG, WCHAR *, ULONG, ULONG *, enum DVD_TextStringType *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDvdInfo2*, uint, uint, ushort*, uint, uint*, DVD_TextStringType*, int> GetDVDTextStringAsUnicode;
+
+            [NativeTypeName("HRESULT (ULONG *, BYTE *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDvdInfo2*, uint*, byte*, int> GetPlayerParentalLevel;
+
+            [NativeTypeName("HRESULT (ULONG, ULONG *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDvdInfo2*, uint, uint*, int> GetNumberOfChapters;
+
+            [NativeTypeName("HRESULT (ULONG, ULONG *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDvdInfo2*, uint, uint*, int> GetTitleParentalLevels;
+
+            [NativeTypeName("HRESULT (LPWSTR, ULONG, ULONG *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDvdInfo2*, ushort*, uint, uint*, int> GetDVDDirectory;
+
+            [NativeTypeName("HRESULT (ULONG, BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDvdInfo2*, uint, BOOL*, int> IsAudioStreamEnabled;
+
+            [NativeTypeName("HRESULT (LPCWSTR, ULONGLONG *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDvdInfo2*, ushort*, ulong*, int> GetDiscID;
+
+            [NativeTypeName("HRESULT (IDvdState **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDvdInfo2*, IDvdState**, int> GetState;
+
+            [NativeTypeName("HRESULT (LCID *, ULONG, ULONG *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDvdInfo2*, uint*, uint, uint*, int> GetMenuLanguages;
+
+            [NativeTypeName("HRESULT (POINT, ULONG *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDvdInfo2*, POINT, uint*, int> GetButtonAtPosition;
+
+            [NativeTypeName("HRESULT (LONG_PTR, IDvdCmd **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDvdInfo2*, nint, IDvdCmd**, int> GetCmdFromEvent;
+
+            [NativeTypeName("HRESULT (LCID *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDvdInfo2*, uint*, int> GetDefaultMenuLanguage;
+
+            [NativeTypeName("HRESULT (LCID *, DVD_AUDIO_LANG_EXT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDvdInfo2*, uint*, DVD_AUDIO_LANG_EXT*, int> GetDefaultAudioLanguage;
+
+            [NativeTypeName("HRESULT (LCID *, DVD_SUBPICTURE_LANG_EXT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDvdInfo2*, uint*, DVD_SUBPICTURE_LANG_EXT*, int> GetDefaultSubpictureLanguage;
+
+            [NativeTypeName("HRESULT (DVD_DECODER_CAPS *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDvdInfo2*, DVD_DECODER_CAPS*, int> GetDecoderCaps;
+
+            [NativeTypeName("HRESULT (ULONG, RECT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDvdInfo2*, uint, RECT*, int> GetButtonRect;
+
+            [NativeTypeName("HRESULT (ULONG, BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDvdInfo2*, uint, BOOL*, int> IsSubpictureStreamEnabled;
+        }
     }
 }

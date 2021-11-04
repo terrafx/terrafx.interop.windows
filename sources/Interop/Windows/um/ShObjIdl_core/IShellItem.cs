@@ -73,5 +73,32 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IShellItem*, IShellItem*, uint, int*, int>)(lpVtbl[7]))((IShellItem*)Unsafe.AsPointer(ref this), psi, hint, piOrder);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellItem*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellItem*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellItem*, uint> Release;
+
+            [NativeTypeName("HRESULT (IBindCtx *, const GUID &, const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellItem*, IBindCtx*, Guid*, Guid*, void**, int> BindToHandler;
+
+            [NativeTypeName("HRESULT (IShellItem **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellItem*, IShellItem**, int> GetParent;
+
+            [NativeTypeName("HRESULT (SIGDN, LPWSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellItem*, SIGDN, ushort**, int> GetDisplayName;
+
+            [NativeTypeName("HRESULT (SFGAOF, SFGAOF *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellItem*, uint, uint*, int> GetAttributes;
+
+            [NativeTypeName("HRESULT (IShellItem *, SICHINTF, int *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellItem*, IShellItem*, uint, int*, int> Compare;
+        }
     }
 }

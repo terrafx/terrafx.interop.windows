@@ -255,5 +255,110 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IHTMLOptionsHolder*, ushort**, int>)(lpVtbl[33]))((IHTMLOptionsHolder*)Unsafe.AsPointer(ref this), p);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLOptionsHolder*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLOptionsHolder*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLOptionsHolder*, uint> Release;
+
+            [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLOptionsHolder*, uint*, int> GetTypeInfoCount;
+
+            [NativeTypeName("HRESULT (UINT, LCID, ITypeInfo **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLOptionsHolder*, uint, uint, ITypeInfo**, int> GetTypeInfo;
+
+            [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLOptionsHolder*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+
+            [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLOptionsHolder*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
+
+            [NativeTypeName("HRESULT (IHTMLDocument2 **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLOptionsHolder*, IHTMLDocument2**, int> get_document;
+
+            [NativeTypeName("HRESULT (IHTMLFontNamesCollection **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLOptionsHolder*, IHTMLFontNamesCollection**, int> get_fonts;
+
+            [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLOptionsHolder*, VARIANT, int> put_execArg;
+
+            [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLOptionsHolder*, VARIANT*, int> get_execArg;
+
+            [NativeTypeName("HRESULT (long) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLOptionsHolder*, int, int> put_errorLine;
+
+            [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLOptionsHolder*, int*, int> get_errorLine;
+
+            [NativeTypeName("HRESULT (long) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLOptionsHolder*, int, int> put_errorCharacter;
+
+            [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLOptionsHolder*, int*, int> get_errorCharacter;
+
+            [NativeTypeName("HRESULT (long) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLOptionsHolder*, int, int> put_errorCode;
+
+            [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLOptionsHolder*, int*, int> get_errorCode;
+
+            [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLOptionsHolder*, ushort*, int> put_errorMessage;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLOptionsHolder*, ushort**, int> get_errorMessage;
+
+            [NativeTypeName("HRESULT (VARIANT_BOOL) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLOptionsHolder*, short, int> put_errorDebug;
+
+            [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLOptionsHolder*, short*, int> get_errorDebug;
+
+            [NativeTypeName("HRESULT (IHTMLWindow2 **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLOptionsHolder*, IHTMLWindow2**, int> get_unsecuredWindowOfDocument;
+
+            [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLOptionsHolder*, ushort*, int> put_findText;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLOptionsHolder*, ushort**, int> get_findText;
+
+            [NativeTypeName("HRESULT (VARIANT_BOOL) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLOptionsHolder*, short, int> put_anythingAfterFrameset;
+
+            [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLOptionsHolder*, short*, int> get_anythingAfterFrameset;
+
+            [NativeTypeName("HRESULT (BSTR, IHTMLFontSizesCollection **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLOptionsHolder*, ushort*, IHTMLFontSizesCollection**, int> sizes;
+
+            [NativeTypeName("HRESULT (VARIANT, VARIANT, VARIANT, VARIANT, BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLOptionsHolder*, VARIANT, VARIANT, VARIANT, VARIANT, ushort**, int> openfiledlg;
+
+            [NativeTypeName("HRESULT (VARIANT, VARIANT, VARIANT, VARIANT, BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLOptionsHolder*, VARIANT, VARIANT, VARIANT, VARIANT, ushort**, int> savefiledlg;
+
+            [NativeTypeName("HRESULT (VARIANT, long *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLOptionsHolder*, VARIANT, int*, int> choosecolordlg;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLOptionsHolder*, int> showSecurityInfo;
+
+            [NativeTypeName("HRESULT (IHTMLObjectElement *, VARIANT_BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLOptionsHolder*, IHTMLObjectElement*, short*, int> isApartmentModel;
+
+            [NativeTypeName("HRESULT (BSTR, long *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLOptionsHolder*, ushort*, int*, int> getCharset;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLOptionsHolder*, ushort**, int> get_secureConnectionInfo;
+        }
     }
 }

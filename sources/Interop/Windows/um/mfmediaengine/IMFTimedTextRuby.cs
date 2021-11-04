@@ -66,5 +66,29 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IMFTimedTextRuby*, MF_TIMED_TEXT_RUBY_RESERVE*, int>)(lpVtbl[6]))((IMFTimedTextRuby*)Unsafe.AsPointer(ref this), value);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFTimedTextRuby*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFTimedTextRuby*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFTimedTextRuby*, uint> Release;
+
+            [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFTimedTextRuby*, ushort**, int> GetRubyText;
+
+            [NativeTypeName("HRESULT (MF_TIMED_TEXT_RUBY_POSITION *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFTimedTextRuby*, MF_TIMED_TEXT_RUBY_POSITION*, int> GetRubyPosition;
+
+            [NativeTypeName("HRESULT (MF_TIMED_TEXT_RUBY_ALIGN *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFTimedTextRuby*, MF_TIMED_TEXT_RUBY_ALIGN*, int> GetRubyAlign;
+
+            [NativeTypeName("HRESULT (MF_TIMED_TEXT_RUBY_RESERVE *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFTimedTextRuby*, MF_TIMED_TEXT_RUBY_RESERVE*, int> GetRubyReserve;
+        }
     }
 }

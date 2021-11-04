@@ -80,5 +80,35 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<ICatRegister*, Guid*, uint, Guid*, int>)(lpVtbl[8]))((ICatRegister*)Unsafe.AsPointer(ref this), rclsid, cCategories, rgcatid);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ICatRegister*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ICatRegister*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ICatRegister*, uint> Release;
+
+            [NativeTypeName("HRESULT (ULONG, CATEGORYINFO *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ICatRegister*, uint, CATEGORYINFO*, int> RegisterCategories;
+
+            [NativeTypeName("HRESULT (ULONG, CATID *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ICatRegister*, uint, Guid*, int> UnRegisterCategories;
+
+            [NativeTypeName("HRESULT (const IID &, ULONG, CATID *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ICatRegister*, Guid*, uint, Guid*, int> RegisterClassImplCategories;
+
+            [NativeTypeName("HRESULT (const IID &, ULONG, CATID *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ICatRegister*, Guid*, uint, Guid*, int> UnRegisterClassImplCategories;
+
+            [NativeTypeName("HRESULT (const IID &, ULONG, CATID *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ICatRegister*, Guid*, uint, Guid*, int> RegisterClassReqCategories;
+
+            [NativeTypeName("HRESULT (const IID &, ULONG, CATID *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ICatRegister*, Guid*, uint, Guid*, int> UnRegisterClassReqCategories;
+        }
     }
 }

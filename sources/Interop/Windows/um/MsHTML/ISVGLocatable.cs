@@ -108,5 +108,47 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<ISVGLocatable*, ISVGElement*, ISVGMatrix**, int>)(lpVtbl[12]))((ISVGLocatable*)Unsafe.AsPointer(ref this), pElement, ppResult);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISVGLocatable*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ISVGLocatable*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ISVGLocatable*, uint> Release;
+
+            [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISVGLocatable*, uint*, int> GetTypeInfoCount;
+
+            [NativeTypeName("HRESULT (UINT, LCID, ITypeInfo **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISVGLocatable*, uint, uint, ITypeInfo**, int> GetTypeInfo;
+
+            [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISVGLocatable*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+
+            [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISVGLocatable*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
+
+            [NativeTypeName("HRESULT (ISVGElement **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISVGLocatable*, ISVGElement**, int> get_nearestViewportElement;
+
+            [NativeTypeName("HRESULT (ISVGElement **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISVGLocatable*, ISVGElement**, int> get_farthestViewportElement;
+
+            [NativeTypeName("HRESULT (ISVGRect **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISVGLocatable*, ISVGRect**, int> getBBox;
+
+            [NativeTypeName("HRESULT (ISVGMatrix **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISVGLocatable*, ISVGMatrix**, int> getCTM;
+
+            [NativeTypeName("HRESULT (ISVGMatrix **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISVGLocatable*, ISVGMatrix**, int> getScreenCTM;
+
+            [NativeTypeName("HRESULT (ISVGElement *, ISVGMatrix **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISVGLocatable*, ISVGElement*, ISVGMatrix**, int> getTransformToElement;
+        }
     }
 }

@@ -122,5 +122,53 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<FolderItems3*, FolderItemVerbs**, int>)(lpVtbl[14]))((FolderItems3*)Unsafe.AsPointer(ref this), ppfic);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<FolderItems3*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<FolderItems3*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<FolderItems3*, uint> Release;
+
+            [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<FolderItems3*, uint*, int> GetTypeInfoCount;
+
+            [NativeTypeName("HRESULT (UINT, LCID, ITypeInfo **) __attribute__((stdcall))")]
+            public delegate* unmanaged<FolderItems3*, uint, uint, ITypeInfo**, int> GetTypeInfo;
+
+            [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
+            public delegate* unmanaged<FolderItems3*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+
+            [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<FolderItems3*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
+
+            [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
+            public delegate* unmanaged<FolderItems3*, int*, int> get_Count;
+
+            [NativeTypeName("HRESULT (IDispatch **) __attribute__((stdcall))")]
+            public delegate* unmanaged<FolderItems3*, IDispatch**, int> get_Application;
+
+            [NativeTypeName("HRESULT (IDispatch **) __attribute__((stdcall))")]
+            public delegate* unmanaged<FolderItems3*, IDispatch**, int> get_Parent;
+
+            [NativeTypeName("HRESULT (VARIANT, FolderItem **) __attribute__((stdcall))")]
+            public delegate* unmanaged<FolderItems3*, VARIANT, FolderItem**, int> Item;
+
+            [NativeTypeName("HRESULT (IUnknown **) __attribute__((stdcall))")]
+            public delegate* unmanaged<FolderItems3*, IUnknown**, int> _NewEnum;
+
+            [NativeTypeName("HRESULT (VARIANT, VARIANT) __attribute__((stdcall))")]
+            public delegate* unmanaged<FolderItems3*, VARIANT, VARIANT, int> InvokeVerbEx;
+
+            [NativeTypeName("HRESULT (long, BSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<FolderItems3*, int, ushort*, int> Filter;
+
+            [NativeTypeName("HRESULT (FolderItemVerbs **) __attribute__((stdcall))")]
+            public delegate* unmanaged<FolderItems3*, FolderItemVerbs**, int> get_Verbs;
+        }
     }
 }

@@ -59,5 +59,26 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<INamedPropertyBag*, ushort*, ushort*, int>)(lpVtbl[5]))((INamedPropertyBag*)Unsafe.AsPointer(ref this), pszBagname, pszPropName);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<INamedPropertyBag*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<INamedPropertyBag*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<INamedPropertyBag*, uint> Release;
+
+            [NativeTypeName("HRESULT (PCWSTR, PCWSTR, PROPVARIANT *) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<INamedPropertyBag*, ushort*, ushort*, PROPVARIANT*, int> ReadPropertyNPB;
+
+            [NativeTypeName("HRESULT (PCWSTR, PCWSTR, PROPVARIANT *) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<INamedPropertyBag*, ushort*, ushort*, PROPVARIANT*, int> WritePropertyNPB;
+
+            [NativeTypeName("HRESULT (PCWSTR, PCWSTR) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<INamedPropertyBag*, ushort*, ushort*, int> RemovePropertyNPB;
+        }
     }
 }

@@ -52,5 +52,23 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IKsFormatSupport*, KSDATAFORMAT**, int>)(lpVtbl[4]))((IKsFormatSupport*)Unsafe.AsPointer(ref this), ppKsFormat);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IKsFormatSupport*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IKsFormatSupport*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IKsFormatSupport*, uint> Release;
+
+            [NativeTypeName("HRESULT (PKSDATAFORMAT, DWORD, BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IKsFormatSupport*, KSDATAFORMAT*, uint, BOOL*, int> IsFormatSupported;
+
+            [NativeTypeName("HRESULT (PKSDATAFORMAT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IKsFormatSupport*, KSDATAFORMAT**, int> GetDevicePreferredFormat;
+        }
     }
 }

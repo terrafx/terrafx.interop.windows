@@ -52,5 +52,23 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IQueueCommand*, IDeferredCommand**, double, Guid*, int, short, int, VARIANT*, VARIANT*, short*, int>)(lpVtbl[4]))((IQueueCommand*)Unsafe.AsPointer(ref this), pCmd, time, iid, dispidMethod, wFlags, cArgs, pDispParams, pvarResult, puArgErr);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IQueueCommand*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IQueueCommand*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IQueueCommand*, uint> Release;
+
+            [NativeTypeName("HRESULT (IDeferredCommand **, REFTIME, GUID *, long, short, long, VARIANT *, VARIANT *, short *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IQueueCommand*, IDeferredCommand**, double, Guid*, int, short, int, VARIANT*, VARIANT*, short*, int> InvokeAtStreamTime;
+
+            [NativeTypeName("HRESULT (IDeferredCommand **, REFTIME, GUID *, long, short, long, VARIANT *, VARIANT *, short *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IQueueCommand*, IDeferredCommand**, double, Guid*, int, short, int, VARIANT*, VARIANT*, short*, int> InvokeAtPresentationTime;
+        }
     }
 }

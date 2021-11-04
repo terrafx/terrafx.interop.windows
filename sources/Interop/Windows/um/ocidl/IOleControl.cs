@@ -66,5 +66,29 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IOleControl*, BOOL, int>)(lpVtbl[6]))((IOleControl*)Unsafe.AsPointer(ref this), bFreeze);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IOleControl*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IOleControl*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IOleControl*, uint> Release;
+
+            [NativeTypeName("HRESULT (CONTROLINFO *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IOleControl*, CONTROLINFO*, int> GetControlInfo;
+
+            [NativeTypeName("HRESULT (MSG *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IOleControl*, MSG*, int> OnMnemonic;
+
+            [NativeTypeName("HRESULT (DISPID) __attribute__((stdcall))")]
+            public delegate* unmanaged<IOleControl*, int, int> OnAmbientPropertyChange;
+
+            [NativeTypeName("HRESULT (BOOL) __attribute__((stdcall))")]
+            public delegate* unmanaged<IOleControl*, BOOL, int> FreezeEvents;
+        }
     }
 }

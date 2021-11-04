@@ -54,5 +54,23 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<ID3DBlob*, nuint>)(lpVtbl[4]))((ID3DBlob*)Unsafe.AsPointer(ref this));
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3DBlob*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3DBlob*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3DBlob*, uint> Release;
+
+            [NativeTypeName("LPVOID () __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3DBlob*, void*> GetBufferPointer;
+
+            [NativeTypeName("SIZE_T () __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3DBlob*, nuint> GetBufferSize;
+        }
     }
 }

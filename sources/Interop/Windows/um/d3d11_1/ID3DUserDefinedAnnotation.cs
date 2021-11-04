@@ -66,5 +66,29 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<ID3DUserDefinedAnnotation*, int>)(lpVtbl[6]))((ID3DUserDefinedAnnotation*)Unsafe.AsPointer(ref this));
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3DUserDefinedAnnotation*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3DUserDefinedAnnotation*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3DUserDefinedAnnotation*, uint> Release;
+
+            [NativeTypeName("INT (LPCWSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3DUserDefinedAnnotation*, ushort*, int> BeginEvent;
+
+            [NativeTypeName("INT () __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3DUserDefinedAnnotation*, int> EndEvent;
+
+            [NativeTypeName("void (LPCWSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3DUserDefinedAnnotation*, ushort*, void> SetMarker;
+
+            [NativeTypeName("BOOL () __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3DUserDefinedAnnotation*, int> GetStatus;
+        }
     }
 }

@@ -227,5 +227,98 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<ISVGMatrix*, float, ISVGMatrix**, int>)(lpVtbl[29]))((ISVGMatrix*)Unsafe.AsPointer(ref this), angle, ppResult);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISVGMatrix*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ISVGMatrix*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ISVGMatrix*, uint> Release;
+
+            [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISVGMatrix*, uint*, int> GetTypeInfoCount;
+
+            [NativeTypeName("HRESULT (UINT, LCID, ITypeInfo **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISVGMatrix*, uint, uint, ITypeInfo**, int> GetTypeInfo;
+
+            [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISVGMatrix*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+
+            [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISVGMatrix*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
+
+            [NativeTypeName("HRESULT (float) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISVGMatrix*, float, int> put_a;
+
+            [NativeTypeName("HRESULT (float *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISVGMatrix*, float*, int> get_a;
+
+            [NativeTypeName("HRESULT (float) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISVGMatrix*, float, int> put_b;
+
+            [NativeTypeName("HRESULT (float *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISVGMatrix*, float*, int> get_b;
+
+            [NativeTypeName("HRESULT (float) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISVGMatrix*, float, int> put_c;
+
+            [NativeTypeName("HRESULT (float *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISVGMatrix*, float*, int> get_c;
+
+            [NativeTypeName("HRESULT (float) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISVGMatrix*, float, int> put_d;
+
+            [NativeTypeName("HRESULT (float *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISVGMatrix*, float*, int> get_d;
+
+            [NativeTypeName("HRESULT (float) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISVGMatrix*, float, int> put_e;
+
+            [NativeTypeName("HRESULT (float *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISVGMatrix*, float*, int> get_e;
+
+            [NativeTypeName("HRESULT (float) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISVGMatrix*, float, int> put_f;
+
+            [NativeTypeName("HRESULT (float *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISVGMatrix*, float*, int> get_f;
+
+            [NativeTypeName("HRESULT (ISVGMatrix *, ISVGMatrix **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISVGMatrix*, ISVGMatrix*, ISVGMatrix**, int> multiply;
+
+            [NativeTypeName("HRESULT (ISVGMatrix **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISVGMatrix*, ISVGMatrix**, int> inverse;
+
+            [NativeTypeName("HRESULT (float, float, ISVGMatrix **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISVGMatrix*, float, float, ISVGMatrix**, int> translate;
+
+            [NativeTypeName("HRESULT (float, ISVGMatrix **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISVGMatrix*, float, ISVGMatrix**, int> scale;
+
+            [NativeTypeName("HRESULT (float, float, ISVGMatrix **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISVGMatrix*, float, float, ISVGMatrix**, int> scaleNonUniform;
+
+            [NativeTypeName("HRESULT (float, ISVGMatrix **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISVGMatrix*, float, ISVGMatrix**, int> rotate;
+
+            [NativeTypeName("HRESULT (float, float, ISVGMatrix **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISVGMatrix*, float, float, ISVGMatrix**, int> rotateFromVector;
+
+            [NativeTypeName("HRESULT (ISVGMatrix **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISVGMatrix*, ISVGMatrix**, int> flipX;
+
+            [NativeTypeName("HRESULT (ISVGMatrix **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISVGMatrix*, ISVGMatrix**, int> flipY;
+
+            [NativeTypeName("HRESULT (float, ISVGMatrix **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISVGMatrix*, float, ISVGMatrix**, int> skewX;
+
+            [NativeTypeName("HRESULT (float, ISVGMatrix **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISVGMatrix*, float, ISVGMatrix**, int> skewY;
+        }
     }
 }

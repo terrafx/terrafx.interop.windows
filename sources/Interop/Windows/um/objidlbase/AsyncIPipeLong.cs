@@ -66,5 +66,29 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<AsyncIPipeLong*, int>)(lpVtbl[6]))((AsyncIPipeLong*)Unsafe.AsPointer(ref this));
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<AsyncIPipeLong*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<AsyncIPipeLong*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<AsyncIPipeLong*, uint> Release;
+
+            [NativeTypeName("HRESULT (ULONG) __attribute__((stdcall))")]
+            public delegate* unmanaged<AsyncIPipeLong*, uint, int> Begin_Pull;
+
+            [NativeTypeName("HRESULT (LONG *, ULONG *) __attribute__((stdcall))")]
+            public delegate* unmanaged<AsyncIPipeLong*, int*, uint*, int> Finish_Pull;
+
+            [NativeTypeName("HRESULT (LONG *, ULONG) __attribute__((stdcall))")]
+            public delegate* unmanaged<AsyncIPipeLong*, int*, uint, int> Begin_Push;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<AsyncIPipeLong*, int> Finish_Push;
+        }
     }
 }

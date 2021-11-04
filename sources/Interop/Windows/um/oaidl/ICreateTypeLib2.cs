@@ -136,5 +136,59 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<ICreateTypeLib2*, ushort*, int>)(lpVtbl[16]))((ICreateTypeLib2*)Unsafe.AsPointer(ref this), szFileName);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ICreateTypeLib2*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ICreateTypeLib2*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ICreateTypeLib2*, uint> Release;
+
+            [NativeTypeName("HRESULT (LPOLESTR, TYPEKIND, ICreateTypeInfo **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ICreateTypeLib2*, ushort*, TYPEKIND, ICreateTypeInfo**, int> CreateTypeInfo;
+
+            [NativeTypeName("HRESULT (LPOLESTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<ICreateTypeLib2*, ushort*, int> SetName;
+
+            [NativeTypeName("HRESULT (WORD, WORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<ICreateTypeLib2*, ushort, ushort, int> SetVersion;
+
+            [NativeTypeName("HRESULT (const GUID &) __attribute__((stdcall))")]
+            public delegate* unmanaged<ICreateTypeLib2*, Guid*, int> SetGuid;
+
+            [NativeTypeName("HRESULT (LPOLESTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<ICreateTypeLib2*, ushort*, int> SetDocString;
+
+            [NativeTypeName("HRESULT (LPOLESTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<ICreateTypeLib2*, ushort*, int> SetHelpFileName;
+
+            [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<ICreateTypeLib2*, uint, int> SetHelpContext;
+
+            [NativeTypeName("HRESULT (LCID) __attribute__((stdcall))")]
+            public delegate* unmanaged<ICreateTypeLib2*, uint, int> SetLcid;
+
+            [NativeTypeName("HRESULT (UINT) __attribute__((stdcall))")]
+            public delegate* unmanaged<ICreateTypeLib2*, uint, int> SetLibFlags;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<ICreateTypeLib2*, int> SaveAllChanges;
+
+            [NativeTypeName("HRESULT (LPOLESTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<ICreateTypeLib2*, ushort*, int> DeleteTypeInfo;
+
+            [NativeTypeName("HRESULT (const GUID &, VARIANT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ICreateTypeLib2*, Guid*, VARIANT*, int> SetCustData;
+
+            [NativeTypeName("HRESULT (ULONG) __attribute__((stdcall))")]
+            public delegate* unmanaged<ICreateTypeLib2*, uint, int> SetHelpStringContext;
+
+            [NativeTypeName("HRESULT (LPOLESTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<ICreateTypeLib2*, ushort*, int> SetHelpStringDll;
+        }
     }
 }

@@ -234,5 +234,101 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IAMExtTransport*, int, int>)(lpVtbl[30]))((IAMExtTransport*)Unsafe.AsPointer(ref this), Value);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAMExtTransport*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IAMExtTransport*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IAMExtTransport*, uint> Release;
+
+            [NativeTypeName("HRESULT (long, long *, double *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAMExtTransport*, int, int*, double*, int> GetCapability;
+
+            [NativeTypeName("HRESULT (long) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAMExtTransport*, int, int> put_MediaState;
+
+            [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAMExtTransport*, int*, int> get_MediaState;
+
+            [NativeTypeName("HRESULT (long) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAMExtTransport*, int, int> put_LocalControl;
+
+            [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAMExtTransport*, int*, int> get_LocalControl;
+
+            [NativeTypeName("HRESULT (long, long *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAMExtTransport*, int, int*, int> GetStatus;
+
+            [NativeTypeName("HRESULT (long, long *, LPOLESTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAMExtTransport*, int, int*, ushort**, int> GetTransportBasicParameters;
+
+            [NativeTypeName("HRESULT (long, long, LPCOLESTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAMExtTransport*, int, int, ushort*, int> SetTransportBasicParameters;
+
+            [NativeTypeName("HRESULT (long, long *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAMExtTransport*, int, int*, int> GetTransportVideoParameters;
+
+            [NativeTypeName("HRESULT (long, long) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAMExtTransport*, int, int, int> SetTransportVideoParameters;
+
+            [NativeTypeName("HRESULT (long, long *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAMExtTransport*, int, int*, int> GetTransportAudioParameters;
+
+            [NativeTypeName("HRESULT (long, long) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAMExtTransport*, int, int, int> SetTransportAudioParameters;
+
+            [NativeTypeName("HRESULT (long) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAMExtTransport*, int, int> put_Mode;
+
+            [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAMExtTransport*, int*, int> get_Mode;
+
+            [NativeTypeName("HRESULT (double) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAMExtTransport*, double, int> put_Rate;
+
+            [NativeTypeName("HRESULT (double *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAMExtTransport*, double*, int> get_Rate;
+
+            [NativeTypeName("HRESULT (long *, long *, HEVENT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAMExtTransport*, int*, int*, HEVENT*, int> GetChase;
+
+            [NativeTypeName("HRESULT (long, long, HEVENT) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAMExtTransport*, int, int, HEVENT, int> SetChase;
+
+            [NativeTypeName("HRESULT (long *, long *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAMExtTransport*, int*, int*, int> GetBump;
+
+            [NativeTypeName("HRESULT (long, long) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAMExtTransport*, int, int, int> SetBump;
+
+            [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAMExtTransport*, int*, int> get_AntiClogControl;
+
+            [NativeTypeName("HRESULT (long) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAMExtTransport*, int, int> put_AntiClogControl;
+
+            [NativeTypeName("HRESULT (long, long *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAMExtTransport*, int, int*, int> GetEditPropertySet;
+
+            [NativeTypeName("HRESULT (long *, long) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAMExtTransport*, int*, int, int> SetEditPropertySet;
+
+            [NativeTypeName("HRESULT (long, long, long *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAMExtTransport*, int, int, int*, int> GetEditProperty;
+
+            [NativeTypeName("HRESULT (long, long, long) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAMExtTransport*, int, int, int, int> SetEditProperty;
+
+            [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAMExtTransport*, int*, int> get_EditStart;
+
+            [NativeTypeName("HRESULT (long) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAMExtTransport*, int, int> put_EditStart;
+        }
     }
 }

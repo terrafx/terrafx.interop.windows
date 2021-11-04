@@ -52,5 +52,23 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<ITfFnGetLinguisticAlternates*, ITfRange*, ITfCandidateList**, int>)(lpVtbl[4]))((ITfFnGetLinguisticAlternates*)Unsafe.AsPointer(ref this), pRange, ppCandidateList);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfFnGetLinguisticAlternates*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfFnGetLinguisticAlternates*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfFnGetLinguisticAlternates*, uint> Release;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfFnGetLinguisticAlternates*, ushort**, int> GetDisplayName;
+
+            [NativeTypeName("HRESULT (ITfRange *, ITfCandidateList **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfFnGetLinguisticAlternates*, ITfRange*, ITfCandidateList**, int> GetAlternates;
+        }
     }
 }

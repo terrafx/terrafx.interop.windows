@@ -101,5 +101,44 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IDiaEnumFrameData*, ulong, IDiaFrameData**, int>)(lpVtbl[11]))((IDiaEnumFrameData*)Unsafe.AsPointer(ref this), virtualAddress, frame);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaEnumFrameData*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaEnumFrameData*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaEnumFrameData*, uint> Release;
+
+            [NativeTypeName("HRESULT (IUnknown **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaEnumFrameData*, IUnknown**, int> get__NewEnum;
+
+            [NativeTypeName("HRESULT (LONG *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaEnumFrameData*, int*, int> get_Count;
+
+            [NativeTypeName("HRESULT (DWORD, IDiaFrameData **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaEnumFrameData*, uint, IDiaFrameData**, int> Item;
+
+            [NativeTypeName("HRESULT (ULONG, IDiaFrameData **, ULONG *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaEnumFrameData*, uint, IDiaFrameData**, uint*, int> Next;
+
+            [NativeTypeName("HRESULT (ULONG) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaEnumFrameData*, uint, int> Skip;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaEnumFrameData*, int> Reset;
+
+            [NativeTypeName("HRESULT (IDiaEnumFrameData **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaEnumFrameData*, IDiaEnumFrameData**, int> Clone;
+
+            [NativeTypeName("HRESULT (DWORD, IDiaFrameData **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaEnumFrameData*, uint, IDiaFrameData**, int> frameByRVA;
+
+            [NativeTypeName("HRESULT (ULONGLONG, IDiaFrameData **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaEnumFrameData*, ulong, IDiaFrameData**, int> frameByVA;
+        }
     }
 }

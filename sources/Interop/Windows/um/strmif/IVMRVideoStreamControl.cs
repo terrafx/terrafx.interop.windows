@@ -66,5 +66,29 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IVMRVideoStreamControl*, BOOL*, int>)(lpVtbl[6]))((IVMRVideoStreamControl*)Unsafe.AsPointer(ref this), lpfActive);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IVMRVideoStreamControl*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IVMRVideoStreamControl*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IVMRVideoStreamControl*, uint> Release;
+
+            [NativeTypeName("HRESULT (LPDDCOLORKEY) __attribute__((stdcall))")]
+            public delegate* unmanaged<IVMRVideoStreamControl*, DDCOLORKEY*, int> SetColorKey;
+
+            [NativeTypeName("HRESULT (LPDDCOLORKEY) __attribute__((stdcall))")]
+            public delegate* unmanaged<IVMRVideoStreamControl*, DDCOLORKEY*, int> GetColorKey;
+
+            [NativeTypeName("HRESULT (BOOL) __attribute__((stdcall))")]
+            public delegate* unmanaged<IVMRVideoStreamControl*, BOOL, int> SetStreamActiveState;
+
+            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IVMRVideoStreamControl*, BOOL*, int> GetStreamActiveState;
+        }
     }
 }

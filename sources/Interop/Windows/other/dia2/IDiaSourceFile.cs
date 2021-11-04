@@ -73,5 +73,32 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IDiaSourceFile*, uint, uint*, byte*, int>)(lpVtbl[7]))((IDiaSourceFile*)Unsafe.AsPointer(ref this), cbData, pcbData, pbData);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSourceFile*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSourceFile*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSourceFile*, uint> Release;
+
+            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSourceFile*, uint*, int> get_uniqueId;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSourceFile*, ushort**, int> get_fileName;
+
+            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSourceFile*, uint*, int> get_checksumType;
+
+            [NativeTypeName("HRESULT (IDiaEnumSymbols **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSourceFile*, IDiaEnumSymbols**, int> get_compilands;
+
+            [NativeTypeName("HRESULT (DWORD, DWORD *, BYTE *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSourceFile*, uint, uint*, byte*, int> get_checksum;
+        }
     }
 }

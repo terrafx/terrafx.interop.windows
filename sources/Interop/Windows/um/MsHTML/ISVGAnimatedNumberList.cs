@@ -94,5 +94,41 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<ISVGAnimatedNumberList*, ISVGNumberList**, int>)(lpVtbl[10]))((ISVGAnimatedNumberList*)Unsafe.AsPointer(ref this), p);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISVGAnimatedNumberList*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ISVGAnimatedNumberList*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ISVGAnimatedNumberList*, uint> Release;
+
+            [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISVGAnimatedNumberList*, uint*, int> GetTypeInfoCount;
+
+            [NativeTypeName("HRESULT (UINT, LCID, ITypeInfo **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISVGAnimatedNumberList*, uint, uint, ITypeInfo**, int> GetTypeInfo;
+
+            [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISVGAnimatedNumberList*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+
+            [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISVGAnimatedNumberList*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
+
+            [NativeTypeName("HRESULT (ISVGNumberList *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISVGAnimatedNumberList*, ISVGNumberList*, int> putref_baseVal;
+
+            [NativeTypeName("HRESULT (ISVGNumberList **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISVGAnimatedNumberList*, ISVGNumberList**, int> get_baseVal;
+
+            [NativeTypeName("HRESULT (ISVGNumberList *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISVGAnimatedNumberList*, ISVGNumberList*, int> putref_animVal;
+
+            [NativeTypeName("HRESULT (ISVGNumberList **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISVGAnimatedNumberList*, ISVGNumberList**, int> get_animVal;
+        }
     }
 }

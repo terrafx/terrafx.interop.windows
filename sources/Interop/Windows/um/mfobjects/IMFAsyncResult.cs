@@ -73,5 +73,32 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IMFAsyncResult*, IUnknown*>)(lpVtbl[7]))((IMFAsyncResult*)Unsafe.AsPointer(ref this));
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFAsyncResult*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFAsyncResult*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFAsyncResult*, uint> Release;
+
+            [NativeTypeName("HRESULT (IUnknown **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFAsyncResult*, IUnknown**, int> GetState;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFAsyncResult*, int> GetStatus;
+
+            [NativeTypeName("HRESULT (HRESULT) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFAsyncResult*, HRESULT, int> SetStatus;
+
+            [NativeTypeName("HRESULT (IUnknown **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFAsyncResult*, IUnknown**, int> GetObject;
+
+            [NativeTypeName("IUnknown *() __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFAsyncResult*, IUnknown*> GetStateNoAddRef;
+        }
     }
 }

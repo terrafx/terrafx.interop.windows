@@ -94,5 +94,41 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IBandSite*, BANDSITEINFO*, int>)(lpVtbl[10]))((IBandSite*)Unsafe.AsPointer(ref this), pbsinfo);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IBandSite*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IBandSite*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IBandSite*, uint> Release;
+
+            [NativeTypeName("HRESULT (IUnknown *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IBandSite*, IUnknown*, int> AddBand;
+
+            [NativeTypeName("HRESULT (UINT, DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IBandSite*, uint, uint*, int> EnumBands;
+
+            [NativeTypeName("HRESULT (DWORD, IDeskBand **, DWORD *, LPWSTR, int) __attribute__((stdcall))")]
+            public delegate* unmanaged<IBandSite*, uint, IDeskBand**, uint*, ushort*, int, int> QueryBand;
+
+            [NativeTypeName("HRESULT (DWORD, DWORD, DWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<IBandSite*, uint, uint, uint, int> SetBandState;
+
+            [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<IBandSite*, uint, int> RemoveBand;
+
+            [NativeTypeName("HRESULT (DWORD, const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IBandSite*, uint, Guid*, void**, int> GetBandObject;
+
+            [NativeTypeName("HRESULT (const BANDSITEINFO *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IBandSite*, BANDSITEINFO*, int> SetBandSiteInfo;
+
+            [NativeTypeName("HRESULT (BANDSITEINFO *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IBandSite*, BANDSITEINFO*, int> GetBandSiteInfo;
+        }
     }
 }

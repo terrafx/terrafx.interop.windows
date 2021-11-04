@@ -66,5 +66,29 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IDefaultFolderMenuInitialize*, Guid*, int>)(lpVtbl[6]))((IDefaultFolderMenuInitialize*)Unsafe.AsPointer(ref this), rclsid);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDefaultFolderMenuInitialize*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDefaultFolderMenuInitialize*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDefaultFolderMenuInitialize*, uint> Release;
+
+            [NativeTypeName("HRESULT (HWND, IContextMenuCB *, LPCITEMIDLIST, IShellFolder *, UINT, LPCITEMIDLIST *, IUnknown *, UINT, const HKEY *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDefaultFolderMenuInitialize*, HWND, IContextMenuCB*, ITEMIDLIST*, IShellFolder*, uint, ITEMIDLIST**, IUnknown*, uint, HKEY*, int> Initialize;
+
+            [NativeTypeName("HRESULT (DEFAULT_FOLDER_MENU_RESTRICTIONS) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDefaultFolderMenuInitialize*, DEFAULT_FOLDER_MENU_RESTRICTIONS, int> SetMenuRestrictions;
+
+            [NativeTypeName("HRESULT (DEFAULT_FOLDER_MENU_RESTRICTIONS, DEFAULT_FOLDER_MENU_RESTRICTIONS *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDefaultFolderMenuInitialize*, DEFAULT_FOLDER_MENU_RESTRICTIONS, DEFAULT_FOLDER_MENU_RESTRICTIONS*, int> GetMenuRestrictions;
+
+            [NativeTypeName("HRESULT (const IID &) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDefaultFolderMenuInitialize*, Guid*, int> SetHandlerClsid;
+        }
     }
 }

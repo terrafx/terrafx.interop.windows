@@ -73,5 +73,32 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IAppActivationUIInfo*, uint*, int>)(lpVtbl[7]))((IAppActivationUIInfo*)Unsafe.AsPointer(ref this), value);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAppActivationUIInfo*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IAppActivationUIInfo*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IAppActivationUIInfo*, uint> Release;
+
+            [NativeTypeName("HRESULT (HMONITOR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAppActivationUIInfo*, HMONITOR*, int> GetMonitor;
+
+            [NativeTypeName("HRESULT (POINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAppActivationUIInfo*, POINT*, int> GetInvokePoint;
+
+            [NativeTypeName("HRESULT (int *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAppActivationUIInfo*, int*, int> GetShowCommand;
+
+            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAppActivationUIInfo*, BOOL*, int> GetShowUI;
+
+            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAppActivationUIInfo*, uint*, int> GetKeyState;
+        }
     }
 }

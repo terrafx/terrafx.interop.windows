@@ -52,5 +52,23 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IMFProtectedEnvironmentAccess*, uint*, byte**, int>)(lpVtbl[4]))((IMFProtectedEnvironmentAccess*)Unsafe.AsPointer(ref this), outputLength, output);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFProtectedEnvironmentAccess*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFProtectedEnvironmentAccess*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFProtectedEnvironmentAccess*, uint> Release;
+
+            [NativeTypeName("HRESULT (UINT32, const BYTE *, UINT32, BYTE *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFProtectedEnvironmentAccess*, uint, byte*, uint, byte*, int> Call;
+
+            [NativeTypeName("HRESULT (UINT32 *, BYTE **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFProtectedEnvironmentAccess*, uint*, byte**, int> ReadGRL;
+        }
     }
 }

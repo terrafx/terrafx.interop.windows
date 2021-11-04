@@ -73,5 +73,32 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IRunnableObject*, BOOL, int>)(lpVtbl[7]))((IRunnableObject*)Unsafe.AsPointer(ref this), fContained);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IRunnableObject*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IRunnableObject*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IRunnableObject*, uint> Release;
+
+            [NativeTypeName("HRESULT (LPCLSID) __attribute__((stdcall))")]
+            public delegate* unmanaged<IRunnableObject*, Guid*, int> GetRunningClass;
+
+            [NativeTypeName("HRESULT (LPBINDCTX) __attribute__((stdcall))")]
+            public delegate* unmanaged<IRunnableObject*, IBindCtx*, int> Run;
+
+            [NativeTypeName("BOOL () __attribute__((stdcall))")]
+            public delegate* unmanaged<IRunnableObject*, int> IsRunning;
+
+            [NativeTypeName("HRESULT (BOOL, BOOL) __attribute__((stdcall))")]
+            public delegate* unmanaged<IRunnableObject*, BOOL, BOOL, int> LockRunning;
+
+            [NativeTypeName("HRESULT (BOOL) __attribute__((stdcall))")]
+            public delegate* unmanaged<IRunnableObject*, BOOL, int> SetContainedObject;
+        }
     }
 }

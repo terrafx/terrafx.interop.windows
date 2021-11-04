@@ -66,5 +66,29 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IAMCertifiedOutputProtection*, AMCOPPStatusInput*, AMCOPPStatusOutput*, int>)(lpVtbl[6]))((IAMCertifiedOutputProtection*)Unsafe.AsPointer(ref this), pStatusInput, pStatusOutput);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAMCertifiedOutputProtection*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IAMCertifiedOutputProtection*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IAMCertifiedOutputProtection*, uint> Release;
+
+            [NativeTypeName("HRESULT (GUID *, BYTE **, DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAMCertifiedOutputProtection*, Guid*, byte**, uint*, int> KeyExchange;
+
+            [NativeTypeName("HRESULT (AMCOPPSignature *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAMCertifiedOutputProtection*, AMCOPPSignature*, int> SessionSequenceStart;
+
+            [NativeTypeName("HRESULT (const AMCOPPCommand *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAMCertifiedOutputProtection*, AMCOPPCommand*, int> ProtectionCommand;
+
+            [NativeTypeName("HRESULT (const AMCOPPStatusInput *, AMCOPPStatusOutput *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAMCertifiedOutputProtection*, AMCOPPStatusInput*, AMCOPPStatusOutput*, int> ProtectionStatus;
+        }
     }
 }

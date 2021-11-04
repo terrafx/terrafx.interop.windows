@@ -73,5 +73,32 @@ namespace TerraFX.Interop
         {
             ((delegate* unmanaged<IMFMediaKeySessionNotify2*, void>)(lpVtbl[7]))((IMFMediaKeySessionNotify2*)Unsafe.AsPointer(ref this));
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFMediaKeySessionNotify2*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFMediaKeySessionNotify2*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFMediaKeySessionNotify2*, uint> Release;
+
+            [NativeTypeName("void (BSTR, const BYTE *, DWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFMediaKeySessionNotify2*, ushort*, byte*, uint, void> KeyMessage;
+
+            [NativeTypeName("void () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFMediaKeySessionNotify2*, void> KeyAdded;
+
+            [NativeTypeName("void (USHORT, DWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFMediaKeySessionNotify2*, ushort, uint, void> KeyError;
+
+            [NativeTypeName("void (MF_MEDIAKEYSESSION_MESSAGETYPE, BSTR, const BYTE *, DWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFMediaKeySessionNotify2*, MF_MEDIAKEYSESSION_MESSAGETYPE, ushort*, byte*, uint, void> KeyMessage2;
+
+            [NativeTypeName("void () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFMediaKeySessionNotify2*, void> KeyStatusChange;
+        }
     }
 }

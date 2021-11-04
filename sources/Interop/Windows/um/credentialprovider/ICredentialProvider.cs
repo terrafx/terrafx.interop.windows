@@ -94,5 +94,41 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<ICredentialProvider*, uint, ICredentialProviderCredential**, int>)(lpVtbl[10]))((ICredentialProvider*)Unsafe.AsPointer(ref this), dwIndex, ppcpc);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ICredentialProvider*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ICredentialProvider*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ICredentialProvider*, uint> Release;
+
+            [NativeTypeName("HRESULT (CREDENTIAL_PROVIDER_USAGE_SCENARIO, DWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<ICredentialProvider*, CREDENTIAL_PROVIDER_USAGE_SCENARIO, uint, int> SetUsageScenario;
+
+            [NativeTypeName("HRESULT (const CREDENTIAL_PROVIDER_CREDENTIAL_SERIALIZATION *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ICredentialProvider*, CREDENTIAL_PROVIDER_CREDENTIAL_SERIALIZATION*, int> SetSerialization;
+
+            [NativeTypeName("HRESULT (ICredentialProviderEvents *, UINT_PTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<ICredentialProvider*, ICredentialProviderEvents*, nuint, int> Advise;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<ICredentialProvider*, int> UnAdvise;
+
+            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ICredentialProvider*, uint*, int> GetFieldDescriptorCount;
+
+            [NativeTypeName("HRESULT (DWORD, CREDENTIAL_PROVIDER_FIELD_DESCRIPTOR **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ICredentialProvider*, uint, CREDENTIAL_PROVIDER_FIELD_DESCRIPTOR**, int> GetFieldDescriptorAt;
+
+            [NativeTypeName("HRESULT (DWORD *, DWORD *, BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ICredentialProvider*, uint*, uint*, BOOL*, int> GetCredentialCount;
+
+            [NativeTypeName("HRESULT (DWORD, ICredentialProviderCredential **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ICredentialProvider*, uint, ICredentialProviderCredential**, int> GetCredentialAt;
+        }
     }
 }

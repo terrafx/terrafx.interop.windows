@@ -59,5 +59,26 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IInternetBindInfoEx*, uint*, BINDINFO*, uint*, uint*, int>)(lpVtbl[5]))((IInternetBindInfoEx*)Unsafe.AsPointer(ref this), grfBINDF, pbindinfo, grfBINDF2, pdwReserved);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IInternetBindInfoEx*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IInternetBindInfoEx*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IInternetBindInfoEx*, uint> Release;
+
+            [NativeTypeName("HRESULT (DWORD *, BINDINFO *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IInternetBindInfoEx*, uint*, BINDINFO*, int> GetBindInfo;
+
+            [NativeTypeName("HRESULT (ULONG, LPOLESTR *, ULONG, ULONG *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IInternetBindInfoEx*, uint, ushort**, uint, uint*, int> GetBindString;
+
+            [NativeTypeName("HRESULT (DWORD *, BINDINFO *, DWORD *, DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IInternetBindInfoEx*, uint*, BINDINFO*, uint*, uint*, int> GetBindInfoEx;
+        }
     }
 }

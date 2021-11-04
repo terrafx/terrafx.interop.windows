@@ -66,5 +66,29 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IBitmapData*, BitmapDescription*, int>)(lpVtbl[6]))((IBitmapData*)Unsafe.AsPointer(ref this), pBitmapDescription);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IBitmapData*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IBitmapData*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IBitmapData*, uint> Release;
+
+            [NativeTypeName("HRESULT (unsigned int, unsigned int, byte *, unsigned int *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IBitmapData*, uint, uint, byte*, uint*, int> CopyBytesTo;
+
+            [NativeTypeName("HRESULT (unsigned int *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IBitmapData*, uint*, int> GetStride;
+
+            [NativeTypeName("HRESULT (BitmapDescription *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IBitmapData*, BitmapDescription*, int> GetBitmapDescription;
+
+            [NativeTypeName("HRESULT (BitmapDescription *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IBitmapData*, BitmapDescription*, int> GetSourceBitmapDescription;
+        }
     }
 }

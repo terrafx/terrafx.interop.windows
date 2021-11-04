@@ -52,5 +52,23 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<ISpObjectWithToken*, ISpObjectToken**, int>)(lpVtbl[4]))((ISpObjectWithToken*)Unsafe.AsPointer(ref this), ppToken);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpObjectWithToken*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpObjectWithToken*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpObjectWithToken*, uint> Release;
+
+            [NativeTypeName("HRESULT (ISpObjectToken *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpObjectWithToken*, ISpObjectToken*, int> SetObjectToken;
+
+            [NativeTypeName("HRESULT (ISpObjectToken **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpObjectWithToken*, ISpObjectToken**, int> GetObjectToken;
+        }
     }
 }

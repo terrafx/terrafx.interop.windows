@@ -59,5 +59,26 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IAppxBundleManifestOptionalBundleInfo*, IAppxBundleManifestPackageInfoEnumerator**, int>)(lpVtbl[5]))((IAppxBundleManifestOptionalBundleInfo*)Unsafe.AsPointer(ref this), packageInfoItems);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAppxBundleManifestOptionalBundleInfo*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IAppxBundleManifestOptionalBundleInfo*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IAppxBundleManifestOptionalBundleInfo*, uint> Release;
+
+            [NativeTypeName("HRESULT (IAppxManifestPackageId **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAppxBundleManifestOptionalBundleInfo*, IAppxManifestPackageId**, int> GetPackageId;
+
+            [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAppxBundleManifestOptionalBundleInfo*, ushort**, int> GetFileName;
+
+            [NativeTypeName("HRESULT (IAppxBundleManifestPackageInfoEnumerator **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAppxBundleManifestOptionalBundleInfo*, IAppxBundleManifestPackageInfoEnumerator**, int> GetPackageInfoItems;
+        }
     }
 }

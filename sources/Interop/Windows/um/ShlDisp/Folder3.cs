@@ -185,5 +185,80 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<Folder3*, short, int>)(lpVtbl[23]))((Folder3*)Unsafe.AsPointer(ref this), bShowWebViewBarricade);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<Folder3*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<Folder3*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<Folder3*, uint> Release;
+
+            [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<Folder3*, uint*, int> GetTypeInfoCount;
+
+            [NativeTypeName("HRESULT (UINT, LCID, ITypeInfo **) __attribute__((stdcall))")]
+            public delegate* unmanaged<Folder3*, uint, uint, ITypeInfo**, int> GetTypeInfo;
+
+            [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
+            public delegate* unmanaged<Folder3*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+
+            [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<Folder3*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<Folder3*, ushort**, int> get_Title;
+
+            [NativeTypeName("HRESULT (IDispatch **) __attribute__((stdcall))")]
+            public delegate* unmanaged<Folder3*, IDispatch**, int> get_Application;
+
+            [NativeTypeName("HRESULT (IDispatch **) __attribute__((stdcall))")]
+            public delegate* unmanaged<Folder3*, IDispatch**, int> get_Parent;
+
+            [NativeTypeName("HRESULT (Folder **) __attribute__((stdcall))")]
+            public delegate* unmanaged<Folder3*, Folder**, int> get_ParentFolder;
+
+            [NativeTypeName("HRESULT (FolderItems **) __attribute__((stdcall))")]
+            public delegate* unmanaged<Folder3*, FolderItems**, int> Items;
+
+            [NativeTypeName("HRESULT (BSTR, FolderItem **) __attribute__((stdcall))")]
+            public delegate* unmanaged<Folder3*, ushort*, FolderItem**, int> ParseName;
+
+            [NativeTypeName("HRESULT (BSTR, VARIANT) __attribute__((stdcall))")]
+            public delegate* unmanaged<Folder3*, ushort*, VARIANT, int> NewFolder;
+
+            [NativeTypeName("HRESULT (VARIANT, VARIANT) __attribute__((stdcall))")]
+            public delegate* unmanaged<Folder3*, VARIANT, VARIANT, int> MoveHere;
+
+            [NativeTypeName("HRESULT (VARIANT, VARIANT) __attribute__((stdcall))")]
+            public delegate* unmanaged<Folder3*, VARIANT, VARIANT, int> CopyHere;
+
+            [NativeTypeName("HRESULT (VARIANT, int, BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<Folder3*, VARIANT, int, ushort**, int> GetDetailsOf;
+
+            [NativeTypeName("HRESULT (FolderItem **) __attribute__((stdcall))")]
+            public delegate* unmanaged<Folder3*, FolderItem**, int> get_Self;
+
+            [NativeTypeName("HRESULT (LONG *) __attribute__((stdcall))")]
+            public delegate* unmanaged<Folder3*, int*, int> get_OfflineStatus;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<Folder3*, int> Synchronize;
+
+            [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<Folder3*, short*, int> get_HaveToShowWebViewBarricade;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<Folder3*, int> DismissedWebViewBarricade;
+
+            [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<Folder3*, short*, int> get_ShowWebViewBarricade;
+
+            [NativeTypeName("HRESULT (VARIANT_BOOL) __attribute__((stdcall))")]
+            public delegate* unmanaged<Folder3*, short, int> put_ShowWebViewBarricade;
+        }
     }
 }

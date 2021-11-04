@@ -94,5 +94,41 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IResourceManager*, IUnknown*, int>)(lpVtbl[10]))((IResourceManager*)Unsafe.AsPointer(ref this), pFocusObject);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IResourceManager*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IResourceManager*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IResourceManager*, uint> Release;
+
+            [NativeTypeName("HRESULT (LPCWSTR, LONG, LONG *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IResourceManager*, ushort*, int, int*, int> Register;
+
+            [NativeTypeName("HRESULT (LPCWSTR, LONG, LONG *, LONG *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IResourceManager*, ushort*, int, int*, int*, int> RegisterGroup;
+
+            [NativeTypeName("HRESULT (LONG, IUnknown *, IResourceConsumer *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IResourceManager*, int, IUnknown*, IResourceConsumer*, int> RequestResource;
+
+            [NativeTypeName("HRESULT (LONG, IResourceConsumer *, HRESULT) __attribute__((stdcall))")]
+            public delegate* unmanaged<IResourceManager*, int, IResourceConsumer*, HRESULT, int> NotifyAcquire;
+
+            [NativeTypeName("HRESULT (LONG, IResourceConsumer *, BOOL) __attribute__((stdcall))")]
+            public delegate* unmanaged<IResourceManager*, int, IResourceConsumer*, BOOL, int> NotifyRelease;
+
+            [NativeTypeName("HRESULT (LONG, IResourceConsumer *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IResourceManager*, int, IResourceConsumer*, int> CancelRequest;
+
+            [NativeTypeName("HRESULT (IUnknown *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IResourceManager*, IUnknown*, int> SetFocus;
+
+            [NativeTypeName("HRESULT (IUnknown *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IResourceManager*, IUnknown*, int> ReleaseFocus;
+        }
     }
 }

@@ -66,5 +66,29 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IHTMLEditDesigner*, int, IHTMLEventObj*, int>)(lpVtbl[6]))((IHTMLEditDesigner*)Unsafe.AsPointer(ref this), inEvtDispId, pIEventObj);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLEditDesigner*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLEditDesigner*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLEditDesigner*, uint> Release;
+
+            [NativeTypeName("HRESULT (DISPID, IHTMLEventObj *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLEditDesigner*, int, IHTMLEventObj*, int> PreHandleEvent;
+
+            [NativeTypeName("HRESULT (DISPID, IHTMLEventObj *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLEditDesigner*, int, IHTMLEventObj*, int> PostHandleEvent;
+
+            [NativeTypeName("HRESULT (DISPID, IHTMLEventObj *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLEditDesigner*, int, IHTMLEventObj*, int> TranslateAcceleratorW;
+
+            [NativeTypeName("HRESULT (DISPID, IHTMLEventObj *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLEditDesigner*, int, IHTMLEventObj*, int> PostEditorEventNotify;
+        }
     }
 }

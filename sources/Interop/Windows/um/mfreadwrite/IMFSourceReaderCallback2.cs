@@ -73,5 +73,32 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IMFSourceReaderCallback2*, uint, HRESULT, int>)(lpVtbl[7]))((IMFSourceReaderCallback2*)Unsafe.AsPointer(ref this), dwStreamIndex, hrStatus);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFSourceReaderCallback2*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFSourceReaderCallback2*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFSourceReaderCallback2*, uint> Release;
+
+            [NativeTypeName("HRESULT (HRESULT, DWORD, DWORD, LONGLONG, IMFSample *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFSourceReaderCallback2*, HRESULT, uint, uint, long, IMFSample*, int> OnReadSample;
+
+            [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFSourceReaderCallback2*, uint, int> OnFlush;
+
+            [NativeTypeName("HRESULT (DWORD, IMFMediaEvent *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFSourceReaderCallback2*, uint, IMFMediaEvent*, int> OnEvent;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFSourceReaderCallback2*, int> OnTransformChange;
+
+            [NativeTypeName("HRESULT (DWORD, HRESULT) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFSourceReaderCallback2*, uint, HRESULT, int> OnStreamError;
+        }
     }
 }

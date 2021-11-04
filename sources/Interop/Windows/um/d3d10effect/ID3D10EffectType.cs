@@ -61,5 +61,29 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<ID3D10EffectType*, uint, sbyte*>)(lpVtbl[6]))((ID3D10EffectType*)Unsafe.AsPointer(ref this), Index);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("BOOL () __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D10EffectType*, int> IsValid;
+
+            [NativeTypeName("HRESULT (D3D10_EFFECT_TYPE_DESC *) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D10EffectType*, D3D10_EFFECT_TYPE_DESC*, int> GetDesc;
+
+            [NativeTypeName("ID3D10EffectType *(UINT) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D10EffectType*, uint, ID3D10EffectType*> GetMemberTypeByIndex;
+
+            [NativeTypeName("ID3D10EffectType *(LPCSTR) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D10EffectType*, sbyte*, ID3D10EffectType*> GetMemberTypeByName;
+
+            [NativeTypeName("ID3D10EffectType *(LPCSTR) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D10EffectType*, sbyte*, ID3D10EffectType*> GetMemberTypeBySemantic;
+
+            [NativeTypeName("LPCSTR (UINT) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D10EffectType*, uint, sbyte*> GetMemberName;
+
+            [NativeTypeName("LPCSTR (UINT) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D10EffectType*, uint, sbyte*> GetMemberSemantic;
+        }
     }
 }

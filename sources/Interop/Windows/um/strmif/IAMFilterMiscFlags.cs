@@ -46,5 +46,20 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IAMFilterMiscFlags*, uint>)(lpVtbl[3]))((IAMFilterMiscFlags*)Unsafe.AsPointer(ref this));
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAMFilterMiscFlags*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IAMFilterMiscFlags*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IAMFilterMiscFlags*, uint> Release;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IAMFilterMiscFlags*, uint> GetMiscFlags;
+        }
     }
 }

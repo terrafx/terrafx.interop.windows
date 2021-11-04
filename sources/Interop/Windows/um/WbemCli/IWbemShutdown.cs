@@ -45,5 +45,20 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IWbemShutdown*, int, uint, IWbemContext*, int>)(lpVtbl[3]))((IWbemShutdown*)Unsafe.AsPointer(ref this), uReason, uMaxMilliseconds, pCtx);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWbemShutdown*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IWbemShutdown*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IWbemShutdown*, uint> Release;
+
+            [NativeTypeName("HRESULT (LONG, ULONG, IWbemContext *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWbemShutdown*, int, uint, IWbemContext*, int> Shutdown;
+        }
     }
 }

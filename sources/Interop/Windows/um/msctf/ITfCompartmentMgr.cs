@@ -59,5 +59,26 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<ITfCompartmentMgr*, IEnumGUID**, int>)(lpVtbl[5]))((ITfCompartmentMgr*)Unsafe.AsPointer(ref this), ppEnum);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfCompartmentMgr*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfCompartmentMgr*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfCompartmentMgr*, uint> Release;
+
+            [NativeTypeName("HRESULT (const GUID &, ITfCompartment **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfCompartmentMgr*, Guid*, ITfCompartment**, int> GetCompartment;
+
+            [NativeTypeName("HRESULT (TfClientId, const GUID &) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfCompartmentMgr*, uint, Guid*, int> ClearCompartment;
+
+            [NativeTypeName("HRESULT (IEnumGUID **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfCompartmentMgr*, IEnumGUID**, int> EnumCompartments;
+        }
     }
 }

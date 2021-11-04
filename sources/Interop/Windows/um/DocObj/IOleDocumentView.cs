@@ -129,5 +129,56 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IOleDocumentView*, IOleInPlaceSite*, IOleDocumentView**, int>)(lpVtbl[15]))((IOleDocumentView*)Unsafe.AsPointer(ref this), pIPSiteNew, ppViewNew);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IOleDocumentView*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IOleDocumentView*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IOleDocumentView*, uint> Release;
+
+            [NativeTypeName("HRESULT (IOleInPlaceSite *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IOleDocumentView*, IOleInPlaceSite*, int> SetInPlaceSite;
+
+            [NativeTypeName("HRESULT (IOleInPlaceSite **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IOleDocumentView*, IOleInPlaceSite**, int> GetInPlaceSite;
+
+            [NativeTypeName("HRESULT (IUnknown **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IOleDocumentView*, IUnknown**, int> GetDocument;
+
+            [NativeTypeName("HRESULT (LPRECT) __attribute__((stdcall))")]
+            public delegate* unmanaged<IOleDocumentView*, RECT*, int> SetRect;
+
+            [NativeTypeName("HRESULT (LPRECT) __attribute__((stdcall))")]
+            public delegate* unmanaged<IOleDocumentView*, RECT*, int> GetRect;
+
+            [NativeTypeName("HRESULT (LPRECT, LPRECT, LPRECT, LPRECT) __attribute__((stdcall))")]
+            public delegate* unmanaged<IOleDocumentView*, RECT*, RECT*, RECT*, RECT*, int> SetRectComplex;
+
+            [NativeTypeName("HRESULT (BOOL) __attribute__((stdcall))")]
+            public delegate* unmanaged<IOleDocumentView*, BOOL, int> Show;
+
+            [NativeTypeName("HRESULT (BOOL) __attribute__((stdcall))")]
+            public delegate* unmanaged<IOleDocumentView*, BOOL, int> UIActivate;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IOleDocumentView*, int> Open;
+
+            [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<IOleDocumentView*, uint, int> CloseView;
+
+            [NativeTypeName("HRESULT (LPSTREAM) __attribute__((stdcall))")]
+            public delegate* unmanaged<IOleDocumentView*, IStream*, int> SaveViewState;
+
+            [NativeTypeName("HRESULT (LPSTREAM) __attribute__((stdcall))")]
+            public delegate* unmanaged<IOleDocumentView*, IStream*, int> ApplyViewState;
+
+            [NativeTypeName("HRESULT (IOleInPlaceSite *, IOleDocumentView **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IOleDocumentView*, IOleInPlaceSite*, IOleDocumentView**, int> Clone;
+        }
     }
 }

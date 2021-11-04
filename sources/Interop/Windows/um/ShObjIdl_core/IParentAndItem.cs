@@ -52,5 +52,23 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IParentAndItem*, ITEMIDLIST**, IShellFolder**, ITEMIDLIST**, int>)(lpVtbl[4]))((IParentAndItem*)Unsafe.AsPointer(ref this), ppidlParent, ppsf, ppidlChild);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IParentAndItem*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IParentAndItem*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IParentAndItem*, uint> Release;
+
+            [NativeTypeName("HRESULT (LPCITEMIDLIST, IShellFolder *, LPCITEMIDLIST) __attribute__((stdcall))")]
+            public delegate* unmanaged<IParentAndItem*, ITEMIDLIST*, IShellFolder*, ITEMIDLIST*, int> SetParentAndItem;
+
+            [NativeTypeName("HRESULT (LPITEMIDLIST *, IShellFolder **, LPITEMIDLIST *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IParentAndItem*, ITEMIDLIST**, IShellFolder**, ITEMIDLIST**, int> GetParentAndItem;
+        }
     }
 }

@@ -66,5 +66,29 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IEnumDiscMasterFormats*, IEnumDiscMasterFormats**, int>)(lpVtbl[6]))((IEnumDiscMasterFormats*)Unsafe.AsPointer(ref this), ppEnum);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IEnumDiscMasterFormats*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IEnumDiscMasterFormats*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IEnumDiscMasterFormats*, uint> Release;
+
+            [NativeTypeName("HRESULT (ULONG, LPIID, ULONG *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IEnumDiscMasterFormats*, uint, Guid*, uint*, int> Next;
+
+            [NativeTypeName("HRESULT (ULONG) __attribute__((stdcall))")]
+            public delegate* unmanaged<IEnumDiscMasterFormats*, uint, int> Skip;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IEnumDiscMasterFormats*, int> Reset;
+
+            [NativeTypeName("HRESULT (IEnumDiscMasterFormats **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IEnumDiscMasterFormats*, IEnumDiscMasterFormats**, int> Clone;
+        }
     }
 }

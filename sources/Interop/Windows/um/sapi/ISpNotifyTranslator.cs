@@ -87,5 +87,38 @@ namespace TerraFX.Interop
         {
             return ((HANDLE)(((delegate* unmanaged<ISpNotifyTranslator*, void*>)(lpVtbl[9]))((ISpNotifyTranslator*)Unsafe.AsPointer(ref this))));
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpNotifyTranslator*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpNotifyTranslator*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpNotifyTranslator*, uint> Release;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpNotifyTranslator*, int> Notify;
+
+            [NativeTypeName("HRESULT (HWND, UINT, WPARAM, LPARAM) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpNotifyTranslator*, HWND, uint, WPARAM, LPARAM, int> InitWindowMessage;
+
+            [NativeTypeName("HRESULT (SPNOTIFYCALLBACK *, WPARAM, LPARAM) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpNotifyTranslator*, delegate* unmanaged<WPARAM, LPARAM, void>, WPARAM, LPARAM, int> InitCallback;
+
+            [NativeTypeName("HRESULT (ISpNotifyCallback *, WPARAM, LPARAM) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpNotifyTranslator*, ISpNotifyCallback*, WPARAM, LPARAM, int> InitSpNotifyCallback;
+
+            [NativeTypeName("HRESULT (HANDLE, BOOL) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpNotifyTranslator*, HANDLE, BOOL, int> InitWin32Event;
+
+            [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpNotifyTranslator*, uint, int> Wait;
+
+            [NativeTypeName("HANDLE () __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpNotifyTranslator*, void*> GetEventHandle;
+        }
     }
 }

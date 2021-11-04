@@ -45,5 +45,20 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IShellIcon*, ITEMIDLIST*, uint, int*, int>)(lpVtbl[3]))((IShellIcon*)Unsafe.AsPointer(ref this), pidl, flags, pIconIndex);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellIcon*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellIcon*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellIcon*, uint> Release;
+
+            [NativeTypeName("HRESULT (LPCITEMIDLIST, UINT, int *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellIcon*, ITEMIDLIST*, uint, int*, int> GetIconOf;
+        }
     }
 }

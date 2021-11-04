@@ -143,5 +143,62 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IAMTuner*, IAMTunerNotification*, int>)(lpVtbl[17]))((IAMTuner*)Unsafe.AsPointer(ref this), pNotify);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAMTuner*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IAMTuner*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IAMTuner*, uint> Release;
+
+            [NativeTypeName("HRESULT (long, long, long) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAMTuner*, int, int, int, int> put_Channel;
+
+            [NativeTypeName("HRESULT (long *, long *, long *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAMTuner*, int*, int*, int*, int> get_Channel;
+
+            [NativeTypeName("HRESULT (long *, long *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAMTuner*, int*, int*, int> ChannelMinMax;
+
+            [NativeTypeName("HRESULT (long) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAMTuner*, int, int> put_CountryCode;
+
+            [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAMTuner*, int*, int> get_CountryCode;
+
+            [NativeTypeName("HRESULT (long) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAMTuner*, int, int> put_TuningSpace;
+
+            [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAMTuner*, int*, int> get_TuningSpace;
+
+            [NativeTypeName("HRESULT (HANDLE) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAMTuner*, HANDLE, int> Logon;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IAMTuner*, int> Logout;
+
+            [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAMTuner*, int*, int> SignalPresent;
+
+            [NativeTypeName("HRESULT (AMTunerModeType) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAMTuner*, AMTunerModeType, int> put_Mode;
+
+            [NativeTypeName("HRESULT (AMTunerModeType *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAMTuner*, AMTunerModeType*, int> get_Mode;
+
+            [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAMTuner*, int*, int> GetAvailableModes;
+
+            [NativeTypeName("HRESULT (IAMTunerNotification *, long) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAMTuner*, IAMTunerNotification*, int, int> RegisterNotificationCallBack;
+
+            [NativeTypeName("HRESULT (IAMTunerNotification *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAMTuner*, IAMTunerNotification*, int> UnRegisterNotificationCallBack;
+        }
     }
 }

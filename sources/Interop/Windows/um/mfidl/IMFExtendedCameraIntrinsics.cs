@@ -80,5 +80,35 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IMFExtendedCameraIntrinsics*, IMFExtendedCameraIntrinsicModel*, int>)(lpVtbl[8]))((IMFExtendedCameraIntrinsics*)Unsafe.AsPointer(ref this), pIntrinsicModel);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFExtendedCameraIntrinsics*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFExtendedCameraIntrinsics*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFExtendedCameraIntrinsics*, uint> Release;
+
+            [NativeTypeName("HRESULT (BYTE *, DWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFExtendedCameraIntrinsics*, byte*, uint, int> InitializeFromBuffer;
+
+            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFExtendedCameraIntrinsics*, uint*, int> GetBufferSize;
+
+            [NativeTypeName("HRESULT (BYTE *, DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFExtendedCameraIntrinsics*, byte*, uint*, int> SerializeToBuffer;
+
+            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFExtendedCameraIntrinsics*, uint*, int> GetIntrinsicModelCount;
+
+            [NativeTypeName("HRESULT (DWORD, IMFExtendedCameraIntrinsicModel **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFExtendedCameraIntrinsics*, uint, IMFExtendedCameraIntrinsicModel**, int> GetIntrinsicModelByIndex;
+
+            [NativeTypeName("HRESULT (IMFExtendedCameraIntrinsicModel *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFExtendedCameraIntrinsics*, IMFExtendedCameraIntrinsicModel*, int> AddIntrinsicModel;
+        }
     }
 }

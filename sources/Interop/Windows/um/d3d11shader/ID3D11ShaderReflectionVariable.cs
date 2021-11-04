@@ -40,5 +40,20 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<ID3D11ShaderReflectionVariable*, uint, uint>)(lpVtbl[3]))((ID3D11ShaderReflectionVariable*)Unsafe.AsPointer(ref this), uArrayIndex);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (D3D11_SHADER_VARIABLE_DESC *) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D11ShaderReflectionVariable*, D3D11_SHADER_VARIABLE_DESC*, int> GetDesc;
+
+            [NativeTypeName("ID3D11ShaderReflectionType *() __attribute__((nothrow)) __attribute__((stdcall))")]
+            public new delegate* unmanaged<ID3D11ShaderReflectionVariable*, ID3D11ShaderReflectionType*> GetType;
+
+            [NativeTypeName("ID3D11ShaderReflectionConstantBuffer *() __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D11ShaderReflectionVariable*, ID3D11ShaderReflectionConstantBuffer*> GetBuffer;
+
+            [NativeTypeName("UINT (UINT) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D11ShaderReflectionVariable*, uint, uint> GetInterfaceSlot;
+        }
     }
 }

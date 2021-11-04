@@ -129,5 +129,56 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<ITfThreadMgrEx*, uint*, int>)(lpVtbl[15]))((ITfThreadMgrEx*)Unsafe.AsPointer(ref this), lpdwFlags);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfThreadMgrEx*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfThreadMgrEx*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfThreadMgrEx*, uint> Release;
+
+            [NativeTypeName("HRESULT (TfClientId *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfThreadMgrEx*, uint*, int> Activate;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfThreadMgrEx*, int> Deactivate;
+
+            [NativeTypeName("HRESULT (ITfDocumentMgr **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfThreadMgrEx*, ITfDocumentMgr**, int> CreateDocumentMgr;
+
+            [NativeTypeName("HRESULT (IEnumTfDocumentMgrs **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfThreadMgrEx*, IEnumTfDocumentMgrs**, int> EnumDocumentMgrs;
+
+            [NativeTypeName("HRESULT (ITfDocumentMgr **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfThreadMgrEx*, ITfDocumentMgr**, int> GetFocus;
+
+            [NativeTypeName("HRESULT (ITfDocumentMgr *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfThreadMgrEx*, ITfDocumentMgr*, int> SetFocus;
+
+            [NativeTypeName("HRESULT (HWND, ITfDocumentMgr *, ITfDocumentMgr **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfThreadMgrEx*, HWND, ITfDocumentMgr*, ITfDocumentMgr**, int> AssociateFocus;
+
+            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfThreadMgrEx*, BOOL*, int> IsThreadFocus;
+
+            [NativeTypeName("HRESULT (const IID &, ITfFunctionProvider **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfThreadMgrEx*, Guid*, ITfFunctionProvider**, int> GetFunctionProvider;
+
+            [NativeTypeName("HRESULT (IEnumTfFunctionProviders **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfThreadMgrEx*, IEnumTfFunctionProviders**, int> EnumFunctionProviders;
+
+            [NativeTypeName("HRESULT (ITfCompartmentMgr **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfThreadMgrEx*, ITfCompartmentMgr**, int> GetGlobalCompartment;
+
+            [NativeTypeName("HRESULT (TfClientId *, DWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfThreadMgrEx*, uint*, uint, int> ActivateEx;
+
+            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfThreadMgrEx*, uint*, int> GetActiveFlags;
+        }
     }
 }

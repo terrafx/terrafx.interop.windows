@@ -108,5 +108,47 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IDXCoreAdapter*, Guid*, void**, int>)(lpVtbl[12]))((IDXCoreAdapter*)Unsafe.AsPointer(ref this), riid, ppvFactory);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDXCoreAdapter*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDXCoreAdapter*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDXCoreAdapter*, uint> Release;
+
+            [NativeTypeName("bool () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDXCoreAdapter*, byte> IsValid;
+
+            [NativeTypeName("bool (const GUID &) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDXCoreAdapter*, Guid*, byte> IsAttributeSupported;
+
+            [NativeTypeName("bool (DXCoreAdapterProperty) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDXCoreAdapter*, DXCoreAdapterProperty, byte> IsPropertySupported;
+
+            [NativeTypeName("HRESULT (DXCoreAdapterProperty, size_t, void *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDXCoreAdapter*, DXCoreAdapterProperty, nuint, void*, int> GetProperty;
+
+            [NativeTypeName("HRESULT (DXCoreAdapterProperty, size_t *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDXCoreAdapter*, DXCoreAdapterProperty, nuint*, int> GetPropertySize;
+
+            [NativeTypeName("bool (DXCoreAdapterState) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDXCoreAdapter*, DXCoreAdapterState, byte> IsQueryStateSupported;
+
+            [NativeTypeName("HRESULT (DXCoreAdapterState, size_t, const void *, size_t, void *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDXCoreAdapter*, DXCoreAdapterState, nuint, void*, nuint, void*, int> QueryState;
+
+            [NativeTypeName("bool (DXCoreAdapterState) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDXCoreAdapter*, DXCoreAdapterState, byte> IsSetStateSupported;
+
+            [NativeTypeName("HRESULT (DXCoreAdapterState, size_t, const void *, size_t, const void *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDXCoreAdapter*, DXCoreAdapterState, nuint, void*, nuint, void*, int> SetState;
+
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDXCoreAdapter*, Guid*, void**, int> GetFactory;
+        }
     }
 }

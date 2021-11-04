@@ -303,5 +303,128 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IDXGIInfoQueue*, Guid, int>)(lpVtbl[39]))((IDXGIInfoQueue*)Unsafe.AsPointer(ref this), Producer);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDXGIInfoQueue*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDXGIInfoQueue*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDXGIInfoQueue*, uint> Release;
+
+            [NativeTypeName("HRESULT (DXGI_DEBUG_ID, UINT64) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDXGIInfoQueue*, Guid, ulong, int> SetMessageCountLimit;
+
+            [NativeTypeName("void (DXGI_DEBUG_ID) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDXGIInfoQueue*, Guid, void> ClearStoredMessages;
+
+            [NativeTypeName("HRESULT (DXGI_DEBUG_ID, UINT64, DXGI_INFO_QUEUE_MESSAGE *, SIZE_T *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDXGIInfoQueue*, Guid, ulong, DXGI_INFO_QUEUE_MESSAGE*, nuint*, int> GetMessage;
+
+            [NativeTypeName("UINT64 (DXGI_DEBUG_ID) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDXGIInfoQueue*, Guid, ulong> GetNumStoredMessagesAllowedByRetrievalFilters;
+
+            [NativeTypeName("UINT64 (DXGI_DEBUG_ID) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDXGIInfoQueue*, Guid, ulong> GetNumStoredMessages;
+
+            [NativeTypeName("UINT64 (DXGI_DEBUG_ID) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDXGIInfoQueue*, Guid, ulong> GetNumMessagesDiscardedByMessageCountLimit;
+
+            [NativeTypeName("UINT64 (DXGI_DEBUG_ID) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDXGIInfoQueue*, Guid, ulong> GetMessageCountLimit;
+
+            [NativeTypeName("UINT64 (DXGI_DEBUG_ID) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDXGIInfoQueue*, Guid, ulong> GetNumMessagesAllowedByStorageFilter;
+
+            [NativeTypeName("UINT64 (DXGI_DEBUG_ID) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDXGIInfoQueue*, Guid, ulong> GetNumMessagesDeniedByStorageFilter;
+
+            [NativeTypeName("HRESULT (DXGI_DEBUG_ID, DXGI_INFO_QUEUE_FILTER *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDXGIInfoQueue*, Guid, DXGI_INFO_QUEUE_FILTER*, int> AddStorageFilterEntries;
+
+            [NativeTypeName("HRESULT (DXGI_DEBUG_ID, DXGI_INFO_QUEUE_FILTER *, SIZE_T *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDXGIInfoQueue*, Guid, DXGI_INFO_QUEUE_FILTER*, nuint*, int> GetStorageFilter;
+
+            [NativeTypeName("void (DXGI_DEBUG_ID) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDXGIInfoQueue*, Guid, void> ClearStorageFilter;
+
+            [NativeTypeName("HRESULT (DXGI_DEBUG_ID) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDXGIInfoQueue*, Guid, int> PushEmptyStorageFilter;
+
+            [NativeTypeName("HRESULT (DXGI_DEBUG_ID) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDXGIInfoQueue*, Guid, int> PushDenyAllStorageFilter;
+
+            [NativeTypeName("HRESULT (DXGI_DEBUG_ID) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDXGIInfoQueue*, Guid, int> PushCopyOfStorageFilter;
+
+            [NativeTypeName("HRESULT (DXGI_DEBUG_ID, DXGI_INFO_QUEUE_FILTER *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDXGIInfoQueue*, Guid, DXGI_INFO_QUEUE_FILTER*, int> PushStorageFilter;
+
+            [NativeTypeName("void (DXGI_DEBUG_ID) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDXGIInfoQueue*, Guid, void> PopStorageFilter;
+
+            [NativeTypeName("UINT (DXGI_DEBUG_ID) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDXGIInfoQueue*, Guid, uint> GetStorageFilterStackSize;
+
+            [NativeTypeName("HRESULT (DXGI_DEBUG_ID, DXGI_INFO_QUEUE_FILTER *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDXGIInfoQueue*, Guid, DXGI_INFO_QUEUE_FILTER*, int> AddRetrievalFilterEntries;
+
+            [NativeTypeName("HRESULT (DXGI_DEBUG_ID, DXGI_INFO_QUEUE_FILTER *, SIZE_T *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDXGIInfoQueue*, Guid, DXGI_INFO_QUEUE_FILTER*, nuint*, int> GetRetrievalFilter;
+
+            [NativeTypeName("void (DXGI_DEBUG_ID) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDXGIInfoQueue*, Guid, void> ClearRetrievalFilter;
+
+            [NativeTypeName("HRESULT (DXGI_DEBUG_ID) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDXGIInfoQueue*, Guid, int> PushEmptyRetrievalFilter;
+
+            [NativeTypeName("HRESULT (DXGI_DEBUG_ID) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDXGIInfoQueue*, Guid, int> PushDenyAllRetrievalFilter;
+
+            [NativeTypeName("HRESULT (DXGI_DEBUG_ID) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDXGIInfoQueue*, Guid, int> PushCopyOfRetrievalFilter;
+
+            [NativeTypeName("HRESULT (DXGI_DEBUG_ID, DXGI_INFO_QUEUE_FILTER *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDXGIInfoQueue*, Guid, DXGI_INFO_QUEUE_FILTER*, int> PushRetrievalFilter;
+
+            [NativeTypeName("void (DXGI_DEBUG_ID) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDXGIInfoQueue*, Guid, void> PopRetrievalFilter;
+
+            [NativeTypeName("UINT (DXGI_DEBUG_ID) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDXGIInfoQueue*, Guid, uint> GetRetrievalFilterStackSize;
+
+            [NativeTypeName("HRESULT (DXGI_DEBUG_ID, DXGI_INFO_QUEUE_MESSAGE_CATEGORY, DXGI_INFO_QUEUE_MESSAGE_SEVERITY, DXGI_INFO_QUEUE_MESSAGE_ID, LPCSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDXGIInfoQueue*, Guid, DXGI_INFO_QUEUE_MESSAGE_CATEGORY, DXGI_INFO_QUEUE_MESSAGE_SEVERITY, int, sbyte*, int> AddMessage;
+
+            [NativeTypeName("HRESULT (DXGI_INFO_QUEUE_MESSAGE_SEVERITY, LPCSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDXGIInfoQueue*, DXGI_INFO_QUEUE_MESSAGE_SEVERITY, sbyte*, int> AddApplicationMessage;
+
+            [NativeTypeName("HRESULT (DXGI_DEBUG_ID, DXGI_INFO_QUEUE_MESSAGE_CATEGORY, BOOL) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDXGIInfoQueue*, Guid, DXGI_INFO_QUEUE_MESSAGE_CATEGORY, BOOL, int> SetBreakOnCategory;
+
+            [NativeTypeName("HRESULT (DXGI_DEBUG_ID, DXGI_INFO_QUEUE_MESSAGE_SEVERITY, BOOL) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDXGIInfoQueue*, Guid, DXGI_INFO_QUEUE_MESSAGE_SEVERITY, BOOL, int> SetBreakOnSeverity;
+
+            [NativeTypeName("HRESULT (DXGI_DEBUG_ID, DXGI_INFO_QUEUE_MESSAGE_ID, BOOL) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDXGIInfoQueue*, Guid, int, BOOL, int> SetBreakOnID;
+
+            [NativeTypeName("BOOL (DXGI_DEBUG_ID, DXGI_INFO_QUEUE_MESSAGE_CATEGORY) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDXGIInfoQueue*, Guid, DXGI_INFO_QUEUE_MESSAGE_CATEGORY, int> GetBreakOnCategory;
+
+            [NativeTypeName("BOOL (DXGI_DEBUG_ID, DXGI_INFO_QUEUE_MESSAGE_SEVERITY) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDXGIInfoQueue*, Guid, DXGI_INFO_QUEUE_MESSAGE_SEVERITY, int> GetBreakOnSeverity;
+
+            [NativeTypeName("BOOL (DXGI_DEBUG_ID, DXGI_INFO_QUEUE_MESSAGE_ID) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDXGIInfoQueue*, Guid, int, int> GetBreakOnID;
+
+            [NativeTypeName("void (DXGI_DEBUG_ID, BOOL) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDXGIInfoQueue*, Guid, BOOL, void> SetMuteDebugOutput;
+
+            [NativeTypeName("BOOL (DXGI_DEBUG_ID) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDXGIInfoQueue*, Guid, int> GetMuteDebugOutput;
+        }
     }
 }

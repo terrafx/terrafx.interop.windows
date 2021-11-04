@@ -45,5 +45,20 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IOleDocumentSite*, IOleDocumentView*, int>)(lpVtbl[3]))((IOleDocumentSite*)Unsafe.AsPointer(ref this), pViewToActivate);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IOleDocumentSite*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IOleDocumentSite*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IOleDocumentSite*, uint> Release;
+
+            [NativeTypeName("HRESULT (IOleDocumentView *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IOleDocumentSite*, IOleDocumentView*, int> ActivateMe;
+        }
     }
 }

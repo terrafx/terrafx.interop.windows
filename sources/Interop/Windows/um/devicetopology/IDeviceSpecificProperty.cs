@@ -66,5 +66,29 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IDeviceSpecificProperty*, int*, int*, int*, int>)(lpVtbl[6]))((IDeviceSpecificProperty*)Unsafe.AsPointer(ref this), plMin, plMax, plStepping);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDeviceSpecificProperty*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDeviceSpecificProperty*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDeviceSpecificProperty*, uint> Release;
+
+            [NativeTypeName("HRESULT (VARTYPE *) __attribute__((stdcall))")]
+            public new delegate* unmanaged<IDeviceSpecificProperty*, ushort*, int> GetType;
+
+            [NativeTypeName("HRESULT (void *, DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDeviceSpecificProperty*, void*, uint*, int> GetValue;
+
+            [NativeTypeName("HRESULT (void *, DWORD, LPCGUID) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDeviceSpecificProperty*, void*, uint, Guid*, int> SetValue;
+
+            [NativeTypeName("HRESULT (LONG *, LONG *, LONG *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDeviceSpecificProperty*, int*, int*, int*, int> Get4BRange;
+        }
     }
 }

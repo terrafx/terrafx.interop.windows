@@ -52,5 +52,23 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<ITfCompartment*, VARIANT*, int>)(lpVtbl[4]))((ITfCompartment*)Unsafe.AsPointer(ref this), pvarValue);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfCompartment*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfCompartment*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfCompartment*, uint> Release;
+
+            [NativeTypeName("HRESULT (TfClientId, const VARIANT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfCompartment*, uint, VARIANT*, int> SetValue;
+
+            [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfCompartment*, VARIANT*, int> GetValue;
+        }
     }
 }

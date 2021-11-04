@@ -66,5 +66,29 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IConfigInterleaving*, long*, long*, int>)(lpVtbl[6]))((IConfigInterleaving*)Unsafe.AsPointer(ref this), prtInterleave, prtPreroll);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IConfigInterleaving*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IConfigInterleaving*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IConfigInterleaving*, uint> Release;
+
+            [NativeTypeName("HRESULT (InterleavingMode) __attribute__((stdcall))")]
+            public delegate* unmanaged<IConfigInterleaving*, InterleavingMode, int> put_Mode;
+
+            [NativeTypeName("HRESULT (InterleavingMode *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IConfigInterleaving*, InterleavingMode*, int> get_Mode;
+
+            [NativeTypeName("HRESULT (const REFERENCE_TIME *, const REFERENCE_TIME *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IConfigInterleaving*, long*, long*, int> put_Interleaving;
+
+            [NativeTypeName("HRESULT (REFERENCE_TIME *, REFERENCE_TIME *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IConfigInterleaving*, long*, long*, int> get_Interleaving;
+        }
     }
 }

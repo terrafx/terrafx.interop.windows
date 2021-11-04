@@ -52,5 +52,23 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IMFSourceBufferAppendMode*, MF_MSE_APPEND_MODE, int>)(lpVtbl[4]))((IMFSourceBufferAppendMode*)Unsafe.AsPointer(ref this), mode);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFSourceBufferAppendMode*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFSourceBufferAppendMode*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFSourceBufferAppendMode*, uint> Release;
+
+            [NativeTypeName("MF_MSE_APPEND_MODE () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFSourceBufferAppendMode*, MF_MSE_APPEND_MODE> GetAppendMode;
+
+            [NativeTypeName("HRESULT (MF_MSE_APPEND_MODE) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFSourceBufferAppendMode*, MF_MSE_APPEND_MODE, int> SetAppendMode;
+        }
     }
 }

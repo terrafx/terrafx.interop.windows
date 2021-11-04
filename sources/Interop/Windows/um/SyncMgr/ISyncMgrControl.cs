@@ -143,5 +143,62 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<ISyncMgrControl*, BOOL, ushort*, ushort*, HWND, SYNCMGR_CONTROL_FLAGS, int>)(lpVtbl[17]))((ISyncMgrControl*)Unsafe.AsPointer(ref this), fEnable, pszHandlerID, pszItemID, hwndOwner, nControlFlags);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISyncMgrControl*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ISyncMgrControl*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ISyncMgrControl*, uint> Release;
+
+            [NativeTypeName("HRESULT (LPCWSTR, HWND, IUnknown *, SYNCMGR_SYNC_CONTROL_FLAGS, ISyncMgrSyncResult *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISyncMgrControl*, ushort*, HWND, IUnknown*, SYNCMGR_SYNC_CONTROL_FLAGS, ISyncMgrSyncResult*, int> StartHandlerSync;
+
+            [NativeTypeName("HRESULT (LPCWSTR, LPCWSTR *, ULONG, HWND, IUnknown *, SYNCMGR_SYNC_CONTROL_FLAGS, ISyncMgrSyncResult *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISyncMgrControl*, ushort*, ushort**, uint, HWND, IUnknown*, SYNCMGR_SYNC_CONTROL_FLAGS, ISyncMgrSyncResult*, int> StartItemSync;
+
+            [NativeTypeName("HRESULT (HWND) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISyncMgrControl*, HWND, int> StartSyncAll;
+
+            [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISyncMgrControl*, ushort*, int> StopHandlerSync;
+
+            [NativeTypeName("HRESULT (LPCWSTR, LPCWSTR *, ULONG) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISyncMgrControl*, ushort*, ushort**, uint, int> StopItemSync;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<ISyncMgrControl*, int> StopSyncAll;
+
+            [NativeTypeName("HRESULT (const IID &, SYNCMGR_CONTROL_FLAGS) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISyncMgrControl*, Guid*, SYNCMGR_CONTROL_FLAGS, int> UpdateHandlerCollection;
+
+            [NativeTypeName("HRESULT (LPCWSTR, SYNCMGR_CONTROL_FLAGS) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISyncMgrControl*, ushort*, SYNCMGR_CONTROL_FLAGS, int> UpdateHandler;
+
+            [NativeTypeName("HRESULT (LPCWSTR, LPCWSTR, SYNCMGR_CONTROL_FLAGS) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISyncMgrControl*, ushort*, ushort*, SYNCMGR_CONTROL_FLAGS, int> UpdateItem;
+
+            [NativeTypeName("HRESULT (LPCWSTR, LPCWSTR, SYNCMGR_CONTROL_FLAGS) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISyncMgrControl*, ushort*, ushort*, SYNCMGR_CONTROL_FLAGS, int> UpdateEvents;
+
+            [NativeTypeName("HRESULT (LPCWSTR, LPCWSTR, ISyncMgrConflict *, SYNCMGR_UPDATE_REASON) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISyncMgrControl*, ushort*, ushort*, ISyncMgrConflict*, SYNCMGR_UPDATE_REASON, int> UpdateConflict;
+
+            [NativeTypeName("HRESULT (LPCWSTR, LPCWSTR, SYNCMGR_CONTROL_FLAGS) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISyncMgrControl*, ushort*, ushort*, SYNCMGR_CONTROL_FLAGS, int> UpdateConflicts;
+
+            [NativeTypeName("HRESULT (BOOL, LPCWSTR, HWND, SYNCMGR_CONTROL_FLAGS) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISyncMgrControl*, BOOL, ushort*, HWND, SYNCMGR_CONTROL_FLAGS, int> ActivateHandler;
+
+            [NativeTypeName("HRESULT (BOOL, LPCWSTR, HWND, SYNCMGR_CONTROL_FLAGS) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISyncMgrControl*, BOOL, ushort*, HWND, SYNCMGR_CONTROL_FLAGS, int> EnableHandler;
+
+            [NativeTypeName("HRESULT (BOOL, LPCWSTR, LPCWSTR, HWND, SYNCMGR_CONTROL_FLAGS) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISyncMgrControl*, BOOL, ushort*, ushort*, HWND, SYNCMGR_CONTROL_FLAGS, int> EnableItem;
+        }
     }
 }

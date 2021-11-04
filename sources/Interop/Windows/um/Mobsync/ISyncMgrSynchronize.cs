@@ -108,5 +108,47 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<ISyncMgrSynchronize*, HWND, Guid*, int>)(lpVtbl[12]))((ISyncMgrSynchronize*)Unsafe.AsPointer(ref this), hWndParent, ErrorID);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISyncMgrSynchronize*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ISyncMgrSynchronize*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ISyncMgrSynchronize*, uint> Release;
+
+            [NativeTypeName("HRESULT (DWORD, DWORD, DWORD, const BYTE *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISyncMgrSynchronize*, uint, uint, uint, byte*, int> Initialize;
+
+            [NativeTypeName("HRESULT (SYNCMGRHANDLERINFO **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISyncMgrSynchronize*, SYNCMGRHANDLERINFO**, int> GetHandlerInfo;
+
+            [NativeTypeName("HRESULT (ISyncMgrEnumItems **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISyncMgrSynchronize*, ISyncMgrEnumItems**, int> EnumSyncMgrItems;
+
+            [NativeTypeName("HRESULT (const GUID &, const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISyncMgrSynchronize*, Guid*, Guid*, void**, int> GetItemObject;
+
+            [NativeTypeName("HRESULT (HWND, const GUID &) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISyncMgrSynchronize*, HWND, Guid*, int> ShowProperties;
+
+            [NativeTypeName("HRESULT (ISyncMgrSynchronizeCallback *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISyncMgrSynchronize*, ISyncMgrSynchronizeCallback*, int> SetProgressCallback;
+
+            [NativeTypeName("HRESULT (ULONG, GUID *, HWND, DWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISyncMgrSynchronize*, uint, Guid*, HWND, uint, int> PrepareForSync;
+
+            [NativeTypeName("HRESULT (HWND) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISyncMgrSynchronize*, HWND, int> Synchronize;
+
+            [NativeTypeName("HRESULT (const GUID &, DWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISyncMgrSynchronize*, Guid*, uint, int> SetItemStatus;
+
+            [NativeTypeName("HRESULT (HWND, const GUID &) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISyncMgrSynchronize*, HWND, Guid*, int> ShowError;
+        }
     }
 }

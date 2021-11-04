@@ -87,5 +87,38 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IFileDialogEvents*, IFileDialog*, IShellItem*, FDE_OVERWRITE_RESPONSE*, int>)(lpVtbl[9]))((IFileDialogEvents*)Unsafe.AsPointer(ref this), pfd, psi, pResponse);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFileDialogEvents*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IFileDialogEvents*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IFileDialogEvents*, uint> Release;
+
+            [NativeTypeName("HRESULT (IFileDialog *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFileDialogEvents*, IFileDialog*, int> OnFileOk;
+
+            [NativeTypeName("HRESULT (IFileDialog *, IShellItem *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFileDialogEvents*, IFileDialog*, IShellItem*, int> OnFolderChanging;
+
+            [NativeTypeName("HRESULT (IFileDialog *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFileDialogEvents*, IFileDialog*, int> OnFolderChange;
+
+            [NativeTypeName("HRESULT (IFileDialog *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFileDialogEvents*, IFileDialog*, int> OnSelectionChange;
+
+            [NativeTypeName("HRESULT (IFileDialog *, IShellItem *, FDE_SHAREVIOLATION_RESPONSE *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFileDialogEvents*, IFileDialog*, IShellItem*, FDE_SHAREVIOLATION_RESPONSE*, int> OnShareViolation;
+
+            [NativeTypeName("HRESULT (IFileDialog *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFileDialogEvents*, IFileDialog*, int> OnTypeChange;
+
+            [NativeTypeName("HRESULT (IFileDialog *, IShellItem *, FDE_OVERWRITE_RESPONSE *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFileDialogEvents*, IFileDialog*, IShellItem*, FDE_OVERWRITE_RESPONSE*, int> OnOverwrite;
+        }
     }
 }

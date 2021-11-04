@@ -87,5 +87,38 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IDiaEnumDebugStreams*, IDiaEnumDebugStreams**, int>)(lpVtbl[9]))((IDiaEnumDebugStreams*)Unsafe.AsPointer(ref this), ppenum);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaEnumDebugStreams*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaEnumDebugStreams*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaEnumDebugStreams*, uint> Release;
+
+            [NativeTypeName("HRESULT (IUnknown **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaEnumDebugStreams*, IUnknown**, int> get__NewEnum;
+
+            [NativeTypeName("HRESULT (LONG *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaEnumDebugStreams*, int*, int> get_Count;
+
+            [NativeTypeName("HRESULT (VARIANT, IDiaEnumDebugStreamData **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaEnumDebugStreams*, VARIANT, IDiaEnumDebugStreamData**, int> Item;
+
+            [NativeTypeName("HRESULT (ULONG, IDiaEnumDebugStreamData **, ULONG *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaEnumDebugStreams*, uint, IDiaEnumDebugStreamData**, uint*, int> Next;
+
+            [NativeTypeName("HRESULT (ULONG) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaEnumDebugStreams*, uint, int> Skip;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaEnumDebugStreams*, int> Reset;
+
+            [NativeTypeName("HRESULT (IDiaEnumDebugStreams **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaEnumDebugStreams*, IDiaEnumDebugStreams**, int> Clone;
+        }
     }
 }

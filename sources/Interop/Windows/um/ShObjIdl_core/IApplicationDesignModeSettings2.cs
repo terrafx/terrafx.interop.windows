@@ -129,5 +129,56 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IApplicationDesignModeSettings2*, SIZE, APPLICATION_VIEW_ORIENTATION*, int>)(lpVtbl[15]))((IApplicationDesignModeSettings2*)Unsafe.AsPointer(ref this), applicationSizePixels, viewOrientation);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IApplicationDesignModeSettings2*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IApplicationDesignModeSettings2*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IApplicationDesignModeSettings2*, uint> Release;
+
+            [NativeTypeName("HRESULT (SIZE) __attribute__((stdcall))")]
+            public delegate* unmanaged<IApplicationDesignModeSettings2*, SIZE, int> SetNativeDisplaySize;
+
+            [NativeTypeName("HRESULT (DEVICE_SCALE_FACTOR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IApplicationDesignModeSettings2*, DEVICE_SCALE_FACTOR, int> SetScaleFactor;
+
+            [NativeTypeName("HRESULT (APPLICATION_VIEW_STATE) __attribute__((stdcall))")]
+            public delegate* unmanaged<IApplicationDesignModeSettings2*, APPLICATION_VIEW_STATE, int> SetApplicationViewState;
+
+            [NativeTypeName("HRESULT (SIZE *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IApplicationDesignModeSettings2*, SIZE*, int> ComputeApplicationSize;
+
+            [NativeTypeName("HRESULT (APPLICATION_VIEW_STATE, SIZE, DEVICE_SCALE_FACTOR, BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IApplicationDesignModeSettings2*, APPLICATION_VIEW_STATE, SIZE, DEVICE_SCALE_FACTOR, BOOL*, int> IsApplicationViewStateSupported;
+
+            [NativeTypeName("HRESULT (EDGE_GESTURE_KIND) __attribute__((stdcall))")]
+            public delegate* unmanaged<IApplicationDesignModeSettings2*, EDGE_GESTURE_KIND, int> TriggerEdgeGesture;
+
+            [NativeTypeName("HRESULT (NATIVE_DISPLAY_ORIENTATION) __attribute__((stdcall))")]
+            public delegate* unmanaged<IApplicationDesignModeSettings2*, NATIVE_DISPLAY_ORIENTATION, int> SetNativeDisplayOrientation;
+
+            [NativeTypeName("HRESULT (APPLICATION_VIEW_ORIENTATION) __attribute__((stdcall))")]
+            public delegate* unmanaged<IApplicationDesignModeSettings2*, APPLICATION_VIEW_ORIENTATION, int> SetApplicationViewOrientation;
+
+            [NativeTypeName("HRESULT (ADJACENT_DISPLAY_EDGES) __attribute__((stdcall))")]
+            public delegate* unmanaged<IApplicationDesignModeSettings2*, ADJACENT_DISPLAY_EDGES, int> SetAdjacentDisplayEdges;
+
+            [NativeTypeName("HRESULT (BOOL) __attribute__((stdcall))")]
+            public delegate* unmanaged<IApplicationDesignModeSettings2*, BOOL, int> SetIsOnLockScreen;
+
+            [NativeTypeName("HRESULT (APPLICATION_VIEW_MIN_WIDTH) __attribute__((stdcall))")]
+            public delegate* unmanaged<IApplicationDesignModeSettings2*, APPLICATION_VIEW_MIN_WIDTH, int> SetApplicationViewMinWidth;
+
+            [NativeTypeName("HRESULT (SIZE *, SIZE *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IApplicationDesignModeSettings2*, SIZE*, SIZE*, int> GetApplicationSizeBounds;
+
+            [NativeTypeName("HRESULT (SIZE, APPLICATION_VIEW_ORIENTATION *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IApplicationDesignModeSettings2*, SIZE, APPLICATION_VIEW_ORIENTATION*, int> GetApplicationViewOrientation;
+        }
     }
 }

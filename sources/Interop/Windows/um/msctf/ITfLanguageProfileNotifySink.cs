@@ -52,5 +52,23 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<ITfLanguageProfileNotifySink*, int>)(lpVtbl[4]))((ITfLanguageProfileNotifySink*)Unsafe.AsPointer(ref this));
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfLanguageProfileNotifySink*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfLanguageProfileNotifySink*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfLanguageProfileNotifySink*, uint> Release;
+
+            [NativeTypeName("HRESULT (LANGID, BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfLanguageProfileNotifySink*, ushort, BOOL*, int> OnLanguageChange;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfLanguageProfileNotifySink*, int> OnLanguageChanged;
+        }
     }
 }

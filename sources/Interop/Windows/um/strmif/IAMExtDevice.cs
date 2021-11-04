@@ -94,5 +94,41 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IAMExtDevice*, int*, int>)(lpVtbl[10]))((IAMExtDevice*)Unsafe.AsPointer(ref this), pDevicePort);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAMExtDevice*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IAMExtDevice*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IAMExtDevice*, uint> Release;
+
+            [NativeTypeName("HRESULT (long, long *, double *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAMExtDevice*, int, int*, double*, int> GetCapability;
+
+            [NativeTypeName("HRESULT (LPOLESTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAMExtDevice*, ushort**, int> get_ExternalDeviceID;
+
+            [NativeTypeName("HRESULT (LPOLESTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAMExtDevice*, ushort**, int> get_ExternalDeviceVersion;
+
+            [NativeTypeName("HRESULT (long) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAMExtDevice*, int, int> put_DevicePower;
+
+            [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAMExtDevice*, int*, int> get_DevicePower;
+
+            [NativeTypeName("HRESULT (HEVENT, long, long *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAMExtDevice*, HEVENT, int, int*, int> Calibrate;
+
+            [NativeTypeName("HRESULT (long) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAMExtDevice*, int, int> put_DevicePort;
+
+            [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAMExtDevice*, int*, int> get_DevicePort;
+        }
     }
 }

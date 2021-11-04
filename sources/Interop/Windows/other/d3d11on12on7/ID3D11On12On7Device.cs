@@ -24,5 +24,14 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<ID3D11On12On7Device*, void*, D3D12_RESOURCE_STATES, int>)(lpVtbl[1]))((ID3D11On12On7Device*)Unsafe.AsPointer(ref this), pResource, state);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (ID3D11On12On7Resource *, D3D12_RESOURCE_STATES) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D11On12On7Device*, void*, D3D12_RESOURCE_STATES, int> AcquireResource;
+
+            [NativeTypeName("HRESULT (ID3D11On12On7Resource *, D3D12_RESOURCE_STATES) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D11On12On7Device*, void*, D3D12_RESOURCE_STATES, int> ReleaseResource;
+        }
     }
 }

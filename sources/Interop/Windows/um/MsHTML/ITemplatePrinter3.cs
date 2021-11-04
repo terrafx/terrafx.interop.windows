@@ -584,5 +584,251 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<ITemplatePrinter3*, IDispatch*, short*, int>)(lpVtbl[80]))((ITemplatePrinter3*)Unsafe.AsPointer(ref this), pageRule, pbImportant);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITemplatePrinter3*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ITemplatePrinter3*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ITemplatePrinter3*, uint> Release;
+
+            [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITemplatePrinter3*, uint*, int> GetTypeInfoCount;
+
+            [NativeTypeName("HRESULT (UINT, LCID, ITypeInfo **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITemplatePrinter3*, uint, uint, ITypeInfo**, int> GetTypeInfo;
+
+            [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITemplatePrinter3*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+
+            [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITemplatePrinter3*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
+
+            [NativeTypeName("HRESULT (BSTR, VARIANT_BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITemplatePrinter3*, ushort*, short*, int> startDoc;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<ITemplatePrinter3*, int> stopDoc;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<ITemplatePrinter3*, int> printBlankPage;
+
+            [NativeTypeName("HRESULT (IDispatch *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITemplatePrinter3*, IDispatch*, int> printPage;
+
+            [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITemplatePrinter3*, short*, int> ensurePrintDialogDefaults;
+
+            [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITemplatePrinter3*, short*, int> showPrintDialog;
+
+            [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITemplatePrinter3*, short*, int> showPageSetupDialog;
+
+            [NativeTypeName("HRESULT (IUnknown *, VARIANT_BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITemplatePrinter3*, IUnknown*, short*, int> printNonNative;
+
+            [NativeTypeName("HRESULT (IUnknown *, VARIANT_BOOL) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITemplatePrinter3*, IUnknown*, short, int> printNonNativeFrames;
+
+            [NativeTypeName("HRESULT (VARIANT_BOOL) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITemplatePrinter3*, short, int> put_framesetDocument;
+
+            [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITemplatePrinter3*, short*, int> get_framesetDocument;
+
+            [NativeTypeName("HRESULT (VARIANT_BOOL) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITemplatePrinter3*, short, int> put_frameActive;
+
+            [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITemplatePrinter3*, short*, int> get_frameActive;
+
+            [NativeTypeName("HRESULT (VARIANT_BOOL) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITemplatePrinter3*, short, int> put_frameAsShown;
+
+            [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITemplatePrinter3*, short*, int> get_frameAsShown;
+
+            [NativeTypeName("HRESULT (VARIANT_BOOL) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITemplatePrinter3*, short, int> put_selection;
+
+            [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITemplatePrinter3*, short*, int> get_selection;
+
+            [NativeTypeName("HRESULT (VARIANT_BOOL) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITemplatePrinter3*, short, int> put_selectedPages;
+
+            [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITemplatePrinter3*, short*, int> get_selectedPages;
+
+            [NativeTypeName("HRESULT (VARIANT_BOOL) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITemplatePrinter3*, short, int> put_currentPage;
+
+            [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITemplatePrinter3*, short*, int> get_currentPage;
+
+            [NativeTypeName("HRESULT (VARIANT_BOOL) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITemplatePrinter3*, short, int> put_currentPageAvail;
+
+            [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITemplatePrinter3*, short*, int> get_currentPageAvail;
+
+            [NativeTypeName("HRESULT (VARIANT_BOOL) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITemplatePrinter3*, short, int> put_collate;
+
+            [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITemplatePrinter3*, short*, int> get_collate;
+
+            [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITemplatePrinter3*, short*, int> get_duplex;
+
+            [NativeTypeName("HRESULT (USHORT) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITemplatePrinter3*, ushort, int> put_copies;
+
+            [NativeTypeName("HRESULT (USHORT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITemplatePrinter3*, ushort*, int> get_copies;
+
+            [NativeTypeName("HRESULT (USHORT) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITemplatePrinter3*, ushort, int> put_pageFrom;
+
+            [NativeTypeName("HRESULT (USHORT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITemplatePrinter3*, ushort*, int> get_pageFrom;
+
+            [NativeTypeName("HRESULT (USHORT) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITemplatePrinter3*, ushort, int> put_pageTo;
+
+            [NativeTypeName("HRESULT (USHORT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITemplatePrinter3*, ushort*, int> get_pageTo;
+
+            [NativeTypeName("HRESULT (VARIANT_BOOL) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITemplatePrinter3*, short, int> put_tableOfLinks;
+
+            [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITemplatePrinter3*, short*, int> get_tableOfLinks;
+
+            [NativeTypeName("HRESULT (VARIANT_BOOL) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITemplatePrinter3*, short, int> put_allLinkedDocuments;
+
+            [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITemplatePrinter3*, short*, int> get_allLinkedDocuments;
+
+            [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITemplatePrinter3*, ushort*, int> put_header;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITemplatePrinter3*, ushort**, int> get_header;
+
+            [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITemplatePrinter3*, ushort*, int> put_footer;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITemplatePrinter3*, ushort**, int> get_footer;
+
+            [NativeTypeName("HRESULT (long) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITemplatePrinter3*, int, int> put_marginLeft;
+
+            [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITemplatePrinter3*, int*, int> get_marginLeft;
+
+            [NativeTypeName("HRESULT (long) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITemplatePrinter3*, int, int> put_marginRight;
+
+            [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITemplatePrinter3*, int*, int> get_marginRight;
+
+            [NativeTypeName("HRESULT (long) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITemplatePrinter3*, int, int> put_marginTop;
+
+            [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITemplatePrinter3*, int*, int> get_marginTop;
+
+            [NativeTypeName("HRESULT (long) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITemplatePrinter3*, int, int> put_marginBottom;
+
+            [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITemplatePrinter3*, int*, int> get_marginBottom;
+
+            [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITemplatePrinter3*, int*, int> get_pageWidth;
+
+            [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITemplatePrinter3*, int*, int> get_pageHeight;
+
+            [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITemplatePrinter3*, int*, int> get_unprintableLeft;
+
+            [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITemplatePrinter3*, int*, int> get_unprintableTop;
+
+            [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITemplatePrinter3*, int*, int> get_unprintableRight;
+
+            [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITemplatePrinter3*, int*, int> get_unprintableBottom;
+
+            [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITemplatePrinter3*, int*, int> updatePageStatus;
+
+            [NativeTypeName("HRESULT (VARIANT_BOOL) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITemplatePrinter3*, short, int> put_selectionEnabled;
+
+            [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITemplatePrinter3*, short*, int> get_selectionEnabled;
+
+            [NativeTypeName("HRESULT (VARIANT_BOOL) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITemplatePrinter3*, short, int> put_frameActiveEnabled;
+
+            [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITemplatePrinter3*, short*, int> get_frameActiveEnabled;
+
+            [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITemplatePrinter3*, ushort*, int> put_orientation;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITemplatePrinter3*, ushort**, int> get_orientation;
+
+            [NativeTypeName("HRESULT (VARIANT_BOOL) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITemplatePrinter3*, short, int> put_usePrinterCopyCollate;
+
+            [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITemplatePrinter3*, short*, int> get_usePrinterCopyCollate;
+
+            [NativeTypeName("HRESULT (BSTR, VARIANT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITemplatePrinter3*, ushort*, VARIANT*, int> deviceSupports;
+
+            [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITemplatePrinter3*, ushort*, int> put_headerFooterFont;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITemplatePrinter3*, ushort**, int> get_headerFooterFont;
+
+            [NativeTypeName("HRESULT (IDispatch *, long, long, VARIANT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITemplatePrinter3*, IDispatch*, int, int, VARIANT*, int> getPageMarginTop;
+
+            [NativeTypeName("HRESULT (IDispatch *, long, long, VARIANT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITemplatePrinter3*, IDispatch*, int, int, VARIANT*, int> getPageMarginRight;
+
+            [NativeTypeName("HRESULT (IDispatch *, long, long, VARIANT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITemplatePrinter3*, IDispatch*, int, int, VARIANT*, int> getPageMarginBottom;
+
+            [NativeTypeName("HRESULT (IDispatch *, long, long, VARIANT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITemplatePrinter3*, IDispatch*, int, int, VARIANT*, int> getPageMarginLeft;
+
+            [NativeTypeName("HRESULT (IDispatch *, VARIANT_BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITemplatePrinter3*, IDispatch*, short*, int> getPageMarginTopImportant;
+
+            [NativeTypeName("HRESULT (IDispatch *, VARIANT_BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITemplatePrinter3*, IDispatch*, short*, int> getPageMarginRightImportant;
+
+            [NativeTypeName("HRESULT (IDispatch *, VARIANT_BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITemplatePrinter3*, IDispatch*, short*, int> getPageMarginBottomImportant;
+
+            [NativeTypeName("HRESULT (IDispatch *, VARIANT_BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITemplatePrinter3*, IDispatch*, short*, int> getPageMarginLeftImportant;
+        }
     }
 }

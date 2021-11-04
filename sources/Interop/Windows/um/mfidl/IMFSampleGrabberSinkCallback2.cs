@@ -101,5 +101,44 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IMFSampleGrabberSinkCallback2*, Guid*, uint, long, long, byte*, uint, IMFAttributes*, int>)(lpVtbl[11]))((IMFSampleGrabberSinkCallback2*)Unsafe.AsPointer(ref this), guidMajorMediaType, dwSampleFlags, llSampleTime, llSampleDuration, pSampleBuffer, dwSampleSize, pAttributes);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFSampleGrabberSinkCallback2*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFSampleGrabberSinkCallback2*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFSampleGrabberSinkCallback2*, uint> Release;
+
+            [NativeTypeName("HRESULT (MFTIME, LONGLONG) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFSampleGrabberSinkCallback2*, long, long, int> OnClockStart;
+
+            [NativeTypeName("HRESULT (MFTIME) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFSampleGrabberSinkCallback2*, long, int> OnClockStop;
+
+            [NativeTypeName("HRESULT (MFTIME) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFSampleGrabberSinkCallback2*, long, int> OnClockPause;
+
+            [NativeTypeName("HRESULT (MFTIME) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFSampleGrabberSinkCallback2*, long, int> OnClockRestart;
+
+            [NativeTypeName("HRESULT (MFTIME, float) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFSampleGrabberSinkCallback2*, long, float, int> OnClockSetRate;
+
+            [NativeTypeName("HRESULT (IMFPresentationClock *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFSampleGrabberSinkCallback2*, IMFPresentationClock*, int> OnSetPresentationClock;
+
+            [NativeTypeName("HRESULT (const GUID &, DWORD, LONGLONG, LONGLONG, const BYTE *, DWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFSampleGrabberSinkCallback2*, Guid*, uint, long, long, byte*, uint, int> OnProcessSample;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFSampleGrabberSinkCallback2*, int> OnShutdown;
+
+            [NativeTypeName("HRESULT (const GUID &, DWORD, LONGLONG, LONGLONG, const BYTE *, DWORD, IMFAttributes *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFSampleGrabberSinkCallback2*, Guid*, uint, long, long, byte*, uint, IMFAttributes*, int> OnProcessSampleEx;
+        }
     }
 }

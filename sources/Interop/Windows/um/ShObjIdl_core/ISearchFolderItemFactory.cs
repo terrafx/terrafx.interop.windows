@@ -122,5 +122,53 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<ISearchFolderItemFactory*, ITEMIDLIST**, int>)(lpVtbl[14]))((ISearchFolderItemFactory*)Unsafe.AsPointer(ref this), ppidl);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISearchFolderItemFactory*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ISearchFolderItemFactory*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ISearchFolderItemFactory*, uint> Release;
+
+            [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISearchFolderItemFactory*, ushort*, int> SetDisplayName;
+
+            [NativeTypeName("HRESULT (FOLDERTYPEID) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISearchFolderItemFactory*, Guid, int> SetFolderTypeID;
+
+            [NativeTypeName("HRESULT (FOLDERLOGICALVIEWMODE) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISearchFolderItemFactory*, FOLDERLOGICALVIEWMODE, int> SetFolderLogicalViewMode;
+
+            [NativeTypeName("HRESULT (int) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISearchFolderItemFactory*, int, int> SetIconSize;
+
+            [NativeTypeName("HRESULT (UINT, const PROPERTYKEY *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISearchFolderItemFactory*, uint, PROPERTYKEY*, int> SetVisibleColumns;
+
+            [NativeTypeName("HRESULT (UINT, SORTCOLUMN *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISearchFolderItemFactory*, uint, SORTCOLUMN*, int> SetSortColumns;
+
+            [NativeTypeName("HRESULT (const PROPERTYKEY &) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISearchFolderItemFactory*, PROPERTYKEY*, int> SetGroupColumn;
+
+            [NativeTypeName("HRESULT (UINT, PROPERTYKEY *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISearchFolderItemFactory*, uint, PROPERTYKEY*, int> SetStacks;
+
+            [NativeTypeName("HRESULT (IShellItemArray *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISearchFolderItemFactory*, IShellItemArray*, int> SetScope;
+
+            [NativeTypeName("HRESULT (ICondition *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISearchFolderItemFactory*, ICondition*, int> SetCondition;
+
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISearchFolderItemFactory*, Guid*, void**, int> GetShellItem;
+
+            [NativeTypeName("HRESULT (LPITEMIDLIST *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISearchFolderItemFactory*, ITEMIDLIST**, int> GetIDList;
+        }
     }
 }

@@ -101,5 +101,44 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<ITfPropertyStore*, IStream*, uint*, int>)(lpVtbl[11]))((ITfPropertyStore*)Unsafe.AsPointer(ref this), pStream, pcb);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfPropertyStore*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfPropertyStore*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfPropertyStore*, uint> Release;
+
+            [NativeTypeName("HRESULT (GUID *) __attribute__((stdcall))")]
+            public new delegate* unmanaged<ITfPropertyStore*, Guid*, int> GetType;
+
+            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfPropertyStore*, uint*, int> GetDataType;
+
+            [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfPropertyStore*, VARIANT*, int> GetData;
+
+            [NativeTypeName("HRESULT (DWORD, ITfRange *, BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfPropertyStore*, uint, ITfRange*, BOOL*, int> OnTextUpdated;
+
+            [NativeTypeName("HRESULT (ITfRange *, BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfPropertyStore*, ITfRange*, BOOL*, int> Shrink;
+
+            [NativeTypeName("HRESULT (ITfRange *, ITfRange *, ITfPropertyStore **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfPropertyStore*, ITfRange*, ITfRange*, ITfPropertyStore**, int> Divide;
+
+            [NativeTypeName("HRESULT (ITfPropertyStore **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfPropertyStore*, ITfPropertyStore**, int> Clone;
+
+            [NativeTypeName("HRESULT (CLSID *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfPropertyStore*, Guid*, int> GetPropertyRangeCreator;
+
+            [NativeTypeName("HRESULT (IStream *, ULONG *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfPropertyStore*, IStream*, uint*, int> Serialize;
+        }
     }
 }

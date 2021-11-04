@@ -45,5 +45,20 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IAudioClientDuckingControl*, AUDIO_DUCKING_OPTIONS, int>)(lpVtbl[3]))((IAudioClientDuckingControl*)Unsafe.AsPointer(ref this), options);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAudioClientDuckingControl*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IAudioClientDuckingControl*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IAudioClientDuckingControl*, uint> Release;
+
+            [NativeTypeName("HRESULT (AUDIO_DUCKING_OPTIONS) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAudioClientDuckingControl*, AUDIO_DUCKING_OPTIONS, int> SetDuckingOptionsForCurrentStream;
+        }
     }
 }

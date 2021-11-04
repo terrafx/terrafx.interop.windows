@@ -66,5 +66,29 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IOverlayNotify*, RECT*, RECT*, int>)(lpVtbl[6]))((IOverlayNotify*)Unsafe.AsPointer(ref this), pSourceRect, pDestinationRect);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IOverlayNotify*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IOverlayNotify*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IOverlayNotify*, uint> Release;
+
+            [NativeTypeName("HRESULT (DWORD, const PALETTEENTRY *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IOverlayNotify*, uint, PALETTEENTRY*, int> OnPaletteChange;
+
+            [NativeTypeName("HRESULT (const RECT *, const RECT *, const RGNDATA *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IOverlayNotify*, RECT*, RECT*, RGNDATA*, int> OnClipChange;
+
+            [NativeTypeName("HRESULT (const COLORKEY *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IOverlayNotify*, COLORKEY*, int> OnColorKeyChange;
+
+            [NativeTypeName("HRESULT (const RECT *, const RECT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IOverlayNotify*, RECT*, RECT*, int> OnPositionChange;
+        }
     }
 }

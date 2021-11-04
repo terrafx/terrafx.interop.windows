@@ -59,5 +59,26 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IAppxFactory2*, IStream*, IAppxContentGroupMapWriter**, int>)(lpVtbl[5]))((IAppxFactory2*)Unsafe.AsPointer(ref this), stream, contentGroupMapWriter);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAppxFactory2*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IAppxFactory2*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IAppxFactory2*, uint> Release;
+
+            [NativeTypeName("HRESULT (IStream *, IAppxContentGroupMapReader **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAppxFactory2*, IStream*, IAppxContentGroupMapReader**, int> CreateContentGroupMapReader;
+
+            [NativeTypeName("HRESULT (IStream *, IAppxSourceContentGroupMapReader **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAppxFactory2*, IStream*, IAppxSourceContentGroupMapReader**, int> CreateSourceContentGroupMapReader;
+
+            [NativeTypeName("HRESULT (IStream *, IAppxContentGroupMapWriter **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAppxFactory2*, IStream*, IAppxContentGroupMapWriter**, int> CreateContentGroupMapWriter;
+        }
     }
 }

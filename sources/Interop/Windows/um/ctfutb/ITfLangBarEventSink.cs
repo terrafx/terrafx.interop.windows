@@ -80,5 +80,35 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<ITfLangBarEventSink*, uint, Guid*, RECT*, int>)(lpVtbl[8]))((ITfLangBarEventSink*)Unsafe.AsPointer(ref this), dwThreadId, rguid, prc);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfLangBarEventSink*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfLangBarEventSink*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfLangBarEventSink*, uint> Release;
+
+            [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfLangBarEventSink*, uint, int> OnSetFocus;
+
+            [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfLangBarEventSink*, uint, int> OnThreadTerminate;
+
+            [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfLangBarEventSink*, uint, int> OnThreadItemChange;
+
+            [NativeTypeName("HRESULT (DWORD, UINT, WPARAM, LPARAM) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfLangBarEventSink*, uint, uint, WPARAM, LPARAM, int> OnModalInput;
+
+            [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfLangBarEventSink*, uint, int> ShowFloating;
+
+            [NativeTypeName("HRESULT (DWORD, const GUID &, RECT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfLangBarEventSink*, uint, Guid*, RECT*, int> GetItemFloatingRect;
+        }
     }
 }

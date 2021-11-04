@@ -116,5 +116,50 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<ISpeechFileStream*, int>)(lpVtbl[13]))((ISpeechFileStream*)Unsafe.AsPointer(ref this));
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpeechFileStream*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpeechFileStream*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpeechFileStream*, uint> Release;
+
+            [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpeechFileStream*, uint*, int> GetTypeInfoCount;
+
+            [NativeTypeName("HRESULT (UINT, LCID, ITypeInfo **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpeechFileStream*, uint, uint, ITypeInfo**, int> GetTypeInfo;
+
+            [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpeechFileStream*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+
+            [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpeechFileStream*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
+
+            [NativeTypeName("HRESULT (ISpeechAudioFormat **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpeechFileStream*, ISpeechAudioFormat**, int> get_Format;
+
+            [NativeTypeName("HRESULT (ISpeechAudioFormat *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpeechFileStream*, ISpeechAudioFormat*, int> putref_Format;
+
+            [NativeTypeName("HRESULT (VARIANT *, long, long *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpeechFileStream*, VARIANT*, int, int*, int> Read;
+
+            [NativeTypeName("HRESULT (VARIANT, long *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpeechFileStream*, VARIANT, int*, int> Write;
+
+            [NativeTypeName("HRESULT (VARIANT, SpeechStreamSeekPositionType, VARIANT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpeechFileStream*, VARIANT, SpeechStreamSeekPositionType, VARIANT*, int> Seek;
+
+            [NativeTypeName("HRESULT (BSTR, SpeechStreamFileMode, VARIANT_BOOL) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpeechFileStream*, ushort*, SpeechStreamFileMode, short, int> Open;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpeechFileStream*, int> Close;
+        }
     }
 }

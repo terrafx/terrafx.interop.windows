@@ -45,5 +45,20 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<ICDBurnExt*, uint*, int>)(lpVtbl[3]))((ICDBurnExt*)Unsafe.AsPointer(ref this), pdwActions);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ICDBurnExt*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ICDBurnExt*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ICDBurnExt*, uint> Release;
+
+            [NativeTypeName("HRESULT (CDBE_ACTIONS *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ICDBurnExt*, uint*, int> GetSupportedActionTypes;
+        }
     }
 }

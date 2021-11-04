@@ -87,5 +87,38 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IDiaEnumLineNumbers*, IDiaEnumLineNumbers**, int>)(lpVtbl[9]))((IDiaEnumLineNumbers*)Unsafe.AsPointer(ref this), ppenum);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaEnumLineNumbers*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaEnumLineNumbers*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaEnumLineNumbers*, uint> Release;
+
+            [NativeTypeName("HRESULT (IUnknown **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaEnumLineNumbers*, IUnknown**, int> get__NewEnum;
+
+            [NativeTypeName("HRESULT (LONG *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaEnumLineNumbers*, int*, int> get_Count;
+
+            [NativeTypeName("HRESULT (DWORD, IDiaLineNumber **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaEnumLineNumbers*, uint, IDiaLineNumber**, int> Item;
+
+            [NativeTypeName("HRESULT (ULONG, IDiaLineNumber **, ULONG *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaEnumLineNumbers*, uint, IDiaLineNumber**, uint*, int> Next;
+
+            [NativeTypeName("HRESULT (ULONG) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaEnumLineNumbers*, uint, int> Skip;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaEnumLineNumbers*, int> Reset;
+
+            [NativeTypeName("HRESULT (IDiaEnumLineNumbers **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaEnumLineNumbers*, IDiaEnumLineNumbers**, int> Clone;
+        }
     }
 }

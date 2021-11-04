@@ -73,5 +73,32 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IEnumWbemClassObject*, int, uint, int>)(lpVtbl[7]))((IEnumWbemClassObject*)Unsafe.AsPointer(ref this), lTimeout, nCount);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IEnumWbemClassObject*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IEnumWbemClassObject*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IEnumWbemClassObject*, uint> Release;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IEnumWbemClassObject*, int> Reset;
+
+            [NativeTypeName("HRESULT (long, ULONG, IWbemClassObject **, ULONG *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IEnumWbemClassObject*, int, uint, IWbemClassObject**, uint*, int> Next;
+
+            [NativeTypeName("HRESULT (ULONG, IWbemObjectSink *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IEnumWbemClassObject*, uint, IWbemObjectSink*, int> NextAsync;
+
+            [NativeTypeName("HRESULT (IEnumWbemClassObject **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IEnumWbemClassObject*, IEnumWbemClassObject**, int> Clone;
+
+            [NativeTypeName("HRESULT (long, ULONG) __attribute__((stdcall))")]
+            public delegate* unmanaged<IEnumWbemClassObject*, int, uint, int> Skip;
+        }
     }
 }

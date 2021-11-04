@@ -87,5 +87,38 @@ namespace TerraFX.Interop
         {
             return ((HANDLE)(((delegate* unmanaged<ISpNotifySource*, void*>)(lpVtbl[9]))((ISpNotifySource*)Unsafe.AsPointer(ref this))));
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpNotifySource*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpNotifySource*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpNotifySource*, uint> Release;
+
+            [NativeTypeName("HRESULT (ISpNotifySink *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpNotifySource*, ISpNotifySink*, int> SetNotifySink;
+
+            [NativeTypeName("HRESULT (HWND, UINT, WPARAM, LPARAM) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpNotifySource*, HWND, uint, WPARAM, LPARAM, int> SetNotifyWindowMessage;
+
+            [NativeTypeName("HRESULT (SPNOTIFYCALLBACK *, WPARAM, LPARAM) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpNotifySource*, delegate* unmanaged<WPARAM, LPARAM, void>, WPARAM, LPARAM, int> SetNotifyCallbackFunction;
+
+            [NativeTypeName("HRESULT (ISpNotifyCallback *, WPARAM, LPARAM) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpNotifySource*, ISpNotifyCallback*, WPARAM, LPARAM, int> SetNotifyCallbackInterface;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpNotifySource*, int> SetNotifyWin32Event;
+
+            [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpNotifySource*, uint, int> WaitForNotifyEvent;
+
+            [NativeTypeName("HANDLE () __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpNotifySource*, void*> GetNotifyEventHandle;
+        }
     }
 }

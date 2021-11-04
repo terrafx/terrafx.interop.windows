@@ -59,5 +59,26 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IOpenControlPanel*, CPVIEW*, int>)(lpVtbl[5]))((IOpenControlPanel*)Unsafe.AsPointer(ref this), pView);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IOpenControlPanel*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IOpenControlPanel*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IOpenControlPanel*, uint> Release;
+
+            [NativeTypeName("HRESULT (LPCWSTR, LPCWSTR, IUnknown *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IOpenControlPanel*, ushort*, ushort*, IUnknown*, int> Open;
+
+            [NativeTypeName("HRESULT (LPCWSTR, LPWSTR, UINT) __attribute__((stdcall))")]
+            public delegate* unmanaged<IOpenControlPanel*, ushort*, ushort*, uint, int> GetPath;
+
+            [NativeTypeName("HRESULT (CPVIEW *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IOpenControlPanel*, CPVIEW*, int> GetCurrentView;
+        }
     }
 }

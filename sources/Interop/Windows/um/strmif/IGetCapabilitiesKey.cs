@@ -45,5 +45,20 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IGetCapabilitiesKey*, HKEY*, int>)(lpVtbl[3]))((IGetCapabilitiesKey*)Unsafe.AsPointer(ref this), pHKey);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IGetCapabilitiesKey*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IGetCapabilitiesKey*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IGetCapabilitiesKey*, uint> Release;
+
+            [NativeTypeName("HRESULT (HKEY *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IGetCapabilitiesKey*, HKEY*, int> GetCapabilitiesKey;
+        }
     }
 }

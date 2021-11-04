@@ -78,5 +78,35 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IQualProp*, int*, int>)(lpVtbl[8]))((IQualProp*)Unsafe.AsPointer(ref this), piDev);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IQualProp*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IQualProp*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IQualProp*, uint> Release;
+
+            [NativeTypeName("HRESULT (int *) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IQualProp*, int*, int> get_FramesDroppedInRenderer;
+
+            [NativeTypeName("HRESULT (int *) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IQualProp*, int*, int> get_FramesDrawn;
+
+            [NativeTypeName("HRESULT (int *) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IQualProp*, int*, int> get_AvgFrameRate;
+
+            [NativeTypeName("HRESULT (int *) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IQualProp*, int*, int> get_Jitter;
+
+            [NativeTypeName("HRESULT (int *) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IQualProp*, int*, int> get_AvgSyncOffset;
+
+            [NativeTypeName("HRESULT (int *) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IQualProp*, int*, int> get_DevSyncOffset;
+        }
     }
 }

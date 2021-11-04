@@ -45,5 +45,20 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IHighlightSegment*, IMarkupPointer*, IMarkupPointer*, int>)(lpVtbl[3]))((IHighlightSegment*)Unsafe.AsPointer(ref this), pIStart, pIEnd);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHighlightSegment*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IHighlightSegment*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IHighlightSegment*, uint> Release;
+
+            [NativeTypeName("HRESULT (IMarkupPointer *, IMarkupPointer *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHighlightSegment*, IMarkupPointer*, IMarkupPointer*, int> GetPointers;
+        }
     }
 }

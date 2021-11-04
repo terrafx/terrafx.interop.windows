@@ -94,5 +94,41 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<ISpRecoGrammar2*, IInternetSecurityManager*, int>)(lpVtbl[10]))((ISpRecoGrammar2*)Unsafe.AsPointer(ref this), pSMLSecurityManager);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpRecoGrammar2*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpRecoGrammar2*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpRecoGrammar2*, uint> Release;
+
+            [NativeTypeName("HRESULT (SPRULE **, UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpRecoGrammar2*, SPRULE**, uint*, int> GetRules;
+
+            [NativeTypeName("HRESULT (LPCWSTR, SPLOADOPTIONS, LPCWSTR, LPCWSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpRecoGrammar2*, ushort*, SPLOADOPTIONS, ushort*, ushort*, int> LoadCmdFromFile2;
+
+            [NativeTypeName("HRESULT (const SPBINARYGRAMMAR *, SPLOADOPTIONS, LPCWSTR, LPCWSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpRecoGrammar2*, SPBINARYGRAMMAR*, SPLOADOPTIONS, ushort*, ushort*, int> LoadCmdFromMemory2;
+
+            [NativeTypeName("HRESULT (LPCWSTR, ULONG, int) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpRecoGrammar2*, ushort*, uint, int, int> SetRulePriority;
+
+            [NativeTypeName("HRESULT (LPCWSTR, ULONG, float) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpRecoGrammar2*, ushort*, uint, float, int> SetRuleWeight;
+
+            [NativeTypeName("HRESULT (float) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpRecoGrammar2*, float, int> SetDictationWeight;
+
+            [NativeTypeName("HRESULT (ISpeechResourceLoader *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpRecoGrammar2*, ISpeechResourceLoader*, int> SetGrammarLoader;
+
+            [NativeTypeName("HRESULT (IInternetSecurityManager *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpRecoGrammar2*, IInternetSecurityManager*, int> SetSMLSecurityManager;
+        }
     }
 }

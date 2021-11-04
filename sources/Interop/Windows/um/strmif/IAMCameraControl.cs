@@ -59,5 +59,26 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IAMCameraControl*, int, int*, int*, int>)(lpVtbl[5]))((IAMCameraControl*)Unsafe.AsPointer(ref this), Property, lValue, Flags);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAMCameraControl*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IAMCameraControl*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IAMCameraControl*, uint> Release;
+
+            [NativeTypeName("HRESULT (long, long *, long *, long *, long *, long *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAMCameraControl*, int, int*, int*, int*, int*, int*, int> GetRange;
+
+            [NativeTypeName("HRESULT (long, long, long) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAMCameraControl*, int, int, int, int> Set;
+
+            [NativeTypeName("HRESULT (long, long *, long *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAMCameraControl*, int, int*, int*, int> Get;
+        }
     }
 }

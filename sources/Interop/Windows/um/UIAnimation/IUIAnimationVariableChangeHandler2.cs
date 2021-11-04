@@ -45,5 +45,20 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IUIAnimationVariableChangeHandler2*, IUIAnimationStoryboard2*, IUIAnimationVariable2*, double*, double*, uint, int>)(lpVtbl[3]))((IUIAnimationVariableChangeHandler2*)Unsafe.AsPointer(ref this), storyboard, variable, newValue, previousValue, cDimension);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IUIAnimationVariableChangeHandler2*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IUIAnimationVariableChangeHandler2*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IUIAnimationVariableChangeHandler2*, uint> Release;
+
+            [NativeTypeName("HRESULT (IUIAnimationStoryboard2 *, IUIAnimationVariable2 *, DOUBLE *, DOUBLE *, UINT) __attribute__((stdcall))")]
+            public delegate* unmanaged<IUIAnimationVariableChangeHandler2*, IUIAnimationStoryboard2*, IUIAnimationVariable2*, double*, double*, uint, int> OnValueChanged;
+        }
     }
 }

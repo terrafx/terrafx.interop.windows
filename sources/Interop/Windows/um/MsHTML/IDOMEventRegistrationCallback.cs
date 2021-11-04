@@ -52,5 +52,23 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IDOMEventRegistrationCallback*, ulong, int>)(lpVtbl[4]))((IDOMEventRegistrationCallback*)Unsafe.AsPointer(ref this), ullCookie);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDOMEventRegistrationCallback*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDOMEventRegistrationCallback*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDOMEventRegistrationCallback*, uint> Release;
+
+            [NativeTypeName("HRESULT (LPCWSTR, IScriptEventHandler *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDOMEventRegistrationCallback*, ushort*, IScriptEventHandler*, int> OnDOMEventListenerAdded;
+
+            [NativeTypeName("HRESULT (ULONGLONG) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDOMEventRegistrationCallback*, ulong, int> OnDOMEventListenerRemoved;
+        }
     }
 }

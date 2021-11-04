@@ -66,5 +66,29 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IFileDialogControlEvents*, IFileDialogCustomize*, uint, int>)(lpVtbl[6]))((IFileDialogControlEvents*)Unsafe.AsPointer(ref this), pfdc, dwIDCtl);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFileDialogControlEvents*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IFileDialogControlEvents*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IFileDialogControlEvents*, uint> Release;
+
+            [NativeTypeName("HRESULT (IFileDialogCustomize *, DWORD, DWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFileDialogControlEvents*, IFileDialogCustomize*, uint, uint, int> OnItemSelected;
+
+            [NativeTypeName("HRESULT (IFileDialogCustomize *, DWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFileDialogControlEvents*, IFileDialogCustomize*, uint, int> OnButtonClicked;
+
+            [NativeTypeName("HRESULT (IFileDialogCustomize *, DWORD, BOOL) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFileDialogControlEvents*, IFileDialogCustomize*, uint, BOOL, int> OnCheckButtonToggled;
+
+            [NativeTypeName("HRESULT (IFileDialogCustomize *, DWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFileDialogControlEvents*, IFileDialogCustomize*, uint, int> OnControlActivating;
+        }
     }
 }

@@ -94,5 +94,41 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IDirectManipulationContent*, float*, uint, int>)(lpVtbl[10]))((IDirectManipulationContent*)Unsafe.AsPointer(ref this), matrix, pointCount);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDirectManipulationContent*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDirectManipulationContent*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDirectManipulationContent*, uint> Release;
+
+            [NativeTypeName("HRESULT (RECT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDirectManipulationContent*, RECT*, int> GetContentRect;
+
+            [NativeTypeName("HRESULT (const RECT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDirectManipulationContent*, RECT*, int> SetContentRect;
+
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDirectManipulationContent*, Guid*, void**, int> GetViewport;
+
+            [NativeTypeName("HRESULT (const IID &, void **, UINT32 *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDirectManipulationContent*, Guid*, void**, uint*, int> GetTag;
+
+            [NativeTypeName("HRESULT (IUnknown *, UINT32) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDirectManipulationContent*, IUnknown*, uint, int> SetTag;
+
+            [NativeTypeName("HRESULT (float *, DWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDirectManipulationContent*, float*, uint, int> GetOutputTransform;
+
+            [NativeTypeName("HRESULT (float *, DWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDirectManipulationContent*, float*, uint, int> GetContentTransform;
+
+            [NativeTypeName("HRESULT (const float *, DWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDirectManipulationContent*, float*, uint, int> SyncContentTransform;
+        }
     }
 }

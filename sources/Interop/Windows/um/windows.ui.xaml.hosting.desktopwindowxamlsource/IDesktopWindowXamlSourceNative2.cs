@@ -59,5 +59,26 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IDesktopWindowXamlSourceNative2*, MSG*, BOOL*, int>)(lpVtbl[5]))((IDesktopWindowXamlSourceNative2*)Unsafe.AsPointer(ref this), message, result);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDesktopWindowXamlSourceNative2*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDesktopWindowXamlSourceNative2*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDesktopWindowXamlSourceNative2*, uint> Release;
+
+            [NativeTypeName("HRESULT (HWND) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDesktopWindowXamlSourceNative2*, HWND, int> AttachToWindow;
+
+            [NativeTypeName("HRESULT (HWND *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDesktopWindowXamlSourceNative2*, HWND*, int> get_WindowHandle;
+
+            [NativeTypeName("HRESULT (const MSG *, BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDesktopWindowXamlSourceNative2*, MSG*, BOOL*, int> PreTranslateMessage;
+        }
     }
 }

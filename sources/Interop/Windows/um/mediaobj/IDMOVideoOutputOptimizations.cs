@@ -66,5 +66,29 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IDMOVideoOutputOptimizations*, uint, uint*, int>)(lpVtbl[6]))((IDMOVideoOutputOptimizations*)Unsafe.AsPointer(ref this), ulOutputStreamIndex, pdwRequestedFeatures);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDMOVideoOutputOptimizations*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDMOVideoOutputOptimizations*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDMOVideoOutputOptimizations*, uint> Release;
+
+            [NativeTypeName("HRESULT (ULONG, DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDMOVideoOutputOptimizations*, uint, uint*, int> QueryOperationModePreferences;
+
+            [NativeTypeName("HRESULT (ULONG, DWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDMOVideoOutputOptimizations*, uint, uint, int> SetOperationMode;
+
+            [NativeTypeName("HRESULT (ULONG, DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDMOVideoOutputOptimizations*, uint, uint*, int> GetCurrentOperationMode;
+
+            [NativeTypeName("HRESULT (ULONG, DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDMOVideoOutputOptimizations*, uint, uint*, int> GetCurrentSampleRequirements;
+        }
     }
 }

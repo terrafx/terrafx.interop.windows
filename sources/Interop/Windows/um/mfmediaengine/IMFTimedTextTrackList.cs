@@ -60,5 +60,26 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IMFTimedTextTrackList*, uint, IMFTimedTextTrack**, int>)(lpVtbl[5]))((IMFTimedTextTrackList*)Unsafe.AsPointer(ref this), trackId, track);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFTimedTextTrackList*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFTimedTextTrackList*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFTimedTextTrackList*, uint> Release;
+
+            [NativeTypeName("DWORD () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFTimedTextTrackList*, uint> GetLength;
+
+            [NativeTypeName("HRESULT (DWORD, IMFTimedTextTrack **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFTimedTextTrackList*, uint, IMFTimedTextTrack**, int> GetTrack;
+
+            [NativeTypeName("HRESULT (DWORD, IMFTimedTextTrack **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFTimedTextTrackList*, uint, IMFTimedTextTrack**, int> GetTrackById;
+        }
     }
 }

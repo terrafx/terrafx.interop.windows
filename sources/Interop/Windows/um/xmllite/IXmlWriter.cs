@@ -241,5 +241,104 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IXmlWriter*, int>)(lpVtbl[31]))((IXmlWriter*)Unsafe.AsPointer(ref this));
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IXmlWriter*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IXmlWriter*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IXmlWriter*, uint> Release;
+
+            [NativeTypeName("HRESULT (IUnknown *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IXmlWriter*, IUnknown*, int> SetOutput;
+
+            [NativeTypeName("HRESULT (UINT, LONG_PTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IXmlWriter*, uint, nint*, int> GetProperty;
+
+            [NativeTypeName("HRESULT (UINT, LONG_PTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IXmlWriter*, uint, nint, int> SetProperty;
+
+            [NativeTypeName("HRESULT (IXmlReader *, BOOL) __attribute__((stdcall))")]
+            public delegate* unmanaged<IXmlWriter*, IXmlReader*, BOOL, int> WriteAttributes;
+
+            [NativeTypeName("HRESULT (LPCWSTR, LPCWSTR, LPCWSTR, LPCWSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IXmlWriter*, ushort*, ushort*, ushort*, ushort*, int> WriteAttributeString;
+
+            [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IXmlWriter*, ushort*, int> WriteCData;
+
+            [NativeTypeName("HRESULT (WCHAR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IXmlWriter*, ushort, int> WriteCharEntity;
+
+            [NativeTypeName("HRESULT (const WCHAR *, UINT) __attribute__((stdcall))")]
+            public delegate* unmanaged<IXmlWriter*, ushort*, uint, int> WriteChars;
+
+            [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IXmlWriter*, ushort*, int> WriteComment;
+
+            [NativeTypeName("HRESULT (LPCWSTR, LPCWSTR, LPCWSTR, LPCWSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IXmlWriter*, ushort*, ushort*, ushort*, ushort*, int> WriteDocType;
+
+            [NativeTypeName("HRESULT (LPCWSTR, LPCWSTR, LPCWSTR, LPCWSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IXmlWriter*, ushort*, ushort*, ushort*, ushort*, int> WriteElementString;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IXmlWriter*, int> WriteEndDocument;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IXmlWriter*, int> WriteEndElement;
+
+            [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IXmlWriter*, ushort*, int> WriteEntityRef;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IXmlWriter*, int> WriteFullEndElement;
+
+            [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IXmlWriter*, ushort*, int> WriteName;
+
+            [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IXmlWriter*, ushort*, int> WriteNmToken;
+
+            [NativeTypeName("HRESULT (IXmlReader *, BOOL) __attribute__((stdcall))")]
+            public delegate* unmanaged<IXmlWriter*, IXmlReader*, BOOL, int> WriteNode;
+
+            [NativeTypeName("HRESULT (IXmlReader *, BOOL) __attribute__((stdcall))")]
+            public delegate* unmanaged<IXmlWriter*, IXmlReader*, BOOL, int> WriteNodeShallow;
+
+            [NativeTypeName("HRESULT (LPCWSTR, LPCWSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IXmlWriter*, ushort*, ushort*, int> WriteProcessingInstruction;
+
+            [NativeTypeName("HRESULT (LPCWSTR, LPCWSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IXmlWriter*, ushort*, ushort*, int> WriteQualifiedName;
+
+            [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IXmlWriter*, ushort*, int> WriteRaw;
+
+            [NativeTypeName("HRESULT (const WCHAR *, UINT) __attribute__((stdcall))")]
+            public delegate* unmanaged<IXmlWriter*, ushort*, uint, int> WriteRawChars;
+
+            [NativeTypeName("HRESULT (XmlStandalone) __attribute__((stdcall))")]
+            public delegate* unmanaged<IXmlWriter*, XmlStandalone, int> WriteStartDocument;
+
+            [NativeTypeName("HRESULT (LPCWSTR, LPCWSTR, LPCWSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IXmlWriter*, ushort*, ushort*, ushort*, int> WriteStartElement;
+
+            [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IXmlWriter*, ushort*, int> WriteString;
+
+            [NativeTypeName("HRESULT (WCHAR, WCHAR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IXmlWriter*, ushort, ushort, int> WriteSurrogateCharEntity;
+
+            [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IXmlWriter*, ushort*, int> WriteWhitespace;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IXmlWriter*, int> Flush;
+        }
     }
 }

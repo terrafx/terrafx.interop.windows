@@ -73,5 +73,32 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IUserNotification2*, ushort*, int>)(lpVtbl[7]))((IUserNotification2*)Unsafe.AsPointer(ref this), pszSoundName);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IUserNotification2*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IUserNotification2*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IUserNotification2*, uint> Release;
+
+            [NativeTypeName("HRESULT (LPCWSTR, LPCWSTR, DWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<IUserNotification2*, ushort*, ushort*, uint, int> SetBalloonInfo;
+
+            [NativeTypeName("HRESULT (DWORD, DWORD, UINT) __attribute__((stdcall))")]
+            public delegate* unmanaged<IUserNotification2*, uint, uint, uint, int> SetBalloonRetry;
+
+            [NativeTypeName("HRESULT (HICON, LPCWSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IUserNotification2*, HICON, ushort*, int> SetIconInfo;
+
+            [NativeTypeName("HRESULT (IQueryContinue *, DWORD, IUserNotificationCallback *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IUserNotification2*, IQueryContinue*, uint, IUserNotificationCallback*, int> Show;
+
+            [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IUserNotification2*, ushort*, int> PlaySoundW;
+        }
     }
 }

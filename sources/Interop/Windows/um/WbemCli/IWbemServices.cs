@@ -199,5 +199,86 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IWbemServices*, ushort*, ushort*, int, IWbemContext*, IWbemClassObject*, IWbemObjectSink*, int>)(lpVtbl[25]))((IWbemServices*)Unsafe.AsPointer(ref this), strObjectPath, strMethodName, lFlags, pCtx, pInParams, pResponseHandler);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWbemServices*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IWbemServices*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IWbemServices*, uint> Release;
+
+            [NativeTypeName("HRESULT (const BSTR, long, IWbemContext *, IWbemServices **, IWbemCallResult **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWbemServices*, ushort*, int, IWbemContext*, IWbemServices**, IWbemCallResult**, int> OpenNamespace;
+
+            [NativeTypeName("HRESULT (IWbemObjectSink *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWbemServices*, IWbemObjectSink*, int> CancelAsyncCall;
+
+            [NativeTypeName("HRESULT (long, IWbemObjectSink **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWbemServices*, int, IWbemObjectSink**, int> QueryObjectSink;
+
+            [NativeTypeName("HRESULT (const BSTR, long, IWbemContext *, IWbemClassObject **, IWbemCallResult **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWbemServices*, ushort*, int, IWbemContext*, IWbemClassObject**, IWbemCallResult**, int> GetObjectW;
+
+            [NativeTypeName("HRESULT (const BSTR, long, IWbemContext *, IWbemObjectSink *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWbemServices*, ushort*, int, IWbemContext*, IWbemObjectSink*, int> GetObjectAsync;
+
+            [NativeTypeName("HRESULT (IWbemClassObject *, long, IWbemContext *, IWbemCallResult **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWbemServices*, IWbemClassObject*, int, IWbemContext*, IWbemCallResult**, int> PutClass;
+
+            [NativeTypeName("HRESULT (IWbemClassObject *, long, IWbemContext *, IWbemObjectSink *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWbemServices*, IWbemClassObject*, int, IWbemContext*, IWbemObjectSink*, int> PutClassAsync;
+
+            [NativeTypeName("HRESULT (const BSTR, long, IWbemContext *, IWbemCallResult **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWbemServices*, ushort*, int, IWbemContext*, IWbemCallResult**, int> DeleteClass;
+
+            [NativeTypeName("HRESULT (const BSTR, long, IWbemContext *, IWbemObjectSink *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWbemServices*, ushort*, int, IWbemContext*, IWbemObjectSink*, int> DeleteClassAsync;
+
+            [NativeTypeName("HRESULT (const BSTR, long, IWbemContext *, IEnumWbemClassObject **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWbemServices*, ushort*, int, IWbemContext*, IEnumWbemClassObject**, int> CreateClassEnum;
+
+            [NativeTypeName("HRESULT (const BSTR, long, IWbemContext *, IWbemObjectSink *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWbemServices*, ushort*, int, IWbemContext*, IWbemObjectSink*, int> CreateClassEnumAsync;
+
+            [NativeTypeName("HRESULT (IWbemClassObject *, long, IWbemContext *, IWbemCallResult **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWbemServices*, IWbemClassObject*, int, IWbemContext*, IWbemCallResult**, int> PutInstance;
+
+            [NativeTypeName("HRESULT (IWbemClassObject *, long, IWbemContext *, IWbemObjectSink *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWbemServices*, IWbemClassObject*, int, IWbemContext*, IWbemObjectSink*, int> PutInstanceAsync;
+
+            [NativeTypeName("HRESULT (const BSTR, long, IWbemContext *, IWbemCallResult **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWbemServices*, ushort*, int, IWbemContext*, IWbemCallResult**, int> DeleteInstance;
+
+            [NativeTypeName("HRESULT (const BSTR, long, IWbemContext *, IWbemObjectSink *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWbemServices*, ushort*, int, IWbemContext*, IWbemObjectSink*, int> DeleteInstanceAsync;
+
+            [NativeTypeName("HRESULT (const BSTR, long, IWbemContext *, IEnumWbemClassObject **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWbemServices*, ushort*, int, IWbemContext*, IEnumWbemClassObject**, int> CreateInstanceEnum;
+
+            [NativeTypeName("HRESULT (const BSTR, long, IWbemContext *, IWbemObjectSink *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWbemServices*, ushort*, int, IWbemContext*, IWbemObjectSink*, int> CreateInstanceEnumAsync;
+
+            [NativeTypeName("HRESULT (const BSTR, const BSTR, long, IWbemContext *, IEnumWbemClassObject **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWbemServices*, ushort*, ushort*, int, IWbemContext*, IEnumWbemClassObject**, int> ExecQuery;
+
+            [NativeTypeName("HRESULT (const BSTR, const BSTR, long, IWbemContext *, IWbemObjectSink *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWbemServices*, ushort*, ushort*, int, IWbemContext*, IWbemObjectSink*, int> ExecQueryAsync;
+
+            [NativeTypeName("HRESULT (const BSTR, const BSTR, long, IWbemContext *, IEnumWbemClassObject **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWbemServices*, ushort*, ushort*, int, IWbemContext*, IEnumWbemClassObject**, int> ExecNotificationQuery;
+
+            [NativeTypeName("HRESULT (const BSTR, const BSTR, long, IWbemContext *, IWbemObjectSink *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWbemServices*, ushort*, ushort*, int, IWbemContext*, IWbemObjectSink*, int> ExecNotificationQueryAsync;
+
+            [NativeTypeName("HRESULT (const BSTR, const BSTR, long, IWbemContext *, IWbemClassObject *, IWbemClassObject **, IWbemCallResult **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWbemServices*, ushort*, ushort*, int, IWbemContext*, IWbemClassObject*, IWbemClassObject**, IWbemCallResult**, int> ExecMethod;
+
+            [NativeTypeName("HRESULT (const BSTR, const BSTR, long, IWbemContext *, IWbemClassObject *, IWbemObjectSink *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWbemServices*, ushort*, ushort*, int, IWbemContext*, IWbemClassObject*, IWbemObjectSink*, int> ExecMethodAsync;
+        }
     }
 }

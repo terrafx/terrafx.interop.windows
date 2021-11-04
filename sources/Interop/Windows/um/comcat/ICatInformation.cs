@@ -80,5 +80,35 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<ICatInformation*, Guid*, IEnumGUID**, int>)(lpVtbl[8]))((ICatInformation*)Unsafe.AsPointer(ref this), rclsid, ppenumCatid);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ICatInformation*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ICatInformation*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ICatInformation*, uint> Release;
+
+            [NativeTypeName("HRESULT (LCID, IEnumCATEGORYINFO **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ICatInformation*, uint, IEnumCATEGORYINFO**, int> EnumCategories;
+
+            [NativeTypeName("HRESULT (REFCATID, LCID, LPWSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ICatInformation*, Guid*, uint, ushort**, int> GetCategoryDesc;
+
+            [NativeTypeName("HRESULT (ULONG, const CATID *, ULONG, const CATID *, IEnumGUID **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ICatInformation*, uint, Guid*, uint, Guid*, IEnumGUID**, int> EnumClassesOfCategories;
+
+            [NativeTypeName("HRESULT (const IID &, ULONG, const CATID *, ULONG, const CATID *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ICatInformation*, Guid*, uint, Guid*, uint, Guid*, int> IsClassOfCategories;
+
+            [NativeTypeName("HRESULT (const IID &, IEnumGUID **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ICatInformation*, Guid*, IEnumGUID**, int> EnumImplCategoriesOfClass;
+
+            [NativeTypeName("HRESULT (const IID &, IEnumGUID **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ICatInformation*, Guid*, IEnumGUID**, int> EnumReqCategoriesOfClass;
+        }
     }
 }

@@ -108,5 +108,47 @@ namespace TerraFX.Interop
         {
             ((delegate* unmanaged<ID3D10Texture2D*, D3D10_TEXTURE2D_DESC*, void>)(lpVtbl[12]))((ID3D10Texture2D*)Unsafe.AsPointer(ref this), pDesc);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D10Texture2D*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D10Texture2D*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D10Texture2D*, uint> Release;
+
+            [NativeTypeName("void (ID3D10Device **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D10Texture2D*, ID3D10Device**, void> GetDevice;
+
+            [NativeTypeName("HRESULT (const GUID &, UINT *, void *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D10Texture2D*, Guid*, uint*, void*, int> GetPrivateData;
+
+            [NativeTypeName("HRESULT (const GUID &, UINT, const void *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D10Texture2D*, Guid*, uint, void*, int> SetPrivateData;
+
+            [NativeTypeName("HRESULT (const GUID &, const IUnknown *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D10Texture2D*, Guid*, IUnknown*, int> SetPrivateDataInterface;
+
+            [NativeTypeName("void (D3D10_RESOURCE_DIMENSION *) __attribute__((stdcall))")]
+            public new delegate* unmanaged<ID3D10Texture2D*, D3D10_RESOURCE_DIMENSION*, void> GetType;
+
+            [NativeTypeName("void (UINT) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D10Texture2D*, uint, void> SetEvictionPriority;
+
+            [NativeTypeName("UINT () __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D10Texture2D*, uint> GetEvictionPriority;
+
+            [NativeTypeName("HRESULT (UINT, D3D10_MAP, UINT, D3D10_MAPPED_TEXTURE2D *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D10Texture2D*, uint, D3D10_MAP, uint, D3D10_MAPPED_TEXTURE2D*, int> Map;
+
+            [NativeTypeName("void (UINT) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D10Texture2D*, uint, void> Unmap;
+
+            [NativeTypeName("void (D3D10_TEXTURE2D_DESC *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D10Texture2D*, D3D10_TEXTURE2D_DESC*, void> GetDesc;
+        }
     }
 }

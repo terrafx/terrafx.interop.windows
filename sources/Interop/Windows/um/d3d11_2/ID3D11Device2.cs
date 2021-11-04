@@ -395,5 +395,170 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<ID3D11Device2*, DXGI_FORMAT, uint, uint, uint*, int>)(lpVtbl[53]))((ID3D11Device2*)Unsafe.AsPointer(ref this), Format, SampleCount, Flags, pNumQualityLevels);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D11Device2*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D11Device2*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D11Device2*, uint> Release;
+
+            [NativeTypeName("HRESULT (const D3D11_BUFFER_DESC *, const D3D11_SUBRESOURCE_DATA *, ID3D11Buffer **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D11Device2*, D3D11_BUFFER_DESC*, D3D11_SUBRESOURCE_DATA*, ID3D11Buffer**, int> CreateBuffer;
+
+            [NativeTypeName("HRESULT (const D3D11_TEXTURE1D_DESC *, const D3D11_SUBRESOURCE_DATA *, ID3D11Texture1D **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D11Device2*, D3D11_TEXTURE1D_DESC*, D3D11_SUBRESOURCE_DATA*, ID3D11Texture1D**, int> CreateTexture1D;
+
+            [NativeTypeName("HRESULT (const D3D11_TEXTURE2D_DESC *, const D3D11_SUBRESOURCE_DATA *, ID3D11Texture2D **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D11Device2*, D3D11_TEXTURE2D_DESC*, D3D11_SUBRESOURCE_DATA*, ID3D11Texture2D**, int> CreateTexture2D;
+
+            [NativeTypeName("HRESULT (const D3D11_TEXTURE3D_DESC *, const D3D11_SUBRESOURCE_DATA *, ID3D11Texture3D **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D11Device2*, D3D11_TEXTURE3D_DESC*, D3D11_SUBRESOURCE_DATA*, ID3D11Texture3D**, int> CreateTexture3D;
+
+            [NativeTypeName("HRESULT (ID3D11Resource *, const D3D11_SHADER_RESOURCE_VIEW_DESC *, ID3D11ShaderResourceView **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D11Device2*, ID3D11Resource*, D3D11_SHADER_RESOURCE_VIEW_DESC*, ID3D11ShaderResourceView**, int> CreateShaderResourceView;
+
+            [NativeTypeName("HRESULT (ID3D11Resource *, const D3D11_UNORDERED_ACCESS_VIEW_DESC *, ID3D11UnorderedAccessView **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D11Device2*, ID3D11Resource*, D3D11_UNORDERED_ACCESS_VIEW_DESC*, ID3D11UnorderedAccessView**, int> CreateUnorderedAccessView;
+
+            [NativeTypeName("HRESULT (ID3D11Resource *, const D3D11_RENDER_TARGET_VIEW_DESC *, ID3D11RenderTargetView **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D11Device2*, ID3D11Resource*, D3D11_RENDER_TARGET_VIEW_DESC*, ID3D11RenderTargetView**, int> CreateRenderTargetView;
+
+            [NativeTypeName("HRESULT (ID3D11Resource *, const D3D11_DEPTH_STENCIL_VIEW_DESC *, ID3D11DepthStencilView **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D11Device2*, ID3D11Resource*, D3D11_DEPTH_STENCIL_VIEW_DESC*, ID3D11DepthStencilView**, int> CreateDepthStencilView;
+
+            [NativeTypeName("HRESULT (const D3D11_INPUT_ELEMENT_DESC *, UINT, const void *, SIZE_T, ID3D11InputLayout **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D11Device2*, D3D11_INPUT_ELEMENT_DESC*, uint, void*, nuint, ID3D11InputLayout**, int> CreateInputLayout;
+
+            [NativeTypeName("HRESULT (const void *, SIZE_T, ID3D11ClassLinkage *, ID3D11VertexShader **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D11Device2*, void*, nuint, ID3D11ClassLinkage*, ID3D11VertexShader**, int> CreateVertexShader;
+
+            [NativeTypeName("HRESULT (const void *, SIZE_T, ID3D11ClassLinkage *, ID3D11GeometryShader **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D11Device2*, void*, nuint, ID3D11ClassLinkage*, ID3D11GeometryShader**, int> CreateGeometryShader;
+
+            [NativeTypeName("HRESULT (const void *, SIZE_T, const D3D11_SO_DECLARATION_ENTRY *, UINT, const UINT *, UINT, UINT, ID3D11ClassLinkage *, ID3D11GeometryShader **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D11Device2*, void*, nuint, D3D11_SO_DECLARATION_ENTRY*, uint, uint*, uint, uint, ID3D11ClassLinkage*, ID3D11GeometryShader**, int> CreateGeometryShaderWithStreamOutput;
+
+            [NativeTypeName("HRESULT (const void *, SIZE_T, ID3D11ClassLinkage *, ID3D11PixelShader **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D11Device2*, void*, nuint, ID3D11ClassLinkage*, ID3D11PixelShader**, int> CreatePixelShader;
+
+            [NativeTypeName("HRESULT (const void *, SIZE_T, ID3D11ClassLinkage *, ID3D11HullShader **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D11Device2*, void*, nuint, ID3D11ClassLinkage*, ID3D11HullShader**, int> CreateHullShader;
+
+            [NativeTypeName("HRESULT (const void *, SIZE_T, ID3D11ClassLinkage *, ID3D11DomainShader **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D11Device2*, void*, nuint, ID3D11ClassLinkage*, ID3D11DomainShader**, int> CreateDomainShader;
+
+            [NativeTypeName("HRESULT (const void *, SIZE_T, ID3D11ClassLinkage *, ID3D11ComputeShader **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D11Device2*, void*, nuint, ID3D11ClassLinkage*, ID3D11ComputeShader**, int> CreateComputeShader;
+
+            [NativeTypeName("HRESULT (ID3D11ClassLinkage **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D11Device2*, ID3D11ClassLinkage**, int> CreateClassLinkage;
+
+            [NativeTypeName("HRESULT (const D3D11_BLEND_DESC *, ID3D11BlendState **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D11Device2*, D3D11_BLEND_DESC*, ID3D11BlendState**, int> CreateBlendState;
+
+            [NativeTypeName("HRESULT (const D3D11_DEPTH_STENCIL_DESC *, ID3D11DepthStencilState **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D11Device2*, D3D11_DEPTH_STENCIL_DESC*, ID3D11DepthStencilState**, int> CreateDepthStencilState;
+
+            [NativeTypeName("HRESULT (const D3D11_RASTERIZER_DESC *, ID3D11RasterizerState **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D11Device2*, D3D11_RASTERIZER_DESC*, ID3D11RasterizerState**, int> CreateRasterizerState;
+
+            [NativeTypeName("HRESULT (const D3D11_SAMPLER_DESC *, ID3D11SamplerState **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D11Device2*, D3D11_SAMPLER_DESC*, ID3D11SamplerState**, int> CreateSamplerState;
+
+            [NativeTypeName("HRESULT (const D3D11_QUERY_DESC *, ID3D11Query **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D11Device2*, D3D11_QUERY_DESC*, ID3D11Query**, int> CreateQuery;
+
+            [NativeTypeName("HRESULT (const D3D11_QUERY_DESC *, ID3D11Predicate **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D11Device2*, D3D11_QUERY_DESC*, ID3D11Predicate**, int> CreatePredicate;
+
+            [NativeTypeName("HRESULT (const D3D11_COUNTER_DESC *, ID3D11Counter **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D11Device2*, D3D11_COUNTER_DESC*, ID3D11Counter**, int> CreateCounter;
+
+            [NativeTypeName("HRESULT (UINT, ID3D11DeviceContext **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D11Device2*, uint, ID3D11DeviceContext**, int> CreateDeferredContext;
+
+            [NativeTypeName("HRESULT (HANDLE, const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D11Device2*, HANDLE, Guid*, void**, int> OpenSharedResource;
+
+            [NativeTypeName("HRESULT (DXGI_FORMAT, UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D11Device2*, DXGI_FORMAT, uint*, int> CheckFormatSupport;
+
+            [NativeTypeName("HRESULT (DXGI_FORMAT, UINT, UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D11Device2*, DXGI_FORMAT, uint, uint*, int> CheckMultisampleQualityLevels;
+
+            [NativeTypeName("void (D3D11_COUNTER_INFO *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D11Device2*, D3D11_COUNTER_INFO*, void> CheckCounterInfo;
+
+            [NativeTypeName("HRESULT (const D3D11_COUNTER_DESC *, D3D11_COUNTER_TYPE *, UINT *, LPSTR, UINT *, LPSTR, UINT *, LPSTR, UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D11Device2*, D3D11_COUNTER_DESC*, D3D11_COUNTER_TYPE*, uint*, sbyte*, uint*, sbyte*, uint*, sbyte*, uint*, int> CheckCounter;
+
+            [NativeTypeName("HRESULT (D3D11_FEATURE, void *, UINT) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D11Device2*, D3D11_FEATURE, void*, uint, int> CheckFeatureSupport;
+
+            [NativeTypeName("HRESULT (const GUID &, UINT *, void *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D11Device2*, Guid*, uint*, void*, int> GetPrivateData;
+
+            [NativeTypeName("HRESULT (const GUID &, UINT, const void *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D11Device2*, Guid*, uint, void*, int> SetPrivateData;
+
+            [NativeTypeName("HRESULT (const GUID &, const IUnknown *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D11Device2*, Guid*, IUnknown*, int> SetPrivateDataInterface;
+
+            [NativeTypeName("D3D_FEATURE_LEVEL () __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D11Device2*, D3D_FEATURE_LEVEL> GetFeatureLevel;
+
+            [NativeTypeName("UINT () __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D11Device2*, uint> GetCreationFlags;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D11Device2*, int> GetDeviceRemovedReason;
+
+            [NativeTypeName("void (ID3D11DeviceContext **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D11Device2*, ID3D11DeviceContext**, void> GetImmediateContext;
+
+            [NativeTypeName("HRESULT (UINT) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D11Device2*, uint, int> SetExceptionMode;
+
+            [NativeTypeName("UINT () __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D11Device2*, uint> GetExceptionMode;
+
+            [NativeTypeName("void (ID3D11DeviceContext1 **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D11Device2*, ID3D11DeviceContext1**, void> GetImmediateContext1;
+
+            [NativeTypeName("HRESULT (UINT, ID3D11DeviceContext1 **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D11Device2*, uint, ID3D11DeviceContext1**, int> CreateDeferredContext1;
+
+            [NativeTypeName("HRESULT (const D3D11_BLEND_DESC1 *, ID3D11BlendState1 **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D11Device2*, D3D11_BLEND_DESC1*, ID3D11BlendState1**, int> CreateBlendState1;
+
+            [NativeTypeName("HRESULT (const D3D11_RASTERIZER_DESC1 *, ID3D11RasterizerState1 **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D11Device2*, D3D11_RASTERIZER_DESC1*, ID3D11RasterizerState1**, int> CreateRasterizerState1;
+
+            [NativeTypeName("HRESULT (UINT, const D3D_FEATURE_LEVEL *, UINT, UINT, const IID &, D3D_FEATURE_LEVEL *, ID3DDeviceContextState **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D11Device2*, uint, D3D_FEATURE_LEVEL*, uint, uint, Guid*, D3D_FEATURE_LEVEL*, ID3DDeviceContextState**, int> CreateDeviceContextState;
+
+            [NativeTypeName("HRESULT (HANDLE, const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D11Device2*, HANDLE, Guid*, void**, int> OpenSharedResource1;
+
+            [NativeTypeName("HRESULT (LPCWSTR, DWORD, const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D11Device2*, ushort*, uint, Guid*, void**, int> OpenSharedResourceByName;
+
+            [NativeTypeName("void (ID3D11DeviceContext2 **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D11Device2*, ID3D11DeviceContext2**, void> GetImmediateContext2;
+
+            [NativeTypeName("HRESULT (UINT, ID3D11DeviceContext2 **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D11Device2*, uint, ID3D11DeviceContext2**, int> CreateDeferredContext2;
+
+            [NativeTypeName("void (ID3D11Resource *, UINT *, D3D11_PACKED_MIP_DESC *, D3D11_TILE_SHAPE *, UINT *, UINT, D3D11_SUBRESOURCE_TILING *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D11Device2*, ID3D11Resource*, uint*, D3D11_PACKED_MIP_DESC*, D3D11_TILE_SHAPE*, uint*, uint, D3D11_SUBRESOURCE_TILING*, void> GetResourceTiling;
+
+            [NativeTypeName("HRESULT (DXGI_FORMAT, UINT, UINT, UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D11Device2*, DXGI_FORMAT, uint, uint, uint*, int> CheckMultisampleQualityLevels1;
+        }
     }
 }

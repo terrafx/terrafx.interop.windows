@@ -73,5 +73,32 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IDockingWindowSite*, IUnknown*, RECT*, int>)(lpVtbl[7]))((IDockingWindowSite*)Unsafe.AsPointer(ref this), punkObj, pbw);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDockingWindowSite*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDockingWindowSite*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDockingWindowSite*, uint> Release;
+
+            [NativeTypeName("HRESULT (HWND *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDockingWindowSite*, HWND*, int> GetWindow;
+
+            [NativeTypeName("HRESULT (BOOL) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDockingWindowSite*, BOOL, int> ContextSensitiveHelp;
+
+            [NativeTypeName("HRESULT (IUnknown *, RECT *) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDockingWindowSite*, IUnknown*, RECT*, int> GetBorderDW;
+
+            [NativeTypeName("HRESULT (IUnknown *, LPCBORDERWIDTHS) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDockingWindowSite*, IUnknown*, RECT*, int> RequestBorderSpaceDW;
+
+            [NativeTypeName("HRESULT (IUnknown *, LPCBORDERWIDTHS) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDockingWindowSite*, IUnknown*, RECT*, int> SetBorderSpaceDW;
+        }
     }
 }

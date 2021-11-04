@@ -52,5 +52,23 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IAMVideoDecimationProperties*, DECIMATION_USAGE, int>)(lpVtbl[4]))((IAMVideoDecimationProperties*)Unsafe.AsPointer(ref this), Usage);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAMVideoDecimationProperties*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IAMVideoDecimationProperties*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IAMVideoDecimationProperties*, uint> Release;
+
+            [NativeTypeName("HRESULT (DECIMATION_USAGE *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAMVideoDecimationProperties*, DECIMATION_USAGE*, int> QueryDecimationUsage;
+
+            [NativeTypeName("HRESULT (DECIMATION_USAGE) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAMVideoDecimationProperties*, DECIMATION_USAGE, int> SetDecimationUsage;
+        }
     }
 }

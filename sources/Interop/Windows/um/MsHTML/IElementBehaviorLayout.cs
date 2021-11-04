@@ -66,5 +66,29 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IElementBehaviorLayout*, SIZE*, RECT*, int>)(lpVtbl[6]))((IElementBehaviorLayout*)Unsafe.AsPointer(ref this), psizeIn, prcOut);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IElementBehaviorLayout*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IElementBehaviorLayout*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IElementBehaviorLayout*, uint> Release;
+
+            [NativeTypeName("HRESULT (LONG, SIZE, POINT *, POINT *, SIZE *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IElementBehaviorLayout*, int, SIZE, POINT*, POINT*, SIZE*, int> GetSize;
+
+            [NativeTypeName("HRESULT (LONG *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IElementBehaviorLayout*, int*, int> GetLayoutInfo;
+
+            [NativeTypeName("HRESULT (LONG, POINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IElementBehaviorLayout*, int, POINT*, int> GetPosition;
+
+            [NativeTypeName("HRESULT (SIZE *, RECT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IElementBehaviorLayout*, SIZE*, RECT*, int> MapSize;
+        }
     }
 }

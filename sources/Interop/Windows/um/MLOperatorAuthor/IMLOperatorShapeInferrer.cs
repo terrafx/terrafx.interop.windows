@@ -45,5 +45,20 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IMLOperatorShapeInferrer*, IMLOperatorShapeInferenceContext*, int>)(lpVtbl[3]))((IMLOperatorShapeInferrer*)Unsafe.AsPointer(ref this), context);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMLOperatorShapeInferrer*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMLOperatorShapeInferrer*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMLOperatorShapeInferrer*, uint> Release;
+
+            [NativeTypeName("HRESULT (IMLOperatorShapeInferenceContext *) noexcept __attribute__((stdcall))")]
+            public delegate* unmanaged<IMLOperatorShapeInferrer*, IMLOperatorShapeInferenceContext*, int> InferOutputShapes;
+        }
     }
 }

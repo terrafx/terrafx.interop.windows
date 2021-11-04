@@ -50,5 +50,23 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IDxDiagProvider*, IDxDiagContainer**, int>)(lpVtbl[4]))((IDxDiagProvider*)Unsafe.AsPointer(ref this), ppInstance);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDxDiagProvider*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDxDiagProvider*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDxDiagProvider*, uint> Release;
+
+            [NativeTypeName("HRESULT (DXDIAG_INIT_PARAMS *) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDxDiagProvider*, DXDIAG_INIT_PARAMS*, int> Initialize;
+
+            [NativeTypeName("HRESULT (IDxDiagContainer **) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDxDiagProvider*, IDxDiagContainer**, int> GetRootContainer;
+        }
     }
 }

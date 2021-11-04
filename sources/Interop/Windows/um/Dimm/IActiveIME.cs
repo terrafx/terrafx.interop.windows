@@ -157,5 +157,68 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IActiveIME*, ushort*, int>)(lpVtbl[19]))((IActiveIME*)Unsafe.AsPointer(ref this), plid);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IActiveIME*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IActiveIME*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IActiveIME*, uint> Release;
+
+            [NativeTypeName("HRESULT (DWORD, IMEINFO *, LPWSTR, DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IActiveIME*, uint, IMEINFO*, ushort*, uint*, int> Inquire;
+
+            [NativeTypeName("HRESULT (HIMC, LPWSTR, UINT, UINT, CANDIDATELIST *, UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IActiveIME*, HIMC, ushort*, uint, uint, CANDIDATELIST*, uint*, int> ConversionList;
+
+            [NativeTypeName("HRESULT (HKL, HWND, DWORD, REGISTERWORDW *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IActiveIME*, HKL, HWND, uint, REGISTERWORDW*, int> Configure;
+
+            [NativeTypeName("HRESULT (UINT) __attribute__((stdcall))")]
+            public delegate* unmanaged<IActiveIME*, uint, int> Destroy;
+
+            [NativeTypeName("HRESULT (HIMC, UINT, void *, LRESULT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IActiveIME*, HIMC, uint, void*, LRESULT*, int> Escape;
+
+            [NativeTypeName("HRESULT (HIMC, BOOL) __attribute__((stdcall))")]
+            public delegate* unmanaged<IActiveIME*, HIMC, BOOL, int> SetActiveContext;
+
+            [NativeTypeName("HRESULT (HIMC, UINT, DWORD, BYTE *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IActiveIME*, HIMC, uint, uint, byte*, int> ProcessKey;
+
+            [NativeTypeName("HRESULT (HIMC, DWORD, DWORD, DWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<IActiveIME*, HIMC, uint, uint, uint, int> Notify;
+
+            [NativeTypeName("HRESULT (HIMC, BOOL) __attribute__((stdcall))")]
+            public delegate* unmanaged<IActiveIME*, HIMC, BOOL, int> Select;
+
+            [NativeTypeName("HRESULT (HIMC, DWORD, void *, DWORD, void *, DWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<IActiveIME*, HIMC, uint, void*, uint, void*, uint, int> SetCompositionString;
+
+            [NativeTypeName("HRESULT (UINT, UINT, BYTE *, UINT, HIMC, DWORD *, UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IActiveIME*, uint, uint, byte*, uint, HIMC, uint*, uint*, int> ToAsciiEx;
+
+            [NativeTypeName("HRESULT (LPWSTR, DWORD, LPWSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IActiveIME*, ushort*, uint, ushort*, int> RegisterWord;
+
+            [NativeTypeName("HRESULT (LPWSTR, DWORD, LPWSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IActiveIME*, ushort*, uint, ushort*, int> UnregisterWord;
+
+            [NativeTypeName("HRESULT (UINT, STYLEBUFW *, UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IActiveIME*, uint, STYLEBUFW*, uint*, int> GetRegisterWordStyle;
+
+            [NativeTypeName("HRESULT (LPWSTR, DWORD, LPWSTR, LPVOID, IEnumRegisterWordW **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IActiveIME*, ushort*, uint, ushort*, void*, IEnumRegisterWordW**, int> EnumRegisterWord;
+
+            [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IActiveIME*, uint*, int> GetCodePageA;
+
+            [NativeTypeName("HRESULT (LANGID *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IActiveIME*, ushort*, int> GetLangId;
+        }
     }
 }

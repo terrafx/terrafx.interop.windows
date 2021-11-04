@@ -143,5 +143,62 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<ITfCandidateListUIElementBehavior*, int>)(lpVtbl[17]))((ITfCandidateListUIElementBehavior*)Unsafe.AsPointer(ref this));
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfCandidateListUIElementBehavior*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfCandidateListUIElementBehavior*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfCandidateListUIElementBehavior*, uint> Release;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfCandidateListUIElementBehavior*, ushort**, int> GetDescription;
+
+            [NativeTypeName("HRESULT (GUID *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfCandidateListUIElementBehavior*, Guid*, int> GetGUID;
+
+            [NativeTypeName("HRESULT (BOOL) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfCandidateListUIElementBehavior*, BOOL, int> Show;
+
+            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfCandidateListUIElementBehavior*, BOOL*, int> IsShown;
+
+            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfCandidateListUIElementBehavior*, uint*, int> GetUpdatedFlags;
+
+            [NativeTypeName("HRESULT (ITfDocumentMgr **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfCandidateListUIElementBehavior*, ITfDocumentMgr**, int> GetDocumentMgr;
+
+            [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfCandidateListUIElementBehavior*, uint*, int> GetCount;
+
+            [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfCandidateListUIElementBehavior*, uint*, int> GetSelection;
+
+            [NativeTypeName("HRESULT (UINT, BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfCandidateListUIElementBehavior*, uint, ushort**, int> GetString;
+
+            [NativeTypeName("HRESULT (UINT *, UINT, UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfCandidateListUIElementBehavior*, uint*, uint, uint*, int> GetPageIndex;
+
+            [NativeTypeName("HRESULT (UINT *, UINT) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfCandidateListUIElementBehavior*, uint*, uint, int> SetPageIndex;
+
+            [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfCandidateListUIElementBehavior*, uint*, int> GetCurrentPage;
+
+            [NativeTypeName("HRESULT (UINT) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfCandidateListUIElementBehavior*, uint, int> SetSelection;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfCandidateListUIElementBehavior*, int> Finalize;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfCandidateListUIElementBehavior*, int> Abort;
+        }
     }
 }

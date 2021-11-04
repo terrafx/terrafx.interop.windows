@@ -73,5 +73,32 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IVersionInfo*, uint, ushort**, int>)(lpVtbl[7]))((IVersionInfo*)Unsafe.AsPointer(ref this), ulSub, pImplStr);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IVersionInfo*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IVersionInfo*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IVersionInfo*, uint> Release;
+
+            [NativeTypeName("HRESULT (ULONG, ULONG *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IVersionInfo*, uint, uint*, int> GetSubcomponentCount;
+
+            [NativeTypeName("HRESULT (ULONG, GUID *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IVersionInfo*, uint, Guid*, int> GetImplementationID;
+
+            [NativeTypeName("HRESULT (ULONG, DWORD *, DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IVersionInfo*, uint, uint*, uint*, int> GetBuildVersion;
+
+            [NativeTypeName("HRESULT (ULONG, BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IVersionInfo*, uint, ushort**, int> GetComponentDescription;
+
+            [NativeTypeName("HRESULT (ULONG, BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IVersionInfo*, uint, ushort**, int> GetInstanceDescription;
+        }
     }
 }

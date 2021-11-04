@@ -52,5 +52,23 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<ISyncMgrSynchronizeInvoke*, int>)(lpVtbl[4]))((ISyncMgrSynchronizeInvoke*)Unsafe.AsPointer(ref this));
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISyncMgrSynchronizeInvoke*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ISyncMgrSynchronizeInvoke*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ISyncMgrSynchronizeInvoke*, uint> Release;
+
+            [NativeTypeName("HRESULT (DWORD, const IID &, DWORD, const BYTE *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISyncMgrSynchronizeInvoke*, uint, Guid*, uint, byte*, int> UpdateItems;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<ISyncMgrSynchronizeInvoke*, int> UpdateAll;
+        }
     }
 }

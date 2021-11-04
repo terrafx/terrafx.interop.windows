@@ -101,5 +101,44 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IShellMenu*, IUnknown*, uint, int>)(lpVtbl[11]))((IShellMenu*)Unsafe.AsPointer(ref this), punk, dwFlags);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellMenu*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellMenu*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellMenu*, uint> Release;
+
+            [NativeTypeName("HRESULT (IShellMenuCallback *, UINT, UINT, DWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellMenu*, IShellMenuCallback*, uint, uint, uint, int> Initialize;
+
+            [NativeTypeName("HRESULT (IShellMenuCallback **, UINT *, UINT *, DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellMenu*, IShellMenuCallback**, uint*, uint*, uint*, int> GetMenuInfo;
+
+            [NativeTypeName("HRESULT (IShellFolder *, LPCITEMIDLIST, HKEY, DWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellMenu*, IShellFolder*, ITEMIDLIST*, HKEY, uint, int> SetShellFolder;
+
+            [NativeTypeName("HRESULT (DWORD *, LPITEMIDLIST *, const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellMenu*, uint*, ITEMIDLIST**, Guid*, void**, int> GetShellFolder;
+
+            [NativeTypeName("HRESULT (HMENU, HWND, DWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellMenu*, HMENU, HWND, uint, int> SetMenu;
+
+            [NativeTypeName("HRESULT (HMENU *, HWND *, DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellMenu*, HMENU*, HWND*, uint*, int> GetMenu;
+
+            [NativeTypeName("HRESULT (LPSMDATA, DWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellMenu*, SMDATA*, uint, int> InvalidateItem;
+
+            [NativeTypeName("HRESULT (LPSMDATA) __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellMenu*, SMDATA*, int> GetState;
+
+            [NativeTypeName("HRESULT (IUnknown *, DWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellMenu*, IUnknown*, uint, int> SetMenuToolbar;
+        }
     }
 }

@@ -52,5 +52,23 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IExtractImage*, HBITMAP*, int>)(lpVtbl[4]))((IExtractImage*)Unsafe.AsPointer(ref this), phBmpThumbnail);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IExtractImage*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IExtractImage*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IExtractImage*, uint> Release;
+
+            [NativeTypeName("HRESULT (LPWSTR, DWORD, DWORD *, const SIZE *, DWORD, DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IExtractImage*, ushort*, uint, uint*, SIZE*, uint, uint*, int> GetLocation;
+
+            [NativeTypeName("HRESULT (HBITMAP *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IExtractImage*, HBITMAP*, int> Extract;
+        }
     }
 }

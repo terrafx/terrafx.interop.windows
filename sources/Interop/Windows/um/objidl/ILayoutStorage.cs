@@ -73,5 +73,32 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<ILayoutStorage*, ILockBytes*, int>)(lpVtbl[7]))((ILayoutStorage*)Unsafe.AsPointer(ref this), pILockBytes);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ILayoutStorage*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ILayoutStorage*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ILayoutStorage*, uint> Release;
+
+            [NativeTypeName("HRESULT (StorageLayout *, DWORD, DWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<ILayoutStorage*, StorageLayout*, uint, uint, int> LayoutScript;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<ILayoutStorage*, int> BeginMonitor;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<ILayoutStorage*, int> EndMonitor;
+
+            [NativeTypeName("HRESULT (OLECHAR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ILayoutStorage*, ushort*, int> ReLayoutDocfile;
+
+            [NativeTypeName("HRESULT (ILockBytes *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ILayoutStorage*, ILockBytes*, int> ReLayoutDocfileOnILockBytes;
+        }
     }
 }

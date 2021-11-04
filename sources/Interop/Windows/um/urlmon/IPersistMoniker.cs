@@ -80,5 +80,35 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IPersistMoniker*, IMoniker**, int>)(lpVtbl[8]))((IPersistMoniker*)Unsafe.AsPointer(ref this), ppimkName);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IPersistMoniker*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IPersistMoniker*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IPersistMoniker*, uint> Release;
+
+            [NativeTypeName("HRESULT (CLSID *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IPersistMoniker*, Guid*, int> GetClassID;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IPersistMoniker*, int> IsDirty;
+
+            [NativeTypeName("HRESULT (BOOL, IMoniker *, LPBC, DWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<IPersistMoniker*, BOOL, IMoniker*, IBindCtx*, uint, int> Load;
+
+            [NativeTypeName("HRESULT (IMoniker *, LPBC, BOOL) __attribute__((stdcall))")]
+            public delegate* unmanaged<IPersistMoniker*, IMoniker*, IBindCtx*, BOOL, int> Save;
+
+            [NativeTypeName("HRESULT (IMoniker *, LPBC) __attribute__((stdcall))")]
+            public delegate* unmanaged<IPersistMoniker*, IMoniker*, IBindCtx*, int> SaveCompleted;
+
+            [NativeTypeName("HRESULT (IMoniker **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IPersistMoniker*, IMoniker**, int> GetCurMoniker;
+        }
     }
 }

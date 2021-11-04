@@ -45,5 +45,20 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IKsJackSinkInformation*, KSJACK_SINK_INFORMATION*, int>)(lpVtbl[3]))((IKsJackSinkInformation*)Unsafe.AsPointer(ref this), pJackSinkInformation);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IKsJackSinkInformation*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IKsJackSinkInformation*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IKsJackSinkInformation*, uint> Release;
+
+            [NativeTypeName("HRESULT (KSJACK_SINK_INFORMATION *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IKsJackSinkInformation*, KSJACK_SINK_INFORMATION*, int> GetJackSinkInformation;
+        }
     }
 }

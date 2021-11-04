@@ -52,5 +52,23 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<ITfFnGetSAPIObject*, TfSapiObject, IUnknown**, int>)(lpVtbl[4]))((ITfFnGetSAPIObject*)Unsafe.AsPointer(ref this), sObj, ppunk);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfFnGetSAPIObject*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfFnGetSAPIObject*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfFnGetSAPIObject*, uint> Release;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfFnGetSAPIObject*, ushort**, int> GetDisplayName;
+
+            [NativeTypeName("HRESULT (TfSapiObject, IUnknown **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfFnGetSAPIObject*, TfSapiObject, IUnknown**, int> Get;
+        }
     }
 }

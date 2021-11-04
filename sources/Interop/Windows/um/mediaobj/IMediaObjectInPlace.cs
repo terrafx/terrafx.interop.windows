@@ -59,5 +59,26 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IMediaObjectInPlace*, long*, int>)(lpVtbl[5]))((IMediaObjectInPlace*)Unsafe.AsPointer(ref this), pLatencyTime);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMediaObjectInPlace*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMediaObjectInPlace*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMediaObjectInPlace*, uint> Release;
+
+            [NativeTypeName("HRESULT (ULONG, BYTE *, REFERENCE_TIME, DWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMediaObjectInPlace*, uint, byte*, long, uint, int> Process;
+
+            [NativeTypeName("HRESULT (IMediaObjectInPlace **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMediaObjectInPlace*, IMediaObjectInPlace**, int> Clone;
+
+            [NativeTypeName("HRESULT (REFERENCE_TIME *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMediaObjectInPlace*, long*, int> GetLatency;
+        }
     }
 }

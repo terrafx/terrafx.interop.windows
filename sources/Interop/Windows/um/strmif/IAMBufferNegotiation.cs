@@ -52,5 +52,23 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IAMBufferNegotiation*, ALLOCATOR_PROPERTIES*, int>)(lpVtbl[4]))((IAMBufferNegotiation*)Unsafe.AsPointer(ref this), pprop);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAMBufferNegotiation*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IAMBufferNegotiation*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IAMBufferNegotiation*, uint> Release;
+
+            [NativeTypeName("HRESULT (const ALLOCATOR_PROPERTIES *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAMBufferNegotiation*, ALLOCATOR_PROPERTIES*, int> SuggestAllocatorProperties;
+
+            [NativeTypeName("HRESULT (ALLOCATOR_PROPERTIES *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAMBufferNegotiation*, ALLOCATOR_PROPERTIES*, int> GetAllocatorProperties;
+        }
     }
 }

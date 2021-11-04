@@ -87,5 +87,38 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IPersistStorage*, int>)(lpVtbl[9]))((IPersistStorage*)Unsafe.AsPointer(ref this));
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IPersistStorage*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IPersistStorage*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IPersistStorage*, uint> Release;
+
+            [NativeTypeName("HRESULT (CLSID *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IPersistStorage*, Guid*, int> GetClassID;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IPersistStorage*, int> IsDirty;
+
+            [NativeTypeName("HRESULT (IStorage *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IPersistStorage*, IStorage*, int> InitNew;
+
+            [NativeTypeName("HRESULT (IStorage *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IPersistStorage*, IStorage*, int> Load;
+
+            [NativeTypeName("HRESULT (IStorage *, BOOL) __attribute__((stdcall))")]
+            public delegate* unmanaged<IPersistStorage*, IStorage*, BOOL, int> Save;
+
+            [NativeTypeName("HRESULT (IStorage *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IPersistStorage*, IStorage*, int> SaveCompleted;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IPersistStorage*, int> HandsOffStorage;
+        }
     }
 }

@@ -73,5 +73,32 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IDXCoreAdapterFactory*, uint, int>)(lpVtbl[7]))((IDXCoreAdapterFactory*)Unsafe.AsPointer(ref this), eventCookie);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDXCoreAdapterFactory*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDXCoreAdapterFactory*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDXCoreAdapterFactory*, uint> Release;
+
+            [NativeTypeName("HRESULT (uint32_t, const GUID *, const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDXCoreAdapterFactory*, uint, Guid*, Guid*, void**, int> CreateAdapterList;
+
+            [NativeTypeName("HRESULT (const LUID &, const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDXCoreAdapterFactory*, LUID*, Guid*, void**, int> GetAdapterByLuid;
+
+            [NativeTypeName("bool (DXCoreNotificationType) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDXCoreAdapterFactory*, DXCoreNotificationType, byte> IsNotificationTypeSupported;
+
+            [NativeTypeName("HRESULT (IUnknown *, DXCoreNotificationType, PFN_DXCORE_NOTIFICATION_CALLBACK, void *, uint32_t *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDXCoreAdapterFactory*, IUnknown*, DXCoreNotificationType, delegate* unmanaged<DXCoreNotificationType, IUnknown*, void*, void>, void*, uint*, int> RegisterEventNotification;
+
+            [NativeTypeName("HRESULT (uint32_t) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDXCoreAdapterFactory*, uint, int> UnregisterEventNotification;
+        }
     }
 }

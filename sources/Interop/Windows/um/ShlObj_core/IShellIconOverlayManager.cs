@@ -73,5 +73,32 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IShellIconOverlayManager*, int, int*, BOOL, int>)(lpVtbl[7]))((IShellIconOverlayManager*)Unsafe.AsPointer(ref this), iImage, piIndex, fAdd);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellIconOverlayManager*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellIconOverlayManager*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellIconOverlayManager*, uint> Release;
+
+            [NativeTypeName("HRESULT (PCWSTR, DWORD, int *, DWORD) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellIconOverlayManager*, ushort*, uint, int*, uint, int> GetFileOverlayInfo;
+
+            [NativeTypeName("HRESULT (PCWSTR, DWORD, int *, DWORD, int) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellIconOverlayManager*, ushort*, uint, int*, uint, int, int> GetReservedOverlayInfo;
+
+            [NativeTypeName("HRESULT (DWORD) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellIconOverlayManager*, uint, int> RefreshOverlayImages;
+
+            [NativeTypeName("HRESULT () __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellIconOverlayManager*, int> LoadNonloadedOverlayIdentifiers;
+
+            [NativeTypeName("HRESULT (int, int *, BOOL) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellIconOverlayManager*, int, int*, BOOL, int> OverlayIndexFromImageIndex;
+        }
     }
 }

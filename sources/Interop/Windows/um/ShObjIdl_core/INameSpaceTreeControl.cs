@@ -171,5 +171,74 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<INameSpaceTreeControl*, int>)(lpVtbl[21]))((INameSpaceTreeControl*)Unsafe.AsPointer(ref this));
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<INameSpaceTreeControl*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<INameSpaceTreeControl*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<INameSpaceTreeControl*, uint> Release;
+
+            [NativeTypeName("HRESULT (HWND, RECT *, NSTCSTYLE) __attribute__((stdcall))")]
+            public delegate* unmanaged<INameSpaceTreeControl*, HWND, RECT*, uint, int> Initialize;
+
+            [NativeTypeName("HRESULT (IUnknown *, DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<INameSpaceTreeControl*, IUnknown*, uint*, int> TreeAdvise;
+
+            [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<INameSpaceTreeControl*, uint, int> TreeUnadvise;
+
+            [NativeTypeName("HRESULT (IShellItem *, SHCONTF, NSTCROOTSTYLE, IShellItemFilter *) __attribute__((stdcall))")]
+            public delegate* unmanaged<INameSpaceTreeControl*, IShellItem*, uint, uint, IShellItemFilter*, int> AppendRoot;
+
+            [NativeTypeName("HRESULT (int, IShellItem *, SHCONTF, NSTCROOTSTYLE, IShellItemFilter *) __attribute__((stdcall))")]
+            public delegate* unmanaged<INameSpaceTreeControl*, int, IShellItem*, uint, uint, IShellItemFilter*, int> InsertRoot;
+
+            [NativeTypeName("HRESULT (IShellItem *) __attribute__((stdcall))")]
+            public delegate* unmanaged<INameSpaceTreeControl*, IShellItem*, int> RemoveRoot;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<INameSpaceTreeControl*, int> RemoveAllRoots;
+
+            [NativeTypeName("HRESULT (IShellItemArray **) __attribute__((stdcall))")]
+            public delegate* unmanaged<INameSpaceTreeControl*, IShellItemArray**, int> GetRootItems;
+
+            [NativeTypeName("HRESULT (IShellItem *, NSTCITEMSTATE, NSTCITEMSTATE) __attribute__((stdcall))")]
+            public delegate* unmanaged<INameSpaceTreeControl*, IShellItem*, uint, uint, int> SetItemState;
+
+            [NativeTypeName("HRESULT (IShellItem *, NSTCITEMSTATE, NSTCITEMSTATE *) __attribute__((stdcall))")]
+            public delegate* unmanaged<INameSpaceTreeControl*, IShellItem*, uint, uint*, int> GetItemState;
+
+            [NativeTypeName("HRESULT (IShellItemArray **) __attribute__((stdcall))")]
+            public delegate* unmanaged<INameSpaceTreeControl*, IShellItemArray**, int> GetSelectedItems;
+
+            [NativeTypeName("HRESULT (IShellItem *, int *) __attribute__((stdcall))")]
+            public delegate* unmanaged<INameSpaceTreeControl*, IShellItem*, int*, int> GetItemCustomState;
+
+            [NativeTypeName("HRESULT (IShellItem *, int) __attribute__((stdcall))")]
+            public delegate* unmanaged<INameSpaceTreeControl*, IShellItem*, int, int> SetItemCustomState;
+
+            [NativeTypeName("HRESULT (IShellItem *) __attribute__((stdcall))")]
+            public delegate* unmanaged<INameSpaceTreeControl*, IShellItem*, int> EnsureItemVisible;
+
+            [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<INameSpaceTreeControl*, ushort*, int> SetTheme;
+
+            [NativeTypeName("HRESULT (IShellItem *, NSTCGNI, IShellItem **) __attribute__((stdcall))")]
+            public delegate* unmanaged<INameSpaceTreeControl*, IShellItem*, NSTCGNI, IShellItem**, int> GetNextItem;
+
+            [NativeTypeName("HRESULT (POINT *, IShellItem **) __attribute__((stdcall))")]
+            public delegate* unmanaged<INameSpaceTreeControl*, POINT*, IShellItem**, int> HitTest;
+
+            [NativeTypeName("HRESULT (IShellItem *, RECT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<INameSpaceTreeControl*, IShellItem*, RECT*, int> GetItemRect;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<INameSpaceTreeControl*, int> CollapseAll;
+        }
     }
 }

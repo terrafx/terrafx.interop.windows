@@ -199,5 +199,86 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<ICreateTypeInfo*, int>)(lpVtbl[25]))((ICreateTypeInfo*)Unsafe.AsPointer(ref this));
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ICreateTypeInfo*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ICreateTypeInfo*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ICreateTypeInfo*, uint> Release;
+
+            [NativeTypeName("HRESULT (const GUID &) __attribute__((stdcall))")]
+            public delegate* unmanaged<ICreateTypeInfo*, Guid*, int> SetGuid;
+
+            [NativeTypeName("HRESULT (UINT) __attribute__((stdcall))")]
+            public delegate* unmanaged<ICreateTypeInfo*, uint, int> SetTypeFlags;
+
+            [NativeTypeName("HRESULT (LPOLESTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<ICreateTypeInfo*, ushort*, int> SetDocString;
+
+            [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<ICreateTypeInfo*, uint, int> SetHelpContext;
+
+            [NativeTypeName("HRESULT (WORD, WORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<ICreateTypeInfo*, ushort, ushort, int> SetVersion;
+
+            [NativeTypeName("HRESULT (ITypeInfo *, HREFTYPE *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ICreateTypeInfo*, ITypeInfo*, uint*, int> AddRefTypeInfo;
+
+            [NativeTypeName("HRESULT (UINT, FUNCDESC *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ICreateTypeInfo*, uint, FUNCDESC*, int> AddFuncDesc;
+
+            [NativeTypeName("HRESULT (UINT, HREFTYPE) __attribute__((stdcall))")]
+            public delegate* unmanaged<ICreateTypeInfo*, uint, uint, int> AddImplType;
+
+            [NativeTypeName("HRESULT (UINT, INT) __attribute__((stdcall))")]
+            public delegate* unmanaged<ICreateTypeInfo*, uint, int, int> SetImplTypeFlags;
+
+            [NativeTypeName("HRESULT (WORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<ICreateTypeInfo*, ushort, int> SetAlignment;
+
+            [NativeTypeName("HRESULT (LPOLESTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<ICreateTypeInfo*, ushort*, int> SetSchema;
+
+            [NativeTypeName("HRESULT (UINT, VARDESC *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ICreateTypeInfo*, uint, VARDESC*, int> AddVarDesc;
+
+            [NativeTypeName("HRESULT (UINT, LPOLESTR *, UINT) __attribute__((stdcall))")]
+            public delegate* unmanaged<ICreateTypeInfo*, uint, ushort**, uint, int> SetFuncAndParamNames;
+
+            [NativeTypeName("HRESULT (UINT, LPOLESTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<ICreateTypeInfo*, uint, ushort*, int> SetVarName;
+
+            [NativeTypeName("HRESULT (TYPEDESC *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ICreateTypeInfo*, TYPEDESC*, int> SetTypeDescAlias;
+
+            [NativeTypeName("HRESULT (UINT, LPOLESTR, LPOLESTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<ICreateTypeInfo*, uint, ushort*, ushort*, int> DefineFuncAsDllEntry;
+
+            [NativeTypeName("HRESULT (UINT, LPOLESTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<ICreateTypeInfo*, uint, ushort*, int> SetFuncDocString;
+
+            [NativeTypeName("HRESULT (UINT, LPOLESTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<ICreateTypeInfo*, uint, ushort*, int> SetVarDocString;
+
+            [NativeTypeName("HRESULT (UINT, DWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<ICreateTypeInfo*, uint, uint, int> SetFuncHelpContext;
+
+            [NativeTypeName("HRESULT (UINT, DWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<ICreateTypeInfo*, uint, uint, int> SetVarHelpContext;
+
+            [NativeTypeName("HRESULT (UINT, BSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<ICreateTypeInfo*, uint, ushort*, int> SetMops;
+
+            [NativeTypeName("HRESULT (IDLDESC *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ICreateTypeInfo*, IDLDESC*, int> SetTypeIdldesc;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<ICreateTypeInfo*, int> LayOut;
+        }
     }
 }

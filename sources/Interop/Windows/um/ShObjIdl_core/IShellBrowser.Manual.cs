@@ -13,14 +13,14 @@ namespace TerraFX.Interop
         [VtblIndex(17)]
         public HRESULT SetToolbarItems32([NativeTypeName("LPTBBUTTONSB")] TBBUTTON32* lpButtons, uint nButtons, uint uFlags)
         {
-            return ((delegate* unmanaged<IShellBrowser*, TBBUTTON32*, uint, uint, int>)(lpVtbl[17]))((IShellBrowser*)Unsafe.AsPointer(ref this), lpButtons, nButtons, uFlags);
+            return SetToolbarItems(lpButtons, nButtons, uFlags);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(17)]
         public HRESULT SetToolbarItems32([NativeTypeName("LPTBBUTTONSB")] TBBUTTON64* lpButtons, uint nButtons, uint uFlags)
         {
-            return ((delegate* unmanaged<IShellBrowser*, TBBUTTON64*, uint, uint, int>)(lpVtbl[17]))((IShellBrowser*)Unsafe.AsPointer(ref this), lpButtons, nButtons, uFlags);
+            return SetToolbarItems(lpButtons, nButtons, uFlags);
         }
     }
 }

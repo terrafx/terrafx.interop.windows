@@ -59,5 +59,26 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<ISpRecognizer3*, ISpRecoCategory**, int>)(lpVtbl[5]))((ISpRecognizer3*)Unsafe.AsPointer(ref this), ppCategory);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpRecognizer3*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpRecognizer3*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpRecognizer3*, uint> Release;
+
+            [NativeTypeName("HRESULT (SPCATEGORYTYPE, ISpRecoCategory **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpRecognizer3*, SPCATEGORYTYPE, ISpRecoCategory**, int> GetCategory;
+
+            [NativeTypeName("HRESULT (ISpRecoCategory *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpRecognizer3*, ISpRecoCategory*, int> SetActiveCategory;
+
+            [NativeTypeName("HRESULT (ISpRecoCategory **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpRecognizer3*, ISpRecoCategory**, int> GetActiveCategory;
+        }
     }
 }

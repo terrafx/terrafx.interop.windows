@@ -311,5 +311,134 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IFolderView2*, int>)(lpVtbl[41]))((IFolderView2*)Unsafe.AsPointer(ref this));
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFolderView2*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IFolderView2*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IFolderView2*, uint> Release;
+
+            [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFolderView2*, uint*, int> GetCurrentViewMode;
+
+            [NativeTypeName("HRESULT (UINT) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFolderView2*, uint, int> SetCurrentViewMode;
+
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFolderView2*, Guid*, void**, int> GetFolder;
+
+            [NativeTypeName("HRESULT (int, LPITEMIDLIST *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFolderView2*, int, ITEMIDLIST**, int> Item;
+
+            [NativeTypeName("HRESULT (UINT, int *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFolderView2*, uint, int*, int> ItemCount;
+
+            [NativeTypeName("HRESULT (UINT, const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFolderView2*, uint, Guid*, void**, int> Items;
+
+            [NativeTypeName("HRESULT (int *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFolderView2*, int*, int> GetSelectionMarkedItem;
+
+            [NativeTypeName("HRESULT (int *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFolderView2*, int*, int> GetFocusedItem;
+
+            [NativeTypeName("HRESULT (LPCITEMIDLIST, POINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFolderView2*, ITEMIDLIST*, POINT*, int> GetItemPosition;
+
+            [NativeTypeName("HRESULT (POINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFolderView2*, POINT*, int> GetSpacing;
+
+            [NativeTypeName("HRESULT (POINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFolderView2*, POINT*, int> GetDefaultSpacing;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IFolderView2*, int> GetAutoArrange;
+
+            [NativeTypeName("HRESULT (int, DWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFolderView2*, int, uint, int> SelectItem;
+
+            [NativeTypeName("HRESULT (UINT, LPCITEMIDLIST *, POINT *, DWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFolderView2*, uint, ITEMIDLIST**, POINT*, uint, int> SelectAndPositionItems;
+
+            [NativeTypeName("HRESULT (const PROPERTYKEY &, BOOL) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFolderView2*, PROPERTYKEY*, BOOL, int> SetGroupBy;
+
+            [NativeTypeName("HRESULT (PROPERTYKEY *, BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFolderView2*, PROPERTYKEY*, BOOL*, int> GetGroupBy;
+
+            [NativeTypeName("HRESULT (LPCITEMIDLIST, const PROPERTYKEY &, const PROPVARIANT &) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFolderView2*, ITEMIDLIST*, PROPERTYKEY*, PROPVARIANT*, int> SetViewProperty;
+
+            [NativeTypeName("HRESULT (LPCITEMIDLIST, const PROPERTYKEY &, PROPVARIANT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFolderView2*, ITEMIDLIST*, PROPERTYKEY*, PROPVARIANT*, int> GetViewProperty;
+
+            [NativeTypeName("HRESULT (LPCITEMIDLIST, LPCWSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFolderView2*, ITEMIDLIST*, ushort*, int> SetTileViewProperties;
+
+            [NativeTypeName("HRESULT (LPCITEMIDLIST, LPCWSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFolderView2*, ITEMIDLIST*, ushort*, int> SetExtendedTileViewProperties;
+
+            [NativeTypeName("HRESULT (FVTEXTTYPE, LPCWSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFolderView2*, FVTEXTTYPE, ushort*, int> SetText;
+
+            [NativeTypeName("HRESULT (DWORD, DWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFolderView2*, uint, uint, int> SetCurrentFolderFlags;
+
+            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFolderView2*, uint*, int> GetCurrentFolderFlags;
+
+            [NativeTypeName("HRESULT (int *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFolderView2*, int*, int> GetSortColumnCount;
+
+            [NativeTypeName("HRESULT (const SORTCOLUMN *, int) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFolderView2*, SORTCOLUMN*, int, int> SetSortColumns;
+
+            [NativeTypeName("HRESULT (SORTCOLUMN *, int) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFolderView2*, SORTCOLUMN*, int, int> GetSortColumns;
+
+            [NativeTypeName("HRESULT (int, const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFolderView2*, int, Guid*, void**, int> GetItem;
+
+            [NativeTypeName("HRESULT (int, BOOL, int *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFolderView2*, int, BOOL, int*, int> GetVisibleItem;
+
+            [NativeTypeName("HRESULT (int, int *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFolderView2*, int, int*, int> GetSelectedItem;
+
+            [NativeTypeName("HRESULT (BOOL, IShellItemArray **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFolderView2*, BOOL, IShellItemArray**, int> GetSelection;
+
+            [NativeTypeName("HRESULT (LPCITEMIDLIST, DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFolderView2*, ITEMIDLIST*, uint*, int> GetSelectionState;
+
+            [NativeTypeName("HRESULT (LPCSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFolderView2*, sbyte*, int> InvokeVerbOnSelection;
+
+            [NativeTypeName("HRESULT (FOLDERVIEWMODE, int) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFolderView2*, FOLDERVIEWMODE, int, int> SetViewModeAndIconSize;
+
+            [NativeTypeName("HRESULT (FOLDERVIEWMODE *, int *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFolderView2*, FOLDERVIEWMODE*, int*, int> GetViewModeAndIconSize;
+
+            [NativeTypeName("HRESULT (UINT) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFolderView2*, uint, int> SetGroupSubsetCount;
+
+            [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFolderView2*, uint*, int> GetGroupSubsetCount;
+
+            [NativeTypeName("HRESULT (BOOL) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFolderView2*, BOOL, int> SetRedraw;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IFolderView2*, int> IsMoveInSameFolder;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IFolderView2*, int> DoRename;
+        }
     }
 }

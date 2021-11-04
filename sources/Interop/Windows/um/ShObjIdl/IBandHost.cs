@@ -59,5 +59,26 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IBandHost*, Guid*, int>)(lpVtbl[5]))((IBandHost*)Unsafe.AsPointer(ref this), rclsidBand);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IBandHost*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IBandHost*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IBandHost*, uint> Release;
+
+            [NativeTypeName("HRESULT (const IID &, BOOL, BOOL, const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IBandHost*, Guid*, BOOL, BOOL, Guid*, void**, int> CreateBand;
+
+            [NativeTypeName("HRESULT (const IID &, BOOL) __attribute__((stdcall))")]
+            public delegate* unmanaged<IBandHost*, Guid*, BOOL, int> SetBandAvailability;
+
+            [NativeTypeName("HRESULT (const IID &) __attribute__((stdcall))")]
+            public delegate* unmanaged<IBandHost*, Guid*, int> DestroyBand;
+        }
     }
 }

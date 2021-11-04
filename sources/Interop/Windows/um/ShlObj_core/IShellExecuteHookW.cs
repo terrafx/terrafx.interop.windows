@@ -45,5 +45,20 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IShellExecuteHookW*, void*, int>)(lpVtbl[3]))((IShellExecuteHookW*)Unsafe.AsPointer(ref this), pei);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellExecuteHookW*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellExecuteHookW*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellExecuteHookW*, uint> Release;
+
+            [NativeTypeName("HRESULT (LPSHELLEXECUTEINFOW) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellExecuteHookW*, void*, int> Execute;
+        }
     }
 }

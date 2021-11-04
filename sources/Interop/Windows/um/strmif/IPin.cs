@@ -143,5 +143,62 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IPin*, long, long, double, int>)(lpVtbl[17]))((IPin*)Unsafe.AsPointer(ref this), tStart, tStop, dRate);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IPin*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IPin*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IPin*, uint> Release;
+
+            [NativeTypeName("HRESULT (IPin *, const AM_MEDIA_TYPE *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IPin*, IPin*, AM_MEDIA_TYPE*, int> Connect;
+
+            [NativeTypeName("HRESULT (IPin *, const AM_MEDIA_TYPE *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IPin*, IPin*, AM_MEDIA_TYPE*, int> ReceiveConnection;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IPin*, int> Disconnect;
+
+            [NativeTypeName("HRESULT (IPin **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IPin*, IPin**, int> ConnectedTo;
+
+            [NativeTypeName("HRESULT (AM_MEDIA_TYPE *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IPin*, AM_MEDIA_TYPE*, int> ConnectionMediaType;
+
+            [NativeTypeName("HRESULT (PIN_INFO *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IPin*, PIN_INFO*, int> QueryPinInfo;
+
+            [NativeTypeName("HRESULT (PIN_DIRECTION *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IPin*, PIN_DIRECTION*, int> QueryDirection;
+
+            [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IPin*, ushort**, int> QueryId;
+
+            [NativeTypeName("HRESULT (const AM_MEDIA_TYPE *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IPin*, AM_MEDIA_TYPE*, int> QueryAccept;
+
+            [NativeTypeName("HRESULT (IEnumMediaTypes **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IPin*, IEnumMediaTypes**, int> EnumMediaTypes;
+
+            [NativeTypeName("HRESULT (IPin **, ULONG *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IPin*, IPin**, uint*, int> QueryInternalConnections;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IPin*, int> EndOfStream;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IPin*, int> BeginFlush;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IPin*, int> EndFlush;
+
+            [NativeTypeName("HRESULT (REFERENCE_TIME, REFERENCE_TIME, double) __attribute__((stdcall))")]
+            public delegate* unmanaged<IPin*, long, long, double, int> NewSegment;
+        }
     }
 }

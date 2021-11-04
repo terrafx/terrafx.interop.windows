@@ -178,5 +178,77 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IXblIdpAuthTokenResult*, ushort**, int>)(lpVtbl[22]))((IXblIdpAuthTokenResult*)Unsafe.AsPointer(ref this), titleRestrictions);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IXblIdpAuthTokenResult*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IXblIdpAuthTokenResult*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IXblIdpAuthTokenResult*, uint> Release;
+
+            [NativeTypeName("HRESULT (XBL_IDP_AUTH_TOKEN_STATUS *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IXblIdpAuthTokenResult*, XBL_IDP_AUTH_TOKEN_STATUS*, int> GetStatus;
+
+            [NativeTypeName("HRESULT (HRESULT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IXblIdpAuthTokenResult*, HRESULT*, int> GetErrorCode;
+
+            [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IXblIdpAuthTokenResult*, ushort**, int> GetToken;
+
+            [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IXblIdpAuthTokenResult*, ushort**, int> GetSignature;
+
+            [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IXblIdpAuthTokenResult*, ushort**, int> GetSandbox;
+
+            [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IXblIdpAuthTokenResult*, ushort**, int> GetEnvironment;
+
+            [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IXblIdpAuthTokenResult*, ushort**, int> GetMsaAccountId;
+
+            [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IXblIdpAuthTokenResult*, ushort**, int> GetXuid;
+
+            [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IXblIdpAuthTokenResult*, ushort**, int> GetGamertag;
+
+            [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IXblIdpAuthTokenResult*, ushort**, int> GetAgeGroup;
+
+            [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IXblIdpAuthTokenResult*, ushort**, int> GetPrivileges;
+
+            [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IXblIdpAuthTokenResult*, ushort**, int> GetMsaTarget;
+
+            [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IXblIdpAuthTokenResult*, ushort**, int> GetMsaPolicy;
+
+            [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IXblIdpAuthTokenResult*, ushort**, int> GetMsaAppId;
+
+            [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IXblIdpAuthTokenResult*, ushort**, int> GetRedirect;
+
+            [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IXblIdpAuthTokenResult*, ushort**, int> GetMessageW;
+
+            [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IXblIdpAuthTokenResult*, ushort**, int> GetHelpId;
+
+            [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IXblIdpAuthTokenResult*, ushort**, int> GetEnforcementBans;
+
+            [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IXblIdpAuthTokenResult*, ushort**, int> GetRestrictions;
+
+            [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IXblIdpAuthTokenResult*, ushort**, int> GetTitleRestrictions;
+        }
     }
 }

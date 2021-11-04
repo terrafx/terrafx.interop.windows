@@ -52,5 +52,23 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<ITfDisplayAttributeProvider*, Guid*, ITfDisplayAttributeInfo**, int>)(lpVtbl[4]))((ITfDisplayAttributeProvider*)Unsafe.AsPointer(ref this), guid, ppInfo);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfDisplayAttributeProvider*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfDisplayAttributeProvider*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfDisplayAttributeProvider*, uint> Release;
+
+            [NativeTypeName("HRESULT (IEnumTfDisplayAttributeInfo **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfDisplayAttributeProvider*, IEnumTfDisplayAttributeInfo**, int> EnumDisplayAttributeInfo;
+
+            [NativeTypeName("HRESULT (const GUID &, ITfDisplayAttributeInfo **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfDisplayAttributeProvider*, Guid*, ITfDisplayAttributeInfo**, int> GetDisplayAttributeInfo;
+        }
     }
 }

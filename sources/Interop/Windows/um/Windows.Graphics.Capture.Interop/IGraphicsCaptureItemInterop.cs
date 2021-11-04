@@ -52,5 +52,23 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IGraphicsCaptureItemInterop*, HMONITOR, Guid*, void**, int>)(lpVtbl[4]))((IGraphicsCaptureItemInterop*)Unsafe.AsPointer(ref this), monitor, riid, result);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IGraphicsCaptureItemInterop*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IGraphicsCaptureItemInterop*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IGraphicsCaptureItemInterop*, uint> Release;
+
+            [NativeTypeName("HRESULT (HWND, const IID &, void **) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IGraphicsCaptureItemInterop*, HWND, Guid*, void**, int> CreateForWindow;
+
+            [NativeTypeName("HRESULT (HMONITOR, const IID &, void **) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IGraphicsCaptureItemInterop*, HMONITOR, Guid*, void**, int> CreateForMonitor;
+        }
     }
 }

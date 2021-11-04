@@ -87,5 +87,38 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IVMRDeinterlaceControl*, uint, Guid*, int>)(lpVtbl[9]))((IVMRDeinterlaceControl*)Unsafe.AsPointer(ref this), dwStreamID, lpDeinterlaceMode);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IVMRDeinterlaceControl*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IVMRDeinterlaceControl*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IVMRDeinterlaceControl*, uint> Release;
+
+            [NativeTypeName("HRESULT (VMRVideoDesc *, LPDWORD, LPGUID) __attribute__((stdcall))")]
+            public delegate* unmanaged<IVMRDeinterlaceControl*, VMRVideoDesc*, uint*, Guid*, int> GetNumberOfDeinterlaceModes;
+
+            [NativeTypeName("HRESULT (LPGUID, VMRVideoDesc *, VMRDeinterlaceCaps *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IVMRDeinterlaceControl*, Guid*, VMRVideoDesc*, VMRDeinterlaceCaps*, int> GetDeinterlaceModeCaps;
+
+            [NativeTypeName("HRESULT (DWORD, LPGUID) __attribute__((stdcall))")]
+            public delegate* unmanaged<IVMRDeinterlaceControl*, uint, Guid*, int> GetDeinterlaceMode;
+
+            [NativeTypeName("HRESULT (DWORD, LPGUID) __attribute__((stdcall))")]
+            public delegate* unmanaged<IVMRDeinterlaceControl*, uint, Guid*, int> SetDeinterlaceMode;
+
+            [NativeTypeName("HRESULT (LPDWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<IVMRDeinterlaceControl*, uint*, int> GetDeinterlacePrefs;
+
+            [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<IVMRDeinterlaceControl*, uint, int> SetDeinterlacePrefs;
+
+            [NativeTypeName("HRESULT (DWORD, LPGUID) __attribute__((stdcall))")]
+            public delegate* unmanaged<IVMRDeinterlaceControl*, uint, Guid*, int> GetActualDeinterlaceMode;
+        }
     }
 }

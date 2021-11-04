@@ -101,5 +101,44 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<ICustomDestinationList*, int>)(lpVtbl[11]))((ICustomDestinationList*)Unsafe.AsPointer(ref this));
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ICustomDestinationList*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ICustomDestinationList*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ICustomDestinationList*, uint> Release;
+
+            [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<ICustomDestinationList*, ushort*, int> SetAppID;
+
+            [NativeTypeName("HRESULT (UINT *, const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ICustomDestinationList*, uint*, Guid*, void**, int> BeginList;
+
+            [NativeTypeName("HRESULT (LPCWSTR, IObjectArray *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ICustomDestinationList*, ushort*, IObjectArray*, int> AppendCategory;
+
+            [NativeTypeName("HRESULT (KNOWNDESTCATEGORY) __attribute__((stdcall))")]
+            public delegate* unmanaged<ICustomDestinationList*, KNOWNDESTCATEGORY, int> AppendKnownCategory;
+
+            [NativeTypeName("HRESULT (IObjectArray *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ICustomDestinationList*, IObjectArray*, int> AddUserTasks;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<ICustomDestinationList*, int> CommitList;
+
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ICustomDestinationList*, Guid*, void**, int> GetRemovedDestinations;
+
+            [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<ICustomDestinationList*, ushort*, int> DeleteList;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<ICustomDestinationList*, int> AbortList;
+        }
     }
 }

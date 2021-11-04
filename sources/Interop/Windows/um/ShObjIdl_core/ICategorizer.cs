@@ -66,5 +66,29 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<ICategorizer*, CATSORT_FLAGS, uint, uint, int>)(lpVtbl[6]))((ICategorizer*)Unsafe.AsPointer(ref this), csfFlags, dwCategoryId1, dwCategoryId2);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ICategorizer*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ICategorizer*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ICategorizer*, uint> Release;
+
+            [NativeTypeName("HRESULT (LPWSTR, UINT) __attribute__((stdcall))")]
+            public delegate* unmanaged<ICategorizer*, ushort*, uint, int> GetDescription;
+
+            [NativeTypeName("HRESULT (UINT, LPCITEMIDLIST *, DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ICategorizer*, uint, ITEMIDLIST**, uint*, int> GetCategory;
+
+            [NativeTypeName("HRESULT (DWORD, CATEGORY_INFO *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ICategorizer*, uint, CATEGORY_INFO*, int> GetCategoryInfo;
+
+            [NativeTypeName("HRESULT (CATSORT_FLAGS, DWORD, DWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<ICategorizer*, CATSORT_FLAGS, uint, uint, int> CompareCategory;
+        }
     }
 }

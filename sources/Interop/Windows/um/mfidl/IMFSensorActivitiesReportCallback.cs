@@ -45,5 +45,20 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IMFSensorActivitiesReportCallback*, IMFSensorActivitiesReport*, int>)(lpVtbl[3]))((IMFSensorActivitiesReportCallback*)Unsafe.AsPointer(ref this), sensorActivitiesReport);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFSensorActivitiesReportCallback*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFSensorActivitiesReportCallback*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFSensorActivitiesReportCallback*, uint> Release;
+
+            [NativeTypeName("HRESULT (IMFSensorActivitiesReport *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFSensorActivitiesReportCallback*, IMFSensorActivitiesReport*, int> OnActivitiesReport;
+        }
     }
 }

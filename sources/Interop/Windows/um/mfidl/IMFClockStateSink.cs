@@ -73,5 +73,32 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IMFClockStateSink*, long, float, int>)(lpVtbl[7]))((IMFClockStateSink*)Unsafe.AsPointer(ref this), hnsSystemTime, flRate);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFClockStateSink*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFClockStateSink*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFClockStateSink*, uint> Release;
+
+            [NativeTypeName("HRESULT (MFTIME, LONGLONG) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFClockStateSink*, long, long, int> OnClockStart;
+
+            [NativeTypeName("HRESULT (MFTIME) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFClockStateSink*, long, int> OnClockStop;
+
+            [NativeTypeName("HRESULT (MFTIME) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFClockStateSink*, long, int> OnClockPause;
+
+            [NativeTypeName("HRESULT (MFTIME) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFClockStateSink*, long, int> OnClockRestart;
+
+            [NativeTypeName("HRESULT (MFTIME, float) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFClockStateSink*, long, float, int> OnClockSetRate;
+        }
     }
 }

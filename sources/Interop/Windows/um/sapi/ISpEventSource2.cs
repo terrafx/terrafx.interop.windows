@@ -115,5 +115,50 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<ISpEventSource2*, uint, SPEVENTEX*, uint*, int>)(lpVtbl[13]))((ISpEventSource2*)Unsafe.AsPointer(ref this), ulCount, pEventArray, pulFetched);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpEventSource2*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpEventSource2*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpEventSource2*, uint> Release;
+
+            [NativeTypeName("HRESULT (ISpNotifySink *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpEventSource2*, ISpNotifySink*, int> SetNotifySink;
+
+            [NativeTypeName("HRESULT (HWND, UINT, WPARAM, LPARAM) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpEventSource2*, HWND, uint, WPARAM, LPARAM, int> SetNotifyWindowMessage;
+
+            [NativeTypeName("HRESULT (SPNOTIFYCALLBACK *, WPARAM, LPARAM) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpEventSource2*, delegate* unmanaged<WPARAM, LPARAM, void>, WPARAM, LPARAM, int> SetNotifyCallbackFunction;
+
+            [NativeTypeName("HRESULT (ISpNotifyCallback *, WPARAM, LPARAM) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpEventSource2*, ISpNotifyCallback*, WPARAM, LPARAM, int> SetNotifyCallbackInterface;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpEventSource2*, int> SetNotifyWin32Event;
+
+            [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpEventSource2*, uint, int> WaitForNotifyEvent;
+
+            [NativeTypeName("HANDLE () __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpEventSource2*, void*> GetNotifyEventHandle;
+
+            [NativeTypeName("HRESULT (ULONGLONG, ULONGLONG) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpEventSource2*, ulong, ulong, int> SetInterest;
+
+            [NativeTypeName("HRESULT (ULONG, SPEVENT *, ULONG *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpEventSource2*, uint, SPEVENT*, uint*, int> GetEvents;
+
+            [NativeTypeName("HRESULT (SPEVENTSOURCEINFO *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpEventSource2*, SPEVENTSOURCEINFO*, int> GetInfo;
+
+            [NativeTypeName("HRESULT (ULONG, SPEVENTEX *, ULONG *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpEventSource2*, uint, SPEVENTEX*, uint*, int> GetEventsEx;
+        }
     }
 }

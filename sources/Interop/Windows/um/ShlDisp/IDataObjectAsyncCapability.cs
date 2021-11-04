@@ -73,5 +73,32 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IDataObjectAsyncCapability*, HRESULT, IBindCtx*, uint, int>)(lpVtbl[7]))((IDataObjectAsyncCapability*)Unsafe.AsPointer(ref this), hResult, pbcReserved, dwEffects);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDataObjectAsyncCapability*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDataObjectAsyncCapability*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDataObjectAsyncCapability*, uint> Release;
+
+            [NativeTypeName("HRESULT (BOOL) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDataObjectAsyncCapability*, BOOL, int> SetAsyncMode;
+
+            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDataObjectAsyncCapability*, BOOL*, int> GetAsyncMode;
+
+            [NativeTypeName("HRESULT (IBindCtx *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDataObjectAsyncCapability*, IBindCtx*, int> StartOperation;
+
+            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDataObjectAsyncCapability*, BOOL*, int> InOperation;
+
+            [NativeTypeName("HRESULT (HRESULT, IBindCtx *, DWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDataObjectAsyncCapability*, HRESULT, IBindCtx*, uint, int> EndOperation;
+        }
     }
 }

@@ -66,5 +66,29 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<ITfMessagePump*, MSG*, HWND, uint, uint, BOOL*, int>)(lpVtbl[6]))((ITfMessagePump*)Unsafe.AsPointer(ref this), pMsg, hwnd, wMsgFilterMin, wMsgFilterMax, pfResult);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfMessagePump*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfMessagePump*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfMessagePump*, uint> Release;
+
+            [NativeTypeName("HRESULT (LPMSG, HWND, UINT, UINT, UINT, BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfMessagePump*, MSG*, HWND, uint, uint, uint, BOOL*, int> PeekMessageA;
+
+            [NativeTypeName("HRESULT (LPMSG, HWND, UINT, UINT, BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfMessagePump*, MSG*, HWND, uint, uint, BOOL*, int> GetMessageA;
+
+            [NativeTypeName("HRESULT (LPMSG, HWND, UINT, UINT, UINT, BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfMessagePump*, MSG*, HWND, uint, uint, uint, BOOL*, int> PeekMessageW;
+
+            [NativeTypeName("HRESULT (LPMSG, HWND, UINT, UINT, BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfMessagePump*, MSG*, HWND, uint, uint, BOOL*, int> GetMessageW;
+        }
     }
 }

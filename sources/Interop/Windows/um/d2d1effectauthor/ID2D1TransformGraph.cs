@@ -102,5 +102,44 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<ID2D1TransformGraph*, uint, int>)(lpVtbl[11]))((ID2D1TransformGraph*)Unsafe.AsPointer(ref this), effectInputIndex);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID2D1TransformGraph*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ID2D1TransformGraph*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ID2D1TransformGraph*, uint> Release;
+
+            [NativeTypeName("UINT32 () const __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID2D1TransformGraph*, uint> GetInputCount;
+
+            [NativeTypeName("HRESULT (ID2D1TransformNode *) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID2D1TransformGraph*, ID2D1TransformNode*, int> SetSingleTransformNode;
+
+            [NativeTypeName("HRESULT (ID2D1TransformNode *) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID2D1TransformGraph*, ID2D1TransformNode*, int> AddNode;
+
+            [NativeTypeName("HRESULT (ID2D1TransformNode *) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID2D1TransformGraph*, ID2D1TransformNode*, int> RemoveNode;
+
+            [NativeTypeName("HRESULT (ID2D1TransformNode *) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID2D1TransformGraph*, ID2D1TransformNode*, int> SetOutputNode;
+
+            [NativeTypeName("HRESULT (ID2D1TransformNode *, ID2D1TransformNode *, UINT32) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID2D1TransformGraph*, ID2D1TransformNode*, ID2D1TransformNode*, uint, int> ConnectNode;
+
+            [NativeTypeName("HRESULT (UINT32, ID2D1TransformNode *, UINT32) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID2D1TransformGraph*, uint, ID2D1TransformNode*, uint, int> ConnectToEffectInput;
+
+            [NativeTypeName("void () __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID2D1TransformGraph*, void> Clear;
+
+            [NativeTypeName("HRESULT (UINT32) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID2D1TransformGraph*, uint, int> SetPassthroughGraph;
+        }
     }
 }

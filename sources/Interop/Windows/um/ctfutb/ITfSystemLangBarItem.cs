@@ -52,5 +52,23 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<ITfSystemLangBarItem*, ushort*, uint, int>)(lpVtbl[4]))((ITfSystemLangBarItem*)Unsafe.AsPointer(ref this), pchToolTip, cch);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfSystemLangBarItem*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfSystemLangBarItem*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfSystemLangBarItem*, uint> Release;
+
+            [NativeTypeName("HRESULT (HICON) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfSystemLangBarItem*, HICON, int> SetIcon;
+
+            [NativeTypeName("HRESULT (WCHAR *, ULONG) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfSystemLangBarItem*, ushort*, uint, int> SetTooltipString;
+        }
     }
 }

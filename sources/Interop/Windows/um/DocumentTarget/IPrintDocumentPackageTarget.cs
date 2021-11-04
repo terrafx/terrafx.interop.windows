@@ -59,5 +59,26 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IPrintDocumentPackageTarget*, int>)(lpVtbl[5]))((IPrintDocumentPackageTarget*)Unsafe.AsPointer(ref this));
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IPrintDocumentPackageTarget*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IPrintDocumentPackageTarget*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IPrintDocumentPackageTarget*, uint> Release;
+
+            [NativeTypeName("HRESULT (UINT32 *, GUID **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IPrintDocumentPackageTarget*, uint*, Guid**, int> GetPackageTargetTypes;
+
+            [NativeTypeName("HRESULT (const GUID &, const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IPrintDocumentPackageTarget*, Guid*, Guid*, void**, int> GetPackageTarget;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IPrintDocumentPackageTarget*, int> Cancel;
+        }
     }
 }

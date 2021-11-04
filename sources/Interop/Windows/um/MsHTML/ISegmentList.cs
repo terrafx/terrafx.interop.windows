@@ -59,5 +59,26 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<ISegmentList*, BOOL*, int>)(lpVtbl[5]))((ISegmentList*)Unsafe.AsPointer(ref this), pfEmpty);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISegmentList*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ISegmentList*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ISegmentList*, uint> Release;
+
+            [NativeTypeName("HRESULT (ISegmentListIterator **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISegmentList*, ISegmentListIterator**, int> CreateIterator;
+
+            [NativeTypeName("HRESULT (SELECTION_TYPE *) __attribute__((stdcall))")]
+            public new delegate* unmanaged<ISegmentList*, SELECTION_TYPE*, int> GetType;
+
+            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISegmentList*, BOOL*, int> IsEmpty;
+        }
     }
 }

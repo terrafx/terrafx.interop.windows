@@ -90,5 +90,41 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<ID3D11ShaderReflectionType*, ID3D11ShaderReflectionType*, int>)(lpVtbl[10]))((ID3D11ShaderReflectionType*)Unsafe.AsPointer(ref this), pBase);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (D3D11_SHADER_TYPE_DESC *) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D11ShaderReflectionType*, D3D11_SHADER_TYPE_DESC*, int> GetDesc;
+
+            [NativeTypeName("ID3D11ShaderReflectionType *(UINT) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D11ShaderReflectionType*, uint, ID3D11ShaderReflectionType*> GetMemberTypeByIndex;
+
+            [NativeTypeName("ID3D11ShaderReflectionType *(LPCSTR) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D11ShaderReflectionType*, sbyte*, ID3D11ShaderReflectionType*> GetMemberTypeByName;
+
+            [NativeTypeName("LPCSTR (UINT) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D11ShaderReflectionType*, uint, sbyte*> GetMemberTypeName;
+
+            [NativeTypeName("HRESULT (ID3D11ShaderReflectionType *) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D11ShaderReflectionType*, ID3D11ShaderReflectionType*, int> IsEqual;
+
+            [NativeTypeName("ID3D11ShaderReflectionType *() __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D11ShaderReflectionType*, ID3D11ShaderReflectionType*> GetSubType;
+
+            [NativeTypeName("ID3D11ShaderReflectionType *() __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D11ShaderReflectionType*, ID3D11ShaderReflectionType*> GetBaseClass;
+
+            [NativeTypeName("UINT () __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D11ShaderReflectionType*, uint> GetNumInterfaces;
+
+            [NativeTypeName("ID3D11ShaderReflectionType *(UINT) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D11ShaderReflectionType*, uint, ID3D11ShaderReflectionType*> GetInterfaceByIndex;
+
+            [NativeTypeName("HRESULT (ID3D11ShaderReflectionType *) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D11ShaderReflectionType*, ID3D11ShaderReflectionType*, int> IsOfType;
+
+            [NativeTypeName("HRESULT (ID3D11ShaderReflectionType *) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D11ShaderReflectionType*, ID3D11ShaderReflectionType*, int> ImplementsInterface;
+        }
     }
 }

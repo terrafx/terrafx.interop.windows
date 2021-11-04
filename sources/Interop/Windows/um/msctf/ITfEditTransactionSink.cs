@@ -52,5 +52,23 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<ITfEditTransactionSink*, ITfContext*, int>)(lpVtbl[4]))((ITfEditTransactionSink*)Unsafe.AsPointer(ref this), pic);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfEditTransactionSink*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfEditTransactionSink*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfEditTransactionSink*, uint> Release;
+
+            [NativeTypeName("HRESULT (ITfContext *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfEditTransactionSink*, ITfContext*, int> OnStartEditTransaction;
+
+            [NativeTypeName("HRESULT (ITfContext *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfEditTransactionSink*, ITfContext*, int> OnEndEditTransaction;
+        }
     }
 }

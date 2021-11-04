@@ -59,5 +59,26 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IWizardSite*, HPROPSHEETPAGE*, int>)(lpVtbl[5]))((IWizardSite*)Unsafe.AsPointer(ref this), phpage);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWizardSite*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IWizardSite*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IWizardSite*, uint> Release;
+
+            [NativeTypeName("HRESULT (HPROPSHEETPAGE *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWizardSite*, HPROPSHEETPAGE*, int> GetPreviousPage;
+
+            [NativeTypeName("HRESULT (HPROPSHEETPAGE *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWizardSite*, HPROPSHEETPAGE*, int> GetNextPage;
+
+            [NativeTypeName("HRESULT (HPROPSHEETPAGE *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWizardSite*, HPROPSHEETPAGE*, int> GetCancelledPage;
+        }
     }
 }

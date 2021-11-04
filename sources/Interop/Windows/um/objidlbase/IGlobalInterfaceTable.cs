@@ -59,5 +59,26 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IGlobalInterfaceTable*, uint, Guid*, void**, int>)(lpVtbl[5]))((IGlobalInterfaceTable*)Unsafe.AsPointer(ref this), dwCookie, riid, ppv);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IGlobalInterfaceTable*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IGlobalInterfaceTable*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IGlobalInterfaceTable*, uint> Release;
+
+            [NativeTypeName("HRESULT (IUnknown *, const IID &, DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IGlobalInterfaceTable*, IUnknown*, Guid*, uint*, int> RegisterInterfaceInGlobal;
+
+            [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<IGlobalInterfaceTable*, uint, int> RevokeInterfaceFromGlobal;
+
+            [NativeTypeName("HRESULT (DWORD, const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IGlobalInterfaceTable*, uint, Guid*, void**, int> GetInterfaceFromGlobal;
+        }
     }
 }

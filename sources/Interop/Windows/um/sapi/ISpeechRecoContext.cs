@@ -241,5 +241,104 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<ISpeechRecoContext*, ushort*, int>)(lpVtbl[31]))((ISpeechRecoContext*)Unsafe.AsPointer(ref this), AdaptationString);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpeechRecoContext*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpeechRecoContext*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpeechRecoContext*, uint> Release;
+
+            [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpeechRecoContext*, uint*, int> GetTypeInfoCount;
+
+            [NativeTypeName("HRESULT (UINT, LCID, ITypeInfo **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpeechRecoContext*, uint, uint, ITypeInfo**, int> GetTypeInfo;
+
+            [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpeechRecoContext*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+
+            [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpeechRecoContext*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
+
+            [NativeTypeName("HRESULT (ISpeechRecognizer **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpeechRecoContext*, ISpeechRecognizer**, int> get_Recognizer;
+
+            [NativeTypeName("HRESULT (SpeechInterference *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpeechRecoContext*, SpeechInterference*, int> get_AudioInputInterferenceStatus;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpeechRecoContext*, ushort**, int> get_RequestedUIType;
+
+            [NativeTypeName("HRESULT (ISpeechVoice *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpeechRecoContext*, ISpeechVoice*, int> putref_Voice;
+
+            [NativeTypeName("HRESULT (ISpeechVoice **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpeechRecoContext*, ISpeechVoice**, int> get_Voice;
+
+            [NativeTypeName("HRESULT (VARIANT_BOOL) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpeechRecoContext*, short, int> put_AllowVoiceFormatMatchingOnNextSet;
+
+            [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpeechRecoContext*, short*, int> get_AllowVoiceFormatMatchingOnNextSet;
+
+            [NativeTypeName("HRESULT (SpeechRecoEvents) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpeechRecoContext*, SpeechRecoEvents, int> put_VoicePurgeEvent;
+
+            [NativeTypeName("HRESULT (SpeechRecoEvents *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpeechRecoContext*, SpeechRecoEvents*, int> get_VoicePurgeEvent;
+
+            [NativeTypeName("HRESULT (SpeechRecoEvents) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpeechRecoContext*, SpeechRecoEvents, int> put_EventInterests;
+
+            [NativeTypeName("HRESULT (SpeechRecoEvents *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpeechRecoContext*, SpeechRecoEvents*, int> get_EventInterests;
+
+            [NativeTypeName("HRESULT (long) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpeechRecoContext*, int, int> put_CmdMaxAlternates;
+
+            [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpeechRecoContext*, int*, int> get_CmdMaxAlternates;
+
+            [NativeTypeName("HRESULT (SpeechRecoContextState) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpeechRecoContext*, SpeechRecoContextState, int> put_State;
+
+            [NativeTypeName("HRESULT (SpeechRecoContextState *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpeechRecoContext*, SpeechRecoContextState*, int> get_State;
+
+            [NativeTypeName("HRESULT (SpeechRetainedAudioOptions) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpeechRecoContext*, SpeechRetainedAudioOptions, int> put_RetainedAudio;
+
+            [NativeTypeName("HRESULT (SpeechRetainedAudioOptions *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpeechRecoContext*, SpeechRetainedAudioOptions*, int> get_RetainedAudio;
+
+            [NativeTypeName("HRESULT (ISpeechAudioFormat *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpeechRecoContext*, ISpeechAudioFormat*, int> putref_RetainedAudioFormat;
+
+            [NativeTypeName("HRESULT (ISpeechAudioFormat **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpeechRecoContext*, ISpeechAudioFormat**, int> get_RetainedAudioFormat;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpeechRecoContext*, int> Pause;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpeechRecoContext*, int> Resume;
+
+            [NativeTypeName("HRESULT (VARIANT, ISpeechRecoGrammar **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpeechRecoContext*, VARIANT, ISpeechRecoGrammar**, int> CreateGrammar;
+
+            [NativeTypeName("HRESULT (VARIANT *, ISpeechRecoResult **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpeechRecoContext*, VARIANT*, ISpeechRecoResult**, int> CreateResultFromMemory;
+
+            [NativeTypeName("HRESULT (SpeechBookmarkOptions, VARIANT, VARIANT) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpeechRecoContext*, SpeechBookmarkOptions, VARIANT, VARIANT, int> Bookmark;
+
+            [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpeechRecoContext*, ushort*, int> SetAdaptationData;
+        }
     }
 }

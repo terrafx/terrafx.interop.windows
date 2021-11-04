@@ -52,5 +52,23 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IURLSearchHook2*, ushort*, uint, ISearchContext*, int>)(lpVtbl[4]))((IURLSearchHook2*)Unsafe.AsPointer(ref this), pwszSearchURL, cchBufferSize, pSearchContext);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IURLSearchHook2*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IURLSearchHook2*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IURLSearchHook2*, uint> Release;
+
+            [NativeTypeName("HRESULT (PWSTR, DWORD) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IURLSearchHook2*, ushort*, uint, int> Translate;
+
+            [NativeTypeName("HRESULT (PWSTR, DWORD, ISearchContext *) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IURLSearchHook2*, ushort*, uint, ISearchContext*, int> TranslateWithSearchContext;
+        }
     }
 }

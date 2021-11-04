@@ -73,5 +73,32 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<ISpatialAudioMetadataItems*, SpatialAudioMetadataItemsInfo*, int>)(lpVtbl[7]))((ISpatialAudioMetadataItems*)Unsafe.AsPointer(ref this), info);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpatialAudioMetadataItems*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpatialAudioMetadataItems*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpatialAudioMetadataItems*, uint> Release;
+
+            [NativeTypeName("HRESULT (UINT16 *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpatialAudioMetadataItems*, ushort*, int> GetFrameCount;
+
+            [NativeTypeName("HRESULT (UINT16 *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpatialAudioMetadataItems*, ushort*, int> GetItemCount;
+
+            [NativeTypeName("HRESULT (UINT16 *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpatialAudioMetadataItems*, ushort*, int> GetMaxItemCount;
+
+            [NativeTypeName("HRESULT (UINT32 *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpatialAudioMetadataItems*, uint*, int> GetMaxValueBufferLength;
+
+            [NativeTypeName("HRESULT (SpatialAudioMetadataItemsInfo *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpatialAudioMetadataItems*, SpatialAudioMetadataItemsInfo*, int> GetInfo;
+        }
     }
 }

@@ -45,5 +45,20 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IAMAudioRendererStats*, uint, uint*, uint*, int>)(lpVtbl[3]))((IAMAudioRendererStats*)Unsafe.AsPointer(ref this), dwParam, pdwParam1, pdwParam2);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAMAudioRendererStats*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IAMAudioRendererStats*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IAMAudioRendererStats*, uint> Release;
+
+            [NativeTypeName("HRESULT (DWORD, DWORD *, DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAMAudioRendererStats*, uint, uint*, uint*, int> GetStatParam;
+        }
     }
 }

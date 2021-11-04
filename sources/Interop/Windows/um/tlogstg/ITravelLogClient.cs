@@ -59,5 +59,26 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<ITravelLogClient*, ushort*, uint, int>)(lpVtbl[5]))((ITravelLogClient*)Unsafe.AsPointer(ref this), pszUrlLocation, dwPosition);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITravelLogClient*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ITravelLogClient*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ITravelLogClient*, uint> Release;
+
+            [NativeTypeName("HRESULT (DWORD, IUnknown **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITravelLogClient*, uint, IUnknown**, int> FindWindowByIndex;
+
+            [NativeTypeName("HRESULT (IStream *, LPWINDOWDATA) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITravelLogClient*, IStream*, WINDOWDATA*, int> GetWindowData;
+
+            [NativeTypeName("HRESULT (LPWSTR, DWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITravelLogClient*, ushort*, uint, int> LoadHistoryPosition;
+        }
     }
 }

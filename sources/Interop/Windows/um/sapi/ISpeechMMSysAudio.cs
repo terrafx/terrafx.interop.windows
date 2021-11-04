@@ -199,5 +199,86 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<ISpeechMMSysAudio*, int*, int>)(lpVtbl[25]))((ISpeechMMSysAudio*)Unsafe.AsPointer(ref this), Handle);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpeechMMSysAudio*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpeechMMSysAudio*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpeechMMSysAudio*, uint> Release;
+
+            [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpeechMMSysAudio*, uint*, int> GetTypeInfoCount;
+
+            [NativeTypeName("HRESULT (UINT, LCID, ITypeInfo **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpeechMMSysAudio*, uint, uint, ITypeInfo**, int> GetTypeInfo;
+
+            [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpeechMMSysAudio*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+
+            [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpeechMMSysAudio*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
+
+            [NativeTypeName("HRESULT (ISpeechAudioFormat **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpeechMMSysAudio*, ISpeechAudioFormat**, int> get_Format;
+
+            [NativeTypeName("HRESULT (ISpeechAudioFormat *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpeechMMSysAudio*, ISpeechAudioFormat*, int> putref_Format;
+
+            [NativeTypeName("HRESULT (VARIANT *, long, long *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpeechMMSysAudio*, VARIANT*, int, int*, int> Read;
+
+            [NativeTypeName("HRESULT (VARIANT, long *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpeechMMSysAudio*, VARIANT, int*, int> Write;
+
+            [NativeTypeName("HRESULT (VARIANT, SpeechStreamSeekPositionType, VARIANT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpeechMMSysAudio*, VARIANT, SpeechStreamSeekPositionType, VARIANT*, int> Seek;
+
+            [NativeTypeName("HRESULT (ISpeechAudioStatus **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpeechMMSysAudio*, ISpeechAudioStatus**, int> get_Status;
+
+            [NativeTypeName("HRESULT (ISpeechAudioBufferInfo **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpeechMMSysAudio*, ISpeechAudioBufferInfo**, int> get_BufferInfo;
+
+            [NativeTypeName("HRESULT (ISpeechAudioFormat **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpeechMMSysAudio*, ISpeechAudioFormat**, int> get_DefaultFormat;
+
+            [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpeechMMSysAudio*, int*, int> get_Volume;
+
+            [NativeTypeName("HRESULT (long) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpeechMMSysAudio*, int, int> put_Volume;
+
+            [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpeechMMSysAudio*, int*, int> get_BufferNotifySize;
+
+            [NativeTypeName("HRESULT (long) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpeechMMSysAudio*, int, int> put_BufferNotifySize;
+
+            [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpeechMMSysAudio*, int*, int> get_EventHandle;
+
+            [NativeTypeName("HRESULT (SpeechAudioState) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpeechMMSysAudio*, SpeechAudioState, int> SetState;
+
+            [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpeechMMSysAudio*, int*, int> get_DeviceId;
+
+            [NativeTypeName("HRESULT (long) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpeechMMSysAudio*, int, int> put_DeviceId;
+
+            [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpeechMMSysAudio*, int*, int> get_LineId;
+
+            [NativeTypeName("HRESULT (long) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpeechMMSysAudio*, int, int> put_LineId;
+
+            [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpeechMMSysAudio*, int*, int> get_MMHandle;
+        }
     }
 }

@@ -289,5 +289,122 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<ID3D11InfoQueue*, int>)(lpVtbl[37]))((ID3D11InfoQueue*)Unsafe.AsPointer(ref this));
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D11InfoQueue*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D11InfoQueue*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D11InfoQueue*, uint> Release;
+
+            [NativeTypeName("HRESULT (UINT64) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D11InfoQueue*, ulong, int> SetMessageCountLimit;
+
+            [NativeTypeName("void () __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D11InfoQueue*, void> ClearStoredMessages;
+
+            [NativeTypeName("HRESULT (UINT64, D3D11_MESSAGE *, SIZE_T *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D11InfoQueue*, ulong, D3D11_MESSAGE*, nuint*, int> GetMessage;
+
+            [NativeTypeName("UINT64 () __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D11InfoQueue*, ulong> GetNumMessagesAllowedByStorageFilter;
+
+            [NativeTypeName("UINT64 () __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D11InfoQueue*, ulong> GetNumMessagesDeniedByStorageFilter;
+
+            [NativeTypeName("UINT64 () __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D11InfoQueue*, ulong> GetNumStoredMessages;
+
+            [NativeTypeName("UINT64 () __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D11InfoQueue*, ulong> GetNumStoredMessagesAllowedByRetrievalFilter;
+
+            [NativeTypeName("UINT64 () __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D11InfoQueue*, ulong> GetNumMessagesDiscardedByMessageCountLimit;
+
+            [NativeTypeName("UINT64 () __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D11InfoQueue*, ulong> GetMessageCountLimit;
+
+            [NativeTypeName("HRESULT (D3D11_INFO_QUEUE_FILTER *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D11InfoQueue*, D3D11_INFO_QUEUE_FILTER*, int> AddStorageFilterEntries;
+
+            [NativeTypeName("HRESULT (D3D11_INFO_QUEUE_FILTER *, SIZE_T *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D11InfoQueue*, D3D11_INFO_QUEUE_FILTER*, nuint*, int> GetStorageFilter;
+
+            [NativeTypeName("void () __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D11InfoQueue*, void> ClearStorageFilter;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D11InfoQueue*, int> PushEmptyStorageFilter;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D11InfoQueue*, int> PushCopyOfStorageFilter;
+
+            [NativeTypeName("HRESULT (D3D11_INFO_QUEUE_FILTER *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D11InfoQueue*, D3D11_INFO_QUEUE_FILTER*, int> PushStorageFilter;
+
+            [NativeTypeName("void () __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D11InfoQueue*, void> PopStorageFilter;
+
+            [NativeTypeName("UINT () __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D11InfoQueue*, uint> GetStorageFilterStackSize;
+
+            [NativeTypeName("HRESULT (D3D11_INFO_QUEUE_FILTER *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D11InfoQueue*, D3D11_INFO_QUEUE_FILTER*, int> AddRetrievalFilterEntries;
+
+            [NativeTypeName("HRESULT (D3D11_INFO_QUEUE_FILTER *, SIZE_T *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D11InfoQueue*, D3D11_INFO_QUEUE_FILTER*, nuint*, int> GetRetrievalFilter;
+
+            [NativeTypeName("void () __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D11InfoQueue*, void> ClearRetrievalFilter;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D11InfoQueue*, int> PushEmptyRetrievalFilter;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D11InfoQueue*, int> PushCopyOfRetrievalFilter;
+
+            [NativeTypeName("HRESULT (D3D11_INFO_QUEUE_FILTER *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D11InfoQueue*, D3D11_INFO_QUEUE_FILTER*, int> PushRetrievalFilter;
+
+            [NativeTypeName("void () __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D11InfoQueue*, void> PopRetrievalFilter;
+
+            [NativeTypeName("UINT () __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D11InfoQueue*, uint> GetRetrievalFilterStackSize;
+
+            [NativeTypeName("HRESULT (D3D11_MESSAGE_CATEGORY, D3D11_MESSAGE_SEVERITY, D3D11_MESSAGE_ID, LPCSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D11InfoQueue*, D3D11_MESSAGE_CATEGORY, D3D11_MESSAGE_SEVERITY, D3D11_MESSAGE_ID, sbyte*, int> AddMessage;
+
+            [NativeTypeName("HRESULT (D3D11_MESSAGE_SEVERITY, LPCSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D11InfoQueue*, D3D11_MESSAGE_SEVERITY, sbyte*, int> AddApplicationMessage;
+
+            [NativeTypeName("HRESULT (D3D11_MESSAGE_CATEGORY, BOOL) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D11InfoQueue*, D3D11_MESSAGE_CATEGORY, BOOL, int> SetBreakOnCategory;
+
+            [NativeTypeName("HRESULT (D3D11_MESSAGE_SEVERITY, BOOL) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D11InfoQueue*, D3D11_MESSAGE_SEVERITY, BOOL, int> SetBreakOnSeverity;
+
+            [NativeTypeName("HRESULT (D3D11_MESSAGE_ID, BOOL) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D11InfoQueue*, D3D11_MESSAGE_ID, BOOL, int> SetBreakOnID;
+
+            [NativeTypeName("BOOL (D3D11_MESSAGE_CATEGORY) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D11InfoQueue*, D3D11_MESSAGE_CATEGORY, int> GetBreakOnCategory;
+
+            [NativeTypeName("BOOL (D3D11_MESSAGE_SEVERITY) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D11InfoQueue*, D3D11_MESSAGE_SEVERITY, int> GetBreakOnSeverity;
+
+            [NativeTypeName("BOOL (D3D11_MESSAGE_ID) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D11InfoQueue*, D3D11_MESSAGE_ID, int> GetBreakOnID;
+
+            [NativeTypeName("void (BOOL) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D11InfoQueue*, BOOL, void> SetMuteDebugOutput;
+
+            [NativeTypeName("BOOL () __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D11InfoQueue*, int> GetMuteDebugOutput;
+        }
     }
 }

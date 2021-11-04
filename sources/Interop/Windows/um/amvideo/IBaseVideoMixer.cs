@@ -85,5 +85,38 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IBaseVideoMixer*, int, int>)(lpVtbl[9]))((IBaseVideoMixer*)Unsafe.AsPointer(ref this), bValue);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IBaseVideoMixer*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IBaseVideoMixer*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IBaseVideoMixer*, uint> Release;
+
+            [NativeTypeName("HRESULT (int) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IBaseVideoMixer*, int, int> SetLeadPin;
+
+            [NativeTypeName("HRESULT (int *) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IBaseVideoMixer*, int*, int> GetLeadPin;
+
+            [NativeTypeName("HRESULT (int *) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IBaseVideoMixer*, int*, int> GetInputPinCount;
+
+            [NativeTypeName("HRESULT (int *) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IBaseVideoMixer*, int*, int> IsUsingClock;
+
+            [NativeTypeName("HRESULT (int) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IBaseVideoMixer*, int, int> SetUsingClock;
+
+            [NativeTypeName("HRESULT (int *) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IBaseVideoMixer*, int*, int> GetClockPeriod;
+
+            [NativeTypeName("HRESULT (int) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IBaseVideoMixer*, int, int> SetClockPeriod;
+        }
     }
 }

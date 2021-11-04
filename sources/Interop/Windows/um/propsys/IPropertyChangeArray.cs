@@ -87,5 +87,38 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IPropertyChangeArray*, PROPERTYKEY*, int>)(lpVtbl[9]))((IPropertyChangeArray*)Unsafe.AsPointer(ref this), key);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IPropertyChangeArray*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IPropertyChangeArray*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IPropertyChangeArray*, uint> Release;
+
+            [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IPropertyChangeArray*, uint*, int> GetCount;
+
+            [NativeTypeName("HRESULT (UINT, const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IPropertyChangeArray*, uint, Guid*, void**, int> GetAt;
+
+            [NativeTypeName("HRESULT (UINT, IPropertyChange *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IPropertyChangeArray*, uint, IPropertyChange*, int> InsertAt;
+
+            [NativeTypeName("HRESULT (IPropertyChange *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IPropertyChangeArray*, IPropertyChange*, int> Append;
+
+            [NativeTypeName("HRESULT (IPropertyChange *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IPropertyChangeArray*, IPropertyChange*, int> AppendOrReplace;
+
+            [NativeTypeName("HRESULT (UINT) __attribute__((stdcall))")]
+            public delegate* unmanaged<IPropertyChangeArray*, uint, int> RemoveAt;
+
+            [NativeTypeName("HRESULT (const PROPERTYKEY &) __attribute__((stdcall))")]
+            public delegate* unmanaged<IPropertyChangeArray*, PROPERTYKEY*, int> IsKeyInArray;
+        }
     }
 }

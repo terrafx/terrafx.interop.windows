@@ -59,5 +59,26 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IAppxBundleManifestOptionalBundleInfoEnumerator*, BOOL*, int>)(lpVtbl[5]))((IAppxBundleManifestOptionalBundleInfoEnumerator*)Unsafe.AsPointer(ref this), hasNext);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAppxBundleManifestOptionalBundleInfoEnumerator*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IAppxBundleManifestOptionalBundleInfoEnumerator*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IAppxBundleManifestOptionalBundleInfoEnumerator*, uint> Release;
+
+            [NativeTypeName("HRESULT (IAppxBundleManifestOptionalBundleInfo **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAppxBundleManifestOptionalBundleInfoEnumerator*, IAppxBundleManifestOptionalBundleInfo**, int> GetCurrent;
+
+            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAppxBundleManifestOptionalBundleInfoEnumerator*, BOOL*, int> GetHasCurrent;
+
+            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAppxBundleManifestOptionalBundleInfoEnumerator*, BOOL*, int> MoveNext;
+        }
     }
 }

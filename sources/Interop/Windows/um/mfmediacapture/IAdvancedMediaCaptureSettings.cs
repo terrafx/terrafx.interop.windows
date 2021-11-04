@@ -45,5 +45,20 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IAdvancedMediaCaptureSettings*, IMFDXGIDeviceManager**, int>)(lpVtbl[3]))((IAdvancedMediaCaptureSettings*)Unsafe.AsPointer(ref this), value);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAdvancedMediaCaptureSettings*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IAdvancedMediaCaptureSettings*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IAdvancedMediaCaptureSettings*, uint> Release;
+
+            [NativeTypeName("HRESULT (IMFDXGIDeviceManager **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAdvancedMediaCaptureSettings*, IMFDXGIDeviceManager**, int> GetDirectxDeviceManager;
+        }
     }
 }

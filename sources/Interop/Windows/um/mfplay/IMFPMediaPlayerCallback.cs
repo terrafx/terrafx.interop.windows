@@ -45,5 +45,20 @@ namespace TerraFX.Interop
         {
             ((delegate* unmanaged<IMFPMediaPlayerCallback*, MFP_EVENT_HEADER*, void>)(lpVtbl[3]))((IMFPMediaPlayerCallback*)Unsafe.AsPointer(ref this), pEventHeader);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFPMediaPlayerCallback*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFPMediaPlayerCallback*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFPMediaPlayerCallback*, uint> Release;
+
+            [NativeTypeName("void (MFP_EVENT_HEADER *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFPMediaPlayerCallback*, MFP_EVENT_HEADER*, void> OnMediaPlayerEvent;
+        }
     }
 }

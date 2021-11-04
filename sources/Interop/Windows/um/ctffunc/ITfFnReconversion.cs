@@ -66,5 +66,29 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<ITfFnReconversion*, ITfRange*, int>)(lpVtbl[6]))((ITfFnReconversion*)Unsafe.AsPointer(ref this), pRange);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfFnReconversion*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfFnReconversion*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfFnReconversion*, uint> Release;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfFnReconversion*, ushort**, int> GetDisplayName;
+
+            [NativeTypeName("HRESULT (ITfRange *, ITfRange **, BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfFnReconversion*, ITfRange*, ITfRange**, BOOL*, int> QueryRange;
+
+            [NativeTypeName("HRESULT (ITfRange *, ITfCandidateList **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfFnReconversion*, ITfRange*, ITfCandidateList**, int> GetReconversion;
+
+            [NativeTypeName("HRESULT (ITfRange *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfFnReconversion*, ITfRange*, int> Reconvert;
+        }
     }
 }

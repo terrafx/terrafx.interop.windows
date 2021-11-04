@@ -45,5 +45,20 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<ITfTextLayoutSink*, ITfContext*, TfLayoutCode, ITfContextView*, int>)(lpVtbl[3]))((ITfTextLayoutSink*)Unsafe.AsPointer(ref this), pic, lcode, pView);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfTextLayoutSink*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfTextLayoutSink*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfTextLayoutSink*, uint> Release;
+
+            [NativeTypeName("HRESULT (ITfContext *, TfLayoutCode, ITfContextView *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfTextLayoutSink*, ITfContext*, TfLayoutCode, ITfContextView*, int> OnLayoutChange;
+        }
     }
 }

@@ -80,5 +80,35 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IPropertyKeyStore*, PROPERTYKEY*, int>)(lpVtbl[8]))((IPropertyKeyStore*)Unsafe.AsPointer(ref this), key);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IPropertyKeyStore*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IPropertyKeyStore*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IPropertyKeyStore*, uint> Release;
+
+            [NativeTypeName("HRESULT (int *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IPropertyKeyStore*, int*, int> GetKeyCount;
+
+            [NativeTypeName("HRESULT (int, PROPERTYKEY *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IPropertyKeyStore*, int, PROPERTYKEY*, int> GetKeyAt;
+
+            [NativeTypeName("HRESULT (const PROPERTYKEY &) __attribute__((stdcall))")]
+            public delegate* unmanaged<IPropertyKeyStore*, PROPERTYKEY*, int> AppendKey;
+
+            [NativeTypeName("HRESULT (int) __attribute__((stdcall))")]
+            public delegate* unmanaged<IPropertyKeyStore*, int, int> DeleteKey;
+
+            [NativeTypeName("HRESULT (const PROPERTYKEY &) __attribute__((stdcall))")]
+            public delegate* unmanaged<IPropertyKeyStore*, PROPERTYKEY*, int> IsKeyInStore;
+
+            [NativeTypeName("HRESULT (const PROPERTYKEY &) __attribute__((stdcall))")]
+            public delegate* unmanaged<IPropertyKeyStore*, PROPERTYKEY*, int> RemoveKey;
+        }
     }
 }

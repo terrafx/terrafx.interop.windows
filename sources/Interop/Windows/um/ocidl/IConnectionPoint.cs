@@ -73,5 +73,32 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IConnectionPoint*, IEnumConnections**, int>)(lpVtbl[7]))((IConnectionPoint*)Unsafe.AsPointer(ref this), ppEnum);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IConnectionPoint*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IConnectionPoint*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IConnectionPoint*, uint> Release;
+
+            [NativeTypeName("HRESULT (IID *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IConnectionPoint*, Guid*, int> GetConnectionInterface;
+
+            [NativeTypeName("HRESULT (IConnectionPointContainer **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IConnectionPoint*, IConnectionPointContainer**, int> GetConnectionPointContainer;
+
+            [NativeTypeName("HRESULT (IUnknown *, DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IConnectionPoint*, IUnknown*, uint*, int> Advise;
+
+            [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<IConnectionPoint*, uint, int> Unadvise;
+
+            [NativeTypeName("HRESULT (IEnumConnections **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IConnectionPoint*, IEnumConnections**, int> EnumConnections;
+        }
     }
 }

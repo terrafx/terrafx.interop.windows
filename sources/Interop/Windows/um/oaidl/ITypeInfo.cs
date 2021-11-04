@@ -171,5 +171,74 @@ namespace TerraFX.Interop
         {
             ((delegate* unmanaged<ITypeInfo*, VARDESC*, void>)(lpVtbl[21]))((ITypeInfo*)Unsafe.AsPointer(ref this), pVarDesc);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITypeInfo*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ITypeInfo*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ITypeInfo*, uint> Release;
+
+            [NativeTypeName("HRESULT (TYPEATTR **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITypeInfo*, TYPEATTR**, int> GetTypeAttr;
+
+            [NativeTypeName("HRESULT (ITypeComp **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITypeInfo*, ITypeComp**, int> GetTypeComp;
+
+            [NativeTypeName("HRESULT (UINT, FUNCDESC **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITypeInfo*, uint, FUNCDESC**, int> GetFuncDesc;
+
+            [NativeTypeName("HRESULT (UINT, VARDESC **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITypeInfo*, uint, VARDESC**, int> GetVarDesc;
+
+            [NativeTypeName("HRESULT (MEMBERID, BSTR *, UINT, UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITypeInfo*, int, ushort**, uint, uint*, int> GetNames;
+
+            [NativeTypeName("HRESULT (UINT, HREFTYPE *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITypeInfo*, uint, uint*, int> GetRefTypeOfImplType;
+
+            [NativeTypeName("HRESULT (UINT, INT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITypeInfo*, uint, int*, int> GetImplTypeFlags;
+
+            [NativeTypeName("HRESULT (LPOLESTR *, UINT, MEMBERID *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITypeInfo*, ushort**, uint, int*, int> GetIDsOfNames;
+
+            [NativeTypeName("HRESULT (PVOID, MEMBERID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITypeInfo*, void*, int, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
+
+            [NativeTypeName("HRESULT (MEMBERID, BSTR *, BSTR *, DWORD *, BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITypeInfo*, int, ushort**, ushort**, uint*, ushort**, int> GetDocumentation;
+
+            [NativeTypeName("HRESULT (MEMBERID, INVOKEKIND, BSTR *, BSTR *, WORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITypeInfo*, int, INVOKEKIND, ushort**, ushort**, ushort*, int> GetDllEntry;
+
+            [NativeTypeName("HRESULT (HREFTYPE, ITypeInfo **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITypeInfo*, uint, ITypeInfo**, int> GetRefTypeInfo;
+
+            [NativeTypeName("HRESULT (MEMBERID, INVOKEKIND, PVOID *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITypeInfo*, int, INVOKEKIND, void**, int> AddressOfMember;
+
+            [NativeTypeName("HRESULT (IUnknown *, const IID &, PVOID *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITypeInfo*, IUnknown*, Guid*, void**, int> CreateInstance;
+
+            [NativeTypeName("HRESULT (MEMBERID, BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITypeInfo*, int, ushort**, int> GetMops;
+
+            [NativeTypeName("HRESULT (ITypeLib **, UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITypeInfo*, ITypeLib**, uint*, int> GetContainingTypeLib;
+
+            [NativeTypeName("void (TYPEATTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITypeInfo*, TYPEATTR*, void> ReleaseTypeAttr;
+
+            [NativeTypeName("void (FUNCDESC *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITypeInfo*, FUNCDESC*, void> ReleaseFuncDesc;
+
+            [NativeTypeName("void (VARDESC *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITypeInfo*, VARDESC*, void> ReleaseVarDesc;
+        }
     }
 }

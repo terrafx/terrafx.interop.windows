@@ -108,5 +108,47 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IVMRMixerControl*, uint*, int>)(lpVtbl[12]))((IVMRMixerControl*)Unsafe.AsPointer(ref this), pdwMixerPrefs);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IVMRMixerControl*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IVMRMixerControl*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IVMRMixerControl*, uint> Release;
+
+            [NativeTypeName("HRESULT (DWORD, float) __attribute__((stdcall))")]
+            public delegate* unmanaged<IVMRMixerControl*, uint, float, int> SetAlpha;
+
+            [NativeTypeName("HRESULT (DWORD, float *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IVMRMixerControl*, uint, float*, int> GetAlpha;
+
+            [NativeTypeName("HRESULT (DWORD, DWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<IVMRMixerControl*, uint, uint, int> SetZOrder;
+
+            [NativeTypeName("HRESULT (DWORD, DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IVMRMixerControl*, uint, uint*, int> GetZOrder;
+
+            [NativeTypeName("HRESULT (DWORD, const NORMALIZEDRECT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IVMRMixerControl*, uint, NORMALIZEDRECT*, int> SetOutputRect;
+
+            [NativeTypeName("HRESULT (DWORD, NORMALIZEDRECT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IVMRMixerControl*, uint, NORMALIZEDRECT*, int> GetOutputRect;
+
+            [NativeTypeName("HRESULT (COLORREF) __attribute__((stdcall))")]
+            public delegate* unmanaged<IVMRMixerControl*, COLORREF, int> SetBackgroundClr;
+
+            [NativeTypeName("HRESULT (COLORREF *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IVMRMixerControl*, COLORREF*, int> GetBackgroundClr;
+
+            [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<IVMRMixerControl*, uint, int> SetMixingPrefs;
+
+            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IVMRMixerControl*, uint*, int> GetMixingPrefs;
+        }
     }
 }

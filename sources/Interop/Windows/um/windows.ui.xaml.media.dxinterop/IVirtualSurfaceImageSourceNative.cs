@@ -101,5 +101,44 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IVirtualSurfaceImageSourceNative*, int, int, int>)(lpVtbl[11]))((IVirtualSurfaceImageSourceNative*)Unsafe.AsPointer(ref this), newWidth, newHeight);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IVirtualSurfaceImageSourceNative*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IVirtualSurfaceImageSourceNative*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IVirtualSurfaceImageSourceNative*, uint> Release;
+
+            [NativeTypeName("HRESULT (IDXGIDevice *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IVirtualSurfaceImageSourceNative*, IDXGIDevice*, int> SetDevice;
+
+            [NativeTypeName("HRESULT (RECT, IDXGISurface **, POINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IVirtualSurfaceImageSourceNative*, RECT, IDXGISurface**, POINT*, int> BeginDraw;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IVirtualSurfaceImageSourceNative*, int> EndDraw;
+
+            [NativeTypeName("HRESULT (RECT) __attribute__((stdcall))")]
+            public delegate* unmanaged<IVirtualSurfaceImageSourceNative*, RECT, int> Invalidate;
+
+            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IVirtualSurfaceImageSourceNative*, uint*, int> GetUpdateRectCount;
+
+            [NativeTypeName("HRESULT (RECT *, DWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<IVirtualSurfaceImageSourceNative*, RECT*, uint, int> GetUpdateRects;
+
+            [NativeTypeName("HRESULT (RECT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IVirtualSurfaceImageSourceNative*, RECT*, int> GetVisibleBounds;
+
+            [NativeTypeName("HRESULT (IVirtualSurfaceUpdatesCallbackNative *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IVirtualSurfaceImageSourceNative*, IVirtualSurfaceUpdatesCallbackNative*, int> RegisterForUpdatesNeeded;
+
+            [NativeTypeName("HRESULT (INT, INT) __attribute__((stdcall))")]
+            public delegate* unmanaged<IVirtualSurfaceImageSourceNative*, int, int, int> Resize;
+        }
     }
 }

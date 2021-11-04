@@ -129,5 +129,56 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IDxcUtils*, IDxcBlob*, IDxcBlob**, IDxcBlob**, int>)(lpVtbl[15]))((IDxcUtils*)Unsafe.AsPointer(ref this), pPDBBlob, ppHash, ppContainer);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDxcUtils*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDxcUtils*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDxcUtils*, uint> Release;
+
+            [NativeTypeName("HRESULT (IDxcBlob *, UINT32, UINT32, IDxcBlob **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDxcUtils*, IDxcBlob*, uint, uint, IDxcBlob**, int> CreateBlobFromBlob;
+
+            [NativeTypeName("HRESULT (LPCVOID, UINT32, UINT32, IDxcBlobEncoding **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDxcUtils*, void*, uint, uint, IDxcBlobEncoding**, int> CreateBlobFromPinned;
+
+            [NativeTypeName("HRESULT (LPCVOID, IMalloc *, UINT32, UINT32, IDxcBlobEncoding **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDxcUtils*, void*, IMalloc*, uint, uint, IDxcBlobEncoding**, int> MoveToBlob;
+
+            [NativeTypeName("HRESULT (LPCVOID, UINT32, UINT32, IDxcBlobEncoding **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDxcUtils*, void*, uint, uint, IDxcBlobEncoding**, int> CreateBlob;
+
+            [NativeTypeName("HRESULT (LPCWSTR, UINT32 *, IDxcBlobEncoding **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDxcUtils*, ushort*, uint*, IDxcBlobEncoding**, int> LoadFile;
+
+            [NativeTypeName("HRESULT (IDxcBlob *, IStream **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDxcUtils*, IDxcBlob*, IStream**, int> CreateReadOnlyStreamFromBlob;
+
+            [NativeTypeName("HRESULT (IDxcIncludeHandler **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDxcUtils*, IDxcIncludeHandler**, int> CreateDefaultIncludeHandler;
+
+            [NativeTypeName("HRESULT (IDxcBlob *, IDxcBlobUtf8 **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDxcUtils*, IDxcBlob*, IDxcBlobUtf8**, int> GetBlobAsUtf8;
+
+            [NativeTypeName("HRESULT (IDxcBlob *, IDxcBlobUtf16 **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDxcUtils*, IDxcBlob*, IDxcBlobUtf16**, int> GetBlobAsUtf16;
+
+            [NativeTypeName("HRESULT (const DxcBuffer *, UINT32, void **, UINT32 *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDxcUtils*, DxcBuffer*, uint, void**, uint*, int> GetDxilContainerPart;
+
+            [NativeTypeName("HRESULT (const DxcBuffer *, const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDxcUtils*, DxcBuffer*, Guid*, void**, int> CreateReflection;
+
+            [NativeTypeName("HRESULT (LPCWSTR, LPCWSTR, LPCWSTR, LPCWSTR *, UINT32, const DxcDefine *, UINT32, IDxcCompilerArgs **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDxcUtils*, ushort*, ushort*, ushort*, ushort**, uint, DxcDefine*, uint, IDxcCompilerArgs**, int> BuildArguments;
+
+            [NativeTypeName("HRESULT (IDxcBlob *, IDxcBlob **, IDxcBlob **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDxcUtils*, IDxcBlob*, IDxcBlob**, IDxcBlob**, int> GetPDBContents;
+        }
     }
 }

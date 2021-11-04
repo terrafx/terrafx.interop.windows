@@ -45,5 +45,20 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IAMTVAudioNotification*, AMTVAudioEventType, int>)(lpVtbl[3]))((IAMTVAudioNotification*)Unsafe.AsPointer(ref this), Event);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAMTVAudioNotification*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IAMTVAudioNotification*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IAMTVAudioNotification*, uint> Release;
+
+            [NativeTypeName("HRESULT (AMTVAudioEventType) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAMTVAudioNotification*, AMTVAudioEventType, int> OnEvent;
+        }
     }
 }

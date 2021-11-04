@@ -87,5 +87,38 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IUIAnimationTransition2*, double*, int>)(lpVtbl[9]))((IUIAnimationTransition2*)Unsafe.AsPointer(ref this), duration);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IUIAnimationTransition2*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IUIAnimationTransition2*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IUIAnimationTransition2*, uint> Release;
+
+            [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IUIAnimationTransition2*, uint*, int> GetDimension;
+
+            [NativeTypeName("HRESULT (DOUBLE) __attribute__((stdcall))")]
+            public delegate* unmanaged<IUIAnimationTransition2*, double, int> SetInitialValue;
+
+            [NativeTypeName("HRESULT (const DOUBLE *, UINT) __attribute__((stdcall))")]
+            public delegate* unmanaged<IUIAnimationTransition2*, double*, uint, int> SetInitialVectorValue;
+
+            [NativeTypeName("HRESULT (DOUBLE) __attribute__((stdcall))")]
+            public delegate* unmanaged<IUIAnimationTransition2*, double, int> SetInitialVelocity;
+
+            [NativeTypeName("HRESULT (const DOUBLE *, UINT) __attribute__((stdcall))")]
+            public delegate* unmanaged<IUIAnimationTransition2*, double*, uint, int> SetInitialVectorVelocity;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IUIAnimationTransition2*, int> IsDurationKnown;
+
+            [NativeTypeName("HRESULT (UI_ANIMATION_SECONDS *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IUIAnimationTransition2*, double*, int> GetDuration;
+        }
     }
 }

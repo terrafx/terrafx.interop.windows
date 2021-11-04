@@ -59,5 +59,26 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IPreviewHandlerVisuals*, COLORREF, int>)(lpVtbl[5]))((IPreviewHandlerVisuals*)Unsafe.AsPointer(ref this), color);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IPreviewHandlerVisuals*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IPreviewHandlerVisuals*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IPreviewHandlerVisuals*, uint> Release;
+
+            [NativeTypeName("HRESULT (COLORREF) __attribute__((stdcall))")]
+            public delegate* unmanaged<IPreviewHandlerVisuals*, COLORREF, int> SetBackgroundColor;
+
+            [NativeTypeName("HRESULT (const LOGFONTW *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IPreviewHandlerVisuals*, LOGFONTW*, int> SetFont;
+
+            [NativeTypeName("HRESULT (COLORREF) __attribute__((stdcall))")]
+            public delegate* unmanaged<IPreviewHandlerVisuals*, COLORREF, int> SetTextColor;
+        }
     }
 }

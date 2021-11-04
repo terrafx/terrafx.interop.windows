@@ -45,5 +45,20 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IAppxPackageWriter2*, IStream*, IStream*, int>)(lpVtbl[3]))((IAppxPackageWriter2*)Unsafe.AsPointer(ref this), manifest, contentGroupMap);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAppxPackageWriter2*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IAppxPackageWriter2*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IAppxPackageWriter2*, uint> Release;
+
+            [NativeTypeName("HRESULT (IStream *, IStream *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAppxPackageWriter2*, IStream*, IStream*, int> Close;
+        }
     }
 }

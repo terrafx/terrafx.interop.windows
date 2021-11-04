@@ -78,5 +78,35 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IDirectDrawClipper*, uint, HWND, int>)(lpVtbl[8]))((IDirectDrawClipper*)Unsafe.AsPointer(ref this), param0, param1);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDirectDrawClipper*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDirectDrawClipper*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDirectDrawClipper*, uint> Release;
+
+            [NativeTypeName("HRESULT (LPRECT, LPRGNDATA, LPDWORD) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDirectDrawClipper*, RECT*, RGNDATA*, uint*, int> GetClipList;
+
+            [NativeTypeName("HRESULT (HWND *) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDirectDrawClipper*, HWND*, int> GetHWnd;
+
+            [NativeTypeName("HRESULT (LPDIRECTDRAW, DWORD) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDirectDrawClipper*, IDirectDraw*, uint, int> Initialize;
+
+            [NativeTypeName("HRESULT (BOOL *) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDirectDrawClipper*, BOOL*, int> IsClipListChanged;
+
+            [NativeTypeName("HRESULT (LPRGNDATA, DWORD) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDirectDrawClipper*, RGNDATA*, uint, int> SetClipList;
+
+            [NativeTypeName("HRESULT (DWORD, HWND) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDirectDrawClipper*, uint, HWND, int> SetHWnd;
+        }
     }
 }

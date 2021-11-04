@@ -59,5 +59,26 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IDxcOperationResult*, IDxcBlobEncoding**, int>)(lpVtbl[5]))((IDxcOperationResult*)Unsafe.AsPointer(ref this), ppErrors);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDxcOperationResult*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDxcOperationResult*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDxcOperationResult*, uint> Release;
+
+            [NativeTypeName("HRESULT (HRESULT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDxcOperationResult*, HRESULT*, int> GetStatus;
+
+            [NativeTypeName("HRESULT (IDxcBlob **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDxcOperationResult*, IDxcBlob**, int> GetResult;
+
+            [NativeTypeName("HRESULT (IDxcBlobEncoding **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDxcOperationResult*, IDxcBlobEncoding**, int> GetErrorBuffer;
+        }
     }
 }

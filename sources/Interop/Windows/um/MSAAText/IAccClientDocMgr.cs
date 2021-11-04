@@ -66,5 +66,29 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IAccClientDocMgr*, Guid*, IUnknown**, int>)(lpVtbl[6]))((IAccClientDocMgr*)Unsafe.AsPointer(ref this), riid, ppunk);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAccClientDocMgr*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IAccClientDocMgr*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IAccClientDocMgr*, uint> Release;
+
+            [NativeTypeName("HRESULT (IEnumUnknown **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAccClientDocMgr*, IEnumUnknown**, int> GetDocuments;
+
+            [NativeTypeName("HRESULT (HWND, const IID &, IUnknown **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAccClientDocMgr*, HWND, Guid*, IUnknown**, int> LookupByHWND;
+
+            [NativeTypeName("HRESULT (POINT, const IID &, IUnknown **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAccClientDocMgr*, POINT, Guid*, IUnknown**, int> LookupByPoint;
+
+            [NativeTypeName("HRESULT (const IID &, IUnknown **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAccClientDocMgr*, Guid*, IUnknown**, int> GetFocused;
+        }
     }
 }

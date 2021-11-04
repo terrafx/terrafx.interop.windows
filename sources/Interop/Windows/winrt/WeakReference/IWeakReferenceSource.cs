@@ -45,5 +45,20 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IWeakReferenceSource*, IWeakReference**, int>)(lpVtbl[3]))((IWeakReferenceSource*)Unsafe.AsPointer(ref this), weakReference);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWeakReferenceSource*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IWeakReferenceSource*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IWeakReferenceSource*, uint> Release;
+
+            [NativeTypeName("HRESULT (IWeakReference **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWeakReferenceSource*, IWeakReference**, int> GetWeakReference;
+        }
     }
 }

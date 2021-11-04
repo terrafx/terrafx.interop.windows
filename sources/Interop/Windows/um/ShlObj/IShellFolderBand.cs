@@ -59,5 +59,26 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IShellFolderBand*, BANDINFOSFB*, int>)(lpVtbl[5]))((IShellFolderBand*)Unsafe.AsPointer(ref this), pbi);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellFolderBand*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellFolderBand*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellFolderBand*, uint> Release;
+
+            [NativeTypeName("HRESULT (IShellFolder *, LPCITEMIDLIST) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellFolderBand*, IShellFolder*, ITEMIDLIST*, int> InitializeSFB;
+
+            [NativeTypeName("HRESULT (PBANDINFOSFB) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellFolderBand*, BANDINFOSFB*, int> SetBandInfoSFB;
+
+            [NativeTypeName("HRESULT (PBANDINFOSFB) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellFolderBand*, BANDINFOSFB*, int> GetBandInfoSFB;
+        }
     }
 }

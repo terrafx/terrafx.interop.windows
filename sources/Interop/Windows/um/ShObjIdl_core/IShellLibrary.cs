@@ -157,5 +157,68 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IShellLibrary*, Guid*, ushort*, LIBRARYSAVEFLAGS, IShellItem**, int>)(lpVtbl[19]))((IShellLibrary*)Unsafe.AsPointer(ref this), kfidToSaveIn, pszLibraryName, lsf, ppsiSavedTo);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellLibrary*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellLibrary*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellLibrary*, uint> Release;
+
+            [NativeTypeName("HRESULT (IShellItem *, DWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellLibrary*, IShellItem*, uint, int> LoadLibraryFromItem;
+
+            [NativeTypeName("HRESULT (const KNOWNFOLDERID &, DWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellLibrary*, Guid*, uint, int> LoadLibraryFromKnownFolder;
+
+            [NativeTypeName("HRESULT (IShellItem *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellLibrary*, IShellItem*, int> AddFolder;
+
+            [NativeTypeName("HRESULT (IShellItem *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellLibrary*, IShellItem*, int> RemoveFolder;
+
+            [NativeTypeName("HRESULT (LIBRARYFOLDERFILTER, const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellLibrary*, LIBRARYFOLDERFILTER, Guid*, void**, int> GetFolders;
+
+            [NativeTypeName("HRESULT (IShellItem *, DWORD, const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellLibrary*, IShellItem*, uint, Guid*, void**, int> ResolveFolder;
+
+            [NativeTypeName("HRESULT (DEFAULTSAVEFOLDERTYPE, const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellLibrary*, DEFAULTSAVEFOLDERTYPE, Guid*, void**, int> GetDefaultSaveFolder;
+
+            [NativeTypeName("HRESULT (DEFAULTSAVEFOLDERTYPE, IShellItem *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellLibrary*, DEFAULTSAVEFOLDERTYPE, IShellItem*, int> SetDefaultSaveFolder;
+
+            [NativeTypeName("HRESULT (LIBRARYOPTIONFLAGS *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellLibrary*, LIBRARYOPTIONFLAGS*, int> GetOptions;
+
+            [NativeTypeName("HRESULT (LIBRARYOPTIONFLAGS, LIBRARYOPTIONFLAGS) __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellLibrary*, LIBRARYOPTIONFLAGS, LIBRARYOPTIONFLAGS, int> SetOptions;
+
+            [NativeTypeName("HRESULT (FOLDERTYPEID *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellLibrary*, Guid*, int> GetFolderType;
+
+            [NativeTypeName("HRESULT (const FOLDERTYPEID &) __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellLibrary*, Guid*, int> SetFolderType;
+
+            [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellLibrary*, ushort**, int> GetIcon;
+
+            [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellLibrary*, ushort*, int> SetIcon;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellLibrary*, int> Commit;
+
+            [NativeTypeName("HRESULT (IShellItem *, LPCWSTR, LIBRARYSAVEFLAGS, IShellItem **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellLibrary*, IShellItem*, ushort*, LIBRARYSAVEFLAGS, IShellItem**, int> Save;
+
+            [NativeTypeName("HRESULT (const KNOWNFOLDERID &, LPCWSTR, LIBRARYSAVEFLAGS, IShellItem **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellLibrary*, Guid*, ushort*, LIBRARYSAVEFLAGS, IShellItem**, int> SaveInKnownFolder;
+        }
     }
 }

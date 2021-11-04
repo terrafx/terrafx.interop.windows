@@ -164,5 +164,71 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IDiscRecorder2Ex*, uint*, int>)(lpVtbl[20]))((IDiscRecorder2Ex*)Unsafe.AsPointer(ref this), value);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiscRecorder2Ex*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiscRecorder2Ex*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiscRecorder2Ex*, uint> Release;
+
+            [NativeTypeName("HRESULT (BYTE *, ULONG, BYTE *, ULONG) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiscRecorder2Ex*, byte*, uint, byte*, uint, int> SendCommandNoData;
+
+            [NativeTypeName("HRESULT (BYTE *, ULONG, BYTE *, ULONG, BYTE *, ULONG_IMAPI2_NONZERO) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiscRecorder2Ex*, byte*, uint, byte*, uint, byte*, uint, int> SendCommandSendDataToDevice;
+
+            [NativeTypeName("HRESULT (BYTE *, ULONG, BYTE *, ULONG, BYTE *, ULONG_IMAPI2_NONZERO, ULONG_IMAPI2_NOT_NEGATIVE *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiscRecorder2Ex*, byte*, uint, byte*, uint, byte*, uint, uint*, int> SendCommandGetDataFromDevice;
+
+            [NativeTypeName("HRESULT (ULONG, ULONG, ULONG, ULONG, BYTE **, ULONG_IMAPI2_DVD_STRUCTURE *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiscRecorder2Ex*, uint, uint, uint, uint, byte**, uint*, int> ReadDvdStructure;
+
+            [NativeTypeName("HRESULT (ULONG, BYTE *, ULONG_IMAPI2_DVD_STRUCTURE) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiscRecorder2Ex*, uint, byte*, uint, int> SendDvdStructure;
+
+            [NativeTypeName("HRESULT (BYTE **, ULONG_IMAPI2_ADAPTER_DESCRIPTOR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiscRecorder2Ex*, byte**, uint*, int> GetAdapterDescriptor;
+
+            [NativeTypeName("HRESULT (BYTE **, ULONG_IMAPI2_DEVICE_DESCRIPTOR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiscRecorder2Ex*, byte**, uint*, int> GetDeviceDescriptor;
+
+            [NativeTypeName("HRESULT (BYTE **, ULONG_IMAPI2_DISC_INFORMATION *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiscRecorder2Ex*, byte**, uint*, int> GetDiscInformation;
+
+            [NativeTypeName("HRESULT (ULONG, IMAPI_READ_TRACK_ADDRESS_TYPE, BYTE **, ULONG_IMAPI2_TRACK_INFORMATION *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiscRecorder2Ex*, uint, IMAPI_READ_TRACK_ADDRESS_TYPE, byte**, uint*, int> GetTrackInformation;
+
+            [NativeTypeName("HRESULT (IMAPI_FEATURE_PAGE_TYPE, BOOLEAN, BYTE **, ULONG_IMAPI2_FEATURE_PAGE *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiscRecorder2Ex*, IMAPI_FEATURE_PAGE_TYPE, byte, byte**, uint*, int> GetFeaturePage;
+
+            [NativeTypeName("HRESULT (IMAPI_MODE_PAGE_TYPE, IMAPI_MODE_PAGE_REQUEST_TYPE, BYTE **, ULONG_IMAPI2_MODE_PAGE *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiscRecorder2Ex*, IMAPI_MODE_PAGE_TYPE, IMAPI_MODE_PAGE_REQUEST_TYPE, byte**, uint*, int> GetModePage;
+
+            [NativeTypeName("HRESULT (IMAPI_MODE_PAGE_REQUEST_TYPE, BYTE *, ULONG_IMAPI2_MODE_PAGE) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiscRecorder2Ex*, IMAPI_MODE_PAGE_REQUEST_TYPE, byte*, uint, int> SetModePage;
+
+            [NativeTypeName("HRESULT (BOOLEAN, IMAPI_FEATURE_PAGE_TYPE **, ULONG_IMAPI2_ALL_FEATURE_PAGES *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiscRecorder2Ex*, byte, IMAPI_FEATURE_PAGE_TYPE**, uint*, int> GetSupportedFeaturePages;
+
+            [NativeTypeName("HRESULT (BOOLEAN, IMAPI_PROFILE_TYPE **, ULONG_IMAPI2_ALL_PROFILES *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiscRecorder2Ex*, byte, IMAPI_PROFILE_TYPE**, uint*, int> GetSupportedProfiles;
+
+            [NativeTypeName("HRESULT (IMAPI_MODE_PAGE_REQUEST_TYPE, IMAPI_MODE_PAGE_TYPE **, ULONG_IMAPI2_ALL_MODE_PAGES *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiscRecorder2Ex*, IMAPI_MODE_PAGE_REQUEST_TYPE, IMAPI_MODE_PAGE_TYPE**, uint*, int> GetSupportedModePages;
+
+            [NativeTypeName("HRESULT (ULONG *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiscRecorder2Ex*, uint*, int> GetByteAlignmentMask;
+
+            [NativeTypeName("HRESULT (ULONG *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiscRecorder2Ex*, uint*, int> GetMaximumNonPageAlignedTransferSize;
+
+            [NativeTypeName("HRESULT (ULONG *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiscRecorder2Ex*, uint*, int> GetMaximumPageAlignedTransferSize;
+        }
     }
 }

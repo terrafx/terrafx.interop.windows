@@ -73,5 +73,32 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IChannelAudioVolume*, uint, float*, int>)(lpVtbl[7]))((IChannelAudioVolume*)Unsafe.AsPointer(ref this), dwCount, pfVolumes);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IChannelAudioVolume*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IChannelAudioVolume*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IChannelAudioVolume*, uint> Release;
+
+            [NativeTypeName("HRESULT (UINT32 *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IChannelAudioVolume*, uint*, int> GetChannelCount;
+
+            [NativeTypeName("HRESULT (UINT32, const float, LPCGUID) __attribute__((stdcall))")]
+            public delegate* unmanaged<IChannelAudioVolume*, uint, float, Guid*, int> SetChannelVolume;
+
+            [NativeTypeName("HRESULT (UINT32, float *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IChannelAudioVolume*, uint, float*, int> GetChannelVolume;
+
+            [NativeTypeName("HRESULT (UINT32, const float *, LPCGUID) __attribute__((stdcall))")]
+            public delegate* unmanaged<IChannelAudioVolume*, uint, float*, Guid*, int> SetAllVolumes;
+
+            [NativeTypeName("HRESULT (UINT32, float *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IChannelAudioVolume*, uint, float*, int> GetAllVolumes;
+        }
     }
 }

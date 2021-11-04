@@ -66,5 +66,29 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IEnumTfLangBarItems*, uint, int>)(lpVtbl[6]))((IEnumTfLangBarItems*)Unsafe.AsPointer(ref this), ulCount);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IEnumTfLangBarItems*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IEnumTfLangBarItems*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IEnumTfLangBarItems*, uint> Release;
+
+            [NativeTypeName("HRESULT (IEnumTfLangBarItems **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IEnumTfLangBarItems*, IEnumTfLangBarItems**, int> Clone;
+
+            [NativeTypeName("HRESULT (ULONG, ITfLangBarItem **, ULONG *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IEnumTfLangBarItems*, uint, ITfLangBarItem**, uint*, int> Next;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IEnumTfLangBarItems*, int> Reset;
+
+            [NativeTypeName("HRESULT (ULONG) __attribute__((stdcall))")]
+            public delegate* unmanaged<IEnumTfLangBarItems*, uint, int> Skip;
+        }
     }
 }

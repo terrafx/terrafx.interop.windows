@@ -150,5 +150,65 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IDXGIAdapter4*, DXGI_ADAPTER_DESC3*, int>)(lpVtbl[18]))((IDXGIAdapter4*)Unsafe.AsPointer(ref this), pDesc);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDXGIAdapter4*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDXGIAdapter4*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDXGIAdapter4*, uint> Release;
+
+            [NativeTypeName("HRESULT (const GUID &, UINT, const void *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDXGIAdapter4*, Guid*, uint, void*, int> SetPrivateData;
+
+            [NativeTypeName("HRESULT (const GUID &, const IUnknown *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDXGIAdapter4*, Guid*, IUnknown*, int> SetPrivateDataInterface;
+
+            [NativeTypeName("HRESULT (const GUID &, UINT *, void *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDXGIAdapter4*, Guid*, uint*, void*, int> GetPrivateData;
+
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDXGIAdapter4*, Guid*, void**, int> GetParent;
+
+            [NativeTypeName("HRESULT (UINT, IDXGIOutput **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDXGIAdapter4*, uint, IDXGIOutput**, int> EnumOutputs;
+
+            [NativeTypeName("HRESULT (DXGI_ADAPTER_DESC *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDXGIAdapter4*, DXGI_ADAPTER_DESC*, int> GetDesc;
+
+            [NativeTypeName("HRESULT (const GUID &, LARGE_INTEGER *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDXGIAdapter4*, Guid*, LARGE_INTEGER*, int> CheckInterfaceSupport;
+
+            [NativeTypeName("HRESULT (DXGI_ADAPTER_DESC1 *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDXGIAdapter4*, DXGI_ADAPTER_DESC1*, int> GetDesc1;
+
+            [NativeTypeName("HRESULT (DXGI_ADAPTER_DESC2 *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDXGIAdapter4*, DXGI_ADAPTER_DESC2*, int> GetDesc2;
+
+            [NativeTypeName("HRESULT (HANDLE, DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDXGIAdapter4*, HANDLE, uint*, int> RegisterHardwareContentProtectionTeardownStatusEvent;
+
+            [NativeTypeName("void (DWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDXGIAdapter4*, uint, void> UnregisterHardwareContentProtectionTeardownStatus;
+
+            [NativeTypeName("HRESULT (UINT, DXGI_MEMORY_SEGMENT_GROUP, DXGI_QUERY_VIDEO_MEMORY_INFO *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDXGIAdapter4*, uint, DXGI_MEMORY_SEGMENT_GROUP, DXGI_QUERY_VIDEO_MEMORY_INFO*, int> QueryVideoMemoryInfo;
+
+            [NativeTypeName("HRESULT (UINT, DXGI_MEMORY_SEGMENT_GROUP, UINT64) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDXGIAdapter4*, uint, DXGI_MEMORY_SEGMENT_GROUP, ulong, int> SetVideoMemoryReservation;
+
+            [NativeTypeName("HRESULT (HANDLE, DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDXGIAdapter4*, HANDLE, uint*, int> RegisterVideoMemoryBudgetChangeNotificationEvent;
+
+            [NativeTypeName("void (DWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDXGIAdapter4*, uint, void> UnregisterVideoMemoryBudgetChangeNotification;
+
+            [NativeTypeName("HRESULT (DXGI_ADAPTER_DESC3 *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDXGIAdapter4*, DXGI_ADAPTER_DESC3*, int> GetDesc3;
+        }
     }
 }

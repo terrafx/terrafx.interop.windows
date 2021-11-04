@@ -66,5 +66,29 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IHTMLPainter*, POINT, BOOL*, int*, int>)(lpVtbl[6]))((IHTMLPainter*)Unsafe.AsPointer(ref this), pt, pbHit, plPartID);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLPainter*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLPainter*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLPainter*, uint> Release;
+
+            [NativeTypeName("HRESULT (RECT, RECT, LONG, HDC, LPVOID) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLPainter*, RECT, RECT, int, HDC, void*, int> Draw;
+
+            [NativeTypeName("HRESULT (SIZE) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLPainter*, SIZE, int> OnResize;
+
+            [NativeTypeName("HRESULT (HTML_PAINTER_INFO *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLPainter*, HTML_PAINTER_INFO*, int> GetPainterInfo;
+
+            [NativeTypeName("HRESULT (POINT, BOOL *, LONG *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLPainter*, POINT, BOOL*, int*, int> HitTestPoint;
+        }
     }
 }

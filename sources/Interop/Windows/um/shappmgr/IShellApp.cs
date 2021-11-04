@@ -73,5 +73,32 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IShellApp*, int>)(lpVtbl[7]))((IShellApp*)Unsafe.AsPointer(ref this));
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellApp*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellApp*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellApp*, uint> Release;
+
+            [NativeTypeName("HRESULT (PAPPINFODATA) __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellApp*, APPINFODATA*, int> GetAppInfo;
+
+            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellApp*, uint*, int> GetPossibleActions;
+
+            [NativeTypeName("HRESULT (PSLOWAPPINFO) __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellApp*, SLOWAPPINFO*, int> GetSlowAppInfo;
+
+            [NativeTypeName("HRESULT (PSLOWAPPINFO) __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellApp*, SLOWAPPINFO*, int> GetCachedSlowAppInfo;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellApp*, int> IsInstalled;
+        }
     }
 }

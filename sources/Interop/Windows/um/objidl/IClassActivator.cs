@@ -45,5 +45,20 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IClassActivator*, Guid*, uint, uint, Guid*, void**, int>)(lpVtbl[3]))((IClassActivator*)Unsafe.AsPointer(ref this), rclsid, dwClassContext, locale, riid, ppv);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IClassActivator*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IClassActivator*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IClassActivator*, uint> Release;
+
+            [NativeTypeName("HRESULT (const IID &, DWORD, LCID, const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IClassActivator*, Guid*, uint, uint, Guid*, void**, int> GetClassObject;
+        }
     }
 }

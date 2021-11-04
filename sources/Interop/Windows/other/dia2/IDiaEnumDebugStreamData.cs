@@ -94,5 +94,41 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IDiaEnumDebugStreamData*, IDiaEnumDebugStreamData**, int>)(lpVtbl[10]))((IDiaEnumDebugStreamData*)Unsafe.AsPointer(ref this), ppenum);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaEnumDebugStreamData*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaEnumDebugStreamData*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaEnumDebugStreamData*, uint> Release;
+
+            [NativeTypeName("HRESULT (IUnknown **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaEnumDebugStreamData*, IUnknown**, int> get__NewEnum;
+
+            [NativeTypeName("HRESULT (LONG *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaEnumDebugStreamData*, int*, int> get_Count;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaEnumDebugStreamData*, ushort**, int> get_name;
+
+            [NativeTypeName("HRESULT (DWORD, DWORD, DWORD *, BYTE *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaEnumDebugStreamData*, uint, uint, uint*, byte*, int> Item;
+
+            [NativeTypeName("HRESULT (ULONG, DWORD, DWORD *, BYTE *, ULONG *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaEnumDebugStreamData*, uint, uint, uint*, byte*, uint*, int> Next;
+
+            [NativeTypeName("HRESULT (ULONG) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaEnumDebugStreamData*, uint, int> Skip;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaEnumDebugStreamData*, int> Reset;
+
+            [NativeTypeName("HRESULT (IDiaEnumDebugStreamData **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaEnumDebugStreamData*, IDiaEnumDebugStreamData**, int> Clone;
+        }
     }
 }

@@ -66,5 +66,29 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IMFTranscodeSinkInfoProvider*, MF_TRANSCODE_SINK_INFO*, int>)(lpVtbl[6]))((IMFTranscodeSinkInfoProvider*)Unsafe.AsPointer(ref this), pSinkInfo);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFTranscodeSinkInfoProvider*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFTranscodeSinkInfoProvider*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFTranscodeSinkInfoProvider*, uint> Release;
+
+            [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFTranscodeSinkInfoProvider*, ushort*, int> SetOutputFile;
+
+            [NativeTypeName("HRESULT (IMFActivate *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFTranscodeSinkInfoProvider*, IMFActivate*, int> SetOutputByteStream;
+
+            [NativeTypeName("HRESULT (IMFTranscodeProfile *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFTranscodeSinkInfoProvider*, IMFTranscodeProfile*, int> SetProfile;
+
+            [NativeTypeName("HRESULT (MF_TRANSCODE_SINK_INFO *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFTranscodeSinkInfoProvider*, MF_TRANSCODE_SINK_INFO*, int> GetSinkInfo;
+        }
     }
 }

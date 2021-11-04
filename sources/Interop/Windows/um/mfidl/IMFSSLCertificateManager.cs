@@ -73,5 +73,32 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IMFSSLCertificateManager*, ushort*, byte*, uint, BOOL*, int>)(lpVtbl[7]))((IMFSSLCertificateManager*)Unsafe.AsPointer(ref this), pszURL, pbData, cbData, pfIsGood);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFSSLCertificateManager*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFSSLCertificateManager*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFSSLCertificateManager*, uint> Release;
+
+            [NativeTypeName("HRESULT (LPCWSTR, BYTE **, DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFSSLCertificateManager*, ushort*, byte**, uint*, int> GetClientCertificate;
+
+            [NativeTypeName("HRESULT (LPCWSTR, IMFAsyncCallback *, IUnknown *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFSSLCertificateManager*, ushort*, IMFAsyncCallback*, IUnknown*, int> BeginGetClientCertificate;
+
+            [NativeTypeName("HRESULT (IMFAsyncResult *, BYTE **, DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFSSLCertificateManager*, IMFAsyncResult*, byte**, uint*, int> EndGetClientCertificate;
+
+            [NativeTypeName("HRESULT (LPCWSTR, BOOL *, BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFSSLCertificateManager*, ushort*, BOOL*, BOOL*, int> GetCertificatePolicy;
+
+            [NativeTypeName("HRESULT (LPCWSTR, BYTE *, DWORD, BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFSSLCertificateManager*, ushort*, byte*, uint, BOOL*, int> OnServerCertificate;
+        }
     }
 }

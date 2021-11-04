@@ -52,5 +52,23 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IStorageProviderPropertyHandler*, IPropertyStore*, int>)(lpVtbl[4]))((IStorageProviderPropertyHandler*)Unsafe.AsPointer(ref this), propertiesToSave);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IStorageProviderPropertyHandler*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IStorageProviderPropertyHandler*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IStorageProviderPropertyHandler*, uint> Release;
+
+            [NativeTypeName("HRESULT (const PROPERTYKEY *, ULONG, IPropertyStore **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IStorageProviderPropertyHandler*, PROPERTYKEY*, uint, IPropertyStore**, int> RetrieveProperties;
+
+            [NativeTypeName("HRESULT (IPropertyStore *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IStorageProviderPropertyHandler*, IPropertyStore*, int> SaveProperties;
+        }
     }
 }

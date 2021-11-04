@@ -116,5 +116,50 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<ID2D1StrokeStyle1*, D2D1_STROKE_TRANSFORM_TYPE>)(lpVtbl[13]))((ID2D1StrokeStyle1*)Unsafe.AsPointer(ref this));
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID2D1StrokeStyle1*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ID2D1StrokeStyle1*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ID2D1StrokeStyle1*, uint> Release;
+
+            [NativeTypeName("void (ID2D1Factory **) const __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID2D1StrokeStyle1*, ID2D1Factory**, void> GetFactory;
+
+            [NativeTypeName("D2D1_CAP_STYLE () const __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID2D1StrokeStyle1*, D2D1_CAP_STYLE> GetStartCap;
+
+            [NativeTypeName("D2D1_CAP_STYLE () const __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID2D1StrokeStyle1*, D2D1_CAP_STYLE> GetEndCap;
+
+            [NativeTypeName("D2D1_CAP_STYLE () const __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID2D1StrokeStyle1*, D2D1_CAP_STYLE> GetDashCap;
+
+            [NativeTypeName("FLOAT () const __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID2D1StrokeStyle1*, float> GetMiterLimit;
+
+            [NativeTypeName("D2D1_LINE_JOIN () const __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID2D1StrokeStyle1*, D2D1_LINE_JOIN> GetLineJoin;
+
+            [NativeTypeName("FLOAT () const __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID2D1StrokeStyle1*, float> GetDashOffset;
+
+            [NativeTypeName("D2D1_DASH_STYLE () const __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID2D1StrokeStyle1*, D2D1_DASH_STYLE> GetDashStyle;
+
+            [NativeTypeName("UINT32 () const __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID2D1StrokeStyle1*, uint> GetDashesCount;
+
+            [NativeTypeName("void (FLOAT *, UINT32) const __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID2D1StrokeStyle1*, float*, uint, void> GetDashes;
+
+            [NativeTypeName("D2D1_STROKE_TRANSFORM_TYPE () const __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID2D1StrokeStyle1*, D2D1_STROKE_TRANSFORM_TYPE> GetStrokeTransformType;
+        }
     }
 }

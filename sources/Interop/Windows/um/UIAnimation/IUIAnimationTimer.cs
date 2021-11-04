@@ -87,5 +87,38 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IUIAnimationTimer*, uint, int>)(lpVtbl[9]))((IUIAnimationTimer*)Unsafe.AsPointer(ref this), framesPerSecond);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IUIAnimationTimer*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IUIAnimationTimer*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IUIAnimationTimer*, uint> Release;
+
+            [NativeTypeName("HRESULT (IUIAnimationTimerUpdateHandler *, UI_ANIMATION_IDLE_BEHAVIOR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IUIAnimationTimer*, IUIAnimationTimerUpdateHandler*, UI_ANIMATION_IDLE_BEHAVIOR, int> SetTimerUpdateHandler;
+
+            [NativeTypeName("HRESULT (IUIAnimationTimerEventHandler *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IUIAnimationTimer*, IUIAnimationTimerEventHandler*, int> SetTimerEventHandler;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IUIAnimationTimer*, int> Enable;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IUIAnimationTimer*, int> Disable;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IUIAnimationTimer*, int> IsEnabled;
+
+            [NativeTypeName("HRESULT (UI_ANIMATION_SECONDS *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IUIAnimationTimer*, double*, int> GetTime;
+
+            [NativeTypeName("HRESULT (UINT32) __attribute__((stdcall))")]
+            public delegate* unmanaged<IUIAnimationTimer*, uint, int> SetFrameRateThreshold;
+        }
     }
 }

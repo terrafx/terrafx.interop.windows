@@ -59,5 +59,26 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IVideoFrameStep*, int>)(lpVtbl[5]))((IVideoFrameStep*)Unsafe.AsPointer(ref this));
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IVideoFrameStep*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IVideoFrameStep*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IVideoFrameStep*, uint> Release;
+
+            [NativeTypeName("HRESULT (DWORD, IUnknown *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IVideoFrameStep*, uint, IUnknown*, int> Step;
+
+            [NativeTypeName("HRESULT (long, IUnknown *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IVideoFrameStep*, int, IUnknown*, int> CanStep;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IVideoFrameStep*, int> CancelStep;
+        }
     }
 }

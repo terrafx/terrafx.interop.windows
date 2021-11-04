@@ -73,5 +73,32 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IInkPresenterDesktop*, int>)(lpVtbl[7]))((IInkPresenterDesktop*)Unsafe.AsPointer(ref this));
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IInkPresenterDesktop*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IInkPresenterDesktop*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IInkPresenterDesktop*, uint> Release;
+
+            [NativeTypeName("HRESULT (IUnknown *, IUnknown *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IInkPresenterDesktop*, IUnknown*, IUnknown*, int> SetRootVisual;
+
+            [NativeTypeName("HRESULT (IInkCommitRequestHandler *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IInkPresenterDesktop*, IInkCommitRequestHandler*, int> SetCommitRequestHandler;
+
+            [NativeTypeName("HRESULT (float *, float *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IInkPresenterDesktop*, float*, float*, int> GetSize;
+
+            [NativeTypeName("HRESULT (float, float) __attribute__((stdcall))")]
+            public delegate* unmanaged<IInkPresenterDesktop*, float, float, int> SetSize;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IInkPresenterDesktop*, int> OnHighContrastChanged;
+        }
     }
 }

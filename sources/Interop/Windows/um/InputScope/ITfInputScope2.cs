@@ -80,5 +80,35 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<ITfInputScope2*, IEnumString**, int>)(lpVtbl[8]))((ITfInputScope2*)Unsafe.AsPointer(ref this), ppEnumString);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfInputScope2*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfInputScope2*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfInputScope2*, uint> Release;
+
+            [NativeTypeName("HRESULT (InputScope **, UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfInputScope2*, InputScope**, uint*, int> GetInputScopes;
+
+            [NativeTypeName("HRESULT (BSTR **, UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfInputScope2*, ushort***, uint*, int> GetPhrase;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfInputScope2*, ushort**, int> GetRegularExpression;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfInputScope2*, ushort**, int> GetSRGS;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfInputScope2*, ushort**, int> GetXML;
+
+            [NativeTypeName("HRESULT (IEnumString **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfInputScope2*, IEnumString**, int> EnumWordList;
+        }
     }
 }

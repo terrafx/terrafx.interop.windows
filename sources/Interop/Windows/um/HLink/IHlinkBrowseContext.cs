@@ -136,5 +136,59 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IHlinkBrowseContext*, uint, int>)(lpVtbl[16]))((IHlinkBrowseContext*)Unsafe.AsPointer(ref this), reserved);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHlinkBrowseContext*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IHlinkBrowseContext*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IHlinkBrowseContext*, uint> Release;
+
+            [NativeTypeName("HRESULT (DWORD, IUnknown *, IMoniker *, DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHlinkBrowseContext*, uint, IUnknown*, IMoniker*, uint*, int> Register;
+
+            [NativeTypeName("HRESULT (IMoniker *, BOOL, IUnknown **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHlinkBrowseContext*, IMoniker*, BOOL, IUnknown**, int> GetObjectW;
+
+            [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHlinkBrowseContext*, uint, int> Revoke;
+
+            [NativeTypeName("HRESULT (HLBWINFO *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHlinkBrowseContext*, HLBWINFO*, int> SetBrowseWindowInfo;
+
+            [NativeTypeName("HRESULT (HLBWINFO *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHlinkBrowseContext*, HLBWINFO*, int> GetBrowseWindowInfo;
+
+            [NativeTypeName("HRESULT (IMoniker *, LPCWSTR, LPCWSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHlinkBrowseContext*, IMoniker*, ushort*, ushort*, int> SetInitialHlink;
+
+            [NativeTypeName("HRESULT (DWORD, IMoniker *, LPCWSTR, LPCWSTR, ULONG *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHlinkBrowseContext*, uint, IMoniker*, ushort*, ushort*, uint*, int> OnNavigateHlink;
+
+            [NativeTypeName("HRESULT (ULONG, IMoniker *, LPCWSTR, LPCWSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHlinkBrowseContext*, uint, IMoniker*, ushort*, ushort*, int> UpdateHlink;
+
+            [NativeTypeName("HRESULT (DWORD, DWORD, IEnumHLITEM **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHlinkBrowseContext*, uint, uint, IEnumHLITEM**, int> EnumNavigationStack;
+
+            [NativeTypeName("HRESULT (DWORD, ULONG) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHlinkBrowseContext*, uint, uint, int> QueryHlink;
+
+            [NativeTypeName("HRESULT (ULONG, IHlink **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHlinkBrowseContext*, uint, IHlink**, int> GetHlink;
+
+            [NativeTypeName("HRESULT (ULONG) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHlinkBrowseContext*, uint, int> SetCurrentHlink;
+
+            [NativeTypeName("HRESULT (IUnknown *, const IID &, IUnknown **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHlinkBrowseContext*, IUnknown*, Guid*, IUnknown**, int> Clone;
+
+            [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHlinkBrowseContext*, uint, int> Close;
+        }
     }
 }

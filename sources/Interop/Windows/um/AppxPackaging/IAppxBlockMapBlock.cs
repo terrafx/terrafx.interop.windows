@@ -52,5 +52,23 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IAppxBlockMapBlock*, uint*, int>)(lpVtbl[4]))((IAppxBlockMapBlock*)Unsafe.AsPointer(ref this), size);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAppxBlockMapBlock*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IAppxBlockMapBlock*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IAppxBlockMapBlock*, uint> Release;
+
+            [NativeTypeName("HRESULT (UINT32 *, BYTE **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAppxBlockMapBlock*, uint*, byte**, int> GetHash;
+
+            [NativeTypeName("HRESULT (UINT32 *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAppxBlockMapBlock*, uint*, int> GetCompressedSize;
+        }
     }
 }

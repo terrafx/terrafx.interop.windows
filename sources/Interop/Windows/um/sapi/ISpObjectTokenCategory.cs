@@ -164,5 +164,71 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<ISpObjectTokenCategory*, ushort**, int>)(lpVtbl[20]))((ISpObjectTokenCategory*)Unsafe.AsPointer(ref this), ppszCoMemTokenId);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpObjectTokenCategory*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpObjectTokenCategory*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpObjectTokenCategory*, uint> Release;
+
+            [NativeTypeName("HRESULT (LPCWSTR, ULONG, const BYTE *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpObjectTokenCategory*, ushort*, uint, byte*, int> SetData;
+
+            [NativeTypeName("HRESULT (LPCWSTR, ULONG *, BYTE *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpObjectTokenCategory*, ushort*, uint*, byte*, int> GetData;
+
+            [NativeTypeName("HRESULT (LPCWSTR, LPCWSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpObjectTokenCategory*, ushort*, ushort*, int> SetStringValue;
+
+            [NativeTypeName("HRESULT (LPCWSTR, LPWSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpObjectTokenCategory*, ushort*, ushort**, int> GetStringValue;
+
+            [NativeTypeName("HRESULT (LPCWSTR, DWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpObjectTokenCategory*, ushort*, uint, int> SetDWORD;
+
+            [NativeTypeName("HRESULT (LPCWSTR, DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpObjectTokenCategory*, ushort*, uint*, int> GetDWORD;
+
+            [NativeTypeName("HRESULT (LPCWSTR, ISpDataKey **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpObjectTokenCategory*, ushort*, ISpDataKey**, int> OpenKey;
+
+            [NativeTypeName("HRESULT (LPCWSTR, ISpDataKey **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpObjectTokenCategory*, ushort*, ISpDataKey**, int> CreateKey;
+
+            [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpObjectTokenCategory*, ushort*, int> DeleteKey;
+
+            [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpObjectTokenCategory*, ushort*, int> DeleteValue;
+
+            [NativeTypeName("HRESULT (ULONG, LPWSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpObjectTokenCategory*, uint, ushort**, int> EnumKeys;
+
+            [NativeTypeName("HRESULT (ULONG, LPWSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpObjectTokenCategory*, uint, ushort**, int> EnumValues;
+
+            [NativeTypeName("HRESULT (LPCWSTR, BOOL) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpObjectTokenCategory*, ushort*, BOOL, int> SetId;
+
+            [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpObjectTokenCategory*, ushort**, int> GetId;
+
+            [NativeTypeName("HRESULT (SPDATAKEYLOCATION, ISpDataKey **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpObjectTokenCategory*, SPDATAKEYLOCATION, ISpDataKey**, int> GetDataKey;
+
+            [NativeTypeName("HRESULT (LPCWSTR, LPCWSTR, IEnumSpObjectTokens **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpObjectTokenCategory*, ushort*, ushort*, IEnumSpObjectTokens**, int> EnumTokens;
+
+            [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpObjectTokenCategory*, ushort*, int> SetDefaultTokenId;
+
+            [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpObjectTokenCategory*, ushort**, int> GetDefaultTokenId;
+        }
     }
 }

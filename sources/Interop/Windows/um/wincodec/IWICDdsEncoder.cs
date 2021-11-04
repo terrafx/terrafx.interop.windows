@@ -59,5 +59,26 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IWICDdsEncoder*, IWICBitmapFrameEncode**, uint*, uint*, uint*, int>)(lpVtbl[5]))((IWICDdsEncoder*)Unsafe.AsPointer(ref this), ppIFrameEncode, pArrayIndex, pMipLevel, pSliceIndex);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWICDdsEncoder*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IWICDdsEncoder*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IWICDdsEncoder*, uint> Release;
+
+            [NativeTypeName("HRESULT (WICDdsParameters *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWICDdsEncoder*, WICDdsParameters*, int> SetParameters;
+
+            [NativeTypeName("HRESULT (WICDdsParameters *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWICDdsEncoder*, WICDdsParameters*, int> GetParameters;
+
+            [NativeTypeName("HRESULT (IWICBitmapFrameEncode **, UINT *, UINT *, UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWICDdsEncoder*, IWICBitmapFrameEncode**, uint*, uint*, uint*, int> CreateNewFrame;
+        }
     }
 }

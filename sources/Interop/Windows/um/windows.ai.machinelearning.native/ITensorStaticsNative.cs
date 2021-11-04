@@ -45,5 +45,20 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<ITensorStaticsNative*, ID3D12Resource*, long*, int, IUnknown**, int>)(lpVtbl[3]))((ITensorStaticsNative*)Unsafe.AsPointer(ref this), value, shape, shapeCount, result);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITensorStaticsNative*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ITensorStaticsNative*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ITensorStaticsNative*, uint> Release;
+
+            [NativeTypeName("HRESULT (ID3D12Resource *, long long *, int, IUnknown **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITensorStaticsNative*, ID3D12Resource*, long*, int, IUnknown**, int> CreateFromD3D12Resource;
+        }
     }
 }

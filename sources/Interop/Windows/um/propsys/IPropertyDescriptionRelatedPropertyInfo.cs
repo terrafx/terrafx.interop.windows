@@ -192,5 +192,83 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IPropertyDescriptionRelatedPropertyInfo*, ushort*, Guid*, void**, int>)(lpVtbl[24]))((IPropertyDescriptionRelatedPropertyInfo*)Unsafe.AsPointer(ref this), pszRelationshipName, riid, ppv);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IPropertyDescriptionRelatedPropertyInfo*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IPropertyDescriptionRelatedPropertyInfo*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IPropertyDescriptionRelatedPropertyInfo*, uint> Release;
+
+            [NativeTypeName("HRESULT (PROPERTYKEY *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IPropertyDescriptionRelatedPropertyInfo*, PROPERTYKEY*, int> GetPropertyKey;
+
+            [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IPropertyDescriptionRelatedPropertyInfo*, ushort**, int> GetCanonicalName;
+
+            [NativeTypeName("HRESULT (VARTYPE *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IPropertyDescriptionRelatedPropertyInfo*, ushort*, int> GetPropertyType;
+
+            [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IPropertyDescriptionRelatedPropertyInfo*, ushort**, int> GetDisplayName;
+
+            [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IPropertyDescriptionRelatedPropertyInfo*, ushort**, int> GetEditInvitation;
+
+            [NativeTypeName("HRESULT (PROPDESC_TYPE_FLAGS, PROPDESC_TYPE_FLAGS *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IPropertyDescriptionRelatedPropertyInfo*, PROPDESC_TYPE_FLAGS, PROPDESC_TYPE_FLAGS*, int> GetTypeFlags;
+
+            [NativeTypeName("HRESULT (PROPDESC_VIEW_FLAGS *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IPropertyDescriptionRelatedPropertyInfo*, PROPDESC_VIEW_FLAGS*, int> GetViewFlags;
+
+            [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IPropertyDescriptionRelatedPropertyInfo*, uint*, int> GetDefaultColumnWidth;
+
+            [NativeTypeName("HRESULT (PROPDESC_DISPLAYTYPE *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IPropertyDescriptionRelatedPropertyInfo*, PROPDESC_DISPLAYTYPE*, int> GetDisplayType;
+
+            [NativeTypeName("HRESULT (SHCOLSTATEF *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IPropertyDescriptionRelatedPropertyInfo*, uint*, int> GetColumnState;
+
+            [NativeTypeName("HRESULT (PROPDESC_GROUPING_RANGE *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IPropertyDescriptionRelatedPropertyInfo*, PROPDESC_GROUPING_RANGE*, int> GetGroupingRange;
+
+            [NativeTypeName("HRESULT (PROPDESC_RELATIVEDESCRIPTION_TYPE *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IPropertyDescriptionRelatedPropertyInfo*, PROPDESC_RELATIVEDESCRIPTION_TYPE*, int> GetRelativeDescriptionType;
+
+            [NativeTypeName("HRESULT (const PROPVARIANT &, const PROPVARIANT &, LPWSTR *, LPWSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IPropertyDescriptionRelatedPropertyInfo*, PROPVARIANT*, PROPVARIANT*, ushort**, ushort**, int> GetRelativeDescription;
+
+            [NativeTypeName("HRESULT (PROPDESC_SORTDESCRIPTION *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IPropertyDescriptionRelatedPropertyInfo*, PROPDESC_SORTDESCRIPTION*, int> GetSortDescription;
+
+            [NativeTypeName("HRESULT (BOOL, LPWSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IPropertyDescriptionRelatedPropertyInfo*, BOOL, ushort**, int> GetSortDescriptionLabel;
+
+            [NativeTypeName("HRESULT (PROPDESC_AGGREGATION_TYPE *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IPropertyDescriptionRelatedPropertyInfo*, PROPDESC_AGGREGATION_TYPE*, int> GetAggregationType;
+
+            [NativeTypeName("HRESULT (PROPDESC_CONDITION_TYPE *, CONDITION_OPERATION *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IPropertyDescriptionRelatedPropertyInfo*, PROPDESC_CONDITION_TYPE*, CONDITION_OPERATION*, int> GetConditionType;
+
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IPropertyDescriptionRelatedPropertyInfo*, Guid*, void**, int> GetEnumTypeList;
+
+            [NativeTypeName("HRESULT (PROPVARIANT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IPropertyDescriptionRelatedPropertyInfo*, PROPVARIANT*, int> CoerceToCanonicalValue;
+
+            [NativeTypeName("HRESULT (const PROPVARIANT &, PROPDESC_FORMAT_FLAGS, LPWSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IPropertyDescriptionRelatedPropertyInfo*, PROPVARIANT*, PROPDESC_FORMAT_FLAGS, ushort**, int> FormatForDisplay;
+
+            [NativeTypeName("HRESULT (const PROPVARIANT &) __attribute__((stdcall))")]
+            public delegate* unmanaged<IPropertyDescriptionRelatedPropertyInfo*, PROPVARIANT*, int> IsValueCanonical;
+
+            [NativeTypeName("HRESULT (LPCWSTR, const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IPropertyDescriptionRelatedPropertyInfo*, ushort*, Guid*, void**, int> GetRelatedProperty;
+        }
     }
 }

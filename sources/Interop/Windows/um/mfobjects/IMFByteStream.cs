@@ -143,5 +143,62 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IMFByteStream*, int>)(lpVtbl[17]))((IMFByteStream*)Unsafe.AsPointer(ref this));
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFByteStream*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFByteStream*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFByteStream*, uint> Release;
+
+            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFByteStream*, uint*, int> GetCapabilities;
+
+            [NativeTypeName("HRESULT (QWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFByteStream*, ulong*, int> GetLength;
+
+            [NativeTypeName("HRESULT (QWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFByteStream*, ulong, int> SetLength;
+
+            [NativeTypeName("HRESULT (QWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFByteStream*, ulong*, int> GetCurrentPosition;
+
+            [NativeTypeName("HRESULT (QWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFByteStream*, ulong, int> SetCurrentPosition;
+
+            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFByteStream*, BOOL*, int> IsEndOfStream;
+
+            [NativeTypeName("HRESULT (BYTE *, ULONG, ULONG *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFByteStream*, byte*, uint, uint*, int> Read;
+
+            [NativeTypeName("HRESULT (BYTE *, ULONG, IMFAsyncCallback *, IUnknown *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFByteStream*, byte*, uint, IMFAsyncCallback*, IUnknown*, int> BeginRead;
+
+            [NativeTypeName("HRESULT (IMFAsyncResult *, ULONG *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFByteStream*, IMFAsyncResult*, uint*, int> EndRead;
+
+            [NativeTypeName("HRESULT (const BYTE *, ULONG, ULONG *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFByteStream*, byte*, uint, uint*, int> Write;
+
+            [NativeTypeName("HRESULT (const BYTE *, ULONG, IMFAsyncCallback *, IUnknown *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFByteStream*, byte*, uint, IMFAsyncCallback*, IUnknown*, int> BeginWrite;
+
+            [NativeTypeName("HRESULT (IMFAsyncResult *, ULONG *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFByteStream*, IMFAsyncResult*, uint*, int> EndWrite;
+
+            [NativeTypeName("HRESULT (MFBYTESTREAM_SEEK_ORIGIN, LONGLONG, DWORD, QWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFByteStream*, MFBYTESTREAM_SEEK_ORIGIN, long, uint, ulong*, int> Seek;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFByteStream*, int> Flush;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFByteStream*, int> Close;
+        }
     }
 }

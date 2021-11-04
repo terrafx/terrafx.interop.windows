@@ -101,5 +101,44 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IKnownFolder*, KNOWNFOLDER_DEFINITION*, int>)(lpVtbl[11]))((IKnownFolder*)Unsafe.AsPointer(ref this), pKFD);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IKnownFolder*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IKnownFolder*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IKnownFolder*, uint> Release;
+
+            [NativeTypeName("HRESULT (KNOWNFOLDERID *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IKnownFolder*, Guid*, int> GetId;
+
+            [NativeTypeName("HRESULT (KF_CATEGORY *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IKnownFolder*, KF_CATEGORY*, int> GetCategory;
+
+            [NativeTypeName("HRESULT (DWORD, const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IKnownFolder*, uint, Guid*, void**, int> GetShellItem;
+
+            [NativeTypeName("HRESULT (DWORD, LPWSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IKnownFolder*, uint, ushort**, int> GetPath;
+
+            [NativeTypeName("HRESULT (DWORD, LPCWSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IKnownFolder*, uint, ushort*, int> SetPath;
+
+            [NativeTypeName("HRESULT (DWORD, LPITEMIDLIST *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IKnownFolder*, uint, ITEMIDLIST**, int> GetIDList;
+
+            [NativeTypeName("HRESULT (FOLDERTYPEID *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IKnownFolder*, Guid*, int> GetFolderType;
+
+            [NativeTypeName("HRESULT (KF_REDIRECTION_CAPABILITIES *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IKnownFolder*, uint*, int> GetRedirectionCapabilities;
+
+            [NativeTypeName("HRESULT (KNOWNFOLDER_DEFINITION *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IKnownFolder*, KNOWNFOLDER_DEFINITION*, int> GetFolderDefinition;
+        }
     }
 }

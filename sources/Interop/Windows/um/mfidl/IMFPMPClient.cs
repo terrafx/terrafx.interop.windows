@@ -45,5 +45,20 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IMFPMPClient*, IMFPMPHost*, int>)(lpVtbl[3]))((IMFPMPClient*)Unsafe.AsPointer(ref this), pPMPHost);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFPMPClient*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFPMPClient*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFPMPClient*, uint> Release;
+
+            [NativeTypeName("HRESULT (IMFPMPHost *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFPMPClient*, IMFPMPHost*, int> SetPMPHost;
+        }
     }
 }

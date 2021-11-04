@@ -59,5 +59,26 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<ITfContextOwnerCompositionSink*, ITfCompositionView*, int>)(lpVtbl[5]))((ITfContextOwnerCompositionSink*)Unsafe.AsPointer(ref this), pComposition);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfContextOwnerCompositionSink*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfContextOwnerCompositionSink*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfContextOwnerCompositionSink*, uint> Release;
+
+            [NativeTypeName("HRESULT (ITfCompositionView *, BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfContextOwnerCompositionSink*, ITfCompositionView*, BOOL*, int> OnStartComposition;
+
+            [NativeTypeName("HRESULT (ITfCompositionView *, ITfRange *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfContextOwnerCompositionSink*, ITfCompositionView*, ITfRange*, int> OnUpdateComposition;
+
+            [NativeTypeName("HRESULT (ITfCompositionView *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfContextOwnerCompositionSink*, ITfCompositionView*, int> OnEndComposition;
+        }
     }
 }

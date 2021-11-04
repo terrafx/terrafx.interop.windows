@@ -45,5 +45,20 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IDiaReadExeAtRVACallback*, uint, uint, uint*, byte*, int>)(lpVtbl[3]))((IDiaReadExeAtRVACallback*)Unsafe.AsPointer(ref this), relativeVirtualAddress, cbData, pcbData, pbData);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaReadExeAtRVACallback*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaReadExeAtRVACallback*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaReadExeAtRVACallback*, uint> Release;
+
+            [NativeTypeName("HRESULT (DWORD, DWORD, DWORD *, BYTE *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaReadExeAtRVACallback*, uint, uint, uint*, byte*, int> ReadExecutableAtRVA;
+        }
     }
 }

@@ -52,5 +52,23 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IAuthenticateEx*, HWND*, ushort**, ushort**, AUTHENTICATEINFO*, int>)(lpVtbl[4]))((IAuthenticateEx*)Unsafe.AsPointer(ref this), phwnd, pszUsername, pszPassword, pauthinfo);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAuthenticateEx*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IAuthenticateEx*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IAuthenticateEx*, uint> Release;
+
+            [NativeTypeName("HRESULT (HWND *, LPWSTR *, LPWSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAuthenticateEx*, HWND*, ushort**, ushort**, int> Authenticate;
+
+            [NativeTypeName("HRESULT (HWND *, LPWSTR *, LPWSTR *, AUTHENTICATEINFO *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAuthenticateEx*, HWND*, ushort**, ushort**, AUTHENTICATEINFO*, int> AuthenticateEx;
+        }
     }
 }

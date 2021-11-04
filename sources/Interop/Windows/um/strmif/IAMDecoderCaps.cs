@@ -45,5 +45,20 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IAMDecoderCaps*, uint, uint*, int>)(lpVtbl[3]))((IAMDecoderCaps*)Unsafe.AsPointer(ref this), dwCapIndex, lpdwCap);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAMDecoderCaps*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IAMDecoderCaps*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IAMDecoderCaps*, uint> Release;
+
+            [NativeTypeName("HRESULT (DWORD, DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAMDecoderCaps*, uint, uint*, int> GetDecoderCaps;
+        }
     }
 }

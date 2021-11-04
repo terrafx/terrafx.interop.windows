@@ -80,5 +80,35 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IAMTVAudio*, IAMTunerNotification*, int>)(lpVtbl[8]))((IAMTVAudio*)Unsafe.AsPointer(ref this), pNotify);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAMTVAudio*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IAMTVAudio*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IAMTVAudio*, uint> Release;
+
+            [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAMTVAudio*, int*, int> GetHardwareSupportedTVAudioModes;
+
+            [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAMTVAudio*, int*, int> GetAvailableTVAudioModes;
+
+            [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAMTVAudio*, int*, int> get_TVAudioMode;
+
+            [NativeTypeName("HRESULT (long) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAMTVAudio*, int, int> put_TVAudioMode;
+
+            [NativeTypeName("HRESULT (IAMTunerNotification *, long) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAMTVAudio*, IAMTunerNotification*, int, int> RegisterNotificationCallBack;
+
+            [NativeTypeName("HRESULT (IAMTunerNotification *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAMTVAudio*, IAMTunerNotification*, int> UnRegisterNotificationCallBack;
+        }
     }
 }

@@ -66,5 +66,29 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<ITfComposition*, uint, int>)(lpVtbl[6]))((ITfComposition*)Unsafe.AsPointer(ref this), ecWrite);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfComposition*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfComposition*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfComposition*, uint> Release;
+
+            [NativeTypeName("HRESULT (ITfRange **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfComposition*, ITfRange**, int> GetRange;
+
+            [NativeTypeName("HRESULT (TfEditCookie, ITfRange *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfComposition*, uint, ITfRange*, int> ShiftStart;
+
+            [NativeTypeName("HRESULT (TfEditCookie, ITfRange *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfComposition*, uint, ITfRange*, int> ShiftEnd;
+
+            [NativeTypeName("HRESULT (TfEditCookie) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfComposition*, uint, int> EndComposition;
+        }
     }
 }

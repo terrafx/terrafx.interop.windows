@@ -52,5 +52,23 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IAppxSourceContentGroupMapReader*, IAppxContentGroupsEnumerator**, int>)(lpVtbl[4]))((IAppxSourceContentGroupMapReader*)Unsafe.AsPointer(ref this), automaticGroupsEnumerator);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAppxSourceContentGroupMapReader*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IAppxSourceContentGroupMapReader*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IAppxSourceContentGroupMapReader*, uint> Release;
+
+            [NativeTypeName("HRESULT (IAppxContentGroup **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAppxSourceContentGroupMapReader*, IAppxContentGroup**, int> GetRequiredGroup;
+
+            [NativeTypeName("HRESULT (IAppxContentGroupsEnumerator **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAppxSourceContentGroupMapReader*, IAppxContentGroupsEnumerator**, int> GetAutomaticGroups;
+        }
     }
 }

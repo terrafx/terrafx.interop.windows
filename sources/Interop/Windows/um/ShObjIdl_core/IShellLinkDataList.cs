@@ -73,5 +73,32 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IShellLinkDataList*, uint, int>)(lpVtbl[7]))((IShellLinkDataList*)Unsafe.AsPointer(ref this), dwFlags);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellLinkDataList*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellLinkDataList*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellLinkDataList*, uint> Release;
+
+            [NativeTypeName("HRESULT (void *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellLinkDataList*, void*, int> AddDataBlock;
+
+            [NativeTypeName("HRESULT (DWORD, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellLinkDataList*, uint, void**, int> CopyDataBlock;
+
+            [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellLinkDataList*, uint, int> RemoveDataBlock;
+
+            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellLinkDataList*, uint*, int> GetFlags;
+
+            [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellLinkDataList*, uint, int> SetFlags;
+        }
     }
 }

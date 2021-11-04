@@ -87,5 +87,38 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IDisplayServices*, IHTMLElement*, BOOL*, int>)(lpVtbl[9]))((IDisplayServices*)Unsafe.AsPointer(ref this), pIElement, pfHasFlowLayout);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDisplayServices*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDisplayServices*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDisplayServices*, uint> Release;
+
+            [NativeTypeName("HRESULT (IDisplayPointer **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDisplayServices*, IDisplayPointer**, int> CreateDisplayPointer;
+
+            [NativeTypeName("HRESULT (RECT *, COORD_SYSTEM, COORD_SYSTEM, IHTMLElement *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDisplayServices*, RECT*, COORD_SYSTEM, COORD_SYSTEM, IHTMLElement*, int> TransformRect;
+
+            [NativeTypeName("HRESULT (POINT *, COORD_SYSTEM, COORD_SYSTEM, IHTMLElement *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDisplayServices*, POINT*, COORD_SYSTEM, COORD_SYSTEM, IHTMLElement*, int> TransformPoint;
+
+            [NativeTypeName("HRESULT (IHTMLCaret **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDisplayServices*, IHTMLCaret**, int> GetCaret;
+
+            [NativeTypeName("HRESULT (IMarkupPointer *, IHTMLComputedStyle **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDisplayServices*, IMarkupPointer*, IHTMLComputedStyle**, int> GetComputedStyle;
+
+            [NativeTypeName("HRESULT (IHTMLElement *, RECT) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDisplayServices*, IHTMLElement*, RECT, int> ScrollRectIntoView;
+
+            [NativeTypeName("HRESULT (IHTMLElement *, BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDisplayServices*, IHTMLElement*, BOOL*, int> HasFlowLayout;
+        }
     }
 }

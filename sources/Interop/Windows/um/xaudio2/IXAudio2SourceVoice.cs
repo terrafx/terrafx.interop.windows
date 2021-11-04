@@ -215,5 +215,95 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IXAudio2SourceVoice*, uint, int>)(lpVtbl[28]))((IXAudio2SourceVoice*)Unsafe.AsPointer(ref this), NewSourceSampleRate);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("void (XAUDIO2_VOICE_DETAILS *) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IXAudio2SourceVoice*, XAUDIO2_VOICE_DETAILS*, void> GetVoiceDetails;
+
+            [NativeTypeName("HRESULT (const XAUDIO2_VOICE_SENDS *) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IXAudio2SourceVoice*, XAUDIO2_VOICE_SENDS*, int> SetOutputVoices;
+
+            [NativeTypeName("HRESULT (const XAUDIO2_EFFECT_CHAIN *) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IXAudio2SourceVoice*, XAUDIO2_EFFECT_CHAIN*, int> SetEffectChain;
+
+            [NativeTypeName("HRESULT (UINT32, UINT32) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IXAudio2SourceVoice*, uint, uint, int> EnableEffect;
+
+            [NativeTypeName("HRESULT (UINT32, UINT32) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IXAudio2SourceVoice*, uint, uint, int> DisableEffect;
+
+            [NativeTypeName("void (UINT32, BOOL *) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IXAudio2SourceVoice*, uint, BOOL*, void> GetEffectState;
+
+            [NativeTypeName("HRESULT (UINT32, const void *, UINT32, UINT32) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IXAudio2SourceVoice*, uint, void*, uint, uint, int> SetEffectParameters;
+
+            [NativeTypeName("HRESULT (UINT32, void *, UINT32) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IXAudio2SourceVoice*, uint, void*, uint, int> GetEffectParameters;
+
+            [NativeTypeName("HRESULT (const XAUDIO2_FILTER_PARAMETERS *, UINT32) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IXAudio2SourceVoice*, XAUDIO2_FILTER_PARAMETERS*, uint, int> SetFilterParameters;
+
+            [NativeTypeName("void (XAUDIO2_FILTER_PARAMETERS *) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IXAudio2SourceVoice*, XAUDIO2_FILTER_PARAMETERS*, void> GetFilterParameters;
+
+            [NativeTypeName("HRESULT (IXAudio2Voice *, const XAUDIO2_FILTER_PARAMETERS *, UINT32) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IXAudio2SourceVoice*, IXAudio2Voice*, XAUDIO2_FILTER_PARAMETERS*, uint, int> SetOutputFilterParameters;
+
+            [NativeTypeName("void (IXAudio2Voice *, XAUDIO2_FILTER_PARAMETERS *) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IXAudio2SourceVoice*, IXAudio2Voice*, XAUDIO2_FILTER_PARAMETERS*, void> GetOutputFilterParameters;
+
+            [NativeTypeName("HRESULT (float, UINT32) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IXAudio2SourceVoice*, float, uint, int> SetVolume;
+
+            [NativeTypeName("void (float *) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IXAudio2SourceVoice*, float*, void> GetVolume;
+
+            [NativeTypeName("HRESULT (UINT32, const float *, UINT32) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IXAudio2SourceVoice*, uint, float*, uint, int> SetChannelVolumes;
+
+            [NativeTypeName("void (UINT32, float *) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IXAudio2SourceVoice*, uint, float*, void> GetChannelVolumes;
+
+            [NativeTypeName("HRESULT (IXAudio2Voice *, UINT32, UINT32, const float *, UINT32) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IXAudio2SourceVoice*, IXAudio2Voice*, uint, uint, float*, uint, int> SetOutputMatrix;
+
+            [NativeTypeName("void (IXAudio2Voice *, UINT32, UINT32, float *) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IXAudio2SourceVoice*, IXAudio2Voice*, uint, uint, float*, void> GetOutputMatrix;
+
+            [NativeTypeName("void () __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IXAudio2SourceVoice*, void> DestroyVoice;
+
+            [NativeTypeName("HRESULT (UINT32, UINT32) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IXAudio2SourceVoice*, uint, uint, int> Start;
+
+            [NativeTypeName("HRESULT (UINT32, UINT32) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IXAudio2SourceVoice*, uint, uint, int> Stop;
+
+            [NativeTypeName("HRESULT (const XAUDIO2_BUFFER *, const XAUDIO2_BUFFER_WMA *) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IXAudio2SourceVoice*, XAUDIO2_BUFFER*, XAUDIO2_BUFFER_WMA*, int> SubmitSourceBuffer;
+
+            [NativeTypeName("HRESULT () __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IXAudio2SourceVoice*, int> FlushSourceBuffers;
+
+            [NativeTypeName("HRESULT () __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IXAudio2SourceVoice*, int> Discontinuity;
+
+            [NativeTypeName("HRESULT (UINT32) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IXAudio2SourceVoice*, uint, int> ExitLoop;
+
+            [NativeTypeName("void (XAUDIO2_VOICE_STATE *, UINT32) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IXAudio2SourceVoice*, XAUDIO2_VOICE_STATE*, uint, void> GetState;
+
+            [NativeTypeName("HRESULT (float, UINT32) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IXAudio2SourceVoice*, float, uint, int> SetFrequencyRatio;
+
+            [NativeTypeName("void (float *) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IXAudio2SourceVoice*, float*, void> GetFrequencyRatio;
+
+            [NativeTypeName("HRESULT (UINT32) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IXAudio2SourceVoice*, uint, int> SetSourceSampleRate;
+        }
     }
 }

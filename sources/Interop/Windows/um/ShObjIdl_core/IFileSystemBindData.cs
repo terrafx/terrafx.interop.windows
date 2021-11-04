@@ -52,5 +52,23 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IFileSystemBindData*, WIN32_FIND_DATAW*, int>)(lpVtbl[4]))((IFileSystemBindData*)Unsafe.AsPointer(ref this), pfd);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFileSystemBindData*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IFileSystemBindData*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IFileSystemBindData*, uint> Release;
+
+            [NativeTypeName("HRESULT (const WIN32_FIND_DATAW *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFileSystemBindData*, WIN32_FIND_DATAW*, int> SetFindData;
+
+            [NativeTypeName("HRESULT (WIN32_FIND_DATAW *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFileSystemBindData*, WIN32_FIND_DATAW*, int> GetFindData;
+        }
     }
 }

@@ -23,6 +23,7 @@ generate-unmanaged-constants
 generate-vtbl-index-attribute
 log-potential-typedef-remappings
 multi-file
+trimmable-vtbls
 --define-macro
 INITGUID
 UNICODE

@@ -80,5 +80,35 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<ICommDlgBrowser2*, uint*, int>)(lpVtbl[8]))((ICommDlgBrowser2*)Unsafe.AsPointer(ref this), pdwFlags);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ICommDlgBrowser2*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ICommDlgBrowser2*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ICommDlgBrowser2*, uint> Release;
+
+            [NativeTypeName("HRESULT (IShellView *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ICommDlgBrowser2*, IShellView*, int> OnDefaultCommand;
+
+            [NativeTypeName("HRESULT (IShellView *, ULONG) __attribute__((stdcall))")]
+            public delegate* unmanaged<ICommDlgBrowser2*, IShellView*, uint, int> OnStateChange;
+
+            [NativeTypeName("HRESULT (IShellView *, LPCITEMIDLIST) __attribute__((stdcall))")]
+            public delegate* unmanaged<ICommDlgBrowser2*, IShellView*, ITEMIDLIST*, int> IncludeObject;
+
+            [NativeTypeName("HRESULT (IShellView *, DWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<ICommDlgBrowser2*, IShellView*, uint, int> Notify;
+
+            [NativeTypeName("HRESULT (IShellView *, LPWSTR, int) __attribute__((stdcall))")]
+            public delegate* unmanaged<ICommDlgBrowser2*, IShellView*, ushort*, int, int> GetDefaultMenuText;
+
+            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ICommDlgBrowser2*, uint*, int> GetViewFlags;
+        }
     }
 }

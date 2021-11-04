@@ -122,5 +122,53 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IRulesAppliedCollection*, ushort*, int*, int>)(lpVtbl[14]))((IRulesAppliedCollection*)Unsafe.AsPointer(ref this), name, pLength);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IRulesAppliedCollection*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IRulesAppliedCollection*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IRulesAppliedCollection*, uint> Release;
+
+            [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IRulesAppliedCollection*, uint*, int> GetTypeInfoCount;
+
+            [NativeTypeName("HRESULT (UINT, LCID, ITypeInfo **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IRulesAppliedCollection*, uint, uint, ITypeInfo**, int> GetTypeInfo;
+
+            [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IRulesAppliedCollection*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+
+            [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IRulesAppliedCollection*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
+
+            [NativeTypeName("HRESULT (long, IRulesApplied **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IRulesAppliedCollection*, int, IRulesApplied**, int> item;
+
+            [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IRulesAppliedCollection*, int*, int> get_length;
+
+            [NativeTypeName("HRESULT (IHTMLElement **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IRulesAppliedCollection*, IHTMLElement**, int> get_element;
+
+            [NativeTypeName("HRESULT (BSTR, IRulesApplied **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IRulesAppliedCollection*, ushort*, IRulesApplied**, int> propertyInheritedFrom;
+
+            [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IRulesAppliedCollection*, int*, int> get_propertyCount;
+
+            [NativeTypeName("HRESULT (long, BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IRulesAppliedCollection*, int, ushort**, int> property;
+
+            [NativeTypeName("HRESULT (BSTR, long, IRulesApplied **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IRulesAppliedCollection*, ushort*, int, IRulesApplied**, int> propertyInheritedTrace;
+
+            [NativeTypeName("HRESULT (BSTR, long *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IRulesAppliedCollection*, ushort*, int*, int> propertyInheritedTraceLength;
+        }
     }
 }

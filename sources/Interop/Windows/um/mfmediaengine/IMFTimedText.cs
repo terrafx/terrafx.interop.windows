@@ -136,5 +136,59 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IMFTimedText*, int>)(lpVtbl[16]))((IMFTimedText*)Unsafe.AsPointer(ref this));
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFTimedText*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFTimedText*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFTimedText*, uint> Release;
+
+            [NativeTypeName("HRESULT (IMFTimedTextNotify *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFTimedText*, IMFTimedTextNotify*, int> RegisterNotifications;
+
+            [NativeTypeName("HRESULT (DWORD, BOOL) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFTimedText*, uint, BOOL, int> SelectTrack;
+
+            [NativeTypeName("HRESULT (IMFByteStream *, LPCWSTR, LPCWSTR, MF_TIMED_TEXT_TRACK_KIND, BOOL, DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFTimedText*, IMFByteStream*, ushort*, ushort*, MF_TIMED_TEXT_TRACK_KIND, BOOL, uint*, int> AddDataSource;
+
+            [NativeTypeName("HRESULT (LPCWSTR, LPCWSTR, LPCWSTR, MF_TIMED_TEXT_TRACK_KIND, BOOL, DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFTimedText*, ushort*, ushort*, ushort*, MF_TIMED_TEXT_TRACK_KIND, BOOL, uint*, int> AddDataSourceFromUrl;
+
+            [NativeTypeName("HRESULT (LPCWSTR, LPCWSTR, MF_TIMED_TEXT_TRACK_KIND, IMFTimedTextTrack **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFTimedText*, ushort*, ushort*, MF_TIMED_TEXT_TRACK_KIND, IMFTimedTextTrack**, int> AddTrack;
+
+            [NativeTypeName("HRESULT (IMFTimedTextTrack *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFTimedText*, IMFTimedTextTrack*, int> RemoveTrack;
+
+            [NativeTypeName("HRESULT (double *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFTimedText*, double*, int> GetCueTimeOffset;
+
+            [NativeTypeName("HRESULT (double) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFTimedText*, double, int> SetCueTimeOffset;
+
+            [NativeTypeName("HRESULT (IMFTimedTextTrackList **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFTimedText*, IMFTimedTextTrackList**, int> GetTracks;
+
+            [NativeTypeName("HRESULT (IMFTimedTextTrackList **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFTimedText*, IMFTimedTextTrackList**, int> GetActiveTracks;
+
+            [NativeTypeName("HRESULT (IMFTimedTextTrackList **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFTimedText*, IMFTimedTextTrackList**, int> GetTextTracks;
+
+            [NativeTypeName("HRESULT (IMFTimedTextTrackList **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFTimedText*, IMFTimedTextTrackList**, int> GetMetadataTracks;
+
+            [NativeTypeName("HRESULT (BOOL) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFTimedText*, BOOL, int> SetInBandEnabled;
+
+            [NativeTypeName("BOOL () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFTimedText*, int> IsInBandEnabled;
+        }
     }
 }

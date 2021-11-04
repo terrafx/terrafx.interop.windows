@@ -66,5 +66,29 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<ITfContextComposition*, uint, ITfCompositionView*, ITfCompositionSink*, ITfComposition**, int>)(lpVtbl[6]))((ITfContextComposition*)Unsafe.AsPointer(ref this), ecWrite, pComposition, pSink, ppComposition);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfContextComposition*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfContextComposition*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfContextComposition*, uint> Release;
+
+            [NativeTypeName("HRESULT (TfEditCookie, ITfRange *, ITfCompositionSink *, ITfComposition **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfContextComposition*, uint, ITfRange*, ITfCompositionSink*, ITfComposition**, int> StartComposition;
+
+            [NativeTypeName("HRESULT (IEnumITfCompositionView **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfContextComposition*, IEnumITfCompositionView**, int> EnumCompositions;
+
+            [NativeTypeName("HRESULT (TfEditCookie, ITfRange *, IEnumITfCompositionView **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfContextComposition*, uint, ITfRange*, IEnumITfCompositionView**, int> FindComposition;
+
+            [NativeTypeName("HRESULT (TfEditCookie, ITfCompositionView *, ITfCompositionSink *, ITfComposition **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfContextComposition*, uint, ITfCompositionView*, ITfCompositionSink*, ITfComposition**, int> TakeOwnership;
+        }
     }
 }

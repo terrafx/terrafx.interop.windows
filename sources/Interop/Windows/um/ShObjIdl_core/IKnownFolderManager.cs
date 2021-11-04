@@ -108,5 +108,47 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IKnownFolderManager*, Guid*, HWND, uint, ushort*, uint, Guid*, ushort**, int>)(lpVtbl[12]))((IKnownFolderManager*)Unsafe.AsPointer(ref this), rfid, hwnd, flags, pszTargetPath, cFolders, pExclusion, ppszError);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IKnownFolderManager*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IKnownFolderManager*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IKnownFolderManager*, uint> Release;
+
+            [NativeTypeName("HRESULT (int, KNOWNFOLDERID *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IKnownFolderManager*, int, Guid*, int> FolderIdFromCsidl;
+
+            [NativeTypeName("HRESULT (const KNOWNFOLDERID &, int *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IKnownFolderManager*, Guid*, int*, int> FolderIdToCsidl;
+
+            [NativeTypeName("HRESULT (KNOWNFOLDERID **, UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IKnownFolderManager*, Guid**, uint*, int> GetFolderIds;
+
+            [NativeTypeName("HRESULT (const KNOWNFOLDERID &, IKnownFolder **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IKnownFolderManager*, Guid*, IKnownFolder**, int> GetFolder;
+
+            [NativeTypeName("HRESULT (LPCWSTR, IKnownFolder **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IKnownFolderManager*, ushort*, IKnownFolder**, int> GetFolderByName;
+
+            [NativeTypeName("HRESULT (const KNOWNFOLDERID &, const KNOWNFOLDER_DEFINITION *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IKnownFolderManager*, Guid*, KNOWNFOLDER_DEFINITION*, int> RegisterFolder;
+
+            [NativeTypeName("HRESULT (const KNOWNFOLDERID &) __attribute__((stdcall))")]
+            public delegate* unmanaged<IKnownFolderManager*, Guid*, int> UnregisterFolder;
+
+            [NativeTypeName("HRESULT (LPCWSTR, FFFP_MODE, IKnownFolder **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IKnownFolderManager*, ushort*, FFFP_MODE, IKnownFolder**, int> FindFolderFromPath;
+
+            [NativeTypeName("HRESULT (LPCITEMIDLIST, IKnownFolder **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IKnownFolderManager*, ITEMIDLIST*, IKnownFolder**, int> FindFolderFromIDList;
+
+            [NativeTypeName("HRESULT (const KNOWNFOLDERID &, HWND, KF_REDIRECT_FLAGS, LPCWSTR, UINT, const KNOWNFOLDERID *, LPWSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IKnownFolderManager*, Guid*, HWND, uint, ushort*, uint, Guid*, ushort**, int> Redirect;
+        }
     }
 }

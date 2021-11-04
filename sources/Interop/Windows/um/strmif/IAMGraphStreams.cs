@@ -59,5 +59,26 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IAMGraphStreams*, long, int>)(lpVtbl[5]))((IAMGraphStreams*)Unsafe.AsPointer(ref this), rtMaxGraphLatency);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAMGraphStreams*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IAMGraphStreams*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IAMGraphStreams*, uint> Release;
+
+            [NativeTypeName("HRESULT (IPin *, const IID &, void **, DWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAMGraphStreams*, IPin*, Guid*, void**, uint, int> FindUpstreamInterface;
+
+            [NativeTypeName("HRESULT (BOOL) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAMGraphStreams*, BOOL, int> SyncUsingStreamOffset;
+
+            [NativeTypeName("HRESULT (REFERENCE_TIME) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAMGraphStreams*, long, int> SetMaxGraphLatency;
+        }
     }
 }

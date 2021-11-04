@@ -73,5 +73,32 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IMFVideoSampleAllocatorEx*, uint, uint, IMFAttributes*, IMFMediaType*, int>)(lpVtbl[7]))((IMFVideoSampleAllocatorEx*)Unsafe.AsPointer(ref this), cInitialSamples, cMaximumSamples, pAttributes, pMediaType);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFVideoSampleAllocatorEx*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFVideoSampleAllocatorEx*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFVideoSampleAllocatorEx*, uint> Release;
+
+            [NativeTypeName("HRESULT (IUnknown *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFVideoSampleAllocatorEx*, IUnknown*, int> SetDirectXManager;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFVideoSampleAllocatorEx*, int> UninitializeSampleAllocator;
+
+            [NativeTypeName("HRESULT (DWORD, IMFMediaType *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFVideoSampleAllocatorEx*, uint, IMFMediaType*, int> InitializeSampleAllocator;
+
+            [NativeTypeName("HRESULT (IMFSample **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFVideoSampleAllocatorEx*, IMFSample**, int> AllocateSample;
+
+            [NativeTypeName("HRESULT (DWORD, DWORD, IMFAttributes *, IMFMediaType *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFVideoSampleAllocatorEx*, uint, uint, IMFAttributes*, IMFMediaType*, int> InitializeSampleAllocatorEx;
+        }
     }
 }

@@ -73,5 +73,32 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<ITfIntegratableCandidateListUIElement*, int>)(lpVtbl[7]))((ITfIntegratableCandidateListUIElement*)Unsafe.AsPointer(ref this));
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfIntegratableCandidateListUIElement*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfIntegratableCandidateListUIElement*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfIntegratableCandidateListUIElement*, uint> Release;
+
+            [NativeTypeName("HRESULT (GUID) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfIntegratableCandidateListUIElement*, Guid, int> SetIntegrationStyle;
+
+            [NativeTypeName("HRESULT (TfIntegratableCandidateListSelectionStyle *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfIntegratableCandidateListUIElement*, TfIntegratableCandidateListSelectionStyle*, int> GetSelectionStyle;
+
+            [NativeTypeName("HRESULT (WPARAM, LPARAM, BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfIntegratableCandidateListUIElement*, WPARAM, LPARAM, BOOL*, int> OnKeyDown;
+
+            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfIntegratableCandidateListUIElement*, BOOL*, int> ShowCandidateNumbers;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfIntegratableCandidateListUIElement*, int> FinalizeExactCompositionString;
+        }
     }
 }

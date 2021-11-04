@@ -73,5 +73,32 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IVMRMonitorConfig*, VMRMONITORINFO*, uint, uint*, int>)(lpVtbl[7]))((IVMRMonitorConfig*)Unsafe.AsPointer(ref this), pInfo, dwMaxInfoArraySize, pdwNumDevices);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IVMRMonitorConfig*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IVMRMonitorConfig*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IVMRMonitorConfig*, uint> Release;
+
+            [NativeTypeName("HRESULT (const VMRGUID *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IVMRMonitorConfig*, VMRGUID*, int> SetMonitor;
+
+            [NativeTypeName("HRESULT (VMRGUID *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IVMRMonitorConfig*, VMRGUID*, int> GetMonitor;
+
+            [NativeTypeName("HRESULT (const VMRGUID *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IVMRMonitorConfig*, VMRGUID*, int> SetDefaultMonitor;
+
+            [NativeTypeName("HRESULT (VMRGUID *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IVMRMonitorConfig*, VMRGUID*, int> GetDefaultMonitor;
+
+            [NativeTypeName("HRESULT (VMRMONITORINFO *, DWORD, DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IVMRMonitorConfig*, VMRMONITORINFO*, uint, uint*, int> GetAvailableMonitors;
+        }
     }
 }

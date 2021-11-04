@@ -94,5 +94,41 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<ITfFnLMProcessor*, ITfContext*, Guid*, int>)(lpVtbl[10]))((ITfFnLMProcessor*)Unsafe.AsPointer(ref this), pic, refguidFunc);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfFnLMProcessor*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfFnLMProcessor*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfFnLMProcessor*, uint> Release;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfFnLMProcessor*, ushort**, int> GetDisplayName;
+
+            [NativeTypeName("HRESULT (ITfRange *, ITfRange **, BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfFnLMProcessor*, ITfRange*, ITfRange**, BOOL*, int> QueryRange;
+
+            [NativeTypeName("HRESULT (LANGID, BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfFnLMProcessor*, ushort, BOOL*, int> QueryLangID;
+
+            [NativeTypeName("HRESULT (ITfRange *, ITfCandidateList **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfFnLMProcessor*, ITfRange*, ITfCandidateList**, int> GetReconversion;
+
+            [NativeTypeName("HRESULT (ITfRange *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfFnLMProcessor*, ITfRange*, int> Reconvert;
+
+            [NativeTypeName("HRESULT (BOOL, WPARAM, LPARAM, BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfFnLMProcessor*, BOOL, WPARAM, LPARAM, BOOL*, int> QueryKey;
+
+            [NativeTypeName("HRESULT (BOOL, WPARAM, LPARAM) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfFnLMProcessor*, BOOL, WPARAM, LPARAM, int> InvokeKey;
+
+            [NativeTypeName("HRESULT (ITfContext *, const GUID &) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfFnLMProcessor*, ITfContext*, Guid*, int> InvokeFunc;
+        }
     }
 }

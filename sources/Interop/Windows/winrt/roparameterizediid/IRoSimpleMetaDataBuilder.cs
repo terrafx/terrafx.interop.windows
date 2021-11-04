@@ -81,5 +81,38 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IRoSimpleMetaDataBuilder*, Guid, uint, int>)(lpVtbl[9]))((IRoSimpleMetaDataBuilder*)Unsafe.AsPointer(ref this), piid, numArgs);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (GUID) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IRoSimpleMetaDataBuilder*, Guid, int> SetWinRtInterface;
+
+            [NativeTypeName("HRESULT (GUID) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IRoSimpleMetaDataBuilder*, Guid, int> SetDelegate;
+
+            [NativeTypeName("HRESULT (PCWSTR, PCWSTR, const GUID *) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IRoSimpleMetaDataBuilder*, ushort*, ushort*, Guid*, int> SetInterfaceGroupSimpleDefault;
+
+            [NativeTypeName("HRESULT (PCWSTR, UINT32, PCWSTR *) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IRoSimpleMetaDataBuilder*, ushort*, uint, ushort**, int> SetInterfaceGroupParameterizedDefault;
+
+            [NativeTypeName("HRESULT (PCWSTR, PCWSTR, const GUID *) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IRoSimpleMetaDataBuilder*, ushort*, ushort*, Guid*, int> SetRuntimeClassSimpleDefault;
+
+            [NativeTypeName("HRESULT (PCWSTR, UINT32, const PCWSTR *) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IRoSimpleMetaDataBuilder*, ushort*, uint, ushort**, int> SetRuntimeClassParameterizedDefault;
+
+            [NativeTypeName("HRESULT (PCWSTR, UINT32, const PCWSTR *) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IRoSimpleMetaDataBuilder*, ushort*, uint, ushort**, int> SetStruct;
+
+            [NativeTypeName("HRESULT (PCWSTR, PCWSTR) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IRoSimpleMetaDataBuilder*, ushort*, ushort*, int> SetEnum;
+
+            [NativeTypeName("HRESULT (GUID, UINT32) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IRoSimpleMetaDataBuilder*, Guid, uint, int> SetParameterizedInterface;
+
+            [NativeTypeName("HRESULT (GUID, UINT32) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IRoSimpleMetaDataBuilder*, Guid, uint, int> SetParameterizedDelegate;
+        }
     }
 }

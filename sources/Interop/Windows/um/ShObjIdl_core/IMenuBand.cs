@@ -52,5 +52,23 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IMenuBand*, MSG*, LRESULT*, int>)(lpVtbl[4]))((IMenuBand*)Unsafe.AsPointer(ref this), pmsg, plRet);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMenuBand*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMenuBand*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMenuBand*, uint> Release;
+
+            [NativeTypeName("HRESULT (MSG *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMenuBand*, MSG*, int> IsMenuMessage;
+
+            [NativeTypeName("HRESULT (MSG *, LRESULT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMenuBand*, MSG*, LRESULT*, int> TranslateMenuMessage;
+        }
     }
 }

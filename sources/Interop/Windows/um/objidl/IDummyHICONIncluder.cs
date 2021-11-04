@@ -45,5 +45,20 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IDummyHICONIncluder*, HICON, HDC, int>)(lpVtbl[3]))((IDummyHICONIncluder*)Unsafe.AsPointer(ref this), h1, h2);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDummyHICONIncluder*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDummyHICONIncluder*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDummyHICONIncluder*, uint> Release;
+
+            [NativeTypeName("HRESULT (HICON, HDC) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDummyHICONIncluder*, HICON, HDC, int> Dummy;
+        }
     }
 }

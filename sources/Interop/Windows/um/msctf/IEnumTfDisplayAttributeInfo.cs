@@ -66,5 +66,29 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IEnumTfDisplayAttributeInfo*, uint, int>)(lpVtbl[6]))((IEnumTfDisplayAttributeInfo*)Unsafe.AsPointer(ref this), ulCount);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IEnumTfDisplayAttributeInfo*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IEnumTfDisplayAttributeInfo*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IEnumTfDisplayAttributeInfo*, uint> Release;
+
+            [NativeTypeName("HRESULT (IEnumTfDisplayAttributeInfo **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IEnumTfDisplayAttributeInfo*, IEnumTfDisplayAttributeInfo**, int> Clone;
+
+            [NativeTypeName("HRESULT (ULONG, ITfDisplayAttributeInfo **, ULONG *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IEnumTfDisplayAttributeInfo*, uint, ITfDisplayAttributeInfo**, uint*, int> Next;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IEnumTfDisplayAttributeInfo*, int> Reset;
+
+            [NativeTypeName("HRESULT (ULONG) __attribute__((stdcall))")]
+            public delegate* unmanaged<IEnumTfDisplayAttributeInfo*, uint, int> Skip;
+        }
     }
 }

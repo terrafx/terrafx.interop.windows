@@ -122,5 +122,53 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<ITfLangBarItemMgr*, uint, uint*, int>)(lpVtbl[14]))((ITfLangBarItemMgr*)Unsafe.AsPointer(ref this), ulCount, pdwCookie);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfLangBarItemMgr*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfLangBarItemMgr*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfLangBarItemMgr*, uint> Release;
+
+            [NativeTypeName("HRESULT (IEnumTfLangBarItems **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfLangBarItemMgr*, IEnumTfLangBarItems**, int> EnumItems;
+
+            [NativeTypeName("HRESULT (const GUID &, ITfLangBarItem **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfLangBarItemMgr*, Guid*, ITfLangBarItem**, int> GetItem;
+
+            [NativeTypeName("HRESULT (ITfLangBarItem *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfLangBarItemMgr*, ITfLangBarItem*, int> AddItem;
+
+            [NativeTypeName("HRESULT (ITfLangBarItem *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfLangBarItemMgr*, ITfLangBarItem*, int> RemoveItem;
+
+            [NativeTypeName("HRESULT (ITfLangBarItemSink *, DWORD *, const GUID &) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfLangBarItemMgr*, ITfLangBarItemSink*, uint*, Guid*, int> AdviseItemSink;
+
+            [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfLangBarItemMgr*, uint, int> UnadviseItemSink;
+
+            [NativeTypeName("HRESULT (DWORD, const GUID &, RECT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfLangBarItemMgr*, uint, Guid*, RECT*, int> GetItemFloatingRect;
+
+            [NativeTypeName("HRESULT (ULONG, const GUID *, DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfLangBarItemMgr*, uint, Guid*, uint*, int> GetItemsStatus;
+
+            [NativeTypeName("HRESULT (ULONG *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfLangBarItemMgr*, uint*, int> GetItemNum;
+
+            [NativeTypeName("HRESULT (ULONG, ITfLangBarItem **, TF_LANGBARITEMINFO *, DWORD *, ULONG *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfLangBarItemMgr*, uint, ITfLangBarItem**, TF_LANGBARITEMINFO*, uint*, uint*, int> GetItems;
+
+            [NativeTypeName("HRESULT (ULONG, ITfLangBarItemSink **, const GUID *, DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfLangBarItemMgr*, uint, ITfLangBarItemSink**, Guid*, uint*, int> AdviseItemsSink;
+
+            [NativeTypeName("HRESULT (ULONG, DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfLangBarItemMgr*, uint, uint*, int> UnadviseItemsSink;
+        }
     }
 }

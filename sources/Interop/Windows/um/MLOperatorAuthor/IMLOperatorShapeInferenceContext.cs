@@ -124,5 +124,53 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IMLOperatorShapeInferenceContext*, uint, uint, uint*, int>)(lpVtbl[14]))((IMLOperatorShapeInferenceContext*)Unsafe.AsPointer(ref this), outputIndex, dimensionCount, dimensions);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMLOperatorShapeInferenceContext*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMLOperatorShapeInferenceContext*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMLOperatorShapeInferenceContext*, uint> Release;
+
+            [NativeTypeName("HRESULT (const char *, MLOperatorAttributeType, uint32_t *) const noexcept __attribute__((stdcall))")]
+            public delegate* unmanaged<IMLOperatorShapeInferenceContext*, sbyte*, MLOperatorAttributeType, uint*, int> GetAttributeElementCount;
+
+            [NativeTypeName("HRESULT (const char *, MLOperatorAttributeType, uint32_t, size_t, void *) const noexcept __attribute__((stdcall))")]
+            public delegate* unmanaged<IMLOperatorShapeInferenceContext*, sbyte*, MLOperatorAttributeType, uint, nuint, void*, int> GetAttribute;
+
+            [NativeTypeName("HRESULT (const char *, uint32_t, uint32_t *) const noexcept __attribute__((stdcall))")]
+            public delegate* unmanaged<IMLOperatorShapeInferenceContext*, sbyte*, uint, uint*, int> GetStringAttributeElementLength;
+
+            [NativeTypeName("HRESULT (const char *, uint32_t, uint32_t, char *) const noexcept __attribute__((stdcall))")]
+            public delegate* unmanaged<IMLOperatorShapeInferenceContext*, sbyte*, uint, uint, sbyte*, int> GetStringAttributeElement;
+
+            [NativeTypeName("uint32_t () const noexcept __attribute__((stdcall))")]
+            public delegate* unmanaged<IMLOperatorShapeInferenceContext*, uint> GetInputCount;
+
+            [NativeTypeName("uint32_t () const noexcept __attribute__((stdcall))")]
+            public delegate* unmanaged<IMLOperatorShapeInferenceContext*, uint> GetOutputCount;
+
+            [NativeTypeName("bool (uint32_t) const noexcept __attribute__((stdcall))")]
+            public delegate* unmanaged<IMLOperatorShapeInferenceContext*, uint, byte> IsInputValid;
+
+            [NativeTypeName("bool (uint32_t) const noexcept __attribute__((stdcall))")]
+            public delegate* unmanaged<IMLOperatorShapeInferenceContext*, uint, byte> IsOutputValid;
+
+            [NativeTypeName("HRESULT (uint32_t, MLOperatorEdgeDescription *) const noexcept __attribute__((stdcall))")]
+            public delegate* unmanaged<IMLOperatorShapeInferenceContext*, uint, MLOperatorEdgeDescription*, int> GetInputEdgeDescription;
+
+            [NativeTypeName("HRESULT (uint32_t, uint32_t *) const noexcept __attribute__((stdcall))")]
+            public delegate* unmanaged<IMLOperatorShapeInferenceContext*, uint, uint*, int> GetInputTensorDimensionCount;
+
+            [NativeTypeName("HRESULT (uint32_t, uint32_t, uint32_t *) const noexcept __attribute__((stdcall))")]
+            public delegate* unmanaged<IMLOperatorShapeInferenceContext*, uint, uint, uint*, int> GetInputTensorShape;
+
+            [NativeTypeName("HRESULT (uint32_t, uint32_t, const uint32_t *) noexcept __attribute__((stdcall))")]
+            public delegate* unmanaged<IMLOperatorShapeInferenceContext*, uint, uint, uint*, int> SetOutputTensorShape;
+        }
     }
 }

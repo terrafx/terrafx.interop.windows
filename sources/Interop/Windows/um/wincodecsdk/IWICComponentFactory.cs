@@ -262,5 +262,113 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IWICComponentFactory*, PROPBAG2*, uint, IPropertyBag2**, int>)(lpVtbl[34]))((IWICComponentFactory*)Unsafe.AsPointer(ref this), ppropOptions, cCount, ppIPropertyBag);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWICComponentFactory*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IWICComponentFactory*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IWICComponentFactory*, uint> Release;
+
+            [NativeTypeName("HRESULT (LPCWSTR, const GUID *, DWORD, WICDecodeOptions, IWICBitmapDecoder **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWICComponentFactory*, ushort*, Guid*, uint, WICDecodeOptions, IWICBitmapDecoder**, int> CreateDecoderFromFilename;
+
+            [NativeTypeName("HRESULT (IStream *, const GUID *, WICDecodeOptions, IWICBitmapDecoder **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWICComponentFactory*, IStream*, Guid*, WICDecodeOptions, IWICBitmapDecoder**, int> CreateDecoderFromStream;
+
+            [NativeTypeName("HRESULT (ULONG_PTR, const GUID *, WICDecodeOptions, IWICBitmapDecoder **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWICComponentFactory*, nuint, Guid*, WICDecodeOptions, IWICBitmapDecoder**, int> CreateDecoderFromFileHandle;
+
+            [NativeTypeName("HRESULT (const IID &, IWICComponentInfo **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWICComponentFactory*, Guid*, IWICComponentInfo**, int> CreateComponentInfo;
+
+            [NativeTypeName("HRESULT (const GUID &, const GUID *, IWICBitmapDecoder **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWICComponentFactory*, Guid*, Guid*, IWICBitmapDecoder**, int> CreateDecoder;
+
+            [NativeTypeName("HRESULT (const GUID &, const GUID *, IWICBitmapEncoder **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWICComponentFactory*, Guid*, Guid*, IWICBitmapEncoder**, int> CreateEncoder;
+
+            [NativeTypeName("HRESULT (IWICPalette **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWICComponentFactory*, IWICPalette**, int> CreatePalette;
+
+            [NativeTypeName("HRESULT (IWICFormatConverter **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWICComponentFactory*, IWICFormatConverter**, int> CreateFormatConverter;
+
+            [NativeTypeName("HRESULT (IWICBitmapScaler **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWICComponentFactory*, IWICBitmapScaler**, int> CreateBitmapScaler;
+
+            [NativeTypeName("HRESULT (IWICBitmapClipper **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWICComponentFactory*, IWICBitmapClipper**, int> CreateBitmapClipper;
+
+            [NativeTypeName("HRESULT (IWICBitmapFlipRotator **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWICComponentFactory*, IWICBitmapFlipRotator**, int> CreateBitmapFlipRotator;
+
+            [NativeTypeName("HRESULT (IWICStream **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWICComponentFactory*, IWICStream**, int> CreateStream;
+
+            [NativeTypeName("HRESULT (IWICColorContext **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWICComponentFactory*, IWICColorContext**, int> CreateColorContext;
+
+            [NativeTypeName("HRESULT (IWICColorTransform **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWICComponentFactory*, IWICColorTransform**, int> CreateColorTransformer;
+
+            [NativeTypeName("HRESULT (UINT, UINT, REFWICPixelFormatGUID, WICBitmapCreateCacheOption, IWICBitmap **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWICComponentFactory*, uint, uint, Guid*, WICBitmapCreateCacheOption, IWICBitmap**, int> CreateBitmap;
+
+            [NativeTypeName("HRESULT (IWICBitmapSource *, WICBitmapCreateCacheOption, IWICBitmap **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWICComponentFactory*, IWICBitmapSource*, WICBitmapCreateCacheOption, IWICBitmap**, int> CreateBitmapFromSource;
+
+            [NativeTypeName("HRESULT (IWICBitmapSource *, UINT, UINT, UINT, UINT, IWICBitmap **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWICComponentFactory*, IWICBitmapSource*, uint, uint, uint, uint, IWICBitmap**, int> CreateBitmapFromSourceRect;
+
+            [NativeTypeName("HRESULT (UINT, UINT, REFWICPixelFormatGUID, UINT, UINT, BYTE *, IWICBitmap **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWICComponentFactory*, uint, uint, Guid*, uint, uint, byte*, IWICBitmap**, int> CreateBitmapFromMemory;
+
+            [NativeTypeName("HRESULT (HBITMAP, HPALETTE, WICBitmapAlphaChannelOption, IWICBitmap **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWICComponentFactory*, HBITMAP, HPALETTE, WICBitmapAlphaChannelOption, IWICBitmap**, int> CreateBitmapFromHBITMAP;
+
+            [NativeTypeName("HRESULT (HICON, IWICBitmap **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWICComponentFactory*, HICON, IWICBitmap**, int> CreateBitmapFromHICON;
+
+            [NativeTypeName("HRESULT (DWORD, DWORD, IEnumUnknown **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWICComponentFactory*, uint, uint, IEnumUnknown**, int> CreateComponentEnumerator;
+
+            [NativeTypeName("HRESULT (IWICBitmapDecoder *, IWICFastMetadataEncoder **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWICComponentFactory*, IWICBitmapDecoder*, IWICFastMetadataEncoder**, int> CreateFastMetadataEncoderFromDecoder;
+
+            [NativeTypeName("HRESULT (IWICBitmapFrameDecode *, IWICFastMetadataEncoder **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWICComponentFactory*, IWICBitmapFrameDecode*, IWICFastMetadataEncoder**, int> CreateFastMetadataEncoderFromFrameDecode;
+
+            [NativeTypeName("HRESULT (const GUID &, const GUID *, IWICMetadataQueryWriter **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWICComponentFactory*, Guid*, Guid*, IWICMetadataQueryWriter**, int> CreateQueryWriter;
+
+            [NativeTypeName("HRESULT (IWICMetadataQueryReader *, const GUID *, IWICMetadataQueryWriter **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWICComponentFactory*, IWICMetadataQueryReader*, Guid*, IWICMetadataQueryWriter**, int> CreateQueryWriterFromReader;
+
+            [NativeTypeName("HRESULT (const GUID &, const GUID *, DWORD, IStream *, IWICMetadataReader **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWICComponentFactory*, Guid*, Guid*, uint, IStream*, IWICMetadataReader**, int> CreateMetadataReader;
+
+            [NativeTypeName("HRESULT (const GUID &, const GUID *, DWORD, IStream *, IWICMetadataReader **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWICComponentFactory*, Guid*, Guid*, uint, IStream*, IWICMetadataReader**, int> CreateMetadataReaderFromContainer;
+
+            [NativeTypeName("HRESULT (const GUID &, const GUID *, DWORD, IWICMetadataWriter **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWICComponentFactory*, Guid*, Guid*, uint, IWICMetadataWriter**, int> CreateMetadataWriter;
+
+            [NativeTypeName("HRESULT (IWICMetadataReader *, const GUID *, IWICMetadataWriter **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWICComponentFactory*, IWICMetadataReader*, Guid*, IWICMetadataWriter**, int> CreateMetadataWriterFromReader;
+
+            [NativeTypeName("HRESULT (IWICMetadataBlockReader *, IWICMetadataQueryReader **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWICComponentFactory*, IWICMetadataBlockReader*, IWICMetadataQueryReader**, int> CreateQueryReaderFromBlockReader;
+
+            [NativeTypeName("HRESULT (IWICMetadataBlockWriter *, IWICMetadataQueryWriter **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWICComponentFactory*, IWICMetadataBlockWriter*, IWICMetadataQueryWriter**, int> CreateQueryWriterFromBlockWriter;
+
+            [NativeTypeName("HRESULT (PROPBAG2 *, UINT, IPropertyBag2 **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWICComponentFactory*, PROPBAG2*, uint, IPropertyBag2**, int> CreateEncoderPropertyBag;
+        }
     }
 }

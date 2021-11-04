@@ -87,5 +87,38 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IAudioSessionEvents*, AudioSessionDisconnectReason, int>)(lpVtbl[9]))((IAudioSessionEvents*)Unsafe.AsPointer(ref this), DisconnectReason);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAudioSessionEvents*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IAudioSessionEvents*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IAudioSessionEvents*, uint> Release;
+
+            [NativeTypeName("HRESULT (LPCWSTR, LPCGUID) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAudioSessionEvents*, ushort*, Guid*, int> OnDisplayNameChanged;
+
+            [NativeTypeName("HRESULT (LPCWSTR, LPCGUID) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAudioSessionEvents*, ushort*, Guid*, int> OnIconPathChanged;
+
+            [NativeTypeName("HRESULT (float, BOOL, LPCGUID) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAudioSessionEvents*, float, BOOL, Guid*, int> OnSimpleVolumeChanged;
+
+            [NativeTypeName("HRESULT (DWORD, float *, DWORD, LPCGUID) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAudioSessionEvents*, uint, float*, uint, Guid*, int> OnChannelVolumeChanged;
+
+            [NativeTypeName("HRESULT (LPCGUID, LPCGUID) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAudioSessionEvents*, Guid*, Guid*, int> OnGroupingParamChanged;
+
+            [NativeTypeName("HRESULT (AudioSessionState) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAudioSessionEvents*, AudioSessionState, int> OnStateChanged;
+
+            [NativeTypeName("HRESULT (AudioSessionDisconnectReason) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAudioSessionEvents*, AudioSessionDisconnectReason, int> OnSessionDisconnected;
+        }
     }
 }

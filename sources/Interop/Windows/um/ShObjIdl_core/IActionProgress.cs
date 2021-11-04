@@ -80,5 +80,35 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IActionProgress*, int>)(lpVtbl[8]))((IActionProgress*)Unsafe.AsPointer(ref this));
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IActionProgress*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IActionProgress*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IActionProgress*, uint> Release;
+
+            [NativeTypeName("HRESULT (SPACTION, SPBEGINF) __attribute__((stdcall))")]
+            public delegate* unmanaged<IActionProgress*, SPACTION, uint, int> Begin;
+
+            [NativeTypeName("HRESULT (ULONGLONG, ULONGLONG) __attribute__((stdcall))")]
+            public delegate* unmanaged<IActionProgress*, ulong, ulong, int> UpdateProgress;
+
+            [NativeTypeName("HRESULT (SPTEXT, LPCWSTR, BOOL) __attribute__((stdcall))")]
+            public delegate* unmanaged<IActionProgress*, SPTEXT, ushort*, BOOL, int> UpdateText;
+
+            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IActionProgress*, BOOL*, int> QueryCancel;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IActionProgress*, int> ResetCancel;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IActionProgress*, int> End;
+        }
     }
 }

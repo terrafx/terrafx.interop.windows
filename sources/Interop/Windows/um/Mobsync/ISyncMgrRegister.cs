@@ -59,5 +59,26 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<ISyncMgrRegister*, Guid*, uint*, int>)(lpVtbl[5]))((ISyncMgrRegister*)Unsafe.AsPointer(ref this), clsidHandler, pdwSyncMgrRegisterFlags);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISyncMgrRegister*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ISyncMgrRegister*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ISyncMgrRegister*, uint> Release;
+
+            [NativeTypeName("HRESULT (const IID &, LPCWSTR, DWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISyncMgrRegister*, Guid*, ushort*, uint, int> RegisterSyncMgrHandler;
+
+            [NativeTypeName("HRESULT (const IID &, DWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISyncMgrRegister*, Guid*, uint, int> UnregisterSyncMgrHandler;
+
+            [NativeTypeName("HRESULT (const IID &, LPDWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISyncMgrRegister*, Guid*, uint*, int> GetHandlerRegistrationInfo;
+        }
     }
 }

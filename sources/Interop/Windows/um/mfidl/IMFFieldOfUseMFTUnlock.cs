@@ -45,5 +45,20 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IMFFieldOfUseMFTUnlock*, IUnknown*, int>)(lpVtbl[3]))((IMFFieldOfUseMFTUnlock*)Unsafe.AsPointer(ref this), pUnkMFT);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFFieldOfUseMFTUnlock*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFFieldOfUseMFTUnlock*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFFieldOfUseMFTUnlock*, uint> Release;
+
+            [NativeTypeName("HRESULT (IUnknown *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFFieldOfUseMFTUnlock*, IUnknown*, int> Unlock;
+        }
     }
 }

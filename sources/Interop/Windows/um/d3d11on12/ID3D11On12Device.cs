@@ -59,5 +59,26 @@ namespace TerraFX.Interop
         {
             ((delegate* unmanaged<ID3D11On12Device*, ID3D11Resource**, uint, void>)(lpVtbl[5]))((ID3D11On12Device*)Unsafe.AsPointer(ref this), ppResources, NumResources);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D11On12Device*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D11On12Device*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D11On12Device*, uint> Release;
+
+            [NativeTypeName("HRESULT (IUnknown *, const D3D11_RESOURCE_FLAGS *, D3D12_RESOURCE_STATES, D3D12_RESOURCE_STATES, const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D11On12Device*, IUnknown*, D3D11_RESOURCE_FLAGS*, D3D12_RESOURCE_STATES, D3D12_RESOURCE_STATES, Guid*, void**, int> CreateWrappedResource;
+
+            [NativeTypeName("void (ID3D11Resource *const *, UINT) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D11On12Device*, ID3D11Resource**, uint, void> ReleaseWrappedResources;
+
+            [NativeTypeName("void (ID3D11Resource *const *, UINT) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D11On12Device*, ID3D11Resource**, uint, void> AcquireWrappedResources;
+        }
     }
 }

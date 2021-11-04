@@ -66,5 +66,29 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IEnumRegisterWordA*, uint, int>)(lpVtbl[6]))((IEnumRegisterWordA*)Unsafe.AsPointer(ref this), ulCount);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IEnumRegisterWordA*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IEnumRegisterWordA*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IEnumRegisterWordA*, uint> Release;
+
+            [NativeTypeName("HRESULT (IEnumRegisterWordA **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IEnumRegisterWordA*, IEnumRegisterWordA**, int> Clone;
+
+            [NativeTypeName("HRESULT (ULONG, REGISTERWORDA *, ULONG *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IEnumRegisterWordA*, uint, REGISTERWORDA*, uint*, int> Next;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IEnumRegisterWordA*, int> Reset;
+
+            [NativeTypeName("HRESULT (ULONG) __attribute__((stdcall))")]
+            public delegate* unmanaged<IEnumRegisterWordA*, uint, int> Skip;
+        }
     }
 }

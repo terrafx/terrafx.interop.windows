@@ -101,5 +101,44 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<ISyncMgrSynchronizeCallback*, ushort*, uint, int>)(lpVtbl[11]))((ISyncMgrSynchronizeCallback*)Unsafe.AsPointer(ref this), pwszConnection, dwReserved);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISyncMgrSynchronizeCallback*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ISyncMgrSynchronizeCallback*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ISyncMgrSynchronizeCallback*, uint> Release;
+
+            [NativeTypeName("HRESULT (HRESULT) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISyncMgrSynchronizeCallback*, HRESULT, int> ShowPropertiesCompleted;
+
+            [NativeTypeName("HRESULT (HRESULT) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISyncMgrSynchronizeCallback*, HRESULT, int> PrepareForSyncCompleted;
+
+            [NativeTypeName("HRESULT (HRESULT) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISyncMgrSynchronizeCallback*, HRESULT, int> SynchronizeCompleted;
+
+            [NativeTypeName("HRESULT (HRESULT, ULONG, const GUID *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISyncMgrSynchronizeCallback*, HRESULT, uint, Guid*, int> ShowErrorCompleted;
+
+            [NativeTypeName("HRESULT (BOOL) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISyncMgrSynchronizeCallback*, BOOL, int> EnableModeless;
+
+            [NativeTypeName("HRESULT (const GUID &, const SYNCMGRPROGRESSITEM *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISyncMgrSynchronizeCallback*, Guid*, SYNCMGRPROGRESSITEM*, int> Progress;
+
+            [NativeTypeName("HRESULT (DWORD, LPCWSTR, const SYNCMGRLOGERRORINFO *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISyncMgrSynchronizeCallback*, uint, ushort*, SYNCMGRLOGERRORINFO*, int> LogError;
+
+            [NativeTypeName("HRESULT (const GUID &, DWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISyncMgrSynchronizeCallback*, Guid*, uint, int> DeleteLogError;
+
+            [NativeTypeName("HRESULT (LPCWSTR, DWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISyncMgrSynchronizeCallback*, ushort*, uint, int> EstablishConnection;
+        }
     }
 }

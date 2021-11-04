@@ -59,5 +59,26 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IAppxBundleWriter4*, ushort*, IStream*, BOOL, int>)(lpVtbl[5]))((IAppxBundleWriter4*)Unsafe.AsPointer(ref this), fileName, inputStream, isDefaultApplicablePackage);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAppxBundleWriter4*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IAppxBundleWriter4*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IAppxBundleWriter4*, uint> Release;
+
+            [NativeTypeName("HRESULT (LPCWSTR, IStream *, BOOL) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAppxBundleWriter4*, ushort*, IStream*, BOOL, int> AddPayloadPackage;
+
+            [NativeTypeName("HRESULT (LPCWSTR, IStream *, BOOL) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAppxBundleWriter4*, ushort*, IStream*, BOOL, int> AddPackageReference;
+
+            [NativeTypeName("HRESULT (LPCWSTR, IStream *, BOOL) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAppxBundleWriter4*, ushort*, IStream*, BOOL, int> AddExternalPackageReference;
+        }
     }
 }

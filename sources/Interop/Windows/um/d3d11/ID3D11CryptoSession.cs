@@ -101,5 +101,44 @@ namespace TerraFX.Interop
         {
             ((delegate* unmanaged<ID3D11CryptoSession*, HANDLE*, void>)(lpVtbl[11]))((ID3D11CryptoSession*)Unsafe.AsPointer(ref this), pCryptoSessionHandle);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D11CryptoSession*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D11CryptoSession*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D11CryptoSession*, uint> Release;
+
+            [NativeTypeName("void (ID3D11Device **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D11CryptoSession*, ID3D11Device**, void> GetDevice;
+
+            [NativeTypeName("HRESULT (const GUID &, UINT *, void *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D11CryptoSession*, Guid*, uint*, void*, int> GetPrivateData;
+
+            [NativeTypeName("HRESULT (const GUID &, UINT, const void *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D11CryptoSession*, Guid*, uint, void*, int> SetPrivateData;
+
+            [NativeTypeName("HRESULT (const GUID &, const IUnknown *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D11CryptoSession*, Guid*, IUnknown*, int> SetPrivateDataInterface;
+
+            [NativeTypeName("void (GUID *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D11CryptoSession*, Guid*, void> GetCryptoType;
+
+            [NativeTypeName("void (GUID *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D11CryptoSession*, Guid*, void> GetDecoderProfile;
+
+            [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D11CryptoSession*, uint*, int> GetCertificateSize;
+
+            [NativeTypeName("HRESULT (UINT, BYTE *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D11CryptoSession*, uint, byte*, int> GetCertificate;
+
+            [NativeTypeName("void (HANDLE *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D11CryptoSession*, HANDLE*, void> GetCryptoSessionHandle;
+        }
     }
 }

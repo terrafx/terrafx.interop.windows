@@ -59,5 +59,26 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IAppxManifestReader7*, IAppxManifestHostRuntimeDependenciesEnumerator**, int>)(lpVtbl[5]))((IAppxManifestReader7*)Unsafe.AsPointer(ref this), hostRuntimeDependencies);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAppxManifestReader7*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IAppxManifestReader7*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IAppxManifestReader7*, uint> Release;
+
+            [NativeTypeName("HRESULT (IAppxManifestDriverDependenciesEnumerator **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAppxManifestReader7*, IAppxManifestDriverDependenciesEnumerator**, int> GetDriverDependencies;
+
+            [NativeTypeName("HRESULT (IAppxManifestOSPackageDependenciesEnumerator **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAppxManifestReader7*, IAppxManifestOSPackageDependenciesEnumerator**, int> GetOSPackageDependencies;
+
+            [NativeTypeName("HRESULT (IAppxManifestHostRuntimeDependenciesEnumerator **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAppxManifestReader7*, IAppxManifestHostRuntimeDependenciesEnumerator**, int> GetHostRuntimeDependencies;
+        }
     }
 }

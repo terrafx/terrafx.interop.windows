@@ -94,5 +94,41 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<ITfProperty*, uint, ITfRange*, int>)(lpVtbl[10]))((ITfProperty*)Unsafe.AsPointer(ref this), ec, pRange);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfProperty*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfProperty*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfProperty*, uint> Release;
+
+            [NativeTypeName("HRESULT (GUID *) __attribute__((stdcall))")]
+            public new delegate* unmanaged<ITfProperty*, Guid*, int> GetType;
+
+            [NativeTypeName("HRESULT (TfEditCookie, IEnumTfRanges **, ITfRange *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfProperty*, uint, IEnumTfRanges**, ITfRange*, int> EnumRanges;
+
+            [NativeTypeName("HRESULT (TfEditCookie, ITfRange *, VARIANT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfProperty*, uint, ITfRange*, VARIANT*, int> GetValue;
+
+            [NativeTypeName("HRESULT (ITfContext **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfProperty*, ITfContext**, int> GetContext;
+
+            [NativeTypeName("HRESULT (TfEditCookie, ITfRange *, ITfRange **, TfAnchor) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfProperty*, uint, ITfRange*, ITfRange**, TfAnchor, int> FindRange;
+
+            [NativeTypeName("HRESULT (TfEditCookie, ITfRange *, ITfPropertyStore *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfProperty*, uint, ITfRange*, ITfPropertyStore*, int> SetValueStore;
+
+            [NativeTypeName("HRESULT (TfEditCookie, ITfRange *, const VARIANT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfProperty*, uint, ITfRange*, VARIANT*, int> SetValue;
+
+            [NativeTypeName("HRESULT (TfEditCookie, ITfRange *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfProperty*, uint, ITfRange*, int> Clear;
+        }
     }
 }

@@ -276,5 +276,119 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IWbemObjectAccess*, int, int>)(lpVtbl[36]))((IWbemObjectAccess*)Unsafe.AsPointer(ref this), lFlags);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWbemObjectAccess*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IWbemObjectAccess*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IWbemObjectAccess*, uint> Release;
+
+            [NativeTypeName("HRESULT (IWbemQualifierSet **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWbemObjectAccess*, IWbemQualifierSet**, int> GetQualifierSet;
+
+            [NativeTypeName("HRESULT (LPCWSTR, long, VARIANT *, CIMTYPE *, long *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWbemObjectAccess*, ushort*, int, VARIANT*, int*, int*, int> Get;
+
+            [NativeTypeName("HRESULT (LPCWSTR, long, VARIANT *, CIMTYPE) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWbemObjectAccess*, ushort*, int, VARIANT*, int, int> Put;
+
+            [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWbemObjectAccess*, ushort*, int> Delete;
+
+            [NativeTypeName("HRESULT (LPCWSTR, long, VARIANT *, SAFEARRAY **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWbemObjectAccess*, ushort*, int, VARIANT*, SAFEARRAY**, int> GetNames;
+
+            [NativeTypeName("HRESULT (long) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWbemObjectAccess*, int, int> BeginEnumeration;
+
+            [NativeTypeName("HRESULT (long, BSTR *, VARIANT *, CIMTYPE *, long *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWbemObjectAccess*, int, ushort**, VARIANT*, int*, int*, int> Next;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IWbemObjectAccess*, int> EndEnumeration;
+
+            [NativeTypeName("HRESULT (LPCWSTR, IWbemQualifierSet **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWbemObjectAccess*, ushort*, IWbemQualifierSet**, int> GetPropertyQualifierSet;
+
+            [NativeTypeName("HRESULT (IWbemClassObject **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWbemObjectAccess*, IWbemClassObject**, int> Clone;
+
+            [NativeTypeName("HRESULT (long, BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWbemObjectAccess*, int, ushort**, int> GetObjectText;
+
+            [NativeTypeName("HRESULT (long, IWbemClassObject **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWbemObjectAccess*, int, IWbemClassObject**, int> SpawnDerivedClass;
+
+            [NativeTypeName("HRESULT (long, IWbemClassObject **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWbemObjectAccess*, int, IWbemClassObject**, int> SpawnInstance;
+
+            [NativeTypeName("HRESULT (long, IWbemClassObject *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWbemObjectAccess*, int, IWbemClassObject*, int> CompareTo;
+
+            [NativeTypeName("HRESULT (LPCWSTR, BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWbemObjectAccess*, ushort*, ushort**, int> GetPropertyOrigin;
+
+            [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWbemObjectAccess*, ushort*, int> InheritsFrom;
+
+            [NativeTypeName("HRESULT (LPCWSTR, long, IWbemClassObject **, IWbemClassObject **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWbemObjectAccess*, ushort*, int, IWbemClassObject**, IWbemClassObject**, int> GetMethod;
+
+            [NativeTypeName("HRESULT (LPCWSTR, long, IWbemClassObject *, IWbemClassObject *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWbemObjectAccess*, ushort*, int, IWbemClassObject*, IWbemClassObject*, int> PutMethod;
+
+            [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWbemObjectAccess*, ushort*, int> DeleteMethod;
+
+            [NativeTypeName("HRESULT (long) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWbemObjectAccess*, int, int> BeginMethodEnumeration;
+
+            [NativeTypeName("HRESULT (long, BSTR *, IWbemClassObject **, IWbemClassObject **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWbemObjectAccess*, int, ushort**, IWbemClassObject**, IWbemClassObject**, int> NextMethod;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IWbemObjectAccess*, int> EndMethodEnumeration;
+
+            [NativeTypeName("HRESULT (LPCWSTR, IWbemQualifierSet **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWbemObjectAccess*, ushort*, IWbemQualifierSet**, int> GetMethodQualifierSet;
+
+            [NativeTypeName("HRESULT (LPCWSTR, BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWbemObjectAccess*, ushort*, ushort**, int> GetMethodOrigin;
+
+            [NativeTypeName("HRESULT (LPCWSTR, CIMTYPE *, long *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWbemObjectAccess*, ushort*, int*, int*, int> GetPropertyHandle;
+
+            [NativeTypeName("HRESULT (long, long, const byte *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWbemObjectAccess*, int, int, byte*, int> WritePropertyValue;
+
+            [NativeTypeName("HRESULT (long, long, long *, byte *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWbemObjectAccess*, int, int, int*, byte*, int> ReadPropertyValue;
+
+            [NativeTypeName("HRESULT (long, DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWbemObjectAccess*, int, uint*, int> ReadDWORD;
+
+            [NativeTypeName("HRESULT (long, DWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWbemObjectAccess*, int, uint, int> WriteDWORD;
+
+            [NativeTypeName("HRESULT (long, unsigned long long *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWbemObjectAccess*, int, ulong*, int> ReadQWORD;
+
+            [NativeTypeName("HRESULT (long, unsigned long long) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWbemObjectAccess*, int, ulong, int> WriteQWORD;
+
+            [NativeTypeName("HRESULT (long, BSTR *, CIMTYPE *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWbemObjectAccess*, int, ushort**, int*, int> GetPropertyInfoByHandle;
+
+            [NativeTypeName("HRESULT (long) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWbemObjectAccess*, int, int> Lock;
+
+            [NativeTypeName("HRESULT (long) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWbemObjectAccess*, int, int> Unlock;
+        }
     }
 }

@@ -136,5 +136,59 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<ISpRecoResult2*, ushort*, BOOL, int>)(lpVtbl[16]))((ISpRecoResult2*)Unsafe.AsPointer(ref this), pszFeedback, fSuccessful);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpRecoResult2*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpRecoResult2*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpRecoResult2*, uint> Release;
+
+            [NativeTypeName("HRESULT (SPPHRASE **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpRecoResult2*, SPPHRASE**, int> GetPhrase;
+
+            [NativeTypeName("HRESULT (SPSERIALIZEDPHRASE **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpRecoResult2*, SPSERIALIZEDPHRASE**, int> GetSerializedPhrase;
+
+            [NativeTypeName("HRESULT (ULONG, ULONG, BOOL, LPWSTR *, BYTE *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpRecoResult2*, uint, uint, BOOL, ushort**, byte*, int> GetText;
+
+            [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpRecoResult2*, uint, int> Discard;
+
+            [NativeTypeName("HRESULT (SPRECORESULTTIMES *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpRecoResult2*, SPRECORESULTTIMES*, int> GetResultTimes;
+
+            [NativeTypeName("HRESULT (ULONG, ULONG, ULONG, ISpPhraseAlt **, ULONG *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpRecoResult2*, uint, uint, uint, ISpPhraseAlt**, uint*, int> GetAlternates;
+
+            [NativeTypeName("HRESULT (ULONG, ULONG, ISpStreamFormat **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpRecoResult2*, uint, uint, ISpStreamFormat**, int> GetAudio;
+
+            [NativeTypeName("HRESULT (ULONG, ULONG, DWORD, ULONG *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpRecoResult2*, uint, uint, uint, uint*, int> SpeakAudio;
+
+            [NativeTypeName("HRESULT (SPSERIALIZEDRESULT **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpRecoResult2*, SPSERIALIZEDRESULT**, int> Serialize;
+
+            [NativeTypeName("HRESULT (const GUID *, const WAVEFORMATEX *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpRecoResult2*, Guid*, WAVEFORMATEX*, int> ScaleAudio;
+
+            [NativeTypeName("HRESULT (ISpRecoContext **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpRecoResult2*, ISpRecoContext**, int> GetRecoContext;
+
+            [NativeTypeName("HRESULT (ISpPhraseAlt *, ISpRecoResult **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpRecoResult2*, ISpPhraseAlt*, ISpRecoResult**, int> CommitAlternate;
+
+            [NativeTypeName("HRESULT (ULONG, ULONG, LPCWSTR, DWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpRecoResult2*, uint, uint, ushort*, uint, int> CommitText;
+
+            [NativeTypeName("HRESULT (LPCWSTR, BOOL) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpRecoResult2*, ushort*, BOOL, int> SetTextFeedback;
+        }
     }
 }

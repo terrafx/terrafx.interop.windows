@@ -115,5 +115,50 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IMFMediaKeySession2*, int>)(lpVtbl[13]))((IMFMediaKeySession2*)Unsafe.AsPointer(ref this));
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFMediaKeySession2*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFMediaKeySession2*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFMediaKeySession2*, uint> Release;
+
+            [NativeTypeName("HRESULT (USHORT *, DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFMediaKeySession2*, ushort*, uint*, int> GetError;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFMediaKeySession2*, ushort**, int> get_KeySystem;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFMediaKeySession2*, ushort**, int> get_SessionId;
+
+            [NativeTypeName("HRESULT (const BYTE *, DWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFMediaKeySession2*, byte*, uint, int> Update;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFMediaKeySession2*, int> Close;
+
+            [NativeTypeName("HRESULT (MFMediaKeyStatus **, UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFMediaKeySession2*, MFMediaKeyStatus**, uint*, int> get_KeyStatuses;
+
+            [NativeTypeName("HRESULT (BSTR, BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFMediaKeySession2*, ushort*, BOOL*, int> Load;
+
+            [NativeTypeName("HRESULT (BSTR, const BYTE *, DWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFMediaKeySession2*, ushort*, byte*, uint, int> GenerateRequest;
+
+            [NativeTypeName("HRESULT (double *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFMediaKeySession2*, double*, int> get_Expiration;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFMediaKeySession2*, int> Remove;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFMediaKeySession2*, int> Shutdown;
+        }
     }
 }

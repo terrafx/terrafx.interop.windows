@@ -52,5 +52,23 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IObjectWithFolderEnumMode*, FOLDER_ENUM_MODE*, int>)(lpVtbl[4]))((IObjectWithFolderEnumMode*)Unsafe.AsPointer(ref this), pfeMode);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IObjectWithFolderEnumMode*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IObjectWithFolderEnumMode*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IObjectWithFolderEnumMode*, uint> Release;
+
+            [NativeTypeName("HRESULT (FOLDER_ENUM_MODE) __attribute__((stdcall))")]
+            public delegate* unmanaged<IObjectWithFolderEnumMode*, FOLDER_ENUM_MODE, int> SetMode;
+
+            [NativeTypeName("HRESULT (FOLDER_ENUM_MODE *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IObjectWithFolderEnumMode*, FOLDER_ENUM_MODE*, int> GetMode;
+        }
     }
 }

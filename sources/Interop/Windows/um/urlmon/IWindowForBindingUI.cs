@@ -45,5 +45,20 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IWindowForBindingUI*, Guid*, HWND*, int>)(lpVtbl[3]))((IWindowForBindingUI*)Unsafe.AsPointer(ref this), rguidReason, phwnd);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWindowForBindingUI*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IWindowForBindingUI*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IWindowForBindingUI*, uint> Release;
+
+            [NativeTypeName("HRESULT (const GUID &, HWND *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWindowForBindingUI*, Guid*, HWND*, int> GetWindow;
+        }
     }
 }

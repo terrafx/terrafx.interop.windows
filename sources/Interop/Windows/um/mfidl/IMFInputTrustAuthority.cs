@@ -80,5 +80,35 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IMFInputTrustAuthority*, int>)(lpVtbl[8]))((IMFInputTrustAuthority*)Unsafe.AsPointer(ref this));
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFInputTrustAuthority*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFInputTrustAuthority*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFInputTrustAuthority*, uint> Release;
+
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFInputTrustAuthority*, Guid*, void**, int> GetDecrypter;
+
+            [NativeTypeName("HRESULT (MFPOLICYMANAGER_ACTION, IMFActivate **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFInputTrustAuthority*, MFPOLICYMANAGER_ACTION, IMFActivate**, int> RequestAccess;
+
+            [NativeTypeName("HRESULT (MFPOLICYMANAGER_ACTION, IMFOutputPolicy **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFInputTrustAuthority*, MFPOLICYMANAGER_ACTION, IMFOutputPolicy**, int> GetPolicy;
+
+            [NativeTypeName("HRESULT (MFINPUTTRUSTAUTHORITY_ACCESS_PARAMS *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFInputTrustAuthority*, MFINPUTTRUSTAUTHORITY_ACCESS_PARAMS*, int> BindAccess;
+
+            [NativeTypeName("HRESULT (MFINPUTTRUSTAUTHORITY_ACCESS_PARAMS *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFInputTrustAuthority*, MFINPUTTRUSTAUTHORITY_ACCESS_PARAMS*, int> UpdateAccess;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFInputTrustAuthority*, int> Reset;
+        }
     }
 }

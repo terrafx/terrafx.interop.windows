@@ -73,5 +73,32 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IMLOperatorTensorShapeDescription*, uint, uint, uint*, int>)(lpVtbl[7]))((IMLOperatorTensorShapeDescription*)Unsafe.AsPointer(ref this), outputIndex, dimensionCount, dimensions);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMLOperatorTensorShapeDescription*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMLOperatorTensorShapeDescription*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMLOperatorTensorShapeDescription*, uint> Release;
+
+            [NativeTypeName("HRESULT (uint32_t, uint32_t *) const noexcept __attribute__((stdcall))")]
+            public delegate* unmanaged<IMLOperatorTensorShapeDescription*, uint, uint*, int> GetInputTensorDimensionCount;
+
+            [NativeTypeName("HRESULT (uint32_t, uint32_t, uint32_t *) const noexcept __attribute__((stdcall))")]
+            public delegate* unmanaged<IMLOperatorTensorShapeDescription*, uint, uint, uint*, int> GetInputTensorShape;
+
+            [NativeTypeName("bool () const noexcept __attribute__((stdcall))")]
+            public delegate* unmanaged<IMLOperatorTensorShapeDescription*, byte> HasOutputShapeDescription;
+
+            [NativeTypeName("HRESULT (uint32_t, uint32_t *) const noexcept __attribute__((stdcall))")]
+            public delegate* unmanaged<IMLOperatorTensorShapeDescription*, uint, uint*, int> GetOutputTensorDimensionCount;
+
+            [NativeTypeName("HRESULT (uint32_t, uint32_t, uint32_t *) const noexcept __attribute__((stdcall))")]
+            public delegate* unmanaged<IMLOperatorTensorShapeDescription*, uint, uint, uint*, int> GetOutputTensorShape;
+        }
     }
 }

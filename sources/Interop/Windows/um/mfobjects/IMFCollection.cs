@@ -80,5 +80,35 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IMFCollection*, int>)(lpVtbl[8]))((IMFCollection*)Unsafe.AsPointer(ref this));
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFCollection*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFCollection*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFCollection*, uint> Release;
+
+            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFCollection*, uint*, int> GetElementCount;
+
+            [NativeTypeName("HRESULT (DWORD, IUnknown **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFCollection*, uint, IUnknown**, int> GetElement;
+
+            [NativeTypeName("HRESULT (IUnknown *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFCollection*, IUnknown*, int> AddElement;
+
+            [NativeTypeName("HRESULT (DWORD, IUnknown **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFCollection*, uint, IUnknown**, int> RemoveElement;
+
+            [NativeTypeName("HRESULT (DWORD, IUnknown *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFCollection*, uint, IUnknown*, int> InsertElementAt;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFCollection*, int> RemoveAllElements;
+        }
     }
 }

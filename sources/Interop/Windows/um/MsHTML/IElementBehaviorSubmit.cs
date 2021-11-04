@@ -52,5 +52,23 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IElementBehaviorSubmit*, int>)(lpVtbl[4]))((IElementBehaviorSubmit*)Unsafe.AsPointer(ref this));
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IElementBehaviorSubmit*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IElementBehaviorSubmit*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IElementBehaviorSubmit*, uint> Release;
+
+            [NativeTypeName("HRESULT (IHTMLSubmitData *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IElementBehaviorSubmit*, IHTMLSubmitData*, int> GetSubmitInfo;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IElementBehaviorSubmit*, int> Reset;
+        }
     }
 }

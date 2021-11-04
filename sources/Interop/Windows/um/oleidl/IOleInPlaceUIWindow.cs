@@ -80,5 +80,35 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IOleInPlaceUIWindow*, IOleInPlaceActiveObject*, ushort*, int>)(lpVtbl[8]))((IOleInPlaceUIWindow*)Unsafe.AsPointer(ref this), pActiveObject, pszObjName);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IOleInPlaceUIWindow*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IOleInPlaceUIWindow*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IOleInPlaceUIWindow*, uint> Release;
+
+            [NativeTypeName("HRESULT (HWND *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IOleInPlaceUIWindow*, HWND*, int> GetWindow;
+
+            [NativeTypeName("HRESULT (BOOL) __attribute__((stdcall))")]
+            public delegate* unmanaged<IOleInPlaceUIWindow*, BOOL, int> ContextSensitiveHelp;
+
+            [NativeTypeName("HRESULT (LPRECT) __attribute__((stdcall))")]
+            public delegate* unmanaged<IOleInPlaceUIWindow*, RECT*, int> GetBorder;
+
+            [NativeTypeName("HRESULT (LPCBORDERWIDTHS) __attribute__((stdcall))")]
+            public delegate* unmanaged<IOleInPlaceUIWindow*, RECT*, int> RequestBorderSpace;
+
+            [NativeTypeName("HRESULT (LPCBORDERWIDTHS) __attribute__((stdcall))")]
+            public delegate* unmanaged<IOleInPlaceUIWindow*, RECT*, int> SetBorderSpace;
+
+            [NativeTypeName("HRESULT (IOleInPlaceActiveObject *, LPCOLESTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IOleInPlaceUIWindow*, IOleInPlaceActiveObject*, ushort*, int> SetActiveObject;
+        }
     }
 }

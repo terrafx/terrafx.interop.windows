@@ -199,5 +199,86 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IXmlReader*, int>)(lpVtbl[25]))((IXmlReader*)Unsafe.AsPointer(ref this));
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IXmlReader*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IXmlReader*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IXmlReader*, uint> Release;
+
+            [NativeTypeName("HRESULT (IUnknown *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IXmlReader*, IUnknown*, int> SetInput;
+
+            [NativeTypeName("HRESULT (UINT, LONG_PTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IXmlReader*, uint, nint*, int> GetProperty;
+
+            [NativeTypeName("HRESULT (UINT, LONG_PTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IXmlReader*, uint, nint, int> SetProperty;
+
+            [NativeTypeName("HRESULT (XmlNodeType *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IXmlReader*, XmlNodeType*, int> Read;
+
+            [NativeTypeName("HRESULT (XmlNodeType *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IXmlReader*, XmlNodeType*, int> GetNodeType;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IXmlReader*, int> MoveToFirstAttribute;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IXmlReader*, int> MoveToNextAttribute;
+
+            [NativeTypeName("HRESULT (LPCWSTR, LPCWSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IXmlReader*, ushort*, ushort*, int> MoveToAttributeByName;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IXmlReader*, int> MoveToElement;
+
+            [NativeTypeName("HRESULT (LPCWSTR *, UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IXmlReader*, ushort**, uint*, int> GetQualifiedName;
+
+            [NativeTypeName("HRESULT (LPCWSTR *, UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IXmlReader*, ushort**, uint*, int> GetNamespaceUri;
+
+            [NativeTypeName("HRESULT (LPCWSTR *, UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IXmlReader*, ushort**, uint*, int> GetLocalName;
+
+            [NativeTypeName("HRESULT (LPCWSTR *, UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IXmlReader*, ushort**, uint*, int> GetPrefix;
+
+            [NativeTypeName("HRESULT (LPCWSTR *, UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IXmlReader*, ushort**, uint*, int> GetValue;
+
+            [NativeTypeName("HRESULT (WCHAR *, UINT, UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IXmlReader*, ushort*, uint, uint*, int> ReadValueChunk;
+
+            [NativeTypeName("HRESULT (LPCWSTR *, UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IXmlReader*, ushort**, uint*, int> GetBaseUri;
+
+            [NativeTypeName("BOOL () __attribute__((stdcall))")]
+            public delegate* unmanaged<IXmlReader*, int> IsDefault;
+
+            [NativeTypeName("BOOL () __attribute__((stdcall))")]
+            public delegate* unmanaged<IXmlReader*, int> IsEmptyElement;
+
+            [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IXmlReader*, uint*, int> GetLineNumber;
+
+            [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IXmlReader*, uint*, int> GetLinePosition;
+
+            [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IXmlReader*, uint*, int> GetAttributeCount;
+
+            [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IXmlReader*, uint*, int> GetDepth;
+
+            [NativeTypeName("BOOL () __attribute__((stdcall))")]
+            public delegate* unmanaged<IXmlReader*, int> IsEOF;
+        }
     }
 }

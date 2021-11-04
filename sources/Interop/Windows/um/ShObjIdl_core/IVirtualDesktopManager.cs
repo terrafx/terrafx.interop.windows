@@ -59,5 +59,26 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IVirtualDesktopManager*, HWND, Guid*, int>)(lpVtbl[5]))((IVirtualDesktopManager*)Unsafe.AsPointer(ref this), topLevelWindow, desktopId);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IVirtualDesktopManager*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IVirtualDesktopManager*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IVirtualDesktopManager*, uint> Release;
+
+            [NativeTypeName("HRESULT (HWND, BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IVirtualDesktopManager*, HWND, BOOL*, int> IsWindowOnCurrentVirtualDesktop;
+
+            [NativeTypeName("HRESULT (HWND, GUID *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IVirtualDesktopManager*, HWND, Guid*, int> GetWindowDesktopId;
+
+            [NativeTypeName("HRESULT (HWND, const GUID &) __attribute__((stdcall))")]
+            public delegate* unmanaged<IVirtualDesktopManager*, HWND, Guid*, int> MoveWindowToDesktop;
+        }
     }
 }

@@ -66,5 +66,29 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IOleUndoUnit*, int>)(lpVtbl[6]))((IOleUndoUnit*)Unsafe.AsPointer(ref this));
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IOleUndoUnit*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IOleUndoUnit*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IOleUndoUnit*, uint> Release;
+
+            [NativeTypeName("HRESULT (IOleUndoManager *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IOleUndoUnit*, IOleUndoManager*, int> Do;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IOleUndoUnit*, ushort**, int> GetDescription;
+
+            [NativeTypeName("HRESULT (CLSID *, LONG *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IOleUndoUnit*, Guid*, int*, int> GetUnitType;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IOleUndoUnit*, int> OnNextAdd;
+        }
     }
 }

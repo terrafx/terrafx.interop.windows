@@ -45,5 +45,20 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IPlayToSourceClassFactory*, uint, IPlayToControl*, IInspectable**, int>)(lpVtbl[3]))((IPlayToSourceClassFactory*)Unsafe.AsPointer(ref this), dwFlags, pControl, ppSource);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IPlayToSourceClassFactory*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IPlayToSourceClassFactory*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IPlayToSourceClassFactory*, uint> Release;
+
+            [NativeTypeName("HRESULT (DWORD, IPlayToControl *, IInspectable **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IPlayToSourceClassFactory*, uint, IPlayToControl*, IInspectable**, int> CreateInstance;
+        }
     }
 }

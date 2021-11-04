@@ -59,5 +59,26 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IInputObject*, MSG*, int>)(lpVtbl[5]))((IInputObject*)Unsafe.AsPointer(ref this), pMsg);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IInputObject*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IInputObject*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IInputObject*, uint> Release;
+
+            [NativeTypeName("HRESULT (BOOL, MSG *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IInputObject*, BOOL, MSG*, int> UIActivateIO;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IInputObject*, int> HasFocusIO;
+
+            [NativeTypeName("HRESULT (MSG *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IInputObject*, MSG*, int> TranslateAcceleratorIO;
+        }
     }
 }

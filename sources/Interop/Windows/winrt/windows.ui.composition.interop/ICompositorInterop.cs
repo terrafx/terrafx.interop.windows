@@ -59,5 +59,26 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<ICompositorInterop*, IUnknown*, void**, int>)(lpVtbl[5]))((ICompositorInterop*)Unsafe.AsPointer(ref this), renderingDevice, result);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ICompositorInterop*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ICompositorInterop*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ICompositorInterop*, uint> Release;
+
+            [NativeTypeName("HRESULT (HANDLE, ABI::Windows::UI::Composition::ICompositionSurface **) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<ICompositorInterop*, HANDLE, void**, int> CreateCompositionSurfaceForHandle;
+
+            [NativeTypeName("HRESULT (IUnknown *, ABI::Windows::UI::Composition::ICompositionSurface **) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<ICompositorInterop*, IUnknown*, void**, int> CreateCompositionSurfaceForSwapChain;
+
+            [NativeTypeName("HRESULT (IUnknown *, ABI::Windows::UI::Composition::ICompositionGraphicsDevice **) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<ICompositorInterop*, IUnknown*, void**, int> CreateGraphicsDevice;
+        }
     }
 }

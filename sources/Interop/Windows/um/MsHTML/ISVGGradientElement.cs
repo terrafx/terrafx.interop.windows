@@ -108,5 +108,47 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<ISVGGradientElement*, ISVGAnimatedEnumeration**, int>)(lpVtbl[12]))((ISVGGradientElement*)Unsafe.AsPointer(ref this), p);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISVGGradientElement*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ISVGGradientElement*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ISVGGradientElement*, uint> Release;
+
+            [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISVGGradientElement*, uint*, int> GetTypeInfoCount;
+
+            [NativeTypeName("HRESULT (UINT, LCID, ITypeInfo **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISVGGradientElement*, uint, uint, ITypeInfo**, int> GetTypeInfo;
+
+            [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISVGGradientElement*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+
+            [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISVGGradientElement*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
+
+            [NativeTypeName("HRESULT (ISVGAnimatedEnumeration *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISVGGradientElement*, ISVGAnimatedEnumeration*, int> putref_gradientUnits;
+
+            [NativeTypeName("HRESULT (ISVGAnimatedEnumeration **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISVGGradientElement*, ISVGAnimatedEnumeration**, int> get_gradientUnits;
+
+            [NativeTypeName("HRESULT (ISVGAnimatedTransformList *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISVGGradientElement*, ISVGAnimatedTransformList*, int> putref_gradientTransform;
+
+            [NativeTypeName("HRESULT (ISVGAnimatedTransformList **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISVGGradientElement*, ISVGAnimatedTransformList**, int> get_gradientTransform;
+
+            [NativeTypeName("HRESULT (ISVGAnimatedEnumeration *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISVGGradientElement*, ISVGAnimatedEnumeration*, int> putref_spreadMethod;
+
+            [NativeTypeName("HRESULT (ISVGAnimatedEnumeration **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISVGGradientElement*, ISVGAnimatedEnumeration**, int> get_spreadMethod;
+        }
     }
 }

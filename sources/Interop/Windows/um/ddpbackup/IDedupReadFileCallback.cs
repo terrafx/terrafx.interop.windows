@@ -59,5 +59,26 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IDedupReadFileCallback*, ushort*, uint, DDP_FILE_EXTENT*, int>)(lpVtbl[5]))((IDedupReadFileCallback*)Unsafe.AsPointer(ref this), FileFullPath, NumberOfReads, ReadOffsets);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDedupReadFileCallback*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDedupReadFileCallback*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDedupReadFileCallback*, uint> Release;
+
+            [NativeTypeName("HRESULT (BSTR, long long, ULONG, BYTE *, ULONG *, DWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDedupReadFileCallback*, ushort*, long, uint, byte*, uint*, uint, int> ReadBackupFile;
+
+            [NativeTypeName("HRESULT (ULONG, BSTR *, ULONG *, DEDUP_CONTAINER_EXTENT **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDedupReadFileCallback*, uint, ushort**, uint*, DEDUP_CONTAINER_EXTENT**, int> OrderContainersRestore;
+
+            [NativeTypeName("HRESULT (BSTR, ULONG, DDP_FILE_EXTENT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDedupReadFileCallback*, ushort*, uint, DDP_FILE_EXTENT*, int> PreviewContainerRead;
+        }
     }
 }

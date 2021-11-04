@@ -66,5 +66,29 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IEnumITfCompositionView*, uint, int>)(lpVtbl[6]))((IEnumITfCompositionView*)Unsafe.AsPointer(ref this), ulCount);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IEnumITfCompositionView*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IEnumITfCompositionView*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IEnumITfCompositionView*, uint> Release;
+
+            [NativeTypeName("HRESULT (IEnumITfCompositionView **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IEnumITfCompositionView*, IEnumITfCompositionView**, int> Clone;
+
+            [NativeTypeName("HRESULT (ULONG, ITfCompositionView **, ULONG *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IEnumITfCompositionView*, uint, ITfCompositionView**, uint*, int> Next;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IEnumITfCompositionView*, int> Reset;
+
+            [NativeTypeName("HRESULT (ULONG) __attribute__((stdcall))")]
+            public delegate* unmanaged<IEnumITfCompositionView*, uint, int> Skip;
+        }
     }
 }

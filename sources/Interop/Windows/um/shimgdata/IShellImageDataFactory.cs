@@ -66,5 +66,29 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IShellImageDataFactory*, ushort*, Guid*, int>)(lpVtbl[6]))((IShellImageDataFactory*)Unsafe.AsPointer(ref this), pszPath, pDataFormat);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellImageDataFactory*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellImageDataFactory*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellImageDataFactory*, uint> Release;
+
+            [NativeTypeName("HRESULT (IShellImageData **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellImageDataFactory*, IShellImageData**, int> CreateIShellImageData;
+
+            [NativeTypeName("HRESULT (LPCWSTR, IShellImageData **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellImageDataFactory*, ushort*, IShellImageData**, int> CreateImageFromFile;
+
+            [NativeTypeName("HRESULT (IStream *, IShellImageData **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellImageDataFactory*, IStream*, IShellImageData**, int> CreateImageFromStream;
+
+            [NativeTypeName("HRESULT (LPCWSTR, GUID *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellImageDataFactory*, ushort*, Guid*, int> GetDataFormatFromPath;
+        }
     }
 }

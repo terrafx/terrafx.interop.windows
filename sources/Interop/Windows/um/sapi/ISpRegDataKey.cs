@@ -129,5 +129,56 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<ISpRegDataKey*, HKEY, BOOL, int>)(lpVtbl[15]))((ISpRegDataKey*)Unsafe.AsPointer(ref this), hkey, fReadOnly);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpRegDataKey*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpRegDataKey*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpRegDataKey*, uint> Release;
+
+            [NativeTypeName("HRESULT (LPCWSTR, ULONG, const BYTE *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpRegDataKey*, ushort*, uint, byte*, int> SetData;
+
+            [NativeTypeName("HRESULT (LPCWSTR, ULONG *, BYTE *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpRegDataKey*, ushort*, uint*, byte*, int> GetData;
+
+            [NativeTypeName("HRESULT (LPCWSTR, LPCWSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpRegDataKey*, ushort*, ushort*, int> SetStringValue;
+
+            [NativeTypeName("HRESULT (LPCWSTR, LPWSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpRegDataKey*, ushort*, ushort**, int> GetStringValue;
+
+            [NativeTypeName("HRESULT (LPCWSTR, DWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpRegDataKey*, ushort*, uint, int> SetDWORD;
+
+            [NativeTypeName("HRESULT (LPCWSTR, DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpRegDataKey*, ushort*, uint*, int> GetDWORD;
+
+            [NativeTypeName("HRESULT (LPCWSTR, ISpDataKey **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpRegDataKey*, ushort*, ISpDataKey**, int> OpenKey;
+
+            [NativeTypeName("HRESULT (LPCWSTR, ISpDataKey **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpRegDataKey*, ushort*, ISpDataKey**, int> CreateKey;
+
+            [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpRegDataKey*, ushort*, int> DeleteKey;
+
+            [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpRegDataKey*, ushort*, int> DeleteValue;
+
+            [NativeTypeName("HRESULT (ULONG, LPWSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpRegDataKey*, uint, ushort**, int> EnumKeys;
+
+            [NativeTypeName("HRESULT (ULONG, LPWSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpRegDataKey*, uint, ushort**, int> EnumValues;
+
+            [NativeTypeName("HRESULT (HKEY, BOOL) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpRegDataKey*, HKEY, BOOL, int> SetKey;
+        }
     }
 }

@@ -360,5 +360,155 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IShellUIHelper3*, int>)(lpVtbl[48]))((IShellUIHelper3*)Unsafe.AsPointer(ref this));
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellUIHelper3*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellUIHelper3*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellUIHelper3*, uint> Release;
+
+            [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellUIHelper3*, uint*, int> GetTypeInfoCount;
+
+            [NativeTypeName("HRESULT (UINT, LCID, ITypeInfo **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellUIHelper3*, uint, uint, ITypeInfo**, int> GetTypeInfo;
+
+            [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellUIHelper3*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+
+            [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellUIHelper3*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellUIHelper3*, int> ResetFirstBootMode;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellUIHelper3*, int> ResetSafeMode;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellUIHelper3*, int> RefreshOfflineDesktop;
+
+            [NativeTypeName("HRESULT (BSTR, VARIANT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellUIHelper3*, ushort*, VARIANT*, int> AddFavorite;
+
+            [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellUIHelper3*, ushort*, int> AddChannel;
+
+            [NativeTypeName("HRESULT (BSTR, BSTR, VARIANT *, VARIANT *, VARIANT *, VARIANT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellUIHelper3*, ushort*, ushort*, VARIANT*, VARIANT*, VARIANT*, VARIANT*, int> AddDesktopComponent;
+
+            [NativeTypeName("HRESULT (BSTR, VARIANT_BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellUIHelper3*, ushort*, short*, int> IsSubscribed;
+
+            [NativeTypeName("HRESULT (BSTR, BSTR, VARIANT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellUIHelper3*, ushort*, ushort*, VARIANT*, int> NavigateAndFind;
+
+            [NativeTypeName("HRESULT (VARIANT_BOOL, BSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellUIHelper3*, short, ushort*, int> ImportExportFavorites;
+
+            [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellUIHelper3*, VARIANT*, int> AutoCompleteSaveForm;
+
+            [NativeTypeName("HRESULT (BSTR, BSTR, VARIANT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellUIHelper3*, ushort*, ushort*, VARIANT*, int> AutoScan;
+
+            [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellUIHelper3*, VARIANT*, int> AutoCompleteAttach;
+
+            [NativeTypeName("HRESULT (BSTR, VARIANT *, VARIANT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellUIHelper3*, ushort*, VARIANT*, VARIANT*, int> ShowBrowserUI;
+
+            [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellUIHelper3*, ushort*, int> AddSearchProvider;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellUIHelper3*, int> RunOnceShown;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellUIHelper3*, int> SkipRunOnce;
+
+            [NativeTypeName("HRESULT (VARIANT_BOOL, VARIANT_BOOL, BSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellUIHelper3*, short, short, ushort*, int> CustomizeSettings;
+
+            [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellUIHelper3*, short*, int> SqmEnabled;
+
+            [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellUIHelper3*, short*, int> PhishingEnabled;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellUIHelper3*, ushort**, int> BrandImageUri;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellUIHelper3*, int> SkipTabsWelcome;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellUIHelper3*, int> DiagnoseConnection;
+
+            [NativeTypeName("HRESULT (VARIANT_BOOL) __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellUIHelper3*, short, int> CustomizeClearType;
+
+            [NativeTypeName("HRESULT (BSTR, DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellUIHelper3*, ushort*, uint*, int> IsSearchProviderInstalled;
+
+            [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellUIHelper3*, short*, int> IsSearchMigrated;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellUIHelper3*, ushort**, int> DefaultSearchProvider;
+
+            [NativeTypeName("HRESULT (VARIANT_BOOL) __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellUIHelper3*, short, int> RunOnceRequiredSettingsComplete;
+
+            [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellUIHelper3*, short*, int> RunOnceHasShown;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellUIHelper3*, ushort**, int> SearchGuideUrl;
+
+            [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellUIHelper3*, ushort*, int> AddService;
+
+            [NativeTypeName("HRESULT (BSTR, BSTR, DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellUIHelper3*, ushort*, ushort*, uint*, int> IsServiceInstalled;
+
+            [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellUIHelper3*, short*, int> InPrivateFilteringEnabled;
+
+            [NativeTypeName("HRESULT (BSTR, BSTR, VARIANT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellUIHelper3*, ushort*, ushort*, VARIANT*, int> AddToFavoritesBar;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellUIHelper3*, int> BuildNewTabPage;
+
+            [NativeTypeName("HRESULT (VARIANT_BOOL) __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellUIHelper3*, short, int> SetRecentlyClosedVisible;
+
+            [NativeTypeName("HRESULT (VARIANT_BOOL) __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellUIHelper3*, short, int> SetActivitiesVisible;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellUIHelper3*, int> ContentDiscoveryReset;
+
+            [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellUIHelper3*, short*, int> IsSuggestedSitesEnabled;
+
+            [NativeTypeName("HRESULT (VARIANT_BOOL) __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellUIHelper3*, short, int> EnableSuggestedSites;
+
+            [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellUIHelper3*, ushort*, int> NavigateToSuggestedSites;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellUIHelper3*, int> ShowTabsHelp;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellUIHelper3*, int> ShowInPrivateHelp;
+        }
     }
 }

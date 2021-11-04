@@ -80,5 +80,35 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IDxcContainerReflection*, uint, Guid*, void**, int>)(lpVtbl[8]))((IDxcContainerReflection*)Unsafe.AsPointer(ref this), idx, iid, ppvObject);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDxcContainerReflection*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDxcContainerReflection*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDxcContainerReflection*, uint> Release;
+
+            [NativeTypeName("HRESULT (IDxcBlob *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDxcContainerReflection*, IDxcBlob*, int> Load;
+
+            [NativeTypeName("HRESULT (UINT32 *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDxcContainerReflection*, uint*, int> GetPartCount;
+
+            [NativeTypeName("HRESULT (UINT32, UINT32 *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDxcContainerReflection*, uint, uint*, int> GetPartKind;
+
+            [NativeTypeName("HRESULT (UINT32, IDxcBlob **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDxcContainerReflection*, uint, IDxcBlob**, int> GetPartContent;
+
+            [NativeTypeName("HRESULT (UINT32, UINT32 *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDxcContainerReflection*, uint, uint*, int> FindFirstPartKind;
+
+            [NativeTypeName("HRESULT (UINT32, const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDxcContainerReflection*, uint, Guid*, void**, int> GetPartReflection;
+        }
     }
 }

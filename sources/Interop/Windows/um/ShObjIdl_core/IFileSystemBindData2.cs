@@ -80,5 +80,35 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IFileSystemBindData2*, Guid*, int>)(lpVtbl[8]))((IFileSystemBindData2*)Unsafe.AsPointer(ref this), pclsid);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFileSystemBindData2*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IFileSystemBindData2*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IFileSystemBindData2*, uint> Release;
+
+            [NativeTypeName("HRESULT (const WIN32_FIND_DATAW *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFileSystemBindData2*, WIN32_FIND_DATAW*, int> SetFindData;
+
+            [NativeTypeName("HRESULT (WIN32_FIND_DATAW *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFileSystemBindData2*, WIN32_FIND_DATAW*, int> GetFindData;
+
+            [NativeTypeName("HRESULT (LARGE_INTEGER) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFileSystemBindData2*, LARGE_INTEGER, int> SetFileID;
+
+            [NativeTypeName("HRESULT (LARGE_INTEGER *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFileSystemBindData2*, LARGE_INTEGER*, int> GetFileID;
+
+            [NativeTypeName("HRESULT (const IID &) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFileSystemBindData2*, Guid*, int> SetJunctionCLSID;
+
+            [NativeTypeName("HRESULT (CLSID *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFileSystemBindData2*, Guid*, int> GetJunctionCLSID;
+        }
     }
 }

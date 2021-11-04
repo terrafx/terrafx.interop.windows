@@ -59,5 +59,26 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IProtectedModeMenuServices*, ushort*, ushort, HMENU*, int>)(lpVtbl[5]))((IProtectedModeMenuServices*)Unsafe.AsPointer(ref this), pszModuleName, wResourceID, phMenu);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IProtectedModeMenuServices*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IProtectedModeMenuServices*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IProtectedModeMenuServices*, uint> Release;
+
+            [NativeTypeName("HRESULT (HMENU *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IProtectedModeMenuServices*, HMENU*, int> CreateMenu;
+
+            [NativeTypeName("HRESULT (LPCWSTR, LPCWSTR, HMENU *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IProtectedModeMenuServices*, ushort*, ushort*, HMENU*, int> LoadMenuW;
+
+            [NativeTypeName("HRESULT (LPCWSTR, WORD, HMENU *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IProtectedModeMenuServices*, ushort*, ushort, HMENU*, int> LoadMenuID;
+        }
     }
 }

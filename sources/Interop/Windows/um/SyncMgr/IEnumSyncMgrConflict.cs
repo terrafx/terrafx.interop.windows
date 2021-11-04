@@ -66,5 +66,29 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IEnumSyncMgrConflict*, IEnumSyncMgrConflict**, int>)(lpVtbl[6]))((IEnumSyncMgrConflict*)Unsafe.AsPointer(ref this), ppenum);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IEnumSyncMgrConflict*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IEnumSyncMgrConflict*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IEnumSyncMgrConflict*, uint> Release;
+
+            [NativeTypeName("HRESULT (ULONG, ISyncMgrConflict **, ULONG *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IEnumSyncMgrConflict*, uint, ISyncMgrConflict**, uint*, int> Next;
+
+            [NativeTypeName("HRESULT (ULONG) __attribute__((stdcall))")]
+            public delegate* unmanaged<IEnumSyncMgrConflict*, uint, int> Skip;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IEnumSyncMgrConflict*, int> Reset;
+
+            [NativeTypeName("HRESULT (IEnumSyncMgrConflict **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IEnumSyncMgrConflict*, IEnumSyncMgrConflict**, int> Clone;
+        }
     }
 }

@@ -82,5 +82,35 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IMFExtendedCameraControl*, int>)(lpVtbl[8]))((IMFExtendedCameraControl*)Unsafe.AsPointer(ref this));
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFExtendedCameraControl*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFExtendedCameraControl*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFExtendedCameraControl*, uint> Release;
+
+            [NativeTypeName("ULONGLONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFExtendedCameraControl*, ulong> GetCapabilities;
+
+            [NativeTypeName("HRESULT (ULONGLONG) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFExtendedCameraControl*, ulong, int> SetFlags;
+
+            [NativeTypeName("ULONGLONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFExtendedCameraControl*, ulong> GetFlags;
+
+            [NativeTypeName("HRESULT (BYTE **, ULONG *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFExtendedCameraControl*, byte**, uint*, int> LockPayload;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFExtendedCameraControl*, int> UnlockPayload;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFExtendedCameraControl*, int> CommitSettings;
+        }
     }
 }

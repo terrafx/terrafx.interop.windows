@@ -87,5 +87,38 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<ITfContextOwnerServices*, int, int, ITfRangeACP**, int>)(lpVtbl[9]))((ITfContextOwnerServices*)Unsafe.AsPointer(ref this), acpStart, acpEnd, ppRange);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfContextOwnerServices*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfContextOwnerServices*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfContextOwnerServices*, uint> Release;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfContextOwnerServices*, int> OnLayoutChange;
+
+            [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfContextOwnerServices*, uint, int> OnStatusChange;
+
+            [NativeTypeName("HRESULT (const GUID &) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfContextOwnerServices*, Guid*, int> OnAttributeChange;
+
+            [NativeTypeName("HRESULT (ITfProperty *, ITfRange *, TF_PERSISTENT_PROPERTY_HEADER_ACP *, IStream *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfContextOwnerServices*, ITfProperty*, ITfRange*, TF_PERSISTENT_PROPERTY_HEADER_ACP*, IStream*, int> Serialize;
+
+            [NativeTypeName("HRESULT (ITfProperty *, const TF_PERSISTENT_PROPERTY_HEADER_ACP *, IStream *, ITfPersistentPropertyLoaderACP *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfContextOwnerServices*, ITfProperty*, TF_PERSISTENT_PROPERTY_HEADER_ACP*, IStream*, ITfPersistentPropertyLoaderACP*, int> Unserialize;
+
+            [NativeTypeName("HRESULT (ITfProperty *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfContextOwnerServices*, ITfProperty*, int> ForceLoadProperty;
+
+            [NativeTypeName("HRESULT (LONG, LONG, ITfRangeACP **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfContextOwnerServices*, int, int, ITfRangeACP**, int> CreateRange;
+        }
     }
 }

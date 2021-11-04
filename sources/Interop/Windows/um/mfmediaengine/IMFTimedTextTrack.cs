@@ -130,5 +130,56 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IMFTimedTextTrack*, IMFTimedTextCueList**, int>)(lpVtbl[15]))((IMFTimedTextTrack*)Unsafe.AsPointer(ref this), cues);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFTimedTextTrack*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFTimedTextTrack*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFTimedTextTrack*, uint> Release;
+
+            [NativeTypeName("DWORD () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFTimedTextTrack*, uint> GetId;
+
+            [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFTimedTextTrack*, ushort**, int> GetLabel;
+
+            [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFTimedTextTrack*, ushort*, int> SetLabel;
+
+            [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFTimedTextTrack*, ushort**, int> GetLanguage;
+
+            [NativeTypeName("MF_TIMED_TEXT_TRACK_KIND () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFTimedTextTrack*, MF_TIMED_TEXT_TRACK_KIND> GetTrackKind;
+
+            [NativeTypeName("BOOL () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFTimedTextTrack*, int> IsInBand;
+
+            [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFTimedTextTrack*, ushort**, int> GetInBandMetadataTrackDispatchType;
+
+            [NativeTypeName("BOOL () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFTimedTextTrack*, int> IsActive;
+
+            [NativeTypeName("MF_TIMED_TEXT_ERROR_CODE () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFTimedTextTrack*, MF_TIMED_TEXT_ERROR_CODE> GetErrorCode;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFTimedTextTrack*, int> GetExtendedErrorCode;
+
+            [NativeTypeName("HRESULT (GUID *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFTimedTextTrack*, Guid*, int> GetDataFormat;
+
+            [NativeTypeName("MF_TIMED_TEXT_TRACK_READY_STATE () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFTimedTextTrack*, MF_TIMED_TEXT_TRACK_READY_STATE> GetReadyState;
+
+            [NativeTypeName("HRESULT (IMFTimedTextCueList **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFTimedTextTrack*, IMFTimedTextCueList**, int> GetCueList;
+        }
     }
 }

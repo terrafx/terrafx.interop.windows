@@ -94,5 +94,41 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IDiaAddressMap*, uint, DiaAddressMapEntry*, BOOL, int>)(lpVtbl[10]))((IDiaAddressMap*)Unsafe.AsPointer(ref this), cData, pData, imageToSymbols);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaAddressMap*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaAddressMap*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaAddressMap*, uint> Release;
+
+            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaAddressMap*, BOOL*, int> get_addressMapEnabled;
+
+            [NativeTypeName("HRESULT (BOOL) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaAddressMap*, BOOL, int> put_addressMapEnabled;
+
+            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaAddressMap*, BOOL*, int> get_relativeVirtualAddressEnabled;
+
+            [NativeTypeName("HRESULT (BOOL) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaAddressMap*, BOOL, int> put_relativeVirtualAddressEnabled;
+
+            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaAddressMap*, uint*, int> get_imageAlign;
+
+            [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaAddressMap*, uint, int> put_imageAlign;
+
+            [NativeTypeName("HRESULT (DWORD, BYTE *, BOOL) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaAddressMap*, uint, byte*, BOOL, int> set_imageHeaders;
+
+            [NativeTypeName("HRESULT (DWORD, struct DiaAddressMapEntry *, BOOL) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaAddressMap*, uint, DiaAddressMapEntry*, BOOL, int> set_addressMap;
+        }
     }
 }

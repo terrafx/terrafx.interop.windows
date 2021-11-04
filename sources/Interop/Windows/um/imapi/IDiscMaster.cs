@@ -122,5 +122,53 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IDiscMaster*, int>)(lpVtbl[14]))((IDiscMaster*)Unsafe.AsPointer(ref this));
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiscMaster*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiscMaster*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiscMaster*, uint> Release;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiscMaster*, int> Open;
+
+            [NativeTypeName("HRESULT (IEnumDiscMasterFormats **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiscMaster*, IEnumDiscMasterFormats**, int> EnumDiscMasterFormats;
+
+            [NativeTypeName("HRESULT (LPIID) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiscMaster*, Guid*, int> GetActiveDiscMasterFormat;
+
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiscMaster*, Guid*, void**, int> SetActiveDiscMasterFormat;
+
+            [NativeTypeName("HRESULT (IEnumDiscRecorders **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiscMaster*, IEnumDiscRecorders**, int> EnumDiscRecorders;
+
+            [NativeTypeName("HRESULT (IDiscRecorder **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiscMaster*, IDiscRecorder**, int> GetActiveDiscRecorder;
+
+            [NativeTypeName("HRESULT (IDiscRecorder *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiscMaster*, IDiscRecorder*, int> SetActiveDiscRecorder;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiscMaster*, int> ClearFormatContent;
+
+            [NativeTypeName("HRESULT (IDiscMasterProgressEvents *, UINT_PTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiscMaster*, IDiscMasterProgressEvents*, nuint*, int> ProgressAdvise;
+
+            [NativeTypeName("HRESULT (UINT_PTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiscMaster*, nuint, int> ProgressUnadvise;
+
+            [NativeTypeName("HRESULT (boolean, boolean) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiscMaster*, byte, byte, int> RecordDisc;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiscMaster*, int> Close;
+        }
     }
 }

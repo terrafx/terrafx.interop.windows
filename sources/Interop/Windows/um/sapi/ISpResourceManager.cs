@@ -59,5 +59,26 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<ISpResourceManager*, Guid*, Guid*, Guid*, BOOL, void**, int>)(lpVtbl[5]))((ISpResourceManager*)Unsafe.AsPointer(ref this), guidServiceId, ObjectCLSID, ObjectIID, fReleaseWhenLastExternalRefReleased, ppObject);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpResourceManager*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpResourceManager*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpResourceManager*, uint> Release;
+
+            [NativeTypeName("HRESULT (const GUID &, const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpResourceManager*, Guid*, Guid*, void**, int> QueryService;
+
+            [NativeTypeName("HRESULT (const GUID &, IUnknown *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpResourceManager*, Guid*, IUnknown*, int> SetObject;
+
+            [NativeTypeName("HRESULT (const GUID &, const IID &, const IID &, BOOL, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpResourceManager*, Guid*, Guid*, Guid*, BOOL, void**, int> GetObject;
+        }
     }
 }

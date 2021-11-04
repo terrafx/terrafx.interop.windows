@@ -94,5 +94,41 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IMFCaptureEngine*, IMFCaptureSource**, int>)(lpVtbl[10]))((IMFCaptureEngine*)Unsafe.AsPointer(ref this), ppSource);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFCaptureEngine*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFCaptureEngine*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFCaptureEngine*, uint> Release;
+
+            [NativeTypeName("HRESULT (IMFCaptureEngineOnEventCallback *, IMFAttributes *, IUnknown *, IUnknown *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFCaptureEngine*, IMFCaptureEngineOnEventCallback*, IMFAttributes*, IUnknown*, IUnknown*, int> Initialize;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFCaptureEngine*, int> StartPreview;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFCaptureEngine*, int> StopPreview;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFCaptureEngine*, int> StartRecord;
+
+            [NativeTypeName("HRESULT (BOOL, BOOL) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFCaptureEngine*, BOOL, BOOL, int> StopRecord;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFCaptureEngine*, int> TakePhoto;
+
+            [NativeTypeName("HRESULT (MF_CAPTURE_ENGINE_SINK_TYPE, IMFCaptureSink **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFCaptureEngine*, MF_CAPTURE_ENGINE_SINK_TYPE, IMFCaptureSink**, int> GetSink;
+
+            [NativeTypeName("HRESULT (IMFCaptureSource **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFCaptureEngine*, IMFCaptureSource**, int> GetSource;
+        }
     }
 }

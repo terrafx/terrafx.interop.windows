@@ -73,5 +73,35 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<ID3D10EffectPass*, D3D10_STATE_BLOCK_MASK*, int>)(lpVtbl[8]))((ID3D10EffectPass*)Unsafe.AsPointer(ref this), pStateBlockMask);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("BOOL () __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D10EffectPass*, int> IsValid;
+
+            [NativeTypeName("HRESULT (D3D10_PASS_DESC *) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D10EffectPass*, D3D10_PASS_DESC*, int> GetDesc;
+
+            [NativeTypeName("HRESULT (D3D10_PASS_SHADER_DESC *) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D10EffectPass*, D3D10_PASS_SHADER_DESC*, int> GetVertexShaderDesc;
+
+            [NativeTypeName("HRESULT (D3D10_PASS_SHADER_DESC *) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D10EffectPass*, D3D10_PASS_SHADER_DESC*, int> GetGeometryShaderDesc;
+
+            [NativeTypeName("HRESULT (D3D10_PASS_SHADER_DESC *) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D10EffectPass*, D3D10_PASS_SHADER_DESC*, int> GetPixelShaderDesc;
+
+            [NativeTypeName("ID3D10EffectVariable *(UINT) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D10EffectPass*, uint, ID3D10EffectVariable*> GetAnnotationByIndex;
+
+            [NativeTypeName("ID3D10EffectVariable *(LPCSTR) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D10EffectPass*, sbyte*, ID3D10EffectVariable*> GetAnnotationByName;
+
+            [NativeTypeName("HRESULT (UINT) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D10EffectPass*, uint, int> Apply;
+
+            [NativeTypeName("HRESULT (D3D10_STATE_BLOCK_MASK *) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D10EffectPass*, D3D10_STATE_BLOCK_MASK*, int> ComputeStateBlockMask;
+        }
     }
 }

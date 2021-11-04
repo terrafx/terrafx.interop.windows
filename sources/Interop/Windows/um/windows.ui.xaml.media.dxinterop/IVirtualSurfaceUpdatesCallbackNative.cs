@@ -45,5 +45,20 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IVirtualSurfaceUpdatesCallbackNative*, int>)(lpVtbl[3]))((IVirtualSurfaceUpdatesCallbackNative*)Unsafe.AsPointer(ref this));
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IVirtualSurfaceUpdatesCallbackNative*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IVirtualSurfaceUpdatesCallbackNative*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IVirtualSurfaceUpdatesCallbackNative*, uint> Release;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IVirtualSurfaceUpdatesCallbackNative*, int> UpdatesNeeded;
+        }
     }
 }

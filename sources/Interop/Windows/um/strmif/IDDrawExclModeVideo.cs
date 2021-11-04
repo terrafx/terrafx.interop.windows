@@ -87,5 +87,38 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IDDrawExclModeVideo*, IDDrawExclModeVideoCallback*, uint, int>)(lpVtbl[9]))((IDDrawExclModeVideo*)Unsafe.AsPointer(ref this), pCallback, dwFlags);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDDrawExclModeVideo*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDDrawExclModeVideo*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDDrawExclModeVideo*, uint> Release;
+
+            [NativeTypeName("HRESULT (IDirectDraw *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDDrawExclModeVideo*, IDirectDraw*, int> SetDDrawObject;
+
+            [NativeTypeName("HRESULT (IDirectDraw **, BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDDrawExclModeVideo*, IDirectDraw**, BOOL*, int> GetDDrawObject;
+
+            [NativeTypeName("HRESULT (IDirectDrawSurface *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDDrawExclModeVideo*, IDirectDrawSurface*, int> SetDDrawSurface;
+
+            [NativeTypeName("HRESULT (IDirectDrawSurface **, BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDDrawExclModeVideo*, IDirectDrawSurface**, BOOL*, int> GetDDrawSurface;
+
+            [NativeTypeName("HRESULT (const RECT *, const RECT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDDrawExclModeVideo*, RECT*, RECT*, int> SetDrawParameters;
+
+            [NativeTypeName("HRESULT (DWORD *, DWORD *, DWORD *, DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDDrawExclModeVideo*, uint*, uint*, uint*, uint*, int> GetNativeVideoProps;
+
+            [NativeTypeName("HRESULT (IDDrawExclModeVideoCallback *, DWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDDrawExclModeVideo*, IDDrawExclModeVideoCallback*, uint, int> SetCallbackInterface;
+        }
     }
 }

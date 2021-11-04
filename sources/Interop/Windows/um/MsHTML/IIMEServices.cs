@@ -45,5 +45,20 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IIMEServices*, IActiveIMMApp**, int>)(lpVtbl[3]))((IIMEServices*)Unsafe.AsPointer(ref this), ppActiveIMM);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IIMEServices*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IIMEServices*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IIMEServices*, uint> Release;
+
+            [NativeTypeName("HRESULT (IActiveIMMApp **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IIMEServices*, IActiveIMMApp**, int> GetActiveIMM;
+        }
     }
 }

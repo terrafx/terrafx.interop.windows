@@ -73,5 +73,32 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<ISpPhoneticAlphabetConverter*, uint, BOOL, uint*, int>)(lpVtbl[7]))((ISpPhoneticAlphabetConverter*)Unsafe.AsPointer(ref this), cSrcLength, bSAPI2UPS, pcMaxDestLength);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpPhoneticAlphabetConverter*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpPhoneticAlphabetConverter*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpPhoneticAlphabetConverter*, uint> Release;
+
+            [NativeTypeName("HRESULT (WORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpPhoneticAlphabetConverter*, ushort*, int> GetLangId;
+
+            [NativeTypeName("HRESULT (WORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpPhoneticAlphabetConverter*, ushort, int> SetLangId;
+
+            [NativeTypeName("HRESULT (const SPPHONEID *, SPPHONEID *, DWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpPhoneticAlphabetConverter*, ushort*, ushort*, uint, int> SAPI2UPS;
+
+            [NativeTypeName("HRESULT (const SPPHONEID *, SPPHONEID *, DWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpPhoneticAlphabetConverter*, ushort*, ushort*, uint, int> UPS2SAPI;
+
+            [NativeTypeName("HRESULT (DWORD, BOOL, DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpPhoneticAlphabetConverter*, uint, BOOL, uint*, int> GetMaxConvertLength;
+        }
     }
 }

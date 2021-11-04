@@ -80,5 +80,35 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<ISelectionServices*, ISelectionServicesListener**, int>)(lpVtbl[8]))((ISelectionServices*)Unsafe.AsPointer(ref this), ppISelectionServicesListener);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISelectionServices*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ISelectionServices*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ISelectionServices*, uint> Release;
+
+            [NativeTypeName("HRESULT (SELECTION_TYPE, ISelectionServicesListener *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISelectionServices*, SELECTION_TYPE, ISelectionServicesListener*, int> SetSelectionType;
+
+            [NativeTypeName("HRESULT (IMarkupContainer **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISelectionServices*, IMarkupContainer**, int> GetMarkupContainer;
+
+            [NativeTypeName("HRESULT (IMarkupPointer *, IMarkupPointer *, ISegment **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISelectionServices*, IMarkupPointer*, IMarkupPointer*, ISegment**, int> AddSegment;
+
+            [NativeTypeName("HRESULT (IHTMLElement *, IElementSegment **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISelectionServices*, IHTMLElement*, IElementSegment**, int> AddElementSegment;
+
+            [NativeTypeName("HRESULT (ISegment *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISelectionServices*, ISegment*, int> RemoveSegment;
+
+            [NativeTypeName("HRESULT (ISelectionServicesListener **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISelectionServices*, ISelectionServicesListener**, int> GetSelectionServicesListener;
+        }
     }
 }

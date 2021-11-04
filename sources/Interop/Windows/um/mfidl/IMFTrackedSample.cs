@@ -45,5 +45,20 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IMFTrackedSample*, IMFAsyncCallback*, IUnknown*, int>)(lpVtbl[3]))((IMFTrackedSample*)Unsafe.AsPointer(ref this), pSampleAllocator, pUnkState);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFTrackedSample*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFTrackedSample*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFTrackedSample*, uint> Release;
+
+            [NativeTypeName("HRESULT (IMFAsyncCallback *, IUnknown *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFTrackedSample*, IMFAsyncCallback*, IUnknown*, int> SetAllocator;
+        }
     }
 }

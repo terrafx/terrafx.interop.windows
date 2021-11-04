@@ -122,5 +122,53 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IPropertyStorage*, STATPROPSETSTG*, int>)(lpVtbl[14]))((IPropertyStorage*)Unsafe.AsPointer(ref this), pstatpsstg);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IPropertyStorage*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IPropertyStorage*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IPropertyStorage*, uint> Release;
+
+            [NativeTypeName("HRESULT (ULONG, const PROPSPEC *, PROPVARIANT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IPropertyStorage*, uint, PROPSPEC*, PROPVARIANT*, int> ReadMultiple;
+
+            [NativeTypeName("HRESULT (ULONG, const PROPSPEC *, const PROPVARIANT *, PROPID) __attribute__((stdcall))")]
+            public delegate* unmanaged<IPropertyStorage*, uint, PROPSPEC*, PROPVARIANT*, uint, int> WriteMultiple;
+
+            [NativeTypeName("HRESULT (ULONG, const PROPSPEC *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IPropertyStorage*, uint, PROPSPEC*, int> DeleteMultiple;
+
+            [NativeTypeName("HRESULT (ULONG, const PROPID *, LPOLESTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IPropertyStorage*, uint, uint*, ushort**, int> ReadPropertyNames;
+
+            [NativeTypeName("HRESULT (ULONG, const PROPID *, const LPOLESTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IPropertyStorage*, uint, uint*, ushort**, int> WritePropertyNames;
+
+            [NativeTypeName("HRESULT (ULONG, const PROPID *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IPropertyStorage*, uint, uint*, int> DeletePropertyNames;
+
+            [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<IPropertyStorage*, uint, int> Commit;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IPropertyStorage*, int> Revert;
+
+            [NativeTypeName("HRESULT (IEnumSTATPROPSTG **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IPropertyStorage*, IEnumSTATPROPSTG**, int> Enum;
+
+            [NativeTypeName("HRESULT (const FILETIME *, const FILETIME *, const FILETIME *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IPropertyStorage*, FILETIME*, FILETIME*, FILETIME*, int> SetTimes;
+
+            [NativeTypeName("HRESULT (const IID &) __attribute__((stdcall))")]
+            public delegate* unmanaged<IPropertyStorage*, Guid*, int> SetClass;
+
+            [NativeTypeName("HRESULT (STATPROPSETSTG *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IPropertyStorage*, STATPROPSETSTG*, int> Stat;
+        }
     }
 }

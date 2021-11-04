@@ -101,5 +101,44 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IHTMLDOMTextNode2*, int, int, ushort*, int>)(lpVtbl[11]))((IHTMLDOMTextNode2*)Unsafe.AsPointer(ref this), offset, Count, bstrstring);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLDOMTextNode2*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLDOMTextNode2*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLDOMTextNode2*, uint> Release;
+
+            [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLDOMTextNode2*, uint*, int> GetTypeInfoCount;
+
+            [NativeTypeName("HRESULT (UINT, LCID, ITypeInfo **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLDOMTextNode2*, uint, uint, ITypeInfo**, int> GetTypeInfo;
+
+            [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLDOMTextNode2*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+
+            [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLDOMTextNode2*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
+
+            [NativeTypeName("HRESULT (long, long, BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLDOMTextNode2*, int, int, ushort**, int> substringData;
+
+            [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLDOMTextNode2*, ushort*, int> appendData;
+
+            [NativeTypeName("HRESULT (long, BSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLDOMTextNode2*, int, ushort*, int> insertData;
+
+            [NativeTypeName("HRESULT (long, long) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLDOMTextNode2*, int, int, int> deleteData;
+
+            [NativeTypeName("HRESULT (long, long, BSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLDOMTextNode2*, int, int, ushort*, int> replaceData;
+        }
     }
 }

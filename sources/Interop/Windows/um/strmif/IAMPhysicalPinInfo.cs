@@ -45,5 +45,20 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IAMPhysicalPinInfo*, int*, ushort**, int>)(lpVtbl[3]))((IAMPhysicalPinInfo*)Unsafe.AsPointer(ref this), pType, ppszType);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAMPhysicalPinInfo*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IAMPhysicalPinInfo*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IAMPhysicalPinInfo*, uint> Release;
+
+            [NativeTypeName("HRESULT (long *, LPOLESTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAMPhysicalPinInfo*, int*, ushort**, int> GetPhysicalType;
+        }
     }
 }

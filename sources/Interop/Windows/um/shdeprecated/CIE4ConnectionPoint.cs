@@ -85,5 +85,38 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<CIE4ConnectionPoint*, int, ITEMIDLIST*, BOOL, int>)(lpVtbl[9]))((CIE4ConnectionPoint*)Unsafe.AsPointer(ref this), dispid, pidl, fCanCancel);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<CIE4ConnectionPoint*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<CIE4ConnectionPoint*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<CIE4ConnectionPoint*, uint> Release;
+
+            [NativeTypeName("HRESULT (IID *) __attribute__((stdcall))")]
+            public delegate* unmanaged<CIE4ConnectionPoint*, Guid*, int> GetConnectionInterface;
+
+            [NativeTypeName("HRESULT (IConnectionPointContainer **) __attribute__((stdcall))")]
+            public delegate* unmanaged<CIE4ConnectionPoint*, IConnectionPointContainer**, int> GetConnectionPointContainer;
+
+            [NativeTypeName("HRESULT (IUnknown *, DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<CIE4ConnectionPoint*, IUnknown*, uint*, int> Advise;
+
+            [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<CIE4ConnectionPoint*, uint, int> Unadvise;
+
+            [NativeTypeName("HRESULT (IEnumConnections **) __attribute__((stdcall))")]
+            public delegate* unmanaged<CIE4ConnectionPoint*, IEnumConnections**, int> EnumConnections;
+
+            [NativeTypeName("HRESULT (BOOL *, void **, DISPID, DISPPARAMS *)")]
+            internal delegate* unmanaged<CIE4ConnectionPoint*, BOOL*, void**, int, DISPPARAMS*, int> DoInvokeIE4;
+
+            [NativeTypeName("HRESULT (DISPID, LPCITEMIDLIST, BOOL)")]
+            internal delegate* unmanaged<CIE4ConnectionPoint*, int, ITEMIDLIST*, BOOL, int> DoInvokePIDLIE4;
+        }
     }
 }

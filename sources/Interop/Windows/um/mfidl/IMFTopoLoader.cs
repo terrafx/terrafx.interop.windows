@@ -45,5 +45,20 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IMFTopoLoader*, IMFTopology*, IMFTopology**, IMFTopology*, int>)(lpVtbl[3]))((IMFTopoLoader*)Unsafe.AsPointer(ref this), pInputTopo, ppOutputTopo, pCurrentTopo);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFTopoLoader*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFTopoLoader*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFTopoLoader*, uint> Release;
+
+            [NativeTypeName("HRESULT (IMFTopology *, IMFTopology **, IMFTopology *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFTopoLoader*, IMFTopology*, IMFTopology**, IMFTopology*, int> Load;
+        }
     }
 }

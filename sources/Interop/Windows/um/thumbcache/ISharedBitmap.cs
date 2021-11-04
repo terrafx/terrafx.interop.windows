@@ -73,5 +73,32 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<ISharedBitmap*, HBITMAP*, int>)(lpVtbl[7]))((ISharedBitmap*)Unsafe.AsPointer(ref this), phbm);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISharedBitmap*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ISharedBitmap*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ISharedBitmap*, uint> Release;
+
+            [NativeTypeName("HRESULT (HBITMAP *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISharedBitmap*, HBITMAP*, int> GetSharedBitmap;
+
+            [NativeTypeName("HRESULT (SIZE *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISharedBitmap*, SIZE*, int> GetSize;
+
+            [NativeTypeName("HRESULT (WTS_ALPHATYPE *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISharedBitmap*, WTS_ALPHATYPE*, int> GetFormat;
+
+            [NativeTypeName("HRESULT (HBITMAP, WTS_ALPHATYPE) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISharedBitmap*, HBITMAP, WTS_ALPHATYPE, int> InitializeBitmap;
+
+            [NativeTypeName("HRESULT (HBITMAP *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISharedBitmap*, HBITMAP*, int> Detach;
+        }
     }
 }

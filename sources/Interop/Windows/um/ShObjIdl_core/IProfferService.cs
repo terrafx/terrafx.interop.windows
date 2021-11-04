@@ -52,5 +52,23 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IProfferService*, uint, int>)(lpVtbl[4]))((IProfferService*)Unsafe.AsPointer(ref this), cookie);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IProfferService*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IProfferService*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IProfferService*, uint> Release;
+
+            [NativeTypeName("HRESULT (const GUID &, IServiceProvider *, DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IProfferService*, Guid*, IServiceProvider*, uint*, int> ProfferService;
+
+            [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<IProfferService*, uint, int> RevokeService;
+        }
     }
 }

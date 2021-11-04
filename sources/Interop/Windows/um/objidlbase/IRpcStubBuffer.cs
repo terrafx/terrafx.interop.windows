@@ -88,5 +88,38 @@ namespace TerraFX.Interop
         {
             ((delegate* unmanaged<IRpcStubBuffer*, void*, void>)(lpVtbl[9]))((IRpcStubBuffer*)Unsafe.AsPointer(ref this), pv);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IRpcStubBuffer*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IRpcStubBuffer*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IRpcStubBuffer*, uint> Release;
+
+            [NativeTypeName("HRESULT (IUnknown *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IRpcStubBuffer*, IUnknown*, int> Connect;
+
+            [NativeTypeName("void () __attribute__((stdcall))")]
+            public delegate* unmanaged<IRpcStubBuffer*, void> Disconnect;
+
+            [NativeTypeName("HRESULT (RPCOLEMESSAGE *, IRpcChannelBuffer *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IRpcStubBuffer*, RPCOLEMESSAGE*, IRpcChannelBuffer*, int> Invoke;
+
+            [NativeTypeName("IRpcStubBuffer *(const IID &) __attribute__((stdcall))")]
+            public delegate* unmanaged<IRpcStubBuffer*, Guid*, IRpcStubBuffer*> IsIIDSupported;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IRpcStubBuffer*, uint> CountRefs;
+
+            [NativeTypeName("HRESULT (void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IRpcStubBuffer*, void**, int> DebugServerQueryInterface;
+
+            [NativeTypeName("void (void *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IRpcStubBuffer*, void*, void> DebugServerRelease;
+        }
     }
 }

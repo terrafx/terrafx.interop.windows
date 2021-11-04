@@ -129,5 +129,56 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IMFPresentationClock*, int>)(lpVtbl[15]))((IMFPresentationClock*)Unsafe.AsPointer(ref this));
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFPresentationClock*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFPresentationClock*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFPresentationClock*, uint> Release;
+
+            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFPresentationClock*, uint*, int> GetClockCharacteristics;
+
+            [NativeTypeName("HRESULT (DWORD, LONGLONG *, MFTIME *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFPresentationClock*, uint, long*, long*, int> GetCorrelatedTime;
+
+            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFPresentationClock*, uint*, int> GetContinuityKey;
+
+            [NativeTypeName("HRESULT (DWORD, MFCLOCK_STATE *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFPresentationClock*, uint, MFCLOCK_STATE*, int> GetState;
+
+            [NativeTypeName("HRESULT (MFCLOCK_PROPERTIES *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFPresentationClock*, MFCLOCK_PROPERTIES*, int> GetProperties;
+
+            [NativeTypeName("HRESULT (IMFPresentationTimeSource *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFPresentationClock*, IMFPresentationTimeSource*, int> SetTimeSource;
+
+            [NativeTypeName("HRESULT (IMFPresentationTimeSource **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFPresentationClock*, IMFPresentationTimeSource**, int> GetTimeSource;
+
+            [NativeTypeName("HRESULT (MFTIME *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFPresentationClock*, long*, int> GetTime;
+
+            [NativeTypeName("HRESULT (IMFClockStateSink *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFPresentationClock*, IMFClockStateSink*, int> AddClockStateSink;
+
+            [NativeTypeName("HRESULT (IMFClockStateSink *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFPresentationClock*, IMFClockStateSink*, int> RemoveClockStateSink;
+
+            [NativeTypeName("HRESULT (LONGLONG) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFPresentationClock*, long, int> Start;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFPresentationClock*, int> Stop;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFPresentationClock*, int> Pause;
+        }
     }
 }

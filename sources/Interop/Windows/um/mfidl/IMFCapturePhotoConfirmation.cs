@@ -59,5 +59,26 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IMFCapturePhotoConfirmation*, Guid*, int>)(lpVtbl[5]))((IMFCapturePhotoConfirmation*)Unsafe.AsPointer(ref this), subtype);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFCapturePhotoConfirmation*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFCapturePhotoConfirmation*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFCapturePhotoConfirmation*, uint> Release;
+
+            [NativeTypeName("HRESULT (IMFAsyncCallback *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFCapturePhotoConfirmation*, IMFAsyncCallback*, int> SetPhotoConfirmationCallback;
+
+            [NativeTypeName("HRESULT (GUID) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFCapturePhotoConfirmation*, Guid, int> SetPixelFormat;
+
+            [NativeTypeName("HRESULT (GUID *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFCapturePhotoConfirmation*, Guid*, int> GetPixelFormat;
+        }
     }
 }

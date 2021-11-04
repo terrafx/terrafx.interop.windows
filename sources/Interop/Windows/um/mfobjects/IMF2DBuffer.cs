@@ -87,5 +87,38 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IMF2DBuffer*, byte*, uint, int>)(lpVtbl[9]))((IMF2DBuffer*)Unsafe.AsPointer(ref this), pbSrcBuffer, cbSrcBuffer);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMF2DBuffer*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMF2DBuffer*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMF2DBuffer*, uint> Release;
+
+            [NativeTypeName("HRESULT (BYTE **, LONG *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMF2DBuffer*, byte**, int*, int> Lock2D;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMF2DBuffer*, int> Unlock2D;
+
+            [NativeTypeName("HRESULT (BYTE **, LONG *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMF2DBuffer*, byte**, int*, int> GetScanline0AndPitch;
+
+            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMF2DBuffer*, BOOL*, int> IsContiguousFormat;
+
+            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMF2DBuffer*, uint*, int> GetContiguousLength;
+
+            [NativeTypeName("HRESULT (BYTE *, DWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMF2DBuffer*, byte*, uint, int> ContiguousCopyTo;
+
+            [NativeTypeName("HRESULT (const BYTE *, DWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMF2DBuffer*, byte*, uint, int> ContiguousCopyFrom;
+        }
     }
 }

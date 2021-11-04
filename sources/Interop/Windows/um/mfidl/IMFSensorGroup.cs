@@ -94,5 +94,41 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IMFSensorGroup*, IMFMediaSource**, int>)(lpVtbl[10]))((IMFSensorGroup*)Unsafe.AsPointer(ref this), ppSource);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFSensorGroup*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFSensorGroup*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFSensorGroup*, uint> Release;
+
+            [NativeTypeName("HRESULT (LPWSTR, LONG, LONG *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFSensorGroup*, ushort*, int, int*, int> GetSymbolicLink;
+
+            [NativeTypeName("HRESULT (ULONGLONG *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFSensorGroup*, ulong*, int> GetFlags;
+
+            [NativeTypeName("HRESULT (IMFAttributes **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFSensorGroup*, IMFAttributes**, int> GetSensorGroupAttributes;
+
+            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFSensorGroup*, uint*, int> GetSensorDeviceCount;
+
+            [NativeTypeName("HRESULT (DWORD, IMFSensorDevice **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFSensorGroup*, uint, IMFSensorDevice**, int> GetSensorDevice;
+
+            [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFSensorGroup*, uint, int> SetDefaultSensorDeviceIndex;
+
+            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFSensorGroup*, uint*, int> GetDefaultSensorDeviceIndex;
+
+            [NativeTypeName("HRESULT (IMFMediaSource **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFSensorGroup*, IMFMediaSource**, int> CreateMediaSource;
+        }
     }
 }

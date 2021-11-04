@@ -52,5 +52,23 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IMFHDCPStatus*, MF_HDCP_STATUS, int>)(lpVtbl[4]))((IMFHDCPStatus*)Unsafe.AsPointer(ref this), status);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFHDCPStatus*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFHDCPStatus*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFHDCPStatus*, uint> Release;
+
+            [NativeTypeName("HRESULT (MF_HDCP_STATUS *, BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFHDCPStatus*, MF_HDCP_STATUS*, BOOL*, int> Query;
+
+            [NativeTypeName("HRESULT (MF_HDCP_STATUS) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFHDCPStatus*, MF_HDCP_STATUS, int> Set;
+        }
     }
 }

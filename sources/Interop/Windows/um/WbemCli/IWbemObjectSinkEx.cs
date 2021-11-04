@@ -87,5 +87,38 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IWbemObjectSinkEx*, ushort*, VARIANT*, uint, uint, int>)(lpVtbl[9]))((IWbemObjectSinkEx*)Unsafe.AsPointer(ref this), strName, vtValue, ulType, ulFlags);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWbemObjectSinkEx*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IWbemObjectSinkEx*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IWbemObjectSinkEx*, uint> Release;
+
+            [NativeTypeName("HRESULT (long, IWbemClassObject **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWbemObjectSinkEx*, int, IWbemClassObject**, int> Indicate;
+
+            [NativeTypeName("HRESULT (long, HRESULT, BSTR, IWbemClassObject *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWbemObjectSinkEx*, int, HRESULT, ushort*, IWbemClassObject*, int> SetStatus;
+
+            [NativeTypeName("HRESULT (ULONG, const BSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWbemObjectSinkEx*, uint, ushort*, int> WriteMessage;
+
+            [NativeTypeName("HRESULT (IWbemClassObject *, unsigned char *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWbemObjectSinkEx*, IWbemClassObject*, byte*, int> WriteError;
+
+            [NativeTypeName("HRESULT (const BSTR, unsigned char, unsigned char *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWbemObjectSinkEx*, ushort*, byte, byte*, int> PromptUser;
+
+            [NativeTypeName("HRESULT (const BSTR, const BSTR, const BSTR, ULONG, ULONG) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWbemObjectSinkEx*, ushort*, ushort*, ushort*, uint, uint, int> WriteProgress;
+
+            [NativeTypeName("HRESULT (const BSTR, VARIANT *, ULONG, ULONG) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWbemObjectSinkEx*, ushort*, VARIANT*, uint, uint, int> WriteStreamParameter;
+        }
     }
 }

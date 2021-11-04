@@ -52,5 +52,23 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IContinueCallback*, int, int, ushort*, int>)(lpVtbl[4]))((IContinueCallback*)Unsafe.AsPointer(ref this), nCntPrinted, nCurPage, pwszPrintStatus);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IContinueCallback*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IContinueCallback*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IContinueCallback*, uint> Release;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IContinueCallback*, int> FContinue;
+
+            [NativeTypeName("HRESULT (LONG, LONG, wchar_t *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IContinueCallback*, int, int, ushort*, int> FContinuePrinting;
+        }
     }
 }

@@ -59,5 +59,26 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IMFTimedTextBouten*, MF_TIMED_TEXT_BOUTEN_POSITION*, int>)(lpVtbl[5]))((IMFTimedTextBouten*)Unsafe.AsPointer(ref this), value);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFTimedTextBouten*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFTimedTextBouten*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFTimedTextBouten*, uint> Release;
+
+            [NativeTypeName("HRESULT (MF_TIMED_TEXT_BOUTEN_TYPE *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFTimedTextBouten*, MF_TIMED_TEXT_BOUTEN_TYPE*, int> GetBoutenType;
+
+            [NativeTypeName("HRESULT (MFARGB *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFTimedTextBouten*, MFARGB*, int> GetBoutenColor;
+
+            [NativeTypeName("HRESULT (MF_TIMED_TEXT_BOUTEN_POSITION *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFTimedTextBouten*, MF_TIMED_TEXT_BOUTEN_POSITION*, int> GetBoutenPosition;
+        }
     }
 }

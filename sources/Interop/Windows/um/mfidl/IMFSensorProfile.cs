@@ -66,5 +66,29 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IMFSensorProfile*, ushort*, int>)(lpVtbl[6]))((IMFSensorProfile*)Unsafe.AsPointer(ref this), wzBlockedControl);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFSensorProfile*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFSensorProfile*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFSensorProfile*, uint> Release;
+
+            [NativeTypeName("HRESULT (SENSORPROFILEID *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFSensorProfile*, SENSORPROFILEID*, int> GetProfileId;
+
+            [NativeTypeName("HRESULT (UINT32, LPCWSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFSensorProfile*, uint, ushort*, int> AddProfileFilter;
+
+            [NativeTypeName("HRESULT (UINT32, IMFMediaType *, BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFSensorProfile*, uint, IMFMediaType*, BOOL*, int> IsMediaTypeSupported;
+
+            [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFSensorProfile*, ushort*, int> AddBlockedControl;
+        }
     }
 }

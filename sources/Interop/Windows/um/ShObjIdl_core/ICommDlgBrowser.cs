@@ -59,5 +59,26 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<ICommDlgBrowser*, IShellView*, ITEMIDLIST*, int>)(lpVtbl[5]))((ICommDlgBrowser*)Unsafe.AsPointer(ref this), ppshv, pidl);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ICommDlgBrowser*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ICommDlgBrowser*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ICommDlgBrowser*, uint> Release;
+
+            [NativeTypeName("HRESULT (IShellView *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ICommDlgBrowser*, IShellView*, int> OnDefaultCommand;
+
+            [NativeTypeName("HRESULT (IShellView *, ULONG) __attribute__((stdcall))")]
+            public delegate* unmanaged<ICommDlgBrowser*, IShellView*, uint, int> OnStateChange;
+
+            [NativeTypeName("HRESULT (IShellView *, LPCITEMIDLIST) __attribute__((stdcall))")]
+            public delegate* unmanaged<ICommDlgBrowser*, IShellView*, ITEMIDLIST*, int> IncludeObject;
+        }
     }
 }

@@ -87,5 +87,38 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IDeviceTopology*, IPart*, IPart*, BOOL, IPartsList**, int>)(lpVtbl[9]))((IDeviceTopology*)Unsafe.AsPointer(ref this), pIPartFrom, pIPartTo, bRejectMixedPaths, ppParts);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDeviceTopology*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDeviceTopology*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDeviceTopology*, uint> Release;
+
+            [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDeviceTopology*, uint*, int> GetConnectorCount;
+
+            [NativeTypeName("HRESULT (UINT, IConnector **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDeviceTopology*, uint, IConnector**, int> GetConnector;
+
+            [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDeviceTopology*, uint*, int> GetSubunitCount;
+
+            [NativeTypeName("HRESULT (UINT, ISubunit **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDeviceTopology*, uint, ISubunit**, int> GetSubunit;
+
+            [NativeTypeName("HRESULT (UINT, IPart **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDeviceTopology*, uint, IPart**, int> GetPartById;
+
+            [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDeviceTopology*, ushort**, int> GetDeviceId;
+
+            [NativeTypeName("HRESULT (IPart *, IPart *, BOOL, IPartsList **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDeviceTopology*, IPart*, IPart*, BOOL, IPartsList**, int> GetSignalPath;
+        }
     }
 }

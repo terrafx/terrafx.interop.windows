@@ -45,5 +45,20 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IFolderViewHost*, HWND, IDataObject*, RECT*, int>)(lpVtbl[3]))((IFolderViewHost*)Unsafe.AsPointer(ref this), hwndParent, pdo, prc);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFolderViewHost*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IFolderViewHost*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IFolderViewHost*, uint> Release;
+
+            [NativeTypeName("HRESULT (HWND, IDataObject *, RECT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFolderViewHost*, HWND, IDataObject*, RECT*, int> Initialize;
+        }
     }
 }

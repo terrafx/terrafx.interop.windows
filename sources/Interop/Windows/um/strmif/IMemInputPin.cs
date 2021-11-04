@@ -80,5 +80,35 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IMemInputPin*, int>)(lpVtbl[8]))((IMemInputPin*)Unsafe.AsPointer(ref this));
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMemInputPin*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMemInputPin*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMemInputPin*, uint> Release;
+
+            [NativeTypeName("HRESULT (IMemAllocator **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMemInputPin*, IMemAllocator**, int> GetAllocator;
+
+            [NativeTypeName("HRESULT (IMemAllocator *, BOOL) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMemInputPin*, IMemAllocator*, BOOL, int> NotifyAllocator;
+
+            [NativeTypeName("HRESULT (ALLOCATOR_PROPERTIES *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMemInputPin*, ALLOCATOR_PROPERTIES*, int> GetAllocatorRequirements;
+
+            [NativeTypeName("HRESULT (IMediaSample *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMemInputPin*, IMediaSample*, int> Receive;
+
+            [NativeTypeName("HRESULT (IMediaSample **, long, long *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMemInputPin*, IMediaSample**, int, int*, int> ReceiveMultiple;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMemInputPin*, int> ReceiveCanBlock;
+        }
     }
 }

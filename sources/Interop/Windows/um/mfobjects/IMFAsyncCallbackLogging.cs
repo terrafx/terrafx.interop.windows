@@ -67,5 +67,29 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IMFAsyncCallbackLogging*, uint>)(lpVtbl[6]))((IMFAsyncCallbackLogging*)Unsafe.AsPointer(ref this));
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFAsyncCallbackLogging*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFAsyncCallbackLogging*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFAsyncCallbackLogging*, uint> Release;
+
+            [NativeTypeName("HRESULT (DWORD *, DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFAsyncCallbackLogging*, uint*, uint*, int> GetParameters;
+
+            [NativeTypeName("HRESULT (IMFAsyncResult *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFAsyncCallbackLogging*, IMFAsyncResult*, int> Invoke;
+
+            [NativeTypeName("void *() __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFAsyncCallbackLogging*, void*> GetObjectPointer;
+
+            [NativeTypeName("DWORD () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFAsyncCallbackLogging*, uint> GetObjectTag;
+        }
     }
 }

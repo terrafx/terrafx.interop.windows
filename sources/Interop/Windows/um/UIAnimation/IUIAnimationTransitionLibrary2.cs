@@ -171,5 +171,74 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IUIAnimationTransitionLibrary2*, double, double*, uint, double, double, double, double, IUIAnimationTransition2**, int>)(lpVtbl[21]))((IUIAnimationTransitionLibrary2*)Unsafe.AsPointer(ref this), duration, finalValue, cDimension, x1, y1, x2, y2, ppTransition);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IUIAnimationTransitionLibrary2*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IUIAnimationTransitionLibrary2*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IUIAnimationTransitionLibrary2*, uint> Release;
+
+            [NativeTypeName("HRESULT (DOUBLE, IUIAnimationTransition2 **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IUIAnimationTransitionLibrary2*, double, IUIAnimationTransition2**, int> CreateInstantaneousTransition;
+
+            [NativeTypeName("HRESULT (const DOUBLE *, UINT, IUIAnimationTransition2 **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IUIAnimationTransitionLibrary2*, double*, uint, IUIAnimationTransition2**, int> CreateInstantaneousVectorTransition;
+
+            [NativeTypeName("HRESULT (UI_ANIMATION_SECONDS, IUIAnimationTransition2 **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IUIAnimationTransitionLibrary2*, double, IUIAnimationTransition2**, int> CreateConstantTransition;
+
+            [NativeTypeName("HRESULT (UI_ANIMATION_SECONDS, DOUBLE, UI_ANIMATION_SECONDS, IUIAnimationTransition2 **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IUIAnimationTransitionLibrary2*, double, double, double, IUIAnimationTransition2**, int> CreateDiscreteTransition;
+
+            [NativeTypeName("HRESULT (UI_ANIMATION_SECONDS, const DOUBLE *, UINT, UI_ANIMATION_SECONDS, IUIAnimationTransition2 **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IUIAnimationTransitionLibrary2*, double, double*, uint, double, IUIAnimationTransition2**, int> CreateDiscreteVectorTransition;
+
+            [NativeTypeName("HRESULT (UI_ANIMATION_SECONDS, DOUBLE, IUIAnimationTransition2 **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IUIAnimationTransitionLibrary2*, double, double, IUIAnimationTransition2**, int> CreateLinearTransition;
+
+            [NativeTypeName("HRESULT (UI_ANIMATION_SECONDS, const DOUBLE *, UINT, IUIAnimationTransition2 **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IUIAnimationTransitionLibrary2*, double, double*, uint, IUIAnimationTransition2**, int> CreateLinearVectorTransition;
+
+            [NativeTypeName("HRESULT (DOUBLE, DOUBLE, IUIAnimationTransition2 **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IUIAnimationTransitionLibrary2*, double, double, IUIAnimationTransition2**, int> CreateLinearTransitionFromSpeed;
+
+            [NativeTypeName("HRESULT (DOUBLE, const DOUBLE *, UINT, IUIAnimationTransition2 **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IUIAnimationTransitionLibrary2*, double, double*, uint, IUIAnimationTransition2**, int> CreateLinearVectorTransitionFromSpeed;
+
+            [NativeTypeName("HRESULT (UI_ANIMATION_SECONDS, UI_ANIMATION_SECONDS, IUIAnimationTransition2 **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IUIAnimationTransitionLibrary2*, double, double, IUIAnimationTransition2**, int> CreateSinusoidalTransitionFromVelocity;
+
+            [NativeTypeName("HRESULT (UI_ANIMATION_SECONDS, DOUBLE, DOUBLE, UI_ANIMATION_SECONDS, UI_ANIMATION_SLOPE, IUIAnimationTransition2 **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IUIAnimationTransitionLibrary2*, double, double, double, double, UI_ANIMATION_SLOPE, IUIAnimationTransition2**, int> CreateSinusoidalTransitionFromRange;
+
+            [NativeTypeName("HRESULT (UI_ANIMATION_SECONDS, DOUBLE, DOUBLE, DOUBLE, IUIAnimationTransition2 **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IUIAnimationTransitionLibrary2*, double, double, double, double, IUIAnimationTransition2**, int> CreateAccelerateDecelerateTransition;
+
+            [NativeTypeName("HRESULT (UI_ANIMATION_SECONDS, IUIAnimationTransition2 **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IUIAnimationTransitionLibrary2*, double, IUIAnimationTransition2**, int> CreateReversalTransition;
+
+            [NativeTypeName("HRESULT (UI_ANIMATION_SECONDS, DOUBLE, DOUBLE, IUIAnimationTransition2 **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IUIAnimationTransitionLibrary2*, double, double, double, IUIAnimationTransition2**, int> CreateCubicTransition;
+
+            [NativeTypeName("HRESULT (UI_ANIMATION_SECONDS, const DOUBLE *, const DOUBLE *, UINT, IUIAnimationTransition2 **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IUIAnimationTransitionLibrary2*, double, double*, double*, uint, IUIAnimationTransition2**, int> CreateCubicVectorTransition;
+
+            [NativeTypeName("HRESULT (UI_ANIMATION_SECONDS, DOUBLE, IUIAnimationTransition2 **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IUIAnimationTransitionLibrary2*, double, double, IUIAnimationTransition2**, int> CreateSmoothStopTransition;
+
+            [NativeTypeName("HRESULT (DOUBLE, DOUBLE, DOUBLE, IUIAnimationTransition2 **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IUIAnimationTransitionLibrary2*, double, double, double, IUIAnimationTransition2**, int> CreateParabolicTransitionFromAcceleration;
+
+            [NativeTypeName("HRESULT (UI_ANIMATION_SECONDS, DOUBLE, DOUBLE, DOUBLE, DOUBLE, DOUBLE, IUIAnimationTransition2 **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IUIAnimationTransitionLibrary2*, double, double, double, double, double, double, IUIAnimationTransition2**, int> CreateCubicBezierLinearTransition;
+
+            [NativeTypeName("HRESULT (UI_ANIMATION_SECONDS, const DOUBLE *, UINT, DOUBLE, DOUBLE, DOUBLE, DOUBLE, IUIAnimationTransition2 **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IUIAnimationTransitionLibrary2*, double, double*, uint, double, double, double, double, IUIAnimationTransition2**, int> CreateCubicBezierLinearVectorTransition;
+        }
     }
 }

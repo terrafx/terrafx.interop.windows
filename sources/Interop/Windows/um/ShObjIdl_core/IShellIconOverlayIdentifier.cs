@@ -59,5 +59,26 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IShellIconOverlayIdentifier*, int*, int>)(lpVtbl[5]))((IShellIconOverlayIdentifier*)Unsafe.AsPointer(ref this), pPriority);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellIconOverlayIdentifier*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellIconOverlayIdentifier*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellIconOverlayIdentifier*, uint> Release;
+
+            [NativeTypeName("HRESULT (LPCWSTR, DWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellIconOverlayIdentifier*, ushort*, uint, int> IsMemberOf;
+
+            [NativeTypeName("HRESULT (LPWSTR, int, int *, DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellIconOverlayIdentifier*, ushort*, int, int*, uint*, int> GetOverlayInfo;
+
+            [NativeTypeName("HRESULT (int *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellIconOverlayIdentifier*, int*, int> GetPriority;
+        }
     }
 }

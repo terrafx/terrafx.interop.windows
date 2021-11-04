@@ -94,5 +94,41 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IProtectionPolicyManagerInterop2*, HWND, HSTRING, HSTRING, IUnknown*, HSTRING, Guid*, void**, int>)(lpVtbl[10]))((IProtectionPolicyManagerInterop2*)Unsafe.AsPointer(ref this), appWindow, sourceIdentity, appPackageFamilyName, auditInfoUnk, messageFromApp, riid, asyncOperation);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IProtectionPolicyManagerInterop2*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IProtectionPolicyManagerInterop2*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IProtectionPolicyManagerInterop2*, uint> Release;
+
+            [NativeTypeName("HRESULT (ULONG *, IID **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IProtectionPolicyManagerInterop2*, uint*, Guid**, int> GetIids;
+
+            [NativeTypeName("HRESULT (HSTRING *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IProtectionPolicyManagerInterop2*, HSTRING*, int> GetRuntimeClassName;
+
+            [NativeTypeName("HRESULT (TrustLevel *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IProtectionPolicyManagerInterop2*, TrustLevel*, int> GetTrustLevel;
+
+            [NativeTypeName("HRESULT (HWND, HSTRING, HSTRING, const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IProtectionPolicyManagerInterop2*, HWND, HSTRING, HSTRING, Guid*, void**, int> RequestAccessForAppWithWindowAsync;
+
+            [NativeTypeName("HRESULT (HWND, HSTRING, HSTRING, IUnknown *, const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IProtectionPolicyManagerInterop2*, HWND, HSTRING, HSTRING, IUnknown*, Guid*, void**, int> RequestAccessWithAuditingInfoForWindowAsync;
+
+            [NativeTypeName("HRESULT (HWND, HSTRING, HSTRING, IUnknown *, HSTRING, const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IProtectionPolicyManagerInterop2*, HWND, HSTRING, HSTRING, IUnknown*, HSTRING, Guid*, void**, int> RequestAccessWithMessageForWindowAsync;
+
+            [NativeTypeName("HRESULT (HWND, HSTRING, HSTRING, IUnknown *, const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IProtectionPolicyManagerInterop2*, HWND, HSTRING, HSTRING, IUnknown*, Guid*, void**, int> RequestAccessForAppWithAuditingInfoForWindowAsync;
+
+            [NativeTypeName("HRESULT (HWND, HSTRING, HSTRING, IUnknown *, HSTRING, const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IProtectionPolicyManagerInterop2*, HWND, HSTRING, HSTRING, IUnknown*, HSTRING, Guid*, void**, int> RequestAccessForAppWithMessageForWindowAsync;
+        }
     }
 }

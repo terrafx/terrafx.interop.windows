@@ -185,5 +185,80 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IUIAnimationManager2*, int>)(lpVtbl[23]))((IUIAnimationManager2*)Unsafe.AsPointer(ref this));
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IUIAnimationManager2*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IUIAnimationManager2*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IUIAnimationManager2*, uint> Release;
+
+            [NativeTypeName("HRESULT (const DOUBLE *, UINT, IUIAnimationVariable2 **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IUIAnimationManager2*, double*, uint, IUIAnimationVariable2**, int> CreateAnimationVectorVariable;
+
+            [NativeTypeName("HRESULT (DOUBLE, IUIAnimationVariable2 **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IUIAnimationManager2*, double, IUIAnimationVariable2**, int> CreateAnimationVariable;
+
+            [NativeTypeName("HRESULT (IUIAnimationVariable2 *, IUIAnimationTransition2 *, UI_ANIMATION_SECONDS) __attribute__((stdcall))")]
+            public delegate* unmanaged<IUIAnimationManager2*, IUIAnimationVariable2*, IUIAnimationTransition2*, double, int> ScheduleTransition;
+
+            [NativeTypeName("HRESULT (IUIAnimationStoryboard2 **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IUIAnimationManager2*, IUIAnimationStoryboard2**, int> CreateStoryboard;
+
+            [NativeTypeName("HRESULT (UI_ANIMATION_SECONDS) __attribute__((stdcall))")]
+            public delegate* unmanaged<IUIAnimationManager2*, double, int> FinishAllStoryboards;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IUIAnimationManager2*, int> AbandonAllStoryboards;
+
+            [NativeTypeName("HRESULT (UI_ANIMATION_SECONDS, UI_ANIMATION_UPDATE_RESULT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IUIAnimationManager2*, double, UI_ANIMATION_UPDATE_RESULT*, int> Update;
+
+            [NativeTypeName("HRESULT (IUnknown *, UINT32, IUIAnimationVariable2 **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IUIAnimationManager2*, IUnknown*, uint, IUIAnimationVariable2**, int> GetVariableFromTag;
+
+            [NativeTypeName("HRESULT (IUnknown *, UINT32, IUIAnimationStoryboard2 **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IUIAnimationManager2*, IUnknown*, uint, IUIAnimationStoryboard2**, int> GetStoryboardFromTag;
+
+            [NativeTypeName("HRESULT (UI_ANIMATION_SECONDS *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IUIAnimationManager2*, double*, int> EstimateNextEventTime;
+
+            [NativeTypeName("HRESULT (UI_ANIMATION_MANAGER_STATUS *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IUIAnimationManager2*, UI_ANIMATION_MANAGER_STATUS*, int> GetStatus;
+
+            [NativeTypeName("HRESULT (UI_ANIMATION_MODE) __attribute__((stdcall))")]
+            public delegate* unmanaged<IUIAnimationManager2*, UI_ANIMATION_MODE, int> SetAnimationMode;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IUIAnimationManager2*, int> Pause;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IUIAnimationManager2*, int> Resume;
+
+            [NativeTypeName("HRESULT (IUIAnimationManagerEventHandler2 *, BOOL) __attribute__((stdcall))")]
+            public delegate* unmanaged<IUIAnimationManager2*, IUIAnimationManagerEventHandler2*, BOOL, int> SetManagerEventHandler;
+
+            [NativeTypeName("HRESULT (IUIAnimationPriorityComparison2 *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IUIAnimationManager2*, IUIAnimationPriorityComparison2*, int> SetCancelPriorityComparison;
+
+            [NativeTypeName("HRESULT (IUIAnimationPriorityComparison2 *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IUIAnimationManager2*, IUIAnimationPriorityComparison2*, int> SetTrimPriorityComparison;
+
+            [NativeTypeName("HRESULT (IUIAnimationPriorityComparison2 *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IUIAnimationManager2*, IUIAnimationPriorityComparison2*, int> SetCompressPriorityComparison;
+
+            [NativeTypeName("HRESULT (IUIAnimationPriorityComparison2 *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IUIAnimationManager2*, IUIAnimationPriorityComparison2*, int> SetConcludePriorityComparison;
+
+            [NativeTypeName("HRESULT (UI_ANIMATION_SECONDS) __attribute__((stdcall))")]
+            public delegate* unmanaged<IUIAnimationManager2*, double, int> SetDefaultLongestAcceptableDelay;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IUIAnimationManager2*, int> Shutdown;
+        }
     }
 }

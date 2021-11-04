@@ -81,5 +81,35 @@ namespace TerraFX.Interop
         {
             ((delegate* unmanaged<IMalloc*, void>)(lpVtbl[8]))((IMalloc*)Unsafe.AsPointer(ref this));
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMalloc*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMalloc*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMalloc*, uint> Release;
+
+            [NativeTypeName("void *(SIZE_T) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMalloc*, nuint, void*> Alloc;
+
+            [NativeTypeName("void *(void *, SIZE_T) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMalloc*, void*, nuint, void*> Realloc;
+
+            [NativeTypeName("void (void *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMalloc*, void*, void> Free;
+
+            [NativeTypeName("SIZE_T (void *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMalloc*, void*, nuint> GetSize;
+
+            [NativeTypeName("int (void *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMalloc*, void*, int> DidAlloc;
+
+            [NativeTypeName("void () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMalloc*, void> HeapMinimize;
+        }
     }
 }

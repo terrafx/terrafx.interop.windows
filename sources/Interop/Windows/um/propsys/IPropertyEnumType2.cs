@@ -80,5 +80,35 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IPropertyEnumType2*, ushort**, int>)(lpVtbl[8]))((IPropertyEnumType2*)Unsafe.AsPointer(ref this), ppszImageRes);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IPropertyEnumType2*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IPropertyEnumType2*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IPropertyEnumType2*, uint> Release;
+
+            [NativeTypeName("HRESULT (PROPENUMTYPE *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IPropertyEnumType2*, PROPENUMTYPE*, int> GetEnumType;
+
+            [NativeTypeName("HRESULT (PROPVARIANT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IPropertyEnumType2*, PROPVARIANT*, int> GetValue;
+
+            [NativeTypeName("HRESULT (PROPVARIANT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IPropertyEnumType2*, PROPVARIANT*, int> GetRangeMinValue;
+
+            [NativeTypeName("HRESULT (PROPVARIANT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IPropertyEnumType2*, PROPVARIANT*, int> GetRangeSetValue;
+
+            [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IPropertyEnumType2*, ushort**, int> GetDisplayText;
+
+            [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IPropertyEnumType2*, ushort**, int> GetImageReference;
+        }
     }
 }

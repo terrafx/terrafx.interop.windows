@@ -87,5 +87,38 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<ICompositionDrawingSurfaceInterop2*, IUnknown*, int, int, RECT*, int>)(lpVtbl[9]))((ICompositionDrawingSurfaceInterop2*)Unsafe.AsPointer(ref this), destinationResource, destinationOffsetX, destinationOffsetY, sourceRectangle);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ICompositionDrawingSurfaceInterop2*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ICompositionDrawingSurfaceInterop2*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ICompositionDrawingSurfaceInterop2*, uint> Release;
+
+            [NativeTypeName("HRESULT (const RECT *, const IID &, void **, POINT *) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<ICompositionDrawingSurfaceInterop2*, RECT*, Guid*, void**, POINT*, int> BeginDraw;
+
+            [NativeTypeName("HRESULT () __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<ICompositionDrawingSurfaceInterop2*, int> EndDraw;
+
+            [NativeTypeName("HRESULT (SIZE) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<ICompositionDrawingSurfaceInterop2*, SIZE, int> Resize;
+
+            [NativeTypeName("HRESULT (const RECT *, const RECT *, int, int) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<ICompositionDrawingSurfaceInterop2*, RECT*, RECT*, int, int, int> Scroll;
+
+            [NativeTypeName("HRESULT () __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<ICompositionDrawingSurfaceInterop2*, int> ResumeDraw;
+
+            [NativeTypeName("HRESULT () __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<ICompositionDrawingSurfaceInterop2*, int> SuspendDraw;
+
+            [NativeTypeName("HRESULT (IUnknown *, int, int, const RECT *) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<ICompositionDrawingSurfaceInterop2*, IUnknown*, int, int, RECT*, int> CopySurface;
+        }
     }
 }

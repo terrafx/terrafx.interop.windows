@@ -52,5 +52,23 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IVMRAspectRatioControl*, uint, int>)(lpVtbl[4]))((IVMRAspectRatioControl*)Unsafe.AsPointer(ref this), dwARMode);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IVMRAspectRatioControl*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IVMRAspectRatioControl*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IVMRAspectRatioControl*, uint> Release;
+
+            [NativeTypeName("HRESULT (LPDWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<IVMRAspectRatioControl*, uint*, int> GetAspectRatioMode;
+
+            [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<IVMRAspectRatioControl*, uint, int> SetAspectRatioMode;
+        }
     }
 }

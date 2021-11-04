@@ -131,5 +131,56 @@ namespace TerraFX.Interop
         {
             ((delegate* unmanaged<IMLOperatorKernelCreationContext*, IUnknown**, void>)(lpVtbl[15]))((IMLOperatorKernelCreationContext*)Unsafe.AsPointer(ref this), executionObject);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMLOperatorKernelCreationContext*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMLOperatorKernelCreationContext*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMLOperatorKernelCreationContext*, uint> Release;
+
+            [NativeTypeName("HRESULT (const char *, MLOperatorAttributeType, uint32_t *) const noexcept __attribute__((stdcall))")]
+            public delegate* unmanaged<IMLOperatorKernelCreationContext*, sbyte*, MLOperatorAttributeType, uint*, int> GetAttributeElementCount;
+
+            [NativeTypeName("HRESULT (const char *, MLOperatorAttributeType, uint32_t, size_t, void *) const noexcept __attribute__((stdcall))")]
+            public delegate* unmanaged<IMLOperatorKernelCreationContext*, sbyte*, MLOperatorAttributeType, uint, nuint, void*, int> GetAttribute;
+
+            [NativeTypeName("HRESULT (const char *, uint32_t, uint32_t *) const noexcept __attribute__((stdcall))")]
+            public delegate* unmanaged<IMLOperatorKernelCreationContext*, sbyte*, uint, uint*, int> GetStringAttributeElementLength;
+
+            [NativeTypeName("HRESULT (const char *, uint32_t, uint32_t, char *) const noexcept __attribute__((stdcall))")]
+            public delegate* unmanaged<IMLOperatorKernelCreationContext*, sbyte*, uint, uint, sbyte*, int> GetStringAttributeElement;
+
+            [NativeTypeName("uint32_t () const noexcept __attribute__((stdcall))")]
+            public delegate* unmanaged<IMLOperatorKernelCreationContext*, uint> GetInputCount;
+
+            [NativeTypeName("uint32_t () const noexcept __attribute__((stdcall))")]
+            public delegate* unmanaged<IMLOperatorKernelCreationContext*, uint> GetOutputCount;
+
+            [NativeTypeName("bool (uint32_t) const noexcept __attribute__((stdcall))")]
+            public delegate* unmanaged<IMLOperatorKernelCreationContext*, uint, byte> IsInputValid;
+
+            [NativeTypeName("bool (uint32_t) const noexcept __attribute__((stdcall))")]
+            public delegate* unmanaged<IMLOperatorKernelCreationContext*, uint, byte> IsOutputValid;
+
+            [NativeTypeName("HRESULT (uint32_t, MLOperatorEdgeDescription *) const noexcept __attribute__((stdcall))")]
+            public delegate* unmanaged<IMLOperatorKernelCreationContext*, uint, MLOperatorEdgeDescription*, int> GetInputEdgeDescription;
+
+            [NativeTypeName("HRESULT (uint32_t, MLOperatorEdgeDescription *) const noexcept __attribute__((stdcall))")]
+            public delegate* unmanaged<IMLOperatorKernelCreationContext*, uint, MLOperatorEdgeDescription*, int> GetOutputEdgeDescription;
+
+            [NativeTypeName("bool () const noexcept __attribute__((stdcall))")]
+            public delegate* unmanaged<IMLOperatorKernelCreationContext*, byte> HasTensorShapeDescription;
+
+            [NativeTypeName("HRESULT (IMLOperatorTensorShapeDescription **) const noexcept __attribute__((stdcall))")]
+            public delegate* unmanaged<IMLOperatorKernelCreationContext*, IMLOperatorTensorShapeDescription**, int> GetTensorShapeDescription;
+
+            [NativeTypeName("void (IUnknown **) const noexcept __attribute__((stdcall))")]
+            public delegate* unmanaged<IMLOperatorKernelCreationContext*, IUnknown**, void> GetExecutionInterface;
+        }
     }
 }

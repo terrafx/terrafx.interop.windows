@@ -110,13 +110,6 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(14)]
-        public HRESULT SetRedTableValue(uint index, float value)
-        {
-            return ((delegate* unmanaged<IDCompositionTableTransferEffect*, uint, float, int>)(lpVtbl[14]))((IDCompositionTableTransferEffect*)Unsafe.AsPointer(ref this), index, value);
-        }
-
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(13)]
         public HRESULT SetRedTableValue(uint index, IDCompositionAnimation* animation)
         {
@@ -124,10 +117,10 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(16)]
-        public HRESULT SetGreenTableValue(uint index, float value)
+        [VtblIndex(14)]
+        public HRESULT SetRedTableValue(uint index, float value)
         {
-            return ((delegate* unmanaged<IDCompositionTableTransferEffect*, uint, float, int>)(lpVtbl[16]))((IDCompositionTableTransferEffect*)Unsafe.AsPointer(ref this), index, value);
+            return ((delegate* unmanaged<IDCompositionTableTransferEffect*, uint, float, int>)(lpVtbl[14]))((IDCompositionTableTransferEffect*)Unsafe.AsPointer(ref this), index, value);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -138,10 +131,10 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(18)]
-        public HRESULT SetBlueTableValue(uint index, float value)
+        [VtblIndex(16)]
+        public HRESULT SetGreenTableValue(uint index, float value)
         {
-            return ((delegate* unmanaged<IDCompositionTableTransferEffect*, uint, float, int>)(lpVtbl[18]))((IDCompositionTableTransferEffect*)Unsafe.AsPointer(ref this), index, value);
+            return ((delegate* unmanaged<IDCompositionTableTransferEffect*, uint, float, int>)(lpVtbl[16]))((IDCompositionTableTransferEffect*)Unsafe.AsPointer(ref this), index, value);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -152,10 +145,10 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(20)]
-        public HRESULT SetAlphaTableValue(uint index, float value)
+        [VtblIndex(18)]
+        public HRESULT SetBlueTableValue(uint index, float value)
         {
-            return ((delegate* unmanaged<IDCompositionTableTransferEffect*, uint, float, int>)(lpVtbl[20]))((IDCompositionTableTransferEffect*)Unsafe.AsPointer(ref this), index, value);
+            return ((delegate* unmanaged<IDCompositionTableTransferEffect*, uint, float, int>)(lpVtbl[18]))((IDCompositionTableTransferEffect*)Unsafe.AsPointer(ref this), index, value);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -163,6 +156,79 @@ namespace TerraFX.Interop
         public HRESULT SetAlphaTableValue(uint index, IDCompositionAnimation* animation)
         {
             return ((delegate* unmanaged<IDCompositionTableTransferEffect*, uint, IDCompositionAnimation*, int>)(lpVtbl[19]))((IDCompositionTableTransferEffect*)Unsafe.AsPointer(ref this), index, animation);
+        }
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(20)]
+        public HRESULT SetAlphaTableValue(uint index, float value)
+        {
+            return ((delegate* unmanaged<IDCompositionTableTransferEffect*, uint, float, int>)(lpVtbl[20]))((IDCompositionTableTransferEffect*)Unsafe.AsPointer(ref this), index, value);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDCompositionTableTransferEffect*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDCompositionTableTransferEffect*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDCompositionTableTransferEffect*, uint> Release;
+
+            [NativeTypeName("HRESULT (UINT, IUnknown *, UINT) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDCompositionTableTransferEffect*, uint, IUnknown*, uint, int> SetInput;
+
+            [NativeTypeName("HRESULT (const float *, UINT) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDCompositionTableTransferEffect*, float*, uint, int> SetRedTable;
+
+            [NativeTypeName("HRESULT (const float *, UINT) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDCompositionTableTransferEffect*, float*, uint, int> SetGreenTable;
+
+            [NativeTypeName("HRESULT (const float *, UINT) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDCompositionTableTransferEffect*, float*, uint, int> SetBlueTable;
+
+            [NativeTypeName("HRESULT (const float *, UINT) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDCompositionTableTransferEffect*, float*, uint, int> SetAlphaTable;
+
+            [NativeTypeName("HRESULT (BOOL) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDCompositionTableTransferEffect*, BOOL, int> SetRedDisable;
+
+            [NativeTypeName("HRESULT (BOOL) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDCompositionTableTransferEffect*, BOOL, int> SetGreenDisable;
+
+            [NativeTypeName("HRESULT (BOOL) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDCompositionTableTransferEffect*, BOOL, int> SetBlueDisable;
+
+            [NativeTypeName("HRESULT (BOOL) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDCompositionTableTransferEffect*, BOOL, int> SetAlphaDisable;
+
+            [NativeTypeName("HRESULT (BOOL) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDCompositionTableTransferEffect*, BOOL, int> SetClampOutput;
+
+            [NativeTypeName("HRESULT (UINT, IDCompositionAnimation *) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDCompositionTableTransferEffect*, uint, IDCompositionAnimation*, int> SetRedTableValue;
+
+            [NativeTypeName("HRESULT (UINT, float) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDCompositionTableTransferEffect*, uint, float, int> SetRedTableValue1;
+
+            [NativeTypeName("HRESULT (UINT, IDCompositionAnimation *) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDCompositionTableTransferEffect*, uint, IDCompositionAnimation*, int> SetGreenTableValue;
+
+            [NativeTypeName("HRESULT (UINT, float) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDCompositionTableTransferEffect*, uint, float, int> SetGreenTableValue1;
+
+            [NativeTypeName("HRESULT (UINT, IDCompositionAnimation *) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDCompositionTableTransferEffect*, uint, IDCompositionAnimation*, int> SetBlueTableValue;
+
+            [NativeTypeName("HRESULT (UINT, float) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDCompositionTableTransferEffect*, uint, float, int> SetBlueTableValue1;
+
+            [NativeTypeName("HRESULT (UINT, IDCompositionAnimation *) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDCompositionTableTransferEffect*, uint, IDCompositionAnimation*, int> SetAlphaTableValue;
+
+            [NativeTypeName("HRESULT (UINT, float) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDCompositionTableTransferEffect*, uint, float, int> SetAlphaTableValue1;
         }
     }
 }

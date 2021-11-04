@@ -220,5 +220,95 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IFileOpenDialog*, IShellItemArray**, int>)(lpVtbl[28]))((IFileOpenDialog*)Unsafe.AsPointer(ref this), ppsai);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFileOpenDialog*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IFileOpenDialog*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IFileOpenDialog*, uint> Release;
+
+            [NativeTypeName("HRESULT (HWND) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFileOpenDialog*, HWND, int> Show;
+
+            [NativeTypeName("HRESULT (UINT, const COMDLG_FILTERSPEC *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFileOpenDialog*, uint, COMDLG_FILTERSPEC*, int> SetFileTypes;
+
+            [NativeTypeName("HRESULT (UINT) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFileOpenDialog*, uint, int> SetFileTypeIndex;
+
+            [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFileOpenDialog*, uint*, int> GetFileTypeIndex;
+
+            [NativeTypeName("HRESULT (IFileDialogEvents *, DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFileOpenDialog*, IFileDialogEvents*, uint*, int> Advise;
+
+            [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFileOpenDialog*, uint, int> Unadvise;
+
+            [NativeTypeName("HRESULT (FILEOPENDIALOGOPTIONS) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFileOpenDialog*, uint, int> SetOptions;
+
+            [NativeTypeName("HRESULT (FILEOPENDIALOGOPTIONS *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFileOpenDialog*, uint*, int> GetOptions;
+
+            [NativeTypeName("HRESULT (IShellItem *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFileOpenDialog*, IShellItem*, int> SetDefaultFolder;
+
+            [NativeTypeName("HRESULT (IShellItem *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFileOpenDialog*, IShellItem*, int> SetFolder;
+
+            [NativeTypeName("HRESULT (IShellItem **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFileOpenDialog*, IShellItem**, int> GetFolder;
+
+            [NativeTypeName("HRESULT (IShellItem **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFileOpenDialog*, IShellItem**, int> GetCurrentSelection;
+
+            [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFileOpenDialog*, ushort*, int> SetFileName;
+
+            [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFileOpenDialog*, ushort**, int> GetFileName;
+
+            [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFileOpenDialog*, ushort*, int> SetTitle;
+
+            [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFileOpenDialog*, ushort*, int> SetOkButtonLabel;
+
+            [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFileOpenDialog*, ushort*, int> SetFileNameLabel;
+
+            [NativeTypeName("HRESULT (IShellItem **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFileOpenDialog*, IShellItem**, int> GetResult;
+
+            [NativeTypeName("HRESULT (IShellItem *, FDAP) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFileOpenDialog*, IShellItem*, FDAP, int> AddPlace;
+
+            [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFileOpenDialog*, ushort*, int> SetDefaultExtension;
+
+            [NativeTypeName("HRESULT (HRESULT) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFileOpenDialog*, HRESULT, int> Close;
+
+            [NativeTypeName("HRESULT (const GUID &) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFileOpenDialog*, Guid*, int> SetClientGuid;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IFileOpenDialog*, int> ClearClientData;
+
+            [NativeTypeName("HRESULT (IShellItemFilter *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFileOpenDialog*, IShellItemFilter*, int> SetFilter;
+
+            [NativeTypeName("HRESULT (IShellItemArray **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFileOpenDialog*, IShellItemArray**, int> GetResults;
+
+            [NativeTypeName("HRESULT (IShellItemArray **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFileOpenDialog*, IShellItemArray**, int> GetSelectedItems;
+        }
     }
 }

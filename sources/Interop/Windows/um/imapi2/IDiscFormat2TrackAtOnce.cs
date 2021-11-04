@@ -276,5 +276,119 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IDiscFormat2TrackAtOnce*, SAFEARRAY**, int>)(lpVtbl[36]))((IDiscFormat2TrackAtOnce*)Unsafe.AsPointer(ref this), supportedSpeedDescriptors);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiscFormat2TrackAtOnce*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiscFormat2TrackAtOnce*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiscFormat2TrackAtOnce*, uint> Release;
+
+            [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiscFormat2TrackAtOnce*, uint*, int> GetTypeInfoCount;
+
+            [NativeTypeName("HRESULT (UINT, LCID, ITypeInfo **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiscFormat2TrackAtOnce*, uint, uint, ITypeInfo**, int> GetTypeInfo;
+
+            [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiscFormat2TrackAtOnce*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+
+            [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiscFormat2TrackAtOnce*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
+
+            [NativeTypeName("HRESULT (IDiscRecorder2 *, VARIANT_BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiscFormat2TrackAtOnce*, IDiscRecorder2*, short*, int> IsRecorderSupported;
+
+            [NativeTypeName("HRESULT (IDiscRecorder2 *, VARIANT_BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiscFormat2TrackAtOnce*, IDiscRecorder2*, short*, int> IsCurrentMediaSupported;
+
+            [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiscFormat2TrackAtOnce*, short*, int> get_MediaPhysicallyBlank;
+
+            [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiscFormat2TrackAtOnce*, short*, int> get_MediaHeuristicallyBlank;
+
+            [NativeTypeName("HRESULT (SAFEARRAY **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiscFormat2TrackAtOnce*, SAFEARRAY**, int> get_SupportedMediaTypes;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiscFormat2TrackAtOnce*, int> PrepareMedia;
+
+            [NativeTypeName("HRESULT (IStream *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiscFormat2TrackAtOnce*, IStream*, int> AddAudioTrack;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiscFormat2TrackAtOnce*, int> CancelAddTrack;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiscFormat2TrackAtOnce*, int> ReleaseMedia;
+
+            [NativeTypeName("HRESULT (LONG, VARIANT_BOOL) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiscFormat2TrackAtOnce*, int, short, int> SetWriteSpeed;
+
+            [NativeTypeName("HRESULT (IDiscRecorder2 *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiscFormat2TrackAtOnce*, IDiscRecorder2*, int> put_Recorder;
+
+            [NativeTypeName("HRESULT (IDiscRecorder2 **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiscFormat2TrackAtOnce*, IDiscRecorder2**, int> get_Recorder;
+
+            [NativeTypeName("HRESULT (VARIANT_BOOL) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiscFormat2TrackAtOnce*, short, int> put_BufferUnderrunFreeDisabled;
+
+            [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiscFormat2TrackAtOnce*, short*, int> get_BufferUnderrunFreeDisabled;
+
+            [NativeTypeName("HRESULT (LONG *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiscFormat2TrackAtOnce*, int*, int> get_NumberOfExistingTracks;
+
+            [NativeTypeName("HRESULT (LONG *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiscFormat2TrackAtOnce*, int*, int> get_TotalSectorsOnMedia;
+
+            [NativeTypeName("HRESULT (LONG *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiscFormat2TrackAtOnce*, int*, int> get_FreeSectorsOnMedia;
+
+            [NativeTypeName("HRESULT (LONG *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiscFormat2TrackAtOnce*, int*, int> get_UsedSectorsOnMedia;
+
+            [NativeTypeName("HRESULT (VARIANT_BOOL) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiscFormat2TrackAtOnce*, short, int> put_DoNotFinalizeMedia;
+
+            [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiscFormat2TrackAtOnce*, short*, int> get_DoNotFinalizeMedia;
+
+            [NativeTypeName("HRESULT (SAFEARRAY **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiscFormat2TrackAtOnce*, SAFEARRAY**, int> get_ExpectedTableOfContents;
+
+            [NativeTypeName("HRESULT (IMAPI_MEDIA_PHYSICAL_TYPE *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiscFormat2TrackAtOnce*, IMAPI_MEDIA_PHYSICAL_TYPE*, int> get_CurrentPhysicalMediaType;
+
+            [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiscFormat2TrackAtOnce*, ushort*, int> put_ClientName;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiscFormat2TrackAtOnce*, ushort**, int> get_ClientName;
+
+            [NativeTypeName("HRESULT (LONG *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiscFormat2TrackAtOnce*, int*, int> get_RequestedWriteSpeed;
+
+            [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiscFormat2TrackAtOnce*, short*, int> get_RequestedRotationTypeIsPureCAV;
+
+            [NativeTypeName("HRESULT (LONG *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiscFormat2TrackAtOnce*, int*, int> get_CurrentWriteSpeed;
+
+            [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiscFormat2TrackAtOnce*, short*, int> get_CurrentRotationTypeIsPureCAV;
+
+            [NativeTypeName("HRESULT (SAFEARRAY **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiscFormat2TrackAtOnce*, SAFEARRAY**, int> get_SupportedWriteSpeeds;
+
+            [NativeTypeName("HRESULT (SAFEARRAY **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiscFormat2TrackAtOnce*, SAFEARRAY**, int> get_SupportedWriteSpeedDescriptors;
+        }
     }
 }

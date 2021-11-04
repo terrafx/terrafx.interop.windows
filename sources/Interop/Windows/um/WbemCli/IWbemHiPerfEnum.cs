@@ -66,5 +66,29 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IWbemHiPerfEnum*, int, int>)(lpVtbl[6]))((IWbemHiPerfEnum*)Unsafe.AsPointer(ref this), lFlags);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWbemHiPerfEnum*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IWbemHiPerfEnum*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IWbemHiPerfEnum*, uint> Release;
+
+            [NativeTypeName("HRESULT (long, ULONG, long *, IWbemObjectAccess **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWbemHiPerfEnum*, int, uint, int*, IWbemObjectAccess**, int> AddObjects;
+
+            [NativeTypeName("HRESULT (long, ULONG, long *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWbemHiPerfEnum*, int, uint, int*, int> RemoveObjects;
+
+            [NativeTypeName("HRESULT (long, ULONG, IWbemObjectAccess **, ULONG *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWbemHiPerfEnum*, int, uint, IWbemObjectAccess**, uint*, int> GetObjects;
+
+            [NativeTypeName("HRESULT (long) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWbemHiPerfEnum*, int, int> RemoveAll;
+        }
     }
 }

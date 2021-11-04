@@ -178,5 +178,77 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IFileOperation*, BOOL*, int>)(lpVtbl[22]))((IFileOperation*)Unsafe.AsPointer(ref this), pfAnyOperationsAborted);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFileOperation*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IFileOperation*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IFileOperation*, uint> Release;
+
+            [NativeTypeName("HRESULT (IFileOperationProgressSink *, DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFileOperation*, IFileOperationProgressSink*, uint*, int> Advise;
+
+            [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFileOperation*, uint, int> Unadvise;
+
+            [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFileOperation*, uint, int> SetOperationFlags;
+
+            [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFileOperation*, ushort*, int> SetProgressMessage;
+
+            [NativeTypeName("HRESULT (IOperationsProgressDialog *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFileOperation*, IOperationsProgressDialog*, int> SetProgressDialog;
+
+            [NativeTypeName("HRESULT (IPropertyChangeArray *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFileOperation*, IPropertyChangeArray*, int> SetProperties;
+
+            [NativeTypeName("HRESULT (HWND) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFileOperation*, HWND, int> SetOwnerWindow;
+
+            [NativeTypeName("HRESULT (IShellItem *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFileOperation*, IShellItem*, int> ApplyPropertiesToItem;
+
+            [NativeTypeName("HRESULT (IUnknown *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFileOperation*, IUnknown*, int> ApplyPropertiesToItems;
+
+            [NativeTypeName("HRESULT (IShellItem *, LPCWSTR, IFileOperationProgressSink *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFileOperation*, IShellItem*, ushort*, IFileOperationProgressSink*, int> RenameItem;
+
+            [NativeTypeName("HRESULT (IUnknown *, LPCWSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFileOperation*, IUnknown*, ushort*, int> RenameItems;
+
+            [NativeTypeName("HRESULT (IShellItem *, IShellItem *, LPCWSTR, IFileOperationProgressSink *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFileOperation*, IShellItem*, IShellItem*, ushort*, IFileOperationProgressSink*, int> MoveItem;
+
+            [NativeTypeName("HRESULT (IUnknown *, IShellItem *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFileOperation*, IUnknown*, IShellItem*, int> MoveItems;
+
+            [NativeTypeName("HRESULT (IShellItem *, IShellItem *, LPCWSTR, IFileOperationProgressSink *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFileOperation*, IShellItem*, IShellItem*, ushort*, IFileOperationProgressSink*, int> CopyItem;
+
+            [NativeTypeName("HRESULT (IUnknown *, IShellItem *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFileOperation*, IUnknown*, IShellItem*, int> CopyItems;
+
+            [NativeTypeName("HRESULT (IShellItem *, IFileOperationProgressSink *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFileOperation*, IShellItem*, IFileOperationProgressSink*, int> DeleteItem;
+
+            [NativeTypeName("HRESULT (IUnknown *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFileOperation*, IUnknown*, int> DeleteItems;
+
+            [NativeTypeName("HRESULT (IShellItem *, DWORD, LPCWSTR, LPCWSTR, IFileOperationProgressSink *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFileOperation*, IShellItem*, uint, ushort*, ushort*, IFileOperationProgressSink*, int> NewItem;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IFileOperation*, int> PerformOperations;
+
+            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFileOperation*, BOOL*, int> GetAnyOperationsAborted;
+        }
     }
 }

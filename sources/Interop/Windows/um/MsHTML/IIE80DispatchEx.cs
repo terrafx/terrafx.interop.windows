@@ -122,5 +122,53 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IIE80DispatchEx*, IUnknown**, int>)(lpVtbl[14]))((IIE80DispatchEx*)Unsafe.AsPointer(ref this), ppunk);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IIE80DispatchEx*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IIE80DispatchEx*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IIE80DispatchEx*, uint> Release;
+
+            [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IIE80DispatchEx*, uint*, int> GetTypeInfoCount;
+
+            [NativeTypeName("HRESULT (UINT, LCID, ITypeInfo **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IIE80DispatchEx*, uint, uint, ITypeInfo**, int> GetTypeInfo;
+
+            [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IIE80DispatchEx*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+
+            [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IIE80DispatchEx*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
+
+            [NativeTypeName("HRESULT (BSTR, DWORD, DISPID *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IIE80DispatchEx*, ushort*, uint, int*, int> GetDispID;
+
+            [NativeTypeName("HRESULT (DISPID, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, IServiceProvider *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IIE80DispatchEx*, int, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, IServiceProvider*, int> InvokeEx;
+
+            [NativeTypeName("HRESULT (BSTR, DWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<IIE80DispatchEx*, ushort*, uint, int> DeleteMemberByName;
+
+            [NativeTypeName("HRESULT (DISPID) __attribute__((stdcall))")]
+            public delegate* unmanaged<IIE80DispatchEx*, int, int> DeleteMemberByDispID;
+
+            [NativeTypeName("HRESULT (DISPID, DWORD, DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IIE80DispatchEx*, int, uint, uint*, int> GetMemberProperties;
+
+            [NativeTypeName("HRESULT (DISPID, BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IIE80DispatchEx*, int, ushort**, int> GetMemberName;
+
+            [NativeTypeName("HRESULT (DWORD, DISPID, DISPID *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IIE80DispatchEx*, uint, int, int*, int> GetNextDispID;
+
+            [NativeTypeName("HRESULT (IUnknown **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IIE80DispatchEx*, IUnknown**, int> GetNameSpaceParent;
+        }
     }
 }

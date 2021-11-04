@@ -66,5 +66,29 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IMFTimedTextStyle2*, double*, int>)(lpVtbl[6]))((IMFTimedTextStyle2*)Unsafe.AsPointer(ref this), value);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFTimedTextStyle2*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFTimedTextStyle2*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFTimedTextStyle2*, uint> Release;
+
+            [NativeTypeName("HRESULT (IMFTimedTextRuby **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFTimedTextStyle2*, IMFTimedTextRuby**, int> GetRuby;
+
+            [NativeTypeName("HRESULT (IMFTimedTextBouten **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFTimedTextStyle2*, IMFTimedTextBouten**, int> GetBouten;
+
+            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFTimedTextStyle2*, BOOL*, int> IsTextCombined;
+
+            [NativeTypeName("HRESULT (double *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFTimedTextStyle2*, double*, int> GetFontAngleInDegrees;
+        }
     }
 }

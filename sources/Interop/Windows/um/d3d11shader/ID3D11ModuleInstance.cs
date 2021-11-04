@@ -108,5 +108,47 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<ID3D11ModuleInstance*, sbyte*, uint, uint, int>)(lpVtbl[12]))((ID3D11ModuleInstance*)Unsafe.AsPointer(ref this), pSrvName, uDstUavSlot, uCount);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D11ModuleInstance*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D11ModuleInstance*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D11ModuleInstance*, uint> Release;
+
+            [NativeTypeName("HRESULT (UINT, UINT, UINT) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D11ModuleInstance*, uint, uint, uint, int> BindConstantBuffer;
+
+            [NativeTypeName("HRESULT (LPCSTR, UINT, UINT) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D11ModuleInstance*, sbyte*, uint, uint, int> BindConstantBufferByName;
+
+            [NativeTypeName("HRESULT (UINT, UINT, UINT) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D11ModuleInstance*, uint, uint, uint, int> BindResource;
+
+            [NativeTypeName("HRESULT (LPCSTR, UINT, UINT) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D11ModuleInstance*, sbyte*, uint, uint, int> BindResourceByName;
+
+            [NativeTypeName("HRESULT (UINT, UINT, UINT) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D11ModuleInstance*, uint, uint, uint, int> BindSampler;
+
+            [NativeTypeName("HRESULT (LPCSTR, UINT, UINT) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D11ModuleInstance*, sbyte*, uint, uint, int> BindSamplerByName;
+
+            [NativeTypeName("HRESULT (UINT, UINT, UINT) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D11ModuleInstance*, uint, uint, uint, int> BindUnorderedAccessView;
+
+            [NativeTypeName("HRESULT (LPCSTR, UINT, UINT) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D11ModuleInstance*, sbyte*, uint, uint, int> BindUnorderedAccessViewByName;
+
+            [NativeTypeName("HRESULT (UINT, UINT, UINT) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D11ModuleInstance*, uint, uint, uint, int> BindResourceAsUnorderedAccessView;
+
+            [NativeTypeName("HRESULT (LPCSTR, UINT, UINT) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D11ModuleInstance*, sbyte*, uint, uint, int> BindResourceAsUnorderedAccessViewByName;
+        }
     }
 }

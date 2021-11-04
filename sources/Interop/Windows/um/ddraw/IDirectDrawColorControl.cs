@@ -50,5 +50,23 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IDirectDrawColorControl*, DDCOLORCONTROL*, int>)(lpVtbl[4]))((IDirectDrawColorControl*)Unsafe.AsPointer(ref this), param0);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDirectDrawColorControl*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDirectDrawColorControl*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDirectDrawColorControl*, uint> Release;
+
+            [NativeTypeName("HRESULT (LPDDCOLORCONTROL) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDirectDrawColorControl*, DDCOLORCONTROL*, int> GetColorControls;
+
+            [NativeTypeName("HRESULT (LPDDCOLORCONTROL) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDirectDrawColorControl*, DDCOLORCONTROL*, int> SetColorControls;
+        }
     }
 }

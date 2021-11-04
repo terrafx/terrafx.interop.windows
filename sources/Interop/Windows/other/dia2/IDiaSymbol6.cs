@@ -1746,5 +1746,749 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IDiaSymbol6*, BOOL*, int>)(lpVtbl[246]))((IDiaSymbol6*)Unsafe.AsPointer(ref this), pRetVal);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol6*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol6*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol6*, uint> Release;
+
+            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol6*, uint*, int> get_symIndexId;
+
+            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol6*, uint*, int> get_symTag;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol6*, ushort**, int> get_name;
+
+            [NativeTypeName("HRESULT (IDiaSymbol **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol6*, IDiaSymbol**, int> get_lexicalParent;
+
+            [NativeTypeName("HRESULT (IDiaSymbol **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol6*, IDiaSymbol**, int> get_classParent;
+
+            [NativeTypeName("HRESULT (IDiaSymbol **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol6*, IDiaSymbol**, int> get_type;
+
+            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol6*, uint*, int> get_dataKind;
+
+            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol6*, uint*, int> get_locationType;
+
+            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol6*, uint*, int> get_addressSection;
+
+            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol6*, uint*, int> get_addressOffset;
+
+            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol6*, uint*, int> get_relativeVirtualAddress;
+
+            [NativeTypeName("HRESULT (ULONGLONG *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol6*, ulong*, int> get_virtualAddress;
+
+            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol6*, uint*, int> get_registerId;
+
+            [NativeTypeName("HRESULT (LONG *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol6*, int*, int> get_offset;
+
+            [NativeTypeName("HRESULT (ULONGLONG *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol6*, ulong*, int> get_length;
+
+            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol6*, uint*, int> get_slot;
+
+            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol6*, BOOL*, int> get_volatileType;
+
+            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol6*, BOOL*, int> get_constType;
+
+            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol6*, BOOL*, int> get_unalignedType;
+
+            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol6*, uint*, int> get_access;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol6*, ushort**, int> get_libraryName;
+
+            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol6*, uint*, int> get_platform;
+
+            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol6*, uint*, int> get_language;
+
+            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol6*, BOOL*, int> get_editAndContinueEnabled;
+
+            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol6*, uint*, int> get_frontEndMajor;
+
+            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol6*, uint*, int> get_frontEndMinor;
+
+            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol6*, uint*, int> get_frontEndBuild;
+
+            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol6*, uint*, int> get_backEndMajor;
+
+            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol6*, uint*, int> get_backEndMinor;
+
+            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol6*, uint*, int> get_backEndBuild;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol6*, ushort**, int> get_sourceFileName;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol6*, ushort**, int> get_unused;
+
+            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol6*, uint*, int> get_thunkOrdinal;
+
+            [NativeTypeName("HRESULT (LONG *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol6*, int*, int> get_thisAdjust;
+
+            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol6*, uint*, int> get_virtualBaseOffset;
+
+            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol6*, BOOL*, int> get_virtual;
+
+            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol6*, BOOL*, int> get_intro;
+
+            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol6*, BOOL*, int> get_pure;
+
+            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol6*, uint*, int> get_callingConvention;
+
+            [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol6*, VARIANT*, int> get_value;
+
+            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol6*, uint*, int> get_baseType;
+
+            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol6*, uint*, int> get_token;
+
+            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol6*, uint*, int> get_timeStamp;
+
+            [NativeTypeName("HRESULT (GUID *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol6*, Guid*, int> get_guid;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol6*, ushort**, int> get_symbolsFileName;
+
+            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol6*, BOOL*, int> get_reference;
+
+            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol6*, uint*, int> get_count;
+
+            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol6*, uint*, int> get_bitPosition;
+
+            [NativeTypeName("HRESULT (IDiaSymbol **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol6*, IDiaSymbol**, int> get_arrayIndexType;
+
+            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol6*, BOOL*, int> get_packed;
+
+            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol6*, BOOL*, int> get_constructor;
+
+            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol6*, BOOL*, int> get_overloadedOperator;
+
+            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol6*, BOOL*, int> get_nested;
+
+            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol6*, BOOL*, int> get_hasNestedTypes;
+
+            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol6*, BOOL*, int> get_hasAssignmentOperator;
+
+            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol6*, BOOL*, int> get_hasCastOperator;
+
+            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol6*, BOOL*, int> get_scoped;
+
+            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol6*, BOOL*, int> get_virtualBaseClass;
+
+            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol6*, BOOL*, int> get_indirectVirtualBaseClass;
+
+            [NativeTypeName("HRESULT (LONG *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol6*, int*, int> get_virtualBasePointerOffset;
+
+            [NativeTypeName("HRESULT (IDiaSymbol **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol6*, IDiaSymbol**, int> get_virtualTableShape;
+
+            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol6*, uint*, int> get_lexicalParentId;
+
+            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol6*, uint*, int> get_classParentId;
+
+            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol6*, uint*, int> get_typeId;
+
+            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol6*, uint*, int> get_arrayIndexTypeId;
+
+            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol6*, uint*, int> get_virtualTableShapeId;
+
+            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol6*, BOOL*, int> get_code;
+
+            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol6*, BOOL*, int> get_function;
+
+            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol6*, BOOL*, int> get_managed;
+
+            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol6*, BOOL*, int> get_msil;
+
+            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol6*, uint*, int> get_virtualBaseDispIndex;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol6*, ushort**, int> get_undecoratedName;
+
+            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol6*, uint*, int> get_age;
+
+            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol6*, uint*, int> get_signature;
+
+            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol6*, BOOL*, int> get_compilerGenerated;
+
+            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol6*, BOOL*, int> get_addressTaken;
+
+            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol6*, uint*, int> get_rank;
+
+            [NativeTypeName("HRESULT (IDiaSymbol **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol6*, IDiaSymbol**, int> get_lowerBound;
+
+            [NativeTypeName("HRESULT (IDiaSymbol **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol6*, IDiaSymbol**, int> get_upperBound;
+
+            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol6*, uint*, int> get_lowerBoundId;
+
+            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol6*, uint*, int> get_upperBoundId;
+
+            [NativeTypeName("HRESULT (DWORD, DWORD *, BYTE *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol6*, uint, uint*, byte*, int> get_dataBytes;
+
+            [NativeTypeName("HRESULT (enum SymTagEnum, LPCOLESTR, DWORD, IDiaEnumSymbols **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol6*, SymTagEnum, ushort*, uint, IDiaEnumSymbols**, int> findChildren;
+
+            [NativeTypeName("HRESULT (enum SymTagEnum, LPCOLESTR, DWORD, IDiaEnumSymbols **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol6*, SymTagEnum, ushort*, uint, IDiaEnumSymbols**, int> findChildrenEx;
+
+            [NativeTypeName("HRESULT (enum SymTagEnum, LPCOLESTR, DWORD, DWORD, DWORD, IDiaEnumSymbols **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol6*, SymTagEnum, ushort*, uint, uint, uint, IDiaEnumSymbols**, int> findChildrenExByAddr;
+
+            [NativeTypeName("HRESULT (enum SymTagEnum, LPCOLESTR, DWORD, ULONGLONG, IDiaEnumSymbols **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol6*, SymTagEnum, ushort*, uint, ulong, IDiaEnumSymbols**, int> findChildrenExByVA;
+
+            [NativeTypeName("HRESULT (enum SymTagEnum, LPCOLESTR, DWORD, DWORD, IDiaEnumSymbols **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol6*, SymTagEnum, ushort*, uint, uint, IDiaEnumSymbols**, int> findChildrenExByRVA;
+
+            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol6*, uint*, int> get_targetSection;
+
+            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol6*, uint*, int> get_targetOffset;
+
+            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol6*, uint*, int> get_targetRelativeVirtualAddress;
+
+            [NativeTypeName("HRESULT (ULONGLONG *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol6*, ulong*, int> get_targetVirtualAddress;
+
+            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol6*, uint*, int> get_machineType;
+
+            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol6*, uint*, int> get_oemId;
+
+            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol6*, uint*, int> get_oemSymbolId;
+
+            [NativeTypeName("HRESULT (DWORD, DWORD *, IDiaSymbol **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol6*, uint, uint*, IDiaSymbol**, int> get_types;
+
+            [NativeTypeName("HRESULT (DWORD, DWORD *, DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol6*, uint, uint*, uint*, int> get_typeIds;
+
+            [NativeTypeName("HRESULT (IDiaSymbol **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol6*, IDiaSymbol**, int> get_objectPointerType;
+
+            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol6*, uint*, int> get_udtKind;
+
+            [NativeTypeName("HRESULT (DWORD, BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol6*, uint, ushort**, int> get_undecoratedNameEx;
+
+            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol6*, BOOL*, int> get_noReturn;
+
+            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol6*, BOOL*, int> get_customCallingConvention;
+
+            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol6*, BOOL*, int> get_noInline;
+
+            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol6*, BOOL*, int> get_optimizedCodeDebugInfo;
+
+            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol6*, BOOL*, int> get_notReached;
+
+            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol6*, BOOL*, int> get_interruptReturn;
+
+            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol6*, BOOL*, int> get_farReturn;
+
+            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol6*, BOOL*, int> get_isStatic;
+
+            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol6*, BOOL*, int> get_hasDebugInfo;
+
+            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol6*, BOOL*, int> get_isLTCG;
+
+            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol6*, BOOL*, int> get_isDataAligned;
+
+            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol6*, BOOL*, int> get_hasSecurityChecks;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol6*, ushort**, int> get_compilerName;
+
+            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol6*, BOOL*, int> get_hasAlloca;
+
+            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol6*, BOOL*, int> get_hasSetJump;
+
+            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol6*, BOOL*, int> get_hasLongJump;
+
+            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol6*, BOOL*, int> get_hasInlAsm;
+
+            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol6*, BOOL*, int> get_hasEH;
+
+            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol6*, BOOL*, int> get_hasSEH;
+
+            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol6*, BOOL*, int> get_hasEHa;
+
+            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol6*, BOOL*, int> get_isNaked;
+
+            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol6*, BOOL*, int> get_isAggregated;
+
+            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol6*, BOOL*, int> get_isSplitted;
+
+            [NativeTypeName("HRESULT (IDiaSymbol **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol6*, IDiaSymbol**, int> get_container;
+
+            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol6*, BOOL*, int> get_inlSpec;
+
+            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol6*, BOOL*, int> get_noStackOrdering;
+
+            [NativeTypeName("HRESULT (IDiaSymbol **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol6*, IDiaSymbol**, int> get_virtualBaseTableType;
+
+            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol6*, BOOL*, int> get_hasManagedCode;
+
+            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol6*, BOOL*, int> get_isHotpatchable;
+
+            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol6*, BOOL*, int> get_isCVTCIL;
+
+            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol6*, BOOL*, int> get_isMSILNetmodule;
+
+            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol6*, BOOL*, int> get_isCTypes;
+
+            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol6*, BOOL*, int> get_isStripped;
+
+            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol6*, uint*, int> get_frontEndQFE;
+
+            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol6*, uint*, int> get_backEndQFE;
+
+            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol6*, BOOL*, int> get_wasInlined;
+
+            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol6*, BOOL*, int> get_strictGSCheck;
+
+            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol6*, BOOL*, int> get_isCxxReturnUdt;
+
+            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol6*, BOOL*, int> get_isConstructorVirtualBase;
+
+            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol6*, BOOL*, int> get_RValueReference;
+
+            [NativeTypeName("HRESULT (IDiaSymbol **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol6*, IDiaSymbol**, int> get_unmodifiedType;
+
+            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol6*, BOOL*, int> get_framePointerPresent;
+
+            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol6*, BOOL*, int> get_isSafeBuffers;
+
+            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol6*, BOOL*, int> get_intrinsic;
+
+            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol6*, BOOL*, int> get_sealed;
+
+            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol6*, BOOL*, int> get_hfaFloat;
+
+            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol6*, BOOL*, int> get_hfaDouble;
+
+            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol6*, uint*, int> get_liveRangeStartAddressSection;
+
+            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol6*, uint*, int> get_liveRangeStartAddressOffset;
+
+            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol6*, uint*, int> get_liveRangeStartRelativeVirtualAddress;
+
+            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol6*, uint*, int> get_countLiveRanges;
+
+            [NativeTypeName("HRESULT (ULONGLONG *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol6*, ulong*, int> get_liveRangeLength;
+
+            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol6*, uint*, int> get_offsetInUdt;
+
+            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol6*, uint*, int> get_paramBasePointerRegisterId;
+
+            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol6*, uint*, int> get_localBasePointerRegisterId;
+
+            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol6*, BOOL*, int> get_isLocationControlFlowDependent;
+
+            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol6*, uint*, int> get_stride;
+
+            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol6*, uint*, int> get_numberOfRows;
+
+            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol6*, uint*, int> get_numberOfColumns;
+
+            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol6*, BOOL*, int> get_isMatrixRowMajor;
+
+            [NativeTypeName("HRESULT (DWORD, DWORD *, DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol6*, uint, uint*, uint*, int> get_numericProperties;
+
+            [NativeTypeName("HRESULT (DWORD, DWORD *, WORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol6*, uint, uint*, ushort*, int> get_modifierValues;
+
+            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol6*, BOOL*, int> get_isReturnValue;
+
+            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol6*, BOOL*, int> get_isOptimizedAway;
+
+            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol6*, uint*, int> get_builtInKind;
+
+            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol6*, uint*, int> get_registerType;
+
+            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol6*, uint*, int> get_baseDataSlot;
+
+            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol6*, uint*, int> get_baseDataOffset;
+
+            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol6*, uint*, int> get_textureSlot;
+
+            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol6*, uint*, int> get_samplerSlot;
+
+            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol6*, uint*, int> get_uavSlot;
+
+            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol6*, uint*, int> get_sizeInUdt;
+
+            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol6*, uint*, int> get_memorySpaceKind;
+
+            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol6*, uint*, int> get_unmodifiedTypeId;
+
+            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol6*, uint*, int> get_subTypeId;
+
+            [NativeTypeName("HRESULT (IDiaSymbol **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol6*, IDiaSymbol**, int> get_subType;
+
+            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol6*, uint*, int> get_numberOfModifiers;
+
+            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol6*, uint*, int> get_numberOfRegisterIndices;
+
+            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol6*, BOOL*, int> get_isHLSLData;
+
+            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol6*, BOOL*, int> get_isPointerToDataMember;
+
+            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol6*, BOOL*, int> get_isPointerToMemberFunction;
+
+            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol6*, BOOL*, int> get_isSingleInheritance;
+
+            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol6*, BOOL*, int> get_isMultipleInheritance;
+
+            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol6*, BOOL*, int> get_isVirtualInheritance;
+
+            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol6*, BOOL*, int> get_restrictedType;
+
+            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol6*, BOOL*, int> get_isPointerBasedOnSymbolValue;
+
+            [NativeTypeName("HRESULT (IDiaSymbol **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol6*, IDiaSymbol**, int> get_baseSymbol;
+
+            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol6*, uint*, int> get_baseSymbolId;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol6*, ushort**, int> get_objectFileName;
+
+            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol6*, BOOL*, int> get_isAcceleratorGroupSharedLocal;
+
+            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol6*, BOOL*, int> get_isAcceleratorPointerTagLiveRange;
+
+            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol6*, BOOL*, int> get_isAcceleratorStubFunction;
+
+            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol6*, uint*, int> get_numberOfAcceleratorPointerTags;
+
+            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol6*, BOOL*, int> get_isSdl;
+
+            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol6*, BOOL*, int> get_isWinRTPointer;
+
+            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol6*, BOOL*, int> get_isRefUdt;
+
+            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol6*, BOOL*, int> get_isValueUdt;
+
+            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol6*, BOOL*, int> get_isInterfaceUdt;
+
+            [NativeTypeName("HRESULT (DWORD, DWORD, IDiaEnumSymbols **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol6*, uint, uint, IDiaEnumSymbols**, int> findInlineFramesByAddr;
+
+            [NativeTypeName("HRESULT (DWORD, IDiaEnumSymbols **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol6*, uint, IDiaEnumSymbols**, int> findInlineFramesByRVA;
+
+            [NativeTypeName("HRESULT (ULONGLONG, IDiaEnumSymbols **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol6*, ulong, IDiaEnumSymbols**, int> findInlineFramesByVA;
+
+            [NativeTypeName("HRESULT (IDiaEnumLineNumbers **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol6*, IDiaEnumLineNumbers**, int> findInlineeLines;
+
+            [NativeTypeName("HRESULT (DWORD, DWORD, DWORD, IDiaEnumLineNumbers **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol6*, uint, uint, uint, IDiaEnumLineNumbers**, int> findInlineeLinesByAddr;
+
+            [NativeTypeName("HRESULT (DWORD, DWORD, IDiaEnumLineNumbers **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol6*, uint, uint, IDiaEnumLineNumbers**, int> findInlineeLinesByRVA;
+
+            [NativeTypeName("HRESULT (ULONGLONG, DWORD, IDiaEnumLineNumbers **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol6*, ulong, uint, IDiaEnumLineNumbers**, int> findInlineeLinesByVA;
+
+            [NativeTypeName("HRESULT (DWORD, IDiaEnumSymbols **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol6*, uint, IDiaEnumSymbols**, int> findSymbolsForAcceleratorPointerTag;
+
+            [NativeTypeName("HRESULT (DWORD, DWORD, IDiaEnumSymbols **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol6*, uint, uint, IDiaEnumSymbols**, int> findSymbolsByRVAForAcceleratorPointerTag;
+
+            [NativeTypeName("HRESULT (DWORD, DWORD *, DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol6*, uint, uint*, uint*, int> get_acceleratorPointerTags;
+
+            [NativeTypeName("HRESULT (IDiaLineNumber **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol6*, IDiaLineNumber**, int> getSrcLineOnTypeDefn;
+
+            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol6*, BOOL*, int> get_isPGO;
+
+            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol6*, BOOL*, int> get_hasValidPGOCounts;
+
+            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol6*, BOOL*, int> get_isOptimizedForSpeed;
+
+            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol6*, uint*, int> get_PGOEntryCount;
+
+            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol6*, uint*, int> get_PGOEdgeCount;
+
+            [NativeTypeName("HRESULT (ULONGLONG *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol6*, ulong*, int> get_PGODynamicInstructionCount;
+
+            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol6*, uint*, int> get_staticSize;
+
+            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol6*, uint*, int> get_finalLiveStaticSize;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol6*, ushort**, int> get_phaseName;
+
+            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol6*, BOOL*, int> get_hasControlFlowCheck;
+
+            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol6*, BOOL*, int> get_constantExport;
+
+            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol6*, BOOL*, int> get_dataExport;
+
+            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol6*, BOOL*, int> get_privateExport;
+
+            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol6*, BOOL*, int> get_noNameExport;
+
+            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol6*, BOOL*, int> get_exportHasExplicitlyAssignedOrdinal;
+
+            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol6*, BOOL*, int> get_exportIsForwarder;
+
+            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol6*, uint*, int> get_ordinal;
+
+            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol6*, uint*, int> get_frameSize;
+
+            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol6*, uint*, int> get_exceptionHandlerAddressSection;
+
+            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol6*, uint*, int> get_exceptionHandlerAddressOffset;
+
+            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol6*, uint*, int> get_exceptionHandlerRelativeVirtualAddress;
+
+            [NativeTypeName("HRESULT (ULONGLONG *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol6*, ulong*, int> get_exceptionHandlerVirtualAddress;
+
+            [NativeTypeName("HRESULT (IDiaInputAssemblyFile **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol6*, IDiaInputAssemblyFile**, int> findInputAssemblyFile;
+
+            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol6*, uint*, int> get_characteristics;
+
+            [NativeTypeName("HRESULT (IDiaSymbol **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol6*, IDiaSymbol**, int> get_coffGroup;
+
+            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol6*, uint*, int> get_bindID;
+
+            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol6*, uint*, int> get_bindSpace;
+
+            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol6*, uint*, int> get_bindSlot;
+
+            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol6*, BOOL*, int> get_isObjCClass;
+
+            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol6*, BOOL*, int> get_isObjCCategory;
+
+            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol6*, BOOL*, int> get_isObjCProtocol;
+
+            [NativeTypeName("HRESULT (IDiaSymbol **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol6*, IDiaSymbol**, int> get_inlinee;
+
+            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol6*, uint*, int> get_inlineeId;
+
+            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol6*, BOOL*, int> get_noexcept;
+
+            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol6*, BOOL*, int> get_hasAbsoluteAddress;
+
+            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol6*, BOOL*, int> get_isStaticMemberFunc;
+        }
     }
 }

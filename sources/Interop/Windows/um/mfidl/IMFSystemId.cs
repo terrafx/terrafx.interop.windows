@@ -52,5 +52,23 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IMFSystemId*, uint, uint, byte*, uint*, byte**, int>)(lpVtbl[4]))((IMFSystemId*)Unsafe.AsPointer(ref this), stage, cbIn, pbIn, pcbOut, ppbOut);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFSystemId*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFSystemId*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFSystemId*, uint> Release;
+
+            [NativeTypeName("HRESULT (UINT32 *, BYTE **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFSystemId*, uint*, byte**, int> GetData;
+
+            [NativeTypeName("HRESULT (UINT32, UINT32, const BYTE *, UINT32 *, BYTE **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFSystemId*, uint, uint, byte*, uint*, byte**, int> Setup;
+        }
     }
 }

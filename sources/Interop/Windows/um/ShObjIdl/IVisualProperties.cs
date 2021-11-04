@@ -94,5 +94,41 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IVisualProperties*, ushort*, ushort*, int>)(lpVtbl[10]))((IVisualProperties*)Unsafe.AsPointer(ref this), pszSubAppName, pszSubIdList);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IVisualProperties*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IVisualProperties*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IVisualProperties*, uint> Release;
+
+            [NativeTypeName("HRESULT (HBITMAP, VPWATERMARKFLAGS) __attribute__((stdcall))")]
+            public delegate* unmanaged<IVisualProperties*, HBITMAP, VPWATERMARKFLAGS, int> SetWatermark;
+
+            [NativeTypeName("HRESULT (VPCOLORFLAGS, COLORREF) __attribute__((stdcall))")]
+            public delegate* unmanaged<IVisualProperties*, VPCOLORFLAGS, COLORREF, int> SetColor;
+
+            [NativeTypeName("HRESULT (VPCOLORFLAGS, COLORREF *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IVisualProperties*, VPCOLORFLAGS, COLORREF*, int> GetColor;
+
+            [NativeTypeName("HRESULT (int) __attribute__((stdcall))")]
+            public delegate* unmanaged<IVisualProperties*, int, int> SetItemHeight;
+
+            [NativeTypeName("HRESULT (int *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IVisualProperties*, int*, int> GetItemHeight;
+
+            [NativeTypeName("HRESULT (const LOGFONTW *, BOOL) __attribute__((stdcall))")]
+            public delegate* unmanaged<IVisualProperties*, LOGFONTW*, BOOL, int> SetFont;
+
+            [NativeTypeName("HRESULT (LOGFONTW *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IVisualProperties*, LOGFONTW*, int> GetFont;
+
+            [NativeTypeName("HRESULT (LPCWSTR, LPCWSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IVisualProperties*, ushort*, ushort*, int> SetTheme;
+        }
     }
 }

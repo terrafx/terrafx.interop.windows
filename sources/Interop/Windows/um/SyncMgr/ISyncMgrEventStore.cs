@@ -66,5 +66,29 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<ISyncMgrEventStore*, Guid*, uint, int>)(lpVtbl[6]))((ISyncMgrEventStore*)Unsafe.AsPointer(ref this), pguidEventIDs, cEvents);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISyncMgrEventStore*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ISyncMgrEventStore*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ISyncMgrEventStore*, uint> Release;
+
+            [NativeTypeName("HRESULT (IEnumSyncMgrEvents **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISyncMgrEventStore*, IEnumSyncMgrEvents**, int> GetEventEnumerator;
+
+            [NativeTypeName("HRESULT (ULONG *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISyncMgrEventStore*, uint*, int> GetEventCount;
+
+            [NativeTypeName("HRESULT (const GUID &, ISyncMgrEvent **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISyncMgrEventStore*, Guid*, ISyncMgrEvent**, int> GetEvent;
+
+            [NativeTypeName("HRESULT (GUID *, ULONG) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISyncMgrEventStore*, Guid*, uint, int> RemoveEvent;
+        }
     }
 }

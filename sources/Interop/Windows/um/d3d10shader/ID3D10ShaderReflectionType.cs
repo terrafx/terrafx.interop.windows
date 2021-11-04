@@ -41,5 +41,20 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<ID3D10ShaderReflectionType*, uint, sbyte*>)(lpVtbl[3]))((ID3D10ShaderReflectionType*)Unsafe.AsPointer(ref this), Index);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (D3D10_SHADER_TYPE_DESC *) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D10ShaderReflectionType*, D3D10_SHADER_TYPE_DESC*, int> GetDesc;
+
+            [NativeTypeName("ID3D10ShaderReflectionType *(UINT) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D10ShaderReflectionType*, uint, ID3D10ShaderReflectionType*> GetMemberTypeByIndex;
+
+            [NativeTypeName("ID3D10ShaderReflectionType *(LPCSTR) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D10ShaderReflectionType*, sbyte*, ID3D10ShaderReflectionType*> GetMemberTypeByName;
+
+            [NativeTypeName("LPCSTR (UINT) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D10ShaderReflectionType*, uint, sbyte*> GetMemberTypeName;
+        }
     }
 }

@@ -101,5 +101,44 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IDiscMasterProgressEvents*, HRESULT, int>)(lpVtbl[11]))((IDiscMasterProgressEvents*)Unsafe.AsPointer(ref this), status);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiscMasterProgressEvents*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiscMasterProgressEvents*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiscMasterProgressEvents*, uint> Release;
+
+            [NativeTypeName("HRESULT (boolean *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiscMasterProgressEvents*, byte*, int> QueryCancel;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiscMasterProgressEvents*, int> NotifyPnPActivity;
+
+            [NativeTypeName("HRESULT (long, long) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiscMasterProgressEvents*, int, int, int> NotifyAddProgress;
+
+            [NativeTypeName("HRESULT (long, long) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiscMasterProgressEvents*, int, int, int> NotifyBlockProgress;
+
+            [NativeTypeName("HRESULT (long, long) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiscMasterProgressEvents*, int, int, int> NotifyTrackProgress;
+
+            [NativeTypeName("HRESULT (long) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiscMasterProgressEvents*, int, int> NotifyPreparingBurn;
+
+            [NativeTypeName("HRESULT (long) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiscMasterProgressEvents*, int, int> NotifyClosingDisc;
+
+            [NativeTypeName("HRESULT (HRESULT) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiscMasterProgressEvents*, HRESULT, int> NotifyBurnComplete;
+
+            [NativeTypeName("HRESULT (HRESULT) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiscMasterProgressEvents*, HRESULT, int> NotifyEraseComplete;
+        }
     }
 }

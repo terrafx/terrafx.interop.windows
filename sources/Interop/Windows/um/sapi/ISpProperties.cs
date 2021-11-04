@@ -66,5 +66,29 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<ISpProperties*, ushort*, ushort**, int>)(lpVtbl[6]))((ISpProperties*)Unsafe.AsPointer(ref this), pName, ppCoMemValue);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpProperties*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpProperties*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpProperties*, uint> Release;
+
+            [NativeTypeName("HRESULT (LPCWSTR, LONG) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpProperties*, ushort*, int, int> SetPropertyNum;
+
+            [NativeTypeName("HRESULT (LPCWSTR, LONG *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpProperties*, ushort*, int*, int> GetPropertyNum;
+
+            [NativeTypeName("HRESULT (LPCWSTR, LPCWSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpProperties*, ushort*, ushort*, int> SetPropertyString;
+
+            [NativeTypeName("HRESULT (LPCWSTR, LPWSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpProperties*, ushort*, ushort**, int> GetPropertyString;
+        }
     }
 }

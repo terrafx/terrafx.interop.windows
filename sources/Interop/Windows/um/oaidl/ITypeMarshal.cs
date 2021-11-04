@@ -66,5 +66,29 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<ITypeMarshal*, void*, int>)(lpVtbl[6]))((ITypeMarshal*)Unsafe.AsPointer(ref this), pvType);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITypeMarshal*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ITypeMarshal*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ITypeMarshal*, uint> Release;
+
+            [NativeTypeName("HRESULT (PVOID, DWORD, PVOID, ULONG *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITypeMarshal*, void*, uint, void*, uint*, int> Size;
+
+            [NativeTypeName("HRESULT (PVOID, DWORD, PVOID, ULONG, BYTE *, ULONG *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITypeMarshal*, void*, uint, void*, uint, byte*, uint*, int> Marshal;
+
+            [NativeTypeName("HRESULT (PVOID, DWORD, ULONG, BYTE *, ULONG *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITypeMarshal*, void*, uint, uint, byte*, uint*, int> Unmarshal;
+
+            [NativeTypeName("HRESULT (PVOID) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITypeMarshal*, void*, int> Free;
+        }
     }
 }

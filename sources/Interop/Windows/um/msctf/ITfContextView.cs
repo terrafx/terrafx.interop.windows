@@ -66,5 +66,29 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<ITfContextView*, HWND*, int>)(lpVtbl[6]))((ITfContextView*)Unsafe.AsPointer(ref this), phwnd);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfContextView*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfContextView*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfContextView*, uint> Release;
+
+            [NativeTypeName("HRESULT (TfEditCookie, const POINT *, DWORD, ITfRange **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfContextView*, uint, POINT*, uint, ITfRange**, int> GetRangeFromPoint;
+
+            [NativeTypeName("HRESULT (TfEditCookie, ITfRange *, RECT *, BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfContextView*, uint, ITfRange*, RECT*, BOOL*, int> GetTextExt;
+
+            [NativeTypeName("HRESULT (RECT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfContextView*, RECT*, int> GetScreenExt;
+
+            [NativeTypeName("HRESULT (HWND *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfContextView*, HWND*, int> GetWnd;
+        }
     }
 }

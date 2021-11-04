@@ -66,5 +66,29 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IFilterChain*, IBaseFilter*, IBaseFilter*, int>)(lpVtbl[6]))((IFilterChain*)Unsafe.AsPointer(ref this), pStartFilter, pEndFilter);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFilterChain*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IFilterChain*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IFilterChain*, uint> Release;
+
+            [NativeTypeName("HRESULT (IBaseFilter *, IBaseFilter *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFilterChain*, IBaseFilter*, IBaseFilter*, int> StartChain;
+
+            [NativeTypeName("HRESULT (IBaseFilter *, IBaseFilter *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFilterChain*, IBaseFilter*, IBaseFilter*, int> PauseChain;
+
+            [NativeTypeName("HRESULT (IBaseFilter *, IBaseFilter *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFilterChain*, IBaseFilter*, IBaseFilter*, int> StopChain;
+
+            [NativeTypeName("HRESULT (IBaseFilter *, IBaseFilter *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFilterChain*, IBaseFilter*, IBaseFilter*, int> RemoveChain;
+        }
     }
 }

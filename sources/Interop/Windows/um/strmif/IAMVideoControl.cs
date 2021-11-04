@@ -80,5 +80,35 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IAMVideoControl*, IPin*, int, SIZE, int*, long**, int>)(lpVtbl[8]))((IAMVideoControl*)Unsafe.AsPointer(ref this), pPin, iIndex, Dimensions, ListSize, FrameRates);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAMVideoControl*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IAMVideoControl*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IAMVideoControl*, uint> Release;
+
+            [NativeTypeName("HRESULT (IPin *, long *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAMVideoControl*, IPin*, int*, int> GetCaps;
+
+            [NativeTypeName("HRESULT (IPin *, long) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAMVideoControl*, IPin*, int, int> SetMode;
+
+            [NativeTypeName("HRESULT (IPin *, long *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAMVideoControl*, IPin*, int*, int> GetMode;
+
+            [NativeTypeName("HRESULT (IPin *, LONGLONG *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAMVideoControl*, IPin*, long*, int> GetCurrentActualFrameRate;
+
+            [NativeTypeName("HRESULT (IPin *, long, SIZE, LONGLONG *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAMVideoControl*, IPin*, int, SIZE, long*, int> GetMaxAvailableFrameRate;
+
+            [NativeTypeName("HRESULT (IPin *, long, SIZE, long *, LONGLONG **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAMVideoControl*, IPin*, int, SIZE, int*, long**, int> GetFrameRateList;
+        }
     }
 }

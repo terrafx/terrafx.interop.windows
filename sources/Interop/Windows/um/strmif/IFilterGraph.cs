@@ -94,5 +94,41 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IFilterGraph*, int>)(lpVtbl[10]))((IFilterGraph*)Unsafe.AsPointer(ref this));
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFilterGraph*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IFilterGraph*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IFilterGraph*, uint> Release;
+
+            [NativeTypeName("HRESULT (IBaseFilter *, LPCWSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFilterGraph*, IBaseFilter*, ushort*, int> AddFilter;
+
+            [NativeTypeName("HRESULT (IBaseFilter *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFilterGraph*, IBaseFilter*, int> RemoveFilter;
+
+            [NativeTypeName("HRESULT (IEnumFilters **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFilterGraph*, IEnumFilters**, int> EnumFilters;
+
+            [NativeTypeName("HRESULT (LPCWSTR, IBaseFilter **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFilterGraph*, ushort*, IBaseFilter**, int> FindFilterByName;
+
+            [NativeTypeName("HRESULT (IPin *, IPin *, const AM_MEDIA_TYPE *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFilterGraph*, IPin*, IPin*, AM_MEDIA_TYPE*, int> ConnectDirect;
+
+            [NativeTypeName("HRESULT (IPin *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFilterGraph*, IPin*, int> Reconnect;
+
+            [NativeTypeName("HRESULT (IPin *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFilterGraph*, IPin*, int> Disconnect;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IFilterGraph*, int> SetDefaultSyncSource;
+        }
     }
 }

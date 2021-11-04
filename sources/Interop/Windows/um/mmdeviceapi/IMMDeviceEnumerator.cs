@@ -73,5 +73,32 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IMMDeviceEnumerator*, IMMNotificationClient*, int>)(lpVtbl[7]))((IMMDeviceEnumerator*)Unsafe.AsPointer(ref this), pClient);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMMDeviceEnumerator*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMMDeviceEnumerator*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMMDeviceEnumerator*, uint> Release;
+
+            [NativeTypeName("HRESULT (EDataFlow, DWORD, IMMDeviceCollection **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMMDeviceEnumerator*, EDataFlow, uint, IMMDeviceCollection**, int> EnumAudioEndpoints;
+
+            [NativeTypeName("HRESULT (EDataFlow, ERole, IMMDevice **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMMDeviceEnumerator*, EDataFlow, ERole, IMMDevice**, int> GetDefaultAudioEndpoint;
+
+            [NativeTypeName("HRESULT (LPCWSTR, IMMDevice **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMMDeviceEnumerator*, ushort*, IMMDevice**, int> GetDevice;
+
+            [NativeTypeName("HRESULT (IMMNotificationClient *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMMDeviceEnumerator*, IMMNotificationClient*, int> RegisterEndpointNotificationCallback;
+
+            [NativeTypeName("HRESULT (IMMNotificationClient *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMMDeviceEnumerator*, IMMNotificationClient*, int> UnregisterEndpointNotificationCallback;
+        }
     }
 }

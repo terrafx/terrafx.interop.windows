@@ -59,5 +59,26 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IKsControl*, KSIDENTIFIER*, uint, void*, uint, uint*, int>)(lpVtbl[5]))((IKsControl*)Unsafe.AsPointer(ref this), Event, EventLength, EventData, DataLength, BytesReturned);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IKsControl*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IKsControl*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IKsControl*, uint> Release;
+
+            [NativeTypeName("HRESULT (PKSPROPERTY, ULONG, void *, ULONG, ULONG *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IKsControl*, KSIDENTIFIER*, uint, void*, uint, uint*, int> KsProperty;
+
+            [NativeTypeName("HRESULT (PKSMETHOD, ULONG, void *, ULONG, ULONG *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IKsControl*, KSIDENTIFIER*, uint, void*, uint, uint*, int> KsMethod;
+
+            [NativeTypeName("HRESULT (PKSEVENT, ULONG, void *, ULONG, ULONG *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IKsControl*, KSIDENTIFIER*, uint, void*, uint, uint*, int> KsEvent;
+        }
     }
 }

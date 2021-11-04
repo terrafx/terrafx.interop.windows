@@ -73,5 +73,32 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IMFSequencerSource*, uint, uint, int>)(lpVtbl[7]))((IMFSequencerSource*)Unsafe.AsPointer(ref this), dwId, dwFlags);
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFSequencerSource*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFSequencerSource*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFSequencerSource*, uint> Release;
+
+            [NativeTypeName("HRESULT (IMFTopology *, DWORD, MFSequencerElementId *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFSequencerSource*, IMFTopology*, uint, uint*, int> AppendTopology;
+
+            [NativeTypeName("HRESULT (MFSequencerElementId) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFSequencerSource*, uint, int> DeleteTopology;
+
+            [NativeTypeName("HRESULT (IMFPresentationDescriptor *, MFSequencerElementId *, IMFTopology **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFSequencerSource*, IMFPresentationDescriptor*, uint*, IMFTopology**, int> GetPresentationContext;
+
+            [NativeTypeName("HRESULT (MFSequencerElementId, IMFTopology *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFSequencerSource*, uint, IMFTopology*, int> UpdateTopology;
+
+            [NativeTypeName("HRESULT (MFSequencerElementId, DWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFSequencerSource*, uint, uint, int> UpdateTopologyFlags;
+        }
     }
 }

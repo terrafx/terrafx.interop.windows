@@ -95,5 +95,41 @@ namespace TerraFX.Interop
         {
             return ((delegate* unmanaged<IDxcResult*, DXC_OUT_KIND>)(lpVtbl[10]))((IDxcResult*)Unsafe.AsPointer(ref this));
         }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDxcResult*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDxcResult*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDxcResult*, uint> Release;
+
+            [NativeTypeName("HRESULT (HRESULT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDxcResult*, HRESULT*, int> GetStatus;
+
+            [NativeTypeName("HRESULT (IDxcBlob **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDxcResult*, IDxcBlob**, int> GetResult;
+
+            [NativeTypeName("HRESULT (IDxcBlobEncoding **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDxcResult*, IDxcBlobEncoding**, int> GetErrorBuffer;
+
+            [NativeTypeName("BOOL (DXC_OUT_KIND) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDxcResult*, DXC_OUT_KIND, int> HasOutput;
+
+            [NativeTypeName("HRESULT (DXC_OUT_KIND, const IID &, void **, IDxcBlobUtf16 **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDxcResult*, DXC_OUT_KIND, Guid*, void**, IDxcBlobUtf16**, int> GetOutput;
+
+            [NativeTypeName("UINT32 ()")]
+            public delegate* unmanaged<IDxcResult*, uint> GetNumOutputs;
+
+            [NativeTypeName("DXC_OUT_KIND (UINT32)")]
+            public delegate* unmanaged<IDxcResult*, uint, DXC_OUT_KIND> GetOutputByIndex;
+
+            [NativeTypeName("DXC_OUT_KIND ()")]
+            public delegate* unmanaged<IDxcResult*, DXC_OUT_KIND> PrimaryOutput;
+        }
     }
 }
