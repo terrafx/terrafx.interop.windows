@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("C6E13360-30AC-11D0-A18C-00A0C9118956")]
     [NativeTypeName("struct IAMVideoProcAmp : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IAMVideoProcAmp
+    public unsafe partial struct IAMVideoProcAmp : IAMVideoProcAmp.Interface
     {
         public void** lpVtbl;
 
@@ -58,6 +58,18 @@ namespace TerraFX.Interop
         public HRESULT Get([NativeTypeName("long")] int Property, [NativeTypeName("long *")] int* lValue, [NativeTypeName("long *")] int* Flags)
         {
             return ((delegate* unmanaged<IAMVideoProcAmp*, int, int*, int*, int>)(lpVtbl[5]))((IAMVideoProcAmp*)Unsafe.AsPointer(ref this), Property, lValue, Flags);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetRange([NativeTypeName("long")] int Property, [NativeTypeName("long *")] int* pMin, [NativeTypeName("long *")] int* pMax, [NativeTypeName("long *")] int* pSteppingDelta, [NativeTypeName("long *")] int* pDefault, [NativeTypeName("long *")] int* pCapsFlags);
+
+            [VtblIndex(4)]
+            HRESULT Set([NativeTypeName("long")] int Property, [NativeTypeName("long")] int lValue, [NativeTypeName("long")] int Flags);
+
+            [VtblIndex(5)]
+            HRESULT Get([NativeTypeName("long")] int Property, [NativeTypeName("long *")] int* lValue, [NativeTypeName("long *")] int* Flags);
         }
 
         public partial struct Vtbl

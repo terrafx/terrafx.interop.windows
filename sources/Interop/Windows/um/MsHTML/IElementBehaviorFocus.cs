@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("3050F6B6-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct IElementBehaviorFocus : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IElementBehaviorFocus
+    public unsafe partial struct IElementBehaviorFocus : IElementBehaviorFocus.Interface
     {
         public void** lpVtbl;
 
@@ -44,6 +44,12 @@ namespace TerraFX.Interop
         public HRESULT GetFocusRect(RECT* pRect)
         {
             return ((delegate* unmanaged<IElementBehaviorFocus*, RECT*, int>)(lpVtbl[3]))((IElementBehaviorFocus*)Unsafe.AsPointer(ref this), pRect);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetFocusRect(RECT* pRect);
         }
 
         public partial struct Vtbl

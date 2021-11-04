@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("3050F812-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct IHTMLEditServices2 : IHTMLEditServices")]
     [NativeInheritance("IHTMLEditServices")]
-    public unsafe partial struct IHTMLEditServices2
+    public unsafe partial struct IHTMLEditServices2 : IHTMLEditServices2.Interface
     {
         public void** lpVtbl;
 
@@ -107,6 +107,21 @@ namespace TerraFX.Interop
         public HRESULT UnFreezeVirtualCaretPos(BOOL fReset)
         {
             return ((delegate* unmanaged<IHTMLEditServices2*, BOOL, int>)(lpVtbl[12]))((IHTMLEditServices2*)Unsafe.AsPointer(ref this), fReset);
+        }
+
+        public interface Interface : IHTMLEditServices.Interface
+        {
+            [VtblIndex(9)]
+            HRESULT MoveToSelectionAnchorEx(IDisplayPointer* pIStartAnchor);
+
+            [VtblIndex(10)]
+            HRESULT MoveToSelectionEndEx(IDisplayPointer* pIEndAnchor);
+
+            [VtblIndex(11)]
+            HRESULT FreezeVirtualCaretPos(BOOL fReCompute);
+
+            [VtblIndex(12)]
+            HRESULT UnFreezeVirtualCaretPos(BOOL fReset);
         }
 
         public partial struct Vtbl

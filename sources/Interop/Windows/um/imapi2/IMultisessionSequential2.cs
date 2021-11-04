@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("B507CA22-2204-11DD-966A-001AA01BBC58")]
     [NativeTypeName("struct IMultisessionSequential2 : IMultisessionSequential")]
     [NativeInheritance("IMultisessionSequential")]
-    public unsafe partial struct IMultisessionSequential2
+    public unsafe partial struct IMultisessionSequential2 : IMultisessionSequential2.Interface
     {
         public void** lpVtbl;
 
@@ -135,6 +135,12 @@ namespace TerraFX.Interop
         public HRESULT get_WriteUnitSize([NativeTypeName("LONG *")] int* value)
         {
             return ((delegate* unmanaged<IMultisessionSequential2*, int*, int>)(lpVtbl[16]))((IMultisessionSequential2*)Unsafe.AsPointer(ref this), value);
+        }
+
+        public interface Interface : IMultisessionSequential.Interface
+        {
+            [VtblIndex(16)]
+            HRESULT get_WriteUnitSize([NativeTypeName("LONG *")] int* value);
         }
 
         public partial struct Vtbl

@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("EACDD04C-117E-4E17-88F4-D1B12B0E3D89")]
     [NativeTypeName("struct IDCompositionTarget : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IDCompositionTarget
+    public unsafe partial struct IDCompositionTarget : IDCompositionTarget.Interface
     {
         public void** lpVtbl;
 
@@ -44,6 +44,12 @@ namespace TerraFX.Interop
         public HRESULT SetRoot(IDCompositionVisual* visual)
         {
             return ((delegate* unmanaged<IDCompositionTarget*, IDCompositionVisual*, int>)(lpVtbl[3]))((IDCompositionTarget*)Unsafe.AsPointer(ref this), visual);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT SetRoot(IDCompositionVisual* visual);
         }
 
         public partial struct Vtbl

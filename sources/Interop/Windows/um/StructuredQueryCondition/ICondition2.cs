@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("0DB8851D-2E5B-47EB-9208-D28C325A01D7")]
     [NativeTypeName("struct ICondition2 : ICondition")]
     [NativeInheritance("ICondition")]
-    public unsafe partial struct ICondition2
+    public unsafe partial struct ICondition2 : ICondition2.Interface
     {
         public void** lpVtbl;
 
@@ -135,6 +135,15 @@ namespace TerraFX.Interop
         public HRESULT GetLeafConditionInfo(PROPERTYKEY* ppropkey, CONDITION_OPERATION* pcop, PROPVARIANT* ppropvar)
         {
             return ((delegate* unmanaged<ICondition2*, PROPERTYKEY*, CONDITION_OPERATION*, PROPVARIANT*, int>)(lpVtbl[16]))((ICondition2*)Unsafe.AsPointer(ref this), ppropkey, pcop, ppropvar);
+        }
+
+        public interface Interface : ICondition.Interface
+        {
+            [VtblIndex(15)]
+            HRESULT GetLocale([NativeTypeName("LPWSTR *")] ushort** ppszLocaleName);
+
+            [VtblIndex(16)]
+            HRESULT GetLeafConditionInfo(PROPERTYKEY* ppropkey, CONDITION_OPERATION* pcop, PROPVARIANT* ppropvar);
         }
 
         public partial struct Vtbl

@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("3C9B2EB9-86D5-4514-A394-F56664F9F0D8")]
     [NativeTypeName("struct IMFMediaSourceEx : IMFMediaSource")]
     [NativeInheritance("IMFMediaSource")]
-    public unsafe partial struct IMFMediaSourceEx
+    public unsafe partial struct IMFMediaSourceEx : IMFMediaSourceEx.Interface
     {
         public void** lpVtbl;
 
@@ -128,6 +128,18 @@ namespace TerraFX.Interop
         public HRESULT SetD3DManager(IUnknown* pManager)
         {
             return ((delegate* unmanaged<IMFMediaSourceEx*, IUnknown*, int>)(lpVtbl[15]))((IMFMediaSourceEx*)Unsafe.AsPointer(ref this), pManager);
+        }
+
+        public interface Interface : IMFMediaSource.Interface
+        {
+            [VtblIndex(13)]
+            HRESULT GetSourceAttributes(IMFAttributes** ppAttributes);
+
+            [VtblIndex(14)]
+            HRESULT GetStreamAttributes([NativeTypeName("DWORD")] uint dwStreamIdentifier, IMFAttributes** ppAttributes);
+
+            [VtblIndex(15)]
+            HRESULT SetD3DManager(IUnknown* pManager);
         }
 
         public partial struct Vtbl

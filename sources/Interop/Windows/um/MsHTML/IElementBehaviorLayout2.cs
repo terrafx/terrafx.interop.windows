@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("3050F846-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct IElementBehaviorLayout2 : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IElementBehaviorLayout2
+    public unsafe partial struct IElementBehaviorLayout2 : IElementBehaviorLayout2.Interface
     {
         public void** lpVtbl;
 
@@ -44,6 +44,12 @@ namespace TerraFX.Interop
         public HRESULT GetTextDescent([NativeTypeName("LONG *")] int* plDescent)
         {
             return ((delegate* unmanaged<IElementBehaviorLayout2*, int*, int>)(lpVtbl[3]))((IElementBehaviorLayout2*)Unsafe.AsPointer(ref this), plDescent);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetTextDescent([NativeTypeName("LONG *")] int* plDescent);
         }
 
         public partial struct Vtbl

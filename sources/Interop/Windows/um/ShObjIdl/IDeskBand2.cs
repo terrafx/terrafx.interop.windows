@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("79D16DE4-ABEE-4021-8D9D-9169B261D657")]
     [NativeTypeName("struct IDeskBand2 : IDeskBand")]
     [NativeInheritance("IDeskBand")]
-    public unsafe partial struct IDeskBand2
+    public unsafe partial struct IDeskBand2 : IDeskBand2.Interface
     {
         public void** lpVtbl;
 
@@ -100,6 +100,18 @@ namespace TerraFX.Interop
         public HRESULT GetCompositionState(BOOL* pfCompositionEnabled)
         {
             return ((delegate* unmanaged<IDeskBand2*, BOOL*, int>)(lpVtbl[11]))((IDeskBand2*)Unsafe.AsPointer(ref this), pfCompositionEnabled);
+        }
+
+        public interface Interface : IDeskBand.Interface
+        {
+            [VtblIndex(9)]
+            HRESULT CanRenderComposited(BOOL* pfCanRenderComposited);
+
+            [VtblIndex(10)]
+            HRESULT SetCompositionState(BOOL fCompositionEnabled);
+
+            [VtblIndex(11)]
+            HRESULT GetCompositionState(BOOL* pfCompositionEnabled);
         }
 
         public partial struct Vtbl

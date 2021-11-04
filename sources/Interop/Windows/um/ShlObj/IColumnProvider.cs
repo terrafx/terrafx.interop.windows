@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("E8025004-1C42-11D2-BE2C-00A0C9A83DA1")]
     [NativeTypeName("struct IColumnProvider : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IColumnProvider
+    public unsafe partial struct IColumnProvider : IColumnProvider.Interface
     {
         public void** lpVtbl;
 
@@ -58,6 +58,18 @@ namespace TerraFX.Interop
         public HRESULT GetItemData([NativeTypeName("LPCSHCOLUMNID")] PROPERTYKEY* pscid, [NativeTypeName("LPCSHCOLUMNDATA")] SHCOLUMNDATA* pscd, VARIANT* pvarData)
         {
             return ((delegate* unmanaged<IColumnProvider*, PROPERTYKEY*, SHCOLUMNDATA*, VARIANT*, int>)(lpVtbl[5]))((IColumnProvider*)Unsafe.AsPointer(ref this), pscid, pscd, pvarData);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT Initialize([NativeTypeName("LPCSHCOLUMNINIT")] SHCOLUMNINIT* psci);
+
+            [VtblIndex(4)]
+            HRESULT GetColumnInfo([NativeTypeName("DWORD")] uint dwIndex, SHCOLUMNINFO* psci);
+
+            [VtblIndex(5)]
+            HRESULT GetItemData([NativeTypeName("LPCSHCOLUMNID")] PROPERTYKEY* pscid, [NativeTypeName("LPCSHCOLUMNDATA")] SHCOLUMNDATA* pscd, VARIANT* pvarData);
         }
 
         public partial struct Vtbl

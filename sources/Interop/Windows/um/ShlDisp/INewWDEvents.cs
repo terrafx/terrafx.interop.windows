@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("0751C551-7568-41C9-8E5B-E22E38919236")]
     [NativeTypeName("struct INewWDEvents : IWebWizardHost")]
     [NativeInheritance("IWebWizardHost")]
-    public unsafe partial struct INewWDEvents
+    public unsafe partial struct INewWDEvents : INewWDEvents.Interface
     {
         public void** lpVtbl;
 
@@ -135,6 +135,12 @@ namespace TerraFX.Interop
         public HRESULT PassportAuthenticate([NativeTypeName("BSTR")] ushort* bstrSignInUrl, [NativeTypeName("VARIANT_BOOL *")] short* pvfAuthenitcated)
         {
             return ((delegate* unmanaged<INewWDEvents*, ushort*, short*, int>)(lpVtbl[16]))((INewWDEvents*)Unsafe.AsPointer(ref this), bstrSignInUrl, pvfAuthenitcated);
+        }
+
+        public interface Interface : IWebWizardHost.Interface
+        {
+            [VtblIndex(16)]
+            HRESULT PassportAuthenticate([NativeTypeName("BSTR")] ushort* bstrSignInUrl, [NativeTypeName("VARIANT_BOOL *")] short* pvfAuthenitcated);
         }
 
         public partial struct Vtbl

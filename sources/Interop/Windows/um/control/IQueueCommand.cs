@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("56A868B7-0AD4-11CE-B03A-0020AF0BA770")]
     [NativeTypeName("struct IQueueCommand : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IQueueCommand
+    public unsafe partial struct IQueueCommand : IQueueCommand.Interface
     {
         public void** lpVtbl;
 
@@ -51,6 +51,15 @@ namespace TerraFX.Interop
         public HRESULT InvokeAtPresentationTime(IDeferredCommand** pCmd, [NativeTypeName("REFTIME")] double time, Guid* iid, [NativeTypeName("long")] int dispidMethod, short wFlags, [NativeTypeName("long")] int cArgs, VARIANT* pDispParams, VARIANT* pvarResult, short* puArgErr)
         {
             return ((delegate* unmanaged<IQueueCommand*, IDeferredCommand**, double, Guid*, int, short, int, VARIANT*, VARIANT*, short*, int>)(lpVtbl[4]))((IQueueCommand*)Unsafe.AsPointer(ref this), pCmd, time, iid, dispidMethod, wFlags, cArgs, pDispParams, pvarResult, puArgErr);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT InvokeAtStreamTime(IDeferredCommand** pCmd, [NativeTypeName("REFTIME")] double time, Guid* iid, [NativeTypeName("long")] int dispidMethod, short wFlags, [NativeTypeName("long")] int cArgs, VARIANT* pDispParams, VARIANT* pvarResult, short* puArgErr);
+
+            [VtblIndex(4)]
+            HRESULT InvokeAtPresentationTime(IDeferredCommand** pCmd, [NativeTypeName("REFTIME")] double time, Guid* iid, [NativeTypeName("long")] int dispidMethod, short wFlags, [NativeTypeName("long")] int cArgs, VARIANT* pDispParams, VARIANT* pvarResult, short* puArgErr);
         }
 
         public partial struct Vtbl

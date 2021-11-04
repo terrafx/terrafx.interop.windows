@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("8E0A246D-D3C8-45DE-8657-04290C458C3C")]
     [NativeTypeName("struct ISpeechRecoResult2 : ISpeechRecoResult")]
     [NativeInheritance("ISpeechRecoResult")]
-    public unsafe partial struct ISpeechRecoResult2
+    public unsafe partial struct ISpeechRecoResult2 : ISpeechRecoResult2.Interface
     {
         public void** lpVtbl;
 
@@ -142,6 +142,12 @@ namespace TerraFX.Interop
         public HRESULT SetTextFeedback([NativeTypeName("BSTR")] ushort* Feedback, [NativeTypeName("VARIANT_BOOL")] short WasSuccessful)
         {
             return ((delegate* unmanaged<ISpeechRecoResult2*, ushort*, short, int>)(lpVtbl[17]))((ISpeechRecoResult2*)Unsafe.AsPointer(ref this), Feedback, WasSuccessful);
+        }
+
+        public interface Interface : ISpeechRecoResult.Interface
+        {
+            [VtblIndex(17)]
+            HRESULT SetTextFeedback([NativeTypeName("BSTR")] ushort* Feedback, [NativeTypeName("VARIANT_BOOL")] short WasSuccessful);
         }
 
         public partial struct Vtbl

@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("DDEFE873-6997-4E68-BE26-39B633ADBE12")]
     [NativeTypeName("struct IQueryCancelAutoPlay : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IQueryCancelAutoPlay
+    public unsafe partial struct IQueryCancelAutoPlay : IQueryCancelAutoPlay.Interface
     {
         public void** lpVtbl;
 
@@ -44,6 +44,12 @@ namespace TerraFX.Interop
         public HRESULT AllowAutoPlay([NativeTypeName("LPCWSTR")] ushort* pszPath, [NativeTypeName("DWORD")] uint dwContentType, [NativeTypeName("LPCWSTR")] ushort* pszLabel, [NativeTypeName("DWORD")] uint dwSerialNumber)
         {
             return ((delegate* unmanaged<IQueryCancelAutoPlay*, ushort*, uint, ushort*, uint, int>)(lpVtbl[3]))((IQueryCancelAutoPlay*)Unsafe.AsPointer(ref this), pszPath, dwContentType, pszLabel, dwSerialNumber);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT AllowAutoPlay([NativeTypeName("LPCWSTR")] ushort* pszPath, [NativeTypeName("DWORD")] uint dwContentType, [NativeTypeName("LPCWSTR")] ushort* pszLabel, [NativeTypeName("DWORD")] uint dwSerialNumber);
         }
 
         public partial struct Vtbl

@@ -9,7 +9,7 @@ namespace TerraFX.Interop
 {
     [NativeTypeName("struct ID3D10EffectBlendVariable : ID3D10EffectVariable")]
     [NativeInheritance("ID3D10EffectVariable")]
-    public unsafe partial struct ID3D10EffectBlendVariable
+    public unsafe partial struct ID3D10EffectBlendVariable : ID3D10EffectBlendVariable.Interface
     {
         public void** lpVtbl;
 
@@ -200,6 +200,15 @@ namespace TerraFX.Interop
         public HRESULT GetBackingStore(uint Index, D3D10_BLEND_DESC* pBlendDesc)
         {
             return ((delegate* unmanaged<ID3D10EffectBlendVariable*, uint, D3D10_BLEND_DESC*, int>)(lpVtbl[26]))((ID3D10EffectBlendVariable*)Unsafe.AsPointer(ref this), Index, pBlendDesc);
+        }
+
+        public interface Interface : ID3D10EffectVariable.Interface
+        {
+            [VtblIndex(25)]
+            HRESULT GetBlendState(uint Index, ID3D10BlendState** ppBlendState);
+
+            [VtblIndex(26)]
+            HRESULT GetBackingStore(uint Index, D3D10_BLEND_DESC* pBlendDesc);
         }
 
         public partial struct Vtbl

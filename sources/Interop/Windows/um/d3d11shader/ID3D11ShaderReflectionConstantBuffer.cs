@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop
 {
     [Guid("EB62D63D-93DD-4318-8AE8-C6F83AD371B8")]
-    public unsafe partial struct ID3D11ShaderReflectionConstantBuffer
+    public unsafe partial struct ID3D11ShaderReflectionConstantBuffer : ID3D11ShaderReflectionConstantBuffer.Interface
     {
         public void** lpVtbl;
 
@@ -32,6 +32,18 @@ namespace TerraFX.Interop
         public ID3D11ShaderReflectionVariable* GetVariableByName([NativeTypeName("LPCSTR")] sbyte* Name)
         {
             return ((delegate* unmanaged<ID3D11ShaderReflectionConstantBuffer*, sbyte*, ID3D11ShaderReflectionVariable*>)(lpVtbl[2]))((ID3D11ShaderReflectionConstantBuffer*)Unsafe.AsPointer(ref this), Name);
+        }
+
+        public interface Interface
+        {
+            [VtblIndex(0)]
+            HRESULT GetDesc(D3D11_SHADER_BUFFER_DESC* pDesc);
+
+            [VtblIndex(1)]
+            ID3D11ShaderReflectionVariable* GetVariableByIndex(uint Index);
+
+            [VtblIndex(2)]
+            ID3D11ShaderReflectionVariable* GetVariableByName([NativeTypeName("LPCSTR")] sbyte* Name);
         }
 
         public partial struct Vtbl

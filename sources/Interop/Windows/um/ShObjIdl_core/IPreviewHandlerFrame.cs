@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("FEC87AAF-35F9-447A-ADB7-20234491401A")]
     [NativeTypeName("struct IPreviewHandlerFrame : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IPreviewHandlerFrame
+    public unsafe partial struct IPreviewHandlerFrame : IPreviewHandlerFrame.Interface
     {
         public void** lpVtbl;
 
@@ -51,6 +51,15 @@ namespace TerraFX.Interop
         public HRESULT TranslateAcceleratorW(MSG* pmsg)
         {
             return ((delegate* unmanaged<IPreviewHandlerFrame*, MSG*, int>)(lpVtbl[4]))((IPreviewHandlerFrame*)Unsafe.AsPointer(ref this), pmsg);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetWindowContext(PREVIEWHANDLERFRAMEINFO* pinfo);
+
+            [VtblIndex(4)]
+            HRESULT TranslateAcceleratorW(MSG* pmsg);
         }
 
         public partial struct Vtbl

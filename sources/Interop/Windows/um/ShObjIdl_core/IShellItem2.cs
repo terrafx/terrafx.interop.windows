@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("7E9FB0D3-919F-4307-AB2E-9B1860310C93")]
     [NativeTypeName("struct IShellItem2 : IShellItem")]
     [NativeInheritance("IShellItem")]
-    public unsafe partial struct IShellItem2
+    public unsafe partial struct IShellItem2 : IShellItem2.Interface
     {
         public void** lpVtbl;
 
@@ -163,6 +163,48 @@ namespace TerraFX.Interop
         public HRESULT GetBool([NativeTypeName("const PROPERTYKEY &")] PROPERTYKEY* key, BOOL* pf)
         {
             return ((delegate* unmanaged<IShellItem2*, PROPERTYKEY*, BOOL*, int>)(lpVtbl[20]))((IShellItem2*)Unsafe.AsPointer(ref this), key, pf);
+        }
+
+        public interface Interface : IShellItem.Interface
+        {
+            [VtblIndex(8)]
+            HRESULT GetPropertyStore(GETPROPERTYSTOREFLAGS flags, [NativeTypeName("const IID &")] Guid* riid, void** ppv);
+
+            [VtblIndex(9)]
+            HRESULT GetPropertyStoreWithCreateObject(GETPROPERTYSTOREFLAGS flags, IUnknown* punkCreateObject, [NativeTypeName("const IID &")] Guid* riid, void** ppv);
+
+            [VtblIndex(10)]
+            HRESULT GetPropertyStoreForKeys([NativeTypeName("const PROPERTYKEY *")] PROPERTYKEY* rgKeys, uint cKeys, GETPROPERTYSTOREFLAGS flags, [NativeTypeName("const IID &")] Guid* riid, void** ppv);
+
+            [VtblIndex(11)]
+            HRESULT GetPropertyDescriptionList([NativeTypeName("const PROPERTYKEY &")] PROPERTYKEY* keyType, [NativeTypeName("const IID &")] Guid* riid, void** ppv);
+
+            [VtblIndex(12)]
+            HRESULT Update(IBindCtx* pbc);
+
+            [VtblIndex(13)]
+            HRESULT GetProperty([NativeTypeName("const PROPERTYKEY &")] PROPERTYKEY* key, PROPVARIANT* ppropvar);
+
+            [VtblIndex(14)]
+            HRESULT GetCLSID([NativeTypeName("const PROPERTYKEY &")] PROPERTYKEY* key, [NativeTypeName("CLSID *")] Guid* pclsid);
+
+            [VtblIndex(15)]
+            HRESULT GetFileTime([NativeTypeName("const PROPERTYKEY &")] PROPERTYKEY* key, FILETIME* pft);
+
+            [VtblIndex(16)]
+            HRESULT GetInt32([NativeTypeName("const PROPERTYKEY &")] PROPERTYKEY* key, int* pi);
+
+            [VtblIndex(17)]
+            HRESULT GetString([NativeTypeName("const PROPERTYKEY &")] PROPERTYKEY* key, [NativeTypeName("LPWSTR *")] ushort** ppsz);
+
+            [VtblIndex(18)]
+            HRESULT GetUInt32([NativeTypeName("const PROPERTYKEY &")] PROPERTYKEY* key, [NativeTypeName("ULONG *")] uint* pui);
+
+            [VtblIndex(19)]
+            HRESULT GetUInt64([NativeTypeName("const PROPERTYKEY &")] PROPERTYKEY* key, [NativeTypeName("ULONGLONG *")] ulong* pull);
+
+            [VtblIndex(20)]
+            HRESULT GetBool([NativeTypeName("const PROPERTYKEY &")] PROPERTYKEY* key, BOOL* pf);
         }
 
         public partial struct Vtbl

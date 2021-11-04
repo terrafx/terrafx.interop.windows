@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("305106E3-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct IViewObjectPrint : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IViewObjectPrint
+    public unsafe partial struct IViewObjectPrint : IViewObjectPrint.Interface
     {
         public void** lpVtbl;
 
@@ -44,6 +44,12 @@ namespace TerraFX.Interop
         public HRESULT GetPrintBitmap(IUnknown** ppPrintBitmap)
         {
             return ((delegate* unmanaged<IViewObjectPrint*, IUnknown**, int>)(lpVtbl[3]))((IViewObjectPrint*)Unsafe.AsPointer(ref this), ppPrintBitmap);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetPrintBitmap(IUnknown** ppPrintBitmap);
         }
 
         public partial struct Vtbl

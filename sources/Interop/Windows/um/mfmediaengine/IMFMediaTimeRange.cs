@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("DB71A2FC-078A-414E-9DF9-8C2531B0AA6C")]
     [NativeTypeName("struct IMFMediaTimeRange : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IMFMediaTimeRange
+    public unsafe partial struct IMFMediaTimeRange : IMFMediaTimeRange.Interface
     {
         public void** lpVtbl;
 
@@ -80,6 +80,28 @@ namespace TerraFX.Interop
         public HRESULT Clear()
         {
             return ((delegate* unmanaged<IMFMediaTimeRange*, int>)(lpVtbl[8]))((IMFMediaTimeRange*)Unsafe.AsPointer(ref this));
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            [return: NativeTypeName("DWORD")]
+            uint GetLength();
+
+            [VtblIndex(4)]
+            HRESULT GetStart([NativeTypeName("DWORD")] uint index, double* pStart);
+
+            [VtblIndex(5)]
+            HRESULT GetEnd([NativeTypeName("DWORD")] uint index, double* pEnd);
+
+            [VtblIndex(6)]
+            BOOL ContainsTime(double time);
+
+            [VtblIndex(7)]
+            HRESULT AddRange(double startTime, double endTime);
+
+            [VtblIndex(8)]
+            HRESULT Clear();
         }
 
         public partial struct Vtbl

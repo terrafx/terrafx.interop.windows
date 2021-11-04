@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("B2745EFD-42CE-48CA-81F1-A96E02538A90")]
     [NativeTypeName("struct ISpPhoneticAlphabetSelection : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct ISpPhoneticAlphabetSelection
+    public unsafe partial struct ISpPhoneticAlphabetSelection : ISpPhoneticAlphabetSelection.Interface
     {
         public void** lpVtbl;
 
@@ -51,6 +51,15 @@ namespace TerraFX.Interop
         public HRESULT SetAlphabetToUPS(BOOL fForceUPS)
         {
             return ((delegate* unmanaged<ISpPhoneticAlphabetSelection*, BOOL, int>)(lpVtbl[4]))((ISpPhoneticAlphabetSelection*)Unsafe.AsPointer(ref this), fForceUPS);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT IsAlphabetUPS(BOOL* pfIsUPS);
+
+            [VtblIndex(4)]
+            HRESULT SetAlphabetToUPS(BOOL fForceUPS);
         }
 
         public partial struct Vtbl

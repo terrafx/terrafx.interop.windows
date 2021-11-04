@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("D2FFD834-958B-426D-8470-2A13879C6A91")]
     [NativeTypeName("struct IBurnVerification : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IBurnVerification
+    public unsafe partial struct IBurnVerification : IBurnVerification.Interface
     {
         public void** lpVtbl;
 
@@ -51,6 +51,15 @@ namespace TerraFX.Interop
         public HRESULT get_BurnVerificationLevel(IMAPI_BURN_VERIFICATION_LEVEL* value)
         {
             return ((delegate* unmanaged<IBurnVerification*, IMAPI_BURN_VERIFICATION_LEVEL*, int>)(lpVtbl[4]))((IBurnVerification*)Unsafe.AsPointer(ref this), value);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT put_BurnVerificationLevel(IMAPI_BURN_VERIFICATION_LEVEL value);
+
+            [VtblIndex(4)]
+            HRESULT get_BurnVerificationLevel(IMAPI_BURN_VERIFICATION_LEVEL* value);
         }
 
         public partial struct Vtbl

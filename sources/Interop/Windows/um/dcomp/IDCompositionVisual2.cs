@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("E8DE1639-4331-4B26-BC5F-6A321D347A85")]
     [NativeTypeName("struct IDCompositionVisual2 : IDCompositionVisual")]
     [NativeInheritance("IDCompositionVisual")]
-    public unsafe partial struct IDCompositionVisual2
+    public unsafe partial struct IDCompositionVisual2 : IDCompositionVisual2.Interface
     {
         public void** lpVtbl;
 
@@ -170,6 +170,15 @@ namespace TerraFX.Interop
         public HRESULT SetBackFaceVisibility(DCOMPOSITION_BACKFACE_VISIBILITY visibility)
         {
             return ((delegate* unmanaged<IDCompositionVisual2*, DCOMPOSITION_BACKFACE_VISIBILITY, int>)(lpVtbl[21]))((IDCompositionVisual2*)Unsafe.AsPointer(ref this), visibility);
+        }
+
+        public interface Interface : IDCompositionVisual.Interface
+        {
+            [VtblIndex(20)]
+            HRESULT SetOpacityMode(DCOMPOSITION_OPACITY_MODE mode);
+
+            [VtblIndex(21)]
+            HRESULT SetBackFaceVisibility(DCOMPOSITION_BACKFACE_VISIBILITY visibility);
         }
 
         public partial struct Vtbl

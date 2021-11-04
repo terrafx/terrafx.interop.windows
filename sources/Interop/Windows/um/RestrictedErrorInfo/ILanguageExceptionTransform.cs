@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("FEB5A271-A6CD-45CE-880A-696706BADC65")]
     [NativeTypeName("struct ILanguageExceptionTransform : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct ILanguageExceptionTransform
+    public unsafe partial struct ILanguageExceptionTransform : ILanguageExceptionTransform.Interface
     {
         public void** lpVtbl;
 
@@ -44,6 +44,12 @@ namespace TerraFX.Interop
         public HRESULT GetTransformedRestrictedErrorInfo(IRestrictedErrorInfo** restrictedErrorInfo)
         {
             return ((delegate* unmanaged<ILanguageExceptionTransform*, IRestrictedErrorInfo**, int>)(lpVtbl[3]))((ILanguageExceptionTransform*)Unsafe.AsPointer(ref this), restrictedErrorInfo);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetTransformedRestrictedErrorInfo(IRestrictedErrorInfo** restrictedErrorInfo);
         }
 
         public partial struct Vtbl

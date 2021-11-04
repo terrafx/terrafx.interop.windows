@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("1E673275-0257-40AA-AF20-7C608D4A0428")]
     [NativeTypeName("struct IVMRMixerBitmap : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IVMRMixerBitmap
+    public unsafe partial struct IVMRMixerBitmap : IVMRMixerBitmap.Interface
     {
         public void** lpVtbl;
 
@@ -58,6 +58,18 @@ namespace TerraFX.Interop
         public HRESULT GetAlphaBitmapParameters([NativeTypeName("PVMRALPHABITMAP")] VMRALPHABITMAP* pBmpParms)
         {
             return ((delegate* unmanaged<IVMRMixerBitmap*, VMRALPHABITMAP*, int>)(lpVtbl[5]))((IVMRMixerBitmap*)Unsafe.AsPointer(ref this), pBmpParms);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT SetAlphaBitmap([NativeTypeName("const VMRALPHABITMAP *")] VMRALPHABITMAP* pBmpParms);
+
+            [VtblIndex(4)]
+            HRESULT UpdateAlphaBitmapParameters([NativeTypeName("PVMRALPHABITMAP")] VMRALPHABITMAP* pBmpParms);
+
+            [VtblIndex(5)]
+            HRESULT GetAlphaBitmapParameters([NativeTypeName("PVMRALPHABITMAP")] VMRALPHABITMAP* pBmpParms);
         }
 
         public partial struct Vtbl

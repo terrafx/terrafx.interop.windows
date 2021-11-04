@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("00000038-0000-0000-C000-000000000046")]
     [NativeTypeName("struct IWeakReferenceSource : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IWeakReferenceSource
+    public unsafe partial struct IWeakReferenceSource : IWeakReferenceSource.Interface
     {
         public void** lpVtbl;
 
@@ -44,6 +44,12 @@ namespace TerraFX.Interop
         public HRESULT GetWeakReference(IWeakReference** weakReference)
         {
             return ((delegate* unmanaged<IWeakReferenceSource*, IWeakReference**, int>)(lpVtbl[3]))((IWeakReferenceSource*)Unsafe.AsPointer(ref this), weakReference);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetWeakReference(IWeakReference** weakReference);
         }
 
         public partial struct Vtbl

@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("F0C0F8DD-CF38-44E1-BB0F-68CF0D551C78")]
     [NativeTypeName("struct IEnumTfContextViews : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IEnumTfContextViews
+    public unsafe partial struct IEnumTfContextViews : IEnumTfContextViews.Interface
     {
         public void** lpVtbl;
 
@@ -65,6 +65,21 @@ namespace TerraFX.Interop
         public HRESULT Skip([NativeTypeName("ULONG")] uint ulCount)
         {
             return ((delegate* unmanaged<IEnumTfContextViews*, uint, int>)(lpVtbl[6]))((IEnumTfContextViews*)Unsafe.AsPointer(ref this), ulCount);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT Clone(IEnumTfContextViews** ppEnum);
+
+            [VtblIndex(4)]
+            HRESULT Next([NativeTypeName("ULONG")] uint ulCount, ITfContextView** rgViews, [NativeTypeName("ULONG *")] uint* pcFetched);
+
+            [VtblIndex(5)]
+            HRESULT Reset();
+
+            [VtblIndex(6)]
+            HRESULT Skip([NativeTypeName("ULONG")] uint ulCount);
         }
 
         public partial struct Vtbl

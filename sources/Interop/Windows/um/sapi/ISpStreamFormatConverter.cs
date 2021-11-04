@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("678A932C-EA71-4446-9B41-78FDA6280A29")]
     [NativeTypeName("struct ISpStreamFormatConverter : ISpStreamFormat")]
     [NativeInheritance("ISpStreamFormat")]
-    public unsafe partial struct ISpStreamFormatConverter
+    public unsafe partial struct ISpStreamFormatConverter : ISpStreamFormatConverter.Interface
     {
         public void** lpVtbl;
 
@@ -163,6 +163,27 @@ namespace TerraFX.Interop
         public HRESULT ScaleBaseToConvertedOffset([NativeTypeName("ULONGLONG")] ulong ullOffsetBaseStream, [NativeTypeName("ULONGLONG *")] ulong* pullOffsetConvertedStream)
         {
             return ((delegate* unmanaged<ISpStreamFormatConverter*, ulong, ulong*, int>)(lpVtbl[20]))((ISpStreamFormatConverter*)Unsafe.AsPointer(ref this), ullOffsetBaseStream, pullOffsetConvertedStream);
+        }
+
+        public interface Interface : ISpStreamFormat.Interface
+        {
+            [VtblIndex(15)]
+            HRESULT SetBaseStream(ISpStreamFormat* pStream, BOOL fSetFormatToBaseStreamFormat, BOOL fWriteToBaseStream);
+
+            [VtblIndex(16)]
+            HRESULT GetBaseStream(ISpStreamFormat** ppStream);
+
+            [VtblIndex(17)]
+            HRESULT SetFormat([NativeTypeName("const GUID &")] Guid* rguidFormatIdOfConvertedStream, [NativeTypeName("const WAVEFORMATEX *")] WAVEFORMATEX* pWaveFormatExOfConvertedStream);
+
+            [VtblIndex(18)]
+            HRESULT ResetSeekPosition();
+
+            [VtblIndex(19)]
+            HRESULT ScaleConvertedToBaseOffset([NativeTypeName("ULONGLONG")] ulong ullOffsetConvertedStream, [NativeTypeName("ULONGLONG *")] ulong* pullOffsetBaseStream);
+
+            [VtblIndex(20)]
+            HRESULT ScaleBaseToConvertedOffset([NativeTypeName("ULONGLONG")] ulong ullOffsetBaseStream, [NativeTypeName("ULONGLONG *")] ulong* pullOffsetConvertedStream);
         }
 
         public partial struct Vtbl

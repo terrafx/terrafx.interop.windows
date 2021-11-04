@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("037E866E-F56D-4357-A8AF-9DABBE6E250E")]
     [NativeTypeName("struct ID3D11Texture3D : ID3D11Resource")]
     [NativeInheritance("ID3D11Resource")]
-    public unsafe partial struct ID3D11Texture3D
+    public unsafe partial struct ID3D11Texture3D : ID3D11Texture3D.Interface
     {
         public void** lpVtbl;
 
@@ -93,6 +93,12 @@ namespace TerraFX.Interop
         public void GetDesc(D3D11_TEXTURE3D_DESC* pDesc)
         {
             ((delegate* unmanaged<ID3D11Texture3D*, D3D11_TEXTURE3D_DESC*, void>)(lpVtbl[10]))((ID3D11Texture3D*)Unsafe.AsPointer(ref this), pDesc);
+        }
+
+        public interface Interface : ID3D11Resource.Interface
+        {
+            [VtblIndex(10)]
+            void GetDesc(D3D11_TEXTURE3D_DESC* pDesc);
         }
 
         public partial struct Vtbl

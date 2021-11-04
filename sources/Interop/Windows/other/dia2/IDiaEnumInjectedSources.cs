@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("D5612573-6925-4468-8883-98CDEC8C384A")]
     [NativeTypeName("struct IDiaEnumInjectedSources : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IDiaEnumInjectedSources
+    public unsafe partial struct IDiaEnumInjectedSources : IDiaEnumInjectedSources.Interface
     {
         public void** lpVtbl;
 
@@ -86,6 +86,30 @@ namespace TerraFX.Interop
         public HRESULT Clone(IDiaEnumInjectedSources** ppenum)
         {
             return ((delegate* unmanaged<IDiaEnumInjectedSources*, IDiaEnumInjectedSources**, int>)(lpVtbl[9]))((IDiaEnumInjectedSources*)Unsafe.AsPointer(ref this), ppenum);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT get__NewEnum(IUnknown** pRetVal);
+
+            [VtblIndex(4)]
+            HRESULT get_Count([NativeTypeName("LONG *")] int* pRetVal);
+
+            [VtblIndex(5)]
+            HRESULT Item([NativeTypeName("DWORD")] uint index, IDiaInjectedSource** injectedSource);
+
+            [VtblIndex(6)]
+            HRESULT Next([NativeTypeName("ULONG")] uint celt, IDiaInjectedSource** rgelt, [NativeTypeName("ULONG *")] uint* pceltFetched);
+
+            [VtblIndex(7)]
+            HRESULT Skip([NativeTypeName("ULONG")] uint celt);
+
+            [VtblIndex(8)]
+            HRESULT Reset();
+
+            [VtblIndex(9)]
+            HRESULT Clone(IDiaEnumInjectedSources** ppenum);
         }
 
         public partial struct Vtbl

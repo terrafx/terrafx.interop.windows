@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("D19F8E95-B126-4446-890C-5DCB7AD71453")]
     [NativeTypeName("struct IMFTrustedOutput : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IMFTrustedOutput
+    public unsafe partial struct IMFTrustedOutput : IMFTrustedOutput.Interface
     {
         public void** lpVtbl;
 
@@ -58,6 +58,18 @@ namespace TerraFX.Interop
         public HRESULT IsFinal(BOOL* pfIsFinal)
         {
             return ((delegate* unmanaged<IMFTrustedOutput*, BOOL*, int>)(lpVtbl[5]))((IMFTrustedOutput*)Unsafe.AsPointer(ref this), pfIsFinal);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetOutputTrustAuthorityCount([NativeTypeName("DWORD *")] uint* pcOutputTrustAuthorities);
+
+            [VtblIndex(4)]
+            HRESULT GetOutputTrustAuthorityByIndex([NativeTypeName("DWORD")] uint dwIndex, IMFOutputTrustAuthority** ppauthority);
+
+            [VtblIndex(5)]
+            HRESULT IsFinal(BOOL* pfIsFinal);
         }
 
         public partial struct Vtbl

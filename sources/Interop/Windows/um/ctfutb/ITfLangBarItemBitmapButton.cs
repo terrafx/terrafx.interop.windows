@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("A26A0525-3FAE-4FA0-89EE-88A964F9F1B5")]
     [NativeTypeName("struct ITfLangBarItemBitmapButton : ITfLangBarItem")]
     [NativeInheritance("ITfLangBarItem")]
-    public unsafe partial struct ITfLangBarItemBitmapButton
+    public unsafe partial struct ITfLangBarItemBitmapButton : ITfLangBarItemBitmapButton.Interface
     {
         public void** lpVtbl;
 
@@ -107,6 +107,27 @@ namespace TerraFX.Interop
         public HRESULT GetText([NativeTypeName("BSTR *")] ushort** pbstrText)
         {
             return ((delegate* unmanaged<ITfLangBarItemBitmapButton*, ushort**, int>)(lpVtbl[12]))((ITfLangBarItemBitmapButton*)Unsafe.AsPointer(ref this), pbstrText);
+        }
+
+        public interface Interface : ITfLangBarItem.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT OnClick(TfLBIClick click, POINT pt, [NativeTypeName("const RECT *")] RECT* prcArea);
+
+            [VtblIndex(8)]
+            HRESULT InitMenu(ITfMenu* pMenu);
+
+            [VtblIndex(9)]
+            HRESULT OnMenuSelect(uint wID);
+
+            [VtblIndex(10)]
+            HRESULT GetPreferredSize([NativeTypeName("const SIZE *")] SIZE* pszDefault, SIZE* psz);
+
+            [VtblIndex(11)]
+            HRESULT DrawBitmap([NativeTypeName("LONG")] int bmWidth, [NativeTypeName("LONG")] int bmHeight, [NativeTypeName("DWORD")] uint dwFlags, HBITMAP* phbmp, HBITMAP* phbmpMask);
+
+            [VtblIndex(12)]
+            HRESULT GetText([NativeTypeName("BSTR *")] ushort** pbstrText);
         }
 
         public partial struct Vtbl

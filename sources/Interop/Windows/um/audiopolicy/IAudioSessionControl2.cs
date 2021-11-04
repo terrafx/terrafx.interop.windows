@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("BFB7FF88-7239-4FC9-8FA2-07C950BE9C6D")]
     [NativeTypeName("struct IAudioSessionControl2 : IAudioSessionControl")]
     [NativeInheritance("IAudioSessionControl")]
-    public unsafe partial struct IAudioSessionControl2
+    public unsafe partial struct IAudioSessionControl2 : IAudioSessionControl2.Interface
     {
         public void** lpVtbl;
 
@@ -135,6 +135,24 @@ namespace TerraFX.Interop
         public HRESULT SetDuckingPreference(BOOL optOut)
         {
             return ((delegate* unmanaged<IAudioSessionControl2*, BOOL, int>)(lpVtbl[16]))((IAudioSessionControl2*)Unsafe.AsPointer(ref this), optOut);
+        }
+
+        public interface Interface : IAudioSessionControl.Interface
+        {
+            [VtblIndex(12)]
+            HRESULT GetSessionIdentifier([NativeTypeName("LPWSTR *")] ushort** pRetVal);
+
+            [VtblIndex(13)]
+            HRESULT GetSessionInstanceIdentifier([NativeTypeName("LPWSTR *")] ushort** pRetVal);
+
+            [VtblIndex(14)]
+            HRESULT GetProcessId([NativeTypeName("DWORD *")] uint* pRetVal);
+
+            [VtblIndex(15)]
+            HRESULT IsSystemSoundsSession();
+
+            [VtblIndex(16)]
+            HRESULT SetDuckingPreference(BOOL optOut);
         }
 
         public partial struct Vtbl

@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("AAC18C18-E186-46D2-825D-A1F8DC8E395A")]
     [NativeTypeName("struct IVPManager : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IVPManager
+    public unsafe partial struct IVPManager : IVPManager.Interface
     {
         public void** lpVtbl;
 
@@ -51,6 +51,15 @@ namespace TerraFX.Interop
         public HRESULT GetVideoPortIndex([NativeTypeName("DWORD *")] uint* pdwVideoPortIndex)
         {
             return ((delegate* unmanaged<IVPManager*, uint*, int>)(lpVtbl[4]))((IVPManager*)Unsafe.AsPointer(ref this), pdwVideoPortIndex);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT SetVideoPortIndex([NativeTypeName("DWORD")] uint dwVideoPortIndex);
+
+            [VtblIndex(4)]
+            HRESULT GetVideoPortIndex([NativeTypeName("DWORD *")] uint* pdwVideoPortIndex);
         }
 
         public partial struct Vtbl

@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("2E69F9E8-DD3F-4BF9-95BA-C04F49D788DF")]
     [NativeTypeName("struct ID2D1GdiMetafile1 : ID2D1GdiMetafile")]
     [NativeInheritance("ID2D1GdiMetafile")]
-    public unsafe partial struct ID2D1GdiMetafile1
+    public unsafe partial struct ID2D1GdiMetafile1 : ID2D1GdiMetafile1.Interface
     {
         public void** lpVtbl;
 
@@ -72,6 +72,15 @@ namespace TerraFX.Interop
         public HRESULT GetSourceBounds([NativeTypeName("D2D1_RECT_F *")] D2D_RECT_F* bounds)
         {
             return ((delegate* unmanaged<ID2D1GdiMetafile1*, D2D_RECT_F*, int>)(lpVtbl[7]))((ID2D1GdiMetafile1*)Unsafe.AsPointer(ref this), bounds);
+        }
+
+        public interface Interface : ID2D1GdiMetafile.Interface
+        {
+            [VtblIndex(6)]
+            HRESULT GetDpi(float* dpiX, float* dpiY);
+
+            [VtblIndex(7)]
+            HRESULT GetSourceBounds([NativeTypeName("D2D1_RECT_F *")] D2D_RECT_F* bounds);
         }
 
         public partial struct Vtbl

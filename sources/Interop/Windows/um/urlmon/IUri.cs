@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("A39EE748-6A27-4817-A6F2-13914BEF5890")]
     [NativeTypeName("struct IUri : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IUri
+    public unsafe partial struct IUri : IUri.Interface
     {
         public void** lpVtbl;
 
@@ -212,6 +212,84 @@ namespace TerraFX.Interop
         public HRESULT IsEqual(IUri* pUri, BOOL* pfEqual)
         {
             return ((delegate* unmanaged<IUri*, IUri*, BOOL*, int>)(lpVtbl[27]))((IUri*)Unsafe.AsPointer(ref this), pUri, pfEqual);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetPropertyBSTR(Uri_PROPERTY uriProp, [NativeTypeName("BSTR *")] ushort** pbstrProperty, [NativeTypeName("DWORD")] uint dwFlags);
+
+            [VtblIndex(4)]
+            HRESULT GetPropertyLength(Uri_PROPERTY uriProp, [NativeTypeName("DWORD *")] uint* pcchProperty, [NativeTypeName("DWORD")] uint dwFlags);
+
+            [VtblIndex(5)]
+            HRESULT GetPropertyDWORD(Uri_PROPERTY uriProp, [NativeTypeName("DWORD *")] uint* pdwProperty, [NativeTypeName("DWORD")] uint dwFlags);
+
+            [VtblIndex(6)]
+            HRESULT HasProperty(Uri_PROPERTY uriProp, BOOL* pfHasProperty);
+
+            [VtblIndex(7)]
+            HRESULT GetAbsoluteUri([NativeTypeName("BSTR *")] ushort** pbstrAbsoluteUri);
+
+            [VtblIndex(8)]
+            HRESULT GetAuthority([NativeTypeName("BSTR *")] ushort** pbstrAuthority);
+
+            [VtblIndex(9)]
+            HRESULT GetDisplayUri([NativeTypeName("BSTR *")] ushort** pbstrDisplayString);
+
+            [VtblIndex(10)]
+            HRESULT GetDomain([NativeTypeName("BSTR *")] ushort** pbstrDomain);
+
+            [VtblIndex(11)]
+            HRESULT GetExtension([NativeTypeName("BSTR *")] ushort** pbstrExtension);
+
+            [VtblIndex(12)]
+            HRESULT GetFragment([NativeTypeName("BSTR *")] ushort** pbstrFragment);
+
+            [VtblIndex(13)]
+            HRESULT GetHost([NativeTypeName("BSTR *")] ushort** pbstrHost);
+
+            [VtblIndex(14)]
+            HRESULT GetPassword([NativeTypeName("BSTR *")] ushort** pbstrPassword);
+
+            [VtblIndex(15)]
+            HRESULT GetPath([NativeTypeName("BSTR *")] ushort** pbstrPath);
+
+            [VtblIndex(16)]
+            HRESULT GetPathAndQuery([NativeTypeName("BSTR *")] ushort** pbstrPathAndQuery);
+
+            [VtblIndex(17)]
+            HRESULT GetQuery([NativeTypeName("BSTR *")] ushort** pbstrQuery);
+
+            [VtblIndex(18)]
+            HRESULT GetRawUri([NativeTypeName("BSTR *")] ushort** pbstrRawUri);
+
+            [VtblIndex(19)]
+            HRESULT GetSchemeName([NativeTypeName("BSTR *")] ushort** pbstrSchemeName);
+
+            [VtblIndex(20)]
+            HRESULT GetUserInfo([NativeTypeName("BSTR *")] ushort** pbstrUserInfo);
+
+            [VtblIndex(21)]
+            HRESULT GetUserName([NativeTypeName("BSTR *")] ushort** pbstrUserName);
+
+            [VtblIndex(22)]
+            HRESULT GetHostType([NativeTypeName("DWORD *")] uint* pdwHostType);
+
+            [VtblIndex(23)]
+            HRESULT GetPort([NativeTypeName("DWORD *")] uint* pdwPort);
+
+            [VtblIndex(24)]
+            HRESULT GetScheme([NativeTypeName("DWORD *")] uint* pdwScheme);
+
+            [VtblIndex(25)]
+            HRESULT GetZone([NativeTypeName("DWORD *")] uint* pdwZone);
+
+            [VtblIndex(26)]
+            HRESULT GetProperties([NativeTypeName("LPDWORD")] uint* pdwFlags);
+
+            [VtblIndex(27)]
+            HRESULT IsEqual(IUri* pUri, BOOL* pfEqual);
         }
 
         public partial struct Vtbl

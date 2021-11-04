@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("27354130-7F64-5B0F-8F00-5D77AFBE261E")]
     [NativeTypeName("struct IDiscMaster2 : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct IDiscMaster2
+    public unsafe partial struct IDiscMaster2 : IDiscMaster2.Interface
     {
         public void** lpVtbl;
 
@@ -93,6 +93,21 @@ namespace TerraFX.Interop
         public HRESULT get_IsSupportedEnvironment([NativeTypeName("VARIANT_BOOL *")] short* value)
         {
             return ((delegate* unmanaged<IDiscMaster2*, short*, int>)(lpVtbl[10]))((IDiscMaster2*)Unsafe.AsPointer(ref this), value);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT get__NewEnum(IEnumVARIANT** ppunk);
+
+            [VtblIndex(8)]
+            HRESULT get_Item([NativeTypeName("LONG")] int index, [NativeTypeName("BSTR *")] ushort** value);
+
+            [VtblIndex(9)]
+            HRESULT get_Count([NativeTypeName("LONG *")] int* value);
+
+            [VtblIndex(10)]
+            HRESULT get_IsSupportedEnvironment([NativeTypeName("VARIANT_BOOL *")] short* value);
         }
 
         public partial struct Vtbl

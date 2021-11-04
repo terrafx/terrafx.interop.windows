@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("F3706F0D-8EA2-4886-8000-7155E9EC2EAE")]
     [NativeTypeName("struct IMFQualityAdvise2 : IMFQualityAdvise")]
     [NativeInheritance("IMFQualityAdvise")]
-    public unsafe partial struct IMFQualityAdvise2
+    public unsafe partial struct IMFQualityAdvise2 : IMFQualityAdvise2.Interface
     {
         public void** lpVtbl;
 
@@ -79,6 +79,12 @@ namespace TerraFX.Interop
         public HRESULT NotifyQualityEvent(IMFMediaEvent* pEvent, [NativeTypeName("DWORD *")] uint* pdwFlags)
         {
             return ((delegate* unmanaged<IMFQualityAdvise2*, IMFMediaEvent*, uint*, int>)(lpVtbl[8]))((IMFQualityAdvise2*)Unsafe.AsPointer(ref this), pEvent, pdwFlags);
+        }
+
+        public interface Interface : IMFQualityAdvise.Interface
+        {
+            [VtblIndex(8)]
+            HRESULT NotifyQualityEvent(IMFMediaEvent* pEvent, [NativeTypeName("DWORD *")] uint* pdwFlags);
         }
 
         public partial struct Vtbl

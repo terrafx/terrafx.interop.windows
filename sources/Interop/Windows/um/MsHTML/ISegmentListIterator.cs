@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("3050F692-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct ISegmentListIterator : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct ISegmentListIterator
+    public unsafe partial struct ISegmentListIterator : ISegmentListIterator.Interface
     {
         public void** lpVtbl;
 
@@ -65,6 +65,21 @@ namespace TerraFX.Interop
         public HRESULT Advance()
         {
             return ((delegate* unmanaged<ISegmentListIterator*, int>)(lpVtbl[6]))((ISegmentListIterator*)Unsafe.AsPointer(ref this));
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT Current(ISegment** ppISegment);
+
+            [VtblIndex(4)]
+            HRESULT First();
+
+            [VtblIndex(5)]
+            HRESULT IsDone();
+
+            [VtblIndex(6)]
+            HRESULT Advance();
         }
 
         public partial struct Vtbl

@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("C5A05F0C-16F2-4ADF-9F4D-A8C4D58AC550")]
     [NativeTypeName("struct IDXGIDebug1 : IDXGIDebug")]
     [NativeInheritance("IDXGIDebug")]
-    public unsafe partial struct IDXGIDebug1
+    public unsafe partial struct IDXGIDebug1 : IDXGIDebug1.Interface
     {
         public void** lpVtbl;
 
@@ -65,6 +65,18 @@ namespace TerraFX.Interop
         public BOOL IsLeakTrackingEnabledForThread()
         {
             return ((delegate* unmanaged<IDXGIDebug1*, int>)(lpVtbl[6]))((IDXGIDebug1*)Unsafe.AsPointer(ref this));
+        }
+
+        public interface Interface : IDXGIDebug.Interface
+        {
+            [VtblIndex(4)]
+            void EnableLeakTrackingForThread();
+
+            [VtblIndex(5)]
+            void DisableLeakTrackingForThread();
+
+            [VtblIndex(6)]
+            BOOL IsLeakTrackingEnabledForThread();
         }
 
         public partial struct Vtbl

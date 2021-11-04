@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("7FF12CCE-F76F-41C2-863B-1666C8E5E139")]
     [NativeTypeName("struct IMFPresentationTimeSource : IMFClock")]
     [NativeInheritance("IMFClock")]
-    public unsafe partial struct IMFPresentationTimeSource
+    public unsafe partial struct IMFPresentationTimeSource : IMFPresentationTimeSource.Interface
     {
         public void** lpVtbl;
 
@@ -79,6 +79,12 @@ namespace TerraFX.Interop
         public HRESULT GetUnderlyingClock(IMFClock** ppClock)
         {
             return ((delegate* unmanaged<IMFPresentationTimeSource*, IMFClock**, int>)(lpVtbl[8]))((IMFPresentationTimeSource*)Unsafe.AsPointer(ref this), ppClock);
+        }
+
+        public interface Interface : IMFClock.Interface
+        {
+            [VtblIndex(8)]
+            HRESULT GetUnderlyingClock(IMFClock** ppClock);
         }
 
         public partial struct Vtbl

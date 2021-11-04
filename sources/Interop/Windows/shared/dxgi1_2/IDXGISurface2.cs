@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("ABA496DD-B617-4CB8-A866-BC44D7EB1FA2")]
     [NativeTypeName("struct IDXGISurface2 : IDXGISurface1")]
     [NativeInheritance("IDXGISurface1")]
-    public unsafe partial struct IDXGISurface2
+    public unsafe partial struct IDXGISurface2 : IDXGISurface2.Interface
     {
         public void** lpVtbl;
 
@@ -114,6 +114,12 @@ namespace TerraFX.Interop
         public HRESULT GetResource([NativeTypeName("const IID &")] Guid* riid, void** ppParentResource, uint* pSubresourceIndex)
         {
             return ((delegate* unmanaged<IDXGISurface2*, Guid*, void**, uint*, int>)(lpVtbl[13]))((IDXGISurface2*)Unsafe.AsPointer(ref this), riid, ppParentResource, pSubresourceIndex);
+        }
+
+        public interface Interface : IDXGISurface1.Interface
+        {
+            [VtblIndex(13)]
+            HRESULT GetResource([NativeTypeName("const IID &")] Guid* riid, void** ppParentResource, uint* pSubresourceIndex);
         }
 
         public partial struct Vtbl

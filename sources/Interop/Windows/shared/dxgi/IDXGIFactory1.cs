@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("770AAE78-F26F-4DBA-A829-253C83D1B387")]
     [NativeTypeName("struct IDXGIFactory1 : IDXGIFactory")]
     [NativeInheritance("IDXGIFactory")]
-    public unsafe partial struct IDXGIFactory1
+    public unsafe partial struct IDXGIFactory1 : IDXGIFactory1.Interface
     {
         public void** lpVtbl;
 
@@ -114,6 +114,15 @@ namespace TerraFX.Interop
         public BOOL IsCurrent()
         {
             return ((delegate* unmanaged<IDXGIFactory1*, int>)(lpVtbl[13]))((IDXGIFactory1*)Unsafe.AsPointer(ref this));
+        }
+
+        public interface Interface : IDXGIFactory.Interface
+        {
+            [VtblIndex(12)]
+            HRESULT EnumAdapters1(uint Adapter, IDXGIAdapter1** ppAdapter);
+
+            [VtblIndex(13)]
+            BOOL IsCurrent();
         }
 
         public partial struct Vtbl

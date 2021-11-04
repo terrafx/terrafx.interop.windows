@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("3264E477-16D1-4D63-823E-7D2984696634")]
     [NativeTypeName("struct IAppxContentGroupsEnumerator : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IAppxContentGroupsEnumerator
+    public unsafe partial struct IAppxContentGroupsEnumerator : IAppxContentGroupsEnumerator.Interface
     {
         public void** lpVtbl;
 
@@ -58,6 +58,18 @@ namespace TerraFX.Interop
         public HRESULT MoveNext(BOOL* hasNext)
         {
             return ((delegate* unmanaged<IAppxContentGroupsEnumerator*, BOOL*, int>)(lpVtbl[5]))((IAppxContentGroupsEnumerator*)Unsafe.AsPointer(ref this), hasNext);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetCurrent(IAppxContentGroup** stream);
+
+            [VtblIndex(4)]
+            HRESULT GetHasCurrent(BOOL* hasCurrent);
+
+            [VtblIndex(5)]
+            HRESULT MoveNext(BOOL* hasNext);
         }
 
         public partial struct Vtbl

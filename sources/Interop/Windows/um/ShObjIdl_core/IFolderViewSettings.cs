@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("AE8C987D-8797-4ED3-BE72-2A47DD938DB0")]
     [NativeTypeName("struct IFolderViewSettings : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IFolderViewSettings
+    public unsafe partial struct IFolderViewSettings : IFolderViewSettings.Interface
     {
         public void** lpVtbl;
 
@@ -86,6 +86,30 @@ namespace TerraFX.Interop
         public HRESULT GetGroupSubsetCount(uint* pcVisibleRows)
         {
             return ((delegate* unmanaged<IFolderViewSettings*, uint*, int>)(lpVtbl[9]))((IFolderViewSettings*)Unsafe.AsPointer(ref this), pcVisibleRows);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetColumnPropertyList([NativeTypeName("const IID &")] Guid* riid, void** ppv);
+
+            [VtblIndex(4)]
+            HRESULT GetGroupByProperty(PROPERTYKEY* pkey, BOOL* pfGroupAscending);
+
+            [VtblIndex(5)]
+            HRESULT GetViewMode(FOLDERLOGICALVIEWMODE* plvm);
+
+            [VtblIndex(6)]
+            HRESULT GetIconSize(uint* puIconSize);
+
+            [VtblIndex(7)]
+            HRESULT GetFolderFlags(FOLDERFLAGS* pfolderMask, FOLDERFLAGS* pfolderFlags);
+
+            [VtblIndex(8)]
+            HRESULT GetSortColumns(SORTCOLUMN* rgSortColumns, uint cColumnsIn, uint* pcColumnsOut);
+
+            [VtblIndex(9)]
+            HRESULT GetGroupSubsetCount(uint* pcVisibleRows);
         }
 
         public partial struct Vtbl

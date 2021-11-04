@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("52B18B5C-555D-46B2-B00A-FA680144FBDB")]
     [NativeTypeName("struct ITfToolTipUIElement : ITfUIElement")]
     [NativeInheritance("ITfUIElement")]
-    public unsafe partial struct ITfToolTipUIElement
+    public unsafe partial struct ITfToolTipUIElement : ITfToolTipUIElement.Interface
     {
         public void** lpVtbl;
 
@@ -72,6 +72,12 @@ namespace TerraFX.Interop
         public HRESULT GetString([NativeTypeName("BSTR *")] ushort** pstr)
         {
             return ((delegate* unmanaged<ITfToolTipUIElement*, ushort**, int>)(lpVtbl[7]))((ITfToolTipUIElement*)Unsafe.AsPointer(ref this), pstr);
+        }
+
+        public interface Interface : ITfUIElement.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT GetString([NativeTypeName("BSTR *")] ushort** pstr);
         }
 
         public partial struct Vtbl

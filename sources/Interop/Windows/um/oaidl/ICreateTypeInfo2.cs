@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("0002040E-0000-0000-C000-000000000046")]
     [NativeTypeName("struct ICreateTypeInfo2 : ICreateTypeInfo")]
     [NativeInheritance("ICreateTypeInfo")]
-    public unsafe partial struct ICreateTypeInfo2
+    public unsafe partial struct ICreateTypeInfo2 : ICreateTypeInfo2.Interface
     {
         public void** lpVtbl;
 
@@ -303,6 +303,54 @@ namespace TerraFX.Interop
         public HRESULT SetName([NativeTypeName("LPOLESTR")] ushort* szName)
         {
             return ((delegate* unmanaged<ICreateTypeInfo2*, ushort*, int>)(lpVtbl[40]))((ICreateTypeInfo2*)Unsafe.AsPointer(ref this), szName);
+        }
+
+        public interface Interface : ICreateTypeInfo.Interface
+        {
+            [VtblIndex(26)]
+            HRESULT DeleteFuncDesc(uint index);
+
+            [VtblIndex(27)]
+            HRESULT DeleteFuncDescByMemId([NativeTypeName("MEMBERID")] int memid, INVOKEKIND invKind);
+
+            [VtblIndex(28)]
+            HRESULT DeleteVarDesc(uint index);
+
+            [VtblIndex(29)]
+            HRESULT DeleteVarDescByMemId([NativeTypeName("MEMBERID")] int memid);
+
+            [VtblIndex(30)]
+            HRESULT DeleteImplType(uint index);
+
+            [VtblIndex(31)]
+            HRESULT SetCustData([NativeTypeName("const GUID &")] Guid* guid, VARIANT* pVarVal);
+
+            [VtblIndex(32)]
+            HRESULT SetFuncCustData(uint index, [NativeTypeName("const GUID &")] Guid* guid, VARIANT* pVarVal);
+
+            [VtblIndex(33)]
+            HRESULT SetParamCustData(uint indexFunc, uint indexParam, [NativeTypeName("const GUID &")] Guid* guid, VARIANT* pVarVal);
+
+            [VtblIndex(34)]
+            HRESULT SetVarCustData(uint index, [NativeTypeName("const GUID &")] Guid* guid, VARIANT* pVarVal);
+
+            [VtblIndex(35)]
+            HRESULT SetImplTypeCustData(uint index, [NativeTypeName("const GUID &")] Guid* guid, VARIANT* pVarVal);
+
+            [VtblIndex(36)]
+            HRESULT SetHelpStringContext([NativeTypeName("ULONG")] uint dwHelpStringContext);
+
+            [VtblIndex(37)]
+            HRESULT SetFuncHelpStringContext(uint index, [NativeTypeName("ULONG")] uint dwHelpStringContext);
+
+            [VtblIndex(38)]
+            HRESULT SetVarHelpStringContext(uint index, [NativeTypeName("ULONG")] uint dwHelpStringContext);
+
+            [VtblIndex(39)]
+            HRESULT Invalidate();
+
+            [VtblIndex(40)]
+            HRESULT SetName([NativeTypeName("LPOLESTR")] ushort* szName);
         }
 
         public partial struct Vtbl

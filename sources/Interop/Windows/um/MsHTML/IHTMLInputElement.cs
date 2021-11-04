@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("3050F5D2-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct IHTMLInputElement : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct IHTMLInputElement
+    public unsafe partial struct IHTMLInputElement : IHTMLInputElement.Interface
     {
         public void** lpVtbl;
 
@@ -520,6 +520,204 @@ namespace TerraFX.Interop
         public HRESULT get_start([NativeTypeName("BSTR *")] ushort** p)
         {
             return ((delegate* unmanaged<IHTMLInputElement*, ushort**, int>)(lpVtbl[71]))((IHTMLInputElement*)Unsafe.AsPointer(ref this), p);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT put_type([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(8)]
+            HRESULT get_type([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(9)]
+            HRESULT put_value([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(10)]
+            HRESULT get_value([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(11)]
+            HRESULT put_name([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(12)]
+            HRESULT get_name([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(13)]
+            HRESULT put_status([NativeTypeName("VARIANT_BOOL")] short v);
+
+            [VtblIndex(14)]
+            HRESULT get_status([NativeTypeName("VARIANT_BOOL *")] short* p);
+
+            [VtblIndex(15)]
+            HRESULT put_disabled([NativeTypeName("VARIANT_BOOL")] short v);
+
+            [VtblIndex(16)]
+            HRESULT get_disabled([NativeTypeName("VARIANT_BOOL *")] short* p);
+
+            [VtblIndex(17)]
+            HRESULT get_form(IHTMLFormElement** p);
+
+            [VtblIndex(18)]
+            HRESULT put_size([NativeTypeName("long")] int v);
+
+            [VtblIndex(19)]
+            HRESULT get_size([NativeTypeName("long *")] int* p);
+
+            [VtblIndex(20)]
+            HRESULT put_maxLength([NativeTypeName("long")] int v);
+
+            [VtblIndex(21)]
+            HRESULT get_maxLength([NativeTypeName("long *")] int* p);
+
+            [VtblIndex(22)]
+            HRESULT select();
+
+            [VtblIndex(23)]
+            HRESULT put_onchange(VARIANT v);
+
+            [VtblIndex(24)]
+            HRESULT get_onchange(VARIANT* p);
+
+            [VtblIndex(25)]
+            HRESULT put_onselect(VARIANT v);
+
+            [VtblIndex(26)]
+            HRESULT get_onselect(VARIANT* p);
+
+            [VtblIndex(27)]
+            HRESULT put_defaultValue([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(28)]
+            HRESULT get_defaultValue([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(29)]
+            HRESULT put_readOnly([NativeTypeName("VARIANT_BOOL")] short v);
+
+            [VtblIndex(30)]
+            HRESULT get_readOnly([NativeTypeName("VARIANT_BOOL *")] short* p);
+
+            [VtblIndex(31)]
+            HRESULT createTextRange(IHTMLTxtRange** range);
+
+            [VtblIndex(32)]
+            HRESULT put_indeterminate([NativeTypeName("VARIANT_BOOL")] short v);
+
+            [VtblIndex(33)]
+            HRESULT get_indeterminate([NativeTypeName("VARIANT_BOOL *")] short* p);
+
+            [VtblIndex(34)]
+            HRESULT put_defaultChecked([NativeTypeName("VARIANT_BOOL")] short v);
+
+            [VtblIndex(35)]
+            HRESULT get_defaultChecked([NativeTypeName("VARIANT_BOOL *")] short* p);
+
+            [VtblIndex(36)]
+            HRESULT put_checked([NativeTypeName("VARIANT_BOOL")] short v);
+
+            [VtblIndex(37)]
+            HRESULT get_checked([NativeTypeName("VARIANT_BOOL *")] short* p);
+
+            [VtblIndex(38)]
+            HRESULT put_border(VARIANT v);
+
+            [VtblIndex(39)]
+            HRESULT get_border(VARIANT* p);
+
+            [VtblIndex(40)]
+            HRESULT put_vspace([NativeTypeName("long")] int v);
+
+            [VtblIndex(41)]
+            HRESULT get_vspace([NativeTypeName("long *")] int* p);
+
+            [VtblIndex(42)]
+            HRESULT put_hspace([NativeTypeName("long")] int v);
+
+            [VtblIndex(43)]
+            HRESULT get_hspace([NativeTypeName("long *")] int* p);
+
+            [VtblIndex(44)]
+            HRESULT put_alt([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(45)]
+            HRESULT get_alt([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(46)]
+            HRESULT put_src([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(47)]
+            HRESULT get_src([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(48)]
+            HRESULT put_lowsrc([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(49)]
+            HRESULT get_lowsrc([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(50)]
+            HRESULT put_vrml([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(51)]
+            HRESULT get_vrml([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(52)]
+            HRESULT put_dynsrc([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(53)]
+            HRESULT get_dynsrc([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(54)]
+            HRESULT get_readyState([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(55)]
+            HRESULT get_complete([NativeTypeName("VARIANT_BOOL *")] short* p);
+
+            [VtblIndex(56)]
+            HRESULT put_loop(VARIANT v);
+
+            [VtblIndex(57)]
+            HRESULT get_loop(VARIANT* p);
+
+            [VtblIndex(58)]
+            HRESULT put_align([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(59)]
+            HRESULT get_align([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(60)]
+            HRESULT put_onload(VARIANT v);
+
+            [VtblIndex(61)]
+            HRESULT get_onload(VARIANT* p);
+
+            [VtblIndex(62)]
+            HRESULT put_onerror(VARIANT v);
+
+            [VtblIndex(63)]
+            HRESULT get_onerror(VARIANT* p);
+
+            [VtblIndex(64)]
+            HRESULT put_onabort(VARIANT v);
+
+            [VtblIndex(65)]
+            HRESULT get_onabort(VARIANT* p);
+
+            [VtblIndex(66)]
+            HRESULT put_width([NativeTypeName("long")] int v);
+
+            [VtblIndex(67)]
+            HRESULT get_width([NativeTypeName("long *")] int* p);
+
+            [VtblIndex(68)]
+            HRESULT put_height([NativeTypeName("long")] int v);
+
+            [VtblIndex(69)]
+            HRESULT get_height([NativeTypeName("long *")] int* p);
+
+            [VtblIndex(70)]
+            HRESULT put_start([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(71)]
+            HRESULT get_start([NativeTypeName("BSTR *")] ushort** p);
         }
 
         public partial struct Vtbl

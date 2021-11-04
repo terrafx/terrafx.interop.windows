@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("35D0E0B3-9076-4D2E-A016-A91B568A06B4")]
     [NativeTypeName("struct IDWriteFactory7 : IDWriteFactory6")]
     [NativeInheritance("IDWriteFactory6")]
-    public unsafe partial struct IDWriteFactory7
+    public unsafe partial struct IDWriteFactory7 : IDWriteFactory7.Interface
     {
         public void** lpVtbl;
 
@@ -415,6 +415,15 @@ namespace TerraFX.Interop
         public HRESULT GetSystemFontCollection(BOOL includeDownloadableFonts, DWRITE_FONT_FAMILY_MODEL fontFamilyModel, IDWriteFontCollection3** fontCollection)
         {
             return ((delegate* unmanaged<IDWriteFactory7*, BOOL, DWRITE_FONT_FAMILY_MODEL, IDWriteFontCollection3**, int>)(lpVtbl[56]))((IDWriteFactory7*)Unsafe.AsPointer(ref this), includeDownloadableFonts, fontFamilyModel, fontCollection);
+        }
+
+        public interface Interface : IDWriteFactory6.Interface
+        {
+            [VtblIndex(55)]
+            HRESULT GetSystemFontSet(BOOL includeDownloadableFonts, IDWriteFontSet2** fontSet);
+
+            [VtblIndex(56)]
+            HRESULT GetSystemFontCollection(BOOL includeDownloadableFonts, DWRITE_FONT_FAMILY_MODEL fontFamilyModel, IDWriteFontCollection3** fontCollection);
         }
 
         public partial struct Vtbl

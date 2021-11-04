@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("39E050C3-4E74-441A-8DC0-B81104DF949C")]
     [NativeTypeName("struct IUserConsentVerifierInterop : IInspectable")]
     [NativeInheritance("IInspectable")]
-    public unsafe partial struct IUserConsentVerifierInterop
+    public unsafe partial struct IUserConsentVerifierInterop : IUserConsentVerifierInterop.Interface
     {
         public void** lpVtbl;
 
@@ -65,6 +65,12 @@ namespace TerraFX.Interop
         public HRESULT RequestVerificationForWindowAsync(HWND appWindow, HSTRING message, [NativeTypeName("const IID &")] Guid* riid, void** asyncOperation)
         {
             return ((delegate* unmanaged<IUserConsentVerifierInterop*, HWND, HSTRING, Guid*, void**, int>)(lpVtbl[6]))((IUserConsentVerifierInterop*)Unsafe.AsPointer(ref this), appWindow, message, riid, asyncOperation);
+        }
+
+        public interface Interface : IInspectable.Interface
+        {
+            [VtblIndex(6)]
+            HRESULT RequestVerificationForWindowAsync(HWND appWindow, HSTRING message, [NativeTypeName("const IID &")] Guid* riid, void** asyncOperation);
         }
 
         public partial struct Vtbl

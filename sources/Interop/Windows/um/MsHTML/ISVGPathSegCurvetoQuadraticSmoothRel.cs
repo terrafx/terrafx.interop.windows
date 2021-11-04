@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("3051050F-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct ISVGPathSegCurvetoQuadraticSmoothRel : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct ISVGPathSegCurvetoQuadraticSmoothRel
+    public unsafe partial struct ISVGPathSegCurvetoQuadraticSmoothRel : ISVGPathSegCurvetoQuadraticSmoothRel.Interface
     {
         public void** lpVtbl;
 
@@ -93,6 +93,21 @@ namespace TerraFX.Interop
         public HRESULT get_y(float* p)
         {
             return ((delegate* unmanaged<ISVGPathSegCurvetoQuadraticSmoothRel*, float*, int>)(lpVtbl[10]))((ISVGPathSegCurvetoQuadraticSmoothRel*)Unsafe.AsPointer(ref this), p);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT put_x(float v);
+
+            [VtblIndex(8)]
+            HRESULT get_x(float* p);
+
+            [VtblIndex(9)]
+            HRESULT put_y(float v);
+
+            [VtblIndex(10)]
+            HRESULT get_y(float* p);
         }
 
         public partial struct Vtbl

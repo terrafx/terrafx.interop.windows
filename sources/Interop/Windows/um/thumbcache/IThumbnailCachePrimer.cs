@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("0F03F8FE-2B26-46F0-965A-212AA8D66B76")]
     [NativeTypeName("struct IThumbnailCachePrimer : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IThumbnailCachePrimer
+    public unsafe partial struct IThumbnailCachePrimer : IThumbnailCachePrimer.Interface
     {
         public void** lpVtbl;
 
@@ -44,6 +44,12 @@ namespace TerraFX.Interop
         public HRESULT PageInThumbnail(IShellItem* psi, WTS_FLAGS wtsFlags, uint cxyRequestedThumbSize)
         {
             return ((delegate* unmanaged<IThumbnailCachePrimer*, IShellItem*, WTS_FLAGS, uint, int>)(lpVtbl[3]))((IThumbnailCachePrimer*)Unsafe.AsPointer(ref this), psi, wtsFlags, cxyRequestedThumbSize);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT PageInThumbnail(IShellItem* psi, WTS_FLAGS wtsFlags, uint cxyRequestedThumbSize);
         }
 
         public partial struct Vtbl

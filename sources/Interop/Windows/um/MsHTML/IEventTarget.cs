@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("305104B9-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct IEventTarget : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct IEventTarget
+    public unsafe partial struct IEventTarget : IEventTarget.Interface
     {
         public void** lpVtbl;
 
@@ -86,6 +86,18 @@ namespace TerraFX.Interop
         public HRESULT dispatchEvent(IDOMEvent* evt, [NativeTypeName("VARIANT_BOOL *")] short* pfResult)
         {
             return ((delegate* unmanaged<IEventTarget*, IDOMEvent*, short*, int>)(lpVtbl[9]))((IEventTarget*)Unsafe.AsPointer(ref this), evt, pfResult);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT addEventListener([NativeTypeName("BSTR")] ushort* type, IDispatch* listener, [NativeTypeName("VARIANT_BOOL")] short useCapture);
+
+            [VtblIndex(8)]
+            HRESULT removeEventListener([NativeTypeName("BSTR")] ushort* type, IDispatch* listener, [NativeTypeName("VARIANT_BOOL")] short useCapture);
+
+            [VtblIndex(9)]
+            HRESULT dispatchEvent(IDOMEvent* evt, [NativeTypeName("VARIANT_BOOL *")] short* pfResult);
         }
 
         public partial struct Vtbl

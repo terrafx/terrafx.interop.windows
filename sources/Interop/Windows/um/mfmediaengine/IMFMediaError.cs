@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("FC0E10D2-AB2A-4501-A951-06BB1075184C")]
     [NativeTypeName("struct IMFMediaError : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IMFMediaError
+    public unsafe partial struct IMFMediaError : IMFMediaError.Interface
     {
         public void** lpVtbl;
 
@@ -65,6 +65,21 @@ namespace TerraFX.Interop
         public HRESULT SetExtendedErrorCode(HRESULT error)
         {
             return ((delegate* unmanaged<IMFMediaError*, HRESULT, int>)(lpVtbl[6]))((IMFMediaError*)Unsafe.AsPointer(ref this), error);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            ushort GetErrorCode();
+
+            [VtblIndex(4)]
+            HRESULT GetExtendedErrorCode();
+
+            [VtblIndex(5)]
+            HRESULT SetErrorCode(MF_MEDIA_ENGINE_ERR error);
+
+            [VtblIndex(6)]
+            HRESULT SetExtendedErrorCode(HRESULT error);
         }
 
         public partial struct Vtbl

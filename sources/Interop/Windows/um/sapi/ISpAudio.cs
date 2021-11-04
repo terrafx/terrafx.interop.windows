@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("C05C768F-FAE8-4EC2-8E07-338321C12452")]
     [NativeTypeName("struct ISpAudio : ISpStreamFormat")]
     [NativeInheritance("ISpStreamFormat")]
-    public unsafe partial struct ISpAudio
+    public unsafe partial struct ISpAudio : ISpAudio.Interface
     {
         public void** lpVtbl;
 
@@ -198,6 +198,42 @@ namespace TerraFX.Interop
         public HRESULT SetBufferNotifySize([NativeTypeName("ULONG")] uint cbSize)
         {
             return ((delegate* unmanaged<ISpAudio*, uint, int>)(lpVtbl[25]))((ISpAudio*)Unsafe.AsPointer(ref this), cbSize);
+        }
+
+        public interface Interface : ISpStreamFormat.Interface
+        {
+            [VtblIndex(15)]
+            HRESULT SetState(SPAUDIOSTATE NewState, [NativeTypeName("ULONGLONG")] ulong ullReserved);
+
+            [VtblIndex(16)]
+            HRESULT SetFormat([NativeTypeName("const GUID &")] Guid* rguidFmtId, [NativeTypeName("const WAVEFORMATEX *")] WAVEFORMATEX* pWaveFormatEx);
+
+            [VtblIndex(17)]
+            HRESULT GetStatus(SPAUDIOSTATUS* pStatus);
+
+            [VtblIndex(18)]
+            HRESULT SetBufferInfo([NativeTypeName("const SPAUDIOBUFFERINFO *")] SPAUDIOBUFFERINFO* pBuffInfo);
+
+            [VtblIndex(19)]
+            HRESULT GetBufferInfo(SPAUDIOBUFFERINFO* pBuffInfo);
+
+            [VtblIndex(20)]
+            HRESULT GetDefaultFormat(Guid* pFormatId, WAVEFORMATEX** ppCoMemWaveFormatEx);
+
+            [VtblIndex(21)]
+            HANDLE EventHandle();
+
+            [VtblIndex(22)]
+            HRESULT GetVolumeLevel([NativeTypeName("ULONG *")] uint* pLevel);
+
+            [VtblIndex(23)]
+            HRESULT SetVolumeLevel([NativeTypeName("ULONG")] uint Level);
+
+            [VtblIndex(24)]
+            HRESULT GetBufferNotifySize([NativeTypeName("ULONG *")] uint* pcbSize);
+
+            [VtblIndex(25)]
+            HRESULT SetBufferNotifySize([NativeTypeName("ULONG")] uint cbSize);
         }
 
         public partial struct Vtbl

@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("3050F680-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct IHTMLEventObj3 : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct IHTMLEventObj3
+    public unsafe partial struct IHTMLEventObj3 : IHTMLEventObj3.Interface
     {
         public void** lpVtbl;
 
@@ -177,6 +177,57 @@ namespace TerraFX.Interop
         public HRESULT get_nextPage([NativeTypeName("BSTR *")] ushort** p)
         {
             return ((delegate* unmanaged<IHTMLEventObj3*, ushort**, int>)(lpVtbl[22]))((IHTMLEventObj3*)Unsafe.AsPointer(ref this), p);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT get_contentOverflow([NativeTypeName("VARIANT_BOOL *")] short* p);
+
+            [VtblIndex(8)]
+            HRESULT put_shiftLeft([NativeTypeName("VARIANT_BOOL")] short v);
+
+            [VtblIndex(9)]
+            HRESULT get_shiftLeft([NativeTypeName("VARIANT_BOOL *")] short* p);
+
+            [VtblIndex(10)]
+            HRESULT put_altLeft([NativeTypeName("VARIANT_BOOL")] short v);
+
+            [VtblIndex(11)]
+            HRESULT get_altLeft([NativeTypeName("VARIANT_BOOL *")] short* p);
+
+            [VtblIndex(12)]
+            HRESULT put_ctrlLeft([NativeTypeName("VARIANT_BOOL")] short v);
+
+            [VtblIndex(13)]
+            HRESULT get_ctrlLeft([NativeTypeName("VARIANT_BOOL *")] short* p);
+
+            [VtblIndex(14)]
+            HRESULT get_imeCompositionChange([NativeTypeName("LONG_PTR *")] nint* p);
+
+            [VtblIndex(15)]
+            HRESULT get_imeNotifyCommand([NativeTypeName("LONG_PTR *")] nint* p);
+
+            [VtblIndex(16)]
+            HRESULT get_imeNotifyData([NativeTypeName("LONG_PTR *")] nint* p);
+
+            [VtblIndex(17)]
+            HRESULT get_imeRequest([NativeTypeName("LONG_PTR *")] nint* p);
+
+            [VtblIndex(18)]
+            HRESULT get_imeRequestData([NativeTypeName("LONG_PTR *")] nint* p);
+
+            [VtblIndex(19)]
+            HRESULT get_keyboardLayout([NativeTypeName("LONG_PTR *")] nint* p);
+
+            [VtblIndex(20)]
+            HRESULT get_behaviorCookie([NativeTypeName("long *")] int* p);
+
+            [VtblIndex(21)]
+            HRESULT get_behaviorPart([NativeTypeName("long *")] int* p);
+
+            [VtblIndex(22)]
+            HRESULT get_nextPage([NativeTypeName("BSTR *")] ushort** p);
         }
 
         public partial struct Vtbl

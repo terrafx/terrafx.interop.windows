@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("553A9FF3-5693-4DF7-B52B-74806F7F2EB9")]
     [NativeTypeName("struct IDWriteTextAnalyzer2 : IDWriteTextAnalyzer1")]
     [NativeInheritance("IDWriteTextAnalyzer1")]
-    public unsafe partial struct IDWriteTextAnalyzer2
+    public unsafe partial struct IDWriteTextAnalyzer2 : IDWriteTextAnalyzer2.Interface
     {
         public void** lpVtbl;
 
@@ -170,6 +170,18 @@ namespace TerraFX.Interop
         public HRESULT CheckTypographicFeature(IDWriteFontFace* fontFace, DWRITE_SCRIPT_ANALYSIS scriptAnalysis, [NativeTypeName("const WCHAR *")] ushort* localeName, DWRITE_FONT_FEATURE_TAG featureTag, [NativeTypeName("UINT32")] uint glyphCount, [NativeTypeName("const UINT16 *")] ushort* glyphIndices, [NativeTypeName("UINT8 *")] byte* featureApplies)
         {
             return ((delegate* unmanaged<IDWriteTextAnalyzer2*, IDWriteFontFace*, DWRITE_SCRIPT_ANALYSIS, ushort*, DWRITE_FONT_FEATURE_TAG, uint, ushort*, byte*, int>)(lpVtbl[21]))((IDWriteTextAnalyzer2*)Unsafe.AsPointer(ref this), fontFace, scriptAnalysis, localeName, featureTag, glyphCount, glyphIndices, featureApplies);
+        }
+
+        public interface Interface : IDWriteTextAnalyzer1.Interface
+        {
+            [VtblIndex(19)]
+            HRESULT GetGlyphOrientationTransform(DWRITE_GLYPH_ORIENTATION_ANGLE glyphOrientationAngle, BOOL isSideways, float originX, float originY, DWRITE_MATRIX* transform);
+
+            [VtblIndex(20)]
+            HRESULT GetTypographicFeatures(IDWriteFontFace* fontFace, DWRITE_SCRIPT_ANALYSIS scriptAnalysis, [NativeTypeName("const WCHAR *")] ushort* localeName, [NativeTypeName("UINT32")] uint maxTagCount, [NativeTypeName("UINT32 *")] uint* actualTagCount, DWRITE_FONT_FEATURE_TAG* tags);
+
+            [VtblIndex(21)]
+            HRESULT CheckTypographicFeature(IDWriteFontFace* fontFace, DWRITE_SCRIPT_ANALYSIS scriptAnalysis, [NativeTypeName("const WCHAR *")] ushort* localeName, DWRITE_FONT_FEATURE_TAG featureTag, [NativeTypeName("UINT32")] uint glyphCount, [NativeTypeName("const UINT16 *")] ushort* glyphIndices, [NativeTypeName("UINT8 *")] byte* featureApplies);
         }
 
         public partial struct Vtbl

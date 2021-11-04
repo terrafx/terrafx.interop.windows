@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("B33E75FF-E84C-4DCA-A25C-33B8DC003374")]
     [NativeTypeName("struct IClonableWrapper : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IClonableWrapper
+    public unsafe partial struct IClonableWrapper : IClonableWrapper.Interface
     {
         public void** lpVtbl;
 
@@ -44,6 +44,12 @@ namespace TerraFX.Interop
         public HRESULT CloneNewWrapper([NativeTypeName("const IID &")] Guid* riid, void** ppv)
         {
             return ((delegate* unmanaged<IClonableWrapper*, Guid*, void**, int>)(lpVtbl[3]))((IClonableWrapper*)Unsafe.AsPointer(ref this), riid, ppv);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT CloneNewWrapper([NativeTypeName("const IID &")] Guid* riid, void** ppv);
         }
 
         public partial struct Vtbl

@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("08EC3E00-50B0-11CF-960C-0080C7F4EE85")]
     [NativeTypeName("struct FolderItemVerb : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct FolderItemVerb
+    public unsafe partial struct FolderItemVerb : FolderItemVerb.Interface
     {
         public void** lpVtbl;
 
@@ -93,6 +93,21 @@ namespace TerraFX.Interop
         public HRESULT DoIt()
         {
             return ((delegate* unmanaged<FolderItemVerb*, int>)(lpVtbl[10]))((FolderItemVerb*)Unsafe.AsPointer(ref this));
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT get_Application(IDispatch** ppid);
+
+            [VtblIndex(8)]
+            HRESULT get_Parent(IDispatch** ppid);
+
+            [VtblIndex(9)]
+            HRESULT get_Name([NativeTypeName("BSTR *")] ushort** pbs);
+
+            [VtblIndex(10)]
+            HRESULT DoIt();
         }
 
         public partial struct Vtbl

@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("11C81BC2-121E-4ED5-B9C4-B430BD54F2C0")]
     [NativeTypeName("struct IBindCallbackRedirect : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IBindCallbackRedirect
+    public unsafe partial struct IBindCallbackRedirect : IBindCallbackRedirect.Interface
     {
         public void** lpVtbl;
 
@@ -44,6 +44,12 @@ namespace TerraFX.Interop
         public HRESULT Redirect([NativeTypeName("LPCWSTR")] ushort* lpcUrl, [NativeTypeName("VARIANT_BOOL *")] short* vbCancel)
         {
             return ((delegate* unmanaged<IBindCallbackRedirect*, ushort*, short*, int>)(lpVtbl[3]))((IBindCallbackRedirect*)Unsafe.AsPointer(ref this), lpcUrl, vbCancel);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT Redirect([NativeTypeName("LPCWSTR")] ushort* lpcUrl, [NativeTypeName("VARIANT_BOOL *")] short* vbCancel);
         }
 
         public partial struct Vtbl

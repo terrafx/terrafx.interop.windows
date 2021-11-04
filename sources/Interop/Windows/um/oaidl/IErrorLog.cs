@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("3127CA40-446E-11CE-8135-00AA004BB851")]
     [NativeTypeName("struct IErrorLog : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IErrorLog
+    public unsafe partial struct IErrorLog : IErrorLog.Interface
     {
         public void** lpVtbl;
 
@@ -44,6 +44,12 @@ namespace TerraFX.Interop
         public HRESULT AddError([NativeTypeName("LPCOLESTR")] ushort* pszPropName, EXCEPINFO* pExcepInfo)
         {
             return ((delegate* unmanaged<IErrorLog*, ushort*, EXCEPINFO*, int>)(lpVtbl[3]))((IErrorLog*)Unsafe.AsPointer(ref this), pszPropName, pExcepInfo);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT AddError([NativeTypeName("LPCOLESTR")] ushort* pszPropName, EXCEPINFO* pExcepInfo);
         }
 
         public partial struct Vtbl

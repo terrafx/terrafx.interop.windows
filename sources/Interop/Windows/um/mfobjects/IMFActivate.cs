@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("7FEE9E9A-4A89-47A6-899C-B6A53A70FB67")]
     [NativeTypeName("struct IMFActivate : IMFAttributes")]
     [NativeInheritance("IMFAttributes")]
-    public unsafe partial struct IMFActivate
+    public unsafe partial struct IMFActivate : IMFActivate.Interface
     {
         public void** lpVtbl;
 
@@ -268,6 +268,18 @@ namespace TerraFX.Interop
         public HRESULT DetachObject()
         {
             return ((delegate* unmanaged<IMFActivate*, int>)(lpVtbl[35]))((IMFActivate*)Unsafe.AsPointer(ref this));
+        }
+
+        public interface Interface : IMFAttributes.Interface
+        {
+            [VtblIndex(33)]
+            HRESULT ActivateObject([NativeTypeName("const IID &")] Guid* riid, void** ppv);
+
+            [VtblIndex(34)]
+            HRESULT ShutdownObject();
+
+            [VtblIndex(35)]
+            HRESULT DetachObject();
         }
 
         public partial struct Vtbl

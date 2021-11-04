@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("157733FD-A592-42E5-B594-248468C5A81B")]
     [NativeTypeName("struct IAccessibilityDockingServiceCallback : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IAccessibilityDockingServiceCallback
+    public unsafe partial struct IAccessibilityDockingServiceCallback : IAccessibilityDockingServiceCallback.Interface
     {
         public void** lpVtbl;
 
@@ -44,6 +44,12 @@ namespace TerraFX.Interop
         public HRESULT Undocked(UNDOCK_REASON undockReason)
         {
             return ((delegate* unmanaged<IAccessibilityDockingServiceCallback*, UNDOCK_REASON, int>)(lpVtbl[3]))((IAccessibilityDockingServiceCallback*)Unsafe.AsPointer(ref this), undockReason);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT Undocked(UNDOCK_REASON undockReason);
         }
 
         public partial struct Vtbl

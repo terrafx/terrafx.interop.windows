@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("2933BF88-7B36-11D2-B20E-00C04F983E60")]
     [NativeTypeName("struct IXMLDOMComment : IXMLDOMCharacterData")]
     [NativeInheritance("IXMLDOMCharacterData")]
-    public unsafe partial struct IXMLDOMComment
+    public unsafe partial struct IXMLDOMComment : IXMLDOMComment.Interface
     {
         public void** lpVtbl;
 
@@ -373,6 +373,10 @@ namespace TerraFX.Interop
         public HRESULT replaceData([NativeTypeName("long")] int offset, [NativeTypeName("long")] int count, [NativeTypeName("BSTR")] ushort* data)
         {
             return ((delegate* unmanaged<IXMLDOMComment*, int, int, ushort*, int>)(lpVtbl[50]))((IXMLDOMComment*)Unsafe.AsPointer(ref this), offset, count, data);
+        }
+
+        public interface Interface : IXMLDOMCharacterData.Interface
+        {
         }
 
         public partial struct Vtbl

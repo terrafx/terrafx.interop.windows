@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("583F34D0-DE25-11D2-AFDD-00105A2799B5")]
     [NativeTypeName("struct IEnumTfLangBarItems : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IEnumTfLangBarItems
+    public unsafe partial struct IEnumTfLangBarItems : IEnumTfLangBarItems.Interface
     {
         public void** lpVtbl;
 
@@ -65,6 +65,21 @@ namespace TerraFX.Interop
         public HRESULT Skip([NativeTypeName("ULONG")] uint ulCount)
         {
             return ((delegate* unmanaged<IEnumTfLangBarItems*, uint, int>)(lpVtbl[6]))((IEnumTfLangBarItems*)Unsafe.AsPointer(ref this), ulCount);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT Clone(IEnumTfLangBarItems** ppEnum);
+
+            [VtblIndex(4)]
+            HRESULT Next([NativeTypeName("ULONG")] uint ulCount, ITfLangBarItem** ppItem, [NativeTypeName("ULONG *")] uint* pcFetched);
+
+            [VtblIndex(5)]
+            HRESULT Reset();
+
+            [VtblIndex(6)]
+            HRESULT Skip([NativeTypeName("ULONG")] uint ulCount);
         }
 
         public partial struct Vtbl

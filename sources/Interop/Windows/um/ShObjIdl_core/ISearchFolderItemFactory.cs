@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("A0FFBC28-5482-4366-BE27-3E81E78E06C2")]
     [NativeTypeName("struct ISearchFolderItemFactory : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct ISearchFolderItemFactory
+    public unsafe partial struct ISearchFolderItemFactory : ISearchFolderItemFactory.Interface
     {
         public void** lpVtbl;
 
@@ -121,6 +121,45 @@ namespace TerraFX.Interop
         public HRESULT GetIDList([NativeTypeName("LPITEMIDLIST *")] ITEMIDLIST** ppidl)
         {
             return ((delegate* unmanaged<ISearchFolderItemFactory*, ITEMIDLIST**, int>)(lpVtbl[14]))((ISearchFolderItemFactory*)Unsafe.AsPointer(ref this), ppidl);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT SetDisplayName([NativeTypeName("LPCWSTR")] ushort* pszDisplayName);
+
+            [VtblIndex(4)]
+            HRESULT SetFolderTypeID([NativeTypeName("FOLDERTYPEID")] Guid ftid);
+
+            [VtblIndex(5)]
+            HRESULT SetFolderLogicalViewMode(FOLDERLOGICALVIEWMODE flvm);
+
+            [VtblIndex(6)]
+            HRESULT SetIconSize(int iIconSize);
+
+            [VtblIndex(7)]
+            HRESULT SetVisibleColumns(uint cVisibleColumns, [NativeTypeName("const PROPERTYKEY *")] PROPERTYKEY* rgKey);
+
+            [VtblIndex(8)]
+            HRESULT SetSortColumns(uint cSortColumns, SORTCOLUMN* rgSortColumns);
+
+            [VtblIndex(9)]
+            HRESULT SetGroupColumn([NativeTypeName("const PROPERTYKEY &")] PROPERTYKEY* keyGroup);
+
+            [VtblIndex(10)]
+            HRESULT SetStacks(uint cStackKeys, PROPERTYKEY* rgStackKeys);
+
+            [VtblIndex(11)]
+            HRESULT SetScope(IShellItemArray* psiaScope);
+
+            [VtblIndex(12)]
+            HRESULT SetCondition(ICondition* pCondition);
+
+            [VtblIndex(13)]
+            HRESULT GetShellItem([NativeTypeName("const IID &")] Guid* riid, void** ppv);
+
+            [VtblIndex(14)]
+            HRESULT GetIDList([NativeTypeName("LPITEMIDLIST *")] ITEMIDLIST** ppidl);
         }
 
         public partial struct Vtbl

@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("305106F8-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct IHTMLElement6 : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct IHTMLElement6
+    public unsafe partial struct IHTMLElement6 : IHTMLElement6.Interface
     {
         public void** lpVtbl;
 
@@ -590,6 +590,234 @@ namespace TerraFX.Interop
         public HRESULT hasAttributes([NativeTypeName("VARIANT_BOOL *")] short* pfHasAttributes)
         {
             return ((delegate* unmanaged<IHTMLElement6*, short*, int>)(lpVtbl[81]))((IHTMLElement6*)Unsafe.AsPointer(ref this), pfHasAttributes);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT getAttributeNS(VARIANT* pvarNS, [NativeTypeName("BSTR")] ushort* strAttributeName, VARIANT* AttributeValue);
+
+            [VtblIndex(8)]
+            HRESULT setAttributeNS(VARIANT* pvarNS, [NativeTypeName("BSTR")] ushort* strAttributeName, VARIANT* pvarAttributeValue);
+
+            [VtblIndex(9)]
+            HRESULT removeAttributeNS(VARIANT* pvarNS, [NativeTypeName("BSTR")] ushort* strAttributeName);
+
+            [VtblIndex(10)]
+            HRESULT getAttributeNodeNS(VARIANT* pvarNS, [NativeTypeName("BSTR")] ushort* bstrname, IHTMLDOMAttribute2** ppretAttribute);
+
+            [VtblIndex(11)]
+            HRESULT setAttributeNodeNS(IHTMLDOMAttribute2* pattr, IHTMLDOMAttribute2** ppretAttribute);
+
+            [VtblIndex(12)]
+            HRESULT hasAttributeNS(VARIANT* pvarNS, [NativeTypeName("BSTR")] ushort* name, [NativeTypeName("VARIANT_BOOL *")] short* pfHasAttribute);
+
+            [VtblIndex(13)]
+            HRESULT getAttribute([NativeTypeName("BSTR")] ushort* strAttributeName, VARIANT* AttributeValue);
+
+            [VtblIndex(14)]
+            HRESULT setAttribute([NativeTypeName("BSTR")] ushort* strAttributeName, VARIANT* pvarAttributeValue);
+
+            [VtblIndex(15)]
+            HRESULT removeAttribute([NativeTypeName("BSTR")] ushort* strAttributeName);
+
+            [VtblIndex(16)]
+            HRESULT getAttributeNode([NativeTypeName("BSTR")] ushort* strAttributeName, IHTMLDOMAttribute2** ppretAttribute);
+
+            [VtblIndex(17)]
+            HRESULT setAttributeNode(IHTMLDOMAttribute2* pattr, IHTMLDOMAttribute2** ppretAttribute);
+
+            [VtblIndex(18)]
+            HRESULT removeAttributeNode(IHTMLDOMAttribute2* pattr, IHTMLDOMAttribute2** ppretAttribute);
+
+            [VtblIndex(19)]
+            HRESULT hasAttribute([NativeTypeName("BSTR")] ushort* name, [NativeTypeName("VARIANT_BOOL *")] short* pfHasAttribute);
+
+            [VtblIndex(20)]
+            HRESULT getElementsByTagNameNS(VARIANT* varNS, [NativeTypeName("BSTR")] ushort* bstrLocalName, IHTMLElementCollection** pelColl);
+
+            [VtblIndex(21)]
+            HRESULT get_tagName([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(22)]
+            HRESULT get_nodeName([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(23)]
+            HRESULT getElementsByClassName([NativeTypeName("BSTR")] ushort* v, IHTMLElementCollection** pel);
+
+            [VtblIndex(24)]
+            HRESULT msMatchesSelector([NativeTypeName("BSTR")] ushort* v, [NativeTypeName("VARIANT_BOOL *")] short* pfMatches);
+
+            [VtblIndex(25)]
+            HRESULT put_onabort(VARIANT v);
+
+            [VtblIndex(26)]
+            HRESULT get_onabort(VARIANT* p);
+
+            [VtblIndex(27)]
+            HRESULT put_oncanplay(VARIANT v);
+
+            [VtblIndex(28)]
+            HRESULT get_oncanplay(VARIANT* p);
+
+            [VtblIndex(29)]
+            HRESULT put_oncanplaythrough(VARIANT v);
+
+            [VtblIndex(30)]
+            HRESULT get_oncanplaythrough(VARIANT* p);
+
+            [VtblIndex(31)]
+            HRESULT put_onchange(VARIANT v);
+
+            [VtblIndex(32)]
+            HRESULT get_onchange(VARIANT* p);
+
+            [VtblIndex(33)]
+            HRESULT put_ondurationchange(VARIANT v);
+
+            [VtblIndex(34)]
+            HRESULT get_ondurationchange(VARIANT* p);
+
+            [VtblIndex(35)]
+            HRESULT put_onemptied(VARIANT v);
+
+            [VtblIndex(36)]
+            HRESULT get_onemptied(VARIANT* p);
+
+            [VtblIndex(37)]
+            HRESULT put_onended(VARIANT v);
+
+            [VtblIndex(38)]
+            HRESULT get_onended(VARIANT* p);
+
+            [VtblIndex(39)]
+            HRESULT put_onerror(VARIANT v);
+
+            [VtblIndex(40)]
+            HRESULT get_onerror(VARIANT* p);
+
+            [VtblIndex(41)]
+            HRESULT put_oninput(VARIANT v);
+
+            [VtblIndex(42)]
+            HRESULT get_oninput(VARIANT* p);
+
+            [VtblIndex(43)]
+            HRESULT put_onload(VARIANT v);
+
+            [VtblIndex(44)]
+            HRESULT get_onload(VARIANT* p);
+
+            [VtblIndex(45)]
+            HRESULT put_onloadeddata(VARIANT v);
+
+            [VtblIndex(46)]
+            HRESULT get_onloadeddata(VARIANT* p);
+
+            [VtblIndex(47)]
+            HRESULT put_onloadedmetadata(VARIANT v);
+
+            [VtblIndex(48)]
+            HRESULT get_onloadedmetadata(VARIANT* p);
+
+            [VtblIndex(49)]
+            HRESULT put_onloadstart(VARIANT v);
+
+            [VtblIndex(50)]
+            HRESULT get_onloadstart(VARIANT* p);
+
+            [VtblIndex(51)]
+            HRESULT put_onpause(VARIANT v);
+
+            [VtblIndex(52)]
+            HRESULT get_onpause(VARIANT* p);
+
+            [VtblIndex(53)]
+            HRESULT put_onplay(VARIANT v);
+
+            [VtblIndex(54)]
+            HRESULT get_onplay(VARIANT* p);
+
+            [VtblIndex(55)]
+            HRESULT put_onplaying(VARIANT v);
+
+            [VtblIndex(56)]
+            HRESULT get_onplaying(VARIANT* p);
+
+            [VtblIndex(57)]
+            HRESULT put_onprogress(VARIANT v);
+
+            [VtblIndex(58)]
+            HRESULT get_onprogress(VARIANT* p);
+
+            [VtblIndex(59)]
+            HRESULT put_onratechange(VARIANT v);
+
+            [VtblIndex(60)]
+            HRESULT get_onratechange(VARIANT* p);
+
+            [VtblIndex(61)]
+            HRESULT put_onreset(VARIANT v);
+
+            [VtblIndex(62)]
+            HRESULT get_onreset(VARIANT* p);
+
+            [VtblIndex(63)]
+            HRESULT put_onseeked(VARIANT v);
+
+            [VtblIndex(64)]
+            HRESULT get_onseeked(VARIANT* p);
+
+            [VtblIndex(65)]
+            HRESULT put_onseeking(VARIANT v);
+
+            [VtblIndex(66)]
+            HRESULT get_onseeking(VARIANT* p);
+
+            [VtblIndex(67)]
+            HRESULT put_onselect(VARIANT v);
+
+            [VtblIndex(68)]
+            HRESULT get_onselect(VARIANT* p);
+
+            [VtblIndex(69)]
+            HRESULT put_onstalled(VARIANT v);
+
+            [VtblIndex(70)]
+            HRESULT get_onstalled(VARIANT* p);
+
+            [VtblIndex(71)]
+            HRESULT put_onsubmit(VARIANT v);
+
+            [VtblIndex(72)]
+            HRESULT get_onsubmit(VARIANT* p);
+
+            [VtblIndex(73)]
+            HRESULT put_onsuspend(VARIANT v);
+
+            [VtblIndex(74)]
+            HRESULT get_onsuspend(VARIANT* p);
+
+            [VtblIndex(75)]
+            HRESULT put_ontimeupdate(VARIANT v);
+
+            [VtblIndex(76)]
+            HRESULT get_ontimeupdate(VARIANT* p);
+
+            [VtblIndex(77)]
+            HRESULT put_onvolumechange(VARIANT v);
+
+            [VtblIndex(78)]
+            HRESULT get_onvolumechange(VARIANT* p);
+
+            [VtblIndex(79)]
+            HRESULT put_onwaiting(VARIANT v);
+
+            [VtblIndex(80)]
+            HRESULT get_onwaiting(VARIANT* p);
+
+            [VtblIndex(81)]
+            HRESULT hasAttributes([NativeTypeName("VARIANT_BOOL *")] short* pfHasAttributes);
         }
 
         public partial struct Vtbl

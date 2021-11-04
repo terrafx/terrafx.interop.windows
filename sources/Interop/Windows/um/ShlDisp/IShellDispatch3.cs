@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("177160CA-BB5A-411C-841D-BD38FACDEAA0")]
     [NativeTypeName("struct IShellDispatch3 : IShellDispatch2")]
     [NativeInheritance("IShellDispatch2")]
-    public unsafe partial struct IShellDispatch3
+    public unsafe partial struct IShellDispatch3 : IShellDispatch3.Interface
     {
         public void** lpVtbl;
 
@@ -296,6 +296,12 @@ namespace TerraFX.Interop
         public HRESULT AddToRecent(VARIANT varFile, [NativeTypeName("BSTR")] ushort* bstrCategory)
         {
             return ((delegate* unmanaged<IShellDispatch3*, VARIANT, ushort*, int>)(lpVtbl[39]))((IShellDispatch3*)Unsafe.AsPointer(ref this), varFile, bstrCategory);
+        }
+
+        public interface Interface : IShellDispatch2.Interface
+        {
+            [VtblIndex(39)]
+            HRESULT AddToRecent(VARIANT varFile, [NativeTypeName("BSTR")] ushort* bstrCategory);
         }
 
         public partial struct Vtbl

@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("30510726-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct IHTMLLinkElement5 : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct IHTMLLinkElement5
+    public unsafe partial struct IHTMLLinkElement5 : IHTMLLinkElement5.Interface
     {
         public void** lpVtbl;
 
@@ -72,6 +72,12 @@ namespace TerraFX.Interop
         public HRESULT get_sheet(IHTMLStyleSheet** p)
         {
             return ((delegate* unmanaged<IHTMLLinkElement5*, IHTMLStyleSheet**, int>)(lpVtbl[7]))((IHTMLLinkElement5*)Unsafe.AsPointer(ref this), p);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT get_sheet(IHTMLStyleSheet** p);
         }
 
         public partial struct Vtbl

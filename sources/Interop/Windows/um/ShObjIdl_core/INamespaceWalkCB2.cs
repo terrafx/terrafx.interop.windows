@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("7AC7492B-C38E-438A-87DB-68737844FF70")]
     [NativeTypeName("struct INamespaceWalkCB2 : INamespaceWalkCB")]
     [NativeInheritance("INamespaceWalkCB")]
-    public unsafe partial struct INamespaceWalkCB2
+    public unsafe partial struct INamespaceWalkCB2 : INamespaceWalkCB2.Interface
     {
         public void** lpVtbl;
 
@@ -72,6 +72,12 @@ namespace TerraFX.Interop
         public HRESULT WalkComplete(HRESULT hr)
         {
             return ((delegate* unmanaged<INamespaceWalkCB2*, HRESULT, int>)(lpVtbl[7]))((INamespaceWalkCB2*)Unsafe.AsPointer(ref this), hr);
+        }
+
+        public interface Interface : INamespaceWalkCB.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT WalkComplete(HRESULT hr);
         }
 
         public partial struct Vtbl

@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("C0A651F5-B48B-11D2-B5ED-006097C686F6")]
     [NativeTypeName("struct IFolderFilterSite : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IFolderFilterSite
+    public unsafe partial struct IFolderFilterSite : IFolderFilterSite.Interface
     {
         public void** lpVtbl;
 
@@ -44,6 +44,12 @@ namespace TerraFX.Interop
         public HRESULT SetFilter(IUnknown* punk)
         {
             return ((delegate* unmanaged<IFolderFilterSite*, IUnknown*, int>)(lpVtbl[3]))((IFolderFilterSite*)Unsafe.AsPointer(ref this), punk);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT SetFilter(IUnknown* punk);
         }
 
         public partial struct Vtbl

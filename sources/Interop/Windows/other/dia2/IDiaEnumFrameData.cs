@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("9FC77A4B-3C1C-44ED-A798-6C1DEEA53E1F")]
     [NativeTypeName("struct IDiaEnumFrameData : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IDiaEnumFrameData
+    public unsafe partial struct IDiaEnumFrameData : IDiaEnumFrameData.Interface
     {
         public void** lpVtbl;
 
@@ -100,6 +100,36 @@ namespace TerraFX.Interop
         public HRESULT frameByVA([NativeTypeName("ULONGLONG")] ulong virtualAddress, IDiaFrameData** frame)
         {
             return ((delegate* unmanaged<IDiaEnumFrameData*, ulong, IDiaFrameData**, int>)(lpVtbl[11]))((IDiaEnumFrameData*)Unsafe.AsPointer(ref this), virtualAddress, frame);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT get__NewEnum(IUnknown** pRetVal);
+
+            [VtblIndex(4)]
+            HRESULT get_Count([NativeTypeName("LONG *")] int* pRetVal);
+
+            [VtblIndex(5)]
+            HRESULT Item([NativeTypeName("DWORD")] uint index, IDiaFrameData** frame);
+
+            [VtblIndex(6)]
+            HRESULT Next([NativeTypeName("ULONG")] uint celt, IDiaFrameData** rgelt, [NativeTypeName("ULONG *")] uint* pceltFetched);
+
+            [VtblIndex(7)]
+            HRESULT Skip([NativeTypeName("ULONG")] uint celt);
+
+            [VtblIndex(8)]
+            HRESULT Reset();
+
+            [VtblIndex(9)]
+            HRESULT Clone(IDiaEnumFrameData** ppenum);
+
+            [VtblIndex(10)]
+            HRESULT frameByRVA([NativeTypeName("DWORD")] uint relativeVirtualAddress, IDiaFrameData** frame);
+
+            [VtblIndex(11)]
+            HRESULT frameByVA([NativeTypeName("ULONGLONG")] ulong virtualAddress, IDiaFrameData** frame);
         }
 
         public partial struct Vtbl

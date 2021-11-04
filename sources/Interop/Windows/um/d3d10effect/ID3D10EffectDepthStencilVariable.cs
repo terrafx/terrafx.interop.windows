@@ -9,7 +9,7 @@ namespace TerraFX.Interop
 {
     [NativeTypeName("struct ID3D10EffectDepthStencilVariable : ID3D10EffectVariable")]
     [NativeInheritance("ID3D10EffectVariable")]
-    public unsafe partial struct ID3D10EffectDepthStencilVariable
+    public unsafe partial struct ID3D10EffectDepthStencilVariable : ID3D10EffectDepthStencilVariable.Interface
     {
         public void** lpVtbl;
 
@@ -200,6 +200,15 @@ namespace TerraFX.Interop
         public HRESULT GetBackingStore(uint Index, D3D10_DEPTH_STENCIL_DESC* pDepthStencilDesc)
         {
             return ((delegate* unmanaged<ID3D10EffectDepthStencilVariable*, uint, D3D10_DEPTH_STENCIL_DESC*, int>)(lpVtbl[26]))((ID3D10EffectDepthStencilVariable*)Unsafe.AsPointer(ref this), Index, pDepthStencilDesc);
+        }
+
+        public interface Interface : ID3D10EffectVariable.Interface
+        {
+            [VtblIndex(25)]
+            HRESULT GetDepthStencilState(uint Index, ID3D10DepthStencilState** ppDepthStencilState);
+
+            [VtblIndex(26)]
+            HRESULT GetBackingStore(uint Index, D3D10_DEPTH_STENCIL_DESC* pDepthStencilDesc);
         }
 
         public partial struct Vtbl

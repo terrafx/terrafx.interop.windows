@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("3050F7ED-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct IHTMLTxtRangeCollection : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct IHTMLTxtRangeCollection
+    public unsafe partial struct IHTMLTxtRangeCollection : IHTMLTxtRangeCollection.Interface
     {
         public void** lpVtbl;
 
@@ -86,6 +86,18 @@ namespace TerraFX.Interop
         public HRESULT item(VARIANT* pvarIndex, VARIANT* pvarResult)
         {
             return ((delegate* unmanaged<IHTMLTxtRangeCollection*, VARIANT*, VARIANT*, int>)(lpVtbl[9]))((IHTMLTxtRangeCollection*)Unsafe.AsPointer(ref this), pvarIndex, pvarResult);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT get_length([NativeTypeName("long *")] int* p);
+
+            [VtblIndex(8)]
+            HRESULT get__newEnum(IUnknown** p);
+
+            [VtblIndex(9)]
+            HRESULT item(VARIANT* pvarIndex, VARIANT* pvarResult);
         }
 
         public partial struct Vtbl

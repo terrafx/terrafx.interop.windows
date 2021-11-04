@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("57D2EDED-5062-400E-B107-5DAE79FE57A6")]
     [NativeTypeName("struct IPropertyDescription2 : IPropertyDescription")]
     [NativeInheritance("IPropertyDescription")]
-    public unsafe partial struct IPropertyDescription2
+    public unsafe partial struct IPropertyDescription2 : IPropertyDescription2.Interface
     {
         public void** lpVtbl;
 
@@ -191,6 +191,12 @@ namespace TerraFX.Interop
         public HRESULT GetImageReferenceForValue([NativeTypeName("const PROPVARIANT &")] PROPVARIANT* propvar, [NativeTypeName("LPWSTR *")] ushort** ppszImageRes)
         {
             return ((delegate* unmanaged<IPropertyDescription2*, PROPVARIANT*, ushort**, int>)(lpVtbl[24]))((IPropertyDescription2*)Unsafe.AsPointer(ref this), propvar, ppszImageRes);
+        }
+
+        public interface Interface : IPropertyDescription.Interface
+        {
+            [VtblIndex(24)]
+            HRESULT GetImageReferenceForValue([NativeTypeName("const PROPVARIANT &")] PROPVARIANT* propvar, [NativeTypeName("LPWSTR *")] ushort** ppszImageRes);
         }
 
         public partial struct Vtbl

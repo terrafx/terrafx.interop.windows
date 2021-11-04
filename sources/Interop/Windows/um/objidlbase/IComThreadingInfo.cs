@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("000001CE-0000-0000-C000-000000000046")]
     [NativeTypeName("struct IComThreadingInfo : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IComThreadingInfo
+    public unsafe partial struct IComThreadingInfo : IComThreadingInfo.Interface
     {
         public void** lpVtbl;
 
@@ -65,6 +65,21 @@ namespace TerraFX.Interop
         public HRESULT SetCurrentLogicalThreadId([NativeTypeName("const GUID &")] Guid* rguid)
         {
             return ((delegate* unmanaged<IComThreadingInfo*, Guid*, int>)(lpVtbl[6]))((IComThreadingInfo*)Unsafe.AsPointer(ref this), rguid);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetCurrentApartmentType(APTTYPE* pAptType);
+
+            [VtblIndex(4)]
+            HRESULT GetCurrentThreadType(THDTYPE* pThreadType);
+
+            [VtblIndex(5)]
+            HRESULT GetCurrentLogicalThreadId(Guid* pguidLogicalThreadId);
+
+            [VtblIndex(6)]
+            HRESULT SetCurrentLogicalThreadId([NativeTypeName("const GUID &")] Guid* rguid);
         }
 
         public partial struct Vtbl

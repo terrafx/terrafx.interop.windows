@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("E07010EC-BC17-44C0-97B0-46C7C95B9EDC")]
     [NativeTypeName("struct IExplorerPaneVisibility : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IExplorerPaneVisibility
+    public unsafe partial struct IExplorerPaneVisibility : IExplorerPaneVisibility.Interface
     {
         public void** lpVtbl;
 
@@ -44,6 +44,12 @@ namespace TerraFX.Interop
         public HRESULT GetPaneState([NativeTypeName("const EXPLORERPANE &")] Guid* ep, [NativeTypeName("EXPLORERPANESTATE *")] uint* peps)
         {
             return ((delegate* unmanaged<IExplorerPaneVisibility*, Guid*, uint*, int>)(lpVtbl[3]))((IExplorerPaneVisibility*)Unsafe.AsPointer(ref this), ep, peps);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetPaneState([NativeTypeName("const EXPLORERPANE &")] Guid* ep, [NativeTypeName("EXPLORERPANESTATE *")] uint* peps);
         }
 
         public partial struct Vtbl

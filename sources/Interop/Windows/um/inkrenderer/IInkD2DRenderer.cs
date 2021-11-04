@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("407FB1DE-F85A-4150-97CF-B7FB274FB4F8")]
     [NativeTypeName("struct IInkD2DRenderer : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IInkD2DRenderer
+    public unsafe partial struct IInkD2DRenderer : IInkD2DRenderer.Interface
     {
         public void** lpVtbl;
 
@@ -44,6 +44,12 @@ namespace TerraFX.Interop
         public HRESULT Draw(IUnknown* pD2D1DeviceContext, IUnknown* pInkStrokeIterable, BOOL fHighContrast)
         {
             return ((delegate* unmanaged<IInkD2DRenderer*, IUnknown*, IUnknown*, BOOL, int>)(lpVtbl[3]))((IInkD2DRenderer*)Unsafe.AsPointer(ref this), pD2D1DeviceContext, pInkStrokeIterable, fHighContrast);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT Draw(IUnknown* pD2D1DeviceContext, IUnknown* pInkStrokeIterable, BOOL fHighContrast);
         }
 
         public partial struct Vtbl

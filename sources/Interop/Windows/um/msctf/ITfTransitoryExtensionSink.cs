@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("A615096F-1C57-4813-8A15-55EE6E5A839C")]
     [NativeTypeName("struct ITfTransitoryExtensionSink : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct ITfTransitoryExtensionSink
+    public unsafe partial struct ITfTransitoryExtensionSink : ITfTransitoryExtensionSink.Interface
     {
         public void** lpVtbl;
 
@@ -44,6 +44,12 @@ namespace TerraFX.Interop
         public HRESULT OnTransitoryExtensionUpdated(ITfContext* pic, [NativeTypeName("TfEditCookie")] uint ecReadOnly, ITfRange* pResultRange, ITfRange* pCompositionRange, BOOL* pfDeleteResultRange)
         {
             return ((delegate* unmanaged<ITfTransitoryExtensionSink*, ITfContext*, uint, ITfRange*, ITfRange*, BOOL*, int>)(lpVtbl[3]))((ITfTransitoryExtensionSink*)Unsafe.AsPointer(ref this), pic, ecReadOnly, pResultRange, pCompositionRange, pfDeleteResultRange);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT OnTransitoryExtensionUpdated(ITfContext* pic, [NativeTypeName("TfEditCookie")] uint ecReadOnly, ITfRange* pResultRange, ITfRange* pCompositionRange, BOOL* pfDeleteResultRange);
         }
 
         public partial struct Vtbl

@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("862494C6-1310-4AAD-B3CD-2DBEEBF670D3")]
     [NativeTypeName("struct IXmlWriterLite : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IXmlWriterLite
+    public unsafe partial struct IXmlWriterLite : IXmlWriterLite.Interface
     {
         public void** lpVtbl;
 
@@ -233,6 +233,93 @@ namespace TerraFX.Interop
         public HRESULT Flush()
         {
             return ((delegate* unmanaged<IXmlWriterLite*, int>)(lpVtbl[30]))((IXmlWriterLite*)Unsafe.AsPointer(ref this));
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT SetOutput(IUnknown* pOutput);
+
+            [VtblIndex(4)]
+            HRESULT GetProperty(uint nProperty, [NativeTypeName("LONG_PTR *")] nint* ppValue);
+
+            [VtblIndex(5)]
+            HRESULT SetProperty(uint nProperty, [NativeTypeName("LONG_PTR")] nint pValue);
+
+            [VtblIndex(6)]
+            HRESULT WriteAttributes(IXmlReader* pReader, BOOL fWriteDefaultAttributes);
+
+            [VtblIndex(7)]
+            HRESULT WriteAttributeString([NativeTypeName("const WCHAR *")] ushort* pwszQName, uint cwszQName, [NativeTypeName("const WCHAR *")] ushort* pwszValue, uint cwszValue);
+
+            [VtblIndex(8)]
+            HRESULT WriteCData([NativeTypeName("LPCWSTR")] ushort* pwszText);
+
+            [VtblIndex(9)]
+            HRESULT WriteCharEntity([NativeTypeName("WCHAR")] ushort wch);
+
+            [VtblIndex(10)]
+            HRESULT WriteChars([NativeTypeName("const WCHAR *")] ushort* pwch, uint cwch);
+
+            [VtblIndex(11)]
+            HRESULT WriteComment([NativeTypeName("LPCWSTR")] ushort* pwszComment);
+
+            [VtblIndex(12)]
+            HRESULT WriteDocType([NativeTypeName("LPCWSTR")] ushort* pwszName, [NativeTypeName("LPCWSTR")] ushort* pwszPublicId, [NativeTypeName("LPCWSTR")] ushort* pwszSystemId, [NativeTypeName("LPCWSTR")] ushort* pwszSubset);
+
+            [VtblIndex(13)]
+            HRESULT WriteElementString([NativeTypeName("const WCHAR *")] ushort* pwszQName, uint cwszQName, [NativeTypeName("LPCWSTR")] ushort* pwszValue);
+
+            [VtblIndex(14)]
+            HRESULT WriteEndDocument();
+
+            [VtblIndex(15)]
+            HRESULT WriteEndElement([NativeTypeName("const WCHAR *")] ushort* pwszQName, uint cwszQName);
+
+            [VtblIndex(16)]
+            HRESULT WriteEntityRef([NativeTypeName("LPCWSTR")] ushort* pwszName);
+
+            [VtblIndex(17)]
+            HRESULT WriteFullEndElement([NativeTypeName("const WCHAR *")] ushort* pwszQName, uint cwszQName);
+
+            [VtblIndex(18)]
+            HRESULT WriteName([NativeTypeName("LPCWSTR")] ushort* pwszName);
+
+            [VtblIndex(19)]
+            HRESULT WriteNmToken([NativeTypeName("LPCWSTR")] ushort* pwszNmToken);
+
+            [VtblIndex(20)]
+            HRESULT WriteNode(IXmlReader* pReader, BOOL fWriteDefaultAttributes);
+
+            [VtblIndex(21)]
+            HRESULT WriteNodeShallow(IXmlReader* pReader, BOOL fWriteDefaultAttributes);
+
+            [VtblIndex(22)]
+            HRESULT WriteProcessingInstruction([NativeTypeName("LPCWSTR")] ushort* pwszName, [NativeTypeName("LPCWSTR")] ushort* pwszText);
+
+            [VtblIndex(23)]
+            HRESULT WriteRaw([NativeTypeName("LPCWSTR")] ushort* pwszData);
+
+            [VtblIndex(24)]
+            HRESULT WriteRawChars([NativeTypeName("const WCHAR *")] ushort* pwch, uint cwch);
+
+            [VtblIndex(25)]
+            HRESULT WriteStartDocument(XmlStandalone standalone);
+
+            [VtblIndex(26)]
+            HRESULT WriteStartElement([NativeTypeName("const WCHAR *")] ushort* pwszQName, uint cwszQName);
+
+            [VtblIndex(27)]
+            HRESULT WriteString([NativeTypeName("LPCWSTR")] ushort* pwszText);
+
+            [VtblIndex(28)]
+            HRESULT WriteSurrogateCharEntity([NativeTypeName("WCHAR")] ushort wchLow, [NativeTypeName("WCHAR")] ushort wchHigh);
+
+            [VtblIndex(29)]
+            HRESULT WriteWhitespace([NativeTypeName("LPCWSTR")] ushort* pwszWhitespace);
+
+            [VtblIndex(30)]
+            HRESULT Flush();
         }
 
         public partial struct Vtbl

@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("973810AE-9599-4B88-9E4D-6EE98C9552DA")]
     [NativeTypeName("struct IEnumAssocHandlers : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IEnumAssocHandlers
+    public unsafe partial struct IEnumAssocHandlers : IEnumAssocHandlers.Interface
     {
         public void** lpVtbl;
 
@@ -44,6 +44,12 @@ namespace TerraFX.Interop
         public HRESULT Next([NativeTypeName("ULONG")] uint celt, IAssocHandler** rgelt, [NativeTypeName("ULONG *")] uint* pceltFetched)
         {
             return ((delegate* unmanaged<IEnumAssocHandlers*, uint, IAssocHandler**, uint*, int>)(lpVtbl[3]))((IEnumAssocHandlers*)Unsafe.AsPointer(ref this), celt, rgelt, pceltFetched);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT Next([NativeTypeName("ULONG")] uint celt, IAssocHandler** rgelt, [NativeTypeName("ULONG *")] uint* pceltFetched);
         }
 
         public partial struct Vtbl

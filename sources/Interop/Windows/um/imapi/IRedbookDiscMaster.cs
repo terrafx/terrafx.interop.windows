@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("E3BC42CD-4E5C-11D3-9144-00104BA11C5E")]
     [NativeTypeName("struct IRedbookDiscMaster : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IRedbookDiscMaster
+    public unsafe partial struct IRedbookDiscMaster : IRedbookDiscMaster.Interface
     {
         public void** lpVtbl;
 
@@ -93,6 +93,33 @@ namespace TerraFX.Interop
         public HRESULT CloseAudioTrack()
         {
             return ((delegate* unmanaged<IRedbookDiscMaster*, int>)(lpVtbl[10]))((IRedbookDiscMaster*)Unsafe.AsPointer(ref this));
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetTotalAudioTracks([NativeTypeName("long *")] int* pnTracks);
+
+            [VtblIndex(4)]
+            HRESULT GetTotalAudioBlocks([NativeTypeName("long *")] int* pnBlocks);
+
+            [VtblIndex(5)]
+            HRESULT GetUsedAudioBlocks([NativeTypeName("long *")] int* pnBlocks);
+
+            [VtblIndex(6)]
+            HRESULT GetAvailableAudioTrackBlocks([NativeTypeName("long *")] int* pnBlocks);
+
+            [VtblIndex(7)]
+            HRESULT GetAudioBlockSize([NativeTypeName("long *")] int* pnBlockBytes);
+
+            [VtblIndex(8)]
+            HRESULT CreateAudioTrack([NativeTypeName("long")] int nBlocks);
+
+            [VtblIndex(9)]
+            HRESULT AddAudioTrackBlocks(byte* pby, [NativeTypeName("long")] int cb);
+
+            [VtblIndex(10)]
+            HRESULT CloseAudioTrack();
         }
 
         public partial struct Vtbl

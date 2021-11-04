@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("01E18D10-4D8B-11D2-855D-006008059367")]
     [NativeTypeName("struct IFileSystemBindData : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IFileSystemBindData
+    public unsafe partial struct IFileSystemBindData : IFileSystemBindData.Interface
     {
         public void** lpVtbl;
 
@@ -51,6 +51,15 @@ namespace TerraFX.Interop
         public HRESULT GetFindData(WIN32_FIND_DATAW* pfd)
         {
             return ((delegate* unmanaged<IFileSystemBindData*, WIN32_FIND_DATAW*, int>)(lpVtbl[4]))((IFileSystemBindData*)Unsafe.AsPointer(ref this), pfd);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT SetFindData([NativeTypeName("const WIN32_FIND_DATAW *")] WIN32_FIND_DATAW* pfd);
+
+            [VtblIndex(4)]
+            HRESULT GetFindData(WIN32_FIND_DATAW* pfd);
         }
 
         public partial struct Vtbl

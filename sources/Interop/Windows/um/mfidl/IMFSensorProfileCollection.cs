@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("C95EA55B-0187-48BE-9353-8D2507662351")]
     [NativeTypeName("struct IMFSensorProfileCollection : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IMFSensorProfileCollection
+    public unsafe partial struct IMFSensorProfileCollection : IMFSensorProfileCollection.Interface
     {
         public void** lpVtbl;
 
@@ -80,6 +80,28 @@ namespace TerraFX.Interop
         public void RemoveProfile(SENSORPROFILEID* ProfileId)
         {
             ((delegate* unmanaged<IMFSensorProfileCollection*, SENSORPROFILEID*, void>)(lpVtbl[8]))((IMFSensorProfileCollection*)Unsafe.AsPointer(ref this), ProfileId);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            [return: NativeTypeName("DWORD")]
+            uint GetProfileCount();
+
+            [VtblIndex(4)]
+            HRESULT GetProfile([NativeTypeName("DWORD")] uint Index, IMFSensorProfile** ppProfile);
+
+            [VtblIndex(5)]
+            HRESULT AddProfile(IMFSensorProfile* pProfile);
+
+            [VtblIndex(6)]
+            HRESULT FindProfile(SENSORPROFILEID* ProfileId, IMFSensorProfile** ppProfile);
+
+            [VtblIndex(7)]
+            void RemoveProfileByIndex([NativeTypeName("DWORD")] uint Index);
+
+            [VtblIndex(8)]
+            void RemoveProfile(SENSORPROFILEID* ProfileId);
         }
 
         public partial struct Vtbl

@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("9204FE99-D8FC-4FD5-A001-9536B067A899")]
     [NativeTypeName("struct IWICMetadataReader : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IWICMetadataReader
+    public unsafe partial struct IWICMetadataReader : IWICMetadataReader.Interface
     {
         public void** lpVtbl;
 
@@ -79,6 +79,27 @@ namespace TerraFX.Interop
         public HRESULT GetEnumerator(IWICEnumMetadataItem** ppIEnumMetadata)
         {
             return ((delegate* unmanaged<IWICMetadataReader*, IWICEnumMetadataItem**, int>)(lpVtbl[8]))((IWICMetadataReader*)Unsafe.AsPointer(ref this), ppIEnumMetadata);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetMetadataFormat(Guid* pguidMetadataFormat);
+
+            [VtblIndex(4)]
+            HRESULT GetMetadataHandlerInfo(IWICMetadataHandlerInfo** ppIHandler);
+
+            [VtblIndex(5)]
+            HRESULT GetCount(uint* pcCount);
+
+            [VtblIndex(6)]
+            HRESULT GetValueByIndex(uint nIndex, PROPVARIANT* pvarSchema, PROPVARIANT* pvarId, PROPVARIANT* pvarValue);
+
+            [VtblIndex(7)]
+            HRESULT GetValue([NativeTypeName("const PROPVARIANT *")] PROPVARIANT* pvarSchema, [NativeTypeName("const PROPVARIANT *")] PROPVARIANT* pvarId, PROPVARIANT* pvarValue);
+
+            [VtblIndex(8)]
+            HRESULT GetEnumerator(IWICEnumMetadataItem** ppIEnumMetadata);
         }
 
         public partial struct Vtbl

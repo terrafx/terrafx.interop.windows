@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("2CD9069F-12E2-11DC-9FED-001143A055F9")]
     [NativeTypeName("struct ID2D1GeometrySink : ID2D1SimplifiedGeometrySink")]
     [NativeInheritance("ID2D1SimplifiedGeometrySink")]
-    public unsafe partial struct ID2D1GeometrySink
+    public unsafe partial struct ID2D1GeometrySink : ID2D1GeometrySink.Interface
     {
         public void** lpVtbl;
 
@@ -121,6 +121,24 @@ namespace TerraFX.Interop
         public void AddArc([NativeTypeName("const D2D1_ARC_SEGMENT *")] D2D1_ARC_SEGMENT* arc)
         {
             ((delegate* unmanaged<ID2D1GeometrySink*, D2D1_ARC_SEGMENT*, void>)(lpVtbl[14]))((ID2D1GeometrySink*)Unsafe.AsPointer(ref this), arc);
+        }
+
+        public interface Interface : ID2D1SimplifiedGeometrySink.Interface
+        {
+            [VtblIndex(10)]
+            void AddLine([NativeTypeName("D2D1_POINT_2F")] D2D_POINT_2F point);
+
+            [VtblIndex(11)]
+            void AddBezier([NativeTypeName("const D2D1_BEZIER_SEGMENT *")] D2D1_BEZIER_SEGMENT* bezier);
+
+            [VtblIndex(12)]
+            void AddQuadraticBezier([NativeTypeName("const D2D1_QUADRATIC_BEZIER_SEGMENT *")] D2D1_QUADRATIC_BEZIER_SEGMENT* bezier);
+
+            [VtblIndex(13)]
+            void AddQuadraticBeziers([NativeTypeName("const D2D1_QUADRATIC_BEZIER_SEGMENT *")] D2D1_QUADRATIC_BEZIER_SEGMENT* beziers, [NativeTypeName("UINT32")] uint beziersCount);
+
+            [VtblIndex(14)]
+            void AddArc([NativeTypeName("const D2D1_ARC_SEGMENT *")] D2D1_ARC_SEGMENT* arc);
         }
 
         public partial struct Vtbl

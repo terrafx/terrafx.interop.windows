@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("03FAF64D-F26F-4B2C-AAF7-8FE7789B8BCA")]
     [NativeTypeName("struct IAppxManifestProperties : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IAppxManifestProperties
+    public unsafe partial struct IAppxManifestProperties : IAppxManifestProperties.Interface
     {
         public void** lpVtbl;
 
@@ -51,6 +51,15 @@ namespace TerraFX.Interop
         public HRESULT GetStringValue([NativeTypeName("LPCWSTR")] ushort* name, [NativeTypeName("LPWSTR *")] ushort** value)
         {
             return ((delegate* unmanaged<IAppxManifestProperties*, ushort*, ushort**, int>)(lpVtbl[4]))((IAppxManifestProperties*)Unsafe.AsPointer(ref this), name, value);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetBoolValue([NativeTypeName("LPCWSTR")] ushort* name, BOOL* value);
+
+            [VtblIndex(4)]
+            HRESULT GetStringValue([NativeTypeName("LPCWSTR")] ushort* name, [NativeTypeName("LPWSTR *")] ushort** value);
         }
 
         public partial struct Vtbl

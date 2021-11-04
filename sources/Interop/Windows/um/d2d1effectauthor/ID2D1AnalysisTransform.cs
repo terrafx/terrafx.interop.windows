@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("0359DC30-95E6-4568-9055-27720D130E93")]
     [NativeTypeName("struct ID2D1AnalysisTransform : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct ID2D1AnalysisTransform
+    public unsafe partial struct ID2D1AnalysisTransform : ID2D1AnalysisTransform.Interface
     {
         public void** lpVtbl;
 
@@ -44,6 +44,12 @@ namespace TerraFX.Interop
         public HRESULT ProcessAnalysisResults([NativeTypeName("const BYTE *")] byte* analysisData, [NativeTypeName("UINT32")] uint analysisDataCount)
         {
             return ((delegate* unmanaged<ID2D1AnalysisTransform*, byte*, uint, int>)(lpVtbl[3]))((ID2D1AnalysisTransform*)Unsafe.AsPointer(ref this), analysisData, analysisDataCount);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT ProcessAnalysisResults([NativeTypeName("const BYTE *")] byte* analysisData, [NativeTypeName("UINT32")] uint analysisDataCount);
         }
 
         public partial struct Vtbl

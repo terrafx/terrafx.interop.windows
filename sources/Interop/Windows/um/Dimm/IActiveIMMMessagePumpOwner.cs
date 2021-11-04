@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("B5CF2CFA-8AEB-11D1-9364-0060B067B86E")]
     [NativeTypeName("struct IActiveIMMMessagePumpOwner : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IActiveIMMMessagePumpOwner
+    public unsafe partial struct IActiveIMMMessagePumpOwner : IActiveIMMMessagePumpOwner.Interface
     {
         public void** lpVtbl;
 
@@ -72,6 +72,24 @@ namespace TerraFX.Interop
         public HRESULT Resume([NativeTypeName("DWORD")] uint dwCookie)
         {
             return ((delegate* unmanaged<IActiveIMMMessagePumpOwner*, uint, int>)(lpVtbl[7]))((IActiveIMMMessagePumpOwner*)Unsafe.AsPointer(ref this), dwCookie);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT Start();
+
+            [VtblIndex(4)]
+            HRESULT End();
+
+            [VtblIndex(5)]
+            HRESULT OnTranslateMessage([NativeTypeName("const MSG *")] MSG* pMsg);
+
+            [VtblIndex(6)]
+            HRESULT Pause([NativeTypeName("DWORD *")] uint* pdwCookie);
+
+            [VtblIndex(7)]
+            HRESULT Resume([NativeTypeName("DWORD")] uint dwCookie);
         }
 
         public partial struct Vtbl

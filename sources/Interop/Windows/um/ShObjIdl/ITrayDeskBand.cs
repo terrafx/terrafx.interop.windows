@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("6D67E846-5B9C-4DB8-9CBC-DDE12F4254F1")]
     [NativeTypeName("struct ITrayDeskBand : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct ITrayDeskBand
+    public unsafe partial struct ITrayDeskBand : ITrayDeskBand.Interface
     {
         public void** lpVtbl;
 
@@ -65,6 +65,21 @@ namespace TerraFX.Interop
         public HRESULT DeskBandRegistrationChanged()
         {
             return ((delegate* unmanaged<ITrayDeskBand*, int>)(lpVtbl[6]))((ITrayDeskBand*)Unsafe.AsPointer(ref this));
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT ShowDeskBand([NativeTypeName("const IID &")] Guid* clsid);
+
+            [VtblIndex(4)]
+            HRESULT HideDeskBand([NativeTypeName("const IID &")] Guid* clsid);
+
+            [VtblIndex(5)]
+            HRESULT IsDeskBandShown([NativeTypeName("const IID &")] Guid* clsid);
+
+            [VtblIndex(6)]
+            HRESULT DeskBandRegistrationChanged();
         }
 
         public partial struct Vtbl

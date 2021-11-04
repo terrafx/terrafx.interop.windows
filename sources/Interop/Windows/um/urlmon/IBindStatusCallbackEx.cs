@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("AAA74EF9-8EE7-4659-88D9-F8C504DA73CC")]
     [NativeTypeName("struct IBindStatusCallbackEx : IBindStatusCallback")]
     [NativeInheritance("IBindStatusCallback")]
-    public unsafe partial struct IBindStatusCallbackEx
+    public unsafe partial struct IBindStatusCallbackEx : IBindStatusCallbackEx.Interface
     {
         public void** lpVtbl;
 
@@ -100,6 +100,12 @@ namespace TerraFX.Interop
         public HRESULT GetBindInfoEx([NativeTypeName("DWORD *")] uint* grfBINDF, BINDINFO* pbindinfo, [NativeTypeName("DWORD *")] uint* grfBINDF2, [NativeTypeName("DWORD *")] uint* pdwReserved)
         {
             return ((delegate* unmanaged<IBindStatusCallbackEx*, uint*, BINDINFO*, uint*, uint*, int>)(lpVtbl[11]))((IBindStatusCallbackEx*)Unsafe.AsPointer(ref this), grfBINDF, pbindinfo, grfBINDF2, pdwReserved);
+        }
+
+        public interface Interface : IBindStatusCallback.Interface
+        {
+            [VtblIndex(11)]
+            HRESULT GetBindInfoEx([NativeTypeName("DWORD *")] uint* grfBINDF, BINDINFO* pbindinfo, [NativeTypeName("DWORD *")] uint* grfBINDF2, [NativeTypeName("DWORD *")] uint* pdwReserved);
         }
 
         public partial struct Vtbl

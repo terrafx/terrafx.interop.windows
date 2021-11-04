@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("F7836E16-3BE0-470B-86BB-160D0AECD7DE")]
     [NativeTypeName("struct IWICMetadataWriter : IWICMetadataReader")]
     [NativeInheritance("IWICMetadataReader")]
-    public unsafe partial struct IWICMetadataWriter
+    public unsafe partial struct IWICMetadataWriter : IWICMetadataWriter.Interface
     {
         public void** lpVtbl;
 
@@ -107,6 +107,21 @@ namespace TerraFX.Interop
         public HRESULT RemoveValueByIndex(uint nIndex)
         {
             return ((delegate* unmanaged<IWICMetadataWriter*, uint, int>)(lpVtbl[12]))((IWICMetadataWriter*)Unsafe.AsPointer(ref this), nIndex);
+        }
+
+        public interface Interface : IWICMetadataReader.Interface
+        {
+            [VtblIndex(9)]
+            HRESULT SetValue([NativeTypeName("const PROPVARIANT *")] PROPVARIANT* pvarSchema, [NativeTypeName("const PROPVARIANT *")] PROPVARIANT* pvarId, [NativeTypeName("const PROPVARIANT *")] PROPVARIANT* pvarValue);
+
+            [VtblIndex(10)]
+            HRESULT SetValueByIndex(uint nIndex, [NativeTypeName("const PROPVARIANT *")] PROPVARIANT* pvarSchema, [NativeTypeName("const PROPVARIANT *")] PROPVARIANT* pvarId, [NativeTypeName("const PROPVARIANT *")] PROPVARIANT* pvarValue);
+
+            [VtblIndex(11)]
+            HRESULT RemoveValue([NativeTypeName("const PROPVARIANT *")] PROPVARIANT* pvarSchema, [NativeTypeName("const PROPVARIANT *")] PROPVARIANT* pvarId);
+
+            [VtblIndex(12)]
+            HRESULT RemoveValueByIndex(uint nIndex);
         }
 
         public partial struct Vtbl

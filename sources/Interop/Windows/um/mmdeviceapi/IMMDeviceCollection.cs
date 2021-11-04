@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("0BD7A1BE-7A1A-44DB-8397-CC5392387B5E")]
     [NativeTypeName("struct IMMDeviceCollection : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IMMDeviceCollection
+    public unsafe partial struct IMMDeviceCollection : IMMDeviceCollection.Interface
     {
         public void** lpVtbl;
 
@@ -51,6 +51,15 @@ namespace TerraFX.Interop
         public HRESULT Item(uint nDevice, IMMDevice** ppDevice)
         {
             return ((delegate* unmanaged<IMMDeviceCollection*, uint, IMMDevice**, int>)(lpVtbl[4]))((IMMDeviceCollection*)Unsafe.AsPointer(ref this), nDevice, ppDevice);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetCount(uint* pcDevices);
+
+            [VtblIndex(4)]
+            HRESULT Item(uint nDevice, IMMDevice** ppDevice);
         }
 
         public partial struct Vtbl

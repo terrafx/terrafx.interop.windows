@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("49353C9A-516B-11D1-AEA6-00C04FB68820")]
     [NativeTypeName("struct IWbemObjectAccess : IWbemClassObject")]
     [NativeInheritance("IWbemClassObject")]
-    public unsafe partial struct IWbemObjectAccess
+    public unsafe partial struct IWbemObjectAccess : IWbemObjectAccess.Interface
     {
         public void** lpVtbl;
 
@@ -275,6 +275,39 @@ namespace TerraFX.Interop
         public HRESULT Unlock([NativeTypeName("long")] int lFlags)
         {
             return ((delegate* unmanaged<IWbemObjectAccess*, int, int>)(lpVtbl[36]))((IWbemObjectAccess*)Unsafe.AsPointer(ref this), lFlags);
+        }
+
+        public interface Interface : IWbemClassObject.Interface
+        {
+            [VtblIndex(27)]
+            HRESULT GetPropertyHandle([NativeTypeName("LPCWSTR")] ushort* wszPropertyName, [NativeTypeName("CIMTYPE *")] int* pType, [NativeTypeName("long *")] int* plHandle);
+
+            [VtblIndex(28)]
+            HRESULT WritePropertyValue([NativeTypeName("long")] int lHandle, [NativeTypeName("long")] int lNumBytes, [NativeTypeName("const byte *")] byte* aData);
+
+            [VtblIndex(29)]
+            HRESULT ReadPropertyValue([NativeTypeName("long")] int lHandle, [NativeTypeName("long")] int lBufferSize, [NativeTypeName("long *")] int* plNumBytes, byte* aData);
+
+            [VtblIndex(30)]
+            HRESULT ReadDWORD([NativeTypeName("long")] int lHandle, [NativeTypeName("DWORD *")] uint* pdw);
+
+            [VtblIndex(31)]
+            HRESULT WriteDWORD([NativeTypeName("long")] int lHandle, [NativeTypeName("DWORD")] uint dw);
+
+            [VtblIndex(32)]
+            HRESULT ReadQWORD([NativeTypeName("long")] int lHandle, [NativeTypeName("unsigned long long *")] ulong* pqw);
+
+            [VtblIndex(33)]
+            HRESULT WriteQWORD([NativeTypeName("long")] int lHandle, [NativeTypeName("unsigned long long")] ulong pw);
+
+            [VtblIndex(34)]
+            HRESULT GetPropertyInfoByHandle([NativeTypeName("long")] int lHandle, [NativeTypeName("BSTR *")] ushort** pstrName, [NativeTypeName("CIMTYPE *")] int* pType);
+
+            [VtblIndex(35)]
+            HRESULT Lock([NativeTypeName("long")] int lFlags);
+
+            [VtblIndex(36)]
+            HRESULT Unlock([NativeTypeName("long")] int lFlags);
         }
 
         public partial struct Vtbl

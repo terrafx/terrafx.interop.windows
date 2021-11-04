@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("CAB72C48-443B-48F5-9B0B-42F0820AB29A")]
     [NativeTypeName("struct IDiaEnumSymbols : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IDiaEnumSymbols
+    public unsafe partial struct IDiaEnumSymbols : IDiaEnumSymbols.Interface
     {
         public void** lpVtbl;
 
@@ -86,6 +86,30 @@ namespace TerraFX.Interop
         public HRESULT Clone(IDiaEnumSymbols** ppenum)
         {
             return ((delegate* unmanaged<IDiaEnumSymbols*, IDiaEnumSymbols**, int>)(lpVtbl[9]))((IDiaEnumSymbols*)Unsafe.AsPointer(ref this), ppenum);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT get__NewEnum(IUnknown** pRetVal);
+
+            [VtblIndex(4)]
+            HRESULT get_Count([NativeTypeName("LONG *")] int* pRetVal);
+
+            [VtblIndex(5)]
+            HRESULT Item([NativeTypeName("DWORD")] uint index, IDiaSymbol** symbol);
+
+            [VtblIndex(6)]
+            HRESULT Next([NativeTypeName("ULONG")] uint celt, IDiaSymbol** rgelt, [NativeTypeName("ULONG *")] uint* pceltFetched);
+
+            [VtblIndex(7)]
+            HRESULT Skip([NativeTypeName("ULONG")] uint celt);
+
+            [VtblIndex(8)]
+            HRESULT Reset();
+
+            [VtblIndex(9)]
+            HRESULT Clone(IDiaEnumSymbols** ppenum);
         }
 
         public partial struct Vtbl

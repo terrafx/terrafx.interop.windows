@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("A2DE3BC1-3D8E-11D3-81A9-F753FBE61A00")]
     [NativeTypeName("struct ITextStoreAnchorEx : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct ITextStoreAnchorEx
+    public unsafe partial struct ITextStoreAnchorEx : ITextStoreAnchorEx.Interface
     {
         public void** lpVtbl;
 
@@ -44,6 +44,12 @@ namespace TerraFX.Interop
         public HRESULT ScrollToRect(IAnchor* pStart, IAnchor* pEnd, RECT rc, [NativeTypeName("DWORD")] uint dwPosition)
         {
             return ((delegate* unmanaged<ITextStoreAnchorEx*, IAnchor*, IAnchor*, RECT, uint, int>)(lpVtbl[3]))((ITextStoreAnchorEx*)Unsafe.AsPointer(ref this), pStart, pEnd, rc, dwPosition);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT ScrollToRect(IAnchor* pStart, IAnchor* pEnd, RECT rc, [NativeTypeName("DWORD")] uint dwPosition);
         }
 
         public partial struct Vtbl

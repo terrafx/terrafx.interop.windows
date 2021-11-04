@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("F5B0BF81-8CB5-4B1B-9449-1A159E0C733C")]
     [NativeTypeName("struct IIOCancelInformation : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IIOCancelInformation
+    public unsafe partial struct IIOCancelInformation : IIOCancelInformation.Interface
     {
         public void** lpVtbl;
 
@@ -51,6 +51,15 @@ namespace TerraFX.Interop
         public HRESULT GetCancelInformation([NativeTypeName("DWORD *")] uint* pdwThreadID, uint* puMsgCancel)
         {
             return ((delegate* unmanaged<IIOCancelInformation*, uint*, uint*, int>)(lpVtbl[4]))((IIOCancelInformation*)Unsafe.AsPointer(ref this), pdwThreadID, puMsgCancel);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT SetCancelInformation([NativeTypeName("DWORD")] uint dwThreadID, uint uMsgCancel);
+
+            [VtblIndex(4)]
+            HRESULT GetCancelInformation([NativeTypeName("DWORD *")] uint* pdwThreadID, uint* puMsgCancel);
         }
 
         public partial struct Vtbl

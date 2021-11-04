@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("000001CF-0000-0000-C000-000000000046")]
     [NativeTypeName("struct IMarshal2 : IMarshal")]
     [NativeInheritance("IMarshal")]
-    public unsafe partial struct IMarshal2
+    public unsafe partial struct IMarshal2 : IMarshal2.Interface
     {
         public void** lpVtbl;
 
@@ -79,6 +79,10 @@ namespace TerraFX.Interop
         public HRESULT DisconnectObject([NativeTypeName("DWORD")] uint dwReserved)
         {
             return ((delegate* unmanaged<IMarshal2*, uint, int>)(lpVtbl[8]))((IMarshal2*)Unsafe.AsPointer(ref this), dwReserved);
+        }
+
+        public interface Interface : IMarshal.Interface
+        {
         }
 
         public partial struct Vtbl

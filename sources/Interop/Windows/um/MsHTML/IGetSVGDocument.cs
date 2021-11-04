@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("305105AB-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct IGetSVGDocument : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct IGetSVGDocument
+    public unsafe partial struct IGetSVGDocument : IGetSVGDocument.Interface
     {
         public void** lpVtbl;
 
@@ -72,6 +72,12 @@ namespace TerraFX.Interop
         public HRESULT getSVGDocument(IDispatch** ppSVGDocument)
         {
             return ((delegate* unmanaged<IGetSVGDocument*, IDispatch**, int>)(lpVtbl[7]))((IGetSVGDocument*)Unsafe.AsPointer(ref this), ppSVGDocument);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT getSVGDocument(IDispatch** ppSVGDocument);
         }
 
         public partial struct Vtbl

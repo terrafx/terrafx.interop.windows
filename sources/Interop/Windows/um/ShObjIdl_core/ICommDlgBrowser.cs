@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("000214F1-0000-0000-C000-000000000046")]
     [NativeTypeName("struct ICommDlgBrowser : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct ICommDlgBrowser
+    public unsafe partial struct ICommDlgBrowser : ICommDlgBrowser.Interface
     {
         public void** lpVtbl;
 
@@ -58,6 +58,18 @@ namespace TerraFX.Interop
         public HRESULT IncludeObject(IShellView* ppshv, [NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidl)
         {
             return ((delegate* unmanaged<ICommDlgBrowser*, IShellView*, ITEMIDLIST*, int>)(lpVtbl[5]))((ICommDlgBrowser*)Unsafe.AsPointer(ref this), ppshv, pidl);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT OnDefaultCommand(IShellView* ppshv);
+
+            [VtblIndex(4)]
+            HRESULT OnStateChange(IShellView* ppshv, [NativeTypeName("ULONG")] uint uChange);
+
+            [VtblIndex(5)]
+            HRESULT IncludeObject(IShellView* ppshv, [NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidl);
         }
 
         public partial struct Vtbl

@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("4305EE5B-C4A0-4C88-9385-67124E017683")]
     [NativeTypeName("struct IDCompositionLinearTransferEffect : IDCompositionFilterEffect")]
     [NativeInheritance("IDCompositionFilterEffect")]
-    public unsafe partial struct IDCompositionLinearTransferEffect
+    public unsafe partial struct IDCompositionLinearTransferEffect : IDCompositionLinearTransferEffect.Interface
     {
         public void** lpVtbl;
 
@@ -191,6 +191,72 @@ namespace TerraFX.Interop
         public HRESULT SetClampOutput(BOOL clampOutput)
         {
             return ((delegate* unmanaged<IDCompositionLinearTransferEffect*, BOOL, int>)(lpVtbl[24]))((IDCompositionLinearTransferEffect*)Unsafe.AsPointer(ref this), clampOutput);
+        }
+
+        public interface Interface : IDCompositionFilterEffect.Interface
+        {
+            [VtblIndex(4)]
+            HRESULT SetRedYIntercept(IDCompositionAnimation* animation);
+
+            [VtblIndex(5)]
+            HRESULT SetRedYIntercept(float redYIntercept);
+
+            [VtblIndex(6)]
+            HRESULT SetRedSlope(IDCompositionAnimation* animation);
+
+            [VtblIndex(7)]
+            HRESULT SetRedSlope(float redSlope);
+
+            [VtblIndex(8)]
+            HRESULT SetRedDisable(BOOL redDisable);
+
+            [VtblIndex(9)]
+            HRESULT SetGreenYIntercept(IDCompositionAnimation* animation);
+
+            [VtblIndex(10)]
+            HRESULT SetGreenYIntercept(float greenYIntercept);
+
+            [VtblIndex(11)]
+            HRESULT SetGreenSlope(IDCompositionAnimation* animation);
+
+            [VtblIndex(12)]
+            HRESULT SetGreenSlope(float greenSlope);
+
+            [VtblIndex(13)]
+            HRESULT SetGreenDisable(BOOL greenDisable);
+
+            [VtblIndex(14)]
+            HRESULT SetBlueYIntercept(IDCompositionAnimation* animation);
+
+            [VtblIndex(15)]
+            HRESULT SetBlueYIntercept(float blueYIntercept);
+
+            [VtblIndex(16)]
+            HRESULT SetBlueSlope(IDCompositionAnimation* animation);
+
+            [VtblIndex(17)]
+            HRESULT SetBlueSlope(float blueSlope);
+
+            [VtblIndex(18)]
+            HRESULT SetBlueDisable(BOOL blueDisable);
+
+            [VtblIndex(19)]
+            HRESULT SetAlphaYIntercept(IDCompositionAnimation* animation);
+
+            [VtblIndex(20)]
+            HRESULT SetAlphaYIntercept(float alphaYIntercept);
+
+            [VtblIndex(21)]
+            HRESULT SetAlphaSlope(IDCompositionAnimation* animation);
+
+            [VtblIndex(22)]
+            HRESULT SetAlphaSlope(float alphaSlope);
+
+            [VtblIndex(23)]
+            HRESULT SetAlphaDisable(BOOL alphaDisable);
+
+            [VtblIndex(24)]
+            HRESULT SetClampOutput(BOOL clampOutput);
         }
 
         public partial struct Vtbl

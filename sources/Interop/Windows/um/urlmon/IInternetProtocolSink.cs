@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("79EAC9E5-BAF9-11CE-8C82-00AA004BA90B")]
     [NativeTypeName("struct IInternetProtocolSink : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IInternetProtocolSink
+    public unsafe partial struct IInternetProtocolSink : IInternetProtocolSink.Interface
     {
         public void** lpVtbl;
 
@@ -65,6 +65,21 @@ namespace TerraFX.Interop
         public HRESULT ReportResult(HRESULT hrResult, [NativeTypeName("DWORD")] uint dwError, [NativeTypeName("LPCWSTR")] ushort* szResult)
         {
             return ((delegate* unmanaged<IInternetProtocolSink*, HRESULT, uint, ushort*, int>)(lpVtbl[6]))((IInternetProtocolSink*)Unsafe.AsPointer(ref this), hrResult, dwError, szResult);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT Switch(PROTOCOLDATA* pProtocolData);
+
+            [VtblIndex(4)]
+            HRESULT ReportProgress([NativeTypeName("ULONG")] uint ulStatusCode, [NativeTypeName("LPCWSTR")] ushort* szStatusText);
+
+            [VtblIndex(5)]
+            HRESULT ReportData([NativeTypeName("DWORD")] uint grfBSCF, [NativeTypeName("ULONG")] uint ulProgress, [NativeTypeName("ULONG")] uint ulProgressMax);
+
+            [VtblIndex(6)]
+            HRESULT ReportResult(HRESULT hrResult, [NativeTypeName("DWORD")] uint dwError, [NativeTypeName("LPCWSTR")] ushort* szResult);
         }
 
         public partial struct Vtbl

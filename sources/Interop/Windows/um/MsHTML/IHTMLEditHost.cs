@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("3050F6A0-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct IHTMLEditHost : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IHTMLEditHost
+    public unsafe partial struct IHTMLEditHost : IHTMLEditHost.Interface
     {
         public void** lpVtbl;
 
@@ -44,6 +44,12 @@ namespace TerraFX.Interop
         public HRESULT SnapRect(IHTMLElement* pIElement, RECT* prcNew, ELEMENT_CORNER eHandle)
         {
             return ((delegate* unmanaged<IHTMLEditHost*, IHTMLElement*, RECT*, ELEMENT_CORNER, int>)(lpVtbl[3]))((IHTMLEditHost*)Unsafe.AsPointer(ref this), pIElement, prcNew, eHandle);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT SnapRect(IHTMLElement* pIElement, RECT* prcNew, ELEMENT_CORNER eHandle);
         }
 
         public partial struct Vtbl

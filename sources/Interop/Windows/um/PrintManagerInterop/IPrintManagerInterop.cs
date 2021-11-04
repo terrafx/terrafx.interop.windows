@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("C5435A42-8D43-4E7B-A68A-EF311E392087")]
     [NativeTypeName("struct IPrintManagerInterop : IInspectable")]
     [NativeInheritance("IInspectable")]
-    public unsafe partial struct IPrintManagerInterop
+    public unsafe partial struct IPrintManagerInterop : IPrintManagerInterop.Interface
     {
         public void** lpVtbl;
 
@@ -72,6 +72,15 @@ namespace TerraFX.Interop
         public HRESULT ShowPrintUIForWindowAsync(HWND appWindow, [NativeTypeName("const IID &")] Guid* riid, void** asyncOperation)
         {
             return ((delegate* unmanaged<IPrintManagerInterop*, HWND, Guid*, void**, int>)(lpVtbl[7]))((IPrintManagerInterop*)Unsafe.AsPointer(ref this), appWindow, riid, asyncOperation);
+        }
+
+        public interface Interface : IInspectable.Interface
+        {
+            [VtblIndex(6)]
+            HRESULT GetForWindow(HWND appWindow, [NativeTypeName("const IID &")] Guid* riid, void** printManager);
+
+            [VtblIndex(7)]
+            HRESULT ShowPrintUIForWindowAsync(HWND appWindow, [NativeTypeName("const IID &")] Guid* riid, void** asyncOperation);
         }
 
         public partial struct Vtbl

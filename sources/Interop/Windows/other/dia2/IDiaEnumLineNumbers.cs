@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("FE30E878-54AC-44F1-81BA-39DE940F6052")]
     [NativeTypeName("struct IDiaEnumLineNumbers : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IDiaEnumLineNumbers
+    public unsafe partial struct IDiaEnumLineNumbers : IDiaEnumLineNumbers.Interface
     {
         public void** lpVtbl;
 
@@ -86,6 +86,30 @@ namespace TerraFX.Interop
         public HRESULT Clone(IDiaEnumLineNumbers** ppenum)
         {
             return ((delegate* unmanaged<IDiaEnumLineNumbers*, IDiaEnumLineNumbers**, int>)(lpVtbl[9]))((IDiaEnumLineNumbers*)Unsafe.AsPointer(ref this), ppenum);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT get__NewEnum(IUnknown** pRetVal);
+
+            [VtblIndex(4)]
+            HRESULT get_Count([NativeTypeName("LONG *")] int* pRetVal);
+
+            [VtblIndex(5)]
+            HRESULT Item([NativeTypeName("DWORD")] uint index, IDiaLineNumber** lineNumber);
+
+            [VtblIndex(6)]
+            HRESULT Next([NativeTypeName("ULONG")] uint celt, IDiaLineNumber** rgelt, [NativeTypeName("ULONG *")] uint* pceltFetched);
+
+            [VtblIndex(7)]
+            HRESULT Skip([NativeTypeName("ULONG")] uint celt);
+
+            [VtblIndex(8)]
+            HRESULT Reset();
+
+            [VtblIndex(9)]
+            HRESULT Clone(IDiaEnumLineNumbers** ppenum);
         }
 
         public partial struct Vtbl

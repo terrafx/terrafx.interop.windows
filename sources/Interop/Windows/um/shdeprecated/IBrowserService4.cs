@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("639F1BFF-E135-4096-ABD8-E0F504D649A4")]
     [NativeTypeName("struct IBrowserService4 : IBrowserService3")]
     [NativeInheritance("IBrowserService3")]
-    public unsafe partial struct IBrowserService4
+    public unsafe partial struct IBrowserService4 : IBrowserService4.Interface
     {
         public void** lpVtbl;
 
@@ -719,6 +719,18 @@ namespace TerraFX.Interop
         public HRESULT _ResizeAllBorders()
         {
             return ((delegate* unmanaged<IBrowserService4*, int>)(lpVtbl[99]))((IBrowserService4*)Unsafe.AsPointer(ref this));
+        }
+
+        public interface Interface : IBrowserService3.Interface
+        {
+            [VtblIndex(97)]
+            HRESULT ActivateView(BOOL fPendingView);
+
+            [VtblIndex(98)]
+            HRESULT SaveViewState();
+
+            [VtblIndex(99)]
+            HRESULT _ResizeAllBorders();
         }
 
         public partial struct Vtbl

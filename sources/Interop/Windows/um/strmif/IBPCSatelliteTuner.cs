@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("211A8765-03AC-11D1-8D13-00AA00BD8339")]
     [NativeTypeName("struct IBPCSatelliteTuner : IAMTuner")]
     [NativeInheritance("IAMTuner")]
-    public unsafe partial struct IBPCSatelliteTuner
+    public unsafe partial struct IBPCSatelliteTuner : IBPCSatelliteTuner.Interface
     {
         public void** lpVtbl;
 
@@ -163,6 +163,18 @@ namespace TerraFX.Interop
         public HRESULT IsTapingPermitted()
         {
             return ((delegate* unmanaged<IBPCSatelliteTuner*, int>)(lpVtbl[20]))((IBPCSatelliteTuner*)Unsafe.AsPointer(ref this));
+        }
+
+        public interface Interface : IAMTuner.Interface
+        {
+            [VtblIndex(18)]
+            HRESULT get_DefaultSubChannelTypes([NativeTypeName("long *")] int* plDefaultVideoType, [NativeTypeName("long *")] int* plDefaultAudioType);
+
+            [VtblIndex(19)]
+            HRESULT put_DefaultSubChannelTypes([NativeTypeName("long")] int lDefaultVideoType, [NativeTypeName("long")] int lDefaultAudioType);
+
+            [VtblIndex(20)]
+            HRESULT IsTapingPermitted();
         }
 
         public partial struct Vtbl

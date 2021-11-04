@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("1E13E9EC-6B33-4D4A-B5EB-8A92F029F356")]
     [NativeTypeName("struct ITfSystemLangBarItem : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct ITfSystemLangBarItem
+    public unsafe partial struct ITfSystemLangBarItem : ITfSystemLangBarItem.Interface
     {
         public void** lpVtbl;
 
@@ -51,6 +51,15 @@ namespace TerraFX.Interop
         public HRESULT SetTooltipString([NativeTypeName("WCHAR *")] ushort* pchToolTip, [NativeTypeName("ULONG")] uint cch)
         {
             return ((delegate* unmanaged<ITfSystemLangBarItem*, ushort*, uint, int>)(lpVtbl[4]))((ITfSystemLangBarItem*)Unsafe.AsPointer(ref this), pchToolTip, cch);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT SetIcon(HICON hIcon);
+
+            [VtblIndex(4)]
+            HRESULT SetTooltipString([NativeTypeName("WCHAR *")] ushort* pchToolTip, [NativeTypeName("ULONG")] uint cch);
         }
 
         public partial struct Vtbl

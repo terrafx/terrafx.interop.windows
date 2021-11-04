@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("195509B7-5D5E-4E3E-B278-EE3759B367AD")]
     [NativeTypeName("struct IUIAnimationTimerUpdateHandler : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IUIAnimationTimerUpdateHandler
+    public unsafe partial struct IUIAnimationTimerUpdateHandler : IUIAnimationTimerUpdateHandler.Interface
     {
         public void** lpVtbl;
 
@@ -58,6 +58,18 @@ namespace TerraFX.Interop
         public HRESULT ClearTimerClientEventHandler()
         {
             return ((delegate* unmanaged<IUIAnimationTimerUpdateHandler*, int>)(lpVtbl[5]))((IUIAnimationTimerUpdateHandler*)Unsafe.AsPointer(ref this));
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT OnUpdate([NativeTypeName("UI_ANIMATION_SECONDS")] double timeNow, UI_ANIMATION_UPDATE_RESULT* result);
+
+            [VtblIndex(4)]
+            HRESULT SetTimerClientEventHandler(IUIAnimationTimerClientEventHandler* handler);
+
+            [VtblIndex(5)]
+            HRESULT ClearTimerClientEventHandler();
         }
 
         public partial struct Vtbl

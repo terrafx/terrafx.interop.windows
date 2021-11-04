@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("12B81347-1B3A-4A04-AA61-3F768B67FD7E")]
     [NativeTypeName("struct IPublishedApp2 : IPublishedApp")]
     [NativeInheritance("IPublishedApp")]
-    public unsafe partial struct IPublishedApp2
+    public unsafe partial struct IPublishedApp2 : IPublishedApp2.Interface
     {
         public void** lpVtbl;
 
@@ -100,6 +100,12 @@ namespace TerraFX.Interop
         public HRESULT Install2([NativeTypeName("LPSYSTEMTIME")] SYSTEMTIME* pstInstall, HWND hwndParent)
         {
             return ((delegate* unmanaged<IPublishedApp2*, SYSTEMTIME*, HWND, int>)(lpVtbl[11]))((IPublishedApp2*)Unsafe.AsPointer(ref this), pstInstall, hwndParent);
+        }
+
+        public interface Interface : IPublishedApp.Interface
+        {
+            [VtblIndex(11)]
+            HRESULT Install2([NativeTypeName("LPSYSTEMTIME")] SYSTEMTIME* pstInstall, HWND hwndParent);
         }
 
         public partial struct Vtbl

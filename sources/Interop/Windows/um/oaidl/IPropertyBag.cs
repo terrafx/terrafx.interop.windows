@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("55272A00-42CB-11CE-8135-00AA004BB851")]
     [NativeTypeName("struct IPropertyBag : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IPropertyBag
+    public unsafe partial struct IPropertyBag : IPropertyBag.Interface
     {
         public void** lpVtbl;
 
@@ -51,6 +51,15 @@ namespace TerraFX.Interop
         public HRESULT Write([NativeTypeName("LPCOLESTR")] ushort* pszPropName, VARIANT* pVar)
         {
             return ((delegate* unmanaged<IPropertyBag*, ushort*, VARIANT*, int>)(lpVtbl[4]))((IPropertyBag*)Unsafe.AsPointer(ref this), pszPropName, pVar);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT Read([NativeTypeName("LPCOLESTR")] ushort* pszPropName, VARIANT* pVar, IErrorLog* pErrorLog);
+
+            [VtblIndex(4)]
+            HRESULT Write([NativeTypeName("LPCOLESTR")] ushort* pszPropName, VARIANT* pVar);
         }
 
         public partial struct Vtbl

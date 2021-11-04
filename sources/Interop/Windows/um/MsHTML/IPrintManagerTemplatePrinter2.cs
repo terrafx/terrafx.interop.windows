@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("C6403497-7493-4F09-8016-54B03E9BDA69")]
     [NativeTypeName("struct IPrintManagerTemplatePrinter2 : IPrintManagerTemplatePrinter")]
     [NativeInheritance("IPrintManagerTemplatePrinter")]
-    public unsafe partial struct IPrintManagerTemplatePrinter2
+    public unsafe partial struct IPrintManagerTemplatePrinter2 : IPrintManagerTemplatePrinter2.Interface
     {
         public void** lpVtbl;
 
@@ -128,6 +128,18 @@ namespace TerraFX.Interop
         public HRESULT get_percentScale(float* p)
         {
             return ((delegate* unmanaged<IPrintManagerTemplatePrinter2*, float*, int>)(lpVtbl[15]))((IPrintManagerTemplatePrinter2*)Unsafe.AsPointer(ref this), p);
+        }
+
+        public interface Interface : IPrintManagerTemplatePrinter.Interface
+        {
+            [VtblIndex(13)]
+            HRESULT get_showHeaderFooter([NativeTypeName("VARIANT_BOOL *")] short* p);
+
+            [VtblIndex(14)]
+            HRESULT get_shrinkToFit([NativeTypeName("VARIANT_BOOL *")] short* p);
+
+            [VtblIndex(15)]
+            HRESULT get_percentScale(float* p);
         }
 
         public partial struct Vtbl

@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("305106FA-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct IHTMLAttributeCollection4 : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct IHTMLAttributeCollection4
+    public unsafe partial struct IHTMLAttributeCollection4 : IHTMLAttributeCollection4.Interface
     {
         public void** lpVtbl;
 
@@ -121,6 +121,33 @@ namespace TerraFX.Interop
         public HRESULT get_length([NativeTypeName("long *")] int* p)
         {
             return ((delegate* unmanaged<IHTMLAttributeCollection4*, int*, int>)(lpVtbl[14]))((IHTMLAttributeCollection4*)Unsafe.AsPointer(ref this), p);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT getNamedItemNS(VARIANT* pvarNS, [NativeTypeName("BSTR")] ushort* bstrName, IHTMLDOMAttribute2** ppNodeOut);
+
+            [VtblIndex(8)]
+            HRESULT setNamedItemNS(IHTMLDOMAttribute2* pNodeIn, IHTMLDOMAttribute2** ppNodeOut);
+
+            [VtblIndex(9)]
+            HRESULT removeNamedItemNS(VARIANT* pvarNS, [NativeTypeName("BSTR")] ushort* bstrName, IHTMLDOMAttribute2** ppNodeOut);
+
+            [VtblIndex(10)]
+            HRESULT getNamedItem([NativeTypeName("BSTR")] ushort* bstrName, IHTMLDOMAttribute2** ppNodeOut);
+
+            [VtblIndex(11)]
+            HRESULT setNamedItem(IHTMLDOMAttribute2* pNodeIn, IHTMLDOMAttribute2** ppNodeOut);
+
+            [VtblIndex(12)]
+            HRESULT removeNamedItem([NativeTypeName("BSTR")] ushort* bstrName, IHTMLDOMAttribute2** ppNodeOut);
+
+            [VtblIndex(13)]
+            HRESULT item([NativeTypeName("long")] int index, IHTMLDOMAttribute2** ppNodeOut);
+
+            [VtblIndex(14)]
+            HRESULT get_length([NativeTypeName("long *")] int* p);
         }
 
         public partial struct Vtbl

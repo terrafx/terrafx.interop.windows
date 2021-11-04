@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("FEAAF403-C1D8-450D-AA05-E0CCEE7502A8")]
     [NativeTypeName("struct ISpatialAudioObjectRenderStreamBase : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct ISpatialAudioObjectRenderStreamBase
+    public unsafe partial struct ISpatialAudioObjectRenderStreamBase : ISpatialAudioObjectRenderStreamBase.Interface
     {
         public void** lpVtbl;
 
@@ -86,6 +86,30 @@ namespace TerraFX.Interop
         public HRESULT EndUpdatingAudioObjects()
         {
             return ((delegate* unmanaged<ISpatialAudioObjectRenderStreamBase*, int>)(lpVtbl[9]))((ISpatialAudioObjectRenderStreamBase*)Unsafe.AsPointer(ref this));
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetAvailableDynamicObjectCount([NativeTypeName("UINT32 *")] uint* value);
+
+            [VtblIndex(4)]
+            HRESULT GetService([NativeTypeName("const IID &")] Guid* riid, void** service);
+
+            [VtblIndex(5)]
+            HRESULT Start();
+
+            [VtblIndex(6)]
+            HRESULT Stop();
+
+            [VtblIndex(7)]
+            HRESULT Reset();
+
+            [VtblIndex(8)]
+            HRESULT BeginUpdatingAudioObjects([NativeTypeName("UINT32 *")] uint* availableDynamicObjectCount, [NativeTypeName("UINT32 *")] uint* frameCountPerBuffer);
+
+            [VtblIndex(9)]
+            HRESULT EndUpdatingAudioObjects();
         }
 
         public partial struct Vtbl

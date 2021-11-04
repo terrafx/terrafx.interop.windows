@@ -10,7 +10,7 @@ namespace TerraFX.Interop
 {
     [NativeTypeName("struct ID3D11On12On7 : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct ID3D11On12On7
+    public unsafe partial struct ID3D11On12On7 : ID3D11On12On7.Interface
     {
         public void** lpVtbl;
 
@@ -63,6 +63,21 @@ namespace TerraFX.Interop
         public void* GetThreadLastCreatedResource()
         {
             return ((delegate* unmanaged<ID3D11On12On7*, void*>)(lpVtbl[6]))((ID3D11On12On7*)Unsafe.AsPointer(ref this));
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            void SetThreadDeviceCreationParams(ID3D12Device* pDevice, ID3D12CommandQueue* pGraphicsQueue);
+
+            [VtblIndex(4)]
+            void SetThreadResourceCreationParams(ID3D12Resource* pResource);
+
+            [VtblIndex(5)]
+            ID3D11On12On7Device* GetThreadLastCreatedDevice();
+
+            [VtblIndex(6)]
+            void* GetThreadLastCreatedResource();
         }
 
         public partial struct Vtbl

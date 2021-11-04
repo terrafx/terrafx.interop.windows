@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("2933BF89-7B36-11D2-B20E-00C04F983E60")]
     [NativeTypeName("struct IXMLDOMProcessingInstruction : IXMLDOMNode")]
     [NativeInheritance("IXMLDOMNode")]
-    public unsafe partial struct IXMLDOMProcessingInstruction
+    public unsafe partial struct IXMLDOMProcessingInstruction : IXMLDOMProcessingInstruction.Interface
     {
         public void** lpVtbl;
 
@@ -338,6 +338,18 @@ namespace TerraFX.Interop
         public HRESULT put_data([NativeTypeName("BSTR")] ushort* value)
         {
             return ((delegate* unmanaged<IXMLDOMProcessingInstruction*, ushort*, int>)(lpVtbl[45]))((IXMLDOMProcessingInstruction*)Unsafe.AsPointer(ref this), value);
+        }
+
+        public interface Interface : IXMLDOMNode.Interface
+        {
+            [VtblIndex(43)]
+            HRESULT get_target([NativeTypeName("BSTR *")] ushort** name);
+
+            [VtblIndex(44)]
+            HRESULT get_data([NativeTypeName("BSTR *")] ushort** value);
+
+            [VtblIndex(45)]
+            HRESULT put_data([NativeTypeName("BSTR")] ushort* value);
         }
 
         public partial struct Vtbl

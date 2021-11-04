@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("EB5E760C-09EF-45C0-B510-70830CE31E6A")]
     [NativeTypeName("struct IZoneIdentifier2 : IZoneIdentifier")]
     [NativeInheritance("IZoneIdentifier")]
-    public unsafe partial struct IZoneIdentifier2
+    public unsafe partial struct IZoneIdentifier2 : IZoneIdentifier2.Interface
     {
         public void** lpVtbl;
 
@@ -100,6 +100,27 @@ namespace TerraFX.Interop
         public HRESULT RemoveAppZoneId()
         {
             return ((delegate* unmanaged<IZoneIdentifier2*, int>)(lpVtbl[11]))((IZoneIdentifier2*)Unsafe.AsPointer(ref this));
+        }
+
+        public interface Interface : IZoneIdentifier.Interface
+        {
+            [VtblIndex(6)]
+            HRESULT GetLastWriterPackageFamilyName([NativeTypeName("LPWSTR *")] ushort** packageFamilyName);
+
+            [VtblIndex(7)]
+            HRESULT SetLastWriterPackageFamilyName([NativeTypeName("LPCWSTR")] ushort* packageFamilyName);
+
+            [VtblIndex(8)]
+            HRESULT RemoveLastWriterPackageFamilyName();
+
+            [VtblIndex(9)]
+            HRESULT GetAppZoneId([NativeTypeName("DWORD *")] uint* zone);
+
+            [VtblIndex(10)]
+            HRESULT SetAppZoneId([NativeTypeName("DWORD")] uint zone);
+
+            [VtblIndex(11)]
+            HRESULT RemoveAppZoneId();
         }
 
         public partial struct Vtbl

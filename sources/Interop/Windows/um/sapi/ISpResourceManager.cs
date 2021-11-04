@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("93384E18-5014-43D5-ADBB-A78E055926BD")]
     [NativeTypeName("struct ISpResourceManager : IServiceProvider")]
     [NativeInheritance("IServiceProvider")]
-    public unsafe partial struct ISpResourceManager
+    public unsafe partial struct ISpResourceManager : ISpResourceManager.Interface
     {
         public void** lpVtbl;
 
@@ -58,6 +58,15 @@ namespace TerraFX.Interop
         public HRESULT GetObject([NativeTypeName("const GUID &")] Guid* guidServiceId, [NativeTypeName("const IID &")] Guid* ObjectCLSID, [NativeTypeName("const IID &")] Guid* ObjectIID, BOOL fReleaseWhenLastExternalRefReleased, void** ppObject)
         {
             return ((delegate* unmanaged<ISpResourceManager*, Guid*, Guid*, Guid*, BOOL, void**, int>)(lpVtbl[5]))((ISpResourceManager*)Unsafe.AsPointer(ref this), guidServiceId, ObjectCLSID, ObjectIID, fReleaseWhenLastExternalRefReleased, ppObject);
+        }
+
+        public interface Interface : IServiceProvider.Interface
+        {
+            [VtblIndex(4)]
+            HRESULT SetObject([NativeTypeName("const GUID &")] Guid* guidServiceId, IUnknown* pUnkObject);
+
+            [VtblIndex(5)]
+            HRESULT GetObject([NativeTypeName("const GUID &")] Guid* guidServiceId, [NativeTypeName("const IID &")] Guid* ObjectCLSID, [NativeTypeName("const IID &")] Guid* ObjectIID, BOOL fReleaseWhenLastExternalRefReleased, void** ppObject);
         }
 
         public partial struct Vtbl

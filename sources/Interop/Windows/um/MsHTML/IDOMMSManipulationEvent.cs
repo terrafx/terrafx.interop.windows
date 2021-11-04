@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("30510816-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct IDOMMSManipulationEvent : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct IDOMMSManipulationEvent
+    public unsafe partial struct IDOMMSManipulationEvent : IDOMMSManipulationEvent.Interface
     {
         public void** lpVtbl;
 
@@ -86,6 +86,18 @@ namespace TerraFX.Interop
         public HRESULT initMSManipulationEvent([NativeTypeName("BSTR")] ushort* eventType, [NativeTypeName("VARIANT_BOOL")] short canBubble, [NativeTypeName("VARIANT_BOOL")] short cancelable, IHTMLWindow2* viewArg, [NativeTypeName("long")] int detailArg, [NativeTypeName("long")] int lastState, [NativeTypeName("long")] int currentState)
         {
             return ((delegate* unmanaged<IDOMMSManipulationEvent*, ushort*, short, short, IHTMLWindow2*, int, int, int, int>)(lpVtbl[9]))((IDOMMSManipulationEvent*)Unsafe.AsPointer(ref this), eventType, canBubble, cancelable, viewArg, detailArg, lastState, currentState);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT get_lastState([NativeTypeName("long *")] int* p);
+
+            [VtblIndex(8)]
+            HRESULT get_currentState([NativeTypeName("long *")] int* p);
+
+            [VtblIndex(9)]
+            HRESULT initMSManipulationEvent([NativeTypeName("BSTR")] ushort* eventType, [NativeTypeName("VARIANT_BOOL")] short canBubble, [NativeTypeName("VARIANT_BOOL")] short cancelable, IHTMLWindow2* viewArg, [NativeTypeName("long")] int detailArg, [NativeTypeName("long")] int lastState, [NativeTypeName("long")] int currentState);
         }
 
         public partial struct Vtbl

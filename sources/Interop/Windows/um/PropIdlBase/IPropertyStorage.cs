@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("00000138-0000-0000-C000-000000000046")]
     [NativeTypeName("struct IPropertyStorage : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IPropertyStorage
+    public unsafe partial struct IPropertyStorage : IPropertyStorage.Interface
     {
         public void** lpVtbl;
 
@@ -121,6 +121,45 @@ namespace TerraFX.Interop
         public HRESULT Stat(STATPROPSETSTG* pstatpsstg)
         {
             return ((delegate* unmanaged<IPropertyStorage*, STATPROPSETSTG*, int>)(lpVtbl[14]))((IPropertyStorage*)Unsafe.AsPointer(ref this), pstatpsstg);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT ReadMultiple([NativeTypeName("ULONG")] uint cpspec, [NativeTypeName("const PROPSPEC []")] PROPSPEC* rgpspec, [NativeTypeName("PROPVARIANT []")] PROPVARIANT* rgpropvar);
+
+            [VtblIndex(4)]
+            HRESULT WriteMultiple([NativeTypeName("ULONG")] uint cpspec, [NativeTypeName("const PROPSPEC []")] PROPSPEC* rgpspec, [NativeTypeName("const PROPVARIANT []")] PROPVARIANT* rgpropvar, [NativeTypeName("PROPID")] uint propidNameFirst);
+
+            [VtblIndex(5)]
+            HRESULT DeleteMultiple([NativeTypeName("ULONG")] uint cpspec, [NativeTypeName("const PROPSPEC []")] PROPSPEC* rgpspec);
+
+            [VtblIndex(6)]
+            HRESULT ReadPropertyNames([NativeTypeName("ULONG")] uint cpropid, [NativeTypeName("const PROPID []")] uint* rgpropid, [NativeTypeName("LPOLESTR []")] ushort** rglpwstrName);
+
+            [VtblIndex(7)]
+            HRESULT WritePropertyNames([NativeTypeName("ULONG")] uint cpropid, [NativeTypeName("const PROPID []")] uint* rgpropid, [NativeTypeName("const LPOLESTR []")] ushort** rglpwstrName);
+
+            [VtblIndex(8)]
+            HRESULT DeletePropertyNames([NativeTypeName("ULONG")] uint cpropid, [NativeTypeName("const PROPID []")] uint* rgpropid);
+
+            [VtblIndex(9)]
+            HRESULT Commit([NativeTypeName("DWORD")] uint grfCommitFlags);
+
+            [VtblIndex(10)]
+            HRESULT Revert();
+
+            [VtblIndex(11)]
+            HRESULT Enum(IEnumSTATPROPSTG** ppenum);
+
+            [VtblIndex(12)]
+            HRESULT SetTimes([NativeTypeName("const FILETIME *")] FILETIME* pctime, [NativeTypeName("const FILETIME *")] FILETIME* patime, [NativeTypeName("const FILETIME *")] FILETIME* pmtime);
+
+            [VtblIndex(13)]
+            HRESULT SetClass([NativeTypeName("const IID &")] Guid* clsid);
+
+            [VtblIndex(14)]
+            HRESULT Stat(STATPROPSETSTG* pstatpsstg);
         }
 
         public partial struct Vtbl

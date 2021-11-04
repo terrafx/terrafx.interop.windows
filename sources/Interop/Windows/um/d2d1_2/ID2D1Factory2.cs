@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("94F81A73-9212-4376-9C58-B16A3A0D3992")]
     [NativeTypeName("struct ID2D1Factory2 : ID2D1Factory1")]
     [NativeInheritance("ID2D1Factory1")]
-    public unsafe partial struct ID2D1Factory2
+    public unsafe partial struct ID2D1Factory2 : ID2D1Factory2.Interface
     {
         public void** lpVtbl;
 
@@ -232,6 +232,12 @@ namespace TerraFX.Interop
         public HRESULT CreateDevice(IDXGIDevice* dxgiDevice, ID2D1Device1** d2dDevice1)
         {
             return ((delegate* unmanaged<ID2D1Factory2*, IDXGIDevice*, ID2D1Device1**, int>)(lpVtbl[27]))((ID2D1Factory2*)Unsafe.AsPointer(ref this), dxgiDevice, d2dDevice1);
+        }
+
+        public interface Interface : ID2D1Factory1.Interface
+        {
+            [VtblIndex(27)]
+            HRESULT CreateDevice(IDXGIDevice* dxgiDevice, ID2D1Device1** d2dDevice1);
         }
 
         public partial struct Vtbl

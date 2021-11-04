@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("6F79D558-3E96-4549-A1D1-7D75D2288814")]
     [NativeTypeName("struct IPropertyDescription : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IPropertyDescription
+    public unsafe partial struct IPropertyDescription : IPropertyDescription.Interface
     {
         public void** lpVtbl;
 
@@ -184,6 +184,72 @@ namespace TerraFX.Interop
         public HRESULT IsValueCanonical([NativeTypeName("const PROPVARIANT &")] PROPVARIANT* propvar)
         {
             return ((delegate* unmanaged<IPropertyDescription*, PROPVARIANT*, int>)(lpVtbl[23]))((IPropertyDescription*)Unsafe.AsPointer(ref this), propvar);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetPropertyKey(PROPERTYKEY* pkey);
+
+            [VtblIndex(4)]
+            HRESULT GetCanonicalName([NativeTypeName("LPWSTR *")] ushort** ppszName);
+
+            [VtblIndex(5)]
+            HRESULT GetPropertyType([NativeTypeName("VARTYPE *")] ushort* pvartype);
+
+            [VtblIndex(6)]
+            HRESULT GetDisplayName([NativeTypeName("LPWSTR *")] ushort** ppszName);
+
+            [VtblIndex(7)]
+            HRESULT GetEditInvitation([NativeTypeName("LPWSTR *")] ushort** ppszInvite);
+
+            [VtblIndex(8)]
+            HRESULT GetTypeFlags(PROPDESC_TYPE_FLAGS mask, PROPDESC_TYPE_FLAGS* ppdtFlags);
+
+            [VtblIndex(9)]
+            HRESULT GetViewFlags(PROPDESC_VIEW_FLAGS* ppdvFlags);
+
+            [VtblIndex(10)]
+            HRESULT GetDefaultColumnWidth(uint* pcxChars);
+
+            [VtblIndex(11)]
+            HRESULT GetDisplayType(PROPDESC_DISPLAYTYPE* pdisplaytype);
+
+            [VtblIndex(12)]
+            HRESULT GetColumnState([NativeTypeName("SHCOLSTATEF *")] uint* pcsFlags);
+
+            [VtblIndex(13)]
+            HRESULT GetGroupingRange(PROPDESC_GROUPING_RANGE* pgr);
+
+            [VtblIndex(14)]
+            HRESULT GetRelativeDescriptionType(PROPDESC_RELATIVEDESCRIPTION_TYPE* prdt);
+
+            [VtblIndex(15)]
+            HRESULT GetRelativeDescription([NativeTypeName("const PROPVARIANT &")] PROPVARIANT* propvar1, [NativeTypeName("const PROPVARIANT &")] PROPVARIANT* propvar2, [NativeTypeName("LPWSTR *")] ushort** ppszDesc1, [NativeTypeName("LPWSTR *")] ushort** ppszDesc2);
+
+            [VtblIndex(16)]
+            HRESULT GetSortDescription(PROPDESC_SORTDESCRIPTION* psd);
+
+            [VtblIndex(17)]
+            HRESULT GetSortDescriptionLabel(BOOL fDescending, [NativeTypeName("LPWSTR *")] ushort** ppszDescription);
+
+            [VtblIndex(18)]
+            HRESULT GetAggregationType(PROPDESC_AGGREGATION_TYPE* paggtype);
+
+            [VtblIndex(19)]
+            HRESULT GetConditionType(PROPDESC_CONDITION_TYPE* pcontype, CONDITION_OPERATION* popDefault);
+
+            [VtblIndex(20)]
+            HRESULT GetEnumTypeList([NativeTypeName("const IID &")] Guid* riid, void** ppv);
+
+            [VtblIndex(21)]
+            HRESULT CoerceToCanonicalValue(PROPVARIANT* ppropvar);
+
+            [VtblIndex(22)]
+            HRESULT FormatForDisplay([NativeTypeName("const PROPVARIANT &")] PROPVARIANT* propvar, PROPDESC_FORMAT_FLAGS pdfFlags, [NativeTypeName("LPWSTR *")] ushort** ppszDisplay);
+
+            [VtblIndex(23)]
+            HRESULT IsValueCanonical([NativeTypeName("const PROPVARIANT &")] PROPVARIANT* propvar);
         }
 
         public partial struct Vtbl

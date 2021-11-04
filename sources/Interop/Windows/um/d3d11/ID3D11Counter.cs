@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("6E8C49FB-A371-4770-B440-29086022B741")]
     [NativeTypeName("struct ID3D11Counter : ID3D11Asynchronous")]
     [NativeInheritance("ID3D11Asynchronous")]
-    public unsafe partial struct ID3D11Counter
+    public unsafe partial struct ID3D11Counter : ID3D11Counter.Interface
     {
         public void** lpVtbl;
 
@@ -79,6 +79,12 @@ namespace TerraFX.Interop
         public void GetDesc(D3D11_COUNTER_DESC* pDesc)
         {
             ((delegate* unmanaged<ID3D11Counter*, D3D11_COUNTER_DESC*, void>)(lpVtbl[8]))((ID3D11Counter*)Unsafe.AsPointer(ref this), pDesc);
+        }
+
+        public interface Interface : ID3D11Asynchronous.Interface
+        {
+            [VtblIndex(8)]
+            void GetDesc(D3D11_COUNTER_DESC* pDesc);
         }
 
         public partial struct Vtbl

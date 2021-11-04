@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("A415E162-157D-417D-8A8C-0AB26C7D2781")]
     [NativeTypeName("struct ITfReverseConversion : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct ITfReverseConversion
+    public unsafe partial struct ITfReverseConversion : ITfReverseConversion.Interface
     {
         public void** lpVtbl;
 
@@ -44,6 +44,12 @@ namespace TerraFX.Interop
         public HRESULT DoReverseConversion([NativeTypeName("LPCWSTR")] ushort* lpstr, ITfReverseConversionList** ppList)
         {
             return ((delegate* unmanaged<ITfReverseConversion*, ushort*, ITfReverseConversionList**, int>)(lpVtbl[3]))((ITfReverseConversion*)Unsafe.AsPointer(ref this), lpstr, ppList);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT DoReverseConversion([NativeTypeName("LPCWSTR")] ushort* lpstr, ITfReverseConversionList** ppList);
         }
 
         public partial struct Vtbl

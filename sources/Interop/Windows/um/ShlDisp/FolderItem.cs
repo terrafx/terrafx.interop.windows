@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("FAC32C80-CBE4-11CE-8350-444553540000")]
     [NativeTypeName("struct FolderItem : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct FolderItem
+    public unsafe partial struct FolderItem : FolderItem.Interface
     {
         public void** lpVtbl;
 
@@ -184,6 +184,60 @@ namespace TerraFX.Interop
         public HRESULT InvokeVerb(VARIANT vVerb)
         {
             return ((delegate* unmanaged<FolderItem*, VARIANT, int>)(lpVtbl[23]))((FolderItem*)Unsafe.AsPointer(ref this), vVerb);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT get_Application(IDispatch** ppid);
+
+            [VtblIndex(8)]
+            HRESULT get_Parent(IDispatch** ppid);
+
+            [VtblIndex(9)]
+            HRESULT get_Name([NativeTypeName("BSTR *")] ushort** pbs);
+
+            [VtblIndex(10)]
+            HRESULT put_Name([NativeTypeName("BSTR")] ushort* bs);
+
+            [VtblIndex(11)]
+            HRESULT get_Path([NativeTypeName("BSTR *")] ushort** pbs);
+
+            [VtblIndex(12)]
+            HRESULT get_GetLink(IDispatch** ppid);
+
+            [VtblIndex(13)]
+            HRESULT get_GetFolder(IDispatch** ppid);
+
+            [VtblIndex(14)]
+            HRESULT get_IsLink([NativeTypeName("VARIANT_BOOL *")] short* pb);
+
+            [VtblIndex(15)]
+            HRESULT get_IsFolder([NativeTypeName("VARIANT_BOOL *")] short* pb);
+
+            [VtblIndex(16)]
+            HRESULT get_IsFileSystem([NativeTypeName("VARIANT_BOOL *")] short* pb);
+
+            [VtblIndex(17)]
+            HRESULT get_IsBrowsable([NativeTypeName("VARIANT_BOOL *")] short* pb);
+
+            [VtblIndex(18)]
+            HRESULT get_ModifyDate([NativeTypeName("DATE *")] double* pdt);
+
+            [VtblIndex(19)]
+            HRESULT put_ModifyDate([NativeTypeName("DATE")] double dt);
+
+            [VtblIndex(20)]
+            HRESULT get_Size([NativeTypeName("LONG *")] int* pul);
+
+            [VtblIndex(21)]
+            HRESULT get_Type([NativeTypeName("BSTR *")] ushort** pbs);
+
+            [VtblIndex(22)]
+            HRESULT Verbs(FolderItemVerbs** ppfic);
+
+            [VtblIndex(23)]
+            HRESULT InvokeVerb(VARIANT vVerb);
         }
 
         public partial struct Vtbl

@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("27354152-8F64-5B0F-8F00-5D77AFBE261E")]
     [NativeTypeName("struct IDiscFormat2 : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct IDiscFormat2
+    public unsafe partial struct IDiscFormat2 : IDiscFormat2.Interface
     {
         public void** lpVtbl;
 
@@ -100,6 +100,24 @@ namespace TerraFX.Interop
         public HRESULT get_SupportedMediaTypes(SAFEARRAY** value)
         {
             return ((delegate* unmanaged<IDiscFormat2*, SAFEARRAY**, int>)(lpVtbl[11]))((IDiscFormat2*)Unsafe.AsPointer(ref this), value);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT IsRecorderSupported(IDiscRecorder2* recorder, [NativeTypeName("VARIANT_BOOL *")] short* value);
+
+            [VtblIndex(8)]
+            HRESULT IsCurrentMediaSupported(IDiscRecorder2* recorder, [NativeTypeName("VARIANT_BOOL *")] short* value);
+
+            [VtblIndex(9)]
+            HRESULT get_MediaPhysicallyBlank([NativeTypeName("VARIANT_BOOL *")] short* value);
+
+            [VtblIndex(10)]
+            HRESULT get_MediaHeuristicallyBlank([NativeTypeName("VARIANT_BOOL *")] short* value);
+
+            [VtblIndex(11)]
+            HRESULT get_SupportedMediaTypes(SAFEARRAY** value);
         }
 
         public partial struct Vtbl

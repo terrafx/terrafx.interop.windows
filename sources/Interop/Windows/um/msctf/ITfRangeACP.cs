@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("057A6296-029B-4154-B79A-0D461D4EA94C")]
     [NativeTypeName("struct ITfRangeACP : ITfRange")]
     [NativeInheritance("ITfRange")]
-    public unsafe partial struct ITfRangeACP
+    public unsafe partial struct ITfRangeACP : ITfRangeACP.Interface
     {
         public void** lpVtbl;
 
@@ -205,6 +205,15 @@ namespace TerraFX.Interop
         public HRESULT SetExtent([NativeTypeName("LONG")] int acpAnchor, [NativeTypeName("LONG")] int cch)
         {
             return ((delegate* unmanaged<ITfRangeACP*, int, int, int>)(lpVtbl[26]))((ITfRangeACP*)Unsafe.AsPointer(ref this), acpAnchor, cch);
+        }
+
+        public interface Interface : ITfRange.Interface
+        {
+            [VtblIndex(25)]
+            HRESULT GetExtent([NativeTypeName("LONG *")] int* pacpAnchor, [NativeTypeName("LONG *")] int* pcch);
+
+            [VtblIndex(26)]
+            HRESULT SetExtent([NativeTypeName("LONG")] int acpAnchor, [NativeTypeName("LONG")] int cch);
         }
 
         public partial struct Vtbl

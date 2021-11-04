@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("82BC481C-6B9B-4030-AEDB-7EE3D1DF1E63")]
     [NativeTypeName("struct ID3D12DeviceRemovedExtendedDataSettings : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct ID3D12DeviceRemovedExtendedDataSettings
+    public unsafe partial struct ID3D12DeviceRemovedExtendedDataSettings : ID3D12DeviceRemovedExtendedDataSettings.Interface
     {
         public void** lpVtbl;
 
@@ -58,6 +58,18 @@ namespace TerraFX.Interop
         public void SetWatsonDumpEnablement(D3D12_DRED_ENABLEMENT Enablement)
         {
             ((delegate* unmanaged<ID3D12DeviceRemovedExtendedDataSettings*, D3D12_DRED_ENABLEMENT, void>)(lpVtbl[5]))((ID3D12DeviceRemovedExtendedDataSettings*)Unsafe.AsPointer(ref this), Enablement);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            void SetAutoBreadcrumbsEnablement(D3D12_DRED_ENABLEMENT Enablement);
+
+            [VtblIndex(4)]
+            void SetPageFaultEnablement(D3D12_DRED_ENABLEMENT Enablement);
+
+            [VtblIndex(5)]
+            void SetWatsonDumpEnablement(D3D12_DRED_ENABLEMENT Enablement);
         }
 
         public partial struct Vtbl

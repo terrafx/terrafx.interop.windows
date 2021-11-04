@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("A4966EED-76DB-44DA-84C1-EE9A7AFB20A8")]
     [NativeTypeName("struct IDXGIFactory7 : IDXGIFactory6")]
     [NativeInheritance("IDXGIFactory6")]
-    public unsafe partial struct IDXGIFactory7
+    public unsafe partial struct IDXGIFactory7 : IDXGIFactory7.Interface
     {
         public void** lpVtbl;
 
@@ -240,6 +240,15 @@ namespace TerraFX.Interop
         public HRESULT UnregisterAdaptersChangedEvent([NativeTypeName("DWORD")] uint dwCookie)
         {
             return ((delegate* unmanaged<IDXGIFactory7*, uint, int>)(lpVtbl[31]))((IDXGIFactory7*)Unsafe.AsPointer(ref this), dwCookie);
+        }
+
+        public interface Interface : IDXGIFactory6.Interface
+        {
+            [VtblIndex(30)]
+            HRESULT RegisterAdaptersChangedEvent(HANDLE hEvent, [NativeTypeName("DWORD *")] uint* pdwCookie);
+
+            [VtblIndex(31)]
+            HRESULT UnregisterAdaptersChangedEvent([NativeTypeName("DWORD")] uint dwCookie);
         }
 
         public partial struct Vtbl

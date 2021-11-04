@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("24230452-FE54-40CC-94F3-FCC394C340D6")]
     [NativeTypeName("struct IMFMediaEngineTransferSource : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IMFMediaEngineTransferSource
+    public unsafe partial struct IMFMediaEngineTransferSource : IMFMediaEngineTransferSource.Interface
     {
         public void** lpVtbl;
 
@@ -44,6 +44,12 @@ namespace TerraFX.Interop
         public HRESULT TransferSourceToMediaEngine(IMFMediaEngine* destination)
         {
             return ((delegate* unmanaged<IMFMediaEngineTransferSource*, IMFMediaEngine*, int>)(lpVtbl[3]))((IMFMediaEngineTransferSource*)Unsafe.AsPointer(ref this), destination);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT TransferSourceToMediaEngine(IMFMediaEngine* destination);
         }
 
         public partial struct Vtbl

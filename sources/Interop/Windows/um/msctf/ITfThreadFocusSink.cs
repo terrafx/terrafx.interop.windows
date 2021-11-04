@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("C0F1DB0C-3A20-405C-A303-96B6010A885F")]
     [NativeTypeName("struct ITfThreadFocusSink : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct ITfThreadFocusSink
+    public unsafe partial struct ITfThreadFocusSink : ITfThreadFocusSink.Interface
     {
         public void** lpVtbl;
 
@@ -51,6 +51,15 @@ namespace TerraFX.Interop
         public HRESULT OnKillThreadFocus()
         {
             return ((delegate* unmanaged<ITfThreadFocusSink*, int>)(lpVtbl[4]))((ITfThreadFocusSink*)Unsafe.AsPointer(ref this));
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT OnSetThreadFocus();
+
+            [VtblIndex(4)]
+            HRESULT OnKillThreadFocus();
         }
 
         public partial struct Vtbl

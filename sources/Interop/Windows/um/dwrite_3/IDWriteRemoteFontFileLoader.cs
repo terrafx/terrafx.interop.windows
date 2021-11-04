@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("68648C83-6EDE-46C0-AB46-20083A887FDE")]
     [NativeTypeName("struct IDWriteRemoteFontFileLoader : IDWriteFontFileLoader")]
     [NativeInheritance("IDWriteFontFileLoader")]
-    public unsafe partial struct IDWriteRemoteFontFileLoader
+    public unsafe partial struct IDWriteRemoteFontFileLoader : IDWriteRemoteFontFileLoader.Interface
     {
         public void** lpVtbl;
 
@@ -65,6 +65,18 @@ namespace TerraFX.Interop
         public HRESULT CreateFontFileReferenceFromUrl(IDWriteFactory* factory, [NativeTypeName("const WCHAR *")] ushort* baseUrl, [NativeTypeName("const WCHAR *")] ushort* fontFileUrl, IDWriteFontFile** fontFile)
         {
             return ((delegate* unmanaged<IDWriteRemoteFontFileLoader*, IDWriteFactory*, ushort*, ushort*, IDWriteFontFile**, int>)(lpVtbl[6]))((IDWriteRemoteFontFileLoader*)Unsafe.AsPointer(ref this), factory, baseUrl, fontFileUrl, fontFile);
+        }
+
+        public interface Interface : IDWriteFontFileLoader.Interface
+        {
+            [VtblIndex(4)]
+            HRESULT CreateRemoteStreamFromKey([NativeTypeName("const void *")] void* fontFileReferenceKey, [NativeTypeName("UINT32")] uint fontFileReferenceKeySize, IDWriteRemoteFontFileStream** fontFileStream);
+
+            [VtblIndex(5)]
+            HRESULT GetLocalityFromKey([NativeTypeName("const void *")] void* fontFileReferenceKey, [NativeTypeName("UINT32")] uint fontFileReferenceKeySize, DWRITE_LOCALITY* locality);
+
+            [VtblIndex(6)]
+            HRESULT CreateFontFileReferenceFromUrl(IDWriteFactory* factory, [NativeTypeName("const WCHAR *")] ushort* baseUrl, [NativeTypeName("const WCHAR *")] ushort* fontFileUrl, IDWriteFontFile** fontFile);
         }
 
         public partial struct Vtbl

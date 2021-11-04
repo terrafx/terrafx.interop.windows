@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("00000116-0000-0000-C000-000000000046")]
     [NativeTypeName("struct IOleInPlaceFrame : IOleInPlaceUIWindow")]
     [NativeInheritance("IOleInPlaceUIWindow")]
-    public unsafe partial struct IOleInPlaceFrame
+    public unsafe partial struct IOleInPlaceFrame : IOleInPlaceFrame.Interface
     {
         public void** lpVtbl;
 
@@ -121,6 +121,27 @@ namespace TerraFX.Interop
         public HRESULT TranslateAccelerator([NativeTypeName("LPMSG")] MSG* lpmsg, [NativeTypeName("WORD")] ushort wID)
         {
             return ((delegate* unmanaged<IOleInPlaceFrame*, MSG*, ushort, int>)(lpVtbl[14]))((IOleInPlaceFrame*)Unsafe.AsPointer(ref this), lpmsg, wID);
+        }
+
+        public interface Interface : IOleInPlaceUIWindow.Interface
+        {
+            [VtblIndex(9)]
+            HRESULT InsertMenus(HMENU hmenuShared, [NativeTypeName("LPOLEMENUGROUPWIDTHS")] OLEMENUGROUPWIDTHS* lpMenuWidths);
+
+            [VtblIndex(10)]
+            HRESULT SetMenu(HMENU hmenuShared, [NativeTypeName("HOLEMENU")] HGLOBAL holemenu, HWND hwndActiveObject);
+
+            [VtblIndex(11)]
+            HRESULT RemoveMenus(HMENU hmenuShared);
+
+            [VtblIndex(12)]
+            HRESULT SetStatusText([NativeTypeName("LPCOLESTR")] ushort* pszStatusText);
+
+            [VtblIndex(13)]
+            HRESULT EnableModeless(BOOL fEnable);
+
+            [VtblIndex(14)]
+            HRESULT TranslateAccelerator([NativeTypeName("LPMSG")] MSG* lpmsg, [NativeTypeName("WORD")] ushort wID);
         }
 
         public partial struct Vtbl

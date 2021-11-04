@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("62B3B8FB-F6E7-41BE-BDCB-056B1C29EFC0")]
     [NativeTypeName("struct ISpeechRecoResultTimes : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct ISpeechRecoResultTimes
+    public unsafe partial struct ISpeechRecoResultTimes : ISpeechRecoResultTimes.Interface
     {
         public void** lpVtbl;
 
@@ -93,6 +93,21 @@ namespace TerraFX.Interop
         public HRESULT get_OffsetFromStart(VARIANT* OffsetFromStart)
         {
             return ((delegate* unmanaged<ISpeechRecoResultTimes*, VARIANT*, int>)(lpVtbl[10]))((ISpeechRecoResultTimes*)Unsafe.AsPointer(ref this), OffsetFromStart);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT get_StreamTime(VARIANT* Time);
+
+            [VtblIndex(8)]
+            HRESULT get_Length(VARIANT* Length);
+
+            [VtblIndex(9)]
+            HRESULT get_TickCount([NativeTypeName("long *")] int* TickCount);
+
+            [VtblIndex(10)]
+            HRESULT get_OffsetFromStart(VARIANT* OffsetFromStart);
         }
 
         public partial struct Vtbl

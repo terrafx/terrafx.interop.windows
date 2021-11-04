@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("3F7F31AC-E15F-11D0-9C25-00C04FC99C8E")]
     [NativeTypeName("struct IXMLElement : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct IXMLElement
+    public unsafe partial struct IXMLElement : IXMLElement.Interface
     {
         public void** lpVtbl;
 
@@ -149,6 +149,45 @@ namespace TerraFX.Interop
         public HRESULT removeChild(IXMLElement* pChildElem)
         {
             return ((delegate* unmanaged<IXMLElement*, IXMLElement*, int>)(lpVtbl[18]))((IXMLElement*)Unsafe.AsPointer(ref this), pChildElem);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT get_tagName([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(8)]
+            HRESULT put_tagName([NativeTypeName("BSTR")] ushort* p);
+
+            [VtblIndex(9)]
+            HRESULT get_parent(IXMLElement** ppParent);
+
+            [VtblIndex(10)]
+            HRESULT setAttribute([NativeTypeName("BSTR")] ushort* strPropertyName, VARIANT PropertyValue);
+
+            [VtblIndex(11)]
+            HRESULT getAttribute([NativeTypeName("BSTR")] ushort* strPropertyName, VARIANT* PropertyValue);
+
+            [VtblIndex(12)]
+            HRESULT removeAttribute([NativeTypeName("BSTR")] ushort* strPropertyName);
+
+            [VtblIndex(13)]
+            HRESULT get_children(IXMLElementCollection** pp);
+
+            [VtblIndex(14)]
+            HRESULT get_type([NativeTypeName("long *")] int* plType);
+
+            [VtblIndex(15)]
+            HRESULT get_text([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(16)]
+            HRESULT put_text([NativeTypeName("BSTR")] ushort* p);
+
+            [VtblIndex(17)]
+            HRESULT addChild(IXMLElement* pChildElem, [NativeTypeName("long")] int lIndex, [NativeTypeName("long")] int lReserved);
+
+            [VtblIndex(18)]
+            HRESULT removeChild(IXMLElement* pChildElem);
         }
 
         public partial struct Vtbl

@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("AB9D8661-F7E8-4EF4-9861-89F334F94E74")]
     [NativeTypeName("struct IMFTimecodeTranslate : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IMFTimecodeTranslate
+    public unsafe partial struct IMFTimecodeTranslate : IMFTimecodeTranslate.Interface
     {
         public void** lpVtbl;
 
@@ -65,6 +65,21 @@ namespace TerraFX.Interop
         public HRESULT EndConvertHNSToTimecode(IMFAsyncResult* pResult, PROPVARIANT* pPropVarTimecode)
         {
             return ((delegate* unmanaged<IMFTimecodeTranslate*, IMFAsyncResult*, PROPVARIANT*, int>)(lpVtbl[6]))((IMFTimecodeTranslate*)Unsafe.AsPointer(ref this), pResult, pPropVarTimecode);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT BeginConvertTimecodeToHNS([NativeTypeName("const PROPVARIANT *")] PROPVARIANT* pPropVarTimecode, IMFAsyncCallback* pCallback, IUnknown* punkState);
+
+            [VtblIndex(4)]
+            HRESULT EndConvertTimecodeToHNS(IMFAsyncResult* pResult, [NativeTypeName("MFTIME *")] long* phnsTime);
+
+            [VtblIndex(5)]
+            HRESULT BeginConvertHNSToTimecode([NativeTypeName("MFTIME")] long hnsTime, IMFAsyncCallback* pCallback, IUnknown* punkState);
+
+            [VtblIndex(6)]
+            HRESULT EndConvertHNSToTimecode(IMFAsyncResult* pResult, PROPVARIANT* pPropVarTimecode);
         }
 
         public partial struct Vtbl

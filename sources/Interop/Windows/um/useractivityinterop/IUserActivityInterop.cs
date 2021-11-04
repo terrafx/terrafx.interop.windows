@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("1ADE314D-0E0A-40D9-824C-9A088A50059F")]
     [NativeTypeName("struct IUserActivityInterop : IInspectable")]
     [NativeInheritance("IInspectable")]
-    public unsafe partial struct IUserActivityInterop
+    public unsafe partial struct IUserActivityInterop : IUserActivityInterop.Interface
     {
         public void** lpVtbl;
 
@@ -65,6 +65,12 @@ namespace TerraFX.Interop
         public HRESULT CreateSessionForWindow(HWND window, [NativeTypeName("const IID &")] Guid* iid, void** value)
         {
             return ((delegate* unmanaged<IUserActivityInterop*, HWND, Guid*, void**, int>)(lpVtbl[6]))((IUserActivityInterop*)Unsafe.AsPointer(ref this), window, iid, value);
+        }
+
+        public interface Interface : IInspectable.Interface
+        {
+            [VtblIndex(6)]
+            HRESULT CreateSessionForWindow(HWND window, [NativeTypeName("const IID &")] Guid* iid, void** value);
         }
 
         public partial struct Vtbl

@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("657804FA-D6AD-4496-8A60-352752AF4F89")]
     [NativeTypeName("struct IAudioEndpointVolumeCallback : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IAudioEndpointVolumeCallback
+    public unsafe partial struct IAudioEndpointVolumeCallback : IAudioEndpointVolumeCallback.Interface
     {
         public void** lpVtbl;
 
@@ -44,6 +44,12 @@ namespace TerraFX.Interop
         public HRESULT OnNotify([NativeTypeName("PAUDIO_VOLUME_NOTIFICATION_DATA")] AUDIO_VOLUME_NOTIFICATION_DATA* pNotify)
         {
             return ((delegate* unmanaged<IAudioEndpointVolumeCallback*, AUDIO_VOLUME_NOTIFICATION_DATA*, int>)(lpVtbl[3]))((IAudioEndpointVolumeCallback*)Unsafe.AsPointer(ref this), pNotify);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT OnNotify([NativeTypeName("PAUDIO_VOLUME_NOTIFICATION_DATA")] AUDIO_VOLUME_NOTIFICATION_DATA* pNotify);
         }
 
         public partial struct Vtbl

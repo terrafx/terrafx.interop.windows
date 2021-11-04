@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("3B67DFA8-E3DD-4E61-B640-46C2F3D739DC")]
     [NativeTypeName("struct IDCompositionArithmeticCompositeEffect : IDCompositionFilterEffect")]
     [NativeInheritance("IDCompositionFilterEffect")]
-    public unsafe partial struct IDCompositionArithmeticCompositeEffect
+    public unsafe partial struct IDCompositionArithmeticCompositeEffect : IDCompositionArithmeticCompositeEffect.Interface
     {
         public void** lpVtbl;
 
@@ -114,6 +114,39 @@ namespace TerraFX.Interop
         public HRESULT SetCoefficient4(float Coefficient4)
         {
             return ((delegate* unmanaged<IDCompositionArithmeticCompositeEffect*, float, int>)(lpVtbl[13]))((IDCompositionArithmeticCompositeEffect*)Unsafe.AsPointer(ref this), Coefficient4);
+        }
+
+        public interface Interface : IDCompositionFilterEffect.Interface
+        {
+            [VtblIndex(4)]
+            HRESULT SetCoefficients([NativeTypeName("const D2D1_VECTOR_4F &")] D2D_VECTOR_4F* coefficients);
+
+            [VtblIndex(5)]
+            HRESULT SetClampOutput(BOOL clampoutput);
+
+            [VtblIndex(6)]
+            HRESULT SetCoefficient1(IDCompositionAnimation* animation);
+
+            [VtblIndex(7)]
+            HRESULT SetCoefficient1(float Coeffcient1);
+
+            [VtblIndex(8)]
+            HRESULT SetCoefficient2(IDCompositionAnimation* animation);
+
+            [VtblIndex(9)]
+            HRESULT SetCoefficient2(float Coefficient2);
+
+            [VtblIndex(10)]
+            HRESULT SetCoefficient3(IDCompositionAnimation* animation);
+
+            [VtblIndex(11)]
+            HRESULT SetCoefficient3(float Coefficient3);
+
+            [VtblIndex(12)]
+            HRESULT SetCoefficient4(IDCompositionAnimation* animation);
+
+            [VtblIndex(13)]
+            HRESULT SetCoefficient4(float Coefficient4);
         }
 
         public partial struct Vtbl

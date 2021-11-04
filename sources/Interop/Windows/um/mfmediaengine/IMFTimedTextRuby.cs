@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("76C6A6F5-4955-4DE5-B27B-14B734CC14B4")]
     [NativeTypeName("struct IMFTimedTextRuby : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IMFTimedTextRuby
+    public unsafe partial struct IMFTimedTextRuby : IMFTimedTextRuby.Interface
     {
         public void** lpVtbl;
 
@@ -65,6 +65,21 @@ namespace TerraFX.Interop
         public HRESULT GetRubyReserve(MF_TIMED_TEXT_RUBY_RESERVE* value)
         {
             return ((delegate* unmanaged<IMFTimedTextRuby*, MF_TIMED_TEXT_RUBY_RESERVE*, int>)(lpVtbl[6]))((IMFTimedTextRuby*)Unsafe.AsPointer(ref this), value);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetRubyText([NativeTypeName("LPWSTR *")] ushort** rubyText);
+
+            [VtblIndex(4)]
+            HRESULT GetRubyPosition(MF_TIMED_TEXT_RUBY_POSITION* value);
+
+            [VtblIndex(5)]
+            HRESULT GetRubyAlign(MF_TIMED_TEXT_RUBY_ALIGN* value);
+
+            [VtblIndex(6)]
+            HRESULT GetRubyReserve(MF_TIMED_TEXT_RUBY_RESERVE* value);
         }
 
         public partial struct Vtbl

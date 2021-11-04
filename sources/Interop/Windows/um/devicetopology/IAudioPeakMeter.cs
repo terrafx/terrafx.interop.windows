@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("DD79923C-0599-45E0-B8B6-C8DF7DB6E796")]
     [NativeTypeName("struct IAudioPeakMeter : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IAudioPeakMeter
+    public unsafe partial struct IAudioPeakMeter : IAudioPeakMeter.Interface
     {
         public void** lpVtbl;
 
@@ -51,6 +51,15 @@ namespace TerraFX.Interop
         public HRESULT GetLevel(uint nChannel, float* pfLevel)
         {
             return ((delegate* unmanaged<IAudioPeakMeter*, uint, float*, int>)(lpVtbl[4]))((IAudioPeakMeter*)Unsafe.AsPointer(ref this), nChannel, pfLevel);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetChannelCount(uint* pcChannels);
+
+            [VtblIndex(4)]
+            HRESULT GetLevel(uint nChannel, float* pfLevel);
         }
 
         public partial struct Vtbl

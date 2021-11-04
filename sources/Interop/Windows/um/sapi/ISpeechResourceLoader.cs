@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("B9AC5783-FCD0-4B21-B119-B4F8DA8FD2C3")]
     [NativeTypeName("struct ISpeechResourceLoader : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct ISpeechResourceLoader
+    public unsafe partial struct ISpeechResourceLoader : ISpeechResourceLoader.Interface
     {
         public void** lpVtbl;
 
@@ -86,6 +86,18 @@ namespace TerraFX.Interop
         public HRESULT ReleaseLocalCopy([NativeTypeName("BSTR")] ushort* pbstrLocalPath)
         {
             return ((delegate* unmanaged<ISpeechResourceLoader*, ushort*, int>)(lpVtbl[9]))((ISpeechResourceLoader*)Unsafe.AsPointer(ref this), pbstrLocalPath);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT LoadResource([NativeTypeName("BSTR")] ushort* bstrResourceUri, [NativeTypeName("VARIANT_BOOL")] short fAlwaysReload, IUnknown** pStream, [NativeTypeName("BSTR *")] ushort** pbstrMIMEType, [NativeTypeName("VARIANT_BOOL *")] short* pfModified, [NativeTypeName("BSTR *")] ushort** pbstrRedirectUrl);
+
+            [VtblIndex(8)]
+            HRESULT GetLocalCopy([NativeTypeName("BSTR")] ushort* bstrResourceUri, [NativeTypeName("BSTR *")] ushort** pbstrLocalPath, [NativeTypeName("BSTR *")] ushort** pbstrMIMEType, [NativeTypeName("BSTR *")] ushort** pbstrRedirectUrl);
+
+            [VtblIndex(9)]
+            HRESULT ReleaseLocalCopy([NativeTypeName("BSTR")] ushort* pbstrLocalPath);
         }
 
         public partial struct Vtbl

@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("F938C991-3029-11CF-8C44-00AA006B6814")]
     [NativeTypeName("struct IAMPhysicalPinInfo : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IAMPhysicalPinInfo
+    public unsafe partial struct IAMPhysicalPinInfo : IAMPhysicalPinInfo.Interface
     {
         public void** lpVtbl;
 
@@ -44,6 +44,12 @@ namespace TerraFX.Interop
         public HRESULT GetPhysicalType([NativeTypeName("long *")] int* pType, [NativeTypeName("LPOLESTR *")] ushort** ppszType)
         {
             return ((delegate* unmanaged<IAMPhysicalPinInfo*, int*, ushort**, int>)(lpVtbl[3]))((IAMPhysicalPinInfo*)Unsafe.AsPointer(ref this), pType, ppszType);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetPhysicalType([NativeTypeName("long *")] int* pType, [NativeTypeName("LPOLESTR *")] ushort** ppszType);
         }
 
         public partial struct Vtbl

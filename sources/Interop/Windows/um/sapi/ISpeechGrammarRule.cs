@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("AFE719CF-5DD1-44F2-999C-7A399F1CFCCC")]
     [NativeTypeName("struct ISpeechGrammarRule : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct ISpeechGrammarRule
+    public unsafe partial struct ISpeechGrammarRule : ISpeechGrammarRule.Interface
     {
         public void** lpVtbl;
 
@@ -114,6 +114,30 @@ namespace TerraFX.Interop
         public HRESULT AddState(ISpeechGrammarRuleState** State)
         {
             return ((delegate* unmanaged<ISpeechGrammarRule*, ISpeechGrammarRuleState**, int>)(lpVtbl[13]))((ISpeechGrammarRule*)Unsafe.AsPointer(ref this), State);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT get_Attributes(SpeechRuleAttributes* Attributes);
+
+            [VtblIndex(8)]
+            HRESULT get_InitialState(ISpeechGrammarRuleState** State);
+
+            [VtblIndex(9)]
+            HRESULT get_Name([NativeTypeName("BSTR *")] ushort** Name);
+
+            [VtblIndex(10)]
+            HRESULT get_Id([NativeTypeName("long *")] int* Id);
+
+            [VtblIndex(11)]
+            HRESULT Clear();
+
+            [VtblIndex(12)]
+            HRESULT AddResource([NativeTypeName("const BSTR")] ushort* ResourceName, [NativeTypeName("const BSTR")] ushort* ResourceValue);
+
+            [VtblIndex(13)]
+            HRESULT AddState(ISpeechGrammarRuleState** State);
         }
 
         public partial struct Vtbl

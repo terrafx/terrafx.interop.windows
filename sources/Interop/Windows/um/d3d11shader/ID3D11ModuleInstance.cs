@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("469E07F7-045A-48D5-AA12-68A478CDF75D")]
     [NativeTypeName("struct ID3D11ModuleInstance : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct ID3D11ModuleInstance
+    public unsafe partial struct ID3D11ModuleInstance : ID3D11ModuleInstance.Interface
     {
         public void** lpVtbl;
 
@@ -107,6 +107,39 @@ namespace TerraFX.Interop
         public HRESULT BindResourceAsUnorderedAccessViewByName([NativeTypeName("LPCSTR")] sbyte* pSrvName, uint uDstUavSlot, uint uCount)
         {
             return ((delegate* unmanaged<ID3D11ModuleInstance*, sbyte*, uint, uint, int>)(lpVtbl[12]))((ID3D11ModuleInstance*)Unsafe.AsPointer(ref this), pSrvName, uDstUavSlot, uCount);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT BindConstantBuffer(uint uSrcSlot, uint uDstSlot, uint cbDstOffset);
+
+            [VtblIndex(4)]
+            HRESULT BindConstantBufferByName([NativeTypeName("LPCSTR")] sbyte* pName, uint uDstSlot, uint cbDstOffset);
+
+            [VtblIndex(5)]
+            HRESULT BindResource(uint uSrcSlot, uint uDstSlot, uint uCount);
+
+            [VtblIndex(6)]
+            HRESULT BindResourceByName([NativeTypeName("LPCSTR")] sbyte* pName, uint uDstSlot, uint uCount);
+
+            [VtblIndex(7)]
+            HRESULT BindSampler(uint uSrcSlot, uint uDstSlot, uint uCount);
+
+            [VtblIndex(8)]
+            HRESULT BindSamplerByName([NativeTypeName("LPCSTR")] sbyte* pName, uint uDstSlot, uint uCount);
+
+            [VtblIndex(9)]
+            HRESULT BindUnorderedAccessView(uint uSrcSlot, uint uDstSlot, uint uCount);
+
+            [VtblIndex(10)]
+            HRESULT BindUnorderedAccessViewByName([NativeTypeName("LPCSTR")] sbyte* pName, uint uDstSlot, uint uCount);
+
+            [VtblIndex(11)]
+            HRESULT BindResourceAsUnorderedAccessView(uint uSrcSrvSlot, uint uDstUavSlot, uint uCount);
+
+            [VtblIndex(12)]
+            HRESULT BindResourceAsUnorderedAccessViewByName([NativeTypeName("LPCSTR")] sbyte* pSrvName, uint uDstUavSlot, uint uCount);
         }
 
         public partial struct Vtbl

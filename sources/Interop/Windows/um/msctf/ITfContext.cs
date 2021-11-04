@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("AA80E7FD-2021-11D2-93E0-0060B067B86E")]
     [NativeTypeName("struct ITfContext : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct ITfContext
+    public unsafe partial struct ITfContext : ITfContext.Interface
     {
         public void** lpVtbl;
 
@@ -142,6 +142,54 @@ namespace TerraFX.Interop
         public HRESULT CreateRangeBackup([NativeTypeName("TfEditCookie")] uint ec, ITfRange* pRange, ITfRangeBackup** ppBackup)
         {
             return ((delegate* unmanaged<ITfContext*, uint, ITfRange*, ITfRangeBackup**, int>)(lpVtbl[17]))((ITfContext*)Unsafe.AsPointer(ref this), ec, pRange, ppBackup);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT RequestEditSession([NativeTypeName("TfClientId")] uint tid, ITfEditSession* pes, [NativeTypeName("DWORD")] uint dwFlags, HRESULT* phrSession);
+
+            [VtblIndex(4)]
+            HRESULT InWriteSession([NativeTypeName("TfClientId")] uint tid, BOOL* pfWriteSession);
+
+            [VtblIndex(5)]
+            HRESULT GetSelection([NativeTypeName("TfEditCookie")] uint ec, [NativeTypeName("ULONG")] uint ulIndex, [NativeTypeName("ULONG")] uint ulCount, TF_SELECTION* pSelection, [NativeTypeName("ULONG *")] uint* pcFetched);
+
+            [VtblIndex(6)]
+            HRESULT SetSelection([NativeTypeName("TfEditCookie")] uint ec, [NativeTypeName("ULONG")] uint ulCount, [NativeTypeName("const TF_SELECTION *")] TF_SELECTION* pSelection);
+
+            [VtblIndex(7)]
+            HRESULT GetStart([NativeTypeName("TfEditCookie")] uint ec, ITfRange** ppStart);
+
+            [VtblIndex(8)]
+            HRESULT GetEnd([NativeTypeName("TfEditCookie")] uint ec, ITfRange** ppEnd);
+
+            [VtblIndex(9)]
+            HRESULT GetActiveView(ITfContextView** ppView);
+
+            [VtblIndex(10)]
+            HRESULT EnumViews(IEnumTfContextViews** ppEnum);
+
+            [VtblIndex(11)]
+            HRESULT GetStatus([NativeTypeName("TF_STATUS *")] TS_STATUS* pdcs);
+
+            [VtblIndex(12)]
+            HRESULT GetProperty([NativeTypeName("const GUID &")] Guid* guidProp, ITfProperty** ppProp);
+
+            [VtblIndex(13)]
+            HRESULT GetAppProperty([NativeTypeName("const GUID &")] Guid* guidProp, ITfReadOnlyProperty** ppProp);
+
+            [VtblIndex(14)]
+            HRESULT TrackProperties([NativeTypeName("const GUID **")] Guid** prgProp, [NativeTypeName("ULONG")] uint cProp, [NativeTypeName("const GUID **")] Guid** prgAppProp, [NativeTypeName("ULONG")] uint cAppProp, ITfReadOnlyProperty** ppProperty);
+
+            [VtblIndex(15)]
+            HRESULT EnumProperties(IEnumTfProperties** ppEnum);
+
+            [VtblIndex(16)]
+            HRESULT GetDocumentMgr(ITfDocumentMgr** ppDm);
+
+            [VtblIndex(17)]
+            HRESULT CreateRangeBackup([NativeTypeName("TfEditCookie")] uint ec, ITfRange* pRange, ITfRangeBackup** ppBackup);
         }
 
         public partial struct Vtbl

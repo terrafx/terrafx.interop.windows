@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("62BAA2D2-AB54-41B7-B872-787E0106A421")]
     [NativeTypeName("struct ID2D1PathGeometry1 : ID2D1PathGeometry")]
     [NativeInheritance("ID2D1PathGeometry")]
-    public unsafe partial struct ID2D1PathGeometry1
+    public unsafe partial struct ID2D1PathGeometry1 : ID2D1PathGeometry1.Interface
     {
         public void** lpVtbl;
 
@@ -235,6 +235,12 @@ namespace TerraFX.Interop
         public HRESULT ComputePointAndSegmentAtLength(float length, [NativeTypeName("UINT32")] uint startSegment, [NativeTypeName("const D2D1_MATRIX_3X2_F *")] D2D_MATRIX_3X2_F* worldTransform, float flatteningTolerance, D2D1_POINT_DESCRIPTION* pointDescription)
         {
             return ((delegate* unmanaged<ID2D1PathGeometry1*, float, uint, D2D_MATRIX_3X2_F*, float, D2D1_POINT_DESCRIPTION*, int>)(lpVtbl[21]))((ID2D1PathGeometry1*)Unsafe.AsPointer(ref this), length, startSegment, worldTransform, flatteningTolerance, pointDescription);
+        }
+
+        public interface Interface : ID2D1PathGeometry.Interface
+        {
+            [VtblIndex(21)]
+            HRESULT ComputePointAndSegmentAtLength(float length, [NativeTypeName("UINT32")] uint startSegment, [NativeTypeName("const D2D1_MATRIX_3X2_F *")] D2D_MATRIX_3X2_F* worldTransform, float flatteningTolerance, D2D1_POINT_DESCRIPTION* pointDescription);
         }
 
         public partial struct Vtbl

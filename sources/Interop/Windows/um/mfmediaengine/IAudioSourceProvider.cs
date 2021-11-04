@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("EBBAF249-AFC2-4582-91C6-B60DF2E84954")]
     [NativeTypeName("struct IAudioSourceProvider : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IAudioSourceProvider
+    public unsafe partial struct IAudioSourceProvider : IAudioSourceProvider.Interface
     {
         public void** lpVtbl;
 
@@ -44,6 +44,12 @@ namespace TerraFX.Interop
         public HRESULT ProvideInput([NativeTypeName("DWORD")] uint dwSampleCount, [NativeTypeName("DWORD *")] uint* pdwChannelCount, float* pInterleavedAudioData)
         {
             return ((delegate* unmanaged<IAudioSourceProvider*, uint, uint*, float*, int>)(lpVtbl[3]))((IAudioSourceProvider*)Unsafe.AsPointer(ref this), dwSampleCount, pdwChannelCount, pInterleavedAudioData);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT ProvideInput([NativeTypeName("DWORD")] uint dwSampleCount, [NativeTypeName("DWORD *")] uint* pdwChannelCount, float* pInterleavedAudioData);
         }
 
         public partial struct Vtbl

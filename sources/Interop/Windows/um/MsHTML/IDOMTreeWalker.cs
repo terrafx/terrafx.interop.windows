@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("30510748-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct IDOMTreeWalker : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct IDOMTreeWalker
+    public unsafe partial struct IDOMTreeWalker : IDOMTreeWalker.Interface
     {
         public void** lpVtbl;
 
@@ -156,6 +156,48 @@ namespace TerraFX.Interop
         public HRESULT nextNode(IDispatch** ppRetNode)
         {
             return ((delegate* unmanaged<IDOMTreeWalker*, IDispatch**, int>)(lpVtbl[19]))((IDOMTreeWalker*)Unsafe.AsPointer(ref this), ppRetNode);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT get_root(IDispatch** p);
+
+            [VtblIndex(8)]
+            HRESULT get_whatToShow([NativeTypeName("ULONG *")] uint* p);
+
+            [VtblIndex(9)]
+            HRESULT get_filter(IDispatch** p);
+
+            [VtblIndex(10)]
+            HRESULT get_expandEntityReferences([NativeTypeName("VARIANT_BOOL *")] short* p);
+
+            [VtblIndex(11)]
+            HRESULT putref_currentNode(IDispatch* v);
+
+            [VtblIndex(12)]
+            HRESULT get_currentNode(IDispatch** p);
+
+            [VtblIndex(13)]
+            HRESULT parentNode(IDispatch** ppRetNode);
+
+            [VtblIndex(14)]
+            HRESULT firstChild(IDispatch** ppRetNode);
+
+            [VtblIndex(15)]
+            HRESULT lastChild(IDispatch** ppRetNode);
+
+            [VtblIndex(16)]
+            HRESULT previousSibling(IDispatch** ppRetNode);
+
+            [VtblIndex(17)]
+            HRESULT nextSibling(IDispatch** ppRetNode);
+
+            [VtblIndex(18)]
+            HRESULT previousNode(IDispatch** ppRetNode);
+
+            [VtblIndex(19)]
+            HRESULT nextNode(IDispatch** ppRetNode);
         }
 
         public partial struct Vtbl

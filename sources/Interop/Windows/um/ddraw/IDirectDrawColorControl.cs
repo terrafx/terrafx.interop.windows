@@ -10,7 +10,7 @@ namespace TerraFX.Interop
 {
     [NativeTypeName("struct IDirectDrawColorControl : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IDirectDrawColorControl
+    public unsafe partial struct IDirectDrawColorControl : IDirectDrawColorControl.Interface
     {
         public void** lpVtbl;
 
@@ -49,6 +49,15 @@ namespace TerraFX.Interop
         public HRESULT SetColorControls([NativeTypeName("LPDDCOLORCONTROL")] DDCOLORCONTROL* param0)
         {
             return ((delegate* unmanaged<IDirectDrawColorControl*, DDCOLORCONTROL*, int>)(lpVtbl[4]))((IDirectDrawColorControl*)Unsafe.AsPointer(ref this), param0);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetColorControls([NativeTypeName("LPDDCOLORCONTROL")] DDCOLORCONTROL* param0);
+
+            [VtblIndex(4)]
+            HRESULT SetColorControls([NativeTypeName("LPDDCOLORCONTROL")] DDCOLORCONTROL* param0);
         }
 
         public partial struct Vtbl

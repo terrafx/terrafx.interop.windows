@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("3050F216-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct IHTMLDialog : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct IHTMLDialog
+    public unsafe partial struct IHTMLDialog : IHTMLDialog.Interface
     {
         public void** lpVtbl;
 
@@ -163,6 +163,51 @@ namespace TerraFX.Interop
         public HRESULT toString([NativeTypeName("BSTR *")] ushort** String)
         {
             return ((delegate* unmanaged<IHTMLDialog*, ushort**, int>)(lpVtbl[20]))((IHTMLDialog*)Unsafe.AsPointer(ref this), String);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT put_dialogTop(VARIANT v);
+
+            [VtblIndex(8)]
+            HRESULT get_dialogTop(VARIANT* p);
+
+            [VtblIndex(9)]
+            HRESULT put_dialogLeft(VARIANT v);
+
+            [VtblIndex(10)]
+            HRESULT get_dialogLeft(VARIANT* p);
+
+            [VtblIndex(11)]
+            HRESULT put_dialogWidth(VARIANT v);
+
+            [VtblIndex(12)]
+            HRESULT get_dialogWidth(VARIANT* p);
+
+            [VtblIndex(13)]
+            HRESULT put_dialogHeight(VARIANT v);
+
+            [VtblIndex(14)]
+            HRESULT get_dialogHeight(VARIANT* p);
+
+            [VtblIndex(15)]
+            HRESULT get_dialogArguments(VARIANT* p);
+
+            [VtblIndex(16)]
+            HRESULT get_menuArguments(VARIANT* p);
+
+            [VtblIndex(17)]
+            HRESULT put_returnValue(VARIANT v);
+
+            [VtblIndex(18)]
+            HRESULT get_returnValue(VARIANT* p);
+
+            [VtblIndex(19)]
+            HRESULT close();
+
+            [VtblIndex(20)]
+            HRESULT toString([NativeTypeName("BSTR *")] ushort** String);
         }
 
         public partial struct Vtbl

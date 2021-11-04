@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("C1960960-17F5-11D1-ABE1-00A0C905F375")]
     [NativeTypeName("struct IAMStreamSelect : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IAMStreamSelect
+    public unsafe partial struct IAMStreamSelect : IAMStreamSelect.Interface
     {
         public void** lpVtbl;
 
@@ -58,6 +58,18 @@ namespace TerraFX.Interop
         public HRESULT Enable([NativeTypeName("long")] int lIndex, [NativeTypeName("DWORD")] uint dwFlags)
         {
             return ((delegate* unmanaged<IAMStreamSelect*, int, uint, int>)(lpVtbl[5]))((IAMStreamSelect*)Unsafe.AsPointer(ref this), lIndex, dwFlags);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT Count([NativeTypeName("DWORD *")] uint* pcStreams);
+
+            [VtblIndex(4)]
+            HRESULT Info([NativeTypeName("long")] int lIndex, AM_MEDIA_TYPE** ppmt, [NativeTypeName("DWORD *")] uint* pdwFlags, [NativeTypeName("LCID *")] uint* plcid, [NativeTypeName("DWORD *")] uint* pdwGroup, [NativeTypeName("LPWSTR *")] ushort** ppszName, IUnknown** ppObject, IUnknown** ppUnk);
+
+            [VtblIndex(5)]
+            HRESULT Enable([NativeTypeName("long")] int lIndex, [NativeTypeName("DWORD")] uint dwFlags);
         }
 
         public partial struct Vtbl

@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("30510528-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct ISVGGradientElement : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct ISVGGradientElement
+    public unsafe partial struct ISVGGradientElement : ISVGGradientElement.Interface
     {
         public void** lpVtbl;
 
@@ -107,6 +107,27 @@ namespace TerraFX.Interop
         public HRESULT get_spreadMethod(ISVGAnimatedEnumeration** p)
         {
             return ((delegate* unmanaged<ISVGGradientElement*, ISVGAnimatedEnumeration**, int>)(lpVtbl[12]))((ISVGGradientElement*)Unsafe.AsPointer(ref this), p);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT putref_gradientUnits(ISVGAnimatedEnumeration* v);
+
+            [VtblIndex(8)]
+            HRESULT get_gradientUnits(ISVGAnimatedEnumeration** p);
+
+            [VtblIndex(9)]
+            HRESULT putref_gradientTransform(ISVGAnimatedTransformList* v);
+
+            [VtblIndex(10)]
+            HRESULT get_gradientTransform(ISVGAnimatedTransformList** p);
+
+            [VtblIndex(11)]
+            HRESULT putref_spreadMethod(ISVGAnimatedEnumeration* v);
+
+            [VtblIndex(12)]
+            HRESULT get_spreadMethod(ISVGAnimatedEnumeration** p);
         }
 
         public partial struct Vtbl

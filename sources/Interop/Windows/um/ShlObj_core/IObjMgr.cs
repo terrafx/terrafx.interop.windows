@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("00BB2761-6A77-11D0-A535-00C04FD7D062")]
     [NativeTypeName("struct IObjMgr : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IObjMgr
+    public unsafe partial struct IObjMgr : IObjMgr.Interface
     {
         public void** lpVtbl;
 
@@ -51,6 +51,15 @@ namespace TerraFX.Interop
         public HRESULT Remove(IUnknown* punk)
         {
             return ((delegate* unmanaged<IObjMgr*, IUnknown*, int>)(lpVtbl[4]))((IObjMgr*)Unsafe.AsPointer(ref this), punk);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT Append(IUnknown* punk);
+
+            [VtblIndex(4)]
+            HRESULT Remove(IUnknown* punk);
         }
 
         public partial struct Vtbl

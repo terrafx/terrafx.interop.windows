@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("72755049-5FF7-435D-8348-4BE97CFA6C7C")]
     [NativeTypeName("struct IDWriteFontFileEnumerator : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IDWriteFontFileEnumerator
+    public unsafe partial struct IDWriteFontFileEnumerator : IDWriteFontFileEnumerator.Interface
     {
         public void** lpVtbl;
 
@@ -51,6 +51,15 @@ namespace TerraFX.Interop
         public HRESULT GetCurrentFontFile(IDWriteFontFile** fontFile)
         {
             return ((delegate* unmanaged<IDWriteFontFileEnumerator*, IDWriteFontFile**, int>)(lpVtbl[4]))((IDWriteFontFileEnumerator*)Unsafe.AsPointer(ref this), fontFile);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT MoveNext(BOOL* hasCurrentFile);
+
+            [VtblIndex(4)]
+            HRESULT GetCurrentFontFile(IDWriteFontFile** fontFile);
         }
 
         public partial struct Vtbl

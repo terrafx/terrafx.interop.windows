@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("E7A1AF80-4D96-11CF-960C-0080C7F4EE85")]
     [NativeTypeName("struct IShellFolderViewDual : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct IShellFolderViewDual
+    public unsafe partial struct IShellFolderViewDual : IShellFolderViewDual.Interface
     {
         public void** lpVtbl;
 
@@ -128,6 +128,36 @@ namespace TerraFX.Interop
         public HRESULT get_ViewOptions([NativeTypeName("long *")] int* plViewOptions)
         {
             return ((delegate* unmanaged<IShellFolderViewDual*, int*, int>)(lpVtbl[15]))((IShellFolderViewDual*)Unsafe.AsPointer(ref this), plViewOptions);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT get_Application(IDispatch** ppid);
+
+            [VtblIndex(8)]
+            HRESULT get_Parent(IDispatch** ppid);
+
+            [VtblIndex(9)]
+            HRESULT get_Folder(Folder** ppid);
+
+            [VtblIndex(10)]
+            HRESULT SelectedItems(FolderItems** ppid);
+
+            [VtblIndex(11)]
+            HRESULT get_FocusedItem(FolderItem** ppid);
+
+            [VtblIndex(12)]
+            HRESULT SelectItem(VARIANT* pvfi, int dwFlags);
+
+            [VtblIndex(13)]
+            HRESULT PopupItemMenu(FolderItem* pfi, VARIANT vx, VARIANT vy, [NativeTypeName("BSTR *")] ushort** pbs);
+
+            [VtblIndex(14)]
+            HRESULT get_Script(IDispatch** ppDisp);
+
+            [VtblIndex(15)]
+            HRESULT get_ViewOptions([NativeTypeName("long *")] int* plViewOptions);
         }
 
         public partial struct Vtbl

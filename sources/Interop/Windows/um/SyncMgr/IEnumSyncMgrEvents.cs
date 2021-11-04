@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("C81A1D4E-8CF7-4683-80E0-BCAE88D677B6")]
     [NativeTypeName("struct IEnumSyncMgrEvents : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IEnumSyncMgrEvents
+    public unsafe partial struct IEnumSyncMgrEvents : IEnumSyncMgrEvents.Interface
     {
         public void** lpVtbl;
 
@@ -65,6 +65,21 @@ namespace TerraFX.Interop
         public HRESULT Clone(IEnumSyncMgrEvents** ppenum)
         {
             return ((delegate* unmanaged<IEnumSyncMgrEvents*, IEnumSyncMgrEvents**, int>)(lpVtbl[6]))((IEnumSyncMgrEvents*)Unsafe.AsPointer(ref this), ppenum);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT Next([NativeTypeName("ULONG")] uint celt, ISyncMgrEvent** rgelt, [NativeTypeName("ULONG *")] uint* pceltFetched);
+
+            [VtblIndex(4)]
+            HRESULT Skip([NativeTypeName("ULONG")] uint celt);
+
+            [VtblIndex(5)]
+            HRESULT Reset();
+
+            [VtblIndex(6)]
+            HRESULT Clone(IEnumSyncMgrEvents** ppenum);
         }
 
         public partial struct Vtbl

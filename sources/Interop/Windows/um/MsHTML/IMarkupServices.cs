@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("3050F4A0-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct IMarkupServices : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IMarkupServices
+    public unsafe partial struct IMarkupServices : IMarkupServices.Interface
     {
         public void** lpVtbl;
 
@@ -177,6 +177,69 @@ namespace TerraFX.Interop
         public HRESULT EndUndoUnit()
         {
             return ((delegate* unmanaged<IMarkupServices*, int>)(lpVtbl[22]))((IMarkupServices*)Unsafe.AsPointer(ref this));
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT CreateMarkupPointer(IMarkupPointer** ppPointer);
+
+            [VtblIndex(4)]
+            HRESULT CreateMarkupContainer(IMarkupContainer** ppMarkupContainer);
+
+            [VtblIndex(5)]
+            HRESULT CreateElement(ELEMENT_TAG_ID tagID, [NativeTypeName("OLECHAR *")] ushort* pchAttributes, IHTMLElement** ppElement);
+
+            [VtblIndex(6)]
+            HRESULT CloneElement(IHTMLElement* pElemCloneThis, IHTMLElement** ppElementTheClone);
+
+            [VtblIndex(7)]
+            HRESULT InsertElement(IHTMLElement* pElementInsert, IMarkupPointer* pPointerStart, IMarkupPointer* pPointerFinish);
+
+            [VtblIndex(8)]
+            HRESULT RemoveElement(IHTMLElement* pElementRemove);
+
+            [VtblIndex(9)]
+            HRESULT Remove(IMarkupPointer* pPointerStart, IMarkupPointer* pPointerFinish);
+
+            [VtblIndex(10)]
+            HRESULT Copy(IMarkupPointer* pPointerSourceStart, IMarkupPointer* pPointerSourceFinish, IMarkupPointer* pPointerTarget);
+
+            [VtblIndex(11)]
+            HRESULT Move(IMarkupPointer* pPointerSourceStart, IMarkupPointer* pPointerSourceFinish, IMarkupPointer* pPointerTarget);
+
+            [VtblIndex(12)]
+            HRESULT InsertText([NativeTypeName("OLECHAR *")] ushort* pchText, [NativeTypeName("long")] int cch, IMarkupPointer* pPointerTarget);
+
+            [VtblIndex(13)]
+            HRESULT ParseString([NativeTypeName("OLECHAR *")] ushort* pchHTML, [NativeTypeName("DWORD")] uint dwFlags, IMarkupContainer** ppContainerResult, IMarkupPointer* ppPointerStart, IMarkupPointer* ppPointerFinish);
+
+            [VtblIndex(14)]
+            HRESULT ParseGlobal(HGLOBAL hglobalHTML, [NativeTypeName("DWORD")] uint dwFlags, IMarkupContainer** ppContainerResult, IMarkupPointer* pPointerStart, IMarkupPointer* pPointerFinish);
+
+            [VtblIndex(15)]
+            HRESULT IsScopedElement(IHTMLElement* pElement, BOOL* pfScoped);
+
+            [VtblIndex(16)]
+            HRESULT GetElementTagId(IHTMLElement* pElement, ELEMENT_TAG_ID* ptagId);
+
+            [VtblIndex(17)]
+            HRESULT GetTagIDForName([NativeTypeName("BSTR")] ushort* bstrName, ELEMENT_TAG_ID* ptagId);
+
+            [VtblIndex(18)]
+            HRESULT GetNameForTagID(ELEMENT_TAG_ID tagId, [NativeTypeName("BSTR *")] ushort** pbstrName);
+
+            [VtblIndex(19)]
+            HRESULT MovePointersToRange(IHTMLTxtRange* pIRange, IMarkupPointer* pPointerStart, IMarkupPointer* pPointerFinish);
+
+            [VtblIndex(20)]
+            HRESULT MoveRangeToPointers(IMarkupPointer* pPointerStart, IMarkupPointer* pPointerFinish, IHTMLTxtRange* pIRange);
+
+            [VtblIndex(21)]
+            HRESULT BeginUndoUnit([NativeTypeName("OLECHAR *")] ushort* pchTitle);
+
+            [VtblIndex(22)]
+            HRESULT EndUndoUnit();
         }
 
         public partial struct Vtbl

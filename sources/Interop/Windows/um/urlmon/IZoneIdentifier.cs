@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("CD45F185-1B21-48E2-967B-EAD743A8914E")]
     [NativeTypeName("struct IZoneIdentifier : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IZoneIdentifier
+    public unsafe partial struct IZoneIdentifier : IZoneIdentifier.Interface
     {
         public void** lpVtbl;
 
@@ -58,6 +58,18 @@ namespace TerraFX.Interop
         public HRESULT Remove()
         {
             return ((delegate* unmanaged<IZoneIdentifier*, int>)(lpVtbl[5]))((IZoneIdentifier*)Unsafe.AsPointer(ref this));
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetId([NativeTypeName("DWORD *")] uint* pdwZone);
+
+            [VtblIndex(4)]
+            HRESULT SetId([NativeTypeName("DWORD")] uint dwZone);
+
+            [VtblIndex(5)]
+            HRESULT Remove();
         }
 
         public partial struct Vtbl

@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("3050F2BC-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct IHTMLOptionButtonElement : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct IHTMLOptionButtonElement
+    public unsafe partial struct IHTMLOptionButtonElement : IHTMLOptionButtonElement.Interface
     {
         public void** lpVtbl;
 
@@ -191,6 +191,63 @@ namespace TerraFX.Interop
         public HRESULT get_form(IHTMLFormElement** p)
         {
             return ((delegate* unmanaged<IHTMLOptionButtonElement*, IHTMLFormElement**, int>)(lpVtbl[24]))((IHTMLOptionButtonElement*)Unsafe.AsPointer(ref this), p);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT put_value([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(8)]
+            HRESULT get_value([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(9)]
+            HRESULT get_type([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(10)]
+            HRESULT put_name([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(11)]
+            HRESULT get_name([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(12)]
+            HRESULT put_checked([NativeTypeName("VARIANT_BOOL")] short v);
+
+            [VtblIndex(13)]
+            HRESULT get_checked([NativeTypeName("VARIANT_BOOL *")] short* p);
+
+            [VtblIndex(14)]
+            HRESULT put_defaultChecked([NativeTypeName("VARIANT_BOOL")] short v);
+
+            [VtblIndex(15)]
+            HRESULT get_defaultChecked([NativeTypeName("VARIANT_BOOL *")] short* p);
+
+            [VtblIndex(16)]
+            HRESULT put_onchange(VARIANT v);
+
+            [VtblIndex(17)]
+            HRESULT get_onchange(VARIANT* p);
+
+            [VtblIndex(18)]
+            HRESULT put_disabled([NativeTypeName("VARIANT_BOOL")] short v);
+
+            [VtblIndex(19)]
+            HRESULT get_disabled([NativeTypeName("VARIANT_BOOL *")] short* p);
+
+            [VtblIndex(20)]
+            HRESULT put_status([NativeTypeName("VARIANT_BOOL")] short v);
+
+            [VtblIndex(21)]
+            HRESULT get_status([NativeTypeName("VARIANT_BOOL *")] short* p);
+
+            [VtblIndex(22)]
+            HRESULT put_indeterminate([NativeTypeName("VARIANT_BOOL")] short v);
+
+            [VtblIndex(23)]
+            HRESULT get_indeterminate([NativeTypeName("VARIANT_BOOL *")] short* p);
+
+            [VtblIndex(24)]
+            HRESULT get_form(IHTMLFormElement** p);
         }
 
         public partial struct Vtbl

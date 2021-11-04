@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("C56156C6-EA5B-48A5-9DF8-FBE035D0929E")]
     [NativeTypeName("struct IMFMediaEngineClassFactoryEx : IMFMediaEngineClassFactory")]
     [NativeInheritance("IMFMediaEngineClassFactory")]
-    public unsafe partial struct IMFMediaEngineClassFactoryEx
+    public unsafe partial struct IMFMediaEngineClassFactoryEx : IMFMediaEngineClassFactoryEx.Interface
     {
         public void** lpVtbl;
 
@@ -79,6 +79,18 @@ namespace TerraFX.Interop
         public HRESULT IsTypeSupported([NativeTypeName("BSTR")] ushort* type, [NativeTypeName("BSTR")] ushort* keySystem, BOOL* isSupported)
         {
             return ((delegate* unmanaged<IMFMediaEngineClassFactoryEx*, ushort*, ushort*, BOOL*, int>)(lpVtbl[8]))((IMFMediaEngineClassFactoryEx*)Unsafe.AsPointer(ref this), type, keySystem, isSupported);
+        }
+
+        public interface Interface : IMFMediaEngineClassFactory.Interface
+        {
+            [VtblIndex(6)]
+            HRESULT CreateMediaSourceExtension([NativeTypeName("DWORD")] uint dwFlags, IMFAttributes* pAttr, IMFMediaSourceExtension** ppMSE);
+
+            [VtblIndex(7)]
+            HRESULT CreateMediaKeys([NativeTypeName("BSTR")] ushort* keySystem, [NativeTypeName("BSTR")] ushort* cdmStorePath, IMFMediaKeys** ppKeys);
+
+            [VtblIndex(8)]
+            HRESULT IsTypeSupported([NativeTypeName("BSTR")] ushort* type, [NativeTypeName("BSTR")] ushort* keySystem, BOOL* isSupported);
         }
 
         public partial struct Vtbl

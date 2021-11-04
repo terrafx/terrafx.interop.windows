@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("F264DA52-E457-4696-B856-A737B717AF79")]
     [NativeTypeName("struct ISpPhrase2 : ISpPhrase")]
     [NativeInheritance("ISpPhrase")]
-    public unsafe partial struct ISpPhrase2
+    public unsafe partial struct ISpPhrase2 : ISpPhrase2.Interface
     {
         public void** lpVtbl;
 
@@ -86,6 +86,18 @@ namespace TerraFX.Interop
         public HRESULT GetAudio([NativeTypeName("ULONG")] uint ulStartElement, [NativeTypeName("ULONG")] uint cElements, ISpStreamFormat** ppStream)
         {
             return ((delegate* unmanaged<ISpPhrase2*, uint, uint, ISpStreamFormat**, int>)(lpVtbl[9]))((ISpPhrase2*)Unsafe.AsPointer(ref this), ulStartElement, cElements, ppStream);
+        }
+
+        public interface Interface : ISpPhrase.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT GetXMLResult([NativeTypeName("LPWSTR *")] ushort** ppszCoMemXMLResult, SPXMLRESULTOPTIONS Options);
+
+            [VtblIndex(8)]
+            HRESULT GetXMLErrorInfo(SPSEMANTICERRORINFO* pSemanticErrorInfo);
+
+            [VtblIndex(9)]
+            HRESULT GetAudio([NativeTypeName("ULONG")] uint ulStartElement, [NativeTypeName("ULONG")] uint cElements, ISpStreamFormat** ppStream);
         }
 
         public partial struct Vtbl

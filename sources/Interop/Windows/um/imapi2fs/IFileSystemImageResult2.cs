@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("B507CA29-2204-11DD-966A-001AA01BBC58")]
     [NativeTypeName("struct IFileSystemImageResult2 : IFileSystemImageResult")]
     [NativeInheritance("IFileSystemImageResult")]
-    public unsafe partial struct IFileSystemImageResult2
+    public unsafe partial struct IFileSystemImageResult2 : IFileSystemImageResult2.Interface
     {
         public void** lpVtbl;
 
@@ -107,6 +107,12 @@ namespace TerraFX.Interop
         public HRESULT get_ModifiedBlocks(IBlockRangeList** pVal)
         {
             return ((delegate* unmanaged<IFileSystemImageResult2*, IBlockRangeList**, int>)(lpVtbl[12]))((IFileSystemImageResult2*)Unsafe.AsPointer(ref this), pVal);
+        }
+
+        public interface Interface : IFileSystemImageResult.Interface
+        {
+            [VtblIndex(12)]
+            HRESULT get_ModifiedBlocks(IBlockRangeList** pVal);
         }
 
         public partial struct Vtbl

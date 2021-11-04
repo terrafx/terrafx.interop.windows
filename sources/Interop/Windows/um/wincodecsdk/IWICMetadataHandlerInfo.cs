@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("ABA958BF-C672-44D1-8D61-CE6DF2E682C2")]
     [NativeTypeName("struct IWICMetadataHandlerInfo : IWICComponentInfo")]
     [NativeInheritance("IWICComponentInfo")]
-    public unsafe partial struct IWICMetadataHandlerInfo
+    public unsafe partial struct IWICMetadataHandlerInfo : IWICMetadataHandlerInfo.Interface
     {
         public void** lpVtbl;
 
@@ -142,6 +142,30 @@ namespace TerraFX.Interop
         public HRESULT DoesRequireFixedSize(BOOL* pfFixedSize)
         {
             return ((delegate* unmanaged<IWICMetadataHandlerInfo*, BOOL*, int>)(lpVtbl[17]))((IWICMetadataHandlerInfo*)Unsafe.AsPointer(ref this), pfFixedSize);
+        }
+
+        public interface Interface : IWICComponentInfo.Interface
+        {
+            [VtblIndex(11)]
+            HRESULT GetMetadataFormat(Guid* pguidMetadataFormat);
+
+            [VtblIndex(12)]
+            HRESULT GetContainerFormats(uint cContainerFormats, Guid* pguidContainerFormats, uint* pcchActual);
+
+            [VtblIndex(13)]
+            HRESULT GetDeviceManufacturer(uint cchDeviceManufacturer, [NativeTypeName("WCHAR *")] ushort* wzDeviceManufacturer, uint* pcchActual);
+
+            [VtblIndex(14)]
+            HRESULT GetDeviceModels(uint cchDeviceModels, [NativeTypeName("WCHAR *")] ushort* wzDeviceModels, uint* pcchActual);
+
+            [VtblIndex(15)]
+            HRESULT DoesRequireFullStream(BOOL* pfRequiresFullStream);
+
+            [VtblIndex(16)]
+            HRESULT DoesSupportPadding(BOOL* pfSupportsPadding);
+
+            [VtblIndex(17)]
+            HRESULT DoesRequireFixedSize(BOOL* pfFixedSize);
         }
 
         public partial struct Vtbl

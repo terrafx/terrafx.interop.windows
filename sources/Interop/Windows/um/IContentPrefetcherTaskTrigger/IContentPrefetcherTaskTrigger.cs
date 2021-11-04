@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("1B35A14A-6094-4799-A60E-E474E15D4DC9")]
     [NativeTypeName("struct IContentPrefetcherTaskTrigger : IInspectable")]
     [NativeInheritance("IInspectable")]
-    public unsafe partial struct IContentPrefetcherTaskTrigger
+    public unsafe partial struct IContentPrefetcherTaskTrigger : IContentPrefetcherTaskTrigger.Interface
     {
         public void** lpVtbl;
 
@@ -72,6 +72,15 @@ namespace TerraFX.Interop
         public HRESULT IsRegisteredForContentPrefetch([NativeTypeName("LPCWSTR")] ushort* packageFullName, [NativeTypeName("boolean *")] byte* isRegistered)
         {
             return ((delegate* unmanaged<IContentPrefetcherTaskTrigger*, ushort*, byte*, int>)(lpVtbl[7]))((IContentPrefetcherTaskTrigger*)Unsafe.AsPointer(ref this), packageFullName, isRegistered);
+        }
+
+        public interface Interface : IInspectable.Interface
+        {
+            [VtblIndex(6)]
+            HRESULT TriggerContentPrefetcherTask([NativeTypeName("LPCWSTR")] ushort* packageFullName);
+
+            [VtblIndex(7)]
+            HRESULT IsRegisteredForContentPrefetch([NativeTypeName("LPCWSTR")] ushort* packageFullName, [NativeTypeName("boolean *")] byte* isRegistered);
         }
 
         public partial struct Vtbl

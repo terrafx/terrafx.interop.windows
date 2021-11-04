@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("9842AD7D-D9CF-4908-AED7-48B51DA5E7C2")]
     [NativeTypeName("struct IDCompositionRectangleClip : IDCompositionClip")]
     [NativeInheritance("IDCompositionClip")]
-    public unsafe partial struct IDCompositionRectangleClip
+    public unsafe partial struct IDCompositionRectangleClip : IDCompositionRectangleClip.Interface
     {
         public void** lpVtbl;
 
@@ -205,6 +205,81 @@ namespace TerraFX.Interop
         public HRESULT SetBottomRightRadiusY(float radius)
         {
             return ((delegate* unmanaged<IDCompositionRectangleClip*, float, int>)(lpVtbl[26]))((IDCompositionRectangleClip*)Unsafe.AsPointer(ref this), radius);
+        }
+
+        public interface Interface : IDCompositionClip.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT SetLeft(IDCompositionAnimation* animation);
+
+            [VtblIndex(4)]
+            HRESULT SetLeft(float left);
+
+            [VtblIndex(5)]
+            HRESULT SetTop(IDCompositionAnimation* animation);
+
+            [VtblIndex(6)]
+            HRESULT SetTop(float top);
+
+            [VtblIndex(7)]
+            HRESULT SetRight(IDCompositionAnimation* animation);
+
+            [VtblIndex(8)]
+            HRESULT SetRight(float right);
+
+            [VtblIndex(9)]
+            HRESULT SetBottom(IDCompositionAnimation* animation);
+
+            [VtblIndex(10)]
+            HRESULT SetBottom(float bottom);
+
+            [VtblIndex(11)]
+            HRESULT SetTopLeftRadiusX(IDCompositionAnimation* animation);
+
+            [VtblIndex(12)]
+            HRESULT SetTopLeftRadiusX(float radius);
+
+            [VtblIndex(13)]
+            HRESULT SetTopLeftRadiusY(IDCompositionAnimation* animation);
+
+            [VtblIndex(14)]
+            HRESULT SetTopLeftRadiusY(float radius);
+
+            [VtblIndex(15)]
+            HRESULT SetTopRightRadiusX(IDCompositionAnimation* animation);
+
+            [VtblIndex(16)]
+            HRESULT SetTopRightRadiusX(float radius);
+
+            [VtblIndex(17)]
+            HRESULT SetTopRightRadiusY(IDCompositionAnimation* animation);
+
+            [VtblIndex(18)]
+            HRESULT SetTopRightRadiusY(float radius);
+
+            [VtblIndex(19)]
+            HRESULT SetBottomLeftRadiusX(IDCompositionAnimation* animation);
+
+            [VtblIndex(20)]
+            HRESULT SetBottomLeftRadiusX(float radius);
+
+            [VtblIndex(21)]
+            HRESULT SetBottomLeftRadiusY(IDCompositionAnimation* animation);
+
+            [VtblIndex(22)]
+            HRESULT SetBottomLeftRadiusY(float radius);
+
+            [VtblIndex(23)]
+            HRESULT SetBottomRightRadiusX(IDCompositionAnimation* animation);
+
+            [VtblIndex(24)]
+            HRESULT SetBottomRightRadiusX(float radius);
+
+            [VtblIndex(25)]
+            HRESULT SetBottomRightRadiusY(IDCompositionAnimation* animation);
+
+            [VtblIndex(26)]
+            HRESULT SetBottomRightRadiusY(float radius);
         }
 
         public partial struct Vtbl

@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("6C44DF74-72B9-4992-A1EC-EF996E0422D4")]
     [NativeTypeName("struct ISpVoice : ISpEventSource")]
     [NativeInheritance("ISpEventSource")]
-    public unsafe partial struct ISpVoice
+    public unsafe partial struct ISpVoice : ISpVoice.Interface
     {
         public void** lpVtbl;
 
@@ -282,6 +282,84 @@ namespace TerraFX.Interop
         public HRESULT DisplayUI(HWND hwndParent, [NativeTypeName("LPCWSTR")] ushort* pszTitle, [NativeTypeName("LPCWSTR")] ushort* pszTypeOfUI, void* pvExtraData, [NativeTypeName("ULONG")] uint cbExtraData)
         {
             return ((delegate* unmanaged<ISpVoice*, HWND, ushort*, ushort*, void*, uint, int>)(lpVtbl[37]))((ISpVoice*)Unsafe.AsPointer(ref this), hwndParent, pszTitle, pszTypeOfUI, pvExtraData, cbExtraData);
+        }
+
+        public interface Interface : ISpEventSource.Interface
+        {
+            [VtblIndex(13)]
+            HRESULT SetOutput(IUnknown* pUnkOutput, BOOL fAllowFormatChanges);
+
+            [VtblIndex(14)]
+            HRESULT GetOutputObjectToken(ISpObjectToken** ppObjectToken);
+
+            [VtblIndex(15)]
+            HRESULT GetOutputStream(ISpStreamFormat** ppStream);
+
+            [VtblIndex(16)]
+            HRESULT Pause();
+
+            [VtblIndex(17)]
+            HRESULT Resume();
+
+            [VtblIndex(18)]
+            HRESULT SetVoice(ISpObjectToken* pToken);
+
+            [VtblIndex(19)]
+            HRESULT GetVoice(ISpObjectToken** ppToken);
+
+            [VtblIndex(20)]
+            HRESULT Speak([NativeTypeName("LPCWSTR")] ushort* pwcs, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("ULONG *")] uint* pulStreamNumber);
+
+            [VtblIndex(21)]
+            HRESULT SpeakStream(IStream* pStream, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("ULONG *")] uint* pulStreamNumber);
+
+            [VtblIndex(22)]
+            HRESULT GetStatus(SPVOICESTATUS* pStatus, [NativeTypeName("LPWSTR *")] ushort** ppszLastBookmark);
+
+            [VtblIndex(23)]
+            HRESULT Skip([NativeTypeName("LPCWSTR")] ushort* pItemType, [NativeTypeName("long")] int lNumItems, [NativeTypeName("ULONG *")] uint* pulNumSkipped);
+
+            [VtblIndex(24)]
+            HRESULT SetPriority(SPVPRIORITY ePriority);
+
+            [VtblIndex(25)]
+            HRESULT GetPriority(SPVPRIORITY* pePriority);
+
+            [VtblIndex(26)]
+            HRESULT SetAlertBoundary(SPEVENTENUM eBoundary);
+
+            [VtblIndex(27)]
+            HRESULT GetAlertBoundary(SPEVENTENUM* peBoundary);
+
+            [VtblIndex(28)]
+            HRESULT SetRate([NativeTypeName("long")] int RateAdjust);
+
+            [VtblIndex(29)]
+            HRESULT GetRate([NativeTypeName("long *")] int* pRateAdjust);
+
+            [VtblIndex(30)]
+            HRESULT SetVolume(ushort usVolume);
+
+            [VtblIndex(31)]
+            HRESULT GetVolume(ushort* pusVolume);
+
+            [VtblIndex(32)]
+            HRESULT WaitUntilDone([NativeTypeName("ULONG")] uint msTimeout);
+
+            [VtblIndex(33)]
+            HRESULT SetSyncSpeakTimeout([NativeTypeName("ULONG")] uint msTimeout);
+
+            [VtblIndex(34)]
+            HRESULT GetSyncSpeakTimeout([NativeTypeName("ULONG *")] uint* pmsTimeout);
+
+            [VtblIndex(35)]
+            HANDLE SpeakCompleteEvent();
+
+            [VtblIndex(36)]
+            HRESULT IsUISupported([NativeTypeName("LPCWSTR")] ushort* pszTypeOfUI, void* pvExtraData, [NativeTypeName("ULONG")] uint cbExtraData, BOOL* pfSupported);
+
+            [VtblIndex(37)]
+            HRESULT DisplayUI(HWND hwndParent, [NativeTypeName("LPCWSTR")] ushort* pszTitle, [NativeTypeName("LPCWSTR")] ushort* pszTypeOfUI, void* pvExtraData, [NativeTypeName("ULONG")] uint cbExtraData);
         }
 
         public partial struct Vtbl

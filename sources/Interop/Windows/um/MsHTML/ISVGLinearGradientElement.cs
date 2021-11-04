@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("30510529-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct ISVGLinearGradientElement : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct ISVGLinearGradientElement
+    public unsafe partial struct ISVGLinearGradientElement : ISVGLinearGradientElement.Interface
     {
         public void** lpVtbl;
 
@@ -121,6 +121,33 @@ namespace TerraFX.Interop
         public HRESULT get_y2(ISVGAnimatedLength** p)
         {
             return ((delegate* unmanaged<ISVGLinearGradientElement*, ISVGAnimatedLength**, int>)(lpVtbl[14]))((ISVGLinearGradientElement*)Unsafe.AsPointer(ref this), p);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT putref_x1(ISVGAnimatedLength* v);
+
+            [VtblIndex(8)]
+            HRESULT get_x1(ISVGAnimatedLength** p);
+
+            [VtblIndex(9)]
+            HRESULT putref_y1(ISVGAnimatedLength* v);
+
+            [VtblIndex(10)]
+            HRESULT get_y1(ISVGAnimatedLength** p);
+
+            [VtblIndex(11)]
+            HRESULT putref_x2(ISVGAnimatedLength* v);
+
+            [VtblIndex(12)]
+            HRESULT get_x2(ISVGAnimatedLength** p);
+
+            [VtblIndex(13)]
+            HRESULT putref_y2(ISVGAnimatedLength* v);
+
+            [VtblIndex(14)]
+            HRESULT get_y2(ISVGAnimatedLength** p);
         }
 
         public partial struct Vtbl

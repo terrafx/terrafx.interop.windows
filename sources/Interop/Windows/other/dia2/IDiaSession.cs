@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("2F609EE1-D1C8-4E24-8288-3326BADCD211")]
     [NativeTypeName("struct IDiaSession : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IDiaSession
+    public unsafe partial struct IDiaSession : IDiaSession.Interface
     {
         public void** lpVtbl;
 
@@ -450,6 +450,186 @@ namespace TerraFX.Interop
         public HRESULT findInputAssemblyFile(IDiaSymbol* pSymbol, IDiaInputAssemblyFile** ppResult)
         {
             return ((delegate* unmanaged<IDiaSession*, IDiaSymbol*, IDiaInputAssemblyFile**, int>)(lpVtbl[61]))((IDiaSession*)Unsafe.AsPointer(ref this), pSymbol, ppResult);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT get_loadAddress([NativeTypeName("ULONGLONG *")] ulong* pRetVal);
+
+            [VtblIndex(4)]
+            HRESULT put_loadAddress([NativeTypeName("ULONGLONG")] ulong NewVal);
+
+            [VtblIndex(5)]
+            HRESULT get_globalScope(IDiaSymbol** pRetVal);
+
+            [VtblIndex(6)]
+            HRESULT getEnumTables(IDiaEnumTables** ppEnumTables);
+
+            [VtblIndex(7)]
+            HRESULT getSymbolsByAddr(IDiaEnumSymbolsByAddr** ppEnumbyAddr);
+
+            [VtblIndex(8)]
+            HRESULT findChildren(IDiaSymbol* parent, [NativeTypeName("enum SymTagEnum")] SymTagEnum symtag, [NativeTypeName("LPCOLESTR")] ushort* name, [NativeTypeName("DWORD")] uint compareFlags, IDiaEnumSymbols** ppResult);
+
+            [VtblIndex(9)]
+            HRESULT findChildrenEx(IDiaSymbol* parent, [NativeTypeName("enum SymTagEnum")] SymTagEnum symtag, [NativeTypeName("LPCOLESTR")] ushort* name, [NativeTypeName("DWORD")] uint compareFlags, IDiaEnumSymbols** ppResult);
+
+            [VtblIndex(10)]
+            HRESULT findChildrenExByAddr(IDiaSymbol* parent, [NativeTypeName("enum SymTagEnum")] SymTagEnum symtag, [NativeTypeName("LPCOLESTR")] ushort* name, [NativeTypeName("DWORD")] uint compareFlags, [NativeTypeName("DWORD")] uint isect, [NativeTypeName("DWORD")] uint offset, IDiaEnumSymbols** ppResult);
+
+            [VtblIndex(11)]
+            HRESULT findChildrenExByVA(IDiaSymbol* parent, [NativeTypeName("enum SymTagEnum")] SymTagEnum symtag, [NativeTypeName("LPCOLESTR")] ushort* name, [NativeTypeName("DWORD")] uint compareFlags, [NativeTypeName("ULONGLONG")] ulong va, IDiaEnumSymbols** ppResult);
+
+            [VtblIndex(12)]
+            HRESULT findChildrenExByRVA(IDiaSymbol* parent, [NativeTypeName("enum SymTagEnum")] SymTagEnum symtag, [NativeTypeName("LPCOLESTR")] ushort* name, [NativeTypeName("DWORD")] uint compareFlags, [NativeTypeName("DWORD")] uint rva, IDiaEnumSymbols** ppResult);
+
+            [VtblIndex(13)]
+            HRESULT findSymbolByAddr([NativeTypeName("DWORD")] uint isect, [NativeTypeName("DWORD")] uint offset, [NativeTypeName("enum SymTagEnum")] SymTagEnum symtag, IDiaSymbol** ppSymbol);
+
+            [VtblIndex(14)]
+            HRESULT findSymbolByRVA([NativeTypeName("DWORD")] uint rva, [NativeTypeName("enum SymTagEnum")] SymTagEnum symtag, IDiaSymbol** ppSymbol);
+
+            [VtblIndex(15)]
+            HRESULT findSymbolByVA([NativeTypeName("ULONGLONG")] ulong va, [NativeTypeName("enum SymTagEnum")] SymTagEnum symtag, IDiaSymbol** ppSymbol);
+
+            [VtblIndex(16)]
+            HRESULT findSymbolByToken([NativeTypeName("ULONG")] uint token, [NativeTypeName("enum SymTagEnum")] SymTagEnum symtag, IDiaSymbol** ppSymbol);
+
+            [VtblIndex(17)]
+            HRESULT symsAreEquiv(IDiaSymbol* symbolA, IDiaSymbol* symbolB);
+
+            [VtblIndex(18)]
+            HRESULT symbolById([NativeTypeName("DWORD")] uint id, IDiaSymbol** ppSymbol);
+
+            [VtblIndex(19)]
+            HRESULT findSymbolByRVAEx([NativeTypeName("DWORD")] uint rva, [NativeTypeName("enum SymTagEnum")] SymTagEnum symtag, IDiaSymbol** ppSymbol, [NativeTypeName("long *")] int* displacement);
+
+            [VtblIndex(20)]
+            HRESULT findSymbolByVAEx([NativeTypeName("ULONGLONG")] ulong va, [NativeTypeName("enum SymTagEnum")] SymTagEnum symtag, IDiaSymbol** ppSymbol, [NativeTypeName("long *")] int* displacement);
+
+            [VtblIndex(21)]
+            HRESULT findFile(IDiaSymbol* pCompiland, [NativeTypeName("LPCOLESTR")] ushort* name, [NativeTypeName("DWORD")] uint compareFlags, IDiaEnumSourceFiles** ppResult);
+
+            [VtblIndex(22)]
+            HRESULT findFileById([NativeTypeName("DWORD")] uint uniqueId, IDiaSourceFile** ppResult);
+
+            [VtblIndex(23)]
+            HRESULT findLines(IDiaSymbol* compiland, IDiaSourceFile* file, IDiaEnumLineNumbers** ppResult);
+
+            [VtblIndex(24)]
+            HRESULT findLinesByAddr([NativeTypeName("DWORD")] uint seg, [NativeTypeName("DWORD")] uint offset, [NativeTypeName("DWORD")] uint length, IDiaEnumLineNumbers** ppResult);
+
+            [VtblIndex(25)]
+            HRESULT findLinesByRVA([NativeTypeName("DWORD")] uint rva, [NativeTypeName("DWORD")] uint length, IDiaEnumLineNumbers** ppResult);
+
+            [VtblIndex(26)]
+            HRESULT findLinesByVA([NativeTypeName("ULONGLONG")] ulong va, [NativeTypeName("DWORD")] uint length, IDiaEnumLineNumbers** ppResult);
+
+            [VtblIndex(27)]
+            HRESULT findLinesByLinenum(IDiaSymbol* compiland, IDiaSourceFile* file, [NativeTypeName("DWORD")] uint linenum, [NativeTypeName("DWORD")] uint column, IDiaEnumLineNumbers** ppResult);
+
+            [VtblIndex(28)]
+            HRESULT findInjectedSource([NativeTypeName("LPCOLESTR")] ushort* srcFile, IDiaEnumInjectedSources** ppResult);
+
+            [VtblIndex(29)]
+            HRESULT getEnumDebugStreams(IDiaEnumDebugStreams** ppEnumDebugStreams);
+
+            [VtblIndex(30)]
+            HRESULT findInlineFramesByAddr(IDiaSymbol* parent, [NativeTypeName("DWORD")] uint isect, [NativeTypeName("DWORD")] uint offset, IDiaEnumSymbols** ppResult);
+
+            [VtblIndex(31)]
+            HRESULT findInlineFramesByRVA(IDiaSymbol* parent, [NativeTypeName("DWORD")] uint rva, IDiaEnumSymbols** ppResult);
+
+            [VtblIndex(32)]
+            HRESULT findInlineFramesByVA(IDiaSymbol* parent, [NativeTypeName("ULONGLONG")] ulong va, IDiaEnumSymbols** ppResult);
+
+            [VtblIndex(33)]
+            HRESULT findInlineeLines(IDiaSymbol* parent, IDiaEnumLineNumbers** ppResult);
+
+            [VtblIndex(34)]
+            HRESULT findInlineeLinesByAddr(IDiaSymbol* parent, [NativeTypeName("DWORD")] uint isect, [NativeTypeName("DWORD")] uint offset, [NativeTypeName("DWORD")] uint length, IDiaEnumLineNumbers** ppResult);
+
+            [VtblIndex(35)]
+            HRESULT findInlineeLinesByRVA(IDiaSymbol* parent, [NativeTypeName("DWORD")] uint rva, [NativeTypeName("DWORD")] uint length, IDiaEnumLineNumbers** ppResult);
+
+            [VtblIndex(36)]
+            HRESULT findInlineeLinesByVA(IDiaSymbol* parent, [NativeTypeName("ULONGLONG")] ulong va, [NativeTypeName("DWORD")] uint length, IDiaEnumLineNumbers** ppResult);
+
+            [VtblIndex(37)]
+            HRESULT findInlineeLinesByLinenum(IDiaSymbol* compiland, IDiaSourceFile* file, [NativeTypeName("DWORD")] uint linenum, [NativeTypeName("DWORD")] uint column, IDiaEnumLineNumbers** ppResult);
+
+            [VtblIndex(38)]
+            HRESULT findInlineesByName([NativeTypeName("LPCOLESTR")] ushort* name, [NativeTypeName("DWORD")] uint option, IDiaEnumSymbols** ppResult);
+
+            [VtblIndex(39)]
+            HRESULT findAcceleratorInlineeLinesByLinenum(IDiaSymbol* parent, IDiaSourceFile* file, [NativeTypeName("DWORD")] uint linenum, [NativeTypeName("DWORD")] uint column, IDiaEnumLineNumbers** ppResult);
+
+            [VtblIndex(40)]
+            HRESULT findSymbolsForAcceleratorPointerTag(IDiaSymbol* parent, [NativeTypeName("DWORD")] uint tagValue, IDiaEnumSymbols** ppResult);
+
+            [VtblIndex(41)]
+            HRESULT findSymbolsByRVAForAcceleratorPointerTag(IDiaSymbol* parent, [NativeTypeName("DWORD")] uint tagValue, [NativeTypeName("DWORD")] uint rva, IDiaEnumSymbols** ppResult);
+
+            [VtblIndex(42)]
+            HRESULT findAcceleratorInlineesByName([NativeTypeName("LPCOLESTR")] ushort* name, [NativeTypeName("DWORD")] uint option, IDiaEnumSymbols** ppResult);
+
+            [VtblIndex(43)]
+            HRESULT addressForVA([NativeTypeName("ULONGLONG")] ulong va, [NativeTypeName("DWORD *")] uint* pISect, [NativeTypeName("DWORD *")] uint* pOffset);
+
+            [VtblIndex(44)]
+            HRESULT addressForRVA([NativeTypeName("DWORD")] uint rva, [NativeTypeName("DWORD *")] uint* pISect, [NativeTypeName("DWORD *")] uint* pOffset);
+
+            [VtblIndex(45)]
+            HRESULT findILOffsetsByAddr([NativeTypeName("DWORD")] uint isect, [NativeTypeName("DWORD")] uint offset, [NativeTypeName("DWORD")] uint length, IDiaEnumLineNumbers** ppResult);
+
+            [VtblIndex(46)]
+            HRESULT findILOffsetsByRVA([NativeTypeName("DWORD")] uint rva, [NativeTypeName("DWORD")] uint length, IDiaEnumLineNumbers** ppResult);
+
+            [VtblIndex(47)]
+            HRESULT findILOffsetsByVA([NativeTypeName("ULONGLONG")] ulong va, [NativeTypeName("DWORD")] uint length, IDiaEnumLineNumbers** ppResult);
+
+            [VtblIndex(48)]
+            HRESULT findInputAssemblyFiles(IDiaEnumInputAssemblyFiles** ppResult);
+
+            [VtblIndex(49)]
+            HRESULT findInputAssembly([NativeTypeName("DWORD")] uint index, IDiaInputAssemblyFile** ppResult);
+
+            [VtblIndex(50)]
+            HRESULT findInputAssemblyById([NativeTypeName("DWORD")] uint uniqueId, IDiaInputAssemblyFile** ppResult);
+
+            [VtblIndex(51)]
+            HRESULT getFuncMDTokenMapSize([NativeTypeName("DWORD *")] uint* pcb);
+
+            [VtblIndex(52)]
+            HRESULT getFuncMDTokenMap([NativeTypeName("DWORD")] uint cb, [NativeTypeName("DWORD *")] uint* pcb, byte* pb);
+
+            [VtblIndex(53)]
+            HRESULT getTypeMDTokenMapSize([NativeTypeName("DWORD *")] uint* pcb);
+
+            [VtblIndex(54)]
+            HRESULT getTypeMDTokenMap([NativeTypeName("DWORD")] uint cb, [NativeTypeName("DWORD *")] uint* pcb, byte* pb);
+
+            [VtblIndex(55)]
+            HRESULT getNumberOfFunctionFragments_VA([NativeTypeName("ULONGLONG")] ulong vaFunc, [NativeTypeName("DWORD")] uint cbFunc, [NativeTypeName("DWORD *")] uint* pNumFragments);
+
+            [VtblIndex(56)]
+            HRESULT getNumberOfFunctionFragments_RVA([NativeTypeName("DWORD")] uint rvaFunc, [NativeTypeName("DWORD")] uint cbFunc, [NativeTypeName("DWORD *")] uint* pNumFragments);
+
+            [VtblIndex(57)]
+            HRESULT getFunctionFragments_VA([NativeTypeName("ULONGLONG")] ulong vaFunc, [NativeTypeName("DWORD")] uint cbFunc, [NativeTypeName("DWORD")] uint cFragments, [NativeTypeName("ULONGLONG *")] ulong* pVaFragment, [NativeTypeName("DWORD *")] uint* pLenFragment);
+
+            [VtblIndex(58)]
+            HRESULT getFunctionFragments_RVA([NativeTypeName("DWORD")] uint rvaFunc, [NativeTypeName("DWORD")] uint cbFunc, [NativeTypeName("DWORD")] uint cFragments, [NativeTypeName("DWORD *")] uint* pRvaFragment, [NativeTypeName("DWORD *")] uint* pLenFragment);
+
+            [VtblIndex(59)]
+            HRESULT getExports(IDiaEnumSymbols** ppResult);
+
+            [VtblIndex(60)]
+            HRESULT getHeapAllocationSites(IDiaEnumSymbols** ppResult);
+
+            [VtblIndex(61)]
+            HRESULT findInputAssemblyFile(IDiaSymbol* pSymbol, IDiaInputAssemblyFile** ppResult);
         }
 
         public partial struct Vtbl

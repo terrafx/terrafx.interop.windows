@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("1C9CD5BB-98E9-4491-A60F-31AACC72B83C")]
     [NativeTypeName("struct IObjectWithSelection : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IObjectWithSelection
+    public unsafe partial struct IObjectWithSelection : IObjectWithSelection.Interface
     {
         public void** lpVtbl;
 
@@ -51,6 +51,15 @@ namespace TerraFX.Interop
         public HRESULT GetSelection([NativeTypeName("const IID &")] Guid* riid, void** ppv)
         {
             return ((delegate* unmanaged<IObjectWithSelection*, Guid*, void**, int>)(lpVtbl[4]))((IObjectWithSelection*)Unsafe.AsPointer(ref this), riid, ppv);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT SetSelection(IShellItemArray* psia);
+
+            [VtblIndex(4)]
+            HRESULT GetSelection([NativeTypeName("const IID &")] Guid* riid, void** ppv);
         }
 
         public partial struct Vtbl

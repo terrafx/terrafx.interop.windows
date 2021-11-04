@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("3050F2AD-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct IHTMLInputFileElement : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct IHTMLInputFileElement
+    public unsafe partial struct IHTMLInputFileElement : IHTMLInputFileElement.Interface
     {
         public void** lpVtbl;
 
@@ -198,6 +198,66 @@ namespace TerraFX.Interop
         public HRESULT get_value([NativeTypeName("BSTR *")] ushort** p)
         {
             return ((delegate* unmanaged<IHTMLInputFileElement*, ushort**, int>)(lpVtbl[25]))((IHTMLInputFileElement*)Unsafe.AsPointer(ref this), p);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT get_type([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(8)]
+            HRESULT put_name([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(9)]
+            HRESULT get_name([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(10)]
+            HRESULT put_status(VARIANT v);
+
+            [VtblIndex(11)]
+            HRESULT get_status(VARIANT* p);
+
+            [VtblIndex(12)]
+            HRESULT put_disabled([NativeTypeName("VARIANT_BOOL")] short v);
+
+            [VtblIndex(13)]
+            HRESULT get_disabled([NativeTypeName("VARIANT_BOOL *")] short* p);
+
+            [VtblIndex(14)]
+            HRESULT get_form(IHTMLFormElement** p);
+
+            [VtblIndex(15)]
+            HRESULT put_size([NativeTypeName("long")] int v);
+
+            [VtblIndex(16)]
+            HRESULT get_size([NativeTypeName("long *")] int* p);
+
+            [VtblIndex(17)]
+            HRESULT put_maxLength([NativeTypeName("long")] int v);
+
+            [VtblIndex(18)]
+            HRESULT get_maxLength([NativeTypeName("long *")] int* p);
+
+            [VtblIndex(19)]
+            HRESULT select();
+
+            [VtblIndex(20)]
+            HRESULT put_onchange(VARIANT v);
+
+            [VtblIndex(21)]
+            HRESULT get_onchange(VARIANT* p);
+
+            [VtblIndex(22)]
+            HRESULT put_onselect(VARIANT v);
+
+            [VtblIndex(23)]
+            HRESULT get_onselect(VARIANT* p);
+
+            [VtblIndex(24)]
+            HRESULT put_value([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(25)]
+            HRESULT get_value([NativeTypeName("BSTR *")] ushort** p);
         }
 
         public partial struct Vtbl

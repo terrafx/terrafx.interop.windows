@@ -13,7 +13,7 @@ namespace TerraFX.Interop
     [Guid("2B02E3CF-2E0B-4EC3-BE45-1B2A3FE7210D")]
     [NativeTypeName("struct IXAudio2 : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IXAudio2
+    public unsafe partial struct IXAudio2 : IXAudio2.Interface
     {
         public void** lpVtbl;
 
@@ -108,6 +108,39 @@ namespace TerraFX.Interop
         public void SetDebugConfiguration([NativeTypeName("const XAUDIO2_DEBUG_CONFIGURATION *")] XAUDIO2_DEBUG_CONFIGURATION* pDebugConfiguration, void* pReserved = null)
         {
             ((delegate* unmanaged<IXAudio2*, XAUDIO2_DEBUG_CONFIGURATION*, void*, void>)(lpVtbl[12]))((IXAudio2*)Unsafe.AsPointer(ref this), pDebugConfiguration, pReserved);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT RegisterForCallbacks(IXAudio2EngineCallback* pCallback);
+
+            [VtblIndex(4)]
+            void UnregisterForCallbacks(IXAudio2EngineCallback* pCallback);
+
+            [VtblIndex(5)]
+            HRESULT CreateSourceVoice(IXAudio2SourceVoice** ppSourceVoice, [NativeTypeName("const WAVEFORMATEX *")] WAVEFORMATEX* pSourceFormat, [NativeTypeName("UINT32")] uint Flags = 0, float MaxFrequencyRatio = 2.0f, IXAudio2VoiceCallback* pCallback = null, [NativeTypeName("const XAUDIO2_VOICE_SENDS *")] XAUDIO2_VOICE_SENDS* pSendList = null, [NativeTypeName("const XAUDIO2_EFFECT_CHAIN *")] XAUDIO2_EFFECT_CHAIN* pEffectChain = null);
+
+            [VtblIndex(6)]
+            HRESULT CreateSubmixVoice(IXAudio2SubmixVoice** ppSubmixVoice, [NativeTypeName("UINT32")] uint InputChannels, [NativeTypeName("UINT32")] uint InputSampleRate, [NativeTypeName("UINT32")] uint Flags = 0, [NativeTypeName("UINT32")] uint ProcessingStage = 0, [NativeTypeName("const XAUDIO2_VOICE_SENDS *")] XAUDIO2_VOICE_SENDS* pSendList = null, [NativeTypeName("const XAUDIO2_EFFECT_CHAIN *")] XAUDIO2_EFFECT_CHAIN* pEffectChain = null);
+
+            [VtblIndex(7)]
+            HRESULT CreateMasteringVoice(IXAudio2MasteringVoice** ppMasteringVoice, [NativeTypeName("UINT32")] uint InputChannels = 0, [NativeTypeName("UINT32")] uint InputSampleRate = 0, [NativeTypeName("UINT32")] uint Flags = 0, [NativeTypeName("LPCWSTR")] ushort* szDeviceId = null, [NativeTypeName("const XAUDIO2_EFFECT_CHAIN *")] XAUDIO2_EFFECT_CHAIN* pEffectChain = null, AUDIO_STREAM_CATEGORY StreamCategory = AudioCategory_GameEffects);
+
+            [VtblIndex(8)]
+            HRESULT StartEngine();
+
+            [VtblIndex(9)]
+            void StopEngine();
+
+            [VtblIndex(10)]
+            HRESULT CommitChanges([NativeTypeName("UINT32")] uint OperationSet);
+
+            [VtblIndex(11)]
+            void GetPerformanceData(XAUDIO2_PERFORMANCE_DATA* pPerfData);
+
+            [VtblIndex(12)]
+            void SetDebugConfiguration([NativeTypeName("const XAUDIO2_DEBUG_CONFIGURATION *")] XAUDIO2_DEBUG_CONFIGURATION* pDebugConfiguration, void* pReserved = null);
         }
 
         public partial struct Vtbl

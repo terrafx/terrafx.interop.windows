@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("E6FDD21A-163F-4975-9C8C-A69F1BA37034")]
     [NativeTypeName("struct IFileDialogCustomize : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IFileDialogCustomize
+    public unsafe partial struct IFileDialogCustomize : IFileDialogCustomize.Interface
     {
         public void** lpVtbl;
 
@@ -226,6 +226,90 @@ namespace TerraFX.Interop
         public HRESULT SetControlItemText([NativeTypeName("DWORD")] uint dwIDCtl, [NativeTypeName("DWORD")] uint dwIDItem, [NativeTypeName("LPCWSTR")] ushort* pszLabel)
         {
             return ((delegate* unmanaged<IFileDialogCustomize*, uint, uint, ushort*, int>)(lpVtbl[29]))((IFileDialogCustomize*)Unsafe.AsPointer(ref this), dwIDCtl, dwIDItem, pszLabel);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT EnableOpenDropDown([NativeTypeName("DWORD")] uint dwIDCtl);
+
+            [VtblIndex(4)]
+            HRESULT AddMenu([NativeTypeName("DWORD")] uint dwIDCtl, [NativeTypeName("LPCWSTR")] ushort* pszLabel);
+
+            [VtblIndex(5)]
+            HRESULT AddPushButton([NativeTypeName("DWORD")] uint dwIDCtl, [NativeTypeName("LPCWSTR")] ushort* pszLabel);
+
+            [VtblIndex(6)]
+            HRESULT AddComboBox([NativeTypeName("DWORD")] uint dwIDCtl);
+
+            [VtblIndex(7)]
+            HRESULT AddRadioButtonList([NativeTypeName("DWORD")] uint dwIDCtl);
+
+            [VtblIndex(8)]
+            HRESULT AddCheckButton([NativeTypeName("DWORD")] uint dwIDCtl, [NativeTypeName("LPCWSTR")] ushort* pszLabel, BOOL bChecked);
+
+            [VtblIndex(9)]
+            HRESULT AddEditBox([NativeTypeName("DWORD")] uint dwIDCtl, [NativeTypeName("LPCWSTR")] ushort* pszText);
+
+            [VtblIndex(10)]
+            HRESULT AddSeparator([NativeTypeName("DWORD")] uint dwIDCtl);
+
+            [VtblIndex(11)]
+            HRESULT AddText([NativeTypeName("DWORD")] uint dwIDCtl, [NativeTypeName("LPCWSTR")] ushort* pszText);
+
+            [VtblIndex(12)]
+            HRESULT SetControlLabel([NativeTypeName("DWORD")] uint dwIDCtl, [NativeTypeName("LPCWSTR")] ushort* pszLabel);
+
+            [VtblIndex(13)]
+            HRESULT GetControlState([NativeTypeName("DWORD")] uint dwIDCtl, CDCONTROLSTATEF* pdwState);
+
+            [VtblIndex(14)]
+            HRESULT SetControlState([NativeTypeName("DWORD")] uint dwIDCtl, CDCONTROLSTATEF dwState);
+
+            [VtblIndex(15)]
+            HRESULT GetEditBoxText([NativeTypeName("DWORD")] uint dwIDCtl, [NativeTypeName("WCHAR **")] ushort** ppszText);
+
+            [VtblIndex(16)]
+            HRESULT SetEditBoxText([NativeTypeName("DWORD")] uint dwIDCtl, [NativeTypeName("LPCWSTR")] ushort* pszText);
+
+            [VtblIndex(17)]
+            HRESULT GetCheckButtonState([NativeTypeName("DWORD")] uint dwIDCtl, BOOL* pbChecked);
+
+            [VtblIndex(18)]
+            HRESULT SetCheckButtonState([NativeTypeName("DWORD")] uint dwIDCtl, BOOL bChecked);
+
+            [VtblIndex(19)]
+            HRESULT AddControlItem([NativeTypeName("DWORD")] uint dwIDCtl, [NativeTypeName("DWORD")] uint dwIDItem, [NativeTypeName("LPCWSTR")] ushort* pszLabel);
+
+            [VtblIndex(20)]
+            HRESULT RemoveControlItem([NativeTypeName("DWORD")] uint dwIDCtl, [NativeTypeName("DWORD")] uint dwIDItem);
+
+            [VtblIndex(21)]
+            HRESULT RemoveAllControlItems([NativeTypeName("DWORD")] uint dwIDCtl);
+
+            [VtblIndex(22)]
+            HRESULT GetControlItemState([NativeTypeName("DWORD")] uint dwIDCtl, [NativeTypeName("DWORD")] uint dwIDItem, CDCONTROLSTATEF* pdwState);
+
+            [VtblIndex(23)]
+            HRESULT SetControlItemState([NativeTypeName("DWORD")] uint dwIDCtl, [NativeTypeName("DWORD")] uint dwIDItem, CDCONTROLSTATEF dwState);
+
+            [VtblIndex(24)]
+            HRESULT GetSelectedControlItem([NativeTypeName("DWORD")] uint dwIDCtl, [NativeTypeName("DWORD *")] uint* pdwIDItem);
+
+            [VtblIndex(25)]
+            HRESULT SetSelectedControlItem([NativeTypeName("DWORD")] uint dwIDCtl, [NativeTypeName("DWORD")] uint dwIDItem);
+
+            [VtblIndex(26)]
+            HRESULT StartVisualGroup([NativeTypeName("DWORD")] uint dwIDCtl, [NativeTypeName("LPCWSTR")] ushort* pszLabel);
+
+            [VtblIndex(27)]
+            HRESULT EndVisualGroup();
+
+            [VtblIndex(28)]
+            HRESULT MakeProminent([NativeTypeName("DWORD")] uint dwIDCtl);
+
+            [VtblIndex(29)]
+            HRESULT SetControlItemText([NativeTypeName("DWORD")] uint dwIDCtl, [NativeTypeName("DWORD")] uint dwIDItem, [NativeTypeName("LPCWSTR")] ushort* pszLabel);
         }
 
         public partial struct Vtbl

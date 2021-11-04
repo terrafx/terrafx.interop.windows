@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("744129E0-CBE5-11CE-8350-444553540000")]
     [NativeTypeName("struct FolderItems : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct FolderItems
+    public unsafe partial struct FolderItems : FolderItems.Interface
     {
         public void** lpVtbl;
 
@@ -100,6 +100,24 @@ namespace TerraFX.Interop
         public HRESULT _NewEnum(IUnknown** ppunk)
         {
             return ((delegate* unmanaged<FolderItems*, IUnknown**, int>)(lpVtbl[11]))((FolderItems*)Unsafe.AsPointer(ref this), ppunk);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT get_Count([NativeTypeName("long *")] int* plCount);
+
+            [VtblIndex(8)]
+            HRESULT get_Application(IDispatch** ppid);
+
+            [VtblIndex(9)]
+            HRESULT get_Parent(IDispatch** ppid);
+
+            [VtblIndex(10)]
+            HRESULT Item(VARIANT index, FolderItem** ppid);
+
+            [VtblIndex(11)]
+            HRESULT _NewEnum(IUnknown** ppunk);
         }
 
         public partial struct Vtbl

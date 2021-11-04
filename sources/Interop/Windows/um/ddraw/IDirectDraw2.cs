@@ -10,7 +10,7 @@ namespace TerraFX.Interop
 {
     [NativeTypeName("struct IDirectDraw2 : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IDirectDraw2
+    public unsafe partial struct IDirectDraw2 : IDirectDraw2.Interface
     {
         public void** lpVtbl;
 
@@ -182,6 +182,72 @@ namespace TerraFX.Interop
         public HRESULT GetAvailableVidMem([NativeTypeName("LPDDSCAPS")] DDSCAPS* param0, [NativeTypeName("LPDWORD")] uint* param1, [NativeTypeName("LPDWORD")] uint* param2)
         {
             return ((delegate* unmanaged<IDirectDraw2*, DDSCAPS*, uint*, uint*, int>)(lpVtbl[23]))((IDirectDraw2*)Unsafe.AsPointer(ref this), param0, param1, param2);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT Compact();
+
+            [VtblIndex(4)]
+            HRESULT CreateClipper([NativeTypeName("DWORD")] uint param0, [NativeTypeName("LPDIRECTDRAWCLIPPER *")] IDirectDrawClipper** param1, IUnknown* param2);
+
+            [VtblIndex(5)]
+            HRESULT CreatePalette([NativeTypeName("DWORD")] uint param0, [NativeTypeName("LPPALETTEENTRY")] PALETTEENTRY* param1, [NativeTypeName("LPDIRECTDRAWPALETTE *")] IDirectDrawPalette** param2, IUnknown* param3);
+
+            [VtblIndex(6)]
+            HRESULT CreateSurface([NativeTypeName("LPDDSURFACEDESC")] DDSURFACEDESC* param0, [NativeTypeName("LPDIRECTDRAWSURFACE *")] IDirectDrawSurface** param1, IUnknown* param2);
+
+            [VtblIndex(7)]
+            HRESULT DuplicateSurface([NativeTypeName("LPDIRECTDRAWSURFACE")] IDirectDrawSurface* param0, [NativeTypeName("LPDIRECTDRAWSURFACE *")] IDirectDrawSurface** param1);
+
+            [VtblIndex(8)]
+            HRESULT EnumDisplayModes([NativeTypeName("DWORD")] uint param0, [NativeTypeName("LPDDSURFACEDESC")] DDSURFACEDESC* param1, [NativeTypeName("LPVOID")] void* param2, [NativeTypeName("LPDDENUMMODESCALLBACK")] delegate* unmanaged<DDSURFACEDESC*, void*, HRESULT> param3);
+
+            [VtblIndex(9)]
+            HRESULT EnumSurfaces([NativeTypeName("DWORD")] uint param0, [NativeTypeName("LPDDSURFACEDESC")] DDSURFACEDESC* param1, [NativeTypeName("LPVOID")] void* param2, [NativeTypeName("LPDDENUMSURFACESCALLBACK")] delegate* unmanaged<IDirectDrawSurface*, DDSURFACEDESC*, void*, HRESULT> param3);
+
+            [VtblIndex(10)]
+            HRESULT FlipToGDISurface();
+
+            [VtblIndex(11)]
+            HRESULT GetCaps([NativeTypeName("LPDDCAPS")] DDCAPS_DX7* param0, [NativeTypeName("LPDDCAPS")] DDCAPS_DX7* param1);
+
+            [VtblIndex(12)]
+            HRESULT GetDisplayMode([NativeTypeName("LPDDSURFACEDESC")] DDSURFACEDESC* param0);
+
+            [VtblIndex(13)]
+            HRESULT GetFourCCCodes([NativeTypeName("LPDWORD")] uint* param0, [NativeTypeName("LPDWORD")] uint* param1);
+
+            [VtblIndex(14)]
+            HRESULT GetGDISurface([NativeTypeName("LPDIRECTDRAWSURFACE *")] IDirectDrawSurface** param0);
+
+            [VtblIndex(15)]
+            HRESULT GetMonitorFrequency([NativeTypeName("LPDWORD")] uint* param0);
+
+            [VtblIndex(16)]
+            HRESULT GetScanLine([NativeTypeName("LPDWORD")] uint* param0);
+
+            [VtblIndex(17)]
+            HRESULT GetVerticalBlankStatus([NativeTypeName("LPBOOL")] BOOL* param0);
+
+            [VtblIndex(18)]
+            HRESULT Initialize(Guid* param0);
+
+            [VtblIndex(19)]
+            HRESULT RestoreDisplayMode();
+
+            [VtblIndex(20)]
+            HRESULT SetCooperativeLevel(HWND param0, [NativeTypeName("DWORD")] uint param1);
+
+            [VtblIndex(21)]
+            HRESULT SetDisplayMode([NativeTypeName("DWORD")] uint param0, [NativeTypeName("DWORD")] uint param1, [NativeTypeName("DWORD")] uint param2, [NativeTypeName("DWORD")] uint param3, [NativeTypeName("DWORD")] uint param4);
+
+            [VtblIndex(22)]
+            HRESULT WaitForVerticalBlank([NativeTypeName("DWORD")] uint param0, HANDLE param1);
+
+            [VtblIndex(23)]
+            HRESULT GetAvailableVidMem([NativeTypeName("LPDDSCAPS")] DDSCAPS* param0, [NativeTypeName("LPDWORD")] uint* param1, [NativeTypeName("LPDWORD")] uint* param2);
         }
 
         public partial struct Vtbl

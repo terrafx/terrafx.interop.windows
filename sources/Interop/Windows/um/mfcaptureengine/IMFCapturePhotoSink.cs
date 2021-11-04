@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("D2D43CC8-48BB-4AA7-95DB-10C06977E777")]
     [NativeTypeName("struct IMFCapturePhotoSink : IMFCaptureSink")]
     [NativeInheritance("IMFCaptureSink")]
-    public unsafe partial struct IMFCapturePhotoSink
+    public unsafe partial struct IMFCapturePhotoSink : IMFCapturePhotoSink.Interface
     {
         public void** lpVtbl;
 
@@ -93,6 +93,18 @@ namespace TerraFX.Interop
         public HRESULT SetOutputByteStream(IMFByteStream* pByteStream)
         {
             return ((delegate* unmanaged<IMFCapturePhotoSink*, IMFByteStream*, int>)(lpVtbl[10]))((IMFCapturePhotoSink*)Unsafe.AsPointer(ref this), pByteStream);
+        }
+
+        public interface Interface : IMFCaptureSink.Interface
+        {
+            [VtblIndex(8)]
+            HRESULT SetOutputFileName([NativeTypeName("LPCWSTR")] ushort* fileName);
+
+            [VtblIndex(9)]
+            HRESULT SetSampleCallback(IMFCaptureEngineOnSampleCallback* pCallback);
+
+            [VtblIndex(10)]
+            HRESULT SetOutputByteStream(IMFByteStream* pByteStream);
         }
 
         public partial struct Vtbl

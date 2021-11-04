@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("9D416F9C-E184-45B2-A4F0-CE517F719E9B")]
     [NativeTypeName("struct IDiaPropertyStorage : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IDiaPropertyStorage
+    public unsafe partial struct IDiaPropertyStorage : IDiaPropertyStorage.Interface
     {
         public void** lpVtbl;
 
@@ -93,6 +93,33 @@ namespace TerraFX.Interop
         public HRESULT ReadBSTR([NativeTypeName("PROPID")] uint id, [NativeTypeName("BSTR *")] ushort** pValue)
         {
             return ((delegate* unmanaged<IDiaPropertyStorage*, uint, ushort**, int>)(lpVtbl[10]))((IDiaPropertyStorage*)Unsafe.AsPointer(ref this), id, pValue);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT ReadMultiple([NativeTypeName("ULONG")] uint cpspec, [NativeTypeName("const PROPSPEC *")] PROPSPEC* rgpspec, PROPVARIANT* rgvar);
+
+            [VtblIndex(4)]
+            HRESULT ReadPropertyNames([NativeTypeName("ULONG")] uint cpropid, [NativeTypeName("const PROPID *")] uint* rgpropid, [NativeTypeName("BSTR *")] ushort** rglpwstrName);
+
+            [VtblIndex(5)]
+            HRESULT Enum(IEnumSTATPROPSTG** ppenum);
+
+            [VtblIndex(6)]
+            HRESULT ReadDWORD([NativeTypeName("PROPID")] uint id, [NativeTypeName("DWORD *")] uint* pValue);
+
+            [VtblIndex(7)]
+            HRESULT ReadLONG([NativeTypeName("PROPID")] uint id, [NativeTypeName("LONG *")] int* pValue);
+
+            [VtblIndex(8)]
+            HRESULT ReadBOOL([NativeTypeName("PROPID")] uint id, BOOL* pValue);
+
+            [VtblIndex(9)]
+            HRESULT ReadULONGLONG([NativeTypeName("PROPID")] uint id, [NativeTypeName("ULONGLONG *")] ulong* pValue);
+
+            [VtblIndex(10)]
+            HRESULT ReadBSTR([NativeTypeName("PROPID")] uint id, [NativeTypeName("BSTR *")] ushort** pValue);
         }
 
         public partial struct Vtbl

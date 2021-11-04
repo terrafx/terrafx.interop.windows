@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("989191AC-28FF-4CF0-9584-E0D078BC2396")]
     [NativeTypeName("struct ILaunchSourceAppUserModelId : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct ILaunchSourceAppUserModelId
+    public unsafe partial struct ILaunchSourceAppUserModelId : ILaunchSourceAppUserModelId.Interface
     {
         public void** lpVtbl;
 
@@ -44,6 +44,12 @@ namespace TerraFX.Interop
         public HRESULT GetAppUserModelId([NativeTypeName("LPWSTR *")] ushort** launchingApp)
         {
             return ((delegate* unmanaged<ILaunchSourceAppUserModelId*, ushort**, int>)(lpVtbl[3]))((ILaunchSourceAppUserModelId*)Unsafe.AsPointer(ref this), launchingApp);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetAppUserModelId([NativeTypeName("LPWSTR *")] ushort** launchingApp);
         }
 
         public partial struct Vtbl

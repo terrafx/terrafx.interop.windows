@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("B2D9F3EC-C9FE-4A11-A2EC-D86208F7C0A2")]
     [NativeTypeName("struct IDWriteLocalFontFileLoader : IDWriteFontFileLoader")]
     [NativeInheritance("IDWriteFontFileLoader")]
-    public unsafe partial struct IDWriteLocalFontFileLoader
+    public unsafe partial struct IDWriteLocalFontFileLoader : IDWriteLocalFontFileLoader.Interface
     {
         public void** lpVtbl;
 
@@ -65,6 +65,18 @@ namespace TerraFX.Interop
         public HRESULT GetLastWriteTimeFromKey([NativeTypeName("const void *")] void* fontFileReferenceKey, [NativeTypeName("UINT32")] uint fontFileReferenceKeySize, FILETIME* lastWriteTime)
         {
             return ((delegate* unmanaged<IDWriteLocalFontFileLoader*, void*, uint, FILETIME*, int>)(lpVtbl[6]))((IDWriteLocalFontFileLoader*)Unsafe.AsPointer(ref this), fontFileReferenceKey, fontFileReferenceKeySize, lastWriteTime);
+        }
+
+        public interface Interface : IDWriteFontFileLoader.Interface
+        {
+            [VtblIndex(4)]
+            HRESULT GetFilePathLengthFromKey([NativeTypeName("const void *")] void* fontFileReferenceKey, [NativeTypeName("UINT32")] uint fontFileReferenceKeySize, [NativeTypeName("UINT32 *")] uint* filePathLength);
+
+            [VtblIndex(5)]
+            HRESULT GetFilePathFromKey([NativeTypeName("const void *")] void* fontFileReferenceKey, [NativeTypeName("UINT32")] uint fontFileReferenceKeySize, [NativeTypeName("WCHAR *")] ushort* filePath, [NativeTypeName("UINT32")] uint filePathSize);
+
+            [VtblIndex(6)]
+            HRESULT GetLastWriteTimeFromKey([NativeTypeName("const void *")] void* fontFileReferenceKey, [NativeTypeName("UINT32")] uint fontFileReferenceKeySize, FILETIME* lastWriteTime);
         }
 
         public partial struct Vtbl

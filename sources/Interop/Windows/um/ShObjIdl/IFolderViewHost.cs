@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("1EA58F02-D55A-411D-B09E-9E65AC21605B")]
     [NativeTypeName("struct IFolderViewHost : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IFolderViewHost
+    public unsafe partial struct IFolderViewHost : IFolderViewHost.Interface
     {
         public void** lpVtbl;
 
@@ -44,6 +44,12 @@ namespace TerraFX.Interop
         public HRESULT Initialize(HWND hwndParent, IDataObject* pdo, RECT* prc)
         {
             return ((delegate* unmanaged<IFolderViewHost*, HWND, IDataObject*, RECT*, int>)(lpVtbl[3]))((IFolderViewHost*)Unsafe.AsPointer(ref this), hwndParent, pdo, prc);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT Initialize(HWND hwndParent, IDataObject* pdo, RECT* prc);
         }
 
         public partial struct Vtbl

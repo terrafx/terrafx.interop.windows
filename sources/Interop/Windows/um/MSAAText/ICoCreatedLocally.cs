@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("0A53EB6C-1908-4742-8CFF-2CEE2E93F94C")]
     [NativeTypeName("struct ICoCreatedLocally : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct ICoCreatedLocally
+    public unsafe partial struct ICoCreatedLocally : ICoCreatedLocally.Interface
     {
         public void** lpVtbl;
 
@@ -44,6 +44,12 @@ namespace TerraFX.Interop
         public HRESULT LocalInit(IUnknown* punkLocalObject, [NativeTypeName("const IID &")] Guid* riidParam, IUnknown* punkParam, VARIANT varParam)
         {
             return ((delegate* unmanaged<ICoCreatedLocally*, IUnknown*, Guid*, IUnknown*, VARIANT, int>)(lpVtbl[3]))((ICoCreatedLocally*)Unsafe.AsPointer(ref this), punkLocalObject, riidParam, punkParam, varParam);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT LocalInit(IUnknown* punkLocalObject, [NativeTypeName("const IID &")] Guid* riidParam, IUnknown* punkParam, VARIANT varParam);
         }
 
         public partial struct Vtbl

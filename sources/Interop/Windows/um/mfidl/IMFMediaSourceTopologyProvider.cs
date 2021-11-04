@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("0E1D6009-C9F3-442D-8C51-A42D2D49452F")]
     [NativeTypeName("struct IMFMediaSourceTopologyProvider : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IMFMediaSourceTopologyProvider
+    public unsafe partial struct IMFMediaSourceTopologyProvider : IMFMediaSourceTopologyProvider.Interface
     {
         public void** lpVtbl;
 
@@ -44,6 +44,12 @@ namespace TerraFX.Interop
         public HRESULT GetMediaSourceTopology(IMFPresentationDescriptor* pPresentationDescriptor, IMFTopology** ppTopology)
         {
             return ((delegate* unmanaged<IMFMediaSourceTopologyProvider*, IMFPresentationDescriptor*, IMFTopology**, int>)(lpVtbl[3]))((IMFMediaSourceTopologyProvider*)Unsafe.AsPointer(ref this), pPresentationDescriptor, ppTopology);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetMediaSourceTopology(IMFPresentationDescriptor* pPresentationDescriptor, IMFTopology** ppTopology);
         }
 
         public partial struct Vtbl

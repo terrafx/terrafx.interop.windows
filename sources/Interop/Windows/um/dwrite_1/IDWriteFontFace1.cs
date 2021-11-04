@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("A71EFDB4-9FDB-4838-AD90-CFC3BE8C3DAF")]
     [NativeTypeName("struct IDWriteFontFace1 : IDWriteFontFace")]
     [NativeInheritance("IDWriteFontFace")]
-    public unsafe partial struct IDWriteFontFace1
+    public unsafe partial struct IDWriteFontFace1 : IDWriteFontFace1.Interface
     {
         public void** lpVtbl;
 
@@ -228,6 +228,45 @@ namespace TerraFX.Interop
         public BOOL HasVerticalGlyphVariants()
         {
             return ((delegate* unmanaged<IDWriteFontFace1*, int>)(lpVtbl[29]))((IDWriteFontFace1*)Unsafe.AsPointer(ref this));
+        }
+
+        public interface Interface : IDWriteFontFace.Interface
+        {
+            [VtblIndex(18)]
+            void GetMetrics(DWRITE_FONT_METRICS1* fontMetrics);
+
+            [VtblIndex(19)]
+            HRESULT GetGdiCompatibleMetrics(float emSize, float pixelsPerDip, [NativeTypeName("const DWRITE_MATRIX *")] DWRITE_MATRIX* transform, DWRITE_FONT_METRICS1* fontMetrics);
+
+            [VtblIndex(20)]
+            void GetCaretMetrics(DWRITE_CARET_METRICS* caretMetrics);
+
+            [VtblIndex(21)]
+            HRESULT GetUnicodeRanges([NativeTypeName("UINT32")] uint maxRangeCount, DWRITE_UNICODE_RANGE* unicodeRanges, [NativeTypeName("UINT32 *")] uint* actualRangeCount);
+
+            [VtblIndex(22)]
+            BOOL IsMonospacedFont();
+
+            [VtblIndex(23)]
+            HRESULT GetDesignGlyphAdvances([NativeTypeName("UINT32")] uint glyphCount, [NativeTypeName("const UINT16 *")] ushort* glyphIndices, [NativeTypeName("INT32 *")] int* glyphAdvances, [Optional] BOOL isSideways);
+
+            [VtblIndex(24)]
+            HRESULT GetGdiCompatibleGlyphAdvances(float emSize, float pixelsPerDip, [NativeTypeName("const DWRITE_MATRIX *")] DWRITE_MATRIX* transform, BOOL useGdiNatural, BOOL isSideways, [NativeTypeName("UINT32")] uint glyphCount, [NativeTypeName("const UINT16 *")] ushort* glyphIndices, [NativeTypeName("INT32 *")] int* glyphAdvances);
+
+            [VtblIndex(25)]
+            HRESULT GetKerningPairAdjustments([NativeTypeName("UINT32")] uint glyphCount, [NativeTypeName("const UINT16 *")] ushort* glyphIndices, [NativeTypeName("INT32 *")] int* glyphAdvanceAdjustments);
+
+            [VtblIndex(26)]
+            BOOL HasKerningPairs();
+
+            [VtblIndex(27)]
+            HRESULT GetRecommendedRenderingMode(float fontEmSize, float dpiX, float dpiY, [NativeTypeName("const DWRITE_MATRIX *")] DWRITE_MATRIX* transform, BOOL isSideways, DWRITE_OUTLINE_THRESHOLD outlineThreshold, DWRITE_MEASURING_MODE measuringMode, DWRITE_RENDERING_MODE* renderingMode);
+
+            [VtblIndex(28)]
+            HRESULT GetVerticalGlyphVariants([NativeTypeName("UINT32")] uint glyphCount, [NativeTypeName("const UINT16 *")] ushort* nominalGlyphIndices, [NativeTypeName("UINT16 *")] ushort* verticalGlyphIndices);
+
+            [VtblIndex(29)]
+            BOOL HasVerticalGlyphVariants();
         }
 
         public partial struct Vtbl

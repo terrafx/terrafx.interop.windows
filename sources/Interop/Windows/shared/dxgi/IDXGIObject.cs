@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("AEC22FB8-76F3-4639-9BE0-28EB43A67A2E")]
     [NativeTypeName("struct IDXGIObject : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IDXGIObject
+    public unsafe partial struct IDXGIObject : IDXGIObject.Interface
     {
         public void** lpVtbl;
 
@@ -65,6 +65,21 @@ namespace TerraFX.Interop
         public HRESULT GetParent([NativeTypeName("const IID &")] Guid* riid, void** ppParent)
         {
             return ((delegate* unmanaged<IDXGIObject*, Guid*, void**, int>)(lpVtbl[6]))((IDXGIObject*)Unsafe.AsPointer(ref this), riid, ppParent);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT SetPrivateData([NativeTypeName("const GUID &")] Guid* Name, uint DataSize, [NativeTypeName("const void *")] void* pData);
+
+            [VtblIndex(4)]
+            HRESULT SetPrivateDataInterface([NativeTypeName("const GUID &")] Guid* Name, [NativeTypeName("const IUnknown *")] IUnknown* pUnknown);
+
+            [VtblIndex(5)]
+            HRESULT GetPrivateData([NativeTypeName("const GUID &")] Guid* Name, uint* pDataSize, void* pData);
+
+            [VtblIndex(6)]
+            HRESULT GetParent([NativeTypeName("const IID &")] Guid* riid, void** ppParent);
         }
 
         public partial struct Vtbl

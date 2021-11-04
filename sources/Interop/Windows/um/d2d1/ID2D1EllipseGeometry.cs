@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("2CD906A4-12E2-11DC-9FED-001143A055F9")]
     [NativeTypeName("struct ID2D1EllipseGeometry : ID2D1Geometry")]
     [NativeInheritance("ID2D1Geometry")]
-    public unsafe partial struct ID2D1EllipseGeometry
+    public unsafe partial struct ID2D1EllipseGeometry : ID2D1EllipseGeometry.Interface
     {
         public void** lpVtbl;
 
@@ -202,6 +202,12 @@ namespace TerraFX.Interop
         public void GetEllipse(D2D1_ELLIPSE* ellipse)
         {
             ((delegate* unmanaged<ID2D1EllipseGeometry*, D2D1_ELLIPSE*, void>)(lpVtbl[17]))((ID2D1EllipseGeometry*)Unsafe.AsPointer(ref this), ellipse);
+        }
+
+        public interface Interface : ID2D1Geometry.Interface
+        {
+            [VtblIndex(17)]
+            void GetEllipse(D2D1_ELLIPSE* ellipse);
         }
 
         public partial struct Vtbl

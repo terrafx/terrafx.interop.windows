@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("C5BC37D6-75C7-46A1-A132-81B5F723C20F")]
     [NativeTypeName("struct IMFMediaStream2 : IMFMediaStream")]
     [NativeInheritance("IMFMediaStream")]
-    public unsafe partial struct IMFMediaStream2
+    public unsafe partial struct IMFMediaStream2 : IMFMediaStream2.Interface
     {
         public void** lpVtbl;
 
@@ -100,6 +100,15 @@ namespace TerraFX.Interop
         public HRESULT GetStreamState(MF_STREAM_STATE* value)
         {
             return ((delegate* unmanaged<IMFMediaStream2*, MF_STREAM_STATE*, int>)(lpVtbl[11]))((IMFMediaStream2*)Unsafe.AsPointer(ref this), value);
+        }
+
+        public interface Interface : IMFMediaStream.Interface
+        {
+            [VtblIndex(10)]
+            HRESULT SetStreamState(MF_STREAM_STATE value);
+
+            [VtblIndex(11)]
+            HRESULT GetStreamState(MF_STREAM_STATE* value);
         }
 
         public partial struct Vtbl

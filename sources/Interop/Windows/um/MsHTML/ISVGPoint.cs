@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("305104F4-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct ISVGPoint : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct ISVGPoint
+    public unsafe partial struct ISVGPoint : ISVGPoint.Interface
     {
         public void** lpVtbl;
 
@@ -100,6 +100,24 @@ namespace TerraFX.Interop
         public HRESULT matrixTransform(ISVGMatrix* pMatrix, ISVGPoint** ppResult)
         {
             return ((delegate* unmanaged<ISVGPoint*, ISVGMatrix*, ISVGPoint**, int>)(lpVtbl[11]))((ISVGPoint*)Unsafe.AsPointer(ref this), pMatrix, ppResult);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT put_x(float v);
+
+            [VtblIndex(8)]
+            HRESULT get_x(float* p);
+
+            [VtblIndex(9)]
+            HRESULT put_y(float v);
+
+            [VtblIndex(10)]
+            HRESULT get_y(float* p);
+
+            [VtblIndex(11)]
+            HRESULT matrixTransform(ISVGMatrix* pMatrix, ISVGPoint** ppResult);
         }
 
         public partial struct Vtbl

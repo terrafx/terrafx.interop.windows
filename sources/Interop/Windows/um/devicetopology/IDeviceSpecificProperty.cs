@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("3B22BCBF-2586-4AF0-8583-205D391B807C")]
     [NativeTypeName("struct IDeviceSpecificProperty : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IDeviceSpecificProperty
+    public unsafe partial struct IDeviceSpecificProperty : IDeviceSpecificProperty.Interface
     {
         public void** lpVtbl;
 
@@ -65,6 +65,21 @@ namespace TerraFX.Interop
         public HRESULT Get4BRange([NativeTypeName("LONG *")] int* plMin, [NativeTypeName("LONG *")] int* plMax, [NativeTypeName("LONG *")] int* plStepping)
         {
             return ((delegate* unmanaged<IDeviceSpecificProperty*, int*, int*, int*, int>)(lpVtbl[6]))((IDeviceSpecificProperty*)Unsafe.AsPointer(ref this), plMin, plMax, plStepping);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetType([NativeTypeName("VARTYPE *")] ushort* pVType);
+
+            [VtblIndex(4)]
+            HRESULT GetValue(void* pvValue, [NativeTypeName("DWORD *")] uint* pcbValue);
+
+            [VtblIndex(5)]
+            HRESULT SetValue(void* pvValue, [NativeTypeName("DWORD")] uint cbValue, [NativeTypeName("LPCGUID")] Guid* pguidEventContext);
+
+            [VtblIndex(6)]
+            HRESULT Get4BRange([NativeTypeName("LONG *")] int* plMin, [NativeTypeName("LONG *")] int* plMax, [NativeTypeName("LONG *")] int* plStepping);
         }
 
         public partial struct Vtbl

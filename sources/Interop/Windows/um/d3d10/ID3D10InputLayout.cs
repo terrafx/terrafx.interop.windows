@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("9B7E4C0B-342C-4106-A19F-4F2704F689F0")]
     [NativeTypeName("struct ID3D10InputLayout : ID3D10DeviceChild")]
     [NativeInheritance("ID3D10DeviceChild")]
-    public unsafe partial struct ID3D10InputLayout
+    public unsafe partial struct ID3D10InputLayout : ID3D10InputLayout.Interface
     {
         public void** lpVtbl;
 
@@ -65,6 +65,10 @@ namespace TerraFX.Interop
         public HRESULT SetPrivateDataInterface([NativeTypeName("const GUID &")] Guid* guid, [NativeTypeName("const IUnknown *")] IUnknown* pData)
         {
             return ((delegate* unmanaged<ID3D10InputLayout*, Guid*, IUnknown*, int>)(lpVtbl[6]))((ID3D10InputLayout*)Unsafe.AsPointer(ref this), guid, pData);
+        }
+
+        public interface Interface : ID3D10DeviceChild.Interface
+        {
         }
 
         public partial struct Vtbl

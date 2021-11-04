@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("72A22D78-CDE4-431D-B8CC-843A71199B6D")]
     [NativeTypeName("struct IActivateAudioInterfaceAsyncOperation : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IActivateAudioInterfaceAsyncOperation
+    public unsafe partial struct IActivateAudioInterfaceAsyncOperation : IActivateAudioInterfaceAsyncOperation.Interface
     {
         public void** lpVtbl;
 
@@ -44,6 +44,12 @@ namespace TerraFX.Interop
         public HRESULT GetActivateResult(HRESULT* activateResult, IUnknown** activatedInterface)
         {
             return ((delegate* unmanaged<IActivateAudioInterfaceAsyncOperation*, HRESULT*, IUnknown**, int>)(lpVtbl[3]))((IActivateAudioInterfaceAsyncOperation*)Unsafe.AsPointer(ref this), activateResult, activatedInterface);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetActivateResult(HRESULT* activateResult, IUnknown** activatedInterface);
         }
 
         public partial struct Vtbl

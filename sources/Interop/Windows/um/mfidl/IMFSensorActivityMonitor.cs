@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("D0CEF145-B3F4-4340-A2E5-7A5080CA05CB")]
     [NativeTypeName("struct IMFSensorActivityMonitor : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IMFSensorActivityMonitor
+    public unsafe partial struct IMFSensorActivityMonitor : IMFSensorActivityMonitor.Interface
     {
         public void** lpVtbl;
 
@@ -51,6 +51,15 @@ namespace TerraFX.Interop
         public HRESULT Stop()
         {
             return ((delegate* unmanaged<IMFSensorActivityMonitor*, int>)(lpVtbl[4]))((IMFSensorActivityMonitor*)Unsafe.AsPointer(ref this));
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT Start();
+
+            [VtblIndex(4)]
+            HRESULT Stop();
         }
 
         public partial struct Vtbl

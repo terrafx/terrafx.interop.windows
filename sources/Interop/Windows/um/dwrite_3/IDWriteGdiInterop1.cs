@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("4556BE70-3ABD-4F70-90BE-421780A6F515")]
     [NativeTypeName("struct IDWriteGdiInterop1 : IDWriteGdiInterop")]
     [NativeInheritance("IDWriteGdiInterop")]
-    public unsafe partial struct IDWriteGdiInterop1
+    public unsafe partial struct IDWriteGdiInterop1 : IDWriteGdiInterop1.Interface
     {
         public void** lpVtbl;
 
@@ -100,6 +100,21 @@ namespace TerraFX.Interop
         public HRESULT GetMatchingFontsByLOGFONT([NativeTypeName("const LOGFONT *")] LOGFONTW* logFont, IDWriteFontSet* fontSet, IDWriteFontSet** filteredSet)
         {
             return ((delegate* unmanaged<IDWriteGdiInterop1*, LOGFONTW*, IDWriteFontSet*, IDWriteFontSet**, int>)(lpVtbl[11]))((IDWriteGdiInterop1*)Unsafe.AsPointer(ref this), logFont, fontSet, filteredSet);
+        }
+
+        public interface Interface : IDWriteGdiInterop.Interface
+        {
+            [VtblIndex(8)]
+            HRESULT CreateFontFromLOGFONT([NativeTypeName("const LOGFONTW *")] LOGFONTW* logFont, IDWriteFontCollection* fontCollection, IDWriteFont** font);
+
+            [VtblIndex(9)]
+            HRESULT GetFontSignature(IDWriteFontFace* fontFace, FONTSIGNATURE* fontSignature);
+
+            [VtblIndex(10)]
+            HRESULT GetFontSignature(IDWriteFont* font, FONTSIGNATURE* fontSignature);
+
+            [VtblIndex(11)]
+            HRESULT GetMatchingFontsByLOGFONT([NativeTypeName("const LOGFONT *")] LOGFONTW* logFont, IDWriteFontSet* fontSet, IDWriteFontSet** filteredSet);
         }
 
         public partial struct Vtbl

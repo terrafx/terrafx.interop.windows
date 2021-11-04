@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("305106EE-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct IHTMLCSSNamespaceRule : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct IHTMLCSSNamespaceRule
+    public unsafe partial struct IHTMLCSSNamespaceRule : IHTMLCSSNamespaceRule.Interface
     {
         public void** lpVtbl;
 
@@ -79,6 +79,15 @@ namespace TerraFX.Interop
         public HRESULT get_prefix([NativeTypeName("BSTR *")] ushort** p)
         {
             return ((delegate* unmanaged<IHTMLCSSNamespaceRule*, ushort**, int>)(lpVtbl[8]))((IHTMLCSSNamespaceRule*)Unsafe.AsPointer(ref this), p);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT get_namespaceURI([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(8)]
+            HRESULT get_prefix([NativeTypeName("BSTR *")] ushort** p);
         }
 
         public partial struct Vtbl

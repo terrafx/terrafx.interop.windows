@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("AE39362B-45A8-4074-9B9E-CCF49AA2D0B6")]
     [NativeTypeName("struct ISpXMLRecoResult : ISpRecoResult")]
     [NativeInheritance("ISpRecoResult")]
-    public unsafe partial struct ISpXMLRecoResult
+    public unsafe partial struct ISpXMLRecoResult : ISpXMLRecoResult.Interface
     {
         public void** lpVtbl;
 
@@ -128,6 +128,15 @@ namespace TerraFX.Interop
         public HRESULT GetXMLErrorInfo(SPSEMANTICERRORINFO* pSemanticErrorInfo)
         {
             return ((delegate* unmanaged<ISpXMLRecoResult*, SPSEMANTICERRORINFO*, int>)(lpVtbl[15]))((ISpXMLRecoResult*)Unsafe.AsPointer(ref this), pSemanticErrorInfo);
+        }
+
+        public interface Interface : ISpRecoResult.Interface
+        {
+            [VtblIndex(14)]
+            HRESULT GetXMLResult([NativeTypeName("LPWSTR *")] ushort** ppszCoMemXMLResult, SPXMLRESULTOPTIONS Options);
+
+            [VtblIndex(15)]
+            HRESULT GetXMLErrorInfo(SPSEMANTICERRORINFO* pSemanticErrorInfo);
         }
 
         public partial struct Vtbl

@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("0E79C6E0-85A0-4BE8-B41A-655CF1FD19BD")]
     [NativeTypeName("struct IVisualTreeService3 : IVisualTreeService2")]
     [NativeInheritance("IVisualTreeService2")]
-    public unsafe partial struct IVisualTreeService3
+    public unsafe partial struct IVisualTreeService3 : IVisualTreeService3.Interface
     {
         public void** lpVtbl;
 
@@ -177,6 +177,21 @@ namespace TerraFX.Interop
         public HRESULT RemoveDictionaryItem(InstanceHandle dictionaryHandle, InstanceHandle resourceKey)
         {
             return ((delegate* unmanaged<IVisualTreeService3*, InstanceHandle, InstanceHandle, int>)(lpVtbl[22]))((IVisualTreeService3*)Unsafe.AsPointer(ref this), dictionaryHandle, resourceKey);
+        }
+
+        public interface Interface : IVisualTreeService2.Interface
+        {
+            [VtblIndex(19)]
+            HRESULT ResolveResource(InstanceHandle resourceContext, [NativeTypeName("LPCWSTR")] ushort* resourceName, ResourceType resourceType, [NativeTypeName("unsigned int")] uint propertyIndex);
+
+            [VtblIndex(20)]
+            HRESULT GetDictionaryItem(InstanceHandle dictionaryHandle, [NativeTypeName("LPCWSTR")] ushort* resourceName, BOOL resourceIsImplicitStyle, InstanceHandle* resourceHandle);
+
+            [VtblIndex(21)]
+            HRESULT AddDictionaryItem(InstanceHandle dictionaryHandle, InstanceHandle resourceKey, InstanceHandle resourceHandle);
+
+            [VtblIndex(22)]
+            HRESULT RemoveDictionaryItem(InstanceHandle dictionaryHandle, InstanceHandle resourceKey);
         }
 
         public partial struct Vtbl

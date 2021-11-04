@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("30204541-427B-4A1C-BACF-655BF463A540")]
     [NativeTypeName("struct IAppxManifestDeviceCapabilitiesEnumerator : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IAppxManifestDeviceCapabilitiesEnumerator
+    public unsafe partial struct IAppxManifestDeviceCapabilitiesEnumerator : IAppxManifestDeviceCapabilitiesEnumerator.Interface
     {
         public void** lpVtbl;
 
@@ -58,6 +58,18 @@ namespace TerraFX.Interop
         public HRESULT MoveNext(BOOL* hasNext)
         {
             return ((delegate* unmanaged<IAppxManifestDeviceCapabilitiesEnumerator*, BOOL*, int>)(lpVtbl[5]))((IAppxManifestDeviceCapabilitiesEnumerator*)Unsafe.AsPointer(ref this), hasNext);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetCurrent([NativeTypeName("LPWSTR *")] ushort** deviceCapability);
+
+            [VtblIndex(4)]
+            HRESULT GetHasCurrent(BOOL* hasCurrent);
+
+            [VtblIndex(5)]
+            HRESULT MoveNext(BOOL* hasNext);
         }
 
         public partial struct Vtbl

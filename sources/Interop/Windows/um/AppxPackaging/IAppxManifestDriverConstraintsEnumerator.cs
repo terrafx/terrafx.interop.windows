@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("D402B2D1-F600-49E0-95E6-975D8DA13D89")]
     [NativeTypeName("struct IAppxManifestDriverConstraintsEnumerator : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IAppxManifestDriverConstraintsEnumerator
+    public unsafe partial struct IAppxManifestDriverConstraintsEnumerator : IAppxManifestDriverConstraintsEnumerator.Interface
     {
         public void** lpVtbl;
 
@@ -58,6 +58,18 @@ namespace TerraFX.Interop
         public HRESULT MoveNext(BOOL* hasNext)
         {
             return ((delegate* unmanaged<IAppxManifestDriverConstraintsEnumerator*, BOOL*, int>)(lpVtbl[5]))((IAppxManifestDriverConstraintsEnumerator*)Unsafe.AsPointer(ref this), hasNext);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetCurrent(IAppxManifestDriverConstraint** driverConstraint);
+
+            [VtblIndex(4)]
+            HRESULT GetHasCurrent(BOOL* hasCurrent);
+
+            [VtblIndex(5)]
+            HRESULT MoveNext(BOOL* hasNext);
         }
 
         public partial struct Vtbl

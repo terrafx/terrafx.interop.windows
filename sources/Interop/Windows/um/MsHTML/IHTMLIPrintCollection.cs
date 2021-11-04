@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("3050F6B5-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct IHTMLIPrintCollection : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct IHTMLIPrintCollection
+    public unsafe partial struct IHTMLIPrintCollection : IHTMLIPrintCollection.Interface
     {
         public void** lpVtbl;
 
@@ -86,6 +86,18 @@ namespace TerraFX.Interop
         public HRESULT item([NativeTypeName("long")] int index, IUnknown** ppIPrint)
         {
             return ((delegate* unmanaged<IHTMLIPrintCollection*, int, IUnknown**, int>)(lpVtbl[9]))((IHTMLIPrintCollection*)Unsafe.AsPointer(ref this), index, ppIPrint);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT get_length([NativeTypeName("long *")] int* p);
+
+            [VtblIndex(8)]
+            HRESULT get__newEnum(IUnknown** p);
+
+            [VtblIndex(9)]
+            HRESULT item([NativeTypeName("long")] int index, IUnknown** ppIPrint);
         }
 
         public partial struct Vtbl

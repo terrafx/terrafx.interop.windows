@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("791E8298-3EF3-4230-9880-C9BDECC42064")]
     [NativeTypeName("struct IDWriteBitmapRenderTarget1 : IDWriteBitmapRenderTarget")]
     [NativeInheritance("IDWriteBitmapRenderTarget")]
-    public unsafe partial struct IDWriteBitmapRenderTarget1
+    public unsafe partial struct IDWriteBitmapRenderTarget1 : IDWriteBitmapRenderTarget1.Interface
     {
         public void** lpVtbl;
 
@@ -107,6 +107,15 @@ namespace TerraFX.Interop
         public HRESULT SetTextAntialiasMode(DWRITE_TEXT_ANTIALIAS_MODE antialiasMode)
         {
             return ((delegate* unmanaged<IDWriteBitmapRenderTarget1*, DWRITE_TEXT_ANTIALIAS_MODE, int>)(lpVtbl[12]))((IDWriteBitmapRenderTarget1*)Unsafe.AsPointer(ref this), antialiasMode);
+        }
+
+        public interface Interface : IDWriteBitmapRenderTarget.Interface
+        {
+            [VtblIndex(11)]
+            DWRITE_TEXT_ANTIALIAS_MODE GetTextAntialiasMode();
+
+            [VtblIndex(12)]
+            HRESULT SetTextAntialiasMode(DWRITE_TEXT_ANTIALIAS_MODE antialiasMode);
         }
 
         public partial struct Vtbl

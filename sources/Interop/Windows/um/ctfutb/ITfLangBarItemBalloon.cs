@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("01C2D285-D3C7-4B7B-B5B5-D97411D0C283")]
     [NativeTypeName("struct ITfLangBarItemBalloon : ITfLangBarItem")]
     [NativeInheritance("ITfLangBarItem")]
-    public unsafe partial struct ITfLangBarItemBalloon
+    public unsafe partial struct ITfLangBarItemBalloon : ITfLangBarItemBalloon.Interface
     {
         public void** lpVtbl;
 
@@ -86,6 +86,18 @@ namespace TerraFX.Interop
         public HRESULT GetBalloonInfo(TF_LBBALLOONINFO* pInfo)
         {
             return ((delegate* unmanaged<ITfLangBarItemBalloon*, TF_LBBALLOONINFO*, int>)(lpVtbl[9]))((ITfLangBarItemBalloon*)Unsafe.AsPointer(ref this), pInfo);
+        }
+
+        public interface Interface : ITfLangBarItem.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT OnClick(TfLBIClick click, POINT pt, [NativeTypeName("const RECT *")] RECT* prcArea);
+
+            [VtblIndex(8)]
+            HRESULT GetPreferredSize([NativeTypeName("const SIZE *")] SIZE* pszDefault, SIZE* psz);
+
+            [VtblIndex(9)]
+            HRESULT GetBalloonInfo(TF_LBBALLOONINFO* pInfo);
         }
 
         public partial struct Vtbl

@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("3051077D-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct IDOMXmlSerializer : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct IDOMXmlSerializer
+    public unsafe partial struct IDOMXmlSerializer : IDOMXmlSerializer.Interface
     {
         public void** lpVtbl;
 
@@ -72,6 +72,12 @@ namespace TerraFX.Interop
         public HRESULT serializeToString(IHTMLDOMNode* pNode, [NativeTypeName("BSTR *")] ushort** pString)
         {
             return ((delegate* unmanaged<IDOMXmlSerializer*, IHTMLDOMNode*, ushort**, int>)(lpVtbl[7]))((IDOMXmlSerializer*)Unsafe.AsPointer(ref this), pNode, pString);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT serializeToString(IHTMLDOMNode* pNode, [NativeTypeName("BSTR *")] ushort** pString);
         }
 
         public partial struct Vtbl

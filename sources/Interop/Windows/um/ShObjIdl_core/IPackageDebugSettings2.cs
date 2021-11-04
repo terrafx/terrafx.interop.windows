@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("6E3194BB-AB82-4D22-93F5-FABDA40E7B16")]
     [NativeTypeName("struct IPackageDebugSettings2 : IPackageDebugSettings")]
     [NativeInheritance("IPackageDebugSettings")]
-    public unsafe partial struct IPackageDebugSettings2
+    public unsafe partial struct IPackageDebugSettings2 : IPackageDebugSettings2.Interface
     {
         public void** lpVtbl;
 
@@ -149,6 +149,12 @@ namespace TerraFX.Interop
         public HRESULT EnumerateApps([NativeTypeName("LPCWSTR")] ushort* packageFullName, [NativeTypeName("ULONG *")] uint* appCount, [NativeTypeName("LPWSTR **")] ushort*** appUserModelIds, [NativeTypeName("LPWSTR **")] ushort*** appDisplayNames)
         {
             return ((delegate* unmanaged<IPackageDebugSettings2*, ushort*, uint*, ushort***, ushort***, int>)(lpVtbl[18]))((IPackageDebugSettings2*)Unsafe.AsPointer(ref this), packageFullName, appCount, appUserModelIds, appDisplayNames);
+        }
+
+        public interface Interface : IPackageDebugSettings.Interface
+        {
+            [VtblIndex(18)]
+            HRESULT EnumerateApps([NativeTypeName("LPCWSTR")] ushort* packageFullName, [NativeTypeName("ULONG *")] uint* appCount, [NativeTypeName("LPWSTR **")] ushort*** appUserModelIds, [NativeTypeName("LPWSTR **")] ushort*** appDisplayNames);
         }
 
         public partial struct Vtbl

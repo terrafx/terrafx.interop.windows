@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("AA80E7F0-2021-11D2-93E0-0060B067B86E")]
     [NativeTypeName("struct ITfKeystrokeMgr : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct ITfKeystrokeMgr
+    public unsafe partial struct ITfKeystrokeMgr : ITfKeystrokeMgr.Interface
     {
         public void** lpVtbl;
 
@@ -135,6 +135,51 @@ namespace TerraFX.Interop
         public HRESULT SimulatePreservedKey(ITfContext* pic, [NativeTypeName("const GUID &")] Guid* rguid, BOOL* pfEaten)
         {
             return ((delegate* unmanaged<ITfKeystrokeMgr*, ITfContext*, Guid*, BOOL*, int>)(lpVtbl[16]))((ITfKeystrokeMgr*)Unsafe.AsPointer(ref this), pic, rguid, pfEaten);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT AdviseKeyEventSink([NativeTypeName("TfClientId")] uint tid, ITfKeyEventSink* pSink, BOOL fForeground);
+
+            [VtblIndex(4)]
+            HRESULT UnadviseKeyEventSink([NativeTypeName("TfClientId")] uint tid);
+
+            [VtblIndex(5)]
+            HRESULT GetForeground([NativeTypeName("CLSID *")] Guid* pclsid);
+
+            [VtblIndex(6)]
+            HRESULT TestKeyDown(WPARAM wParam, LPARAM lParam, BOOL* pfEaten);
+
+            [VtblIndex(7)]
+            HRESULT TestKeyUp(WPARAM wParam, LPARAM lParam, BOOL* pfEaten);
+
+            [VtblIndex(8)]
+            HRESULT KeyDown(WPARAM wParam, LPARAM lParam, BOOL* pfEaten);
+
+            [VtblIndex(9)]
+            HRESULT KeyUp(WPARAM wParam, LPARAM lParam, BOOL* pfEaten);
+
+            [VtblIndex(10)]
+            HRESULT GetPreservedKey(ITfContext* pic, [NativeTypeName("const TF_PRESERVEDKEY *")] TF_PRESERVEDKEY* pprekey, Guid* pguid);
+
+            [VtblIndex(11)]
+            HRESULT IsPreservedKey([NativeTypeName("const GUID &")] Guid* rguid, [NativeTypeName("const TF_PRESERVEDKEY *")] TF_PRESERVEDKEY* pprekey, BOOL* pfRegistered);
+
+            [VtblIndex(12)]
+            HRESULT PreserveKey([NativeTypeName("TfClientId")] uint tid, [NativeTypeName("const GUID &")] Guid* rguid, [NativeTypeName("const TF_PRESERVEDKEY *")] TF_PRESERVEDKEY* prekey, [NativeTypeName("const WCHAR *")] ushort* pchDesc, [NativeTypeName("ULONG")] uint cchDesc);
+
+            [VtblIndex(13)]
+            HRESULT UnpreserveKey([NativeTypeName("const GUID &")] Guid* rguid, [NativeTypeName("const TF_PRESERVEDKEY *")] TF_PRESERVEDKEY* pprekey);
+
+            [VtblIndex(14)]
+            HRESULT SetPreservedKeyDescription([NativeTypeName("const GUID &")] Guid* rguid, [NativeTypeName("const WCHAR *")] ushort* pchDesc, [NativeTypeName("ULONG")] uint cchDesc);
+
+            [VtblIndex(15)]
+            HRESULT GetPreservedKeyDescription([NativeTypeName("const GUID &")] Guid* rguid, [NativeTypeName("BSTR *")] ushort** pbstrDesc);
+
+            [VtblIndex(16)]
+            HRESULT SimulatePreservedKey(ITfContext* pic, [NativeTypeName("const GUID &")] Guid* rguid, BOOL* pfEaten);
         }
 
         public partial struct Vtbl

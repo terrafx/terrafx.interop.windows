@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("D57C7288-D4AD-4768-BE02-9D969532D960")]
     [NativeTypeName("struct IFileOpenDialog : IFileDialog")]
     [NativeInheritance("IFileDialog")]
-    public unsafe partial struct IFileOpenDialog
+    public unsafe partial struct IFileOpenDialog : IFileOpenDialog.Interface
     {
         public void** lpVtbl;
 
@@ -219,6 +219,15 @@ namespace TerraFX.Interop
         public HRESULT GetSelectedItems(IShellItemArray** ppsai)
         {
             return ((delegate* unmanaged<IFileOpenDialog*, IShellItemArray**, int>)(lpVtbl[28]))((IFileOpenDialog*)Unsafe.AsPointer(ref this), ppsai);
+        }
+
+        public interface Interface : IFileDialog.Interface
+        {
+            [VtblIndex(27)]
+            HRESULT GetResults(IShellItemArray** ppenum);
+
+            [VtblIndex(28)]
+            HRESULT GetSelectedItems(IShellItemArray** ppsai);
         }
 
         public partial struct Vtbl

@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("77EFFA68-4F98-4366-BA72-573B3D880571")]
     [NativeTypeName("struct IPersistSerializedPropStorage2 : IPersistSerializedPropStorage")]
     [NativeInheritance("IPersistSerializedPropStorage")]
-    public unsafe partial struct IPersistSerializedPropStorage2
+    public unsafe partial struct IPersistSerializedPropStorage2 : IPersistSerializedPropStorage2.Interface
     {
         public void** lpVtbl;
 
@@ -72,6 +72,15 @@ namespace TerraFX.Interop
         public HRESULT GetPropertyStorageBuffer(PCUSERIALIZEDPROPSTORAGE psps, [NativeTypeName("DWORD")] uint cb, [NativeTypeName("DWORD *")] uint* pcbWritten)
         {
             return ((delegate* unmanaged<IPersistSerializedPropStorage2*, PCUSERIALIZEDPROPSTORAGE, uint, uint*, int>)(lpVtbl[7]))((IPersistSerializedPropStorage2*)Unsafe.AsPointer(ref this), psps, cb, pcbWritten);
+        }
+
+        public interface Interface : IPersistSerializedPropStorage.Interface
+        {
+            [VtblIndex(6)]
+            HRESULT GetPropertyStorageSize([NativeTypeName("DWORD *")] uint* pcb);
+
+            [VtblIndex(7)]
+            HRESULT GetPropertyStorageBuffer(PCUSERIALIZEDPROPSTORAGE psps, [NativeTypeName("DWORD")] uint cb, [NativeTypeName("DWORD *")] uint* pcbWritten);
         }
 
         public partial struct Vtbl

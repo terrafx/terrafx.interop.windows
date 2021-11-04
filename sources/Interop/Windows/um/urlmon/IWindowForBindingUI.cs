@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("79EAC9D5-BAFA-11CE-8C82-00AA004BA90B")]
     [NativeTypeName("struct IWindowForBindingUI : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IWindowForBindingUI
+    public unsafe partial struct IWindowForBindingUI : IWindowForBindingUI.Interface
     {
         public void** lpVtbl;
 
@@ -44,6 +44,12 @@ namespace TerraFX.Interop
         public HRESULT GetWindow([NativeTypeName("const GUID &")] Guid* rguidReason, HWND* phwnd)
         {
             return ((delegate* unmanaged<IWindowForBindingUI*, Guid*, HWND*, int>)(lpVtbl[3]))((IWindowForBindingUI*)Unsafe.AsPointer(ref this), rguidReason, phwnd);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetWindow([NativeTypeName("const GUID &")] Guid* rguidReason, HWND* phwnd);
         }
 
         public partial struct Vtbl

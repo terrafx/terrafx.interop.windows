@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("3051051F-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct ISVGTextPathElement : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct ISVGTextPathElement
+    public unsafe partial struct ISVGTextPathElement : ISVGTextPathElement.Interface
     {
         public void** lpVtbl;
 
@@ -107,6 +107,27 @@ namespace TerraFX.Interop
         public HRESULT get_spacing(ISVGAnimatedEnumeration** p)
         {
             return ((delegate* unmanaged<ISVGTextPathElement*, ISVGAnimatedEnumeration**, int>)(lpVtbl[12]))((ISVGTextPathElement*)Unsafe.AsPointer(ref this), p);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT putref_startOffset(ISVGAnimatedLength* v);
+
+            [VtblIndex(8)]
+            HRESULT get_startOffset(ISVGAnimatedLength** p);
+
+            [VtblIndex(9)]
+            HRESULT putref_method(ISVGAnimatedEnumeration* v);
+
+            [VtblIndex(10)]
+            HRESULT get_method(ISVGAnimatedEnumeration** p);
+
+            [VtblIndex(11)]
+            HRESULT putref_spacing(ISVGAnimatedEnumeration* v);
+
+            [VtblIndex(12)]
+            HRESULT get_spacing(ISVGAnimatedEnumeration** p);
         }
 
         public partial struct Vtbl

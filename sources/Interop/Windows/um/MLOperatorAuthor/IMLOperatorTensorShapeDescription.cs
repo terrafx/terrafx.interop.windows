@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("F20E8CBE-3B28-4248-BE95-F96FBC6E4643")]
     [NativeTypeName("struct IMLOperatorTensorShapeDescription : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IMLOperatorTensorShapeDescription
+    public unsafe partial struct IMLOperatorTensorShapeDescription : IMLOperatorTensorShapeDescription.Interface
     {
         public void** lpVtbl;
 
@@ -72,6 +72,24 @@ namespace TerraFX.Interop
         public HRESULT GetOutputTensorShape([NativeTypeName("uint32_t")] uint outputIndex, [NativeTypeName("uint32_t")] uint dimensionCount, [NativeTypeName("uint32_t *")] uint* dimensions)
         {
             return ((delegate* unmanaged<IMLOperatorTensorShapeDescription*, uint, uint, uint*, int>)(lpVtbl[7]))((IMLOperatorTensorShapeDescription*)Unsafe.AsPointer(ref this), outputIndex, dimensionCount, dimensions);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetInputTensorDimensionCount([NativeTypeName("uint32_t")] uint inputIndex, [NativeTypeName("uint32_t *")] uint* dimensionCount);
+
+            [VtblIndex(4)]
+            HRESULT GetInputTensorShape([NativeTypeName("uint32_t")] uint inputIndex, [NativeTypeName("uint32_t")] uint dimensionCount, [NativeTypeName("uint32_t *")] uint* dimensions);
+
+            [VtblIndex(5)]
+            bool HasOutputShapeDescription();
+
+            [VtblIndex(6)]
+            HRESULT GetOutputTensorDimensionCount([NativeTypeName("uint32_t")] uint outputIndex, [NativeTypeName("uint32_t *")] uint* dimensionCount);
+
+            [VtblIndex(7)]
+            HRESULT GetOutputTensorShape([NativeTypeName("uint32_t")] uint outputIndex, [NativeTypeName("uint32_t")] uint dimensionCount, [NativeTypeName("uint32_t *")] uint* dimensions);
         }
 
         public partial struct Vtbl

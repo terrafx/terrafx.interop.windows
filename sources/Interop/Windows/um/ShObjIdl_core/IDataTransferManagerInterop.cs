@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("3A3DCD6C-3EAB-43DC-BCDE-45671CE800C8")]
     [NativeTypeName("struct IDataTransferManagerInterop : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IDataTransferManagerInterop
+    public unsafe partial struct IDataTransferManagerInterop : IDataTransferManagerInterop.Interface
     {
         public void** lpVtbl;
 
@@ -51,6 +51,15 @@ namespace TerraFX.Interop
         public HRESULT ShowShareUIForWindow(HWND appWindow)
         {
             return ((delegate* unmanaged<IDataTransferManagerInterop*, HWND, int>)(lpVtbl[4]))((IDataTransferManagerInterop*)Unsafe.AsPointer(ref this), appWindow);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetForWindow(HWND appWindow, [NativeTypeName("const IID &")] Guid* riid, void** dataTransferManager);
+
+            [VtblIndex(4)]
+            HRESULT ShowShareUIForWindow(HWND appWindow);
         }
 
         public partial struct Vtbl

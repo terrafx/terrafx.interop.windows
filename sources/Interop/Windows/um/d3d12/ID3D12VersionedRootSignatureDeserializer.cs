@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("7F91CE67-090C-4BB7-B78E-ED8FF2E31DA0")]
     [NativeTypeName("struct ID3D12VersionedRootSignatureDeserializer : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct ID3D12VersionedRootSignatureDeserializer
+    public unsafe partial struct ID3D12VersionedRootSignatureDeserializer : ID3D12VersionedRootSignatureDeserializer.Interface
     {
         public void** lpVtbl;
 
@@ -52,6 +52,16 @@ namespace TerraFX.Interop
         public D3D12_VERSIONED_ROOT_SIGNATURE_DESC* GetUnconvertedRootSignatureDesc()
         {
             return ((delegate* unmanaged<ID3D12VersionedRootSignatureDeserializer*, D3D12_VERSIONED_ROOT_SIGNATURE_DESC*>)(lpVtbl[4]))((ID3D12VersionedRootSignatureDeserializer*)Unsafe.AsPointer(ref this));
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetRootSignatureDescAtVersion(D3D_ROOT_SIGNATURE_VERSION convertToVersion, [NativeTypeName("const D3D12_VERSIONED_ROOT_SIGNATURE_DESC **")] D3D12_VERSIONED_ROOT_SIGNATURE_DESC** ppDesc);
+
+            [VtblIndex(4)]
+            [return: NativeTypeName("const D3D12_VERSIONED_ROOT_SIGNATURE_DESC *")]
+            D3D12_VERSIONED_ROOT_SIGNATURE_DESC* GetUnconvertedRootSignatureDesc();
         }
 
         public partial struct Vtbl

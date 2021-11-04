@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("8137828F-591A-4A42-BE58-49EA7EBAAC68")]
     [NativeTypeName("struct ISpGrammarBuilder : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct ISpGrammarBuilder
+    public unsafe partial struct ISpGrammarBuilder : ISpGrammarBuilder.Interface
     {
         public void** lpVtbl;
 
@@ -93,6 +93,33 @@ namespace TerraFX.Interop
         public HRESULT Commit([NativeTypeName("DWORD")] uint dwReserved)
         {
             return ((delegate* unmanaged<ISpGrammarBuilder*, uint, int>)(lpVtbl[10]))((ISpGrammarBuilder*)Unsafe.AsPointer(ref this), dwReserved);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT ResetGrammar([NativeTypeName("WORD")] ushort NewLanguage);
+
+            [VtblIndex(4)]
+            HRESULT GetRule([NativeTypeName("LPCWSTR")] ushort* pszRuleName, [NativeTypeName("DWORD")] uint dwRuleId, [NativeTypeName("DWORD")] uint dwAttributes, BOOL fCreateIfNotExist, SPSTATEHANDLE* phInitialState);
+
+            [VtblIndex(5)]
+            HRESULT ClearRule(SPSTATEHANDLE hState);
+
+            [VtblIndex(6)]
+            HRESULT CreateNewState(SPSTATEHANDLE hState, SPSTATEHANDLE* phState);
+
+            [VtblIndex(7)]
+            HRESULT AddWordTransition(SPSTATEHANDLE hFromState, SPSTATEHANDLE hToState, [NativeTypeName("LPCWSTR")] ushort* psz, [NativeTypeName("LPCWSTR")] ushort* pszSeparators, SPGRAMMARWORDTYPE eWordType, float Weight, [NativeTypeName("const SPPROPERTYINFO *")] SPPROPERTYINFO* pPropInfo);
+
+            [VtblIndex(8)]
+            HRESULT AddRuleTransition(SPSTATEHANDLE hFromState, SPSTATEHANDLE hToState, SPSTATEHANDLE hRule, float Weight, [NativeTypeName("const SPPROPERTYINFO *")] SPPROPERTYINFO* pPropInfo);
+
+            [VtblIndex(9)]
+            HRESULT AddResource(SPSTATEHANDLE hRuleState, [NativeTypeName("LPCWSTR")] ushort* pszResourceName, [NativeTypeName("LPCWSTR")] ushort* pszResourceValue);
+
+            [VtblIndex(10)]
+            HRESULT Commit([NativeTypeName("DWORD")] uint dwReserved);
         }
 
         public partial struct Vtbl

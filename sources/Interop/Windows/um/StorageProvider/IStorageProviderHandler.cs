@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("162C6FB5-44D3-435B-903D-E613FA093FB5")]
     [NativeTypeName("struct IStorageProviderHandler : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IStorageProviderHandler
+    public unsafe partial struct IStorageProviderHandler : IStorageProviderHandler.Interface
     {
         public void** lpVtbl;
 
@@ -58,6 +58,18 @@ namespace TerraFX.Interop
         public HRESULT GetPropertyHandlerFromFileId([NativeTypeName("LPCWSTR")] ushort* fileId, IStorageProviderPropertyHandler** propertyHandler)
         {
             return ((delegate* unmanaged<IStorageProviderHandler*, ushort*, IStorageProviderPropertyHandler**, int>)(lpVtbl[5]))((IStorageProviderHandler*)Unsafe.AsPointer(ref this), fileId, propertyHandler);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetPropertyHandlerFromPath([NativeTypeName("LPCWSTR")] ushort* path, IStorageProviderPropertyHandler** propertyHandler);
+
+            [VtblIndex(4)]
+            HRESULT GetPropertyHandlerFromUri([NativeTypeName("LPCWSTR")] ushort* uri, IStorageProviderPropertyHandler** propertyHandler);
+
+            [VtblIndex(5)]
+            HRESULT GetPropertyHandlerFromFileId([NativeTypeName("LPCWSTR")] ushort* fileId, IStorageProviderPropertyHandler** propertyHandler);
         }
 
         public partial struct Vtbl

@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("73131F9C-56A9-49DD-B0EE-D046633F7528")]
     [NativeTypeName("struct ITfSourceSingle : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct ITfSourceSingle
+    public unsafe partial struct ITfSourceSingle : ITfSourceSingle.Interface
     {
         public void** lpVtbl;
 
@@ -51,6 +51,15 @@ namespace TerraFX.Interop
         public HRESULT UnadviseSingleSink([NativeTypeName("TfClientId")] uint tid, [NativeTypeName("const IID &")] Guid* riid)
         {
             return ((delegate* unmanaged<ITfSourceSingle*, uint, Guid*, int>)(lpVtbl[4]))((ITfSourceSingle*)Unsafe.AsPointer(ref this), tid, riid);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT AdviseSingleSink([NativeTypeName("TfClientId")] uint tid, [NativeTypeName("const IID &")] Guid* riid, IUnknown* punk);
+
+            [VtblIndex(4)]
+            HRESULT UnadviseSingleSink([NativeTypeName("TfClientId")] uint tid, [NativeTypeName("const IID &")] Guid* riid);
         }
 
         public partial struct Vtbl

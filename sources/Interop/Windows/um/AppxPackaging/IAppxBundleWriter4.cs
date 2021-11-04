@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("9CD9D523-5009-4C01-9882-DC029FBD47A3")]
     [NativeTypeName("struct IAppxBundleWriter4 : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IAppxBundleWriter4
+    public unsafe partial struct IAppxBundleWriter4 : IAppxBundleWriter4.Interface
     {
         public void** lpVtbl;
 
@@ -58,6 +58,18 @@ namespace TerraFX.Interop
         public HRESULT AddExternalPackageReference([NativeTypeName("LPCWSTR")] ushort* fileName, IStream* inputStream, BOOL isDefaultApplicablePackage)
         {
             return ((delegate* unmanaged<IAppxBundleWriter4*, ushort*, IStream*, BOOL, int>)(lpVtbl[5]))((IAppxBundleWriter4*)Unsafe.AsPointer(ref this), fileName, inputStream, isDefaultApplicablePackage);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT AddPayloadPackage([NativeTypeName("LPCWSTR")] ushort* fileName, IStream* packageStream, BOOL isDefaultApplicablePackage);
+
+            [VtblIndex(4)]
+            HRESULT AddPackageReference([NativeTypeName("LPCWSTR")] ushort* fileName, IStream* inputStream, BOOL isDefaultApplicablePackage);
+
+            [VtblIndex(5)]
+            HRESULT AddExternalPackageReference([NativeTypeName("LPCWSTR")] ushort* fileName, IStream* inputStream, BOOL isDefaultApplicablePackage);
         }
 
         public partial struct Vtbl

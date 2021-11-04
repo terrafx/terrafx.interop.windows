@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("3050F21E-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct IHTMLTable : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct IHTMLTable
+    public unsafe partial struct IHTMLTable : IHTMLTable.Interface
     {
         public void** lpVtbl;
 
@@ -408,6 +408,156 @@ namespace TerraFX.Interop
         public HRESULT get_onreadystatechange(VARIANT* p)
         {
             return ((delegate* unmanaged<IHTMLTable*, VARIANT*, int>)(lpVtbl[55]))((IHTMLTable*)Unsafe.AsPointer(ref this), p);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT put_cols([NativeTypeName("long")] int v);
+
+            [VtblIndex(8)]
+            HRESULT get_cols([NativeTypeName("long *")] int* p);
+
+            [VtblIndex(9)]
+            HRESULT put_border(VARIANT v);
+
+            [VtblIndex(10)]
+            HRESULT get_border(VARIANT* p);
+
+            [VtblIndex(11)]
+            HRESULT put_frame([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(12)]
+            HRESULT get_frame([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(13)]
+            HRESULT put_rules([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(14)]
+            HRESULT get_rules([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(15)]
+            HRESULT put_cellSpacing(VARIANT v);
+
+            [VtblIndex(16)]
+            HRESULT get_cellSpacing(VARIANT* p);
+
+            [VtblIndex(17)]
+            HRESULT put_cellPadding(VARIANT v);
+
+            [VtblIndex(18)]
+            HRESULT get_cellPadding(VARIANT* p);
+
+            [VtblIndex(19)]
+            HRESULT put_background([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(20)]
+            HRESULT get_background([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(21)]
+            HRESULT put_bgColor(VARIANT v);
+
+            [VtblIndex(22)]
+            HRESULT get_bgColor(VARIANT* p);
+
+            [VtblIndex(23)]
+            HRESULT put_borderColor(VARIANT v);
+
+            [VtblIndex(24)]
+            HRESULT get_borderColor(VARIANT* p);
+
+            [VtblIndex(25)]
+            HRESULT put_borderColorLight(VARIANT v);
+
+            [VtblIndex(26)]
+            HRESULT get_borderColorLight(VARIANT* p);
+
+            [VtblIndex(27)]
+            HRESULT put_borderColorDark(VARIANT v);
+
+            [VtblIndex(28)]
+            HRESULT get_borderColorDark(VARIANT* p);
+
+            [VtblIndex(29)]
+            HRESULT put_align([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(30)]
+            HRESULT get_align([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(31)]
+            HRESULT refresh();
+
+            [VtblIndex(32)]
+            HRESULT get_rows(IHTMLElementCollection** p);
+
+            [VtblIndex(33)]
+            HRESULT put_width(VARIANT v);
+
+            [VtblIndex(34)]
+            HRESULT get_width(VARIANT* p);
+
+            [VtblIndex(35)]
+            HRESULT put_height(VARIANT v);
+
+            [VtblIndex(36)]
+            HRESULT get_height(VARIANT* p);
+
+            [VtblIndex(37)]
+            HRESULT put_dataPageSize([NativeTypeName("long")] int v);
+
+            [VtblIndex(38)]
+            HRESULT get_dataPageSize([NativeTypeName("long *")] int* p);
+
+            [VtblIndex(39)]
+            HRESULT nextPage();
+
+            [VtblIndex(40)]
+            HRESULT previousPage();
+
+            [VtblIndex(41)]
+            HRESULT get_tHead(IHTMLTableSection** p);
+
+            [VtblIndex(42)]
+            HRESULT get_tFoot(IHTMLTableSection** p);
+
+            [VtblIndex(43)]
+            HRESULT get_tBodies(IHTMLElementCollection** p);
+
+            [VtblIndex(44)]
+            HRESULT get_caption(IHTMLTableCaption** p);
+
+            [VtblIndex(45)]
+            HRESULT createTHead(IDispatch** head);
+
+            [VtblIndex(46)]
+            HRESULT deleteTHead();
+
+            [VtblIndex(47)]
+            HRESULT createTFoot(IDispatch** foot);
+
+            [VtblIndex(48)]
+            HRESULT deleteTFoot();
+
+            [VtblIndex(49)]
+            HRESULT createCaption(IHTMLTableCaption** caption);
+
+            [VtblIndex(50)]
+            HRESULT deleteCaption();
+
+            [VtblIndex(51)]
+            HRESULT insertRow([NativeTypeName("long")] int index, IDispatch** row);
+
+            [VtblIndex(52)]
+            HRESULT deleteRow([NativeTypeName("long")] int index = -1);
+
+            [VtblIndex(53)]
+            HRESULT get_readyState([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(54)]
+            HRESULT put_onreadystatechange(VARIANT v);
+
+            [VtblIndex(55)]
+            HRESULT get_onreadystatechange(VARIANT* p);
         }
 
         public partial struct Vtbl

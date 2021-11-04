@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("79EAC9C0-BAF9-11CE-8C82-00AA004BA90B")]
     [NativeTypeName("struct IBinding : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IBinding
+    public unsafe partial struct IBinding : IBinding.Interface
     {
         public void** lpVtbl;
 
@@ -79,6 +79,27 @@ namespace TerraFX.Interop
         public HRESULT GetBindResult([NativeTypeName("CLSID *")] Guid* pclsidProtocol, [NativeTypeName("DWORD *")] uint* pdwResult, [NativeTypeName("LPOLESTR *")] ushort** pszResult, [NativeTypeName("DWORD *")] uint* pdwReserved)
         {
             return ((delegate* unmanaged<IBinding*, Guid*, uint*, ushort**, uint*, int>)(lpVtbl[8]))((IBinding*)Unsafe.AsPointer(ref this), pclsidProtocol, pdwResult, pszResult, pdwReserved);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT Abort();
+
+            [VtblIndex(4)]
+            HRESULT Suspend();
+
+            [VtblIndex(5)]
+            HRESULT Resume();
+
+            [VtblIndex(6)]
+            HRESULT SetPriority([NativeTypeName("LONG")] int nPriority);
+
+            [VtblIndex(7)]
+            HRESULT GetPriority([NativeTypeName("LONG *")] int* pnPriority);
+
+            [VtblIndex(8)]
+            HRESULT GetBindResult([NativeTypeName("CLSID *")] Guid* pclsidProtocol, [NativeTypeName("DWORD *")] uint* pdwResult, [NativeTypeName("LPOLESTR *")] ushort** pszResult, [NativeTypeName("DWORD *")] uint* pdwReserved);
         }
 
         public partial struct Vtbl

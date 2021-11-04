@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("7BACC67A-2F1D-42D0-897E-6FF62DD533BB")]
     [NativeTypeName("struct IDedupReadFileCallback : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IDedupReadFileCallback
+    public unsafe partial struct IDedupReadFileCallback : IDedupReadFileCallback.Interface
     {
         public void** lpVtbl;
 
@@ -58,6 +58,18 @@ namespace TerraFX.Interop
         public HRESULT PreviewContainerRead([NativeTypeName("BSTR")] ushort* FileFullPath, [NativeTypeName("ULONG")] uint NumberOfReads, DDP_FILE_EXTENT* ReadOffsets)
         {
             return ((delegate* unmanaged<IDedupReadFileCallback*, ushort*, uint, DDP_FILE_EXTENT*, int>)(lpVtbl[5]))((IDedupReadFileCallback*)Unsafe.AsPointer(ref this), FileFullPath, NumberOfReads, ReadOffsets);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT ReadBackupFile([NativeTypeName("BSTR")] ushort* FileFullPath, [NativeTypeName("long long")] long FileOffset, [NativeTypeName("ULONG")] uint SizeToRead, byte* FileBuffer, [NativeTypeName("ULONG *")] uint* ReturnedSize, [NativeTypeName("DWORD")] uint Flags);
+
+            [VtblIndex(4)]
+            HRESULT OrderContainersRestore([NativeTypeName("ULONG")] uint NumberOfContainers, [NativeTypeName("BSTR *")] ushort** ContainerPaths, [NativeTypeName("ULONG *")] uint* ReadPlanEntries, DEDUP_CONTAINER_EXTENT** ReadPlan);
+
+            [VtblIndex(5)]
+            HRESULT PreviewContainerRead([NativeTypeName("BSTR")] ushort* FileFullPath, [NativeTypeName("ULONG")] uint NumberOfReads, DDP_FILE_EXTENT* ReadOffsets);
         }
 
         public partial struct Vtbl

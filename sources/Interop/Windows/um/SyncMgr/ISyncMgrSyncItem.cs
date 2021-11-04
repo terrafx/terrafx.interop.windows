@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("B20B24CE-2593-4F04-BD8B-7AD6C45051CD")]
     [NativeTypeName("struct ISyncMgrSyncItem : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct ISyncMgrSyncItem
+    public unsafe partial struct ISyncMgrSyncItem : ISyncMgrSyncItem.Interface
     {
         public void** lpVtbl;
 
@@ -93,6 +93,33 @@ namespace TerraFX.Interop
         public HRESULT Delete()
         {
             return ((delegate* unmanaged<ISyncMgrSyncItem*, int>)(lpVtbl[10]))((ISyncMgrSyncItem*)Unsafe.AsPointer(ref this));
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetItemID([NativeTypeName("LPWSTR *")] ushort** ppszItemID);
+
+            [VtblIndex(4)]
+            HRESULT GetName([NativeTypeName("LPWSTR *")] ushort** ppszName);
+
+            [VtblIndex(5)]
+            HRESULT GetItemInfo(ISyncMgrSyncItemInfo** ppItemInfo);
+
+            [VtblIndex(6)]
+            HRESULT GetObjectW([NativeTypeName("const GUID &")] Guid* rguidObjectID, [NativeTypeName("const IID &")] Guid* riid, void** ppv);
+
+            [VtblIndex(7)]
+            HRESULT GetCapabilities(SYNCMGR_ITEM_CAPABILITIES* pmCapabilities);
+
+            [VtblIndex(8)]
+            HRESULT GetPolicies(SYNCMGR_ITEM_POLICIES* pmPolicies);
+
+            [VtblIndex(9)]
+            HRESULT Enable(BOOL fEnable);
+
+            [VtblIndex(10)]
+            HRESULT Delete();
         }
 
         public partial struct Vtbl

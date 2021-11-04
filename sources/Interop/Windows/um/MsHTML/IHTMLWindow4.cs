@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("3050F6CF-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct IHTMLWindow4 : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct IHTMLWindow4
+    public unsafe partial struct IHTMLWindow4 : IHTMLWindow4.Interface
     {
         public void** lpVtbl;
 
@@ -79,6 +79,15 @@ namespace TerraFX.Interop
         public HRESULT get_frameElement(IHTMLFrameBase** p)
         {
             return ((delegate* unmanaged<IHTMLWindow4*, IHTMLFrameBase**, int>)(lpVtbl[8]))((IHTMLWindow4*)Unsafe.AsPointer(ref this), p);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT createPopup(VARIANT* varArgIn, IDispatch** ppPopup);
+
+            [VtblIndex(8)]
+            HRESULT get_frameElement(IHTMLFrameBase** p);
         }
 
         public partial struct Vtbl

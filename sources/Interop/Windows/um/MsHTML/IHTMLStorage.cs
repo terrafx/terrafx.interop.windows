@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("30510474-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct IHTMLStorage : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct IHTMLStorage
+    public unsafe partial struct IHTMLStorage : IHTMLStorage.Interface
     {
         public void** lpVtbl;
 
@@ -114,6 +114,30 @@ namespace TerraFX.Interop
         public HRESULT clear()
         {
             return ((delegate* unmanaged<IHTMLStorage*, int>)(lpVtbl[13]))((IHTMLStorage*)Unsafe.AsPointer(ref this));
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT get_length([NativeTypeName("long *")] int* p);
+
+            [VtblIndex(8)]
+            HRESULT get_remainingSpace([NativeTypeName("long *")] int* p);
+
+            [VtblIndex(9)]
+            HRESULT key([NativeTypeName("long")] int lIndex, [NativeTypeName("BSTR *")] ushort** __MIDL__IHTMLStorage0000);
+
+            [VtblIndex(10)]
+            HRESULT getItem([NativeTypeName("BSTR")] ushort* bstrKey, VARIANT* __MIDL__IHTMLStorage0001);
+
+            [VtblIndex(11)]
+            HRESULT setItem([NativeTypeName("BSTR")] ushort* bstrKey, [NativeTypeName("BSTR")] ushort* bstrValue);
+
+            [VtblIndex(12)]
+            HRESULT removeItem([NativeTypeName("BSTR")] ushort* bstrKey);
+
+            [VtblIndex(13)]
+            HRESULT clear();
         }
 
         public partial struct Vtbl

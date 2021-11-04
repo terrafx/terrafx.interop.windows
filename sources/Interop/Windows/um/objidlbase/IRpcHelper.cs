@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("00000149-0000-0000-C000-000000000046")]
     [NativeTypeName("struct IRpcHelper : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IRpcHelper
+    public unsafe partial struct IRpcHelper : IRpcHelper.Interface
     {
         public void** lpVtbl;
 
@@ -51,6 +51,15 @@ namespace TerraFX.Interop
         public HRESULT GetIIDFromOBJREF(void* pObjRef, [NativeTypeName("IID **")] Guid** piid)
         {
             return ((delegate* unmanaged<IRpcHelper*, void*, Guid**, int>)(lpVtbl[4]))((IRpcHelper*)Unsafe.AsPointer(ref this), pObjRef, piid);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetDCOMProtocolVersion([NativeTypeName("DWORD *")] uint* pComVersion);
+
+            [VtblIndex(4)]
+            HRESULT GetIIDFromOBJREF(void* pObjRef, [NativeTypeName("IID **")] Guid** piid);
         }
 
         public partial struct Vtbl

@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("A03CD5F0-3045-11CF-8C44-00AA006B6814")]
     [NativeTypeName("struct IAMExtTransport : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IAMExtTransport
+    public unsafe partial struct IAMExtTransport : IAMExtTransport.Interface
     {
         public void** lpVtbl;
 
@@ -233,6 +233,93 @@ namespace TerraFX.Interop
         public HRESULT put_EditStart([NativeTypeName("long")] int Value)
         {
             return ((delegate* unmanaged<IAMExtTransport*, int, int>)(lpVtbl[30]))((IAMExtTransport*)Unsafe.AsPointer(ref this), Value);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetCapability([NativeTypeName("long")] int Capability, [NativeTypeName("long *")] int* pValue, double* pdblValue);
+
+            [VtblIndex(4)]
+            HRESULT put_MediaState([NativeTypeName("long")] int State);
+
+            [VtblIndex(5)]
+            HRESULT get_MediaState([NativeTypeName("long *")] int* pState);
+
+            [VtblIndex(6)]
+            HRESULT put_LocalControl([NativeTypeName("long")] int State);
+
+            [VtblIndex(7)]
+            HRESULT get_LocalControl([NativeTypeName("long *")] int* pState);
+
+            [VtblIndex(8)]
+            HRESULT GetStatus([NativeTypeName("long")] int StatusItem, [NativeTypeName("long *")] int* pValue);
+
+            [VtblIndex(9)]
+            HRESULT GetTransportBasicParameters([NativeTypeName("long")] int Param, [NativeTypeName("long *")] int* pValue, [NativeTypeName("LPOLESTR *")] ushort** ppszData);
+
+            [VtblIndex(10)]
+            HRESULT SetTransportBasicParameters([NativeTypeName("long")] int Param, [NativeTypeName("long")] int Value, [NativeTypeName("LPCOLESTR")] ushort* pszData);
+
+            [VtblIndex(11)]
+            HRESULT GetTransportVideoParameters([NativeTypeName("long")] int Param, [NativeTypeName("long *")] int* pValue);
+
+            [VtblIndex(12)]
+            HRESULT SetTransportVideoParameters([NativeTypeName("long")] int Param, [NativeTypeName("long")] int Value);
+
+            [VtblIndex(13)]
+            HRESULT GetTransportAudioParameters([NativeTypeName("long")] int Param, [NativeTypeName("long *")] int* pValue);
+
+            [VtblIndex(14)]
+            HRESULT SetTransportAudioParameters([NativeTypeName("long")] int Param, [NativeTypeName("long")] int Value);
+
+            [VtblIndex(15)]
+            HRESULT put_Mode([NativeTypeName("long")] int Mode);
+
+            [VtblIndex(16)]
+            HRESULT get_Mode([NativeTypeName("long *")] int* pMode);
+
+            [VtblIndex(17)]
+            HRESULT put_Rate(double dblRate);
+
+            [VtblIndex(18)]
+            HRESULT get_Rate(double* pdblRate);
+
+            [VtblIndex(19)]
+            HRESULT GetChase([NativeTypeName("long *")] int* pEnabled, [NativeTypeName("long *")] int* pOffset, HEVENT* phEvent);
+
+            [VtblIndex(20)]
+            HRESULT SetChase([NativeTypeName("long")] int Enable, [NativeTypeName("long")] int Offset, HEVENT hEvent);
+
+            [VtblIndex(21)]
+            HRESULT GetBump([NativeTypeName("long *")] int* pSpeed, [NativeTypeName("long *")] int* pDuration);
+
+            [VtblIndex(22)]
+            HRESULT SetBump([NativeTypeName("long")] int Speed, [NativeTypeName("long")] int Duration);
+
+            [VtblIndex(23)]
+            HRESULT get_AntiClogControl([NativeTypeName("long *")] int* pEnabled);
+
+            [VtblIndex(24)]
+            HRESULT put_AntiClogControl([NativeTypeName("long")] int Enable);
+
+            [VtblIndex(25)]
+            HRESULT GetEditPropertySet([NativeTypeName("long")] int EditID, [NativeTypeName("long *")] int* pState);
+
+            [VtblIndex(26)]
+            HRESULT SetEditPropertySet([NativeTypeName("long *")] int* pEditID, [NativeTypeName("long")] int State);
+
+            [VtblIndex(27)]
+            HRESULT GetEditProperty([NativeTypeName("long")] int EditID, [NativeTypeName("long")] int Param, [NativeTypeName("long *")] int* pValue);
+
+            [VtblIndex(28)]
+            HRESULT SetEditProperty([NativeTypeName("long")] int EditID, [NativeTypeName("long")] int Param, [NativeTypeName("long")] int Value);
+
+            [VtblIndex(29)]
+            HRESULT get_EditStart([NativeTypeName("long *")] int* pValue);
+
+            [VtblIndex(30)]
+            HRESULT put_EditStart([NativeTypeName("long")] int Value);
         }
 
         public partial struct Vtbl

@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("CFCC809F-295D-42E8-9FFC-424B33C487E6")]
     [NativeTypeName("struct IHWEventHandler2 : IHWEventHandler")]
     [NativeInheritance("IHWEventHandler")]
-    public unsafe partial struct IHWEventHandler2
+    public unsafe partial struct IHWEventHandler2 : IHWEventHandler2.Interface
     {
         public void** lpVtbl;
 
@@ -65,6 +65,12 @@ namespace TerraFX.Interop
         public HRESULT HandleEventWithHWND([NativeTypeName("LPCWSTR")] ushort* pszDeviceID, [NativeTypeName("LPCWSTR")] ushort* pszAltDeviceID, [NativeTypeName("LPCWSTR")] ushort* pszEventType, HWND hwndOwner)
         {
             return ((delegate* unmanaged<IHWEventHandler2*, ushort*, ushort*, ushort*, HWND, int>)(lpVtbl[6]))((IHWEventHandler2*)Unsafe.AsPointer(ref this), pszDeviceID, pszAltDeviceID, pszEventType, hwndOwner);
+        }
+
+        public interface Interface : IHWEventHandler.Interface
+        {
+            [VtblIndex(6)]
+            HRESULT HandleEventWithHWND([NativeTypeName("LPCWSTR")] ushort* pszDeviceID, [NativeTypeName("LPCWSTR")] ushort* pszAltDeviceID, [NativeTypeName("LPCWSTR")] ushort* pszEventType, HWND hwndOwner);
         }
 
         public partial struct Vtbl

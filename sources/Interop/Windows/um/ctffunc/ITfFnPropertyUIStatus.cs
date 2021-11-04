@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("2338AC6E-2B9D-44C0-A75E-EE64F256B3BD")]
     [NativeTypeName("struct ITfFnPropertyUIStatus : ITfFunction")]
     [NativeInheritance("ITfFunction")]
-    public unsafe partial struct ITfFnPropertyUIStatus
+    public unsafe partial struct ITfFnPropertyUIStatus : ITfFnPropertyUIStatus.Interface
     {
         public void** lpVtbl;
 
@@ -58,6 +58,15 @@ namespace TerraFX.Interop
         public HRESULT SetStatus([NativeTypeName("const GUID &")] Guid* refguidProp, [NativeTypeName("DWORD")] uint dw)
         {
             return ((delegate* unmanaged<ITfFnPropertyUIStatus*, Guid*, uint, int>)(lpVtbl[5]))((ITfFnPropertyUIStatus*)Unsafe.AsPointer(ref this), refguidProp, dw);
+        }
+
+        public interface Interface : ITfFunction.Interface
+        {
+            [VtblIndex(4)]
+            HRESULT GetStatus([NativeTypeName("const GUID &")] Guid* refguidProp, [NativeTypeName("DWORD *")] uint* pdw);
+
+            [VtblIndex(5)]
+            HRESULT SetStatus([NativeTypeName("const GUID &")] Guid* refguidProp, [NativeTypeName("DWORD")] uint dw);
         }
 
         public partial struct Vtbl

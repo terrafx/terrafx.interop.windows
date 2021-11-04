@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("00000110-0000-0000-C000-000000000046")]
     [NativeTypeName("struct IDataAdviseHolder : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IDataAdviseHolder
+    public unsafe partial struct IDataAdviseHolder : IDataAdviseHolder.Interface
     {
         public void** lpVtbl;
 
@@ -65,6 +65,21 @@ namespace TerraFX.Interop
         public HRESULT SendOnDataChange(IDataObject* pDataObject, [NativeTypeName("DWORD")] uint dwReserved, [NativeTypeName("DWORD")] uint advf)
         {
             return ((delegate* unmanaged<IDataAdviseHolder*, IDataObject*, uint, uint, int>)(lpVtbl[6]))((IDataAdviseHolder*)Unsafe.AsPointer(ref this), pDataObject, dwReserved, advf);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT Advise(IDataObject* pDataObject, FORMATETC* pFetc, [NativeTypeName("DWORD")] uint advf, IAdviseSink* pAdvise, [NativeTypeName("DWORD *")] uint* pdwConnection);
+
+            [VtblIndex(4)]
+            HRESULT Unadvise([NativeTypeName("DWORD")] uint dwConnection);
+
+            [VtblIndex(5)]
+            HRESULT EnumAdvise(IEnumSTATDATA** ppenumAdvise);
+
+            [VtblIndex(6)]
+            HRESULT SendOnDataChange(IDataObject* pDataObject, [NativeTypeName("DWORD")] uint dwReserved, [NativeTypeName("DWORD")] uint advf);
         }
 
         public partial struct Vtbl

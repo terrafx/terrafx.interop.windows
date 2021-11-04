@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("D594D0D8-8DA7-457B-B3B4-CE5DBAAC0B88")]
     [NativeTypeName("struct ITransferAdviseSink : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct ITransferAdviseSink
+    public unsafe partial struct ITransferAdviseSink : ITransferAdviseSink.Interface
     {
         public void** lpVtbl;
 
@@ -86,6 +86,30 @@ namespace TerraFX.Interop
         public HRESULT PropertyFailure(IShellItem* psi, [NativeTypeName("const PROPERTYKEY *")] PROPERTYKEY* pkey, HRESULT hrError)
         {
             return ((delegate* unmanaged<ITransferAdviseSink*, IShellItem*, PROPERTYKEY*, HRESULT, int>)(lpVtbl[9]))((ITransferAdviseSink*)Unsafe.AsPointer(ref this), psi, pkey, hrError);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT UpdateProgress([NativeTypeName("ULONGLONG")] ulong ullSizeCurrent, [NativeTypeName("ULONGLONG")] ulong ullSizeTotal, int nFilesCurrent, int nFilesTotal, int nFoldersCurrent, int nFoldersTotal);
+
+            [VtblIndex(4)]
+            HRESULT UpdateTransferState([NativeTypeName("TRANSFER_ADVISE_STATE")] uint ts);
+
+            [VtblIndex(5)]
+            HRESULT ConfirmOverwrite(IShellItem* psiSource, IShellItem* psiDestParent, [NativeTypeName("LPCWSTR")] ushort* pszName);
+
+            [VtblIndex(6)]
+            HRESULT ConfirmEncryptionLoss(IShellItem* psiSource);
+
+            [VtblIndex(7)]
+            HRESULT FileFailure(IShellItem* psi, [NativeTypeName("LPCWSTR")] ushort* pszItem, HRESULT hrError, [NativeTypeName("LPWSTR")] ushort* pszRename, [NativeTypeName("ULONG")] uint cchRename);
+
+            [VtblIndex(8)]
+            HRESULT SubStreamFailure(IShellItem* psi, [NativeTypeName("LPCWSTR")] ushort* pszStreamName, HRESULT hrError);
+
+            [VtblIndex(9)]
+            HRESULT PropertyFailure(IShellItem* psi, [NativeTypeName("const PROPERTYKEY *")] PROPERTYKEY* pkey, HRESULT hrError);
         }
 
         public partial struct Vtbl

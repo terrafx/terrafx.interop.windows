@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("548D6B12-09FA-40E0-9069-5DCD589A52C9")]
     [NativeTypeName("struct ID3D12Debug5 : ID3D12Debug4")]
     [NativeInheritance("ID3D12Debug4")]
-    public unsafe partial struct ID3D12Debug5
+    public unsafe partial struct ID3D12Debug5 : ID3D12Debug5.Interface
     {
         public void** lpVtbl;
 
@@ -79,6 +79,12 @@ namespace TerraFX.Interop
         public void SetEnableAutoName(BOOL Enable)
         {
             ((delegate* unmanaged<ID3D12Debug5*, BOOL, void>)(lpVtbl[8]))((ID3D12Debug5*)Unsafe.AsPointer(ref this), Enable);
+        }
+
+        public interface Interface : ID3D12Debug4.Interface
+        {
+            [VtblIndex(8)]
+            void SetEnableAutoName(BOOL Enable);
         }
 
         public partial struct Vtbl

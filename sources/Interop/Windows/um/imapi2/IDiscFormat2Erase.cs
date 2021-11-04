@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("27354156-8F64-5B0F-8F00-5D77AFBE261E")]
     [NativeTypeName("struct IDiscFormat2Erase : IDiscFormat2")]
     [NativeInheritance("IDiscFormat2")]
-    public unsafe partial struct IDiscFormat2Erase
+    public unsafe partial struct IDiscFormat2Erase : IDiscFormat2Erase.Interface
     {
         public void** lpVtbl;
 
@@ -156,6 +156,33 @@ namespace TerraFX.Interop
         public HRESULT EraseMedia()
         {
             return ((delegate* unmanaged<IDiscFormat2Erase*, int>)(lpVtbl[19]))((IDiscFormat2Erase*)Unsafe.AsPointer(ref this));
+        }
+
+        public interface Interface : IDiscFormat2.Interface
+        {
+            [VtblIndex(12)]
+            HRESULT put_Recorder(IDiscRecorder2* value);
+
+            [VtblIndex(13)]
+            HRESULT get_Recorder(IDiscRecorder2** value);
+
+            [VtblIndex(14)]
+            HRESULT put_FullErase([NativeTypeName("VARIANT_BOOL")] short value);
+
+            [VtblIndex(15)]
+            HRESULT get_FullErase([NativeTypeName("VARIANT_BOOL *")] short* value);
+
+            [VtblIndex(16)]
+            HRESULT get_CurrentPhysicalMediaType(IMAPI_MEDIA_PHYSICAL_TYPE* value);
+
+            [VtblIndex(17)]
+            HRESULT put_ClientName([NativeTypeName("BSTR")] ushort* value);
+
+            [VtblIndex(18)]
+            HRESULT get_ClientName([NativeTypeName("BSTR *")] ushort** value);
+
+            [VtblIndex(19)]
+            HRESULT EraseMedia();
         }
 
         public partial struct Vtbl

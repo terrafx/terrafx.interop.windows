@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("2B90F17E-5A3E-4B33-BB7F-1BC48056B94D")]
     [NativeTypeName("struct ISyncMgrSyncResult : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct ISyncMgrSyncResult
+    public unsafe partial struct ISyncMgrSyncResult : ISyncMgrSyncResult.Interface
     {
         public void** lpVtbl;
 
@@ -44,6 +44,12 @@ namespace TerraFX.Interop
         public HRESULT Result(SYNCMGR_PROGRESS_STATUS nStatus, uint cError, uint cConflicts)
         {
             return ((delegate* unmanaged<ISyncMgrSyncResult*, SYNCMGR_PROGRESS_STATUS, uint, uint, int>)(lpVtbl[3]))((ISyncMgrSyncResult*)Unsafe.AsPointer(ref this), nStatus, cError, cConflicts);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT Result(SYNCMGR_PROGRESS_STATUS nStatus, uint cError, uint cConflicts);
         }
 
         public partial struct Vtbl

@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("CFF8E175-019E-11D3-A08E-00C04F8EF9B5")]
     [NativeTypeName("struct ISpeechAudio : ISpeechBaseStream")]
     [NativeInheritance("ISpeechBaseStream")]
-    public unsafe partial struct ISpeechAudio
+    public unsafe partial struct ISpeechAudio : ISpeechAudio.Interface
     {
         public void** lpVtbl;
 
@@ -163,6 +163,36 @@ namespace TerraFX.Interop
         public HRESULT SetState(SpeechAudioState State)
         {
             return ((delegate* unmanaged<ISpeechAudio*, SpeechAudioState, int>)(lpVtbl[20]))((ISpeechAudio*)Unsafe.AsPointer(ref this), State);
+        }
+
+        public interface Interface : ISpeechBaseStream.Interface
+        {
+            [VtblIndex(12)]
+            HRESULT get_Status(ISpeechAudioStatus** Status);
+
+            [VtblIndex(13)]
+            HRESULT get_BufferInfo(ISpeechAudioBufferInfo** BufferInfo);
+
+            [VtblIndex(14)]
+            HRESULT get_DefaultFormat(ISpeechAudioFormat** StreamFormat);
+
+            [VtblIndex(15)]
+            HRESULT get_Volume([NativeTypeName("long *")] int* Volume);
+
+            [VtblIndex(16)]
+            HRESULT put_Volume([NativeTypeName("long")] int Volume);
+
+            [VtblIndex(17)]
+            HRESULT get_BufferNotifySize([NativeTypeName("long *")] int* BufferNotifySize);
+
+            [VtblIndex(18)]
+            HRESULT put_BufferNotifySize([NativeTypeName("long")] int BufferNotifySize);
+
+            [VtblIndex(19)]
+            HRESULT get_EventHandle([NativeTypeName("long *")] int* EventHandle);
+
+            [VtblIndex(20)]
+            HRESULT SetState(SpeechAudioState State);
         }
 
         public partial struct Vtbl

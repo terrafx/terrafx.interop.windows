@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("304FDB32-BEDE-410A-8545-943AC6A46138")]
     [NativeTypeName("struct ID3D12VideoProcessor : ID3D12Pageable")]
     [NativeInheritance("ID3D12Pageable")]
-    public unsafe partial struct ID3D12VideoProcessor
+    public unsafe partial struct ID3D12VideoProcessor : ID3D12VideoProcessor.Interface
     {
         public void** lpVtbl;
 
@@ -101,6 +101,21 @@ namespace TerraFX.Interop
         {
             D3D12_VIDEO_PROCESS_OUTPUT_STREAM_DESC result;
             return *((delegate* unmanaged<ID3D12VideoProcessor*, D3D12_VIDEO_PROCESS_OUTPUT_STREAM_DESC*, D3D12_VIDEO_PROCESS_OUTPUT_STREAM_DESC*>)(lpVtbl[11]))((ID3D12VideoProcessor*)Unsafe.AsPointer(ref this), &result);
+        }
+
+        public interface Interface : ID3D12Pageable.Interface
+        {
+            [VtblIndex(8)]
+            uint GetNodeMask();
+
+            [VtblIndex(9)]
+            uint GetNumInputStreamDescs();
+
+            [VtblIndex(10)]
+            HRESULT GetInputStreamDescs(uint NumInputStreamDescs, D3D12_VIDEO_PROCESS_INPUT_STREAM_DESC* pInputStreamDescs);
+
+            [VtblIndex(11)]
+            D3D12_VIDEO_PROCESS_OUTPUT_STREAM_DESC GetOutputStreamDesc();
         }
 
         public partial struct Vtbl

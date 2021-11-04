@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("30510480-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct IHTMLStyle6 : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct IHTMLStyle6
+    public unsafe partial struct IHTMLStyle6 : IHTMLStyle6.Interface
     {
         public void** lpVtbl;
 
@@ -289,6 +289,105 @@ namespace TerraFX.Interop
         public HRESULT get_quotes([NativeTypeName("BSTR *")] ushort** p)
         {
             return ((delegate* unmanaged<IHTMLStyle6*, ushort**, int>)(lpVtbl[38]))((IHTMLStyle6*)Unsafe.AsPointer(ref this), p);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT put_content([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(8)]
+            HRESULT get_content([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(9)]
+            HRESULT put_captionSide([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(10)]
+            HRESULT get_captionSide([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(11)]
+            HRESULT put_counterIncrement([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(12)]
+            HRESULT get_counterIncrement([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(13)]
+            HRESULT put_counterReset([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(14)]
+            HRESULT get_counterReset([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(15)]
+            HRESULT put_outline([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(16)]
+            HRESULT get_outline([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(17)]
+            HRESULT put_outlineWidth(VARIANT v);
+
+            [VtblIndex(18)]
+            HRESULT get_outlineWidth(VARIANT* p);
+
+            [VtblIndex(19)]
+            HRESULT put_outlineStyle([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(20)]
+            HRESULT get_outlineStyle([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(21)]
+            HRESULT put_outlineColor(VARIANT v);
+
+            [VtblIndex(22)]
+            HRESULT get_outlineColor(VARIANT* p);
+
+            [VtblIndex(23)]
+            HRESULT put_boxSizing([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(24)]
+            HRESULT get_boxSizing([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(25)]
+            HRESULT put_borderSpacing([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(26)]
+            HRESULT get_borderSpacing([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(27)]
+            HRESULT put_orphans(VARIANT v);
+
+            [VtblIndex(28)]
+            HRESULT get_orphans(VARIANT* p);
+
+            [VtblIndex(29)]
+            HRESULT put_widows(VARIANT v);
+
+            [VtblIndex(30)]
+            HRESULT get_widows(VARIANT* p);
+
+            [VtblIndex(31)]
+            HRESULT put_pageBreakInside([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(32)]
+            HRESULT get_pageBreakInside([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(33)]
+            HRESULT put_emptyCells([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(34)]
+            HRESULT get_emptyCells([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(35)]
+            HRESULT put_msBlockProgression([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(36)]
+            HRESULT get_msBlockProgression([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(37)]
+            HRESULT put_quotes([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(38)]
+            HRESULT get_quotes([NativeTypeName("BSTR *")] ushort** p);
         }
 
         public partial struct Vtbl

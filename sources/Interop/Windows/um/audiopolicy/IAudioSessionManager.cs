@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("BFA971F1-4D5E-40BB-935E-967039BFBEE4")]
     [NativeTypeName("struct IAudioSessionManager : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IAudioSessionManager
+    public unsafe partial struct IAudioSessionManager : IAudioSessionManager.Interface
     {
         public void** lpVtbl;
 
@@ -51,6 +51,15 @@ namespace TerraFX.Interop
         public HRESULT GetSimpleAudioVolume([NativeTypeName("LPCGUID")] Guid* AudioSessionGuid, [NativeTypeName("DWORD")] uint StreamFlags, ISimpleAudioVolume** AudioVolume)
         {
             return ((delegate* unmanaged<IAudioSessionManager*, Guid*, uint, ISimpleAudioVolume**, int>)(lpVtbl[4]))((IAudioSessionManager*)Unsafe.AsPointer(ref this), AudioSessionGuid, StreamFlags, AudioVolume);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetAudioSessionControl([NativeTypeName("LPCGUID")] Guid* AudioSessionGuid, [NativeTypeName("DWORD")] uint StreamFlags, IAudioSessionControl** SessionControl);
+
+            [VtblIndex(4)]
+            HRESULT GetSimpleAudioVolume([NativeTypeName("LPCGUID")] Guid* AudioSessionGuid, [NativeTypeName("DWORD")] uint StreamFlags, ISimpleAudioVolume** AudioVolume);
         }
 
         public partial struct Vtbl

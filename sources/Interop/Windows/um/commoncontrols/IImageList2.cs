@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("192B9D83-50FC-457B-90A0-2B82A8B5DAE1")]
     [NativeTypeName("struct IImageList2 : IImageList")]
     [NativeInheritance("IImageList")]
-    public unsafe partial struct IImageList2
+    public unsafe partial struct IImageList2 : IImageList2.Interface
     {
         public void** lpVtbl;
 
@@ -324,6 +324,45 @@ namespace TerraFX.Interop
         public HRESULT ReplaceFromImageList(int i, IImageList* pil, int iSrc, IUnknown* punk, [NativeTypeName("DWORD")] uint dwFlags)
         {
             return ((delegate* unmanaged<IImageList2*, int, IImageList*, int, IUnknown*, uint, int>)(lpVtbl[43]))((IImageList2*)Unsafe.AsPointer(ref this), i, pil, iSrc, punk, dwFlags);
+        }
+
+        public interface Interface : IImageList.Interface
+        {
+            [VtblIndex(32)]
+            HRESULT Resize(int cxNewIconSize, int cyNewIconSize);
+
+            [VtblIndex(33)]
+            HRESULT GetOriginalSize(int iImage, [NativeTypeName("DWORD")] uint dwFlags, int* pcx, int* pcy);
+
+            [VtblIndex(34)]
+            HRESULT SetOriginalSize(int iImage, int cx, int cy);
+
+            [VtblIndex(35)]
+            HRESULT SetCallback(IUnknown* punk);
+
+            [VtblIndex(36)]
+            HRESULT GetCallback([NativeTypeName("const IID &")] Guid* riid, void** ppv);
+
+            [VtblIndex(37)]
+            HRESULT ForceImagePresent(int iImage, [NativeTypeName("DWORD")] uint dwFlags);
+
+            [VtblIndex(38)]
+            HRESULT DiscardImages(int iFirstImage, int iLastImage, [NativeTypeName("DWORD")] uint dwFlags);
+
+            [VtblIndex(39)]
+            HRESULT PreloadImages(IMAGELISTDRAWPARAMS* pimldp);
+
+            [VtblIndex(40)]
+            HRESULT GetStatistics(IMAGELISTSTATS* pils);
+
+            [VtblIndex(41)]
+            HRESULT Initialize(int cx, int cy, uint flags, int cInitial, int cGrow);
+
+            [VtblIndex(42)]
+            HRESULT Replace2(int i, HBITMAP hbmImage, HBITMAP hbmMask, IUnknown* punk, [NativeTypeName("DWORD")] uint dwFlags);
+
+            [VtblIndex(43)]
+            HRESULT ReplaceFromImageList(int i, IImageList* pil, int iSrc, IUnknown* punk, [NativeTypeName("DWORD")] uint dwFlags);
         }
 
         public partial struct Vtbl

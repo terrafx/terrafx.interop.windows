@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("1AC56374-6198-4D6B-92E4-749D5AB8A895")]
     [NativeTypeName("struct IAppxManifestPackageDependency3 : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IAppxManifestPackageDependency3
+    public unsafe partial struct IAppxManifestPackageDependency3 : IAppxManifestPackageDependency3.Interface
     {
         public void** lpVtbl;
 
@@ -44,6 +44,12 @@ namespace TerraFX.Interop
         public HRESULT GetIsOptional(BOOL* isOptional)
         {
             return ((delegate* unmanaged<IAppxManifestPackageDependency3*, BOOL*, int>)(lpVtbl[3]))((IAppxManifestPackageDependency3*)Unsafe.AsPointer(ref this), isOptional);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetIsOptional(BOOL* isOptional);
         }
 
         public partial struct Vtbl

@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("9F8021E8-9C8C-487E-BB5C-79AA4779938C")]
     [NativeTypeName("struct IMFMediaEngineProtectedContent : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IMFMediaEngineProtectedContent
+    public unsafe partial struct IMFMediaEngineProtectedContent : IMFMediaEngineProtectedContent.Interface
     {
         public void** lpVtbl;
 
@@ -79,6 +79,27 @@ namespace TerraFX.Interop
         public HRESULT SetApplicationCertificate([NativeTypeName("const BYTE *")] byte* pbBlob, [NativeTypeName("DWORD")] uint cbBlob)
         {
             return ((delegate* unmanaged<IMFMediaEngineProtectedContent*, byte*, uint, int>)(lpVtbl[8]))((IMFMediaEngineProtectedContent*)Unsafe.AsPointer(ref this), pbBlob, cbBlob);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT ShareResources(IUnknown* pUnkDeviceContext);
+
+            [VtblIndex(4)]
+            HRESULT GetRequiredProtections([NativeTypeName("DWORD *")] uint* pFrameProtectionFlags);
+
+            [VtblIndex(5)]
+            HRESULT SetOPMWindow(HWND hwnd);
+
+            [VtblIndex(6)]
+            HRESULT TransferVideoFrame(IUnknown* pDstSurf, [NativeTypeName("const MFVideoNormalizedRect *")] MFVideoNormalizedRect* pSrc, [NativeTypeName("const RECT *")] RECT* pDst, [NativeTypeName("const MFARGB *")] MFARGB* pBorderClr, [NativeTypeName("DWORD *")] uint* pFrameProtectionFlags);
+
+            [VtblIndex(7)]
+            HRESULT SetContentProtectionManager(IMFContentProtectionManager* pCPM);
+
+            [VtblIndex(8)]
+            HRESULT SetApplicationCertificate([NativeTypeName("const BYTE *")] byte* pbBlob, [NativeTypeName("DWORD")] uint cbBlob);
         }
 
         public partial struct Vtbl

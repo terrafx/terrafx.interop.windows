@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("E6857A76-2E3E-4FDD-BFF4-5D2BA10FB453")]
     [NativeTypeName("struct IDMLCommandRecorder : IDMLDeviceChild")]
     [NativeInheritance("IDMLDeviceChild")]
-    public unsafe partial struct IDMLCommandRecorder
+    public unsafe partial struct IDMLCommandRecorder : IDMLCommandRecorder.Interface
     {
         public void** lpVtbl;
 
@@ -79,6 +79,12 @@ namespace TerraFX.Interop
         public void RecordDispatch(ID3D12CommandList* commandList, IDMLDispatchable* dispatchable, IDMLBindingTable* bindings)
         {
             ((delegate* unmanaged<IDMLCommandRecorder*, ID3D12CommandList*, IDMLDispatchable*, IDMLBindingTable*, void>)(lpVtbl[8]))((IDMLCommandRecorder*)Unsafe.AsPointer(ref this), commandList, dispatchable, bindings);
+        }
+
+        public interface Interface : IDMLDeviceChild.Interface
+        {
+            [VtblIndex(8)]
+            void RecordDispatch(ID3D12CommandList* commandList, IDMLDispatchable* dispatchable, IDMLBindingTable* bindings);
         }
 
         public partial struct Vtbl

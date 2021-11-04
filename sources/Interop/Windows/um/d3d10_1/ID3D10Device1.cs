@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("9B7E4C8F-342C-4106-A19F-4F2704F689F0")]
     [NativeTypeName("struct ID3D10Device1 : ID3D10Device")]
     [NativeInheritance("ID3D10Device")]
-    public unsafe partial struct ID3D10Device1
+    public unsafe partial struct ID3D10Device1 : ID3D10Device1.Interface
     {
         public void** lpVtbl;
 
@@ -723,6 +723,18 @@ namespace TerraFX.Interop
         public D3D10_FEATURE_LEVEL1 GetFeatureLevel()
         {
             return ((delegate* unmanaged<ID3D10Device1*, D3D10_FEATURE_LEVEL1>)(lpVtbl[100]))((ID3D10Device1*)Unsafe.AsPointer(ref this));
+        }
+
+        public interface Interface : ID3D10Device.Interface
+        {
+            [VtblIndex(98)]
+            HRESULT CreateShaderResourceView1(ID3D10Resource* pResource, [NativeTypeName("const D3D10_SHADER_RESOURCE_VIEW_DESC1 *")] D3D10_SHADER_RESOURCE_VIEW_DESC1* pDesc, ID3D10ShaderResourceView1** ppSRView);
+
+            [VtblIndex(99)]
+            HRESULT CreateBlendState1([NativeTypeName("const D3D10_BLEND_DESC1 *")] D3D10_BLEND_DESC1* pBlendStateDesc, ID3D10BlendState1** ppBlendState);
+
+            [VtblIndex(100)]
+            D3D10_FEATURE_LEVEL1 GetFeatureLevel();
         }
 
         public partial struct Vtbl

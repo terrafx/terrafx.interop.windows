@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("305106E0-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct IHTMLDOMNode3 : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct IHTMLDOMNode3
+    public unsafe partial struct IHTMLDOMNode3 : IHTMLDOMNode3.Interface
     {
         public void** lpVtbl;
 
@@ -184,6 +184,60 @@ namespace TerraFX.Interop
         public HRESULT isSupported([NativeTypeName("BSTR")] ushort* feature, VARIANT version, [NativeTypeName("VARIANT_BOOL *")] short* pfisSupported)
         {
             return ((delegate* unmanaged<IHTMLDOMNode3*, ushort*, VARIANT, short*, int>)(lpVtbl[23]))((IHTMLDOMNode3*)Unsafe.AsPointer(ref this), feature, version, pfisSupported);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT put_prefix(VARIANT v);
+
+            [VtblIndex(8)]
+            HRESULT get_prefix(VARIANT* p);
+
+            [VtblIndex(9)]
+            HRESULT get_localName(VARIANT* p);
+
+            [VtblIndex(10)]
+            HRESULT get_namespaceURI(VARIANT* p);
+
+            [VtblIndex(11)]
+            HRESULT put_textContent(VARIANT v);
+
+            [VtblIndex(12)]
+            HRESULT get_textContent(VARIANT* p);
+
+            [VtblIndex(13)]
+            HRESULT isEqualNode(IHTMLDOMNode3* otherNode, [NativeTypeName("VARIANT_BOOL *")] short* isEqual);
+
+            [VtblIndex(14)]
+            HRESULT lookupNamespaceURI(VARIANT* pvarPrefix, VARIANT* pvarNamespaceURI);
+
+            [VtblIndex(15)]
+            HRESULT lookupPrefix(VARIANT* pvarNamespaceURI, VARIANT* pvarPrefix);
+
+            [VtblIndex(16)]
+            HRESULT isDefaultNamespace(VARIANT* pvarNamespace, [NativeTypeName("VARIANT_BOOL *")] short* pfDefaultNamespace);
+
+            [VtblIndex(17)]
+            HRESULT appendChild(IHTMLDOMNode* newChild, IHTMLDOMNode** node);
+
+            [VtblIndex(18)]
+            HRESULT insertBefore(IHTMLDOMNode* newChild, VARIANT refChild, IHTMLDOMNode** node);
+
+            [VtblIndex(19)]
+            HRESULT removeChild(IHTMLDOMNode* oldChild, IHTMLDOMNode** node);
+
+            [VtblIndex(20)]
+            HRESULT replaceChild(IHTMLDOMNode* newChild, IHTMLDOMNode* oldChild, IHTMLDOMNode** node);
+
+            [VtblIndex(21)]
+            HRESULT isSameNode(IHTMLDOMNode3* otherNode, [NativeTypeName("VARIANT_BOOL *")] short* isSame);
+
+            [VtblIndex(22)]
+            HRESULT compareDocumentPosition(IHTMLDOMNode* otherNode, ushort* flags);
+
+            [VtblIndex(23)]
+            HRESULT isSupported([NativeTypeName("BSTR")] ushort* feature, VARIANT version, [NativeTypeName("VARIANT_BOOL *")] short* pfisSupported);
         }
 
         public partial struct Vtbl

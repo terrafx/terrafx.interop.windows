@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("DBB84C27-36CE-4FC9-B801-F048C46AC570")]
     [NativeTypeName("struct ID3D12MetaCommand : ID3D12Pageable")]
     [NativeInheritance("ID3D12Pageable")]
-    public unsafe partial struct ID3D12MetaCommand
+    public unsafe partial struct ID3D12MetaCommand : ID3D12MetaCommand.Interface
     {
         public void** lpVtbl;
 
@@ -80,6 +80,13 @@ namespace TerraFX.Interop
         public ulong GetRequiredParameterResourceSize(D3D12_META_COMMAND_PARAMETER_STAGE Stage, uint ParameterIndex)
         {
             return ((delegate* unmanaged<ID3D12MetaCommand*, D3D12_META_COMMAND_PARAMETER_STAGE, uint, ulong>)(lpVtbl[8]))((ID3D12MetaCommand*)Unsafe.AsPointer(ref this), Stage, ParameterIndex);
+        }
+
+        public interface Interface : ID3D12Pageable.Interface
+        {
+            [VtblIndex(8)]
+            [return: NativeTypeName("UINT64")]
+            ulong GetRequiredParameterResourceSize(D3D12_META_COMMAND_PARAMETER_STAGE Stage, uint ParameterIndex);
         }
 
         public partial struct Vtbl

@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("305106EB-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct IHTMLCSSMediaRule : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct IHTMLCSSMediaRule
+    public unsafe partial struct IHTMLCSSMediaRule : IHTMLCSSMediaRule.Interface
     {
         public void** lpVtbl;
 
@@ -100,6 +100,24 @@ namespace TerraFX.Interop
         public HRESULT deleteRule([NativeTypeName("long")] int lIndex = -1)
         {
             return ((delegate* unmanaged<IHTMLCSSMediaRule*, int, int>)(lpVtbl[11]))((IHTMLCSSMediaRule*)Unsafe.AsPointer(ref this), lIndex);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT put_media(VARIANT v);
+
+            [VtblIndex(8)]
+            HRESULT get_media(VARIANT* p);
+
+            [VtblIndex(9)]
+            HRESULT get_cssRules(IHTMLStyleSheetRulesCollection** p);
+
+            [VtblIndex(10)]
+            HRESULT insertRule([NativeTypeName("BSTR")] ushort* bstrRule, [NativeTypeName("long")] int lIndex, [NativeTypeName("long *")] int* plNewIndex);
+
+            [VtblIndex(11)]
+            HRESULT deleteRule([NativeTypeName("long")] int lIndex = -1);
         }
 
         public partial struct Vtbl

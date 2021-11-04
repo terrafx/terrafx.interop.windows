@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("3050F836-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct IHTMLFormElement3 : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct IHTMLFormElement3
+    public unsafe partial struct IHTMLFormElement3 : IHTMLFormElement3.Interface
     {
         public void** lpVtbl;
 
@@ -72,6 +72,12 @@ namespace TerraFX.Interop
         public HRESULT namedItem([NativeTypeName("BSTR")] ushort* name, IDispatch** pdisp)
         {
             return ((delegate* unmanaged<IHTMLFormElement3*, ushort*, IDispatch**, int>)(lpVtbl[7]))((IHTMLFormElement3*)Unsafe.AsPointer(ref this), name, pdisp);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT namedItem([NativeTypeName("BSTR")] ushort* name, IDispatch** pdisp);
         }
 
         public partial struct Vtbl

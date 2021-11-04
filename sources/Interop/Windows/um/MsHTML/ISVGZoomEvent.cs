@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("3051054E-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct ISVGZoomEvent : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct ISVGZoomEvent
+    public unsafe partial struct ISVGZoomEvent : ISVGZoomEvent.Interface
     {
         public void** lpVtbl;
 
@@ -100,6 +100,24 @@ namespace TerraFX.Interop
         public HRESULT get_newTranslate(ISVGPoint** p)
         {
             return ((delegate* unmanaged<ISVGZoomEvent*, ISVGPoint**, int>)(lpVtbl[11]))((ISVGZoomEvent*)Unsafe.AsPointer(ref this), p);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT get_zoomRectScreen(ISVGRect** p);
+
+            [VtblIndex(8)]
+            HRESULT get_previousScale(float* p);
+
+            [VtblIndex(9)]
+            HRESULT get_previousTranslate(ISVGPoint** p);
+
+            [VtblIndex(10)]
+            HRESULT get_newScale(float* p);
+
+            [VtblIndex(11)]
+            HRESULT get_newTranslate(ISVGPoint** p);
         }
 
         public partial struct Vtbl

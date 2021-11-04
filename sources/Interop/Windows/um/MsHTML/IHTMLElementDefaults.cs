@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("3050F6C9-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct IHTMLElementDefaults : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct IHTMLElementDefaults
+    public unsafe partial struct IHTMLElementDefaults : IHTMLElementDefaults.Interface
     {
         public void** lpVtbl;
 
@@ -212,6 +212,72 @@ namespace TerraFX.Interop
         public HRESULT get_frozen([NativeTypeName("VARIANT_BOOL *")] short* p)
         {
             return ((delegate* unmanaged<IHTMLElementDefaults*, short*, int>)(lpVtbl[27]))((IHTMLElementDefaults*)Unsafe.AsPointer(ref this), p);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT get_style(IHTMLStyle** p);
+
+            [VtblIndex(8)]
+            HRESULT put_tabStop([NativeTypeName("VARIANT_BOOL")] short v);
+
+            [VtblIndex(9)]
+            HRESULT get_tabStop([NativeTypeName("VARIANT_BOOL *")] short* p);
+
+            [VtblIndex(10)]
+            HRESULT put_viewInheritStyle([NativeTypeName("VARIANT_BOOL")] short v);
+
+            [VtblIndex(11)]
+            HRESULT get_viewInheritStyle([NativeTypeName("VARIANT_BOOL *")] short* p);
+
+            [VtblIndex(12)]
+            HRESULT put_viewMasterTab([NativeTypeName("VARIANT_BOOL")] short v);
+
+            [VtblIndex(13)]
+            HRESULT get_viewMasterTab([NativeTypeName("VARIANT_BOOL *")] short* p);
+
+            [VtblIndex(14)]
+            HRESULT put_scrollSegmentX([NativeTypeName("long")] int v);
+
+            [VtblIndex(15)]
+            HRESULT get_scrollSegmentX([NativeTypeName("long *")] int* p);
+
+            [VtblIndex(16)]
+            HRESULT put_scrollSegmentY([NativeTypeName("long")] int v);
+
+            [VtblIndex(17)]
+            HRESULT get_scrollSegmentY([NativeTypeName("long *")] int* p);
+
+            [VtblIndex(18)]
+            HRESULT put_isMultiLine([NativeTypeName("VARIANT_BOOL")] short v);
+
+            [VtblIndex(19)]
+            HRESULT get_isMultiLine([NativeTypeName("VARIANT_BOOL *")] short* p);
+
+            [VtblIndex(20)]
+            HRESULT put_contentEditable([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(21)]
+            HRESULT get_contentEditable([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(22)]
+            HRESULT put_canHaveHTML([NativeTypeName("VARIANT_BOOL")] short v);
+
+            [VtblIndex(23)]
+            HRESULT get_canHaveHTML([NativeTypeName("VARIANT_BOOL *")] short* p);
+
+            [VtblIndex(24)]
+            HRESULT putref_viewLink(IHTMLDocument* v);
+
+            [VtblIndex(25)]
+            HRESULT get_viewLink(IHTMLDocument** p);
+
+            [VtblIndex(26)]
+            HRESULT put_frozen([NativeTypeName("VARIANT_BOOL")] short v);
+
+            [VtblIndex(27)]
+            HRESULT get_frozen([NativeTypeName("VARIANT_BOOL *")] short* p);
         }
 
         public partial struct Vtbl

@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("19108294-0441-4AFF-8013-FA0A730B0BEA")]
     [NativeTypeName("struct IUserNotificationCallback : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IUserNotificationCallback
+    public unsafe partial struct IUserNotificationCallback : IUserNotificationCallback.Interface
     {
         public void** lpVtbl;
 
@@ -58,6 +58,18 @@ namespace TerraFX.Interop
         public HRESULT OnContextMenu(POINT* pt)
         {
             return ((delegate* unmanaged<IUserNotificationCallback*, POINT*, int>)(lpVtbl[5]))((IUserNotificationCallback*)Unsafe.AsPointer(ref this), pt);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT OnBalloonUserClick(POINT* pt);
+
+            [VtblIndex(4)]
+            HRESULT OnLeftClick(POINT* pt);
+
+            [VtblIndex(5)]
+            HRESULT OnContextMenu(POINT* pt);
         }
 
         public partial struct Vtbl

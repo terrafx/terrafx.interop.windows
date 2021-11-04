@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("93F2F68C-1D1B-11D3-A30E-00C04F79ABD1")]
     [NativeTypeName("struct IShellFolder2 : IShellFolder")]
     [NativeInheritance("IShellFolder")]
-    public unsafe partial struct IShellFolder2
+    public unsafe partial struct IShellFolder2 : IShellFolder2.Interface
     {
         public void** lpVtbl;
 
@@ -156,6 +156,30 @@ namespace TerraFX.Interop
         public HRESULT MapColumnToSCID(uint iColumn, [NativeTypeName("SHCOLUMNID *")] PROPERTYKEY* pscid)
         {
             return ((delegate* unmanaged<IShellFolder2*, uint, PROPERTYKEY*, int>)(lpVtbl[19]))((IShellFolder2*)Unsafe.AsPointer(ref this), iColumn, pscid);
+        }
+
+        public interface Interface : IShellFolder.Interface
+        {
+            [VtblIndex(13)]
+            HRESULT GetDefaultSearchGUID(Guid* pguid);
+
+            [VtblIndex(14)]
+            HRESULT EnumSearches(IEnumExtraSearch** ppenum);
+
+            [VtblIndex(15)]
+            HRESULT GetDefaultColumn([NativeTypeName("DWORD")] uint dwRes, [NativeTypeName("ULONG *")] uint* pSort, [NativeTypeName("ULONG *")] uint* pDisplay);
+
+            [VtblIndex(16)]
+            HRESULT GetDefaultColumnState(uint iColumn, [NativeTypeName("SHCOLSTATEF *")] uint* pcsFlags);
+
+            [VtblIndex(17)]
+            HRESULT GetDetailsEx([NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidl, [NativeTypeName("const SHCOLUMNID *")] PROPERTYKEY* pscid, VARIANT* pv);
+
+            [VtblIndex(18)]
+            HRESULT GetDetailsOf([NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidl, uint iColumn, SHELLDETAILS* psd);
+
+            [VtblIndex(19)]
+            HRESULT MapColumnToSCID(uint iColumn, [NativeTypeName("SHCOLUMNID *")] PROPERTYKEY* pscid);
         }
 
         public partial struct Vtbl

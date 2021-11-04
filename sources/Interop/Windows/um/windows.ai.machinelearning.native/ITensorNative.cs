@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("52F547EF-5B03-49B5-82D6-565F1EE0DD49")]
     [NativeTypeName("struct ITensorNative : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct ITensorNative
+    public unsafe partial struct ITensorNative : ITensorNative.Interface
     {
         public void** lpVtbl;
 
@@ -51,6 +51,15 @@ namespace TerraFX.Interop
         public HRESULT GetD3D12Resource(ID3D12Resource** result)
         {
             return ((delegate* unmanaged<ITensorNative*, ID3D12Resource**, int>)(lpVtbl[4]))((ITensorNative*)Unsafe.AsPointer(ref this), result);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetBuffer(byte** value, [NativeTypeName("UINT32 *")] uint* capacity);
+
+            [VtblIndex(4)]
+            HRESULT GetD3D12Resource(ID3D12Resource** result);
         }
 
         public partial struct Vtbl

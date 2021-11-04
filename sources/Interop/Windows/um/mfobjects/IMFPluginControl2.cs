@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("C6982083-3DDC-45CB-AF5E-0F7A8CE4DE77")]
     [NativeTypeName("struct IMFPluginControl2 : IMFPluginControl")]
     [NativeInheritance("IMFPluginControl")]
-    public unsafe partial struct IMFPluginControl2
+    public unsafe partial struct IMFPluginControl2 : IMFPluginControl2.Interface
     {
         public void** lpVtbl;
 
@@ -86,6 +86,12 @@ namespace TerraFX.Interop
         public HRESULT SetPolicy(MF_PLUGIN_CONTROL_POLICY policy)
         {
             return ((delegate* unmanaged<IMFPluginControl2*, MF_PLUGIN_CONTROL_POLICY, int>)(lpVtbl[9]))((IMFPluginControl2*)Unsafe.AsPointer(ref this), policy);
+        }
+
+        public interface Interface : IMFPluginControl.Interface
+        {
+            [VtblIndex(9)]
+            HRESULT SetPolicy(MF_PLUGIN_CONTROL_POLICY policy);
         }
 
         public partial struct Vtbl

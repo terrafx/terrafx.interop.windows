@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("34151510-EEC0-11D2-8201-00A0C9D74842")]
     [NativeTypeName("struct IDvdInfo2 : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IDvdInfo2
+    public unsafe partial struct IDvdInfo2 : IDvdInfo2.Interface
     {
         public void** lpVtbl;
 
@@ -310,6 +310,126 @@ namespace TerraFX.Interop
         public HRESULT IsSubpictureStreamEnabled([NativeTypeName("ULONG")] uint ulStreamNum, BOOL* pbEnabled)
         {
             return ((delegate* unmanaged<IDvdInfo2*, uint, BOOL*, int>)(lpVtbl[41]))((IDvdInfo2*)Unsafe.AsPointer(ref this), ulStreamNum, pbEnabled);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetCurrentDomain(DVD_DOMAIN* pDomain);
+
+            [VtblIndex(4)]
+            HRESULT GetCurrentLocation(DVD_PLAYBACK_LOCATION2* pLocation);
+
+            [VtblIndex(5)]
+            HRESULT GetTotalTitleTime(DVD_HMSF_TIMECODE* pTotalTime, [NativeTypeName("ULONG *")] uint* ulTimeCodeFlags);
+
+            [VtblIndex(6)]
+            HRESULT GetCurrentButton([NativeTypeName("ULONG *")] uint* pulButtonsAvailable, [NativeTypeName("ULONG *")] uint* pulCurrentButton);
+
+            [VtblIndex(7)]
+            HRESULT GetCurrentAngle([NativeTypeName("ULONG *")] uint* pulAnglesAvailable, [NativeTypeName("ULONG *")] uint* pulCurrentAngle);
+
+            [VtblIndex(8)]
+            HRESULT GetCurrentAudio([NativeTypeName("ULONG *")] uint* pulStreamsAvailable, [NativeTypeName("ULONG *")] uint* pulCurrentStream);
+
+            [VtblIndex(9)]
+            HRESULT GetCurrentSubpicture([NativeTypeName("ULONG *")] uint* pulStreamsAvailable, [NativeTypeName("ULONG *")] uint* pulCurrentStream, BOOL* pbIsDisabled);
+
+            [VtblIndex(10)]
+            HRESULT GetCurrentUOPS([NativeTypeName("ULONG *")] uint* pulUOPs);
+
+            [VtblIndex(11)]
+            HRESULT GetAllSPRMs([NativeTypeName("SPRMARRAY *")] ushort** pRegisterArray);
+
+            [VtblIndex(12)]
+            HRESULT GetAllGPRMs([NativeTypeName("GPRMARRAY *")] ushort** pRegisterArray);
+
+            [VtblIndex(13)]
+            HRESULT GetAudioLanguage([NativeTypeName("ULONG")] uint ulStream, [NativeTypeName("LCID *")] uint* pLanguage);
+
+            [VtblIndex(14)]
+            HRESULT GetSubpictureLanguage([NativeTypeName("ULONG")] uint ulStream, [NativeTypeName("LCID *")] uint* pLanguage);
+
+            [VtblIndex(15)]
+            HRESULT GetTitleAttributes([NativeTypeName("ULONG")] uint ulTitle, DVD_MenuAttributes* pMenu, DVD_TitleAttributes* pTitle);
+
+            [VtblIndex(16)]
+            HRESULT GetVMGAttributes(DVD_MenuAttributes* pATR);
+
+            [VtblIndex(17)]
+            HRESULT GetCurrentVideoAttributes(DVD_VideoAttributes* pATR);
+
+            [VtblIndex(18)]
+            HRESULT GetAudioAttributes([NativeTypeName("ULONG")] uint ulStream, DVD_AudioAttributes* pATR);
+
+            [VtblIndex(19)]
+            HRESULT GetKaraokeAttributes([NativeTypeName("ULONG")] uint ulStream, DVD_KaraokeAttributes* pAttributes);
+
+            [VtblIndex(20)]
+            HRESULT GetSubpictureAttributes([NativeTypeName("ULONG")] uint ulStream, DVD_SubpictureAttributes* pATR);
+
+            [VtblIndex(21)]
+            HRESULT GetDVDVolumeInfo([NativeTypeName("ULONG *")] uint* pulNumOfVolumes, [NativeTypeName("ULONG *")] uint* pulVolume, DVD_DISC_SIDE* pSide, [NativeTypeName("ULONG *")] uint* pulNumOfTitles);
+
+            [VtblIndex(22)]
+            HRESULT GetDVDTextNumberOfLanguages([NativeTypeName("ULONG *")] uint* pulNumOfLangs);
+
+            [VtblIndex(23)]
+            HRESULT GetDVDTextLanguageInfo([NativeTypeName("ULONG")] uint ulLangIndex, [NativeTypeName("ULONG *")] uint* pulNumOfStrings, [NativeTypeName("LCID *")] uint* pLangCode, [NativeTypeName("enum DVD_TextCharSet *")] DVD_TextCharSet* pbCharacterSet);
+
+            [VtblIndex(24)]
+            HRESULT GetDVDTextStringAsNative([NativeTypeName("ULONG")] uint ulLangIndex, [NativeTypeName("ULONG")] uint ulStringIndex, byte* pbBuffer, [NativeTypeName("ULONG")] uint ulMaxBufferSize, [NativeTypeName("ULONG *")] uint* pulActualSize, [NativeTypeName("enum DVD_TextStringType *")] DVD_TextStringType* pType);
+
+            [VtblIndex(25)]
+            HRESULT GetDVDTextStringAsUnicode([NativeTypeName("ULONG")] uint ulLangIndex, [NativeTypeName("ULONG")] uint ulStringIndex, [NativeTypeName("WCHAR *")] ushort* pchwBuffer, [NativeTypeName("ULONG")] uint ulMaxBufferSize, [NativeTypeName("ULONG *")] uint* pulActualSize, [NativeTypeName("enum DVD_TextStringType *")] DVD_TextStringType* pType);
+
+            [VtblIndex(26)]
+            HRESULT GetPlayerParentalLevel([NativeTypeName("ULONG *")] uint* pulParentalLevel, [NativeTypeName("BYTE [2]")] byte* pbCountryCode);
+
+            [VtblIndex(27)]
+            HRESULT GetNumberOfChapters([NativeTypeName("ULONG")] uint ulTitle, [NativeTypeName("ULONG *")] uint* pulNumOfChapters);
+
+            [VtblIndex(28)]
+            HRESULT GetTitleParentalLevels([NativeTypeName("ULONG")] uint ulTitle, [NativeTypeName("ULONG *")] uint* pulParentalLevels);
+
+            [VtblIndex(29)]
+            HRESULT GetDVDDirectory([NativeTypeName("LPWSTR")] ushort* pszwPath, [NativeTypeName("ULONG")] uint ulMaxSize, [NativeTypeName("ULONG *")] uint* pulActualSize);
+
+            [VtblIndex(30)]
+            HRESULT IsAudioStreamEnabled([NativeTypeName("ULONG")] uint ulStreamNum, BOOL* pbEnabled);
+
+            [VtblIndex(31)]
+            HRESULT GetDiscID([NativeTypeName("LPCWSTR")] ushort* pszwPath, [NativeTypeName("ULONGLONG *")] ulong* pullDiscID);
+
+            [VtblIndex(32)]
+            HRESULT GetState(IDvdState** pStateData);
+
+            [VtblIndex(33)]
+            HRESULT GetMenuLanguages([NativeTypeName("LCID *")] uint* pLanguages, [NativeTypeName("ULONG")] uint ulMaxLanguages, [NativeTypeName("ULONG *")] uint* pulActualLanguages);
+
+            [VtblIndex(34)]
+            HRESULT GetButtonAtPosition(POINT point, [NativeTypeName("ULONG *")] uint* pulButtonIndex);
+
+            [VtblIndex(35)]
+            HRESULT GetCmdFromEvent([NativeTypeName("LONG_PTR")] nint lParam1, IDvdCmd** pCmdObj);
+
+            [VtblIndex(36)]
+            HRESULT GetDefaultMenuLanguage([NativeTypeName("LCID *")] uint* pLanguage);
+
+            [VtblIndex(37)]
+            HRESULT GetDefaultAudioLanguage([NativeTypeName("LCID *")] uint* pLanguage, DVD_AUDIO_LANG_EXT* pAudioExtension);
+
+            [VtblIndex(38)]
+            HRESULT GetDefaultSubpictureLanguage([NativeTypeName("LCID *")] uint* pLanguage, DVD_SUBPICTURE_LANG_EXT* pSubpictureExtension);
+
+            [VtblIndex(39)]
+            HRESULT GetDecoderCaps(DVD_DECODER_CAPS* pCaps);
+
+            [VtblIndex(40)]
+            HRESULT GetButtonRect([NativeTypeName("ULONG")] uint ulButton, RECT* pRect);
+
+            [VtblIndex(41)]
+            HRESULT IsSubpictureStreamEnabled([NativeTypeName("ULONG")] uint ulStreamNum, BOOL* pbEnabled);
         }
 
         public partial struct Vtbl

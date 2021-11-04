@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("56181D2D-E221-4ADB-B1C8-3CEE6A53F76F")]
     [NativeTypeName("struct IMFMetadataProvider : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IMFMetadataProvider
+    public unsafe partial struct IMFMetadataProvider : IMFMetadataProvider.Interface
     {
         public void** lpVtbl;
 
@@ -44,6 +44,12 @@ namespace TerraFX.Interop
         public HRESULT GetMFMetadata(IMFPresentationDescriptor* pPresentationDescriptor, [NativeTypeName("DWORD")] uint dwStreamIdentifier, [NativeTypeName("DWORD")] uint dwFlags, IMFMetadata** ppMFMetadata)
         {
             return ((delegate* unmanaged<IMFMetadataProvider*, IMFPresentationDescriptor*, uint, uint, IMFMetadata**, int>)(lpVtbl[3]))((IMFMetadataProvider*)Unsafe.AsPointer(ref this), pPresentationDescriptor, dwStreamIdentifier, dwFlags, ppMFMetadata);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetMFMetadata(IMFPresentationDescriptor* pPresentationDescriptor, [NativeTypeName("DWORD")] uint dwStreamIdentifier, [NativeTypeName("DWORD")] uint dwFlags, IMFMetadata** ppMFMetadata);
         }
 
         public partial struct Vtbl

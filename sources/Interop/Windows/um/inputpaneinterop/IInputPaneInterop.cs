@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("75CF2C57-9195-4931-8332-F0B409E916AF")]
     [NativeTypeName("struct IInputPaneInterop : IInspectable")]
     [NativeInheritance("IInspectable")]
-    public unsafe partial struct IInputPaneInterop
+    public unsafe partial struct IInputPaneInterop : IInputPaneInterop.Interface
     {
         public void** lpVtbl;
 
@@ -65,6 +65,12 @@ namespace TerraFX.Interop
         public HRESULT GetForWindow(HWND appWindow, [NativeTypeName("const IID &")] Guid* riid, void** inputPane)
         {
             return ((delegate* unmanaged<IInputPaneInterop*, HWND, Guid*, void**, int>)(lpVtbl[6]))((IInputPaneInterop*)Unsafe.AsPointer(ref this), appWindow, riid, inputPane);
+        }
+
+        public interface Interface : IInspectable.Interface
+        {
+            [VtblIndex(6)]
+            HRESULT GetForWindow(HWND appWindow, [NativeTypeName("const IID &")] Guid* riid, void** inputPane);
         }
 
         public partial struct Vtbl

@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("BDDACB60-7657-47AE-8445-D23E1ACF82AE")]
     [NativeTypeName("struct IExplorerCommandState : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IExplorerCommandState
+    public unsafe partial struct IExplorerCommandState : IExplorerCommandState.Interface
     {
         public void** lpVtbl;
 
@@ -44,6 +44,12 @@ namespace TerraFX.Interop
         public HRESULT GetState(IShellItemArray* psiItemArray, BOOL fOkToBeSlow, [NativeTypeName("EXPCMDSTATE *")] uint* pCmdState)
         {
             return ((delegate* unmanaged<IExplorerCommandState*, IShellItemArray*, BOOL, uint*, int>)(lpVtbl[3]))((IExplorerCommandState*)Unsafe.AsPointer(ref this), psiItemArray, fOkToBeSlow, pCmdState);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetState(IShellItemArray* psiItemArray, BOOL fOkToBeSlow, [NativeTypeName("EXPCMDSTATE *")] uint* pCmdState);
         }
 
         public partial struct Vtbl

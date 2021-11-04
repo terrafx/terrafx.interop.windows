@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("77AA99A0-1BD6-484F-8BC7-2C654C9A9B6F")]
     [NativeTypeName("struct IAudioSessionManager2 : IAudioSessionManager")]
     [NativeInheritance("IAudioSessionManager")]
-    public unsafe partial struct IAudioSessionManager2
+    public unsafe partial struct IAudioSessionManager2 : IAudioSessionManager2.Interface
     {
         public void** lpVtbl;
 
@@ -86,6 +86,24 @@ namespace TerraFX.Interop
         public HRESULT UnregisterDuckNotification(IAudioVolumeDuckNotification* duckNotification)
         {
             return ((delegate* unmanaged<IAudioSessionManager2*, IAudioVolumeDuckNotification*, int>)(lpVtbl[9]))((IAudioSessionManager2*)Unsafe.AsPointer(ref this), duckNotification);
+        }
+
+        public interface Interface : IAudioSessionManager.Interface
+        {
+            [VtblIndex(5)]
+            HRESULT GetSessionEnumerator(IAudioSessionEnumerator** SessionEnum);
+
+            [VtblIndex(6)]
+            HRESULT RegisterSessionNotification(IAudioSessionNotification* SessionNotification);
+
+            [VtblIndex(7)]
+            HRESULT UnregisterSessionNotification(IAudioSessionNotification* SessionNotification);
+
+            [VtblIndex(8)]
+            HRESULT RegisterDuckNotification([NativeTypeName("LPCWSTR")] ushort* sessionID, IAudioVolumeDuckNotification* duckNotification);
+
+            [VtblIndex(9)]
+            HRESULT UnregisterDuckNotification(IAudioVolumeDuckNotification* duckNotification);
         }
 
         public partial struct Vtbl

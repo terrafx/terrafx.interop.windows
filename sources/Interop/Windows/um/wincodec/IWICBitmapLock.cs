@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("00000123-A8F2-4877-BA0A-FD2B6645FB94")]
     [NativeTypeName("struct IWICBitmapLock : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IWICBitmapLock
+    public unsafe partial struct IWICBitmapLock : IWICBitmapLock.Interface
     {
         public void** lpVtbl;
 
@@ -65,6 +65,21 @@ namespace TerraFX.Interop
         public HRESULT GetPixelFormat([NativeTypeName("WICPixelFormatGUID *")] Guid* pPixelFormat)
         {
             return ((delegate* unmanaged<IWICBitmapLock*, Guid*, int>)(lpVtbl[6]))((IWICBitmapLock*)Unsafe.AsPointer(ref this), pPixelFormat);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetSize(uint* puiWidth, uint* puiHeight);
+
+            [VtblIndex(4)]
+            HRESULT GetStride(uint* pcbStride);
+
+            [VtblIndex(5)]
+            HRESULT GetDataPointer(uint* pcbBufferSize, [NativeTypeName("WICInProcPointer *")] byte** ppbData);
+
+            [VtblIndex(6)]
+            HRESULT GetPixelFormat([NativeTypeName("WICPixelFormatGUID *")] Guid* pPixelFormat);
         }
 
         public partial struct Vtbl

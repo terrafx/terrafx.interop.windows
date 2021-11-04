@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("8A6BB301-7E7E-41F4-A8E0-5B32F7F99B18")]
     [NativeTypeName("struct IDXGIOutput3 : IDXGIOutput2")]
     [NativeInheritance("IDXGIOutput2")]
-    public unsafe partial struct IDXGIOutput3
+    public unsafe partial struct IDXGIOutput3 : IDXGIOutput3.Interface
     {
         public void** lpVtbl;
 
@@ -191,6 +191,12 @@ namespace TerraFX.Interop
         public HRESULT CheckOverlaySupport(DXGI_FORMAT EnumFormat, IUnknown* pConcernedDevice, uint* pFlags)
         {
             return ((delegate* unmanaged<IDXGIOutput3*, DXGI_FORMAT, IUnknown*, uint*, int>)(lpVtbl[24]))((IDXGIOutput3*)Unsafe.AsPointer(ref this), EnumFormat, pConcernedDevice, pFlags);
+        }
+
+        public interface Interface : IDXGIOutput2.Interface
+        {
+            [VtblIndex(24)]
+            HRESULT CheckOverlaySupport(DXGI_FORMAT EnumFormat, IUnknown* pConcernedDevice, uint* pFlags);
         }
 
         public partial struct Vtbl

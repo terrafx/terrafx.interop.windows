@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("98931D33-5AE8-4791-AA3C-1A73A2934E71")]
     [NativeTypeName("struct ID3D12DeviceRemovedExtendedData : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct ID3D12DeviceRemovedExtendedData
+    public unsafe partial struct ID3D12DeviceRemovedExtendedData : ID3D12DeviceRemovedExtendedData.Interface
     {
         public void** lpVtbl;
 
@@ -51,6 +51,15 @@ namespace TerraFX.Interop
         public HRESULT GetPageFaultAllocationOutput(D3D12_DRED_PAGE_FAULT_OUTPUT* pOutput)
         {
             return ((delegate* unmanaged<ID3D12DeviceRemovedExtendedData*, D3D12_DRED_PAGE_FAULT_OUTPUT*, int>)(lpVtbl[4]))((ID3D12DeviceRemovedExtendedData*)Unsafe.AsPointer(ref this), pOutput);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetAutoBreadcrumbsOutput(D3D12_DRED_AUTO_BREADCRUMBS_OUTPUT* pOutput);
+
+            [VtblIndex(4)]
+            HRESULT GetPageFaultAllocationOutput(D3D12_DRED_PAGE_FAULT_OUTPUT* pOutput);
         }
 
         public partial struct Vtbl

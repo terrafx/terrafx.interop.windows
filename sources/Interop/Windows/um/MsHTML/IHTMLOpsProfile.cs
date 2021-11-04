@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("3050F401-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct IHTMLOpsProfile : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct IHTMLOpsProfile
+    public unsafe partial struct IHTMLOpsProfile : IHTMLOpsProfile.Interface
     {
         public void** lpVtbl;
 
@@ -128,6 +128,36 @@ namespace TerraFX.Interop
         public HRESULT doWriteRequest([NativeTypeName("VARIANT_BOOL *")] short* success)
         {
             return ((delegate* unmanaged<IHTMLOpsProfile*, short*, int>)(lpVtbl[15]))((IHTMLOpsProfile*)Unsafe.AsPointer(ref this), success);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT addRequest([NativeTypeName("BSTR")] ushort* name, VARIANT reserved, [NativeTypeName("VARIANT_BOOL *")] short* success);
+
+            [VtblIndex(8)]
+            HRESULT clearRequest();
+
+            [VtblIndex(9)]
+            HRESULT doRequest(VARIANT usage, VARIANT fname, VARIANT domain, VARIANT path, VARIANT expire, VARIANT reserved);
+
+            [VtblIndex(10)]
+            HRESULT getAttribute([NativeTypeName("BSTR")] ushort* name, [NativeTypeName("BSTR *")] ushort** value);
+
+            [VtblIndex(11)]
+            HRESULT setAttribute([NativeTypeName("BSTR")] ushort* name, [NativeTypeName("BSTR")] ushort* value, VARIANT prefs, [NativeTypeName("VARIANT_BOOL *")] short* success);
+
+            [VtblIndex(12)]
+            HRESULT commitChanges([NativeTypeName("VARIANT_BOOL *")] short* success);
+
+            [VtblIndex(13)]
+            HRESULT addReadRequest([NativeTypeName("BSTR")] ushort* name, VARIANT reserved, [NativeTypeName("VARIANT_BOOL *")] short* success);
+
+            [VtblIndex(14)]
+            HRESULT doReadRequest(VARIANT usage, VARIANT fname, VARIANT domain, VARIANT path, VARIANT expire, VARIANT reserved);
+
+            [VtblIndex(15)]
+            HRESULT doWriteRequest([NativeTypeName("VARIANT_BOOL *")] short* success);
         }
 
         public partial struct Vtbl

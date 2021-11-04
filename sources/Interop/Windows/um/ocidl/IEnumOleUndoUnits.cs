@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("B3E7C340-EF97-11CE-9BC9-00AA00608E01")]
     [NativeTypeName("struct IEnumOleUndoUnits : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IEnumOleUndoUnits
+    public unsafe partial struct IEnumOleUndoUnits : IEnumOleUndoUnits.Interface
     {
         public void** lpVtbl;
 
@@ -65,6 +65,21 @@ namespace TerraFX.Interop
         public HRESULT Clone(IEnumOleUndoUnits** ppEnum)
         {
             return ((delegate* unmanaged<IEnumOleUndoUnits*, IEnumOleUndoUnits**, int>)(lpVtbl[6]))((IEnumOleUndoUnits*)Unsafe.AsPointer(ref this), ppEnum);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT Next([NativeTypeName("ULONG")] uint cElt, IOleUndoUnit** rgElt, [NativeTypeName("ULONG *")] uint* pcEltFetched);
+
+            [VtblIndex(4)]
+            HRESULT Skip([NativeTypeName("ULONG")] uint cElt);
+
+            [VtblIndex(5)]
+            HRESULT Reset();
+
+            [VtblIndex(6)]
+            HRESULT Clone(IEnumOleUndoUnits** ppEnum);
         }
 
         public partial struct Vtbl

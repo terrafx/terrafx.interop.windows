@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("211A8760-03AC-11D1-8D13-00AA00BD8339")]
     [NativeTypeName("struct IAMTunerNotification : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IAMTunerNotification
+    public unsafe partial struct IAMTunerNotification : IAMTunerNotification.Interface
     {
         public void** lpVtbl;
 
@@ -44,6 +44,12 @@ namespace TerraFX.Interop
         public HRESULT OnEvent(AMTunerEventType Event)
         {
             return ((delegate* unmanaged<IAMTunerNotification*, AMTunerEventType, int>)(lpVtbl[3]))((IAMTunerNotification*)Unsafe.AsPointer(ref this), Event);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT OnEvent(AMTunerEventType Event);
         }
 
         public partial struct Vtbl

@@ -8,7 +8,7 @@ using System.Runtime.CompilerServices;
 
 namespace TerraFX.Interop
 {
-    public unsafe partial struct IRoSimpleMetaDataBuilder
+    public unsafe partial struct IRoSimpleMetaDataBuilder : IRoSimpleMetaDataBuilder.Interface
     {
         public void** lpVtbl;
 
@@ -80,6 +80,39 @@ namespace TerraFX.Interop
         public HRESULT SetParameterizedDelegate(Guid piid, [NativeTypeName("UINT32")] uint numArgs)
         {
             return ((delegate* unmanaged<IRoSimpleMetaDataBuilder*, Guid, uint, int>)(lpVtbl[9]))((IRoSimpleMetaDataBuilder*)Unsafe.AsPointer(ref this), piid, numArgs);
+        }
+
+        public interface Interface
+        {
+            [VtblIndex(0)]
+            HRESULT SetWinRtInterface(Guid iid);
+
+            [VtblIndex(1)]
+            HRESULT SetDelegate(Guid iid);
+
+            [VtblIndex(2)]
+            HRESULT SetInterfaceGroupSimpleDefault([NativeTypeName("PCWSTR")] ushort* name, [NativeTypeName("PCWSTR")] ushort* defaultInterfaceName, [NativeTypeName("const GUID *")] Guid* defaultInterfaceIID);
+
+            [VtblIndex(3)]
+            HRESULT SetInterfaceGroupParameterizedDefault([NativeTypeName("PCWSTR")] ushort* name, [NativeTypeName("UINT32")] uint elementCount, [NativeTypeName("PCWSTR *")] ushort** defaultInterfaceNameElements);
+
+            [VtblIndex(4)]
+            HRESULT SetRuntimeClassSimpleDefault([NativeTypeName("PCWSTR")] ushort* name, [NativeTypeName("PCWSTR")] ushort* defaultInterfaceName, [NativeTypeName("const GUID *")] Guid* defaultInterfaceIID);
+
+            [VtblIndex(5)]
+            HRESULT SetRuntimeClassParameterizedDefault([NativeTypeName("PCWSTR")] ushort* name, [NativeTypeName("UINT32")] uint elementCount, [NativeTypeName("const PCWSTR *")] ushort** defaultInterfaceNameElements);
+
+            [VtblIndex(6)]
+            HRESULT SetStruct([NativeTypeName("PCWSTR")] ushort* name, [NativeTypeName("UINT32")] uint numFields, [NativeTypeName("const PCWSTR *")] ushort** fieldTypeNames);
+
+            [VtblIndex(7)]
+            HRESULT SetEnum([NativeTypeName("PCWSTR")] ushort* name, [NativeTypeName("PCWSTR")] ushort* baseType);
+
+            [VtblIndex(8)]
+            HRESULT SetParameterizedInterface(Guid piid, [NativeTypeName("UINT32")] uint numArgs);
+
+            [VtblIndex(9)]
+            HRESULT SetParameterizedDelegate(Guid piid, [NativeTypeName("UINT32")] uint numArgs);
         }
 
         public partial struct Vtbl

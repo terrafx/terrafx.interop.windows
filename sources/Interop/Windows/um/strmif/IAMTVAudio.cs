@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("83EC1C30-23D1-11D1-99E6-00A0C9560266")]
     [NativeTypeName("struct IAMTVAudio : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IAMTVAudio
+    public unsafe partial struct IAMTVAudio : IAMTVAudio.Interface
     {
         public void** lpVtbl;
 
@@ -79,6 +79,27 @@ namespace TerraFX.Interop
         public HRESULT UnRegisterNotificationCallBack(IAMTunerNotification* pNotify)
         {
             return ((delegate* unmanaged<IAMTVAudio*, IAMTunerNotification*, int>)(lpVtbl[8]))((IAMTVAudio*)Unsafe.AsPointer(ref this), pNotify);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetHardwareSupportedTVAudioModes([NativeTypeName("long *")] int* plModes);
+
+            [VtblIndex(4)]
+            HRESULT GetAvailableTVAudioModes([NativeTypeName("long *")] int* plModes);
+
+            [VtblIndex(5)]
+            HRESULT get_TVAudioMode([NativeTypeName("long *")] int* plMode);
+
+            [VtblIndex(6)]
+            HRESULT put_TVAudioMode([NativeTypeName("long")] int lMode);
+
+            [VtblIndex(7)]
+            HRESULT RegisterNotificationCallBack(IAMTunerNotification* pNotify, [NativeTypeName("long")] int lEvents);
+
+            [VtblIndex(8)]
+            HRESULT UnRegisterNotificationCallBack(IAMTunerNotification* pNotify);
         }
 
         public partial struct Vtbl

@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("47D2657A-7B27-11D0-8CA9-00A0C92DBFE8")]
     [NativeTypeName("struct IDockingWindowFrame : IOleWindow")]
     [NativeInheritance("IOleWindow")]
-    public unsafe partial struct IDockingWindowFrame
+    public unsafe partial struct IDockingWindowFrame : IDockingWindowFrame.Interface
     {
         public void** lpVtbl;
 
@@ -72,6 +72,18 @@ namespace TerraFX.Interop
         public HRESULT FindToolbar([NativeTypeName("PCWSTR")] ushort* pwszItem, [NativeTypeName("const IID &")] Guid* riid, void** ppv)
         {
             return ((delegate* unmanaged<IDockingWindowFrame*, ushort*, Guid*, void**, int>)(lpVtbl[7]))((IDockingWindowFrame*)Unsafe.AsPointer(ref this), pwszItem, riid, ppv);
+        }
+
+        public interface Interface : IOleWindow.Interface
+        {
+            [VtblIndex(5)]
+            HRESULT AddToolbar(IUnknown* punkSrc, [NativeTypeName("PCWSTR")] ushort* pwszItem, [NativeTypeName("DWORD")] uint dwAddFlags);
+
+            [VtblIndex(6)]
+            HRESULT RemoveToolbar(IUnknown* punkSrc, [NativeTypeName("DWORD")] uint dwRemoveFlags);
+
+            [VtblIndex(7)]
+            HRESULT FindToolbar([NativeTypeName("PCWSTR")] ushort* pwszItem, [NativeTypeName("const IID &")] Guid* riid, void** ppv);
         }
 
         public partial struct Vtbl

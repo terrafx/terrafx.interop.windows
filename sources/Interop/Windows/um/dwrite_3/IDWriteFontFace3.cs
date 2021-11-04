@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("D37D7598-09BE-4222-A236-2081341CC1F2")]
     [NativeTypeName("struct IDWriteFontFace3 : IDWriteFontFace2")]
     [NativeInheritance("IDWriteFontFace2")]
-    public unsafe partial struct IDWriteFontFace3
+    public unsafe partial struct IDWriteFontFace3 : IDWriteFontFace3.Interface
     {
         public void** lpVtbl;
 
@@ -363,6 +363,51 @@ namespace TerraFX.Interop
         public HRESULT AreGlyphsLocal([NativeTypeName("const UINT16 *")] ushort* glyphIndices, [NativeTypeName("UINT32")] uint glyphCount, BOOL enqueueIfNotLocal, BOOL* isLocal)
         {
             return ((delegate* unmanaged<IDWriteFontFace3*, ushort*, uint, BOOL, BOOL*, int>)(lpVtbl[48]))((IDWriteFontFace3*)Unsafe.AsPointer(ref this), glyphIndices, glyphCount, enqueueIfNotLocal, isLocal);
+        }
+
+        public interface Interface : IDWriteFontFace2.Interface
+        {
+            [VtblIndex(35)]
+            HRESULT GetFontFaceReference(IDWriteFontFaceReference** fontFaceReference);
+
+            [VtblIndex(36)]
+            void GetPanose(DWRITE_PANOSE* panose);
+
+            [VtblIndex(37)]
+            DWRITE_FONT_WEIGHT GetWeight();
+
+            [VtblIndex(38)]
+            DWRITE_FONT_STRETCH GetStretch();
+
+            [VtblIndex(39)]
+            DWRITE_FONT_STYLE GetStyle();
+
+            [VtblIndex(40)]
+            HRESULT GetFamilyNames(IDWriteLocalizedStrings** names);
+
+            [VtblIndex(41)]
+            HRESULT GetFaceNames(IDWriteLocalizedStrings** names);
+
+            [VtblIndex(42)]
+            HRESULT GetInformationalStrings(DWRITE_INFORMATIONAL_STRING_ID informationalStringID, IDWriteLocalizedStrings** informationalStrings, BOOL* exists);
+
+            [VtblIndex(43)]
+            BOOL HasCharacter([NativeTypeName("UINT32")] uint unicodeValue);
+
+            [VtblIndex(44)]
+            HRESULT GetRecommendedRenderingMode(float fontEmSize, float dpiX, float dpiY, [NativeTypeName("const DWRITE_MATRIX *")] DWRITE_MATRIX* transform, BOOL isSideways, DWRITE_OUTLINE_THRESHOLD outlineThreshold, DWRITE_MEASURING_MODE measuringMode, IDWriteRenderingParams* renderingParams, DWRITE_RENDERING_MODE1* renderingMode, DWRITE_GRID_FIT_MODE* gridFitMode);
+
+            [VtblIndex(45)]
+            BOOL IsCharacterLocal([NativeTypeName("UINT32")] uint unicodeValue);
+
+            [VtblIndex(46)]
+            BOOL IsGlyphLocal([NativeTypeName("UINT16")] ushort glyphId);
+
+            [VtblIndex(47)]
+            HRESULT AreCharactersLocal([NativeTypeName("const WCHAR *")] ushort* characters, [NativeTypeName("UINT32")] uint characterCount, BOOL enqueueIfNotLocal, BOOL* isLocal);
+
+            [VtblIndex(48)]
+            HRESULT AreGlyphsLocal([NativeTypeName("const UINT16 *")] ushort* glyphIndices, [NativeTypeName("UINT32")] uint glyphCount, BOOL enqueueIfNotLocal, BOOL* isLocal);
         }
 
         public partial struct Vtbl

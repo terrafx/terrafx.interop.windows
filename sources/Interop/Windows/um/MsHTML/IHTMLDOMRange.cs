@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("305104AE-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct IHTMLDOMRange : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct IHTMLDOMRange
+    public unsafe partial struct IHTMLDOMRange : IHTMLDOMRange.Interface
     {
         public void** lpVtbl;
 
@@ -247,6 +247,87 @@ namespace TerraFX.Interop
         public HRESULT getBoundingClientRect(IHTMLRect** ppRect)
         {
             return ((delegate* unmanaged<IHTMLDOMRange*, IHTMLRect**, int>)(lpVtbl[32]))((IHTMLDOMRange*)Unsafe.AsPointer(ref this), ppRect);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT get_startContainer(IHTMLDOMNode** p);
+
+            [VtblIndex(8)]
+            HRESULT get_startOffset([NativeTypeName("long *")] int* p);
+
+            [VtblIndex(9)]
+            HRESULT get_endContainer(IHTMLDOMNode** p);
+
+            [VtblIndex(10)]
+            HRESULT get_endOffset([NativeTypeName("long *")] int* p);
+
+            [VtblIndex(11)]
+            HRESULT get_collapsed([NativeTypeName("VARIANT_BOOL *")] short* p);
+
+            [VtblIndex(12)]
+            HRESULT get_commonAncestorContainer(IHTMLDOMNode** p);
+
+            [VtblIndex(13)]
+            HRESULT setStart(IDispatch* refNode, [NativeTypeName("long")] int offset);
+
+            [VtblIndex(14)]
+            HRESULT setEnd(IDispatch* refNode, [NativeTypeName("long")] int offset);
+
+            [VtblIndex(15)]
+            HRESULT setStartBefore(IDispatch* refNode);
+
+            [VtblIndex(16)]
+            HRESULT setStartAfter(IDispatch* refNode);
+
+            [VtblIndex(17)]
+            HRESULT setEndBefore(IDispatch* refNode);
+
+            [VtblIndex(18)]
+            HRESULT setEndAfter(IDispatch* refNode);
+
+            [VtblIndex(19)]
+            HRESULT collapse([NativeTypeName("VARIANT_BOOL")] short toStart);
+
+            [VtblIndex(20)]
+            HRESULT selectNode(IDispatch* refNode);
+
+            [VtblIndex(21)]
+            HRESULT selectNodeContents(IDispatch* refNode);
+
+            [VtblIndex(22)]
+            HRESULT compareBoundaryPoints(short how, IDispatch* sourceRange, [NativeTypeName("long *")] int* compareResult);
+
+            [VtblIndex(23)]
+            HRESULT deleteContents();
+
+            [VtblIndex(24)]
+            HRESULT extractContents(IDispatch** ppDocumentFragment);
+
+            [VtblIndex(25)]
+            HRESULT cloneContents(IDispatch** ppDocumentFragment);
+
+            [VtblIndex(26)]
+            HRESULT insertNode(IDispatch* newNode);
+
+            [VtblIndex(27)]
+            HRESULT surroundContents(IDispatch* newParent);
+
+            [VtblIndex(28)]
+            HRESULT cloneRange(IHTMLDOMRange** ppClonedRange);
+
+            [VtblIndex(29)]
+            HRESULT toString([NativeTypeName("BSTR *")] ushort** pRangeString);
+
+            [VtblIndex(30)]
+            HRESULT detach();
+
+            [VtblIndex(31)]
+            HRESULT getClientRects(IHTMLRectCollection** ppRectCol);
+
+            [VtblIndex(32)]
+            HRESULT getBoundingClientRect(IHTMLRect** ppRect);
         }
 
         public partial struct Vtbl

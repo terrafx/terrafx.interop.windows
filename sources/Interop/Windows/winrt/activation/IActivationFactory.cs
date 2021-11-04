@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("00000035-0000-0000-C000-000000000046")]
     [NativeTypeName("struct IActivationFactory : IInspectable")]
     [NativeInheritance("IInspectable")]
-    public unsafe partial struct IActivationFactory
+    public unsafe partial struct IActivationFactory : IActivationFactory.Interface
     {
         public void** lpVtbl;
 
@@ -65,6 +65,12 @@ namespace TerraFX.Interop
         public HRESULT ActivateInstance(IInspectable** instance)
         {
             return ((delegate* unmanaged<IActivationFactory*, IInspectable**, int>)(lpVtbl[6]))((IActivationFactory*)Unsafe.AsPointer(ref this), instance);
+        }
+
+        public interface Interface : IInspectable.Interface
+        {
+            [VtblIndex(6)]
+            HRESULT ActivateInstance(IInspectable** instance);
         }
 
         public partial struct Vtbl

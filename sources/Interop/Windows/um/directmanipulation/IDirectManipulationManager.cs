@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("FBF5D3B4-70C7-4163-9322-5A6F660D6FBC")]
     [NativeTypeName("struct IDirectManipulationManager : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IDirectManipulationManager
+    public unsafe partial struct IDirectManipulationManager : IDirectManipulationManager.Interface
     {
         public void** lpVtbl;
 
@@ -86,6 +86,30 @@ namespace TerraFX.Interop
         public HRESULT CreateContent(IDirectManipulationFrameInfoProvider* frameInfo, [NativeTypeName("const IID &")] Guid* clsid, [NativeTypeName("const IID &")] Guid* riid, void** @object)
         {
             return ((delegate* unmanaged<IDirectManipulationManager*, IDirectManipulationFrameInfoProvider*, Guid*, Guid*, void**, int>)(lpVtbl[9]))((IDirectManipulationManager*)Unsafe.AsPointer(ref this), frameInfo, clsid, riid, @object);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT Activate(HWND window);
+
+            [VtblIndex(4)]
+            HRESULT Deactivate(HWND window);
+
+            [VtblIndex(5)]
+            HRESULT RegisterHitTestTarget(HWND window, HWND hitTestWindow, DIRECTMANIPULATION_HITTEST_TYPE type);
+
+            [VtblIndex(6)]
+            HRESULT ProcessInput([NativeTypeName("const MSG *")] MSG* message, BOOL* handled);
+
+            [VtblIndex(7)]
+            HRESULT GetUpdateManager([NativeTypeName("const IID &")] Guid* riid, void** @object);
+
+            [VtblIndex(8)]
+            HRESULT CreateViewport(IDirectManipulationFrameInfoProvider* frameInfo, HWND window, [NativeTypeName("const IID &")] Guid* riid, void** @object);
+
+            [VtblIndex(9)]
+            HRESULT CreateContent(IDirectManipulationFrameInfoProvider* frameInfo, [NativeTypeName("const IID &")] Guid* clsid, [NativeTypeName("const IID &")] Guid* riid, void** @object);
         }
 
         public partial struct Vtbl

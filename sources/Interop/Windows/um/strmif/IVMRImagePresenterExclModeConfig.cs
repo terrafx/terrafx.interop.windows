@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("E6F7CE40-4673-44F1-8F77-5499D68CB4EA")]
     [NativeTypeName("struct IVMRImagePresenterExclModeConfig : IVMRImagePresenterConfig")]
     [NativeInheritance("IVMRImagePresenterConfig")]
-    public unsafe partial struct IVMRImagePresenterExclModeConfig
+    public unsafe partial struct IVMRImagePresenterExclModeConfig : IVMRImagePresenterExclModeConfig.Interface
     {
         public void** lpVtbl;
 
@@ -65,6 +65,15 @@ namespace TerraFX.Interop
         public HRESULT GetXlcModeDDObjAndPrimarySurface([NativeTypeName("LPDIRECTDRAW7 *")] IDirectDraw7** lpDDObj, [NativeTypeName("LPDIRECTDRAWSURFACE7 *")] IDirectDrawSurface7** lpPrimarySurf)
         {
             return ((delegate* unmanaged<IVMRImagePresenterExclModeConfig*, IDirectDraw7**, IDirectDrawSurface7**, int>)(lpVtbl[6]))((IVMRImagePresenterExclModeConfig*)Unsafe.AsPointer(ref this), lpDDObj, lpPrimarySurf);
+        }
+
+        public interface Interface : IVMRImagePresenterConfig.Interface
+        {
+            [VtblIndex(5)]
+            HRESULT SetXlcModeDDObjAndPrimarySurface([NativeTypeName("LPDIRECTDRAW7")] IDirectDraw7* lpDDObj, [NativeTypeName("LPDIRECTDRAWSURFACE7")] IDirectDrawSurface7* lpPrimarySurf);
+
+            [VtblIndex(6)]
+            HRESULT GetXlcModeDDObjAndPrimarySurface([NativeTypeName("LPDIRECTDRAW7 *")] IDirectDraw7** lpDDObj, [NativeTypeName("LPDIRECTDRAWSURFACE7 *")] IDirectDrawSurface7** lpPrimarySurf);
         }
 
         public partial struct Vtbl

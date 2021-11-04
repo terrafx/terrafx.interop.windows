@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("90E11430-9569-41D8-AE75-6D4D2AE7CCA0")]
     [NativeTypeName("struct IThumbnailStreamCache : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IThumbnailStreamCache
+    public unsafe partial struct IThumbnailStreamCache : IThumbnailStreamCache.Interface
     {
         public void** lpVtbl;
 
@@ -51,6 +51,15 @@ namespace TerraFX.Interop
         public HRESULT SetThumbnailStream([NativeTypeName("LPCWSTR")] ushort* path, [NativeTypeName("ULONGLONG")] ulong cacheId, SIZE thumbnailSize, IStream* thumbnailStream)
         {
             return ((delegate* unmanaged<IThumbnailStreamCache*, ushort*, ulong, SIZE, IStream*, int>)(lpVtbl[4]))((IThumbnailStreamCache*)Unsafe.AsPointer(ref this), path, cacheId, thumbnailSize, thumbnailStream);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetThumbnailStream([NativeTypeName("LPCWSTR")] ushort* path, [NativeTypeName("ULONGLONG")] ulong cacheId, ThumbnailStreamCacheOptions options, uint requestedThumbnailSize, SIZE* thumbnailSize, IStream** thumbnailStream);
+
+            [VtblIndex(4)]
+            HRESULT SetThumbnailStream([NativeTypeName("LPCWSTR")] ushort* path, [NativeTypeName("ULONGLONG")] ulong cacheId, SIZE thumbnailSize, IStream* thumbnailStream);
         }
 
         public partial struct Vtbl

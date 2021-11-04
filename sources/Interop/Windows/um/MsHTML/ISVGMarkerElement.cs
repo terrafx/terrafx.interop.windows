@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("30510525-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct ISVGMarkerElement : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct ISVGMarkerElement
+    public unsafe partial struct ISVGMarkerElement : ISVGMarkerElement.Interface
     {
         public void** lpVtbl;
 
@@ -177,6 +177,57 @@ namespace TerraFX.Interop
         public HRESULT setOrientToAngle(ISVGAngle* pSVGAngle)
         {
             return ((delegate* unmanaged<ISVGMarkerElement*, ISVGAngle*, int>)(lpVtbl[22]))((ISVGMarkerElement*)Unsafe.AsPointer(ref this), pSVGAngle);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT putref_refX(ISVGAnimatedLength* v);
+
+            [VtblIndex(8)]
+            HRESULT get_refX(ISVGAnimatedLength** p);
+
+            [VtblIndex(9)]
+            HRESULT putref_refY(ISVGAnimatedLength* v);
+
+            [VtblIndex(10)]
+            HRESULT get_refY(ISVGAnimatedLength** p);
+
+            [VtblIndex(11)]
+            HRESULT putref_markerUnits(ISVGAnimatedEnumeration* v);
+
+            [VtblIndex(12)]
+            HRESULT get_markerUnits(ISVGAnimatedEnumeration** p);
+
+            [VtblIndex(13)]
+            HRESULT putref_markerWidth(ISVGAnimatedLength* v);
+
+            [VtblIndex(14)]
+            HRESULT get_markerWidth(ISVGAnimatedLength** p);
+
+            [VtblIndex(15)]
+            HRESULT putref_markerHeight(ISVGAnimatedLength* v);
+
+            [VtblIndex(16)]
+            HRESULT get_markerHeight(ISVGAnimatedLength** p);
+
+            [VtblIndex(17)]
+            HRESULT putref_orientType(ISVGAnimatedEnumeration* v);
+
+            [VtblIndex(18)]
+            HRESULT get_orientType(ISVGAnimatedEnumeration** p);
+
+            [VtblIndex(19)]
+            HRESULT putref_orientAngle(ISVGAnimatedAngle* v);
+
+            [VtblIndex(20)]
+            HRESULT get_orientAngle(ISVGAnimatedAngle** p);
+
+            [VtblIndex(21)]
+            HRESULT setOrientToAuto();
+
+            [VtblIndex(22)]
+            HRESULT setOrientToAngle(ISVGAngle* pSVGAngle);
         }
 
         public partial struct Vtbl

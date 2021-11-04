@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("305104EF-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct ISVGElementInstanceList : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct ISVGElementInstanceList
+    public unsafe partial struct ISVGElementInstanceList : ISVGElementInstanceList.Interface
     {
         public void** lpVtbl;
 
@@ -79,6 +79,15 @@ namespace TerraFX.Interop
         public HRESULT item([NativeTypeName("long")] int index, ISVGElementInstance** ppResult)
         {
             return ((delegate* unmanaged<ISVGElementInstanceList*, int, ISVGElementInstance**, int>)(lpVtbl[8]))((ISVGElementInstanceList*)Unsafe.AsPointer(ref this), index, ppResult);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT get_length([NativeTypeName("long *")] int* p);
+
+            [VtblIndex(8)]
+            HRESULT item([NativeTypeName("long")] int index, ISVGElementInstance** ppResult);
         }
 
         public partial struct Vtbl

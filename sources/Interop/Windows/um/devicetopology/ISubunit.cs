@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("82149A85-DBA6-4487-86BB-EA8F7FEFCC71")]
     [NativeTypeName("struct ISubunit : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct ISubunit
+    public unsafe partial struct ISubunit : ISubunit.Interface
     {
         public void** lpVtbl;
 
@@ -37,6 +37,10 @@ namespace TerraFX.Interop
         public uint Release()
         {
             return ((delegate* unmanaged<ISubunit*, uint>)(lpVtbl[2]))((ISubunit*)Unsafe.AsPointer(ref this));
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
         }
 
         public partial struct Vtbl

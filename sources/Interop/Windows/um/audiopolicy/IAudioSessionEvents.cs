@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("24918ACC-64B3-37C1-8CA9-74A66E9957A8")]
     [NativeTypeName("struct IAudioSessionEvents : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IAudioSessionEvents
+    public unsafe partial struct IAudioSessionEvents : IAudioSessionEvents.Interface
     {
         public void** lpVtbl;
 
@@ -86,6 +86,30 @@ namespace TerraFX.Interop
         public HRESULT OnSessionDisconnected(AudioSessionDisconnectReason DisconnectReason)
         {
             return ((delegate* unmanaged<IAudioSessionEvents*, AudioSessionDisconnectReason, int>)(lpVtbl[9]))((IAudioSessionEvents*)Unsafe.AsPointer(ref this), DisconnectReason);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT OnDisplayNameChanged([NativeTypeName("LPCWSTR")] ushort* NewDisplayName, [NativeTypeName("LPCGUID")] Guid* EventContext);
+
+            [VtblIndex(4)]
+            HRESULT OnIconPathChanged([NativeTypeName("LPCWSTR")] ushort* NewIconPath, [NativeTypeName("LPCGUID")] Guid* EventContext);
+
+            [VtblIndex(5)]
+            HRESULT OnSimpleVolumeChanged(float NewVolume, BOOL NewMute, [NativeTypeName("LPCGUID")] Guid* EventContext);
+
+            [VtblIndex(6)]
+            HRESULT OnChannelVolumeChanged([NativeTypeName("DWORD")] uint ChannelCount, [NativeTypeName("float []")] float* NewChannelVolumeArray, [NativeTypeName("DWORD")] uint ChangedChannel, [NativeTypeName("LPCGUID")] Guid* EventContext);
+
+            [VtblIndex(7)]
+            HRESULT OnGroupingParamChanged([NativeTypeName("LPCGUID")] Guid* NewGroupingParam, [NativeTypeName("LPCGUID")] Guid* EventContext);
+
+            [VtblIndex(8)]
+            HRESULT OnStateChanged(AudioSessionState NewState);
+
+            [VtblIndex(9)]
+            HRESULT OnSessionDisconnected(AudioSessionDisconnectReason DisconnectReason);
         }
 
         public partial struct Vtbl

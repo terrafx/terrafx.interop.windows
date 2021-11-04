@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("9047D593-01DD-4B72-81A3-E4A0CA69F407")]
     [NativeTypeName("struct ISpeechPhraseRules : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct ISpeechPhraseRules
+    public unsafe partial struct ISpeechPhraseRules : ISpeechPhraseRules.Interface
     {
         public void** lpVtbl;
 
@@ -86,6 +86,18 @@ namespace TerraFX.Interop
         public HRESULT get__NewEnum(IUnknown** EnumVARIANT)
         {
             return ((delegate* unmanaged<ISpeechPhraseRules*, IUnknown**, int>)(lpVtbl[9]))((ISpeechPhraseRules*)Unsafe.AsPointer(ref this), EnumVARIANT);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT get_Count([NativeTypeName("long *")] int* Count);
+
+            [VtblIndex(8)]
+            HRESULT Item([NativeTypeName("long")] int Index, ISpeechPhraseRule** Rule);
+
+            [VtblIndex(9)]
+            HRESULT get__NewEnum(IUnknown** EnumVARIANT);
         }
 
         public partial struct Vtbl

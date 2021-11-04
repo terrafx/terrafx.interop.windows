@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("A248FD3F-3E6C-4E63-9F03-7F68ECC91DB9")]
     [NativeTypeName("struct ID2D1EffectImpl : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct ID2D1EffectImpl
+    public unsafe partial struct ID2D1EffectImpl : ID2D1EffectImpl.Interface
     {
         public void** lpVtbl;
 
@@ -58,6 +58,18 @@ namespace TerraFX.Interop
         public HRESULT SetGraph(ID2D1TransformGraph* transformGraph)
         {
             return ((delegate* unmanaged<ID2D1EffectImpl*, ID2D1TransformGraph*, int>)(lpVtbl[5]))((ID2D1EffectImpl*)Unsafe.AsPointer(ref this), transformGraph);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT Initialize(ID2D1EffectContext* effectContext, ID2D1TransformGraph* transformGraph);
+
+            [VtblIndex(4)]
+            HRESULT PrepareForRender(D2D1_CHANGE_TYPE changeType);
+
+            [VtblIndex(5)]
+            HRESULT SetGraph(ID2D1TransformGraph* transformGraph);
         }
 
         public partial struct Vtbl

@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("305104E0-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct ISVGFitToViewBox : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct ISVGFitToViewBox
+    public unsafe partial struct ISVGFitToViewBox : ISVGFitToViewBox.Interface
     {
         public void** lpVtbl;
 
@@ -86,6 +86,18 @@ namespace TerraFX.Interop
         public HRESULT get_preserveAspectRatio(ISVGAnimatedPreserveAspectRatio** p)
         {
             return ((delegate* unmanaged<ISVGFitToViewBox*, ISVGAnimatedPreserveAspectRatio**, int>)(lpVtbl[9]))((ISVGFitToViewBox*)Unsafe.AsPointer(ref this), p);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT get_viewBox(ISVGAnimatedRect** p);
+
+            [VtblIndex(8)]
+            HRESULT putref_preserveAspectRatio(ISVGAnimatedPreserveAspectRatio* v);
+
+            [VtblIndex(9)]
+            HRESULT get_preserveAspectRatio(ISVGAnimatedPreserveAspectRatio** p);
         }
 
         public partial struct Vtbl

@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("AA80E7F4-2021-11D2-93E0-0060B067B86E")]
     [NativeTypeName("struct ITfDocumentMgr : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct ITfDocumentMgr
+    public unsafe partial struct ITfDocumentMgr : ITfDocumentMgr.Interface
     {
         public void** lpVtbl;
 
@@ -79,6 +79,27 @@ namespace TerraFX.Interop
         public HRESULT EnumContexts(IEnumTfContexts** ppEnum)
         {
             return ((delegate* unmanaged<ITfDocumentMgr*, IEnumTfContexts**, int>)(lpVtbl[8]))((ITfDocumentMgr*)Unsafe.AsPointer(ref this), ppEnum);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT CreateContext([NativeTypeName("TfClientId")] uint tidOwner, [NativeTypeName("DWORD")] uint dwFlags, IUnknown* punk, ITfContext** ppic, [NativeTypeName("TfEditCookie *")] uint* pecTextStore);
+
+            [VtblIndex(4)]
+            HRESULT Push(ITfContext* pic);
+
+            [VtblIndex(5)]
+            HRESULT Pop([NativeTypeName("DWORD")] uint dwFlags);
+
+            [VtblIndex(6)]
+            HRESULT GetTop(ITfContext** ppic);
+
+            [VtblIndex(7)]
+            HRESULT GetBase(ITfContext** ppic);
+
+            [VtblIndex(8)]
+            HRESULT EnumContexts(IEnumTfContexts** ppEnum);
         }
 
         public partial struct Vtbl

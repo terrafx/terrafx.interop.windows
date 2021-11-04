@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("F5185DD8-2012-4B0B-AAD9-F052C6BD482B")]
     [NativeTypeName("struct IPicture2 : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IPicture2
+    public unsafe partial struct IPicture2 : IPicture2.Interface
     {
         public void** lpVtbl;
 
@@ -135,6 +135,51 @@ namespace TerraFX.Interop
         public HRESULT get_Attributes([NativeTypeName("DWORD *")] uint* pDwAttr)
         {
             return ((delegate* unmanaged<IPicture2*, uint*, int>)(lpVtbl[16]))((IPicture2*)Unsafe.AsPointer(ref this), pDwAttr);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT get_Handle(HHANDLE* pHandle);
+
+            [VtblIndex(4)]
+            HRESULT get_hPal(HHANDLE* phPal);
+
+            [VtblIndex(5)]
+            HRESULT get_Type(short* pType);
+
+            [VtblIndex(6)]
+            HRESULT get_Width([NativeTypeName("OLE_XSIZE_HIMETRIC *")] int* pWidth);
+
+            [VtblIndex(7)]
+            HRESULT get_Height([NativeTypeName("OLE_YSIZE_HIMETRIC *")] int* pHeight);
+
+            [VtblIndex(8)]
+            HRESULT Render(HDC hDC, [NativeTypeName("LONG")] int x, [NativeTypeName("LONG")] int y, [NativeTypeName("LONG")] int cx, [NativeTypeName("LONG")] int cy, [NativeTypeName("OLE_XPOS_HIMETRIC")] int xSrc, [NativeTypeName("OLE_YPOS_HIMETRIC")] int ySrc, [NativeTypeName("OLE_XSIZE_HIMETRIC")] int cxSrc, [NativeTypeName("OLE_YSIZE_HIMETRIC")] int cySrc, [NativeTypeName("LPCRECT")] RECT* pRcWBounds);
+
+            [VtblIndex(9)]
+            HRESULT set_hPal(HHANDLE hPal);
+
+            [VtblIndex(10)]
+            HRESULT get_CurDC(HDC* phDC);
+
+            [VtblIndex(11)]
+            HRESULT SelectPicture(HDC hDCIn, HDC* phDCOut, HHANDLE* phBmpOut);
+
+            [VtblIndex(12)]
+            HRESULT get_KeepOriginalFormat(BOOL* pKeep);
+
+            [VtblIndex(13)]
+            HRESULT put_KeepOriginalFormat(BOOL keep);
+
+            [VtblIndex(14)]
+            HRESULT PictureChanged();
+
+            [VtblIndex(15)]
+            HRESULT SaveAsFile([NativeTypeName("LPSTREAM")] IStream* pStream, BOOL fSaveMemCopy, [NativeTypeName("LONG *")] int* pCbSize);
+
+            [VtblIndex(16)]
+            HRESULT get_Attributes([NativeTypeName("DWORD *")] uint* pDwAttr);
         }
 
         public partial struct Vtbl

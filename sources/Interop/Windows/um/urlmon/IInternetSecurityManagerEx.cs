@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("F164EDF1-CC7C-4F0D-9A94-34222625C393")]
     [NativeTypeName("struct IInternetSecurityManagerEx : IInternetSecurityManager")]
     [NativeInheritance("IInternetSecurityManager")]
-    public unsafe partial struct IInternetSecurityManagerEx
+    public unsafe partial struct IInternetSecurityManagerEx : IInternetSecurityManagerEx.Interface
     {
         public void** lpVtbl;
 
@@ -100,6 +100,12 @@ namespace TerraFX.Interop
         public HRESULT ProcessUrlActionEx([NativeTypeName("LPCWSTR")] ushort* pwszUrl, [NativeTypeName("DWORD")] uint dwAction, byte* pPolicy, [NativeTypeName("DWORD")] uint cbPolicy, byte* pContext, [NativeTypeName("DWORD")] uint cbContext, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("DWORD")] uint dwReserved, [NativeTypeName("DWORD *")] uint* pdwOutFlags)
         {
             return ((delegate* unmanaged<IInternetSecurityManagerEx*, ushort*, uint, byte*, uint, byte*, uint, uint, uint, uint*, int>)(lpVtbl[11]))((IInternetSecurityManagerEx*)Unsafe.AsPointer(ref this), pwszUrl, dwAction, pPolicy, cbPolicy, pContext, cbContext, dwFlags, dwReserved, pdwOutFlags);
+        }
+
+        public interface Interface : IInternetSecurityManager.Interface
+        {
+            [VtblIndex(11)]
+            HRESULT ProcessUrlActionEx([NativeTypeName("LPCWSTR")] ushort* pwszUrl, [NativeTypeName("DWORD")] uint dwAction, byte* pPolicy, [NativeTypeName("DWORD")] uint cbPolicy, byte* pContext, [NativeTypeName("DWORD")] uint cbContext, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("DWORD")] uint dwReserved, [NativeTypeName("DWORD *")] uint* pdwOutFlags);
         }
 
         public partial struct Vtbl

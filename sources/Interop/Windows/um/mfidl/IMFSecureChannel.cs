@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("D0AE555D-3B12-4D97-B060-0990BC5AEB67")]
     [NativeTypeName("struct IMFSecureChannel : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IMFSecureChannel
+    public unsafe partial struct IMFSecureChannel : IMFSecureChannel.Interface
     {
         public void** lpVtbl;
 
@@ -51,6 +51,15 @@ namespace TerraFX.Interop
         public HRESULT SetupSession(byte* pbEncryptedSessionKey, [NativeTypeName("DWORD")] uint cbSessionKey)
         {
             return ((delegate* unmanaged<IMFSecureChannel*, byte*, uint, int>)(lpVtbl[4]))((IMFSecureChannel*)Unsafe.AsPointer(ref this), pbEncryptedSessionKey, cbSessionKey);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetCertificate(byte** ppCert, [NativeTypeName("DWORD *")] uint* pcbCert);
+
+            [VtblIndex(4)]
+            HRESULT SetupSession(byte* pbEncryptedSessionKey, [NativeTypeName("DWORD")] uint cbSessionKey);
         }
 
         public partial struct Vtbl

@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("8455293A-0CBD-4831-9B39-FBDBAB724723")]
     [NativeTypeName("struct ID3D12VideoEncodeCommandList : ID3D12CommandList")]
     [NativeInheritance("ID3D12CommandList")]
-    public unsafe partial struct ID3D12VideoEncodeCommandList
+    public unsafe partial struct ID3D12VideoEncodeCommandList : ID3D12VideoEncodeCommandList.Interface
     {
         public void** lpVtbl;
 
@@ -191,6 +191,57 @@ namespace TerraFX.Interop
         public void SetProtectedResourceSession(ID3D12ProtectedResourceSession* pProtectedResourceSession)
         {
             ((delegate* unmanaged<ID3D12VideoEncodeCommandList*, ID3D12ProtectedResourceSession*, void>)(lpVtbl[24]))((ID3D12VideoEncodeCommandList*)Unsafe.AsPointer(ref this), pProtectedResourceSession);
+        }
+
+        public interface Interface : ID3D12CommandList.Interface
+        {
+            [VtblIndex(9)]
+            HRESULT Close();
+
+            [VtblIndex(10)]
+            HRESULT Reset(ID3D12CommandAllocator* pAllocator);
+
+            [VtblIndex(11)]
+            void ClearState();
+
+            [VtblIndex(12)]
+            void ResourceBarrier(uint NumBarriers, [NativeTypeName("const D3D12_RESOURCE_BARRIER *")] D3D12_RESOURCE_BARRIER* pBarriers);
+
+            [VtblIndex(13)]
+            void DiscardResource(ID3D12Resource* pResource, [NativeTypeName("const D3D12_DISCARD_REGION *")] D3D12_DISCARD_REGION* pRegion);
+
+            [VtblIndex(14)]
+            void BeginQuery(ID3D12QueryHeap* pQueryHeap, D3D12_QUERY_TYPE Type, uint Index);
+
+            [VtblIndex(15)]
+            void EndQuery(ID3D12QueryHeap* pQueryHeap, D3D12_QUERY_TYPE Type, uint Index);
+
+            [VtblIndex(16)]
+            void ResolveQueryData(ID3D12QueryHeap* pQueryHeap, D3D12_QUERY_TYPE Type, uint StartIndex, uint NumQueries, ID3D12Resource* pDestinationBuffer, [NativeTypeName("UINT64")] ulong AlignedDestinationBufferOffset);
+
+            [VtblIndex(17)]
+            void SetPredication(ID3D12Resource* pBuffer, [NativeTypeName("UINT64")] ulong AlignedBufferOffset, D3D12_PREDICATION_OP Operation);
+
+            [VtblIndex(18)]
+            void SetMarker(uint Metadata, [NativeTypeName("const void *")] void* pData, uint Size);
+
+            [VtblIndex(19)]
+            void BeginEvent(uint Metadata, [NativeTypeName("const void *")] void* pData, uint Size);
+
+            [VtblIndex(20)]
+            void EndEvent();
+
+            [VtblIndex(21)]
+            void EstimateMotion(ID3D12VideoMotionEstimator* pMotionEstimator, [NativeTypeName("const D3D12_VIDEO_MOTION_ESTIMATOR_OUTPUT *")] D3D12_VIDEO_MOTION_ESTIMATOR_OUTPUT* pOutputArguments, [NativeTypeName("const D3D12_VIDEO_MOTION_ESTIMATOR_INPUT *")] D3D12_VIDEO_MOTION_ESTIMATOR_INPUT* pInputArguments);
+
+            [VtblIndex(22)]
+            void ResolveMotionVectorHeap([NativeTypeName("const D3D12_RESOLVE_VIDEO_MOTION_VECTOR_HEAP_OUTPUT *")] D3D12_RESOLVE_VIDEO_MOTION_VECTOR_HEAP_OUTPUT* pOutputArguments, [NativeTypeName("const D3D12_RESOLVE_VIDEO_MOTION_VECTOR_HEAP_INPUT *")] D3D12_RESOLVE_VIDEO_MOTION_VECTOR_HEAP_INPUT* pInputArguments);
+
+            [VtblIndex(23)]
+            void WriteBufferImmediate(uint Count, [NativeTypeName("const D3D12_WRITEBUFFERIMMEDIATE_PARAMETER *")] D3D12_WRITEBUFFERIMMEDIATE_PARAMETER* pParams, [NativeTypeName("const D3D12_WRITEBUFFERIMMEDIATE_MODE *")] D3D12_WRITEBUFFERIMMEDIATE_MODE* pModes);
+
+            [VtblIndex(24)]
+            void SetProtectedResourceSession(ID3D12ProtectedResourceSession* pProtectedResourceSession);
         }
 
         public partial struct Vtbl

@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("00000113-0000-0000-C000-000000000046")]
     [NativeTypeName("struct IOleInPlaceObject : IOleWindow")]
     [NativeInheritance("IOleWindow")]
-    public unsafe partial struct IOleInPlaceObject
+    public unsafe partial struct IOleInPlaceObject : IOleInPlaceObject.Interface
     {
         public void** lpVtbl;
 
@@ -79,6 +79,21 @@ namespace TerraFX.Interop
         public HRESULT ReactivateAndUndo()
         {
             return ((delegate* unmanaged<IOleInPlaceObject*, int>)(lpVtbl[8]))((IOleInPlaceObject*)Unsafe.AsPointer(ref this));
+        }
+
+        public interface Interface : IOleWindow.Interface
+        {
+            [VtblIndex(5)]
+            HRESULT InPlaceDeactivate();
+
+            [VtblIndex(6)]
+            HRESULT UIDeactivate();
+
+            [VtblIndex(7)]
+            HRESULT SetObjectRects([NativeTypeName("LPCRECT")] RECT* lprcPosRect, [NativeTypeName("LPCRECT")] RECT* lprcClipRect);
+
+            [VtblIndex(8)]
+            HRESULT ReactivateAndUndo();
         }
 
         public partial struct Vtbl

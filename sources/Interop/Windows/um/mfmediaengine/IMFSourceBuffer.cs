@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("E2CD3A4B-AF25-4D3D-9110-DA0E6F8EE877")]
     [NativeTypeName("struct IMFSourceBuffer : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IMFSourceBuffer
+    public unsafe partial struct IMFSourceBuffer : IMFSourceBuffer.Interface
     {
         public void** lpVtbl;
 
@@ -121,6 +121,45 @@ namespace TerraFX.Interop
         public HRESULT Remove(double start, double end)
         {
             return ((delegate* unmanaged<IMFSourceBuffer*, double, double, int>)(lpVtbl[14]))((IMFSourceBuffer*)Unsafe.AsPointer(ref this), start, end);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            BOOL GetUpdating();
+
+            [VtblIndex(4)]
+            HRESULT GetBuffered(IMFMediaTimeRange** ppBuffered);
+
+            [VtblIndex(5)]
+            double GetTimeStampOffset();
+
+            [VtblIndex(6)]
+            HRESULT SetTimeStampOffset(double offset);
+
+            [VtblIndex(7)]
+            double GetAppendWindowStart();
+
+            [VtblIndex(8)]
+            HRESULT SetAppendWindowStart(double time);
+
+            [VtblIndex(9)]
+            double GetAppendWindowEnd();
+
+            [VtblIndex(10)]
+            HRESULT SetAppendWindowEnd(double time);
+
+            [VtblIndex(11)]
+            HRESULT Append([NativeTypeName("const BYTE *")] byte* pData, [NativeTypeName("DWORD")] uint len);
+
+            [VtblIndex(12)]
+            HRESULT AppendByteStream(IMFByteStream* pStream, [NativeTypeName("DWORDLONG *")] ulong* pMaxLen);
+
+            [VtblIndex(13)]
+            HRESULT Abort();
+
+            [VtblIndex(14)]
+            HRESULT Remove(double start, double end);
         }
 
         public partial struct Vtbl

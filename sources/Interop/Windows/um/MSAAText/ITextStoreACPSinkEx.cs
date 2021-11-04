@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("2BDF9464-41E2-43E3-950C-A6865BA25CD4")]
     [NativeTypeName("struct ITextStoreACPSinkEx : ITextStoreACPSink")]
     [NativeInheritance("ITextStoreACPSink")]
-    public unsafe partial struct ITextStoreACPSinkEx
+    public unsafe partial struct ITextStoreACPSinkEx : ITextStoreACPSinkEx.Interface
     {
         public void** lpVtbl;
 
@@ -100,6 +100,12 @@ namespace TerraFX.Interop
         public HRESULT OnDisconnect()
         {
             return ((delegate* unmanaged<ITextStoreACPSinkEx*, int>)(lpVtbl[11]))((ITextStoreACPSinkEx*)Unsafe.AsPointer(ref this));
+        }
+
+        public interface Interface : ITextStoreACPSink.Interface
+        {
+            [VtblIndex(11)]
+            HRESULT OnDisconnect();
         }
 
         public partial struct Vtbl

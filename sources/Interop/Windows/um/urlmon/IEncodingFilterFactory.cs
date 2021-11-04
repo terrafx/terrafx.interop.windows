@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("70BDDE00-C18E-11D0-A9CE-006097942311")]
     [NativeTypeName("struct IEncodingFilterFactory : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IEncodingFilterFactory
+    public unsafe partial struct IEncodingFilterFactory : IEncodingFilterFactory.Interface
     {
         public void** lpVtbl;
 
@@ -51,6 +51,15 @@ namespace TerraFX.Interop
         public HRESULT GetDefaultFilter([NativeTypeName("LPCWSTR")] ushort* pwzCodeIn, [NativeTypeName("LPCWSTR")] ushort* pwzCodeOut, IDataFilter** ppDF)
         {
             return ((delegate* unmanaged<IEncodingFilterFactory*, ushort*, ushort*, IDataFilter**, int>)(lpVtbl[4]))((IEncodingFilterFactory*)Unsafe.AsPointer(ref this), pwzCodeIn, pwzCodeOut, ppDF);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT FindBestFilter([NativeTypeName("LPCWSTR")] ushort* pwzCodeIn, [NativeTypeName("LPCWSTR")] ushort* pwzCodeOut, DATAINFO info, IDataFilter** ppDF);
+
+            [VtblIndex(4)]
+            HRESULT GetDefaultFilter([NativeTypeName("LPCWSTR")] ushort* pwzCodeIn, [NativeTypeName("LPCWSTR")] ushort* pwzCodeOut, IDataFilter** ppDF);
         }
 
         public partial struct Vtbl

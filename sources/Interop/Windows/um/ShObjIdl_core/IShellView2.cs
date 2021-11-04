@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("88E39E80-3578-11CF-AE69-08002B2E1262")]
     [NativeTypeName("struct IShellView2 : IShellView")]
     [NativeInheritance("IShellView")]
-    public unsafe partial struct IShellView2
+    public unsafe partial struct IShellView2 : IShellView2.Interface
     {
         public void** lpVtbl;
 
@@ -156,6 +156,21 @@ namespace TerraFX.Interop
         public HRESULT SelectAndPositionItem([NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidlItem, uint uFlags, POINT* ppt)
         {
             return ((delegate* unmanaged<IShellView2*, ITEMIDLIST*, uint, POINT*, int>)(lpVtbl[19]))((IShellView2*)Unsafe.AsPointer(ref this), pidlItem, uFlags, ppt);
+        }
+
+        public interface Interface : IShellView.Interface
+        {
+            [VtblIndex(16)]
+            HRESULT GetView([NativeTypeName("SHELLVIEWID *")] Guid* pvid, [NativeTypeName("ULONG")] uint uView);
+
+            [VtblIndex(17)]
+            HRESULT CreateViewWindow2([NativeTypeName("LPSV2CVW2_PARAMS")] SV2CVW2_PARAMS* lpParams);
+
+            [VtblIndex(18)]
+            HRESULT HandleRename([NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidlNew);
+
+            [VtblIndex(19)]
+            HRESULT SelectAndPositionItem([NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidlItem, uint uFlags, POINT* ppt);
         }
 
         public partial struct Vtbl

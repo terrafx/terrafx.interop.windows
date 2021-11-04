@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("63913A93-40C1-481A-818D-4072FF8C70CC")]
     [NativeTypeName("struct ICredentialProviderCredential : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct ICredentialProviderCredential
+    public unsafe partial struct ICredentialProviderCredential : ICredentialProviderCredential.Interface
     {
         public void** lpVtbl;
 
@@ -156,6 +156,60 @@ namespace TerraFX.Interop
         public HRESULT ReportResult([NativeTypeName("NTSTATUS")] int ntsStatus, [NativeTypeName("NTSTATUS")] int ntsSubstatus, [NativeTypeName("LPWSTR *")] ushort** ppszOptionalStatusText, CREDENTIAL_PROVIDER_STATUS_ICON* pcpsiOptionalStatusIcon)
         {
             return ((delegate* unmanaged<ICredentialProviderCredential*, int, int, ushort**, CREDENTIAL_PROVIDER_STATUS_ICON*, int>)(lpVtbl[19]))((ICredentialProviderCredential*)Unsafe.AsPointer(ref this), ntsStatus, ntsSubstatus, ppszOptionalStatusText, pcpsiOptionalStatusIcon);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT Advise(ICredentialProviderCredentialEvents* pcpce);
+
+            [VtblIndex(4)]
+            HRESULT UnAdvise();
+
+            [VtblIndex(5)]
+            HRESULT SetSelected(BOOL* pbAutoLogon);
+
+            [VtblIndex(6)]
+            HRESULT SetDeselected();
+
+            [VtblIndex(7)]
+            HRESULT GetFieldState([NativeTypeName("DWORD")] uint dwFieldID, CREDENTIAL_PROVIDER_FIELD_STATE* pcpfs, CREDENTIAL_PROVIDER_FIELD_INTERACTIVE_STATE* pcpfis);
+
+            [VtblIndex(8)]
+            HRESULT GetStringValue([NativeTypeName("DWORD")] uint dwFieldID, [NativeTypeName("LPWSTR *")] ushort** ppsz);
+
+            [VtblIndex(9)]
+            HRESULT GetBitmapValue([NativeTypeName("DWORD")] uint dwFieldID, HBITMAP* phbmp);
+
+            [VtblIndex(10)]
+            HRESULT GetCheckboxValue([NativeTypeName("DWORD")] uint dwFieldID, BOOL* pbChecked, [NativeTypeName("LPWSTR *")] ushort** ppszLabel);
+
+            [VtblIndex(11)]
+            HRESULT GetSubmitButtonValue([NativeTypeName("DWORD")] uint dwFieldID, [NativeTypeName("DWORD *")] uint* pdwAdjacentTo);
+
+            [VtblIndex(12)]
+            HRESULT GetComboBoxValueCount([NativeTypeName("DWORD")] uint dwFieldID, [NativeTypeName("DWORD *")] uint* pcItems, [NativeTypeName("DWORD *")] uint* pdwSelectedItem);
+
+            [VtblIndex(13)]
+            HRESULT GetComboBoxValueAt([NativeTypeName("DWORD")] uint dwFieldID, [NativeTypeName("DWORD")] uint dwItem, [NativeTypeName("LPWSTR *")] ushort** ppszItem);
+
+            [VtblIndex(14)]
+            HRESULT SetStringValue([NativeTypeName("DWORD")] uint dwFieldID, [NativeTypeName("LPCWSTR")] ushort* psz);
+
+            [VtblIndex(15)]
+            HRESULT SetCheckboxValue([NativeTypeName("DWORD")] uint dwFieldID, BOOL bChecked);
+
+            [VtblIndex(16)]
+            HRESULT SetComboBoxSelectedValue([NativeTypeName("DWORD")] uint dwFieldID, [NativeTypeName("DWORD")] uint dwSelectedItem);
+
+            [VtblIndex(17)]
+            HRESULT CommandLinkClicked([NativeTypeName("DWORD")] uint dwFieldID);
+
+            [VtblIndex(18)]
+            HRESULT GetSerialization(CREDENTIAL_PROVIDER_GET_SERIALIZATION_RESPONSE* pcpgsr, CREDENTIAL_PROVIDER_CREDENTIAL_SERIALIZATION* pcpcs, [NativeTypeName("LPWSTR *")] ushort** ppszOptionalStatusText, CREDENTIAL_PROVIDER_STATUS_ICON* pcpsiOptionalStatusIcon);
+
+            [VtblIndex(19)]
+            HRESULT ReportResult([NativeTypeName("NTSTATUS")] int ntsStatus, [NativeTypeName("NTSTATUS")] int ntsSubstatus, [NativeTypeName("LPWSTR *")] ushort** ppszOptionalStatusText, CREDENTIAL_PROVIDER_STATUS_ICON* pcpsiOptionalStatusIcon);
         }
 
         public partial struct Vtbl

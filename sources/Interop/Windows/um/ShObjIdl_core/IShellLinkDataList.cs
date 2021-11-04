@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("45E2B4AE-B1C3-11D0-B92F-00A0C90312E1")]
     [NativeTypeName("struct IShellLinkDataList : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IShellLinkDataList
+    public unsafe partial struct IShellLinkDataList : IShellLinkDataList.Interface
     {
         public void** lpVtbl;
 
@@ -72,6 +72,24 @@ namespace TerraFX.Interop
         public HRESULT SetFlags([NativeTypeName("DWORD")] uint dwFlags)
         {
             return ((delegate* unmanaged<IShellLinkDataList*, uint, int>)(lpVtbl[7]))((IShellLinkDataList*)Unsafe.AsPointer(ref this), dwFlags);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT AddDataBlock(void* pDataBlock);
+
+            [VtblIndex(4)]
+            HRESULT CopyDataBlock([NativeTypeName("DWORD")] uint dwSig, void** ppDataBlock);
+
+            [VtblIndex(5)]
+            HRESULT RemoveDataBlock([NativeTypeName("DWORD")] uint dwSig);
+
+            [VtblIndex(6)]
+            HRESULT GetFlags([NativeTypeName("DWORD *")] uint* pdwFlags);
+
+            [VtblIndex(7)]
+            HRESULT SetFlags([NativeTypeName("DWORD")] uint dwFlags);
         }
 
         public partial struct Vtbl

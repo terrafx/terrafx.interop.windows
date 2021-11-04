@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("0000002E-0000-0000-C000-000000000046")]
     [NativeTypeName("struct ITypeFactory : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct ITypeFactory
+    public unsafe partial struct ITypeFactory : ITypeFactory.Interface
     {
         public void** lpVtbl;
 
@@ -44,6 +44,12 @@ namespace TerraFX.Interop
         public HRESULT CreateFromTypeInfo(ITypeInfo* pTypeInfo, [NativeTypeName("const IID &")] Guid* riid, IUnknown** ppv)
         {
             return ((delegate* unmanaged<ITypeFactory*, ITypeInfo*, Guid*, IUnknown**, int>)(lpVtbl[3]))((ITypeFactory*)Unsafe.AsPointer(ref this), pTypeInfo, riid, ppv);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT CreateFromTypeInfo(ITypeInfo* pTypeInfo, [NativeTypeName("const IID &")] Guid* riid, IUnknown** ppv);
         }
 
         public partial struct Vtbl

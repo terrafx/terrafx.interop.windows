@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("305106CE-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct IDOMMouseEvent : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct IDOMMouseEvent
+    public unsafe partial struct IDOMMouseEvent : IDOMMouseEvent.Interface
     {
         public void** lpVtbl;
 
@@ -233,6 +233,81 @@ namespace TerraFX.Interop
         public HRESULT get_which(ushort* p)
         {
             return ((delegate* unmanaged<IDOMMouseEvent*, ushort*, int>)(lpVtbl[30]))((IDOMMouseEvent*)Unsafe.AsPointer(ref this), p);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT get_screenX([NativeTypeName("long *")] int* p);
+
+            [VtblIndex(8)]
+            HRESULT get_screenY([NativeTypeName("long *")] int* p);
+
+            [VtblIndex(9)]
+            HRESULT get_clientX([NativeTypeName("long *")] int* p);
+
+            [VtblIndex(10)]
+            HRESULT get_clientY([NativeTypeName("long *")] int* p);
+
+            [VtblIndex(11)]
+            HRESULT get_ctrlKey([NativeTypeName("VARIANT_BOOL *")] short* p);
+
+            [VtblIndex(12)]
+            HRESULT get_shiftKey([NativeTypeName("VARIANT_BOOL *")] short* p);
+
+            [VtblIndex(13)]
+            HRESULT get_altKey([NativeTypeName("VARIANT_BOOL *")] short* p);
+
+            [VtblIndex(14)]
+            HRESULT get_metaKey([NativeTypeName("VARIANT_BOOL *")] short* p);
+
+            [VtblIndex(15)]
+            HRESULT get_button(ushort* p);
+
+            [VtblIndex(16)]
+            HRESULT get_relatedTarget(IEventTarget** p);
+
+            [VtblIndex(17)]
+            HRESULT initMouseEvent([NativeTypeName("BSTR")] ushort* eventType, [NativeTypeName("VARIANT_BOOL")] short canBubble, [NativeTypeName("VARIANT_BOOL")] short cancelable, IHTMLWindow2* viewArg, [NativeTypeName("long")] int detailArg, [NativeTypeName("long")] int screenXArg, [NativeTypeName("long")] int screenYArg, [NativeTypeName("long")] int clientXArg, [NativeTypeName("long")] int clientYArg, [NativeTypeName("VARIANT_BOOL")] short ctrlKeyArg, [NativeTypeName("VARIANT_BOOL")] short altKeyArg, [NativeTypeName("VARIANT_BOOL")] short shiftKeyArg, [NativeTypeName("VARIANT_BOOL")] short metaKeyArg, ushort buttonArg, IEventTarget* relatedTargetArg);
+
+            [VtblIndex(18)]
+            HRESULT getModifierState([NativeTypeName("BSTR")] ushort* keyArg, [NativeTypeName("VARIANT_BOOL *")] short* activated);
+
+            [VtblIndex(19)]
+            HRESULT get_buttons(ushort* p);
+
+            [VtblIndex(20)]
+            HRESULT get_fromElement(IHTMLElement** p);
+
+            [VtblIndex(21)]
+            HRESULT get_toElement(IHTMLElement** p);
+
+            [VtblIndex(22)]
+            HRESULT get_x([NativeTypeName("long *")] int* p);
+
+            [VtblIndex(23)]
+            HRESULT get_y([NativeTypeName("long *")] int* p);
+
+            [VtblIndex(24)]
+            HRESULT get_offsetX([NativeTypeName("long *")] int* p);
+
+            [VtblIndex(25)]
+            HRESULT get_offsetY([NativeTypeName("long *")] int* p);
+
+            [VtblIndex(26)]
+            HRESULT get_pageX([NativeTypeName("long *")] int* p);
+
+            [VtblIndex(27)]
+            HRESULT get_pageY([NativeTypeName("long *")] int* p);
+
+            [VtblIndex(28)]
+            HRESULT get_layerX([NativeTypeName("long *")] int* p);
+
+            [VtblIndex(29)]
+            HRESULT get_layerY([NativeTypeName("long *")] int* p);
+
+            [VtblIndex(30)]
+            HRESULT get_which(ushort* p);
         }
 
         public partial struct Vtbl

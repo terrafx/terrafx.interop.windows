@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("305107C7-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct IWebGeocoordinates : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct IWebGeocoordinates
+    public unsafe partial struct IWebGeocoordinates : IWebGeocoordinates.Interface
     {
         public void** lpVtbl;
 
@@ -114,6 +114,30 @@ namespace TerraFX.Interop
         public HRESULT get_speed(VARIANT* p)
         {
             return ((delegate* unmanaged<IWebGeocoordinates*, VARIANT*, int>)(lpVtbl[13]))((IWebGeocoordinates*)Unsafe.AsPointer(ref this), p);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT get_latitude(double* p);
+
+            [VtblIndex(8)]
+            HRESULT get_longitude(double* p);
+
+            [VtblIndex(9)]
+            HRESULT get_altitude(VARIANT* p);
+
+            [VtblIndex(10)]
+            HRESULT get_accuracy(double* p);
+
+            [VtblIndex(11)]
+            HRESULT get_altitudeAccuracy(VARIANT* p);
+
+            [VtblIndex(12)]
+            HRESULT get_heading(VARIANT* p);
+
+            [VtblIndex(13)]
+            HRESULT get_speed(VARIANT* p);
         }
 
         public partial struct Vtbl

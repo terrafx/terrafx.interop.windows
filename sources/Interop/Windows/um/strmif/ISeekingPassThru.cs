@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("36B73883-C2C8-11CF-8B46-00805F6CEF60")]
     [NativeTypeName("struct ISeekingPassThru : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct ISeekingPassThru
+    public unsafe partial struct ISeekingPassThru : ISeekingPassThru.Interface
     {
         public void** lpVtbl;
 
@@ -44,6 +44,12 @@ namespace TerraFX.Interop
         public HRESULT Init(BOOL bSupportRendering, IPin* pPin)
         {
             return ((delegate* unmanaged<ISeekingPassThru*, BOOL, IPin*, int>)(lpVtbl[3]))((ISeekingPassThru*)Unsafe.AsPointer(ref this), bSupportRendering, pPin);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT Init(BOOL bSupportRendering, IPin* pPin);
         }
 
         public partial struct Vtbl

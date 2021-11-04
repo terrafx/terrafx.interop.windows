@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("56C03D9C-9DBB-45F5-AB4B-D80F47C05938")]
     [NativeTypeName("struct IMFStreamDescriptor : IMFAttributes")]
     [NativeInheritance("IMFAttributes")]
-    public unsafe partial struct IMFStreamDescriptor
+    public unsafe partial struct IMFStreamDescriptor : IMFStreamDescriptor.Interface
     {
         public void** lpVtbl;
 
@@ -261,6 +261,15 @@ namespace TerraFX.Interop
         public HRESULT GetMediaTypeHandler(IMFMediaTypeHandler** ppMediaTypeHandler)
         {
             return ((delegate* unmanaged<IMFStreamDescriptor*, IMFMediaTypeHandler**, int>)(lpVtbl[34]))((IMFStreamDescriptor*)Unsafe.AsPointer(ref this), ppMediaTypeHandler);
+        }
+
+        public interface Interface : IMFAttributes.Interface
+        {
+            [VtblIndex(33)]
+            HRESULT GetStreamIdentifier([NativeTypeName("DWORD *")] uint* pdwStreamIdentifier);
+
+            [VtblIndex(34)]
+            HRESULT GetMediaTypeHandler(IMFMediaTypeHandler** ppMediaTypeHandler);
         }
 
         public partial struct Vtbl

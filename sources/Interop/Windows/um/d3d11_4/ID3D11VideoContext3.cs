@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("A9E2FAA0-CB39-418F-A0B7-D8AAD4DE672E")]
     [NativeTypeName("struct ID3D11VideoContext3 : ID3D11VideoContext2")]
     [NativeInheritance("ID3D11VideoContext2")]
-    public unsafe partial struct ID3D11VideoContext3
+    public unsafe partial struct ID3D11VideoContext3 : ID3D11VideoContext3.Interface
     {
         public void** lpVtbl;
 
@@ -616,6 +616,15 @@ namespace TerraFX.Interop
         public HRESULT SubmitDecoderBuffers2(ID3D11VideoDecoder* pDecoder, uint NumBuffers, [NativeTypeName("const D3D11_VIDEO_DECODER_BUFFER_DESC2 *")] D3D11_VIDEO_DECODER_BUFFER_DESC2* pBufferDesc)
         {
             return ((delegate* unmanaged<ID3D11VideoContext3*, ID3D11VideoDecoder*, uint, D3D11_VIDEO_DECODER_BUFFER_DESC2*, int>)(lpVtbl[84]))((ID3D11VideoContext3*)Unsafe.AsPointer(ref this), pDecoder, NumBuffers, pBufferDesc);
+        }
+
+        public interface Interface : ID3D11VideoContext2.Interface
+        {
+            [VtblIndex(83)]
+            HRESULT DecoderBeginFrame1(ID3D11VideoDecoder* pDecoder, ID3D11VideoDecoderOutputView* pView, uint ContentKeySize, [NativeTypeName("const void *")] void* pContentKey, uint NumComponentHistograms, [NativeTypeName("const UINT *")] uint* pHistogramOffsets, [NativeTypeName("ID3D11Buffer *const *")] ID3D11Buffer** ppHistogramBuffers);
+
+            [VtblIndex(84)]
+            HRESULT SubmitDecoderBuffers2(ID3D11VideoDecoder* pDecoder, uint NumBuffers, [NativeTypeName("const D3D11_VIDEO_DECODER_BUFFER_DESC2 *")] D3D11_VIDEO_DECODER_BUFFER_DESC2* pBufferDesc);
         }
 
         public partial struct Vtbl

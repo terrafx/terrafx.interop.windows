@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("3B60536E-AD29-4E64-A269-F853837E5E53")]
     [NativeTypeName("struct ID3D12VideoDecodeCommandList : ID3D12CommandList")]
     [NativeInheritance("ID3D12CommandList")]
-    public unsafe partial struct ID3D12VideoDecodeCommandList
+    public unsafe partial struct ID3D12VideoDecodeCommandList : ID3D12VideoDecodeCommandList.Interface
     {
         public void** lpVtbl;
 
@@ -177,6 +177,51 @@ namespace TerraFX.Interop
         public void WriteBufferImmediate(uint Count, [NativeTypeName("const D3D12_WRITEBUFFERIMMEDIATE_PARAMETER *")] D3D12_WRITEBUFFERIMMEDIATE_PARAMETER* pParams, [NativeTypeName("const D3D12_WRITEBUFFERIMMEDIATE_MODE *")] D3D12_WRITEBUFFERIMMEDIATE_MODE* pModes)
         {
             ((delegate* unmanaged<ID3D12VideoDecodeCommandList*, uint, D3D12_WRITEBUFFERIMMEDIATE_PARAMETER*, D3D12_WRITEBUFFERIMMEDIATE_MODE*, void>)(lpVtbl[22]))((ID3D12VideoDecodeCommandList*)Unsafe.AsPointer(ref this), Count, pParams, pModes);
+        }
+
+        public interface Interface : ID3D12CommandList.Interface
+        {
+            [VtblIndex(9)]
+            HRESULT Close();
+
+            [VtblIndex(10)]
+            HRESULT Reset(ID3D12CommandAllocator* pAllocator);
+
+            [VtblIndex(11)]
+            void ClearState();
+
+            [VtblIndex(12)]
+            void ResourceBarrier(uint NumBarriers, [NativeTypeName("const D3D12_RESOURCE_BARRIER *")] D3D12_RESOURCE_BARRIER* pBarriers);
+
+            [VtblIndex(13)]
+            void DiscardResource(ID3D12Resource* pResource, [NativeTypeName("const D3D12_DISCARD_REGION *")] D3D12_DISCARD_REGION* pRegion);
+
+            [VtblIndex(14)]
+            void BeginQuery(ID3D12QueryHeap* pQueryHeap, D3D12_QUERY_TYPE Type, uint Index);
+
+            [VtblIndex(15)]
+            void EndQuery(ID3D12QueryHeap* pQueryHeap, D3D12_QUERY_TYPE Type, uint Index);
+
+            [VtblIndex(16)]
+            void ResolveQueryData(ID3D12QueryHeap* pQueryHeap, D3D12_QUERY_TYPE Type, uint StartIndex, uint NumQueries, ID3D12Resource* pDestinationBuffer, [NativeTypeName("UINT64")] ulong AlignedDestinationBufferOffset);
+
+            [VtblIndex(17)]
+            void SetPredication(ID3D12Resource* pBuffer, [NativeTypeName("UINT64")] ulong AlignedBufferOffset, D3D12_PREDICATION_OP Operation);
+
+            [VtblIndex(18)]
+            void SetMarker(uint Metadata, [NativeTypeName("const void *")] void* pData, uint Size);
+
+            [VtblIndex(19)]
+            void BeginEvent(uint Metadata, [NativeTypeName("const void *")] void* pData, uint Size);
+
+            [VtblIndex(20)]
+            void EndEvent();
+
+            [VtblIndex(21)]
+            void DecodeFrame(ID3D12VideoDecoder* pDecoder, [NativeTypeName("const D3D12_VIDEO_DECODE_OUTPUT_STREAM_ARGUMENTS *")] D3D12_VIDEO_DECODE_OUTPUT_STREAM_ARGUMENTS* pOutputArguments, [NativeTypeName("const D3D12_VIDEO_DECODE_INPUT_STREAM_ARGUMENTS *")] D3D12_VIDEO_DECODE_INPUT_STREAM_ARGUMENTS* pInputArguments);
+
+            [VtblIndex(22)]
+            void WriteBufferImmediate(uint Count, [NativeTypeName("const D3D12_WRITEBUFFERIMMEDIATE_PARAMETER *")] D3D12_WRITEBUFFERIMMEDIATE_PARAMETER* pParams, [NativeTypeName("const D3D12_WRITEBUFFERIMMEDIATE_MODE *")] D3D12_WRITEBUFFERIMMEDIATE_MODE* pModes);
         }
 
         public partial struct Vtbl

@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("3050F29C-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct IHTMLControlRange : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct IHTMLControlRange
+    public unsafe partial struct IHTMLControlRange : IHTMLControlRange.Interface
     {
         public void** lpVtbl;
 
@@ -170,6 +170,54 @@ namespace TerraFX.Interop
         public HRESULT get_length([NativeTypeName("long *")] int* p)
         {
             return ((delegate* unmanaged<IHTMLControlRange*, int*, int>)(lpVtbl[21]))((IHTMLControlRange*)Unsafe.AsPointer(ref this), p);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT select();
+
+            [VtblIndex(8)]
+            HRESULT add(IHTMLControlElement* item);
+
+            [VtblIndex(9)]
+            HRESULT remove([NativeTypeName("long")] int index);
+
+            [VtblIndex(10)]
+            HRESULT item([NativeTypeName("long")] int index, IHTMLElement** pdisp);
+
+            [VtblIndex(11)]
+            HRESULT scrollIntoView(VARIANT varargStart);
+
+            [VtblIndex(12)]
+            HRESULT queryCommandSupported([NativeTypeName("BSTR")] ushort* cmdID, [NativeTypeName("VARIANT_BOOL *")] short* pfRet);
+
+            [VtblIndex(13)]
+            HRESULT queryCommandEnabled([NativeTypeName("BSTR")] ushort* cmdID, [NativeTypeName("VARIANT_BOOL *")] short* pfRet);
+
+            [VtblIndex(14)]
+            HRESULT queryCommandState([NativeTypeName("BSTR")] ushort* cmdID, [NativeTypeName("VARIANT_BOOL *")] short* pfRet);
+
+            [VtblIndex(15)]
+            HRESULT queryCommandIndeterm([NativeTypeName("BSTR")] ushort* cmdID, [NativeTypeName("VARIANT_BOOL *")] short* pfRet);
+
+            [VtblIndex(16)]
+            HRESULT queryCommandText([NativeTypeName("BSTR")] ushort* cmdID, [NativeTypeName("BSTR *")] ushort** pcmdText);
+
+            [VtblIndex(17)]
+            HRESULT queryCommandValue([NativeTypeName("BSTR")] ushort* cmdID, VARIANT* pcmdValue);
+
+            [VtblIndex(18)]
+            HRESULT execCommand([NativeTypeName("BSTR")] ushort* cmdID, [NativeTypeName("VARIANT_BOOL")] short showUI, VARIANT value, [NativeTypeName("VARIANT_BOOL *")] short* pfRet);
+
+            [VtblIndex(19)]
+            HRESULT execCommandShowHelp([NativeTypeName("BSTR")] ushort* cmdID, [NativeTypeName("VARIANT_BOOL *")] short* pfRet);
+
+            [VtblIndex(20)]
+            HRESULT commonParentElement(IHTMLElement** parent);
+
+            [VtblIndex(21)]
+            HRESULT get_length([NativeTypeName("long *")] int* p);
         }
 
         public partial struct Vtbl

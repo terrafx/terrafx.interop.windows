@@ -9,7 +9,7 @@ namespace TerraFX.Interop
 {
     [NativeTypeName("struct IXAudio2SubmixVoice : IXAudio2Voice")]
     [NativeInheritance("IXAudio2Voice")]
-    public unsafe partial struct IXAudio2SubmixVoice
+    public unsafe partial struct IXAudio2SubmixVoice : IXAudio2SubmixVoice.Interface
     {
         public void** lpVtbl;
 
@@ -144,6 +144,10 @@ namespace TerraFX.Interop
         public void DestroyVoice()
         {
             ((delegate* unmanaged<IXAudio2SubmixVoice*, void>)(lpVtbl[18]))((IXAudio2SubmixVoice*)Unsafe.AsPointer(ref this));
+        }
+
+        public interface Interface : IXAudio2Voice.Interface
+        {
         }
 
         public partial struct Vtbl

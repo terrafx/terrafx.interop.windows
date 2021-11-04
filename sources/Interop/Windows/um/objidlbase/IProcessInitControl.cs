@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("72380D55-8D2B-43A3-8513-2B6EF31434E9")]
     [NativeTypeName("struct IProcessInitControl : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IProcessInitControl
+    public unsafe partial struct IProcessInitControl : IProcessInitControl.Interface
     {
         public void** lpVtbl;
 
@@ -44,6 +44,12 @@ namespace TerraFX.Interop
         public HRESULT ResetInitializerTimeout([NativeTypeName("DWORD")] uint dwSecondsRemaining)
         {
             return ((delegate* unmanaged<IProcessInitControl*, uint, int>)(lpVtbl[3]))((IProcessInitControl*)Unsafe.AsPointer(ref this), dwSecondsRemaining);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT ResetInitializerTimeout([NativeTypeName("DWORD")] uint dwSecondsRemaining);
         }
 
         public partial struct Vtbl

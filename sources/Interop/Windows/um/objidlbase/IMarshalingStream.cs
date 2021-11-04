@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("D8F2F5E6-6102-4863-9F26-389A4676EFDE")]
     [NativeTypeName("struct IMarshalingStream : IStream")]
     [NativeInheritance("IStream")]
-    public unsafe partial struct IMarshalingStream
+    public unsafe partial struct IMarshalingStream : IMarshalingStream.Interface
     {
         public void** lpVtbl;
 
@@ -121,6 +121,12 @@ namespace TerraFX.Interop
         public HRESULT GetMarshalingContextAttribute(CO_MARSHALING_CONTEXT_ATTRIBUTES attribute, [NativeTypeName("ULONG_PTR *")] nuint* pAttributeValue)
         {
             return ((delegate* unmanaged<IMarshalingStream*, CO_MARSHALING_CONTEXT_ATTRIBUTES, nuint*, int>)(lpVtbl[14]))((IMarshalingStream*)Unsafe.AsPointer(ref this), attribute, pAttributeValue);
+        }
+
+        public interface Interface : IStream.Interface
+        {
+            [VtblIndex(14)]
+            HRESULT GetMarshalingContextAttribute(CO_MARSHALING_CONTEXT_ATTRIBUTES attribute, [NativeTypeName("ULONG_PTR *")] nuint* pAttributeValue);
         }
 
         public partial struct Vtbl

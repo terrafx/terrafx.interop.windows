@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("3050F7E2-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct ILineInfo : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct ILineInfo
+    public unsafe partial struct ILineInfo : ILineInfo.Interface
     {
         public void** lpVtbl;
 
@@ -72,6 +72,24 @@ namespace TerraFX.Interop
         public HRESULT get_lineDirection([NativeTypeName("LONG *")] int* p)
         {
             return ((delegate* unmanaged<ILineInfo*, int*, int>)(lpVtbl[7]))((ILineInfo*)Unsafe.AsPointer(ref this), p);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT get_x([NativeTypeName("long *")] int* p);
+
+            [VtblIndex(4)]
+            HRESULT get_baseLine([NativeTypeName("long *")] int* p);
+
+            [VtblIndex(5)]
+            HRESULT get_textDescent([NativeTypeName("long *")] int* p);
+
+            [VtblIndex(6)]
+            HRESULT get_textHeight([NativeTypeName("long *")] int* p);
+
+            [VtblIndex(7)]
+            HRESULT get_lineDirection([NativeTypeName("LONG *")] int* p);
         }
 
         public partial struct Vtbl

@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("C7A4DCA1-F5F0-47B6-B92B-BF0106D25791")]
     [NativeTypeName("struct IMFAsyncCallbackLogging : IMFAsyncCallback")]
     [NativeInheritance("IMFAsyncCallback")]
-    public unsafe partial struct IMFAsyncCallbackLogging
+    public unsafe partial struct IMFAsyncCallbackLogging : IMFAsyncCallbackLogging.Interface
     {
         public void** lpVtbl;
 
@@ -66,6 +66,16 @@ namespace TerraFX.Interop
         public uint GetObjectTag()
         {
             return ((delegate* unmanaged<IMFAsyncCallbackLogging*, uint>)(lpVtbl[6]))((IMFAsyncCallbackLogging*)Unsafe.AsPointer(ref this));
+        }
+
+        public interface Interface : IMFAsyncCallback.Interface
+        {
+            [VtblIndex(5)]
+            void* GetObjectPointer();
+
+            [VtblIndex(6)]
+            [return: NativeTypeName("DWORD")]
+            uint GetObjectTag();
         }
 
         public partial struct Vtbl

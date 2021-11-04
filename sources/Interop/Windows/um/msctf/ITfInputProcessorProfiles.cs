@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("1F02B6C5-7842-4EE6-8A0B-9A24183A95CA")]
     [NativeTypeName("struct ITfInputProcessorProfiles : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct ITfInputProcessorProfiles
+    public unsafe partial struct ITfInputProcessorProfiles : ITfInputProcessorProfiles.Interface
     {
         public void** lpVtbl;
 
@@ -163,6 +163,63 @@ namespace TerraFX.Interop
         public HRESULT SubstituteKeyboardLayout([NativeTypeName("const IID &")] Guid* rclsid, [NativeTypeName("LANGID")] ushort langid, [NativeTypeName("const GUID &")] Guid* guidProfile, HKL hKL)
         {
             return ((delegate* unmanaged<ITfInputProcessorProfiles*, Guid*, ushort, Guid*, HKL, int>)(lpVtbl[20]))((ITfInputProcessorProfiles*)Unsafe.AsPointer(ref this), rclsid, langid, guidProfile, hKL);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT Register([NativeTypeName("const IID &")] Guid* rclsid);
+
+            [VtblIndex(4)]
+            HRESULT Unregister([NativeTypeName("const IID &")] Guid* rclsid);
+
+            [VtblIndex(5)]
+            HRESULT AddLanguageProfile([NativeTypeName("const IID &")] Guid* rclsid, [NativeTypeName("LANGID")] ushort langid, [NativeTypeName("const GUID &")] Guid* guidProfile, [NativeTypeName("const WCHAR *")] ushort* pchDesc, [NativeTypeName("ULONG")] uint cchDesc, [NativeTypeName("const WCHAR *")] ushort* pchIconFile, [NativeTypeName("ULONG")] uint cchFile, [NativeTypeName("ULONG")] uint uIconIndex);
+
+            [VtblIndex(6)]
+            HRESULT RemoveLanguageProfile([NativeTypeName("const IID &")] Guid* rclsid, [NativeTypeName("LANGID")] ushort langid, [NativeTypeName("const GUID &")] Guid* guidProfile);
+
+            [VtblIndex(7)]
+            HRESULT EnumInputProcessorInfo(IEnumGUID** ppEnum);
+
+            [VtblIndex(8)]
+            HRESULT GetDefaultLanguageProfile([NativeTypeName("LANGID")] ushort langid, [NativeTypeName("const GUID &")] Guid* catid, [NativeTypeName("CLSID *")] Guid* pclsid, Guid* pguidProfile);
+
+            [VtblIndex(9)]
+            HRESULT SetDefaultLanguageProfile([NativeTypeName("LANGID")] ushort langid, [NativeTypeName("const IID &")] Guid* rclsid, [NativeTypeName("const GUID &")] Guid* guidProfiles);
+
+            [VtblIndex(10)]
+            HRESULT ActivateLanguageProfile([NativeTypeName("const IID &")] Guid* rclsid, [NativeTypeName("LANGID")] ushort langid, [NativeTypeName("const GUID &")] Guid* guidProfiles);
+
+            [VtblIndex(11)]
+            HRESULT GetActiveLanguageProfile([NativeTypeName("const IID &")] Guid* rclsid, [NativeTypeName("LANGID *")] ushort* plangid, Guid* pguidProfile);
+
+            [VtblIndex(12)]
+            HRESULT GetLanguageProfileDescription([NativeTypeName("const IID &")] Guid* rclsid, [NativeTypeName("LANGID")] ushort langid, [NativeTypeName("const GUID &")] Guid* guidProfile, [NativeTypeName("BSTR *")] ushort** pbstrProfile);
+
+            [VtblIndex(13)]
+            HRESULT GetCurrentLanguage([NativeTypeName("LANGID *")] ushort* plangid);
+
+            [VtblIndex(14)]
+            HRESULT ChangeCurrentLanguage([NativeTypeName("LANGID")] ushort langid);
+
+            [VtblIndex(15)]
+            HRESULT GetLanguageList([NativeTypeName("LANGID **")] ushort** ppLangId, [NativeTypeName("ULONG *")] uint* pulCount);
+
+            [VtblIndex(16)]
+            HRESULT EnumLanguageProfiles([NativeTypeName("LANGID")] ushort langid, IEnumTfLanguageProfiles** ppEnum);
+
+            [VtblIndex(17)]
+            HRESULT EnableLanguageProfile([NativeTypeName("const IID &")] Guid* rclsid, [NativeTypeName("LANGID")] ushort langid, [NativeTypeName("const GUID &")] Guid* guidProfile, BOOL fEnable);
+
+            [VtblIndex(18)]
+            HRESULT IsEnabledLanguageProfile([NativeTypeName("const IID &")] Guid* rclsid, [NativeTypeName("LANGID")] ushort langid, [NativeTypeName("const GUID &")] Guid* guidProfile, BOOL* pfEnable);
+
+            [VtblIndex(19)]
+            HRESULT EnableLanguageProfileByDefault([NativeTypeName("const IID &")] Guid* rclsid, [NativeTypeName("LANGID")] ushort langid, [NativeTypeName("const GUID &")] Guid* guidProfile, BOOL fEnable);
+
+            [VtblIndex(20)]
+            HRESULT SubstituteKeyboardLayout([NativeTypeName("const IID &")] Guid* rclsid, [NativeTypeName("LANGID")] ushort langid, [NativeTypeName("const GUID &")] Guid* guidProfile, HKL hKL);
         }
 
         public partial struct Vtbl

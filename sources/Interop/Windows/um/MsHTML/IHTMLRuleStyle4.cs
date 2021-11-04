@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("3050F817-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct IHTMLRuleStyle4 : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct IHTMLRuleStyle4
+    public unsafe partial struct IHTMLRuleStyle4 : IHTMLRuleStyle4.Interface
     {
         public void** lpVtbl;
 
@@ -93,6 +93,21 @@ namespace TerraFX.Interop
         public HRESULT get_minHeight(VARIANT* p)
         {
             return ((delegate* unmanaged<IHTMLRuleStyle4*, VARIANT*, int>)(lpVtbl[10]))((IHTMLRuleStyle4*)Unsafe.AsPointer(ref this), p);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT put_textOverflow([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(8)]
+            HRESULT get_textOverflow([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(9)]
+            HRESULT put_minHeight(VARIANT v);
+
+            [VtblIndex(10)]
+            HRESULT get_minHeight(VARIANT* p);
         }
 
         public partial struct Vtbl

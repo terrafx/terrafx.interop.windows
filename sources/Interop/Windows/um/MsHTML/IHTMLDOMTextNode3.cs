@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("3051073E-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct IHTMLDOMTextNode3 : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct IHTMLDOMTextNode3
+    public unsafe partial struct IHTMLDOMTextNode3 : IHTMLDOMTextNode3.Interface
     {
         public void** lpVtbl;
 
@@ -128,6 +128,36 @@ namespace TerraFX.Interop
         public HRESULT normalize()
         {
             return ((delegate* unmanaged<IHTMLDOMTextNode3*, int>)(lpVtbl[15]))((IHTMLDOMTextNode3*)Unsafe.AsPointer(ref this));
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT substringData([NativeTypeName("long")] int offset, [NativeTypeName("long")] int Count, [NativeTypeName("BSTR *")] ushort** pbstrsubString);
+
+            [VtblIndex(8)]
+            HRESULT insertData([NativeTypeName("long")] int offset, [NativeTypeName("BSTR")] ushort* bstrstring);
+
+            [VtblIndex(9)]
+            HRESULT deleteData([NativeTypeName("long")] int offset, [NativeTypeName("long")] int Count);
+
+            [VtblIndex(10)]
+            HRESULT replaceData([NativeTypeName("long")] int offset, [NativeTypeName("long")] int Count, [NativeTypeName("BSTR")] ushort* bstrstring);
+
+            [VtblIndex(11)]
+            HRESULT splitText([NativeTypeName("long")] int offset, IHTMLDOMNode** pRetNode);
+
+            [VtblIndex(12)]
+            HRESULT get_wholeText([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(13)]
+            HRESULT replaceWholeText([NativeTypeName("BSTR")] ushort* bstrText, IHTMLDOMNode** ppRetNode);
+
+            [VtblIndex(14)]
+            HRESULT hasAttributes([NativeTypeName("VARIANT_BOOL *")] short* pfHasAttributes);
+
+            [VtblIndex(15)]
+            HRESULT normalize();
         }
 
         public partial struct Vtbl

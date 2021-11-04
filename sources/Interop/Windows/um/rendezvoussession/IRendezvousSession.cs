@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("9BA4B1DD-8B0C-48B7-9E7C-2F25857C8DF5")]
     [NativeTypeName("struct IRendezvousSession : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IRendezvousSession
+    public unsafe partial struct IRendezvousSession : IRendezvousSession.Interface
     {
         public void** lpVtbl;
 
@@ -72,6 +72,24 @@ namespace TerraFX.Interop
         public HRESULT Terminate(HRESULT hr, [NativeTypeName("BSTR")] ushort* bstrAppData)
         {
             return ((delegate* unmanaged<IRendezvousSession*, HRESULT, ushort*, int>)(lpVtbl[7]))((IRendezvousSession*)Unsafe.AsPointer(ref this), hr, bstrAppData);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT get_State(RENDEZVOUS_SESSION_STATE* pSessionState);
+
+            [VtblIndex(4)]
+            HRESULT get_RemoteUser([NativeTypeName("BSTR *")] ushort** bstrUserName);
+
+            [VtblIndex(5)]
+            HRESULT get_Flags([NativeTypeName("LONG *")] int* pFlags);
+
+            [VtblIndex(6)]
+            HRESULT SendContextData([NativeTypeName("BSTR")] ushort* bstrData);
+
+            [VtblIndex(7)]
+            HRESULT Terminate(HRESULT hr, [NativeTypeName("BSTR")] ushort* bstrAppData);
         }
 
         public partial struct Vtbl

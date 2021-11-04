@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("30510781-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct IDOMParser : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct IDOMParser
+    public unsafe partial struct IDOMParser : IDOMParser.Interface
     {
         public void** lpVtbl;
 
@@ -72,6 +72,12 @@ namespace TerraFX.Interop
         public HRESULT parseFromString([NativeTypeName("BSTR")] ushort* xmlSource, [NativeTypeName("BSTR")] ushort* mimeType, IHTMLDocument2** ppNode)
         {
             return ((delegate* unmanaged<IDOMParser*, ushort*, ushort*, IHTMLDocument2**, int>)(lpVtbl[7]))((IDOMParser*)Unsafe.AsPointer(ref this), xmlSource, mimeType, ppNode);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT parseFromString([NativeTypeName("BSTR")] ushort* xmlSource, [NativeTypeName("BSTR")] ushort* mimeType, IHTMLDocument2** ppNode);
         }
 
         public partial struct Vtbl

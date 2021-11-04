@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("A5170870-0CF8-11D1-8B91-0080C744F389")]
     [NativeTypeName("struct IWBScriptControl : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct IWBScriptControl
+    public unsafe partial struct IWBScriptControl : IWBScriptControl.Interface
     {
         public void** lpVtbl;
 
@@ -149,6 +149,45 @@ namespace TerraFX.Interop
         public HRESULT get_onvisibilitychange(VARIANT* p)
         {
             return ((delegate* unmanaged<IWBScriptControl*, VARIANT*, int>)(lpVtbl[18]))((IWBScriptControl*)Unsafe.AsPointer(ref this), p);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT raiseEvent([NativeTypeName("BSTR")] ushort* name, VARIANT eventData);
+
+            [VtblIndex(8)]
+            HRESULT bubbleEvent();
+
+            [VtblIndex(9)]
+            HRESULT setContextMenu(VARIANT menuItemPairs);
+
+            [VtblIndex(10)]
+            HRESULT put_selectableContent([NativeTypeName("VARIANT_BOOL")] short v);
+
+            [VtblIndex(11)]
+            HRESULT get_selectableContent([NativeTypeName("VARIANT_BOOL *")] short* p);
+
+            [VtblIndex(12)]
+            HRESULT get_frozen([NativeTypeName("VARIANT_BOOL *")] short* p);
+
+            [VtblIndex(13)]
+            HRESULT put_scrollbar([NativeTypeName("VARIANT_BOOL")] short v);
+
+            [VtblIndex(14)]
+            HRESULT get_scrollbar([NativeTypeName("VARIANT_BOOL *")] short* p);
+
+            [VtblIndex(15)]
+            HRESULT get_version([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(16)]
+            HRESULT get_visibility([NativeTypeName("VARIANT_BOOL *")] short* p);
+
+            [VtblIndex(17)]
+            HRESULT put_onvisibilitychange(VARIANT v);
+
+            [VtblIndex(18)]
+            HRESULT get_onvisibilitychange(VARIANT* p);
         }
 
         public partial struct Vtbl

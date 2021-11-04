@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("7ED4EE07-8E67-4CD4-8C1A-2B7A5987AD42")]
     [NativeTypeName("struct IAudioClient3 : IAudioClient2")]
     [NativeInheritance("IAudioClient2")]
-    public unsafe partial struct IAudioClient3
+    public unsafe partial struct IAudioClient3 : IAudioClient3.Interface
     {
         public void** lpVtbl;
 
@@ -163,6 +163,18 @@ namespace TerraFX.Interop
         public HRESULT InitializeSharedAudioStream([NativeTypeName("DWORD")] uint StreamFlags, [NativeTypeName("UINT32")] uint PeriodInFrames, [NativeTypeName("const WAVEFORMATEX *")] WAVEFORMATEX* pFormat, [NativeTypeName("LPCGUID")] Guid* AudioSessionGuid)
         {
             return ((delegate* unmanaged<IAudioClient3*, uint, uint, WAVEFORMATEX*, Guid*, int>)(lpVtbl[20]))((IAudioClient3*)Unsafe.AsPointer(ref this), StreamFlags, PeriodInFrames, pFormat, AudioSessionGuid);
+        }
+
+        public interface Interface : IAudioClient2.Interface
+        {
+            [VtblIndex(18)]
+            HRESULT GetSharedModeEnginePeriod([NativeTypeName("const WAVEFORMATEX *")] WAVEFORMATEX* pFormat, [NativeTypeName("UINT32 *")] uint* pDefaultPeriodInFrames, [NativeTypeName("UINT32 *")] uint* pFundamentalPeriodInFrames, [NativeTypeName("UINT32 *")] uint* pMinPeriodInFrames, [NativeTypeName("UINT32 *")] uint* pMaxPeriodInFrames);
+
+            [VtblIndex(19)]
+            HRESULT GetCurrentSharedModeEnginePeriod(WAVEFORMATEX** ppFormat, [NativeTypeName("UINT32 *")] uint* pCurrentPeriodInFrames);
+
+            [VtblIndex(20)]
+            HRESULT InitializeSharedAudioStream([NativeTypeName("DWORD")] uint StreamFlags, [NativeTypeName("UINT32")] uint PeriodInFrames, [NativeTypeName("const WAVEFORMATEX *")] WAVEFORMATEX* pFormat, [NativeTypeName("LPCGUID")] Guid* AudioSessionGuid);
         }
 
         public partial struct Vtbl

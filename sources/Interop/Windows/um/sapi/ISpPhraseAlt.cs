@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("8FCEBC98-4E49-4067-9C6C-D86A0E092E3D")]
     [NativeTypeName("struct ISpPhraseAlt : ISpPhrase")]
     [NativeInheritance("ISpPhrase")]
-    public unsafe partial struct ISpPhraseAlt
+    public unsafe partial struct ISpPhraseAlt : ISpPhraseAlt.Interface
     {
         public void** lpVtbl;
 
@@ -79,6 +79,15 @@ namespace TerraFX.Interop
         public HRESULT Commit()
         {
             return ((delegate* unmanaged<ISpPhraseAlt*, int>)(lpVtbl[8]))((ISpPhraseAlt*)Unsafe.AsPointer(ref this));
+        }
+
+        public interface Interface : ISpPhrase.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT GetAltInfo(ISpPhrase** ppParent, [NativeTypeName("ULONG *")] uint* pulStartElementInParent, [NativeTypeName("ULONG *")] uint* pcElementsInParent, [NativeTypeName("ULONG *")] uint* pcElementsInAlt);
+
+            [VtblIndex(8)]
+            HRESULT Commit();
         }
 
         public partial struct Vtbl

@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("AA80E7FF-2021-11D2-93E0-0060B067B86E")]
     [NativeTypeName("struct ITfRange : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct ITfRange
+    public unsafe partial struct ITfRange : ITfRange.Interface
     {
         public void** lpVtbl;
 
@@ -191,6 +191,75 @@ namespace TerraFX.Interop
         public HRESULT GetContext(ITfContext** ppContext)
         {
             return ((delegate* unmanaged<ITfRange*, ITfContext**, int>)(lpVtbl[24]))((ITfRange*)Unsafe.AsPointer(ref this), ppContext);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetText([NativeTypeName("TfEditCookie")] uint ec, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("WCHAR *")] ushort* pchText, [NativeTypeName("ULONG")] uint cchMax, [NativeTypeName("ULONG *")] uint* pcch);
+
+            [VtblIndex(4)]
+            HRESULT SetText([NativeTypeName("TfEditCookie")] uint ec, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("const WCHAR *")] ushort* pchText, [NativeTypeName("LONG")] int cch);
+
+            [VtblIndex(5)]
+            HRESULT GetFormattedText([NativeTypeName("TfEditCookie")] uint ec, IDataObject** ppDataObject);
+
+            [VtblIndex(6)]
+            HRESULT GetEmbedded([NativeTypeName("TfEditCookie")] uint ec, [NativeTypeName("const GUID &")] Guid* rguidService, [NativeTypeName("const IID &")] Guid* riid, IUnknown** ppunk);
+
+            [VtblIndex(7)]
+            HRESULT InsertEmbedded([NativeTypeName("TfEditCookie")] uint ec, [NativeTypeName("DWORD")] uint dwFlags, IDataObject* pDataObject);
+
+            [VtblIndex(8)]
+            HRESULT ShiftStart([NativeTypeName("TfEditCookie")] uint ec, [NativeTypeName("LONG")] int cchReq, [NativeTypeName("LONG *")] int* pcch, [NativeTypeName("const TF_HALTCOND *")] TF_HALTCOND* pHalt);
+
+            [VtblIndex(9)]
+            HRESULT ShiftEnd([NativeTypeName("TfEditCookie")] uint ec, [NativeTypeName("LONG")] int cchReq, [NativeTypeName("LONG *")] int* pcch, [NativeTypeName("const TF_HALTCOND *")] TF_HALTCOND* pHalt);
+
+            [VtblIndex(10)]
+            HRESULT ShiftStartToRange([NativeTypeName("TfEditCookie")] uint ec, ITfRange* pRange, TfAnchor aPos);
+
+            [VtblIndex(11)]
+            HRESULT ShiftEndToRange([NativeTypeName("TfEditCookie")] uint ec, ITfRange* pRange, TfAnchor aPos);
+
+            [VtblIndex(12)]
+            HRESULT ShiftStartRegion([NativeTypeName("TfEditCookie")] uint ec, TfShiftDir dir, BOOL* pfNoRegion);
+
+            [VtblIndex(13)]
+            HRESULT ShiftEndRegion([NativeTypeName("TfEditCookie")] uint ec, TfShiftDir dir, BOOL* pfNoRegion);
+
+            [VtblIndex(14)]
+            HRESULT IsEmpty([NativeTypeName("TfEditCookie")] uint ec, BOOL* pfEmpty);
+
+            [VtblIndex(15)]
+            HRESULT Collapse([NativeTypeName("TfEditCookie")] uint ec, TfAnchor aPos);
+
+            [VtblIndex(16)]
+            HRESULT IsEqualStart([NativeTypeName("TfEditCookie")] uint ec, ITfRange* pWith, TfAnchor aPos, BOOL* pfEqual);
+
+            [VtblIndex(17)]
+            HRESULT IsEqualEnd([NativeTypeName("TfEditCookie")] uint ec, ITfRange* pWith, TfAnchor aPos, BOOL* pfEqual);
+
+            [VtblIndex(18)]
+            HRESULT CompareStart([NativeTypeName("TfEditCookie")] uint ec, ITfRange* pWith, TfAnchor aPos, [NativeTypeName("LONG *")] int* plResult);
+
+            [VtblIndex(19)]
+            HRESULT CompareEnd([NativeTypeName("TfEditCookie")] uint ec, ITfRange* pWith, TfAnchor aPos, [NativeTypeName("LONG *")] int* plResult);
+
+            [VtblIndex(20)]
+            HRESULT AdjustForInsert([NativeTypeName("TfEditCookie")] uint ec, [NativeTypeName("ULONG")] uint cchInsert, BOOL* pfInsertOk);
+
+            [VtblIndex(21)]
+            HRESULT GetGravity(TfGravity* pgStart, TfGravity* pgEnd);
+
+            [VtblIndex(22)]
+            HRESULT SetGravity([NativeTypeName("TfEditCookie")] uint ec, TfGravity gStart, TfGravity gEnd);
+
+            [VtblIndex(23)]
+            HRESULT Clone(ITfRange** ppClone);
+
+            [VtblIndex(24)]
+            HRESULT GetContext(ITfContext** ppContext);
         }
 
         public partial struct Vtbl

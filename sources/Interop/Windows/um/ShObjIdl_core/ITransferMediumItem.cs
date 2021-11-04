@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("77F295D5-2D6F-4E19-B8AE-322F3E721AB5")]
     [NativeTypeName("struct ITransferMediumItem : IRelatedItem")]
     [NativeInheritance("IRelatedItem")]
-    public unsafe partial struct ITransferMediumItem
+    public unsafe partial struct ITransferMediumItem : ITransferMediumItem.Interface
     {
         public void** lpVtbl;
 
@@ -51,6 +51,10 @@ namespace TerraFX.Interop
         public HRESULT GetItem(IShellItem** ppsi)
         {
             return ((delegate* unmanaged<ITransferMediumItem*, IShellItem**, int>)(lpVtbl[4]))((ITransferMediumItem*)Unsafe.AsPointer(ref this), ppsi);
+        }
+
+        public interface Interface : IRelatedItem.Interface
+        {
         }
 
         public partial struct Vtbl

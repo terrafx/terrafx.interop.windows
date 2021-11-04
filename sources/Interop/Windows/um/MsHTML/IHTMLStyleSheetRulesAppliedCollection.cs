@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("305104C0-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct IHTMLStyleSheetRulesAppliedCollection : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct IHTMLStyleSheetRulesAppliedCollection
+    public unsafe partial struct IHTMLStyleSheetRulesAppliedCollection : IHTMLStyleSheetRulesAppliedCollection.Interface
     {
         public void** lpVtbl;
 
@@ -100,6 +100,24 @@ namespace TerraFX.Interop
         public HRESULT propertyAppliedTraceLength([NativeTypeName("BSTR")] ushort* name, [NativeTypeName("long *")] int* pLength)
         {
             return ((delegate* unmanaged<IHTMLStyleSheetRulesAppliedCollection*, ushort*, int*, int>)(lpVtbl[11]))((IHTMLStyleSheetRulesAppliedCollection*)Unsafe.AsPointer(ref this), name, pLength);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT item([NativeTypeName("long")] int index, IHTMLStyleSheetRule** ppHTMLStyleSheetRule);
+
+            [VtblIndex(8)]
+            HRESULT get_length([NativeTypeName("long *")] int* p);
+
+            [VtblIndex(9)]
+            HRESULT propertyAppliedBy([NativeTypeName("BSTR")] ushort* name, IHTMLStyleSheetRule** ppRule);
+
+            [VtblIndex(10)]
+            HRESULT propertyAppliedTrace([NativeTypeName("BSTR")] ushort* name, [NativeTypeName("long")] int index, IHTMLStyleSheetRule** ppRule);
+
+            [VtblIndex(11)]
+            HRESULT propertyAppliedTraceLength([NativeTypeName("BSTR")] ushort* name, [NativeTypeName("long *")] int* pLength);
         }
 
         public partial struct Vtbl

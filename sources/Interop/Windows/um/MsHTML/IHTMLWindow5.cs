@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("3051040E-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct IHTMLWindow5 : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct IHTMLWindow5
+    public unsafe partial struct IHTMLWindow5 : IHTMLWindow5.Interface
     {
         public void** lpVtbl;
 
@@ -79,6 +79,15 @@ namespace TerraFX.Interop
         public HRESULT get_XMLHttpRequest(VARIANT* p)
         {
             return ((delegate* unmanaged<IHTMLWindow5*, VARIANT*, int>)(lpVtbl[8]))((IHTMLWindow5*)Unsafe.AsPointer(ref this), p);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT put_XMLHttpRequest(VARIANT v);
+
+            [VtblIndex(8)]
+            HRESULT get_XMLHttpRequest(VARIANT* p);
         }
 
         public partial struct Vtbl

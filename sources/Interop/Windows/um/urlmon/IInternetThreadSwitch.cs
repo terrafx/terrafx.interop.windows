@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("79EAC9E8-BAF9-11CE-8C82-00AA004BA90B")]
     [NativeTypeName("struct IInternetThreadSwitch : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IInternetThreadSwitch
+    public unsafe partial struct IInternetThreadSwitch : IInternetThreadSwitch.Interface
     {
         public void** lpVtbl;
 
@@ -51,6 +51,15 @@ namespace TerraFX.Interop
         public HRESULT Continue()
         {
             return ((delegate* unmanaged<IInternetThreadSwitch*, int>)(lpVtbl[4]))((IInternetThreadSwitch*)Unsafe.AsPointer(ref this));
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT Prepare();
+
+            [VtblIndex(4)]
+            HRESULT Continue();
         }
 
         public partial struct Vtbl

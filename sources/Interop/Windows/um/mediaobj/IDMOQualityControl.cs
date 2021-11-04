@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("65ABEA96-CF36-453F-AF8A-705E98F16260")]
     [NativeTypeName("struct IDMOQualityControl : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IDMOQualityControl
+    public unsafe partial struct IDMOQualityControl : IDMOQualityControl.Interface
     {
         public void** lpVtbl;
 
@@ -58,6 +58,18 @@ namespace TerraFX.Interop
         public HRESULT GetStatus([NativeTypeName("DWORD *")] uint* pdwFlags)
         {
             return ((delegate* unmanaged<IDMOQualityControl*, uint*, int>)(lpVtbl[5]))((IDMOQualityControl*)Unsafe.AsPointer(ref this), pdwFlags);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT SetNow([NativeTypeName("REFERENCE_TIME")] long rtNow);
+
+            [VtblIndex(4)]
+            HRESULT SetStatus([NativeTypeName("DWORD")] uint dwFlags);
+
+            [VtblIndex(5)]
+            HRESULT GetStatus([NativeTypeName("DWORD *")] uint* pdwFlags);
         }
 
         public partial struct Vtbl

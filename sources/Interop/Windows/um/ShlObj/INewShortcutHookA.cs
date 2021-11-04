@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("000214E1-0000-0000-C000-000000000046")]
     [NativeTypeName("struct INewShortcutHookA : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct INewShortcutHookA
+    public unsafe partial struct INewShortcutHookA : INewShortcutHookA.Interface
     {
         public void** lpVtbl;
 
@@ -79,6 +79,27 @@ namespace TerraFX.Interop
         public HRESULT GetExtension([NativeTypeName("PSTR")] sbyte* pszExtension, int cchExtension)
         {
             return ((delegate* unmanaged<INewShortcutHookA*, sbyte*, int, int>)(lpVtbl[8]))((INewShortcutHookA*)Unsafe.AsPointer(ref this), pszExtension, cchExtension);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT SetReferent([NativeTypeName("PCSTR")] sbyte* pcszReferent, HWND hwnd);
+
+            [VtblIndex(4)]
+            HRESULT GetReferent([NativeTypeName("PSTR")] sbyte* pszReferent, int cchReferent);
+
+            [VtblIndex(5)]
+            HRESULT SetFolder([NativeTypeName("PCSTR")] sbyte* pcszFolder);
+
+            [VtblIndex(6)]
+            HRESULT GetFolder([NativeTypeName("PSTR")] sbyte* pszFolder, int cchFolder);
+
+            [VtblIndex(7)]
+            HRESULT GetName([NativeTypeName("PSTR")] sbyte* pszName, int cchName);
+
+            [VtblIndex(8)]
+            HRESULT GetExtension([NativeTypeName("PSTR")] sbyte* pszExtension, int cchExtension);
         }
 
         public partial struct Vtbl

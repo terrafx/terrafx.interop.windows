@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("F286FA56-C1FD-4270-8E67-B3EB790A81E8")]
     [NativeTypeName("struct IWinInetHttpTimeouts : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IWinInetHttpTimeouts
+    public unsafe partial struct IWinInetHttpTimeouts : IWinInetHttpTimeouts.Interface
     {
         public void** lpVtbl;
 
@@ -44,6 +44,12 @@ namespace TerraFX.Interop
         public HRESULT GetRequestTimeouts([NativeTypeName("DWORD *")] uint* pdwConnectTimeout, [NativeTypeName("DWORD *")] uint* pdwSendTimeout, [NativeTypeName("DWORD *")] uint* pdwReceiveTimeout)
         {
             return ((delegate* unmanaged<IWinInetHttpTimeouts*, uint*, uint*, uint*, int>)(lpVtbl[3]))((IWinInetHttpTimeouts*)Unsafe.AsPointer(ref this), pdwConnectTimeout, pdwSendTimeout, pdwReceiveTimeout);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetRequestTimeouts([NativeTypeName("DWORD *")] uint* pdwConnectTimeout, [NativeTypeName("DWORD *")] uint* pdwSendTimeout, [NativeTypeName("DWORD *")] uint* pdwReceiveTimeout);
         }
 
         public partial struct Vtbl

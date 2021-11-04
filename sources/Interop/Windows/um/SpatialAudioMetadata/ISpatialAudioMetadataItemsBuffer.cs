@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("42640A16-E1BD-42D9-9FF6-031AB71A2DBA")]
     [NativeTypeName("struct ISpatialAudioMetadataItemsBuffer : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct ISpatialAudioMetadataItemsBuffer
+    public unsafe partial struct ISpatialAudioMetadataItemsBuffer : ISpatialAudioMetadataItemsBuffer.Interface
     {
         public void** lpVtbl;
 
@@ -58,6 +58,18 @@ namespace TerraFX.Interop
         public HRESULT DetachBuffer()
         {
             return ((delegate* unmanaged<ISpatialAudioMetadataItemsBuffer*, int>)(lpVtbl[5]))((ISpatialAudioMetadataItemsBuffer*)Unsafe.AsPointer(ref this));
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT AttachToBuffer(byte* buffer, [NativeTypeName("UINT32")] uint bufferLength);
+
+            [VtblIndex(4)]
+            HRESULT AttachToPopulatedBuffer(byte* buffer, [NativeTypeName("UINT32")] uint bufferLength);
+
+            [VtblIndex(5)]
+            HRESULT DetachBuffer();
         }
 
         public partial struct Vtbl

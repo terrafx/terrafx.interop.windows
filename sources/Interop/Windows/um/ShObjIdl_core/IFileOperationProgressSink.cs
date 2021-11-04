@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("04B0F1A7-9490-44BC-96E1-4296A31252E2")]
     [NativeTypeName("struct IFileOperationProgressSink : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IFileOperationProgressSink
+    public unsafe partial struct IFileOperationProgressSink : IFileOperationProgressSink.Interface
     {
         public void** lpVtbl;
 
@@ -149,6 +149,57 @@ namespace TerraFX.Interop
         public HRESULT ResumeTimer()
         {
             return ((delegate* unmanaged<IFileOperationProgressSink*, int>)(lpVtbl[18]))((IFileOperationProgressSink*)Unsafe.AsPointer(ref this));
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT StartOperations();
+
+            [VtblIndex(4)]
+            HRESULT FinishOperations(HRESULT hrResult);
+
+            [VtblIndex(5)]
+            HRESULT PreRenameItem([NativeTypeName("DWORD")] uint dwFlags, IShellItem* psiItem, [NativeTypeName("LPCWSTR")] ushort* pszNewName);
+
+            [VtblIndex(6)]
+            HRESULT PostRenameItem([NativeTypeName("DWORD")] uint dwFlags, IShellItem* psiItem, [NativeTypeName("LPCWSTR")] ushort* pszNewName, HRESULT hrRename, IShellItem* psiNewlyCreated);
+
+            [VtblIndex(7)]
+            HRESULT PreMoveItem([NativeTypeName("DWORD")] uint dwFlags, IShellItem* psiItem, IShellItem* psiDestinationFolder, [NativeTypeName("LPCWSTR")] ushort* pszNewName);
+
+            [VtblIndex(8)]
+            HRESULT PostMoveItem([NativeTypeName("DWORD")] uint dwFlags, IShellItem* psiItem, IShellItem* psiDestinationFolder, [NativeTypeName("LPCWSTR")] ushort* pszNewName, HRESULT hrMove, IShellItem* psiNewlyCreated);
+
+            [VtblIndex(9)]
+            HRESULT PreCopyItem([NativeTypeName("DWORD")] uint dwFlags, IShellItem* psiItem, IShellItem* psiDestinationFolder, [NativeTypeName("LPCWSTR")] ushort* pszNewName);
+
+            [VtblIndex(10)]
+            HRESULT PostCopyItem([NativeTypeName("DWORD")] uint dwFlags, IShellItem* psiItem, IShellItem* psiDestinationFolder, [NativeTypeName("LPCWSTR")] ushort* pszNewName, HRESULT hrCopy, IShellItem* psiNewlyCreated);
+
+            [VtblIndex(11)]
+            HRESULT PreDeleteItem([NativeTypeName("DWORD")] uint dwFlags, IShellItem* psiItem);
+
+            [VtblIndex(12)]
+            HRESULT PostDeleteItem([NativeTypeName("DWORD")] uint dwFlags, IShellItem* psiItem, HRESULT hrDelete, IShellItem* psiNewlyCreated);
+
+            [VtblIndex(13)]
+            HRESULT PreNewItem([NativeTypeName("DWORD")] uint dwFlags, IShellItem* psiDestinationFolder, [NativeTypeName("LPCWSTR")] ushort* pszNewName);
+
+            [VtblIndex(14)]
+            HRESULT PostNewItem([NativeTypeName("DWORD")] uint dwFlags, IShellItem* psiDestinationFolder, [NativeTypeName("LPCWSTR")] ushort* pszNewName, [NativeTypeName("LPCWSTR")] ushort* pszTemplateName, [NativeTypeName("DWORD")] uint dwFileAttributes, HRESULT hrNew, IShellItem* psiNewItem);
+
+            [VtblIndex(15)]
+            HRESULT UpdateProgress(uint iWorkTotal, uint iWorkSoFar);
+
+            [VtblIndex(16)]
+            HRESULT ResetTimer();
+
+            [VtblIndex(17)]
+            HRESULT PauseTimer();
+
+            [VtblIndex(18)]
+            HRESULT ResumeTimer();
         }
 
         public partial struct Vtbl

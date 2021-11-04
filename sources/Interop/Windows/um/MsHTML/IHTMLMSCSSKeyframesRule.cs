@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("3051080D-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct IHTMLMSCSSKeyframesRule : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct IHTMLMSCSSKeyframesRule
+    public unsafe partial struct IHTMLMSCSSKeyframesRule : IHTMLMSCSSKeyframesRule.Interface
     {
         public void** lpVtbl;
 
@@ -107,6 +107,27 @@ namespace TerraFX.Interop
         public HRESULT findRule([NativeTypeName("BSTR")] ushort* bstrKey, IHTMLMSCSSKeyframeRule** ppMSKeyframeRule)
         {
             return ((delegate* unmanaged<IHTMLMSCSSKeyframesRule*, ushort*, IHTMLMSCSSKeyframeRule**, int>)(lpVtbl[12]))((IHTMLMSCSSKeyframesRule*)Unsafe.AsPointer(ref this), bstrKey, ppMSKeyframeRule);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT put_name([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(8)]
+            HRESULT get_name([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(9)]
+            HRESULT get_cssRules(IHTMLStyleSheetRulesCollection** p);
+
+            [VtblIndex(10)]
+            HRESULT appendRule([NativeTypeName("BSTR")] ushort* bstrRule);
+
+            [VtblIndex(11)]
+            HRESULT deleteRule([NativeTypeName("BSTR")] ushort* bstrKey);
+
+            [VtblIndex(12)]
+            HRESULT findRule([NativeTypeName("BSTR")] ushort* bstrKey, IHTMLMSCSSKeyframeRule** ppMSKeyframeRule);
         }
 
         public partial struct Vtbl

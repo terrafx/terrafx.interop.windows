@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("04B825B1-AC9A-4F7B-B5AD-C7168F1EE445")]
     [NativeTypeName("struct ITfFnLMInternal : ITfFnLMProcessor")]
     [NativeInheritance("ITfFnLMProcessor")]
-    public unsafe partial struct ITfFnLMInternal
+    public unsafe partial struct ITfFnLMInternal : ITfFnLMInternal.Interface
     {
         public void** lpVtbl;
 
@@ -100,6 +100,12 @@ namespace TerraFX.Interop
         public HRESULT ProcessLattice(ITfRange* pRange)
         {
             return ((delegate* unmanaged<ITfFnLMInternal*, ITfRange*, int>)(lpVtbl[11]))((ITfFnLMInternal*)Unsafe.AsPointer(ref this), pRange);
+        }
+
+        public interface Interface : ITfFnLMProcessor.Interface
+        {
+            [VtblIndex(11)]
+            HRESULT ProcessLattice(ITfRange* pRange);
         }
 
         public partial struct Vtbl

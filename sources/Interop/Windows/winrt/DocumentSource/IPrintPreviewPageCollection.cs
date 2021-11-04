@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("0B31CC62-D7EC-4747-9D6E-F2537D870F2B")]
     [NativeTypeName("struct IPrintPreviewPageCollection : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IPrintPreviewPageCollection
+    public unsafe partial struct IPrintPreviewPageCollection : IPrintPreviewPageCollection.Interface
     {
         public void** lpVtbl;
 
@@ -51,6 +51,15 @@ namespace TerraFX.Interop
         public HRESULT MakePage([NativeTypeName("UINT32")] uint desiredJobPage, float width, float height)
         {
             return ((delegate* unmanaged<IPrintPreviewPageCollection*, uint, float, float, int>)(lpVtbl[4]))((IPrintPreviewPageCollection*)Unsafe.AsPointer(ref this), desiredJobPage, width, height);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT Paginate([NativeTypeName("UINT32")] uint currentJobPage, IInspectable* printTaskOptions);
+
+            [VtblIndex(4)]
+            HRESULT MakePage([NativeTypeName("UINT32")] uint desiredJobPage, float width, float height);
         }
 
         public partial struct Vtbl

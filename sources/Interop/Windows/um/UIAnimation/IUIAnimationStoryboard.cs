@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("A8FF128F-9BF9-4AF1-9E67-E5E410DEFB84")]
     [NativeTypeName("struct IUIAnimationStoryboard : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IUIAnimationStoryboard
+    public unsafe partial struct IUIAnimationStoryboard : IUIAnimationStoryboard.Interface
     {
         public void** lpVtbl;
 
@@ -156,6 +156,60 @@ namespace TerraFX.Interop
         public HRESULT SetStoryboardEventHandler(IUIAnimationStoryboardEventHandler* handler)
         {
             return ((delegate* unmanaged<IUIAnimationStoryboard*, IUIAnimationStoryboardEventHandler*, int>)(lpVtbl[19]))((IUIAnimationStoryboard*)Unsafe.AsPointer(ref this), handler);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT AddTransition(IUIAnimationVariable* variable, IUIAnimationTransition* transition);
+
+            [VtblIndex(4)]
+            HRESULT AddKeyframeAtOffset([NativeTypeName("UI_ANIMATION_KEYFRAME")] UI_ANIMATION_KEYFRAME* existingKeyframe, [NativeTypeName("UI_ANIMATION_SECONDS")] double offset, [NativeTypeName("UI_ANIMATION_KEYFRAME *")] UI_ANIMATION_KEYFRAME** keyframe);
+
+            [VtblIndex(5)]
+            HRESULT AddKeyframeAfterTransition(IUIAnimationTransition* transition, [NativeTypeName("UI_ANIMATION_KEYFRAME *")] UI_ANIMATION_KEYFRAME** keyframe);
+
+            [VtblIndex(6)]
+            HRESULT AddTransitionAtKeyframe(IUIAnimationVariable* variable, IUIAnimationTransition* transition, [NativeTypeName("UI_ANIMATION_KEYFRAME")] UI_ANIMATION_KEYFRAME* startKeyframe);
+
+            [VtblIndex(7)]
+            HRESULT AddTransitionBetweenKeyframes(IUIAnimationVariable* variable, IUIAnimationTransition* transition, [NativeTypeName("UI_ANIMATION_KEYFRAME")] UI_ANIMATION_KEYFRAME* startKeyframe, [NativeTypeName("UI_ANIMATION_KEYFRAME")] UI_ANIMATION_KEYFRAME* endKeyframe);
+
+            [VtblIndex(8)]
+            HRESULT RepeatBetweenKeyframes([NativeTypeName("UI_ANIMATION_KEYFRAME")] UI_ANIMATION_KEYFRAME* startKeyframe, [NativeTypeName("UI_ANIMATION_KEYFRAME")] UI_ANIMATION_KEYFRAME* endKeyframe, [NativeTypeName("INT32")] int repetitionCount);
+
+            [VtblIndex(9)]
+            HRESULT HoldVariable(IUIAnimationVariable* variable);
+
+            [VtblIndex(10)]
+            HRESULT SetLongestAcceptableDelay([NativeTypeName("UI_ANIMATION_SECONDS")] double delay);
+
+            [VtblIndex(11)]
+            HRESULT Schedule([NativeTypeName("UI_ANIMATION_SECONDS")] double timeNow, UI_ANIMATION_SCHEDULING_RESULT* schedulingResult = null);
+
+            [VtblIndex(12)]
+            HRESULT Conclude();
+
+            [VtblIndex(13)]
+            HRESULT Finish([NativeTypeName("UI_ANIMATION_SECONDS")] double completionDeadline);
+
+            [VtblIndex(14)]
+            HRESULT Abandon();
+
+            [VtblIndex(15)]
+            HRESULT SetTag(IUnknown* @object, [NativeTypeName("UINT32")] uint id);
+
+            [VtblIndex(16)]
+            HRESULT GetTag(IUnknown** @object, [NativeTypeName("UINT32 *")] uint* id);
+
+            [VtblIndex(17)]
+            HRESULT GetStatus(UI_ANIMATION_STORYBOARD_STATUS* status);
+
+            [VtblIndex(18)]
+            HRESULT GetElapsedTime([NativeTypeName("UI_ANIMATION_SECONDS *")] double* elapsedTime);
+
+            [VtblIndex(19)]
+            HRESULT SetStoryboardEventHandler(IUIAnimationStoryboardEventHandler* handler);
         }
 
         public partial struct Vtbl

@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("50C83A1C-E072-4C48-87B0-3630FA36A6D0")]
     [NativeTypeName("struct IDXGIFactory2 : IDXGIFactory1")]
     [NativeInheritance("IDXGIFactory1")]
-    public unsafe partial struct IDXGIFactory2
+    public unsafe partial struct IDXGIFactory2 : IDXGIFactory2.Interface
     {
         public void** lpVtbl;
 
@@ -191,6 +191,42 @@ namespace TerraFX.Interop
         public HRESULT CreateSwapChainForComposition(IUnknown* pDevice, [NativeTypeName("const DXGI_SWAP_CHAIN_DESC1 *")] DXGI_SWAP_CHAIN_DESC1* pDesc, IDXGIOutput* pRestrictToOutput, IDXGISwapChain1** ppSwapChain)
         {
             return ((delegate* unmanaged<IDXGIFactory2*, IUnknown*, DXGI_SWAP_CHAIN_DESC1*, IDXGIOutput*, IDXGISwapChain1**, int>)(lpVtbl[24]))((IDXGIFactory2*)Unsafe.AsPointer(ref this), pDevice, pDesc, pRestrictToOutput, ppSwapChain);
+        }
+
+        public interface Interface : IDXGIFactory1.Interface
+        {
+            [VtblIndex(14)]
+            BOOL IsWindowedStereoEnabled();
+
+            [VtblIndex(15)]
+            HRESULT CreateSwapChainForHwnd(IUnknown* pDevice, HWND hWnd, [NativeTypeName("const DXGI_SWAP_CHAIN_DESC1 *")] DXGI_SWAP_CHAIN_DESC1* pDesc, [NativeTypeName("const DXGI_SWAP_CHAIN_FULLSCREEN_DESC *")] DXGI_SWAP_CHAIN_FULLSCREEN_DESC* pFullscreenDesc, IDXGIOutput* pRestrictToOutput, IDXGISwapChain1** ppSwapChain);
+
+            [VtblIndex(16)]
+            HRESULT CreateSwapChainForCoreWindow(IUnknown* pDevice, IUnknown* pWindow, [NativeTypeName("const DXGI_SWAP_CHAIN_DESC1 *")] DXGI_SWAP_CHAIN_DESC1* pDesc, IDXGIOutput* pRestrictToOutput, IDXGISwapChain1** ppSwapChain);
+
+            [VtblIndex(17)]
+            HRESULT GetSharedResourceAdapterLuid(HANDLE hResource, LUID* pLuid);
+
+            [VtblIndex(18)]
+            HRESULT RegisterStereoStatusWindow(HWND WindowHandle, uint wMsg, [NativeTypeName("DWORD *")] uint* pdwCookie);
+
+            [VtblIndex(19)]
+            HRESULT RegisterStereoStatusEvent(HANDLE hEvent, [NativeTypeName("DWORD *")] uint* pdwCookie);
+
+            [VtblIndex(20)]
+            void UnregisterStereoStatus([NativeTypeName("DWORD")] uint dwCookie);
+
+            [VtblIndex(21)]
+            HRESULT RegisterOcclusionStatusWindow(HWND WindowHandle, uint wMsg, [NativeTypeName("DWORD *")] uint* pdwCookie);
+
+            [VtblIndex(22)]
+            HRESULT RegisterOcclusionStatusEvent(HANDLE hEvent, [NativeTypeName("DWORD *")] uint* pdwCookie);
+
+            [VtblIndex(23)]
+            void UnregisterOcclusionStatus([NativeTypeName("DWORD")] uint dwCookie);
+
+            [VtblIndex(24)]
+            HRESULT CreateSwapChainForComposition(IUnknown* pDevice, [NativeTypeName("const DXGI_SWAP_CHAIN_DESC1 *")] DXGI_SWAP_CHAIN_DESC1* pDesc, IDXGIOutput* pRestrictToOutput, IDXGISwapChain1** ppSwapChain);
         }
 
         public partial struct Vtbl

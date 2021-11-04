@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("D7644B2C-1537-4767-B62F-F1387B02DDFD")]
     [NativeTypeName("struct IFileSystemImage2 : IFileSystemImage")]
     [NativeInheritance("IFileSystemImage")]
-    public unsafe partial struct IFileSystemImage2
+    public unsafe partial struct IFileSystemImage2 : IFileSystemImage2.Interface
     {
         public void** lpVtbl;
 
@@ -429,6 +429,15 @@ namespace TerraFX.Interop
         public HRESULT put_BootImageOptionsArray(SAFEARRAY* newVal)
         {
             return ((delegate* unmanaged<IFileSystemImage2*, SAFEARRAY*, int>)(lpVtbl[58]))((IFileSystemImage2*)Unsafe.AsPointer(ref this), newVal);
+        }
+
+        public interface Interface : IFileSystemImage.Interface
+        {
+            [VtblIndex(57)]
+            HRESULT get_BootImageOptionsArray(SAFEARRAY** pVal);
+
+            [VtblIndex(58)]
+            HRESULT put_BootImageOptionsArray(SAFEARRAY* newVal);
         }
 
         public partial struct Vtbl

@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("3051052B-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct ISVGStopElement : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct ISVGStopElement
+    public unsafe partial struct ISVGStopElement : ISVGStopElement.Interface
     {
         public void** lpVtbl;
 
@@ -79,6 +79,15 @@ namespace TerraFX.Interop
         public HRESULT get_offset(ISVGAnimatedNumber** p)
         {
             return ((delegate* unmanaged<ISVGStopElement*, ISVGAnimatedNumber**, int>)(lpVtbl[8]))((ISVGStopElement*)Unsafe.AsPointer(ref this), p);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT putref_offset(ISVGAnimatedNumber* v);
+
+            [VtblIndex(8)]
+            HRESULT get_offset(ISVGAnimatedNumber** p);
         }
 
         public partial struct Vtbl

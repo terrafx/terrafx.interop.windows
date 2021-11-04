@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("07DDCD52-020E-4DE8-AC33-6C953D83F92D")]
     [NativeTypeName("struct IDWriteTextLayout3 : IDWriteTextLayout2")]
     [NativeInheritance("IDWriteTextLayout2")]
-    public unsafe partial struct IDWriteTextLayout3
+    public unsafe partial struct IDWriteTextLayout3 : IDWriteTextLayout3.Interface
     {
         public void** lpVtbl;
 
@@ -606,6 +606,21 @@ namespace TerraFX.Interop
         public HRESULT GetLineMetrics(DWRITE_LINE_METRICS1* lineMetrics, [NativeTypeName("UINT32")] uint maxLineCount, [NativeTypeName("UINT32 *")] uint* actualLineCount)
         {
             return ((delegate* unmanaged<IDWriteTextLayout3*, DWRITE_LINE_METRICS1*, uint, uint*, int>)(lpVtbl[83]))((IDWriteTextLayout3*)Unsafe.AsPointer(ref this), lineMetrics, maxLineCount, actualLineCount);
+        }
+
+        public interface Interface : IDWriteTextLayout2.Interface
+        {
+            [VtblIndex(80)]
+            HRESULT InvalidateLayout();
+
+            [VtblIndex(81)]
+            HRESULT SetLineSpacing([NativeTypeName("const DWRITE_LINE_SPACING *")] DWRITE_LINE_SPACING* lineSpacingOptions);
+
+            [VtblIndex(82)]
+            HRESULT GetLineSpacing(DWRITE_LINE_SPACING* lineSpacingOptions);
+
+            [VtblIndex(83)]
+            HRESULT GetLineMetrics(DWRITE_LINE_METRICS1* lineMetrics, [NativeTypeName("UINT32")] uint maxLineCount, [NativeTypeName("UINT32 *")] uint* actualLineCount);
         }
 
         public partial struct Vtbl

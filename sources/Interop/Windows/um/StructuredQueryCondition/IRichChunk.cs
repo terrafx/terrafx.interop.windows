@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("4FDEF69C-DBC9-454E-9910-B34F3C64B510")]
     [NativeTypeName("struct IRichChunk : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IRichChunk
+    public unsafe partial struct IRichChunk : IRichChunk.Interface
     {
         public void** lpVtbl;
 
@@ -44,6 +44,12 @@ namespace TerraFX.Interop
         public HRESULT GetData([NativeTypeName("ULONG *")] uint* pFirstPos, [NativeTypeName("ULONG *")] uint* pLength, [NativeTypeName("LPWSTR *")] ushort** ppsz, PROPVARIANT* pValue)
         {
             return ((delegate* unmanaged<IRichChunk*, uint*, uint*, ushort**, PROPVARIANT*, int>)(lpVtbl[3]))((IRichChunk*)Unsafe.AsPointer(ref this), pFirstPos, pLength, ppsz, pValue);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetData([NativeTypeName("ULONG *")] uint* pFirstPos, [NativeTypeName("ULONG *")] uint* pLength, [NativeTypeName("LPWSTR *")] ushort** ppsz, PROPVARIANT* pValue);
         }
 
         public partial struct Vtbl

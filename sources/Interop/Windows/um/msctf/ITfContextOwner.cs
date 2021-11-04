@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("AA80E80C-2021-11D2-93E0-0060B067B86E")]
     [NativeTypeName("struct ITfContextOwner : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct ITfContextOwner
+    public unsafe partial struct ITfContextOwner : ITfContextOwner.Interface
     {
         public void** lpVtbl;
 
@@ -79,6 +79,27 @@ namespace TerraFX.Interop
         public HRESULT GetAttribute([NativeTypeName("const GUID &")] Guid* rguidAttribute, VARIANT* pvarValue)
         {
             return ((delegate* unmanaged<ITfContextOwner*, Guid*, VARIANT*, int>)(lpVtbl[8]))((ITfContextOwner*)Unsafe.AsPointer(ref this), rguidAttribute, pvarValue);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetACPFromPoint([NativeTypeName("const POINT *")] POINT* ptScreen, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("LONG *")] int* pacp);
+
+            [VtblIndex(4)]
+            HRESULT GetTextExt([NativeTypeName("LONG")] int acpStart, [NativeTypeName("LONG")] int acpEnd, RECT* prc, BOOL* pfClipped);
+
+            [VtblIndex(5)]
+            HRESULT GetScreenExt(RECT* prc);
+
+            [VtblIndex(6)]
+            HRESULT GetStatus([NativeTypeName("TF_STATUS *")] TS_STATUS* pdcs);
+
+            [VtblIndex(7)]
+            HRESULT GetWnd(HWND* phwnd);
+
+            [VtblIndex(8)]
+            HRESULT GetAttribute([NativeTypeName("const GUID &")] Guid* rguidAttribute, VARIANT* pvarValue);
         }
 
         public partial struct Vtbl

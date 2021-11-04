@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("3978AA1A-6D5B-4B7F-A340-90899189AE34")]
     [NativeTypeName("struct IMFVideoSampleAllocatorNotifyEx : IMFVideoSampleAllocatorNotify")]
     [NativeInheritance("IMFVideoSampleAllocatorNotify")]
-    public unsafe partial struct IMFVideoSampleAllocatorNotifyEx
+    public unsafe partial struct IMFVideoSampleAllocatorNotifyEx : IMFVideoSampleAllocatorNotifyEx.Interface
     {
         public void** lpVtbl;
 
@@ -51,6 +51,12 @@ namespace TerraFX.Interop
         public HRESULT NotifyPrune(IMFSample* __MIDL__IMFVideoSampleAllocatorNotifyEx0000)
         {
             return ((delegate* unmanaged<IMFVideoSampleAllocatorNotifyEx*, IMFSample*, int>)(lpVtbl[4]))((IMFVideoSampleAllocatorNotifyEx*)Unsafe.AsPointer(ref this), __MIDL__IMFVideoSampleAllocatorNotifyEx0000);
+        }
+
+        public interface Interface : IMFVideoSampleAllocatorNotify.Interface
+        {
+            [VtblIndex(4)]
+            HRESULT NotifyPrune(IMFSample* __MIDL__IMFVideoSampleAllocatorNotifyEx0000);
         }
 
         public partial struct Vtbl

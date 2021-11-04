@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("AEC63FDA-7A97-4944-B35C-6C6DF8085CC3")]
     [NativeTypeName("struct IMFMediaKeySystemAccess : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IMFMediaKeySystemAccess
+    public unsafe partial struct IMFMediaKeySystemAccess : IMFMediaKeySystemAccess.Interface
     {
         public void** lpVtbl;
 
@@ -58,6 +58,18 @@ namespace TerraFX.Interop
         public HRESULT get_KeySystem([NativeTypeName("BSTR *")] ushort** pKeySystem)
         {
             return ((delegate* unmanaged<IMFMediaKeySystemAccess*, ushort**, int>)(lpVtbl[5]))((IMFMediaKeySystemAccess*)Unsafe.AsPointer(ref this), pKeySystem);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT CreateMediaKeys(IPropertyStore* pCdmCustomConfig, IMFMediaKeys2** ppKeys);
+
+            [VtblIndex(4)]
+            HRESULT get_SupportedConfiguration(IPropertyStore** ppSupportedConfiguration);
+
+            [VtblIndex(5)]
+            HRESULT get_KeySystem([NativeTypeName("BSTR *")] ushort** pKeySystem);
         }
 
         public partial struct Vtbl

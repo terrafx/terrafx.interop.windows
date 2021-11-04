@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("305104E1-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct ISVGZoomAndPan : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct ISVGZoomAndPan
+    public unsafe partial struct ISVGZoomAndPan : ISVGZoomAndPan.Interface
     {
         public void** lpVtbl;
 
@@ -72,6 +72,12 @@ namespace TerraFX.Interop
         public HRESULT get_zoomAndPan(short* p)
         {
             return ((delegate* unmanaged<ISVGZoomAndPan*, short*, int>)(lpVtbl[7]))((ISVGZoomAndPan*)Unsafe.AsPointer(ref this), p);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT get_zoomAndPan(short* p);
         }
 
         public partial struct Vtbl

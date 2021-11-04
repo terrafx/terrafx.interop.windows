@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("095C1484-1C0C-4388-9C6D-500E61BF84BD")]
     [NativeTypeName("struct ICredentialProviderSetUserArray : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct ICredentialProviderSetUserArray
+    public unsafe partial struct ICredentialProviderSetUserArray : ICredentialProviderSetUserArray.Interface
     {
         public void** lpVtbl;
 
@@ -44,6 +44,12 @@ namespace TerraFX.Interop
         public HRESULT SetUserArray(ICredentialProviderUserArray* users)
         {
             return ((delegate* unmanaged<ICredentialProviderSetUserArray*, ICredentialProviderUserArray*, int>)(lpVtbl[3]))((ICredentialProviderSetUserArray*)Unsafe.AsPointer(ref this), users);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT SetUserArray(ICredentialProviderUserArray* users);
         }
 
         public partial struct Vtbl

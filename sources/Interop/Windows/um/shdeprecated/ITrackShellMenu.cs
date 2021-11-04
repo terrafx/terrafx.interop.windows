@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("8278F932-2A3E-11D2-838F-00C04FD918D0")]
     [NativeTypeName("struct ITrackShellMenu : IShellMenu")]
     [NativeInheritance("IShellMenu")]
-    public unsafe partial struct ITrackShellMenu
+    public unsafe partial struct ITrackShellMenu : ITrackShellMenu.Interface
     {
         public void** lpVtbl;
 
@@ -114,6 +114,15 @@ namespace TerraFX.Interop
         public HRESULT Popup(HWND hwnd, POINTL* ppt, RECTL* prcExclude, [NativeTypeName("MP_POPUPFLAGS")] int dwFlags)
         {
             return ((delegate* unmanaged<ITrackShellMenu*, HWND, POINTL*, RECTL*, int, int>)(lpVtbl[13]))((ITrackShellMenu*)Unsafe.AsPointer(ref this), hwnd, ppt, prcExclude, dwFlags);
+        }
+
+        public interface Interface : IShellMenu.Interface
+        {
+            [VtblIndex(12)]
+            HRESULT SetObscured(HWND hwndTB, IUnknown* punkBand, [NativeTypeName("DWORD")] uint dwSMSetFlags);
+
+            [VtblIndex(13)]
+            HRESULT Popup(HWND hwnd, POINTL* ppt, RECTL* prcExclude, [NativeTypeName("MP_POPUPFLAGS")] int dwFlags);
         }
 
         public partial struct Vtbl

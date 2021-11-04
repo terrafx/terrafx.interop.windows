@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("5EFEC991-BCA3-42D1-9EC2-E92D609EC22A")]
     [NativeTypeName("struct IAppxBlockMapReader : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IAppxBlockMapReader
+    public unsafe partial struct IAppxBlockMapReader : IAppxBlockMapReader.Interface
     {
         public void** lpVtbl;
 
@@ -65,6 +65,21 @@ namespace TerraFX.Interop
         public HRESULT GetStream(IStream** blockMapStream)
         {
             return ((delegate* unmanaged<IAppxBlockMapReader*, IStream**, int>)(lpVtbl[6]))((IAppxBlockMapReader*)Unsafe.AsPointer(ref this), blockMapStream);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetFile([NativeTypeName("LPCWSTR")] ushort* filename, IAppxBlockMapFile** file);
+
+            [VtblIndex(4)]
+            HRESULT GetFiles(IAppxBlockMapFilesEnumerator** enumerator);
+
+            [VtblIndex(5)]
+            HRESULT GetHashMethod(IUri** hashMethod);
+
+            [VtblIndex(6)]
+            HRESULT GetStream(IStream** blockMapStream);
         }
 
         public partial struct Vtbl

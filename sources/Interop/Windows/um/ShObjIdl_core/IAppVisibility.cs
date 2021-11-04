@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("2246EA2D-CAEA-4444-A3C4-6DE827E44313")]
     [NativeTypeName("struct IAppVisibility : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IAppVisibility
+    public unsafe partial struct IAppVisibility : IAppVisibility.Interface
     {
         public void** lpVtbl;
 
@@ -65,6 +65,21 @@ namespace TerraFX.Interop
         public HRESULT Unadvise([NativeTypeName("DWORD")] uint dwCookie)
         {
             return ((delegate* unmanaged<IAppVisibility*, uint, int>)(lpVtbl[6]))((IAppVisibility*)Unsafe.AsPointer(ref this), dwCookie);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetAppVisibilityOnMonitor(HMONITOR hMonitor, MONITOR_APP_VISIBILITY* pMode);
+
+            [VtblIndex(4)]
+            HRESULT IsLauncherVisible(BOOL* pfVisible);
+
+            [VtblIndex(5)]
+            HRESULT Advise(IAppVisibilityEvents* pCallback, [NativeTypeName("DWORD *")] uint* pdwCookie);
+
+            [VtblIndex(6)]
+            HRESULT Unadvise([NativeTypeName("DWORD")] uint dwCookie);
         }
 
         public partial struct Vtbl

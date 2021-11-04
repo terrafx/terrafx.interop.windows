@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("2C941FD5-975B-59BE-A960-9A2A262853A5")]
     [NativeTypeName("struct IProgressItem : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct IProgressItem
+    public unsafe partial struct IProgressItem : IProgressItem.Interface
     {
         public void** lpVtbl;
 
@@ -93,6 +93,21 @@ namespace TerraFX.Interop
         public HRESULT get_BlockCount([NativeTypeName("ULONG *")] uint* blocks)
         {
             return ((delegate* unmanaged<IProgressItem*, uint*, int>)(lpVtbl[10]))((IProgressItem*)Unsafe.AsPointer(ref this), blocks);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT get_Description([NativeTypeName("BSTR *")] ushort** desc);
+
+            [VtblIndex(8)]
+            HRESULT get_FirstBlock([NativeTypeName("ULONG *")] uint* block);
+
+            [VtblIndex(9)]
+            HRESULT get_LastBlock([NativeTypeName("ULONG *")] uint* block);
+
+            [VtblIndex(10)]
+            HRESULT get_BlockCount([NativeTypeName("ULONG *")] uint* blocks);
         }
 
         public partial struct Vtbl

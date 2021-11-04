@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("611E86CD-B7D1-4546-8A15-070E2B07A427")]
     [NativeTypeName("struct IDiaSymbol2 : IDiaSymbol")]
     [NativeInheritance("IDiaSymbol")]
-    public unsafe partial struct IDiaSymbol2
+    public unsafe partial struct IDiaSymbol2 : IDiaSymbol2.Interface
     {
         public void** lpVtbl;
 
@@ -1710,6 +1710,18 @@ namespace TerraFX.Interop
         public HRESULT get_isObjCProtocol(BOOL* pRetVal)
         {
             return ((delegate* unmanaged<IDiaSymbol2*, BOOL*, int>)(lpVtbl[241]))((IDiaSymbol2*)Unsafe.AsPointer(ref this), pRetVal);
+        }
+
+        public interface Interface : IDiaSymbol.Interface
+        {
+            [VtblIndex(239)]
+            HRESULT get_isObjCClass(BOOL* pRetVal);
+
+            [VtblIndex(240)]
+            HRESULT get_isObjCCategory(BOOL* pRetVal);
+
+            [VtblIndex(241)]
+            HRESULT get_isObjCProtocol(BOOL* pRetVal);
         }
 
         public partial struct Vtbl

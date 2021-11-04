@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("BBCBDE60-C3FF-11CE-8350-444553540000")]
     [NativeTypeName("struct Folder : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct Folder
+    public unsafe partial struct Folder : Folder.Interface
     {
         public void** lpVtbl;
 
@@ -135,6 +135,39 @@ namespace TerraFX.Interop
         public HRESULT GetDetailsOf(VARIANT vItem, int iColumn, [NativeTypeName("BSTR *")] ushort** pbs)
         {
             return ((delegate* unmanaged<Folder*, VARIANT, int, ushort**, int>)(lpVtbl[16]))((Folder*)Unsafe.AsPointer(ref this), vItem, iColumn, pbs);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT get_Title([NativeTypeName("BSTR *")] ushort** pbs);
+
+            [VtblIndex(8)]
+            HRESULT get_Application(IDispatch** ppid);
+
+            [VtblIndex(9)]
+            HRESULT get_Parent(IDispatch** ppid);
+
+            [VtblIndex(10)]
+            HRESULT get_ParentFolder(Folder** ppsf);
+
+            [VtblIndex(11)]
+            HRESULT Items(FolderItems** ppid);
+
+            [VtblIndex(12)]
+            HRESULT ParseName([NativeTypeName("BSTR")] ushort* bName, FolderItem** ppid);
+
+            [VtblIndex(13)]
+            HRESULT NewFolder([NativeTypeName("BSTR")] ushort* bName, VARIANT vOptions);
+
+            [VtblIndex(14)]
+            HRESULT MoveHere(VARIANT vItem, VARIANT vOptions);
+
+            [VtblIndex(15)]
+            HRESULT CopyHere(VARIANT vItem, VARIANT vOptions);
+
+            [VtblIndex(16)]
+            HRESULT GetDetailsOf(VARIANT vItem, int iColumn, [NativeTypeName("BSTR *")] ushort** pbs);
         }
 
         public partial struct Vtbl

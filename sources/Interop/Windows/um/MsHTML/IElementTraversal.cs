@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("30510736-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct IElementTraversal : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct IElementTraversal
+    public unsafe partial struct IElementTraversal : IElementTraversal.Interface
     {
         public void** lpVtbl;
 
@@ -100,6 +100,24 @@ namespace TerraFX.Interop
         public HRESULT get_childElementCount([NativeTypeName("long *")] int* p)
         {
             return ((delegate* unmanaged<IElementTraversal*, int*, int>)(lpVtbl[11]))((IElementTraversal*)Unsafe.AsPointer(ref this), p);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT get_firstElementChild(IHTMLElement** p);
+
+            [VtblIndex(8)]
+            HRESULT get_lastElementChild(IHTMLElement** p);
+
+            [VtblIndex(9)]
+            HRESULT get_previousElementSibling(IHTMLElement** p);
+
+            [VtblIndex(10)]
+            HRESULT get_nextElementSibling(IHTMLElement** p);
+
+            [VtblIndex(11)]
+            HRESULT get_childElementCount([NativeTypeName("long *")] int* p);
         }
 
         public partial struct Vtbl

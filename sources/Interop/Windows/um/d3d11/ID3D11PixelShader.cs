@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("EA82E40D-51DC-4F33-93D4-DB7C9125AE8C")]
     [NativeTypeName("struct ID3D11PixelShader : ID3D11DeviceChild")]
     [NativeInheritance("ID3D11DeviceChild")]
-    public unsafe partial struct ID3D11PixelShader
+    public unsafe partial struct ID3D11PixelShader : ID3D11PixelShader.Interface
     {
         public void** lpVtbl;
 
@@ -65,6 +65,10 @@ namespace TerraFX.Interop
         public HRESULT SetPrivateDataInterface([NativeTypeName("const GUID &")] Guid* guid, [NativeTypeName("const IUnknown *")] IUnknown* pData)
         {
             return ((delegate* unmanaged<ID3D11PixelShader*, Guid*, IUnknown*, int>)(lpVtbl[6]))((ID3D11PixelShader*)Unsafe.AsPointer(ref this), guid, pData);
+        }
+
+        public interface Interface : ID3D11DeviceChild.Interface
+        {
         }
 
         public partial struct Vtbl

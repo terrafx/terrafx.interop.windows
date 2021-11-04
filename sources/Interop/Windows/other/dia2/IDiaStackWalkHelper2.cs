@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("8222C490-507B-4BEF-B3BD-41DCA7B5934C")]
     [NativeTypeName("struct IDiaStackWalkHelper2 : IDiaStackWalkHelper")]
     [NativeInheritance("IDiaStackWalkHelper")]
-    public unsafe partial struct IDiaStackWalkHelper2
+    public unsafe partial struct IDiaStackWalkHelper2 : IDiaStackWalkHelper2.Interface
     {
         public void** lpVtbl;
 
@@ -121,6 +121,10 @@ namespace TerraFX.Interop
         public HRESULT functionFragmentsForVA([NativeTypeName("ULONGLONG")] ulong vaFunc, [NativeTypeName("DWORD")] uint cbFunc, [NativeTypeName("DWORD")] uint cFragments, [NativeTypeName("ULONGLONG *")] ulong* pVaFragment, [NativeTypeName("DWORD *")] uint* pLenFragment)
         {
             return ((delegate* unmanaged<IDiaStackWalkHelper2*, ulong, uint, uint, ulong*, uint*, int>)(lpVtbl[14]))((IDiaStackWalkHelper2*)Unsafe.AsPointer(ref this), vaFunc, cbFunc, cFragments, pVaFragment, pLenFragment);
+        }
+
+        public interface Interface : IDiaStackWalkHelper.Interface
+        {
         }
 
         public partial struct Vtbl

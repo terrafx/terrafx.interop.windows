@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("9A1B41C3-D3BB-466A-87FC-FE67556A3B65")]
     [NativeTypeName("struct IDWriteFactory3 : IDWriteFactory2")]
     [NativeInheritance("IDWriteFactory2")]
-    public unsafe partial struct IDWriteFactory3
+    public unsafe partial struct IDWriteFactory3 : IDWriteFactory3.Interface
     {
         public void** lpVtbl;
 
@@ -296,6 +296,36 @@ namespace TerraFX.Interop
         public HRESULT GetFontDownloadQueue(IDWriteFontDownloadQueue** fontDownloadQueue)
         {
             return ((delegate* unmanaged<IDWriteFactory3*, IDWriteFontDownloadQueue**, int>)(lpVtbl[39]))((IDWriteFactory3*)Unsafe.AsPointer(ref this), fontDownloadQueue);
+        }
+
+        public interface Interface : IDWriteFactory2.Interface
+        {
+            [VtblIndex(31)]
+            HRESULT CreateGlyphRunAnalysis([NativeTypeName("const DWRITE_GLYPH_RUN *")] DWRITE_GLYPH_RUN* glyphRun, [NativeTypeName("const DWRITE_MATRIX *")] DWRITE_MATRIX* transform, DWRITE_RENDERING_MODE1 renderingMode, DWRITE_MEASURING_MODE measuringMode, DWRITE_GRID_FIT_MODE gridFitMode, DWRITE_TEXT_ANTIALIAS_MODE antialiasMode, float baselineOriginX, float baselineOriginY, IDWriteGlyphRunAnalysis** glyphRunAnalysis);
+
+            [VtblIndex(32)]
+            HRESULT CreateCustomRenderingParams(float gamma, float enhancedContrast, float grayscaleEnhancedContrast, float clearTypeLevel, DWRITE_PIXEL_GEOMETRY pixelGeometry, DWRITE_RENDERING_MODE1 renderingMode, DWRITE_GRID_FIT_MODE gridFitMode, IDWriteRenderingParams3** renderingParams);
+
+            [VtblIndex(33)]
+            HRESULT CreateFontFaceReference(IDWriteFontFile* fontFile, [NativeTypeName("UINT32")] uint faceIndex, DWRITE_FONT_SIMULATIONS fontSimulations, IDWriteFontFaceReference** fontFaceReference);
+
+            [VtblIndex(34)]
+            HRESULT CreateFontFaceReference([NativeTypeName("const WCHAR *")] ushort* filePath, [NativeTypeName("const FILETIME *")] FILETIME* lastWriteTime, [NativeTypeName("UINT32")] uint faceIndex, DWRITE_FONT_SIMULATIONS fontSimulations, IDWriteFontFaceReference** fontFaceReference);
+
+            [VtblIndex(35)]
+            HRESULT GetSystemFontSet(IDWriteFontSet** fontSet);
+
+            [VtblIndex(36)]
+            HRESULT CreateFontSetBuilder(IDWriteFontSetBuilder** fontSetBuilder);
+
+            [VtblIndex(37)]
+            HRESULT CreateFontCollectionFromFontSet(IDWriteFontSet* fontSet, IDWriteFontCollection1** fontCollection);
+
+            [VtblIndex(38)]
+            HRESULT GetSystemFontCollection(BOOL includeDownloadableFonts, IDWriteFontCollection1** fontCollection, [Optional] BOOL checkForUpdates);
+
+            [VtblIndex(39)]
+            HRESULT GetFontDownloadQueue(IDWriteFontDownloadQueue** fontDownloadQueue);
         }
 
         public partial struct Vtbl

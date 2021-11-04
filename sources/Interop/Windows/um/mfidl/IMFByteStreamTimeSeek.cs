@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("64976BFA-FB61-4041-9069-8C9A5F659BEB")]
     [NativeTypeName("struct IMFByteStreamTimeSeek : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IMFByteStreamTimeSeek
+    public unsafe partial struct IMFByteStreamTimeSeek : IMFByteStreamTimeSeek.Interface
     {
         public void** lpVtbl;
 
@@ -58,6 +58,18 @@ namespace TerraFX.Interop
         public HRESULT GetTimeSeekResult([NativeTypeName("QWORD *")] ulong* pqwStartTime, [NativeTypeName("QWORD *")] ulong* pqwStopTime, [NativeTypeName("QWORD *")] ulong* pqwDuration)
         {
             return ((delegate* unmanaged<IMFByteStreamTimeSeek*, ulong*, ulong*, ulong*, int>)(lpVtbl[5]))((IMFByteStreamTimeSeek*)Unsafe.AsPointer(ref this), pqwStartTime, pqwStopTime, pqwDuration);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT IsTimeSeekSupported(BOOL* pfTimeSeekIsSupported);
+
+            [VtblIndex(4)]
+            HRESULT TimeSeek([NativeTypeName("QWORD")] ulong qwTimePosition);
+
+            [VtblIndex(5)]
+            HRESULT GetTimeSeekResult([NativeTypeName("QWORD *")] ulong* pqwStartTime, [NativeTypeName("QWORD *")] ulong* pqwStopTime, [NativeTypeName("QWORD *")] ulong* pqwDuration);
         }
 
         public partial struct Vtbl

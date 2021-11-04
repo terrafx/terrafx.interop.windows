@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("AAF38154-B80B-422F-91E6-B66467509A07")]
     [NativeTypeName("struct IFilterGraph3 : IFilterGraph2")]
     [NativeInheritance("IFilterGraph2")]
-    public unsafe partial struct IFilterGraph3
+    public unsafe partial struct IFilterGraph3 : IFilterGraph3.Interface
     {
         public void** lpVtbl;
 
@@ -170,6 +170,12 @@ namespace TerraFX.Interop
         public HRESULT SetSyncSourceEx(IReferenceClock* pClockForMostOfFilterGraph, IReferenceClock* pClockForFilter, IBaseFilter* pFilter)
         {
             return ((delegate* unmanaged<IFilterGraph3*, IReferenceClock*, IReferenceClock*, IBaseFilter*, int>)(lpVtbl[21]))((IFilterGraph3*)Unsafe.AsPointer(ref this), pClockForMostOfFilterGraph, pClockForFilter, pFilter);
+        }
+
+        public interface Interface : IFilterGraph2.Interface
+        {
+            [VtblIndex(21)]
+            HRESULT SetSyncSourceEx(IReferenceClock* pClockForMostOfFilterGraph, IReferenceClock* pClockForFilter, IBaseFilter* pFilter);
         }
 
         public partial struct Vtbl

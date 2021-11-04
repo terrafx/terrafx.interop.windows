@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("226C537B-1E76-4D9E-A760-33DB29922F18")]
     [NativeTypeName("struct IFrameworkInputPaneHandler : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IFrameworkInputPaneHandler
+    public unsafe partial struct IFrameworkInputPaneHandler : IFrameworkInputPaneHandler.Interface
     {
         public void** lpVtbl;
 
@@ -51,6 +51,15 @@ namespace TerraFX.Interop
         public HRESULT Hiding(BOOL fEnsureFocusedElementInView)
         {
             return ((delegate* unmanaged<IFrameworkInputPaneHandler*, BOOL, int>)(lpVtbl[4]))((IFrameworkInputPaneHandler*)Unsafe.AsPointer(ref this), fEnsureFocusedElementInView);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT Showing(RECT* prcInputPaneScreenLocation, BOOL fEnsureFocusedElementInView);
+
+            [VtblIndex(4)]
+            HRESULT Hiding(BOOL fEnsureFocusedElementInView);
         }
 
         public partial struct Vtbl

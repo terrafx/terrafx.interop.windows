@@ -9,7 +9,7 @@ namespace TerraFX.Interop
 {
     [NativeTypeName("struct IXAudio2SourceVoice : IXAudio2Voice")]
     [NativeInheritance("IXAudio2Voice")]
-    public unsafe partial struct IXAudio2SourceVoice
+    public unsafe partial struct IXAudio2SourceVoice : IXAudio2SourceVoice.Interface
     {
         public void** lpVtbl;
 
@@ -214,6 +214,39 @@ namespace TerraFX.Interop
         public HRESULT SetSourceSampleRate([NativeTypeName("UINT32")] uint NewSourceSampleRate)
         {
             return ((delegate* unmanaged<IXAudio2SourceVoice*, uint, int>)(lpVtbl[28]))((IXAudio2SourceVoice*)Unsafe.AsPointer(ref this), NewSourceSampleRate);
+        }
+
+        public interface Interface : IXAudio2Voice.Interface
+        {
+            [VtblIndex(19)]
+            HRESULT Start([NativeTypeName("UINT32")] uint Flags = 0, [NativeTypeName("UINT32")] uint OperationSet = 0);
+
+            [VtblIndex(20)]
+            HRESULT Stop([NativeTypeName("UINT32")] uint Flags = 0, [NativeTypeName("UINT32")] uint OperationSet = 0);
+
+            [VtblIndex(21)]
+            HRESULT SubmitSourceBuffer([NativeTypeName("const XAUDIO2_BUFFER *")] XAUDIO2_BUFFER* pBuffer, [NativeTypeName("const XAUDIO2_BUFFER_WMA *")] XAUDIO2_BUFFER_WMA* pBufferWMA = null);
+
+            [VtblIndex(22)]
+            HRESULT FlushSourceBuffers();
+
+            [VtblIndex(23)]
+            HRESULT Discontinuity();
+
+            [VtblIndex(24)]
+            HRESULT ExitLoop([NativeTypeName("UINT32")] uint OperationSet = 0);
+
+            [VtblIndex(25)]
+            void GetState(XAUDIO2_VOICE_STATE* pVoiceState, [NativeTypeName("UINT32")] uint Flags = 0);
+
+            [VtblIndex(26)]
+            HRESULT SetFrequencyRatio(float Ratio, [NativeTypeName("UINT32")] uint OperationSet = 0);
+
+            [VtblIndex(27)]
+            void GetFrequencyRatio(float* pRatio);
+
+            [VtblIndex(28)]
+            HRESULT SetSourceSampleRate([NativeTypeName("UINT32")] uint NewSourceSampleRate);
         }
 
         public partial struct Vtbl

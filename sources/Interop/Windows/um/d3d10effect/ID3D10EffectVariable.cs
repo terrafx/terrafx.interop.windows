@@ -7,7 +7,7 @@ using System.Runtime.CompilerServices;
 
 namespace TerraFX.Interop
 {
-    public unsafe partial struct ID3D10EffectVariable
+    public unsafe partial struct ID3D10EffectVariable : ID3D10EffectVariable.Interface
     {
         public void** lpVtbl;
 
@@ -184,6 +184,84 @@ namespace TerraFX.Interop
         public HRESULT GetRawValue(void* pData, uint Offset, uint ByteCount)
         {
             return ((delegate* unmanaged<ID3D10EffectVariable*, void*, uint, uint, int>)(lpVtbl[24]))((ID3D10EffectVariable*)Unsafe.AsPointer(ref this), pData, Offset, ByteCount);
+        }
+
+        public interface Interface
+        {
+            [VtblIndex(0)]
+            BOOL IsValid();
+
+            [VtblIndex(1)]
+            ID3D10EffectType* GetType();
+
+            [VtblIndex(2)]
+            HRESULT GetDesc(D3D10_EFFECT_VARIABLE_DESC* pDesc);
+
+            [VtblIndex(3)]
+            ID3D10EffectVariable* GetAnnotationByIndex(uint Index);
+
+            [VtblIndex(4)]
+            ID3D10EffectVariable* GetAnnotationByName([NativeTypeName("LPCSTR")] sbyte* Name);
+
+            [VtblIndex(5)]
+            ID3D10EffectVariable* GetMemberByIndex(uint Index);
+
+            [VtblIndex(6)]
+            ID3D10EffectVariable* GetMemberByName([NativeTypeName("LPCSTR")] sbyte* Name);
+
+            [VtblIndex(7)]
+            ID3D10EffectVariable* GetMemberBySemantic([NativeTypeName("LPCSTR")] sbyte* Semantic);
+
+            [VtblIndex(8)]
+            ID3D10EffectVariable* GetElement(uint Index);
+
+            [VtblIndex(9)]
+            ID3D10EffectConstantBuffer* GetParentConstantBuffer();
+
+            [VtblIndex(10)]
+            ID3D10EffectScalarVariable* AsScalar();
+
+            [VtblIndex(11)]
+            ID3D10EffectVectorVariable* AsVector();
+
+            [VtblIndex(12)]
+            ID3D10EffectMatrixVariable* AsMatrix();
+
+            [VtblIndex(13)]
+            ID3D10EffectStringVariable* AsString();
+
+            [VtblIndex(14)]
+            ID3D10EffectShaderResourceVariable* AsShaderResource();
+
+            [VtblIndex(15)]
+            ID3D10EffectRenderTargetViewVariable* AsRenderTargetView();
+
+            [VtblIndex(16)]
+            ID3D10EffectDepthStencilViewVariable* AsDepthStencilView();
+
+            [VtblIndex(17)]
+            ID3D10EffectConstantBuffer* AsConstantBuffer();
+
+            [VtblIndex(18)]
+            ID3D10EffectShaderVariable* AsShader();
+
+            [VtblIndex(19)]
+            ID3D10EffectBlendVariable* AsBlend();
+
+            [VtblIndex(20)]
+            ID3D10EffectDepthStencilVariable* AsDepthStencil();
+
+            [VtblIndex(21)]
+            ID3D10EffectRasterizerVariable* AsRasterizer();
+
+            [VtblIndex(22)]
+            ID3D10EffectSamplerVariable* AsSampler();
+
+            [VtblIndex(23)]
+            HRESULT SetRawValue(void* pData, uint Offset, uint ByteCount);
+
+            [VtblIndex(24)]
+            HRESULT GetRawValue(void* pData, uint Offset, uint ByteCount);
         }
 
         public partial struct Vtbl

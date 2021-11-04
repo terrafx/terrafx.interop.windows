@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("A7E025DD-5303-4A62-89D6-E747E1EFAC73")]
     [NativeTypeName("struct IMFSAMIStyle : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IMFSAMIStyle
+    public unsafe partial struct IMFSAMIStyle : IMFSAMIStyle.Interface
     {
         public void** lpVtbl;
 
@@ -65,6 +65,21 @@ namespace TerraFX.Interop
         public HRESULT GetSelectedStyle([NativeTypeName("LPWSTR *")] ushort** ppwszStyle)
         {
             return ((delegate* unmanaged<IMFSAMIStyle*, ushort**, int>)(lpVtbl[6]))((IMFSAMIStyle*)Unsafe.AsPointer(ref this), ppwszStyle);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetStyleCount([NativeTypeName("DWORD *")] uint* pdwCount);
+
+            [VtblIndex(4)]
+            HRESULT GetStyles(PROPVARIANT* pPropVarStyleArray);
+
+            [VtblIndex(5)]
+            HRESULT SetSelectedStyle([NativeTypeName("LPCWSTR")] ushort* pwszStyle);
+
+            [VtblIndex(6)]
+            HRESULT GetSelectedStyle([NativeTypeName("LPWSTR *")] ushort** ppwszStyle);
         }
 
         public partial struct Vtbl

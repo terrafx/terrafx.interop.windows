@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("5F4633FE-1E08-4CB8-8C75-CE24333F5602")]
     [NativeTypeName("struct IDCompositionDesktopDevice : IDCompositionDevice2")]
     [NativeInheritance("IDCompositionDevice2")]
-    public unsafe partial struct IDCompositionDesktopDevice
+    public unsafe partial struct IDCompositionDesktopDevice : IDCompositionDesktopDevice.Interface
     {
         public void** lpVtbl;
 
@@ -205,6 +205,18 @@ namespace TerraFX.Interop
         public HRESULT CreateSurfaceFromHwnd(HWND hwnd, IUnknown** surface)
         {
             return ((delegate* unmanaged<IDCompositionDesktopDevice*, HWND, IUnknown**, int>)(lpVtbl[26]))((IDCompositionDesktopDevice*)Unsafe.AsPointer(ref this), hwnd, surface);
+        }
+
+        public interface Interface : IDCompositionDevice2.Interface
+        {
+            [VtblIndex(24)]
+            HRESULT CreateTargetForHwnd(HWND hwnd, BOOL topmost, IDCompositionTarget** target);
+
+            [VtblIndex(25)]
+            HRESULT CreateSurfaceFromHandle(HANDLE handle, IUnknown** surface);
+
+            [VtblIndex(26)]
+            HRESULT CreateSurfaceFromHwnd(HWND hwnd, IUnknown** surface);
         }
 
         public partial struct Vtbl

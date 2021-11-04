@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("7F73BE3F-FB79-493C-A6C7-7EE14E245841")]
     [NativeTypeName("struct IInitializeWithItem : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IInitializeWithItem
+    public unsafe partial struct IInitializeWithItem : IInitializeWithItem.Interface
     {
         public void** lpVtbl;
 
@@ -44,6 +44,12 @@ namespace TerraFX.Interop
         public HRESULT Initialize(IShellItem* psi, [NativeTypeName("DWORD")] uint grfMode)
         {
             return ((delegate* unmanaged<IInitializeWithItem*, IShellItem*, uint, int>)(lpVtbl[3]))((IInitializeWithItem*)Unsafe.AsPointer(ref this), psi, grfMode);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT Initialize(IShellItem* psi, [NativeTypeName("DWORD")] uint grfMode);
         }
 
         public partial struct Vtbl

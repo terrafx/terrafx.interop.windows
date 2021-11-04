@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("CAFD1DB1-41D1-4A06-9863-E2E81DA17A9A")]
     [NativeTypeName("struct ISpeechGrammarRuleStateTransition : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct ISpeechGrammarRuleStateTransition
+    public unsafe partial struct ISpeechGrammarRuleStateTransition : ISpeechGrammarRuleStateTransition.Interface
     {
         public void** lpVtbl;
 
@@ -121,6 +121,33 @@ namespace TerraFX.Interop
         public HRESULT get_NextState(ISpeechGrammarRuleState** NextState)
         {
             return ((delegate* unmanaged<ISpeechGrammarRuleStateTransition*, ISpeechGrammarRuleState**, int>)(lpVtbl[14]))((ISpeechGrammarRuleStateTransition*)Unsafe.AsPointer(ref this), NextState);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT get_Type(SpeechGrammarRuleStateTransitionType* Type);
+
+            [VtblIndex(8)]
+            HRESULT get_Text([NativeTypeName("BSTR *")] ushort** Text);
+
+            [VtblIndex(9)]
+            HRESULT get_Rule(ISpeechGrammarRule** Rule);
+
+            [VtblIndex(10)]
+            HRESULT get_Weight(VARIANT* Weight);
+
+            [VtblIndex(11)]
+            HRESULT get_PropertyName([NativeTypeName("BSTR *")] ushort** PropertyName);
+
+            [VtblIndex(12)]
+            HRESULT get_PropertyId([NativeTypeName("long *")] int* PropertyId);
+
+            [VtblIndex(13)]
+            HRESULT get_PropertyValue(VARIANT* PropertyValue);
+
+            [VtblIndex(14)]
+            HRESULT get_NextState(ISpeechGrammarRuleState** NextState);
         }
 
         public partial struct Vtbl

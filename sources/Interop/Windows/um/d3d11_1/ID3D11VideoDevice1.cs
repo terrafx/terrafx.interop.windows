@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("29DA1D51-1321-4454-804B-F5FC9F861F0F")]
     [NativeTypeName("struct ID3D11VideoDevice1 : ID3D11VideoDevice")]
     [NativeInheritance("ID3D11VideoDevice")]
-    public unsafe partial struct ID3D11VideoDevice1
+    public unsafe partial struct ID3D11VideoDevice1 : ID3D11VideoDevice1.Interface
     {
         public void** lpVtbl;
 
@@ -184,6 +184,21 @@ namespace TerraFX.Interop
         public HRESULT RecommendVideoDecoderDownsampleParameters([NativeTypeName("const D3D11_VIDEO_DECODER_DESC *")] D3D11_VIDEO_DECODER_DESC* pInputDesc, DXGI_COLOR_SPACE_TYPE InputColorSpace, [NativeTypeName("const D3D11_VIDEO_DECODER_CONFIG *")] D3D11_VIDEO_DECODER_CONFIG* pInputConfig, [NativeTypeName("const DXGI_RATIONAL *")] DXGI_RATIONAL* pFrameRate, D3D11_VIDEO_SAMPLE_DESC* pRecommendedOutputDesc)
         {
             return ((delegate* unmanaged<ID3D11VideoDevice1*, D3D11_VIDEO_DECODER_DESC*, DXGI_COLOR_SPACE_TYPE, D3D11_VIDEO_DECODER_CONFIG*, DXGI_RATIONAL*, D3D11_VIDEO_SAMPLE_DESC*, int>)(lpVtbl[23]))((ID3D11VideoDevice1*)Unsafe.AsPointer(ref this), pInputDesc, InputColorSpace, pInputConfig, pFrameRate, pRecommendedOutputDesc);
+        }
+
+        public interface Interface : ID3D11VideoDevice.Interface
+        {
+            [VtblIndex(20)]
+            HRESULT GetCryptoSessionPrivateDataSize([NativeTypeName("const GUID *")] Guid* pCryptoType, [NativeTypeName("const GUID *")] Guid* pDecoderProfile, [NativeTypeName("const GUID *")] Guid* pKeyExchangeType, uint* pPrivateInputSize, uint* pPrivateOutputSize);
+
+            [VtblIndex(21)]
+            HRESULT GetVideoDecoderCaps([NativeTypeName("const GUID *")] Guid* pDecoderProfile, uint SampleWidth, uint SampleHeight, [NativeTypeName("const DXGI_RATIONAL *")] DXGI_RATIONAL* pFrameRate, uint BitRate, [NativeTypeName("const GUID *")] Guid* pCryptoType, uint* pDecoderCaps);
+
+            [VtblIndex(22)]
+            HRESULT CheckVideoDecoderDownsampling([NativeTypeName("const D3D11_VIDEO_DECODER_DESC *")] D3D11_VIDEO_DECODER_DESC* pInputDesc, DXGI_COLOR_SPACE_TYPE InputColorSpace, [NativeTypeName("const D3D11_VIDEO_DECODER_CONFIG *")] D3D11_VIDEO_DECODER_CONFIG* pInputConfig, [NativeTypeName("const DXGI_RATIONAL *")] DXGI_RATIONAL* pFrameRate, [NativeTypeName("const D3D11_VIDEO_SAMPLE_DESC *")] D3D11_VIDEO_SAMPLE_DESC* pOutputDesc, BOOL* pSupported, BOOL* pRealTimeHint);
+
+            [VtblIndex(23)]
+            HRESULT RecommendVideoDecoderDownsampleParameters([NativeTypeName("const D3D11_VIDEO_DECODER_DESC *")] D3D11_VIDEO_DECODER_DESC* pInputDesc, DXGI_COLOR_SPACE_TYPE InputColorSpace, [NativeTypeName("const D3D11_VIDEO_DECODER_CONFIG *")] D3D11_VIDEO_DECODER_CONFIG* pInputConfig, [NativeTypeName("const DXGI_RATIONAL *")] DXGI_RATIONAL* pFrameRate, D3D11_VIDEO_SAMPLE_DESC* pRecommendedOutputDesc);
         }
 
         public partial struct Vtbl

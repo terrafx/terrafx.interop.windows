@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("7A3BD1D9-35A9-4FB3-A467-F48CAC35E2D0")]
     [NativeTypeName("struct IHomeGroup : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IHomeGroup
+    public unsafe partial struct IHomeGroup : IHomeGroup.Interface
     {
         public void** lpVtbl;
 
@@ -51,6 +51,15 @@ namespace TerraFX.Interop
         public HRESULT ShowSharingWizard(HWND owner, HOMEGROUPSHARINGCHOICES* sharingchoices)
         {
             return ((delegate* unmanaged<IHomeGroup*, HWND, HOMEGROUPSHARINGCHOICES*, int>)(lpVtbl[4]))((IHomeGroup*)Unsafe.AsPointer(ref this), owner, sharingchoices);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT IsMember(BOOL* member);
+
+            [VtblIndex(4)]
+            HRESULT ShowSharingWizard(HWND owner, HOMEGROUPSHARINGCHOICES* sharingchoices);
         }
 
         public partial struct Vtbl

@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("49FF1173-EADC-446D-9285-156453A6431C")]
     [NativeTypeName("struct IActionProgress : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IActionProgress
+    public unsafe partial struct IActionProgress : IActionProgress.Interface
     {
         public void** lpVtbl;
 
@@ -79,6 +79,27 @@ namespace TerraFX.Interop
         public HRESULT End()
         {
             return ((delegate* unmanaged<IActionProgress*, int>)(lpVtbl[8]))((IActionProgress*)Unsafe.AsPointer(ref this));
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT Begin(SPACTION action, [NativeTypeName("SPBEGINF")] uint flags);
+
+            [VtblIndex(4)]
+            HRESULT UpdateProgress([NativeTypeName("ULONGLONG")] ulong ulCompleted, [NativeTypeName("ULONGLONG")] ulong ulTotal);
+
+            [VtblIndex(5)]
+            HRESULT UpdateText(SPTEXT sptext, [NativeTypeName("LPCWSTR")] ushort* pszText, BOOL fMayCompact);
+
+            [VtblIndex(6)]
+            HRESULT QueryCancel(BOOL* pfCancelled);
+
+            [VtblIndex(7)]
+            HRESULT ResetCancel();
+
+            [VtblIndex(8)]
+            HRESULT End();
         }
 
         public partial struct Vtbl

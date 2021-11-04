@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("580AA49D-7E1E-4809-B8E2-57DA806104B8")]
     [NativeTypeName("struct ISpeechRecoContext : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct ISpeechRecoContext
+    public unsafe partial struct ISpeechRecoContext : ISpeechRecoContext.Interface
     {
         public void** lpVtbl;
 
@@ -240,6 +240,84 @@ namespace TerraFX.Interop
         public HRESULT SetAdaptationData([NativeTypeName("BSTR")] ushort* AdaptationString)
         {
             return ((delegate* unmanaged<ISpeechRecoContext*, ushort*, int>)(lpVtbl[31]))((ISpeechRecoContext*)Unsafe.AsPointer(ref this), AdaptationString);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT get_Recognizer(ISpeechRecognizer** Recognizer);
+
+            [VtblIndex(8)]
+            HRESULT get_AudioInputInterferenceStatus(SpeechInterference* Interference);
+
+            [VtblIndex(9)]
+            HRESULT get_RequestedUIType([NativeTypeName("BSTR *")] ushort** UIType);
+
+            [VtblIndex(10)]
+            HRESULT putref_Voice(ISpeechVoice* Voice);
+
+            [VtblIndex(11)]
+            HRESULT get_Voice(ISpeechVoice** Voice);
+
+            [VtblIndex(12)]
+            HRESULT put_AllowVoiceFormatMatchingOnNextSet([NativeTypeName("VARIANT_BOOL")] short Allow);
+
+            [VtblIndex(13)]
+            HRESULT get_AllowVoiceFormatMatchingOnNextSet([NativeTypeName("VARIANT_BOOL *")] short* pAllow);
+
+            [VtblIndex(14)]
+            HRESULT put_VoicePurgeEvent(SpeechRecoEvents EventInterest);
+
+            [VtblIndex(15)]
+            HRESULT get_VoicePurgeEvent(SpeechRecoEvents* EventInterest);
+
+            [VtblIndex(16)]
+            HRESULT put_EventInterests(SpeechRecoEvents EventInterest);
+
+            [VtblIndex(17)]
+            HRESULT get_EventInterests(SpeechRecoEvents* EventInterest);
+
+            [VtblIndex(18)]
+            HRESULT put_CmdMaxAlternates([NativeTypeName("long")] int MaxAlternates);
+
+            [VtblIndex(19)]
+            HRESULT get_CmdMaxAlternates([NativeTypeName("long *")] int* MaxAlternates);
+
+            [VtblIndex(20)]
+            HRESULT put_State(SpeechRecoContextState State);
+
+            [VtblIndex(21)]
+            HRESULT get_State(SpeechRecoContextState* State);
+
+            [VtblIndex(22)]
+            HRESULT put_RetainedAudio(SpeechRetainedAudioOptions Option);
+
+            [VtblIndex(23)]
+            HRESULT get_RetainedAudio(SpeechRetainedAudioOptions* Option);
+
+            [VtblIndex(24)]
+            HRESULT putref_RetainedAudioFormat(ISpeechAudioFormat* Format);
+
+            [VtblIndex(25)]
+            HRESULT get_RetainedAudioFormat(ISpeechAudioFormat** Format);
+
+            [VtblIndex(26)]
+            HRESULT Pause();
+
+            [VtblIndex(27)]
+            HRESULT Resume();
+
+            [VtblIndex(28)]
+            HRESULT CreateGrammar(VARIANT GrammarId, ISpeechRecoGrammar** Grammar);
+
+            [VtblIndex(29)]
+            HRESULT CreateResultFromMemory(VARIANT* ResultBlock, ISpeechRecoResult** Result);
+
+            [VtblIndex(30)]
+            HRESULT Bookmark(SpeechBookmarkOptions Options, VARIANT StreamPos, VARIANT BookmarkId);
+
+            [VtblIndex(31)]
+            HRESULT SetAdaptationData([NativeTypeName("BSTR")] ushort* AdaptationString);
         }
 
         public partial struct Vtbl

@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("E9707E05-6D55-4636-B185-3DE21210BD75")]
     [NativeTypeName("struct IMFMediaKeySession2 : IMFMediaKeySession")]
     [NativeInheritance("IMFMediaKeySession")]
-    public unsafe partial struct IMFMediaKeySession2
+    public unsafe partial struct IMFMediaKeySession2 : IMFMediaKeySession2.Interface
     {
         public void** lpVtbl;
 
@@ -114,6 +114,27 @@ namespace TerraFX.Interop
         public HRESULT Shutdown()
         {
             return ((delegate* unmanaged<IMFMediaKeySession2*, int>)(lpVtbl[13]))((IMFMediaKeySession2*)Unsafe.AsPointer(ref this));
+        }
+
+        public interface Interface : IMFMediaKeySession.Interface
+        {
+            [VtblIndex(8)]
+            HRESULT get_KeyStatuses(MFMediaKeyStatus** pKeyStatusesArray, uint* puSize);
+
+            [VtblIndex(9)]
+            HRESULT Load([NativeTypeName("BSTR")] ushort* bstrSessionId, BOOL* pfLoaded);
+
+            [VtblIndex(10)]
+            HRESULT GenerateRequest([NativeTypeName("BSTR")] ushort* initDataType, [NativeTypeName("const BYTE *")] byte* pbInitData, [NativeTypeName("DWORD")] uint cb);
+
+            [VtblIndex(11)]
+            HRESULT get_Expiration(double* dblExpiration);
+
+            [VtblIndex(12)]
+            HRESULT Remove();
+
+            [VtblIndex(13)]
+            HRESULT Shutdown();
         }
 
         public partial struct Vtbl

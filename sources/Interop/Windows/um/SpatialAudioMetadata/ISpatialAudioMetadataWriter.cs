@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("1B17CA01-2955-444D-A430-537DC589A844")]
     [NativeTypeName("struct ISpatialAudioMetadataWriter : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct ISpatialAudioMetadataWriter
+    public unsafe partial struct ISpatialAudioMetadataWriter : ISpatialAudioMetadataWriter.Interface
     {
         public void** lpVtbl;
 
@@ -65,6 +65,21 @@ namespace TerraFX.Interop
         public HRESULT Close()
         {
             return ((delegate* unmanaged<ISpatialAudioMetadataWriter*, int>)(lpVtbl[6]))((ISpatialAudioMetadataWriter*)Unsafe.AsPointer(ref this));
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT Open(ISpatialAudioMetadataItems* metadataItems);
+
+            [VtblIndex(4)]
+            HRESULT WriteNextItem([NativeTypeName("UINT16")] ushort frameOffset);
+
+            [VtblIndex(5)]
+            HRESULT WriteNextItemCommand(byte commandID, [NativeTypeName("const void *")] void* valueBuffer, [NativeTypeName("UINT32")] uint valueBufferLength);
+
+            [VtblIndex(6)]
+            HRESULT Close();
         }
 
         public partial struct Vtbl

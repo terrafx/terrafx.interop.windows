@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("5A4A97E4-94EE-4A55-9751-74B5643AA27D")]
     [NativeTypeName("struct IDvdCmd : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IDvdCmd
+    public unsafe partial struct IDvdCmd : IDvdCmd.Interface
     {
         public void** lpVtbl;
 
@@ -51,6 +51,15 @@ namespace TerraFX.Interop
         public HRESULT WaitForEnd()
         {
             return ((delegate* unmanaged<IDvdCmd*, int>)(lpVtbl[4]))((IDvdCmd*)Unsafe.AsPointer(ref this));
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT WaitForStart();
+
+            [VtblIndex(4)]
+            HRESULT WaitForEnd();
         }
 
         public partial struct Vtbl

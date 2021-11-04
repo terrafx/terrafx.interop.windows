@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("E6176F96-E373-4801-B223-3B62C068C0B4")]
     [NativeTypeName("struct ISpeechPhraseElement : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct ISpeechPhraseElement
+    public unsafe partial struct ISpeechPhraseElement : ISpeechPhraseElement.Interface
     {
         public void** lpVtbl;
 
@@ -156,6 +156,48 @@ namespace TerraFX.Interop
         public HRESULT get_EngineConfidence(float* EngineConfidence)
         {
             return ((delegate* unmanaged<ISpeechPhraseElement*, float*, int>)(lpVtbl[19]))((ISpeechPhraseElement*)Unsafe.AsPointer(ref this), EngineConfidence);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT get_AudioTimeOffset([NativeTypeName("long *")] int* AudioTimeOffset);
+
+            [VtblIndex(8)]
+            HRESULT get_AudioSizeTime([NativeTypeName("long *")] int* AudioSizeTime);
+
+            [VtblIndex(9)]
+            HRESULT get_AudioStreamOffset([NativeTypeName("long *")] int* AudioStreamOffset);
+
+            [VtblIndex(10)]
+            HRESULT get_AudioSizeBytes([NativeTypeName("long *")] int* AudioSizeBytes);
+
+            [VtblIndex(11)]
+            HRESULT get_RetainedStreamOffset([NativeTypeName("long *")] int* RetainedStreamOffset);
+
+            [VtblIndex(12)]
+            HRESULT get_RetainedSizeBytes([NativeTypeName("long *")] int* RetainedSizeBytes);
+
+            [VtblIndex(13)]
+            HRESULT get_DisplayText([NativeTypeName("BSTR *")] ushort** DisplayText);
+
+            [VtblIndex(14)]
+            HRESULT get_LexicalForm([NativeTypeName("BSTR *")] ushort** LexicalForm);
+
+            [VtblIndex(15)]
+            HRESULT get_Pronunciation(VARIANT* Pronunciation);
+
+            [VtblIndex(16)]
+            HRESULT get_DisplayAttributes(SpeechDisplayAttributes* DisplayAttributes);
+
+            [VtblIndex(17)]
+            HRESULT get_RequiredConfidence(SpeechEngineConfidence* RequiredConfidence);
+
+            [VtblIndex(18)]
+            HRESULT get_ActualConfidence(SpeechEngineConfidence* ActualConfidence);
+
+            [VtblIndex(19)]
+            HRESULT get_EngineConfidence(float* EngineConfidence);
         }
 
         public partial struct Vtbl

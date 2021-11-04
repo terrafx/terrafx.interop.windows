@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("3017056D-9A91-4E90-937D-746C72ABBF4F")]
     [NativeTypeName("struct IPropertyStoreCache : IPropertyStore")]
     [NativeInheritance("IPropertyStore")]
-    public unsafe partial struct IPropertyStoreCache
+    public unsafe partial struct IPropertyStoreCache : IPropertyStoreCache.Interface
     {
         public void** lpVtbl;
 
@@ -100,6 +100,21 @@ namespace TerraFX.Interop
         public HRESULT SetValueAndState([NativeTypeName("const PROPERTYKEY &")] PROPERTYKEY* key, [NativeTypeName("const PROPVARIANT *")] PROPVARIANT* ppropvar, PSC_STATE state)
         {
             return ((delegate* unmanaged<IPropertyStoreCache*, PROPERTYKEY*, PROPVARIANT*, PSC_STATE, int>)(lpVtbl[11]))((IPropertyStoreCache*)Unsafe.AsPointer(ref this), key, ppropvar, state);
+        }
+
+        public interface Interface : IPropertyStore.Interface
+        {
+            [VtblIndex(8)]
+            HRESULT GetState([NativeTypeName("const PROPERTYKEY &")] PROPERTYKEY* key, PSC_STATE* pstate);
+
+            [VtblIndex(9)]
+            HRESULT GetValueAndState([NativeTypeName("const PROPERTYKEY &")] PROPERTYKEY* key, PROPVARIANT* ppropvar, PSC_STATE* pstate);
+
+            [VtblIndex(10)]
+            HRESULT SetState([NativeTypeName("const PROPERTYKEY &")] PROPERTYKEY* key, PSC_STATE state);
+
+            [VtblIndex(11)]
+            HRESULT SetValueAndState([NativeTypeName("const PROPERTYKEY &")] PROPERTYKEY* key, [NativeTypeName("const PROPVARIANT *")] PROPVARIANT* ppropvar, PSC_STATE state);
         }
 
         public partial struct Vtbl

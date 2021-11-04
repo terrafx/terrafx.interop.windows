@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("36B73882-C2C8-11CF-8B46-00805F6CEF60")]
     [NativeTypeName("struct IFilterGraph2 : IGraphBuilder")]
     [NativeInheritance("IGraphBuilder")]
-    public unsafe partial struct IFilterGraph2
+    public unsafe partial struct IFilterGraph2 : IFilterGraph2.Interface
     {
         public void** lpVtbl;
 
@@ -163,6 +163,18 @@ namespace TerraFX.Interop
         public HRESULT RenderEx(IPin* pPinOut, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("DWORD *")] uint* pvContext)
         {
             return ((delegate* unmanaged<IFilterGraph2*, IPin*, uint, uint*, int>)(lpVtbl[20]))((IFilterGraph2*)Unsafe.AsPointer(ref this), pPinOut, dwFlags, pvContext);
+        }
+
+        public interface Interface : IGraphBuilder.Interface
+        {
+            [VtblIndex(18)]
+            HRESULT AddSourceFilterForMoniker(IMoniker* pMoniker, IBindCtx* pCtx, [NativeTypeName("LPCWSTR")] ushort* lpcwstrFilterName, IBaseFilter** ppFilter);
+
+            [VtblIndex(19)]
+            HRESULT ReconnectEx(IPin* ppin, [NativeTypeName("const AM_MEDIA_TYPE *")] AM_MEDIA_TYPE* pmt);
+
+            [VtblIndex(20)]
+            HRESULT RenderEx(IPin* pPinOut, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("DWORD *")] uint* pvContext);
         }
 
         public partial struct Vtbl

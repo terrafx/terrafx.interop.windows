@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("3C5F3E8A-90C0-464E-8136-898D2975F847")]
     [NativeTypeName("struct IMFTimedTextBouten : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IMFTimedTextBouten
+    public unsafe partial struct IMFTimedTextBouten : IMFTimedTextBouten.Interface
     {
         public void** lpVtbl;
 
@@ -58,6 +58,18 @@ namespace TerraFX.Interop
         public HRESULT GetBoutenPosition(MF_TIMED_TEXT_BOUTEN_POSITION* value)
         {
             return ((delegate* unmanaged<IMFTimedTextBouten*, MF_TIMED_TEXT_BOUTEN_POSITION*, int>)(lpVtbl[5]))((IMFTimedTextBouten*)Unsafe.AsPointer(ref this), value);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetBoutenType(MF_TIMED_TEXT_BOUTEN_TYPE* value);
+
+            [VtblIndex(4)]
+            HRESULT GetBoutenColor(MFARGB* value);
+
+            [VtblIndex(5)]
+            HRESULT GetBoutenPosition(MF_TIMED_TEXT_BOUTEN_POSITION* value);
         }
 
         public partial struct Vtbl

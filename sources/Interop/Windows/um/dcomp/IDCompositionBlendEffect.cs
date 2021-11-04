@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("33ECDC0A-578A-4A11-9C14-0CB90517F9C5")]
     [NativeTypeName("struct IDCompositionBlendEffect : IDCompositionFilterEffect")]
     [NativeInheritance("IDCompositionFilterEffect")]
-    public unsafe partial struct IDCompositionBlendEffect
+    public unsafe partial struct IDCompositionBlendEffect : IDCompositionBlendEffect.Interface
     {
         public void** lpVtbl;
 
@@ -51,6 +51,12 @@ namespace TerraFX.Interop
         public HRESULT SetMode(D2D1_BLEND_MODE mode)
         {
             return ((delegate* unmanaged<IDCompositionBlendEffect*, D2D1_BLEND_MODE, int>)(lpVtbl[4]))((IDCompositionBlendEffect*)Unsafe.AsPointer(ref this), mode);
+        }
+
+        public interface Interface : IDCompositionFilterEffect.Interface
+        {
+            [VtblIndex(4)]
+            HRESULT SetMode(D2D1_BLEND_MODE mode);
         }
 
         public partial struct Vtbl

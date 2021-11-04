@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("36116642-D713-4B97-9B83-7484A9D00433")]
     [NativeTypeName("struct IFileDialogControlEvents : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IFileDialogControlEvents
+    public unsafe partial struct IFileDialogControlEvents : IFileDialogControlEvents.Interface
     {
         public void** lpVtbl;
 
@@ -65,6 +65,21 @@ namespace TerraFX.Interop
         public HRESULT OnControlActivating(IFileDialogCustomize* pfdc, [NativeTypeName("DWORD")] uint dwIDCtl)
         {
             return ((delegate* unmanaged<IFileDialogControlEvents*, IFileDialogCustomize*, uint, int>)(lpVtbl[6]))((IFileDialogControlEvents*)Unsafe.AsPointer(ref this), pfdc, dwIDCtl);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT OnItemSelected(IFileDialogCustomize* pfdc, [NativeTypeName("DWORD")] uint dwIDCtl, [NativeTypeName("DWORD")] uint dwIDItem);
+
+            [VtblIndex(4)]
+            HRESULT OnButtonClicked(IFileDialogCustomize* pfdc, [NativeTypeName("DWORD")] uint dwIDCtl);
+
+            [VtblIndex(5)]
+            HRESULT OnCheckButtonToggled(IFileDialogCustomize* pfdc, [NativeTypeName("DWORD")] uint dwIDCtl, BOOL bChecked);
+
+            [VtblIndex(6)]
+            HRESULT OnControlActivating(IFileDialogCustomize* pfdc, [NativeTypeName("DWORD")] uint dwIDCtl);
         }
 
         public partial struct Vtbl

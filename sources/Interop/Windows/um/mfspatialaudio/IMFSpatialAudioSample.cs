@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("ABF28A9B-3393-4290-BA79-5FFC46D986B2")]
     [NativeTypeName("struct IMFSpatialAudioSample : IMFSample")]
     [NativeInheritance("IMFSample")]
-    public unsafe partial struct IMFSpatialAudioSample
+    public unsafe partial struct IMFSpatialAudioSample : IMFSpatialAudioSample.Interface
     {
         public void** lpVtbl;
 
@@ -366,6 +366,18 @@ namespace TerraFX.Interop
         public HRESULT GetSpatialAudioObjectByIndex([NativeTypeName("DWORD")] uint dwIndex, IMFSpatialAudioObjectBuffer** ppAudioObjBuffer)
         {
             return ((delegate* unmanaged<IMFSpatialAudioSample*, uint, IMFSpatialAudioObjectBuffer**, int>)(lpVtbl[49]))((IMFSpatialAudioSample*)Unsafe.AsPointer(ref this), dwIndex, ppAudioObjBuffer);
+        }
+
+        public interface Interface : IMFSample.Interface
+        {
+            [VtblIndex(47)]
+            HRESULT GetObjectCount([NativeTypeName("DWORD *")] uint* pdwObjectCount);
+
+            [VtblIndex(48)]
+            HRESULT AddSpatialAudioObject(IMFSpatialAudioObjectBuffer* pAudioObjBuffer);
+
+            [VtblIndex(49)]
+            HRESULT GetSpatialAudioObjectByIndex([NativeTypeName("DWORD")] uint dwIndex, IMFSpatialAudioObjectBuffer** ppAudioObjBuffer);
         }
 
         public partial struct Vtbl

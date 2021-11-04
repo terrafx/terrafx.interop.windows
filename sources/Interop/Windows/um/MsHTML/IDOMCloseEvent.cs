@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("305107FF-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct IDOMCloseEvent : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct IDOMCloseEvent
+    public unsafe partial struct IDOMCloseEvent : IDOMCloseEvent.Interface
     {
         public void** lpVtbl;
 
@@ -79,6 +79,15 @@ namespace TerraFX.Interop
         public HRESULT initCloseEvent([NativeTypeName("BSTR")] ushort* eventType, [NativeTypeName("VARIANT_BOOL")] short canBubble, [NativeTypeName("VARIANT_BOOL")] short cancelable, [NativeTypeName("VARIANT_BOOL")] short wasClean, [NativeTypeName("long")] int code, [NativeTypeName("BSTR")] ushort* reason)
         {
             return ((delegate* unmanaged<IDOMCloseEvent*, ushort*, short, short, short, int, ushort*, int>)(lpVtbl[8]))((IDOMCloseEvent*)Unsafe.AsPointer(ref this), eventType, canBubble, cancelable, wasClean, code, reason);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT get_wasClean([NativeTypeName("VARIANT_BOOL *")] short* p);
+
+            [VtblIndex(8)]
+            HRESULT initCloseEvent([NativeTypeName("BSTR")] ushort* eventType, [NativeTypeName("VARIANT_BOOL")] short canBubble, [NativeTypeName("VARIANT_BOOL")] short cancelable, [NativeTypeName("VARIANT_BOOL")] short wasClean, [NativeTypeName("long")] int code, [NativeTypeName("BSTR")] ushort* reason);
         }
 
         public partial struct Vtbl

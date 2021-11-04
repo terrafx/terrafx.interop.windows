@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("46CE0225-F267-4D68-B299-B2762552DEC1")]
     [NativeTypeName("struct IXblIdpAuthTokenResult : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IXblIdpAuthTokenResult
+    public unsafe partial struct IXblIdpAuthTokenResult : IXblIdpAuthTokenResult.Interface
     {
         public void** lpVtbl;
 
@@ -177,6 +177,69 @@ namespace TerraFX.Interop
         public HRESULT GetTitleRestrictions([NativeTypeName("LPWSTR *")] ushort** titleRestrictions)
         {
             return ((delegate* unmanaged<IXblIdpAuthTokenResult*, ushort**, int>)(lpVtbl[22]))((IXblIdpAuthTokenResult*)Unsafe.AsPointer(ref this), titleRestrictions);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetStatus(XBL_IDP_AUTH_TOKEN_STATUS* status);
+
+            [VtblIndex(4)]
+            HRESULT GetErrorCode(HRESULT* errorCode);
+
+            [VtblIndex(5)]
+            HRESULT GetToken([NativeTypeName("LPWSTR *")] ushort** token);
+
+            [VtblIndex(6)]
+            HRESULT GetSignature([NativeTypeName("LPWSTR *")] ushort** signature);
+
+            [VtblIndex(7)]
+            HRESULT GetSandbox([NativeTypeName("LPWSTR *")] ushort** sandbox);
+
+            [VtblIndex(8)]
+            HRESULT GetEnvironment([NativeTypeName("LPWSTR *")] ushort** environment);
+
+            [VtblIndex(9)]
+            HRESULT GetMsaAccountId([NativeTypeName("LPWSTR *")] ushort** msaAccountId);
+
+            [VtblIndex(10)]
+            HRESULT GetXuid([NativeTypeName("LPWSTR *")] ushort** xuid);
+
+            [VtblIndex(11)]
+            HRESULT GetGamertag([NativeTypeName("LPWSTR *")] ushort** gamertag);
+
+            [VtblIndex(12)]
+            HRESULT GetAgeGroup([NativeTypeName("LPWSTR *")] ushort** ageGroup);
+
+            [VtblIndex(13)]
+            HRESULT GetPrivileges([NativeTypeName("LPWSTR *")] ushort** privileges);
+
+            [VtblIndex(14)]
+            HRESULT GetMsaTarget([NativeTypeName("LPWSTR *")] ushort** msaTarget);
+
+            [VtblIndex(15)]
+            HRESULT GetMsaPolicy([NativeTypeName("LPWSTR *")] ushort** msaPolicy);
+
+            [VtblIndex(16)]
+            HRESULT GetMsaAppId([NativeTypeName("LPWSTR *")] ushort** msaAppId);
+
+            [VtblIndex(17)]
+            HRESULT GetRedirect([NativeTypeName("LPWSTR *")] ushort** redirect);
+
+            [VtblIndex(18)]
+            HRESULT GetMessageW([NativeTypeName("LPWSTR *")] ushort** message);
+
+            [VtblIndex(19)]
+            HRESULT GetHelpId([NativeTypeName("LPWSTR *")] ushort** helpId);
+
+            [VtblIndex(20)]
+            HRESULT GetEnforcementBans([NativeTypeName("LPWSTR *")] ushort** enforcementBans);
+
+            [VtblIndex(21)]
+            HRESULT GetRestrictions([NativeTypeName("LPWSTR *")] ushort** restrictions);
+
+            [VtblIndex(22)]
+            HRESULT GetTitleRestrictions([NativeTypeName("LPWSTR *")] ushort** titleRestrictions);
         }
 
         public partial struct Vtbl

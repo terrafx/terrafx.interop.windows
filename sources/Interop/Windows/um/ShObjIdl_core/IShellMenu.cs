@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("EE1F7637-E138-11D1-8379-00C04FD918D0")]
     [NativeTypeName("struct IShellMenu : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IShellMenu
+    public unsafe partial struct IShellMenu : IShellMenu.Interface
     {
         public void** lpVtbl;
 
@@ -100,6 +100,36 @@ namespace TerraFX.Interop
         public HRESULT SetMenuToolbar(IUnknown* punk, [NativeTypeName("DWORD")] uint dwFlags)
         {
             return ((delegate* unmanaged<IShellMenu*, IUnknown*, uint, int>)(lpVtbl[11]))((IShellMenu*)Unsafe.AsPointer(ref this), punk, dwFlags);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT Initialize(IShellMenuCallback* psmc, uint uId, uint uIdAncestor, [NativeTypeName("DWORD")] uint dwFlags);
+
+            [VtblIndex(4)]
+            HRESULT GetMenuInfo(IShellMenuCallback** ppsmc, uint* puId, uint* puIdAncestor, [NativeTypeName("DWORD *")] uint* pdwFlags);
+
+            [VtblIndex(5)]
+            HRESULT SetShellFolder(IShellFolder* psf, [NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidlFolder, HKEY hKey, [NativeTypeName("DWORD")] uint dwFlags);
+
+            [VtblIndex(6)]
+            HRESULT GetShellFolder([NativeTypeName("DWORD *")] uint* pdwFlags, [NativeTypeName("LPITEMIDLIST *")] ITEMIDLIST** ppidl, [NativeTypeName("const IID &")] Guid* riid, void** ppv);
+
+            [VtblIndex(7)]
+            HRESULT SetMenu(HMENU hmenu, HWND hwnd, [NativeTypeName("DWORD")] uint dwFlags);
+
+            [VtblIndex(8)]
+            HRESULT GetMenu(HMENU* phmenu, HWND* phwnd, [NativeTypeName("DWORD *")] uint* pdwFlags);
+
+            [VtblIndex(9)]
+            HRESULT InvalidateItem([NativeTypeName("LPSMDATA")] SMDATA* psmd, [NativeTypeName("DWORD")] uint dwFlags);
+
+            [VtblIndex(10)]
+            HRESULT GetState([NativeTypeName("LPSMDATA")] SMDATA* psmd);
+
+            [VtblIndex(11)]
+            HRESULT SetMenuToolbar(IUnknown* punk, [NativeTypeName("DWORD")] uint dwFlags);
         }
 
         public partial struct Vtbl

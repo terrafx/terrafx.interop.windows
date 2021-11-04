@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("54EC77FA-1377-44E6-8C32-88FD5F44C84C")]
     [NativeTypeName("struct IDXGIDevice : IDXGIObject")]
     [NativeInheritance("IDXGIObject")]
-    public unsafe partial struct IDXGIDevice
+    public unsafe partial struct IDXGIDevice : IDXGIDevice.Interface
     {
         public void** lpVtbl;
 
@@ -100,6 +100,24 @@ namespace TerraFX.Interop
         public HRESULT GetGPUThreadPriority(int* pPriority)
         {
             return ((delegate* unmanaged<IDXGIDevice*, int*, int>)(lpVtbl[11]))((IDXGIDevice*)Unsafe.AsPointer(ref this), pPriority);
+        }
+
+        public interface Interface : IDXGIObject.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT GetAdapter(IDXGIAdapter** pAdapter);
+
+            [VtblIndex(8)]
+            HRESULT CreateSurface([NativeTypeName("const DXGI_SURFACE_DESC *")] DXGI_SURFACE_DESC* pDesc, uint NumSurfaces, [NativeTypeName("DXGI_USAGE")] uint Usage, [NativeTypeName("const DXGI_SHARED_RESOURCE *")] DXGI_SHARED_RESOURCE* pSharedResource, IDXGISurface** ppSurface);
+
+            [VtblIndex(9)]
+            HRESULT QueryResourceResidency([NativeTypeName("IUnknown *const *")] IUnknown** ppResources, DXGI_RESIDENCY* pResidencyStatus, uint NumResources);
+
+            [VtblIndex(10)]
+            HRESULT SetGPUThreadPriority(int Priority);
+
+            [VtblIndex(11)]
+            HRESULT GetGPUThreadPriority(int* pPriority);
         }
 
         public partial struct Vtbl

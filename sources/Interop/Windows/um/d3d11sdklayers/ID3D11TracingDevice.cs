@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("1911C771-1587-413E-A7E0-FB26C3DE0268")]
     [NativeTypeName("struct ID3D11TracingDevice : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct ID3D11TracingDevice
+    public unsafe partial struct ID3D11TracingDevice : ID3D11TracingDevice.Interface
     {
         public void** lpVtbl;
 
@@ -51,6 +51,15 @@ namespace TerraFX.Interop
         public HRESULT SetShaderTrackingOptions(IUnknown* pShader, uint Options)
         {
             return ((delegate* unmanaged<ID3D11TracingDevice*, IUnknown*, uint, int>)(lpVtbl[4]))((ID3D11TracingDevice*)Unsafe.AsPointer(ref this), pShader, Options);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT SetShaderTrackingOptionsByType(uint ResourceTypeFlags, uint Options);
+
+            [VtblIndex(4)]
+            HRESULT SetShaderTrackingOptions(IUnknown* pShader, uint Options);
         }
 
         public partial struct Vtbl

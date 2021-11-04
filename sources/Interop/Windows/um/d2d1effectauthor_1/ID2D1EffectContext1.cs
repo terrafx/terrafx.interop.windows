@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("84AB595A-FC81-4546-BACD-E8EF4D8ABE7A")]
     [NativeTypeName("struct ID2D1EffectContext1 : ID2D1EffectContext")]
     [NativeInheritance("ID2D1EffectContext")]
-    public unsafe partial struct ID2D1EffectContext1
+    public unsafe partial struct ID2D1EffectContext1 : ID2D1EffectContext1.Interface
     {
         public void** lpVtbl;
 
@@ -191,6 +191,12 @@ namespace TerraFX.Interop
         public HRESULT CreateLookupTable3D(D2D1_BUFFER_PRECISION precision, [NativeTypeName("const UINT32 *")] uint* extents, [NativeTypeName("const BYTE *")] byte* data, [NativeTypeName("UINT32")] uint dataCount, [NativeTypeName("const UINT32 *")] uint* strides, ID2D1LookupTable3D** lookupTable)
         {
             return ((delegate* unmanaged<ID2D1EffectContext1*, D2D1_BUFFER_PRECISION, uint*, byte*, uint, uint*, ID2D1LookupTable3D**, int>)(lpVtbl[24]))((ID2D1EffectContext1*)Unsafe.AsPointer(ref this), precision, extents, data, dataCount, strides, lookupTable);
+        }
+
+        public interface Interface : ID2D1EffectContext.Interface
+        {
+            [VtblIndex(24)]
+            HRESULT CreateLookupTable3D(D2D1_BUFFER_PRECISION precision, [NativeTypeName("const UINT32 *")] uint* extents, [NativeTypeName("const BYTE *")] byte* data, [NativeTypeName("UINT32")] uint dataCount, [NativeTypeName("const UINT32 *")] uint* strides, ID2D1LookupTable3D** lookupTable);
         }
 
         public partial struct Vtbl

@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("CE704FE7-E71E-41FB-BAA2-C4403E1182F5")]
     [NativeTypeName("struct IVMRImagePresenter : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IVMRImagePresenter
+    public unsafe partial struct IVMRImagePresenter : IVMRImagePresenter.Interface
     {
         public void** lpVtbl;
 
@@ -58,6 +58,18 @@ namespace TerraFX.Interop
         public HRESULT PresentImage([NativeTypeName("DWORD_PTR")] nuint dwUserID, VMRPRESENTATIONINFO* lpPresInfo)
         {
             return ((delegate* unmanaged<IVMRImagePresenter*, nuint, VMRPRESENTATIONINFO*, int>)(lpVtbl[5]))((IVMRImagePresenter*)Unsafe.AsPointer(ref this), dwUserID, lpPresInfo);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT StartPresenting([NativeTypeName("DWORD_PTR")] nuint dwUserID);
+
+            [VtblIndex(4)]
+            HRESULT StopPresenting([NativeTypeName("DWORD_PTR")] nuint dwUserID);
+
+            [VtblIndex(5)]
+            HRESULT PresentImage([NativeTypeName("DWORD_PTR")] nuint dwUserID, VMRPRESENTATIONINFO* lpPresInfo);
         }
 
         public partial struct Vtbl

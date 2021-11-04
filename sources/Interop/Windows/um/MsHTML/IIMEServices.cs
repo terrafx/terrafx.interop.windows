@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("3050F6CA-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct IIMEServices : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IIMEServices
+    public unsafe partial struct IIMEServices : IIMEServices.Interface
     {
         public void** lpVtbl;
 
@@ -44,6 +44,12 @@ namespace TerraFX.Interop
         public HRESULT GetActiveIMM(IActiveIMMApp** ppActiveIMM)
         {
             return ((delegate* unmanaged<IIMEServices*, IActiveIMMApp**, int>)(lpVtbl[3]))((IIMEServices*)Unsafe.AsPointer(ref this), ppActiveIMM);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetActiveIMM(IActiveIMMApp** ppActiveIMM);
         }
 
         public partial struct Vtbl

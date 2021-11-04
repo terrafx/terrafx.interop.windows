@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("0000002D-0000-0000-C000-000000000046")]
     [NativeTypeName("struct ITypeMarshal : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct ITypeMarshal
+    public unsafe partial struct ITypeMarshal : ITypeMarshal.Interface
     {
         public void** lpVtbl;
 
@@ -65,6 +65,21 @@ namespace TerraFX.Interop
         public HRESULT Free([NativeTypeName("PVOID")] void* pvType)
         {
             return ((delegate* unmanaged<ITypeMarshal*, void*, int>)(lpVtbl[6]))((ITypeMarshal*)Unsafe.AsPointer(ref this), pvType);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT Size([NativeTypeName("PVOID")] void* pvType, [NativeTypeName("DWORD")] uint dwDestContext, [NativeTypeName("PVOID")] void* pvDestContext, [NativeTypeName("ULONG *")] uint* pSize);
+
+            [VtblIndex(4)]
+            HRESULT Marshal([NativeTypeName("PVOID")] void* pvType, [NativeTypeName("DWORD")] uint dwDestContext, [NativeTypeName("PVOID")] void* pvDestContext, [NativeTypeName("ULONG")] uint cbBufferLength, byte* pBuffer, [NativeTypeName("ULONG *")] uint* pcbWritten);
+
+            [VtblIndex(5)]
+            HRESULT Unmarshal([NativeTypeName("PVOID")] void* pvType, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("ULONG")] uint cbBufferLength, byte* pBuffer, [NativeTypeName("ULONG *")] uint* pcbRead);
+
+            [VtblIndex(6)]
+            HRESULT Free([NativeTypeName("PVOID")] void* pvType);
         }
 
         public partial struct Vtbl

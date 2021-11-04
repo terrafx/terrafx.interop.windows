@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("B5C49650-99BC-481C-9A34-3D53A4106708")]
     [NativeTypeName("struct IAppxPackageReader : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IAppxPackageReader
+    public unsafe partial struct IAppxPackageReader : IAppxPackageReader.Interface
     {
         public void** lpVtbl;
 
@@ -72,6 +72,24 @@ namespace TerraFX.Interop
         public HRESULT GetManifest(IAppxManifestReader** manifestReader)
         {
             return ((delegate* unmanaged<IAppxPackageReader*, IAppxManifestReader**, int>)(lpVtbl[7]))((IAppxPackageReader*)Unsafe.AsPointer(ref this), manifestReader);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetBlockMap(IAppxBlockMapReader** blockMapReader);
+
+            [VtblIndex(4)]
+            HRESULT GetFootprintFile(APPX_FOOTPRINT_FILE_TYPE type, IAppxFile** file);
+
+            [VtblIndex(5)]
+            HRESULT GetPayloadFile([NativeTypeName("LPCWSTR")] ushort* fileName, IAppxFile** file);
+
+            [VtblIndex(6)]
+            HRESULT GetPayloadFiles(IAppxFilesEnumerator** filesEnumerator);
+
+            [VtblIndex(7)]
+            HRESULT GetManifest(IAppxManifestReader** manifestReader);
         }
 
         public partial struct Vtbl

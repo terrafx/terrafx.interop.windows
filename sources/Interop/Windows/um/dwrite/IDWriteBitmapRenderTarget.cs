@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("5E5A32A3-8DFF-4773-9FF6-0696EAB77267")]
     [NativeTypeName("struct IDWriteBitmapRenderTarget : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IDWriteBitmapRenderTarget
+    public unsafe partial struct IDWriteBitmapRenderTarget : IDWriteBitmapRenderTarget.Interface
     {
         public void** lpVtbl;
 
@@ -93,6 +93,33 @@ namespace TerraFX.Interop
         public HRESULT Resize([NativeTypeName("UINT32")] uint width, [NativeTypeName("UINT32")] uint height)
         {
             return ((delegate* unmanaged<IDWriteBitmapRenderTarget*, uint, uint, int>)(lpVtbl[10]))((IDWriteBitmapRenderTarget*)Unsafe.AsPointer(ref this), width, height);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT DrawGlyphRun(float baselineOriginX, float baselineOriginY, DWRITE_MEASURING_MODE measuringMode, [NativeTypeName("const DWRITE_GLYPH_RUN *")] DWRITE_GLYPH_RUN* glyphRun, IDWriteRenderingParams* renderingParams, COLORREF textColor, RECT* blackBoxRect = null);
+
+            [VtblIndex(4)]
+            HDC GetMemoryDC();
+
+            [VtblIndex(5)]
+            float GetPixelsPerDip();
+
+            [VtblIndex(6)]
+            HRESULT SetPixelsPerDip(float pixelsPerDip);
+
+            [VtblIndex(7)]
+            HRESULT GetCurrentTransform(DWRITE_MATRIX* transform);
+
+            [VtblIndex(8)]
+            HRESULT SetCurrentTransform([NativeTypeName("const DWRITE_MATRIX *")] DWRITE_MATRIX* transform);
+
+            [VtblIndex(9)]
+            HRESULT GetSize(SIZE* size);
+
+            [VtblIndex(10)]
+            HRESULT Resize([NativeTypeName("UINT32")] uint width, [NativeTypeName("UINT32")] uint height);
         }
 
         public partial struct Vtbl

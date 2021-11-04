@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("30510462-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct IDocumentSelector : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct IDocumentSelector
+    public unsafe partial struct IDocumentSelector : IDocumentSelector.Interface
     {
         public void** lpVtbl;
 
@@ -79,6 +79,15 @@ namespace TerraFX.Interop
         public HRESULT querySelectorAll([NativeTypeName("BSTR")] ushort* v, IHTMLDOMChildrenCollection** pel)
         {
             return ((delegate* unmanaged<IDocumentSelector*, ushort*, IHTMLDOMChildrenCollection**, int>)(lpVtbl[8]))((IDocumentSelector*)Unsafe.AsPointer(ref this), v, pel);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT querySelector([NativeTypeName("BSTR")] ushort* v, IHTMLElement** pel);
+
+            [VtblIndex(8)]
+            HRESULT querySelectorAll([NativeTypeName("BSTR")] ushort* v, IHTMLDOMChildrenCollection** pel);
         }
 
         public partial struct Vtbl

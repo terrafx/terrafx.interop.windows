@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("1BE09788-6894-4089-8586-9A2A6C265AC5")]
     [NativeTypeName("struct IMMEndpoint : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IMMEndpoint
+    public unsafe partial struct IMMEndpoint : IMMEndpoint.Interface
     {
         public void** lpVtbl;
 
@@ -44,6 +44,12 @@ namespace TerraFX.Interop
         public HRESULT GetDataFlow(EDataFlow* pDataFlow)
         {
             return ((delegate* unmanaged<IMMEndpoint*, EDataFlow*, int>)(lpVtbl[3]))((IMMEndpoint*)Unsafe.AsPointer(ref this), pDataFlow);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetDataFlow(EDataFlow* pDataFlow);
         }
 
         public partial struct Vtbl

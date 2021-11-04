@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("645967A4-1392-4310-A798-8053CE3E93FD")]
     [NativeTypeName("struct IDXGIAdapter3 : IDXGIAdapter2")]
     [NativeInheritance("IDXGIAdapter2")]
-    public unsafe partial struct IDXGIAdapter3
+    public unsafe partial struct IDXGIAdapter3 : IDXGIAdapter3.Interface
     {
         public void** lpVtbl;
 
@@ -142,6 +142,27 @@ namespace TerraFX.Interop
         public void UnregisterVideoMemoryBudgetChangeNotification([NativeTypeName("DWORD")] uint dwCookie)
         {
             ((delegate* unmanaged<IDXGIAdapter3*, uint, void>)(lpVtbl[17]))((IDXGIAdapter3*)Unsafe.AsPointer(ref this), dwCookie);
+        }
+
+        public interface Interface : IDXGIAdapter2.Interface
+        {
+            [VtblIndex(12)]
+            HRESULT RegisterHardwareContentProtectionTeardownStatusEvent(HANDLE hEvent, [NativeTypeName("DWORD *")] uint* pdwCookie);
+
+            [VtblIndex(13)]
+            void UnregisterHardwareContentProtectionTeardownStatus([NativeTypeName("DWORD")] uint dwCookie);
+
+            [VtblIndex(14)]
+            HRESULT QueryVideoMemoryInfo(uint NodeIndex, DXGI_MEMORY_SEGMENT_GROUP MemorySegmentGroup, DXGI_QUERY_VIDEO_MEMORY_INFO* pVideoMemoryInfo);
+
+            [VtblIndex(15)]
+            HRESULT SetVideoMemoryReservation(uint NodeIndex, DXGI_MEMORY_SEGMENT_GROUP MemorySegmentGroup, [NativeTypeName("UINT64")] ulong Reservation);
+
+            [VtblIndex(16)]
+            HRESULT RegisterVideoMemoryBudgetChangeNotificationEvent(HANDLE hEvent, [NativeTypeName("DWORD *")] uint* pdwCookie);
+
+            [VtblIndex(17)]
+            void UnregisterVideoMemoryBudgetChangeNotification([NativeTypeName("DWORD")] uint dwCookie);
         }
 
         public partial struct Vtbl

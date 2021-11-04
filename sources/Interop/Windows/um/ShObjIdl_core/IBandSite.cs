@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("4CF504B0-DE96-11D0-8B3F-00A0C911E8E5")]
     [NativeTypeName("struct IBandSite : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IBandSite
+    public unsafe partial struct IBandSite : IBandSite.Interface
     {
         public void** lpVtbl;
 
@@ -93,6 +93,33 @@ namespace TerraFX.Interop
         public HRESULT GetBandSiteInfo(BANDSITEINFO* pbsinfo)
         {
             return ((delegate* unmanaged<IBandSite*, BANDSITEINFO*, int>)(lpVtbl[10]))((IBandSite*)Unsafe.AsPointer(ref this), pbsinfo);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT AddBand(IUnknown* punk);
+
+            [VtblIndex(4)]
+            HRESULT EnumBands(uint uBand, [NativeTypeName("DWORD *")] uint* pdwBandID);
+
+            [VtblIndex(5)]
+            HRESULT QueryBand([NativeTypeName("DWORD")] uint dwBandID, IDeskBand** ppstb, [NativeTypeName("DWORD *")] uint* pdwState, [NativeTypeName("LPWSTR")] ushort* pszName, int cchName);
+
+            [VtblIndex(6)]
+            HRESULT SetBandState([NativeTypeName("DWORD")] uint dwBandID, [NativeTypeName("DWORD")] uint dwMask, [NativeTypeName("DWORD")] uint dwState);
+
+            [VtblIndex(7)]
+            HRESULT RemoveBand([NativeTypeName("DWORD")] uint dwBandID);
+
+            [VtblIndex(8)]
+            HRESULT GetBandObject([NativeTypeName("DWORD")] uint dwBandID, [NativeTypeName("const IID &")] Guid* riid, void** ppv);
+
+            [VtblIndex(9)]
+            HRESULT SetBandSiteInfo([NativeTypeName("const BANDSITEINFO *")] BANDSITEINFO* pbsinfo);
+
+            [VtblIndex(10)]
+            HRESULT GetBandSiteInfo(BANDSITEINFO* pbsinfo);
         }
 
         public partial struct Vtbl

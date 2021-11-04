@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("75D760B0-60B9-412D-994F-26B2CD5F7812")]
     [NativeTypeName("struct IXblIdpAuthTokenResult2 : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IXblIdpAuthTokenResult2
+    public unsafe partial struct IXblIdpAuthTokenResult2 : IXblIdpAuthTokenResult2.Interface
     {
         public void** lpVtbl;
 
@@ -58,6 +58,18 @@ namespace TerraFX.Interop
         public HRESULT GetUniqueModernGamertag([NativeTypeName("LPWSTR *")] ushort** value)
         {
             return ((delegate* unmanaged<IXblIdpAuthTokenResult2*, ushort**, int>)(lpVtbl[5]))((IXblIdpAuthTokenResult2*)Unsafe.AsPointer(ref this), value);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetModernGamertag([NativeTypeName("LPWSTR *")] ushort** value);
+
+            [VtblIndex(4)]
+            HRESULT GetModernGamertagSuffix([NativeTypeName("LPWSTR *")] ushort** value);
+
+            [VtblIndex(5)]
+            HRESULT GetUniqueModernGamertag([NativeTypeName("LPWSTR *")] ushort** value);
         }
 
         public partial struct Vtbl

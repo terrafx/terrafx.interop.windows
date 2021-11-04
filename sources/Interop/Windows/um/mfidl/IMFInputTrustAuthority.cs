@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("D19F8E98-B126-4446-890C-5DCB7AD71453")]
     [NativeTypeName("struct IMFInputTrustAuthority : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IMFInputTrustAuthority
+    public unsafe partial struct IMFInputTrustAuthority : IMFInputTrustAuthority.Interface
     {
         public void** lpVtbl;
 
@@ -79,6 +79,27 @@ namespace TerraFX.Interop
         public HRESULT Reset()
         {
             return ((delegate* unmanaged<IMFInputTrustAuthority*, int>)(lpVtbl[8]))((IMFInputTrustAuthority*)Unsafe.AsPointer(ref this));
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetDecrypter([NativeTypeName("const IID &")] Guid* riid, void** ppv);
+
+            [VtblIndex(4)]
+            HRESULT RequestAccess(MFPOLICYMANAGER_ACTION Action, IMFActivate** ppContentEnablerActivate);
+
+            [VtblIndex(5)]
+            HRESULT GetPolicy(MFPOLICYMANAGER_ACTION Action, IMFOutputPolicy** ppPolicy);
+
+            [VtblIndex(6)]
+            HRESULT BindAccess(MFINPUTTRUSTAUTHORITY_ACCESS_PARAMS* pParam);
+
+            [VtblIndex(7)]
+            HRESULT UpdateAccess(MFINPUTTRUSTAUTHORITY_ACCESS_PARAMS* pParam);
+
+            [VtblIndex(8)]
+            HRESULT Reset();
         }
 
         public partial struct Vtbl

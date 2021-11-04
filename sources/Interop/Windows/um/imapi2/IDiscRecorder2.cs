@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("27354133-7F64-5B0F-8F00-5D77AFBE261E")]
     [NativeTypeName("struct IDiscRecorder2 : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct IDiscRecorder2
+    public unsafe partial struct IDiscRecorder2 : IDiscRecorder2.Interface
     {
         public void** lpVtbl;
 
@@ -212,6 +212,72 @@ namespace TerraFX.Interop
         public HRESULT get_ExclusiveAccessOwner([NativeTypeName("BSTR *")] ushort** value)
         {
             return ((delegate* unmanaged<IDiscRecorder2*, ushort**, int>)(lpVtbl[27]))((IDiscRecorder2*)Unsafe.AsPointer(ref this), value);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT EjectMedia();
+
+            [VtblIndex(8)]
+            HRESULT CloseTray();
+
+            [VtblIndex(9)]
+            HRESULT AcquireExclusiveAccess([NativeTypeName("VARIANT_BOOL")] short force, [NativeTypeName("BSTR")] ushort* __MIDL__IDiscRecorder20000);
+
+            [VtblIndex(10)]
+            HRESULT ReleaseExclusiveAccess();
+
+            [VtblIndex(11)]
+            HRESULT DisableMcn();
+
+            [VtblIndex(12)]
+            HRESULT EnableMcn();
+
+            [VtblIndex(13)]
+            HRESULT InitializeDiscRecorder([NativeTypeName("BSTR")] ushort* recorderUniqueId);
+
+            [VtblIndex(14)]
+            HRESULT get_ActiveDiscRecorder([NativeTypeName("BSTR *")] ushort** value);
+
+            [VtblIndex(15)]
+            HRESULT get_VendorId([NativeTypeName("BSTR *")] ushort** value);
+
+            [VtblIndex(16)]
+            HRESULT get_ProductId([NativeTypeName("BSTR *")] ushort** value);
+
+            [VtblIndex(17)]
+            HRESULT get_ProductRevision([NativeTypeName("BSTR *")] ushort** value);
+
+            [VtblIndex(18)]
+            HRESULT get_VolumeName([NativeTypeName("BSTR *")] ushort** value);
+
+            [VtblIndex(19)]
+            HRESULT get_VolumePathNames(SAFEARRAY** value);
+
+            [VtblIndex(20)]
+            HRESULT get_DeviceCanLoadMedia([NativeTypeName("VARIANT_BOOL *")] short* value);
+
+            [VtblIndex(21)]
+            HRESULT get_LegacyDeviceNumber([NativeTypeName("LONG *")] int* legacyDeviceNumber);
+
+            [VtblIndex(22)]
+            HRESULT get_SupportedFeaturePages(SAFEARRAY** value);
+
+            [VtblIndex(23)]
+            HRESULT get_CurrentFeaturePages(SAFEARRAY** value);
+
+            [VtblIndex(24)]
+            HRESULT get_SupportedProfiles(SAFEARRAY** value);
+
+            [VtblIndex(25)]
+            HRESULT get_CurrentProfiles(SAFEARRAY** value);
+
+            [VtblIndex(26)]
+            HRESULT get_SupportedModePages(SAFEARRAY** value);
+
+            [VtblIndex(27)]
+            HRESULT get_ExclusiveAccessOwner([NativeTypeName("BSTR *")] ushort** value);
         }
 
         public partial struct Vtbl

@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("AF671749-D241-4DB8-8E41-DCC2E5C1A438")]
     [NativeTypeName("struct ID2D1SvgGlyphStyle : ID2D1Resource")]
     [NativeInheritance("ID2D1Resource")]
-    public unsafe partial struct ID2D1SvgGlyphStyle
+    public unsafe partial struct ID2D1SvgGlyphStyle : ID2D1SvgGlyphStyle.Interface
     {
         public void** lpVtbl;
 
@@ -80,6 +80,25 @@ namespace TerraFX.Interop
         public void GetStroke(ID2D1Brush** brush, float* strokeWidth = null, float* dashes = null, [NativeTypeName("UINT32")] uint dashesCount = 0, float* dashOffset = null)
         {
             ((delegate* unmanaged<ID2D1SvgGlyphStyle*, ID2D1Brush**, float*, float*, uint, float*, void>)(lpVtbl[8]))((ID2D1SvgGlyphStyle*)Unsafe.AsPointer(ref this), brush, strokeWidth, dashes, dashesCount, dashOffset);
+        }
+
+        public interface Interface : ID2D1Resource.Interface
+        {
+            [VtblIndex(4)]
+            HRESULT SetFill(ID2D1Brush* brush);
+
+            [VtblIndex(5)]
+            void GetFill(ID2D1Brush** brush);
+
+            [VtblIndex(6)]
+            HRESULT SetStroke(ID2D1Brush* brush, float strokeWidth = 1.0f, [NativeTypeName("const FLOAT *")] float* dashes = null, [NativeTypeName("UINT32")] uint dashesCount = 0, float dashOffset = 1.0f);
+
+            [VtblIndex(7)]
+            [return: NativeTypeName("UINT32")]
+            uint GetStrokeDashesCount();
+
+            [VtblIndex(8)]
+            void GetStroke(ID2D1Brush** brush, float* strokeWidth = null, float* dashes = null, [NativeTypeName("UINT32")] uint dashesCount = 0, float* dashOffset = null);
         }
 
         public partial struct Vtbl

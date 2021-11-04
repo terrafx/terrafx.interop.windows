@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("000214E4-0000-0000-C000-000000000046")]
     [NativeTypeName("struct IContextMenu : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IContextMenu
+    public unsafe partial struct IContextMenu : IContextMenu.Interface
     {
         public void** lpVtbl;
 
@@ -58,6 +58,18 @@ namespace TerraFX.Interop
         public HRESULT GetCommandString([NativeTypeName("UINT_PTR")] nuint idCmd, uint uType, uint* pReserved, [NativeTypeName("CHAR *")] sbyte* pszName, uint cchMax)
         {
             return ((delegate* unmanaged<IContextMenu*, nuint, uint, uint*, sbyte*, uint, int>)(lpVtbl[5]))((IContextMenu*)Unsafe.AsPointer(ref this), idCmd, uType, pReserved, pszName, cchMax);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT QueryContextMenu(HMENU hmenu, uint indexMenu, uint idCmdFirst, uint idCmdLast, uint uFlags);
+
+            [VtblIndex(4)]
+            HRESULT InvokeCommand(CMINVOKECOMMANDINFO* pici);
+
+            [VtblIndex(5)]
+            HRESULT GetCommandString([NativeTypeName("UINT_PTR")] nuint idCmd, uint uType, uint* pReserved, [NativeTypeName("CHAR *")] sbyte* pszName, uint cchMax);
         }
 
         public partial struct Vtbl

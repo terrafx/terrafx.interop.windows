@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("5DA6F13D-A8A7-4532-857C-1393D659371D")]
     [NativeTypeName("struct IAppxBundleManifestPackageInfo4 : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IAppxBundleManifestPackageInfo4
+    public unsafe partial struct IAppxBundleManifestPackageInfo4 : IAppxBundleManifestPackageInfo4.Interface
     {
         public void** lpVtbl;
 
@@ -44,6 +44,12 @@ namespace TerraFX.Interop
         public HRESULT GetIsStub(BOOL* isStub)
         {
             return ((delegate* unmanaged<IAppxBundleManifestPackageInfo4*, BOOL*, int>)(lpVtbl[3]))((IAppxBundleManifestPackageInfo4*)Unsafe.AsPointer(ref this), isStub);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetIsStub(BOOL* isStub);
         }
 
         public partial struct Vtbl

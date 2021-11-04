@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("BBA65864-965F-4A5F-855F-F074BDBF3A7B")]
     [NativeTypeName("struct IAppxBundleFactory : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IAppxBundleFactory
+    public unsafe partial struct IAppxBundleFactory : IAppxBundleFactory.Interface
     {
         public void** lpVtbl;
 
@@ -58,6 +58,18 @@ namespace TerraFX.Interop
         public HRESULT CreateBundleManifestReader(IStream* inputStream, IAppxBundleManifestReader** manifestReader)
         {
             return ((delegate* unmanaged<IAppxBundleFactory*, IStream*, IAppxBundleManifestReader**, int>)(lpVtbl[5]))((IAppxBundleFactory*)Unsafe.AsPointer(ref this), inputStream, manifestReader);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT CreateBundleWriter(IStream* outputStream, [NativeTypeName("UINT64")] ulong bundleVersion, IAppxBundleWriter** bundleWriter);
+
+            [VtblIndex(4)]
+            HRESULT CreateBundleReader(IStream* inputStream, IAppxBundleReader** bundleReader);
+
+            [VtblIndex(5)]
+            HRESULT CreateBundleManifestReader(IStream* inputStream, IAppxBundleManifestReader** manifestReader);
         }
 
         public partial struct Vtbl

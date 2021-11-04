@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("9B7E4C09-342C-4106-A19F-4F2704F689F0")]
     [NativeTypeName("struct ID3D10DepthStencilView : ID3D10View")]
     [NativeInheritance("ID3D10View")]
-    public unsafe partial struct ID3D10DepthStencilView
+    public unsafe partial struct ID3D10DepthStencilView : ID3D10DepthStencilView.Interface
     {
         public void** lpVtbl;
 
@@ -79,6 +79,12 @@ namespace TerraFX.Interop
         public void GetDesc(D3D10_DEPTH_STENCIL_VIEW_DESC* pDesc)
         {
             ((delegate* unmanaged<ID3D10DepthStencilView*, D3D10_DEPTH_STENCIL_VIEW_DESC*, void>)(lpVtbl[8]))((ID3D10DepthStencilView*)Unsafe.AsPointer(ref this), pDesc);
+        }
+
+        public interface Interface : ID3D10View.Interface
+        {
+            [VtblIndex(8)]
+            void GetDesc(D3D10_DEPTH_STENCIL_VIEW_DESC* pDesc);
         }
 
         public partial struct Vtbl

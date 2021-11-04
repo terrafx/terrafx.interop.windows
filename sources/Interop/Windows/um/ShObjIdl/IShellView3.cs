@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("EC39FA88-F8AF-41C5-8421-38BED28F4673")]
     [NativeTypeName("struct IShellView3 : IShellView2")]
     [NativeInheritance("IShellView2")]
-    public unsafe partial struct IShellView3
+    public unsafe partial struct IShellView3 : IShellView3.Interface
     {
         public void** lpVtbl;
 
@@ -163,6 +163,12 @@ namespace TerraFX.Interop
         public HRESULT CreateViewWindow3(IShellBrowser* psbOwner, IShellView* psvPrev, [NativeTypeName("SV3CVW3_FLAGS")] uint dwViewFlags, FOLDERFLAGS dwMask, FOLDERFLAGS dwFlags, FOLDERVIEWMODE fvMode, [NativeTypeName("const SHELLVIEWID *")] Guid* pvid, [NativeTypeName("const RECT *")] RECT* prcView, HWND* phwndView)
         {
             return ((delegate* unmanaged<IShellView3*, IShellBrowser*, IShellView*, uint, FOLDERFLAGS, FOLDERFLAGS, FOLDERVIEWMODE, Guid*, RECT*, HWND*, int>)(lpVtbl[20]))((IShellView3*)Unsafe.AsPointer(ref this), psbOwner, psvPrev, dwViewFlags, dwMask, dwFlags, fvMode, pvid, prcView, phwndView);
+        }
+
+        public interface Interface : IShellView2.Interface
+        {
+            [VtblIndex(20)]
+            HRESULT CreateViewWindow3(IShellBrowser* psbOwner, IShellView* psvPrev, [NativeTypeName("SV3CVW3_FLAGS")] uint dwViewFlags, FOLDERFLAGS dwMask, FOLDERFLAGS dwFlags, FOLDERVIEWMODE fvMode, [NativeTypeName("const SHELLVIEWID *")] Guid* pvid, [NativeTypeName("const RECT *")] RECT* prcView, HWND* phwndView);
         }
 
         public partial struct Vtbl

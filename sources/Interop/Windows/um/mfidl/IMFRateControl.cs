@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("88DDCD21-03C3-4275-91ED-55EE3929328F")]
     [NativeTypeName("struct IMFRateControl : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IMFRateControl
+    public unsafe partial struct IMFRateControl : IMFRateControl.Interface
     {
         public void** lpVtbl;
 
@@ -51,6 +51,15 @@ namespace TerraFX.Interop
         public HRESULT GetRate(BOOL* pfThin, float* pflRate)
         {
             return ((delegate* unmanaged<IMFRateControl*, BOOL*, float*, int>)(lpVtbl[4]))((IMFRateControl*)Unsafe.AsPointer(ref this), pfThin, pflRate);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT SetRate(BOOL fThin, float flRate);
+
+            [VtblIndex(4)]
+            HRESULT GetRate(BOOL* pfThin, float* pflRate);
         }
 
         public partial struct Vtbl

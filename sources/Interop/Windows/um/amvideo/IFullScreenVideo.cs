@@ -10,7 +10,7 @@ namespace TerraFX.Interop
 {
     [NativeTypeName("struct IFullScreenVideo : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IFullScreenVideo
+    public unsafe partial struct IFullScreenVideo : IFullScreenVideo.Interface
     {
         public void** lpVtbl;
 
@@ -154,6 +154,60 @@ namespace TerraFX.Interop
         public HRESULT SetDefault()
         {
             return ((delegate* unmanaged<IFullScreenVideo*, int>)(lpVtbl[19]))((IFullScreenVideo*)Unsafe.AsPointer(ref this));
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT CountModes([NativeTypeName("long *")] int* pModes);
+
+            [VtblIndex(4)]
+            HRESULT GetModeInfo([NativeTypeName("long")] int Mode, [NativeTypeName("long *")] int* pWidth, [NativeTypeName("long *")] int* pHeight, [NativeTypeName("long *")] int* pDepth);
+
+            [VtblIndex(5)]
+            HRESULT GetCurrentMode([NativeTypeName("long *")] int* pMode);
+
+            [VtblIndex(6)]
+            HRESULT IsModeAvailable([NativeTypeName("long")] int Mode);
+
+            [VtblIndex(7)]
+            HRESULT IsModeEnabled([NativeTypeName("long")] int Mode);
+
+            [VtblIndex(8)]
+            HRESULT SetEnabled([NativeTypeName("long")] int Mode, [NativeTypeName("long")] int bEnabled);
+
+            [VtblIndex(9)]
+            HRESULT GetClipFactor([NativeTypeName("long *")] int* pClipFactor);
+
+            [VtblIndex(10)]
+            HRESULT SetClipFactor([NativeTypeName("long")] int ClipFactor);
+
+            [VtblIndex(11)]
+            HRESULT SetMessageDrain(HWND hwnd);
+
+            [VtblIndex(12)]
+            HRESULT GetMessageDrain(HWND* hwnd);
+
+            [VtblIndex(13)]
+            HRESULT SetMonitor([NativeTypeName("long")] int Monitor);
+
+            [VtblIndex(14)]
+            HRESULT GetMonitor([NativeTypeName("long *")] int* Monitor);
+
+            [VtblIndex(15)]
+            HRESULT HideOnDeactivate([NativeTypeName("long")] int Hide);
+
+            [VtblIndex(16)]
+            HRESULT IsHideOnDeactivate();
+
+            [VtblIndex(17)]
+            HRESULT SetCaption([NativeTypeName("BSTR")] ushort* strCaption);
+
+            [VtblIndex(18)]
+            HRESULT GetCaption([NativeTypeName("BSTR *")] ushort** pstrCaption);
+
+            [VtblIndex(19)]
+            HRESULT SetDefault();
         }
 
         public partial struct Vtbl

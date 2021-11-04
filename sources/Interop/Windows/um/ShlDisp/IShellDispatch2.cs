@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("A4C6892C-3BA9-11D2-9DEA-00C04FB16162")]
     [NativeTypeName("struct IShellDispatch2 : IShellDispatch")]
     [NativeInheritance("IShellDispatch")]
-    public unsafe partial struct IShellDispatch2
+    public unsafe partial struct IShellDispatch2 : IShellDispatch2.Interface
     {
         public void** lpVtbl;
 
@@ -289,6 +289,36 @@ namespace TerraFX.Interop
         public HRESULT ShowBrowserBar([NativeTypeName("BSTR")] ushort* bstrClsid, VARIANT bShow, VARIANT* pSuccess)
         {
             return ((delegate* unmanaged<IShellDispatch2*, ushort*, VARIANT, VARIANT*, int>)(lpVtbl[38]))((IShellDispatch2*)Unsafe.AsPointer(ref this), bstrClsid, bShow, pSuccess);
+        }
+
+        public interface Interface : IShellDispatch.Interface
+        {
+            [VtblIndex(30)]
+            HRESULT IsRestricted([NativeTypeName("BSTR")] ushort* Group, [NativeTypeName("BSTR")] ushort* Restriction, [NativeTypeName("long *")] int* plRestrictValue);
+
+            [VtblIndex(31)]
+            HRESULT ShellExecuteW([NativeTypeName("BSTR")] ushort* File, VARIANT vArgs, VARIANT vDir, VARIANT vOperation, VARIANT vShow);
+
+            [VtblIndex(32)]
+            HRESULT FindPrinter([NativeTypeName("BSTR")] ushort* name, [NativeTypeName("BSTR")] ushort* location, [NativeTypeName("BSTR")] ushort* model);
+
+            [VtblIndex(33)]
+            HRESULT GetSystemInformation([NativeTypeName("BSTR")] ushort* name, VARIANT* pv);
+
+            [VtblIndex(34)]
+            HRESULT ServiceStart([NativeTypeName("BSTR")] ushort* ServiceName, VARIANT Persistent, VARIANT* pSuccess);
+
+            [VtblIndex(35)]
+            HRESULT ServiceStop([NativeTypeName("BSTR")] ushort* ServiceName, VARIANT Persistent, VARIANT* pSuccess);
+
+            [VtblIndex(36)]
+            HRESULT IsServiceRunning([NativeTypeName("BSTR")] ushort* ServiceName, VARIANT* pRunning);
+
+            [VtblIndex(37)]
+            HRESULT CanStartStopService([NativeTypeName("BSTR")] ushort* ServiceName, VARIANT* pCanStartStop);
+
+            [VtblIndex(38)]
+            HRESULT ShowBrowserBar([NativeTypeName("BSTR")] ushort* bstrClsid, VARIANT bShow, VARIANT* pSuccess);
         }
 
         public partial struct Vtbl

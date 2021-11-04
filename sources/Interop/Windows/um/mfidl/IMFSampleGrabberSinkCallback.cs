@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("8C7B80BF-EE42-4B59-B1DF-55668E1BDCA8")]
     [NativeTypeName("struct IMFSampleGrabberSinkCallback : IMFClockStateSink")]
     [NativeInheritance("IMFClockStateSink")]
-    public unsafe partial struct IMFSampleGrabberSinkCallback
+    public unsafe partial struct IMFSampleGrabberSinkCallback : IMFSampleGrabberSinkCallback.Interface
     {
         public void** lpVtbl;
 
@@ -93,6 +93,18 @@ namespace TerraFX.Interop
         public HRESULT OnShutdown()
         {
             return ((delegate* unmanaged<IMFSampleGrabberSinkCallback*, int>)(lpVtbl[10]))((IMFSampleGrabberSinkCallback*)Unsafe.AsPointer(ref this));
+        }
+
+        public interface Interface : IMFClockStateSink.Interface
+        {
+            [VtblIndex(8)]
+            HRESULT OnSetPresentationClock(IMFPresentationClock* pPresentationClock);
+
+            [VtblIndex(9)]
+            HRESULT OnProcessSample([NativeTypeName("const GUID &")] Guid* guidMajorMediaType, [NativeTypeName("DWORD")] uint dwSampleFlags, [NativeTypeName("LONGLONG")] long llSampleTime, [NativeTypeName("LONGLONG")] long llSampleDuration, [NativeTypeName("const BYTE *")] byte* pSampleBuffer, [NativeTypeName("DWORD")] uint dwSampleSize);
+
+            [VtblIndex(10)]
+            HRESULT OnShutdown();
         }
 
         public partial struct Vtbl

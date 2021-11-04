@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("0000000F-0000-0000-C000-000000000046")]
     [NativeTypeName("struct IMoniker : IPersistStream")]
     [NativeInheritance("IPersistStream")]
-    public unsafe partial struct IMoniker
+    public unsafe partial struct IMoniker : IMoniker.Interface
     {
         public void** lpVtbl;
 
@@ -177,6 +177,54 @@ namespace TerraFX.Interop
         public HRESULT IsSystemMoniker([NativeTypeName("DWORD *")] uint* pdwMksys)
         {
             return ((delegate* unmanaged<IMoniker*, uint*, int>)(lpVtbl[22]))((IMoniker*)Unsafe.AsPointer(ref this), pdwMksys);
+        }
+
+        public interface Interface : IPersistStream.Interface
+        {
+            [VtblIndex(8)]
+            HRESULT BindToObject(IBindCtx* pbc, IMoniker* pmkToLeft, [NativeTypeName("const IID &")] Guid* riidResult, void** ppvResult);
+
+            [VtblIndex(9)]
+            HRESULT BindToStorage(IBindCtx* pbc, IMoniker* pmkToLeft, [NativeTypeName("const IID &")] Guid* riid, void** ppvObj);
+
+            [VtblIndex(10)]
+            HRESULT Reduce(IBindCtx* pbc, [NativeTypeName("DWORD")] uint dwReduceHowFar, IMoniker** ppmkToLeft, IMoniker** ppmkReduced);
+
+            [VtblIndex(11)]
+            HRESULT ComposeWith(IMoniker* pmkRight, BOOL fOnlyIfNotGeneric, IMoniker** ppmkComposite);
+
+            [VtblIndex(12)]
+            HRESULT Enum(BOOL fForward, IEnumMoniker** ppenumMoniker);
+
+            [VtblIndex(13)]
+            HRESULT IsEqual(IMoniker* pmkOtherMoniker);
+
+            [VtblIndex(14)]
+            HRESULT Hash([NativeTypeName("DWORD *")] uint* pdwHash);
+
+            [VtblIndex(15)]
+            HRESULT IsRunning(IBindCtx* pbc, IMoniker* pmkToLeft, IMoniker* pmkNewlyRunning);
+
+            [VtblIndex(16)]
+            HRESULT GetTimeOfLastChange(IBindCtx* pbc, IMoniker* pmkToLeft, FILETIME* pFileTime);
+
+            [VtblIndex(17)]
+            HRESULT Inverse(IMoniker** ppmk);
+
+            [VtblIndex(18)]
+            HRESULT CommonPrefixWith(IMoniker* pmkOther, IMoniker** ppmkPrefix);
+
+            [VtblIndex(19)]
+            HRESULT RelativePathTo(IMoniker* pmkOther, IMoniker** ppmkRelPath);
+
+            [VtblIndex(20)]
+            HRESULT GetDisplayName(IBindCtx* pbc, IMoniker* pmkToLeft, [NativeTypeName("LPOLESTR *")] ushort** ppszDisplayName);
+
+            [VtblIndex(21)]
+            HRESULT ParseDisplayName(IBindCtx* pbc, IMoniker* pmkToLeft, [NativeTypeName("LPOLESTR")] ushort* pszDisplayName, [NativeTypeName("ULONG *")] uint* pchEaten, IMoniker** ppmkOut);
+
+            [VtblIndex(22)]
+            HRESULT IsSystemMoniker([NativeTypeName("DWORD *")] uint* pdwMksys);
         }
 
         public partial struct Vtbl

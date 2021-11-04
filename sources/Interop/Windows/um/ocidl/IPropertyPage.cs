@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("B196B28D-BAB4-101A-B69C-00AA00341D07")]
     [NativeTypeName("struct IPropertyPage : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IPropertyPage
+    public unsafe partial struct IPropertyPage : IPropertyPage.Interface
     {
         public void** lpVtbl;
 
@@ -114,6 +114,42 @@ namespace TerraFX.Interop
         public HRESULT TranslateAccelerator(MSG* pMsg)
         {
             return ((delegate* unmanaged<IPropertyPage*, MSG*, int>)(lpVtbl[13]))((IPropertyPage*)Unsafe.AsPointer(ref this), pMsg);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT SetPageSite(IPropertyPageSite* pPageSite);
+
+            [VtblIndex(4)]
+            HRESULT Activate(HWND hWndParent, [NativeTypeName("LPCRECT")] RECT* pRect, BOOL bModal);
+
+            [VtblIndex(5)]
+            HRESULT Deactivate();
+
+            [VtblIndex(6)]
+            HRESULT GetPageInfo(PROPPAGEINFO* pPageInfo);
+
+            [VtblIndex(7)]
+            HRESULT SetObjects([NativeTypeName("ULONG")] uint cObjects, IUnknown** ppUnk);
+
+            [VtblIndex(8)]
+            HRESULT Show(uint nCmdShow);
+
+            [VtblIndex(9)]
+            HRESULT Move([NativeTypeName("LPCRECT")] RECT* pRect);
+
+            [VtblIndex(10)]
+            HRESULT IsPageDirty();
+
+            [VtblIndex(11)]
+            HRESULT Apply();
+
+            [VtblIndex(12)]
+            HRESULT Help([NativeTypeName("LPCOLESTR")] ushort* pszHelpDir);
+
+            [VtblIndex(13)]
+            HRESULT TranslateAccelerator(MSG* pMsg);
         }
 
         public partial struct Vtbl

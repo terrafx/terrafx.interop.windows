@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("22D44C94-A419-4542-A272-AE26093ECECF")]
     [NativeTypeName("struct ITextStoreACPSink : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct ITextStoreACPSink
+    public unsafe partial struct ITextStoreACPSink : ITextStoreACPSink.Interface
     {
         public void** lpVtbl;
 
@@ -93,6 +93,33 @@ namespace TerraFX.Interop
         public HRESULT OnEndEditTransaction()
         {
             return ((delegate* unmanaged<ITextStoreACPSink*, int>)(lpVtbl[10]))((ITextStoreACPSink*)Unsafe.AsPointer(ref this));
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT OnTextChange([NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("const TS_TEXTCHANGE *")] TS_TEXTCHANGE* pChange);
+
+            [VtblIndex(4)]
+            HRESULT OnSelectionChange();
+
+            [VtblIndex(5)]
+            HRESULT OnLayoutChange(TsLayoutCode lcode, [NativeTypeName("TsViewCookie")] uint vcView);
+
+            [VtblIndex(6)]
+            HRESULT OnStatusChange([NativeTypeName("DWORD")] uint dwFlags);
+
+            [VtblIndex(7)]
+            HRESULT OnAttrsChange([NativeTypeName("LONG")] int acpStart, [NativeTypeName("LONG")] int acpEnd, [NativeTypeName("ULONG")] uint cAttrs, [NativeTypeName("const TS_ATTRID *")] Guid* paAttrs);
+
+            [VtblIndex(8)]
+            HRESULT OnLockGranted([NativeTypeName("DWORD")] uint dwLockFlags);
+
+            [VtblIndex(9)]
+            HRESULT OnStartEditTransaction();
+
+            [VtblIndex(10)]
+            HRESULT OnEndEditTransaction();
         }
 
         public partial struct Vtbl

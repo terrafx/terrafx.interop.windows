@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("3050F4A1-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct IHTMLTableRow2 : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct IHTMLTableRow2
+    public unsafe partial struct IHTMLTableRow2 : IHTMLTableRow2.Interface
     {
         public void** lpVtbl;
 
@@ -79,6 +79,15 @@ namespace TerraFX.Interop
         public HRESULT get_height(VARIANT* p)
         {
             return ((delegate* unmanaged<IHTMLTableRow2*, VARIANT*, int>)(lpVtbl[8]))((IHTMLTableRow2*)Unsafe.AsPointer(ref this), p);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT put_height(VARIANT v);
+
+            [VtblIndex(8)]
+            HRESULT get_height(VARIANT* p);
         }
 
         public partial struct Vtbl

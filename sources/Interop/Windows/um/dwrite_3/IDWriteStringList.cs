@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("CFEE3140-1157-47CA-8B85-31BFCF3F2D0E")]
     [NativeTypeName("struct IDWriteStringList : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IDWriteStringList
+    public unsafe partial struct IDWriteStringList : IDWriteStringList.Interface
     {
         public void** lpVtbl;
 
@@ -73,6 +73,25 @@ namespace TerraFX.Interop
         public HRESULT GetString([NativeTypeName("UINT32")] uint listIndex, [NativeTypeName("WCHAR *")] ushort* stringBuffer, [NativeTypeName("UINT32")] uint stringBufferSize)
         {
             return ((delegate* unmanaged<IDWriteStringList*, uint, ushort*, uint, int>)(lpVtbl[7]))((IDWriteStringList*)Unsafe.AsPointer(ref this), listIndex, stringBuffer, stringBufferSize);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            [return: NativeTypeName("UINT32")]
+            uint GetCount();
+
+            [VtblIndex(4)]
+            HRESULT GetLocaleNameLength([NativeTypeName("UINT32")] uint listIndex, [NativeTypeName("UINT32 *")] uint* length);
+
+            [VtblIndex(5)]
+            HRESULT GetLocaleName([NativeTypeName("UINT32")] uint listIndex, [NativeTypeName("WCHAR *")] ushort* localeName, [NativeTypeName("UINT32")] uint size);
+
+            [VtblIndex(6)]
+            HRESULT GetStringLength([NativeTypeName("UINT32")] uint listIndex, [NativeTypeName("UINT32 *")] uint* length);
+
+            [VtblIndex(7)]
+            HRESULT GetString([NativeTypeName("UINT32")] uint listIndex, [NativeTypeName("WCHAR *")] ushort* stringBuffer, [NativeTypeName("UINT32")] uint stringBufferSize);
         }
 
         public partial struct Vtbl

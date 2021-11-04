@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("83C78B3C-D88B-4950-AA6E-22B8D22AABD3")]
     [NativeTypeName("struct ICorrelationVectorInformation : IInspectable")]
     [NativeInheritance("IInspectable")]
-    public unsafe partial struct ICorrelationVectorInformation
+    public unsafe partial struct ICorrelationVectorInformation : ICorrelationVectorInformation.Interface
     {
         public void** lpVtbl;
 
@@ -79,6 +79,18 @@ namespace TerraFX.Interop
         public HRESULT put_NextCorrelationVectorForThread(HSTRING cv)
         {
             return ((delegate* unmanaged<ICorrelationVectorInformation*, HSTRING, int>)(lpVtbl[8]))((ICorrelationVectorInformation*)Unsafe.AsPointer(ref this), cv);
+        }
+
+        public interface Interface : IInspectable.Interface
+        {
+            [VtblIndex(6)]
+            HRESULT get_LastCorrelationVectorForThread(HSTRING* cv);
+
+            [VtblIndex(7)]
+            HRESULT get_NextCorrelationVectorForThread(HSTRING* cv);
+
+            [VtblIndex(8)]
+            HRESULT put_NextCorrelationVectorForThread(HSTRING cv);
         }
 
         public partial struct Vtbl

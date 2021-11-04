@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("AE2DE0E4-5BCA-4F2D-AA46-5D13F8FDB3A9")]
     [NativeTypeName("struct IPart : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IPart
+    public unsafe partial struct IPart : IPart.Interface
     {
         public void** lpVtbl;
 
@@ -128,6 +128,48 @@ namespace TerraFX.Interop
         public HRESULT UnregisterControlChangeCallback(IControlChangeNotify* pNotify)
         {
             return ((delegate* unmanaged<IPart*, IControlChangeNotify*, int>)(lpVtbl[15]))((IPart*)Unsafe.AsPointer(ref this), pNotify);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetName([NativeTypeName("LPWSTR *")] ushort** ppwstrName);
+
+            [VtblIndex(4)]
+            HRESULT GetLocalId(uint* pnId);
+
+            [VtblIndex(5)]
+            HRESULT GetGlobalId([NativeTypeName("LPWSTR *")] ushort** ppwstrGlobalId);
+
+            [VtblIndex(6)]
+            HRESULT GetPartType(PartType* pPartType);
+
+            [VtblIndex(7)]
+            HRESULT GetSubType(Guid* pSubType);
+
+            [VtblIndex(8)]
+            HRESULT GetControlInterfaceCount(uint* pCount);
+
+            [VtblIndex(9)]
+            HRESULT GetControlInterface(uint nIndex, IControlInterface** ppInterfaceDesc);
+
+            [VtblIndex(10)]
+            HRESULT EnumPartsIncoming(IPartsList** ppParts);
+
+            [VtblIndex(11)]
+            HRESULT EnumPartsOutgoing(IPartsList** ppParts);
+
+            [VtblIndex(12)]
+            HRESULT GetTopologyObject(IDeviceTopology** ppTopology);
+
+            [VtblIndex(13)]
+            HRESULT Activate([NativeTypeName("DWORD")] uint dwClsContext, [NativeTypeName("const IID &")] Guid* refiid, void** ppvObject);
+
+            [VtblIndex(14)]
+            HRESULT RegisterControlChangeCallback([NativeTypeName("const GUID &")] Guid* riid, IControlChangeNotify* pNotify);
+
+            [VtblIndex(15)]
+            HRESULT UnregisterControlChangeCallback(IControlChangeNotify* pNotify);
         }
 
         public partial struct Vtbl

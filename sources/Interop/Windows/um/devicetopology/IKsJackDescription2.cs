@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("478F3A9B-E0C9-4827-9228-6F5505FFE76A")]
     [NativeTypeName("struct IKsJackDescription2 : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IKsJackDescription2
+    public unsafe partial struct IKsJackDescription2 : IKsJackDescription2.Interface
     {
         public void** lpVtbl;
 
@@ -51,6 +51,15 @@ namespace TerraFX.Interop
         public HRESULT GetJackDescription2(uint nJack, KSJACK_DESCRIPTION2* pDescription2)
         {
             return ((delegate* unmanaged<IKsJackDescription2*, uint, KSJACK_DESCRIPTION2*, int>)(lpVtbl[4]))((IKsJackDescription2*)Unsafe.AsPointer(ref this), nJack, pDescription2);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetJackCount(uint* pcJacks);
+
+            [VtblIndex(4)]
+            HRESULT GetJackDescription2(uint nJack, KSJACK_DESCRIPTION2* pDescription2);
         }
 
         public partial struct Vtbl

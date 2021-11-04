@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("E1C4BF0E-2D53-11D2-93E1-0060B067B86E")]
     [NativeTypeName("struct IActiveIME2 : IActiveIME")]
     [NativeInheritance("IActiveIME")]
-    public unsafe partial struct IActiveIME2
+    public unsafe partial struct IActiveIME2 : IActiveIME2.Interface
     {
         public void** lpVtbl;
 
@@ -170,6 +170,15 @@ namespace TerraFX.Interop
         public HRESULT Unsleep(BOOL fDead)
         {
             return ((delegate* unmanaged<IActiveIME2*, BOOL, int>)(lpVtbl[21]))((IActiveIME2*)Unsafe.AsPointer(ref this), fDead);
+        }
+
+        public interface Interface : IActiveIME.Interface
+        {
+            [VtblIndex(20)]
+            HRESULT Sleep();
+
+            [VtblIndex(21)]
+            HRESULT Unsleep(BOOL fDead);
         }
 
         public partial struct Vtbl

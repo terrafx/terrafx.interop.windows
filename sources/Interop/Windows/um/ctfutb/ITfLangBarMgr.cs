@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("87955690-E627-11D2-8DDB-00105A2799B5")]
     [NativeTypeName("struct ITfLangBarMgr : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct ITfLangBarMgr
+    public unsafe partial struct ITfLangBarMgr : ITfLangBarMgr.Interface
     {
         public void** lpVtbl;
 
@@ -100,6 +100,36 @@ namespace TerraFX.Interop
         public HRESULT GetShowFloatingStatus([NativeTypeName("DWORD *")] uint* pdwFlags)
         {
             return ((delegate* unmanaged<ITfLangBarMgr*, uint*, int>)(lpVtbl[11]))((ITfLangBarMgr*)Unsafe.AsPointer(ref this), pdwFlags);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT AdviseEventSink(ITfLangBarEventSink* pSink, HWND hwnd, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("DWORD *")] uint* pdwCookie);
+
+            [VtblIndex(4)]
+            HRESULT UnadviseEventSink([NativeTypeName("DWORD")] uint dwCookie);
+
+            [VtblIndex(5)]
+            HRESULT GetThreadMarshalInterface([NativeTypeName("DWORD")] uint dwThreadId, [NativeTypeName("DWORD")] uint dwType, [NativeTypeName("const IID &")] Guid* riid, IUnknown** ppunk);
+
+            [VtblIndex(6)]
+            HRESULT GetThreadLangBarItemMgr([NativeTypeName("DWORD")] uint dwThreadId, ITfLangBarItemMgr** pplbi, [NativeTypeName("DWORD *")] uint* pdwThreadid);
+
+            [VtblIndex(7)]
+            HRESULT GetInputProcessorProfiles([NativeTypeName("DWORD")] uint dwThreadId, ITfInputProcessorProfiles** ppaip, [NativeTypeName("DWORD *")] uint* pdwThreadid);
+
+            [VtblIndex(8)]
+            HRESULT RestoreLastFocus([NativeTypeName("DWORD *")] uint* pdwThreadId, BOOL fPrev);
+
+            [VtblIndex(9)]
+            HRESULT SetModalInput(ITfLangBarEventSink* pSink, [NativeTypeName("DWORD")] uint dwThreadId, [NativeTypeName("DWORD")] uint dwFlags);
+
+            [VtblIndex(10)]
+            HRESULT ShowFloating([NativeTypeName("DWORD")] uint dwFlags);
+
+            [VtblIndex(11)]
+            HRESULT GetShowFloatingStatus([NativeTypeName("DWORD *")] uint* pdwFlags);
         }
 
         public partial struct Vtbl

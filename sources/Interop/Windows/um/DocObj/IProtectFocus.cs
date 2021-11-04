@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("D81F90A3-8156-44F7-AD28-5ABB87003274")]
     [NativeTypeName("struct IProtectFocus : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IProtectFocus
+    public unsafe partial struct IProtectFocus : IProtectFocus.Interface
     {
         public void** lpVtbl;
 
@@ -44,6 +44,12 @@ namespace TerraFX.Interop
         public HRESULT AllowFocusChange(BOOL* pfAllow)
         {
             return ((delegate* unmanaged<IProtectFocus*, BOOL*, int>)(lpVtbl[3]))((IProtectFocus*)Unsafe.AsPointer(ref this), pfAllow);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT AllowFocusChange(BOOL* pfAllow);
         }
 
         public partial struct Vtbl

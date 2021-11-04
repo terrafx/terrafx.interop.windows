@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("9B8B1336-00A5-4668-92B7-CED5D8BF9B7B")]
     [NativeTypeName("struct ID2D1VertexBuffer : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct ID2D1VertexBuffer
+    public unsafe partial struct ID2D1VertexBuffer : ID2D1VertexBuffer.Interface
     {
         public void** lpVtbl;
 
@@ -51,6 +51,15 @@ namespace TerraFX.Interop
         public HRESULT Unmap()
         {
             return ((delegate* unmanaged<ID2D1VertexBuffer*, int>)(lpVtbl[4]))((ID2D1VertexBuffer*)Unsafe.AsPointer(ref this));
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT Map(byte** data, [NativeTypeName("UINT32")] uint bufferSize);
+
+            [VtblIndex(4)]
+            HRESULT Unmap();
         }
 
         public partial struct Vtbl

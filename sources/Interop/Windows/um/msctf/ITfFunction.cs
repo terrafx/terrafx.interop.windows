@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("DB593490-098F-11D3-8DF0-00105A2799B5")]
     [NativeTypeName("struct ITfFunction : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct ITfFunction
+    public unsafe partial struct ITfFunction : ITfFunction.Interface
     {
         public void** lpVtbl;
 
@@ -44,6 +44,12 @@ namespace TerraFX.Interop
         public HRESULT GetDisplayName([NativeTypeName("BSTR *")] ushort** pbstrName)
         {
             return ((delegate* unmanaged<ITfFunction*, ushort**, int>)(lpVtbl[3]))((ITfFunction*)Unsafe.AsPointer(ref this), pbstrName);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetDisplayName([NativeTypeName("BSTR *")] ushort** pbstrName);
         }
 
         public partial struct Vtbl

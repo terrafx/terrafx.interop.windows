@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("4B35D0CD-1E15-4258-9C98-1B1333F6DD3B")]
     [NativeTypeName("struct ID3D11Asynchronous : ID3D11DeviceChild")]
     [NativeInheritance("ID3D11DeviceChild")]
-    public unsafe partial struct ID3D11Asynchronous
+    public unsafe partial struct ID3D11Asynchronous : ID3D11Asynchronous.Interface
     {
         public void** lpVtbl;
 
@@ -72,6 +72,12 @@ namespace TerraFX.Interop
         public uint GetDataSize()
         {
             return ((delegate* unmanaged<ID3D11Asynchronous*, uint>)(lpVtbl[7]))((ID3D11Asynchronous*)Unsafe.AsPointer(ref this));
+        }
+
+        public interface Interface : ID3D11DeviceChild.Interface
+        {
+            [VtblIndex(7)]
+            uint GetDataSize();
         }
 
         public partial struct Vtbl

@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("48570B85-D1EE-4FCD-A250-EB350722B037")]
     [NativeTypeName("struct ID3D11Buffer : ID3D11Resource")]
     [NativeInheritance("ID3D11Resource")]
-    public unsafe partial struct ID3D11Buffer
+    public unsafe partial struct ID3D11Buffer : ID3D11Buffer.Interface
     {
         public void** lpVtbl;
 
@@ -93,6 +93,12 @@ namespace TerraFX.Interop
         public void GetDesc(D3D11_BUFFER_DESC* pDesc)
         {
             ((delegate* unmanaged<ID3D11Buffer*, D3D11_BUFFER_DESC*, void>)(lpVtbl[10]))((ID3D11Buffer*)Unsafe.AsPointer(ref this), pDesc);
+        }
+
+        public interface Interface : ID3D11Resource.Interface
+        {
+            [VtblIndex(10)]
+            void GetDesc(D3D11_BUFFER_DESC* pDesc);
         }
 
         public partial struct Vtbl

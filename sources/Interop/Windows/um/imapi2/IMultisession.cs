@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("27354150-7F64-5B0F-8F00-5D77AFBE261E")]
     [NativeTypeName("struct IMultisession : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct IMultisession
+    public unsafe partial struct IMultisession : IMultisession.Interface
     {
         public void** lpVtbl;
 
@@ -93,6 +93,21 @@ namespace TerraFX.Interop
         public HRESULT get_ImportRecorder(IDiscRecorder2** value)
         {
             return ((delegate* unmanaged<IMultisession*, IDiscRecorder2**, int>)(lpVtbl[10]))((IMultisession*)Unsafe.AsPointer(ref this), value);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT get_IsSupportedOnCurrentMediaState([NativeTypeName("VARIANT_BOOL *")] short* value);
+
+            [VtblIndex(8)]
+            HRESULT put_InUse([NativeTypeName("VARIANT_BOOL")] short value);
+
+            [VtblIndex(9)]
+            HRESULT get_InUse([NativeTypeName("VARIANT_BOOL *")] short* value);
+
+            [VtblIndex(10)]
+            HRESULT get_ImportRecorder(IDiscRecorder2** value);
         }
 
         public partial struct Vtbl

@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("3FD03D36-4EB1-424A-A582-494ECB8BA813")]
     [NativeTypeName("struct ID3D12LifetimeTracker : ID3D12DeviceChild")]
     [NativeInheritance("ID3D12DeviceChild")]
-    public unsafe partial struct ID3D12LifetimeTracker
+    public unsafe partial struct ID3D12LifetimeTracker : ID3D12LifetimeTracker.Interface
     {
         public void** lpVtbl;
 
@@ -79,6 +79,12 @@ namespace TerraFX.Interop
         public HRESULT DestroyOwnedObject(ID3D12DeviceChild* pObject)
         {
             return ((delegate* unmanaged<ID3D12LifetimeTracker*, ID3D12DeviceChild*, int>)(lpVtbl[8]))((ID3D12LifetimeTracker*)Unsafe.AsPointer(ref this), pObject);
+        }
+
+        public interface Interface : ID3D12DeviceChild.Interface
+        {
+            [VtblIndex(8)]
+            HRESULT DestroyOwnedObject(ID3D12DeviceChild* pObject);
         }
 
         public partial struct Vtbl

@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("5731EAA0-6BC2-4681-A532-92FBB74D7C41")]
     [NativeTypeName("struct ITfInputScope2 : ITfInputScope")]
     [NativeInheritance("ITfInputScope")]
-    public unsafe partial struct ITfInputScope2
+    public unsafe partial struct ITfInputScope2 : ITfInputScope2.Interface
     {
         public void** lpVtbl;
 
@@ -79,6 +79,12 @@ namespace TerraFX.Interop
         public HRESULT EnumWordList(IEnumString** ppEnumString)
         {
             return ((delegate* unmanaged<ITfInputScope2*, IEnumString**, int>)(lpVtbl[8]))((ITfInputScope2*)Unsafe.AsPointer(ref this), ppEnumString);
+        }
+
+        public interface Interface : ITfInputScope.Interface
+        {
+            [VtblIndex(8)]
+            HRESULT EnumWordList(IEnumString** ppEnumString);
         }
 
         public partial struct Vtbl

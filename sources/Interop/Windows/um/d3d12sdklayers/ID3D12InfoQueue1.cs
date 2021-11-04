@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("2852DD88-B484-4C0C-B6B1-67168500E600")]
     [NativeTypeName("struct ID3D12InfoQueue1 : ID3D12InfoQueue")]
     [NativeInheritance("ID3D12InfoQueue")]
-    public unsafe partial struct ID3D12InfoQueue1
+    public unsafe partial struct ID3D12InfoQueue1 : ID3D12InfoQueue1.Interface
     {
         public void** lpVtbl;
 
@@ -302,6 +302,15 @@ namespace TerraFX.Interop
         public HRESULT UnregisterMessageCallback([NativeTypeName("DWORD")] uint CallbackCookie)
         {
             return ((delegate* unmanaged<ID3D12InfoQueue1*, uint, int>)(lpVtbl[39]))((ID3D12InfoQueue1*)Unsafe.AsPointer(ref this), CallbackCookie);
+        }
+
+        public interface Interface : ID3D12InfoQueue.Interface
+        {
+            [VtblIndex(38)]
+            HRESULT RegisterMessageCallback([NativeTypeName("D3D12MessageFunc")] delegate* unmanaged<D3D12_MESSAGE_CATEGORY, D3D12_MESSAGE_SEVERITY, D3D12_MESSAGE_ID, sbyte*, void*, void> CallbackFunc, D3D12_MESSAGE_CALLBACK_FLAGS CallbackFilterFlags, void* pContext, [NativeTypeName("DWORD *")] uint* pCallbackCookie);
+
+            [VtblIndex(39)]
+            HRESULT UnregisterMessageCallback([NativeTypeName("DWORD")] uint CallbackCookie);
         }
 
         public partial struct Vtbl

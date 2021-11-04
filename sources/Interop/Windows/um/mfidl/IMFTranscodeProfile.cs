@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("4ADFDBA3-7AB0-4953-A62B-461E7FF3DA1E")]
     [NativeTypeName("struct IMFTranscodeProfile : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IMFTranscodeProfile
+    public unsafe partial struct IMFTranscodeProfile : IMFTranscodeProfile.Interface
     {
         public void** lpVtbl;
 
@@ -79,6 +79,27 @@ namespace TerraFX.Interop
         public HRESULT GetContainerAttributes(IMFAttributes** ppAttrs)
         {
             return ((delegate* unmanaged<IMFTranscodeProfile*, IMFAttributes**, int>)(lpVtbl[8]))((IMFTranscodeProfile*)Unsafe.AsPointer(ref this), ppAttrs);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT SetAudioAttributes(IMFAttributes* pAttrs);
+
+            [VtblIndex(4)]
+            HRESULT GetAudioAttributes(IMFAttributes** ppAttrs);
+
+            [VtblIndex(5)]
+            HRESULT SetVideoAttributes(IMFAttributes* pAttrs);
+
+            [VtblIndex(6)]
+            HRESULT GetVideoAttributes(IMFAttributes** ppAttrs);
+
+            [VtblIndex(7)]
+            HRESULT SetContainerAttributes(IMFAttributes* pAttrs);
+
+            [VtblIndex(8)]
+            HRESULT GetContainerAttributes(IMFAttributes** ppAttrs);
         }
 
         public partial struct Vtbl

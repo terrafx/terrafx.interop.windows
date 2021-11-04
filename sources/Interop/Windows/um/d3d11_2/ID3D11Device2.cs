@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("9D06DFFA-D1E5-4D07-83A8-1BB123F2F841")]
     [NativeTypeName("struct ID3D11Device2 : ID3D11Device1")]
     [NativeInheritance("ID3D11Device1")]
-    public unsafe partial struct ID3D11Device2
+    public unsafe partial struct ID3D11Device2 : ID3D11Device2.Interface
     {
         public void** lpVtbl;
 
@@ -394,6 +394,21 @@ namespace TerraFX.Interop
         public HRESULT CheckMultisampleQualityLevels1(DXGI_FORMAT Format, uint SampleCount, uint Flags, uint* pNumQualityLevels)
         {
             return ((delegate* unmanaged<ID3D11Device2*, DXGI_FORMAT, uint, uint, uint*, int>)(lpVtbl[53]))((ID3D11Device2*)Unsafe.AsPointer(ref this), Format, SampleCount, Flags, pNumQualityLevels);
+        }
+
+        public interface Interface : ID3D11Device1.Interface
+        {
+            [VtblIndex(50)]
+            void GetImmediateContext2(ID3D11DeviceContext2** ppImmediateContext);
+
+            [VtblIndex(51)]
+            HRESULT CreateDeferredContext2(uint ContextFlags, ID3D11DeviceContext2** ppDeferredContext);
+
+            [VtblIndex(52)]
+            void GetResourceTiling(ID3D11Resource* pTiledResource, uint* pNumTilesForEntireResource, D3D11_PACKED_MIP_DESC* pPackedMipDesc, D3D11_TILE_SHAPE* pStandardTileShapeForNonPackedMips, uint* pNumSubresourceTilings, uint FirstSubresourceTilingToGet, D3D11_SUBRESOURCE_TILING* pSubresourceTilingsForNonPackedMips);
+
+            [VtblIndex(53)]
+            HRESULT CheckMultisampleQualityLevels1(DXGI_FORMAT Format, uint SampleCount, uint Flags, uint* pNumQualityLevels);
         }
 
         public partial struct Vtbl

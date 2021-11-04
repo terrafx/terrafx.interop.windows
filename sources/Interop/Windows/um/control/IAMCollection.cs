@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("56A868B9-0AD4-11CE-B03A-0020AF0BA770")]
     [NativeTypeName("struct IAMCollection : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct IAMCollection
+    public unsafe partial struct IAMCollection : IAMCollection.Interface
     {
         public void** lpVtbl;
 
@@ -86,6 +86,18 @@ namespace TerraFX.Interop
         public HRESULT get__NewEnum(IUnknown** ppUnk)
         {
             return ((delegate* unmanaged<IAMCollection*, IUnknown**, int>)(lpVtbl[9]))((IAMCollection*)Unsafe.AsPointer(ref this), ppUnk);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT get_Count([NativeTypeName("LONG *")] int* plCount);
+
+            [VtblIndex(8)]
+            HRESULT Item([NativeTypeName("long")] int lItem, IUnknown** ppUnk);
+
+            [VtblIndex(9)]
+            HRESULT get__NewEnum(IUnknown** ppUnk);
         }
 
         public partial struct Vtbl

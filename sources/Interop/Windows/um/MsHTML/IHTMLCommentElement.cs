@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("3050F20C-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct IHTMLCommentElement : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct IHTMLCommentElement
+    public unsafe partial struct IHTMLCommentElement : IHTMLCommentElement.Interface
     {
         public void** lpVtbl;
 
@@ -93,6 +93,21 @@ namespace TerraFX.Interop
         public HRESULT get_atomic([NativeTypeName("long *")] int* p)
         {
             return ((delegate* unmanaged<IHTMLCommentElement*, int*, int>)(lpVtbl[10]))((IHTMLCommentElement*)Unsafe.AsPointer(ref this), p);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT put_text([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(8)]
+            HRESULT get_text([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(9)]
+            HRESULT put_atomic([NativeTypeName("long")] int v);
+
+            [VtblIndex(10)]
+            HRESULT get_atomic([NativeTypeName("long *")] int* p);
         }
 
         public partial struct Vtbl

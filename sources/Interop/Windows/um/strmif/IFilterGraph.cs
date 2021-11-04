@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("56A8689F-0AD4-11CE-B03A-0020AF0BA770")]
     [NativeTypeName("struct IFilterGraph : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IFilterGraph
+    public unsafe partial struct IFilterGraph : IFilterGraph.Interface
     {
         public void** lpVtbl;
 
@@ -93,6 +93,33 @@ namespace TerraFX.Interop
         public HRESULT SetDefaultSyncSource()
         {
             return ((delegate* unmanaged<IFilterGraph*, int>)(lpVtbl[10]))((IFilterGraph*)Unsafe.AsPointer(ref this));
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT AddFilter(IBaseFilter* pFilter, [NativeTypeName("LPCWSTR")] ushort* pName);
+
+            [VtblIndex(4)]
+            HRESULT RemoveFilter(IBaseFilter* pFilter);
+
+            [VtblIndex(5)]
+            HRESULT EnumFilters(IEnumFilters** ppEnum);
+
+            [VtblIndex(6)]
+            HRESULT FindFilterByName([NativeTypeName("LPCWSTR")] ushort* pName, IBaseFilter** ppFilter);
+
+            [VtblIndex(7)]
+            HRESULT ConnectDirect(IPin* ppinOut, IPin* ppinIn, [NativeTypeName("const AM_MEDIA_TYPE *")] AM_MEDIA_TYPE* pmt);
+
+            [VtblIndex(8)]
+            HRESULT Reconnect(IPin* ppin);
+
+            [VtblIndex(9)]
+            HRESULT Disconnect(IPin* ppin);
+
+            [VtblIndex(10)]
+            HRESULT SetDefaultSyncSource();
         }
 
         public partial struct Vtbl

@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("3050F684-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct ISelectionServices : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct ISelectionServices
+    public unsafe partial struct ISelectionServices : ISelectionServices.Interface
     {
         public void** lpVtbl;
 
@@ -79,6 +79,27 @@ namespace TerraFX.Interop
         public HRESULT GetSelectionServicesListener(ISelectionServicesListener** ppISelectionServicesListener)
         {
             return ((delegate* unmanaged<ISelectionServices*, ISelectionServicesListener**, int>)(lpVtbl[8]))((ISelectionServices*)Unsafe.AsPointer(ref this), ppISelectionServicesListener);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT SetSelectionType(SELECTION_TYPE eType, ISelectionServicesListener* pIListener);
+
+            [VtblIndex(4)]
+            HRESULT GetMarkupContainer(IMarkupContainer** ppIContainer);
+
+            [VtblIndex(5)]
+            HRESULT AddSegment(IMarkupPointer* pIStart, IMarkupPointer* pIEnd, ISegment** ppISegmentAdded);
+
+            [VtblIndex(6)]
+            HRESULT AddElementSegment(IHTMLElement* pIElement, IElementSegment** ppISegmentAdded);
+
+            [VtblIndex(7)]
+            HRESULT RemoveSegment(ISegment* pISegment);
+
+            [VtblIndex(8)]
+            HRESULT GetSelectionServicesListener(ISelectionServicesListener** ppISelectionServicesListener);
         }
 
         public partial struct Vtbl

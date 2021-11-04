@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("3050F4B1-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct IHTMLDOMTextNode : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct IHTMLDOMTextNode
+    public unsafe partial struct IHTMLDOMTextNode : IHTMLDOMTextNode.Interface
     {
         public void** lpVtbl;
 
@@ -100,6 +100,24 @@ namespace TerraFX.Interop
         public HRESULT splitText([NativeTypeName("long")] int offset, IHTMLDOMNode** pRetNode)
         {
             return ((delegate* unmanaged<IHTMLDOMTextNode*, int, IHTMLDOMNode**, int>)(lpVtbl[11]))((IHTMLDOMTextNode*)Unsafe.AsPointer(ref this), offset, pRetNode);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT put_data([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(8)]
+            HRESULT get_data([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(9)]
+            HRESULT toString([NativeTypeName("BSTR *")] ushort** String);
+
+            [VtblIndex(10)]
+            HRESULT get_length([NativeTypeName("long *")] int* p);
+
+            [VtblIndex(11)]
+            HRESULT splitText([NativeTypeName("long")] int offset, IHTMLDOMNode** pRetNode);
         }
 
         public partial struct Vtbl

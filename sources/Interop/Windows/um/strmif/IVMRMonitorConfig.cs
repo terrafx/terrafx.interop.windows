@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("9CF0B1B6-FBAA-4B7F-88CF-CF1F130A0DCE")]
     [NativeTypeName("struct IVMRMonitorConfig : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IVMRMonitorConfig
+    public unsafe partial struct IVMRMonitorConfig : IVMRMonitorConfig.Interface
     {
         public void** lpVtbl;
 
@@ -72,6 +72,24 @@ namespace TerraFX.Interop
         public HRESULT GetAvailableMonitors(VMRMONITORINFO* pInfo, [NativeTypeName("DWORD")] uint dwMaxInfoArraySize, [NativeTypeName("DWORD *")] uint* pdwNumDevices)
         {
             return ((delegate* unmanaged<IVMRMonitorConfig*, VMRMONITORINFO*, uint, uint*, int>)(lpVtbl[7]))((IVMRMonitorConfig*)Unsafe.AsPointer(ref this), pInfo, dwMaxInfoArraySize, pdwNumDevices);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT SetMonitor([NativeTypeName("const VMRGUID *")] VMRGUID* pGUID);
+
+            [VtblIndex(4)]
+            HRESULT GetMonitor(VMRGUID* pGUID);
+
+            [VtblIndex(5)]
+            HRESULT SetDefaultMonitor([NativeTypeName("const VMRGUID *")] VMRGUID* pGUID);
+
+            [VtblIndex(6)]
+            HRESULT GetDefaultMonitor(VMRGUID* pGUID);
+
+            [VtblIndex(7)]
+            HRESULT GetAvailableMonitors(VMRMONITORINFO* pInfo, [NativeTypeName("DWORD")] uint dwMaxInfoArraySize, [NativeTypeName("DWORD *")] uint* pdwNumDevices);
         }
 
         public partial struct Vtbl

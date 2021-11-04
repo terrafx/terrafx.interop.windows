@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("77A130B0-94FD-11D0-A544-00C04FD7D062")]
     [NativeTypeName("struct IACList : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IACList
+    public unsafe partial struct IACList : IACList.Interface
     {
         public void** lpVtbl;
 
@@ -44,6 +44,12 @@ namespace TerraFX.Interop
         public HRESULT Expand([NativeTypeName("PCWSTR")] ushort* pszExpand)
         {
             return ((delegate* unmanaged<IACList*, ushort*, int>)(lpVtbl[3]))((IACList*)Unsafe.AsPointer(ref this), pszExpand);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT Expand([NativeTypeName("PCWSTR")] ushort* pszExpand);
         }
 
         public partial struct Vtbl

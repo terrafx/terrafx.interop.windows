@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("C62D9C91-7458-47F6-862D-1EF86FB0B278")]
     [NativeTypeName("struct ISpeechAudioStatus : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct ISpeechAudioStatus
+    public unsafe partial struct ISpeechAudioStatus : ISpeechAudioStatus.Interface
     {
         public void** lpVtbl;
 
@@ -100,6 +100,24 @@ namespace TerraFX.Interop
         public HRESULT get_CurrentDevicePosition(VARIANT* CurrentDevicePosition)
         {
             return ((delegate* unmanaged<ISpeechAudioStatus*, VARIANT*, int>)(lpVtbl[11]))((ISpeechAudioStatus*)Unsafe.AsPointer(ref this), CurrentDevicePosition);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT get_FreeBufferSpace([NativeTypeName("long *")] int* FreeBufferSpace);
+
+            [VtblIndex(8)]
+            HRESULT get_NonBlockingIO([NativeTypeName("long *")] int* NonBlockingIO);
+
+            [VtblIndex(9)]
+            HRESULT get_State(SpeechAudioState* State);
+
+            [VtblIndex(10)]
+            HRESULT get_CurrentSeekPosition(VARIANT* CurrentSeekPosition);
+
+            [VtblIndex(11)]
+            HRESULT get_CurrentDevicePosition(VARIANT* CurrentDevicePosition);
         }
 
         public partial struct Vtbl

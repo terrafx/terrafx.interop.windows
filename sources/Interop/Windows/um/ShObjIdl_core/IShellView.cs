@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("000214E3-0000-0000-C000-000000000046")]
     [NativeTypeName("struct IShellView : IOleWindow")]
     [NativeInheritance("IOleWindow")]
-    public unsafe partial struct IShellView
+    public unsafe partial struct IShellView : IShellView.Interface
     {
         public void** lpVtbl;
 
@@ -128,6 +128,42 @@ namespace TerraFX.Interop
         public HRESULT GetItemObject(uint uItem, [NativeTypeName("const IID &")] Guid* riid, void** ppv)
         {
             return ((delegate* unmanaged<IShellView*, uint, Guid*, void**, int>)(lpVtbl[15]))((IShellView*)Unsafe.AsPointer(ref this), uItem, riid, ppv);
+        }
+
+        public interface Interface : IOleWindow.Interface
+        {
+            [VtblIndex(5)]
+            HRESULT TranslateAcceleratorW(MSG* pmsg);
+
+            [VtblIndex(6)]
+            HRESULT EnableModeless(BOOL fEnable);
+
+            [VtblIndex(7)]
+            HRESULT UIActivate(uint uState);
+
+            [VtblIndex(8)]
+            HRESULT Refresh();
+
+            [VtblIndex(9)]
+            HRESULT CreateViewWindow(IShellView* psvPrevious, [NativeTypeName("LPCFOLDERSETTINGS")] FOLDERSETTINGS* pfs, IShellBrowser* psb, RECT* prcView, HWND* phWnd);
+
+            [VtblIndex(10)]
+            HRESULT DestroyViewWindow();
+
+            [VtblIndex(11)]
+            HRESULT GetCurrentInfo([NativeTypeName("LPFOLDERSETTINGS")] FOLDERSETTINGS* pfs);
+
+            [VtblIndex(12)]
+            HRESULT AddPropertySheetPages([NativeTypeName("DWORD")] uint dwReserved, [NativeTypeName("LPFNSVADDPROPSHEETPAGE")] delegate* unmanaged<HPROPSHEETPAGE, LPARAM, BOOL> pfn, LPARAM lparam);
+
+            [VtblIndex(13)]
+            HRESULT SaveViewState();
+
+            [VtblIndex(14)]
+            HRESULT SelectItem([NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidlItem, [NativeTypeName("SVSIF")] uint uFlags);
+
+            [VtblIndex(15)]
+            HRESULT GetItemObject(uint uItem, [NativeTypeName("const IID &")] Guid* riid, void** ppv);
         }
 
         public partial struct Vtbl

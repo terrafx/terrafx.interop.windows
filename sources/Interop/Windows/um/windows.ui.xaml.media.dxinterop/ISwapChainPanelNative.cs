@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("F92F19D2-3ADE-45A6-A20C-F6F1EA90554B")]
     [NativeTypeName("struct ISwapChainPanelNative : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct ISwapChainPanelNative
+    public unsafe partial struct ISwapChainPanelNative : ISwapChainPanelNative.Interface
     {
         public void** lpVtbl;
 
@@ -44,6 +44,12 @@ namespace TerraFX.Interop
         public HRESULT SetSwapChain(IDXGISwapChain* swapChain)
         {
             return ((delegate* unmanaged<ISwapChainPanelNative*, IDXGISwapChain*, int>)(lpVtbl[3]))((ISwapChainPanelNative*)Unsafe.AsPointer(ref this), swapChain);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT SetSwapChain(IDXGISwapChain* swapChain);
         }
 
         public partial struct Vtbl

@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("F941B671-BDA7-4F77-884A-F46462F226A7")]
     [NativeTypeName("struct IContact : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IContact
+    public unsafe partial struct IContact : IContact.Interface
     {
         public void** lpVtbl;
 
@@ -58,6 +58,18 @@ namespace TerraFX.Interop
         public HRESULT CommitChanges([NativeTypeName("DWORD")] uint dwCommitFlags)
         {
             return ((delegate* unmanaged<IContact*, uint, int>)(lpVtbl[5]))((IContact*)Unsafe.AsPointer(ref this), dwCommitFlags);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetContactID([NativeTypeName("LPWSTR")] ushort* pszContactID, [NativeTypeName("DWORD")] uint cchContactID, [NativeTypeName("DWORD *")] uint* pdwcchContactIDRequired);
+
+            [VtblIndex(4)]
+            HRESULT GetPath([NativeTypeName("LPWSTR")] ushort* pszPath, [NativeTypeName("DWORD")] uint cchPath, [NativeTypeName("DWORD *")] uint* pdwcchPathRequired);
+
+            [VtblIndex(5)]
+            HRESULT CommitChanges([NativeTypeName("DWORD")] uint dwCommitFlags);
         }
 
         public partial struct Vtbl

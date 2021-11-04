@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("00000036-0000-0000-C000-000000000046")]
     [NativeTypeName("struct IAsyncInfo : IInspectable")]
     [NativeInheritance("IInspectable")]
-    public unsafe partial struct IAsyncInfo
+    public unsafe partial struct IAsyncInfo : IAsyncInfo.Interface
     {
         public void** lpVtbl;
 
@@ -93,6 +93,24 @@ namespace TerraFX.Interop
         public HRESULT Close()
         {
             return ((delegate* unmanaged<IAsyncInfo*, int>)(lpVtbl[10]))((IAsyncInfo*)Unsafe.AsPointer(ref this));
+        }
+
+        public interface Interface : IInspectable.Interface
+        {
+            [VtblIndex(6)]
+            HRESULT get_Id([NativeTypeName("unsigned int *")] uint* id);
+
+            [VtblIndex(7)]
+            HRESULT get_Status([NativeTypeName("ABI::Windows::Foundation::AsyncStatus *")] AsyncStatus* status);
+
+            [VtblIndex(8)]
+            HRESULT get_ErrorCode(HRESULT* errorCode);
+
+            [VtblIndex(9)]
+            HRESULT Cancel();
+
+            [VtblIndex(10)]
+            HRESULT Close();
         }
 
         public partial struct Vtbl

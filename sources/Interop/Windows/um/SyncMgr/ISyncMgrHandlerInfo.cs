@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("4FF1D798-ECF7-4524-AA81-1E362A0AEF3A")]
     [NativeTypeName("struct ISyncMgrHandlerInfo : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct ISyncMgrHandlerInfo
+    public unsafe partial struct ISyncMgrHandlerInfo : ISyncMgrHandlerInfo.Interface
     {
         public void** lpVtbl;
 
@@ -86,6 +86,30 @@ namespace TerraFX.Interop
         public HRESULT IsConnected()
         {
             return ((delegate* unmanaged<ISyncMgrHandlerInfo*, int>)(lpVtbl[9]))((ISyncMgrHandlerInfo*)Unsafe.AsPointer(ref this));
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetType(SYNCMGR_HANDLER_TYPE* pnType);
+
+            [VtblIndex(4)]
+            HRESULT GetTypeLabel([NativeTypeName("LPWSTR *")] ushort** ppszTypeLabel);
+
+            [VtblIndex(5)]
+            HRESULT GetComment([NativeTypeName("LPWSTR *")] ushort** ppszComment);
+
+            [VtblIndex(6)]
+            HRESULT GetLastSyncTime(FILETIME* pftLastSync);
+
+            [VtblIndex(7)]
+            HRESULT IsActive();
+
+            [VtblIndex(8)]
+            HRESULT IsEnabled();
+
+            [VtblIndex(9)]
+            HRESULT IsConnected();
         }
 
         public partial struct Vtbl

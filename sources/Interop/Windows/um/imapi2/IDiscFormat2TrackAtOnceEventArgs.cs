@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("27354140-7F64-5B0F-8F00-5D77AFBE261E")]
     [NativeTypeName("struct IDiscFormat2TrackAtOnceEventArgs : IWriteEngine2EventArgs")]
     [NativeInheritance("IWriteEngine2EventArgs")]
-    public unsafe partial struct IDiscFormat2TrackAtOnceEventArgs
+    public unsafe partial struct IDiscFormat2TrackAtOnceEventArgs : IDiscFormat2TrackAtOnceEventArgs.Interface
     {
         public void** lpVtbl;
 
@@ -142,6 +142,21 @@ namespace TerraFX.Interop
         public HRESULT get_RemainingTime([NativeTypeName("LONG *")] int* value)
         {
             return ((delegate* unmanaged<IDiscFormat2TrackAtOnceEventArgs*, int*, int>)(lpVtbl[17]))((IDiscFormat2TrackAtOnceEventArgs*)Unsafe.AsPointer(ref this), value);
+        }
+
+        public interface Interface : IWriteEngine2EventArgs.Interface
+        {
+            [VtblIndex(14)]
+            HRESULT get_CurrentTrackNumber([NativeTypeName("LONG *")] int* value);
+
+            [VtblIndex(15)]
+            HRESULT get_CurrentAction(IMAPI_FORMAT2_TAO_WRITE_ACTION* value);
+
+            [VtblIndex(16)]
+            HRESULT get_ElapsedTime([NativeTypeName("LONG *")] int* value);
+
+            [VtblIndex(17)]
+            HRESULT get_RemainingTime([NativeTypeName("LONG *")] int* value);
         }
 
         public partial struct Vtbl

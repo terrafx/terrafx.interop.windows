@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("EAB22AC1-30C1-11CF-A7EB-0000C05BAE0B")]
     [NativeTypeName("struct IWebBrowser : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct IWebBrowser
+    public unsafe partial struct IWebBrowser : IWebBrowser.Interface
     {
         public void** lpVtbl;
 
@@ -240,6 +240,84 @@ namespace TerraFX.Interop
         public HRESULT get_Busy([NativeTypeName("VARIANT_BOOL *")] short* pBool)
         {
             return ((delegate* unmanaged<IWebBrowser*, short*, int>)(lpVtbl[31]))((IWebBrowser*)Unsafe.AsPointer(ref this), pBool);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT GoBack();
+
+            [VtblIndex(8)]
+            HRESULT GoForward();
+
+            [VtblIndex(9)]
+            HRESULT GoHome();
+
+            [VtblIndex(10)]
+            HRESULT GoSearch();
+
+            [VtblIndex(11)]
+            HRESULT Navigate([NativeTypeName("BSTR")] ushort* URL, VARIANT* Flags, VARIANT* TargetFrameName, VARIANT* PostData, VARIANT* Headers);
+
+            [VtblIndex(12)]
+            HRESULT Refresh();
+
+            [VtblIndex(13)]
+            HRESULT Refresh2(VARIANT* Level);
+
+            [VtblIndex(14)]
+            HRESULT Stop();
+
+            [VtblIndex(15)]
+            HRESULT get_Application(IDispatch** ppDisp);
+
+            [VtblIndex(16)]
+            HRESULT get_Parent(IDispatch** ppDisp);
+
+            [VtblIndex(17)]
+            HRESULT get_Container(IDispatch** ppDisp);
+
+            [VtblIndex(18)]
+            HRESULT get_Document(IDispatch** ppDisp);
+
+            [VtblIndex(19)]
+            HRESULT get_TopLevelContainer([NativeTypeName("VARIANT_BOOL *")] short* pBool);
+
+            [VtblIndex(20)]
+            HRESULT get_Type([NativeTypeName("BSTR *")] ushort** Type);
+
+            [VtblIndex(21)]
+            HRESULT get_Left([NativeTypeName("long *")] int* pl);
+
+            [VtblIndex(22)]
+            HRESULT put_Left([NativeTypeName("long")] int Left);
+
+            [VtblIndex(23)]
+            HRESULT get_Top([NativeTypeName("long *")] int* pl);
+
+            [VtblIndex(24)]
+            HRESULT put_Top([NativeTypeName("long")] int Top);
+
+            [VtblIndex(25)]
+            HRESULT get_Width([NativeTypeName("long *")] int* pl);
+
+            [VtblIndex(26)]
+            HRESULT put_Width([NativeTypeName("long")] int Width);
+
+            [VtblIndex(27)]
+            HRESULT get_Height([NativeTypeName("long *")] int* pl);
+
+            [VtblIndex(28)]
+            HRESULT put_Height([NativeTypeName("long")] int Height);
+
+            [VtblIndex(29)]
+            HRESULT get_LocationName([NativeTypeName("BSTR *")] ushort** LocationName);
+
+            [VtblIndex(30)]
+            HRESULT get_LocationURL([NativeTypeName("BSTR *")] ushort** LocationURL);
+
+            [VtblIndex(31)]
+            HRESULT get_Busy([NativeTypeName("VARIANT_BOOL *")] short* pBool);
         }
 
         public partial struct Vtbl

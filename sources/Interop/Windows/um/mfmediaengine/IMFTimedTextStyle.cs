@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("09B2455D-B834-4F01-A347-9052E21C450E")]
     [NativeTypeName("struct IMFTimedTextStyle : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IMFTimedTextStyle
+    public unsafe partial struct IMFTimedTextStyle : IMFTimedTextStyle.Interface
     {
         public void** lpVtbl;
 
@@ -128,6 +128,48 @@ namespace TerraFX.Interop
         public HRESULT GetTextOutline(MFARGB* color, double* thickness, double* blurRadius, MF_TIMED_TEXT_UNIT_TYPE* unitType)
         {
             return ((delegate* unmanaged<IMFTimedTextStyle*, MFARGB*, double*, double*, MF_TIMED_TEXT_UNIT_TYPE*, int>)(lpVtbl[15]))((IMFTimedTextStyle*)Unsafe.AsPointer(ref this), color, thickness, blurRadius, unitType);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetName([NativeTypeName("LPWSTR *")] ushort** name);
+
+            [VtblIndex(4)]
+            BOOL IsExternal();
+
+            [VtblIndex(5)]
+            HRESULT GetFontFamily([NativeTypeName("LPWSTR *")] ushort** fontFamily);
+
+            [VtblIndex(6)]
+            HRESULT GetFontSize(double* fontSize, MF_TIMED_TEXT_UNIT_TYPE* unitType);
+
+            [VtblIndex(7)]
+            HRESULT GetColor(MFARGB* color);
+
+            [VtblIndex(8)]
+            HRESULT GetBackgroundColor(MFARGB* bgColor);
+
+            [VtblIndex(9)]
+            HRESULT GetShowBackgroundAlways(BOOL* showBackgroundAlways);
+
+            [VtblIndex(10)]
+            HRESULT GetFontStyle(MF_TIMED_TEXT_FONT_STYLE* fontStyle);
+
+            [VtblIndex(11)]
+            HRESULT GetBold(BOOL* bold);
+
+            [VtblIndex(12)]
+            HRESULT GetRightToLeft(BOOL* rightToLeft);
+
+            [VtblIndex(13)]
+            HRESULT GetTextAlignment(MF_TIMED_TEXT_ALIGNMENT* textAlign);
+
+            [VtblIndex(14)]
+            HRESULT GetTextDecoration([NativeTypeName("DWORD *")] uint* textDecoration);
+
+            [VtblIndex(15)]
+            HRESULT GetTextOutline(MFARGB* color, double* thickness, double* blurRadius, MF_TIMED_TEXT_UNIT_TYPE* unitType);
         }
 
         public partial struct Vtbl

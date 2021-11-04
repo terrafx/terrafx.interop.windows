@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("73DB1241-1E85-4581-8E4F-A81E1D0F8C57")]
     [NativeTypeName("struct IAttachmentExecute : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IAttachmentExecute
+    public unsafe partial struct IAttachmentExecute : IAttachmentExecute.Interface
     {
         public void** lpVtbl;
 
@@ -121,6 +121,45 @@ namespace TerraFX.Interop
         public HRESULT ClearClientState()
         {
             return ((delegate* unmanaged<IAttachmentExecute*, int>)(lpVtbl[14]))((IAttachmentExecute*)Unsafe.AsPointer(ref this));
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT SetClientTitle([NativeTypeName("LPCWSTR")] ushort* pszTitle);
+
+            [VtblIndex(4)]
+            HRESULT SetClientGuid([NativeTypeName("const GUID &")] Guid* guid);
+
+            [VtblIndex(5)]
+            HRESULT SetLocalPath([NativeTypeName("LPCWSTR")] ushort* pszLocalPath);
+
+            [VtblIndex(6)]
+            HRESULT SetFileName([NativeTypeName("LPCWSTR")] ushort* pszFileName);
+
+            [VtblIndex(7)]
+            HRESULT SetSource([NativeTypeName("LPCWSTR")] ushort* pszSource);
+
+            [VtblIndex(8)]
+            HRESULT SetReferrer([NativeTypeName("LPCWSTR")] ushort* pszReferrer);
+
+            [VtblIndex(9)]
+            HRESULT CheckPolicy();
+
+            [VtblIndex(10)]
+            HRESULT Prompt(HWND hwnd, ATTACHMENT_PROMPT prompt, ATTACHMENT_ACTION* paction);
+
+            [VtblIndex(11)]
+            HRESULT Save();
+
+            [VtblIndex(12)]
+            HRESULT Execute(HWND hwnd, [NativeTypeName("LPCWSTR")] ushort* pszVerb, HANDLE* phProcess);
+
+            [VtblIndex(13)]
+            HRESULT SaveWithUI(HWND hwnd);
+
+            [VtblIndex(14)]
+            HRESULT ClearClientState();
         }
 
         public partial struct Vtbl

@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("596A9A94-013E-11D1-8D34-00A0C90F2719")]
     [NativeTypeName("struct IBanneredBar : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IBanneredBar
+    public unsafe partial struct IBanneredBar : IBanneredBar.Interface
     {
         public void** lpVtbl;
 
@@ -65,6 +65,21 @@ namespace TerraFX.Interop
         public HRESULT GetBitmap(HBITMAP* phBitmap)
         {
             return ((delegate* unmanaged<IBanneredBar*, HBITMAP*, int>)(lpVtbl[6]))((IBanneredBar*)Unsafe.AsPointer(ref this), phBitmap);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT SetIconSize([NativeTypeName("DWORD")] uint iIcon);
+
+            [VtblIndex(4)]
+            HRESULT GetIconSize([NativeTypeName("DWORD *")] uint* piIcon);
+
+            [VtblIndex(5)]
+            HRESULT SetBitmap(HBITMAP hBitmap);
+
+            [VtblIndex(6)]
+            HRESULT GetBitmap(HBITMAP* phBitmap);
         }
 
         public partial struct Vtbl

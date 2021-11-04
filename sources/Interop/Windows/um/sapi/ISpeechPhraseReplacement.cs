@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("2890A410-53A7-4FB5-94EC-06D4998E3D02")]
     [NativeTypeName("struct ISpeechPhraseReplacement : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct ISpeechPhraseReplacement
+    public unsafe partial struct ISpeechPhraseReplacement : ISpeechPhraseReplacement.Interface
     {
         public void** lpVtbl;
 
@@ -93,6 +93,21 @@ namespace TerraFX.Interop
         public HRESULT get_NumberOfElements([NativeTypeName("long *")] int* NumberOfElements)
         {
             return ((delegate* unmanaged<ISpeechPhraseReplacement*, int*, int>)(lpVtbl[10]))((ISpeechPhraseReplacement*)Unsafe.AsPointer(ref this), NumberOfElements);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT get_DisplayAttributes(SpeechDisplayAttributes* DisplayAttributes);
+
+            [VtblIndex(8)]
+            HRESULT get_Text([NativeTypeName("BSTR *")] ushort** Text);
+
+            [VtblIndex(9)]
+            HRESULT get_FirstElement([NativeTypeName("long *")] int* FirstElement);
+
+            [VtblIndex(10)]
+            HRESULT get_NumberOfElements([NativeTypeName("long *")] int* NumberOfElements);
         }
 
         public partial struct Vtbl

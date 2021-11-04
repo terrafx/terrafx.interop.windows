@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("A73CE67A-8AB1-44F1-8D43-D2FCBF6B1CD0")]
     [NativeTypeName("struct IRelatedItem : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IRelatedItem
+    public unsafe partial struct IRelatedItem : IRelatedItem.Interface
     {
         public void** lpVtbl;
 
@@ -51,6 +51,15 @@ namespace TerraFX.Interop
         public HRESULT GetItem(IShellItem** ppsi)
         {
             return ((delegate* unmanaged<IRelatedItem*, IShellItem**, int>)(lpVtbl[4]))((IRelatedItem*)Unsafe.AsPointer(ref this), ppsi);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetItemIDList([NativeTypeName("LPITEMIDLIST *")] ITEMIDLIST** ppidl);
+
+            [VtblIndex(4)]
+            HRESULT GetItem(IShellItem** ppsi);
         }
 
         public partial struct Vtbl

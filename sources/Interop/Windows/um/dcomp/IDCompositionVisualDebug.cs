@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("FED2B808-5EB4-43A0-AEA3-35F65280F91B")]
     [NativeTypeName("struct IDCompositionVisualDebug : IDCompositionVisual2")]
     [NativeInheritance("IDCompositionVisual2")]
-    public unsafe partial struct IDCompositionVisualDebug
+    public unsafe partial struct IDCompositionVisualDebug : IDCompositionVisualDebug.Interface
     {
         public void** lpVtbl;
 
@@ -198,6 +198,21 @@ namespace TerraFX.Interop
         public HRESULT DisableRedrawRegions()
         {
             return ((delegate* unmanaged<IDCompositionVisualDebug*, int>)(lpVtbl[25]))((IDCompositionVisualDebug*)Unsafe.AsPointer(ref this));
+        }
+
+        public interface Interface : IDCompositionVisual2.Interface
+        {
+            [VtblIndex(22)]
+            HRESULT EnableHeatMap([NativeTypeName("const D2D1_COLOR_F &")] DXGI_RGBA* color);
+
+            [VtblIndex(23)]
+            HRESULT DisableHeatMap();
+
+            [VtblIndex(24)]
+            HRESULT EnableRedrawRegions();
+
+            [VtblIndex(25)]
+            HRESULT DisableRedrawRegions();
         }
 
         public partial struct Vtbl

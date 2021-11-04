@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("9B7E82E2-69C5-4EB4-A5F5-A7033F5132CD")]
     [NativeTypeName("struct IDCompositionTableTransferEffect : IDCompositionFilterEffect")]
     [NativeInheritance("IDCompositionFilterEffect")]
-    public unsafe partial struct IDCompositionTableTransferEffect
+    public unsafe partial struct IDCompositionTableTransferEffect : IDCompositionTableTransferEffect.Interface
     {
         public void** lpVtbl;
 
@@ -163,6 +163,60 @@ namespace TerraFX.Interop
         public HRESULT SetAlphaTableValue(uint index, float value)
         {
             return ((delegate* unmanaged<IDCompositionTableTransferEffect*, uint, float, int>)(lpVtbl[20]))((IDCompositionTableTransferEffect*)Unsafe.AsPointer(ref this), index, value);
+        }
+
+        public interface Interface : IDCompositionFilterEffect.Interface
+        {
+            [VtblIndex(4)]
+            HRESULT SetRedTable([NativeTypeName("const float *")] float* tableValues, uint count);
+
+            [VtblIndex(5)]
+            HRESULT SetGreenTable([NativeTypeName("const float *")] float* tableValues, uint count);
+
+            [VtblIndex(6)]
+            HRESULT SetBlueTable([NativeTypeName("const float *")] float* tableValues, uint count);
+
+            [VtblIndex(7)]
+            HRESULT SetAlphaTable([NativeTypeName("const float *")] float* tableValues, uint count);
+
+            [VtblIndex(8)]
+            HRESULT SetRedDisable(BOOL redDisable);
+
+            [VtblIndex(9)]
+            HRESULT SetGreenDisable(BOOL greenDisable);
+
+            [VtblIndex(10)]
+            HRESULT SetBlueDisable(BOOL blueDisable);
+
+            [VtblIndex(11)]
+            HRESULT SetAlphaDisable(BOOL alphaDisable);
+
+            [VtblIndex(12)]
+            HRESULT SetClampOutput(BOOL clampOutput);
+
+            [VtblIndex(13)]
+            HRESULT SetRedTableValue(uint index, IDCompositionAnimation* animation);
+
+            [VtblIndex(14)]
+            HRESULT SetRedTableValue(uint index, float value);
+
+            [VtblIndex(15)]
+            HRESULT SetGreenTableValue(uint index, IDCompositionAnimation* animation);
+
+            [VtblIndex(16)]
+            HRESULT SetGreenTableValue(uint index, float value);
+
+            [VtblIndex(17)]
+            HRESULT SetBlueTableValue(uint index, IDCompositionAnimation* animation);
+
+            [VtblIndex(18)]
+            HRESULT SetBlueTableValue(uint index, float value);
+
+            [VtblIndex(19)]
+            HRESULT SetAlphaTableValue(uint index, IDCompositionAnimation* animation);
+
+            [VtblIndex(20)]
+            HRESULT SetAlphaTableValue(uint index, float value);
         }
 
         public partial struct Vtbl

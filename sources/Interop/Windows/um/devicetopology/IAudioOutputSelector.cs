@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("BB515F69-94A7-429E-8B9C-271B3F11A3AB")]
     [NativeTypeName("struct IAudioOutputSelector : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IAudioOutputSelector
+    public unsafe partial struct IAudioOutputSelector : IAudioOutputSelector.Interface
     {
         public void** lpVtbl;
 
@@ -51,6 +51,15 @@ namespace TerraFX.Interop
         public HRESULT SetSelection(uint nIdSelect, [NativeTypeName("LPCGUID")] Guid* pguidEventContext)
         {
             return ((delegate* unmanaged<IAudioOutputSelector*, uint, Guid*, int>)(lpVtbl[4]))((IAudioOutputSelector*)Unsafe.AsPointer(ref this), nIdSelect, pguidEventContext);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetSelection(uint* pnIdSelected);
+
+            [VtblIndex(4)]
+            HRESULT SetSelection(uint nIdSelect, [NativeTypeName("LPCGUID")] Guid* pguidEventContext);
         }
 
         public partial struct Vtbl

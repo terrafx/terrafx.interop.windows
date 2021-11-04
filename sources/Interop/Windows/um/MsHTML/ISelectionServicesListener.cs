@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("3050F699-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct ISelectionServicesListener : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct ISelectionServicesListener
+    public unsafe partial struct ISelectionServicesListener : ISelectionServicesListener.Interface
     {
         public void** lpVtbl;
 
@@ -72,6 +72,24 @@ namespace TerraFX.Interop
         public HRESULT GetTypeDetail([NativeTypeName("BSTR *")] ushort** pTypeDetail)
         {
             return ((delegate* unmanaged<ISelectionServicesListener*, ushort**, int>)(lpVtbl[7]))((ISelectionServicesListener*)Unsafe.AsPointer(ref this), pTypeDetail);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT BeginSelectionUndo();
+
+            [VtblIndex(4)]
+            HRESULT EndSelectionUndo();
+
+            [VtblIndex(5)]
+            HRESULT OnSelectedElementExit(IMarkupPointer* pIElementStart, IMarkupPointer* pIElementEnd, IMarkupPointer* pIElementContentStart, IMarkupPointer* pIElementContentEnd);
+
+            [VtblIndex(6)]
+            HRESULT OnChangeType(SELECTION_TYPE eType, ISelectionServicesListener* pIListener);
+
+            [VtblIndex(7)]
+            HRESULT GetTypeDetail([NativeTypeName("BSTR *")] ushort** pTypeDetail);
         }
 
         public partial struct Vtbl

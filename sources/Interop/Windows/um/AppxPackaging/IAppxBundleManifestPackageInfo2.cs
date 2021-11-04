@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("44C2ACBC-B2CF-4CCB-BBDB-9C6DA8C3BC9E")]
     [NativeTypeName("struct IAppxBundleManifestPackageInfo2 : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IAppxBundleManifestPackageInfo2
+    public unsafe partial struct IAppxBundleManifestPackageInfo2 : IAppxBundleManifestPackageInfo2.Interface
     {
         public void** lpVtbl;
 
@@ -58,6 +58,18 @@ namespace TerraFX.Interop
         public HRESULT GetIsDefaultApplicablePackage(BOOL* isDefaultApplicablePackage)
         {
             return ((delegate* unmanaged<IAppxBundleManifestPackageInfo2*, BOOL*, int>)(lpVtbl[5]))((IAppxBundleManifestPackageInfo2*)Unsafe.AsPointer(ref this), isDefaultApplicablePackage);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetIsPackageReference(BOOL* isPackageReference);
+
+            [VtblIndex(4)]
+            HRESULT GetIsNonQualifiedResourcePackage(BOOL* isNonQualifiedResourcePackage);
+
+            [VtblIndex(5)]
+            HRESULT GetIsDefaultApplicablePackage(BOOL* isDefaultApplicablePackage);
         }
 
         public partial struct Vtbl

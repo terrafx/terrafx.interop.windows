@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("5C0AB7EA-167D-4F59-BFB5-4693755E90CA")]
     [NativeTypeName("struct ITfFnGetSAPIObject : ITfFunction")]
     [NativeInheritance("ITfFunction")]
-    public unsafe partial struct ITfFnGetSAPIObject
+    public unsafe partial struct ITfFnGetSAPIObject : ITfFnGetSAPIObject.Interface
     {
         public void** lpVtbl;
 
@@ -51,6 +51,12 @@ namespace TerraFX.Interop
         public HRESULT Get(TfSapiObject sObj, IUnknown** ppunk)
         {
             return ((delegate* unmanaged<ITfFnGetSAPIObject*, TfSapiObject, IUnknown**, int>)(lpVtbl[4]))((ITfFnGetSAPIObject*)Unsafe.AsPointer(ref this), sObj, ppunk);
+        }
+
+        public interface Interface : ITfFunction.Interface
+        {
+            [VtblIndex(4)]
+            HRESULT Get(TfSapiObject sObj, IUnknown** ppunk);
         }
 
         public partial struct Vtbl

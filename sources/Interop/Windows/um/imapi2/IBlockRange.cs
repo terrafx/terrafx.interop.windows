@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("B507CA25-2204-11DD-966A-001AA01BBC58")]
     [NativeTypeName("struct IBlockRange : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct IBlockRange
+    public unsafe partial struct IBlockRange : IBlockRange.Interface
     {
         public void** lpVtbl;
 
@@ -79,6 +79,15 @@ namespace TerraFX.Interop
         public HRESULT get_EndLba([NativeTypeName("LONG *")] int* value)
         {
             return ((delegate* unmanaged<IBlockRange*, int*, int>)(lpVtbl[8]))((IBlockRange*)Unsafe.AsPointer(ref this), value);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT get_StartLba([NativeTypeName("LONG *")] int* value);
+
+            [VtblIndex(8)]
+            HRESULT get_EndLba([NativeTypeName("LONG *")] int* value);
         }
 
         public partial struct Vtbl

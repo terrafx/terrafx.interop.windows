@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("3050F4ED-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct IElementBehaviorCategory : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IElementBehaviorCategory
+    public unsafe partial struct IElementBehaviorCategory : IElementBehaviorCategory.Interface
     {
         public void** lpVtbl;
 
@@ -44,6 +44,12 @@ namespace TerraFX.Interop
         public HRESULT GetCategory([NativeTypeName("LPOLESTR *")] ushort** ppchCategory)
         {
             return ((delegate* unmanaged<IElementBehaviorCategory*, ushort**, int>)(lpVtbl[3]))((IElementBehaviorCategory*)Unsafe.AsPointer(ref this), ppchCategory);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetCategory([NativeTypeName("LPOLESTR *")] ushort** ppchCategory);
         }
 
         public partial struct Vtbl

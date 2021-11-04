@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("E693CF68-D967-4112-8763-99172AEE5E5A")]
     [NativeTypeName("struct IVisualProperties : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IVisualProperties
+    public unsafe partial struct IVisualProperties : IVisualProperties.Interface
     {
         public void** lpVtbl;
 
@@ -93,6 +93,33 @@ namespace TerraFX.Interop
         public HRESULT SetTheme([NativeTypeName("LPCWSTR")] ushort* pszSubAppName, [NativeTypeName("LPCWSTR")] ushort* pszSubIdList)
         {
             return ((delegate* unmanaged<IVisualProperties*, ushort*, ushort*, int>)(lpVtbl[10]))((IVisualProperties*)Unsafe.AsPointer(ref this), pszSubAppName, pszSubIdList);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT SetWatermark(HBITMAP hbmp, VPWATERMARKFLAGS vpwf);
+
+            [VtblIndex(4)]
+            HRESULT SetColor(VPCOLORFLAGS vpcf, COLORREF cr);
+
+            [VtblIndex(5)]
+            HRESULT GetColor(VPCOLORFLAGS vpcf, COLORREF* pcr);
+
+            [VtblIndex(6)]
+            HRESULT SetItemHeight(int cyItemInPixels);
+
+            [VtblIndex(7)]
+            HRESULT GetItemHeight(int* cyItemInPixels);
+
+            [VtblIndex(8)]
+            HRESULT SetFont([NativeTypeName("const LOGFONTW *")] LOGFONTW* plf, BOOL bRedraw);
+
+            [VtblIndex(9)]
+            HRESULT GetFont(LOGFONTW* plf);
+
+            [VtblIndex(10)]
+            HRESULT SetTheme([NativeTypeName("LPCWSTR")] ushort* pszSubAppName, [NativeTypeName("LPCWSTR")] ushort* pszSubIdList);
         }
 
         public partial struct Vtbl

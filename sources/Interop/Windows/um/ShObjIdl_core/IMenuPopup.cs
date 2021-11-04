@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("D1E7AFEB-6A2E-11D0-8C78-00C04FD918B4")]
     [NativeTypeName("struct IMenuPopup : IDeskBar")]
     [NativeInheritance("IDeskBar")]
-    public unsafe partial struct IMenuPopup
+    public unsafe partial struct IMenuPopup : IMenuPopup.Interface
     {
         public void** lpVtbl;
 
@@ -93,6 +93,18 @@ namespace TerraFX.Interop
         public HRESULT SetSubMenu(IMenuPopup* pmp, BOOL fSet)
         {
             return ((delegate* unmanaged<IMenuPopup*, IMenuPopup*, BOOL, int>)(lpVtbl[10]))((IMenuPopup*)Unsafe.AsPointer(ref this), pmp, fSet);
+        }
+
+        public interface Interface : IDeskBar.Interface
+        {
+            [VtblIndex(8)]
+            HRESULT Popup(POINTL* ppt, RECTL* prcExclude, [NativeTypeName("MP_POPUPFLAGS")] int dwFlags);
+
+            [VtblIndex(9)]
+            HRESULT OnSelect([NativeTypeName("DWORD")] uint dwSelectType);
+
+            [VtblIndex(10)]
+            HRESULT SetSubMenu(IMenuPopup* pmp, BOOL fSet);
         }
 
         public partial struct Vtbl

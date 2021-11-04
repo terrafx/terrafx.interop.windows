@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("C43825AB-69B7-400A-9709-CC37F5A72D24")]
     [NativeTypeName("struct IAppxManifestReader3 : IAppxManifestReader2")]
     [NativeInheritance("IAppxManifestReader2")]
-    public unsafe partial struct IAppxManifestReader3
+    public unsafe partial struct IAppxManifestReader3 : IAppxManifestReader3.Interface
     {
         public void** lpVtbl;
 
@@ -121,6 +121,15 @@ namespace TerraFX.Interop
         public HRESULT GetTargetDeviceFamilies(IAppxManifestTargetDeviceFamiliesEnumerator** targetDeviceFamilies)
         {
             return ((delegate* unmanaged<IAppxManifestReader3*, IAppxManifestTargetDeviceFamiliesEnumerator**, int>)(lpVtbl[14]))((IAppxManifestReader3*)Unsafe.AsPointer(ref this), targetDeviceFamilies);
+        }
+
+        public interface Interface : IAppxManifestReader2.Interface
+        {
+            [VtblIndex(13)]
+            HRESULT GetCapabilitiesByCapabilityClass(APPX_CAPABILITY_CLASS_TYPE capabilityClass, IAppxManifestCapabilitiesEnumerator** capabilities);
+
+            [VtblIndex(14)]
+            HRESULT GetTargetDeviceFamilies(IAppxManifestTargetDeviceFamiliesEnumerator** targetDeviceFamilies);
         }
 
         public partial struct Vtbl

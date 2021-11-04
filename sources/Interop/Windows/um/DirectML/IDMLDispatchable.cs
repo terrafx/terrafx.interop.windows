@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("DCB821A8-1039-441E-9F1C-B1759C2F3CEC")]
     [NativeTypeName("struct IDMLDispatchable : IDMLPageable")]
     [NativeInheritance("IDMLPageable")]
-    public unsafe partial struct IDMLDispatchable
+    public unsafe partial struct IDMLDispatchable : IDMLDispatchable.Interface
     {
         public void** lpVtbl;
 
@@ -80,6 +80,12 @@ namespace TerraFX.Interop
         {
             DML_BINDING_PROPERTIES result;
             return *((delegate* unmanaged<IDMLDispatchable*, DML_BINDING_PROPERTIES*, DML_BINDING_PROPERTIES*>)(lpVtbl[8]))((IDMLDispatchable*)Unsafe.AsPointer(ref this), &result);
+        }
+
+        public interface Interface : IDMLPageable.Interface
+        {
+            [VtblIndex(8)]
+            DML_BINDING_PROPERTIES GetBindingProperties();
         }
 
         public partial struct Vtbl

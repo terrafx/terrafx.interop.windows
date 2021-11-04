@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("3050F4D0-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct IHTMLUniqueName : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct IHTMLUniqueName
+    public unsafe partial struct IHTMLUniqueName : IHTMLUniqueName.Interface
     {
         public void** lpVtbl;
 
@@ -79,6 +79,15 @@ namespace TerraFX.Interop
         public HRESULT get_uniqueID([NativeTypeName("BSTR *")] ushort** p)
         {
             return ((delegate* unmanaged<IHTMLUniqueName*, ushort**, int>)(lpVtbl[8]))((IHTMLUniqueName*)Unsafe.AsPointer(ref this), p);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT get_uniqueNumber([NativeTypeName("long *")] int* p);
+
+            [VtblIndex(8)]
+            HRESULT get_uniqueID([NativeTypeName("BSTR *")] ushort** p);
         }
 
         public partial struct Vtbl

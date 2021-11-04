@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("2735413F-7F64-5B0F-8F00-5D77AFBE261E")]
     [NativeTypeName("struct DDiscFormat2TrackAtOnceEvents : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct DDiscFormat2TrackAtOnceEvents
+    public unsafe partial struct DDiscFormat2TrackAtOnceEvents : DDiscFormat2TrackAtOnceEvents.Interface
     {
         public void** lpVtbl;
 
@@ -72,6 +72,12 @@ namespace TerraFX.Interop
         public HRESULT Update(IDispatch* @object, IDispatch* progress)
         {
             return ((delegate* unmanaged<DDiscFormat2TrackAtOnceEvents*, IDispatch*, IDispatch*, int>)(lpVtbl[7]))((DDiscFormat2TrackAtOnceEvents*)Unsafe.AsPointer(ref this), @object, progress);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT Update(IDispatch* @object, IDispatch* progress);
         }
 
         public partial struct Vtbl

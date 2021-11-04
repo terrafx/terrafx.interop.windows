@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("C26F23A8-EE10-4AD6-B898-2B4D7AEBFE6A")]
     [NativeTypeName("struct IAppxManifestHostRuntimeDependency2 : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IAppxManifestHostRuntimeDependency2
+    public unsafe partial struct IAppxManifestHostRuntimeDependency2 : IAppxManifestHostRuntimeDependency2.Interface
     {
         public void** lpVtbl;
 
@@ -44,6 +44,12 @@ namespace TerraFX.Interop
         public HRESULT GetPackageFamilyName([NativeTypeName("LPWSTR *")] ushort** packageFamilyName)
         {
             return ((delegate* unmanaged<IAppxManifestHostRuntimeDependency2*, ushort**, int>)(lpVtbl[3]))((IAppxManifestHostRuntimeDependency2*)Unsafe.AsPointer(ref this), packageFamilyName);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetPackageFamilyName([NativeTypeName("LPWSTR *")] ushort** packageFamilyName);
         }
 
         public partial struct Vtbl

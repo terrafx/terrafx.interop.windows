@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("59C0CB01-35F0-4A70-8F67-87905C906A53")]
     [NativeTypeName("struct ID3D11VideoDevice2 : ID3D11VideoDevice1")]
     [NativeInheritance("ID3D11VideoDevice1")]
-    public unsafe partial struct ID3D11VideoDevice2
+    public unsafe partial struct ID3D11VideoDevice2 : ID3D11VideoDevice2.Interface
     {
         public void** lpVtbl;
 
@@ -198,6 +198,15 @@ namespace TerraFX.Interop
         public HRESULT NegotiateCryptoSessionKeyExchangeMT(ID3D11CryptoSession* pCryptoSession, D3D11_CRYPTO_SESSION_KEY_EXCHANGE_FLAGS flags, uint DataSize, void* pData)
         {
             return ((delegate* unmanaged<ID3D11VideoDevice2*, ID3D11CryptoSession*, D3D11_CRYPTO_SESSION_KEY_EXCHANGE_FLAGS, uint, void*, int>)(lpVtbl[25]))((ID3D11VideoDevice2*)Unsafe.AsPointer(ref this), pCryptoSession, flags, DataSize, pData);
+        }
+
+        public interface Interface : ID3D11VideoDevice1.Interface
+        {
+            [VtblIndex(24)]
+            HRESULT CheckFeatureSupport(D3D11_FEATURE_VIDEO Feature, void* pFeatureSupportData, uint FeatureSupportDataSize);
+
+            [VtblIndex(25)]
+            HRESULT NegotiateCryptoSessionKeyExchangeMT(ID3D11CryptoSession* pCryptoSession, D3D11_CRYPTO_SESSION_KEY_EXCHANGE_FLAGS flags, uint DataSize, void* pData);
         }
 
         public partial struct Vtbl

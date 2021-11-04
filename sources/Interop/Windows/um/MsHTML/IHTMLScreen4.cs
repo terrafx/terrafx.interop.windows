@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("3051076B-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct IHTMLScreen4 : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct IHTMLScreen4
+    public unsafe partial struct IHTMLScreen4 : IHTMLScreen4.Interface
     {
         public void** lpVtbl;
 
@@ -72,6 +72,12 @@ namespace TerraFX.Interop
         public HRESULT get_pixelDepth([NativeTypeName("long *")] int* p)
         {
             return ((delegate* unmanaged<IHTMLScreen4*, int*, int>)(lpVtbl[7]))((IHTMLScreen4*)Unsafe.AsPointer(ref this), p);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT get_pixelDepth([NativeTypeName("long *")] int* p);
         }
 
         public partial struct Vtbl

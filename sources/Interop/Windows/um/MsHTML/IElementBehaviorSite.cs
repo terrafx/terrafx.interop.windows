@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("3050F427-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct IElementBehaviorSite : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IElementBehaviorSite
+    public unsafe partial struct IElementBehaviorSite : IElementBehaviorSite.Interface
     {
         public void** lpVtbl;
 
@@ -51,6 +51,15 @@ namespace TerraFX.Interop
         public HRESULT RegisterNotification([NativeTypeName("LONG")] int lEvent)
         {
             return ((delegate* unmanaged<IElementBehaviorSite*, int, int>)(lpVtbl[4]))((IElementBehaviorSite*)Unsafe.AsPointer(ref this), lEvent);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetElement(IHTMLElement** ppElement);
+
+            [VtblIndex(4)]
+            HRESULT RegisterNotification([NativeTypeName("LONG")] int lEvent);
         }
 
         public partial struct Vtbl

@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("045FA593-8799-42B8-BC8D-8968C6453507")]
     [NativeTypeName("struct IMFMediaBuffer : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IMFMediaBuffer
+    public unsafe partial struct IMFMediaBuffer : IMFMediaBuffer.Interface
     {
         public void** lpVtbl;
 
@@ -72,6 +72,24 @@ namespace TerraFX.Interop
         public HRESULT GetMaxLength([NativeTypeName("DWORD *")] uint* pcbMaxLength)
         {
             return ((delegate* unmanaged<IMFMediaBuffer*, uint*, int>)(lpVtbl[7]))((IMFMediaBuffer*)Unsafe.AsPointer(ref this), pcbMaxLength);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT Lock(byte** ppbBuffer, [NativeTypeName("DWORD *")] uint* pcbMaxLength, [NativeTypeName("DWORD *")] uint* pcbCurrentLength);
+
+            [VtblIndex(4)]
+            HRESULT Unlock();
+
+            [VtblIndex(5)]
+            HRESULT GetCurrentLength([NativeTypeName("DWORD *")] uint* pcbCurrentLength);
+
+            [VtblIndex(6)]
+            HRESULT SetCurrentLength([NativeTypeName("DWORD")] uint cbCurrentLength);
+
+            [VtblIndex(7)]
+            HRESULT GetMaxLength([NativeTypeName("DWORD *")] uint* pcbMaxLength);
         }
 
         public partial struct Vtbl

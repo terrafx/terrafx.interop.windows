@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("27354136-7F64-5B0F-8F00-5D77AFBE261E")]
     [NativeTypeName("struct IWriteEngine2EventArgs : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct IWriteEngine2EventArgs
+    public unsafe partial struct IWriteEngine2EventArgs : IWriteEngine2EventArgs.Interface
     {
         public void** lpVtbl;
 
@@ -114,6 +114,30 @@ namespace TerraFX.Interop
         public HRESULT get_FreeSystemBuffer([NativeTypeName("LONG *")] int* value)
         {
             return ((delegate* unmanaged<IWriteEngine2EventArgs*, int*, int>)(lpVtbl[13]))((IWriteEngine2EventArgs*)Unsafe.AsPointer(ref this), value);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT get_StartLba([NativeTypeName("LONG *")] int* value);
+
+            [VtblIndex(8)]
+            HRESULT get_SectorCount([NativeTypeName("LONG *")] int* value);
+
+            [VtblIndex(9)]
+            HRESULT get_LastReadLba([NativeTypeName("LONG *")] int* value);
+
+            [VtblIndex(10)]
+            HRESULT get_LastWrittenLba([NativeTypeName("LONG *")] int* value);
+
+            [VtblIndex(11)]
+            HRESULT get_TotalSystemBuffer([NativeTypeName("LONG *")] int* value);
+
+            [VtblIndex(12)]
+            HRESULT get_UsedSystemBuffer([NativeTypeName("LONG *")] int* value);
+
+            [VtblIndex(13)]
+            HRESULT get_FreeSystemBuffer([NativeTypeName("LONG *")] int* value);
         }
 
         public partial struct Vtbl

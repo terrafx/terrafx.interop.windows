@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("C15DF8BC-8844-487A-B85B-7578E0F61419")]
     [NativeTypeName("struct IUserActivitySourceHostInterop : IInspectable")]
     [NativeInheritance("IInspectable")]
-    public unsafe partial struct IUserActivitySourceHostInterop
+    public unsafe partial struct IUserActivitySourceHostInterop : IUserActivitySourceHostInterop.Interface
     {
         public void** lpVtbl;
 
@@ -65,6 +65,12 @@ namespace TerraFX.Interop
         public HRESULT SetActivitySourceHost(HSTRING activitySourceHost)
         {
             return ((delegate* unmanaged<IUserActivitySourceHostInterop*, HSTRING, int>)(lpVtbl[6]))((IUserActivitySourceHostInterop*)Unsafe.AsPointer(ref this), activitySourceHost);
+        }
+
+        public interface Interface : IInspectable.Interface
+        {
+            [VtblIndex(6)]
+            HRESULT SetActivitySourceHost(HSTRING activitySourceHost);
         }
 
         public partial struct Vtbl

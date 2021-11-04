@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("A1ADAAA2-3A24-449D-AC96-5183E7F5C217")]
     [NativeTypeName("struct ITfMouseSink : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct ITfMouseSink
+    public unsafe partial struct ITfMouseSink : ITfMouseSink.Interface
     {
         public void** lpVtbl;
 
@@ -44,6 +44,12 @@ namespace TerraFX.Interop
         public HRESULT OnMouseEvent([NativeTypeName("ULONG")] uint uEdge, [NativeTypeName("ULONG")] uint uQuadrant, [NativeTypeName("DWORD")] uint dwBtnStatus, BOOL* pfEaten)
         {
             return ((delegate* unmanaged<ITfMouseSink*, uint, uint, uint, BOOL*, int>)(lpVtbl[3]))((ITfMouseSink*)Unsafe.AsPointer(ref this), uEdge, uQuadrant, dwBtnStatus, pfEaten);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT OnMouseEvent([NativeTypeName("ULONG")] uint uEdge, [NativeTypeName("ULONG")] uint uQuadrant, [NativeTypeName("DWORD")] uint dwBtnStatus, BOOL* pfEaten);
         }
 
         public partial struct Vtbl

@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("C6E133B0-30AC-11D0-A18C-00A0C9118956")]
     [NativeTypeName("struct IAMAnalogVideoEncoder : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IAMAnalogVideoEncoder
+    public unsafe partial struct IAMAnalogVideoEncoder : IAMAnalogVideoEncoder.Interface
     {
         public void** lpVtbl;
 
@@ -86,6 +86,30 @@ namespace TerraFX.Interop
         public HRESULT get_CCEnable([NativeTypeName("long *")] int* lCCEnable)
         {
             return ((delegate* unmanaged<IAMAnalogVideoEncoder*, int*, int>)(lpVtbl[9]))((IAMAnalogVideoEncoder*)Unsafe.AsPointer(ref this), lCCEnable);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT get_AvailableTVFormats([NativeTypeName("long *")] int* lAnalogVideoStandard);
+
+            [VtblIndex(4)]
+            HRESULT put_TVFormat([NativeTypeName("long")] int lAnalogVideoStandard);
+
+            [VtblIndex(5)]
+            HRESULT get_TVFormat([NativeTypeName("long *")] int* plAnalogVideoStandard);
+
+            [VtblIndex(6)]
+            HRESULT put_CopyProtection([NativeTypeName("long")] int lVideoCopyProtection);
+
+            [VtblIndex(7)]
+            HRESULT get_CopyProtection([NativeTypeName("long *")] int* lVideoCopyProtection);
+
+            [VtblIndex(8)]
+            HRESULT put_CCEnable([NativeTypeName("long")] int lCCEnable);
+
+            [VtblIndex(9)]
+            HRESULT get_CCEnable([NativeTypeName("long *")] int* lCCEnable);
         }
 
         public partial struct Vtbl

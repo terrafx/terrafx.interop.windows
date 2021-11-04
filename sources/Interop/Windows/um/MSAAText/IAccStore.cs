@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("E2CD4A63-2B72-4D48-B739-95E4765195BA")]
     [NativeTypeName("struct IAccStore : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IAccStore
+    public unsafe partial struct IAccStore : IAccStore.Interface
     {
         public void** lpVtbl;
 
@@ -86,6 +86,30 @@ namespace TerraFX.Interop
         public HRESULT GetFocused([NativeTypeName("const IID &")] Guid* riid, IUnknown** ppunk)
         {
             return ((delegate* unmanaged<IAccStore*, Guid*, IUnknown**, int>)(lpVtbl[9]))((IAccStore*)Unsafe.AsPointer(ref this), riid, ppunk);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT Register([NativeTypeName("const IID &")] Guid* riid, IUnknown* punk);
+
+            [VtblIndex(4)]
+            HRESULT Unregister(IUnknown* punk);
+
+            [VtblIndex(5)]
+            HRESULT GetDocuments(IEnumUnknown** enumUnknown);
+
+            [VtblIndex(6)]
+            HRESULT LookupByHWND(HWND hWnd, [NativeTypeName("const IID &")] Guid* riid, IUnknown** ppunk);
+
+            [VtblIndex(7)]
+            HRESULT LookupByPoint(POINT pt, [NativeTypeName("const IID &")] Guid* riid, IUnknown** ppunk);
+
+            [VtblIndex(8)]
+            HRESULT OnDocumentFocus(IUnknown* punk);
+
+            [VtblIndex(9)]
+            HRESULT GetFocused([NativeTypeName("const IID &")] Guid* riid, IUnknown** ppunk);
         }
 
         public partial struct Vtbl

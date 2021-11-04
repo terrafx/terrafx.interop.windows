@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("BDE633D3-E1DC-4A7F-A693-BBAE399C4A20")]
     [NativeTypeName("struct IMFVideoProcessorControl2 : IMFVideoProcessorControl")]
     [NativeInheritance("IMFVideoProcessorControl")]
-    public unsafe partial struct IMFVideoProcessorControl2
+    public unsafe partial struct IMFVideoProcessorControl2 : IMFVideoProcessorControl2.Interface
     {
         public void** lpVtbl;
 
@@ -100,6 +100,18 @@ namespace TerraFX.Interop
         public HRESULT GetSupportedHardwareEffects(uint* puiSupport)
         {
             return ((delegate* unmanaged<IMFVideoProcessorControl2*, uint*, int>)(lpVtbl[11]))((IMFVideoProcessorControl2*)Unsafe.AsPointer(ref this), puiSupport);
+        }
+
+        public interface Interface : IMFVideoProcessorControl.Interface
+        {
+            [VtblIndex(9)]
+            HRESULT SetRotationOverride(uint uiRotation);
+
+            [VtblIndex(10)]
+            HRESULT EnableHardwareEffects(BOOL fEnabled);
+
+            [VtblIndex(11)]
+            HRESULT GetSupportedHardwareEffects(uint* puiSupport);
         }
 
         public partial struct Vtbl

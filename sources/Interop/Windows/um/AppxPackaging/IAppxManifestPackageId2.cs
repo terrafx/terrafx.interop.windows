@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("2256999D-D617-42F1-880E-0BA4542319D5")]
     [NativeTypeName("struct IAppxManifestPackageId2 : IAppxManifestPackageId")]
     [NativeInheritance("IAppxManifestPackageId")]
-    public unsafe partial struct IAppxManifestPackageId2
+    public unsafe partial struct IAppxManifestPackageId2 : IAppxManifestPackageId2.Interface
     {
         public void** lpVtbl;
 
@@ -100,6 +100,12 @@ namespace TerraFX.Interop
         public HRESULT GetArchitecture2(APPX_PACKAGE_ARCHITECTURE2* architecture)
         {
             return ((delegate* unmanaged<IAppxManifestPackageId2*, APPX_PACKAGE_ARCHITECTURE2*, int>)(lpVtbl[11]))((IAppxManifestPackageId2*)Unsafe.AsPointer(ref this), architecture);
+        }
+
+        public interface Interface : IAppxManifestPackageId.Interface
+        {
+            [VtblIndex(11)]
+            HRESULT GetArchitecture2(APPX_PACKAGE_ARCHITECTURE2* architecture);
         }
 
         public partial struct Vtbl

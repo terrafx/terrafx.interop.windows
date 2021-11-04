@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("B8AAB0CF-346F-49D8-9499-C8B03F161D51")]
     [NativeTypeName("struct ISpObjectTokenInit : ISpObjectToken")]
     [NativeInheritance("ISpObjectToken")]
-    public unsafe partial struct ISpObjectTokenInit
+    public unsafe partial struct ISpObjectTokenInit : ISpObjectTokenInit.Interface
     {
         public void** lpVtbl;
 
@@ -198,6 +198,12 @@ namespace TerraFX.Interop
         public HRESULT InitFromDataKey([NativeTypeName("LPCWSTR")] ushort* pszCategoryId, [NativeTypeName("LPCWSTR")] ushort* pszTokenId, ISpDataKey* pDataKey)
         {
             return ((delegate* unmanaged<ISpObjectTokenInit*, ushort*, ushort*, ISpDataKey*, int>)(lpVtbl[25]))((ISpObjectTokenInit*)Unsafe.AsPointer(ref this), pszCategoryId, pszTokenId, pDataKey);
+        }
+
+        public interface Interface : ISpObjectToken.Interface
+        {
+            [VtblIndex(25)]
+            HRESULT InitFromDataKey([NativeTypeName("LPCWSTR")] ushort* pszCategoryId, [NativeTypeName("LPCWSTR")] ushort* pszTokenId, ISpDataKey* pDataKey);
         }
 
         public partial struct Vtbl

@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("23FF334C-442C-445F-BCCC-EDC438AA11E2")]
     [NativeTypeName("struct IMFTimedTextTrackList : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IMFTimedTextTrackList
+    public unsafe partial struct IMFTimedTextTrackList : IMFTimedTextTrackList.Interface
     {
         public void** lpVtbl;
 
@@ -59,6 +59,19 @@ namespace TerraFX.Interop
         public HRESULT GetTrackById([NativeTypeName("DWORD")] uint trackId, IMFTimedTextTrack** track)
         {
             return ((delegate* unmanaged<IMFTimedTextTrackList*, uint, IMFTimedTextTrack**, int>)(lpVtbl[5]))((IMFTimedTextTrackList*)Unsafe.AsPointer(ref this), trackId, track);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            [return: NativeTypeName("DWORD")]
+            uint GetLength();
+
+            [VtblIndex(4)]
+            HRESULT GetTrack([NativeTypeName("DWORD")] uint index, IMFTimedTextTrack** track);
+
+            [VtblIndex(5)]
+            HRESULT GetTrackById([NativeTypeName("DWORD")] uint trackId, IMFTimedTextTrack** track);
         }
 
         public partial struct Vtbl

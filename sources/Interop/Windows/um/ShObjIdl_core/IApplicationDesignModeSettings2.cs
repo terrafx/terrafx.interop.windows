@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("490514E1-675A-4D6E-A58D-E54901B4CA2F")]
     [NativeTypeName("struct IApplicationDesignModeSettings2 : IApplicationDesignModeSettings")]
     [NativeInheritance("IApplicationDesignModeSettings")]
-    public unsafe partial struct IApplicationDesignModeSettings2
+    public unsafe partial struct IApplicationDesignModeSettings2 : IApplicationDesignModeSettings2.Interface
     {
         public void** lpVtbl;
 
@@ -128,6 +128,30 @@ namespace TerraFX.Interop
         public HRESULT GetApplicationViewOrientation(SIZE applicationSizePixels, APPLICATION_VIEW_ORIENTATION* viewOrientation)
         {
             return ((delegate* unmanaged<IApplicationDesignModeSettings2*, SIZE, APPLICATION_VIEW_ORIENTATION*, int>)(lpVtbl[15]))((IApplicationDesignModeSettings2*)Unsafe.AsPointer(ref this), applicationSizePixels, viewOrientation);
+        }
+
+        public interface Interface : IApplicationDesignModeSettings.Interface
+        {
+            [VtblIndex(9)]
+            HRESULT SetNativeDisplayOrientation(NATIVE_DISPLAY_ORIENTATION nativeDisplayOrientation);
+
+            [VtblIndex(10)]
+            HRESULT SetApplicationViewOrientation(APPLICATION_VIEW_ORIENTATION viewOrientation);
+
+            [VtblIndex(11)]
+            HRESULT SetAdjacentDisplayEdges(ADJACENT_DISPLAY_EDGES adjacentDisplayEdges);
+
+            [VtblIndex(12)]
+            HRESULT SetIsOnLockScreen(BOOL isOnLockScreen);
+
+            [VtblIndex(13)]
+            HRESULT SetApplicationViewMinWidth(APPLICATION_VIEW_MIN_WIDTH viewMinWidth);
+
+            [VtblIndex(14)]
+            HRESULT GetApplicationSizeBounds(SIZE* minApplicationSizePixels, SIZE* maxApplicationSizePixels);
+
+            [VtblIndex(15)]
+            HRESULT GetApplicationViewOrientation(SIZE applicationSizePixels, APPLICATION_VIEW_ORIENTATION* viewOrientation);
         }
 
         public partial struct Vtbl

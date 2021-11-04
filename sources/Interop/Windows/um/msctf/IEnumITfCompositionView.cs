@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("5EFD22BA-7838-46CB-88E2-CADB14124F8F")]
     [NativeTypeName("struct IEnumITfCompositionView : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IEnumITfCompositionView
+    public unsafe partial struct IEnumITfCompositionView : IEnumITfCompositionView.Interface
     {
         public void** lpVtbl;
 
@@ -65,6 +65,21 @@ namespace TerraFX.Interop
         public HRESULT Skip([NativeTypeName("ULONG")] uint ulCount)
         {
             return ((delegate* unmanaged<IEnumITfCompositionView*, uint, int>)(lpVtbl[6]))((IEnumITfCompositionView*)Unsafe.AsPointer(ref this), ulCount);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT Clone(IEnumITfCompositionView** ppEnum);
+
+            [VtblIndex(4)]
+            HRESULT Next([NativeTypeName("ULONG")] uint ulCount, ITfCompositionView** rgCompositionView, [NativeTypeName("ULONG *")] uint* pcFetched);
+
+            [VtblIndex(5)]
+            HRESULT Reset();
+
+            [VtblIndex(6)]
+            HRESULT Skip([NativeTypeName("ULONG")] uint ulCount);
         }
 
         public partial struct Vtbl

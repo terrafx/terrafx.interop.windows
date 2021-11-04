@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("3051077F-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct IDOMXmlSerializerFactory : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct IDOMXmlSerializerFactory
+    public unsafe partial struct IDOMXmlSerializerFactory : IDOMXmlSerializerFactory.Interface
     {
         public void** lpVtbl;
 
@@ -72,6 +72,12 @@ namespace TerraFX.Interop
         public HRESULT create(IDOMXmlSerializer** __MIDL__IDOMXmlSerializerFactory0000)
         {
             return ((delegate* unmanaged<IDOMXmlSerializerFactory*, IDOMXmlSerializer**, int>)(lpVtbl[7]))((IDOMXmlSerializerFactory*)Unsafe.AsPointer(ref this), __MIDL__IDOMXmlSerializerFactory0000);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT create(IDOMXmlSerializer** __MIDL__IDOMXmlSerializerFactory0000);
         }
 
         public partial struct Vtbl

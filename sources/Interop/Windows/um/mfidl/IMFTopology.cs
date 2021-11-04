@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("83CF873A-F6DA-4BC8-823F-BACFD55DC433")]
     [NativeTypeName("struct IMFTopology : IMFAttributes")]
     [NativeInheritance("IMFAttributes")]
-    public unsafe partial struct IMFTopology
+    public unsafe partial struct IMFTopology : IMFTopology.Interface
     {
         public void** lpVtbl;
 
@@ -317,6 +317,39 @@ namespace TerraFX.Interop
         public HRESULT GetOutputNodeCollection(IMFCollection** ppCollection)
         {
             return ((delegate* unmanaged<IMFTopology*, IMFCollection**, int>)(lpVtbl[42]))((IMFTopology*)Unsafe.AsPointer(ref this), ppCollection);
+        }
+
+        public interface Interface : IMFAttributes.Interface
+        {
+            [VtblIndex(33)]
+            HRESULT GetTopologyID([NativeTypeName("TOPOID *")] ulong* pID);
+
+            [VtblIndex(34)]
+            HRESULT AddNode(IMFTopologyNode* pNode);
+
+            [VtblIndex(35)]
+            HRESULT RemoveNode(IMFTopologyNode* pNode);
+
+            [VtblIndex(36)]
+            HRESULT GetNodeCount([NativeTypeName("WORD *")] ushort* pwNodes);
+
+            [VtblIndex(37)]
+            HRESULT GetNode([NativeTypeName("WORD")] ushort wIndex, IMFTopologyNode** ppNode);
+
+            [VtblIndex(38)]
+            HRESULT Clear();
+
+            [VtblIndex(39)]
+            HRESULT CloneFrom(IMFTopology* pTopology);
+
+            [VtblIndex(40)]
+            HRESULT GetNodeByID([NativeTypeName("TOPOID")] ulong qwTopoNodeID, IMFTopologyNode** ppNode);
+
+            [VtblIndex(41)]
+            HRESULT GetSourceNodeCollection(IMFCollection** ppCollection);
+
+            [VtblIndex(42)]
+            HRESULT GetOutputNodeCollection(IMFCollection** ppCollection);
         }
 
         public partial struct Vtbl

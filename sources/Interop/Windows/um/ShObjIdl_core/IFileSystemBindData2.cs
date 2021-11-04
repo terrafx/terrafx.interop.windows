@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("3ACF075F-71DB-4AFA-81F0-3FC4FDF2A5B8")]
     [NativeTypeName("struct IFileSystemBindData2 : IFileSystemBindData")]
     [NativeInheritance("IFileSystemBindData")]
-    public unsafe partial struct IFileSystemBindData2
+    public unsafe partial struct IFileSystemBindData2 : IFileSystemBindData2.Interface
     {
         public void** lpVtbl;
 
@@ -79,6 +79,21 @@ namespace TerraFX.Interop
         public HRESULT GetJunctionCLSID([NativeTypeName("CLSID *")] Guid* pclsid)
         {
             return ((delegate* unmanaged<IFileSystemBindData2*, Guid*, int>)(lpVtbl[8]))((IFileSystemBindData2*)Unsafe.AsPointer(ref this), pclsid);
+        }
+
+        public interface Interface : IFileSystemBindData.Interface
+        {
+            [VtblIndex(5)]
+            HRESULT SetFileID(LARGE_INTEGER liFileID);
+
+            [VtblIndex(6)]
+            HRESULT GetFileID(LARGE_INTEGER* pliFileID);
+
+            [VtblIndex(7)]
+            HRESULT SetJunctionCLSID([NativeTypeName("const IID &")] Guid* clsid);
+
+            [VtblIndex(8)]
+            HRESULT GetJunctionCLSID([NativeTypeName("CLSID *")] Guid* pclsid);
         }
 
         public partial struct Vtbl

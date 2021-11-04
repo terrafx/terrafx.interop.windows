@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("4AD18AC0-CFD2-4C2F-BB62-96E54FDB6879")]
     [NativeTypeName("struct IDCompositionShadowEffect : IDCompositionFilterEffect")]
     [NativeInheritance("IDCompositionFilterEffect")]
-    public unsafe partial struct IDCompositionShadowEffect
+    public unsafe partial struct IDCompositionShadowEffect : IDCompositionShadowEffect.Interface
     {
         public void** lpVtbl;
 
@@ -121,6 +121,42 @@ namespace TerraFX.Interop
         public HRESULT SetAlpha(float amount)
         {
             return ((delegate* unmanaged<IDCompositionShadowEffect*, float, int>)(lpVtbl[14]))((IDCompositionShadowEffect*)Unsafe.AsPointer(ref this), amount);
+        }
+
+        public interface Interface : IDCompositionFilterEffect.Interface
+        {
+            [VtblIndex(4)]
+            HRESULT SetStandardDeviation(IDCompositionAnimation* animation);
+
+            [VtblIndex(5)]
+            HRESULT SetStandardDeviation(float amount);
+
+            [VtblIndex(6)]
+            HRESULT SetColor([NativeTypeName("const D2D1_VECTOR_4F &")] D2D_VECTOR_4F* color);
+
+            [VtblIndex(7)]
+            HRESULT SetRed(IDCompositionAnimation* animation);
+
+            [VtblIndex(8)]
+            HRESULT SetRed(float amount);
+
+            [VtblIndex(9)]
+            HRESULT SetGreen(IDCompositionAnimation* animation);
+
+            [VtblIndex(10)]
+            HRESULT SetGreen(float amount);
+
+            [VtblIndex(11)]
+            HRESULT SetBlue(IDCompositionAnimation* animation);
+
+            [VtblIndex(12)]
+            HRESULT SetBlue(float amount);
+
+            [VtblIndex(13)]
+            HRESULT SetAlpha(IDCompositionAnimation* animation);
+
+            [VtblIndex(14)]
+            HRESULT SetAlpha(float amount);
         }
 
         public partial struct Vtbl

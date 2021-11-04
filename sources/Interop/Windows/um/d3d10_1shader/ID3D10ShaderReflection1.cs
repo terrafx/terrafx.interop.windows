@@ -10,7 +10,7 @@ namespace TerraFX.Interop
 {
     [NativeTypeName("struct ID3D10ShaderReflection1 : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct ID3D10ShaderReflection1
+    public unsafe partial struct ID3D10ShaderReflection1 : ID3D10ShaderReflection1.Interface
     {
         public void** lpVtbl;
 
@@ -140,6 +140,54 @@ namespace TerraFX.Interop
         public HRESULT IsSampleFrequencyShader(BOOL* pbSampleFrequency)
         {
             return ((delegate* unmanaged<ID3D10ShaderReflection1*, BOOL*, int>)(lpVtbl[17]))((ID3D10ShaderReflection1*)Unsafe.AsPointer(ref this), pbSampleFrequency);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetDesc(D3D10_SHADER_DESC* pDesc);
+
+            [VtblIndex(4)]
+            ID3D10ShaderReflectionConstantBuffer* GetConstantBufferByIndex(uint Index);
+
+            [VtblIndex(5)]
+            ID3D10ShaderReflectionConstantBuffer* GetConstantBufferByName([NativeTypeName("LPCSTR")] sbyte* Name);
+
+            [VtblIndex(6)]
+            HRESULT GetResourceBindingDesc(uint ResourceIndex, D3D10_SHADER_INPUT_BIND_DESC* pDesc);
+
+            [VtblIndex(7)]
+            HRESULT GetInputParameterDesc(uint ParameterIndex, D3D10_SIGNATURE_PARAMETER_DESC* pDesc);
+
+            [VtblIndex(8)]
+            HRESULT GetOutputParameterDesc(uint ParameterIndex, D3D10_SIGNATURE_PARAMETER_DESC* pDesc);
+
+            [VtblIndex(9)]
+            ID3D10ShaderReflectionVariable* GetVariableByName([NativeTypeName("LPCSTR")] sbyte* Name);
+
+            [VtblIndex(10)]
+            HRESULT GetResourceBindingDescByName([NativeTypeName("LPCSTR")] sbyte* Name, D3D10_SHADER_INPUT_BIND_DESC* pDesc);
+
+            [VtblIndex(11)]
+            HRESULT GetMovInstructionCount(uint* pCount);
+
+            [VtblIndex(12)]
+            HRESULT GetMovcInstructionCount(uint* pCount);
+
+            [VtblIndex(13)]
+            HRESULT GetConversionInstructionCount(uint* pCount);
+
+            [VtblIndex(14)]
+            HRESULT GetBitwiseInstructionCount(uint* pCount);
+
+            [VtblIndex(15)]
+            HRESULT GetGSInputPrimitive([NativeTypeName("D3D10_PRIMITIVE *")] D3D_PRIMITIVE* pPrim);
+
+            [VtblIndex(16)]
+            HRESULT IsLevel9Shader(BOOL* pbLevel9Shader);
+
+            [VtblIndex(17)]
+            HRESULT IsSampleFrequencyShader(BOOL* pbSampleFrequency);
         }
 
         public partial struct Vtbl

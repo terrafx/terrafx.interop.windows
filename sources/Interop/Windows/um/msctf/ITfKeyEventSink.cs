@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("AA80E7F5-2021-11D2-93E0-0060B067B86E")]
     [NativeTypeName("struct ITfKeyEventSink : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct ITfKeyEventSink
+    public unsafe partial struct ITfKeyEventSink : ITfKeyEventSink.Interface
     {
         public void** lpVtbl;
 
@@ -79,6 +79,27 @@ namespace TerraFX.Interop
         public HRESULT OnPreservedKey(ITfContext* pic, [NativeTypeName("const GUID &")] Guid* rguid, BOOL* pfEaten)
         {
             return ((delegate* unmanaged<ITfKeyEventSink*, ITfContext*, Guid*, BOOL*, int>)(lpVtbl[8]))((ITfKeyEventSink*)Unsafe.AsPointer(ref this), pic, rguid, pfEaten);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT OnSetFocus(BOOL fForeground);
+
+            [VtblIndex(4)]
+            HRESULT OnTestKeyDown(ITfContext* pic, WPARAM wParam, LPARAM lParam, BOOL* pfEaten);
+
+            [VtblIndex(5)]
+            HRESULT OnTestKeyUp(ITfContext* pic, WPARAM wParam, LPARAM lParam, BOOL* pfEaten);
+
+            [VtblIndex(6)]
+            HRESULT OnKeyDown(ITfContext* pic, WPARAM wParam, LPARAM lParam, BOOL* pfEaten);
+
+            [VtblIndex(7)]
+            HRESULT OnKeyUp(ITfContext* pic, WPARAM wParam, LPARAM lParam, BOOL* pfEaten);
+
+            [VtblIndex(8)]
+            HRESULT OnPreservedKey(ITfContext* pic, [NativeTypeName("const GUID &")] Guid* rguid, BOOL* pfEaten);
         }
 
         public partial struct Vtbl

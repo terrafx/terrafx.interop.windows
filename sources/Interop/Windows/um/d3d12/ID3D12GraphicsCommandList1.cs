@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("553103FB-1FE7-4557-BB38-946D7D0E7CA7")]
     [NativeTypeName("struct ID3D12GraphicsCommandList1 : ID3D12GraphicsCommandList")]
     [NativeInheritance("ID3D12GraphicsCommandList")]
-    public unsafe partial struct ID3D12GraphicsCommandList1
+    public unsafe partial struct ID3D12GraphicsCommandList1 : ID3D12GraphicsCommandList1.Interface
     {
         public void** lpVtbl;
 
@@ -478,6 +478,27 @@ namespace TerraFX.Interop
         public void SetViewInstanceMask(uint Mask)
         {
             ((delegate* unmanaged<ID3D12GraphicsCommandList1*, uint, void>)(lpVtbl[65]))((ID3D12GraphicsCommandList1*)Unsafe.AsPointer(ref this), Mask);
+        }
+
+        public interface Interface : ID3D12GraphicsCommandList.Interface
+        {
+            [VtblIndex(60)]
+            void AtomicCopyBufferUINT(ID3D12Resource* pDstBuffer, [NativeTypeName("UINT64")] ulong DstOffset, ID3D12Resource* pSrcBuffer, [NativeTypeName("UINT64")] ulong SrcOffset, uint Dependencies, [NativeTypeName("ID3D12Resource *const *")] ID3D12Resource** ppDependentResources, [NativeTypeName("const D3D12_SUBRESOURCE_RANGE_UINT64 *")] D3D12_SUBRESOURCE_RANGE_UINT64* pDependentSubresourceRanges);
+
+            [VtblIndex(61)]
+            void AtomicCopyBufferUINT64(ID3D12Resource* pDstBuffer, [NativeTypeName("UINT64")] ulong DstOffset, ID3D12Resource* pSrcBuffer, [NativeTypeName("UINT64")] ulong SrcOffset, uint Dependencies, [NativeTypeName("ID3D12Resource *const *")] ID3D12Resource** ppDependentResources, [NativeTypeName("const D3D12_SUBRESOURCE_RANGE_UINT64 *")] D3D12_SUBRESOURCE_RANGE_UINT64* pDependentSubresourceRanges);
+
+            [VtblIndex(62)]
+            void OMSetDepthBounds(float Min, float Max);
+
+            [VtblIndex(63)]
+            void SetSamplePositions(uint NumSamplesPerPixel, uint NumPixels, D3D12_SAMPLE_POSITION* pSamplePositions);
+
+            [VtblIndex(64)]
+            void ResolveSubresourceRegion(ID3D12Resource* pDstResource, uint DstSubresource, uint DstX, uint DstY, ID3D12Resource* pSrcResource, uint SrcSubresource, [NativeTypeName("D3D12_RECT *")] RECT* pSrcRect, DXGI_FORMAT Format, D3D12_RESOLVE_MODE ResolveMode);
+
+            [VtblIndex(65)]
+            void SetViewInstanceMask(uint Mask);
         }
 
         public partial struct Vtbl

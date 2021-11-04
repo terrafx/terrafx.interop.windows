@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("4A3DF050-23BD-11D2-939F-00A0C91EEDBA")]
     [NativeTypeName("struct DFConstraint : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct DFConstraint
+    public unsafe partial struct DFConstraint : DFConstraint.Interface
     {
         public void** lpVtbl;
 
@@ -79,6 +79,15 @@ namespace TerraFX.Interop
         public HRESULT get_Value(VARIANT* pv)
         {
             return ((delegate* unmanaged<DFConstraint*, VARIANT*, int>)(lpVtbl[8]))((DFConstraint*)Unsafe.AsPointer(ref this), pv);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT get_Name([NativeTypeName("BSTR *")] ushort** pbs);
+
+            [VtblIndex(8)]
+            HRESULT get_Value(VARIANT* pv);
         }
 
         public partial struct Vtbl

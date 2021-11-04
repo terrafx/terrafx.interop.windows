@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("A1FAF330-EF97-11CE-9BC9-00AA00608E01")]
     [NativeTypeName("struct IOleParentUndoUnit : IOleUndoUnit")]
     [NativeInheritance("IOleUndoUnit")]
-    public unsafe partial struct IOleParentUndoUnit
+    public unsafe partial struct IOleParentUndoUnit : IOleParentUndoUnit.Interface
     {
         public void** lpVtbl;
 
@@ -100,6 +100,24 @@ namespace TerraFX.Interop
         public HRESULT GetParentState([NativeTypeName("DWORD *")] uint* pdwState)
         {
             return ((delegate* unmanaged<IOleParentUndoUnit*, uint*, int>)(lpVtbl[11]))((IOleParentUndoUnit*)Unsafe.AsPointer(ref this), pdwState);
+        }
+
+        public interface Interface : IOleUndoUnit.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT Open(IOleParentUndoUnit* pPUU);
+
+            [VtblIndex(8)]
+            HRESULT Close(IOleParentUndoUnit* pPUU, BOOL fCommit);
+
+            [VtblIndex(9)]
+            HRESULT Add(IOleUndoUnit* pUU);
+
+            [VtblIndex(10)]
+            HRESULT FindUnit(IOleUndoUnit* pUU);
+
+            [VtblIndex(11)]
+            HRESULT GetParentState([NativeTypeName("DWORD *")] uint* pdwState);
         }
 
         public partial struct Vtbl

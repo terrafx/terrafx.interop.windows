@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("73F3C0D9-2E8B-48F3-895E-20CBD27B723B")]
     [NativeTypeName("struct IInkPresenterDesktop : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IInkPresenterDesktop
+    public unsafe partial struct IInkPresenterDesktop : IInkPresenterDesktop.Interface
     {
         public void** lpVtbl;
 
@@ -72,6 +72,24 @@ namespace TerraFX.Interop
         public HRESULT OnHighContrastChanged()
         {
             return ((delegate* unmanaged<IInkPresenterDesktop*, int>)(lpVtbl[7]))((IInkPresenterDesktop*)Unsafe.AsPointer(ref this));
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT SetRootVisual(IUnknown* rootVisual, IUnknown* device);
+
+            [VtblIndex(4)]
+            HRESULT SetCommitRequestHandler(IInkCommitRequestHandler* handler);
+
+            [VtblIndex(5)]
+            HRESULT GetSize(float* width, float* height);
+
+            [VtblIndex(6)]
+            HRESULT SetSize(float width, float height);
+
+            [VtblIndex(7)]
+            HRESULT OnHighContrastChanged();
         }
 
         public partial struct Vtbl

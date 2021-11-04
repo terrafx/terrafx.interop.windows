@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("EED9C2EE-66B4-4F18-A697-AC7D3960215C")]
     [NativeTypeName("struct IMFSensorTransformFactory : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IMFSensorTransformFactory
+    public unsafe partial struct IMFSensorTransformFactory : IMFSensorTransformFactory.Interface
     {
         public void** lpVtbl;
 
@@ -72,6 +72,24 @@ namespace TerraFX.Interop
         public HRESULT CreateTransform([NativeTypeName("const GUID &")] Guid* guidSensorTransformID, IMFAttributes* pAttributes, IMFDeviceTransform** ppDeviceMFT)
         {
             return ((delegate* unmanaged<IMFSensorTransformFactory*, Guid*, IMFAttributes*, IMFDeviceTransform**, int>)(lpVtbl[7]))((IMFSensorTransformFactory*)Unsafe.AsPointer(ref this), guidSensorTransformID, pAttributes, ppDeviceMFT);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetFactoryAttributes(IMFAttributes** ppAttributes);
+
+            [VtblIndex(4)]
+            HRESULT InitializeFactory([NativeTypeName("DWORD")] uint dwMaxTransformCount, IMFCollection* pSensorDevices, IMFAttributes* pAttributes);
+
+            [VtblIndex(5)]
+            HRESULT GetTransformCount([NativeTypeName("DWORD *")] uint* pdwCount);
+
+            [VtblIndex(6)]
+            HRESULT GetTransformInformation([NativeTypeName("DWORD")] uint TransformIndex, Guid* pguidTransformId, IMFAttributes** ppAttributes, IMFCollection** ppStreamInformation);
+
+            [VtblIndex(7)]
+            HRESULT CreateTransform([NativeTypeName("const GUID &")] Guid* guidSensorTransformID, IMFAttributes* pAttributes, IMFDeviceTransform** ppDeviceMFT);
         }
 
         public partial struct Vtbl

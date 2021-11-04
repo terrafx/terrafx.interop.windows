@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("ABE2DE00-DC2D-4793-AF9A-EF1D90832644")]
     [NativeTypeName("struct IDiaSymbol5 : IDiaSymbol4")]
     [NativeInheritance("IDiaSymbol4")]
-    public unsafe partial struct IDiaSymbol5
+    public unsafe partial struct IDiaSymbol5 : IDiaSymbol5.Interface
     {
         public void** lpVtbl;
 
@@ -1738,6 +1738,12 @@ namespace TerraFX.Interop
         public HRESULT get_hasAbsoluteAddress(BOOL* pRetVal)
         {
             return ((delegate* unmanaged<IDiaSymbol5*, BOOL*, int>)(lpVtbl[245]))((IDiaSymbol5*)Unsafe.AsPointer(ref this), pRetVal);
+        }
+
+        public interface Interface : IDiaSymbol4.Interface
+        {
+            [VtblIndex(245)]
+            HRESULT get_hasAbsoluteAddress(BOOL* pRetVal);
         }
 
         public partial struct Vtbl

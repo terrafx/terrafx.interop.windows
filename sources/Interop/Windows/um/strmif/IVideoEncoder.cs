@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("02997C3B-8E1B-460E-9270-545E0DE9563E")]
     [NativeTypeName("struct IVideoEncoder : IEncoderAPI")]
     [NativeInheritance("IEncoderAPI")]
-    public unsafe partial struct IVideoEncoder
+    public unsafe partial struct IVideoEncoder : IVideoEncoder.Interface
     {
         public void** lpVtbl;
 
@@ -86,6 +86,10 @@ namespace TerraFX.Interop
         public HRESULT SetValue([NativeTypeName("const GUID *")] Guid* Api, VARIANT* Value)
         {
             return ((delegate* unmanaged<IVideoEncoder*, Guid*, VARIANT*, int>)(lpVtbl[9]))((IVideoEncoder*)Unsafe.AsPointer(ref this), Api, Value);
+        }
+
+        public interface Interface : IEncoderAPI.Interface
+        {
         }
 
         public partial struct Vtbl

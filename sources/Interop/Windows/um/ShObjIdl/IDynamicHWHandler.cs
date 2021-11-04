@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("DC2601D7-059E-42FC-A09D-2AFD21B6D5F7")]
     [NativeTypeName("struct IDynamicHWHandler : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IDynamicHWHandler
+    public unsafe partial struct IDynamicHWHandler : IDynamicHWHandler.Interface
     {
         public void** lpVtbl;
 
@@ -44,6 +44,12 @@ namespace TerraFX.Interop
         public HRESULT GetDynamicInfo([NativeTypeName("LPCWSTR")] ushort* pszDeviceID, [NativeTypeName("DWORD")] uint dwContentType, [NativeTypeName("LPWSTR *")] ushort** ppszAction)
         {
             return ((delegate* unmanaged<IDynamicHWHandler*, ushort*, uint, ushort**, int>)(lpVtbl[3]))((IDynamicHWHandler*)Unsafe.AsPointer(ref this), pszDeviceID, dwContentType, ppszAction);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetDynamicInfo([NativeTypeName("LPCWSTR")] ushort* pszDeviceID, [NativeTypeName("DWORD")] uint dwContentType, [NativeTypeName("LPWSTR *")] ushort** ppszAction);
         }
 
         public partial struct Vtbl

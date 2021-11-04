@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("27354147-7F64-5B0F-8F00-5D77AFBE261E")]
     [NativeTypeName("struct IStreamInterleave : IStream")]
     [NativeInheritance("IStream")]
-    public unsafe partial struct IStreamInterleave
+    public unsafe partial struct IStreamInterleave : IStreamInterleave.Interface
     {
         public void** lpVtbl;
 
@@ -121,6 +121,12 @@ namespace TerraFX.Interop
         public HRESULT Initialize(IStream** streams, [NativeTypeName("ULONG *")] uint* interleaveSizes, [NativeTypeName("ULONG")] uint streamCount)
         {
             return ((delegate* unmanaged<IStreamInterleave*, IStream**, uint*, uint, int>)(lpVtbl[14]))((IStreamInterleave*)Unsafe.AsPointer(ref this), streams, interleaveSizes, streamCount);
+        }
+
+        public interface Interface : IStream.Interface
+        {
+            [VtblIndex(14)]
+            HRESULT Initialize(IStream** streams, [NativeTypeName("ULONG *")] uint* interleaveSizes, [NativeTypeName("ULONG")] uint streamCount);
         }
 
         public partial struct Vtbl

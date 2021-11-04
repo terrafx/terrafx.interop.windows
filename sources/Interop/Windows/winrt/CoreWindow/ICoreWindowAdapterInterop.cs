@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("7A5B6FD1-CD73-4B6C-9CF4-2E869EAF470A")]
     [NativeTypeName("struct ICoreWindowAdapterInterop : IInspectable")]
     [NativeInheritance("IInspectable")]
-    public unsafe partial struct ICoreWindowAdapterInterop
+    public unsafe partial struct ICoreWindowAdapterInterop : ICoreWindowAdapterInterop.Interface
     {
         public void** lpVtbl;
 
@@ -107,6 +107,30 @@ namespace TerraFX.Interop
         public HRESULT SetWindowClientAdapter(IUnknown* value)
         {
             return ((delegate* unmanaged<ICoreWindowAdapterInterop*, IUnknown*, int>)(lpVtbl[12]))((ICoreWindowAdapterInterop*)Unsafe.AsPointer(ref this), value);
+        }
+
+        public interface Interface : IInspectable.Interface
+        {
+            [VtblIndex(6)]
+            HRESULT get_AppActivationClientAdapter(IUnknown** value);
+
+            [VtblIndex(7)]
+            HRESULT get_ApplicationViewClientAdapter(IUnknown** value);
+
+            [VtblIndex(8)]
+            HRESULT get_CoreApplicationViewClientAdapter(IUnknown** value);
+
+            [VtblIndex(9)]
+            HRESULT get_HoloViewClientAdapter(IUnknown** value);
+
+            [VtblIndex(10)]
+            HRESULT get_SystemNavigationClientAdapter(IUnknown** value);
+
+            [VtblIndex(11)]
+            HRESULT get_TitleBarClientAdapter(IUnknown** value);
+
+            [VtblIndex(12)]
+            HRESULT SetWindowClientAdapter(IUnknown* value);
         }
 
         public partial struct Vtbl

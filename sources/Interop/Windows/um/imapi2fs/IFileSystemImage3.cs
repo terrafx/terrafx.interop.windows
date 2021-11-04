@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("7CFF842C-7E97-4807-8304-910DD8F7C051")]
     [NativeTypeName("struct IFileSystemImage3 : IFileSystemImage2")]
     [NativeInheritance("IFileSystemImage2")]
-    public unsafe partial struct IFileSystemImage3
+    public unsafe partial struct IFileSystemImage3 : IFileSystemImage3.Interface
     {
         public void** lpVtbl;
 
@@ -450,6 +450,18 @@ namespace TerraFX.Interop
         public HRESULT ProbeSpecificFileSystem(FsiFileSystems fileSystemToProbe, [NativeTypeName("VARIANT_BOOL *")] short* isAppendable)
         {
             return ((delegate* unmanaged<IFileSystemImage3*, FsiFileSystems, short*, int>)(lpVtbl[61]))((IFileSystemImage3*)Unsafe.AsPointer(ref this), fileSystemToProbe, isAppendable);
+        }
+
+        public interface Interface : IFileSystemImage2.Interface
+        {
+            [VtblIndex(59)]
+            HRESULT get_CreateRedundantUdfMetadataFiles([NativeTypeName("VARIANT_BOOL *")] short* pVal);
+
+            [VtblIndex(60)]
+            HRESULT put_CreateRedundantUdfMetadataFiles([NativeTypeName("VARIANT_BOOL")] short newVal);
+
+            [VtblIndex(61)]
+            HRESULT ProbeSpecificFileSystem(FsiFileSystems fileSystemToProbe, [NativeTypeName("VARIANT_BOOL *")] short* isAppendable);
         }
 
         public partial struct Vtbl

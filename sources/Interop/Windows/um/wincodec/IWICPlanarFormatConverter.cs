@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("BEBEE9CB-83B0-4DCC-8132-B0AAA55EAC96")]
     [NativeTypeName("struct IWICPlanarFormatConverter : IWICBitmapSource")]
     [NativeInheritance("IWICBitmapSource")]
-    public unsafe partial struct IWICPlanarFormatConverter
+    public unsafe partial struct IWICPlanarFormatConverter : IWICPlanarFormatConverter.Interface
     {
         public void** lpVtbl;
 
@@ -86,6 +86,15 @@ namespace TerraFX.Interop
         public HRESULT CanConvert([NativeTypeName("const WICPixelFormatGUID *")] Guid* pSrcPixelFormats, uint cSrcPlanes, [NativeTypeName("REFWICPixelFormatGUID")] Guid* dstPixelFormat, BOOL* pfCanConvert)
         {
             return ((delegate* unmanaged<IWICPlanarFormatConverter*, Guid*, uint, Guid*, BOOL*, int>)(lpVtbl[9]))((IWICPlanarFormatConverter*)Unsafe.AsPointer(ref this), pSrcPixelFormats, cSrcPlanes, dstPixelFormat, pfCanConvert);
+        }
+
+        public interface Interface : IWICBitmapSource.Interface
+        {
+            [VtblIndex(8)]
+            HRESULT Initialize(IWICBitmapSource** ppPlanes, uint cPlanes, [NativeTypeName("REFWICPixelFormatGUID")] Guid* dstFormat, WICBitmapDitherType dither, IWICPalette* pIPalette, double alphaThresholdPercent, WICBitmapPaletteType paletteTranslate);
+
+            [VtblIndex(9)]
+            HRESULT CanConvert([NativeTypeName("const WICPixelFormatGUID *")] Guid* pSrcPixelFormats, uint cSrcPlanes, [NativeTypeName("REFWICPixelFormatGUID")] Guid* dstPixelFormat, BOOL* pfCanConvert);
         }
 
         public partial struct Vtbl

@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("CDE725B0-CCC9-4519-917E-325D72FAB4CE")]
     [NativeTypeName("struct IFolderView : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IFolderView
+    public unsafe partial struct IFolderView : IFolderView.Interface
     {
         public void** lpVtbl;
 
@@ -135,6 +135,51 @@ namespace TerraFX.Interop
         public HRESULT SelectAndPositionItems(uint cidl, [NativeTypeName("LPCITEMIDLIST *")] ITEMIDLIST** apidl, POINT* apt, [NativeTypeName("DWORD")] uint dwFlags)
         {
             return ((delegate* unmanaged<IFolderView*, uint, ITEMIDLIST**, POINT*, uint, int>)(lpVtbl[16]))((IFolderView*)Unsafe.AsPointer(ref this), cidl, apidl, apt, dwFlags);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetCurrentViewMode(uint* pViewMode);
+
+            [VtblIndex(4)]
+            HRESULT SetCurrentViewMode(uint ViewMode);
+
+            [VtblIndex(5)]
+            HRESULT GetFolder([NativeTypeName("const IID &")] Guid* riid, void** ppv);
+
+            [VtblIndex(6)]
+            HRESULT Item(int iItemIndex, [NativeTypeName("LPITEMIDLIST *")] ITEMIDLIST** ppidl);
+
+            [VtblIndex(7)]
+            HRESULT ItemCount(uint uFlags, int* pcItems);
+
+            [VtblIndex(8)]
+            HRESULT Items(uint uFlags, [NativeTypeName("const IID &")] Guid* riid, void** ppv);
+
+            [VtblIndex(9)]
+            HRESULT GetSelectionMarkedItem(int* piItem);
+
+            [VtblIndex(10)]
+            HRESULT GetFocusedItem(int* piItem);
+
+            [VtblIndex(11)]
+            HRESULT GetItemPosition([NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidl, POINT* ppt);
+
+            [VtblIndex(12)]
+            HRESULT GetSpacing(POINT* ppt);
+
+            [VtblIndex(13)]
+            HRESULT GetDefaultSpacing(POINT* ppt);
+
+            [VtblIndex(14)]
+            HRESULT GetAutoArrange();
+
+            [VtblIndex(15)]
+            HRESULT SelectItem(int iItem, [NativeTypeName("DWORD")] uint dwFlags);
+
+            [VtblIndex(16)]
+            HRESULT SelectAndPositionItems(uint cidl, [NativeTypeName("LPCITEMIDLIST *")] ITEMIDLIST** apidl, POINT* apt, [NativeTypeName("DWORD")] uint dwFlags);
         }
 
         public partial struct Vtbl

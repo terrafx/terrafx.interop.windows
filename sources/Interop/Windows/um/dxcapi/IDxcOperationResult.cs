@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("CEDB484A-D4E9-445A-B991-CA21CA157DC2")]
     [NativeTypeName("struct IDxcOperationResult : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IDxcOperationResult
+    public unsafe partial struct IDxcOperationResult : IDxcOperationResult.Interface
     {
         public void** lpVtbl;
 
@@ -58,6 +58,18 @@ namespace TerraFX.Interop
         public HRESULT GetErrorBuffer(IDxcBlobEncoding** ppErrors)
         {
             return ((delegate* unmanaged<IDxcOperationResult*, IDxcBlobEncoding**, int>)(lpVtbl[5]))((IDxcOperationResult*)Unsafe.AsPointer(ref this), ppErrors);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetStatus(HRESULT* pStatus);
+
+            [VtblIndex(4)]
+            HRESULT GetResult(IDxcBlob** ppResult);
+
+            [VtblIndex(5)]
+            HRESULT GetErrorBuffer(IDxcBlobEncoding** ppErrors);
         }
 
         public partial struct Vtbl

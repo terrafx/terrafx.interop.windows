@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("A7FE6EDA-1932-4281-B881-87B31B8BC52C")]
     [NativeTypeName("struct IShellUIHelper2 : IShellUIHelper")]
     [NativeInheritance("IShellUIHelper")]
-    public unsafe partial struct IShellUIHelper2
+    public unsafe partial struct IShellUIHelper2 : IShellUIHelper2.Interface
     {
         public void** lpVtbl;
 
@@ -268,6 +268,57 @@ namespace TerraFX.Interop
         public HRESULT SearchGuideUrl([NativeTypeName("BSTR *")] ushort** pbstrUrl)
         {
             return ((delegate* unmanaged<IShellUIHelper2*, ushort**, int>)(lpVtbl[35]))((IShellUIHelper2*)Unsafe.AsPointer(ref this), pbstrUrl);
+        }
+
+        public interface Interface : IShellUIHelper.Interface
+        {
+            [VtblIndex(20)]
+            HRESULT AddSearchProvider([NativeTypeName("BSTR")] ushort* URL);
+
+            [VtblIndex(21)]
+            HRESULT RunOnceShown();
+
+            [VtblIndex(22)]
+            HRESULT SkipRunOnce();
+
+            [VtblIndex(23)]
+            HRESULT CustomizeSettings([NativeTypeName("VARIANT_BOOL")] short fSQM, [NativeTypeName("VARIANT_BOOL")] short fPhishing, [NativeTypeName("BSTR")] ushort* bstrLocale);
+
+            [VtblIndex(24)]
+            HRESULT SqmEnabled([NativeTypeName("VARIANT_BOOL *")] short* pfEnabled);
+
+            [VtblIndex(25)]
+            HRESULT PhishingEnabled([NativeTypeName("VARIANT_BOOL *")] short* pfEnabled);
+
+            [VtblIndex(26)]
+            HRESULT BrandImageUri([NativeTypeName("BSTR *")] ushort** pbstrUri);
+
+            [VtblIndex(27)]
+            HRESULT SkipTabsWelcome();
+
+            [VtblIndex(28)]
+            HRESULT DiagnoseConnection();
+
+            [VtblIndex(29)]
+            HRESULT CustomizeClearType([NativeTypeName("VARIANT_BOOL")] short fSet);
+
+            [VtblIndex(30)]
+            HRESULT IsSearchProviderInstalled([NativeTypeName("BSTR")] ushort* URL, [NativeTypeName("DWORD *")] uint* pdwResult);
+
+            [VtblIndex(31)]
+            HRESULT IsSearchMigrated([NativeTypeName("VARIANT_BOOL *")] short* pfMigrated);
+
+            [VtblIndex(32)]
+            HRESULT DefaultSearchProvider([NativeTypeName("BSTR *")] ushort** pbstrName);
+
+            [VtblIndex(33)]
+            HRESULT RunOnceRequiredSettingsComplete([NativeTypeName("VARIANT_BOOL")] short fComplete);
+
+            [VtblIndex(34)]
+            HRESULT RunOnceHasShown([NativeTypeName("VARIANT_BOOL *")] short* pfShown);
+
+            [VtblIndex(35)]
+            HRESULT SearchGuideUrl([NativeTypeName("BSTR *")] ushort** pbstrUrl);
         }
 
         public partial struct Vtbl

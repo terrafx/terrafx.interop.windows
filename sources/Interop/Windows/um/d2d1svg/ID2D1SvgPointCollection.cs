@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("9DBE4C0D-3572-4DD9-9825-5530813BB712")]
     [NativeTypeName("struct ID2D1SvgPointCollection : ID2D1SvgAttribute")]
     [NativeInheritance("ID2D1SvgAttribute")]
-    public unsafe partial struct ID2D1SvgPointCollection
+    public unsafe partial struct ID2D1SvgPointCollection : ID2D1SvgPointCollection.Interface
     {
         public void** lpVtbl;
 
@@ -87,6 +87,22 @@ namespace TerraFX.Interop
         public uint GetPointsCount()
         {
             return ((delegate* unmanaged<ID2D1SvgPointCollection*, uint>)(lpVtbl[9]))((ID2D1SvgPointCollection*)Unsafe.AsPointer(ref this));
+        }
+
+        public interface Interface : ID2D1SvgAttribute.Interface
+        {
+            [VtblIndex(6)]
+            HRESULT RemovePointsAtEnd([NativeTypeName("UINT32")] uint pointsCount);
+
+            [VtblIndex(7)]
+            HRESULT UpdatePoints([NativeTypeName("const D2D1_POINT_2F *")] D2D_POINT_2F* points, [NativeTypeName("UINT32")] uint pointsCount, [NativeTypeName("UINT32")] uint startIndex = 0);
+
+            [VtblIndex(8)]
+            HRESULT GetPoints([NativeTypeName("D2D1_POINT_2F *")] D2D_POINT_2F* points, [NativeTypeName("UINT32")] uint pointsCount, [NativeTypeName("UINT32")] uint startIndex = 0);
+
+            [VtblIndex(9)]
+            [return: NativeTypeName("UINT32")]
+            uint GetPointsCount();
         }
 
         public partial struct Vtbl

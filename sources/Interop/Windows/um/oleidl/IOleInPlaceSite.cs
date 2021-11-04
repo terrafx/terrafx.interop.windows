@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("00000119-0000-0000-C000-000000000046")]
     [NativeTypeName("struct IOleInPlaceSite : IOleWindow")]
     [NativeInheritance("IOleWindow")]
-    public unsafe partial struct IOleInPlaceSite
+    public unsafe partial struct IOleInPlaceSite : IOleInPlaceSite.Interface
     {
         public void** lpVtbl;
 
@@ -121,6 +121,39 @@ namespace TerraFX.Interop
         public HRESULT OnPosRectChange([NativeTypeName("LPCRECT")] RECT* lprcPosRect)
         {
             return ((delegate* unmanaged<IOleInPlaceSite*, RECT*, int>)(lpVtbl[14]))((IOleInPlaceSite*)Unsafe.AsPointer(ref this), lprcPosRect);
+        }
+
+        public interface Interface : IOleWindow.Interface
+        {
+            [VtblIndex(5)]
+            HRESULT CanInPlaceActivate();
+
+            [VtblIndex(6)]
+            HRESULT OnInPlaceActivate();
+
+            [VtblIndex(7)]
+            HRESULT OnUIActivate();
+
+            [VtblIndex(8)]
+            HRESULT GetWindowContext(IOleInPlaceFrame** ppFrame, IOleInPlaceUIWindow** ppDoc, [NativeTypeName("LPRECT")] RECT* lprcPosRect, [NativeTypeName("LPRECT")] RECT* lprcClipRect, [NativeTypeName("LPOLEINPLACEFRAMEINFO")] OLEINPLACEFRAMEINFO* lpFrameInfo);
+
+            [VtblIndex(9)]
+            HRESULT Scroll(SIZE scrollExtant);
+
+            [VtblIndex(10)]
+            HRESULT OnUIDeactivate(BOOL fUndoable);
+
+            [VtblIndex(11)]
+            HRESULT OnInPlaceDeactivate();
+
+            [VtblIndex(12)]
+            HRESULT DiscardUndoState();
+
+            [VtblIndex(13)]
+            HRESULT DeactivateAndUndo();
+
+            [VtblIndex(14)]
+            HRESULT OnPosRectChange([NativeTypeName("LPCRECT")] RECT* lprcPosRect);
         }
 
         public partial struct Vtbl

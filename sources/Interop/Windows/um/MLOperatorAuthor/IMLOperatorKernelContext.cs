@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("82536A28-F022-4769-9D3F-8B278F84C0C3")]
     [NativeTypeName("struct IMLOperatorKernelContext : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IMLOperatorKernelContext
+    public unsafe partial struct IMLOperatorKernelContext : IMLOperatorKernelContext.Interface
     {
         public void** lpVtbl;
 
@@ -72,6 +72,24 @@ namespace TerraFX.Interop
         public void GetExecutionInterface(IUnknown** executionObject)
         {
             ((delegate* unmanaged<IMLOperatorKernelContext*, IUnknown**, void>)(lpVtbl[7]))((IMLOperatorKernelContext*)Unsafe.AsPointer(ref this), executionObject);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetInputTensor([NativeTypeName("uint32_t")] uint inputIndex, IMLOperatorTensor** tensor);
+
+            [VtblIndex(4)]
+            HRESULT GetOutputTensor([NativeTypeName("uint32_t")] uint outputIndex, [NativeTypeName("uint32_t")] uint dimensionCount, [NativeTypeName("const uint32_t *")] uint* dimensionSizes, IMLOperatorTensor** tensor);
+
+            [VtblIndex(5)]
+            HRESULT GetOutputTensor([NativeTypeName("uint32_t")] uint outputIndex, IMLOperatorTensor** tensor);
+
+            [VtblIndex(6)]
+            HRESULT AllocateTemporaryData([NativeTypeName("size_t")] nuint size, IUnknown** data);
+
+            [VtblIndex(7)]
+            void GetExecutionInterface(IUnknown** executionObject);
         }
 
         public partial struct Vtbl

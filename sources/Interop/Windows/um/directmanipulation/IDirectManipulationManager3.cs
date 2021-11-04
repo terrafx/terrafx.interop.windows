@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("2CB6B33D-FFE8-488C-B750-FBDFE88DCA8C")]
     [NativeTypeName("struct IDirectManipulationManager3 : IDirectManipulationManager2")]
     [NativeInheritance("IDirectManipulationManager2")]
-    public unsafe partial struct IDirectManipulationManager3
+    public unsafe partial struct IDirectManipulationManager3 : IDirectManipulationManager3.Interface
     {
         public void** lpVtbl;
 
@@ -100,6 +100,12 @@ namespace TerraFX.Interop
         public HRESULT GetService([NativeTypeName("const IID &")] Guid* clsid, [NativeTypeName("const IID &")] Guid* riid, void** @object)
         {
             return ((delegate* unmanaged<IDirectManipulationManager3*, Guid*, Guid*, void**, int>)(lpVtbl[11]))((IDirectManipulationManager3*)Unsafe.AsPointer(ref this), clsid, riid, @object);
+        }
+
+        public interface Interface : IDirectManipulationManager2.Interface
+        {
+            [VtblIndex(11)]
+            HRESULT GetService([NativeTypeName("const IID &")] Guid* clsid, [NativeTypeName("const IID &")] Guid* riid, void** @object);
         }
 
         public partial struct Vtbl

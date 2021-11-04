@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("75F6468D-1B8E-447C-9BC6-75FEA80B5B25")]
     [NativeTypeName("struct IDCompositionDevice2 : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IDCompositionDevice2
+    public unsafe partial struct IDCompositionDevice2 : IDCompositionDevice2.Interface
     {
         public void** lpVtbl;
 
@@ -184,6 +184,72 @@ namespace TerraFX.Interop
         public HRESULT CreateAnimation(IDCompositionAnimation** animation)
         {
             return ((delegate* unmanaged<IDCompositionDevice2*, IDCompositionAnimation**, int>)(lpVtbl[23]))((IDCompositionDevice2*)Unsafe.AsPointer(ref this), animation);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT Commit();
+
+            [VtblIndex(4)]
+            HRESULT WaitForCommitCompletion();
+
+            [VtblIndex(5)]
+            HRESULT GetFrameStatistics(DCOMPOSITION_FRAME_STATISTICS* statistics);
+
+            [VtblIndex(6)]
+            HRESULT CreateVisual(IDCompositionVisual2** visual);
+
+            [VtblIndex(7)]
+            HRESULT CreateSurfaceFactory(IUnknown* renderingDevice, IDCompositionSurfaceFactory** surfaceFactory);
+
+            [VtblIndex(8)]
+            HRESULT CreateSurface(uint width, uint height, DXGI_FORMAT pixelFormat, DXGI_ALPHA_MODE alphaMode, IDCompositionSurface** surface);
+
+            [VtblIndex(9)]
+            HRESULT CreateVirtualSurface(uint initialWidth, uint initialHeight, DXGI_FORMAT pixelFormat, DXGI_ALPHA_MODE alphaMode, IDCompositionVirtualSurface** virtualSurface);
+
+            [VtblIndex(10)]
+            HRESULT CreateTranslateTransform(IDCompositionTranslateTransform** translateTransform);
+
+            [VtblIndex(11)]
+            HRESULT CreateScaleTransform(IDCompositionScaleTransform** scaleTransform);
+
+            [VtblIndex(12)]
+            HRESULT CreateRotateTransform(IDCompositionRotateTransform** rotateTransform);
+
+            [VtblIndex(13)]
+            HRESULT CreateSkewTransform(IDCompositionSkewTransform** skewTransform);
+
+            [VtblIndex(14)]
+            HRESULT CreateMatrixTransform(IDCompositionMatrixTransform** matrixTransform);
+
+            [VtblIndex(15)]
+            HRESULT CreateTransformGroup(IDCompositionTransform** transforms, uint elements, IDCompositionTransform** transformGroup);
+
+            [VtblIndex(16)]
+            HRESULT CreateTranslateTransform3D(IDCompositionTranslateTransform3D** translateTransform3D);
+
+            [VtblIndex(17)]
+            HRESULT CreateScaleTransform3D(IDCompositionScaleTransform3D** scaleTransform3D);
+
+            [VtblIndex(18)]
+            HRESULT CreateRotateTransform3D(IDCompositionRotateTransform3D** rotateTransform3D);
+
+            [VtblIndex(19)]
+            HRESULT CreateMatrixTransform3D(IDCompositionMatrixTransform3D** matrixTransform3D);
+
+            [VtblIndex(20)]
+            HRESULT CreateTransform3DGroup(IDCompositionTransform3D** transforms3D, uint elements, IDCompositionTransform3D** transform3DGroup);
+
+            [VtblIndex(21)]
+            HRESULT CreateEffectGroup(IDCompositionEffectGroup** effectGroup);
+
+            [VtblIndex(22)]
+            HRESULT CreateRectangleClip(IDCompositionRectangleClip** clip);
+
+            [VtblIndex(23)]
+            HRESULT CreateAnimation(IDCompositionAnimation** animation);
         }
 
         public partial struct Vtbl

@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("6007896C-3244-4AFD-BF18-A6D3BEDA5023")]
     [NativeTypeName("struct IDXGIDevice3 : IDXGIDevice2")]
     [NativeInheritance("IDXGIDevice2")]
-    public unsafe partial struct IDXGIDevice3
+    public unsafe partial struct IDXGIDevice3 : IDXGIDevice3.Interface
     {
         public void** lpVtbl;
 
@@ -142,6 +142,12 @@ namespace TerraFX.Interop
         public void Trim()
         {
             ((delegate* unmanaged<IDXGIDevice3*, void>)(lpVtbl[17]))((IDXGIDevice3*)Unsafe.AsPointer(ref this));
+        }
+
+        public interface Interface : IDXGIDevice2.Interface
+        {
+            [VtblIndex(17)]
+            void Trim();
         }
 
         public partial struct Vtbl

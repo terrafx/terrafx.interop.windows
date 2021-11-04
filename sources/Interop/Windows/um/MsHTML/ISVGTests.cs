@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("305104DD-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct ISVGTests : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct ISVGTests
+    public unsafe partial struct ISVGTests : ISVGTests.Interface
     {
         public void** lpVtbl;
 
@@ -93,6 +93,21 @@ namespace TerraFX.Interop
         public HRESULT hasExtension([NativeTypeName("BSTR")] ushort* extension, [NativeTypeName("VARIANT_BOOL *")] short* pResult)
         {
             return ((delegate* unmanaged<ISVGTests*, ushort*, short*, int>)(lpVtbl[10]))((ISVGTests*)Unsafe.AsPointer(ref this), extension, pResult);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT get_requiredFeatures(ISVGStringList** p);
+
+            [VtblIndex(8)]
+            HRESULT get_requiredExtensions(ISVGStringList** p);
+
+            [VtblIndex(9)]
+            HRESULT get_systemLanguage(ISVGStringList** p);
+
+            [VtblIndex(10)]
+            HRESULT hasExtension([NativeTypeName("BSTR")] ushort* extension, [NativeTypeName("VARIANT_BOOL *")] short* pResult);
         }
 
         public partial struct Vtbl

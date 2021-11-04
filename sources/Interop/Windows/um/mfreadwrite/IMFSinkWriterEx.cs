@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("588D72AB-5BC1-496A-8714-B70617141B25")]
     [NativeTypeName("struct IMFSinkWriterEx : IMFSinkWriter")]
     [NativeInheritance("IMFSinkWriter")]
-    public unsafe partial struct IMFSinkWriterEx
+    public unsafe partial struct IMFSinkWriterEx : IMFSinkWriterEx.Interface
     {
         public void** lpVtbl;
 
@@ -121,6 +121,12 @@ namespace TerraFX.Interop
         public HRESULT GetTransformForStream([NativeTypeName("DWORD")] uint dwStreamIndex, [NativeTypeName("DWORD")] uint dwTransformIndex, Guid* pGuidCategory, IMFTransform** ppTransform)
         {
             return ((delegate* unmanaged<IMFSinkWriterEx*, uint, uint, Guid*, IMFTransform**, int>)(lpVtbl[14]))((IMFSinkWriterEx*)Unsafe.AsPointer(ref this), dwStreamIndex, dwTransformIndex, pGuidCategory, ppTransform);
+        }
+
+        public interface Interface : IMFSinkWriter.Interface
+        {
+            [VtblIndex(14)]
+            HRESULT GetTransformForStream([NativeTypeName("DWORD")] uint dwStreamIndex, [NativeTypeName("DWORD")] uint dwTransformIndex, Guid* pGuidCategory, IMFTransform** ppTransform);
         }
 
         public partial struct Vtbl

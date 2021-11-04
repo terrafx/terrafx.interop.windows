@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("B499923B-7029-478F-A8B3-432C7C5F5312")]
     [NativeTypeName("struct ID2D1Ink : ID2D1Resource")]
     [NativeInheritance("ID2D1Resource")]
-    public unsafe partial struct ID2D1Ink
+    public unsafe partial struct ID2D1Ink : ID2D1Ink.Interface
     {
         public void** lpVtbl;
 
@@ -121,6 +121,40 @@ namespace TerraFX.Interop
         public HRESULT GetBounds(ID2D1InkStyle* inkStyle, [NativeTypeName("const D2D1_MATRIX_3X2_F *")] D2D_MATRIX_3X2_F* worldTransform, [NativeTypeName("D2D1_RECT_F *")] D2D_RECT_F* bounds)
         {
             return ((delegate* unmanaged<ID2D1Ink*, ID2D1InkStyle*, D2D_MATRIX_3X2_F*, D2D_RECT_F*, int>)(lpVtbl[13]))((ID2D1Ink*)Unsafe.AsPointer(ref this), inkStyle, worldTransform, bounds);
+        }
+
+        public interface Interface : ID2D1Resource.Interface
+        {
+            [VtblIndex(4)]
+            void SetStartPoint([NativeTypeName("const D2D1_INK_POINT *")] D2D1_INK_POINT* startPoint);
+
+            [VtblIndex(5)]
+            D2D1_INK_POINT GetStartPoint();
+
+            [VtblIndex(6)]
+            HRESULT AddSegments([NativeTypeName("const D2D1_INK_BEZIER_SEGMENT *")] D2D1_INK_BEZIER_SEGMENT* segments, [NativeTypeName("UINT32")] uint segmentsCount);
+
+            [VtblIndex(7)]
+            HRESULT RemoveSegmentsAtEnd([NativeTypeName("UINT32")] uint segmentsCount);
+
+            [VtblIndex(8)]
+            HRESULT SetSegments([NativeTypeName("UINT32")] uint startSegment, [NativeTypeName("const D2D1_INK_BEZIER_SEGMENT *")] D2D1_INK_BEZIER_SEGMENT* segments, [NativeTypeName("UINT32")] uint segmentsCount);
+
+            [VtblIndex(9)]
+            HRESULT SetSegmentAtEnd([NativeTypeName("const D2D1_INK_BEZIER_SEGMENT *")] D2D1_INK_BEZIER_SEGMENT* segment);
+
+            [VtblIndex(10)]
+            [return: NativeTypeName("UINT32")]
+            uint GetSegmentCount();
+
+            [VtblIndex(11)]
+            HRESULT GetSegments([NativeTypeName("UINT32")] uint startSegment, D2D1_INK_BEZIER_SEGMENT* segments, [NativeTypeName("UINT32")] uint segmentsCount);
+
+            [VtblIndex(12)]
+            HRESULT StreamAsGeometry(ID2D1InkStyle* inkStyle, [NativeTypeName("const D2D1_MATRIX_3X2_F *")] D2D_MATRIX_3X2_F* worldTransform, float flatteningTolerance, ID2D1SimplifiedGeometrySink* geometrySink);
+
+            [VtblIndex(13)]
+            HRESULT GetBounds(ID2D1InkStyle* inkStyle, [NativeTypeName("const D2D1_MATRIX_3X2_F *")] D2D_MATRIX_3X2_F* worldTransform, [NativeTypeName("D2D1_RECT_F *")] D2D_RECT_F* bounds);
         }
 
         public partial struct Vtbl

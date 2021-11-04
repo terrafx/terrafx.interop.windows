@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("3050F2D1-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct IHTMLSelectElementEx : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IHTMLSelectElementEx
+    public unsafe partial struct IHTMLSelectElementEx : IHTMLSelectElementEx.Interface
     {
         public void** lpVtbl;
 
@@ -65,6 +65,21 @@ namespace TerraFX.Interop
         public HRESULT GetDropdownOpen(BOOL* pfOpen)
         {
             return ((delegate* unmanaged<IHTMLSelectElementEx*, BOOL*, int>)(lpVtbl[6]))((IHTMLSelectElementEx*)Unsafe.AsPointer(ref this), pfOpen);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT ShowDropdown(BOOL fShow);
+
+            [VtblIndex(4)]
+            HRESULT SetSelectExFlags([NativeTypeName("DWORD")] uint lFlags);
+
+            [VtblIndex(5)]
+            HRESULT GetSelectExFlags([NativeTypeName("DWORD *")] uint* pFlags);
+
+            [VtblIndex(6)]
+            HRESULT GetDropdownOpen(BOOL* pfOpen);
         }
 
         public partial struct Vtbl

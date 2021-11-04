@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("269316D8-57BD-11D2-9EEE-00C04F797396")]
     [NativeTypeName("struct ISpeechVoice : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct ISpeechVoice
+    public unsafe partial struct ISpeechVoice : ISpeechVoice.Interface
     {
         public void** lpVtbl;
 
@@ -289,6 +289,105 @@ namespace TerraFX.Interop
         public HRESULT DisplayUI([NativeTypeName("long")] int hWndParent, [NativeTypeName("BSTR")] ushort* Title, [NativeTypeName("const BSTR")] ushort* TypeOfUI, [NativeTypeName("const VARIANT *")] VARIANT* ExtraData = null)
         {
             return ((delegate* unmanaged<ISpeechVoice*, int, ushort*, ushort*, VARIANT*, int>)(lpVtbl[38]))((ISpeechVoice*)Unsafe.AsPointer(ref this), hWndParent, Title, TypeOfUI, ExtraData);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT get_Status(ISpeechVoiceStatus** Status);
+
+            [VtblIndex(8)]
+            HRESULT get_Voice(ISpeechObjectToken** Voice);
+
+            [VtblIndex(9)]
+            HRESULT putref_Voice(ISpeechObjectToken* Voice);
+
+            [VtblIndex(10)]
+            HRESULT get_AudioOutput(ISpeechObjectToken** AudioOutput);
+
+            [VtblIndex(11)]
+            HRESULT putref_AudioOutput(ISpeechObjectToken* AudioOutput);
+
+            [VtblIndex(12)]
+            HRESULT get_AudioOutputStream(ISpeechBaseStream** AudioOutputStream);
+
+            [VtblIndex(13)]
+            HRESULT putref_AudioOutputStream(ISpeechBaseStream* AudioOutputStream);
+
+            [VtblIndex(14)]
+            HRESULT get_Rate([NativeTypeName("long *")] int* Rate);
+
+            [VtblIndex(15)]
+            HRESULT put_Rate([NativeTypeName("long")] int Rate);
+
+            [VtblIndex(16)]
+            HRESULT get_Volume([NativeTypeName("long *")] int* Volume);
+
+            [VtblIndex(17)]
+            HRESULT put_Volume([NativeTypeName("long")] int Volume);
+
+            [VtblIndex(18)]
+            HRESULT put_AllowAudioOutputFormatChangesOnNextSet([NativeTypeName("VARIANT_BOOL")] short Allow);
+
+            [VtblIndex(19)]
+            HRESULT get_AllowAudioOutputFormatChangesOnNextSet([NativeTypeName("VARIANT_BOOL *")] short* Allow);
+
+            [VtblIndex(20)]
+            HRESULT get_EventInterests(SpeechVoiceEvents* EventInterestFlags);
+
+            [VtblIndex(21)]
+            HRESULT put_EventInterests(SpeechVoiceEvents EventInterestFlags);
+
+            [VtblIndex(22)]
+            HRESULT put_Priority(SpeechVoicePriority Priority);
+
+            [VtblIndex(23)]
+            HRESULT get_Priority(SpeechVoicePriority* Priority);
+
+            [VtblIndex(24)]
+            HRESULT put_AlertBoundary(SpeechVoiceEvents Boundary);
+
+            [VtblIndex(25)]
+            HRESULT get_AlertBoundary(SpeechVoiceEvents* Boundary);
+
+            [VtblIndex(26)]
+            HRESULT put_SynchronousSpeakTimeout([NativeTypeName("long")] int msTimeout);
+
+            [VtblIndex(27)]
+            HRESULT get_SynchronousSpeakTimeout([NativeTypeName("long *")] int* msTimeout);
+
+            [VtblIndex(28)]
+            HRESULT Speak([NativeTypeName("BSTR")] ushort* Text, SpeechVoiceSpeakFlags Flags, [NativeTypeName("long *")] int* StreamNumber);
+
+            [VtblIndex(29)]
+            HRESULT SpeakStream(ISpeechBaseStream* Stream, SpeechVoiceSpeakFlags Flags, [NativeTypeName("long *")] int* StreamNumber);
+
+            [VtblIndex(30)]
+            HRESULT Pause();
+
+            [VtblIndex(31)]
+            HRESULT Resume();
+
+            [VtblIndex(32)]
+            HRESULT Skip([NativeTypeName("const BSTR")] ushort* Type, [NativeTypeName("long")] int NumItems, [NativeTypeName("long *")] int* NumSkipped);
+
+            [VtblIndex(33)]
+            HRESULT GetVoices([NativeTypeName("BSTR")] ushort* RequiredAttributes, [NativeTypeName("BSTR")] ushort* OptionalAttributes, ISpeechObjectTokens** ObjectTokens);
+
+            [VtblIndex(34)]
+            HRESULT GetAudioOutputs([NativeTypeName("BSTR")] ushort* RequiredAttributes, [NativeTypeName("BSTR")] ushort* OptionalAttributes, ISpeechObjectTokens** ObjectTokens);
+
+            [VtblIndex(35)]
+            HRESULT WaitUntilDone([NativeTypeName("long")] int msTimeout, [NativeTypeName("VARIANT_BOOL *")] short* Done);
+
+            [VtblIndex(36)]
+            HRESULT SpeakCompleteEvent([NativeTypeName("long *")] int* Handle);
+
+            [VtblIndex(37)]
+            HRESULT IsUISupported([NativeTypeName("const BSTR")] ushort* TypeOfUI, [NativeTypeName("const VARIANT *")] VARIANT* ExtraData, [NativeTypeName("VARIANT_BOOL *")] short* Supported);
+
+            [VtblIndex(38)]
+            HRESULT DisplayUI([NativeTypeName("long")] int hWndParent, [NativeTypeName("BSTR")] ushort* Title, [NativeTypeName("const BSTR")] ushort* TypeOfUI, [NativeTypeName("const VARIANT *")] VARIANT* ExtraData = null);
         }
 
         public partial struct Vtbl

@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("7DCF57AC-18AD-438B-824D-979BFFB74B7C")]
     [NativeTypeName("struct ITfCompartmentMgr : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct ITfCompartmentMgr
+    public unsafe partial struct ITfCompartmentMgr : ITfCompartmentMgr.Interface
     {
         public void** lpVtbl;
 
@@ -58,6 +58,18 @@ namespace TerraFX.Interop
         public HRESULT EnumCompartments(IEnumGUID** ppEnum)
         {
             return ((delegate* unmanaged<ITfCompartmentMgr*, IEnumGUID**, int>)(lpVtbl[5]))((ITfCompartmentMgr*)Unsafe.AsPointer(ref this), ppEnum);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetCompartment([NativeTypeName("const GUID &")] Guid* rguid, ITfCompartment** ppcomp);
+
+            [VtblIndex(4)]
+            HRESULT ClearCompartment([NativeTypeName("TfClientId")] uint tid, [NativeTypeName("const GUID &")] Guid* rguid);
+
+            [VtblIndex(5)]
+            HRESULT EnumCompartments(IEnumGUID** ppEnum);
         }
 
         public partial struct Vtbl

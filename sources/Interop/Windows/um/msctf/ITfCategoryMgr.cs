@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("C3ACEFB5-F69D-4905-938F-FCADCF4BE830")]
     [NativeTypeName("struct ITfCategoryMgr : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct ITfCategoryMgr
+    public unsafe partial struct ITfCategoryMgr : ITfCategoryMgr.Interface
     {
         public void** lpVtbl;
 
@@ -135,6 +135,51 @@ namespace TerraFX.Interop
         public HRESULT IsEqualTfGuidAtom([NativeTypeName("TfGuidAtom")] uint guidatom, [NativeTypeName("const GUID &")] Guid* rguid, BOOL* pfEqual)
         {
             return ((delegate* unmanaged<ITfCategoryMgr*, uint, Guid*, BOOL*, int>)(lpVtbl[16]))((ITfCategoryMgr*)Unsafe.AsPointer(ref this), guidatom, rguid, pfEqual);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT RegisterCategory([NativeTypeName("const IID &")] Guid* rclsid, [NativeTypeName("const GUID &")] Guid* rcatid, [NativeTypeName("const GUID &")] Guid* rguid);
+
+            [VtblIndex(4)]
+            HRESULT UnregisterCategory([NativeTypeName("const IID &")] Guid* rclsid, [NativeTypeName("const GUID &")] Guid* rcatid, [NativeTypeName("const GUID &")] Guid* rguid);
+
+            [VtblIndex(5)]
+            HRESULT EnumCategoriesInItem([NativeTypeName("const GUID &")] Guid* rguid, IEnumGUID** ppEnum);
+
+            [VtblIndex(6)]
+            HRESULT EnumItemsInCategory([NativeTypeName("const GUID &")] Guid* rcatid, IEnumGUID** ppEnum);
+
+            [VtblIndex(7)]
+            HRESULT FindClosestCategory([NativeTypeName("const GUID &")] Guid* rguid, Guid* pcatid, [NativeTypeName("const GUID **")] Guid** ppcatidList, [NativeTypeName("ULONG")] uint ulCount);
+
+            [VtblIndex(8)]
+            HRESULT RegisterGUIDDescription([NativeTypeName("const IID &")] Guid* rclsid, [NativeTypeName("const GUID &")] Guid* rguid, [NativeTypeName("const WCHAR *")] ushort* pchDesc, [NativeTypeName("ULONG")] uint cch);
+
+            [VtblIndex(9)]
+            HRESULT UnregisterGUIDDescription([NativeTypeName("const IID &")] Guid* rclsid, [NativeTypeName("const GUID &")] Guid* rguid);
+
+            [VtblIndex(10)]
+            HRESULT GetGUIDDescription([NativeTypeName("const GUID &")] Guid* rguid, [NativeTypeName("BSTR *")] ushort** pbstrDesc);
+
+            [VtblIndex(11)]
+            HRESULT RegisterGUIDDWORD([NativeTypeName("const IID &")] Guid* rclsid, [NativeTypeName("const GUID &")] Guid* rguid, [NativeTypeName("DWORD")] uint dw);
+
+            [VtblIndex(12)]
+            HRESULT UnregisterGUIDDWORD([NativeTypeName("const IID &")] Guid* rclsid, [NativeTypeName("const GUID &")] Guid* rguid);
+
+            [VtblIndex(13)]
+            HRESULT GetGUIDDWORD([NativeTypeName("const GUID &")] Guid* rguid, [NativeTypeName("DWORD *")] uint* pdw);
+
+            [VtblIndex(14)]
+            HRESULT RegisterGUID([NativeTypeName("const GUID &")] Guid* rguid, [NativeTypeName("TfGuidAtom *")] uint* pguidatom);
+
+            [VtblIndex(15)]
+            HRESULT GetGUID([NativeTypeName("TfGuidAtom")] uint guidatom, Guid* pguid);
+
+            [VtblIndex(16)]
+            HRESULT IsEqualTfGuidAtom([NativeTypeName("TfGuidAtom")] uint guidatom, [NativeTypeName("const GUID &")] Guid* rguid, BOOL* pfEqual);
         }
 
         public partial struct Vtbl

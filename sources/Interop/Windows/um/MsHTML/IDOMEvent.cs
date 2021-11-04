@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("305104BA-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct IDOMEvent : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct IDOMEvent
+    public unsafe partial struct IDOMEvent : IDOMEvent.Interface
     {
         public void** lpVtbl;
 
@@ -177,6 +177,57 @@ namespace TerraFX.Interop
         public HRESULT get_srcElement(IHTMLElement** p)
         {
             return ((delegate* unmanaged<IDOMEvent*, IHTMLElement**, int>)(lpVtbl[22]))((IDOMEvent*)Unsafe.AsPointer(ref this), p);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT get_bubbles([NativeTypeName("VARIANT_BOOL *")] short* p);
+
+            [VtblIndex(8)]
+            HRESULT get_cancelable([NativeTypeName("VARIANT_BOOL *")] short* p);
+
+            [VtblIndex(9)]
+            HRESULT get_currentTarget(IEventTarget** p);
+
+            [VtblIndex(10)]
+            HRESULT get_defaultPrevented([NativeTypeName("VARIANT_BOOL *")] short* p);
+
+            [VtblIndex(11)]
+            HRESULT get_eventPhase(ushort* p);
+
+            [VtblIndex(12)]
+            HRESULT get_target(IEventTarget** p);
+
+            [VtblIndex(13)]
+            HRESULT get_timeStamp([NativeTypeName("ULONGLONG *")] ulong* p);
+
+            [VtblIndex(14)]
+            HRESULT get_type([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(15)]
+            HRESULT initEvent([NativeTypeName("BSTR")] ushort* eventType, [NativeTypeName("VARIANT_BOOL")] short canBubble, [NativeTypeName("VARIANT_BOOL")] short cancelable);
+
+            [VtblIndex(16)]
+            HRESULT preventDefault();
+
+            [VtblIndex(17)]
+            HRESULT stopPropagation();
+
+            [VtblIndex(18)]
+            HRESULT stopImmediatePropagation();
+
+            [VtblIndex(19)]
+            HRESULT get_isTrusted([NativeTypeName("VARIANT_BOOL *")] short* p);
+
+            [VtblIndex(20)]
+            HRESULT put_cancelBubble([NativeTypeName("VARIANT_BOOL")] short v);
+
+            [VtblIndex(21)]
+            HRESULT get_cancelBubble([NativeTypeName("VARIANT_BOOL *")] short* p);
+
+            [VtblIndex(22)]
+            HRESULT get_srcElement(IHTMLElement** p);
         }
 
         public partial struct Vtbl

@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("30510706-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct IHTMLMediaElement : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct IHTMLMediaElement
+    public unsafe partial struct IHTMLMediaElement : IHTMLMediaElement.Interface
     {
         public void** lpVtbl;
 
@@ -324,6 +324,120 @@ namespace TerraFX.Interop
         public HRESULT get_autobuffer([NativeTypeName("VARIANT_BOOL *")] short* p)
         {
             return ((delegate* unmanaged<IHTMLMediaElement*, short*, int>)(lpVtbl[43]))((IHTMLMediaElement*)Unsafe.AsPointer(ref this), p);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT get_error(IHTMLMediaError** p);
+
+            [VtblIndex(8)]
+            HRESULT put_src([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(9)]
+            HRESULT get_src([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(10)]
+            HRESULT get_currentSrc([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(11)]
+            HRESULT get_networkState(ushort* p);
+
+            [VtblIndex(12)]
+            HRESULT put_preload([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(13)]
+            HRESULT get_preload([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(14)]
+            HRESULT get_buffered(IHTMLTimeRanges** p);
+
+            [VtblIndex(15)]
+            HRESULT load();
+
+            [VtblIndex(16)]
+            HRESULT canPlayType([NativeTypeName("BSTR")] ushort* type, [NativeTypeName("BSTR *")] ushort** canPlay);
+
+            [VtblIndex(17)]
+            HRESULT get_seeking([NativeTypeName("VARIANT_BOOL *")] short* p);
+
+            [VtblIndex(18)]
+            HRESULT put_currentTime(float v);
+
+            [VtblIndex(19)]
+            HRESULT get_currentTime(float* p);
+
+            [VtblIndex(20)]
+            HRESULT get_initialTime(float* p);
+
+            [VtblIndex(21)]
+            HRESULT get_duration(float* p);
+
+            [VtblIndex(22)]
+            HRESULT get_paused([NativeTypeName("VARIANT_BOOL *")] short* p);
+
+            [VtblIndex(23)]
+            HRESULT put_defaultPlaybackRate(float v);
+
+            [VtblIndex(24)]
+            HRESULT get_defaultPlaybackRate(float* p);
+
+            [VtblIndex(25)]
+            HRESULT put_playbackRate(float v);
+
+            [VtblIndex(26)]
+            HRESULT get_playbackRate(float* p);
+
+            [VtblIndex(27)]
+            HRESULT get_played(IHTMLTimeRanges** p);
+
+            [VtblIndex(28)]
+            HRESULT get_seekable(IHTMLTimeRanges** p);
+
+            [VtblIndex(29)]
+            HRESULT get_ended([NativeTypeName("VARIANT_BOOL *")] short* p);
+
+            [VtblIndex(30)]
+            HRESULT put_autoplay([NativeTypeName("VARIANT_BOOL")] short v);
+
+            [VtblIndex(31)]
+            HRESULT get_autoplay([NativeTypeName("VARIANT_BOOL *")] short* p);
+
+            [VtblIndex(32)]
+            HRESULT put_loop([NativeTypeName("VARIANT_BOOL")] short v);
+
+            [VtblIndex(33)]
+            HRESULT get_loop([NativeTypeName("VARIANT_BOOL *")] short* p);
+
+            [VtblIndex(34)]
+            HRESULT play();
+
+            [VtblIndex(35)]
+            HRESULT pause();
+
+            [VtblIndex(36)]
+            HRESULT put_controls([NativeTypeName("VARIANT_BOOL")] short v);
+
+            [VtblIndex(37)]
+            HRESULT get_controls([NativeTypeName("VARIANT_BOOL *")] short* p);
+
+            [VtblIndex(38)]
+            HRESULT put_volume(float v);
+
+            [VtblIndex(39)]
+            HRESULT get_volume(float* p);
+
+            [VtblIndex(40)]
+            HRESULT put_muted([NativeTypeName("VARIANT_BOOL")] short v);
+
+            [VtblIndex(41)]
+            HRESULT get_muted([NativeTypeName("VARIANT_BOOL *")] short* p);
+
+            [VtblIndex(42)]
+            HRESULT put_autobuffer([NativeTypeName("VARIANT_BOOL")] short v);
+
+            [VtblIndex(43)]
+            HRESULT get_autobuffer([NativeTypeName("VARIANT_BOOL *")] short* p);
         }
 
         public partial struct Vtbl

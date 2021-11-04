@@ -9,7 +9,7 @@ namespace TerraFX.Interop
 {
     [NativeTypeName("struct ID3D10EffectShaderVariable : ID3D10EffectVariable")]
     [NativeInheritance("ID3D10EffectVariable")]
-    public unsafe partial struct ID3D10EffectShaderVariable
+    public unsafe partial struct ID3D10EffectShaderVariable : ID3D10EffectShaderVariable.Interface
     {
         public void** lpVtbl;
 
@@ -228,6 +228,27 @@ namespace TerraFX.Interop
         public HRESULT GetOutputSignatureElementDesc(uint ShaderIndex, uint Element, D3D10_SIGNATURE_PARAMETER_DESC* pDesc)
         {
             return ((delegate* unmanaged<ID3D10EffectShaderVariable*, uint, uint, D3D10_SIGNATURE_PARAMETER_DESC*, int>)(lpVtbl[30]))((ID3D10EffectShaderVariable*)Unsafe.AsPointer(ref this), ShaderIndex, Element, pDesc);
+        }
+
+        public interface Interface : ID3D10EffectVariable.Interface
+        {
+            [VtblIndex(25)]
+            HRESULT GetShaderDesc(uint ShaderIndex, D3D10_EFFECT_SHADER_DESC* pDesc);
+
+            [VtblIndex(26)]
+            HRESULT GetVertexShader(uint ShaderIndex, ID3D10VertexShader** ppVS);
+
+            [VtblIndex(27)]
+            HRESULT GetGeometryShader(uint ShaderIndex, ID3D10GeometryShader** ppGS);
+
+            [VtblIndex(28)]
+            HRESULT GetPixelShader(uint ShaderIndex, ID3D10PixelShader** ppPS);
+
+            [VtblIndex(29)]
+            HRESULT GetInputSignatureElementDesc(uint ShaderIndex, uint Element, D3D10_SIGNATURE_PARAMETER_DESC* pDesc);
+
+            [VtblIndex(30)]
+            HRESULT GetOutputSignatureElementDesc(uint ShaderIndex, uint Element, D3D10_SIGNATURE_PARAMETER_DESC* pDesc);
         }
 
         public partial struct Vtbl

@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("305107EB-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct IHTMLAudioElementFactory : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct IHTMLAudioElementFactory
+    public unsafe partial struct IHTMLAudioElementFactory : IHTMLAudioElementFactory.Interface
     {
         public void** lpVtbl;
 
@@ -72,6 +72,12 @@ namespace TerraFX.Interop
         public HRESULT create(VARIANT src, IHTMLAudioElement** __MIDL__IHTMLAudioElementFactory0000)
         {
             return ((delegate* unmanaged<IHTMLAudioElementFactory*, VARIANT, IHTMLAudioElement**, int>)(lpVtbl[7]))((IHTMLAudioElementFactory*)Unsafe.AsPointer(ref this), src, __MIDL__IHTMLAudioElementFactory0000);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT create(VARIANT src, IHTMLAudioElement** __MIDL__IHTMLAudioElementFactory0000);
         }
 
         public partial struct Vtbl

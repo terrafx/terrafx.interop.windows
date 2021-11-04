@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("30510752-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct IHTMLPerformanceTiming : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct IHTMLPerformanceTiming
+    public unsafe partial struct IHTMLPerformanceTiming : IHTMLPerformanceTiming.Interface
     {
         public void** lpVtbl;
 
@@ -226,6 +226,78 @@ namespace TerraFX.Interop
         public HRESULT toJSON(VARIANT* pVar)
         {
             return ((delegate* unmanaged<IHTMLPerformanceTiming*, VARIANT*, int>)(lpVtbl[29]))((IHTMLPerformanceTiming*)Unsafe.AsPointer(ref this), pVar);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT get_navigationStart([NativeTypeName("ULONGLONG *")] ulong* p);
+
+            [VtblIndex(8)]
+            HRESULT get_unloadEventStart([NativeTypeName("ULONGLONG *")] ulong* p);
+
+            [VtblIndex(9)]
+            HRESULT get_unloadEventEnd([NativeTypeName("ULONGLONG *")] ulong* p);
+
+            [VtblIndex(10)]
+            HRESULT get_redirectStart([NativeTypeName("ULONGLONG *")] ulong* p);
+
+            [VtblIndex(11)]
+            HRESULT get_redirectEnd([NativeTypeName("ULONGLONG *")] ulong* p);
+
+            [VtblIndex(12)]
+            HRESULT get_fetchStart([NativeTypeName("ULONGLONG *")] ulong* p);
+
+            [VtblIndex(13)]
+            HRESULT get_domainLookupStart([NativeTypeName("ULONGLONG *")] ulong* p);
+
+            [VtblIndex(14)]
+            HRESULT get_domainLookupEnd([NativeTypeName("ULONGLONG *")] ulong* p);
+
+            [VtblIndex(15)]
+            HRESULT get_connectStart([NativeTypeName("ULONGLONG *")] ulong* p);
+
+            [VtblIndex(16)]
+            HRESULT get_connectEnd([NativeTypeName("ULONGLONG *")] ulong* p);
+
+            [VtblIndex(17)]
+            HRESULT get_requestStart([NativeTypeName("ULONGLONG *")] ulong* p);
+
+            [VtblIndex(18)]
+            HRESULT get_responseStart([NativeTypeName("ULONGLONG *")] ulong* p);
+
+            [VtblIndex(19)]
+            HRESULT get_responseEnd([NativeTypeName("ULONGLONG *")] ulong* p);
+
+            [VtblIndex(20)]
+            HRESULT get_domLoading([NativeTypeName("ULONGLONG *")] ulong* p);
+
+            [VtblIndex(21)]
+            HRESULT get_domInteractive([NativeTypeName("ULONGLONG *")] ulong* p);
+
+            [VtblIndex(22)]
+            HRESULT get_domContentLoadedEventStart([NativeTypeName("ULONGLONG *")] ulong* p);
+
+            [VtblIndex(23)]
+            HRESULT get_domContentLoadedEventEnd([NativeTypeName("ULONGLONG *")] ulong* p);
+
+            [VtblIndex(24)]
+            HRESULT get_domComplete([NativeTypeName("ULONGLONG *")] ulong* p);
+
+            [VtblIndex(25)]
+            HRESULT get_loadEventStart([NativeTypeName("ULONGLONG *")] ulong* p);
+
+            [VtblIndex(26)]
+            HRESULT get_loadEventEnd([NativeTypeName("ULONGLONG *")] ulong* p);
+
+            [VtblIndex(27)]
+            HRESULT get_msFirstPaint([NativeTypeName("ULONGLONG *")] ulong* p);
+
+            [VtblIndex(28)]
+            HRESULT toString([NativeTypeName("BSTR *")] ushort** @string);
+
+            [VtblIndex(29)]
+            HRESULT toJSON(VARIANT* pVar);
         }
 
         public partial struct Vtbl

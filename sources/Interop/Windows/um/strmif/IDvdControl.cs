@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("A70EFE61-E2A3-11D0-A9BE-00AA0061BE93")]
     [NativeTypeName("struct IDvdControl : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IDvdControl
+    public unsafe partial struct IDvdControl : IDvdControl.Interface
     {
         public void** lpVtbl;
 
@@ -282,6 +282,114 @@ namespace TerraFX.Interop
         public HRESULT ChapterPlayAutoStop([NativeTypeName("ULONG")] uint ulTitle, [NativeTypeName("ULONG")] uint ulChapter, [NativeTypeName("ULONG")] uint ulChaptersToPlay)
         {
             return ((delegate* unmanaged<IDvdControl*, uint, uint, uint, int>)(lpVtbl[37]))((IDvdControl*)Unsafe.AsPointer(ref this), ulTitle, ulChapter, ulChaptersToPlay);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT TitlePlay([NativeTypeName("ULONG")] uint ulTitle);
+
+            [VtblIndex(4)]
+            HRESULT ChapterPlay([NativeTypeName("ULONG")] uint ulTitle, [NativeTypeName("ULONG")] uint ulChapter);
+
+            [VtblIndex(5)]
+            HRESULT TimePlay([NativeTypeName("ULONG")] uint ulTitle, [NativeTypeName("ULONG")] uint bcdTime);
+
+            [VtblIndex(6)]
+            HRESULT StopForResume();
+
+            [VtblIndex(7)]
+            HRESULT GoUp();
+
+            [VtblIndex(8)]
+            HRESULT TimeSearch([NativeTypeName("ULONG")] uint bcdTime);
+
+            [VtblIndex(9)]
+            HRESULT ChapterSearch([NativeTypeName("ULONG")] uint ulChapter);
+
+            [VtblIndex(10)]
+            HRESULT PrevPGSearch();
+
+            [VtblIndex(11)]
+            HRESULT TopPGSearch();
+
+            [VtblIndex(12)]
+            HRESULT NextPGSearch();
+
+            [VtblIndex(13)]
+            HRESULT ForwardScan(double dwSpeed);
+
+            [VtblIndex(14)]
+            HRESULT BackwardScan(double dwSpeed);
+
+            [VtblIndex(15)]
+            HRESULT MenuCall(DVD_MENU_ID MenuID);
+
+            [VtblIndex(16)]
+            HRESULT Resume();
+
+            [VtblIndex(17)]
+            HRESULT UpperButtonSelect();
+
+            [VtblIndex(18)]
+            HRESULT LowerButtonSelect();
+
+            [VtblIndex(19)]
+            HRESULT LeftButtonSelect();
+
+            [VtblIndex(20)]
+            HRESULT RightButtonSelect();
+
+            [VtblIndex(21)]
+            HRESULT ButtonActivate();
+
+            [VtblIndex(22)]
+            HRESULT ButtonSelectAndActivate([NativeTypeName("ULONG")] uint ulButton);
+
+            [VtblIndex(23)]
+            HRESULT StillOff();
+
+            [VtblIndex(24)]
+            HRESULT PauseOn();
+
+            [VtblIndex(25)]
+            HRESULT PauseOff();
+
+            [VtblIndex(26)]
+            HRESULT MenuLanguageSelect([NativeTypeName("LCID")] uint Language);
+
+            [VtblIndex(27)]
+            HRESULT AudioStreamChange([NativeTypeName("ULONG")] uint ulAudio);
+
+            [VtblIndex(28)]
+            HRESULT SubpictureStreamChange([NativeTypeName("ULONG")] uint ulSubPicture, BOOL bDisplay);
+
+            [VtblIndex(29)]
+            HRESULT AngleChange([NativeTypeName("ULONG")] uint ulAngle);
+
+            [VtblIndex(30)]
+            HRESULT ParentalLevelSelect([NativeTypeName("ULONG")] uint ulParentalLevel);
+
+            [VtblIndex(31)]
+            HRESULT ParentalCountrySelect([NativeTypeName("WORD")] ushort wCountry);
+
+            [VtblIndex(32)]
+            HRESULT KaraokeAudioPresentationModeChange([NativeTypeName("ULONG")] uint ulMode);
+
+            [VtblIndex(33)]
+            HRESULT VideoModePreferrence([NativeTypeName("ULONG")] uint ulPreferredDisplayMode);
+
+            [VtblIndex(34)]
+            HRESULT SetRoot([NativeTypeName("LPCWSTR")] ushort* pszPath);
+
+            [VtblIndex(35)]
+            HRESULT MouseActivate(POINT point);
+
+            [VtblIndex(36)]
+            HRESULT MouseSelect(POINT point);
+
+            [VtblIndex(37)]
+            HRESULT ChapterPlayAutoStop([NativeTypeName("ULONG")] uint ulTitle, [NativeTypeName("ULONG")] uint ulChapter, [NativeTypeName("ULONG")] uint ulChaptersToPlay);
         }
 
         public partial struct Vtbl

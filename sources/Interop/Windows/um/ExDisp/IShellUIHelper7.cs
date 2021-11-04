@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("60E567C8-9573-4AB2-A264-637C6C161CB1")]
     [NativeTypeName("struct IShellUIHelper7 : IShellUIHelper6")]
     [NativeInheritance("IShellUIHelper6")]
-    public unsafe partial struct IShellUIHelper7
+    public unsafe partial struct IShellUIHelper7 : IShellUIHelper7.Interface
     {
         public void** lpVtbl;
 
@@ -695,6 +695,36 @@ namespace TerraFX.Interop
         public HRESULT LaunchIE([NativeTypeName("BSTR")] ushort* bstrUrl, [NativeTypeName("VARIANT_BOOL")] short automated)
         {
             return ((delegate* unmanaged<IShellUIHelper7*, ushort*, short, int>)(lpVtbl[96]))((IShellUIHelper7*)Unsafe.AsPointer(ref this), bstrUrl, automated);
+        }
+
+        public interface Interface : IShellUIHelper6.Interface
+        {
+            [VtblIndex(88)]
+            HRESULT SetExperimentalFlag([NativeTypeName("BSTR")] ushort* bstrFlagString, [NativeTypeName("VARIANT_BOOL")] short vfFlag);
+
+            [VtblIndex(89)]
+            HRESULT GetExperimentalFlag([NativeTypeName("BSTR")] ushort* bstrFlagString, [NativeTypeName("VARIANT_BOOL *")] short* vfFlag);
+
+            [VtblIndex(90)]
+            HRESULT SetExperimentalValue([NativeTypeName("BSTR")] ushort* bstrValueString, [NativeTypeName("DWORD")] uint dwValue);
+
+            [VtblIndex(91)]
+            HRESULT GetExperimentalValue([NativeTypeName("BSTR")] ushort* bstrValueString, [NativeTypeName("DWORD *")] uint* pdwValue);
+
+            [VtblIndex(92)]
+            HRESULT ResetAllExperimentalFlagsAndValues();
+
+            [VtblIndex(93)]
+            HRESULT GetNeedIEAutoLaunchFlag([NativeTypeName("BSTR")] ushort* bstrUrl, [NativeTypeName("VARIANT_BOOL *")] short* flag);
+
+            [VtblIndex(94)]
+            HRESULT SetNeedIEAutoLaunchFlag([NativeTypeName("BSTR")] ushort* bstrUrl, [NativeTypeName("VARIANT_BOOL")] short flag);
+
+            [VtblIndex(95)]
+            HRESULT HasNeedIEAutoLaunchFlag([NativeTypeName("BSTR")] ushort* bstrUrl, [NativeTypeName("VARIANT_BOOL *")] short* exists);
+
+            [VtblIndex(96)]
+            HRESULT LaunchIE([NativeTypeName("BSTR")] ushort* bstrUrl, [NativeTypeName("VARIANT_BOOL")] short automated);
         }
 
         public partial struct Vtbl

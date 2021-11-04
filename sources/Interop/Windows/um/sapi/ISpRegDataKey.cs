@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("92A66E2B-C830-4149-83DF-6FC2BA1E7A5B")]
     [NativeTypeName("struct ISpRegDataKey : ISpDataKey")]
     [NativeInheritance("ISpDataKey")]
-    public unsafe partial struct ISpRegDataKey
+    public unsafe partial struct ISpRegDataKey : ISpRegDataKey.Interface
     {
         public void** lpVtbl;
 
@@ -128,6 +128,12 @@ namespace TerraFX.Interop
         public HRESULT SetKey(HKEY hkey, BOOL fReadOnly)
         {
             return ((delegate* unmanaged<ISpRegDataKey*, HKEY, BOOL, int>)(lpVtbl[15]))((ISpRegDataKey*)Unsafe.AsPointer(ref this), hkey, fReadOnly);
+        }
+
+        public interface Interface : ISpDataKey.Interface
+        {
+            [VtblIndex(15)]
+            HRESULT SetKey(HKEY hkey, BOOL fReadOnly);
         }
 
         public partial struct Vtbl

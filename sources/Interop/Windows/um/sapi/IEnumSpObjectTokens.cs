@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("06B64F9E-7FDA-11D2-B4F2-00C04F797396")]
     [NativeTypeName("struct IEnumSpObjectTokens : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IEnumSpObjectTokens
+    public unsafe partial struct IEnumSpObjectTokens : IEnumSpObjectTokens.Interface
     {
         public void** lpVtbl;
 
@@ -79,6 +79,27 @@ namespace TerraFX.Interop
         public HRESULT GetCount([NativeTypeName("ULONG *")] uint* pCount)
         {
             return ((delegate* unmanaged<IEnumSpObjectTokens*, uint*, int>)(lpVtbl[8]))((IEnumSpObjectTokens*)Unsafe.AsPointer(ref this), pCount);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT Next([NativeTypeName("ULONG")] uint celt, ISpObjectToken** pelt, [NativeTypeName("ULONG *")] uint* pceltFetched);
+
+            [VtblIndex(4)]
+            HRESULT Skip([NativeTypeName("ULONG")] uint celt);
+
+            [VtblIndex(5)]
+            HRESULT Reset();
+
+            [VtblIndex(6)]
+            HRESULT Clone(IEnumSpObjectTokens** ppEnum);
+
+            [VtblIndex(7)]
+            HRESULT Item([NativeTypeName("ULONG")] uint Index, ISpObjectToken** ppToken);
+
+            [VtblIndex(8)]
+            HRESULT GetCount([NativeTypeName("ULONG *")] uint* pCount);
         }
 
         public partial struct Vtbl

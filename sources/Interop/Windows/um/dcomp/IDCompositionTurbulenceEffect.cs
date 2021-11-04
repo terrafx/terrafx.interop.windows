@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("A6A55BDA-C09C-49F3-9193-A41922C89715")]
     [NativeTypeName("struct IDCompositionTurbulenceEffect : IDCompositionFilterEffect")]
     [NativeInheritance("IDCompositionFilterEffect")]
-    public unsafe partial struct IDCompositionTurbulenceEffect
+    public unsafe partial struct IDCompositionTurbulenceEffect : IDCompositionTurbulenceEffect.Interface
     {
         public void** lpVtbl;
 
@@ -93,6 +93,30 @@ namespace TerraFX.Interop
         public HRESULT SetStitchable(BOOL stitchable)
         {
             return ((delegate* unmanaged<IDCompositionTurbulenceEffect*, BOOL, int>)(lpVtbl[10]))((IDCompositionTurbulenceEffect*)Unsafe.AsPointer(ref this), stitchable);
+        }
+
+        public interface Interface : IDCompositionFilterEffect.Interface
+        {
+            [VtblIndex(4)]
+            HRESULT SetOffset([NativeTypeName("const D2D1_VECTOR_2F &")] D2D_VECTOR_2F* offset);
+
+            [VtblIndex(5)]
+            HRESULT SetBaseFrequency([NativeTypeName("const D2D1_VECTOR_2F &")] D2D_VECTOR_2F* frequency);
+
+            [VtblIndex(6)]
+            HRESULT SetSize([NativeTypeName("const D2D1_VECTOR_2F &")] D2D_VECTOR_2F* size);
+
+            [VtblIndex(7)]
+            HRESULT SetNumOctaves(uint numOctaves);
+
+            [VtblIndex(8)]
+            HRESULT SetSeed(uint seed);
+
+            [VtblIndex(9)]
+            HRESULT SetNoise(D2D1_TURBULENCE_NOISE noise);
+
+            [VtblIndex(10)]
+            HRESULT SetStitchable(BOOL stitchable);
         }
 
         public partial struct Vtbl

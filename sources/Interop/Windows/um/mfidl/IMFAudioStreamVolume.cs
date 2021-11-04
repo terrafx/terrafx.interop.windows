@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("76B1BBDB-4EC8-4F36-B106-70A9316DF593")]
     [NativeTypeName("struct IMFAudioStreamVolume : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IMFAudioStreamVolume
+    public unsafe partial struct IMFAudioStreamVolume : IMFAudioStreamVolume.Interface
     {
         public void** lpVtbl;
 
@@ -72,6 +72,24 @@ namespace TerraFX.Interop
         public HRESULT GetAllVolumes([NativeTypeName("UINT32")] uint dwCount, float* pfVolumes)
         {
             return ((delegate* unmanaged<IMFAudioStreamVolume*, uint, float*, int>)(lpVtbl[7]))((IMFAudioStreamVolume*)Unsafe.AsPointer(ref this), dwCount, pfVolumes);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetChannelCount([NativeTypeName("UINT32 *")] uint* pdwCount);
+
+            [VtblIndex(4)]
+            HRESULT SetChannelVolume([NativeTypeName("UINT32")] uint dwIndex, [NativeTypeName("const float")] float fLevel);
+
+            [VtblIndex(5)]
+            HRESULT GetChannelVolume([NativeTypeName("UINT32")] uint dwIndex, float* pfLevel);
+
+            [VtblIndex(6)]
+            HRESULT SetAllVolumes([NativeTypeName("UINT32")] uint dwCount, [NativeTypeName("const float *")] float* pfVolumes);
+
+            [VtblIndex(7)]
+            HRESULT GetAllVolumes([NativeTypeName("UINT32")] uint dwCount, float* pfVolumes);
         }
 
         public partial struct Vtbl

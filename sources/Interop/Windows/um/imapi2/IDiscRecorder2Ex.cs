@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("27354132-7F64-5B0F-8F00-5D77AFBE261E")]
     [NativeTypeName("struct IDiscRecorder2Ex : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IDiscRecorder2Ex
+    public unsafe partial struct IDiscRecorder2Ex : IDiscRecorder2Ex.Interface
     {
         public void** lpVtbl;
 
@@ -163,6 +163,63 @@ namespace TerraFX.Interop
         public HRESULT GetMaximumPageAlignedTransferSize([NativeTypeName("ULONG *")] uint* value)
         {
             return ((delegate* unmanaged<IDiscRecorder2Ex*, uint*, int>)(lpVtbl[20]))((IDiscRecorder2Ex*)Unsafe.AsPointer(ref this), value);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT SendCommandNoData(byte* Cdb, [NativeTypeName("ULONG")] uint CdbSize, [NativeTypeName("BYTE [18]")] byte* SenseBuffer, [NativeTypeName("ULONG")] uint Timeout);
+
+            [VtblIndex(4)]
+            HRESULT SendCommandSendDataToDevice(byte* Cdb, [NativeTypeName("ULONG")] uint CdbSize, [NativeTypeName("BYTE [18]")] byte* SenseBuffer, [NativeTypeName("ULONG")] uint Timeout, byte* Buffer, [NativeTypeName("ULONG_IMAPI2_NONZERO")] uint BufferSize);
+
+            [VtblIndex(5)]
+            HRESULT SendCommandGetDataFromDevice(byte* Cdb, [NativeTypeName("ULONG")] uint CdbSize, [NativeTypeName("BYTE [18]")] byte* SenseBuffer, [NativeTypeName("ULONG")] uint Timeout, byte* Buffer, [NativeTypeName("ULONG_IMAPI2_NONZERO")] uint BufferSize, [NativeTypeName("ULONG_IMAPI2_NOT_NEGATIVE *")] uint* BufferFetched);
+
+            [VtblIndex(6)]
+            HRESULT ReadDvdStructure([NativeTypeName("ULONG")] uint format, [NativeTypeName("ULONG")] uint address, [NativeTypeName("ULONG")] uint layer, [NativeTypeName("ULONG")] uint agid, byte** data, [NativeTypeName("ULONG_IMAPI2_DVD_STRUCTURE *")] uint* count);
+
+            [VtblIndex(7)]
+            HRESULT SendDvdStructure([NativeTypeName("ULONG")] uint format, byte* data, [NativeTypeName("ULONG_IMAPI2_DVD_STRUCTURE")] uint count);
+
+            [VtblIndex(8)]
+            HRESULT GetAdapterDescriptor(byte** data, [NativeTypeName("ULONG_IMAPI2_ADAPTER_DESCRIPTOR *")] uint* byteSize);
+
+            [VtblIndex(9)]
+            HRESULT GetDeviceDescriptor(byte** data, [NativeTypeName("ULONG_IMAPI2_DEVICE_DESCRIPTOR *")] uint* byteSize);
+
+            [VtblIndex(10)]
+            HRESULT GetDiscInformation(byte** discInformation, [NativeTypeName("ULONG_IMAPI2_DISC_INFORMATION *")] uint* byteSize);
+
+            [VtblIndex(11)]
+            HRESULT GetTrackInformation([NativeTypeName("ULONG")] uint address, IMAPI_READ_TRACK_ADDRESS_TYPE addressType, byte** trackInformation, [NativeTypeName("ULONG_IMAPI2_TRACK_INFORMATION *")] uint* byteSize);
+
+            [VtblIndex(12)]
+            HRESULT GetFeaturePage(IMAPI_FEATURE_PAGE_TYPE requestedFeature, [NativeTypeName("BOOLEAN")] byte currentFeatureOnly, byte** featureData, [NativeTypeName("ULONG_IMAPI2_FEATURE_PAGE *")] uint* byteSize);
+
+            [VtblIndex(13)]
+            HRESULT GetModePage(IMAPI_MODE_PAGE_TYPE requestedModePage, IMAPI_MODE_PAGE_REQUEST_TYPE requestType, byte** modePageData, [NativeTypeName("ULONG_IMAPI2_MODE_PAGE *")] uint* byteSize);
+
+            [VtblIndex(14)]
+            HRESULT SetModePage(IMAPI_MODE_PAGE_REQUEST_TYPE requestType, byte* data, [NativeTypeName("ULONG_IMAPI2_MODE_PAGE")] uint byteSize);
+
+            [VtblIndex(15)]
+            HRESULT GetSupportedFeaturePages([NativeTypeName("BOOLEAN")] byte currentFeatureOnly, IMAPI_FEATURE_PAGE_TYPE** featureData, [NativeTypeName("ULONG_IMAPI2_ALL_FEATURE_PAGES *")] uint* byteSize);
+
+            [VtblIndex(16)]
+            HRESULT GetSupportedProfiles([NativeTypeName("BOOLEAN")] byte currentOnly, IMAPI_PROFILE_TYPE** profileTypes, [NativeTypeName("ULONG_IMAPI2_ALL_PROFILES *")] uint* validProfiles);
+
+            [VtblIndex(17)]
+            HRESULT GetSupportedModePages(IMAPI_MODE_PAGE_REQUEST_TYPE requestType, IMAPI_MODE_PAGE_TYPE** modePageTypes, [NativeTypeName("ULONG_IMAPI2_ALL_MODE_PAGES *")] uint* validPages);
+
+            [VtblIndex(18)]
+            HRESULT GetByteAlignmentMask([NativeTypeName("ULONG *")] uint* value);
+
+            [VtblIndex(19)]
+            HRESULT GetMaximumNonPageAlignedTransferSize([NativeTypeName("ULONG *")] uint* value);
+
+            [VtblIndex(20)]
+            HRESULT GetMaximumPageAlignedTransferSize([NativeTypeName("ULONG *")] uint* value);
         }
 
         public partial struct Vtbl

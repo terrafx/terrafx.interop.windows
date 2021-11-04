@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("58346CDA-DDE7-4497-9461-6F87AF5E0659")]
     [NativeTypeName("struct IDxcResult : IDxcOperationResult")]
     [NativeInheritance("IDxcOperationResult")]
-    public unsafe partial struct IDxcResult
+    public unsafe partial struct IDxcResult : IDxcResult.Interface
     {
         public void** lpVtbl;
 
@@ -94,6 +94,25 @@ namespace TerraFX.Interop
         public DXC_OUT_KIND PrimaryOutput()
         {
             return ((delegate* unmanaged<IDxcResult*, DXC_OUT_KIND>)(lpVtbl[10]))((IDxcResult*)Unsafe.AsPointer(ref this));
+        }
+
+        public interface Interface : IDxcOperationResult.Interface
+        {
+            [VtblIndex(6)]
+            BOOL HasOutput(DXC_OUT_KIND dxcOutKind);
+
+            [VtblIndex(7)]
+            HRESULT GetOutput(DXC_OUT_KIND dxcOutKind, [NativeTypeName("const IID &")] Guid* iid, void** ppvObject, IDxcBlobUtf16** ppOutputName);
+
+            [VtblIndex(8)]
+            [return: NativeTypeName("UINT32")]
+            uint GetNumOutputs();
+
+            [VtblIndex(9)]
+            DXC_OUT_KIND GetOutputByIndex([NativeTypeName("UINT32")] uint Index);
+
+            [VtblIndex(10)]
+            DXC_OUT_KIND PrimaryOutput();
         }
 
         public partial struct Vtbl

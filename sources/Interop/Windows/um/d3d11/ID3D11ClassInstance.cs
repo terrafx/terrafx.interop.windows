@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("A6CD7FAA-B0B7-4A2F-9436-8662A65797CB")]
     [NativeTypeName("struct ID3D11ClassInstance : ID3D11DeviceChild")]
     [NativeInheritance("ID3D11DeviceChild")]
-    public unsafe partial struct ID3D11ClassInstance
+    public unsafe partial struct ID3D11ClassInstance : ID3D11ClassInstance.Interface
     {
         public void** lpVtbl;
 
@@ -93,6 +93,21 @@ namespace TerraFX.Interop
         public void GetTypeName([NativeTypeName("LPSTR")] sbyte* pTypeName, [NativeTypeName("SIZE_T *")] nuint* pBufferLength)
         {
             ((delegate* unmanaged<ID3D11ClassInstance*, sbyte*, nuint*, void>)(lpVtbl[10]))((ID3D11ClassInstance*)Unsafe.AsPointer(ref this), pTypeName, pBufferLength);
+        }
+
+        public interface Interface : ID3D11DeviceChild.Interface
+        {
+            [VtblIndex(7)]
+            void GetClassLinkage(ID3D11ClassLinkage** ppLinkage);
+
+            [VtblIndex(8)]
+            void GetDesc(D3D11_CLASS_INSTANCE_DESC* pDesc);
+
+            [VtblIndex(9)]
+            void GetInstanceName([NativeTypeName("LPSTR")] sbyte* pInstanceName, [NativeTypeName("SIZE_T *")] nuint* pBufferLength);
+
+            [VtblIndex(10)]
+            void GetTypeName([NativeTypeName("LPSTR")] sbyte* pTypeName, [NativeTypeName("SIZE_T *")] nuint* pBufferLength);
         }
 
         public partial struct Vtbl

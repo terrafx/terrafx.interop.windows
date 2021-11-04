@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("71C0D2BC-726D-45CC-A6C0-2E31C1DB2159")]
     [NativeTypeName("struct IInitializeWithBindCtx : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IInitializeWithBindCtx
+    public unsafe partial struct IInitializeWithBindCtx : IInitializeWithBindCtx.Interface
     {
         public void** lpVtbl;
 
@@ -44,6 +44,12 @@ namespace TerraFX.Interop
         public HRESULT Initialize(IBindCtx* pbc)
         {
             return ((delegate* unmanaged<IInitializeWithBindCtx*, IBindCtx*, int>)(lpVtbl[3]))((IInitializeWithBindCtx*)Unsafe.AsPointer(ref this), pbc);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT Initialize(IBindCtx* pbc);
         }
 
         public partial struct Vtbl

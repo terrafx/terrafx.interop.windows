@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("F3744D80-21F7-42EB-B35D-995BC72FC223")]
     [NativeTypeName("struct IDWriteFactory6 : IDWriteFactory5")]
     [NativeInheritance("IDWriteFactory5")]
-    public unsafe partial struct IDWriteFactory6
+    public unsafe partial struct IDWriteFactory6 : IDWriteFactory6.Interface
     {
         public void** lpVtbl;
 
@@ -401,6 +401,30 @@ namespace TerraFX.Interop
         public HRESULT CreateTextFormat([NativeTypeName("const WCHAR *")] ushort* fontFamilyName, IDWriteFontCollection* fontCollection, [NativeTypeName("const DWRITE_FONT_AXIS_VALUE *")] DWRITE_FONT_AXIS_VALUE* fontAxisValues, [NativeTypeName("UINT32")] uint fontAxisValueCount, float fontSize, [NativeTypeName("const WCHAR *")] ushort* localeName, IDWriteTextFormat3** textFormat)
         {
             return ((delegate* unmanaged<IDWriteFactory6*, ushort*, IDWriteFontCollection*, DWRITE_FONT_AXIS_VALUE*, uint, float, ushort*, IDWriteTextFormat3**, int>)(lpVtbl[54]))((IDWriteFactory6*)Unsafe.AsPointer(ref this), fontFamilyName, fontCollection, fontAxisValues, fontAxisValueCount, fontSize, localeName, textFormat);
+        }
+
+        public interface Interface : IDWriteFactory5.Interface
+        {
+            [VtblIndex(48)]
+            HRESULT CreateFontFaceReference(IDWriteFontFile* fontFile, [NativeTypeName("UINT32")] uint faceIndex, DWRITE_FONT_SIMULATIONS fontSimulations, [NativeTypeName("const DWRITE_FONT_AXIS_VALUE *")] DWRITE_FONT_AXIS_VALUE* fontAxisValues, [NativeTypeName("UINT32")] uint fontAxisValueCount, IDWriteFontFaceReference1** fontFaceReference);
+
+            [VtblIndex(49)]
+            HRESULT CreateFontResource(IDWriteFontFile* fontFile, [NativeTypeName("UINT32")] uint faceIndex, IDWriteFontResource** fontResource);
+
+            [VtblIndex(50)]
+            HRESULT GetSystemFontSet(BOOL includeDownloadableFonts, IDWriteFontSet1** fontSet);
+
+            [VtblIndex(51)]
+            HRESULT GetSystemFontCollection(BOOL includeDownloadableFonts, DWRITE_FONT_FAMILY_MODEL fontFamilyModel, IDWriteFontCollection2** fontCollection);
+
+            [VtblIndex(52)]
+            HRESULT CreateFontCollectionFromFontSet(IDWriteFontSet* fontSet, DWRITE_FONT_FAMILY_MODEL fontFamilyModel, IDWriteFontCollection2** fontCollection);
+
+            [VtblIndex(53)]
+            HRESULT CreateFontSetBuilder(IDWriteFontSetBuilder2** fontSetBuilder);
+
+            [VtblIndex(54)]
+            HRESULT CreateTextFormat([NativeTypeName("const WCHAR *")] ushort* fontFamilyName, IDWriteFontCollection* fontCollection, [NativeTypeName("const DWRITE_FONT_AXIS_VALUE *")] DWRITE_FONT_AXIS_VALUE* fontAxisValues, [NativeTypeName("UINT32")] uint fontAxisValueCount, float fontSize, [NativeTypeName("const WCHAR *")] ushort* localeName, IDWriteTextFormat3** textFormat);
         }
 
         public partial struct Vtbl

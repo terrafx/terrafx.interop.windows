@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("3D73A659-E5D0-4D42-AFC0-5121BA425C8D")]
     [NativeTypeName("struct ICDBurn : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct ICDBurn
+    public unsafe partial struct ICDBurn : ICDBurn.Interface
     {
         public void** lpVtbl;
 
@@ -58,6 +58,18 @@ namespace TerraFX.Interop
         public HRESULT HasRecordableDrive(BOOL* pfHasRecorder)
         {
             return ((delegate* unmanaged<ICDBurn*, BOOL*, int>)(lpVtbl[5]))((ICDBurn*)Unsafe.AsPointer(ref this), pfHasRecorder);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetRecorderDriveLetter([NativeTypeName("LPWSTR")] ushort* pszDrive, uint cch);
+
+            [VtblIndex(4)]
+            HRESULT Burn(HWND hwnd);
+
+            [VtblIndex(5)]
+            HRESULT HasRecordableDrive(BOOL* pfHasRecorder);
         }
 
         public partial struct Vtbl

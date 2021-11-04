@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("4EA48A35-60AE-446F-8FD6-E6A8D82459F7")]
     [NativeTypeName("struct ITfSource : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct ITfSource
+    public unsafe partial struct ITfSource : ITfSource.Interface
     {
         public void** lpVtbl;
 
@@ -51,6 +51,15 @@ namespace TerraFX.Interop
         public HRESULT UnadviseSink([NativeTypeName("DWORD")] uint dwCookie)
         {
             return ((delegate* unmanaged<ITfSource*, uint, int>)(lpVtbl[4]))((ITfSource*)Unsafe.AsPointer(ref this), dwCookie);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT AdviseSink([NativeTypeName("const IID &")] Guid* riid, IUnknown* punk, [NativeTypeName("DWORD *")] uint* pdwCookie);
+
+            [VtblIndex(4)]
+            HRESULT UnadviseSink([NativeTypeName("DWORD")] uint dwCookie);
         }
 
         public partial struct Vtbl

@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("3050F23A-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct IHTMLTableCol : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct IHTMLTableCol
+    public unsafe partial struct IHTMLTableCol : IHTMLTableCol.Interface
     {
         public void** lpVtbl;
 
@@ -121,6 +121,33 @@ namespace TerraFX.Interop
         public HRESULT get_vAlign([NativeTypeName("BSTR *")] ushort** p)
         {
             return ((delegate* unmanaged<IHTMLTableCol*, ushort**, int>)(lpVtbl[14]))((IHTMLTableCol*)Unsafe.AsPointer(ref this), p);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT put_span([NativeTypeName("long")] int v);
+
+            [VtblIndex(8)]
+            HRESULT get_span([NativeTypeName("long *")] int* p);
+
+            [VtblIndex(9)]
+            HRESULT put_width(VARIANT v);
+
+            [VtblIndex(10)]
+            HRESULT get_width(VARIANT* p);
+
+            [VtblIndex(11)]
+            HRESULT put_align([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(12)]
+            HRESULT get_align([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(13)]
+            HRESULT put_vAlign([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(14)]
+            HRESULT get_vAlign([NativeTypeName("BSTR *")] ushort** p);
         }
 
         public partial struct Vtbl

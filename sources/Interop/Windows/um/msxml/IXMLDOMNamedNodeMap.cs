@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("2933BF83-7B36-11D2-B20E-00C04F983E60")]
     [NativeTypeName("struct IXMLDOMNamedNodeMap : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct IXMLDOMNamedNodeMap
+    public unsafe partial struct IXMLDOMNamedNodeMap : IXMLDOMNamedNodeMap.Interface
     {
         public void** lpVtbl;
 
@@ -135,6 +135,39 @@ namespace TerraFX.Interop
         public HRESULT get__newEnum(IUnknown** ppUnk)
         {
             return ((delegate* unmanaged<IXMLDOMNamedNodeMap*, IUnknown**, int>)(lpVtbl[16]))((IXMLDOMNamedNodeMap*)Unsafe.AsPointer(ref this), ppUnk);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT getNamedItem([NativeTypeName("BSTR")] ushort* name, IXMLDOMNode** namedItem);
+
+            [VtblIndex(8)]
+            HRESULT setNamedItem(IXMLDOMNode* newItem, IXMLDOMNode** nameItem);
+
+            [VtblIndex(9)]
+            HRESULT removeNamedItem([NativeTypeName("BSTR")] ushort* name, IXMLDOMNode** namedItem);
+
+            [VtblIndex(10)]
+            HRESULT get_item([NativeTypeName("long")] int index, IXMLDOMNode** listItem);
+
+            [VtblIndex(11)]
+            HRESULT get_length([NativeTypeName("long *")] int* listLength);
+
+            [VtblIndex(12)]
+            HRESULT getQualifiedItem([NativeTypeName("BSTR")] ushort* baseName, [NativeTypeName("BSTR")] ushort* namespaceURI, IXMLDOMNode** qualifiedItem);
+
+            [VtblIndex(13)]
+            HRESULT removeQualifiedItem([NativeTypeName("BSTR")] ushort* baseName, [NativeTypeName("BSTR")] ushort* namespaceURI, IXMLDOMNode** qualifiedItem);
+
+            [VtblIndex(14)]
+            HRESULT nextNode(IXMLDOMNode** nextItem);
+
+            [VtblIndex(15)]
+            HRESULT reset();
+
+            [VtblIndex(16)]
+            HRESULT get__newEnum(IUnknown** ppUnk);
         }
 
         public partial struct Vtbl

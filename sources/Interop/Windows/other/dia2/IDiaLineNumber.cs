@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("B388EB14-BE4D-421D-A8A1-6CF7AB057086")]
     [NativeTypeName("struct IDiaLineNumber : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IDiaLineNumber
+    public unsafe partial struct IDiaLineNumber : IDiaLineNumber.Interface
     {
         public void** lpVtbl;
 
@@ -135,6 +135,51 @@ namespace TerraFX.Interop
         public HRESULT get_compilandId([NativeTypeName("DWORD *")] uint* pRetVal)
         {
             return ((delegate* unmanaged<IDiaLineNumber*, uint*, int>)(lpVtbl[16]))((IDiaLineNumber*)Unsafe.AsPointer(ref this), pRetVal);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT get_compiland(IDiaSymbol** pRetVal);
+
+            [VtblIndex(4)]
+            HRESULT get_sourceFile(IDiaSourceFile** pRetVal);
+
+            [VtblIndex(5)]
+            HRESULT get_lineNumber([NativeTypeName("DWORD *")] uint* pRetVal);
+
+            [VtblIndex(6)]
+            HRESULT get_lineNumberEnd([NativeTypeName("DWORD *")] uint* pRetVal);
+
+            [VtblIndex(7)]
+            HRESULT get_columnNumber([NativeTypeName("DWORD *")] uint* pRetVal);
+
+            [VtblIndex(8)]
+            HRESULT get_columnNumberEnd([NativeTypeName("DWORD *")] uint* pRetVal);
+
+            [VtblIndex(9)]
+            HRESULT get_addressSection([NativeTypeName("DWORD *")] uint* pRetVal);
+
+            [VtblIndex(10)]
+            HRESULT get_addressOffset([NativeTypeName("DWORD *")] uint* pRetVal);
+
+            [VtblIndex(11)]
+            HRESULT get_relativeVirtualAddress([NativeTypeName("DWORD *")] uint* pRetVal);
+
+            [VtblIndex(12)]
+            HRESULT get_virtualAddress([NativeTypeName("ULONGLONG *")] ulong* pRetVal);
+
+            [VtblIndex(13)]
+            HRESULT get_length([NativeTypeName("DWORD *")] uint* pRetVal);
+
+            [VtblIndex(14)]
+            HRESULT get_sourceFileId([NativeTypeName("DWORD *")] uint* pRetVal);
+
+            [VtblIndex(15)]
+            HRESULT get_statement(BOOL* pRetVal);
+
+            [VtblIndex(16)]
+            HRESULT get_compilandId([NativeTypeName("DWORD *")] uint* pRetVal);
         }
 
         public partial struct Vtbl

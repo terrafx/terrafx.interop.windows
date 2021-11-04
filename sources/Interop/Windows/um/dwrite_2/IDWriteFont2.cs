@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("29748ED6-8C9C-4A6A-BE0B-D912E8538944")]
     [NativeTypeName("struct IDWriteFont2 : IDWriteFont1")]
     [NativeInheritance("IDWriteFont1")]
-    public unsafe partial struct IDWriteFont2
+    public unsafe partial struct IDWriteFont2 : IDWriteFont2.Interface
     {
         public void** lpVtbl;
 
@@ -149,6 +149,12 @@ namespace TerraFX.Interop
         public BOOL IsColorFont()
         {
             return ((delegate* unmanaged<IDWriteFont2*, int>)(lpVtbl[18]))((IDWriteFont2*)Unsafe.AsPointer(ref this));
+        }
+
+        public interface Interface : IDWriteFont1.Interface
+        {
+            [VtblIndex(18)]
+            BOOL IsColorFont();
         }
 
         public partial struct Vtbl

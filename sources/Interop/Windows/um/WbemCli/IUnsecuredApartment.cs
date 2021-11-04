@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("1CFABA8C-1523-11D1-AD79-00C04FD8FDFF")]
     [NativeTypeName("struct IUnsecuredApartment : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IUnsecuredApartment
+    public unsafe partial struct IUnsecuredApartment : IUnsecuredApartment.Interface
     {
         public void** lpVtbl;
 
@@ -44,6 +44,12 @@ namespace TerraFX.Interop
         public HRESULT CreateObjectStub(IUnknown* pObject, IUnknown** ppStub)
         {
             return ((delegate* unmanaged<IUnsecuredApartment*, IUnknown*, IUnknown**, int>)(lpVtbl[3]))((IUnsecuredApartment*)Unsafe.AsPointer(ref this), pObject, ppStub);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT CreateObjectStub(IUnknown* pObject, IUnknown** ppStub);
         }
 
         public partial struct Vtbl

@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("3050F4AD-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct IHTMLTable2 : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct IHTMLTable2
+    public unsafe partial struct IHTMLTable2 : IHTMLTable2.Interface
     {
         public void** lpVtbl;
 
@@ -93,6 +93,21 @@ namespace TerraFX.Interop
         public HRESULT moveRow([NativeTypeName("long")] int indexFrom, [NativeTypeName("long")] int indexTo, IDispatch** row)
         {
             return ((delegate* unmanaged<IHTMLTable2*, int, int, IDispatch**, int>)(lpVtbl[10]))((IHTMLTable2*)Unsafe.AsPointer(ref this), indexFrom, indexTo, row);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT firstPage();
+
+            [VtblIndex(8)]
+            HRESULT lastPage();
+
+            [VtblIndex(9)]
+            HRESULT get_cells(IHTMLElementCollection** p);
+
+            [VtblIndex(10)]
+            HRESULT moveRow([NativeTypeName("long")] int indexFrom, [NativeTypeName("long")] int indexTo, IDispatch** row);
         }
 
         public partial struct Vtbl

@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("D3EE12AD-3865-4362-9746-B75A682DF0E6")]
     [NativeTypeName("struct IAccountsSettingsPaneInterop : IInspectable")]
     [NativeInheritance("IInspectable")]
-    public unsafe partial struct IAccountsSettingsPaneInterop
+    public unsafe partial struct IAccountsSettingsPaneInterop : IAccountsSettingsPaneInterop.Interface
     {
         public void** lpVtbl;
 
@@ -79,6 +79,18 @@ namespace TerraFX.Interop
         public HRESULT ShowAddAccountForWindowAsync(HWND appWindow, [NativeTypeName("const IID &")] Guid* riid, void** asyncAction)
         {
             return ((delegate* unmanaged<IAccountsSettingsPaneInterop*, HWND, Guid*, void**, int>)(lpVtbl[8]))((IAccountsSettingsPaneInterop*)Unsafe.AsPointer(ref this), appWindow, riid, asyncAction);
+        }
+
+        public interface Interface : IInspectable.Interface
+        {
+            [VtblIndex(6)]
+            HRESULT GetForWindow(HWND appWindow, [NativeTypeName("const IID &")] Guid* riid, void** accountsSettingsPane);
+
+            [VtblIndex(7)]
+            HRESULT ShowManageAccountsForWindowAsync(HWND appWindow, [NativeTypeName("const IID &")] Guid* riid, void** asyncAction);
+
+            [VtblIndex(8)]
+            HRESULT ShowAddAccountForWindowAsync(HWND appWindow, [NativeTypeName("const IID &")] Guid* riid, void** asyncAction);
         }
 
         public partial struct Vtbl

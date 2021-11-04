@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("95C75A6E-3E8C-4EC2-85A8-AEBCC551E59B")]
     [NativeTypeName("struct IWICDevelopRawNotificationCallback : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IWICDevelopRawNotificationCallback
+    public unsafe partial struct IWICDevelopRawNotificationCallback : IWICDevelopRawNotificationCallback.Interface
     {
         public void** lpVtbl;
 
@@ -44,6 +44,12 @@ namespace TerraFX.Interop
         public HRESULT Notify(uint NotificationMask)
         {
             return ((delegate* unmanaged<IWICDevelopRawNotificationCallback*, uint, int>)(lpVtbl[3]))((IWICDevelopRawNotificationCallback*)Unsafe.AsPointer(ref this), NotificationMask);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT Notify(uint NotificationMask);
         }
 
         public partial struct Vtbl

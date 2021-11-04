@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("10339516-2894-11D2-9039-00C04F8EEB3E")]
     [NativeTypeName("struct ICommDlgBrowser2 : ICommDlgBrowser")]
     [NativeInheritance("ICommDlgBrowser")]
-    public unsafe partial struct ICommDlgBrowser2
+    public unsafe partial struct ICommDlgBrowser2 : ICommDlgBrowser2.Interface
     {
         public void** lpVtbl;
 
@@ -79,6 +79,18 @@ namespace TerraFX.Interop
         public HRESULT GetViewFlags([NativeTypeName("DWORD *")] uint* pdwFlags)
         {
             return ((delegate* unmanaged<ICommDlgBrowser2*, uint*, int>)(lpVtbl[8]))((ICommDlgBrowser2*)Unsafe.AsPointer(ref this), pdwFlags);
+        }
+
+        public interface Interface : ICommDlgBrowser.Interface
+        {
+            [VtblIndex(6)]
+            HRESULT Notify(IShellView* ppshv, [NativeTypeName("DWORD")] uint dwNotifyType);
+
+            [VtblIndex(7)]
+            HRESULT GetDefaultMenuText(IShellView* ppshv, [NativeTypeName("LPWSTR")] ushort* pszText, int cchMax);
+
+            [VtblIndex(8)]
+            HRESULT GetViewFlags([NativeTypeName("DWORD *")] uint* pdwFlags);
         }
 
         public partial struct Vtbl

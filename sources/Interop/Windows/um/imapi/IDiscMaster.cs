@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("520CCA62-51A5-11D3-9144-00104BA11C5E")]
     [NativeTypeName("struct IDiscMaster : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IDiscMaster
+    public unsafe partial struct IDiscMaster : IDiscMaster.Interface
     {
         public void** lpVtbl;
 
@@ -121,6 +121,45 @@ namespace TerraFX.Interop
         public HRESULT Close()
         {
             return ((delegate* unmanaged<IDiscMaster*, int>)(lpVtbl[14]))((IDiscMaster*)Unsafe.AsPointer(ref this));
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT Open();
+
+            [VtblIndex(4)]
+            HRESULT EnumDiscMasterFormats(IEnumDiscMasterFormats** ppEnum);
+
+            [VtblIndex(5)]
+            HRESULT GetActiveDiscMasterFormat([NativeTypeName("LPIID")] Guid* lpiid);
+
+            [VtblIndex(6)]
+            HRESULT SetActiveDiscMasterFormat([NativeTypeName("const IID &")] Guid* riid, void** ppUnk);
+
+            [VtblIndex(7)]
+            HRESULT EnumDiscRecorders(IEnumDiscRecorders** ppEnum);
+
+            [VtblIndex(8)]
+            HRESULT GetActiveDiscRecorder(IDiscRecorder** ppRecorder);
+
+            [VtblIndex(9)]
+            HRESULT SetActiveDiscRecorder(IDiscRecorder* pRecorder);
+
+            [VtblIndex(10)]
+            HRESULT ClearFormatContent();
+
+            [VtblIndex(11)]
+            HRESULT ProgressAdvise(IDiscMasterProgressEvents* pEvents, [NativeTypeName("UINT_PTR *")] nuint* pvCookie);
+
+            [VtblIndex(12)]
+            HRESULT ProgressUnadvise([NativeTypeName("UINT_PTR")] nuint vCookie);
+
+            [VtblIndex(13)]
+            HRESULT RecordDisc([NativeTypeName("boolean")] byte bSimulate, [NativeTypeName("boolean")] byte bEjectAfterBurn);
+
+            [VtblIndex(14)]
+            HRESULT Close();
         }
 
         public partial struct Vtbl

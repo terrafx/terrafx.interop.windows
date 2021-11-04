@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("DF0C7CEC-CDEB-4D4A-B91C-721BF22F4E6C")]
     [NativeTypeName("struct IDCompositionInkTrailDevice : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IDCompositionInkTrailDevice
+    public unsafe partial struct IDCompositionInkTrailDevice : IDCompositionInkTrailDevice.Interface
     {
         public void** lpVtbl;
 
@@ -51,6 +51,15 @@ namespace TerraFX.Interop
         public HRESULT CreateDelegatedInkTrailForSwapChain(IUnknown* swapChain, IDCompositionDelegatedInkTrail** inkTrail)
         {
             return ((delegate* unmanaged<IDCompositionInkTrailDevice*, IUnknown*, IDCompositionDelegatedInkTrail**, int>)(lpVtbl[4]))((IDCompositionInkTrailDevice*)Unsafe.AsPointer(ref this), swapChain, inkTrail);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT CreateDelegatedInkTrail(IDCompositionDelegatedInkTrail** inkTrail);
+
+            [VtblIndex(4)]
+            HRESULT CreateDelegatedInkTrailForSwapChain(IUnknown* swapChain, IDCompositionDelegatedInkTrail** inkTrail);
         }
 
         public partial struct Vtbl

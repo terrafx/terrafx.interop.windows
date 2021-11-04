@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("A05C8C37-D2C6-4732-B3A0-9CE0B0DC9AE6")]
     [NativeTypeName("struct ID3D11Device3 : ID3D11Device2")]
     [NativeInheritance("ID3D11Device2")]
-    public unsafe partial struct ID3D11Device3
+    public unsafe partial struct ID3D11Device3 : ID3D11Device3.Interface
     {
         public void** lpVtbl;
 
@@ -471,6 +471,42 @@ namespace TerraFX.Interop
         public void ReadFromSubresource(void* pDstData, uint DstRowPitch, uint DstDepthPitch, ID3D11Resource* pSrcResource, uint SrcSubresource, [NativeTypeName("const D3D11_BOX *")] D3D11_BOX* pSrcBox)
         {
             ((delegate* unmanaged<ID3D11Device3*, void*, uint, uint, ID3D11Resource*, uint, D3D11_BOX*, void>)(lpVtbl[64]))((ID3D11Device3*)Unsafe.AsPointer(ref this), pDstData, DstRowPitch, DstDepthPitch, pSrcResource, SrcSubresource, pSrcBox);
+        }
+
+        public interface Interface : ID3D11Device2.Interface
+        {
+            [VtblIndex(54)]
+            HRESULT CreateTexture2D1([NativeTypeName("const D3D11_TEXTURE2D_DESC1 *")] D3D11_TEXTURE2D_DESC1* pDesc1, [NativeTypeName("const D3D11_SUBRESOURCE_DATA *")] D3D11_SUBRESOURCE_DATA* pInitialData, ID3D11Texture2D1** ppTexture2D);
+
+            [VtblIndex(55)]
+            HRESULT CreateTexture3D1([NativeTypeName("const D3D11_TEXTURE3D_DESC1 *")] D3D11_TEXTURE3D_DESC1* pDesc1, [NativeTypeName("const D3D11_SUBRESOURCE_DATA *")] D3D11_SUBRESOURCE_DATA* pInitialData, ID3D11Texture3D1** ppTexture3D);
+
+            [VtblIndex(56)]
+            HRESULT CreateRasterizerState2([NativeTypeName("const D3D11_RASTERIZER_DESC2 *")] D3D11_RASTERIZER_DESC2* pRasterizerDesc, ID3D11RasterizerState2** ppRasterizerState);
+
+            [VtblIndex(57)]
+            HRESULT CreateShaderResourceView1(ID3D11Resource* pResource, [NativeTypeName("const D3D11_SHADER_RESOURCE_VIEW_DESC1 *")] D3D11_SHADER_RESOURCE_VIEW_DESC1* pDesc1, ID3D11ShaderResourceView1** ppSRView1);
+
+            [VtblIndex(58)]
+            HRESULT CreateUnorderedAccessView1(ID3D11Resource* pResource, [NativeTypeName("const D3D11_UNORDERED_ACCESS_VIEW_DESC1 *")] D3D11_UNORDERED_ACCESS_VIEW_DESC1* pDesc1, ID3D11UnorderedAccessView1** ppUAView1);
+
+            [VtblIndex(59)]
+            HRESULT CreateRenderTargetView1(ID3D11Resource* pResource, [NativeTypeName("const D3D11_RENDER_TARGET_VIEW_DESC1 *")] D3D11_RENDER_TARGET_VIEW_DESC1* pDesc1, ID3D11RenderTargetView1** ppRTView1);
+
+            [VtblIndex(60)]
+            HRESULT CreateQuery1([NativeTypeName("const D3D11_QUERY_DESC1 *")] D3D11_QUERY_DESC1* pQueryDesc1, ID3D11Query1** ppQuery1);
+
+            [VtblIndex(61)]
+            void GetImmediateContext3(ID3D11DeviceContext3** ppImmediateContext);
+
+            [VtblIndex(62)]
+            HRESULT CreateDeferredContext3(uint ContextFlags, ID3D11DeviceContext3** ppDeferredContext);
+
+            [VtblIndex(63)]
+            void WriteToSubresource(ID3D11Resource* pDstResource, uint DstSubresource, [NativeTypeName("const D3D11_BOX *")] D3D11_BOX* pDstBox, [NativeTypeName("const void *")] void* pSrcData, uint SrcRowPitch, uint SrcDepthPitch);
+
+            [VtblIndex(64)]
+            void ReadFromSubresource(void* pDstData, uint DstRowPitch, uint DstDepthPitch, ID3D11Resource* pSrcResource, uint SrcSubresource, [NativeTypeName("const D3D11_BOX *")] D3D11_BOX* pSrcBox);
         }
 
         public partial struct Vtbl

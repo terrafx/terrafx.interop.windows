@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("B79BB0B1-33C1-11D1-ABE1-00A0C905F375")]
     [NativeTypeName("struct IFilterMapper3 : IFilterMapper2")]
     [NativeInheritance("IFilterMapper2")]
-    public unsafe partial struct IFilterMapper3
+    public unsafe partial struct IFilterMapper3 : IFilterMapper3.Interface
     {
         public void** lpVtbl;
 
@@ -72,6 +72,12 @@ namespace TerraFX.Interop
         public HRESULT GetICreateDevEnum(ICreateDevEnum** ppEnum)
         {
             return ((delegate* unmanaged<IFilterMapper3*, ICreateDevEnum**, int>)(lpVtbl[7]))((IFilterMapper3*)Unsafe.AsPointer(ref this), ppEnum);
+        }
+
+        public interface Interface : IFilterMapper2.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT GetICreateDevEnum(ICreateDevEnum** ppEnum);
         }
 
         public partial struct Vtbl

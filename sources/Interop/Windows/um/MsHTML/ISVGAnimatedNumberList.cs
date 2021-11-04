@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("305104CE-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct ISVGAnimatedNumberList : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct ISVGAnimatedNumberList
+    public unsafe partial struct ISVGAnimatedNumberList : ISVGAnimatedNumberList.Interface
     {
         public void** lpVtbl;
 
@@ -93,6 +93,21 @@ namespace TerraFX.Interop
         public HRESULT get_animVal(ISVGNumberList** p)
         {
             return ((delegate* unmanaged<ISVGAnimatedNumberList*, ISVGNumberList**, int>)(lpVtbl[10]))((ISVGAnimatedNumberList*)Unsafe.AsPointer(ref this), p);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT putref_baseVal(ISVGNumberList* v);
+
+            [VtblIndex(8)]
+            HRESULT get_baseVal(ISVGNumberList** p);
+
+            [VtblIndex(9)]
+            HRESULT putref_animVal(ISVGNumberList* v);
+
+            [VtblIndex(10)]
+            HRESULT get_animVal(ISVGNumberList** p);
         }
 
         public partial struct Vtbl

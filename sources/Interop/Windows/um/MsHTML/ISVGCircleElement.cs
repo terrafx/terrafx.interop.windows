@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("30510514-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct ISVGCircleElement : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct ISVGCircleElement
+    public unsafe partial struct ISVGCircleElement : ISVGCircleElement.Interface
     {
         public void** lpVtbl;
 
@@ -107,6 +107,27 @@ namespace TerraFX.Interop
         public HRESULT get_r(ISVGAnimatedLength** p)
         {
             return ((delegate* unmanaged<ISVGCircleElement*, ISVGAnimatedLength**, int>)(lpVtbl[12]))((ISVGCircleElement*)Unsafe.AsPointer(ref this), p);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT putref_cx(ISVGAnimatedLength* v);
+
+            [VtblIndex(8)]
+            HRESULT get_cx(ISVGAnimatedLength** p);
+
+            [VtblIndex(9)]
+            HRESULT putref_cy(ISVGAnimatedLength* v);
+
+            [VtblIndex(10)]
+            HRESULT get_cy(ISVGAnimatedLength** p);
+
+            [VtblIndex(11)]
+            HRESULT putref_r(ISVGAnimatedLength* v);
+
+            [VtblIndex(12)]
+            HRESULT get_r(ISVGAnimatedLength** p);
         }
 
         public partial struct Vtbl

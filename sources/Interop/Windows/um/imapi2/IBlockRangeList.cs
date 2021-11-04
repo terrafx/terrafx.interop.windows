@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("B507CA26-2204-11DD-966A-001AA01BBC58")]
     [NativeTypeName("struct IBlockRangeList : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct IBlockRangeList
+    public unsafe partial struct IBlockRangeList : IBlockRangeList.Interface
     {
         public void** lpVtbl;
 
@@ -72,6 +72,12 @@ namespace TerraFX.Interop
         public HRESULT get_BlockRanges(SAFEARRAY** value)
         {
             return ((delegate* unmanaged<IBlockRangeList*, SAFEARRAY**, int>)(lpVtbl[7]))((IBlockRangeList*)Unsafe.AsPointer(ref this), value);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT get_BlockRanges(SAFEARRAY** value);
         }
 
         public partial struct Vtbl

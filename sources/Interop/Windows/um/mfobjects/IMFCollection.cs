@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("5BC8A76B-869A-46A3-9B03-FA218A66AEBE")]
     [NativeTypeName("struct IMFCollection : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IMFCollection
+    public unsafe partial struct IMFCollection : IMFCollection.Interface
     {
         public void** lpVtbl;
 
@@ -79,6 +79,27 @@ namespace TerraFX.Interop
         public HRESULT RemoveAllElements()
         {
             return ((delegate* unmanaged<IMFCollection*, int>)(lpVtbl[8]))((IMFCollection*)Unsafe.AsPointer(ref this));
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetElementCount([NativeTypeName("DWORD *")] uint* pcElements);
+
+            [VtblIndex(4)]
+            HRESULT GetElement([NativeTypeName("DWORD")] uint dwElementIndex, IUnknown** ppUnkElement);
+
+            [VtblIndex(5)]
+            HRESULT AddElement(IUnknown* pUnkElement);
+
+            [VtblIndex(6)]
+            HRESULT RemoveElement([NativeTypeName("DWORD")] uint dwElementIndex, IUnknown** ppUnkElement);
+
+            [VtblIndex(7)]
+            HRESULT InsertElementAt([NativeTypeName("DWORD")] uint dwIndex, IUnknown* pUnknown);
+
+            [VtblIndex(8)]
+            HRESULT RemoveAllElements();
         }
 
         public partial struct Vtbl

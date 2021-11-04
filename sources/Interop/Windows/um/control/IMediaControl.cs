@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("56A868B1-0AD4-11CE-B03A-0020AF0BA770")]
     [NativeTypeName("struct IMediaControl : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct IMediaControl
+    public unsafe partial struct IMediaControl : IMediaControl.Interface
     {
         public void** lpVtbl;
 
@@ -128,6 +128,36 @@ namespace TerraFX.Interop
         public HRESULT StopWhenReady()
         {
             return ((delegate* unmanaged<IMediaControl*, int>)(lpVtbl[15]))((IMediaControl*)Unsafe.AsPointer(ref this));
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT Run();
+
+            [VtblIndex(8)]
+            HRESULT Pause();
+
+            [VtblIndex(9)]
+            HRESULT Stop();
+
+            [VtblIndex(10)]
+            HRESULT GetState([NativeTypeName("LONG")] int msTimeout, [NativeTypeName("OAFilterState *")] int* pfs);
+
+            [VtblIndex(11)]
+            HRESULT RenderFile([NativeTypeName("BSTR")] ushort* strFilename);
+
+            [VtblIndex(12)]
+            HRESULT AddSourceFilter([NativeTypeName("BSTR")] ushort* strFilename, IDispatch** ppUnk);
+
+            [VtblIndex(13)]
+            HRESULT get_FilterCollection(IDispatch** ppUnk);
+
+            [VtblIndex(14)]
+            HRESULT get_RegFilterCollection(IDispatch** ppUnk);
+
+            [VtblIndex(15)]
+            HRESULT StopWhenReady();
         }
 
         public partial struct Vtbl

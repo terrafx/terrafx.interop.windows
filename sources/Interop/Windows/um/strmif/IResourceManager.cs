@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("56A868AC-0AD4-11CE-B03A-0020AF0BA770")]
     [NativeTypeName("struct IResourceManager : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IResourceManager
+    public unsafe partial struct IResourceManager : IResourceManager.Interface
     {
         public void** lpVtbl;
 
@@ -93,6 +93,33 @@ namespace TerraFX.Interop
         public HRESULT ReleaseFocus(IUnknown* pFocusObject)
         {
             return ((delegate* unmanaged<IResourceManager*, IUnknown*, int>)(lpVtbl[10]))((IResourceManager*)Unsafe.AsPointer(ref this), pFocusObject);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT Register([NativeTypeName("LPCWSTR")] ushort* pName, [NativeTypeName("LONG")] int cResource, [NativeTypeName("LONG *")] int* plToken);
+
+            [VtblIndex(4)]
+            HRESULT RegisterGroup([NativeTypeName("LPCWSTR")] ushort* pName, [NativeTypeName("LONG")] int cResource, [NativeTypeName("LONG *")] int* palTokens, [NativeTypeName("LONG *")] int* plToken);
+
+            [VtblIndex(5)]
+            HRESULT RequestResource([NativeTypeName("LONG")] int idResource, IUnknown* pFocusObject, IResourceConsumer* pConsumer);
+
+            [VtblIndex(6)]
+            HRESULT NotifyAcquire([NativeTypeName("LONG")] int idResource, IResourceConsumer* pConsumer, HRESULT hr);
+
+            [VtblIndex(7)]
+            HRESULT NotifyRelease([NativeTypeName("LONG")] int idResource, IResourceConsumer* pConsumer, BOOL bStillWant);
+
+            [VtblIndex(8)]
+            HRESULT CancelRequest([NativeTypeName("LONG")] int idResource, IResourceConsumer* pConsumer);
+
+            [VtblIndex(9)]
+            HRESULT SetFocus(IUnknown* pFocusObject);
+
+            [VtblIndex(10)]
+            HRESULT ReleaseFocus(IUnknown* pFocusObject);
         }
 
         public partial struct Vtbl

@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("245BF8E9-0755-40F7-88A5-AE0F18D55E17")]
     [NativeTypeName("struct IMFTrackedSample : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IMFTrackedSample
+    public unsafe partial struct IMFTrackedSample : IMFTrackedSample.Interface
     {
         public void** lpVtbl;
 
@@ -44,6 +44,12 @@ namespace TerraFX.Interop
         public HRESULT SetAllocator(IMFAsyncCallback* pSampleAllocator, IUnknown* pUnkState)
         {
             return ((delegate* unmanaged<IMFTrackedSample*, IMFAsyncCallback*, IUnknown*, int>)(lpVtbl[3]))((IMFTrackedSample*)Unsafe.AsPointer(ref this), pSampleAllocator, pUnkState);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT SetAllocator(IMFAsyncCallback* pSampleAllocator, IUnknown* pUnkState);
         }
 
         public partial struct Vtbl

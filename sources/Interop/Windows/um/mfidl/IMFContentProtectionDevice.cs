@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("E6257174-A060-4C9A-A088-3B1B471CAD28")]
     [NativeTypeName("struct IMFContentProtectionDevice : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IMFContentProtectionDevice
+    public unsafe partial struct IMFContentProtectionDevice : IMFContentProtectionDevice.Interface
     {
         public void** lpVtbl;
 
@@ -51,6 +51,15 @@ namespace TerraFX.Interop
         public HRESULT GetPrivateDataByteCount([NativeTypeName("DWORD *")] uint* PrivateInputByteCount, [NativeTypeName("DWORD *")] uint* PrivateOutputByteCount)
         {
             return ((delegate* unmanaged<IMFContentProtectionDevice*, uint*, uint*, int>)(lpVtbl[4]))((IMFContentProtectionDevice*)Unsafe.AsPointer(ref this), PrivateInputByteCount, PrivateOutputByteCount);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT InvokeFunction([NativeTypeName("DWORD")] uint FunctionId, [NativeTypeName("DWORD")] uint InputBufferByteCount, [NativeTypeName("const BYTE *")] byte* InputBuffer, [NativeTypeName("DWORD *")] uint* OutputBufferByteCount, byte* OutputBuffer);
+
+            [VtblIndex(4)]
+            HRESULT GetPrivateDataByteCount([NativeTypeName("DWORD *")] uint* PrivateInputByteCount, [NativeTypeName("DWORD *")] uint* PrivateOutputByteCount);
         }
 
         public partial struct Vtbl

@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("B36E6A53-8073-499E-824C-D776330A333E")]
     [NativeTypeName("struct IShellUIHelper4 : IShellUIHelper3")]
     [NativeInheritance("IShellUIHelper3")]
-    public unsafe partial struct IShellUIHelper4
+    public unsafe partial struct IShellUIHelper4 : IShellUIHelper4.Interface
     {
         public void** lpVtbl;
 
@@ -485,6 +485,63 @@ namespace TerraFX.Interop
         public HRESULT msActiveXFilteringEnabled([NativeTypeName("VARIANT_BOOL *")] short* pfEnabled)
         {
             return ((delegate* unmanaged<IShellUIHelper4*, short*, int>)(lpVtbl[66]))((IShellUIHelper4*)Unsafe.AsPointer(ref this), pfEnabled);
+        }
+
+        public interface Interface : IShellUIHelper3.Interface
+        {
+            [VtblIndex(49)]
+            HRESULT msIsSiteMode([NativeTypeName("VARIANT_BOOL *")] short* pfSiteMode);
+
+            [VtblIndex(50)]
+            HRESULT msSiteModeShowThumbBar();
+
+            [VtblIndex(51)]
+            HRESULT msSiteModeAddThumbBarButton([NativeTypeName("BSTR")] ushort* bstrIconURL, [NativeTypeName("BSTR")] ushort* bstrTooltip, VARIANT* pvarButtonID);
+
+            [VtblIndex(52)]
+            HRESULT msSiteModeUpdateThumbBarButton(VARIANT ButtonID, [NativeTypeName("VARIANT_BOOL")] short fEnabled, [NativeTypeName("VARIANT_BOOL")] short fVisible);
+
+            [VtblIndex(53)]
+            HRESULT msSiteModeSetIconOverlay([NativeTypeName("BSTR")] ushort* IconUrl, VARIANT* pvarDescription);
+
+            [VtblIndex(54)]
+            HRESULT msSiteModeClearIconOverlay();
+
+            [VtblIndex(55)]
+            HRESULT msAddSiteMode();
+
+            [VtblIndex(56)]
+            HRESULT msSiteModeCreateJumpList([NativeTypeName("BSTR")] ushort* bstrHeader);
+
+            [VtblIndex(57)]
+            HRESULT msSiteModeAddJumpListItem([NativeTypeName("BSTR")] ushort* bstrName, [NativeTypeName("BSTR")] ushort* bstrActionUri, [NativeTypeName("BSTR")] ushort* bstrIconUri, VARIANT* pvarWindowType);
+
+            [VtblIndex(58)]
+            HRESULT msSiteModeClearJumpList();
+
+            [VtblIndex(59)]
+            HRESULT msSiteModeShowJumpList();
+
+            [VtblIndex(60)]
+            HRESULT msSiteModeAddButtonStyle(VARIANT uiButtonID, [NativeTypeName("BSTR")] ushort* bstrIconUrl, [NativeTypeName("BSTR")] ushort* bstrTooltip, VARIANT* pvarStyleID);
+
+            [VtblIndex(61)]
+            HRESULT msSiteModeShowButtonStyle(VARIANT uiButtonID, VARIANT uiStyleID);
+
+            [VtblIndex(62)]
+            HRESULT msSiteModeActivate();
+
+            [VtblIndex(63)]
+            HRESULT msIsSiteModeFirstRun([NativeTypeName("VARIANT_BOOL")] short fPreserveState, VARIANT* puiFirstRun);
+
+            [VtblIndex(64)]
+            HRESULT msAddTrackingProtectionList([NativeTypeName("BSTR")] ushort* URL, [NativeTypeName("BSTR")] ushort* bstrFilterName);
+
+            [VtblIndex(65)]
+            HRESULT msTrackingProtectionEnabled([NativeTypeName("VARIANT_BOOL *")] short* pfEnabled);
+
+            [VtblIndex(66)]
+            HRESULT msActiveXFilteringEnabled([NativeTypeName("VARIANT_BOOL *")] short* pfEnabled);
         }
 
         public partial struct Vtbl

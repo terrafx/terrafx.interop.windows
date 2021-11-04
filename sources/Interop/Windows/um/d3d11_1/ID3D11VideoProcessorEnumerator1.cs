@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("465217F2-5568-43CF-B5B9-F61D54531CA1")]
     [NativeTypeName("struct ID3D11VideoProcessorEnumerator1 : ID3D11VideoProcessorEnumerator")]
     [NativeInheritance("ID3D11VideoProcessorEnumerator")]
-    public unsafe partial struct ID3D11VideoProcessorEnumerator1
+    public unsafe partial struct ID3D11VideoProcessorEnumerator1 : ID3D11VideoProcessorEnumerator1.Interface
     {
         public void** lpVtbl;
 
@@ -114,6 +114,12 @@ namespace TerraFX.Interop
         public HRESULT CheckVideoProcessorFormatConversion(DXGI_FORMAT InputFormat, DXGI_COLOR_SPACE_TYPE InputColorSpace, DXGI_FORMAT OutputFormat, DXGI_COLOR_SPACE_TYPE OutputColorSpace, BOOL* pSupported)
         {
             return ((delegate* unmanaged<ID3D11VideoProcessorEnumerator1*, DXGI_FORMAT, DXGI_COLOR_SPACE_TYPE, DXGI_FORMAT, DXGI_COLOR_SPACE_TYPE, BOOL*, int>)(lpVtbl[13]))((ID3D11VideoProcessorEnumerator1*)Unsafe.AsPointer(ref this), InputFormat, InputColorSpace, OutputFormat, OutputColorSpace, pSupported);
+        }
+
+        public interface Interface : ID3D11VideoProcessorEnumerator.Interface
+        {
+            [VtblIndex(13)]
+            HRESULT CheckVideoProcessorFormatConversion(DXGI_FORMAT InputFormat, DXGI_COLOR_SPACE_TYPE InputColorSpace, DXGI_FORMAT OutputFormat, DXGI_COLOR_SPACE_TYPE OutputColorSpace, BOOL* pSupported);
         }
 
         public partial struct Vtbl

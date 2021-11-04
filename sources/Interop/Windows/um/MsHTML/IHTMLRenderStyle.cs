@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("3050F6AE-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct IHTMLRenderStyle : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct IHTMLRenderStyle
+    public unsafe partial struct IHTMLRenderStyle : IHTMLRenderStyle.Interface
     {
         public void** lpVtbl;
 
@@ -191,6 +191,63 @@ namespace TerraFX.Interop
         public HRESULT get_textDecoration([NativeTypeName("BSTR *")] ushort** p)
         {
             return ((delegate* unmanaged<IHTMLRenderStyle*, ushort**, int>)(lpVtbl[24]))((IHTMLRenderStyle*)Unsafe.AsPointer(ref this), p);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT put_textLineThroughStyle([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(8)]
+            HRESULT get_textLineThroughStyle([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(9)]
+            HRESULT put_textUnderlineStyle([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(10)]
+            HRESULT get_textUnderlineStyle([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(11)]
+            HRESULT put_textEffect([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(12)]
+            HRESULT get_textEffect([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(13)]
+            HRESULT put_textColor(VARIANT v);
+
+            [VtblIndex(14)]
+            HRESULT get_textColor(VARIANT* p);
+
+            [VtblIndex(15)]
+            HRESULT put_textBackgroundColor(VARIANT v);
+
+            [VtblIndex(16)]
+            HRESULT get_textBackgroundColor(VARIANT* p);
+
+            [VtblIndex(17)]
+            HRESULT put_textDecorationColor(VARIANT v);
+
+            [VtblIndex(18)]
+            HRESULT get_textDecorationColor(VARIANT* p);
+
+            [VtblIndex(19)]
+            HRESULT put_renderingPriority([NativeTypeName("long")] int v);
+
+            [VtblIndex(20)]
+            HRESULT get_renderingPriority([NativeTypeName("long *")] int* p);
+
+            [VtblIndex(21)]
+            HRESULT put_defaultTextSelection([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(22)]
+            HRESULT get_defaultTextSelection([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(23)]
+            HRESULT put_textDecoration([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(24)]
+            HRESULT get_textDecoration([NativeTypeName("BSTR *")] ushort** p);
         }
 
         public partial struct Vtbl

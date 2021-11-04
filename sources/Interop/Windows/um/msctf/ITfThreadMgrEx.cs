@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("3E90ADE3-7594-4CB0-BB58-69628F5F458C")]
     [NativeTypeName("struct ITfThreadMgrEx : ITfThreadMgr")]
     [NativeInheritance("ITfThreadMgr")]
-    public unsafe partial struct ITfThreadMgrEx
+    public unsafe partial struct ITfThreadMgrEx : ITfThreadMgrEx.Interface
     {
         public void** lpVtbl;
 
@@ -128,6 +128,15 @@ namespace TerraFX.Interop
         public HRESULT GetActiveFlags([NativeTypeName("DWORD *")] uint* lpdwFlags)
         {
             return ((delegate* unmanaged<ITfThreadMgrEx*, uint*, int>)(lpVtbl[15]))((ITfThreadMgrEx*)Unsafe.AsPointer(ref this), lpdwFlags);
+        }
+
+        public interface Interface : ITfThreadMgr.Interface
+        {
+            [VtblIndex(14)]
+            HRESULT ActivateEx([NativeTypeName("TfClientId *")] uint* ptid, [NativeTypeName("DWORD")] uint dwFlags);
+
+            [VtblIndex(15)]
+            HRESULT GetActiveFlags([NativeTypeName("DWORD *")] uint* lpdwFlags);
         }
 
         public partial struct Vtbl

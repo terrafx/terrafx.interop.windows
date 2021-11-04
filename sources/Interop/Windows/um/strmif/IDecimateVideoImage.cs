@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("2E5EA3E0-E924-11D2-B6DA-00A0C995E8DF")]
     [NativeTypeName("struct IDecimateVideoImage : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IDecimateVideoImage
+    public unsafe partial struct IDecimateVideoImage : IDecimateVideoImage.Interface
     {
         public void** lpVtbl;
 
@@ -51,6 +51,15 @@ namespace TerraFX.Interop
         public HRESULT ResetDecimationImageSize()
         {
             return ((delegate* unmanaged<IDecimateVideoImage*, int>)(lpVtbl[4]))((IDecimateVideoImage*)Unsafe.AsPointer(ref this));
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT SetDecimationImageSize([NativeTypeName("long")] int lWidth, [NativeTypeName("long")] int lHeight);
+
+            [VtblIndex(4)]
+            HRESULT ResetDecimationImageSize();
         }
 
         public partial struct Vtbl

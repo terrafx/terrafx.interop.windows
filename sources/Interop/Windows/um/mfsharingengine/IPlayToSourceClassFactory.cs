@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("842B32A3-9B9B-4D1C-B3F3-49193248A554")]
     [NativeTypeName("struct IPlayToSourceClassFactory : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IPlayToSourceClassFactory
+    public unsafe partial struct IPlayToSourceClassFactory : IPlayToSourceClassFactory.Interface
     {
         public void** lpVtbl;
 
@@ -44,6 +44,12 @@ namespace TerraFX.Interop
         public HRESULT CreateInstance([NativeTypeName("DWORD")] uint dwFlags, IPlayToControl* pControl, IInspectable** ppSource)
         {
             return ((delegate* unmanaged<IPlayToSourceClassFactory*, uint, IPlayToControl*, IInspectable**, int>)(lpVtbl[3]))((IPlayToSourceClassFactory*)Unsafe.AsPointer(ref this), dwFlags, pControl, ppSource);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT CreateInstance([NativeTypeName("DWORD")] uint dwFlags, IPlayToControl* pControl, IInspectable** ppSource);
         }
 
         public partial struct Vtbl

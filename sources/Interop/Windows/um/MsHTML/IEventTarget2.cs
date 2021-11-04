@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("30510839-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct IEventTarget2 : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IEventTarget2
+    public unsafe partial struct IEventTarget2 : IEventTarget2.Interface
     {
         public void** lpVtbl;
 
@@ -65,6 +65,21 @@ namespace TerraFX.Interop
         public HRESULT UnregisterForDOMEventListeners(IDOMEventRegistrationCallback* pCallback)
         {
             return ((delegate* unmanaged<IEventTarget2*, IDOMEventRegistrationCallback*, int>)(lpVtbl[6]))((IEventTarget2*)Unsafe.AsPointer(ref this), pCallback);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetRegisteredEventTypes(SAFEARRAY** ppEventTypeArray);
+
+            [VtblIndex(4)]
+            HRESULT GetListenersForType([NativeTypeName("LPCWSTR")] ushort* pszEventType, SAFEARRAY** ppEventHandlerArray);
+
+            [VtblIndex(5)]
+            HRESULT RegisterForDOMEventListeners(IDOMEventRegistrationCallback* pCallback);
+
+            [VtblIndex(6)]
+            HRESULT UnregisterForDOMEventListeners(IDOMEventRegistrationCallback* pCallback);
         }
 
         public partial struct Vtbl

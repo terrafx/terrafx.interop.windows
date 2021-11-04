@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("CEB38218-C971-47BB-A703-F0BC99CCDB81")]
     [NativeTypeName("struct INetworkFolderInternal : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct INetworkFolderInternal
+    public unsafe partial struct INetworkFolderInternal : INetworkFolderInternal.Interface
     {
         public void** lpVtbl;
 
@@ -58,6 +58,18 @@ namespace TerraFX.Interop
         public HRESULT GetProvider(uint itemIdCount, [NativeTypeName("LPCITEMIDLIST *")] ITEMIDLIST** itemIds, uint providerMaxLength, [NativeTypeName("LPWSTR")] ushort* provider)
         {
             return ((delegate* unmanaged<INetworkFolderInternal*, uint, ITEMIDLIST**, uint, ushort*, int>)(lpVtbl[5]))((INetworkFolderInternal*)Unsafe.AsPointer(ref this), itemIdCount, itemIds, providerMaxLength, provider);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetResourceDisplayType(uint* displayType);
+
+            [VtblIndex(4)]
+            HRESULT GetIDList([NativeTypeName("LPITEMIDLIST *")] ITEMIDLIST** idList);
+
+            [VtblIndex(5)]
+            HRESULT GetProvider(uint itemIdCount, [NativeTypeName("LPCITEMIDLIST *")] ITEMIDLIST** itemIds, uint providerMaxLength, [NativeTypeName("LPWSTR")] ushort* provider);
         }
 
         public partial struct Vtbl

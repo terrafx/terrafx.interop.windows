@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("F9D711C3-9777-40AE-87E8-3E5AF9BF0948")]
     [NativeTypeName("struct IDWriteRenderingParams2 : IDWriteRenderingParams1")]
     [NativeInheritance("IDWriteRenderingParams1")]
-    public unsafe partial struct IDWriteRenderingParams2
+    public unsafe partial struct IDWriteRenderingParams2 : IDWriteRenderingParams2.Interface
     {
         public void** lpVtbl;
 
@@ -86,6 +86,12 @@ namespace TerraFX.Interop
         public DWRITE_GRID_FIT_MODE GetGridFitMode()
         {
             return ((delegate* unmanaged<IDWriteRenderingParams2*, DWRITE_GRID_FIT_MODE>)(lpVtbl[9]))((IDWriteRenderingParams2*)Unsafe.AsPointer(ref this));
+        }
+
+        public interface Interface : IDWriteRenderingParams1.Interface
+        {
+            [VtblIndex(9)]
+            DWRITE_GRID_FIT_MODE GetGridFitMode();
         }
 
         public partial struct Vtbl

@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("18079135-4CF3-4868-BC8E-06067E6D242D")]
     [NativeTypeName("struct ID2D1CommandSink3 : ID2D1CommandSink2")]
     [NativeInheritance("ID2D1CommandSink2")]
-    public unsafe partial struct ID2D1CommandSink3
+    public unsafe partial struct ID2D1CommandSink3 : ID2D1CommandSink3.Interface
     {
         public void** lpVtbl;
 
@@ -247,6 +247,12 @@ namespace TerraFX.Interop
         public HRESULT DrawSpriteBatch(ID2D1SpriteBatch* spriteBatch, [NativeTypeName("UINT32")] uint startIndex, [NativeTypeName("UINT32")] uint spriteCount, ID2D1Bitmap* bitmap, D2D1_BITMAP_INTERPOLATION_MODE interpolationMode, D2D1_SPRITE_OPTIONS spriteOptions)
         {
             return ((delegate* unmanaged<ID2D1CommandSink3*, ID2D1SpriteBatch*, uint, uint, ID2D1Bitmap*, D2D1_BITMAP_INTERPOLATION_MODE, D2D1_SPRITE_OPTIONS, int>)(lpVtbl[32]))((ID2D1CommandSink3*)Unsafe.AsPointer(ref this), spriteBatch, startIndex, spriteCount, bitmap, interpolationMode, spriteOptions);
+        }
+
+        public interface Interface : ID2D1CommandSink2.Interface
+        {
+            [VtblIndex(32)]
+            HRESULT DrawSpriteBatch(ID2D1SpriteBatch* spriteBatch, [NativeTypeName("UINT32")] uint startIndex, [NativeTypeName("UINT32")] uint spriteCount, ID2D1Bitmap* bitmap, D2D1_BITMAP_INTERPOLATION_MODE interpolationMode, D2D1_SPRITE_OPTIONS spriteOptions);
         }
 
         public partial struct Vtbl

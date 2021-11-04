@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("E9CD0384-A268-4BB4-82DE-658D53574D41")]
     [NativeTypeName("struct IMFNetProxyLocatorFactory : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IMFNetProxyLocatorFactory
+    public unsafe partial struct IMFNetProxyLocatorFactory : IMFNetProxyLocatorFactory.Interface
     {
         public void** lpVtbl;
 
@@ -44,6 +44,12 @@ namespace TerraFX.Interop
         public HRESULT CreateProxyLocator([NativeTypeName("LPCWSTR")] ushort* pszProtocol, IMFNetProxyLocator** ppProxyLocator)
         {
             return ((delegate* unmanaged<IMFNetProxyLocatorFactory*, ushort*, IMFNetProxyLocator**, int>)(lpVtbl[3]))((IMFNetProxyLocatorFactory*)Unsafe.AsPointer(ref this), pszProtocol, ppProxyLocator);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT CreateProxyLocator([NativeTypeName("LPCWSTR")] ushort* pszProtocol, IMFNetProxyLocator** ppProxyLocator);
         }
 
         public partial struct Vtbl

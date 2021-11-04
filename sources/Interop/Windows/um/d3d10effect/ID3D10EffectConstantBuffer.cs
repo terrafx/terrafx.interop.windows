@@ -9,7 +9,7 @@ namespace TerraFX.Interop
 {
     [NativeTypeName("struct ID3D10EffectConstantBuffer : ID3D10EffectVariable")]
     [NativeInheritance("ID3D10EffectVariable")]
-    public unsafe partial struct ID3D10EffectConstantBuffer
+    public unsafe partial struct ID3D10EffectConstantBuffer : ID3D10EffectConstantBuffer.Interface
     {
         public void** lpVtbl;
 
@@ -214,6 +214,21 @@ namespace TerraFX.Interop
         public HRESULT GetTextureBuffer(ID3D10ShaderResourceView** ppTextureBuffer)
         {
             return ((delegate* unmanaged<ID3D10EffectConstantBuffer*, ID3D10ShaderResourceView**, int>)(lpVtbl[28]))((ID3D10EffectConstantBuffer*)Unsafe.AsPointer(ref this), ppTextureBuffer);
+        }
+
+        public interface Interface : ID3D10EffectVariable.Interface
+        {
+            [VtblIndex(25)]
+            HRESULT SetConstantBuffer(ID3D10Buffer* pConstantBuffer);
+
+            [VtblIndex(26)]
+            HRESULT GetConstantBuffer(ID3D10Buffer** ppConstantBuffer);
+
+            [VtblIndex(27)]
+            HRESULT SetTextureBuffer(ID3D10ShaderResourceView* pTextureBuffer);
+
+            [VtblIndex(28)]
+            HRESULT GetTextureBuffer(ID3D10ShaderResourceView** ppTextureBuffer);
         }
 
         public partial struct Vtbl

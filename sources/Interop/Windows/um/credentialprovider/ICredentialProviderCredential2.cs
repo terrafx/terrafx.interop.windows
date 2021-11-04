@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("FD672C54-40EA-4D6E-9B49-CFB1A7507BD7")]
     [NativeTypeName("struct ICredentialProviderCredential2 : ICredentialProviderCredential")]
     [NativeInheritance("ICredentialProviderCredential")]
-    public unsafe partial struct ICredentialProviderCredential2
+    public unsafe partial struct ICredentialProviderCredential2 : ICredentialProviderCredential2.Interface
     {
         public void** lpVtbl;
 
@@ -163,6 +163,12 @@ namespace TerraFX.Interop
         public HRESULT GetUserSid([NativeTypeName("LPWSTR *")] ushort** sid)
         {
             return ((delegate* unmanaged<ICredentialProviderCredential2*, ushort**, int>)(lpVtbl[20]))((ICredentialProviderCredential2*)Unsafe.AsPointer(ref this), sid);
+        }
+
+        public interface Interface : ICredentialProviderCredential.Interface
+        {
+            [VtblIndex(20)]
+            HRESULT GetUserSid([NativeTypeName("LPWSTR *")] ushort** sid);
         }
 
         public partial struct Vtbl

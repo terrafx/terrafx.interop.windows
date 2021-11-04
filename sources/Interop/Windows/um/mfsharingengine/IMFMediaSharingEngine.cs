@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("8D3CE1BF-2367-40E0-9EEE-40D377CC1B46")]
     [NativeTypeName("struct IMFMediaSharingEngine : IMFMediaEngine")]
     [NativeInheritance("IMFMediaEngine")]
-    public unsafe partial struct IMFMediaSharingEngine
+    public unsafe partial struct IMFMediaSharingEngine : IMFMediaSharingEngine.Interface
     {
         public void** lpVtbl;
 
@@ -338,6 +338,12 @@ namespace TerraFX.Interop
         public HRESULT GetDevice(DEVICE_INFO* pDevice)
         {
             return ((delegate* unmanaged<IMFMediaSharingEngine*, DEVICE_INFO*, int>)(lpVtbl[45]))((IMFMediaSharingEngine*)Unsafe.AsPointer(ref this), pDevice);
+        }
+
+        public interface Interface : IMFMediaEngine.Interface
+        {
+            [VtblIndex(45)]
+            HRESULT GetDevice(DEVICE_INFO* pDevice);
         }
 
         public partial struct Vtbl

@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("3050F204-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct IHTMLBaseElement : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct IHTMLBaseElement
+    public unsafe partial struct IHTMLBaseElement : IHTMLBaseElement.Interface
     {
         public void** lpVtbl;
 
@@ -93,6 +93,21 @@ namespace TerraFX.Interop
         public HRESULT get_target([NativeTypeName("BSTR *")] ushort** p)
         {
             return ((delegate* unmanaged<IHTMLBaseElement*, ushort**, int>)(lpVtbl[10]))((IHTMLBaseElement*)Unsafe.AsPointer(ref this), p);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT put_href([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(8)]
+            HRESULT get_href([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(9)]
+            HRESULT put_target([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(10)]
+            HRESULT get_target([NativeTypeName("BSTR *")] ushort** p);
         }
 
         public partial struct Vtbl

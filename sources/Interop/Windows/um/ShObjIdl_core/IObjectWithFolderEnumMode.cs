@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("6A9D9026-0E6E-464C-B000-42ECC07DE673")]
     [NativeTypeName("struct IObjectWithFolderEnumMode : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IObjectWithFolderEnumMode
+    public unsafe partial struct IObjectWithFolderEnumMode : IObjectWithFolderEnumMode.Interface
     {
         public void** lpVtbl;
 
@@ -51,6 +51,15 @@ namespace TerraFX.Interop
         public HRESULT GetMode(FOLDER_ENUM_MODE* pfeMode)
         {
             return ((delegate* unmanaged<IObjectWithFolderEnumMode*, FOLDER_ENUM_MODE*, int>)(lpVtbl[4]))((IObjectWithFolderEnumMode*)Unsafe.AsPointer(ref this), pfeMode);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT SetMode(FOLDER_ENUM_MODE feMode);
+
+            [VtblIndex(4)]
+            HRESULT GetMode(FOLDER_ENUM_MODE* pfeMode);
         }
 
         public partial struct Vtbl

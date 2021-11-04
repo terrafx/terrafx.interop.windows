@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("56A868A2-0AD4-11CE-B03A-0020AF0BA770")]
     [NativeTypeName("struct IMediaEventSink : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IMediaEventSink
+    public unsafe partial struct IMediaEventSink : IMediaEventSink.Interface
     {
         public void** lpVtbl;
 
@@ -44,6 +44,12 @@ namespace TerraFX.Interop
         public HRESULT Notify([NativeTypeName("long")] int EventCode, [NativeTypeName("LONG_PTR")] nint EventParam1, [NativeTypeName("LONG_PTR")] nint EventParam2)
         {
             return ((delegate* unmanaged<IMediaEventSink*, int, nint, nint, int>)(lpVtbl[3]))((IMediaEventSink*)Unsafe.AsPointer(ref this), EventCode, EventParam1, EventParam2);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT Notify([NativeTypeName("long")] int EventCode, [NativeTypeName("LONG_PTR")] nint EventParam1, [NativeTypeName("LONG_PTR")] nint EventParam2);
         }
 
         public partial struct Vtbl

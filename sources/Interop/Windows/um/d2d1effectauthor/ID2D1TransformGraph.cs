@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("13D29038-C3E6-4034-9081-13B53A417992")]
     [NativeTypeName("struct ID2D1TransformGraph : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct ID2D1TransformGraph
+    public unsafe partial struct ID2D1TransformGraph : ID2D1TransformGraph.Interface
     {
         public void** lpVtbl;
 
@@ -101,6 +101,37 @@ namespace TerraFX.Interop
         public HRESULT SetPassthroughGraph([NativeTypeName("UINT32")] uint effectInputIndex)
         {
             return ((delegate* unmanaged<ID2D1TransformGraph*, uint, int>)(lpVtbl[11]))((ID2D1TransformGraph*)Unsafe.AsPointer(ref this), effectInputIndex);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            [return: NativeTypeName("UINT32")]
+            uint GetInputCount();
+
+            [VtblIndex(4)]
+            HRESULT SetSingleTransformNode(ID2D1TransformNode* node);
+
+            [VtblIndex(5)]
+            HRESULT AddNode(ID2D1TransformNode* node);
+
+            [VtblIndex(6)]
+            HRESULT RemoveNode(ID2D1TransformNode* node);
+
+            [VtblIndex(7)]
+            HRESULT SetOutputNode(ID2D1TransformNode* node);
+
+            [VtblIndex(8)]
+            HRESULT ConnectNode(ID2D1TransformNode* fromNode, ID2D1TransformNode* toNode, [NativeTypeName("UINT32")] uint toNodeInputIndex);
+
+            [VtblIndex(9)]
+            HRESULT ConnectToEffectInput([NativeTypeName("UINT32")] uint toEffectInputIndex, ID2D1TransformNode* node, [NativeTypeName("UINT32")] uint toNodeInputIndex);
+
+            [VtblIndex(10)]
+            void Clear();
+
+            [VtblIndex(11)]
+            HRESULT SetPassthroughGraph([NativeTypeName("UINT32")] uint effectInputIndex);
         }
 
         public partial struct Vtbl

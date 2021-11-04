@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("249981F8-8325-41F3-B80C-3B9E3AAD0CBE")]
     [NativeTypeName("struct IMFSourceBufferList : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IMFSourceBufferList
+    public unsafe partial struct IMFSourceBufferList : IMFSourceBufferList.Interface
     {
         public void** lpVtbl;
 
@@ -52,6 +52,16 @@ namespace TerraFX.Interop
         public IMFSourceBuffer* GetSourceBuffer([NativeTypeName("DWORD")] uint index)
         {
             return ((delegate* unmanaged<IMFSourceBufferList*, uint, IMFSourceBuffer*>)(lpVtbl[4]))((IMFSourceBufferList*)Unsafe.AsPointer(ref this), index);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            [return: NativeTypeName("DWORD")]
+            uint GetLength();
+
+            [VtblIndex(4)]
+            IMFSourceBuffer* GetSourceBuffer([NativeTypeName("DWORD")] uint index);
         }
 
         public partial struct Vtbl

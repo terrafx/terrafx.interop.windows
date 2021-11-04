@@ -17,6 +17,7 @@ exclude-enum-operators
 generate-aggressive-inlining
 generate-cpp-attributes
 generate-macro-bindings
+generate-marker-interfaces
 generate-native-inheritance-attribute
 generate-tests-nunit
 generate-unmanaged-constants

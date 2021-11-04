@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("1C2056CC-5EF4-101B-8BC8-00AA003E3B29")]
     [NativeTypeName("struct IOleInPlaceObjectWindowless : IOleInPlaceObject")]
     [NativeInheritance("IOleInPlaceObject")]
-    public unsafe partial struct IOleInPlaceObjectWindowless
+    public unsafe partial struct IOleInPlaceObjectWindowless : IOleInPlaceObjectWindowless.Interface
     {
         public void** lpVtbl;
 
@@ -93,6 +93,15 @@ namespace TerraFX.Interop
         public HRESULT GetDropTarget(IDropTarget** ppDropTarget)
         {
             return ((delegate* unmanaged<IOleInPlaceObjectWindowless*, IDropTarget**, int>)(lpVtbl[10]))((IOleInPlaceObjectWindowless*)Unsafe.AsPointer(ref this), ppDropTarget);
+        }
+
+        public interface Interface : IOleInPlaceObject.Interface
+        {
+            [VtblIndex(9)]
+            HRESULT OnWindowMessage(uint msg, WPARAM wParam, LPARAM lParam, LRESULT* plResult);
+
+            [VtblIndex(10)]
+            HRESULT GetDropTarget(IDropTarget** ppDropTarget);
         }
 
         public partial struct Vtbl

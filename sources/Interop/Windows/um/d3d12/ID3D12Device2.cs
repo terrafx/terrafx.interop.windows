@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("30BAA41E-B15B-475C-A0BB-1AF5C5B64328")]
     [NativeTypeName("struct ID3D12Device2 : ID3D12Device1")]
     [NativeInheritance("ID3D12Device1")]
-    public unsafe partial struct ID3D12Device2
+    public unsafe partial struct ID3D12Device2 : ID3D12Device2.Interface
     {
         public void** lpVtbl;
 
@@ -355,6 +355,12 @@ namespace TerraFX.Interop
         public HRESULT CreatePipelineState([NativeTypeName("const D3D12_PIPELINE_STATE_STREAM_DESC *")] D3D12_PIPELINE_STATE_STREAM_DESC* pDesc, [NativeTypeName("const IID &")] Guid* riid, void** ppPipelineState)
         {
             return ((delegate* unmanaged<ID3D12Device2*, D3D12_PIPELINE_STATE_STREAM_DESC*, Guid*, void**, int>)(lpVtbl[47]))((ID3D12Device2*)Unsafe.AsPointer(ref this), pDesc, riid, ppPipelineState);
+        }
+
+        public interface Interface : ID3D12Device1.Interface
+        {
+            [VtblIndex(47)]
+            HRESULT CreatePipelineState([NativeTypeName("const D3D12_PIPELINE_STATE_STREAM_DESC *")] D3D12_PIPELINE_STATE_STREAM_DESC* pDesc, [NativeTypeName("const IID &")] Guid* riid, void** ppPipelineState);
         }
 
         public partial struct Vtbl

@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("FB6904C4-42F0-4B62-9C46-983AF7DA7C83")]
     [NativeTypeName("struct IDxcVersionInfo2 : IDxcVersionInfo")]
     [NativeInheritance("IDxcVersionInfo")]
-    public unsafe partial struct IDxcVersionInfo2
+    public unsafe partial struct IDxcVersionInfo2 : IDxcVersionInfo2.Interface
     {
         public void** lpVtbl;
 
@@ -58,6 +58,12 @@ namespace TerraFX.Interop
         public HRESULT GetCommitInfo([NativeTypeName("UINT32 *")] uint* pCommitCount, [NativeTypeName("char **")] sbyte** pCommitHash)
         {
             return ((delegate* unmanaged<IDxcVersionInfo2*, uint*, sbyte**, int>)(lpVtbl[5]))((IDxcVersionInfo2*)Unsafe.AsPointer(ref this), pCommitCount, pCommitHash);
+        }
+
+        public interface Interface : IDxcVersionInfo.Interface
+        {
+            [VtblIndex(5)]
+            HRESULT GetCommitInfo([NativeTypeName("UINT32 *")] uint* pCommitCount, [NativeTypeName("char **")] sbyte** pCommitHash);
         }
 
         public partial struct Vtbl

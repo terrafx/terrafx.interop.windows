@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("0D12C4C8-A3D9-4E24-94C1-0E20C5A956C4")]
     [NativeTypeName("struct ILaunchUIContextProvider : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct ILaunchUIContextProvider
+    public unsafe partial struct ILaunchUIContextProvider : ILaunchUIContextProvider.Interface
     {
         public void** lpVtbl;
 
@@ -44,6 +44,12 @@ namespace TerraFX.Interop
         public HRESULT UpdateContext(ILaunchUIContext* context)
         {
             return ((delegate* unmanaged<ILaunchUIContextProvider*, ILaunchUIContext*, int>)(lpVtbl[3]))((ILaunchUIContextProvider*)Unsafe.AsPointer(ref this), context);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT UpdateContext(ILaunchUIContext* context);
         }
 
         public partial struct Vtbl

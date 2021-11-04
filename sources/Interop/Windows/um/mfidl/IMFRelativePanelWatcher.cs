@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("421AF7F6-573E-4AD0-8FDA-2E57CEDB18C6")]
     [NativeTypeName("struct IMFRelativePanelWatcher : IMFShutdown")]
     [NativeInheritance("IMFShutdown")]
-    public unsafe partial struct IMFRelativePanelWatcher
+    public unsafe partial struct IMFRelativePanelWatcher : IMFRelativePanelWatcher.Interface
     {
         public void** lpVtbl;
 
@@ -72,6 +72,18 @@ namespace TerraFX.Interop
         public HRESULT GetReport(IMFRelativePanelReport** ppRelativePanelReport)
         {
             return ((delegate* unmanaged<IMFRelativePanelWatcher*, IMFRelativePanelReport**, int>)(lpVtbl[7]))((IMFRelativePanelWatcher*)Unsafe.AsPointer(ref this), ppRelativePanelReport);
+        }
+
+        public interface Interface : IMFShutdown.Interface
+        {
+            [VtblIndex(5)]
+            HRESULT BeginGetReport(IMFAsyncCallback* pCallback, IUnknown* pState);
+
+            [VtblIndex(6)]
+            HRESULT EndGetReport(IMFAsyncResult* pResult, IMFRelativePanelReport** ppRelativePanelReport);
+
+            [VtblIndex(7)]
+            HRESULT GetReport(IMFRelativePanelReport** ppRelativePanelReport);
         }
 
         public partial struct Vtbl

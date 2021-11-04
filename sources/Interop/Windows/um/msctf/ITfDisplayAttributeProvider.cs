@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("FEE47777-163C-4769-996A-6E9C50AD8F54")]
     [NativeTypeName("struct ITfDisplayAttributeProvider : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct ITfDisplayAttributeProvider
+    public unsafe partial struct ITfDisplayAttributeProvider : ITfDisplayAttributeProvider.Interface
     {
         public void** lpVtbl;
 
@@ -51,6 +51,15 @@ namespace TerraFX.Interop
         public HRESULT GetDisplayAttributeInfo([NativeTypeName("const GUID &")] Guid* guid, ITfDisplayAttributeInfo** ppInfo)
         {
             return ((delegate* unmanaged<ITfDisplayAttributeProvider*, Guid*, ITfDisplayAttributeInfo**, int>)(lpVtbl[4]))((ITfDisplayAttributeProvider*)Unsafe.AsPointer(ref this), guid, ppInfo);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT EnumDisplayAttributeInfo(IEnumTfDisplayAttributeInfo** ppEnum);
+
+            [VtblIndex(4)]
+            HRESULT GetDisplayAttributeInfo([NativeTypeName("const GUID &")] Guid* guid, ITfDisplayAttributeInfo** ppInfo);
         }
 
         public partial struct Vtbl

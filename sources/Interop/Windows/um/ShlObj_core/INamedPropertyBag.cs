@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("FB700430-952C-11D1-946F-000000000000")]
     [NativeTypeName("struct INamedPropertyBag : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct INamedPropertyBag
+    public unsafe partial struct INamedPropertyBag : INamedPropertyBag.Interface
     {
         public void** lpVtbl;
 
@@ -58,6 +58,18 @@ namespace TerraFX.Interop
         public HRESULT RemovePropertyNPB([NativeTypeName("PCWSTR")] ushort* pszBagname, [NativeTypeName("PCWSTR")] ushort* pszPropName)
         {
             return ((delegate* unmanaged<INamedPropertyBag*, ushort*, ushort*, int>)(lpVtbl[5]))((INamedPropertyBag*)Unsafe.AsPointer(ref this), pszBagname, pszPropName);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT ReadPropertyNPB([NativeTypeName("PCWSTR")] ushort* pszBagname, [NativeTypeName("PCWSTR")] ushort* pszPropName, PROPVARIANT* pVar);
+
+            [VtblIndex(4)]
+            HRESULT WritePropertyNPB([NativeTypeName("PCWSTR")] ushort* pszBagname, [NativeTypeName("PCWSTR")] ushort* pszPropName, PROPVARIANT* pVar);
+
+            [VtblIndex(5)]
+            HRESULT RemovePropertyNPB([NativeTypeName("PCWSTR")] ushort* pszBagname, [NativeTypeName("PCWSTR")] ushort* pszPropName);
         }
 
         public partial struct Vtbl

@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("56A868B6-0AD4-11CE-B03A-0020AF0BA770")]
     [NativeTypeName("struct IMediaEvent : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct IMediaEvent
+    public unsafe partial struct IMediaEvent : IMediaEvent.Interface
     {
         public void** lpVtbl;
 
@@ -107,6 +107,27 @@ namespace TerraFX.Interop
         public HRESULT FreeEventParams([NativeTypeName("long")] int lEvCode, [NativeTypeName("LONG_PTR")] nint lParam1, [NativeTypeName("LONG_PTR")] nint lParam2)
         {
             return ((delegate* unmanaged<IMediaEvent*, int, nint, nint, int>)(lpVtbl[12]))((IMediaEvent*)Unsafe.AsPointer(ref this), lEvCode, lParam1, lParam2);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT GetEventHandle([NativeTypeName("OAEVENT *")] nint* hEvent);
+
+            [VtblIndex(8)]
+            HRESULT GetEvent([NativeTypeName("long *")] int* lEventCode, [NativeTypeName("LONG_PTR *")] nint* lParam1, [NativeTypeName("LONG_PTR *")] nint* lParam2, [NativeTypeName("long")] int msTimeout);
+
+            [VtblIndex(9)]
+            HRESULT WaitForCompletion([NativeTypeName("long")] int msTimeout, [NativeTypeName("long *")] int* pEvCode);
+
+            [VtblIndex(10)]
+            HRESULT CancelDefaultHandling([NativeTypeName("long")] int lEvCode);
+
+            [VtblIndex(11)]
+            HRESULT RestoreDefaultHandling([NativeTypeName("long")] int lEvCode);
+
+            [VtblIndex(12)]
+            HRESULT FreeEventParams([NativeTypeName("long")] int lEvCode, [NativeTypeName("LONG_PTR")] nint lParam1, [NativeTypeName("LONG_PTR")] nint lParam2);
         }
 
         public partial struct Vtbl

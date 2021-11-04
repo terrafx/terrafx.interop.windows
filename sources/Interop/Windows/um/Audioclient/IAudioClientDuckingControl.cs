@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("C789D381-A28C-4168-B28F-D3A837924DC3")]
     [NativeTypeName("struct IAudioClientDuckingControl : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IAudioClientDuckingControl
+    public unsafe partial struct IAudioClientDuckingControl : IAudioClientDuckingControl.Interface
     {
         public void** lpVtbl;
 
@@ -44,6 +44,12 @@ namespace TerraFX.Interop
         public HRESULT SetDuckingOptionsForCurrentStream(AUDIO_DUCKING_OPTIONS options)
         {
             return ((delegate* unmanaged<IAudioClientDuckingControl*, AUDIO_DUCKING_OPTIONS, int>)(lpVtbl[3]))((IAudioClientDuckingControl*)Unsafe.AsPointer(ref this), options);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT SetDuckingOptionsForCurrentStream(AUDIO_DUCKING_OPTIONS options);
         }
 
         public partial struct Vtbl

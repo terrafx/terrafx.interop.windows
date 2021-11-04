@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("3050F388-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct IHTMLDialog3 : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct IHTMLDialog3
+    public unsafe partial struct IHTMLDialog3 : IHTMLDialog3.Interface
     {
         public void** lpVtbl;
 
@@ -93,6 +93,21 @@ namespace TerraFX.Interop
         public HRESULT get_dialogHide([NativeTypeName("BSTR *")] ushort** p)
         {
             return ((delegate* unmanaged<IHTMLDialog3*, ushort**, int>)(lpVtbl[10]))((IHTMLDialog3*)Unsafe.AsPointer(ref this), p);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT put_unadorned([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(8)]
+            HRESULT get_unadorned([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(9)]
+            HRESULT put_dialogHide([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(10)]
+            HRESULT get_dialogHide([NativeTypeName("BSTR *")] ushort** p);
         }
 
         public partial struct Vtbl

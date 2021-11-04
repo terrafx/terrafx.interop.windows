@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("8C5DAC4F-083C-4B85-A4C9-71746048ADCA")]
     [NativeTypeName("struct IEnumSpeechCommands : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IEnumSpeechCommands
+    public unsafe partial struct IEnumSpeechCommands : IEnumSpeechCommands.Interface
     {
         public void** lpVtbl;
 
@@ -65,6 +65,21 @@ namespace TerraFX.Interop
         public HRESULT Skip([NativeTypeName("ULONG")] uint ulCount)
         {
             return ((delegate* unmanaged<IEnumSpeechCommands*, uint, int>)(lpVtbl[6]))((IEnumSpeechCommands*)Unsafe.AsPointer(ref this), ulCount);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT Clone(IEnumSpeechCommands** ppEnum);
+
+            [VtblIndex(4)]
+            HRESULT Next([NativeTypeName("ULONG")] uint ulCount, [NativeTypeName("WCHAR **")] ushort** pSpCmds, [NativeTypeName("ULONG *")] uint* pcFetched);
+
+            [VtblIndex(5)]
+            HRESULT Reset();
+
+            [VtblIndex(6)]
+            HRESULT Skip([NativeTypeName("ULONG")] uint ulCount);
         }
 
         public partial struct Vtbl

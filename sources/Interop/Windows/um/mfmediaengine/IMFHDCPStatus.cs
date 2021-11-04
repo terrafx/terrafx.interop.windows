@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("DE400F54-5BF1-40CF-8964-0BEA136B1E3D")]
     [NativeTypeName("struct IMFHDCPStatus : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IMFHDCPStatus
+    public unsafe partial struct IMFHDCPStatus : IMFHDCPStatus.Interface
     {
         public void** lpVtbl;
 
@@ -51,6 +51,15 @@ namespace TerraFX.Interop
         public HRESULT Set(MF_HDCP_STATUS status)
         {
             return ((delegate* unmanaged<IMFHDCPStatus*, MF_HDCP_STATUS, int>)(lpVtbl[4]))((IMFHDCPStatus*)Unsafe.AsPointer(ref this), status);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT Query(MF_HDCP_STATUS* pStatus, BOOL* pfStatus);
+
+            [VtblIndex(4)]
+            HRESULT Set(MF_HDCP_STATUS status);
         }
 
         public partial struct Vtbl

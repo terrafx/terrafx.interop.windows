@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("85FAD185-58CE-497A-9460-355366B64B9A")]
     [NativeTypeName("struct ITfCandidateListUIElementBehavior : ITfCandidateListUIElement")]
     [NativeInheritance("ITfCandidateListUIElement")]
-    public unsafe partial struct ITfCandidateListUIElementBehavior
+    public unsafe partial struct ITfCandidateListUIElementBehavior : ITfCandidateListUIElementBehavior.Interface
     {
         public void** lpVtbl;
 
@@ -142,6 +142,18 @@ namespace TerraFX.Interop
         public HRESULT Abort()
         {
             return ((delegate* unmanaged<ITfCandidateListUIElementBehavior*, int>)(lpVtbl[17]))((ITfCandidateListUIElementBehavior*)Unsafe.AsPointer(ref this));
+        }
+
+        public interface Interface : ITfCandidateListUIElement.Interface
+        {
+            [VtblIndex(15)]
+            HRESULT SetSelection(uint nIndex);
+
+            [VtblIndex(16)]
+            HRESULT Finalize();
+
+            [VtblIndex(17)]
+            HRESULT Abort();
         }
 
         public partial struct Vtbl

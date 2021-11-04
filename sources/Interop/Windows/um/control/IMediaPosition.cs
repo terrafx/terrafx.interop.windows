@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("56A868B2-0AD4-11CE-B03A-0020AF0BA770")]
     [NativeTypeName("struct IMediaPosition : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct IMediaPosition
+    public unsafe partial struct IMediaPosition : IMediaPosition.Interface
     {
         public void** lpVtbl;
 
@@ -142,6 +142,42 @@ namespace TerraFX.Interop
         public HRESULT CanSeekBackward([NativeTypeName("LONG *")] int* pCanSeekBackward)
         {
             return ((delegate* unmanaged<IMediaPosition*, int*, int>)(lpVtbl[17]))((IMediaPosition*)Unsafe.AsPointer(ref this), pCanSeekBackward);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT get_Duration([NativeTypeName("REFTIME *")] double* plength);
+
+            [VtblIndex(8)]
+            HRESULT put_CurrentPosition([NativeTypeName("REFTIME")] double llTime);
+
+            [VtblIndex(9)]
+            HRESULT get_CurrentPosition([NativeTypeName("REFTIME *")] double* pllTime);
+
+            [VtblIndex(10)]
+            HRESULT get_StopTime([NativeTypeName("REFTIME *")] double* pllTime);
+
+            [VtblIndex(11)]
+            HRESULT put_StopTime([NativeTypeName("REFTIME")] double llTime);
+
+            [VtblIndex(12)]
+            HRESULT get_PrerollTime([NativeTypeName("REFTIME *")] double* pllTime);
+
+            [VtblIndex(13)]
+            HRESULT put_PrerollTime([NativeTypeName("REFTIME")] double llTime);
+
+            [VtblIndex(14)]
+            HRESULT put_Rate(double dRate);
+
+            [VtblIndex(15)]
+            HRESULT get_Rate(double* pdRate);
+
+            [VtblIndex(16)]
+            HRESULT CanSeekForward([NativeTypeName("LONG *")] int* pCanSeekForward);
+
+            [VtblIndex(17)]
+            HRESULT CanSeekBackward([NativeTypeName("LONG *")] int* pCanSeekBackward);
         }
 
         public partial struct Vtbl

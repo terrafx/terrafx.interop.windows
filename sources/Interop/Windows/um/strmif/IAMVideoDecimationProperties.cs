@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("60D32930-13DA-11D3-9EC6-C4FCAEF5C7BE")]
     [NativeTypeName("struct IAMVideoDecimationProperties : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IAMVideoDecimationProperties
+    public unsafe partial struct IAMVideoDecimationProperties : IAMVideoDecimationProperties.Interface
     {
         public void** lpVtbl;
 
@@ -51,6 +51,15 @@ namespace TerraFX.Interop
         public HRESULT SetDecimationUsage(DECIMATION_USAGE Usage)
         {
             return ((delegate* unmanaged<IAMVideoDecimationProperties*, DECIMATION_USAGE, int>)(lpVtbl[4]))((IAMVideoDecimationProperties*)Unsafe.AsPointer(ref this), Usage);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT QueryDecimationUsage(DECIMATION_USAGE* lpUsage);
+
+            [VtblIndex(4)]
+            HRESULT SetDecimationUsage(DECIMATION_USAGE Usage);
         }
 
         public partial struct Vtbl

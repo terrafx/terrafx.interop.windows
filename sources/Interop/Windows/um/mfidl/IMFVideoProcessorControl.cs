@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("A3F675D5-6119-4F7F-A100-1D8B280F0EFB")]
     [NativeTypeName("struct IMFVideoProcessorControl : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IMFVideoProcessorControl
+    public unsafe partial struct IMFVideoProcessorControl : IMFVideoProcessorControl.Interface
     {
         public void** lpVtbl;
 
@@ -79,6 +79,27 @@ namespace TerraFX.Interop
         public HRESULT SetConstrictionSize(SIZE* pConstrictionSize)
         {
             return ((delegate* unmanaged<IMFVideoProcessorControl*, SIZE*, int>)(lpVtbl[8]))((IMFVideoProcessorControl*)Unsafe.AsPointer(ref this), pConstrictionSize);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT SetBorderColor(MFARGB* pBorderColor);
+
+            [VtblIndex(4)]
+            HRESULT SetSourceRectangle(RECT* pSrcRect);
+
+            [VtblIndex(5)]
+            HRESULT SetDestinationRectangle(RECT* pDstRect);
+
+            [VtblIndex(6)]
+            HRESULT SetMirror(MF_VIDEO_PROCESSOR_MIRROR eMirror);
+
+            [VtblIndex(7)]
+            HRESULT SetRotation(MF_VIDEO_PROCESSOR_ROTATION eRotation);
+
+            [VtblIndex(8)]
+            HRESULT SetConstrictionSize(SIZE* pConstrictionSize);
         }
 
         public partial struct Vtbl

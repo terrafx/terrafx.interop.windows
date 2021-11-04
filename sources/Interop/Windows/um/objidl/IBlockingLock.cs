@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("30F3D47A-6447-11D1-8E3C-00C04FB9386D")]
     [NativeTypeName("struct IBlockingLock : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IBlockingLock
+    public unsafe partial struct IBlockingLock : IBlockingLock.Interface
     {
         public void** lpVtbl;
 
@@ -51,6 +51,15 @@ namespace TerraFX.Interop
         public HRESULT Unlock()
         {
             return ((delegate* unmanaged<IBlockingLock*, int>)(lpVtbl[4]))((IBlockingLock*)Unsafe.AsPointer(ref this));
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT Lock([NativeTypeName("DWORD")] uint dwTimeout);
+
+            [VtblIndex(4)]
+            HRESULT Unlock();
         }
 
         public partial struct Vtbl

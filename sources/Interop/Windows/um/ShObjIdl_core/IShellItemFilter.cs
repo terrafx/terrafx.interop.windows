@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("2659B475-EEB8-48B7-8F07-B378810F48CF")]
     [NativeTypeName("struct IShellItemFilter : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IShellItemFilter
+    public unsafe partial struct IShellItemFilter : IShellItemFilter.Interface
     {
         public void** lpVtbl;
 
@@ -51,6 +51,15 @@ namespace TerraFX.Interop
         public HRESULT GetEnumFlagsForItem(IShellItem* psi, [NativeTypeName("SHCONTF *")] uint* pgrfFlags)
         {
             return ((delegate* unmanaged<IShellItemFilter*, IShellItem*, uint*, int>)(lpVtbl[4]))((IShellItemFilter*)Unsafe.AsPointer(ref this), psi, pgrfFlags);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT IncludeItem(IShellItem* psi);
+
+            [VtblIndex(4)]
+            HRESULT GetEnumFlagsForItem(IShellItem* psi, [NativeTypeName("SHCONTF *")] uint* pgrfFlags);
         }
 
         public partial struct Vtbl

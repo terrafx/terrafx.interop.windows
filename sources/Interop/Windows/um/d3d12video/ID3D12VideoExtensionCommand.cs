@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("554E41E8-AE8E-4A8C-B7D2-5B4F274A30E4")]
     [NativeTypeName("struct ID3D12VideoExtensionCommand : ID3D12Pageable")]
     [NativeInheritance("ID3D12Pageable")]
-    public unsafe partial struct ID3D12VideoExtensionCommand
+    public unsafe partial struct ID3D12VideoExtensionCommand : ID3D12VideoExtensionCommand.Interface
     {
         public void** lpVtbl;
 
@@ -87,6 +87,15 @@ namespace TerraFX.Interop
         public HRESULT GetProtectedResourceSession([NativeTypeName("const IID &")] Guid* riid, void** ppProtectedSession)
         {
             return ((delegate* unmanaged<ID3D12VideoExtensionCommand*, Guid*, void**, int>)(lpVtbl[9]))((ID3D12VideoExtensionCommand*)Unsafe.AsPointer(ref this), riid, ppProtectedSession);
+        }
+
+        public interface Interface : ID3D12Pageable.Interface
+        {
+            [VtblIndex(8)]
+            D3D12_VIDEO_EXTENSION_COMMAND_DESC GetDesc();
+
+            [VtblIndex(9)]
+            HRESULT GetProtectedResourceSession([NativeTypeName("const IID &")] Guid* riid, void** ppProtectedSession);
         }
 
         public partial struct Vtbl

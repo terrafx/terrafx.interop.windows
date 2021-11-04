@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("DC102F47-A12D-4B1C-822D-9E117E33043F")]
     [NativeTypeName("struct IDWriteInMemoryFontFileLoader : IDWriteFontFileLoader")]
     [NativeInheritance("IDWriteFontFileLoader")]
-    public unsafe partial struct IDWriteInMemoryFontFileLoader
+    public unsafe partial struct IDWriteInMemoryFontFileLoader : IDWriteInMemoryFontFileLoader.Interface
     {
         public void** lpVtbl;
 
@@ -59,6 +59,16 @@ namespace TerraFX.Interop
         public uint GetFileCount()
         {
             return ((delegate* unmanaged<IDWriteInMemoryFontFileLoader*, uint>)(lpVtbl[5]))((IDWriteInMemoryFontFileLoader*)Unsafe.AsPointer(ref this));
+        }
+
+        public interface Interface : IDWriteFontFileLoader.Interface
+        {
+            [VtblIndex(4)]
+            HRESULT CreateInMemoryFontFileReference(IDWriteFactory* factory, [NativeTypeName("const void *")] void* fontData, [NativeTypeName("UINT32")] uint fontDataSize, IUnknown* ownerObject, IDWriteFontFile** fontFile);
+
+            [VtblIndex(5)]
+            [return: NativeTypeName("UINT32")]
+            uint GetFileCount();
         }
 
         public partial struct Vtbl

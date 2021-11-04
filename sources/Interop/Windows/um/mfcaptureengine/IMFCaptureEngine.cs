@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("A6BBA433-176B-48B2-B375-53AA03473207")]
     [NativeTypeName("struct IMFCaptureEngine : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IMFCaptureEngine
+    public unsafe partial struct IMFCaptureEngine : IMFCaptureEngine.Interface
     {
         public void** lpVtbl;
 
@@ -93,6 +93,33 @@ namespace TerraFX.Interop
         public HRESULT GetSource(IMFCaptureSource** ppSource)
         {
             return ((delegate* unmanaged<IMFCaptureEngine*, IMFCaptureSource**, int>)(lpVtbl[10]))((IMFCaptureEngine*)Unsafe.AsPointer(ref this), ppSource);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT Initialize(IMFCaptureEngineOnEventCallback* pEventCallback, IMFAttributes* pAttributes, IUnknown* pAudioSource, IUnknown* pVideoSource);
+
+            [VtblIndex(4)]
+            HRESULT StartPreview();
+
+            [VtblIndex(5)]
+            HRESULT StopPreview();
+
+            [VtblIndex(6)]
+            HRESULT StartRecord();
+
+            [VtblIndex(7)]
+            HRESULT StopRecord(BOOL bFinalize, BOOL bFlushUnprocessedSamples);
+
+            [VtblIndex(8)]
+            HRESULT TakePhoto();
+
+            [VtblIndex(9)]
+            HRESULT GetSink(MF_CAPTURE_ENGINE_SINK_TYPE mfCaptureEngineSinkType, IMFCaptureSink** ppSink);
+
+            [VtblIndex(10)]
+            HRESULT GetSource(IMFCaptureSource** ppSource);
         }
 
         public partial struct Vtbl

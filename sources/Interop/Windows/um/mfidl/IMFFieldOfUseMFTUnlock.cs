@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("508E71D3-EC66-4FC3-8775-B4B9ED6BA847")]
     [NativeTypeName("struct IMFFieldOfUseMFTUnlock : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IMFFieldOfUseMFTUnlock
+    public unsafe partial struct IMFFieldOfUseMFTUnlock : IMFFieldOfUseMFTUnlock.Interface
     {
         public void** lpVtbl;
 
@@ -44,6 +44,12 @@ namespace TerraFX.Interop
         public HRESULT Unlock(IUnknown* pUnkMFT)
         {
             return ((delegate* unmanaged<IMFFieldOfUseMFTUnlock*, IUnknown*, int>)(lpVtbl[3]))((IMFFieldOfUseMFTUnlock*)Unsafe.AsPointer(ref this), pUnkMFT);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT Unlock(IUnknown* pUnkMFT);
         }
 
         public partial struct Vtbl

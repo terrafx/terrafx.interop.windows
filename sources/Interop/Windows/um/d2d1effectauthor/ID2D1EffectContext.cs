@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("3D9F916B-27DC-4AD7-B4F1-64945340F563")]
     [NativeTypeName("struct ID2D1EffectContext : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct ID2D1EffectContext
+    public unsafe partial struct ID2D1EffectContext : ID2D1EffectContext.Interface
     {
         public void** lpVtbl;
 
@@ -184,6 +184,72 @@ namespace TerraFX.Interop
         public BOOL IsBufferPrecisionSupported(D2D1_BUFFER_PRECISION bufferPrecision)
         {
             return ((delegate* unmanaged<ID2D1EffectContext*, D2D1_BUFFER_PRECISION, int>)(lpVtbl[23]))((ID2D1EffectContext*)Unsafe.AsPointer(ref this), bufferPrecision);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            void GetDpi(float* dpiX, float* dpiY);
+
+            [VtblIndex(4)]
+            HRESULT CreateEffect([NativeTypeName("const IID &")] Guid* effectId, ID2D1Effect** effect);
+
+            [VtblIndex(5)]
+            HRESULT GetMaximumSupportedFeatureLevel([NativeTypeName("const D3D_FEATURE_LEVEL *")] D3D_FEATURE_LEVEL* featureLevels, [NativeTypeName("UINT32")] uint featureLevelsCount, D3D_FEATURE_LEVEL* maximumSupportedFeatureLevel);
+
+            [VtblIndex(6)]
+            HRESULT CreateTransformNodeFromEffect(ID2D1Effect* effect, ID2D1TransformNode** transformNode);
+
+            [VtblIndex(7)]
+            HRESULT CreateBlendTransform([NativeTypeName("UINT32")] uint numInputs, [NativeTypeName("const D2D1_BLEND_DESCRIPTION *")] D2D1_BLEND_DESCRIPTION* blendDescription, ID2D1BlendTransform** transform);
+
+            [VtblIndex(8)]
+            HRESULT CreateBorderTransform(D2D1_EXTEND_MODE extendModeX, D2D1_EXTEND_MODE extendModeY, ID2D1BorderTransform** transform);
+
+            [VtblIndex(9)]
+            HRESULT CreateOffsetTransform([NativeTypeName("D2D1_POINT_2L")] POINT offset, ID2D1OffsetTransform** transform);
+
+            [VtblIndex(10)]
+            HRESULT CreateBoundsAdjustmentTransform([NativeTypeName("const D2D1_RECT_L *")] RECT* outputRectangle, ID2D1BoundsAdjustmentTransform** transform);
+
+            [VtblIndex(11)]
+            HRESULT LoadPixelShader([NativeTypeName("const GUID &")] Guid* shaderId, [NativeTypeName("const BYTE *")] byte* shaderBuffer, [NativeTypeName("UINT32")] uint shaderBufferCount);
+
+            [VtblIndex(12)]
+            HRESULT LoadVertexShader([NativeTypeName("const GUID &")] Guid* resourceId, [NativeTypeName("const BYTE *")] byte* shaderBuffer, [NativeTypeName("UINT32")] uint shaderBufferCount);
+
+            [VtblIndex(13)]
+            HRESULT LoadComputeShader([NativeTypeName("const GUID &")] Guid* resourceId, [NativeTypeName("const BYTE *")] byte* shaderBuffer, [NativeTypeName("UINT32")] uint shaderBufferCount);
+
+            [VtblIndex(14)]
+            BOOL IsShaderLoaded([NativeTypeName("const GUID &")] Guid* shaderId);
+
+            [VtblIndex(15)]
+            HRESULT CreateResourceTexture([NativeTypeName("const GUID *")] Guid* resourceId, [NativeTypeName("const D2D1_RESOURCE_TEXTURE_PROPERTIES *")] D2D1_RESOURCE_TEXTURE_PROPERTIES* resourceTextureProperties, [NativeTypeName("const BYTE *")] byte* data, [NativeTypeName("const UINT32 *")] uint* strides, [NativeTypeName("UINT32")] uint dataSize, ID2D1ResourceTexture** resourceTexture);
+
+            [VtblIndex(16)]
+            HRESULT FindResourceTexture([NativeTypeName("const GUID *")] Guid* resourceId, ID2D1ResourceTexture** resourceTexture);
+
+            [VtblIndex(17)]
+            HRESULT CreateVertexBuffer([NativeTypeName("const D2D1_VERTEX_BUFFER_PROPERTIES *")] D2D1_VERTEX_BUFFER_PROPERTIES* vertexBufferProperties, [NativeTypeName("const GUID *")] Guid* resourceId, [NativeTypeName("const D2D1_CUSTOM_VERTEX_BUFFER_PROPERTIES *")] D2D1_CUSTOM_VERTEX_BUFFER_PROPERTIES* customVertexBufferProperties, ID2D1VertexBuffer** buffer);
+
+            [VtblIndex(18)]
+            HRESULT FindVertexBuffer([NativeTypeName("const GUID *")] Guid* resourceId, ID2D1VertexBuffer** buffer);
+
+            [VtblIndex(19)]
+            HRESULT CreateColorContext(D2D1_COLOR_SPACE space, [NativeTypeName("const BYTE *")] byte* profile, [NativeTypeName("UINT32")] uint profileSize, ID2D1ColorContext** colorContext);
+
+            [VtblIndex(20)]
+            HRESULT CreateColorContextFromFilename([NativeTypeName("PCWSTR")] ushort* filename, ID2D1ColorContext** colorContext);
+
+            [VtblIndex(21)]
+            HRESULT CreateColorContextFromWicColorContext(IWICColorContext* wicColorContext, ID2D1ColorContext** colorContext);
+
+            [VtblIndex(22)]
+            HRESULT CheckFeatureSupport(D2D1_FEATURE feature, void* featureSupportData, [NativeTypeName("UINT32")] uint featureSupportDataSize);
+
+            [VtblIndex(23)]
+            BOOL IsBufferPrecisionSupported(D2D1_BUFFER_PRECISION bufferPrecision);
         }
 
         public partial struct Vtbl

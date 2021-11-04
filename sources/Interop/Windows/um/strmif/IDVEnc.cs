@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("D18E17A0-AACB-11D0-AFB0-00AA00B67A42")]
     [NativeTypeName("struct IDVEnc : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IDVEnc
+    public unsafe partial struct IDVEnc : IDVEnc.Interface
     {
         public void** lpVtbl;
 
@@ -51,6 +51,15 @@ namespace TerraFX.Interop
         public HRESULT put_IFormatResolution(int VideoFormat, int DVFormat, int Resolution, byte fDVInfo, DVINFO* sDVInfo)
         {
             return ((delegate* unmanaged<IDVEnc*, int, int, int, byte, DVINFO*, int>)(lpVtbl[4]))((IDVEnc*)Unsafe.AsPointer(ref this), VideoFormat, DVFormat, Resolution, fDVInfo, sDVInfo);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT get_IFormatResolution(int* VideoFormat, int* DVFormat, int* Resolution, byte fDVInfo, DVINFO* sDVInfo);
+
+            [VtblIndex(4)]
+            HRESULT put_IFormatResolution(int VideoFormat, int DVFormat, int Resolution, byte fDVInfo, DVINFO* sDVInfo);
         }
 
         public partial struct Vtbl

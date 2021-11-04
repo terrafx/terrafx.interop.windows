@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("EAC04BC0-3791-11D2-BB95-0060977B464C")]
     [NativeTypeName("struct IAutoComplete2 : IAutoComplete")]
     [NativeInheritance("IAutoComplete")]
-    public unsafe partial struct IAutoComplete2
+    public unsafe partial struct IAutoComplete2 : IAutoComplete2.Interface
     {
         public void** lpVtbl;
 
@@ -65,6 +65,15 @@ namespace TerraFX.Interop
         public HRESULT GetOptions([NativeTypeName("DWORD *")] uint* pdwFlag)
         {
             return ((delegate* unmanaged<IAutoComplete2*, uint*, int>)(lpVtbl[6]))((IAutoComplete2*)Unsafe.AsPointer(ref this), pdwFlag);
+        }
+
+        public interface Interface : IAutoComplete.Interface
+        {
+            [VtblIndex(5)]
+            HRESULT SetOptions([NativeTypeName("DWORD")] uint dwFlag);
+
+            [VtblIndex(6)]
+            HRESULT GetOptions([NativeTypeName("DWORD *")] uint* pdwFlag);
         }
 
         public partial struct Vtbl

@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("70AE66F2-C809-4E4F-8915-BDCB406B7993")]
     [NativeTypeName("struct IMFSourceReader : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IMFSourceReader
+    public unsafe partial struct IMFSourceReader : IMFSourceReader.Interface
     {
         public void** lpVtbl;
 
@@ -107,6 +107,39 @@ namespace TerraFX.Interop
         public HRESULT GetPresentationAttribute([NativeTypeName("DWORD")] uint dwStreamIndex, [NativeTypeName("const GUID &")] Guid* guidAttribute, PROPVARIANT* pvarAttribute)
         {
             return ((delegate* unmanaged<IMFSourceReader*, uint, Guid*, PROPVARIANT*, int>)(lpVtbl[12]))((IMFSourceReader*)Unsafe.AsPointer(ref this), dwStreamIndex, guidAttribute, pvarAttribute);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetStreamSelection([NativeTypeName("DWORD")] uint dwStreamIndex, BOOL* pfSelected);
+
+            [VtblIndex(4)]
+            HRESULT SetStreamSelection([NativeTypeName("DWORD")] uint dwStreamIndex, BOOL fSelected);
+
+            [VtblIndex(5)]
+            HRESULT GetNativeMediaType([NativeTypeName("DWORD")] uint dwStreamIndex, [NativeTypeName("DWORD")] uint dwMediaTypeIndex, IMFMediaType** ppMediaType);
+
+            [VtblIndex(6)]
+            HRESULT GetCurrentMediaType([NativeTypeName("DWORD")] uint dwStreamIndex, IMFMediaType** ppMediaType);
+
+            [VtblIndex(7)]
+            HRESULT SetCurrentMediaType([NativeTypeName("DWORD")] uint dwStreamIndex, [NativeTypeName("DWORD *")] uint* pdwReserved, IMFMediaType* pMediaType);
+
+            [VtblIndex(8)]
+            HRESULT SetCurrentPosition([NativeTypeName("const GUID &")] Guid* guidTimeFormat, [NativeTypeName("const PROPVARIANT &")] PROPVARIANT* varPosition);
+
+            [VtblIndex(9)]
+            HRESULT ReadSample([NativeTypeName("DWORD")] uint dwStreamIndex, [NativeTypeName("DWORD")] uint dwControlFlags, [NativeTypeName("DWORD *")] uint* pdwActualStreamIndex, [NativeTypeName("DWORD *")] uint* pdwStreamFlags, [NativeTypeName("LONGLONG *")] long* pllTimestamp, IMFSample** ppSample);
+
+            [VtblIndex(10)]
+            HRESULT Flush([NativeTypeName("DWORD")] uint dwStreamIndex);
+
+            [VtblIndex(11)]
+            HRESULT GetServiceForStream([NativeTypeName("DWORD")] uint dwStreamIndex, [NativeTypeName("const GUID &")] Guid* guidService, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPVOID *")] void** ppvObject);
+
+            [VtblIndex(12)]
+            HRESULT GetPresentationAttribute([NativeTypeName("DWORD")] uint dwStreamIndex, [NativeTypeName("const GUID &")] Guid* guidAttribute, PROPVARIANT* pvarAttribute);
         }
 
         public partial struct Vtbl

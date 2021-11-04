@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("00000147-0000-0000-C000-000000000046")]
     [NativeTypeName("struct IAddrTrackingControl : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IAddrTrackingControl
+    public unsafe partial struct IAddrTrackingControl : IAddrTrackingControl.Interface
     {
         public void** lpVtbl;
 
@@ -51,6 +51,15 @@ namespace TerraFX.Interop
         public HRESULT DisableCOMDynamicAddrTracking()
         {
             return ((delegate* unmanaged<IAddrTrackingControl*, int>)(lpVtbl[4]))((IAddrTrackingControl*)Unsafe.AsPointer(ref this));
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT EnableCOMDynamicAddrTracking();
+
+            [VtblIndex(4)]
+            HRESULT DisableCOMDynamicAddrTracking();
         }
 
         public partial struct Vtbl

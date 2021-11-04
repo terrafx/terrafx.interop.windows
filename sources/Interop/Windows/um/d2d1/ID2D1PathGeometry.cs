@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("2CD906A5-12E2-11DC-9FED-001143A055F9")]
     [NativeTypeName("struct ID2D1PathGeometry : ID2D1Geometry")]
     [NativeInheritance("ID2D1Geometry")]
-    public unsafe partial struct ID2D1PathGeometry
+    public unsafe partial struct ID2D1PathGeometry : ID2D1PathGeometry.Interface
     {
         public void** lpVtbl;
 
@@ -223,6 +223,21 @@ namespace TerraFX.Interop
         public HRESULT GetFigureCount([NativeTypeName("UINT32 *")] uint* count)
         {
             return ((delegate* unmanaged<ID2D1PathGeometry*, uint*, int>)(lpVtbl[20]))((ID2D1PathGeometry*)Unsafe.AsPointer(ref this), count);
+        }
+
+        public interface Interface : ID2D1Geometry.Interface
+        {
+            [VtblIndex(17)]
+            HRESULT Open(ID2D1GeometrySink** geometrySink);
+
+            [VtblIndex(18)]
+            HRESULT Stream(ID2D1GeometrySink* geometrySink);
+
+            [VtblIndex(19)]
+            HRESULT GetSegmentCount([NativeTypeName("UINT32 *")] uint* count);
+
+            [VtblIndex(20)]
+            HRESULT GetFigureCount([NativeTypeName("UINT32 *")] uint* count);
         }
 
         public partial struct Vtbl

@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("56A868BC-0AD4-11CE-B03A-0020AF0BA770")]
     [NativeTypeName("struct IMediaTypeInfo : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct IMediaTypeInfo
+    public unsafe partial struct IMediaTypeInfo : IMediaTypeInfo.Interface
     {
         public void** lpVtbl;
 
@@ -79,6 +79,15 @@ namespace TerraFX.Interop
         public HRESULT get_Subtype([NativeTypeName("BSTR *")] ushort** strType)
         {
             return ((delegate* unmanaged<IMediaTypeInfo*, ushort**, int>)(lpVtbl[8]))((IMediaTypeInfo*)Unsafe.AsPointer(ref this), strType);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT get_Type([NativeTypeName("BSTR *")] ushort** strType);
+
+            [VtblIndex(8)]
+            HRESULT get_Subtype([NativeTypeName("BSTR *")] ushort** strType);
         }
 
         public partial struct Vtbl

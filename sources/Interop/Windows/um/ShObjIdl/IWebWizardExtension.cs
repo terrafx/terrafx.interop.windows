@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("0E6B3F66-98D1-48C0-A222-FBDE74E2FBC5")]
     [NativeTypeName("struct IWebWizardExtension : IWizardExtension")]
     [NativeInheritance("IWizardExtension")]
-    public unsafe partial struct IWebWizardExtension
+    public unsafe partial struct IWebWizardExtension : IWebWizardExtension.Interface
     {
         public void** lpVtbl;
 
@@ -72,6 +72,15 @@ namespace TerraFX.Interop
         public HRESULT SetErrorURL([NativeTypeName("LPCWSTR")] ushort* pszErrorURL)
         {
             return ((delegate* unmanaged<IWebWizardExtension*, ushort*, int>)(lpVtbl[7]))((IWebWizardExtension*)Unsafe.AsPointer(ref this), pszErrorURL);
+        }
+
+        public interface Interface : IWizardExtension.Interface
+        {
+            [VtblIndex(6)]
+            HRESULT SetInitialURL([NativeTypeName("LPCWSTR")] ushort* pszURL);
+
+            [VtblIndex(7)]
+            HRESULT SetErrorURL([NativeTypeName("LPCWSTR")] ushort* pszErrorURL);
         }
 
         public partial struct Vtbl

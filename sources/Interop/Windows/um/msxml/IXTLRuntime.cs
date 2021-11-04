@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("3EFAA425-272F-11D2-836F-0000F87A7782")]
     [NativeTypeName("struct IXTLRuntime : IXMLDOMNode")]
     [NativeInheritance("IXMLDOMNode")]
-    public unsafe partial struct IXTLRuntime
+    public unsafe partial struct IXTLRuntime : IXTLRuntime.Interface
     {
         public void** lpVtbl;
 
@@ -380,6 +380,36 @@ namespace TerraFX.Interop
         public HRESULT formatTime(VARIANT varTime, [NativeTypeName("BSTR")] ushort* bstrFormat, VARIANT varDestLocale, [NativeTypeName("BSTR *")] ushort** pbstrFormattedString)
         {
             return ((delegate* unmanaged<IXTLRuntime*, VARIANT, ushort*, VARIANT, ushort**, int>)(lpVtbl[51]))((IXTLRuntime*)Unsafe.AsPointer(ref this), varTime, bstrFormat, varDestLocale, pbstrFormattedString);
+        }
+
+        public interface Interface : IXMLDOMNode.Interface
+        {
+            [VtblIndex(43)]
+            HRESULT uniqueID(IXMLDOMNode* pNode, [NativeTypeName("long *")] int* pID);
+
+            [VtblIndex(44)]
+            HRESULT depth(IXMLDOMNode* pNode, [NativeTypeName("long *")] int* pDepth);
+
+            [VtblIndex(45)]
+            HRESULT childNumber(IXMLDOMNode* pNode, [NativeTypeName("long *")] int* pNumber);
+
+            [VtblIndex(46)]
+            HRESULT ancestorChildNumber([NativeTypeName("BSTR")] ushort* bstrNodeName, IXMLDOMNode* pNode, [NativeTypeName("long *")] int* pNumber);
+
+            [VtblIndex(47)]
+            HRESULT absoluteChildNumber(IXMLDOMNode* pNode, [NativeTypeName("long *")] int* pNumber);
+
+            [VtblIndex(48)]
+            HRESULT formatIndex([NativeTypeName("long")] int lIndex, [NativeTypeName("BSTR")] ushort* bstrFormat, [NativeTypeName("BSTR *")] ushort** pbstrFormattedString);
+
+            [VtblIndex(49)]
+            HRESULT formatNumber(double dblNumber, [NativeTypeName("BSTR")] ushort* bstrFormat, [NativeTypeName("BSTR *")] ushort** pbstrFormattedString);
+
+            [VtblIndex(50)]
+            HRESULT formatDate(VARIANT varDate, [NativeTypeName("BSTR")] ushort* bstrFormat, VARIANT varDestLocale, [NativeTypeName("BSTR *")] ushort** pbstrFormattedString);
+
+            [VtblIndex(51)]
+            HRESULT formatTime(VARIANT varTime, [NativeTypeName("BSTR")] ushort* bstrFormat, VARIANT varDestLocale, [NativeTypeName("BSTR *")] ushort** pbstrFormattedString);
         }
 
         public partial struct Vtbl

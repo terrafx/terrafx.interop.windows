@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("3050F830-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct IBlockFormats : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct IBlockFormats
+    public unsafe partial struct IBlockFormats : IBlockFormats.Interface
     {
         public void** lpVtbl;
 
@@ -86,6 +86,18 @@ namespace TerraFX.Interop
         public HRESULT Item(VARIANT* pvarIndex, [NativeTypeName("BSTR *")] ushort** pbstrBlockFormat)
         {
             return ((delegate* unmanaged<IBlockFormats*, VARIANT*, ushort**, int>)(lpVtbl[9]))((IBlockFormats*)Unsafe.AsPointer(ref this), pvarIndex, pbstrBlockFormat);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT get__NewEnum(IUnknown** p);
+
+            [VtblIndex(8)]
+            HRESULT get_Count([NativeTypeName("long *")] int* p);
+
+            [VtblIndex(9)]
+            HRESULT Item(VARIANT* pvarIndex, [NativeTypeName("BSTR *")] ushort** pbstrBlockFormat);
         }
 
         public partial struct Vtbl

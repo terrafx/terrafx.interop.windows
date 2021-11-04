@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("2C941FD6-975B-59BE-A960-9A2A262853A5")]
     [NativeTypeName("struct IEnumProgressItems : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IEnumProgressItems
+    public unsafe partial struct IEnumProgressItems : IEnumProgressItems.Interface
     {
         public void** lpVtbl;
 
@@ -65,6 +65,21 @@ namespace TerraFX.Interop
         public HRESULT Clone(IEnumProgressItems** ppEnum)
         {
             return ((delegate* unmanaged<IEnumProgressItems*, IEnumProgressItems**, int>)(lpVtbl[6]))((IEnumProgressItems*)Unsafe.AsPointer(ref this), ppEnum);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT Next([NativeTypeName("ULONG")] uint celt, IProgressItem** rgelt, [NativeTypeName("ULONG *")] uint* pceltFetched);
+
+            [VtblIndex(4)]
+            HRESULT Skip([NativeTypeName("ULONG")] uint celt);
+
+            [VtblIndex(5)]
+            HRESULT Reset();
+
+            [VtblIndex(6)]
+            HRESULT Clone(IEnumProgressItems** ppEnum);
         }
 
         public partial struct Vtbl

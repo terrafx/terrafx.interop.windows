@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("B53C00B6-9922-4B78-B1F4-DDFE774DC39B")]
     [NativeTypeName("struct ICredentialProviderCredentialEvents2 : ICredentialProviderCredentialEvents")]
     [NativeInheritance("ICredentialProviderCredentialEvents")]
-    public unsafe partial struct ICredentialProviderCredentialEvents2
+    public unsafe partial struct ICredentialProviderCredentialEvents2 : ICredentialProviderCredentialEvents2.Interface
     {
         public void** lpVtbl;
 
@@ -128,6 +128,18 @@ namespace TerraFX.Interop
         public HRESULT SetFieldOptions(ICredentialProviderCredential* credential, [NativeTypeName("DWORD")] uint fieldID, CREDENTIAL_PROVIDER_CREDENTIAL_FIELD_OPTIONS options)
         {
             return ((delegate* unmanaged<ICredentialProviderCredentialEvents2*, ICredentialProviderCredential*, uint, CREDENTIAL_PROVIDER_CREDENTIAL_FIELD_OPTIONS, int>)(lpVtbl[15]))((ICredentialProviderCredentialEvents2*)Unsafe.AsPointer(ref this), credential, fieldID, options);
+        }
+
+        public interface Interface : ICredentialProviderCredentialEvents.Interface
+        {
+            [VtblIndex(13)]
+            HRESULT BeginFieldUpdates();
+
+            [VtblIndex(14)]
+            HRESULT EndFieldUpdates();
+
+            [VtblIndex(15)]
+            HRESULT SetFieldOptions(ICredentialProviderCredential* credential, [NativeTypeName("DWORD")] uint fieldID, CREDENTIAL_PROVIDER_CREDENTIAL_FIELD_OPTIONS options);
         }
 
         public partial struct Vtbl

@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("F185FE76-E64E-11D2-B76E-00C04FB6BD3D")]
     [NativeTypeName("struct IAMPushSource : IAMLatency")]
     [NativeInheritance("IAMLatency")]
-    public unsafe partial struct IAMPushSource
+    public unsafe partial struct IAMPushSource : IAMPushSource.Interface
     {
         public void** lpVtbl;
 
@@ -86,6 +86,27 @@ namespace TerraFX.Interop
         public HRESULT SetMaxStreamOffset([NativeTypeName("REFERENCE_TIME")] long rtMaxOffset)
         {
             return ((delegate* unmanaged<IAMPushSource*, long, int>)(lpVtbl[9]))((IAMPushSource*)Unsafe.AsPointer(ref this), rtMaxOffset);
+        }
+
+        public interface Interface : IAMLatency.Interface
+        {
+            [VtblIndex(4)]
+            HRESULT GetPushSourceFlags([NativeTypeName("ULONG *")] uint* pFlags);
+
+            [VtblIndex(5)]
+            HRESULT SetPushSourceFlags([NativeTypeName("ULONG")] uint Flags);
+
+            [VtblIndex(6)]
+            HRESULT SetStreamOffset([NativeTypeName("REFERENCE_TIME")] long rtOffset);
+
+            [VtblIndex(7)]
+            HRESULT GetStreamOffset([NativeTypeName("REFERENCE_TIME *")] long* prtOffset);
+
+            [VtblIndex(8)]
+            HRESULT GetMaxStreamOffset([NativeTypeName("REFERENCE_TIME *")] long* prtMaxOffset);
+
+            [VtblIndex(9)]
+            HRESULT SetMaxStreamOffset([NativeTypeName("REFERENCE_TIME")] long rtMaxOffset);
         }
 
         public partial struct Vtbl

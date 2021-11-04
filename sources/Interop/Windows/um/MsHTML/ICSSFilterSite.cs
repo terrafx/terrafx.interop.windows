@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("3050F3ED-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct ICSSFilterSite : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct ICSSFilterSite
+    public unsafe partial struct ICSSFilterSite : ICSSFilterSite.Interface
     {
         public void** lpVtbl;
 
@@ -51,6 +51,15 @@ namespace TerraFX.Interop
         public HRESULT FireOnFilterChangeEvent()
         {
             return ((delegate* unmanaged<ICSSFilterSite*, int>)(lpVtbl[4]))((ICSSFilterSite*)Unsafe.AsPointer(ref this));
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetElement(IHTMLElement** Element);
+
+            [VtblIndex(4)]
+            HRESULT FireOnFilterChangeEvent();
         }
 
         public partial struct Vtbl

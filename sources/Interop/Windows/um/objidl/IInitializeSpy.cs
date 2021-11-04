@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("00000034-0000-0000-C000-000000000046")]
     [NativeTypeName("struct IInitializeSpy : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IInitializeSpy
+    public unsafe partial struct IInitializeSpy : IInitializeSpy.Interface
     {
         public void** lpVtbl;
 
@@ -65,6 +65,21 @@ namespace TerraFX.Interop
         public HRESULT PostUninitialize([NativeTypeName("DWORD")] uint dwNewThreadAptRefs)
         {
             return ((delegate* unmanaged<IInitializeSpy*, uint, int>)(lpVtbl[6]))((IInitializeSpy*)Unsafe.AsPointer(ref this), dwNewThreadAptRefs);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT PreInitialize([NativeTypeName("DWORD")] uint dwCoInit, [NativeTypeName("DWORD")] uint dwCurThreadAptRefs);
+
+            [VtblIndex(4)]
+            HRESULT PostInitialize(HRESULT hrCoInit, [NativeTypeName("DWORD")] uint dwCoInit, [NativeTypeName("DWORD")] uint dwNewThreadAptRefs);
+
+            [VtblIndex(5)]
+            HRESULT PreUninitialize([NativeTypeName("DWORD")] uint dwCurThreadAptRefs);
+
+            [VtblIndex(6)]
+            HRESULT PostUninitialize([NativeTypeName("DWORD")] uint dwNewThreadAptRefs);
         }
 
         public partial struct Vtbl

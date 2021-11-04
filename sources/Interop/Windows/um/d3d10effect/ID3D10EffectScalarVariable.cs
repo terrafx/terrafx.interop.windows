@@ -9,7 +9,7 @@ namespace TerraFX.Interop
 {
     [NativeTypeName("struct ID3D10EffectScalarVariable : ID3D10EffectVariable")]
     [NativeInheritance("ID3D10EffectVariable")]
-    public unsafe partial struct ID3D10EffectScalarVariable
+    public unsafe partial struct ID3D10EffectScalarVariable : ID3D10EffectScalarVariable.Interface
     {
         public void** lpVtbl;
 
@@ -270,6 +270,45 @@ namespace TerraFX.Interop
         public HRESULT GetBoolArray(BOOL* pData, uint Offset, uint Count)
         {
             return ((delegate* unmanaged<ID3D10EffectScalarVariable*, BOOL*, uint, uint, int>)(lpVtbl[36]))((ID3D10EffectScalarVariable*)Unsafe.AsPointer(ref this), pData, Offset, Count);
+        }
+
+        public interface Interface : ID3D10EffectVariable.Interface
+        {
+            [VtblIndex(25)]
+            HRESULT SetFloat(float Value);
+
+            [VtblIndex(26)]
+            HRESULT GetFloat(float* pValue);
+
+            [VtblIndex(27)]
+            HRESULT SetFloatArray(float* pData, uint Offset, uint Count);
+
+            [VtblIndex(28)]
+            HRESULT GetFloatArray(float* pData, uint Offset, uint Count);
+
+            [VtblIndex(29)]
+            HRESULT SetInt(int Value);
+
+            [VtblIndex(30)]
+            HRESULT GetInt(int* pValue);
+
+            [VtblIndex(31)]
+            HRESULT SetIntArray(int* pData, uint Offset, uint Count);
+
+            [VtblIndex(32)]
+            HRESULT GetIntArray(int* pData, uint Offset, uint Count);
+
+            [VtblIndex(33)]
+            HRESULT SetBool(BOOL Value);
+
+            [VtblIndex(34)]
+            HRESULT GetBool(BOOL* pValue);
+
+            [VtblIndex(35)]
+            HRESULT SetBoolArray(BOOL* pData, uint Offset, uint Count);
+
+            [VtblIndex(36)]
+            HRESULT GetBoolArray(BOOL* pData, uint Offset, uint Count);
         }
 
         public partial struct Vtbl

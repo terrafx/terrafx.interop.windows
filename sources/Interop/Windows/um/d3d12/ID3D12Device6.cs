@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("C70B221B-40E4-4A17-89AF-025A0727A6DC")]
     [NativeTypeName("struct ID3D12Device6 : ID3D12Device5")]
     [NativeInheritance("ID3D12Device5")]
-    public unsafe partial struct ID3D12Device6
+    public unsafe partial struct ID3D12Device6 : ID3D12Device6.Interface
     {
         public void** lpVtbl;
 
@@ -482,6 +482,12 @@ namespace TerraFX.Interop
         public HRESULT SetBackgroundProcessingMode(D3D12_BACKGROUND_PROCESSING_MODE Mode, D3D12_MEASUREMENTS_ACTION MeasurementsAction, HANDLE hEventToSignalUponCompletion, BOOL* pbFurtherMeasurementsDesired)
         {
             return ((delegate* unmanaged<ID3D12Device6*, D3D12_BACKGROUND_PROCESSING_MODE, D3D12_MEASUREMENTS_ACTION, HANDLE, BOOL*, int>)(lpVtbl[65]))((ID3D12Device6*)Unsafe.AsPointer(ref this), Mode, MeasurementsAction, hEventToSignalUponCompletion, pbFurtherMeasurementsDesired);
+        }
+
+        public interface Interface : ID3D12Device5.Interface
+        {
+            [VtblIndex(65)]
+            HRESULT SetBackgroundProcessingMode(D3D12_BACKGROUND_PROCESSING_MODE Mode, D3D12_MEASUREMENTS_ACTION MeasurementsAction, HANDLE hEventToSignalUponCompletion, BOOL* pbFurtherMeasurementsDesired);
         }
 
         public partial struct Vtbl

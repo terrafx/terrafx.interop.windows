@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("BAD9EB88-AE77-4397-B948-5FA2DB0A19EA")]
     [NativeTypeName("struct IVisualTreeServiceCallback2 : IVisualTreeServiceCallback")]
     [NativeInheritance("IVisualTreeServiceCallback")]
-    public unsafe partial struct IVisualTreeServiceCallback2
+    public unsafe partial struct IVisualTreeServiceCallback2 : IVisualTreeServiceCallback2.Interface
     {
         public void** lpVtbl;
 
@@ -51,6 +51,12 @@ namespace TerraFX.Interop
         public HRESULT OnElementStateChanged(InstanceHandle element, VisualElementState elementState, [NativeTypeName("LPCWSTR")] ushort* context)
         {
             return ((delegate* unmanaged<IVisualTreeServiceCallback2*, InstanceHandle, VisualElementState, ushort*, int>)(lpVtbl[4]))((IVisualTreeServiceCallback2*)Unsafe.AsPointer(ref this), element, elementState, context);
+        }
+
+        public interface Interface : IVisualTreeServiceCallback.Interface
+        {
+            [VtblIndex(4)]
+            HRESULT OnElementStateChanged(InstanceHandle element, VisualElementState elementState, [NativeTypeName("LPCWSTR")] ushort* context);
         }
 
         public partial struct Vtbl

@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("9EB767FD-4269-4467-B8C2-EB30CB305743")]
     [NativeTypeName("struct ID2D1CommandSink1 : ID2D1CommandSink")]
     [NativeInheritance("ID2D1CommandSink")]
-    public unsafe partial struct ID2D1CommandSink1
+    public unsafe partial struct ID2D1CommandSink1 : ID2D1CommandSink1.Interface
     {
         public void** lpVtbl;
 
@@ -219,6 +219,12 @@ namespace TerraFX.Interop
         public HRESULT SetPrimitiveBlend1(D2D1_PRIMITIVE_BLEND primitiveBlend)
         {
             return ((delegate* unmanaged<ID2D1CommandSink1*, D2D1_PRIMITIVE_BLEND, int>)(lpVtbl[28]))((ID2D1CommandSink1*)Unsafe.AsPointer(ref this), primitiveBlend);
+        }
+
+        public interface Interface : ID2D1CommandSink.Interface
+        {
+            [VtblIndex(28)]
+            HRESULT SetPrimitiveBlend1(D2D1_PRIMITIVE_BLEND primitiveBlend);
         }
 
         public partial struct Vtbl

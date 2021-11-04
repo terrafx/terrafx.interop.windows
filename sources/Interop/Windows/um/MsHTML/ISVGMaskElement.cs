@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("3051052E-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct ISVGMaskElement : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct ISVGMaskElement
+    public unsafe partial struct ISVGMaskElement : ISVGMaskElement.Interface
     {
         public void** lpVtbl;
 
@@ -149,6 +149,45 @@ namespace TerraFX.Interop
         public HRESULT get_height(ISVGAnimatedLength** p)
         {
             return ((delegate* unmanaged<ISVGMaskElement*, ISVGAnimatedLength**, int>)(lpVtbl[18]))((ISVGMaskElement*)Unsafe.AsPointer(ref this), p);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT putref_maskUnits(ISVGAnimatedEnumeration* v);
+
+            [VtblIndex(8)]
+            HRESULT get_maskUnits(ISVGAnimatedEnumeration** p);
+
+            [VtblIndex(9)]
+            HRESULT putref_maskContentUnits(ISVGAnimatedEnumeration* v);
+
+            [VtblIndex(10)]
+            HRESULT get_maskContentUnits(ISVGAnimatedEnumeration** p);
+
+            [VtblIndex(11)]
+            HRESULT putref_x(ISVGAnimatedLength* v);
+
+            [VtblIndex(12)]
+            HRESULT get_x(ISVGAnimatedLength** p);
+
+            [VtblIndex(13)]
+            HRESULT putref_y(ISVGAnimatedLength* v);
+
+            [VtblIndex(14)]
+            HRESULT get_y(ISVGAnimatedLength** p);
+
+            [VtblIndex(15)]
+            HRESULT putref_width(ISVGAnimatedLength* v);
+
+            [VtblIndex(16)]
+            HRESULT get_width(ISVGAnimatedLength** p);
+
+            [VtblIndex(17)]
+            HRESULT putref_height(ISVGAnimatedLength* v);
+
+            [VtblIndex(18)]
+            HRESULT get_height(ISVGAnimatedLength** p);
         }
 
         public partial struct Vtbl

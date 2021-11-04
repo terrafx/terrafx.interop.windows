@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("C99AF463-D629-4EC4-8C00-E54D68154248")]
     [NativeTypeName("struct IKsJackContainerId : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IKsJackContainerId
+    public unsafe partial struct IKsJackContainerId : IKsJackContainerId.Interface
     {
         public void** lpVtbl;
 
@@ -44,6 +44,12 @@ namespace TerraFX.Interop
         public HRESULT GetJackContainerId(Guid* pJackContainerId)
         {
             return ((delegate* unmanaged<IKsJackContainerId*, Guid*, int>)(lpVtbl[3]))((IKsJackContainerId*)Unsafe.AsPointer(ref this), pJackContainerId);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetJackContainerId(Guid* pJackContainerId);
         }
 
         public partial struct Vtbl

@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("3050F833-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct IHTMLFieldSetElement2 : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct IHTMLFieldSetElement2
+    public unsafe partial struct IHTMLFieldSetElement2 : IHTMLFieldSetElement2.Interface
     {
         public void** lpVtbl;
 
@@ -72,6 +72,12 @@ namespace TerraFX.Interop
         public HRESULT get_form(IHTMLFormElement** p)
         {
             return ((delegate* unmanaged<IHTMLFieldSetElement2*, IHTMLFormElement**, int>)(lpVtbl[7]))((IHTMLFieldSetElement2*)Unsafe.AsPointer(ref this), p);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT get_form(IHTMLFormElement** p);
         }
 
         public partial struct Vtbl

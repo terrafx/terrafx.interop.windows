@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("BB11C46F-EC28-493C-B88A-5DB88062CE98")]
     [NativeTypeName("struct IAudioChannelConfig : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IAudioChannelConfig
+    public unsafe partial struct IAudioChannelConfig : IAudioChannelConfig.Interface
     {
         public void** lpVtbl;
 
@@ -51,6 +51,15 @@ namespace TerraFX.Interop
         public HRESULT GetChannelConfig([NativeTypeName("DWORD *")] uint* pdwConfig)
         {
             return ((delegate* unmanaged<IAudioChannelConfig*, uint*, int>)(lpVtbl[4]))((IAudioChannelConfig*)Unsafe.AsPointer(ref this), pdwConfig);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT SetChannelConfig([NativeTypeName("DWORD")] uint dwConfig, [NativeTypeName("LPCGUID")] Guid* pguidEventContext);
+
+            [VtblIndex(4)]
+            HRESULT GetChannelConfig([NativeTypeName("DWORD *")] uint* pdwConfig);
         }
 
         public partial struct Vtbl

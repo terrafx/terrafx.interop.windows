@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("119E7452-DE9E-40FE-8806-88F90C12B441")]
     [NativeTypeName("struct IDXGIDebug : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IDXGIDebug
+    public unsafe partial struct IDXGIDebug : IDXGIDebug.Interface
     {
         public void** lpVtbl;
 
@@ -44,6 +44,12 @@ namespace TerraFX.Interop
         public HRESULT ReportLiveObjects(Guid apiid, DXGI_DEBUG_RLO_FLAGS flags)
         {
             return ((delegate* unmanaged<IDXGIDebug*, Guid, DXGI_DEBUG_RLO_FLAGS, int>)(lpVtbl[3]))((IDXGIDebug*)Unsafe.AsPointer(ref this), apiid, flags);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT ReportLiveObjects(Guid apiid, DXGI_DEBUG_RLO_FLAGS flags);
         }
 
         public partial struct Vtbl

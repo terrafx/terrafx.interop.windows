@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("30510511-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct ISVGAnimatedPathData : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct ISVGAnimatedPathData
+    public unsafe partial struct ISVGAnimatedPathData : ISVGAnimatedPathData.Interface
     {
         public void** lpVtbl;
 
@@ -121,6 +121,33 @@ namespace TerraFX.Interop
         public HRESULT get_animatedNormalizedPathSegList(ISVGPathSegList** p)
         {
             return ((delegate* unmanaged<ISVGAnimatedPathData*, ISVGPathSegList**, int>)(lpVtbl[14]))((ISVGAnimatedPathData*)Unsafe.AsPointer(ref this), p);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT putref_pathSegList(ISVGPathSegList* v);
+
+            [VtblIndex(8)]
+            HRESULT get_pathSegList(ISVGPathSegList** p);
+
+            [VtblIndex(9)]
+            HRESULT putref_normalizedPathSegList(ISVGPathSegList* v);
+
+            [VtblIndex(10)]
+            HRESULT get_normalizedPathSegList(ISVGPathSegList** p);
+
+            [VtblIndex(11)]
+            HRESULT putref_animatedPathSegList(ISVGPathSegList* v);
+
+            [VtblIndex(12)]
+            HRESULT get_animatedPathSegList(ISVGPathSegList** p);
+
+            [VtblIndex(13)]
+            HRESULT putref_animatedNormalizedPathSegList(ISVGPathSegList* v);
+
+            [VtblIndex(14)]
+            HRESULT get_animatedNormalizedPathSegList(ISVGPathSegList** p);
         }
 
         public partial struct Vtbl

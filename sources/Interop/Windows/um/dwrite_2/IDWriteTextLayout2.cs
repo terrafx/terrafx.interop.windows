@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("1093C18F-8D5E-43F0-B064-0917311B525E")]
     [NativeTypeName("struct IDWriteTextLayout2 : IDWriteTextLayout1")]
     [NativeInheritance("IDWriteTextLayout1")]
-    public unsafe partial struct IDWriteTextLayout2
+    public unsafe partial struct IDWriteTextLayout2 : IDWriteTextLayout2.Interface
     {
         public void** lpVtbl;
 
@@ -578,6 +578,36 @@ namespace TerraFX.Interop
         public HRESULT GetFontFallback(IDWriteFontFallback** fontFallback)
         {
             return ((delegate* unmanaged<IDWriteTextLayout2*, IDWriteFontFallback**, int>)(lpVtbl[79]))((IDWriteTextLayout2*)Unsafe.AsPointer(ref this), fontFallback);
+        }
+
+        public interface Interface : IDWriteTextLayout1.Interface
+        {
+            [VtblIndex(71)]
+            HRESULT GetMetrics(DWRITE_TEXT_METRICS1* textMetrics);
+
+            [VtblIndex(72)]
+            HRESULT SetVerticalGlyphOrientation(DWRITE_VERTICAL_GLYPH_ORIENTATION glyphOrientation);
+
+            [VtblIndex(73)]
+            DWRITE_VERTICAL_GLYPH_ORIENTATION GetVerticalGlyphOrientation();
+
+            [VtblIndex(74)]
+            HRESULT SetLastLineWrapping(BOOL isLastLineWrappingEnabled);
+
+            [VtblIndex(75)]
+            BOOL GetLastLineWrapping();
+
+            [VtblIndex(76)]
+            HRESULT SetOpticalAlignment(DWRITE_OPTICAL_ALIGNMENT opticalAlignment);
+
+            [VtblIndex(77)]
+            DWRITE_OPTICAL_ALIGNMENT GetOpticalAlignment();
+
+            [VtblIndex(78)]
+            HRESULT SetFontFallback(IDWriteFontFallback* fontFallback);
+
+            [VtblIndex(79)]
+            HRESULT GetFontFallback(IDWriteFontFallback** fontFallback);
         }
 
         public partial struct Vtbl

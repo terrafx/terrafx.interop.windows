@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("8FC6D974-C81E-4098-93C5-0147F61ED4D3")]
     [NativeTypeName("struct ISpRecognizer2 : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct ISpRecognizer2
+    public unsafe partial struct ISpRecognizer2 : ISpRecognizer2.Interface
     {
         public void** lpVtbl;
 
@@ -58,6 +58,18 @@ namespace TerraFX.Interop
         public HRESULT ResetAcousticModelAdaptation()
         {
             return ((delegate* unmanaged<ISpRecognizer2*, int>)(lpVtbl[5]))((ISpRecognizer2*)Unsafe.AsPointer(ref this));
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT EmulateRecognitionEx(ISpPhrase* pPhrase, [NativeTypeName("DWORD")] uint dwCompareFlags);
+
+            [VtblIndex(4)]
+            HRESULT SetTrainingState(BOOL fDoingTraining, BOOL fAdaptFromTrainingData);
+
+            [VtblIndex(5)]
+            HRESULT ResetAcousticModelAdaptation();
         }
 
         public partial struct Vtbl

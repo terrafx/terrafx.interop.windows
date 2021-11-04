@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("2933BF8C-7B36-11D2-B20E-00C04F983E60")]
     [NativeTypeName("struct IXMLDOMNotation : IXMLDOMNode")]
     [NativeInheritance("IXMLDOMNode")]
-    public unsafe partial struct IXMLDOMNotation
+    public unsafe partial struct IXMLDOMNotation : IXMLDOMNotation.Interface
     {
         public void** lpVtbl;
 
@@ -331,6 +331,15 @@ namespace TerraFX.Interop
         public HRESULT get_systemId(VARIANT* systemID)
         {
             return ((delegate* unmanaged<IXMLDOMNotation*, VARIANT*, int>)(lpVtbl[44]))((IXMLDOMNotation*)Unsafe.AsPointer(ref this), systemID);
+        }
+
+        public interface Interface : IXMLDOMNode.Interface
+        {
+            [VtblIndex(43)]
+            HRESULT get_publicId(VARIANT* publicID);
+
+            [VtblIndex(44)]
+            HRESULT get_systemId(VARIANT* systemID);
         }
 
         public partial struct Vtbl

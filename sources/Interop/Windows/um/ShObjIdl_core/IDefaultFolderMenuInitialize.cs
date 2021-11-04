@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("7690AA79-F8FC-4615-A327-36F7D18F5D91")]
     [NativeTypeName("struct IDefaultFolderMenuInitialize : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IDefaultFolderMenuInitialize
+    public unsafe partial struct IDefaultFolderMenuInitialize : IDefaultFolderMenuInitialize.Interface
     {
         public void** lpVtbl;
 
@@ -65,6 +65,21 @@ namespace TerraFX.Interop
         public HRESULT SetHandlerClsid([NativeTypeName("const IID &")] Guid* rclsid)
         {
             return ((delegate* unmanaged<IDefaultFolderMenuInitialize*, Guid*, int>)(lpVtbl[6]))((IDefaultFolderMenuInitialize*)Unsafe.AsPointer(ref this), rclsid);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT Initialize(HWND hwnd, IContextMenuCB* pcmcb, [NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidlFolder, IShellFolder* psf, uint cidl, [NativeTypeName("LPCITEMIDLIST *")] ITEMIDLIST** apidl, IUnknown* punkAssociation, uint cKeys, [NativeTypeName("const HKEY *")] HKEY* aKeys);
+
+            [VtblIndex(4)]
+            HRESULT SetMenuRestrictions(DEFAULT_FOLDER_MENU_RESTRICTIONS dfmrValues);
+
+            [VtblIndex(5)]
+            HRESULT GetMenuRestrictions(DEFAULT_FOLDER_MENU_RESTRICTIONS dfmrMask, DEFAULT_FOLDER_MENU_RESTRICTIONS* pdfmrValues);
+
+            [VtblIndex(6)]
+            HRESULT SetHandlerClsid([NativeTypeName("const IID &")] Guid* rclsid);
         }
 
         public partial struct Vtbl

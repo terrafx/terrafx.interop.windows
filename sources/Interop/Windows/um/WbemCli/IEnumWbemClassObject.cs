@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("027947E1-D731-11CE-A357-000000000001")]
     [NativeTypeName("struct IEnumWbemClassObject : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IEnumWbemClassObject
+    public unsafe partial struct IEnumWbemClassObject : IEnumWbemClassObject.Interface
     {
         public void** lpVtbl;
 
@@ -72,6 +72,24 @@ namespace TerraFX.Interop
         public HRESULT Skip([NativeTypeName("long")] int lTimeout, [NativeTypeName("ULONG")] uint nCount)
         {
             return ((delegate* unmanaged<IEnumWbemClassObject*, int, uint, int>)(lpVtbl[7]))((IEnumWbemClassObject*)Unsafe.AsPointer(ref this), lTimeout, nCount);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT Reset();
+
+            [VtblIndex(4)]
+            HRESULT Next([NativeTypeName("long")] int lTimeout, [NativeTypeName("ULONG")] uint uCount, IWbemClassObject** apObjects, [NativeTypeName("ULONG *")] uint* puReturned);
+
+            [VtblIndex(5)]
+            HRESULT NextAsync([NativeTypeName("ULONG")] uint uCount, IWbemObjectSink* pSink);
+
+            [VtblIndex(6)]
+            HRESULT Clone(IEnumWbemClassObject** ppEnum);
+
+            [VtblIndex(7)]
+            HRESULT Skip([NativeTypeName("long")] int lTimeout, [NativeTypeName("ULONG")] uint nCount);
         }
 
         public partial struct Vtbl

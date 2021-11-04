@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("5D1ABFD6-450A-4D92-9EFC-D6B6CBC1F4DA")]
     [NativeTypeName("struct IMFMediaSourceExtensionLiveSeekableRange : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IMFMediaSourceExtensionLiveSeekableRange
+    public unsafe partial struct IMFMediaSourceExtensionLiveSeekableRange : IMFMediaSourceExtensionLiveSeekableRange.Interface
     {
         public void** lpVtbl;
 
@@ -51,6 +51,15 @@ namespace TerraFX.Interop
         public HRESULT ClearLiveSeekableRange()
         {
             return ((delegate* unmanaged<IMFMediaSourceExtensionLiveSeekableRange*, int>)(lpVtbl[4]))((IMFMediaSourceExtensionLiveSeekableRange*)Unsafe.AsPointer(ref this));
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT SetLiveSeekableRange(double start, double end);
+
+            [VtblIndex(4)]
+            HRESULT ClearLiveSeekableRange();
         }
 
         public partial struct Vtbl

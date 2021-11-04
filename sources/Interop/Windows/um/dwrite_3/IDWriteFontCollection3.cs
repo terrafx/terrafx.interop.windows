@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("A4D055A6-F9E3-4E25-93B7-9E309F3AF8E9")]
     [NativeTypeName("struct IDWriteFontCollection3 : IDWriteFontCollection2")]
     [NativeInheritance("IDWriteFontCollection2")]
-    public unsafe partial struct IDWriteFontCollection3
+    public unsafe partial struct IDWriteFontCollection3 : IDWriteFontCollection3.Interface
     {
         public void** lpVtbl;
 
@@ -115,6 +115,12 @@ namespace TerraFX.Interop
         public HANDLE GetExpirationEvent()
         {
             return ((HANDLE)(((delegate* unmanaged<IDWriteFontCollection3*, void*>)(lpVtbl[13]))((IDWriteFontCollection3*)Unsafe.AsPointer(ref this))));
+        }
+
+        public interface Interface : IDWriteFontCollection2.Interface
+        {
+            [VtblIndex(13)]
+            HANDLE GetExpirationEvent();
         }
 
         public partial struct Vtbl

@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("3D4C0C61-18A4-41E4-BD80-481A4FC9F464")]
     [NativeTypeName("struct IWICDdsFrameDecode : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IWICDdsFrameDecode
+    public unsafe partial struct IWICDdsFrameDecode : IWICDdsFrameDecode.Interface
     {
         public void** lpVtbl;
 
@@ -58,6 +58,18 @@ namespace TerraFX.Interop
         public HRESULT CopyBlocks([NativeTypeName("const WICRect *")] WICRect* prcBoundsInBlocks, uint cbStride, uint cbBufferSize, byte* pbBuffer)
         {
             return ((delegate* unmanaged<IWICDdsFrameDecode*, WICRect*, uint, uint, byte*, int>)(lpVtbl[5]))((IWICDdsFrameDecode*)Unsafe.AsPointer(ref this), prcBoundsInBlocks, cbStride, cbBufferSize, pbBuffer);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetSizeInBlocks(uint* pWidthInBlocks, uint* pHeightInBlocks);
+
+            [VtblIndex(4)]
+            HRESULT GetFormatInfo(WICDdsFormatInfo* pFormatInfo);
+
+            [VtblIndex(5)]
+            HRESULT CopyBlocks([NativeTypeName("const WICRect *")] WICRect* prcBoundsInBlocks, uint cbStride, uint cbBufferSize, byte* pbBuffer);
         }
 
         public partial struct Vtbl

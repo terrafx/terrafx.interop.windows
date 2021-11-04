@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("305104F3-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct ISVGStyleElement : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct ISVGStyleElement
+    public unsafe partial struct ISVGStyleElement : ISVGStyleElement.Interface
     {
         public void** lpVtbl;
 
@@ -93,6 +93,21 @@ namespace TerraFX.Interop
         public HRESULT get_media([NativeTypeName("BSTR *")] ushort** p)
         {
             return ((delegate* unmanaged<ISVGStyleElement*, ushort**, int>)(lpVtbl[10]))((ISVGStyleElement*)Unsafe.AsPointer(ref this), p);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT put_type([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(8)]
+            HRESULT get_type([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(9)]
+            HRESULT put_media([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(10)]
+            HRESULT get_media([NativeTypeName("BSTR *")] ushort** p);
         }
 
         public partial struct Vtbl

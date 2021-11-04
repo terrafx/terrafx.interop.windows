@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("5B0D3235-4DBA-4D44-865E-8F1D0E4FD04D")]
     [NativeTypeName("struct IMemoryBufferByteAccess : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IMemoryBufferByteAccess
+    public unsafe partial struct IMemoryBufferByteAccess : IMemoryBufferByteAccess.Interface
     {
         public void** lpVtbl;
 
@@ -44,6 +44,12 @@ namespace TerraFX.Interop
         public HRESULT GetBuffer(byte** value, [NativeTypeName("UINT32 *")] uint* capacity)
         {
             return ((delegate* unmanaged<IMemoryBufferByteAccess*, byte**, uint*, int>)(lpVtbl[3]))((IMemoryBufferByteAccess*)Unsafe.AsPointer(ref this), value, capacity);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetBuffer(byte** value, [NativeTypeName("UINT32 *")] uint* capacity);
         }
 
         public partial struct Vtbl

@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("DB2F3ACE-2F86-11D1-8E04-00C04FB9989A")]
     [NativeTypeName("struct IPipeDouble : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IPipeDouble
+    public unsafe partial struct IPipeDouble : IPipeDouble.Interface
     {
         public void** lpVtbl;
 
@@ -51,6 +51,15 @@ namespace TerraFX.Interop
         public HRESULT Push(double* buf, [NativeTypeName("ULONG")] uint cSent)
         {
             return ((delegate* unmanaged<IPipeDouble*, double*, uint, int>)(lpVtbl[4]))((IPipeDouble*)Unsafe.AsPointer(ref this), buf, cSent);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT Pull(double* buf, [NativeTypeName("ULONG")] uint cRequest, [NativeTypeName("ULONG *")] uint* pcReturned);
+
+            [VtblIndex(4)]
+            HRESULT Push(double* buf, [NativeTypeName("ULONG")] uint cSent);
         }
 
         public partial struct Vtbl

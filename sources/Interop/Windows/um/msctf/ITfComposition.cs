@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("20168D64-5A8F-4A5A-B7BD-CFA29F4D0FD9")]
     [NativeTypeName("struct ITfComposition : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct ITfComposition
+    public unsafe partial struct ITfComposition : ITfComposition.Interface
     {
         public void** lpVtbl;
 
@@ -65,6 +65,21 @@ namespace TerraFX.Interop
         public HRESULT EndComposition([NativeTypeName("TfEditCookie")] uint ecWrite)
         {
             return ((delegate* unmanaged<ITfComposition*, uint, int>)(lpVtbl[6]))((ITfComposition*)Unsafe.AsPointer(ref this), ecWrite);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetRange(ITfRange** ppRange);
+
+            [VtblIndex(4)]
+            HRESULT ShiftStart([NativeTypeName("TfEditCookie")] uint ecWrite, ITfRange* pNewStart);
+
+            [VtblIndex(5)]
+            HRESULT ShiftEnd([NativeTypeName("TfEditCookie")] uint ecWrite, ITfRange* pNewEnd);
+
+            [VtblIndex(6)]
+            HRESULT EndComposition([NativeTypeName("TfEditCookie")] uint ecWrite);
         }
 
         public partial struct Vtbl

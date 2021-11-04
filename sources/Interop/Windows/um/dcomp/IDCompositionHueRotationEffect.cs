@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("6DB9F920-0770-4781-B0C6-381912F9D167")]
     [NativeTypeName("struct IDCompositionHueRotationEffect : IDCompositionFilterEffect")]
     [NativeInheritance("IDCompositionFilterEffect")]
-    public unsafe partial struct IDCompositionHueRotationEffect
+    public unsafe partial struct IDCompositionHueRotationEffect : IDCompositionHueRotationEffect.Interface
     {
         public void** lpVtbl;
 
@@ -58,6 +58,15 @@ namespace TerraFX.Interop
         public HRESULT SetAngle(float amountDegrees)
         {
             return ((delegate* unmanaged<IDCompositionHueRotationEffect*, float, int>)(lpVtbl[5]))((IDCompositionHueRotationEffect*)Unsafe.AsPointer(ref this), amountDegrees);
+        }
+
+        public interface Interface : IDCompositionFilterEffect.Interface
+        {
+            [VtblIndex(4)]
+            HRESULT SetAngle(IDCompositionAnimation* animation);
+
+            [VtblIndex(5)]
+            HRESULT SetAngle(float amountDegrees);
         }
 
         public partial struct Vtbl

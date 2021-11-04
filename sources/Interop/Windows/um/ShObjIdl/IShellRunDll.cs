@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("FCE4BDE0-4B68-4B80-8E9C-7426315A7388")]
     [NativeTypeName("struct IShellRunDll : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IShellRunDll
+    public unsafe partial struct IShellRunDll : IShellRunDll.Interface
     {
         public void** lpVtbl;
 
@@ -44,6 +44,12 @@ namespace TerraFX.Interop
         public HRESULT Run([NativeTypeName("LPCWSTR")] ushort* pszArgs)
         {
             return ((delegate* unmanaged<IShellRunDll*, ushort*, int>)(lpVtbl[3]))((IShellRunDll*)Unsafe.AsPointer(ref this), pszArgs);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT Run([NativeTypeName("LPCWSTR")] ushort* pszArgs);
         }
 
         public partial struct Vtbl

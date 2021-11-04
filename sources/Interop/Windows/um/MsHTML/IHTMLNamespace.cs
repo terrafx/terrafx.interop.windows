@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("3050F6BB-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct IHTMLNamespace : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct IHTMLNamespace
+    public unsafe partial struct IHTMLNamespace : IHTMLNamespace.Interface
     {
         public void** lpVtbl;
 
@@ -128,6 +128,36 @@ namespace TerraFX.Interop
         public HRESULT detachEvent([NativeTypeName("BSTR")] ushort* @event, IDispatch* pDisp)
         {
             return ((delegate* unmanaged<IHTMLNamespace*, ushort*, IDispatch*, int>)(lpVtbl[15]))((IHTMLNamespace*)Unsafe.AsPointer(ref this), @event, pDisp);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT get_name([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(8)]
+            HRESULT get_urn([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(9)]
+            HRESULT get_tagNames(IDispatch** p);
+
+            [VtblIndex(10)]
+            HRESULT get_readyState(VARIANT* p);
+
+            [VtblIndex(11)]
+            HRESULT put_onreadystatechange(VARIANT v);
+
+            [VtblIndex(12)]
+            HRESULT get_onreadystatechange(VARIANT* p);
+
+            [VtblIndex(13)]
+            HRESULT doImport([NativeTypeName("BSTR")] ushort* bstrImplementationUrl);
+
+            [VtblIndex(14)]
+            HRESULT attachEvent([NativeTypeName("BSTR")] ushort* @event, IDispatch* pDisp, [NativeTypeName("VARIANT_BOOL *")] short* pfResult);
+
+            [VtblIndex(15)]
+            HRESULT detachEvent([NativeTypeName("BSTR")] ushort* @event, IDispatch* pDisp);
         }
 
         public partial struct Vtbl

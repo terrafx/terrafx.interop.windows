@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("607574EB-F4B6-45C1-B08C-CB715122901D")]
     [NativeTypeName("struct IPlayToControl : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IPlayToControl
+    public unsafe partial struct IPlayToControl : IPlayToControl.Interface
     {
         public void** lpVtbl;
 
@@ -51,6 +51,15 @@ namespace TerraFX.Interop
         public HRESULT Disconnect()
         {
             return ((delegate* unmanaged<IPlayToControl*, int>)(lpVtbl[4]))((IPlayToControl*)Unsafe.AsPointer(ref this));
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT Connect(IMFSharingEngineClassFactory* pFactory);
+
+            [VtblIndex(4)]
+            HRESULT Disconnect();
         }
 
         public partial struct Vtbl

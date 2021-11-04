@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("3CD141F4-3C6A-11D2-BCAA-00C04FD929DB")]
     [NativeTypeName("struct IAutoCompleteDropDown : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IAutoCompleteDropDown
+    public unsafe partial struct IAutoCompleteDropDown : IAutoCompleteDropDown.Interface
     {
         public void** lpVtbl;
 
@@ -51,6 +51,15 @@ namespace TerraFX.Interop
         public HRESULT ResetEnumerator()
         {
             return ((delegate* unmanaged<IAutoCompleteDropDown*, int>)(lpVtbl[4]))((IAutoCompleteDropDown*)Unsafe.AsPointer(ref this));
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetDropDownStatus([NativeTypeName("DWORD *")] uint* pdwFlags, [NativeTypeName("LPWSTR *")] ushort** ppwszString);
+
+            [VtblIndex(4)]
+            HRESULT ResetEnumerator();
         }
 
         public partial struct Vtbl

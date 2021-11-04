@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("3FE6ADEA-7643-4F53-BD14-A0CE63F24042")]
     [NativeTypeName("struct ID2D1OffsetTransform : ID2D1TransformNode")]
     [NativeInheritance("ID2D1TransformNode")]
-    public unsafe partial struct ID2D1OffsetTransform
+    public unsafe partial struct ID2D1OffsetTransform : ID2D1OffsetTransform.Interface
     {
         public void** lpVtbl;
 
@@ -61,6 +61,16 @@ namespace TerraFX.Interop
         {
             POINT result;
             return *((delegate* unmanaged<ID2D1OffsetTransform*, POINT*, POINT*>)(lpVtbl[5]))((ID2D1OffsetTransform*)Unsafe.AsPointer(ref this), &result);
+        }
+
+        public interface Interface : ID2D1TransformNode.Interface
+        {
+            [VtblIndex(4)]
+            void SetOffset([NativeTypeName("D2D1_POINT_2L")] POINT offset);
+
+            [VtblIndex(5)]
+            [return: NativeTypeName("D2D1_POINT_2L")]
+            POINT GetOffset();
         }
 
         public partial struct Vtbl

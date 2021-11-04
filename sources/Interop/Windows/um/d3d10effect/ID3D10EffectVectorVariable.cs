@@ -9,7 +9,7 @@ namespace TerraFX.Interop
 {
     [NativeTypeName("struct ID3D10EffectVectorVariable : ID3D10EffectVariable")]
     [NativeInheritance("ID3D10EffectVariable")]
-    public unsafe partial struct ID3D10EffectVectorVariable
+    public unsafe partial struct ID3D10EffectVectorVariable : ID3D10EffectVectorVariable.Interface
     {
         public void** lpVtbl;
 
@@ -270,6 +270,45 @@ namespace TerraFX.Interop
         public HRESULT GetFloatVectorArray(float* pData, uint Offset, uint Count)
         {
             return ((delegate* unmanaged<ID3D10EffectVectorVariable*, float*, uint, uint, int>)(lpVtbl[36]))((ID3D10EffectVectorVariable*)Unsafe.AsPointer(ref this), pData, Offset, Count);
+        }
+
+        public interface Interface : ID3D10EffectVariable.Interface
+        {
+            [VtblIndex(25)]
+            HRESULT SetBoolVector(BOOL* pData);
+
+            [VtblIndex(26)]
+            HRESULT SetIntVector(int* pData);
+
+            [VtblIndex(27)]
+            HRESULT SetFloatVector(float* pData);
+
+            [VtblIndex(28)]
+            HRESULT GetBoolVector(BOOL* pData);
+
+            [VtblIndex(29)]
+            HRESULT GetIntVector(int* pData);
+
+            [VtblIndex(30)]
+            HRESULT GetFloatVector(float* pData);
+
+            [VtblIndex(31)]
+            HRESULT SetBoolVectorArray(BOOL* pData, uint Offset, uint Count);
+
+            [VtblIndex(32)]
+            HRESULT SetIntVectorArray(int* pData, uint Offset, uint Count);
+
+            [VtblIndex(33)]
+            HRESULT SetFloatVectorArray(float* pData, uint Offset, uint Count);
+
+            [VtblIndex(34)]
+            HRESULT GetBoolVectorArray(BOOL* pData, uint Offset, uint Count);
+
+            [VtblIndex(35)]
+            HRESULT GetIntVectorArray(int* pData, uint Offset, uint Count);
+
+            [VtblIndex(36)]
+            HRESULT GetFloatVectorArray(float* pData, uint Offset, uint Count);
         }
 
         public partial struct Vtbl

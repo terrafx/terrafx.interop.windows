@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("3051071E-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct IDOMProgressEvent : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct IDOMProgressEvent
+    public unsafe partial struct IDOMProgressEvent : IDOMProgressEvent.Interface
     {
         public void** lpVtbl;
 
@@ -93,6 +93,21 @@ namespace TerraFX.Interop
         public HRESULT initProgressEvent([NativeTypeName("BSTR")] ushort* eventType, [NativeTypeName("VARIANT_BOOL")] short canBubble, [NativeTypeName("VARIANT_BOOL")] short cancelable, [NativeTypeName("VARIANT_BOOL")] short lengthComputableArg, [NativeTypeName("ULONGLONG")] ulong loadedArg, [NativeTypeName("ULONGLONG")] ulong totalArg)
         {
             return ((delegate* unmanaged<IDOMProgressEvent*, ushort*, short, short, short, ulong, ulong, int>)(lpVtbl[10]))((IDOMProgressEvent*)Unsafe.AsPointer(ref this), eventType, canBubble, cancelable, lengthComputableArg, loadedArg, totalArg);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT get_lengthComputable([NativeTypeName("VARIANT_BOOL *")] short* p);
+
+            [VtblIndex(8)]
+            HRESULT get_loaded([NativeTypeName("ULONGLONG *")] ulong* p);
+
+            [VtblIndex(9)]
+            HRESULT get_total([NativeTypeName("ULONGLONG *")] ulong* p);
+
+            [VtblIndex(10)]
+            HRESULT initProgressEvent([NativeTypeName("BSTR")] ushort* eventType, [NativeTypeName("VARIANT_BOOL")] short canBubble, [NativeTypeName("VARIANT_BOOL")] short cancelable, [NativeTypeName("VARIANT_BOOL")] short lengthComputableArg, [NativeTypeName("ULONGLONG")] ulong loadedArg, [NativeTypeName("ULONGLONG")] ulong totalArg);
         }
 
         public partial struct Vtbl

@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("A116FF71-F8BF-4C8A-9C98-70779A32A9C8")]
     [NativeTypeName("struct ICompositionGraphicsDeviceInterop : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct ICompositionGraphicsDeviceInterop
+    public unsafe partial struct ICompositionGraphicsDeviceInterop : ICompositionGraphicsDeviceInterop.Interface
     {
         public void** lpVtbl;
 
@@ -51,6 +51,15 @@ namespace TerraFX.Interop
         public HRESULT SetRenderingDevice(IUnknown* value)
         {
             return ((delegate* unmanaged<ICompositionGraphicsDeviceInterop*, IUnknown*, int>)(lpVtbl[4]))((ICompositionGraphicsDeviceInterop*)Unsafe.AsPointer(ref this), value);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetRenderingDevice(IUnknown** value);
+
+            [VtblIndex(4)]
+            HRESULT SetRenderingDevice(IUnknown* value);
         }
 
         public partial struct Vtbl

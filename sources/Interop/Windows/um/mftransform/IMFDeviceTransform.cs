@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("D818FBD8-FC46-42F2-87AC-1EA2D1F9BF32")]
     [NativeTypeName("struct IMFDeviceTransform : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IMFDeviceTransform
+    public unsafe partial struct IMFDeviceTransform : IMFDeviceTransform.Interface
     {
         public void** lpVtbl;
 
@@ -177,6 +177,69 @@ namespace TerraFX.Interop
         public HRESULT FlushOutputStream([NativeTypeName("DWORD")] uint dwStreamIndex, [NativeTypeName("DWORD")] uint dwFlags)
         {
             return ((delegate* unmanaged<IMFDeviceTransform*, uint, uint, int>)(lpVtbl[22]))((IMFDeviceTransform*)Unsafe.AsPointer(ref this), dwStreamIndex, dwFlags);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT InitializeTransform(IMFAttributes* pAttributes);
+
+            [VtblIndex(4)]
+            HRESULT GetInputAvailableType([NativeTypeName("DWORD")] uint dwInputStreamID, [NativeTypeName("DWORD")] uint dwTypeIndex, IMFMediaType** pMediaType);
+
+            [VtblIndex(5)]
+            HRESULT GetInputCurrentType([NativeTypeName("DWORD")] uint dwInputStreamID, IMFMediaType** pMediaType);
+
+            [VtblIndex(6)]
+            HRESULT GetInputStreamAttributes([NativeTypeName("DWORD")] uint dwInputStreamID, IMFAttributes** ppAttributes);
+
+            [VtblIndex(7)]
+            HRESULT GetOutputAvailableType([NativeTypeName("DWORD")] uint dwOutputStreamID, [NativeTypeName("DWORD")] uint dwTypeIndex, IMFMediaType** pMediaType);
+
+            [VtblIndex(8)]
+            HRESULT GetOutputCurrentType([NativeTypeName("DWORD")] uint dwOutputStreamID, IMFMediaType** pMediaType);
+
+            [VtblIndex(9)]
+            HRESULT GetOutputStreamAttributes([NativeTypeName("DWORD")] uint dwOutputStreamID, IMFAttributes** ppAttributes);
+
+            [VtblIndex(10)]
+            HRESULT GetStreamCount([NativeTypeName("DWORD *")] uint* pcInputStreams, [NativeTypeName("DWORD *")] uint* pcOutputStreams);
+
+            [VtblIndex(11)]
+            HRESULT GetStreamIDs([NativeTypeName("DWORD")] uint dwInputIDArraySize, [NativeTypeName("DWORD *")] uint* pdwInputStreamIds, [NativeTypeName("DWORD")] uint dwOutputIDArraySize, [NativeTypeName("DWORD *")] uint* pdwOutputStreamIds);
+
+            [VtblIndex(12)]
+            HRESULT ProcessEvent([NativeTypeName("DWORD")] uint dwInputStreamID, IMFMediaEvent* pEvent);
+
+            [VtblIndex(13)]
+            HRESULT ProcessInput([NativeTypeName("DWORD")] uint dwInputStreamID, IMFSample* pSample, [NativeTypeName("DWORD")] uint dwFlags);
+
+            [VtblIndex(14)]
+            HRESULT ProcessMessage(MFT_MESSAGE_TYPE eMessage, [NativeTypeName("ULONG_PTR")] nuint ulParam);
+
+            [VtblIndex(15)]
+            HRESULT ProcessOutput([NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("DWORD")] uint cOutputBufferCount, MFT_OUTPUT_DATA_BUFFER* pOutputSample, [NativeTypeName("DWORD *")] uint* pdwStatus);
+
+            [VtblIndex(16)]
+            HRESULT SetInputStreamState([NativeTypeName("DWORD")] uint dwStreamID, IMFMediaType* pMediaType, DeviceStreamState value, [NativeTypeName("DWORD")] uint dwFlags);
+
+            [VtblIndex(17)]
+            HRESULT GetInputStreamState([NativeTypeName("DWORD")] uint dwStreamID, DeviceStreamState* value);
+
+            [VtblIndex(18)]
+            HRESULT SetOutputStreamState([NativeTypeName("DWORD")] uint dwStreamID, IMFMediaType* pMediaType, DeviceStreamState value, [NativeTypeName("DWORD")] uint dwFlags);
+
+            [VtblIndex(19)]
+            HRESULT GetOutputStreamState([NativeTypeName("DWORD")] uint dwStreamID, DeviceStreamState* value);
+
+            [VtblIndex(20)]
+            HRESULT GetInputStreamPreferredState([NativeTypeName("DWORD")] uint dwStreamID, DeviceStreamState* value, IMFMediaType** ppMediaType);
+
+            [VtblIndex(21)]
+            HRESULT FlushInputStream([NativeTypeName("DWORD")] uint dwStreamIndex, [NativeTypeName("DWORD")] uint dwFlags);
+
+            [VtblIndex(22)]
+            HRESULT FlushOutputStream([NativeTypeName("DWORD")] uint dwStreamIndex, [NativeTypeName("DWORD")] uint dwFlags);
         }
 
         public partial struct Vtbl

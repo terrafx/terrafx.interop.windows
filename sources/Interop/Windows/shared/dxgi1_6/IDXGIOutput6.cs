@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("068346E8-AAEC-4B84-ADD7-137F513F77A1")]
     [NativeTypeName("struct IDXGIOutput6 : IDXGIOutput5")]
     [NativeInheritance("IDXGIOutput5")]
-    public unsafe partial struct IDXGIOutput6
+    public unsafe partial struct IDXGIOutput6 : IDXGIOutput6.Interface
     {
         public void** lpVtbl;
 
@@ -219,6 +219,15 @@ namespace TerraFX.Interop
         public HRESULT CheckHardwareCompositionSupport(uint* pFlags)
         {
             return ((delegate* unmanaged<IDXGIOutput6*, uint*, int>)(lpVtbl[28]))((IDXGIOutput6*)Unsafe.AsPointer(ref this), pFlags);
+        }
+
+        public interface Interface : IDXGIOutput5.Interface
+        {
+            [VtblIndex(27)]
+            HRESULT GetDesc1(DXGI_OUTPUT_DESC1* pDesc);
+
+            [VtblIndex(28)]
+            HRESULT CheckHardwareCompositionSupport(uint* pFlags);
         }
 
         public partial struct Vtbl

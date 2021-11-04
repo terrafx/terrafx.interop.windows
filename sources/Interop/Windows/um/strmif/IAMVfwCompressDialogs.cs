@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("D8D715A3-6E5E-11D0-B3F0-00AA003761C5")]
     [NativeTypeName("struct IAMVfwCompressDialogs : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IAMVfwCompressDialogs
+    public unsafe partial struct IAMVfwCompressDialogs : IAMVfwCompressDialogs.Interface
     {
         public void** lpVtbl;
 
@@ -65,6 +65,21 @@ namespace TerraFX.Interop
         public HRESULT SendDriverMessage(int uMsg, [NativeTypeName("long")] int dw1, [NativeTypeName("long")] int dw2)
         {
             return ((delegate* unmanaged<IAMVfwCompressDialogs*, int, int, int, int>)(lpVtbl[6]))((IAMVfwCompressDialogs*)Unsafe.AsPointer(ref this), uMsg, dw1, dw2);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT ShowDialog(int iDialog, HWND hwnd);
+
+            [VtblIndex(4)]
+            HRESULT GetState([NativeTypeName("LPVOID")] void* pState, int* pcbState);
+
+            [VtblIndex(5)]
+            HRESULT SetState([NativeTypeName("LPVOID")] void* pState, int cbState);
+
+            [VtblIndex(6)]
+            HRESULT SendDriverMessage(int uMsg, [NativeTypeName("long")] int dw1, [NativeTypeName("long")] int dw2);
         }
 
         public partial struct Vtbl

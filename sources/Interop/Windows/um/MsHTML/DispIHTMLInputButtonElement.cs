@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("3050F51E-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct DispIHTMLInputButtonElement : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct DispIHTMLInputButtonElement
+    public unsafe partial struct DispIHTMLInputButtonElement : DispIHTMLInputButtonElement.Interface
     {
         public void** lpVtbl;
 
@@ -65,6 +65,10 @@ namespace TerraFX.Interop
         public HRESULT Invoke([NativeTypeName("DISPID")] int dispIdMember, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("WORD")] ushort wFlags, DISPPARAMS* pDispParams, VARIANT* pVarResult, EXCEPINFO* pExcepInfo, uint* puArgErr)
         {
             return ((delegate* unmanaged<DispIHTMLInputButtonElement*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int>)(lpVtbl[6]))((DispIHTMLInputButtonElement*)Unsafe.AsPointer(ref this), dispIdMember, riid, lcid, wFlags, pDispParams, pVarResult, pExcepInfo, puArgErr);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
         }
 
         public partial struct Vtbl

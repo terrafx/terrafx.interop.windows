@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("568804CD-CBD7-11D0-9816-00C04FD91972")]
     [NativeTypeName("struct IMenuBand : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IMenuBand
+    public unsafe partial struct IMenuBand : IMenuBand.Interface
     {
         public void** lpVtbl;
 
@@ -51,6 +51,15 @@ namespace TerraFX.Interop
         public HRESULT TranslateMenuMessage(MSG* pmsg, LRESULT* plRet)
         {
             return ((delegate* unmanaged<IMenuBand*, MSG*, LRESULT*, int>)(lpVtbl[4]))((IMenuBand*)Unsafe.AsPointer(ref this), pmsg, plRet);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT IsMenuMessage(MSG* pmsg);
+
+            [VtblIndex(4)]
+            HRESULT TranslateMenuMessage(MSG* pmsg, LRESULT* plRet);
         }
 
         public partial struct Vtbl

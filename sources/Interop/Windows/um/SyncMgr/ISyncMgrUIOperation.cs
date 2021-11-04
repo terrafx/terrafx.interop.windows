@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("FC7CFA47-DFE1-45B5-A049-8CFD82BEC271")]
     [NativeTypeName("struct ISyncMgrUIOperation : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct ISyncMgrUIOperation
+    public unsafe partial struct ISyncMgrUIOperation : ISyncMgrUIOperation.Interface
     {
         public void** lpVtbl;
 
@@ -44,6 +44,12 @@ namespace TerraFX.Interop
         public HRESULT Run(HWND hwndOwner)
         {
             return ((delegate* unmanaged<ISyncMgrUIOperation*, HWND, int>)(lpVtbl[3]))((ISyncMgrUIOperation*)Unsafe.AsPointer(ref this), hwndOwner);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT Run(HWND hwndOwner);
         }
 
         public partial struct Vtbl

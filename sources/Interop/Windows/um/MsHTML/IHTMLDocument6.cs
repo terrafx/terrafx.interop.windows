@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("30510417-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct IHTMLDocument6 : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct IHTMLDocument6
+    public unsafe partial struct IHTMLDocument6 : IHTMLDocument6.Interface
     {
         public void** lpVtbl;
 
@@ -121,6 +121,33 @@ namespace TerraFX.Interop
         public HRESULT updateSettings()
         {
             return ((delegate* unmanaged<IHTMLDocument6*, int>)(lpVtbl[14]))((IHTMLDocument6*)Unsafe.AsPointer(ref this));
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT get_compatible(IHTMLDocumentCompatibleInfoCollection** p);
+
+            [VtblIndex(8)]
+            HRESULT get_documentMode(VARIANT* p);
+
+            [VtblIndex(9)]
+            HRESULT put_onstorage(VARIANT v);
+
+            [VtblIndex(10)]
+            HRESULT get_onstorage(VARIANT* p);
+
+            [VtblIndex(11)]
+            HRESULT put_onstoragecommit(VARIANT v);
+
+            [VtblIndex(12)]
+            HRESULT get_onstoragecommit(VARIANT* p);
+
+            [VtblIndex(13)]
+            HRESULT getElementById([NativeTypeName("BSTR")] ushort* bstrId, IHTMLElement2** ppRetElement);
+
+            [VtblIndex(14)]
+            HRESULT updateSettings();
         }
 
         public partial struct Vtbl

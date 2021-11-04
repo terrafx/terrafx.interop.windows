@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("F25362EA-2C0E-447F-81E2-755914CDC0C3")]
     [NativeTypeName("struct IMFRelativePanelReport : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IMFRelativePanelReport
+    public unsafe partial struct IMFRelativePanelReport : IMFRelativePanelReport.Interface
     {
         public void** lpVtbl;
 
@@ -44,6 +44,12 @@ namespace TerraFX.Interop
         public HRESULT GetRelativePanel([NativeTypeName("ULONG *")] uint* panel)
         {
             return ((delegate* unmanaged<IMFRelativePanelReport*, uint*, int>)(lpVtbl[3]))((IMFRelativePanelReport*)Unsafe.AsPointer(ref this), panel);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetRelativePanel([NativeTypeName("ULONG *")] uint* panel);
         }
 
         public partial struct Vtbl

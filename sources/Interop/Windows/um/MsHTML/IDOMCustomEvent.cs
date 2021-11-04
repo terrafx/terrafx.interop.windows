@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("305106DE-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct IDOMCustomEvent : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct IDOMCustomEvent
+    public unsafe partial struct IDOMCustomEvent : IDOMCustomEvent.Interface
     {
         public void** lpVtbl;
 
@@ -79,6 +79,15 @@ namespace TerraFX.Interop
         public HRESULT initCustomEvent([NativeTypeName("BSTR")] ushort* eventType, [NativeTypeName("VARIANT_BOOL")] short canBubble, [NativeTypeName("VARIANT_BOOL")] short cancelable, VARIANT* detail)
         {
             return ((delegate* unmanaged<IDOMCustomEvent*, ushort*, short, short, VARIANT*, int>)(lpVtbl[8]))((IDOMCustomEvent*)Unsafe.AsPointer(ref this), eventType, canBubble, cancelable, detail);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT get_detail(VARIANT* p);
+
+            [VtblIndex(8)]
+            HRESULT initCustomEvent([NativeTypeName("BSTR")] ushort* eventType, [NativeTypeName("VARIANT_BOOL")] short canBubble, [NativeTypeName("VARIANT_BOOL")] short cancelable, VARIANT* detail);
         }
 
         public partial struct Vtbl

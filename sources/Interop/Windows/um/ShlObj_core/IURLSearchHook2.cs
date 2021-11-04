@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("5EE44DA4-6D32-46E3-86BC-07540DEDD0E0")]
     [NativeTypeName("struct IURLSearchHook2 : IURLSearchHook")]
     [NativeInheritance("IURLSearchHook")]
-    public unsafe partial struct IURLSearchHook2
+    public unsafe partial struct IURLSearchHook2 : IURLSearchHook2.Interface
     {
         public void** lpVtbl;
 
@@ -51,6 +51,12 @@ namespace TerraFX.Interop
         public HRESULT TranslateWithSearchContext([NativeTypeName("PWSTR")] ushort* pwszSearchURL, [NativeTypeName("DWORD")] uint cchBufferSize, ISearchContext* pSearchContext)
         {
             return ((delegate* unmanaged<IURLSearchHook2*, ushort*, uint, ISearchContext*, int>)(lpVtbl[4]))((IURLSearchHook2*)Unsafe.AsPointer(ref this), pwszSearchURL, cchBufferSize, pSearchContext);
+        }
+
+        public interface Interface : IURLSearchHook.Interface
+        {
+            [VtblIndex(4)]
+            HRESULT TranslateWithSearchContext([NativeTypeName("PWSTR")] ushort* pwszSearchURL, [NativeTypeName("DWORD")] uint cchBufferSize, ISearchContext* pSearchContext);
         }
 
         public partial struct Vtbl

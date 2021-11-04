@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("D25C30F9-4087-4366-9E24-E55BE286424B")]
     [NativeTypeName("struct DFileSystemImageImportEvents : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct DFileSystemImageImportEvents
+    public unsafe partial struct DFileSystemImageImportEvents : DFileSystemImageImportEvents.Interface
     {
         public void** lpVtbl;
 
@@ -72,6 +72,12 @@ namespace TerraFX.Interop
         public HRESULT UpdateImport(IDispatch* @object, FsiFileSystems fileSystem, [NativeTypeName("BSTR")] ushort* currentItem, [NativeTypeName("LONG")] int importedDirectoryItems, [NativeTypeName("LONG")] int totalDirectoryItems, [NativeTypeName("LONG")] int importedFileItems, [NativeTypeName("LONG")] int totalFileItems)
         {
             return ((delegate* unmanaged<DFileSystemImageImportEvents*, IDispatch*, FsiFileSystems, ushort*, int, int, int, int, int>)(lpVtbl[7]))((DFileSystemImageImportEvents*)Unsafe.AsPointer(ref this), @object, fileSystem, currentItem, importedDirectoryItems, totalDirectoryItems, importedFileItems, totalFileItems);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT UpdateImport(IDispatch* @object, FsiFileSystems fileSystem, [NativeTypeName("BSTR")] ushort* currentItem, [NativeTypeName("LONG")] int importedDirectoryItems, [NativeTypeName("LONG")] int totalDirectoryItems, [NativeTypeName("LONG")] int importedFileItems, [NativeTypeName("LONG")] int totalFileItems);
         }
 
         public partial struct Vtbl

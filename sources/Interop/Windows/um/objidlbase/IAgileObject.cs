@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("94EA2B94-E9CC-49E0-C0FF-EE64CA8F5B90")]
     [NativeTypeName("struct IAgileObject : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IAgileObject
+    public unsafe partial struct IAgileObject : IAgileObject.Interface
     {
         public void** lpVtbl;
 
@@ -37,6 +37,10 @@ namespace TerraFX.Interop
         public uint Release()
         {
             return ((delegate* unmanaged<IAgileObject*, uint>)(lpVtbl[2]))((IAgileObject*)Unsafe.AsPointer(ref this));
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
         }
 
         public partial struct Vtbl

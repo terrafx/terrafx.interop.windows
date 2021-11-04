@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("C6E13350-30AC-11D0-A18C-00A0C9118956")]
     [NativeTypeName("struct IAMAnalogVideoDecoder : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IAMAnalogVideoDecoder
+    public unsafe partial struct IAMAnalogVideoDecoder : IAMAnalogVideoDecoder.Interface
     {
         public void** lpVtbl;
 
@@ -100,6 +100,36 @@ namespace TerraFX.Interop
         public HRESULT get_OutputEnable([NativeTypeName("long *")] int* plOutputEnable)
         {
             return ((delegate* unmanaged<IAMAnalogVideoDecoder*, int*, int>)(lpVtbl[11]))((IAMAnalogVideoDecoder*)Unsafe.AsPointer(ref this), plOutputEnable);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT get_AvailableTVFormats([NativeTypeName("long *")] int* lAnalogVideoStandard);
+
+            [VtblIndex(4)]
+            HRESULT put_TVFormat([NativeTypeName("long")] int lAnalogVideoStandard);
+
+            [VtblIndex(5)]
+            HRESULT get_TVFormat([NativeTypeName("long *")] int* plAnalogVideoStandard);
+
+            [VtblIndex(6)]
+            HRESULT get_HorizontalLocked([NativeTypeName("long *")] int* plLocked);
+
+            [VtblIndex(7)]
+            HRESULT put_VCRHorizontalLocking([NativeTypeName("long")] int lVCRHorizontalLocking);
+
+            [VtblIndex(8)]
+            HRESULT get_VCRHorizontalLocking([NativeTypeName("long *")] int* plVCRHorizontalLocking);
+
+            [VtblIndex(9)]
+            HRESULT get_NumberOfLines([NativeTypeName("long *")] int* plNumberOfLines);
+
+            [VtblIndex(10)]
+            HRESULT put_OutputEnable([NativeTypeName("long")] int lOutputEnable);
+
+            [VtblIndex(11)]
+            HRESULT get_OutputEnable([NativeTypeName("long *")] int* plOutputEnable);
         }
 
         public partial struct Vtbl

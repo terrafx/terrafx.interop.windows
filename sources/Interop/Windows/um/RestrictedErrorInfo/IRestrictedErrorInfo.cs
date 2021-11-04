@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("82BA7092-4C88-427D-A7BC-16DD93FEB67E")]
     [NativeTypeName("struct IRestrictedErrorInfo : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IRestrictedErrorInfo
+    public unsafe partial struct IRestrictedErrorInfo : IRestrictedErrorInfo.Interface
     {
         public void** lpVtbl;
 
@@ -51,6 +51,15 @@ namespace TerraFX.Interop
         public HRESULT GetReference([NativeTypeName("BSTR *")] ushort** reference)
         {
             return ((delegate* unmanaged<IRestrictedErrorInfo*, ushort**, int>)(lpVtbl[4]))((IRestrictedErrorInfo*)Unsafe.AsPointer(ref this), reference);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetErrorDetails([NativeTypeName("BSTR *")] ushort** description, HRESULT* error, [NativeTypeName("BSTR *")] ushort** restrictedDescription, [NativeTypeName("BSTR *")] ushort** capabilitySid);
+
+            [VtblIndex(4)]
+            HRESULT GetReference([NativeTypeName("BSTR *")] ushort** reference);
         }
 
         public partial struct Vtbl

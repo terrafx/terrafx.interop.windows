@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("0E6D4D92-6738-11CF-9608-00AA00680DB4")]
     [NativeTypeName("struct IDirectWriterLock : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IDirectWriterLock
+    public unsafe partial struct IDirectWriterLock : IDirectWriterLock.Interface
     {
         public void** lpVtbl;
 
@@ -58,6 +58,18 @@ namespace TerraFX.Interop
         public HRESULT HaveWriteAccess()
         {
             return ((delegate* unmanaged<IDirectWriterLock*, int>)(lpVtbl[5]))((IDirectWriterLock*)Unsafe.AsPointer(ref this));
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT WaitForWriteAccess([NativeTypeName("DWORD")] uint dwTimeout);
+
+            [VtblIndex(4)]
+            HRESULT ReleaseWriteAccess();
+
+            [VtblIndex(5)]
+            HRESULT HaveWriteAccess();
         }
 
         public partial struct Vtbl

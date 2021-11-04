@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("40A3D052-8BFF-4C4B-A338-D4A395700DE9")]
     [NativeTypeName("struct ISyncMgrResolutionHandler : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct ISyncMgrResolutionHandler
+    public unsafe partial struct ISyncMgrResolutionHandler : ISyncMgrResolutionHandler.Interface
     {
         public void** lpVtbl;
 
@@ -72,6 +72,24 @@ namespace TerraFX.Interop
         public HRESULT KeepItems(ISyncMgrConflictResolutionItems* pArray, SYNCMGR_RESOLUTION_FEEDBACK* pFeedback)
         {
             return ((delegate* unmanaged<ISyncMgrResolutionHandler*, ISyncMgrConflictResolutionItems*, SYNCMGR_RESOLUTION_FEEDBACK*, int>)(lpVtbl[7]))((ISyncMgrResolutionHandler*)Unsafe.AsPointer(ref this), pArray, pFeedback);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT QueryAbilities([NativeTypeName("SYNCMGR_RESOLUTION_ABILITIES_FLAGS *")] uint* pdwAbilities);
+
+            [VtblIndex(4)]
+            HRESULT KeepOther(IShellItem* psiOther, SYNCMGR_RESOLUTION_FEEDBACK* pFeedback);
+
+            [VtblIndex(5)]
+            HRESULT KeepRecent(SYNCMGR_RESOLUTION_FEEDBACK* pFeedback);
+
+            [VtblIndex(6)]
+            HRESULT RemoveFromSyncSet(SYNCMGR_RESOLUTION_FEEDBACK* pFeedback);
+
+            [VtblIndex(7)]
+            HRESULT KeepItems(ISyncMgrConflictResolutionItems* pArray, SYNCMGR_RESOLUTION_FEEDBACK* pFeedback);
         }
 
         public partial struct Vtbl

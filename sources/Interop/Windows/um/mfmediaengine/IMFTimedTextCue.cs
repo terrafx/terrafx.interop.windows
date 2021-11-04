@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("1E560447-9A2B-43E1-A94C-B0AAABFBFBC9")]
     [NativeTypeName("struct IMFTimedTextCue : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IMFTimedTextCue
+    public unsafe partial struct IMFTimedTextCue : IMFTimedTextCue.Interface
     {
         public void** lpVtbl;
 
@@ -117,6 +117,45 @@ namespace TerraFX.Interop
         public HRESULT GetLine([NativeTypeName("DWORD")] uint index, IMFTimedTextFormattedText** line)
         {
             return ((delegate* unmanaged<IMFTimedTextCue*, uint, IMFTimedTextFormattedText**, int>)(lpVtbl[13]))((IMFTimedTextCue*)Unsafe.AsPointer(ref this), index, line);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            [return: NativeTypeName("DWORD")]
+            uint GetId();
+
+            [VtblIndex(4)]
+            HRESULT GetOriginalId([NativeTypeName("LPWSTR *")] ushort** originalId);
+
+            [VtblIndex(5)]
+            MF_TIMED_TEXT_TRACK_KIND GetCueKind();
+
+            [VtblIndex(6)]
+            double GetStartTime();
+
+            [VtblIndex(7)]
+            double GetDuration();
+
+            [VtblIndex(8)]
+            [return: NativeTypeName("DWORD")]
+            uint GetTrackId();
+
+            [VtblIndex(9)]
+            HRESULT GetData(IMFTimedTextBinary** data);
+
+            [VtblIndex(10)]
+            HRESULT GetRegion(IMFTimedTextRegion** region);
+
+            [VtblIndex(11)]
+            HRESULT GetStyle(IMFTimedTextStyle** style);
+
+            [VtblIndex(12)]
+            [return: NativeTypeName("DWORD")]
+            uint GetLineCount();
+
+            [VtblIndex(13)]
+            HRESULT GetLine([NativeTypeName("DWORD")] uint index, IMFTimedTextFormattedText** line);
         }
 
         public partial struct Vtbl

@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("3050F4B7-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct IHTMLGenericElement : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct IHTMLGenericElement
+    public unsafe partial struct IHTMLGenericElement : IHTMLGenericElement.Interface
     {
         public void** lpVtbl;
 
@@ -79,6 +79,15 @@ namespace TerraFX.Interop
         public HRESULT namedRecordset([NativeTypeName("BSTR")] ushort* dataMember, VARIANT* hierarchy, IDispatch** ppRecordset)
         {
             return ((delegate* unmanaged<IHTMLGenericElement*, ushort*, VARIANT*, IDispatch**, int>)(lpVtbl[8]))((IHTMLGenericElement*)Unsafe.AsPointer(ref this), dataMember, hierarchy, ppRecordset);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT get_recordset(IDispatch** p);
+
+            [VtblIndex(8)]
+            HRESULT namedRecordset([NativeTypeName("BSTR")] ushort* dataMember, VARIANT* hierarchy, IDispatch** ppRecordset);
         }
 
         public partial struct Vtbl

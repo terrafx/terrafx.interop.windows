@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("3050F4FD-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct IHTCDefaultDispatch : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct IHTCDefaultDispatch
+    public unsafe partial struct IHTCDefaultDispatch : IHTCDefaultDispatch.Interface
     {
         public void** lpVtbl;
 
@@ -93,6 +93,21 @@ namespace TerraFX.Interop
         public HRESULT get_document(IDispatch** p)
         {
             return ((delegate* unmanaged<IHTCDefaultDispatch*, IDispatch**, int>)(lpVtbl[10]))((IHTCDefaultDispatch*)Unsafe.AsPointer(ref this), p);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT get_element(IHTMLElement** p);
+
+            [VtblIndex(8)]
+            HRESULT createEventObject(IHTMLEventObj** eventObj);
+
+            [VtblIndex(9)]
+            HRESULT get_defaults(IDispatch** p);
+
+            [VtblIndex(10)]
+            HRESULT get_document(IDispatch** p);
         }
 
         public partial struct Vtbl

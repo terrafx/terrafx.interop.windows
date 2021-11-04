@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("380F5CAD-1B5E-42F2-805D-637FD392D31E")]
     [NativeTypeName("struct IPropertyChangeArray : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IPropertyChangeArray
+    public unsafe partial struct IPropertyChangeArray : IPropertyChangeArray.Interface
     {
         public void** lpVtbl;
 
@@ -86,6 +86,30 @@ namespace TerraFX.Interop
         public HRESULT IsKeyInArray([NativeTypeName("const PROPERTYKEY &")] PROPERTYKEY* key)
         {
             return ((delegate* unmanaged<IPropertyChangeArray*, PROPERTYKEY*, int>)(lpVtbl[9]))((IPropertyChangeArray*)Unsafe.AsPointer(ref this), key);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetCount(uint* pcOperations);
+
+            [VtblIndex(4)]
+            HRESULT GetAt(uint iIndex, [NativeTypeName("const IID &")] Guid* riid, void** ppv);
+
+            [VtblIndex(5)]
+            HRESULT InsertAt(uint iIndex, IPropertyChange* ppropChange);
+
+            [VtblIndex(6)]
+            HRESULT Append(IPropertyChange* ppropChange);
+
+            [VtblIndex(7)]
+            HRESULT AppendOrReplace(IPropertyChange* ppropChange);
+
+            [VtblIndex(8)]
+            HRESULT RemoveAt(uint iIndex);
+
+            [VtblIndex(9)]
+            HRESULT IsKeyInArray([NativeTypeName("const PROPERTYKEY &")] PROPERTYKEY* key);
         }
 
         public partial struct Vtbl

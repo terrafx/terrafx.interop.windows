@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("00000146-0000-0000-C000-000000000046")]
     [NativeTypeName("struct IGlobalInterfaceTable : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IGlobalInterfaceTable
+    public unsafe partial struct IGlobalInterfaceTable : IGlobalInterfaceTable.Interface
     {
         public void** lpVtbl;
 
@@ -58,6 +58,18 @@ namespace TerraFX.Interop
         public HRESULT GetInterfaceFromGlobal([NativeTypeName("DWORD")] uint dwCookie, [NativeTypeName("const IID &")] Guid* riid, void** ppv)
         {
             return ((delegate* unmanaged<IGlobalInterfaceTable*, uint, Guid*, void**, int>)(lpVtbl[5]))((IGlobalInterfaceTable*)Unsafe.AsPointer(ref this), dwCookie, riid, ppv);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT RegisterInterfaceInGlobal(IUnknown* pUnk, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("DWORD *")] uint* pdwCookie);
+
+            [VtblIndex(4)]
+            HRESULT RevokeInterfaceFromGlobal([NativeTypeName("DWORD")] uint dwCookie);
+
+            [VtblIndex(5)]
+            HRESULT GetInterfaceFromGlobal([NativeTypeName("DWORD")] uint dwCookie, [NativeTypeName("const IID &")] Guid* riid, void** ppv);
         }
 
         public partial struct Vtbl

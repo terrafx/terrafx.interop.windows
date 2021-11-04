@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("ACF92459-6A61-42BD-B57C-B43E51203CB0")]
     [NativeTypeName("struct IMFContentProtectionManager : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IMFContentProtectionManager
+    public unsafe partial struct IMFContentProtectionManager : IMFContentProtectionManager.Interface
     {
         public void** lpVtbl;
 
@@ -51,6 +51,15 @@ namespace TerraFX.Interop
         public HRESULT EndEnableContent(IMFAsyncResult* pResult)
         {
             return ((delegate* unmanaged<IMFContentProtectionManager*, IMFAsyncResult*, int>)(lpVtbl[4]))((IMFContentProtectionManager*)Unsafe.AsPointer(ref this), pResult);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT BeginEnableContent(IMFActivate* pEnablerActivate, IMFTopology* pTopo, IMFAsyncCallback* pCallback, IUnknown* punkState);
+
+            [VtblIndex(4)]
+            HRESULT EndEnableContent(IMFAsyncResult* pResult);
         }
 
         public partial struct Vtbl

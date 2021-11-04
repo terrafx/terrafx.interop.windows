@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("7071E1F0-E84B-4B33-974F-12FA49DE65C5")]
     [NativeTypeName("struct ID3D12Tools : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct ID3D12Tools
+    public unsafe partial struct ID3D12Tools : ID3D12Tools.Interface
     {
         public void** lpVtbl;
 
@@ -51,6 +51,15 @@ namespace TerraFX.Interop
         public BOOL ShaderInstrumentationEnabled()
         {
             return ((delegate* unmanaged<ID3D12Tools*, int>)(lpVtbl[4]))((ID3D12Tools*)Unsafe.AsPointer(ref this));
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            void EnableShaderInstrumentation(BOOL bEnable);
+
+            [VtblIndex(4)]
+            BOOL ShaderInstrumentationEnabled();
         }
 
         public partial struct Vtbl

@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("A08CE4D0-FA25-44AB-B57C-C7B1C323E0B9")]
     [NativeTypeName("struct IExplorerCommand : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IExplorerCommand
+    public unsafe partial struct IExplorerCommand : IExplorerCommand.Interface
     {
         public void** lpVtbl;
 
@@ -93,6 +93,33 @@ namespace TerraFX.Interop
         public HRESULT EnumSubCommands(IEnumExplorerCommand** ppEnum)
         {
             return ((delegate* unmanaged<IExplorerCommand*, IEnumExplorerCommand**, int>)(lpVtbl[10]))((IExplorerCommand*)Unsafe.AsPointer(ref this), ppEnum);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetTitle(IShellItemArray* psiItemArray, [NativeTypeName("LPWSTR *")] ushort** ppszName);
+
+            [VtblIndex(4)]
+            HRESULT GetIcon(IShellItemArray* psiItemArray, [NativeTypeName("LPWSTR *")] ushort** ppszIcon);
+
+            [VtblIndex(5)]
+            HRESULT GetToolTip(IShellItemArray* psiItemArray, [NativeTypeName("LPWSTR *")] ushort** ppszInfotip);
+
+            [VtblIndex(6)]
+            HRESULT GetCanonicalName(Guid* pguidCommandName);
+
+            [VtblIndex(7)]
+            HRESULT GetState(IShellItemArray* psiItemArray, BOOL fOkToBeSlow, [NativeTypeName("EXPCMDSTATE *")] uint* pCmdState);
+
+            [VtblIndex(8)]
+            HRESULT Invoke(IShellItemArray* psiItemArray, IBindCtx* pbc);
+
+            [VtblIndex(9)]
+            HRESULT GetFlags([NativeTypeName("EXPCMDFLAGS *")] uint* pFlags);
+
+            [VtblIndex(10)]
+            HRESULT EnumSubCommands(IEnumExplorerCommand** ppEnum);
         }
 
         public partial struct Vtbl

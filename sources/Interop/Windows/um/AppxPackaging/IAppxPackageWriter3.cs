@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("A83AACD3-41C0-4501-B8A3-74164F50B2FD")]
     [NativeTypeName("struct IAppxPackageWriter3 : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IAppxPackageWriter3
+    public unsafe partial struct IAppxPackageWriter3 : IAppxPackageWriter3.Interface
     {
         public void** lpVtbl;
 
@@ -44,6 +44,12 @@ namespace TerraFX.Interop
         public HRESULT AddPayloadFiles([NativeTypeName("UINT32")] uint fileCount, APPX_PACKAGE_WRITER_PAYLOAD_STREAM* payloadFiles, [NativeTypeName("UINT64")] ulong memoryLimit)
         {
             return ((delegate* unmanaged<IAppxPackageWriter3*, uint, APPX_PACKAGE_WRITER_PAYLOAD_STREAM*, ulong, int>)(lpVtbl[3]))((IAppxPackageWriter3*)Unsafe.AsPointer(ref this), fileCount, payloadFiles, memoryLimit);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT AddPayloadFiles([NativeTypeName("UINT32")] uint fileCount, APPX_PACKAGE_WRITER_PAYLOAD_STREAM* payloadFiles, [NativeTypeName("UINT64")] ulong memoryLimit);
         }
 
         public partial struct Vtbl

@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("EFD84B2D-4BCF-4298-BE25-EB542A59FBDA")]
     [NativeTypeName("struct IShellDispatch4 : IShellDispatch3")]
     [NativeInheritance("IShellDispatch3")]
-    public unsafe partial struct IShellDispatch4
+    public unsafe partial struct IShellDispatch4 : IShellDispatch4.Interface
     {
         public void** lpVtbl;
 
@@ -324,6 +324,21 @@ namespace TerraFX.Interop
         public HRESULT GetSetting([NativeTypeName("long")] int lSetting, [NativeTypeName("VARIANT_BOOL *")] short* pResult)
         {
             return ((delegate* unmanaged<IShellDispatch4*, int, short*, int>)(lpVtbl[43]))((IShellDispatch4*)Unsafe.AsPointer(ref this), lSetting, pResult);
+        }
+
+        public interface Interface : IShellDispatch3.Interface
+        {
+            [VtblIndex(40)]
+            HRESULT WindowsSecurity();
+
+            [VtblIndex(41)]
+            HRESULT ToggleDesktop();
+
+            [VtblIndex(42)]
+            HRESULT ExplorerPolicy([NativeTypeName("BSTR")] ushort* bstrPolicyName, VARIANT* pValue);
+
+            [VtblIndex(43)]
+            HRESULT GetSetting([NativeTypeName("long")] int lSetting, [NativeTypeName("VARIANT_BOOL *")] short* pResult);
         }
 
         public partial struct Vtbl

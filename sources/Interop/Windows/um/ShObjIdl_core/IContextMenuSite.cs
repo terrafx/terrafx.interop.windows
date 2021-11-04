@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("0811AEBE-0B87-4C54-9E72-548CF649016B")]
     [NativeTypeName("struct IContextMenuSite : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IContextMenuSite
+    public unsafe partial struct IContextMenuSite : IContextMenuSite.Interface
     {
         public void** lpVtbl;
 
@@ -44,6 +44,12 @@ namespace TerraFX.Interop
         public HRESULT DoContextMenuPopup(IUnknown* punkContextMenu, uint fFlags, POINT pt)
         {
             return ((delegate* unmanaged<IContextMenuSite*, IUnknown*, uint, POINT, int>)(lpVtbl[3]))((IContextMenuSite*)Unsafe.AsPointer(ref this), punkContextMenu, fFlags, pt);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT DoContextMenuPopup(IUnknown* punkContextMenu, uint fFlags, POINT pt);
         }
 
         public partial struct Vtbl

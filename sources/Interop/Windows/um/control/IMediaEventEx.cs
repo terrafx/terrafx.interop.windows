@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("56A868C0-0AD4-11CE-B03A-0020AF0BA770")]
     [NativeTypeName("struct IMediaEventEx : IMediaEvent")]
     [NativeInheritance("IMediaEvent")]
-    public unsafe partial struct IMediaEventEx
+    public unsafe partial struct IMediaEventEx : IMediaEventEx.Interface
     {
         public void** lpVtbl;
 
@@ -128,6 +128,18 @@ namespace TerraFX.Interop
         public HRESULT GetNotifyFlags([NativeTypeName("long *")] int* lplNoNotifyFlags)
         {
             return ((delegate* unmanaged<IMediaEventEx*, int*, int>)(lpVtbl[15]))((IMediaEventEx*)Unsafe.AsPointer(ref this), lplNoNotifyFlags);
+        }
+
+        public interface Interface : IMediaEvent.Interface
+        {
+            [VtblIndex(13)]
+            HRESULT SetNotifyWindow(OAHWND hwnd, [NativeTypeName("long")] int lMsg, [NativeTypeName("LONG_PTR")] nint lInstanceData);
+
+            [VtblIndex(14)]
+            HRESULT SetNotifyFlags([NativeTypeName("long")] int lNoNotifyFlags);
+
+            [VtblIndex(15)]
+            HRESULT GetNotifyFlags([NativeTypeName("long *")] int* lplNoNotifyFlags);
         }
 
         public partial struct Vtbl

@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("A22AC519-8300-48A0-BEF4-F1BE8737DBA4")]
     [NativeTypeName("struct IManipulationProcessor : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IManipulationProcessor
+    public unsafe partial struct IManipulationProcessor : IManipulationProcessor.Interface
     {
         public void** lpVtbl;
 
@@ -184,6 +184,72 @@ namespace TerraFX.Interop
         public HRESULT put_MinimumScaleRotateRadius(float minRadius)
         {
             return ((delegate* unmanaged<IManipulationProcessor*, float, int>)(lpVtbl[23]))((IManipulationProcessor*)Unsafe.AsPointer(ref this), minRadius);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT get_SupportedManipulations(MANIPULATION_PROCESSOR_MANIPULATIONS* manipulations);
+
+            [VtblIndex(4)]
+            HRESULT put_SupportedManipulations(MANIPULATION_PROCESSOR_MANIPULATIONS manipulations);
+
+            [VtblIndex(5)]
+            HRESULT get_PivotPointX(float* pivotPointX);
+
+            [VtblIndex(6)]
+            HRESULT put_PivotPointX(float pivotPointX);
+
+            [VtblIndex(7)]
+            HRESULT get_PivotPointY(float* pivotPointY);
+
+            [VtblIndex(8)]
+            HRESULT put_PivotPointY(float pivotPointY);
+
+            [VtblIndex(9)]
+            HRESULT get_PivotRadius(float* pivotRadius);
+
+            [VtblIndex(10)]
+            HRESULT put_PivotRadius(float pivotRadius);
+
+            [VtblIndex(11)]
+            HRESULT CompleteManipulation();
+
+            [VtblIndex(12)]
+            HRESULT ProcessDown([NativeTypeName("MANIPULATOR_ID")] uint manipulatorId, float x, float y);
+
+            [VtblIndex(13)]
+            HRESULT ProcessMove([NativeTypeName("MANIPULATOR_ID")] uint manipulatorId, float x, float y);
+
+            [VtblIndex(14)]
+            HRESULT ProcessUp([NativeTypeName("MANIPULATOR_ID")] uint manipulatorId, float x, float y);
+
+            [VtblIndex(15)]
+            HRESULT ProcessDownWithTime([NativeTypeName("MANIPULATOR_ID")] uint manipulatorId, float x, float y, [NativeTypeName("DWORD")] uint timestamp);
+
+            [VtblIndex(16)]
+            HRESULT ProcessMoveWithTime([NativeTypeName("MANIPULATOR_ID")] uint manipulatorId, float x, float y, [NativeTypeName("DWORD")] uint timestamp);
+
+            [VtblIndex(17)]
+            HRESULT ProcessUpWithTime([NativeTypeName("MANIPULATOR_ID")] uint manipulatorId, float x, float y, [NativeTypeName("DWORD")] uint timestamp);
+
+            [VtblIndex(18)]
+            HRESULT GetVelocityX(float* velocityX);
+
+            [VtblIndex(19)]
+            HRESULT GetVelocityY(float* velocityY);
+
+            [VtblIndex(20)]
+            HRESULT GetExpansionVelocity(float* expansionVelocity);
+
+            [VtblIndex(21)]
+            HRESULT GetAngularVelocity(float* angularVelocity);
+
+            [VtblIndex(22)]
+            HRESULT get_MinimumScaleRotateRadius(float* minRadius);
+
+            [VtblIndex(23)]
+            HRESULT put_MinimumScaleRotateRadius(float minRadius);
         }
 
         public partial struct Vtbl

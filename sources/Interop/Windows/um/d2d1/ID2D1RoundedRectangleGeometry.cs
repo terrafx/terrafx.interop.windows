@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("2CD906A3-12E2-11DC-9FED-001143A055F9")]
     [NativeTypeName("struct ID2D1RoundedRectangleGeometry : ID2D1Geometry")]
     [NativeInheritance("ID2D1Geometry")]
-    public unsafe partial struct ID2D1RoundedRectangleGeometry
+    public unsafe partial struct ID2D1RoundedRectangleGeometry : ID2D1RoundedRectangleGeometry.Interface
     {
         public void** lpVtbl;
 
@@ -202,6 +202,12 @@ namespace TerraFX.Interop
         public void GetRoundedRect(D2D1_ROUNDED_RECT* roundedRect)
         {
             ((delegate* unmanaged<ID2D1RoundedRectangleGeometry*, D2D1_ROUNDED_RECT*, void>)(lpVtbl[17]))((ID2D1RoundedRectangleGeometry*)Unsafe.AsPointer(ref this), roundedRect);
+        }
+
+        public interface Interface : ID2D1Geometry.Interface
+        {
+            [VtblIndex(17)]
+            void GetRoundedRect(D2D1_ROUNDED_RECT* roundedRect);
         }
 
         public partial struct Vtbl

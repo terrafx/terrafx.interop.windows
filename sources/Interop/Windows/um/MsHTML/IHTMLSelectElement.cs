@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("3050F244-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct IHTMLSelectElement : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct IHTMLSelectElement
+    public unsafe partial struct IHTMLSelectElement : IHTMLSelectElement.Interface
     {
         public void** lpVtbl;
 
@@ -233,6 +233,81 @@ namespace TerraFX.Interop
         public HRESULT tags(VARIANT tagName, IDispatch** pdisp)
         {
             return ((delegate* unmanaged<IHTMLSelectElement*, VARIANT, IDispatch**, int>)(lpVtbl[30]))((IHTMLSelectElement*)Unsafe.AsPointer(ref this), tagName, pdisp);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT put_size([NativeTypeName("long")] int v);
+
+            [VtblIndex(8)]
+            HRESULT get_size([NativeTypeName("long *")] int* p);
+
+            [VtblIndex(9)]
+            HRESULT put_multiple([NativeTypeName("VARIANT_BOOL")] short v);
+
+            [VtblIndex(10)]
+            HRESULT get_multiple([NativeTypeName("VARIANT_BOOL *")] short* p);
+
+            [VtblIndex(11)]
+            HRESULT put_name([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(12)]
+            HRESULT get_name([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(13)]
+            HRESULT get_options(IDispatch** p);
+
+            [VtblIndex(14)]
+            HRESULT put_onchange(VARIANT v);
+
+            [VtblIndex(15)]
+            HRESULT get_onchange(VARIANT* p);
+
+            [VtblIndex(16)]
+            HRESULT put_selectedIndex([NativeTypeName("long")] int v);
+
+            [VtblIndex(17)]
+            HRESULT get_selectedIndex([NativeTypeName("long *")] int* p);
+
+            [VtblIndex(18)]
+            HRESULT get_type([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(19)]
+            HRESULT put_value([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(20)]
+            HRESULT get_value([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(21)]
+            HRESULT put_disabled([NativeTypeName("VARIANT_BOOL")] short v);
+
+            [VtblIndex(22)]
+            HRESULT get_disabled([NativeTypeName("VARIANT_BOOL *")] short* p);
+
+            [VtblIndex(23)]
+            HRESULT get_form(IHTMLFormElement** p);
+
+            [VtblIndex(24)]
+            HRESULT add(IHTMLElement* element, VARIANT before);
+
+            [VtblIndex(25)]
+            HRESULT remove([NativeTypeName("long")] int index = -1);
+
+            [VtblIndex(26)]
+            HRESULT put_length([NativeTypeName("long")] int v);
+
+            [VtblIndex(27)]
+            HRESULT get_length([NativeTypeName("long *")] int* p);
+
+            [VtblIndex(28)]
+            HRESULT get__newEnum(IUnknown** p);
+
+            [VtblIndex(29)]
+            HRESULT item(VARIANT name, VARIANT index, IDispatch** pdisp);
+
+            [VtblIndex(30)]
+            HRESULT tags(VARIANT tagName, IDispatch** pdisp);
         }
 
         public partial struct Vtbl

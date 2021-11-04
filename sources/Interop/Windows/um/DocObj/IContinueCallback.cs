@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("B722BCCA-4E68-101B-A2BC-00AA00404770")]
     [NativeTypeName("struct IContinueCallback : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IContinueCallback
+    public unsafe partial struct IContinueCallback : IContinueCallback.Interface
     {
         public void** lpVtbl;
 
@@ -51,6 +51,15 @@ namespace TerraFX.Interop
         public HRESULT FContinuePrinting([NativeTypeName("LONG")] int nCntPrinted, [NativeTypeName("LONG")] int nCurPage, [NativeTypeName("wchar_t *")] ushort* pwszPrintStatus)
         {
             return ((delegate* unmanaged<IContinueCallback*, int, int, ushort*, int>)(lpVtbl[4]))((IContinueCallback*)Unsafe.AsPointer(ref this), nCntPrinted, nCurPage, pwszPrintStatus);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT FContinue();
+
+            [VtblIndex(4)]
+            HRESULT FContinuePrinting([NativeTypeName("LONG")] int nCntPrinted, [NativeTypeName("LONG")] int nCurPage, [NativeTypeName("wchar_t *")] ushort* pwszPrintStatus);
         }
 
         public partial struct Vtbl

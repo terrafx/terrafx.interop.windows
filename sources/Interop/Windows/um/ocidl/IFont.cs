@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("BEF6E002-A874-101A-8BBA-00AA00300CAB")]
     [NativeTypeName("struct IFont : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IFont
+    public unsafe partial struct IFont : IFont.Interface
     {
         public void** lpVtbl;
 
@@ -205,6 +205,81 @@ namespace TerraFX.Interop
         public HRESULT SetHdc(HDC hDC)
         {
             return ((delegate* unmanaged<IFont*, HDC, int>)(lpVtbl[26]))((IFont*)Unsafe.AsPointer(ref this), hDC);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT get_Name([NativeTypeName("BSTR *")] ushort** pName);
+
+            [VtblIndex(4)]
+            HRESULT put_Name([NativeTypeName("BSTR")] ushort* name);
+
+            [VtblIndex(5)]
+            HRESULT get_Size(CY* pSize);
+
+            [VtblIndex(6)]
+            HRESULT put_Size(CY size);
+
+            [VtblIndex(7)]
+            HRESULT get_Bold(BOOL* pBold);
+
+            [VtblIndex(8)]
+            HRESULT put_Bold(BOOL bold);
+
+            [VtblIndex(9)]
+            HRESULT get_Italic(BOOL* pItalic);
+
+            [VtblIndex(10)]
+            HRESULT put_Italic(BOOL italic);
+
+            [VtblIndex(11)]
+            HRESULT get_Underline(BOOL* pUnderline);
+
+            [VtblIndex(12)]
+            HRESULT put_Underline(BOOL underline);
+
+            [VtblIndex(13)]
+            HRESULT get_Strikethrough(BOOL* pStrikethrough);
+
+            [VtblIndex(14)]
+            HRESULT put_Strikethrough(BOOL strikethrough);
+
+            [VtblIndex(15)]
+            HRESULT get_Weight(short* pWeight);
+
+            [VtblIndex(16)]
+            HRESULT put_Weight(short weight);
+
+            [VtblIndex(17)]
+            HRESULT get_Charset(short* pCharset);
+
+            [VtblIndex(18)]
+            HRESULT put_Charset(short charset);
+
+            [VtblIndex(19)]
+            HRESULT get_hFont(HFONT* phFont);
+
+            [VtblIndex(20)]
+            HRESULT Clone(IFont** ppFont);
+
+            [VtblIndex(21)]
+            HRESULT IsEqual(IFont* pFontOther);
+
+            [VtblIndex(22)]
+            HRESULT SetRatio([NativeTypeName("LONG")] int cyLogical, [NativeTypeName("LONG")] int cyHimetric);
+
+            [VtblIndex(23)]
+            HRESULT QueryTextMetrics([NativeTypeName("TEXTMETRICOLE *")] TEXTMETRICW* pTM);
+
+            [VtblIndex(24)]
+            HRESULT AddRefHfont(HFONT hFont);
+
+            [VtblIndex(25)]
+            HRESULT ReleaseHfont(HFONT hFont);
+
+            [VtblIndex(26)]
+            HRESULT SetHdc(HDC hDC);
         }
 
         public partial struct Vtbl

@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("27864A2A-2B9F-4CB8-92D3-0D2722FD1E73")]
     [NativeTypeName("struct ISpeechPhraseAlternate : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct ISpeechPhraseAlternate
+    public unsafe partial struct ISpeechPhraseAlternate : ISpeechPhraseAlternate.Interface
     {
         public void** lpVtbl;
 
@@ -100,6 +100,24 @@ namespace TerraFX.Interop
         public HRESULT Commit()
         {
             return ((delegate* unmanaged<ISpeechPhraseAlternate*, int>)(lpVtbl[11]))((ISpeechPhraseAlternate*)Unsafe.AsPointer(ref this));
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT get_RecoResult(ISpeechRecoResult** RecoResult);
+
+            [VtblIndex(8)]
+            HRESULT get_StartElementInResult([NativeTypeName("long *")] int* StartElement);
+
+            [VtblIndex(9)]
+            HRESULT get_NumberOfElementsInResult([NativeTypeName("long *")] int* NumberOfElements);
+
+            [VtblIndex(10)]
+            HRESULT get_PhraseInfo(ISpeechPhraseInfo** PhraseInfo);
+
+            [VtblIndex(11)]
+            HRESULT Commit();
         }
 
         public partial struct Vtbl

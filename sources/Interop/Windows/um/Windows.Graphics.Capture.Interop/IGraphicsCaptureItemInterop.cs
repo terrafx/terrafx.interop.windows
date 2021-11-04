@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("3628E81B-3CAC-4C60-B7F4-23CE0E0C3356")]
     [NativeTypeName("struct IGraphicsCaptureItemInterop : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IGraphicsCaptureItemInterop
+    public unsafe partial struct IGraphicsCaptureItemInterop : IGraphicsCaptureItemInterop.Interface
     {
         public void** lpVtbl;
 
@@ -51,6 +51,15 @@ namespace TerraFX.Interop
         public HRESULT CreateForMonitor(HMONITOR monitor, [NativeTypeName("const IID &")] Guid* riid, void** result)
         {
             return ((delegate* unmanaged<IGraphicsCaptureItemInterop*, HMONITOR, Guid*, void**, int>)(lpVtbl[4]))((IGraphicsCaptureItemInterop*)Unsafe.AsPointer(ref this), monitor, riid, result);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT CreateForWindow(HWND window, [NativeTypeName("const IID &")] Guid* riid, void** result);
+
+            [VtblIndex(4)]
+            HRESULT CreateForMonitor(HMONITOR monitor, [NativeTypeName("const IID &")] Guid* riid, void** result);
         }
 
         public partial struct Vtbl

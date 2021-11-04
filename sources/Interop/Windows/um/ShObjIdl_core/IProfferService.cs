@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("CB728B20-F786-11CE-92AD-00AA00A74CD0")]
     [NativeTypeName("struct IProfferService : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IProfferService
+    public unsafe partial struct IProfferService : IProfferService.Interface
     {
         public void** lpVtbl;
 
@@ -51,6 +51,15 @@ namespace TerraFX.Interop
         public HRESULT RevokeService([NativeTypeName("DWORD")] uint cookie)
         {
             return ((delegate* unmanaged<IProfferService*, uint, int>)(lpVtbl[4]))((IProfferService*)Unsafe.AsPointer(ref this), cookie);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT ProfferService([NativeTypeName("const GUID &")] Guid* serviceId, IServiceProvider* serviceProvider, [NativeTypeName("DWORD *")] uint* cookie);
+
+            [VtblIndex(4)]
+            HRESULT RevokeService([NativeTypeName("DWORD")] uint cookie);
         }
 
         public partial struct Vtbl

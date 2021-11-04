@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("A3E015B7-A82C-4DCD-A150-569AEEED36AB")]
     [NativeTypeName("struct IInternetBindInfoEx : IInternetBindInfo")]
     [NativeInheritance("IInternetBindInfo")]
-    public unsafe partial struct IInternetBindInfoEx
+    public unsafe partial struct IInternetBindInfoEx : IInternetBindInfoEx.Interface
     {
         public void** lpVtbl;
 
@@ -58,6 +58,12 @@ namespace TerraFX.Interop
         public HRESULT GetBindInfoEx([NativeTypeName("DWORD *")] uint* grfBINDF, BINDINFO* pbindinfo, [NativeTypeName("DWORD *")] uint* grfBINDF2, [NativeTypeName("DWORD *")] uint* pdwReserved)
         {
             return ((delegate* unmanaged<IInternetBindInfoEx*, uint*, BINDINFO*, uint*, uint*, int>)(lpVtbl[5]))((IInternetBindInfoEx*)Unsafe.AsPointer(ref this), grfBINDF, pbindinfo, grfBINDF2, pdwReserved);
+        }
+
+        public interface Interface : IInternetBindInfo.Interface
+        {
+            [VtblIndex(5)]
+            HRESULT GetBindInfoEx([NativeTypeName("DWORD *")] uint* grfBINDF, BINDINFO* pbindinfo, [NativeTypeName("DWORD *")] uint* grfBINDF2, [NativeTypeName("DWORD *")] uint* pdwReserved);
         }
 
         public partial struct Vtbl

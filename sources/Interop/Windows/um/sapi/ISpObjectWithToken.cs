@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("5B559F40-E952-11D2-BB91-00C04F8EE6C0")]
     [NativeTypeName("struct ISpObjectWithToken : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct ISpObjectWithToken
+    public unsafe partial struct ISpObjectWithToken : ISpObjectWithToken.Interface
     {
         public void** lpVtbl;
 
@@ -51,6 +51,15 @@ namespace TerraFX.Interop
         public HRESULT GetObjectToken(ISpObjectToken** ppToken)
         {
             return ((delegate* unmanaged<ISpObjectWithToken*, ISpObjectToken**, int>)(lpVtbl[4]))((ISpObjectWithToken*)Unsafe.AsPointer(ref this), ppToken);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT SetObjectToken(ISpObjectToken* pToken);
+
+            [VtblIndex(4)]
+            HRESULT GetObjectToken(ISpObjectToken** ppToken);
         }
 
         public partial struct Vtbl

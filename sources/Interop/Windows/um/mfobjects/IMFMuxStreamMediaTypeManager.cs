@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("505A2C72-42F7-4690-AEAB-8F513D0FFDB8")]
     [NativeTypeName("struct IMFMuxStreamMediaTypeManager : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IMFMuxStreamMediaTypeManager
+    public unsafe partial struct IMFMuxStreamMediaTypeManager : IMFMuxStreamMediaTypeManager.Interface
     {
         public void** lpVtbl;
 
@@ -79,6 +79,27 @@ namespace TerraFX.Interop
         public HRESULT GetStreamConfiguration([NativeTypeName("DWORD")] uint ulIndex, [NativeTypeName("ULONGLONG *")] ulong* pullStreamMask)
         {
             return ((delegate* unmanaged<IMFMuxStreamMediaTypeManager*, uint, ulong*, int>)(lpVtbl[8]))((IMFMuxStreamMediaTypeManager*)Unsafe.AsPointer(ref this), ulIndex, pullStreamMask);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetStreamCount([NativeTypeName("DWORD *")] uint* pdwMuxStreamCount);
+
+            [VtblIndex(4)]
+            HRESULT GetMediaType([NativeTypeName("DWORD")] uint dwMuxStreamIndex, IMFMediaType** ppMediaType);
+
+            [VtblIndex(5)]
+            HRESULT GetStreamConfigurationCount([NativeTypeName("DWORD *")] uint* pdwCount);
+
+            [VtblIndex(6)]
+            HRESULT AddStreamConfiguration([NativeTypeName("ULONGLONG")] ulong ullStreamMask);
+
+            [VtblIndex(7)]
+            HRESULT RemoveStreamConfiguration([NativeTypeName("ULONGLONG")] ulong ullStreamMask);
+
+            [VtblIndex(8)]
+            HRESULT GetStreamConfiguration([NativeTypeName("DWORD")] uint ulIndex, [NativeTypeName("ULONGLONG *")] ulong* pullStreamMask);
         }
 
         public partial struct Vtbl

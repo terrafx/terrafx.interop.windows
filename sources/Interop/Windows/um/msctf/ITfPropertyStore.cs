@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("6834B120-88CB-11D2-BF45-00105A2799B5")]
     [NativeTypeName("struct ITfPropertyStore : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct ITfPropertyStore
+    public unsafe partial struct ITfPropertyStore : ITfPropertyStore.Interface
     {
         public void** lpVtbl;
 
@@ -100,6 +100,36 @@ namespace TerraFX.Interop
         public HRESULT Serialize(IStream* pStream, [NativeTypeName("ULONG *")] uint* pcb)
         {
             return ((delegate* unmanaged<ITfPropertyStore*, IStream*, uint*, int>)(lpVtbl[11]))((ITfPropertyStore*)Unsafe.AsPointer(ref this), pStream, pcb);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetType(Guid* pguid);
+
+            [VtblIndex(4)]
+            HRESULT GetDataType([NativeTypeName("DWORD *")] uint* pdwReserved);
+
+            [VtblIndex(5)]
+            HRESULT GetData(VARIANT* pvarValue);
+
+            [VtblIndex(6)]
+            HRESULT OnTextUpdated([NativeTypeName("DWORD")] uint dwFlags, ITfRange* pRangeNew, BOOL* pfAccept);
+
+            [VtblIndex(7)]
+            HRESULT Shrink(ITfRange* pRangeNew, BOOL* pfFree);
+
+            [VtblIndex(8)]
+            HRESULT Divide(ITfRange* pRangeThis, ITfRange* pRangeNew, ITfPropertyStore** ppPropStore);
+
+            [VtblIndex(9)]
+            HRESULT Clone(ITfPropertyStore** pPropStore);
+
+            [VtblIndex(10)]
+            HRESULT GetPropertyRangeCreator([NativeTypeName("CLSID *")] Guid* pclsid);
+
+            [VtblIndex(11)]
+            HRESULT Serialize(IStream* pStream, [NativeTypeName("ULONG *")] uint* pcb);
         }
 
         public partial struct Vtbl

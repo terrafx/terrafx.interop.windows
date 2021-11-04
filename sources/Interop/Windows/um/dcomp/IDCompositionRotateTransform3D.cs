@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("D8F5B23F-D429-4A91-B55A-D2F45FD75B18")]
     [NativeTypeName("struct IDCompositionRotateTransform3D : IDCompositionTransform3D")]
     [NativeInheritance("IDCompositionTransform3D")]
-    public unsafe partial struct IDCompositionRotateTransform3D
+    public unsafe partial struct IDCompositionRotateTransform3D : IDCompositionRotateTransform3D.Interface
     {
         public void** lpVtbl;
 
@@ -135,6 +135,51 @@ namespace TerraFX.Interop
         public HRESULT SetCenterZ(float centerZ)
         {
             return ((delegate* unmanaged<IDCompositionRotateTransform3D*, float, int>)(lpVtbl[16]))((IDCompositionRotateTransform3D*)Unsafe.AsPointer(ref this), centerZ);
+        }
+
+        public interface Interface : IDCompositionTransform3D.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT SetAngle(IDCompositionAnimation* animation);
+
+            [VtblIndex(4)]
+            HRESULT SetAngle(float angle);
+
+            [VtblIndex(5)]
+            HRESULT SetAxisX(IDCompositionAnimation* animation);
+
+            [VtblIndex(6)]
+            HRESULT SetAxisX(float axisX);
+
+            [VtblIndex(7)]
+            HRESULT SetAxisY(IDCompositionAnimation* animation);
+
+            [VtblIndex(8)]
+            HRESULT SetAxisY(float axisY);
+
+            [VtblIndex(9)]
+            HRESULT SetAxisZ(IDCompositionAnimation* animation);
+
+            [VtblIndex(10)]
+            HRESULT SetAxisZ(float axisZ);
+
+            [VtblIndex(11)]
+            HRESULT SetCenterX(IDCompositionAnimation* animation);
+
+            [VtblIndex(12)]
+            HRESULT SetCenterX(float centerX);
+
+            [VtblIndex(13)]
+            HRESULT SetCenterY(IDCompositionAnimation* animation);
+
+            [VtblIndex(14)]
+            HRESULT SetCenterY(float centerY);
+
+            [VtblIndex(15)]
+            HRESULT SetCenterZ(IDCompositionAnimation* animation);
+
+            [VtblIndex(16)]
+            HRESULT SetCenterZ(float centerZ);
         }
 
         public partial struct Vtbl

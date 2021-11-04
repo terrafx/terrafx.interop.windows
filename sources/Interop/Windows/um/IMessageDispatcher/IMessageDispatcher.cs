@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("F5F84C8F-CFD0-4CD6-B66B-C5D26FF1689D")]
     [NativeTypeName("struct IMessageDispatcher : IInspectable")]
     [NativeInheritance("IInspectable")]
-    public unsafe partial struct IMessageDispatcher
+    public unsafe partial struct IMessageDispatcher : IMessageDispatcher.Interface
     {
         public void** lpVtbl;
 
@@ -65,6 +65,12 @@ namespace TerraFX.Interop
         public HRESULT PumpMessages()
         {
             return ((delegate* unmanaged<IMessageDispatcher*, int>)(lpVtbl[6]))((IMessageDispatcher*)Unsafe.AsPointer(ref this));
+        }
+
+        public interface Interface : IInspectable.Interface
+        {
+            [VtblIndex(6)]
+            HRESULT PumpMessages();
         }
 
         public partial struct Vtbl

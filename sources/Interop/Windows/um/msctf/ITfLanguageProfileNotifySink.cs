@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("43C9FE15-F494-4C17-9DE2-B8A4AC350AA8")]
     [NativeTypeName("struct ITfLanguageProfileNotifySink : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct ITfLanguageProfileNotifySink
+    public unsafe partial struct ITfLanguageProfileNotifySink : ITfLanguageProfileNotifySink.Interface
     {
         public void** lpVtbl;
 
@@ -51,6 +51,15 @@ namespace TerraFX.Interop
         public HRESULT OnLanguageChanged()
         {
             return ((delegate* unmanaged<ITfLanguageProfileNotifySink*, int>)(lpVtbl[4]))((ITfLanguageProfileNotifySink*)Unsafe.AsPointer(ref this));
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT OnLanguageChange([NativeTypeName("LANGID")] ushort langid, BOOL* pfAccept);
+
+            [VtblIndex(4)]
+            HRESULT OnLanguageChanged();
         }
 
         public partial struct Vtbl

@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("3050F5E4-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct IHTMLModelessInit : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct IHTMLModelessInit
+    public unsafe partial struct IHTMLModelessInit : IHTMLModelessInit.Interface
     {
         public void** lpVtbl;
 
@@ -93,6 +93,21 @@ namespace TerraFX.Interop
         public HRESULT get_document(IUnknown** p)
         {
             return ((delegate* unmanaged<IHTMLModelessInit*, IUnknown**, int>)(lpVtbl[10]))((IHTMLModelessInit*)Unsafe.AsPointer(ref this), p);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT get_parameters(VARIANT* p);
+
+            [VtblIndex(8)]
+            HRESULT get_optionString(VARIANT* p);
+
+            [VtblIndex(9)]
+            HRESULT get_moniker(IUnknown** p);
+
+            [VtblIndex(10)]
+            HRESULT get_document(IUnknown** p);
         }
 
         public partial struct Vtbl

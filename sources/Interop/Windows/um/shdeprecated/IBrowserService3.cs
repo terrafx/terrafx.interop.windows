@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("27D7CE21-762D-48F3-86F3-40E2FD3749C4")]
     [NativeTypeName("struct IBrowserService3 : IBrowserService2")]
     [NativeInheritance("IBrowserService2")]
-    public unsafe partial struct IBrowserService3
+    public unsafe partial struct IBrowserService3 : IBrowserService3.Interface
     {
         public void** lpVtbl;
 
@@ -698,6 +698,15 @@ namespace TerraFX.Interop
         public HRESULT IEParseDisplayNameEx(uint uiCP, [NativeTypeName("LPCWSTR")] ushort* pwszPath, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("LPITEMIDLIST *")] ITEMIDLIST** ppidlOut)
         {
             return ((delegate* unmanaged<IBrowserService3*, uint, ushort*, uint, ITEMIDLIST**, int>)(lpVtbl[96]))((IBrowserService3*)Unsafe.AsPointer(ref this), uiCP, pwszPath, dwFlags, ppidlOut);
+        }
+
+        public interface Interface : IBrowserService2.Interface
+        {
+            [VtblIndex(95)]
+            HRESULT _PositionViewWindow(HWND hwnd, [NativeTypeName("LPRECT")] RECT* prc);
+
+            [VtblIndex(96)]
+            HRESULT IEParseDisplayNameEx(uint uiCP, [NativeTypeName("LPCWSTR")] ushort* pwszPath, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("LPITEMIDLIST *")] ITEMIDLIST** ppidlOut);
         }
 
         public partial struct Vtbl

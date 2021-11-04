@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("305104C8-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct ISVGStringList : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct ISVGStringList
+    public unsafe partial struct ISVGStringList : ISVGStringList.Interface
     {
         public void** lpVtbl;
 
@@ -128,6 +128,36 @@ namespace TerraFX.Interop
         public HRESULT appendItem([NativeTypeName("BSTR")] ushort* newItem, [NativeTypeName("BSTR *")] ushort** ppResult)
         {
             return ((delegate* unmanaged<ISVGStringList*, ushort*, ushort**, int>)(lpVtbl[15]))((ISVGStringList*)Unsafe.AsPointer(ref this), newItem, ppResult);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT put_numberOfItems([NativeTypeName("long")] int v);
+
+            [VtblIndex(8)]
+            HRESULT get_numberOfItems([NativeTypeName("long *")] int* p);
+
+            [VtblIndex(9)]
+            HRESULT clear();
+
+            [VtblIndex(10)]
+            HRESULT initialize([NativeTypeName("BSTR")] ushort* newItem, [NativeTypeName("BSTR *")] ushort** ppResult);
+
+            [VtblIndex(11)]
+            HRESULT getItem([NativeTypeName("long")] int index, [NativeTypeName("BSTR *")] ushort** ppResult);
+
+            [VtblIndex(12)]
+            HRESULT insertItemBefore([NativeTypeName("BSTR")] ushort* newItem, [NativeTypeName("long")] int index, [NativeTypeName("BSTR *")] ushort** ppResult);
+
+            [VtblIndex(13)]
+            HRESULT replaceItem([NativeTypeName("BSTR")] ushort* newItem, [NativeTypeName("long")] int index, [NativeTypeName("BSTR *")] ushort** ppResult);
+
+            [VtblIndex(14)]
+            HRESULT removeItem([NativeTypeName("long")] int index, [NativeTypeName("BSTR *")] ushort** ppResult);
+
+            [VtblIndex(15)]
+            HRESULT appendItem([NativeTypeName("BSTR")] ushort* newItem, [NativeTypeName("BSTR *")] ushort** ppResult);
         }
 
         public partial struct Vtbl

@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("00021500-0000-0000-C000-000000000046")]
     [NativeTypeName("struct IQueryInfo : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IQueryInfo
+    public unsafe partial struct IQueryInfo : IQueryInfo.Interface
     {
         public void** lpVtbl;
 
@@ -51,6 +51,15 @@ namespace TerraFX.Interop
         public HRESULT GetInfoFlags([NativeTypeName("DWORD *")] uint* pdwFlags)
         {
             return ((delegate* unmanaged<IQueryInfo*, uint*, int>)(lpVtbl[4]))((IQueryInfo*)Unsafe.AsPointer(ref this), pdwFlags);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetInfoTip([NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("PWSTR *")] ushort** ppwszTip);
+
+            [VtblIndex(4)]
+            HRESULT GetInfoFlags([NativeTypeName("DWORD *")] uint* pdwFlags);
         }
 
         public partial struct Vtbl

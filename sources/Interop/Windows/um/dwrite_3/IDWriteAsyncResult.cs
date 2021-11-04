@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("CE25F8FD-863B-4D13-9651-C1F88DC73FE2")]
     [NativeTypeName("struct IDWriteAsyncResult : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IDWriteAsyncResult
+    public unsafe partial struct IDWriteAsyncResult : IDWriteAsyncResult.Interface
     {
         public void** lpVtbl;
 
@@ -51,6 +51,15 @@ namespace TerraFX.Interop
         public HRESULT GetResult()
         {
             return ((delegate* unmanaged<IDWriteAsyncResult*, int>)(lpVtbl[4]))((IDWriteAsyncResult*)Unsafe.AsPointer(ref this));
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HANDLE GetWaitHandle();
+
+            [VtblIndex(4)]
+            HRESULT GetResult();
         }
 
         public partial struct Vtbl

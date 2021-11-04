@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("D40E20B6-F8F7-42AD-AB20-4BAF8F15DFAA")]
     [NativeTypeName("struct ID3D10ShaderReflection : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct ID3D10ShaderReflection
+    public unsafe partial struct ID3D10ShaderReflection : ID3D10ShaderReflection.Interface
     {
         public void** lpVtbl;
 
@@ -79,6 +79,27 @@ namespace TerraFX.Interop
         public HRESULT GetOutputParameterDesc(uint ParameterIndex, D3D10_SIGNATURE_PARAMETER_DESC* pDesc)
         {
             return ((delegate* unmanaged<ID3D10ShaderReflection*, uint, D3D10_SIGNATURE_PARAMETER_DESC*, int>)(lpVtbl[8]))((ID3D10ShaderReflection*)Unsafe.AsPointer(ref this), ParameterIndex, pDesc);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetDesc(D3D10_SHADER_DESC* pDesc);
+
+            [VtblIndex(4)]
+            ID3D10ShaderReflectionConstantBuffer* GetConstantBufferByIndex(uint Index);
+
+            [VtblIndex(5)]
+            ID3D10ShaderReflectionConstantBuffer* GetConstantBufferByName([NativeTypeName("LPCSTR")] sbyte* Name);
+
+            [VtblIndex(6)]
+            HRESULT GetResourceBindingDesc(uint ResourceIndex, D3D10_SHADER_INPUT_BIND_DESC* pDesc);
+
+            [VtblIndex(7)]
+            HRESULT GetInputParameterDesc(uint ParameterIndex, D3D10_SIGNATURE_PARAMETER_DESC* pDesc);
+
+            [VtblIndex(8)]
+            HRESULT GetOutputParameterDesc(uint ParameterIndex, D3D10_SIGNATURE_PARAMETER_DESC* pDesc);
         }
 
         public partial struct Vtbl

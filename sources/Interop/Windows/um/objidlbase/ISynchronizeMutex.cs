@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("00000025-0000-0000-C000-000000000046")]
     [NativeTypeName("struct ISynchronizeMutex : ISynchronize")]
     [NativeInheritance("ISynchronize")]
-    public unsafe partial struct ISynchronizeMutex
+    public unsafe partial struct ISynchronizeMutex : ISynchronizeMutex.Interface
     {
         public void** lpVtbl;
 
@@ -65,6 +65,12 @@ namespace TerraFX.Interop
         public HRESULT ReleaseMutex()
         {
             return ((delegate* unmanaged<ISynchronizeMutex*, int>)(lpVtbl[6]))((ISynchronizeMutex*)Unsafe.AsPointer(ref this));
+        }
+
+        public interface Interface : ISynchronize.Interface
+        {
+            [VtblIndex(6)]
+            HRESULT ReleaseMutex();
         }
 
         public partial struct Vtbl

@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("44AE0FA8-EA31-4109-8D2E-4CAE4997C555")]
     [NativeTypeName("struct IMFMediaType : IMFAttributes")]
     [NativeInheritance("IMFAttributes")]
-    public unsafe partial struct IMFMediaType
+    public unsafe partial struct IMFMediaType : IMFMediaType.Interface
     {
         public void** lpVtbl;
 
@@ -282,6 +282,24 @@ namespace TerraFX.Interop
         public HRESULT FreeRepresentation(Guid guidRepresentation, [NativeTypeName("LPVOID")] void* pvRepresentation)
         {
             return ((delegate* unmanaged<IMFMediaType*, Guid, void*, int>)(lpVtbl[37]))((IMFMediaType*)Unsafe.AsPointer(ref this), guidRepresentation, pvRepresentation);
+        }
+
+        public interface Interface : IMFAttributes.Interface
+        {
+            [VtblIndex(33)]
+            HRESULT GetMajorType(Guid* pguidMajorType);
+
+            [VtblIndex(34)]
+            HRESULT IsCompressedFormat(BOOL* pfCompressed);
+
+            [VtblIndex(35)]
+            HRESULT IsEqual(IMFMediaType* pIMediaType, [NativeTypeName("DWORD *")] uint* pdwFlags);
+
+            [VtblIndex(36)]
+            HRESULT GetRepresentation(Guid guidRepresentation, [NativeTypeName("LPVOID *")] void** ppvRepresentation);
+
+            [VtblIndex(37)]
+            HRESULT FreeRepresentation(Guid guidRepresentation, [NativeTypeName("LPVOID")] void* pvRepresentation);
         }
 
         public partial struct Vtbl

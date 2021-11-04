@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("3BDD78E2-C16E-47FD-B883-CE6FACC1A208")]
     [NativeTypeName("struct ITfMouseTrackerACP : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct ITfMouseTrackerACP
+    public unsafe partial struct ITfMouseTrackerACP : ITfMouseTrackerACP.Interface
     {
         public void** lpVtbl;
 
@@ -51,6 +51,15 @@ namespace TerraFX.Interop
         public HRESULT UnadviseMouseSink([NativeTypeName("DWORD")] uint dwCookie)
         {
             return ((delegate* unmanaged<ITfMouseTrackerACP*, uint, int>)(lpVtbl[4]))((ITfMouseTrackerACP*)Unsafe.AsPointer(ref this), dwCookie);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT AdviseMouseSink(ITfRangeACP* range, ITfMouseSink* pSink, [NativeTypeName("DWORD *")] uint* pdwCookie);
+
+            [VtblIndex(4)]
+            HRESULT UnadviseMouseSink([NativeTypeName("DWORD")] uint dwCookie);
         }
 
         public partial struct Vtbl

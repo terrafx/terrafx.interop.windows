@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("F5042EA4-7A96-4A75-AA7B-2BE1EF7F88D5")]
     [NativeTypeName("struct IMFByteStreamCacheControl : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IMFByteStreamCacheControl
+    public unsafe partial struct IMFByteStreamCacheControl : IMFByteStreamCacheControl.Interface
     {
         public void** lpVtbl;
 
@@ -44,6 +44,12 @@ namespace TerraFX.Interop
         public HRESULT StopBackgroundTransfer()
         {
             return ((delegate* unmanaged<IMFByteStreamCacheControl*, int>)(lpVtbl[3]))((IMFByteStreamCacheControl*)Unsafe.AsPointer(ref this));
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT StopBackgroundTransfer();
         }
 
         public partial struct Vtbl

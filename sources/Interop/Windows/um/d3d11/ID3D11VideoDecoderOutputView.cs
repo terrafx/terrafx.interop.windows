@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("C2931AEA-2A85-4F20-860F-FBA1FD256E18")]
     [NativeTypeName("struct ID3D11VideoDecoderOutputView : ID3D11View")]
     [NativeInheritance("ID3D11View")]
-    public unsafe partial struct ID3D11VideoDecoderOutputView
+    public unsafe partial struct ID3D11VideoDecoderOutputView : ID3D11VideoDecoderOutputView.Interface
     {
         public void** lpVtbl;
 
@@ -79,6 +79,12 @@ namespace TerraFX.Interop
         public void GetDesc(D3D11_VIDEO_DECODER_OUTPUT_VIEW_DESC* pDesc)
         {
             ((delegate* unmanaged<ID3D11VideoDecoderOutputView*, D3D11_VIDEO_DECODER_OUTPUT_VIEW_DESC*, void>)(lpVtbl[8]))((ID3D11VideoDecoderOutputView*)Unsafe.AsPointer(ref this), pDesc);
+        }
+
+        public interface Interface : ID3D11View.Interface
+        {
+            [VtblIndex(8)]
+            void GetDesc(D3D11_VIDEO_DECODER_OUTPUT_VIEW_DESC* pDesc);
         }
 
         public partial struct Vtbl

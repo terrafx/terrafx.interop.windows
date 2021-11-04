@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("3050F4CE-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct IHTMLBookmarkCollection : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct IHTMLBookmarkCollection
+    public unsafe partial struct IHTMLBookmarkCollection : IHTMLBookmarkCollection.Interface
     {
         public void** lpVtbl;
 
@@ -86,6 +86,18 @@ namespace TerraFX.Interop
         public HRESULT item([NativeTypeName("long")] int index, VARIANT* pVarBookmark)
         {
             return ((delegate* unmanaged<IHTMLBookmarkCollection*, int, VARIANT*, int>)(lpVtbl[9]))((IHTMLBookmarkCollection*)Unsafe.AsPointer(ref this), index, pVarBookmark);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT get_length([NativeTypeName("long *")] int* p);
+
+            [VtblIndex(8)]
+            HRESULT get__newEnum(IUnknown** p);
+
+            [VtblIndex(9)]
+            HRESULT item([NativeTypeName("long")] int index, VARIANT* pVarBookmark);
         }
 
         public partial struct Vtbl

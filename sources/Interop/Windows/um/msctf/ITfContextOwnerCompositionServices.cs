@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("86462810-593B-4916-9764-19C08E9CE110")]
     [NativeTypeName("struct ITfContextOwnerCompositionServices : ITfContextComposition")]
     [NativeInheritance("ITfContextComposition")]
-    public unsafe partial struct ITfContextOwnerCompositionServices
+    public unsafe partial struct ITfContextOwnerCompositionServices : ITfContextOwnerCompositionServices.Interface
     {
         public void** lpVtbl;
 
@@ -72,6 +72,12 @@ namespace TerraFX.Interop
         public HRESULT TerminateComposition(ITfCompositionView* pComposition)
         {
             return ((delegate* unmanaged<ITfContextOwnerCompositionServices*, ITfCompositionView*, int>)(lpVtbl[7]))((ITfContextOwnerCompositionServices*)Unsafe.AsPointer(ref this), pComposition);
+        }
+
+        public interface Interface : ITfContextComposition.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT TerminateComposition(ITfCompositionView* pComposition);
         }
 
         public partial struct Vtbl

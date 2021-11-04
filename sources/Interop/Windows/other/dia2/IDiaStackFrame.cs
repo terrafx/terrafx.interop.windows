@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("5EDBC96D-CDD6-4792-AFBE-CC89007D9610")]
     [NativeTypeName("struct IDiaStackFrame : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IDiaStackFrame
+    public unsafe partial struct IDiaStackFrame : IDiaStackFrame.Interface
     {
         public void** lpVtbl;
 
@@ -142,6 +142,54 @@ namespace TerraFX.Interop
         public HRESULT get_registerValue([NativeTypeName("DWORD")] uint index, [NativeTypeName("ULONGLONG *")] ulong* pRetVal)
         {
             return ((delegate* unmanaged<IDiaStackFrame*, uint, ulong*, int>)(lpVtbl[17]))((IDiaStackFrame*)Unsafe.AsPointer(ref this), index, pRetVal);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT get_type([NativeTypeName("DWORD *")] uint* pRetVal);
+
+            [VtblIndex(4)]
+            HRESULT get_base([NativeTypeName("ULONGLONG *")] ulong* pRetVal);
+
+            [VtblIndex(5)]
+            HRESULT get_size([NativeTypeName("DWORD *")] uint* pRetVal);
+
+            [VtblIndex(6)]
+            HRESULT get_returnAddress([NativeTypeName("ULONGLONG *")] ulong* pRetVal);
+
+            [VtblIndex(7)]
+            HRESULT get_localsBase([NativeTypeName("ULONGLONG *")] ulong* pRetVal);
+
+            [VtblIndex(8)]
+            HRESULT get_lengthLocals([NativeTypeName("DWORD *")] uint* pRetVal);
+
+            [VtblIndex(9)]
+            HRESULT get_lengthParams([NativeTypeName("DWORD *")] uint* pRetVal);
+
+            [VtblIndex(10)]
+            HRESULT get_lengthProlog([NativeTypeName("DWORD *")] uint* pRetVal);
+
+            [VtblIndex(11)]
+            HRESULT get_lengthSavedRegisters([NativeTypeName("DWORD *")] uint* pRetVal);
+
+            [VtblIndex(12)]
+            HRESULT get_systemExceptionHandling(BOOL* pRetVal);
+
+            [VtblIndex(13)]
+            HRESULT get_cplusplusExceptionHandling(BOOL* pRetVal);
+
+            [VtblIndex(14)]
+            HRESULT get_functionStart(BOOL* pRetVal);
+
+            [VtblIndex(15)]
+            HRESULT get_allocatesBasePointer(BOOL* pRetVal);
+
+            [VtblIndex(16)]
+            HRESULT get_maxStack([NativeTypeName("DWORD *")] uint* pRetVal);
+
+            [VtblIndex(17)]
+            HRESULT get_registerValue([NativeTypeName("DWORD")] uint index, [NativeTypeName("ULONGLONG *")] ulong* pRetVal);
         }
 
         public partial struct Vtbl

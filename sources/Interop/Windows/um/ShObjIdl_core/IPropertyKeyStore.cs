@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("75BD59AA-F23B-4963-ABA4-0B355752A91B")]
     [NativeTypeName("struct IPropertyKeyStore : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IPropertyKeyStore
+    public unsafe partial struct IPropertyKeyStore : IPropertyKeyStore.Interface
     {
         public void** lpVtbl;
 
@@ -79,6 +79,27 @@ namespace TerraFX.Interop
         public HRESULT RemoveKey([NativeTypeName("const PROPERTYKEY &")] PROPERTYKEY* key)
         {
             return ((delegate* unmanaged<IPropertyKeyStore*, PROPERTYKEY*, int>)(lpVtbl[8]))((IPropertyKeyStore*)Unsafe.AsPointer(ref this), key);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetKeyCount(int* keyCount);
+
+            [VtblIndex(4)]
+            HRESULT GetKeyAt(int index, PROPERTYKEY* pkey);
+
+            [VtblIndex(5)]
+            HRESULT AppendKey([NativeTypeName("const PROPERTYKEY &")] PROPERTYKEY* key);
+
+            [VtblIndex(6)]
+            HRESULT DeleteKey(int index);
+
+            [VtblIndex(7)]
+            HRESULT IsKeyInStore([NativeTypeName("const PROPERTYKEY &")] PROPERTYKEY* key);
+
+            [VtblIndex(8)]
+            HRESULT RemoveKey([NativeTypeName("const PROPERTYKEY &")] PROPERTYKEY* key);
         }
 
         public partial struct Vtbl

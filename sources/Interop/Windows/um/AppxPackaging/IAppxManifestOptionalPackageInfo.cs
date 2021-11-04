@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("2634847D-5B5D-4FE5-A243-002FF95EDC7E")]
     [NativeTypeName("struct IAppxManifestOptionalPackageInfo : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IAppxManifestOptionalPackageInfo
+    public unsafe partial struct IAppxManifestOptionalPackageInfo : IAppxManifestOptionalPackageInfo.Interface
     {
         public void** lpVtbl;
 
@@ -51,6 +51,15 @@ namespace TerraFX.Interop
         public HRESULT GetMainPackageName([NativeTypeName("LPWSTR *")] ushort** mainPackageName)
         {
             return ((delegate* unmanaged<IAppxManifestOptionalPackageInfo*, ushort**, int>)(lpVtbl[4]))((IAppxManifestOptionalPackageInfo*)Unsafe.AsPointer(ref this), mainPackageName);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetIsOptionalPackage(BOOL* isOptionalPackage);
+
+            [VtblIndex(4)]
+            HRESULT GetMainPackageName([NativeTypeName("LPWSTR *")] ushort** mainPackageName);
         }
 
         public partial struct Vtbl

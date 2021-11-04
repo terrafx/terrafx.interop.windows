@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("5C014B53-68A1-4B9B-8BD1-DD6046B9358B")]
     [NativeTypeName("struct ID3D12Device7 : ID3D12Device6")]
     [NativeInheritance("ID3D12Device6")]
-    public unsafe partial struct ID3D12Device7
+    public unsafe partial struct ID3D12Device7 : ID3D12Device7.Interface
     {
         public void** lpVtbl;
 
@@ -496,6 +496,15 @@ namespace TerraFX.Interop
         public HRESULT CreateProtectedResourceSession1([NativeTypeName("const D3D12_PROTECTED_RESOURCE_SESSION_DESC1 *")] D3D12_PROTECTED_RESOURCE_SESSION_DESC1* pDesc, [NativeTypeName("const IID &")] Guid* riid, void** ppSession)
         {
             return ((delegate* unmanaged<ID3D12Device7*, D3D12_PROTECTED_RESOURCE_SESSION_DESC1*, Guid*, void**, int>)(lpVtbl[67]))((ID3D12Device7*)Unsafe.AsPointer(ref this), pDesc, riid, ppSession);
+        }
+
+        public interface Interface : ID3D12Device6.Interface
+        {
+            [VtblIndex(66)]
+            HRESULT AddToStateObject([NativeTypeName("const D3D12_STATE_OBJECT_DESC *")] D3D12_STATE_OBJECT_DESC* pAddition, ID3D12StateObject* pStateObjectToGrowFrom, [NativeTypeName("const IID &")] Guid* riid, void** ppNewStateObject);
+
+            [VtblIndex(67)]
+            HRESULT CreateProtectedResourceSession1([NativeTypeName("const D3D12_PROTECTED_RESOURCE_SESSION_DESC1 *")] D3D12_PROTECTED_RESOURCE_SESSION_DESC1* pDesc, [NativeTypeName("const IID &")] Guid* riid, void** ppSession);
         }
 
         public partial struct Vtbl

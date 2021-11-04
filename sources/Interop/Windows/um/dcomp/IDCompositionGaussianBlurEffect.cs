@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("45D4D0B7-1BD4-454E-8894-2BFA68443033")]
     [NativeTypeName("struct IDCompositionGaussianBlurEffect : IDCompositionFilterEffect")]
     [NativeInheritance("IDCompositionFilterEffect")]
-    public unsafe partial struct IDCompositionGaussianBlurEffect
+    public unsafe partial struct IDCompositionGaussianBlurEffect : IDCompositionGaussianBlurEffect.Interface
     {
         public void** lpVtbl;
 
@@ -65,6 +65,18 @@ namespace TerraFX.Interop
         public HRESULT SetBorderMode(D2D1_BORDER_MODE mode)
         {
             return ((delegate* unmanaged<IDCompositionGaussianBlurEffect*, D2D1_BORDER_MODE, int>)(lpVtbl[6]))((IDCompositionGaussianBlurEffect*)Unsafe.AsPointer(ref this), mode);
+        }
+
+        public interface Interface : IDCompositionFilterEffect.Interface
+        {
+            [VtblIndex(4)]
+            HRESULT SetStandardDeviation(IDCompositionAnimation* animation);
+
+            [VtblIndex(5)]
+            HRESULT SetStandardDeviation(float amount);
+
+            [VtblIndex(6)]
+            HRESULT SetBorderMode(D2D1_BORDER_MODE mode);
         }
 
         public partial struct Vtbl

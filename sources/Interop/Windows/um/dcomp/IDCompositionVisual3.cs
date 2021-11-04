@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("2775F462-B6C1-4015-B0BE-B3E7D6A4976D")]
     [NativeTypeName("struct IDCompositionVisual3 : IDCompositionVisualDebug")]
     [NativeInheritance("IDCompositionVisualDebug")]
-    public unsafe partial struct IDCompositionVisual3
+    public unsafe partial struct IDCompositionVisual3 : IDCompositionVisual3.Interface
     {
         public void** lpVtbl;
 
@@ -254,6 +254,33 @@ namespace TerraFX.Interop
         public HRESULT SetVisible(BOOL visible)
         {
             return ((delegate* unmanaged<IDCompositionVisual3*, BOOL, int>)(lpVtbl[33]))((IDCompositionVisual3*)Unsafe.AsPointer(ref this), visible);
+        }
+
+        public interface Interface : IDCompositionVisualDebug.Interface
+        {
+            [VtblIndex(26)]
+            HRESULT SetDepthMode(DCOMPOSITION_DEPTH_MODE mode);
+
+            [VtblIndex(27)]
+            HRESULT SetOffsetZ(IDCompositionAnimation* animation);
+
+            [VtblIndex(28)]
+            HRESULT SetOffsetZ(float offsetZ);
+
+            [VtblIndex(29)]
+            HRESULT SetOpacity(IDCompositionAnimation* animation);
+
+            [VtblIndex(30)]
+            HRESULT SetOpacity(float opacity);
+
+            [VtblIndex(31)]
+            HRESULT SetTransform(IDCompositionTransform3D* transform);
+
+            [VtblIndex(32)]
+            HRESULT SetTransform([NativeTypeName("const D2D_MATRIX_4X4_F &")] D2D_MATRIX_4X4_F* matrix);
+
+            [VtblIndex(33)]
+            HRESULT SetVisible(BOOL visible);
         }
 
         public partial struct Vtbl

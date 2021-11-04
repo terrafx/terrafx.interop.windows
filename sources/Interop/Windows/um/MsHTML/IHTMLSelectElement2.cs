@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("3050F5ED-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct IHTMLSelectElement2 : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct IHTMLSelectElement2
+    public unsafe partial struct IHTMLSelectElement2 : IHTMLSelectElement2.Interface
     {
         public void** lpVtbl;
 
@@ -72,6 +72,12 @@ namespace TerraFX.Interop
         public HRESULT urns(VARIANT urn, IDispatch** pdisp)
         {
             return ((delegate* unmanaged<IHTMLSelectElement2*, VARIANT, IDispatch**, int>)(lpVtbl[7]))((IHTMLSelectElement2*)Unsafe.AsPointer(ref this), urn, pdisp);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT urns(VARIANT urn, IDispatch** pdisp);
         }
 
         public partial struct Vtbl

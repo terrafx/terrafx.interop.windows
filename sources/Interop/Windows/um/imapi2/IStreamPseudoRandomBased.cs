@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("27354145-7F64-5B0F-8F00-5D77AFBE261E")]
     [NativeTypeName("struct IStreamPseudoRandomBased : IStream")]
     [NativeInheritance("IStream")]
-    public unsafe partial struct IStreamPseudoRandomBased
+    public unsafe partial struct IStreamPseudoRandomBased : IStreamPseudoRandomBased.Interface
     {
         public void** lpVtbl;
 
@@ -142,6 +142,21 @@ namespace TerraFX.Interop
         public HRESULT get_ExtendedSeed([NativeTypeName("ULONG **")] uint** values, [NativeTypeName("ULONG *")] uint* eCount)
         {
             return ((delegate* unmanaged<IStreamPseudoRandomBased*, uint**, uint*, int>)(lpVtbl[17]))((IStreamPseudoRandomBased*)Unsafe.AsPointer(ref this), values, eCount);
+        }
+
+        public interface Interface : IStream.Interface
+        {
+            [VtblIndex(14)]
+            HRESULT put_Seed([NativeTypeName("ULONG")] uint value);
+
+            [VtblIndex(15)]
+            HRESULT get_Seed([NativeTypeName("ULONG *")] uint* value);
+
+            [VtblIndex(16)]
+            HRESULT put_ExtendedSeed([NativeTypeName("ULONG *")] uint* values, [NativeTypeName("ULONG")] uint eCount);
+
+            [VtblIndex(17)]
+            HRESULT get_ExtendedSeed([NativeTypeName("ULONG **")] uint** values, [NativeTypeName("ULONG *")] uint* eCount);
         }
 
         public partial struct Vtbl

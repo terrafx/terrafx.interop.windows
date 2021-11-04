@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("86CBC910-E533-4751-8E3B-F19B5B806A03")]
     [NativeTypeName("struct IMFVideoSampleAllocator : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IMFVideoSampleAllocator
+    public unsafe partial struct IMFVideoSampleAllocator : IMFVideoSampleAllocator.Interface
     {
         public void** lpVtbl;
 
@@ -65,6 +65,21 @@ namespace TerraFX.Interop
         public HRESULT AllocateSample(IMFSample** ppSample)
         {
             return ((delegate* unmanaged<IMFVideoSampleAllocator*, IMFSample**, int>)(lpVtbl[6]))((IMFVideoSampleAllocator*)Unsafe.AsPointer(ref this), ppSample);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT SetDirectXManager(IUnknown* pManager);
+
+            [VtblIndex(4)]
+            HRESULT UninitializeSampleAllocator();
+
+            [VtblIndex(5)]
+            HRESULT InitializeSampleAllocator([NativeTypeName("DWORD")] uint cRequestedFrames, IMFMediaType* pMediaType);
+
+            [VtblIndex(6)]
+            HRESULT AllocateSample(IMFSample** ppSample);
         }
 
         public partial struct Vtbl

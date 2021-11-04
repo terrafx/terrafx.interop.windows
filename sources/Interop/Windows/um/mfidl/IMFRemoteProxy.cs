@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("994E23AD-1CC2-493C-B9FA-46F1CB040FA4")]
     [NativeTypeName("struct IMFRemoteProxy : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IMFRemoteProxy
+    public unsafe partial struct IMFRemoteProxy : IMFRemoteProxy.Interface
     {
         public void** lpVtbl;
 
@@ -51,6 +51,15 @@ namespace TerraFX.Interop
         public HRESULT GetRemoteHost([NativeTypeName("const IID &")] Guid* riid, void** ppv)
         {
             return ((delegate* unmanaged<IMFRemoteProxy*, Guid*, void**, int>)(lpVtbl[4]))((IMFRemoteProxy*)Unsafe.AsPointer(ref this), riid, ppv);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetRemoteObject([NativeTypeName("const IID &")] Guid* riid, void** ppv);
+
+            [VtblIndex(4)]
+            HRESULT GetRemoteHost([NativeTypeName("const IID &")] Guid* riid, void** ppv);
         }
 
         public partial struct Vtbl

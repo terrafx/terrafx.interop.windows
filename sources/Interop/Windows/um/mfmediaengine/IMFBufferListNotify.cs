@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("24CD47F7-81D8-4785-ADB2-AF697A963CD2")]
     [NativeTypeName("struct IMFBufferListNotify : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IMFBufferListNotify
+    public unsafe partial struct IMFBufferListNotify : IMFBufferListNotify.Interface
     {
         public void** lpVtbl;
 
@@ -51,6 +51,15 @@ namespace TerraFX.Interop
         public void OnRemoveSourceBuffer()
         {
             ((delegate* unmanaged<IMFBufferListNotify*, void>)(lpVtbl[4]))((IMFBufferListNotify*)Unsafe.AsPointer(ref this));
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            void OnAddSourceBuffer();
+
+            [VtblIndex(4)]
+            void OnRemoveSourceBuffer();
         }
 
         public partial struct Vtbl

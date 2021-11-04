@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("30510738-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct IDOMDocumentType : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct IDOMDocumentType
+    public unsafe partial struct IDOMDocumentType : IDOMDocumentType.Interface
     {
         public void** lpVtbl;
 
@@ -107,6 +107,27 @@ namespace TerraFX.Interop
         public HRESULT get_internalSubset(VARIANT* p)
         {
             return ((delegate* unmanaged<IDOMDocumentType*, VARIANT*, int>)(lpVtbl[12]))((IDOMDocumentType*)Unsafe.AsPointer(ref this), p);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT get_name([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(8)]
+            HRESULT get_entities(IDispatch** p);
+
+            [VtblIndex(9)]
+            HRESULT get_notations(IDispatch** p);
+
+            [VtblIndex(10)]
+            HRESULT get_publicId(VARIANT* p);
+
+            [VtblIndex(11)]
+            HRESULT get_systemId(VARIANT* p);
+
+            [VtblIndex(12)]
+            HRESULT get_internalSubset(VARIANT* p);
         }
 
         public partial struct Vtbl

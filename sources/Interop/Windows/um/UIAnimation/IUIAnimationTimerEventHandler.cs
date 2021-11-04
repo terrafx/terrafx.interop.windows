@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("274A7DEA-D771-4095-ABBD-8DF7ABD23CE3")]
     [NativeTypeName("struct IUIAnimationTimerEventHandler : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IUIAnimationTimerEventHandler
+    public unsafe partial struct IUIAnimationTimerEventHandler : IUIAnimationTimerEventHandler.Interface
     {
         public void** lpVtbl;
 
@@ -58,6 +58,18 @@ namespace TerraFX.Interop
         public HRESULT OnRenderingTooSlow([NativeTypeName("UINT32")] uint framesPerSecond)
         {
             return ((delegate* unmanaged<IUIAnimationTimerEventHandler*, uint, int>)(lpVtbl[5]))((IUIAnimationTimerEventHandler*)Unsafe.AsPointer(ref this), framesPerSecond);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT OnPreUpdate();
+
+            [VtblIndex(4)]
+            HRESULT OnPostUpdate();
+
+            [VtblIndex(5)]
+            HRESULT OnRenderingTooSlow([NativeTypeName("UINT32")] uint framesPerSecond);
         }
 
         public partial struct Vtbl

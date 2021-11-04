@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("FBE5A32D-A497-4B61-BB85-97B1A848A6E3")]
     [NativeTypeName("struct IMFSourceResolver : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IMFSourceResolver
+    public unsafe partial struct IMFSourceResolver : IMFSourceResolver.Interface
     {
         public void** lpVtbl;
 
@@ -86,6 +86,30 @@ namespace TerraFX.Interop
         public HRESULT CancelObjectCreation(IUnknown* pIUnknownCancelCookie)
         {
             return ((delegate* unmanaged<IMFSourceResolver*, IUnknown*, int>)(lpVtbl[9]))((IMFSourceResolver*)Unsafe.AsPointer(ref this), pIUnknownCancelCookie);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT CreateObjectFromURL([NativeTypeName("LPCWSTR")] ushort* pwszURL, [NativeTypeName("DWORD")] uint dwFlags, IPropertyStore* pProps, MF_OBJECT_TYPE* pObjectType, IUnknown** ppObject);
+
+            [VtblIndex(4)]
+            HRESULT CreateObjectFromByteStream(IMFByteStream* pByteStream, [NativeTypeName("LPCWSTR")] ushort* pwszURL, [NativeTypeName("DWORD")] uint dwFlags, IPropertyStore* pProps, MF_OBJECT_TYPE* pObjectType, IUnknown** ppObject);
+
+            [VtblIndex(5)]
+            HRESULT BeginCreateObjectFromURL([NativeTypeName("LPCWSTR")] ushort* pwszURL, [NativeTypeName("DWORD")] uint dwFlags, IPropertyStore* pProps, IUnknown** ppIUnknownCancelCookie, IMFAsyncCallback* pCallback, IUnknown* punkState);
+
+            [VtblIndex(6)]
+            HRESULT EndCreateObjectFromURL(IMFAsyncResult* pResult, MF_OBJECT_TYPE* pObjectType, IUnknown** ppObject);
+
+            [VtblIndex(7)]
+            HRESULT BeginCreateObjectFromByteStream(IMFByteStream* pByteStream, [NativeTypeName("LPCWSTR")] ushort* pwszURL, [NativeTypeName("DWORD")] uint dwFlags, IPropertyStore* pProps, IUnknown** ppIUnknownCancelCookie, IMFAsyncCallback* pCallback, IUnknown* punkState);
+
+            [VtblIndex(8)]
+            HRESULT EndCreateObjectFromByteStream(IMFAsyncResult* pResult, MF_OBJECT_TYPE* pObjectType, IUnknown** ppObject);
+
+            [VtblIndex(9)]
+            HRESULT CancelObjectCreation(IUnknown* pIUnknownCancelCookie);
         }
 
         public partial struct Vtbl

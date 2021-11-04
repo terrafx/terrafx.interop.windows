@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("7EC4B1BD-43FB-4763-85D2-64FCB5C5F4CB")]
     [NativeTypeName("struct IMFContentDecryptorContext : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IMFContentDecryptorContext
+    public unsafe partial struct IMFContentDecryptorContext : IMFContentDecryptorContext.Interface
     {
         public void** lpVtbl;
 
@@ -44,6 +44,12 @@ namespace TerraFX.Interop
         public HRESULT InitializeHardwareKey(uint InputPrivateDataByteCount, [NativeTypeName("const void *")] void* InputPrivateData, [NativeTypeName("UINT64 *")] ulong* OutputPrivateData)
         {
             return ((delegate* unmanaged<IMFContentDecryptorContext*, uint, void*, ulong*, int>)(lpVtbl[3]))((IMFContentDecryptorContext*)Unsafe.AsPointer(ref this), InputPrivateDataByteCount, InputPrivateData, OutputPrivateData);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT InitializeHardwareKey(uint InputPrivateDataByteCount, [NativeTypeName("const void *")] void* InputPrivateData, [NativeTypeName("UINT64 *")] ulong* OutputPrivateData);
         }
 
         public partial struct Vtbl

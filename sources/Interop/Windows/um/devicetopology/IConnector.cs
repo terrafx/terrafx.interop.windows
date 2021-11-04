@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("9C2C4058-23F5-41DE-877A-DF3AF236A09E")]
     [NativeTypeName("struct IConnector : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IConnector
+    public unsafe partial struct IConnector : IConnector.Interface
     {
         public void** lpVtbl;
 
@@ -93,6 +93,33 @@ namespace TerraFX.Interop
         public HRESULT GetDeviceIdConnectedTo([NativeTypeName("LPWSTR *")] ushort** ppwstrDeviceId)
         {
             return ((delegate* unmanaged<IConnector*, ushort**, int>)(lpVtbl[10]))((IConnector*)Unsafe.AsPointer(ref this), ppwstrDeviceId);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetType(ConnectorType* pType);
+
+            [VtblIndex(4)]
+            HRESULT GetDataFlow(DataFlow* pFlow);
+
+            [VtblIndex(5)]
+            HRESULT ConnectTo(IConnector* pConnectTo);
+
+            [VtblIndex(6)]
+            HRESULT Disconnect();
+
+            [VtblIndex(7)]
+            HRESULT IsConnected(BOOL* pbConnected);
+
+            [VtblIndex(8)]
+            HRESULT GetConnectedTo(IConnector** ppConTo);
+
+            [VtblIndex(9)]
+            HRESULT GetConnectorIdConnectedTo([NativeTypeName("LPWSTR *")] ushort** ppwstrConnectorId);
+
+            [VtblIndex(10)]
+            HRESULT GetDeviceIdConnectedTo([NativeTypeName("LPWSTR *")] ushort** ppwstrDeviceId);
         }
 
         public partial struct Vtbl

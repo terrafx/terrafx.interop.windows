@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop
 {
     [Guid("6E6FFA6A-9BAE-4613-A51E-91652D508C21")]
-    public unsafe partial struct ID3D11ShaderReflectionType
+    public unsafe partial struct ID3D11ShaderReflectionType : ID3D11ShaderReflectionType.Interface
     {
         public void** lpVtbl;
 
@@ -89,6 +89,43 @@ namespace TerraFX.Interop
         public HRESULT ImplementsInterface(ID3D11ShaderReflectionType* pBase)
         {
             return ((delegate* unmanaged<ID3D11ShaderReflectionType*, ID3D11ShaderReflectionType*, int>)(lpVtbl[10]))((ID3D11ShaderReflectionType*)Unsafe.AsPointer(ref this), pBase);
+        }
+
+        public interface Interface
+        {
+            [VtblIndex(0)]
+            HRESULT GetDesc(D3D11_SHADER_TYPE_DESC* pDesc);
+
+            [VtblIndex(1)]
+            ID3D11ShaderReflectionType* GetMemberTypeByIndex(uint Index);
+
+            [VtblIndex(2)]
+            ID3D11ShaderReflectionType* GetMemberTypeByName([NativeTypeName("LPCSTR")] sbyte* Name);
+
+            [VtblIndex(3)]
+            [return: NativeTypeName("LPCSTR")]
+            sbyte* GetMemberTypeName(uint Index);
+
+            [VtblIndex(4)]
+            HRESULT IsEqual(ID3D11ShaderReflectionType* pType);
+
+            [VtblIndex(5)]
+            ID3D11ShaderReflectionType* GetSubType();
+
+            [VtblIndex(6)]
+            ID3D11ShaderReflectionType* GetBaseClass();
+
+            [VtblIndex(7)]
+            uint GetNumInterfaces();
+
+            [VtblIndex(8)]
+            ID3D11ShaderReflectionType* GetInterfaceByIndex(uint uIndex);
+
+            [VtblIndex(9)]
+            HRESULT IsOfType(ID3D11ShaderReflectionType* pType);
+
+            [VtblIndex(10)]
+            HRESULT ImplementsInterface(ID3D11ShaderReflectionType* pBase);
         }
 
         public partial struct Vtbl

@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("2C941FDC-975B-59BE-A960-9A2A262853A5")]
     [NativeTypeName("struct IFsiDirectoryItem : IFsiItem")]
     [NativeInheritance("IFsiItem")]
-    public unsafe partial struct IFsiDirectoryItem
+    public unsafe partial struct IFsiDirectoryItem : IFsiDirectoryItem.Interface
     {
         public void** lpVtbl;
 
@@ -219,6 +219,39 @@ namespace TerraFX.Interop
         public HRESULT RemoveTree([NativeTypeName("BSTR")] ushort* path)
         {
             return ((delegate* unmanaged<IFsiDirectoryItem*, ushort*, int>)(lpVtbl[28]))((IFsiDirectoryItem*)Unsafe.AsPointer(ref this), path);
+        }
+
+        public interface Interface : IFsiItem.Interface
+        {
+            [VtblIndex(19)]
+            HRESULT get__NewEnum(IEnumVARIANT** NewEnum);
+
+            [VtblIndex(20)]
+            HRESULT get_Item([NativeTypeName("BSTR")] ushort* path, IFsiItem** item);
+
+            [VtblIndex(21)]
+            HRESULT get_Count([NativeTypeName("LONG *")] int* Count);
+
+            [VtblIndex(22)]
+            HRESULT get_EnumFsiItems(IEnumFsiItems** NewEnum);
+
+            [VtblIndex(23)]
+            HRESULT AddDirectory([NativeTypeName("BSTR")] ushort* path);
+
+            [VtblIndex(24)]
+            HRESULT AddFile([NativeTypeName("BSTR")] ushort* path, IStream* fileData);
+
+            [VtblIndex(25)]
+            HRESULT AddTree([NativeTypeName("BSTR")] ushort* sourceDirectory, [NativeTypeName("VARIANT_BOOL")] short includeBaseDirectory);
+
+            [VtblIndex(26)]
+            HRESULT Add(IFsiItem* item);
+
+            [VtblIndex(27)]
+            HRESULT Remove([NativeTypeName("BSTR")] ushort* path);
+
+            [VtblIndex(28)]
+            HRESULT RemoveTree([NativeTypeName("BSTR")] ushort* path);
         }
 
         public partial struct Vtbl

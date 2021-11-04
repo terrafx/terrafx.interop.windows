@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("00000115-0000-0000-C000-000000000046")]
     [NativeTypeName("struct IOleInPlaceUIWindow : IOleWindow")]
     [NativeInheritance("IOleWindow")]
-    public unsafe partial struct IOleInPlaceUIWindow
+    public unsafe partial struct IOleInPlaceUIWindow : IOleInPlaceUIWindow.Interface
     {
         public void** lpVtbl;
 
@@ -79,6 +79,21 @@ namespace TerraFX.Interop
         public HRESULT SetActiveObject(IOleInPlaceActiveObject* pActiveObject, [NativeTypeName("LPCOLESTR")] ushort* pszObjName)
         {
             return ((delegate* unmanaged<IOleInPlaceUIWindow*, IOleInPlaceActiveObject*, ushort*, int>)(lpVtbl[8]))((IOleInPlaceUIWindow*)Unsafe.AsPointer(ref this), pActiveObject, pszObjName);
+        }
+
+        public interface Interface : IOleWindow.Interface
+        {
+            [VtblIndex(5)]
+            HRESULT GetBorder([NativeTypeName("LPRECT")] RECT* lprectBorder);
+
+            [VtblIndex(6)]
+            HRESULT RequestBorderSpace([NativeTypeName("LPCBORDERWIDTHS")] RECT* pborderwidths);
+
+            [VtblIndex(7)]
+            HRESULT SetBorderSpace([NativeTypeName("LPCBORDERWIDTHS")] RECT* pborderwidths);
+
+            [VtblIndex(8)]
+            HRESULT SetActiveObject(IOleInPlaceActiveObject* pActiveObject, [NativeTypeName("LPCOLESTR")] ushort* pszObjName);
         }
 
         public partial struct Vtbl

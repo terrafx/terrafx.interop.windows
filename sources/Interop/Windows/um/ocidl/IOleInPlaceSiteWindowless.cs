@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("922EADA0-3424-11CF-B670-00AA004CD6D8")]
     [NativeTypeName("struct IOleInPlaceSiteWindowless : IOleInPlaceSiteEx")]
     [NativeInheritance("IOleInPlaceSiteEx")]
-    public unsafe partial struct IOleInPlaceSiteWindowless
+    public unsafe partial struct IOleInPlaceSiteWindowless : IOleInPlaceSiteWindowless.Interface
     {
         public void** lpVtbl;
 
@@ -226,6 +226,45 @@ namespace TerraFX.Interop
         public HRESULT OnDefWindowMessage(uint msg, WPARAM wParam, LPARAM lParam, LRESULT* plResult)
         {
             return ((delegate* unmanaged<IOleInPlaceSiteWindowless*, uint, WPARAM, LPARAM, LRESULT*, int>)(lpVtbl[29]))((IOleInPlaceSiteWindowless*)Unsafe.AsPointer(ref this), msg, wParam, lParam, plResult);
+        }
+
+        public interface Interface : IOleInPlaceSiteEx.Interface
+        {
+            [VtblIndex(18)]
+            HRESULT CanWindowlessActivate();
+
+            [VtblIndex(19)]
+            HRESULT GetCapture();
+
+            [VtblIndex(20)]
+            HRESULT SetCapture(BOOL fCapture);
+
+            [VtblIndex(21)]
+            HRESULT GetFocus();
+
+            [VtblIndex(22)]
+            HRESULT SetFocus(BOOL fFocus);
+
+            [VtblIndex(23)]
+            HRESULT GetDC([NativeTypeName("LPCRECT")] RECT* pRect, [NativeTypeName("DWORD")] uint grfFlags, HDC* phDC);
+
+            [VtblIndex(24)]
+            HRESULT ReleaseDC(HDC hDC);
+
+            [VtblIndex(25)]
+            HRESULT InvalidateRect([NativeTypeName("LPCRECT")] RECT* pRect, BOOL fErase);
+
+            [VtblIndex(26)]
+            HRESULT InvalidateRgn(HRGN hRGN, BOOL fErase);
+
+            [VtblIndex(27)]
+            HRESULT ScrollRect(int dx, int dy, [NativeTypeName("LPCRECT")] RECT* pRectScroll, [NativeTypeName("LPCRECT")] RECT* pRectClip);
+
+            [VtblIndex(28)]
+            HRESULT AdjustRect([NativeTypeName("LPRECT")] RECT* prc);
+
+            [VtblIndex(29)]
+            HRESULT OnDefWindowMessage(uint msg, WPARAM wParam, LPARAM lParam, LRESULT* plResult);
         }
 
         public partial struct Vtbl

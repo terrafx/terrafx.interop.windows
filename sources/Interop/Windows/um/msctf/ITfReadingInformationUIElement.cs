@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("EA1EA139-19DF-11D7-A6D2-00065B84435C")]
     [NativeTypeName("struct ITfReadingInformationUIElement : ITfUIElement")]
     [NativeInheritance("ITfUIElement")]
-    public unsafe partial struct ITfReadingInformationUIElement
+    public unsafe partial struct ITfReadingInformationUIElement : ITfReadingInformationUIElement.Interface
     {
         public void** lpVtbl;
 
@@ -107,6 +107,27 @@ namespace TerraFX.Interop
         public HRESULT IsVerticalOrderPreferred(BOOL* pfVertical)
         {
             return ((delegate* unmanaged<ITfReadingInformationUIElement*, BOOL*, int>)(lpVtbl[12]))((ITfReadingInformationUIElement*)Unsafe.AsPointer(ref this), pfVertical);
+        }
+
+        public interface Interface : ITfUIElement.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT GetUpdatedFlags([NativeTypeName("DWORD *")] uint* pdwFlags);
+
+            [VtblIndex(8)]
+            HRESULT GetContext(ITfContext** ppic);
+
+            [VtblIndex(9)]
+            HRESULT GetString([NativeTypeName("BSTR *")] ushort** pstr);
+
+            [VtblIndex(10)]
+            HRESULT GetMaxReadingStringLength(uint* pcchMax);
+
+            [VtblIndex(11)]
+            HRESULT GetErrorIndex(uint* pErrorIndex);
+
+            [VtblIndex(12)]
+            HRESULT IsVerticalOrderPreferred(BOOL* pfVertical);
         }
 
         public partial struct Vtbl

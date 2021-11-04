@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("CEF04FDF-FE72-11D2-87A5-00C04F6837CF")]
     [NativeTypeName("struct IPersistFolder3 : IPersistFolder2")]
     [NativeInheritance("IPersistFolder2")]
-    public unsafe partial struct IPersistFolder3
+    public unsafe partial struct IPersistFolder3 : IPersistFolder3.Interface
     {
         public void** lpVtbl;
 
@@ -72,6 +72,15 @@ namespace TerraFX.Interop
         public HRESULT GetFolderTargetInfo(PERSIST_FOLDER_TARGET_INFO* ppfti)
         {
             return ((delegate* unmanaged<IPersistFolder3*, PERSIST_FOLDER_TARGET_INFO*, int>)(lpVtbl[7]))((IPersistFolder3*)Unsafe.AsPointer(ref this), ppfti);
+        }
+
+        public interface Interface : IPersistFolder2.Interface
+        {
+            [VtblIndex(6)]
+            HRESULT InitializeEx(IBindCtx* pbc, [NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidlRoot, [NativeTypeName("const PERSIST_FOLDER_TARGET_INFO *")] PERSIST_FOLDER_TARGET_INFO* ppfti);
+
+            [VtblIndex(7)]
+            HRESULT GetFolderTargetInfo(PERSIST_FOLDER_TARGET_INFO* ppfti);
         }
 
         public partial struct Vtbl

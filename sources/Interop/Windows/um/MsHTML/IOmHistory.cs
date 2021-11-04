@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("FECEAAA2-8405-11CF-8BA1-00AA00476DA6")]
     [NativeTypeName("struct IOmHistory : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct IOmHistory
+    public unsafe partial struct IOmHistory : IOmHistory.Interface
     {
         public void** lpVtbl;
 
@@ -93,6 +93,21 @@ namespace TerraFX.Interop
         public HRESULT go(VARIANT* pvargdistance)
         {
             return ((delegate* unmanaged<IOmHistory*, VARIANT*, int>)(lpVtbl[10]))((IOmHistory*)Unsafe.AsPointer(ref this), pvargdistance);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT get_length(short* p);
+
+            [VtblIndex(8)]
+            HRESULT back(VARIANT* pvargdistance);
+
+            [VtblIndex(9)]
+            HRESULT forward(VARIANT* pvargdistance);
+
+            [VtblIndex(10)]
+            HRESULT go(VARIANT* pvargdistance);
         }
 
         public partial struct Vtbl

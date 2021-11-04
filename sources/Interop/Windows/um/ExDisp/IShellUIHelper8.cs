@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("66DEBCF2-05B0-4F07-B49B-B96241A65DB2")]
     [NativeTypeName("struct IShellUIHelper8 : IShellUIHelper7")]
     [NativeInheritance("IShellUIHelper7")]
-    public unsafe partial struct IShellUIHelper8
+    public unsafe partial struct IShellUIHelper8 : IShellUIHelper8.Interface
     {
         public void** lpVtbl;
 
@@ -744,6 +744,30 @@ namespace TerraFX.Interop
         public HRESULT LaunchInHVSI([NativeTypeName("BSTR")] ushort* bstrUrl)
         {
             return ((delegate* unmanaged<IShellUIHelper8*, ushort*, int>)(lpVtbl[103]))((IShellUIHelper8*)Unsafe.AsPointer(ref this), bstrUrl);
+        }
+
+        public interface Interface : IShellUIHelper7.Interface
+        {
+            [VtblIndex(97)]
+            HRESULT GetCVListData([NativeTypeName("BSTR *")] ushort** pbstrResult);
+
+            [VtblIndex(98)]
+            HRESULT GetCVListLocalData([NativeTypeName("BSTR *")] ushort** pbstrResult);
+
+            [VtblIndex(99)]
+            HRESULT GetEMIEListData([NativeTypeName("BSTR *")] ushort** pbstrResult);
+
+            [VtblIndex(100)]
+            HRESULT GetEMIEListLocalData([NativeTypeName("BSTR *")] ushort** pbstrResult);
+
+            [VtblIndex(101)]
+            HRESULT OpenFavoritesPane();
+
+            [VtblIndex(102)]
+            HRESULT OpenFavoritesSettings();
+
+            [VtblIndex(103)]
+            HRESULT LaunchInHVSI([NativeTypeName("BSTR")] ushort* bstrUrl);
         }
 
         public partial struct Vtbl

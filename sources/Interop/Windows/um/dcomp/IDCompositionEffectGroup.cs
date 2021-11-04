@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("A7929A74-E6B2-4BD6-8B95-4040119CA34D")]
     [NativeTypeName("struct IDCompositionEffectGroup : IDCompositionEffect")]
     [NativeInheritance("IDCompositionEffect")]
-    public unsafe partial struct IDCompositionEffectGroup
+    public unsafe partial struct IDCompositionEffectGroup : IDCompositionEffectGroup.Interface
     {
         public void** lpVtbl;
 
@@ -58,6 +58,18 @@ namespace TerraFX.Interop
         public HRESULT SetTransform3D(IDCompositionTransform3D* transform3D)
         {
             return ((delegate* unmanaged<IDCompositionEffectGroup*, IDCompositionTransform3D*, int>)(lpVtbl[5]))((IDCompositionEffectGroup*)Unsafe.AsPointer(ref this), transform3D);
+        }
+
+        public interface Interface : IDCompositionEffect.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT SetOpacity(IDCompositionAnimation* animation);
+
+            [VtblIndex(4)]
+            HRESULT SetOpacity(float opacity);
+
+            [VtblIndex(5)]
+            HRESULT SetTransform3D(IDCompositionTransform3D* transform3D);
         }
 
         public partial struct Vtbl

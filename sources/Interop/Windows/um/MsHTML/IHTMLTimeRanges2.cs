@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("3051080B-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct IHTMLTimeRanges2 : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct IHTMLTimeRanges2
+    public unsafe partial struct IHTMLTimeRanges2 : IHTMLTimeRanges2.Interface
     {
         public void** lpVtbl;
 
@@ -79,6 +79,15 @@ namespace TerraFX.Interop
         public HRESULT endDouble([NativeTypeName("long")] int index, double* endTime)
         {
             return ((delegate* unmanaged<IHTMLTimeRanges2*, int, double*, int>)(lpVtbl[8]))((IHTMLTimeRanges2*)Unsafe.AsPointer(ref this), index, endTime);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT startDouble([NativeTypeName("long")] int index, double* startTime);
+
+            [VtblIndex(8)]
+            HRESULT endDouble([NativeTypeName("long")] int index, double* endTime);
         }
 
         public partial struct Vtbl

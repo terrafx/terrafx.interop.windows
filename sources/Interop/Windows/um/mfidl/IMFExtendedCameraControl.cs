@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("38E33520-FCA1-4845-A27A-68B7C6AB3789")]
     [NativeTypeName("struct IMFExtendedCameraControl : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IMFExtendedCameraControl
+    public unsafe partial struct IMFExtendedCameraControl : IMFExtendedCameraControl.Interface
     {
         public void** lpVtbl;
 
@@ -81,6 +81,29 @@ namespace TerraFX.Interop
         public HRESULT CommitSettings()
         {
             return ((delegate* unmanaged<IMFExtendedCameraControl*, int>)(lpVtbl[8]))((IMFExtendedCameraControl*)Unsafe.AsPointer(ref this));
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            [return: NativeTypeName("ULONGLONG")]
+            ulong GetCapabilities();
+
+            [VtblIndex(4)]
+            HRESULT SetFlags([NativeTypeName("ULONGLONG")] ulong ulFlags);
+
+            [VtblIndex(5)]
+            [return: NativeTypeName("ULONGLONG")]
+            ulong GetFlags();
+
+            [VtblIndex(6)]
+            HRESULT LockPayload(byte** ppPayload, [NativeTypeName("ULONG *")] uint* pulPayload);
+
+            [VtblIndex(7)]
+            HRESULT UnlockPayload();
+
+            [VtblIndex(8)]
+            HRESULT CommitSettings();
         }
 
         public partial struct Vtbl

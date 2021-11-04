@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("ACA16614-5D3D-11D2-960E-00C04F8EE628")]
     [NativeTypeName("struct ISpNotifyTranslator : ISpNotifySink")]
     [NativeInheritance("ISpNotifySink")]
-    public unsafe partial struct ISpNotifyTranslator
+    public unsafe partial struct ISpNotifyTranslator : ISpNotifyTranslator.Interface
     {
         public void** lpVtbl;
 
@@ -86,6 +86,27 @@ namespace TerraFX.Interop
         public HANDLE GetEventHandle()
         {
             return ((HANDLE)(((delegate* unmanaged<ISpNotifyTranslator*, void*>)(lpVtbl[9]))((ISpNotifyTranslator*)Unsafe.AsPointer(ref this))));
+        }
+
+        public interface Interface : ISpNotifySink.Interface
+        {
+            [VtblIndex(4)]
+            HRESULT InitWindowMessage(HWND hWnd, uint Msg, WPARAM wParam, LPARAM lParam);
+
+            [VtblIndex(5)]
+            HRESULT InitCallback([NativeTypeName("SPNOTIFYCALLBACK *")] delegate* unmanaged<WPARAM, LPARAM, void> pfnCallback, WPARAM wParam, LPARAM lParam);
+
+            [VtblIndex(6)]
+            HRESULT InitSpNotifyCallback(ISpNotifyCallback* pSpCallback, WPARAM wParam, LPARAM lParam);
+
+            [VtblIndex(7)]
+            HRESULT InitWin32Event(HANDLE hEvent, BOOL fCloseHandleOnRelease);
+
+            [VtblIndex(8)]
+            HRESULT Wait([NativeTypeName("DWORD")] uint dwMilliseconds);
+
+            [VtblIndex(9)]
+            HANDLE GetEventHandle();
         }
 
         public partial struct Vtbl

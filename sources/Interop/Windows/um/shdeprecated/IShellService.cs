@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("5836FB00-8187-11CF-A12B-00AA004AE837")]
     [NativeTypeName("struct IShellService : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IShellService
+    public unsafe partial struct IShellService : IShellService.Interface
     {
         public void** lpVtbl;
 
@@ -44,6 +44,12 @@ namespace TerraFX.Interop
         public HRESULT SetOwner(IUnknown* punkOwner)
         {
             return ((delegate* unmanaged<IShellService*, IUnknown*, int>)(lpVtbl[3]))((IShellService*)Unsafe.AsPointer(ref this), punkOwner);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT SetOwner(IUnknown* punkOwner);
         }
 
         public partial struct Vtbl

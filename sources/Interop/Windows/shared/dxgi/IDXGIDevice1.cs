@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("77DB970F-6276-48BA-BA28-070143B4392C")]
     [NativeTypeName("struct IDXGIDevice1 : IDXGIDevice")]
     [NativeInheritance("IDXGIDevice")]
-    public unsafe partial struct IDXGIDevice1
+    public unsafe partial struct IDXGIDevice1 : IDXGIDevice1.Interface
     {
         public void** lpVtbl;
 
@@ -114,6 +114,15 @@ namespace TerraFX.Interop
         public HRESULT GetMaximumFrameLatency(uint* pMaxLatency)
         {
             return ((delegate* unmanaged<IDXGIDevice1*, uint*, int>)(lpVtbl[13]))((IDXGIDevice1*)Unsafe.AsPointer(ref this), pMaxLatency);
+        }
+
+        public interface Interface : IDXGIDevice.Interface
+        {
+            [VtblIndex(12)]
+            HRESULT SetMaximumFrameLatency(uint MaxLatency);
+
+            [VtblIndex(13)]
+            HRESULT GetMaximumFrameLatency(uint* pMaxLatency);
         }
 
         public partial struct Vtbl

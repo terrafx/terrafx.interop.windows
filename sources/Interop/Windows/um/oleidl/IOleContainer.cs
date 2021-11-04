@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("0000011B-0000-0000-C000-000000000046")]
     [NativeTypeName("struct IOleContainer : IParseDisplayName")]
     [NativeInheritance("IParseDisplayName")]
-    public unsafe partial struct IOleContainer
+    public unsafe partial struct IOleContainer : IOleContainer.Interface
     {
         public void** lpVtbl;
 
@@ -58,6 +58,15 @@ namespace TerraFX.Interop
         public HRESULT LockContainer(BOOL fLock)
         {
             return ((delegate* unmanaged<IOleContainer*, BOOL, int>)(lpVtbl[5]))((IOleContainer*)Unsafe.AsPointer(ref this), fLock);
+        }
+
+        public interface Interface : IParseDisplayName.Interface
+        {
+            [VtblIndex(4)]
+            HRESULT EnumObjects([NativeTypeName("DWORD")] uint grfFlags, IEnumUnknown** ppenum);
+
+            [VtblIndex(5)]
+            HRESULT LockContainer(BOOL fLock);
         }
 
         public partial struct Vtbl

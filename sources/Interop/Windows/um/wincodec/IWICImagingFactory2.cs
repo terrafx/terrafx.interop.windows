@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("7B816B45-1996-4476-B132-DE9E247C8AF0")]
     [NativeTypeName("struct IWICImagingFactory2 : IWICImagingFactory")]
     [NativeInheritance("IWICImagingFactory")]
-    public unsafe partial struct IWICImagingFactory2
+    public unsafe partial struct IWICImagingFactory2 : IWICImagingFactory2.Interface
     {
         public void** lpVtbl;
 
@@ -219,6 +219,12 @@ namespace TerraFX.Interop
         public HRESULT CreateImageEncoder(ID2D1Device* pD2DDevice, IWICImageEncoder** ppWICImageEncoder)
         {
             return ((delegate* unmanaged<IWICImagingFactory2*, ID2D1Device*, IWICImageEncoder**, int>)(lpVtbl[28]))((IWICImagingFactory2*)Unsafe.AsPointer(ref this), pD2DDevice, ppWICImageEncoder);
+        }
+
+        public interface Interface : IWICImagingFactory.Interface
+        {
+            [VtblIndex(28)]
+            HRESULT CreateImageEncoder(ID2D1Device* pD2DDevice, IWICImageEncoder** ppWICImageEncoder);
         }
 
         public partial struct Vtbl

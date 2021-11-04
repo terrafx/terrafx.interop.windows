@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("B722BCC6-4E68-101B-A2BC-00AA00404770")]
     [NativeTypeName("struct IOleDocumentView : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IOleDocumentView
+    public unsafe partial struct IOleDocumentView : IOleDocumentView.Interface
     {
         public void** lpVtbl;
 
@@ -128,6 +128,48 @@ namespace TerraFX.Interop
         public HRESULT Clone(IOleInPlaceSite* pIPSiteNew, IOleDocumentView** ppViewNew)
         {
             return ((delegate* unmanaged<IOleDocumentView*, IOleInPlaceSite*, IOleDocumentView**, int>)(lpVtbl[15]))((IOleDocumentView*)Unsafe.AsPointer(ref this), pIPSiteNew, ppViewNew);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT SetInPlaceSite(IOleInPlaceSite* pIPSite);
+
+            [VtblIndex(4)]
+            HRESULT GetInPlaceSite(IOleInPlaceSite** ppIPSite);
+
+            [VtblIndex(5)]
+            HRESULT GetDocument(IUnknown** ppunk);
+
+            [VtblIndex(6)]
+            HRESULT SetRect([NativeTypeName("LPRECT")] RECT* prcView);
+
+            [VtblIndex(7)]
+            HRESULT GetRect([NativeTypeName("LPRECT")] RECT* prcView);
+
+            [VtblIndex(8)]
+            HRESULT SetRectComplex([NativeTypeName("LPRECT")] RECT* prcView, [NativeTypeName("LPRECT")] RECT* prcHScroll, [NativeTypeName("LPRECT")] RECT* prcVScroll, [NativeTypeName("LPRECT")] RECT* prcSizeBox);
+
+            [VtblIndex(9)]
+            HRESULT Show(BOOL fShow);
+
+            [VtblIndex(10)]
+            HRESULT UIActivate(BOOL fUIActivate);
+
+            [VtblIndex(11)]
+            HRESULT Open();
+
+            [VtblIndex(12)]
+            HRESULT CloseView([NativeTypeName("DWORD")] uint dwReserved);
+
+            [VtblIndex(13)]
+            HRESULT SaveViewState([NativeTypeName("LPSTREAM")] IStream* pstm);
+
+            [VtblIndex(14)]
+            HRESULT ApplyViewState([NativeTypeName("LPSTREAM")] IStream* pstm);
+
+            [VtblIndex(15)]
+            HRESULT Clone(IOleInPlaceSite* pIPSiteNew, IOleDocumentView** ppViewNew);
         }
 
         public partial struct Vtbl

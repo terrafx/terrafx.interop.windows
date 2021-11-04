@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("9EB8A55A-F04B-4D0D-808D-686185D4847A")]
     [NativeTypeName("struct IAppxManifestApplicationsEnumerator : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IAppxManifestApplicationsEnumerator
+    public unsafe partial struct IAppxManifestApplicationsEnumerator : IAppxManifestApplicationsEnumerator.Interface
     {
         public void** lpVtbl;
 
@@ -58,6 +58,18 @@ namespace TerraFX.Interop
         public HRESULT MoveNext(BOOL* hasNext)
         {
             return ((delegate* unmanaged<IAppxManifestApplicationsEnumerator*, BOOL*, int>)(lpVtbl[5]))((IAppxManifestApplicationsEnumerator*)Unsafe.AsPointer(ref this), hasNext);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetCurrent(IAppxManifestApplication** application);
+
+            [VtblIndex(4)]
+            HRESULT GetHasCurrent(BOOL* hasCurrent);
+
+            [VtblIndex(5)]
+            HRESULT MoveNext(BOOL* hasNext);
         }
 
         public partial struct Vtbl

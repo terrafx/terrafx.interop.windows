@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("27354135-7F64-5B0F-8F00-5D77AFBE261E")]
     [NativeTypeName("struct IWriteEngine2 : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct IWriteEngine2
+    public unsafe partial struct IWriteEngine2 : IWriteEngine2.Interface
     {
         public void** lpVtbl;
 
@@ -156,6 +156,48 @@ namespace TerraFX.Interop
         public HRESULT get_WriteInProgress([NativeTypeName("VARIANT_BOOL *")] short* value)
         {
             return ((delegate* unmanaged<IWriteEngine2*, short*, int>)(lpVtbl[19]))((IWriteEngine2*)Unsafe.AsPointer(ref this), value);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT WriteSection(IStream* data, [NativeTypeName("LONG")] int startingBlockAddress, [NativeTypeName("LONG")] int numberOfBlocks);
+
+            [VtblIndex(8)]
+            HRESULT CancelWrite();
+
+            [VtblIndex(9)]
+            HRESULT put_Recorder(IDiscRecorder2Ex* value);
+
+            [VtblIndex(10)]
+            HRESULT get_Recorder(IDiscRecorder2Ex** value);
+
+            [VtblIndex(11)]
+            HRESULT put_UseStreamingWrite12([NativeTypeName("VARIANT_BOOL")] short value);
+
+            [VtblIndex(12)]
+            HRESULT get_UseStreamingWrite12([NativeTypeName("VARIANT_BOOL *")] short* value);
+
+            [VtblIndex(13)]
+            HRESULT put_StartingSectorsPerSecond([NativeTypeName("LONG")] int value);
+
+            [VtblIndex(14)]
+            HRESULT get_StartingSectorsPerSecond([NativeTypeName("LONG *")] int* value);
+
+            [VtblIndex(15)]
+            HRESULT put_EndingSectorsPerSecond([NativeTypeName("LONG")] int value);
+
+            [VtblIndex(16)]
+            HRESULT get_EndingSectorsPerSecond([NativeTypeName("LONG *")] int* value);
+
+            [VtblIndex(17)]
+            HRESULT put_BytesPerSector([NativeTypeName("LONG")] int value);
+
+            [VtblIndex(18)]
+            HRESULT get_BytesPerSector([NativeTypeName("LONG *")] int* value);
+
+            [VtblIndex(19)]
+            HRESULT get_WriteInProgress([NativeTypeName("VARIANT_BOOL *")] short* value);
         }
 
         public partial struct Vtbl

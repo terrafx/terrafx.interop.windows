@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("AE471C51-5F53-4A24-8D3E-D0C39C30B3F0")]
     [NativeTypeName("struct IDCompositionVirtualSurface : IDCompositionSurface")]
     [NativeInheritance("IDCompositionSurface")]
-    public unsafe partial struct IDCompositionVirtualSurface
+    public unsafe partial struct IDCompositionVirtualSurface : IDCompositionVirtualSurface.Interface
     {
         public void** lpVtbl;
 
@@ -86,6 +86,15 @@ namespace TerraFX.Interop
         public HRESULT Trim([NativeTypeName("const RECT *")] RECT* rectangles, uint count)
         {
             return ((delegate* unmanaged<IDCompositionVirtualSurface*, RECT*, uint, int>)(lpVtbl[9]))((IDCompositionVirtualSurface*)Unsafe.AsPointer(ref this), rectangles, count);
+        }
+
+        public interface Interface : IDCompositionSurface.Interface
+        {
+            [VtblIndex(8)]
+            HRESULT Resize(uint width, uint height);
+
+            [VtblIndex(9)]
+            HRESULT Trim([NativeTypeName("const RECT *")] RECT* rectangles, uint count);
         }
 
         public partial struct Vtbl

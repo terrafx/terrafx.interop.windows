@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("7FE80CC8-C247-11D0-B93A-00A0C90312E1")]
     [NativeTypeName("struct IShellFolderBand : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IShellFolderBand
+    public unsafe partial struct IShellFolderBand : IShellFolderBand.Interface
     {
         public void** lpVtbl;
 
@@ -58,6 +58,18 @@ namespace TerraFX.Interop
         public HRESULT GetBandInfoSFB([NativeTypeName("PBANDINFOSFB")] BANDINFOSFB* pbi)
         {
             return ((delegate* unmanaged<IShellFolderBand*, BANDINFOSFB*, int>)(lpVtbl[5]))((IShellFolderBand*)Unsafe.AsPointer(ref this), pbi);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT InitializeSFB(IShellFolder* psf, [NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidl);
+
+            [VtblIndex(4)]
+            HRESULT SetBandInfoSFB([NativeTypeName("PBANDINFOSFB")] BANDINFOSFB* pbi);
+
+            [VtblIndex(5)]
+            HRESULT GetBandInfoSFB([NativeTypeName("PBANDINFOSFB")] BANDINFOSFB* pbi);
         }
 
         public partial struct Vtbl

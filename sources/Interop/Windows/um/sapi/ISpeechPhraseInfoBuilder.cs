@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("3B151836-DF3A-4E0A-846C-D2ADC9334333")]
     [NativeTypeName("struct ISpeechPhraseInfoBuilder : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct ISpeechPhraseInfoBuilder
+    public unsafe partial struct ISpeechPhraseInfoBuilder : ISpeechPhraseInfoBuilder.Interface
     {
         public void** lpVtbl;
 
@@ -72,6 +72,12 @@ namespace TerraFX.Interop
         public HRESULT RestorePhraseFromMemory(VARIANT* PhraseInMemory, ISpeechPhraseInfo** PhraseInfo)
         {
             return ((delegate* unmanaged<ISpeechPhraseInfoBuilder*, VARIANT*, ISpeechPhraseInfo**, int>)(lpVtbl[7]))((ISpeechPhraseInfoBuilder*)Unsafe.AsPointer(ref this), PhraseInMemory, PhraseInfo);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT RestorePhraseFromMemory(VARIANT* PhraseInMemory, ISpeechPhraseInfo** PhraseInfo);
         }
 
         public partial struct Vtbl

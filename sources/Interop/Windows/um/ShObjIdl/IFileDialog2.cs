@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("61744FC7-85B5-4791-A9B0-272276309B13")]
     [NativeTypeName("struct IFileDialog2 : IFileDialog")]
     [NativeInheritance("IFileDialog")]
-    public unsafe partial struct IFileDialog2
+    public unsafe partial struct IFileDialog2 : IFileDialog2.Interface
     {
         public void** lpVtbl;
 
@@ -219,6 +219,15 @@ namespace TerraFX.Interop
         public HRESULT SetNavigationRoot(IShellItem* psi)
         {
             return ((delegate* unmanaged<IFileDialog2*, IShellItem*, int>)(lpVtbl[28]))((IFileDialog2*)Unsafe.AsPointer(ref this), psi);
+        }
+
+        public interface Interface : IFileDialog.Interface
+        {
+            [VtblIndex(27)]
+            HRESULT SetCancelButtonLabel([NativeTypeName("LPCWSTR")] ushort* pszLabel);
+
+            [VtblIndex(28)]
+            HRESULT SetNavigationRoot(IShellItem* psi);
         }
 
         public partial struct Vtbl

@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("30510709-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct IHTMLVideoElement : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct IHTMLVideoElement
+    public unsafe partial struct IHTMLVideoElement : IHTMLVideoElement.Interface
     {
         public void** lpVtbl;
 
@@ -121,6 +121,33 @@ namespace TerraFX.Interop
         public HRESULT get_poster([NativeTypeName("BSTR *")] ushort** p)
         {
             return ((delegate* unmanaged<IHTMLVideoElement*, ushort**, int>)(lpVtbl[14]))((IHTMLVideoElement*)Unsafe.AsPointer(ref this), p);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT put_width([NativeTypeName("long")] int v);
+
+            [VtblIndex(8)]
+            HRESULT get_width([NativeTypeName("long *")] int* p);
+
+            [VtblIndex(9)]
+            HRESULT put_height([NativeTypeName("long")] int v);
+
+            [VtblIndex(10)]
+            HRESULT get_height([NativeTypeName("long *")] int* p);
+
+            [VtblIndex(11)]
+            HRESULT get_videoWidth([NativeTypeName("ULONG *")] uint* p);
+
+            [VtblIndex(12)]
+            HRESULT get_videoHeight([NativeTypeName("ULONG *")] uint* p);
+
+            [VtblIndex(13)]
+            HRESULT put_poster([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(14)]
+            HRESULT get_poster([NativeTypeName("BSTR *")] ushort** p);
         }
 
         public partial struct Vtbl

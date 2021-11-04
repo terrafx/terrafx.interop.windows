@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("C43DC798-95D1-4BEA-9030-BB99E2983A1A")]
     [NativeTypeName("struct ITaskbarList4 : ITaskbarList3")]
     [NativeInheritance("ITaskbarList3")]
-    public unsafe partial struct ITaskbarList4
+    public unsafe partial struct ITaskbarList4 : ITaskbarList4.Interface
     {
         public void** lpVtbl;
 
@@ -170,6 +170,12 @@ namespace TerraFX.Interop
         public HRESULT SetTabProperties(HWND hwndTab, STPFLAG stpFlags)
         {
             return ((delegate* unmanaged<ITaskbarList4*, HWND, STPFLAG, int>)(lpVtbl[21]))((ITaskbarList4*)Unsafe.AsPointer(ref this), hwndTab, stpFlags);
+        }
+
+        public interface Interface : ITaskbarList3.Interface
+        {
+            [VtblIndex(21)]
+            HRESULT SetTabProperties(HWND hwndTab, STPFLAG stpFlags);
         }
 
         public partial struct Vtbl

@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("3050F2C2-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct IHTMLInputImage : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct IHTMLInputImage
+    public unsafe partial struct IHTMLInputImage : IHTMLInputImage.Interface
     {
         public void** lpVtbl;
 
@@ -338,6 +338,126 @@ namespace TerraFX.Interop
         public HRESULT get_start([NativeTypeName("BSTR *")] ushort** p)
         {
             return ((delegate* unmanaged<IHTMLInputImage*, ushort**, int>)(lpVtbl[45]))((IHTMLInputImage*)Unsafe.AsPointer(ref this), p);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT get_type([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(8)]
+            HRESULT put_disabled([NativeTypeName("VARIANT_BOOL")] short v);
+
+            [VtblIndex(9)]
+            HRESULT get_disabled([NativeTypeName("VARIANT_BOOL *")] short* p);
+
+            [VtblIndex(10)]
+            HRESULT put_border(VARIANT v);
+
+            [VtblIndex(11)]
+            HRESULT get_border(VARIANT* p);
+
+            [VtblIndex(12)]
+            HRESULT put_vspace([NativeTypeName("long")] int v);
+
+            [VtblIndex(13)]
+            HRESULT get_vspace([NativeTypeName("long *")] int* p);
+
+            [VtblIndex(14)]
+            HRESULT put_hspace([NativeTypeName("long")] int v);
+
+            [VtblIndex(15)]
+            HRESULT get_hspace([NativeTypeName("long *")] int* p);
+
+            [VtblIndex(16)]
+            HRESULT put_alt([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(17)]
+            HRESULT get_alt([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(18)]
+            HRESULT put_src([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(19)]
+            HRESULT get_src([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(20)]
+            HRESULT put_lowsrc([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(21)]
+            HRESULT get_lowsrc([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(22)]
+            HRESULT put_vrml([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(23)]
+            HRESULT get_vrml([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(24)]
+            HRESULT put_dynsrc([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(25)]
+            HRESULT get_dynsrc([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(26)]
+            HRESULT get_readyState([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(27)]
+            HRESULT get_complete([NativeTypeName("VARIANT_BOOL *")] short* p);
+
+            [VtblIndex(28)]
+            HRESULT put_loop(VARIANT v);
+
+            [VtblIndex(29)]
+            HRESULT get_loop(VARIANT* p);
+
+            [VtblIndex(30)]
+            HRESULT put_align([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(31)]
+            HRESULT get_align([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(32)]
+            HRESULT put_onload(VARIANT v);
+
+            [VtblIndex(33)]
+            HRESULT get_onload(VARIANT* p);
+
+            [VtblIndex(34)]
+            HRESULT put_onerror(VARIANT v);
+
+            [VtblIndex(35)]
+            HRESULT get_onerror(VARIANT* p);
+
+            [VtblIndex(36)]
+            HRESULT put_onabort(VARIANT v);
+
+            [VtblIndex(37)]
+            HRESULT get_onabort(VARIANT* p);
+
+            [VtblIndex(38)]
+            HRESULT put_name([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(39)]
+            HRESULT get_name([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(40)]
+            HRESULT put_width([NativeTypeName("long")] int v);
+
+            [VtblIndex(41)]
+            HRESULT get_width([NativeTypeName("long *")] int* p);
+
+            [VtblIndex(42)]
+            HRESULT put_height([NativeTypeName("long")] int v);
+
+            [VtblIndex(43)]
+            HRESULT get_height([NativeTypeName("long *")] int* p);
+
+            [VtblIndex(44)]
+            HRESULT put_start([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(45)]
+            HRESULT get_start([NativeTypeName("BSTR *")] ushort** p);
         }
 
         public partial struct Vtbl

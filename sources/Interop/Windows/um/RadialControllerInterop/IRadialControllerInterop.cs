@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("1B0535C9-57AD-45C1-9D79-AD5C34360513")]
     [NativeTypeName("struct IRadialControllerInterop : IInspectable")]
     [NativeInheritance("IInspectable")]
-    public unsafe partial struct IRadialControllerInterop
+    public unsafe partial struct IRadialControllerInterop : IRadialControllerInterop.Interface
     {
         public void** lpVtbl;
 
@@ -65,6 +65,12 @@ namespace TerraFX.Interop
         public HRESULT CreateForWindow(HWND hwnd, [NativeTypeName("const IID &")] Guid* riid, void** ppv)
         {
             return ((delegate* unmanaged<IRadialControllerInterop*, HWND, Guid*, void**, int>)(lpVtbl[6]))((IRadialControllerInterop*)Unsafe.AsPointer(ref this), hwnd, riid, ppv);
+        }
+
+        public interface Interface : IInspectable.Interface
+        {
+            [VtblIndex(6)]
+            HRESULT CreateForWindow(HWND hwnd, [NativeTypeName("const IID &")] Guid* riid, void** ppv);
         }
 
         public partial struct Vtbl

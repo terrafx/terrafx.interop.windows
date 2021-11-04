@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("71C6E74C-0F28-11D8-A82A-00065B84435C")]
     [NativeTypeName("struct ITfInputProcessorProfileMgr : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct ITfInputProcessorProfileMgr
+    public unsafe partial struct ITfInputProcessorProfileMgr : ITfInputProcessorProfileMgr.Interface
     {
         public void** lpVtbl;
 
@@ -93,6 +93,33 @@ namespace TerraFX.Interop
         public HRESULT GetActiveProfile([NativeTypeName("const GUID &")] Guid* catid, TF_INPUTPROCESSORPROFILE* pProfile)
         {
             return ((delegate* unmanaged<ITfInputProcessorProfileMgr*, Guid*, TF_INPUTPROCESSORPROFILE*, int>)(lpVtbl[10]))((ITfInputProcessorProfileMgr*)Unsafe.AsPointer(ref this), catid, pProfile);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT ActivateProfile([NativeTypeName("DWORD")] uint dwProfileType, [NativeTypeName("LANGID")] ushort langid, [NativeTypeName("const IID &")] Guid* clsid, [NativeTypeName("const GUID &")] Guid* guidProfile, HKL hkl, [NativeTypeName("DWORD")] uint dwFlags);
+
+            [VtblIndex(4)]
+            HRESULT DeactivateProfile([NativeTypeName("DWORD")] uint dwProfileType, [NativeTypeName("LANGID")] ushort langid, [NativeTypeName("const IID &")] Guid* clsid, [NativeTypeName("const GUID &")] Guid* guidProfile, HKL hkl, [NativeTypeName("DWORD")] uint dwFlags);
+
+            [VtblIndex(5)]
+            HRESULT GetProfile([NativeTypeName("DWORD")] uint dwProfileType, [NativeTypeName("LANGID")] ushort langid, [NativeTypeName("const IID &")] Guid* clsid, [NativeTypeName("const GUID &")] Guid* guidProfile, HKL hkl, TF_INPUTPROCESSORPROFILE* pProfile);
+
+            [VtblIndex(6)]
+            HRESULT EnumProfiles([NativeTypeName("LANGID")] ushort langid, IEnumTfInputProcessorProfiles** ppEnum);
+
+            [VtblIndex(7)]
+            HRESULT ReleaseInputProcessor([NativeTypeName("const IID &")] Guid* rclsid, [NativeTypeName("DWORD")] uint dwFlags);
+
+            [VtblIndex(8)]
+            HRESULT RegisterProfile([NativeTypeName("const IID &")] Guid* rclsid, [NativeTypeName("LANGID")] ushort langid, [NativeTypeName("const GUID &")] Guid* guidProfile, [NativeTypeName("const WCHAR *")] ushort* pchDesc, [NativeTypeName("ULONG")] uint cchDesc, [NativeTypeName("const WCHAR *")] ushort* pchIconFile, [NativeTypeName("ULONG")] uint cchFile, [NativeTypeName("ULONG")] uint uIconIndex, HKL hklsubstitute, [NativeTypeName("DWORD")] uint dwPreferredLayout, BOOL bEnabledByDefault, [NativeTypeName("DWORD")] uint dwFlags);
+
+            [VtblIndex(9)]
+            HRESULT UnregisterProfile([NativeTypeName("const IID &")] Guid* rclsid, [NativeTypeName("LANGID")] ushort langid, [NativeTypeName("const GUID &")] Guid* guidProfile, [NativeTypeName("DWORD")] uint dwFlags);
+
+            [VtblIndex(10)]
+            HRESULT GetActiveProfile([NativeTypeName("const GUID &")] Guid* catid, TF_INPUTPROCESSORPROFILE* pProfile);
         }
 
         public partial struct Vtbl

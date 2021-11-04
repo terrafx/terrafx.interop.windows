@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("012DD920-7B26-11D0-8CA9-00A0C92DBFE8")]
     [NativeTypeName("struct IDockingWindow : IOleWindow")]
     [NativeInheritance("IOleWindow")]
-    public unsafe partial struct IDockingWindow
+    public unsafe partial struct IDockingWindow : IDockingWindow.Interface
     {
         public void** lpVtbl;
 
@@ -72,6 +72,18 @@ namespace TerraFX.Interop
         public HRESULT ResizeBorderDW([NativeTypeName("LPCRECT")] RECT* prcBorder, IUnknown* punkToolbarSite, BOOL fReserved)
         {
             return ((delegate* unmanaged<IDockingWindow*, RECT*, IUnknown*, BOOL, int>)(lpVtbl[7]))((IDockingWindow*)Unsafe.AsPointer(ref this), prcBorder, punkToolbarSite, fReserved);
+        }
+
+        public interface Interface : IOleWindow.Interface
+        {
+            [VtblIndex(5)]
+            HRESULT ShowDW(BOOL fShow);
+
+            [VtblIndex(6)]
+            HRESULT CloseDW([NativeTypeName("DWORD")] uint dwReserved);
+
+            [VtblIndex(7)]
+            HRESULT ResizeBorderDW([NativeTypeName("LPCRECT")] RECT* prcBorder, IUnknown* punkToolbarSite, BOOL fReserved);
         }
 
         public partial struct Vtbl

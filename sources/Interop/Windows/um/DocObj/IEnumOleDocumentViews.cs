@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("B722BCC8-4E68-101B-A2BC-00AA00404770")]
     [NativeTypeName("struct IEnumOleDocumentViews : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IEnumOleDocumentViews
+    public unsafe partial struct IEnumOleDocumentViews : IEnumOleDocumentViews.Interface
     {
         public void** lpVtbl;
 
@@ -65,6 +65,21 @@ namespace TerraFX.Interop
         public HRESULT Clone(IEnumOleDocumentViews** ppEnum)
         {
             return ((delegate* unmanaged<IEnumOleDocumentViews*, IEnumOleDocumentViews**, int>)(lpVtbl[6]))((IEnumOleDocumentViews*)Unsafe.AsPointer(ref this), ppEnum);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT Next([NativeTypeName("ULONG")] uint cViews, IOleDocumentView** rgpView, [NativeTypeName("ULONG *")] uint* pcFetched);
+
+            [VtblIndex(4)]
+            HRESULT Skip([NativeTypeName("ULONG")] uint cViews);
+
+            [VtblIndex(5)]
+            HRESULT Reset();
+
+            [VtblIndex(6)]
+            HRESULT Clone(IEnumOleDocumentViews** ppEnum);
         }
 
         public partial struct Vtbl

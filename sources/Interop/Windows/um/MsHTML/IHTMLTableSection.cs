@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("3050F23B-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct IHTMLTableSection : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct IHTMLTableSection
+    public unsafe partial struct IHTMLTableSection : IHTMLTableSection.Interface
     {
         public void** lpVtbl;
 
@@ -128,6 +128,36 @@ namespace TerraFX.Interop
         public HRESULT deleteRow([NativeTypeName("long")] int index = -1)
         {
             return ((delegate* unmanaged<IHTMLTableSection*, int, int>)(lpVtbl[15]))((IHTMLTableSection*)Unsafe.AsPointer(ref this), index);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT put_align([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(8)]
+            HRESULT get_align([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(9)]
+            HRESULT put_vAlign([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(10)]
+            HRESULT get_vAlign([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(11)]
+            HRESULT put_bgColor(VARIANT v);
+
+            [VtblIndex(12)]
+            HRESULT get_bgColor(VARIANT* p);
+
+            [VtblIndex(13)]
+            HRESULT get_rows(IHTMLElementCollection** p);
+
+            [VtblIndex(14)]
+            HRESULT insertRow([NativeTypeName("long")] int index, IDispatch** row);
+
+            [VtblIndex(15)]
+            HRESULT deleteRow([NativeTypeName("long")] int index = -1);
         }
 
         public partial struct Vtbl

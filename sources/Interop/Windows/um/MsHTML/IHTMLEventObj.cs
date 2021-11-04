@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("3050F32D-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct IHTMLEventObj : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct IHTMLEventObj
+    public unsafe partial struct IHTMLEventObj : IHTMLEventObj.Interface
     {
         public void** lpVtbl;
 
@@ -240,6 +240,84 @@ namespace TerraFX.Interop
         public HRESULT get_srcFilter(IDispatch** p)
         {
             return ((delegate* unmanaged<IHTMLEventObj*, IDispatch**, int>)(lpVtbl[31]))((IHTMLEventObj*)Unsafe.AsPointer(ref this), p);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT get_srcElement(IHTMLElement** p);
+
+            [VtblIndex(8)]
+            HRESULT get_altKey([NativeTypeName("VARIANT_BOOL *")] short* p);
+
+            [VtblIndex(9)]
+            HRESULT get_ctrlKey([NativeTypeName("VARIANT_BOOL *")] short* p);
+
+            [VtblIndex(10)]
+            HRESULT get_shiftKey([NativeTypeName("VARIANT_BOOL *")] short* p);
+
+            [VtblIndex(11)]
+            HRESULT put_returnValue(VARIANT v);
+
+            [VtblIndex(12)]
+            HRESULT get_returnValue(VARIANT* p);
+
+            [VtblIndex(13)]
+            HRESULT put_cancelBubble([NativeTypeName("VARIANT_BOOL")] short v);
+
+            [VtblIndex(14)]
+            HRESULT get_cancelBubble([NativeTypeName("VARIANT_BOOL *")] short* p);
+
+            [VtblIndex(15)]
+            HRESULT get_fromElement(IHTMLElement** p);
+
+            [VtblIndex(16)]
+            HRESULT get_toElement(IHTMLElement** p);
+
+            [VtblIndex(17)]
+            HRESULT put_keyCode([NativeTypeName("long")] int v);
+
+            [VtblIndex(18)]
+            HRESULT get_keyCode([NativeTypeName("long *")] int* p);
+
+            [VtblIndex(19)]
+            HRESULT get_button([NativeTypeName("long *")] int* p);
+
+            [VtblIndex(20)]
+            HRESULT get_type([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(21)]
+            HRESULT get_qualifier([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(22)]
+            HRESULT get_reason([NativeTypeName("long *")] int* p);
+
+            [VtblIndex(23)]
+            HRESULT get_x([NativeTypeName("long *")] int* p);
+
+            [VtblIndex(24)]
+            HRESULT get_y([NativeTypeName("long *")] int* p);
+
+            [VtblIndex(25)]
+            HRESULT get_clientX([NativeTypeName("long *")] int* p);
+
+            [VtblIndex(26)]
+            HRESULT get_clientY([NativeTypeName("long *")] int* p);
+
+            [VtblIndex(27)]
+            HRESULT get_offsetX([NativeTypeName("long *")] int* p);
+
+            [VtblIndex(28)]
+            HRESULT get_offsetY([NativeTypeName("long *")] int* p);
+
+            [VtblIndex(29)]
+            HRESULT get_screenX([NativeTypeName("long *")] int* p);
+
+            [VtblIndex(30)]
+            HRESULT get_screenY([NativeTypeName("long *")] int* p);
+
+            [VtblIndex(31)]
+            HRESULT get_srcFilter(IDispatch** p);
         }
 
         public partial struct Vtbl

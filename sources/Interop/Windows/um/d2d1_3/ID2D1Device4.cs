@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("D7BDB159-5683-4A46-BC9C-72DC720B858B")]
     [NativeTypeName("struct ID2D1Device4 : ID2D1Device3")]
     [NativeInheritance("ID2D1Device3")]
-    public unsafe partial struct ID2D1Device4
+    public unsafe partial struct ID2D1Device4 : ID2D1Device4.Interface
     {
         public void** lpVtbl;
 
@@ -151,6 +151,19 @@ namespace TerraFX.Interop
         public ulong GetMaximumColorGlyphCacheMemory()
         {
             return ((delegate* unmanaged<ID2D1Device4*, ulong>)(lpVtbl[18]))((ID2D1Device4*)Unsafe.AsPointer(ref this));
+        }
+
+        public interface Interface : ID2D1Device3.Interface
+        {
+            [VtblIndex(16)]
+            HRESULT CreateDeviceContext(D2D1_DEVICE_CONTEXT_OPTIONS options, ID2D1DeviceContext4** deviceContext4);
+
+            [VtblIndex(17)]
+            void SetMaximumColorGlyphCacheMemory([NativeTypeName("UINT64")] ulong maximumInBytes);
+
+            [VtblIndex(18)]
+            [return: NativeTypeName("UINT64")]
+            ulong GetMaximumColorGlyphCacheMemory();
         }
 
         public partial struct Vtbl

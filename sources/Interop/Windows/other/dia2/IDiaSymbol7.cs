@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("64CE6CD5-7315-4328-86D6-10E303E010B4")]
     [NativeTypeName("struct IDiaSymbol7 : IDiaSymbol6")]
     [NativeInheritance("IDiaSymbol6")]
-    public unsafe partial struct IDiaSymbol7
+    public unsafe partial struct IDiaSymbol7 : IDiaSymbol7.Interface
     {
         public void** lpVtbl;
 
@@ -1752,6 +1752,12 @@ namespace TerraFX.Interop
         public HRESULT get_isSignRet(BOOL* pRetVal)
         {
             return ((delegate* unmanaged<IDiaSymbol7*, BOOL*, int>)(lpVtbl[247]))((IDiaSymbol7*)Unsafe.AsPointer(ref this), pRetVal);
+        }
+
+        public interface Interface : IDiaSymbol6.Interface
+        {
+            [VtblIndex(247)]
+            HRESULT get_isSignRet(BOOL* pRetVal);
         }
 
         public partial struct Vtbl

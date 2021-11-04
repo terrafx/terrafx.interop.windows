@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("00000120-A8F2-4877-BA0A-FD2B6645FB94")]
     [NativeTypeName("struct IWICBitmapSource : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IWICBitmapSource
+    public unsafe partial struct IWICBitmapSource : IWICBitmapSource.Interface
     {
         public void** lpVtbl;
 
@@ -72,6 +72,24 @@ namespace TerraFX.Interop
         public HRESULT CopyPixels([NativeTypeName("const WICRect *")] WICRect* prc, uint cbStride, uint cbBufferSize, byte* pbBuffer)
         {
             return ((delegate* unmanaged<IWICBitmapSource*, WICRect*, uint, uint, byte*, int>)(lpVtbl[7]))((IWICBitmapSource*)Unsafe.AsPointer(ref this), prc, cbStride, cbBufferSize, pbBuffer);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetSize(uint* puiWidth, uint* puiHeight);
+
+            [VtblIndex(4)]
+            HRESULT GetPixelFormat([NativeTypeName("WICPixelFormatGUID *")] Guid* pPixelFormat);
+
+            [VtblIndex(5)]
+            HRESULT GetResolution(double* pDpiX, double* pDpiY);
+
+            [VtblIndex(6)]
+            HRESULT CopyPalette(IWICPalette* pIPalette);
+
+            [VtblIndex(7)]
+            HRESULT CopyPixels([NativeTypeName("const WICRect *")] WICRect* prc, uint cbStride, uint cbBufferSize, byte* pbBuffer);
         }
 
         public partial struct Vtbl

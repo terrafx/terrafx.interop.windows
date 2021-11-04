@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("D666063F-1587-4E43-81F1-B948E807363F")]
     [NativeTypeName("struct IMMDevice : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IMMDevice
+    public unsafe partial struct IMMDevice : IMMDevice.Interface
     {
         public void** lpVtbl;
 
@@ -65,6 +65,21 @@ namespace TerraFX.Interop
         public HRESULT GetState([NativeTypeName("DWORD *")] uint* pdwState)
         {
             return ((delegate* unmanaged<IMMDevice*, uint*, int>)(lpVtbl[6]))((IMMDevice*)Unsafe.AsPointer(ref this), pdwState);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT Activate([NativeTypeName("const IID &")] Guid* iid, [NativeTypeName("DWORD")] uint dwClsCtx, PROPVARIANT* pActivationParams, void** ppInterface);
+
+            [VtblIndex(4)]
+            HRESULT OpenPropertyStore([NativeTypeName("DWORD")] uint stgmAccess, IPropertyStore** ppProperties);
+
+            [VtblIndex(5)]
+            HRESULT GetId([NativeTypeName("LPWSTR *")] ushort** ppstrId);
+
+            [VtblIndex(6)]
+            HRESULT GetState([NativeTypeName("DWORD *")] uint* pdwState);
         }
 
         public partial struct Vtbl

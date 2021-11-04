@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("C59B6BDC-7720-4074-A136-17A156037470")]
     [NativeTypeName("struct ID3D12VideoDecoder : ID3D12Pageable")]
     [NativeInheritance("ID3D12Pageable")]
-    public unsafe partial struct ID3D12VideoDecoder
+    public unsafe partial struct ID3D12VideoDecoder : ID3D12VideoDecoder.Interface
     {
         public void** lpVtbl;
 
@@ -80,6 +80,12 @@ namespace TerraFX.Interop
         {
             D3D12_VIDEO_DECODER_DESC result;
             return *((delegate* unmanaged<ID3D12VideoDecoder*, D3D12_VIDEO_DECODER_DESC*, D3D12_VIDEO_DECODER_DESC*>)(lpVtbl[8]))((ID3D12VideoDecoder*)Unsafe.AsPointer(ref this), &result);
+        }
+
+        public interface Interface : ID3D12Pageable.Interface
+        {
+            [VtblIndex(8)]
+            D3D12_VIDEO_DECODER_DESC GetDesc();
         }
 
         public partial struct Vtbl

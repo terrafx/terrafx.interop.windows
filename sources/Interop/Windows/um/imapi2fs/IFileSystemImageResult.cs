@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("2C941FD8-975B-59BE-A960-9A2A262853A5")]
     [NativeTypeName("struct IFileSystemImageResult : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct IFileSystemImageResult
+    public unsafe partial struct IFileSystemImageResult : IFileSystemImageResult.Interface
     {
         public void** lpVtbl;
 
@@ -100,6 +100,24 @@ namespace TerraFX.Interop
         public HRESULT get_DiscId([NativeTypeName("BSTR *")] ushort** pVal)
         {
             return ((delegate* unmanaged<IFileSystemImageResult*, ushort**, int>)(lpVtbl[11]))((IFileSystemImageResult*)Unsafe.AsPointer(ref this), pVal);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT get_ImageStream(IStream** pVal);
+
+            [VtblIndex(8)]
+            HRESULT get_ProgressItems(IProgressItems** pVal);
+
+            [VtblIndex(9)]
+            HRESULT get_TotalBlocks([NativeTypeName("LONG *")] int* pVal);
+
+            [VtblIndex(10)]
+            HRESULT get_BlockSize([NativeTypeName("LONG *")] int* pVal);
+
+            [VtblIndex(11)]
+            HRESULT get_DiscId([NativeTypeName("BSTR *")] ushort** pVal);
         }
 
         public partial struct Vtbl

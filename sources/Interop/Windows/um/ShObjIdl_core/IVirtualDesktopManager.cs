@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("A5CD92FF-29BE-454C-8D04-D82879FB3F1B")]
     [NativeTypeName("struct IVirtualDesktopManager : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IVirtualDesktopManager
+    public unsafe partial struct IVirtualDesktopManager : IVirtualDesktopManager.Interface
     {
         public void** lpVtbl;
 
@@ -58,6 +58,18 @@ namespace TerraFX.Interop
         public HRESULT MoveWindowToDesktop(HWND topLevelWindow, [NativeTypeName("const GUID &")] Guid* desktopId)
         {
             return ((delegate* unmanaged<IVirtualDesktopManager*, HWND, Guid*, int>)(lpVtbl[5]))((IVirtualDesktopManager*)Unsafe.AsPointer(ref this), topLevelWindow, desktopId);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT IsWindowOnCurrentVirtualDesktop(HWND topLevelWindow, BOOL* onCurrentDesktop);
+
+            [VtblIndex(4)]
+            HRESULT GetWindowDesktopId(HWND topLevelWindow, Guid* desktopId);
+
+            [VtblIndex(5)]
+            HRESULT MoveWindowToDesktop(HWND topLevelWindow, [NativeTypeName("const GUID &")] Guid* desktopId);
         }
 
         public partial struct Vtbl

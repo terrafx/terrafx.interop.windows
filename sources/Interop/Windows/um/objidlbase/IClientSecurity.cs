@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("0000013D-0000-0000-C000-000000000046")]
     [NativeTypeName("struct IClientSecurity : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IClientSecurity
+    public unsafe partial struct IClientSecurity : IClientSecurity.Interface
     {
         public void** lpVtbl;
 
@@ -58,6 +58,18 @@ namespace TerraFX.Interop
         public HRESULT CopyProxy(IUnknown* pProxy, IUnknown** ppCopy)
         {
             return ((delegate* unmanaged<IClientSecurity*, IUnknown*, IUnknown**, int>)(lpVtbl[5]))((IClientSecurity*)Unsafe.AsPointer(ref this), pProxy, ppCopy);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT QueryBlanket(IUnknown* pProxy, [NativeTypeName("DWORD *")] uint* pAuthnSvc, [NativeTypeName("DWORD *")] uint* pAuthzSvc, [NativeTypeName("OLECHAR **")] ushort** pServerPrincName, [NativeTypeName("DWORD *")] uint* pAuthnLevel, [NativeTypeName("DWORD *")] uint* pImpLevel, void** pAuthInfo, [NativeTypeName("DWORD *")] uint* pCapabilites);
+
+            [VtblIndex(4)]
+            HRESULT SetBlanket(IUnknown* pProxy, [NativeTypeName("DWORD")] uint dwAuthnSvc, [NativeTypeName("DWORD")] uint dwAuthzSvc, [NativeTypeName("OLECHAR *")] ushort* pServerPrincName, [NativeTypeName("DWORD")] uint dwAuthnLevel, [NativeTypeName("DWORD")] uint dwImpLevel, void* pAuthInfo, [NativeTypeName("DWORD")] uint dwCapabilities);
+
+            [VtblIndex(5)]
+            HRESULT CopyProxy(IUnknown* pProxy, IUnknown** ppCopy);
         }
 
         public partial struct Vtbl

@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("0576AB31-A310-4C40-BA31-FD37E0298DFA")]
     [NativeTypeName("struct ICoreWindowComponentInterop : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct ICoreWindowComponentInterop
+    public unsafe partial struct ICoreWindowComponentInterop : ICoreWindowComponentInterop.Interface
     {
         public void** lpVtbl;
 
@@ -51,6 +51,15 @@ namespace TerraFX.Interop
         public HRESULT GetViewInstanceId([NativeTypeName("UINT32 *")] uint* componentViewInstanceId)
         {
             return ((delegate* unmanaged<ICoreWindowComponentInterop*, uint*, int>)(lpVtbl[4]))((ICoreWindowComponentInterop*)Unsafe.AsPointer(ref this), componentViewInstanceId);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT ConfigureComponentInput([NativeTypeName("UINT32")] uint hostViewInstanceId, HWND hwndHost, IUnknown* inputSourceVisual);
+
+            [VtblIndex(4)]
+            HRESULT GetViewInstanceId([NativeTypeName("UINT32 *")] uint* componentViewInstanceId);
         }
 
         public partial struct Vtbl

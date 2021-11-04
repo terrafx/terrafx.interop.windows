@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("FA6FA76B-66B7-4B11-95F1-86171118E816")]
     [NativeTypeName("struct ICredentialProviderCredentialEvents : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct ICredentialProviderCredentialEvents
+    public unsafe partial struct ICredentialProviderCredentialEvents : ICredentialProviderCredentialEvents.Interface
     {
         public void** lpVtbl;
 
@@ -107,6 +107,39 @@ namespace TerraFX.Interop
         public HRESULT OnCreatingWindow(HWND* phwndOwner)
         {
             return ((delegate* unmanaged<ICredentialProviderCredentialEvents*, HWND*, int>)(lpVtbl[12]))((ICredentialProviderCredentialEvents*)Unsafe.AsPointer(ref this), phwndOwner);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT SetFieldState(ICredentialProviderCredential* pcpc, [NativeTypeName("DWORD")] uint dwFieldID, CREDENTIAL_PROVIDER_FIELD_STATE cpfs);
+
+            [VtblIndex(4)]
+            HRESULT SetFieldInteractiveState(ICredentialProviderCredential* pcpc, [NativeTypeName("DWORD")] uint dwFieldID, CREDENTIAL_PROVIDER_FIELD_INTERACTIVE_STATE cpfis);
+
+            [VtblIndex(5)]
+            HRESULT SetFieldString(ICredentialProviderCredential* pcpc, [NativeTypeName("DWORD")] uint dwFieldID, [NativeTypeName("LPCWSTR")] ushort* psz);
+
+            [VtblIndex(6)]
+            HRESULT SetFieldCheckbox(ICredentialProviderCredential* pcpc, [NativeTypeName("DWORD")] uint dwFieldID, BOOL bChecked, [NativeTypeName("LPCWSTR")] ushort* pszLabel);
+
+            [VtblIndex(7)]
+            HRESULT SetFieldBitmap(ICredentialProviderCredential* pcpc, [NativeTypeName("DWORD")] uint dwFieldID, HBITMAP hbmp);
+
+            [VtblIndex(8)]
+            HRESULT SetFieldComboBoxSelectedItem(ICredentialProviderCredential* pcpc, [NativeTypeName("DWORD")] uint dwFieldID, [NativeTypeName("DWORD")] uint dwSelectedItem);
+
+            [VtblIndex(9)]
+            HRESULT DeleteFieldComboBoxItem(ICredentialProviderCredential* pcpc, [NativeTypeName("DWORD")] uint dwFieldID, [NativeTypeName("DWORD")] uint dwItem);
+
+            [VtblIndex(10)]
+            HRESULT AppendFieldComboBoxItem(ICredentialProviderCredential* pcpc, [NativeTypeName("DWORD")] uint dwFieldID, [NativeTypeName("LPCWSTR")] ushort* pszItem);
+
+            [VtblIndex(11)]
+            HRESULT SetFieldSubmitButton(ICredentialProviderCredential* pcpc, [NativeTypeName("DWORD")] uint dwFieldID, [NativeTypeName("DWORD")] uint dwAdjacentTo);
+
+            [VtblIndex(12)]
+            HRESULT OnCreatingWindow(HWND* phwndOwner);
         }
 
         public partial struct Vtbl

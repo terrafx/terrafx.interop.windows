@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("305107AA-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct IHTMLElement7 : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct IHTMLElement7
+    public unsafe partial struct IHTMLElement7 : IHTMLElement7.Interface
     {
         public void** lpVtbl;
 
@@ -443,6 +443,171 @@ namespace TerraFX.Interop
         public HRESULT get_oncuechange(VARIANT* p)
         {
             return ((delegate* unmanaged<IHTMLElement7*, VARIANT*, int>)(lpVtbl[60]))((IHTMLElement7*)Unsafe.AsPointer(ref this), p);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT put_onmspointerdown(VARIANT v);
+
+            [VtblIndex(8)]
+            HRESULT get_onmspointerdown(VARIANT* p);
+
+            [VtblIndex(9)]
+            HRESULT put_onmspointermove(VARIANT v);
+
+            [VtblIndex(10)]
+            HRESULT get_onmspointermove(VARIANT* p);
+
+            [VtblIndex(11)]
+            HRESULT put_onmspointerup(VARIANT v);
+
+            [VtblIndex(12)]
+            HRESULT get_onmspointerup(VARIANT* p);
+
+            [VtblIndex(13)]
+            HRESULT put_onmspointerover(VARIANT v);
+
+            [VtblIndex(14)]
+            HRESULT get_onmspointerover(VARIANT* p);
+
+            [VtblIndex(15)]
+            HRESULT put_onmspointerout(VARIANT v);
+
+            [VtblIndex(16)]
+            HRESULT get_onmspointerout(VARIANT* p);
+
+            [VtblIndex(17)]
+            HRESULT put_onmspointercancel(VARIANT v);
+
+            [VtblIndex(18)]
+            HRESULT get_onmspointercancel(VARIANT* p);
+
+            [VtblIndex(19)]
+            HRESULT put_onmspointerhover(VARIANT v);
+
+            [VtblIndex(20)]
+            HRESULT get_onmspointerhover(VARIANT* p);
+
+            [VtblIndex(21)]
+            HRESULT put_onmslostpointercapture(VARIANT v);
+
+            [VtblIndex(22)]
+            HRESULT get_onmslostpointercapture(VARIANT* p);
+
+            [VtblIndex(23)]
+            HRESULT put_onmsgotpointercapture(VARIANT v);
+
+            [VtblIndex(24)]
+            HRESULT get_onmsgotpointercapture(VARIANT* p);
+
+            [VtblIndex(25)]
+            HRESULT put_onmsgesturestart(VARIANT v);
+
+            [VtblIndex(26)]
+            HRESULT get_onmsgesturestart(VARIANT* p);
+
+            [VtblIndex(27)]
+            HRESULT put_onmsgesturechange(VARIANT v);
+
+            [VtblIndex(28)]
+            HRESULT get_onmsgesturechange(VARIANT* p);
+
+            [VtblIndex(29)]
+            HRESULT put_onmsgestureend(VARIANT v);
+
+            [VtblIndex(30)]
+            HRESULT get_onmsgestureend(VARIANT* p);
+
+            [VtblIndex(31)]
+            HRESULT put_onmsgesturehold(VARIANT v);
+
+            [VtblIndex(32)]
+            HRESULT get_onmsgesturehold(VARIANT* p);
+
+            [VtblIndex(33)]
+            HRESULT put_onmsgesturetap(VARIANT v);
+
+            [VtblIndex(34)]
+            HRESULT get_onmsgesturetap(VARIANT* p);
+
+            [VtblIndex(35)]
+            HRESULT put_onmsgesturedoubletap(VARIANT v);
+
+            [VtblIndex(36)]
+            HRESULT get_onmsgesturedoubletap(VARIANT* p);
+
+            [VtblIndex(37)]
+            HRESULT put_onmsinertiastart(VARIANT v);
+
+            [VtblIndex(38)]
+            HRESULT get_onmsinertiastart(VARIANT* p);
+
+            [VtblIndex(39)]
+            HRESULT msSetPointerCapture([NativeTypeName("long")] int pointerId);
+
+            [VtblIndex(40)]
+            HRESULT msReleasePointerCapture([NativeTypeName("long")] int pointerId);
+
+            [VtblIndex(41)]
+            HRESULT put_onmstransitionstart(VARIANT v);
+
+            [VtblIndex(42)]
+            HRESULT get_onmstransitionstart(VARIANT* p);
+
+            [VtblIndex(43)]
+            HRESULT put_onmstransitionend(VARIANT v);
+
+            [VtblIndex(44)]
+            HRESULT get_onmstransitionend(VARIANT* p);
+
+            [VtblIndex(45)]
+            HRESULT put_onmsanimationstart(VARIANT v);
+
+            [VtblIndex(46)]
+            HRESULT get_onmsanimationstart(VARIANT* p);
+
+            [VtblIndex(47)]
+            HRESULT put_onmsanimationend(VARIANT v);
+
+            [VtblIndex(48)]
+            HRESULT get_onmsanimationend(VARIANT* p);
+
+            [VtblIndex(49)]
+            HRESULT put_onmsanimationiteration(VARIANT v);
+
+            [VtblIndex(50)]
+            HRESULT get_onmsanimationiteration(VARIANT* p);
+
+            [VtblIndex(51)]
+            HRESULT put_oninvalid(VARIANT v);
+
+            [VtblIndex(52)]
+            HRESULT get_oninvalid(VARIANT* p);
+
+            [VtblIndex(53)]
+            HRESULT put_xmsAcceleratorKey([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(54)]
+            HRESULT get_xmsAcceleratorKey([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(55)]
+            HRESULT put_spellcheck(VARIANT v);
+
+            [VtblIndex(56)]
+            HRESULT get_spellcheck(VARIANT* p);
+
+            [VtblIndex(57)]
+            HRESULT put_onmsmanipulationstatechanged(VARIANT v);
+
+            [VtblIndex(58)]
+            HRESULT get_onmsmanipulationstatechanged(VARIANT* p);
+
+            [VtblIndex(59)]
+            HRESULT put_oncuechange(VARIANT v);
+
+            [VtblIndex(60)]
+            HRESULT get_oncuechange(VARIANT* p);
         }
 
         public partial struct Vtbl

@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("858F956A-972F-42A2-A2F2-0321E1ABE209")]
     [NativeTypeName("struct ITfTransitoryExtensionUIElement : ITfUIElement")]
     [NativeInheritance("ITfUIElement")]
-    public unsafe partial struct ITfTransitoryExtensionUIElement
+    public unsafe partial struct ITfTransitoryExtensionUIElement : ITfTransitoryExtensionUIElement.Interface
     {
         public void** lpVtbl;
 
@@ -72,6 +72,12 @@ namespace TerraFX.Interop
         public HRESULT GetDocumentMgr(ITfDocumentMgr** ppdim)
         {
             return ((delegate* unmanaged<ITfTransitoryExtensionUIElement*, ITfDocumentMgr**, int>)(lpVtbl[7]))((ITfTransitoryExtensionUIElement*)Unsafe.AsPointer(ref this), ppdim);
+        }
+
+        public interface Interface : ITfUIElement.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT GetDocumentMgr(ITfDocumentMgr** ppdim);
         }
 
         public partial struct Vtbl

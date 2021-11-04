@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("3050F2E3-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct IHTMLStyleSheet : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct IHTMLStyleSheet
+    public unsafe partial struct IHTMLStyleSheet : IHTMLStyleSheet.Interface
     {
         public void** lpVtbl;
 
@@ -212,6 +212,72 @@ namespace TerraFX.Interop
         public HRESULT get_rules(IHTMLStyleSheetRulesCollection** p)
         {
             return ((delegate* unmanaged<IHTMLStyleSheet*, IHTMLStyleSheetRulesCollection**, int>)(lpVtbl[27]))((IHTMLStyleSheet*)Unsafe.AsPointer(ref this), p);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT put_title([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(8)]
+            HRESULT get_title([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(9)]
+            HRESULT get_parentStyleSheet(IHTMLStyleSheet** p);
+
+            [VtblIndex(10)]
+            HRESULT get_owningElement(IHTMLElement** p);
+
+            [VtblIndex(11)]
+            HRESULT put_disabled([NativeTypeName("VARIANT_BOOL")] short v);
+
+            [VtblIndex(12)]
+            HRESULT get_disabled([NativeTypeName("VARIANT_BOOL *")] short* p);
+
+            [VtblIndex(13)]
+            HRESULT get_readOnly([NativeTypeName("VARIANT_BOOL *")] short* p);
+
+            [VtblIndex(14)]
+            HRESULT get_imports(IHTMLStyleSheetsCollection** p);
+
+            [VtblIndex(15)]
+            HRESULT put_href([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(16)]
+            HRESULT get_href([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(17)]
+            HRESULT get_type([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(18)]
+            HRESULT get_id([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(19)]
+            HRESULT addImport([NativeTypeName("BSTR")] ushort* bstrURL, [NativeTypeName("long")] int lIndex, [NativeTypeName("long *")] int* plIndex);
+
+            [VtblIndex(20)]
+            HRESULT addRule([NativeTypeName("BSTR")] ushort* bstrSelector, [NativeTypeName("BSTR")] ushort* bstrStyle, [NativeTypeName("long")] int lIndex, [NativeTypeName("long *")] int* plNewIndex);
+
+            [VtblIndex(21)]
+            HRESULT removeImport([NativeTypeName("long")] int lIndex);
+
+            [VtblIndex(22)]
+            HRESULT removeRule([NativeTypeName("long")] int lIndex);
+
+            [VtblIndex(23)]
+            HRESULT put_media([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(24)]
+            HRESULT get_media([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(25)]
+            HRESULT put_cssText([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(26)]
+            HRESULT get_cssText([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(27)]
+            HRESULT get_rules(IHTMLStyleSheetRulesCollection** p);
         }
 
         public partial struct Vtbl

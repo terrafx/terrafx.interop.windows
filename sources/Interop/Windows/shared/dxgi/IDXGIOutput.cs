@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("AE02EEDB-C735-4690-8D52-5A8DC20213AA")]
     [NativeTypeName("struct IDXGIOutput : IDXGIObject")]
     [NativeInheritance("IDXGIObject")]
-    public unsafe partial struct IDXGIOutput
+    public unsafe partial struct IDXGIOutput : IDXGIOutput.Interface
     {
         public void** lpVtbl;
 
@@ -149,6 +149,45 @@ namespace TerraFX.Interop
         public HRESULT GetFrameStatistics(DXGI_FRAME_STATISTICS* pStats)
         {
             return ((delegate* unmanaged<IDXGIOutput*, DXGI_FRAME_STATISTICS*, int>)(lpVtbl[18]))((IDXGIOutput*)Unsafe.AsPointer(ref this), pStats);
+        }
+
+        public interface Interface : IDXGIObject.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT GetDesc(DXGI_OUTPUT_DESC* pDesc);
+
+            [VtblIndex(8)]
+            HRESULT GetDisplayModeList(DXGI_FORMAT EnumFormat, uint Flags, uint* pNumModes, DXGI_MODE_DESC* pDesc);
+
+            [VtblIndex(9)]
+            HRESULT FindClosestMatchingMode([NativeTypeName("const DXGI_MODE_DESC *")] DXGI_MODE_DESC* pModeToMatch, DXGI_MODE_DESC* pClosestMatch, IUnknown* pConcernedDevice);
+
+            [VtblIndex(10)]
+            HRESULT WaitForVBlank();
+
+            [VtblIndex(11)]
+            HRESULT TakeOwnership(IUnknown* pDevice, BOOL Exclusive);
+
+            [VtblIndex(12)]
+            void ReleaseOwnership();
+
+            [VtblIndex(13)]
+            HRESULT GetGammaControlCapabilities(DXGI_GAMMA_CONTROL_CAPABILITIES* pGammaCaps);
+
+            [VtblIndex(14)]
+            HRESULT SetGammaControl([NativeTypeName("const DXGI_GAMMA_CONTROL *")] DXGI_GAMMA_CONTROL* pArray);
+
+            [VtblIndex(15)]
+            HRESULT GetGammaControl(DXGI_GAMMA_CONTROL* pArray);
+
+            [VtblIndex(16)]
+            HRESULT SetDisplaySurface(IDXGISurface* pScanoutSurface);
+
+            [VtblIndex(17)]
+            HRESULT GetDisplaySurfaceData(IDXGISurface* pDestination);
+
+            [VtblIndex(18)]
+            HRESULT GetFrameStatistics(DXGI_FRAME_STATISTICS* pStats);
         }
 
         public partial struct Vtbl

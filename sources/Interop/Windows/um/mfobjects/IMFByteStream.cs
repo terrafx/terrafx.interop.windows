@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("AD4C1B00-4BF7-422F-9175-756693D9130D")]
     [NativeTypeName("struct IMFByteStream : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IMFByteStream
+    public unsafe partial struct IMFByteStream : IMFByteStream.Interface
     {
         public void** lpVtbl;
 
@@ -142,6 +142,54 @@ namespace TerraFX.Interop
         public HRESULT Close()
         {
             return ((delegate* unmanaged<IMFByteStream*, int>)(lpVtbl[17]))((IMFByteStream*)Unsafe.AsPointer(ref this));
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetCapabilities([NativeTypeName("DWORD *")] uint* pdwCapabilities);
+
+            [VtblIndex(4)]
+            HRESULT GetLength([NativeTypeName("QWORD *")] ulong* pqwLength);
+
+            [VtblIndex(5)]
+            HRESULT SetLength([NativeTypeName("QWORD")] ulong qwLength);
+
+            [VtblIndex(6)]
+            HRESULT GetCurrentPosition([NativeTypeName("QWORD *")] ulong* pqwPosition);
+
+            [VtblIndex(7)]
+            HRESULT SetCurrentPosition([NativeTypeName("QWORD")] ulong qwPosition);
+
+            [VtblIndex(8)]
+            HRESULT IsEndOfStream(BOOL* pfEndOfStream);
+
+            [VtblIndex(9)]
+            HRESULT Read(byte* pb, [NativeTypeName("ULONG")] uint cb, [NativeTypeName("ULONG *")] uint* pcbRead);
+
+            [VtblIndex(10)]
+            HRESULT BeginRead(byte* pb, [NativeTypeName("ULONG")] uint cb, IMFAsyncCallback* pCallback, IUnknown* punkState);
+
+            [VtblIndex(11)]
+            HRESULT EndRead(IMFAsyncResult* pResult, [NativeTypeName("ULONG *")] uint* pcbRead);
+
+            [VtblIndex(12)]
+            HRESULT Write([NativeTypeName("const BYTE *")] byte* pb, [NativeTypeName("ULONG")] uint cb, [NativeTypeName("ULONG *")] uint* pcbWritten);
+
+            [VtblIndex(13)]
+            HRESULT BeginWrite([NativeTypeName("const BYTE *")] byte* pb, [NativeTypeName("ULONG")] uint cb, IMFAsyncCallback* pCallback, IUnknown* punkState);
+
+            [VtblIndex(14)]
+            HRESULT EndWrite(IMFAsyncResult* pResult, [NativeTypeName("ULONG *")] uint* pcbWritten);
+
+            [VtblIndex(15)]
+            HRESULT Seek(MFBYTESTREAM_SEEK_ORIGIN SeekOrigin, [NativeTypeName("LONGLONG")] long llSeekOffset, [NativeTypeName("DWORD")] uint dwSeekFlags, [NativeTypeName("QWORD *")] ulong* pqwCurrentPosition);
+
+            [VtblIndex(16)]
+            HRESULT Flush();
+
+            [VtblIndex(17)]
+            HRESULT Close();
         }
 
         public partial struct Vtbl

@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("C2B937A9-3110-4398-8A56-F34C6342D244")]
     [NativeTypeName("struct ICreatingProcess : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct ICreatingProcess
+    public unsafe partial struct ICreatingProcess : ICreatingProcess.Interface
     {
         public void** lpVtbl;
 
@@ -44,6 +44,12 @@ namespace TerraFX.Interop
         public HRESULT OnCreating(ICreateProcessInputs* pcpi)
         {
             return ((delegate* unmanaged<ICreatingProcess*, ICreateProcessInputs*, int>)(lpVtbl[3]))((ICreatingProcess*)Unsafe.AsPointer(ref this), pcpi);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT OnCreating(ICreateProcessInputs* pcpi);
         }
 
         public partial struct Vtbl

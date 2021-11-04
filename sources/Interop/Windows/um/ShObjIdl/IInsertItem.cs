@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("D2B57227-3D23-4B95-93C0-492BD454C356")]
     [NativeTypeName("struct IInsertItem : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IInsertItem
+    public unsafe partial struct IInsertItem : IInsertItem.Interface
     {
         public void** lpVtbl;
 
@@ -44,6 +44,12 @@ namespace TerraFX.Interop
         public HRESULT InsertItem([NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidl)
         {
             return ((delegate* unmanaged<IInsertItem*, ITEMIDLIST*, int>)(lpVtbl[3]))((IInsertItem*)Unsafe.AsPointer(ref this), pidl);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT InsertItem([NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidl);
         }
 
         public partial struct Vtbl

@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("7F9185B0-CB92-43C5-80A9-92277A4F7B54")]
     [NativeTypeName("struct IExecuteCommand : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IExecuteCommand
+    public unsafe partial struct IExecuteCommand : IExecuteCommand.Interface
     {
         public void** lpVtbl;
 
@@ -86,6 +86,30 @@ namespace TerraFX.Interop
         public HRESULT Execute()
         {
             return ((delegate* unmanaged<IExecuteCommand*, int>)(lpVtbl[9]))((IExecuteCommand*)Unsafe.AsPointer(ref this));
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT SetKeyState([NativeTypeName("DWORD")] uint grfKeyState);
+
+            [VtblIndex(4)]
+            HRESULT SetParameters([NativeTypeName("LPCWSTR")] ushort* pszParameters);
+
+            [VtblIndex(5)]
+            HRESULT SetPosition(POINT pt);
+
+            [VtblIndex(6)]
+            HRESULT SetShowWindow(int nShow);
+
+            [VtblIndex(7)]
+            HRESULT SetNoShowUI(BOOL fNoShowUI);
+
+            [VtblIndex(8)]
+            HRESULT SetDirectory([NativeTypeName("LPCWSTR")] ushort* pszDirectory);
+
+            [VtblIndex(9)]
+            HRESULT Execute();
         }
 
         public partial struct Vtbl

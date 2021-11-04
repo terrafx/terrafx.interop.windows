@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("987A573E-46EE-4E89-96AB-DDF7F8FDC98C")]
     [NativeTypeName("struct IShellUIHelper6 : IShellUIHelper5")]
     [NativeInheritance("IShellUIHelper5")]
-    public unsafe partial struct IShellUIHelper6
+    public unsafe partial struct IShellUIHelper6 : IShellUIHelper6.Interface
     {
         public void** lpVtbl;
 
@@ -632,6 +632,51 @@ namespace TerraFX.Interop
         public HRESULT msLaunchInternetOptions()
         {
             return ((delegate* unmanaged<IShellUIHelper6*, int>)(lpVtbl[87]))((IShellUIHelper6*)Unsafe.AsPointer(ref this));
+        }
+
+        public interface Interface : IShellUIHelper5.Interface
+        {
+            [VtblIndex(74)]
+            HRESULT msStopPeriodicTileUpdate();
+
+            [VtblIndex(75)]
+            HRESULT msStartPeriodicTileUpdate(VARIANT pollingUris, VARIANT startTime, VARIANT uiUpdateRecurrence);
+
+            [VtblIndex(76)]
+            HRESULT msStartPeriodicTileUpdateBatch(VARIANT pollingUris, VARIANT startTime, VARIANT uiUpdateRecurrence);
+
+            [VtblIndex(77)]
+            HRESULT msClearTile();
+
+            [VtblIndex(78)]
+            HRESULT msEnableTileNotificationQueue([NativeTypeName("VARIANT_BOOL")] short fChange);
+
+            [VtblIndex(79)]
+            HRESULT msPinnedSiteState(VARIANT* pvarSiteState);
+
+            [VtblIndex(80)]
+            HRESULT msEnableTileNotificationQueueForSquare150x150([NativeTypeName("VARIANT_BOOL")] short fChange);
+
+            [VtblIndex(81)]
+            HRESULT msEnableTileNotificationQueueForWide310x150([NativeTypeName("VARIANT_BOOL")] short fChange);
+
+            [VtblIndex(82)]
+            HRESULT msEnableTileNotificationQueueForSquare310x310([NativeTypeName("VARIANT_BOOL")] short fChange);
+
+            [VtblIndex(83)]
+            HRESULT msScheduledTileNotification([NativeTypeName("BSTR")] ushort* bstrNotificationXml, [NativeTypeName("BSTR")] ushort* bstrNotificationId, [NativeTypeName("BSTR")] ushort* bstrNotificationTag, VARIANT startTime, VARIANT expirationTime);
+
+            [VtblIndex(84)]
+            HRESULT msRemoveScheduledTileNotification([NativeTypeName("BSTR")] ushort* bstrNotificationId);
+
+            [VtblIndex(85)]
+            HRESULT msStartPeriodicBadgeUpdate([NativeTypeName("BSTR")] ushort* pollingUri, VARIANT startTime, VARIANT uiUpdateRecurrence);
+
+            [VtblIndex(86)]
+            HRESULT msStopPeriodicBadgeUpdate();
+
+            [VtblIndex(87)]
+            HRESULT msLaunchInternetOptions();
         }
 
         public partial struct Vtbl

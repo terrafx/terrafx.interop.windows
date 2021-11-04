@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("305106EC-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct IHTMLStyleFontFace2 : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct IHTMLStyleFontFace2
+    public unsafe partial struct IHTMLStyleFontFace2 : IHTMLStyleFontFace2.Interface
     {
         public void** lpVtbl;
 
@@ -72,6 +72,12 @@ namespace TerraFX.Interop
         public HRESULT get_style(IHTMLRuleStyle** p)
         {
             return ((delegate* unmanaged<IHTMLStyleFontFace2*, IHTMLRuleStyle**, int>)(lpVtbl[7]))((IHTMLStyleFontFace2*)Unsafe.AsPointer(ref this), p);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT get_style(IHTMLRuleStyle** p);
         }
 
         public partial struct Vtbl

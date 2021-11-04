@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("A359DEC5-E813-4834-8A2A-BA7F1D777D76")]
     [NativeTypeName("struct IWbemBackupRestoreEx : IWbemBackupRestore")]
     [NativeInheritance("IWbemBackupRestore")]
-    public unsafe partial struct IWbemBackupRestoreEx
+    public unsafe partial struct IWbemBackupRestoreEx : IWbemBackupRestoreEx.Interface
     {
         public void** lpVtbl;
 
@@ -65,6 +65,15 @@ namespace TerraFX.Interop
         public HRESULT Resume()
         {
             return ((delegate* unmanaged<IWbemBackupRestoreEx*, int>)(lpVtbl[6]))((IWbemBackupRestoreEx*)Unsafe.AsPointer(ref this));
+        }
+
+        public interface Interface : IWbemBackupRestore.Interface
+        {
+            [VtblIndex(5)]
+            HRESULT Pause();
+
+            [VtblIndex(6)]
+            HRESULT Resume();
         }
 
         public partial struct Vtbl

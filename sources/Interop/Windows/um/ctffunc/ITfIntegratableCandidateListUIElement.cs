@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("C7A6F54F-B180-416F-B2BF-7BF2E4683D7B")]
     [NativeTypeName("struct ITfIntegratableCandidateListUIElement : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct ITfIntegratableCandidateListUIElement
+    public unsafe partial struct ITfIntegratableCandidateListUIElement : ITfIntegratableCandidateListUIElement.Interface
     {
         public void** lpVtbl;
 
@@ -72,6 +72,24 @@ namespace TerraFX.Interop
         public HRESULT FinalizeExactCompositionString()
         {
             return ((delegate* unmanaged<ITfIntegratableCandidateListUIElement*, int>)(lpVtbl[7]))((ITfIntegratableCandidateListUIElement*)Unsafe.AsPointer(ref this));
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT SetIntegrationStyle(Guid guidIntegrationStyle);
+
+            [VtblIndex(4)]
+            HRESULT GetSelectionStyle(TfIntegratableCandidateListSelectionStyle* ptfSelectionStyle);
+
+            [VtblIndex(5)]
+            HRESULT OnKeyDown(WPARAM wParam, LPARAM lParam, BOOL* pfEaten);
+
+            [VtblIndex(6)]
+            HRESULT ShowCandidateNumbers(BOOL* pfShow);
+
+            [VtblIndex(7)]
+            HRESULT FinalizeExactCompositionString();
         }
 
         public partial struct Vtbl

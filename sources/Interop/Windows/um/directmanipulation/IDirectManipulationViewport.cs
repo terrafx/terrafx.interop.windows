@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("28B85A3D-60A0-48BD-9BA1-5CE8D9EA3A6D")]
     [NativeTypeName("struct IDirectManipulationViewport : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IDirectManipulationViewport
+    public unsafe partial struct IDirectManipulationViewport : IDirectManipulationViewport.Interface
     {
         public void** lpVtbl;
 
@@ -233,6 +233,93 @@ namespace TerraFX.Interop
         public HRESULT Abandon()
         {
             return ((delegate* unmanaged<IDirectManipulationViewport*, int>)(lpVtbl[30]))((IDirectManipulationViewport*)Unsafe.AsPointer(ref this));
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT Enable();
+
+            [VtblIndex(4)]
+            HRESULT Disable();
+
+            [VtblIndex(5)]
+            HRESULT SetContact([NativeTypeName("UINT32")] uint pointerId);
+
+            [VtblIndex(6)]
+            HRESULT ReleaseContact([NativeTypeName("UINT32")] uint pointerId);
+
+            [VtblIndex(7)]
+            HRESULT ReleaseAllContacts();
+
+            [VtblIndex(8)]
+            HRESULT GetStatus(DIRECTMANIPULATION_STATUS* status);
+
+            [VtblIndex(9)]
+            HRESULT GetTag([NativeTypeName("const IID &")] Guid* riid, void** @object, [NativeTypeName("UINT32 *")] uint* id);
+
+            [VtblIndex(10)]
+            HRESULT SetTag(IUnknown* @object, [NativeTypeName("UINT32")] uint id);
+
+            [VtblIndex(11)]
+            HRESULT GetViewportRect(RECT* viewport);
+
+            [VtblIndex(12)]
+            HRESULT SetViewportRect([NativeTypeName("const RECT *")] RECT* viewport);
+
+            [VtblIndex(13)]
+            HRESULT ZoomToRect([NativeTypeName("const float")] float left, [NativeTypeName("const float")] float top, [NativeTypeName("const float")] float right, [NativeTypeName("const float")] float bottom, BOOL animate);
+
+            [VtblIndex(14)]
+            HRESULT SetViewportTransform([NativeTypeName("const float *")] float* matrix, [NativeTypeName("DWORD")] uint pointCount);
+
+            [VtblIndex(15)]
+            HRESULT SyncDisplayTransform([NativeTypeName("const float *")] float* matrix, [NativeTypeName("DWORD")] uint pointCount);
+
+            [VtblIndex(16)]
+            HRESULT GetPrimaryContent([NativeTypeName("const IID &")] Guid* riid, void** @object);
+
+            [VtblIndex(17)]
+            HRESULT AddContent(IDirectManipulationContent* content);
+
+            [VtblIndex(18)]
+            HRESULT RemoveContent(IDirectManipulationContent* content);
+
+            [VtblIndex(19)]
+            HRESULT SetViewportOptions(DIRECTMANIPULATION_VIEWPORT_OPTIONS options);
+
+            [VtblIndex(20)]
+            HRESULT AddConfiguration(DIRECTMANIPULATION_CONFIGURATION configuration);
+
+            [VtblIndex(21)]
+            HRESULT RemoveConfiguration(DIRECTMANIPULATION_CONFIGURATION configuration);
+
+            [VtblIndex(22)]
+            HRESULT ActivateConfiguration(DIRECTMANIPULATION_CONFIGURATION configuration);
+
+            [VtblIndex(23)]
+            HRESULT SetManualGesture(DIRECTMANIPULATION_GESTURE_CONFIGURATION configuration);
+
+            [VtblIndex(24)]
+            HRESULT SetChaining(DIRECTMANIPULATION_MOTION_TYPES enabledTypes);
+
+            [VtblIndex(25)]
+            HRESULT AddEventHandler(HWND window, IDirectManipulationViewportEventHandler* eventHandler, [NativeTypeName("DWORD *")] uint* cookie);
+
+            [VtblIndex(26)]
+            HRESULT RemoveEventHandler([NativeTypeName("DWORD")] uint cookie);
+
+            [VtblIndex(27)]
+            HRESULT SetInputMode(DIRECTMANIPULATION_INPUT_MODE mode);
+
+            [VtblIndex(28)]
+            HRESULT SetUpdateMode(DIRECTMANIPULATION_INPUT_MODE mode);
+
+            [VtblIndex(29)]
+            HRESULT Stop();
+
+            [VtblIndex(30)]
+            HRESULT Abandon();
         }
 
         public partial struct Vtbl

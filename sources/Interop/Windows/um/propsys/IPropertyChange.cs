@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("F917BC8A-1BBA-4478-A245-1BDE03EB9431")]
     [NativeTypeName("struct IPropertyChange : IObjectWithPropertyKey")]
     [NativeInheritance("IObjectWithPropertyKey")]
-    public unsafe partial struct IPropertyChange
+    public unsafe partial struct IPropertyChange : IPropertyChange.Interface
     {
         public void** lpVtbl;
 
@@ -58,6 +58,12 @@ namespace TerraFX.Interop
         public HRESULT ApplyToPropVariant([NativeTypeName("const PROPVARIANT &")] PROPVARIANT* propvarIn, PROPVARIANT* ppropvarOut)
         {
             return ((delegate* unmanaged<IPropertyChange*, PROPVARIANT*, PROPVARIANT*, int>)(lpVtbl[5]))((IPropertyChange*)Unsafe.AsPointer(ref this), propvarIn, ppropvarOut);
+        }
+
+        public interface Interface : IObjectWithPropertyKey.Interface
+        {
+            [VtblIndex(5)]
+            HRESULT ApplyToPropVariant([NativeTypeName("const PROPVARIANT &")] PROPVARIANT* propvarIn, PROPVARIANT* ppropvarOut);
         }
 
         public partial struct Vtbl

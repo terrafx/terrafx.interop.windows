@@ -9,7 +9,7 @@ namespace TerraFX.Interop
 {
     [NativeTypeName("struct ID3D10EffectDepthStencilViewVariable : ID3D10EffectVariable")]
     [NativeInheritance("ID3D10EffectVariable")]
-    public unsafe partial struct ID3D10EffectDepthStencilViewVariable
+    public unsafe partial struct ID3D10EffectDepthStencilViewVariable : ID3D10EffectDepthStencilViewVariable.Interface
     {
         public void** lpVtbl;
 
@@ -214,6 +214,21 @@ namespace TerraFX.Interop
         public HRESULT GetDepthStencilArray(ID3D10DepthStencilView** ppResources, uint Offset, uint Count)
         {
             return ((delegate* unmanaged<ID3D10EffectDepthStencilViewVariable*, ID3D10DepthStencilView**, uint, uint, int>)(lpVtbl[28]))((ID3D10EffectDepthStencilViewVariable*)Unsafe.AsPointer(ref this), ppResources, Offset, Count);
+        }
+
+        public interface Interface : ID3D10EffectVariable.Interface
+        {
+            [VtblIndex(25)]
+            HRESULT SetDepthStencil(ID3D10DepthStencilView* pResource);
+
+            [VtblIndex(26)]
+            HRESULT GetDepthStencil(ID3D10DepthStencilView** ppResource);
+
+            [VtblIndex(27)]
+            HRESULT SetDepthStencilArray(ID3D10DepthStencilView** ppResources, uint Offset, uint Count);
+
+            [VtblIndex(28)]
+            HRESULT GetDepthStencilArray(ID3D10DepthStencilView** ppResources, uint Offset, uint Count);
         }
 
         public partial struct Vtbl

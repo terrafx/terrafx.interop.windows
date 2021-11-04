@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("00000129-0000-0000-C000-000000000046")]
     [NativeTypeName("struct IOleCacheControl : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IOleCacheControl
+    public unsafe partial struct IOleCacheControl : IOleCacheControl.Interface
     {
         public void** lpVtbl;
 
@@ -51,6 +51,15 @@ namespace TerraFX.Interop
         public HRESULT OnStop()
         {
             return ((delegate* unmanaged<IOleCacheControl*, int>)(lpVtbl[4]))((IOleCacheControl*)Unsafe.AsPointer(ref this));
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT OnRun([NativeTypeName("LPDATAOBJECT")] IDataObject* pDataObject);
+
+            [VtblIndex(4)]
+            HRESULT OnStop();
         }
 
         public partial struct Vtbl

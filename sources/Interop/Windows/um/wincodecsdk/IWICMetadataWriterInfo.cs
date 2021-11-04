@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("B22E3FBA-3925-4323-B5C1-9EBFC430F236")]
     [NativeTypeName("struct IWICMetadataWriterInfo : IWICMetadataHandlerInfo")]
     [NativeInheritance("IWICMetadataHandlerInfo")]
-    public unsafe partial struct IWICMetadataWriterInfo
+    public unsafe partial struct IWICMetadataWriterInfo : IWICMetadataWriterInfo.Interface
     {
         public void** lpVtbl;
 
@@ -156,6 +156,15 @@ namespace TerraFX.Interop
         public HRESULT CreateInstance(IWICMetadataWriter** ppIWriter)
         {
             return ((delegate* unmanaged<IWICMetadataWriterInfo*, IWICMetadataWriter**, int>)(lpVtbl[19]))((IWICMetadataWriterInfo*)Unsafe.AsPointer(ref this), ppIWriter);
+        }
+
+        public interface Interface : IWICMetadataHandlerInfo.Interface
+        {
+            [VtblIndex(18)]
+            HRESULT GetHeader([NativeTypeName("const GUID &")] Guid* guidContainerFormat, uint cbSize, WICMetadataHeader* pHeader, uint* pcbActual);
+
+            [VtblIndex(19)]
+            HRESULT CreateInstance(IWICMetadataWriter** ppIWriter);
         }
 
         public partial struct Vtbl

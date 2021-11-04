@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("2C941FD9-975B-59BE-A960-9A2A262853A5")]
     [NativeTypeName("struct IFsiItem : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct IFsiItem
+    public unsafe partial struct IFsiItem : IFsiItem.Interface
     {
         public void** lpVtbl;
 
@@ -149,6 +149,45 @@ namespace TerraFX.Interop
         public HRESULT FileSystemPath(FsiFileSystems fileSystem, [NativeTypeName("BSTR *")] ushort** pVal)
         {
             return ((delegate* unmanaged<IFsiItem*, FsiFileSystems, ushort**, int>)(lpVtbl[18]))((IFsiItem*)Unsafe.AsPointer(ref this), fileSystem, pVal);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT get_Name([NativeTypeName("BSTR *")] ushort** pVal);
+
+            [VtblIndex(8)]
+            HRESULT get_FullPath([NativeTypeName("BSTR *")] ushort** pVal);
+
+            [VtblIndex(9)]
+            HRESULT get_CreationTime([NativeTypeName("DATE *")] double* pVal);
+
+            [VtblIndex(10)]
+            HRESULT put_CreationTime([NativeTypeName("DATE")] double newVal);
+
+            [VtblIndex(11)]
+            HRESULT get_LastAccessedTime([NativeTypeName("DATE *")] double* pVal);
+
+            [VtblIndex(12)]
+            HRESULT put_LastAccessedTime([NativeTypeName("DATE")] double newVal);
+
+            [VtblIndex(13)]
+            HRESULT get_LastModifiedTime([NativeTypeName("DATE *")] double* pVal);
+
+            [VtblIndex(14)]
+            HRESULT put_LastModifiedTime([NativeTypeName("DATE")] double newVal);
+
+            [VtblIndex(15)]
+            HRESULT get_IsHidden([NativeTypeName("VARIANT_BOOL *")] short* pVal);
+
+            [VtblIndex(16)]
+            HRESULT put_IsHidden([NativeTypeName("VARIANT_BOOL")] short newVal);
+
+            [VtblIndex(17)]
+            HRESULT FileSystemName(FsiFileSystems fileSystem, [NativeTypeName("BSTR *")] ushort** pVal);
+
+            [VtblIndex(18)]
+            HRESULT FileSystemPath(FsiFileSystems fileSystem, [NativeTypeName("BSTR *")] ushort** pVal);
         }
 
         public partial struct Vtbl

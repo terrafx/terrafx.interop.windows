@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("D182108F-4EC6-443F-AA42-A71106EC825F")]
     [NativeTypeName("struct IMFMediaStream : IMFMediaEventGenerator")]
     [NativeInheritance("IMFMediaEventGenerator")]
-    public unsafe partial struct IMFMediaStream
+    public unsafe partial struct IMFMediaStream : IMFMediaStream.Interface
     {
         public void** lpVtbl;
 
@@ -86,6 +86,18 @@ namespace TerraFX.Interop
         public HRESULT RequestSample(IUnknown* pToken)
         {
             return ((delegate* unmanaged<IMFMediaStream*, IUnknown*, int>)(lpVtbl[9]))((IMFMediaStream*)Unsafe.AsPointer(ref this), pToken);
+        }
+
+        public interface Interface : IMFMediaEventGenerator.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT GetMediaSource(IMFMediaSource** ppMediaSource);
+
+            [VtblIndex(8)]
+            HRESULT GetStreamDescriptor(IMFStreamDescriptor** ppStreamDescriptor);
+
+            [VtblIndex(9)]
+            HRESULT RequestSample(IUnknown* pToken);
         }
 
         public partial struct Vtbl

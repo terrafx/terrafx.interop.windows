@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("7BE19E73-C9BF-468A-AC5A-A5E8653BEC87")]
     [NativeTypeName("struct IMFNetSchemeHandlerConfig : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IMFNetSchemeHandlerConfig
+    public unsafe partial struct IMFNetSchemeHandlerConfig : IMFNetSchemeHandlerConfig.Interface
     {
         public void** lpVtbl;
 
@@ -58,6 +58,18 @@ namespace TerraFX.Interop
         public HRESULT ResetProtocolRolloverSettings()
         {
             return ((delegate* unmanaged<IMFNetSchemeHandlerConfig*, int>)(lpVtbl[5]))((IMFNetSchemeHandlerConfig*)Unsafe.AsPointer(ref this));
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetNumberOfSupportedProtocols([NativeTypeName("ULONG *")] uint* pcProtocols);
+
+            [VtblIndex(4)]
+            HRESULT GetSupportedProtocolType([NativeTypeName("ULONG")] uint nProtocolIndex, MFNETSOURCE_PROTOCOL_TYPE* pnProtocolType);
+
+            [VtblIndex(5)]
+            HRESULT ResetProtocolRolloverSettings();
         }
 
         public partial struct Vtbl

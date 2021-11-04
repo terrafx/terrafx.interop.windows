@@ -24,7 +24,7 @@ namespace TerraFX.Interop
     [Guid("985F7E37-4ED0-4A19-98A3-15B0EDFDE306")]
     [NativeTypeName("struct ID2D1DeviceContext6 : ID2D1DeviceContext5")]
     [NativeInheritance("ID2D1DeviceContext5")]
-    public unsafe partial struct ID2D1DeviceContext6
+    public unsafe partial struct ID2D1DeviceContext6 : ID2D1DeviceContext6.Interface
     {
         public void** lpVtbl;
 
@@ -1028,6 +1028,12 @@ namespace TerraFX.Interop
         public void BlendImage(ID2D1Image* image, D2D1_BLEND_MODE blendMode, [NativeTypeName("const D2D1_POINT_2F *")] D2D_POINT_2F* targetOffset = null, [NativeTypeName("const D2D1_RECT_F *")] D2D_RECT_F* imageRectangle = null, D2D1_INTERPOLATION_MODE interpolationMode = D2D1_INTERPOLATION_MODE_LINEAR)
         {
             ((delegate* unmanaged<ID2D1DeviceContext6*, ID2D1Image*, D2D1_BLEND_MODE, D2D_POINT_2F*, D2D_RECT_F*, D2D1_INTERPOLATION_MODE, void>)(lpVtbl[119]))((ID2D1DeviceContext6*)Unsafe.AsPointer(ref this), image, blendMode, targetOffset, imageRectangle, interpolationMode);
+        }
+
+        public interface Interface : ID2D1DeviceContext5.Interface
+        {
+            [VtblIndex(119)]
+            void BlendImage(ID2D1Image* image, D2D1_BLEND_MODE blendMode, [NativeTypeName("const D2D1_POINT_2F *")] D2D_POINT_2F* targetOffset = null, [NativeTypeName("const D2D1_RECT_F *")] D2D_RECT_F* imageRectangle = null, D2D1_INTERPOLATION_MODE interpolationMode = D2D1_INTERPOLATION_MODE_LINEAR);
         }
 
         public partial struct Vtbl

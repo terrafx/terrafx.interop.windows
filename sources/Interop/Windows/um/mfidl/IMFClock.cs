@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("2EB1E945-18B8-4139-9B1A-D5D584818530")]
     [NativeTypeName("struct IMFClock : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IMFClock
+    public unsafe partial struct IMFClock : IMFClock.Interface
     {
         public void** lpVtbl;
 
@@ -72,6 +72,24 @@ namespace TerraFX.Interop
         public HRESULT GetProperties(MFCLOCK_PROPERTIES* pClockProperties)
         {
             return ((delegate* unmanaged<IMFClock*, MFCLOCK_PROPERTIES*, int>)(lpVtbl[7]))((IMFClock*)Unsafe.AsPointer(ref this), pClockProperties);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetClockCharacteristics([NativeTypeName("DWORD *")] uint* pdwCharacteristics);
+
+            [VtblIndex(4)]
+            HRESULT GetCorrelatedTime([NativeTypeName("DWORD")] uint dwReserved, [NativeTypeName("LONGLONG *")] long* pllClockTime, [NativeTypeName("MFTIME *")] long* phnsSystemTime);
+
+            [VtblIndex(5)]
+            HRESULT GetContinuityKey([NativeTypeName("DWORD *")] uint* pdwContinuityKey);
+
+            [VtblIndex(6)]
+            HRESULT GetState([NativeTypeName("DWORD")] uint dwReserved, MFCLOCK_STATE* peClockState);
+
+            [VtblIndex(7)]
+            HRESULT GetProperties(MFCLOCK_PROPERTIES* pClockProperties);
         }
 
         public partial struct Vtbl

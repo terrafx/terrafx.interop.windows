@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("3050F818-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct IHTMLCurrentStyle3 : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct IHTMLCurrentStyle3
+    public unsafe partial struct IHTMLCurrentStyle3 : IHTMLCurrentStyle3.Interface
     {
         public void** lpVtbl;
 
@@ -93,6 +93,21 @@ namespace TerraFX.Interop
         public HRESULT get_whiteSpace([NativeTypeName("BSTR *")] ushort** p)
         {
             return ((delegate* unmanaged<IHTMLCurrentStyle3*, ushort**, int>)(lpVtbl[10]))((IHTMLCurrentStyle3*)Unsafe.AsPointer(ref this), p);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT get_textOverflow([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(8)]
+            HRESULT get_minHeight(VARIANT* p);
+
+            [VtblIndex(9)]
+            HRESULT get_wordSpacing(VARIANT* p);
+
+            [VtblIndex(10)]
+            HRESULT get_whiteSpace([NativeTypeName("BSTR *")] ushort** p);
         }
 
         public partial struct Vtbl

@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("3051080C-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct IHTMLMSCSSKeyframeRule : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct IHTMLMSCSSKeyframeRule
+    public unsafe partial struct IHTMLMSCSSKeyframeRule : IHTMLMSCSSKeyframeRule.Interface
     {
         public void** lpVtbl;
 
@@ -86,6 +86,18 @@ namespace TerraFX.Interop
         public HRESULT get_style(IHTMLRuleStyle** p)
         {
             return ((delegate* unmanaged<IHTMLMSCSSKeyframeRule*, IHTMLRuleStyle**, int>)(lpVtbl[9]))((IHTMLMSCSSKeyframeRule*)Unsafe.AsPointer(ref this), p);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT put_keyText([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(8)]
+            HRESULT get_keyText([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(9)]
+            HRESULT get_style(IHTMLRuleStyle** p);
         }
 
         public partial struct Vtbl

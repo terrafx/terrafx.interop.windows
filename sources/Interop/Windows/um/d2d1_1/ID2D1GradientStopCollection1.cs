@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("AE1572F4-5DD0-4777-998B-9279472AE63B")]
     [NativeTypeName("struct ID2D1GradientStopCollection1 : ID2D1GradientStopCollection")]
     [NativeInheritance("ID2D1GradientStopCollection")]
-    public unsafe partial struct ID2D1GradientStopCollection1
+    public unsafe partial struct ID2D1GradientStopCollection1 : ID2D1GradientStopCollection1.Interface
     {
         public void** lpVtbl;
 
@@ -108,6 +108,24 @@ namespace TerraFX.Interop
         public D2D1_COLOR_INTERPOLATION_MODE GetColorInterpolationMode()
         {
             return ((delegate* unmanaged<ID2D1GradientStopCollection1*, D2D1_COLOR_INTERPOLATION_MODE>)(lpVtbl[12]))((ID2D1GradientStopCollection1*)Unsafe.AsPointer(ref this));
+        }
+
+        public interface Interface : ID2D1GradientStopCollection.Interface
+        {
+            [VtblIndex(8)]
+            void GetGradientStops1(D2D1_GRADIENT_STOP* gradientStops, [NativeTypeName("UINT32")] uint gradientStopsCount);
+
+            [VtblIndex(9)]
+            D2D1_COLOR_SPACE GetPreInterpolationSpace();
+
+            [VtblIndex(10)]
+            D2D1_COLOR_SPACE GetPostInterpolationSpace();
+
+            [VtblIndex(11)]
+            D2D1_BUFFER_PRECISION GetBufferPrecision();
+
+            [VtblIndex(12)]
+            D2D1_COLOR_INTERPOLATION_MODE GetColorInterpolationMode();
         }
 
         public partial struct Vtbl

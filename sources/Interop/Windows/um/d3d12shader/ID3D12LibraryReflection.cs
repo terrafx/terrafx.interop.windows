@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("8E349D19-54DB-4A56-9DC9-119D87BDB804")]
     [NativeTypeName("struct ID3D12LibraryReflection : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct ID3D12LibraryReflection
+    public unsafe partial struct ID3D12LibraryReflection : ID3D12LibraryReflection.Interface
     {
         public void** lpVtbl;
 
@@ -51,6 +51,15 @@ namespace TerraFX.Interop
         public ID3D12FunctionReflection* GetFunctionByIndex(int FunctionIndex)
         {
             return ((delegate* unmanaged<ID3D12LibraryReflection*, int, ID3D12FunctionReflection*>)(lpVtbl[4]))((ID3D12LibraryReflection*)Unsafe.AsPointer(ref this), FunctionIndex);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetDesc(D3D12_LIBRARY_DESC* pDesc);
+
+            [VtblIndex(4)]
+            ID3D12FunctionReflection* GetFunctionByIndex(int FunctionIndex);
         }
 
         public partial struct Vtbl

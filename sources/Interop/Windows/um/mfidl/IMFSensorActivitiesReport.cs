@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("683F7A5E-4A19-43CD-B1A9-DBF4AB3F7777")]
     [NativeTypeName("struct IMFSensorActivitiesReport : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IMFSensorActivitiesReport
+    public unsafe partial struct IMFSensorActivitiesReport : IMFSensorActivitiesReport.Interface
     {
         public void** lpVtbl;
 
@@ -58,6 +58,18 @@ namespace TerraFX.Interop
         public HRESULT GetActivityReportByDeviceName([NativeTypeName("LPCWSTR")] ushort* SymbolicName, IMFSensorActivityReport** sensorActivityReport)
         {
             return ((delegate* unmanaged<IMFSensorActivitiesReport*, ushort*, IMFSensorActivityReport**, int>)(lpVtbl[5]))((IMFSensorActivitiesReport*)Unsafe.AsPointer(ref this), SymbolicName, sensorActivityReport);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetCount([NativeTypeName("ULONG *")] uint* pcCount);
+
+            [VtblIndex(4)]
+            HRESULT GetActivityReport([NativeTypeName("ULONG")] uint Index, IMFSensorActivityReport** sensorActivityReport);
+
+            [VtblIndex(5)]
+            HRESULT GetActivityReportByDeviceName([NativeTypeName("LPCWSTR")] ushort* SymbolicName, IMFSensorActivityReport** sensorActivityReport);
         }
 
         public partial struct Vtbl

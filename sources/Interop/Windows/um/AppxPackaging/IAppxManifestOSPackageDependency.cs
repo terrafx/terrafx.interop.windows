@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("154995EE-54A6-4F14-AC97-D8CF0519644B")]
     [NativeTypeName("struct IAppxManifestOSPackageDependency : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IAppxManifestOSPackageDependency
+    public unsafe partial struct IAppxManifestOSPackageDependency : IAppxManifestOSPackageDependency.Interface
     {
         public void** lpVtbl;
 
@@ -51,6 +51,15 @@ namespace TerraFX.Interop
         public HRESULT GetVersion([NativeTypeName("UINT64 *")] ulong* version)
         {
             return ((delegate* unmanaged<IAppxManifestOSPackageDependency*, ulong*, int>)(lpVtbl[4]))((IAppxManifestOSPackageDependency*)Unsafe.AsPointer(ref this), version);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetName([NativeTypeName("LPWSTR *")] ushort** name);
+
+            [VtblIndex(4)]
+            HRESULT GetVersion([NativeTypeName("UINT64 *")] ulong* version);
         }
 
         public partial struct Vtbl

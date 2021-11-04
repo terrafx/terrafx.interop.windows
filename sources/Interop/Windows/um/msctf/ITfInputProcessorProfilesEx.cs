@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("892F230F-FE00-4A41-A98E-FCD6DE0D35EF")]
     [NativeTypeName("struct ITfInputProcessorProfilesEx : ITfInputProcessorProfiles")]
     [NativeInheritance("ITfInputProcessorProfiles")]
-    public unsafe partial struct ITfInputProcessorProfilesEx
+    public unsafe partial struct ITfInputProcessorProfilesEx : ITfInputProcessorProfilesEx.Interface
     {
         public void** lpVtbl;
 
@@ -170,6 +170,12 @@ namespace TerraFX.Interop
         public HRESULT SetLanguageProfileDisplayName([NativeTypeName("const IID &")] Guid* rclsid, [NativeTypeName("LANGID")] ushort langid, [NativeTypeName("const GUID &")] Guid* guidProfile, [NativeTypeName("const WCHAR *")] ushort* pchFile, [NativeTypeName("ULONG")] uint cchFile, [NativeTypeName("ULONG")] uint uResId)
         {
             return ((delegate* unmanaged<ITfInputProcessorProfilesEx*, Guid*, ushort, Guid*, ushort*, uint, uint, int>)(lpVtbl[21]))((ITfInputProcessorProfilesEx*)Unsafe.AsPointer(ref this), rclsid, langid, guidProfile, pchFile, cchFile, uResId);
+        }
+
+        public interface Interface : ITfInputProcessorProfiles.Interface
+        {
+            [VtblIndex(21)]
+            HRESULT SetLanguageProfileDisplayName([NativeTypeName("const IID &")] Guid* rclsid, [NativeTypeName("LANGID")] ushort langid, [NativeTypeName("const GUID &")] Guid* guidProfile, [NativeTypeName("const WCHAR *")] ushort* pchFile, [NativeTypeName("ULONG")] uint cchFile, [NativeTypeName("ULONG")] uint uResId);
         }
 
         public partial struct Vtbl

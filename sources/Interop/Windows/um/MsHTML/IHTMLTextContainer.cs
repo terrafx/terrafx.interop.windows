@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("3050F230-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct IHTMLTextContainer : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct IHTMLTextContainer
+    public unsafe partial struct IHTMLTextContainer : IHTMLTextContainer.Interface
     {
         public void** lpVtbl;
 
@@ -128,6 +128,36 @@ namespace TerraFX.Interop
         public HRESULT get_onscroll(VARIANT* p)
         {
             return ((delegate* unmanaged<IHTMLTextContainer*, VARIANT*, int>)(lpVtbl[15]))((IHTMLTextContainer*)Unsafe.AsPointer(ref this), p);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT createControlRange(IDispatch** range);
+
+            [VtblIndex(8)]
+            HRESULT get_scrollHeight([NativeTypeName("long *")] int* p);
+
+            [VtblIndex(9)]
+            HRESULT get_scrollWidth([NativeTypeName("long *")] int* p);
+
+            [VtblIndex(10)]
+            HRESULT put_scrollTop([NativeTypeName("long")] int v);
+
+            [VtblIndex(11)]
+            HRESULT get_scrollTop([NativeTypeName("long *")] int* p);
+
+            [VtblIndex(12)]
+            HRESULT put_scrollLeft([NativeTypeName("long")] int v);
+
+            [VtblIndex(13)]
+            HRESULT get_scrollLeft([NativeTypeName("long *")] int* p);
+
+            [VtblIndex(14)]
+            HRESULT put_onscroll(VARIANT v);
+
+            [VtblIndex(15)]
+            HRESULT get_onscroll(VARIANT* p);
         }
 
         public partial struct Vtbl

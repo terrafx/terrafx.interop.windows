@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("98A1B0BB-03EB-4935-AE7C-93C1FA0E1C93")]
     [NativeTypeName("struct IMFMediaEngine : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IMFMediaEngine
+    public unsafe partial struct IMFMediaEngine : IMFMediaEngine.Interface
     {
         public void** lpVtbl;
 
@@ -331,6 +331,135 @@ namespace TerraFX.Interop
         public HRESULT OnVideoStreamTick([NativeTypeName("LONGLONG *")] long* pPts)
         {
             return ((delegate* unmanaged<IMFMediaEngine*, long*, int>)(lpVtbl[44]))((IMFMediaEngine*)Unsafe.AsPointer(ref this), pPts);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetError(IMFMediaError** ppError);
+
+            [VtblIndex(4)]
+            HRESULT SetErrorCode(MF_MEDIA_ENGINE_ERR error);
+
+            [VtblIndex(5)]
+            HRESULT SetSourceElements(IMFMediaEngineSrcElements* pSrcElements);
+
+            [VtblIndex(6)]
+            HRESULT SetSource([NativeTypeName("BSTR")] ushort* pUrl);
+
+            [VtblIndex(7)]
+            HRESULT GetCurrentSource([NativeTypeName("BSTR *")] ushort** ppUrl);
+
+            [VtblIndex(8)]
+            ushort GetNetworkState();
+
+            [VtblIndex(9)]
+            MF_MEDIA_ENGINE_PRELOAD GetPreload();
+
+            [VtblIndex(10)]
+            HRESULT SetPreload(MF_MEDIA_ENGINE_PRELOAD Preload);
+
+            [VtblIndex(11)]
+            HRESULT GetBuffered(IMFMediaTimeRange** ppBuffered);
+
+            [VtblIndex(12)]
+            HRESULT Load();
+
+            [VtblIndex(13)]
+            HRESULT CanPlayType([NativeTypeName("BSTR")] ushort* type, MF_MEDIA_ENGINE_CANPLAY* pAnswer);
+
+            [VtblIndex(14)]
+            ushort GetReadyState();
+
+            [VtblIndex(15)]
+            BOOL IsSeeking();
+
+            [VtblIndex(16)]
+            double GetCurrentTime();
+
+            [VtblIndex(17)]
+            HRESULT SetCurrentTime(double seekTime);
+
+            [VtblIndex(18)]
+            double GetStartTime();
+
+            [VtblIndex(19)]
+            double GetDuration();
+
+            [VtblIndex(20)]
+            BOOL IsPaused();
+
+            [VtblIndex(21)]
+            double GetDefaultPlaybackRate();
+
+            [VtblIndex(22)]
+            HRESULT SetDefaultPlaybackRate(double Rate);
+
+            [VtblIndex(23)]
+            double GetPlaybackRate();
+
+            [VtblIndex(24)]
+            HRESULT SetPlaybackRate(double Rate);
+
+            [VtblIndex(25)]
+            HRESULT GetPlayed(IMFMediaTimeRange** ppPlayed);
+
+            [VtblIndex(26)]
+            HRESULT GetSeekable(IMFMediaTimeRange** ppSeekable);
+
+            [VtblIndex(27)]
+            BOOL IsEnded();
+
+            [VtblIndex(28)]
+            BOOL GetAutoPlay();
+
+            [VtblIndex(29)]
+            HRESULT SetAutoPlay(BOOL AutoPlay);
+
+            [VtblIndex(30)]
+            BOOL GetLoop();
+
+            [VtblIndex(31)]
+            HRESULT SetLoop(BOOL Loop);
+
+            [VtblIndex(32)]
+            HRESULT Play();
+
+            [VtblIndex(33)]
+            HRESULT Pause();
+
+            [VtblIndex(34)]
+            BOOL GetMuted();
+
+            [VtblIndex(35)]
+            HRESULT SetMuted(BOOL Muted);
+
+            [VtblIndex(36)]
+            double GetVolume();
+
+            [VtblIndex(37)]
+            HRESULT SetVolume(double Volume);
+
+            [VtblIndex(38)]
+            BOOL HasVideo();
+
+            [VtblIndex(39)]
+            BOOL HasAudio();
+
+            [VtblIndex(40)]
+            HRESULT GetNativeVideoSize([NativeTypeName("DWORD *")] uint* cx, [NativeTypeName("DWORD *")] uint* cy);
+
+            [VtblIndex(41)]
+            HRESULT GetVideoAspectRatio([NativeTypeName("DWORD *")] uint* cx, [NativeTypeName("DWORD *")] uint* cy);
+
+            [VtblIndex(42)]
+            HRESULT Shutdown();
+
+            [VtblIndex(43)]
+            HRESULT TransferVideoFrame(IUnknown* pDstSurf, [NativeTypeName("const MFVideoNormalizedRect *")] MFVideoNormalizedRect* pSrc, [NativeTypeName("const RECT *")] RECT* pDst, [NativeTypeName("const MFARGB *")] MFARGB* pBorderClr);
+
+            [VtblIndex(44)]
+            HRESULT OnVideoStreamTick([NativeTypeName("LONGLONG *")] long* pPts);
         }
 
         public partial struct Vtbl

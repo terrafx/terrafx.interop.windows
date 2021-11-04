@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("77ACCE80-638E-4E65-8895-C1F23386863E")]
     [NativeTypeName("struct ID3D12Device1 : ID3D12Device")]
     [NativeInheritance("ID3D12Device")]
-    public unsafe partial struct ID3D12Device1
+    public unsafe partial struct ID3D12Device1 : ID3D12Device1.Interface
     {
         public void** lpVtbl;
 
@@ -348,6 +348,18 @@ namespace TerraFX.Interop
         public HRESULT SetResidencyPriority(uint NumObjects, [NativeTypeName("ID3D12Pageable *const *")] ID3D12Pageable** ppObjects, [NativeTypeName("const D3D12_RESIDENCY_PRIORITY *")] D3D12_RESIDENCY_PRIORITY* pPriorities)
         {
             return ((delegate* unmanaged<ID3D12Device1*, uint, ID3D12Pageable**, D3D12_RESIDENCY_PRIORITY*, int>)(lpVtbl[46]))((ID3D12Device1*)Unsafe.AsPointer(ref this), NumObjects, ppObjects, pPriorities);
+        }
+
+        public interface Interface : ID3D12Device.Interface
+        {
+            [VtblIndex(44)]
+            HRESULT CreatePipelineLibrary([NativeTypeName("const void *")] void* pLibraryBlob, [NativeTypeName("SIZE_T")] nuint BlobLength, [NativeTypeName("const IID &")] Guid* riid, void** ppPipelineLibrary);
+
+            [VtblIndex(45)]
+            HRESULT SetEventOnMultipleFenceCompletion([NativeTypeName("ID3D12Fence *const *")] ID3D12Fence** ppFences, [NativeTypeName("const UINT64 *")] ulong* pFenceValues, uint NumFences, D3D12_MULTIPLE_FENCE_WAIT_FLAGS Flags, HANDLE hEvent);
+
+            [VtblIndex(46)]
+            HRESULT SetResidencyPriority(uint NumObjects, [NativeTypeName("ID3D12Pageable *const *")] ID3D12Pageable** ppObjects, [NativeTypeName("const D3D12_RESIDENCY_PRIORITY *")] D3D12_RESIDENCY_PRIORITY* pPriorities);
         }
 
         public partial struct Vtbl

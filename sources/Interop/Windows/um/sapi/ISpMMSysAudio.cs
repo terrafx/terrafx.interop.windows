@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("15806F6E-1D70-4B48-98E6-3B1A007509AB")]
     [NativeTypeName("struct ISpMMSysAudio : ISpAudio")]
     [NativeInheritance("ISpAudio")]
-    public unsafe partial struct ISpMMSysAudio
+    public unsafe partial struct ISpMMSysAudio : ISpMMSysAudio.Interface
     {
         public void** lpVtbl;
 
@@ -233,6 +233,24 @@ namespace TerraFX.Interop
         public HRESULT SetLineId(uint uLineId)
         {
             return ((delegate* unmanaged<ISpMMSysAudio*, uint, int>)(lpVtbl[30]))((ISpMMSysAudio*)Unsafe.AsPointer(ref this), uLineId);
+        }
+
+        public interface Interface : ISpAudio.Interface
+        {
+            [VtblIndex(26)]
+            HRESULT GetDeviceId(uint* puDeviceId);
+
+            [VtblIndex(27)]
+            HRESULT SetDeviceId(uint uDeviceId);
+
+            [VtblIndex(28)]
+            HRESULT GetMMHandle(void** pHandle);
+
+            [VtblIndex(29)]
+            HRESULT GetLineId(uint* puLineId);
+
+            [VtblIndex(30)]
+            HRESULT SetLineId(uint uLineId);
         }
 
         public partial struct Vtbl

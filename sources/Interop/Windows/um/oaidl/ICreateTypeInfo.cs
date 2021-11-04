@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("00020405-0000-0000-C000-000000000046")]
     [NativeTypeName("struct ICreateTypeInfo : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct ICreateTypeInfo
+    public unsafe partial struct ICreateTypeInfo : ICreateTypeInfo.Interface
     {
         public void** lpVtbl;
 
@@ -198,6 +198,78 @@ namespace TerraFX.Interop
         public HRESULT LayOut()
         {
             return ((delegate* unmanaged<ICreateTypeInfo*, int>)(lpVtbl[25]))((ICreateTypeInfo*)Unsafe.AsPointer(ref this));
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT SetGuid([NativeTypeName("const GUID &")] Guid* guid);
+
+            [VtblIndex(4)]
+            HRESULT SetTypeFlags(uint uTypeFlags);
+
+            [VtblIndex(5)]
+            HRESULT SetDocString([NativeTypeName("LPOLESTR")] ushort* pStrDoc);
+
+            [VtblIndex(6)]
+            HRESULT SetHelpContext([NativeTypeName("DWORD")] uint dwHelpContext);
+
+            [VtblIndex(7)]
+            HRESULT SetVersion([NativeTypeName("WORD")] ushort wMajorVerNum, [NativeTypeName("WORD")] ushort wMinorVerNum);
+
+            [VtblIndex(8)]
+            HRESULT AddRefTypeInfo(ITypeInfo* pTInfo, [NativeTypeName("HREFTYPE *")] uint* phRefType);
+
+            [VtblIndex(9)]
+            HRESULT AddFuncDesc(uint index, FUNCDESC* pFuncDesc);
+
+            [VtblIndex(10)]
+            HRESULT AddImplType(uint index, [NativeTypeName("HREFTYPE")] uint hRefType);
+
+            [VtblIndex(11)]
+            HRESULT SetImplTypeFlags(uint index, int implTypeFlags);
+
+            [VtblIndex(12)]
+            HRESULT SetAlignment([NativeTypeName("WORD")] ushort cbAlignment);
+
+            [VtblIndex(13)]
+            HRESULT SetSchema([NativeTypeName("LPOLESTR")] ushort* pStrSchema);
+
+            [VtblIndex(14)]
+            HRESULT AddVarDesc(uint index, VARDESC* pVarDesc);
+
+            [VtblIndex(15)]
+            HRESULT SetFuncAndParamNames(uint index, [NativeTypeName("LPOLESTR *")] ushort** rgszNames, uint cNames);
+
+            [VtblIndex(16)]
+            HRESULT SetVarName(uint index, [NativeTypeName("LPOLESTR")] ushort* szName);
+
+            [VtblIndex(17)]
+            HRESULT SetTypeDescAlias(TYPEDESC* pTDescAlias);
+
+            [VtblIndex(18)]
+            HRESULT DefineFuncAsDllEntry(uint index, [NativeTypeName("LPOLESTR")] ushort* szDllName, [NativeTypeName("LPOLESTR")] ushort* szProcName);
+
+            [VtblIndex(19)]
+            HRESULT SetFuncDocString(uint index, [NativeTypeName("LPOLESTR")] ushort* szDocString);
+
+            [VtblIndex(20)]
+            HRESULT SetVarDocString(uint index, [NativeTypeName("LPOLESTR")] ushort* szDocString);
+
+            [VtblIndex(21)]
+            HRESULT SetFuncHelpContext(uint index, [NativeTypeName("DWORD")] uint dwHelpContext);
+
+            [VtblIndex(22)]
+            HRESULT SetVarHelpContext(uint index, [NativeTypeName("DWORD")] uint dwHelpContext);
+
+            [VtblIndex(23)]
+            HRESULT SetMops(uint index, [NativeTypeName("BSTR")] ushort* bstrMops);
+
+            [VtblIndex(24)]
+            HRESULT SetTypeIdldesc(IDLDESC* pIdlDesc);
+
+            [VtblIndex(25)]
+            HRESULT LayOut();
         }
 
         public partial struct Vtbl

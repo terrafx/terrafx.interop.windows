@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("947990DE-CC28-11D2-A0F7-00805F858FB1")]
     [NativeTypeName("struct IDummyHICONIncluder : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IDummyHICONIncluder
+    public unsafe partial struct IDummyHICONIncluder : IDummyHICONIncluder.Interface
     {
         public void** lpVtbl;
 
@@ -44,6 +44,12 @@ namespace TerraFX.Interop
         public HRESULT Dummy(HICON h1, HDC h2)
         {
             return ((delegate* unmanaged<IDummyHICONIncluder*, HICON, HDC, int>)(lpVtbl[3]))((IDummyHICONIncluder*)Unsafe.AsPointer(ref this), h1, h2);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT Dummy(HICON h1, HDC h2);
         }
 
         public partial struct Vtbl

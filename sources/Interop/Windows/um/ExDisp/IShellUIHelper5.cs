@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("A2A08B09-103D-4D3F-B91C-EA455CA82EFA")]
     [NativeTypeName("struct IShellUIHelper5 : IShellUIHelper4")]
     [NativeInheritance("IShellUIHelper4")]
-    public unsafe partial struct IShellUIHelper5
+    public unsafe partial struct IShellUIHelper5 : IShellUIHelper5.Interface
     {
         public void** lpVtbl;
 
@@ -534,6 +534,30 @@ namespace TerraFX.Interop
         public HRESULT msChangeDefaultBrowser([NativeTypeName("VARIANT_BOOL")] short fChange)
         {
             return ((delegate* unmanaged<IShellUIHelper5*, short, int>)(lpVtbl[73]))((IShellUIHelper5*)Unsafe.AsPointer(ref this), fChange);
+        }
+
+        public interface Interface : IShellUIHelper4.Interface
+        {
+            [VtblIndex(67)]
+            HRESULT msProvisionNetworks([NativeTypeName("BSTR")] ushort* bstrProvisioningXml, VARIANT* puiResult);
+
+            [VtblIndex(68)]
+            HRESULT msReportSafeUrl();
+
+            [VtblIndex(69)]
+            HRESULT msSiteModeRefreshBadge();
+
+            [VtblIndex(70)]
+            HRESULT msSiteModeClearBadge();
+
+            [VtblIndex(71)]
+            HRESULT msDiagnoseConnectionUILess();
+
+            [VtblIndex(72)]
+            HRESULT msLaunchNetworkClientHelp();
+
+            [VtblIndex(73)]
+            HRESULT msChangeDefaultBrowser([NativeTypeName("VARIANT_BOOL")] short fChange);
         }
 
         public partial struct Vtbl

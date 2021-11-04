@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("45892507-AD66-4DE2-83A2-ACBB13CD8D43")]
     [NativeTypeName("struct IMFMediaKeys2 : IMFMediaKeys")]
     [NativeInheritance("IMFMediaKeys")]
-    public unsafe partial struct IMFMediaKeys2
+    public unsafe partial struct IMFMediaKeys2 : IMFMediaKeys2.Interface
     {
         public void** lpVtbl;
 
@@ -86,6 +86,18 @@ namespace TerraFX.Interop
         public HRESULT GetDOMException(HRESULT systemCode, HRESULT* code)
         {
             return ((delegate* unmanaged<IMFMediaKeys2*, HRESULT, HRESULT*, int>)(lpVtbl[9]))((IMFMediaKeys2*)Unsafe.AsPointer(ref this), systemCode, code);
+        }
+
+        public interface Interface : IMFMediaKeys.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT CreateSession2(MF_MEDIAKEYSESSION_TYPE eSessionType, IMFMediaKeySessionNotify2* pMFMediaKeySessionNotify2, IMFMediaKeySession2** ppSession);
+
+            [VtblIndex(8)]
+            HRESULT SetServerCertificate([NativeTypeName("const BYTE *")] byte* pbServerCertificate, [NativeTypeName("DWORD")] uint cb);
+
+            [VtblIndex(9)]
+            HRESULT GetDOMException(HRESULT systemCode, HRESULT* code);
         }
 
         public partial struct Vtbl

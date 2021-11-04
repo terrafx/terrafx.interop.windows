@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("30510512-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct ISVGPathElement : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct ISVGPathElement
+    public unsafe partial struct ISVGPathElement : ISVGPathElement.Interface
     {
         public void** lpVtbl;
 
@@ -233,6 +233,81 @@ namespace TerraFX.Interop
         public HRESULT createSVGPathSegCurvetoQuadraticSmoothRel(float x, float y, ISVGPathSegCurvetoQuadraticSmoothRel** ppResult)
         {
             return ((delegate* unmanaged<ISVGPathElement*, float, float, ISVGPathSegCurvetoQuadraticSmoothRel**, int>)(lpVtbl[30]))((ISVGPathElement*)Unsafe.AsPointer(ref this), x, y, ppResult);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT putref_pathLength(ISVGAnimatedNumber* v);
+
+            [VtblIndex(8)]
+            HRESULT get_pathLength(ISVGAnimatedNumber** p);
+
+            [VtblIndex(9)]
+            HRESULT getTotalLength(float* pfltResult);
+
+            [VtblIndex(10)]
+            HRESULT getPointAtLength(float fltdistance, ISVGPoint** ppPointResult);
+
+            [VtblIndex(11)]
+            HRESULT getPathSegAtLength(float fltdistance, [NativeTypeName("long *")] int* plResult);
+
+            [VtblIndex(12)]
+            HRESULT createSVGPathSegClosePath(ISVGPathSegClosePath** ppResult);
+
+            [VtblIndex(13)]
+            HRESULT createSVGPathSegMovetoAbs(float x, float y, ISVGPathSegMovetoAbs** ppResult);
+
+            [VtblIndex(14)]
+            HRESULT createSVGPathSegMovetoRel(float x, float y, ISVGPathSegMovetoRel** ppResult);
+
+            [VtblIndex(15)]
+            HRESULT createSVGPathSegLinetoAbs(float x, float y, ISVGPathSegLinetoAbs** ppResult);
+
+            [VtblIndex(16)]
+            HRESULT createSVGPathSegLinetoRel(float x, float y, ISVGPathSegLinetoRel** ppResult);
+
+            [VtblIndex(17)]
+            HRESULT createSVGPathSegCurvetoCubicAbs(float x, float y, float x1, float y1, float x2, float y2, ISVGPathSegCurvetoCubicAbs** ppResult);
+
+            [VtblIndex(18)]
+            HRESULT createSVGPathSegCurvetoCubicRel(float x, float y, float x1, float y1, float x2, float y2, ISVGPathSegCurvetoCubicRel** ppResult);
+
+            [VtblIndex(19)]
+            HRESULT createSVGPathSegCurvetoQuadraticAbs(float x, float y, float x1, float y1, ISVGPathSegCurvetoQuadraticAbs** ppResult);
+
+            [VtblIndex(20)]
+            HRESULT createSVGPathSegCurvetoQuadraticRel(float x, float y, float x1, float y1, ISVGPathSegCurvetoQuadraticRel** ppResult);
+
+            [VtblIndex(21)]
+            HRESULT createSVGPathSegArcAbs(float x, float y, float r1, float r2, float angle, [NativeTypeName("VARIANT_BOOL")] short largeArcFlag, [NativeTypeName("VARIANT_BOOL")] short sweepFlag, ISVGPathSegArcAbs** ppResult);
+
+            [VtblIndex(22)]
+            HRESULT createSVGPathSegArcRel(float x, float y, float r1, float r2, float angle, [NativeTypeName("VARIANT_BOOL")] short largeArcFlag, [NativeTypeName("VARIANT_BOOL")] short sweepFlag, ISVGPathSegArcRel** ppResult);
+
+            [VtblIndex(23)]
+            HRESULT createSVGPathSegLinetoHorizontalAbs(float x, ISVGPathSegLinetoHorizontalAbs** ppResult);
+
+            [VtblIndex(24)]
+            HRESULT createSVGPathSegLinetoHorizontalRel(float x, ISVGPathSegLinetoHorizontalRel** ppResult);
+
+            [VtblIndex(25)]
+            HRESULT createSVGPathSegLinetoVerticalAbs(float y, ISVGPathSegLinetoVerticalAbs** ppResult);
+
+            [VtblIndex(26)]
+            HRESULT createSVGPathSegLinetoVerticalRel(float y, ISVGPathSegLinetoVerticalRel** ppResult);
+
+            [VtblIndex(27)]
+            HRESULT createSVGPathSegCurvetoCubicSmoothAbs(float x, float y, float x2, float y2, ISVGPathSegCurvetoCubicSmoothAbs** ppResult);
+
+            [VtblIndex(28)]
+            HRESULT createSVGPathSegCurvetoCubicSmoothRel(float x, float y, float x2, float y2, ISVGPathSegCurvetoCubicSmoothRel** ppResult);
+
+            [VtblIndex(29)]
+            HRESULT createSVGPathSegCurvetoQuadraticSmoothAbs(float x, float y, ISVGPathSegCurvetoQuadraticSmoothAbs** ppResult);
+
+            [VtblIndex(30)]
+            HRESULT createSVGPathSegCurvetoQuadraticSmoothRel(float x, float y, ISVGPathSegCurvetoQuadraticSmoothRel** ppResult);
         }
 
         public partial struct Vtbl

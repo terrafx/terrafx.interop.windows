@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("B7D14566-0509-4CCE-A71F-0A554233BD9B")]
     [NativeTypeName("struct IInitializeWithFile : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IInitializeWithFile
+    public unsafe partial struct IInitializeWithFile : IInitializeWithFile.Interface
     {
         public void** lpVtbl;
 
@@ -44,6 +44,12 @@ namespace TerraFX.Interop
         public HRESULT Initialize([NativeTypeName("LPCWSTR")] ushort* pszFilePath, [NativeTypeName("DWORD")] uint grfMode)
         {
             return ((delegate* unmanaged<IInitializeWithFile*, ushort*, uint, int>)(lpVtbl[3]))((IInitializeWithFile*)Unsafe.AsPointer(ref this), pszFilePath, grfMode);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT Initialize([NativeTypeName("LPCWSTR")] ushort* pszFilePath, [NativeTypeName("DWORD")] uint grfMode);
         }
 
         public partial struct Vtbl

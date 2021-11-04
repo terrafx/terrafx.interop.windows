@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("80EABF42-2568-4E5E-BD82-C37F86961DC3")]
     [NativeTypeName("struct ID3D12PipelineLibrary1 : ID3D12PipelineLibrary")]
     [NativeInheritance("ID3D12PipelineLibrary")]
-    public unsafe partial struct ID3D12PipelineLibrary1
+    public unsafe partial struct ID3D12PipelineLibrary1 : ID3D12PipelineLibrary1.Interface
     {
         public void** lpVtbl;
 
@@ -115,6 +115,12 @@ namespace TerraFX.Interop
         public HRESULT LoadPipeline([NativeTypeName("LPCWSTR")] ushort* pName, [NativeTypeName("const D3D12_PIPELINE_STATE_STREAM_DESC *")] D3D12_PIPELINE_STATE_STREAM_DESC* pDesc, [NativeTypeName("const IID &")] Guid* riid, void** ppPipelineState)
         {
             return ((delegate* unmanaged<ID3D12PipelineLibrary1*, ushort*, D3D12_PIPELINE_STATE_STREAM_DESC*, Guid*, void**, int>)(lpVtbl[13]))((ID3D12PipelineLibrary1*)Unsafe.AsPointer(ref this), pName, pDesc, riid, ppPipelineState);
+        }
+
+        public interface Interface : ID3D12PipelineLibrary.Interface
+        {
+            [VtblIndex(13)]
+            HRESULT LoadPipeline([NativeTypeName("LPCWSTR")] ushort* pName, [NativeTypeName("const D3D12_PIPELINE_STATE_STREAM_DESC *")] D3D12_PIPELINE_STATE_STREAM_DESC* pDesc, [NativeTypeName("const IID &")] Guid* riid, void** ppPipelineState);
         }
 
         public partial struct Vtbl

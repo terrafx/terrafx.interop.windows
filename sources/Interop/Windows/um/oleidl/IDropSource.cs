@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("00000121-0000-0000-C000-000000000046")]
     [NativeTypeName("struct IDropSource : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IDropSource
+    public unsafe partial struct IDropSource : IDropSource.Interface
     {
         public void** lpVtbl;
 
@@ -51,6 +51,15 @@ namespace TerraFX.Interop
         public HRESULT GiveFeedback([NativeTypeName("DWORD")] uint dwEffect)
         {
             return ((delegate* unmanaged<IDropSource*, uint, int>)(lpVtbl[4]))((IDropSource*)Unsafe.AsPointer(ref this), dwEffect);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT QueryContinueDrag(BOOL fEscapePressed, [NativeTypeName("DWORD")] uint grfKeyState);
+
+            [VtblIndex(4)]
+            HRESULT GiveFeedback([NativeTypeName("DWORD")] uint dwEffect);
         }
 
         public partial struct Vtbl

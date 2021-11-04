@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("1AC3D9F0-175C-11D1-95BE-00609797EA4F")]
     [NativeTypeName("struct IPersistFolder2 : IPersistFolder")]
     [NativeInheritance("IPersistFolder")]
-    public unsafe partial struct IPersistFolder2
+    public unsafe partial struct IPersistFolder2 : IPersistFolder2.Interface
     {
         public void** lpVtbl;
 
@@ -58,6 +58,12 @@ namespace TerraFX.Interop
         public HRESULT GetCurFolder([NativeTypeName("LPITEMIDLIST *")] ITEMIDLIST** ppidl)
         {
             return ((delegate* unmanaged<IPersistFolder2*, ITEMIDLIST**, int>)(lpVtbl[5]))((IPersistFolder2*)Unsafe.AsPointer(ref this), ppidl);
+        }
+
+        public interface Interface : IPersistFolder.Interface
+        {
+            [VtblIndex(5)]
+            HRESULT GetCurFolder([NativeTypeName("LPITEMIDLIST *")] ITEMIDLIST** ppidl);
         }
 
         public partial struct Vtbl

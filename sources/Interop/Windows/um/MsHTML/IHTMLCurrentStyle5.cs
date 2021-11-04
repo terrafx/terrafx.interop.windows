@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("30510481-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct IHTMLCurrentStyle5 : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct IHTMLCurrentStyle5
+    public unsafe partial struct IHTMLCurrentStyle5 : IHTMLCurrentStyle5.Interface
     {
         public void** lpVtbl;
 
@@ -156,6 +156,48 @@ namespace TerraFX.Interop
         public HRESULT get_quotes([NativeTypeName("BSTR *")] ushort** p)
         {
             return ((delegate* unmanaged<IHTMLCurrentStyle5*, ushort**, int>)(lpVtbl[19]))((IHTMLCurrentStyle5*)Unsafe.AsPointer(ref this), p);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT get_captionSide([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(8)]
+            HRESULT get_outline([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(9)]
+            HRESULT get_outlineWidth(VARIANT* p);
+
+            [VtblIndex(10)]
+            HRESULT get_outlineStyle([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(11)]
+            HRESULT get_outlineColor(VARIANT* p);
+
+            [VtblIndex(12)]
+            HRESULT get_boxSizing([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(13)]
+            HRESULT get_borderSpacing([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(14)]
+            HRESULT get_orphans(VARIANT* p);
+
+            [VtblIndex(15)]
+            HRESULT get_widows(VARIANT* p);
+
+            [VtblIndex(16)]
+            HRESULT get_pageBreakInside([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(17)]
+            HRESULT get_emptyCells([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(18)]
+            HRESULT get_msBlockProgression([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(19)]
+            HRESULT get_quotes([NativeTypeName("BSTR *")] ushort** p);
         }
 
         public partial struct Vtbl

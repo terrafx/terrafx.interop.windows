@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("66E11784-F695-4F28-A505-A7080081A78F")]
     [NativeTypeName("struct IAudioEndpointVolumeEx : IAudioEndpointVolume")]
     [NativeInheritance("IAudioEndpointVolume")]
-    public unsafe partial struct IAudioEndpointVolumeEx
+    public unsafe partial struct IAudioEndpointVolumeEx : IAudioEndpointVolumeEx.Interface
     {
         public void** lpVtbl;
 
@@ -170,6 +170,12 @@ namespace TerraFX.Interop
         public HRESULT GetVolumeRangeChannel(uint iChannel, float* pflVolumeMindB, float* pflVolumeMaxdB, float* pflVolumeIncrementdB)
         {
             return ((delegate* unmanaged<IAudioEndpointVolumeEx*, uint, float*, float*, float*, int>)(lpVtbl[21]))((IAudioEndpointVolumeEx*)Unsafe.AsPointer(ref this), iChannel, pflVolumeMindB, pflVolumeMaxdB, pflVolumeIncrementdB);
+        }
+
+        public interface Interface : IAudioEndpointVolume.Interface
+        {
+            [VtblIndex(21)]
+            HRESULT GetVolumeRangeChannel(uint iChannel, float* pflVolumeMindB, float* pflVolumeMaxdB, float* pflVolumeIncrementdB);
         }
 
         public partial struct Vtbl

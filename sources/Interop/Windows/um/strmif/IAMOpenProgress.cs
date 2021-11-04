@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("8E1C39A1-DE53-11CF-AA63-0080C744528D")]
     [NativeTypeName("struct IAMOpenProgress : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IAMOpenProgress
+    public unsafe partial struct IAMOpenProgress : IAMOpenProgress.Interface
     {
         public void** lpVtbl;
 
@@ -51,6 +51,15 @@ namespace TerraFX.Interop
         public HRESULT AbortOperation()
         {
             return ((delegate* unmanaged<IAMOpenProgress*, int>)(lpVtbl[4]))((IAMOpenProgress*)Unsafe.AsPointer(ref this));
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT QueryProgress([NativeTypeName("LONGLONG *")] long* pllTotal, [NativeTypeName("LONGLONG *")] long* pllCurrent);
+
+            [VtblIndex(4)]
+            HRESULT AbortOperation();
         }
 
         public partial struct Vtbl

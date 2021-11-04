@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("84BCCD23-5FDE-4CDB-AEA4-AF64B83D78AB")]
     [NativeTypeName("struct IFileSaveDialog : IFileDialog")]
     [NativeInheritance("IFileDialog")]
-    public unsafe partial struct IFileSaveDialog
+    public unsafe partial struct IFileSaveDialog : IFileSaveDialog.Interface
     {
         public void** lpVtbl;
 
@@ -240,6 +240,24 @@ namespace TerraFX.Interop
         public HRESULT ApplyProperties(IShellItem* psi, IPropertyStore* pStore, HWND hwnd, IFileOperationProgressSink* pSink)
         {
             return ((delegate* unmanaged<IFileSaveDialog*, IShellItem*, IPropertyStore*, HWND, IFileOperationProgressSink*, int>)(lpVtbl[31]))((IFileSaveDialog*)Unsafe.AsPointer(ref this), psi, pStore, hwnd, pSink);
+        }
+
+        public interface Interface : IFileDialog.Interface
+        {
+            [VtblIndex(27)]
+            HRESULT SetSaveAsItem(IShellItem* psi);
+
+            [VtblIndex(28)]
+            HRESULT SetProperties(IPropertyStore* pStore);
+
+            [VtblIndex(29)]
+            HRESULT SetCollectedProperties(IPropertyDescriptionList* pList, BOOL fAppendDefault);
+
+            [VtblIndex(30)]
+            HRESULT GetProperties(IPropertyStore** ppStore);
+
+            [VtblIndex(31)]
+            HRESULT ApplyProperties(IShellItem* psi, IPropertyStore* pStore, HWND hwnd, IFileOperationProgressSink* pSink);
         }
 
         public partial struct Vtbl

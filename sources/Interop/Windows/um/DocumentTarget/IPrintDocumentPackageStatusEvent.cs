@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("ED90C8AD-5C34-4D05-A1EC-0E8A9B3AD7AF")]
     [NativeTypeName("struct IPrintDocumentPackageStatusEvent : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct IPrintDocumentPackageStatusEvent
+    public unsafe partial struct IPrintDocumentPackageStatusEvent : IPrintDocumentPackageStatusEvent.Interface
     {
         public void** lpVtbl;
 
@@ -72,6 +72,12 @@ namespace TerraFX.Interop
         public HRESULT PackageStatusUpdated(PrintDocumentPackageStatus* packageStatus)
         {
             return ((delegate* unmanaged<IPrintDocumentPackageStatusEvent*, PrintDocumentPackageStatus*, int>)(lpVtbl[7]))((IPrintDocumentPackageStatusEvent*)Unsafe.AsPointer(ref this), packageStatus);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT PackageStatusUpdated(PrintDocumentPackageStatus* packageStatus);
         }
 
         public partial struct Vtbl

@@ -7,7 +7,7 @@ using System.Runtime.CompilerServices;
 
 namespace TerraFX.Interop
 {
-    public unsafe partial struct ID3D10EffectPass
+    public unsafe partial struct ID3D10EffectPass : ID3D10EffectPass.Interface
     {
         public void** lpVtbl;
 
@@ -72,6 +72,36 @@ namespace TerraFX.Interop
         public HRESULT ComputeStateBlockMask(D3D10_STATE_BLOCK_MASK* pStateBlockMask)
         {
             return ((delegate* unmanaged<ID3D10EffectPass*, D3D10_STATE_BLOCK_MASK*, int>)(lpVtbl[8]))((ID3D10EffectPass*)Unsafe.AsPointer(ref this), pStateBlockMask);
+        }
+
+        public interface Interface
+        {
+            [VtblIndex(0)]
+            BOOL IsValid();
+
+            [VtblIndex(1)]
+            HRESULT GetDesc(D3D10_PASS_DESC* pDesc);
+
+            [VtblIndex(2)]
+            HRESULT GetVertexShaderDesc(D3D10_PASS_SHADER_DESC* pDesc);
+
+            [VtblIndex(3)]
+            HRESULT GetGeometryShaderDesc(D3D10_PASS_SHADER_DESC* pDesc);
+
+            [VtblIndex(4)]
+            HRESULT GetPixelShaderDesc(D3D10_PASS_SHADER_DESC* pDesc);
+
+            [VtblIndex(5)]
+            ID3D10EffectVariable* GetAnnotationByIndex(uint Index);
+
+            [VtblIndex(6)]
+            ID3D10EffectVariable* GetAnnotationByName([NativeTypeName("LPCSTR")] sbyte* Name);
+
+            [VtblIndex(7)]
+            HRESULT Apply(uint Flags);
+
+            [VtblIndex(8)]
+            HRESULT ComputeStateBlockMask(D3D10_STATE_BLOCK_MASK* pStateBlockMask);
         }
 
         public partial struct Vtbl

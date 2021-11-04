@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("4E1BD148-55A0-4480-A3D1-15544710637C")]
     [NativeTypeName("struct IAppxManifestReader : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IAppxManifestReader
+    public unsafe partial struct IAppxManifestReader : IAppxManifestReader.Interface
     {
         public void** lpVtbl;
 
@@ -100,6 +100,36 @@ namespace TerraFX.Interop
         public HRESULT GetStream(IStream** manifestStream)
         {
             return ((delegate* unmanaged<IAppxManifestReader*, IStream**, int>)(lpVtbl[11]))((IAppxManifestReader*)Unsafe.AsPointer(ref this), manifestStream);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetPackageId(IAppxManifestPackageId** packageId);
+
+            [VtblIndex(4)]
+            HRESULT GetProperties(IAppxManifestProperties** packageProperties);
+
+            [VtblIndex(5)]
+            HRESULT GetPackageDependencies(IAppxManifestPackageDependenciesEnumerator** dependencies);
+
+            [VtblIndex(6)]
+            HRESULT GetCapabilities(APPX_CAPABILITIES* capabilities);
+
+            [VtblIndex(7)]
+            HRESULT GetResources(IAppxManifestResourcesEnumerator** resources);
+
+            [VtblIndex(8)]
+            HRESULT GetDeviceCapabilities(IAppxManifestDeviceCapabilitiesEnumerator** deviceCapabilities);
+
+            [VtblIndex(9)]
+            HRESULT GetPrerequisite([NativeTypeName("LPCWSTR")] ushort* name, [NativeTypeName("UINT64 *")] ulong* value);
+
+            [VtblIndex(10)]
+            HRESULT GetApplications(IAppxManifestApplicationsEnumerator** applications);
+
+            [VtblIndex(11)]
+            HRESULT GetStream(IStream** manifestStream);
         }
 
         public partial struct Vtbl

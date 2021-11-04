@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("D7540241-F9A1-4364-BEFC-DBCD2C4395B7")]
     [NativeTypeName("struct ITfCompositionView : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct ITfCompositionView
+    public unsafe partial struct ITfCompositionView : ITfCompositionView.Interface
     {
         public void** lpVtbl;
 
@@ -51,6 +51,15 @@ namespace TerraFX.Interop
         public HRESULT GetRange(ITfRange** ppRange)
         {
             return ((delegate* unmanaged<ITfCompositionView*, ITfRange**, int>)(lpVtbl[4]))((ITfCompositionView*)Unsafe.AsPointer(ref this), ppRange);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetOwnerClsid([NativeTypeName("CLSID *")] Guid* pclsid);
+
+            [VtblIndex(4)]
+            HRESULT GetRange(ITfRange** ppRange);
         }
 
         public partial struct Vtbl

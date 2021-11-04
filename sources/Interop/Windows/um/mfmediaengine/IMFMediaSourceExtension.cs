@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("E467B94E-A713-4562-A802-816A42E9008A")]
     [NativeTypeName("struct IMFMediaSourceExtension : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IMFMediaSourceExtension
+    public unsafe partial struct IMFMediaSourceExtension : IMFMediaSourceExtension.Interface
     {
         public void** lpVtbl;
 
@@ -107,6 +107,39 @@ namespace TerraFX.Interop
         public IMFSourceBuffer* GetSourceBuffer([NativeTypeName("DWORD")] uint dwStreamIndex)
         {
             return ((delegate* unmanaged<IMFMediaSourceExtension*, uint, IMFSourceBuffer*>)(lpVtbl[12]))((IMFMediaSourceExtension*)Unsafe.AsPointer(ref this), dwStreamIndex);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            IMFSourceBufferList* GetSourceBuffers();
+
+            [VtblIndex(4)]
+            IMFSourceBufferList* GetActiveSourceBuffers();
+
+            [VtblIndex(5)]
+            MF_MSE_READY GetReadyState();
+
+            [VtblIndex(6)]
+            double GetDuration();
+
+            [VtblIndex(7)]
+            HRESULT SetDuration(double duration);
+
+            [VtblIndex(8)]
+            HRESULT AddSourceBuffer([NativeTypeName("BSTR")] ushort* type, IMFSourceBufferNotify* pNotify, IMFSourceBuffer** ppSourceBuffer);
+
+            [VtblIndex(9)]
+            HRESULT RemoveSourceBuffer(IMFSourceBuffer* pSourceBuffer);
+
+            [VtblIndex(10)]
+            HRESULT SetEndOfStream(MF_MSE_ERROR error);
+
+            [VtblIndex(11)]
+            BOOL IsTypeSupported([NativeTypeName("BSTR")] ushort* type);
+
+            [VtblIndex(12)]
+            IMFSourceBuffer* GetSourceBuffer([NativeTypeName("DWORD")] uint dwStreamIndex);
         }
 
         public partial struct Vtbl

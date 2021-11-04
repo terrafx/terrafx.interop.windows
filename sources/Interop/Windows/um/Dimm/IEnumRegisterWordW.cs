@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("4955DD31-B159-11D0-8FCF-00AA006BCC59")]
     [NativeTypeName("struct IEnumRegisterWordW : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IEnumRegisterWordW
+    public unsafe partial struct IEnumRegisterWordW : IEnumRegisterWordW.Interface
     {
         public void** lpVtbl;
 
@@ -65,6 +65,21 @@ namespace TerraFX.Interop
         public HRESULT Skip([NativeTypeName("ULONG")] uint ulCount)
         {
             return ((delegate* unmanaged<IEnumRegisterWordW*, uint, int>)(lpVtbl[6]))((IEnumRegisterWordW*)Unsafe.AsPointer(ref this), ulCount);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT Clone(IEnumRegisterWordW** ppEnum);
+
+            [VtblIndex(4)]
+            HRESULT Next([NativeTypeName("ULONG")] uint ulCount, REGISTERWORDW* rgRegisterWord, [NativeTypeName("ULONG *")] uint* pcFetched);
+
+            [VtblIndex(5)]
+            HRESULT Reset();
+
+            [VtblIndex(6)]
+            HRESULT Skip([NativeTypeName("ULONG")] uint ulCount);
         }
 
         public partial struct Vtbl

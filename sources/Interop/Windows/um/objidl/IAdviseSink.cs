@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("0000010F-0000-0000-C000-000000000046")]
     [NativeTypeName("struct IAdviseSink : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IAdviseSink
+    public unsafe partial struct IAdviseSink : IAdviseSink.Interface
     {
         public void** lpVtbl;
 
@@ -72,6 +72,24 @@ namespace TerraFX.Interop
         public void OnClose()
         {
             ((delegate* unmanaged<IAdviseSink*, void>)(lpVtbl[7]))((IAdviseSink*)Unsafe.AsPointer(ref this));
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            void OnDataChange(FORMATETC* pFormatetc, STGMEDIUM* pStgmed);
+
+            [VtblIndex(4)]
+            void OnViewChange([NativeTypeName("DWORD")] uint dwAspect, [NativeTypeName("LONG")] int lindex);
+
+            [VtblIndex(5)]
+            void OnRename(IMoniker* pmk);
+
+            [VtblIndex(6)]
+            void OnSave();
+
+            [VtblIndex(7)]
+            void OnClose();
         }
 
         public partial struct Vtbl

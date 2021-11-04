@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("C3B284D4-6D39-4359-B3CF-B56DDB3BB39C")]
     [NativeTypeName("struct IAudioVolumeDuckNotification : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IAudioVolumeDuckNotification
+    public unsafe partial struct IAudioVolumeDuckNotification : IAudioVolumeDuckNotification.Interface
     {
         public void** lpVtbl;
 
@@ -51,6 +51,15 @@ namespace TerraFX.Interop
         public HRESULT OnVolumeUnduckNotification([NativeTypeName("LPCWSTR")] ushort* sessionID)
         {
             return ((delegate* unmanaged<IAudioVolumeDuckNotification*, ushort*, int>)(lpVtbl[4]))((IAudioVolumeDuckNotification*)Unsafe.AsPointer(ref this), sessionID);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT OnVolumeDuckNotification([NativeTypeName("LPCWSTR")] ushort* sessionID, [NativeTypeName("UINT32")] uint countCommunicationSessions);
+
+            [VtblIndex(4)]
+            HRESULT OnVolumeUnduckNotification([NativeTypeName("LPCWSTR")] ushort* sessionID);
         }
 
         public partial struct Vtbl

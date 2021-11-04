@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("9B7E4E01-342C-4106-A19F-4F2704F689F0")]
     [NativeTypeName("struct ID3D10Debug : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct ID3D10Debug
+    public unsafe partial struct ID3D10Debug : ID3D10Debug.Interface
     {
         public void** lpVtbl;
 
@@ -86,6 +86,30 @@ namespace TerraFX.Interop
         public HRESULT Validate()
         {
             return ((delegate* unmanaged<ID3D10Debug*, int>)(lpVtbl[9]))((ID3D10Debug*)Unsafe.AsPointer(ref this));
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT SetFeatureMask(uint Mask);
+
+            [VtblIndex(4)]
+            uint GetFeatureMask();
+
+            [VtblIndex(5)]
+            HRESULT SetPresentPerRenderOpDelay(uint Milliseconds);
+
+            [VtblIndex(6)]
+            uint GetPresentPerRenderOpDelay();
+
+            [VtblIndex(7)]
+            HRESULT SetSwapChain(IDXGISwapChain* pSwapChain);
+
+            [VtblIndex(8)]
+            HRESULT GetSwapChain(IDXGISwapChain** ppSwapChain);
+
+            [VtblIndex(9)]
+            HRESULT Validate();
         }
 
         public partial struct Vtbl

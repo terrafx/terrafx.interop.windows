@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("AA80E801-2021-11D2-93E0-0060B067B86E")]
     [NativeTypeName("struct ITfThreadMgr : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct ITfThreadMgr
+    public unsafe partial struct ITfThreadMgr : ITfThreadMgr.Interface
     {
         public void** lpVtbl;
 
@@ -114,6 +114,42 @@ namespace TerraFX.Interop
         public HRESULT GetGlobalCompartment(ITfCompartmentMgr** ppCompMgr)
         {
             return ((delegate* unmanaged<ITfThreadMgr*, ITfCompartmentMgr**, int>)(lpVtbl[13]))((ITfThreadMgr*)Unsafe.AsPointer(ref this), ppCompMgr);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT Activate([NativeTypeName("TfClientId *")] uint* ptid);
+
+            [VtblIndex(4)]
+            HRESULT Deactivate();
+
+            [VtblIndex(5)]
+            HRESULT CreateDocumentMgr(ITfDocumentMgr** ppdim);
+
+            [VtblIndex(6)]
+            HRESULT EnumDocumentMgrs(IEnumTfDocumentMgrs** ppEnum);
+
+            [VtblIndex(7)]
+            HRESULT GetFocus(ITfDocumentMgr** ppdimFocus);
+
+            [VtblIndex(8)]
+            HRESULT SetFocus(ITfDocumentMgr* pdimFocus);
+
+            [VtblIndex(9)]
+            HRESULT AssociateFocus(HWND hwnd, ITfDocumentMgr* pdimNew, ITfDocumentMgr** ppdimPrev);
+
+            [VtblIndex(10)]
+            HRESULT IsThreadFocus(BOOL* pfThreadFocus);
+
+            [VtblIndex(11)]
+            HRESULT GetFunctionProvider([NativeTypeName("const IID &")] Guid* clsid, ITfFunctionProvider** ppFuncProv);
+
+            [VtblIndex(12)]
+            HRESULT EnumFunctionProviders(IEnumTfFunctionProviders** ppEnum);
+
+            [VtblIndex(13)]
+            HRESULT GetGlobalCompartment(ITfCompartmentMgr** ppCompMgr);
         }
 
         public partial struct Vtbl

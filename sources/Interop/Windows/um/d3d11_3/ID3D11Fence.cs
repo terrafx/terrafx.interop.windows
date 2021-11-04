@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("AFFDE9D1-1DF7-4BB7-8A34-0F46251DAB80")]
     [NativeTypeName("struct ID3D11Fence : ID3D11DeviceChild")]
     [NativeInheritance("ID3D11DeviceChild")]
-    public unsafe partial struct ID3D11Fence
+    public unsafe partial struct ID3D11Fence : ID3D11Fence.Interface
     {
         public void** lpVtbl;
 
@@ -87,6 +87,19 @@ namespace TerraFX.Interop
         public HRESULT SetEventOnCompletion([NativeTypeName("UINT64")] ulong Value, HANDLE hEvent)
         {
             return ((delegate* unmanaged<ID3D11Fence*, ulong, HANDLE, int>)(lpVtbl[9]))((ID3D11Fence*)Unsafe.AsPointer(ref this), Value, hEvent);
+        }
+
+        public interface Interface : ID3D11DeviceChild.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT CreateSharedHandle([NativeTypeName("const SECURITY_ATTRIBUTES *")] SECURITY_ATTRIBUTES* pAttributes, [NativeTypeName("DWORD")] uint dwAccess, [NativeTypeName("LPCWSTR")] ushort* lpName, HANDLE* pHandle);
+
+            [VtblIndex(8)]
+            [return: NativeTypeName("UINT64")]
+            ulong GetCompletedValue();
+
+            [VtblIndex(9)]
+            HRESULT SetEventOnCompletion([NativeTypeName("UINT64")] ulong Value, HANDLE hEvent);
         }
 
         public partial struct Vtbl

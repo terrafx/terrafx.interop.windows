@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("3050F2B5-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct IHTMLMarqueeElement : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct IHTMLMarqueeElement
+    public unsafe partial struct IHTMLMarqueeElement : IHTMLMarqueeElement.Interface
     {
         public void** lpVtbl;
 
@@ -275,6 +275,99 @@ namespace TerraFX.Interop
         public HRESULT stop()
         {
             return ((delegate* unmanaged<IHTMLMarqueeElement*, int>)(lpVtbl[36]))((IHTMLMarqueeElement*)Unsafe.AsPointer(ref this));
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT put_bgColor(VARIANT v);
+
+            [VtblIndex(8)]
+            HRESULT get_bgColor(VARIANT* p);
+
+            [VtblIndex(9)]
+            HRESULT put_scrollDelay([NativeTypeName("long")] int v);
+
+            [VtblIndex(10)]
+            HRESULT get_scrollDelay([NativeTypeName("long *")] int* p);
+
+            [VtblIndex(11)]
+            HRESULT put_direction([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(12)]
+            HRESULT get_direction([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(13)]
+            HRESULT put_behavior([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(14)]
+            HRESULT get_behavior([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(15)]
+            HRESULT put_scrollAmount([NativeTypeName("long")] int v);
+
+            [VtblIndex(16)]
+            HRESULT get_scrollAmount([NativeTypeName("long *")] int* p);
+
+            [VtblIndex(17)]
+            HRESULT put_loop([NativeTypeName("long")] int v);
+
+            [VtblIndex(18)]
+            HRESULT get_loop([NativeTypeName("long *")] int* p);
+
+            [VtblIndex(19)]
+            HRESULT put_vspace([NativeTypeName("long")] int v);
+
+            [VtblIndex(20)]
+            HRESULT get_vspace([NativeTypeName("long *")] int* p);
+
+            [VtblIndex(21)]
+            HRESULT put_hspace([NativeTypeName("long")] int v);
+
+            [VtblIndex(22)]
+            HRESULT get_hspace([NativeTypeName("long *")] int* p);
+
+            [VtblIndex(23)]
+            HRESULT put_onfinish(VARIANT v);
+
+            [VtblIndex(24)]
+            HRESULT get_onfinish(VARIANT* p);
+
+            [VtblIndex(25)]
+            HRESULT put_onstart(VARIANT v);
+
+            [VtblIndex(26)]
+            HRESULT get_onstart(VARIANT* p);
+
+            [VtblIndex(27)]
+            HRESULT put_onbounce(VARIANT v);
+
+            [VtblIndex(28)]
+            HRESULT get_onbounce(VARIANT* p);
+
+            [VtblIndex(29)]
+            HRESULT put_width(VARIANT v);
+
+            [VtblIndex(30)]
+            HRESULT get_width(VARIANT* p);
+
+            [VtblIndex(31)]
+            HRESULT put_height(VARIANT v);
+
+            [VtblIndex(32)]
+            HRESULT get_height(VARIANT* p);
+
+            [VtblIndex(33)]
+            HRESULT put_trueSpeed([NativeTypeName("VARIANT_BOOL")] short v);
+
+            [VtblIndex(34)]
+            HRESULT get_trueSpeed([NativeTypeName("VARIANT_BOOL *")] short* p);
+
+            [VtblIndex(35)]
+            HRESULT start();
+
+            [VtblIndex(36)]
+            HRESULT stop();
         }
 
         public partial struct Vtbl

@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("29C687DC-DE74-4E3B-AB00-1168F2FC3CFC")]
     [NativeTypeName("struct IDMLBindingTable : IDMLDeviceChild")]
     [NativeInheritance("IDMLDeviceChild")]
-    public unsafe partial struct IDMLBindingTable
+    public unsafe partial struct IDMLBindingTable : IDMLBindingTable.Interface
     {
         public void** lpVtbl;
 
@@ -107,6 +107,24 @@ namespace TerraFX.Interop
         public HRESULT Reset([NativeTypeName("const DML_BINDING_TABLE_DESC *")] DML_BINDING_TABLE_DESC* desc)
         {
             return ((delegate* unmanaged<IDMLBindingTable*, DML_BINDING_TABLE_DESC*, int>)(lpVtbl[12]))((IDMLBindingTable*)Unsafe.AsPointer(ref this), desc);
+        }
+
+        public interface Interface : IDMLDeviceChild.Interface
+        {
+            [VtblIndex(8)]
+            void BindInputs(uint bindingCount, [NativeTypeName("const DML_BINDING_DESC *")] DML_BINDING_DESC* bindings);
+
+            [VtblIndex(9)]
+            void BindOutputs(uint bindingCount, [NativeTypeName("const DML_BINDING_DESC *")] DML_BINDING_DESC* bindings);
+
+            [VtblIndex(10)]
+            void BindTemporaryResource([NativeTypeName("const DML_BINDING_DESC *")] DML_BINDING_DESC* binding);
+
+            [VtblIndex(11)]
+            void BindPersistentResource([NativeTypeName("const DML_BINDING_DESC *")] DML_BINDING_DESC* binding);
+
+            [VtblIndex(12)]
+            HRESULT Reset([NativeTypeName("const DML_BINDING_TABLE_DESC *")] DML_BINDING_TABLE_DESC* desc);
         }
 
         public partial struct Vtbl

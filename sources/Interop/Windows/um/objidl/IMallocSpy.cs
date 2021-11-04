@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("0000001D-0000-0000-C000-000000000046")]
     [NativeTypeName("struct IMallocSpy : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IMallocSpy
+    public unsafe partial struct IMallocSpy : IMallocSpy.Interface
     {
         public void** lpVtbl;
 
@@ -124,6 +124,48 @@ namespace TerraFX.Interop
         public void PostHeapMinimize()
         {
             ((delegate* unmanaged<IMallocSpy*, void>)(lpVtbl[14]))((IMallocSpy*)Unsafe.AsPointer(ref this));
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            [return: NativeTypeName("SIZE_T")]
+            nuint PreAlloc([NativeTypeName("SIZE_T")] nuint cbRequest);
+
+            [VtblIndex(4)]
+            void* PostAlloc(void* pActual);
+
+            [VtblIndex(5)]
+            void* PreFree(void* pRequest, BOOL fSpyed);
+
+            [VtblIndex(6)]
+            void PostFree(BOOL fSpyed);
+
+            [VtblIndex(7)]
+            [return: NativeTypeName("SIZE_T")]
+            nuint PreRealloc(void* pRequest, [NativeTypeName("SIZE_T")] nuint cbRequest, void** ppNewRequest, BOOL fSpyed);
+
+            [VtblIndex(8)]
+            void* PostRealloc(void* pActual, BOOL fSpyed);
+
+            [VtblIndex(9)]
+            void* PreGetSize(void* pRequest, BOOL fSpyed);
+
+            [VtblIndex(10)]
+            [return: NativeTypeName("SIZE_T")]
+            nuint PostGetSize([NativeTypeName("SIZE_T")] nuint cbActual, BOOL fSpyed);
+
+            [VtblIndex(11)]
+            void* PreDidAlloc(void* pRequest, BOOL fSpyed);
+
+            [VtblIndex(12)]
+            int PostDidAlloc(void* pRequest, BOOL fSpyed, int fActual);
+
+            [VtblIndex(13)]
+            void PreHeapMinimize();
+
+            [VtblIndex(14)]
+            void PostHeapMinimize();
         }
 
         public partial struct Vtbl

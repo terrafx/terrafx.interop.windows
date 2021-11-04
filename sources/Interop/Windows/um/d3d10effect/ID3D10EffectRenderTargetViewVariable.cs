@@ -9,7 +9,7 @@ namespace TerraFX.Interop
 {
     [NativeTypeName("struct ID3D10EffectRenderTargetViewVariable : ID3D10EffectVariable")]
     [NativeInheritance("ID3D10EffectVariable")]
-    public unsafe partial struct ID3D10EffectRenderTargetViewVariable
+    public unsafe partial struct ID3D10EffectRenderTargetViewVariable : ID3D10EffectRenderTargetViewVariable.Interface
     {
         public void** lpVtbl;
 
@@ -214,6 +214,21 @@ namespace TerraFX.Interop
         public HRESULT GetRenderTargetArray(ID3D10RenderTargetView** ppResources, uint Offset, uint Count)
         {
             return ((delegate* unmanaged<ID3D10EffectRenderTargetViewVariable*, ID3D10RenderTargetView**, uint, uint, int>)(lpVtbl[28]))((ID3D10EffectRenderTargetViewVariable*)Unsafe.AsPointer(ref this), ppResources, Offset, Count);
+        }
+
+        public interface Interface : ID3D10EffectVariable.Interface
+        {
+            [VtblIndex(25)]
+            HRESULT SetRenderTarget(ID3D10RenderTargetView* pResource);
+
+            [VtblIndex(26)]
+            HRESULT GetRenderTarget(ID3D10RenderTargetView** ppResource);
+
+            [VtblIndex(27)]
+            HRESULT SetRenderTargetArray(ID3D10RenderTargetView** ppResources, uint Offset, uint Count);
+
+            [VtblIndex(28)]
+            HRESULT GetRenderTargetArray(ID3D10RenderTargetView** ppResources, uint Offset, uint Count);
         }
 
         public partial struct Vtbl

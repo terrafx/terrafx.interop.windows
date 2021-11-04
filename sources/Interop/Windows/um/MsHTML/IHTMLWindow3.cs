@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("3050F4AE-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct IHTMLWindow3 : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct IHTMLWindow3
+    public unsafe partial struct IHTMLWindow3 : IHTMLWindow3.Interface
     {
         public void** lpVtbl;
 
@@ -156,6 +156,48 @@ namespace TerraFX.Interop
         public HRESULT showModelessDialog([NativeTypeName("BSTR")] ushort* url, VARIANT* varArgIn, VARIANT* options, IHTMLWindow2** pDialog)
         {
             return ((delegate* unmanaged<IHTMLWindow3*, ushort*, VARIANT*, VARIANT*, IHTMLWindow2**, int>)(lpVtbl[19]))((IHTMLWindow3*)Unsafe.AsPointer(ref this), url, varArgIn, options, pDialog);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT get_screenLeft([NativeTypeName("long *")] int* p);
+
+            [VtblIndex(8)]
+            HRESULT get_screenTop([NativeTypeName("long *")] int* p);
+
+            [VtblIndex(9)]
+            HRESULT attachEvent([NativeTypeName("BSTR")] ushort* @event, IDispatch* pDisp, [NativeTypeName("VARIANT_BOOL *")] short* pfResult);
+
+            [VtblIndex(10)]
+            HRESULT detachEvent([NativeTypeName("BSTR")] ushort* @event, IDispatch* pDisp);
+
+            [VtblIndex(11)]
+            HRESULT setTimeout(VARIANT* expression, [NativeTypeName("long")] int msec, VARIANT* language, [NativeTypeName("long *")] int* timerID);
+
+            [VtblIndex(12)]
+            HRESULT setInterval(VARIANT* expression, [NativeTypeName("long")] int msec, VARIANT* language, [NativeTypeName("long *")] int* timerID);
+
+            [VtblIndex(13)]
+            HRESULT print();
+
+            [VtblIndex(14)]
+            HRESULT put_onbeforeprint(VARIANT v);
+
+            [VtblIndex(15)]
+            HRESULT get_onbeforeprint(VARIANT* p);
+
+            [VtblIndex(16)]
+            HRESULT put_onafterprint(VARIANT v);
+
+            [VtblIndex(17)]
+            HRESULT get_onafterprint(VARIANT* p);
+
+            [VtblIndex(18)]
+            HRESULT get_clipboardData(IHTMLDataTransfer** p);
+
+            [VtblIndex(19)]
+            HRESULT showModelessDialog([NativeTypeName("BSTR")] ushort* url, VARIANT* varArgIn, VARIANT* options, IHTMLWindow2** pDialog);
         }
 
         public partial struct Vtbl

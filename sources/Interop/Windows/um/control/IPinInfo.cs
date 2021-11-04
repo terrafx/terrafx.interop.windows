@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("56A868BD-0AD4-11CE-B03A-0020AF0BA770")]
     [NativeTypeName("struct IPinInfo : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct IPinInfo
+    public unsafe partial struct IPinInfo : IPinInfo.Interface
     {
         public void** lpVtbl;
 
@@ -156,6 +156,48 @@ namespace TerraFX.Interop
         public HRESULT Render()
         {
             return ((delegate* unmanaged<IPinInfo*, int>)(lpVtbl[19]))((IPinInfo*)Unsafe.AsPointer(ref this));
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT get_Pin(IUnknown** ppUnk);
+
+            [VtblIndex(8)]
+            HRESULT get_ConnectedTo(IDispatch** ppUnk);
+
+            [VtblIndex(9)]
+            HRESULT get_ConnectionMediaType(IDispatch** ppUnk);
+
+            [VtblIndex(10)]
+            HRESULT get_FilterInfo(IDispatch** ppUnk);
+
+            [VtblIndex(11)]
+            HRESULT get_Name([NativeTypeName("BSTR *")] ushort** ppUnk);
+
+            [VtblIndex(12)]
+            HRESULT get_Direction([NativeTypeName("LONG *")] int* ppDirection);
+
+            [VtblIndex(13)]
+            HRESULT get_PinID([NativeTypeName("BSTR *")] ushort** strPinID);
+
+            [VtblIndex(14)]
+            HRESULT get_MediaTypes(IDispatch** ppUnk);
+
+            [VtblIndex(15)]
+            HRESULT Connect(IUnknown* pPin);
+
+            [VtblIndex(16)]
+            HRESULT ConnectDirect(IUnknown* pPin);
+
+            [VtblIndex(17)]
+            HRESULT ConnectWithType(IUnknown* pPin, IDispatch* pMediaType);
+
+            [VtblIndex(18)]
+            HRESULT Disconnect();
+
+            [VtblIndex(19)]
+            HRESULT Render();
         }
 
         public partial struct Vtbl

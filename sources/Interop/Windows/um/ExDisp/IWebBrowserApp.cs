@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("0002DF05-0000-0000-C000-000000000046")]
     [NativeTypeName("struct IWebBrowserApp : IWebBrowser")]
     [NativeInheritance("IWebBrowser")]
-    public unsafe partial struct IWebBrowserApp
+    public unsafe partial struct IWebBrowserApp : IWebBrowserApp.Interface
     {
         public void** lpVtbl;
 
@@ -380,6 +380,69 @@ namespace TerraFX.Interop
         public HRESULT put_FullScreen([NativeTypeName("VARIANT_BOOL")] short bFullScreen)
         {
             return ((delegate* unmanaged<IWebBrowserApp*, short, int>)(lpVtbl[51]))((IWebBrowserApp*)Unsafe.AsPointer(ref this), bFullScreen);
+        }
+
+        public interface Interface : IWebBrowser.Interface
+        {
+            [VtblIndex(32)]
+            HRESULT Quit();
+
+            [VtblIndex(33)]
+            HRESULT ClientToWindow(int* pcx, int* pcy);
+
+            [VtblIndex(34)]
+            HRESULT PutProperty([NativeTypeName("BSTR")] ushort* Property, VARIANT vtValue);
+
+            [VtblIndex(35)]
+            HRESULT GetProperty([NativeTypeName("BSTR")] ushort* Property, VARIANT* pvtValue);
+
+            [VtblIndex(36)]
+            HRESULT get_Name([NativeTypeName("BSTR *")] ushort** Name);
+
+            [VtblIndex(37)]
+            HRESULT get_HWND([NativeTypeName("SHANDLE_PTR *")] nint* pHWND);
+
+            [VtblIndex(38)]
+            HRESULT get_FullName([NativeTypeName("BSTR *")] ushort** FullName);
+
+            [VtblIndex(39)]
+            HRESULT get_Path([NativeTypeName("BSTR *")] ushort** Path);
+
+            [VtblIndex(40)]
+            HRESULT get_Visible([NativeTypeName("VARIANT_BOOL *")] short* pBool);
+
+            [VtblIndex(41)]
+            HRESULT put_Visible([NativeTypeName("VARIANT_BOOL")] short Value);
+
+            [VtblIndex(42)]
+            HRESULT get_StatusBar([NativeTypeName("VARIANT_BOOL *")] short* pBool);
+
+            [VtblIndex(43)]
+            HRESULT put_StatusBar([NativeTypeName("VARIANT_BOOL")] short Value);
+
+            [VtblIndex(44)]
+            HRESULT get_StatusText([NativeTypeName("BSTR *")] ushort** StatusText);
+
+            [VtblIndex(45)]
+            HRESULT put_StatusText([NativeTypeName("BSTR")] ushort* StatusText);
+
+            [VtblIndex(46)]
+            HRESULT get_ToolBar(int* Value);
+
+            [VtblIndex(47)]
+            HRESULT put_ToolBar(int Value);
+
+            [VtblIndex(48)]
+            HRESULT get_MenuBar([NativeTypeName("VARIANT_BOOL *")] short* Value);
+
+            [VtblIndex(49)]
+            HRESULT put_MenuBar([NativeTypeName("VARIANT_BOOL")] short Value);
+
+            [VtblIndex(50)]
+            HRESULT get_FullScreen([NativeTypeName("VARIANT_BOOL *")] short* pbFullScreen);
+
+            [VtblIndex(51)]
+            HRESULT put_FullScreen([NativeTypeName("VARIANT_BOOL")] short bFullScreen);
         }
 
         public partial struct Vtbl

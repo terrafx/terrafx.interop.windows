@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("1791E8F6-21C7-4340-882A-A6A93E3FD73B")]
     [NativeTypeName("struct ILaunchUIContext : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct ILaunchUIContext
+    public unsafe partial struct ILaunchUIContext : ILaunchUIContext.Interface
     {
         public void** lpVtbl;
 
@@ -51,6 +51,15 @@ namespace TerraFX.Interop
         public HRESULT SetTabGroupingPreference([NativeTypeName("DWORD")] uint value)
         {
             return ((delegate* unmanaged<ILaunchUIContext*, uint, int>)(lpVtbl[4]))((ILaunchUIContext*)Unsafe.AsPointer(ref this), value);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT SetAssociatedWindow(HWND value);
+
+            [VtblIndex(4)]
+            HRESULT SetTabGroupingPreference([NativeTypeName("DWORD")] uint value);
         }
 
         public partial struct Vtbl

@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("D30C1661-CDAF-11D0-8A3E-00C04FC9E26E")]
     [NativeTypeName("struct IWebBrowser2 : IWebBrowserApp")]
     [NativeInheritance("IWebBrowserApp")]
-    public unsafe partial struct IWebBrowser2
+    public unsafe partial struct IWebBrowser2 : IWebBrowser2.Interface
     {
         public void** lpVtbl;
 
@@ -513,6 +513,66 @@ namespace TerraFX.Interop
         public HRESULT put_Resizable([NativeTypeName("VARIANT_BOOL")] short Value)
         {
             return ((delegate* unmanaged<IWebBrowser2*, short, int>)(lpVtbl[70]))((IWebBrowser2*)Unsafe.AsPointer(ref this), Value);
+        }
+
+        public interface Interface : IWebBrowserApp.Interface
+        {
+            [VtblIndex(52)]
+            HRESULT Navigate2(VARIANT* URL, VARIANT* Flags, VARIANT* TargetFrameName, VARIANT* PostData, VARIANT* Headers);
+
+            [VtblIndex(53)]
+            HRESULT QueryStatusWB(OLECMDID cmdID, OLECMDF* pcmdf);
+
+            [VtblIndex(54)]
+            HRESULT ExecWB(OLECMDID cmdID, OLECMDEXECOPT cmdexecopt, VARIANT* pvaIn, VARIANT* pvaOut);
+
+            [VtblIndex(55)]
+            HRESULT ShowBrowserBar(VARIANT* pvaClsid, VARIANT* pvarShow, VARIANT* pvarSize);
+
+            [VtblIndex(56)]
+            HRESULT get_ReadyState(READYSTATE* plReadyState);
+
+            [VtblIndex(57)]
+            HRESULT get_Offline([NativeTypeName("VARIANT_BOOL *")] short* pbOffline);
+
+            [VtblIndex(58)]
+            HRESULT put_Offline([NativeTypeName("VARIANT_BOOL")] short bOffline);
+
+            [VtblIndex(59)]
+            HRESULT get_Silent([NativeTypeName("VARIANT_BOOL *")] short* pbSilent);
+
+            [VtblIndex(60)]
+            HRESULT put_Silent([NativeTypeName("VARIANT_BOOL")] short bSilent);
+
+            [VtblIndex(61)]
+            HRESULT get_RegisterAsBrowser([NativeTypeName("VARIANT_BOOL *")] short* pbRegister);
+
+            [VtblIndex(62)]
+            HRESULT put_RegisterAsBrowser([NativeTypeName("VARIANT_BOOL")] short bRegister);
+
+            [VtblIndex(63)]
+            HRESULT get_RegisterAsDropTarget([NativeTypeName("VARIANT_BOOL *")] short* pbRegister);
+
+            [VtblIndex(64)]
+            HRESULT put_RegisterAsDropTarget([NativeTypeName("VARIANT_BOOL")] short bRegister);
+
+            [VtblIndex(65)]
+            HRESULT get_TheaterMode([NativeTypeName("VARIANT_BOOL *")] short* pbRegister);
+
+            [VtblIndex(66)]
+            HRESULT put_TheaterMode([NativeTypeName("VARIANT_BOOL")] short bRegister);
+
+            [VtblIndex(67)]
+            HRESULT get_AddressBar([NativeTypeName("VARIANT_BOOL *")] short* Value);
+
+            [VtblIndex(68)]
+            HRESULT put_AddressBar([NativeTypeName("VARIANT_BOOL")] short Value);
+
+            [VtblIndex(69)]
+            HRESULT get_Resizable([NativeTypeName("VARIANT_BOOL *")] short* Value);
+
+            [VtblIndex(70)]
+            HRESULT put_Resizable([NativeTypeName("VARIANT_BOOL")] short Value);
         }
 
         public partial struct Vtbl

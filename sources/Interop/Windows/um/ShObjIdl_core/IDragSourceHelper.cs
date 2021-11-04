@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("DE5BF786-477A-11D2-839D-00C04FD918D0")]
     [NativeTypeName("struct IDragSourceHelper : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IDragSourceHelper
+    public unsafe partial struct IDragSourceHelper : IDragSourceHelper.Interface
     {
         public void** lpVtbl;
 
@@ -51,6 +51,15 @@ namespace TerraFX.Interop
         public HRESULT InitializeFromWindow(HWND hwnd, POINT* ppt, IDataObject* pDataObject)
         {
             return ((delegate* unmanaged<IDragSourceHelper*, HWND, POINT*, IDataObject*, int>)(lpVtbl[4]))((IDragSourceHelper*)Unsafe.AsPointer(ref this), hwnd, ppt, pDataObject);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT InitializeFromBitmap([NativeTypeName("LPSHDRAGIMAGE")] SHDRAGIMAGE* pshdi, IDataObject* pDataObject);
+
+            [VtblIndex(4)]
+            HRESULT InitializeFromWindow(HWND hwnd, POINT* ppt, IDataObject* pDataObject);
         }
 
         public partial struct Vtbl

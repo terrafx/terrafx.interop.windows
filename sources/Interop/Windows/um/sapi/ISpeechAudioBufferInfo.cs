@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("11B103D8-1142-4EDF-A093-82FB3915F8CC")]
     [NativeTypeName("struct ISpeechAudioBufferInfo : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct ISpeechAudioBufferInfo
+    public unsafe partial struct ISpeechAudioBufferInfo : ISpeechAudioBufferInfo.Interface
     {
         public void** lpVtbl;
 
@@ -107,6 +107,27 @@ namespace TerraFX.Interop
         public HRESULT put_EventBias([NativeTypeName("long")] int EventBias)
         {
             return ((delegate* unmanaged<ISpeechAudioBufferInfo*, int, int>)(lpVtbl[12]))((ISpeechAudioBufferInfo*)Unsafe.AsPointer(ref this), EventBias);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT get_MinNotification([NativeTypeName("long *")] int* MinNotification);
+
+            [VtblIndex(8)]
+            HRESULT put_MinNotification([NativeTypeName("long")] int MinNotification);
+
+            [VtblIndex(9)]
+            HRESULT get_BufferSize([NativeTypeName("long *")] int* BufferSize);
+
+            [VtblIndex(10)]
+            HRESULT put_BufferSize([NativeTypeName("long")] int BufferSize);
+
+            [VtblIndex(11)]
+            HRESULT get_EventBias([NativeTypeName("long *")] int* EventBias);
+
+            [VtblIndex(12)]
+            HRESULT put_EventBias([NativeTypeName("long")] int EventBias);
         }
 
         public partial struct Vtbl

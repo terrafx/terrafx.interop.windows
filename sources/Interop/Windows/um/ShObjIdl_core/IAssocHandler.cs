@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("F04061AC-1659-4A3F-A954-775AA57FC083")]
     [NativeTypeName("struct IAssocHandler : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IAssocHandler
+    public unsafe partial struct IAssocHandler : IAssocHandler.Interface
     {
         public void** lpVtbl;
 
@@ -86,6 +86,30 @@ namespace TerraFX.Interop
         public HRESULT CreateInvoker(IDataObject* pdo, IAssocHandlerInvoker** ppInvoker)
         {
             return ((delegate* unmanaged<IAssocHandler*, IDataObject*, IAssocHandlerInvoker**, int>)(lpVtbl[9]))((IAssocHandler*)Unsafe.AsPointer(ref this), pdo, ppInvoker);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetName([NativeTypeName("LPWSTR *")] ushort** ppsz);
+
+            [VtblIndex(4)]
+            HRESULT GetUIName([NativeTypeName("LPWSTR *")] ushort** ppsz);
+
+            [VtblIndex(5)]
+            HRESULT GetIconLocation([NativeTypeName("LPWSTR *")] ushort** ppszPath, int* pIndex);
+
+            [VtblIndex(6)]
+            HRESULT IsRecommended();
+
+            [VtblIndex(7)]
+            HRESULT MakeDefault([NativeTypeName("LPCWSTR")] ushort* pszDescription);
+
+            [VtblIndex(8)]
+            HRESULT Invoke(IDataObject* pdo);
+
+            [VtblIndex(9)]
+            HRESULT CreateInvoker(IDataObject* pdo, IAssocHandlerInvoker** ppInvoker);
         }
 
         public partial struct Vtbl

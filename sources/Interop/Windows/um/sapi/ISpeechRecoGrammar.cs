@@ -13,7 +13,7 @@ namespace TerraFX.Interop
     [Guid("B6D6F79F-2158-4E50-B5BC-9A9CCD852A09")]
     [NativeTypeName("struct ISpeechRecoGrammar : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct ISpeechRecoGrammar
+    public unsafe partial struct ISpeechRecoGrammar : ISpeechRecoGrammar.Interface
     {
         public void** lpVtbl;
 
@@ -199,6 +199,66 @@ namespace TerraFX.Interop
         public HRESULT IsPronounceable([NativeTypeName("const BSTR")] ushort* Word, SpeechWordPronounceable* WordPronounceable)
         {
             return ((delegate* unmanaged<ISpeechRecoGrammar*, ushort*, SpeechWordPronounceable*, int>)(lpVtbl[25]))((ISpeechRecoGrammar*)Unsafe.AsPointer(ref this), Word, WordPronounceable);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT get_Id(VARIANT* Id);
+
+            [VtblIndex(8)]
+            HRESULT get_RecoContext(ISpeechRecoContext** RecoContext);
+
+            [VtblIndex(9)]
+            HRESULT put_State(SpeechGrammarState State);
+
+            [VtblIndex(10)]
+            HRESULT get_State(SpeechGrammarState* State);
+
+            [VtblIndex(11)]
+            HRESULT get_Rules(ISpeechGrammarRules** Rules);
+
+            [VtblIndex(12)]
+            HRESULT Reset([NativeTypeName("SpeechLanguageId")] int NewLanguage = 0);
+
+            [VtblIndex(13)]
+            HRESULT CmdLoadFromFile([NativeTypeName("const BSTR")] ushort* FileName, SpeechLoadOption LoadOption = SLOStatic);
+
+            [VtblIndex(14)]
+            HRESULT CmdLoadFromObject([NativeTypeName("const BSTR")] ushort* ClassId, [NativeTypeName("const BSTR")] ushort* GrammarName, SpeechLoadOption LoadOption = SLOStatic);
+
+            [VtblIndex(15)]
+            HRESULT CmdLoadFromResource([NativeTypeName("long")] int hModule, VARIANT ResourceName, VARIANT ResourceType, [NativeTypeName("SpeechLanguageId")] int LanguageId, SpeechLoadOption LoadOption = SLOStatic);
+
+            [VtblIndex(16)]
+            HRESULT CmdLoadFromMemory(VARIANT GrammarData, SpeechLoadOption LoadOption = SLOStatic);
+
+            [VtblIndex(17)]
+            HRESULT CmdLoadFromProprietaryGrammar([NativeTypeName("const BSTR")] ushort* ProprietaryGuid, [NativeTypeName("const BSTR")] ushort* ProprietaryString, VARIANT ProprietaryData, SpeechLoadOption LoadOption = SLOStatic);
+
+            [VtblIndex(18)]
+            HRESULT CmdSetRuleState([NativeTypeName("const BSTR")] ushort* Name, SpeechRuleState State);
+
+            [VtblIndex(19)]
+            HRESULT CmdSetRuleIdState([NativeTypeName("long")] int RuleId, SpeechRuleState State);
+
+            [VtblIndex(20)]
+            HRESULT DictationLoad([NativeTypeName("const BSTR")] ushort* TopicName = null, SpeechLoadOption LoadOption = SLOStatic);
+
+            [VtblIndex(21)]
+            HRESULT DictationUnload();
+
+            [VtblIndex(22)]
+            HRESULT DictationSetState(SpeechRuleState State);
+
+            [VtblIndex(23)]
+            HRESULT SetWordSequenceData([NativeTypeName("const BSTR")] ushort* Text, [NativeTypeName("long")] int TextLength, ISpeechTextSelectionInformation* Info);
+
+            [VtblIndex(24)]
+            HRESULT SetTextSelection(ISpeechTextSelectionInformation* Info);
+
+            [VtblIndex(25)]
+            HRESULT IsPronounceable([NativeTypeName("const BSTR")] ushort* Word, SpeechWordPronounceable* WordPronounceable);
         }
 
         public partial struct Vtbl

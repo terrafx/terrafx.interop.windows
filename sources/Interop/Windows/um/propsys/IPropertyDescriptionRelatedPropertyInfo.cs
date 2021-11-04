@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("507393F4-2A3D-4A60-B59E-D9C75716C2DD")]
     [NativeTypeName("struct IPropertyDescriptionRelatedPropertyInfo : IPropertyDescription")]
     [NativeInheritance("IPropertyDescription")]
-    public unsafe partial struct IPropertyDescriptionRelatedPropertyInfo
+    public unsafe partial struct IPropertyDescriptionRelatedPropertyInfo : IPropertyDescriptionRelatedPropertyInfo.Interface
     {
         public void** lpVtbl;
 
@@ -191,6 +191,12 @@ namespace TerraFX.Interop
         public HRESULT GetRelatedProperty([NativeTypeName("LPCWSTR")] ushort* pszRelationshipName, [NativeTypeName("const IID &")] Guid* riid, void** ppv)
         {
             return ((delegate* unmanaged<IPropertyDescriptionRelatedPropertyInfo*, ushort*, Guid*, void**, int>)(lpVtbl[24]))((IPropertyDescriptionRelatedPropertyInfo*)Unsafe.AsPointer(ref this), pszRelationshipName, riid, ppv);
+        }
+
+        public interface Interface : IPropertyDescription.Interface
+        {
+            [VtblIndex(24)]
+            HRESULT GetRelatedProperty([NativeTypeName("LPCWSTR")] ushort* pszRelationshipName, [NativeTypeName("const IID &")] Guid* riid, void** ppv);
         }
 
         public partial struct Vtbl

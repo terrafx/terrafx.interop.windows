@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("55136806-B2DE-11D1-B9F2-00A0C98BC547")]
     [NativeTypeName("struct DShellNameSpaceEvents : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct DShellNameSpaceEvents
+    public unsafe partial struct DShellNameSpaceEvents : DShellNameSpaceEvents.Interface
     {
         public void** lpVtbl;
 
@@ -65,6 +65,10 @@ namespace TerraFX.Interop
         public HRESULT Invoke([NativeTypeName("DISPID")] int dispIdMember, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("WORD")] ushort wFlags, DISPPARAMS* pDispParams, VARIANT* pVarResult, EXCEPINFO* pExcepInfo, uint* puArgErr)
         {
             return ((delegate* unmanaged<DShellNameSpaceEvents*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int>)(lpVtbl[6]))((DShellNameSpaceEvents*)Unsafe.AsPointer(ref this), dispIdMember, riid, lcid, wFlags, pDispParams, pVarResult, pExcepInfo, puArgErr);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
         }
 
         public partial struct Vtbl

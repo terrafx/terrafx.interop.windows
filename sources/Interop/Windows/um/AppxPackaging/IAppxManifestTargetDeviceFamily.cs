@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("9091B09B-C8D5-4F31-8687-A338259FAEFB")]
     [NativeTypeName("struct IAppxManifestTargetDeviceFamily : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IAppxManifestTargetDeviceFamily
+    public unsafe partial struct IAppxManifestTargetDeviceFamily : IAppxManifestTargetDeviceFamily.Interface
     {
         public void** lpVtbl;
 
@@ -58,6 +58,18 @@ namespace TerraFX.Interop
         public HRESULT GetMaxVersionTested([NativeTypeName("UINT64 *")] ulong* maxVersionTested)
         {
             return ((delegate* unmanaged<IAppxManifestTargetDeviceFamily*, ulong*, int>)(lpVtbl[5]))((IAppxManifestTargetDeviceFamily*)Unsafe.AsPointer(ref this), maxVersionTested);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetName([NativeTypeName("LPWSTR *")] ushort** name);
+
+            [VtblIndex(4)]
+            HRESULT GetMinVersion([NativeTypeName("UINT64 *")] ulong* minVersion);
+
+            [VtblIndex(5)]
+            HRESULT GetMaxVersionTested([NativeTypeName("UINT64 *")] ulong* maxVersionTested);
         }
 
         public partial struct Vtbl

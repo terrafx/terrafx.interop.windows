@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("16CDFF07-C503-419C-83F2-0965C7AF1FA6")]
     [NativeTypeName("struct IDCompositionMatrixTransform : IDCompositionTransform")]
     [NativeInheritance("IDCompositionTransform")]
-    public unsafe partial struct IDCompositionMatrixTransform
+    public unsafe partial struct IDCompositionMatrixTransform : IDCompositionMatrixTransform.Interface
     {
         public void** lpVtbl;
 
@@ -58,6 +58,18 @@ namespace TerraFX.Interop
         public HRESULT SetMatrixElement(int row, int column, float value)
         {
             return ((delegate* unmanaged<IDCompositionMatrixTransform*, int, int, float, int>)(lpVtbl[5]))((IDCompositionMatrixTransform*)Unsafe.AsPointer(ref this), row, column, value);
+        }
+
+        public interface Interface : IDCompositionTransform.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT SetMatrix([NativeTypeName("const D2D_MATRIX_3X2_F &")] D2D_MATRIX_3X2_F* matrix);
+
+            [VtblIndex(4)]
+            HRESULT SetMatrixElement(int row, int column, IDCompositionAnimation* animation);
+
+            [VtblIndex(5)]
+            HRESULT SetMatrixElement(int row, int column, float value);
         }
 
         public partial struct Vtbl

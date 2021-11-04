@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("B8E8BD60-0BFE-11D0-AF91-00AA00B67A42")]
     [NativeTypeName("struct IIPDVDec : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IIPDVDec
+    public unsafe partial struct IIPDVDec : IIPDVDec.Interface
     {
         public void** lpVtbl;
 
@@ -51,6 +51,15 @@ namespace TerraFX.Interop
         public HRESULT put_IPDisplay(int displayPix)
         {
             return ((delegate* unmanaged<IIPDVDec*, int, int>)(lpVtbl[4]))((IIPDVDec*)Unsafe.AsPointer(ref this), displayPix);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT get_IPDisplay(int* displayPix);
+
+            [VtblIndex(4)]
+            HRESULT put_IPDisplay(int displayPix);
         }
 
         public partial struct Vtbl

@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("163BB1E0-6E00-11CF-837A-48DC04C10000")]
     [NativeTypeName("struct IHTMLLocation : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct IHTMLLocation
+    public unsafe partial struct IHTMLLocation : IHTMLLocation.Interface
     {
         public void** lpVtbl;
 
@@ -205,6 +205,69 @@ namespace TerraFX.Interop
         public HRESULT toString([NativeTypeName("BSTR *")] ushort** @string)
         {
             return ((delegate* unmanaged<IHTMLLocation*, ushort**, int>)(lpVtbl[26]))((IHTMLLocation*)Unsafe.AsPointer(ref this), @string);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT put_href([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(8)]
+            HRESULT get_href([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(9)]
+            HRESULT put_protocol([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(10)]
+            HRESULT get_protocol([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(11)]
+            HRESULT put_host([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(12)]
+            HRESULT get_host([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(13)]
+            HRESULT put_hostname([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(14)]
+            HRESULT get_hostname([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(15)]
+            HRESULT put_port([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(16)]
+            HRESULT get_port([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(17)]
+            HRESULT put_pathname([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(18)]
+            HRESULT get_pathname([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(19)]
+            HRESULT put_search([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(20)]
+            HRESULT get_search([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(21)]
+            HRESULT put_hash([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(22)]
+            HRESULT get_hash([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(23)]
+            HRESULT reload([NativeTypeName("VARIANT_BOOL")] short flag = 0);
+
+            [VtblIndex(24)]
+            HRESULT replace([NativeTypeName("BSTR")] ushort* bstr);
+
+            [VtblIndex(25)]
+            HRESULT assign([NativeTypeName("BSTR")] ushort* bstr);
+
+            [VtblIndex(26)]
+            HRESULT toString([NativeTypeName("BSTR *")] ushort** @string);
         }
 
         public partial struct Vtbl

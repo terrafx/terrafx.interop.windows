@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("B2DAAD8B-03D4-4DBF-95EB-32AB4B63D0AB")]
     [NativeTypeName("struct ID3DUserDefinedAnnotation : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct ID3DUserDefinedAnnotation
+    public unsafe partial struct ID3DUserDefinedAnnotation : ID3DUserDefinedAnnotation.Interface
     {
         public void** lpVtbl;
 
@@ -65,6 +65,21 @@ namespace TerraFX.Interop
         public BOOL GetStatus()
         {
             return ((delegate* unmanaged<ID3DUserDefinedAnnotation*, int>)(lpVtbl[6]))((ID3DUserDefinedAnnotation*)Unsafe.AsPointer(ref this));
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            int BeginEvent([NativeTypeName("LPCWSTR")] ushort* Name);
+
+            [VtblIndex(4)]
+            int EndEvent();
+
+            [VtblIndex(5)]
+            void SetMarker([NativeTypeName("LPCWSTR")] ushort* Name);
+
+            [VtblIndex(6)]
+            BOOL GetStatus();
         }
 
         public partial struct Vtbl

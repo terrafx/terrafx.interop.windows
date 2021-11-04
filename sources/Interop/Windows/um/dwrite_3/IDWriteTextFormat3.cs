@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("6D3B5641-E550-430D-A85B-B7BF48A93427")]
     [NativeTypeName("struct IDWriteTextFormat3 : IDWriteTextFormat2")]
     [NativeInheritance("IDWriteTextFormat2")]
-    public unsafe partial struct IDWriteTextFormat3
+    public unsafe partial struct IDWriteTextFormat3 : IDWriteTextFormat3.Interface
     {
         public void** lpVtbl;
 
@@ -320,6 +320,25 @@ namespace TerraFX.Interop
         public HRESULT SetAutomaticFontAxes(DWRITE_AUTOMATIC_FONT_AXES automaticFontAxes)
         {
             return ((delegate* unmanaged<IDWriteTextFormat3*, DWRITE_AUTOMATIC_FONT_AXES, int>)(lpVtbl[42]))((IDWriteTextFormat3*)Unsafe.AsPointer(ref this), automaticFontAxes);
+        }
+
+        public interface Interface : IDWriteTextFormat2.Interface
+        {
+            [VtblIndex(38)]
+            HRESULT SetFontAxisValues([NativeTypeName("const DWRITE_FONT_AXIS_VALUE *")] DWRITE_FONT_AXIS_VALUE* fontAxisValues, [NativeTypeName("UINT32")] uint fontAxisValueCount);
+
+            [VtblIndex(39)]
+            [return: NativeTypeName("UINT32")]
+            uint GetFontAxisValueCount();
+
+            [VtblIndex(40)]
+            HRESULT GetFontAxisValues(DWRITE_FONT_AXIS_VALUE* fontAxisValues, [NativeTypeName("UINT32")] uint fontAxisValueCount);
+
+            [VtblIndex(41)]
+            DWRITE_AUTOMATIC_FONT_AXES GetAutomaticFontAxes();
+
+            [VtblIndex(42)]
+            HRESULT SetAutomaticFontAxes(DWRITE_AUTOMATIC_FONT_AXES automaticFontAxes);
         }
 
         public partial struct Vtbl

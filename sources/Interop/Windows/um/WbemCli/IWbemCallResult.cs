@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("44ACA675-E8FC-11D0-A07C-00C04FB68820")]
     [NativeTypeName("struct IWbemCallResult : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IWbemCallResult
+    public unsafe partial struct IWbemCallResult : IWbemCallResult.Interface
     {
         public void** lpVtbl;
 
@@ -65,6 +65,21 @@ namespace TerraFX.Interop
         public HRESULT GetCallStatus([NativeTypeName("long")] int lTimeout, [NativeTypeName("long *")] int* plStatus)
         {
             return ((delegate* unmanaged<IWbemCallResult*, int, int*, int>)(lpVtbl[6]))((IWbemCallResult*)Unsafe.AsPointer(ref this), lTimeout, plStatus);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetResultObject([NativeTypeName("long")] int lTimeout, IWbemClassObject** ppResultObject);
+
+            [VtblIndex(4)]
+            HRESULT GetResultString([NativeTypeName("long")] int lTimeout, [NativeTypeName("BSTR *")] ushort** pstrResultString);
+
+            [VtblIndex(5)]
+            HRESULT GetResultServices([NativeTypeName("long")] int lTimeout, IWbemServices** ppServices);
+
+            [VtblIndex(6)]
+            HRESULT GetCallStatus([NativeTypeName("long")] int lTimeout, [NativeTypeName("long *")] int* plStatus);
         }
 
         public partial struct Vtbl

@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("00020410-0000-0000-C000-000000000046")]
     [NativeTypeName("struct ITypeChangeEvents : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct ITypeChangeEvents
+    public unsafe partial struct ITypeChangeEvents : ITypeChangeEvents.Interface
     {
         public void** lpVtbl;
 
@@ -51,6 +51,15 @@ namespace TerraFX.Interop
         public HRESULT AfterTypeChange(CHANGEKIND changeKind, ITypeInfo* pTInfoAfter, [NativeTypeName("LPOLESTR")] ushort* pStrName)
         {
             return ((delegate* unmanaged<ITypeChangeEvents*, CHANGEKIND, ITypeInfo*, ushort*, int>)(lpVtbl[4]))((ITypeChangeEvents*)Unsafe.AsPointer(ref this), changeKind, pTInfoAfter, pStrName);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT RequestTypeChange(CHANGEKIND changeKind, ITypeInfo* pTInfoBefore, [NativeTypeName("LPOLESTR")] ushort* pStrName, int* pfCancel);
+
+            [VtblIndex(4)]
+            HRESULT AfterTypeChange(CHANGEKIND changeKind, ITypeInfo* pTInfoAfter, [NativeTypeName("LPOLESTR")] ushort* pStrName);
         }
 
         public partial struct Vtbl

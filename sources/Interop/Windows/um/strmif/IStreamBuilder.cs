@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("56A868BF-0AD4-11CE-B03A-0020AF0BA770")]
     [NativeTypeName("struct IStreamBuilder : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IStreamBuilder
+    public unsafe partial struct IStreamBuilder : IStreamBuilder.Interface
     {
         public void** lpVtbl;
 
@@ -51,6 +51,15 @@ namespace TerraFX.Interop
         public HRESULT Backout(IPin* ppinOut, IGraphBuilder* pGraph)
         {
             return ((delegate* unmanaged<IStreamBuilder*, IPin*, IGraphBuilder*, int>)(lpVtbl[4]))((IStreamBuilder*)Unsafe.AsPointer(ref this), ppinOut, pGraph);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT Render(IPin* ppinOut, IGraphBuilder* pGraph);
+
+            [VtblIndex(4)]
+            HRESULT Backout(IPin* ppinOut, IGraphBuilder* pGraph);
         }
 
         public partial struct Vtbl

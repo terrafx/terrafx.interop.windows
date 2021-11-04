@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("BDB64DF4-EA2F-4C70-B861-AAAB1258BB5D")]
     [NativeTypeName("struct ID3D11On12Device1 : ID3D11On12Device")]
     [NativeInheritance("ID3D11On12Device")]
-    public unsafe partial struct ID3D11On12Device1
+    public unsafe partial struct ID3D11On12Device1 : ID3D11On12Device1.Interface
     {
         public void** lpVtbl;
 
@@ -65,6 +65,12 @@ namespace TerraFX.Interop
         public HRESULT GetD3D12Device([NativeTypeName("const IID &")] Guid* riid, void** ppvDevice)
         {
             return ((delegate* unmanaged<ID3D11On12Device1*, Guid*, void**, int>)(lpVtbl[6]))((ID3D11On12Device1*)Unsafe.AsPointer(ref this), riid, ppvDevice);
+        }
+
+        public interface Interface : ID3D11On12Device.Interface
+        {
+            [VtblIndex(6)]
+            HRESULT GetD3D12Device([NativeTypeName("const IID &")] Guid* riid, void** ppvDevice);
         }
 
         public partial struct Vtbl

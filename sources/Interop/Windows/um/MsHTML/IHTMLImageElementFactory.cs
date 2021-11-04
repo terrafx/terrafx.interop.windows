@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("3050F38E-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct IHTMLImageElementFactory : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct IHTMLImageElementFactory
+    public unsafe partial struct IHTMLImageElementFactory : IHTMLImageElementFactory.Interface
     {
         public void** lpVtbl;
 
@@ -72,6 +72,12 @@ namespace TerraFX.Interop
         public HRESULT create(VARIANT width, VARIANT height, IHTMLImgElement** __MIDL__IHTMLImageElementFactory0000)
         {
             return ((delegate* unmanaged<IHTMLImageElementFactory*, VARIANT, VARIANT, IHTMLImgElement**, int>)(lpVtbl[7]))((IHTMLImageElementFactory*)Unsafe.AsPointer(ref this), width, height, __MIDL__IHTMLImageElementFactory0000);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT create(VARIANT width, VARIANT height, IHTMLImgElement** __MIDL__IHTMLImageElementFactory0000);
         }
 
         public partial struct Vtbl

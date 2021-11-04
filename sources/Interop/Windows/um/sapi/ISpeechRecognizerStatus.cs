@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("BFF9E781-53EC-484E-BB8A-0E1B5551E35C")]
     [NativeTypeName("struct ISpeechRecognizerStatus : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct ISpeechRecognizerStatus
+    public unsafe partial struct ISpeechRecognizerStatus : ISpeechRecognizerStatus.Interface
     {
         public void** lpVtbl;
 
@@ -107,6 +107,27 @@ namespace TerraFX.Interop
         public HRESULT get_SupportedLanguages(VARIANT* SupportedLanguages)
         {
             return ((delegate* unmanaged<ISpeechRecognizerStatus*, VARIANT*, int>)(lpVtbl[12]))((ISpeechRecognizerStatus*)Unsafe.AsPointer(ref this), SupportedLanguages);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT get_AudioStatus(ISpeechAudioStatus** AudioStatus);
+
+            [VtblIndex(8)]
+            HRESULT get_CurrentStreamPosition(VARIANT* pCurrentStreamPos);
+
+            [VtblIndex(9)]
+            HRESULT get_CurrentStreamNumber([NativeTypeName("long *")] int* StreamNumber);
+
+            [VtblIndex(10)]
+            HRESULT get_NumberOfActiveRules([NativeTypeName("long *")] int* NumberOfActiveRules);
+
+            [VtblIndex(11)]
+            HRESULT get_ClsidEngine([NativeTypeName("BSTR *")] ushort** ClsidEngine);
+
+            [VtblIndex(12)]
+            HRESULT get_SupportedLanguages(VARIANT* SupportedLanguages);
         }
 
         public partial struct Vtbl

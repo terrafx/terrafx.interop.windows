@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("D0751585-D216-4344-B5BF-463B68F977BB")]
     [NativeTypeName("struct IAdvancedMediaCapture : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IAdvancedMediaCapture
+    public unsafe partial struct IAdvancedMediaCapture : IAdvancedMediaCapture.Interface
     {
         public void** lpVtbl;
 
@@ -44,6 +44,12 @@ namespace TerraFX.Interop
         public HRESULT GetAdvancedMediaCaptureSettings(IAdvancedMediaCaptureSettings** value)
         {
             return ((delegate* unmanaged<IAdvancedMediaCapture*, IAdvancedMediaCaptureSettings**, int>)(lpVtbl[3]))((IAdvancedMediaCapture*)Unsafe.AsPointer(ref this), value);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetAdvancedMediaCaptureSettings(IAdvancedMediaCaptureSettings** value);
         }
 
         public partial struct Vtbl

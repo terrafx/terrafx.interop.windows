@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("3BAB440E-417E-47DF-A2E2-BC0BE6A00916")]
     [NativeTypeName("struct ID2D1CommandSink2 : ID2D1CommandSink1")]
     [NativeInheritance("ID2D1CommandSink1")]
-    public unsafe partial struct ID2D1CommandSink2
+    public unsafe partial struct ID2D1CommandSink2 : ID2D1CommandSink2.Interface
     {
         public void** lpVtbl;
 
@@ -240,6 +240,18 @@ namespace TerraFX.Interop
         public HRESULT DrawGdiMetafile(ID2D1GdiMetafile* gdiMetafile, [NativeTypeName("const D2D1_RECT_F *")] D2D_RECT_F* destinationRectangle, [NativeTypeName("const D2D1_RECT_F *")] D2D_RECT_F* sourceRectangle)
         {
             return ((delegate* unmanaged<ID2D1CommandSink2*, ID2D1GdiMetafile*, D2D_RECT_F*, D2D_RECT_F*, int>)(lpVtbl[31]))((ID2D1CommandSink2*)Unsafe.AsPointer(ref this), gdiMetafile, destinationRectangle, sourceRectangle);
+        }
+
+        public interface Interface : ID2D1CommandSink1.Interface
+        {
+            [VtblIndex(29)]
+            HRESULT DrawInk(ID2D1Ink* ink, ID2D1Brush* brush, ID2D1InkStyle* inkStyle);
+
+            [VtblIndex(30)]
+            HRESULT DrawGradientMesh(ID2D1GradientMesh* gradientMesh);
+
+            [VtblIndex(31)]
+            HRESULT DrawGdiMetafile(ID2D1GdiMetafile* gdiMetafile, [NativeTypeName("const D2D1_RECT_F *")] D2D_RECT_F* destinationRectangle, [NativeTypeName("const D2D1_RECT_F *")] D2D_RECT_F* sourceRectangle);
         }
 
         public partial struct Vtbl

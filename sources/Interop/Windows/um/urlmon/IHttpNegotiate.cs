@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("79EAC9D2-BAF9-11CE-8C82-00AA004BA90B")]
     [NativeTypeName("struct IHttpNegotiate : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IHttpNegotiate
+    public unsafe partial struct IHttpNegotiate : IHttpNegotiate.Interface
     {
         public void** lpVtbl;
 
@@ -51,6 +51,15 @@ namespace TerraFX.Interop
         public HRESULT OnResponse([NativeTypeName("DWORD")] uint dwResponseCode, [NativeTypeName("LPCWSTR")] ushort* szResponseHeaders, [NativeTypeName("LPCWSTR")] ushort* szRequestHeaders, [NativeTypeName("LPWSTR *")] ushort** pszAdditionalRequestHeaders)
         {
             return ((delegate* unmanaged<IHttpNegotiate*, uint, ushort*, ushort*, ushort**, int>)(lpVtbl[4]))((IHttpNegotiate*)Unsafe.AsPointer(ref this), dwResponseCode, szResponseHeaders, szRequestHeaders, pszAdditionalRequestHeaders);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT BeginningTransaction([NativeTypeName("LPCWSTR")] ushort* szURL, [NativeTypeName("LPCWSTR")] ushort* szHeaders, [NativeTypeName("DWORD")] uint dwReserved, [NativeTypeName("LPWSTR *")] ushort** pszAdditionalHeaders);
+
+            [VtblIndex(4)]
+            HRESULT OnResponse([NativeTypeName("DWORD")] uint dwResponseCode, [NativeTypeName("LPCWSTR")] ushort* szResponseHeaders, [NativeTypeName("LPCWSTR")] ushort* szRequestHeaders, [NativeTypeName("LPWSTR *")] ushort** pszAdditionalRequestHeaders);
         }
 
         public partial struct Vtbl

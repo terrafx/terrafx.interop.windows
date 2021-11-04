@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("30510510-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct ISVGPathSegList : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct ISVGPathSegList
+    public unsafe partial struct ISVGPathSegList : ISVGPathSegList.Interface
     {
         public void** lpVtbl;
 
@@ -128,6 +128,36 @@ namespace TerraFX.Interop
         public HRESULT appendItem(ISVGPathSeg* newItem, ISVGPathSeg** ppResult)
         {
             return ((delegate* unmanaged<ISVGPathSegList*, ISVGPathSeg*, ISVGPathSeg**, int>)(lpVtbl[15]))((ISVGPathSegList*)Unsafe.AsPointer(ref this), newItem, ppResult);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT put_numberOfItems([NativeTypeName("long")] int v);
+
+            [VtblIndex(8)]
+            HRESULT get_numberOfItems([NativeTypeName("long *")] int* p);
+
+            [VtblIndex(9)]
+            HRESULT clear();
+
+            [VtblIndex(10)]
+            HRESULT initialize(ISVGPathSeg* newItem, ISVGPathSeg** ppResult);
+
+            [VtblIndex(11)]
+            HRESULT getItem([NativeTypeName("long")] int index, ISVGPathSeg** ppResult);
+
+            [VtblIndex(12)]
+            HRESULT insertItemBefore(ISVGPathSeg* newItem, [NativeTypeName("long")] int index, ISVGPathSeg** ppResult);
+
+            [VtblIndex(13)]
+            HRESULT replaceItem(ISVGPathSeg* newItem, [NativeTypeName("long")] int index, ISVGPathSeg** ppResult);
+
+            [VtblIndex(14)]
+            HRESULT removeItem([NativeTypeName("long")] int index, ISVGPathSeg** ppResult);
+
+            [VtblIndex(15)]
+            HRESULT appendItem(ISVGPathSeg* newItem, ISVGPathSeg** ppResult);
         }
 
         public partial struct Vtbl

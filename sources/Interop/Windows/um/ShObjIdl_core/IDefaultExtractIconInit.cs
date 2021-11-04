@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("41DED17D-D6B3-4261-997D-88C60E4B1D58")]
     [NativeTypeName("struct IDefaultExtractIconInit : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IDefaultExtractIconInit
+    public unsafe partial struct IDefaultExtractIconInit : IDefaultExtractIconInit.Interface
     {
         public void** lpVtbl;
 
@@ -79,6 +79,27 @@ namespace TerraFX.Interop
         public HRESULT SetDefaultIcon([NativeTypeName("LPCWSTR")] ushort* pszFile, int iIcon)
         {
             return ((delegate* unmanaged<IDefaultExtractIconInit*, ushort*, int, int>)(lpVtbl[8]))((IDefaultExtractIconInit*)Unsafe.AsPointer(ref this), pszFile, iIcon);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT SetFlags(uint uFlags);
+
+            [VtblIndex(4)]
+            HRESULT SetKey(HKEY hkey);
+
+            [VtblIndex(5)]
+            HRESULT SetNormalIcon([NativeTypeName("LPCWSTR")] ushort* pszFile, int iIcon);
+
+            [VtblIndex(6)]
+            HRESULT SetOpenIcon([NativeTypeName("LPCWSTR")] ushort* pszFile, int iIcon);
+
+            [VtblIndex(7)]
+            HRESULT SetShortcutIcon([NativeTypeName("LPCWSTR")] ushort* pszFile, int iIcon);
+
+            [VtblIndex(8)]
+            HRESULT SetDefaultIcon([NativeTypeName("LPCWSTR")] ushort* pszFile, int iIcon);
         }
 
         public partial struct Vtbl

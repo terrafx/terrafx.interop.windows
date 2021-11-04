@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("3050F25F-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct IHTMLEmbedElement : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct IHTMLEmbedElement
+    public unsafe partial struct IHTMLEmbedElement : IHTMLEmbedElement.Interface
     {
         public void** lpVtbl;
 
@@ -163,6 +163,51 @@ namespace TerraFX.Interop
         public HRESULT get_height(VARIANT* p)
         {
             return ((delegate* unmanaged<IHTMLEmbedElement*, VARIANT*, int>)(lpVtbl[20]))((IHTMLEmbedElement*)Unsafe.AsPointer(ref this), p);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT put_hidden([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(8)]
+            HRESULT get_hidden([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(9)]
+            HRESULT get_palette([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(10)]
+            HRESULT get_pluginspage([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(11)]
+            HRESULT put_src([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(12)]
+            HRESULT get_src([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(13)]
+            HRESULT put_units([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(14)]
+            HRESULT get_units([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(15)]
+            HRESULT put_name([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(16)]
+            HRESULT get_name([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(17)]
+            HRESULT put_width(VARIANT v);
+
+            [VtblIndex(18)]
+            HRESULT get_width(VARIANT* p);
+
+            [VtblIndex(19)]
+            HRESULT put_height(VARIANT v);
+
+            [VtblIndex(20)]
+            HRESULT get_height(VARIANT* p);
         }
 
         public partial struct Vtbl

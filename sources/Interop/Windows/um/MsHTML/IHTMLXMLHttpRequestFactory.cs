@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("3051040C-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct IHTMLXMLHttpRequestFactory : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct IHTMLXMLHttpRequestFactory
+    public unsafe partial struct IHTMLXMLHttpRequestFactory : IHTMLXMLHttpRequestFactory.Interface
     {
         public void** lpVtbl;
 
@@ -72,6 +72,12 @@ namespace TerraFX.Interop
         public HRESULT create(IHTMLXMLHttpRequest** __MIDL__IHTMLXMLHttpRequestFactory0000)
         {
             return ((delegate* unmanaged<IHTMLXMLHttpRequestFactory*, IHTMLXMLHttpRequest**, int>)(lpVtbl[7]))((IHTMLXMLHttpRequestFactory*)Unsafe.AsPointer(ref this), __MIDL__IHTMLXMLHttpRequestFactory0000);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT create(IHTMLXMLHttpRequest** __MIDL__IHTMLXMLHttpRequestFactory0000);
         }
 
         public partial struct Vtbl

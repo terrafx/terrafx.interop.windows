@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("2F69D622-20B5-41E9-AFDF-89CED1DDA04E")]
     [NativeTypeName("struct IMFMediaEngineExtension : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IMFMediaEngineExtension
+    public unsafe partial struct IMFMediaEngineExtension : IMFMediaEngineExtension.Interface
     {
         public void** lpVtbl;
 
@@ -65,6 +65,21 @@ namespace TerraFX.Interop
         public HRESULT EndCreateObject(IMFAsyncResult* pResult, IUnknown** ppObject)
         {
             return ((delegate* unmanaged<IMFMediaEngineExtension*, IMFAsyncResult*, IUnknown**, int>)(lpVtbl[6]))((IMFMediaEngineExtension*)Unsafe.AsPointer(ref this), pResult, ppObject);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT CanPlayType(BOOL AudioOnly, [NativeTypeName("BSTR")] ushort* MimeType, MF_MEDIA_ENGINE_CANPLAY* pAnswer);
+
+            [VtblIndex(4)]
+            HRESULT BeginCreateObject([NativeTypeName("BSTR")] ushort* bstrURL, IMFByteStream* pByteStream, MF_OBJECT_TYPE type, IUnknown** ppIUnknownCancelCookie, IMFAsyncCallback* pCallback, IUnknown* punkState);
+
+            [VtblIndex(5)]
+            HRESULT CancelObjectCreation(IUnknown* pIUnknownCancelCookie);
+
+            [VtblIndex(6)]
+            HRESULT EndCreateObject(IMFAsyncResult* pResult, IUnknown** ppObject);
         }
 
         public partial struct Vtbl

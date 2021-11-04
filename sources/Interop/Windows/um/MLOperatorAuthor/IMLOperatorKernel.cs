@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("11C4B4A0-B467-4EAA-A1A6-B961D8D0ED79")]
     [NativeTypeName("struct IMLOperatorKernel : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IMLOperatorKernel
+    public unsafe partial struct IMLOperatorKernel : IMLOperatorKernel.Interface
     {
         public void** lpVtbl;
 
@@ -44,6 +44,12 @@ namespace TerraFX.Interop
         public HRESULT Compute(IMLOperatorKernelContext* context)
         {
             return ((delegate* unmanaged<IMLOperatorKernel*, IMLOperatorKernelContext*, int>)(lpVtbl[3]))((IMLOperatorKernel*)Unsafe.AsPointer(ref this), context);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT Compute(IMLOperatorKernelContext* context);
         }
 
         public partial struct Vtbl

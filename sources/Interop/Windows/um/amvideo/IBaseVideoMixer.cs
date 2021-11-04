@@ -10,7 +10,7 @@ namespace TerraFX.Interop
 {
     [NativeTypeName("struct IBaseVideoMixer : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IBaseVideoMixer
+    public unsafe partial struct IBaseVideoMixer : IBaseVideoMixer.Interface
     {
         public void** lpVtbl;
 
@@ -84,6 +84,30 @@ namespace TerraFX.Interop
         public HRESULT SetClockPeriod(int bValue)
         {
             return ((delegate* unmanaged<IBaseVideoMixer*, int, int>)(lpVtbl[9]))((IBaseVideoMixer*)Unsafe.AsPointer(ref this), bValue);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT SetLeadPin(int iPin);
+
+            [VtblIndex(4)]
+            HRESULT GetLeadPin(int* piPin);
+
+            [VtblIndex(5)]
+            HRESULT GetInputPinCount(int* piPinCount);
+
+            [VtblIndex(6)]
+            HRESULT IsUsingClock(int* pbValue);
+
+            [VtblIndex(7)]
+            HRESULT SetUsingClock(int bValue);
+
+            [VtblIndex(8)]
+            HRESULT GetClockPeriod(int* pbValue);
+
+            [VtblIndex(9)]
+            HRESULT SetClockPeriod(int bValue);
         }
 
         public partial struct Vtbl

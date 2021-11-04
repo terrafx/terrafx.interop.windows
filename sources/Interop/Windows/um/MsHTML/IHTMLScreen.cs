@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("3050F35C-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct IHTMLScreen : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct IHTMLScreen
+    public unsafe partial struct IHTMLScreen : IHTMLScreen.Interface
     {
         public void** lpVtbl;
 
@@ -135,6 +135,39 @@ namespace TerraFX.Interop
         public HRESULT get_fontSmoothingEnabled([NativeTypeName("VARIANT_BOOL *")] short* p)
         {
             return ((delegate* unmanaged<IHTMLScreen*, short*, int>)(lpVtbl[16]))((IHTMLScreen*)Unsafe.AsPointer(ref this), p);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT get_colorDepth([NativeTypeName("long *")] int* p);
+
+            [VtblIndex(8)]
+            HRESULT put_bufferDepth([NativeTypeName("long")] int v);
+
+            [VtblIndex(9)]
+            HRESULT get_bufferDepth([NativeTypeName("long *")] int* p);
+
+            [VtblIndex(10)]
+            HRESULT get_width([NativeTypeName("long *")] int* p);
+
+            [VtblIndex(11)]
+            HRESULT get_height([NativeTypeName("long *")] int* p);
+
+            [VtblIndex(12)]
+            HRESULT put_updateInterval([NativeTypeName("long")] int v);
+
+            [VtblIndex(13)]
+            HRESULT get_updateInterval([NativeTypeName("long *")] int* p);
+
+            [VtblIndex(14)]
+            HRESULT get_availHeight([NativeTypeName("long *")] int* p);
+
+            [VtblIndex(15)]
+            HRESULT get_availWidth([NativeTypeName("long *")] int* p);
+
+            [VtblIndex(16)]
+            HRESULT get_fontSmoothingEnabled([NativeTypeName("VARIANT_BOOL *")] short* p);
         }
 
         public partial struct Vtbl

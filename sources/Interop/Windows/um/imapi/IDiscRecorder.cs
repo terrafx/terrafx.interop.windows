@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("85AC9776-CA88-4CF2-894E-09598C078A41")]
     [NativeTypeName("struct IDiscRecorder : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IDiscRecorder
+    public unsafe partial struct IDiscRecorder : IDiscRecorder.Interface
     {
         public void** lpVtbl;
 
@@ -142,6 +142,54 @@ namespace TerraFX.Interop
         public HRESULT Close()
         {
             return ((delegate* unmanaged<IDiscRecorder*, int>)(lpVtbl[17]))((IDiscRecorder*)Unsafe.AsPointer(ref this));
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT Init(byte* pbyUniqueID, [NativeTypeName("ULONG")] uint nulIDSize, [NativeTypeName("ULONG")] uint nulDriveNumber);
+
+            [VtblIndex(4)]
+            HRESULT GetRecorderGUID(byte* pbyUniqueID, [NativeTypeName("ULONG")] uint ulBufferSize, [NativeTypeName("ULONG *")] uint* pulReturnSizeRequired);
+
+            [VtblIndex(5)]
+            HRESULT GetRecorderType([NativeTypeName("long *")] int* fTypeCode);
+
+            [VtblIndex(6)]
+            HRESULT GetDisplayNames([NativeTypeName("BSTR *")] ushort** pbstrVendorID, [NativeTypeName("BSTR *")] ushort** pbstrProductID, [NativeTypeName("BSTR *")] ushort** pbstrRevision);
+
+            [VtblIndex(7)]
+            HRESULT GetBasePnPID([NativeTypeName("BSTR *")] ushort** pbstrBasePnPID);
+
+            [VtblIndex(8)]
+            HRESULT GetPath([NativeTypeName("BSTR *")] ushort** pbstrPath);
+
+            [VtblIndex(9)]
+            HRESULT GetRecorderProperties(IPropertyStorage** ppPropStg);
+
+            [VtblIndex(10)]
+            HRESULT SetRecorderProperties(IPropertyStorage* pPropStg);
+
+            [VtblIndex(11)]
+            HRESULT GetRecorderState([NativeTypeName("ULONG *")] uint* pulDevStateFlags);
+
+            [VtblIndex(12)]
+            HRESULT OpenExclusive();
+
+            [VtblIndex(13)]
+            HRESULT QueryMediaType([NativeTypeName("long *")] int* fMediaType, [NativeTypeName("long *")] int* fMediaFlags);
+
+            [VtblIndex(14)]
+            HRESULT QueryMediaInfo(byte* pbSessions, byte* pbLastTrack, [NativeTypeName("ULONG *")] uint* ulStartAddress, [NativeTypeName("ULONG *")] uint* ulNextWritable, [NativeTypeName("ULONG *")] uint* ulFreeBlocks);
+
+            [VtblIndex(15)]
+            HRESULT Eject();
+
+            [VtblIndex(16)]
+            HRESULT Erase([NativeTypeName("boolean")] byte bFullErase);
+
+            [VtblIndex(17)]
+            HRESULT Close();
         }
 
         public partial struct Vtbl

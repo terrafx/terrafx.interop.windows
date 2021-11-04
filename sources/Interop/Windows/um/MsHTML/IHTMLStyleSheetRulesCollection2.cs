@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("305106E8-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct IHTMLStyleSheetRulesCollection2 : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct IHTMLStyleSheetRulesCollection2
+    public unsafe partial struct IHTMLStyleSheetRulesCollection2 : IHTMLStyleSheetRulesCollection2.Interface
     {
         public void** lpVtbl;
 
@@ -79,6 +79,15 @@ namespace TerraFX.Interop
         public HRESULT item([NativeTypeName("long")] int index, IHTMLCSSRule** ppHTMLCSSRule)
         {
             return ((delegate* unmanaged<IHTMLStyleSheetRulesCollection2*, int, IHTMLCSSRule**, int>)(lpVtbl[8]))((IHTMLStyleSheetRulesCollection2*)Unsafe.AsPointer(ref this), index, ppHTMLCSSRule);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT get_length([NativeTypeName("long *")] int* p);
+
+            [VtblIndex(8)]
+            HRESULT item([NativeTypeName("long")] int index, IHTMLCSSRule** ppHTMLCSSRule);
         }
 
         public partial struct Vtbl

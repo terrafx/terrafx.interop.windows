@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("305104D4-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct ISVGAnimatedAngle : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct ISVGAnimatedAngle
+    public unsafe partial struct ISVGAnimatedAngle : ISVGAnimatedAngle.Interface
     {
         public void** lpVtbl;
 
@@ -93,6 +93,21 @@ namespace TerraFX.Interop
         public HRESULT get_animVal(ISVGAngle** p)
         {
             return ((delegate* unmanaged<ISVGAnimatedAngle*, ISVGAngle**, int>)(lpVtbl[10]))((ISVGAnimatedAngle*)Unsafe.AsPointer(ref this), p);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT putref_baseVal(ISVGAngle* v);
+
+            [VtblIndex(8)]
+            HRESULT get_baseVal(ISVGAngle** p);
+
+            [VtblIndex(9)]
+            HRESULT putref_animVal(ISVGAngle* v);
+
+            [VtblIndex(10)]
+            HRESULT get_animVal(ISVGAngle** p);
         }
 
         public partial struct Vtbl

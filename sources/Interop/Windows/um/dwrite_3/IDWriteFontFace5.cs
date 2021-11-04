@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("98EFF3A5-B667-479A-B145-E2FA5B9FDC29")]
     [NativeTypeName("struct IDWriteFontFace5 : IDWriteFontFace4")]
     [NativeInheritance("IDWriteFontFace4")]
-    public unsafe partial struct IDWriteFontFace5
+    public unsafe partial struct IDWriteFontFace5 : IDWriteFontFace5.Interface
     {
         public void** lpVtbl;
 
@@ -427,6 +427,25 @@ namespace TerraFX.Interop
         public BOOL Equals(IDWriteFontFace* fontFace)
         {
             return ((delegate* unmanaged<IDWriteFontFace5*, IDWriteFontFace*, int>)(lpVtbl[57]))((IDWriteFontFace5*)Unsafe.AsPointer(ref this), fontFace);
+        }
+
+        public interface Interface : IDWriteFontFace4.Interface
+        {
+            [VtblIndex(53)]
+            [return: NativeTypeName("UINT32")]
+            uint GetFontAxisValueCount();
+
+            [VtblIndex(54)]
+            HRESULT GetFontAxisValues(DWRITE_FONT_AXIS_VALUE* fontAxisValues, [NativeTypeName("UINT32")] uint fontAxisValueCount);
+
+            [VtblIndex(55)]
+            BOOL HasVariations();
+
+            [VtblIndex(56)]
+            HRESULT GetFontResource(IDWriteFontResource** fontResource);
+
+            [VtblIndex(57)]
+            BOOL Equals(IDWriteFontFace* fontFace);
         }
 
         public partial struct Vtbl

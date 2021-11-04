@@ -13,7 +13,7 @@ namespace TerraFX.Interop
     [Guid("483473D7-CD46-4F9D-9D3A-3112AA80159D")]
     [NativeTypeName("struct ID2D1Properties : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct ID2D1Properties
+    public unsafe partial struct ID2D1Properties : ID2D1Properties.Interface
     {
         public void** lpVtbl;
 
@@ -139,6 +139,46 @@ namespace TerraFX.Interop
         public HRESULT GetSubProperties([NativeTypeName("UINT32")] uint index, ID2D1Properties** subProperties)
         {
             return ((delegate* unmanaged<ID2D1Properties*, uint, ID2D1Properties**, int>)(lpVtbl[13]))((ID2D1Properties*)Unsafe.AsPointer(ref this), index, subProperties);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            [return: NativeTypeName("UINT32")]
+            uint GetPropertyCount();
+
+            [VtblIndex(4)]
+            HRESULT GetPropertyName([NativeTypeName("UINT32")] uint index, [NativeTypeName("PWSTR")] ushort* name, [NativeTypeName("UINT32")] uint nameCount);
+
+            [VtblIndex(5)]
+            [return: NativeTypeName("UINT32")]
+            uint GetPropertyNameLength([NativeTypeName("UINT32")] uint index);
+
+            [VtblIndex(6)]
+            D2D1_PROPERTY_TYPE GetType([NativeTypeName("UINT32")] uint index);
+
+            [VtblIndex(7)]
+            [return: NativeTypeName("UINT32")]
+            uint GetPropertyIndex([NativeTypeName("PCWSTR")] ushort* name);
+
+            [VtblIndex(8)]
+            HRESULT SetValueByName([NativeTypeName("PCWSTR")] ushort* name, D2D1_PROPERTY_TYPE type, [NativeTypeName("const BYTE *")] byte* data, [NativeTypeName("UINT32")] uint dataSize);
+
+            [VtblIndex(9)]
+            HRESULT SetValue([NativeTypeName("UINT32")] uint index, D2D1_PROPERTY_TYPE type, [NativeTypeName("const BYTE *")] byte* data, [NativeTypeName("UINT32")] uint dataSize);
+
+            [VtblIndex(10)]
+            HRESULT GetValueByName([NativeTypeName("PCWSTR")] ushort* name, D2D1_PROPERTY_TYPE type, byte* data, [NativeTypeName("UINT32")] uint dataSize);
+
+            [VtblIndex(11)]
+            HRESULT GetValue([NativeTypeName("UINT32")] uint index, D2D1_PROPERTY_TYPE type, byte* data, [NativeTypeName("UINT32")] uint dataSize);
+
+            [VtblIndex(12)]
+            [return: NativeTypeName("UINT32")]
+            uint GetValueSize([NativeTypeName("UINT32")] uint index);
+
+            [VtblIndex(13)]
+            HRESULT GetSubProperties([NativeTypeName("UINT32")] uint index, ID2D1Properties** subProperties);
         }
 
         public partial struct Vtbl

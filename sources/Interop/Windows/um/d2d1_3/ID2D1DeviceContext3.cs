@@ -23,7 +23,7 @@ namespace TerraFX.Interop
     [Guid("235A7496-8351-414C-BCD4-6672AB2D8E00")]
     [NativeTypeName("struct ID2D1DeviceContext3 : ID2D1DeviceContext2")]
     [NativeInheritance("ID2D1DeviceContext2")]
-    public unsafe partial struct ID2D1DeviceContext3
+    public unsafe partial struct ID2D1DeviceContext3 : ID2D1DeviceContext3.Interface
     {
         public void** lpVtbl;
 
@@ -943,6 +943,15 @@ namespace TerraFX.Interop
         public void DrawSpriteBatch(ID2D1SpriteBatch* spriteBatch, [NativeTypeName("UINT32")] uint startIndex, [NativeTypeName("UINT32")] uint spriteCount, ID2D1Bitmap* bitmap, D2D1_BITMAP_INTERPOLATION_MODE interpolationMode = D2D1_BITMAP_INTERPOLATION_MODE_LINEAR, D2D1_SPRITE_OPTIONS spriteOptions = D2D1_SPRITE_OPTIONS_NONE)
         {
             ((delegate* unmanaged<ID2D1DeviceContext3*, ID2D1SpriteBatch*, uint, uint, ID2D1Bitmap*, D2D1_BITMAP_INTERPOLATION_MODE, D2D1_SPRITE_OPTIONS, void>)(lpVtbl[107]))((ID2D1DeviceContext3*)Unsafe.AsPointer(ref this), spriteBatch, startIndex, spriteCount, bitmap, interpolationMode, spriteOptions);
+        }
+
+        public interface Interface : ID2D1DeviceContext2.Interface
+        {
+            [VtblIndex(106)]
+            HRESULT CreateSpriteBatch(ID2D1SpriteBatch** spriteBatch);
+
+            [VtblIndex(107)]
+            void DrawSpriteBatch(ID2D1SpriteBatch* spriteBatch, [NativeTypeName("UINT32")] uint startIndex, [NativeTypeName("UINT32")] uint spriteCount, ID2D1Bitmap* bitmap, D2D1_BITMAP_INTERPOLATION_MODE interpolationMode = D2D1_BITMAP_INTERPOLATION_MODE_LINEAR, D2D1_SPRITE_OPTIONS spriteOptions = D2D1_SPRITE_OPTIONS_NONE);
         }
 
         public partial struct Vtbl

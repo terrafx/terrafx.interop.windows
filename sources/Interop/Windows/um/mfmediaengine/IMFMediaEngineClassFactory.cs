@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("4D645ACE-26AA-4688-9BE1-DF3516990B93")]
     [NativeTypeName("struct IMFMediaEngineClassFactory : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IMFMediaEngineClassFactory
+    public unsafe partial struct IMFMediaEngineClassFactory : IMFMediaEngineClassFactory.Interface
     {
         public void** lpVtbl;
 
@@ -58,6 +58,18 @@ namespace TerraFX.Interop
         public HRESULT CreateError(IMFMediaError** ppError)
         {
             return ((delegate* unmanaged<IMFMediaEngineClassFactory*, IMFMediaError**, int>)(lpVtbl[5]))((IMFMediaEngineClassFactory*)Unsafe.AsPointer(ref this), ppError);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT CreateInstance([NativeTypeName("DWORD")] uint dwFlags, IMFAttributes* pAttr, IMFMediaEngine** ppPlayer);
+
+            [VtblIndex(4)]
+            HRESULT CreateTimeRange(IMFMediaTimeRange** ppTimeRange);
+
+            [VtblIndex(5)]
+            HRESULT CreateError(IMFMediaError** ppError);
         }
 
         public partial struct Vtbl

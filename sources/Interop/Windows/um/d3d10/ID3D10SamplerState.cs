@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("9B7E4C0C-342C-4106-A19F-4F2704F689F0")]
     [NativeTypeName("struct ID3D10SamplerState : ID3D10DeviceChild")]
     [NativeInheritance("ID3D10DeviceChild")]
-    public unsafe partial struct ID3D10SamplerState
+    public unsafe partial struct ID3D10SamplerState : ID3D10SamplerState.Interface
     {
         public void** lpVtbl;
 
@@ -72,6 +72,12 @@ namespace TerraFX.Interop
         public void GetDesc(D3D10_SAMPLER_DESC* pDesc)
         {
             ((delegate* unmanaged<ID3D10SamplerState*, D3D10_SAMPLER_DESC*, void>)(lpVtbl[7]))((ID3D10SamplerState*)Unsafe.AsPointer(ref this), pDesc);
+        }
+
+        public interface Interface : ID3D10DeviceChild.Interface
+        {
+            [VtblIndex(7)]
+            void GetDesc(D3D10_SAMPLER_DESC* pDesc);
         }
 
         public partial struct Vtbl

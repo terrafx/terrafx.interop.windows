@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("65725580-9B5D-11D0-9BFE-00C04FC99C8E")]
     [NativeTypeName("struct IXMLElementCollection : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct IXMLElementCollection
+    public unsafe partial struct IXMLElementCollection : IXMLElementCollection.Interface
     {
         public void** lpVtbl;
 
@@ -93,6 +93,21 @@ namespace TerraFX.Interop
         public HRESULT item(VARIANT var1, VARIANT var2, IDispatch** ppDisp)
         {
             return ((delegate* unmanaged<IXMLElementCollection*, VARIANT, VARIANT, IDispatch**, int>)(lpVtbl[10]))((IXMLElementCollection*)Unsafe.AsPointer(ref this), var1, var2, ppDisp);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT put_length([NativeTypeName("long")] int v);
+
+            [VtblIndex(8)]
+            HRESULT get_length([NativeTypeName("long *")] int* p);
+
+            [VtblIndex(9)]
+            HRESULT get__newEnum(IUnknown** ppUnk);
+
+            [VtblIndex(10)]
+            HRESULT item(VARIANT var1, VARIANT var2, IDispatch** ppDisp);
         }
 
         public partial struct Vtbl

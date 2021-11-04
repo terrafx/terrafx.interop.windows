@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("3050F489-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct IElementBehaviorSiteOM : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IElementBehaviorSiteOM
+    public unsafe partial struct IElementBehaviorSiteOM : IElementBehaviorSiteOM.Interface
     {
         public void** lpVtbl;
 
@@ -79,6 +79,27 @@ namespace TerraFX.Interop
         public HRESULT RegisterUrn([NativeTypeName("LPOLESTR")] ushort* pchUrn)
         {
             return ((delegate* unmanaged<IElementBehaviorSiteOM*, ushort*, int>)(lpVtbl[8]))((IElementBehaviorSiteOM*)Unsafe.AsPointer(ref this), pchUrn);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT RegisterEvent([NativeTypeName("LPOLESTR")] ushort* pchEvent, [NativeTypeName("LONG")] int lFlags, [NativeTypeName("LONG *")] int* plCookie);
+
+            [VtblIndex(4)]
+            HRESULT GetEventCookie([NativeTypeName("LPOLESTR")] ushort* pchEvent, [NativeTypeName("LONG *")] int* plCookie);
+
+            [VtblIndex(5)]
+            HRESULT FireEvent([NativeTypeName("LONG")] int lCookie, IHTMLEventObj* pEventObject);
+
+            [VtblIndex(6)]
+            HRESULT CreateEventObject(IHTMLEventObj** ppEventObject);
+
+            [VtblIndex(7)]
+            HRESULT RegisterName([NativeTypeName("LPOLESTR")] ushort* pchName);
+
+            [VtblIndex(8)]
+            HRESULT RegisterUrn([NativeTypeName("LPOLESTR")] ushort* pchUrn);
         }
 
         public partial struct Vtbl

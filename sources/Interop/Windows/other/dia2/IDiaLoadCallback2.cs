@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("4688A074-5A4D-4486-AEA8-7B90711D9F7C")]
     [NativeTypeName("struct IDiaLoadCallback2 : IDiaLoadCallback")]
     [NativeInheritance("IDiaLoadCallback")]
-    public unsafe partial struct IDiaLoadCallback2
+    public unsafe partial struct IDiaLoadCallback2 : IDiaLoadCallback2.Interface
     {
         public void** lpVtbl;
 
@@ -100,6 +100,21 @@ namespace TerraFX.Interop
         public HRESULT RestrictSystemRootAccess()
         {
             return ((delegate* unmanaged<IDiaLoadCallback2*, int>)(lpVtbl[11]))((IDiaLoadCallback2*)Unsafe.AsPointer(ref this));
+        }
+
+        public interface Interface : IDiaLoadCallback.Interface
+        {
+            [VtblIndex(8)]
+            HRESULT RestrictOriginalPathAccess();
+
+            [VtblIndex(9)]
+            HRESULT RestrictReferencePathAccess();
+
+            [VtblIndex(10)]
+            HRESULT RestrictDBGAccess();
+
+            [VtblIndex(11)]
+            HRESULT RestrictSystemRootAccess();
         }
 
         public partial struct Vtbl

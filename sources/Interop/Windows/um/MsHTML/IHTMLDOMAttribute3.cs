@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("30510468-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct IHTMLDOMAttribute3 : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct IHTMLDOMAttribute3
+    public unsafe partial struct IHTMLDOMAttribute3 : IHTMLDOMAttribute3.Interface
     {
         public void** lpVtbl;
 
@@ -107,6 +107,27 @@ namespace TerraFX.Interop
         public HRESULT get_ownerElement(IHTMLElement2** p)
         {
             return ((delegate* unmanaged<IHTMLDOMAttribute3*, IHTMLElement2**, int>)(lpVtbl[12]))((IHTMLDOMAttribute3*)Unsafe.AsPointer(ref this), p);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT put_nodeValue(VARIANT v);
+
+            [VtblIndex(8)]
+            HRESULT get_nodeValue(VARIANT* p);
+
+            [VtblIndex(9)]
+            HRESULT put_value([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(10)]
+            HRESULT get_value([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(11)]
+            HRESULT get_specified([NativeTypeName("VARIANT_BOOL *")] short* p);
+
+            [VtblIndex(12)]
+            HRESULT get_ownerElement(IHTMLElement2** p);
         }
 
         public partial struct Vtbl

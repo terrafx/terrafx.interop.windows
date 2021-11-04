@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("0A97B3CF-8E7C-4A3D-8F8C-0C843DC247FB")]
     [NativeTypeName("struct IMFStreamSink : IMFMediaEventGenerator")]
     [NativeInheritance("IMFMediaEventGenerator")]
-    public unsafe partial struct IMFStreamSink
+    public unsafe partial struct IMFStreamSink : IMFStreamSink.Interface
     {
         public void** lpVtbl;
 
@@ -107,6 +107,27 @@ namespace TerraFX.Interop
         public HRESULT Flush()
         {
             return ((delegate* unmanaged<IMFStreamSink*, int>)(lpVtbl[12]))((IMFStreamSink*)Unsafe.AsPointer(ref this));
+        }
+
+        public interface Interface : IMFMediaEventGenerator.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT GetMediaSink(IMFMediaSink** ppMediaSink);
+
+            [VtblIndex(8)]
+            HRESULT GetIdentifier([NativeTypeName("DWORD *")] uint* pdwIdentifier);
+
+            [VtblIndex(9)]
+            HRESULT GetMediaTypeHandler(IMFMediaTypeHandler** ppHandler);
+
+            [VtblIndex(10)]
+            HRESULT ProcessSample(IMFSample* pSample);
+
+            [VtblIndex(11)]
+            HRESULT PlaceMarker(MFSTREAMSINK_MARKER_TYPE eMarkerType, [NativeTypeName("const PROPVARIANT *")] PROPVARIANT* pvarMarkerValue, [NativeTypeName("const PROPVARIANT *")] PROPVARIANT* pvarContextValue);
+
+            [VtblIndex(12)]
+            HRESULT Flush();
         }
 
         public partial struct Vtbl

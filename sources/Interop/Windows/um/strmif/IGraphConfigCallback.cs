@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("ADE0FD60-D19D-11D2-ABF6-00A0C905F375")]
     [NativeTypeName("struct IGraphConfigCallback : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IGraphConfigCallback
+    public unsafe partial struct IGraphConfigCallback : IGraphConfigCallback.Interface
     {
         public void** lpVtbl;
 
@@ -44,6 +44,12 @@ namespace TerraFX.Interop
         public HRESULT Reconfigure([NativeTypeName("PVOID")] void* pvContext, [NativeTypeName("DWORD")] uint dwFlags)
         {
             return ((delegate* unmanaged<IGraphConfigCallback*, void*, uint, int>)(lpVtbl[3]))((IGraphConfigCallback*)Unsafe.AsPointer(ref this), pvContext, dwFlags);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT Reconfigure([NativeTypeName("PVOID")] void* pvContext, [NativeTypeName("DWORD")] uint dwFlags);
         }
 
         public partial struct Vtbl

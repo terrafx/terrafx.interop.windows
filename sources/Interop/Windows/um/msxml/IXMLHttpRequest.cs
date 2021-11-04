@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("ED8C108D-4349-11D2-91A4-00C04F7969E8")]
     [NativeTypeName("struct IXMLHttpRequest : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct IXMLHttpRequest
+    public unsafe partial struct IXMLHttpRequest : IXMLHttpRequest.Interface
     {
         public void** lpVtbl;
 
@@ -163,6 +163,51 @@ namespace TerraFX.Interop
         public HRESULT put_onreadystatechange(IDispatch* pReadyStateSink)
         {
             return ((delegate* unmanaged<IXMLHttpRequest*, IDispatch*, int>)(lpVtbl[20]))((IXMLHttpRequest*)Unsafe.AsPointer(ref this), pReadyStateSink);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT open([NativeTypeName("BSTR")] ushort* bstrMethod, [NativeTypeName("BSTR")] ushort* bstrUrl, VARIANT varAsync, VARIANT bstrUser, VARIANT bstrPassword);
+
+            [VtblIndex(8)]
+            HRESULT setRequestHeader([NativeTypeName("BSTR")] ushort* bstrHeader, [NativeTypeName("BSTR")] ushort* bstrValue);
+
+            [VtblIndex(9)]
+            HRESULT getResponseHeader([NativeTypeName("BSTR")] ushort* bstrHeader, [NativeTypeName("BSTR *")] ushort** pbstrValue);
+
+            [VtblIndex(10)]
+            HRESULT getAllResponseHeaders([NativeTypeName("BSTR *")] ushort** pbstrHeaders);
+
+            [VtblIndex(11)]
+            HRESULT send(VARIANT varBody);
+
+            [VtblIndex(12)]
+            HRESULT abort();
+
+            [VtblIndex(13)]
+            HRESULT get_status([NativeTypeName("long *")] int* plStatus);
+
+            [VtblIndex(14)]
+            HRESULT get_statusText([NativeTypeName("BSTR *")] ushort** pbstrStatus);
+
+            [VtblIndex(15)]
+            HRESULT get_responseXML(IDispatch** ppBody);
+
+            [VtblIndex(16)]
+            HRESULT get_responseText([NativeTypeName("BSTR *")] ushort** pbstrBody);
+
+            [VtblIndex(17)]
+            HRESULT get_responseBody(VARIANT* pvarBody);
+
+            [VtblIndex(18)]
+            HRESULT get_responseStream(VARIANT* pvarBody);
+
+            [VtblIndex(19)]
+            HRESULT get_readyState([NativeTypeName("long *")] int* plState);
+
+            [VtblIndex(20)]
+            HRESULT put_onreadystatechange(IDispatch* pReadyStateSink);
         }
 
         public partial struct Vtbl

@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("654A6BB3-E1A3-424A-9908-53A43A0DFDA0")]
     [NativeTypeName("struct IMFMediaEngineSrcElementsEx : IMFMediaEngineSrcElements")]
     [NativeInheritance("IMFMediaEngineSrcElements")]
-    public unsafe partial struct IMFMediaEngineSrcElementsEx
+    public unsafe partial struct IMFMediaEngineSrcElementsEx : IMFMediaEngineSrcElementsEx.Interface
     {
         public void** lpVtbl;
 
@@ -94,6 +94,15 @@ namespace TerraFX.Interop
         public HRESULT GetKeySystem([NativeTypeName("DWORD")] uint index, [NativeTypeName("BSTR *")] ushort** pType)
         {
             return ((delegate* unmanaged<IMFMediaEngineSrcElementsEx*, uint, ushort**, int>)(lpVtbl[10]))((IMFMediaEngineSrcElementsEx*)Unsafe.AsPointer(ref this), index, pType);
+        }
+
+        public interface Interface : IMFMediaEngineSrcElements.Interface
+        {
+            [VtblIndex(9)]
+            HRESULT AddElementEx([NativeTypeName("BSTR")] ushort* pURL, [NativeTypeName("BSTR")] ushort* pType, [NativeTypeName("BSTR")] ushort* pMedia, [NativeTypeName("BSTR")] ushort* keySystem);
+
+            [VtblIndex(10)]
+            HRESULT GetKeySystem([NativeTypeName("DWORD")] uint index, [NativeTypeName("BSTR *")] ushort** pType);
         }
 
         public partial struct Vtbl

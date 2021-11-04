@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("000214EC-0000-0000-C000-000000000046")]
     [NativeTypeName("struct IShellDetails : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IShellDetails
+    public unsafe partial struct IShellDetails : IShellDetails.Interface
     {
         public void** lpVtbl;
 
@@ -51,6 +51,15 @@ namespace TerraFX.Interop
         public HRESULT ColumnClick(uint iColumn)
         {
             return ((delegate* unmanaged<IShellDetails*, uint, int>)(lpVtbl[4]))((IShellDetails*)Unsafe.AsPointer(ref this), iColumn);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetDetailsOf([NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidl, uint iColumn, SHELLDETAILS* pDetails);
+
+            [VtblIndex(4)]
+            HRESULT ColumnClick(uint iColumn);
         }
 
         public partial struct Vtbl

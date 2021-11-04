@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("38E09D4C-586D-435A-B592-C8A86691DEC6")]
     [NativeTypeName("struct ISpeechCommandProvider : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct ISpeechCommandProvider
+    public unsafe partial struct ISpeechCommandProvider : ISpeechCommandProvider.Interface
     {
         public void** lpVtbl;
 
@@ -51,6 +51,15 @@ namespace TerraFX.Interop
         public HRESULT ProcessCommand([NativeTypeName("const WCHAR *")] ushort* pszCommand, [NativeTypeName("ULONG")] uint cch, [NativeTypeName("LANGID")] ushort langid)
         {
             return ((delegate* unmanaged<ISpeechCommandProvider*, ushort*, uint, ushort, int>)(lpVtbl[4]))((ISpeechCommandProvider*)Unsafe.AsPointer(ref this), pszCommand, cch, langid);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT EnumSpeechCommands([NativeTypeName("LANGID")] ushort langid, IEnumSpeechCommands** ppEnum);
+
+            [VtblIndex(4)]
+            HRESULT ProcessCommand([NativeTypeName("const WCHAR *")] ushort* pszCommand, [NativeTypeName("ULONG")] uint cch, [NativeTypeName("LANGID")] ushort langid);
         }
 
         public partial struct Vtbl

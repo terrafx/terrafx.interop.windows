@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("30510792-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct IHTMLMSMediaElement : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct IHTMLMSMediaElement
+    public unsafe partial struct IHTMLMSMediaElement : IHTMLMSMediaElement.Interface
     {
         public void** lpVtbl;
 
@@ -93,6 +93,21 @@ namespace TerraFX.Interop
         public HRESULT get_msPlayToPrimary([NativeTypeName("VARIANT_BOOL *")] short* p)
         {
             return ((delegate* unmanaged<IHTMLMSMediaElement*, short*, int>)(lpVtbl[10]))((IHTMLMSMediaElement*)Unsafe.AsPointer(ref this), p);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT put_msPlayToDisabled([NativeTypeName("VARIANT_BOOL")] short v);
+
+            [VtblIndex(8)]
+            HRESULT get_msPlayToDisabled([NativeTypeName("VARIANT_BOOL *")] short* p);
+
+            [VtblIndex(9)]
+            HRESULT put_msPlayToPrimary([NativeTypeName("VARIANT_BOOL")] short v);
+
+            [VtblIndex(10)]
+            HRESULT get_msPlayToPrimary([NativeTypeName("VARIANT_BOOL *")] short* p);
         }
 
         public partial struct Vtbl

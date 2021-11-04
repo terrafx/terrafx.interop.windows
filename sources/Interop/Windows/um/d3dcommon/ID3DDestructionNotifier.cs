@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("A06EB39A-50DA-425B-8C31-4EECD6C270F3")]
     [NativeTypeName("struct ID3DDestructionNotifier : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct ID3DDestructionNotifier
+    public unsafe partial struct ID3DDestructionNotifier : ID3DDestructionNotifier.Interface
     {
         public void** lpVtbl;
 
@@ -51,6 +51,15 @@ namespace TerraFX.Interop
         public HRESULT UnregisterDestructionCallback(uint callbackID)
         {
             return ((delegate* unmanaged<ID3DDestructionNotifier*, uint, int>)(lpVtbl[4]))((ID3DDestructionNotifier*)Unsafe.AsPointer(ref this), callbackID);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT RegisterDestructionCallback([NativeTypeName("PFN_DESTRUCTION_CALLBACK")] delegate* unmanaged<void*, void> callbackFn, void* pData, uint* pCallbackID);
+
+            [VtblIndex(4)]
+            HRESULT UnregisterDestructionCallback(uint callbackID);
         }
 
         public partial struct Vtbl

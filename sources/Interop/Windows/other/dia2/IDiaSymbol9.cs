@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("A89E5969-92A1-4F8A-B704-00121C37ABBB")]
     [NativeTypeName("struct IDiaSymbol9 : IDiaSymbol8")]
     [NativeInheritance("IDiaSymbol8")]
-    public unsafe partial struct IDiaSymbol9
+    public unsafe partial struct IDiaSymbol9 : IDiaSymbol9.Interface
     {
         public void** lpVtbl;
 
@@ -1815,6 +1815,18 @@ namespace TerraFX.Interop
         public HRESULT get_isRTCs(BOOL* pRetVal)
         {
             return ((delegate* unmanaged<IDiaSymbol9*, BOOL*, int>)(lpVtbl[256]))((IDiaSymbol9*)Unsafe.AsPointer(ref this), pRetVal);
+        }
+
+        public interface Interface : IDiaSymbol8.Interface
+        {
+            [VtblIndex(254)]
+            HRESULT get_framePadSize([NativeTypeName("DWORD *")] uint* pRetVal);
+
+            [VtblIndex(255)]
+            HRESULT get_framePadOffset([NativeTypeName("DWORD *")] uint* pRetVal);
+
+            [VtblIndex(256)]
+            HRESULT get_isRTCs(BOOL* pRetVal);
         }
 
         public partial struct Vtbl

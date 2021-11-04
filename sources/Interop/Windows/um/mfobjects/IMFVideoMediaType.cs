@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("B99F381F-A8F9-47A2-A5AF-CA3A225A3890")]
     [NativeTypeName("struct IMFVideoMediaType : IMFMediaType")]
     [NativeInheritance("IMFMediaType")]
-    public unsafe partial struct IMFVideoMediaType
+    public unsafe partial struct IMFVideoMediaType : IMFVideoMediaType.Interface
     {
         public void** lpVtbl;
 
@@ -297,6 +297,16 @@ namespace TerraFX.Interop
         public HRESULT GetVideoRepresentation(Guid guidRepresentation, [NativeTypeName("LPVOID *")] void** ppvRepresentation, [NativeTypeName("LONG")] int lStride)
         {
             return ((delegate* unmanaged<IMFVideoMediaType*, Guid, void**, int, int>)(lpVtbl[39]))((IMFVideoMediaType*)Unsafe.AsPointer(ref this), guidRepresentation, ppvRepresentation, lStride);
+        }
+
+        public interface Interface : IMFMediaType.Interface
+        {
+            [VtblIndex(38)]
+            [return: NativeTypeName("const MFVIDEOFORMAT *")]
+            MFVIDEOFORMAT* GetVideoFormat();
+
+            [VtblIndex(39)]
+            HRESULT GetVideoRepresentation(Guid guidRepresentation, [NativeTypeName("LPVOID *")] void** ppvRepresentation, [NativeTypeName("LONG")] int lStride);
         }
 
         public partial struct Vtbl

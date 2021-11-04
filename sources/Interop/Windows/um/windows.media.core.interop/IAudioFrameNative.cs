@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("20BE1E2E-930F-4746-9335-3C332F255093")]
     [NativeTypeName("struct IAudioFrameNative : IInspectable")]
     [NativeInheritance("IInspectable")]
-    public unsafe partial struct IAudioFrameNative
+    public unsafe partial struct IAudioFrameNative : IAudioFrameNative.Interface
     {
         public void** lpVtbl;
 
@@ -65,6 +65,12 @@ namespace TerraFX.Interop
         public HRESULT GetData([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPVOID *")] void** ppv)
         {
             return ((delegate* unmanaged<IAudioFrameNative*, Guid*, void**, int>)(lpVtbl[6]))((IAudioFrameNative*)Unsafe.AsPointer(ref this), riid, ppv);
+        }
+
+        public interface Interface : IInspectable.Interface
+        {
+            [VtblIndex(6)]
+            HRESULT GetData([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPVOID *")] void** ppv);
         }
 
         public partial struct Vtbl

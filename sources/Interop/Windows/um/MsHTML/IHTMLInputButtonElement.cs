@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("3050F2B2-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct IHTMLInputButtonElement : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct IHTMLInputButtonElement
+    public unsafe partial struct IHTMLInputButtonElement : IHTMLInputButtonElement.Interface
     {
         public void** lpVtbl;
 
@@ -142,6 +142,42 @@ namespace TerraFX.Interop
         public HRESULT createTextRange(IHTMLTxtRange** range)
         {
             return ((delegate* unmanaged<IHTMLInputButtonElement*, IHTMLTxtRange**, int>)(lpVtbl[17]))((IHTMLInputButtonElement*)Unsafe.AsPointer(ref this), range);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT get_type([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(8)]
+            HRESULT put_value([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(9)]
+            HRESULT get_value([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(10)]
+            HRESULT put_name([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(11)]
+            HRESULT get_name([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(12)]
+            HRESULT put_status(VARIANT v);
+
+            [VtblIndex(13)]
+            HRESULT get_status(VARIANT* p);
+
+            [VtblIndex(14)]
+            HRESULT put_disabled([NativeTypeName("VARIANT_BOOL")] short v);
+
+            [VtblIndex(15)]
+            HRESULT get_disabled([NativeTypeName("VARIANT_BOOL *")] short* p);
+
+            [VtblIndex(16)]
+            HRESULT get_form(IHTMLFormElement** p);
+
+            [VtblIndex(17)]
+            HRESULT createTextRange(IHTMLTxtRange** range);
         }
 
         public partial struct Vtbl

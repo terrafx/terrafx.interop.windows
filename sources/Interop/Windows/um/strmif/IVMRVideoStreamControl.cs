@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("058D1F11-2A54-4BEF-BD54-DF706626B727")]
     [NativeTypeName("struct IVMRVideoStreamControl : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IVMRVideoStreamControl
+    public unsafe partial struct IVMRVideoStreamControl : IVMRVideoStreamControl.Interface
     {
         public void** lpVtbl;
 
@@ -65,6 +65,21 @@ namespace TerraFX.Interop
         public HRESULT GetStreamActiveState(BOOL* lpfActive)
         {
             return ((delegate* unmanaged<IVMRVideoStreamControl*, BOOL*, int>)(lpVtbl[6]))((IVMRVideoStreamControl*)Unsafe.AsPointer(ref this), lpfActive);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT SetColorKey([NativeTypeName("LPDDCOLORKEY")] DDCOLORKEY* lpClrKey);
+
+            [VtblIndex(4)]
+            HRESULT GetColorKey([NativeTypeName("LPDDCOLORKEY")] DDCOLORKEY* lpClrKey);
+
+            [VtblIndex(5)]
+            HRESULT SetStreamActiveState(BOOL fActive);
+
+            [VtblIndex(6)]
+            HRESULT GetStreamActiveState(BOOL* lpfActive);
         }
 
         public partial struct Vtbl

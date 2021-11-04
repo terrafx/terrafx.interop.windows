@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("6C4E655D-EAD8-4421-B6B9-54DCDBBDF820")]
     [NativeTypeName("struct IMFPMPClient : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IMFPMPClient
+    public unsafe partial struct IMFPMPClient : IMFPMPClient.Interface
     {
         public void** lpVtbl;
 
@@ -44,6 +44,12 @@ namespace TerraFX.Interop
         public HRESULT SetPMPHost(IMFPMPHost* pPMPHost)
         {
             return ((delegate* unmanaged<IMFPMPClient*, IMFPMPHost*, int>)(lpVtbl[3]))((IMFPMPClient*)Unsafe.AsPointer(ref this), pPMPHost);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT SetPMPHost(IMFPMPHost* pPMPHost);
         }
 
         public partial struct Vtbl

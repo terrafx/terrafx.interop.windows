@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("3CB4A69D-BB6F-4D2B-95B7-452D2C155DB5")]
     [NativeTypeName("struct IKsFormatSupport : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IKsFormatSupport
+    public unsafe partial struct IKsFormatSupport : IKsFormatSupport.Interface
     {
         public void** lpVtbl;
 
@@ -51,6 +51,15 @@ namespace TerraFX.Interop
         public HRESULT GetDevicePreferredFormat([NativeTypeName("PKSDATAFORMAT *")] KSDATAFORMAT** ppKsFormat)
         {
             return ((delegate* unmanaged<IKsFormatSupport*, KSDATAFORMAT**, int>)(lpVtbl[4]))((IKsFormatSupport*)Unsafe.AsPointer(ref this), ppKsFormat);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT IsFormatSupported([NativeTypeName("PKSDATAFORMAT")] KSDATAFORMAT* pKsFormat, [NativeTypeName("DWORD")] uint cbFormat, BOOL* pbSupported);
+
+            [VtblIndex(4)]
+            HRESULT GetDevicePreferredFormat([NativeTypeName("PKSDATAFORMAT *")] KSDATAFORMAT** ppKsFormat);
         }
 
         public partial struct Vtbl

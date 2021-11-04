@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("00020411-0000-0000-C000-000000000046")]
     [NativeTypeName("struct ITypeLib2 : ITypeLib")]
     [NativeInheritance("ITypeLib")]
-    public unsafe partial struct ITypeLib2
+    public unsafe partial struct ITypeLib2 : ITypeLib2.Interface
     {
         public void** lpVtbl;
 
@@ -135,6 +135,21 @@ namespace TerraFX.Interop
         public HRESULT GetAllCustData(CUSTDATA* pCustData)
         {
             return ((delegate* unmanaged<ITypeLib2*, CUSTDATA*, int>)(lpVtbl[16]))((ITypeLib2*)Unsafe.AsPointer(ref this), pCustData);
+        }
+
+        public interface Interface : ITypeLib.Interface
+        {
+            [VtblIndex(13)]
+            HRESULT GetCustData([NativeTypeName("const GUID &")] Guid* guid, VARIANT* pVarVal);
+
+            [VtblIndex(14)]
+            HRESULT GetLibStatistics([NativeTypeName("ULONG *")] uint* pcUniqueNames, [NativeTypeName("ULONG *")] uint* pcchUniqueNames);
+
+            [VtblIndex(15)]
+            HRESULT GetDocumentation2(int index, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("BSTR *")] ushort** pbstrHelpString, [NativeTypeName("DWORD *")] uint* pdwHelpStringContext, [NativeTypeName("BSTR *")] ushort** pbstrHelpStringDll);
+
+            [VtblIndex(16)]
+            HRESULT GetAllCustData(CUSTDATA* pCustData);
         }
 
         public partial struct Vtbl

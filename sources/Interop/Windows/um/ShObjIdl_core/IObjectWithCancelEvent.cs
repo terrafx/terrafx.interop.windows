@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("F279B885-0AE9-4B85-AC06-DDECF9408941")]
     [NativeTypeName("struct IObjectWithCancelEvent : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IObjectWithCancelEvent
+    public unsafe partial struct IObjectWithCancelEvent : IObjectWithCancelEvent.Interface
     {
         public void** lpVtbl;
 
@@ -44,6 +44,12 @@ namespace TerraFX.Interop
         public HRESULT GetCancelEvent(HANDLE* phEvent)
         {
             return ((delegate* unmanaged<IObjectWithCancelEvent*, HANDLE*, int>)(lpVtbl[3]))((IObjectWithCancelEvent*)Unsafe.AsPointer(ref this), phEvent);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetCancelEvent(HANDLE* phEvent);
         }
 
         public partial struct Vtbl

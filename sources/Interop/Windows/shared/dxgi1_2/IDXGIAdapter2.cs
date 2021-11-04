@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("0AA1AE0A-FA0E-4B84-8644-E05FF8E5ACB5")]
     [NativeTypeName("struct IDXGIAdapter2 : IDXGIAdapter1")]
     [NativeInheritance("IDXGIAdapter1")]
-    public unsafe partial struct IDXGIAdapter2
+    public unsafe partial struct IDXGIAdapter2 : IDXGIAdapter2.Interface
     {
         public void** lpVtbl;
 
@@ -100,6 +100,12 @@ namespace TerraFX.Interop
         public HRESULT GetDesc2(DXGI_ADAPTER_DESC2* pDesc)
         {
             return ((delegate* unmanaged<IDXGIAdapter2*, DXGI_ADAPTER_DESC2*, int>)(lpVtbl[11]))((IDXGIAdapter2*)Unsafe.AsPointer(ref this), pDesc);
+        }
+
+        public interface Interface : IDXGIAdapter1.Interface
+        {
+            [VtblIndex(11)]
+            HRESULT GetDesc2(DXGI_ADAPTER_DESC2* pDesc);
         }
 
         public partial struct Vtbl

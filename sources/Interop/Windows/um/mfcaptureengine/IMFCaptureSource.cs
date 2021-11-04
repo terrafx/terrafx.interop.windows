@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("439A42A8-0D2C-4505-BE83-F79B2A05D5C4")]
     [NativeTypeName("struct IMFCaptureSource : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IMFCaptureSource
+    public unsafe partial struct IMFCaptureSource : IMFCaptureSource.Interface
     {
         public void** lpVtbl;
 
@@ -135,6 +135,51 @@ namespace TerraFX.Interop
         public HRESULT GetStreamIndexFromFriendlyName([NativeTypeName("UINT32")] uint uifriendlyName, [NativeTypeName("DWORD *")] uint* pdwActualStreamIndex)
         {
             return ((delegate* unmanaged<IMFCaptureSource*, uint, uint*, int>)(lpVtbl[16]))((IMFCaptureSource*)Unsafe.AsPointer(ref this), uifriendlyName, pdwActualStreamIndex);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetCaptureDeviceSource(MF_CAPTURE_ENGINE_DEVICE_TYPE mfCaptureEngineDeviceType, IMFMediaSource** ppMediaSource);
+
+            [VtblIndex(4)]
+            HRESULT GetCaptureDeviceActivate(MF_CAPTURE_ENGINE_DEVICE_TYPE mfCaptureEngineDeviceType, IMFActivate** ppActivate);
+
+            [VtblIndex(5)]
+            HRESULT GetService([NativeTypeName("const IID &")] Guid* rguidService, [NativeTypeName("const IID &")] Guid* riid, IUnknown** ppUnknown);
+
+            [VtblIndex(6)]
+            HRESULT AddEffect([NativeTypeName("DWORD")] uint dwSourceStreamIndex, IUnknown* pUnknown);
+
+            [VtblIndex(7)]
+            HRESULT RemoveEffect([NativeTypeName("DWORD")] uint dwSourceStreamIndex, IUnknown* pUnknown);
+
+            [VtblIndex(8)]
+            HRESULT RemoveAllEffects([NativeTypeName("DWORD")] uint dwSourceStreamIndex);
+
+            [VtblIndex(9)]
+            HRESULT GetAvailableDeviceMediaType([NativeTypeName("DWORD")] uint dwSourceStreamIndex, [NativeTypeName("DWORD")] uint dwMediaTypeIndex, IMFMediaType** ppMediaType);
+
+            [VtblIndex(10)]
+            HRESULT SetCurrentDeviceMediaType([NativeTypeName("DWORD")] uint dwSourceStreamIndex, IMFMediaType* pMediaType);
+
+            [VtblIndex(11)]
+            HRESULT GetCurrentDeviceMediaType([NativeTypeName("DWORD")] uint dwSourceStreamIndex, IMFMediaType** ppMediaType);
+
+            [VtblIndex(12)]
+            HRESULT GetDeviceStreamCount([NativeTypeName("DWORD *")] uint* pdwStreamCount);
+
+            [VtblIndex(13)]
+            HRESULT GetDeviceStreamCategory([NativeTypeName("DWORD")] uint dwSourceStreamIndex, MF_CAPTURE_ENGINE_STREAM_CATEGORY* pStreamCategory);
+
+            [VtblIndex(14)]
+            HRESULT GetMirrorState([NativeTypeName("DWORD")] uint dwStreamIndex, BOOL* pfMirrorState);
+
+            [VtblIndex(15)]
+            HRESULT SetMirrorState([NativeTypeName("DWORD")] uint dwStreamIndex, BOOL fMirrorState);
+
+            [VtblIndex(16)]
+            HRESULT GetStreamIndexFromFriendlyName([NativeTypeName("UINT32")] uint uifriendlyName, [NativeTypeName("DWORD *")] uint* pdwActualStreamIndex);
         }
 
         public partial struct Vtbl

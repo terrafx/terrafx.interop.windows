@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("1BC752E0-9046-11D1-B8B3-006008059382")]
     [NativeTypeName("struct IPublishedApp : IShellApp")]
     [NativeInheritance("IShellApp")]
-    public unsafe partial struct IPublishedApp
+    public unsafe partial struct IPublishedApp : IPublishedApp.Interface
     {
         public void** lpVtbl;
 
@@ -93,6 +93,18 @@ namespace TerraFX.Interop
         public HRESULT Unschedule()
         {
             return ((delegate* unmanaged<IPublishedApp*, int>)(lpVtbl[10]))((IPublishedApp*)Unsafe.AsPointer(ref this));
+        }
+
+        public interface Interface : IShellApp.Interface
+        {
+            [VtblIndex(8)]
+            HRESULT Install([NativeTypeName("LPSYSTEMTIME")] SYSTEMTIME* pstInstall);
+
+            [VtblIndex(9)]
+            HRESULT GetPublishedAppInfo([NativeTypeName("PPUBAPPINFO")] PUBAPPINFO* ppai);
+
+            [VtblIndex(10)]
+            HRESULT Unschedule();
         }
 
         public partial struct Vtbl

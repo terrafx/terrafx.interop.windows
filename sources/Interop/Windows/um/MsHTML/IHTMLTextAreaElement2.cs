@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("3050F2D3-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct IHTMLTextAreaElement2 : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct IHTMLTextAreaElement2
+    public unsafe partial struct IHTMLTextAreaElement2 : IHTMLTextAreaElement2.Interface
     {
         public void** lpVtbl;
 
@@ -100,6 +100,24 @@ namespace TerraFX.Interop
         public HRESULT setSelectionRange([NativeTypeName("long")] int start, [NativeTypeName("long")] int end)
         {
             return ((delegate* unmanaged<IHTMLTextAreaElement2*, int, int, int>)(lpVtbl[11]))((IHTMLTextAreaElement2*)Unsafe.AsPointer(ref this), start, end);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT put_selectionStart([NativeTypeName("long")] int v);
+
+            [VtblIndex(8)]
+            HRESULT get_selectionStart([NativeTypeName("long *")] int* p);
+
+            [VtblIndex(9)]
+            HRESULT put_selectionEnd([NativeTypeName("long")] int v);
+
+            [VtblIndex(10)]
+            HRESULT get_selectionEnd([NativeTypeName("long *")] int* p);
+
+            [VtblIndex(11)]
+            HRESULT setSelectionRange([NativeTypeName("long")] int start, [NativeTypeName("long")] int end);
         }
 
         public partial struct Vtbl

@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("AE289CD2-12D4-4945-9419-9E41BE034DF2")]
     [NativeTypeName("struct IUIAnimationStoryboard2 : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IUIAnimationStoryboard2
+    public unsafe partial struct IUIAnimationStoryboard2 : IUIAnimationStoryboard2.Interface
     {
         public void** lpVtbl;
 
@@ -163,6 +163,63 @@ namespace TerraFX.Interop
         public HRESULT SetStoryboardEventHandler(IUIAnimationStoryboardEventHandler2* handler, [Optional] BOOL fRegisterStatusChangeForNextAnimationEvent, [Optional] BOOL fRegisterUpdateForNextAnimationEvent)
         {
             return ((delegate* unmanaged<IUIAnimationStoryboard2*, IUIAnimationStoryboardEventHandler2*, BOOL, BOOL, int>)(lpVtbl[20]))((IUIAnimationStoryboard2*)Unsafe.AsPointer(ref this), handler, fRegisterStatusChangeForNextAnimationEvent, fRegisterUpdateForNextAnimationEvent);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT AddTransition(IUIAnimationVariable2* variable, IUIAnimationTransition2* transition);
+
+            [VtblIndex(4)]
+            HRESULT AddKeyframeAtOffset([NativeTypeName("UI_ANIMATION_KEYFRAME")] UI_ANIMATION_KEYFRAME* existingKeyframe, [NativeTypeName("UI_ANIMATION_SECONDS")] double offset, [NativeTypeName("UI_ANIMATION_KEYFRAME *")] UI_ANIMATION_KEYFRAME** keyframe);
+
+            [VtblIndex(5)]
+            HRESULT AddKeyframeAfterTransition(IUIAnimationTransition2* transition, [NativeTypeName("UI_ANIMATION_KEYFRAME *")] UI_ANIMATION_KEYFRAME** keyframe);
+
+            [VtblIndex(6)]
+            HRESULT AddTransitionAtKeyframe(IUIAnimationVariable2* variable, IUIAnimationTransition2* transition, [NativeTypeName("UI_ANIMATION_KEYFRAME")] UI_ANIMATION_KEYFRAME* startKeyframe);
+
+            [VtblIndex(7)]
+            HRESULT AddTransitionBetweenKeyframes(IUIAnimationVariable2* variable, IUIAnimationTransition2* transition, [NativeTypeName("UI_ANIMATION_KEYFRAME")] UI_ANIMATION_KEYFRAME* startKeyframe, [NativeTypeName("UI_ANIMATION_KEYFRAME")] UI_ANIMATION_KEYFRAME* endKeyframe);
+
+            [VtblIndex(8)]
+            HRESULT RepeatBetweenKeyframes([NativeTypeName("UI_ANIMATION_KEYFRAME")] UI_ANIMATION_KEYFRAME* startKeyframe, [NativeTypeName("UI_ANIMATION_KEYFRAME")] UI_ANIMATION_KEYFRAME* endKeyframe, double cRepetition, UI_ANIMATION_REPEAT_MODE repeatMode, [Optional] IUIAnimationLoopIterationChangeHandler2* pIterationChangeHandler, [NativeTypeName("UINT_PTR")] [Optional] nuint id, [Optional] BOOL fRegisterForNextAnimationEvent);
+
+            [VtblIndex(9)]
+            HRESULT HoldVariable(IUIAnimationVariable2* variable);
+
+            [VtblIndex(10)]
+            HRESULT SetLongestAcceptableDelay([NativeTypeName("UI_ANIMATION_SECONDS")] double delay);
+
+            [VtblIndex(11)]
+            HRESULT SetSkipDuration([NativeTypeName("UI_ANIMATION_SECONDS")] double secondsDuration);
+
+            [VtblIndex(12)]
+            HRESULT Schedule([NativeTypeName("UI_ANIMATION_SECONDS")] double timeNow, UI_ANIMATION_SCHEDULING_RESULT* schedulingResult = null);
+
+            [VtblIndex(13)]
+            HRESULT Conclude();
+
+            [VtblIndex(14)]
+            HRESULT Finish([NativeTypeName("UI_ANIMATION_SECONDS")] double completionDeadline);
+
+            [VtblIndex(15)]
+            HRESULT Abandon();
+
+            [VtblIndex(16)]
+            HRESULT SetTag(IUnknown* @object, [NativeTypeName("UINT32")] uint id);
+
+            [VtblIndex(17)]
+            HRESULT GetTag(IUnknown** @object, [NativeTypeName("UINT32 *")] uint* id);
+
+            [VtblIndex(18)]
+            HRESULT GetStatus(UI_ANIMATION_STORYBOARD_STATUS* status);
+
+            [VtblIndex(19)]
+            HRESULT GetElapsedTime([NativeTypeName("UI_ANIMATION_SECONDS *")] double* elapsedTime);
+
+            [VtblIndex(20)]
+            HRESULT SetStoryboardEventHandler(IUIAnimationStoryboardEventHandler2* handler, [Optional] BOOL fRegisterStatusChangeForNextAnimationEvent, [Optional] BOOL fRegisterUpdateForNextAnimationEvent);
         }
 
         public partial struct Vtbl

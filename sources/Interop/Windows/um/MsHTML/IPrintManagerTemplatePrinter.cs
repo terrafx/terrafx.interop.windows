@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("F633BE14-9EFF-4C4D-929E-05717B21B3E6")]
     [NativeTypeName("struct IPrintManagerTemplatePrinter : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct IPrintManagerTemplatePrinter
+    public unsafe partial struct IPrintManagerTemplatePrinter : IPrintManagerTemplatePrinter.Interface
     {
         public void** lpVtbl;
 
@@ -107,6 +107,27 @@ namespace TerraFX.Interop
         public HRESULT endPrint()
         {
             return ((delegate* unmanaged<IPrintManagerTemplatePrinter*, int>)(lpVtbl[12]))((IPrintManagerTemplatePrinter*)Unsafe.AsPointer(ref this));
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT startPrint();
+
+            [VtblIndex(8)]
+            HRESULT drawPreviewPage(IDispatch* pElemDisp, [NativeTypeName("long")] int nPage);
+
+            [VtblIndex(9)]
+            HRESULT setPageCount([NativeTypeName("long")] int nPage);
+
+            [VtblIndex(10)]
+            HRESULT invalidatePreview();
+
+            [VtblIndex(11)]
+            HRESULT getPrintTaskOptionValue([NativeTypeName("BSTR")] ushort* bstrKey, VARIANT* pvarin);
+
+            [VtblIndex(12)]
+            HRESULT endPrint();
         }
 
         public partial struct Vtbl

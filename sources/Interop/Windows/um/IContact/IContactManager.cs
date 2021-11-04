@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("AD553D98-DEB1-474A-8E17-FC0C2075B738")]
     [NativeTypeName("struct IContactManager : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IContactManager
+    public unsafe partial struct IContactManager : IContactManager.Interface
     {
         public void** lpVtbl;
 
@@ -79,6 +79,27 @@ namespace TerraFX.Interop
         public HRESULT GetContactCollection(IContactCollection** ppContactCollection)
         {
             return ((delegate* unmanaged<IContactManager*, IContactCollection**, int>)(lpVtbl[8]))((IContactManager*)Unsafe.AsPointer(ref this), ppContactCollection);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT Initialize([NativeTypeName("LPCWSTR")] ushort* pszAppName, [NativeTypeName("LPCWSTR")] ushort* pszAppVersion);
+
+            [VtblIndex(4)]
+            HRESULT Load([NativeTypeName("LPCWSTR")] ushort* pszContactID, IContact** ppContact);
+
+            [VtblIndex(5)]
+            HRESULT MergeContactIDs([NativeTypeName("LPCWSTR")] ushort* pszNewContactID, [NativeTypeName("LPCWSTR")] ushort* pszOldContactID);
+
+            [VtblIndex(6)]
+            HRESULT GetMeContact(IContact** ppMeContact);
+
+            [VtblIndex(7)]
+            HRESULT SetMeContact(IContact* pMeContact);
+
+            [VtblIndex(8)]
+            HRESULT GetContactCollection(IContactCollection** ppContactCollection);
         }
 
         public partial struct Vtbl

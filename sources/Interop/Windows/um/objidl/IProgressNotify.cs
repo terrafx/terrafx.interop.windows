@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("A9D758A0-4617-11CF-95FC-00AA00680DB4")]
     [NativeTypeName("struct IProgressNotify : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IProgressNotify
+    public unsafe partial struct IProgressNotify : IProgressNotify.Interface
     {
         public void** lpVtbl;
 
@@ -44,6 +44,12 @@ namespace TerraFX.Interop
         public HRESULT OnProgress([NativeTypeName("DWORD")] uint dwProgressCurrent, [NativeTypeName("DWORD")] uint dwProgressMaximum, BOOL fAccurate, BOOL fOwner)
         {
             return ((delegate* unmanaged<IProgressNotify*, uint, uint, BOOL, BOOL, int>)(lpVtbl[3]))((IProgressNotify*)Unsafe.AsPointer(ref this), dwProgressCurrent, dwProgressMaximum, fAccurate, fOwner);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT OnProgress([NativeTypeName("DWORD")] uint dwProgressCurrent, [NativeTypeName("DWORD")] uint dwProgressMaximum, BOOL fAccurate, BOOL fOwner);
         }
 
         public partial struct Vtbl

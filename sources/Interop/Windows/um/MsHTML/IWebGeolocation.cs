@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("305107C5-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct IWebGeolocation : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct IWebGeolocation
+    public unsafe partial struct IWebGeolocation : IWebGeolocation.Interface
     {
         public void** lpVtbl;
 
@@ -86,6 +86,18 @@ namespace TerraFX.Interop
         public HRESULT clearWatch([NativeTypeName("long")] int watchId)
         {
             return ((delegate* unmanaged<IWebGeolocation*, int, int>)(lpVtbl[9]))((IWebGeolocation*)Unsafe.AsPointer(ref this), watchId);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT getCurrentPosition(IDispatch* successCallback, IDispatch* errorCallback = null, IDispatch* options = null);
+
+            [VtblIndex(8)]
+            HRESULT watchPosition(IDispatch* successCallback, IDispatch* errorCallback, IDispatch* options, [NativeTypeName("long *")] int* watchId);
+
+            [VtblIndex(9)]
+            HRESULT clearWatch([NativeTypeName("long")] int watchId);
         }
 
         public partial struct Vtbl

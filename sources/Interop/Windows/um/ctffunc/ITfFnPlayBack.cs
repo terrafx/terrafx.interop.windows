@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("A3A416A4-0F64-11D3-B5B7-00C04FC324A1")]
     [NativeTypeName("struct ITfFnPlayBack : ITfFunction")]
     [NativeInheritance("ITfFunction")]
-    public unsafe partial struct ITfFnPlayBack
+    public unsafe partial struct ITfFnPlayBack : ITfFnPlayBack.Interface
     {
         public void** lpVtbl;
 
@@ -58,6 +58,15 @@ namespace TerraFX.Interop
         public HRESULT Play(ITfRange* pRange)
         {
             return ((delegate* unmanaged<ITfFnPlayBack*, ITfRange*, int>)(lpVtbl[5]))((ITfFnPlayBack*)Unsafe.AsPointer(ref this), pRange);
+        }
+
+        public interface Interface : ITfFunction.Interface
+        {
+            [VtblIndex(4)]
+            HRESULT QueryRange(ITfRange* pRange, ITfRange** ppNewRange, BOOL* pfPlayable);
+
+            [VtblIndex(5)]
+            HRESULT Play(ITfRange* pRange);
         }
 
         public partial struct Vtbl

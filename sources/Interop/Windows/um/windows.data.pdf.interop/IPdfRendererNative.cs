@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("7D9DCD91-D277-4947-8527-07A0DAEDA94A")]
     [NativeTypeName("struct IPdfRendererNative : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IPdfRendererNative
+    public unsafe partial struct IPdfRendererNative : IPdfRendererNative.Interface
     {
         public void** lpVtbl;
 
@@ -51,6 +51,15 @@ namespace TerraFX.Interop
         public HRESULT RenderPageToDeviceContext(IUnknown* pdfPage, ID2D1DeviceContext* pD2DDeviceContext, PDF_RENDER_PARAMS* pRenderParams)
         {
             return ((delegate* unmanaged<IPdfRendererNative*, IUnknown*, ID2D1DeviceContext*, PDF_RENDER_PARAMS*, int>)(lpVtbl[4]))((IPdfRendererNative*)Unsafe.AsPointer(ref this), pdfPage, pD2DDeviceContext, pRenderParams);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT RenderPageToSurface(IUnknown* pdfPage, IDXGISurface* pSurface, POINT offset, PDF_RENDER_PARAMS* pRenderParams);
+
+            [VtblIndex(4)]
+            HRESULT RenderPageToDeviceContext(IUnknown* pdfPage, ID2D1DeviceContext* pD2DDeviceContext, PDF_RENDER_PARAMS* pRenderParams);
         }
 
         public partial struct Vtbl

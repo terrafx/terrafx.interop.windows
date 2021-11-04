@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("AA9DD80F-C50A-4220-91C1-332287F82A34")]
     [NativeTypeName("struct IPlayToControlWithCapabilities : IPlayToControl")]
     [NativeInheritance("IPlayToControl")]
-    public unsafe partial struct IPlayToControlWithCapabilities
+    public unsafe partial struct IPlayToControlWithCapabilities : IPlayToControlWithCapabilities.Interface
     {
         public void** lpVtbl;
 
@@ -58,6 +58,12 @@ namespace TerraFX.Interop
         public HRESULT GetCapabilities(PLAYTO_SOURCE_CREATEFLAGS* pCapabilities)
         {
             return ((delegate* unmanaged<IPlayToControlWithCapabilities*, PLAYTO_SOURCE_CREATEFLAGS*, int>)(lpVtbl[5]))((IPlayToControlWithCapabilities*)Unsafe.AsPointer(ref this), pCapabilities);
+        }
+
+        public interface Interface : IPlayToControl.Interface
+        {
+            [VtblIndex(5)]
+            HRESULT GetCapabilities(PLAYTO_SOURCE_CREATEFLAGS* pCapabilities);
         }
 
         public partial struct Vtbl

@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("3050F656-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct IHTMLStyle3 : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct IHTMLStyle3
+    public unsafe partial struct IHTMLStyle3 : IHTMLStyle3.Interface
     {
         public void** lpVtbl;
 
@@ -275,6 +275,99 @@ namespace TerraFX.Interop
         public HRESULT get_textKashidaSpace(VARIANT* p)
         {
             return ((delegate* unmanaged<IHTMLStyle3*, VARIANT*, int>)(lpVtbl[36]))((IHTMLStyle3*)Unsafe.AsPointer(ref this), p);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT put_layoutFlow([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(8)]
+            HRESULT get_layoutFlow([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(9)]
+            HRESULT put_zoom(VARIANT v);
+
+            [VtblIndex(10)]
+            HRESULT get_zoom(VARIANT* p);
+
+            [VtblIndex(11)]
+            HRESULT put_wordWrap([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(12)]
+            HRESULT get_wordWrap([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(13)]
+            HRESULT put_textUnderlinePosition([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(14)]
+            HRESULT get_textUnderlinePosition([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(15)]
+            HRESULT put_scrollbarBaseColor(VARIANT v);
+
+            [VtblIndex(16)]
+            HRESULT get_scrollbarBaseColor(VARIANT* p);
+
+            [VtblIndex(17)]
+            HRESULT put_scrollbarFaceColor(VARIANT v);
+
+            [VtblIndex(18)]
+            HRESULT get_scrollbarFaceColor(VARIANT* p);
+
+            [VtblIndex(19)]
+            HRESULT put_scrollbar3dLightColor(VARIANT v);
+
+            [VtblIndex(20)]
+            HRESULT get_scrollbar3dLightColor(VARIANT* p);
+
+            [VtblIndex(21)]
+            HRESULT put_scrollbarShadowColor(VARIANT v);
+
+            [VtblIndex(22)]
+            HRESULT get_scrollbarShadowColor(VARIANT* p);
+
+            [VtblIndex(23)]
+            HRESULT put_scrollbarHighlightColor(VARIANT v);
+
+            [VtblIndex(24)]
+            HRESULT get_scrollbarHighlightColor(VARIANT* p);
+
+            [VtblIndex(25)]
+            HRESULT put_scrollbarDarkShadowColor(VARIANT v);
+
+            [VtblIndex(26)]
+            HRESULT get_scrollbarDarkShadowColor(VARIANT* p);
+
+            [VtblIndex(27)]
+            HRESULT put_scrollbarArrowColor(VARIANT v);
+
+            [VtblIndex(28)]
+            HRESULT get_scrollbarArrowColor(VARIANT* p);
+
+            [VtblIndex(29)]
+            HRESULT put_scrollbarTrackColor(VARIANT v);
+
+            [VtblIndex(30)]
+            HRESULT get_scrollbarTrackColor(VARIANT* p);
+
+            [VtblIndex(31)]
+            HRESULT put_writingMode([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(32)]
+            HRESULT get_writingMode([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(33)]
+            HRESULT put_textAlignLast([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(34)]
+            HRESULT get_textAlignLast([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(35)]
+            HRESULT put_textKashidaSpace(VARIANT v);
+
+            [VtblIndex(36)]
+            HRESULT get_textKashidaSpace(VARIANT* p);
         }
 
         public partial struct Vtbl

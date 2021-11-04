@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("30510482-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct IHTMLXMLHttpRequest2 : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct IHTMLXMLHttpRequest2
+    public unsafe partial struct IHTMLXMLHttpRequest2 : IHTMLXMLHttpRequest2.Interface
     {
         public void** lpVtbl;
 
@@ -93,6 +93,21 @@ namespace TerraFX.Interop
         public HRESULT get_ontimeout(VARIANT* p)
         {
             return ((delegate* unmanaged<IHTMLXMLHttpRequest2*, VARIANT*, int>)(lpVtbl[10]))((IHTMLXMLHttpRequest2*)Unsafe.AsPointer(ref this), p);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT put_timeout([NativeTypeName("long")] int v);
+
+            [VtblIndex(8)]
+            HRESULT get_timeout([NativeTypeName("long *")] int* p);
+
+            [VtblIndex(9)]
+            HRESULT put_ontimeout(VARIANT v);
+
+            [VtblIndex(10)]
+            HRESULT get_ontimeout(VARIANT* p);
         }
 
         public partial struct Vtbl

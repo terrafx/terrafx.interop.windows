@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("A9849BBE-9EC8-4263-B764-62730F0D15D0")]
     [NativeTypeName("struct IVMRSurface : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IVMRSurface
+    public unsafe partial struct IVMRSurface : IVMRSurface.Interface
     {
         public void** lpVtbl;
 
@@ -65,6 +65,21 @@ namespace TerraFX.Interop
         public HRESULT GetSurface([NativeTypeName("LPDIRECTDRAWSURFACE7 *")] IDirectDrawSurface7** lplpSurface)
         {
             return ((delegate* unmanaged<IVMRSurface*, IDirectDrawSurface7**, int>)(lpVtbl[6]))((IVMRSurface*)Unsafe.AsPointer(ref this), lplpSurface);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT IsSurfaceLocked();
+
+            [VtblIndex(4)]
+            HRESULT LockSurface(byte** lpSurface);
+
+            [VtblIndex(5)]
+            HRESULT UnlockSurface();
+
+            [VtblIndex(6)]
+            HRESULT GetSurface([NativeTypeName("LPDIRECTDRAWSURFACE7 *")] IDirectDrawSurface7** lplpSurface);
         }
 
         public partial struct Vtbl

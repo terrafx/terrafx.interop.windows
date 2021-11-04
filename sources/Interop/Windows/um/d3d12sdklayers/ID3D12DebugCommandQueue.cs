@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("09E0BF36-54AC-484F-8847-4BAEEAB6053A")]
     [NativeTypeName("struct ID3D12DebugCommandQueue : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct ID3D12DebugCommandQueue
+    public unsafe partial struct ID3D12DebugCommandQueue : ID3D12DebugCommandQueue.Interface
     {
         public void** lpVtbl;
 
@@ -44,6 +44,12 @@ namespace TerraFX.Interop
         public BOOL AssertResourceState(ID3D12Resource* pResource, uint Subresource, uint State)
         {
             return ((delegate* unmanaged<ID3D12DebugCommandQueue*, ID3D12Resource*, uint, uint, int>)(lpVtbl[3]))((ID3D12DebugCommandQueue*)Unsafe.AsPointer(ref this), pResource, Subresource, State);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            BOOL AssertResourceState(ID3D12Resource* pResource, uint Subresource, uint State);
         }
 
         public partial struct Vtbl

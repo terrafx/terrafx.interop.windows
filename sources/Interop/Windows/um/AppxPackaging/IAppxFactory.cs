@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("BEB94909-E451-438B-B5A7-D79E767B75D8")]
     [NativeTypeName("struct IAppxFactory : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IAppxFactory
+    public unsafe partial struct IAppxFactory : IAppxFactory.Interface
     {
         public void** lpVtbl;
 
@@ -72,6 +72,24 @@ namespace TerraFX.Interop
         public HRESULT CreateValidatedBlockMapReader(IStream* blockMapStream, [NativeTypeName("LPCWSTR")] ushort* signatureFileName, IAppxBlockMapReader** blockMapReader)
         {
             return ((delegate* unmanaged<IAppxFactory*, IStream*, ushort*, IAppxBlockMapReader**, int>)(lpVtbl[7]))((IAppxFactory*)Unsafe.AsPointer(ref this), blockMapStream, signatureFileName, blockMapReader);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT CreatePackageWriter(IStream* outputStream, APPX_PACKAGE_SETTINGS* settings, IAppxPackageWriter** packageWriter);
+
+            [VtblIndex(4)]
+            HRESULT CreatePackageReader(IStream* inputStream, IAppxPackageReader** packageReader);
+
+            [VtblIndex(5)]
+            HRESULT CreateManifestReader(IStream* inputStream, IAppxManifestReader** manifestReader);
+
+            [VtblIndex(6)]
+            HRESULT CreateBlockMapReader(IStream* inputStream, IAppxBlockMapReader** blockMapReader);
+
+            [VtblIndex(7)]
+            HRESULT CreateValidatedBlockMapReader(IStream* blockMapStream, [NativeTypeName("LPCWSTR")] ushort* signatureFileName, IAppxBlockMapReader** blockMapReader);
         }
 
         public partial struct Vtbl

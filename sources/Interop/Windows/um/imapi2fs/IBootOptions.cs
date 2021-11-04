@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("2C941FD4-975B-59BE-A960-9A2A262853A5")]
     [NativeTypeName("struct IBootOptions : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct IBootOptions
+    public unsafe partial struct IBootOptions : IBootOptions.Interface
     {
         public void** lpVtbl;
 
@@ -128,6 +128,36 @@ namespace TerraFX.Interop
         public HRESULT AssignBootImage(IStream* newVal)
         {
             return ((delegate* unmanaged<IBootOptions*, IStream*, int>)(lpVtbl[15]))((IBootOptions*)Unsafe.AsPointer(ref this), newVal);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT get_BootImage(IStream** pVal);
+
+            [VtblIndex(8)]
+            HRESULT get_Manufacturer([NativeTypeName("BSTR *")] ushort** pVal);
+
+            [VtblIndex(9)]
+            HRESULT put_Manufacturer([NativeTypeName("BSTR")] ushort* newVal);
+
+            [VtblIndex(10)]
+            HRESULT get_PlatformId(PlatformId* pVal);
+
+            [VtblIndex(11)]
+            HRESULT put_PlatformId(PlatformId newVal);
+
+            [VtblIndex(12)]
+            HRESULT get_Emulation(EmulationType* pVal);
+
+            [VtblIndex(13)]
+            HRESULT put_Emulation(EmulationType newVal);
+
+            [VtblIndex(14)]
+            HRESULT get_ImageSize([NativeTypeName("ULONG *")] uint* pVal);
+
+            [VtblIndex(15)]
+            HRESULT AssignBootImage(IStream* newVal);
         }
 
         public partial struct Vtbl

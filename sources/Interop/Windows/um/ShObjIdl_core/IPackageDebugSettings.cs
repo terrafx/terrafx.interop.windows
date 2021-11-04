@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("F27C3930-8029-4AD1-94E3-3DBA417810C1")]
     [NativeTypeName("struct IPackageDebugSettings : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IPackageDebugSettings
+    public unsafe partial struct IPackageDebugSettings : IPackageDebugSettings.Interface
     {
         public void** lpVtbl;
 
@@ -142,6 +142,54 @@ namespace TerraFX.Interop
         public HRESULT UnregisterForPackageStateChanges([NativeTypeName("DWORD")] uint dwCookie)
         {
             return ((delegate* unmanaged<IPackageDebugSettings*, uint, int>)(lpVtbl[17]))((IPackageDebugSettings*)Unsafe.AsPointer(ref this), dwCookie);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT EnableDebugging([NativeTypeName("LPCWSTR")] ushort* packageFullName, [NativeTypeName("LPCWSTR")] ushort* debuggerCommandLine, [NativeTypeName("PZZWSTR")] ushort* environment);
+
+            [VtblIndex(4)]
+            HRESULT DisableDebugging([NativeTypeName("LPCWSTR")] ushort* packageFullName);
+
+            [VtblIndex(5)]
+            HRESULT Suspend([NativeTypeName("LPCWSTR")] ushort* packageFullName);
+
+            [VtblIndex(6)]
+            HRESULT Resume([NativeTypeName("LPCWSTR")] ushort* packageFullName);
+
+            [VtblIndex(7)]
+            HRESULT TerminateAllProcesses([NativeTypeName("LPCWSTR")] ushort* packageFullName);
+
+            [VtblIndex(8)]
+            HRESULT SetTargetSessionId([NativeTypeName("ULONG")] uint sessionId);
+
+            [VtblIndex(9)]
+            HRESULT EnumerateBackgroundTasks([NativeTypeName("LPCWSTR")] ushort* packageFullName, [NativeTypeName("ULONG *")] uint* taskCount, [NativeTypeName("LPCGUID *")] Guid** taskIds, [NativeTypeName("LPCWSTR **")] ushort*** taskNames);
+
+            [VtblIndex(10)]
+            HRESULT ActivateBackgroundTask([NativeTypeName("LPCGUID")] Guid* taskId);
+
+            [VtblIndex(11)]
+            HRESULT StartServicing([NativeTypeName("LPCWSTR")] ushort* packageFullName);
+
+            [VtblIndex(12)]
+            HRESULT StopServicing([NativeTypeName("LPCWSTR")] ushort* packageFullName);
+
+            [VtblIndex(13)]
+            HRESULT StartSessionRedirection([NativeTypeName("LPCWSTR")] ushort* packageFullName, [NativeTypeName("ULONG")] uint sessionId);
+
+            [VtblIndex(14)]
+            HRESULT StopSessionRedirection([NativeTypeName("LPCWSTR")] ushort* packageFullName);
+
+            [VtblIndex(15)]
+            HRESULT GetPackageExecutionState([NativeTypeName("LPCWSTR")] ushort* packageFullName, PACKAGE_EXECUTION_STATE* packageExecutionState);
+
+            [VtblIndex(16)]
+            HRESULT RegisterForPackageStateChanges([NativeTypeName("LPCWSTR")] ushort* packageFullName, IPackageExecutionStateChangeNotification* pPackageExecutionStateChangeNotification, [NativeTypeName("DWORD *")] uint* pdwCookie);
+
+            [VtblIndex(17)]
+            HRESULT UnregisterForPackageStateChanges([NativeTypeName("DWORD")] uint dwCookie);
         }
 
         public partial struct Vtbl

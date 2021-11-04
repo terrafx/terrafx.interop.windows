@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("923CCAAC-61E1-4385-B726-017AF189882A")]
     [NativeTypeName("struct IDirectManipulationViewport2 : IDirectManipulationViewport")]
     [NativeInheritance("IDirectManipulationViewport")]
-    public unsafe partial struct IDirectManipulationViewport2
+    public unsafe partial struct IDirectManipulationViewport2 : IDirectManipulationViewport2.Interface
     {
         public void** lpVtbl;
 
@@ -254,6 +254,18 @@ namespace TerraFX.Interop
         public HRESULT RemoveAllBehaviors()
         {
             return ((delegate* unmanaged<IDirectManipulationViewport2*, int>)(lpVtbl[33]))((IDirectManipulationViewport2*)Unsafe.AsPointer(ref this));
+        }
+
+        public interface Interface : IDirectManipulationViewport.Interface
+        {
+            [VtblIndex(31)]
+            HRESULT AddBehavior(IUnknown* behavior, [NativeTypeName("DWORD *")] uint* cookie);
+
+            [VtblIndex(32)]
+            HRESULT RemoveBehavior([NativeTypeName("DWORD")] uint cookie);
+
+            [VtblIndex(33)]
+            HRESULT RemoveAllBehaviors();
         }
 
         public partial struct Vtbl

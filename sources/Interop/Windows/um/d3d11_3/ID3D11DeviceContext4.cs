@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("917600DA-F58C-4C33-98D8-3E15B390FA24")]
     [NativeTypeName("struct ID3D11DeviceContext4 : ID3D11DeviceContext3")]
     [NativeInheritance("ID3D11DeviceContext3")]
-    public unsafe partial struct ID3D11DeviceContext4
+    public unsafe partial struct ID3D11DeviceContext4 : ID3D11DeviceContext4.Interface
     {
         public void** lpVtbl;
 
@@ -1059,6 +1059,15 @@ namespace TerraFX.Interop
         public HRESULT Wait(ID3D11Fence* pFence, [NativeTypeName("UINT64")] ulong Value)
         {
             return ((delegate* unmanaged<ID3D11DeviceContext4*, ID3D11Fence*, ulong, int>)(lpVtbl[148]))((ID3D11DeviceContext4*)Unsafe.AsPointer(ref this), pFence, Value);
+        }
+
+        public interface Interface : ID3D11DeviceContext3.Interface
+        {
+            [VtblIndex(147)]
+            HRESULT Signal(ID3D11Fence* pFence, [NativeTypeName("UINT64")] ulong Value);
+
+            [VtblIndex(148)]
+            HRESULT Wait(ID3D11Fence* pFence, [NativeTypeName("UINT64")] ulong Value);
         }
 
         public partial struct Vtbl

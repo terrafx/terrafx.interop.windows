@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("5B87EF6A-7ED8-434F-BA0E-184FAC1628D1")]
     [NativeTypeName("struct IMFNetCredential : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IMFNetCredential
+    public unsafe partial struct IMFNetCredential : IMFNetCredential.Interface
     {
         public void** lpVtbl;
 
@@ -72,6 +72,24 @@ namespace TerraFX.Interop
         public HRESULT LoggedOnUser(BOOL* pfLoggedOnUser)
         {
             return ((delegate* unmanaged<IMFNetCredential*, BOOL*, int>)(lpVtbl[7]))((IMFNetCredential*)Unsafe.AsPointer(ref this), pfLoggedOnUser);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT SetUser(byte* pbData, [NativeTypeName("DWORD")] uint cbData, BOOL fDataIsEncrypted);
+
+            [VtblIndex(4)]
+            HRESULT SetPassword(byte* pbData, [NativeTypeName("DWORD")] uint cbData, BOOL fDataIsEncrypted);
+
+            [VtblIndex(5)]
+            HRESULT GetUser(byte* pbData, [NativeTypeName("DWORD *")] uint* pcbData, BOOL fEncryptData);
+
+            [VtblIndex(6)]
+            HRESULT GetPassword(byte* pbData, [NativeTypeName("DWORD *")] uint* pcbData, BOOL fEncryptData);
+
+            [VtblIndex(7)]
+            HRESULT LoggedOnUser(BOOL* pfLoggedOnUser);
         }
 
         public partial struct Vtbl

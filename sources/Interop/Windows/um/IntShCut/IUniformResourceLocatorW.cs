@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("CABB0DA0-DA57-11CF-9974-0020AFD79762")]
     [NativeTypeName("struct IUniformResourceLocatorW : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IUniformResourceLocatorW
+    public unsafe partial struct IUniformResourceLocatorW : IUniformResourceLocatorW.Interface
     {
         public void** lpVtbl;
 
@@ -58,6 +58,18 @@ namespace TerraFX.Interop
         public HRESULT InvokeCommand([NativeTypeName("PURLINVOKECOMMANDINFOW")] URLINVOKECOMMANDINFOW* purlici)
         {
             return ((delegate* unmanaged<IUniformResourceLocatorW*, URLINVOKECOMMANDINFOW*, int>)(lpVtbl[5]))((IUniformResourceLocatorW*)Unsafe.AsPointer(ref this), purlici);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT SetURL([NativeTypeName("LPCWSTR")] ushort* pcszURL, [NativeTypeName("DWORD")] uint dwInFlags);
+
+            [VtblIndex(4)]
+            HRESULT GetURL([NativeTypeName("LPWSTR *")] ushort** ppszURL);
+
+            [VtblIndex(5)]
+            HRESULT InvokeCommand([NativeTypeName("PURLINVOKECOMMANDINFOW")] URLINVOKECOMMANDINFOW* purlici);
         }
 
         public partial struct Vtbl

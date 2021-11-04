@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("9B2077B0-5F18-4DEC-BEE9-3CC722F5DFE0")]
     [NativeTypeName("struct ITextStoreAnchor : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct ITextStoreAnchor
+    public unsafe partial struct ITextStoreAnchor : ITextStoreAnchor.Interface
     {
         public void** lpVtbl;
 
@@ -226,6 +226,90 @@ namespace TerraFX.Interop
         public HRESULT InsertEmbeddedAtSelection([NativeTypeName("DWORD")] uint dwFlags, IDataObject* pDataObject, IAnchor** ppaStart, IAnchor** ppaEnd)
         {
             return ((delegate* unmanaged<ITextStoreAnchor*, uint, IDataObject*, IAnchor**, IAnchor**, int>)(lpVtbl[29]))((ITextStoreAnchor*)Unsafe.AsPointer(ref this), dwFlags, pDataObject, ppaStart, ppaEnd);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT AdviseSink([NativeTypeName("const IID &")] Guid* riid, IUnknown* punk, [NativeTypeName("DWORD")] uint dwMask);
+
+            [VtblIndex(4)]
+            HRESULT UnadviseSink(IUnknown* punk);
+
+            [VtblIndex(5)]
+            HRESULT RequestLock([NativeTypeName("DWORD")] uint dwLockFlags, HRESULT* phrSession);
+
+            [VtblIndex(6)]
+            HRESULT GetStatus(TS_STATUS* pdcs);
+
+            [VtblIndex(7)]
+            HRESULT QueryInsert(IAnchor* paTestStart, IAnchor* paTestEnd, [NativeTypeName("ULONG")] uint cch, IAnchor** ppaResultStart, IAnchor** ppaResultEnd);
+
+            [VtblIndex(8)]
+            HRESULT GetSelection([NativeTypeName("ULONG")] uint ulIndex, [NativeTypeName("ULONG")] uint ulCount, TS_SELECTION_ANCHOR* pSelection, [NativeTypeName("ULONG *")] uint* pcFetched);
+
+            [VtblIndex(9)]
+            HRESULT SetSelection([NativeTypeName("ULONG")] uint ulCount, [NativeTypeName("const TS_SELECTION_ANCHOR *")] TS_SELECTION_ANCHOR* pSelection);
+
+            [VtblIndex(10)]
+            HRESULT GetText([NativeTypeName("DWORD")] uint dwFlags, IAnchor* paStart, IAnchor* paEnd, [NativeTypeName("WCHAR *")] ushort* pchText, [NativeTypeName("ULONG")] uint cchReq, [NativeTypeName("ULONG *")] uint* pcch, BOOL fUpdateAnchor);
+
+            [VtblIndex(11)]
+            HRESULT SetText([NativeTypeName("DWORD")] uint dwFlags, IAnchor* paStart, IAnchor* paEnd, [NativeTypeName("const WCHAR *")] ushort* pchText, [NativeTypeName("ULONG")] uint cch);
+
+            [VtblIndex(12)]
+            HRESULT GetFormattedText(IAnchor* paStart, IAnchor* paEnd, IDataObject** ppDataObject);
+
+            [VtblIndex(13)]
+            HRESULT GetEmbedded([NativeTypeName("DWORD")] uint dwFlags, IAnchor* paPos, [NativeTypeName("const GUID &")] Guid* rguidService, [NativeTypeName("const IID &")] Guid* riid, IUnknown** ppunk);
+
+            [VtblIndex(14)]
+            HRESULT InsertEmbedded([NativeTypeName("DWORD")] uint dwFlags, IAnchor* paStart, IAnchor* paEnd, IDataObject* pDataObject);
+
+            [VtblIndex(15)]
+            HRESULT RequestSupportedAttrs([NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("ULONG")] uint cFilterAttrs, [NativeTypeName("const TS_ATTRID *")] Guid* paFilterAttrs);
+
+            [VtblIndex(16)]
+            HRESULT RequestAttrsAtPosition(IAnchor* paPos, [NativeTypeName("ULONG")] uint cFilterAttrs, [NativeTypeName("const TS_ATTRID *")] Guid* paFilterAttrs, [NativeTypeName("DWORD")] uint dwFlags);
+
+            [VtblIndex(17)]
+            HRESULT RequestAttrsTransitioningAtPosition(IAnchor* paPos, [NativeTypeName("ULONG")] uint cFilterAttrs, [NativeTypeName("const TS_ATTRID *")] Guid* paFilterAttrs, [NativeTypeName("DWORD")] uint dwFlags);
+
+            [VtblIndex(18)]
+            HRESULT FindNextAttrTransition(IAnchor* paStart, IAnchor* paHalt, [NativeTypeName("ULONG")] uint cFilterAttrs, [NativeTypeName("const TS_ATTRID *")] Guid* paFilterAttrs, [NativeTypeName("DWORD")] uint dwFlags, BOOL* pfFound, [NativeTypeName("LONG *")] int* plFoundOffset);
+
+            [VtblIndex(19)]
+            HRESULT RetrieveRequestedAttrs([NativeTypeName("ULONG")] uint ulCount, TS_ATTRVAL* paAttrVals, [NativeTypeName("ULONG *")] uint* pcFetched);
+
+            [VtblIndex(20)]
+            HRESULT GetStart(IAnchor** ppaStart);
+
+            [VtblIndex(21)]
+            HRESULT GetEnd(IAnchor** ppaEnd);
+
+            [VtblIndex(22)]
+            HRESULT GetActiveView([NativeTypeName("TsViewCookie *")] uint* pvcView);
+
+            [VtblIndex(23)]
+            HRESULT GetAnchorFromPoint([NativeTypeName("TsViewCookie")] uint vcView, [NativeTypeName("const POINT *")] POINT* ptScreen, [NativeTypeName("DWORD")] uint dwFlags, IAnchor** ppaSite);
+
+            [VtblIndex(24)]
+            HRESULT GetTextExt([NativeTypeName("TsViewCookie")] uint vcView, IAnchor* paStart, IAnchor* paEnd, RECT* prc, BOOL* pfClipped);
+
+            [VtblIndex(25)]
+            HRESULT GetScreenExt([NativeTypeName("TsViewCookie")] uint vcView, RECT* prc);
+
+            [VtblIndex(26)]
+            HRESULT GetWnd([NativeTypeName("TsViewCookie")] uint vcView, HWND* phwnd);
+
+            [VtblIndex(27)]
+            HRESULT QueryInsertEmbedded([NativeTypeName("const GUID *")] Guid* pguidService, [NativeTypeName("const FORMATETC *")] FORMATETC* pFormatEtc, BOOL* pfInsertable);
+
+            [VtblIndex(28)]
+            HRESULT InsertTextAtSelection([NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("const WCHAR *")] ushort* pchText, [NativeTypeName("ULONG")] uint cch, IAnchor** ppaStart, IAnchor** ppaEnd);
+
+            [VtblIndex(29)]
+            HRESULT InsertEmbeddedAtSelection([NativeTypeName("DWORD")] uint dwFlags, IDataObject* pDataObject, IAnchor** ppaStart, IAnchor** ppaEnd);
         }
 
         public partial struct Vtbl

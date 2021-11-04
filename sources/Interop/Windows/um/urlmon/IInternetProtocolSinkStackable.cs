@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("79EAC9F0-BAF9-11CE-8C82-00AA004BA90B")]
     [NativeTypeName("struct IInternetProtocolSinkStackable : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IInternetProtocolSinkStackable
+    public unsafe partial struct IInternetProtocolSinkStackable : IInternetProtocolSinkStackable.Interface
     {
         public void** lpVtbl;
 
@@ -58,6 +58,18 @@ namespace TerraFX.Interop
         public HRESULT RollbackSwitch()
         {
             return ((delegate* unmanaged<IInternetProtocolSinkStackable*, int>)(lpVtbl[5]))((IInternetProtocolSinkStackable*)Unsafe.AsPointer(ref this));
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT SwitchSink(IInternetProtocolSink* pOIProtSink);
+
+            [VtblIndex(4)]
+            HRESULT CommitSwitch();
+
+            [VtblIndex(5)]
+            HRESULT RollbackSwitch();
         }
 
         public partial struct Vtbl

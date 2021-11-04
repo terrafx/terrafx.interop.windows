@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("E93DCF6C-4B07-4E1E-8123-AA16ED6EADF5")]
     [NativeTypeName("struct IMFMediaTypeHandler : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IMFMediaTypeHandler
+    public unsafe partial struct IMFMediaTypeHandler : IMFMediaTypeHandler.Interface
     {
         public void** lpVtbl;
 
@@ -79,6 +79,27 @@ namespace TerraFX.Interop
         public HRESULT GetMajorType(Guid* pguidMajorType)
         {
             return ((delegate* unmanaged<IMFMediaTypeHandler*, Guid*, int>)(lpVtbl[8]))((IMFMediaTypeHandler*)Unsafe.AsPointer(ref this), pguidMajorType);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT IsMediaTypeSupported(IMFMediaType* pMediaType, IMFMediaType** ppMediaType);
+
+            [VtblIndex(4)]
+            HRESULT GetMediaTypeCount([NativeTypeName("DWORD *")] uint* pdwTypeCount);
+
+            [VtblIndex(5)]
+            HRESULT GetMediaTypeByIndex([NativeTypeName("DWORD")] uint dwIndex, IMFMediaType** ppType);
+
+            [VtblIndex(6)]
+            HRESULT SetCurrentMediaType(IMFMediaType* pMediaType);
+
+            [VtblIndex(7)]
+            HRESULT GetCurrentMediaType(IMFMediaType** ppMediaType);
+
+            [VtblIndex(8)]
+            HRESULT GetMajorType(Guid* pguidMajorType);
         }
 
         public partial struct Vtbl

@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("6543DBB6-1B48-42F5-AB82-E97EC74326F6")]
     [NativeTypeName("struct ID3D11InfoQueue : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct ID3D11InfoQueue
+    public unsafe partial struct ID3D11InfoQueue : ID3D11InfoQueue.Interface
     {
         public void** lpVtbl;
 
@@ -288,6 +288,120 @@ namespace TerraFX.Interop
         public BOOL GetMuteDebugOutput()
         {
             return ((delegate* unmanaged<ID3D11InfoQueue*, int>)(lpVtbl[37]))((ID3D11InfoQueue*)Unsafe.AsPointer(ref this));
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT SetMessageCountLimit([NativeTypeName("UINT64")] ulong MessageCountLimit);
+
+            [VtblIndex(4)]
+            void ClearStoredMessages();
+
+            [VtblIndex(5)]
+            HRESULT GetMessage([NativeTypeName("UINT64")] ulong MessageIndex, D3D11_MESSAGE* pMessage, [NativeTypeName("SIZE_T *")] nuint* pMessageByteLength);
+
+            [VtblIndex(6)]
+            [return: NativeTypeName("UINT64")]
+            ulong GetNumMessagesAllowedByStorageFilter();
+
+            [VtblIndex(7)]
+            [return: NativeTypeName("UINT64")]
+            ulong GetNumMessagesDeniedByStorageFilter();
+
+            [VtblIndex(8)]
+            [return: NativeTypeName("UINT64")]
+            ulong GetNumStoredMessages();
+
+            [VtblIndex(9)]
+            [return: NativeTypeName("UINT64")]
+            ulong GetNumStoredMessagesAllowedByRetrievalFilter();
+
+            [VtblIndex(10)]
+            [return: NativeTypeName("UINT64")]
+            ulong GetNumMessagesDiscardedByMessageCountLimit();
+
+            [VtblIndex(11)]
+            [return: NativeTypeName("UINT64")]
+            ulong GetMessageCountLimit();
+
+            [VtblIndex(12)]
+            HRESULT AddStorageFilterEntries(D3D11_INFO_QUEUE_FILTER* pFilter);
+
+            [VtblIndex(13)]
+            HRESULT GetStorageFilter(D3D11_INFO_QUEUE_FILTER* pFilter, [NativeTypeName("SIZE_T *")] nuint* pFilterByteLength);
+
+            [VtblIndex(14)]
+            void ClearStorageFilter();
+
+            [VtblIndex(15)]
+            HRESULT PushEmptyStorageFilter();
+
+            [VtblIndex(16)]
+            HRESULT PushCopyOfStorageFilter();
+
+            [VtblIndex(17)]
+            HRESULT PushStorageFilter(D3D11_INFO_QUEUE_FILTER* pFilter);
+
+            [VtblIndex(18)]
+            void PopStorageFilter();
+
+            [VtblIndex(19)]
+            uint GetStorageFilterStackSize();
+
+            [VtblIndex(20)]
+            HRESULT AddRetrievalFilterEntries(D3D11_INFO_QUEUE_FILTER* pFilter);
+
+            [VtblIndex(21)]
+            HRESULT GetRetrievalFilter(D3D11_INFO_QUEUE_FILTER* pFilter, [NativeTypeName("SIZE_T *")] nuint* pFilterByteLength);
+
+            [VtblIndex(22)]
+            void ClearRetrievalFilter();
+
+            [VtblIndex(23)]
+            HRESULT PushEmptyRetrievalFilter();
+
+            [VtblIndex(24)]
+            HRESULT PushCopyOfRetrievalFilter();
+
+            [VtblIndex(25)]
+            HRESULT PushRetrievalFilter(D3D11_INFO_QUEUE_FILTER* pFilter);
+
+            [VtblIndex(26)]
+            void PopRetrievalFilter();
+
+            [VtblIndex(27)]
+            uint GetRetrievalFilterStackSize();
+
+            [VtblIndex(28)]
+            HRESULT AddMessage(D3D11_MESSAGE_CATEGORY Category, D3D11_MESSAGE_SEVERITY Severity, D3D11_MESSAGE_ID ID, [NativeTypeName("LPCSTR")] sbyte* pDescription);
+
+            [VtblIndex(29)]
+            HRESULT AddApplicationMessage(D3D11_MESSAGE_SEVERITY Severity, [NativeTypeName("LPCSTR")] sbyte* pDescription);
+
+            [VtblIndex(30)]
+            HRESULT SetBreakOnCategory(D3D11_MESSAGE_CATEGORY Category, BOOL bEnable);
+
+            [VtblIndex(31)]
+            HRESULT SetBreakOnSeverity(D3D11_MESSAGE_SEVERITY Severity, BOOL bEnable);
+
+            [VtblIndex(32)]
+            HRESULT SetBreakOnID(D3D11_MESSAGE_ID ID, BOOL bEnable);
+
+            [VtblIndex(33)]
+            BOOL GetBreakOnCategory(D3D11_MESSAGE_CATEGORY Category);
+
+            [VtblIndex(34)]
+            BOOL GetBreakOnSeverity(D3D11_MESSAGE_SEVERITY Severity);
+
+            [VtblIndex(35)]
+            BOOL GetBreakOnID(D3D11_MESSAGE_ID ID);
+
+            [VtblIndex(36)]
+            void SetMuteDebugOutput(BOOL bMute);
+
+            [VtblIndex(37)]
+            BOOL GetMuteDebugOutput();
         }
 
         public partial struct Vtbl

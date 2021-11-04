@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("56A8689D-0AD4-11CE-B03A-0020AF0BA770")]
     [NativeTypeName("struct IMemInputPin : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IMemInputPin
+    public unsafe partial struct IMemInputPin : IMemInputPin.Interface
     {
         public void** lpVtbl;
 
@@ -79,6 +79,27 @@ namespace TerraFX.Interop
         public HRESULT ReceiveCanBlock()
         {
             return ((delegate* unmanaged<IMemInputPin*, int>)(lpVtbl[8]))((IMemInputPin*)Unsafe.AsPointer(ref this));
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetAllocator(IMemAllocator** ppAllocator);
+
+            [VtblIndex(4)]
+            HRESULT NotifyAllocator(IMemAllocator* pAllocator, BOOL bReadOnly);
+
+            [VtblIndex(5)]
+            HRESULT GetAllocatorRequirements(ALLOCATOR_PROPERTIES* pProps);
+
+            [VtblIndex(6)]
+            HRESULT Receive(IMediaSample* pSample);
+
+            [VtblIndex(7)]
+            HRESULT ReceiveMultiple(IMediaSample** pSamples, [NativeTypeName("long")] int nSamples, [NativeTypeName("long *")] int* nSamplesProcessed);
+
+            [VtblIndex(8)]
+            HRESULT ReceiveCanBlock();
         }
 
         public partial struct Vtbl

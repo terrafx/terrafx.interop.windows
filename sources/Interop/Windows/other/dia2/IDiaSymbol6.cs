@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("8133DAD3-75FE-4234-AC7E-F8E7A1D3CBB3")]
     [NativeTypeName("struct IDiaSymbol6 : IDiaSymbol5")]
     [NativeInheritance("IDiaSymbol5")]
-    public unsafe partial struct IDiaSymbol6
+    public unsafe partial struct IDiaSymbol6 : IDiaSymbol6.Interface
     {
         public void** lpVtbl;
 
@@ -1745,6 +1745,12 @@ namespace TerraFX.Interop
         public HRESULT get_isStaticMemberFunc(BOOL* pRetVal)
         {
             return ((delegate* unmanaged<IDiaSymbol6*, BOOL*, int>)(lpVtbl[246]))((IDiaSymbol6*)Unsafe.AsPointer(ref this), pRetVal);
+        }
+
+        public interface Interface : IDiaSymbol5.Interface
+        {
+            [VtblIndex(246)]
+            HRESULT get_isStaticMemberFunc(BOOL* pRetVal);
         }
 
         public partial struct Vtbl

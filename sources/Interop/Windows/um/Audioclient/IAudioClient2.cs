@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("726778CD-F60A-4EDA-82DE-E47610CD78AA")]
     [NativeTypeName("struct IAudioClient2 : IAudioClient")]
     [NativeInheritance("IAudioClient")]
-    public unsafe partial struct IAudioClient2
+    public unsafe partial struct IAudioClient2 : IAudioClient2.Interface
     {
         public void** lpVtbl;
 
@@ -142,6 +142,18 @@ namespace TerraFX.Interop
         public HRESULT GetBufferSizeLimits([NativeTypeName("const WAVEFORMATEX *")] WAVEFORMATEX* pFormat, BOOL bEventDriven, [NativeTypeName("REFERENCE_TIME *")] long* phnsMinBufferDuration, [NativeTypeName("REFERENCE_TIME *")] long* phnsMaxBufferDuration)
         {
             return ((delegate* unmanaged<IAudioClient2*, WAVEFORMATEX*, BOOL, long*, long*, int>)(lpVtbl[17]))((IAudioClient2*)Unsafe.AsPointer(ref this), pFormat, bEventDriven, phnsMinBufferDuration, phnsMaxBufferDuration);
+        }
+
+        public interface Interface : IAudioClient.Interface
+        {
+            [VtblIndex(15)]
+            HRESULT IsOffloadCapable(AUDIO_STREAM_CATEGORY Category, BOOL* pbOffloadCapable);
+
+            [VtblIndex(16)]
+            HRESULT SetClientProperties([NativeTypeName("const AudioClientProperties *")] AudioClientProperties* pProperties);
+
+            [VtblIndex(17)]
+            HRESULT GetBufferSizeLimits([NativeTypeName("const WAVEFORMATEX *")] WAVEFORMATEX* pFormat, BOOL bEventDriven, [NativeTypeName("REFERENCE_TIME *")] long* phnsMinBufferDuration, [NativeTypeName("REFERENCE_TIME *")] long* phnsMaxBufferDuration);
         }
 
         public partial struct Vtbl

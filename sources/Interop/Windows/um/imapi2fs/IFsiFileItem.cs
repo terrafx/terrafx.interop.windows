@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("2C941FDB-975B-59BE-A960-9A2A262853A5")]
     [NativeTypeName("struct IFsiFileItem : IFsiItem")]
     [NativeInheritance("IFsiItem")]
-    public unsafe partial struct IFsiFileItem
+    public unsafe partial struct IFsiFileItem : IFsiFileItem.Interface
     {
         public void** lpVtbl;
 
@@ -184,6 +184,24 @@ namespace TerraFX.Interop
         public HRESULT put_Data(IStream* newVal)
         {
             return ((delegate* unmanaged<IFsiFileItem*, IStream*, int>)(lpVtbl[23]))((IFsiFileItem*)Unsafe.AsPointer(ref this), newVal);
+        }
+
+        public interface Interface : IFsiItem.Interface
+        {
+            [VtblIndex(19)]
+            HRESULT get_DataSize([NativeTypeName("LONGLONG *")] long* pVal);
+
+            [VtblIndex(20)]
+            HRESULT get_DataSize32BitLow([NativeTypeName("LONG *")] int* pVal);
+
+            [VtblIndex(21)]
+            HRESULT get_DataSize32BitHigh([NativeTypeName("LONG *")] int* pVal);
+
+            [VtblIndex(22)]
+            HRESULT get_Data(IStream** pVal);
+
+            [VtblIndex(23)]
+            HRESULT put_Data(IStream* newVal);
         }
 
         public partial struct Vtbl

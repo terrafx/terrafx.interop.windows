@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("D9BD72ED-290F-4581-9FF3-61027A8FE532")]
     [NativeTypeName("struct IKsJackSinkInformation : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IKsJackSinkInformation
+    public unsafe partial struct IKsJackSinkInformation : IKsJackSinkInformation.Interface
     {
         public void** lpVtbl;
 
@@ -44,6 +44,12 @@ namespace TerraFX.Interop
         public HRESULT GetJackSinkInformation(KSJACK_SINK_INFORMATION* pJackSinkInformation)
         {
             return ((delegate* unmanaged<IKsJackSinkInformation*, KSJACK_SINK_INFORMATION*, int>)(lpVtbl[3]))((IKsJackSinkInformation*)Unsafe.AsPointer(ref this), pJackSinkInformation);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetJackSinkInformation(KSJACK_SINK_INFORMATION* pJackSinkInformation);
         }
 
         public partial struct Vtbl

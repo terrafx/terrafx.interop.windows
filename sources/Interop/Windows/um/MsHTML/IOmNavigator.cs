@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("FECEAAA5-8405-11CF-8BA1-00AA00476DA6")]
     [NativeTypeName("struct IOmNavigator : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct IOmNavigator
+    public unsafe partial struct IOmNavigator : IOmNavigator.Interface
     {
         public void** lpVtbl;
 
@@ -205,6 +205,69 @@ namespace TerraFX.Interop
         public HRESULT get_userProfile(IHTMLOpsProfile** p)
         {
             return ((delegate* unmanaged<IOmNavigator*, IHTMLOpsProfile**, int>)(lpVtbl[26]))((IOmNavigator*)Unsafe.AsPointer(ref this), p);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT get_appCodeName([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(8)]
+            HRESULT get_appName([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(9)]
+            HRESULT get_appVersion([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(10)]
+            HRESULT get_userAgent([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(11)]
+            HRESULT javaEnabled([NativeTypeName("VARIANT_BOOL *")] short* enabled);
+
+            [VtblIndex(12)]
+            HRESULT taintEnabled([NativeTypeName("VARIANT_BOOL *")] short* enabled);
+
+            [VtblIndex(13)]
+            HRESULT get_mimeTypes(IHTMLMimeTypesCollection** p);
+
+            [VtblIndex(14)]
+            HRESULT get_plugins(IHTMLPluginsCollection** p);
+
+            [VtblIndex(15)]
+            HRESULT get_cookieEnabled([NativeTypeName("VARIANT_BOOL *")] short* p);
+
+            [VtblIndex(16)]
+            HRESULT get_opsProfile(IHTMLOpsProfile** p);
+
+            [VtblIndex(17)]
+            HRESULT toString([NativeTypeName("BSTR *")] ushort** @string);
+
+            [VtblIndex(18)]
+            HRESULT get_cpuClass([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(19)]
+            HRESULT get_systemLanguage([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(20)]
+            HRESULT get_browserLanguage([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(21)]
+            HRESULT get_userLanguage([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(22)]
+            HRESULT get_platform([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(23)]
+            HRESULT get_appMinorVersion([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(24)]
+            HRESULT get_connectionSpeed([NativeTypeName("long *")] int* p);
+
+            [VtblIndex(25)]
+            HRESULT get_onLine([NativeTypeName("VARIANT_BOOL *")] short* p);
+
+            [VtblIndex(26)]
+            HRESULT get_userProfile(IHTMLOpsProfile** p);
         }
 
         public partial struct Vtbl

@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("76E54780-AD74-48E3-A695-3BA9A0AFF10D")]
     [NativeTypeName("struct IPreviousVersionsInfo : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IPreviousVersionsInfo
+    public unsafe partial struct IPreviousVersionsInfo : IPreviousVersionsInfo.Interface
     {
         public void** lpVtbl;
 
@@ -44,6 +44,12 @@ namespace TerraFX.Interop
         public HRESULT AreSnapshotsAvailable([NativeTypeName("LPCWSTR")] ushort* pszPath, BOOL fOkToBeSlow, BOOL* pfAvailable)
         {
             return ((delegate* unmanaged<IPreviousVersionsInfo*, ushort*, BOOL, BOOL*, int>)(lpVtbl[3]))((IPreviousVersionsInfo*)Unsafe.AsPointer(ref this), pszPath, fOkToBeSlow, pfAvailable);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT AreSnapshotsAvailable([NativeTypeName("LPCWSTR")] ushort* pszPath, BOOL fOkToBeSlow, BOOL* pfAvailable);
         }
 
         public partial struct Vtbl

@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("ECC8691B-C1DB-4DC0-855E-65F6C551AF49")]
     [NativeTypeName("struct INoMarshal : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct INoMarshal
+    public unsafe partial struct INoMarshal : INoMarshal.Interface
     {
         public void** lpVtbl;
 
@@ -37,6 +37,10 @@ namespace TerraFX.Interop
         public uint Release()
         {
             return ((delegate* unmanaged<INoMarshal*, uint>)(lpVtbl[2]))((INoMarshal*)Unsafe.AsPointer(ref this));
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
         }
 
         public partial struct Vtbl

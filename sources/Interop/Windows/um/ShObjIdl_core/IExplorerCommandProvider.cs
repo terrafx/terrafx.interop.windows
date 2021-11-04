@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("64961751-0835-43C0-8FFE-D57686530E64")]
     [NativeTypeName("struct IExplorerCommandProvider : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IExplorerCommandProvider
+    public unsafe partial struct IExplorerCommandProvider : IExplorerCommandProvider.Interface
     {
         public void** lpVtbl;
 
@@ -51,6 +51,15 @@ namespace TerraFX.Interop
         public HRESULT GetCommand([NativeTypeName("const GUID &")] Guid* rguidCommandId, [NativeTypeName("const IID &")] Guid* riid, void** ppv)
         {
             return ((delegate* unmanaged<IExplorerCommandProvider*, Guid*, Guid*, void**, int>)(lpVtbl[4]))((IExplorerCommandProvider*)Unsafe.AsPointer(ref this), rguidCommandId, riid, ppv);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetCommands(IUnknown* punkSite, [NativeTypeName("const IID &")] Guid* riid, void** ppv);
+
+            [VtblIndex(4)]
+            HRESULT GetCommand([NativeTypeName("const GUID &")] Guid* rguidCommandId, [NativeTypeName("const IID &")] Guid* riid, void** ppv);
         }
 
         public partial struct Vtbl

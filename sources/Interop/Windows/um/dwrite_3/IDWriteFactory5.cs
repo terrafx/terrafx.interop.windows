@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("958DB99A-BE2A-4F09-AF7D-65189803D1D3")]
     [NativeTypeName("struct IDWriteFactory5 : IDWriteFactory4")]
     [NativeInheritance("IDWriteFactory4")]
-    public unsafe partial struct IDWriteFactory5
+    public unsafe partial struct IDWriteFactory5 : IDWriteFactory5.Interface
     {
         public void** lpVtbl;
 
@@ -352,6 +352,24 @@ namespace TerraFX.Interop
         public HRESULT UnpackFontFile(DWRITE_CONTAINER_TYPE containerType, [NativeTypeName("const void *")] void* fileData, [NativeTypeName("UINT32")] uint fileDataSize, IDWriteFontFileStream** unpackedFontStream)
         {
             return ((delegate* unmanaged<IDWriteFactory5*, DWRITE_CONTAINER_TYPE, void*, uint, IDWriteFontFileStream**, int>)(lpVtbl[47]))((IDWriteFactory5*)Unsafe.AsPointer(ref this), containerType, fileData, fileDataSize, unpackedFontStream);
+        }
+
+        public interface Interface : IDWriteFactory4.Interface
+        {
+            [VtblIndex(43)]
+            HRESULT CreateFontSetBuilder(IDWriteFontSetBuilder1** fontSetBuilder);
+
+            [VtblIndex(44)]
+            HRESULT CreateInMemoryFontFileLoader(IDWriteInMemoryFontFileLoader** newLoader);
+
+            [VtblIndex(45)]
+            HRESULT CreateHttpFontFileLoader([NativeTypeName("const wchar_t *")] ushort* referrerUrl, [NativeTypeName("const wchar_t *")] ushort* extraHeaders, IDWriteRemoteFontFileLoader** newLoader);
+
+            [VtblIndex(46)]
+            DWRITE_CONTAINER_TYPE AnalyzeContainerType([NativeTypeName("const void *")] void* fileData, [NativeTypeName("UINT32")] uint fileDataSize);
+
+            [VtblIndex(47)]
+            HRESULT UnpackFontFile(DWRITE_CONTAINER_TYPE containerType, [NativeTypeName("const void *")] void* fileData, [NativeTypeName("UINT32")] uint fileDataSize, IDWriteFontFileStream** unpackedFontStream);
         }
 
         public partial struct Vtbl

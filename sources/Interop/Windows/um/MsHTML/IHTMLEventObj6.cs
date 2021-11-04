@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("30510734-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct IHTMLEventObj6 : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct IHTMLEventObj6
+    public unsafe partial struct IHTMLEventObj6 : IHTMLEventObj6.Interface
     {
         public void** lpVtbl;
 
@@ -79,6 +79,15 @@ namespace TerraFX.Interop
         public HRESULT get_buttonID([NativeTypeName("long *")] int* p)
         {
             return ((delegate* unmanaged<IHTMLEventObj6*, int*, int>)(lpVtbl[8]))((IHTMLEventObj6*)Unsafe.AsPointer(ref this), p);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT get_actionURL([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(8)]
+            HRESULT get_buttonID([NativeTypeName("long *")] int* p);
         }
 
         public partial struct Vtbl

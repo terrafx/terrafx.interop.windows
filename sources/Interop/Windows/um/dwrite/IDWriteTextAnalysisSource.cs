@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("688E1A58-5094-47C8-ADC8-FBCEA60AE92B")]
     [NativeTypeName("struct IDWriteTextAnalysisSource : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IDWriteTextAnalysisSource
+    public unsafe partial struct IDWriteTextAnalysisSource : IDWriteTextAnalysisSource.Interface
     {
         public void** lpVtbl;
 
@@ -72,6 +72,24 @@ namespace TerraFX.Interop
         public HRESULT GetNumberSubstitution([NativeTypeName("UINT32")] uint textPosition, [NativeTypeName("UINT32 *")] uint* textLength, IDWriteNumberSubstitution** numberSubstitution)
         {
             return ((delegate* unmanaged<IDWriteTextAnalysisSource*, uint, uint*, IDWriteNumberSubstitution**, int>)(lpVtbl[7]))((IDWriteTextAnalysisSource*)Unsafe.AsPointer(ref this), textPosition, textLength, numberSubstitution);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetTextAtPosition([NativeTypeName("UINT32")] uint textPosition, [NativeTypeName("const WCHAR **")] ushort** textString, [NativeTypeName("UINT32 *")] uint* textLength);
+
+            [VtblIndex(4)]
+            HRESULT GetTextBeforePosition([NativeTypeName("UINT32")] uint textPosition, [NativeTypeName("const WCHAR **")] ushort** textString, [NativeTypeName("UINT32 *")] uint* textLength);
+
+            [VtblIndex(5)]
+            DWRITE_READING_DIRECTION GetParagraphReadingDirection();
+
+            [VtblIndex(6)]
+            HRESULT GetLocaleName([NativeTypeName("UINT32")] uint textPosition, [NativeTypeName("UINT32 *")] uint* textLength, [NativeTypeName("const WCHAR **")] ushort** localeName);
+
+            [VtblIndex(7)]
+            HRESULT GetNumberSubstitution([NativeTypeName("UINT32")] uint textPosition, [NativeTypeName("UINT32 *")] uint* textLength, IDWriteNumberSubstitution** numberSubstitution);
         }
 
         public partial struct Vtbl

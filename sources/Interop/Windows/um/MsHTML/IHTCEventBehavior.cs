@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("3050F4FF-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct IHTCEventBehavior : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct IHTCEventBehavior
+    public unsafe partial struct IHTCEventBehavior : IHTCEventBehavior.Interface
     {
         public void** lpVtbl;
 
@@ -72,6 +72,12 @@ namespace TerraFX.Interop
         public HRESULT fire(IHTMLEventObj* pvar)
         {
             return ((delegate* unmanaged<IHTCEventBehavior*, IHTMLEventObj*, int>)(lpVtbl[7]))((IHTCEventBehavior*)Unsafe.AsPointer(ref this), pvar);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT fire(IHTMLEventObj* pvar);
         }
 
         public partial struct Vtbl

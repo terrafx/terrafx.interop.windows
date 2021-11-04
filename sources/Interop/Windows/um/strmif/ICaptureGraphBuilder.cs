@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("BF87B6E0-8C27-11D0-B3F0-00AA003761C5")]
     [NativeTypeName("struct ICaptureGraphBuilder : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct ICaptureGraphBuilder
+    public unsafe partial struct ICaptureGraphBuilder : ICaptureGraphBuilder.Interface
     {
         public void** lpVtbl;
 
@@ -93,6 +93,33 @@ namespace TerraFX.Interop
         public HRESULT CopyCaptureFile([NativeTypeName("LPOLESTR")] ushort* lpwstrOld, [NativeTypeName("LPOLESTR")] ushort* lpwstrNew, int fAllowEscAbort, IAMCopyCaptureFileProgress* pCallback)
         {
             return ((delegate* unmanaged<ICaptureGraphBuilder*, ushort*, ushort*, int, IAMCopyCaptureFileProgress*, int>)(lpVtbl[10]))((ICaptureGraphBuilder*)Unsafe.AsPointer(ref this), lpwstrOld, lpwstrNew, fAllowEscAbort, pCallback);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT SetFiltergraph(IGraphBuilder* pfg);
+
+            [VtblIndex(4)]
+            HRESULT GetFiltergraph(IGraphBuilder** ppfg);
+
+            [VtblIndex(5)]
+            HRESULT SetOutputFileName([NativeTypeName("const GUID *")] Guid* pType, [NativeTypeName("LPCOLESTR")] ushort* lpstrFile, IBaseFilter** ppf, IFileSinkFilter** ppSink);
+
+            [VtblIndex(6)]
+            HRESULT FindInterface([NativeTypeName("const GUID *")] Guid* pCategory, IBaseFilter* pf, [NativeTypeName("const IID &")] Guid* riid, void** ppint);
+
+            [VtblIndex(7)]
+            HRESULT RenderStream([NativeTypeName("const GUID *")] Guid* pCategory, IUnknown* pSource, IBaseFilter* pfCompressor, IBaseFilter* pfRenderer);
+
+            [VtblIndex(8)]
+            HRESULT ControlStream([NativeTypeName("const GUID *")] Guid* pCategory, IBaseFilter* pFilter, [NativeTypeName("REFERENCE_TIME *")] long* pstart, [NativeTypeName("REFERENCE_TIME *")] long* pstop, [NativeTypeName("WORD")] ushort wStartCookie, [NativeTypeName("WORD")] ushort wStopCookie);
+
+            [VtblIndex(9)]
+            HRESULT AllocCapFile([NativeTypeName("LPCOLESTR")] ushort* lpstr, [NativeTypeName("DWORDLONG")] ulong dwlSize);
+
+            [VtblIndex(10)]
+            HRESULT CopyCaptureFile([NativeTypeName("LPOLESTR")] ushort* lpwstrOld, [NativeTypeName("LPOLESTR")] ushort* lpwstrNew, int fAllowEscAbort, IAMCopyCaptureFileProgress* pCallback);
         }
 
         public partial struct Vtbl

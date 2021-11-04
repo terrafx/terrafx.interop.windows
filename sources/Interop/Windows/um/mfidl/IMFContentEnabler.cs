@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("D3C4EF59-49CE-4381-9071-D5BCD044C770")]
     [NativeTypeName("struct IMFContentEnabler : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IMFContentEnabler
+    public unsafe partial struct IMFContentEnabler : IMFContentEnabler.Interface
     {
         public void** lpVtbl;
 
@@ -86,6 +86,30 @@ namespace TerraFX.Interop
         public HRESULT Cancel()
         {
             return ((delegate* unmanaged<IMFContentEnabler*, int>)(lpVtbl[9]))((IMFContentEnabler*)Unsafe.AsPointer(ref this));
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetEnableType(Guid* pType);
+
+            [VtblIndex(4)]
+            HRESULT GetEnableURL([NativeTypeName("LPWSTR *")] ushort** ppwszURL, [NativeTypeName("DWORD *")] uint* pcchURL, MF_URL_TRUST_STATUS* pTrustStatus);
+
+            [VtblIndex(5)]
+            HRESULT GetEnableData(byte** ppbData, [NativeTypeName("DWORD *")] uint* pcbData);
+
+            [VtblIndex(6)]
+            HRESULT IsAutomaticSupported(BOOL* pfAutomatic);
+
+            [VtblIndex(7)]
+            HRESULT AutomaticEnable();
+
+            [VtblIndex(8)]
+            HRESULT MonitorEnable();
+
+            [VtblIndex(9)]
+            HRESULT Cancel();
         }
 
         public partial struct Vtbl

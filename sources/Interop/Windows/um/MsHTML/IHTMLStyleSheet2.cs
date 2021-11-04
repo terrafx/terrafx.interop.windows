@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("3050F3D1-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct IHTMLStyleSheet2 : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct IHTMLStyleSheet2
+    public unsafe partial struct IHTMLStyleSheet2 : IHTMLStyleSheet2.Interface
     {
         public void** lpVtbl;
 
@@ -79,6 +79,15 @@ namespace TerraFX.Interop
         public HRESULT addPageRule([NativeTypeName("BSTR")] ushort* bstrSelector, [NativeTypeName("BSTR")] ushort* bstrStyle, [NativeTypeName("long")] int lIndex, [NativeTypeName("long *")] int* plNewIndex)
         {
             return ((delegate* unmanaged<IHTMLStyleSheet2*, ushort*, ushort*, int, int*, int>)(lpVtbl[8]))((IHTMLStyleSheet2*)Unsafe.AsPointer(ref this), bstrSelector, bstrStyle, lIndex, plNewIndex);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT get_pages(IHTMLStyleSheetPagesCollection** p);
+
+            [VtblIndex(8)]
+            HRESULT addPageRule([NativeTypeName("BSTR")] ushort* bstrSelector, [NativeTypeName("BSTR")] ushort* bstrStyle, [NativeTypeName("long")] int lIndex, [NativeTypeName("long *")] int* plNewIndex);
         }
 
         public partial struct Vtbl

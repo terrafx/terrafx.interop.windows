@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("418726D8-DD99-4F5D-9886-157ADD20DE01")]
     [NativeTypeName("struct IAppxContentGroupMapReader : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IAppxContentGroupMapReader
+    public unsafe partial struct IAppxContentGroupMapReader : IAppxContentGroupMapReader.Interface
     {
         public void** lpVtbl;
 
@@ -51,6 +51,15 @@ namespace TerraFX.Interop
         public HRESULT GetAutomaticGroups(IAppxContentGroupsEnumerator** automaticGroupsEnumerator)
         {
             return ((delegate* unmanaged<IAppxContentGroupMapReader*, IAppxContentGroupsEnumerator**, int>)(lpVtbl[4]))((IAppxContentGroupMapReader*)Unsafe.AsPointer(ref this), automaticGroupsEnumerator);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetRequiredGroup(IAppxContentGroup** requiredGroup);
+
+            [VtblIndex(4)]
+            HRESULT GetAutomaticGroups(IAppxContentGroupsEnumerator** automaticGroupsEnumerator);
         }
 
         public partial struct Vtbl

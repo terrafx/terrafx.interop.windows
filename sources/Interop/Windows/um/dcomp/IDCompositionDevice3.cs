@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("0987CB06-F916-48BF-8D35-CE7641781BD9")]
     [NativeTypeName("struct IDCompositionDevice3 : IDCompositionDevice2")]
     [NativeInheritance("IDCompositionDevice2")]
-    public unsafe partial struct IDCompositionDevice3
+    public unsafe partial struct IDCompositionDevice3 : IDCompositionDevice3.Interface
     {
         public void** lpVtbl;
 
@@ -275,6 +275,48 @@ namespace TerraFX.Interop
         public HRESULT CreateAffineTransform2DEffect(IDCompositionAffineTransform2DEffect** affineTransform2dEffect)
         {
             return ((delegate* unmanaged<IDCompositionDevice3*, IDCompositionAffineTransform2DEffect**, int>)(lpVtbl[36]))((IDCompositionDevice3*)Unsafe.AsPointer(ref this), affineTransform2dEffect);
+        }
+
+        public interface Interface : IDCompositionDevice2.Interface
+        {
+            [VtblIndex(24)]
+            HRESULT CreateGaussianBlurEffect(IDCompositionGaussianBlurEffect** gaussianBlurEffect);
+
+            [VtblIndex(25)]
+            HRESULT CreateBrightnessEffect(IDCompositionBrightnessEffect** brightnessEffect);
+
+            [VtblIndex(26)]
+            HRESULT CreateColorMatrixEffect(IDCompositionColorMatrixEffect** colorMatrixEffect);
+
+            [VtblIndex(27)]
+            HRESULT CreateShadowEffect(IDCompositionShadowEffect** shadowEffect);
+
+            [VtblIndex(28)]
+            HRESULT CreateHueRotationEffect(IDCompositionHueRotationEffect** hueRotationEffect);
+
+            [VtblIndex(29)]
+            HRESULT CreateSaturationEffect(IDCompositionSaturationEffect** saturationEffect);
+
+            [VtblIndex(30)]
+            HRESULT CreateTurbulenceEffect(IDCompositionTurbulenceEffect** turbulenceEffect);
+
+            [VtblIndex(31)]
+            HRESULT CreateLinearTransferEffect(IDCompositionLinearTransferEffect** linearTransferEffect);
+
+            [VtblIndex(32)]
+            HRESULT CreateTableTransferEffect(IDCompositionTableTransferEffect** tableTransferEffect);
+
+            [VtblIndex(33)]
+            HRESULT CreateCompositeEffect(IDCompositionCompositeEffect** compositeEffect);
+
+            [VtblIndex(34)]
+            HRESULT CreateBlendEffect(IDCompositionBlendEffect** blendEffect);
+
+            [VtblIndex(35)]
+            HRESULT CreateArithmeticCompositeEffect(IDCompositionArithmeticCompositeEffect** arithmeticCompositeEffect);
+
+            [VtblIndex(36)]
+            HRESULT CreateAffineTransform2DEffect(IDCompositionAffineTransform2DEffect** affineTransform2dEffect);
         }
 
         public partial struct Vtbl

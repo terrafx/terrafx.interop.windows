@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("8754318E-D3A9-4541-98CF-645B50DC4874")]
     [NativeTypeName("struct ID3D12GraphicsCommandList4 : ID3D12GraphicsCommandList3")]
     [NativeInheritance("ID3D12GraphicsCommandList3")]
-    public unsafe partial struct ID3D12GraphicsCommandList4
+    public unsafe partial struct ID3D12GraphicsCommandList4 : ID3D12GraphicsCommandList4.Interface
     {
         public void** lpVtbl;
 
@@ -555,6 +555,36 @@ namespace TerraFX.Interop
         public void DispatchRays([NativeTypeName("const D3D12_DISPATCH_RAYS_DESC *")] D3D12_DISPATCH_RAYS_DESC* pDesc)
         {
             ((delegate* unmanaged<ID3D12GraphicsCommandList4*, D3D12_DISPATCH_RAYS_DESC*, void>)(lpVtbl[76]))((ID3D12GraphicsCommandList4*)Unsafe.AsPointer(ref this), pDesc);
+        }
+
+        public interface Interface : ID3D12GraphicsCommandList3.Interface
+        {
+            [VtblIndex(68)]
+            void BeginRenderPass(uint NumRenderTargets, [NativeTypeName("const D3D12_RENDER_PASS_RENDER_TARGET_DESC *")] D3D12_RENDER_PASS_RENDER_TARGET_DESC* pRenderTargets, [NativeTypeName("const D3D12_RENDER_PASS_DEPTH_STENCIL_DESC *")] D3D12_RENDER_PASS_DEPTH_STENCIL_DESC* pDepthStencil, D3D12_RENDER_PASS_FLAGS Flags);
+
+            [VtblIndex(69)]
+            void EndRenderPass();
+
+            [VtblIndex(70)]
+            void InitializeMetaCommand(ID3D12MetaCommand* pMetaCommand, [NativeTypeName("const void *")] void* pInitializationParametersData, [NativeTypeName("SIZE_T")] nuint InitializationParametersDataSizeInBytes);
+
+            [VtblIndex(71)]
+            void ExecuteMetaCommand(ID3D12MetaCommand* pMetaCommand, [NativeTypeName("const void *")] void* pExecutionParametersData, [NativeTypeName("SIZE_T")] nuint ExecutionParametersDataSizeInBytes);
+
+            [VtblIndex(72)]
+            void BuildRaytracingAccelerationStructure([NativeTypeName("const D3D12_BUILD_RAYTRACING_ACCELERATION_STRUCTURE_DESC *")] D3D12_BUILD_RAYTRACING_ACCELERATION_STRUCTURE_DESC* pDesc, uint NumPostbuildInfoDescs, [NativeTypeName("const D3D12_RAYTRACING_ACCELERATION_STRUCTURE_POSTBUILD_INFO_DESC *")] D3D12_RAYTRACING_ACCELERATION_STRUCTURE_POSTBUILD_INFO_DESC* pPostbuildInfoDescs);
+
+            [VtblIndex(73)]
+            void EmitRaytracingAccelerationStructurePostbuildInfo([NativeTypeName("const D3D12_RAYTRACING_ACCELERATION_STRUCTURE_POSTBUILD_INFO_DESC *")] D3D12_RAYTRACING_ACCELERATION_STRUCTURE_POSTBUILD_INFO_DESC* pDesc, uint NumSourceAccelerationStructures, [NativeTypeName("const D3D12_GPU_VIRTUAL_ADDRESS *")] ulong* pSourceAccelerationStructureData);
+
+            [VtblIndex(74)]
+            void CopyRaytracingAccelerationStructure([NativeTypeName("D3D12_GPU_VIRTUAL_ADDRESS")] ulong DestAccelerationStructureData, [NativeTypeName("D3D12_GPU_VIRTUAL_ADDRESS")] ulong SourceAccelerationStructureData, D3D12_RAYTRACING_ACCELERATION_STRUCTURE_COPY_MODE Mode);
+
+            [VtblIndex(75)]
+            void SetPipelineState1(ID3D12StateObject* pStateObject);
+
+            [VtblIndex(76)]
+            void DispatchRays([NativeTypeName("const D3D12_DISPATCH_RAYS_DESC *")] D3D12_DISPATCH_RAYS_DESC* pDesc);
         }
 
         public partial struct Vtbl

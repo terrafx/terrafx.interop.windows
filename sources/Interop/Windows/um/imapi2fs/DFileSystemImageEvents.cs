@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("2C941FDF-975B-59BE-A960-9A2A262853A5")]
     [NativeTypeName("struct DFileSystemImageEvents : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct DFileSystemImageEvents
+    public unsafe partial struct DFileSystemImageEvents : DFileSystemImageEvents.Interface
     {
         public void** lpVtbl;
 
@@ -72,6 +72,12 @@ namespace TerraFX.Interop
         public HRESULT Update(IDispatch* @object, [NativeTypeName("BSTR")] ushort* currentFile, [NativeTypeName("LONG")] int copiedSectors, [NativeTypeName("LONG")] int totalSectors)
         {
             return ((delegate* unmanaged<DFileSystemImageEvents*, IDispatch*, ushort*, int, int, int>)(lpVtbl[7]))((DFileSystemImageEvents*)Unsafe.AsPointer(ref this), @object, currentFile, copiedSectors, totalSectors);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT Update(IDispatch* @object, [NativeTypeName("BSTR")] ushort* currentFile, [NativeTypeName("LONG")] int copiedSectors, [NativeTypeName("LONG")] int totalSectors);
         }
 
         public partial struct Vtbl

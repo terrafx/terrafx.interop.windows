@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("3050F2D6-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct IHTMLProgressElement : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct IHTMLProgressElement
+    public unsafe partial struct IHTMLProgressElement : IHTMLProgressElement.Interface
     {
         public void** lpVtbl;
 
@@ -107,6 +107,27 @@ namespace TerraFX.Interop
         public HRESULT get_form(IHTMLFormElement** p)
         {
             return ((delegate* unmanaged<IHTMLProgressElement*, IHTMLFormElement**, int>)(lpVtbl[12]))((IHTMLProgressElement*)Unsafe.AsPointer(ref this), p);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT put_value(float v);
+
+            [VtblIndex(8)]
+            HRESULT get_value(float* p);
+
+            [VtblIndex(9)]
+            HRESULT put_max(float v);
+
+            [VtblIndex(10)]
+            HRESULT get_max(float* p);
+
+            [VtblIndex(11)]
+            HRESULT get_position(float* p);
+
+            [VtblIndex(12)]
+            HRESULT get_form(IHTMLFormElement** p);
         }
 
         public partial struct Vtbl

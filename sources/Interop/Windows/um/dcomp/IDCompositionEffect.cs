@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("EC81B08F-BFCB-4E8D-B193-A915587999E8")]
     [NativeTypeName("struct IDCompositionEffect : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IDCompositionEffect
+    public unsafe partial struct IDCompositionEffect : IDCompositionEffect.Interface
     {
         public void** lpVtbl;
 
@@ -37,6 +37,10 @@ namespace TerraFX.Interop
         public uint Release()
         {
             return ((delegate* unmanaged<IDCompositionEffect*, uint>)(lpVtbl[2]))((IDCompositionEffect*)Unsafe.AsPointer(ref this));
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
         }
 
         public partial struct Vtbl

@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("27F2A904-4EB8-441D-9678-0563F53E3E2F")]
     [NativeTypeName("struct IDWriteFontFace4 : IDWriteFontFace3")]
     [NativeInheritance("IDWriteFontFace3")]
-    public unsafe partial struct IDWriteFontFace4
+    public unsafe partial struct IDWriteFontFace4 : IDWriteFontFace4.Interface
     {
         public void** lpVtbl;
 
@@ -391,6 +391,21 @@ namespace TerraFX.Interop
         public void ReleaseGlyphImageData(void* glyphDataContext)
         {
             ((delegate* unmanaged<IDWriteFontFace4*, void*, void>)(lpVtbl[52]))((IDWriteFontFace4*)Unsafe.AsPointer(ref this), glyphDataContext);
+        }
+
+        public interface Interface : IDWriteFontFace3.Interface
+        {
+            [VtblIndex(49)]
+            HRESULT GetGlyphImageFormats([NativeTypeName("UINT16")] ushort glyphId, [NativeTypeName("UINT32")] uint pixelsPerEmFirst, [NativeTypeName("UINT32")] uint pixelsPerEmLast, DWRITE_GLYPH_IMAGE_FORMATS* glyphImageFormats);
+
+            [VtblIndex(50)]
+            DWRITE_GLYPH_IMAGE_FORMATS GetGlyphImageFormats();
+
+            [VtblIndex(51)]
+            HRESULT GetGlyphImageData([NativeTypeName("UINT16")] ushort glyphId, [NativeTypeName("UINT32")] uint pixelsPerEm, DWRITE_GLYPH_IMAGE_FORMATS glyphImageFormat, DWRITE_GLYPH_IMAGE_DATA* glyphData, void** glyphDataContext);
+
+            [VtblIndex(52)]
+            void ReleaseGlyphImageData(void* glyphDataContext);
         }
 
         public partial struct Vtbl

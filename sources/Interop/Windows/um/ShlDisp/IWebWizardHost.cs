@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("18BCC359-4990-4BFB-B951-3C83702BE5F9")]
     [NativeTypeName("struct IWebWizardHost : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct IWebWizardHost
+    public unsafe partial struct IWebWizardHost : IWebWizardHost.Interface
     {
         public void** lpVtbl;
 
@@ -128,6 +128,36 @@ namespace TerraFX.Interop
         public HRESULT SetHeaderText([NativeTypeName("BSTR")] ushort* bstrHeaderTitle, [NativeTypeName("BSTR")] ushort* bstrHeaderSubtitle)
         {
             return ((delegate* unmanaged<IWebWizardHost*, ushort*, ushort*, int>)(lpVtbl[15]))((IWebWizardHost*)Unsafe.AsPointer(ref this), bstrHeaderTitle, bstrHeaderSubtitle);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT FinalBack();
+
+            [VtblIndex(8)]
+            HRESULT FinalNext();
+
+            [VtblIndex(9)]
+            HRESULT Cancel();
+
+            [VtblIndex(10)]
+            HRESULT put_Caption([NativeTypeName("BSTR")] ushort* bstrCaption);
+
+            [VtblIndex(11)]
+            HRESULT get_Caption([NativeTypeName("BSTR *")] ushort** pbstrCaption);
+
+            [VtblIndex(12)]
+            HRESULT put_Property([NativeTypeName("BSTR")] ushort* bstrPropertyName, VARIANT* pvProperty);
+
+            [VtblIndex(13)]
+            HRESULT get_Property([NativeTypeName("BSTR")] ushort* bstrPropertyName, VARIANT* pvProperty);
+
+            [VtblIndex(14)]
+            HRESULT SetWizardButtons([NativeTypeName("VARIANT_BOOL")] short vfEnableBack, [NativeTypeName("VARIANT_BOOL")] short vfEnableNext, [NativeTypeName("VARIANT_BOOL")] short vfLastPage);
+
+            [VtblIndex(15)]
+            HRESULT SetHeaderText([NativeTypeName("BSTR")] ushort* bstrHeaderTitle, [NativeTypeName("BSTR")] ushort* bstrHeaderSubtitle);
         }
 
         public partial struct Vtbl

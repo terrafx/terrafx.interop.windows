@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("A1533D18-0AC1-4084-85B9-89A96116806B")]
     [NativeTypeName("struct ID3D12ProtectedSession : ID3D12DeviceChild")]
     [NativeInheritance("ID3D12DeviceChild")]
-    public unsafe partial struct ID3D12ProtectedSession
+    public unsafe partial struct ID3D12ProtectedSession : ID3D12ProtectedSession.Interface
     {
         public void** lpVtbl;
 
@@ -86,6 +86,15 @@ namespace TerraFX.Interop
         public D3D12_PROTECTED_SESSION_STATUS GetSessionStatus()
         {
             return ((delegate* unmanaged<ID3D12ProtectedSession*, D3D12_PROTECTED_SESSION_STATUS>)(lpVtbl[9]))((ID3D12ProtectedSession*)Unsafe.AsPointer(ref this));
+        }
+
+        public interface Interface : ID3D12DeviceChild.Interface
+        {
+            [VtblIndex(8)]
+            HRESULT GetStatusFence([NativeTypeName("const IID &")] Guid* riid, void** ppFence);
+
+            [VtblIndex(9)]
+            D3D12_PROTECTED_SESSION_STATUS GetSessionStatus();
         }
 
         public partial struct Vtbl

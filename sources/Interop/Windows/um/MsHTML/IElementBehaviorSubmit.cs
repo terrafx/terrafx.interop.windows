@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("3050F646-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct IElementBehaviorSubmit : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IElementBehaviorSubmit
+    public unsafe partial struct IElementBehaviorSubmit : IElementBehaviorSubmit.Interface
     {
         public void** lpVtbl;
 
@@ -51,6 +51,15 @@ namespace TerraFX.Interop
         public HRESULT Reset()
         {
             return ((delegate* unmanaged<IElementBehaviorSubmit*, int>)(lpVtbl[4]))((IElementBehaviorSubmit*)Unsafe.AsPointer(ref this));
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetSubmitInfo(IHTMLSubmitData* pSubmitData);
+
+            [VtblIndex(4)]
+            HRESULT Reset();
         }
 
         public partial struct Vtbl

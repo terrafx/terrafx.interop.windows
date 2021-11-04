@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("C1170A22-3CE2-4966-90D4-55408BFC84C4")]
     [NativeTypeName("struct IDCompositionColorMatrixEffect : IDCompositionFilterEffect")]
     [NativeInheritance("IDCompositionFilterEffect")]
-    public unsafe partial struct IDCompositionColorMatrixEffect
+    public unsafe partial struct IDCompositionColorMatrixEffect : IDCompositionColorMatrixEffect.Interface
     {
         public void** lpVtbl;
 
@@ -79,6 +79,24 @@ namespace TerraFX.Interop
         public HRESULT SetClampOutput(BOOL clamp)
         {
             return ((delegate* unmanaged<IDCompositionColorMatrixEffect*, BOOL, int>)(lpVtbl[8]))((IDCompositionColorMatrixEffect*)Unsafe.AsPointer(ref this), clamp);
+        }
+
+        public interface Interface : IDCompositionFilterEffect.Interface
+        {
+            [VtblIndex(4)]
+            HRESULT SetMatrix([NativeTypeName("const D2D1_MATRIX_5X4_F &")] D2D_MATRIX_5X4_F* matrix);
+
+            [VtblIndex(5)]
+            HRESULT SetMatrixElement(int row, int column, IDCompositionAnimation* animation);
+
+            [VtblIndex(6)]
+            HRESULT SetMatrixElement(int row, int column, float value);
+
+            [VtblIndex(7)]
+            HRESULT SetAlphaMode(D2D1_COLORMATRIX_ALPHA_MODE mode);
+
+            [VtblIndex(8)]
+            HRESULT SetClampOutput(BOOL clamp);
         }
 
         public partial struct Vtbl

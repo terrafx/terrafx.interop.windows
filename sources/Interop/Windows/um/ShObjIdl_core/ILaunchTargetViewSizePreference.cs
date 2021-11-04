@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("2F0666C6-12F7-4360-B511-A394A0553725")]
     [NativeTypeName("struct ILaunchTargetViewSizePreference : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct ILaunchTargetViewSizePreference
+    public unsafe partial struct ILaunchTargetViewSizePreference : ILaunchTargetViewSizePreference.Interface
     {
         public void** lpVtbl;
 
@@ -44,6 +44,12 @@ namespace TerraFX.Interop
         public HRESULT GetTargetViewSizePreference(APPLICATION_VIEW_SIZE_PREFERENCE* targetSizeOnLaunch)
         {
             return ((delegate* unmanaged<ILaunchTargetViewSizePreference*, APPLICATION_VIEW_SIZE_PREFERENCE*, int>)(lpVtbl[3]))((ILaunchTargetViewSizePreference*)Unsafe.AsPointer(ref this), targetSizeOnLaunch);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetTargetViewSizePreference(APPLICATION_VIEW_SIZE_PREFERENCE* targetSizeOnLaunch);
         }
 
         public partial struct Vtbl

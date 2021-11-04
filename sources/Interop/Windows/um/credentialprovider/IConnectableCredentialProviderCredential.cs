@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("9387928B-AC75-4BF9-8AB2-2B93C4A55290")]
     [NativeTypeName("struct IConnectableCredentialProviderCredential : ICredentialProviderCredential")]
     [NativeInheritance("ICredentialProviderCredential")]
-    public unsafe partial struct IConnectableCredentialProviderCredential
+    public unsafe partial struct IConnectableCredentialProviderCredential : IConnectableCredentialProviderCredential.Interface
     {
         public void** lpVtbl;
 
@@ -170,6 +170,15 @@ namespace TerraFX.Interop
         public HRESULT Disconnect()
         {
             return ((delegate* unmanaged<IConnectableCredentialProviderCredential*, int>)(lpVtbl[21]))((IConnectableCredentialProviderCredential*)Unsafe.AsPointer(ref this));
+        }
+
+        public interface Interface : ICredentialProviderCredential.Interface
+        {
+            [VtblIndex(20)]
+            HRESULT Connect(IQueryContinueWithStatus* pqcws);
+
+            [VtblIndex(21)]
+            HRESULT Disconnect();
         }
 
         public partial struct Vtbl

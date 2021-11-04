@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("866738B9-6CF2-4DE8-8767-F794EBE74F4E")]
     [NativeTypeName("struct IShellDispatch5 : IShellDispatch4")]
     [NativeInheritance("IShellDispatch4")]
-    public unsafe partial struct IShellDispatch5
+    public unsafe partial struct IShellDispatch5 : IShellDispatch5.Interface
     {
         public void** lpVtbl;
 
@@ -331,6 +331,12 @@ namespace TerraFX.Interop
         public HRESULT WindowSwitcher()
         {
             return ((delegate* unmanaged<IShellDispatch5*, int>)(lpVtbl[44]))((IShellDispatch5*)Unsafe.AsPointer(ref this));
+        }
+
+        public interface Interface : IShellDispatch4.Interface
+        {
+            [VtblIndex(44)]
+            HRESULT WindowSwitcher();
         }
 
         public partial struct Vtbl

@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("AA7A8931-80E4-4FEC-8F3B-553F87B4966E")]
     [NativeTypeName("struct IVisualTreeServiceCallback : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IVisualTreeServiceCallback
+    public unsafe partial struct IVisualTreeServiceCallback : IVisualTreeServiceCallback.Interface
     {
         public void** lpVtbl;
 
@@ -44,6 +44,12 @@ namespace TerraFX.Interop
         public HRESULT OnVisualTreeChange(ParentChildRelation relation, VisualElement element, VisualMutationType mutationType)
         {
             return ((delegate* unmanaged<IVisualTreeServiceCallback*, ParentChildRelation, VisualElement, VisualMutationType, int>)(lpVtbl[3]))((IVisualTreeServiceCallback*)Unsafe.AsPointer(ref this), relation, element, mutationType);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT OnVisualTreeChange(ParentChildRelation relation, VisualElement element, VisualMutationType mutationType);
         }
 
         public partial struct Vtbl

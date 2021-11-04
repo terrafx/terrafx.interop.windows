@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("8FFDE202-A0E7-45DF-9E01-E837801B5EA0")]
     [NativeTypeName("struct ID3D11Device5 : ID3D11Device4")]
     [NativeInheritance("ID3D11Device4")]
-    public unsafe partial struct ID3D11Device5
+    public unsafe partial struct ID3D11Device5 : ID3D11Device5.Interface
     {
         public void** lpVtbl;
 
@@ -499,6 +499,15 @@ namespace TerraFX.Interop
         public HRESULT CreateFence([NativeTypeName("UINT64")] ulong InitialValue, D3D11_FENCE_FLAG Flags, [NativeTypeName("const IID &")] Guid* ReturnedInterface, void** ppFence)
         {
             return ((delegate* unmanaged<ID3D11Device5*, ulong, D3D11_FENCE_FLAG, Guid*, void**, int>)(lpVtbl[68]))((ID3D11Device5*)Unsafe.AsPointer(ref this), InitialValue, Flags, ReturnedInterface, ppFence);
+        }
+
+        public interface Interface : ID3D11Device4.Interface
+        {
+            [VtblIndex(67)]
+            HRESULT OpenSharedFence(HANDLE hFence, [NativeTypeName("const IID &")] Guid* ReturnedInterface, void** ppFence);
+
+            [VtblIndex(68)]
+            HRESULT CreateFence([NativeTypeName("UINT64")] ulong InitialValue, D3D11_FENCE_FLAG Flags, [NativeTypeName("const IID &")] Guid* ReturnedInterface, void** ppFence);
         }
 
         public partial struct Vtbl

@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("FBEC5E44-F7BE-4B65-B7F8-C0C81FEF026D")]
     [NativeTypeName("struct IWICDevelopRaw : IWICBitmapFrameDecode")]
     [NativeInheritance("IWICBitmapFrameDecode")]
-    public unsafe partial struct IWICDevelopRaw
+    public unsafe partial struct IWICDevelopRaw : IWICDevelopRaw.Interface
     {
         public void** lpVtbl;
 
@@ -317,6 +317,105 @@ namespace TerraFX.Interop
         public HRESULT SetNotificationCallback(IWICDevelopRawNotificationCallback* pCallback)
         {
             return ((delegate* unmanaged<IWICDevelopRaw*, IWICDevelopRawNotificationCallback*, int>)(lpVtbl[42]))((IWICDevelopRaw*)Unsafe.AsPointer(ref this), pCallback);
+        }
+
+        public interface Interface : IWICBitmapFrameDecode.Interface
+        {
+            [VtblIndex(11)]
+            HRESULT QueryRawCapabilitiesInfo(WICRawCapabilitiesInfo* pInfo);
+
+            [VtblIndex(12)]
+            HRESULT LoadParameterSet(WICRawParameterSet ParameterSet);
+
+            [VtblIndex(13)]
+            HRESULT GetCurrentParameterSet(IPropertyBag2** ppCurrentParameterSet);
+
+            [VtblIndex(14)]
+            HRESULT SetExposureCompensation(double ev);
+
+            [VtblIndex(15)]
+            HRESULT GetExposureCompensation(double* pEV);
+
+            [VtblIndex(16)]
+            HRESULT SetWhitePointRGB(uint Red, uint Green, uint Blue);
+
+            [VtblIndex(17)]
+            HRESULT GetWhitePointRGB(uint* pRed, uint* pGreen, uint* pBlue);
+
+            [VtblIndex(18)]
+            HRESULT SetNamedWhitePoint(WICNamedWhitePoint WhitePoint);
+
+            [VtblIndex(19)]
+            HRESULT GetNamedWhitePoint(WICNamedWhitePoint* pWhitePoint);
+
+            [VtblIndex(20)]
+            HRESULT SetWhitePointKelvin(uint WhitePointKelvin);
+
+            [VtblIndex(21)]
+            HRESULT GetWhitePointKelvin(uint* pWhitePointKelvin);
+
+            [VtblIndex(22)]
+            HRESULT GetKelvinRangeInfo(uint* pMinKelvinTemp, uint* pMaxKelvinTemp, uint* pKelvinTempStepValue);
+
+            [VtblIndex(23)]
+            HRESULT SetContrast(double Contrast);
+
+            [VtblIndex(24)]
+            HRESULT GetContrast(double* pContrast);
+
+            [VtblIndex(25)]
+            HRESULT SetGamma(double Gamma);
+
+            [VtblIndex(26)]
+            HRESULT GetGamma(double* pGamma);
+
+            [VtblIndex(27)]
+            HRESULT SetSharpness(double Sharpness);
+
+            [VtblIndex(28)]
+            HRESULT GetSharpness(double* pSharpness);
+
+            [VtblIndex(29)]
+            HRESULT SetSaturation(double Saturation);
+
+            [VtblIndex(30)]
+            HRESULT GetSaturation(double* pSaturation);
+
+            [VtblIndex(31)]
+            HRESULT SetTint(double Tint);
+
+            [VtblIndex(32)]
+            HRESULT GetTint(double* pTint);
+
+            [VtblIndex(33)]
+            HRESULT SetNoiseReduction(double NoiseReduction);
+
+            [VtblIndex(34)]
+            HRESULT GetNoiseReduction(double* pNoiseReduction);
+
+            [VtblIndex(35)]
+            HRESULT SetDestinationColorContext(IWICColorContext* pColorContext);
+
+            [VtblIndex(36)]
+            HRESULT SetToneCurve(uint cbToneCurveSize, [NativeTypeName("const WICRawToneCurve *")] WICRawToneCurve* pToneCurve);
+
+            [VtblIndex(37)]
+            HRESULT GetToneCurve(uint cbToneCurveBufferSize, WICRawToneCurve* pToneCurve, uint* pcbActualToneCurveBufferSize);
+
+            [VtblIndex(38)]
+            HRESULT SetRotation(double Rotation);
+
+            [VtblIndex(39)]
+            HRESULT GetRotation(double* pRotation);
+
+            [VtblIndex(40)]
+            HRESULT SetRenderMode(WICRawRenderMode RenderMode);
+
+            [VtblIndex(41)]
+            HRESULT GetRenderMode(WICRawRenderMode* pRenderMode);
+
+            [VtblIndex(42)]
+            HRESULT SetNotificationCallback(IWICDevelopRawNotificationCallback* pCallback);
         }
 
         public partial struct Vtbl

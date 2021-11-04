@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("A04BFB29-08EF-43D6-A49C-A9BDBDCBE686")]
     [NativeTypeName("struct ID3D11Device1 : ID3D11Device")]
     [NativeInheritance("ID3D11Device")]
-    public unsafe partial struct ID3D11Device1
+    public unsafe partial struct ID3D11Device1 : ID3D11Device1.Interface
     {
         public void** lpVtbl;
 
@@ -366,6 +366,30 @@ namespace TerraFX.Interop
         public HRESULT OpenSharedResourceByName([NativeTypeName("LPCWSTR")] ushort* lpName, [NativeTypeName("DWORD")] uint dwDesiredAccess, [NativeTypeName("const IID &")] Guid* returnedInterface, void** ppResource)
         {
             return ((delegate* unmanaged<ID3D11Device1*, ushort*, uint, Guid*, void**, int>)(lpVtbl[49]))((ID3D11Device1*)Unsafe.AsPointer(ref this), lpName, dwDesiredAccess, returnedInterface, ppResource);
+        }
+
+        public interface Interface : ID3D11Device.Interface
+        {
+            [VtblIndex(43)]
+            void GetImmediateContext1(ID3D11DeviceContext1** ppImmediateContext);
+
+            [VtblIndex(44)]
+            HRESULT CreateDeferredContext1(uint ContextFlags, ID3D11DeviceContext1** ppDeferredContext);
+
+            [VtblIndex(45)]
+            HRESULT CreateBlendState1([NativeTypeName("const D3D11_BLEND_DESC1 *")] D3D11_BLEND_DESC1* pBlendStateDesc, ID3D11BlendState1** ppBlendState);
+
+            [VtblIndex(46)]
+            HRESULT CreateRasterizerState1([NativeTypeName("const D3D11_RASTERIZER_DESC1 *")] D3D11_RASTERIZER_DESC1* pRasterizerDesc, ID3D11RasterizerState1** ppRasterizerState);
+
+            [VtblIndex(47)]
+            HRESULT CreateDeviceContextState(uint Flags, [NativeTypeName("const D3D_FEATURE_LEVEL *")] D3D_FEATURE_LEVEL* pFeatureLevels, uint FeatureLevels, uint SDKVersion, [NativeTypeName("const IID &")] Guid* EmulatedInterface, D3D_FEATURE_LEVEL* pChosenFeatureLevel, ID3DDeviceContextState** ppContextState);
+
+            [VtblIndex(48)]
+            HRESULT OpenSharedResource1(HANDLE hResource, [NativeTypeName("const IID &")] Guid* returnedInterface, void** ppResource);
+
+            [VtblIndex(49)]
+            HRESULT OpenSharedResourceByName([NativeTypeName("LPCWSTR")] ushort* lpName, [NativeTypeName("DWORD")] uint dwDesiredAccess, [NativeTypeName("const IID &")] Guid* returnedInterface, void** ppResource);
         }
 
         public partial struct Vtbl

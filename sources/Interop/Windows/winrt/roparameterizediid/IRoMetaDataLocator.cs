@@ -7,7 +7,7 @@ using System.Runtime.CompilerServices;
 
 namespace TerraFX.Interop
 {
-    public unsafe partial struct IRoMetaDataLocator
+    public unsafe partial struct IRoMetaDataLocator : IRoMetaDataLocator.Interface
     {
         public void** lpVtbl;
 
@@ -16,6 +16,12 @@ namespace TerraFX.Interop
         public HRESULT Locate([NativeTypeName("PCWSTR")] ushort* nameElement, [NativeTypeName("IRoSimpleMetaDataBuilder &")] IRoSimpleMetaDataBuilder* metaDataDestination)
         {
             return ((delegate* unmanaged<IRoMetaDataLocator*, ushort*, IRoSimpleMetaDataBuilder*, int>)(lpVtbl[0]))((IRoMetaDataLocator*)Unsafe.AsPointer(ref this), nameElement, metaDataDestination);
+        }
+
+        public interface Interface
+        {
+            [VtblIndex(0)]
+            HRESULT Locate([NativeTypeName("PCWSTR")] ushort* nameElement, [NativeTypeName("IRoSimpleMetaDataBuilder &")] IRoSimpleMetaDataBuilder* metaDataDestination);
         }
 
         public partial struct Vtbl

@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("305104EE-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct ISVGElementInstance : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct ISVGElementInstance
+    public unsafe partial struct ISVGElementInstance : ISVGElementInstance.Interface
     {
         public void** lpVtbl;
 
@@ -121,6 +121,33 @@ namespace TerraFX.Interop
         public HRESULT get_nextSibling(ISVGElementInstance** p)
         {
             return ((delegate* unmanaged<ISVGElementInstance*, ISVGElementInstance**, int>)(lpVtbl[14]))((ISVGElementInstance*)Unsafe.AsPointer(ref this), p);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT get_correspondingElement(ISVGElement** p);
+
+            [VtblIndex(8)]
+            HRESULT get_correspondingUseElement(ISVGUseElement** p);
+
+            [VtblIndex(9)]
+            HRESULT get_parentNode(ISVGElementInstance** p);
+
+            [VtblIndex(10)]
+            HRESULT get_childNodes(ISVGElementInstanceList** p);
+
+            [VtblIndex(11)]
+            HRESULT get_firstChild(ISVGElementInstance** p);
+
+            [VtblIndex(12)]
+            HRESULT get_lastChild(ISVGElementInstance** p);
+
+            [VtblIndex(13)]
+            HRESULT get_previousSibling(ISVGElementInstance** p);
+
+            [VtblIndex(14)]
+            HRESULT get_nextSibling(ISVGElementInstance** p);
         }
 
         public partial struct Vtbl

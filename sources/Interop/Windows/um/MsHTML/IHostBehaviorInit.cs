@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("3050F842-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct IHostBehaviorInit : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IHostBehaviorInit
+    public unsafe partial struct IHostBehaviorInit : IHostBehaviorInit.Interface
     {
         public void** lpVtbl;
 
@@ -44,6 +44,12 @@ namespace TerraFX.Interop
         public HRESULT PopulateNamespaceTable()
         {
             return ((delegate* unmanaged<IHostBehaviorInit*, int>)(lpVtbl[3]))((IHostBehaviorInit*)Unsafe.AsPointer(ref this));
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT PopulateNamespaceTable();
         }
 
         public partial struct Vtbl

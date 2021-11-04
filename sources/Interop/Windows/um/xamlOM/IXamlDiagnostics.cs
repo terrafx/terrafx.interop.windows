@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("18C9E2B6-3F43-4116-9F2B-FF935D7770D2")]
     [NativeTypeName("struct IXamlDiagnostics : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IXamlDiagnostics
+    public unsafe partial struct IXamlDiagnostics : IXamlDiagnostics.Interface
     {
         public void** lpVtbl;
 
@@ -93,6 +93,33 @@ namespace TerraFX.Interop
         public HRESULT GetInitializationData([NativeTypeName("BSTR *")] ushort** pInitializationData)
         {
             return ((delegate* unmanaged<IXamlDiagnostics*, ushort**, int>)(lpVtbl[10]))((IXamlDiagnostics*)Unsafe.AsPointer(ref this), pInitializationData);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetDispatcher(IInspectable** ppDispatcher);
+
+            [VtblIndex(4)]
+            HRESULT GetUiLayer(IInspectable** ppLayer);
+
+            [VtblIndex(5)]
+            HRESULT GetApplication(IInspectable** ppApplication);
+
+            [VtblIndex(6)]
+            HRESULT GetIInspectableFromHandle(InstanceHandle instanceHandle, IInspectable** ppInstance);
+
+            [VtblIndex(7)]
+            HRESULT GetHandleFromIInspectable(IInspectable* pInstance, InstanceHandle* pHandle);
+
+            [VtblIndex(8)]
+            HRESULT HitTest(RECT rect, [NativeTypeName("unsigned int *")] uint* pCount, InstanceHandle** ppInstanceHandles);
+
+            [VtblIndex(9)]
+            HRESULT RegisterInstance(IInspectable* pInstance, InstanceHandle* pInstanceHandle);
+
+            [VtblIndex(10)]
+            HRESULT GetInitializationData([NativeTypeName("BSTR *")] ushort** pInitializationData);
         }
 
         public partial struct Vtbl

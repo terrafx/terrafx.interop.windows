@@ -10,7 +10,7 @@ namespace TerraFX.Interop
 {
     [NativeTypeName("struct IDxDiagProvider : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IDxDiagProvider
+    public unsafe partial struct IDxDiagProvider : IDxDiagProvider.Interface
     {
         public void** lpVtbl;
 
@@ -49,6 +49,15 @@ namespace TerraFX.Interop
         public HRESULT GetRootContainer(IDxDiagContainer** ppInstance)
         {
             return ((delegate* unmanaged<IDxDiagProvider*, IDxDiagContainer**, int>)(lpVtbl[4]))((IDxDiagProvider*)Unsafe.AsPointer(ref this), ppInstance);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT Initialize(DXDIAG_INIT_PARAMS* pParams);
+
+            [VtblIndex(4)]
+            HRESULT GetRootContainer(IDxDiagContainer** ppInstance);
         }
 
         public partial struct Vtbl

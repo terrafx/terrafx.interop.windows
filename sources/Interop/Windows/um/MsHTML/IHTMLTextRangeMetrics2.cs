@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("3050F4A6-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct IHTMLTextRangeMetrics2 : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct IHTMLTextRangeMetrics2
+    public unsafe partial struct IHTMLTextRangeMetrics2 : IHTMLTextRangeMetrics2.Interface
     {
         public void** lpVtbl;
 
@@ -79,6 +79,15 @@ namespace TerraFX.Interop
         public HRESULT getBoundingClientRect(IHTMLRect** pRect)
         {
             return ((delegate* unmanaged<IHTMLTextRangeMetrics2*, IHTMLRect**, int>)(lpVtbl[8]))((IHTMLTextRangeMetrics2*)Unsafe.AsPointer(ref this), pRect);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT getClientRects(IHTMLRectCollection** pRectCol);
+
+            [VtblIndex(8)]
+            HRESULT getBoundingClientRect(IHTMLRect** pRect);
         }
 
         public partial struct Vtbl

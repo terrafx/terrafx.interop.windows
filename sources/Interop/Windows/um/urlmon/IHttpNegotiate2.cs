@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("4F9F9FCB-E0F4-48EB-B7AB-FA2EA9365CB4")]
     [NativeTypeName("struct IHttpNegotiate2 : IHttpNegotiate")]
     [NativeInheritance("IHttpNegotiate")]
-    public unsafe partial struct IHttpNegotiate2
+    public unsafe partial struct IHttpNegotiate2 : IHttpNegotiate2.Interface
     {
         public void** lpVtbl;
 
@@ -58,6 +58,12 @@ namespace TerraFX.Interop
         public HRESULT GetRootSecurityId(byte* pbSecurityId, [NativeTypeName("DWORD *")] uint* pcbSecurityId, [NativeTypeName("DWORD_PTR")] nuint dwReserved)
         {
             return ((delegate* unmanaged<IHttpNegotiate2*, byte*, uint*, nuint, int>)(lpVtbl[5]))((IHttpNegotiate2*)Unsafe.AsPointer(ref this), pbSecurityId, pcbSecurityId, dwReserved);
+        }
+
+        public interface Interface : IHttpNegotiate.Interface
+        {
+            [VtblIndex(5)]
+            HRESULT GetRootSecurityId(byte* pbSecurityId, [NativeTypeName("DWORD *")] uint* pcbSecurityId, [NativeTypeName("DWORD_PTR")] nuint dwReserved);
         }
 
         public partial struct Vtbl

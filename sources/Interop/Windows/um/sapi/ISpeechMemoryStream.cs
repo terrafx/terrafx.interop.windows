@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("EEB14B68-808B-4ABE-A5EA-B51DA7588008")]
     [NativeTypeName("struct ISpeechMemoryStream : ISpeechBaseStream")]
     [NativeInheritance("ISpeechBaseStream")]
-    public unsafe partial struct ISpeechMemoryStream
+    public unsafe partial struct ISpeechMemoryStream : ISpeechMemoryStream.Interface
     {
         public void** lpVtbl;
 
@@ -114,6 +114,15 @@ namespace TerraFX.Interop
         public HRESULT GetData(VARIANT* pData)
         {
             return ((delegate* unmanaged<ISpeechMemoryStream*, VARIANT*, int>)(lpVtbl[13]))((ISpeechMemoryStream*)Unsafe.AsPointer(ref this), pData);
+        }
+
+        public interface Interface : ISpeechBaseStream.Interface
+        {
+            [VtblIndex(12)]
+            HRESULT SetData(VARIANT Data);
+
+            [VtblIndex(13)]
+            HRESULT GetData(VARIANT* pData);
         }
 
         public partial struct Vtbl

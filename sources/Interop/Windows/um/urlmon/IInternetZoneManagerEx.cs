@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("A4C23339-8E06-431E-9BF4-7E711C085648")]
     [NativeTypeName("struct IInternetZoneManagerEx : IInternetZoneManager")]
     [NativeInheritance("IInternetZoneManager")]
-    public unsafe partial struct IInternetZoneManagerEx
+    public unsafe partial struct IInternetZoneManagerEx : IInternetZoneManagerEx.Interface
     {
         public void** lpVtbl;
 
@@ -135,6 +135,15 @@ namespace TerraFX.Interop
         public HRESULT SetZoneActionPolicyEx([NativeTypeName("DWORD")] uint dwZone, [NativeTypeName("DWORD")] uint dwAction, byte* pPolicy, [NativeTypeName("DWORD")] uint cbPolicy, URLZONEREG urlZoneReg, [NativeTypeName("DWORD")] uint dwFlags)
         {
             return ((delegate* unmanaged<IInternetZoneManagerEx*, uint, uint, byte*, uint, URLZONEREG, uint, int>)(lpVtbl[16]))((IInternetZoneManagerEx*)Unsafe.AsPointer(ref this), dwZone, dwAction, pPolicy, cbPolicy, urlZoneReg, dwFlags);
+        }
+
+        public interface Interface : IInternetZoneManager.Interface
+        {
+            [VtblIndex(15)]
+            HRESULT GetZoneActionPolicyEx([NativeTypeName("DWORD")] uint dwZone, [NativeTypeName("DWORD")] uint dwAction, byte* pPolicy, [NativeTypeName("DWORD")] uint cbPolicy, URLZONEREG urlZoneReg, [NativeTypeName("DWORD")] uint dwFlags);
+
+            [VtblIndex(16)]
+            HRESULT SetZoneActionPolicyEx([NativeTypeName("DWORD")] uint dwZone, [NativeTypeName("DWORD")] uint dwAction, byte* pPolicy, [NativeTypeName("DWORD")] uint cbPolicy, URLZONEREG urlZoneReg, [NativeTypeName("DWORD")] uint dwFlags);
         }
 
         public partial struct Vtbl

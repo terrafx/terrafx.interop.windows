@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("30510760-98B6-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct IHTMLSelectElement6 : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct IHTMLSelectElement6
+    public unsafe partial struct IHTMLSelectElement6 : IHTMLSelectElement6.Interface
     {
         public void** lpVtbl;
 
@@ -86,6 +86,18 @@ namespace TerraFX.Interop
         public HRESULT get_value([NativeTypeName("BSTR *")] ushort** p)
         {
             return ((delegate* unmanaged<IHTMLSelectElement6*, ushort**, int>)(lpVtbl[9]))((IHTMLSelectElement6*)Unsafe.AsPointer(ref this), p);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT add(IHTMLOptionElement* pElem, VARIANT* pvarBefore);
+
+            [VtblIndex(8)]
+            HRESULT put_value([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(9)]
+            HRESULT get_value([NativeTypeName("BSTR *")] ushort** p);
         }
 
         public partial struct Vtbl

@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("9D8E1289-D7B3-465F-8126-250E349AF85D")]
     [NativeTypeName("struct IDXGIKeyedMutex : IDXGIDeviceSubObject")]
     [NativeInheritance("IDXGIDeviceSubObject")]
-    public unsafe partial struct IDXGIKeyedMutex
+    public unsafe partial struct IDXGIKeyedMutex : IDXGIKeyedMutex.Interface
     {
         public void** lpVtbl;
 
@@ -86,6 +86,15 @@ namespace TerraFX.Interop
         public HRESULT ReleaseSync([NativeTypeName("UINT64")] ulong Key)
         {
             return ((delegate* unmanaged<IDXGIKeyedMutex*, ulong, int>)(lpVtbl[9]))((IDXGIKeyedMutex*)Unsafe.AsPointer(ref this), Key);
+        }
+
+        public interface Interface : IDXGIDeviceSubObject.Interface
+        {
+            [VtblIndex(8)]
+            HRESULT AcquireSync([NativeTypeName("UINT64")] ulong Key, [NativeTypeName("DWORD")] uint dwMilliseconds);
+
+            [VtblIndex(9)]
+            HRESULT ReleaseSync([NativeTypeName("UINT64")] ulong Key);
         }
 
         public partial struct Vtbl

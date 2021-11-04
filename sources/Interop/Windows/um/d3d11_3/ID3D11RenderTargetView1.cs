@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("FFBE2E23-F011-418A-AC56-5CEED7C5B94B")]
     [NativeTypeName("struct ID3D11RenderTargetView1 : ID3D11RenderTargetView")]
     [NativeInheritance("ID3D11RenderTargetView")]
-    public unsafe partial struct ID3D11RenderTargetView1
+    public unsafe partial struct ID3D11RenderTargetView1 : ID3D11RenderTargetView1.Interface
     {
         public void** lpVtbl;
 
@@ -86,6 +86,12 @@ namespace TerraFX.Interop
         public void GetDesc1(D3D11_RENDER_TARGET_VIEW_DESC1* pDesc1)
         {
             ((delegate* unmanaged<ID3D11RenderTargetView1*, D3D11_RENDER_TARGET_VIEW_DESC1*, void>)(lpVtbl[9]))((ID3D11RenderTargetView1*)Unsafe.AsPointer(ref this), pDesc1);
+        }
+
+        public interface Interface : ID3D11RenderTargetView.Interface
+        {
+            [VtblIndex(9)]
+            void GetDesc1(D3D11_RENDER_TARGET_VIEW_DESC1* pDesc1);
         }
 
         public partial struct Vtbl

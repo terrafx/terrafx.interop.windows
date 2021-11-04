@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("D06F67BC-B31D-4EBA-A8AF-638E73E77B4D")]
     [NativeTypeName("struct IAppxManifestReader2 : IAppxManifestReader")]
     [NativeInheritance("IAppxManifestReader")]
-    public unsafe partial struct IAppxManifestReader2
+    public unsafe partial struct IAppxManifestReader2 : IAppxManifestReader2.Interface
     {
         public void** lpVtbl;
 
@@ -107,6 +107,12 @@ namespace TerraFX.Interop
         public HRESULT GetQualifiedResources(IAppxManifestQualifiedResourcesEnumerator** resources)
         {
             return ((delegate* unmanaged<IAppxManifestReader2*, IAppxManifestQualifiedResourcesEnumerator**, int>)(lpVtbl[12]))((IAppxManifestReader2*)Unsafe.AsPointer(ref this), resources);
+        }
+
+        public interface Interface : IAppxManifestReader.Interface
+        {
+            [VtblIndex(12)]
+            HRESULT GetQualifiedResources(IAppxManifestQualifiedResourcesEnumerator** resources);
         }
 
         public partial struct Vtbl

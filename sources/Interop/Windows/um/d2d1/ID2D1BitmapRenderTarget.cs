@@ -18,7 +18,7 @@ namespace TerraFX.Interop
     [Guid("2CD90695-12E2-11DC-9FED-001143A055F9")]
     [NativeTypeName("struct ID2D1BitmapRenderTarget : ID2D1RenderTarget")]
     [NativeInheritance("ID2D1RenderTarget")]
-    public unsafe partial struct ID2D1BitmapRenderTarget
+    public unsafe partial struct ID2D1BitmapRenderTarget : ID2D1BitmapRenderTarget.Interface
     {
         public void** lpVtbl;
 
@@ -509,6 +509,12 @@ namespace TerraFX.Interop
         public HRESULT GetBitmap(ID2D1Bitmap** bitmap)
         {
             return ((delegate* unmanaged<ID2D1BitmapRenderTarget*, ID2D1Bitmap**, int>)(lpVtbl[57]))((ID2D1BitmapRenderTarget*)Unsafe.AsPointer(ref this), bitmap);
+        }
+
+        public interface Interface : ID2D1RenderTarget.Interface
+        {
+            [VtblIndex(57)]
+            HRESULT GetBitmap(ID2D1Bitmap** bitmap);
         }
 
         public partial struct Vtbl

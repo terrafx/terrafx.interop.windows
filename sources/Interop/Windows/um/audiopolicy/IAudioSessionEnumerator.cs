@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("E2F5BB11-0570-40CA-ACDD-3AA01277DEE8")]
     [NativeTypeName("struct IAudioSessionEnumerator : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IAudioSessionEnumerator
+    public unsafe partial struct IAudioSessionEnumerator : IAudioSessionEnumerator.Interface
     {
         public void** lpVtbl;
 
@@ -51,6 +51,15 @@ namespace TerraFX.Interop
         public HRESULT GetSession(int SessionCount, IAudioSessionControl** Session)
         {
             return ((delegate* unmanaged<IAudioSessionEnumerator*, int, IAudioSessionControl**, int>)(lpVtbl[4]))((IAudioSessionEnumerator*)Unsafe.AsPointer(ref this), SessionCount, Session);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetCount(int* SessionCount);
+
+            [VtblIndex(4)]
+            HRESULT GetSession(int SessionCount, IAudioSessionControl** Session);
         }
 
         public partial struct Vtbl

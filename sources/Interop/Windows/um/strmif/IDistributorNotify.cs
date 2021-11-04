@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("56A868AF-0AD4-11CE-B03A-0020AF0BA770")]
     [NativeTypeName("struct IDistributorNotify : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IDistributorNotify
+    public unsafe partial struct IDistributorNotify : IDistributorNotify.Interface
     {
         public void** lpVtbl;
 
@@ -72,6 +72,24 @@ namespace TerraFX.Interop
         public HRESULT NotifyGraphChange()
         {
             return ((delegate* unmanaged<IDistributorNotify*, int>)(lpVtbl[7]))((IDistributorNotify*)Unsafe.AsPointer(ref this));
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT Stop();
+
+            [VtblIndex(4)]
+            HRESULT Pause();
+
+            [VtblIndex(5)]
+            HRESULT Run([NativeTypeName("REFERENCE_TIME")] long tStart);
+
+            [VtblIndex(6)]
+            HRESULT SetSyncSource(IReferenceClock* pClock);
+
+            [VtblIndex(7)]
+            HRESULT NotifyGraphChange();
         }
 
         public partial struct Vtbl

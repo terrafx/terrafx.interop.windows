@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("078F91BD-29A2-440F-924E-46A291524520")]
     [NativeTypeName("struct IPropertyDescriptionSearchInfo : IPropertyDescription")]
     [NativeInheritance("IPropertyDescription")]
-    public unsafe partial struct IPropertyDescriptionSearchInfo
+    public unsafe partial struct IPropertyDescriptionSearchInfo : IPropertyDescriptionSearchInfo.Interface
     {
         public void** lpVtbl;
 
@@ -212,6 +212,21 @@ namespace TerraFX.Interop
         public HRESULT GetMaxSize(uint* pcbMaxSize)
         {
             return ((delegate* unmanaged<IPropertyDescriptionSearchInfo*, uint*, int>)(lpVtbl[27]))((IPropertyDescriptionSearchInfo*)Unsafe.AsPointer(ref this), pcbMaxSize);
+        }
+
+        public interface Interface : IPropertyDescription.Interface
+        {
+            [VtblIndex(24)]
+            HRESULT GetSearchInfoFlags(PROPDESC_SEARCHINFO_FLAGS* ppdsiFlags);
+
+            [VtblIndex(25)]
+            HRESULT GetColumnIndexType(PROPDESC_COLUMNINDEX_TYPE* ppdciType);
+
+            [VtblIndex(26)]
+            HRESULT GetProjectionString([NativeTypeName("LPWSTR *")] ushort** ppszProjection);
+
+            [VtblIndex(27)]
+            HRESULT GetMaxSize(uint* pcbMaxSize);
         }
 
         public partial struct Vtbl

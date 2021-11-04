@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("28C7F1D0-DE25-11D2-AFDD-00105A2799B5")]
     [NativeTypeName("struct ITfLangBarItemButton : ITfLangBarItem")]
     [NativeInheritance("ITfLangBarItem")]
-    public unsafe partial struct ITfLangBarItemButton
+    public unsafe partial struct ITfLangBarItemButton : ITfLangBarItemButton.Interface
     {
         public void** lpVtbl;
 
@@ -100,6 +100,24 @@ namespace TerraFX.Interop
         public HRESULT GetText([NativeTypeName("BSTR *")] ushort** pbstrText)
         {
             return ((delegate* unmanaged<ITfLangBarItemButton*, ushort**, int>)(lpVtbl[11]))((ITfLangBarItemButton*)Unsafe.AsPointer(ref this), pbstrText);
+        }
+
+        public interface Interface : ITfLangBarItem.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT OnClick(TfLBIClick click, POINT pt, [NativeTypeName("const RECT *")] RECT* prcArea);
+
+            [VtblIndex(8)]
+            HRESULT InitMenu(ITfMenu* pMenu);
+
+            [VtblIndex(9)]
+            HRESULT OnMenuSelect(uint wID);
+
+            [VtblIndex(10)]
+            HRESULT GetIcon(HICON* phIcon);
+
+            [VtblIndex(11)]
+            HRESULT GetText([NativeTypeName("BSTR *")] ushort** pbstrText);
         }
 
         public partial struct Vtbl

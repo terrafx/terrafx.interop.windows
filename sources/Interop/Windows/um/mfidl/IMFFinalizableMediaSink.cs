@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("EAECB74A-9A50-42CE-9541-6A7F57AA4AD7")]
     [NativeTypeName("struct IMFFinalizableMediaSink : IMFMediaSink")]
     [NativeInheritance("IMFMediaSink")]
-    public unsafe partial struct IMFFinalizableMediaSink
+    public unsafe partial struct IMFFinalizableMediaSink : IMFFinalizableMediaSink.Interface
     {
         public void** lpVtbl;
 
@@ -114,6 +114,15 @@ namespace TerraFX.Interop
         public HRESULT EndFinalize(IMFAsyncResult* pResult)
         {
             return ((delegate* unmanaged<IMFFinalizableMediaSink*, IMFAsyncResult*, int>)(lpVtbl[13]))((IMFFinalizableMediaSink*)Unsafe.AsPointer(ref this), pResult);
+        }
+
+        public interface Interface : IMFMediaSink.Interface
+        {
+            [VtblIndex(12)]
+            HRESULT BeginFinalize(IMFAsyncCallback* pCallback, IUnknown* punkState);
+
+            [VtblIndex(13)]
+            HRESULT EndFinalize(IMFAsyncResult* pResult);
         }
 
         public partial struct Vtbl

@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("305106F4-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct IHTMLStyleSheet4 : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct IHTMLStyleSheet4
+    public unsafe partial struct IHTMLStyleSheet4 : IHTMLStyleSheet4.Interface
     {
         public void** lpVtbl;
 
@@ -128,6 +128,36 @@ namespace TerraFX.Interop
         public HRESULT deleteRule([NativeTypeName("long")] int lIndex = -1)
         {
             return ((delegate* unmanaged<IHTMLStyleSheet4*, int, int>)(lpVtbl[15]))((IHTMLStyleSheet4*)Unsafe.AsPointer(ref this), lIndex);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT get_type([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(8)]
+            HRESULT get_href(VARIANT* p);
+
+            [VtblIndex(9)]
+            HRESULT get_title([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(10)]
+            HRESULT get_ownerNode(IHTMLElement** p);
+
+            [VtblIndex(11)]
+            HRESULT get_ownerRule(IHTMLCSSRule** p);
+
+            [VtblIndex(12)]
+            HRESULT get_cssRules(IHTMLStyleSheetRulesCollection** p);
+
+            [VtblIndex(13)]
+            HRESULT get_media(VARIANT* p);
+
+            [VtblIndex(14)]
+            HRESULT insertRule([NativeTypeName("BSTR")] ushort* bstrRule, [NativeTypeName("long")] int lIndex, [NativeTypeName("long *")] int* plNewIndex);
+
+            [VtblIndex(15)]
+            HRESULT deleteRule([NativeTypeName("long")] int lIndex = -1);
         }
 
         public partial struct Vtbl

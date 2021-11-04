@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("19F68549-CA8A-4706-A4EF-481DBC95E12C")]
     [NativeTypeName("struct IMFCapturePhotoConfirmation : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IMFCapturePhotoConfirmation
+    public unsafe partial struct IMFCapturePhotoConfirmation : IMFCapturePhotoConfirmation.Interface
     {
         public void** lpVtbl;
 
@@ -58,6 +58,18 @@ namespace TerraFX.Interop
         public HRESULT GetPixelFormat(Guid* subtype)
         {
             return ((delegate* unmanaged<IMFCapturePhotoConfirmation*, Guid*, int>)(lpVtbl[5]))((IMFCapturePhotoConfirmation*)Unsafe.AsPointer(ref this), subtype);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT SetPhotoConfirmationCallback(IMFAsyncCallback* pNotificationCallback);
+
+            [VtblIndex(4)]
+            HRESULT SetPixelFormat(Guid subtype);
+
+            [VtblIndex(5)]
+            HRESULT GetPixelFormat(Guid* subtype);
         }
 
         public partial struct Vtbl

@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("94413CF4-A6FC-4248-8B50-6674348FCAD3")]
     [NativeTypeName("struct IDWriteRenderingParams1 : IDWriteRenderingParams")]
     [NativeInheritance("IDWriteRenderingParams")]
-    public unsafe partial struct IDWriteRenderingParams1
+    public unsafe partial struct IDWriteRenderingParams1 : IDWriteRenderingParams1.Interface
     {
         public void** lpVtbl;
 
@@ -79,6 +79,12 @@ namespace TerraFX.Interop
         public float GetGrayscaleEnhancedContrast()
         {
             return ((delegate* unmanaged<IDWriteRenderingParams1*, float>)(lpVtbl[8]))((IDWriteRenderingParams1*)Unsafe.AsPointer(ref this));
+        }
+
+        public interface Interface : IDWriteRenderingParams.Interface
+        {
+            [VtblIndex(8)]
+            float GetGrayscaleEnhancedContrast();
         }
 
         public partial struct Vtbl

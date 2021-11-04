@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("A3D8CEC0-7E5A-11CF-BBC5-00805F6CEF20")]
     [NativeTypeName("struct IAMovieSetup : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IAMovieSetup
+    public unsafe partial struct IAMovieSetup : IAMovieSetup.Interface
     {
         public void** lpVtbl;
 
@@ -51,6 +51,15 @@ namespace TerraFX.Interop
         public HRESULT Unregister()
         {
             return ((delegate* unmanaged<IAMovieSetup*, int>)(lpVtbl[4]))((IAMovieSetup*)Unsafe.AsPointer(ref this));
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT Register();
+
+            [VtblIndex(4)]
+            HRESULT Unregister();
         }
 
         public partial struct Vtbl

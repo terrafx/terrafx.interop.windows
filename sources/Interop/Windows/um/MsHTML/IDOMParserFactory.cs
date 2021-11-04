@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("30510783-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct IDOMParserFactory : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct IDOMParserFactory
+    public unsafe partial struct IDOMParserFactory : IDOMParserFactory.Interface
     {
         public void** lpVtbl;
 
@@ -72,6 +72,12 @@ namespace TerraFX.Interop
         public HRESULT create(IDOMParser** __MIDL__IDOMParserFactory0000)
         {
             return ((delegate* unmanaged<IDOMParserFactory*, IDOMParser**, int>)(lpVtbl[7]))((IDOMParserFactory*)Unsafe.AsPointer(ref this), __MIDL__IDOMParserFactory0000);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT create(IDOMParser** __MIDL__IDOMParserFactory0000);
         }
 
         public partial struct Vtbl

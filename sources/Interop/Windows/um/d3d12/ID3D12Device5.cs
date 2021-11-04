@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("8B4F173B-2FEA-4B80-8F58-4307191AB95D")]
     [NativeTypeName("struct ID3D12Device5 : ID3D12Device4")]
     [NativeInheritance("ID3D12Device4")]
-    public unsafe partial struct ID3D12Device5
+    public unsafe partial struct ID3D12Device5 : ID3D12Device5.Interface
     {
         public void** lpVtbl;
 
@@ -475,6 +475,33 @@ namespace TerraFX.Interop
         public D3D12_DRIVER_MATCHING_IDENTIFIER_STATUS CheckDriverMatchingIdentifier(D3D12_SERIALIZED_DATA_TYPE SerializedDataType, [NativeTypeName("const D3D12_SERIALIZED_DATA_DRIVER_MATCHING_IDENTIFIER *")] D3D12_SERIALIZED_DATA_DRIVER_MATCHING_IDENTIFIER* pIdentifierToCheck)
         {
             return ((delegate* unmanaged<ID3D12Device5*, D3D12_SERIALIZED_DATA_TYPE, D3D12_SERIALIZED_DATA_DRIVER_MATCHING_IDENTIFIER*, D3D12_DRIVER_MATCHING_IDENTIFIER_STATUS>)(lpVtbl[64]))((ID3D12Device5*)Unsafe.AsPointer(ref this), SerializedDataType, pIdentifierToCheck);
+        }
+
+        public interface Interface : ID3D12Device4.Interface
+        {
+            [VtblIndex(57)]
+            HRESULT CreateLifetimeTracker(ID3D12LifetimeOwner* pOwner, [NativeTypeName("const IID &")] Guid* riid, void** ppvTracker);
+
+            [VtblIndex(58)]
+            void RemoveDevice();
+
+            [VtblIndex(59)]
+            HRESULT EnumerateMetaCommands(uint* pNumMetaCommands, D3D12_META_COMMAND_DESC* pDescs);
+
+            [VtblIndex(60)]
+            HRESULT EnumerateMetaCommandParameters([NativeTypeName("const GUID &")] Guid* CommandId, D3D12_META_COMMAND_PARAMETER_STAGE Stage, uint* pTotalStructureSizeInBytes, uint* pParameterCount, D3D12_META_COMMAND_PARAMETER_DESC* pParameterDescs);
+
+            [VtblIndex(61)]
+            HRESULT CreateMetaCommand([NativeTypeName("const GUID &")] Guid* CommandId, uint NodeMask, [NativeTypeName("const void *")] void* pCreationParametersData, [NativeTypeName("SIZE_T")] nuint CreationParametersDataSizeInBytes, [NativeTypeName("const IID &")] Guid* riid, void** ppMetaCommand);
+
+            [VtblIndex(62)]
+            HRESULT CreateStateObject([NativeTypeName("const D3D12_STATE_OBJECT_DESC *")] D3D12_STATE_OBJECT_DESC* pDesc, [NativeTypeName("const IID &")] Guid* riid, void** ppStateObject);
+
+            [VtblIndex(63)]
+            void GetRaytracingAccelerationStructurePrebuildInfo([NativeTypeName("const D3D12_BUILD_RAYTRACING_ACCELERATION_STRUCTURE_INPUTS *")] D3D12_BUILD_RAYTRACING_ACCELERATION_STRUCTURE_INPUTS* pDesc, D3D12_RAYTRACING_ACCELERATION_STRUCTURE_PREBUILD_INFO* pInfo);
+
+            [VtblIndex(64)]
+            D3D12_DRIVER_MATCHING_IDENTIFIER_STATUS CheckDriverMatchingIdentifier(D3D12_SERIALIZED_DATA_TYPE SerializedDataType, [NativeTypeName("const D3D12_SERIALIZED_DATA_DRIVER_MATCHING_IDENTIFIER *")] D3D12_SERIALIZED_DATA_DRIVER_MATCHING_IDENTIFIER* pIdentifierToCheck);
         }
 
         public partial struct Vtbl

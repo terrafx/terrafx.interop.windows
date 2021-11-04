@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("4CE7D875-A981-4140-A1FF-AD93258E8D59")]
     [NativeTypeName("struct IInkDesktopHost : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IInkDesktopHost
+    public unsafe partial struct IInkDesktopHost : IInkDesktopHost.Interface
     {
         public void** lpVtbl;
 
@@ -58,6 +58,18 @@ namespace TerraFX.Interop
         public HRESULT CreateAndInitializeInkPresenter(IUnknown* rootVisual, float width, float height, [NativeTypeName("const IID &")] Guid* riid, void** ppv)
         {
             return ((delegate* unmanaged<IInkDesktopHost*, IUnknown*, float, float, Guid*, void**, int>)(lpVtbl[5]))((IInkDesktopHost*)Unsafe.AsPointer(ref this), rootVisual, width, height, riid, ppv);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT QueueWorkItem(IInkHostWorkItem* workItem);
+
+            [VtblIndex(4)]
+            HRESULT CreateInkPresenter([NativeTypeName("const IID &")] Guid* riid, void** ppv);
+
+            [VtblIndex(5)]
+            HRESULT CreateAndInitializeInkPresenter(IUnknown* rootVisual, float width, float height, [NativeTypeName("const IID &")] Guid* riid, void** ppv);
         }
 
         public partial struct Vtbl

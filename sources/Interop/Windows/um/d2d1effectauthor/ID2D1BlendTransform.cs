@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("63AC0B32-BA44-450F-8806-7F4CA1FF2F1B")]
     [NativeTypeName("struct ID2D1BlendTransform : ID2D1ConcreteTransform")]
     [NativeInheritance("ID2D1ConcreteTransform")]
-    public unsafe partial struct ID2D1BlendTransform
+    public unsafe partial struct ID2D1BlendTransform : ID2D1BlendTransform.Interface
     {
         public void** lpVtbl;
 
@@ -73,6 +73,15 @@ namespace TerraFX.Interop
         public void GetDescription(D2D1_BLEND_DESCRIPTION* description)
         {
             ((delegate* unmanaged<ID2D1BlendTransform*, D2D1_BLEND_DESCRIPTION*, void>)(lpVtbl[7]))((ID2D1BlendTransform*)Unsafe.AsPointer(ref this), description);
+        }
+
+        public interface Interface : ID2D1ConcreteTransform.Interface
+        {
+            [VtblIndex(6)]
+            void SetDescription([NativeTypeName("const D2D1_BLEND_DESCRIPTION *")] D2D1_BLEND_DESCRIPTION* description);
+
+            [VtblIndex(7)]
+            void GetDescription(D2D1_BLEND_DESCRIPTION* description);
         }
 
         public partial struct Vtbl

@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("420D5B32-B90C-4DA4-BEF0-359F6A24A83A")]
     [NativeTypeName("struct ID3D11DeviceContext2 : ID3D11DeviceContext1")]
     [NativeInheritance("ID3D11DeviceContext1")]
-    public unsafe partial struct ID3D11DeviceContext2
+    public unsafe partial struct ID3D11DeviceContext2 : ID3D11DeviceContext2.Interface
     {
         public void** lpVtbl;
 
@@ -1024,6 +1024,39 @@ namespace TerraFX.Interop
         public void EndEvent()
         {
             ((delegate* unmanaged<ID3D11DeviceContext2*, void>)(lpVtbl[143]))((ID3D11DeviceContext2*)Unsafe.AsPointer(ref this));
+        }
+
+        public interface Interface : ID3D11DeviceContext1.Interface
+        {
+            [VtblIndex(134)]
+            HRESULT UpdateTileMappings(ID3D11Resource* pTiledResource, uint NumTiledResourceRegions, [NativeTypeName("const D3D11_TILED_RESOURCE_COORDINATE *")] D3D11_TILED_RESOURCE_COORDINATE* pTiledResourceRegionStartCoordinates, [NativeTypeName("const D3D11_TILE_REGION_SIZE *")] D3D11_TILE_REGION_SIZE* pTiledResourceRegionSizes, ID3D11Buffer* pTilePool, uint NumRanges, [NativeTypeName("const UINT *")] uint* pRangeFlags, [NativeTypeName("const UINT *")] uint* pTilePoolStartOffsets, [NativeTypeName("const UINT *")] uint* pRangeTileCounts, uint Flags);
+
+            [VtblIndex(135)]
+            HRESULT CopyTileMappings(ID3D11Resource* pDestTiledResource, [NativeTypeName("const D3D11_TILED_RESOURCE_COORDINATE *")] D3D11_TILED_RESOURCE_COORDINATE* pDestRegionStartCoordinate, ID3D11Resource* pSourceTiledResource, [NativeTypeName("const D3D11_TILED_RESOURCE_COORDINATE *")] D3D11_TILED_RESOURCE_COORDINATE* pSourceRegionStartCoordinate, [NativeTypeName("const D3D11_TILE_REGION_SIZE *")] D3D11_TILE_REGION_SIZE* pTileRegionSize, uint Flags);
+
+            [VtblIndex(136)]
+            void CopyTiles(ID3D11Resource* pTiledResource, [NativeTypeName("const D3D11_TILED_RESOURCE_COORDINATE *")] D3D11_TILED_RESOURCE_COORDINATE* pTileRegionStartCoordinate, [NativeTypeName("const D3D11_TILE_REGION_SIZE *")] D3D11_TILE_REGION_SIZE* pTileRegionSize, ID3D11Buffer* pBuffer, [NativeTypeName("UINT64")] ulong BufferStartOffsetInBytes, uint Flags);
+
+            [VtblIndex(137)]
+            void UpdateTiles(ID3D11Resource* pDestTiledResource, [NativeTypeName("const D3D11_TILED_RESOURCE_COORDINATE *")] D3D11_TILED_RESOURCE_COORDINATE* pDestTileRegionStartCoordinate, [NativeTypeName("const D3D11_TILE_REGION_SIZE *")] D3D11_TILE_REGION_SIZE* pDestTileRegionSize, [NativeTypeName("const void *")] void* pSourceTileData, uint Flags);
+
+            [VtblIndex(138)]
+            HRESULT ResizeTilePool(ID3D11Buffer* pTilePool, [NativeTypeName("UINT64")] ulong NewSizeInBytes);
+
+            [VtblIndex(139)]
+            void TiledResourceBarrier(ID3D11DeviceChild* pTiledResourceOrViewAccessBeforeBarrier, ID3D11DeviceChild* pTiledResourceOrViewAccessAfterBarrier);
+
+            [VtblIndex(140)]
+            BOOL IsAnnotationEnabled();
+
+            [VtblIndex(141)]
+            void SetMarkerInt([NativeTypeName("LPCWSTR")] ushort* pLabel, int Data);
+
+            [VtblIndex(142)]
+            void BeginEventInt([NativeTypeName("LPCWSTR")] ushort* pLabel, int Data);
+
+            [VtblIndex(143)]
+            void EndEvent();
         }
 
         public partial struct Vtbl

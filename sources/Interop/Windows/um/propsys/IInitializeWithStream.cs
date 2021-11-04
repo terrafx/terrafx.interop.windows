@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("B824B49D-22AC-4161-AC8A-9916E8FA3F7F")]
     [NativeTypeName("struct IInitializeWithStream : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IInitializeWithStream
+    public unsafe partial struct IInitializeWithStream : IInitializeWithStream.Interface
     {
         public void** lpVtbl;
 
@@ -44,6 +44,12 @@ namespace TerraFX.Interop
         public HRESULT Initialize(IStream* pstream, [NativeTypeName("DWORD")] uint grfMode)
         {
             return ((delegate* unmanaged<IInitializeWithStream*, IStream*, uint, int>)(lpVtbl[3]))((IInitializeWithStream*)Unsafe.AsPointer(ref this), pstream, grfMode);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT Initialize(IStream* pstream, [NativeTypeName("DWORD")] uint grfMode);
         }
 
         public partial struct Vtbl

@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("AD56F402-E162-4F25-908F-7D577CF9BDA9")]
     [NativeTypeName("struct ITfDisplayAttributeNotifySink : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct ITfDisplayAttributeNotifySink
+    public unsafe partial struct ITfDisplayAttributeNotifySink : ITfDisplayAttributeNotifySink.Interface
     {
         public void** lpVtbl;
 
@@ -44,6 +44,12 @@ namespace TerraFX.Interop
         public HRESULT OnUpdateInfo()
         {
             return ((delegate* unmanaged<ITfDisplayAttributeNotifySink*, int>)(lpVtbl[3]))((ITfDisplayAttributeNotifySink*)Unsafe.AsPointer(ref this));
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT OnUpdateInfo();
         }
 
         public partial struct Vtbl

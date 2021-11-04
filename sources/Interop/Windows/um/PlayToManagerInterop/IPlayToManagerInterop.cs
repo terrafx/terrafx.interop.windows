@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("24394699-1F2C-4EB3-8CD7-0EC1DA42A540")]
     [NativeTypeName("struct IPlayToManagerInterop : IInspectable")]
     [NativeInheritance("IInspectable")]
-    public unsafe partial struct IPlayToManagerInterop
+    public unsafe partial struct IPlayToManagerInterop : IPlayToManagerInterop.Interface
     {
         public void** lpVtbl;
 
@@ -72,6 +72,15 @@ namespace TerraFX.Interop
         public HRESULT ShowPlayToUIForWindow(HWND appWindow)
         {
             return ((delegate* unmanaged<IPlayToManagerInterop*, HWND, int>)(lpVtbl[7]))((IPlayToManagerInterop*)Unsafe.AsPointer(ref this), appWindow);
+        }
+
+        public interface Interface : IInspectable.Interface
+        {
+            [VtblIndex(6)]
+            HRESULT GetForWindow(HWND appWindow, [NativeTypeName("const IID &")] Guid* riid, void** playToManager);
+
+            [VtblIndex(7)]
+            HRESULT ShowPlayToUIForWindow(HWND appWindow);
         }
 
         public partial struct Vtbl

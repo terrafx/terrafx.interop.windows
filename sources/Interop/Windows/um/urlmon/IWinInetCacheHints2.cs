@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("7857AEAC-D31F-49BF-884E-DD46DF36780A")]
     [NativeTypeName("struct IWinInetCacheHints2 : IWinInetCacheHints")]
     [NativeInheritance("IWinInetCacheHints")]
-    public unsafe partial struct IWinInetCacheHints2
+    public unsafe partial struct IWinInetCacheHints2 : IWinInetCacheHints2.Interface
     {
         public void** lpVtbl;
 
@@ -51,6 +51,12 @@ namespace TerraFX.Interop
         public HRESULT SetCacheExtension2([NativeTypeName("LPCWSTR")] ushort* pwzExt, [NativeTypeName("WCHAR *")] ushort* pwzCacheFile, [NativeTypeName("DWORD *")] uint* pcchCacheFile, [NativeTypeName("DWORD *")] uint* pdwWinInetError, [NativeTypeName("DWORD *")] uint* pdwReserved)
         {
             return ((delegate* unmanaged<IWinInetCacheHints2*, ushort*, ushort*, uint*, uint*, uint*, int>)(lpVtbl[4]))((IWinInetCacheHints2*)Unsafe.AsPointer(ref this), pwzExt, pwzCacheFile, pcchCacheFile, pdwWinInetError, pdwReserved);
+        }
+
+        public interface Interface : IWinInetCacheHints.Interface
+        {
+            [VtblIndex(4)]
+            HRESULT SetCacheExtension2([NativeTypeName("LPCWSTR")] ushort* pwzExt, [NativeTypeName("WCHAR *")] ushort* pwzCacheFile, [NativeTypeName("DWORD *")] uint* pcchCacheFile, [NativeTypeName("DWORD *")] uint* pdwWinInetError, [NativeTypeName("DWORD *")] uint* pdwReserved);
         }
 
         public partial struct Vtbl

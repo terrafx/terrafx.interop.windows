@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("BBF8E066-AAAA-49BE-9A4D-FD2A858EA27F")]
     [NativeTypeName("struct ISpatialAudioClient : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct ISpatialAudioClient
+    public unsafe partial struct ISpatialAudioClient : ISpatialAudioClient.Interface
     {
         public void** lpVtbl;
 
@@ -93,6 +93,33 @@ namespace TerraFX.Interop
         public HRESULT ActivateSpatialAudioStream([NativeTypeName("const PROPVARIANT *")] PROPVARIANT* activationParams, [NativeTypeName("const IID &")] Guid* riid, void** stream)
         {
             return ((delegate* unmanaged<ISpatialAudioClient*, PROPVARIANT*, Guid*, void**, int>)(lpVtbl[10]))((ISpatialAudioClient*)Unsafe.AsPointer(ref this), activationParams, riid, stream);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetStaticObjectPosition(AudioObjectType type, float* x, float* y, float* z);
+
+            [VtblIndex(4)]
+            HRESULT GetNativeStaticObjectTypeMask(AudioObjectType* mask);
+
+            [VtblIndex(5)]
+            HRESULT GetMaxDynamicObjectCount([NativeTypeName("UINT32 *")] uint* value);
+
+            [VtblIndex(6)]
+            HRESULT GetSupportedAudioObjectFormatEnumerator(IAudioFormatEnumerator** enumerator);
+
+            [VtblIndex(7)]
+            HRESULT GetMaxFrameCount([NativeTypeName("const WAVEFORMATEX *")] WAVEFORMATEX* objectFormat, [NativeTypeName("UINT32 *")] uint* frameCountPerBuffer);
+
+            [VtblIndex(8)]
+            HRESULT IsAudioObjectFormatSupported([NativeTypeName("const WAVEFORMATEX *")] WAVEFORMATEX* objectFormat);
+
+            [VtblIndex(9)]
+            HRESULT IsSpatialAudioStreamAvailable([NativeTypeName("const IID &")] Guid* streamUuid, [NativeTypeName("const PROPVARIANT *")] PROPVARIANT* auxiliaryInfo);
+
+            [VtblIndex(10)]
+            HRESULT ActivateSpatialAudioStream([NativeTypeName("const PROPVARIANT *")] PROPVARIANT* activationParams, [NativeTypeName("const IID &")] Guid* riid, void** stream);
         }
 
         public partial struct Vtbl

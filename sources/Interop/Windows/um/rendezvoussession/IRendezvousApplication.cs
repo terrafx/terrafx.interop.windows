@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("4F4D070B-A275-49FB-B10D-8EC26387B50D")]
     [NativeTypeName("struct IRendezvousApplication : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IRendezvousApplication
+    public unsafe partial struct IRendezvousApplication : IRendezvousApplication.Interface
     {
         public void** lpVtbl;
 
@@ -44,6 +44,12 @@ namespace TerraFX.Interop
         public HRESULT SetRendezvousSession(IUnknown* pRendezvousSession)
         {
             return ((delegate* unmanaged<IRendezvousApplication*, IUnknown*, int>)(lpVtbl[3]))((IRendezvousApplication*)Unsafe.AsPointer(ref this), pRendezvousSession);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT SetRendezvousSession(IUnknown* pRendezvousSession);
         }
 
         public partial struct Vtbl

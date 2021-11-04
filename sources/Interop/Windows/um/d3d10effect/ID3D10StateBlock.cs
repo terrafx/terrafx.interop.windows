@@ -10,7 +10,7 @@ namespace TerraFX.Interop
 {
     [NativeTypeName("struct ID3D10StateBlock : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct ID3D10StateBlock
+    public unsafe partial struct ID3D10StateBlock : ID3D10StateBlock.Interface
     {
         public void** lpVtbl;
 
@@ -63,6 +63,21 @@ namespace TerraFX.Interop
         public HRESULT GetDevice(ID3D10Device** ppDevice)
         {
             return ((delegate* unmanaged<ID3D10StateBlock*, ID3D10Device**, int>)(lpVtbl[6]))((ID3D10StateBlock*)Unsafe.AsPointer(ref this), ppDevice);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT Capture();
+
+            [VtblIndex(4)]
+            HRESULT Apply();
+
+            [VtblIndex(5)]
+            HRESULT ReleaseAllDeviceObjects();
+
+            [VtblIndex(6)]
+            HRESULT GetDevice(ID3D10Device** ppDevice);
         }
 
         public partial struct Vtbl

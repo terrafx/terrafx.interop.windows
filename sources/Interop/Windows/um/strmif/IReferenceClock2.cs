@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("36B73885-C2C8-11CF-8B46-00805F6CEF60")]
     [NativeTypeName("struct IReferenceClock2 : IReferenceClock")]
     [NativeInheritance("IReferenceClock")]
-    public unsafe partial struct IReferenceClock2
+    public unsafe partial struct IReferenceClock2 : IReferenceClock2.Interface
     {
         public void** lpVtbl;
 
@@ -65,6 +65,10 @@ namespace TerraFX.Interop
         public HRESULT Unadvise([NativeTypeName("DWORD_PTR")] nuint dwAdviseCookie)
         {
             return ((delegate* unmanaged<IReferenceClock2*, nuint, int>)(lpVtbl[6]))((IReferenceClock2*)Unsafe.AsPointer(ref this), dwAdviseCookie);
+        }
+
+        public interface Interface : IReferenceClock.Interface
+        {
         }
 
         public partial struct Vtbl

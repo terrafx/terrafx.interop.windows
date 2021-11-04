@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("C79A6CB7-BEBD-47A6-A2AD-4D45AD79C7BC")]
     [NativeTypeName("struct ICastingEventHandler : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct ICastingEventHandler
+    public unsafe partial struct ICastingEventHandler : ICastingEventHandler.Interface
     {
         public void** lpVtbl;
 
@@ -51,6 +51,15 @@ namespace TerraFX.Interop
         public HRESULT OnError(CASTING_CONNECTION_ERROR_STATUS errorStatus, [NativeTypeName("LPCWSTR")] ushort* errorMessage)
         {
             return ((delegate* unmanaged<ICastingEventHandler*, CASTING_CONNECTION_ERROR_STATUS, ushort*, int>)(lpVtbl[4]))((ICastingEventHandler*)Unsafe.AsPointer(ref this), errorStatus, errorMessage);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT OnStateChanged(CASTING_CONNECTION_STATE newState);
+
+            [VtblIndex(4)]
+            HRESULT OnError(CASTING_CONNECTION_ERROR_STATUS errorStatus, [NativeTypeName("LPCWSTR")] ushort* errorMessage);
         }
 
         public partial struct Vtbl

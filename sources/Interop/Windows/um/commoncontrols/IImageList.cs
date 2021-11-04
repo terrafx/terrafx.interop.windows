@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("46EB5926-582E-4017-9FDF-E8998DAA0950")]
     [NativeTypeName("struct IImageList : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IImageList
+    public unsafe partial struct IImageList : IImageList.Interface
     {
         public void** lpVtbl;
 
@@ -240,6 +240,96 @@ namespace TerraFX.Interop
         public HRESULT GetOverlayImage(int iOverlay, int* piIndex)
         {
             return ((delegate* unmanaged<IImageList*, int, int*, int>)(lpVtbl[31]))((IImageList*)Unsafe.AsPointer(ref this), iOverlay, piIndex);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT Add(HBITMAP hbmImage, HBITMAP hbmMask, int* pi);
+
+            [VtblIndex(4)]
+            HRESULT ReplaceIcon(int i, HICON hicon, int* pi);
+
+            [VtblIndex(5)]
+            HRESULT SetOverlayImage(int iImage, int iOverlay);
+
+            [VtblIndex(6)]
+            HRESULT Replace(int i, HBITMAP hbmImage, HBITMAP hbmMask);
+
+            [VtblIndex(7)]
+            HRESULT AddMasked(HBITMAP hbmImage, COLORREF crMask, int* pi);
+
+            [VtblIndex(8)]
+            HRESULT Draw(IMAGELISTDRAWPARAMS* pimldp);
+
+            [VtblIndex(9)]
+            HRESULT Remove(int i);
+
+            [VtblIndex(10)]
+            HRESULT GetIcon(int i, uint flags, HICON* picon);
+
+            [VtblIndex(11)]
+            HRESULT GetImageInfo(int i, IMAGEINFO* pImageInfo);
+
+            [VtblIndex(12)]
+            HRESULT Copy(int iDst, IUnknown* punkSrc, int iSrc, uint uFlags);
+
+            [VtblIndex(13)]
+            HRESULT Merge(int i1, IUnknown* punk2, int i2, int dx, int dy, [NativeTypeName("const IID &")] Guid* riid, void** ppv);
+
+            [VtblIndex(14)]
+            HRESULT Clone([NativeTypeName("const IID &")] Guid* riid, void** ppv);
+
+            [VtblIndex(15)]
+            HRESULT GetImageRect(int i, RECT* prc);
+
+            [VtblIndex(16)]
+            HRESULT GetIconSize(int* cx, int* cy);
+
+            [VtblIndex(17)]
+            HRESULT SetIconSize(int cx, int cy);
+
+            [VtblIndex(18)]
+            HRESULT GetImageCount(int* pi);
+
+            [VtblIndex(19)]
+            HRESULT SetImageCount(uint uNewCount);
+
+            [VtblIndex(20)]
+            HRESULT SetBkColor(COLORREF clrBk, COLORREF* pclr);
+
+            [VtblIndex(21)]
+            HRESULT GetBkColor(COLORREF* pclr);
+
+            [VtblIndex(22)]
+            HRESULT BeginDrag(int iTrack, int dxHotspot, int dyHotspot);
+
+            [VtblIndex(23)]
+            HRESULT EndDrag();
+
+            [VtblIndex(24)]
+            HRESULT DragEnter(HWND hwndLock, int x, int y);
+
+            [VtblIndex(25)]
+            HRESULT DragLeave(HWND hwndLock);
+
+            [VtblIndex(26)]
+            HRESULT DragMove(int x, int y);
+
+            [VtblIndex(27)]
+            HRESULT SetDragCursorImage(IUnknown* punk, int iDrag, int dxHotspot, int dyHotspot);
+
+            [VtblIndex(28)]
+            HRESULT DragShowNolock(BOOL fShow);
+
+            [VtblIndex(29)]
+            HRESULT GetDragImage(POINT* ppt, POINT* pptHotspot, [NativeTypeName("const IID &")] Guid* riid, void** ppv);
+
+            [VtblIndex(30)]
+            HRESULT GetItemFlags(int i, [NativeTypeName("DWORD *")] uint* dwFlags);
+
+            [VtblIndex(31)]
+            HRESULT GetOverlayImage(int iOverlay, int* piIndex);
         }
 
         public partial struct Vtbl

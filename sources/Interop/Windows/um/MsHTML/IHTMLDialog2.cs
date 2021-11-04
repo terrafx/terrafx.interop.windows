@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("3050F5E0-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct IHTMLDialog2 : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct IHTMLDialog2
+    public unsafe partial struct IHTMLDialog2 : IHTMLDialog2.Interface
     {
         public void** lpVtbl;
 
@@ -93,6 +93,21 @@ namespace TerraFX.Interop
         public HRESULT get_resizable([NativeTypeName("BSTR *")] ushort** p)
         {
             return ((delegate* unmanaged<IHTMLDialog2*, ushort**, int>)(lpVtbl[10]))((IHTMLDialog2*)Unsafe.AsPointer(ref this), p);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT put_status([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(8)]
+            HRESULT get_status([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(9)]
+            HRESULT put_resizable([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(10)]
+            HRESULT get_resizable([NativeTypeName("BSTR *")] ushort** p);
         }
 
         public partial struct Vtbl

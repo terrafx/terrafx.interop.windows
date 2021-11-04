@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("64338358-366A-471B-BD56-DD8EF48E439B")]
     [NativeTypeName("struct IDisplayDeviceInterop : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IDisplayDeviceInterop
+    public unsafe partial struct IDisplayDeviceInterop : IDisplayDeviceInterop.Interface
     {
         public void** lpVtbl;
 
@@ -51,6 +51,15 @@ namespace TerraFX.Interop
         public HRESULT OpenSharedHandle(HANDLE NTHandle, [NativeTypeName("IID")] Guid riid, void** ppvObj)
         {
             return ((delegate* unmanaged<IDisplayDeviceInterop*, HANDLE, Guid, void**, int>)(lpVtbl[4]))((IDisplayDeviceInterop*)Unsafe.AsPointer(ref this), NTHandle, riid, ppvObj);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT CreateSharedHandle(IInspectable* pObject, [NativeTypeName("const SECURITY_ATTRIBUTES *")] SECURITY_ATTRIBUTES* pSecurityAttributes, [NativeTypeName("DWORD")] uint Access, HSTRING Name, HANDLE* pHandle);
+
+            [VtblIndex(4)]
+            HRESULT OpenSharedHandle(HANDLE NTHandle, [NativeTypeName("IID")] Guid riid, void** ppvObj);
         }
 
         public partial struct Vtbl

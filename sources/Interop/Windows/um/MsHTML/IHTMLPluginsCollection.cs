@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("3050F3FD-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct IHTMLPluginsCollection : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct IHTMLPluginsCollection
+    public unsafe partial struct IHTMLPluginsCollection : IHTMLPluginsCollection.Interface
     {
         public void** lpVtbl;
 
@@ -79,6 +79,15 @@ namespace TerraFX.Interop
         public HRESULT refresh([NativeTypeName("VARIANT_BOOL")] short reload = 0)
         {
             return ((delegate* unmanaged<IHTMLPluginsCollection*, short, int>)(lpVtbl[8]))((IHTMLPluginsCollection*)Unsafe.AsPointer(ref this), reload);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT get_length([NativeTypeName("long *")] int* p);
+
+            [VtblIndex(8)]
+            HRESULT refresh([NativeTypeName("VARIANT_BOOL")] short reload = 0);
         }
 
         public partial struct Vtbl

@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("F292E401-C050-4CDE-83D7-04962D3B23C2")]
     [NativeTypeName("struct ID2D1GradientMesh : ID2D1Resource")]
     [NativeInheritance("ID2D1Resource")]
-    public unsafe partial struct ID2D1GradientMesh
+    public unsafe partial struct ID2D1GradientMesh : ID2D1GradientMesh.Interface
     {
         public void** lpVtbl;
 
@@ -59,6 +59,16 @@ namespace TerraFX.Interop
         public HRESULT GetPatches([NativeTypeName("UINT32")] uint startIndex, D2D1_GRADIENT_MESH_PATCH* patches, [NativeTypeName("UINT32")] uint patchesCount)
         {
             return ((delegate* unmanaged<ID2D1GradientMesh*, uint, D2D1_GRADIENT_MESH_PATCH*, uint, int>)(lpVtbl[5]))((ID2D1GradientMesh*)Unsafe.AsPointer(ref this), startIndex, patches, patchesCount);
+        }
+
+        public interface Interface : ID2D1Resource.Interface
+        {
+            [VtblIndex(4)]
+            [return: NativeTypeName("UINT32")]
+            uint GetPatchCount();
+
+            [VtblIndex(5)]
+            HRESULT GetPatches([NativeTypeName("UINT32")] uint startIndex, D2D1_GRADIENT_MESH_PATCH* patches, [NativeTypeName("UINT32")] uint patchesCount);
         }
 
         public partial struct Vtbl

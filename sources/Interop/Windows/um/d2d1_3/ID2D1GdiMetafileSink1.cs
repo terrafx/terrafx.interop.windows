@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("FD0ECB6B-91E6-411E-8655-395E760F91B4")]
     [NativeTypeName("struct ID2D1GdiMetafileSink1 : ID2D1GdiMetafileSink")]
     [NativeInheritance("ID2D1GdiMetafileSink")]
-    public unsafe partial struct ID2D1GdiMetafileSink1
+    public unsafe partial struct ID2D1GdiMetafileSink1 : ID2D1GdiMetafileSink1.Interface
     {
         public void** lpVtbl;
 
@@ -51,6 +51,12 @@ namespace TerraFX.Interop
         public HRESULT ProcessRecord([NativeTypeName("DWORD")] uint recordType, [NativeTypeName("const void *")] void* recordData, [NativeTypeName("DWORD")] uint recordDataSize, [NativeTypeName("UINT32")] uint flags)
         {
             return ((delegate* unmanaged<ID2D1GdiMetafileSink1*, uint, void*, uint, uint, int>)(lpVtbl[4]))((ID2D1GdiMetafileSink1*)Unsafe.AsPointer(ref this), recordType, recordData, recordDataSize, flags);
+        }
+
+        public interface Interface : ID2D1GdiMetafileSink.Interface
+        {
+            [VtblIndex(4)]
+            HRESULT ProcessRecord([NativeTypeName("DWORD")] uint recordType, [NativeTypeName("const void *")] void* recordData, [NativeTypeName("DWORD")] uint recordDataSize, [NativeTypeName("UINT32")] uint flags);
         }
 
         public partial struct Vtbl

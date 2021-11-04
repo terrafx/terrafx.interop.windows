@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("A9B3D012-3DF2-4EE3-B8D1-8695F457D3C1")]
     [NativeTypeName("struct IDirect3DDxgiInterfaceAccess : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IDirect3DDxgiInterfaceAccess
+    public unsafe partial struct IDirect3DDxgiInterfaceAccess : IDirect3DDxgiInterfaceAccess.Interface
     {
         public void** lpVtbl;
 
@@ -44,6 +44,12 @@ namespace TerraFX.Interop
         public HRESULT GetInterface([NativeTypeName("const IID &")] Guid* iid, void** p)
         {
             return ((delegate* unmanaged<IDirect3DDxgiInterfaceAccess*, Guid*, void**, int>)(lpVtbl[3]))((IDirect3DDxgiInterfaceAccess*)Unsafe.AsPointer(ref this), iid, p);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetInterface([NativeTypeName("const IID &")] Guid* iid, void** p);
         }
 
         public partial struct Vtbl

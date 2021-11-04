@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("6CDF73B0-7F2F-451F-BC0F-63E0F3284E54")]
     [NativeTypeName("struct IShellUIHelper9 : IShellUIHelper8")]
     [NativeInheritance("IShellUIHelper8")]
-    public unsafe partial struct IShellUIHelper9
+    public unsafe partial struct IShellUIHelper9 : IShellUIHelper9.Interface
     {
         public void** lpVtbl;
 
@@ -751,6 +751,12 @@ namespace TerraFX.Interop
         public HRESULT GetOSSku([NativeTypeName("DWORD *")] uint* pdwResult)
         {
             return ((delegate* unmanaged<IShellUIHelper9*, uint*, int>)(lpVtbl[104]))((IShellUIHelper9*)Unsafe.AsPointer(ref this), pdwResult);
+        }
+
+        public interface Interface : IShellUIHelper8.Interface
+        {
+            [VtblIndex(104)]
+            HRESULT GetOSSku([NativeTypeName("DWORD *")] uint* pdwResult);
         }
 
         public partial struct Vtbl

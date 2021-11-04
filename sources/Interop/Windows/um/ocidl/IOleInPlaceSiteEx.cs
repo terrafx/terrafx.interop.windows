@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("9C2CAD80-3424-11CF-B670-00AA004CD6D8")]
     [NativeTypeName("struct IOleInPlaceSiteEx : IOleInPlaceSite")]
     [NativeInheritance("IOleInPlaceSite")]
-    public unsafe partial struct IOleInPlaceSiteEx
+    public unsafe partial struct IOleInPlaceSiteEx : IOleInPlaceSiteEx.Interface
     {
         public void** lpVtbl;
 
@@ -142,6 +142,18 @@ namespace TerraFX.Interop
         public HRESULT RequestUIActivate()
         {
             return ((delegate* unmanaged<IOleInPlaceSiteEx*, int>)(lpVtbl[17]))((IOleInPlaceSiteEx*)Unsafe.AsPointer(ref this));
+        }
+
+        public interface Interface : IOleInPlaceSite.Interface
+        {
+            [VtblIndex(15)]
+            HRESULT OnInPlaceActivateEx(BOOL* pfNoRedraw, [NativeTypeName("DWORD")] uint dwFlags);
+
+            [VtblIndex(16)]
+            HRESULT OnInPlaceDeactivateEx(BOOL fNoRedraw);
+
+            [VtblIndex(17)]
+            HRESULT RequestUIActivate();
         }
 
         public partial struct Vtbl

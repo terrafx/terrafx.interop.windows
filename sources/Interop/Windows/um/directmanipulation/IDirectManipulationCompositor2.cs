@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("D38C7822-F1CB-43CB-B4B9-AC0C767A412E")]
     [NativeTypeName("struct IDirectManipulationCompositor2 : IDirectManipulationCompositor")]
     [NativeInheritance("IDirectManipulationCompositor")]
-    public unsafe partial struct IDirectManipulationCompositor2
+    public unsafe partial struct IDirectManipulationCompositor2 : IDirectManipulationCompositor2.Interface
     {
         public void** lpVtbl;
 
@@ -72,6 +72,12 @@ namespace TerraFX.Interop
         public HRESULT AddContentWithCrossProcessChaining(IDirectManipulationPrimaryContent* content, IUnknown* device, IUnknown* parentVisual, IUnknown* childVisual)
         {
             return ((delegate* unmanaged<IDirectManipulationCompositor2*, IDirectManipulationPrimaryContent*, IUnknown*, IUnknown*, IUnknown*, int>)(lpVtbl[7]))((IDirectManipulationCompositor2*)Unsafe.AsPointer(ref this), content, device, parentVisual, childVisual);
+        }
+
+        public interface Interface : IDirectManipulationCompositor.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT AddContentWithCrossProcessChaining(IDirectManipulationPrimaryContent* content, IUnknown* device, IUnknown* parentVisual, IUnknown* childVisual);
         }
 
         public partial struct Vtbl

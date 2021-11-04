@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("8822C32D-654E-4233-BF21-D7F2E67D30D4")]
     [NativeTypeName("struct IMFTimedTextTrack : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IMFTimedTextTrack
+    public unsafe partial struct IMFTimedTextTrack : IMFTimedTextTrack.Interface
     {
         public void** lpVtbl;
 
@@ -129,6 +129,49 @@ namespace TerraFX.Interop
         public HRESULT GetCueList(IMFTimedTextCueList** cues)
         {
             return ((delegate* unmanaged<IMFTimedTextTrack*, IMFTimedTextCueList**, int>)(lpVtbl[15]))((IMFTimedTextTrack*)Unsafe.AsPointer(ref this), cues);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            [return: NativeTypeName("DWORD")]
+            uint GetId();
+
+            [VtblIndex(4)]
+            HRESULT GetLabel([NativeTypeName("LPWSTR *")] ushort** label);
+
+            [VtblIndex(5)]
+            HRESULT SetLabel([NativeTypeName("LPCWSTR")] ushort* label);
+
+            [VtblIndex(6)]
+            HRESULT GetLanguage([NativeTypeName("LPWSTR *")] ushort** language);
+
+            [VtblIndex(7)]
+            MF_TIMED_TEXT_TRACK_KIND GetTrackKind();
+
+            [VtblIndex(8)]
+            BOOL IsInBand();
+
+            [VtblIndex(9)]
+            HRESULT GetInBandMetadataTrackDispatchType([NativeTypeName("LPWSTR *")] ushort** dispatchType);
+
+            [VtblIndex(10)]
+            BOOL IsActive();
+
+            [VtblIndex(11)]
+            MF_TIMED_TEXT_ERROR_CODE GetErrorCode();
+
+            [VtblIndex(12)]
+            HRESULT GetExtendedErrorCode();
+
+            [VtblIndex(13)]
+            HRESULT GetDataFormat(Guid* format);
+
+            [VtblIndex(14)]
+            MF_TIMED_TEXT_TRACK_READY_STATE GetReadyState();
+
+            [VtblIndex(15)]
+            HRESULT GetCueList(IMFTimedTextCueList** cues);
         }
 
         public partial struct Vtbl

@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("0E6D4D90-6738-11CF-9608-00AA00680DB4")]
     [NativeTypeName("struct ILayoutStorage : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct ILayoutStorage
+    public unsafe partial struct ILayoutStorage : ILayoutStorage.Interface
     {
         public void** lpVtbl;
 
@@ -72,6 +72,24 @@ namespace TerraFX.Interop
         public HRESULT ReLayoutDocfileOnILockBytes(ILockBytes* pILockBytes)
         {
             return ((delegate* unmanaged<ILayoutStorage*, ILockBytes*, int>)(lpVtbl[7]))((ILayoutStorage*)Unsafe.AsPointer(ref this), pILockBytes);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT LayoutScript(StorageLayout* pStorageLayout, [NativeTypeName("DWORD")] uint nEntries, [NativeTypeName("DWORD")] uint glfInterleavedFlag);
+
+            [VtblIndex(4)]
+            HRESULT BeginMonitor();
+
+            [VtblIndex(5)]
+            HRESULT EndMonitor();
+
+            [VtblIndex(6)]
+            HRESULT ReLayoutDocfile([NativeTypeName("OLECHAR *")] ushort* pwcsNewDfName);
+
+            [VtblIndex(7)]
+            HRESULT ReLayoutDocfileOnILockBytes(ILockBytes* pILockBytes);
         }
 
         public partial struct Vtbl

@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("5459B53D-A0FC-4665-ADDD-70171EF7E631")]
     [NativeTypeName("struct IMLOperatorKernelCreationContext : IMLOperatorAttributes")]
     [NativeInheritance("IMLOperatorAttributes")]
-    public unsafe partial struct IMLOperatorKernelCreationContext
+    public unsafe partial struct IMLOperatorKernelCreationContext : IMLOperatorKernelCreationContext.Interface
     {
         public void** lpVtbl;
 
@@ -130,6 +130,38 @@ namespace TerraFX.Interop
         public void GetExecutionInterface(IUnknown** executionObject)
         {
             ((delegate* unmanaged<IMLOperatorKernelCreationContext*, IUnknown**, void>)(lpVtbl[15]))((IMLOperatorKernelCreationContext*)Unsafe.AsPointer(ref this), executionObject);
+        }
+
+        public interface Interface : IMLOperatorAttributes.Interface
+        {
+            [VtblIndex(7)]
+            [return: NativeTypeName("uint32_t")]
+            uint GetInputCount();
+
+            [VtblIndex(8)]
+            [return: NativeTypeName("uint32_t")]
+            uint GetOutputCount();
+
+            [VtblIndex(9)]
+            bool IsInputValid([NativeTypeName("uint32_t")] uint inputIndex);
+
+            [VtblIndex(10)]
+            bool IsOutputValid([NativeTypeName("uint32_t")] uint outputIndex);
+
+            [VtblIndex(11)]
+            HRESULT GetInputEdgeDescription([NativeTypeName("uint32_t")] uint inputIndex, MLOperatorEdgeDescription* edgeDescription);
+
+            [VtblIndex(12)]
+            HRESULT GetOutputEdgeDescription([NativeTypeName("uint32_t")] uint outputIndex, MLOperatorEdgeDescription* edgeDescription);
+
+            [VtblIndex(13)]
+            bool HasTensorShapeDescription();
+
+            [VtblIndex(14)]
+            HRESULT GetTensorShapeDescription(IMLOperatorTensorShapeDescription** shapeDescription);
+
+            [VtblIndex(15)]
+            void GetExecutionInterface(IUnknown** executionObject);
         }
 
         public partial struct Vtbl

@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("F67104FC-2AF9-46FD-B32D-243C1404F3D1")]
     [NativeTypeName("struct IPropertyDescriptionAliasInfo : IPropertyDescription")]
     [NativeInheritance("IPropertyDescription")]
-    public unsafe partial struct IPropertyDescriptionAliasInfo
+    public unsafe partial struct IPropertyDescriptionAliasInfo : IPropertyDescriptionAliasInfo.Interface
     {
         public void** lpVtbl;
 
@@ -198,6 +198,15 @@ namespace TerraFX.Interop
         public HRESULT GetAdditionalSortByAliases([NativeTypeName("const IID &")] Guid* riid, void** ppv)
         {
             return ((delegate* unmanaged<IPropertyDescriptionAliasInfo*, Guid*, void**, int>)(lpVtbl[25]))((IPropertyDescriptionAliasInfo*)Unsafe.AsPointer(ref this), riid, ppv);
+        }
+
+        public interface Interface : IPropertyDescription.Interface
+        {
+            [VtblIndex(24)]
+            HRESULT GetSortByAlias([NativeTypeName("const IID &")] Guid* riid, void** ppv);
+
+            [VtblIndex(25)]
+            HRESULT GetAdditionalSortByAliases([NativeTypeName("const IID &")] Guid* riid, void** ppv);
         }
 
         public partial struct Vtbl

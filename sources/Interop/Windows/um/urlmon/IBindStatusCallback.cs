@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("79EAC9C1-BAF9-11CE-8C82-00AA004BA90B")]
     [NativeTypeName("struct IBindStatusCallback : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IBindStatusCallback
+    public unsafe partial struct IBindStatusCallback : IBindStatusCallback.Interface
     {
         public void** lpVtbl;
 
@@ -93,6 +93,33 @@ namespace TerraFX.Interop
         public HRESULT OnObjectAvailable([NativeTypeName("const IID &")] Guid* riid, IUnknown* punk)
         {
             return ((delegate* unmanaged<IBindStatusCallback*, Guid*, IUnknown*, int>)(lpVtbl[10]))((IBindStatusCallback*)Unsafe.AsPointer(ref this), riid, punk);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT OnStartBinding([NativeTypeName("DWORD")] uint dwReserved, IBinding* pib);
+
+            [VtblIndex(4)]
+            HRESULT GetPriority([NativeTypeName("LONG *")] int* pnPriority);
+
+            [VtblIndex(5)]
+            HRESULT OnLowResource([NativeTypeName("DWORD")] uint reserved);
+
+            [VtblIndex(6)]
+            HRESULT OnProgress([NativeTypeName("ULONG")] uint ulProgress, [NativeTypeName("ULONG")] uint ulProgressMax, [NativeTypeName("ULONG")] uint ulStatusCode, [NativeTypeName("LPCWSTR")] ushort* szStatusText);
+
+            [VtblIndex(7)]
+            HRESULT OnStopBinding(HRESULT hresult, [NativeTypeName("LPCWSTR")] ushort* szError);
+
+            [VtblIndex(8)]
+            HRESULT GetBindInfo([NativeTypeName("DWORD *")] uint* grfBINDF, BINDINFO* pbindinfo);
+
+            [VtblIndex(9)]
+            HRESULT OnDataAvailable([NativeTypeName("DWORD")] uint grfBSCF, [NativeTypeName("DWORD")] uint dwSize, FORMATETC* pformatetc, STGMEDIUM* pstgmed);
+
+            [VtblIndex(10)]
+            HRESULT OnObjectAvailable([NativeTypeName("const IID &")] Guid* riid, IUnknown* punk);
         }
 
         public partial struct Vtbl

@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("E9550983-360B-4F53-B391-AFD695078691")]
     [NativeTypeName("struct IVirtualSurfaceImageSourceNative : ISurfaceImageSourceNative")]
     [NativeInheritance("ISurfaceImageSourceNative")]
-    public unsafe partial struct IVirtualSurfaceImageSourceNative
+    public unsafe partial struct IVirtualSurfaceImageSourceNative : IVirtualSurfaceImageSourceNative.Interface
     {
         public void** lpVtbl;
 
@@ -100,6 +100,27 @@ namespace TerraFX.Interop
         public HRESULT Resize(int newWidth, int newHeight)
         {
             return ((delegate* unmanaged<IVirtualSurfaceImageSourceNative*, int, int, int>)(lpVtbl[11]))((IVirtualSurfaceImageSourceNative*)Unsafe.AsPointer(ref this), newWidth, newHeight);
+        }
+
+        public interface Interface : ISurfaceImageSourceNative.Interface
+        {
+            [VtblIndex(6)]
+            HRESULT Invalidate(RECT updateRect);
+
+            [VtblIndex(7)]
+            HRESULT GetUpdateRectCount([NativeTypeName("DWORD *")] uint* count);
+
+            [VtblIndex(8)]
+            HRESULT GetUpdateRects(RECT* updates, [NativeTypeName("DWORD")] uint count);
+
+            [VtblIndex(9)]
+            HRESULT GetVisibleBounds(RECT* bounds);
+
+            [VtblIndex(10)]
+            HRESULT RegisterForUpdatesNeeded(IVirtualSurfaceUpdatesCallbackNative* callback);
+
+            [VtblIndex(11)]
+            HRESULT Resize(int newWidth, int newHeight);
         }
 
         public partial struct Vtbl

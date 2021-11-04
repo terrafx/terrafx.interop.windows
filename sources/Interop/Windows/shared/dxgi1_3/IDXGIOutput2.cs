@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("595E39D1-2724-4663-99B1-DA969DE28364")]
     [NativeTypeName("struct IDXGIOutput2 : IDXGIOutput1")]
     [NativeInheritance("IDXGIOutput1")]
-    public unsafe partial struct IDXGIOutput2
+    public unsafe partial struct IDXGIOutput2 : IDXGIOutput2.Interface
     {
         public void** lpVtbl;
 
@@ -184,6 +184,12 @@ namespace TerraFX.Interop
         public BOOL SupportsOverlays()
         {
             return ((delegate* unmanaged<IDXGIOutput2*, int>)(lpVtbl[23]))((IDXGIOutput2*)Unsafe.AsPointer(ref this));
+        }
+
+        public interface Interface : IDXGIOutput1.Interface
+        {
+            [VtblIndex(23)]
+            BOOL SupportsOverlays();
         }
 
         public partial struct Vtbl

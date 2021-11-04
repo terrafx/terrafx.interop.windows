@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("7B3B6153-A886-4544-AB37-6537C8500403")]
     [NativeTypeName("struct ID3D11UnorderedAccessView1 : ID3D11UnorderedAccessView")]
     [NativeInheritance("ID3D11UnorderedAccessView")]
-    public unsafe partial struct ID3D11UnorderedAccessView1
+    public unsafe partial struct ID3D11UnorderedAccessView1 : ID3D11UnorderedAccessView1.Interface
     {
         public void** lpVtbl;
 
@@ -86,6 +86,12 @@ namespace TerraFX.Interop
         public void GetDesc1(D3D11_UNORDERED_ACCESS_VIEW_DESC1* pDesc1)
         {
             ((delegate* unmanaged<ID3D11UnorderedAccessView1*, D3D11_UNORDERED_ACCESS_VIEW_DESC1*, void>)(lpVtbl[9]))((ID3D11UnorderedAccessView1*)Unsafe.AsPointer(ref this), pDesc1);
+        }
+
+        public interface Interface : ID3D11UnorderedAccessView.Interface
+        {
+            [VtblIndex(9)]
+            void GetDesc1(D3D11_UNORDERED_ACCESS_VIEW_DESC1* pDesc1);
         }
 
         public partial struct Vtbl

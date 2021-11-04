@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("4652651D-C1FE-4BA1-9F0A-C0F56596F721")]
     [NativeTypeName("struct IProtectionPolicyManagerInterop : IInspectable")]
     [NativeInheritance("IInspectable")]
-    public unsafe partial struct IProtectionPolicyManagerInterop
+    public unsafe partial struct IProtectionPolicyManagerInterop : IProtectionPolicyManagerInterop.Interface
     {
         public void** lpVtbl;
 
@@ -72,6 +72,15 @@ namespace TerraFX.Interop
         public HRESULT GetForWindow(HWND appWindow, [NativeTypeName("const IID &")] Guid* riid, void** result)
         {
             return ((delegate* unmanaged<IProtectionPolicyManagerInterop*, HWND, Guid*, void**, int>)(lpVtbl[7]))((IProtectionPolicyManagerInterop*)Unsafe.AsPointer(ref this), appWindow, riid, result);
+        }
+
+        public interface Interface : IInspectable.Interface
+        {
+            [VtblIndex(6)]
+            HRESULT RequestAccessForWindowAsync(HWND appWindow, HSTRING sourceIdentity, HSTRING targetIdentity, [NativeTypeName("const IID &")] Guid* riid, void** asyncOperation);
+
+            [VtblIndex(7)]
+            HRESULT GetForWindow(HWND appWindow, [NativeTypeName("const IID &")] Guid* riid, void** result);
         }
 
         public partial struct Vtbl

@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("5E54B6D7-B44B-40D9-9A9E-E691D9CE6EDF")]
     [NativeTypeName("struct IAudioMidrange : IPerChannelDbLevel")]
     [NativeInheritance("IPerChannelDbLevel")]
-    public unsafe partial struct IAudioMidrange
+    public unsafe partial struct IAudioMidrange : IAudioMidrange.Interface
     {
         public void** lpVtbl;
 
@@ -79,6 +79,10 @@ namespace TerraFX.Interop
         public HRESULT SetLevelAllChannels([NativeTypeName("float []")] float* aLevelsDB, [NativeTypeName("ULONG")] uint cChannels, [NativeTypeName("LPCGUID")] Guid* pguidEventContext)
         {
             return ((delegate* unmanaged<IAudioMidrange*, float*, uint, Guid*, int>)(lpVtbl[8]))((IAudioMidrange*)Unsafe.AsPointer(ref this), aLevelsDB, cChannels, pguidEventContext);
+        }
+
+        public interface Interface : IPerChannelDbLevel.Interface
+        {
         }
 
         public partial struct Vtbl

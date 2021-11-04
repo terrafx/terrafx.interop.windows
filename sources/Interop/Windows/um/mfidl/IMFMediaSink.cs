@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("6EF2A660-47C0-4666-B13D-CBB717F2FA2C")]
     [NativeTypeName("struct IMFMediaSink : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IMFMediaSink
+    public unsafe partial struct IMFMediaSink : IMFMediaSink.Interface
     {
         public void** lpVtbl;
 
@@ -100,6 +100,36 @@ namespace TerraFX.Interop
         public HRESULT Shutdown()
         {
             return ((delegate* unmanaged<IMFMediaSink*, int>)(lpVtbl[11]))((IMFMediaSink*)Unsafe.AsPointer(ref this));
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetCharacteristics([NativeTypeName("DWORD *")] uint* pdwCharacteristics);
+
+            [VtblIndex(4)]
+            HRESULT AddStreamSink([NativeTypeName("DWORD")] uint dwStreamSinkIdentifier, IMFMediaType* pMediaType, IMFStreamSink** ppStreamSink);
+
+            [VtblIndex(5)]
+            HRESULT RemoveStreamSink([NativeTypeName("DWORD")] uint dwStreamSinkIdentifier);
+
+            [VtblIndex(6)]
+            HRESULT GetStreamSinkCount([NativeTypeName("DWORD *")] uint* pcStreamSinkCount);
+
+            [VtblIndex(7)]
+            HRESULT GetStreamSinkByIndex([NativeTypeName("DWORD")] uint dwIndex, IMFStreamSink** ppStreamSink);
+
+            [VtblIndex(8)]
+            HRESULT GetStreamSinkById([NativeTypeName("DWORD")] uint dwStreamSinkIdentifier, IMFStreamSink** ppStreamSink);
+
+            [VtblIndex(9)]
+            HRESULT SetPresentationClock(IMFPresentationClock* pPresentationClock);
+
+            [VtblIndex(10)]
+            HRESULT GetPresentationClock(IMFPresentationClock** ppPresentationClock);
+
+            [VtblIndex(11)]
+            HRESULT Shutdown();
         }
 
         public partial struct Vtbl

@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("BE7A9CCE-5F9E-11D2-960F-00C04F8EE628")]
     [NativeTypeName("struct ISpEventSource : ISpNotifySource")]
     [NativeInheritance("ISpNotifySource")]
-    public unsafe partial struct ISpEventSource
+    public unsafe partial struct ISpEventSource : ISpEventSource.Interface
     {
         public void** lpVtbl;
 
@@ -107,6 +107,18 @@ namespace TerraFX.Interop
         public HRESULT GetInfo(SPEVENTSOURCEINFO* pInfo)
         {
             return ((delegate* unmanaged<ISpEventSource*, SPEVENTSOURCEINFO*, int>)(lpVtbl[12]))((ISpEventSource*)Unsafe.AsPointer(ref this), pInfo);
+        }
+
+        public interface Interface : ISpNotifySource.Interface
+        {
+            [VtblIndex(10)]
+            HRESULT SetInterest([NativeTypeName("ULONGLONG")] ulong ullEventInterest, [NativeTypeName("ULONGLONG")] ulong ullQueuedInterest);
+
+            [VtblIndex(11)]
+            HRESULT GetEvents([NativeTypeName("ULONG")] uint ulCount, SPEVENT* pEventArray, [NativeTypeName("ULONG *")] uint* pulFetched);
+
+            [VtblIndex(12)]
+            HRESULT GetInfo(SPEVENTSOURCEINFO* pInfo);
         }
 
         public partial struct Vtbl

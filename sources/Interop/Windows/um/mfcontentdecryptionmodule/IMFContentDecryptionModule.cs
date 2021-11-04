@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("87BE986C-10BE-4943-BF48-4B54CE1983A2")]
     [NativeTypeName("struct IMFContentDecryptionModule : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IMFContentDecryptionModule
+    public unsafe partial struct IMFContentDecryptionModule : IMFContentDecryptionModule.Interface
     {
         public void** lpVtbl;
 
@@ -86,6 +86,30 @@ namespace TerraFX.Interop
         public HRESULT GetProtectionSystemIds(Guid** systemIds, [NativeTypeName("DWORD *")] uint* count)
         {
             return ((delegate* unmanaged<IMFContentDecryptionModule*, Guid**, uint*, int>)(lpVtbl[9]))((IMFContentDecryptionModule*)Unsafe.AsPointer(ref this), systemIds, count);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT SetContentEnabler(IMFContentEnabler* contentEnabler, IMFAsyncResult* result);
+
+            [VtblIndex(4)]
+            HRESULT GetSuspendNotify(IMFCdmSuspendNotify** notify);
+
+            [VtblIndex(5)]
+            HRESULT SetPMPHostApp(IMFPMPHostApp* pmpHostApp);
+
+            [VtblIndex(6)]
+            HRESULT CreateSession(MF_MEDIAKEYSESSION_TYPE sessionType, IMFContentDecryptionModuleSessionCallbacks* callbacks, IMFContentDecryptionModuleSession** session);
+
+            [VtblIndex(7)]
+            HRESULT SetServerCertificate([NativeTypeName("const BYTE *")] byte* certificate, [NativeTypeName("DWORD")] uint certificateSize);
+
+            [VtblIndex(8)]
+            HRESULT CreateTrustedInput([NativeTypeName("const BYTE *")] byte* contentInitData, [NativeTypeName("DWORD")] uint contentInitDataSize, IMFTrustedInput** trustedInput);
+
+            [VtblIndex(9)]
+            HRESULT GetProtectionSystemIds(Guid** systemIds, [NativeTypeName("DWORD *")] uint* count);
         }
 
         public partial struct Vtbl

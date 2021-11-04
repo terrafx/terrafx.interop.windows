@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("4AE3A412-0545-43C4-BF6F-6B97A5C6C432")]
     [NativeTypeName("struct IMFTimedTextBinary : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IMFTimedTextBinary
+    public unsafe partial struct IMFTimedTextBinary : IMFTimedTextBinary.Interface
     {
         public void** lpVtbl;
 
@@ -44,6 +44,12 @@ namespace TerraFX.Interop
         public HRESULT GetData([NativeTypeName("const BYTE **")] byte** data, [NativeTypeName("DWORD *")] uint* length)
         {
             return ((delegate* unmanaged<IMFTimedTextBinary*, byte**, uint*, int>)(lpVtbl[3]))((IMFTimedTextBinary*)Unsafe.AsPointer(ref this), data, length);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetData([NativeTypeName("const BYTE **")] byte** data, [NativeTypeName("DWORD *")] uint* length);
         }
 
         public partial struct Vtbl

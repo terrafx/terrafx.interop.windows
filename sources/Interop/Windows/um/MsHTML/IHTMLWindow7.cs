@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("305104B7-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct IHTMLWindow7 : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct IHTMLWindow7
+    public unsafe partial struct IHTMLWindow7 : IHTMLWindow7.Interface
     {
         public void** lpVtbl;
 
@@ -898,6 +898,366 @@ namespace TerraFX.Interop
         public HRESULT get_onwaiting(VARIANT* p)
         {
             return ((delegate* unmanaged<IHTMLWindow7*, VARIANT*, int>)(lpVtbl[125]))((IHTMLWindow7*)Unsafe.AsPointer(ref this), p);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT getSelection(IHTMLSelection** ppIHTMLSelection);
+
+            [VtblIndex(8)]
+            HRESULT getComputedStyle(IHTMLDOMNode* varArgIn, [NativeTypeName("BSTR")] ushort* bstrPseudoElt, IHTMLCSSStyleDeclaration** ppComputedStyle);
+
+            [VtblIndex(9)]
+            HRESULT get_styleMedia(IHTMLStyleMedia** p);
+
+            [VtblIndex(10)]
+            HRESULT put_performance(VARIANT v);
+
+            [VtblIndex(11)]
+            HRESULT get_performance(VARIANT* p);
+
+            [VtblIndex(12)]
+            HRESULT get_innerWidth([NativeTypeName("long *")] int* p);
+
+            [VtblIndex(13)]
+            HRESULT get_innerHeight([NativeTypeName("long *")] int* p);
+
+            [VtblIndex(14)]
+            HRESULT get_pageXOffset([NativeTypeName("long *")] int* p);
+
+            [VtblIndex(15)]
+            HRESULT get_pageYOffset([NativeTypeName("long *")] int* p);
+
+            [VtblIndex(16)]
+            HRESULT get_screenX([NativeTypeName("long *")] int* p);
+
+            [VtblIndex(17)]
+            HRESULT get_screenY([NativeTypeName("long *")] int* p);
+
+            [VtblIndex(18)]
+            HRESULT get_outerWidth([NativeTypeName("long *")] int* p);
+
+            [VtblIndex(19)]
+            HRESULT get_outerHeight([NativeTypeName("long *")] int* p);
+
+            [VtblIndex(20)]
+            HRESULT put_onabort(VARIANT v);
+
+            [VtblIndex(21)]
+            HRESULT get_onabort(VARIANT* p);
+
+            [VtblIndex(22)]
+            HRESULT put_oncanplay(VARIANT v);
+
+            [VtblIndex(23)]
+            HRESULT get_oncanplay(VARIANT* p);
+
+            [VtblIndex(24)]
+            HRESULT put_oncanplaythrough(VARIANT v);
+
+            [VtblIndex(25)]
+            HRESULT get_oncanplaythrough(VARIANT* p);
+
+            [VtblIndex(26)]
+            HRESULT put_onchange(VARIANT v);
+
+            [VtblIndex(27)]
+            HRESULT get_onchange(VARIANT* p);
+
+            [VtblIndex(28)]
+            HRESULT put_onclick(VARIANT v);
+
+            [VtblIndex(29)]
+            HRESULT get_onclick(VARIANT* p);
+
+            [VtblIndex(30)]
+            HRESULT put_oncontextmenu(VARIANT v);
+
+            [VtblIndex(31)]
+            HRESULT get_oncontextmenu(VARIANT* p);
+
+            [VtblIndex(32)]
+            HRESULT put_ondblclick(VARIANT v);
+
+            [VtblIndex(33)]
+            HRESULT get_ondblclick(VARIANT* p);
+
+            [VtblIndex(34)]
+            HRESULT put_ondrag(VARIANT v);
+
+            [VtblIndex(35)]
+            HRESULT get_ondrag(VARIANT* p);
+
+            [VtblIndex(36)]
+            HRESULT put_ondragend(VARIANT v);
+
+            [VtblIndex(37)]
+            HRESULT get_ondragend(VARIANT* p);
+
+            [VtblIndex(38)]
+            HRESULT put_ondragenter(VARIANT v);
+
+            [VtblIndex(39)]
+            HRESULT get_ondragenter(VARIANT* p);
+
+            [VtblIndex(40)]
+            HRESULT put_ondragleave(VARIANT v);
+
+            [VtblIndex(41)]
+            HRESULT get_ondragleave(VARIANT* p);
+
+            [VtblIndex(42)]
+            HRESULT put_ondragover(VARIANT v);
+
+            [VtblIndex(43)]
+            HRESULT get_ondragover(VARIANT* p);
+
+            [VtblIndex(44)]
+            HRESULT put_ondragstart(VARIANT v);
+
+            [VtblIndex(45)]
+            HRESULT get_ondragstart(VARIANT* p);
+
+            [VtblIndex(46)]
+            HRESULT put_ondrop(VARIANT v);
+
+            [VtblIndex(47)]
+            HRESULT get_ondrop(VARIANT* p);
+
+            [VtblIndex(48)]
+            HRESULT put_ondurationchange(VARIANT v);
+
+            [VtblIndex(49)]
+            HRESULT get_ondurationchange(VARIANT* p);
+
+            [VtblIndex(50)]
+            HRESULT put_onfocusin(VARIANT v);
+
+            [VtblIndex(51)]
+            HRESULT get_onfocusin(VARIANT* p);
+
+            [VtblIndex(52)]
+            HRESULT put_onfocusout(VARIANT v);
+
+            [VtblIndex(53)]
+            HRESULT get_onfocusout(VARIANT* p);
+
+            [VtblIndex(54)]
+            HRESULT put_oninput(VARIANT v);
+
+            [VtblIndex(55)]
+            HRESULT get_oninput(VARIANT* p);
+
+            [VtblIndex(56)]
+            HRESULT put_onemptied(VARIANT v);
+
+            [VtblIndex(57)]
+            HRESULT get_onemptied(VARIANT* p);
+
+            [VtblIndex(58)]
+            HRESULT put_onended(VARIANT v);
+
+            [VtblIndex(59)]
+            HRESULT get_onended(VARIANT* p);
+
+            [VtblIndex(60)]
+            HRESULT put_onkeydown(VARIANT v);
+
+            [VtblIndex(61)]
+            HRESULT get_onkeydown(VARIANT* p);
+
+            [VtblIndex(62)]
+            HRESULT put_onkeypress(VARIANT v);
+
+            [VtblIndex(63)]
+            HRESULT get_onkeypress(VARIANT* p);
+
+            [VtblIndex(64)]
+            HRESULT put_onkeyup(VARIANT v);
+
+            [VtblIndex(65)]
+            HRESULT get_onkeyup(VARIANT* p);
+
+            [VtblIndex(66)]
+            HRESULT put_onloadeddata(VARIANT v);
+
+            [VtblIndex(67)]
+            HRESULT get_onloadeddata(VARIANT* p);
+
+            [VtblIndex(68)]
+            HRESULT put_onloadedmetadata(VARIANT v);
+
+            [VtblIndex(69)]
+            HRESULT get_onloadedmetadata(VARIANT* p);
+
+            [VtblIndex(70)]
+            HRESULT put_onloadstart(VARIANT v);
+
+            [VtblIndex(71)]
+            HRESULT get_onloadstart(VARIANT* p);
+
+            [VtblIndex(72)]
+            HRESULT put_onmousedown(VARIANT v);
+
+            [VtblIndex(73)]
+            HRESULT get_onmousedown(VARIANT* p);
+
+            [VtblIndex(74)]
+            HRESULT put_onmouseenter(VARIANT v);
+
+            [VtblIndex(75)]
+            HRESULT get_onmouseenter(VARIANT* p);
+
+            [VtblIndex(76)]
+            HRESULT put_onmouseleave(VARIANT v);
+
+            [VtblIndex(77)]
+            HRESULT get_onmouseleave(VARIANT* p);
+
+            [VtblIndex(78)]
+            HRESULT put_onmousemove(VARIANT v);
+
+            [VtblIndex(79)]
+            HRESULT get_onmousemove(VARIANT* p);
+
+            [VtblIndex(80)]
+            HRESULT put_onmouseout(VARIANT v);
+
+            [VtblIndex(81)]
+            HRESULT get_onmouseout(VARIANT* p);
+
+            [VtblIndex(82)]
+            HRESULT put_onmouseover(VARIANT v);
+
+            [VtblIndex(83)]
+            HRESULT get_onmouseover(VARIANT* p);
+
+            [VtblIndex(84)]
+            HRESULT put_onmouseup(VARIANT v);
+
+            [VtblIndex(85)]
+            HRESULT get_onmouseup(VARIANT* p);
+
+            [VtblIndex(86)]
+            HRESULT put_onmousewheel(VARIANT v);
+
+            [VtblIndex(87)]
+            HRESULT get_onmousewheel(VARIANT* p);
+
+            [VtblIndex(88)]
+            HRESULT put_onoffline(VARIANT v);
+
+            [VtblIndex(89)]
+            HRESULT get_onoffline(VARIANT* p);
+
+            [VtblIndex(90)]
+            HRESULT put_ononline(VARIANT v);
+
+            [VtblIndex(91)]
+            HRESULT get_ononline(VARIANT* p);
+
+            [VtblIndex(92)]
+            HRESULT put_onprogress(VARIANT v);
+
+            [VtblIndex(93)]
+            HRESULT get_onprogress(VARIANT* p);
+
+            [VtblIndex(94)]
+            HRESULT put_onratechange(VARIANT v);
+
+            [VtblIndex(95)]
+            HRESULT get_onratechange(VARIANT* p);
+
+            [VtblIndex(96)]
+            HRESULT put_onreadystatechange(VARIANT v);
+
+            [VtblIndex(97)]
+            HRESULT get_onreadystatechange(VARIANT* p);
+
+            [VtblIndex(98)]
+            HRESULT put_onreset(VARIANT v);
+
+            [VtblIndex(99)]
+            HRESULT get_onreset(VARIANT* p);
+
+            [VtblIndex(100)]
+            HRESULT put_onseeked(VARIANT v);
+
+            [VtblIndex(101)]
+            HRESULT get_onseeked(VARIANT* p);
+
+            [VtblIndex(102)]
+            HRESULT put_onseeking(VARIANT v);
+
+            [VtblIndex(103)]
+            HRESULT get_onseeking(VARIANT* p);
+
+            [VtblIndex(104)]
+            HRESULT put_onselect(VARIANT v);
+
+            [VtblIndex(105)]
+            HRESULT get_onselect(VARIANT* p);
+
+            [VtblIndex(106)]
+            HRESULT put_onstalled(VARIANT v);
+
+            [VtblIndex(107)]
+            HRESULT get_onstalled(VARIANT* p);
+
+            [VtblIndex(108)]
+            HRESULT put_onstorage(VARIANT v);
+
+            [VtblIndex(109)]
+            HRESULT get_onstorage(VARIANT* p);
+
+            [VtblIndex(110)]
+            HRESULT put_onsubmit(VARIANT v);
+
+            [VtblIndex(111)]
+            HRESULT get_onsubmit(VARIANT* p);
+
+            [VtblIndex(112)]
+            HRESULT put_onsuspend(VARIANT v);
+
+            [VtblIndex(113)]
+            HRESULT get_onsuspend(VARIANT* p);
+
+            [VtblIndex(114)]
+            HRESULT put_ontimeupdate(VARIANT v);
+
+            [VtblIndex(115)]
+            HRESULT get_ontimeupdate(VARIANT* p);
+
+            [VtblIndex(116)]
+            HRESULT put_onpause(VARIANT v);
+
+            [VtblIndex(117)]
+            HRESULT get_onpause(VARIANT* p);
+
+            [VtblIndex(118)]
+            HRESULT put_onplay(VARIANT v);
+
+            [VtblIndex(119)]
+            HRESULT get_onplay(VARIANT* p);
+
+            [VtblIndex(120)]
+            HRESULT put_onplaying(VARIANT v);
+
+            [VtblIndex(121)]
+            HRESULT get_onplaying(VARIANT* p);
+
+            [VtblIndex(122)]
+            HRESULT put_onvolumechange(VARIANT v);
+
+            [VtblIndex(123)]
+            HRESULT get_onvolumechange(VARIANT* p);
+
+            [VtblIndex(124)]
+            HRESULT put_onwaiting(VARIANT v);
+
+            [VtblIndex(125)]
+            HRESULT get_onwaiting(VARIANT* p);
         }
 
         public partial struct Vtbl

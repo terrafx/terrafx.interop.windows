@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("305107C9-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct IWebGeopositionError : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct IWebGeopositionError
+    public unsafe partial struct IWebGeopositionError : IWebGeopositionError.Interface
     {
         public void** lpVtbl;
 
@@ -79,6 +79,15 @@ namespace TerraFX.Interop
         public HRESULT get_message([NativeTypeName("BSTR *")] ushort** p)
         {
             return ((delegate* unmanaged<IWebGeopositionError*, ushort**, int>)(lpVtbl[8]))((IWebGeopositionError*)Unsafe.AsPointer(ref this), p);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT get_code([NativeTypeName("long *")] int* p);
+
+            [VtblIndex(8)]
+            HRESULT get_message([NativeTypeName("BSTR *")] ushort** p);
         }
 
         public partial struct Vtbl

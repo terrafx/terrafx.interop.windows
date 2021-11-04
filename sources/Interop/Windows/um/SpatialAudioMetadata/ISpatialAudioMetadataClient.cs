@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("777D4A3B-F6FF-4A26-85DC-68D7CDEDA1D4")]
     [NativeTypeName("struct ISpatialAudioMetadataClient : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct ISpatialAudioMetadataClient
+    public unsafe partial struct ISpatialAudioMetadataClient : ISpatialAudioMetadataClient.Interface
     {
         public void** lpVtbl;
 
@@ -72,6 +72,24 @@ namespace TerraFX.Interop
         public HRESULT ActivateSpatialAudioMetadataReader(ISpatialAudioMetadataReader** metadataReader)
         {
             return ((delegate* unmanaged<ISpatialAudioMetadataClient*, ISpatialAudioMetadataReader**, int>)(lpVtbl[7]))((ISpatialAudioMetadataClient*)Unsafe.AsPointer(ref this), metadataReader);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT ActivateSpatialAudioMetadataItems([NativeTypeName("UINT16")] ushort maxItemCount, [NativeTypeName("UINT16")] ushort frameCount, ISpatialAudioMetadataItemsBuffer** metadataItemsBuffer, ISpatialAudioMetadataItems** metadataItems);
+
+            [VtblIndex(4)]
+            HRESULT GetSpatialAudioMetadataItemsBufferLength([NativeTypeName("UINT16")] ushort maxItemCount, [NativeTypeName("UINT32 *")] uint* bufferLength);
+
+            [VtblIndex(5)]
+            HRESULT ActivateSpatialAudioMetadataWriter(SpatialAudioMetadataWriterOverflowMode overflowMode, ISpatialAudioMetadataWriter** metadataWriter);
+
+            [VtblIndex(6)]
+            HRESULT ActivateSpatialAudioMetadataCopier(ISpatialAudioMetadataCopier** metadataCopier);
+
+            [VtblIndex(7)]
+            HRESULT ActivateSpatialAudioMetadataReader(ISpatialAudioMetadataReader** metadataReader);
         }
 
         public partial struct Vtbl

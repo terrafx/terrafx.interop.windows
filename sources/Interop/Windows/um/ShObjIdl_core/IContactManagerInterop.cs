@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("99EACBA7-E073-43B6-A896-55AFE48A0833")]
     [NativeTypeName("struct IContactManagerInterop : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IContactManagerInterop
+    public unsafe partial struct IContactManagerInterop : IContactManagerInterop.Interface
     {
         public void** lpVtbl;
 
@@ -44,6 +44,12 @@ namespace TerraFX.Interop
         public HRESULT ShowContactCardForWindow(HWND appWindow, IUnknown* contact, [NativeTypeName("const RECT *")] RECT* selection, FLYOUT_PLACEMENT preferredPlacement)
         {
             return ((delegate* unmanaged<IContactManagerInterop*, HWND, IUnknown*, RECT*, FLYOUT_PLACEMENT, int>)(lpVtbl[3]))((IContactManagerInterop*)Unsafe.AsPointer(ref this), appWindow, contact, selection, preferredPlacement);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT ShowContactCardForWindow(HWND appWindow, IUnknown* contact, [NativeTypeName("const RECT *")] RECT* selection, FLYOUT_PLACEMENT preferredPlacement);
         }
 
         public partial struct Vtbl

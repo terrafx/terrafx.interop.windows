@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("310AFA62-0575-11D2-9CA9-0060B0EC3D39")]
     [NativeTypeName("struct IXMLDSOControl : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct IXMLDSOControl
+    public unsafe partial struct IXMLDSOControl : IXMLDSOControl.Interface
     {
         public void** lpVtbl;
 
@@ -100,6 +100,24 @@ namespace TerraFX.Interop
         public HRESULT get_readyState([NativeTypeName("long *")] int* state)
         {
             return ((delegate* unmanaged<IXMLDSOControl*, int*, int>)(lpVtbl[11]))((IXMLDSOControl*)Unsafe.AsPointer(ref this), state);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT get_XMLDocument(IXMLDOMDocument** ppDoc);
+
+            [VtblIndex(8)]
+            HRESULT put_XMLDocument(IXMLDOMDocument* ppDoc);
+
+            [VtblIndex(9)]
+            HRESULT get_JavaDSOCompatible(BOOL* fJavaDSOCompatible);
+
+            [VtblIndex(10)]
+            HRESULT put_JavaDSOCompatible(BOOL fJavaDSOCompatible);
+
+            [VtblIndex(11)]
+            HRESULT get_readyState([NativeTypeName("long *")] int* state);
         }
 
         public partial struct Vtbl

@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("B3458082-BD00-11D1-939B-0060B067B86E")]
     [NativeTypeName("struct IActiveIMMRegistrar : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IActiveIMMRegistrar
+    public unsafe partial struct IActiveIMMRegistrar : IActiveIMMRegistrar.Interface
     {
         public void** lpVtbl;
 
@@ -51,6 +51,15 @@ namespace TerraFX.Interop
         public HRESULT UnregisterIME([NativeTypeName("const IID &")] Guid* rclsid)
         {
             return ((delegate* unmanaged<IActiveIMMRegistrar*, Guid*, int>)(lpVtbl[4]))((IActiveIMMRegistrar*)Unsafe.AsPointer(ref this), rclsid);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT RegisterIME([NativeTypeName("const IID &")] Guid* rclsid, [NativeTypeName("LANGID")] ushort lgid, [NativeTypeName("LPCWSTR")] ushort* pszIconFile, [NativeTypeName("LPCWSTR")] ushort* pszDesc);
+
+            [VtblIndex(4)]
+            HRESULT UnregisterIME([NativeTypeName("const IID &")] Guid* rclsid);
         }
 
         public partial struct Vtbl

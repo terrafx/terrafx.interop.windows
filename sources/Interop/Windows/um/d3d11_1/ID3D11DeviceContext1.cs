@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("BB2C6FAA-B5FB-4082-8E6B-388B8CFA90E1")]
     [NativeTypeName("struct ID3D11DeviceContext1 : ID3D11DeviceContext")]
     [NativeInheritance("ID3D11DeviceContext")]
-    public unsafe partial struct ID3D11DeviceContext1
+    public unsafe partial struct ID3D11DeviceContext1 : ID3D11DeviceContext1.Interface
     {
         public void** lpVtbl;
 
@@ -954,6 +954,66 @@ namespace TerraFX.Interop
         public void DiscardView1(ID3D11View* pResourceView, [NativeTypeName("const D3D11_RECT *")] RECT* pRects, uint NumRects)
         {
             ((delegate* unmanaged<ID3D11DeviceContext1*, ID3D11View*, RECT*, uint, void>)(lpVtbl[133]))((ID3D11DeviceContext1*)Unsafe.AsPointer(ref this), pResourceView, pRects, NumRects);
+        }
+
+        public interface Interface : ID3D11DeviceContext.Interface
+        {
+            [VtblIndex(115)]
+            void CopySubresourceRegion1(ID3D11Resource* pDstResource, uint DstSubresource, uint DstX, uint DstY, uint DstZ, ID3D11Resource* pSrcResource, uint SrcSubresource, [NativeTypeName("const D3D11_BOX *")] D3D11_BOX* pSrcBox, uint CopyFlags);
+
+            [VtblIndex(116)]
+            void UpdateSubresource1(ID3D11Resource* pDstResource, uint DstSubresource, [NativeTypeName("const D3D11_BOX *")] D3D11_BOX* pDstBox, [NativeTypeName("const void *")] void* pSrcData, uint SrcRowPitch, uint SrcDepthPitch, uint CopyFlags);
+
+            [VtblIndex(117)]
+            void DiscardResource(ID3D11Resource* pResource);
+
+            [VtblIndex(118)]
+            void DiscardView(ID3D11View* pResourceView);
+
+            [VtblIndex(119)]
+            void VSSetConstantBuffers1(uint StartSlot, uint NumBuffers, [NativeTypeName("ID3D11Buffer *const *")] ID3D11Buffer** ppConstantBuffers, [NativeTypeName("const UINT *")] uint* pFirstConstant, [NativeTypeName("const UINT *")] uint* pNumConstants);
+
+            [VtblIndex(120)]
+            void HSSetConstantBuffers1(uint StartSlot, uint NumBuffers, [NativeTypeName("ID3D11Buffer *const *")] ID3D11Buffer** ppConstantBuffers, [NativeTypeName("const UINT *")] uint* pFirstConstant, [NativeTypeName("const UINT *")] uint* pNumConstants);
+
+            [VtblIndex(121)]
+            void DSSetConstantBuffers1(uint StartSlot, uint NumBuffers, [NativeTypeName("ID3D11Buffer *const *")] ID3D11Buffer** ppConstantBuffers, [NativeTypeName("const UINT *")] uint* pFirstConstant, [NativeTypeName("const UINT *")] uint* pNumConstants);
+
+            [VtblIndex(122)]
+            void GSSetConstantBuffers1(uint StartSlot, uint NumBuffers, [NativeTypeName("ID3D11Buffer *const *")] ID3D11Buffer** ppConstantBuffers, [NativeTypeName("const UINT *")] uint* pFirstConstant, [NativeTypeName("const UINT *")] uint* pNumConstants);
+
+            [VtblIndex(123)]
+            void PSSetConstantBuffers1(uint StartSlot, uint NumBuffers, [NativeTypeName("ID3D11Buffer *const *")] ID3D11Buffer** ppConstantBuffers, [NativeTypeName("const UINT *")] uint* pFirstConstant, [NativeTypeName("const UINT *")] uint* pNumConstants);
+
+            [VtblIndex(124)]
+            void CSSetConstantBuffers1(uint StartSlot, uint NumBuffers, [NativeTypeName("ID3D11Buffer *const *")] ID3D11Buffer** ppConstantBuffers, [NativeTypeName("const UINT *")] uint* pFirstConstant, [NativeTypeName("const UINT *")] uint* pNumConstants);
+
+            [VtblIndex(125)]
+            void VSGetConstantBuffers1(uint StartSlot, uint NumBuffers, ID3D11Buffer** ppConstantBuffers, uint* pFirstConstant, uint* pNumConstants);
+
+            [VtblIndex(126)]
+            void HSGetConstantBuffers1(uint StartSlot, uint NumBuffers, ID3D11Buffer** ppConstantBuffers, uint* pFirstConstant, uint* pNumConstants);
+
+            [VtblIndex(127)]
+            void DSGetConstantBuffers1(uint StartSlot, uint NumBuffers, ID3D11Buffer** ppConstantBuffers, uint* pFirstConstant, uint* pNumConstants);
+
+            [VtblIndex(128)]
+            void GSGetConstantBuffers1(uint StartSlot, uint NumBuffers, ID3D11Buffer** ppConstantBuffers, uint* pFirstConstant, uint* pNumConstants);
+
+            [VtblIndex(129)]
+            void PSGetConstantBuffers1(uint StartSlot, uint NumBuffers, ID3D11Buffer** ppConstantBuffers, uint* pFirstConstant, uint* pNumConstants);
+
+            [VtblIndex(130)]
+            void CSGetConstantBuffers1(uint StartSlot, uint NumBuffers, ID3D11Buffer** ppConstantBuffers, uint* pFirstConstant, uint* pNumConstants);
+
+            [VtblIndex(131)]
+            void SwapDeviceContextState(ID3DDeviceContextState* pState, ID3DDeviceContextState** ppPreviousState);
+
+            [VtblIndex(132)]
+            void ClearView(ID3D11View* pView, [NativeTypeName("const FLOAT [4]")] float* Color, [NativeTypeName("const D3D11_RECT *")] RECT* pRect, uint NumRects);
+
+            [VtblIndex(133)]
+            void DiscardView1(ID3D11View* pResourceView, [NativeTypeName("const D3D11_RECT *")] RECT* pRects, uint NumRects);
         }
 
         public partial struct Vtbl

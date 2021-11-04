@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("EDC17559-DD5D-4846-8EEF-8BECBA5A4ABF")]
     [NativeTypeName("struct IInternetZoneManagerEx2 : IInternetZoneManagerEx")]
     [NativeInheritance("IInternetZoneManagerEx")]
-    public unsafe partial struct IInternetZoneManagerEx2
+    public unsafe partial struct IInternetZoneManagerEx2 : IInternetZoneManagerEx2.Interface
     {
         public void** lpVtbl;
 
@@ -163,6 +163,21 @@ namespace TerraFX.Interop
         public HRESULT FixUnsecureSettings()
         {
             return ((delegate* unmanaged<IInternetZoneManagerEx2*, int>)(lpVtbl[20]))((IInternetZoneManagerEx2*)Unsafe.AsPointer(ref this));
+        }
+
+        public interface Interface : IInternetZoneManagerEx.Interface
+        {
+            [VtblIndex(17)]
+            HRESULT GetZoneAttributesEx([NativeTypeName("DWORD")] uint dwZone, ZONEATTRIBUTES* pZoneAttributes, [NativeTypeName("DWORD")] uint dwFlags);
+
+            [VtblIndex(18)]
+            HRESULT GetZoneSecurityState([NativeTypeName("DWORD")] uint dwZoneIndex, BOOL fRespectPolicy, [NativeTypeName("LPDWORD")] uint* pdwState, BOOL* pfPolicyEncountered);
+
+            [VtblIndex(19)]
+            HRESULT GetIESecurityState(BOOL fRespectPolicy, [NativeTypeName("LPDWORD")] uint* pdwState, BOOL* pfPolicyEncountered, BOOL fNoCache);
+
+            [VtblIndex(20)]
+            HRESULT FixUnsecureSettings();
         }
 
         public partial struct Vtbl

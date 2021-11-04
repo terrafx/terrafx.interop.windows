@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("DA62B958-3A38-4A97-BD27-149C640C0771")]
     [NativeTypeName("struct IMFSampleAllocatorControl : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IMFSampleAllocatorControl
+    public unsafe partial struct IMFSampleAllocatorControl : IMFSampleAllocatorControl.Interface
     {
         public void** lpVtbl;
 
@@ -51,6 +51,15 @@ namespace TerraFX.Interop
         public HRESULT GetAllocatorUsage([NativeTypeName("DWORD")] uint dwOutputStreamID, [NativeTypeName("DWORD *")] uint* pdwInputStreamID, MFSampleAllocatorUsage* peUsage)
         {
             return ((delegate* unmanaged<IMFSampleAllocatorControl*, uint, uint*, MFSampleAllocatorUsage*, int>)(lpVtbl[4]))((IMFSampleAllocatorControl*)Unsafe.AsPointer(ref this), dwOutputStreamID, pdwInputStreamID, peUsage);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT SetDefaultAllocator([NativeTypeName("DWORD")] uint dwOutputStreamID, IUnknown* pAllocator);
+
+            [VtblIndex(4)]
+            HRESULT GetAllocatorUsage([NativeTypeName("DWORD")] uint dwOutputStreamID, [NativeTypeName("DWORD *")] uint* pdwInputStreamID, MFSampleAllocatorUsage* peUsage);
         }
 
         public partial struct Vtbl

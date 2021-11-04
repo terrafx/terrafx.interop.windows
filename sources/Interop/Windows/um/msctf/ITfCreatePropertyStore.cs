@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("2463FBF0-B0AF-11D2-AFC5-00105A2799B5")]
     [NativeTypeName("struct ITfCreatePropertyStore : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct ITfCreatePropertyStore
+    public unsafe partial struct ITfCreatePropertyStore : ITfCreatePropertyStore.Interface
     {
         public void** lpVtbl;
 
@@ -51,6 +51,15 @@ namespace TerraFX.Interop
         public HRESULT CreatePropertyStore([NativeTypeName("const GUID &")] Guid* guidProp, ITfRange* pRange, [NativeTypeName("ULONG")] uint cb, IStream* pStream, ITfPropertyStore** ppStore)
         {
             return ((delegate* unmanaged<ITfCreatePropertyStore*, Guid*, ITfRange*, uint, IStream*, ITfPropertyStore**, int>)(lpVtbl[4]))((ITfCreatePropertyStore*)Unsafe.AsPointer(ref this), guidProp, pRange, cb, pStream, ppStore);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT IsStoreSerializable([NativeTypeName("const GUID &")] Guid* guidProp, ITfRange* pRange, ITfPropertyStore* pPropStore, BOOL* pfSerializable);
+
+            [VtblIndex(4)]
+            HRESULT CreatePropertyStore([NativeTypeName("const GUID &")] Guid* guidProp, ITfRange* pRange, [NativeTypeName("ULONG")] uint cb, IStream* pStream, ITfPropertyStore** ppStore);
         }
 
         public partial struct Vtbl

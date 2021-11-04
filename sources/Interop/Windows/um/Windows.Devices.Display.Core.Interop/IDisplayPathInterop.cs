@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("A6BA4205-E59E-4E71-B25B-4E436D21EE3D")]
     [NativeTypeName("struct IDisplayPathInterop : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IDisplayPathInterop
+    public unsafe partial struct IDisplayPathInterop : IDisplayPathInterop.Interface
     {
         public void** lpVtbl;
 
@@ -51,6 +51,15 @@ namespace TerraFX.Interop
         public HRESULT GetSourceId(uint* pSourceId)
         {
             return ((delegate* unmanaged<IDisplayPathInterop*, uint*, int>)(lpVtbl[4]))((IDisplayPathInterop*)Unsafe.AsPointer(ref this), pSourceId);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT CreateSourcePresentationHandle(HANDLE* pValue);
+
+            [VtblIndex(4)]
+            HRESULT GetSourceId(uint* pSourceId);
         }
 
         public partial struct Vtbl

@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("D27C3481-5A1C-45B2-8AAA-C20EBBE8229E")]
     [NativeTypeName("struct ICredentialProvider : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct ICredentialProvider
+    public unsafe partial struct ICredentialProvider : ICredentialProvider.Interface
     {
         public void** lpVtbl;
 
@@ -93,6 +93,33 @@ namespace TerraFX.Interop
         public HRESULT GetCredentialAt([NativeTypeName("DWORD")] uint dwIndex, ICredentialProviderCredential** ppcpc)
         {
             return ((delegate* unmanaged<ICredentialProvider*, uint, ICredentialProviderCredential**, int>)(lpVtbl[10]))((ICredentialProvider*)Unsafe.AsPointer(ref this), dwIndex, ppcpc);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT SetUsageScenario(CREDENTIAL_PROVIDER_USAGE_SCENARIO cpus, [NativeTypeName("DWORD")] uint dwFlags);
+
+            [VtblIndex(4)]
+            HRESULT SetSerialization([NativeTypeName("const CREDENTIAL_PROVIDER_CREDENTIAL_SERIALIZATION *")] CREDENTIAL_PROVIDER_CREDENTIAL_SERIALIZATION* pcpcs);
+
+            [VtblIndex(5)]
+            HRESULT Advise(ICredentialProviderEvents* pcpe, [NativeTypeName("UINT_PTR")] nuint upAdviseContext);
+
+            [VtblIndex(6)]
+            HRESULT UnAdvise();
+
+            [VtblIndex(7)]
+            HRESULT GetFieldDescriptorCount([NativeTypeName("DWORD *")] uint* pdwCount);
+
+            [VtblIndex(8)]
+            HRESULT GetFieldDescriptorAt([NativeTypeName("DWORD")] uint dwIndex, CREDENTIAL_PROVIDER_FIELD_DESCRIPTOR** ppcpfd);
+
+            [VtblIndex(9)]
+            HRESULT GetCredentialCount([NativeTypeName("DWORD *")] uint* pdwCount, [NativeTypeName("DWORD *")] uint* pdwDefault, BOOL* pbAutoLogonWithDefault);
+
+            [VtblIndex(10)]
+            HRESULT GetCredentialAt([NativeTypeName("DWORD")] uint dwIndex, ICredentialProviderCredential** ppcpc);
         }
 
         public partial struct Vtbl

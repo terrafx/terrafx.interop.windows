@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("B62A2E7A-067A-4EA3-B598-04C09717502C")]
     [NativeTypeName("struct IDiaAddressMap : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IDiaAddressMap
+    public unsafe partial struct IDiaAddressMap : IDiaAddressMap.Interface
     {
         public void** lpVtbl;
 
@@ -93,6 +93,33 @@ namespace TerraFX.Interop
         public HRESULT set_addressMap([NativeTypeName("DWORD")] uint cData, [NativeTypeName("struct DiaAddressMapEntry *")] DiaAddressMapEntry* pData, BOOL imageToSymbols)
         {
             return ((delegate* unmanaged<IDiaAddressMap*, uint, DiaAddressMapEntry*, BOOL, int>)(lpVtbl[10]))((IDiaAddressMap*)Unsafe.AsPointer(ref this), cData, pData, imageToSymbols);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT get_addressMapEnabled(BOOL* pRetVal);
+
+            [VtblIndex(4)]
+            HRESULT put_addressMapEnabled(BOOL NewVal);
+
+            [VtblIndex(5)]
+            HRESULT get_relativeVirtualAddressEnabled(BOOL* pRetVal);
+
+            [VtblIndex(6)]
+            HRESULT put_relativeVirtualAddressEnabled(BOOL NewVal);
+
+            [VtblIndex(7)]
+            HRESULT get_imageAlign([NativeTypeName("DWORD *")] uint* pRetVal);
+
+            [VtblIndex(8)]
+            HRESULT put_imageAlign([NativeTypeName("DWORD")] uint NewVal);
+
+            [VtblIndex(9)]
+            HRESULT set_imageHeaders([NativeTypeName("DWORD")] uint cbData, byte* pbData, BOOL originalHeaders);
+
+            [VtblIndex(10)]
+            HRESULT set_addressMap([NativeTypeName("DWORD")] uint cData, [NativeTypeName("struct DiaAddressMapEntry *")] DiaAddressMapEntry* pData, BOOL imageToSymbols);
         }
 
         public partial struct Vtbl

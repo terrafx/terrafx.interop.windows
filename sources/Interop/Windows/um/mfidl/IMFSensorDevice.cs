@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("FB9F48F2-2A18-4E28-9730-786F30F04DC4")]
     [NativeTypeName("struct IMFSensorDevice : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IMFSensorDevice
+    public unsafe partial struct IMFSensorDevice : IMFSensorDevice.Interface
     {
         public void** lpVtbl;
 
@@ -100,6 +100,36 @@ namespace TerraFX.Interop
         public HRESULT GetSensorDeviceMode(MFSensorDeviceMode* peMode)
         {
             return ((delegate* unmanaged<IMFSensorDevice*, MFSensorDeviceMode*, int>)(lpVtbl[11]))((IMFSensorDevice*)Unsafe.AsPointer(ref this), peMode);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetDeviceId([NativeTypeName("ULONGLONG *")] ulong* pDeviceId);
+
+            [VtblIndex(4)]
+            HRESULT GetDeviceType(MFSensorDeviceType* pType);
+
+            [VtblIndex(5)]
+            HRESULT GetFlags([NativeTypeName("ULONGLONG *")] ulong* pFlags);
+
+            [VtblIndex(6)]
+            HRESULT GetSymbolicLink([NativeTypeName("LPWSTR")] ushort* SymbolicLink, [NativeTypeName("LONG")] int cchSymbolicLink, [NativeTypeName("LONG *")] int* pcchWritten);
+
+            [VtblIndex(7)]
+            HRESULT GetDeviceAttributes(IMFAttributes** ppAttributes);
+
+            [VtblIndex(8)]
+            HRESULT GetStreamAttributesCount(MFSensorStreamType eType, [NativeTypeName("DWORD *")] uint* pdwCount);
+
+            [VtblIndex(9)]
+            HRESULT GetStreamAttributes(MFSensorStreamType eType, [NativeTypeName("DWORD")] uint dwIndex, IMFAttributes** ppAttributes);
+
+            [VtblIndex(10)]
+            HRESULT SetSensorDeviceMode(MFSensorDeviceMode eMode);
+
+            [VtblIndex(11)]
+            HRESULT GetSensorDeviceMode(MFSensorDeviceMode* peMode);
         }
 
         public partial struct Vtbl

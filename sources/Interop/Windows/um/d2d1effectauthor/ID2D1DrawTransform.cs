@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("36BFDCB6-9739-435D-A30D-A653BEFF6A6F")]
     [NativeTypeName("struct ID2D1DrawTransform : ID2D1Transform")]
     [NativeInheritance("ID2D1Transform")]
-    public unsafe partial struct ID2D1DrawTransform
+    public unsafe partial struct ID2D1DrawTransform : ID2D1DrawTransform.Interface
     {
         public void** lpVtbl;
 
@@ -73,6 +73,12 @@ namespace TerraFX.Interop
         public HRESULT SetDrawInfo(ID2D1DrawInfo* drawInfo)
         {
             return ((delegate* unmanaged<ID2D1DrawTransform*, ID2D1DrawInfo*, int>)(lpVtbl[7]))((ID2D1DrawTransform*)Unsafe.AsPointer(ref this), drawInfo);
+        }
+
+        public interface Interface : ID2D1Transform.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT SetDrawInfo(ID2D1DrawInfo* drawInfo);
         }
 
         public partial struct Vtbl

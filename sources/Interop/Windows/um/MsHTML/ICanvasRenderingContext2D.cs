@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("305106FF-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct ICanvasRenderingContext2D : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct ICanvasRenderingContext2D
+    public unsafe partial struct ICanvasRenderingContext2D : ICanvasRenderingContext2D.Interface
     {
         public void** lpVtbl;
 
@@ -513,6 +513,201 @@ namespace TerraFX.Interop
         public HRESULT putImageData(ICanvasImageData* imagedata, float dx, float dy, VARIANT dirtyX, VARIANT dirtyY, VARIANT dirtyWidth, VARIANT dirtyHeight)
         {
             return ((delegate* unmanaged<ICanvasRenderingContext2D*, ICanvasImageData*, float, float, VARIANT, VARIANT, VARIANT, VARIANT, int>)(lpVtbl[70]))((ICanvasRenderingContext2D*)Unsafe.AsPointer(ref this), imagedata, dx, dy, dirtyX, dirtyY, dirtyWidth, dirtyHeight);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT get_canvas(IHTMLCanvasElement** p);
+
+            [VtblIndex(8)]
+            HRESULT restore();
+
+            [VtblIndex(9)]
+            HRESULT save();
+
+            [VtblIndex(10)]
+            HRESULT rotate(float angle);
+
+            [VtblIndex(11)]
+            HRESULT scale(float x, float y);
+
+            [VtblIndex(12)]
+            HRESULT setTransform(float m11, float m12, float m21, float m22, float dx, float dy);
+
+            [VtblIndex(13)]
+            HRESULT transform(float m11, float m12, float m21, float m22, float dx, float dy);
+
+            [VtblIndex(14)]
+            HRESULT translate(float x, float y);
+
+            [VtblIndex(15)]
+            HRESULT put_globalAlpha(float v);
+
+            [VtblIndex(16)]
+            HRESULT get_globalAlpha(float* p);
+
+            [VtblIndex(17)]
+            HRESULT put_globalCompositeOperation([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(18)]
+            HRESULT get_globalCompositeOperation([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(19)]
+            HRESULT put_fillStyle(VARIANT v);
+
+            [VtblIndex(20)]
+            HRESULT get_fillStyle(VARIANT* p);
+
+            [VtblIndex(21)]
+            HRESULT put_strokeStyle(VARIANT v);
+
+            [VtblIndex(22)]
+            HRESULT get_strokeStyle(VARIANT* p);
+
+            [VtblIndex(23)]
+            HRESULT createLinearGradient(float x0, float y0, float x1, float y1, ICanvasGradient** ppCanvasGradient);
+
+            [VtblIndex(24)]
+            HRESULT createRadialGradient(float x0, float y0, float r0, float x1, float y1, float r1, ICanvasGradient** ppCanvasGradient);
+
+            [VtblIndex(25)]
+            HRESULT createPattern(IDispatch* image, VARIANT repetition, ICanvasPattern** ppCanvasPattern);
+
+            [VtblIndex(26)]
+            HRESULT put_lineCap([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(27)]
+            HRESULT get_lineCap([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(28)]
+            HRESULT put_lineJoin([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(29)]
+            HRESULT get_lineJoin([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(30)]
+            HRESULT put_lineWidth(float v);
+
+            [VtblIndex(31)]
+            HRESULT get_lineWidth(float* p);
+
+            [VtblIndex(32)]
+            HRESULT put_miterLimit(float v);
+
+            [VtblIndex(33)]
+            HRESULT get_miterLimit(float* p);
+
+            [VtblIndex(34)]
+            HRESULT put_shadowBlur(float v);
+
+            [VtblIndex(35)]
+            HRESULT get_shadowBlur(float* p);
+
+            [VtblIndex(36)]
+            HRESULT put_shadowColor([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(37)]
+            HRESULT get_shadowColor([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(38)]
+            HRESULT put_shadowOffsetX(float v);
+
+            [VtblIndex(39)]
+            HRESULT get_shadowOffsetX(float* p);
+
+            [VtblIndex(40)]
+            HRESULT put_shadowOffsetY(float v);
+
+            [VtblIndex(41)]
+            HRESULT get_shadowOffsetY(float* p);
+
+            [VtblIndex(42)]
+            HRESULT clearRect(float x, float y, float w, float h);
+
+            [VtblIndex(43)]
+            HRESULT fillRect(float x, float y, float w, float h);
+
+            [VtblIndex(44)]
+            HRESULT strokeRect(float x, float y, float w, float h);
+
+            [VtblIndex(45)]
+            HRESULT arc(float x, float y, float radius, float startAngle, float endAngle, BOOL anticlockwise);
+
+            [VtblIndex(46)]
+            HRESULT arcTo(float x1, float y1, float x2, float y2, float radius);
+
+            [VtblIndex(47)]
+            HRESULT beginPath();
+
+            [VtblIndex(48)]
+            HRESULT bezierCurveTo(float cp1x, float cp1y, float cp2x, float cp2y, float x, float y);
+
+            [VtblIndex(49)]
+            HRESULT clip();
+
+            [VtblIndex(50)]
+            HRESULT closePath();
+
+            [VtblIndex(51)]
+            HRESULT fill();
+
+            [VtblIndex(52)]
+            HRESULT lineTo(float x, float y);
+
+            [VtblIndex(53)]
+            HRESULT moveTo(float x, float y);
+
+            [VtblIndex(54)]
+            HRESULT quadraticCurveTo(float cpx, float cpy, float x, float y);
+
+            [VtblIndex(55)]
+            HRESULT rect(float x, float y, float w, float h);
+
+            [VtblIndex(56)]
+            HRESULT stroke();
+
+            [VtblIndex(57)]
+            HRESULT isPointInPath(float x, float y, [NativeTypeName("VARIANT_BOOL *")] short* pResult);
+
+            [VtblIndex(58)]
+            HRESULT put_font([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(59)]
+            HRESULT get_font([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(60)]
+            HRESULT put_textAlign([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(61)]
+            HRESULT get_textAlign([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(62)]
+            HRESULT put_textBaseline([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(63)]
+            HRESULT get_textBaseline([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(64)]
+            HRESULT fillText([NativeTypeName("BSTR")] ushort* text, float x, float y, VARIANT maxWidth);
+
+            [VtblIndex(65)]
+            HRESULT measureText([NativeTypeName("BSTR")] ushort* text, ICanvasTextMetrics** ppCanvasTextMetrics);
+
+            [VtblIndex(66)]
+            HRESULT strokeText([NativeTypeName("BSTR")] ushort* text, float x, float y, VARIANT maxWidth);
+
+            [VtblIndex(67)]
+            HRESULT drawImage(IDispatch* pSrc, VARIANT a1, VARIANT a2, VARIANT a3, VARIANT a4, VARIANT a5, VARIANT a6, VARIANT a7, VARIANT a8);
+
+            [VtblIndex(68)]
+            HRESULT createImageData(VARIANT a1, VARIANT a2, ICanvasImageData** ppCanvasImageData);
+
+            [VtblIndex(69)]
+            HRESULT getImageData(float sx, float sy, float sw, float sh, ICanvasImageData** ppCanvasImageData);
+
+            [VtblIndex(70)]
+            HRESULT putImageData(ICanvasImageData* imagedata, float dx, float dy, VARIANT dirtyX, VARIANT dirtyY, VARIANT dirtyWidth, VARIANT dirtyHeight);
         }
 
         public partial struct Vtbl

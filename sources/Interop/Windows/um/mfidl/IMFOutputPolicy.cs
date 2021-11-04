@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("7F00F10A-DAED-41AF-AB26-5FDFA4DFBA3C")]
     [NativeTypeName("struct IMFOutputPolicy : IMFAttributes")]
     [NativeInheritance("IMFAttributes")]
-    public unsafe partial struct IMFOutputPolicy
+    public unsafe partial struct IMFOutputPolicy : IMFOutputPolicy.Interface
     {
         public void** lpVtbl;
 
@@ -268,6 +268,18 @@ namespace TerraFX.Interop
         public HRESULT GetMinimumGRLVersion([NativeTypeName("DWORD *")] uint* pdwMinimumGRLVersion)
         {
             return ((delegate* unmanaged<IMFOutputPolicy*, uint*, int>)(lpVtbl[35]))((IMFOutputPolicy*)Unsafe.AsPointer(ref this), pdwMinimumGRLVersion);
+        }
+
+        public interface Interface : IMFAttributes.Interface
+        {
+            [VtblIndex(33)]
+            HRESULT GenerateRequiredSchemas([NativeTypeName("DWORD")] uint dwAttributes, Guid guidOutputSubType, Guid* rgGuidProtectionSchemasSupported, [NativeTypeName("DWORD")] uint cProtectionSchemasSupported, IMFCollection** ppRequiredProtectionSchemas);
+
+            [VtblIndex(34)]
+            HRESULT GetOriginatorID(Guid* pguidOriginatorID);
+
+            [VtblIndex(35)]
+            HRESULT GetMinimumGRLVersion([NativeTypeName("DWORD *")] uint* pdwMinimumGRLVersion);
         }
 
         public partial struct Vtbl

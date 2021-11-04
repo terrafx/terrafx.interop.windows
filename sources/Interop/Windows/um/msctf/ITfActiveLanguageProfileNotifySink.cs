@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("B246CB75-A93E-4652-BF8C-B3FE0CFD7E57")]
     [NativeTypeName("struct ITfActiveLanguageProfileNotifySink : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct ITfActiveLanguageProfileNotifySink
+    public unsafe partial struct ITfActiveLanguageProfileNotifySink : ITfActiveLanguageProfileNotifySink.Interface
     {
         public void** lpVtbl;
 
@@ -44,6 +44,12 @@ namespace TerraFX.Interop
         public HRESULT OnActivated([NativeTypeName("const IID &")] Guid* clsid, [NativeTypeName("const GUID &")] Guid* guidProfile, BOOL fActivated)
         {
             return ((delegate* unmanaged<ITfActiveLanguageProfileNotifySink*, Guid*, Guid*, BOOL, int>)(lpVtbl[3]))((ITfActiveLanguageProfileNotifySink*)Unsafe.AsPointer(ref this), clsid, guidProfile, fActivated);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT OnActivated([NativeTypeName("const IID &")] Guid* clsid, [NativeTypeName("const GUID &")] Guid* guidProfile, BOOL fActivated);
         }
 
         public partial struct Vtbl

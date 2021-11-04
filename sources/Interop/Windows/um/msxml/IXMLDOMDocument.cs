@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("2933BF81-7B36-11D2-B20E-00C04F983E60")]
     [NativeTypeName("struct IXMLDOMDocument : IXMLDOMNode")]
     [NativeInheritance("IXMLDOMNode")]
-    public unsafe partial struct IXMLDOMDocument
+    public unsafe partial struct IXMLDOMDocument : IXMLDOMDocument.Interface
     {
         public void** lpVtbl;
 
@@ -548,6 +548,108 @@ namespace TerraFX.Interop
         public HRESULT put_ontransformnode(VARIANT ontransformnodeSink)
         {
             return ((delegate* unmanaged<IXMLDOMDocument*, VARIANT, int>)(lpVtbl[75]))((IXMLDOMDocument*)Unsafe.AsPointer(ref this), ontransformnodeSink);
+        }
+
+        public interface Interface : IXMLDOMNode.Interface
+        {
+            [VtblIndex(43)]
+            HRESULT get_doctype(IXMLDOMDocumentType** documentType);
+
+            [VtblIndex(44)]
+            HRESULT get_implementation(IXMLDOMImplementation** impl);
+
+            [VtblIndex(45)]
+            HRESULT get_documentElement(IXMLDOMElement** DOMElement);
+
+            [VtblIndex(46)]
+            HRESULT putref_documentElement(IXMLDOMElement* DOMElement);
+
+            [VtblIndex(47)]
+            HRESULT createElement([NativeTypeName("BSTR")] ushort* tagName, IXMLDOMElement** element);
+
+            [VtblIndex(48)]
+            HRESULT createDocumentFragment(IXMLDOMDocumentFragment** docFrag);
+
+            [VtblIndex(49)]
+            HRESULT createTextNode([NativeTypeName("BSTR")] ushort* data, IXMLDOMText** text);
+
+            [VtblIndex(50)]
+            HRESULT createComment([NativeTypeName("BSTR")] ushort* data, IXMLDOMComment** comment);
+
+            [VtblIndex(51)]
+            HRESULT createCDATASection([NativeTypeName("BSTR")] ushort* data, IXMLDOMCDATASection** cdata);
+
+            [VtblIndex(52)]
+            HRESULT createProcessingInstruction([NativeTypeName("BSTR")] ushort* target, [NativeTypeName("BSTR")] ushort* data, IXMLDOMProcessingInstruction** pi);
+
+            [VtblIndex(53)]
+            HRESULT createAttribute([NativeTypeName("BSTR")] ushort* name, IXMLDOMAttribute** attribute);
+
+            [VtblIndex(54)]
+            HRESULT createEntityReference([NativeTypeName("BSTR")] ushort* name, IXMLDOMEntityReference** entityRef);
+
+            [VtblIndex(55)]
+            HRESULT getElementsByTagName([NativeTypeName("BSTR")] ushort* tagName, IXMLDOMNodeList** resultList);
+
+            [VtblIndex(56)]
+            HRESULT createNode(VARIANT Type, [NativeTypeName("BSTR")] ushort* name, [NativeTypeName("BSTR")] ushort* namespaceURI, IXMLDOMNode** node);
+
+            [VtblIndex(57)]
+            HRESULT nodeFromID([NativeTypeName("BSTR")] ushort* idString, IXMLDOMNode** node);
+
+            [VtblIndex(58)]
+            HRESULT load(VARIANT xmlSource, [NativeTypeName("VARIANT_BOOL *")] short* isSuccessful);
+
+            [VtblIndex(59)]
+            HRESULT get_readyState([NativeTypeName("long *")] int* value);
+
+            [VtblIndex(60)]
+            HRESULT get_parseError(IXMLDOMParseError** errorObj);
+
+            [VtblIndex(61)]
+            HRESULT get_url([NativeTypeName("BSTR *")] ushort** urlString);
+
+            [VtblIndex(62)]
+            HRESULT get_async([NativeTypeName("VARIANT_BOOL *")] short* isAsync);
+
+            [VtblIndex(63)]
+            HRESULT put_async([NativeTypeName("VARIANT_BOOL")] short isAsync);
+
+            [VtblIndex(64)]
+            HRESULT abort();
+
+            [VtblIndex(65)]
+            HRESULT loadXML([NativeTypeName("BSTR")] ushort* bstrXML, [NativeTypeName("VARIANT_BOOL *")] short* isSuccessful);
+
+            [VtblIndex(66)]
+            HRESULT save(VARIANT destination);
+
+            [VtblIndex(67)]
+            HRESULT get_validateOnParse([NativeTypeName("VARIANT_BOOL *")] short* isValidating);
+
+            [VtblIndex(68)]
+            HRESULT put_validateOnParse([NativeTypeName("VARIANT_BOOL")] short isValidating);
+
+            [VtblIndex(69)]
+            HRESULT get_resolveExternals([NativeTypeName("VARIANT_BOOL *")] short* isResolving);
+
+            [VtblIndex(70)]
+            HRESULT put_resolveExternals([NativeTypeName("VARIANT_BOOL")] short isResolving);
+
+            [VtblIndex(71)]
+            HRESULT get_preserveWhiteSpace([NativeTypeName("VARIANT_BOOL *")] short* isPreserving);
+
+            [VtblIndex(72)]
+            HRESULT put_preserveWhiteSpace([NativeTypeName("VARIANT_BOOL")] short isPreserving);
+
+            [VtblIndex(73)]
+            HRESULT put_onreadystatechange(VARIANT readystatechangeSink);
+
+            [VtblIndex(74)]
+            HRESULT put_ondataavailable(VARIANT ondataavailableSink);
+
+            [VtblIndex(75)]
+            HRESULT put_ontransformnode(VARIANT ontransformnodeSink);
         }
 
         public partial struct Vtbl

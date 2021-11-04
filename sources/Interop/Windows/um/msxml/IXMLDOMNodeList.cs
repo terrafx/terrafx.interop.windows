@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("2933BF82-7B36-11D2-B20E-00C04F983E60")]
     [NativeTypeName("struct IXMLDOMNodeList : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct IXMLDOMNodeList
+    public unsafe partial struct IXMLDOMNodeList : IXMLDOMNodeList.Interface
     {
         public void** lpVtbl;
 
@@ -100,6 +100,24 @@ namespace TerraFX.Interop
         public HRESULT get__newEnum(IUnknown** ppUnk)
         {
             return ((delegate* unmanaged<IXMLDOMNodeList*, IUnknown**, int>)(lpVtbl[11]))((IXMLDOMNodeList*)Unsafe.AsPointer(ref this), ppUnk);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT get_item([NativeTypeName("long")] int index, IXMLDOMNode** listItem);
+
+            [VtblIndex(8)]
+            HRESULT get_length([NativeTypeName("long *")] int* listLength);
+
+            [VtblIndex(9)]
+            HRESULT nextNode(IXMLDOMNode** nextItem);
+
+            [VtblIndex(10)]
+            HRESULT reset();
+
+            [VtblIndex(11)]
+            HRESULT get__newEnum(IUnknown** ppUnk);
         }
 
         public partial struct Vtbl

@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("0ADF7D52-929C-4E61-ADDB-FFED30DE66EF")]
     [NativeTypeName("struct ID3D12SharingContract : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct ID3D12SharingContract
+    public unsafe partial struct ID3D12SharingContract : ID3D12SharingContract.Interface
     {
         public void** lpVtbl;
 
@@ -65,6 +65,21 @@ namespace TerraFX.Interop
         public void EndCapturableWork([NativeTypeName("const GUID &")] Guid* guid)
         {
             ((delegate* unmanaged<ID3D12SharingContract*, Guid*, void>)(lpVtbl[6]))((ID3D12SharingContract*)Unsafe.AsPointer(ref this), guid);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            void Present(ID3D12Resource* pResource, uint Subresource, HWND window);
+
+            [VtblIndex(4)]
+            void SharedFenceSignal(ID3D12Fence* pFence, [NativeTypeName("UINT64")] ulong FenceValue);
+
+            [VtblIndex(5)]
+            void BeginCapturableWork([NativeTypeName("const GUID &")] Guid* guid);
+
+            [VtblIndex(6)]
+            void EndCapturableWork([NativeTypeName("const GUID &")] Guid* guid);
         }
 
         public partial struct Vtbl

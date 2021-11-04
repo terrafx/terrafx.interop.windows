@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("3050F7FD-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct IElementNamespaceFactoryCallback : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IElementNamespaceFactoryCallback
+    public unsafe partial struct IElementNamespaceFactoryCallback : IElementNamespaceFactoryCallback.Interface
     {
         public void** lpVtbl;
 
@@ -44,6 +44,12 @@ namespace TerraFX.Interop
         public HRESULT Resolve([NativeTypeName("BSTR")] ushort* bstrNamespace, [NativeTypeName("BSTR")] ushort* bstrTagName, [NativeTypeName("BSTR")] ushort* bstrAttrs, IElementNamespace* pNamespace)
         {
             return ((delegate* unmanaged<IElementNamespaceFactoryCallback*, ushort*, ushort*, ushort*, IElementNamespace*, int>)(lpVtbl[3]))((IElementNamespaceFactoryCallback*)Unsafe.AsPointer(ref this), bstrNamespace, bstrTagName, bstrAttrs, pNamespace);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT Resolve([NativeTypeName("BSTR")] ushort* bstrNamespace, [NativeTypeName("BSTR")] ushort* bstrTagName, [NativeTypeName("BSTR")] ushort* bstrAttrs, IElementNamespace* pNamespace);
         }
 
         public partial struct Vtbl

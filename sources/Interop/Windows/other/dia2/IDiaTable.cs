@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("4A59FB77-ABAC-469B-A30B-9ECC85BFEF14")]
     [NativeTypeName("struct IDiaTable : IEnumUnknown")]
     [NativeInheritance("IEnumUnknown")]
-    public unsafe partial struct IDiaTable
+    public unsafe partial struct IDiaTable : IDiaTable.Interface
     {
         public void** lpVtbl;
 
@@ -93,6 +93,21 @@ namespace TerraFX.Interop
         public HRESULT Item([NativeTypeName("DWORD")] uint index, IUnknown** element)
         {
             return ((delegate* unmanaged<IDiaTable*, uint, IUnknown**, int>)(lpVtbl[10]))((IDiaTable*)Unsafe.AsPointer(ref this), index, element);
+        }
+
+        public interface Interface : IEnumUnknown.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT get__NewEnum(IUnknown** pRetVal);
+
+            [VtblIndex(8)]
+            HRESULT get_name([NativeTypeName("BSTR *")] ushort** pRetVal);
+
+            [VtblIndex(9)]
+            HRESULT get_Count([NativeTypeName("LONG *")] int* pRetVal);
+
+            [VtblIndex(10)]
+            HRESULT Item([NativeTypeName("DWORD")] uint index, IUnknown** element);
         }
 
         public partial struct Vtbl

@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("3050F65E-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct IHTMLControlRange2 : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct IHTMLControlRange2
+    public unsafe partial struct IHTMLControlRange2 : IHTMLControlRange2.Interface
     {
         public void** lpVtbl;
 
@@ -72,6 +72,12 @@ namespace TerraFX.Interop
         public HRESULT addElement(IHTMLElement* item)
         {
             return ((delegate* unmanaged<IHTMLControlRange2*, IHTMLElement*, int>)(lpVtbl[7]))((IHTMLControlRange2*)Unsafe.AsPointer(ref this), item);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT addElement(IHTMLElement* item);
         }
 
         public partial struct Vtbl

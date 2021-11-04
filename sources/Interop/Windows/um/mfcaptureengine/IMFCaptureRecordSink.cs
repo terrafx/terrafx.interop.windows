@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("3323B55A-F92A-4FE2-8EDC-E9BFC0634D77")]
     [NativeTypeName("struct IMFCaptureRecordSink : IMFCaptureSink")]
     [NativeInheritance("IMFCaptureSink")]
-    public unsafe partial struct IMFCaptureRecordSink
+    public unsafe partial struct IMFCaptureRecordSink : IMFCaptureRecordSink.Interface
     {
         public void** lpVtbl;
 
@@ -114,6 +114,27 @@ namespace TerraFX.Interop
         public HRESULT SetRotation([NativeTypeName("DWORD")] uint dwStreamIndex, [NativeTypeName("DWORD")] uint dwRotationValue)
         {
             return ((delegate* unmanaged<IMFCaptureRecordSink*, uint, uint, int>)(lpVtbl[13]))((IMFCaptureRecordSink*)Unsafe.AsPointer(ref this), dwStreamIndex, dwRotationValue);
+        }
+
+        public interface Interface : IMFCaptureSink.Interface
+        {
+            [VtblIndex(8)]
+            HRESULT SetOutputByteStream(IMFByteStream* pByteStream, [NativeTypeName("const GUID &")] Guid* guidContainerType);
+
+            [VtblIndex(9)]
+            HRESULT SetOutputFileName([NativeTypeName("LPCWSTR")] ushort* fileName);
+
+            [VtblIndex(10)]
+            HRESULT SetSampleCallback([NativeTypeName("DWORD")] uint dwStreamSinkIndex, IMFCaptureEngineOnSampleCallback* pCallback);
+
+            [VtblIndex(11)]
+            HRESULT SetCustomSink(IMFMediaSink* pMediaSink);
+
+            [VtblIndex(12)]
+            HRESULT GetRotation([NativeTypeName("DWORD")] uint dwStreamIndex, [NativeTypeName("DWORD *")] uint* pdwRotationValue);
+
+            [VtblIndex(13)]
+            HRESULT SetRotation([NativeTypeName("DWORD")] uint dwStreamIndex, [NativeTypeName("DWORD")] uint dwRotationValue);
         }
 
         public partial struct Vtbl

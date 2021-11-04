@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("3050F40B-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct IHTMLTextRangeMetrics : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct IHTMLTextRangeMetrics
+    public unsafe partial struct IHTMLTextRangeMetrics : IHTMLTextRangeMetrics.Interface
     {
         public void** lpVtbl;
 
@@ -107,6 +107,27 @@ namespace TerraFX.Interop
         public HRESULT get_boundingHeight([NativeTypeName("long *")] int* p)
         {
             return ((delegate* unmanaged<IHTMLTextRangeMetrics*, int*, int>)(lpVtbl[12]))((IHTMLTextRangeMetrics*)Unsafe.AsPointer(ref this), p);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT get_offsetTop([NativeTypeName("long *")] int* p);
+
+            [VtblIndex(8)]
+            HRESULT get_offsetLeft([NativeTypeName("long *")] int* p);
+
+            [VtblIndex(9)]
+            HRESULT get_boundingTop([NativeTypeName("long *")] int* p);
+
+            [VtblIndex(10)]
+            HRESULT get_boundingLeft([NativeTypeName("long *")] int* p);
+
+            [VtblIndex(11)]
+            HRESULT get_boundingWidth([NativeTypeName("long *")] int* p);
+
+            [VtblIndex(12)]
+            HRESULT get_boundingHeight([NativeTypeName("long *")] int* p);
         }
 
         public partial struct Vtbl

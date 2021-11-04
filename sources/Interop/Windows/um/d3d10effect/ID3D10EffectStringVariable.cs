@@ -9,7 +9,7 @@ namespace TerraFX.Interop
 {
     [NativeTypeName("struct ID3D10EffectStringVariable : ID3D10EffectVariable")]
     [NativeInheritance("ID3D10EffectVariable")]
-    public unsafe partial struct ID3D10EffectStringVariable
+    public unsafe partial struct ID3D10EffectStringVariable : ID3D10EffectStringVariable.Interface
     {
         public void** lpVtbl;
 
@@ -200,6 +200,15 @@ namespace TerraFX.Interop
         public HRESULT GetStringArray([NativeTypeName("LPCSTR *")] sbyte** ppStrings, uint Offset, uint Count)
         {
             return ((delegate* unmanaged<ID3D10EffectStringVariable*, sbyte**, uint, uint, int>)(lpVtbl[26]))((ID3D10EffectStringVariable*)Unsafe.AsPointer(ref this), ppStrings, Offset, Count);
+        }
+
+        public interface Interface : ID3D10EffectVariable.Interface
+        {
+            [VtblIndex(25)]
+            HRESULT GetString([NativeTypeName("LPCSTR *")] sbyte** ppString);
+
+            [VtblIndex(26)]
+            HRESULT GetStringArray([NativeTypeName("LPCSTR *")] sbyte** ppStrings, uint Offset, uint Count);
         }
 
         public partial struct Vtbl

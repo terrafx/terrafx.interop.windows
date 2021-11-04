@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("79A2E5FB-CCD2-469A-9FDE-195D10951F7E")]
     [NativeTypeName("struct ID3D12VideoDecoder1 : ID3D12VideoDecoder")]
     [NativeInheritance("ID3D12VideoDecoder")]
-    public unsafe partial struct ID3D12VideoDecoder1
+    public unsafe partial struct ID3D12VideoDecoder1 : ID3D12VideoDecoder1.Interface
     {
         public void** lpVtbl;
 
@@ -87,6 +87,12 @@ namespace TerraFX.Interop
         public HRESULT GetProtectedResourceSession([NativeTypeName("const IID &")] Guid* riid, void** ppProtectedSession)
         {
             return ((delegate* unmanaged<ID3D12VideoDecoder1*, Guid*, void**, int>)(lpVtbl[9]))((ID3D12VideoDecoder1*)Unsafe.AsPointer(ref this), riid, ppProtectedSession);
+        }
+
+        public interface Interface : ID3D12VideoDecoder.Interface
+        {
+            [VtblIndex(9)]
+            HRESULT GetProtectedResourceSession([NativeTypeName("const IID &")] Guid* riid, void** ppProtectedSession);
         }
 
         public partial struct Vtbl

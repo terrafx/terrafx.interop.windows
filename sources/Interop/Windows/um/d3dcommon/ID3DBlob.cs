@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("8BA5FB08-5195-40E2-AC58-0D989C3A0102")]
     [NativeTypeName("struct ID3D10Blob : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct ID3DBlob
+    public unsafe partial struct ID3DBlob : ID3DBlob.Interface
     {
         public void** lpVtbl;
 
@@ -53,6 +53,17 @@ namespace TerraFX.Interop
         public nuint GetBufferSize()
         {
             return ((delegate* unmanaged<ID3DBlob*, nuint>)(lpVtbl[4]))((ID3DBlob*)Unsafe.AsPointer(ref this));
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            [return: NativeTypeName("LPVOID")]
+            void* GetBufferPointer();
+
+            [VtblIndex(4)]
+            [return: NativeTypeName("SIZE_T")]
+            nuint GetBufferSize();
         }
 
         public partial struct Vtbl

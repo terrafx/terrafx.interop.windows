@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("4C80E962-F032-4F60-BC9E-EBC2CFA1D83C")]
     [NativeTypeName("struct ID3D12Device9 : ID3D12Device8")]
     [NativeInheritance("ID3D12Device8")]
-    public unsafe partial struct ID3D12Device9
+    public unsafe partial struct ID3D12Device9 : ID3D12Device9.Interface
     {
         public void** lpVtbl;
 
@@ -553,6 +553,18 @@ namespace TerraFX.Interop
         public HRESULT CreateCommandQueue1([NativeTypeName("const D3D12_COMMAND_QUEUE_DESC *")] D3D12_COMMAND_QUEUE_DESC* pDesc, [NativeTypeName("const IID &")] Guid* CreatorID, [NativeTypeName("const IID &")] Guid* riid, void** ppCommandQueue)
         {
             return ((delegate* unmanaged<ID3D12Device9*, D3D12_COMMAND_QUEUE_DESC*, Guid*, Guid*, void**, int>)(lpVtbl[75]))((ID3D12Device9*)Unsafe.AsPointer(ref this), pDesc, CreatorID, riid, ppCommandQueue);
+        }
+
+        public interface Interface : ID3D12Device8.Interface
+        {
+            [VtblIndex(73)]
+            HRESULT CreateShaderCacheSession([NativeTypeName("const D3D12_SHADER_CACHE_SESSION_DESC *")] D3D12_SHADER_CACHE_SESSION_DESC* pDesc, [NativeTypeName("const IID &")] Guid* riid, void** ppvSession);
+
+            [VtblIndex(74)]
+            HRESULT ShaderCacheControl(D3D12_SHADER_CACHE_KIND_FLAGS Kinds, D3D12_SHADER_CACHE_CONTROL_FLAGS Control);
+
+            [VtblIndex(75)]
+            HRESULT CreateCommandQueue1([NativeTypeName("const D3D12_COMMAND_QUEUE_DESC *")] D3D12_COMMAND_QUEUE_DESC* pDesc, [NativeTypeName("const IID &")] Guid* CreatorID, [NativeTypeName("const IID &")] Guid* riid, void** ppCommandQueue);
         }
 
         public partial struct Vtbl

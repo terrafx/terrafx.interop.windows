@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("1E45BD02-BE45-4D71-BA32-0E576CFCD59F")]
     [NativeTypeName("struct IDiaEnumSymbolsByAddr2 : IDiaEnumSymbolsByAddr")]
     [NativeInheritance("IDiaEnumSymbolsByAddr")]
-    public unsafe partial struct IDiaEnumSymbolsByAddr2
+    public unsafe partial struct IDiaEnumSymbolsByAddr2 : IDiaEnumSymbolsByAddr2.Interface
     {
         public void** lpVtbl;
 
@@ -114,6 +114,24 @@ namespace TerraFX.Interop
         public HRESULT PrevEx(BOOL fPromoteBlockSym, [NativeTypeName("ULONG")] uint celt, IDiaSymbol** rgelt, [NativeTypeName("ULONG *")] uint* pceltFetched)
         {
             return ((delegate* unmanaged<IDiaEnumSymbolsByAddr2*, BOOL, uint, IDiaSymbol**, uint*, int>)(lpVtbl[13]))((IDiaEnumSymbolsByAddr2*)Unsafe.AsPointer(ref this), fPromoteBlockSym, celt, rgelt, pceltFetched);
+        }
+
+        public interface Interface : IDiaEnumSymbolsByAddr.Interface
+        {
+            [VtblIndex(9)]
+            HRESULT symbolByAddrEx(BOOL fPromoteBlockSym, [NativeTypeName("DWORD")] uint isect, [NativeTypeName("DWORD")] uint offset, IDiaSymbol** ppSymbol);
+
+            [VtblIndex(10)]
+            HRESULT symbolByRVAEx(BOOL fPromoteBlockSym, [NativeTypeName("DWORD")] uint relativeVirtualAddress, IDiaSymbol** ppSymbol);
+
+            [VtblIndex(11)]
+            HRESULT symbolByVAEx(BOOL fPromoteBlockSym, [NativeTypeName("ULONGLONG")] ulong virtualAddress, IDiaSymbol** ppSymbol);
+
+            [VtblIndex(12)]
+            HRESULT NextEx(BOOL fPromoteBlockSym, [NativeTypeName("ULONG")] uint celt, IDiaSymbol** rgelt, [NativeTypeName("ULONG *")] uint* pceltFetched);
+
+            [VtblIndex(13)]
+            HRESULT PrevEx(BOOL fPromoteBlockSym, [NativeTypeName("ULONG")] uint celt, IDiaSymbol** rgelt, [NativeTypeName("ULONG *")] uint* pceltFetched);
         }
 
         public partial struct Vtbl

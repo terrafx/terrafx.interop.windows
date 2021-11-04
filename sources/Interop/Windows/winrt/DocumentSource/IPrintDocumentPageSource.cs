@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("A96BB1DB-172E-4667-82B5-AD97A252318F")]
     [NativeTypeName("struct IPrintDocumentPageSource : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IPrintDocumentPageSource
+    public unsafe partial struct IPrintDocumentPageSource : IPrintDocumentPageSource.Interface
     {
         public void** lpVtbl;
 
@@ -51,6 +51,15 @@ namespace TerraFX.Interop
         public HRESULT MakeDocument(IInspectable* printTaskOptions, IPrintDocumentPackageTarget* docPackageTarget)
         {
             return ((delegate* unmanaged<IPrintDocumentPageSource*, IInspectable*, IPrintDocumentPackageTarget*, int>)(lpVtbl[4]))((IPrintDocumentPageSource*)Unsafe.AsPointer(ref this), printTaskOptions, docPackageTarget);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetPreviewPageCollection(IPrintDocumentPackageTarget* docPackageTarget, IPrintPreviewPageCollection** docPageCollection);
+
+            [VtblIndex(4)]
+            HRESULT MakeDocument(IInspectable* printTaskOptions, IPrintDocumentPackageTarget* docPackageTarget);
         }
 
         public partial struct Vtbl

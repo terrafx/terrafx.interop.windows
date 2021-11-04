@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("5B87EF6B-7ED8-434F-BA0E-184FAC1628D1")]
     [NativeTypeName("struct IMFNetCredentialManager : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IMFNetCredentialManager
+    public unsafe partial struct IMFNetCredentialManager : IMFNetCredentialManager.Interface
     {
         public void** lpVtbl;
 
@@ -58,6 +58,18 @@ namespace TerraFX.Interop
         public HRESULT SetGood(IMFNetCredential* pCred, BOOL fGood)
         {
             return ((delegate* unmanaged<IMFNetCredentialManager*, IMFNetCredential*, BOOL, int>)(lpVtbl[5]))((IMFNetCredentialManager*)Unsafe.AsPointer(ref this), pCred, fGood);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT BeginGetCredentials(MFNetCredentialManagerGetParam* pParam, IMFAsyncCallback* pCallback, IUnknown* pState);
+
+            [VtblIndex(4)]
+            HRESULT EndGetCredentials(IMFAsyncResult* pResult, IMFNetCredential** ppCred);
+
+            [VtblIndex(5)]
+            HRESULT SetGood(IMFNetCredential* pCred, BOOL fGood);
         }
 
         public partial struct Vtbl

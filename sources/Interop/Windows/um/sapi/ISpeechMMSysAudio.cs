@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("3C76AF6D-1FD7-4831-81D1-3B71D5A13C44")]
     [NativeTypeName("struct ISpeechMMSysAudio : ISpeechAudio")]
     [NativeInheritance("ISpeechAudio")]
-    public unsafe partial struct ISpeechMMSysAudio
+    public unsafe partial struct ISpeechMMSysAudio : ISpeechMMSysAudio.Interface
     {
         public void** lpVtbl;
 
@@ -198,6 +198,24 @@ namespace TerraFX.Interop
         public HRESULT get_MMHandle([NativeTypeName("long *")] int* Handle)
         {
             return ((delegate* unmanaged<ISpeechMMSysAudio*, int*, int>)(lpVtbl[25]))((ISpeechMMSysAudio*)Unsafe.AsPointer(ref this), Handle);
+        }
+
+        public interface Interface : ISpeechAudio.Interface
+        {
+            [VtblIndex(21)]
+            HRESULT get_DeviceId([NativeTypeName("long *")] int* DeviceId);
+
+            [VtblIndex(22)]
+            HRESULT put_DeviceId([NativeTypeName("long")] int DeviceId);
+
+            [VtblIndex(23)]
+            HRESULT get_LineId([NativeTypeName("long *")] int* LineId);
+
+            [VtblIndex(24)]
+            HRESULT put_LineId([NativeTypeName("long")] int LineId);
+
+            [VtblIndex(25)]
+            HRESULT get_MMHandle([NativeTypeName("long *")] int* Handle);
         }
 
         public partial struct Vtbl

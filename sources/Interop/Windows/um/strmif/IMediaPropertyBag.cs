@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("6025A880-C0D5-11D0-BD4E-00A0C911CE86")]
     [NativeTypeName("struct IMediaPropertyBag : IPropertyBag")]
     [NativeInheritance("IPropertyBag")]
-    public unsafe partial struct IMediaPropertyBag
+    public unsafe partial struct IMediaPropertyBag : IMediaPropertyBag.Interface
     {
         public void** lpVtbl;
 
@@ -58,6 +58,12 @@ namespace TerraFX.Interop
         public HRESULT EnumProperty([NativeTypeName("ULONG")] uint iProperty, VARIANT* pvarPropertyName, VARIANT* pvarPropertyValue)
         {
             return ((delegate* unmanaged<IMediaPropertyBag*, uint, VARIANT*, VARIANT*, int>)(lpVtbl[5]))((IMediaPropertyBag*)Unsafe.AsPointer(ref this), iProperty, pvarPropertyName, pvarPropertyValue);
+        }
+
+        public interface Interface : IPropertyBag.Interface
+        {
+            [VtblIndex(5)]
+            HRESULT EnumProperty([NativeTypeName("ULONG")] uint iProperty, VARIANT* pvarPropertyName, VARIANT* pvarPropertyValue);
         }
 
         public partial struct Vtbl

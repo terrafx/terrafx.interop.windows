@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("8D009D86-5B9F-4115-B1FC-9F80D52AB8AB")]
     [NativeTypeName("struct IMFQualityManager : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IMFQualityManager
+    public unsafe partial struct IMFQualityManager : IMFQualityManager.Interface
     {
         public void** lpVtbl;
 
@@ -79,6 +79,27 @@ namespace TerraFX.Interop
         public HRESULT Shutdown()
         {
             return ((delegate* unmanaged<IMFQualityManager*, int>)(lpVtbl[8]))((IMFQualityManager*)Unsafe.AsPointer(ref this));
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT NotifyTopology(IMFTopology* pTopology);
+
+            [VtblIndex(4)]
+            HRESULT NotifyPresentationClock(IMFPresentationClock* pClock);
+
+            [VtblIndex(5)]
+            HRESULT NotifyProcessInput(IMFTopologyNode* pNode, [NativeTypeName("long")] int lInputIndex, IMFSample* pSample);
+
+            [VtblIndex(6)]
+            HRESULT NotifyProcessOutput(IMFTopologyNode* pNode, [NativeTypeName("long")] int lOutputIndex, IMFSample* pSample);
+
+            [VtblIndex(7)]
+            HRESULT NotifyQualityEvent(IUnknown* pObject, IMFMediaEvent* pEvent);
+
+            [VtblIndex(8)]
+            HRESULT Shutdown();
         }
 
         public partial struct Vtbl

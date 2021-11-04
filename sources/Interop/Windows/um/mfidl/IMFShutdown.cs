@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("97EC2EA4-0E42-4937-97AC-9D6D328824E1")]
     [NativeTypeName("struct IMFShutdown : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IMFShutdown
+    public unsafe partial struct IMFShutdown : IMFShutdown.Interface
     {
         public void** lpVtbl;
 
@@ -51,6 +51,15 @@ namespace TerraFX.Interop
         public HRESULT GetShutdownStatus(MFSHUTDOWN_STATUS* pStatus)
         {
             return ((delegate* unmanaged<IMFShutdown*, MFSHUTDOWN_STATUS*, int>)(lpVtbl[4]))((IMFShutdown*)Unsafe.AsPointer(ref this), pStatus);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT Shutdown();
+
+            [VtblIndex(4)]
+            HRESULT GetShutdownStatus(MFSHUTDOWN_STATUS* pStatus);
         }
 
         public partial struct Vtbl

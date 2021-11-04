@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("6E4E2102-F9CD-433D-B496-303CE03A6507")]
     [NativeTypeName("struct ITfTextInputProcessorEx : ITfTextInputProcessor")]
     [NativeInheritance("ITfTextInputProcessor")]
-    public unsafe partial struct ITfTextInputProcessorEx
+    public unsafe partial struct ITfTextInputProcessorEx : ITfTextInputProcessorEx.Interface
     {
         public void** lpVtbl;
 
@@ -58,6 +58,12 @@ namespace TerraFX.Interop
         public HRESULT ActivateEx(ITfThreadMgr* ptim, [NativeTypeName("TfClientId")] uint tid, [NativeTypeName("DWORD")] uint dwFlags)
         {
             return ((delegate* unmanaged<ITfTextInputProcessorEx*, ITfThreadMgr*, uint, uint, int>)(lpVtbl[5]))((ITfTextInputProcessorEx*)Unsafe.AsPointer(ref this), ptim, tid, dwFlags);
+        }
+
+        public interface Interface : ITfTextInputProcessor.Interface
+        {
+            [VtblIndex(5)]
+            HRESULT ActivateEx(ITfThreadMgr* ptim, [NativeTypeName("TfClientId")] uint tid, [NativeTypeName("DWORD")] uint dwFlags);
         }
 
         public partial struct Vtbl

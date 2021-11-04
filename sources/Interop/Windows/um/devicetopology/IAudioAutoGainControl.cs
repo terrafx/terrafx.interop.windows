@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("85401FD4-6DE4-4B9D-9869-2D6753A82F3C")]
     [NativeTypeName("struct IAudioAutoGainControl : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IAudioAutoGainControl
+    public unsafe partial struct IAudioAutoGainControl : IAudioAutoGainControl.Interface
     {
         public void** lpVtbl;
 
@@ -51,6 +51,15 @@ namespace TerraFX.Interop
         public HRESULT SetEnabled(BOOL bEnable, [NativeTypeName("LPCGUID")] Guid* pguidEventContext)
         {
             return ((delegate* unmanaged<IAudioAutoGainControl*, BOOL, Guid*, int>)(lpVtbl[4]))((IAudioAutoGainControl*)Unsafe.AsPointer(ref this), bEnable, pguidEventContext);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetEnabled(BOOL* pbEnabled);
+
+            [VtblIndex(4)]
+            HRESULT SetEnabled(BOOL bEnable, [NativeTypeName("LPCGUID")] Guid* pguidEventContext);
         }
 
         public partial struct Vtbl

@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("8565572F-C094-41CC-B56E-10BD9C3FF044")]
     [NativeTypeName("struct ISpContainerLexicon : ISpLexicon")]
     [NativeInheritance("ISpLexicon")]
-    public unsafe partial struct ISpContainerLexicon
+    public unsafe partial struct ISpContainerLexicon : ISpContainerLexicon.Interface
     {
         public void** lpVtbl;
 
@@ -86,6 +86,12 @@ namespace TerraFX.Interop
         public HRESULT AddLexicon(ISpLexicon* pAddLexicon, [NativeTypeName("DWORD")] uint dwFlags)
         {
             return ((delegate* unmanaged<ISpContainerLexicon*, ISpLexicon*, uint, int>)(lpVtbl[9]))((ISpContainerLexicon*)Unsafe.AsPointer(ref this), pAddLexicon, dwFlags);
+        }
+
+        public interface Interface : ISpLexicon.Interface
+        {
+            [VtblIndex(9)]
+            HRESULT AddLexicon(ISpLexicon* pAddLexicon, [NativeTypeName("DWORD")] uint dwFlags);
         }
 
         public partial struct Vtbl

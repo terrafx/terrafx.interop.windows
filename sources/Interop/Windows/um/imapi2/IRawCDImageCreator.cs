@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("25983550-9D65-49CE-B335-40630D901227")]
     [NativeTypeName("struct IRawCDImageCreator : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct IRawCDImageCreator
+    public unsafe partial struct IRawCDImageCreator : IRawCDImageCreator.Interface
     {
         public void** lpVtbl;
 
@@ -198,6 +198,66 @@ namespace TerraFX.Interop
         public HRESULT get_ExpectedTableOfContents(SAFEARRAY** value)
         {
             return ((delegate* unmanaged<IRawCDImageCreator*, SAFEARRAY**, int>)(lpVtbl[25]))((IRawCDImageCreator*)Unsafe.AsPointer(ref this), value);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT CreateResultImage(IStream** resultStream);
+
+            [VtblIndex(8)]
+            HRESULT AddTrack(IMAPI_CD_SECTOR_TYPE dataType, IStream* data, [NativeTypeName("LONG *")] int* trackIndex);
+
+            [VtblIndex(9)]
+            HRESULT AddSpecialPregap(IStream* data);
+
+            [VtblIndex(10)]
+            HRESULT AddSubcodeRWGenerator(IStream* subcode);
+
+            [VtblIndex(11)]
+            HRESULT put_ResultingImageType(IMAPI_FORMAT2_RAW_CD_DATA_SECTOR_TYPE value);
+
+            [VtblIndex(12)]
+            HRESULT get_ResultingImageType(IMAPI_FORMAT2_RAW_CD_DATA_SECTOR_TYPE* value);
+
+            [VtblIndex(13)]
+            HRESULT get_StartOfLeadout([NativeTypeName("LONG *")] int* value);
+
+            [VtblIndex(14)]
+            HRESULT put_StartOfLeadoutLimit([NativeTypeName("LONG")] int value);
+
+            [VtblIndex(15)]
+            HRESULT get_StartOfLeadoutLimit([NativeTypeName("LONG *")] int* value);
+
+            [VtblIndex(16)]
+            HRESULT put_DisableGaplessAudio([NativeTypeName("VARIANT_BOOL")] short value);
+
+            [VtblIndex(17)]
+            HRESULT get_DisableGaplessAudio([NativeTypeName("VARIANT_BOOL *")] short* value);
+
+            [VtblIndex(18)]
+            HRESULT put_MediaCatalogNumber([NativeTypeName("BSTR")] ushort* value);
+
+            [VtblIndex(19)]
+            HRESULT get_MediaCatalogNumber([NativeTypeName("BSTR *")] ushort** value);
+
+            [VtblIndex(20)]
+            HRESULT put_StartingTrackNumber([NativeTypeName("LONG")] int value);
+
+            [VtblIndex(21)]
+            HRESULT get_StartingTrackNumber([NativeTypeName("LONG *")] int* value);
+
+            [VtblIndex(22)]
+            HRESULT get_TrackInfo([NativeTypeName("LONG")] int trackIndex, IRawCDImageTrackInfo** value);
+
+            [VtblIndex(23)]
+            HRESULT get_NumberOfExistingTracks([NativeTypeName("LONG *")] int* value);
+
+            [VtblIndex(24)]
+            HRESULT get_LastUsedUserSectorInImage([NativeTypeName("LONG *")] int* value);
+
+            [VtblIndex(25)]
+            HRESULT get_ExpectedTableOfContents(SAFEARRAY** value);
         }
 
         public partial struct Vtbl

@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("DB1800DD-0C34-4CF9-BE90-31CC0A5653E1")]
     [NativeTypeName("struct ID2D1SourceTransform : ID2D1Transform")]
     [NativeInheritance("ID2D1Transform")]
-    public unsafe partial struct ID2D1SourceTransform
+    public unsafe partial struct ID2D1SourceTransform : ID2D1SourceTransform.Interface
     {
         public void** lpVtbl;
 
@@ -80,6 +80,15 @@ namespace TerraFX.Interop
         public HRESULT Draw(ID2D1Bitmap1* target, [NativeTypeName("const D2D1_RECT_L *")] RECT* drawRect, [NativeTypeName("D2D1_POINT_2U")] D2D_POINT_2U targetOrigin)
         {
             return ((delegate* unmanaged<ID2D1SourceTransform*, ID2D1Bitmap1*, RECT*, D2D_POINT_2U, int>)(lpVtbl[8]))((ID2D1SourceTransform*)Unsafe.AsPointer(ref this), target, drawRect, targetOrigin);
+        }
+
+        public interface Interface : ID2D1Transform.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT SetRenderInfo(ID2D1RenderInfo* renderInfo);
+
+            [VtblIndex(8)]
+            HRESULT Draw(ID2D1Bitmap1* target, [NativeTypeName("const D2D1_RECT_L *")] RECT* drawRect, [NativeTypeName("D2D1_POINT_2U")] D2D_POINT_2U targetOrigin);
         }
 
         public partial struct Vtbl

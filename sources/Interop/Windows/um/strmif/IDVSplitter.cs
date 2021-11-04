@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("92A3A302-DA7C-4A1F-BA7E-1802BB5D2D02")]
     [NativeTypeName("struct IDVSplitter : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IDVSplitter
+    public unsafe partial struct IDVSplitter : IDVSplitter.Interface
     {
         public void** lpVtbl;
 
@@ -44,6 +44,12 @@ namespace TerraFX.Interop
         public HRESULT DiscardAlternateVideoFrames(int nDiscard)
         {
             return ((delegate* unmanaged<IDVSplitter*, int, int>)(lpVtbl[3]))((IDVSplitter*)Unsafe.AsPointer(ref this), nDiscard);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT DiscardAlternateVideoFrames(int nDiscard);
         }
 
         public partial struct Vtbl

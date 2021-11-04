@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("937D4916-C1A6-42D5-88D8-30344D6EFE31")]
     [NativeTypeName("struct IUIAnimationTransitionFactory2 : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IUIAnimationTransitionFactory2
+    public unsafe partial struct IUIAnimationTransitionFactory2 : IUIAnimationTransitionFactory2.Interface
     {
         public void** lpVtbl;
 
@@ -44,6 +44,12 @@ namespace TerraFX.Interop
         public HRESULT CreateTransition(IUIAnimationInterpolator2* interpolator, IUIAnimationTransition2** transition)
         {
             return ((delegate* unmanaged<IUIAnimationTransitionFactory2*, IUIAnimationInterpolator2*, IUIAnimationTransition2**, int>)(lpVtbl[3]))((IUIAnimationTransitionFactory2*)Unsafe.AsPointer(ref this), interpolator, transition);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT CreateTransition(IUIAnimationInterpolator2* interpolator, IUIAnimationTransition2** transition);
         }
 
         public partial struct Vtbl

@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("0000010A-0000-0000-C000-000000000046")]
     [NativeTypeName("struct IPersistStorage : IPersist")]
     [NativeInheritance("IPersist")]
-    public unsafe partial struct IPersistStorage
+    public unsafe partial struct IPersistStorage : IPersistStorage.Interface
     {
         public void** lpVtbl;
 
@@ -86,6 +86,27 @@ namespace TerraFX.Interop
         public HRESULT HandsOffStorage()
         {
             return ((delegate* unmanaged<IPersistStorage*, int>)(lpVtbl[9]))((IPersistStorage*)Unsafe.AsPointer(ref this));
+        }
+
+        public interface Interface : IPersist.Interface
+        {
+            [VtblIndex(4)]
+            HRESULT IsDirty();
+
+            [VtblIndex(5)]
+            HRESULT InitNew(IStorage* pStg);
+
+            [VtblIndex(6)]
+            HRESULT Load(IStorage* pStg);
+
+            [VtblIndex(7)]
+            HRESULT Save(IStorage* pStgSave, BOOL fSameAsLoad);
+
+            [VtblIndex(8)]
+            HRESULT SaveCompleted(IStorage* pStgNew);
+
+            [VtblIndex(9)]
+            HRESULT HandsOffStorage();
         }
 
         public partial struct Vtbl

@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("00855B90-CE1B-11D0-BD4F-00A0C911CE86")]
     [NativeTypeName("struct IFileSinkFilter2 : IFileSinkFilter")]
     [NativeInheritance("IFileSinkFilter")]
-    public unsafe partial struct IFileSinkFilter2
+    public unsafe partial struct IFileSinkFilter2 : IFileSinkFilter2.Interface
     {
         public void** lpVtbl;
 
@@ -65,6 +65,15 @@ namespace TerraFX.Interop
         public HRESULT GetMode([NativeTypeName("DWORD *")] uint* pdwFlags)
         {
             return ((delegate* unmanaged<IFileSinkFilter2*, uint*, int>)(lpVtbl[6]))((IFileSinkFilter2*)Unsafe.AsPointer(ref this), pdwFlags);
+        }
+
+        public interface Interface : IFileSinkFilter.Interface
+        {
+            [VtblIndex(5)]
+            HRESULT SetMode([NativeTypeName("DWORD")] uint dwFlags);
+
+            [VtblIndex(6)]
+            HRESULT GetMode([NativeTypeName("DWORD *")] uint* pdwFlags);
         }
 
         public partial struct Vtbl

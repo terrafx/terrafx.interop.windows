@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("6915C085-510B-44CD-94AF-28DFA56CF92B")]
     [NativeTypeName("struct IInputObject2 : IInputObject")]
     [NativeInheritance("IInputObject")]
-    public unsafe partial struct IInputObject2
+    public unsafe partial struct IInputObject2 : IInputObject2.Interface
     {
         public void** lpVtbl;
 
@@ -65,6 +65,12 @@ namespace TerraFX.Interop
         public HRESULT TranslateAcceleratorGlobal(MSG* pMsg)
         {
             return ((delegate* unmanaged<IInputObject2*, MSG*, int>)(lpVtbl[6]))((IInputObject2*)Unsafe.AsPointer(ref this), pMsg);
+        }
+
+        public interface Interface : IInputObject.Interface
+        {
+            [VtblIndex(6)]
+            HRESULT TranslateAcceleratorGlobal(MSG* pMsg);
         }
 
         public partial struct Vtbl

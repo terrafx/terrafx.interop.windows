@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("41E64AAE-98C0-4239-8E95-A330DD6AA18B")]
     [NativeTypeName("struct ICompositionDrawingSurfaceInterop2 : ICompositionDrawingSurfaceInterop")]
     [NativeInheritance("ICompositionDrawingSurfaceInterop")]
-    public unsafe partial struct ICompositionDrawingSurfaceInterop2
+    public unsafe partial struct ICompositionDrawingSurfaceInterop2 : ICompositionDrawingSurfaceInterop2.Interface
     {
         public void** lpVtbl;
 
@@ -86,6 +86,12 @@ namespace TerraFX.Interop
         public HRESULT CopySurface(IUnknown* destinationResource, int destinationOffsetX, int destinationOffsetY, [NativeTypeName("const RECT *")] RECT* sourceRectangle)
         {
             return ((delegate* unmanaged<ICompositionDrawingSurfaceInterop2*, IUnknown*, int, int, RECT*, int>)(lpVtbl[9]))((ICompositionDrawingSurfaceInterop2*)Unsafe.AsPointer(ref this), destinationResource, destinationOffsetX, destinationOffsetY, sourceRectangle);
+        }
+
+        public interface Interface : ICompositionDrawingSurfaceInterop.Interface
+        {
+            [VtblIndex(9)]
+            HRESULT CopySurface(IUnknown* destinationResource, int destinationOffsetX, int destinationOffsetY, [NativeTypeName("const RECT *")] RECT* sourceRectangle);
         }
 
         public partial struct Vtbl

@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("27354131-7F64-5B0F-8F00-5D77AFBE261E")]
     [NativeTypeName("struct DDiscMaster2Events : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct DDiscMaster2Events
+    public unsafe partial struct DDiscMaster2Events : DDiscMaster2Events.Interface
     {
         public void** lpVtbl;
 
@@ -79,6 +79,15 @@ namespace TerraFX.Interop
         public HRESULT NotifyDeviceRemoved(IDispatch* @object, [NativeTypeName("BSTR")] ushort* uniqueId)
         {
             return ((delegate* unmanaged<DDiscMaster2Events*, IDispatch*, ushort*, int>)(lpVtbl[8]))((DDiscMaster2Events*)Unsafe.AsPointer(ref this), @object, uniqueId);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT NotifyDeviceAdded(IDispatch* @object, [NativeTypeName("BSTR")] ushort* uniqueId);
+
+            [VtblIndex(8)]
+            HRESULT NotifyDeviceRemoved(IDispatch* @object, [NativeTypeName("BSTR")] ushort* uniqueId);
         }
 
         public partial struct Vtbl

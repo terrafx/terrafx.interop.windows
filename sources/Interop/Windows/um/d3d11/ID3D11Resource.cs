@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("DC8E63F3-D12B-4952-B47B-5E45026A862D")]
     [NativeTypeName("struct ID3D11Resource : ID3D11DeviceChild")]
     [NativeInheritance("ID3D11DeviceChild")]
-    public unsafe partial struct ID3D11Resource
+    public unsafe partial struct ID3D11Resource : ID3D11Resource.Interface
     {
         public void** lpVtbl;
 
@@ -86,6 +86,18 @@ namespace TerraFX.Interop
         public uint GetEvictionPriority()
         {
             return ((delegate* unmanaged<ID3D11Resource*, uint>)(lpVtbl[9]))((ID3D11Resource*)Unsafe.AsPointer(ref this));
+        }
+
+        public interface Interface : ID3D11DeviceChild.Interface
+        {
+            [VtblIndex(7)]
+            void GetType(D3D11_RESOURCE_DIMENSION* pResourceDimension);
+
+            [VtblIndex(8)]
+            void SetEvictionPriority(uint EvictionPriority);
+
+            [VtblIndex(9)]
+            uint GetEvictionPriority();
         }
 
         public partial struct Vtbl

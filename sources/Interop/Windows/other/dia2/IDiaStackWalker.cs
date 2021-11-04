@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("5485216B-A54C-469F-9670-52B24D5229BB")]
     [NativeTypeName("struct IDiaStackWalker : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IDiaStackWalker
+    public unsafe partial struct IDiaStackWalker : IDiaStackWalker.Interface
     {
         public void** lpVtbl;
 
@@ -51,6 +51,15 @@ namespace TerraFX.Interop
         public HRESULT getEnumFrames2([NativeTypeName("enum CV_CPU_TYPE_e")] CV_CPU_TYPE_e cpuid, IDiaStackWalkHelper* pHelper, IDiaEnumStackFrames** ppEnum)
         {
             return ((delegate* unmanaged<IDiaStackWalker*, CV_CPU_TYPE_e, IDiaStackWalkHelper*, IDiaEnumStackFrames**, int>)(lpVtbl[4]))((IDiaStackWalker*)Unsafe.AsPointer(ref this), cpuid, pHelper, ppEnum);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT getEnumFrames(IDiaStackWalkHelper* pHelper, IDiaEnumStackFrames** ppEnum);
+
+            [VtblIndex(4)]
+            HRESULT getEnumFrames2([NativeTypeName("enum CV_CPU_TYPE_e")] CV_CPU_TYPE_e cpuid, IDiaStackWalkHelper* pHelper, IDiaEnumStackFrames** ppEnum);
         }
 
         public partial struct Vtbl

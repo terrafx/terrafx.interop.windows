@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("4EF6100A-AF88-11D0-9846-00C04FC29993")]
     [NativeTypeName("struct IFontEventsDisp : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct IFontEventsDisp
+    public unsafe partial struct IFontEventsDisp : IFontEventsDisp.Interface
     {
         public void** lpVtbl;
 
@@ -65,6 +65,10 @@ namespace TerraFX.Interop
         public HRESULT Invoke([NativeTypeName("DISPID")] int dispIdMember, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("WORD")] ushort wFlags, DISPPARAMS* pDispParams, VARIANT* pVarResult, EXCEPINFO* pExcepInfo, uint* puArgErr)
         {
             return ((delegate* unmanaged<IFontEventsDisp*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int>)(lpVtbl[6]))((IFontEventsDisp*)Unsafe.AsPointer(ref this), dispIdMember, riid, lcid, wFlags, pDispParams, pVarResult, pExcepInfo, puArgErr);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
         }
 
         public partial struct Vtbl

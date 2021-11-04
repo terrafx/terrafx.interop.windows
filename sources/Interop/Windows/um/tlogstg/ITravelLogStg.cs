@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("7EBFDD80-AD18-11D3-A4C5-00C04F72D6B8")]
     [NativeTypeName("struct ITravelLogStg : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct ITravelLogStg
+    public unsafe partial struct ITravelLogStg : ITravelLogStg.Interface
     {
         public void** lpVtbl;
 
@@ -86,6 +86,30 @@ namespace TerraFX.Interop
         public HRESULT GetRelativeEntry(int iOffset, ITravelLogEntry** ptle)
         {
             return ((delegate* unmanaged<ITravelLogStg*, int, ITravelLogEntry**, int>)(lpVtbl[9]))((ITravelLogStg*)Unsafe.AsPointer(ref this), iOffset, ptle);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT CreateEntry([NativeTypeName("LPCWSTR")] ushort* pszUrl, [NativeTypeName("LPCWSTR")] ushort* pszTitle, ITravelLogEntry* ptleRelativeTo, BOOL fPrepend, ITravelLogEntry** pptle);
+
+            [VtblIndex(4)]
+            HRESULT TravelTo(ITravelLogEntry* ptle);
+
+            [VtblIndex(5)]
+            HRESULT EnumEntries([NativeTypeName("TLENUMF")] uint flags, IEnumTravelLogEntry** ppenum);
+
+            [VtblIndex(6)]
+            HRESULT FindEntries([NativeTypeName("TLENUMF")] uint flags, [NativeTypeName("LPCWSTR")] ushort* pszUrl, IEnumTravelLogEntry** ppenum);
+
+            [VtblIndex(7)]
+            HRESULT GetCount([NativeTypeName("TLENUMF")] uint flags, [NativeTypeName("DWORD *")] uint* pcEntries);
+
+            [VtblIndex(8)]
+            HRESULT RemoveEntry(ITravelLogEntry* ptle);
+
+            [VtblIndex(9)]
+            HRESULT GetRelativeEntry(int iOffset, ITravelLogEntry** ptle);
         }
 
         public partial struct Vtbl

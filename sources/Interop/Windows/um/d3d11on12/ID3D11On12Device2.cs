@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("DC90F331-4740-43FA-866E-67F12CB58223")]
     [NativeTypeName("struct ID3D11On12Device2 : ID3D11On12Device1")]
     [NativeInheritance("ID3D11On12Device1")]
-    public unsafe partial struct ID3D11On12Device2
+    public unsafe partial struct ID3D11On12Device2 : ID3D11On12Device2.Interface
     {
         public void** lpVtbl;
 
@@ -79,6 +79,15 @@ namespace TerraFX.Interop
         public HRESULT ReturnUnderlyingResource(ID3D11Resource* pResource11, uint NumSync, [NativeTypeName("UINT64 *")] ulong* pSignalValues, ID3D12Fence** ppFences)
         {
             return ((delegate* unmanaged<ID3D11On12Device2*, ID3D11Resource*, uint, ulong*, ID3D12Fence**, int>)(lpVtbl[8]))((ID3D11On12Device2*)Unsafe.AsPointer(ref this), pResource11, NumSync, pSignalValues, ppFences);
+        }
+
+        public interface Interface : ID3D11On12Device1.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT UnwrapUnderlyingResource(ID3D11Resource* pResource11, ID3D12CommandQueue* pCommandQueue, [NativeTypeName("const IID &")] Guid* riid, void** ppvResource12);
+
+            [VtblIndex(8)]
+            HRESULT ReturnUnderlyingResource(ID3D11Resource* pResource11, uint NumSync, [NativeTypeName("UINT64 *")] ulong* pSignalValues, ID3D12Fence** ppFences);
         }
 
         public partial struct Vtbl

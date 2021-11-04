@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("04A2DBF3-DF83-116C-0946-0812ABF6E07D")]
     [NativeTypeName("struct ILanguageExceptionErrorInfo : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct ILanguageExceptionErrorInfo
+    public unsafe partial struct ILanguageExceptionErrorInfo : ILanguageExceptionErrorInfo.Interface
     {
         public void** lpVtbl;
 
@@ -44,6 +44,12 @@ namespace TerraFX.Interop
         public HRESULT GetLanguageException(IUnknown** languageException)
         {
             return ((delegate* unmanaged<ILanguageExceptionErrorInfo*, IUnknown**, int>)(lpVtbl[3]))((ILanguageExceptionErrorInfo*)Unsafe.AsPointer(ref this), languageException);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetLanguageException(IUnknown** languageException);
         }
 
         public partial struct Vtbl

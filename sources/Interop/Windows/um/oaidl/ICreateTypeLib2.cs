@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("0002040F-0000-0000-C000-000000000046")]
     [NativeTypeName("struct ICreateTypeLib2 : ICreateTypeLib")]
     [NativeInheritance("ICreateTypeLib")]
-    public unsafe partial struct ICreateTypeLib2
+    public unsafe partial struct ICreateTypeLib2 : ICreateTypeLib2.Interface
     {
         public void** lpVtbl;
 
@@ -135,6 +135,21 @@ namespace TerraFX.Interop
         public HRESULT SetHelpStringDll([NativeTypeName("LPOLESTR")] ushort* szFileName)
         {
             return ((delegate* unmanaged<ICreateTypeLib2*, ushort*, int>)(lpVtbl[16]))((ICreateTypeLib2*)Unsafe.AsPointer(ref this), szFileName);
+        }
+
+        public interface Interface : ICreateTypeLib.Interface
+        {
+            [VtblIndex(13)]
+            HRESULT DeleteTypeInfo([NativeTypeName("LPOLESTR")] ushort* szName);
+
+            [VtblIndex(14)]
+            HRESULT SetCustData([NativeTypeName("const GUID &")] Guid* guid, VARIANT* pVarVal);
+
+            [VtblIndex(15)]
+            HRESULT SetHelpStringContext([NativeTypeName("ULONG")] uint dwHelpStringContext);
+
+            [VtblIndex(16)]
+            HRESULT SetHelpStringDll([NativeTypeName("LPOLESTR")] ushort* szFileName);
         }
 
         public partial struct Vtbl

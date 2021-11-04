@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("3050F357-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct IHTMLStyleSheetRule : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct IHTMLStyleSheetRule
+    public unsafe partial struct IHTMLStyleSheetRule : IHTMLStyleSheetRule.Interface
     {
         public void** lpVtbl;
 
@@ -93,6 +93,21 @@ namespace TerraFX.Interop
         public HRESULT get_readOnly([NativeTypeName("VARIANT_BOOL *")] short* p)
         {
             return ((delegate* unmanaged<IHTMLStyleSheetRule*, short*, int>)(lpVtbl[10]))((IHTMLStyleSheetRule*)Unsafe.AsPointer(ref this), p);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT put_selectorText([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(8)]
+            HRESULT get_selectorText([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(9)]
+            HRESULT get_style(IHTMLRuleStyle** p);
+
+            [VtblIndex(10)]
+            HRESULT get_readOnly([NativeTypeName("VARIANT_BOOL *")] short* p);
         }
 
         public partial struct Vtbl

@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("EE5BA612-B131-463C-8F4F-3189B9401E45")]
     [NativeTypeName("struct IDWriteFontSetBuilder2 : IDWriteFontSetBuilder1")]
     [NativeInheritance("IDWriteFontSetBuilder1")]
-    public unsafe partial struct IDWriteFontSetBuilder2
+    public unsafe partial struct IDWriteFontSetBuilder2 : IDWriteFontSetBuilder2.Interface
     {
         public void** lpVtbl;
 
@@ -86,6 +86,15 @@ namespace TerraFX.Interop
         public HRESULT AddFontFile([NativeTypeName("const WCHAR *")] ushort* filePath)
         {
             return ((delegate* unmanaged<IDWriteFontSetBuilder2*, ushort*, int>)(lpVtbl[9]))((IDWriteFontSetBuilder2*)Unsafe.AsPointer(ref this), filePath);
+        }
+
+        public interface Interface : IDWriteFontSetBuilder1.Interface
+        {
+            [VtblIndex(8)]
+            HRESULT AddFont(IDWriteFontFile* fontFile, [NativeTypeName("UINT32")] uint fontFaceIndex, DWRITE_FONT_SIMULATIONS fontSimulations, [NativeTypeName("const DWRITE_FONT_AXIS_VALUE *")] DWRITE_FONT_AXIS_VALUE* fontAxisValues, [NativeTypeName("UINT32")] uint fontAxisValueCount, [NativeTypeName("const DWRITE_FONT_AXIS_RANGE *")] DWRITE_FONT_AXIS_RANGE* fontAxisRanges, [NativeTypeName("UINT32")] uint fontAxisRangeCount, [NativeTypeName("const DWRITE_FONT_PROPERTY *")] DWRITE_FONT_PROPERTY* properties, [NativeTypeName("UINT32")] uint propertyCount);
+
+            [VtblIndex(9)]
+            HRESULT AddFontFile([NativeTypeName("const WCHAR *")] ushort* filePath);
         }
 
         public partial struct Vtbl

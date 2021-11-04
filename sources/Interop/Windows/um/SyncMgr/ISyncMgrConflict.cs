@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("9C204249-C443-4BA4-85ED-C972681DB137")]
     [NativeTypeName("struct ISyncMgrConflict : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct ISyncMgrConflict
+    public unsafe partial struct ISyncMgrConflict : ISyncMgrConflict.Interface
     {
         public void** lpVtbl;
 
@@ -72,6 +72,24 @@ namespace TerraFX.Interop
         public HRESULT GetResolutionHandler([NativeTypeName("const IID &")] Guid* riid, void** ppvResolutionHandler)
         {
             return ((delegate* unmanaged<ISyncMgrConflict*, Guid*, void**, int>)(lpVtbl[7]))((ISyncMgrConflict*)Unsafe.AsPointer(ref this), riid, ppvResolutionHandler);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetProperty([NativeTypeName("const PROPERTYKEY &")] PROPERTYKEY* propkey, PROPVARIANT* ppropvar);
+
+            [VtblIndex(4)]
+            HRESULT GetConflictIdInfo(SYNCMGR_CONFLICT_ID_INFO* pConflictIdInfo);
+
+            [VtblIndex(5)]
+            HRESULT GetItemsArray(ISyncMgrConflictItems** ppArray);
+
+            [VtblIndex(6)]
+            HRESULT Resolve(ISyncMgrConflictResolveInfo* pResolveInfo);
+
+            [VtblIndex(7)]
+            HRESULT GetResolutionHandler([NativeTypeName("const IID &")] Guid* riid, void** ppvResolutionHandler);
         }
 
         public partial struct Vtbl

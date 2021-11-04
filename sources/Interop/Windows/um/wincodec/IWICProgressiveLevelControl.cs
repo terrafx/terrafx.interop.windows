@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("DAAC296F-7AA5-4DBF-8D15-225C5976F891")]
     [NativeTypeName("struct IWICProgressiveLevelControl : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IWICProgressiveLevelControl
+    public unsafe partial struct IWICProgressiveLevelControl : IWICProgressiveLevelControl.Interface
     {
         public void** lpVtbl;
 
@@ -58,6 +58,18 @@ namespace TerraFX.Interop
         public HRESULT SetCurrentLevel(uint nLevel)
         {
             return ((delegate* unmanaged<IWICProgressiveLevelControl*, uint, int>)(lpVtbl[5]))((IWICProgressiveLevelControl*)Unsafe.AsPointer(ref this), nLevel);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetLevelCount(uint* pcLevels);
+
+            [VtblIndex(4)]
+            HRESULT GetCurrentLevel(uint* pnLevel);
+
+            [VtblIndex(5)]
+            HRESULT SetCurrentLevel(uint nLevel);
         }
 
         public partial struct Vtbl

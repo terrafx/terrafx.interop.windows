@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("A70EFE60-E2A3-11D0-A9BE-00AA0061BE93")]
     [NativeTypeName("struct IDvdInfo : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IDvdInfo
+    public unsafe partial struct IDvdInfo : IDvdInfo.Interface
     {
         public void** lpVtbl;
 
@@ -198,6 +198,78 @@ namespace TerraFX.Interop
         public HRESULT GetRoot([NativeTypeName("LPSTR")] sbyte* pRoot, [NativeTypeName("ULONG")] uint ulBufSize, [NativeTypeName("ULONG *")] uint* pulActualSize)
         {
             return ((delegate* unmanaged<IDvdInfo*, sbyte*, uint, uint*, int>)(lpVtbl[25]))((IDvdInfo*)Unsafe.AsPointer(ref this), pRoot, ulBufSize, pulActualSize);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetCurrentDomain(DVD_DOMAIN* pDomain);
+
+            [VtblIndex(4)]
+            HRESULT GetCurrentLocation(DVD_PLAYBACK_LOCATION* pLocation);
+
+            [VtblIndex(5)]
+            HRESULT GetTotalTitleTime([NativeTypeName("ULONG *")] uint* pulTotalTime);
+
+            [VtblIndex(6)]
+            HRESULT GetCurrentButton([NativeTypeName("ULONG *")] uint* pulButtonsAvailable, [NativeTypeName("ULONG *")] uint* pulCurrentButton);
+
+            [VtblIndex(7)]
+            HRESULT GetCurrentAngle([NativeTypeName("ULONG *")] uint* pulAnglesAvailable, [NativeTypeName("ULONG *")] uint* pulCurrentAngle);
+
+            [VtblIndex(8)]
+            HRESULT GetCurrentAudio([NativeTypeName("ULONG *")] uint* pulStreamsAvailable, [NativeTypeName("ULONG *")] uint* pulCurrentStream);
+
+            [VtblIndex(9)]
+            HRESULT GetCurrentSubpicture([NativeTypeName("ULONG *")] uint* pulStreamsAvailable, [NativeTypeName("ULONG *")] uint* pulCurrentStream, BOOL* pIsDisabled);
+
+            [VtblIndex(10)]
+            HRESULT GetCurrentUOPS([NativeTypeName("VALID_UOP_SOMTHING_OR_OTHER *")] uint* pUOP);
+
+            [VtblIndex(11)]
+            HRESULT GetAllSPRMs([NativeTypeName("SPRMARRAY *")] ushort** pRegisterArray);
+
+            [VtblIndex(12)]
+            HRESULT GetAllGPRMs([NativeTypeName("GPRMARRAY *")] ushort** pRegisterArray);
+
+            [VtblIndex(13)]
+            HRESULT GetAudioLanguage([NativeTypeName("ULONG")] uint ulStream, [NativeTypeName("LCID *")] uint* pLanguage);
+
+            [VtblIndex(14)]
+            HRESULT GetSubpictureLanguage([NativeTypeName("ULONG")] uint ulStream, [NativeTypeName("LCID *")] uint* pLanguage);
+
+            [VtblIndex(15)]
+            HRESULT GetTitleAttributes([NativeTypeName("ULONG")] uint ulTitle, DVD_ATR* pATR);
+
+            [VtblIndex(16)]
+            HRESULT GetVMGAttributes(DVD_ATR* pATR);
+
+            [VtblIndex(17)]
+            HRESULT GetCurrentVideoAttributes([NativeTypeName("DVD_VideoATR *")] byte** pATR);
+
+            [VtblIndex(18)]
+            HRESULT GetCurrentAudioAttributes([NativeTypeName("DVD_AudioATR *")] byte** pATR);
+
+            [VtblIndex(19)]
+            HRESULT GetCurrentSubpictureAttributes([NativeTypeName("DVD_SubpictureATR *")] byte** pATR);
+
+            [VtblIndex(20)]
+            HRESULT GetCurrentVolumeInfo([NativeTypeName("ULONG *")] uint* pulNumOfVol, [NativeTypeName("ULONG *")] uint* pulThisVolNum, DVD_DISC_SIDE* pSide, [NativeTypeName("ULONG *")] uint* pulNumOfTitles);
+
+            [VtblIndex(21)]
+            HRESULT GetDVDTextInfo(byte* pTextManager, [NativeTypeName("ULONG")] uint ulBufSize, [NativeTypeName("ULONG *")] uint* pulActualSize);
+
+            [VtblIndex(22)]
+            HRESULT GetPlayerParentalLevel([NativeTypeName("ULONG *")] uint* pulParentalLevel, [NativeTypeName("ULONG *")] uint* pulCountryCode);
+
+            [VtblIndex(23)]
+            HRESULT GetNumberOfChapters([NativeTypeName("ULONG")] uint ulTitle, [NativeTypeName("ULONG *")] uint* pulNumberOfChapters);
+
+            [VtblIndex(24)]
+            HRESULT GetTitleParentalLevels([NativeTypeName("ULONG")] uint ulTitle, [NativeTypeName("ULONG *")] uint* pulParentalLevels);
+
+            [VtblIndex(25)]
+            HRESULT GetRoot([NativeTypeName("LPSTR")] sbyte* pRoot, [NativeTypeName("ULONG")] uint ulBufSize, [NativeTypeName("ULONG *")] uint* pulActualSize);
         }
 
         public partial struct Vtbl

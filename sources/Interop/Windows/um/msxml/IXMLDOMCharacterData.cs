@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("2933BF84-7B36-11D2-B20E-00C04F983E60")]
     [NativeTypeName("struct IXMLDOMCharacterData : IXMLDOMNode")]
     [NativeInheritance("IXMLDOMNode")]
-    public unsafe partial struct IXMLDOMCharacterData
+    public unsafe partial struct IXMLDOMCharacterData : IXMLDOMCharacterData.Interface
     {
         public void** lpVtbl;
 
@@ -373,6 +373,33 @@ namespace TerraFX.Interop
         public HRESULT replaceData([NativeTypeName("long")] int offset, [NativeTypeName("long")] int count, [NativeTypeName("BSTR")] ushort* data)
         {
             return ((delegate* unmanaged<IXMLDOMCharacterData*, int, int, ushort*, int>)(lpVtbl[50]))((IXMLDOMCharacterData*)Unsafe.AsPointer(ref this), offset, count, data);
+        }
+
+        public interface Interface : IXMLDOMNode.Interface
+        {
+            [VtblIndex(43)]
+            HRESULT get_data([NativeTypeName("BSTR *")] ushort** data);
+
+            [VtblIndex(44)]
+            HRESULT put_data([NativeTypeName("BSTR")] ushort* data);
+
+            [VtblIndex(45)]
+            HRESULT get_length([NativeTypeName("long *")] int* dataLength);
+
+            [VtblIndex(46)]
+            HRESULT substringData([NativeTypeName("long")] int offset, [NativeTypeName("long")] int count, [NativeTypeName("BSTR *")] ushort** data);
+
+            [VtblIndex(47)]
+            HRESULT appendData([NativeTypeName("BSTR")] ushort* data);
+
+            [VtblIndex(48)]
+            HRESULT insertData([NativeTypeName("long")] int offset, [NativeTypeName("BSTR")] ushort* data);
+
+            [VtblIndex(49)]
+            HRESULT deleteData([NativeTypeName("long")] int offset, [NativeTypeName("long")] int count);
+
+            [VtblIndex(50)]
+            HRESULT replaceData([NativeTypeName("long")] int offset, [NativeTypeName("long")] int count, [NativeTypeName("BSTR")] ushort* data);
         }
 
         public partial struct Vtbl

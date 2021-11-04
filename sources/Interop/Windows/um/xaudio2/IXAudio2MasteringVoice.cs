@@ -9,7 +9,7 @@ namespace TerraFX.Interop
 {
     [NativeTypeName("struct IXAudio2MasteringVoice : IXAudio2Voice")]
     [NativeInheritance("IXAudio2Voice")]
-    public unsafe partial struct IXAudio2MasteringVoice
+    public unsafe partial struct IXAudio2MasteringVoice : IXAudio2MasteringVoice.Interface
     {
         public void** lpVtbl;
 
@@ -151,6 +151,12 @@ namespace TerraFX.Interop
         public HRESULT GetChannelMask([NativeTypeName("DWORD *")] uint* pChannelmask)
         {
             return ((delegate* unmanaged<IXAudio2MasteringVoice*, uint*, int>)(lpVtbl[19]))((IXAudio2MasteringVoice*)Unsafe.AsPointer(ref this), pChannelmask);
+        }
+
+        public interface Interface : IXAudio2Voice.Interface
+        {
+            [VtblIndex(19)]
+            HRESULT GetChannelMask([NativeTypeName("DWORD *")] uint* pChannelmask);
         }
 
         public partial struct Vtbl

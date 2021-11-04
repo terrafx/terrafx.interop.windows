@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("9B6E051C-5DDD-4321-9070-FE2ACB55E794")]
     [NativeTypeName("struct IPropertyEnumType2 : IPropertyEnumType")]
     [NativeInheritance("IPropertyEnumType")]
-    public unsafe partial struct IPropertyEnumType2
+    public unsafe partial struct IPropertyEnumType2 : IPropertyEnumType2.Interface
     {
         public void** lpVtbl;
 
@@ -79,6 +79,12 @@ namespace TerraFX.Interop
         public HRESULT GetImageReference([NativeTypeName("LPWSTR *")] ushort** ppszImageRes)
         {
             return ((delegate* unmanaged<IPropertyEnumType2*, ushort**, int>)(lpVtbl[8]))((IPropertyEnumType2*)Unsafe.AsPointer(ref this), ppszImageRes);
+        }
+
+        public interface Interface : IPropertyEnumType.Interface
+        {
+            [VtblIndex(8)]
+            HRESULT GetImageReference([NativeTypeName("LPWSTR *")] ushort** ppszImageRes);
         }
 
         public partial struct Vtbl

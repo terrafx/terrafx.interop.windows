@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("D5F569D0-593B-101A-B569-08002B2DBF7A")]
     [NativeTypeName("struct IPSFactoryBuffer : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IPSFactoryBuffer
+    public unsafe partial struct IPSFactoryBuffer : IPSFactoryBuffer.Interface
     {
         public void** lpVtbl;
 
@@ -51,6 +51,15 @@ namespace TerraFX.Interop
         public HRESULT CreateStub([NativeTypeName("const IID &")] Guid* riid, IUnknown* pUnkServer, IRpcStubBuffer** ppStub)
         {
             return ((delegate* unmanaged<IPSFactoryBuffer*, Guid*, IUnknown*, IRpcStubBuffer**, int>)(lpVtbl[4]))((IPSFactoryBuffer*)Unsafe.AsPointer(ref this), riid, pUnkServer, ppStub);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT CreateProxy(IUnknown* pUnkOuter, [NativeTypeName("const IID &")] Guid* riid, IRpcProxyBuffer** ppProxy, void** ppv);
+
+            [VtblIndex(4)]
+            HRESULT CreateStub([NativeTypeName("const IID &")] Guid* riid, IUnknown* pUnkServer, IRpcStubBuffer** ppStub);
         }
 
         public partial struct Vtbl

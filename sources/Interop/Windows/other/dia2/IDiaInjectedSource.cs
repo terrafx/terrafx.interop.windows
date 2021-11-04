@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("AE605CDC-8105-4A23-B710-3259F1E26112")]
     [NativeTypeName("struct IDiaInjectedSource : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IDiaInjectedSource
+    public unsafe partial struct IDiaInjectedSource : IDiaInjectedSource.Interface
     {
         public void** lpVtbl;
 
@@ -86,6 +86,30 @@ namespace TerraFX.Interop
         public HRESULT get_source([NativeTypeName("DWORD")] uint cbData, [NativeTypeName("DWORD *")] uint* pcbData, byte* pbData)
         {
             return ((delegate* unmanaged<IDiaInjectedSource*, uint, uint*, byte*, int>)(lpVtbl[9]))((IDiaInjectedSource*)Unsafe.AsPointer(ref this), cbData, pcbData, pbData);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT get_crc([NativeTypeName("DWORD *")] uint* pRetVal);
+
+            [VtblIndex(4)]
+            HRESULT get_length([NativeTypeName("ULONGLONG *")] ulong* pRetVal);
+
+            [VtblIndex(5)]
+            HRESULT get_filename([NativeTypeName("BSTR *")] ushort** pRetVal);
+
+            [VtblIndex(6)]
+            HRESULT get_objectFilename([NativeTypeName("BSTR *")] ushort** pRetVal);
+
+            [VtblIndex(7)]
+            HRESULT get_virtualFilename([NativeTypeName("BSTR *")] ushort** pRetVal);
+
+            [VtblIndex(8)]
+            HRESULT get_sourceCompression([NativeTypeName("DWORD *")] uint* pRetVal);
+
+            [VtblIndex(9)]
+            HRESULT get_source([NativeTypeName("DWORD")] uint cbData, [NativeTypeName("DWORD *")] uint* pcbData, byte* pbData);
         }
 
         public partial struct Vtbl

@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("56A868A9-0AD4-11CE-B03A-0020AF0BA770")]
     [NativeTypeName("struct IGraphBuilder : IFilterGraph")]
     [NativeInheritance("IFilterGraph")]
-    public unsafe partial struct IGraphBuilder
+    public unsafe partial struct IGraphBuilder : IGraphBuilder.Interface
     {
         public void** lpVtbl;
 
@@ -142,6 +142,30 @@ namespace TerraFX.Interop
         public HRESULT ShouldOperationContinue()
         {
             return ((delegate* unmanaged<IGraphBuilder*, int>)(lpVtbl[17]))((IGraphBuilder*)Unsafe.AsPointer(ref this));
+        }
+
+        public interface Interface : IFilterGraph.Interface
+        {
+            [VtblIndex(11)]
+            HRESULT Connect(IPin* ppinOut, IPin* ppinIn);
+
+            [VtblIndex(12)]
+            HRESULT Render(IPin* ppinOut);
+
+            [VtblIndex(13)]
+            HRESULT RenderFile([NativeTypeName("LPCWSTR")] ushort* lpcwstrFile, [NativeTypeName("LPCWSTR")] ushort* lpcwstrPlayList);
+
+            [VtblIndex(14)]
+            HRESULT AddSourceFilter([NativeTypeName("LPCWSTR")] ushort* lpcwstrFileName, [NativeTypeName("LPCWSTR")] ushort* lpcwstrFilterName, IBaseFilter** ppFilter);
+
+            [VtblIndex(15)]
+            HRESULT SetLogFile([NativeTypeName("DWORD_PTR")] nuint hFile);
+
+            [VtblIndex(16)]
+            HRESULT Abort();
+
+            [VtblIndex(17)]
+            HRESULT ShouldOperationContinue();
         }
 
         public partial struct Vtbl

@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("85788D00-6807-11D0-B810-00C04FD706EC")]
     [NativeTypeName("struct IRunnableTask : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IRunnableTask
+    public unsafe partial struct IRunnableTask : IRunnableTask.Interface
     {
         public void** lpVtbl;
 
@@ -73,6 +73,25 @@ namespace TerraFX.Interop
         public uint IsRunning()
         {
             return ((delegate* unmanaged<IRunnableTask*, uint>)(lpVtbl[7]))((IRunnableTask*)Unsafe.AsPointer(ref this));
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT Run();
+
+            [VtblIndex(4)]
+            HRESULT Kill(BOOL bWait);
+
+            [VtblIndex(5)]
+            HRESULT Suspend();
+
+            [VtblIndex(6)]
+            HRESULT Resume();
+
+            [VtblIndex(7)]
+            [return: NativeTypeName("ULONG")]
+            uint IsRunning();
         }
 
         public partial struct Vtbl

@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("A99400F4-3D84-4557-94BA-1242FB2CC9A6")]
     [NativeTypeName("struct IPropertyEnumTypeList : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IPropertyEnumTypeList
+    public unsafe partial struct IPropertyEnumTypeList : IPropertyEnumTypeList.Interface
     {
         public void** lpVtbl;
 
@@ -65,6 +65,21 @@ namespace TerraFX.Interop
         public HRESULT FindMatchingIndex([NativeTypeName("const PROPVARIANT &")] PROPVARIANT* propvarCmp, uint* pnIndex)
         {
             return ((delegate* unmanaged<IPropertyEnumTypeList*, PROPVARIANT*, uint*, int>)(lpVtbl[6]))((IPropertyEnumTypeList*)Unsafe.AsPointer(ref this), propvarCmp, pnIndex);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetCount(uint* pctypes);
+
+            [VtblIndex(4)]
+            HRESULT GetAt(uint itype, [NativeTypeName("const IID &")] Guid* riid, void** ppv);
+
+            [VtblIndex(5)]
+            HRESULT GetConditionAt(uint nIndex, [NativeTypeName("const IID &")] Guid* riid, void** ppv);
+
+            [VtblIndex(6)]
+            HRESULT FindMatchingIndex([NativeTypeName("const PROPVARIANT &")] PROPVARIANT* propvarCmp, uint* pnIndex);
         }
 
         public partial struct Vtbl

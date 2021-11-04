@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("981611AD-A144-4C83-9890-F30E26D658AB")]
     [NativeTypeName("struct ID3D12VideoDevice1 : ID3D12VideoDevice")]
     [NativeInheritance("ID3D12VideoDevice")]
-    public unsafe partial struct ID3D12VideoDevice1
+    public unsafe partial struct ID3D12VideoDevice1 : ID3D12VideoDevice1.Interface
     {
         public void** lpVtbl;
 
@@ -79,6 +79,15 @@ namespace TerraFX.Interop
         public HRESULT CreateVideoMotionVectorHeap([NativeTypeName("const D3D12_VIDEO_MOTION_VECTOR_HEAP_DESC *")] D3D12_VIDEO_MOTION_VECTOR_HEAP_DESC* pDesc, ID3D12ProtectedResourceSession* pProtectedResourceSession, [NativeTypeName("const IID &")] Guid* riid, void** ppVideoMotionVectorHeap)
         {
             return ((delegate* unmanaged<ID3D12VideoDevice1*, D3D12_VIDEO_MOTION_VECTOR_HEAP_DESC*, ID3D12ProtectedResourceSession*, Guid*, void**, int>)(lpVtbl[8]))((ID3D12VideoDevice1*)Unsafe.AsPointer(ref this), pDesc, pProtectedResourceSession, riid, ppVideoMotionVectorHeap);
+        }
+
+        public interface Interface : ID3D12VideoDevice.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT CreateVideoMotionEstimator([NativeTypeName("const D3D12_VIDEO_MOTION_ESTIMATOR_DESC *")] D3D12_VIDEO_MOTION_ESTIMATOR_DESC* pDesc, ID3D12ProtectedResourceSession* pProtectedResourceSession, [NativeTypeName("const IID &")] Guid* riid, void** ppVideoMotionEstimator);
+
+            [VtblIndex(8)]
+            HRESULT CreateVideoMotionVectorHeap([NativeTypeName("const D3D12_VIDEO_MOTION_VECTOR_HEAP_DESC *")] D3D12_VIDEO_MOTION_VECTOR_HEAP_DESC* pDesc, ID3D12ProtectedResourceSession* pProtectedResourceSession, [NativeTypeName("const IID &")] Guid* riid, void** ppVideoMotionVectorHeap);
         }
 
         public partial struct Vtbl

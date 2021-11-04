@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("3050F64A-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct IHTMLChangeSink : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IHTMLChangeSink
+    public unsafe partial struct IHTMLChangeSink : IHTMLChangeSink.Interface
     {
         public void** lpVtbl;
 
@@ -44,6 +44,12 @@ namespace TerraFX.Interop
         public HRESULT Notify()
         {
             return ((delegate* unmanaged<IHTMLChangeSink*, int>)(lpVtbl[3]))((IHTMLChangeSink*)Unsafe.AsPointer(ref this));
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT Notify();
         }
 
         public partial struct Vtbl

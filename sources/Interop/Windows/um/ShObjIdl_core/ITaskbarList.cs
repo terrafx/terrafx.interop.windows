@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("56FDF342-FD6D-11D0-958A-006097C9A090")]
     [NativeTypeName("struct ITaskbarList : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct ITaskbarList
+    public unsafe partial struct ITaskbarList : ITaskbarList.Interface
     {
         public void** lpVtbl;
 
@@ -72,6 +72,24 @@ namespace TerraFX.Interop
         public HRESULT SetActiveAlt(HWND hwnd)
         {
             return ((delegate* unmanaged<ITaskbarList*, HWND, int>)(lpVtbl[7]))((ITaskbarList*)Unsafe.AsPointer(ref this), hwnd);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT HrInit();
+
+            [VtblIndex(4)]
+            HRESULT AddTab(HWND hwnd);
+
+            [VtblIndex(5)]
+            HRESULT DeleteTab(HWND hwnd);
+
+            [VtblIndex(6)]
+            HRESULT ActivateTab(HWND hwnd);
+
+            [VtblIndex(7)]
+            HRESULT SetActiveAlt(HWND hwnd);
         }
 
         public partial struct Vtbl

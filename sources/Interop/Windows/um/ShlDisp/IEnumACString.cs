@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("8E74C210-CF9D-4EAF-A403-7356428F0A5A")]
     [NativeTypeName("struct IEnumACString : IEnumString")]
     [NativeInheritance("IEnumString")]
-    public unsafe partial struct IEnumACString
+    public unsafe partial struct IEnumACString : IEnumACString.Interface
     {
         public void** lpVtbl;
 
@@ -86,6 +86,18 @@ namespace TerraFX.Interop
         public HRESULT GetEnumOptions([NativeTypeName("DWORD *")] uint* pdwOptions)
         {
             return ((delegate* unmanaged<IEnumACString*, uint*, int>)(lpVtbl[9]))((IEnumACString*)Unsafe.AsPointer(ref this), pdwOptions);
+        }
+
+        public interface Interface : IEnumString.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT NextItem([NativeTypeName("LPWSTR")] ushort* pszUrl, [NativeTypeName("ULONG")] uint cchMax, [NativeTypeName("ULONG *")] uint* pulSortIndex);
+
+            [VtblIndex(8)]
+            HRESULT SetEnumOptions([NativeTypeName("DWORD")] uint dwOptions);
+
+            [VtblIndex(9)]
+            HRESULT GetEnumOptions([NativeTypeName("DWORD *")] uint* pdwOptions);
         }
 
         public partial struct Vtbl

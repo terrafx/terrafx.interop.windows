@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("3FF7715F-3CDC-4DC6-9B72-EC5621DCCAFD")]
     [NativeTypeName("struct IDWriteFontSetBuilder1 : IDWriteFontSetBuilder")]
     [NativeInheritance("IDWriteFontSetBuilder")]
-    public unsafe partial struct IDWriteFontSetBuilder1
+    public unsafe partial struct IDWriteFontSetBuilder1 : IDWriteFontSetBuilder1.Interface
     {
         public void** lpVtbl;
 
@@ -72,6 +72,12 @@ namespace TerraFX.Interop
         public HRESULT AddFontFile(IDWriteFontFile* fontFile)
         {
             return ((delegate* unmanaged<IDWriteFontSetBuilder1*, IDWriteFontFile*, int>)(lpVtbl[7]))((IDWriteFontSetBuilder1*)Unsafe.AsPointer(ref this), fontFile);
+        }
+
+        public interface Interface : IDWriteFontSetBuilder.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT AddFontFile(IDWriteFontFile* fontFile);
         }
 
         public partial struct Vtbl

@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("BB420AA4-765B-4A1F-91FE-D6A8A143924C")]
     [NativeTypeName("struct IMFByteStreamHandler : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IMFByteStreamHandler
+    public unsafe partial struct IMFByteStreamHandler : IMFByteStreamHandler.Interface
     {
         public void** lpVtbl;
 
@@ -65,6 +65,21 @@ namespace TerraFX.Interop
         public HRESULT GetMaxNumberOfBytesRequiredForResolution([NativeTypeName("QWORD *")] ulong* pqwBytes)
         {
             return ((delegate* unmanaged<IMFByteStreamHandler*, ulong*, int>)(lpVtbl[6]))((IMFByteStreamHandler*)Unsafe.AsPointer(ref this), pqwBytes);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT BeginCreateObject(IMFByteStream* pByteStream, [NativeTypeName("LPCWSTR")] ushort* pwszURL, [NativeTypeName("DWORD")] uint dwFlags, IPropertyStore* pProps, IUnknown** ppIUnknownCancelCookie, IMFAsyncCallback* pCallback, IUnknown* punkState);
+
+            [VtblIndex(4)]
+            HRESULT EndCreateObject(IMFAsyncResult* pResult, MF_OBJECT_TYPE* pObjectType, IUnknown** ppObject);
+
+            [VtblIndex(5)]
+            HRESULT CancelObjectCreation(IUnknown* pIUnknownCancelCookie);
+
+            [VtblIndex(6)]
+            HRESULT GetMaxNumberOfBytesRequiredForResolution([NativeTypeName("QWORD *")] ulong* pqwBytes);
         }
 
         public partial struct Vtbl

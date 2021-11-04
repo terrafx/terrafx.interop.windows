@@ -7,7 +7,7 @@ using System.Runtime.CompilerServices;
 
 namespace TerraFX.Interop
 {
-    public unsafe partial struct ID3DX12PipelineParserCallbacks
+    public unsafe partial struct ID3DX12PipelineParserCallbacks : ID3DX12PipelineParserCallbacks.Interface
     {
         public void** lpVtbl;
 
@@ -212,6 +212,96 @@ namespace TerraFX.Interop
         public void Dispose()
         {
             ((delegate* unmanaged<ID3DX12PipelineParserCallbacks*, void>)(lpVtbl[28]))((ID3DX12PipelineParserCallbacks*)Unsafe.AsPointer(ref this));
+        }
+
+        public interface Interface
+        {
+            [VtblIndex(0)]
+            void FlagsCb(D3D12_PIPELINE_STATE_FLAGS param0);
+
+            [VtblIndex(1)]
+            void NodeMaskCb(uint param0);
+
+            [VtblIndex(2)]
+            void RootSignatureCb(ID3D12RootSignature* param0);
+
+            [VtblIndex(3)]
+            void InputLayoutCb([NativeTypeName("const D3D12_INPUT_LAYOUT_DESC &")] D3D12_INPUT_LAYOUT_DESC* param0);
+
+            [VtblIndex(4)]
+            void IBStripCutValueCb(D3D12_INDEX_BUFFER_STRIP_CUT_VALUE param0);
+
+            [VtblIndex(5)]
+            void PrimitiveTopologyTypeCb(D3D12_PRIMITIVE_TOPOLOGY_TYPE param0);
+
+            [VtblIndex(6)]
+            void VSCb([NativeTypeName("const D3D12_SHADER_BYTECODE &")] D3D12_SHADER_BYTECODE* param0);
+
+            [VtblIndex(7)]
+            void GSCb([NativeTypeName("const D3D12_SHADER_BYTECODE &")] D3D12_SHADER_BYTECODE* param0);
+
+            [VtblIndex(8)]
+            void StreamOutputCb([NativeTypeName("const D3D12_STREAM_OUTPUT_DESC &")] D3D12_STREAM_OUTPUT_DESC* param0);
+
+            [VtblIndex(9)]
+            void HSCb([NativeTypeName("const D3D12_SHADER_BYTECODE &")] D3D12_SHADER_BYTECODE* param0);
+
+            [VtblIndex(10)]
+            void DSCb([NativeTypeName("const D3D12_SHADER_BYTECODE &")] D3D12_SHADER_BYTECODE* param0);
+
+            [VtblIndex(11)]
+            void PSCb([NativeTypeName("const D3D12_SHADER_BYTECODE &")] D3D12_SHADER_BYTECODE* param0);
+
+            [VtblIndex(12)]
+            void CSCb([NativeTypeName("const D3D12_SHADER_BYTECODE &")] D3D12_SHADER_BYTECODE* param0);
+
+            [VtblIndex(13)]
+            void ASCb([NativeTypeName("const D3D12_SHADER_BYTECODE &")] D3D12_SHADER_BYTECODE* param0);
+
+            [VtblIndex(14)]
+            void MSCb([NativeTypeName("const D3D12_SHADER_BYTECODE &")] D3D12_SHADER_BYTECODE* param0);
+
+            [VtblIndex(15)]
+            void BlendStateCb([NativeTypeName("const D3D12_BLEND_DESC &")] D3D12_BLEND_DESC* param0);
+
+            [VtblIndex(16)]
+            void DepthStencilStateCb([NativeTypeName("const D3D12_DEPTH_STENCIL_DESC &")] D3D12_DEPTH_STENCIL_DESC* param0);
+
+            [VtblIndex(17)]
+            void DepthStencilState1Cb([NativeTypeName("const D3D12_DEPTH_STENCIL_DESC1 &")] D3D12_DEPTH_STENCIL_DESC1* param0);
+
+            [VtblIndex(18)]
+            void DSVFormatCb(DXGI_FORMAT param0);
+
+            [VtblIndex(19)]
+            void RasterizerStateCb([NativeTypeName("const D3D12_RASTERIZER_DESC &")] D3D12_RASTERIZER_DESC* param0);
+
+            [VtblIndex(20)]
+            void RTVFormatsCb([NativeTypeName("const D3D12_RT_FORMAT_ARRAY &")] D3D12_RT_FORMAT_ARRAY* param0);
+
+            [VtblIndex(21)]
+            void SampleDescCb([NativeTypeName("const DXGI_SAMPLE_DESC &")] DXGI_SAMPLE_DESC* param0);
+
+            [VtblIndex(22)]
+            void SampleMaskCb(uint param0);
+
+            [VtblIndex(23)]
+            void ViewInstancingCb([NativeTypeName("const D3D12_VIEW_INSTANCING_DESC &")] D3D12_VIEW_INSTANCING_DESC* param0);
+
+            [VtblIndex(24)]
+            void CachedPSOCb([NativeTypeName("const D3D12_CACHED_PIPELINE_STATE &")] D3D12_CACHED_PIPELINE_STATE* param0);
+
+            [VtblIndex(25)]
+            void ErrorBadInputParameter(uint param0);
+
+            [VtblIndex(26)]
+            void ErrorDuplicateSubobject(D3D12_PIPELINE_STATE_SUBOBJECT_TYPE param0);
+
+            [VtblIndex(27)]
+            void ErrorUnknownSubobject(uint param0);
+
+            [VtblIndex(28)]
+            void Dispose();
         }
 
         public partial struct Vtbl

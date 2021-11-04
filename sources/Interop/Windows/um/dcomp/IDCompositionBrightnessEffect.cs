@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("6027496E-CB3A-49AB-934F-D798DA4F7DA6")]
     [NativeTypeName("struct IDCompositionBrightnessEffect : IDCompositionFilterEffect")]
     [NativeInheritance("IDCompositionFilterEffect")]
-    public unsafe partial struct IDCompositionBrightnessEffect
+    public unsafe partial struct IDCompositionBrightnessEffect : IDCompositionBrightnessEffect.Interface
     {
         public void** lpVtbl;
 
@@ -114,6 +114,39 @@ namespace TerraFX.Interop
         public HRESULT SetBlackPointY(float blackPointY)
         {
             return ((delegate* unmanaged<IDCompositionBrightnessEffect*, float, int>)(lpVtbl[13]))((IDCompositionBrightnessEffect*)Unsafe.AsPointer(ref this), blackPointY);
+        }
+
+        public interface Interface : IDCompositionFilterEffect.Interface
+        {
+            [VtblIndex(4)]
+            HRESULT SetWhitePoint([NativeTypeName("const D2D1_VECTOR_2F &")] D2D_VECTOR_2F* whitePoint);
+
+            [VtblIndex(5)]
+            HRESULT SetBlackPoint([NativeTypeName("const D2D1_VECTOR_2F &")] D2D_VECTOR_2F* blackPoint);
+
+            [VtblIndex(6)]
+            HRESULT SetWhitePointX(IDCompositionAnimation* animation);
+
+            [VtblIndex(7)]
+            HRESULT SetWhitePointX(float whitePointX);
+
+            [VtblIndex(8)]
+            HRESULT SetWhitePointY(IDCompositionAnimation* animation);
+
+            [VtblIndex(9)]
+            HRESULT SetWhitePointY(float whitePointY);
+
+            [VtblIndex(10)]
+            HRESULT SetBlackPointX(IDCompositionAnimation* animation);
+
+            [VtblIndex(11)]
+            HRESULT SetBlackPointX(float blackPointX);
+
+            [VtblIndex(12)]
+            HRESULT SetBlackPointY(IDCompositionAnimation* animation);
+
+            [VtblIndex(13)]
+            HRESULT SetBlackPointY(float blackPointY);
         }
 
         public partial struct Vtbl

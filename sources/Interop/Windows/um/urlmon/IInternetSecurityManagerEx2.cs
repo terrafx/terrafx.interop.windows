@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("F1E50292-A795-4117-8E09-2B560A72AC60")]
     [NativeTypeName("struct IInternetSecurityManagerEx2 : IInternetSecurityManagerEx")]
     [NativeInheritance("IInternetSecurityManagerEx")]
-    public unsafe partial struct IInternetSecurityManagerEx2
+    public unsafe partial struct IInternetSecurityManagerEx2 : IInternetSecurityManagerEx2.Interface
     {
         public void** lpVtbl;
 
@@ -128,6 +128,21 @@ namespace TerraFX.Interop
         public HRESULT QueryCustomPolicyEx2(IUri* pUri, [NativeTypeName("const GUID &")] Guid* guidKey, byte** ppPolicy, [NativeTypeName("DWORD *")] uint* pcbPolicy, byte* pContext, [NativeTypeName("DWORD")] uint cbContext, [NativeTypeName("DWORD_PTR")] nuint dwReserved)
         {
             return ((delegate* unmanaged<IInternetSecurityManagerEx2*, IUri*, Guid*, byte**, uint*, byte*, uint, nuint, int>)(lpVtbl[15]))((IInternetSecurityManagerEx2*)Unsafe.AsPointer(ref this), pUri, guidKey, ppPolicy, pcbPolicy, pContext, cbContext, dwReserved);
+        }
+
+        public interface Interface : IInternetSecurityManagerEx.Interface
+        {
+            [VtblIndex(12)]
+            HRESULT MapUrlToZoneEx2(IUri* pUri, [NativeTypeName("DWORD *")] uint* pdwZone, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("LPWSTR *")] ushort** ppwszMappedUrl, [NativeTypeName("DWORD *")] uint* pdwOutFlags);
+
+            [VtblIndex(13)]
+            HRESULT ProcessUrlActionEx2(IUri* pUri, [NativeTypeName("DWORD")] uint dwAction, byte* pPolicy, [NativeTypeName("DWORD")] uint cbPolicy, byte* pContext, [NativeTypeName("DWORD")] uint cbContext, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("DWORD_PTR")] nuint dwReserved, [NativeTypeName("DWORD *")] uint* pdwOutFlags);
+
+            [VtblIndex(14)]
+            HRESULT GetSecurityIdEx2(IUri* pUri, byte* pbSecurityId, [NativeTypeName("DWORD *")] uint* pcbSecurityId, [NativeTypeName("DWORD_PTR")] nuint dwReserved);
+
+            [VtblIndex(15)]
+            HRESULT QueryCustomPolicyEx2(IUri* pUri, [NativeTypeName("const GUID &")] Guid* guidKey, byte** ppPolicy, [NativeTypeName("DWORD *")] uint* pcbPolicy, byte* pContext, [NativeTypeName("DWORD")] uint cbContext, [NativeTypeName("DWORD_PTR")] nuint dwReserved);
         }
 
         public partial struct Vtbl

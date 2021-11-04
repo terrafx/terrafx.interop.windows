@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("305104BE-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct IRulesAppliedCollection : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct IRulesAppliedCollection
+    public unsafe partial struct IRulesAppliedCollection : IRulesAppliedCollection.Interface
     {
         public void** lpVtbl;
 
@@ -121,6 +121,33 @@ namespace TerraFX.Interop
         public HRESULT propertyInheritedTraceLength([NativeTypeName("BSTR")] ushort* name, [NativeTypeName("long *")] int* pLength)
         {
             return ((delegate* unmanaged<IRulesAppliedCollection*, ushort*, int*, int>)(lpVtbl[14]))((IRulesAppliedCollection*)Unsafe.AsPointer(ref this), name, pLength);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT item([NativeTypeName("long")] int index, IRulesApplied** ppRulesApplied);
+
+            [VtblIndex(8)]
+            HRESULT get_length([NativeTypeName("long *")] int* p);
+
+            [VtblIndex(9)]
+            HRESULT get_element(IHTMLElement** p);
+
+            [VtblIndex(10)]
+            HRESULT propertyInheritedFrom([NativeTypeName("BSTR")] ushort* name, IRulesApplied** ppRulesApplied);
+
+            [VtblIndex(11)]
+            HRESULT get_propertyCount([NativeTypeName("long *")] int* p);
+
+            [VtblIndex(12)]
+            HRESULT property([NativeTypeName("long")] int index, [NativeTypeName("BSTR *")] ushort** pbstrProperty);
+
+            [VtblIndex(13)]
+            HRESULT propertyInheritedTrace([NativeTypeName("BSTR")] ushort* name, [NativeTypeName("long")] int index, IRulesApplied** ppRulesApplied);
+
+            [VtblIndex(14)]
+            HRESULT propertyInheritedTraceLength([NativeTypeName("BSTR")] ushort* name, [NativeTypeName("long *")] int* pLength);
         }
 
         public partial struct Vtbl

@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("3050F376-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct IHTMLFontNamesCollection : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct IHTMLFontNamesCollection
+    public unsafe partial struct IHTMLFontNamesCollection : IHTMLFontNamesCollection.Interface
     {
         public void** lpVtbl;
 
@@ -86,6 +86,18 @@ namespace TerraFX.Interop
         public HRESULT item([NativeTypeName("long")] int index, [NativeTypeName("BSTR *")] ushort** pBstr)
         {
             return ((delegate* unmanaged<IHTMLFontNamesCollection*, int, ushort**, int>)(lpVtbl[9]))((IHTMLFontNamesCollection*)Unsafe.AsPointer(ref this), index, pBstr);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT get_length([NativeTypeName("long *")] int* p);
+
+            [VtblIndex(8)]
+            HRESULT get__newEnum(IUnknown** p);
+
+            [VtblIndex(9)]
+            HRESULT item([NativeTypeName("long")] int index, [NativeTypeName("BSTR *")] ushort** pBstr);
         }
 
         public partial struct Vtbl

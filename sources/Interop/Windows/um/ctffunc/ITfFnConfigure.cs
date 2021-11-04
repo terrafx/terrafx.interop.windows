@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("88F567C6-1757-49F8-A1B2-89234C1EEFF9")]
     [NativeTypeName("struct ITfFnConfigure : ITfFunction")]
     [NativeInheritance("ITfFunction")]
-    public unsafe partial struct ITfFnConfigure
+    public unsafe partial struct ITfFnConfigure : ITfFnConfigure.Interface
     {
         public void** lpVtbl;
 
@@ -51,6 +51,12 @@ namespace TerraFX.Interop
         public HRESULT Show(HWND hwndParent, [NativeTypeName("LANGID")] ushort langid, [NativeTypeName("const GUID &")] Guid* rguidProfile)
         {
             return ((delegate* unmanaged<ITfFnConfigure*, HWND, ushort, Guid*, int>)(lpVtbl[4]))((ITfFnConfigure*)Unsafe.AsPointer(ref this), hwndParent, langid, rguidProfile);
+        }
+
+        public interface Interface : ITfFunction.Interface
+        {
+            [VtblIndex(4)]
+            HRESULT Show(HWND hwndParent, [NativeTypeName("LANGID")] ushort langid, [NativeTypeName("const GUID &")] Guid* rguidProfile);
         }
 
         public partial struct Vtbl

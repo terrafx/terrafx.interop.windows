@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("3050F68F-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct IElementSegment : ISegment")]
     [NativeInheritance("ISegment")]
-    public unsafe partial struct IElementSegment
+    public unsafe partial struct IElementSegment : IElementSegment.Interface
     {
         public void** lpVtbl;
 
@@ -65,6 +65,18 @@ namespace TerraFX.Interop
         public HRESULT IsPrimary(BOOL* pfPrimary)
         {
             return ((delegate* unmanaged<IElementSegment*, BOOL*, int>)(lpVtbl[6]))((IElementSegment*)Unsafe.AsPointer(ref this), pfPrimary);
+        }
+
+        public interface Interface : ISegment.Interface
+        {
+            [VtblIndex(4)]
+            HRESULT GetElement(IHTMLElement** ppIElement);
+
+            [VtblIndex(5)]
+            HRESULT SetPrimary(BOOL fPrimary);
+
+            [VtblIndex(6)]
+            HRESULT IsPrimary(BOOL* pfPrimary);
         }
 
         public partial struct Vtbl

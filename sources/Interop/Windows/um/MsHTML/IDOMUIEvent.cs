@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("305106CA-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct IDOMUIEvent : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct IDOMUIEvent
+    public unsafe partial struct IDOMUIEvent : IDOMUIEvent.Interface
     {
         public void** lpVtbl;
 
@@ -86,6 +86,18 @@ namespace TerraFX.Interop
         public HRESULT initUIEvent([NativeTypeName("BSTR")] ushort* eventType, [NativeTypeName("VARIANT_BOOL")] short canBubble, [NativeTypeName("VARIANT_BOOL")] short cancelable, IHTMLWindow2* view, [NativeTypeName("long")] int detail)
         {
             return ((delegate* unmanaged<IDOMUIEvent*, ushort*, short, short, IHTMLWindow2*, int, int>)(lpVtbl[9]))((IDOMUIEvent*)Unsafe.AsPointer(ref this), eventType, canBubble, cancelable, view, detail);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT get_view(IHTMLWindow2** p);
+
+            [VtblIndex(8)]
+            HRESULT get_detail([NativeTypeName("long *")] int* p);
+
+            [VtblIndex(9)]
+            HRESULT initUIEvent([NativeTypeName("BSTR")] ushort* eventType, [NativeTypeName("VARIANT_BOOL")] short canBubble, [NativeTypeName("VARIANT_BOOL")] short cancelable, IHTMLWindow2* view, [NativeTypeName("long")] int detail);
         }
 
         public partial struct Vtbl

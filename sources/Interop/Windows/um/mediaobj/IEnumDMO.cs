@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("2C3CD98A-2BFA-4A53-9C27-5249BA64BA0F")]
     [NativeTypeName("struct IEnumDMO : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IEnumDMO
+    public unsafe partial struct IEnumDMO : IEnumDMO.Interface
     {
         public void** lpVtbl;
 
@@ -65,6 +65,21 @@ namespace TerraFX.Interop
         public HRESULT Clone(IEnumDMO** ppEnum)
         {
             return ((delegate* unmanaged<IEnumDMO*, IEnumDMO**, int>)(lpVtbl[6]))((IEnumDMO*)Unsafe.AsPointer(ref this), ppEnum);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT Next([NativeTypeName("DWORD")] uint cItemsToFetch, [NativeTypeName("CLSID *")] Guid* pCLSID, [NativeTypeName("LPWSTR *")] ushort** Names, [NativeTypeName("DWORD *")] uint* pcItemsFetched);
+
+            [VtblIndex(4)]
+            HRESULT Skip([NativeTypeName("DWORD")] uint cItemsToSkip);
+
+            [VtblIndex(5)]
+            HRESULT Reset();
+
+            [VtblIndex(6)]
+            HRESULT Clone(IEnumDMO** ppEnum);
         }
 
         public partial struct Vtbl

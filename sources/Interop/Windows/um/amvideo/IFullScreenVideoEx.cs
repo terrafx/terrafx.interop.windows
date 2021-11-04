@@ -10,7 +10,7 @@ namespace TerraFX.Interop
 {
     [NativeTypeName("struct IFullScreenVideoEx : IFullScreenVideo")]
     [NativeInheritance("IFullScreenVideo")]
-    public unsafe partial struct IFullScreenVideoEx
+    public unsafe partial struct IFullScreenVideoEx : IFullScreenVideoEx.Interface
     {
         public void** lpVtbl;
 
@@ -182,6 +182,21 @@ namespace TerraFX.Interop
         public HRESULT IsKeepPixelAspectRatio([NativeTypeName("long *")] int* pKeepAspect)
         {
             return ((delegate* unmanaged<IFullScreenVideoEx*, int*, int>)(lpVtbl[23]))((IFullScreenVideoEx*)Unsafe.AsPointer(ref this), pKeepAspect);
+        }
+
+        public interface Interface : IFullScreenVideo.Interface
+        {
+            [VtblIndex(20)]
+            HRESULT SetAcceleratorTable(HWND hwnd, HACCEL hAccel);
+
+            [VtblIndex(21)]
+            HRESULT GetAcceleratorTable(HWND* phwnd, HACCEL* phAccel);
+
+            [VtblIndex(22)]
+            HRESULT KeepPixelAspectRatio([NativeTypeName("long")] int KeepAspect);
+
+            [VtblIndex(23)]
+            HRESULT IsKeepPixelAspectRatio([NativeTypeName("long *")] int* pKeepAspect);
         }
 
         public partial struct Vtbl

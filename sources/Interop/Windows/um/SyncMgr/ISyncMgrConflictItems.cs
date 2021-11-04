@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("9C7EAD52-8023-4936-A4DB-D2A9A99E436A")]
     [NativeTypeName("struct ISyncMgrConflictItems : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct ISyncMgrConflictItems
+    public unsafe partial struct ISyncMgrConflictItems : ISyncMgrConflictItems.Interface
     {
         public void** lpVtbl;
 
@@ -51,6 +51,15 @@ namespace TerraFX.Interop
         public HRESULT GetItem(uint iIndex, CONFIRM_CONFLICT_ITEM* pItemInfo)
         {
             return ((delegate* unmanaged<ISyncMgrConflictItems*, uint, CONFIRM_CONFLICT_ITEM*, int>)(lpVtbl[4]))((ISyncMgrConflictItems*)Unsafe.AsPointer(ref this), iIndex, pItemInfo);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetCount(uint* pCount);
+
+            [VtblIndex(4)]
+            HRESULT GetItem(uint iIndex, CONFIRM_CONFLICT_ITEM* pItemInfo);
         }
 
         public partial struct Vtbl

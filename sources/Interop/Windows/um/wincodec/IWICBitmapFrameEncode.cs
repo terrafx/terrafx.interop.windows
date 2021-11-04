@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("00000105-A8F2-4877-BA0A-FD2B6645FB94")]
     [NativeTypeName("struct IWICBitmapFrameEncode : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IWICBitmapFrameEncode
+    public unsafe partial struct IWICBitmapFrameEncode : IWICBitmapFrameEncode.Interface
     {
         public void** lpVtbl;
 
@@ -114,6 +114,42 @@ namespace TerraFX.Interop
         public HRESULT GetMetadataQueryWriter(IWICMetadataQueryWriter** ppIMetadataQueryWriter)
         {
             return ((delegate* unmanaged<IWICBitmapFrameEncode*, IWICMetadataQueryWriter**, int>)(lpVtbl[13]))((IWICBitmapFrameEncode*)Unsafe.AsPointer(ref this), ppIMetadataQueryWriter);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT Initialize(IPropertyBag2* pIEncoderOptions);
+
+            [VtblIndex(4)]
+            HRESULT SetSize(uint uiWidth, uint uiHeight);
+
+            [VtblIndex(5)]
+            HRESULT SetResolution(double dpiX, double dpiY);
+
+            [VtblIndex(6)]
+            HRESULT SetPixelFormat([NativeTypeName("WICPixelFormatGUID *")] Guid* pPixelFormat);
+
+            [VtblIndex(7)]
+            HRESULT SetColorContexts(uint cCount, IWICColorContext** ppIColorContext);
+
+            [VtblIndex(8)]
+            HRESULT SetPalette(IWICPalette* pIPalette);
+
+            [VtblIndex(9)]
+            HRESULT SetThumbnail(IWICBitmapSource* pIThumbnail);
+
+            [VtblIndex(10)]
+            HRESULT WritePixels(uint lineCount, uint cbStride, uint cbBufferSize, byte* pbPixels);
+
+            [VtblIndex(11)]
+            HRESULT WriteSource(IWICBitmapSource* pIBitmapSource, WICRect* prc);
+
+            [VtblIndex(12)]
+            HRESULT Commit();
+
+            [VtblIndex(13)]
+            HRESULT GetMetadataQueryWriter(IWICMetadataQueryWriter** ppIMetadataQueryWriter);
         }
 
         public partial struct Vtbl

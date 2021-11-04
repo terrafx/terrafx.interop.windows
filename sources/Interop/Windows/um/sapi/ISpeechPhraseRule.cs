@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("A7BFE112-A4A0-48D9-B602-C313843F6964")]
     [NativeTypeName("struct ISpeechPhraseRule : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct ISpeechPhraseRule
+    public unsafe partial struct ISpeechPhraseRule : ISpeechPhraseRule.Interface
     {
         public void** lpVtbl;
 
@@ -121,6 +121,33 @@ namespace TerraFX.Interop
         public HRESULT get_EngineConfidence(float* EngineConfidence)
         {
             return ((delegate* unmanaged<ISpeechPhraseRule*, float*, int>)(lpVtbl[14]))((ISpeechPhraseRule*)Unsafe.AsPointer(ref this), EngineConfidence);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT get_Name([NativeTypeName("BSTR *")] ushort** Name);
+
+            [VtblIndex(8)]
+            HRESULT get_Id([NativeTypeName("long *")] int* Id);
+
+            [VtblIndex(9)]
+            HRESULT get_FirstElement([NativeTypeName("long *")] int* FirstElement);
+
+            [VtblIndex(10)]
+            HRESULT get_NumberOfElements([NativeTypeName("long *")] int* NumberOfElements);
+
+            [VtblIndex(11)]
+            HRESULT get_Parent(ISpeechPhraseRule** Parent);
+
+            [VtblIndex(12)]
+            HRESULT get_Children(ISpeechPhraseRules** Children);
+
+            [VtblIndex(13)]
+            HRESULT get_Confidence(SpeechEngineConfidence* ActualConfidence);
+
+            [VtblIndex(14)]
+            HRESULT get_EngineConfidence(float* EngineConfidence);
         }
 
         public partial struct Vtbl

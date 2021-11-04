@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("7FE41F41-F430-440E-AECE-54416DC8B9DB")]
     [NativeTypeName("struct IMLOperatorTensor : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IMLOperatorTensor
+    public unsafe partial struct IMLOperatorTensor : IMLOperatorTensor.Interface
     {
         public void** lpVtbl;
 
@@ -87,6 +87,31 @@ namespace TerraFX.Interop
         public void GetDataInterface(IUnknown** dataInterface)
         {
             ((delegate* unmanaged<IMLOperatorTensor*, IUnknown**, void>)(lpVtbl[9]))((IMLOperatorTensor*)Unsafe.AsPointer(ref this), dataInterface);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            [return: NativeTypeName("uint32_t")]
+            uint GetDimensionCount();
+
+            [VtblIndex(4)]
+            HRESULT GetShape([NativeTypeName("uint32_t")] uint dimensionCount, [NativeTypeName("uint32_t *")] uint* dimensions);
+
+            [VtblIndex(5)]
+            MLOperatorTensorDataType GetTensorDataType();
+
+            [VtblIndex(6)]
+            bool IsCpuData();
+
+            [VtblIndex(7)]
+            bool IsDataInterface();
+
+            [VtblIndex(8)]
+            void* GetData();
+
+            [VtblIndex(9)]
+            void GetDataInterface(IUnknown** dataInterface);
         }
 
         public partial struct Vtbl

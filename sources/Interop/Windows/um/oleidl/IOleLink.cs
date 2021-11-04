@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("0000011D-0000-0000-C000-000000000046")]
     [NativeTypeName("struct IOleLink : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IOleLink
+    public unsafe partial struct IOleLink : IOleLink.Interface
     {
         public void** lpVtbl;
 
@@ -114,6 +114,42 @@ namespace TerraFX.Interop
         public HRESULT Update(IBindCtx* pbc)
         {
             return ((delegate* unmanaged<IOleLink*, IBindCtx*, int>)(lpVtbl[13]))((IOleLink*)Unsafe.AsPointer(ref this), pbc);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT SetUpdateOptions([NativeTypeName("DWORD")] uint dwUpdateOpt);
+
+            [VtblIndex(4)]
+            HRESULT GetUpdateOptions([NativeTypeName("DWORD *")] uint* pdwUpdateOpt);
+
+            [VtblIndex(5)]
+            HRESULT SetSourceMoniker(IMoniker* pmk, [NativeTypeName("const IID &")] Guid* rclsid);
+
+            [VtblIndex(6)]
+            HRESULT GetSourceMoniker(IMoniker** ppmk);
+
+            [VtblIndex(7)]
+            HRESULT SetSourceDisplayName([NativeTypeName("LPCOLESTR")] ushort* pszStatusText);
+
+            [VtblIndex(8)]
+            HRESULT GetSourceDisplayName([NativeTypeName("LPOLESTR *")] ushort** ppszDisplayName);
+
+            [VtblIndex(9)]
+            HRESULT BindToSource([NativeTypeName("DWORD")] uint bindflags, IBindCtx* pbc);
+
+            [VtblIndex(10)]
+            HRESULT BindIfRunning();
+
+            [VtblIndex(11)]
+            HRESULT GetBoundSource(IUnknown** ppunk);
+
+            [VtblIndex(12)]
+            HRESULT UnbindSource();
+
+            [VtblIndex(13)]
+            HRESULT Update(IBindCtx* pbc);
         }
 
         public partial struct Vtbl

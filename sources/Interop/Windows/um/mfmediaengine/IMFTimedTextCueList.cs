@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("AD128745-211B-40A0-9981-FE65F166D0FD")]
     [NativeTypeName("struct IMFTimedTextCueList : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IMFTimedTextCueList
+    public unsafe partial struct IMFTimedTextCueList : IMFTimedTextCueList.Interface
     {
         public void** lpVtbl;
 
@@ -87,6 +87,31 @@ namespace TerraFX.Interop
         public HRESULT RemoveCue(IMFTimedTextCue* cue)
         {
             return ((delegate* unmanaged<IMFTimedTextCueList*, IMFTimedTextCue*, int>)(lpVtbl[9]))((IMFTimedTextCueList*)Unsafe.AsPointer(ref this), cue);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            [return: NativeTypeName("DWORD")]
+            uint GetLength();
+
+            [VtblIndex(4)]
+            HRESULT GetCueByIndex([NativeTypeName("DWORD")] uint index, IMFTimedTextCue** cue);
+
+            [VtblIndex(5)]
+            HRESULT GetCueById([NativeTypeName("DWORD")] uint id, IMFTimedTextCue** cue);
+
+            [VtblIndex(6)]
+            HRESULT GetCueByOriginalId([NativeTypeName("LPCWSTR")] ushort* originalId, IMFTimedTextCue** cue);
+
+            [VtblIndex(7)]
+            HRESULT AddTextCue(double start, double duration, [NativeTypeName("LPCWSTR")] ushort* text, IMFTimedTextCue** cue);
+
+            [VtblIndex(8)]
+            HRESULT AddDataCue(double start, double duration, [NativeTypeName("const BYTE *")] byte* data, [NativeTypeName("DWORD")] uint dataSize, IMFTimedTextCue** cue);
+
+            [VtblIndex(9)]
+            HRESULT RemoveCue(IMFTimedTextCue* cue);
         }
 
         public partial struct Vtbl

@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("06791122-C6F0-417D-8323-269E987F5954")]
     [NativeTypeName("struct IDCompositionTranslateTransform : IDCompositionTransform")]
     [NativeInheritance("IDCompositionTransform")]
-    public unsafe partial struct IDCompositionTranslateTransform
+    public unsafe partial struct IDCompositionTranslateTransform : IDCompositionTranslateTransform.Interface
     {
         public void** lpVtbl;
 
@@ -65,6 +65,21 @@ namespace TerraFX.Interop
         public HRESULT SetOffsetY(float offsetY)
         {
             return ((delegate* unmanaged<IDCompositionTranslateTransform*, float, int>)(lpVtbl[6]))((IDCompositionTranslateTransform*)Unsafe.AsPointer(ref this), offsetY);
+        }
+
+        public interface Interface : IDCompositionTransform.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT SetOffsetX(IDCompositionAnimation* animation);
+
+            [VtblIndex(4)]
+            HRESULT SetOffsetX(float offsetX);
+
+            [VtblIndex(5)]
+            HRESULT SetOffsetY(IDCompositionAnimation* animation);
+
+            [VtblIndex(6)]
+            HRESULT SetOffsetY(float offsetY);
         }
 
         public partial struct Vtbl

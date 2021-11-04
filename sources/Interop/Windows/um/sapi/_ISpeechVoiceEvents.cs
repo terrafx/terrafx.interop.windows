@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("A372ACD1-3BEF-4BBD-8FFB-CB3E2B416AF8")]
     [NativeTypeName("struct _ISpeechVoiceEvents : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct _ISpeechVoiceEvents
+    public unsafe partial struct _ISpeechVoiceEvents : _ISpeechVoiceEvents.Interface
     {
         public void** lpVtbl;
 
@@ -65,6 +65,10 @@ namespace TerraFX.Interop
         public HRESULT Invoke([NativeTypeName("DISPID")] int dispIdMember, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("WORD")] ushort wFlags, DISPPARAMS* pDispParams, VARIANT* pVarResult, EXCEPINFO* pExcepInfo, uint* puArgErr)
         {
             return ((delegate* unmanaged<_ISpeechVoiceEvents*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int>)(lpVtbl[6]))((_ISpeechVoiceEvents*)Unsafe.AsPointer(ref this), dispIdMember, riid, lcid, wFlags, pDispParams, pVarResult, pExcepInfo, puArgErr);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
         }
 
         public partial struct Vtbl

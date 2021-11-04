@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("F1C0CA52-92A3-4F00-B4CE-F35691EFD9D9")]
     [NativeTypeName("struct ID2D1SvgStrokeDashArray : ID2D1SvgAttribute")]
     [NativeInheritance("ID2D1SvgAttribute")]
-    public unsafe partial struct ID2D1SvgStrokeDashArray
+    public unsafe partial struct ID2D1SvgStrokeDashArray : ID2D1SvgStrokeDashArray.Interface
     {
         public void** lpVtbl;
 
@@ -101,6 +101,28 @@ namespace TerraFX.Interop
         public uint GetDashesCount()
         {
             return ((delegate* unmanaged<ID2D1SvgStrokeDashArray*, uint>)(lpVtbl[11]))((ID2D1SvgStrokeDashArray*)Unsafe.AsPointer(ref this));
+        }
+
+        public interface Interface : ID2D1SvgAttribute.Interface
+        {
+            [VtblIndex(6)]
+            HRESULT RemoveDashesAtEnd([NativeTypeName("UINT32")] uint dashesCount);
+
+            [VtblIndex(7)]
+            HRESULT UpdateDashes([NativeTypeName("const D2D1_SVG_LENGTH *")] D2D1_SVG_LENGTH* dashes, [NativeTypeName("UINT32")] uint dashesCount, [NativeTypeName("UINT32")] uint startIndex = 0);
+
+            [VtblIndex(8)]
+            HRESULT UpdateDashes([NativeTypeName("const FLOAT *")] float* dashes, [NativeTypeName("UINT32")] uint dashesCount, [NativeTypeName("UINT32")] uint startIndex = 0);
+
+            [VtblIndex(9)]
+            HRESULT GetDashes(D2D1_SVG_LENGTH* dashes, [NativeTypeName("UINT32")] uint dashesCount, [NativeTypeName("UINT32")] uint startIndex = 0);
+
+            [VtblIndex(10)]
+            HRESULT GetDashes(float* dashes, [NativeTypeName("UINT32")] uint dashesCount, [NativeTypeName("UINT32")] uint startIndex = 0);
+
+            [VtblIndex(11)]
+            [return: NativeTypeName("UINT32")]
+            uint GetDashesCount();
         }
 
         public partial struct Vtbl

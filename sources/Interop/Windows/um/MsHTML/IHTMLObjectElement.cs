@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("3050F24F-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct IHTMLObjectElement : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct IHTMLObjectElement
+    public unsafe partial struct IHTMLObjectElement : IHTMLObjectElement.Interface
     {
         public void** lpVtbl;
 
@@ -303,6 +303,111 @@ namespace TerraFX.Interop
         public HRESULT get_hspace([NativeTypeName("long *")] int* p)
         {
             return ((delegate* unmanaged<IHTMLObjectElement*, int*, int>)(lpVtbl[40]))((IHTMLObjectElement*)Unsafe.AsPointer(ref this), p);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT get_object(IDispatch** p);
+
+            [VtblIndex(8)]
+            HRESULT get_classid([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(9)]
+            HRESULT get_data([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(10)]
+            HRESULT putref_recordset(IDispatch* v);
+
+            [VtblIndex(11)]
+            HRESULT get_recordset(IDispatch** p);
+
+            [VtblIndex(12)]
+            HRESULT put_align([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(13)]
+            HRESULT get_align([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(14)]
+            HRESULT put_name([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(15)]
+            HRESULT get_name([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(16)]
+            HRESULT put_codeBase([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(17)]
+            HRESULT get_codeBase([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(18)]
+            HRESULT put_codeType([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(19)]
+            HRESULT get_codeType([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(20)]
+            HRESULT put_code([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(21)]
+            HRESULT get_code([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(22)]
+            HRESULT get_BaseHref([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(23)]
+            HRESULT put_type([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(24)]
+            HRESULT get_type([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(25)]
+            HRESULT get_form(IHTMLFormElement** p);
+
+            [VtblIndex(26)]
+            HRESULT put_width(VARIANT v);
+
+            [VtblIndex(27)]
+            HRESULT get_width(VARIANT* p);
+
+            [VtblIndex(28)]
+            HRESULT put_height(VARIANT v);
+
+            [VtblIndex(29)]
+            HRESULT get_height(VARIANT* p);
+
+            [VtblIndex(30)]
+            HRESULT get_readyState([NativeTypeName("long *")] int* p);
+
+            [VtblIndex(31)]
+            HRESULT put_onreadystatechange(VARIANT v);
+
+            [VtblIndex(32)]
+            HRESULT get_onreadystatechange(VARIANT* p);
+
+            [VtblIndex(33)]
+            HRESULT put_onerror(VARIANT v);
+
+            [VtblIndex(34)]
+            HRESULT get_onerror(VARIANT* p);
+
+            [VtblIndex(35)]
+            HRESULT put_altHtml([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(36)]
+            HRESULT get_altHtml([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(37)]
+            HRESULT put_vspace([NativeTypeName("long")] int v);
+
+            [VtblIndex(38)]
+            HRESULT get_vspace([NativeTypeName("long *")] int* p);
+
+            [VtblIndex(39)]
+            HRESULT put_hspace([NativeTypeName("long")] int v);
+
+            [VtblIndex(40)]
+            HRESULT get_hspace([NativeTypeName("long *")] int* p);
         }
 
         public partial struct Vtbl

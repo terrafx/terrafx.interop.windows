@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("000214F9-0000-0000-C000-000000000046")]
     [NativeTypeName("struct IShellLinkW : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IShellLinkW
+    public unsafe partial struct IShellLinkW : IShellLinkW.Interface
     {
         public void** lpVtbl;
 
@@ -163,6 +163,63 @@ namespace TerraFX.Interop
         public HRESULT SetPath([NativeTypeName("LPCWSTR")] ushort* pszFile)
         {
             return ((delegate* unmanaged<IShellLinkW*, ushort*, int>)(lpVtbl[20]))((IShellLinkW*)Unsafe.AsPointer(ref this), pszFile);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetPath([NativeTypeName("LPWSTR")] ushort* pszFile, int cch, WIN32_FIND_DATAW* pfd, [NativeTypeName("DWORD")] uint fFlags);
+
+            [VtblIndex(4)]
+            HRESULT GetIDList([NativeTypeName("LPITEMIDLIST *")] ITEMIDLIST** ppidl);
+
+            [VtblIndex(5)]
+            HRESULT SetIDList([NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidl);
+
+            [VtblIndex(6)]
+            HRESULT GetDescription([NativeTypeName("LPWSTR")] ushort* pszName, int cch);
+
+            [VtblIndex(7)]
+            HRESULT SetDescription([NativeTypeName("LPCWSTR")] ushort* pszName);
+
+            [VtblIndex(8)]
+            HRESULT GetWorkingDirectory([NativeTypeName("LPWSTR")] ushort* pszDir, int cch);
+
+            [VtblIndex(9)]
+            HRESULT SetWorkingDirectory([NativeTypeName("LPCWSTR")] ushort* pszDir);
+
+            [VtblIndex(10)]
+            HRESULT GetArguments([NativeTypeName("LPWSTR")] ushort* pszArgs, int cch);
+
+            [VtblIndex(11)]
+            HRESULT SetArguments([NativeTypeName("LPCWSTR")] ushort* pszArgs);
+
+            [VtblIndex(12)]
+            HRESULT GetHotkey([NativeTypeName("WORD *")] ushort* pwHotkey);
+
+            [VtblIndex(13)]
+            HRESULT SetHotkey([NativeTypeName("WORD")] ushort wHotkey);
+
+            [VtblIndex(14)]
+            HRESULT GetShowCmd(int* piShowCmd);
+
+            [VtblIndex(15)]
+            HRESULT SetShowCmd(int iShowCmd);
+
+            [VtblIndex(16)]
+            HRESULT GetIconLocation([NativeTypeName("LPWSTR")] ushort* pszIconPath, int cch, int* piIcon);
+
+            [VtblIndex(17)]
+            HRESULT SetIconLocation([NativeTypeName("LPCWSTR")] ushort* pszIconPath, int iIcon);
+
+            [VtblIndex(18)]
+            HRESULT SetRelativePath([NativeTypeName("LPCWSTR")] ushort* pszPathRel, [NativeTypeName("DWORD")] uint dwReserved);
+
+            [VtblIndex(19)]
+            HRESULT Resolve(HWND hwnd, [NativeTypeName("DWORD")] uint fFlags);
+
+            [VtblIndex(20)]
+            HRESULT SetPath([NativeTypeName("LPCWSTR")] ushort* pszFile);
         }
 
         public partial struct Vtbl

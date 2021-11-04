@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("5CD52983-9449-11D2-963A-00C04F79ADF0")]
     [NativeTypeName("struct IResolveShellLink : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IResolveShellLink
+    public unsafe partial struct IResolveShellLink : IResolveShellLink.Interface
     {
         public void** lpVtbl;
 
@@ -44,6 +44,12 @@ namespace TerraFX.Interop
         public HRESULT ResolveShellLink(IUnknown* punkLink, HWND hwnd, [NativeTypeName("DWORD")] uint fFlags)
         {
             return ((delegate* unmanaged<IResolveShellLink*, IUnknown*, HWND, uint, int>)(lpVtbl[3]))((IResolveShellLink*)Unsafe.AsPointer(ref this), punkLink, hwnd, fFlags);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT ResolveShellLink(IUnknown* punkLink, HWND hwnd, [NativeTypeName("DWORD")] uint fFlags);
         }
 
         public partial struct Vtbl

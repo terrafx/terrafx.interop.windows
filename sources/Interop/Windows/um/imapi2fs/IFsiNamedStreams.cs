@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("ED79BA56-5294-4250-8D46-F9AECEE23459")]
     [NativeTypeName("struct IFsiNamedStreams : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct IFsiNamedStreams
+    public unsafe partial struct IFsiNamedStreams : IFsiNamedStreams.Interface
     {
         public void** lpVtbl;
 
@@ -93,6 +93,21 @@ namespace TerraFX.Interop
         public HRESULT get_EnumNamedStreams(IEnumFsiItems** NewEnum)
         {
             return ((delegate* unmanaged<IFsiNamedStreams*, IEnumFsiItems**, int>)(lpVtbl[10]))((IFsiNamedStreams*)Unsafe.AsPointer(ref this), NewEnum);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT get__NewEnum(IEnumVARIANT** NewEnum);
+
+            [VtblIndex(8)]
+            HRESULT get_Item([NativeTypeName("LONG")] int index, IFsiFileItem2** item);
+
+            [VtblIndex(9)]
+            HRESULT get_Count([NativeTypeName("LONG *")] int* count);
+
+            [VtblIndex(10)]
+            HRESULT get_EnumNamedStreams(IEnumFsiItems** NewEnum);
         }
 
         public partial struct Vtbl

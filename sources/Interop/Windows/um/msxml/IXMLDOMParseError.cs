@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("3EFAA426-272F-11D2-836F-0000F87A7782")]
     [NativeTypeName("struct IXMLDOMParseError : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct IXMLDOMParseError
+    public unsafe partial struct IXMLDOMParseError : IXMLDOMParseError.Interface
     {
         public void** lpVtbl;
 
@@ -114,6 +114,30 @@ namespace TerraFX.Interop
         public HRESULT get_filepos([NativeTypeName("long *")] int* filePosition)
         {
             return ((delegate* unmanaged<IXMLDOMParseError*, int*, int>)(lpVtbl[13]))((IXMLDOMParseError*)Unsafe.AsPointer(ref this), filePosition);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT get_errorCode([NativeTypeName("long *")] int* errorCode);
+
+            [VtblIndex(8)]
+            HRESULT get_url([NativeTypeName("BSTR *")] ushort** urlString);
+
+            [VtblIndex(9)]
+            HRESULT get_reason([NativeTypeName("BSTR *")] ushort** reasonString);
+
+            [VtblIndex(10)]
+            HRESULT get_srcText([NativeTypeName("BSTR *")] ushort** sourceString);
+
+            [VtblIndex(11)]
+            HRESULT get_line([NativeTypeName("long *")] int* lineNumber);
+
+            [VtblIndex(12)]
+            HRESULT get_linepos([NativeTypeName("long *")] int* linePosition);
+
+            [VtblIndex(13)]
+            HRESULT get_filepos([NativeTypeName("long *")] int* filePosition);
         }
 
         public partial struct Vtbl

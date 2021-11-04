@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("9BA05970-F6A8-11CF-A442-00A0C90A8F39")]
     [NativeTypeName("struct IFolderViewOC : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct IFolderViewOC
+    public unsafe partial struct IFolderViewOC : IFolderViewOC.Interface
     {
         public void** lpVtbl;
 
@@ -72,6 +72,12 @@ namespace TerraFX.Interop
         public HRESULT SetFolderView(IDispatch* pdisp)
         {
             return ((delegate* unmanaged<IFolderViewOC*, IDispatch*, int>)(lpVtbl[7]))((IFolderViewOC*)Unsafe.AsPointer(ref this), pdisp);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT SetFolderView(IDispatch* pdisp);
         }
 
         public partial struct Vtbl

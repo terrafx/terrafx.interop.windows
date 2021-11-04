@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("E46A9787-2B71-444D-A4B5-1FAB7B708D6A")]
     [NativeTypeName("struct IVideoFrameStep : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IVideoFrameStep
+    public unsafe partial struct IVideoFrameStep : IVideoFrameStep.Interface
     {
         public void** lpVtbl;
 
@@ -58,6 +58,18 @@ namespace TerraFX.Interop
         public HRESULT CancelStep()
         {
             return ((delegate* unmanaged<IVideoFrameStep*, int>)(lpVtbl[5]))((IVideoFrameStep*)Unsafe.AsPointer(ref this));
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT Step([NativeTypeName("DWORD")] uint dwFrames, IUnknown* pStepObject);
+
+            [VtblIndex(4)]
+            HRESULT CanStep([NativeTypeName("long")] int bMultiple, IUnknown* pStepObject);
+
+            [VtblIndex(5)]
+            HRESULT CancelStep();
         }
 
         public partial struct Vtbl

@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("BA468C55-9956-4FB1-A59D-52A7DD7CC6AA")]
     [NativeTypeName("struct ITfLangBarItemMgr : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct ITfLangBarItemMgr
+    public unsafe partial struct ITfLangBarItemMgr : ITfLangBarItemMgr.Interface
     {
         public void** lpVtbl;
 
@@ -121,6 +121,45 @@ namespace TerraFX.Interop
         public HRESULT UnadviseItemsSink([NativeTypeName("ULONG")] uint ulCount, [NativeTypeName("DWORD *")] uint* pdwCookie)
         {
             return ((delegate* unmanaged<ITfLangBarItemMgr*, uint, uint*, int>)(lpVtbl[14]))((ITfLangBarItemMgr*)Unsafe.AsPointer(ref this), ulCount, pdwCookie);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT EnumItems(IEnumTfLangBarItems** ppEnum);
+
+            [VtblIndex(4)]
+            HRESULT GetItem([NativeTypeName("const GUID &")] Guid* rguid, ITfLangBarItem** ppItem);
+
+            [VtblIndex(5)]
+            HRESULT AddItem(ITfLangBarItem* punk);
+
+            [VtblIndex(6)]
+            HRESULT RemoveItem(ITfLangBarItem* punk);
+
+            [VtblIndex(7)]
+            HRESULT AdviseItemSink(ITfLangBarItemSink* punk, [NativeTypeName("DWORD *")] uint* pdwCookie, [NativeTypeName("const GUID &")] Guid* rguidItem);
+
+            [VtblIndex(8)]
+            HRESULT UnadviseItemSink([NativeTypeName("DWORD")] uint dwCookie);
+
+            [VtblIndex(9)]
+            HRESULT GetItemFloatingRect([NativeTypeName("DWORD")] uint dwThreadId, [NativeTypeName("const GUID &")] Guid* rguid, RECT* prc);
+
+            [VtblIndex(10)]
+            HRESULT GetItemsStatus([NativeTypeName("ULONG")] uint ulCount, [NativeTypeName("const GUID *")] Guid* prgguid, [NativeTypeName("DWORD *")] uint* pdwStatus);
+
+            [VtblIndex(11)]
+            HRESULT GetItemNum([NativeTypeName("ULONG *")] uint* pulCount);
+
+            [VtblIndex(12)]
+            HRESULT GetItems([NativeTypeName("ULONG")] uint ulCount, ITfLangBarItem** ppItem, TF_LANGBARITEMINFO* pInfo, [NativeTypeName("DWORD *")] uint* pdwStatus, [NativeTypeName("ULONG *")] uint* pcFetched);
+
+            [VtblIndex(13)]
+            HRESULT AdviseItemsSink([NativeTypeName("ULONG")] uint ulCount, ITfLangBarItemSink** ppunk, [NativeTypeName("const GUID *")] Guid* pguidItem, [NativeTypeName("DWORD *")] uint* pdwCookie);
+
+            [VtblIndex(14)]
+            HRESULT UnadviseItemsSink([NativeTypeName("ULONG")] uint ulCount, [NativeTypeName("DWORD *")] uint* pdwCookie);
         }
 
         public partial struct Vtbl

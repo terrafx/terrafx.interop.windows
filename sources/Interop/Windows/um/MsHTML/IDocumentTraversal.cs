@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("30510744-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct IDocumentTraversal : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct IDocumentTraversal
+    public unsafe partial struct IDocumentTraversal : IDocumentTraversal.Interface
     {
         public void** lpVtbl;
 
@@ -79,6 +79,15 @@ namespace TerraFX.Interop
         public HRESULT createTreeWalker(IDispatch* pRootNode, [NativeTypeName("long")] int ulWhatToShow, VARIANT* pFilter, [NativeTypeName("VARIANT_BOOL")] short fEntityReferenceExpansion, IDOMTreeWalker** ppTreeWalker)
         {
             return ((delegate* unmanaged<IDocumentTraversal*, IDispatch*, int, VARIANT*, short, IDOMTreeWalker**, int>)(lpVtbl[8]))((IDocumentTraversal*)Unsafe.AsPointer(ref this), pRootNode, ulWhatToShow, pFilter, fEntityReferenceExpansion, ppTreeWalker);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT createNodeIterator(IDispatch* pRootNode, [NativeTypeName("long")] int ulWhatToShow, VARIANT* pFilter, [NativeTypeName("VARIANT_BOOL")] short fEntityReferenceExpansion, IDOMNodeIterator** ppNodeIterator);
+
+            [VtblIndex(8)]
+            HRESULT createTreeWalker(IDispatch* pRootNode, [NativeTypeName("long")] int ulWhatToShow, VARIANT* pFilter, [NativeTypeName("VARIANT_BOOL")] short fEntityReferenceExpansion, IDOMTreeWalker** ppTreeWalker);
         }
 
         public partial struct Vtbl

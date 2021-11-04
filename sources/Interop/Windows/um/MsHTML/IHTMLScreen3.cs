@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("305104A1-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct IHTMLScreen3 : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct IHTMLScreen3
+    public unsafe partial struct IHTMLScreen3 : IHTMLScreen3.Interface
     {
         public void** lpVtbl;
 
@@ -79,6 +79,15 @@ namespace TerraFX.Interop
         public HRESULT get_systemYDPI([NativeTypeName("long *")] int* p)
         {
             return ((delegate* unmanaged<IHTMLScreen3*, int*, int>)(lpVtbl[8]))((IHTMLScreen3*)Unsafe.AsPointer(ref this), p);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT get_systemXDPI([NativeTypeName("long *")] int* p);
+
+            [VtblIndex(8)]
+            HRESULT get_systemYDPI([NativeTypeName("long *")] int* p);
         }
 
         public partial struct Vtbl

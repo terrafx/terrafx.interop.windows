@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("D4236675-A5BF-4570-9D42-5D6D7B02D59B")]
     [NativeTypeName("struct ITfLMLattice : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct ITfLMLattice
+    public unsafe partial struct ITfLMLattice : ITfLMLattice.Interface
     {
         public void** lpVtbl;
 
@@ -51,6 +51,15 @@ namespace TerraFX.Interop
         public HRESULT EnumLatticeElements([NativeTypeName("DWORD")] uint dwFrameStart, [NativeTypeName("const GUID &")] Guid* rguidType, IEnumTfLatticeElements** ppEnum)
         {
             return ((delegate* unmanaged<ITfLMLattice*, uint, Guid*, IEnumTfLatticeElements**, int>)(lpVtbl[4]))((ITfLMLattice*)Unsafe.AsPointer(ref this), dwFrameStart, rguidType, ppEnum);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT QueryType([NativeTypeName("const GUID &")] Guid* rguidType, BOOL* pfSupported);
+
+            [VtblIndex(4)]
+            HRESULT EnumLatticeElements([NativeTypeName("DWORD")] uint dwFrameStart, [NativeTypeName("const GUID &")] Guid* rguidType, IEnumTfLatticeElements** ppEnum);
         }
 
         public partial struct Vtbl

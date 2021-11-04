@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("FF5693BE-2CE0-4D48-B5C5-40817D1ACDB9")]
     [NativeTypeName("struct IShellItemResources : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IShellItemResources
+    public unsafe partial struct IShellItemResources : IShellItemResources.Interface
     {
         public void** lpVtbl;
 
@@ -107,6 +107,39 @@ namespace TerraFX.Interop
         public HRESULT MarkForDelete()
         {
             return ((delegate* unmanaged<IShellItemResources*, int>)(lpVtbl[12]))((IShellItemResources*)Unsafe.AsPointer(ref this));
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetAttributes([NativeTypeName("DWORD *")] uint* pdwAttributes);
+
+            [VtblIndex(4)]
+            HRESULT GetSize([NativeTypeName("ULONGLONG *")] ulong* pullSize);
+
+            [VtblIndex(5)]
+            HRESULT GetTimes(FILETIME* pftCreation, FILETIME* pftWrite, FILETIME* pftAccess);
+
+            [VtblIndex(6)]
+            HRESULT SetTimes([NativeTypeName("const FILETIME *")] FILETIME* pftCreation, [NativeTypeName("const FILETIME *")] FILETIME* pftWrite, [NativeTypeName("const FILETIME *")] FILETIME* pftAccess);
+
+            [VtblIndex(7)]
+            HRESULT GetResourceDescription([NativeTypeName("const SHELL_ITEM_RESOURCE *")] SHELL_ITEM_RESOURCE* pcsir, [NativeTypeName("LPWSTR *")] ushort** ppszDescription);
+
+            [VtblIndex(8)]
+            HRESULT EnumResources(IEnumResources** ppenumr);
+
+            [VtblIndex(9)]
+            HRESULT SupportsResource([NativeTypeName("const SHELL_ITEM_RESOURCE *")] SHELL_ITEM_RESOURCE* pcsir);
+
+            [VtblIndex(10)]
+            HRESULT OpenResource([NativeTypeName("const SHELL_ITEM_RESOURCE *")] SHELL_ITEM_RESOURCE* pcsir, [NativeTypeName("const IID &")] Guid* riid, void** ppv);
+
+            [VtblIndex(11)]
+            HRESULT CreateResource([NativeTypeName("const SHELL_ITEM_RESOURCE *")] SHELL_ITEM_RESOURCE* pcsir, [NativeTypeName("const IID &")] Guid* riid, void** ppv);
+
+            [VtblIndex(12)]
+            HRESULT MarkForDelete();
         }
 
         public partial struct Vtbl

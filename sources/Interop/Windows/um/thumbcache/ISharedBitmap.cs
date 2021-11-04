@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("091162A4-BC96-411F-AAE8-C5122CD03363")]
     [NativeTypeName("struct ISharedBitmap : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct ISharedBitmap
+    public unsafe partial struct ISharedBitmap : ISharedBitmap.Interface
     {
         public void** lpVtbl;
 
@@ -72,6 +72,24 @@ namespace TerraFX.Interop
         public HRESULT Detach(HBITMAP* phbm)
         {
             return ((delegate* unmanaged<ISharedBitmap*, HBITMAP*, int>)(lpVtbl[7]))((ISharedBitmap*)Unsafe.AsPointer(ref this), phbm);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetSharedBitmap(HBITMAP* phbm);
+
+            [VtblIndex(4)]
+            HRESULT GetSize(SIZE* pSize);
+
+            [VtblIndex(5)]
+            HRESULT GetFormat(WTS_ALPHATYPE* pat);
+
+            [VtblIndex(6)]
+            HRESULT InitializeBitmap(HBITMAP hbm, WTS_ALPHATYPE wtsAT);
+
+            [VtblIndex(7)]
+            HRESULT Detach(HBITMAP* phbm);
         }
 
         public partial struct Vtbl

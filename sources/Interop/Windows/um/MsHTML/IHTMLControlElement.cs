@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("3050F4E9-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct IHTMLControlElement : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct IHTMLControlElement
+    public unsafe partial struct IHTMLControlElement : IHTMLControlElement.Interface
     {
         public void** lpVtbl;
 
@@ -191,6 +191,63 @@ namespace TerraFX.Interop
         public HRESULT get_clientLeft([NativeTypeName("long *")] int* p)
         {
             return ((delegate* unmanaged<IHTMLControlElement*, int*, int>)(lpVtbl[24]))((IHTMLControlElement*)Unsafe.AsPointer(ref this), p);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT put_tabIndex(short v);
+
+            [VtblIndex(8)]
+            HRESULT get_tabIndex(short* p);
+
+            [VtblIndex(9)]
+            HRESULT focus();
+
+            [VtblIndex(10)]
+            HRESULT put_accessKey([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(11)]
+            HRESULT get_accessKey([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(12)]
+            HRESULT put_onblur(VARIANT v);
+
+            [VtblIndex(13)]
+            HRESULT get_onblur(VARIANT* p);
+
+            [VtblIndex(14)]
+            HRESULT put_onfocus(VARIANT v);
+
+            [VtblIndex(15)]
+            HRESULT get_onfocus(VARIANT* p);
+
+            [VtblIndex(16)]
+            HRESULT put_onresize(VARIANT v);
+
+            [VtblIndex(17)]
+            HRESULT get_onresize(VARIANT* p);
+
+            [VtblIndex(18)]
+            HRESULT blur();
+
+            [VtblIndex(19)]
+            HRESULT addFilter(IUnknown* pUnk);
+
+            [VtblIndex(20)]
+            HRESULT removeFilter(IUnknown* pUnk);
+
+            [VtblIndex(21)]
+            HRESULT get_clientHeight([NativeTypeName("long *")] int* p);
+
+            [VtblIndex(22)]
+            HRESULT get_clientWidth([NativeTypeName("long *")] int* p);
+
+            [VtblIndex(23)]
+            HRESULT get_clientTop([NativeTypeName("long *")] int* p);
+
+            [VtblIndex(24)]
+            HRESULT get_clientLeft([NativeTypeName("long *")] int* p);
         }
 
         public partial struct Vtbl

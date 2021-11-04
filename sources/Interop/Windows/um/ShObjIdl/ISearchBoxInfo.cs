@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("6AF6E03F-D664-4EF4-9626-F7E0ED36755E")]
     [NativeTypeName("struct ISearchBoxInfo : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct ISearchBoxInfo
+    public unsafe partial struct ISearchBoxInfo : ISearchBoxInfo.Interface
     {
         public void** lpVtbl;
 
@@ -51,6 +51,15 @@ namespace TerraFX.Interop
         public HRESULT GetText([NativeTypeName("LPWSTR *")] ushort** ppsz)
         {
             return ((delegate* unmanaged<ISearchBoxInfo*, ushort**, int>)(lpVtbl[4]))((ISearchBoxInfo*)Unsafe.AsPointer(ref this), ppsz);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetCondition([NativeTypeName("const IID &")] Guid* riid, void** ppv);
+
+            [VtblIndex(4)]
+            HRESULT GetText([NativeTypeName("LPWSTR *")] ushort** ppsz);
         }
 
         public partial struct Vtbl

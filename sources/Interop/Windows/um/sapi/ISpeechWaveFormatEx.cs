@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("7A1EF0D5-1581-4741-88E4-209A49F11A10")]
     [NativeTypeName("struct ISpeechWaveFormatEx : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct ISpeechWaveFormatEx
+    public unsafe partial struct ISpeechWaveFormatEx : ISpeechWaveFormatEx.Interface
     {
         public void** lpVtbl;
 
@@ -163,6 +163,51 @@ namespace TerraFX.Interop
         public HRESULT put_ExtraData(VARIANT ExtraData)
         {
             return ((delegate* unmanaged<ISpeechWaveFormatEx*, VARIANT, int>)(lpVtbl[20]))((ISpeechWaveFormatEx*)Unsafe.AsPointer(ref this), ExtraData);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT get_FormatTag(short* FormatTag);
+
+            [VtblIndex(8)]
+            HRESULT put_FormatTag(short FormatTag);
+
+            [VtblIndex(9)]
+            HRESULT get_Channels(short* Channels);
+
+            [VtblIndex(10)]
+            HRESULT put_Channels(short Channels);
+
+            [VtblIndex(11)]
+            HRESULT get_SamplesPerSec([NativeTypeName("long *")] int* SamplesPerSec);
+
+            [VtblIndex(12)]
+            HRESULT put_SamplesPerSec([NativeTypeName("long")] int SamplesPerSec);
+
+            [VtblIndex(13)]
+            HRESULT get_AvgBytesPerSec([NativeTypeName("long *")] int* AvgBytesPerSec);
+
+            [VtblIndex(14)]
+            HRESULT put_AvgBytesPerSec([NativeTypeName("long")] int AvgBytesPerSec);
+
+            [VtblIndex(15)]
+            HRESULT get_BlockAlign(short* BlockAlign);
+
+            [VtblIndex(16)]
+            HRESULT put_BlockAlign(short BlockAlign);
+
+            [VtblIndex(17)]
+            HRESULT get_BitsPerSample(short* BitsPerSample);
+
+            [VtblIndex(18)]
+            HRESULT put_BitsPerSample(short BitsPerSample);
+
+            [VtblIndex(19)]
+            HRESULT get_ExtraData(VARIANT* ExtraData);
+
+            [VtblIndex(20)]
+            HRESULT put_ExtraData(VARIANT ExtraData);
         }
 
         public partial struct Vtbl

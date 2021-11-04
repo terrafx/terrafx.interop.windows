@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("54298223-41E1-4A41-9C08-02E8256864A1")]
     [NativeTypeName("struct ISurfaceImageSourceNativeWithD2D : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct ISurfaceImageSourceNativeWithD2D
+    public unsafe partial struct ISurfaceImageSourceNativeWithD2D : ISurfaceImageSourceNativeWithD2D.Interface
     {
         public void** lpVtbl;
 
@@ -72,6 +72,24 @@ namespace TerraFX.Interop
         public HRESULT ResumeDraw()
         {
             return ((delegate* unmanaged<ISurfaceImageSourceNativeWithD2D*, int>)(lpVtbl[7]))((ISurfaceImageSourceNativeWithD2D*)Unsafe.AsPointer(ref this));
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT SetDevice(IUnknown* device);
+
+            [VtblIndex(4)]
+            HRESULT BeginDraw([NativeTypeName("const RECT &")] RECT* updateRect, [NativeTypeName("const IID &")] Guid* iid, void** updateObject, POINT* offset);
+
+            [VtblIndex(5)]
+            HRESULT EndDraw();
+
+            [VtblIndex(6)]
+            HRESULT SuspendDraw();
+
+            [VtblIndex(7)]
+            HRESULT ResumeDraw();
         }
 
         public partial struct Vtbl

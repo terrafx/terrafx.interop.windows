@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("E2449660-9542-11D2-BF46-00105A2799B5")]
     [NativeTypeName("struct ITfProperty : ITfReadOnlyProperty")]
     [NativeInheritance("ITfReadOnlyProperty")]
-    public unsafe partial struct ITfProperty
+    public unsafe partial struct ITfProperty : ITfProperty.Interface
     {
         public void** lpVtbl;
 
@@ -93,6 +93,21 @@ namespace TerraFX.Interop
         public HRESULT Clear([NativeTypeName("TfEditCookie")] uint ec, ITfRange* pRange)
         {
             return ((delegate* unmanaged<ITfProperty*, uint, ITfRange*, int>)(lpVtbl[10]))((ITfProperty*)Unsafe.AsPointer(ref this), ec, pRange);
+        }
+
+        public interface Interface : ITfReadOnlyProperty.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT FindRange([NativeTypeName("TfEditCookie")] uint ec, ITfRange* pRange, ITfRange** ppRange, TfAnchor aPos);
+
+            [VtblIndex(8)]
+            HRESULT SetValueStore([NativeTypeName("TfEditCookie")] uint ec, ITfRange* pRange, ITfPropertyStore* pPropStore);
+
+            [VtblIndex(9)]
+            HRESULT SetValue([NativeTypeName("TfEditCookie")] uint ec, ITfRange* pRange, [NativeTypeName("const VARIANT *")] VARIANT* pvarValue);
+
+            [VtblIndex(10)]
+            HRESULT Clear([NativeTypeName("TfEditCookie")] uint ec, ITfRange* pRange);
         }
 
         public partial struct Vtbl

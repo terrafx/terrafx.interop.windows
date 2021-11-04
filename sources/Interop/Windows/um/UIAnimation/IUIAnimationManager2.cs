@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("D8B6F7D4-4109-4D3F-ACEE-879926968CB1")]
     [NativeTypeName("struct IUIAnimationManager2 : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IUIAnimationManager2
+    public unsafe partial struct IUIAnimationManager2 : IUIAnimationManager2.Interface
     {
         public void** lpVtbl;
 
@@ -184,6 +184,72 @@ namespace TerraFX.Interop
         public HRESULT Shutdown()
         {
             return ((delegate* unmanaged<IUIAnimationManager2*, int>)(lpVtbl[23]))((IUIAnimationManager2*)Unsafe.AsPointer(ref this));
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT CreateAnimationVectorVariable([NativeTypeName("const DOUBLE *")] double* initialValue, uint cDimension, IUIAnimationVariable2** variable);
+
+            [VtblIndex(4)]
+            HRESULT CreateAnimationVariable(double initialValue, IUIAnimationVariable2** variable);
+
+            [VtblIndex(5)]
+            HRESULT ScheduleTransition(IUIAnimationVariable2* variable, IUIAnimationTransition2* transition, [NativeTypeName("UI_ANIMATION_SECONDS")] double timeNow);
+
+            [VtblIndex(6)]
+            HRESULT CreateStoryboard(IUIAnimationStoryboard2** storyboard);
+
+            [VtblIndex(7)]
+            HRESULT FinishAllStoryboards([NativeTypeName("UI_ANIMATION_SECONDS")] double completionDeadline);
+
+            [VtblIndex(8)]
+            HRESULT AbandonAllStoryboards();
+
+            [VtblIndex(9)]
+            HRESULT Update([NativeTypeName("UI_ANIMATION_SECONDS")] double timeNow, UI_ANIMATION_UPDATE_RESULT* updateResult = null);
+
+            [VtblIndex(10)]
+            HRESULT GetVariableFromTag(IUnknown* @object, [NativeTypeName("UINT32")] uint id, IUIAnimationVariable2** variable);
+
+            [VtblIndex(11)]
+            HRESULT GetStoryboardFromTag(IUnknown* @object, [NativeTypeName("UINT32")] uint id, IUIAnimationStoryboard2** storyboard);
+
+            [VtblIndex(12)]
+            HRESULT EstimateNextEventTime([NativeTypeName("UI_ANIMATION_SECONDS *")] double* seconds);
+
+            [VtblIndex(13)]
+            HRESULT GetStatus(UI_ANIMATION_MANAGER_STATUS* status);
+
+            [VtblIndex(14)]
+            HRESULT SetAnimationMode(UI_ANIMATION_MODE mode);
+
+            [VtblIndex(15)]
+            HRESULT Pause();
+
+            [VtblIndex(16)]
+            HRESULT Resume();
+
+            [VtblIndex(17)]
+            HRESULT SetManagerEventHandler(IUIAnimationManagerEventHandler2* handler, [Optional] BOOL fRegisterForNextAnimationEvent);
+
+            [VtblIndex(18)]
+            HRESULT SetCancelPriorityComparison(IUIAnimationPriorityComparison2* comparison);
+
+            [VtblIndex(19)]
+            HRESULT SetTrimPriorityComparison(IUIAnimationPriorityComparison2* comparison);
+
+            [VtblIndex(20)]
+            HRESULT SetCompressPriorityComparison(IUIAnimationPriorityComparison2* comparison);
+
+            [VtblIndex(21)]
+            HRESULT SetConcludePriorityComparison(IUIAnimationPriorityComparison2* comparison);
+
+            [VtblIndex(22)]
+            HRESULT SetDefaultLongestAcceptableDelay([NativeTypeName("UI_ANIMATION_SECONDS")] double delay);
+
+            [VtblIndex(23)]
+            HRESULT Shutdown();
         }
 
         public partial struct Vtbl

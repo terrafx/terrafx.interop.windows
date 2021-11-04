@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("00000012-0000-0000-C000-000000000046")]
     [NativeTypeName("struct IRootStorage : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IRootStorage
+    public unsafe partial struct IRootStorage : IRootStorage.Interface
     {
         public void** lpVtbl;
 
@@ -44,6 +44,12 @@ namespace TerraFX.Interop
         public HRESULT SwitchToFile([NativeTypeName("LPOLESTR")] ushort* pszFile)
         {
             return ((delegate* unmanaged<IRootStorage*, ushort*, int>)(lpVtbl[3]))((IRootStorage*)Unsafe.AsPointer(ref this), pszFile);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT SwitchToFile([NativeTypeName("LPOLESTR")] ushort* pszFile);
         }
 
         public partial struct Vtbl

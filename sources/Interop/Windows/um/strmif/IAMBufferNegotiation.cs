@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("56ED71A0-AF5F-11D0-B3F0-00AA003761C5")]
     [NativeTypeName("struct IAMBufferNegotiation : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IAMBufferNegotiation
+    public unsafe partial struct IAMBufferNegotiation : IAMBufferNegotiation.Interface
     {
         public void** lpVtbl;
 
@@ -51,6 +51,15 @@ namespace TerraFX.Interop
         public HRESULT GetAllocatorProperties(ALLOCATOR_PROPERTIES* pprop)
         {
             return ((delegate* unmanaged<IAMBufferNegotiation*, ALLOCATOR_PROPERTIES*, int>)(lpVtbl[4]))((IAMBufferNegotiation*)Unsafe.AsPointer(ref this), pprop);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT SuggestAllocatorProperties([NativeTypeName("const ALLOCATOR_PROPERTIES *")] ALLOCATOR_PROPERTIES* pprop);
+
+            [VtblIndex(4)]
+            HRESULT GetAllocatorProperties(ALLOCATOR_PROPERTIES* pprop);
         }
 
         public partial struct Vtbl

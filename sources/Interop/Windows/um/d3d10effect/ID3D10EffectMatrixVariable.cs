@@ -9,7 +9,7 @@ namespace TerraFX.Interop
 {
     [NativeTypeName("struct ID3D10EffectMatrixVariable : ID3D10EffectVariable")]
     [NativeInheritance("ID3D10EffectVariable")]
-    public unsafe partial struct ID3D10EffectMatrixVariable
+    public unsafe partial struct ID3D10EffectMatrixVariable : ID3D10EffectMatrixVariable.Interface
     {
         public void** lpVtbl;
 
@@ -242,6 +242,33 @@ namespace TerraFX.Interop
         public HRESULT GetMatrixTransposeArray(float* pData, uint Offset, uint Count)
         {
             return ((delegate* unmanaged<ID3D10EffectMatrixVariable*, float*, uint, uint, int>)(lpVtbl[32]))((ID3D10EffectMatrixVariable*)Unsafe.AsPointer(ref this), pData, Offset, Count);
+        }
+
+        public interface Interface : ID3D10EffectVariable.Interface
+        {
+            [VtblIndex(25)]
+            HRESULT SetMatrix(float* pData);
+
+            [VtblIndex(26)]
+            HRESULT GetMatrix(float* pData);
+
+            [VtblIndex(27)]
+            HRESULT SetMatrixArray(float* pData, uint Offset, uint Count);
+
+            [VtblIndex(28)]
+            HRESULT GetMatrixArray(float* pData, uint Offset, uint Count);
+
+            [VtblIndex(29)]
+            HRESULT SetMatrixTranspose(float* pData);
+
+            [VtblIndex(30)]
+            HRESULT GetMatrixTranspose(float* pData);
+
+            [VtblIndex(31)]
+            HRESULT SetMatrixTransposeArray(float* pData, uint Offset, uint Count);
+
+            [VtblIndex(32)]
+            HRESULT GetMatrixTransposeArray(float* pData, uint Offset, uint Count);
         }
 
         public partial struct Vtbl

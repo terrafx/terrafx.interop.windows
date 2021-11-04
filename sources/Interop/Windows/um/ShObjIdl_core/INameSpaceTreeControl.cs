@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("028212A3-B627-47E9-8856-C14265554E4F")]
     [NativeTypeName("struct INameSpaceTreeControl : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct INameSpaceTreeControl
+    public unsafe partial struct INameSpaceTreeControl : INameSpaceTreeControl.Interface
     {
         public void** lpVtbl;
 
@@ -170,6 +170,66 @@ namespace TerraFX.Interop
         public HRESULT CollapseAll()
         {
             return ((delegate* unmanaged<INameSpaceTreeControl*, int>)(lpVtbl[21]))((INameSpaceTreeControl*)Unsafe.AsPointer(ref this));
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT Initialize(HWND hwndParent, RECT* prc, [NativeTypeName("NSTCSTYLE")] uint nsctsFlags);
+
+            [VtblIndex(4)]
+            HRESULT TreeAdvise(IUnknown* punk, [NativeTypeName("DWORD *")] uint* pdwCookie);
+
+            [VtblIndex(5)]
+            HRESULT TreeUnadvise([NativeTypeName("DWORD")] uint dwCookie);
+
+            [VtblIndex(6)]
+            HRESULT AppendRoot(IShellItem* psiRoot, [NativeTypeName("SHCONTF")] uint grfEnumFlags, [NativeTypeName("NSTCROOTSTYLE")] uint grfRootStyle, IShellItemFilter* pif);
+
+            [VtblIndex(7)]
+            HRESULT InsertRoot(int iIndex, IShellItem* psiRoot, [NativeTypeName("SHCONTF")] uint grfEnumFlags, [NativeTypeName("NSTCROOTSTYLE")] uint grfRootStyle, IShellItemFilter* pif);
+
+            [VtblIndex(8)]
+            HRESULT RemoveRoot(IShellItem* psiRoot);
+
+            [VtblIndex(9)]
+            HRESULT RemoveAllRoots();
+
+            [VtblIndex(10)]
+            HRESULT GetRootItems(IShellItemArray** ppsiaRootItems);
+
+            [VtblIndex(11)]
+            HRESULT SetItemState(IShellItem* psi, [NativeTypeName("NSTCITEMSTATE")] uint nstcisMask, [NativeTypeName("NSTCITEMSTATE")] uint nstcisFlags);
+
+            [VtblIndex(12)]
+            HRESULT GetItemState(IShellItem* psi, [NativeTypeName("NSTCITEMSTATE")] uint nstcisMask, [NativeTypeName("NSTCITEMSTATE *")] uint* pnstcisFlags);
+
+            [VtblIndex(13)]
+            HRESULT GetSelectedItems(IShellItemArray** psiaItems);
+
+            [VtblIndex(14)]
+            HRESULT GetItemCustomState(IShellItem* psi, int* piStateNumber);
+
+            [VtblIndex(15)]
+            HRESULT SetItemCustomState(IShellItem* psi, int iStateNumber);
+
+            [VtblIndex(16)]
+            HRESULT EnsureItemVisible(IShellItem* psi);
+
+            [VtblIndex(17)]
+            HRESULT SetTheme([NativeTypeName("LPCWSTR")] ushort* pszTheme);
+
+            [VtblIndex(18)]
+            HRESULT GetNextItem(IShellItem* psi, NSTCGNI nstcgi, IShellItem** ppsiNext);
+
+            [VtblIndex(19)]
+            HRESULT HitTest(POINT* ppt, IShellItem** ppsiOut);
+
+            [VtblIndex(20)]
+            HRESULT GetItemRect(IShellItem* psi, RECT* prect);
+
+            [VtblIndex(21)]
+            HRESULT CollapseAll();
         }
 
         public partial struct Vtbl

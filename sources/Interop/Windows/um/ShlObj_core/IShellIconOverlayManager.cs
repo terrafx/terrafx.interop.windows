@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("F10B5E34-DD3B-42A7-AA7D-2F4EC54BB09B")]
     [NativeTypeName("struct IShellIconOverlayManager : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IShellIconOverlayManager
+    public unsafe partial struct IShellIconOverlayManager : IShellIconOverlayManager.Interface
     {
         public void** lpVtbl;
 
@@ -72,6 +72,24 @@ namespace TerraFX.Interop
         public HRESULT OverlayIndexFromImageIndex(int iImage, int* piIndex, BOOL fAdd)
         {
             return ((delegate* unmanaged<IShellIconOverlayManager*, int, int*, BOOL, int>)(lpVtbl[7]))((IShellIconOverlayManager*)Unsafe.AsPointer(ref this), iImage, piIndex, fAdd);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetFileOverlayInfo([NativeTypeName("PCWSTR")] ushort* pwszPath, [NativeTypeName("DWORD")] uint dwAttrib, int* pIndex, [NativeTypeName("DWORD")] uint dwflags);
+
+            [VtblIndex(4)]
+            HRESULT GetReservedOverlayInfo([NativeTypeName("PCWSTR")] ushort* pwszPath, [NativeTypeName("DWORD")] uint dwAttrib, int* pIndex, [NativeTypeName("DWORD")] uint dwflags, int iReservedID);
+
+            [VtblIndex(5)]
+            HRESULT RefreshOverlayImages([NativeTypeName("DWORD")] uint dwFlags);
+
+            [VtblIndex(6)]
+            HRESULT LoadNonloadedOverlayIdentifiers();
+
+            [VtblIndex(7)]
+            HRESULT OverlayIndexFromImageIndex(int iImage, int* piIndex, BOOL fAdd);
         }
 
         public partial struct Vtbl

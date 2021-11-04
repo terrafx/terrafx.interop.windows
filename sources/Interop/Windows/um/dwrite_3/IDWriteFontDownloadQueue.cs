@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("B71E6052-5AEA-4FA3-832E-F60D431F7E91")]
     [NativeTypeName("struct IDWriteFontDownloadQueue : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IDWriteFontDownloadQueue
+    public unsafe partial struct IDWriteFontDownloadQueue : IDWriteFontDownloadQueue.Interface
     {
         public void** lpVtbl;
 
@@ -80,6 +80,28 @@ namespace TerraFX.Interop
         public ulong GetGenerationCount()
         {
             return ((delegate* unmanaged<IDWriteFontDownloadQueue*, ulong>)(lpVtbl[8]))((IDWriteFontDownloadQueue*)Unsafe.AsPointer(ref this));
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT AddListener(IDWriteFontDownloadListener* listener, [NativeTypeName("UINT32 *")] uint* token);
+
+            [VtblIndex(4)]
+            HRESULT RemoveListener([NativeTypeName("UINT32")] uint token);
+
+            [VtblIndex(5)]
+            BOOL IsEmpty();
+
+            [VtblIndex(6)]
+            HRESULT BeginDownload(IUnknown* context = null);
+
+            [VtblIndex(7)]
+            HRESULT CancelDownload();
+
+            [VtblIndex(8)]
+            [return: NativeTypeName("UINT64")]
+            ulong GetGenerationCount();
         }
 
         public partial struct Vtbl

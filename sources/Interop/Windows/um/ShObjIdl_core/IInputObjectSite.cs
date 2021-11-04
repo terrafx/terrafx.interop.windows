@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("F1DB8392-7331-11D0-8C99-00A0C92DBFE8")]
     [NativeTypeName("struct IInputObjectSite : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IInputObjectSite
+    public unsafe partial struct IInputObjectSite : IInputObjectSite.Interface
     {
         public void** lpVtbl;
 
@@ -44,6 +44,12 @@ namespace TerraFX.Interop
         public HRESULT OnFocusChangeIS(IUnknown* punkObj, BOOL fSetFocus)
         {
             return ((delegate* unmanaged<IInputObjectSite*, IUnknown*, BOOL, int>)(lpVtbl[3]))((IInputObjectSite*)Unsafe.AsPointer(ref this), punkObj, fSetFocus);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT OnFocusChangeIS(IUnknown* punkObj, BOOL fSetFocus);
         }
 
         public partial struct Vtbl

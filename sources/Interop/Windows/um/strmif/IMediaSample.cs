@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("56A8689A-0AD4-11CE-B03A-0020AF0BA770")]
     [NativeTypeName("struct IMediaSample : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IMediaSample
+    public unsafe partial struct IMediaSample : IMediaSample.Interface
     {
         public void** lpVtbl;
 
@@ -151,6 +151,59 @@ namespace TerraFX.Interop
         public HRESULT SetMediaTime([NativeTypeName("LONGLONG *")] long* pTimeStart, [NativeTypeName("LONGLONG *")] long* pTimeEnd)
         {
             return ((delegate* unmanaged<IMediaSample*, long*, long*, int>)(lpVtbl[18]))((IMediaSample*)Unsafe.AsPointer(ref this), pTimeStart, pTimeEnd);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetPointer(byte** ppBuffer);
+
+            [VtblIndex(4)]
+            [return: NativeTypeName("long")]
+            int GetSize();
+
+            [VtblIndex(5)]
+            HRESULT GetTime([NativeTypeName("REFERENCE_TIME *")] long* pTimeStart, [NativeTypeName("REFERENCE_TIME *")] long* pTimeEnd);
+
+            [VtblIndex(6)]
+            HRESULT SetTime([NativeTypeName("REFERENCE_TIME *")] long* pTimeStart, [NativeTypeName("REFERENCE_TIME *")] long* pTimeEnd);
+
+            [VtblIndex(7)]
+            HRESULT IsSyncPoint();
+
+            [VtblIndex(8)]
+            HRESULT SetSyncPoint(BOOL bIsSyncPoint);
+
+            [VtblIndex(9)]
+            HRESULT IsPreroll();
+
+            [VtblIndex(10)]
+            HRESULT SetPreroll(BOOL bIsPreroll);
+
+            [VtblIndex(11)]
+            [return: NativeTypeName("long")]
+            int GetActualDataLength();
+
+            [VtblIndex(12)]
+            HRESULT SetActualDataLength([NativeTypeName("long")] int __MIDL__IMediaSample0000);
+
+            [VtblIndex(13)]
+            HRESULT GetMediaType(AM_MEDIA_TYPE** ppMediaType);
+
+            [VtblIndex(14)]
+            HRESULT SetMediaType(AM_MEDIA_TYPE* pMediaType);
+
+            [VtblIndex(15)]
+            HRESULT IsDiscontinuity();
+
+            [VtblIndex(16)]
+            HRESULT SetDiscontinuity(BOOL bDiscontinuity);
+
+            [VtblIndex(17)]
+            HRESULT GetMediaTime([NativeTypeName("LONGLONG *")] long* pTimeStart, [NativeTypeName("LONGLONG *")] long* pTimeEnd);
+
+            [VtblIndex(18)]
+            HRESULT SetMediaTime([NativeTypeName("LONGLONG *")] long* pTimeStart, [NativeTypeName("LONGLONG *")] long* pTimeEnd);
         }
 
         public partial struct Vtbl

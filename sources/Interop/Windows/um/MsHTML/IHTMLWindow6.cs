@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("30510453-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct IHTMLWindow6 : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct IHTMLWindow6
+    public unsafe partial struct IHTMLWindow6 : IHTMLWindow6.Interface
     {
         public void** lpVtbl;
 
@@ -149,6 +149,45 @@ namespace TerraFX.Interop
         public HRESULT msWriteProfilerMark([NativeTypeName("BSTR")] ushort* bstrProfilerMarkName)
         {
             return ((delegate* unmanaged<IHTMLWindow6*, ushort*, int>)(lpVtbl[18]))((IHTMLWindow6*)Unsafe.AsPointer(ref this), bstrProfilerMarkName);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT put_XDomainRequest(VARIANT v);
+
+            [VtblIndex(8)]
+            HRESULT get_XDomainRequest(VARIANT* p);
+
+            [VtblIndex(9)]
+            HRESULT get_sessionStorage(IHTMLStorage** p);
+
+            [VtblIndex(10)]
+            HRESULT get_localStorage(IHTMLStorage** p);
+
+            [VtblIndex(11)]
+            HRESULT put_onhashchange(VARIANT v);
+
+            [VtblIndex(12)]
+            HRESULT get_onhashchange(VARIANT* p);
+
+            [VtblIndex(13)]
+            HRESULT get_maxConnectionsPerServer([NativeTypeName("long *")] int* p);
+
+            [VtblIndex(14)]
+            HRESULT postMessage([NativeTypeName("BSTR")] ushort* msg, VARIANT targetOrigin);
+
+            [VtblIndex(15)]
+            HRESULT toStaticHTML([NativeTypeName("BSTR")] ushort* bstrHTML, [NativeTypeName("BSTR *")] ushort** pbstrStaticHTML);
+
+            [VtblIndex(16)]
+            HRESULT put_onmessage(VARIANT v);
+
+            [VtblIndex(17)]
+            HRESULT get_onmessage(VARIANT* p);
+
+            [VtblIndex(18)]
+            HRESULT msWriteProfilerMark([NativeTypeName("BSTR")] ushort* bstrProfilerMarkName);
         }
 
         public partial struct Vtbl

@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("D31FBE17-F157-41A2-8D24-CB779E0560E8")]
     [NativeTypeName("struct IDWriteColorGlyphRunEnumerator : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IDWriteColorGlyphRunEnumerator
+    public unsafe partial struct IDWriteColorGlyphRunEnumerator : IDWriteColorGlyphRunEnumerator.Interface
     {
         public void** lpVtbl;
 
@@ -51,6 +51,15 @@ namespace TerraFX.Interop
         public HRESULT GetCurrentRun([NativeTypeName("const DWRITE_COLOR_GLYPH_RUN **")] DWRITE_COLOR_GLYPH_RUN** colorGlyphRun)
         {
             return ((delegate* unmanaged<IDWriteColorGlyphRunEnumerator*, DWRITE_COLOR_GLYPH_RUN**, int>)(lpVtbl[4]))((IDWriteColorGlyphRunEnumerator*)Unsafe.AsPointer(ref this), colorGlyphRun);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT MoveNext(BOOL* hasRun);
+
+            [VtblIndex(4)]
+            HRESULT GetCurrentRun([NativeTypeName("const DWRITE_COLOR_GLYPH_RUN **")] DWRITE_COLOR_GLYPH_RUN** colorGlyphRun);
         }
 
         public partial struct Vtbl

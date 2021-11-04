@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("3050F6A7-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct IHTMLPaintSite : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IHTMLPaintSite
+    public unsafe partial struct IHTMLPaintSite : IHTMLPaintSite.Interface
     {
         public void** lpVtbl;
 
@@ -86,6 +86,30 @@ namespace TerraFX.Interop
         public HRESULT GetHitTestCookie([NativeTypeName("LONG *")] int* plCookie)
         {
             return ((delegate* unmanaged<IHTMLPaintSite*, int*, int>)(lpVtbl[9]))((IHTMLPaintSite*)Unsafe.AsPointer(ref this), plCookie);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT InvalidatePainterInfo();
+
+            [VtblIndex(4)]
+            HRESULT InvalidateRect(RECT* prcInvalid);
+
+            [VtblIndex(5)]
+            HRESULT InvalidateRegion(HRGN rgnInvalid);
+
+            [VtblIndex(6)]
+            HRESULT GetDrawInfo([NativeTypeName("LONG")] int lFlags, HTML_PAINT_DRAW_INFO* pDrawInfo);
+
+            [VtblIndex(7)]
+            HRESULT TransformGlobalToLocal(POINT ptGlobal, POINT* pptLocal);
+
+            [VtblIndex(8)]
+            HRESULT TransformLocalToGlobal(POINT ptLocal, POINT* pptGlobal);
+
+            [VtblIndex(9)]
+            HRESULT GetHitTestCookie([NativeTypeName("LONG *")] int* plCookie);
         }
 
         public partial struct Vtbl

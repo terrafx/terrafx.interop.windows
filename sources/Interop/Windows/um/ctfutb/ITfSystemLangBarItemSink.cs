@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("1449D9AB-13CF-4687-AA3E-8D8B18574396")]
     [NativeTypeName("struct ITfSystemLangBarItemSink : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct ITfSystemLangBarItemSink
+    public unsafe partial struct ITfSystemLangBarItemSink : ITfSystemLangBarItemSink.Interface
     {
         public void** lpVtbl;
 
@@ -51,6 +51,15 @@ namespace TerraFX.Interop
         public HRESULT OnMenuSelect(uint wID)
         {
             return ((delegate* unmanaged<ITfSystemLangBarItemSink*, uint, int>)(lpVtbl[4]))((ITfSystemLangBarItemSink*)Unsafe.AsPointer(ref this), wID);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT InitMenu(ITfMenu* pMenu);
+
+            [VtblIndex(4)]
+            HRESULT OnMenuSelect(uint wID);
         }
 
         public partial struct Vtbl

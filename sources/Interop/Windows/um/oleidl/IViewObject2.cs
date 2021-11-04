@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("00000127-0000-0000-C000-000000000046")]
     [NativeTypeName("struct IViewObject2 : IViewObject")]
     [NativeInheritance("IViewObject")]
-    public unsafe partial struct IViewObject2
+    public unsafe partial struct IViewObject2 : IViewObject2.Interface
     {
         public void** lpVtbl;
 
@@ -86,6 +86,12 @@ namespace TerraFX.Interop
         public HRESULT GetExtent([NativeTypeName("DWORD")] uint dwDrawAspect, [NativeTypeName("LONG")] int lindex, DVTARGETDEVICE* ptd, [NativeTypeName("LPSIZEL")] SIZE* lpsizel)
         {
             return ((delegate* unmanaged<IViewObject2*, uint, int, DVTARGETDEVICE*, SIZE*, int>)(lpVtbl[9]))((IViewObject2*)Unsafe.AsPointer(ref this), dwDrawAspect, lindex, ptd, lpsizel);
+        }
+
+        public interface Interface : IViewObject.Interface
+        {
+            [VtblIndex(9)]
+            HRESULT GetExtent([NativeTypeName("DWORD")] uint dwDrawAspect, [NativeTypeName("LONG")] int lindex, DVTARGETDEVICE* ptd, [NativeTypeName("LPSIZEL")] SIZE* lpsizel);
         }
 
         public partial struct Vtbl

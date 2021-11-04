@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("463A506D-6992-49D2-9B88-93D55E70BB16")]
     [NativeTypeName("struct ITfRangeBackup : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct ITfRangeBackup
+    public unsafe partial struct ITfRangeBackup : ITfRangeBackup.Interface
     {
         public void** lpVtbl;
 
@@ -44,6 +44,12 @@ namespace TerraFX.Interop
         public HRESULT Restore([NativeTypeName("TfEditCookie")] uint ec, ITfRange* pRange)
         {
             return ((delegate* unmanaged<ITfRangeBackup*, uint, ITfRange*, int>)(lpVtbl[3]))((ITfRangeBackup*)Unsafe.AsPointer(ref this), ec, pRange);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT Restore([NativeTypeName("TfEditCookie")] uint ec, ITfRange* pRange);
         }
 
         public partial struct Vtbl

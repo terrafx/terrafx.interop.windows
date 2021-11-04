@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("3050F413-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct IHTMLTableRowMetrics : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct IHTMLTableRowMetrics
+    public unsafe partial struct IHTMLTableRowMetrics : IHTMLTableRowMetrics.Interface
     {
         public void** lpVtbl;
 
@@ -93,6 +93,21 @@ namespace TerraFX.Interop
         public HRESULT get_clientLeft([NativeTypeName("long *")] int* p)
         {
             return ((delegate* unmanaged<IHTMLTableRowMetrics*, int*, int>)(lpVtbl[10]))((IHTMLTableRowMetrics*)Unsafe.AsPointer(ref this), p);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT get_clientHeight([NativeTypeName("long *")] int* p);
+
+            [VtblIndex(8)]
+            HRESULT get_clientWidth([NativeTypeName("long *")] int* p);
+
+            [VtblIndex(9)]
+            HRESULT get_clientTop([NativeTypeName("long *")] int* p);
+
+            [VtblIndex(10)]
+            HRESULT get_clientLeft([NativeTypeName("long *")] int* p);
         }
 
         public partial struct Vtbl

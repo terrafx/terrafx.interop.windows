@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("3050F810-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct IHTMLDOMAttribute2 : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct IHTMLDOMAttribute2
+    public unsafe partial struct IHTMLDOMAttribute2 : IHTMLDOMAttribute2.Interface
     {
         public void** lpVtbl;
 
@@ -198,6 +198,66 @@ namespace TerraFX.Interop
         public HRESULT cloneNode([NativeTypeName("VARIANT_BOOL")] short fDeep, IHTMLDOMAttribute** clonedNode)
         {
             return ((delegate* unmanaged<IHTMLDOMAttribute2*, short, IHTMLDOMAttribute**, int>)(lpVtbl[25]))((IHTMLDOMAttribute2*)Unsafe.AsPointer(ref this), fDeep, clonedNode);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT get_name([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(8)]
+            HRESULT put_value([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(9)]
+            HRESULT get_value([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(10)]
+            HRESULT get_expando([NativeTypeName("VARIANT_BOOL *")] short* p);
+
+            [VtblIndex(11)]
+            HRESULT get_nodeType([NativeTypeName("long *")] int* p);
+
+            [VtblIndex(12)]
+            HRESULT get_parentNode(IHTMLDOMNode** p);
+
+            [VtblIndex(13)]
+            HRESULT get_childNodes(IDispatch** p);
+
+            [VtblIndex(14)]
+            HRESULT get_firstChild(IHTMLDOMNode** p);
+
+            [VtblIndex(15)]
+            HRESULT get_lastChild(IHTMLDOMNode** p);
+
+            [VtblIndex(16)]
+            HRESULT get_previousSibling(IHTMLDOMNode** p);
+
+            [VtblIndex(17)]
+            HRESULT get_nextSibling(IHTMLDOMNode** p);
+
+            [VtblIndex(18)]
+            HRESULT get_attributes(IDispatch** p);
+
+            [VtblIndex(19)]
+            HRESULT get_ownerDocument(IDispatch** p);
+
+            [VtblIndex(20)]
+            HRESULT insertBefore(IHTMLDOMNode* newChild, VARIANT refChild, IHTMLDOMNode** node);
+
+            [VtblIndex(21)]
+            HRESULT replaceChild(IHTMLDOMNode* newChild, IHTMLDOMNode* oldChild, IHTMLDOMNode** node);
+
+            [VtblIndex(22)]
+            HRESULT removeChild(IHTMLDOMNode* oldChild, IHTMLDOMNode** node);
+
+            [VtblIndex(23)]
+            HRESULT appendChild(IHTMLDOMNode* newChild, IHTMLDOMNode** node);
+
+            [VtblIndex(24)]
+            HRESULT hasChildNodes([NativeTypeName("VARIANT_BOOL *")] short* fChildren);
+
+            [VtblIndex(25)]
+            HRESULT cloneNode([NativeTypeName("VARIANT_BOOL")] short fDeep, IHTMLDOMAttribute** clonedNode);
         }
 
         public partial struct Vtbl

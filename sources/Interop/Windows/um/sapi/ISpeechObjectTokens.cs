@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("9285B776-2E7B-4BC0-B53E-580EB6FA967F")]
     [NativeTypeName("struct ISpeechObjectTokens : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct ISpeechObjectTokens
+    public unsafe partial struct ISpeechObjectTokens : ISpeechObjectTokens.Interface
     {
         public void** lpVtbl;
 
@@ -86,6 +86,18 @@ namespace TerraFX.Interop
         public HRESULT get__NewEnum(IUnknown** ppEnumVARIANT)
         {
             return ((delegate* unmanaged<ISpeechObjectTokens*, IUnknown**, int>)(lpVtbl[9]))((ISpeechObjectTokens*)Unsafe.AsPointer(ref this), ppEnumVARIANT);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT get_Count([NativeTypeName("long *")] int* Count);
+
+            [VtblIndex(8)]
+            HRESULT Item([NativeTypeName("long")] int Index, ISpeechObjectToken** Token);
+
+            [VtblIndex(9)]
+            HRESULT get__NewEnum(IUnknown** ppEnumVARIANT);
         }
 
         public partial struct Vtbl

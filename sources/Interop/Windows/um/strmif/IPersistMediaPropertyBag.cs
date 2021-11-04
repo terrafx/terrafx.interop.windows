@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("5738E040-B67F-11D0-BD4D-00A0C911CE86")]
     [NativeTypeName("struct IPersistMediaPropertyBag : IPersist")]
     [NativeInheritance("IPersist")]
-    public unsafe partial struct IPersistMediaPropertyBag
+    public unsafe partial struct IPersistMediaPropertyBag : IPersistMediaPropertyBag.Interface
     {
         public void** lpVtbl;
 
@@ -65,6 +65,18 @@ namespace TerraFX.Interop
         public HRESULT Save(IMediaPropertyBag* pPropBag, BOOL fClearDirty, BOOL fSaveAllProperties)
         {
             return ((delegate* unmanaged<IPersistMediaPropertyBag*, IMediaPropertyBag*, BOOL, BOOL, int>)(lpVtbl[6]))((IPersistMediaPropertyBag*)Unsafe.AsPointer(ref this), pPropBag, fClearDirty, fSaveAllProperties);
+        }
+
+        public interface Interface : IPersist.Interface
+        {
+            [VtblIndex(4)]
+            HRESULT InitNew();
+
+            [VtblIndex(5)]
+            HRESULT Load(IMediaPropertyBag* pPropBag, IErrorLog* pErrorLog);
+
+            [VtblIndex(6)]
+            HRESULT Save(IMediaPropertyBag* pPropBag, BOOL fClearDirty, BOOL fSaveAllProperties);
         }
 
         public partial struct Vtbl

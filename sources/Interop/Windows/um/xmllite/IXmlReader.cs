@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("7279FC81-709D-4095-B63D-69FE4B0D9030")]
     [NativeTypeName("struct IXmlReader : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IXmlReader
+    public unsafe partial struct IXmlReader : IXmlReader.Interface
     {
         public void** lpVtbl;
 
@@ -198,6 +198,78 @@ namespace TerraFX.Interop
         public BOOL IsEOF()
         {
             return ((delegate* unmanaged<IXmlReader*, int>)(lpVtbl[25]))((IXmlReader*)Unsafe.AsPointer(ref this));
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT SetInput(IUnknown* pInput);
+
+            [VtblIndex(4)]
+            HRESULT GetProperty(uint nProperty, [NativeTypeName("LONG_PTR *")] nint* ppValue);
+
+            [VtblIndex(5)]
+            HRESULT SetProperty(uint nProperty, [NativeTypeName("LONG_PTR")] nint pValue);
+
+            [VtblIndex(6)]
+            HRESULT Read(XmlNodeType* pNodeType);
+
+            [VtblIndex(7)]
+            HRESULT GetNodeType(XmlNodeType* pNodeType);
+
+            [VtblIndex(8)]
+            HRESULT MoveToFirstAttribute();
+
+            [VtblIndex(9)]
+            HRESULT MoveToNextAttribute();
+
+            [VtblIndex(10)]
+            HRESULT MoveToAttributeByName([NativeTypeName("LPCWSTR")] ushort* pwszLocalName, [NativeTypeName("LPCWSTR")] ushort* pwszNamespaceUri);
+
+            [VtblIndex(11)]
+            HRESULT MoveToElement();
+
+            [VtblIndex(12)]
+            HRESULT GetQualifiedName([NativeTypeName("LPCWSTR *")] ushort** ppwszQualifiedName, uint* pcwchQualifiedName);
+
+            [VtblIndex(13)]
+            HRESULT GetNamespaceUri([NativeTypeName("LPCWSTR *")] ushort** ppwszNamespaceUri, uint* pcwchNamespaceUri);
+
+            [VtblIndex(14)]
+            HRESULT GetLocalName([NativeTypeName("LPCWSTR *")] ushort** ppwszLocalName, uint* pcwchLocalName);
+
+            [VtblIndex(15)]
+            HRESULT GetPrefix([NativeTypeName("LPCWSTR *")] ushort** ppwszPrefix, uint* pcwchPrefix);
+
+            [VtblIndex(16)]
+            HRESULT GetValue([NativeTypeName("LPCWSTR *")] ushort** ppwszValue, uint* pcwchValue);
+
+            [VtblIndex(17)]
+            HRESULT ReadValueChunk([NativeTypeName("WCHAR *")] ushort* pwchBuffer, uint cwchChunkSize, uint* pcwchRead);
+
+            [VtblIndex(18)]
+            HRESULT GetBaseUri([NativeTypeName("LPCWSTR *")] ushort** ppwszBaseUri, uint* pcwchBaseUri);
+
+            [VtblIndex(19)]
+            BOOL IsDefault();
+
+            [VtblIndex(20)]
+            BOOL IsEmptyElement();
+
+            [VtblIndex(21)]
+            HRESULT GetLineNumber(uint* pnLineNumber);
+
+            [VtblIndex(22)]
+            HRESULT GetLinePosition(uint* pnLinePosition);
+
+            [VtblIndex(23)]
+            HRESULT GetAttributeCount(uint* pnAttributeCount);
+
+            [VtblIndex(24)]
+            HRESULT GetDepth(uint* pnDepth);
+
+            [VtblIndex(25)]
+            BOOL IsEOF();
         }
 
         public partial struct Vtbl

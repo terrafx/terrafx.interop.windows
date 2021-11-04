@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("689F1F85-C72E-4E33-8F19-85754EFD5ACE")]
     [NativeTypeName("struct ID2D1DrawingStateBlock1 : ID2D1DrawingStateBlock")]
     [NativeInheritance("ID2D1DrawingStateBlock")]
-    public unsafe partial struct ID2D1DrawingStateBlock1
+    public unsafe partial struct ID2D1DrawingStateBlock1 : ID2D1DrawingStateBlock1.Interface
     {
         public void** lpVtbl;
 
@@ -86,6 +86,15 @@ namespace TerraFX.Interop
         public void SetDescription([NativeTypeName("const D2D1_DRAWING_STATE_DESCRIPTION1 *")] D2D1_DRAWING_STATE_DESCRIPTION1* stateDescription)
         {
             ((delegate* unmanaged<ID2D1DrawingStateBlock1*, D2D1_DRAWING_STATE_DESCRIPTION1*, void>)(lpVtbl[9]))((ID2D1DrawingStateBlock1*)Unsafe.AsPointer(ref this), stateDescription);
+        }
+
+        public interface Interface : ID2D1DrawingStateBlock.Interface
+        {
+            [VtblIndex(8)]
+            void GetDescription(D2D1_DRAWING_STATE_DESCRIPTION1* stateDescription);
+
+            [VtblIndex(9)]
+            void SetDescription([NativeTypeName("const D2D1_DRAWING_STATE_DESCRIPTION1 *")] D2D1_DRAWING_STATE_DESCRIPTION1* stateDescription);
         }
 
         public partial struct Vtbl

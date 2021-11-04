@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("0000015B-0000-0000-C000-000000000046")]
     [NativeTypeName("struct IGlobalOptions : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IGlobalOptions
+    public unsafe partial struct IGlobalOptions : IGlobalOptions.Interface
     {
         public void** lpVtbl;
 
@@ -51,6 +51,15 @@ namespace TerraFX.Interop
         public HRESULT Query(GLOBALOPT_PROPERTIES dwProperty, [NativeTypeName("ULONG_PTR *")] nuint* pdwValue)
         {
             return ((delegate* unmanaged<IGlobalOptions*, GLOBALOPT_PROPERTIES, nuint*, int>)(lpVtbl[4]))((IGlobalOptions*)Unsafe.AsPointer(ref this), dwProperty, pdwValue);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT Set(GLOBALOPT_PROPERTIES dwProperty, [NativeTypeName("ULONG_PTR")] nuint dwValue);
+
+            [VtblIndex(4)]
+            HRESULT Query(GLOBALOPT_PROPERTIES dwProperty, [NativeTypeName("ULONG_PTR *")] nuint* pdwValue);
         }
 
         public partial struct Vtbl

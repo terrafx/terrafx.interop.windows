@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("3EFAA427-272F-11D2-836F-0000F87A7782")]
     [NativeTypeName("struct XMLDOMDocumentEvents : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct XMLDOMDocumentEvents
+    public unsafe partial struct XMLDOMDocumentEvents : XMLDOMDocumentEvents.Interface
     {
         public void** lpVtbl;
 
@@ -65,6 +65,10 @@ namespace TerraFX.Interop
         public HRESULT Invoke([NativeTypeName("DISPID")] int dispIdMember, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("WORD")] ushort wFlags, DISPPARAMS* pDispParams, VARIANT* pVarResult, EXCEPINFO* pExcepInfo, uint* puArgErr)
         {
             return ((delegate* unmanaged<XMLDOMDocumentEvents*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int>)(lpVtbl[6]))((XMLDOMDocumentEvents*)Unsafe.AsPointer(ref this), dispIdMember, riid, lcid, wFlags, pDispParams, pVarResult, pExcepInfo, puArgErr);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
         }
 
         public partial struct Vtbl

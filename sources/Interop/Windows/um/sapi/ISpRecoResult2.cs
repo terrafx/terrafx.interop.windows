@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("27CAC6C4-88F2-41F2-8817-0C95E59F1E6E")]
     [NativeTypeName("struct ISpRecoResult2 : ISpRecoResult")]
     [NativeInheritance("ISpRecoResult")]
-    public unsafe partial struct ISpRecoResult2
+    public unsafe partial struct ISpRecoResult2 : ISpRecoResult2.Interface
     {
         public void** lpVtbl;
 
@@ -135,6 +135,18 @@ namespace TerraFX.Interop
         public HRESULT SetTextFeedback([NativeTypeName("LPCWSTR")] ushort* pszFeedback, BOOL fSuccessful)
         {
             return ((delegate* unmanaged<ISpRecoResult2*, ushort*, BOOL, int>)(lpVtbl[16]))((ISpRecoResult2*)Unsafe.AsPointer(ref this), pszFeedback, fSuccessful);
+        }
+
+        public interface Interface : ISpRecoResult.Interface
+        {
+            [VtblIndex(14)]
+            HRESULT CommitAlternate(ISpPhraseAlt* pPhraseAlt, ISpRecoResult** ppNewResult);
+
+            [VtblIndex(15)]
+            HRESULT CommitText([NativeTypeName("ULONG")] uint ulStartElement, [NativeTypeName("ULONG")] uint cElements, [NativeTypeName("LPCWSTR")] ushort* pszCorrectedData, [NativeTypeName("DWORD")] uint eCommitFlags);
+
+            [VtblIndex(16)]
+            HRESULT SetTextFeedback([NativeTypeName("LPCWSTR")] ushort* pszFeedback, BOOL fSuccessful);
         }
 
         public partial struct Vtbl

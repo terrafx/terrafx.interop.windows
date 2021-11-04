@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("53DD9855-A3B0-4D5B-82E1-26E25C5E5797")]
     [NativeTypeName("struct ID2D1LookupTable3D : ID2D1Resource")]
     [NativeInheritance("ID2D1Resource")]
-    public unsafe partial struct ID2D1LookupTable3D
+    public unsafe partial struct ID2D1LookupTable3D : ID2D1LookupTable3D.Interface
     {
         public void** lpVtbl;
 
@@ -44,6 +44,10 @@ namespace TerraFX.Interop
         public void GetFactory(ID2D1Factory** factory)
         {
             ((delegate* unmanaged<ID2D1LookupTable3D*, ID2D1Factory**, void>)(lpVtbl[3]))((ID2D1LookupTable3D*)Unsafe.AsPointer(ref this), factory);
+        }
+
+        public interface Interface : ID2D1Resource.Interface
+        {
         }
 
         public partial struct Vtbl

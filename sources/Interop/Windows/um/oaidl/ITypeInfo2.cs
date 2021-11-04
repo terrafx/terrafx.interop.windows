@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("00020412-0000-0000-C000-000000000046")]
     [NativeTypeName("struct ITypeInfo2 : ITypeInfo")]
     [NativeInheritance("ITypeInfo")]
-    public unsafe partial struct ITypeInfo2
+    public unsafe partial struct ITypeInfo2 : ITypeInfo2.Interface
     {
         public void** lpVtbl;
 
@@ -275,6 +275,54 @@ namespace TerraFX.Interop
         public HRESULT GetAllImplTypeCustData(uint index, CUSTDATA* pCustData)
         {
             return ((delegate* unmanaged<ITypeInfo2*, uint, CUSTDATA*, int>)(lpVtbl[36]))((ITypeInfo2*)Unsafe.AsPointer(ref this), index, pCustData);
+        }
+
+        public interface Interface : ITypeInfo.Interface
+        {
+            [VtblIndex(22)]
+            HRESULT GetTypeKind(TYPEKIND* pTypeKind);
+
+            [VtblIndex(23)]
+            HRESULT GetTypeFlags([NativeTypeName("ULONG *")] uint* pTypeFlags);
+
+            [VtblIndex(24)]
+            HRESULT GetFuncIndexOfMemId([NativeTypeName("MEMBERID")] int memid, INVOKEKIND invKind, uint* pFuncIndex);
+
+            [VtblIndex(25)]
+            HRESULT GetVarIndexOfMemId([NativeTypeName("MEMBERID")] int memid, uint* pVarIndex);
+
+            [VtblIndex(26)]
+            HRESULT GetCustData([NativeTypeName("const GUID &")] Guid* guid, VARIANT* pVarVal);
+
+            [VtblIndex(27)]
+            HRESULT GetFuncCustData(uint index, [NativeTypeName("const GUID &")] Guid* guid, VARIANT* pVarVal);
+
+            [VtblIndex(28)]
+            HRESULT GetParamCustData(uint indexFunc, uint indexParam, [NativeTypeName("const GUID &")] Guid* guid, VARIANT* pVarVal);
+
+            [VtblIndex(29)]
+            HRESULT GetVarCustData(uint index, [NativeTypeName("const GUID &")] Guid* guid, VARIANT* pVarVal);
+
+            [VtblIndex(30)]
+            HRESULT GetImplTypeCustData(uint index, [NativeTypeName("const GUID &")] Guid* guid, VARIANT* pVarVal);
+
+            [VtblIndex(31)]
+            HRESULT GetDocumentation2([NativeTypeName("MEMBERID")] int memid, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("BSTR *")] ushort** pbstrHelpString, [NativeTypeName("DWORD *")] uint* pdwHelpStringContext, [NativeTypeName("BSTR *")] ushort** pbstrHelpStringDll);
+
+            [VtblIndex(32)]
+            HRESULT GetAllCustData(CUSTDATA* pCustData);
+
+            [VtblIndex(33)]
+            HRESULT GetAllFuncCustData(uint index, CUSTDATA* pCustData);
+
+            [VtblIndex(34)]
+            HRESULT GetAllParamCustData(uint indexFunc, uint indexParam, CUSTDATA* pCustData);
+
+            [VtblIndex(35)]
+            HRESULT GetAllVarCustData(uint index, CUSTDATA* pCustData);
+
+            [VtblIndex(36)]
+            HRESULT GetAllImplTypeCustData(uint index, CUSTDATA* pCustData);
         }
 
         public partial struct Vtbl

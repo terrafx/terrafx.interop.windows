@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("680EFA10-D535-11D1-87C8-00A0C9223196")]
     [NativeTypeName("struct IOverlayNotify2 : IOverlayNotify")]
     [NativeInheritance("IOverlayNotify")]
-    public unsafe partial struct IOverlayNotify2
+    public unsafe partial struct IOverlayNotify2 : IOverlayNotify2.Interface
     {
         public void** lpVtbl;
 
@@ -72,6 +72,12 @@ namespace TerraFX.Interop
         public HRESULT OnDisplayChange(HMONITOR hMonitor)
         {
             return ((delegate* unmanaged<IOverlayNotify2*, HMONITOR, int>)(lpVtbl[7]))((IOverlayNotify2*)Unsafe.AsPointer(ref this), hMonitor);
+        }
+
+        public interface Interface : IOverlayNotify.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT OnDisplayChange(HMONITOR hMonitor);
         }
 
         public partial struct Vtbl

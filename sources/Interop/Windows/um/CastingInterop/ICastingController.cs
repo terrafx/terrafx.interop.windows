@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("F0A56423-A664-4FBD-8B43-409A45E8D9A1")]
     [NativeTypeName("struct ICastingController : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct ICastingController
+    public unsafe partial struct ICastingController : ICastingController.Interface
     {
         public void** lpVtbl;
 
@@ -72,6 +72,24 @@ namespace TerraFX.Interop
         public HRESULT UnAdvise([NativeTypeName("DWORD")] uint cookie)
         {
             return ((delegate* unmanaged<ICastingController*, uint, int>)(lpVtbl[7]))((ICastingController*)Unsafe.AsPointer(ref this), cookie);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT Initialize(IUnknown* castingEngine, IUnknown* castingSource);
+
+            [VtblIndex(4)]
+            HRESULT Connect();
+
+            [VtblIndex(5)]
+            HRESULT Disconnect();
+
+            [VtblIndex(6)]
+            HRESULT Advise(ICastingEventHandler* eventHandler, [NativeTypeName("DWORD *")] uint* cookie);
+
+            [VtblIndex(7)]
+            HRESULT UnAdvise([NativeTypeName("DWORD")] uint cookie);
         }
 
         public partial struct Vtbl

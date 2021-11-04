@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("C4E7374C-6243-4D1B-AE87-52B4F740E261")]
     [NativeTypeName("struct ID3D11VideoContext2 : ID3D11VideoContext1")]
     [NativeInheritance("ID3D11VideoContext1")]
-    public unsafe partial struct ID3D11VideoContext2
+    public unsafe partial struct ID3D11VideoContext2 : ID3D11VideoContext2.Interface
     {
         public void** lpVtbl;
 
@@ -602,6 +602,21 @@ namespace TerraFX.Interop
         public void VideoProcessorGetStreamHDRMetaData(ID3D11VideoProcessor* pVideoProcessor, uint StreamIndex, DXGI_HDR_METADATA_TYPE* pType, uint Size, void* pMetaData)
         {
             ((delegate* unmanaged<ID3D11VideoContext2*, ID3D11VideoProcessor*, uint, DXGI_HDR_METADATA_TYPE*, uint, void*, void>)(lpVtbl[82]))((ID3D11VideoContext2*)Unsafe.AsPointer(ref this), pVideoProcessor, StreamIndex, pType, Size, pMetaData);
+        }
+
+        public interface Interface : ID3D11VideoContext1.Interface
+        {
+            [VtblIndex(79)]
+            void VideoProcessorSetOutputHDRMetaData(ID3D11VideoProcessor* pVideoProcessor, DXGI_HDR_METADATA_TYPE Type, uint Size, [NativeTypeName("const void *")] void* pHDRMetaData);
+
+            [VtblIndex(80)]
+            void VideoProcessorGetOutputHDRMetaData(ID3D11VideoProcessor* pVideoProcessor, DXGI_HDR_METADATA_TYPE* pType, uint Size, void* pMetaData);
+
+            [VtblIndex(81)]
+            void VideoProcessorSetStreamHDRMetaData(ID3D11VideoProcessor* pVideoProcessor, uint StreamIndex, DXGI_HDR_METADATA_TYPE Type, uint Size, [NativeTypeName("const void *")] void* pHDRMetaData);
+
+            [VtblIndex(82)]
+            void VideoProcessorGetStreamHDRMetaData(ID3D11VideoProcessor* pVideoProcessor, uint StreamIndex, DXGI_HDR_METADATA_TYPE* pType, uint Size, void* pMetaData);
         }
 
         public partial struct Vtbl

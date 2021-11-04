@@ -22,7 +22,7 @@ namespace TerraFX.Interop
     [Guid("394EA6A3-0C34-4321-950B-6CA20F0BE6C7")]
     [NativeTypeName("struct ID2D1DeviceContext2 : ID2D1DeviceContext1")]
     [NativeInheritance("ID2D1DeviceContext1")]
-    public unsafe partial struct ID2D1DeviceContext2
+    public unsafe partial struct ID2D1DeviceContext2 : ID2D1DeviceContext2.Interface
     {
         public void** lpVtbl;
 
@@ -923,6 +923,42 @@ namespace TerraFX.Interop
         public HRESULT CreateTransformedImageSource(ID2D1ImageSource* imageSource, [NativeTypeName("const D2D1_TRANSFORMED_IMAGE_SOURCE_PROPERTIES *")] D2D1_TRANSFORMED_IMAGE_SOURCE_PROPERTIES* properties, ID2D1TransformedImageSource** transformedImageSource)
         {
             return ((delegate* unmanaged<ID2D1DeviceContext2*, ID2D1ImageSource*, D2D1_TRANSFORMED_IMAGE_SOURCE_PROPERTIES*, ID2D1TransformedImageSource**, int>)(lpVtbl[105]))((ID2D1DeviceContext2*)Unsafe.AsPointer(ref this), imageSource, properties, transformedImageSource);
+        }
+
+        public interface Interface : ID2D1DeviceContext1.Interface
+        {
+            [VtblIndex(95)]
+            HRESULT CreateInk([NativeTypeName("const D2D1_INK_POINT *")] D2D1_INK_POINT* startPoint, ID2D1Ink** ink);
+
+            [VtblIndex(96)]
+            HRESULT CreateInkStyle([NativeTypeName("const D2D1_INK_STYLE_PROPERTIES *")] D2D1_INK_STYLE_PROPERTIES* inkStyleProperties, ID2D1InkStyle** inkStyle);
+
+            [VtblIndex(97)]
+            HRESULT CreateGradientMesh([NativeTypeName("const D2D1_GRADIENT_MESH_PATCH *")] D2D1_GRADIENT_MESH_PATCH* patches, [NativeTypeName("UINT32")] uint patchesCount, ID2D1GradientMesh** gradientMesh);
+
+            [VtblIndex(98)]
+            HRESULT CreateImageSourceFromWic(IWICBitmapSource* wicBitmapSource, D2D1_IMAGE_SOURCE_LOADING_OPTIONS loadingOptions, D2D1_ALPHA_MODE alphaMode, ID2D1ImageSourceFromWic** imageSource);
+
+            [VtblIndex(99)]
+            HRESULT CreateLookupTable3D(D2D1_BUFFER_PRECISION precision, [NativeTypeName("const UINT32 *")] uint* extents, [NativeTypeName("const BYTE *")] byte* data, [NativeTypeName("UINT32")] uint dataCount, [NativeTypeName("const UINT32 *")] uint* strides, ID2D1LookupTable3D** lookupTable);
+
+            [VtblIndex(100)]
+            HRESULT CreateImageSourceFromDxgi(IDXGISurface** surfaces, [NativeTypeName("UINT32")] uint surfaceCount, DXGI_COLOR_SPACE_TYPE colorSpace, D2D1_IMAGE_SOURCE_FROM_DXGI_OPTIONS options, ID2D1ImageSource** imageSource);
+
+            [VtblIndex(101)]
+            HRESULT GetGradientMeshWorldBounds(ID2D1GradientMesh* gradientMesh, [NativeTypeName("D2D1_RECT_F *")] D2D_RECT_F* pBounds);
+
+            [VtblIndex(102)]
+            void DrawInk(ID2D1Ink* ink, ID2D1Brush* brush, ID2D1InkStyle* inkStyle);
+
+            [VtblIndex(103)]
+            void DrawGradientMesh(ID2D1GradientMesh* gradientMesh);
+
+            [VtblIndex(104)]
+            void DrawGdiMetafile(ID2D1GdiMetafile* gdiMetafile, [NativeTypeName("const D2D1_RECT_F *")] D2D_RECT_F* destinationRectangle, [NativeTypeName("const D2D1_RECT_F *")] D2D_RECT_F* sourceRectangle = null);
+
+            [VtblIndex(105)]
+            HRESULT CreateTransformedImageSource(ID2D1ImageSource* imageSource, [NativeTypeName("const D2D1_TRANSFORMED_IMAGE_SOURCE_PROPERTIES *")] D2D1_TRANSFORMED_IMAGE_SOURCE_PROPERTIES* properties, ID2D1TransformedImageSource** transformedImageSource);
         }
 
         public partial struct Vtbl

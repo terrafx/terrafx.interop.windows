@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("2A07407E-6497-4A18-9787-32F79BD0D98F")]
     [NativeTypeName("struct IDeviceTopology : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IDeviceTopology
+    public unsafe partial struct IDeviceTopology : IDeviceTopology.Interface
     {
         public void** lpVtbl;
 
@@ -86,6 +86,30 @@ namespace TerraFX.Interop
         public HRESULT GetSignalPath(IPart* pIPartFrom, IPart* pIPartTo, BOOL bRejectMixedPaths, IPartsList** ppParts)
         {
             return ((delegate* unmanaged<IDeviceTopology*, IPart*, IPart*, BOOL, IPartsList**, int>)(lpVtbl[9]))((IDeviceTopology*)Unsafe.AsPointer(ref this), pIPartFrom, pIPartTo, bRejectMixedPaths, ppParts);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetConnectorCount(uint* pCount);
+
+            [VtblIndex(4)]
+            HRESULT GetConnector(uint nIndex, IConnector** ppConnector);
+
+            [VtblIndex(5)]
+            HRESULT GetSubunitCount(uint* pCount);
+
+            [VtblIndex(6)]
+            HRESULT GetSubunit(uint nIndex, ISubunit** ppSubunit);
+
+            [VtblIndex(7)]
+            HRESULT GetPartById(uint nId, IPart** ppPart);
+
+            [VtblIndex(8)]
+            HRESULT GetDeviceId([NativeTypeName("LPWSTR *")] ushort** ppwstrDeviceId);
+
+            [VtblIndex(9)]
+            HRESULT GetSignalPath(IPart* pIPartFrom, IPart* pIPartTo, BOOL bRejectMixedPaths, IPartsList** ppParts);
         }
 
         public partial struct Vtbl

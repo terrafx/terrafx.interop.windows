@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("6DBD6437-96FD-423F-A98C-AE5E7C2A573F")]
     [NativeTypeName("struct IDMLDevice : IDMLObject")]
     [NativeInheritance("IDMLObject")]
-    public unsafe partial struct IDMLDevice
+    public unsafe partial struct IDMLDevice : IDMLDevice.Interface
     {
         public void** lpVtbl;
 
@@ -135,6 +135,39 @@ namespace TerraFX.Interop
         public HRESULT GetParentDevice([NativeTypeName("const IID &")] Guid* riid, void** ppv)
         {
             return ((delegate* unmanaged<IDMLDevice*, Guid*, void**, int>)(lpVtbl[16]))((IDMLDevice*)Unsafe.AsPointer(ref this), riid, ppv);
+        }
+
+        public interface Interface : IDMLObject.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT CheckFeatureSupport(DML_FEATURE feature, uint featureQueryDataSize, [NativeTypeName("const void *")] void* featureQueryData, uint featureSupportDataSize, void* featureSupportData);
+
+            [VtblIndex(8)]
+            HRESULT CreateOperator([NativeTypeName("const DML_OPERATOR_DESC *")] DML_OPERATOR_DESC* desc, [NativeTypeName("const IID &")] Guid* riid, void** ppv);
+
+            [VtblIndex(9)]
+            HRESULT CompileOperator(IDMLOperator* op, DML_EXECUTION_FLAGS flags, [NativeTypeName("const IID &")] Guid* riid, void** ppv);
+
+            [VtblIndex(10)]
+            HRESULT CreateOperatorInitializer(uint operatorCount, [NativeTypeName("IDMLCompiledOperator *const *")] IDMLCompiledOperator** operators, [NativeTypeName("const IID &")] Guid* riid, void** ppv);
+
+            [VtblIndex(11)]
+            HRESULT CreateCommandRecorder([NativeTypeName("const IID &")] Guid* riid, void** ppv);
+
+            [VtblIndex(12)]
+            HRESULT CreateBindingTable([NativeTypeName("const DML_BINDING_TABLE_DESC *")] DML_BINDING_TABLE_DESC* desc, [NativeTypeName("const IID &")] Guid* riid, void** ppv);
+
+            [VtblIndex(13)]
+            HRESULT Evict(uint count, [NativeTypeName("IDMLPageable *const *")] IDMLPageable** ppObjects);
+
+            [VtblIndex(14)]
+            HRESULT MakeResident(uint count, [NativeTypeName("IDMLPageable *const *")] IDMLPageable** ppObjects);
+
+            [VtblIndex(15)]
+            HRESULT GetDeviceRemovedReason();
+
+            [VtblIndex(16)]
+            HRESULT GetParentDevice([NativeTypeName("const IID &")] Guid* riid, void** ppv);
         }
 
         public partial struct Vtbl

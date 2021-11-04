@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("85611E73-70A9-490E-9614-A9E302777904")]
     [NativeTypeName("struct ID3D11On12Device : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct ID3D11On12Device
+    public unsafe partial struct ID3D11On12Device : ID3D11On12Device.Interface
     {
         public void** lpVtbl;
 
@@ -58,6 +58,18 @@ namespace TerraFX.Interop
         public void AcquireWrappedResources([NativeTypeName("ID3D11Resource *const *")] ID3D11Resource** ppResources, uint NumResources)
         {
             ((delegate* unmanaged<ID3D11On12Device*, ID3D11Resource**, uint, void>)(lpVtbl[5]))((ID3D11On12Device*)Unsafe.AsPointer(ref this), ppResources, NumResources);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT CreateWrappedResource(IUnknown* pResource12, [NativeTypeName("const D3D11_RESOURCE_FLAGS *")] D3D11_RESOURCE_FLAGS* pFlags11, D3D12_RESOURCE_STATES InState, D3D12_RESOURCE_STATES OutState, [NativeTypeName("const IID &")] Guid* riid, void** ppResource11);
+
+            [VtblIndex(4)]
+            void ReleaseWrappedResources([NativeTypeName("ID3D11Resource *const *")] ID3D11Resource** ppResources, uint NumResources);
+
+            [VtblIndex(5)]
+            void AcquireWrappedResources([NativeTypeName("ID3D11Resource *const *")] ID3D11Resource** ppResources, uint NumResources);
         }
 
         public partial struct Vtbl

@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("305104FC-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct ISVGPathSeg : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct ISVGPathSeg
+    public unsafe partial struct ISVGPathSeg : ISVGPathSeg.Interface
     {
         public void** lpVtbl;
 
@@ -86,6 +86,18 @@ namespace TerraFX.Interop
         public HRESULT get_pathSegTypeAsLetter([NativeTypeName("BSTR *")] ushort** p)
         {
             return ((delegate* unmanaged<ISVGPathSeg*, ushort**, int>)(lpVtbl[9]))((ISVGPathSeg*)Unsafe.AsPointer(ref this), p);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT put_pathSegType(short v);
+
+            [VtblIndex(8)]
+            HRESULT get_pathSegType(short* p);
+
+            [VtblIndex(9)]
+            HRESULT get_pathSegTypeAsLetter([NativeTypeName("BSTR *")] ushort** p);
         }
 
         public partial struct Vtbl

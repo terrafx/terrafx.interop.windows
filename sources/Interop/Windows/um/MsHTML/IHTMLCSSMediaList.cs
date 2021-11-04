@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("30510731-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct IHTMLCSSMediaList : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct IHTMLCSSMediaList
+    public unsafe partial struct IHTMLCSSMediaList : IHTMLCSSMediaList.Interface
     {
         public void** lpVtbl;
 
@@ -107,6 +107,27 @@ namespace TerraFX.Interop
         public HRESULT deleteMedium([NativeTypeName("BSTR")] ushort* bstrMedium)
         {
             return ((delegate* unmanaged<IHTMLCSSMediaList*, ushort*, int>)(lpVtbl[12]))((IHTMLCSSMediaList*)Unsafe.AsPointer(ref this), bstrMedium);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT put_mediaText([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(8)]
+            HRESULT get_mediaText([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(9)]
+            HRESULT get_length([NativeTypeName("long *")] int* p);
+
+            [VtblIndex(10)]
+            HRESULT item([NativeTypeName("long")] int index, [NativeTypeName("BSTR *")] ushort** pbstrMedium);
+
+            [VtblIndex(11)]
+            HRESULT appendMedium([NativeTypeName("BSTR")] ushort* bstrMedium);
+
+            [VtblIndex(12)]
+            HRESULT deleteMedium([NativeTypeName("BSTR")] ushort* bstrMedium);
         }
 
         public partial struct Vtbl

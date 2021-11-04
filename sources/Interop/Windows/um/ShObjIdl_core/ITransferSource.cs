@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("00ADB003-BDE9-45C6-8E29-D09F9353E108")]
     [NativeTypeName("struct ITransferSource : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct ITransferSource
+    public unsafe partial struct ITransferSource : ITransferSource.Interface
     {
         public void** lpVtbl;
 
@@ -128,6 +128,48 @@ namespace TerraFX.Interop
         public HRESULT LeaveFolder(IShellItem* psiChildFolderDest)
         {
             return ((delegate* unmanaged<ITransferSource*, IShellItem*, int>)(lpVtbl[15]))((ITransferSource*)Unsafe.AsPointer(ref this), psiChildFolderDest);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT Advise(ITransferAdviseSink* psink, [NativeTypeName("DWORD *")] uint* pdwCookie);
+
+            [VtblIndex(4)]
+            HRESULT Unadvise([NativeTypeName("DWORD")] uint dwCookie);
+
+            [VtblIndex(5)]
+            HRESULT SetProperties(IPropertyChangeArray* pproparray);
+
+            [VtblIndex(6)]
+            HRESULT OpenItem(IShellItem* psi, [NativeTypeName("TRANSFER_SOURCE_FLAGS")] uint flags, [NativeTypeName("const IID &")] Guid* riid, void** ppv);
+
+            [VtblIndex(7)]
+            HRESULT MoveItem(IShellItem* psi, IShellItem* psiParentDst, [NativeTypeName("LPCWSTR")] ushort* pszNameDst, [NativeTypeName("TRANSFER_SOURCE_FLAGS")] uint flags, IShellItem** ppsiNew);
+
+            [VtblIndex(8)]
+            HRESULT RecycleItem(IShellItem* psiSource, IShellItem* psiParentDest, [NativeTypeName("TRANSFER_SOURCE_FLAGS")] uint flags, IShellItem** ppsiNewDest);
+
+            [VtblIndex(9)]
+            HRESULT RemoveItem(IShellItem* psiSource, [NativeTypeName("TRANSFER_SOURCE_FLAGS")] uint flags);
+
+            [VtblIndex(10)]
+            HRESULT RenameItem(IShellItem* psiSource, [NativeTypeName("LPCWSTR")] ushort* pszNewName, [NativeTypeName("TRANSFER_SOURCE_FLAGS")] uint flags, IShellItem** ppsiNewDest);
+
+            [VtblIndex(11)]
+            HRESULT LinkItem(IShellItem* psiSource, IShellItem* psiParentDest, [NativeTypeName("LPCWSTR")] ushort* pszNewName, [NativeTypeName("TRANSFER_SOURCE_FLAGS")] uint flags, IShellItem** ppsiNewDest);
+
+            [VtblIndex(12)]
+            HRESULT ApplyPropertiesToItem(IShellItem* psiSource, IShellItem** ppsiNew);
+
+            [VtblIndex(13)]
+            HRESULT GetDefaultDestinationName(IShellItem* psiSource, IShellItem* psiParentDest, [NativeTypeName("LPWSTR *")] ushort** ppszDestinationName);
+
+            [VtblIndex(14)]
+            HRESULT EnterFolder(IShellItem* psiChildFolderDest);
+
+            [VtblIndex(15)]
+            HRESULT LeaveFolder(IShellItem* psiChildFolderDest);
         }
 
         public partial struct Vtbl

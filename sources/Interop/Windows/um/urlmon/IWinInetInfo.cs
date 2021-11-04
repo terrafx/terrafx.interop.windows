@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("79EAC9D6-BAFA-11CE-8C82-00AA004BA90B")]
     [NativeTypeName("struct IWinInetInfo : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IWinInetInfo
+    public unsafe partial struct IWinInetInfo : IWinInetInfo.Interface
     {
         public void** lpVtbl;
 
@@ -44,6 +44,12 @@ namespace TerraFX.Interop
         public HRESULT QueryOption([NativeTypeName("DWORD")] uint dwOption, [NativeTypeName("LPVOID")] void* pBuffer, [NativeTypeName("DWORD *")] uint* pcbBuf)
         {
             return ((delegate* unmanaged<IWinInetInfo*, uint, void*, uint*, int>)(lpVtbl[3]))((IWinInetInfo*)Unsafe.AsPointer(ref this), dwOption, pBuffer, pcbBuf);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT QueryOption([NativeTypeName("DWORD")] uint dwOption, [NativeTypeName("LPVOID")] void* pBuffer, [NativeTypeName("DWORD *")] uint* pcbBuf);
         }
 
         public partial struct Vtbl

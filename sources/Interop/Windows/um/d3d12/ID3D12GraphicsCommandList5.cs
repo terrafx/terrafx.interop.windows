@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("55050859-4024-474C-87F5-6472EAEE44EA")]
     [NativeTypeName("struct ID3D12GraphicsCommandList5 : ID3D12GraphicsCommandList4")]
     [NativeInheritance("ID3D12GraphicsCommandList4")]
-    public unsafe partial struct ID3D12GraphicsCommandList5
+    public unsafe partial struct ID3D12GraphicsCommandList5 : ID3D12GraphicsCommandList5.Interface
     {
         public void** lpVtbl;
 
@@ -569,6 +569,15 @@ namespace TerraFX.Interop
         public void RSSetShadingRateImage(ID3D12Resource* shadingRateImage)
         {
             ((delegate* unmanaged<ID3D12GraphicsCommandList5*, ID3D12Resource*, void>)(lpVtbl[78]))((ID3D12GraphicsCommandList5*)Unsafe.AsPointer(ref this), shadingRateImage);
+        }
+
+        public interface Interface : ID3D12GraphicsCommandList4.Interface
+        {
+            [VtblIndex(77)]
+            void RSSetShadingRate(D3D12_SHADING_RATE baseShadingRate, [NativeTypeName("const D3D12_SHADING_RATE_COMBINER *")] D3D12_SHADING_RATE_COMBINER* combiners);
+
+            [VtblIndex(78)]
+            void RSSetShadingRateImage(ID3D12Resource* shadingRateImage);
         }
 
         public partial struct Vtbl

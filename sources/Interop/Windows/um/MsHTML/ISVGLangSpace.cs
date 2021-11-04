@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("305104DE-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct ISVGLangSpace : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct ISVGLangSpace
+    public unsafe partial struct ISVGLangSpace : ISVGLangSpace.Interface
     {
         public void** lpVtbl;
 
@@ -93,6 +93,21 @@ namespace TerraFX.Interop
         public HRESULT get_xmlspace([NativeTypeName("BSTR *")] ushort** p)
         {
             return ((delegate* unmanaged<ISVGLangSpace*, ushort**, int>)(lpVtbl[10]))((ISVGLangSpace*)Unsafe.AsPointer(ref this), p);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT put_xmllang([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(8)]
+            HRESULT get_xmllang([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(9)]
+            HRESULT put_xmlspace([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(10)]
+            HRESULT get_xmlspace([NativeTypeName("BSTR *")] ushort** p);
         }
 
         public partial struct Vtbl

@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("A5029FB6-3C34-11D1-9C99-00C04FB998AA")]
     [NativeTypeName("struct IAsyncRpcChannelBuffer : IRpcChannelBuffer2")]
     [NativeInheritance("IRpcChannelBuffer2")]
-    public unsafe partial struct IAsyncRpcChannelBuffer
+    public unsafe partial struct IAsyncRpcChannelBuffer : IAsyncRpcChannelBuffer.Interface
     {
         public void** lpVtbl;
 
@@ -100,6 +100,18 @@ namespace TerraFX.Interop
         public HRESULT GetDestCtxEx(RPCOLEMESSAGE* pMsg, [NativeTypeName("DWORD *")] uint* pdwDestContext, void** ppvDestContext)
         {
             return ((delegate* unmanaged<IAsyncRpcChannelBuffer*, RPCOLEMESSAGE*, uint*, void**, int>)(lpVtbl[11]))((IAsyncRpcChannelBuffer*)Unsafe.AsPointer(ref this), pMsg, pdwDestContext, ppvDestContext);
+        }
+
+        public interface Interface : IRpcChannelBuffer2.Interface
+        {
+            [VtblIndex(9)]
+            HRESULT Send(RPCOLEMESSAGE* pMsg, ISynchronize* pSync, [NativeTypeName("ULONG *")] uint* pulStatus);
+
+            [VtblIndex(10)]
+            HRESULT Receive(RPCOLEMESSAGE* pMsg, [NativeTypeName("ULONG *")] uint* pulStatus);
+
+            [VtblIndex(11)]
+            HRESULT GetDestCtxEx(RPCOLEMESSAGE* pMsg, [NativeTypeName("DWORD *")] uint* pdwDestContext, void** ppvDestContext);
         }
 
         public partial struct Vtbl

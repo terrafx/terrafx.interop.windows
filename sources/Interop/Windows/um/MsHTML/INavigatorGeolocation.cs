@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("305107CF-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct INavigatorGeolocation : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct INavigatorGeolocation
+    public unsafe partial struct INavigatorGeolocation : INavigatorGeolocation.Interface
     {
         public void** lpVtbl;
 
@@ -72,6 +72,12 @@ namespace TerraFX.Interop
         public HRESULT get_geolocation(IWebGeolocation** p)
         {
             return ((delegate* unmanaged<INavigatorGeolocation*, IWebGeolocation**, int>)(lpVtbl[7]))((INavigatorGeolocation*)Unsafe.AsPointer(ref this), p);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT get_geolocation(IWebGeolocation** p);
         }
 
         public partial struct Vtbl

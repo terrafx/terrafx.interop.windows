@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("47016943-FCA8-4594-93EA-AF258B55346D")]
     [NativeTypeName("struct ID3D12StateObject : ID3D12Pageable")]
     [NativeInheritance("ID3D12Pageable")]
-    public unsafe partial struct ID3D12StateObject
+    public unsafe partial struct ID3D12StateObject : ID3D12StateObject.Interface
     {
         public void** lpVtbl;
 
@@ -72,6 +72,10 @@ namespace TerraFX.Interop
         public HRESULT GetDevice([NativeTypeName("const IID &")] Guid* riid, void** ppvDevice)
         {
             return ((delegate* unmanaged<ID3D12StateObject*, Guid*, void**, int>)(lpVtbl[7]))((ID3D12StateObject*)Unsafe.AsPointer(ref this), riid, ppvDevice);
+        }
+
+        public interface Interface : ID3D12Pageable.Interface
+        {
         }
 
         public partial struct Vtbl

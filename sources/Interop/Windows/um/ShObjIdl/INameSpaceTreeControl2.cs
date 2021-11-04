@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("7CC7AED8-290E-49BC-8945-C1401CC9306C")]
     [NativeTypeName("struct INameSpaceTreeControl2 : INameSpaceTreeControl")]
     [NativeInheritance("INameSpaceTreeControl")]
-    public unsafe partial struct INameSpaceTreeControl2
+    public unsafe partial struct INameSpaceTreeControl2 : INameSpaceTreeControl2.Interface
     {
         public void** lpVtbl;
 
@@ -198,6 +198,21 @@ namespace TerraFX.Interop
         public HRESULT GetControlStyle2(NSTCSTYLE2 nstcsMask, NSTCSTYLE2* pnstcsStyle)
         {
             return ((delegate* unmanaged<INameSpaceTreeControl2*, NSTCSTYLE2, NSTCSTYLE2*, int>)(lpVtbl[25]))((INameSpaceTreeControl2*)Unsafe.AsPointer(ref this), nstcsMask, pnstcsStyle);
+        }
+
+        public interface Interface : INameSpaceTreeControl.Interface
+        {
+            [VtblIndex(22)]
+            HRESULT SetControlStyle([NativeTypeName("NSTCSTYLE")] uint nstcsMask, [NativeTypeName("NSTCSTYLE")] uint nstcsStyle);
+
+            [VtblIndex(23)]
+            HRESULT GetControlStyle([NativeTypeName("NSTCSTYLE")] uint nstcsMask, [NativeTypeName("NSTCSTYLE *")] uint* pnstcsStyle);
+
+            [VtblIndex(24)]
+            HRESULT SetControlStyle2(NSTCSTYLE2 nstcsMask, NSTCSTYLE2 nstcsStyle);
+
+            [VtblIndex(25)]
+            HRESULT GetControlStyle2(NSTCSTYLE2 nstcsMask, NSTCSTYLE2* pnstcsStyle);
         }
 
         public partial struct Vtbl

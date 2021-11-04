@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("27354144-7F64-5B0F-8F00-5D77AFBE261E")]
     [NativeTypeName("struct IWriteSpeedDescriptor : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct IWriteSpeedDescriptor
+    public unsafe partial struct IWriteSpeedDescriptor : IWriteSpeedDescriptor.Interface
     {
         public void** lpVtbl;
 
@@ -86,6 +86,18 @@ namespace TerraFX.Interop
         public HRESULT get_WriteSpeed([NativeTypeName("LONG *")] int* value)
         {
             return ((delegate* unmanaged<IWriteSpeedDescriptor*, int*, int>)(lpVtbl[9]))((IWriteSpeedDescriptor*)Unsafe.AsPointer(ref this), value);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT get_MediaType(IMAPI_MEDIA_PHYSICAL_TYPE* value);
+
+            [VtblIndex(8)]
+            HRESULT get_RotationTypeIsPureCAV([NativeTypeName("VARIANT_BOOL *")] short* value);
+
+            [VtblIndex(9)]
+            HRESULT get_WriteSpeed([NativeTypeName("LONG *")] int* value);
         }
 
         public partial struct Vtbl

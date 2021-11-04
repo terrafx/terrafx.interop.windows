@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("84AC29BB-D619-44D2-B197-E4ACF7DF3ED6")]
     [NativeTypeName("struct IXAudio2Extension : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IXAudio2Extension
+    public unsafe partial struct IXAudio2Extension : IXAudio2Extension.Interface
     {
         public void** lpVtbl;
 
@@ -51,6 +51,15 @@ namespace TerraFX.Interop
         public void GetProcessor([NativeTypeName("XAUDIO2_PROCESSOR *")] uint* processor)
         {
             ((delegate* unmanaged<IXAudio2Extension*, uint*, void>)(lpVtbl[4]))((IXAudio2Extension*)Unsafe.AsPointer(ref this), processor);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            void GetProcessingQuantum([NativeTypeName("UINT32 *")] uint* quantumNumerator, [NativeTypeName("UINT32 *")] uint* quantumDenominator);
+
+            [VtblIndex(4)]
+            void GetProcessor([NativeTypeName("XAUDIO2_PROCESSOR *")] uint* processor);
         }
 
         public partial struct Vtbl

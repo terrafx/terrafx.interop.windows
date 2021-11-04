@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("C405A219-25A2-442E-8743-B845A2CEE93F")]
     [NativeTypeName("struct ISyncMgrConflictResolveInfo : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct ISyncMgrConflictResolveInfo
+    public unsafe partial struct ISyncMgrConflictResolveInfo : ISyncMgrConflictResolveInfo.Interface
     {
         public void** lpVtbl;
 
@@ -93,6 +93,33 @@ namespace TerraFX.Interop
         public HRESULT SetItemChoices(uint* prgiConflictItemIndexes, uint cChoices)
         {
             return ((delegate* unmanaged<ISyncMgrConflictResolveInfo*, uint*, uint, int>)(lpVtbl[10]))((ISyncMgrConflictResolveInfo*)Unsafe.AsPointer(ref this), prgiConflictItemIndexes, cChoices);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetIterationInfo(uint* pnCurrentConflict, uint* pcConflicts, uint* pcRemainingForApplyToAll);
+
+            [VtblIndex(4)]
+            HRESULT GetPresenterNextStep(SYNCMGR_PRESENTER_NEXT_STEP* pnPresenterNextStep);
+
+            [VtblIndex(5)]
+            HRESULT GetPresenterChoice(SYNCMGR_PRESENTER_CHOICE* pnPresenterChoice, BOOL* pfApplyToAll);
+
+            [VtblIndex(6)]
+            HRESULT GetItemChoiceCount(uint* pcChoices);
+
+            [VtblIndex(7)]
+            HRESULT GetItemChoice(uint iChoice, uint* piChoiceIndex);
+
+            [VtblIndex(8)]
+            HRESULT SetPresenterNextStep(SYNCMGR_PRESENTER_NEXT_STEP nPresenterNextStep);
+
+            [VtblIndex(9)]
+            HRESULT SetPresenterChoice(SYNCMGR_PRESENTER_CHOICE nPresenterChoice, BOOL fApplyToAll);
+
+            [VtblIndex(10)]
+            HRESULT SetItemChoices(uint* prgiConflictItemIndexes, uint cChoices);
         }
 
         public partial struct Vtbl

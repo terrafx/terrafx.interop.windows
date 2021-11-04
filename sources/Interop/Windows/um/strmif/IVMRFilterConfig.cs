@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("9E5530C5-7034-48B4-BB46-0B8A6EFC8E36")]
     [NativeTypeName("struct IVMRFilterConfig : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IVMRFilterConfig
+    public unsafe partial struct IVMRFilterConfig : IVMRFilterConfig.Interface
     {
         public void** lpVtbl;
 
@@ -86,6 +86,30 @@ namespace TerraFX.Interop
         public HRESULT GetRenderingMode([NativeTypeName("DWORD *")] uint* pMode)
         {
             return ((delegate* unmanaged<IVMRFilterConfig*, uint*, int>)(lpVtbl[9]))((IVMRFilterConfig*)Unsafe.AsPointer(ref this), pMode);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT SetImageCompositor(IVMRImageCompositor* lpVMRImgCompositor);
+
+            [VtblIndex(4)]
+            HRESULT SetNumberOfStreams([NativeTypeName("DWORD")] uint dwMaxStreams);
+
+            [VtblIndex(5)]
+            HRESULT GetNumberOfStreams([NativeTypeName("DWORD *")] uint* pdwMaxStreams);
+
+            [VtblIndex(6)]
+            HRESULT SetRenderingPrefs([NativeTypeName("DWORD")] uint dwRenderFlags);
+
+            [VtblIndex(7)]
+            HRESULT GetRenderingPrefs([NativeTypeName("DWORD *")] uint* pdwRenderFlags);
+
+            [VtblIndex(8)]
+            HRESULT SetRenderingMode([NativeTypeName("DWORD")] uint Mode);
+
+            [VtblIndex(9)]
+            HRESULT GetRenderingMode([NativeTypeName("DWORD *")] uint* pMode);
         }
 
         public partial struct Vtbl

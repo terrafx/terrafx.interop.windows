@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("10A72A66-E91C-43F4-993F-DDF4B82B0B4A")]
     [NativeTypeName("struct ID2D1StrokeStyle1 : ID2D1StrokeStyle")]
     [NativeInheritance("ID2D1StrokeStyle")]
-    public unsafe partial struct ID2D1StrokeStyle1
+    public unsafe partial struct ID2D1StrokeStyle1 : ID2D1StrokeStyle1.Interface
     {
         public void** lpVtbl;
 
@@ -115,6 +115,12 @@ namespace TerraFX.Interop
         public D2D1_STROKE_TRANSFORM_TYPE GetStrokeTransformType()
         {
             return ((delegate* unmanaged<ID2D1StrokeStyle1*, D2D1_STROKE_TRANSFORM_TYPE>)(lpVtbl[13]))((ID2D1StrokeStyle1*)Unsafe.AsPointer(ref this));
+        }
+
+        public interface Interface : ID2D1StrokeStyle.Interface
+        {
+            [VtblIndex(13)]
+            D2D1_STROKE_TRANSFORM_TYPE GetStrokeTransformType();
         }
 
         public partial struct Vtbl

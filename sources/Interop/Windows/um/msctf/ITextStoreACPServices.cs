@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("AA80E901-2021-11D2-93E0-0060B067B86E")]
     [NativeTypeName("struct ITextStoreACPServices : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct ITextStoreACPServices
+    public unsafe partial struct ITextStoreACPServices : ITextStoreACPServices.Interface
     {
         public void** lpVtbl;
 
@@ -65,6 +65,21 @@ namespace TerraFX.Interop
         public HRESULT CreateRange([NativeTypeName("LONG")] int acpStart, [NativeTypeName("LONG")] int acpEnd, ITfRangeACP** ppRange)
         {
             return ((delegate* unmanaged<ITextStoreACPServices*, int, int, ITfRangeACP**, int>)(lpVtbl[6]))((ITextStoreACPServices*)Unsafe.AsPointer(ref this), acpStart, acpEnd, ppRange);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT Serialize(ITfProperty* pProp, ITfRange* pRange, TF_PERSISTENT_PROPERTY_HEADER_ACP* pHdr, IStream* pStream);
+
+            [VtblIndex(4)]
+            HRESULT Unserialize(ITfProperty* pProp, [NativeTypeName("const TF_PERSISTENT_PROPERTY_HEADER_ACP *")] TF_PERSISTENT_PROPERTY_HEADER_ACP* pHdr, IStream* pStream, ITfPersistentPropertyLoaderACP* pLoader);
+
+            [VtblIndex(5)]
+            HRESULT ForceLoadProperty(ITfProperty* pProp);
+
+            [VtblIndex(6)]
+            HRESULT CreateRange([NativeTypeName("LONG")] int acpStart, [NativeTypeName("LONG")] int acpEnd, ITfRangeACP** ppRange);
         }
 
         public partial struct Vtbl

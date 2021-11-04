@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("537A0825-0387-4EFA-B62F-71EB1F085A7E")]
     [NativeTypeName("struct IDirectManipulationCompositor : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IDirectManipulationCompositor
+    public unsafe partial struct IDirectManipulationCompositor : IDirectManipulationCompositor.Interface
     {
         public void** lpVtbl;
 
@@ -65,6 +65,21 @@ namespace TerraFX.Interop
         public HRESULT Flush()
         {
             return ((delegate* unmanaged<IDirectManipulationCompositor*, int>)(lpVtbl[6]))((IDirectManipulationCompositor*)Unsafe.AsPointer(ref this));
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT AddContent(IDirectManipulationContent* content, IUnknown* device, IUnknown* parentVisual, IUnknown* childVisual);
+
+            [VtblIndex(4)]
+            HRESULT RemoveContent(IDirectManipulationContent* content);
+
+            [VtblIndex(5)]
+            HRESULT SetUpdateManager(IDirectManipulationUpdateManager* updateManager);
+
+            [VtblIndex(6)]
+            HRESULT Flush();
         }
 
         public partial struct Vtbl

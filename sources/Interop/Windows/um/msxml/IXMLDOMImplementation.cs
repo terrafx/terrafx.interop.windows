@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("2933BF8F-7B36-11D2-B20E-00C04F983E60")]
     [NativeTypeName("struct IXMLDOMImplementation : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct IXMLDOMImplementation
+    public unsafe partial struct IXMLDOMImplementation : IXMLDOMImplementation.Interface
     {
         public void** lpVtbl;
 
@@ -72,6 +72,12 @@ namespace TerraFX.Interop
         public HRESULT hasFeature([NativeTypeName("BSTR")] ushort* feature, [NativeTypeName("BSTR")] ushort* version, [NativeTypeName("VARIANT_BOOL *")] short* hasFeature)
         {
             return ((delegate* unmanaged<IXMLDOMImplementation*, ushort*, ushort*, short*, int>)(lpVtbl[7]))((IXMLDOMImplementation*)Unsafe.AsPointer(ref this), feature, version, hasFeature);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT hasFeature([NativeTypeName("BSTR")] ushort* feature, [NativeTypeName("BSTR")] ushort* version, [NativeTypeName("VARIANT_BOOL *")] short* hasFeature);
         }
 
         public partial struct Vtbl

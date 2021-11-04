@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("3051049B-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct IHTMLDOMConstructor : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct IHTMLDOMConstructor
+    public unsafe partial struct IHTMLDOMConstructor : IHTMLDOMConstructor.Interface
     {
         public void** lpVtbl;
 
@@ -100,6 +100,24 @@ namespace TerraFX.Interop
         public HRESULT DefineSetter([NativeTypeName("BSTR")] ushort* propname, VARIANT* pdispHandler)
         {
             return ((delegate* unmanaged<IHTMLDOMConstructor*, ushort*, VARIANT*, int>)(lpVtbl[11]))((IHTMLDOMConstructor*)Unsafe.AsPointer(ref this), propname, pdispHandler);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT get_constructor(IDispatch** p);
+
+            [VtblIndex(8)]
+            HRESULT LookupGetter([NativeTypeName("BSTR")] ushort* propname, VARIANT* ppDispHandler);
+
+            [VtblIndex(9)]
+            HRESULT LookupSetter([NativeTypeName("BSTR")] ushort* propname, VARIANT* ppDispHandler);
+
+            [VtblIndex(10)]
+            HRESULT DefineGetter([NativeTypeName("BSTR")] ushort* propname, VARIANT* pdispHandler);
+
+            [VtblIndex(11)]
+            HRESULT DefineSetter([NativeTypeName("BSTR")] ushort* propname, VARIANT* pdispHandler);
         }
 
         public partial struct Vtbl

@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("BC2B7D44-A72D-49D5-8376-1480DEE58B22")]
     [NativeTypeName("struct IMFNetCrossOriginSupport : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IMFNetCrossOriginSupport
+    public unsafe partial struct IMFNetCrossOriginSupport : IMFNetCrossOriginSupport.Interface
     {
         public void** lpVtbl;
 
@@ -58,6 +58,18 @@ namespace TerraFX.Interop
         public HRESULT IsSameOrigin([NativeTypeName("LPCWSTR")] ushort* wszURL, BOOL* pfIsSameOrigin)
         {
             return ((delegate* unmanaged<IMFNetCrossOriginSupport*, ushort*, BOOL*, int>)(lpVtbl[5]))((IMFNetCrossOriginSupport*)Unsafe.AsPointer(ref this), wszURL, pfIsSameOrigin);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetCrossOriginPolicy(MF_CROSS_ORIGIN_POLICY* pPolicy);
+
+            [VtblIndex(4)]
+            HRESULT GetSourceOrigin([NativeTypeName("LPWSTR *")] ushort** wszSourceOrigin);
+
+            [VtblIndex(5)]
+            HRESULT IsSameOrigin([NativeTypeName("LPCWSTR")] ushort* wszURL, BOOL* pfIsSameOrigin);
         }
 
         public partial struct Vtbl

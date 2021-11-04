@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("DE9A6157-F660-4643-B56A-DF9F7998C7CD")]
     [NativeTypeName("struct IMFTopoLoader : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IMFTopoLoader
+    public unsafe partial struct IMFTopoLoader : IMFTopoLoader.Interface
     {
         public void** lpVtbl;
 
@@ -44,6 +44,12 @@ namespace TerraFX.Interop
         public HRESULT Load(IMFTopology* pInputTopo, IMFTopology** ppOutputTopo, IMFTopology* pCurrentTopo)
         {
             return ((delegate* unmanaged<IMFTopoLoader*, IMFTopology*, IMFTopology**, IMFTopology*, int>)(lpVtbl[3]))((IMFTopoLoader*)Unsafe.AsPointer(ref this), pInputTopo, ppOutputTopo, pCurrentTopo);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT Load(IMFTopology* pInputTopo, IMFTopology** ppOutputTopo, IMFTopology* pCurrentTopo);
         }
 
         public partial struct Vtbl

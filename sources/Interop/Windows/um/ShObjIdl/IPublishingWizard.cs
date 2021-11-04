@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("AA9198BB-CCEC-472D-BEED-19A4F6733F7A")]
     [NativeTypeName("struct IPublishingWizard : IWizardExtension")]
     [NativeInheritance("IWizardExtension")]
-    public unsafe partial struct IPublishingWizard
+    public unsafe partial struct IPublishingWizard : IPublishingWizard.Interface
     {
         public void** lpVtbl;
 
@@ -72,6 +72,15 @@ namespace TerraFX.Interop
         public HRESULT GetTransferManifest(HRESULT* phrFromTransfer, IXMLDOMDocument** pdocManifest)
         {
             return ((delegate* unmanaged<IPublishingWizard*, HRESULT*, IXMLDOMDocument**, int>)(lpVtbl[7]))((IPublishingWizard*)Unsafe.AsPointer(ref this), phrFromTransfer, pdocManifest);
+        }
+
+        public interface Interface : IWizardExtension.Interface
+        {
+            [VtblIndex(6)]
+            HRESULT Initialize(IDataObject* pdo, [NativeTypeName("DWORD")] uint dwOptions, [NativeTypeName("LPCWSTR")] ushort* pszServiceScope);
+
+            [VtblIndex(7)]
+            HRESULT GetTransferManifest(HRESULT* phrFromTransfer, IXMLDOMDocument** pdocManifest);
         }
 
         public partial struct Vtbl

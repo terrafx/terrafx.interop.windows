@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("2433BF8E-0F9B-435C-BA2C-180611978C30")]
     [NativeTypeName("struct ITfContextView : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct ITfContextView
+    public unsafe partial struct ITfContextView : ITfContextView.Interface
     {
         public void** lpVtbl;
 
@@ -65,6 +65,21 @@ namespace TerraFX.Interop
         public HRESULT GetWnd(HWND* phwnd)
         {
             return ((delegate* unmanaged<ITfContextView*, HWND*, int>)(lpVtbl[6]))((ITfContextView*)Unsafe.AsPointer(ref this), phwnd);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetRangeFromPoint([NativeTypeName("TfEditCookie")] uint ec, [NativeTypeName("const POINT *")] POINT* ppt, [NativeTypeName("DWORD")] uint dwFlags, ITfRange** ppRange);
+
+            [VtblIndex(4)]
+            HRESULT GetTextExt([NativeTypeName("TfEditCookie")] uint ec, ITfRange* pRange, RECT* prc, BOOL* pfClipped);
+
+            [VtblIndex(5)]
+            HRESULT GetScreenExt(RECT* prc);
+
+            [VtblIndex(6)]
+            HRESULT GetWnd(HWND* phwnd);
         }
 
         public partial struct Vtbl

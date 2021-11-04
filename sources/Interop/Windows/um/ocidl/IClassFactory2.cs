@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("B196B28F-BAB4-101A-B69C-00AA00341D07")]
     [NativeTypeName("struct IClassFactory2 : IClassFactory")]
     [NativeInheritance("IClassFactory")]
-    public unsafe partial struct IClassFactory2
+    public unsafe partial struct IClassFactory2 : IClassFactory2.Interface
     {
         public void** lpVtbl;
 
@@ -72,6 +72,18 @@ namespace TerraFX.Interop
         public HRESULT CreateInstanceLic(IUnknown* pUnkOuter, IUnknown* pUnkReserved, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("BSTR")] ushort* bstrKey, [NativeTypeName("PVOID *")] void** ppvObj)
         {
             return ((delegate* unmanaged<IClassFactory2*, IUnknown*, IUnknown*, Guid*, ushort*, void**, int>)(lpVtbl[7]))((IClassFactory2*)Unsafe.AsPointer(ref this), pUnkOuter, pUnkReserved, riid, bstrKey, ppvObj);
+        }
+
+        public interface Interface : IClassFactory.Interface
+        {
+            [VtblIndex(5)]
+            HRESULT GetLicInfo(LICINFO* pLicInfo);
+
+            [VtblIndex(6)]
+            HRESULT RequestLicKey([NativeTypeName("DWORD")] uint dwReserved, [NativeTypeName("BSTR *")] ushort** pBstrKey);
+
+            [VtblIndex(7)]
+            HRESULT CreateInstanceLic(IUnknown* pUnkOuter, IUnknown* pUnkReserved, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("BSTR")] ushort* bstrKey, [NativeTypeName("PVOID *")] void** ppvObj);
         }
 
         public partial struct Vtbl

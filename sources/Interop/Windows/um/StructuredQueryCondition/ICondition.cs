@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("0FC988D4-C935-4B97-A973-46282EA175C8")]
     [NativeTypeName("struct ICondition : IPersistStream")]
     [NativeInheritance("IPersistStream")]
-    public unsafe partial struct ICondition
+    public unsafe partial struct ICondition : ICondition.Interface
     {
         public void** lpVtbl;
 
@@ -121,6 +121,30 @@ namespace TerraFX.Interop
         public HRESULT Clone(ICondition** ppc)
         {
             return ((delegate* unmanaged<ICondition*, ICondition**, int>)(lpVtbl[14]))((ICondition*)Unsafe.AsPointer(ref this), ppc);
+        }
+
+        public interface Interface : IPersistStream.Interface
+        {
+            [VtblIndex(8)]
+            HRESULT GetConditionType(CONDITION_TYPE* pNodeType);
+
+            [VtblIndex(9)]
+            HRESULT GetSubConditions([NativeTypeName("const IID &")] Guid* riid, void** ppv);
+
+            [VtblIndex(10)]
+            HRESULT GetComparisonInfo([NativeTypeName("LPWSTR *")] ushort** ppszPropertyName, CONDITION_OPERATION* pcop, PROPVARIANT* ppropvar);
+
+            [VtblIndex(11)]
+            HRESULT GetValueType([NativeTypeName("LPWSTR *")] ushort** ppszValueTypeName);
+
+            [VtblIndex(12)]
+            HRESULT GetValueNormalization([NativeTypeName("LPWSTR *")] ushort** ppszNormalization);
+
+            [VtblIndex(13)]
+            HRESULT GetInputTerms(IRichChunk** ppPropertyTerm, IRichChunk** ppOperationTerm, IRichChunk** ppValueTerm);
+
+            [VtblIndex(14)]
+            HRESULT Clone(ICondition** ppc);
         }
 
         public partial struct Vtbl

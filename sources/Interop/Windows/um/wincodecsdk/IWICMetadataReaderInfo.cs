@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("EEBF1F5B-07C1-4447-A3AB-22ACAF78A804")]
     [NativeTypeName("struct IWICMetadataReaderInfo : IWICMetadataHandlerInfo")]
     [NativeInheritance("IWICMetadataHandlerInfo")]
-    public unsafe partial struct IWICMetadataReaderInfo
+    public unsafe partial struct IWICMetadataReaderInfo : IWICMetadataReaderInfo.Interface
     {
         public void** lpVtbl;
 
@@ -163,6 +163,18 @@ namespace TerraFX.Interop
         public HRESULT CreateInstance(IWICMetadataReader** ppIReader)
         {
             return ((delegate* unmanaged<IWICMetadataReaderInfo*, IWICMetadataReader**, int>)(lpVtbl[20]))((IWICMetadataReaderInfo*)Unsafe.AsPointer(ref this), ppIReader);
+        }
+
+        public interface Interface : IWICMetadataHandlerInfo.Interface
+        {
+            [VtblIndex(18)]
+            HRESULT GetPatterns([NativeTypeName("const GUID &")] Guid* guidContainerFormat, uint cbSize, WICMetadataPattern* pPattern, uint* pcCount, uint* pcbActual);
+
+            [VtblIndex(19)]
+            HRESULT MatchesPattern([NativeTypeName("const GUID &")] Guid* guidContainerFormat, IStream* pIStream, BOOL* pfMatches);
+
+            [VtblIndex(20)]
+            HRESULT CreateInstance(IWICMetadataReader** ppIReader);
         }
 
         public partial struct Vtbl

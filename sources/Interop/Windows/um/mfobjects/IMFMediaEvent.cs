@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("DF598932-F10C-4E39-BBA2-C308F101DAA3")]
     [NativeTypeName("struct IMFMediaEvent : IMFAttributes")]
     [NativeInheritance("IMFAttributes")]
-    public unsafe partial struct IMFMediaEvent
+    public unsafe partial struct IMFMediaEvent : IMFMediaEvent.Interface
     {
         public void** lpVtbl;
 
@@ -275,6 +275,21 @@ namespace TerraFX.Interop
         public HRESULT GetValue(PROPVARIANT* pvValue)
         {
             return ((delegate* unmanaged<IMFMediaEvent*, PROPVARIANT*, int>)(lpVtbl[36]))((IMFMediaEvent*)Unsafe.AsPointer(ref this), pvValue);
+        }
+
+        public interface Interface : IMFAttributes.Interface
+        {
+            [VtblIndex(33)]
+            HRESULT GetType([NativeTypeName("MediaEventType *")] uint* pmet);
+
+            [VtblIndex(34)]
+            HRESULT GetExtendedType(Guid* pguidExtendedType);
+
+            [VtblIndex(35)]
+            HRESULT GetStatus(HRESULT* phrStatus);
+
+            [VtblIndex(36)]
+            HRESULT GetValue(PROPVARIANT* pvValue);
         }
 
         public partial struct Vtbl

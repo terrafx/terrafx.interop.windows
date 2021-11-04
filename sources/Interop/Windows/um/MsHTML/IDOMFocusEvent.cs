@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("305106CC-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct IDOMFocusEvent : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct IDOMFocusEvent
+    public unsafe partial struct IDOMFocusEvent : IDOMFocusEvent.Interface
     {
         public void** lpVtbl;
 
@@ -79,6 +79,15 @@ namespace TerraFX.Interop
         public HRESULT initFocusEvent([NativeTypeName("BSTR")] ushort* eventType, [NativeTypeName("VARIANT_BOOL")] short canBubble, [NativeTypeName("VARIANT_BOOL")] short cancelable, IHTMLWindow2* view, [NativeTypeName("long")] int detail, IEventTarget* relatedTargetArg)
         {
             return ((delegate* unmanaged<IDOMFocusEvent*, ushort*, short, short, IHTMLWindow2*, int, IEventTarget*, int>)(lpVtbl[8]))((IDOMFocusEvent*)Unsafe.AsPointer(ref this), eventType, canBubble, cancelable, view, detail, relatedTargetArg);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT get_relatedTarget(IEventTarget** p);
+
+            [VtblIndex(8)]
+            HRESULT initFocusEvent([NativeTypeName("BSTR")] ushort* eventType, [NativeTypeName("VARIANT_BOOL")] short canBubble, [NativeTypeName("VARIANT_BOOL")] short cancelable, IHTMLWindow2* view, [NativeTypeName("long")] int detail, IEventTarget* relatedTargetArg);
         }
 
         public partial struct Vtbl

@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("DBF2E947-8E6C-4254-9EEE-7738F71386C9")]
     [NativeTypeName("struct IVirtualSurfaceUpdatesCallbackNative : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IVirtualSurfaceUpdatesCallbackNative
+    public unsafe partial struct IVirtualSurfaceUpdatesCallbackNative : IVirtualSurfaceUpdatesCallbackNative.Interface
     {
         public void** lpVtbl;
 
@@ -44,6 +44,12 @@ namespace TerraFX.Interop
         public HRESULT UpdatesNeeded()
         {
             return ((delegate* unmanaged<IVirtualSurfaceUpdatesCallbackNative*, int>)(lpVtbl[3]))((IVirtualSurfaceUpdatesCallbackNative*)Unsafe.AsPointer(ref this));
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT UpdatesNeeded();
         }
 
         public partial struct Vtbl

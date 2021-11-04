@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("6295DF2C-35EE-11D1-8707-00C04FD93327")]
     [NativeTypeName("struct ISyncMgrSynchronizeInvoke : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct ISyncMgrSynchronizeInvoke
+    public unsafe partial struct ISyncMgrSynchronizeInvoke : ISyncMgrSynchronizeInvoke.Interface
     {
         public void** lpVtbl;
 
@@ -51,6 +51,15 @@ namespace TerraFX.Interop
         public HRESULT UpdateAll()
         {
             return ((delegate* unmanaged<ISyncMgrSynchronizeInvoke*, int>)(lpVtbl[4]))((ISyncMgrSynchronizeInvoke*)Unsafe.AsPointer(ref this));
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT UpdateItems([NativeTypeName("DWORD")] uint dwInvokeFlags, [NativeTypeName("const IID &")] Guid* clsid, [NativeTypeName("DWORD")] uint cbCookie, [NativeTypeName("const BYTE *")] byte* pCookie);
+
+            [VtblIndex(4)]
+            HRESULT UpdateAll();
         }
 
         public partial struct Vtbl

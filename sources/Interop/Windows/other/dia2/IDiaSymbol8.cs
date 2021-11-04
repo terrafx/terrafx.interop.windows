@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("7F2E041F-1294-41BD-B83A-E715972D2CE3")]
     [NativeTypeName("struct IDiaSymbol8 : IDiaSymbol7")]
     [NativeInheritance("IDiaSymbol7")]
-    public unsafe partial struct IDiaSymbol8
+    public unsafe partial struct IDiaSymbol8 : IDiaSymbol8.Interface
     {
         public void** lpVtbl;
 
@@ -1794,6 +1794,27 @@ namespace TerraFX.Interop
         public HRESULT get_associatedSymbolAddr([NativeTypeName("ULONGLONG *")] ulong* pRetVal)
         {
             return ((delegate* unmanaged<IDiaSymbol8*, ulong*, int>)(lpVtbl[253]))((IDiaSymbol8*)Unsafe.AsPointer(ref this), pRetVal);
+        }
+
+        public interface Interface : IDiaSymbol7.Interface
+        {
+            [VtblIndex(248)]
+            HRESULT get_coroutineKind([NativeTypeName("DWORD *")] uint* pRetVal);
+
+            [VtblIndex(249)]
+            HRESULT get_associatedSymbolKind([NativeTypeName("DWORD *")] uint* pRetVal);
+
+            [VtblIndex(250)]
+            HRESULT get_associatedSymbolSection([NativeTypeName("DWORD *")] uint* pRetVal);
+
+            [VtblIndex(251)]
+            HRESULT get_associatedSymbolOffset([NativeTypeName("DWORD *")] uint* pRetVal);
+
+            [VtblIndex(252)]
+            HRESULT get_associatedSymbolRva([NativeTypeName("DWORD *")] uint* pRetVal);
+
+            [VtblIndex(253)]
+            HRESULT get_associatedSymbolAddr([NativeTypeName("ULONGLONG *")] ulong* pRetVal);
         }
 
         public partial struct Vtbl

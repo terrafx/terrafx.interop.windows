@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("0A9CCDBC-D797-4563-9667-94EC5D79292D")]
     [NativeTypeName("struct IMFRateSupport : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IMFRateSupport
+    public unsafe partial struct IMFRateSupport : IMFRateSupport.Interface
     {
         public void** lpVtbl;
 
@@ -58,6 +58,18 @@ namespace TerraFX.Interop
         public HRESULT IsRateSupported(BOOL fThin, float flRate, float* pflNearestSupportedRate)
         {
             return ((delegate* unmanaged<IMFRateSupport*, BOOL, float, float*, int>)(lpVtbl[5]))((IMFRateSupport*)Unsafe.AsPointer(ref this), fThin, flRate, pflNearestSupportedRate);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetSlowestRate(MFRATE_DIRECTION eDirection, BOOL fThin, float* pflRate);
+
+            [VtblIndex(4)]
+            HRESULT GetFastestRate(MFRATE_DIRECTION eDirection, BOOL fThin, float* pflRate);
+
+            [VtblIndex(5)]
+            HRESULT IsRateSupported(BOOL fThin, float flRate, float* pflNearestSupportedRate);
         }
 
         public partial struct Vtbl

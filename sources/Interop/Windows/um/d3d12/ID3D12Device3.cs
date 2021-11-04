@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("81DADC15-2BAD-4392-93C5-101345C4AA98")]
     [NativeTypeName("struct ID3D12Device3 : ID3D12Device2")]
     [NativeInheritance("ID3D12Device2")]
-    public unsafe partial struct ID3D12Device3
+    public unsafe partial struct ID3D12Device3 : ID3D12Device3.Interface
     {
         public void** lpVtbl;
 
@@ -376,6 +376,18 @@ namespace TerraFX.Interop
         public HRESULT EnqueueMakeResident(D3D12_RESIDENCY_FLAGS Flags, uint NumObjects, [NativeTypeName("ID3D12Pageable *const *")] ID3D12Pageable** ppObjects, ID3D12Fence* pFenceToSignal, [NativeTypeName("UINT64")] ulong FenceValueToSignal)
         {
             return ((delegate* unmanaged<ID3D12Device3*, D3D12_RESIDENCY_FLAGS, uint, ID3D12Pageable**, ID3D12Fence*, ulong, int>)(lpVtbl[50]))((ID3D12Device3*)Unsafe.AsPointer(ref this), Flags, NumObjects, ppObjects, pFenceToSignal, FenceValueToSignal);
+        }
+
+        public interface Interface : ID3D12Device2.Interface
+        {
+            [VtblIndex(48)]
+            HRESULT OpenExistingHeapFromAddress([NativeTypeName("const void *")] void* pAddress, [NativeTypeName("const IID &")] Guid* riid, void** ppvHeap);
+
+            [VtblIndex(49)]
+            HRESULT OpenExistingHeapFromFileMapping(HANDLE hFileMapping, [NativeTypeName("const IID &")] Guid* riid, void** ppvHeap);
+
+            [VtblIndex(50)]
+            HRESULT EnqueueMakeResident(D3D12_RESIDENCY_FLAGS Flags, uint NumObjects, [NativeTypeName("ID3D12Pageable *const *")] ID3D12Pageable** ppObjects, ID3D12Fence* pFenceToSignal, [NativeTypeName("UINT64")] ulong FenceValueToSignal);
         }
 
         public partial struct Vtbl

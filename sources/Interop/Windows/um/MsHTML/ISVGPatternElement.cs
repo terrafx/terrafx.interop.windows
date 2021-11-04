@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("3051052C-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct ISVGPatternElement : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct ISVGPatternElement
+    public unsafe partial struct ISVGPatternElement : ISVGPatternElement.Interface
     {
         public void** lpVtbl;
 
@@ -163,6 +163,51 @@ namespace TerraFX.Interop
         public HRESULT get_height(ISVGAnimatedLength** p)
         {
             return ((delegate* unmanaged<ISVGPatternElement*, ISVGAnimatedLength**, int>)(lpVtbl[20]))((ISVGPatternElement*)Unsafe.AsPointer(ref this), p);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT putref_patternUnits(ISVGAnimatedEnumeration* v);
+
+            [VtblIndex(8)]
+            HRESULT get_patternUnits(ISVGAnimatedEnumeration** p);
+
+            [VtblIndex(9)]
+            HRESULT putref_patternContentUnits(ISVGAnimatedEnumeration* v);
+
+            [VtblIndex(10)]
+            HRESULT get_patternContentUnits(ISVGAnimatedEnumeration** p);
+
+            [VtblIndex(11)]
+            HRESULT putref_patternTransform(ISVGAnimatedTransformList* v);
+
+            [VtblIndex(12)]
+            HRESULT get_patternTransform(ISVGAnimatedTransformList** p);
+
+            [VtblIndex(13)]
+            HRESULT putref_x(ISVGAnimatedLength* v);
+
+            [VtblIndex(14)]
+            HRESULT get_x(ISVGAnimatedLength** p);
+
+            [VtblIndex(15)]
+            HRESULT putref_y(ISVGAnimatedLength* v);
+
+            [VtblIndex(16)]
+            HRESULT get_y(ISVGAnimatedLength** p);
+
+            [VtblIndex(17)]
+            HRESULT putref_width(ISVGAnimatedLength* v);
+
+            [VtblIndex(18)]
+            HRESULT get_width(ISVGAnimatedLength** p);
+
+            [VtblIndex(19)]
+            HRESULT putref_height(ISVGAnimatedLength* v);
+
+            [VtblIndex(20)]
+            HRESULT get_height(ISVGAnimatedLength** p);
         }
 
         public partial struct Vtbl

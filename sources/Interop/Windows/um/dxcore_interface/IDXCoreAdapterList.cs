@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("526C7776-40E9-459B-B711-F32AD76DFC28")]
     [NativeTypeName("struct IDXCoreAdapterList : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IDXCoreAdapterList
+    public unsafe partial struct IDXCoreAdapterList : IDXCoreAdapterList.Interface
     {
         public void** lpVtbl;
 
@@ -80,6 +80,28 @@ namespace TerraFX.Interop
         public bool IsAdapterPreferenceSupported(DXCoreAdapterPreference preference)
         {
             return ((delegate* unmanaged<IDXCoreAdapterList*, DXCoreAdapterPreference, byte>)(lpVtbl[8]))((IDXCoreAdapterList*)Unsafe.AsPointer(ref this), preference) != 0;
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetAdapter([NativeTypeName("uint32_t")] uint index, [NativeTypeName("const IID &")] Guid* riid, void** ppvAdapter);
+
+            [VtblIndex(4)]
+            [return: NativeTypeName("uint32_t")]
+            uint GetAdapterCount();
+
+            [VtblIndex(5)]
+            bool IsStale();
+
+            [VtblIndex(6)]
+            HRESULT GetFactory([NativeTypeName("const IID &")] Guid* riid, void** ppvFactory);
+
+            [VtblIndex(7)]
+            HRESULT Sort([NativeTypeName("uint32_t")] uint numPreferences, [NativeTypeName("const DXCoreAdapterPreference *")] DXCoreAdapterPreference* preferences);
+
+            [VtblIndex(8)]
+            bool IsAdapterPreferenceSupported(DXCoreAdapterPreference preference);
         }
 
         public partial struct Vtbl

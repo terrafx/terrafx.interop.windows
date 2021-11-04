@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("3050F265-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct IHTMLAreaElement : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct IHTMLAreaElement
+    public unsafe partial struct IHTMLAreaElement : IHTMLAreaElement.Interface
     {
         public void** lpVtbl;
 
@@ -303,6 +303,111 @@ namespace TerraFX.Interop
         public HRESULT blur()
         {
             return ((delegate* unmanaged<IHTMLAreaElement*, int>)(lpVtbl[40]))((IHTMLAreaElement*)Unsafe.AsPointer(ref this));
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT put_shape([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(8)]
+            HRESULT get_shape([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(9)]
+            HRESULT put_coords([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(10)]
+            HRESULT get_coords([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(11)]
+            HRESULT put_href([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(12)]
+            HRESULT get_href([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(13)]
+            HRESULT put_target([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(14)]
+            HRESULT get_target([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(15)]
+            HRESULT put_alt([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(16)]
+            HRESULT get_alt([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(17)]
+            HRESULT put_noHref([NativeTypeName("VARIANT_BOOL")] short v);
+
+            [VtblIndex(18)]
+            HRESULT get_noHref([NativeTypeName("VARIANT_BOOL *")] short* p);
+
+            [VtblIndex(19)]
+            HRESULT put_host([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(20)]
+            HRESULT get_host([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(21)]
+            HRESULT put_hostname([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(22)]
+            HRESULT get_hostname([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(23)]
+            HRESULT put_pathname([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(24)]
+            HRESULT get_pathname([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(25)]
+            HRESULT put_port([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(26)]
+            HRESULT get_port([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(27)]
+            HRESULT put_protocol([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(28)]
+            HRESULT get_protocol([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(29)]
+            HRESULT put_search([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(30)]
+            HRESULT get_search([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(31)]
+            HRESULT put_hash([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(32)]
+            HRESULT get_hash([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(33)]
+            HRESULT put_onblur(VARIANT v);
+
+            [VtblIndex(34)]
+            HRESULT get_onblur(VARIANT* p);
+
+            [VtblIndex(35)]
+            HRESULT put_onfocus(VARIANT v);
+
+            [VtblIndex(36)]
+            HRESULT get_onfocus(VARIANT* p);
+
+            [VtblIndex(37)]
+            HRESULT put_tabIndex(short v);
+
+            [VtblIndex(38)]
+            HRESULT get_tabIndex(short* p);
+
+            [VtblIndex(39)]
+            HRESULT focus();
+
+            [VtblIndex(40)]
+            HRESULT blur();
         }
 
         public partial struct Vtbl

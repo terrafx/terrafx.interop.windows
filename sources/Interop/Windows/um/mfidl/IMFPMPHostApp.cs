@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("84D2054A-3AA1-4728-A3B0-440A418CF49C")]
     [NativeTypeName("struct IMFPMPHostApp : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IMFPMPHostApp
+    public unsafe partial struct IMFPMPHostApp : IMFPMPHostApp.Interface
     {
         public void** lpVtbl;
 
@@ -58,6 +58,18 @@ namespace TerraFX.Interop
         public HRESULT ActivateClassById([NativeTypeName("LPCWSTR")] ushort* id, IStream* pStream, [NativeTypeName("const IID &")] Guid* riid, void** ppv)
         {
             return ((delegate* unmanaged<IMFPMPHostApp*, ushort*, IStream*, Guid*, void**, int>)(lpVtbl[5]))((IMFPMPHostApp*)Unsafe.AsPointer(ref this), id, pStream, riid, ppv);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT LockProcess();
+
+            [VtblIndex(4)]
+            HRESULT UnlockProcess();
+
+            [VtblIndex(5)]
+            HRESULT ActivateClassById([NativeTypeName("LPCWSTR")] ushort* id, IStream* pStream, [NativeTypeName("const IID &")] Guid* riid, void** ppv);
         }
 
         public partial struct Vtbl

@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("0EB1088C-4DCD-46F0-878F-39DAE86A51B7")]
     [NativeTypeName("struct IVMRWindowlessControl : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IVMRWindowlessControl
+    public unsafe partial struct IVMRWindowlessControl : IVMRWindowlessControl.Interface
     {
         public void** lpVtbl;
 
@@ -142,6 +142,54 @@ namespace TerraFX.Interop
         public HRESULT GetColorKey(COLORREF* lpClr)
         {
             return ((delegate* unmanaged<IVMRWindowlessControl*, COLORREF*, int>)(lpVtbl[17]))((IVMRWindowlessControl*)Unsafe.AsPointer(ref this), lpClr);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetNativeVideoSize([NativeTypeName("LONG *")] int* lpWidth, [NativeTypeName("LONG *")] int* lpHeight, [NativeTypeName("LONG *")] int* lpARWidth, [NativeTypeName("LONG *")] int* lpARHeight);
+
+            [VtblIndex(4)]
+            HRESULT GetMinIdealVideoSize([NativeTypeName("LONG *")] int* lpWidth, [NativeTypeName("LONG *")] int* lpHeight);
+
+            [VtblIndex(5)]
+            HRESULT GetMaxIdealVideoSize([NativeTypeName("LONG *")] int* lpWidth, [NativeTypeName("LONG *")] int* lpHeight);
+
+            [VtblIndex(6)]
+            HRESULT SetVideoPosition([NativeTypeName("const LPRECT")] RECT* lpSRCRect, [NativeTypeName("const LPRECT")] RECT* lpDSTRect);
+
+            [VtblIndex(7)]
+            HRESULT GetVideoPosition([NativeTypeName("LPRECT")] RECT* lpSRCRect, [NativeTypeName("LPRECT")] RECT* lpDSTRect);
+
+            [VtblIndex(8)]
+            HRESULT GetAspectRatioMode([NativeTypeName("DWORD *")] uint* lpAspectRatioMode);
+
+            [VtblIndex(9)]
+            HRESULT SetAspectRatioMode([NativeTypeName("DWORD")] uint AspectRatioMode);
+
+            [VtblIndex(10)]
+            HRESULT SetVideoClippingWindow(HWND hwnd);
+
+            [VtblIndex(11)]
+            HRESULT RepaintVideo(HWND hwnd, HDC hdc);
+
+            [VtblIndex(12)]
+            HRESULT DisplayModeChanged();
+
+            [VtblIndex(13)]
+            HRESULT GetCurrentImage(byte** lpDib);
+
+            [VtblIndex(14)]
+            HRESULT SetBorderColor(COLORREF Clr);
+
+            [VtblIndex(15)]
+            HRESULT GetBorderColor(COLORREF* lpClr);
+
+            [VtblIndex(16)]
+            HRESULT SetColorKey(COLORREF Clr);
+
+            [VtblIndex(17)]
+            HRESULT GetColorKey(COLORREF* lpClr);
         }
 
         public partial struct Vtbl

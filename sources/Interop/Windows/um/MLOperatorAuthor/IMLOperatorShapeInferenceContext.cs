@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("105B6B29-5408-4A68-9959-09B5955A3492")]
     [NativeTypeName("struct IMLOperatorShapeInferenceContext : IMLOperatorAttributes")]
     [NativeInheritance("IMLOperatorAttributes")]
-    public unsafe partial struct IMLOperatorShapeInferenceContext
+    public unsafe partial struct IMLOperatorShapeInferenceContext : IMLOperatorShapeInferenceContext.Interface
     {
         public void** lpVtbl;
 
@@ -123,6 +123,35 @@ namespace TerraFX.Interop
         public HRESULT SetOutputTensorShape([NativeTypeName("uint32_t")] uint outputIndex, [NativeTypeName("uint32_t")] uint dimensionCount, [NativeTypeName("const uint32_t *")] uint* dimensions)
         {
             return ((delegate* unmanaged<IMLOperatorShapeInferenceContext*, uint, uint, uint*, int>)(lpVtbl[14]))((IMLOperatorShapeInferenceContext*)Unsafe.AsPointer(ref this), outputIndex, dimensionCount, dimensions);
+        }
+
+        public interface Interface : IMLOperatorAttributes.Interface
+        {
+            [VtblIndex(7)]
+            [return: NativeTypeName("uint32_t")]
+            uint GetInputCount();
+
+            [VtblIndex(8)]
+            [return: NativeTypeName("uint32_t")]
+            uint GetOutputCount();
+
+            [VtblIndex(9)]
+            bool IsInputValid([NativeTypeName("uint32_t")] uint inputIndex);
+
+            [VtblIndex(10)]
+            bool IsOutputValid([NativeTypeName("uint32_t")] uint outputIndex);
+
+            [VtblIndex(11)]
+            HRESULT GetInputEdgeDescription([NativeTypeName("uint32_t")] uint inputIndex, MLOperatorEdgeDescription* edgeDescription);
+
+            [VtblIndex(12)]
+            HRESULT GetInputTensorDimensionCount([NativeTypeName("uint32_t")] uint inputIndex, [NativeTypeName("uint32_t *")] uint* dimensionCount);
+
+            [VtblIndex(13)]
+            HRESULT GetInputTensorShape([NativeTypeName("uint32_t")] uint inputIndex, [NativeTypeName("uint32_t")] uint dimensionCount, [NativeTypeName("uint32_t *")] uint* dimensions);
+
+            [VtblIndex(14)]
+            HRESULT SetOutputTensorShape([NativeTypeName("uint32_t")] uint outputIndex, [NativeTypeName("uint32_t")] uint dimensionCount, [NativeTypeName("const uint32_t *")] uint* dimensions);
         }
 
         public partial struct Vtbl

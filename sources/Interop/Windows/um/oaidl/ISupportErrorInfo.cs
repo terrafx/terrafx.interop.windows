@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("DF0B3D60-548F-101B-8E65-08002B2BD119")]
     [NativeTypeName("struct ISupportErrorInfo : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct ISupportErrorInfo
+    public unsafe partial struct ISupportErrorInfo : ISupportErrorInfo.Interface
     {
         public void** lpVtbl;
 
@@ -44,6 +44,12 @@ namespace TerraFX.Interop
         public HRESULT InterfaceSupportsErrorInfo([NativeTypeName("const IID &")] Guid* riid)
         {
             return ((delegate* unmanaged<ISupportErrorInfo*, Guid*, int>)(lpVtbl[3]))((ISupportErrorInfo*)Unsafe.AsPointer(ref this), riid);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT InterfaceSupportsErrorInfo([NativeTypeName("const IID &")] Guid* riid);
         }
 
         public partial struct Vtbl

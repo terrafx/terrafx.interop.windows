@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("7FD52380-4E07-101B-AE2D-08002B2EC713")]
     [NativeTypeName("struct IPersistStreamInit : IPersist")]
     [NativeInheritance("IPersist")]
-    public unsafe partial struct IPersistStreamInit
+    public unsafe partial struct IPersistStreamInit : IPersistStreamInit.Interface
     {
         public void** lpVtbl;
 
@@ -79,6 +79,24 @@ namespace TerraFX.Interop
         public HRESULT InitNew()
         {
             return ((delegate* unmanaged<IPersistStreamInit*, int>)(lpVtbl[8]))((IPersistStreamInit*)Unsafe.AsPointer(ref this));
+        }
+
+        public interface Interface : IPersist.Interface
+        {
+            [VtblIndex(4)]
+            HRESULT IsDirty();
+
+            [VtblIndex(5)]
+            HRESULT Load([NativeTypeName("LPSTREAM")] IStream* pStm);
+
+            [VtblIndex(6)]
+            HRESULT Save([NativeTypeName("LPSTREAM")] IStream* pStm, BOOL fClearDirty);
+
+            [VtblIndex(7)]
+            HRESULT GetSizeMax(ULARGE_INTEGER* pCbSize);
+
+            [VtblIndex(8)]
+            HRESULT InitNew();
         }
 
         public partial struct Vtbl

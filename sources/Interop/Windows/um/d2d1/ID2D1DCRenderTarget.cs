@@ -18,7 +18,7 @@ namespace TerraFX.Interop
     [Guid("1C51BC64-DE61-46FD-9899-63A5D8F03950")]
     [NativeTypeName("struct ID2D1DCRenderTarget : ID2D1RenderTarget")]
     [NativeInheritance("ID2D1RenderTarget")]
-    public unsafe partial struct ID2D1DCRenderTarget
+    public unsafe partial struct ID2D1DCRenderTarget : ID2D1DCRenderTarget.Interface
     {
         public void** lpVtbl;
 
@@ -509,6 +509,12 @@ namespace TerraFX.Interop
         public HRESULT BindDC([NativeTypeName("const HDC")] HDC hDC, [NativeTypeName("const RECT *")] RECT* pSubRect)
         {
             return ((delegate* unmanaged<ID2D1DCRenderTarget*, HDC, RECT*, int>)(lpVtbl[57]))((ID2D1DCRenderTarget*)Unsafe.AsPointer(ref this), hDC, pSubRect);
+        }
+
+        public interface Interface : ID2D1RenderTarget.Interface
+        {
+            [VtblIndex(57)]
+            HRESULT BindDC([NativeTypeName("const HDC")] HDC hDC, [NativeTypeName("const RECT *")] RECT* pSubRect);
         }
 
         public partial struct Vtbl

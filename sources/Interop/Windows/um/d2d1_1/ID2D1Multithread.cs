@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("31E6E7BC-E0FF-4D46-8C64-A0A8C41C15D3")]
     [NativeTypeName("struct ID2D1Multithread : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct ID2D1Multithread
+    public unsafe partial struct ID2D1Multithread : ID2D1Multithread.Interface
     {
         public void** lpVtbl;
 
@@ -58,6 +58,18 @@ namespace TerraFX.Interop
         public void Leave()
         {
             ((delegate* unmanaged<ID2D1Multithread*, void>)(lpVtbl[5]))((ID2D1Multithread*)Unsafe.AsPointer(ref this));
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            BOOL GetMultithreadProtected();
+
+            [VtblIndex(4)]
+            void Enter();
+
+            [VtblIndex(5)]
+            void Leave();
         }
 
         public partial struct Vtbl

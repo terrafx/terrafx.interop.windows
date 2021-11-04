@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("305107CD-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct IWebGeoposition : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct IWebGeoposition
+    public unsafe partial struct IWebGeoposition : IWebGeoposition.Interface
     {
         public void** lpVtbl;
 
@@ -79,6 +79,15 @@ namespace TerraFX.Interop
         public HRESULT get_timestamp([NativeTypeName("ULONGLONG *")] ulong* p)
         {
             return ((delegate* unmanaged<IWebGeoposition*, ulong*, int>)(lpVtbl[8]))((IWebGeoposition*)Unsafe.AsPointer(ref this), p);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT get_coords(IWebGeocoordinates** p);
+
+            [VtblIndex(8)]
+            HRESULT get_timestamp([NativeTypeName("ULONGLONG *")] ulong* p);
         }
 
         public partial struct Vtbl

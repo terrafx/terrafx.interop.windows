@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("2D3D3845-39AF-4850-BBF9-40B49780011D")]
     [NativeTypeName("struct ISpObjectTokenCategory : ISpDataKey")]
     [NativeInheritance("ISpDataKey")]
-    public unsafe partial struct ISpObjectTokenCategory
+    public unsafe partial struct ISpObjectTokenCategory : ISpObjectTokenCategory.Interface
     {
         public void** lpVtbl;
 
@@ -163,6 +163,27 @@ namespace TerraFX.Interop
         public HRESULT GetDefaultTokenId([NativeTypeName("LPWSTR *")] ushort** ppszCoMemTokenId)
         {
             return ((delegate* unmanaged<ISpObjectTokenCategory*, ushort**, int>)(lpVtbl[20]))((ISpObjectTokenCategory*)Unsafe.AsPointer(ref this), ppszCoMemTokenId);
+        }
+
+        public interface Interface : ISpDataKey.Interface
+        {
+            [VtblIndex(15)]
+            HRESULT SetId([NativeTypeName("LPCWSTR")] ushort* pszCategoryId, BOOL fCreateIfNotExist);
+
+            [VtblIndex(16)]
+            HRESULT GetId([NativeTypeName("LPWSTR *")] ushort** ppszCoMemCategoryId);
+
+            [VtblIndex(17)]
+            HRESULT GetDataKey(SPDATAKEYLOCATION spdkl, ISpDataKey** ppDataKey);
+
+            [VtblIndex(18)]
+            HRESULT EnumTokens([NativeTypeName("LPCWSTR")] ushort* pzsReqAttribs, [NativeTypeName("LPCWSTR")] ushort* pszOptAttribs, IEnumSpObjectTokens** ppEnum);
+
+            [VtblIndex(19)]
+            HRESULT SetDefaultTokenId([NativeTypeName("LPCWSTR")] ushort* pszTokenId);
+
+            [VtblIndex(20)]
+            HRESULT GetDefaultTokenId([NativeTypeName("LPWSTR *")] ushort** ppszCoMemTokenId);
         }
 
         public partial struct Vtbl

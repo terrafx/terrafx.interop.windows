@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("08C03411-F96B-11D0-A475-00AA006BCC59")]
     [NativeTypeName("struct IActiveIMMIME : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IActiveIMMIME
+    public unsafe partial struct IActiveIMMIME : IActiveIMMIME.Interface
     {
         public void** lpVtbl;
 
@@ -653,6 +653,273 @@ namespace TerraFX.Interop
         public HRESULT IsSleeping()
         {
             return ((delegate* unmanaged<IActiveIMMIME*, int>)(lpVtbl[90]))((IActiveIMMIME*)Unsafe.AsPointer(ref this));
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT AssociateContext(HWND hWnd, HIMC hIME, HIMC* phPrev);
+
+            [VtblIndex(4)]
+            HRESULT ConfigureIMEA(HKL hKL, HWND hWnd, [NativeTypeName("DWORD")] uint dwMode, REGISTERWORDA* pData);
+
+            [VtblIndex(5)]
+            HRESULT ConfigureIMEW(HKL hKL, HWND hWnd, [NativeTypeName("DWORD")] uint dwMode, REGISTERWORDW* pData);
+
+            [VtblIndex(6)]
+            HRESULT CreateContext(HIMC* phIMC);
+
+            [VtblIndex(7)]
+            HRESULT DestroyContext(HIMC hIME);
+
+            [VtblIndex(8)]
+            HRESULT EnumRegisterWordA(HKL hKL, [NativeTypeName("LPSTR")] sbyte* szReading, [NativeTypeName("DWORD")] uint dwStyle, [NativeTypeName("LPSTR")] sbyte* szRegister, [NativeTypeName("LPVOID")] void* pData, IEnumRegisterWordA** pEnum);
+
+            [VtblIndex(9)]
+            HRESULT EnumRegisterWordW(HKL hKL, [NativeTypeName("LPWSTR")] ushort* szReading, [NativeTypeName("DWORD")] uint dwStyle, [NativeTypeName("LPWSTR")] ushort* szRegister, [NativeTypeName("LPVOID")] void* pData, IEnumRegisterWordW** pEnum);
+
+            [VtblIndex(10)]
+            HRESULT EscapeA(HKL hKL, HIMC hIMC, uint uEscape, [NativeTypeName("LPVOID")] void* pData, LRESULT* plResult);
+
+            [VtblIndex(11)]
+            HRESULT EscapeW(HKL hKL, HIMC hIMC, uint uEscape, [NativeTypeName("LPVOID")] void* pData, LRESULT* plResult);
+
+            [VtblIndex(12)]
+            HRESULT GetCandidateListA(HIMC hIMC, [NativeTypeName("DWORD")] uint dwIndex, uint uBufLen, CANDIDATELIST* pCandList, uint* puCopied);
+
+            [VtblIndex(13)]
+            HRESULT GetCandidateListW(HIMC hIMC, [NativeTypeName("DWORD")] uint dwIndex, uint uBufLen, CANDIDATELIST* pCandList, uint* puCopied);
+
+            [VtblIndex(14)]
+            HRESULT GetCandidateListCountA(HIMC hIMC, [NativeTypeName("DWORD *")] uint* pdwListSize, [NativeTypeName("DWORD *")] uint* pdwBufLen);
+
+            [VtblIndex(15)]
+            HRESULT GetCandidateListCountW(HIMC hIMC, [NativeTypeName("DWORD *")] uint* pdwListSize, [NativeTypeName("DWORD *")] uint* pdwBufLen);
+
+            [VtblIndex(16)]
+            HRESULT GetCandidateWindow(HIMC hIMC, [NativeTypeName("DWORD")] uint dwIndex, CANDIDATEFORM* pCandidate);
+
+            [VtblIndex(17)]
+            HRESULT GetCompositionFontA(HIMC hIMC, LOGFONTA* plf);
+
+            [VtblIndex(18)]
+            HRESULT GetCompositionFontW(HIMC hIMC, LOGFONTW* plf);
+
+            [VtblIndex(19)]
+            HRESULT GetCompositionStringA(HIMC hIMC, [NativeTypeName("DWORD")] uint dwIndex, [NativeTypeName("DWORD")] uint dwBufLen, [NativeTypeName("LONG *")] int* plCopied, [NativeTypeName("LPVOID")] void* pBuf);
+
+            [VtblIndex(20)]
+            HRESULT GetCompositionStringW(HIMC hIMC, [NativeTypeName("DWORD")] uint dwIndex, [NativeTypeName("DWORD")] uint dwBufLen, [NativeTypeName("LONG *")] int* plCopied, [NativeTypeName("LPVOID")] void* pBuf);
+
+            [VtblIndex(21)]
+            HRESULT GetCompositionWindow(HIMC hIMC, COMPOSITIONFORM* pCompForm);
+
+            [VtblIndex(22)]
+            HRESULT GetContext(HWND hWnd, HIMC* phIMC);
+
+            [VtblIndex(23)]
+            HRESULT GetConversionListA(HKL hKL, HIMC hIMC, [NativeTypeName("LPSTR")] sbyte* pSrc, uint uBufLen, uint uFlag, CANDIDATELIST* pDst, uint* puCopied);
+
+            [VtblIndex(24)]
+            HRESULT GetConversionListW(HKL hKL, HIMC hIMC, [NativeTypeName("LPWSTR")] ushort* pSrc, uint uBufLen, uint uFlag, CANDIDATELIST* pDst, uint* puCopied);
+
+            [VtblIndex(25)]
+            HRESULT GetConversionStatus(HIMC hIMC, [NativeTypeName("DWORD *")] uint* pfdwConversion, [NativeTypeName("DWORD *")] uint* pfdwSentence);
+
+            [VtblIndex(26)]
+            HRESULT GetDefaultIMEWnd(HWND hWnd, HWND* phDefWnd);
+
+            [VtblIndex(27)]
+            HRESULT GetDescriptionA(HKL hKL, uint uBufLen, [NativeTypeName("LPSTR")] sbyte* szDescription, uint* puCopied);
+
+            [VtblIndex(28)]
+            HRESULT GetDescriptionW(HKL hKL, uint uBufLen, [NativeTypeName("LPWSTR")] ushort* szDescription, uint* puCopied);
+
+            [VtblIndex(29)]
+            HRESULT GetGuideLineA(HIMC hIMC, [NativeTypeName("DWORD")] uint dwIndex, [NativeTypeName("DWORD")] uint dwBufLen, [NativeTypeName("LPSTR")] sbyte* pBuf, [NativeTypeName("DWORD *")] uint* pdwResult);
+
+            [VtblIndex(30)]
+            HRESULT GetGuideLineW(HIMC hIMC, [NativeTypeName("DWORD")] uint dwIndex, [NativeTypeName("DWORD")] uint dwBufLen, [NativeTypeName("LPWSTR")] ushort* pBuf, [NativeTypeName("DWORD *")] uint* pdwResult);
+
+            [VtblIndex(31)]
+            HRESULT GetIMEFileNameA(HKL hKL, uint uBufLen, [NativeTypeName("LPSTR")] sbyte* szFileName, uint* puCopied);
+
+            [VtblIndex(32)]
+            HRESULT GetIMEFileNameW(HKL hKL, uint uBufLen, [NativeTypeName("LPWSTR")] ushort* szFileName, uint* puCopied);
+
+            [VtblIndex(33)]
+            HRESULT GetOpenStatus(HIMC hIMC);
+
+            [VtblIndex(34)]
+            HRESULT GetProperty(HKL hKL, [NativeTypeName("DWORD")] uint fdwIndex, [NativeTypeName("DWORD *")] uint* pdwProperty);
+
+            [VtblIndex(35)]
+            HRESULT GetRegisterWordStyleA(HKL hKL, uint nItem, STYLEBUFA* pStyleBuf, uint* puCopied);
+
+            [VtblIndex(36)]
+            HRESULT GetRegisterWordStyleW(HKL hKL, uint nItem, STYLEBUFW* pStyleBuf, uint* puCopied);
+
+            [VtblIndex(37)]
+            HRESULT GetStatusWindowPos(HIMC hIMC, POINT* pptPos);
+
+            [VtblIndex(38)]
+            HRESULT GetVirtualKey(HWND hWnd, uint* puVirtualKey);
+
+            [VtblIndex(39)]
+            HRESULT InstallIMEA([NativeTypeName("LPSTR")] sbyte* szIMEFileName, [NativeTypeName("LPSTR")] sbyte* szLayoutText, HKL* phKL);
+
+            [VtblIndex(40)]
+            HRESULT InstallIMEW([NativeTypeName("LPWSTR")] ushort* szIMEFileName, [NativeTypeName("LPWSTR")] ushort* szLayoutText, HKL* phKL);
+
+            [VtblIndex(41)]
+            HRESULT IsIME(HKL hKL);
+
+            [VtblIndex(42)]
+            HRESULT IsUIMessageA(HWND hWndIME, uint msg, WPARAM wParam, LPARAM lParam);
+
+            [VtblIndex(43)]
+            HRESULT IsUIMessageW(HWND hWndIME, uint msg, WPARAM wParam, LPARAM lParam);
+
+            [VtblIndex(44)]
+            HRESULT NotifyIME(HIMC hIMC, [NativeTypeName("DWORD")] uint dwAction, [NativeTypeName("DWORD")] uint dwIndex, [NativeTypeName("DWORD")] uint dwValue);
+
+            [VtblIndex(45)]
+            HRESULT RegisterWordA(HKL hKL, [NativeTypeName("LPSTR")] sbyte* szReading, [NativeTypeName("DWORD")] uint dwStyle, [NativeTypeName("LPSTR")] sbyte* szRegister);
+
+            [VtblIndex(46)]
+            HRESULT RegisterWordW(HKL hKL, [NativeTypeName("LPWSTR")] ushort* szReading, [NativeTypeName("DWORD")] uint dwStyle, [NativeTypeName("LPWSTR")] ushort* szRegister);
+
+            [VtblIndex(47)]
+            HRESULT ReleaseContext(HWND hWnd, HIMC hIMC);
+
+            [VtblIndex(48)]
+            HRESULT SetCandidateWindow(HIMC hIMC, CANDIDATEFORM* pCandidate);
+
+            [VtblIndex(49)]
+            HRESULT SetCompositionFontA(HIMC hIMC, LOGFONTA* plf);
+
+            [VtblIndex(50)]
+            HRESULT SetCompositionFontW(HIMC hIMC, LOGFONTW* plf);
+
+            [VtblIndex(51)]
+            HRESULT SetCompositionStringA(HIMC hIMC, [NativeTypeName("DWORD")] uint dwIndex, [NativeTypeName("LPVOID")] void* pComp, [NativeTypeName("DWORD")] uint dwCompLen, [NativeTypeName("LPVOID")] void* pRead, [NativeTypeName("DWORD")] uint dwReadLen);
+
+            [VtblIndex(52)]
+            HRESULT SetCompositionStringW(HIMC hIMC, [NativeTypeName("DWORD")] uint dwIndex, [NativeTypeName("LPVOID")] void* pComp, [NativeTypeName("DWORD")] uint dwCompLen, [NativeTypeName("LPVOID")] void* pRead, [NativeTypeName("DWORD")] uint dwReadLen);
+
+            [VtblIndex(53)]
+            HRESULT SetCompositionWindow(HIMC hIMC, COMPOSITIONFORM* pCompForm);
+
+            [VtblIndex(54)]
+            HRESULT SetConversionStatus(HIMC hIMC, [NativeTypeName("DWORD")] uint fdwConversion, [NativeTypeName("DWORD")] uint fdwSentence);
+
+            [VtblIndex(55)]
+            HRESULT SetOpenStatus(HIMC hIMC, BOOL fOpen);
+
+            [VtblIndex(56)]
+            HRESULT SetStatusWindowPos(HIMC hIMC, POINT* pptPos);
+
+            [VtblIndex(57)]
+            HRESULT SimulateHotKey(HWND hWnd, [NativeTypeName("DWORD")] uint dwHotKeyID);
+
+            [VtblIndex(58)]
+            HRESULT UnregisterWordA(HKL hKL, [NativeTypeName("LPSTR")] sbyte* szReading, [NativeTypeName("DWORD")] uint dwStyle, [NativeTypeName("LPSTR")] sbyte* szUnregister);
+
+            [VtblIndex(59)]
+            HRESULT UnregisterWordW(HKL hKL, [NativeTypeName("LPWSTR")] ushort* szReading, [NativeTypeName("DWORD")] uint dwStyle, [NativeTypeName("LPWSTR")] ushort* szUnregister);
+
+            [VtblIndex(60)]
+            HRESULT GenerateMessage(HIMC hIMC);
+
+            [VtblIndex(61)]
+            HRESULT LockIMC(HIMC hIMC, INPUTCONTEXT** ppIMC);
+
+            [VtblIndex(62)]
+            HRESULT UnlockIMC(HIMC hIMC);
+
+            [VtblIndex(63)]
+            HRESULT GetIMCLockCount(HIMC hIMC, [NativeTypeName("DWORD *")] uint* pdwLockCount);
+
+            [VtblIndex(64)]
+            HRESULT CreateIMCC([NativeTypeName("DWORD")] uint dwSize, HIMCC* phIMCC);
+
+            [VtblIndex(65)]
+            HRESULT DestroyIMCC(HIMCC hIMCC);
+
+            [VtblIndex(66)]
+            HRESULT LockIMCC(HIMCC hIMCC, void** ppv);
+
+            [VtblIndex(67)]
+            HRESULT UnlockIMCC(HIMCC hIMCC);
+
+            [VtblIndex(68)]
+            HRESULT ReSizeIMCC(HIMCC hIMCC, [NativeTypeName("DWORD")] uint dwSize, HIMCC* phIMCC);
+
+            [VtblIndex(69)]
+            HRESULT GetIMCCSize(HIMCC hIMCC, [NativeTypeName("DWORD *")] uint* pdwSize);
+
+            [VtblIndex(70)]
+            HRESULT GetIMCCLockCount(HIMCC hIMCC, [NativeTypeName("DWORD *")] uint* pdwLockCount);
+
+            [VtblIndex(71)]
+            HRESULT GetHotKey([NativeTypeName("DWORD")] uint dwHotKeyID, uint* puModifiers, uint* puVKey, HKL* phKL);
+
+            [VtblIndex(72)]
+            HRESULT SetHotKey([NativeTypeName("DWORD")] uint dwHotKeyID, uint uModifiers, uint uVKey, HKL hKL);
+
+            [VtblIndex(73)]
+            HRESULT CreateSoftKeyboard(uint uType, HWND hOwner, int x, int y, HWND* phSoftKbdWnd);
+
+            [VtblIndex(74)]
+            HRESULT DestroySoftKeyboard(HWND hSoftKbdWnd);
+
+            [VtblIndex(75)]
+            HRESULT ShowSoftKeyboard(HWND hSoftKbdWnd, int nCmdShow);
+
+            [VtblIndex(76)]
+            HRESULT GetCodePageA(HKL hKL, uint* uCodePage);
+
+            [VtblIndex(77)]
+            HRESULT GetLangId(HKL hKL, [NativeTypeName("LANGID *")] ushort* plid);
+
+            [VtblIndex(78)]
+            HRESULT KeybdEvent([NativeTypeName("LANGID")] ushort lgidIME, byte bVk, byte bScan, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("DWORD")] uint dwExtraInfo);
+
+            [VtblIndex(79)]
+            HRESULT LockModal();
+
+            [VtblIndex(80)]
+            HRESULT UnlockModal();
+
+            [VtblIndex(81)]
+            HRESULT AssociateContextEx(HWND hWnd, HIMC hIMC, [NativeTypeName("DWORD")] uint dwFlags);
+
+            [VtblIndex(82)]
+            HRESULT DisableIME([NativeTypeName("DWORD")] uint idThread);
+
+            [VtblIndex(83)]
+            HRESULT GetImeMenuItemsA(HIMC hIMC, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("DWORD")] uint dwType, IMEMENUITEMINFOA* pImeParentMenu, IMEMENUITEMINFOA* pImeMenu, [NativeTypeName("DWORD")] uint dwSize, [NativeTypeName("DWORD *")] uint* pdwResult);
+
+            [VtblIndex(84)]
+            HRESULT GetImeMenuItemsW(HIMC hIMC, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("DWORD")] uint dwType, IMEMENUITEMINFOW* pImeParentMenu, IMEMENUITEMINFOW* pImeMenu, [NativeTypeName("DWORD")] uint dwSize, [NativeTypeName("DWORD *")] uint* pdwResult);
+
+            [VtblIndex(85)]
+            HRESULT EnumInputContext([NativeTypeName("DWORD")] uint idThread, IEnumInputContext** ppEnum);
+
+            [VtblIndex(86)]
+            HRESULT RequestMessageA(HIMC hIMC, WPARAM wParam, LPARAM lParam, LRESULT* plResult);
+
+            [VtblIndex(87)]
+            HRESULT RequestMessageW(HIMC hIMC, WPARAM wParam, LPARAM lParam, LRESULT* plResult);
+
+            [VtblIndex(88)]
+            HRESULT SendIMCA(HWND hWnd, uint uMsg, WPARAM wParam, LPARAM lParam, LRESULT* plResult);
+
+            [VtblIndex(89)]
+            HRESULT SendIMCW(HWND hWnd, uint uMsg, WPARAM wParam, LPARAM lParam, LRESULT* plResult);
+
+            [VtblIndex(90)]
+            HRESULT IsSleeping();
         }
 
         public partial struct Vtbl

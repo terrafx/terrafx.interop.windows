@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("000214E9-0000-0000-C000-000000000046")]
     [NativeTypeName("struct IShellPropSheetExt : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IShellPropSheetExt
+    public unsafe partial struct IShellPropSheetExt : IShellPropSheetExt.Interface
     {
         public void** lpVtbl;
 
@@ -51,6 +51,15 @@ namespace TerraFX.Interop
         public HRESULT ReplacePage([NativeTypeName("EXPPS")] uint uPageID, [NativeTypeName("LPFNSVADDPROPSHEETPAGE")] delegate* unmanaged<HPROPSHEETPAGE, LPARAM, BOOL> pfnReplaceWith, LPARAM lParam)
         {
             return ((delegate* unmanaged<IShellPropSheetExt*, uint, delegate* unmanaged<HPROPSHEETPAGE, LPARAM, BOOL>, LPARAM, int>)(lpVtbl[4]))((IShellPropSheetExt*)Unsafe.AsPointer(ref this), uPageID, pfnReplaceWith, lParam);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT AddPages([NativeTypeName("LPFNSVADDPROPSHEETPAGE")] delegate* unmanaged<HPROPSHEETPAGE, LPARAM, BOOL> pfnAddPage, LPARAM lParam);
+
+            [VtblIndex(4)]
+            HRESULT ReplacePage([NativeTypeName("EXPPS")] uint uPageID, [NativeTypeName("LPFNSVADDPROPSHEETPAGE")] delegate* unmanaged<HPROPSHEETPAGE, LPARAM, BOOL> pfnReplaceWith, LPARAM lParam);
         }
 
         public partial struct Vtbl

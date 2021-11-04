@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("38C3E585-FF17-412C-9150-4FC6F9D72A28")]
     [NativeTypeName("struct ID3D12GraphicsCommandList2 : ID3D12GraphicsCommandList1")]
     [NativeInheritance("ID3D12GraphicsCommandList1")]
-    public unsafe partial struct ID3D12GraphicsCommandList2
+    public unsafe partial struct ID3D12GraphicsCommandList2 : ID3D12GraphicsCommandList2.Interface
     {
         public void** lpVtbl;
 
@@ -485,6 +485,12 @@ namespace TerraFX.Interop
         public void WriteBufferImmediate(uint Count, [NativeTypeName("const D3D12_WRITEBUFFERIMMEDIATE_PARAMETER *")] D3D12_WRITEBUFFERIMMEDIATE_PARAMETER* pParams, [NativeTypeName("const D3D12_WRITEBUFFERIMMEDIATE_MODE *")] D3D12_WRITEBUFFERIMMEDIATE_MODE* pModes)
         {
             ((delegate* unmanaged<ID3D12GraphicsCommandList2*, uint, D3D12_WRITEBUFFERIMMEDIATE_PARAMETER*, D3D12_WRITEBUFFERIMMEDIATE_MODE*, void>)(lpVtbl[66]))((ID3D12GraphicsCommandList2*)Unsafe.AsPointer(ref this), Count, pParams, pModes);
+        }
+
+        public interface Interface : ID3D12GraphicsCommandList1.Interface
+        {
+            [VtblIndex(66)]
+            void WriteBufferImmediate(uint Count, [NativeTypeName("const D3D12_WRITEBUFFERIMMEDIATE_PARAMETER *")] D3D12_WRITEBUFFERIMMEDIATE_PARAMETER* pParams, [NativeTypeName("const D3D12_WRITEBUFFERIMMEDIATE_MODE *")] D3D12_WRITEBUFFERIMMEDIATE_MODE* pModes);
         }
 
         public partial struct Vtbl

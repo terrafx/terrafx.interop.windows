@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("2633066B-4514-4C7A-8FD8-12EA98059D18")]
     [NativeTypeName("struct IDXGIDecodeSwapChain : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IDXGIDecodeSwapChain
+    public unsafe partial struct IDXGIDecodeSwapChain : IDXGIDecodeSwapChain.Interface
     {
         public void** lpVtbl;
 
@@ -100,6 +100,36 @@ namespace TerraFX.Interop
         public DXGI_MULTIPLANE_OVERLAY_YCbCr_FLAGS GetColorSpace()
         {
             return ((delegate* unmanaged<IDXGIDecodeSwapChain*, DXGI_MULTIPLANE_OVERLAY_YCbCr_FLAGS>)(lpVtbl[11]))((IDXGIDecodeSwapChain*)Unsafe.AsPointer(ref this));
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT PresentBuffer(uint BufferToPresent, uint SyncInterval, uint Flags);
+
+            [VtblIndex(4)]
+            HRESULT SetSourceRect([NativeTypeName("const RECT *")] RECT* pRect);
+
+            [VtblIndex(5)]
+            HRESULT SetTargetRect([NativeTypeName("const RECT *")] RECT* pRect);
+
+            [VtblIndex(6)]
+            HRESULT SetDestSize(uint Width, uint Height);
+
+            [VtblIndex(7)]
+            HRESULT GetSourceRect(RECT* pRect);
+
+            [VtblIndex(8)]
+            HRESULT GetTargetRect(RECT* pRect);
+
+            [VtblIndex(9)]
+            HRESULT GetDestSize(uint* pWidth, uint* pHeight);
+
+            [VtblIndex(10)]
+            HRESULT SetColorSpace(DXGI_MULTIPLANE_OVERLAY_YCbCr_FLAGS ColorSpace);
+
+            [VtblIndex(11)]
+            DXGI_MULTIPLANE_OVERLAY_YCbCr_FLAGS GetColorSpace();
         }
 
         public partial struct Vtbl

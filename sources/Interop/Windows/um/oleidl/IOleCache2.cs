@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("00000128-0000-0000-C000-000000000046")]
     [NativeTypeName("struct IOleCache2 : IOleCache")]
     [NativeInheritance("IOleCache")]
-    public unsafe partial struct IOleCache2
+    public unsafe partial struct IOleCache2 : IOleCache2.Interface
     {
         public void** lpVtbl;
 
@@ -86,6 +86,15 @@ namespace TerraFX.Interop
         public HRESULT DiscardCache([NativeTypeName("DWORD")] uint dwDiscardOptions)
         {
             return ((delegate* unmanaged<IOleCache2*, uint, int>)(lpVtbl[9]))((IOleCache2*)Unsafe.AsPointer(ref this), dwDiscardOptions);
+        }
+
+        public interface Interface : IOleCache.Interface
+        {
+            [VtblIndex(8)]
+            HRESULT UpdateCache([NativeTypeName("LPDATAOBJECT")] IDataObject* pDataObject, [NativeTypeName("DWORD")] uint grfUpdf, [NativeTypeName("LPVOID")] void* pReserved);
+
+            [VtblIndex(9)]
+            HRESULT DiscardCache([NativeTypeName("DWORD")] uint dwDiscardOptions);
         }
 
         public partial struct Vtbl

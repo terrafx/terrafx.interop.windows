@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("305104BC-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct IDocumentEvent : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct IDocumentEvent
+    public unsafe partial struct IDocumentEvent : IDocumentEvent.Interface
     {
         public void** lpVtbl;
 
@@ -72,6 +72,12 @@ namespace TerraFX.Interop
         public HRESULT createEvent([NativeTypeName("BSTR")] ushort* eventType, IDOMEvent** ppEvent)
         {
             return ((delegate* unmanaged<IDocumentEvent*, ushort*, IDOMEvent**, int>)(lpVtbl[7]))((IDocumentEvent*)Unsafe.AsPointer(ref this), eventType, ppEvent);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT createEvent([NativeTypeName("BSTR")] ushort* eventType, IDOMEvent** ppEvent);
         }
 
         public partial struct Vtbl

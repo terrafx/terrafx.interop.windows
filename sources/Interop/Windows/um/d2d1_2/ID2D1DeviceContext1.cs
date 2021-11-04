@@ -20,7 +20,7 @@ namespace TerraFX.Interop
     [Guid("D37F57E4-6908-459F-A199-E72F24F79987")]
     [NativeTypeName("struct ID2D1DeviceContext1 : ID2D1DeviceContext")]
     [NativeInheritance("ID2D1DeviceContext")]
-    public unsafe partial struct ID2D1DeviceContext1
+    public unsafe partial struct ID2D1DeviceContext1 : ID2D1DeviceContext1.Interface
     {
         public void** lpVtbl;
 
@@ -834,6 +834,18 @@ namespace TerraFX.Interop
         public void DrawGeometryRealization(ID2D1GeometryRealization* geometryRealization, ID2D1Brush* brush)
         {
             ((delegate* unmanaged<ID2D1DeviceContext1*, ID2D1GeometryRealization*, ID2D1Brush*, void>)(lpVtbl[94]))((ID2D1DeviceContext1*)Unsafe.AsPointer(ref this), geometryRealization, brush);
+        }
+
+        public interface Interface : ID2D1DeviceContext.Interface
+        {
+            [VtblIndex(92)]
+            HRESULT CreateFilledGeometryRealization(ID2D1Geometry* geometry, float flatteningTolerance, ID2D1GeometryRealization** geometryRealization);
+
+            [VtblIndex(93)]
+            HRESULT CreateStrokedGeometryRealization(ID2D1Geometry* geometry, float flatteningTolerance, float strokeWidth, ID2D1StrokeStyle* strokeStyle, ID2D1GeometryRealization** geometryRealization);
+
+            [VtblIndex(94)]
+            void DrawGeometryRealization(ID2D1GeometryRealization* geometryRealization, ID2D1Brush* brush);
         }
 
         public partial struct Vtbl

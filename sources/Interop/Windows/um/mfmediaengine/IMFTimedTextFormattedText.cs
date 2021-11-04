@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("E13AF3C1-4D47-4354-B1F5-E83AE0ECAE60")]
     [NativeTypeName("struct IMFTimedTextFormattedText : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IMFTimedTextFormattedText
+    public unsafe partial struct IMFTimedTextFormattedText : IMFTimedTextFormattedText.Interface
     {
         public void** lpVtbl;
 
@@ -59,6 +59,19 @@ namespace TerraFX.Interop
         public HRESULT GetSubformatting([NativeTypeName("DWORD")] uint index, [NativeTypeName("DWORD *")] uint* firstChar, [NativeTypeName("DWORD *")] uint* charLength, IMFTimedTextStyle** style)
         {
             return ((delegate* unmanaged<IMFTimedTextFormattedText*, uint, uint*, uint*, IMFTimedTextStyle**, int>)(lpVtbl[5]))((IMFTimedTextFormattedText*)Unsafe.AsPointer(ref this), index, firstChar, charLength, style);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetText([NativeTypeName("LPWSTR *")] ushort** text);
+
+            [VtblIndex(4)]
+            [return: NativeTypeName("DWORD")]
+            uint GetSubformattingCount();
+
+            [VtblIndex(5)]
+            HRESULT GetSubformatting([NativeTypeName("DWORD")] uint index, [NativeTypeName("DWORD *")] uint* firstChar, [NativeTypeName("DWORD *")] uint* charLength, IMFTimedTextStyle** style);
         }
 
         public partial struct Vtbl

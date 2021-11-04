@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("3050F1D8-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct IHTMLBodyElement : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct IHTMLBodyElement
+    public unsafe partial struct IHTMLBodyElement : IHTMLBodyElement.Interface
     {
         public void** lpVtbl;
 
@@ -310,6 +310,114 @@ namespace TerraFX.Interop
         public HRESULT createTextRange(IHTMLTxtRange** range)
         {
             return ((delegate* unmanaged<IHTMLBodyElement*, IHTMLTxtRange**, int>)(lpVtbl[41]))((IHTMLBodyElement*)Unsafe.AsPointer(ref this), range);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT put_background([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(8)]
+            HRESULT get_background([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(9)]
+            HRESULT put_bgProperties([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(10)]
+            HRESULT get_bgProperties([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(11)]
+            HRESULT put_leftMargin(VARIANT v);
+
+            [VtblIndex(12)]
+            HRESULT get_leftMargin(VARIANT* p);
+
+            [VtblIndex(13)]
+            HRESULT put_topMargin(VARIANT v);
+
+            [VtblIndex(14)]
+            HRESULT get_topMargin(VARIANT* p);
+
+            [VtblIndex(15)]
+            HRESULT put_rightMargin(VARIANT v);
+
+            [VtblIndex(16)]
+            HRESULT get_rightMargin(VARIANT* p);
+
+            [VtblIndex(17)]
+            HRESULT put_bottomMargin(VARIANT v);
+
+            [VtblIndex(18)]
+            HRESULT get_bottomMargin(VARIANT* p);
+
+            [VtblIndex(19)]
+            HRESULT put_noWrap([NativeTypeName("VARIANT_BOOL")] short v);
+
+            [VtblIndex(20)]
+            HRESULT get_noWrap([NativeTypeName("VARIANT_BOOL *")] short* p);
+
+            [VtblIndex(21)]
+            HRESULT put_bgColor(VARIANT v);
+
+            [VtblIndex(22)]
+            HRESULT get_bgColor(VARIANT* p);
+
+            [VtblIndex(23)]
+            HRESULT put_text(VARIANT v);
+
+            [VtblIndex(24)]
+            HRESULT get_text(VARIANT* p);
+
+            [VtblIndex(25)]
+            HRESULT put_link(VARIANT v);
+
+            [VtblIndex(26)]
+            HRESULT get_link(VARIANT* p);
+
+            [VtblIndex(27)]
+            HRESULT put_vLink(VARIANT v);
+
+            [VtblIndex(28)]
+            HRESULT get_vLink(VARIANT* p);
+
+            [VtblIndex(29)]
+            HRESULT put_aLink(VARIANT v);
+
+            [VtblIndex(30)]
+            HRESULT get_aLink(VARIANT* p);
+
+            [VtblIndex(31)]
+            HRESULT put_onload(VARIANT v);
+
+            [VtblIndex(32)]
+            HRESULT get_onload(VARIANT* p);
+
+            [VtblIndex(33)]
+            HRESULT put_onunload(VARIANT v);
+
+            [VtblIndex(34)]
+            HRESULT get_onunload(VARIANT* p);
+
+            [VtblIndex(35)]
+            HRESULT put_scroll([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(36)]
+            HRESULT get_scroll([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(37)]
+            HRESULT put_onselect(VARIANT v);
+
+            [VtblIndex(38)]
+            HRESULT get_onselect(VARIANT* p);
+
+            [VtblIndex(39)]
+            HRESULT put_onbeforeunload(VARIANT v);
+
+            [VtblIndex(40)]
+            HRESULT get_onbeforeunload(VARIANT* p);
+
+            [VtblIndex(41)]
+            HRESULT createTextRange(IHTMLTxtRange** range);
         }
 
         public partial struct Vtbl

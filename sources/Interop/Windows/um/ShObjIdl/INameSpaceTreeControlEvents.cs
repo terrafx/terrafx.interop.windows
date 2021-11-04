@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("93D77985-B3D8-4484-8318-672CDDA002CE")]
     [NativeTypeName("struct INameSpaceTreeControlEvents : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct INameSpaceTreeControlEvents
+    public unsafe partial struct INameSpaceTreeControlEvents : INameSpaceTreeControlEvents.Interface
     {
         public void** lpVtbl;
 
@@ -163,6 +163,63 @@ namespace TerraFX.Interop
         public HRESULT OnGetDefaultIconIndex(IShellItem* psi, int* piDefaultIcon, int* piOpenIcon)
         {
             return ((delegate* unmanaged<INameSpaceTreeControlEvents*, IShellItem*, int*, int*, int>)(lpVtbl[20]))((INameSpaceTreeControlEvents*)Unsafe.AsPointer(ref this), psi, piDefaultIcon, piOpenIcon);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT OnItemClick(IShellItem* psi, [NativeTypeName("NSTCEHITTEST")] uint nstceHitTest, [NativeTypeName("NSTCECLICKTYPE")] uint nstceClickType);
+
+            [VtblIndex(4)]
+            HRESULT OnPropertyItemCommit(IShellItem* psi);
+
+            [VtblIndex(5)]
+            HRESULT OnItemStateChanging(IShellItem* psi, [NativeTypeName("NSTCITEMSTATE")] uint nstcisMask, [NativeTypeName("NSTCITEMSTATE")] uint nstcisState);
+
+            [VtblIndex(6)]
+            HRESULT OnItemStateChanged(IShellItem* psi, [NativeTypeName("NSTCITEMSTATE")] uint nstcisMask, [NativeTypeName("NSTCITEMSTATE")] uint nstcisState);
+
+            [VtblIndex(7)]
+            HRESULT OnSelectionChanged(IShellItemArray* psiaSelection);
+
+            [VtblIndex(8)]
+            HRESULT OnKeyboardInput(uint uMsg, WPARAM wParam, LPARAM lParam);
+
+            [VtblIndex(9)]
+            HRESULT OnBeforeExpand(IShellItem* psi);
+
+            [VtblIndex(10)]
+            HRESULT OnAfterExpand(IShellItem* psi);
+
+            [VtblIndex(11)]
+            HRESULT OnBeginLabelEdit(IShellItem* psi);
+
+            [VtblIndex(12)]
+            HRESULT OnEndLabelEdit(IShellItem* psi);
+
+            [VtblIndex(13)]
+            HRESULT OnGetToolTip(IShellItem* psi, [NativeTypeName("LPWSTR")] ushort* pszTip, int cchTip);
+
+            [VtblIndex(14)]
+            HRESULT OnBeforeItemDelete(IShellItem* psi);
+
+            [VtblIndex(15)]
+            HRESULT OnItemAdded(IShellItem* psi, BOOL fIsRoot);
+
+            [VtblIndex(16)]
+            HRESULT OnItemDeleted(IShellItem* psi, BOOL fIsRoot);
+
+            [VtblIndex(17)]
+            HRESULT OnBeforeContextMenu(IShellItem* psi, [NativeTypeName("const IID &")] Guid* riid, void** ppv);
+
+            [VtblIndex(18)]
+            HRESULT OnAfterContextMenu(IShellItem* psi, IContextMenu* pcmIn, [NativeTypeName("const IID &")] Guid* riid, void** ppv);
+
+            [VtblIndex(19)]
+            HRESULT OnBeforeStateImageChange(IShellItem* psi);
+
+            [VtblIndex(20)]
+            HRESULT OnGetDefaultIconIndex(IShellItem* psi, int* piDefaultIcon, int* piOpenIcon);
         }
 
         public partial struct Vtbl

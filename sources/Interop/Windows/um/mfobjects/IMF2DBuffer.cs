@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("7DC9D5F9-9ED9-44EC-9BBF-0600BB589FBB")]
     [NativeTypeName("struct IMF2DBuffer : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IMF2DBuffer
+    public unsafe partial struct IMF2DBuffer : IMF2DBuffer.Interface
     {
         public void** lpVtbl;
 
@@ -86,6 +86,30 @@ namespace TerraFX.Interop
         public HRESULT ContiguousCopyFrom([NativeTypeName("const BYTE *")] byte* pbSrcBuffer, [NativeTypeName("DWORD")] uint cbSrcBuffer)
         {
             return ((delegate* unmanaged<IMF2DBuffer*, byte*, uint, int>)(lpVtbl[9]))((IMF2DBuffer*)Unsafe.AsPointer(ref this), pbSrcBuffer, cbSrcBuffer);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT Lock2D(byte** ppbScanline0, [NativeTypeName("LONG *")] int* plPitch);
+
+            [VtblIndex(4)]
+            HRESULT Unlock2D();
+
+            [VtblIndex(5)]
+            HRESULT GetScanline0AndPitch(byte** pbScanline0, [NativeTypeName("LONG *")] int* plPitch);
+
+            [VtblIndex(6)]
+            HRESULT IsContiguousFormat(BOOL* pfIsContiguous);
+
+            [VtblIndex(7)]
+            HRESULT GetContiguousLength([NativeTypeName("DWORD *")] uint* pcbLength);
+
+            [VtblIndex(8)]
+            HRESULT ContiguousCopyTo(byte* pbDestBuffer, [NativeTypeName("DWORD")] uint cbDestBuffer);
+
+            [VtblIndex(9)]
+            HRESULT ContiguousCopyFrom([NativeTypeName("const BYTE *")] byte* pbSrcBuffer, [NativeTypeName("DWORD")] uint cbSrcBuffer);
         }
 
         public partial struct Vtbl

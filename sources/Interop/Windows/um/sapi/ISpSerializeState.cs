@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("21B501A0-0EC7-46C9-92C3-A2BC784C54B9")]
     [NativeTypeName("struct ISpSerializeState : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct ISpSerializeState
+    public unsafe partial struct ISpSerializeState : ISpSerializeState.Interface
     {
         public void** lpVtbl;
 
@@ -51,6 +51,15 @@ namespace TerraFX.Interop
         public HRESULT SetSerializedState(byte* pbData, [NativeTypeName("ULONG")] uint ulSize, [NativeTypeName("DWORD")] uint dwReserved)
         {
             return ((delegate* unmanaged<ISpSerializeState*, byte*, uint, uint, int>)(lpVtbl[4]))((ISpSerializeState*)Unsafe.AsPointer(ref this), pbData, ulSize, dwReserved);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetSerializedState(byte** ppbData, [NativeTypeName("ULONG *")] uint* pulSize, [NativeTypeName("DWORD")] uint dwReserved);
+
+            [VtblIndex(4)]
+            HRESULT SetSerializedState(byte* pbData, [NativeTypeName("ULONG")] uint ulSize, [NativeTypeName("DWORD")] uint dwReserved);
         }
 
         public partial struct Vtbl

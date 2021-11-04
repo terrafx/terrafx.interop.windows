@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("00000029-0000-0000-C000-000000000046")]
     [NativeTypeName("struct ICancelMethodCalls : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct ICancelMethodCalls
+    public unsafe partial struct ICancelMethodCalls : ICancelMethodCalls.Interface
     {
         public void** lpVtbl;
 
@@ -51,6 +51,15 @@ namespace TerraFX.Interop
         public HRESULT TestCancel()
         {
             return ((delegate* unmanaged<ICancelMethodCalls*, int>)(lpVtbl[4]))((ICancelMethodCalls*)Unsafe.AsPointer(ref this));
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT Cancel([NativeTypeName("ULONG")] uint ulSeconds);
+
+            [VtblIndex(4)]
+            HRESULT TestCancel();
         }
 
         public partial struct Vtbl

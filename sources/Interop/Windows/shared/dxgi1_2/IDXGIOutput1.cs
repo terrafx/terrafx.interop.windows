@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("00CDDEA8-939B-4B83-A340-A685226666CC")]
     [NativeTypeName("struct IDXGIOutput1 : IDXGIOutput")]
     [NativeInheritance("IDXGIOutput")]
-    public unsafe partial struct IDXGIOutput1
+    public unsafe partial struct IDXGIOutput1 : IDXGIOutput1.Interface
     {
         public void** lpVtbl;
 
@@ -177,6 +177,21 @@ namespace TerraFX.Interop
         public HRESULT DuplicateOutput(IUnknown* pDevice, IDXGIOutputDuplication** ppOutputDuplication)
         {
             return ((delegate* unmanaged<IDXGIOutput1*, IUnknown*, IDXGIOutputDuplication**, int>)(lpVtbl[22]))((IDXGIOutput1*)Unsafe.AsPointer(ref this), pDevice, ppOutputDuplication);
+        }
+
+        public interface Interface : IDXGIOutput.Interface
+        {
+            [VtblIndex(19)]
+            HRESULT GetDisplayModeList1(DXGI_FORMAT EnumFormat, uint Flags, uint* pNumModes, DXGI_MODE_DESC1* pDesc);
+
+            [VtblIndex(20)]
+            HRESULT FindClosestMatchingMode1([NativeTypeName("const DXGI_MODE_DESC1 *")] DXGI_MODE_DESC1* pModeToMatch, DXGI_MODE_DESC1* pClosestMatch, IUnknown* pConcernedDevice);
+
+            [VtblIndex(21)]
+            HRESULT GetDisplaySurfaceData1(IDXGIResource* pDestination);
+
+            [VtblIndex(22)]
+            HRESULT DuplicateOutput(IUnknown* pDevice, IDXGIOutputDuplication** ppOutputDuplication);
         }
 
         public partial struct Vtbl

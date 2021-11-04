@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("AAEC54AF-8F85-4924-944D-B79D39D72E19")]
     [NativeTypeName("struct ISpeechXMLRecoResult : ISpeechRecoResult")]
     [NativeInheritance("ISpeechRecoResult")]
-    public unsafe partial struct ISpeechXMLRecoResult
+    public unsafe partial struct ISpeechXMLRecoResult : ISpeechXMLRecoResult.Interface
     {
         public void** lpVtbl;
 
@@ -149,6 +149,15 @@ namespace TerraFX.Interop
         public HRESULT GetXMLErrorInfo([NativeTypeName("long *")] int* LineNumber, [NativeTypeName("BSTR *")] ushort** ScriptLine, [NativeTypeName("BSTR *")] ushort** Source, [NativeTypeName("BSTR *")] ushort** Description, [NativeTypeName("long *")] int* ResultCode, [NativeTypeName("VARIANT_BOOL *")] short* IsError)
         {
             return ((delegate* unmanaged<ISpeechXMLRecoResult*, int*, ushort**, ushort**, ushort**, int*, short*, int>)(lpVtbl[18]))((ISpeechXMLRecoResult*)Unsafe.AsPointer(ref this), LineNumber, ScriptLine, Source, Description, ResultCode, IsError);
+        }
+
+        public interface Interface : ISpeechRecoResult.Interface
+        {
+            [VtblIndex(17)]
+            HRESULT GetXMLResult(SPXMLRESULTOPTIONS Options, [NativeTypeName("BSTR *")] ushort** pResult);
+
+            [VtblIndex(18)]
+            HRESULT GetXMLErrorInfo([NativeTypeName("long *")] int* LineNumber, [NativeTypeName("BSTR *")] ushort** ScriptLine, [NativeTypeName("BSTR *")] ushort** Source, [NativeTypeName("BSTR *")] ushort** Description, [NativeTypeName("long *")] int* ResultCode, [NativeTypeName("VARIANT_BOOL *")] short* IsError);
         }
 
         public partial struct Vtbl

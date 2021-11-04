@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("4579BB7C-741D-4161-B5A1-47BD3B78AD9B")]
     [NativeTypeName("struct IAppxManifestReader4 : IAppxManifestReader3")]
     [NativeInheritance("IAppxManifestReader3")]
-    public unsafe partial struct IAppxManifestReader4
+    public unsafe partial struct IAppxManifestReader4 : IAppxManifestReader4.Interface
     {
         public void** lpVtbl;
 
@@ -128,6 +128,12 @@ namespace TerraFX.Interop
         public HRESULT GetOptionalPackageInfo(IAppxManifestOptionalPackageInfo** optionalPackageInfo)
         {
             return ((delegate* unmanaged<IAppxManifestReader4*, IAppxManifestOptionalPackageInfo**, int>)(lpVtbl[15]))((IAppxManifestReader4*)Unsafe.AsPointer(ref this), optionalPackageInfo);
+        }
+
+        public interface Interface : IAppxManifestReader3.Interface
+        {
+            [VtblIndex(15)]
+            HRESULT GetOptionalPackageInfo(IAppxManifestOptionalPackageInfo** optionalPackageInfo);
         }
 
         public partial struct Vtbl

@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("B859EE5A-D838-4B5B-A2E8-1ADC7D93DB48")]
     [NativeTypeName("struct IDWriteFactory : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IDWriteFactory
+    public unsafe partial struct IDWriteFactory : IDWriteFactory.Interface
     {
         public void** lpVtbl;
 
@@ -184,6 +184,72 @@ namespace TerraFX.Interop
         public HRESULT CreateGlyphRunAnalysis([NativeTypeName("const DWRITE_GLYPH_RUN *")] DWRITE_GLYPH_RUN* glyphRun, float pixelsPerDip, [NativeTypeName("const DWRITE_MATRIX *")] DWRITE_MATRIX* transform, DWRITE_RENDERING_MODE renderingMode, DWRITE_MEASURING_MODE measuringMode, float baselineOriginX, float baselineOriginY, IDWriteGlyphRunAnalysis** glyphRunAnalysis)
         {
             return ((delegate* unmanaged<IDWriteFactory*, DWRITE_GLYPH_RUN*, float, DWRITE_MATRIX*, DWRITE_RENDERING_MODE, DWRITE_MEASURING_MODE, float, float, IDWriteGlyphRunAnalysis**, int>)(lpVtbl[23]))((IDWriteFactory*)Unsafe.AsPointer(ref this), glyphRun, pixelsPerDip, transform, renderingMode, measuringMode, baselineOriginX, baselineOriginY, glyphRunAnalysis);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetSystemFontCollection(IDWriteFontCollection** fontCollection, [Optional] BOOL checkForUpdates);
+
+            [VtblIndex(4)]
+            HRESULT CreateCustomFontCollection(IDWriteFontCollectionLoader* collectionLoader, [NativeTypeName("const void *")] void* collectionKey, [NativeTypeName("UINT32")] uint collectionKeySize, IDWriteFontCollection** fontCollection);
+
+            [VtblIndex(5)]
+            HRESULT RegisterFontCollectionLoader(IDWriteFontCollectionLoader* fontCollectionLoader);
+
+            [VtblIndex(6)]
+            HRESULT UnregisterFontCollectionLoader(IDWriteFontCollectionLoader* fontCollectionLoader);
+
+            [VtblIndex(7)]
+            HRESULT CreateFontFileReference([NativeTypeName("const WCHAR *")] ushort* filePath, [NativeTypeName("const FILETIME *")] FILETIME* lastWriteTime, IDWriteFontFile** fontFile);
+
+            [VtblIndex(8)]
+            HRESULT CreateCustomFontFileReference([NativeTypeName("const void *")] void* fontFileReferenceKey, [NativeTypeName("UINT32")] uint fontFileReferenceKeySize, IDWriteFontFileLoader* fontFileLoader, IDWriteFontFile** fontFile);
+
+            [VtblIndex(9)]
+            HRESULT CreateFontFace(DWRITE_FONT_FACE_TYPE fontFaceType, [NativeTypeName("UINT32")] uint numberOfFiles, [NativeTypeName("IDWriteFontFile *const *")] IDWriteFontFile** fontFiles, [NativeTypeName("UINT32")] uint faceIndex, DWRITE_FONT_SIMULATIONS fontFaceSimulationFlags, IDWriteFontFace** fontFace);
+
+            [VtblIndex(10)]
+            HRESULT CreateRenderingParams(IDWriteRenderingParams** renderingParams);
+
+            [VtblIndex(11)]
+            HRESULT CreateMonitorRenderingParams(HMONITOR monitor, IDWriteRenderingParams** renderingParams);
+
+            [VtblIndex(12)]
+            HRESULT CreateCustomRenderingParams(float gamma, float enhancedContrast, float clearTypeLevel, DWRITE_PIXEL_GEOMETRY pixelGeometry, DWRITE_RENDERING_MODE renderingMode, IDWriteRenderingParams** renderingParams);
+
+            [VtblIndex(13)]
+            HRESULT RegisterFontFileLoader(IDWriteFontFileLoader* fontFileLoader);
+
+            [VtblIndex(14)]
+            HRESULT UnregisterFontFileLoader(IDWriteFontFileLoader* fontFileLoader);
+
+            [VtblIndex(15)]
+            HRESULT CreateTextFormat([NativeTypeName("const WCHAR *")] ushort* fontFamilyName, IDWriteFontCollection* fontCollection, DWRITE_FONT_WEIGHT fontWeight, DWRITE_FONT_STYLE fontStyle, DWRITE_FONT_STRETCH fontStretch, float fontSize, [NativeTypeName("const WCHAR *")] ushort* localeName, IDWriteTextFormat** textFormat);
+
+            [VtblIndex(16)]
+            HRESULT CreateTypography(IDWriteTypography** typography);
+
+            [VtblIndex(17)]
+            HRESULT GetGdiInterop(IDWriteGdiInterop** gdiInterop);
+
+            [VtblIndex(18)]
+            HRESULT CreateTextLayout([NativeTypeName("const WCHAR *")] ushort* @string, [NativeTypeName("UINT32")] uint stringLength, IDWriteTextFormat* textFormat, float maxWidth, float maxHeight, IDWriteTextLayout** textLayout);
+
+            [VtblIndex(19)]
+            HRESULT CreateGdiCompatibleTextLayout([NativeTypeName("const WCHAR *")] ushort* @string, [NativeTypeName("UINT32")] uint stringLength, IDWriteTextFormat* textFormat, float layoutWidth, float layoutHeight, float pixelsPerDip, [NativeTypeName("const DWRITE_MATRIX *")] DWRITE_MATRIX* transform, BOOL useGdiNatural, IDWriteTextLayout** textLayout);
+
+            [VtblIndex(20)]
+            HRESULT CreateEllipsisTrimmingSign(IDWriteTextFormat* textFormat, IDWriteInlineObject** trimmingSign);
+
+            [VtblIndex(21)]
+            HRESULT CreateTextAnalyzer(IDWriteTextAnalyzer** textAnalyzer);
+
+            [VtblIndex(22)]
+            HRESULT CreateNumberSubstitution(DWRITE_NUMBER_SUBSTITUTION_METHOD substitutionMethod, [NativeTypeName("const WCHAR *")] ushort* localeName, BOOL ignoreUserOverride, IDWriteNumberSubstitution** numberSubstitution);
+
+            [VtblIndex(23)]
+            HRESULT CreateGlyphRunAnalysis([NativeTypeName("const DWRITE_GLYPH_RUN *")] DWRITE_GLYPH_RUN* glyphRun, float pixelsPerDip, [NativeTypeName("const DWRITE_MATRIX *")] DWRITE_MATRIX* transform, DWRITE_RENDERING_MODE renderingMode, DWRITE_MEASURING_MODE measuringMode, float baselineOriginX, float baselineOriginY, IDWriteGlyphRunAnalysis** glyphRunAnalysis);
         }
 
         public partial struct Vtbl

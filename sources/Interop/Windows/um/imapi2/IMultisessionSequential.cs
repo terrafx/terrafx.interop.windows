@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("27354151-7F64-5B0F-8F00-5D77AFBE261E")]
     [NativeTypeName("struct IMultisessionSequential : IMultisession")]
     [NativeInheritance("IMultisession")]
-    public unsafe partial struct IMultisessionSequential
+    public unsafe partial struct IMultisessionSequential : IMultisessionSequential.Interface
     {
         public void** lpVtbl;
 
@@ -128,6 +128,24 @@ namespace TerraFX.Interop
         public HRESULT get_FreeSectorsOnMedia([NativeTypeName("LONG *")] int* value)
         {
             return ((delegate* unmanaged<IMultisessionSequential*, int*, int>)(lpVtbl[15]))((IMultisessionSequential*)Unsafe.AsPointer(ref this), value);
+        }
+
+        public interface Interface : IMultisession.Interface
+        {
+            [VtblIndex(11)]
+            HRESULT get_IsFirstDataSession([NativeTypeName("VARIANT_BOOL *")] short* value);
+
+            [VtblIndex(12)]
+            HRESULT get_StartAddressOfPreviousSession([NativeTypeName("LONG *")] int* value);
+
+            [VtblIndex(13)]
+            HRESULT get_LastWrittenAddressOfPreviousSession([NativeTypeName("LONG *")] int* value);
+
+            [VtblIndex(14)]
+            HRESULT get_NextWritableAddress([NativeTypeName("LONG *")] int* value);
+
+            [VtblIndex(15)]
+            HRESULT get_FreeSectorsOnMedia([NativeTypeName("LONG *")] int* value);
         }
 
         public partial struct Vtbl

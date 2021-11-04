@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("77395441-1C8F-4555-8683-F50DAB0FE792")]
     [NativeTypeName("struct ID2D1ImageSourceFromWic : ID2D1ImageSource")]
     [NativeInheritance("ID2D1ImageSource")]
-    public unsafe partial struct ID2D1ImageSourceFromWic
+    public unsafe partial struct ID2D1ImageSourceFromWic : ID2D1ImageSourceFromWic.Interface
     {
         public void** lpVtbl;
 
@@ -79,6 +79,18 @@ namespace TerraFX.Interop
         public void GetSource(IWICBitmapSource** wicBitmapSource)
         {
             ((delegate* unmanaged<ID2D1ImageSourceFromWic*, IWICBitmapSource**, void>)(lpVtbl[8]))((ID2D1ImageSourceFromWic*)Unsafe.AsPointer(ref this), wicBitmapSource);
+        }
+
+        public interface Interface : ID2D1ImageSource.Interface
+        {
+            [VtblIndex(6)]
+            HRESULT EnsureCached([NativeTypeName("const D2D1_RECT_U *")] D2D_RECT_U* rectangleToFill);
+
+            [VtblIndex(7)]
+            HRESULT TrimCache([NativeTypeName("const D2D1_RECT_U *")] D2D_RECT_U* rectangleToPreserve);
+
+            [VtblIndex(8)]
+            void GetSource(IWICBitmapSource** wicBitmapSource);
         }
 
         public partial struct Vtbl

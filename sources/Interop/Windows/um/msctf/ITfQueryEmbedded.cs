@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("0FAB9BDB-D250-4169-84E5-6BE118FDD7A8")]
     [NativeTypeName("struct ITfQueryEmbedded : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct ITfQueryEmbedded
+    public unsafe partial struct ITfQueryEmbedded : ITfQueryEmbedded.Interface
     {
         public void** lpVtbl;
 
@@ -44,6 +44,12 @@ namespace TerraFX.Interop
         public HRESULT QueryInsertEmbedded([NativeTypeName("const GUID *")] Guid* pguidService, [NativeTypeName("const FORMATETC *")] FORMATETC* pFormatEtc, BOOL* pfInsertable)
         {
             return ((delegate* unmanaged<ITfQueryEmbedded*, Guid*, FORMATETC*, BOOL*, int>)(lpVtbl[3]))((ITfQueryEmbedded*)Unsafe.AsPointer(ref this), pguidService, pFormatEtc, pfInsertable);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT QueryInsertEmbedded([NativeTypeName("const GUID *")] Guid* pguidService, [NativeTypeName("const FORMATETC *")] FORMATETC* pFormatEtc, BOOL* pfInsertable);
         }
 
         public partial struct Vtbl

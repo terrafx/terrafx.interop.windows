@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("B722BCC7-4E68-101B-A2BC-00AA00404770")]
     [NativeTypeName("struct IOleDocumentSite : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IOleDocumentSite
+    public unsafe partial struct IOleDocumentSite : IOleDocumentSite.Interface
     {
         public void** lpVtbl;
 
@@ -44,6 +44,12 @@ namespace TerraFX.Interop
         public HRESULT ActivateMe(IOleDocumentView* pViewToActivate)
         {
             return ((delegate* unmanaged<IOleDocumentSite*, IOleDocumentView*, int>)(lpVtbl[3]))((IOleDocumentSite*)Unsafe.AsPointer(ref this), pViewToActivate);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT ActivateMe(IOleDocumentView* pViewToActivate);
         }
 
         public partial struct Vtbl

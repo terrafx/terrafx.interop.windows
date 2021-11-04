@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("DEEC8D99-FA1D-4D82-84C2-2C8969944867")]
     [NativeTypeName("struct IMFSourceReaderCallback : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IMFSourceReaderCallback
+    public unsafe partial struct IMFSourceReaderCallback : IMFSourceReaderCallback.Interface
     {
         public void** lpVtbl;
 
@@ -58,6 +58,18 @@ namespace TerraFX.Interop
         public HRESULT OnEvent([NativeTypeName("DWORD")] uint dwStreamIndex, IMFMediaEvent* pEvent)
         {
             return ((delegate* unmanaged<IMFSourceReaderCallback*, uint, IMFMediaEvent*, int>)(lpVtbl[5]))((IMFSourceReaderCallback*)Unsafe.AsPointer(ref this), dwStreamIndex, pEvent);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT OnReadSample(HRESULT hrStatus, [NativeTypeName("DWORD")] uint dwStreamIndex, [NativeTypeName("DWORD")] uint dwStreamFlags, [NativeTypeName("LONGLONG")] long llTimestamp, IMFSample* pSample);
+
+            [VtblIndex(4)]
+            HRESULT OnFlush([NativeTypeName("DWORD")] uint dwStreamIndex);
+
+            [VtblIndex(5)]
+            HRESULT OnEvent([NativeTypeName("DWORD")] uint dwStreamIndex, IMFMediaEvent* pEvent);
         }
 
         public partial struct Vtbl

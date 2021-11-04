@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("3050F6E0-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct IHTMLChangePlayback : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IHTMLChangePlayback
+    public unsafe partial struct IHTMLChangePlayback : IHTMLChangePlayback.Interface
     {
         public void** lpVtbl;
 
@@ -44,6 +44,12 @@ namespace TerraFX.Interop
         public HRESULT ExecChange(byte* pbRecord, BOOL fForward)
         {
             return ((delegate* unmanaged<IHTMLChangePlayback*, byte*, BOOL, int>)(lpVtbl[3]))((IHTMLChangePlayback*)Unsafe.AsPointer(ref this), pbRecord, fForward);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT ExecChange(byte* pbRecord, BOOL fForward);
         }
 
         public partial struct Vtbl

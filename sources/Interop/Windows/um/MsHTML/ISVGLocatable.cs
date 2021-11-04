@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("305104DB-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct ISVGLocatable : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct ISVGLocatable
+    public unsafe partial struct ISVGLocatable : ISVGLocatable.Interface
     {
         public void** lpVtbl;
 
@@ -107,6 +107,27 @@ namespace TerraFX.Interop
         public HRESULT getTransformToElement(ISVGElement* pElement, ISVGMatrix** ppResult)
         {
             return ((delegate* unmanaged<ISVGLocatable*, ISVGElement*, ISVGMatrix**, int>)(lpVtbl[12]))((ISVGLocatable*)Unsafe.AsPointer(ref this), pElement, ppResult);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT get_nearestViewportElement(ISVGElement** p);
+
+            [VtblIndex(8)]
+            HRESULT get_farthestViewportElement(ISVGElement** p);
+
+            [VtblIndex(9)]
+            HRESULT getBBox(ISVGRect** ppResult);
+
+            [VtblIndex(10)]
+            HRESULT getCTM(ISVGMatrix** ppResult);
+
+            [VtblIndex(11)]
+            HRESULT getScreenCTM(ISVGMatrix** ppResult);
+
+            [VtblIndex(12)]
+            HRESULT getTransformToElement(ISVGElement* pElement, ISVGMatrix** ppResult);
         }
 
         public partial struct Vtbl

@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("6FDA83A7-B84C-4E38-9AC8-C7BD22016B3D")]
     [NativeTypeName("struct ID3D12GraphicsCommandList3 : ID3D12GraphicsCommandList2")]
     [NativeInheritance("ID3D12GraphicsCommandList2")]
-    public unsafe partial struct ID3D12GraphicsCommandList3
+    public unsafe partial struct ID3D12GraphicsCommandList3 : ID3D12GraphicsCommandList3.Interface
     {
         public void** lpVtbl;
 
@@ -492,6 +492,12 @@ namespace TerraFX.Interop
         public void SetProtectedResourceSession(ID3D12ProtectedResourceSession* pProtectedResourceSession)
         {
             ((delegate* unmanaged<ID3D12GraphicsCommandList3*, ID3D12ProtectedResourceSession*, void>)(lpVtbl[67]))((ID3D12GraphicsCommandList3*)Unsafe.AsPointer(ref this), pProtectedResourceSession);
+        }
+
+        public interface Interface : ID3D12GraphicsCommandList2.Interface
+        {
+            [VtblIndex(67)]
+            void SetProtectedResourceSession(ID3D12ProtectedResourceSession* pProtectedResourceSession);
         }
 
         public partial struct Vtbl

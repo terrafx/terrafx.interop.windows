@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("C7A98E66-1010-492C-A1C8-C809E1F75905")]
     [NativeTypeName("struct IInternetProtocolEx : IInternetProtocol")]
     [NativeInheritance("IInternetProtocol")]
-    public unsafe partial struct IInternetProtocolEx
+    public unsafe partial struct IInternetProtocolEx : IInternetProtocolEx.Interface
     {
         public void** lpVtbl;
 
@@ -114,6 +114,12 @@ namespace TerraFX.Interop
         public HRESULT StartEx(IUri* pUri, IInternetProtocolSink* pOIProtSink, IInternetBindInfo* pOIBindInfo, [NativeTypeName("DWORD")] uint grfPI, HANDLE_PTR dwReserved)
         {
             return ((delegate* unmanaged<IInternetProtocolEx*, IUri*, IInternetProtocolSink*, IInternetBindInfo*, uint, HANDLE_PTR, int>)(lpVtbl[13]))((IInternetProtocolEx*)Unsafe.AsPointer(ref this), pUri, pOIProtSink, pOIBindInfo, grfPI, dwReserved);
+        }
+
+        public interface Interface : IInternetProtocol.Interface
+        {
+            [VtblIndex(13)]
+            HRESULT StartEx(IUri* pUri, IInternetProtocolSink* pOIProtSink, IInternetBindInfo* pOIBindInfo, [NativeTypeName("DWORD")] uint grfPI, HANDLE_PTR dwReserved);
         }
 
         public partial struct Vtbl

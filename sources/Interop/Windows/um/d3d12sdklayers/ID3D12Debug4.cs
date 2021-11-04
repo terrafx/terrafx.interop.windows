@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("014B816E-9EC5-4A2F-A845-FFBE441CE13A")]
     [NativeTypeName("struct ID3D12Debug4 : ID3D12Debug3")]
     [NativeInheritance("ID3D12Debug3")]
-    public unsafe partial struct ID3D12Debug4
+    public unsafe partial struct ID3D12Debug4 : ID3D12Debug4.Interface
     {
         public void** lpVtbl;
 
@@ -72,6 +72,12 @@ namespace TerraFX.Interop
         public void DisableDebugLayer()
         {
             ((delegate* unmanaged<ID3D12Debug4*, void>)(lpVtbl[7]))((ID3D12Debug4*)Unsafe.AsPointer(ref this));
+        }
+
+        public interface Interface : ID3D12Debug3.Interface
+        {
+            [VtblIndex(7)]
+            void DisableDebugLayer();
         }
 
         public partial struct Vtbl

@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("75CF3930-3244-4FE0-A8C8-E0BCB270B889")]
     [NativeTypeName("struct IAppxBlockMapBlock : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IAppxBlockMapBlock
+    public unsafe partial struct IAppxBlockMapBlock : IAppxBlockMapBlock.Interface
     {
         public void** lpVtbl;
 
@@ -51,6 +51,15 @@ namespace TerraFX.Interop
         public HRESULT GetCompressedSize([NativeTypeName("UINT32 *")] uint* size)
         {
             return ((delegate* unmanaged<IAppxBlockMapBlock*, uint*, int>)(lpVtbl[4]))((IAppxBlockMapBlock*)Unsafe.AsPointer(ref this), size);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetHash([NativeTypeName("UINT32 *")] uint* bufferSize, byte** buffer);
+
+            [VtblIndex(4)]
+            HRESULT GetCompressedSize([NativeTypeName("UINT32 *")] uint* size);
         }
 
         public partial struct Vtbl

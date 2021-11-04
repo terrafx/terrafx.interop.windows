@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("3050F49F-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct IMarkupPointer : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IMarkupPointer
+    public unsafe partial struct IMarkupPointer : IMarkupPointer.Interface
     {
         public void** lpVtbl;
 
@@ -184,6 +184,72 @@ namespace TerraFX.Interop
         public HRESULT FindTextW([NativeTypeName("OLECHAR *")] ushort* pchFindText, [NativeTypeName("DWORD")] uint dwFlags, IMarkupPointer* pIEndMatch, IMarkupPointer* pIEndSearch)
         {
             return ((delegate* unmanaged<IMarkupPointer*, ushort*, uint, IMarkupPointer*, IMarkupPointer*, int>)(lpVtbl[23]))((IMarkupPointer*)Unsafe.AsPointer(ref this), pchFindText, dwFlags, pIEndMatch, pIEndSearch);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT OwningDoc(IHTMLDocument2** ppDoc);
+
+            [VtblIndex(4)]
+            HRESULT Gravity(POINTER_GRAVITY* pGravity);
+
+            [VtblIndex(5)]
+            HRESULT SetGravity(POINTER_GRAVITY Gravity);
+
+            [VtblIndex(6)]
+            HRESULT Cling(BOOL* pfCling);
+
+            [VtblIndex(7)]
+            HRESULT SetCling(BOOL fCLing);
+
+            [VtblIndex(8)]
+            HRESULT Unposition();
+
+            [VtblIndex(9)]
+            HRESULT IsPositioned(BOOL* pfPositioned);
+
+            [VtblIndex(10)]
+            HRESULT GetContainer(IMarkupContainer** ppContainer);
+
+            [VtblIndex(11)]
+            HRESULT MoveAdjacentToElement(IHTMLElement* pElement, ELEMENT_ADJACENCY eAdj);
+
+            [VtblIndex(12)]
+            HRESULT MoveToPointer(IMarkupPointer* pPointer);
+
+            [VtblIndex(13)]
+            HRESULT MoveToContainer(IMarkupContainer* pContainer, BOOL fAtStart);
+
+            [VtblIndex(14)]
+            HRESULT Left(BOOL fMove, MARKUP_CONTEXT_TYPE* pContext, IHTMLElement** ppElement, [NativeTypeName("long *")] int* pcch, [NativeTypeName("OLECHAR *")] ushort* pchText);
+
+            [VtblIndex(15)]
+            HRESULT Right(BOOL fMove, MARKUP_CONTEXT_TYPE* pContext, IHTMLElement** ppElement, [NativeTypeName("long *")] int* pcch, [NativeTypeName("OLECHAR *")] ushort* pchText);
+
+            [VtblIndex(16)]
+            HRESULT CurrentScope(IHTMLElement** ppElemCurrent);
+
+            [VtblIndex(17)]
+            HRESULT IsLeftOf(IMarkupPointer* pPointerThat, BOOL* pfResult);
+
+            [VtblIndex(18)]
+            HRESULT IsLeftOfOrEqualTo(IMarkupPointer* pPointerThat, BOOL* pfResult);
+
+            [VtblIndex(19)]
+            HRESULT IsRightOf(IMarkupPointer* pPointerThat, BOOL* pfResult);
+
+            [VtblIndex(20)]
+            HRESULT IsRightOfOrEqualTo(IMarkupPointer* pPointerThat, BOOL* pfResult);
+
+            [VtblIndex(21)]
+            HRESULT IsEqualTo(IMarkupPointer* pPointerThat, BOOL* pfAreEqual);
+
+            [VtblIndex(22)]
+            HRESULT MoveUnit(MOVEUNIT_ACTION muAction);
+
+            [VtblIndex(23)]
+            HRESULT FindTextW([NativeTypeName("OLECHAR *")] ushort* pchFindText, [NativeTypeName("DWORD")] uint dwFlags, IMarkupPointer* pIEndMatch, IMarkupPointer* pIEndSearch);
         }
 
         public partial struct Vtbl

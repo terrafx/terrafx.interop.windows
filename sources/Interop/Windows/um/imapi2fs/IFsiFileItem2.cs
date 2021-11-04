@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("199D0C19-11E1-40EB-8EC2-C8C822A07792")]
     [NativeTypeName("struct IFsiFileItem2 : IFsiFileItem")]
     [NativeInheritance("IFsiFileItem")]
-    public unsafe partial struct IFsiFileItem2
+    public unsafe partial struct IFsiFileItem2 : IFsiFileItem2.Interface
     {
         public void** lpVtbl;
 
@@ -226,6 +226,27 @@ namespace TerraFX.Interop
         public HRESULT put_IsRealTime([NativeTypeName("VARIANT_BOOL")] short newVal)
         {
             return ((delegate* unmanaged<IFsiFileItem2*, short, int>)(lpVtbl[29]))((IFsiFileItem2*)Unsafe.AsPointer(ref this), newVal);
+        }
+
+        public interface Interface : IFsiFileItem.Interface
+        {
+            [VtblIndex(24)]
+            HRESULT get_FsiNamedStreams(IFsiNamedStreams** streams);
+
+            [VtblIndex(25)]
+            HRESULT get_IsNamedStream([NativeTypeName("VARIANT_BOOL *")] short* pVal);
+
+            [VtblIndex(26)]
+            HRESULT AddStream([NativeTypeName("BSTR")] ushort* name, IStream* streamData);
+
+            [VtblIndex(27)]
+            HRESULT RemoveStream([NativeTypeName("BSTR")] ushort* name);
+
+            [VtblIndex(28)]
+            HRESULT get_IsRealTime([NativeTypeName("VARIANT_BOOL *")] short* pVal);
+
+            [VtblIndex(29)]
+            HRESULT put_IsRealTime([NativeTypeName("VARIANT_BOOL")] short newVal);
         }
 
         public partial struct Vtbl

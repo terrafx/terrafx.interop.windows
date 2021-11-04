@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("379A0CF0-C1DE-11D2-ABF5-00A0C905F375")]
     [NativeTypeName("struct IMemAllocatorCallbackTemp : IMemAllocator")]
     [NativeInheritance("IMemAllocator")]
-    public unsafe partial struct IMemAllocatorCallbackTemp
+    public unsafe partial struct IMemAllocatorCallbackTemp : IMemAllocatorCallbackTemp.Interface
     {
         public void** lpVtbl;
 
@@ -93,6 +93,15 @@ namespace TerraFX.Interop
         public HRESULT GetFreeCount([NativeTypeName("LONG *")] int* plBuffersFree)
         {
             return ((delegate* unmanaged<IMemAllocatorCallbackTemp*, int*, int>)(lpVtbl[10]))((IMemAllocatorCallbackTemp*)Unsafe.AsPointer(ref this), plBuffersFree);
+        }
+
+        public interface Interface : IMemAllocator.Interface
+        {
+            [VtblIndex(9)]
+            HRESULT SetNotify(IMemAllocatorNotifyCallbackTemp* pNotify);
+
+            [VtblIndex(10)]
+            HRESULT GetFreeCount([NativeTypeName("LONG *")] int* plBuffersFree);
         }
 
         public partial struct Vtbl

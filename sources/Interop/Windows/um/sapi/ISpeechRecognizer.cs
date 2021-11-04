@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("2D5F1C0C-BD75-4B08-9478-3B11FEA2586C")]
     [NativeTypeName("struct ISpeechRecognizer : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct ISpeechRecognizer
+    public unsafe partial struct ISpeechRecognizer : ISpeechRecognizer.Interface
     {
         public void** lpVtbl;
 
@@ -247,6 +247,87 @@ namespace TerraFX.Interop
         public HRESULT GetProfiles([NativeTypeName("BSTR")] ushort* RequiredAttributes, [NativeTypeName("BSTR")] ushort* OptionalAttributes, ISpeechObjectTokens** ObjectTokens)
         {
             return ((delegate* unmanaged<ISpeechRecognizer*, ushort*, ushort*, ISpeechObjectTokens**, int>)(lpVtbl[32]))((ISpeechRecognizer*)Unsafe.AsPointer(ref this), RequiredAttributes, OptionalAttributes, ObjectTokens);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT putref_Recognizer(ISpeechObjectToken* Recognizer);
+
+            [VtblIndex(8)]
+            HRESULT get_Recognizer(ISpeechObjectToken** Recognizer);
+
+            [VtblIndex(9)]
+            HRESULT put_AllowAudioInputFormatChangesOnNextSet([NativeTypeName("VARIANT_BOOL")] short Allow);
+
+            [VtblIndex(10)]
+            HRESULT get_AllowAudioInputFormatChangesOnNextSet([NativeTypeName("VARIANT_BOOL *")] short* Allow);
+
+            [VtblIndex(11)]
+            HRESULT putref_AudioInput(ISpeechObjectToken* AudioInput = null);
+
+            [VtblIndex(12)]
+            HRESULT get_AudioInput(ISpeechObjectToken** AudioInput);
+
+            [VtblIndex(13)]
+            HRESULT putref_AudioInputStream(ISpeechBaseStream* AudioInputStream = null);
+
+            [VtblIndex(14)]
+            HRESULT get_AudioInputStream(ISpeechBaseStream** AudioInputStream);
+
+            [VtblIndex(15)]
+            HRESULT get_IsShared([NativeTypeName("VARIANT_BOOL *")] short* Shared);
+
+            [VtblIndex(16)]
+            HRESULT put_State(SpeechRecognizerState State);
+
+            [VtblIndex(17)]
+            HRESULT get_State(SpeechRecognizerState* State);
+
+            [VtblIndex(18)]
+            HRESULT get_Status(ISpeechRecognizerStatus** Status);
+
+            [VtblIndex(19)]
+            HRESULT putref_Profile(ISpeechObjectToken* Profile = null);
+
+            [VtblIndex(20)]
+            HRESULT get_Profile(ISpeechObjectToken** Profile);
+
+            [VtblIndex(21)]
+            HRESULT EmulateRecognition(VARIANT TextElements, VARIANT* ElementDisplayAttributes = null, [NativeTypeName("long")] int LanguageId = 0);
+
+            [VtblIndex(22)]
+            HRESULT CreateRecoContext(ISpeechRecoContext** NewContext);
+
+            [VtblIndex(23)]
+            HRESULT GetFormat(SpeechFormatType Type, ISpeechAudioFormat** Format);
+
+            [VtblIndex(24)]
+            HRESULT SetPropertyNumber([NativeTypeName("const BSTR")] ushort* Name, [NativeTypeName("long")] int Value, [NativeTypeName("VARIANT_BOOL *")] short* Supported);
+
+            [VtblIndex(25)]
+            HRESULT GetPropertyNumber([NativeTypeName("const BSTR")] ushort* Name, [NativeTypeName("long *")] int* Value, [NativeTypeName("VARIANT_BOOL *")] short* Supported);
+
+            [VtblIndex(26)]
+            HRESULT SetPropertyString([NativeTypeName("const BSTR")] ushort* Name, [NativeTypeName("const BSTR")] ushort* Value, [NativeTypeName("VARIANT_BOOL *")] short* Supported);
+
+            [VtblIndex(27)]
+            HRESULT GetPropertyString([NativeTypeName("const BSTR")] ushort* Name, [NativeTypeName("BSTR *")] ushort** Value, [NativeTypeName("VARIANT_BOOL *")] short* Supported);
+
+            [VtblIndex(28)]
+            HRESULT IsUISupported([NativeTypeName("const BSTR")] ushort* TypeOfUI, [NativeTypeName("const VARIANT *")] VARIANT* ExtraData, [NativeTypeName("VARIANT_BOOL *")] short* Supported);
+
+            [VtblIndex(29)]
+            HRESULT DisplayUI([NativeTypeName("long")] int hWndParent, [NativeTypeName("BSTR")] ushort* Title, [NativeTypeName("const BSTR")] ushort* TypeOfUI, [NativeTypeName("const VARIANT *")] VARIANT* ExtraData = null);
+
+            [VtblIndex(30)]
+            HRESULT GetRecognizers([NativeTypeName("BSTR")] ushort* RequiredAttributes, [NativeTypeName("BSTR")] ushort* OptionalAttributes, ISpeechObjectTokens** ObjectTokens);
+
+            [VtblIndex(31)]
+            HRESULT GetAudioInputs([NativeTypeName("BSTR")] ushort* RequiredAttributes, [NativeTypeName("BSTR")] ushort* OptionalAttributes, ISpeechObjectTokens** ObjectTokens);
+
+            [VtblIndex(32)]
+            HRESULT GetProfiles([NativeTypeName("BSTR")] ushort* RequiredAttributes, [NativeTypeName("BSTR")] ushort* OptionalAttributes, ISpeechObjectTokens** ObjectTokens);
         }
 
         public partial struct Vtbl

@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("1A799D8A-69F7-4E4C-9FED-437CCC6684CC")]
     [NativeTypeName("struct ID2D1ConcreteTransform : ID2D1TransformNode")]
     [NativeInheritance("ID2D1TransformNode")]
-    public unsafe partial struct ID2D1ConcreteTransform
+    public unsafe partial struct ID2D1ConcreteTransform : ID2D1ConcreteTransform.Interface
     {
         public void** lpVtbl;
 
@@ -59,6 +59,15 @@ namespace TerraFX.Interop
         public void SetCached(BOOL isCached)
         {
             ((delegate* unmanaged<ID2D1ConcreteTransform*, BOOL, void>)(lpVtbl[5]))((ID2D1ConcreteTransform*)Unsafe.AsPointer(ref this), isCached);
+        }
+
+        public interface Interface : ID2D1TransformNode.Interface
+        {
+            [VtblIndex(4)]
+            HRESULT SetOutputBuffer(D2D1_BUFFER_PRECISION bufferPrecision, D2D1_CHANNEL_DEPTH channelDepth);
+
+            [VtblIndex(5)]
+            void SetCached(BOOL isCached);
         }
 
         public partial struct Vtbl

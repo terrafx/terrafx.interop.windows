@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("725B77C7-CA9F-4FE5-9D72-9946BF9B3C70")]
     [NativeTypeName("struct IMFVideoCaptureSampleAllocator : IMFVideoSampleAllocator")]
     [NativeInheritance("IMFVideoSampleAllocator")]
-    public unsafe partial struct IMFVideoCaptureSampleAllocator
+    public unsafe partial struct IMFVideoCaptureSampleAllocator : IMFVideoCaptureSampleAllocator.Interface
     {
         public void** lpVtbl;
 
@@ -72,6 +72,12 @@ namespace TerraFX.Interop
         public HRESULT InitializeCaptureSampleAllocator([NativeTypeName("DWORD")] uint cbSampleSize, [NativeTypeName("DWORD")] uint cbCaptureMetadataSize, [NativeTypeName("DWORD")] uint cbAlignment, [NativeTypeName("DWORD")] uint cMinimumSamples, IMFAttributes* pAttributes, IMFMediaType* pMediaType)
         {
             return ((delegate* unmanaged<IMFVideoCaptureSampleAllocator*, uint, uint, uint, uint, IMFAttributes*, IMFMediaType*, int>)(lpVtbl[7]))((IMFVideoCaptureSampleAllocator*)Unsafe.AsPointer(ref this), cbSampleSize, cbCaptureMetadataSize, cbAlignment, cMinimumSamples, pAttributes, pMediaType);
+        }
+
+        public interface Interface : IMFVideoSampleAllocator.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT InitializeCaptureSampleAllocator([NativeTypeName("DWORD")] uint cbSampleSize, [NativeTypeName("DWORD")] uint cbCaptureMetadataSize, [NativeTypeName("DWORD")] uint cbAlignment, [NativeTypeName("DWORD")] uint cMinimumSamples, IMFAttributes* pAttributes, IMFMediaType* pMediaType);
         }
 
         public partial struct Vtbl

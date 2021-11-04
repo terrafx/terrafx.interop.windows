@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("3050F813-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct IHTMLCommentElement2 : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct IHTMLCommentElement2
+    public unsafe partial struct IHTMLCommentElement2 : IHTMLCommentElement2.Interface
     {
         public void** lpVtbl;
 
@@ -121,6 +121,33 @@ namespace TerraFX.Interop
         public HRESULT replaceData([NativeTypeName("long")] int offset, [NativeTypeName("long")] int Count, [NativeTypeName("BSTR")] ushort* bstrstring)
         {
             return ((delegate* unmanaged<IHTMLCommentElement2*, int, int, ushort*, int>)(lpVtbl[14]))((IHTMLCommentElement2*)Unsafe.AsPointer(ref this), offset, Count, bstrstring);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT put_data([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(8)]
+            HRESULT get_data([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(9)]
+            HRESULT get_length([NativeTypeName("long *")] int* p);
+
+            [VtblIndex(10)]
+            HRESULT substringData([NativeTypeName("long")] int offset, [NativeTypeName("long")] int Count, [NativeTypeName("BSTR *")] ushort** pbstrsubString);
+
+            [VtblIndex(11)]
+            HRESULT appendData([NativeTypeName("BSTR")] ushort* bstrstring);
+
+            [VtblIndex(12)]
+            HRESULT insertData([NativeTypeName("long")] int offset, [NativeTypeName("BSTR")] ushort* bstrstring);
+
+            [VtblIndex(13)]
+            HRESULT deleteData([NativeTypeName("long")] int offset, [NativeTypeName("long")] int Count);
+
+            [VtblIndex(14)]
+            HRESULT replaceData([NativeTypeName("long")] int offset, [NativeTypeName("long")] int Count, [NativeTypeName("BSTR")] ushort* bstrstring);
         }
 
         public partial struct Vtbl

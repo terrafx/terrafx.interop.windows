@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("37A378C0-F82D-11CE-AE65-08002B2E1262")]
     [NativeTypeName("struct IShellFolderView : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IShellFolderView
+    public unsafe partial struct IShellFolderView : IShellFolderView.Interface
     {
         public void** lpVtbl;
 
@@ -233,6 +233,93 @@ namespace TerraFX.Interop
         public HRESULT SetAutomationObject(IDispatch* pdisp)
         {
             return ((delegate* unmanaged<IShellFolderView*, IDispatch*, int>)(lpVtbl[30]))((IShellFolderView*)Unsafe.AsPointer(ref this), pdisp);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT Rearrange(LPARAM lParamSort);
+
+            [VtblIndex(4)]
+            HRESULT GetArrangeParam(LPARAM* plParamSort);
+
+            [VtblIndex(5)]
+            HRESULT ArrangeGrid();
+
+            [VtblIndex(6)]
+            HRESULT AutoArrange();
+
+            [VtblIndex(7)]
+            HRESULT GetAutoArrange();
+
+            [VtblIndex(8)]
+            HRESULT AddObject([NativeTypeName("LPITEMIDLIST")] ITEMIDLIST* pidl, uint* puItem);
+
+            [VtblIndex(9)]
+            HRESULT GetObjectW([NativeTypeName("LPITEMIDLIST *")] ITEMIDLIST** ppidl, uint uItem);
+
+            [VtblIndex(10)]
+            HRESULT RemoveObject([NativeTypeName("LPITEMIDLIST")] ITEMIDLIST* pidl, uint* puItem);
+
+            [VtblIndex(11)]
+            HRESULT GetObjectCount(uint* puCount);
+
+            [VtblIndex(12)]
+            HRESULT SetObjectCount(uint uCount, uint dwFlags);
+
+            [VtblIndex(13)]
+            HRESULT UpdateObject([NativeTypeName("LPITEMIDLIST")] ITEMIDLIST* pidlOld, [NativeTypeName("LPITEMIDLIST")] ITEMIDLIST* pidlNew, uint* puItem);
+
+            [VtblIndex(14)]
+            HRESULT RefreshObject([NativeTypeName("LPITEMIDLIST")] ITEMIDLIST* pidl, uint* puItem);
+
+            [VtblIndex(15)]
+            HRESULT SetRedraw(BOOL bRedraw);
+
+            [VtblIndex(16)]
+            HRESULT GetSelectedCount(uint* puSelected);
+
+            [VtblIndex(17)]
+            HRESULT GetSelectedObjects([NativeTypeName("LPCITEMIDLIST **")] ITEMIDLIST*** pppidl, uint* puItems);
+
+            [VtblIndex(18)]
+            HRESULT IsDropOnSource(IDropTarget* pDropTarget);
+
+            [VtblIndex(19)]
+            HRESULT GetDragPoint(POINT* ppt);
+
+            [VtblIndex(20)]
+            HRESULT GetDropPoint(POINT* ppt);
+
+            [VtblIndex(21)]
+            HRESULT MoveIcons(IDataObject* pDataObject);
+
+            [VtblIndex(22)]
+            HRESULT SetItemPos([NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidl, POINT* ppt);
+
+            [VtblIndex(23)]
+            HRESULT IsBkDropTarget(IDropTarget* pDropTarget);
+
+            [VtblIndex(24)]
+            HRESULT SetClipboard(BOOL bMove);
+
+            [VtblIndex(25)]
+            HRESULT SetPoints(IDataObject* pDataObject);
+
+            [VtblIndex(26)]
+            HRESULT GetItemSpacing(ITEMSPACING* pSpacing);
+
+            [VtblIndex(27)]
+            HRESULT SetCallback(IShellFolderViewCB* pNewCB, IShellFolderViewCB** ppOldCB);
+
+            [VtblIndex(28)]
+            HRESULT Select(uint dwFlags);
+
+            [VtblIndex(29)]
+            HRESULT QuerySupport(uint* pdwSupport);
+
+            [VtblIndex(30)]
+            HRESULT SetAutomationObject(IDispatch* pdisp);
         }
 
         public partial struct Vtbl

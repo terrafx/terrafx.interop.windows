@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("9556DC99-828C-11CF-A37E-00AA003240C7")]
     [NativeTypeName("struct IWbemServices : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IWbemServices
+    public unsafe partial struct IWbemServices : IWbemServices.Interface
     {
         public void** lpVtbl;
 
@@ -198,6 +198,78 @@ namespace TerraFX.Interop
         public HRESULT ExecMethodAsync([NativeTypeName("const BSTR")] ushort* strObjectPath, [NativeTypeName("const BSTR")] ushort* strMethodName, [NativeTypeName("long")] int lFlags, IWbemContext* pCtx, IWbemClassObject* pInParams, IWbemObjectSink* pResponseHandler)
         {
             return ((delegate* unmanaged<IWbemServices*, ushort*, ushort*, int, IWbemContext*, IWbemClassObject*, IWbemObjectSink*, int>)(lpVtbl[25]))((IWbemServices*)Unsafe.AsPointer(ref this), strObjectPath, strMethodName, lFlags, pCtx, pInParams, pResponseHandler);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT OpenNamespace([NativeTypeName("const BSTR")] ushort* strNamespace, [NativeTypeName("long")] int lFlags, IWbemContext* pCtx, IWbemServices** ppWorkingNamespace, IWbemCallResult** ppResult);
+
+            [VtblIndex(4)]
+            HRESULT CancelAsyncCall(IWbemObjectSink* pSink);
+
+            [VtblIndex(5)]
+            HRESULT QueryObjectSink([NativeTypeName("long")] int lFlags, IWbemObjectSink** ppResponseHandler);
+
+            [VtblIndex(6)]
+            HRESULT GetObjectW([NativeTypeName("const BSTR")] ushort* strObjectPath, [NativeTypeName("long")] int lFlags, IWbemContext* pCtx, IWbemClassObject** ppObject, IWbemCallResult** ppCallResult);
+
+            [VtblIndex(7)]
+            HRESULT GetObjectAsync([NativeTypeName("const BSTR")] ushort* strObjectPath, [NativeTypeName("long")] int lFlags, IWbemContext* pCtx, IWbemObjectSink* pResponseHandler);
+
+            [VtblIndex(8)]
+            HRESULT PutClass(IWbemClassObject* pObject, [NativeTypeName("long")] int lFlags, IWbemContext* pCtx, IWbemCallResult** ppCallResult);
+
+            [VtblIndex(9)]
+            HRESULT PutClassAsync(IWbemClassObject* pObject, [NativeTypeName("long")] int lFlags, IWbemContext* pCtx, IWbemObjectSink* pResponseHandler);
+
+            [VtblIndex(10)]
+            HRESULT DeleteClass([NativeTypeName("const BSTR")] ushort* strClass, [NativeTypeName("long")] int lFlags, IWbemContext* pCtx, IWbemCallResult** ppCallResult);
+
+            [VtblIndex(11)]
+            HRESULT DeleteClassAsync([NativeTypeName("const BSTR")] ushort* strClass, [NativeTypeName("long")] int lFlags, IWbemContext* pCtx, IWbemObjectSink* pResponseHandler);
+
+            [VtblIndex(12)]
+            HRESULT CreateClassEnum([NativeTypeName("const BSTR")] ushort* strSuperclass, [NativeTypeName("long")] int lFlags, IWbemContext* pCtx, IEnumWbemClassObject** ppEnum);
+
+            [VtblIndex(13)]
+            HRESULT CreateClassEnumAsync([NativeTypeName("const BSTR")] ushort* strSuperclass, [NativeTypeName("long")] int lFlags, IWbemContext* pCtx, IWbemObjectSink* pResponseHandler);
+
+            [VtblIndex(14)]
+            HRESULT PutInstance(IWbemClassObject* pInst, [NativeTypeName("long")] int lFlags, IWbemContext* pCtx, IWbemCallResult** ppCallResult);
+
+            [VtblIndex(15)]
+            HRESULT PutInstanceAsync(IWbemClassObject* pInst, [NativeTypeName("long")] int lFlags, IWbemContext* pCtx, IWbemObjectSink* pResponseHandler);
+
+            [VtblIndex(16)]
+            HRESULT DeleteInstance([NativeTypeName("const BSTR")] ushort* strObjectPath, [NativeTypeName("long")] int lFlags, IWbemContext* pCtx, IWbemCallResult** ppCallResult);
+
+            [VtblIndex(17)]
+            HRESULT DeleteInstanceAsync([NativeTypeName("const BSTR")] ushort* strObjectPath, [NativeTypeName("long")] int lFlags, IWbemContext* pCtx, IWbemObjectSink* pResponseHandler);
+
+            [VtblIndex(18)]
+            HRESULT CreateInstanceEnum([NativeTypeName("const BSTR")] ushort* strFilter, [NativeTypeName("long")] int lFlags, IWbemContext* pCtx, IEnumWbemClassObject** ppEnum);
+
+            [VtblIndex(19)]
+            HRESULT CreateInstanceEnumAsync([NativeTypeName("const BSTR")] ushort* strFilter, [NativeTypeName("long")] int lFlags, IWbemContext* pCtx, IWbemObjectSink* pResponseHandler);
+
+            [VtblIndex(20)]
+            HRESULT ExecQuery([NativeTypeName("const BSTR")] ushort* strQueryLanguage, [NativeTypeName("const BSTR")] ushort* strQuery, [NativeTypeName("long")] int lFlags, IWbemContext* pCtx, IEnumWbemClassObject** ppEnum);
+
+            [VtblIndex(21)]
+            HRESULT ExecQueryAsync([NativeTypeName("const BSTR")] ushort* strQueryLanguage, [NativeTypeName("const BSTR")] ushort* strQuery, [NativeTypeName("long")] int lFlags, IWbemContext* pCtx, IWbemObjectSink* pResponseHandler);
+
+            [VtblIndex(22)]
+            HRESULT ExecNotificationQuery([NativeTypeName("const BSTR")] ushort* strQueryLanguage, [NativeTypeName("const BSTR")] ushort* strQuery, [NativeTypeName("long")] int lFlags, IWbemContext* pCtx, IEnumWbemClassObject** ppEnum);
+
+            [VtblIndex(23)]
+            HRESULT ExecNotificationQueryAsync([NativeTypeName("const BSTR")] ushort* strQueryLanguage, [NativeTypeName("const BSTR")] ushort* strQuery, [NativeTypeName("long")] int lFlags, IWbemContext* pCtx, IWbemObjectSink* pResponseHandler);
+
+            [VtblIndex(24)]
+            HRESULT ExecMethod([NativeTypeName("const BSTR")] ushort* strObjectPath, [NativeTypeName("const BSTR")] ushort* strMethodName, [NativeTypeName("long")] int lFlags, IWbemContext* pCtx, IWbemClassObject* pInParams, IWbemClassObject** ppOutParams, IWbemCallResult** ppCallResult);
+
+            [VtblIndex(25)]
+            HRESULT ExecMethodAsync([NativeTypeName("const BSTR")] ushort* strObjectPath, [NativeTypeName("const BSTR")] ushort* strMethodName, [NativeTypeName("long")] int lFlags, IWbemContext* pCtx, IWbemClassObject* pInParams, IWbemObjectSink* pResponseHandler);
         }
 
         public partial struct Vtbl

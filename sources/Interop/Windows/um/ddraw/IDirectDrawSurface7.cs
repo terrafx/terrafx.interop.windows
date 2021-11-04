@@ -10,7 +10,7 @@ namespace TerraFX.Interop
 {
     [NativeTypeName("struct IDirectDrawSurface7 : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IDirectDrawSurface7
+    public unsafe partial struct IDirectDrawSurface7 : IDirectDrawSurface7.Interface
     {
         public void** lpVtbl;
 
@@ -357,6 +357,147 @@ namespace TerraFX.Interop
         public HRESULT GetLOD([NativeTypeName("LPDWORD")] uint* param0)
         {
             return ((delegate* unmanaged<IDirectDrawSurface7*, uint*, int>)(lpVtbl[48]))((IDirectDrawSurface7*)Unsafe.AsPointer(ref this), param0);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT AddAttachedSurface([NativeTypeName("LPDIRECTDRAWSURFACE7")] IDirectDrawSurface7* param0);
+
+            [VtblIndex(4)]
+            HRESULT AddOverlayDirtyRect([NativeTypeName("LPRECT")] RECT* param0);
+
+            [VtblIndex(5)]
+            HRESULT Blt([NativeTypeName("LPRECT")] RECT* param0, [NativeTypeName("LPDIRECTDRAWSURFACE7")] IDirectDrawSurface7* param1, [NativeTypeName("LPRECT")] RECT* param2, [NativeTypeName("DWORD")] uint param3, [NativeTypeName("LPDDBLTFX")] DDBLTFX* param4);
+
+            [VtblIndex(6)]
+            HRESULT BltBatch([NativeTypeName("LPDDBLTBATCH")] DDBLTBATCH* param0, [NativeTypeName("DWORD")] uint param1, [NativeTypeName("DWORD")] uint param2);
+
+            [VtblIndex(7)]
+            HRESULT BltFast([NativeTypeName("DWORD")] uint param0, [NativeTypeName("DWORD")] uint param1, [NativeTypeName("LPDIRECTDRAWSURFACE7")] IDirectDrawSurface7* param2, [NativeTypeName("LPRECT")] RECT* param3, [NativeTypeName("DWORD")] uint param4);
+
+            [VtblIndex(8)]
+            HRESULT DeleteAttachedSurface([NativeTypeName("DWORD")] uint param0, [NativeTypeName("LPDIRECTDRAWSURFACE7")] IDirectDrawSurface7* param1);
+
+            [VtblIndex(9)]
+            HRESULT EnumAttachedSurfaces([NativeTypeName("LPVOID")] void* param0, [NativeTypeName("LPDDENUMSURFACESCALLBACK7")] delegate* unmanaged<IDirectDrawSurface7*, DDSURFACEDESC2*, void*, HRESULT> param1);
+
+            [VtblIndex(10)]
+            HRESULT EnumOverlayZOrders([NativeTypeName("DWORD")] uint param0, [NativeTypeName("LPVOID")] void* param1, [NativeTypeName("LPDDENUMSURFACESCALLBACK7")] delegate* unmanaged<IDirectDrawSurface7*, DDSURFACEDESC2*, void*, HRESULT> param2);
+
+            [VtblIndex(11)]
+            HRESULT Flip([NativeTypeName("LPDIRECTDRAWSURFACE7")] IDirectDrawSurface7* param0, [NativeTypeName("DWORD")] uint param1);
+
+            [VtblIndex(12)]
+            HRESULT GetAttachedSurface([NativeTypeName("LPDDSCAPS2")] DDSCAPS2* param0, [NativeTypeName("LPDIRECTDRAWSURFACE7 *")] IDirectDrawSurface7** param1);
+
+            [VtblIndex(13)]
+            HRESULT GetBltStatus([NativeTypeName("DWORD")] uint param0);
+
+            [VtblIndex(14)]
+            HRESULT GetCaps([NativeTypeName("LPDDSCAPS2")] DDSCAPS2* param0);
+
+            [VtblIndex(15)]
+            HRESULT GetClipper([NativeTypeName("LPDIRECTDRAWCLIPPER *")] IDirectDrawClipper** param0);
+
+            [VtblIndex(16)]
+            HRESULT GetColorKey([NativeTypeName("DWORD")] uint param0, [NativeTypeName("LPDDCOLORKEY")] DDCOLORKEY* param1);
+
+            [VtblIndex(17)]
+            HRESULT GetDC(HDC* param0);
+
+            [VtblIndex(18)]
+            HRESULT GetFlipStatus([NativeTypeName("DWORD")] uint param0);
+
+            [VtblIndex(19)]
+            HRESULT GetOverlayPosition([NativeTypeName("LPLONG")] int* param0, [NativeTypeName("LPLONG")] int* param1);
+
+            [VtblIndex(20)]
+            HRESULT GetPalette([NativeTypeName("LPDIRECTDRAWPALETTE *")] IDirectDrawPalette** param0);
+
+            [VtblIndex(21)]
+            HRESULT GetPixelFormat([NativeTypeName("LPDDPIXELFORMAT")] DDPIXELFORMAT* param0);
+
+            [VtblIndex(22)]
+            HRESULT GetSurfaceDesc([NativeTypeName("LPDDSURFACEDESC2")] DDSURFACEDESC2* param0);
+
+            [VtblIndex(23)]
+            HRESULT Initialize([NativeTypeName("LPDIRECTDRAW")] IDirectDraw* param0, [NativeTypeName("LPDDSURFACEDESC2")] DDSURFACEDESC2* param1);
+
+            [VtblIndex(24)]
+            HRESULT IsLost();
+
+            [VtblIndex(25)]
+            HRESULT Lock([NativeTypeName("LPRECT")] RECT* param0, [NativeTypeName("LPDDSURFACEDESC2")] DDSURFACEDESC2* param1, [NativeTypeName("DWORD")] uint param2, HANDLE param3);
+
+            [VtblIndex(26)]
+            HRESULT ReleaseDC(HDC param0);
+
+            [VtblIndex(27)]
+            HRESULT Restore();
+
+            [VtblIndex(28)]
+            HRESULT SetClipper([NativeTypeName("LPDIRECTDRAWCLIPPER")] IDirectDrawClipper* param0);
+
+            [VtblIndex(29)]
+            HRESULT SetColorKey([NativeTypeName("DWORD")] uint param0, [NativeTypeName("LPDDCOLORKEY")] DDCOLORKEY* param1);
+
+            [VtblIndex(30)]
+            HRESULT SetOverlayPosition([NativeTypeName("LONG")] int param0, [NativeTypeName("LONG")] int param1);
+
+            [VtblIndex(31)]
+            HRESULT SetPalette([NativeTypeName("LPDIRECTDRAWPALETTE")] IDirectDrawPalette* param0);
+
+            [VtblIndex(32)]
+            HRESULT Unlock([NativeTypeName("LPRECT")] RECT* param0);
+
+            [VtblIndex(33)]
+            HRESULT UpdateOverlay([NativeTypeName("LPRECT")] RECT* param0, [NativeTypeName("LPDIRECTDRAWSURFACE7")] IDirectDrawSurface7* param1, [NativeTypeName("LPRECT")] RECT* param2, [NativeTypeName("DWORD")] uint param3, [NativeTypeName("LPDDOVERLAYFX")] DDOVERLAYFX* param4);
+
+            [VtblIndex(34)]
+            HRESULT UpdateOverlayDisplay([NativeTypeName("DWORD")] uint param0);
+
+            [VtblIndex(35)]
+            HRESULT UpdateOverlayZOrder([NativeTypeName("DWORD")] uint param0, [NativeTypeName("LPDIRECTDRAWSURFACE7")] IDirectDrawSurface7* param1);
+
+            [VtblIndex(36)]
+            HRESULT GetDDInterface([NativeTypeName("LPVOID *")] void** param0);
+
+            [VtblIndex(37)]
+            HRESULT PageLock([NativeTypeName("DWORD")] uint param0);
+
+            [VtblIndex(38)]
+            HRESULT PageUnlock([NativeTypeName("DWORD")] uint param0);
+
+            [VtblIndex(39)]
+            HRESULT SetSurfaceDesc([NativeTypeName("LPDDSURFACEDESC2")] DDSURFACEDESC2* param0, [NativeTypeName("DWORD")] uint param1);
+
+            [VtblIndex(40)]
+            HRESULT SetPrivateData([NativeTypeName("const GUID &")] Guid* param0, [NativeTypeName("LPVOID")] void* param1, [NativeTypeName("DWORD")] uint param2, [NativeTypeName("DWORD")] uint param3);
+
+            [VtblIndex(41)]
+            HRESULT GetPrivateData([NativeTypeName("const GUID &")] Guid* param0, [NativeTypeName("LPVOID")] void* param1, [NativeTypeName("LPDWORD")] uint* param2);
+
+            [VtblIndex(42)]
+            HRESULT FreePrivateData([NativeTypeName("const GUID &")] Guid* param0);
+
+            [VtblIndex(43)]
+            HRESULT GetUniquenessValue([NativeTypeName("LPDWORD")] uint* param0);
+
+            [VtblIndex(44)]
+            HRESULT ChangeUniquenessValue();
+
+            [VtblIndex(45)]
+            HRESULT SetPriority([NativeTypeName("DWORD")] uint param0);
+
+            [VtblIndex(46)]
+            HRESULT GetPriority([NativeTypeName("LPDWORD")] uint* param0);
+
+            [VtblIndex(47)]
+            HRESULT SetLOD([NativeTypeName("DWORD")] uint param0);
+
+            [VtblIndex(48)]
+            HRESULT GetLOD([NativeTypeName("LPDWORD")] uint* param0);
         }
 
         public partial struct Vtbl

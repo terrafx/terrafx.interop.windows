@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("317EE249-F12E-11D2-B1E4-00C04F8EEB3E")]
     [NativeTypeName("struct IShellLinkDual2 : IShellLinkDual")]
     [NativeInheritance("IShellLinkDual")]
-    public unsafe partial struct IShellLinkDual2
+    public unsafe partial struct IShellLinkDual2 : IShellLinkDual2.Interface
     {
         public void** lpVtbl;
 
@@ -184,6 +184,12 @@ namespace TerraFX.Interop
         public HRESULT get_Target(FolderItem** ppfi)
         {
             return ((delegate* unmanaged<IShellLinkDual2*, FolderItem**, int>)(lpVtbl[23]))((IShellLinkDual2*)Unsafe.AsPointer(ref this), ppfi);
+        }
+
+        public interface Interface : IShellLinkDual.Interface
+        {
+            [VtblIndex(23)]
+            HRESULT get_Target(FolderItem** ppfi);
         }
 
         public partial struct Vtbl

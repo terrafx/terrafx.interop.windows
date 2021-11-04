@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("DB525AE4-6AD6-473C-BAA7-59B2E37082E4")]
     [NativeTypeName("struct ID3D12VideoProcessCommandList2 : ID3D12VideoProcessCommandList1")]
     [NativeInheritance("ID3D12VideoProcessCommandList1")]
-    public unsafe partial struct ID3D12VideoProcessCommandList2
+    public unsafe partial struct ID3D12VideoProcessCommandList2 : ID3D12VideoProcessCommandList2.Interface
     {
         public void** lpVtbl;
 
@@ -205,6 +205,18 @@ namespace TerraFX.Interop
         public void ExecuteExtensionCommand(ID3D12VideoExtensionCommand* pExtensionCommand, [NativeTypeName("const void *")] void* pExecutionParameters, [NativeTypeName("SIZE_T")] nuint ExecutionParametersSizeInBytes)
         {
             ((delegate* unmanaged<ID3D12VideoProcessCommandList2*, ID3D12VideoExtensionCommand*, void*, nuint, void>)(lpVtbl[26]))((ID3D12VideoProcessCommandList2*)Unsafe.AsPointer(ref this), pExtensionCommand, pExecutionParameters, ExecutionParametersSizeInBytes);
+        }
+
+        public interface Interface : ID3D12VideoProcessCommandList1.Interface
+        {
+            [VtblIndex(24)]
+            void SetProtectedResourceSession(ID3D12ProtectedResourceSession* pProtectedResourceSession);
+
+            [VtblIndex(25)]
+            void InitializeExtensionCommand(ID3D12VideoExtensionCommand* pExtensionCommand, [NativeTypeName("const void *")] void* pInitializationParameters, [NativeTypeName("SIZE_T")] nuint InitializationParametersSizeInBytes);
+
+            [VtblIndex(26)]
+            void ExecuteExtensionCommand(ID3D12VideoExtensionCommand* pExtensionCommand, [NativeTypeName("const void *")] void* pExecutionParameters, [NativeTypeName("SIZE_T")] nuint ExecutionParametersSizeInBytes);
         }
 
         public partial struct Vtbl

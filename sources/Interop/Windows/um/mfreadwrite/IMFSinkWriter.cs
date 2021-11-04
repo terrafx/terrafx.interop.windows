@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("3137F1CD-FE5E-4805-A5D8-FB477448CB3D")]
     [NativeTypeName("struct IMFSinkWriter : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IMFSinkWriter
+    public unsafe partial struct IMFSinkWriter : IMFSinkWriter.Interface
     {
         public void** lpVtbl;
 
@@ -114,6 +114,42 @@ namespace TerraFX.Interop
         public HRESULT GetStatistics([NativeTypeName("DWORD")] uint dwStreamIndex, MF_SINK_WRITER_STATISTICS* pStats)
         {
             return ((delegate* unmanaged<IMFSinkWriter*, uint, MF_SINK_WRITER_STATISTICS*, int>)(lpVtbl[13]))((IMFSinkWriter*)Unsafe.AsPointer(ref this), dwStreamIndex, pStats);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT AddStream(IMFMediaType* pTargetMediaType, [NativeTypeName("DWORD *")] uint* pdwStreamIndex);
+
+            [VtblIndex(4)]
+            HRESULT SetInputMediaType([NativeTypeName("DWORD")] uint dwStreamIndex, IMFMediaType* pInputMediaType, IMFAttributes* pEncodingParameters);
+
+            [VtblIndex(5)]
+            HRESULT BeginWriting();
+
+            [VtblIndex(6)]
+            HRESULT WriteSample([NativeTypeName("DWORD")] uint dwStreamIndex, IMFSample* pSample);
+
+            [VtblIndex(7)]
+            HRESULT SendStreamTick([NativeTypeName("DWORD")] uint dwStreamIndex, [NativeTypeName("LONGLONG")] long llTimestamp);
+
+            [VtblIndex(8)]
+            HRESULT PlaceMarker([NativeTypeName("DWORD")] uint dwStreamIndex, [NativeTypeName("LPVOID")] void* pvContext);
+
+            [VtblIndex(9)]
+            HRESULT NotifyEndOfSegment([NativeTypeName("DWORD")] uint dwStreamIndex);
+
+            [VtblIndex(10)]
+            HRESULT Flush([NativeTypeName("DWORD")] uint dwStreamIndex);
+
+            [VtblIndex(11)]
+            HRESULT Finalize();
+
+            [VtblIndex(12)]
+            HRESULT GetServiceForStream([NativeTypeName("DWORD")] uint dwStreamIndex, [NativeTypeName("const GUID &")] Guid* guidService, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPVOID *")] void** ppvObject);
+
+            [VtblIndex(13)]
+            HRESULT GetStatistics([NativeTypeName("DWORD")] uint dwStreamIndex, MF_SINK_WRITER_STATISTICS* pStats);
         }
 
         public partial struct Vtbl

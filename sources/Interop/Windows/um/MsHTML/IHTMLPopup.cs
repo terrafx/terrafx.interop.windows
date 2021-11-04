@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("3050F666-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct IHTMLPopup : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct IHTMLPopup
+    public unsafe partial struct IHTMLPopup : IHTMLPopup.Interface
     {
         public void** lpVtbl;
 
@@ -93,6 +93,21 @@ namespace TerraFX.Interop
         public HRESULT get_isOpen([NativeTypeName("VARIANT_BOOL *")] short* p)
         {
             return ((delegate* unmanaged<IHTMLPopup*, short*, int>)(lpVtbl[10]))((IHTMLPopup*)Unsafe.AsPointer(ref this), p);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT show([NativeTypeName("long")] int x, [NativeTypeName("long")] int y, [NativeTypeName("long")] int w, [NativeTypeName("long")] int h, VARIANT* pElement);
+
+            [VtblIndex(8)]
+            HRESULT hide();
+
+            [VtblIndex(9)]
+            HRESULT get_document(IHTMLDocument** p);
+
+            [VtblIndex(10)]
+            HRESULT get_isOpen([NativeTypeName("VARIANT_BOOL *")] short* p);
         }
 
         public partial struct Vtbl

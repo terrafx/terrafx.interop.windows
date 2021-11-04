@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("C6E13340-30AC-11D0-A18C-00A0C9118956")]
     [NativeTypeName("struct IAMStreamConfig : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IAMStreamConfig
+    public unsafe partial struct IAMStreamConfig : IAMStreamConfig.Interface
     {
         public void** lpVtbl;
 
@@ -65,6 +65,21 @@ namespace TerraFX.Interop
         public HRESULT GetStreamCaps(int iIndex, AM_MEDIA_TYPE** ppmt, byte* pSCC)
         {
             return ((delegate* unmanaged<IAMStreamConfig*, int, AM_MEDIA_TYPE**, byte*, int>)(lpVtbl[6]))((IAMStreamConfig*)Unsafe.AsPointer(ref this), iIndex, ppmt, pSCC);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT SetFormat(AM_MEDIA_TYPE* pmt);
+
+            [VtblIndex(4)]
+            HRESULT GetFormat(AM_MEDIA_TYPE** ppmt);
+
+            [VtblIndex(5)]
+            HRESULT GetNumberOfCapabilities(int* piCount, int* piSize);
+
+            [VtblIndex(6)]
+            HRESULT GetStreamCaps(int iIndex, AM_MEDIA_TYPE** ppmt, byte* pSCC);
         }
 
         public partial struct Vtbl

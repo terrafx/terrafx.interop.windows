@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("07250A10-9CF9-11D1-9076-006008059382")]
     [NativeTypeName("struct IAppPublisher : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IAppPublisher
+    public unsafe partial struct IAppPublisher : IAppPublisher.Interface
     {
         public void** lpVtbl;
 
@@ -65,6 +65,21 @@ namespace TerraFX.Interop
         public HRESULT EnumApps(Guid* pAppCategoryId, IEnumPublishedApps** ppepa)
         {
             return ((delegate* unmanaged<IAppPublisher*, Guid*, IEnumPublishedApps**, int>)(lpVtbl[6]))((IAppPublisher*)Unsafe.AsPointer(ref this), pAppCategoryId, ppepa);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetNumberOfCategories([NativeTypeName("DWORD *")] uint* pdwCat);
+
+            [VtblIndex(4)]
+            HRESULT GetCategories(APPCATEGORYINFOLIST* pAppCategoryList);
+
+            [VtblIndex(5)]
+            HRESULT GetNumberOfApps([NativeTypeName("DWORD *")] uint* pdwApps);
+
+            [VtblIndex(6)]
+            HRESULT EnumApps(Guid* pAppCategoryId, IEnumPublishedApps** ppepa);
         }
 
         public partial struct Vtbl

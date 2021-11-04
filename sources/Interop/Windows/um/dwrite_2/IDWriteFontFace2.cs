@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("D8B768FF-64BC-4E66-982B-EC8E87F693F7")]
     [NativeTypeName("struct IDWriteFontFace2 : IDWriteFontFace1")]
     [NativeInheritance("IDWriteFontFace1")]
-    public unsafe partial struct IDWriteFontFace2
+    public unsafe partial struct IDWriteFontFace2 : IDWriteFontFace2.Interface
     {
         public void** lpVtbl;
 
@@ -265,6 +265,26 @@ namespace TerraFX.Interop
         public HRESULT GetRecommendedRenderingMode(float fontEmSize, float dpiX, float dpiY, [NativeTypeName("const DWRITE_MATRIX *")] DWRITE_MATRIX* transform, BOOL isSideways, DWRITE_OUTLINE_THRESHOLD outlineThreshold, DWRITE_MEASURING_MODE measuringMode, IDWriteRenderingParams* renderingParams, DWRITE_RENDERING_MODE* renderingMode, DWRITE_GRID_FIT_MODE* gridFitMode)
         {
             return ((delegate* unmanaged<IDWriteFontFace2*, float, float, float, DWRITE_MATRIX*, BOOL, DWRITE_OUTLINE_THRESHOLD, DWRITE_MEASURING_MODE, IDWriteRenderingParams*, DWRITE_RENDERING_MODE*, DWRITE_GRID_FIT_MODE*, int>)(lpVtbl[34]))((IDWriteFontFace2*)Unsafe.AsPointer(ref this), fontEmSize, dpiX, dpiY, transform, isSideways, outlineThreshold, measuringMode, renderingParams, renderingMode, gridFitMode);
+        }
+
+        public interface Interface : IDWriteFontFace1.Interface
+        {
+            [VtblIndex(30)]
+            BOOL IsColorFont();
+
+            [VtblIndex(31)]
+            [return: NativeTypeName("UINT32")]
+            uint GetColorPaletteCount();
+
+            [VtblIndex(32)]
+            [return: NativeTypeName("UINT32")]
+            uint GetPaletteEntryCount();
+
+            [VtblIndex(33)]
+            HRESULT GetPaletteEntries([NativeTypeName("UINT32")] uint colorPaletteIndex, [NativeTypeName("UINT32")] uint firstEntryIndex, [NativeTypeName("UINT32")] uint entryCount, [NativeTypeName("DWRITE_COLOR_F *")] DXGI_RGBA* paletteEntries);
+
+            [VtblIndex(34)]
+            HRESULT GetRecommendedRenderingMode(float fontEmSize, float dpiX, float dpiY, [NativeTypeName("const DWRITE_MATRIX *")] DWRITE_MATRIX* transform, BOOL isSideways, DWRITE_OUTLINE_THRESHOLD outlineThreshold, DWRITE_MEASURING_MODE measuringMode, IDWriteRenderingParams* renderingParams, DWRITE_RENDERING_MODE* renderingMode, DWRITE_GRID_FIT_MODE* gridFitMode);
         }
 
         public partial struct Vtbl

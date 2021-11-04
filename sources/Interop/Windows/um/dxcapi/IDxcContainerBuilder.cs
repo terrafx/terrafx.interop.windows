@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("334B1F50-2292-4B35-99A1-25588D8C17FE")]
     [NativeTypeName("struct IDxcContainerBuilder : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IDxcContainerBuilder
+    public unsafe partial struct IDxcContainerBuilder : IDxcContainerBuilder.Interface
     {
         public void** lpVtbl;
 
@@ -65,6 +65,21 @@ namespace TerraFX.Interop
         public HRESULT SerializeContainer(IDxcOperationResult** ppResult)
         {
             return ((delegate* unmanaged<IDxcContainerBuilder*, IDxcOperationResult**, int>)(lpVtbl[6]))((IDxcContainerBuilder*)Unsafe.AsPointer(ref this), ppResult);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT Load(IDxcBlob* pDxilContainerHeader);
+
+            [VtblIndex(4)]
+            HRESULT AddPart([NativeTypeName("UINT32")] uint fourCC, IDxcBlob* pSource);
+
+            [VtblIndex(5)]
+            HRESULT RemovePart([NativeTypeName("UINT32")] uint fourCC);
+
+            [VtblIndex(6)]
+            HRESULT SerializeContainer(IDxcOperationResult** ppResult);
         }
 
         public partial struct Vtbl

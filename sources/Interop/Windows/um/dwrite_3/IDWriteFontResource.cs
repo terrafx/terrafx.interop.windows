@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("1F803A76-6871-48E8-987F-B975551C50F2")]
     [NativeTypeName("struct IDWriteFontResource : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IDWriteFontResource
+    public unsafe partial struct IDWriteFontResource : IDWriteFontResource.Interface
     {
         public void** lpVtbl;
 
@@ -124,6 +124,48 @@ namespace TerraFX.Interop
         public HRESULT CreateFontFaceReference(DWRITE_FONT_SIMULATIONS fontSimulations, [NativeTypeName("const DWRITE_FONT_AXIS_VALUE *")] DWRITE_FONT_AXIS_VALUE* fontAxisValues, [NativeTypeName("UINT32")] uint fontAxisValueCount, IDWriteFontFaceReference1** fontFaceReference)
         {
             return ((delegate* unmanaged<IDWriteFontResource*, DWRITE_FONT_SIMULATIONS, DWRITE_FONT_AXIS_VALUE*, uint, IDWriteFontFaceReference1**, int>)(lpVtbl[14]))((IDWriteFontResource*)Unsafe.AsPointer(ref this), fontSimulations, fontAxisValues, fontAxisValueCount, fontFaceReference);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetFontFile(IDWriteFontFile** fontFile);
+
+            [VtblIndex(4)]
+            [return: NativeTypeName("UINT32")]
+            uint GetFontFaceIndex();
+
+            [VtblIndex(5)]
+            [return: NativeTypeName("UINT32")]
+            uint GetFontAxisCount();
+
+            [VtblIndex(6)]
+            HRESULT GetDefaultFontAxisValues(DWRITE_FONT_AXIS_VALUE* fontAxisValues, [NativeTypeName("UINT32")] uint fontAxisValueCount);
+
+            [VtblIndex(7)]
+            HRESULT GetFontAxisRanges(DWRITE_FONT_AXIS_RANGE* fontAxisRanges, [NativeTypeName("UINT32")] uint fontAxisRangeCount);
+
+            [VtblIndex(8)]
+            DWRITE_FONT_AXIS_ATTRIBUTES GetFontAxisAttributes([NativeTypeName("UINT32")] uint axisIndex);
+
+            [VtblIndex(9)]
+            HRESULT GetAxisNames([NativeTypeName("UINT32")] uint axisIndex, IDWriteLocalizedStrings** names);
+
+            [VtblIndex(10)]
+            [return: NativeTypeName("UINT32")]
+            uint GetAxisValueNameCount([NativeTypeName("UINT32")] uint axisIndex);
+
+            [VtblIndex(11)]
+            HRESULT GetAxisValueNames([NativeTypeName("UINT32")] uint axisIndex, [NativeTypeName("UINT32")] uint axisValueIndex, DWRITE_FONT_AXIS_RANGE* fontAxisRange, IDWriteLocalizedStrings** names);
+
+            [VtblIndex(12)]
+            BOOL HasVariations();
+
+            [VtblIndex(13)]
+            HRESULT CreateFontFace(DWRITE_FONT_SIMULATIONS fontSimulations, [NativeTypeName("const DWRITE_FONT_AXIS_VALUE *")] DWRITE_FONT_AXIS_VALUE* fontAxisValues, [NativeTypeName("UINT32")] uint fontAxisValueCount, IDWriteFontFace5** fontFace);
+
+            [VtblIndex(14)]
+            HRESULT CreateFontFaceReference(DWRITE_FONT_SIMULATIONS fontSimulations, [NativeTypeName("const DWRITE_FONT_AXIS_VALUE *")] DWRITE_FONT_AXIS_VALUE* fontAxisValues, [NativeTypeName("UINT32")] uint fontAxisValueCount, IDWriteFontFaceReference1** fontFaceReference);
         }
 
         public partial struct Vtbl

@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("D1A34EF2-CAD8-4635-A3D2-FCDA8D3F3CAF")]
     [NativeTypeName("struct IBitmapData : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IBitmapData
+    public unsafe partial struct IBitmapData : IBitmapData.Interface
     {
         public void** lpVtbl;
 
@@ -65,6 +65,21 @@ namespace TerraFX.Interop
         public HRESULT GetSourceBitmapDescription(BitmapDescription* pBitmapDescription)
         {
             return ((delegate* unmanaged<IBitmapData*, BitmapDescription*, int>)(lpVtbl[6]))((IBitmapData*)Unsafe.AsPointer(ref this), pBitmapDescription);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT CopyBytesTo([NativeTypeName("unsigned int")] uint sourceOffsetInBytes, [NativeTypeName("unsigned int")] uint maxBytesToCopy, byte* pvBytes, [NativeTypeName("unsigned int *")] uint* numberOfBytesCopied);
+
+            [VtblIndex(4)]
+            HRESULT GetStride([NativeTypeName("unsigned int *")] uint* pStride);
+
+            [VtblIndex(5)]
+            HRESULT GetBitmapDescription(BitmapDescription* pBitmapDescription);
+
+            [VtblIndex(6)]
+            HRESULT GetSourceBitmapDescription(BitmapDescription* pBitmapDescription);
         }
 
         public partial struct Vtbl

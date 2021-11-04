@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("00000033-0000-0000-C000-000000000046")]
     [NativeTypeName("struct ISynchronizeContainer : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct ISynchronizeContainer
+    public unsafe partial struct ISynchronizeContainer : ISynchronizeContainer.Interface
     {
         public void** lpVtbl;
 
@@ -51,6 +51,15 @@ namespace TerraFX.Interop
         public HRESULT WaitMultiple([NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("DWORD")] uint dwTimeOut, ISynchronize** ppSync)
         {
             return ((delegate* unmanaged<ISynchronizeContainer*, uint, uint, ISynchronize**, int>)(lpVtbl[4]))((ISynchronizeContainer*)Unsafe.AsPointer(ref this), dwFlags, dwTimeOut, ppSync);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT AddSynchronize(ISynchronize* pSync);
+
+            [VtblIndex(4)]
+            HRESULT WaitMultiple([NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("DWORD")] uint dwTimeOut, ISynchronize** ppSync);
         }
 
         public partial struct Vtbl

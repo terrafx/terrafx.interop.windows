@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("3B9C7E7A-6EEE-4DED-9092-11657279ADBE")]
     [NativeTypeName("struct ISpeechTextSelectionInformation : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct ISpeechTextSelectionInformation
+    public unsafe partial struct ISpeechTextSelectionInformation : ISpeechTextSelectionInformation.Interface
     {
         public void** lpVtbl;
 
@@ -121,6 +121,33 @@ namespace TerraFX.Interop
         public HRESULT get_SelectionLength([NativeTypeName("long *")] int* SelectionLength)
         {
             return ((delegate* unmanaged<ISpeechTextSelectionInformation*, int*, int>)(lpVtbl[14]))((ISpeechTextSelectionInformation*)Unsafe.AsPointer(ref this), SelectionLength);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT put_ActiveOffset([NativeTypeName("long")] int ActiveOffset);
+
+            [VtblIndex(8)]
+            HRESULT get_ActiveOffset([NativeTypeName("long *")] int* ActiveOffset);
+
+            [VtblIndex(9)]
+            HRESULT put_ActiveLength([NativeTypeName("long")] int ActiveLength);
+
+            [VtblIndex(10)]
+            HRESULT get_ActiveLength([NativeTypeName("long *")] int* ActiveLength);
+
+            [VtblIndex(11)]
+            HRESULT put_SelectionOffset([NativeTypeName("long")] int SelectionOffset);
+
+            [VtblIndex(12)]
+            HRESULT get_SelectionOffset([NativeTypeName("long *")] int* SelectionOffset);
+
+            [VtblIndex(13)]
+            HRESULT put_SelectionLength([NativeTypeName("long")] int SelectionLength);
+
+            [VtblIndex(14)]
+            HRESULT get_SelectionLength([NativeTypeName("long *")] int* SelectionLength);
         }
 
         public partial struct Vtbl

@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("0A753DCF-C4D8-4B91-ADF6-BE5A60D95A76")]
     [NativeTypeName("struct ID3D12Fence : ID3D12Pageable")]
     [NativeInheritance("ID3D12Pageable")]
-    public unsafe partial struct ID3D12Fence
+    public unsafe partial struct ID3D12Fence : ID3D12Fence.Interface
     {
         public void** lpVtbl;
 
@@ -94,6 +94,19 @@ namespace TerraFX.Interop
         public HRESULT Signal([NativeTypeName("UINT64")] ulong Value)
         {
             return ((delegate* unmanaged<ID3D12Fence*, ulong, int>)(lpVtbl[10]))((ID3D12Fence*)Unsafe.AsPointer(ref this), Value);
+        }
+
+        public interface Interface : ID3D12Pageable.Interface
+        {
+            [VtblIndex(8)]
+            [return: NativeTypeName("UINT64")]
+            ulong GetCompletedValue();
+
+            [VtblIndex(9)]
+            HRESULT SetEventOnCompletion([NativeTypeName("UINT64")] ulong Value, HANDLE hEvent);
+
+            [VtblIndex(10)]
+            HRESULT Signal([NativeTypeName("UINT64")] ulong Value);
         }
 
         public partial struct Vtbl

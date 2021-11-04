@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("08FB9676-B444-41E8-8DBE-6A53A542BFF1")]
     [NativeTypeName("struct IWICMetadataBlockWriter : IWICMetadataBlockReader")]
     [NativeInheritance("IWICMetadataBlockReader")]
-    public unsafe partial struct IWICMetadataBlockWriter
+    public unsafe partial struct IWICMetadataBlockWriter : IWICMetadataBlockWriter.Interface
     {
         public void** lpVtbl;
 
@@ -100,6 +100,24 @@ namespace TerraFX.Interop
         public HRESULT RemoveWriterByIndex(uint nIndex)
         {
             return ((delegate* unmanaged<IWICMetadataBlockWriter*, uint, int>)(lpVtbl[11]))((IWICMetadataBlockWriter*)Unsafe.AsPointer(ref this), nIndex);
+        }
+
+        public interface Interface : IWICMetadataBlockReader.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT InitializeFromBlockReader(IWICMetadataBlockReader* pIMDBlockReader);
+
+            [VtblIndex(8)]
+            HRESULT GetWriterByIndex(uint nIndex, IWICMetadataWriter** ppIMetadataWriter);
+
+            [VtblIndex(9)]
+            HRESULT AddWriter(IWICMetadataWriter* pIMetadataWriter);
+
+            [VtblIndex(10)]
+            HRESULT SetWriterByIndex(uint nIndex, IWICMetadataWriter* pIMetadataWriter);
+
+            [VtblIndex(11)]
+            HRESULT RemoveWriterByIndex(uint nIndex);
         }
 
         public partial struct Vtbl

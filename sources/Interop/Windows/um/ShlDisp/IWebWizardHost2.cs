@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("F9C013DC-3C23-4041-8E39-CFB402F7EA59")]
     [NativeTypeName("struct IWebWizardHost2 : IWebWizardHost")]
     [NativeInheritance("IWebWizardHost")]
-    public unsafe partial struct IWebWizardHost2
+    public unsafe partial struct IWebWizardHost2 : IWebWizardHost2.Interface
     {
         public void** lpVtbl;
 
@@ -135,6 +135,12 @@ namespace TerraFX.Interop
         public HRESULT SignString([NativeTypeName("BSTR")] ushort* value, [NativeTypeName("BSTR *")] ushort** signedValue)
         {
             return ((delegate* unmanaged<IWebWizardHost2*, ushort*, ushort**, int>)(lpVtbl[16]))((IWebWizardHost2*)Unsafe.AsPointer(ref this), value, signedValue);
+        }
+
+        public interface Interface : IWebWizardHost.Interface
+        {
+            [VtblIndex(16)]
+            HRESULT SignString([NativeTypeName("BSTR")] ushort* value, [NativeTypeName("BSTR *")] ushort** signedValue);
         }
 
         public partial struct Vtbl

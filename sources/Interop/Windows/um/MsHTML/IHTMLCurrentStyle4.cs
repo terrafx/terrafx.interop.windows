@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("3050F33B-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct IHTMLCurrentStyle4 : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct IHTMLCurrentStyle4
+    public unsafe partial struct IHTMLCurrentStyle4 : IHTMLCurrentStyle4.Interface
     {
         public void** lpVtbl;
 
@@ -93,6 +93,21 @@ namespace TerraFX.Interop
         public HRESULT get_maxWidth(VARIANT* p)
         {
             return ((delegate* unmanaged<IHTMLCurrentStyle4*, VARIANT*, int>)(lpVtbl[10]))((IHTMLCurrentStyle4*)Unsafe.AsPointer(ref this), p);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT get_msInterpolationMode([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(8)]
+            HRESULT get_maxHeight(VARIANT* p);
+
+            [VtblIndex(9)]
+            HRESULT get_minWidth(VARIANT* p);
+
+            [VtblIndex(10)]
+            HRESULT get_maxWidth(VARIANT* p);
         }
 
         public partial struct Vtbl

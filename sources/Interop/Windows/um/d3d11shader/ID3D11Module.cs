@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("CAC701EE-80FC-4122-8242-10B39C8CEC34")]
     [NativeTypeName("struct ID3D11Module : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct ID3D11Module
+    public unsafe partial struct ID3D11Module : ID3D11Module.Interface
     {
         public void** lpVtbl;
 
@@ -44,6 +44,12 @@ namespace TerraFX.Interop
         public HRESULT CreateInstance([NativeTypeName("LPCSTR")] sbyte* pNamespace, [NativeTypeName("struct ID3D11ModuleInstance **")] ID3D11ModuleInstance** ppModuleInstance)
         {
             return ((delegate* unmanaged<ID3D11Module*, sbyte*, ID3D11ModuleInstance**, int>)(lpVtbl[3]))((ID3D11Module*)Unsafe.AsPointer(ref this), pNamespace, ppModuleInstance);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT CreateInstance([NativeTypeName("LPCSTR")] sbyte* pNamespace, [NativeTypeName("struct ID3D11ModuleInstance **")] ID3D11ModuleInstance** ppModuleInstance);
         }
 
         public partial struct Vtbl

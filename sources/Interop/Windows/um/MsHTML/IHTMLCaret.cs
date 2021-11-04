@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("3050F604-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct IHTMLCaret : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IHTMLCaret
+    public unsafe partial struct IHTMLCaret : IHTMLCaret.Interface
     {
         public void** lpVtbl;
 
@@ -121,6 +121,45 @@ namespace TerraFX.Interop
         public HRESULT SetCaretDirection(CARET_DIRECTION eDir)
         {
             return ((delegate* unmanaged<IHTMLCaret*, CARET_DIRECTION, int>)(lpVtbl[14]))((IHTMLCaret*)Unsafe.AsPointer(ref this), eDir);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT MoveCaretToPointer(IDisplayPointer* pDispPointer, BOOL fScrollIntoView, CARET_DIRECTION eDir);
+
+            [VtblIndex(4)]
+            HRESULT MoveCaretToPointerEx(IDisplayPointer* pDispPointer, BOOL fVisible, BOOL fScrollIntoView, CARET_DIRECTION eDir);
+
+            [VtblIndex(5)]
+            HRESULT MoveMarkupPointerToCaret(IMarkupPointer* pIMarkupPointer);
+
+            [VtblIndex(6)]
+            HRESULT MoveDisplayPointerToCaret(IDisplayPointer* pDispPointer);
+
+            [VtblIndex(7)]
+            HRESULT IsVisible(BOOL* pIsVisible);
+
+            [VtblIndex(8)]
+            HRESULT Show(BOOL fScrollIntoView);
+
+            [VtblIndex(9)]
+            HRESULT Hide();
+
+            [VtblIndex(10)]
+            HRESULT InsertText([NativeTypeName("OLECHAR *")] ushort* pText, [NativeTypeName("LONG")] int lLen);
+
+            [VtblIndex(11)]
+            HRESULT ScrollIntoView();
+
+            [VtblIndex(12)]
+            HRESULT GetLocation(POINT* pPoint, BOOL fTranslate);
+
+            [VtblIndex(13)]
+            HRESULT GetCaretDirection(CARET_DIRECTION* peDir);
+
+            [VtblIndex(14)]
+            HRESULT SetCaretDirection(CARET_DIRECTION eDir);
         }
 
         public partial struct Vtbl

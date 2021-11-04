@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("305106E1-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct IViewObjectPresentSite : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IViewObjectPresentSite
+    public unsafe partial struct IViewObjectPresentSite : IViewObjectPresentSite.Interface
     {
         public void** lpVtbl;
 
@@ -58,6 +58,18 @@ namespace TerraFX.Interop
         public HRESULT SetCompositionMode(VIEW_OBJECT_COMPOSITION_MODE mode)
         {
             return ((delegate* unmanaged<IViewObjectPresentSite*, VIEW_OBJECT_COMPOSITION_MODE, int>)(lpVtbl[5]))((IViewObjectPresentSite*)Unsafe.AsPointer(ref this), mode);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT CreateSurfacePresenter(IUnknown* pDevice, uint width, uint height, uint backBufferCount, DXGI_FORMAT format, VIEW_OBJECT_ALPHA_MODE mode, ISurfacePresenter** ppQueue);
+
+            [VtblIndex(4)]
+            HRESULT IsHardwareComposition(BOOL* pIsHardwareComposition);
+
+            [VtblIndex(5)]
+            HRESULT SetCompositionMode(VIEW_OBJECT_COMPOSITION_MODE mode);
         }
 
         public partial struct Vtbl

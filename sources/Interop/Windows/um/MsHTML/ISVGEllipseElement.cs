@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("30510515-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct ISVGEllipseElement : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct ISVGEllipseElement
+    public unsafe partial struct ISVGEllipseElement : ISVGEllipseElement.Interface
     {
         public void** lpVtbl;
 
@@ -121,6 +121,33 @@ namespace TerraFX.Interop
         public HRESULT get_ry(ISVGAnimatedLength** p)
         {
             return ((delegate* unmanaged<ISVGEllipseElement*, ISVGAnimatedLength**, int>)(lpVtbl[14]))((ISVGEllipseElement*)Unsafe.AsPointer(ref this), p);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT putref_cx(ISVGAnimatedLength* v);
+
+            [VtblIndex(8)]
+            HRESULT get_cx(ISVGAnimatedLength** p);
+
+            [VtblIndex(9)]
+            HRESULT putref_cy(ISVGAnimatedLength* v);
+
+            [VtblIndex(10)]
+            HRESULT get_cy(ISVGAnimatedLength** p);
+
+            [VtblIndex(11)]
+            HRESULT putref_rx(ISVGAnimatedLength* v);
+
+            [VtblIndex(12)]
+            HRESULT get_rx(ISVGAnimatedLength** p);
+
+            [VtblIndex(13)]
+            HRESULT putref_ry(ISVGAnimatedLength* v);
+
+            [VtblIndex(14)]
+            HRESULT get_ry(ISVGAnimatedLength** p);
         }
 
         public partial struct Vtbl

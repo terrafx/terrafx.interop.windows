@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("F779FDDF-26E7-4270-8A8B-B983D1859DE0")]
     [NativeTypeName("struct IMFHttpDownloadRequest : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IMFHttpDownloadRequest
+    public unsafe partial struct IMFHttpDownloadRequest : IMFHttpDownloadRequest.Interface
     {
         public void** lpVtbl;
 
@@ -149,6 +149,57 @@ namespace TerraFX.Interop
         public HRESULT Close()
         {
             return ((delegate* unmanaged<IMFHttpDownloadRequest*, int>)(lpVtbl[18]))((IMFHttpDownloadRequest*)Unsafe.AsPointer(ref this));
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT AddHeader([NativeTypeName("LPCWSTR")] ushort* szHeader);
+
+            [VtblIndex(4)]
+            HRESULT BeginSendRequest([NativeTypeName("const BYTE *")] byte* pbPayload, [NativeTypeName("ULONG")] uint cbPayload, IMFAsyncCallback* pCallback, IUnknown* punkState);
+
+            [VtblIndex(5)]
+            HRESULT EndSendRequest(IMFAsyncResult* pResult);
+
+            [VtblIndex(6)]
+            HRESULT BeginReceiveResponse(IMFAsyncCallback* pCallback, IUnknown* punkState);
+
+            [VtblIndex(7)]
+            HRESULT EndReceiveResponse(IMFAsyncResult* pResult);
+
+            [VtblIndex(8)]
+            HRESULT BeginReadPayload(byte* pb, [NativeTypeName("ULONG")] uint cb, IMFAsyncCallback* pCallback, IUnknown* punkState);
+
+            [VtblIndex(9)]
+            HRESULT EndReadPayload(IMFAsyncResult* pResult, [NativeTypeName("QWORD *")] ulong* pqwOffset, [NativeTypeName("ULONG *")] uint* pcbRead);
+
+            [VtblIndex(10)]
+            HRESULT QueryHeader([NativeTypeName("LPCWSTR")] ushort* szHeaderName, [NativeTypeName("DWORD")] uint dwIndex, [NativeTypeName("LPWSTR *")] ushort** ppszHeaderValue);
+
+            [VtblIndex(11)]
+            HRESULT GetURL([NativeTypeName("LPWSTR *")] ushort** ppszURL);
+
+            [VtblIndex(12)]
+            HRESULT HasNullSourceOrigin(BOOL* pfNullSourceOrigin);
+
+            [VtblIndex(13)]
+            HRESULT GetTimeSeekResult([NativeTypeName("QWORD *")] ulong* pqwStartTime, [NativeTypeName("QWORD *")] ulong* pqwStopTime, [NativeTypeName("QWORD *")] ulong* pqwDuration);
+
+            [VtblIndex(14)]
+            HRESULT GetHttpStatus([NativeTypeName("DWORD *")] uint* pdwHttpStatus);
+
+            [VtblIndex(15)]
+            HRESULT GetAtEndOfPayload(BOOL* pfAtEndOfPayload);
+
+            [VtblIndex(16)]
+            HRESULT GetTotalLength([NativeTypeName("QWORD *")] ulong* pqwTotalLength);
+
+            [VtblIndex(17)]
+            HRESULT GetRangeEndOffset([NativeTypeName("QWORD *")] ulong* pqwRangeEnd);
+
+            [VtblIndex(18)]
+            HRESULT Close();
         }
 
         public partial struct Vtbl

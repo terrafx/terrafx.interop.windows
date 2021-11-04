@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("A08DEBDA-3258-4FA4-9F16-9174D3FE93B1")]
     [NativeTypeName("struct IDCompositionSaturationEffect : IDCompositionFilterEffect")]
     [NativeInheritance("IDCompositionFilterEffect")]
-    public unsafe partial struct IDCompositionSaturationEffect
+    public unsafe partial struct IDCompositionSaturationEffect : IDCompositionSaturationEffect.Interface
     {
         public void** lpVtbl;
 
@@ -58,6 +58,15 @@ namespace TerraFX.Interop
         public HRESULT SetSaturation(float ratio)
         {
             return ((delegate* unmanaged<IDCompositionSaturationEffect*, float, int>)(lpVtbl[5]))((IDCompositionSaturationEffect*)Unsafe.AsPointer(ref this), ratio);
+        }
+
+        public interface Interface : IDCompositionFilterEffect.Interface
+        {
+            [VtblIndex(4)]
+            HRESULT SetSaturation(IDCompositionAnimation* animation);
+
+            [VtblIndex(5)]
+            HRESULT SetSaturation(float ratio);
         }
 
         public partial struct Vtbl

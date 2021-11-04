@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("47DD575D-AC05-4CDD-8049-9B02CD16F44C")]
     [NativeTypeName("struct ID2D1Device : ID2D1Resource")]
     [NativeInheritance("ID2D1Resource")]
-    public unsafe partial struct ID2D1Device
+    public unsafe partial struct ID2D1Device : ID2D1Device.Interface
     {
         public void** lpVtbl;
 
@@ -80,6 +80,25 @@ namespace TerraFX.Interop
         public void ClearResources([NativeTypeName("UINT32")] uint millisecondsSinceUse = 0)
         {
             ((delegate* unmanaged<ID2D1Device*, uint, void>)(lpVtbl[8]))((ID2D1Device*)Unsafe.AsPointer(ref this), millisecondsSinceUse);
+        }
+
+        public interface Interface : ID2D1Resource.Interface
+        {
+            [VtblIndex(4)]
+            HRESULT CreateDeviceContext(D2D1_DEVICE_CONTEXT_OPTIONS options, ID2D1DeviceContext** deviceContext);
+
+            [VtblIndex(5)]
+            HRESULT CreatePrintControl(IWICImagingFactory* wicFactory, IPrintDocumentPackageTarget* documentTarget, [NativeTypeName("const D2D1_PRINT_CONTROL_PROPERTIES *")] D2D1_PRINT_CONTROL_PROPERTIES* printControlProperties, ID2D1PrintControl** printControl);
+
+            [VtblIndex(6)]
+            void SetMaximumTextureMemory([NativeTypeName("UINT64")] ulong maximumInBytes);
+
+            [VtblIndex(7)]
+            [return: NativeTypeName("UINT64")]
+            ulong GetMaximumTextureMemory();
+
+            [VtblIndex(8)]
+            void ClearResources([NativeTypeName("UINT32")] uint millisecondsSinceUse = 0);
         }
 
         public partial struct Vtbl

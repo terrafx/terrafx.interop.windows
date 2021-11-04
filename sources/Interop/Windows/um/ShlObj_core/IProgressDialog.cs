@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("EBBC7C04-315E-11D2-B62F-006097DF5BD4")]
     [NativeTypeName("struct IProgressDialog : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IProgressDialog
+    public unsafe partial struct IProgressDialog : IProgressDialog.Interface
     {
         public void** lpVtbl;
 
@@ -107,6 +107,39 @@ namespace TerraFX.Interop
         public HRESULT Timer([NativeTypeName("DWORD")] uint dwTimerAction, [NativeTypeName("LPCVOID")] void* pvResevered)
         {
             return ((delegate* unmanaged<IProgressDialog*, uint, void*, int>)(lpVtbl[12]))((IProgressDialog*)Unsafe.AsPointer(ref this), dwTimerAction, pvResevered);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT StartProgressDialog(HWND hwndParent, IUnknown* punkEnableModless, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("LPCVOID")] void* pvResevered);
+
+            [VtblIndex(4)]
+            HRESULT StopProgressDialog();
+
+            [VtblIndex(5)]
+            HRESULT SetTitle([NativeTypeName("PCWSTR")] ushort* pwzTitle);
+
+            [VtblIndex(6)]
+            HRESULT SetAnimation(HINSTANCE hInstAnimation, uint idAnimation);
+
+            [VtblIndex(7)]
+            BOOL HasUserCancelled();
+
+            [VtblIndex(8)]
+            HRESULT SetProgress([NativeTypeName("DWORD")] uint dwCompleted, [NativeTypeName("DWORD")] uint dwTotal);
+
+            [VtblIndex(9)]
+            HRESULT SetProgress64([NativeTypeName("ULONGLONG")] ulong ullCompleted, [NativeTypeName("ULONGLONG")] ulong ullTotal);
+
+            [VtblIndex(10)]
+            HRESULT SetLine([NativeTypeName("DWORD")] uint dwLineNum, [NativeTypeName("PCWSTR")] ushort* pwzString, BOOL fCompactPath, [NativeTypeName("LPCVOID")] void* pvResevered);
+
+            [VtblIndex(11)]
+            HRESULT SetCancelMsg([NativeTypeName("PCWSTR")] ushort* pwzCancelMsg, [NativeTypeName("LPCVOID")] void* pvResevered);
+
+            [VtblIndex(12)]
+            HRESULT Timer([NativeTypeName("DWORD")] uint dwTimerAction, [NativeTypeName("LPCVOID")] void* pvResevered);
         }
 
         public partial struct Vtbl

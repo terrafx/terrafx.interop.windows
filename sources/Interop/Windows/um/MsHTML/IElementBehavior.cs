@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("3050F425-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct IElementBehavior : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IElementBehavior
+    public unsafe partial struct IElementBehavior : IElementBehavior.Interface
     {
         public void** lpVtbl;
 
@@ -58,6 +58,18 @@ namespace TerraFX.Interop
         public HRESULT Detach()
         {
             return ((delegate* unmanaged<IElementBehavior*, int>)(lpVtbl[5]))((IElementBehavior*)Unsafe.AsPointer(ref this));
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT Init(IElementBehaviorSite* pBehaviorSite);
+
+            [VtblIndex(4)]
+            HRESULT Notify([NativeTypeName("LONG")] int lEvent, VARIANT* pVar);
+
+            [VtblIndex(5)]
+            HRESULT Detach();
         }
 
         public partial struct Vtbl

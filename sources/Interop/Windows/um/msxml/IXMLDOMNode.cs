@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("2933BF80-7B36-11D2-B20E-00C04F983E60")]
     [NativeTypeName("struct IXMLDOMNode : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct IXMLDOMNode
+    public unsafe partial struct IXMLDOMNode : IXMLDOMNode.Interface
     {
         public void** lpVtbl;
 
@@ -317,6 +317,117 @@ namespace TerraFX.Interop
         public HRESULT transformNodeToObject(IXMLDOMNode* stylesheet, VARIANT outputObject)
         {
             return ((delegate* unmanaged<IXMLDOMNode*, IXMLDOMNode*, VARIANT, int>)(lpVtbl[42]))((IXMLDOMNode*)Unsafe.AsPointer(ref this), stylesheet, outputObject);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT get_nodeName([NativeTypeName("BSTR *")] ushort** name);
+
+            [VtblIndex(8)]
+            HRESULT get_nodeValue(VARIANT* value);
+
+            [VtblIndex(9)]
+            HRESULT put_nodeValue(VARIANT value);
+
+            [VtblIndex(10)]
+            HRESULT get_nodeType(DOMNodeType* type);
+
+            [VtblIndex(11)]
+            HRESULT get_parentNode(IXMLDOMNode** parent);
+
+            [VtblIndex(12)]
+            HRESULT get_childNodes(IXMLDOMNodeList** childList);
+
+            [VtblIndex(13)]
+            HRESULT get_firstChild(IXMLDOMNode** firstChild);
+
+            [VtblIndex(14)]
+            HRESULT get_lastChild(IXMLDOMNode** lastChild);
+
+            [VtblIndex(15)]
+            HRESULT get_previousSibling(IXMLDOMNode** previousSibling);
+
+            [VtblIndex(16)]
+            HRESULT get_nextSibling(IXMLDOMNode** nextSibling);
+
+            [VtblIndex(17)]
+            HRESULT get_attributes(IXMLDOMNamedNodeMap** attributeMap);
+
+            [VtblIndex(18)]
+            HRESULT insertBefore(IXMLDOMNode* newChild, VARIANT refChild, IXMLDOMNode** outNewChild);
+
+            [VtblIndex(19)]
+            HRESULT replaceChild(IXMLDOMNode* newChild, IXMLDOMNode* oldChild, IXMLDOMNode** outOldChild);
+
+            [VtblIndex(20)]
+            HRESULT removeChild(IXMLDOMNode* childNode, IXMLDOMNode** oldChild);
+
+            [VtblIndex(21)]
+            HRESULT appendChild(IXMLDOMNode* newChild, IXMLDOMNode** outNewChild);
+
+            [VtblIndex(22)]
+            HRESULT hasChildNodes([NativeTypeName("VARIANT_BOOL *")] short* hasChild);
+
+            [VtblIndex(23)]
+            HRESULT get_ownerDocument(IXMLDOMDocument** XMLDOMDocument);
+
+            [VtblIndex(24)]
+            HRESULT cloneNode([NativeTypeName("VARIANT_BOOL")] short deep, IXMLDOMNode** cloneRoot);
+
+            [VtblIndex(25)]
+            HRESULT get_nodeTypeString([NativeTypeName("BSTR *")] ushort** nodeType);
+
+            [VtblIndex(26)]
+            HRESULT get_text([NativeTypeName("BSTR *")] ushort** text);
+
+            [VtblIndex(27)]
+            HRESULT put_text([NativeTypeName("BSTR")] ushort* text);
+
+            [VtblIndex(28)]
+            HRESULT get_specified([NativeTypeName("VARIANT_BOOL *")] short* isSpecified);
+
+            [VtblIndex(29)]
+            HRESULT get_definition(IXMLDOMNode** definitionNode);
+
+            [VtblIndex(30)]
+            HRESULT get_nodeTypedValue(VARIANT* typedValue);
+
+            [VtblIndex(31)]
+            HRESULT put_nodeTypedValue(VARIANT typedValue);
+
+            [VtblIndex(32)]
+            HRESULT get_dataType(VARIANT* dataTypeName);
+
+            [VtblIndex(33)]
+            HRESULT put_dataType([NativeTypeName("BSTR")] ushort* dataTypeName);
+
+            [VtblIndex(34)]
+            HRESULT get_xml([NativeTypeName("BSTR *")] ushort** xmlString);
+
+            [VtblIndex(35)]
+            HRESULT transformNode(IXMLDOMNode* stylesheet, [NativeTypeName("BSTR *")] ushort** xmlString);
+
+            [VtblIndex(36)]
+            HRESULT selectNodes([NativeTypeName("BSTR")] ushort* queryString, IXMLDOMNodeList** resultList);
+
+            [VtblIndex(37)]
+            HRESULT selectSingleNode([NativeTypeName("BSTR")] ushort* queryString, IXMLDOMNode** resultNode);
+
+            [VtblIndex(38)]
+            HRESULT get_parsed([NativeTypeName("VARIANT_BOOL *")] short* isParsed);
+
+            [VtblIndex(39)]
+            HRESULT get_namespaceURI([NativeTypeName("BSTR *")] ushort** namespaceURI);
+
+            [VtblIndex(40)]
+            HRESULT get_prefix([NativeTypeName("BSTR *")] ushort** prefixString);
+
+            [VtblIndex(41)]
+            HRESULT get_baseName([NativeTypeName("BSTR *")] ushort** nameString);
+
+            [VtblIndex(42)]
+            HRESULT transformNodeToObject(IXMLDOMNode* stylesheet, VARIANT outputObject);
         }
 
         public partial struct Vtbl

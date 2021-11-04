@@ -10,7 +10,7 @@ namespace TerraFX.Interop
 {
     [NativeTypeName("struct IDirectDrawClipper : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IDirectDrawClipper
+    public unsafe partial struct IDirectDrawClipper : IDirectDrawClipper.Interface
     {
         public void** lpVtbl;
 
@@ -77,6 +77,27 @@ namespace TerraFX.Interop
         public HRESULT SetHWnd([NativeTypeName("DWORD")] uint param0, HWND param1)
         {
             return ((delegate* unmanaged<IDirectDrawClipper*, uint, HWND, int>)(lpVtbl[8]))((IDirectDrawClipper*)Unsafe.AsPointer(ref this), param0, param1);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetClipList([NativeTypeName("LPRECT")] RECT* param0, [NativeTypeName("LPRGNDATA")] RGNDATA* param1, [NativeTypeName("LPDWORD")] uint* param2);
+
+            [VtblIndex(4)]
+            HRESULT GetHWnd(HWND* param0);
+
+            [VtblIndex(5)]
+            HRESULT Initialize([NativeTypeName("LPDIRECTDRAW")] IDirectDraw* param0, [NativeTypeName("DWORD")] uint param1);
+
+            [VtblIndex(6)]
+            HRESULT IsClipListChanged(BOOL* param0);
+
+            [VtblIndex(7)]
+            HRESULT SetClipList([NativeTypeName("LPRGNDATA")] RGNDATA* param0, [NativeTypeName("DWORD")] uint param1);
+
+            [VtblIndex(8)]
+            HRESULT SetHWnd([NativeTypeName("DWORD")] uint param0, HWND param1);
         }
 
         public partial struct Vtbl

@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("3050F648-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct IMarkupContainer2 : IMarkupContainer")]
     [NativeInheritance("IMarkupContainer")]
-    public unsafe partial struct IMarkupContainer2
+    public unsafe partial struct IMarkupContainer2 : IMarkupContainer2.Interface
     {
         public void** lpVtbl;
 
@@ -87,6 +87,28 @@ namespace TerraFX.Interop
         public HRESULT GetMasterElement(IHTMLElement** ppElementMaster)
         {
             return ((delegate* unmanaged<IMarkupContainer2*, IHTMLElement**, int>)(lpVtbl[9]))((IMarkupContainer2*)Unsafe.AsPointer(ref this), ppElementMaster);
+        }
+
+        public interface Interface : IMarkupContainer.Interface
+        {
+            [VtblIndex(4)]
+            HRESULT CreateChangeLog(IHTMLChangeSink* pChangeSink, IHTMLChangeLog** ppChangeLog, BOOL fForward, BOOL fBackward);
+
+            [VtblIndex(5)]
+            HRESULT RegisterForDirtyRange(IHTMLChangeSink* pChangeSink, [NativeTypeName("DWORD *")] uint* pdwCookie);
+
+            [VtblIndex(6)]
+            HRESULT UnRegisterForDirtyRange([NativeTypeName("DWORD")] uint dwCookie);
+
+            [VtblIndex(7)]
+            HRESULT GetAndClearDirtyRange([NativeTypeName("DWORD")] uint dwCookie, IMarkupPointer* pIPointerBegin, IMarkupPointer* pIPointerEnd);
+
+            [VtblIndex(8)]
+            [return: NativeTypeName("long")]
+            int GetVersionNumber();
+
+            [VtblIndex(9)]
+            HRESULT GetMasterElement(IHTMLElement** ppElementMaster);
         }
 
         public partial struct Vtbl

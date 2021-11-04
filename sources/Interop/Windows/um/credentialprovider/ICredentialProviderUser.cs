@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("13793285-3EA6-40FD-B420-15F47DA41FBB")]
     [NativeTypeName("struct ICredentialProviderUser : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct ICredentialProviderUser
+    public unsafe partial struct ICredentialProviderUser : ICredentialProviderUser.Interface
     {
         public void** lpVtbl;
 
@@ -65,6 +65,21 @@ namespace TerraFX.Interop
         public HRESULT GetValue([NativeTypeName("const PROPERTYKEY &")] PROPERTYKEY* key, PROPVARIANT* value)
         {
             return ((delegate* unmanaged<ICredentialProviderUser*, PROPERTYKEY*, PROPVARIANT*, int>)(lpVtbl[6]))((ICredentialProviderUser*)Unsafe.AsPointer(ref this), key, value);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetSid([NativeTypeName("LPWSTR *")] ushort** sid);
+
+            [VtblIndex(4)]
+            HRESULT GetProviderID(Guid* providerID);
+
+            [VtblIndex(5)]
+            HRESULT GetStringValue([NativeTypeName("const PROPERTYKEY &")] PROPERTYKEY* key, [NativeTypeName("LPWSTR *")] ushort** stringValue);
+
+            [VtblIndex(6)]
+            HRESULT GetValue([NativeTypeName("const PROPERTYKEY &")] PROPERTYKEY* key, PROPVARIANT* value);
         }
 
         public partial struct Vtbl

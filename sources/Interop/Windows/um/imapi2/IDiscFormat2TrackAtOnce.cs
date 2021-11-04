@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("27354154-8F64-5B0F-8F00-5D77AFBE261E")]
     [NativeTypeName("struct IDiscFormat2TrackAtOnce : IDiscFormat2")]
     [NativeInheritance("IDiscFormat2")]
-    public unsafe partial struct IDiscFormat2TrackAtOnce
+    public unsafe partial struct IDiscFormat2TrackAtOnce : IDiscFormat2TrackAtOnce.Interface
     {
         public void** lpVtbl;
 
@@ -275,6 +275,84 @@ namespace TerraFX.Interop
         public HRESULT get_SupportedWriteSpeedDescriptors(SAFEARRAY** supportedSpeedDescriptors)
         {
             return ((delegate* unmanaged<IDiscFormat2TrackAtOnce*, SAFEARRAY**, int>)(lpVtbl[36]))((IDiscFormat2TrackAtOnce*)Unsafe.AsPointer(ref this), supportedSpeedDescriptors);
+        }
+
+        public interface Interface : IDiscFormat2.Interface
+        {
+            [VtblIndex(12)]
+            HRESULT PrepareMedia();
+
+            [VtblIndex(13)]
+            HRESULT AddAudioTrack(IStream* data);
+
+            [VtblIndex(14)]
+            HRESULT CancelAddTrack();
+
+            [VtblIndex(15)]
+            HRESULT ReleaseMedia();
+
+            [VtblIndex(16)]
+            HRESULT SetWriteSpeed([NativeTypeName("LONG")] int RequestedSectorsPerSecond, [NativeTypeName("VARIANT_BOOL")] short RotationTypeIsPureCAV);
+
+            [VtblIndex(17)]
+            HRESULT put_Recorder(IDiscRecorder2* value);
+
+            [VtblIndex(18)]
+            HRESULT get_Recorder(IDiscRecorder2** value);
+
+            [VtblIndex(19)]
+            HRESULT put_BufferUnderrunFreeDisabled([NativeTypeName("VARIANT_BOOL")] short value);
+
+            [VtblIndex(20)]
+            HRESULT get_BufferUnderrunFreeDisabled([NativeTypeName("VARIANT_BOOL *")] short* value);
+
+            [VtblIndex(21)]
+            HRESULT get_NumberOfExistingTracks([NativeTypeName("LONG *")] int* value);
+
+            [VtblIndex(22)]
+            HRESULT get_TotalSectorsOnMedia([NativeTypeName("LONG *")] int* value);
+
+            [VtblIndex(23)]
+            HRESULT get_FreeSectorsOnMedia([NativeTypeName("LONG *")] int* value);
+
+            [VtblIndex(24)]
+            HRESULT get_UsedSectorsOnMedia([NativeTypeName("LONG *")] int* value);
+
+            [VtblIndex(25)]
+            HRESULT put_DoNotFinalizeMedia([NativeTypeName("VARIANT_BOOL")] short value);
+
+            [VtblIndex(26)]
+            HRESULT get_DoNotFinalizeMedia([NativeTypeName("VARIANT_BOOL *")] short* value);
+
+            [VtblIndex(27)]
+            HRESULT get_ExpectedTableOfContents(SAFEARRAY** value);
+
+            [VtblIndex(28)]
+            HRESULT get_CurrentPhysicalMediaType(IMAPI_MEDIA_PHYSICAL_TYPE* value);
+
+            [VtblIndex(29)]
+            HRESULT put_ClientName([NativeTypeName("BSTR")] ushort* value);
+
+            [VtblIndex(30)]
+            HRESULT get_ClientName([NativeTypeName("BSTR *")] ushort** value);
+
+            [VtblIndex(31)]
+            HRESULT get_RequestedWriteSpeed([NativeTypeName("LONG *")] int* value);
+
+            [VtblIndex(32)]
+            HRESULT get_RequestedRotationTypeIsPureCAV([NativeTypeName("VARIANT_BOOL *")] short* value);
+
+            [VtblIndex(33)]
+            HRESULT get_CurrentWriteSpeed([NativeTypeName("LONG *")] int* value);
+
+            [VtblIndex(34)]
+            HRESULT get_CurrentRotationTypeIsPureCAV([NativeTypeName("VARIANT_BOOL *")] short* value);
+
+            [VtblIndex(35)]
+            HRESULT get_SupportedWriteSpeeds(SAFEARRAY** supportedSpeeds);
+
+            [VtblIndex(36)]
+            HRESULT get_SupportedWriteSpeedDescriptors(SAFEARRAY** supportedSpeedDescriptors);
         }
 
         public partial struct Vtbl

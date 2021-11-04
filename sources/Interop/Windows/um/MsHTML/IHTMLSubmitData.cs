@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("3050F645-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct IHTMLSubmitData : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct IHTMLSubmitData
+    public unsafe partial struct IHTMLSubmitData : IHTMLSubmitData.Interface
     {
         public void** lpVtbl;
 
@@ -86,6 +86,18 @@ namespace TerraFX.Interop
         public HRESULT appendItemSeparator()
         {
             return ((delegate* unmanaged<IHTMLSubmitData*, int>)(lpVtbl[9]))((IHTMLSubmitData*)Unsafe.AsPointer(ref this));
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT appendNameValuePair([NativeTypeName("BSTR")] ushort* name = null, [NativeTypeName("BSTR")] ushort* value = null);
+
+            [VtblIndex(8)]
+            HRESULT appendNameFilePair([NativeTypeName("BSTR")] ushort* name = null, [NativeTypeName("BSTR")] ushort* filename = null);
+
+            [VtblIndex(9)]
+            HRESULT appendItemSeparator();
         }
 
         public partial struct Vtbl

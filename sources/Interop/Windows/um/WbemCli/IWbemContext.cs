@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("44ACA674-E8FC-11D0-A07C-00C04FB68820")]
     [NativeTypeName("struct IWbemContext : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IWbemContext
+    public unsafe partial struct IWbemContext : IWbemContext.Interface
     {
         public void** lpVtbl;
 
@@ -100,6 +100,36 @@ namespace TerraFX.Interop
         public HRESULT DeleteAll()
         {
             return ((delegate* unmanaged<IWbemContext*, int>)(lpVtbl[11]))((IWbemContext*)Unsafe.AsPointer(ref this));
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT Clone(IWbemContext** ppNewCopy);
+
+            [VtblIndex(4)]
+            HRESULT GetNames([NativeTypeName("long")] int lFlags, SAFEARRAY** pNames);
+
+            [VtblIndex(5)]
+            HRESULT BeginEnumeration([NativeTypeName("long")] int lFlags);
+
+            [VtblIndex(6)]
+            HRESULT Next([NativeTypeName("long")] int lFlags, [NativeTypeName("BSTR *")] ushort** pstrName, VARIANT* pValue);
+
+            [VtblIndex(7)]
+            HRESULT EndEnumeration();
+
+            [VtblIndex(8)]
+            HRESULT SetValue([NativeTypeName("LPCWSTR")] ushort* wszName, [NativeTypeName("long")] int lFlags, VARIANT* pValue);
+
+            [VtblIndex(9)]
+            HRESULT GetValue([NativeTypeName("LPCWSTR")] ushort* wszName, [NativeTypeName("long")] int lFlags, VARIANT* pValue);
+
+            [VtblIndex(10)]
+            HRESULT DeleteValue([NativeTypeName("LPCWSTR")] ushort* wszName, [NativeTypeName("long")] int lFlags);
+
+            [VtblIndex(11)]
+            HRESULT DeleteAll();
         }
 
         public partial struct Vtbl

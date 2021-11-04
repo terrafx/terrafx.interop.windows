@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("BB12D362-DAEE-4B9A-AA1D-14BA401CFA1F")]
     [NativeTypeName("struct ID2D1Factory1 : ID2D1Factory")]
     [NativeInheritance("ID2D1Factory")]
-    public unsafe partial struct ID2D1Factory1
+    public unsafe partial struct ID2D1Factory1 : ID2D1Factory1.Interface
     {
         public void** lpVtbl;
 
@@ -225,6 +225,39 @@ namespace TerraFX.Interop
         public HRESULT GetEffectProperties([NativeTypeName("const IID &")] Guid* effectId, ID2D1Properties** properties)
         {
             return ((delegate* unmanaged<ID2D1Factory1*, Guid*, ID2D1Properties**, int>)(lpVtbl[26]))((ID2D1Factory1*)Unsafe.AsPointer(ref this), effectId, properties);
+        }
+
+        public interface Interface : ID2D1Factory.Interface
+        {
+            [VtblIndex(17)]
+            HRESULT CreateDevice(IDXGIDevice* dxgiDevice, ID2D1Device** d2dDevice);
+
+            [VtblIndex(18)]
+            HRESULT CreateStrokeStyle([NativeTypeName("const D2D1_STROKE_STYLE_PROPERTIES1 *")] D2D1_STROKE_STYLE_PROPERTIES1* strokeStyleProperties, [NativeTypeName("const FLOAT *")] float* dashes, [NativeTypeName("UINT32")] uint dashesCount, ID2D1StrokeStyle1** strokeStyle);
+
+            [VtblIndex(19)]
+            HRESULT CreatePathGeometry(ID2D1PathGeometry1** pathGeometry);
+
+            [VtblIndex(20)]
+            HRESULT CreateDrawingStateBlock([NativeTypeName("const D2D1_DRAWING_STATE_DESCRIPTION1 *")] D2D1_DRAWING_STATE_DESCRIPTION1* drawingStateDescription, IDWriteRenderingParams* textRenderingParams, ID2D1DrawingStateBlock1** drawingStateBlock);
+
+            [VtblIndex(21)]
+            HRESULT CreateGdiMetafile(IStream* metafileStream, ID2D1GdiMetafile** metafile);
+
+            [VtblIndex(22)]
+            HRESULT RegisterEffectFromStream([NativeTypeName("const IID &")] Guid* classId, IStream* propertyXml, [NativeTypeName("const D2D1_PROPERTY_BINDING *")] D2D1_PROPERTY_BINDING* bindings, [NativeTypeName("UINT32")] uint bindingsCount, [NativeTypeName("const PD2D1_EFFECT_FACTORY")] delegate* unmanaged<IUnknown**, HRESULT> effectFactory);
+
+            [VtblIndex(23)]
+            HRESULT RegisterEffectFromString([NativeTypeName("const IID &")] Guid* classId, [NativeTypeName("PCWSTR")] ushort* propertyXml, [NativeTypeName("const D2D1_PROPERTY_BINDING *")] D2D1_PROPERTY_BINDING* bindings, [NativeTypeName("UINT32")] uint bindingsCount, [NativeTypeName("const PD2D1_EFFECT_FACTORY")] delegate* unmanaged<IUnknown**, HRESULT> effectFactory);
+
+            [VtblIndex(24)]
+            HRESULT UnregisterEffect([NativeTypeName("const IID &")] Guid* classId);
+
+            [VtblIndex(25)]
+            HRESULT GetRegisteredEffects([NativeTypeName("CLSID *")] Guid* effects, [NativeTypeName("UINT32")] uint effectsCount, [NativeTypeName("UINT32 *")] uint* effectsReturned, [NativeTypeName("UINT32 *")] uint* effectsRegistered);
+
+            [VtblIndex(26)]
+            HRESULT GetEffectProperties([NativeTypeName("const IID &")] Guid* effectId, ID2D1Properties** properties);
         }
 
         public partial struct Vtbl

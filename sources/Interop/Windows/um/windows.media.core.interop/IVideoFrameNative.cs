@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("26BA702B-314A-4620-AAF6-7A51AA58FA18")]
     [NativeTypeName("struct IVideoFrameNative : IInspectable")]
     [NativeInheritance("IInspectable")]
-    public unsafe partial struct IVideoFrameNative
+    public unsafe partial struct IVideoFrameNative : IVideoFrameNative.Interface
     {
         public void** lpVtbl;
 
@@ -72,6 +72,15 @@ namespace TerraFX.Interop
         public HRESULT GetDevice([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPVOID *")] void** ppv)
         {
             return ((delegate* unmanaged<IVideoFrameNative*, Guid*, void**, int>)(lpVtbl[7]))((IVideoFrameNative*)Unsafe.AsPointer(ref this), riid, ppv);
+        }
+
+        public interface Interface : IInspectable.Interface
+        {
+            [VtblIndex(6)]
+            HRESULT GetData([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPVOID *")] void** ppv);
+
+            [VtblIndex(7)]
+            HRESULT GetDevice([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPVOID *")] void** ppv);
         }
 
         public partial struct Vtbl

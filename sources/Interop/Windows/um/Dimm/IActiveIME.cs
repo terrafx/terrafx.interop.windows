@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("6FE20962-D077-11D0-8FE7-00AA006BCC59")]
     [NativeTypeName("struct IActiveIME : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IActiveIME
+    public unsafe partial struct IActiveIME : IActiveIME.Interface
     {
         public void** lpVtbl;
 
@@ -156,6 +156,60 @@ namespace TerraFX.Interop
         public HRESULT GetLangId([NativeTypeName("LANGID *")] ushort* plid)
         {
             return ((delegate* unmanaged<IActiveIME*, ushort*, int>)(lpVtbl[19]))((IActiveIME*)Unsafe.AsPointer(ref this), plid);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT Inquire([NativeTypeName("DWORD")] uint dwSystemInfoFlags, IMEINFO* pIMEInfo, [NativeTypeName("LPWSTR")] ushort* szWndClass, [NativeTypeName("DWORD *")] uint* pdwPrivate);
+
+            [VtblIndex(4)]
+            HRESULT ConversionList(HIMC hIMC, [NativeTypeName("LPWSTR")] ushort* szSource, uint uFlag, uint uBufLen, CANDIDATELIST* pDest, uint* puCopied);
+
+            [VtblIndex(5)]
+            HRESULT Configure(HKL hKL, HWND hWnd, [NativeTypeName("DWORD")] uint dwMode, REGISTERWORDW* pRegisterWord);
+
+            [VtblIndex(6)]
+            HRESULT Destroy(uint uReserved);
+
+            [VtblIndex(7)]
+            HRESULT Escape(HIMC hIMC, uint uEscape, void* pData, LRESULT* plResult);
+
+            [VtblIndex(8)]
+            HRESULT SetActiveContext(HIMC hIMC, BOOL fFlag);
+
+            [VtblIndex(9)]
+            HRESULT ProcessKey(HIMC hIMC, uint uVirKey, [NativeTypeName("DWORD")] uint lParam, byte* pbKeyState);
+
+            [VtblIndex(10)]
+            HRESULT Notify(HIMC hIMC, [NativeTypeName("DWORD")] uint dwAction, [NativeTypeName("DWORD")] uint dwIndex, [NativeTypeName("DWORD")] uint dwValue);
+
+            [VtblIndex(11)]
+            HRESULT Select(HIMC hIMC, BOOL fSelect);
+
+            [VtblIndex(12)]
+            HRESULT SetCompositionString(HIMC hIMC, [NativeTypeName("DWORD")] uint dwIndex, void* pComp, [NativeTypeName("DWORD")] uint dwCompLen, void* pRead, [NativeTypeName("DWORD")] uint dwReadLen);
+
+            [VtblIndex(13)]
+            HRESULT ToAsciiEx(uint uVirKey, uint uScanCode, byte* pbKeyState, uint fuState, HIMC hIMC, [NativeTypeName("DWORD *")] uint* pdwTransBuf, uint* puSize);
+
+            [VtblIndex(14)]
+            HRESULT RegisterWord([NativeTypeName("LPWSTR")] ushort* szReading, [NativeTypeName("DWORD")] uint dwStyle, [NativeTypeName("LPWSTR")] ushort* szString);
+
+            [VtblIndex(15)]
+            HRESULT UnregisterWord([NativeTypeName("LPWSTR")] ushort* szReading, [NativeTypeName("DWORD")] uint dwStyle, [NativeTypeName("LPWSTR")] ushort* szString);
+
+            [VtblIndex(16)]
+            HRESULT GetRegisterWordStyle(uint nItem, STYLEBUFW* pStyleBuf, uint* puBufSize);
+
+            [VtblIndex(17)]
+            HRESULT EnumRegisterWord([NativeTypeName("LPWSTR")] ushort* szReading, [NativeTypeName("DWORD")] uint dwStyle, [NativeTypeName("LPWSTR")] ushort* szRegister, [NativeTypeName("LPVOID")] void* pData, IEnumRegisterWordW** ppEnum);
+
+            [VtblIndex(18)]
+            HRESULT GetCodePageA(uint* uCodePage);
+
+            [VtblIndex(19)]
+            HRESULT GetLangId([NativeTypeName("LANGID *")] ushort* plid);
         }
 
         public partial struct Vtbl

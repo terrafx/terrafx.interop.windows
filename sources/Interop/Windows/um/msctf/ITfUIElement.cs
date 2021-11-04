@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("EA1EA137-19DF-11D7-A6D2-00065B84435C")]
     [NativeTypeName("struct ITfUIElement : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct ITfUIElement
+    public unsafe partial struct ITfUIElement : ITfUIElement.Interface
     {
         public void** lpVtbl;
 
@@ -65,6 +65,21 @@ namespace TerraFX.Interop
         public HRESULT IsShown(BOOL* pbShow)
         {
             return ((delegate* unmanaged<ITfUIElement*, BOOL*, int>)(lpVtbl[6]))((ITfUIElement*)Unsafe.AsPointer(ref this), pbShow);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetDescription([NativeTypeName("BSTR *")] ushort** pbstrDescription);
+
+            [VtblIndex(4)]
+            HRESULT GetGUID(Guid* pguid);
+
+            [VtblIndex(5)]
+            HRESULT Show(BOOL bShow);
+
+            [VtblIndex(6)]
+            HRESULT IsShown(BOOL* pbShow);
         }
 
         public partial struct Vtbl

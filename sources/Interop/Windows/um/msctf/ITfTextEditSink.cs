@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("8127D409-CCD3-4683-967A-B43D5B482BF7")]
     [NativeTypeName("struct ITfTextEditSink : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct ITfTextEditSink
+    public unsafe partial struct ITfTextEditSink : ITfTextEditSink.Interface
     {
         public void** lpVtbl;
 
@@ -44,6 +44,12 @@ namespace TerraFX.Interop
         public HRESULT OnEndEdit(ITfContext* pic, [NativeTypeName("TfEditCookie")] uint ecReadOnly, ITfEditRecord* pEditRecord)
         {
             return ((delegate* unmanaged<ITfTextEditSink*, ITfContext*, uint, ITfEditRecord*, int>)(lpVtbl[3]))((ITfTextEditSink*)Unsafe.AsPointer(ref this), pic, ecReadOnly, pEditRecord);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT OnEndEdit(ITfContext* pic, [NativeTypeName("TfEditCookie")] uint ecReadOnly, ITfEditRecord* pEditRecord);
         }
 
         public partial struct Vtbl

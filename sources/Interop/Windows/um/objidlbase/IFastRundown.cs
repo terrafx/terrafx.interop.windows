@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("00000040-0000-0000-C000-000000000046")]
     [NativeTypeName("struct IFastRundown : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IFastRundown
+    public unsafe partial struct IFastRundown : IFastRundown.Interface
     {
         public void** lpVtbl;
 
@@ -37,6 +37,10 @@ namespace TerraFX.Interop
         public uint Release()
         {
             return ((delegate* unmanaged<IFastRundown*, uint>)(lpVtbl[2]))((IFastRundown*)Unsafe.AsPointer(ref this));
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
         }
 
         public partial struct Vtbl

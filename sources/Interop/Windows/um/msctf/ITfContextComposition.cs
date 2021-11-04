@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("D40C8AAE-AC92-4FC7-9A11-0EE0E23AA39B")]
     [NativeTypeName("struct ITfContextComposition : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct ITfContextComposition
+    public unsafe partial struct ITfContextComposition : ITfContextComposition.Interface
     {
         public void** lpVtbl;
 
@@ -65,6 +65,21 @@ namespace TerraFX.Interop
         public HRESULT TakeOwnership([NativeTypeName("TfEditCookie")] uint ecWrite, ITfCompositionView* pComposition, ITfCompositionSink* pSink, ITfComposition** ppComposition)
         {
             return ((delegate* unmanaged<ITfContextComposition*, uint, ITfCompositionView*, ITfCompositionSink*, ITfComposition**, int>)(lpVtbl[6]))((ITfContextComposition*)Unsafe.AsPointer(ref this), ecWrite, pComposition, pSink, ppComposition);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT StartComposition([NativeTypeName("TfEditCookie")] uint ecWrite, ITfRange* pCompositionRange, ITfCompositionSink* pSink, ITfComposition** ppComposition);
+
+            [VtblIndex(4)]
+            HRESULT EnumCompositions(IEnumITfCompositionView** ppEnum);
+
+            [VtblIndex(5)]
+            HRESULT FindComposition([NativeTypeName("TfEditCookie")] uint ecRead, ITfRange* pTestRange, IEnumITfCompositionView** ppEnum);
+
+            [VtblIndex(6)]
+            HRESULT TakeOwnership([NativeTypeName("TfEditCookie")] uint ecWrite, ITfCompositionView* pComposition, ITfCompositionSink* pSink, ITfComposition** ppComposition);
         }
 
         public partial struct Vtbl

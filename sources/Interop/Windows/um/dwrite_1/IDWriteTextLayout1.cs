@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("9064D822-80A7-465C-A986-DF65F78B8FEB")]
     [NativeTypeName("struct IDWriteTextLayout1 : IDWriteTextLayout")]
     [NativeInheritance("IDWriteTextLayout")]
-    public unsafe partial struct IDWriteTextLayout1
+    public unsafe partial struct IDWriteTextLayout1 : IDWriteTextLayout1.Interface
     {
         public void** lpVtbl;
 
@@ -515,6 +515,21 @@ namespace TerraFX.Interop
         public HRESULT GetCharacterSpacing([NativeTypeName("UINT32")] uint currentPosition, float* leadingSpacing, float* trailingSpacing, float* minimumAdvanceWidth, DWRITE_TEXT_RANGE* textRange = null)
         {
             return ((delegate* unmanaged<IDWriteTextLayout1*, uint, float*, float*, float*, DWRITE_TEXT_RANGE*, int>)(lpVtbl[70]))((IDWriteTextLayout1*)Unsafe.AsPointer(ref this), currentPosition, leadingSpacing, trailingSpacing, minimumAdvanceWidth, textRange);
+        }
+
+        public interface Interface : IDWriteTextLayout.Interface
+        {
+            [VtblIndex(67)]
+            HRESULT SetPairKerning(BOOL isPairKerningEnabled, DWRITE_TEXT_RANGE textRange);
+
+            [VtblIndex(68)]
+            HRESULT GetPairKerning([NativeTypeName("UINT32")] uint currentPosition, BOOL* isPairKerningEnabled, DWRITE_TEXT_RANGE* textRange = null);
+
+            [VtblIndex(69)]
+            HRESULT SetCharacterSpacing(float leadingSpacing, float trailingSpacing, float minimumAdvanceWidth, DWRITE_TEXT_RANGE textRange);
+
+            [VtblIndex(70)]
+            HRESULT GetCharacterSpacing([NativeTypeName("UINT32")] uint currentPosition, float* leadingSpacing, float* trailingSpacing, float* minimumAdvanceWidth, DWRITE_TEXT_RANGE* textRange = null);
         }
 
         public partial struct Vtbl

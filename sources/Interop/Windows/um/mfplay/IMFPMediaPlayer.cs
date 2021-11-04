@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("A714590A-58AF-430A-85BF-44F5EC838D85")]
     [NativeTypeName("struct IMFPMediaPlayer : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IMFPMediaPlayer
+    public unsafe partial struct IMFPMediaPlayer : IMFPMediaPlayer.Interface
     {
         public void** lpVtbl;
 
@@ -289,6 +289,117 @@ namespace TerraFX.Interop
         public HRESULT Shutdown()
         {
             return ((delegate* unmanaged<IMFPMediaPlayer*, int>)(lpVtbl[38]))((IMFPMediaPlayer*)Unsafe.AsPointer(ref this));
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT Play();
+
+            [VtblIndex(4)]
+            HRESULT Pause();
+
+            [VtblIndex(5)]
+            HRESULT Stop();
+
+            [VtblIndex(6)]
+            HRESULT FrameStep();
+
+            [VtblIndex(7)]
+            HRESULT SetPosition([NativeTypeName("const GUID &")] Guid* guidPositionType, [NativeTypeName("const PROPVARIANT *")] PROPVARIANT* pvPositionValue);
+
+            [VtblIndex(8)]
+            HRESULT GetPosition([NativeTypeName("const GUID &")] Guid* guidPositionType, PROPVARIANT* pvPositionValue);
+
+            [VtblIndex(9)]
+            HRESULT GetDuration([NativeTypeName("const GUID &")] Guid* guidPositionType, PROPVARIANT* pvDurationValue);
+
+            [VtblIndex(10)]
+            HRESULT SetRate(float flRate);
+
+            [VtblIndex(11)]
+            HRESULT GetRate(float* pflRate);
+
+            [VtblIndex(12)]
+            HRESULT GetSupportedRates(BOOL fForwardDirection, float* pflSlowestRate, float* pflFastestRate);
+
+            [VtblIndex(13)]
+            HRESULT GetState(MFP_MEDIAPLAYER_STATE* peState);
+
+            [VtblIndex(14)]
+            HRESULT CreateMediaItemFromURL([NativeTypeName("LPCWSTR")] ushort* pwszURL, BOOL fSync, [NativeTypeName("DWORD_PTR")] nuint dwUserData, IMFPMediaItem** ppMediaItem);
+
+            [VtblIndex(15)]
+            HRESULT CreateMediaItemFromObject(IUnknown* pIUnknownObj, BOOL fSync, [NativeTypeName("DWORD_PTR")] nuint dwUserData, IMFPMediaItem** ppMediaItem);
+
+            [VtblIndex(16)]
+            HRESULT SetMediaItem(IMFPMediaItem* pIMFPMediaItem);
+
+            [VtblIndex(17)]
+            HRESULT ClearMediaItem();
+
+            [VtblIndex(18)]
+            HRESULT GetMediaItem(IMFPMediaItem** ppIMFPMediaItem);
+
+            [VtblIndex(19)]
+            HRESULT GetVolume(float* pflVolume);
+
+            [VtblIndex(20)]
+            HRESULT SetVolume(float flVolume);
+
+            [VtblIndex(21)]
+            HRESULT GetBalance(float* pflBalance);
+
+            [VtblIndex(22)]
+            HRESULT SetBalance(float flBalance);
+
+            [VtblIndex(23)]
+            HRESULT GetMute(BOOL* pfMute);
+
+            [VtblIndex(24)]
+            HRESULT SetMute(BOOL fMute);
+
+            [VtblIndex(25)]
+            HRESULT GetNativeVideoSize(SIZE* pszVideo, SIZE* pszARVideo);
+
+            [VtblIndex(26)]
+            HRESULT GetIdealVideoSize(SIZE* pszMin, SIZE* pszMax);
+
+            [VtblIndex(27)]
+            HRESULT SetVideoSourceRect([NativeTypeName("const MFVideoNormalizedRect *")] MFVideoNormalizedRect* pnrcSource);
+
+            [VtblIndex(28)]
+            HRESULT GetVideoSourceRect(MFVideoNormalizedRect* pnrcSource);
+
+            [VtblIndex(29)]
+            HRESULT SetAspectRatioMode([NativeTypeName("DWORD")] uint dwAspectRatioMode);
+
+            [VtblIndex(30)]
+            HRESULT GetAspectRatioMode([NativeTypeName("DWORD *")] uint* pdwAspectRatioMode);
+
+            [VtblIndex(31)]
+            HRESULT GetVideoWindow(HWND* phwndVideo);
+
+            [VtblIndex(32)]
+            HRESULT UpdateVideo();
+
+            [VtblIndex(33)]
+            HRESULT SetBorderColor(COLORREF Clr);
+
+            [VtblIndex(34)]
+            HRESULT GetBorderColor(COLORREF* pClr);
+
+            [VtblIndex(35)]
+            HRESULT InsertEffect(IUnknown* pEffect, BOOL fOptional);
+
+            [VtblIndex(36)]
+            HRESULT RemoveEffect(IUnknown* pEffect);
+
+            [VtblIndex(37)]
+            HRESULT RemoveAllEffects();
+
+            [VtblIndex(38)]
+            HRESULT Shutdown();
         }
 
         public partial struct Vtbl

@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("1FC55727-A7FB-4FC8-83AE-8AF024990AF1")]
     [NativeTypeName("struct IMFImageSharingEngineClassFactory : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IMFImageSharingEngineClassFactory
+    public unsafe partial struct IMFImageSharingEngineClassFactory : IMFImageSharingEngineClassFactory.Interface
     {
         public void** lpVtbl;
 
@@ -44,6 +44,12 @@ namespace TerraFX.Interop
         public HRESULT CreateInstanceFromUDN([NativeTypeName("BSTR")] ushort* pUniqueDeviceName, IMFImageSharingEngine** ppEngine)
         {
             return ((delegate* unmanaged<IMFImageSharingEngineClassFactory*, ushort*, IMFImageSharingEngine**, int>)(lpVtbl[3]))((IMFImageSharingEngineClassFactory*)Unsafe.AsPointer(ref this), pUniqueDeviceName, ppEngine);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT CreateInstanceFromUDN([NativeTypeName("BSTR")] ushort* pUniqueDeviceName, IMFImageSharingEngine** ppEngine);
         }
 
         public partial struct Vtbl

@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("FFD3ADF8-FA64-4328-B1B6-2E0DB509CB3C")]
     [NativeTypeName("struct IContactPropertyCollection : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IContactPropertyCollection
+    public unsafe partial struct IContactPropertyCollection : IContactPropertyCollection.Interface
     {
         public void** lpVtbl;
 
@@ -86,6 +86,30 @@ namespace TerraFX.Interop
         public HRESULT GetPropertyArrayElementID([NativeTypeName("LPWSTR")] ushort* pszArrayElementID, [NativeTypeName("DWORD")] uint cchArrayElementID, [NativeTypeName("DWORD *")] uint* pdwcchArrayElementIDRequired)
         {
             return ((delegate* unmanaged<IContactPropertyCollection*, ushort*, uint, uint*, int>)(lpVtbl[9]))((IContactPropertyCollection*)Unsafe.AsPointer(ref this), pszArrayElementID, cchArrayElementID, pdwcchArrayElementIDRequired);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT Reset();
+
+            [VtblIndex(4)]
+            HRESULT Next();
+
+            [VtblIndex(5)]
+            HRESULT GetPropertyName([NativeTypeName("LPWSTR")] ushort* pszPropertyName, [NativeTypeName("DWORD")] uint cchPropertyName, [NativeTypeName("DWORD *")] uint* pdwcchPropertyNameRequired);
+
+            [VtblIndex(6)]
+            HRESULT GetPropertyType([NativeTypeName("DWORD *")] uint* pdwType);
+
+            [VtblIndex(7)]
+            HRESULT GetPropertyVersion([NativeTypeName("DWORD *")] uint* pdwVersion);
+
+            [VtblIndex(8)]
+            HRESULT GetPropertyModificationDate(FILETIME* pftModificationDate);
+
+            [VtblIndex(9)]
+            HRESULT GetPropertyArrayElementID([NativeTypeName("LPWSTR")] ushort* pszArrayElementID, [NativeTypeName("DWORD")] uint cchArrayElementID, [NativeTypeName("DWORD *")] uint* pdwcchArrayElementIDRequired);
         }
 
         public partial struct Vtbl

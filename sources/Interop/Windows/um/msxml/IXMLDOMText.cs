@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("2933BF87-7B36-11D2-B20E-00C04F983E60")]
     [NativeTypeName("struct IXMLDOMText : IXMLDOMCharacterData")]
     [NativeInheritance("IXMLDOMCharacterData")]
-    public unsafe partial struct IXMLDOMText
+    public unsafe partial struct IXMLDOMText : IXMLDOMText.Interface
     {
         public void** lpVtbl;
 
@@ -380,6 +380,12 @@ namespace TerraFX.Interop
         public HRESULT splitText([NativeTypeName("long")] int offset, IXMLDOMText** rightHandTextNode)
         {
             return ((delegate* unmanaged<IXMLDOMText*, int, IXMLDOMText**, int>)(lpVtbl[51]))((IXMLDOMText*)Unsafe.AsPointer(ref this), offset, rightHandTextNode);
+        }
+
+        public interface Interface : IXMLDOMCharacterData.Interface
+        {
+            [VtblIndex(51)]
+            HRESULT splitText([NativeTypeName("long")] int offset, IXMLDOMText** rightHandTextNode);
         }
 
         public partial struct Vtbl

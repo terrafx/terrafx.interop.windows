@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("ACD16696-8C14-4F5D-877E-FE3FC1D32738")]
     [NativeTypeName("struct IDWriteFont1 : IDWriteFont")]
     [NativeInheritance("IDWriteFont")]
-    public unsafe partial struct IDWriteFont1
+    public unsafe partial struct IDWriteFont1 : IDWriteFont1.Interface
     {
         public void** lpVtbl;
 
@@ -142,6 +142,21 @@ namespace TerraFX.Interop
         public BOOL IsMonospacedFont()
         {
             return ((delegate* unmanaged<IDWriteFont1*, int>)(lpVtbl[17]))((IDWriteFont1*)Unsafe.AsPointer(ref this));
+        }
+
+        public interface Interface : IDWriteFont.Interface
+        {
+            [VtblIndex(14)]
+            void GetMetrics(DWRITE_FONT_METRICS1* fontMetrics);
+
+            [VtblIndex(15)]
+            void GetPanose(DWRITE_PANOSE* panose);
+
+            [VtblIndex(16)]
+            HRESULT GetUnicodeRanges([NativeTypeName("UINT32")] uint maxRangeCount, DWRITE_UNICODE_RANGE* unicodeRanges, [NativeTypeName("UINT32 *")] uint* actualRangeCount);
+
+            [VtblIndex(17)]
+            BOOL IsMonospacedFont();
         }
 
         public partial struct Vtbl

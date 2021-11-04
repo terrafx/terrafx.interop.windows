@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("F43D0B0B-1379-40E2-9B29-682EA2BF42AF")]
     [NativeTypeName("struct IAppxEncryptedPackageWriter : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IAppxEncryptedPackageWriter
+    public unsafe partial struct IAppxEncryptedPackageWriter : IAppxEncryptedPackageWriter.Interface
     {
         public void** lpVtbl;
 
@@ -51,6 +51,15 @@ namespace TerraFX.Interop
         public HRESULT Close()
         {
             return ((delegate* unmanaged<IAppxEncryptedPackageWriter*, int>)(lpVtbl[4]))((IAppxEncryptedPackageWriter*)Unsafe.AsPointer(ref this));
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT AddPayloadFileEncrypted([NativeTypeName("LPCWSTR")] ushort* fileName, APPX_COMPRESSION_OPTION compressionOption, IStream* inputStream);
+
+            [VtblIndex(4)]
+            HRESULT Close();
         }
 
         public partial struct Vtbl

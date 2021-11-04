@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("0000002A-0000-0000-C000-000000000046")]
     [NativeTypeName("struct IAsyncManager : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IAsyncManager
+    public unsafe partial struct IAsyncManager : IAsyncManager.Interface
     {
         public void** lpVtbl;
 
@@ -58,6 +58,18 @@ namespace TerraFX.Interop
         public HRESULT GetState([NativeTypeName("ULONG *")] uint* pulStateFlags)
         {
             return ((delegate* unmanaged<IAsyncManager*, uint*, int>)(lpVtbl[5]))((IAsyncManager*)Unsafe.AsPointer(ref this), pulStateFlags);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT CompleteCall(HRESULT Result);
+
+            [VtblIndex(4)]
+            HRESULT GetCallContext([NativeTypeName("const IID &")] Guid* riid, void** pInterface);
+
+            [VtblIndex(5)]
+            HRESULT GetState([NativeTypeName("ULONG *")] uint* pulStateFlags);
         }
 
         public partial struct Vtbl

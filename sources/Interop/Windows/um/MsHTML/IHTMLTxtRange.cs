@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("3050F220-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct IHTMLTxtRange : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct IHTMLTxtRange
+    public unsafe partial struct IHTMLTxtRange : IHTMLTxtRange.Interface
     {
         public void** lpVtbl;
 
@@ -275,6 +275,99 @@ namespace TerraFX.Interop
         public HRESULT execCommandShowHelp([NativeTypeName("BSTR")] ushort* cmdID, [NativeTypeName("VARIANT_BOOL *")] short* pfRet)
         {
             return ((delegate* unmanaged<IHTMLTxtRange*, ushort*, short*, int>)(lpVtbl[36]))((IHTMLTxtRange*)Unsafe.AsPointer(ref this), cmdID, pfRet);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT get_htmlText([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(8)]
+            HRESULT put_text([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(9)]
+            HRESULT get_text([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(10)]
+            HRESULT parentElement(IHTMLElement** parent);
+
+            [VtblIndex(11)]
+            HRESULT duplicate(IHTMLTxtRange** Duplicate);
+
+            [VtblIndex(12)]
+            HRESULT inRange(IHTMLTxtRange* Range, [NativeTypeName("VARIANT_BOOL *")] short* InRange);
+
+            [VtblIndex(13)]
+            HRESULT isEqual(IHTMLTxtRange* Range, [NativeTypeName("VARIANT_BOOL *")] short* IsEqual);
+
+            [VtblIndex(14)]
+            HRESULT scrollIntoView([NativeTypeName("VARIANT_BOOL")] short fStart = -1);
+
+            [VtblIndex(15)]
+            HRESULT collapse([NativeTypeName("VARIANT_BOOL")] short Start = -1);
+
+            [VtblIndex(16)]
+            HRESULT expand([NativeTypeName("BSTR")] ushort* Unit, [NativeTypeName("VARIANT_BOOL *")] short* Success);
+
+            [VtblIndex(17)]
+            HRESULT move([NativeTypeName("BSTR")] ushort* Unit, [NativeTypeName("long")] int Count, [NativeTypeName("long *")] int* ActualCount);
+
+            [VtblIndex(18)]
+            HRESULT moveStart([NativeTypeName("BSTR")] ushort* Unit, [NativeTypeName("long")] int Count, [NativeTypeName("long *")] int* ActualCount);
+
+            [VtblIndex(19)]
+            HRESULT moveEnd([NativeTypeName("BSTR")] ushort* Unit, [NativeTypeName("long")] int Count, [NativeTypeName("long *")] int* ActualCount);
+
+            [VtblIndex(20)]
+            HRESULT select();
+
+            [VtblIndex(21)]
+            HRESULT pasteHTML([NativeTypeName("BSTR")] ushort* html);
+
+            [VtblIndex(22)]
+            HRESULT moveToElementText(IHTMLElement* element);
+
+            [VtblIndex(23)]
+            HRESULT setEndPoint([NativeTypeName("BSTR")] ushort* how, IHTMLTxtRange* SourceRange);
+
+            [VtblIndex(24)]
+            HRESULT compareEndPoints([NativeTypeName("BSTR")] ushort* how, IHTMLTxtRange* SourceRange, [NativeTypeName("long *")] int* ret);
+
+            [VtblIndex(25)]
+            HRESULT findText([NativeTypeName("BSTR")] ushort* String, [NativeTypeName("long")] int count, [NativeTypeName("long")] int Flags, [NativeTypeName("VARIANT_BOOL *")] short* Success);
+
+            [VtblIndex(26)]
+            HRESULT moveToPoint([NativeTypeName("long")] int x, [NativeTypeName("long")] int y);
+
+            [VtblIndex(27)]
+            HRESULT getBookmark([NativeTypeName("BSTR *")] ushort** Boolmark);
+
+            [VtblIndex(28)]
+            HRESULT moveToBookmark([NativeTypeName("BSTR")] ushort* Bookmark, [NativeTypeName("VARIANT_BOOL *")] short* Success);
+
+            [VtblIndex(29)]
+            HRESULT queryCommandSupported([NativeTypeName("BSTR")] ushort* cmdID, [NativeTypeName("VARIANT_BOOL *")] short* pfRet);
+
+            [VtblIndex(30)]
+            HRESULT queryCommandEnabled([NativeTypeName("BSTR")] ushort* cmdID, [NativeTypeName("VARIANT_BOOL *")] short* pfRet);
+
+            [VtblIndex(31)]
+            HRESULT queryCommandState([NativeTypeName("BSTR")] ushort* cmdID, [NativeTypeName("VARIANT_BOOL *")] short* pfRet);
+
+            [VtblIndex(32)]
+            HRESULT queryCommandIndeterm([NativeTypeName("BSTR")] ushort* cmdID, [NativeTypeName("VARIANT_BOOL *")] short* pfRet);
+
+            [VtblIndex(33)]
+            HRESULT queryCommandText([NativeTypeName("BSTR")] ushort* cmdID, [NativeTypeName("BSTR *")] ushort** pcmdText);
+
+            [VtblIndex(34)]
+            HRESULT queryCommandValue([NativeTypeName("BSTR")] ushort* cmdID, VARIANT* pcmdValue);
+
+            [VtblIndex(35)]
+            HRESULT execCommand([NativeTypeName("BSTR")] ushort* cmdID, [NativeTypeName("VARIANT_BOOL")] short showUI, VARIANT value, [NativeTypeName("VARIANT_BOOL *")] short* pfRet);
+
+            [VtblIndex(36)]
+            HRESULT execCommandShowHelp([NativeTypeName("BSTR")] ushort* cmdID, [NativeTypeName("VARIANT_BOOL *")] short* pfRet);
         }
 
         public partial struct Vtbl

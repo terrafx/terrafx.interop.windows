@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("C8AD25A1-3294-41EE-8165-71174BD01C57")]
     [NativeTypeName("struct ICommDlgBrowser3 : ICommDlgBrowser2")]
     [NativeInheritance("ICommDlgBrowser2")]
-    public unsafe partial struct ICommDlgBrowser3
+    public unsafe partial struct ICommDlgBrowser3 : ICommDlgBrowser3.Interface
     {
         public void** lpVtbl;
 
@@ -100,6 +100,18 @@ namespace TerraFX.Interop
         public HRESULT OnPreViewCreated(IShellView* ppshv)
         {
             return ((delegate* unmanaged<ICommDlgBrowser3*, IShellView*, int>)(lpVtbl[11]))((ICommDlgBrowser3*)Unsafe.AsPointer(ref this), ppshv);
+        }
+
+        public interface Interface : ICommDlgBrowser2.Interface
+        {
+            [VtblIndex(9)]
+            HRESULT OnColumnClicked(IShellView* ppshv, int iColumn);
+
+            [VtblIndex(10)]
+            HRESULT GetCurrentFilter([NativeTypeName("LPWSTR")] ushort* pszFileSpec, int cchFileSpec);
+
+            [VtblIndex(11)]
+            HRESULT OnPreViewCreated(IShellView* ppshv);
         }
 
         public partial struct Vtbl

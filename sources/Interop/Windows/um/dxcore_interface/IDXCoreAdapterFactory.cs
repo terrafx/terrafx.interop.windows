@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("78EE5945-C36E-4B13-A669-005DD11C0F06")]
     [NativeTypeName("struct IDXCoreAdapterFactory : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IDXCoreAdapterFactory
+    public unsafe partial struct IDXCoreAdapterFactory : IDXCoreAdapterFactory.Interface
     {
         public void** lpVtbl;
 
@@ -72,6 +72,24 @@ namespace TerraFX.Interop
         public HRESULT UnregisterEventNotification([NativeTypeName("uint32_t")] uint eventCookie)
         {
             return ((delegate* unmanaged<IDXCoreAdapterFactory*, uint, int>)(lpVtbl[7]))((IDXCoreAdapterFactory*)Unsafe.AsPointer(ref this), eventCookie);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT CreateAdapterList([NativeTypeName("uint32_t")] uint numAttributes, [NativeTypeName("const GUID *")] Guid* filterAttributes, [NativeTypeName("const IID &")] Guid* riid, void** ppvAdapterList);
+
+            [VtblIndex(4)]
+            HRESULT GetAdapterByLuid([NativeTypeName("const LUID &")] LUID* adapterLUID, [NativeTypeName("const IID &")] Guid* riid, void** ppvAdapter);
+
+            [VtblIndex(5)]
+            bool IsNotificationTypeSupported(DXCoreNotificationType notificationType);
+
+            [VtblIndex(6)]
+            HRESULT RegisterEventNotification(IUnknown* dxCoreObject, DXCoreNotificationType notificationType, [NativeTypeName("PFN_DXCORE_NOTIFICATION_CALLBACK")] delegate* unmanaged<DXCoreNotificationType, IUnknown*, void*, void> callbackFunction, void* callbackContext, [NativeTypeName("uint32_t *")] uint* eventCookie);
+
+            [VtblIndex(7)]
+            HRESULT UnregisterEventNotification([NativeTypeName("uint32_t")] uint eventCookie);
         }
 
         public partial struct Vtbl

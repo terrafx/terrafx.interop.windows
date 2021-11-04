@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("0000011E-0000-0000-C000-000000000046")]
     [NativeTypeName("struct IOleCache : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IOleCache
+    public unsafe partial struct IOleCache : IOleCache.Interface
     {
         public void** lpVtbl;
 
@@ -72,6 +72,24 @@ namespace TerraFX.Interop
         public HRESULT SetData(FORMATETC* pformatetc, STGMEDIUM* pmedium, BOOL fRelease)
         {
             return ((delegate* unmanaged<IOleCache*, FORMATETC*, STGMEDIUM*, BOOL, int>)(lpVtbl[7]))((IOleCache*)Unsafe.AsPointer(ref this), pformatetc, pmedium, fRelease);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT Cache(FORMATETC* pformatetc, [NativeTypeName("DWORD")] uint advf, [NativeTypeName("DWORD *")] uint* pdwConnection);
+
+            [VtblIndex(4)]
+            HRESULT Uncache([NativeTypeName("DWORD")] uint dwConnection);
+
+            [VtblIndex(5)]
+            HRESULT EnumCache(IEnumSTATDATA** ppenumSTATDATA);
+
+            [VtblIndex(6)]
+            HRESULT InitCache(IDataObject* pDataObject);
+
+            [VtblIndex(7)]
+            HRESULT SetData(FORMATETC* pformatetc, STGMEDIUM* pmedium, BOOL fRelease);
         }
 
         public partial struct Vtbl

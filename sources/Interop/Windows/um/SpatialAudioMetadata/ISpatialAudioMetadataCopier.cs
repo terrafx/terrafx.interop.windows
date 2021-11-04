@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("D224B233-E251-4FD0-9CA2-D5ECF9A68404")]
     [NativeTypeName("struct ISpatialAudioMetadataCopier : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct ISpatialAudioMetadataCopier
+    public unsafe partial struct ISpatialAudioMetadataCopier : ISpatialAudioMetadataCopier.Interface
     {
         public void** lpVtbl;
 
@@ -58,6 +58,18 @@ namespace TerraFX.Interop
         public HRESULT Close()
         {
             return ((delegate* unmanaged<ISpatialAudioMetadataCopier*, int>)(lpVtbl[5]))((ISpatialAudioMetadataCopier*)Unsafe.AsPointer(ref this));
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT Open(ISpatialAudioMetadataItems* metadataItems);
+
+            [VtblIndex(4)]
+            HRESULT CopyMetadataForFrames([NativeTypeName("UINT16")] ushort copyFrameCount, SpatialAudioMetadataCopyMode copyMode, ISpatialAudioMetadataItems* dstMetadataItems, [NativeTypeName("UINT16 *")] ushort* itemsCopied);
+
+            [VtblIndex(5)]
+            HRESULT Close();
         }
 
         public partial struct Vtbl

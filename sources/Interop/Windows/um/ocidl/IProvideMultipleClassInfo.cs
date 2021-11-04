@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("A7ABA9C1-8983-11CF-8F20-00805F2CD064")]
     [NativeTypeName("struct IProvideMultipleClassInfo : IProvideClassInfo2")]
     [NativeInheritance("IProvideClassInfo2")]
-    public unsafe partial struct IProvideMultipleClassInfo
+    public unsafe partial struct IProvideMultipleClassInfo : IProvideMultipleClassInfo.Interface
     {
         public void** lpVtbl;
 
@@ -65,6 +65,15 @@ namespace TerraFX.Interop
         public HRESULT GetInfoOfIndex([NativeTypeName("ULONG")] uint iti, [NativeTypeName("DWORD")] uint dwFlags, ITypeInfo** pptiCoClass, [NativeTypeName("DWORD *")] uint* pdwTIFlags, [NativeTypeName("ULONG *")] uint* pcdispidReserved, [NativeTypeName("IID *")] Guid* piidPrimary, [NativeTypeName("IID *")] Guid* piidSource)
         {
             return ((delegate* unmanaged<IProvideMultipleClassInfo*, uint, uint, ITypeInfo**, uint*, uint*, Guid*, Guid*, int>)(lpVtbl[6]))((IProvideMultipleClassInfo*)Unsafe.AsPointer(ref this), iti, dwFlags, pptiCoClass, pdwTIFlags, pcdispidReserved, piidPrimary, piidSource);
+        }
+
+        public interface Interface : IProvideClassInfo2.Interface
+        {
+            [VtblIndex(5)]
+            HRESULT GetMultiTypeInfoCount([NativeTypeName("ULONG *")] uint* pcti);
+
+            [VtblIndex(6)]
+            HRESULT GetInfoOfIndex([NativeTypeName("ULONG")] uint iti, [NativeTypeName("DWORD")] uint dwFlags, ITypeInfo** pptiCoClass, [NativeTypeName("DWORD *")] uint* pdwTIFlags, [NativeTypeName("ULONG *")] uint* pcdispidReserved, [NativeTypeName("IID *")] Guid* piidPrimary, [NativeTypeName("IID *")] Guid* piidSource);
         }
 
         public partial struct Vtbl

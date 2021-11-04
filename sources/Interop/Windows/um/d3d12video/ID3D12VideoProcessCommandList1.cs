@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("542C5C4D-7596-434F-8C93-4EFA6766F267")]
     [NativeTypeName("struct ID3D12VideoProcessCommandList1 : ID3D12VideoProcessCommandList")]
     [NativeInheritance("ID3D12VideoProcessCommandList")]
-    public unsafe partial struct ID3D12VideoProcessCommandList1
+    public unsafe partial struct ID3D12VideoProcessCommandList1 : ID3D12VideoProcessCommandList1.Interface
     {
         public void** lpVtbl;
 
@@ -184,6 +184,12 @@ namespace TerraFX.Interop
         public void ProcessFrames1(ID3D12VideoProcessor* pVideoProcessor, [NativeTypeName("const D3D12_VIDEO_PROCESS_OUTPUT_STREAM_ARGUMENTS *")] D3D12_VIDEO_PROCESS_OUTPUT_STREAM_ARGUMENTS* pOutputArguments, uint NumInputStreams, [NativeTypeName("const D3D12_VIDEO_PROCESS_INPUT_STREAM_ARGUMENTS1 *")] D3D12_VIDEO_PROCESS_INPUT_STREAM_ARGUMENTS1* pInputArguments)
         {
             ((delegate* unmanaged<ID3D12VideoProcessCommandList1*, ID3D12VideoProcessor*, D3D12_VIDEO_PROCESS_OUTPUT_STREAM_ARGUMENTS*, uint, D3D12_VIDEO_PROCESS_INPUT_STREAM_ARGUMENTS1*, void>)(lpVtbl[23]))((ID3D12VideoProcessCommandList1*)Unsafe.AsPointer(ref this), pVideoProcessor, pOutputArguments, NumInputStreams, pInputArguments);
+        }
+
+        public interface Interface : ID3D12VideoProcessCommandList.Interface
+        {
+            [VtblIndex(23)]
+            void ProcessFrames1(ID3D12VideoProcessor* pVideoProcessor, [NativeTypeName("const D3D12_VIDEO_PROCESS_OUTPUT_STREAM_ARGUMENTS *")] D3D12_VIDEO_PROCESS_OUTPUT_STREAM_ARGUMENTS* pOutputArguments, uint NumInputStreams, [NativeTypeName("const D3D12_VIDEO_PROCESS_INPUT_STREAM_ARGUMENTS1 *")] D3D12_VIDEO_PROCESS_INPUT_STREAM_ARGUMENTS1* pInputArguments);
         }
 
         public partial struct Vtbl

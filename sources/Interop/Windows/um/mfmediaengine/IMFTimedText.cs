@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("1F2A94C9-A3DF-430D-9D0F-ACD85DDC29AF")]
     [NativeTypeName("struct IMFTimedText : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IMFTimedText
+    public unsafe partial struct IMFTimedText : IMFTimedText.Interface
     {
         public void** lpVtbl;
 
@@ -135,6 +135,51 @@ namespace TerraFX.Interop
         public BOOL IsInBandEnabled()
         {
             return ((delegate* unmanaged<IMFTimedText*, int>)(lpVtbl[16]))((IMFTimedText*)Unsafe.AsPointer(ref this));
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT RegisterNotifications(IMFTimedTextNotify* notify);
+
+            [VtblIndex(4)]
+            HRESULT SelectTrack([NativeTypeName("DWORD")] uint trackId, BOOL selected);
+
+            [VtblIndex(5)]
+            HRESULT AddDataSource(IMFByteStream* byteStream, [NativeTypeName("LPCWSTR")] ushort* label, [NativeTypeName("LPCWSTR")] ushort* language, MF_TIMED_TEXT_TRACK_KIND kind, BOOL isDefault, [NativeTypeName("DWORD *")] uint* trackId);
+
+            [VtblIndex(6)]
+            HRESULT AddDataSourceFromUrl([NativeTypeName("LPCWSTR")] ushort* url, [NativeTypeName("LPCWSTR")] ushort* label, [NativeTypeName("LPCWSTR")] ushort* language, MF_TIMED_TEXT_TRACK_KIND kind, BOOL isDefault, [NativeTypeName("DWORD *")] uint* trackId);
+
+            [VtblIndex(7)]
+            HRESULT AddTrack([NativeTypeName("LPCWSTR")] ushort* label, [NativeTypeName("LPCWSTR")] ushort* language, MF_TIMED_TEXT_TRACK_KIND kind, IMFTimedTextTrack** track);
+
+            [VtblIndex(8)]
+            HRESULT RemoveTrack(IMFTimedTextTrack* track);
+
+            [VtblIndex(9)]
+            HRESULT GetCueTimeOffset(double* offset);
+
+            [VtblIndex(10)]
+            HRESULT SetCueTimeOffset(double offset);
+
+            [VtblIndex(11)]
+            HRESULT GetTracks(IMFTimedTextTrackList** tracks);
+
+            [VtblIndex(12)]
+            HRESULT GetActiveTracks(IMFTimedTextTrackList** activeTracks);
+
+            [VtblIndex(13)]
+            HRESULT GetTextTracks(IMFTimedTextTrackList** textTracks);
+
+            [VtblIndex(14)]
+            HRESULT GetMetadataTracks(IMFTimedTextTrackList** metadataTracks);
+
+            [VtblIndex(15)]
+            HRESULT SetInBandEnabled(BOOL enabled);
+
+            [VtblIndex(16)]
+            BOOL IsInBandEnabled();
         }
 
         public partial struct Vtbl

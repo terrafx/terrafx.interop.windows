@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("329BB360-F6EA-11D1-9038-00A0C9697298")]
     [NativeTypeName("struct IBasicVideo2 : IBasicVideo")]
     [NativeInheritance("IBasicVideo")]
-    public unsafe partial struct IBasicVideo2
+    public unsafe partial struct IBasicVideo2 : IBasicVideo2.Interface
     {
         public void** lpVtbl;
 
@@ -296,6 +296,12 @@ namespace TerraFX.Interop
         public HRESULT GetPreferredAspectRatio([NativeTypeName("long *")] int* plAspectX, [NativeTypeName("long *")] int* plAspectY)
         {
             return ((delegate* unmanaged<IBasicVideo2*, int*, int*, int>)(lpVtbl[39]))((IBasicVideo2*)Unsafe.AsPointer(ref this), plAspectX, plAspectY);
+        }
+
+        public interface Interface : IBasicVideo.Interface
+        {
+            [VtblIndex(39)]
+            HRESULT GetPreferredAspectRatio([NativeTypeName("long *")] int* plAspectX, [NativeTypeName("long *")] int* plAspectY);
         }
 
         public partial struct Vtbl

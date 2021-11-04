@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("D21768E1-23A4-4823-A14B-7C3EBA85D658")]
     [NativeTypeName("struct ID2D1Device1 : ID2D1Device")]
     [NativeInheritance("ID2D1Device")]
-    public unsafe partial struct ID2D1Device1
+    public unsafe partial struct ID2D1Device1 : ID2D1Device1.Interface
     {
         public void** lpVtbl;
 
@@ -101,6 +101,18 @@ namespace TerraFX.Interop
         public HRESULT CreateDeviceContext(D2D1_DEVICE_CONTEXT_OPTIONS options, ID2D1DeviceContext1** deviceContext1)
         {
             return ((delegate* unmanaged<ID2D1Device1*, D2D1_DEVICE_CONTEXT_OPTIONS, ID2D1DeviceContext1**, int>)(lpVtbl[11]))((ID2D1Device1*)Unsafe.AsPointer(ref this), options, deviceContext1);
+        }
+
+        public interface Interface : ID2D1Device.Interface
+        {
+            [VtblIndex(9)]
+            D2D1_RENDERING_PRIORITY GetRenderingPriority();
+
+            [VtblIndex(10)]
+            void SetRenderingPriority(D2D1_RENDERING_PRIORITY renderingPriority);
+
+            [VtblIndex(11)]
+            HRESULT CreateDeviceContext(D2D1_DEVICE_CONTEXT_OPTIONS options, ID2D1DeviceContext1** deviceContext1);
         }
 
         public partial struct Vtbl

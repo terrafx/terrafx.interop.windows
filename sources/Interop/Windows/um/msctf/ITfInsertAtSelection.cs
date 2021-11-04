@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("55CE16BA-3014-41C1-9CEB-FADE1446AC6C")]
     [NativeTypeName("struct ITfInsertAtSelection : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct ITfInsertAtSelection
+    public unsafe partial struct ITfInsertAtSelection : ITfInsertAtSelection.Interface
     {
         public void** lpVtbl;
 
@@ -51,6 +51,15 @@ namespace TerraFX.Interop
         public HRESULT InsertEmbeddedAtSelection([NativeTypeName("TfEditCookie")] uint ec, [NativeTypeName("DWORD")] uint dwFlags, IDataObject* pDataObject, ITfRange** ppRange)
         {
             return ((delegate* unmanaged<ITfInsertAtSelection*, uint, uint, IDataObject*, ITfRange**, int>)(lpVtbl[4]))((ITfInsertAtSelection*)Unsafe.AsPointer(ref this), ec, dwFlags, pDataObject, ppRange);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT InsertTextAtSelection([NativeTypeName("TfEditCookie")] uint ec, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("const WCHAR *")] ushort* pchText, [NativeTypeName("LONG")] int cch, ITfRange** ppRange);
+
+            [VtblIndex(4)]
+            HRESULT InsertEmbeddedAtSelection([NativeTypeName("TfEditCookie")] uint ec, [NativeTypeName("DWORD")] uint dwFlags, IDataObject* pDataObject, ITfRange** ppRange);
         }
 
         public partial struct Vtbl

@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("1A9E9F4F-104F-4DB8-A115-EFD7FD0C97AE")]
     [NativeTypeName("struct ISpeechCustomStream : ISpeechBaseStream")]
     [NativeInheritance("ISpeechBaseStream")]
-    public unsafe partial struct ISpeechCustomStream
+    public unsafe partial struct ISpeechCustomStream : ISpeechCustomStream.Interface
     {
         public void** lpVtbl;
 
@@ -114,6 +114,15 @@ namespace TerraFX.Interop
         public HRESULT putref_BaseStream(IUnknown* pUnkStream)
         {
             return ((delegate* unmanaged<ISpeechCustomStream*, IUnknown*, int>)(lpVtbl[13]))((ISpeechCustomStream*)Unsafe.AsPointer(ref this), pUnkStream);
+        }
+
+        public interface Interface : ISpeechBaseStream.Interface
+        {
+            [VtblIndex(12)]
+            HRESULT get_BaseStream(IUnknown** ppUnkStream);
+
+            [VtblIndex(13)]
+            HRESULT putref_BaseStream(IUnknown* pUnkStream);
         }
 
         public partial struct Vtbl

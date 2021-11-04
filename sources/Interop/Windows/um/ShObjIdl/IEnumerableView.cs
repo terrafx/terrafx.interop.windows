@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("8C8BF236-1AEC-495F-9894-91D57C3C686F")]
     [NativeTypeName("struct IEnumerableView : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IEnumerableView
+    public unsafe partial struct IEnumerableView : IEnumerableView.Interface
     {
         public void** lpVtbl;
 
@@ -51,6 +51,15 @@ namespace TerraFX.Interop
         public HRESULT CreateEnumIDListFromContents([NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidlFolder, [NativeTypeName("DWORD")] uint dwEnumFlags, IEnumIDList** ppEnumIDList)
         {
             return ((delegate* unmanaged<IEnumerableView*, ITEMIDLIST*, uint, IEnumIDList**, int>)(lpVtbl[4]))((IEnumerableView*)Unsafe.AsPointer(ref this), pidlFolder, dwEnumFlags, ppEnumIDList);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT SetEnumReadyCallback(IEnumReadyCallback* percb);
+
+            [VtblIndex(4)]
+            HRESULT CreateEnumIDListFromContents([NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidlFolder, [NativeTypeName("DWORD")] uint dwEnumFlags, IEnumIDList** ppEnumIDList);
         }
 
         public partial struct Vtbl

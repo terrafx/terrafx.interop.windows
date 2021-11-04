@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("B63EA76D-1F85-456F-A19C-48159EFA858B")]
     [NativeTypeName("struct IShellItemArray : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IShellItemArray
+    public unsafe partial struct IShellItemArray : IShellItemArray.Interface
     {
         public void** lpVtbl;
 
@@ -86,6 +86,30 @@ namespace TerraFX.Interop
         public HRESULT EnumItems(IEnumShellItems** ppenumShellItems)
         {
             return ((delegate* unmanaged<IShellItemArray*, IEnumShellItems**, int>)(lpVtbl[9]))((IShellItemArray*)Unsafe.AsPointer(ref this), ppenumShellItems);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT BindToHandler(IBindCtx* pbc, [NativeTypeName("const GUID &")] Guid* bhid, [NativeTypeName("const IID &")] Guid* riid, void** ppvOut);
+
+            [VtblIndex(4)]
+            HRESULT GetPropertyStore(GETPROPERTYSTOREFLAGS flags, [NativeTypeName("const IID &")] Guid* riid, void** ppv);
+
+            [VtblIndex(5)]
+            HRESULT GetPropertyDescriptionList([NativeTypeName("const PROPERTYKEY &")] PROPERTYKEY* keyType, [NativeTypeName("const IID &")] Guid* riid, void** ppv);
+
+            [VtblIndex(6)]
+            HRESULT GetAttributes(SIATTRIBFLAGS AttribFlags, [NativeTypeName("SFGAOF")] uint sfgaoMask, [NativeTypeName("SFGAOF *")] uint* psfgaoAttribs);
+
+            [VtblIndex(7)]
+            HRESULT GetCount([NativeTypeName("DWORD *")] uint* pdwNumItems);
+
+            [VtblIndex(8)]
+            HRESULT GetItemAt([NativeTypeName("DWORD")] uint dwIndex, IShellItem** ppsi);
+
+            [VtblIndex(9)]
+            HRESULT EnumItems(IEnumShellItems** ppenumShellItems);
         }
 
         public partial struct Vtbl

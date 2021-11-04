@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("542612C4-A1B8-4632-B521-DE11EA64A0B0")]
     [NativeTypeName("struct IMFTrustedInput : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IMFTrustedInput
+    public unsafe partial struct IMFTrustedInput : IMFTrustedInput.Interface
     {
         public void** lpVtbl;
 
@@ -44,6 +44,12 @@ namespace TerraFX.Interop
         public HRESULT GetInputTrustAuthority([NativeTypeName("DWORD")] uint dwStreamID, [NativeTypeName("const IID &")] Guid* riid, IUnknown** ppunkObject)
         {
             return ((delegate* unmanaged<IMFTrustedInput*, uint, Guid*, IUnknown**, int>)(lpVtbl[3]))((IMFTrustedInput*)Unsafe.AsPointer(ref this), dwStreamID, riid, ppunkObject);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetInputTrustAuthority([NativeTypeName("DWORD")] uint dwStreamID, [NativeTypeName("const IID &")] Guid* riid, IUnknown** ppunkObject);
         }
 
         public partial struct Vtbl

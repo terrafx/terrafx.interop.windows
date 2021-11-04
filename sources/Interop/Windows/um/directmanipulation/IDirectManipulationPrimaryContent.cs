@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("C12851E4-1698-4625-B9B1-7CA3EC18630B")]
     [NativeTypeName("struct IDirectManipulationPrimaryContent : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IDirectManipulationPrimaryContent
+    public unsafe partial struct IDirectManipulationPrimaryContent : IDirectManipulationPrimaryContent.Interface
     {
         public void** lpVtbl;
 
@@ -100,6 +100,36 @@ namespace TerraFX.Interop
         public HRESULT GetCenterPoint(float* centerX, float* centerY)
         {
             return ((delegate* unmanaged<IDirectManipulationPrimaryContent*, float*, float*, int>)(lpVtbl[11]))((IDirectManipulationPrimaryContent*)Unsafe.AsPointer(ref this), centerX, centerY);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT SetSnapInterval(DIRECTMANIPULATION_MOTION_TYPES motion, float interval, float offset);
+
+            [VtblIndex(4)]
+            HRESULT SetSnapPoints(DIRECTMANIPULATION_MOTION_TYPES motion, [NativeTypeName("const float *")] float* points, [NativeTypeName("DWORD")] uint pointCount);
+
+            [VtblIndex(5)]
+            HRESULT SetSnapType(DIRECTMANIPULATION_MOTION_TYPES motion, DIRECTMANIPULATION_SNAPPOINT_TYPE type);
+
+            [VtblIndex(6)]
+            HRESULT SetSnapCoordinate(DIRECTMANIPULATION_MOTION_TYPES motion, DIRECTMANIPULATION_SNAPPOINT_COORDINATE coordinate, float origin);
+
+            [VtblIndex(7)]
+            HRESULT SetZoomBoundaries(float zoomMinimum, float zoomMaximum);
+
+            [VtblIndex(8)]
+            HRESULT SetHorizontalAlignment(DIRECTMANIPULATION_HORIZONTALALIGNMENT alignment);
+
+            [VtblIndex(9)]
+            HRESULT SetVerticalAlignment(DIRECTMANIPULATION_VERTICALALIGNMENT alignment);
+
+            [VtblIndex(10)]
+            HRESULT GetInertiaEndTransform(float* matrix, [NativeTypeName("DWORD")] uint pointCount);
+
+            [VtblIndex(11)]
+            HRESULT GetCenterPoint(float* centerX, float* centerY);
         }
 
         public partial struct Vtbl

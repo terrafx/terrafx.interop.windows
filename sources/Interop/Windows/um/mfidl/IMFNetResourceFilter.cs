@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("091878A3-BF11-4A5C-BC9F-33995B06EF2D")]
     [NativeTypeName("struct IMFNetResourceFilter : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IMFNetResourceFilter
+    public unsafe partial struct IMFNetResourceFilter : IMFNetResourceFilter.Interface
     {
         public void** lpVtbl;
 
@@ -51,6 +51,15 @@ namespace TerraFX.Interop
         public HRESULT OnSendingRequest([NativeTypeName("LPCWSTR")] ushort* pszUrl)
         {
             return ((delegate* unmanaged<IMFNetResourceFilter*, ushort*, int>)(lpVtbl[4]))((IMFNetResourceFilter*)Unsafe.AsPointer(ref this), pszUrl);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT OnRedirect([NativeTypeName("LPCWSTR")] ushort* pszUrl, [NativeTypeName("VARIANT_BOOL *")] short* pvbCancel);
+
+            [VtblIndex(4)]
+            HRESULT OnSendingRequest([NativeTypeName("LPCWSTR")] ushort* pszUrl);
         }
 
         public partial struct Vtbl

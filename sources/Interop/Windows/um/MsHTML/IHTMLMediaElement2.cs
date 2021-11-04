@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("30510809-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct IHTMLMediaElement2 : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct IHTMLMediaElement2
+    public unsafe partial struct IHTMLMediaElement2 : IHTMLMediaElement2.Interface
     {
         public void** lpVtbl;
 
@@ -135,6 +135,39 @@ namespace TerraFX.Interop
         public HRESULT get_volumeDouble(double* p)
         {
             return ((delegate* unmanaged<IHTMLMediaElement2*, double*, int>)(lpVtbl[16]))((IHTMLMediaElement2*)Unsafe.AsPointer(ref this), p);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT put_currentTimeDouble(double v);
+
+            [VtblIndex(8)]
+            HRESULT get_currentTimeDouble(double* p);
+
+            [VtblIndex(9)]
+            HRESULT get_initialTimeDouble(double* p);
+
+            [VtblIndex(10)]
+            HRESULT get_durationDouble(double* p);
+
+            [VtblIndex(11)]
+            HRESULT put_defaultPlaybackRateDouble(double v);
+
+            [VtblIndex(12)]
+            HRESULT get_defaultPlaybackRateDouble(double* p);
+
+            [VtblIndex(13)]
+            HRESULT put_playbackRateDouble(double v);
+
+            [VtblIndex(14)]
+            HRESULT get_playbackRateDouble(double* p);
+
+            [VtblIndex(15)]
+            HRESULT put_volumeDouble(double v);
+
+            [VtblIndex(16)]
+            HRESULT get_volumeDouble(double* p);
         }
 
         public partial struct Vtbl

@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("8E3F80CA-7517-432A-BA07-285134AAEA8E")]
     [NativeTypeName("struct IDiaReadExeAtRVACallback : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IDiaReadExeAtRVACallback
+    public unsafe partial struct IDiaReadExeAtRVACallback : IDiaReadExeAtRVACallback.Interface
     {
         public void** lpVtbl;
 
@@ -44,6 +44,12 @@ namespace TerraFX.Interop
         public HRESULT ReadExecutableAtRVA([NativeTypeName("DWORD")] uint relativeVirtualAddress, [NativeTypeName("DWORD")] uint cbData, [NativeTypeName("DWORD *")] uint* pcbData, byte* pbData)
         {
             return ((delegate* unmanaged<IDiaReadExeAtRVACallback*, uint, uint, uint*, byte*, int>)(lpVtbl[3]))((IDiaReadExeAtRVACallback*)Unsafe.AsPointer(ref this), relativeVirtualAddress, cbData, pcbData, pbData);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT ReadExecutableAtRVA([NativeTypeName("DWORD")] uint relativeVirtualAddress, [NativeTypeName("DWORD")] uint cbData, [NativeTypeName("DWORD *")] uint* pcbData, byte* pbData);
         }
 
         public partial struct Vtbl

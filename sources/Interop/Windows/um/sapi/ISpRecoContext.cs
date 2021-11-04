@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("F740A62F-7C15-489E-8234-940A33D9272D")]
     [NativeTypeName("struct ISpRecoContext : ISpEventSource")]
     [NativeInheritance("ISpEventSource")]
-    public unsafe partial struct ISpRecoContext
+    public unsafe partial struct ISpRecoContext : ISpRecoContext.Interface
     {
         public void** lpVtbl;
 
@@ -233,6 +233,63 @@ namespace TerraFX.Interop
         public HRESULT GetContextState(SPCONTEXTSTATE* peContextState)
         {
             return ((delegate* unmanaged<ISpRecoContext*, SPCONTEXTSTATE*, int>)(lpVtbl[30]))((ISpRecoContext*)Unsafe.AsPointer(ref this), peContextState);
+        }
+
+        public interface Interface : ISpEventSource.Interface
+        {
+            [VtblIndex(13)]
+            HRESULT GetRecognizer(ISpRecognizer** ppRecognizer);
+
+            [VtblIndex(14)]
+            HRESULT CreateGrammar([NativeTypeName("ULONGLONG")] ulong ullGrammarId, ISpRecoGrammar** ppGrammar);
+
+            [VtblIndex(15)]
+            HRESULT GetStatus(SPRECOCONTEXTSTATUS* pStatus);
+
+            [VtblIndex(16)]
+            HRESULT GetMaxAlternates([NativeTypeName("ULONG *")] uint* pcAlternates);
+
+            [VtblIndex(17)]
+            HRESULT SetMaxAlternates([NativeTypeName("ULONG")] uint cAlternates);
+
+            [VtblIndex(18)]
+            HRESULT SetAudioOptions(SPAUDIOOPTIONS Options, [NativeTypeName("const GUID *")] Guid* pAudioFormatId, [NativeTypeName("const WAVEFORMATEX *")] WAVEFORMATEX* pWaveFormatEx);
+
+            [VtblIndex(19)]
+            HRESULT GetAudioOptions(SPAUDIOOPTIONS* pOptions, Guid* pAudioFormatId, WAVEFORMATEX** ppCoMemWFEX);
+
+            [VtblIndex(20)]
+            HRESULT DeserializeResult([NativeTypeName("const SPSERIALIZEDRESULT *")] SPSERIALIZEDRESULT* pSerializedResult, ISpRecoResult** ppResult);
+
+            [VtblIndex(21)]
+            HRESULT Bookmark(SPBOOKMARKOPTIONS Options, [NativeTypeName("ULONGLONG")] ulong ullStreamPosition, LPARAM lparamEvent);
+
+            [VtblIndex(22)]
+            HRESULT SetAdaptationData([NativeTypeName("LPCWSTR")] ushort* pAdaptationData, [NativeTypeName("const ULONG")] uint cch);
+
+            [VtblIndex(23)]
+            HRESULT Pause([NativeTypeName("DWORD")] uint dwReserved);
+
+            [VtblIndex(24)]
+            HRESULT Resume([NativeTypeName("DWORD")] uint dwReserved);
+
+            [VtblIndex(25)]
+            HRESULT SetVoice(ISpVoice* pVoice, BOOL fAllowFormatChanges);
+
+            [VtblIndex(26)]
+            HRESULT GetVoice(ISpVoice** ppVoice);
+
+            [VtblIndex(27)]
+            HRESULT SetVoicePurgeEvent([NativeTypeName("ULONGLONG")] ulong ullEventInterest);
+
+            [VtblIndex(28)]
+            HRESULT GetVoicePurgeEvent([NativeTypeName("ULONGLONG *")] ulong* pullEventInterest);
+
+            [VtblIndex(29)]
+            HRESULT SetContextState(SPCONTEXTSTATE eContextState);
+
+            [VtblIndex(30)]
+            HRESULT GetContextState(SPCONTEXTSTATE* peContextState);
         }
 
         public partial struct Vtbl

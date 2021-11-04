@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("F4B1A599-7266-4319-A8CA-E70ACB11E8CD")]
     [NativeTypeName("struct IAudioSessionControl : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IAudioSessionControl
+    public unsafe partial struct IAudioSessionControl : IAudioSessionControl.Interface
     {
         public void** lpVtbl;
 
@@ -100,6 +100,36 @@ namespace TerraFX.Interop
         public HRESULT UnregisterAudioSessionNotification(IAudioSessionEvents* NewNotifications)
         {
             return ((delegate* unmanaged<IAudioSessionControl*, IAudioSessionEvents*, int>)(lpVtbl[11]))((IAudioSessionControl*)Unsafe.AsPointer(ref this), NewNotifications);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetState(AudioSessionState* pRetVal);
+
+            [VtblIndex(4)]
+            HRESULT GetDisplayName([NativeTypeName("LPWSTR *")] ushort** pRetVal);
+
+            [VtblIndex(5)]
+            HRESULT SetDisplayName([NativeTypeName("LPCWSTR")] ushort* Value, [NativeTypeName("LPCGUID")] Guid* EventContext);
+
+            [VtblIndex(6)]
+            HRESULT GetIconPath([NativeTypeName("LPWSTR *")] ushort** pRetVal);
+
+            [VtblIndex(7)]
+            HRESULT SetIconPath([NativeTypeName("LPCWSTR")] ushort* Value, [NativeTypeName("LPCGUID")] Guid* EventContext);
+
+            [VtblIndex(8)]
+            HRESULT GetGroupingParam(Guid* pRetVal);
+
+            [VtblIndex(9)]
+            HRESULT SetGroupingParam([NativeTypeName("LPCGUID")] Guid* Override, [NativeTypeName("LPCGUID")] Guid* EventContext);
+
+            [VtblIndex(10)]
+            HRESULT RegisterAudioSessionNotification(IAudioSessionEvents* NewNotifications);
+
+            [VtblIndex(11)]
+            HRESULT UnregisterAudioSessionNotification(IAudioSessionEvents* NewNotifications);
         }
 
         public partial struct Vtbl

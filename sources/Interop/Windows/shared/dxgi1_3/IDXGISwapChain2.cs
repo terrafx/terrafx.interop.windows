@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("A8BE2AC4-199F-4946-B331-79599FB98DE7")]
     [NativeTypeName("struct IDXGISwapChain2 : IDXGISwapChain1")]
     [NativeInheritance("IDXGISwapChain1")]
-    public unsafe partial struct IDXGISwapChain2
+    public unsafe partial struct IDXGISwapChain2 : IDXGISwapChain2.Interface
     {
         public void** lpVtbl;
 
@@ -268,6 +268,30 @@ namespace TerraFX.Interop
         public HRESULT GetMatrixTransform(DXGI_MATRIX_3X2_F* pMatrix)
         {
             return ((delegate* unmanaged<IDXGISwapChain2*, DXGI_MATRIX_3X2_F*, int>)(lpVtbl[35]))((IDXGISwapChain2*)Unsafe.AsPointer(ref this), pMatrix);
+        }
+
+        public interface Interface : IDXGISwapChain1.Interface
+        {
+            [VtblIndex(29)]
+            HRESULT SetSourceSize(uint Width, uint Height);
+
+            [VtblIndex(30)]
+            HRESULT GetSourceSize(uint* pWidth, uint* pHeight);
+
+            [VtblIndex(31)]
+            HRESULT SetMaximumFrameLatency(uint MaxLatency);
+
+            [VtblIndex(32)]
+            HRESULT GetMaximumFrameLatency(uint* pMaxLatency);
+
+            [VtblIndex(33)]
+            HANDLE GetFrameLatencyWaitableObject();
+
+            [VtblIndex(34)]
+            HRESULT SetMatrixTransform([NativeTypeName("const DXGI_MATRIX_3X2_F *")] DXGI_MATRIX_3X2_F* pMatrix);
+
+            [VtblIndex(35)]
+            HRESULT GetMatrixTransform(DXGI_MATRIX_3X2_F* pMatrix);
         }
 
         public partial struct Vtbl

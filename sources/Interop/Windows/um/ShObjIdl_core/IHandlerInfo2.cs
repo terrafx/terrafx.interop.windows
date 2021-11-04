@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("31CCA04C-04D3-4EA9-90DE-97B15E87A532")]
     [NativeTypeName("struct IHandlerInfo2 : IHandlerInfo")]
     [NativeInheritance("IHandlerInfo")]
-    public unsafe partial struct IHandlerInfo2
+    public unsafe partial struct IHandlerInfo2 : IHandlerInfo2.Interface
     {
         public void** lpVtbl;
 
@@ -65,6 +65,12 @@ namespace TerraFX.Interop
         public HRESULT GetApplicationId([NativeTypeName("LPWSTR *")] ushort** value)
         {
             return ((delegate* unmanaged<IHandlerInfo2*, ushort**, int>)(lpVtbl[6]))((IHandlerInfo2*)Unsafe.AsPointer(ref this), value);
+        }
+
+        public interface Interface : IHandlerInfo.Interface
+        {
+            [VtblIndex(6)]
+            HRESULT GetApplicationId([NativeTypeName("LPWSTR *")] ushort** value);
         }
 
         public partial struct Vtbl

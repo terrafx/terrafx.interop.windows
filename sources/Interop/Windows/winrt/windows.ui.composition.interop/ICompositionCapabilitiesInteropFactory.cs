@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("2C9DB356-E70D-4642-8298-BC4AA5B4865C")]
     [NativeTypeName("struct ICompositionCapabilitiesInteropFactory : IInspectable")]
     [NativeInheritance("IInspectable")]
-    public unsafe partial struct ICompositionCapabilitiesInteropFactory
+    public unsafe partial struct ICompositionCapabilitiesInteropFactory : ICompositionCapabilitiesInteropFactory.Interface
     {
         public void** lpVtbl;
 
@@ -65,6 +65,12 @@ namespace TerraFX.Interop
         public HRESULT GetForWindow(HWND hwnd, [NativeTypeName("ABI::Windows::UI::Composition::ICompositionCapabilities **")] void** result)
         {
             return ((delegate* unmanaged<ICompositionCapabilitiesInteropFactory*, HWND, void**, int>)(lpVtbl[6]))((ICompositionCapabilitiesInteropFactory*)Unsafe.AsPointer(ref this), hwnd, result);
+        }
+
+        public interface Interface : IInspectable.Interface
+        {
+            [VtblIndex(6)]
+            HRESULT GetForWindow(HWND hwnd, [NativeTypeName("ABI::Windows::UI::Composition::ICompositionCapabilities **")] void** result);
         }
 
         public partial struct Vtbl

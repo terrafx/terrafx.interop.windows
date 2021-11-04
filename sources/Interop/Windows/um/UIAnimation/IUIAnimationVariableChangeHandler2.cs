@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("63ACC8D2-6EAE-4BB0-B879-586DD8CFBE42")]
     [NativeTypeName("struct IUIAnimationVariableChangeHandler2 : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IUIAnimationVariableChangeHandler2
+    public unsafe partial struct IUIAnimationVariableChangeHandler2 : IUIAnimationVariableChangeHandler2.Interface
     {
         public void** lpVtbl;
 
@@ -44,6 +44,12 @@ namespace TerraFX.Interop
         public HRESULT OnValueChanged(IUIAnimationStoryboard2* storyboard, IUIAnimationVariable2* variable, double* newValue, double* previousValue, uint cDimension)
         {
             return ((delegate* unmanaged<IUIAnimationVariableChangeHandler2*, IUIAnimationStoryboard2*, IUIAnimationVariable2*, double*, double*, uint, int>)(lpVtbl[3]))((IUIAnimationVariableChangeHandler2*)Unsafe.AsPointer(ref this), storyboard, variable, newValue, previousValue, cDimension);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT OnValueChanged(IUIAnimationStoryboard2* storyboard, IUIAnimationVariable2* variable, double* newValue, double* previousValue, uint cDimension);
         }
 
         public partial struct Vtbl

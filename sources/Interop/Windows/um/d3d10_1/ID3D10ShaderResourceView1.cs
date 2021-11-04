@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("9B7E4C87-342C-4106-A19F-4F2704F689F0")]
     [NativeTypeName("struct ID3D10ShaderResourceView1 : ID3D10ShaderResourceView")]
     [NativeInheritance("ID3D10ShaderResourceView")]
-    public unsafe partial struct ID3D10ShaderResourceView1
+    public unsafe partial struct ID3D10ShaderResourceView1 : ID3D10ShaderResourceView1.Interface
     {
         public void** lpVtbl;
 
@@ -86,6 +86,12 @@ namespace TerraFX.Interop
         public void GetDesc1(D3D10_SHADER_RESOURCE_VIEW_DESC1* pDesc)
         {
             ((delegate* unmanaged<ID3D10ShaderResourceView1*, D3D10_SHADER_RESOURCE_VIEW_DESC1*, void>)(lpVtbl[9]))((ID3D10ShaderResourceView1*)Unsafe.AsPointer(ref this), pDesc);
+        }
+
+        public interface Interface : ID3D10ShaderResourceView.Interface
+        {
+            [VtblIndex(9)]
+            void GetDesc1(D3D10_SHADER_RESOURCE_VIEW_DESC1* pDesc);
         }
 
         public partial struct Vtbl

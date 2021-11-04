@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("3050F81A-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct IHtmlDlgSafeHelper : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct IHtmlDlgSafeHelper
+    public unsafe partial struct IHtmlDlgSafeHelper : IHtmlDlgSafeHelper.Interface
     {
         public void** lpVtbl;
 
@@ -93,6 +93,21 @@ namespace TerraFX.Interop
         public HRESULT get_BlockFormats(IDispatch** p)
         {
             return ((delegate* unmanaged<IHtmlDlgSafeHelper*, IDispatch**, int>)(lpVtbl[10]))((IHtmlDlgSafeHelper*)Unsafe.AsPointer(ref this), p);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT choosecolordlg(VARIANT initColor, VARIANT* rgbColor);
+
+            [VtblIndex(8)]
+            HRESULT getCharset([NativeTypeName("BSTR")] ushort* fontName, VARIANT* charset);
+
+            [VtblIndex(9)]
+            HRESULT get_Fonts(IDispatch** p);
+
+            [VtblIndex(10)]
+            HRESULT get_BlockFormats(IDispatch** p);
         }
 
         public partial struct Vtbl

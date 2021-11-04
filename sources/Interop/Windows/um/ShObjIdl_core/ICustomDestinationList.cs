@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("6332DEBF-87B5-4670-90C0-5E57B408A49E")]
     [NativeTypeName("struct ICustomDestinationList : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct ICustomDestinationList
+    public unsafe partial struct ICustomDestinationList : ICustomDestinationList.Interface
     {
         public void** lpVtbl;
 
@@ -100,6 +100,36 @@ namespace TerraFX.Interop
         public HRESULT AbortList()
         {
             return ((delegate* unmanaged<ICustomDestinationList*, int>)(lpVtbl[11]))((ICustomDestinationList*)Unsafe.AsPointer(ref this));
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT SetAppID([NativeTypeName("LPCWSTR")] ushort* pszAppID);
+
+            [VtblIndex(4)]
+            HRESULT BeginList(uint* pcMinSlots, [NativeTypeName("const IID &")] Guid* riid, void** ppv);
+
+            [VtblIndex(5)]
+            HRESULT AppendCategory([NativeTypeName("LPCWSTR")] ushort* pszCategory, IObjectArray* poa);
+
+            [VtblIndex(6)]
+            HRESULT AppendKnownCategory(KNOWNDESTCATEGORY category);
+
+            [VtblIndex(7)]
+            HRESULT AddUserTasks(IObjectArray* poa);
+
+            [VtblIndex(8)]
+            HRESULT CommitList();
+
+            [VtblIndex(9)]
+            HRESULT GetRemovedDestinations([NativeTypeName("const IID &")] Guid* riid, void** ppv);
+
+            [VtblIndex(10)]
+            HRESULT DeleteList([NativeTypeName("LPCWSTR")] ushort* pszAppID);
+
+            [VtblIndex(11)]
+            HRESULT AbortList();
         }
 
         public partial struct Vtbl

@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("F0D2D8EF-3890-11D2-BF8B-00C04FB93661")]
     [NativeTypeName("struct Folder2 : Folder")]
     [NativeInheritance("Folder")]
-    public unsafe partial struct Folder2
+    public unsafe partial struct Folder2 : Folder2.Interface
     {
         public void** lpVtbl;
 
@@ -170,6 +170,24 @@ namespace TerraFX.Interop
         public HRESULT DismissedWebViewBarricade()
         {
             return ((delegate* unmanaged<Folder2*, int>)(lpVtbl[21]))((Folder2*)Unsafe.AsPointer(ref this));
+        }
+
+        public interface Interface : Folder.Interface
+        {
+            [VtblIndex(17)]
+            HRESULT get_Self(FolderItem** ppfi);
+
+            [VtblIndex(18)]
+            HRESULT get_OfflineStatus([NativeTypeName("LONG *")] int* pul);
+
+            [VtblIndex(19)]
+            HRESULT Synchronize();
+
+            [VtblIndex(20)]
+            HRESULT get_HaveToShowWebViewBarricade([NativeTypeName("VARIANT_BOOL *")] short* pbHaveToShowWebViewBarricade);
+
+            [VtblIndex(21)]
+            HRESULT DismissedWebViewBarricade();
         }
 
         public partial struct Vtbl

@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("305106F9-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct IHTMLDOMAttribute4 : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct IHTMLDOMAttribute4
+    public unsafe partial struct IHTMLDOMAttribute4 : IHTMLDOMAttribute4.Interface
     {
         public void** lpVtbl;
 
@@ -156,6 +156,48 @@ namespace TerraFX.Interop
         public HRESULT get_specified([NativeTypeName("VARIANT_BOOL *")] short* p)
         {
             return ((delegate* unmanaged<IHTMLDOMAttribute4*, short*, int>)(lpVtbl[19]))((IHTMLDOMAttribute4*)Unsafe.AsPointer(ref this), p);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT put_nodeValue(VARIANT v);
+
+            [VtblIndex(8)]
+            HRESULT get_nodeValue(VARIANT* p);
+
+            [VtblIndex(9)]
+            HRESULT get_nodeName([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(10)]
+            HRESULT get_name([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(11)]
+            HRESULT put_value([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(12)]
+            HRESULT get_value([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(13)]
+            HRESULT get_firstChild(IHTMLDOMNode** p);
+
+            [VtblIndex(14)]
+            HRESULT get_lastChild(IHTMLDOMNode** p);
+
+            [VtblIndex(15)]
+            HRESULT get_childNodes(IDispatch** p);
+
+            [VtblIndex(16)]
+            HRESULT hasAttributes([NativeTypeName("VARIANT_BOOL *")] short* pfHasAttributes);
+
+            [VtblIndex(17)]
+            HRESULT hasChildNodes([NativeTypeName("VARIANT_BOOL *")] short* fChildren);
+
+            [VtblIndex(18)]
+            HRESULT normalize();
+
+            [VtblIndex(19)]
+            HRESULT get_specified([NativeTypeName("VARIANT_BOOL *")] short* p);
         }
 
         public partial struct Vtbl

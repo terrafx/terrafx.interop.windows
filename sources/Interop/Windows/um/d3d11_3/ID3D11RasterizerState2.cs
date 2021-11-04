@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("6FBD02FB-209F-46C4-B059-2ED15586A6AC")]
     [NativeTypeName("struct ID3D11RasterizerState2 : ID3D11RasterizerState1")]
     [NativeInheritance("ID3D11RasterizerState1")]
-    public unsafe partial struct ID3D11RasterizerState2
+    public unsafe partial struct ID3D11RasterizerState2 : ID3D11RasterizerState2.Interface
     {
         public void** lpVtbl;
 
@@ -86,6 +86,12 @@ namespace TerraFX.Interop
         public void GetDesc2(D3D11_RASTERIZER_DESC2* pDesc)
         {
             ((delegate* unmanaged<ID3D11RasterizerState2*, D3D11_RASTERIZER_DESC2*, void>)(lpVtbl[9]))((ID3D11RasterizerState2*)Unsafe.AsPointer(ref this), pDesc);
+        }
+
+        public interface Interface : ID3D11RasterizerState1.Interface
+        {
+            [VtblIndex(9)]
+            void GetDesc2(D3D11_RASTERIZER_DESC2* pDesc);
         }
 
         public partial struct Vtbl

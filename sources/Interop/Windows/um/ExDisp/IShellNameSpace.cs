@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("E572D3C9-37BE-4AE2-825D-D521763E3108")]
     [NativeTypeName("struct IShellNameSpace : IShellFavoritesNameSpace")]
     [NativeInheritance("IShellFavoritesNameSpace")]
-    public unsafe partial struct IShellNameSpace
+    public unsafe partial struct IShellNameSpace : IShellNameSpace.Interface
     {
         public void** lpVtbl;
 
@@ -303,6 +303,72 @@ namespace TerraFX.Interop
         public HRESULT UnselectAll()
         {
             return ((delegate* unmanaged<IShellNameSpace*, int>)(lpVtbl[40]))((IShellNameSpace*)Unsafe.AsPointer(ref this));
+        }
+
+        public interface Interface : IShellFavoritesNameSpace.Interface
+        {
+            [VtblIndex(20)]
+            HRESULT get_EnumOptions([NativeTypeName("LONG *")] int* pgrfEnumFlags);
+
+            [VtblIndex(21)]
+            HRESULT put_EnumOptions([NativeTypeName("LONG")] int lVal);
+
+            [VtblIndex(22)]
+            HRESULT get_SelectedItem(IDispatch** pItem);
+
+            [VtblIndex(23)]
+            HRESULT put_SelectedItem(IDispatch* pItem);
+
+            [VtblIndex(24)]
+            HRESULT get_Root(VARIANT* pvar);
+
+            [VtblIndex(25)]
+            HRESULT put_Root(VARIANT var);
+
+            [VtblIndex(26)]
+            HRESULT get_Depth(int* piDepth);
+
+            [VtblIndex(27)]
+            HRESULT put_Depth(int iDepth);
+
+            [VtblIndex(28)]
+            HRESULT get_Mode(uint* puMode);
+
+            [VtblIndex(29)]
+            HRESULT put_Mode(uint uMode);
+
+            [VtblIndex(30)]
+            HRESULT get_Flags([NativeTypeName("DWORD *")] uint* pdwFlags);
+
+            [VtblIndex(31)]
+            HRESULT put_Flags([NativeTypeName("DWORD")] uint dwFlags);
+
+            [VtblIndex(32)]
+            HRESULT put_TVFlags([NativeTypeName("DWORD")] uint dwFlags);
+
+            [VtblIndex(33)]
+            HRESULT get_TVFlags([NativeTypeName("DWORD *")] uint* dwFlags);
+
+            [VtblIndex(34)]
+            HRESULT get_Columns([NativeTypeName("BSTR *")] ushort** bstrColumns);
+
+            [VtblIndex(35)]
+            HRESULT put_Columns([NativeTypeName("BSTR")] ushort* bstrColumns);
+
+            [VtblIndex(36)]
+            HRESULT get_CountViewTypes(int* piTypes);
+
+            [VtblIndex(37)]
+            HRESULT SetViewType(int iType);
+
+            [VtblIndex(38)]
+            HRESULT SelectedItems(IDispatch** ppid);
+
+            [VtblIndex(39)]
+            HRESULT Expand(VARIANT var, int iDepth);
+
+            [VtblIndex(40)]
+            HRESULT UnselectAll();
         }
 
         public partial struct Vtbl

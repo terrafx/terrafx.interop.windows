@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("3527268B-7D53-4DD9-92B7-7296AE461249")]
     [NativeTypeName("struct ITfFnAdviseText : ITfFunction")]
     [NativeInheritance("ITfFunction")]
-    public unsafe partial struct ITfFnAdviseText
+    public unsafe partial struct ITfFnAdviseText : ITfFnAdviseText.Interface
     {
         public void** lpVtbl;
 
@@ -58,6 +58,15 @@ namespace TerraFX.Interop
         public HRESULT OnLatticeUpdate(ITfRange* pRange, ITfLMLattice* pLattice)
         {
             return ((delegate* unmanaged<ITfFnAdviseText*, ITfRange*, ITfLMLattice*, int>)(lpVtbl[5]))((ITfFnAdviseText*)Unsafe.AsPointer(ref this), pRange, pLattice);
+        }
+
+        public interface Interface : ITfFunction.Interface
+        {
+            [VtblIndex(4)]
+            HRESULT OnTextUpdate(ITfRange* pRange, [NativeTypeName("const WCHAR *")] ushort* pchText, [NativeTypeName("LONG")] int cch);
+
+            [VtblIndex(5)]
+            HRESULT OnLatticeUpdate(ITfRange* pRange, ITfLMLattice* pLattice);
         }
 
         public partial struct Vtbl

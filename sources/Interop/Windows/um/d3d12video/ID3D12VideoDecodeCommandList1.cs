@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("D52F011B-B56E-453C-A05A-A7F311C8F472")]
     [NativeTypeName("struct ID3D12VideoDecodeCommandList1 : ID3D12VideoDecodeCommandList")]
     [NativeInheritance("ID3D12VideoDecodeCommandList")]
-    public unsafe partial struct ID3D12VideoDecodeCommandList1
+    public unsafe partial struct ID3D12VideoDecodeCommandList1 : ID3D12VideoDecodeCommandList1.Interface
     {
         public void** lpVtbl;
 
@@ -184,6 +184,12 @@ namespace TerraFX.Interop
         public void DecodeFrame1(ID3D12VideoDecoder* pDecoder, [NativeTypeName("const D3D12_VIDEO_DECODE_OUTPUT_STREAM_ARGUMENTS1 *")] D3D12_VIDEO_DECODE_OUTPUT_STREAM_ARGUMENTS1* pOutputArguments, [NativeTypeName("const D3D12_VIDEO_DECODE_INPUT_STREAM_ARGUMENTS *")] D3D12_VIDEO_DECODE_INPUT_STREAM_ARGUMENTS* pInputArguments)
         {
             ((delegate* unmanaged<ID3D12VideoDecodeCommandList1*, ID3D12VideoDecoder*, D3D12_VIDEO_DECODE_OUTPUT_STREAM_ARGUMENTS1*, D3D12_VIDEO_DECODE_INPUT_STREAM_ARGUMENTS*, void>)(lpVtbl[23]))((ID3D12VideoDecodeCommandList1*)Unsafe.AsPointer(ref this), pDecoder, pOutputArguments, pInputArguments);
+        }
+
+        public interface Interface : ID3D12VideoDecodeCommandList.Interface
+        {
+            [VtblIndex(23)]
+            void DecodeFrame1(ID3D12VideoDecoder* pDecoder, [NativeTypeName("const D3D12_VIDEO_DECODE_OUTPUT_STREAM_ARGUMENTS1 *")] D3D12_VIDEO_DECODE_OUTPUT_STREAM_ARGUMENTS1* pOutputArguments, [NativeTypeName("const D3D12_VIDEO_DECODE_INPUT_STREAM_ARGUMENTS *")] D3D12_VIDEO_DECODE_INPUT_STREAM_ARGUMENTS* pInputArguments);
         }
 
         public partial struct Vtbl

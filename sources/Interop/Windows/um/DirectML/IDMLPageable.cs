@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("B1AB0825-4542-4A4B-8617-6DDE6E8F6201")]
     [NativeTypeName("struct IDMLPageable : IDMLDeviceChild")]
     [NativeInheritance("IDMLDeviceChild")]
-    public unsafe partial struct IDMLPageable
+    public unsafe partial struct IDMLPageable : IDMLPageable.Interface
     {
         public void** lpVtbl;
 
@@ -72,6 +72,10 @@ namespace TerraFX.Interop
         public HRESULT GetDevice([NativeTypeName("const IID &")] Guid* riid, void** ppv)
         {
             return ((delegate* unmanaged<IDMLPageable*, Guid*, void**, int>)(lpVtbl[7]))((IDMLPageable*)Unsafe.AsPointer(ref this), riid, ppv);
+        }
+
+        public interface Interface : IDMLDeviceChild.Interface
+        {
         }
 
         public partial struct Vtbl

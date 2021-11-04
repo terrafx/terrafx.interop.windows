@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("486943E8-D187-4A6B-A3C4-291259FFF60D")]
     [NativeTypeName("struct IDiaEnumDebugStreamData : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IDiaEnumDebugStreamData
+    public unsafe partial struct IDiaEnumDebugStreamData : IDiaEnumDebugStreamData.Interface
     {
         public void** lpVtbl;
 
@@ -93,6 +93,33 @@ namespace TerraFX.Interop
         public HRESULT Clone(IDiaEnumDebugStreamData** ppenum)
         {
             return ((delegate* unmanaged<IDiaEnumDebugStreamData*, IDiaEnumDebugStreamData**, int>)(lpVtbl[10]))((IDiaEnumDebugStreamData*)Unsafe.AsPointer(ref this), ppenum);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT get__NewEnum(IUnknown** pRetVal);
+
+            [VtblIndex(4)]
+            HRESULT get_Count([NativeTypeName("LONG *")] int* pRetVal);
+
+            [VtblIndex(5)]
+            HRESULT get_name([NativeTypeName("BSTR *")] ushort** pRetVal);
+
+            [VtblIndex(6)]
+            HRESULT Item([NativeTypeName("DWORD")] uint index, [NativeTypeName("DWORD")] uint cbData, [NativeTypeName("DWORD *")] uint* pcbData, byte* pbData);
+
+            [VtblIndex(7)]
+            HRESULT Next([NativeTypeName("ULONG")] uint celt, [NativeTypeName("DWORD")] uint cbData, [NativeTypeName("DWORD *")] uint* pcbData, byte* pbData, [NativeTypeName("ULONG *")] uint* pceltFetched);
+
+            [VtblIndex(8)]
+            HRESULT Skip([NativeTypeName("ULONG")] uint celt);
+
+            [VtblIndex(9)]
+            HRESULT Reset();
+
+            [VtblIndex(10)]
+            HRESULT Clone(IDiaEnumDebugStreamData** ppenum);
         }
 
         public partial struct Vtbl

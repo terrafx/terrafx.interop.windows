@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("6584CE6B-7D82-49C2-89C9-C6BC02BA8C38")]
     [NativeTypeName("struct IAppVisibilityEvents : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IAppVisibilityEvents
+    public unsafe partial struct IAppVisibilityEvents : IAppVisibilityEvents.Interface
     {
         public void** lpVtbl;
 
@@ -51,6 +51,15 @@ namespace TerraFX.Interop
         public HRESULT LauncherVisibilityChange(BOOL currentVisibleState)
         {
             return ((delegate* unmanaged<IAppVisibilityEvents*, BOOL, int>)(lpVtbl[4]))((IAppVisibilityEvents*)Unsafe.AsPointer(ref this), currentVisibleState);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT AppVisibilityOnMonitorChanged(HMONITOR hMonitor, MONITOR_APP_VISIBILITY previousMode, MONITOR_APP_VISIBILITY currentMode);
+
+            [VtblIndex(4)]
+            HRESULT LauncherVisibilityChange(BOOL currentVisibleState);
         }
 
         public partial struct Vtbl

@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("C40A00F2-B93A-4D80-AE8C-5A1C634F58E4")]
     [NativeTypeName("struct IMFSample : IMFAttributes")]
     [NativeInheritance("IMFAttributes")]
-    public unsafe partial struct IMFSample
+    public unsafe partial struct IMFSample : IMFSample.Interface
     {
         public void** lpVtbl;
 
@@ -345,6 +345,51 @@ namespace TerraFX.Interop
         public HRESULT CopyToBuffer(IMFMediaBuffer* pBuffer)
         {
             return ((delegate* unmanaged<IMFSample*, IMFMediaBuffer*, int>)(lpVtbl[46]))((IMFSample*)Unsafe.AsPointer(ref this), pBuffer);
+        }
+
+        public interface Interface : IMFAttributes.Interface
+        {
+            [VtblIndex(33)]
+            HRESULT GetSampleFlags([NativeTypeName("DWORD *")] uint* pdwSampleFlags);
+
+            [VtblIndex(34)]
+            HRESULT SetSampleFlags([NativeTypeName("DWORD")] uint dwSampleFlags);
+
+            [VtblIndex(35)]
+            HRESULT GetSampleTime([NativeTypeName("LONGLONG *")] long* phnsSampleTime);
+
+            [VtblIndex(36)]
+            HRESULT SetSampleTime([NativeTypeName("LONGLONG")] long hnsSampleTime);
+
+            [VtblIndex(37)]
+            HRESULT GetSampleDuration([NativeTypeName("LONGLONG *")] long* phnsSampleDuration);
+
+            [VtblIndex(38)]
+            HRESULT SetSampleDuration([NativeTypeName("LONGLONG")] long hnsSampleDuration);
+
+            [VtblIndex(39)]
+            HRESULT GetBufferCount([NativeTypeName("DWORD *")] uint* pdwBufferCount);
+
+            [VtblIndex(40)]
+            HRESULT GetBufferByIndex([NativeTypeName("DWORD")] uint dwIndex, IMFMediaBuffer** ppBuffer);
+
+            [VtblIndex(41)]
+            HRESULT ConvertToContiguousBuffer(IMFMediaBuffer** ppBuffer);
+
+            [VtblIndex(42)]
+            HRESULT AddBuffer(IMFMediaBuffer* pBuffer);
+
+            [VtblIndex(43)]
+            HRESULT RemoveBufferByIndex([NativeTypeName("DWORD")] uint dwIndex);
+
+            [VtblIndex(44)]
+            HRESULT RemoveAllBuffers();
+
+            [VtblIndex(45)]
+            HRESULT GetTotalLength([NativeTypeName("DWORD *")] uint* pcbTotalLength);
+
+            [VtblIndex(46)]
+            HRESULT CopyToBuffer(IMFMediaBuffer* pBuffer);
         }
 
         public partial struct Vtbl

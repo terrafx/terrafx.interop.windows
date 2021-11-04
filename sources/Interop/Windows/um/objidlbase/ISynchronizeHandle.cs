@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("00000031-0000-0000-C000-000000000046")]
     [NativeTypeName("struct ISynchronizeHandle : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct ISynchronizeHandle
+    public unsafe partial struct ISynchronizeHandle : ISynchronizeHandle.Interface
     {
         public void** lpVtbl;
 
@@ -44,6 +44,12 @@ namespace TerraFX.Interop
         public HRESULT GetHandle(HANDLE* ph)
         {
             return ((delegate* unmanaged<ISynchronizeHandle*, HANDLE*, int>)(lpVtbl[3]))((ISynchronizeHandle*)Unsafe.AsPointer(ref this), ph);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetHandle(HANDLE* ph);
         }
 
         public partial struct Vtbl

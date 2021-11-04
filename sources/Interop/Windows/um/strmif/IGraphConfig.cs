@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("03A1EB8E-32BF-4245-8502-114D08A9CB88")]
     [NativeTypeName("struct IGraphConfig : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IGraphConfig
+    public unsafe partial struct IGraphConfig : IGraphConfig.Interface
     {
         public void** lpVtbl;
 
@@ -107,6 +107,39 @@ namespace TerraFX.Interop
         public HRESULT RemoveFilterEx(IBaseFilter* pFilter, [NativeTypeName("DWORD")] uint Flags)
         {
             return ((delegate* unmanaged<IGraphConfig*, IBaseFilter*, uint, int>)(lpVtbl[12]))((IGraphConfig*)Unsafe.AsPointer(ref this), pFilter, Flags);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT Reconnect(IPin* pOutputPin, IPin* pInputPin, [NativeTypeName("const AM_MEDIA_TYPE *")] AM_MEDIA_TYPE* pmtFirstConnection, IBaseFilter* pUsingFilter, HANDLE hAbortEvent, [NativeTypeName("DWORD")] uint dwFlags);
+
+            [VtblIndex(4)]
+            HRESULT Reconfigure(IGraphConfigCallback* pCallback, [NativeTypeName("PVOID")] void* pvContext, [NativeTypeName("DWORD")] uint dwFlags, HANDLE hAbortEvent);
+
+            [VtblIndex(5)]
+            HRESULT AddFilterToCache(IBaseFilter* pFilter);
+
+            [VtblIndex(6)]
+            HRESULT EnumCacheFilter(IEnumFilters** pEnum);
+
+            [VtblIndex(7)]
+            HRESULT RemoveFilterFromCache(IBaseFilter* pFilter);
+
+            [VtblIndex(8)]
+            HRESULT GetStartTime([NativeTypeName("REFERENCE_TIME *")] long* prtStart);
+
+            [VtblIndex(9)]
+            HRESULT PushThroughData(IPin* pOutputPin, IPinConnection* pConnection, HANDLE hEventAbort);
+
+            [VtblIndex(10)]
+            HRESULT SetFilterFlags(IBaseFilter* pFilter, [NativeTypeName("DWORD")] uint dwFlags);
+
+            [VtblIndex(11)]
+            HRESULT GetFilterFlags(IBaseFilter* pFilter, [NativeTypeName("DWORD *")] uint* pdwFlags);
+
+            [VtblIndex(12)]
+            HRESULT RemoveFilterEx(IBaseFilter* pFilter, [NativeTypeName("DWORD")] uint Flags);
         }
 
         public partial struct Vtbl

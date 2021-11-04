@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop
 {
     [Guid("1108795C-2772-4BA9-B2A8-D464DC7E2799")]
-    public unsafe partial struct ID3D12FunctionReflection
+    public unsafe partial struct ID3D12FunctionReflection : ID3D12FunctionReflection.Interface
     {
         public void** lpVtbl;
 
@@ -60,6 +60,30 @@ namespace TerraFX.Interop
         public ID3D12FunctionParameterReflection* GetFunctionParameter(int ParameterIndex)
         {
             return ((delegate* unmanaged<ID3D12FunctionReflection*, int, ID3D12FunctionParameterReflection*>)(lpVtbl[6]))((ID3D12FunctionReflection*)Unsafe.AsPointer(ref this), ParameterIndex);
+        }
+
+        public interface Interface
+        {
+            [VtblIndex(0)]
+            HRESULT GetDesc(D3D12_FUNCTION_DESC* pDesc);
+
+            [VtblIndex(1)]
+            ID3D12ShaderReflectionConstantBuffer* GetConstantBufferByIndex(uint BufferIndex);
+
+            [VtblIndex(2)]
+            ID3D12ShaderReflectionConstantBuffer* GetConstantBufferByName([NativeTypeName("LPCSTR")] sbyte* Name);
+
+            [VtblIndex(3)]
+            HRESULT GetResourceBindingDesc(uint ResourceIndex, D3D12_SHADER_INPUT_BIND_DESC* pDesc);
+
+            [VtblIndex(4)]
+            ID3D12ShaderReflectionVariable* GetVariableByName([NativeTypeName("LPCSTR")] sbyte* Name);
+
+            [VtblIndex(5)]
+            HRESULT GetResourceBindingDescByName([NativeTypeName("LPCSTR")] sbyte* Name, D3D12_SHADER_INPUT_BIND_DESC* pDesc);
+
+            [VtblIndex(6)]
+            ID3D12FunctionParameterReflection* GetFunctionParameter(int ParameterIndex);
         }
 
         public partial struct Vtbl

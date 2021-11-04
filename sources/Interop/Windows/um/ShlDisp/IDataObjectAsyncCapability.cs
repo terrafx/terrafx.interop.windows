@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("3D8B0590-F691-11D2-8EA9-006097DF5BD4")]
     [NativeTypeName("struct IDataObjectAsyncCapability : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IDataObjectAsyncCapability
+    public unsafe partial struct IDataObjectAsyncCapability : IDataObjectAsyncCapability.Interface
     {
         public void** lpVtbl;
 
@@ -72,6 +72,24 @@ namespace TerraFX.Interop
         public HRESULT EndOperation(HRESULT hResult, IBindCtx* pbcReserved, [NativeTypeName("DWORD")] uint dwEffects)
         {
             return ((delegate* unmanaged<IDataObjectAsyncCapability*, HRESULT, IBindCtx*, uint, int>)(lpVtbl[7]))((IDataObjectAsyncCapability*)Unsafe.AsPointer(ref this), hResult, pbcReserved, dwEffects);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT SetAsyncMode(BOOL fDoOpAsync);
+
+            [VtblIndex(4)]
+            HRESULT GetAsyncMode(BOOL* pfIsOpAsync);
+
+            [VtblIndex(5)]
+            HRESULT StartOperation(IBindCtx* pbcReserved);
+
+            [VtblIndex(6)]
+            HRESULT InOperation(BOOL* pfInAsyncOp);
+
+            [VtblIndex(7)]
+            HRESULT EndOperation(HRESULT hResult, IBindCtx* pbcReserved, [NativeTypeName("DWORD")] uint dwEffects);
         }
 
         public partial struct Vtbl

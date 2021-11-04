@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("6CCB7BE0-6807-11D0-B810-00C04FD706EC")]
     [NativeTypeName("struct IShellTaskScheduler : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IShellTaskScheduler
+    public unsafe partial struct IShellTaskScheduler : IShellTaskScheduler.Interface
     {
         public void** lpVtbl;
 
@@ -65,6 +65,21 @@ namespace TerraFX.Interop
         public HRESULT Status([NativeTypeName("DWORD")] uint dwReleaseStatus, [NativeTypeName("DWORD")] uint dwThreadTimeout)
         {
             return ((delegate* unmanaged<IShellTaskScheduler*, uint, uint, int>)(lpVtbl[6]))((IShellTaskScheduler*)Unsafe.AsPointer(ref this), dwReleaseStatus, dwThreadTimeout);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT AddTask(IRunnableTask* prt, [NativeTypeName("const TASKOWNERID &")] Guid* rtoid, [NativeTypeName("DWORD_PTR")] nuint lParam, [NativeTypeName("DWORD")] uint dwPriority);
+
+            [VtblIndex(4)]
+            HRESULT RemoveTasks([NativeTypeName("const TASKOWNERID &")] Guid* rtoid, [NativeTypeName("DWORD_PTR")] nuint lParam, BOOL bWaitIfRunning);
+
+            [VtblIndex(5)]
+            uint CountTasks([NativeTypeName("const TASKOWNERID &")] Guid* rtoid);
+
+            [VtblIndex(6)]
+            HRESULT Status([NativeTypeName("DWORD")] uint dwReleaseStatus, [NativeTypeName("DWORD")] uint dwThreadTimeout);
         }
 
         public partial struct Vtbl

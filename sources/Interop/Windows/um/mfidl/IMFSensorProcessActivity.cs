@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("39DC7F4A-B141-4719-813C-A7F46162A2B8")]
     [NativeTypeName("struct IMFSensorProcessActivity : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IMFSensorProcessActivity
+    public unsafe partial struct IMFSensorProcessActivity : IMFSensorProcessActivity.Interface
     {
         public void** lpVtbl;
 
@@ -65,6 +65,21 @@ namespace TerraFX.Interop
         public HRESULT GetReportTime(FILETIME* pft)
         {
             return ((delegate* unmanaged<IMFSensorProcessActivity*, FILETIME*, int>)(lpVtbl[6]))((IMFSensorProcessActivity*)Unsafe.AsPointer(ref this), pft);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetProcessId([NativeTypeName("ULONG *")] uint* pPID);
+
+            [VtblIndex(4)]
+            HRESULT GetStreamingState(BOOL* pfStreaming);
+
+            [VtblIndex(5)]
+            HRESULT GetStreamingMode(MFSensorDeviceMode* pMode);
+
+            [VtblIndex(6)]
+            HRESULT GetReportTime(FILETIME* pft);
         }
 
         public partial struct Vtbl

@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("A213F136-3B45-4362-A332-EFB6547CD432")]
     [NativeTypeName("struct IInputPanelInvocationConfiguration : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IInputPanelInvocationConfiguration
+    public unsafe partial struct IInputPanelInvocationConfiguration : IInputPanelInvocationConfiguration.Interface
     {
         public void** lpVtbl;
 
@@ -44,6 +44,12 @@ namespace TerraFX.Interop
         public HRESULT RequireTouchInEditControl()
         {
             return ((delegate* unmanaged<IInputPanelInvocationConfiguration*, int>)(lpVtbl[3]))((IInputPanelInvocationConfiguration*)Unsafe.AsPointer(ref this));
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT RequireTouchInEditControl();
         }
 
         public partial struct Vtbl

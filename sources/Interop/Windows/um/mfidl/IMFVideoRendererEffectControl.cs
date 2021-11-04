@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("604D33D7-CF23-41D5-8224-5BBBB1A87475")]
     [NativeTypeName("struct IMFVideoRendererEffectControl : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IMFVideoRendererEffectControl
+    public unsafe partial struct IMFVideoRendererEffectControl : IMFVideoRendererEffectControl.Interface
     {
         public void** lpVtbl;
 
@@ -44,6 +44,12 @@ namespace TerraFX.Interop
         public HRESULT OnAppServiceConnectionEstablished(IUnknown* pAppServiceConnection)
         {
             return ((delegate* unmanaged<IMFVideoRendererEffectControl*, IUnknown*, int>)(lpVtbl[3]))((IMFVideoRendererEffectControl*)Unsafe.AsPointer(ref this), pAppServiceConnection);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT OnAppServiceConnectionEstablished(IUnknown* pAppServiceConnection);
         }
 
         public partial struct Vtbl

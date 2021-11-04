@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("02BA3B52-0547-11D1-B833-00C04FC9B31F")]
     [NativeTypeName("struct IBrowserService : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IBrowserService
+    public unsafe partial struct IBrowserService : IBrowserService.Interface
     {
         public void** lpVtbl;
 
@@ -248,6 +248,100 @@ namespace TerraFX.Interop
         public HRESULT RegisterWindow(BOOL fForceRegister, int swc)
         {
             return ((delegate* unmanaged<IBrowserService*, BOOL, int, int>)(lpVtbl[32]))((IBrowserService*)Unsafe.AsPointer(ref this), fForceRegister, swc);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetParentSite(IOleInPlaceSite** ppipsite);
+
+            [VtblIndex(4)]
+            HRESULT SetTitle(IShellView* psv, [NativeTypeName("LPCWSTR")] ushort* pszName);
+
+            [VtblIndex(5)]
+            HRESULT GetTitle(IShellView* psv, [NativeTypeName("LPWSTR")] ushort* pszName, [NativeTypeName("DWORD")] uint cchName);
+
+            [VtblIndex(6)]
+            HRESULT GetOleObject(IOleObject** ppobjv);
+
+            [VtblIndex(7)]
+            HRESULT GetTravelLog(ITravelLog** pptl);
+
+            [VtblIndex(8)]
+            HRESULT ShowControlWindow(uint id, BOOL fShow);
+
+            [VtblIndex(9)]
+            HRESULT IsControlWindowShown(uint id, BOOL* pfShown);
+
+            [VtblIndex(10)]
+            HRESULT IEGetDisplayName([NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidl, [NativeTypeName("LPWSTR")] ushort* pwszName, uint uFlags);
+
+            [VtblIndex(11)]
+            HRESULT IEParseDisplayName(uint uiCP, [NativeTypeName("LPCWSTR")] ushort* pwszPath, [NativeTypeName("LPITEMIDLIST *")] ITEMIDLIST** ppidlOut);
+
+            [VtblIndex(12)]
+            HRESULT DisplayParseError(HRESULT hres, [NativeTypeName("LPCWSTR")] ushort* pwszPath);
+
+            [VtblIndex(13)]
+            HRESULT NavigateToPidl([NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidl, [NativeTypeName("DWORD")] uint grfHLNF);
+
+            [VtblIndex(14)]
+            HRESULT SetNavigateState(BNSTATE bnstate);
+
+            [VtblIndex(15)]
+            HRESULT GetNavigateState(BNSTATE* pbnstate);
+
+            [VtblIndex(16)]
+            HRESULT NotifyRedirect(IShellView* psv, [NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidl, BOOL* pfDidBrowse);
+
+            [VtblIndex(17)]
+            HRESULT UpdateWindowList();
+
+            [VtblIndex(18)]
+            HRESULT UpdateBackForwardState();
+
+            [VtblIndex(19)]
+            HRESULT SetFlags([NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("DWORD")] uint dwFlagMask);
+
+            [VtblIndex(20)]
+            HRESULT GetFlags([NativeTypeName("DWORD *")] uint* pdwFlags);
+
+            [VtblIndex(21)]
+            HRESULT CanNavigateNow();
+
+            [VtblIndex(22)]
+            HRESULT GetPidl([NativeTypeName("LPITEMIDLIST *")] ITEMIDLIST** ppidl);
+
+            [VtblIndex(23)]
+            HRESULT SetReferrer([NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidl);
+
+            [VtblIndex(24)]
+            [return: NativeTypeName("DWORD")]
+            uint GetBrowserIndex();
+
+            [VtblIndex(25)]
+            HRESULT GetBrowserByIndex([NativeTypeName("DWORD")] uint dwID, IUnknown** ppunk);
+
+            [VtblIndex(26)]
+            HRESULT GetHistoryObject(IOleObject** ppole, IStream** pstm, IBindCtx** ppbc);
+
+            [VtblIndex(27)]
+            HRESULT SetHistoryObject(IOleObject* pole, BOOL fIsLocalAnchor);
+
+            [VtblIndex(28)]
+            HRESULT CacheOLEServer(IOleObject* pole);
+
+            [VtblIndex(29)]
+            HRESULT GetSetCodePage(VARIANT* pvarIn, VARIANT* pvarOut);
+
+            [VtblIndex(30)]
+            HRESULT OnHttpEquiv(IShellView* psv, BOOL fDone, VARIANT* pvarargIn, VARIANT* pvarargOut);
+
+            [VtblIndex(31)]
+            HRESULT GetPalette(HPALETTE* hpal);
+
+            [VtblIndex(32)]
+            HRESULT RegisterWindow(BOOL fForceRegister, int swc);
         }
 
         public partial struct Vtbl

@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("3050F311-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct IHTMLFrameBase : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct IHTMLFrameBase
+    public unsafe partial struct IHTMLFrameBase : IHTMLFrameBase.Interface
     {
         public void** lpVtbl;
 
@@ -191,6 +191,63 @@ namespace TerraFX.Interop
         public HRESULT get_scrolling([NativeTypeName("BSTR *")] ushort** p)
         {
             return ((delegate* unmanaged<IHTMLFrameBase*, ushort**, int>)(lpVtbl[24]))((IHTMLFrameBase*)Unsafe.AsPointer(ref this), p);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT put_src([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(8)]
+            HRESULT get_src([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(9)]
+            HRESULT put_name([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(10)]
+            HRESULT get_name([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(11)]
+            HRESULT put_border(VARIANT v);
+
+            [VtblIndex(12)]
+            HRESULT get_border(VARIANT* p);
+
+            [VtblIndex(13)]
+            HRESULT put_frameBorder([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(14)]
+            HRESULT get_frameBorder([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(15)]
+            HRESULT put_frameSpacing(VARIANT v);
+
+            [VtblIndex(16)]
+            HRESULT get_frameSpacing(VARIANT* p);
+
+            [VtblIndex(17)]
+            HRESULT put_marginWidth(VARIANT v);
+
+            [VtblIndex(18)]
+            HRESULT get_marginWidth(VARIANT* p);
+
+            [VtblIndex(19)]
+            HRESULT put_marginHeight(VARIANT v);
+
+            [VtblIndex(20)]
+            HRESULT get_marginHeight(VARIANT* p);
+
+            [VtblIndex(21)]
+            HRESULT put_noResize([NativeTypeName("VARIANT_BOOL")] short v);
+
+            [VtblIndex(22)]
+            HRESULT get_noResize([NativeTypeName("VARIANT_BOOL *")] short* p);
+
+            [VtblIndex(23)]
+            HRESULT put_scrolling([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(24)]
+            HRESULT get_scrolling([NativeTypeName("BSTR *")] ushort** p);
         }
 
         public partial struct Vtbl

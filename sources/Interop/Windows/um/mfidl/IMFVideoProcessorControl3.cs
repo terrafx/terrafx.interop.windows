@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("2424B3F2-EB23-40F1-91AA-74BDDEEA0883")]
     [NativeTypeName("struct IMFVideoProcessorControl3 : IMFVideoProcessorControl2")]
     [NativeInheritance("IMFVideoProcessorControl2")]
-    public unsafe partial struct IMFVideoProcessorControl3
+    public unsafe partial struct IMFVideoProcessorControl3 : IMFVideoProcessorControl3.Interface
     {
         public void** lpVtbl;
 
@@ -128,6 +128,21 @@ namespace TerraFX.Interop
         public HRESULT SetOutputDevice(IUnknown* pOutputDevice)
         {
             return ((delegate* unmanaged<IMFVideoProcessorControl3*, IUnknown*, int>)(lpVtbl[15]))((IMFVideoProcessorControl3*)Unsafe.AsPointer(ref this), pOutputDevice);
+        }
+
+        public interface Interface : IMFVideoProcessorControl2.Interface
+        {
+            [VtblIndex(12)]
+            HRESULT GetNaturalOutputType(IMFMediaType** ppType);
+
+            [VtblIndex(13)]
+            HRESULT EnableSphericalVideoProcessing(BOOL fEnable, MFVideoSphericalFormat eFormat, MFVideoSphericalProjectionMode eProjectionMode);
+
+            [VtblIndex(14)]
+            HRESULT SetSphericalVideoProperties(float X, float Y, float Z, float W, float fieldOfView);
+
+            [VtblIndex(15)]
+            HRESULT SetOutputDevice(IUnknown* pOutputDevice);
         }
 
         public partial struct Vtbl

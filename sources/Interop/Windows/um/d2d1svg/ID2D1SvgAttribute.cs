@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("C9CDB0DD-F8C9-4E70-B7C2-301C80292C5E")]
     [NativeTypeName("struct ID2D1SvgAttribute : ID2D1Resource")]
     [NativeInheritance("ID2D1Resource")]
-    public unsafe partial struct ID2D1SvgAttribute
+    public unsafe partial struct ID2D1SvgAttribute : ID2D1SvgAttribute.Interface
     {
         public void** lpVtbl;
 
@@ -58,6 +58,15 @@ namespace TerraFX.Interop
         public HRESULT Clone(ID2D1SvgAttribute** attribute)
         {
             return ((delegate* unmanaged<ID2D1SvgAttribute*, ID2D1SvgAttribute**, int>)(lpVtbl[5]))((ID2D1SvgAttribute*)Unsafe.AsPointer(ref this), attribute);
+        }
+
+        public interface Interface : ID2D1Resource.Interface
+        {
+            [VtblIndex(4)]
+            void GetElement(ID2D1SvgElement** element);
+
+            [VtblIndex(5)]
+            HRESULT Clone(ID2D1SvgAttribute** attribute);
         }
 
         public partial struct Vtbl

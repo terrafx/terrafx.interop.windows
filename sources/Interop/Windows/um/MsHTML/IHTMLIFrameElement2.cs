@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("3050F4E6-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct IHTMLIFrameElement2 : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct IHTMLIFrameElement2
+    public unsafe partial struct IHTMLIFrameElement2 : IHTMLIFrameElement2.Interface
     {
         public void** lpVtbl;
 
@@ -93,6 +93,21 @@ namespace TerraFX.Interop
         public HRESULT get_width(VARIANT* p)
         {
             return ((delegate* unmanaged<IHTMLIFrameElement2*, VARIANT*, int>)(lpVtbl[10]))((IHTMLIFrameElement2*)Unsafe.AsPointer(ref this), p);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT put_height(VARIANT v);
+
+            [VtblIndex(8)]
+            HRESULT get_height(VARIANT* p);
+
+            [VtblIndex(9)]
+            HRESULT put_width(VARIANT v);
+
+            [VtblIndex(10)]
+            HRESULT get_width(VARIANT* p);
         }
 
         public partial struct Vtbl

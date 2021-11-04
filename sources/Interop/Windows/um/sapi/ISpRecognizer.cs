@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("C2B5F241-DAA0-4507-9E16-5A1EAA2B7A5C")]
     [NativeTypeName("struct ISpRecognizer : ISpProperties")]
     [NativeInheritance("ISpProperties")]
-    public unsafe partial struct ISpRecognizer
+    public unsafe partial struct ISpRecognizer : ISpRecognizer.Interface
     {
         public void** lpVtbl;
 
@@ -177,6 +177,57 @@ namespace TerraFX.Interop
         public HRESULT EmulateRecognition(ISpPhrase* pPhrase)
         {
             return ((delegate* unmanaged<ISpRecognizer*, ISpPhrase*, int>)(lpVtbl[22]))((ISpRecognizer*)Unsafe.AsPointer(ref this), pPhrase);
+        }
+
+        public interface Interface : ISpProperties.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT SetRecognizer(ISpObjectToken* pRecognizer);
+
+            [VtblIndex(8)]
+            HRESULT GetRecognizer(ISpObjectToken** ppRecognizer);
+
+            [VtblIndex(9)]
+            HRESULT SetInput(IUnknown* pUnkInput, BOOL fAllowFormatChanges);
+
+            [VtblIndex(10)]
+            HRESULT GetInputObjectToken(ISpObjectToken** ppToken);
+
+            [VtblIndex(11)]
+            HRESULT GetInputStream(ISpStreamFormat** ppStream);
+
+            [VtblIndex(12)]
+            HRESULT CreateRecoContext(ISpRecoContext** ppNewCtxt);
+
+            [VtblIndex(13)]
+            HRESULT GetRecoProfile(ISpObjectToken** ppToken);
+
+            [VtblIndex(14)]
+            HRESULT SetRecoProfile(ISpObjectToken* pToken);
+
+            [VtblIndex(15)]
+            HRESULT IsSharedInstance();
+
+            [VtblIndex(16)]
+            HRESULT GetRecoState(SPRECOSTATE* pState);
+
+            [VtblIndex(17)]
+            HRESULT SetRecoState(SPRECOSTATE NewState);
+
+            [VtblIndex(18)]
+            HRESULT GetStatus(SPRECOGNIZERSTATUS* pStatus);
+
+            [VtblIndex(19)]
+            HRESULT GetFormat(SPSTREAMFORMATTYPE WaveFormatType, Guid* pFormatId, WAVEFORMATEX** ppCoMemWFEX);
+
+            [VtblIndex(20)]
+            HRESULT IsUISupported([NativeTypeName("LPCWSTR")] ushort* pszTypeOfUI, void* pvExtraData, [NativeTypeName("ULONG")] uint cbExtraData, BOOL* pfSupported);
+
+            [VtblIndex(21)]
+            HRESULT DisplayUI(HWND hwndParent, [NativeTypeName("LPCWSTR")] ushort* pszTitle, [NativeTypeName("LPCWSTR")] ushort* pszTypeOfUI, void* pvExtraData, [NativeTypeName("ULONG")] uint cbExtraData);
+
+            [VtblIndex(22)]
+            HRESULT EmulateRecognition(ISpPhrase* pPhrase);
         }
 
         public partial struct Vtbl

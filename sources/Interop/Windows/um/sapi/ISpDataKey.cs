@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("14056581-E16C-11D2-BB90-00C04F8EE6C0")]
     [NativeTypeName("struct ISpDataKey : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct ISpDataKey
+    public unsafe partial struct ISpDataKey : ISpDataKey.Interface
     {
         public void** lpVtbl;
 
@@ -121,6 +121,45 @@ namespace TerraFX.Interop
         public HRESULT EnumValues([NativeTypeName("ULONG")] uint Index, [NativeTypeName("LPWSTR *")] ushort** ppszValueName)
         {
             return ((delegate* unmanaged<ISpDataKey*, uint, ushort**, int>)(lpVtbl[14]))((ISpDataKey*)Unsafe.AsPointer(ref this), Index, ppszValueName);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT SetData([NativeTypeName("LPCWSTR")] ushort* pszValueName, [NativeTypeName("ULONG")] uint cbData, [NativeTypeName("const BYTE *")] byte* pData);
+
+            [VtblIndex(4)]
+            HRESULT GetData([NativeTypeName("LPCWSTR")] ushort* pszValueName, [NativeTypeName("ULONG *")] uint* pcbData, byte* pData);
+
+            [VtblIndex(5)]
+            HRESULT SetStringValue([NativeTypeName("LPCWSTR")] ushort* pszValueName, [NativeTypeName("LPCWSTR")] ushort* pszValue);
+
+            [VtblIndex(6)]
+            HRESULT GetStringValue([NativeTypeName("LPCWSTR")] ushort* pszValueName, [NativeTypeName("LPWSTR *")] ushort** ppszValue);
+
+            [VtblIndex(7)]
+            HRESULT SetDWORD([NativeTypeName("LPCWSTR")] ushort* pszValueName, [NativeTypeName("DWORD")] uint dwValue);
+
+            [VtblIndex(8)]
+            HRESULT GetDWORD([NativeTypeName("LPCWSTR")] ushort* pszValueName, [NativeTypeName("DWORD *")] uint* pdwValue);
+
+            [VtblIndex(9)]
+            HRESULT OpenKey([NativeTypeName("LPCWSTR")] ushort* pszSubKeyName, ISpDataKey** ppSubKey);
+
+            [VtblIndex(10)]
+            HRESULT CreateKey([NativeTypeName("LPCWSTR")] ushort* pszSubKey, ISpDataKey** ppSubKey);
+
+            [VtblIndex(11)]
+            HRESULT DeleteKey([NativeTypeName("LPCWSTR")] ushort* pszSubKey);
+
+            [VtblIndex(12)]
+            HRESULT DeleteValue([NativeTypeName("LPCWSTR")] ushort* pszValueName);
+
+            [VtblIndex(13)]
+            HRESULT EnumKeys([NativeTypeName("ULONG")] uint Index, [NativeTypeName("LPWSTR *")] ushort** ppszSubKeyName);
+
+            [VtblIndex(14)]
+            HRESULT EnumValues([NativeTypeName("ULONG")] uint Index, [NativeTypeName("LPWSTR *")] ushort** ppszValueName);
         }
 
         public partial struct Vtbl

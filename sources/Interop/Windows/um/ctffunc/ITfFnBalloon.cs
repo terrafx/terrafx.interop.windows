@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("3BAB89E4-5FBE-45F4-A5BC-DCA36AD225A8")]
     [NativeTypeName("struct ITfFnBalloon : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct ITfFnBalloon
+    public unsafe partial struct ITfFnBalloon : ITfFnBalloon.Interface
     {
         public void** lpVtbl;
 
@@ -44,6 +44,12 @@ namespace TerraFX.Interop
         public HRESULT UpdateBalloon(TfLBBalloonStyle style, [NativeTypeName("const WCHAR *")] ushort* pch, [NativeTypeName("ULONG")] uint cch)
         {
             return ((delegate* unmanaged<ITfFnBalloon*, TfLBBalloonStyle, ushort*, uint, int>)(lpVtbl[3]))((ITfFnBalloon*)Unsafe.AsPointer(ref this), style, pch, cch);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT UpdateBalloon(TfLBBalloonStyle style, [NativeTypeName("const WCHAR *")] ushort* pch, [NativeTypeName("ULONG")] uint cch);
         }
 
         public partial struct Vtbl

@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("790A45F7-0D42-4876-983A-0A55CFE6F4AA")]
     [NativeTypeName("struct IDXGISwapChain1 : IDXGISwapChain")]
     [NativeInheritance("IDXGISwapChain")]
-    public unsafe partial struct IDXGISwapChain1
+    public unsafe partial struct IDXGISwapChain1 : IDXGISwapChain1.Interface
     {
         public void** lpVtbl;
 
@@ -219,6 +219,42 @@ namespace TerraFX.Interop
         public HRESULT GetRotation(DXGI_MODE_ROTATION* pRotation)
         {
             return ((delegate* unmanaged<IDXGISwapChain1*, DXGI_MODE_ROTATION*, int>)(lpVtbl[28]))((IDXGISwapChain1*)Unsafe.AsPointer(ref this), pRotation);
+        }
+
+        public interface Interface : IDXGISwapChain.Interface
+        {
+            [VtblIndex(18)]
+            HRESULT GetDesc1(DXGI_SWAP_CHAIN_DESC1* pDesc);
+
+            [VtblIndex(19)]
+            HRESULT GetFullscreenDesc(DXGI_SWAP_CHAIN_FULLSCREEN_DESC* pDesc);
+
+            [VtblIndex(20)]
+            HRESULT GetHwnd(HWND* pHwnd);
+
+            [VtblIndex(21)]
+            HRESULT GetCoreWindow([NativeTypeName("const IID &")] Guid* refiid, void** ppUnk);
+
+            [VtblIndex(22)]
+            HRESULT Present1(uint SyncInterval, uint PresentFlags, [NativeTypeName("const DXGI_PRESENT_PARAMETERS *")] DXGI_PRESENT_PARAMETERS* pPresentParameters);
+
+            [VtblIndex(23)]
+            BOOL IsTemporaryMonoSupported();
+
+            [VtblIndex(24)]
+            HRESULT GetRestrictToOutput(IDXGIOutput** ppRestrictToOutput);
+
+            [VtblIndex(25)]
+            HRESULT SetBackgroundColor([NativeTypeName("const DXGI_RGBA *")] DXGI_RGBA* pColor);
+
+            [VtblIndex(26)]
+            HRESULT GetBackgroundColor(DXGI_RGBA* pColor);
+
+            [VtblIndex(27)]
+            HRESULT SetRotation(DXGI_MODE_ROTATION Rotation);
+
+            [VtblIndex(28)]
+            HRESULT GetRotation(DXGI_MODE_ROTATION* pRotation);
         }
 
         public partial struct Vtbl

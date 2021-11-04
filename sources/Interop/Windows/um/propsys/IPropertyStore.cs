@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("886D8EEB-8CF2-4446-8D02-CDBA1DBDCF99")]
     [NativeTypeName("struct IPropertyStore : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IPropertyStore
+    public unsafe partial struct IPropertyStore : IPropertyStore.Interface
     {
         public void** lpVtbl;
 
@@ -72,6 +72,24 @@ namespace TerraFX.Interop
         public HRESULT Commit()
         {
             return ((delegate* unmanaged<IPropertyStore*, int>)(lpVtbl[7]))((IPropertyStore*)Unsafe.AsPointer(ref this));
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetCount([NativeTypeName("DWORD *")] uint* cProps);
+
+            [VtblIndex(4)]
+            HRESULT GetAt([NativeTypeName("DWORD")] uint iProp, PROPERTYKEY* pkey);
+
+            [VtblIndex(5)]
+            HRESULT GetValue([NativeTypeName("const PROPERTYKEY &")] PROPERTYKEY* key, PROPVARIANT* pv);
+
+            [VtblIndex(6)]
+            HRESULT SetValue([NativeTypeName("const PROPERTYKEY &")] PROPERTYKEY* key, [NativeTypeName("const PROPVARIANT &")] PROPVARIANT* propvar);
+
+            [VtblIndex(7)]
+            HRESULT Commit();
         }
 
         public partial struct Vtbl

@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("6D60EB64-ACED-40A6-BBF3-4E557F71DEE2")]
     [NativeTypeName("struct ISpeechRecoResultDispatch : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct ISpeechRecoResultDispatch
+    public unsafe partial struct ISpeechRecoResultDispatch : ISpeechRecoResultDispatch.Interface
     {
         public void** lpVtbl;
 
@@ -156,6 +156,48 @@ namespace TerraFX.Interop
         public HRESULT SetTextFeedback([NativeTypeName("BSTR")] ushort* Feedback, [NativeTypeName("VARIANT_BOOL")] short WasSuccessful)
         {
             return ((delegate* unmanaged<ISpeechRecoResultDispatch*, ushort*, short, int>)(lpVtbl[19]))((ISpeechRecoResultDispatch*)Unsafe.AsPointer(ref this), Feedback, WasSuccessful);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT get_RecoContext(ISpeechRecoContext** RecoContext);
+
+            [VtblIndex(8)]
+            HRESULT get_Times(ISpeechRecoResultTimes** Times);
+
+            [VtblIndex(9)]
+            HRESULT putref_AudioFormat(ISpeechAudioFormat* Format);
+
+            [VtblIndex(10)]
+            HRESULT get_AudioFormat(ISpeechAudioFormat** Format);
+
+            [VtblIndex(11)]
+            HRESULT get_PhraseInfo(ISpeechPhraseInfo** PhraseInfo);
+
+            [VtblIndex(12)]
+            HRESULT Alternates([NativeTypeName("long")] int RequestCount, [NativeTypeName("long")] int StartElement, [NativeTypeName("long")] int Elements, ISpeechPhraseAlternates** Alternates);
+
+            [VtblIndex(13)]
+            HRESULT Audio([NativeTypeName("long")] int StartElement, [NativeTypeName("long")] int Elements, ISpeechMemoryStream** Stream);
+
+            [VtblIndex(14)]
+            HRESULT SpeakAudio([NativeTypeName("long")] int StartElement, [NativeTypeName("long")] int Elements, SpeechVoiceSpeakFlags Flags, [NativeTypeName("long *")] int* StreamNumber);
+
+            [VtblIndex(15)]
+            HRESULT SaveToMemory(VARIANT* ResultBlock);
+
+            [VtblIndex(16)]
+            HRESULT DiscardResultInfo(SpeechDiscardType ValueTypes);
+
+            [VtblIndex(17)]
+            HRESULT GetXMLResult(SPXMLRESULTOPTIONS Options, [NativeTypeName("BSTR *")] ushort** pResult);
+
+            [VtblIndex(18)]
+            HRESULT GetXMLErrorInfo([NativeTypeName("long *")] int* LineNumber, [NativeTypeName("BSTR *")] ushort** ScriptLine, [NativeTypeName("BSTR *")] ushort** Source, [NativeTypeName("BSTR *")] ushort** Description, HRESULT* ResultCode, [NativeTypeName("VARIANT_BOOL *")] short* IsError);
+
+            [VtblIndex(19)]
+            HRESULT SetTextFeedback([NativeTypeName("BSTR")] ushort* Feedback, [NativeTypeName("VARIANT_BOOL")] short WasSuccessful);
         }
 
         public partial struct Vtbl

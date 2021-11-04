@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("30510765-98B6-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct IDOMSiteModeEvent : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct IDOMSiteModeEvent
+    public unsafe partial struct IDOMSiteModeEvent : IDOMSiteModeEvent.Interface
     {
         public void** lpVtbl;
 
@@ -79,6 +79,15 @@ namespace TerraFX.Interop
         public HRESULT get_actionURL([NativeTypeName("BSTR *")] ushort** p)
         {
             return ((delegate* unmanaged<IDOMSiteModeEvent*, ushort**, int>)(lpVtbl[8]))((IDOMSiteModeEvent*)Unsafe.AsPointer(ref this), p);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT get_buttonID([NativeTypeName("LONG *")] int* p);
+
+            [VtblIndex(8)]
+            HRESULT get_actionURL([NativeTypeName("BSTR *")] ushort** p);
         }
 
         public partial struct Vtbl

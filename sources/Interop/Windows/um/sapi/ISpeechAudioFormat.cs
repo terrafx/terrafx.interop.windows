@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("E6E9C590-3E18-40E3-8299-061F98BDE7C7")]
     [NativeTypeName("struct ISpeechAudioFormat : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct ISpeechAudioFormat
+    public unsafe partial struct ISpeechAudioFormat : ISpeechAudioFormat.Interface
     {
         public void** lpVtbl;
 
@@ -107,6 +107,27 @@ namespace TerraFX.Interop
         public HRESULT SetWaveFormatEx(ISpeechWaveFormatEx* SpeechWaveFormatEx)
         {
             return ((delegate* unmanaged<ISpeechAudioFormat*, ISpeechWaveFormatEx*, int>)(lpVtbl[12]))((ISpeechAudioFormat*)Unsafe.AsPointer(ref this), SpeechWaveFormatEx);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT get_Type(SpeechAudioFormatType* AudioFormat);
+
+            [VtblIndex(8)]
+            HRESULT put_Type(SpeechAudioFormatType AudioFormat);
+
+            [VtblIndex(9)]
+            HRESULT get_Guid([NativeTypeName("BSTR *")] ushort** Guid);
+
+            [VtblIndex(10)]
+            HRESULT put_Guid([NativeTypeName("BSTR")] ushort* Guid);
+
+            [VtblIndex(11)]
+            HRESULT GetWaveFormatEx(ISpeechWaveFormatEx** SpeechWaveFormatEx);
+
+            [VtblIndex(12)]
+            HRESULT SetWaveFormatEx(ISpeechWaveFormatEx* SpeechWaveFormatEx);
         }
 
         public partial struct Vtbl

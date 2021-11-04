@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("BC0BF6AE-8878-11D1-83E9-00C04FC2C6D4")]
     [NativeTypeName("struct ITimeAndNoticeControl : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct ITimeAndNoticeControl
+    public unsafe partial struct ITimeAndNoticeControl : ITimeAndNoticeControl.Interface
     {
         public void** lpVtbl;
 
@@ -44,6 +44,12 @@ namespace TerraFX.Interop
         public HRESULT SuppressChanges([NativeTypeName("DWORD")] uint res1, [NativeTypeName("DWORD")] uint res2)
         {
             return ((delegate* unmanaged<ITimeAndNoticeControl*, uint, uint, int>)(lpVtbl[3]))((ITimeAndNoticeControl*)Unsafe.AsPointer(ref this), res1, res2);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT SuppressChanges([NativeTypeName("DWORD")] uint res1, [NativeTypeName("DWORD")] uint res2);
         }
 
         public partial struct Vtbl

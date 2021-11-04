@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("3051074B-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct IHTMLStyleMedia : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct IHTMLStyleMedia
+    public unsafe partial struct IHTMLStyleMedia : IHTMLStyleMedia.Interface
     {
         public void** lpVtbl;
 
@@ -79,6 +79,15 @@ namespace TerraFX.Interop
         public HRESULT matchMedium([NativeTypeName("BSTR")] ushort* mediaQuery, [NativeTypeName("VARIANT_BOOL *")] short* matches)
         {
             return ((delegate* unmanaged<IHTMLStyleMedia*, ushort*, short*, int>)(lpVtbl[8]))((IHTMLStyleMedia*)Unsafe.AsPointer(ref this), mediaQuery, matches);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT get_type([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(8)]
+            HRESULT matchMedium([NativeTypeName("BSTR")] ushort* mediaQuery, [NativeTypeName("VARIANT_BOOL *")] short* matches);
         }
 
         public partial struct Vtbl

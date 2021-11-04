@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("305104AF-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct IDocumentRange : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct IDocumentRange
+    public unsafe partial struct IDocumentRange : IDocumentRange.Interface
     {
         public void** lpVtbl;
 
@@ -72,6 +72,12 @@ namespace TerraFX.Interop
         public HRESULT createRange(IHTMLDOMRange** ppIHTMLDOMRange)
         {
             return ((delegate* unmanaged<IDocumentRange*, IHTMLDOMRange**, int>)(lpVtbl[7]))((IDocumentRange*)Unsafe.AsPointer(ref this), ppIHTMLDOMRange);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT createRange(IHTMLDOMRange** ppIHTMLDOMRange);
         }
 
         public partial struct Vtbl

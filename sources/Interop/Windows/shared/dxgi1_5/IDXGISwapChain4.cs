@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("3D585D5A-BD4A-489E-B1F4-3DBCB6452FFB")]
     [NativeTypeName("struct IDXGISwapChain4 : IDXGISwapChain3")]
     [NativeInheritance("IDXGISwapChain3")]
-    public unsafe partial struct IDXGISwapChain4
+    public unsafe partial struct IDXGISwapChain4 : IDXGISwapChain4.Interface
     {
         public void** lpVtbl;
 
@@ -303,6 +303,12 @@ namespace TerraFX.Interop
         public HRESULT SetHDRMetaData(DXGI_HDR_METADATA_TYPE Type, uint Size, void* pMetaData)
         {
             return ((delegate* unmanaged<IDXGISwapChain4*, DXGI_HDR_METADATA_TYPE, uint, void*, int>)(lpVtbl[40]))((IDXGISwapChain4*)Unsafe.AsPointer(ref this), Type, Size, pMetaData);
+        }
+
+        public interface Interface : IDXGISwapChain3.Interface
+        {
+            [VtblIndex(40)]
+            HRESULT SetHDRMetaData(DXGI_HDR_METADATA_TYPE Type, uint Size, void* pMetaData);
         }
 
         public partial struct Vtbl

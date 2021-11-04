@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("826ABE3D-3ACD-47D3-84F2-88AAEDCF6304")]
     [NativeTypeName("struct IOplockBreakingHandler : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IOplockBreakingHandler
+    public unsafe partial struct IOplockBreakingHandler : IOplockBreakingHandler.Interface
     {
         public void** lpVtbl;
 
@@ -44,6 +44,12 @@ namespace TerraFX.Interop
         public HRESULT OplockBreaking()
         {
             return ((delegate* unmanaged<IOplockBreakingHandler*, int>)(lpVtbl[3]))((IOplockBreakingHandler*)Unsafe.AsPointer(ref this));
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT OplockBreaking();
         }
 
         public partial struct Vtbl

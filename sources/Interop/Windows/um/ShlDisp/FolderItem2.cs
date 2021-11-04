@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("EDC817AA-92B8-11D1-B075-00C04FC33AA5")]
     [NativeTypeName("struct FolderItem2 : FolderItem")]
     [NativeInheritance("FolderItem")]
-    public unsafe partial struct FolderItem2
+    public unsafe partial struct FolderItem2 : FolderItem2.Interface
     {
         public void** lpVtbl;
 
@@ -198,6 +198,15 @@ namespace TerraFX.Interop
         public HRESULT ExtendedProperty([NativeTypeName("BSTR")] ushort* bstrPropName, VARIANT* pvRet)
         {
             return ((delegate* unmanaged<FolderItem2*, ushort*, VARIANT*, int>)(lpVtbl[25]))((FolderItem2*)Unsafe.AsPointer(ref this), bstrPropName, pvRet);
+        }
+
+        public interface Interface : FolderItem.Interface
+        {
+            [VtblIndex(24)]
+            HRESULT InvokeVerbEx(VARIANT vVerb, VARIANT vArgs);
+
+            [VtblIndex(25)]
+            HRESULT ExtendedProperty([NativeTypeName("BSTR")] ushort* bstrPropName, VARIANT* pvRet);
         }
 
         public partial struct Vtbl

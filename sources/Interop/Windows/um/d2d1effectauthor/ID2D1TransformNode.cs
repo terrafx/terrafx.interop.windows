@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("B2EFE1E7-729F-4102-949F-505FA21BF666")]
     [NativeTypeName("struct ID2D1TransformNode : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct ID2D1TransformNode
+    public unsafe partial struct ID2D1TransformNode : ID2D1TransformNode.Interface
     {
         public void** lpVtbl;
 
@@ -45,6 +45,13 @@ namespace TerraFX.Interop
         public uint GetInputCount()
         {
             return ((delegate* unmanaged<ID2D1TransformNode*, uint>)(lpVtbl[3]))((ID2D1TransformNode*)Unsafe.AsPointer(ref this));
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            [return: NativeTypeName("UINT32")]
+            uint GetInputCount();
         }
 
         public partial struct Vtbl

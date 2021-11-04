@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("577AD2A0-9FC7-4DDA-8B18-DAB810140052")]
     [NativeTypeName("struct ID2D1EffectContext2 : ID2D1EffectContext1")]
     [NativeInheritance("ID2D1EffectContext1")]
-    public unsafe partial struct ID2D1EffectContext2
+    public unsafe partial struct ID2D1EffectContext2 : ID2D1EffectContext2.Interface
     {
         public void** lpVtbl;
 
@@ -205,6 +205,15 @@ namespace TerraFX.Interop
         public HRESULT CreateColorContextFromSimpleColorProfile([NativeTypeName("const D2D1_SIMPLE_COLOR_PROFILE *")] D2D1_SIMPLE_COLOR_PROFILE* simpleProfile, ID2D1ColorContext1** colorContext)
         {
             return ((delegate* unmanaged<ID2D1EffectContext2*, D2D1_SIMPLE_COLOR_PROFILE*, ID2D1ColorContext1**, int>)(lpVtbl[26]))((ID2D1EffectContext2*)Unsafe.AsPointer(ref this), simpleProfile, colorContext);
+        }
+
+        public interface Interface : ID2D1EffectContext1.Interface
+        {
+            [VtblIndex(25)]
+            HRESULT CreateColorContextFromDxgiColorSpace(DXGI_COLOR_SPACE_TYPE colorSpace, ID2D1ColorContext1** colorContext);
+
+            [VtblIndex(26)]
+            HRESULT CreateColorContextFromSimpleColorProfile([NativeTypeName("const D2D1_SIMPLE_COLOR_PROFILE *")] D2D1_SIMPLE_COLOR_PROFILE* simpleProfile, ID2D1ColorContext1** colorContext);
         }
 
         public partial struct Vtbl

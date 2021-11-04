@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("3051083A-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct IScriptEventHandler : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IScriptEventHandler
+    public unsafe partial struct IScriptEventHandler : IScriptEventHandler.Interface
     {
         public void** lpVtbl;
 
@@ -72,6 +72,24 @@ namespace TerraFX.Interop
         public HRESULT Cookie([NativeTypeName("ULONGLONG *")] ulong* pullCookie)
         {
             return ((delegate* unmanaged<IScriptEventHandler*, ulong*, int>)(lpVtbl[7]))((IScriptEventHandler*)Unsafe.AsPointer(ref this), pullCookie);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT FunctionName([NativeTypeName("BSTR *")] ushort** pbstrFunctionName);
+
+            [VtblIndex(4)]
+            HRESULT DebugDocumentContext(IUnknown** ppDebugDocumentContext);
+
+            [VtblIndex(5)]
+            HRESULT EventHandlerDispatch(IDispatch** ppDispHandler);
+
+            [VtblIndex(6)]
+            HRESULT UsesCapture(BOOL* pfUsesCapture);
+
+            [VtblIndex(7)]
+            HRESULT Cookie([NativeTypeName("ULONGLONG *")] ulong* pullCookie);
         }
 
         public partial struct Vtbl

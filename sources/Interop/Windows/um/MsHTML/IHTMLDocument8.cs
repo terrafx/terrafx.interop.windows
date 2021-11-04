@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("305107D0-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct IHTMLDocument8 : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct IHTMLDocument8
+    public unsafe partial struct IHTMLDocument8 : IHTMLDocument8.Interface
     {
         public void** lpVtbl;
 
@@ -317,6 +317,117 @@ namespace TerraFX.Interop
         public HRESULT get_msCapsLockWarningOff([NativeTypeName("VARIANT_BOOL *")] short* p)
         {
             return ((delegate* unmanaged<IHTMLDocument8*, short*, int>)(lpVtbl[42]))((IHTMLDocument8*)Unsafe.AsPointer(ref this), p);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT put_onmscontentzoom(VARIANT v);
+
+            [VtblIndex(8)]
+            HRESULT get_onmscontentzoom(VARIANT* p);
+
+            [VtblIndex(9)]
+            HRESULT put_onmspointerdown(VARIANT v);
+
+            [VtblIndex(10)]
+            HRESULT get_onmspointerdown(VARIANT* p);
+
+            [VtblIndex(11)]
+            HRESULT put_onmspointermove(VARIANT v);
+
+            [VtblIndex(12)]
+            HRESULT get_onmspointermove(VARIANT* p);
+
+            [VtblIndex(13)]
+            HRESULT put_onmspointerup(VARIANT v);
+
+            [VtblIndex(14)]
+            HRESULT get_onmspointerup(VARIANT* p);
+
+            [VtblIndex(15)]
+            HRESULT put_onmspointerover(VARIANT v);
+
+            [VtblIndex(16)]
+            HRESULT get_onmspointerover(VARIANT* p);
+
+            [VtblIndex(17)]
+            HRESULT put_onmspointerout(VARIANT v);
+
+            [VtblIndex(18)]
+            HRESULT get_onmspointerout(VARIANT* p);
+
+            [VtblIndex(19)]
+            HRESULT put_onmspointercancel(VARIANT v);
+
+            [VtblIndex(20)]
+            HRESULT get_onmspointercancel(VARIANT* p);
+
+            [VtblIndex(21)]
+            HRESULT put_onmspointerhover(VARIANT v);
+
+            [VtblIndex(22)]
+            HRESULT get_onmspointerhover(VARIANT* p);
+
+            [VtblIndex(23)]
+            HRESULT put_onmsgesturestart(VARIANT v);
+
+            [VtblIndex(24)]
+            HRESULT get_onmsgesturestart(VARIANT* p);
+
+            [VtblIndex(25)]
+            HRESULT put_onmsgesturechange(VARIANT v);
+
+            [VtblIndex(26)]
+            HRESULT get_onmsgesturechange(VARIANT* p);
+
+            [VtblIndex(27)]
+            HRESULT put_onmsgestureend(VARIANT v);
+
+            [VtblIndex(28)]
+            HRESULT get_onmsgestureend(VARIANT* p);
+
+            [VtblIndex(29)]
+            HRESULT put_onmsgesturehold(VARIANT v);
+
+            [VtblIndex(30)]
+            HRESULT get_onmsgesturehold(VARIANT* p);
+
+            [VtblIndex(31)]
+            HRESULT put_onmsgesturetap(VARIANT v);
+
+            [VtblIndex(32)]
+            HRESULT get_onmsgesturetap(VARIANT* p);
+
+            [VtblIndex(33)]
+            HRESULT put_onmsgesturedoubletap(VARIANT v);
+
+            [VtblIndex(34)]
+            HRESULT get_onmsgesturedoubletap(VARIANT* p);
+
+            [VtblIndex(35)]
+            HRESULT put_onmsinertiastart(VARIANT v);
+
+            [VtblIndex(36)]
+            HRESULT get_onmsinertiastart(VARIANT* p);
+
+            [VtblIndex(37)]
+            HRESULT elementsFromPoint(float x, float y, IHTMLDOMChildrenCollection** elementsHit);
+
+            [VtblIndex(38)]
+            HRESULT elementsFromRect(float left, float top, float width, float height, IHTMLDOMChildrenCollection** elementsHit);
+
+            [VtblIndex(39)]
+            HRESULT put_onmsmanipulationstatechanged(VARIANT v);
+
+            [VtblIndex(40)]
+            HRESULT get_onmsmanipulationstatechanged(VARIANT* p);
+
+            [VtblIndex(41)]
+            HRESULT put_msCapsLockWarningOff([NativeTypeName("VARIANT_BOOL")] short v);
+
+            [VtblIndex(42)]
+            HRESULT get_msCapsLockWarningOff([NativeTypeName("VARIANT_BOOL *")] short* p);
         }
 
         public partial struct Vtbl

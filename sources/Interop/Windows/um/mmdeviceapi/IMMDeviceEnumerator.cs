@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("A95664D2-9614-4F35-A746-DE8DB63617E6")]
     [NativeTypeName("struct IMMDeviceEnumerator : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IMMDeviceEnumerator
+    public unsafe partial struct IMMDeviceEnumerator : IMMDeviceEnumerator.Interface
     {
         public void** lpVtbl;
 
@@ -72,6 +72,24 @@ namespace TerraFX.Interop
         public HRESULT UnregisterEndpointNotificationCallback(IMMNotificationClient* pClient)
         {
             return ((delegate* unmanaged<IMMDeviceEnumerator*, IMMNotificationClient*, int>)(lpVtbl[7]))((IMMDeviceEnumerator*)Unsafe.AsPointer(ref this), pClient);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT EnumAudioEndpoints(EDataFlow dataFlow, [NativeTypeName("DWORD")] uint dwStateMask, IMMDeviceCollection** ppDevices);
+
+            [VtblIndex(4)]
+            HRESULT GetDefaultAudioEndpoint(EDataFlow dataFlow, ERole role, IMMDevice** ppEndpoint);
+
+            [VtblIndex(5)]
+            HRESULT GetDevice([NativeTypeName("LPCWSTR")] ushort* pwstrId, IMMDevice** ppDevice);
+
+            [VtblIndex(6)]
+            HRESULT RegisterEndpointNotificationCallback(IMMNotificationClient* pClient);
+
+            [VtblIndex(7)]
+            HRESULT UnregisterEndpointNotificationCallback(IMMNotificationClient* pClient);
         }
 
         public partial struct Vtbl

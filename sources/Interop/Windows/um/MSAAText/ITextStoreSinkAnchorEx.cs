@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("25642426-028D-4474-977B-111BB114FE3E")]
     [NativeTypeName("struct ITextStoreSinkAnchorEx : ITextStoreAnchorSink")]
     [NativeInheritance("ITextStoreAnchorSink")]
-    public unsafe partial struct ITextStoreSinkAnchorEx
+    public unsafe partial struct ITextStoreSinkAnchorEx : ITextStoreSinkAnchorEx.Interface
     {
         public void** lpVtbl;
 
@@ -100,6 +100,12 @@ namespace TerraFX.Interop
         public HRESULT OnDisconnect()
         {
             return ((delegate* unmanaged<ITextStoreSinkAnchorEx*, int>)(lpVtbl[11]))((ITextStoreSinkAnchorEx*)Unsafe.AsPointer(ref this));
+        }
+
+        public interface Interface : ITextStoreAnchorSink.Interface
+        {
+            [VtblIndex(11)]
+            HRESULT OnDisconnect();
         }
 
         public partial struct Vtbl

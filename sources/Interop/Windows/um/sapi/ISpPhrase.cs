@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("1A5C0354-B621-4B5A-8791-D306ED379E53")]
     [NativeTypeName("struct ISpPhrase : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct ISpPhrase
+    public unsafe partial struct ISpPhrase : ISpPhrase.Interface
     {
         public void** lpVtbl;
 
@@ -65,6 +65,21 @@ namespace TerraFX.Interop
         public HRESULT Discard([NativeTypeName("DWORD")] uint dwValueTypes)
         {
             return ((delegate* unmanaged<ISpPhrase*, uint, int>)(lpVtbl[6]))((ISpPhrase*)Unsafe.AsPointer(ref this), dwValueTypes);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetPhrase(SPPHRASE** ppCoMemPhrase);
+
+            [VtblIndex(4)]
+            HRESULT GetSerializedPhrase(SPSERIALIZEDPHRASE** ppCoMemPhrase);
+
+            [VtblIndex(5)]
+            HRESULT GetText([NativeTypeName("ULONG")] uint ulStart, [NativeTypeName("ULONG")] uint ulCount, BOOL fUseTextReplacements, [NativeTypeName("LPWSTR *")] ushort** ppszCoMemText, byte* pbDisplayAttributes);
+
+            [VtblIndex(6)]
+            HRESULT Discard([NativeTypeName("DWORD")] uint dwValueTypes);
         }
 
         public partial struct Vtbl

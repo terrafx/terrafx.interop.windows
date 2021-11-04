@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("2177DB29-7F45-47D0-8554-067E91C80502")]
     [NativeTypeName("struct ISpRecoGrammar : ISpGrammarBuilder")]
     [NativeInheritance("ISpGrammarBuilder")]
-    public unsafe partial struct ISpRecoGrammar
+    public unsafe partial struct ISpRecoGrammar : ISpRecoGrammar.Interface
     {
         public void** lpVtbl;
 
@@ -219,6 +219,63 @@ namespace TerraFX.Interop
         public HRESULT GetGrammarState(SPGRAMMARSTATE* peGrammarState)
         {
             return ((delegate* unmanaged<ISpRecoGrammar*, SPGRAMMARSTATE*, int>)(lpVtbl[28]))((ISpRecoGrammar*)Unsafe.AsPointer(ref this), peGrammarState);
+        }
+
+        public interface Interface : ISpGrammarBuilder.Interface
+        {
+            [VtblIndex(11)]
+            HRESULT GetGrammarId([NativeTypeName("ULONGLONG *")] ulong* pullGrammarId);
+
+            [VtblIndex(12)]
+            HRESULT GetRecoContext(ISpRecoContext** ppRecoCtxt);
+
+            [VtblIndex(13)]
+            HRESULT LoadCmdFromFile([NativeTypeName("LPCWSTR")] ushort* pszFileName, SPLOADOPTIONS Options);
+
+            [VtblIndex(14)]
+            HRESULT LoadCmdFromObject([NativeTypeName("const IID &")] Guid* rcid, [NativeTypeName("LPCWSTR")] ushort* pszGrammarName, SPLOADOPTIONS Options);
+
+            [VtblIndex(15)]
+            HRESULT LoadCmdFromResource(HMODULE hModule, [NativeTypeName("LPCWSTR")] ushort* pszResourceName, [NativeTypeName("LPCWSTR")] ushort* pszResourceType, [NativeTypeName("WORD")] ushort wLanguage, SPLOADOPTIONS Options);
+
+            [VtblIndex(16)]
+            HRESULT LoadCmdFromMemory([NativeTypeName("const SPBINARYGRAMMAR *")] SPBINARYGRAMMAR* pGrammar, SPLOADOPTIONS Options);
+
+            [VtblIndex(17)]
+            HRESULT LoadCmdFromProprietaryGrammar([NativeTypeName("const GUID &")] Guid* rguidParam, [NativeTypeName("LPCWSTR")] ushort* pszStringParam, [NativeTypeName("const void *")] void* pvDataPrarm, [NativeTypeName("ULONG")] uint cbDataSize, SPLOADOPTIONS Options);
+
+            [VtblIndex(18)]
+            HRESULT SetRuleState([NativeTypeName("LPCWSTR")] ushort* pszName, void* pReserved, SPRULESTATE NewState);
+
+            [VtblIndex(19)]
+            HRESULT SetRuleIdState([NativeTypeName("ULONG")] uint ulRuleId, SPRULESTATE NewState);
+
+            [VtblIndex(20)]
+            HRESULT LoadDictation([NativeTypeName("LPCWSTR")] ushort* pszTopicName, SPLOADOPTIONS Options);
+
+            [VtblIndex(21)]
+            HRESULT UnloadDictation();
+
+            [VtblIndex(22)]
+            HRESULT SetDictationState(SPRULESTATE NewState);
+
+            [VtblIndex(23)]
+            HRESULT SetWordSequenceData([NativeTypeName("const WCHAR *")] ushort* pText, [NativeTypeName("ULONG")] uint cchText, [NativeTypeName("const SPTEXTSELECTIONINFO *")] SPTEXTSELECTIONINFO* pInfo);
+
+            [VtblIndex(24)]
+            HRESULT SetTextSelection([NativeTypeName("const SPTEXTSELECTIONINFO *")] SPTEXTSELECTIONINFO* pInfo);
+
+            [VtblIndex(25)]
+            HRESULT IsPronounceable([NativeTypeName("LPCWSTR")] ushort* pszWord, SPWORDPRONOUNCEABLE* pWordPronounceable);
+
+            [VtblIndex(26)]
+            HRESULT SetGrammarState(SPGRAMMARSTATE eGrammarState);
+
+            [VtblIndex(27)]
+            HRESULT SaveCmd(IStream* pStream, [NativeTypeName("LPWSTR *")] ushort** ppszCoMemErrorText);
+
+            [VtblIndex(28)]
+            HRESULT GetGrammarState(SPGRAMMARSTATE* peGrammarState);
         }
 
         public partial struct Vtbl

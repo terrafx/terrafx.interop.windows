@@ -7,7 +7,7 @@ using System.Runtime.CompilerServices;
 
 namespace TerraFX.Interop
 {
-    public unsafe partial struct ID3D10EffectType
+    public unsafe partial struct ID3D10EffectType : ID3D10EffectType.Interface
     {
         public void** lpVtbl;
 
@@ -60,6 +60,32 @@ namespace TerraFX.Interop
         public sbyte* GetMemberSemantic(uint Index)
         {
             return ((delegate* unmanaged<ID3D10EffectType*, uint, sbyte*>)(lpVtbl[6]))((ID3D10EffectType*)Unsafe.AsPointer(ref this), Index);
+        }
+
+        public interface Interface
+        {
+            [VtblIndex(0)]
+            BOOL IsValid();
+
+            [VtblIndex(1)]
+            HRESULT GetDesc(D3D10_EFFECT_TYPE_DESC* pDesc);
+
+            [VtblIndex(2)]
+            ID3D10EffectType* GetMemberTypeByIndex(uint Index);
+
+            [VtblIndex(3)]
+            ID3D10EffectType* GetMemberTypeByName([NativeTypeName("LPCSTR")] sbyte* Name);
+
+            [VtblIndex(4)]
+            ID3D10EffectType* GetMemberTypeBySemantic([NativeTypeName("LPCSTR")] sbyte* Semantic);
+
+            [VtblIndex(5)]
+            [return: NativeTypeName("LPCSTR")]
+            sbyte* GetMemberName(uint Index);
+
+            [VtblIndex(6)]
+            [return: NativeTypeName("LPCSTR")]
+            sbyte* GetMemberSemantic(uint Index);
         }
 
         public partial struct Vtbl

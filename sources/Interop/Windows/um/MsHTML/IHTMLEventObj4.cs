@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("3050F814-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct IHTMLEventObj4 : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct IHTMLEventObj4
+    public unsafe partial struct IHTMLEventObj4 : IHTMLEventObj4.Interface
     {
         public void** lpVtbl;
 
@@ -72,6 +72,12 @@ namespace TerraFX.Interop
         public HRESULT get_wheelDelta([NativeTypeName("long *")] int* p)
         {
             return ((delegate* unmanaged<IHTMLEventObj4*, int*, int>)(lpVtbl[7]))((IHTMLEventObj4*)Unsafe.AsPointer(ref this), p);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT get_wheelDelta([NativeTypeName("long *")] int* p);
         }
 
         public partial struct Vtbl

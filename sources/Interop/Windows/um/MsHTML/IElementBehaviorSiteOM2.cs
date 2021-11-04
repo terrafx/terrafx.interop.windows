@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("3050F659-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct IElementBehaviorSiteOM2 : IElementBehaviorSiteOM")]
     [NativeInheritance("IElementBehaviorSiteOM")]
-    public unsafe partial struct IElementBehaviorSiteOM2
+    public unsafe partial struct IElementBehaviorSiteOM2 : IElementBehaviorSiteOM2.Interface
     {
         public void** lpVtbl;
 
@@ -86,6 +86,12 @@ namespace TerraFX.Interop
         public HRESULT GetDefaults(IHTMLElementDefaults** ppDefaults)
         {
             return ((delegate* unmanaged<IElementBehaviorSiteOM2*, IHTMLElementDefaults**, int>)(lpVtbl[9]))((IElementBehaviorSiteOM2*)Unsafe.AsPointer(ref this), ppDefaults);
+        }
+
+        public interface Interface : IElementBehaviorSiteOM.Interface
+        {
+            [VtblIndex(9)]
+            HRESULT GetDefaults(IHTMLElementDefaults** ppDefaults);
         }
 
         public partial struct Vtbl

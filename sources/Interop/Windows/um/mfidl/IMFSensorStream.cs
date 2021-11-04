@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("E9A42171-C56E-498A-8B39-EDA5A070B7FC")]
     [NativeTypeName("struct IMFSensorStream : IMFAttributes")]
     [NativeInheritance("IMFAttributes")]
-    public unsafe partial struct IMFSensorStream
+    public unsafe partial struct IMFSensorStream : IMFSensorStream.Interface
     {
         public void** lpVtbl;
 
@@ -268,6 +268,18 @@ namespace TerraFX.Interop
         public HRESULT CloneSensorStream(IMFSensorStream** ppStream)
         {
             return ((delegate* unmanaged<IMFSensorStream*, IMFSensorStream**, int>)(lpVtbl[35]))((IMFSensorStream*)Unsafe.AsPointer(ref this), ppStream);
+        }
+
+        public interface Interface : IMFAttributes.Interface
+        {
+            [VtblIndex(33)]
+            HRESULT GetMediaTypeCount([NativeTypeName("DWORD *")] uint* pdwCount);
+
+            [VtblIndex(34)]
+            HRESULT GetMediaType([NativeTypeName("DWORD")] uint dwIndex, IMFMediaType** ppMediaType);
+
+            [VtblIndex(35)]
+            HRESULT CloneSensorStream(IMFSensorStream** ppStream);
         }
 
         public partial struct Vtbl

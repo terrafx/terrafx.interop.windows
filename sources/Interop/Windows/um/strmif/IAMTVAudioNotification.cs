@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("83EC1C33-23D1-11D1-99E6-00A0C9560266")]
     [NativeTypeName("struct IAMTVAudioNotification : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IAMTVAudioNotification
+    public unsafe partial struct IAMTVAudioNotification : IAMTVAudioNotification.Interface
     {
         public void** lpVtbl;
 
@@ -44,6 +44,12 @@ namespace TerraFX.Interop
         public HRESULT OnEvent(AMTVAudioEventType Event)
         {
             return ((delegate* unmanaged<IAMTVAudioNotification*, AMTVAudioEventType, int>)(lpVtbl[3]))((IAMTVAudioNotification*)Unsafe.AsPointer(ref this), Event);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT OnEvent(AMTVAudioEventType Event);
         }
 
         public partial struct Vtbl

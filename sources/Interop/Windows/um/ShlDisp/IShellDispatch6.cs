@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("286E6F1B-7113-4355-9562-96B7E9D64C54")]
     [NativeTypeName("struct IShellDispatch6 : IShellDispatch5")]
     [NativeInheritance("IShellDispatch5")]
-    public unsafe partial struct IShellDispatch6
+    public unsafe partial struct IShellDispatch6 : IShellDispatch6.Interface
     {
         public void** lpVtbl;
 
@@ -338,6 +338,12 @@ namespace TerraFX.Interop
         public HRESULT SearchCommand()
         {
             return ((delegate* unmanaged<IShellDispatch6*, int>)(lpVtbl[45]))((IShellDispatch6*)Unsafe.AsPointer(ref this));
+        }
+
+        public interface Interface : IShellDispatch5.Interface
+        {
+            [VtblIndex(45)]
+            HRESULT SearchCommand();
         }
 
         public partial struct Vtbl

@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("7E9FDA85-6C92-4053-BC47-7AE3530DB4D3")]
     [NativeTypeName("struct IDWriteFontSet1 : IDWriteFontSet")]
     [NativeInheritance("IDWriteFontSet")]
-    public unsafe partial struct IDWriteFontSet1
+    public unsafe partial struct IDWriteFontSet1 : IDWriteFontSet1.Interface
     {
         public void** lpVtbl;
 
@@ -199,6 +199,48 @@ namespace TerraFX.Interop
         public DWRITE_LOCALITY GetFontLocality([NativeTypeName("UINT32")] uint listIndex)
         {
             return ((delegate* unmanaged<IDWriteFontSet1*, uint, DWRITE_LOCALITY>)(lpVtbl[25]))((IDWriteFontSet1*)Unsafe.AsPointer(ref this), listIndex);
+        }
+
+        public interface Interface : IDWriteFontSet.Interface
+        {
+            [VtblIndex(13)]
+            HRESULT GetMatchingFonts([NativeTypeName("const DWRITE_FONT_PROPERTY *")] DWRITE_FONT_PROPERTY* fontProperty, [NativeTypeName("const DWRITE_FONT_AXIS_VALUE *")] DWRITE_FONT_AXIS_VALUE* fontAxisValues, [NativeTypeName("UINT32")] uint fontAxisValueCount, IDWriteFontSet1** matchingFonts);
+
+            [VtblIndex(14)]
+            HRESULT GetFirstFontResources(IDWriteFontSet1** filteredFontSet);
+
+            [VtblIndex(15)]
+            HRESULT GetFilteredFonts([NativeTypeName("const UINT32 *")] uint* indices, [NativeTypeName("UINT32")] uint indexCount, IDWriteFontSet1** filteredFontSet);
+
+            [VtblIndex(16)]
+            HRESULT GetFilteredFonts([NativeTypeName("const DWRITE_FONT_AXIS_RANGE *")] DWRITE_FONT_AXIS_RANGE* fontAxisRanges, [NativeTypeName("UINT32")] uint fontAxisRangeCount, BOOL selectAnyRange, IDWriteFontSet1** filteredFontSet);
+
+            [VtblIndex(17)]
+            HRESULT GetFilteredFonts([NativeTypeName("const DWRITE_FONT_PROPERTY *")] DWRITE_FONT_PROPERTY* properties, [NativeTypeName("UINT32")] uint propertyCount, BOOL selectAnyProperty, IDWriteFontSet1** filteredFontSet);
+
+            [VtblIndex(18)]
+            HRESULT GetFilteredFontIndices([NativeTypeName("const DWRITE_FONT_AXIS_RANGE *")] DWRITE_FONT_AXIS_RANGE* fontAxisRanges, [NativeTypeName("UINT32")] uint fontAxisRangeCount, BOOL selectAnyRange, [NativeTypeName("UINT32 *")] uint* indices, [NativeTypeName("UINT32")] uint maxIndexCount, [NativeTypeName("UINT32 *")] uint* actualIndexCount);
+
+            [VtblIndex(19)]
+            HRESULT GetFilteredFontIndices([NativeTypeName("const DWRITE_FONT_PROPERTY *")] DWRITE_FONT_PROPERTY* properties, [NativeTypeName("UINT32")] uint propertyCount, BOOL selectAnyProperty, [NativeTypeName("UINT32 *")] uint* indices, [NativeTypeName("UINT32")] uint maxIndexCount, [NativeTypeName("UINT32 *")] uint* actualIndexCount);
+
+            [VtblIndex(20)]
+            HRESULT GetFontAxisRanges([NativeTypeName("UINT32")] uint listIndex, DWRITE_FONT_AXIS_RANGE* fontAxisRanges, [NativeTypeName("UINT32")] uint maxFontAxisRangeCount, [NativeTypeName("UINT32 *")] uint* actualFontAxisRangeCount);
+
+            [VtblIndex(21)]
+            HRESULT GetFontAxisRanges(DWRITE_FONT_AXIS_RANGE* fontAxisRanges, [NativeTypeName("UINT32")] uint maxFontAxisRangeCount, [NativeTypeName("UINT32 *")] uint* actualFontAxisRangeCount);
+
+            [VtblIndex(22)]
+            HRESULT GetFontFaceReference([NativeTypeName("UINT32")] uint listIndex, IDWriteFontFaceReference1** fontFaceReference);
+
+            [VtblIndex(23)]
+            HRESULT CreateFontResource([NativeTypeName("UINT32")] uint listIndex, IDWriteFontResource** fontResource);
+
+            [VtblIndex(24)]
+            HRESULT CreateFontFace([NativeTypeName("UINT32")] uint listIndex, IDWriteFontFace5** fontFace);
+
+            [VtblIndex(25)]
+            DWRITE_LOCALITY GetFontLocality([NativeTypeName("UINT32")] uint listIndex);
         }
 
         public partial struct Vtbl

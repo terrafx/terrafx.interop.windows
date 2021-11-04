@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("266FBC7E-490D-46ED-A96B-2274DB252003")]
     [NativeTypeName("struct ILaunchTargetMonitor : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct ILaunchTargetMonitor
+    public unsafe partial struct ILaunchTargetMonitor : ILaunchTargetMonitor.Interface
     {
         public void** lpVtbl;
 
@@ -44,6 +44,12 @@ namespace TerraFX.Interop
         public HRESULT GetMonitor(HMONITOR* monitor)
         {
             return ((delegate* unmanaged<ILaunchTargetMonitor*, HMONITOR*, int>)(lpVtbl[3]))((ILaunchTargetMonitor*)Unsafe.AsPointer(ref this), monitor);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetMonitor(HMONITOR* monitor);
         }
 
         public partial struct Vtbl

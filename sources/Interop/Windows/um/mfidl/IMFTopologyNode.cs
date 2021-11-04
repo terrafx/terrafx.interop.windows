@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("83CF873A-F6DA-4BC8-823F-BACFD55DC430")]
     [NativeTypeName("struct IMFTopologyNode : IMFAttributes")]
     [NativeInheritance("IMFAttributes")]
-    public unsafe partial struct IMFTopologyNode
+    public unsafe partial struct IMFTopologyNode : IMFTopologyNode.Interface
     {
         public void** lpVtbl;
 
@@ -359,6 +359,57 @@ namespace TerraFX.Interop
         public HRESULT CloneFrom(IMFTopologyNode* pNode)
         {
             return ((delegate* unmanaged<IMFTopologyNode*, IMFTopologyNode*, int>)(lpVtbl[48]))((IMFTopologyNode*)Unsafe.AsPointer(ref this), pNode);
+        }
+
+        public interface Interface : IMFAttributes.Interface
+        {
+            [VtblIndex(33)]
+            HRESULT SetObject(IUnknown* pObject);
+
+            [VtblIndex(34)]
+            HRESULT GetObject(IUnknown** ppObject);
+
+            [VtblIndex(35)]
+            HRESULT GetNodeType(MF_TOPOLOGY_TYPE* pType);
+
+            [VtblIndex(36)]
+            HRESULT GetTopoNodeID([NativeTypeName("TOPOID *")] ulong* pID);
+
+            [VtblIndex(37)]
+            HRESULT SetTopoNodeID([NativeTypeName("TOPOID")] ulong ullTopoID);
+
+            [VtblIndex(38)]
+            HRESULT GetInputCount([NativeTypeName("DWORD *")] uint* pcInputs);
+
+            [VtblIndex(39)]
+            HRESULT GetOutputCount([NativeTypeName("DWORD *")] uint* pcOutputs);
+
+            [VtblIndex(40)]
+            HRESULT ConnectOutput([NativeTypeName("DWORD")] uint dwOutputIndex, IMFTopologyNode* pDownstreamNode, [NativeTypeName("DWORD")] uint dwInputIndexOnDownstreamNode);
+
+            [VtblIndex(41)]
+            HRESULT DisconnectOutput([NativeTypeName("DWORD")] uint dwOutputIndex);
+
+            [VtblIndex(42)]
+            HRESULT GetInput([NativeTypeName("DWORD")] uint dwInputIndex, IMFTopologyNode** ppUpstreamNode, [NativeTypeName("DWORD *")] uint* pdwOutputIndexOnUpstreamNode);
+
+            [VtblIndex(43)]
+            HRESULT GetOutput([NativeTypeName("DWORD")] uint dwOutputIndex, IMFTopologyNode** ppDownstreamNode, [NativeTypeName("DWORD *")] uint* pdwInputIndexOnDownstreamNode);
+
+            [VtblIndex(44)]
+            HRESULT SetOutputPrefType([NativeTypeName("DWORD")] uint dwOutputIndex, IMFMediaType* pType);
+
+            [VtblIndex(45)]
+            HRESULT GetOutputPrefType([NativeTypeName("DWORD")] uint dwOutputIndex, IMFMediaType** ppType);
+
+            [VtblIndex(46)]
+            HRESULT SetInputPrefType([NativeTypeName("DWORD")] uint dwInputIndex, IMFMediaType* pType);
+
+            [VtblIndex(47)]
+            HRESULT GetInputPrefType([NativeTypeName("DWORD")] uint dwInputIndex, IMFMediaType** ppType);
+
+            [VtblIndex(48)]
+            HRESULT CloneFrom(IMFTopologyNode* pNode);
         }
 
         public partial struct Vtbl

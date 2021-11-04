@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("30510413-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct IWPCBlockedUrls : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IWPCBlockedUrls
+    public unsafe partial struct IWPCBlockedUrls : IWPCBlockedUrls.Interface
     {
         public void** lpVtbl;
 
@@ -51,6 +51,15 @@ namespace TerraFX.Interop
         public HRESULT GetUrl([NativeTypeName("DWORD")] uint dwIdx, [NativeTypeName("BSTR *")] ushort** pbstrUrl)
         {
             return ((delegate* unmanaged<IWPCBlockedUrls*, uint, ushort**, int>)(lpVtbl[4]))((IWPCBlockedUrls*)Unsafe.AsPointer(ref this), dwIdx, pbstrUrl);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetCount([NativeTypeName("DWORD *")] uint* pdwCount);
+
+            [VtblIndex(4)]
+            HRESULT GetUrl([NativeTypeName("DWORD")] uint dwIdx, [NativeTypeName("BSTR *")] ushort** pbstrUrl);
         }
 
         public partial struct Vtbl

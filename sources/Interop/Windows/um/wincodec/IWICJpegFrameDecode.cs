@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("8939F66E-C46A-4C21-A9D1-98B327CE1679")]
     [NativeTypeName("struct IWICJpegFrameDecode : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IWICJpegFrameDecode
+    public unsafe partial struct IWICJpegFrameDecode : IWICJpegFrameDecode.Interface
     {
         public void** lpVtbl;
 
@@ -107,6 +107,39 @@ namespace TerraFX.Interop
         public HRESULT CopyMinimalStream(uint streamOffset, uint cbStreamData, byte* pbStreamData, uint* pcbStreamDataActual)
         {
             return ((delegate* unmanaged<IWICJpegFrameDecode*, uint, uint, byte*, uint*, int>)(lpVtbl[12]))((IWICJpegFrameDecode*)Unsafe.AsPointer(ref this), streamOffset, cbStreamData, pbStreamData, pcbStreamDataActual);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT DoesSupportIndexing(BOOL* pfIndexingSupported);
+
+            [VtblIndex(4)]
+            HRESULT SetIndexing(WICJpegIndexingOptions options, uint horizontalIntervalSize);
+
+            [VtblIndex(5)]
+            HRESULT ClearIndexing();
+
+            [VtblIndex(6)]
+            HRESULT GetAcHuffmanTable(uint scanIndex, uint tableIndex, DXGI_JPEG_AC_HUFFMAN_TABLE* pAcHuffmanTable);
+
+            [VtblIndex(7)]
+            HRESULT GetDcHuffmanTable(uint scanIndex, uint tableIndex, DXGI_JPEG_DC_HUFFMAN_TABLE* pDcHuffmanTable);
+
+            [VtblIndex(8)]
+            HRESULT GetQuantizationTable(uint scanIndex, uint tableIndex, DXGI_JPEG_QUANTIZATION_TABLE* pQuantizationTable);
+
+            [VtblIndex(9)]
+            HRESULT GetFrameHeader(WICJpegFrameHeader* pFrameHeader);
+
+            [VtblIndex(10)]
+            HRESULT GetScanHeader(uint scanIndex, WICJpegScanHeader* pScanHeader);
+
+            [VtblIndex(11)]
+            HRESULT CopyScan(uint scanIndex, uint scanOffset, uint cbScanData, byte* pbScanData, uint* pcbScanDataActual);
+
+            [VtblIndex(12)]
+            HRESULT CopyMinimalStream(uint streamOffset, uint cbStreamData, byte* pbStreamData, uint* pcbStreamDataActual);
         }
 
         public partial struct Vtbl

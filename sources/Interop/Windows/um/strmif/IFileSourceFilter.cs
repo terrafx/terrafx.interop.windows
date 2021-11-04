@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("56A868A6-0AD4-11CE-B03A-0020AF0BA770")]
     [NativeTypeName("struct IFileSourceFilter : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IFileSourceFilter
+    public unsafe partial struct IFileSourceFilter : IFileSourceFilter.Interface
     {
         public void** lpVtbl;
 
@@ -51,6 +51,15 @@ namespace TerraFX.Interop
         public HRESULT GetCurFile([NativeTypeName("LPOLESTR *")] ushort** ppszFileName, AM_MEDIA_TYPE* pmt)
         {
             return ((delegate* unmanaged<IFileSourceFilter*, ushort**, AM_MEDIA_TYPE*, int>)(lpVtbl[4]))((IFileSourceFilter*)Unsafe.AsPointer(ref this), ppszFileName, pmt);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT Load([NativeTypeName("LPCOLESTR")] ushort* pszFileName, [NativeTypeName("const AM_MEDIA_TYPE *")] AM_MEDIA_TYPE* pmt);
+
+            [VtblIndex(4)]
+            HRESULT GetCurFile([NativeTypeName("LPOLESTR *")] ushort** ppszFileName, AM_MEDIA_TYPE* pmt);
         }
 
         public partial struct Vtbl

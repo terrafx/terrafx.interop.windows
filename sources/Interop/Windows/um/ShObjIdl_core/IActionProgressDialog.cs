@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("49FF1172-EADC-446D-9285-156453A6431C")]
     [NativeTypeName("struct IActionProgressDialog : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IActionProgressDialog
+    public unsafe partial struct IActionProgressDialog : IActionProgressDialog.Interface
     {
         public void** lpVtbl;
 
@@ -51,6 +51,15 @@ namespace TerraFX.Interop
         public HRESULT Stop()
         {
             return ((delegate* unmanaged<IActionProgressDialog*, int>)(lpVtbl[4]))((IActionProgressDialog*)Unsafe.AsPointer(ref this));
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT Initialize([NativeTypeName("SPINITF")] uint flags, [NativeTypeName("LPCWSTR")] ushort* pszTitle, [NativeTypeName("LPCWSTR")] ushort* pszCancel);
+
+            [VtblIndex(4)]
+            HRESULT Stop();
         }
 
         public partial struct Vtbl

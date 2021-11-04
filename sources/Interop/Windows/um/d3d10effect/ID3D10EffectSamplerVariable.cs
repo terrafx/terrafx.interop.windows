@@ -9,7 +9,7 @@ namespace TerraFX.Interop
 {
     [NativeTypeName("struct ID3D10EffectSamplerVariable : ID3D10EffectVariable")]
     [NativeInheritance("ID3D10EffectVariable")]
-    public unsafe partial struct ID3D10EffectSamplerVariable
+    public unsafe partial struct ID3D10EffectSamplerVariable : ID3D10EffectSamplerVariable.Interface
     {
         public void** lpVtbl;
 
@@ -200,6 +200,15 @@ namespace TerraFX.Interop
         public HRESULT GetBackingStore(uint Index, D3D10_SAMPLER_DESC* pSamplerDesc)
         {
             return ((delegate* unmanaged<ID3D10EffectSamplerVariable*, uint, D3D10_SAMPLER_DESC*, int>)(lpVtbl[26]))((ID3D10EffectSamplerVariable*)Unsafe.AsPointer(ref this), Index, pSamplerDesc);
+        }
+
+        public interface Interface : ID3D10EffectVariable.Interface
+        {
+            [VtblIndex(25)]
+            HRESULT GetSampler(uint Index, ID3D10SamplerState** ppSampler);
+
+            [VtblIndex(26)]
+            HRESULT GetBackingStore(uint Index, D3D10_SAMPLER_DESC* pSamplerDesc);
         }
 
         public partial struct Vtbl

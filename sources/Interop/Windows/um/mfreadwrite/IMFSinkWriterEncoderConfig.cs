@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("17C3779E-3CDE-4EDE-8C60-3899F5F53AD6")]
     [NativeTypeName("struct IMFSinkWriterEncoderConfig : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IMFSinkWriterEncoderConfig
+    public unsafe partial struct IMFSinkWriterEncoderConfig : IMFSinkWriterEncoderConfig.Interface
     {
         public void** lpVtbl;
 
@@ -51,6 +51,15 @@ namespace TerraFX.Interop
         public HRESULT PlaceEncodingParameters([NativeTypeName("DWORD")] uint dwStreamIndex, IMFAttributes* pEncodingParameters)
         {
             return ((delegate* unmanaged<IMFSinkWriterEncoderConfig*, uint, IMFAttributes*, int>)(lpVtbl[4]))((IMFSinkWriterEncoderConfig*)Unsafe.AsPointer(ref this), dwStreamIndex, pEncodingParameters);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT SetTargetMediaType([NativeTypeName("DWORD")] uint dwStreamIndex, IMFMediaType* pTargetMediaType, IMFAttributes* pEncodingParameters);
+
+            [VtblIndex(4)]
+            HRESULT PlaceEncodingParameters([NativeTypeName("DWORD")] uint dwStreamIndex, IMFAttributes* pEncodingParameters);
         }
 
         public partial struct Vtbl

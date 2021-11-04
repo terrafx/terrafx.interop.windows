@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("035F3AB4-482E-4E50-B41F-8A7F8BD8960B")]
     [NativeTypeName("struct IDXGIResource : IDXGIDeviceSubObject")]
     [NativeInheritance("IDXGIDeviceSubObject")]
-    public unsafe partial struct IDXGIResource
+    public unsafe partial struct IDXGIResource : IDXGIResource.Interface
     {
         public void** lpVtbl;
 
@@ -100,6 +100,21 @@ namespace TerraFX.Interop
         public HRESULT GetEvictionPriority(uint* pEvictionPriority)
         {
             return ((delegate* unmanaged<IDXGIResource*, uint*, int>)(lpVtbl[11]))((IDXGIResource*)Unsafe.AsPointer(ref this), pEvictionPriority);
+        }
+
+        public interface Interface : IDXGIDeviceSubObject.Interface
+        {
+            [VtblIndex(8)]
+            HRESULT GetSharedHandle(HANDLE* pSharedHandle);
+
+            [VtblIndex(9)]
+            HRESULT GetUsage([NativeTypeName("DXGI_USAGE *")] uint* pUsage);
+
+            [VtblIndex(10)]
+            HRESULT SetEvictionPriority(uint EvictionPriority);
+
+            [VtblIndex(11)]
+            HRESULT GetEvictionPriority(uint* pEvictionPriority);
         }
 
         public partial struct Vtbl

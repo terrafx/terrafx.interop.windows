@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("3050F7EE-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct IHTMLStyleSheetPage : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct IHTMLStyleSheetPage
+    public unsafe partial struct IHTMLStyleSheetPage : IHTMLStyleSheetPage.Interface
     {
         public void** lpVtbl;
 
@@ -79,6 +79,15 @@ namespace TerraFX.Interop
         public HRESULT get_pseudoClass([NativeTypeName("BSTR *")] ushort** p)
         {
             return ((delegate* unmanaged<IHTMLStyleSheetPage*, ushort**, int>)(lpVtbl[8]))((IHTMLStyleSheetPage*)Unsafe.AsPointer(ref this), p);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT get_selector([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(8)]
+            HRESULT get_pseudoClass([NativeTypeName("BSTR *")] ushort** p);
         }
 
         public partial struct Vtbl

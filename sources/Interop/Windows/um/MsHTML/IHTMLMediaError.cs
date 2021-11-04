@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("30510704-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct IHTMLMediaError : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct IHTMLMediaError
+    public unsafe partial struct IHTMLMediaError : IHTMLMediaError.Interface
     {
         public void** lpVtbl;
 
@@ -72,6 +72,12 @@ namespace TerraFX.Interop
         public HRESULT get_code(short* p)
         {
             return ((delegate* unmanaged<IHTMLMediaError*, short*, int>)(lpVtbl[7]))((IHTMLMediaError*)Unsafe.AsPointer(ref this), p);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT get_code(short* p);
         }
 
         public partial struct Vtbl

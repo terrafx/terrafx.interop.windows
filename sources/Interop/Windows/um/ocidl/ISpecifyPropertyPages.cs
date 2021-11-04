@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("B196B28B-BAB4-101A-B69C-00AA00341D07")]
     [NativeTypeName("struct ISpecifyPropertyPages : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct ISpecifyPropertyPages
+    public unsafe partial struct ISpecifyPropertyPages : ISpecifyPropertyPages.Interface
     {
         public void** lpVtbl;
 
@@ -44,6 +44,12 @@ namespace TerraFX.Interop
         public HRESULT GetPages(CAUUID* pPages)
         {
             return ((delegate* unmanaged<ISpecifyPropertyPages*, CAUUID*, int>)(lpVtbl[3]))((ISpecifyPropertyPages*)Unsafe.AsPointer(ref this), pPages);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetPages(CAUUID* pPages);
         }
 
         public partial struct Vtbl

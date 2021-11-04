@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("2933BF8E-7B36-11D2-B20E-00C04F983E60")]
     [NativeTypeName("struct IXMLDOMEntityReference : IXMLDOMNode")]
     [NativeInheritance("IXMLDOMNode")]
-    public unsafe partial struct IXMLDOMEntityReference
+    public unsafe partial struct IXMLDOMEntityReference : IXMLDOMEntityReference.Interface
     {
         public void** lpVtbl;
 
@@ -317,6 +317,10 @@ namespace TerraFX.Interop
         public HRESULT transformNodeToObject(IXMLDOMNode* stylesheet, VARIANT outputObject)
         {
             return ((delegate* unmanaged<IXMLDOMEntityReference*, IXMLDOMNode*, VARIANT, int>)(lpVtbl[42]))((IXMLDOMEntityReference*)Unsafe.AsPointer(ref this), stylesheet, outputObject);
+        }
+
+        public interface Interface : IXMLDOMNode.Interface
+        {
         }
 
         public partial struct Vtbl

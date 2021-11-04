@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("7A5E5354-B114-4C72-B991-3131D75032EA")]
     [NativeTypeName("struct IMFMediaEngineSrcElements : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IMFMediaEngineSrcElements
+    public unsafe partial struct IMFMediaEngineSrcElements : IMFMediaEngineSrcElements.Interface
     {
         public void** lpVtbl;
 
@@ -80,6 +80,28 @@ namespace TerraFX.Interop
         public HRESULT RemoveAllElements()
         {
             return ((delegate* unmanaged<IMFMediaEngineSrcElements*, int>)(lpVtbl[8]))((IMFMediaEngineSrcElements*)Unsafe.AsPointer(ref this));
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            [return: NativeTypeName("DWORD")]
+            uint GetLength();
+
+            [VtblIndex(4)]
+            HRESULT GetURL([NativeTypeName("DWORD")] uint index, [NativeTypeName("BSTR *")] ushort** pURL);
+
+            [VtblIndex(5)]
+            HRESULT GetType([NativeTypeName("DWORD")] uint index, [NativeTypeName("BSTR *")] ushort** pType);
+
+            [VtblIndex(6)]
+            HRESULT GetMedia([NativeTypeName("DWORD")] uint index, [NativeTypeName("BSTR *")] ushort** pMedia);
+
+            [VtblIndex(7)]
+            HRESULT AddElement([NativeTypeName("BSTR")] ushort* pURL, [NativeTypeName("BSTR")] ushort* pType, [NativeTypeName("BSTR")] ushort* pMedia);
+
+            [VtblIndex(8)]
+            HRESULT RemoveAllElements();
         }
 
         public partial struct Vtbl

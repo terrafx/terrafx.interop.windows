@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("305107F9-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct ICanvasPixelArrayData : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct ICanvasPixelArrayData
+    public unsafe partial struct ICanvasPixelArrayData : ICanvasPixelArrayData.Interface
     {
         public void** lpVtbl;
 
@@ -44,6 +44,12 @@ namespace TerraFX.Interop
         public HRESULT GetBufferPointer(byte** ppBuffer, [NativeTypeName("ULONG *")] uint* pBufferLength)
         {
             return ((delegate* unmanaged<ICanvasPixelArrayData*, byte**, uint*, int>)(lpVtbl[3]))((ICanvasPixelArrayData*)Unsafe.AsPointer(ref this), ppBuffer, pBufferLength);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetBufferPointer(byte** ppBuffer, [NativeTypeName("ULONG *")] uint* pBufferLength);
         }
 
         public partial struct Vtbl

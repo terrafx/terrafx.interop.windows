@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("332C4426-26CB-11D0-B483-00C04FD90119")]
     [NativeTypeName("struct IHTMLFramesCollection2 : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct IHTMLFramesCollection2
+    public unsafe partial struct IHTMLFramesCollection2 : IHTMLFramesCollection2.Interface
     {
         public void** lpVtbl;
 
@@ -79,6 +79,15 @@ namespace TerraFX.Interop
         public HRESULT get_length([NativeTypeName("long *")] int* p)
         {
             return ((delegate* unmanaged<IHTMLFramesCollection2*, int*, int>)(lpVtbl[8]))((IHTMLFramesCollection2*)Unsafe.AsPointer(ref this), p);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT item(VARIANT* pvarIndex, VARIANT* pvarResult);
+
+            [VtblIndex(8)]
+            HRESULT get_length([NativeTypeName("long *")] int* p);
         }
 
         public partial struct Vtbl

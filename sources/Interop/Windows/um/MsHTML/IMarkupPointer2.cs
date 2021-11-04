@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("3050F675-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct IMarkupPointer2 : IMarkupPointer")]
     [NativeInheritance("IMarkupPointer")]
-    public unsafe partial struct IMarkupPointer2
+    public unsafe partial struct IMarkupPointer2 : IMarkupPointer2.Interface
     {
         public void** lpVtbl;
 
@@ -226,6 +226,27 @@ namespace TerraFX.Interop
         public HRESULT MoveToContent(IHTMLElement* pIElement, BOOL fAtStart)
         {
             return ((delegate* unmanaged<IMarkupPointer2*, IHTMLElement*, BOOL, int>)(lpVtbl[29]))((IMarkupPointer2*)Unsafe.AsPointer(ref this), pIElement, fAtStart);
+        }
+
+        public interface Interface : IMarkupPointer.Interface
+        {
+            [VtblIndex(24)]
+            HRESULT IsAtWordBreak(BOOL* pfAtBreak);
+
+            [VtblIndex(25)]
+            HRESULT GetMarkupPosition([NativeTypeName("long *")] int* plMP);
+
+            [VtblIndex(26)]
+            HRESULT MoveToMarkupPosition(IMarkupContainer* pContainer, [NativeTypeName("long")] int lMP);
+
+            [VtblIndex(27)]
+            HRESULT MoveUnitBounded(MOVEUNIT_ACTION muAction, IMarkupPointer* pIBoundary);
+
+            [VtblIndex(28)]
+            HRESULT IsInsideURL(IMarkupPointer* pRight, BOOL* pfResult);
+
+            [VtblIndex(29)]
+            HRESULT MoveToContent(IHTMLElement* pIElement, BOOL fAtStart);
         }
 
         public partial struct Vtbl

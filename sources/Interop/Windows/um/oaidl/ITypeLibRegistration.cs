@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("76A3E735-02DF-4A12-98EB-043AD3600AF3")]
     [NativeTypeName("struct ITypeLibRegistration : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct ITypeLibRegistration
+    public unsafe partial struct ITypeLibRegistration : ITypeLibRegistration.Interface
     {
         public void** lpVtbl;
 
@@ -93,6 +93,33 @@ namespace TerraFX.Interop
         public HRESULT GetHelpDir([NativeTypeName("BSTR *")] ushort** pHelpDir)
         {
             return ((delegate* unmanaged<ITypeLibRegistration*, ushort**, int>)(lpVtbl[10]))((ITypeLibRegistration*)Unsafe.AsPointer(ref this), pHelpDir);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetGuid(Guid* pGuid);
+
+            [VtblIndex(4)]
+            HRESULT GetVersion([NativeTypeName("BSTR *")] ushort** pVersion);
+
+            [VtblIndex(5)]
+            HRESULT GetLcid([NativeTypeName("LCID *")] uint* pLcid);
+
+            [VtblIndex(6)]
+            HRESULT GetWin32Path([NativeTypeName("BSTR *")] ushort** pWin32Path);
+
+            [VtblIndex(7)]
+            HRESULT GetWin64Path([NativeTypeName("BSTR *")] ushort** pWin64Path);
+
+            [VtblIndex(8)]
+            HRESULT GetDisplayName([NativeTypeName("BSTR *")] ushort** pDisplayName);
+
+            [VtblIndex(9)]
+            HRESULT GetFlags([NativeTypeName("DWORD *")] uint* pFlags);
+
+            [VtblIndex(10)]
+            HRESULT GetHelpDir([NativeTypeName("BSTR *")] ushort** pHelpDir);
         }
 
         public partial struct Vtbl

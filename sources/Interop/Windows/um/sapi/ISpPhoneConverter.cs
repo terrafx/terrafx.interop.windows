@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("8445C581-0CAC-4A38-ABFE-9B2CE2826455")]
     [NativeTypeName("struct ISpPhoneConverter : ISpObjectWithToken")]
     [NativeInheritance("ISpObjectWithToken")]
-    public unsafe partial struct ISpPhoneConverter
+    public unsafe partial struct ISpPhoneConverter : ISpPhoneConverter.Interface
     {
         public void** lpVtbl;
 
@@ -65,6 +65,15 @@ namespace TerraFX.Interop
         public HRESULT IdToPhone([NativeTypeName("PCSPPHONEID")] ushort* pId, [NativeTypeName("WCHAR *")] ushort* pszPhone)
         {
             return ((delegate* unmanaged<ISpPhoneConverter*, ushort*, ushort*, int>)(lpVtbl[6]))((ISpPhoneConverter*)Unsafe.AsPointer(ref this), pId, pszPhone);
+        }
+
+        public interface Interface : ISpObjectWithToken.Interface
+        {
+            [VtblIndex(5)]
+            HRESULT PhoneToId([NativeTypeName("LPCWSTR")] ushort* pszPhone, [NativeTypeName("SPPHONEID *")] ushort* pId);
+
+            [VtblIndex(6)]
+            HRESULT IdToPhone([NativeTypeName("PCSPPHONEID")] ushort* pId, [NativeTypeName("WCHAR *")] ushort* pszPhone);
         }
 
         public partial struct Vtbl

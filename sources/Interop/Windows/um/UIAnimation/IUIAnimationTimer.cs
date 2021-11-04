@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("6B0EFAD1-A053-41D6-9085-33A689144665")]
     [NativeTypeName("struct IUIAnimationTimer : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IUIAnimationTimer
+    public unsafe partial struct IUIAnimationTimer : IUIAnimationTimer.Interface
     {
         public void** lpVtbl;
 
@@ -86,6 +86,30 @@ namespace TerraFX.Interop
         public HRESULT SetFrameRateThreshold([NativeTypeName("UINT32")] uint framesPerSecond)
         {
             return ((delegate* unmanaged<IUIAnimationTimer*, uint, int>)(lpVtbl[9]))((IUIAnimationTimer*)Unsafe.AsPointer(ref this), framesPerSecond);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT SetTimerUpdateHandler(IUIAnimationTimerUpdateHandler* updateHandler, UI_ANIMATION_IDLE_BEHAVIOR idleBehavior);
+
+            [VtblIndex(4)]
+            HRESULT SetTimerEventHandler(IUIAnimationTimerEventHandler* handler);
+
+            [VtblIndex(5)]
+            HRESULT Enable();
+
+            [VtblIndex(6)]
+            HRESULT Disable();
+
+            [VtblIndex(7)]
+            HRESULT IsEnabled();
+
+            [VtblIndex(8)]
+            HRESULT GetTime([NativeTypeName("UI_ANIMATION_SECONDS *")] double* seconds);
+
+            [VtblIndex(9)]
+            HRESULT SetFrameRateThreshold([NativeTypeName("UINT32")] uint framesPerSecond);
         }
 
         public partial struct Vtbl

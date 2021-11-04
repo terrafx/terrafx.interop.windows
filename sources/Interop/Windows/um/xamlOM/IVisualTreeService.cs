@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("A593B11A-D17F-48BB-8F66-83910731C8A5")]
     [NativeTypeName("struct IVisualTreeService : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IVisualTreeService
+    public unsafe partial struct IVisualTreeService : IVisualTreeService.Interface
     {
         public void** lpVtbl;
 
@@ -121,6 +121,45 @@ namespace TerraFX.Interop
         public HRESULT ClearChildren(InstanceHandle parent)
         {
             return ((delegate* unmanaged<IVisualTreeService*, InstanceHandle, int>)(lpVtbl[14]))((IVisualTreeService*)Unsafe.AsPointer(ref this), parent);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT AdviseVisualTreeChange(IVisualTreeServiceCallback* pCallback);
+
+            [VtblIndex(4)]
+            HRESULT UnadviseVisualTreeChange(IVisualTreeServiceCallback* pCallback);
+
+            [VtblIndex(5)]
+            HRESULT GetEnums([NativeTypeName("unsigned int *")] uint* pCount, EnumType** ppEnums);
+
+            [VtblIndex(6)]
+            HRESULT CreateInstance([NativeTypeName("BSTR")] ushort* typeName, [NativeTypeName("BSTR")] ushort* value, InstanceHandle* pInstanceHandle);
+
+            [VtblIndex(7)]
+            HRESULT GetPropertyValuesChain(InstanceHandle instanceHandle, [NativeTypeName("unsigned int *")] uint* pSourceCount, PropertyChainSource** ppPropertySources, [NativeTypeName("unsigned int *")] uint* pPropertyCount, PropertyChainValue** ppPropertyValues);
+
+            [VtblIndex(8)]
+            HRESULT SetProperty(InstanceHandle instanceHandle, InstanceHandle value, [NativeTypeName("unsigned int")] uint propertyIndex);
+
+            [VtblIndex(9)]
+            HRESULT ClearProperty(InstanceHandle instanceHandle, [NativeTypeName("unsigned int")] uint propertyIndex);
+
+            [VtblIndex(10)]
+            HRESULT GetCollectionCount(InstanceHandle instanceHandle, [NativeTypeName("unsigned int *")] uint* pCollectionSize);
+
+            [VtblIndex(11)]
+            HRESULT GetCollectionElements(InstanceHandle instanceHandle, [NativeTypeName("unsigned int")] uint startIndex, [NativeTypeName("unsigned int *")] uint* pElementCount, CollectionElementValue** ppElementValues);
+
+            [VtblIndex(12)]
+            HRESULT AddChild(InstanceHandle parent, InstanceHandle child, [NativeTypeName("unsigned int")] uint index);
+
+            [VtblIndex(13)]
+            HRESULT RemoveChild(InstanceHandle parent, [NativeTypeName("unsigned int")] uint index);
+
+            [VtblIndex(14)]
+            HRESULT ClearChildren(InstanceHandle parent);
         }
 
         public partial struct Vtbl

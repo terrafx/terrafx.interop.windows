@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("390E3878-FD55-4E18-819D-4682081C0CFD")]
     [NativeTypeName("struct IEnterpriseDropTarget : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IEnterpriseDropTarget
+    public unsafe partial struct IEnterpriseDropTarget : IEnterpriseDropTarget.Interface
     {
         public void** lpVtbl;
 
@@ -51,6 +51,15 @@ namespace TerraFX.Interop
         public HRESULT IsEvaluatingEdpPolicy(BOOL* value)
         {
             return ((delegate* unmanaged<IEnterpriseDropTarget*, BOOL*, int>)(lpVtbl[4]))((IEnterpriseDropTarget*)Unsafe.AsPointer(ref this), value);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT SetDropSourceEnterpriseId([NativeTypeName("LPCWSTR")] ushort* identity);
+
+            [VtblIndex(4)]
+            HRESULT IsEvaluatingEdpPolicy(BOOL* value);
         }
 
         public partial struct Vtbl

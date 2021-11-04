@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("30961379-4609-4A41-998E-54FE567EE0C1")]
     [NativeTypeName("struct IDXGIResource1 : IDXGIResource")]
     [NativeInheritance("IDXGIResource")]
-    public unsafe partial struct IDXGIResource1
+    public unsafe partial struct IDXGIResource1 : IDXGIResource1.Interface
     {
         public void** lpVtbl;
 
@@ -114,6 +114,15 @@ namespace TerraFX.Interop
         public HRESULT CreateSharedHandle([NativeTypeName("const SECURITY_ATTRIBUTES *")] SECURITY_ATTRIBUTES* pAttributes, [NativeTypeName("DWORD")] uint dwAccess, [NativeTypeName("LPCWSTR")] ushort* lpName, HANDLE* pHandle)
         {
             return ((delegate* unmanaged<IDXGIResource1*, SECURITY_ATTRIBUTES*, uint, ushort*, HANDLE*, int>)(lpVtbl[13]))((IDXGIResource1*)Unsafe.AsPointer(ref this), pAttributes, dwAccess, lpName, pHandle);
+        }
+
+        public interface Interface : IDXGIResource.Interface
+        {
+            [VtblIndex(12)]
+            HRESULT CreateSubresourceSurface(uint index, IDXGISurface2** ppSurface);
+
+            [VtblIndex(13)]
+            HRESULT CreateSharedHandle([NativeTypeName("const SECURITY_ATTRIBUTES *")] SECURITY_ATTRIBUTES* pAttributes, [NativeTypeName("DWORD")] uint dwAccess, [NativeTypeName("LPCWSTR")] ushort* lpName, HANDLE* pHandle);
         }
 
         public partial struct Vtbl

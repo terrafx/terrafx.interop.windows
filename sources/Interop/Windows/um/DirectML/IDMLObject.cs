@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("C8263AAC-9E0C-4A2D-9B8E-007521A3317C")]
     [NativeTypeName("struct IDMLObject : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IDMLObject
+    public unsafe partial struct IDMLObject : IDMLObject.Interface
     {
         public void** lpVtbl;
 
@@ -65,6 +65,21 @@ namespace TerraFX.Interop
         public HRESULT SetName([NativeTypeName("PCWSTR")] ushort* name)
         {
             return ((delegate* unmanaged<IDMLObject*, ushort*, int>)(lpVtbl[6]))((IDMLObject*)Unsafe.AsPointer(ref this), name);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetPrivateData([NativeTypeName("const GUID &")] Guid* guid, uint* dataSize, void* data);
+
+            [VtblIndex(4)]
+            HRESULT SetPrivateData([NativeTypeName("const GUID &")] Guid* guid, uint dataSize, [NativeTypeName("const void *")] void* data);
+
+            [VtblIndex(5)]
+            HRESULT SetPrivateDataInterface([NativeTypeName("const GUID &")] Guid* guid, IUnknown* data);
+
+            [VtblIndex(6)]
+            HRESULT SetName([NativeTypeName("PCWSTR")] ushort* name);
         }
 
         public partial struct Vtbl

@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("6FEDED3E-0FF1-4901-A2F1-43F7012C8515")]
     [NativeTypeName("struct IAMCertifiedOutputProtection : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IAMCertifiedOutputProtection
+    public unsafe partial struct IAMCertifiedOutputProtection : IAMCertifiedOutputProtection.Interface
     {
         public void** lpVtbl;
 
@@ -65,6 +65,21 @@ namespace TerraFX.Interop
         public HRESULT ProtectionStatus([NativeTypeName("const AMCOPPStatusInput *")] AMCOPPStatusInput* pStatusInput, AMCOPPStatusOutput* pStatusOutput)
         {
             return ((delegate* unmanaged<IAMCertifiedOutputProtection*, AMCOPPStatusInput*, AMCOPPStatusOutput*, int>)(lpVtbl[6]))((IAMCertifiedOutputProtection*)Unsafe.AsPointer(ref this), pStatusInput, pStatusOutput);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT KeyExchange(Guid* pRandom, byte** VarLenCertGH, [NativeTypeName("DWORD *")] uint* pdwLengthCertGH);
+
+            [VtblIndex(4)]
+            HRESULT SessionSequenceStart(AMCOPPSignature* pSig);
+
+            [VtblIndex(5)]
+            HRESULT ProtectionCommand([NativeTypeName("const AMCOPPCommand *")] AMCOPPCommand* cmd);
+
+            [VtblIndex(6)]
+            HRESULT ProtectionStatus([NativeTypeName("const AMCOPPStatusInput *")] AMCOPPStatusInput* pStatusInput, AMCOPPStatusOutput* pStatusOutput);
         }
 
         public partial struct Vtbl

@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("3050F80F-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct IHTMLElement4 : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct IHTMLElement4
+    public unsafe partial struct IHTMLElement4 : IHTMLElement4.Interface
     {
         public void** lpVtbl;
 
@@ -149,6 +149,45 @@ namespace TerraFX.Interop
         public HRESULT get_onfocusout(VARIANT* p)
         {
             return ((delegate* unmanaged<IHTMLElement4*, VARIANT*, int>)(lpVtbl[18]))((IHTMLElement4*)Unsafe.AsPointer(ref this), p);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT put_onmousewheel(VARIANT v);
+
+            [VtblIndex(8)]
+            HRESULT get_onmousewheel(VARIANT* p);
+
+            [VtblIndex(9)]
+            HRESULT normalize();
+
+            [VtblIndex(10)]
+            HRESULT getAttributeNode([NativeTypeName("BSTR")] ushort* bstrname, IHTMLDOMAttribute** ppAttribute);
+
+            [VtblIndex(11)]
+            HRESULT setAttributeNode(IHTMLDOMAttribute* pattr, IHTMLDOMAttribute** ppretAttribute);
+
+            [VtblIndex(12)]
+            HRESULT removeAttributeNode(IHTMLDOMAttribute* pattr, IHTMLDOMAttribute** ppretAttribute);
+
+            [VtblIndex(13)]
+            HRESULT put_onbeforeactivate(VARIANT v);
+
+            [VtblIndex(14)]
+            HRESULT get_onbeforeactivate(VARIANT* p);
+
+            [VtblIndex(15)]
+            HRESULT put_onfocusin(VARIANT v);
+
+            [VtblIndex(16)]
+            HRESULT get_onfocusin(VARIANT* p);
+
+            [VtblIndex(17)]
+            HRESULT put_onfocusout(VARIANT v);
+
+            [VtblIndex(18)]
+            HRESULT get_onfocusout(VARIANT* p);
         }
 
         public partial struct Vtbl

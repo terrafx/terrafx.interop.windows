@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("BCC18B79-BA16-442F-80C4-8A59C30C463B")]
     [NativeTypeName("struct IShellItemImageFactory : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IShellItemImageFactory
+    public unsafe partial struct IShellItemImageFactory : IShellItemImageFactory.Interface
     {
         public void** lpVtbl;
 
@@ -44,6 +44,12 @@ namespace TerraFX.Interop
         public HRESULT GetImage(SIZE size, [NativeTypeName("SIIGBF")] int flags, HBITMAP* phbm)
         {
             return ((delegate* unmanaged<IShellItemImageFactory*, SIZE, int, HBITMAP*, int>)(lpVtbl[3]))((IShellItemImageFactory*)Unsafe.AsPointer(ref this), size, flags, phbm);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetImage(SIZE size, [NativeTypeName("SIIGBF")] int flags, HBITMAP* phbm);
         }
 
         public partial struct Vtbl

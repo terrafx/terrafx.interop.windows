@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("AA80E803-2021-11D2-93E0-0060B067B86E")]
     [NativeTypeName("struct ITfEditSession : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct ITfEditSession
+    public unsafe partial struct ITfEditSession : ITfEditSession.Interface
     {
         public void** lpVtbl;
 
@@ -44,6 +44,12 @@ namespace TerraFX.Interop
         public HRESULT DoEditSession([NativeTypeName("TfEditCookie")] uint ec)
         {
             return ((delegate* unmanaged<ITfEditSession*, uint, int>)(lpVtbl[3]))((ITfEditSession*)Unsafe.AsPointer(ref this), ec);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT DoEditSession([NativeTypeName("TfEditCookie")] uint ec);
         }
 
         public partial struct Vtbl

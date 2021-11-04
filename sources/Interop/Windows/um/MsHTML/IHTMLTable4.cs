@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("305106C2-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct IHTMLTable4 : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct IHTMLTable4
+    public unsafe partial struct IHTMLTable4 : IHTMLTable4.Interface
     {
         public void** lpVtbl;
 
@@ -128,6 +128,36 @@ namespace TerraFX.Interop
         public HRESULT createTBody(IHTMLTableSection** tbody)
         {
             return ((delegate* unmanaged<IHTMLTable4*, IHTMLTableSection**, int>)(lpVtbl[15]))((IHTMLTable4*)Unsafe.AsPointer(ref this), tbody);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT putref_tHead(IHTMLTableSection* v);
+
+            [VtblIndex(8)]
+            HRESULT get_tHead(IHTMLTableSection** p);
+
+            [VtblIndex(9)]
+            HRESULT putref_tFoot(IHTMLTableSection* v);
+
+            [VtblIndex(10)]
+            HRESULT get_tFoot(IHTMLTableSection** p);
+
+            [VtblIndex(11)]
+            HRESULT putref_caption(IHTMLTableCaption* v);
+
+            [VtblIndex(12)]
+            HRESULT get_caption(IHTMLTableCaption** p);
+
+            [VtblIndex(13)]
+            HRESULT insertRow([NativeTypeName("long")] int index, IDispatch** row);
+
+            [VtblIndex(14)]
+            HRESULT deleteRow([NativeTypeName("long")] int index = -1);
+
+            [VtblIndex(15)]
+            HRESULT createTBody(IHTMLTableSection** tbody);
         }
 
         public partial struct Vtbl

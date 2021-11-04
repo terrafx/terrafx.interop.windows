@@ -24,7 +24,7 @@ namespace TerraFX.Interop
     [Guid("8C427831-3D90-4476-B647-C4FAE349E4DB")]
     [NativeTypeName("struct ID2D1DeviceContext4 : ID2D1DeviceContext3")]
     [NativeInheritance("ID2D1DeviceContext3")]
-    public unsafe partial struct ID2D1DeviceContext4
+    public unsafe partial struct ID2D1DeviceContext4 : ID2D1DeviceContext4.Interface
     {
         public void** lpVtbl;
 
@@ -993,6 +993,30 @@ namespace TerraFX.Interop
         public HRESULT GetSvgGlyphImage([NativeTypeName("D2D1_POINT_2F")] D2D_POINT_2F glyphOrigin, IDWriteFontFace* fontFace, float fontEmSize, [NativeTypeName("UINT16")] ushort glyphIndex, BOOL isSideways, [NativeTypeName("const D2D1_MATRIX_3X2_F *")] D2D_MATRIX_3X2_F* worldTransform, ID2D1Brush* defaultFillBrush, ID2D1SvgGlyphStyle* svgGlyphStyle, [NativeTypeName("UINT32")] uint colorPaletteIndex, [NativeTypeName("D2D1_MATRIX_3X2_F *")] D2D_MATRIX_3X2_F* glyphTransform, ID2D1CommandList** glyphImage)
         {
             return ((delegate* unmanaged<ID2D1DeviceContext4*, D2D_POINT_2F, IDWriteFontFace*, float, ushort, BOOL, D2D_MATRIX_3X2_F*, ID2D1Brush*, ID2D1SvgGlyphStyle*, uint, D2D_MATRIX_3X2_F*, ID2D1CommandList**, int>)(lpVtbl[114]))((ID2D1DeviceContext4*)Unsafe.AsPointer(ref this), glyphOrigin, fontFace, fontEmSize, glyphIndex, isSideways, worldTransform, defaultFillBrush, svgGlyphStyle, colorPaletteIndex, glyphTransform, glyphImage);
+        }
+
+        public interface Interface : ID2D1DeviceContext3.Interface
+        {
+            [VtblIndex(108)]
+            HRESULT CreateSvgGlyphStyle(ID2D1SvgGlyphStyle** svgGlyphStyle);
+
+            [VtblIndex(109)]
+            void DrawText([NativeTypeName("const WCHAR *")] ushort* @string, [NativeTypeName("UINT32")] uint stringLength, IDWriteTextFormat* textFormat, [NativeTypeName("const D2D1_RECT_F *")] D2D_RECT_F* layoutRect, ID2D1Brush* defaultFillBrush, ID2D1SvgGlyphStyle* svgGlyphStyle, [NativeTypeName("UINT32")] uint colorPaletteIndex = 0, D2D1_DRAW_TEXT_OPTIONS options = D2D1_DRAW_TEXT_OPTIONS_ENABLE_COLOR_FONT, DWRITE_MEASURING_MODE measuringMode = DWRITE_MEASURING_MODE_NATURAL);
+
+            [VtblIndex(110)]
+            void DrawTextLayout([NativeTypeName("D2D1_POINT_2F")] D2D_POINT_2F origin, IDWriteTextLayout* textLayout, ID2D1Brush* defaultFillBrush, ID2D1SvgGlyphStyle* svgGlyphStyle, [NativeTypeName("UINT32")] uint colorPaletteIndex = 0, D2D1_DRAW_TEXT_OPTIONS options = D2D1_DRAW_TEXT_OPTIONS_ENABLE_COLOR_FONT);
+
+            [VtblIndex(111)]
+            void DrawColorBitmapGlyphRun(DWRITE_GLYPH_IMAGE_FORMATS glyphImageFormat, [NativeTypeName("D2D1_POINT_2F")] D2D_POINT_2F baselineOrigin, [NativeTypeName("const DWRITE_GLYPH_RUN *")] DWRITE_GLYPH_RUN* glyphRun, DWRITE_MEASURING_MODE measuringMode = DWRITE_MEASURING_MODE_NATURAL, D2D1_COLOR_BITMAP_GLYPH_SNAP_OPTION bitmapSnapOption = D2D1_COLOR_BITMAP_GLYPH_SNAP_OPTION_DEFAULT);
+
+            [VtblIndex(112)]
+            void DrawSvgGlyphRun([NativeTypeName("D2D1_POINT_2F")] D2D_POINT_2F baselineOrigin, [NativeTypeName("const DWRITE_GLYPH_RUN *")] DWRITE_GLYPH_RUN* glyphRun, ID2D1Brush* defaultFillBrush = null, ID2D1SvgGlyphStyle* svgGlyphStyle = null, [NativeTypeName("UINT32")] uint colorPaletteIndex = 0, DWRITE_MEASURING_MODE measuringMode = DWRITE_MEASURING_MODE_NATURAL);
+
+            [VtblIndex(113)]
+            HRESULT GetColorBitmapGlyphImage(DWRITE_GLYPH_IMAGE_FORMATS glyphImageFormat, [NativeTypeName("D2D1_POINT_2F")] D2D_POINT_2F glyphOrigin, IDWriteFontFace* fontFace, float fontEmSize, [NativeTypeName("UINT16")] ushort glyphIndex, BOOL isSideways, [NativeTypeName("const D2D1_MATRIX_3X2_F *")] D2D_MATRIX_3X2_F* worldTransform, float dpiX, float dpiY, [NativeTypeName("D2D1_MATRIX_3X2_F *")] D2D_MATRIX_3X2_F* glyphTransform, ID2D1Image** glyphImage);
+
+            [VtblIndex(114)]
+            HRESULT GetSvgGlyphImage([NativeTypeName("D2D1_POINT_2F")] D2D_POINT_2F glyphOrigin, IDWriteFontFace* fontFace, float fontEmSize, [NativeTypeName("UINT16")] ushort glyphIndex, BOOL isSideways, [NativeTypeName("const D2D1_MATRIX_3X2_F *")] D2D_MATRIX_3X2_F* worldTransform, ID2D1Brush* defaultFillBrush, ID2D1SvgGlyphStyle* svgGlyphStyle, [NativeTypeName("UINT32")] uint colorPaletteIndex, [NativeTypeName("D2D1_MATRIX_3X2_F *")] D2D_MATRIX_3X2_F* glyphTransform, ID2D1CommandList** glyphImage);
         }
 
         public partial struct Vtbl

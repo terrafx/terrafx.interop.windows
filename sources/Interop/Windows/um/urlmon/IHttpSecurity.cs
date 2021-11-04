@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("79EAC9D7-BAFA-11CE-8C82-00AA004BA90B")]
     [NativeTypeName("struct IHttpSecurity : IWindowForBindingUI")]
     [NativeInheritance("IWindowForBindingUI")]
-    public unsafe partial struct IHttpSecurity
+    public unsafe partial struct IHttpSecurity : IHttpSecurity.Interface
     {
         public void** lpVtbl;
 
@@ -51,6 +51,12 @@ namespace TerraFX.Interop
         public HRESULT OnSecurityProblem([NativeTypeName("DWORD")] uint dwProblem)
         {
             return ((delegate* unmanaged<IHttpSecurity*, uint, int>)(lpVtbl[4]))((IHttpSecurity*)Unsafe.AsPointer(ref this), dwProblem);
+        }
+
+        public interface Interface : IWindowForBindingUI.Interface
+        {
+            [VtblIndex(4)]
+            HRESULT OnSecurityProblem([NativeTypeName("DWORD")] uint dwProblem);
         }
 
         public partial struct Vtbl

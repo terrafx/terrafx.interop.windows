@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("3050F485-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct IHTMLDocument3 : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct IHTMLDocument3
+    public unsafe partial struct IHTMLDocument3 : IHTMLDocument3.Interface
     {
         public void** lpVtbl;
 
@@ -352,6 +352,132 @@ namespace TerraFX.Interop
         public HRESULT getElementsByTagName([NativeTypeName("BSTR")] ushort* v, IHTMLElementCollection** pelColl)
         {
             return ((delegate* unmanaged<IHTMLDocument3*, ushort*, IHTMLElementCollection**, int>)(lpVtbl[47]))((IHTMLDocument3*)Unsafe.AsPointer(ref this), v, pelColl);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT releaseCapture();
+
+            [VtblIndex(8)]
+            HRESULT recalc([NativeTypeName("VARIANT_BOOL")] short fForce = 0);
+
+            [VtblIndex(9)]
+            HRESULT createTextNode([NativeTypeName("BSTR")] ushort* text, IHTMLDOMNode** newTextNode);
+
+            [VtblIndex(10)]
+            HRESULT get_documentElement(IHTMLElement** p);
+
+            [VtblIndex(11)]
+            HRESULT get_uniqueID([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(12)]
+            HRESULT attachEvent([NativeTypeName("BSTR")] ushort* @event, IDispatch* pDisp, [NativeTypeName("VARIANT_BOOL *")] short* pfResult);
+
+            [VtblIndex(13)]
+            HRESULT detachEvent([NativeTypeName("BSTR")] ushort* @event, IDispatch* pDisp);
+
+            [VtblIndex(14)]
+            HRESULT put_onrowsdelete(VARIANT v);
+
+            [VtblIndex(15)]
+            HRESULT get_onrowsdelete(VARIANT* p);
+
+            [VtblIndex(16)]
+            HRESULT put_onrowsinserted(VARIANT v);
+
+            [VtblIndex(17)]
+            HRESULT get_onrowsinserted(VARIANT* p);
+
+            [VtblIndex(18)]
+            HRESULT put_oncellchange(VARIANT v);
+
+            [VtblIndex(19)]
+            HRESULT get_oncellchange(VARIANT* p);
+
+            [VtblIndex(20)]
+            HRESULT put_ondatasetchanged(VARIANT v);
+
+            [VtblIndex(21)]
+            HRESULT get_ondatasetchanged(VARIANT* p);
+
+            [VtblIndex(22)]
+            HRESULT put_ondataavailable(VARIANT v);
+
+            [VtblIndex(23)]
+            HRESULT get_ondataavailable(VARIANT* p);
+
+            [VtblIndex(24)]
+            HRESULT put_ondatasetcomplete(VARIANT v);
+
+            [VtblIndex(25)]
+            HRESULT get_ondatasetcomplete(VARIANT* p);
+
+            [VtblIndex(26)]
+            HRESULT put_onpropertychange(VARIANT v);
+
+            [VtblIndex(27)]
+            HRESULT get_onpropertychange(VARIANT* p);
+
+            [VtblIndex(28)]
+            HRESULT put_dir([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(29)]
+            HRESULT get_dir([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(30)]
+            HRESULT put_oncontextmenu(VARIANT v);
+
+            [VtblIndex(31)]
+            HRESULT get_oncontextmenu(VARIANT* p);
+
+            [VtblIndex(32)]
+            HRESULT put_onstop(VARIANT v);
+
+            [VtblIndex(33)]
+            HRESULT get_onstop(VARIANT* p);
+
+            [VtblIndex(34)]
+            HRESULT createDocumentFragment(IHTMLDocument2** pNewDoc);
+
+            [VtblIndex(35)]
+            HRESULT get_parentDocument(IHTMLDocument2** p);
+
+            [VtblIndex(36)]
+            HRESULT put_enableDownload([NativeTypeName("VARIANT_BOOL")] short v);
+
+            [VtblIndex(37)]
+            HRESULT get_enableDownload([NativeTypeName("VARIANT_BOOL *")] short* p);
+
+            [VtblIndex(38)]
+            HRESULT put_baseUrl([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(39)]
+            HRESULT get_baseUrl([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(40)]
+            HRESULT get_childNodes(IDispatch** p);
+
+            [VtblIndex(41)]
+            HRESULT put_inheritStyleSheets([NativeTypeName("VARIANT_BOOL")] short v);
+
+            [VtblIndex(42)]
+            HRESULT get_inheritStyleSheets([NativeTypeName("VARIANT_BOOL *")] short* p);
+
+            [VtblIndex(43)]
+            HRESULT put_onbeforeeditfocus(VARIANT v);
+
+            [VtblIndex(44)]
+            HRESULT get_onbeforeeditfocus(VARIANT* p);
+
+            [VtblIndex(45)]
+            HRESULT getElementsByName([NativeTypeName("BSTR")] ushort* v, IHTMLElementCollection** pelColl);
+
+            [VtblIndex(46)]
+            HRESULT getElementById([NativeTypeName("BSTR")] ushort* v, IHTMLElement** pel);
+
+            [VtblIndex(47)]
+            HRESULT getElementsByTagName([NativeTypeName("BSTR")] ushort* v, IHTMLElementCollection** pelColl);
         }
 
         public partial struct Vtbl

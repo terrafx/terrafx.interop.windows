@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("F46EDB3B-BC2F-11D0-9412-00AA00A3EBD3")]
     [NativeTypeName("struct ITravelEntry : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct ITravelEntry
+    public unsafe partial struct ITravelEntry : ITravelEntry.Interface
     {
         public void** lpVtbl;
 
@@ -58,6 +58,18 @@ namespace TerraFX.Interop
         public HRESULT GetPidl([NativeTypeName("LPITEMIDLIST *")] ITEMIDLIST** ppidl)
         {
             return ((delegate* unmanaged<ITravelEntry*, ITEMIDLIST**, int>)(lpVtbl[5]))((ITravelEntry*)Unsafe.AsPointer(ref this), ppidl);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT Invoke(IUnknown* punk);
+
+            [VtblIndex(4)]
+            HRESULT Update(IUnknown* punk, BOOL fIsLocalAnchor);
+
+            [VtblIndex(5)]
+            HRESULT GetPidl([NativeTypeName("LPITEMIDLIST *")] ITEMIDLIST** ppidl);
         }
 
         public partial struct Vtbl

@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("3050F673-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct IHTMLElement3 : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct IHTMLElement3
+    public unsafe partial struct IHTMLElement3 : IHTMLElement3.Interface
     {
         public void** lpVtbl;
 
@@ -366,6 +366,138 @@ namespace TerraFX.Interop
         public HRESULT get_glyphMode([NativeTypeName("LONG *")] int* p)
         {
             return ((delegate* unmanaged<IHTMLElement3*, int*, int>)(lpVtbl[49]))((IHTMLElement3*)Unsafe.AsPointer(ref this), p);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT mergeAttributes(IHTMLElement* mergeThis, VARIANT* pvarFlags);
+
+            [VtblIndex(8)]
+            HRESULT get_isMultiLine([NativeTypeName("VARIANT_BOOL *")] short* p);
+
+            [VtblIndex(9)]
+            HRESULT get_canHaveHTML([NativeTypeName("VARIANT_BOOL *")] short* p);
+
+            [VtblIndex(10)]
+            HRESULT put_onlayoutcomplete(VARIANT v);
+
+            [VtblIndex(11)]
+            HRESULT get_onlayoutcomplete(VARIANT* p);
+
+            [VtblIndex(12)]
+            HRESULT put_onpage(VARIANT v);
+
+            [VtblIndex(13)]
+            HRESULT get_onpage(VARIANT* p);
+
+            [VtblIndex(14)]
+            HRESULT put_inflateBlock([NativeTypeName("VARIANT_BOOL")] short v);
+
+            [VtblIndex(15)]
+            HRESULT get_inflateBlock([NativeTypeName("VARIANT_BOOL *")] short* p);
+
+            [VtblIndex(16)]
+            HRESULT put_onbeforedeactivate(VARIANT v);
+
+            [VtblIndex(17)]
+            HRESULT get_onbeforedeactivate(VARIANT* p);
+
+            [VtblIndex(18)]
+            HRESULT setActive();
+
+            [VtblIndex(19)]
+            HRESULT put_contentEditable([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(20)]
+            HRESULT get_contentEditable([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(21)]
+            HRESULT get_isContentEditable([NativeTypeName("VARIANT_BOOL *")] short* p);
+
+            [VtblIndex(22)]
+            HRESULT put_hideFocus([NativeTypeName("VARIANT_BOOL")] short v);
+
+            [VtblIndex(23)]
+            HRESULT get_hideFocus([NativeTypeName("VARIANT_BOOL *")] short* p);
+
+            [VtblIndex(24)]
+            HRESULT put_disabled([NativeTypeName("VARIANT_BOOL")] short v);
+
+            [VtblIndex(25)]
+            HRESULT get_disabled([NativeTypeName("VARIANT_BOOL *")] short* p);
+
+            [VtblIndex(26)]
+            HRESULT get_isDisabled([NativeTypeName("VARIANT_BOOL *")] short* p);
+
+            [VtblIndex(27)]
+            HRESULT put_onmove(VARIANT v);
+
+            [VtblIndex(28)]
+            HRESULT get_onmove(VARIANT* p);
+
+            [VtblIndex(29)]
+            HRESULT put_oncontrolselect(VARIANT v);
+
+            [VtblIndex(30)]
+            HRESULT get_oncontrolselect(VARIANT* p);
+
+            [VtblIndex(31)]
+            HRESULT fireEvent([NativeTypeName("BSTR")] ushort* bstrEventName, VARIANT* pvarEventObject, [NativeTypeName("VARIANT_BOOL *")] short* pfCancelled);
+
+            [VtblIndex(32)]
+            HRESULT put_onresizestart(VARIANT v);
+
+            [VtblIndex(33)]
+            HRESULT get_onresizestart(VARIANT* p);
+
+            [VtblIndex(34)]
+            HRESULT put_onresizeend(VARIANT v);
+
+            [VtblIndex(35)]
+            HRESULT get_onresizeend(VARIANT* p);
+
+            [VtblIndex(36)]
+            HRESULT put_onmovestart(VARIANT v);
+
+            [VtblIndex(37)]
+            HRESULT get_onmovestart(VARIANT* p);
+
+            [VtblIndex(38)]
+            HRESULT put_onmoveend(VARIANT v);
+
+            [VtblIndex(39)]
+            HRESULT get_onmoveend(VARIANT* p);
+
+            [VtblIndex(40)]
+            HRESULT put_onmouseenter(VARIANT v);
+
+            [VtblIndex(41)]
+            HRESULT get_onmouseenter(VARIANT* p);
+
+            [VtblIndex(42)]
+            HRESULT put_onmouseleave(VARIANT v);
+
+            [VtblIndex(43)]
+            HRESULT get_onmouseleave(VARIANT* p);
+
+            [VtblIndex(44)]
+            HRESULT put_onactivate(VARIANT v);
+
+            [VtblIndex(45)]
+            HRESULT get_onactivate(VARIANT* p);
+
+            [VtblIndex(46)]
+            HRESULT put_ondeactivate(VARIANT v);
+
+            [VtblIndex(47)]
+            HRESULT get_ondeactivate(VARIANT* p);
+
+            [VtblIndex(48)]
+            HRESULT dragDrop([NativeTypeName("VARIANT_BOOL *")] short* pfRet);
+
+            [VtblIndex(49)]
+            HRESULT get_glyphMode([NativeTypeName("LONG *")] int* p);
         }
 
         public partial struct Vtbl

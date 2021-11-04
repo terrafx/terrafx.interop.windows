@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("3050F1F3-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct IHTMLDTElement : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct IHTMLDTElement
+    public unsafe partial struct IHTMLDTElement : IHTMLDTElement.Interface
     {
         public void** lpVtbl;
 
@@ -79,6 +79,15 @@ namespace TerraFX.Interop
         public HRESULT get_noWrap([NativeTypeName("VARIANT_BOOL *")] short* p)
         {
             return ((delegate* unmanaged<IHTMLDTElement*, short*, int>)(lpVtbl[8]))((IHTMLDTElement*)Unsafe.AsPointer(ref this), p);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT put_noWrap([NativeTypeName("VARIANT_BOOL")] short v);
+
+            [VtblIndex(8)]
+            HRESULT get_noWrap([NativeTypeName("VARIANT_BOOL *")] short* p);
         }
 
         public partial struct Vtbl

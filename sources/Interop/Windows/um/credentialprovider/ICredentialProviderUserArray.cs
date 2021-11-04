@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("90C119AE-0F18-4520-A1F1-114366A40FE8")]
     [NativeTypeName("struct ICredentialProviderUserArray : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct ICredentialProviderUserArray
+    public unsafe partial struct ICredentialProviderUserArray : ICredentialProviderUserArray.Interface
     {
         public void** lpVtbl;
 
@@ -65,6 +65,21 @@ namespace TerraFX.Interop
         public HRESULT GetAt([NativeTypeName("DWORD")] uint userIndex, ICredentialProviderUser** user)
         {
             return ((delegate* unmanaged<ICredentialProviderUserArray*, uint, ICredentialProviderUser**, int>)(lpVtbl[6]))((ICredentialProviderUserArray*)Unsafe.AsPointer(ref this), userIndex, user);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT SetProviderFilter([NativeTypeName("const GUID &")] Guid* guidProviderToFilterTo);
+
+            [VtblIndex(4)]
+            HRESULT GetAccountOptions(CREDENTIAL_PROVIDER_ACCOUNT_OPTIONS* credentialProviderAccountOptions);
+
+            [VtblIndex(5)]
+            HRESULT GetCount([NativeTypeName("DWORD *")] uint* userCount);
+
+            [VtblIndex(6)]
+            HRESULT GetAt([NativeTypeName("DWORD")] uint userIndex, ICredentialProviderUser** user);
         }
 
         public partial struct Vtbl

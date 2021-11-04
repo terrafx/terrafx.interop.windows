@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("575933DF-34FE-4480-AF15-07691F3D5D9B")]
     [NativeTypeName("struct IVectorChangedEventArgs : IInspectable")]
     [NativeInheritance("IInspectable")]
-    public unsafe partial struct IVectorChangedEventArgs
+    public unsafe partial struct IVectorChangedEventArgs : IVectorChangedEventArgs.Interface
     {
         public void** lpVtbl;
 
@@ -72,6 +72,15 @@ namespace TerraFX.Interop
         public HRESULT get_Index([NativeTypeName("unsigned int *")] uint* value)
         {
             return ((delegate* unmanaged<IVectorChangedEventArgs*, uint*, int>)(lpVtbl[7]))((IVectorChangedEventArgs*)Unsafe.AsPointer(ref this), value);
+        }
+
+        public interface Interface : IInspectable.Interface
+        {
+            [VtblIndex(6)]
+            HRESULT get_CollectionChange([NativeTypeName("ABI::Windows::Foundation::Collections::CollectionChange *")] CollectionChange* value);
+
+            [VtblIndex(7)]
+            HRESULT get_Index([NativeTypeName("unsigned int *")] uint* value);
         }
 
         public partial struct Vtbl

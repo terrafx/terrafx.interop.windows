@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("22320CB2-D41A-11D2-BF7C-D7CB9DF0BF93")]
     [NativeTypeName("struct IAMAudioRendererStats : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IAMAudioRendererStats
+    public unsafe partial struct IAMAudioRendererStats : IAMAudioRendererStats.Interface
     {
         public void** lpVtbl;
 
@@ -44,6 +44,12 @@ namespace TerraFX.Interop
         public HRESULT GetStatParam([NativeTypeName("DWORD")] uint dwParam, [NativeTypeName("DWORD *")] uint* pdwParam1, [NativeTypeName("DWORD *")] uint* pdwParam2)
         {
             return ((delegate* unmanaged<IAMAudioRendererStats*, uint, uint*, uint*, int>)(lpVtbl[3]))((IAMAudioRendererStats*)Unsafe.AsPointer(ref this), dwParam, pdwParam1, pdwParam2);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetStatParam([NativeTypeName("DWORD")] uint dwParam, [NativeTypeName("DWORD *")] uint* pdwParam1, [NativeTypeName("DWORD *")] uint* pdwParam2);
         }
 
         public partial struct Vtbl

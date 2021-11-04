@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("30510502-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct ISVGPathSegCurvetoCubicAbs : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct ISVGPathSegCurvetoCubicAbs
+    public unsafe partial struct ISVGPathSegCurvetoCubicAbs : ISVGPathSegCurvetoCubicAbs.Interface
     {
         public void** lpVtbl;
 
@@ -149,6 +149,45 @@ namespace TerraFX.Interop
         public HRESULT get_y2(float* p)
         {
             return ((delegate* unmanaged<ISVGPathSegCurvetoCubicAbs*, float*, int>)(lpVtbl[18]))((ISVGPathSegCurvetoCubicAbs*)Unsafe.AsPointer(ref this), p);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT put_x(float v);
+
+            [VtblIndex(8)]
+            HRESULT get_x(float* p);
+
+            [VtblIndex(9)]
+            HRESULT put_y(float v);
+
+            [VtblIndex(10)]
+            HRESULT get_y(float* p);
+
+            [VtblIndex(11)]
+            HRESULT put_x1(float v);
+
+            [VtblIndex(12)]
+            HRESULT get_x1(float* p);
+
+            [VtblIndex(13)]
+            HRESULT put_y1(float v);
+
+            [VtblIndex(14)]
+            HRESULT get_y1(float* p);
+
+            [VtblIndex(15)]
+            HRESULT put_x2(float v);
+
+            [VtblIndex(16)]
+            HRESULT get_x2(float* p);
+
+            [VtblIndex(17)]
+            HRESULT put_y2(float v);
+
+            [VtblIndex(18)]
+            HRESULT get_y2(float* p);
         }
 
         public partial struct Vtbl

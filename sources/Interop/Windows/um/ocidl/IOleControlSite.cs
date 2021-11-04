@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("B196B289-BAB4-101A-B69C-00AA00341D07")]
     [NativeTypeName("struct IOleControlSite : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IOleControlSite
+    public unsafe partial struct IOleControlSite : IOleControlSite.Interface
     {
         public void** lpVtbl;
 
@@ -86,6 +86,30 @@ namespace TerraFX.Interop
         public HRESULT ShowPropertyFrame()
         {
             return ((delegate* unmanaged<IOleControlSite*, int>)(lpVtbl[9]))((IOleControlSite*)Unsafe.AsPointer(ref this));
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT OnControlInfoChanged();
+
+            [VtblIndex(4)]
+            HRESULT LockInPlaceActive(BOOL fLock);
+
+            [VtblIndex(5)]
+            HRESULT GetExtendedControl(IDispatch** ppDisp);
+
+            [VtblIndex(6)]
+            HRESULT TransformCoords(POINTL* pPtlHimetric, POINTF* pPtfContainer, [NativeTypeName("DWORD")] uint dwFlags);
+
+            [VtblIndex(7)]
+            HRESULT TranslateAccelerator(MSG* pMsg, [NativeTypeName("DWORD")] uint grfModifiers);
+
+            [VtblIndex(8)]
+            HRESULT OnFocus(BOOL fGotFocus);
+
+            [VtblIndex(9)]
+            HRESULT ShowPropertyFrame();
         }
 
         public partial struct Vtbl

@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("729FE2F8-1EA8-11D1-8F85-00C04FC2FBE1")]
     [NativeTypeName("struct IShellUIHelper : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct IShellUIHelper
+    public unsafe partial struct IShellUIHelper : IShellUIHelper.Interface
     {
         public void** lpVtbl;
 
@@ -156,6 +156,48 @@ namespace TerraFX.Interop
         public HRESULT ShowBrowserUI([NativeTypeName("BSTR")] ushort* bstrName, VARIANT* pvarIn, VARIANT* pvarOut)
         {
             return ((delegate* unmanaged<IShellUIHelper*, ushort*, VARIANT*, VARIANT*, int>)(lpVtbl[19]))((IShellUIHelper*)Unsafe.AsPointer(ref this), bstrName, pvarIn, pvarOut);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT ResetFirstBootMode();
+
+            [VtblIndex(8)]
+            HRESULT ResetSafeMode();
+
+            [VtblIndex(9)]
+            HRESULT RefreshOfflineDesktop();
+
+            [VtblIndex(10)]
+            HRESULT AddFavorite([NativeTypeName("BSTR")] ushort* URL, VARIANT* Title);
+
+            [VtblIndex(11)]
+            HRESULT AddChannel([NativeTypeName("BSTR")] ushort* URL);
+
+            [VtblIndex(12)]
+            HRESULT AddDesktopComponent([NativeTypeName("BSTR")] ushort* URL, [NativeTypeName("BSTR")] ushort* Type, VARIANT* Left, VARIANT* Top, VARIANT* Width, VARIANT* Height);
+
+            [VtblIndex(13)]
+            HRESULT IsSubscribed([NativeTypeName("BSTR")] ushort* URL, [NativeTypeName("VARIANT_BOOL *")] short* pBool);
+
+            [VtblIndex(14)]
+            HRESULT NavigateAndFind([NativeTypeName("BSTR")] ushort* URL, [NativeTypeName("BSTR")] ushort* strQuery, VARIANT* varTargetFrame);
+
+            [VtblIndex(15)]
+            HRESULT ImportExportFavorites([NativeTypeName("VARIANT_BOOL")] short fImport, [NativeTypeName("BSTR")] ushort* strImpExpPath);
+
+            [VtblIndex(16)]
+            HRESULT AutoCompleteSaveForm(VARIANT* Form);
+
+            [VtblIndex(17)]
+            HRESULT AutoScan([NativeTypeName("BSTR")] ushort* strSearch, [NativeTypeName("BSTR")] ushort* strFailureUrl, VARIANT* pvarTargetFrame);
+
+            [VtblIndex(18)]
+            HRESULT AutoCompleteAttach(VARIANT* Reserved);
+
+            [VtblIndex(19)]
+            HRESULT ShowBrowserUI([NativeTypeName("BSTR")] ushort* bstrName, VARIANT* pvarIn, VARIANT* pvarOut);
         }
 
         public partial struct Vtbl

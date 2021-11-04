@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("528DF2EC-D419-40BC-9B6D-DCDBF9C1B25D")]
     [NativeTypeName("struct IShellUIHelper3 : IShellUIHelper2")]
     [NativeInheritance("IShellUIHelper2")]
-    public unsafe partial struct IShellUIHelper3
+    public unsafe partial struct IShellUIHelper3 : IShellUIHelper3.Interface
     {
         public void** lpVtbl;
 
@@ -359,6 +359,48 @@ namespace TerraFX.Interop
         public HRESULT ShowInPrivateHelp()
         {
             return ((delegate* unmanaged<IShellUIHelper3*, int>)(lpVtbl[48]))((IShellUIHelper3*)Unsafe.AsPointer(ref this));
+        }
+
+        public interface Interface : IShellUIHelper2.Interface
+        {
+            [VtblIndex(36)]
+            HRESULT AddService([NativeTypeName("BSTR")] ushort* URL);
+
+            [VtblIndex(37)]
+            HRESULT IsServiceInstalled([NativeTypeName("BSTR")] ushort* URL, [NativeTypeName("BSTR")] ushort* Verb, [NativeTypeName("DWORD *")] uint* pdwResult);
+
+            [VtblIndex(38)]
+            HRESULT InPrivateFilteringEnabled([NativeTypeName("VARIANT_BOOL *")] short* pfEnabled);
+
+            [VtblIndex(39)]
+            HRESULT AddToFavoritesBar([NativeTypeName("BSTR")] ushort* URL, [NativeTypeName("BSTR")] ushort* Title, VARIANT* Type);
+
+            [VtblIndex(40)]
+            HRESULT BuildNewTabPage();
+
+            [VtblIndex(41)]
+            HRESULT SetRecentlyClosedVisible([NativeTypeName("VARIANT_BOOL")] short fVisible);
+
+            [VtblIndex(42)]
+            HRESULT SetActivitiesVisible([NativeTypeName("VARIANT_BOOL")] short fVisible);
+
+            [VtblIndex(43)]
+            HRESULT ContentDiscoveryReset();
+
+            [VtblIndex(44)]
+            HRESULT IsSuggestedSitesEnabled([NativeTypeName("VARIANT_BOOL *")] short* pfEnabled);
+
+            [VtblIndex(45)]
+            HRESULT EnableSuggestedSites([NativeTypeName("VARIANT_BOOL")] short fEnable);
+
+            [VtblIndex(46)]
+            HRESULT NavigateToSuggestedSites([NativeTypeName("BSTR")] ushort* bstrRelativeUrl);
+
+            [VtblIndex(47)]
+            HRESULT ShowTabsHelp();
+
+            [VtblIndex(48)]
+            HRESULT ShowInPrivateHelp();
         }
 
         public partial struct Vtbl

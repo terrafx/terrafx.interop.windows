@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("40D4577F-E237-4BDB-BD69-58F089431B6A")]
     [NativeTypeName("struct IDelayedPropertyStoreFactory : IPropertyStoreFactory")]
     [NativeInheritance("IPropertyStoreFactory")]
-    public unsafe partial struct IDelayedPropertyStoreFactory
+    public unsafe partial struct IDelayedPropertyStoreFactory : IDelayedPropertyStoreFactory.Interface
     {
         public void** lpVtbl;
 
@@ -58,6 +58,12 @@ namespace TerraFX.Interop
         public HRESULT GetDelayedPropertyStore(GETPROPERTYSTOREFLAGS flags, [NativeTypeName("DWORD")] uint dwStoreId, [NativeTypeName("const IID &")] Guid* riid, void** ppv)
         {
             return ((delegate* unmanaged<IDelayedPropertyStoreFactory*, GETPROPERTYSTOREFLAGS, uint, Guid*, void**, int>)(lpVtbl[5]))((IDelayedPropertyStoreFactory*)Unsafe.AsPointer(ref this), flags, dwStoreId, riid, ppv);
+        }
+
+        public interface Interface : IPropertyStoreFactory.Interface
+        {
+            [VtblIndex(5)]
+            HRESULT GetDelayedPropertyStore(GETPROPERTYSTOREFLAGS flags, [NativeTypeName("DWORD")] uint dwStoreId, [NativeTypeName("const IID &")] Guid* riid, void** ppv);
         }
 
         public partial struct Vtbl

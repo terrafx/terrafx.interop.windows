@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("46A30204-A696-4B18-8804-246B8F031BB1")]
     [NativeTypeName("struct IMFMediaEngineNeedKeyNotify : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IMFMediaEngineNeedKeyNotify
+    public unsafe partial struct IMFMediaEngineNeedKeyNotify : IMFMediaEngineNeedKeyNotify.Interface
     {
         public void** lpVtbl;
 
@@ -44,6 +44,12 @@ namespace TerraFX.Interop
         public void NeedKey([NativeTypeName("const BYTE *")] byte* initData, [NativeTypeName("DWORD")] uint cb)
         {
             ((delegate* unmanaged<IMFMediaEngineNeedKeyNotify*, byte*, uint, void>)(lpVtbl[3]))((IMFMediaEngineNeedKeyNotify*)Unsafe.AsPointer(ref this), initData, cb);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            void NeedKey([NativeTypeName("const BYTE *")] byte* initData, [NativeTypeName("DWORD")] uint cb);
         }
 
         public partial struct Vtbl

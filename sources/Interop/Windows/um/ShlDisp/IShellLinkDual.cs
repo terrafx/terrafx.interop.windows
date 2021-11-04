@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("88A05C00-F000-11CE-8350-444553540000")]
     [NativeTypeName("struct IShellLinkDual : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct IShellLinkDual
+    public unsafe partial struct IShellLinkDual : IShellLinkDual.Interface
     {
         public void** lpVtbl;
 
@@ -177,6 +177,57 @@ namespace TerraFX.Interop
         public HRESULT Save(VARIANT vWhere)
         {
             return ((delegate* unmanaged<IShellLinkDual*, VARIANT, int>)(lpVtbl[22]))((IShellLinkDual*)Unsafe.AsPointer(ref this), vWhere);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT get_Path([NativeTypeName("BSTR *")] ushort** pbs);
+
+            [VtblIndex(8)]
+            HRESULT put_Path([NativeTypeName("BSTR")] ushort* bs);
+
+            [VtblIndex(9)]
+            HRESULT get_Description([NativeTypeName("BSTR *")] ushort** pbs);
+
+            [VtblIndex(10)]
+            HRESULT put_Description([NativeTypeName("BSTR")] ushort* bs);
+
+            [VtblIndex(11)]
+            HRESULT get_WorkingDirectory([NativeTypeName("BSTR *")] ushort** pbs);
+
+            [VtblIndex(12)]
+            HRESULT put_WorkingDirectory([NativeTypeName("BSTR")] ushort* bs);
+
+            [VtblIndex(13)]
+            HRESULT get_Arguments([NativeTypeName("BSTR *")] ushort** pbs);
+
+            [VtblIndex(14)]
+            HRESULT put_Arguments([NativeTypeName("BSTR")] ushort* bs);
+
+            [VtblIndex(15)]
+            HRESULT get_Hotkey(int* piHK);
+
+            [VtblIndex(16)]
+            HRESULT put_Hotkey(int iHK);
+
+            [VtblIndex(17)]
+            HRESULT get_ShowCommand(int* piShowCommand);
+
+            [VtblIndex(18)]
+            HRESULT put_ShowCommand(int iShowCommand);
+
+            [VtblIndex(19)]
+            HRESULT Resolve(int fFlags);
+
+            [VtblIndex(20)]
+            HRESULT GetIconLocation([NativeTypeName("BSTR *")] ushort** pbs, int* piIcon);
+
+            [VtblIndex(21)]
+            HRESULT SetIconLocation([NativeTypeName("BSTR")] ushort* bs, int iIcon);
+
+            [VtblIndex(22)]
+            HRESULT Save(VARIANT vWhere);
         }
 
         public partial struct Vtbl

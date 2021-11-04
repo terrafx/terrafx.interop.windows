@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("4DB3757A-2C72-4ED9-B2B6-1ABABE1AFF9C")]
     [NativeTypeName("struct IDWriteRemoteFontFileStream : IDWriteFontFileStream")]
     [NativeInheritance("IDWriteFontFileStream")]
-    public unsafe partial struct IDWriteRemoteFontFileStream
+    public unsafe partial struct IDWriteRemoteFontFileStream : IDWriteRemoteFontFileStream.Interface
     {
         public void** lpVtbl;
 
@@ -93,6 +93,21 @@ namespace TerraFX.Interop
         public HRESULT BeginDownload([NativeTypeName("const UUID *")] Guid* downloadOperationID, [NativeTypeName("const DWRITE_FILE_FRAGMENT *")] DWRITE_FILE_FRAGMENT* fileFragments, [NativeTypeName("UINT32")] uint fragmentCount, IDWriteAsyncResult** asyncResult)
         {
             return ((delegate* unmanaged<IDWriteRemoteFontFileStream*, Guid*, DWRITE_FILE_FRAGMENT*, uint, IDWriteAsyncResult**, int>)(lpVtbl[10]))((IDWriteRemoteFontFileStream*)Unsafe.AsPointer(ref this), downloadOperationID, fileFragments, fragmentCount, asyncResult);
+        }
+
+        public interface Interface : IDWriteFontFileStream.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT GetLocalFileSize([NativeTypeName("UINT64 *")] ulong* localFileSize);
+
+            [VtblIndex(8)]
+            HRESULT GetFileFragmentLocality([NativeTypeName("UINT64")] ulong fileOffset, [NativeTypeName("UINT64")] ulong fragmentSize, BOOL* isLocal, [NativeTypeName("UINT64 *")] ulong* partialSize);
+
+            [VtblIndex(9)]
+            DWRITE_LOCALITY GetLocality();
+
+            [VtblIndex(10)]
+            HRESULT BeginDownload([NativeTypeName("const UUID *")] Guid* downloadOperationID, [NativeTypeName("const DWRITE_FILE_FRAGMENT *")] DWRITE_FILE_FRAGMENT* fileFragments, [NativeTypeName("UINT32")] uint fragmentCount, IDWriteAsyncResult** asyncResult);
         }
 
         public partial struct Vtbl

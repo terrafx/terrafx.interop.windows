@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("3050F4A2-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct IHTMLStyle2 : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct IHTMLStyle2
+    public unsafe partial struct IHTMLStyle2 : IHTMLStyle2.Interface
     {
         public void** lpVtbl;
 
@@ -506,6 +506,198 @@ namespace TerraFX.Interop
         public HRESULT get_accelerator([NativeTypeName("BSTR *")] ushort** p)
         {
             return ((delegate* unmanaged<IHTMLStyle2*, ushort**, int>)(lpVtbl[69]))((IHTMLStyle2*)Unsafe.AsPointer(ref this), p);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT put_tableLayout([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(8)]
+            HRESULT get_tableLayout([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(9)]
+            HRESULT put_borderCollapse([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(10)]
+            HRESULT get_borderCollapse([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(11)]
+            HRESULT put_direction([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(12)]
+            HRESULT get_direction([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(13)]
+            HRESULT put_behavior([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(14)]
+            HRESULT get_behavior([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(15)]
+            HRESULT setExpression([NativeTypeName("BSTR")] ushort* propname, [NativeTypeName("BSTR")] ushort* expression, [NativeTypeName("BSTR")] ushort* language = null);
+
+            [VtblIndex(16)]
+            HRESULT getExpression([NativeTypeName("BSTR")] ushort* propname, VARIANT* expression);
+
+            [VtblIndex(17)]
+            HRESULT removeExpression([NativeTypeName("BSTR")] ushort* propname, [NativeTypeName("VARIANT_BOOL *")] short* pfSuccess);
+
+            [VtblIndex(18)]
+            HRESULT put_position([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(19)]
+            HRESULT get_position([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(20)]
+            HRESULT put_unicodeBidi([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(21)]
+            HRESULT get_unicodeBidi([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(22)]
+            HRESULT put_bottom(VARIANT v);
+
+            [VtblIndex(23)]
+            HRESULT get_bottom(VARIANT* p);
+
+            [VtblIndex(24)]
+            HRESULT put_right(VARIANT v);
+
+            [VtblIndex(25)]
+            HRESULT get_right(VARIANT* p);
+
+            [VtblIndex(26)]
+            HRESULT put_pixelBottom([NativeTypeName("long")] int v);
+
+            [VtblIndex(27)]
+            HRESULT get_pixelBottom([NativeTypeName("long *")] int* p);
+
+            [VtblIndex(28)]
+            HRESULT put_pixelRight([NativeTypeName("long")] int v);
+
+            [VtblIndex(29)]
+            HRESULT get_pixelRight([NativeTypeName("long *")] int* p);
+
+            [VtblIndex(30)]
+            HRESULT put_posBottom(float v);
+
+            [VtblIndex(31)]
+            HRESULT get_posBottom(float* p);
+
+            [VtblIndex(32)]
+            HRESULT put_posRight(float v);
+
+            [VtblIndex(33)]
+            HRESULT get_posRight(float* p);
+
+            [VtblIndex(34)]
+            HRESULT put_imeMode([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(35)]
+            HRESULT get_imeMode([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(36)]
+            HRESULT put_rubyAlign([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(37)]
+            HRESULT get_rubyAlign([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(38)]
+            HRESULT put_rubyPosition([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(39)]
+            HRESULT get_rubyPosition([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(40)]
+            HRESULT put_rubyOverhang([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(41)]
+            HRESULT get_rubyOverhang([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(42)]
+            HRESULT put_layoutGridChar(VARIANT v);
+
+            [VtblIndex(43)]
+            HRESULT get_layoutGridChar(VARIANT* p);
+
+            [VtblIndex(44)]
+            HRESULT put_layoutGridLine(VARIANT v);
+
+            [VtblIndex(45)]
+            HRESULT get_layoutGridLine(VARIANT* p);
+
+            [VtblIndex(46)]
+            HRESULT put_layoutGridMode([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(47)]
+            HRESULT get_layoutGridMode([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(48)]
+            HRESULT put_layoutGridType([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(49)]
+            HRESULT get_layoutGridType([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(50)]
+            HRESULT put_layoutGrid([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(51)]
+            HRESULT get_layoutGrid([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(52)]
+            HRESULT put_wordBreak([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(53)]
+            HRESULT get_wordBreak([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(54)]
+            HRESULT put_lineBreak([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(55)]
+            HRESULT get_lineBreak([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(56)]
+            HRESULT put_textJustify([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(57)]
+            HRESULT get_textJustify([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(58)]
+            HRESULT put_textJustifyTrim([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(59)]
+            HRESULT get_textJustifyTrim([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(60)]
+            HRESULT put_textKashida(VARIANT v);
+
+            [VtblIndex(61)]
+            HRESULT get_textKashida(VARIANT* p);
+
+            [VtblIndex(62)]
+            HRESULT put_textAutospace([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(63)]
+            HRESULT get_textAutospace([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(64)]
+            HRESULT put_overflowX([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(65)]
+            HRESULT get_overflowX([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(66)]
+            HRESULT put_overflowY([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(67)]
+            HRESULT get_overflowY([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(68)]
+            HRESULT put_accelerator([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(69)]
+            HRESULT get_accelerator([NativeTypeName("BSTR *")] ushort** p);
         }
 
         public partial struct Vtbl

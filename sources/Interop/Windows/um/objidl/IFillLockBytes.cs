@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("99CAF010-415E-11CF-8814-00AA00B569F5")]
     [NativeTypeName("struct IFillLockBytes : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IFillLockBytes
+    public unsafe partial struct IFillLockBytes : IFillLockBytes.Interface
     {
         public void** lpVtbl;
 
@@ -65,6 +65,21 @@ namespace TerraFX.Interop
         public HRESULT Terminate(BOOL bCanceled)
         {
             return ((delegate* unmanaged<IFillLockBytes*, BOOL, int>)(lpVtbl[6]))((IFillLockBytes*)Unsafe.AsPointer(ref this), bCanceled);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT FillAppend([NativeTypeName("const void *")] void* pv, [NativeTypeName("ULONG")] uint cb, [NativeTypeName("ULONG *")] uint* pcbWritten);
+
+            [VtblIndex(4)]
+            HRESULT FillAt(ULARGE_INTEGER ulOffset, [NativeTypeName("const void *")] void* pv, [NativeTypeName("ULONG")] uint cb, [NativeTypeName("ULONG *")] uint* pcbWritten);
+
+            [VtblIndex(5)]
+            HRESULT SetFillSize(ULARGE_INTEGER ulSize);
+
+            [VtblIndex(6)]
+            HRESULT Terminate(BOOL bCanceled);
         }
 
         public partial struct Vtbl

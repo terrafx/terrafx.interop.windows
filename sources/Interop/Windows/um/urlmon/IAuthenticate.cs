@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("79EAC9D0-BAF9-11CE-8C82-00AA004BA90B")]
     [NativeTypeName("struct IAuthenticate : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IAuthenticate
+    public unsafe partial struct IAuthenticate : IAuthenticate.Interface
     {
         public void** lpVtbl;
 
@@ -44,6 +44,12 @@ namespace TerraFX.Interop
         public HRESULT Authenticate(HWND* phwnd, [NativeTypeName("LPWSTR *")] ushort** pszUsername, [NativeTypeName("LPWSTR *")] ushort** pszPassword)
         {
             return ((delegate* unmanaged<IAuthenticate*, HWND*, ushort**, ushort**, int>)(lpVtbl[3]))((IAuthenticate*)Unsafe.AsPointer(ref this), phwnd, pszUsername, pszPassword);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT Authenticate(HWND* phwnd, [NativeTypeName("LPWSTR *")] ushort** pszUsername, [NativeTypeName("LPWSTR *")] ushort** pszPassword);
         }
 
         public partial struct Vtbl

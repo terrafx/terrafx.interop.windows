@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("3050F6BA-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct IElementBehaviorLayout : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IElementBehaviorLayout
+    public unsafe partial struct IElementBehaviorLayout : IElementBehaviorLayout.Interface
     {
         public void** lpVtbl;
 
@@ -65,6 +65,21 @@ namespace TerraFX.Interop
         public HRESULT MapSize(SIZE* psizeIn, RECT* prcOut)
         {
             return ((delegate* unmanaged<IElementBehaviorLayout*, SIZE*, RECT*, int>)(lpVtbl[6]))((IElementBehaviorLayout*)Unsafe.AsPointer(ref this), psizeIn, prcOut);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetSize([NativeTypeName("LONG")] int dwFlags, SIZE sizeContent, POINT* pptTranslateBy, POINT* pptTopLeft, SIZE* psizeProposed);
+
+            [VtblIndex(4)]
+            HRESULT GetLayoutInfo([NativeTypeName("LONG *")] int* plLayoutInfo);
+
+            [VtblIndex(5)]
+            HRESULT GetPosition([NativeTypeName("LONG")] int lFlags, POINT* pptTopLeft);
+
+            [VtblIndex(6)]
+            HRESULT MapSize(SIZE* psizeIn, RECT* prcOut);
         }
 
         public partial struct Vtbl

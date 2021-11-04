@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("8BE47B07-57F6-11D2-9EEE-00C04F797396")]
     [NativeTypeName("struct ISpeechVoiceStatus : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct ISpeechVoiceStatus
+    public unsafe partial struct ISpeechVoiceStatus : ISpeechVoiceStatus.Interface
     {
         public void** lpVtbl;
 
@@ -149,6 +149,45 @@ namespace TerraFX.Interop
         public HRESULT get_VisemeId(short* VisemeId)
         {
             return ((delegate* unmanaged<ISpeechVoiceStatus*, short*, int>)(lpVtbl[18]))((ISpeechVoiceStatus*)Unsafe.AsPointer(ref this), VisemeId);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT get_CurrentStreamNumber([NativeTypeName("long *")] int* StreamNumber);
+
+            [VtblIndex(8)]
+            HRESULT get_LastStreamNumberQueued([NativeTypeName("long *")] int* StreamNumber);
+
+            [VtblIndex(9)]
+            HRESULT get_LastHResult([NativeTypeName("long *")] int* HResult);
+
+            [VtblIndex(10)]
+            HRESULT get_RunningState(SpeechRunState* State);
+
+            [VtblIndex(11)]
+            HRESULT get_InputWordPosition([NativeTypeName("long *")] int* Position);
+
+            [VtblIndex(12)]
+            HRESULT get_InputWordLength([NativeTypeName("long *")] int* Length);
+
+            [VtblIndex(13)]
+            HRESULT get_InputSentencePosition([NativeTypeName("long *")] int* Position);
+
+            [VtblIndex(14)]
+            HRESULT get_InputSentenceLength([NativeTypeName("long *")] int* Length);
+
+            [VtblIndex(15)]
+            HRESULT get_LastBookmark([NativeTypeName("BSTR *")] ushort** Bookmark);
+
+            [VtblIndex(16)]
+            HRESULT get_LastBookmarkId([NativeTypeName("long *")] int* BookmarkId);
+
+            [VtblIndex(17)]
+            HRESULT get_PhonemeId(short* PhoneId);
+
+            [VtblIndex(18)]
+            HRESULT get_VisemeId(short* VisemeId);
         }
 
         public partial struct Vtbl

@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("3F96EE40-AD81-4096-8470-59A4B770F89A")]
     [NativeTypeName("struct IMFContentDecryptionModuleSessionCallbacks : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IMFContentDecryptionModuleSessionCallbacks
+    public unsafe partial struct IMFContentDecryptionModuleSessionCallbacks : IMFContentDecryptionModuleSessionCallbacks.Interface
     {
         public void** lpVtbl;
 
@@ -51,6 +51,15 @@ namespace TerraFX.Interop
         public HRESULT KeyStatusChanged()
         {
             return ((delegate* unmanaged<IMFContentDecryptionModuleSessionCallbacks*, int>)(lpVtbl[4]))((IMFContentDecryptionModuleSessionCallbacks*)Unsafe.AsPointer(ref this));
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT KeyMessage(MF_MEDIAKEYSESSION_MESSAGETYPE messageType, [NativeTypeName("const BYTE *")] byte* message, [NativeTypeName("DWORD")] uint messageSize, [NativeTypeName("LPCWSTR")] ushort* destinationURL);
+
+            [VtblIndex(4)]
+            HRESULT KeyStatusChanged();
         }
 
         public partial struct Vtbl

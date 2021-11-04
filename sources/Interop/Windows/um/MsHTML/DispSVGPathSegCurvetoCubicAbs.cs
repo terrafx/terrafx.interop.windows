@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("30590016-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct DispSVGPathSegCurvetoCubicAbs : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct DispSVGPathSegCurvetoCubicAbs
+    public unsafe partial struct DispSVGPathSegCurvetoCubicAbs : DispSVGPathSegCurvetoCubicAbs.Interface
     {
         public void** lpVtbl;
 
@@ -65,6 +65,10 @@ namespace TerraFX.Interop
         public HRESULT Invoke([NativeTypeName("DISPID")] int dispIdMember, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("WORD")] ushort wFlags, DISPPARAMS* pDispParams, VARIANT* pVarResult, EXCEPINFO* pExcepInfo, uint* puArgErr)
         {
             return ((delegate* unmanaged<DispSVGPathSegCurvetoCubicAbs*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int>)(lpVtbl[6]))((DispSVGPathSegCurvetoCubicAbs*)Unsafe.AsPointer(ref this), dispIdMember, riid, lcid, wFlags, pDispParams, pVarResult, pExcepInfo, puArgErr);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
         }
 
         public partial struct Vtbl

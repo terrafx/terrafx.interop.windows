@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("36B013E6-2811-4845-BAA7-D623FE0DF104")]
     [NativeTypeName("struct ID3D11ShaderTrace : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct ID3D11ShaderTrace
+    public unsafe partial struct ID3D11ShaderTrace : ID3D11ShaderTrace.Interface
     {
         public void** lpVtbl;
 
@@ -93,6 +93,33 @@ namespace TerraFX.Interop
         public HRESULT GetReadRegister(uint stepIndex, uint readRegisterIndex, D3D11_TRACE_REGISTER* pRegister, D3D11_TRACE_VALUE* pValue)
         {
             return ((delegate* unmanaged<ID3D11ShaderTrace*, uint, uint, D3D11_TRACE_REGISTER*, D3D11_TRACE_VALUE*, int>)(lpVtbl[10]))((ID3D11ShaderTrace*)Unsafe.AsPointer(ref this), stepIndex, readRegisterIndex, pRegister, pValue);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT TraceReady([NativeTypeName("UINT64 *")] ulong* pTestCount);
+
+            [VtblIndex(4)]
+            void ResetTrace();
+
+            [VtblIndex(5)]
+            HRESULT GetTraceStats(D3D11_TRACE_STATS* pTraceStats);
+
+            [VtblIndex(6)]
+            HRESULT PSSelectStamp(uint stampIndex);
+
+            [VtblIndex(7)]
+            HRESULT GetInitialRegisterContents(D3D11_TRACE_REGISTER* pRegister, D3D11_TRACE_VALUE* pValue);
+
+            [VtblIndex(8)]
+            HRESULT GetStep(uint stepIndex, D3D11_TRACE_STEP* pTraceStep);
+
+            [VtblIndex(9)]
+            HRESULT GetWrittenRegister(uint stepIndex, uint writtenRegisterIndex, D3D11_TRACE_REGISTER* pRegister, D3D11_TRACE_VALUE* pValue);
+
+            [VtblIndex(10)]
+            HRESULT GetReadRegister(uint stepIndex, uint readRegisterIndex, D3D11_TRACE_REGISTER* pRegister, D3D11_TRACE_VALUE* pValue);
         }
 
         public partial struct Vtbl

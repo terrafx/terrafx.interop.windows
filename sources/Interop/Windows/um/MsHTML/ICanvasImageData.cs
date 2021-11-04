@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("3051071A-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct ICanvasImageData : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct ICanvasImageData
+    public unsafe partial struct ICanvasImageData : ICanvasImageData.Interface
     {
         public void** lpVtbl;
 
@@ -86,6 +86,18 @@ namespace TerraFX.Interop
         public HRESULT get_data(VARIANT* p)
         {
             return ((delegate* unmanaged<ICanvasImageData*, VARIANT*, int>)(lpVtbl[9]))((ICanvasImageData*)Unsafe.AsPointer(ref this), p);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT get_width([NativeTypeName("ULONG *")] uint* p);
+
+            [VtblIndex(8)]
+            HRESULT get_height([NativeTypeName("ULONG *")] uint* p);
+
+            [VtblIndex(9)]
+            HRESULT get_data(VARIANT* p);
         }
 
         public partial struct Vtbl

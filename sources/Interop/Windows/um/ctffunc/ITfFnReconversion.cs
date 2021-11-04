@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("4CEA93C0-0A58-11D3-8DF0-00105A2799B5")]
     [NativeTypeName("struct ITfFnReconversion : ITfFunction")]
     [NativeInheritance("ITfFunction")]
-    public unsafe partial struct ITfFnReconversion
+    public unsafe partial struct ITfFnReconversion : ITfFnReconversion.Interface
     {
         public void** lpVtbl;
 
@@ -65,6 +65,18 @@ namespace TerraFX.Interop
         public HRESULT Reconvert(ITfRange* pRange)
         {
             return ((delegate* unmanaged<ITfFnReconversion*, ITfRange*, int>)(lpVtbl[6]))((ITfFnReconversion*)Unsafe.AsPointer(ref this), pRange);
+        }
+
+        public interface Interface : ITfFunction.Interface
+        {
+            [VtblIndex(4)]
+            HRESULT QueryRange(ITfRange* pRange, ITfRange** ppNewRange, BOOL* pfConvertable);
+
+            [VtblIndex(5)]
+            HRESULT GetReconversion(ITfRange* pRange, ITfCandidateList** ppCandList);
+
+            [VtblIndex(6)]
+            HRESULT Reconvert(ITfRange* pRange);
         }
 
         public partial struct Vtbl

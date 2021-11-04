@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("36B73884-C2C8-11CF-8B46-00805F6CEF60")]
     [NativeTypeName("struct IMediaSample2 : IMediaSample")]
     [NativeInheritance("IMediaSample")]
-    public unsafe partial struct IMediaSample2
+    public unsafe partial struct IMediaSample2 : IMediaSample2.Interface
     {
         public void** lpVtbl;
 
@@ -165,6 +165,15 @@ namespace TerraFX.Interop
         public HRESULT SetProperties([NativeTypeName("DWORD")] uint cbProperties, [NativeTypeName("const BYTE *")] byte* pbProperties)
         {
             return ((delegate* unmanaged<IMediaSample2*, uint, byte*, int>)(lpVtbl[20]))((IMediaSample2*)Unsafe.AsPointer(ref this), cbProperties, pbProperties);
+        }
+
+        public interface Interface : IMediaSample.Interface
+        {
+            [VtblIndex(19)]
+            HRESULT GetProperties([NativeTypeName("DWORD")] uint cbProperties, byte* pbProperties);
+
+            [VtblIndex(20)]
+            HRESULT SetProperties([NativeTypeName("DWORD")] uint cbProperties, [NativeTypeName("const BYTE *")] byte* pbProperties);
         }
 
         public partial struct Vtbl

@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("197CD219-19CB-4DE1-A64C-ACF2EDCBE59E")]
     [NativeTypeName("struct IMFSequencerSource : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IMFSequencerSource
+    public unsafe partial struct IMFSequencerSource : IMFSequencerSource.Interface
     {
         public void** lpVtbl;
 
@@ -72,6 +72,24 @@ namespace TerraFX.Interop
         public HRESULT UpdateTopologyFlags([NativeTypeName("MFSequencerElementId")] uint dwId, [NativeTypeName("DWORD")] uint dwFlags)
         {
             return ((delegate* unmanaged<IMFSequencerSource*, uint, uint, int>)(lpVtbl[7]))((IMFSequencerSource*)Unsafe.AsPointer(ref this), dwId, dwFlags);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT AppendTopology(IMFTopology* pTopology, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("MFSequencerElementId *")] uint* pdwId);
+
+            [VtblIndex(4)]
+            HRESULT DeleteTopology([NativeTypeName("MFSequencerElementId")] uint dwId);
+
+            [VtblIndex(5)]
+            HRESULT GetPresentationContext(IMFPresentationDescriptor* pPD, [NativeTypeName("MFSequencerElementId *")] uint* pId, IMFTopology** ppTopology);
+
+            [VtblIndex(6)]
+            HRESULT UpdateTopology([NativeTypeName("MFSequencerElementId")] uint dwId, IMFTopology* pTopology);
+
+            [VtblIndex(7)]
+            HRESULT UpdateTopologyFlags([NativeTypeName("MFSequencerElementId")] uint dwId, [NativeTypeName("DWORD")] uint dwFlags);
         }
 
         public partial struct Vtbl

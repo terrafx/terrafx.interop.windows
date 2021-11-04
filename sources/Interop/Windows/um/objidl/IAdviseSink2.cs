@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("00000125-0000-0000-C000-000000000046")]
     [NativeTypeName("struct IAdviseSink2 : IAdviseSink")]
     [NativeInheritance("IAdviseSink")]
-    public unsafe partial struct IAdviseSink2
+    public unsafe partial struct IAdviseSink2 : IAdviseSink2.Interface
     {
         public void** lpVtbl;
 
@@ -79,6 +79,12 @@ namespace TerraFX.Interop
         public void OnLinkSrcChange(IMoniker* pmk)
         {
             ((delegate* unmanaged<IAdviseSink2*, IMoniker*, void>)(lpVtbl[8]))((IAdviseSink2*)Unsafe.AsPointer(ref this), pmk);
+        }
+
+        public interface Interface : IAdviseSink.Interface
+        {
+            [VtblIndex(8)]
+            void OnLinkSrcChange(IMoniker* pmk);
         }
 
         public partial struct Vtbl

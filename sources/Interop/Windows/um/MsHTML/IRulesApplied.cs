@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("305104BF-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct IRulesApplied : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct IRulesApplied
+    public unsafe partial struct IRulesApplied : IRulesApplied.Interface
     {
         public void** lpVtbl;
 
@@ -107,6 +107,27 @@ namespace TerraFX.Interop
         public HRESULT hasInheritableProperty([NativeTypeName("VARIANT_BOOL *")] short* p)
         {
             return ((delegate* unmanaged<IRulesApplied*, short*, int>)(lpVtbl[12]))((IRulesApplied*)Unsafe.AsPointer(ref this), p);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT get_element(IHTMLElement** p);
+
+            [VtblIndex(8)]
+            HRESULT get_inlineStyles(IHTMLStyle** p);
+
+            [VtblIndex(9)]
+            HRESULT get_appliedRules(IHTMLStyleSheetRulesAppliedCollection** p);
+
+            [VtblIndex(10)]
+            HRESULT propertyIsInline([NativeTypeName("BSTR")] ushort* name, [NativeTypeName("VARIANT_BOOL *")] short* p);
+
+            [VtblIndex(11)]
+            HRESULT propertyIsInheritable([NativeTypeName("BSTR")] ushort* name, [NativeTypeName("VARIANT_BOOL *")] short* p);
+
+            [VtblIndex(12)]
+            HRESULT hasInheritableProperty([NativeTypeName("VARIANT_BOOL *")] short* p);
         }
 
         public partial struct Vtbl

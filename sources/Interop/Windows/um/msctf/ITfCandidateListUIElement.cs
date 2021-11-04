@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("EA1EA138-19DF-11D7-A6D2-00065B84435C")]
     [NativeTypeName("struct ITfCandidateListUIElement : ITfUIElement")]
     [NativeInheritance("ITfUIElement")]
-    public unsafe partial struct ITfCandidateListUIElement
+    public unsafe partial struct ITfCandidateListUIElement : ITfCandidateListUIElement.Interface
     {
         public void** lpVtbl;
 
@@ -121,6 +121,33 @@ namespace TerraFX.Interop
         public HRESULT GetCurrentPage(uint* puPage)
         {
             return ((delegate* unmanaged<ITfCandidateListUIElement*, uint*, int>)(lpVtbl[14]))((ITfCandidateListUIElement*)Unsafe.AsPointer(ref this), puPage);
+        }
+
+        public interface Interface : ITfUIElement.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT GetUpdatedFlags([NativeTypeName("DWORD *")] uint* pdwFlags);
+
+            [VtblIndex(8)]
+            HRESULT GetDocumentMgr(ITfDocumentMgr** ppdim);
+
+            [VtblIndex(9)]
+            HRESULT GetCount(uint* puCount);
+
+            [VtblIndex(10)]
+            HRESULT GetSelection(uint* puIndex);
+
+            [VtblIndex(11)]
+            HRESULT GetString(uint uIndex, [NativeTypeName("BSTR *")] ushort** pstr);
+
+            [VtblIndex(12)]
+            HRESULT GetPageIndex(uint* pIndex, uint uSize, uint* puPageCnt);
+
+            [VtblIndex(13)]
+            HRESULT SetPageIndex(uint* pIndex, uint uPageCnt);
+
+            [VtblIndex(14)]
+            HRESULT GetCurrentPage(uint* puPage);
         }
 
         public partial struct Vtbl

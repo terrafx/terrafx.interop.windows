@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("6B15E56A-BF5C-4902-92D8-DA3A650AFEA4")]
     [NativeTypeName("struct IDMLCompiledOperator : IDMLDispatchable")]
     [NativeInheritance("IDMLDispatchable")]
-    public unsafe partial struct IDMLCompiledOperator
+    public unsafe partial struct IDMLCompiledOperator : IDMLCompiledOperator.Interface
     {
         public void** lpVtbl;
 
@@ -80,6 +80,10 @@ namespace TerraFX.Interop
         {
             DML_BINDING_PROPERTIES result;
             return *((delegate* unmanaged<IDMLCompiledOperator*, DML_BINDING_PROPERTIES*, DML_BINDING_PROPERTIES*>)(lpVtbl[8]))((IDMLCompiledOperator*)Unsafe.AsPointer(ref this), &result);
+        }
+
+        public interface Interface : IDMLDispatchable.Interface
+        {
         }
 
         public partial struct Vtbl

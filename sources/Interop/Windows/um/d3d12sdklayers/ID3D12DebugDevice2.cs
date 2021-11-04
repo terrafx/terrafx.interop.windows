@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("60ECCBC1-378D-4DF1-894C-F8AC5CE4D7DD")]
     [NativeTypeName("struct ID3D12DebugDevice2 : ID3D12DebugDevice")]
     [NativeInheritance("ID3D12DebugDevice")]
-    public unsafe partial struct ID3D12DebugDevice2
+    public unsafe partial struct ID3D12DebugDevice2 : ID3D12DebugDevice2.Interface
     {
         public void** lpVtbl;
 
@@ -72,6 +72,15 @@ namespace TerraFX.Interop
         public HRESULT GetDebugParameter(D3D12_DEBUG_DEVICE_PARAMETER_TYPE Type, void* pData, uint DataSize)
         {
             return ((delegate* unmanaged<ID3D12DebugDevice2*, D3D12_DEBUG_DEVICE_PARAMETER_TYPE, void*, uint, int>)(lpVtbl[7]))((ID3D12DebugDevice2*)Unsafe.AsPointer(ref this), Type, pData, DataSize);
+        }
+
+        public interface Interface : ID3D12DebugDevice.Interface
+        {
+            [VtblIndex(6)]
+            HRESULT SetDebugParameter(D3D12_DEBUG_DEVICE_PARAMETER_TYPE Type, [NativeTypeName("const void *")] void* pData, uint DataSize);
+
+            [VtblIndex(7)]
+            HRESULT GetDebugParameter(D3D12_DEBUG_DEVICE_PARAMETER_TYPE Type, void* pData, uint DataSize);
         }
 
         public partial struct Vtbl

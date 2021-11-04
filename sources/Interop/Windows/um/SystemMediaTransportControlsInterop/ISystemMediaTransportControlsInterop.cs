@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("DDB0472D-C911-4A1F-86D9-DC3D71A95F5A")]
     [NativeTypeName("struct ISystemMediaTransportControlsInterop : IInspectable")]
     [NativeInheritance("IInspectable")]
-    public unsafe partial struct ISystemMediaTransportControlsInterop
+    public unsafe partial struct ISystemMediaTransportControlsInterop : ISystemMediaTransportControlsInterop.Interface
     {
         public void** lpVtbl;
 
@@ -65,6 +65,12 @@ namespace TerraFX.Interop
         public HRESULT GetForWindow(HWND appWindow, [NativeTypeName("const IID &")] Guid* riid, void** mediaTransportControl)
         {
             return ((delegate* unmanaged<ISystemMediaTransportControlsInterop*, HWND, Guid*, void**, int>)(lpVtbl[6]))((ISystemMediaTransportControlsInterop*)Unsafe.AsPointer(ref this), appWindow, riid, mediaTransportControl);
+        }
+
+        public interface Interface : IInspectable.Interface
+        {
+            [VtblIndex(6)]
+            HRESULT GetForWindow(HWND appWindow, [NativeTypeName("const IID &")] Guid* riid, void** mediaTransportControl);
         }
 
         public partial struct Vtbl

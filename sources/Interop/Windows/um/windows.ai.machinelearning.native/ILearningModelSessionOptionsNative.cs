@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("C71E953F-37B4-4564-8658-D8396866DB0D")]
     [NativeTypeName("struct ILearningModelSessionOptionsNative : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct ILearningModelSessionOptionsNative
+    public unsafe partial struct ILearningModelSessionOptionsNative : ILearningModelSessionOptionsNative.Interface
     {
         public void** lpVtbl;
 
@@ -44,6 +44,12 @@ namespace TerraFX.Interop
         public HRESULT SetIntraOpNumThreadsOverride([NativeTypeName("UINT32")] uint intraOpNumThreads)
         {
             return ((delegate* unmanaged<ILearningModelSessionOptionsNative*, uint, int>)(lpVtbl[3]))((ILearningModelSessionOptionsNative*)Unsafe.AsPointer(ref this), intraOpNumThreads);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT SetIntraOpNumThreadsOverride([NativeTypeName("UINT32")] uint intraOpNumThreads);
         }
 
         public partial struct Vtbl

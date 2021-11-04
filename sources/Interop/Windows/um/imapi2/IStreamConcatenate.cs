@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("27354146-7F64-5B0F-8F00-5D77AFBE261E")]
     [NativeTypeName("struct IStreamConcatenate : IStream")]
     [NativeInheritance("IStream")]
-    public unsafe partial struct IStreamConcatenate
+    public unsafe partial struct IStreamConcatenate : IStreamConcatenate.Interface
     {
         public void** lpVtbl;
 
@@ -142,6 +142,21 @@ namespace TerraFX.Interop
         public HRESULT Append2(IStream** streams, [NativeTypeName("ULONG")] uint streamCount)
         {
             return ((delegate* unmanaged<IStreamConcatenate*, IStream**, uint, int>)(lpVtbl[17]))((IStreamConcatenate*)Unsafe.AsPointer(ref this), streams, streamCount);
+        }
+
+        public interface Interface : IStream.Interface
+        {
+            [VtblIndex(14)]
+            HRESULT Initialize(IStream* stream1, IStream* stream2);
+
+            [VtblIndex(15)]
+            HRESULT Initialize2(IStream** streams, [NativeTypeName("ULONG")] uint streamCount);
+
+            [VtblIndex(16)]
+            HRESULT Append(IStream* stream);
+
+            [VtblIndex(17)]
+            HRESULT Append2(IStream** streams, [NativeTypeName("ULONG")] uint streamCount);
         }
 
         public partial struct Vtbl

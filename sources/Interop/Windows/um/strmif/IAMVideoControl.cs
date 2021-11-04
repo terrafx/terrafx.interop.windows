@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("6A2E0670-28E4-11D0-A18C-00A0C9118956")]
     [NativeTypeName("struct IAMVideoControl : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IAMVideoControl
+    public unsafe partial struct IAMVideoControl : IAMVideoControl.Interface
     {
         public void** lpVtbl;
 
@@ -79,6 +79,27 @@ namespace TerraFX.Interop
         public HRESULT GetFrameRateList(IPin* pPin, [NativeTypeName("long")] int iIndex, SIZE Dimensions, [NativeTypeName("long *")] int* ListSize, [NativeTypeName("LONGLONG **")] long** FrameRates)
         {
             return ((delegate* unmanaged<IAMVideoControl*, IPin*, int, SIZE, int*, long**, int>)(lpVtbl[8]))((IAMVideoControl*)Unsafe.AsPointer(ref this), pPin, iIndex, Dimensions, ListSize, FrameRates);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetCaps(IPin* pPin, [NativeTypeName("long *")] int* pCapsFlags);
+
+            [VtblIndex(4)]
+            HRESULT SetMode(IPin* pPin, [NativeTypeName("long")] int Mode);
+
+            [VtblIndex(5)]
+            HRESULT GetMode(IPin* pPin, [NativeTypeName("long *")] int* Mode);
+
+            [VtblIndex(6)]
+            HRESULT GetCurrentActualFrameRate(IPin* pPin, [NativeTypeName("LONGLONG *")] long* ActualFrameRate);
+
+            [VtblIndex(7)]
+            HRESULT GetMaxAvailableFrameRate(IPin* pPin, [NativeTypeName("long")] int iIndex, SIZE Dimensions, [NativeTypeName("LONGLONG *")] long* MaxAvailableFrameRate);
+
+            [VtblIndex(8)]
+            HRESULT GetFrameRateList(IPin* pPin, [NativeTypeName("long")] int iIndex, SIZE Dimensions, [NativeTypeName("long *")] int* ListSize, [NativeTypeName("LONGLONG **")] long** FrameRates);
         }
 
         public partial struct Vtbl

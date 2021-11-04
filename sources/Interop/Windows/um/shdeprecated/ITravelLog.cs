@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("66A9CB08-4802-11D2-A561-00A0C92DBFE8")]
     [NativeTypeName("struct ITravelLog : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct ITravelLog
+    public unsafe partial struct ITravelLog : ITravelLog.Interface
     {
         public void** lpVtbl;
 
@@ -115,6 +115,43 @@ namespace TerraFX.Interop
         public HRESULT Revert()
         {
             return ((delegate* unmanaged<ITravelLog*, int>)(lpVtbl[13]))((ITravelLog*)Unsafe.AsPointer(ref this));
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT AddEntry(IUnknown* punk, BOOL fIsLocalAnchor);
+
+            [VtblIndex(4)]
+            HRESULT UpdateEntry(IUnknown* punk, BOOL fIsLocalAnchor);
+
+            [VtblIndex(5)]
+            HRESULT UpdateExternal(IUnknown* punk, IUnknown* punkHLBrowseContext);
+
+            [VtblIndex(6)]
+            HRESULT Travel(IUnknown* punk, int iOffset);
+
+            [VtblIndex(7)]
+            HRESULT GetTravelEntry(IUnknown* punk, int iOffset, ITravelEntry** ppte);
+
+            [VtblIndex(8)]
+            HRESULT FindTravelEntry(IUnknown* punk, [NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidl, ITravelEntry** ppte);
+
+            [VtblIndex(9)]
+            HRESULT GetToolTipText(IUnknown* punk, int iOffset, int idsTemplate, [NativeTypeName("LPWSTR")] ushort* pwzText, [NativeTypeName("DWORD")] uint cchText);
+
+            [VtblIndex(10)]
+            HRESULT InsertMenuEntries(IUnknown* punk, HMENU hmenu, int nPos, int idFirst, int idLast, [NativeTypeName("DWORD")] uint dwFlags);
+
+            [VtblIndex(11)]
+            HRESULT Clone(ITravelLog** pptl);
+
+            [VtblIndex(12)]
+            [return: NativeTypeName("DWORD")]
+            uint CountEntries(IUnknown* punk);
+
+            [VtblIndex(13)]
+            HRESULT Revert();
         }
 
         public partial struct Vtbl

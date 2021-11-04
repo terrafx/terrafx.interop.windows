@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("2735413D-7F64-5B0F-8F00-5D77AFBE261E")]
     [NativeTypeName("struct IDiscFormat2DataEventArgs : IWriteEngine2EventArgs")]
     [NativeInheritance("IWriteEngine2EventArgs")]
-    public unsafe partial struct IDiscFormat2DataEventArgs
+    public unsafe partial struct IDiscFormat2DataEventArgs : IDiscFormat2DataEventArgs.Interface
     {
         public void** lpVtbl;
 
@@ -142,6 +142,21 @@ namespace TerraFX.Interop
         public HRESULT get_CurrentAction(IMAPI_FORMAT2_DATA_WRITE_ACTION* value)
         {
             return ((delegate* unmanaged<IDiscFormat2DataEventArgs*, IMAPI_FORMAT2_DATA_WRITE_ACTION*, int>)(lpVtbl[17]))((IDiscFormat2DataEventArgs*)Unsafe.AsPointer(ref this), value);
+        }
+
+        public interface Interface : IWriteEngine2EventArgs.Interface
+        {
+            [VtblIndex(14)]
+            HRESULT get_ElapsedTime([NativeTypeName("LONG *")] int* value);
+
+            [VtblIndex(15)]
+            HRESULT get_RemainingTime([NativeTypeName("LONG *")] int* value);
+
+            [VtblIndex(16)]
+            HRESULT get_TotalTime([NativeTypeName("LONG *")] int* value);
+
+            [VtblIndex(17)]
+            HRESULT get_CurrentAction(IMAPI_FORMAT2_DATA_WRITE_ACTION* value);
         }
 
         public partial struct Vtbl

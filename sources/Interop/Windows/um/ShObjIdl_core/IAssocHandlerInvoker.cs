@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("92218CAB-ECAA-4335-8133-807FD234C2EE")]
     [NativeTypeName("struct IAssocHandlerInvoker : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IAssocHandlerInvoker
+    public unsafe partial struct IAssocHandlerInvoker : IAssocHandlerInvoker.Interface
     {
         public void** lpVtbl;
 
@@ -51,6 +51,15 @@ namespace TerraFX.Interop
         public HRESULT Invoke()
         {
             return ((delegate* unmanaged<IAssocHandlerInvoker*, int>)(lpVtbl[4]))((IAssocHandlerInvoker*)Unsafe.AsPointer(ref this));
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT SupportsSelection();
+
+            [VtblIndex(4)]
+            HRESULT Invoke();
         }
 
         public partial struct Vtbl

@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("EB0FE175-1A3A-11D0-89B3-00A0C90A90AC")]
     [NativeTypeName("struct IDeskBarClient : IOleWindow")]
     [NativeInheritance("IOleWindow")]
-    public unsafe partial struct IDeskBarClient
+    public unsafe partial struct IDeskBarClient : IDeskBarClient.Interface
     {
         public void** lpVtbl;
 
@@ -79,6 +79,21 @@ namespace TerraFX.Interop
         public HRESULT GetSize([NativeTypeName("DWORD")] uint dwWhich, [NativeTypeName("LPRECT")] RECT* prc)
         {
             return ((delegate* unmanaged<IDeskBarClient*, uint, RECT*, int>)(lpVtbl[8]))((IDeskBarClient*)Unsafe.AsPointer(ref this), dwWhich, prc);
+        }
+
+        public interface Interface : IOleWindow.Interface
+        {
+            [VtblIndex(5)]
+            HRESULT SetDeskBarSite(IUnknown* punkSite);
+
+            [VtblIndex(6)]
+            HRESULT SetModeDBC([NativeTypeName("DWORD")] uint dwMode);
+
+            [VtblIndex(7)]
+            HRESULT UIActivateDBC([NativeTypeName("DWORD")] uint dwState);
+
+            [VtblIndex(8)]
+            HRESULT GetSize([NativeTypeName("DWORD")] uint dwWhich, [NativeTypeName("LPRECT")] RECT* prc);
         }
 
         public partial struct Vtbl

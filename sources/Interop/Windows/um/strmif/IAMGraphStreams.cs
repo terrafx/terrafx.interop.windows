@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("632105FA-072E-11D3-8AF9-00C04FB6BD3D")]
     [NativeTypeName("struct IAMGraphStreams : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IAMGraphStreams
+    public unsafe partial struct IAMGraphStreams : IAMGraphStreams.Interface
     {
         public void** lpVtbl;
 
@@ -58,6 +58,18 @@ namespace TerraFX.Interop
         public HRESULT SetMaxGraphLatency([NativeTypeName("REFERENCE_TIME")] long rtMaxGraphLatency)
         {
             return ((delegate* unmanaged<IAMGraphStreams*, long, int>)(lpVtbl[5]))((IAMGraphStreams*)Unsafe.AsPointer(ref this), rtMaxGraphLatency);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT FindUpstreamInterface(IPin* pPin, [NativeTypeName("const IID &")] Guid* riid, void** ppvInterface, [NativeTypeName("DWORD")] uint dwFlags);
+
+            [VtblIndex(4)]
+            HRESULT SyncUsingStreamOffset(BOOL bUseStreamOffset);
+
+            [VtblIndex(5)]
+            HRESULT SetMaxGraphLatency([NativeTypeName("REFERENCE_TIME")] long rtMaxGraphLatency);
         }
 
         public partial struct Vtbl

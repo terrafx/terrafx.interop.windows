@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("DD95B90B-F05F-4F6A-BD65-25BFB264BD84")]
     [NativeTypeName("struct IDXGISwapChainMedia : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IDXGISwapChainMedia
+    public unsafe partial struct IDXGISwapChainMedia : IDXGISwapChainMedia.Interface
     {
         public void** lpVtbl;
 
@@ -58,6 +58,18 @@ namespace TerraFX.Interop
         public HRESULT CheckPresentDurationSupport(uint DesiredPresentDuration, uint* pClosestSmallerPresentDuration, uint* pClosestLargerPresentDuration)
         {
             return ((delegate* unmanaged<IDXGISwapChainMedia*, uint, uint*, uint*, int>)(lpVtbl[5]))((IDXGISwapChainMedia*)Unsafe.AsPointer(ref this), DesiredPresentDuration, pClosestSmallerPresentDuration, pClosestLargerPresentDuration);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetFrameStatisticsMedia(DXGI_FRAME_STATISTICS_MEDIA* pStats);
+
+            [VtblIndex(4)]
+            HRESULT SetPresentDuration(uint Duration);
+
+            [VtblIndex(5)]
+            HRESULT CheckPresentDurationSupport(uint DesiredPresentDuration, uint* pClosestSmallerPresentDuration, uint* pClosestLargerPresentDuration);
         }
 
         public partial struct Vtbl

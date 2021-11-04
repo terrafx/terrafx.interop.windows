@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("6295DF41-35EE-11D1-8707-00C04FD93327")]
     [NativeTypeName("struct ISyncMgrSynchronizeCallback : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct ISyncMgrSynchronizeCallback
+    public unsafe partial struct ISyncMgrSynchronizeCallback : ISyncMgrSynchronizeCallback.Interface
     {
         public void** lpVtbl;
 
@@ -100,6 +100,36 @@ namespace TerraFX.Interop
         public HRESULT EstablishConnection([NativeTypeName("LPCWSTR")] ushort* pwszConnection, [NativeTypeName("DWORD")] uint dwReserved)
         {
             return ((delegate* unmanaged<ISyncMgrSynchronizeCallback*, ushort*, uint, int>)(lpVtbl[11]))((ISyncMgrSynchronizeCallback*)Unsafe.AsPointer(ref this), pwszConnection, dwReserved);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT ShowPropertiesCompleted(HRESULT hr);
+
+            [VtblIndex(4)]
+            HRESULT PrepareForSyncCompleted(HRESULT hr);
+
+            [VtblIndex(5)]
+            HRESULT SynchronizeCompleted(HRESULT hr);
+
+            [VtblIndex(6)]
+            HRESULT ShowErrorCompleted(HRESULT hr, [NativeTypeName("ULONG")] uint cItems, [NativeTypeName("const GUID *")] Guid* pItemIDs);
+
+            [VtblIndex(7)]
+            HRESULT EnableModeless(BOOL fEnable);
+
+            [VtblIndex(8)]
+            HRESULT Progress([NativeTypeName("const GUID &")] Guid* ItemID, [NativeTypeName("const SYNCMGRPROGRESSITEM *")] SYNCMGRPROGRESSITEM* pSyncProgressItem);
+
+            [VtblIndex(9)]
+            HRESULT LogError([NativeTypeName("DWORD")] uint dwErrorLevel, [NativeTypeName("LPCWSTR")] ushort* pszErrorText, [NativeTypeName("const SYNCMGRLOGERRORINFO *")] SYNCMGRLOGERRORINFO* pSyncLogError);
+
+            [VtblIndex(10)]
+            HRESULT DeleteLogError([NativeTypeName("const GUID &")] Guid* ErrorID, [NativeTypeName("DWORD")] uint dwReserved);
+
+            [VtblIndex(11)]
+            HRESULT EstablishConnection([NativeTypeName("LPCWSTR")] ushort* pwszConnection, [NativeTypeName("DWORD")] uint dwReserved);
         }
 
         public partial struct Vtbl

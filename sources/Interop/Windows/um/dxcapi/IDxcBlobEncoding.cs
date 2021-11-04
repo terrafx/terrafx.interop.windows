@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("7241D424-2646-4191-97C0-98E96E42FC68")]
     [NativeTypeName("struct IDxcBlobEncoding : IDxcBlob")]
     [NativeInheritance("IDxcBlob")]
-    public unsafe partial struct IDxcBlobEncoding
+    public unsafe partial struct IDxcBlobEncoding : IDxcBlobEncoding.Interface
     {
         public void** lpVtbl;
 
@@ -60,6 +60,12 @@ namespace TerraFX.Interop
         public HRESULT GetEncoding(BOOL* pKnown, [NativeTypeName("UINT32 *")] uint* pCodePage)
         {
             return ((delegate* unmanaged<IDxcBlobEncoding*, BOOL*, uint*, int>)(lpVtbl[5]))((IDxcBlobEncoding*)Unsafe.AsPointer(ref this), pKnown, pCodePage);
+        }
+
+        public interface Interface : IDxcBlob.Interface
+        {
+            [VtblIndex(5)]
+            HRESULT GetEncoding(BOOL* pKnown, [NativeTypeName("UINT32 *")] uint* pCodePage);
         }
 
         public partial struct Vtbl

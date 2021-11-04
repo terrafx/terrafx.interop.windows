@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("F67E0EDD-9E3D-4ECC-8C32-4183253DFE70")]
     [NativeTypeName("struct IDWriteTextFormat2 : IDWriteTextFormat1")]
     [NativeInheritance("IDWriteTextFormat1")]
-    public unsafe partial struct IDWriteTextFormat2
+    public unsafe partial struct IDWriteTextFormat2 : IDWriteTextFormat2.Interface
     {
         public void** lpVtbl;
 
@@ -284,6 +284,15 @@ namespace TerraFX.Interop
         public HRESULT GetLineSpacing(DWRITE_LINE_SPACING* lineSpacingOptions)
         {
             return ((delegate* unmanaged<IDWriteTextFormat2*, DWRITE_LINE_SPACING*, int>)(lpVtbl[37]))((IDWriteTextFormat2*)Unsafe.AsPointer(ref this), lineSpacingOptions);
+        }
+
+        public interface Interface : IDWriteTextFormat1.Interface
+        {
+            [VtblIndex(36)]
+            HRESULT SetLineSpacing([NativeTypeName("const DWRITE_LINE_SPACING *")] DWRITE_LINE_SPACING* lineSpacingOptions);
+
+            [VtblIndex(37)]
+            HRESULT GetLineSpacing(DWRITE_LINE_SPACING* lineSpacingOptions);
         }
 
         public partial struct Vtbl

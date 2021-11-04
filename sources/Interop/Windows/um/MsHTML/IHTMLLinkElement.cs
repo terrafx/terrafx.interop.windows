@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("3050F205-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct IHTMLLinkElement : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct IHTMLLinkElement
+    public unsafe partial struct IHTMLLinkElement : IHTMLLinkElement.Interface
     {
         public void** lpVtbl;
 
@@ -205,6 +205,69 @@ namespace TerraFX.Interop
         public HRESULT get_media([NativeTypeName("BSTR *")] ushort** p)
         {
             return ((delegate* unmanaged<IHTMLLinkElement*, ushort**, int>)(lpVtbl[26]))((IHTMLLinkElement*)Unsafe.AsPointer(ref this), p);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT put_href([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(8)]
+            HRESULT get_href([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(9)]
+            HRESULT put_rel([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(10)]
+            HRESULT get_rel([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(11)]
+            HRESULT put_rev([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(12)]
+            HRESULT get_rev([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(13)]
+            HRESULT put_type([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(14)]
+            HRESULT get_type([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(15)]
+            HRESULT get_readyState([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(16)]
+            HRESULT put_onreadystatechange(VARIANT v);
+
+            [VtblIndex(17)]
+            HRESULT get_onreadystatechange(VARIANT* p);
+
+            [VtblIndex(18)]
+            HRESULT put_onload(VARIANT v);
+
+            [VtblIndex(19)]
+            HRESULT get_onload(VARIANT* p);
+
+            [VtblIndex(20)]
+            HRESULT put_onerror(VARIANT v);
+
+            [VtblIndex(21)]
+            HRESULT get_onerror(VARIANT* p);
+
+            [VtblIndex(22)]
+            HRESULT get_styleSheet(IHTMLStyleSheet** p);
+
+            [VtblIndex(23)]
+            HRESULT put_disabled([NativeTypeName("VARIANT_BOOL")] short v);
+
+            [VtblIndex(24)]
+            HRESULT get_disabled([NativeTypeName("VARIANT_BOOL *")] short* p);
+
+            [VtblIndex(25)]
+            HRESULT put_media([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(26)]
+            HRESULT get_media([NativeTypeName("BSTR *")] ushort** p);
         }
 
         public partial struct Vtbl

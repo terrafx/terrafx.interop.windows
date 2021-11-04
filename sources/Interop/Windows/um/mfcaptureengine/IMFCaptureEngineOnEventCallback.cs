@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("AEDA51C0-9025-4983-9012-DE597B88B089")]
     [NativeTypeName("struct IMFCaptureEngineOnEventCallback : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IMFCaptureEngineOnEventCallback
+    public unsafe partial struct IMFCaptureEngineOnEventCallback : IMFCaptureEngineOnEventCallback.Interface
     {
         public void** lpVtbl;
 
@@ -44,6 +44,12 @@ namespace TerraFX.Interop
         public HRESULT OnEvent(IMFMediaEvent* pEvent)
         {
             return ((delegate* unmanaged<IMFCaptureEngineOnEventCallback*, IMFMediaEvent*, int>)(lpVtbl[3]))((IMFCaptureEngineOnEventCallback*)Unsafe.AsPointer(ref this), pEvent);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT OnEvent(IMFMediaEvent* pEvent);
         }
 
         public partial struct Vtbl

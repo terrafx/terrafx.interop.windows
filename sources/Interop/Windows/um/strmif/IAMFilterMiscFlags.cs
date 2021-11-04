@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("2DD74950-A890-11D1-ABE8-00A0C905F375")]
     [NativeTypeName("struct IAMFilterMiscFlags : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IAMFilterMiscFlags
+    public unsafe partial struct IAMFilterMiscFlags : IAMFilterMiscFlags.Interface
     {
         public void** lpVtbl;
 
@@ -45,6 +45,13 @@ namespace TerraFX.Interop
         public uint GetMiscFlags()
         {
             return ((delegate* unmanaged<IAMFilterMiscFlags*, uint>)(lpVtbl[3]))((IAMFilterMiscFlags*)Unsafe.AsPointer(ref this));
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            [return: NativeTypeName("ULONG")]
+            uint GetMiscFlags();
         }
 
         public partial struct Vtbl

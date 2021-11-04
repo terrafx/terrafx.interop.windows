@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("3B53A497-3C5C-48D1-9EA3-BB7EAC8CD7D4")]
     [NativeTypeName("struct IAppxManifestQualifiedResource : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IAppxManifestQualifiedResource
+    public unsafe partial struct IAppxManifestQualifiedResource : IAppxManifestQualifiedResource.Interface
     {
         public void** lpVtbl;
 
@@ -58,6 +58,18 @@ namespace TerraFX.Interop
         public HRESULT GetDXFeatureLevel(DX_FEATURE_LEVEL* dxFeatureLevel)
         {
             return ((delegate* unmanaged<IAppxManifestQualifiedResource*, DX_FEATURE_LEVEL*, int>)(lpVtbl[5]))((IAppxManifestQualifiedResource*)Unsafe.AsPointer(ref this), dxFeatureLevel);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetLanguage([NativeTypeName("LPWSTR *")] ushort** language);
+
+            [VtblIndex(4)]
+            HRESULT GetScale([NativeTypeName("UINT32 *")] uint* scale);
+
+            [VtblIndex(5)]
+            HRESULT GetDXFeatureLevel(DX_FEATURE_LEVEL* dxFeatureLevel);
         }
 
         public partial struct Vtbl

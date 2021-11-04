@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("FA1005E9-3D16-484C-BFC9-62B61E56EC4E")]
     [NativeTypeName("struct IDirectManipulationManager2 : IDirectManipulationManager")]
     [NativeInheritance("IDirectManipulationManager")]
-    public unsafe partial struct IDirectManipulationManager2
+    public unsafe partial struct IDirectManipulationManager2 : IDirectManipulationManager2.Interface
     {
         public void** lpVtbl;
 
@@ -93,6 +93,12 @@ namespace TerraFX.Interop
         public HRESULT CreateBehavior([NativeTypeName("const IID &")] Guid* clsid, [NativeTypeName("const IID &")] Guid* riid, void** @object)
         {
             return ((delegate* unmanaged<IDirectManipulationManager2*, Guid*, Guid*, void**, int>)(lpVtbl[10]))((IDirectManipulationManager2*)Unsafe.AsPointer(ref this), clsid, riid, @object);
+        }
+
+        public interface Interface : IDirectManipulationManager.Interface
+        {
+            [VtblIndex(10)]
+            HRESULT CreateBehavior([NativeTypeName("const IID &")] Guid* clsid, [NativeTypeName("const IID &")] Guid* riid, void** @object);
         }
 
         public partial struct Vtbl

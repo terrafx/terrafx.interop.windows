@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("56A868A0-0AD4-11CE-B03A-0020AF0BA770")]
     [NativeTypeName("struct IOverlayNotify : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IOverlayNotify
+    public unsafe partial struct IOverlayNotify : IOverlayNotify.Interface
     {
         public void** lpVtbl;
 
@@ -65,6 +65,21 @@ namespace TerraFX.Interop
         public HRESULT OnPositionChange([NativeTypeName("const RECT *")] RECT* pSourceRect, [NativeTypeName("const RECT *")] RECT* pDestinationRect)
         {
             return ((delegate* unmanaged<IOverlayNotify*, RECT*, RECT*, int>)(lpVtbl[6]))((IOverlayNotify*)Unsafe.AsPointer(ref this), pSourceRect, pDestinationRect);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT OnPaletteChange([NativeTypeName("DWORD")] uint dwColors, [NativeTypeName("const PALETTEENTRY *")] PALETTEENTRY* pPalette);
+
+            [VtblIndex(4)]
+            HRESULT OnClipChange([NativeTypeName("const RECT *")] RECT* pSourceRect, [NativeTypeName("const RECT *")] RECT* pDestinationRect, [NativeTypeName("const RGNDATA *")] RGNDATA* pRgnData);
+
+            [VtblIndex(5)]
+            HRESULT OnColorKeyChange([NativeTypeName("const COLORKEY *")] COLORKEY* pColorKey);
+
+            [VtblIndex(6)]
+            HRESULT OnPositionChange([NativeTypeName("const RECT *")] RECT* pSourceRect, [NativeTypeName("const RECT *")] RECT* pDestinationRect);
         }
 
         public partial struct Vtbl

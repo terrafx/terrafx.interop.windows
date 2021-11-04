@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("3050F83F-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct ITemplatePrinter2 : ITemplatePrinter")]
     [NativeInheritance("ITemplatePrinter")]
-    public unsafe partial struct ITemplatePrinter2
+    public unsafe partial struct ITemplatePrinter2 : ITemplatePrinter2.Interface
     {
         public void** lpVtbl;
 
@@ -513,6 +513,36 @@ namespace TerraFX.Interop
         public HRESULT deviceSupports([NativeTypeName("BSTR")] ushort* bstrProperty, VARIANT* pvar)
         {
             return ((delegate* unmanaged<ITemplatePrinter2*, ushort*, VARIANT*, int>)(lpVtbl[70]))((ITemplatePrinter2*)Unsafe.AsPointer(ref this), bstrProperty, pvar);
+        }
+
+        public interface Interface : ITemplatePrinter.Interface
+        {
+            [VtblIndex(62)]
+            HRESULT put_selectionEnabled([NativeTypeName("VARIANT_BOOL")] short v);
+
+            [VtblIndex(63)]
+            HRESULT get_selectionEnabled([NativeTypeName("VARIANT_BOOL *")] short* p);
+
+            [VtblIndex(64)]
+            HRESULT put_frameActiveEnabled([NativeTypeName("VARIANT_BOOL")] short v);
+
+            [VtblIndex(65)]
+            HRESULT get_frameActiveEnabled([NativeTypeName("VARIANT_BOOL *")] short* p);
+
+            [VtblIndex(66)]
+            HRESULT put_orientation([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(67)]
+            HRESULT get_orientation([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(68)]
+            HRESULT put_usePrinterCopyCollate([NativeTypeName("VARIANT_BOOL")] short v);
+
+            [VtblIndex(69)]
+            HRESULT get_usePrinterCopyCollate([NativeTypeName("VARIANT_BOOL *")] short* p);
+
+            [VtblIndex(70)]
+            HRESULT deviceSupports([NativeTypeName("BSTR")] ushort* bstrProperty, VARIANT* pvar);
         }
 
         public partial struct Vtbl

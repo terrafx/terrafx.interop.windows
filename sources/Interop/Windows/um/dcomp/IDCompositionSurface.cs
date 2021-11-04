@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("BB8A4953-2C99-4F5A-96F5-4819027FA3AC")]
     [NativeTypeName("struct IDCompositionSurface : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IDCompositionSurface
+    public unsafe partial struct IDCompositionSurface : IDCompositionSurface.Interface
     {
         public void** lpVtbl;
 
@@ -72,6 +72,24 @@ namespace TerraFX.Interop
         public HRESULT Scroll([NativeTypeName("const RECT *")] RECT* scrollRect, [NativeTypeName("const RECT *")] RECT* clipRect, int offsetX, int offsetY)
         {
             return ((delegate* unmanaged<IDCompositionSurface*, RECT*, RECT*, int, int, int>)(lpVtbl[7]))((IDCompositionSurface*)Unsafe.AsPointer(ref this), scrollRect, clipRect, offsetX, offsetY);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT BeginDraw([NativeTypeName("const RECT *")] RECT* updateRect, [NativeTypeName("const IID &")] Guid* iid, void** updateObject, POINT* updateOffset);
+
+            [VtblIndex(4)]
+            HRESULT EndDraw();
+
+            [VtblIndex(5)]
+            HRESULT SuspendDraw();
+
+            [VtblIndex(6)]
+            HRESULT ResumeDraw();
+
+            [VtblIndex(7)]
+            HRESULT Scroll([NativeTypeName("const RECT *")] RECT* scrollRect, [NativeTypeName("const RECT *")] RECT* clipRect, int offsetX, int offsetY);
         }
 
         public partial struct Vtbl

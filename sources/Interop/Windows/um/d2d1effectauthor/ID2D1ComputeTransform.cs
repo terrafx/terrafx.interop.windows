@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("0D85573C-01E3-4F7D-BFD9-0D60608BF3C3")]
     [NativeTypeName("struct ID2D1ComputeTransform : ID2D1Transform")]
     [NativeInheritance("ID2D1Transform")]
-    public unsafe partial struct ID2D1ComputeTransform
+    public unsafe partial struct ID2D1ComputeTransform : ID2D1ComputeTransform.Interface
     {
         public void** lpVtbl;
 
@@ -80,6 +80,15 @@ namespace TerraFX.Interop
         public HRESULT CalculateThreadgroups([NativeTypeName("const D2D1_RECT_L *")] RECT* outputRect, [NativeTypeName("UINT32 *")] uint* dimensionX, [NativeTypeName("UINT32 *")] uint* dimensionY, [NativeTypeName("UINT32 *")] uint* dimensionZ)
         {
             return ((delegate* unmanaged<ID2D1ComputeTransform*, RECT*, uint*, uint*, uint*, int>)(lpVtbl[8]))((ID2D1ComputeTransform*)Unsafe.AsPointer(ref this), outputRect, dimensionX, dimensionY, dimensionZ);
+        }
+
+        public interface Interface : ID2D1Transform.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT SetComputeInfo(ID2D1ComputeInfo* computeInfo);
+
+            [VtblIndex(8)]
+            HRESULT CalculateThreadgroups([NativeTypeName("const D2D1_RECT_L *")] RECT* outputRect, [NativeTypeName("UINT32 *")] uint* dimensionX, [NativeTypeName("UINT32 *")] uint* dimensionY, [NativeTypeName("UINT32 *")] uint* dimensionZ);
         }
 
         public partial struct Vtbl

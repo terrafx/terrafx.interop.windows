@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("A2EF5353-F5A8-4EB3-90D2-CB526ACB3CDD")]
     [NativeTypeName("struct IDiaSourceFile : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IDiaSourceFile
+    public unsafe partial struct IDiaSourceFile : IDiaSourceFile.Interface
     {
         public void** lpVtbl;
 
@@ -72,6 +72,24 @@ namespace TerraFX.Interop
         public HRESULT get_checksum([NativeTypeName("DWORD")] uint cbData, [NativeTypeName("DWORD *")] uint* pcbData, byte* pbData)
         {
             return ((delegate* unmanaged<IDiaSourceFile*, uint, uint*, byte*, int>)(lpVtbl[7]))((IDiaSourceFile*)Unsafe.AsPointer(ref this), cbData, pcbData, pbData);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT get_uniqueId([NativeTypeName("DWORD *")] uint* pRetVal);
+
+            [VtblIndex(4)]
+            HRESULT get_fileName([NativeTypeName("BSTR *")] ushort** pRetVal);
+
+            [VtblIndex(5)]
+            HRESULT get_checksumType([NativeTypeName("DWORD *")] uint* pRetVal);
+
+            [VtblIndex(6)]
+            HRESULT get_compilands(IDiaEnumSymbols** pRetVal);
+
+            [VtblIndex(7)]
+            HRESULT get_checksum([NativeTypeName("DWORD")] uint cbData, [NativeTypeName("DWORD *")] uint* pcbData, byte* pbData);
         }
 
         public partial struct Vtbl

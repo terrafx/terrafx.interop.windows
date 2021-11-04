@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("5E7FA7CA-DDE3-424C-89F0-9FCD6FED58CD")]
     [NativeTypeName("struct IDWriteFontFaceReference : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IDWriteFontFaceReference
+    public unsafe partial struct IDWriteFontFaceReference : IDWriteFontFaceReference.Interface
     {
         public void** lpVtbl;
 
@@ -138,6 +138,54 @@ namespace TerraFX.Interop
         public HRESULT EnqueueFileFragmentDownloadRequest([NativeTypeName("UINT64")] ulong fileOffset, [NativeTypeName("UINT64")] ulong fragmentSize)
         {
             return ((delegate* unmanaged<IDWriteFontFaceReference*, ulong, ulong, int>)(lpVtbl[16]))((IDWriteFontFaceReference*)Unsafe.AsPointer(ref this), fileOffset, fragmentSize);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT CreateFontFace(IDWriteFontFace3** fontFace);
+
+            [VtblIndex(4)]
+            HRESULT CreateFontFaceWithSimulations(DWRITE_FONT_SIMULATIONS fontFaceSimulationFlags, IDWriteFontFace3** fontFace);
+
+            [VtblIndex(5)]
+            BOOL Equals(IDWriteFontFaceReference* fontFaceReference);
+
+            [VtblIndex(6)]
+            [return: NativeTypeName("UINT32")]
+            uint GetFontFaceIndex();
+
+            [VtblIndex(7)]
+            DWRITE_FONT_SIMULATIONS GetSimulations();
+
+            [VtblIndex(8)]
+            HRESULT GetFontFile(IDWriteFontFile** fontFile);
+
+            [VtblIndex(9)]
+            [return: NativeTypeName("UINT64")]
+            ulong GetLocalFileSize();
+
+            [VtblIndex(10)]
+            [return: NativeTypeName("UINT64")]
+            ulong GetFileSize();
+
+            [VtblIndex(11)]
+            HRESULT GetFileTime(FILETIME* lastWriteTime);
+
+            [VtblIndex(12)]
+            DWRITE_LOCALITY GetLocality();
+
+            [VtblIndex(13)]
+            HRESULT EnqueueFontDownloadRequest();
+
+            [VtblIndex(14)]
+            HRESULT EnqueueCharacterDownloadRequest([NativeTypeName("const WCHAR *")] ushort* characters, [NativeTypeName("UINT32")] uint characterCount);
+
+            [VtblIndex(15)]
+            HRESULT EnqueueGlyphDownloadRequest([NativeTypeName("const UINT16 *")] ushort* glyphIndices, [NativeTypeName("UINT32")] uint glyphCount);
+
+            [VtblIndex(16)]
+            HRESULT EnqueueFileFragmentDownloadRequest([NativeTypeName("UINT64")] ulong fileOffset, [NativeTypeName("UINT64")] ulong fragmentSize);
         }
 
         public partial struct Vtbl

@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("30510750-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct IHTMLPerformanceNavigation : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct IHTMLPerformanceNavigation
+    public unsafe partial struct IHTMLPerformanceNavigation : IHTMLPerformanceNavigation.Interface
     {
         public void** lpVtbl;
 
@@ -93,6 +93,21 @@ namespace TerraFX.Interop
         public HRESULT toJSON(VARIANT* pVar)
         {
             return ((delegate* unmanaged<IHTMLPerformanceNavigation*, VARIANT*, int>)(lpVtbl[10]))((IHTMLPerformanceNavigation*)Unsafe.AsPointer(ref this), pVar);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT get_type([NativeTypeName("ULONG *")] uint* p);
+
+            [VtblIndex(8)]
+            HRESULT get_redirectCount([NativeTypeName("ULONG *")] uint* p);
+
+            [VtblIndex(9)]
+            HRESULT toString([NativeTypeName("BSTR *")] ushort** @string);
+
+            [VtblIndex(10)]
+            HRESULT toJSON(VARIANT* pVar);
         }
 
         public partial struct Vtbl

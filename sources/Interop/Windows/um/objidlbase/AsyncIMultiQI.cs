@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("000E0020-0000-0000-C000-000000000046")]
     [NativeTypeName("struct AsyncIMultiQI : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct AsyncIMultiQI
+    public unsafe partial struct AsyncIMultiQI : AsyncIMultiQI.Interface
     {
         public void** lpVtbl;
 
@@ -51,6 +51,15 @@ namespace TerraFX.Interop
         public HRESULT Finish_QueryMultipleInterfaces(MULTI_QI* pMQIs)
         {
             return ((delegate* unmanaged<AsyncIMultiQI*, MULTI_QI*, int>)(lpVtbl[4]))((AsyncIMultiQI*)Unsafe.AsPointer(ref this), pMQIs);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT Begin_QueryMultipleInterfaces([NativeTypeName("ULONG")] uint cMQIs, MULTI_QI* pMQIs);
+
+            [VtblIndex(4)]
+            HRESULT Finish_QueryMultipleInterfaces(MULTI_QI* pMQIs);
         }
 
         public partial struct Vtbl

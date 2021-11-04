@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("6FFA3B44-FC2D-40D1-8AFC-32911C7F1AD1")]
     [NativeTypeName("struct ISpeechGrammarRules : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct ISpeechGrammarRules
+    public unsafe partial struct ISpeechGrammarRules : ISpeechGrammarRules.Interface
     {
         public void** lpVtbl;
 
@@ -121,6 +121,33 @@ namespace TerraFX.Interop
         public HRESULT CommitAndSave([NativeTypeName("BSTR *")] ushort** ErrorText, VARIANT* SaveStream)
         {
             return ((delegate* unmanaged<ISpeechGrammarRules*, ushort**, VARIANT*, int>)(lpVtbl[14]))((ISpeechGrammarRules*)Unsafe.AsPointer(ref this), ErrorText, SaveStream);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT get_Count([NativeTypeName("long *")] int* Count);
+
+            [VtblIndex(8)]
+            HRESULT FindRule(VARIANT RuleNameOrId, ISpeechGrammarRule** Rule);
+
+            [VtblIndex(9)]
+            HRESULT Item([NativeTypeName("long")] int Index, ISpeechGrammarRule** Rule);
+
+            [VtblIndex(10)]
+            HRESULT get__NewEnum(IUnknown** EnumVARIANT);
+
+            [VtblIndex(11)]
+            HRESULT get_Dynamic([NativeTypeName("VARIANT_BOOL *")] short* Dynamic);
+
+            [VtblIndex(12)]
+            HRESULT Add([NativeTypeName("BSTR")] ushort* RuleName, SpeechRuleAttributes Attributes, [NativeTypeName("long")] int RuleId, ISpeechGrammarRule** Rule);
+
+            [VtblIndex(13)]
+            HRESULT Commit();
+
+            [VtblIndex(14)]
+            HRESULT CommitAndSave([NativeTypeName("BSTR *")] ushort** ErrorText, VARIANT* SaveStream);
         }
 
         public partial struct Vtbl

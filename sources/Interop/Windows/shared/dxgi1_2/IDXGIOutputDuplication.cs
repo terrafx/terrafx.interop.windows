@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("191CFAC3-A341-470D-B26E-A864F428319C")]
     [NativeTypeName("struct IDXGIOutputDuplication : IDXGIObject")]
     [NativeInheritance("IDXGIObject")]
-    public unsafe partial struct IDXGIOutputDuplication
+    public unsafe partial struct IDXGIOutputDuplication : IDXGIOutputDuplication.Interface
     {
         public void** lpVtbl;
 
@@ -121,6 +121,33 @@ namespace TerraFX.Interop
         public HRESULT ReleaseFrame()
         {
             return ((delegate* unmanaged<IDXGIOutputDuplication*, int>)(lpVtbl[14]))((IDXGIOutputDuplication*)Unsafe.AsPointer(ref this));
+        }
+
+        public interface Interface : IDXGIObject.Interface
+        {
+            [VtblIndex(7)]
+            void GetDesc(DXGI_OUTDUPL_DESC* pDesc);
+
+            [VtblIndex(8)]
+            HRESULT AcquireNextFrame(uint TimeoutInMilliseconds, DXGI_OUTDUPL_FRAME_INFO* pFrameInfo, IDXGIResource** ppDesktopResource);
+
+            [VtblIndex(9)]
+            HRESULT GetFrameDirtyRects(uint DirtyRectsBufferSize, RECT* pDirtyRectsBuffer, uint* pDirtyRectsBufferSizeRequired);
+
+            [VtblIndex(10)]
+            HRESULT GetFrameMoveRects(uint MoveRectsBufferSize, DXGI_OUTDUPL_MOVE_RECT* pMoveRectBuffer, uint* pMoveRectsBufferSizeRequired);
+
+            [VtblIndex(11)]
+            HRESULT GetFramePointerShape(uint PointerShapeBufferSize, void* pPointerShapeBuffer, uint* pPointerShapeBufferSizeRequired, DXGI_OUTDUPL_POINTER_SHAPE_INFO* pPointerShapeInfo);
+
+            [VtblIndex(12)]
+            HRESULT MapDesktopSurface(DXGI_MAPPED_RECT* pLockedRect);
+
+            [VtblIndex(13)]
+            HRESULT UnMapDesktopSurface();
+
+            [VtblIndex(14)]
+            HRESULT ReleaseFrame();
         }
 
         public partial struct Vtbl

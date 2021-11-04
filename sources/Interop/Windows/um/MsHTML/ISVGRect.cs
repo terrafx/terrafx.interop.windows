@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("305104D7-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct ISVGRect : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct ISVGRect
+    public unsafe partial struct ISVGRect : ISVGRect.Interface
     {
         public void** lpVtbl;
 
@@ -121,6 +121,33 @@ namespace TerraFX.Interop
         public HRESULT get_height(float* p)
         {
             return ((delegate* unmanaged<ISVGRect*, float*, int>)(lpVtbl[14]))((ISVGRect*)Unsafe.AsPointer(ref this), p);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT put_x(float v);
+
+            [VtblIndex(8)]
+            HRESULT get_x(float* p);
+
+            [VtblIndex(9)]
+            HRESULT put_y(float v);
+
+            [VtblIndex(10)]
+            HRESULT get_y(float* p);
+
+            [VtblIndex(11)]
+            HRESULT put_width(float v);
+
+            [VtblIndex(12)]
+            HRESULT get_width(float* p);
+
+            [VtblIndex(13)]
+            HRESULT put_height(float v);
+
+            [VtblIndex(14)]
+            HRESULT get_height(float* p);
         }
 
         public partial struct Vtbl

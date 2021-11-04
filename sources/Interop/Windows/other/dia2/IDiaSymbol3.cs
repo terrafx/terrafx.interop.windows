@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("99B665F7-C1B2-49D3-89B2-A384361ACAB5")]
     [NativeTypeName("struct IDiaSymbol3 : IDiaSymbol2")]
     [NativeInheritance("IDiaSymbol2")]
-    public unsafe partial struct IDiaSymbol3
+    public unsafe partial struct IDiaSymbol3 : IDiaSymbol3.Interface
     {
         public void** lpVtbl;
 
@@ -1724,6 +1724,15 @@ namespace TerraFX.Interop
         public HRESULT get_inlineeId([NativeTypeName("DWORD *")] uint* pRetVal)
         {
             return ((delegate* unmanaged<IDiaSymbol3*, uint*, int>)(lpVtbl[243]))((IDiaSymbol3*)Unsafe.AsPointer(ref this), pRetVal);
+        }
+
+        public interface Interface : IDiaSymbol2.Interface
+        {
+            [VtblIndex(242)]
+            HRESULT get_inlinee(IDiaSymbol** pRetVal);
+
+            [VtblIndex(243)]
+            HRESULT get_inlineeId([NativeTypeName("DWORD *")] uint* pRetVal);
         }
 
         public partial struct Vtbl

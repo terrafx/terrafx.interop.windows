@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("7B981CF0-560E-4116-9875-B099895F23D7")]
     [NativeTypeName("struct IMFSourceReaderEx : IMFSourceReader")]
     [NativeInheritance("IMFSourceReader")]
-    public unsafe partial struct IMFSourceReaderEx
+    public unsafe partial struct IMFSourceReaderEx : IMFSourceReaderEx.Interface
     {
         public void** lpVtbl;
 
@@ -135,6 +135,21 @@ namespace TerraFX.Interop
         public HRESULT GetTransformForStream([NativeTypeName("DWORD")] uint dwStreamIndex, [NativeTypeName("DWORD")] uint dwTransformIndex, Guid* pGuidCategory, IMFTransform** ppTransform)
         {
             return ((delegate* unmanaged<IMFSourceReaderEx*, uint, uint, Guid*, IMFTransform**, int>)(lpVtbl[16]))((IMFSourceReaderEx*)Unsafe.AsPointer(ref this), dwStreamIndex, dwTransformIndex, pGuidCategory, ppTransform);
+        }
+
+        public interface Interface : IMFSourceReader.Interface
+        {
+            [VtblIndex(13)]
+            HRESULT SetNativeMediaType([NativeTypeName("DWORD")] uint dwStreamIndex, IMFMediaType* pMediaType, [NativeTypeName("DWORD *")] uint* pdwStreamFlags);
+
+            [VtblIndex(14)]
+            HRESULT AddTransformForStream([NativeTypeName("DWORD")] uint dwStreamIndex, IUnknown* pTransformOrActivate);
+
+            [VtblIndex(15)]
+            HRESULT RemoveAllTransformsForStream([NativeTypeName("DWORD")] uint dwStreamIndex);
+
+            [VtblIndex(16)]
+            HRESULT GetTransformForStream([NativeTypeName("DWORD")] uint dwStreamIndex, [NativeTypeName("DWORD")] uint dwTransformIndex, Guid* pGuidCategory, IMFTransform** ppTransform);
         }
 
         public partial struct Vtbl

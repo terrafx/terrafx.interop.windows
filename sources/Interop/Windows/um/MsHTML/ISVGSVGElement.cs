@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("305104E7-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct ISVGSVGElement : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct ISVGSVGElement
+    public unsafe partial struct ISVGSVGElement : ISVGSVGElement.Interface
     {
         public void** lpVtbl;
 
@@ -436,6 +436,168 @@ namespace TerraFX.Interop
         public HRESULT getElementById([NativeTypeName("BSTR")] ushort* elementId, IHTMLElement** pResult)
         {
             return ((delegate* unmanaged<ISVGSVGElement*, ushort*, IHTMLElement**, int>)(lpVtbl[59]))((ISVGSVGElement*)Unsafe.AsPointer(ref this), elementId, pResult);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT putref_x(ISVGAnimatedLength* v);
+
+            [VtblIndex(8)]
+            HRESULT get_x(ISVGAnimatedLength** p);
+
+            [VtblIndex(9)]
+            HRESULT putref_y(ISVGAnimatedLength* v);
+
+            [VtblIndex(10)]
+            HRESULT get_y(ISVGAnimatedLength** p);
+
+            [VtblIndex(11)]
+            HRESULT putref_width(ISVGAnimatedLength* v);
+
+            [VtblIndex(12)]
+            HRESULT get_width(ISVGAnimatedLength** p);
+
+            [VtblIndex(13)]
+            HRESULT putref_height(ISVGAnimatedLength* v);
+
+            [VtblIndex(14)]
+            HRESULT get_height(ISVGAnimatedLength** p);
+
+            [VtblIndex(15)]
+            HRESULT put_contentScriptType([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(16)]
+            HRESULT get_contentScriptType([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(17)]
+            HRESULT put_contentStyleType([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(18)]
+            HRESULT get_contentStyleType([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(19)]
+            HRESULT putref_viewport(ISVGRect* v);
+
+            [VtblIndex(20)]
+            HRESULT get_viewport(ISVGRect** p);
+
+            [VtblIndex(21)]
+            HRESULT put_pixelUnitToMillimeterX(float v);
+
+            [VtblIndex(22)]
+            HRESULT get_pixelUnitToMillimeterX(float* p);
+
+            [VtblIndex(23)]
+            HRESULT put_pixelUnitToMillimeterY(float v);
+
+            [VtblIndex(24)]
+            HRESULT get_pixelUnitToMillimeterY(float* p);
+
+            [VtblIndex(25)]
+            HRESULT put_screenPixelToMillimeterX(float v);
+
+            [VtblIndex(26)]
+            HRESULT get_screenPixelToMillimeterX(float* p);
+
+            [VtblIndex(27)]
+            HRESULT put_screenPixelToMillimeterY(float v);
+
+            [VtblIndex(28)]
+            HRESULT get_screenPixelToMillimeterY(float* p);
+
+            [VtblIndex(29)]
+            HRESULT put_useCurrentView([NativeTypeName("VARIANT_BOOL")] short v);
+
+            [VtblIndex(30)]
+            HRESULT get_useCurrentView([NativeTypeName("VARIANT_BOOL *")] short* p);
+
+            [VtblIndex(31)]
+            HRESULT putref_currentView(ISVGViewSpec* v);
+
+            [VtblIndex(32)]
+            HRESULT get_currentView(ISVGViewSpec** p);
+
+            [VtblIndex(33)]
+            HRESULT put_currentScale(float v);
+
+            [VtblIndex(34)]
+            HRESULT get_currentScale(float* p);
+
+            [VtblIndex(35)]
+            HRESULT putref_currentTranslate(ISVGPoint* v);
+
+            [VtblIndex(36)]
+            HRESULT get_currentTranslate(ISVGPoint** p);
+
+            [VtblIndex(37)]
+            HRESULT suspendRedraw([NativeTypeName("ULONG")] uint maxWaitMilliseconds, [NativeTypeName("ULONG *")] uint* pResult);
+
+            [VtblIndex(38)]
+            HRESULT unsuspendRedraw([NativeTypeName("ULONG")] uint suspendHandeID);
+
+            [VtblIndex(39)]
+            HRESULT unsuspendRedrawAll();
+
+            [VtblIndex(40)]
+            HRESULT forceRedraw();
+
+            [VtblIndex(41)]
+            HRESULT pauseAnimations();
+
+            [VtblIndex(42)]
+            HRESULT unpauseAnimations();
+
+            [VtblIndex(43)]
+            HRESULT animationsPaused([NativeTypeName("VARIANT_BOOL *")] short* pResult);
+
+            [VtblIndex(44)]
+            HRESULT getCurrentTime(float* pResult);
+
+            [VtblIndex(45)]
+            HRESULT setCurrentTime(float seconds);
+
+            [VtblIndex(46)]
+            HRESULT getIntersectionList(ISVGRect* rect, ISVGElement* referenceElement, VARIANT* pResult);
+
+            [VtblIndex(47)]
+            HRESULT getEnclosureList(ISVGRect* rect, ISVGElement* referenceElement, VARIANT* pResult);
+
+            [VtblIndex(48)]
+            HRESULT checkIntersection(ISVGElement* element, ISVGRect* rect, [NativeTypeName("VARIANT_BOOL *")] short* pResult);
+
+            [VtblIndex(49)]
+            HRESULT checkEnclosure(ISVGElement* element, ISVGRect* rect, [NativeTypeName("VARIANT_BOOL *")] short* pResult);
+
+            [VtblIndex(50)]
+            HRESULT deselectAll();
+
+            [VtblIndex(51)]
+            HRESULT createSVGNumber(ISVGNumber** pResult);
+
+            [VtblIndex(52)]
+            HRESULT createSVGLength(ISVGLength** pResult);
+
+            [VtblIndex(53)]
+            HRESULT createSVGAngle(ISVGAngle** pResult);
+
+            [VtblIndex(54)]
+            HRESULT createSVGPoint(ISVGPoint** pResult);
+
+            [VtblIndex(55)]
+            HRESULT createSVGMatrix(ISVGMatrix** pResult);
+
+            [VtblIndex(56)]
+            HRESULT createSVGRect(ISVGRect** pResult);
+
+            [VtblIndex(57)]
+            HRESULT createSVGTransform(ISVGTransform** pResult);
+
+            [VtblIndex(58)]
+            HRESULT createSVGTransformFromMatrix(ISVGMatrix* matrix, ISVGTransform** pResult);
+
+            [VtblIndex(59)]
+            HRESULT getElementById([NativeTypeName("BSTR")] ushort* elementId, IHTMLElement** pResult);
         }
 
         public partial struct Vtbl

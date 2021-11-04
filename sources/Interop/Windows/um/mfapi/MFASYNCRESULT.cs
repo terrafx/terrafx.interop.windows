@@ -10,7 +10,7 @@ namespace TerraFX.Interop
 {
     [NativeTypeName("struct tagMFASYNCRESULT : IMFAsyncResult")]
     [NativeInheritance("IMFAsyncResult")]
-    public unsafe partial struct MFASYNCRESULT
+    public unsafe partial struct MFASYNCRESULT : MFASYNCRESULT.Interface
     {
         public void** lpVtbl;
 
@@ -81,6 +81,10 @@ namespace TerraFX.Interop
         public IUnknown* GetStateNoAddRef()
         {
             return ((delegate* unmanaged<MFASYNCRESULT*, IUnknown*>)(lpVtbl[7]))((MFASYNCRESULT*)Unsafe.AsPointer(ref this));
+        }
+
+        public interface Interface : IMFAsyncResult.Interface
+        {
         }
 
         public partial struct Vtbl

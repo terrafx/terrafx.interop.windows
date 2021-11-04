@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("3050F6B7-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct IElementBehaviorSiteLayout : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IElementBehaviorSiteLayout
+    public unsafe partial struct IElementBehaviorSiteLayout : IElementBehaviorSiteLayout.Interface
     {
         public void** lpVtbl;
 
@@ -58,6 +58,18 @@ namespace TerraFX.Interop
         public HRESULT GetMediaResolution(SIZE* psizeResolution)
         {
             return ((delegate* unmanaged<IElementBehaviorSiteLayout*, SIZE*, int>)(lpVtbl[5]))((IElementBehaviorSiteLayout*)Unsafe.AsPointer(ref this), psizeResolution);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT InvalidateLayoutInfo();
+
+            [VtblIndex(4)]
+            HRESULT InvalidateSize();
+
+            [VtblIndex(5)]
+            HRESULT GetMediaResolution(SIZE* psizeResolution);
         }
 
         public partial struct Vtbl

@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("3050F6A6-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct IHTMLPainter : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IHTMLPainter
+    public unsafe partial struct IHTMLPainter : IHTMLPainter.Interface
     {
         public void** lpVtbl;
 
@@ -65,6 +65,21 @@ namespace TerraFX.Interop
         public HRESULT HitTestPoint(POINT pt, BOOL* pbHit, [NativeTypeName("LONG *")] int* plPartID)
         {
             return ((delegate* unmanaged<IHTMLPainter*, POINT, BOOL*, int*, int>)(lpVtbl[6]))((IHTMLPainter*)Unsafe.AsPointer(ref this), pt, pbHit, plPartID);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT Draw(RECT rcBounds, RECT rcUpdate, [NativeTypeName("LONG")] int lDrawFlags, HDC hdc, [NativeTypeName("LPVOID")] void* pvDrawObject);
+
+            [VtblIndex(4)]
+            HRESULT OnResize(SIZE size);
+
+            [VtblIndex(5)]
+            HRESULT GetPainterInfo(HTML_PAINTER_INFO* pInfo);
+
+            [VtblIndex(6)]
+            HRESULT HitTestPoint(POINT pt, BOOL* pbHit, [NativeTypeName("LONG *")] int* plPartID);
         }
 
         public partial struct Vtbl

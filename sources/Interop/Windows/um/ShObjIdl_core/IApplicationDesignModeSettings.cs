@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("2A3DEE9A-E31D-46D6-8508-BCC597DB3557")]
     [NativeTypeName("struct IApplicationDesignModeSettings : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IApplicationDesignModeSettings
+    public unsafe partial struct IApplicationDesignModeSettings : IApplicationDesignModeSettings.Interface
     {
         public void** lpVtbl;
 
@@ -79,6 +79,27 @@ namespace TerraFX.Interop
         public HRESULT TriggerEdgeGesture(EDGE_GESTURE_KIND edgeGestureKind)
         {
             return ((delegate* unmanaged<IApplicationDesignModeSettings*, EDGE_GESTURE_KIND, int>)(lpVtbl[8]))((IApplicationDesignModeSettings*)Unsafe.AsPointer(ref this), edgeGestureKind);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT SetNativeDisplaySize(SIZE nativeDisplaySizePixels);
+
+            [VtblIndex(4)]
+            HRESULT SetScaleFactor(DEVICE_SCALE_FACTOR scaleFactor);
+
+            [VtblIndex(5)]
+            HRESULT SetApplicationViewState(APPLICATION_VIEW_STATE viewState);
+
+            [VtblIndex(6)]
+            HRESULT ComputeApplicationSize(SIZE* applicationSizePixels);
+
+            [VtblIndex(7)]
+            HRESULT IsApplicationViewStateSupported(APPLICATION_VIEW_STATE viewState, SIZE nativeDisplaySizePixels, DEVICE_SCALE_FACTOR scaleFactor, BOOL* supported);
+
+            [VtblIndex(8)]
+            HRESULT TriggerEdgeGesture(EDGE_GESTURE_KIND edgeGestureKind);
         }
 
         public partial struct Vtbl

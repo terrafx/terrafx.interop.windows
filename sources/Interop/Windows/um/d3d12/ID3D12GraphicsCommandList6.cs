@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("C3827890-E548-4CFA-96CF-5689A9370F80")]
     [NativeTypeName("struct ID3D12GraphicsCommandList6 : ID3D12GraphicsCommandList5")]
     [NativeInheritance("ID3D12GraphicsCommandList5")]
-    public unsafe partial struct ID3D12GraphicsCommandList6
+    public unsafe partial struct ID3D12GraphicsCommandList6 : ID3D12GraphicsCommandList6.Interface
     {
         public void** lpVtbl;
 
@@ -576,6 +576,12 @@ namespace TerraFX.Interop
         public void DispatchMesh(uint ThreadGroupCountX, uint ThreadGroupCountY, uint ThreadGroupCountZ)
         {
             ((delegate* unmanaged<ID3D12GraphicsCommandList6*, uint, uint, uint, void>)(lpVtbl[79]))((ID3D12GraphicsCommandList6*)Unsafe.AsPointer(ref this), ThreadGroupCountX, ThreadGroupCountY, ThreadGroupCountZ);
+        }
+
+        public interface Interface : ID3D12GraphicsCommandList5.Interface
+        {
+            [VtblIndex(79)]
+            void DispatchMesh(uint ThreadGroupCountX, uint ThreadGroupCountY, uint ThreadGroupCountZ);
         }
 
         public partial struct Vtbl

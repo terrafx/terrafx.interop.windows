@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("30510746-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct IDOMNodeIterator : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct IDOMNodeIterator
+    public unsafe partial struct IDOMNodeIterator : IDOMNodeIterator.Interface
     {
         public void** lpVtbl;
 
@@ -114,6 +114,30 @@ namespace TerraFX.Interop
         public HRESULT detach()
         {
             return ((delegate* unmanaged<IDOMNodeIterator*, int>)(lpVtbl[13]))((IDOMNodeIterator*)Unsafe.AsPointer(ref this));
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT get_root(IDispatch** p);
+
+            [VtblIndex(8)]
+            HRESULT get_whatToShow([NativeTypeName("ULONG *")] uint* p);
+
+            [VtblIndex(9)]
+            HRESULT get_filter(IDispatch** p);
+
+            [VtblIndex(10)]
+            HRESULT get_expandEntityReferences([NativeTypeName("VARIANT_BOOL *")] short* p);
+
+            [VtblIndex(11)]
+            HRESULT nextNode(IDispatch** ppRetNode);
+
+            [VtblIndex(12)]
+            HRESULT previousNode(IDispatch** ppRetNode);
+
+            [VtblIndex(13)]
+            HRESULT detach();
         }
 
         public partial struct Vtbl

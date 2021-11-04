@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("5C4EE536-6A98-4B86-A170-587013D6FD4B")]
     [NativeTypeName("struct IHolographicSpaceInterop : IInspectable")]
     [NativeInheritance("IInspectable")]
-    public unsafe partial struct IHolographicSpaceInterop
+    public unsafe partial struct IHolographicSpaceInterop : IHolographicSpaceInterop.Interface
     {
         public void** lpVtbl;
 
@@ -65,6 +65,12 @@ namespace TerraFX.Interop
         public HRESULT CreateForWindow(HWND window, [NativeTypeName("const IID &")] Guid* riid, void** holographicSpace)
         {
             return ((delegate* unmanaged<IHolographicSpaceInterop*, HWND, Guid*, void**, int>)(lpVtbl[6]))((IHolographicSpaceInterop*)Unsafe.AsPointer(ref this), window, riid, holographicSpace);
+        }
+
+        public interface Interface : IInspectable.Interface
+        {
+            [VtblIndex(6)]
+            HRESULT CreateForWindow(HWND window, [NativeTypeName("const IID &")] Guid* riid, void** holographicSpace);
         }
 
         public partial struct Vtbl

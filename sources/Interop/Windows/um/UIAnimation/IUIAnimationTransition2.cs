@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("62FF9123-A85A-4E9B-A218-435A93E268FD")]
     [NativeTypeName("struct IUIAnimationTransition2 : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IUIAnimationTransition2
+    public unsafe partial struct IUIAnimationTransition2 : IUIAnimationTransition2.Interface
     {
         public void** lpVtbl;
 
@@ -86,6 +86,30 @@ namespace TerraFX.Interop
         public HRESULT GetDuration([NativeTypeName("UI_ANIMATION_SECONDS *")] double* duration)
         {
             return ((delegate* unmanaged<IUIAnimationTransition2*, double*, int>)(lpVtbl[9]))((IUIAnimationTransition2*)Unsafe.AsPointer(ref this), duration);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetDimension(uint* dimension);
+
+            [VtblIndex(4)]
+            HRESULT SetInitialValue(double value);
+
+            [VtblIndex(5)]
+            HRESULT SetInitialVectorValue([NativeTypeName("const DOUBLE *")] double* value, uint cDimension);
+
+            [VtblIndex(6)]
+            HRESULT SetInitialVelocity(double velocity);
+
+            [VtblIndex(7)]
+            HRESULT SetInitialVectorVelocity([NativeTypeName("const DOUBLE *")] double* velocity, uint cDimension);
+
+            [VtblIndex(8)]
+            HRESULT IsDurationKnown();
+
+            [VtblIndex(9)]
+            HRESULT GetDuration([NativeTypeName("UI_ANIMATION_SECONDS *")] double* duration);
         }
 
         public partial struct Vtbl

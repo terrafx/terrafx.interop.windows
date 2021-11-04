@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("0DF60D92-6818-46D6-B358-D66170DDE466")]
     [NativeTypeName("struct IComputerInfoChangeNotify : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IComputerInfoChangeNotify
+    public unsafe partial struct IComputerInfoChangeNotify : IComputerInfoChangeNotify.Interface
     {
         public void** lpVtbl;
 
@@ -44,6 +44,12 @@ namespace TerraFX.Interop
         public HRESULT ComputerInfoChanged()
         {
             return ((delegate* unmanaged<IComputerInfoChangeNotify*, int>)(lpVtbl[3]))((IComputerInfoChangeNotify*)Unsafe.AsPointer(ref this));
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT ComputerInfoChanged();
         }
 
         public partial struct Vtbl

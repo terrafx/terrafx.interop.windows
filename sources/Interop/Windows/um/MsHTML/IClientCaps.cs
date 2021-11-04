@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("7E8BC44D-AEFF-11D1-89C2-00C04FB6BFC4")]
     [NativeTypeName("struct IClientCaps : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct IClientCaps
+    public unsafe partial struct IClientCaps : IClientCaps.Interface
     {
         public void** lpVtbl;
 
@@ -212,6 +212,72 @@ namespace TerraFX.Interop
         public HRESULT clearComponentRequest()
         {
             return ((delegate* unmanaged<IClientCaps*, int>)(lpVtbl[27]))((IClientCaps*)Unsafe.AsPointer(ref this));
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT get_javaEnabled([NativeTypeName("VARIANT_BOOL *")] short* p);
+
+            [VtblIndex(8)]
+            HRESULT get_cookieEnabled([NativeTypeName("VARIANT_BOOL *")] short* p);
+
+            [VtblIndex(9)]
+            HRESULT get_cpuClass([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(10)]
+            HRESULT get_systemLanguage([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(11)]
+            HRESULT get_userLanguage([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(12)]
+            HRESULT get_platform([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(13)]
+            HRESULT get_connectionSpeed([NativeTypeName("long *")] int* p);
+
+            [VtblIndex(14)]
+            HRESULT get_onLine([NativeTypeName("VARIANT_BOOL *")] short* p);
+
+            [VtblIndex(15)]
+            HRESULT get_colorDepth([NativeTypeName("long *")] int* p);
+
+            [VtblIndex(16)]
+            HRESULT get_bufferDepth([NativeTypeName("long *")] int* p);
+
+            [VtblIndex(17)]
+            HRESULT get_width([NativeTypeName("long *")] int* p);
+
+            [VtblIndex(18)]
+            HRESULT get_height([NativeTypeName("long *")] int* p);
+
+            [VtblIndex(19)]
+            HRESULT get_availHeight([NativeTypeName("long *")] int* p);
+
+            [VtblIndex(20)]
+            HRESULT get_availWidth([NativeTypeName("long *")] int* p);
+
+            [VtblIndex(21)]
+            HRESULT get_connectionType([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(22)]
+            HRESULT isComponentInstalled([NativeTypeName("BSTR")] ushort* bstrName, [NativeTypeName("BSTR")] ushort* bstrUrl, [NativeTypeName("BSTR")] ushort* bStrVer, [NativeTypeName("VARIANT_BOOL *")] short* p);
+
+            [VtblIndex(23)]
+            HRESULT getComponentVersion([NativeTypeName("BSTR")] ushort* bstrName, [NativeTypeName("BSTR")] ushort* bstrUrl, [NativeTypeName("BSTR *")] ushort** pbstrVer);
+
+            [VtblIndex(24)]
+            HRESULT compareVersions([NativeTypeName("BSTR")] ushort* bstrVer1, [NativeTypeName("BSTR")] ushort* bstrVer2, [NativeTypeName("long *")] int* p);
+
+            [VtblIndex(25)]
+            HRESULT addComponentRequest([NativeTypeName("BSTR")] ushort* bstrName, [NativeTypeName("BSTR")] ushort* bstrUrl, [NativeTypeName("BSTR")] ushort* bStrVer = null);
+
+            [VtblIndex(26)]
+            HRESULT doComponentRequest([NativeTypeName("VARIANT_BOOL *")] short* p);
+
+            [VtblIndex(27)]
+            HRESULT clearComponentRequest();
         }
 
         public partial struct Vtbl

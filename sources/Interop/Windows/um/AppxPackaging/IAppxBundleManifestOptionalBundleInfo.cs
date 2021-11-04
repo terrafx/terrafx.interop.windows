@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("515BF2E8-BCB0-4D69-8C48-E383147B6E12")]
     [NativeTypeName("struct IAppxBundleManifestOptionalBundleInfo : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IAppxBundleManifestOptionalBundleInfo
+    public unsafe partial struct IAppxBundleManifestOptionalBundleInfo : IAppxBundleManifestOptionalBundleInfo.Interface
     {
         public void** lpVtbl;
 
@@ -58,6 +58,18 @@ namespace TerraFX.Interop
         public HRESULT GetPackageInfoItems(IAppxBundleManifestPackageInfoEnumerator** packageInfoItems)
         {
             return ((delegate* unmanaged<IAppxBundleManifestOptionalBundleInfo*, IAppxBundleManifestPackageInfoEnumerator**, int>)(lpVtbl[5]))((IAppxBundleManifestOptionalBundleInfo*)Unsafe.AsPointer(ref this), packageInfoItems);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetPackageId(IAppxManifestPackageId** packageId);
+
+            [VtblIndex(4)]
+            HRESULT GetFileName([NativeTypeName("LPWSTR *")] ushort** fileName);
+
+            [VtblIndex(5)]
+            HRESULT GetPackageInfoItems(IAppxBundleManifestPackageInfoEnumerator** packageInfoItems);
         }
 
         public partial struct Vtbl

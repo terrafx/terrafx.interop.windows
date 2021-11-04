@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("3050F69A-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct IHTMLDocument4 : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct IHTMLDocument4
+    public unsafe partial struct IHTMLDocument4 : IHTMLDocument4.Interface
     {
         public void** lpVtbl;
 
@@ -163,6 +163,51 @@ namespace TerraFX.Interop
         public HRESULT get_URLUnencoded([NativeTypeName("BSTR *")] ushort** p)
         {
             return ((delegate* unmanaged<IHTMLDocument4*, ushort**, int>)(lpVtbl[20]))((IHTMLDocument4*)Unsafe.AsPointer(ref this), p);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT focus();
+
+            [VtblIndex(8)]
+            HRESULT hasFocus([NativeTypeName("VARIANT_BOOL *")] short* pfFocus);
+
+            [VtblIndex(9)]
+            HRESULT put_onselectionchange(VARIANT v);
+
+            [VtblIndex(10)]
+            HRESULT get_onselectionchange(VARIANT* p);
+
+            [VtblIndex(11)]
+            HRESULT get_namespaces(IDispatch** p);
+
+            [VtblIndex(12)]
+            HRESULT createDocumentFromUrl([NativeTypeName("BSTR")] ushort* bstrUrl, [NativeTypeName("BSTR")] ushort* bstrOptions, IHTMLDocument2** newDoc);
+
+            [VtblIndex(13)]
+            HRESULT put_media([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(14)]
+            HRESULT get_media([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(15)]
+            HRESULT createEventObject(VARIANT* pvarEventObject, IHTMLEventObj** ppEventObj);
+
+            [VtblIndex(16)]
+            HRESULT fireEvent([NativeTypeName("BSTR")] ushort* bstrEventName, VARIANT* pvarEventObject, [NativeTypeName("VARIANT_BOOL *")] short* pfCancelled);
+
+            [VtblIndex(17)]
+            HRESULT createRenderStyle([NativeTypeName("BSTR")] ushort* v, IHTMLRenderStyle** ppIHTMLRenderStyle);
+
+            [VtblIndex(18)]
+            HRESULT put_oncontrolselect(VARIANT v);
+
+            [VtblIndex(19)]
+            HRESULT get_oncontrolselect(VARIANT* p);
+
+            [VtblIndex(20)]
+            HRESULT get_URLUnencoded([NativeTypeName("BSTR *")] ushort** p);
         }
 
         public partial struct Vtbl

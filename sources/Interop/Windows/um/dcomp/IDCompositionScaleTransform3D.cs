@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("2A9E9EAD-364B-4B15-A7C4-A1997F78B389")]
     [NativeTypeName("struct IDCompositionScaleTransform3D : IDCompositionTransform3D")]
     [NativeInheritance("IDCompositionTransform3D")]
-    public unsafe partial struct IDCompositionScaleTransform3D
+    public unsafe partial struct IDCompositionScaleTransform3D : IDCompositionScaleTransform3D.Interface
     {
         public void** lpVtbl;
 
@@ -121,6 +121,45 @@ namespace TerraFX.Interop
         public HRESULT SetCenterZ(float centerZ)
         {
             return ((delegate* unmanaged<IDCompositionScaleTransform3D*, float, int>)(lpVtbl[14]))((IDCompositionScaleTransform3D*)Unsafe.AsPointer(ref this), centerZ);
+        }
+
+        public interface Interface : IDCompositionTransform3D.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT SetScaleX(IDCompositionAnimation* animation);
+
+            [VtblIndex(4)]
+            HRESULT SetScaleX(float scaleX);
+
+            [VtblIndex(5)]
+            HRESULT SetScaleY(IDCompositionAnimation* animation);
+
+            [VtblIndex(6)]
+            HRESULT SetScaleY(float scaleY);
+
+            [VtblIndex(7)]
+            HRESULT SetScaleZ(IDCompositionAnimation* animation);
+
+            [VtblIndex(8)]
+            HRESULT SetScaleZ(float scaleZ);
+
+            [VtblIndex(9)]
+            HRESULT SetCenterX(IDCompositionAnimation* animation);
+
+            [VtblIndex(10)]
+            HRESULT SetCenterX(float centerX);
+
+            [VtblIndex(11)]
+            HRESULT SetCenterY(IDCompositionAnimation* animation);
+
+            [VtblIndex(12)]
+            HRESULT SetCenterY(float centerY);
+
+            [VtblIndex(13)]
+            HRESULT SetCenterZ(IDCompositionAnimation* animation);
+
+            [VtblIndex(14)]
+            HRESULT SetCenterZ(float centerZ);
         }
 
         public partial struct Vtbl

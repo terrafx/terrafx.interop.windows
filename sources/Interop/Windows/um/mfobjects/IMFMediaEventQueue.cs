@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("36F846FC-2256-48B6-B58E-E2B638316581")]
     [NativeTypeName("struct IMFMediaEventQueue : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IMFMediaEventQueue
+    public unsafe partial struct IMFMediaEventQueue : IMFMediaEventQueue.Interface
     {
         public void** lpVtbl;
 
@@ -86,6 +86,30 @@ namespace TerraFX.Interop
         public HRESULT Shutdown()
         {
             return ((delegate* unmanaged<IMFMediaEventQueue*, int>)(lpVtbl[9]))((IMFMediaEventQueue*)Unsafe.AsPointer(ref this));
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetEvent([NativeTypeName("DWORD")] uint dwFlags, IMFMediaEvent** ppEvent);
+
+            [VtblIndex(4)]
+            HRESULT BeginGetEvent(IMFAsyncCallback* pCallback, IUnknown* punkState);
+
+            [VtblIndex(5)]
+            HRESULT EndGetEvent(IMFAsyncResult* pResult, IMFMediaEvent** ppEvent);
+
+            [VtblIndex(6)]
+            HRESULT QueueEvent(IMFMediaEvent* pEvent);
+
+            [VtblIndex(7)]
+            HRESULT QueueEventParamVar([NativeTypeName("MediaEventType")] uint met, [NativeTypeName("const GUID &")] Guid* guidExtendedType, HRESULT hrStatus, [NativeTypeName("const PROPVARIANT *")] PROPVARIANT* pvValue);
+
+            [VtblIndex(8)]
+            HRESULT QueueEventParamUnk([NativeTypeName("MediaEventType")] uint met, [NativeTypeName("const GUID &")] Guid* guidExtendedType, HRESULT hrStatus, IUnknown* pUnk);
+
+            [VtblIndex(9)]
+            HRESULT Shutdown();
         }
 
         public partial struct Vtbl

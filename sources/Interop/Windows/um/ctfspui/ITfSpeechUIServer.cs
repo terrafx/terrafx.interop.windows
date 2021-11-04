@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("90E9A944-9244-489F-A78F-DE67AFC013A7")]
     [NativeTypeName("struct ITfSpeechUIServer : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct ITfSpeechUIServer
+    public unsafe partial struct ITfSpeechUIServer : ITfSpeechUIServer.Interface
     {
         public void** lpVtbl;
 
@@ -58,6 +58,18 @@ namespace TerraFX.Interop
         public HRESULT UpdateBalloon(TfLBBalloonStyle style, [NativeTypeName("const WCHAR *")] ushort* pch, [NativeTypeName("ULONG")] uint cch)
         {
             return ((delegate* unmanaged<ITfSpeechUIServer*, TfLBBalloonStyle, ushort*, uint, int>)(lpVtbl[5]))((ITfSpeechUIServer*)Unsafe.AsPointer(ref this), style, pch, cch);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT Initialize();
+
+            [VtblIndex(4)]
+            HRESULT ShowUI(BOOL fShow);
+
+            [VtblIndex(5)]
+            HRESULT UpdateBalloon(TfLBBalloonStyle style, [NativeTypeName("const WCHAR *")] ushort* pch, [NativeTypeName("ULONG")] uint cch);
         }
 
         public partial struct Vtbl

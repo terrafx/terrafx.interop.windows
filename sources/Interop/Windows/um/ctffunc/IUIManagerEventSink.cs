@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("CD91D690-A7E8-4265-9B38-8BB3BBABA7DE")]
     [NativeTypeName("struct IUIManagerEventSink : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IUIManagerEventSink
+    public unsafe partial struct IUIManagerEventSink : IUIManagerEventSink.Interface
     {
         public void** lpVtbl;
 
@@ -79,6 +79,27 @@ namespace TerraFX.Interop
         public HRESULT OnWindowClosed()
         {
             return ((delegate* unmanaged<IUIManagerEventSink*, int>)(lpVtbl[8]))((IUIManagerEventSink*)Unsafe.AsPointer(ref this));
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT OnWindowOpening(RECT* prcBounds);
+
+            [VtblIndex(4)]
+            HRESULT OnWindowOpened(RECT* prcBounds);
+
+            [VtblIndex(5)]
+            HRESULT OnWindowUpdating(RECT* prcUpdatedBounds);
+
+            [VtblIndex(6)]
+            HRESULT OnWindowUpdated(RECT* prcUpdatedBounds);
+
+            [VtblIndex(7)]
+            HRESULT OnWindowClosing();
+
+            [VtblIndex(8)]
+            HRESULT OnWindowClosed();
         }
 
         public partial struct Vtbl

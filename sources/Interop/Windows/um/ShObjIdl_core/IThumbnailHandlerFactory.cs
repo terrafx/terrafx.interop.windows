@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("E35B4B2E-00DA-4BC1-9F13-38BC11F5D417")]
     [NativeTypeName("struct IThumbnailHandlerFactory : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IThumbnailHandlerFactory
+    public unsafe partial struct IThumbnailHandlerFactory : IThumbnailHandlerFactory.Interface
     {
         public void** lpVtbl;
 
@@ -44,6 +44,12 @@ namespace TerraFX.Interop
         public HRESULT GetThumbnailHandler([NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidlChild, IBindCtx* pbc, [NativeTypeName("const IID &")] Guid* riid, void** ppv)
         {
             return ((delegate* unmanaged<IThumbnailHandlerFactory*, ITEMIDLIST*, IBindCtx*, Guid*, void**, int>)(lpVtbl[3]))((IThumbnailHandlerFactory*)Unsafe.AsPointer(ref this), pidlChild, pbc, riid, ppv);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetThumbnailHandler([NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidlChild, IBindCtx* pbc, [NativeTypeName("const IID &")] Guid* riid, void** ppv);
         }
 
         public partial struct Vtbl

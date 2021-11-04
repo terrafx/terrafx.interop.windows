@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("36B73880-C2C8-11CF-8B46-00805F6CEF60")]
     [NativeTypeName("struct IMediaSeeking : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IMediaSeeking
+    public unsafe partial struct IMediaSeeking : IMediaSeeking.Interface
     {
         public void** lpVtbl;
 
@@ -156,6 +156,60 @@ namespace TerraFX.Interop
         public HRESULT GetPreroll([NativeTypeName("LONGLONG *")] long* pllPreroll)
         {
             return ((delegate* unmanaged<IMediaSeeking*, long*, int>)(lpVtbl[19]))((IMediaSeeking*)Unsafe.AsPointer(ref this), pllPreroll);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetCapabilities([NativeTypeName("DWORD *")] uint* pCapabilities);
+
+            [VtblIndex(4)]
+            HRESULT CheckCapabilities([NativeTypeName("DWORD *")] uint* pCapabilities);
+
+            [VtblIndex(5)]
+            HRESULT IsFormatSupported([NativeTypeName("const GUID *")] Guid* pFormat);
+
+            [VtblIndex(6)]
+            HRESULT QueryPreferredFormat(Guid* pFormat);
+
+            [VtblIndex(7)]
+            HRESULT GetTimeFormat(Guid* pFormat);
+
+            [VtblIndex(8)]
+            HRESULT IsUsingTimeFormat([NativeTypeName("const GUID *")] Guid* pFormat);
+
+            [VtblIndex(9)]
+            HRESULT SetTimeFormat([NativeTypeName("const GUID *")] Guid* pFormat);
+
+            [VtblIndex(10)]
+            HRESULT GetDuration([NativeTypeName("LONGLONG *")] long* pDuration);
+
+            [VtblIndex(11)]
+            HRESULT GetStopPosition([NativeTypeName("LONGLONG *")] long* pStop);
+
+            [VtblIndex(12)]
+            HRESULT GetCurrentPosition([NativeTypeName("LONGLONG *")] long* pCurrent);
+
+            [VtblIndex(13)]
+            HRESULT ConvertTimeFormat([NativeTypeName("LONGLONG *")] long* pTarget, [NativeTypeName("const GUID *")] Guid* pTargetFormat, [NativeTypeName("LONGLONG")] long Source, [NativeTypeName("const GUID *")] Guid* pSourceFormat);
+
+            [VtblIndex(14)]
+            HRESULT SetPositions([NativeTypeName("LONGLONG *")] long* pCurrent, [NativeTypeName("DWORD")] uint dwCurrentFlags, [NativeTypeName("LONGLONG *")] long* pStop, [NativeTypeName("DWORD")] uint dwStopFlags);
+
+            [VtblIndex(15)]
+            HRESULT GetPositions([NativeTypeName("LONGLONG *")] long* pCurrent, [NativeTypeName("LONGLONG *")] long* pStop);
+
+            [VtblIndex(16)]
+            HRESULT GetAvailable([NativeTypeName("LONGLONG *")] long* pEarliest, [NativeTypeName("LONGLONG *")] long* pLatest);
+
+            [VtblIndex(17)]
+            HRESULT SetRate(double dRate);
+
+            [VtblIndex(18)]
+            HRESULT GetRate(double* pdRate);
+
+            [VtblIndex(19)]
+            HRESULT GetPreroll([NativeTypeName("LONGLONG *")] long* pllPreroll);
         }
 
         public partial struct Vtbl

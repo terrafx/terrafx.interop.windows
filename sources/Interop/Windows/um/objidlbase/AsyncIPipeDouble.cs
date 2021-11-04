@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("DB2F3ACF-2F86-11D1-8E04-00C04FB9989A")]
     [NativeTypeName("struct AsyncIPipeDouble : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct AsyncIPipeDouble
+    public unsafe partial struct AsyncIPipeDouble : AsyncIPipeDouble.Interface
     {
         public void** lpVtbl;
 
@@ -65,6 +65,21 @@ namespace TerraFX.Interop
         public HRESULT Finish_Push()
         {
             return ((delegate* unmanaged<AsyncIPipeDouble*, int>)(lpVtbl[6]))((AsyncIPipeDouble*)Unsafe.AsPointer(ref this));
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT Begin_Pull([NativeTypeName("ULONG")] uint cRequest);
+
+            [VtblIndex(4)]
+            HRESULT Finish_Pull(double* buf, [NativeTypeName("ULONG *")] uint* pcReturned);
+
+            [VtblIndex(5)]
+            HRESULT Begin_Push(double* buf, [NativeTypeName("ULONG")] uint cSent);
+
+            [VtblIndex(6)]
+            HRESULT Finish_Push();
         }
 
         public partial struct Vtbl

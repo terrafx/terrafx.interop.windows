@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("2CD906A8-12E2-11DC-9FED-001143A055F9")]
     [NativeTypeName("struct ID2D1Brush : ID2D1Resource")]
     [NativeInheritance("ID2D1Resource")]
-    public unsafe partial struct ID2D1Brush
+    public unsafe partial struct ID2D1Brush : ID2D1Brush.Interface
     {
         public void** lpVtbl;
 
@@ -72,6 +72,21 @@ namespace TerraFX.Interop
         public void GetTransform([NativeTypeName("D2D1_MATRIX_3X2_F *")] D2D_MATRIX_3X2_F* transform)
         {
             ((delegate* unmanaged<ID2D1Brush*, D2D_MATRIX_3X2_F*, void>)(lpVtbl[7]))((ID2D1Brush*)Unsafe.AsPointer(ref this), transform);
+        }
+
+        public interface Interface : ID2D1Resource.Interface
+        {
+            [VtblIndex(4)]
+            void SetOpacity(float opacity);
+
+            [VtblIndex(5)]
+            void SetTransform([NativeTypeName("const D2D1_MATRIX_3X2_F *")] D2D_MATRIX_3X2_F* transform);
+
+            [VtblIndex(6)]
+            float GetOpacity();
+
+            [VtblIndex(7)]
+            void GetTransform([NativeTypeName("D2D1_MATRIX_3X2_F *")] D2D_MATRIX_3X2_F* transform);
         }
 
         public partial struct Vtbl

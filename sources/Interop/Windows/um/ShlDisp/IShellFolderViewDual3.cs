@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("29EC8E6C-46D3-411F-BAAA-611A6C9CAC66")]
     [NativeTypeName("struct IShellFolderViewDual3 : IShellFolderViewDual2")]
     [NativeInheritance("IShellFolderViewDual2")]
-    public unsafe partial struct IShellFolderViewDual3
+    public unsafe partial struct IShellFolderViewDual3 : IShellFolderViewDual3.Interface
     {
         public void** lpVtbl;
 
@@ -212,6 +212,36 @@ namespace TerraFX.Interop
         public HRESULT FilterView([NativeTypeName("BSTR")] ushort* bstrFilterText)
         {
             return ((delegate* unmanaged<IShellFolderViewDual3*, ushort*, int>)(lpVtbl[27]))((IShellFolderViewDual3*)Unsafe.AsPointer(ref this), bstrFilterText);
+        }
+
+        public interface Interface : IShellFolderViewDual2.Interface
+        {
+            [VtblIndex(19)]
+            HRESULT get_GroupBy([NativeTypeName("BSTR *")] ushort** pbstrGroupBy);
+
+            [VtblIndex(20)]
+            HRESULT put_GroupBy([NativeTypeName("BSTR")] ushort* bstrGroupBy);
+
+            [VtblIndex(21)]
+            HRESULT get_FolderFlags([NativeTypeName("DWORD *")] uint* pdwFlags);
+
+            [VtblIndex(22)]
+            HRESULT put_FolderFlags([NativeTypeName("DWORD")] uint dwFlags);
+
+            [VtblIndex(23)]
+            HRESULT get_SortColumns([NativeTypeName("BSTR *")] ushort** pbstrSortColumns);
+
+            [VtblIndex(24)]
+            HRESULT put_SortColumns([NativeTypeName("BSTR")] ushort* bstrSortColumns);
+
+            [VtblIndex(25)]
+            HRESULT put_IconSize(int iIconSize);
+
+            [VtblIndex(26)]
+            HRESULT get_IconSize(int* piIconSize);
+
+            [VtblIndex(27)]
+            HRESULT FilterView([NativeTypeName("BSTR")] ushort* bstrFilterText);
         }
 
         public partial struct Vtbl

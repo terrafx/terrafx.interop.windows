@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("D5F56A34-593B-101A-B569-08002B2DBF7A")]
     [NativeTypeName("struct IRpcProxyBuffer : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IRpcProxyBuffer
+    public unsafe partial struct IRpcProxyBuffer : IRpcProxyBuffer.Interface
     {
         public void** lpVtbl;
 
@@ -51,6 +51,15 @@ namespace TerraFX.Interop
         public void Disconnect()
         {
             ((delegate* unmanaged<IRpcProxyBuffer*, void>)(lpVtbl[4]))((IRpcProxyBuffer*)Unsafe.AsPointer(ref this));
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT Connect(IRpcChannelBuffer* pRpcChannelBuffer);
+
+            [VtblIndex(4)]
+            void Disconnect();
         }
 
         public partial struct Vtbl

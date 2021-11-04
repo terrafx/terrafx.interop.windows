@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("01E44665-24AC-101B-84ED-08002B2EC713")]
     [NativeTypeName("struct IPropertyPage2 : IPropertyPage")]
     [NativeInheritance("IPropertyPage")]
-    public unsafe partial struct IPropertyPage2
+    public unsafe partial struct IPropertyPage2 : IPropertyPage2.Interface
     {
         public void** lpVtbl;
 
@@ -121,6 +121,12 @@ namespace TerraFX.Interop
         public HRESULT EditProperty([NativeTypeName("DISPID")] int dispID)
         {
             return ((delegate* unmanaged<IPropertyPage2*, int, int>)(lpVtbl[14]))((IPropertyPage2*)Unsafe.AsPointer(ref this), dispID);
+        }
+
+        public interface Interface : IPropertyPage.Interface
+        {
+            [VtblIndex(14)]
+            HRESULT EditProperty([NativeTypeName("DISPID")] int dispID);
         }
 
         public partial struct Vtbl

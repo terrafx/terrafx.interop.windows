@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("6F77C993-D2B1-446E-853E-5912EFC8A286")]
     [NativeTypeName("struct ITfPreservedKeyNotifySink : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct ITfPreservedKeyNotifySink
+    public unsafe partial struct ITfPreservedKeyNotifySink : ITfPreservedKeyNotifySink.Interface
     {
         public void** lpVtbl;
 
@@ -44,6 +44,12 @@ namespace TerraFX.Interop
         public HRESULT OnUpdated([NativeTypeName("const TF_PRESERVEDKEY *")] TF_PRESERVEDKEY* pprekey)
         {
             return ((delegate* unmanaged<ITfPreservedKeyNotifySink*, TF_PRESERVEDKEY*, int>)(lpVtbl[3]))((ITfPreservedKeyNotifySink*)Unsafe.AsPointer(ref this), pprekey);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT OnUpdated([NativeTypeName("const TF_PRESERVEDKEY *")] TF_PRESERVEDKEY* pprekey);
         }
 
         public partial struct Vtbl

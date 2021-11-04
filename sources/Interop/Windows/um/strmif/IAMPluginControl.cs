@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("0E26A181-F40C-4635-8786-976284B52981")]
     [NativeTypeName("struct IAMPluginControl : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IAMPluginControl
+    public unsafe partial struct IAMPluginControl : IAMPluginControl.Interface
     {
         public void** lpVtbl;
 
@@ -86,6 +86,30 @@ namespace TerraFX.Interop
         public HRESULT IsLegacyDisabled([NativeTypeName("LPCWSTR")] ushort* dllName)
         {
             return ((delegate* unmanaged<IAMPluginControl*, ushort*, int>)(lpVtbl[9]))((IAMPluginControl*)Unsafe.AsPointer(ref this), dllName);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetPreferredClsid([NativeTypeName("const GUID &")] Guid* subType, [NativeTypeName("CLSID *")] Guid* clsid);
+
+            [VtblIndex(4)]
+            HRESULT GetPreferredClsidByIndex([NativeTypeName("DWORD")] uint index, Guid* subType, [NativeTypeName("CLSID *")] Guid* clsid);
+
+            [VtblIndex(5)]
+            HRESULT SetPreferredClsid([NativeTypeName("const GUID &")] Guid* subType, [NativeTypeName("const CLSID *")] Guid* clsid);
+
+            [VtblIndex(6)]
+            HRESULT IsDisabled([NativeTypeName("const IID &")] Guid* clsid);
+
+            [VtblIndex(7)]
+            HRESULT GetDisabledByIndex([NativeTypeName("DWORD")] uint index, [NativeTypeName("CLSID *")] Guid* clsid);
+
+            [VtblIndex(8)]
+            HRESULT SetDisabled([NativeTypeName("const IID &")] Guid* clsid, BOOL disabled);
+
+            [VtblIndex(9)]
+            HRESULT IsLegacyDisabled([NativeTypeName("LPCWSTR")] ushort* dllName);
         }
 
         public partial struct Vtbl

@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("30510804-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct INavigatorDoNotTrack : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct INavigatorDoNotTrack
+    public unsafe partial struct INavigatorDoNotTrack : INavigatorDoNotTrack.Interface
     {
         public void** lpVtbl;
 
@@ -72,6 +72,12 @@ namespace TerraFX.Interop
         public HRESULT get_msDoNotTrack([NativeTypeName("BSTR *")] ushort** p)
         {
             return ((delegate* unmanaged<INavigatorDoNotTrack*, ushort**, int>)(lpVtbl[7]))((INavigatorDoNotTrack*)Unsafe.AsPointer(ref this), p);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT get_msDoNotTrack([NativeTypeName("BSTR *")] ushort** p);
         }
 
         public partial struct Vtbl

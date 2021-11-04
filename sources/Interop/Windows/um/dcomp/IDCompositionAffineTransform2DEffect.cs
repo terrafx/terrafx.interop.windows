@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("0B74B9E8-CDD6-492F-BBBC-5ED32157026D")]
     [NativeTypeName("struct IDCompositionAffineTransform2DEffect : IDCompositionFilterEffect")]
     [NativeInheritance("IDCompositionFilterEffect")]
-    public unsafe partial struct IDCompositionAffineTransform2DEffect
+    public unsafe partial struct IDCompositionAffineTransform2DEffect : IDCompositionAffineTransform2DEffect.Interface
     {
         public void** lpVtbl;
 
@@ -93,6 +93,30 @@ namespace TerraFX.Interop
         public HRESULT SetSharpness(float sharpness)
         {
             return ((delegate* unmanaged<IDCompositionAffineTransform2DEffect*, float, int>)(lpVtbl[10]))((IDCompositionAffineTransform2DEffect*)Unsafe.AsPointer(ref this), sharpness);
+        }
+
+        public interface Interface : IDCompositionFilterEffect.Interface
+        {
+            [VtblIndex(4)]
+            HRESULT SetInterpolationMode(D2D1_2DAFFINETRANSFORM_INTERPOLATION_MODE interpolationMode);
+
+            [VtblIndex(5)]
+            HRESULT SetBorderMode(D2D1_BORDER_MODE borderMode);
+
+            [VtblIndex(6)]
+            HRESULT SetTransformMatrix([NativeTypeName("const D2D1_MATRIX_3X2_F &")] D2D_MATRIX_3X2_F* transformMatrix);
+
+            [VtblIndex(7)]
+            HRESULT SetTransformMatrixElement(int row, int column, IDCompositionAnimation* animation);
+
+            [VtblIndex(8)]
+            HRESULT SetTransformMatrixElement(int row, int column, float value);
+
+            [VtblIndex(9)]
+            HRESULT SetSharpness(IDCompositionAnimation* animation);
+
+            [VtblIndex(10)]
+            HRESULT SetSharpness(float sharpness);
         }
 
         public partial struct Vtbl

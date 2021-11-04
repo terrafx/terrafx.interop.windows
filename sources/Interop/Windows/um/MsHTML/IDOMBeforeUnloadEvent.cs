@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("30510763-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct IDOMBeforeUnloadEvent : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct IDOMBeforeUnloadEvent
+    public unsafe partial struct IDOMBeforeUnloadEvent : IDOMBeforeUnloadEvent.Interface
     {
         public void** lpVtbl;
 
@@ -79,6 +79,15 @@ namespace TerraFX.Interop
         public HRESULT get_returnValue(VARIANT* p)
         {
             return ((delegate* unmanaged<IDOMBeforeUnloadEvent*, VARIANT*, int>)(lpVtbl[8]))((IDOMBeforeUnloadEvent*)Unsafe.AsPointer(ref this), p);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT put_returnValue(VARIANT v);
+
+            [VtblIndex(8)]
+            HRESULT get_returnValue(VARIANT* p);
         }
 
         public partial struct Vtbl

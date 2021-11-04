@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("09F656A2-41AF-480C-88F7-16CC0D164615")]
     [NativeTypeName("struct ISearchContext : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct ISearchContext
+    public unsafe partial struct ISearchContext : ISearchContext.Interface
     {
         public void** lpVtbl;
 
@@ -58,6 +58,18 @@ namespace TerraFX.Interop
         public HRESULT GetSearchStyle([NativeTypeName("DWORD *")] uint* pdwSearchStyle)
         {
             return ((delegate* unmanaged<ISearchContext*, uint*, int>)(lpVtbl[5]))((ISearchContext*)Unsafe.AsPointer(ref this), pdwSearchStyle);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetSearchUrl([NativeTypeName("BSTR *")] ushort** pbstrSearchUrl);
+
+            [VtblIndex(4)]
+            HRESULT GetSearchText([NativeTypeName("BSTR *")] ushort** pbstrSearchText);
+
+            [VtblIndex(5)]
+            HRESULT GetSearchStyle([NativeTypeName("DWORD *")] uint* pdwSearchStyle);
         }
 
         public partial struct Vtbl

@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("766C8FFB-5FDB-4FEA-A28D-B912996F51BD")]
     [NativeTypeName("struct IMFPMediaPlayerCallback : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IMFPMediaPlayerCallback
+    public unsafe partial struct IMFPMediaPlayerCallback : IMFPMediaPlayerCallback.Interface
     {
         public void** lpVtbl;
 
@@ -44,6 +44,12 @@ namespace TerraFX.Interop
         public void OnMediaPlayerEvent(MFP_EVENT_HEADER* pEventHeader)
         {
             ((delegate* unmanaged<IMFPMediaPlayerCallback*, MFP_EVENT_HEADER*, void>)(lpVtbl[3]))((IMFPMediaPlayerCallback*)Unsafe.AsPointer(ref this), pEventHeader);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            void OnMediaPlayerEvent(MFP_EVENT_HEADER* pEventHeader);
         }
 
         public partial struct Vtbl

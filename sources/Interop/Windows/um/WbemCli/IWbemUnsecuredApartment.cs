@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("31739D04-3471-4CF4-9A7C-57A44AE71956")]
     [NativeTypeName("struct IWbemUnsecuredApartment : IUnsecuredApartment")]
     [NativeInheritance("IUnsecuredApartment")]
-    public unsafe partial struct IWbemUnsecuredApartment
+    public unsafe partial struct IWbemUnsecuredApartment : IWbemUnsecuredApartment.Interface
     {
         public void** lpVtbl;
 
@@ -51,6 +51,12 @@ namespace TerraFX.Interop
         public HRESULT CreateSinkStub(IWbemObjectSink* pSink, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("LPCWSTR")] ushort* wszReserved, IWbemObjectSink** ppStub)
         {
             return ((delegate* unmanaged<IWbemUnsecuredApartment*, IWbemObjectSink*, uint, ushort*, IWbemObjectSink**, int>)(lpVtbl[4]))((IWbemUnsecuredApartment*)Unsafe.AsPointer(ref this), pSink, dwFlags, wszReserved, ppStub);
+        }
+
+        public interface Interface : IUnsecuredApartment.Interface
+        {
+            [VtblIndex(4)]
+            HRESULT CreateSinkStub(IWbemObjectSink* pSink, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("LPCWSTR")] ushort* wszReserved, IWbemObjectSink** ppStub);
         }
 
         public partial struct Vtbl

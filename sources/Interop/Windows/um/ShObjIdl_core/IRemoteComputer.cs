@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("000214FE-0000-0000-C000-000000000046")]
     [NativeTypeName("struct IRemoteComputer : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IRemoteComputer
+    public unsafe partial struct IRemoteComputer : IRemoteComputer.Interface
     {
         public void** lpVtbl;
 
@@ -44,6 +44,12 @@ namespace TerraFX.Interop
         public HRESULT Initialize([NativeTypeName("LPCWSTR")] ushort* pszMachine, BOOL bEnumerating)
         {
             return ((delegate* unmanaged<IRemoteComputer*, ushort*, BOOL, int>)(lpVtbl[3]))((IRemoteComputer*)Unsafe.AsPointer(ref this), pszMachine, bEnumerating);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT Initialize([NativeTypeName("LPCWSTR")] ushort* pszMachine, BOOL bEnumerating);
         }
 
         public partial struct Vtbl

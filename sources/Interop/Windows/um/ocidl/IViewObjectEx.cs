@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("3AF24292-0C96-11CE-A0CF-00AA00600AB8")]
     [NativeTypeName("struct IViewObjectEx : IViewObject2")]
     [NativeInheritance("IViewObject2")]
-    public unsafe partial struct IViewObjectEx
+    public unsafe partial struct IViewObjectEx : IViewObjectEx.Interface
     {
         public void** lpVtbl;
 
@@ -121,6 +121,24 @@ namespace TerraFX.Interop
         public HRESULT GetNaturalExtent([NativeTypeName("DWORD")] uint dwAspect, [NativeTypeName("LONG")] int lindex, DVTARGETDEVICE* ptd, HDC hicTargetDev, DVEXTENTINFO* pExtentInfo, [NativeTypeName("LPSIZEL")] SIZE* pSizel)
         {
             return ((delegate* unmanaged<IViewObjectEx*, uint, int, DVTARGETDEVICE*, HDC, DVEXTENTINFO*, SIZE*, int>)(lpVtbl[14]))((IViewObjectEx*)Unsafe.AsPointer(ref this), dwAspect, lindex, ptd, hicTargetDev, pExtentInfo, pSizel);
+        }
+
+        public interface Interface : IViewObject2.Interface
+        {
+            [VtblIndex(10)]
+            HRESULT GetRect([NativeTypeName("DWORD")] uint dwAspect, [NativeTypeName("LPRECTL")] RECTL* pRect);
+
+            [VtblIndex(11)]
+            HRESULT GetViewStatus([NativeTypeName("DWORD *")] uint* pdwStatus);
+
+            [VtblIndex(12)]
+            HRESULT QueryHitPoint([NativeTypeName("DWORD")] uint dwAspect, [NativeTypeName("LPCRECT")] RECT* pRectBounds, POINT ptlLoc, [NativeTypeName("LONG")] int lCloseHint, [NativeTypeName("DWORD *")] uint* pHitResult);
+
+            [VtblIndex(13)]
+            HRESULT QueryHitRect([NativeTypeName("DWORD")] uint dwAspect, [NativeTypeName("LPCRECT")] RECT* pRectBounds, [NativeTypeName("LPCRECT")] RECT* pRectLoc, [NativeTypeName("LONG")] int lCloseHint, [NativeTypeName("DWORD *")] uint* pHitResult);
+
+            [VtblIndex(14)]
+            HRESULT GetNaturalExtent([NativeTypeName("DWORD")] uint dwAspect, [NativeTypeName("LONG")] int lindex, DVTARGETDEVICE* ptd, HDC hicTargetDev, DVEXTENTINFO* pExtentInfo, [NativeTypeName("LPSIZEL")] SIZE* pSizel);
         }
 
         public partial struct Vtbl

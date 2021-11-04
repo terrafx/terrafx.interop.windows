@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("0C6C4200-C589-11D0-999A-00C04FD655E1")]
     [NativeTypeName("struct IShellIconOverlayIdentifier : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IShellIconOverlayIdentifier
+    public unsafe partial struct IShellIconOverlayIdentifier : IShellIconOverlayIdentifier.Interface
     {
         public void** lpVtbl;
 
@@ -58,6 +58,18 @@ namespace TerraFX.Interop
         public HRESULT GetPriority(int* pPriority)
         {
             return ((delegate* unmanaged<IShellIconOverlayIdentifier*, int*, int>)(lpVtbl[5]))((IShellIconOverlayIdentifier*)Unsafe.AsPointer(ref this), pPriority);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT IsMemberOf([NativeTypeName("LPCWSTR")] ushort* pwszPath, [NativeTypeName("DWORD")] uint dwAttrib);
+
+            [VtblIndex(4)]
+            HRESULT GetOverlayInfo([NativeTypeName("LPWSTR")] ushort* pwszIconFile, int cchMax, int* pIndex, [NativeTypeName("DWORD *")] uint* pdwFlags);
+
+            [VtblIndex(5)]
+            HRESULT GetPriority(int* pPriority);
         }
 
         public partial struct Vtbl

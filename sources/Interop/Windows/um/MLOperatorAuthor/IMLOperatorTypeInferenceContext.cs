@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("EC893BB1-F938-427B-8488-C8DCF775F138")]
     [NativeTypeName("struct IMLOperatorTypeInferenceContext : IMLOperatorAttributes")]
     [NativeInheritance("IMLOperatorAttributes")]
-    public unsafe partial struct IMLOperatorTypeInferenceContext
+    public unsafe partial struct IMLOperatorTypeInferenceContext : IMLOperatorTypeInferenceContext.Interface
     {
         public void** lpVtbl;
 
@@ -109,6 +109,29 @@ namespace TerraFX.Interop
         public HRESULT SetOutputEdgeDescription([NativeTypeName("uint32_t")] uint outputIndex, [NativeTypeName("const MLOperatorEdgeDescription *")] MLOperatorEdgeDescription* edgeDescription)
         {
             return ((delegate* unmanaged<IMLOperatorTypeInferenceContext*, uint, MLOperatorEdgeDescription*, int>)(lpVtbl[12]))((IMLOperatorTypeInferenceContext*)Unsafe.AsPointer(ref this), outputIndex, edgeDescription);
+        }
+
+        public interface Interface : IMLOperatorAttributes.Interface
+        {
+            [VtblIndex(7)]
+            [return: NativeTypeName("uint32_t")]
+            uint GetInputCount();
+
+            [VtblIndex(8)]
+            [return: NativeTypeName("uint32_t")]
+            uint GetOutputCount();
+
+            [VtblIndex(9)]
+            bool IsInputValid([NativeTypeName("uint32_t")] uint inputIndex);
+
+            [VtblIndex(10)]
+            bool IsOutputValid([NativeTypeName("uint32_t")] uint outputIndex);
+
+            [VtblIndex(11)]
+            HRESULT GetInputEdgeDescription([NativeTypeName("uint32_t")] uint inputIndex, MLOperatorEdgeDescription* edgeDescription);
+
+            [VtblIndex(12)]
+            HRESULT SetOutputEdgeDescription([NativeTypeName("uint32_t")] uint outputIndex, [NativeTypeName("const MLOperatorEdgeDescription *")] MLOperatorEdgeDescription* edgeDescription);
         }
 
         public partial struct Vtbl

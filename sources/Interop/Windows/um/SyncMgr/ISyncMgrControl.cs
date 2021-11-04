@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("9B63616C-36B2-46BC-959F-C1593952D19B")]
     [NativeTypeName("struct ISyncMgrControl : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct ISyncMgrControl
+    public unsafe partial struct ISyncMgrControl : ISyncMgrControl.Interface
     {
         public void** lpVtbl;
 
@@ -142,6 +142,54 @@ namespace TerraFX.Interop
         public HRESULT EnableItem(BOOL fEnable, [NativeTypeName("LPCWSTR")] ushort* pszHandlerID, [NativeTypeName("LPCWSTR")] ushort* pszItemID, HWND hwndOwner, SYNCMGR_CONTROL_FLAGS nControlFlags)
         {
             return ((delegate* unmanaged<ISyncMgrControl*, BOOL, ushort*, ushort*, HWND, SYNCMGR_CONTROL_FLAGS, int>)(lpVtbl[17]))((ISyncMgrControl*)Unsafe.AsPointer(ref this), fEnable, pszHandlerID, pszItemID, hwndOwner, nControlFlags);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT StartHandlerSync([NativeTypeName("LPCWSTR")] ushort* pszHandlerID, HWND hwndOwner, IUnknown* punk, SYNCMGR_SYNC_CONTROL_FLAGS nSyncControlFlags, ISyncMgrSyncResult* pResult);
+
+            [VtblIndex(4)]
+            HRESULT StartItemSync([NativeTypeName("LPCWSTR")] ushort* pszHandlerID, [NativeTypeName("LPCWSTR *")] ushort** ppszItemIDs, [NativeTypeName("ULONG")] uint cItems, HWND hwndOwner, IUnknown* punk, SYNCMGR_SYNC_CONTROL_FLAGS nSyncControlFlags, ISyncMgrSyncResult* pResult);
+
+            [VtblIndex(5)]
+            HRESULT StartSyncAll(HWND hwndOwner);
+
+            [VtblIndex(6)]
+            HRESULT StopHandlerSync([NativeTypeName("LPCWSTR")] ushort* pszHandlerID);
+
+            [VtblIndex(7)]
+            HRESULT StopItemSync([NativeTypeName("LPCWSTR")] ushort* pszHandlerID, [NativeTypeName("LPCWSTR *")] ushort** ppszItemIDs, [NativeTypeName("ULONG")] uint cItems);
+
+            [VtblIndex(8)]
+            HRESULT StopSyncAll();
+
+            [VtblIndex(9)]
+            HRESULT UpdateHandlerCollection([NativeTypeName("const IID &")] Guid* rclsidCollectionID, SYNCMGR_CONTROL_FLAGS nControlFlags);
+
+            [VtblIndex(10)]
+            HRESULT UpdateHandler([NativeTypeName("LPCWSTR")] ushort* pszHandlerID, SYNCMGR_CONTROL_FLAGS nControlFlags);
+
+            [VtblIndex(11)]
+            HRESULT UpdateItem([NativeTypeName("LPCWSTR")] ushort* pszHandlerID, [NativeTypeName("LPCWSTR")] ushort* pszItemID, SYNCMGR_CONTROL_FLAGS nControlFlags);
+
+            [VtblIndex(12)]
+            HRESULT UpdateEvents([NativeTypeName("LPCWSTR")] ushort* pszHandlerID, [NativeTypeName("LPCWSTR")] ushort* pszItemID, SYNCMGR_CONTROL_FLAGS nControlFlags);
+
+            [VtblIndex(13)]
+            HRESULT UpdateConflict([NativeTypeName("LPCWSTR")] ushort* pszHandlerID, [NativeTypeName("LPCWSTR")] ushort* pszItemID, ISyncMgrConflict* pConflict, SYNCMGR_UPDATE_REASON nReason);
+
+            [VtblIndex(14)]
+            HRESULT UpdateConflicts([NativeTypeName("LPCWSTR")] ushort* pszHandlerID, [NativeTypeName("LPCWSTR")] ushort* pszItemID, SYNCMGR_CONTROL_FLAGS nControlFlags);
+
+            [VtblIndex(15)]
+            HRESULT ActivateHandler(BOOL fActivate, [NativeTypeName("LPCWSTR")] ushort* pszHandlerID, HWND hwndOwner, SYNCMGR_CONTROL_FLAGS nControlFlags);
+
+            [VtblIndex(16)]
+            HRESULT EnableHandler(BOOL fEnable, [NativeTypeName("LPCWSTR")] ushort* pszHandlerID, HWND hwndOwner, SYNCMGR_CONTROL_FLAGS nControlFlags);
+
+            [VtblIndex(17)]
+            HRESULT EnableItem(BOOL fEnable, [NativeTypeName("LPCWSTR")] ushort* pszHandlerID, [NativeTypeName("LPCWSTR")] ushort* pszItemID, HWND hwndOwner, SYNCMGR_CONTROL_FLAGS nControlFlags);
         }
 
         public partial struct Vtbl

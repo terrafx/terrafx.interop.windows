@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("1E9B31A1-662E-4AE0-AF67-F63BB337E634")]
     [NativeTypeName("struct ILearningModelDeviceFactoryNative : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct ILearningModelDeviceFactoryNative
+    public unsafe partial struct ILearningModelDeviceFactoryNative : ILearningModelDeviceFactoryNative.Interface
     {
         public void** lpVtbl;
 
@@ -44,6 +44,12 @@ namespace TerraFX.Interop
         public HRESULT CreateFromD3D12CommandQueue(ID3D12CommandQueue* value, IUnknown** result)
         {
             return ((delegate* unmanaged<ILearningModelDeviceFactoryNative*, ID3D12CommandQueue*, IUnknown**, int>)(lpVtbl[3]))((ILearningModelDeviceFactoryNative*)Unsafe.AsPointer(ref this), value, result);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT CreateFromD3D12CommandQueue(ID3D12CommandQueue* value, IUnknown** result);
         }
 
         public partial struct Vtbl

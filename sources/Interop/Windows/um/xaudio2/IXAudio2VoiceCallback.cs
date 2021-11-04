@@ -7,7 +7,7 @@ using System.Runtime.CompilerServices;
 
 namespace TerraFX.Interop
 {
-    public unsafe partial struct IXAudio2VoiceCallback
+    public unsafe partial struct IXAudio2VoiceCallback : IXAudio2VoiceCallback.Interface
     {
         public void** lpVtbl;
 
@@ -58,6 +58,30 @@ namespace TerraFX.Interop
         public void OnVoiceError(void* pBufferContext, HRESULT Error)
         {
             ((delegate* unmanaged<IXAudio2VoiceCallback*, void*, HRESULT, void>)(lpVtbl[6]))((IXAudio2VoiceCallback*)Unsafe.AsPointer(ref this), pBufferContext, Error);
+        }
+
+        public interface Interface
+        {
+            [VtblIndex(0)]
+            void OnVoiceProcessingPassStart([NativeTypeName("UINT32")] uint BytesRequired);
+
+            [VtblIndex(1)]
+            void OnVoiceProcessingPassEnd();
+
+            [VtblIndex(2)]
+            void OnStreamEnd();
+
+            [VtblIndex(3)]
+            void OnBufferStart(void* pBufferContext);
+
+            [VtblIndex(4)]
+            void OnBufferEnd(void* pBufferContext);
+
+            [VtblIndex(5)]
+            void OnLoopEnd(void* pBufferContext);
+
+            [VtblIndex(6)]
+            void OnVoiceError(void* pBufferContext, HRESULT Error);
         }
 
         public partial struct Vtbl

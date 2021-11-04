@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("305106D6-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct IDOMKeyboardEvent : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct IDOMKeyboardEvent
+    public unsafe partial struct IDOMKeyboardEvent : IDOMKeyboardEvent.Interface
     {
         public void** lpVtbl;
 
@@ -163,6 +163,51 @@ namespace TerraFX.Interop
         public HRESULT get_locale([NativeTypeName("BSTR *")] ushort** p)
         {
             return ((delegate* unmanaged<IDOMKeyboardEvent*, ushort**, int>)(lpVtbl[20]))((IDOMKeyboardEvent*)Unsafe.AsPointer(ref this), p);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT get_key([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(8)]
+            HRESULT get_location([NativeTypeName("ULONG *")] uint* p);
+
+            [VtblIndex(9)]
+            HRESULT get_ctrlKey([NativeTypeName("VARIANT_BOOL *")] short* p);
+
+            [VtblIndex(10)]
+            HRESULT get_shiftKey([NativeTypeName("VARIANT_BOOL *")] short* p);
+
+            [VtblIndex(11)]
+            HRESULT get_altKey([NativeTypeName("VARIANT_BOOL *")] short* p);
+
+            [VtblIndex(12)]
+            HRESULT get_metaKey([NativeTypeName("VARIANT_BOOL *")] short* p);
+
+            [VtblIndex(13)]
+            HRESULT get_repeat([NativeTypeName("VARIANT_BOOL *")] short* p);
+
+            [VtblIndex(14)]
+            HRESULT getModifierState([NativeTypeName("BSTR")] ushort* keyArg, [NativeTypeName("VARIANT_BOOL *")] short* state);
+
+            [VtblIndex(15)]
+            HRESULT initKeyboardEvent([NativeTypeName("BSTR")] ushort* eventType, [NativeTypeName("VARIANT_BOOL")] short canBubble, [NativeTypeName("VARIANT_BOOL")] short cancelable, IHTMLWindow2* viewArg, [NativeTypeName("BSTR")] ushort* keyArg, [NativeTypeName("ULONG")] uint locationArg, [NativeTypeName("BSTR")] ushort* modifiersListArg, [NativeTypeName("VARIANT_BOOL")] short repeat, [NativeTypeName("BSTR")] ushort* locale);
+
+            [VtblIndex(16)]
+            HRESULT get_keyCode([NativeTypeName("long *")] int* p);
+
+            [VtblIndex(17)]
+            HRESULT get_charCode([NativeTypeName("long *")] int* p);
+
+            [VtblIndex(18)]
+            HRESULT get_which([NativeTypeName("long *")] int* p);
+
+            [VtblIndex(19)]
+            HRESULT get_ie9_char(VARIANT* p);
+
+            [VtblIndex(20)]
+            HRESULT get_locale([NativeTypeName("BSTR *")] ushort** p);
         }
 
         public partial struct Vtbl

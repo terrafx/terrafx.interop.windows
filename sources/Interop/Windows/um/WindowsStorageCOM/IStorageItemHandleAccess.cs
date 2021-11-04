@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("5CA296B2-2C25-4D22-B785-B885C8201E6A")]
     [NativeTypeName("struct IStorageItemHandleAccess : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IStorageItemHandleAccess
+    public unsafe partial struct IStorageItemHandleAccess : IStorageItemHandleAccess.Interface
     {
         public void** lpVtbl;
 
@@ -44,6 +44,12 @@ namespace TerraFX.Interop
         public HRESULT Create(HANDLE_ACCESS_OPTIONS accessOptions, HANDLE_SHARING_OPTIONS sharingOptions, HANDLE_OPTIONS options, IOplockBreakingHandler* oplockBreakingHandler, HANDLE* interopHandle)
         {
             return ((delegate* unmanaged<IStorageItemHandleAccess*, HANDLE_ACCESS_OPTIONS, HANDLE_SHARING_OPTIONS, HANDLE_OPTIONS, IOplockBreakingHandler*, HANDLE*, int>)(lpVtbl[3]))((IStorageItemHandleAccess*)Unsafe.AsPointer(ref this), accessOptions, sharingOptions, options, oplockBreakingHandler, interopHandle);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT Create(HANDLE_ACCESS_OPTIONS accessOptions, HANDLE_SHARING_OPTIONS sharingOptions, HANDLE_OPTIONS options, IOplockBreakingHandler* oplockBreakingHandler, HANDLE* interopHandle);
         }
 
         public partial struct Vtbl

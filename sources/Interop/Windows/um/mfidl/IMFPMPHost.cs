@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("F70CA1A9-FDC7-4782-B994-ADFFB1C98606")]
     [NativeTypeName("struct IMFPMPHost : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IMFPMPHost
+    public unsafe partial struct IMFPMPHost : IMFPMPHost.Interface
     {
         public void** lpVtbl;
 
@@ -58,6 +58,18 @@ namespace TerraFX.Interop
         public HRESULT CreateObjectByCLSID([NativeTypeName("const IID &")] Guid* clsid, IStream* pStream, [NativeTypeName("const IID &")] Guid* riid, void** ppv)
         {
             return ((delegate* unmanaged<IMFPMPHost*, Guid*, IStream*, Guid*, void**, int>)(lpVtbl[5]))((IMFPMPHost*)Unsafe.AsPointer(ref this), clsid, pStream, riid, ppv);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT LockProcess();
+
+            [VtblIndex(4)]
+            HRESULT UnlockProcess();
+
+            [VtblIndex(5)]
+            HRESULT CreateObjectByCLSID([NativeTypeName("const IID &")] Guid* clsid, IStream* pStream, [NativeTypeName("const IID &")] Guid* riid, void** ppv);
         }
 
         public partial struct Vtbl

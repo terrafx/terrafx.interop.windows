@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("30572F99-DAC6-41DB-A16E-0486307E606A")]
     [NativeTypeName("struct IDWriteFactory1 : IDWriteFactory")]
     [NativeInheritance("IDWriteFactory")]
-    public unsafe partial struct IDWriteFactory1
+    public unsafe partial struct IDWriteFactory1 : IDWriteFactory1.Interface
     {
         public void** lpVtbl;
 
@@ -198,6 +198,15 @@ namespace TerraFX.Interop
         public HRESULT CreateCustomRenderingParams(float gamma, float enhancedContrast, float enhancedContrastGrayscale, float clearTypeLevel, DWRITE_PIXEL_GEOMETRY pixelGeometry, DWRITE_RENDERING_MODE renderingMode, IDWriteRenderingParams1** renderingParams)
         {
             return ((delegate* unmanaged<IDWriteFactory1*, float, float, float, float, DWRITE_PIXEL_GEOMETRY, DWRITE_RENDERING_MODE, IDWriteRenderingParams1**, int>)(lpVtbl[25]))((IDWriteFactory1*)Unsafe.AsPointer(ref this), gamma, enhancedContrast, enhancedContrastGrayscale, clearTypeLevel, pixelGeometry, renderingMode, renderingParams);
+        }
+
+        public interface Interface : IDWriteFactory.Interface
+        {
+            [VtblIndex(24)]
+            HRESULT GetEudcFontCollection(IDWriteFontCollection** fontCollection, [Optional] BOOL checkForUpdates);
+
+            [VtblIndex(25)]
+            HRESULT CreateCustomRenderingParams(float gamma, float enhancedContrast, float enhancedContrastGrayscale, float clearTypeLevel, DWRITE_PIXEL_GEOMETRY pixelGeometry, DWRITE_RENDERING_MODE renderingMode, IDWriteRenderingParams1** renderingParams);
         }
 
         public partial struct Vtbl

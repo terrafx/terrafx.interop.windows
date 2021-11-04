@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("B196B284-BAB4-101A-B69C-00AA00341D07")]
     [NativeTypeName("struct IConnectionPointContainer : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IConnectionPointContainer
+    public unsafe partial struct IConnectionPointContainer : IConnectionPointContainer.Interface
     {
         public void** lpVtbl;
 
@@ -51,6 +51,15 @@ namespace TerraFX.Interop
         public HRESULT FindConnectionPoint([NativeTypeName("const IID &")] Guid* riid, IConnectionPoint** ppCP)
         {
             return ((delegate* unmanaged<IConnectionPointContainer*, Guid*, IConnectionPoint**, int>)(lpVtbl[4]))((IConnectionPointContainer*)Unsafe.AsPointer(ref this), riid, ppCP);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT EnumConnectionPoints(IEnumConnectionPoints** ppEnum);
+
+            [VtblIndex(4)]
+            HRESULT FindConnectionPoint([NativeTypeName("const IID &")] Guid* riid, IConnectionPoint** ppCP);
         }
 
         public partial struct Vtbl

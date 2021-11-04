@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("B06FE5B9-43EC-4393-881B-DBE4DC72FDA7")]
     [NativeTypeName("struct IDWriteFontDownloadListener : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IDWriteFontDownloadListener
+    public unsafe partial struct IDWriteFontDownloadListener : IDWriteFontDownloadListener.Interface
     {
         public void** lpVtbl;
 
@@ -44,6 +44,12 @@ namespace TerraFX.Interop
         public void DownloadCompleted(IDWriteFontDownloadQueue* downloadQueue, IUnknown* context, HRESULT downloadResult)
         {
             ((delegate* unmanaged<IDWriteFontDownloadListener*, IDWriteFontDownloadQueue*, IUnknown*, HRESULT, void>)(lpVtbl[3]))((IDWriteFontDownloadListener*)Unsafe.AsPointer(ref this), downloadQueue, context, downloadResult);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            void DownloadCompleted(IDWriteFontDownloadQueue* downloadQueue, IUnknown* context, HRESULT downloadResult);
         }
 
         public partial struct Vtbl

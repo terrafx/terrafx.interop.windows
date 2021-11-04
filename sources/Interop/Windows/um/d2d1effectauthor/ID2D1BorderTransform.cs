@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("4998735C-3A19-473C-9781-656847E3A347")]
     [NativeTypeName("struct ID2D1BorderTransform : ID2D1ConcreteTransform")]
     [NativeInheritance("ID2D1ConcreteTransform")]
-    public unsafe partial struct ID2D1BorderTransform
+    public unsafe partial struct ID2D1BorderTransform : ID2D1BorderTransform.Interface
     {
         public void** lpVtbl;
 
@@ -87,6 +87,21 @@ namespace TerraFX.Interop
         public D2D1_EXTEND_MODE GetExtendModeY()
         {
             return ((delegate* unmanaged<ID2D1BorderTransform*, D2D1_EXTEND_MODE>)(lpVtbl[9]))((ID2D1BorderTransform*)Unsafe.AsPointer(ref this));
+        }
+
+        public interface Interface : ID2D1ConcreteTransform.Interface
+        {
+            [VtblIndex(6)]
+            void SetExtendModeX(D2D1_EXTEND_MODE extendMode);
+
+            [VtblIndex(7)]
+            void SetExtendModeY(D2D1_EXTEND_MODE extendMode);
+
+            [VtblIndex(8)]
+            D2D1_EXTEND_MODE GetExtendModeX();
+
+            [VtblIndex(9)]
+            D2D1_EXTEND_MODE GetExtendModeY();
         }
 
         public partial struct Vtbl

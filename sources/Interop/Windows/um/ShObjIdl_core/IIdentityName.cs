@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("7D903FCA-D6F9-4810-8332-946C0177E247")]
     [NativeTypeName("struct IIdentityName : IRelatedItem")]
     [NativeInheritance("IRelatedItem")]
-    public unsafe partial struct IIdentityName
+    public unsafe partial struct IIdentityName : IIdentityName.Interface
     {
         public void** lpVtbl;
 
@@ -51,6 +51,10 @@ namespace TerraFX.Interop
         public HRESULT GetItem(IShellItem** ppsi)
         {
             return ((delegate* unmanaged<IIdentityName*, IShellItem**, int>)(lpVtbl[4]))((IIdentityName*)Unsafe.AsPointer(ref this), ppsi);
+        }
+
+        public interface Interface : IRelatedItem.Interface
+        {
         }
 
         public partial struct Vtbl

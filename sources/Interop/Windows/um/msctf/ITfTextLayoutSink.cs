@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("2AF2D06A-DD5B-4927-A0B4-54F19C91FADE")]
     [NativeTypeName("struct ITfTextLayoutSink : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct ITfTextLayoutSink
+    public unsafe partial struct ITfTextLayoutSink : ITfTextLayoutSink.Interface
     {
         public void** lpVtbl;
 
@@ -44,6 +44,12 @@ namespace TerraFX.Interop
         public HRESULT OnLayoutChange(ITfContext* pic, TfLayoutCode lcode, ITfContextView* pView)
         {
             return ((delegate* unmanaged<ITfTextLayoutSink*, ITfContext*, TfLayoutCode, ITfContextView*, int>)(lpVtbl[3]))((ITfTextLayoutSink*)Unsafe.AsPointer(ref this), pic, lcode, pView);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT OnLayoutChange(ITfContext* pic, TfLayoutCode lcode, ITfContextView* pView);
         }
 
         public partial struct Vtbl

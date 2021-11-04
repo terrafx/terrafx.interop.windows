@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("0C012799-1B61-4C10-BDA9-04445BE5F561")]
     [NativeTypeName("struct IMFDLNASinkInit : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IMFDLNASinkInit
+    public unsafe partial struct IMFDLNASinkInit : IMFDLNASinkInit.Interface
     {
         public void** lpVtbl;
 
@@ -44,6 +44,12 @@ namespace TerraFX.Interop
         public HRESULT Initialize(IMFByteStream* pByteStream, BOOL fPal)
         {
             return ((delegate* unmanaged<IMFDLNASinkInit*, IMFByteStream*, BOOL, int>)(lpVtbl[3]))((IMFDLNASinkInit*)Unsafe.AsPointer(ref this), pByteStream, fPal);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT Initialize(IMFByteStream* pByteStream, BOOL fPal);
         }
 
         public partial struct Vtbl

@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("B4E3C01D-E79E-4637-91B2-510E9F4C9B8F")]
     [NativeTypeName("struct ID3D11DeviceContext3 : ID3D11DeviceContext2")]
     [NativeInheritance("ID3D11DeviceContext2")]
-    public unsafe partial struct ID3D11DeviceContext3
+    public unsafe partial struct ID3D11DeviceContext3 : ID3D11DeviceContext3.Interface
     {
         public void** lpVtbl;
 
@@ -1045,6 +1045,18 @@ namespace TerraFX.Interop
         public void GetHardwareProtectionState(BOOL* pHwProtectionEnable)
         {
             ((delegate* unmanaged<ID3D11DeviceContext3*, BOOL*, void>)(lpVtbl[146]))((ID3D11DeviceContext3*)Unsafe.AsPointer(ref this), pHwProtectionEnable);
+        }
+
+        public interface Interface : ID3D11DeviceContext2.Interface
+        {
+            [VtblIndex(144)]
+            void Flush1(D3D11_CONTEXT_TYPE ContextType, HANDLE hEvent);
+
+            [VtblIndex(145)]
+            void SetHardwareProtectionState(BOOL HwProtectionEnable);
+
+            [VtblIndex(146)]
+            void GetHardwareProtectionState(BOOL* pHwProtectionEnable);
         }
 
         public partial struct Vtbl

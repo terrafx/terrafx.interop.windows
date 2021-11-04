@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("C8D22AFC-BC47-4BDF-9B04-787E49CE3F58")]
     [NativeTypeName("struct IMFTimedTextRegion : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IMFTimedTextRegion
+    public unsafe partial struct IMFTimedTextRegion : IMFTimedTextRegion.Interface
     {
         public void** lpVtbl;
 
@@ -121,6 +121,45 @@ namespace TerraFX.Interop
         public HRESULT GetScrollMode(MF_TIMED_TEXT_SCROLL_MODE* scrollMode)
         {
             return ((delegate* unmanaged<IMFTimedTextRegion*, MF_TIMED_TEXT_SCROLL_MODE*, int>)(lpVtbl[14]))((IMFTimedTextRegion*)Unsafe.AsPointer(ref this), scrollMode);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetName([NativeTypeName("LPWSTR *")] ushort** name);
+
+            [VtblIndex(4)]
+            HRESULT GetPosition(double* pX, double* pY, MF_TIMED_TEXT_UNIT_TYPE* unitType);
+
+            [VtblIndex(5)]
+            HRESULT GetExtent(double* pWidth, double* pHeight, MF_TIMED_TEXT_UNIT_TYPE* unitType);
+
+            [VtblIndex(6)]
+            HRESULT GetBackgroundColor(MFARGB* bgColor);
+
+            [VtblIndex(7)]
+            HRESULT GetWritingMode(MF_TIMED_TEXT_WRITING_MODE* writingMode);
+
+            [VtblIndex(8)]
+            HRESULT GetDisplayAlignment(MF_TIMED_TEXT_DISPLAY_ALIGNMENT* displayAlign);
+
+            [VtblIndex(9)]
+            HRESULT GetLineHeight(double* pLineHeight, MF_TIMED_TEXT_UNIT_TYPE* unitType);
+
+            [VtblIndex(10)]
+            HRESULT GetClipOverflow(BOOL* clipOverflow);
+
+            [VtblIndex(11)]
+            HRESULT GetPadding(double* before, double* start, double* after, double* end, MF_TIMED_TEXT_UNIT_TYPE* unitType);
+
+            [VtblIndex(12)]
+            HRESULT GetWrap(BOOL* wrap);
+
+            [VtblIndex(13)]
+            HRESULT GetZIndex([NativeTypeName("INT32 *")] int* zIndex);
+
+            [VtblIndex(14)]
+            HRESULT GetScrollMode(MF_TIMED_TEXT_SCROLL_MODE* scrollMode);
         }
 
         public partial struct Vtbl

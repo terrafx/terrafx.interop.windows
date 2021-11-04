@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("95252C5D-9E43-4F4A-9899-48EE73352F9F")]
     [NativeTypeName("struct ISpeechLexiconPronunciation : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct ISpeechLexiconPronunciation
+    public unsafe partial struct ISpeechLexiconPronunciation : ISpeechLexiconPronunciation.Interface
     {
         public void** lpVtbl;
 
@@ -100,6 +100,24 @@ namespace TerraFX.Interop
         public HRESULT get_Symbolic([NativeTypeName("BSTR *")] ushort** Symbolic)
         {
             return ((delegate* unmanaged<ISpeechLexiconPronunciation*, ushort**, int>)(lpVtbl[11]))((ISpeechLexiconPronunciation*)Unsafe.AsPointer(ref this), Symbolic);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT get_Type(SpeechLexiconType* LexiconType);
+
+            [VtblIndex(8)]
+            HRESULT get_LangId([NativeTypeName("SpeechLanguageId *")] int* LangId);
+
+            [VtblIndex(9)]
+            HRESULT get_PartOfSpeech(SpeechPartOfSpeech* PartOfSpeech);
+
+            [VtblIndex(10)]
+            HRESULT get_PhoneIds(VARIANT* PhoneIds);
+
+            [VtblIndex(11)]
+            HRESULT get_Symbolic([NativeTypeName("BSTR *")] ushort** Symbolic);
         }
 
         public partial struct Vtbl

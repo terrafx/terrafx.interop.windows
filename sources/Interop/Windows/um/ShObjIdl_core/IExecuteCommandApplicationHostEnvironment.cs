@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("18B21AA9-E184-4FF0-9F5E-F882D03771B3")]
     [NativeTypeName("struct IExecuteCommandApplicationHostEnvironment : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IExecuteCommandApplicationHostEnvironment
+    public unsafe partial struct IExecuteCommandApplicationHostEnvironment : IExecuteCommandApplicationHostEnvironment.Interface
     {
         public void** lpVtbl;
 
@@ -44,6 +44,12 @@ namespace TerraFX.Interop
         public HRESULT GetValue(AHE_TYPE* pahe)
         {
             return ((delegate* unmanaged<IExecuteCommandApplicationHostEnvironment*, AHE_TYPE*, int>)(lpVtbl[3]))((IExecuteCommandApplicationHostEnvironment*)Unsafe.AsPointer(ref this), pahe);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetValue(AHE_TYPE* pahe);
         }
 
         public partial struct Vtbl

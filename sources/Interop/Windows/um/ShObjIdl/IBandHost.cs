@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("B9075C7C-D48E-403F-AB99-D6C77A1084AC")]
     [NativeTypeName("struct IBandHost : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IBandHost
+    public unsafe partial struct IBandHost : IBandHost.Interface
     {
         public void** lpVtbl;
 
@@ -58,6 +58,18 @@ namespace TerraFX.Interop
         public HRESULT DestroyBand([NativeTypeName("const IID &")] Guid* rclsidBand)
         {
             return ((delegate* unmanaged<IBandHost*, Guid*, int>)(lpVtbl[5]))((IBandHost*)Unsafe.AsPointer(ref this), rclsidBand);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT CreateBand([NativeTypeName("const IID &")] Guid* rclsidBand, BOOL fAvailable, BOOL fVisible, [NativeTypeName("const IID &")] Guid* riid, void** ppv);
+
+            [VtblIndex(4)]
+            HRESULT SetBandAvailability([NativeTypeName("const IID &")] Guid* rclsidBand, BOOL fAvailable);
+
+            [VtblIndex(5)]
+            HRESULT DestroyBand([NativeTypeName("const IID &")] Guid* rclsidBand);
         }
 
         public partial struct Vtbl

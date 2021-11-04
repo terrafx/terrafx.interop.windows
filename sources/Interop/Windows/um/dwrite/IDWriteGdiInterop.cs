@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("1EDD9491-9853-4299-898F-6432983B6F3A")]
     [NativeTypeName("struct IDWriteGdiInterop : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IDWriteGdiInterop
+    public unsafe partial struct IDWriteGdiInterop : IDWriteGdiInterop.Interface
     {
         public void** lpVtbl;
 
@@ -72,6 +72,24 @@ namespace TerraFX.Interop
         public HRESULT CreateBitmapRenderTarget(HDC hdc, [NativeTypeName("UINT32")] uint width, [NativeTypeName("UINT32")] uint height, IDWriteBitmapRenderTarget** renderTarget)
         {
             return ((delegate* unmanaged<IDWriteGdiInterop*, HDC, uint, uint, IDWriteBitmapRenderTarget**, int>)(lpVtbl[7]))((IDWriteGdiInterop*)Unsafe.AsPointer(ref this), hdc, width, height, renderTarget);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT CreateFontFromLOGFONT([NativeTypeName("const LOGFONTW *")] LOGFONTW* logFont, IDWriteFont** font);
+
+            [VtblIndex(4)]
+            HRESULT ConvertFontToLOGFONT(IDWriteFont* font, LOGFONTW* logFont, BOOL* isSystemFont);
+
+            [VtblIndex(5)]
+            HRESULT ConvertFontFaceToLOGFONT(IDWriteFontFace* font, LOGFONTW* logFont);
+
+            [VtblIndex(6)]
+            HRESULT CreateFontFaceFromHdc(HDC hdc, IDWriteFontFace** fontFace);
+
+            [VtblIndex(7)]
+            HRESULT CreateBitmapRenderTarget(HDC hdc, [NativeTypeName("UINT32")] uint width, [NativeTypeName("UINT32")] uint height, IDWriteBitmapRenderTarget** renderTarget);
         }
 
         public partial struct Vtbl

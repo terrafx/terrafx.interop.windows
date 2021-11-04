@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("641ED83C-AE96-46C5-90DC-32774CC5C6D5")]
     [NativeTypeName("struct IDCompositionRotateTransform : IDCompositionTransform")]
     [NativeInheritance("IDCompositionTransform")]
-    public unsafe partial struct IDCompositionRotateTransform
+    public unsafe partial struct IDCompositionRotateTransform : IDCompositionRotateTransform.Interface
     {
         public void** lpVtbl;
 
@@ -79,6 +79,27 @@ namespace TerraFX.Interop
         public HRESULT SetCenterY(float centerY)
         {
             return ((delegate* unmanaged<IDCompositionRotateTransform*, float, int>)(lpVtbl[8]))((IDCompositionRotateTransform*)Unsafe.AsPointer(ref this), centerY);
+        }
+
+        public interface Interface : IDCompositionTransform.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT SetAngle(IDCompositionAnimation* animation);
+
+            [VtblIndex(4)]
+            HRESULT SetAngle(float angle);
+
+            [VtblIndex(5)]
+            HRESULT SetCenterX(IDCompositionAnimation* animation);
+
+            [VtblIndex(6)]
+            HRESULT SetCenterX(float centerX);
+
+            [VtblIndex(7)]
+            HRESULT SetCenterY(IDCompositionAnimation* animation);
+
+            [VtblIndex(8)]
+            HRESULT SetCenterY(float centerY);
         }
 
         public partial struct Vtbl

@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("56A868BA-0AD4-11CE-B03A-0020AF0BA770")]
     [NativeTypeName("struct IFilterInfo : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct IFilterInfo
+    public unsafe partial struct IFilterInfo : IFilterInfo.Interface
     {
         public void** lpVtbl;
 
@@ -121,6 +121,33 @@ namespace TerraFX.Interop
         public HRESULT put_Filename([NativeTypeName("BSTR")] ushort* strFilename)
         {
             return ((delegate* unmanaged<IFilterInfo*, ushort*, int>)(lpVtbl[14]))((IFilterInfo*)Unsafe.AsPointer(ref this), strFilename);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT FindPin([NativeTypeName("BSTR")] ushort* strPinID, IDispatch** ppUnk);
+
+            [VtblIndex(8)]
+            HRESULT get_Name([NativeTypeName("BSTR *")] ushort** strName);
+
+            [VtblIndex(9)]
+            HRESULT get_VendorInfo([NativeTypeName("BSTR *")] ushort** strVendorInfo);
+
+            [VtblIndex(10)]
+            HRESULT get_Filter(IUnknown** ppUnk);
+
+            [VtblIndex(11)]
+            HRESULT get_Pins(IDispatch** ppUnk);
+
+            [VtblIndex(12)]
+            HRESULT get_IsFileSource([NativeTypeName("LONG *")] int* pbIsSource);
+
+            [VtblIndex(13)]
+            HRESULT get_Filename([NativeTypeName("BSTR *")] ushort** pstrFilename);
+
+            [VtblIndex(14)]
+            HRESULT put_Filename([NativeTypeName("BSTR")] ushort* strFilename);
         }
 
         public partial struct Vtbl

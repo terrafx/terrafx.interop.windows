@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("839D1216-BB2E-412B-B7F4-A9DBEBE08ED1")]
     [NativeTypeName("struct ID3D11View : ID3D11DeviceChild")]
     [NativeInheritance("ID3D11DeviceChild")]
-    public unsafe partial struct ID3D11View
+    public unsafe partial struct ID3D11View : ID3D11View.Interface
     {
         public void** lpVtbl;
 
@@ -72,6 +72,12 @@ namespace TerraFX.Interop
         public void GetResource(ID3D11Resource** ppResource)
         {
             ((delegate* unmanaged<ID3D11View*, ID3D11Resource**, void>)(lpVtbl[7]))((ID3D11View*)Unsafe.AsPointer(ref this), ppResource);
+        }
+
+        public interface Interface : ID3D11DeviceChild.Interface
+        {
+            [VtblIndex(7)]
+            void GetResource(ID3D11Resource** ppResource);
         }
 
         public partial struct Vtbl

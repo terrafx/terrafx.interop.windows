@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("0C733A30-2A1C-11CE-ADE5-00AA0044773D")]
     [NativeTypeName("struct ISequentialStream : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct ISequentialStream
+    public unsafe partial struct ISequentialStream : ISequentialStream.Interface
     {
         public void** lpVtbl;
 
@@ -51,6 +51,15 @@ namespace TerraFX.Interop
         public HRESULT Write([NativeTypeName("const void *")] void* pv, [NativeTypeName("ULONG")] uint cb, [NativeTypeName("ULONG *")] uint* pcbWritten)
         {
             return ((delegate* unmanaged<ISequentialStream*, void*, uint, uint*, int>)(lpVtbl[4]))((ISequentialStream*)Unsafe.AsPointer(ref this), pv, cb, pcbWritten);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT Read(void* pv, [NativeTypeName("ULONG")] uint cb, [NativeTypeName("ULONG *")] uint* pcbRead);
+
+            [VtblIndex(4)]
+            HRESULT Write([NativeTypeName("const void *")] void* pv, [NativeTypeName("ULONG")] uint cb, [NativeTypeName("ULONG *")] uint* pcbWritten);
         }
 
         public partial struct Vtbl

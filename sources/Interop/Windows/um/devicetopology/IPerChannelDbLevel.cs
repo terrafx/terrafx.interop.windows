@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("C2F8E001-F205-4BC9-99BC-C13B1E048CCB")]
     [NativeTypeName("struct IPerChannelDbLevel : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IPerChannelDbLevel
+    public unsafe partial struct IPerChannelDbLevel : IPerChannelDbLevel.Interface
     {
         public void** lpVtbl;
 
@@ -79,6 +79,27 @@ namespace TerraFX.Interop
         public HRESULT SetLevelAllChannels([NativeTypeName("float []")] float* aLevelsDB, [NativeTypeName("ULONG")] uint cChannels, [NativeTypeName("LPCGUID")] Guid* pguidEventContext)
         {
             return ((delegate* unmanaged<IPerChannelDbLevel*, float*, uint, Guid*, int>)(lpVtbl[8]))((IPerChannelDbLevel*)Unsafe.AsPointer(ref this), aLevelsDB, cChannels, pguidEventContext);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetChannelCount(uint* pcChannels);
+
+            [VtblIndex(4)]
+            HRESULT GetLevelRange(uint nChannel, float* pfMinLevelDB, float* pfMaxLevelDB, float* pfStepping);
+
+            [VtblIndex(5)]
+            HRESULT GetLevel(uint nChannel, float* pfLevelDB);
+
+            [VtblIndex(6)]
+            HRESULT SetLevel(uint nChannel, float fLevelDB, [NativeTypeName("LPCGUID")] Guid* pguidEventContext);
+
+            [VtblIndex(7)]
+            HRESULT SetLevelUniform(float fLevelDB, [NativeTypeName("LPCGUID")] Guid* pguidEventContext);
+
+            [VtblIndex(8)]
+            HRESULT SetLevelAllChannels([NativeTypeName("float []")] float* aLevelsDB, [NativeTypeName("ULONG")] uint cChannels, [NativeTypeName("LPCGUID")] Guid* pguidEventContext);
         }
 
         public partial struct Vtbl

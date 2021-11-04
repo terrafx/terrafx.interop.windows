@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("3050F3DB-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct IHTMLCurrentStyle : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct IHTMLCurrentStyle
+    public unsafe partial struct IHTMLCurrentStyle : IHTMLCurrentStyle.Interface
     {
         public void** lpVtbl;
 
@@ -702,6 +702,282 @@ namespace TerraFX.Interop
         public HRESULT get_textTransform([NativeTypeName("BSTR *")] ushort** p)
         {
             return ((delegate* unmanaged<IHTMLCurrentStyle*, ushort**, int>)(lpVtbl[97]))((IHTMLCurrentStyle*)Unsafe.AsPointer(ref this), p);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT get_position([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(8)]
+            HRESULT get_styleFloat([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(9)]
+            HRESULT get_color(VARIANT* p);
+
+            [VtblIndex(10)]
+            HRESULT get_backgroundColor(VARIANT* p);
+
+            [VtblIndex(11)]
+            HRESULT get_fontFamily([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(12)]
+            HRESULT get_fontStyle([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(13)]
+            HRESULT get_fontVariant([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(14)]
+            HRESULT get_fontWeight(VARIANT* p);
+
+            [VtblIndex(15)]
+            HRESULT get_fontSize(VARIANT* p);
+
+            [VtblIndex(16)]
+            HRESULT get_backgroundImage([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(17)]
+            HRESULT get_backgroundPositionX(VARIANT* p);
+
+            [VtblIndex(18)]
+            HRESULT get_backgroundPositionY(VARIANT* p);
+
+            [VtblIndex(19)]
+            HRESULT get_backgroundRepeat([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(20)]
+            HRESULT get_borderLeftColor(VARIANT* p);
+
+            [VtblIndex(21)]
+            HRESULT get_borderTopColor(VARIANT* p);
+
+            [VtblIndex(22)]
+            HRESULT get_borderRightColor(VARIANT* p);
+
+            [VtblIndex(23)]
+            HRESULT get_borderBottomColor(VARIANT* p);
+
+            [VtblIndex(24)]
+            HRESULT get_borderTopStyle([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(25)]
+            HRESULT get_borderRightStyle([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(26)]
+            HRESULT get_borderBottomStyle([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(27)]
+            HRESULT get_borderLeftStyle([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(28)]
+            HRESULT get_borderTopWidth(VARIANT* p);
+
+            [VtblIndex(29)]
+            HRESULT get_borderRightWidth(VARIANT* p);
+
+            [VtblIndex(30)]
+            HRESULT get_borderBottomWidth(VARIANT* p);
+
+            [VtblIndex(31)]
+            HRESULT get_borderLeftWidth(VARIANT* p);
+
+            [VtblIndex(32)]
+            HRESULT get_left(VARIANT* p);
+
+            [VtblIndex(33)]
+            HRESULT get_top(VARIANT* p);
+
+            [VtblIndex(34)]
+            HRESULT get_width(VARIANT* p);
+
+            [VtblIndex(35)]
+            HRESULT get_height(VARIANT* p);
+
+            [VtblIndex(36)]
+            HRESULT get_paddingLeft(VARIANT* p);
+
+            [VtblIndex(37)]
+            HRESULT get_paddingTop(VARIANT* p);
+
+            [VtblIndex(38)]
+            HRESULT get_paddingRight(VARIANT* p);
+
+            [VtblIndex(39)]
+            HRESULT get_paddingBottom(VARIANT* p);
+
+            [VtblIndex(40)]
+            HRESULT get_textAlign([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(41)]
+            HRESULT get_textDecoration([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(42)]
+            HRESULT get_display([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(43)]
+            HRESULT get_visibility([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(44)]
+            HRESULT get_zIndex(VARIANT* p);
+
+            [VtblIndex(45)]
+            HRESULT get_letterSpacing(VARIANT* p);
+
+            [VtblIndex(46)]
+            HRESULT get_lineHeight(VARIANT* p);
+
+            [VtblIndex(47)]
+            HRESULT get_textIndent(VARIANT* p);
+
+            [VtblIndex(48)]
+            HRESULT get_verticalAlign(VARIANT* p);
+
+            [VtblIndex(49)]
+            HRESULT get_backgroundAttachment([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(50)]
+            HRESULT get_marginTop(VARIANT* p);
+
+            [VtblIndex(51)]
+            HRESULT get_marginRight(VARIANT* p);
+
+            [VtblIndex(52)]
+            HRESULT get_marginBottom(VARIANT* p);
+
+            [VtblIndex(53)]
+            HRESULT get_marginLeft(VARIANT* p);
+
+            [VtblIndex(54)]
+            HRESULT get_clear([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(55)]
+            HRESULT get_listStyleType([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(56)]
+            HRESULT get_listStylePosition([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(57)]
+            HRESULT get_listStyleImage([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(58)]
+            HRESULT get_clipTop(VARIANT* p);
+
+            [VtblIndex(59)]
+            HRESULT get_clipRight(VARIANT* p);
+
+            [VtblIndex(60)]
+            HRESULT get_clipBottom(VARIANT* p);
+
+            [VtblIndex(61)]
+            HRESULT get_clipLeft(VARIANT* p);
+
+            [VtblIndex(62)]
+            HRESULT get_overflow([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(63)]
+            HRESULT get_pageBreakBefore([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(64)]
+            HRESULT get_pageBreakAfter([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(65)]
+            HRESULT get_cursor([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(66)]
+            HRESULT get_tableLayout([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(67)]
+            HRESULT get_borderCollapse([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(68)]
+            HRESULT get_direction([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(69)]
+            HRESULT get_behavior([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(70)]
+            HRESULT getAttribute([NativeTypeName("BSTR")] ushort* strAttributeName, [NativeTypeName("LONG")] int lFlags, VARIANT* AttributeValue);
+
+            [VtblIndex(71)]
+            HRESULT get_unicodeBidi([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(72)]
+            HRESULT get_right(VARIANT* p);
+
+            [VtblIndex(73)]
+            HRESULT get_bottom(VARIANT* p);
+
+            [VtblIndex(74)]
+            HRESULT get_imeMode([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(75)]
+            HRESULT get_rubyAlign([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(76)]
+            HRESULT get_rubyPosition([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(77)]
+            HRESULT get_rubyOverhang([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(78)]
+            HRESULT get_textAutospace([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(79)]
+            HRESULT get_lineBreak([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(80)]
+            HRESULT get_wordBreak([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(81)]
+            HRESULT get_textJustify([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(82)]
+            HRESULT get_textJustifyTrim([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(83)]
+            HRESULT get_textKashida(VARIANT* p);
+
+            [VtblIndex(84)]
+            HRESULT get_blockDirection([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(85)]
+            HRESULT get_layoutGridChar(VARIANT* p);
+
+            [VtblIndex(86)]
+            HRESULT get_layoutGridLine(VARIANT* p);
+
+            [VtblIndex(87)]
+            HRESULT get_layoutGridMode([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(88)]
+            HRESULT get_layoutGridType([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(89)]
+            HRESULT get_borderStyle([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(90)]
+            HRESULT get_borderColor([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(91)]
+            HRESULT get_borderWidth([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(92)]
+            HRESULT get_padding([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(93)]
+            HRESULT get_margin([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(94)]
+            HRESULT get_accelerator([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(95)]
+            HRESULT get_overflowX([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(96)]
+            HRESULT get_overflowY([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(97)]
+            HRESULT get_textTransform([NativeTypeName("BSTR *")] ushort** p);
         }
 
         public partial struct Vtbl

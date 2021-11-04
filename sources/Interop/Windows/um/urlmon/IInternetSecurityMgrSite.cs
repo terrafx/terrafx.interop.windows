@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("79EAC9ED-BAF9-11CE-8C82-00AA004BA90B")]
     [NativeTypeName("struct IInternetSecurityMgrSite : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IInternetSecurityMgrSite
+    public unsafe partial struct IInternetSecurityMgrSite : IInternetSecurityMgrSite.Interface
     {
         public void** lpVtbl;
 
@@ -51,6 +51,15 @@ namespace TerraFX.Interop
         public HRESULT EnableModeless(BOOL fEnable)
         {
             return ((delegate* unmanaged<IInternetSecurityMgrSite*, BOOL, int>)(lpVtbl[4]))((IInternetSecurityMgrSite*)Unsafe.AsPointer(ref this), fEnable);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetWindow(HWND* phwnd);
+
+            [VtblIndex(4)]
+            HRESULT EnableModeless(BOOL fEnable);
         }
 
         public partial struct Vtbl

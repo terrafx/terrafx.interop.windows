@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("05008617-FBFD-4051-A790-144884B4F6A9")]
     [NativeTypeName("struct IDXGIDevice2 : IDXGIDevice1")]
     [NativeInheritance("IDXGIDevice1")]
-    public unsafe partial struct IDXGIDevice2
+    public unsafe partial struct IDXGIDevice2 : IDXGIDevice2.Interface
     {
         public void** lpVtbl;
 
@@ -135,6 +135,18 @@ namespace TerraFX.Interop
         public HRESULT EnqueueSetEvent(HANDLE hEvent)
         {
             return ((delegate* unmanaged<IDXGIDevice2*, HANDLE, int>)(lpVtbl[16]))((IDXGIDevice2*)Unsafe.AsPointer(ref this), hEvent);
+        }
+
+        public interface Interface : IDXGIDevice1.Interface
+        {
+            [VtblIndex(14)]
+            HRESULT OfferResources(uint NumResources, [NativeTypeName("IDXGIResource *const *")] IDXGIResource** ppResources, DXGI_OFFER_RESOURCE_PRIORITY Priority);
+
+            [VtblIndex(15)]
+            HRESULT ReclaimResources(uint NumResources, [NativeTypeName("IDXGIResource *const *")] IDXGIResource** ppResources, BOOL* pDiscarded);
+
+            [VtblIndex(16)]
+            HRESULT EnqueueSetEvent(HANDLE hEvent);
         }
 
         public partial struct Vtbl

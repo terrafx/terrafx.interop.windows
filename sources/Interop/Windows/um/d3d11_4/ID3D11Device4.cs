@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("8992AB71-02E6-4B8D-BA48-B056DCDA42C4")]
     [NativeTypeName("struct ID3D11Device4 : ID3D11Device3")]
     [NativeInheritance("ID3D11Device3")]
-    public unsafe partial struct ID3D11Device4
+    public unsafe partial struct ID3D11Device4 : ID3D11Device4.Interface
     {
         public void** lpVtbl;
 
@@ -485,6 +485,15 @@ namespace TerraFX.Interop
         public void UnregisterDeviceRemoved([NativeTypeName("DWORD")] uint dwCookie)
         {
             ((delegate* unmanaged<ID3D11Device4*, uint, void>)(lpVtbl[66]))((ID3D11Device4*)Unsafe.AsPointer(ref this), dwCookie);
+        }
+
+        public interface Interface : ID3D11Device3.Interface
+        {
+            [VtblIndex(65)]
+            HRESULT RegisterDeviceRemovedEvent(HANDLE hEvent, [NativeTypeName("DWORD *")] uint* pdwCookie);
+
+            [VtblIndex(66)]
+            void UnregisterDeviceRemoved([NativeTypeName("DWORD")] uint dwCookie);
         }
 
         public partial struct Vtbl

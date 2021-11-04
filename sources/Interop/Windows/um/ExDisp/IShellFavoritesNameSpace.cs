@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("55136804-B2DE-11D1-B9F2-00A0C98BC547")]
     [NativeTypeName("struct IShellFavoritesNameSpace : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct IShellFavoritesNameSpace
+    public unsafe partial struct IShellFavoritesNameSpace : IShellFavoritesNameSpace.Interface
     {
         public void** lpVtbl;
 
@@ -156,6 +156,48 @@ namespace TerraFX.Interop
         public HRESULT SetRoot([NativeTypeName("BSTR")] ushort* bstrFullPath)
         {
             return ((delegate* unmanaged<IShellFavoritesNameSpace*, ushort*, int>)(lpVtbl[19]))((IShellFavoritesNameSpace*)Unsafe.AsPointer(ref this), bstrFullPath);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT MoveSelectionUp();
+
+            [VtblIndex(8)]
+            HRESULT MoveSelectionDown();
+
+            [VtblIndex(9)]
+            HRESULT ResetSort();
+
+            [VtblIndex(10)]
+            HRESULT NewFolder();
+
+            [VtblIndex(11)]
+            HRESULT Synchronize();
+
+            [VtblIndex(12)]
+            HRESULT Import();
+
+            [VtblIndex(13)]
+            HRESULT Export();
+
+            [VtblIndex(14)]
+            HRESULT InvokeContextMenuCommand([NativeTypeName("BSTR")] ushort* strCommand);
+
+            [VtblIndex(15)]
+            HRESULT MoveSelectionTo();
+
+            [VtblIndex(16)]
+            HRESULT get_SubscriptionsEnabled([NativeTypeName("VARIANT_BOOL *")] short* pBool);
+
+            [VtblIndex(17)]
+            HRESULT CreateSubscriptionForSelection([NativeTypeName("VARIANT_BOOL *")] short* pBool);
+
+            [VtblIndex(18)]
+            HRESULT DeleteSubscriptionForSelection([NativeTypeName("VARIANT_BOOL *")] short* pBool);
+
+            [VtblIndex(19)]
+            HRESULT SetRoot([NativeTypeName("BSTR")] ushort* bstrFullPath);
         }
 
         public partial struct Vtbl

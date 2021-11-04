@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("77346CFD-5B49-4D73-ACE0-5B52A859F2E0")]
     [NativeTypeName("struct IMFCapturePreviewSink : IMFCaptureSink")]
     [NativeInheritance("IMFCaptureSink")]
-    public unsafe partial struct IMFCapturePreviewSink
+    public unsafe partial struct IMFCapturePreviewSink : IMFCapturePreviewSink.Interface
     {
         public void** lpVtbl;
 
@@ -135,6 +135,36 @@ namespace TerraFX.Interop
         public HRESULT SetCustomSink(IMFMediaSink* pMediaSink)
         {
             return ((delegate* unmanaged<IMFCapturePreviewSink*, IMFMediaSink*, int>)(lpVtbl[16]))((IMFCapturePreviewSink*)Unsafe.AsPointer(ref this), pMediaSink);
+        }
+
+        public interface Interface : IMFCaptureSink.Interface
+        {
+            [VtblIndex(8)]
+            HRESULT SetRenderHandle(HANDLE handle);
+
+            [VtblIndex(9)]
+            HRESULT SetRenderSurface(IUnknown* pSurface);
+
+            [VtblIndex(10)]
+            HRESULT UpdateVideo([NativeTypeName("const MFVideoNormalizedRect *")] MFVideoNormalizedRect* pSrc, [NativeTypeName("const RECT *")] RECT* pDst, [NativeTypeName("const COLORREF *")] COLORREF* pBorderClr);
+
+            [VtblIndex(11)]
+            HRESULT SetSampleCallback([NativeTypeName("DWORD")] uint dwStreamSinkIndex, IMFCaptureEngineOnSampleCallback* pCallback);
+
+            [VtblIndex(12)]
+            HRESULT GetMirrorState(BOOL* pfMirrorState);
+
+            [VtblIndex(13)]
+            HRESULT SetMirrorState(BOOL fMirrorState);
+
+            [VtblIndex(14)]
+            HRESULT GetRotation([NativeTypeName("DWORD")] uint dwStreamIndex, [NativeTypeName("DWORD *")] uint* pdwRotationValue);
+
+            [VtblIndex(15)]
+            HRESULT SetRotation([NativeTypeName("DWORD")] uint dwStreamIndex, [NativeTypeName("DWORD")] uint dwRotationValue);
+
+            [VtblIndex(16)]
+            HRESULT SetCustomSink(IMFMediaSink* pMediaSink);
         }
 
         public partial struct Vtbl

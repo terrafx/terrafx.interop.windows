@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("3050F1F4-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct IHTMLHRElement : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct IHTMLHRElement
+    public unsafe partial struct IHTMLHRElement : IHTMLHRElement.Interface
     {
         public void** lpVtbl;
 
@@ -135,6 +135,39 @@ namespace TerraFX.Interop
         public HRESULT get_size(VARIANT* p)
         {
             return ((delegate* unmanaged<IHTMLHRElement*, VARIANT*, int>)(lpVtbl[16]))((IHTMLHRElement*)Unsafe.AsPointer(ref this), p);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT put_align([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(8)]
+            HRESULT get_align([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(9)]
+            HRESULT put_color(VARIANT v);
+
+            [VtblIndex(10)]
+            HRESULT get_color(VARIANT* p);
+
+            [VtblIndex(11)]
+            HRESULT put_noShade([NativeTypeName("VARIANT_BOOL")] short v);
+
+            [VtblIndex(12)]
+            HRESULT get_noShade([NativeTypeName("VARIANT_BOOL *")] short* p);
+
+            [VtblIndex(13)]
+            HRESULT put_width(VARIANT v);
+
+            [VtblIndex(14)]
+            HRESULT get_width(VARIANT* p);
+
+            [VtblIndex(15)]
+            HRESULT put_size(VARIANT v);
+
+            [VtblIndex(16)]
+            HRESULT get_size(VARIANT* p);
         }
 
         public partial struct Vtbl

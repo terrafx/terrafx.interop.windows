@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("A410B984-9839-4819-A0BE-2856AE6B3ADB")]
     [NativeTypeName("struct IXAPO : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IXAPO
+    public unsafe partial struct IXAPO : IXAPO.Interface
     {
         public void** lpVtbl;
 
@@ -109,6 +109,41 @@ namespace TerraFX.Interop
         public uint CalcOutputFrames([NativeTypeName("UINT32")] uint InputFrameCount)
         {
             return ((delegate* unmanaged<IXAPO*, uint, uint>)(lpVtbl[12]))((IXAPO*)Unsafe.AsPointer(ref this), InputFrameCount);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetRegistrationProperties(XAPO_REGISTRATION_PROPERTIES** ppRegistrationProperties);
+
+            [VtblIndex(4)]
+            HRESULT IsInputFormatSupported([NativeTypeName("const WAVEFORMATEX *")] WAVEFORMATEX* pOutputFormat, [NativeTypeName("const WAVEFORMATEX *")] WAVEFORMATEX* pRequestedInputFormat, WAVEFORMATEX** ppSupportedInputFormat);
+
+            [VtblIndex(5)]
+            HRESULT IsOutputFormatSupported([NativeTypeName("const WAVEFORMATEX *")] WAVEFORMATEX* pInputFormat, [NativeTypeName("const WAVEFORMATEX *")] WAVEFORMATEX* pRequestedOutputFormat, WAVEFORMATEX** ppSupportedOutputFormat);
+
+            [VtblIndex(6)]
+            HRESULT Initialize([NativeTypeName("const void *")] void* pData, [NativeTypeName("UINT32")] uint DataByteSize);
+
+            [VtblIndex(7)]
+            void Reset();
+
+            [VtblIndex(8)]
+            HRESULT LockForProcess([NativeTypeName("UINT32")] uint InputLockedParameterCount, [NativeTypeName("const XAPO_LOCKFORPROCESS_PARAMETERS *")] XAPO_LOCKFORPROCESS_PARAMETERS* pInputLockedParameters, [NativeTypeName("UINT32")] uint OutputLockedParameterCount, [NativeTypeName("const XAPO_LOCKFORPROCESS_PARAMETERS *")] XAPO_LOCKFORPROCESS_PARAMETERS* pOutputLockedParameters);
+
+            [VtblIndex(9)]
+            void UnlockForProcess();
+
+            [VtblIndex(10)]
+            void Process([NativeTypeName("UINT32")] uint InputProcessParameterCount, [NativeTypeName("const XAPO_PROCESS_BUFFER_PARAMETERS *")] XAPO_PROCESS_BUFFER_PARAMETERS* pInputProcessParameters, [NativeTypeName("UINT32")] uint OutputProcessParameterCount, XAPO_PROCESS_BUFFER_PARAMETERS* pOutputProcessParameters, BOOL IsEnabled);
+
+            [VtblIndex(11)]
+            [return: NativeTypeName("UINT32")]
+            uint CalcInputFrames([NativeTypeName("UINT32")] uint OutputFrameCount);
+
+            [VtblIndex(12)]
+            [return: NativeTypeName("UINT32")]
+            uint CalcOutputFrames([NativeTypeName("UINT32")] uint InputFrameCount);
         }
 
         public partial struct Vtbl

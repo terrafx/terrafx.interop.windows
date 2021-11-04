@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("41343A53-E41A-49A2-91CD-21793BBB62E5")]
     [NativeTypeName("struct ID2D1BitmapBrush1 : ID2D1BitmapBrush")]
     [NativeInheritance("ID2D1BitmapBrush")]
-    public unsafe partial struct ID2D1BitmapBrush1
+    public unsafe partial struct ID2D1BitmapBrush1 : ID2D1BitmapBrush1.Interface
     {
         public void** lpVtbl;
 
@@ -142,6 +142,15 @@ namespace TerraFX.Interop
         public D2D1_INTERPOLATION_MODE GetInterpolationMode1()
         {
             return ((delegate* unmanaged<ID2D1BitmapBrush1*, D2D1_INTERPOLATION_MODE>)(lpVtbl[17]))((ID2D1BitmapBrush1*)Unsafe.AsPointer(ref this));
+        }
+
+        public interface Interface : ID2D1BitmapBrush.Interface
+        {
+            [VtblIndex(16)]
+            void SetInterpolationMode1(D2D1_INTERPOLATION_MODE interpolationMode);
+
+            [VtblIndex(17)]
+            D2D1_INTERPOLATION_MODE GetInterpolationMode1();
         }
 
         public partial struct Vtbl

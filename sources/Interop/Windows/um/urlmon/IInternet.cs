@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("79EAC9E0-BAF9-11CE-8C82-00AA004BA90B")]
     [NativeTypeName("struct IInternet : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IInternet
+    public unsafe partial struct IInternet : IInternet.Interface
     {
         public void** lpVtbl;
 
@@ -37,6 +37,10 @@ namespace TerraFX.Interop
         public uint Release()
         {
             return ((delegate* unmanaged<IInternet*, uint>)(lpVtbl[2]))((IInternet*)Unsafe.AsPointer(ref this));
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
         }
 
         public partial struct Vtbl

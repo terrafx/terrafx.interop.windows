@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("56A86895-0AD4-11CE-B03A-0020AF0BA770")]
     [NativeTypeName("struct IBaseFilter : IMediaFilter")]
     [NativeInheritance("IMediaFilter")]
-    public unsafe partial struct IBaseFilter
+    public unsafe partial struct IBaseFilter : IBaseFilter.Interface
     {
         public void** lpVtbl;
 
@@ -121,6 +121,24 @@ namespace TerraFX.Interop
         public HRESULT QueryVendorInfo([NativeTypeName("LPWSTR *")] ushort** pVendorInfo)
         {
             return ((delegate* unmanaged<IBaseFilter*, ushort**, int>)(lpVtbl[14]))((IBaseFilter*)Unsafe.AsPointer(ref this), pVendorInfo);
+        }
+
+        public interface Interface : IMediaFilter.Interface
+        {
+            [VtblIndex(10)]
+            HRESULT EnumPins(IEnumPins** ppEnum);
+
+            [VtblIndex(11)]
+            HRESULT FindPin([NativeTypeName("LPCWSTR")] ushort* Id, IPin** ppPin);
+
+            [VtblIndex(12)]
+            HRESULT QueryFilterInfo(FILTER_INFO* pInfo);
+
+            [VtblIndex(13)]
+            HRESULT JoinFilterGraph(IFilterGraph* pGraph, [NativeTypeName("LPCWSTR")] ushort* pName);
+
+            [VtblIndex(14)]
+            HRESULT QueryVendorInfo([NativeTypeName("LPWSTR *")] ushort** pVendorInfo);
         }
 
         public partial struct Vtbl

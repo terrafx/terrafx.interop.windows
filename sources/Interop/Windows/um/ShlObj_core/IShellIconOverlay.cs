@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("7D688A70-C613-11D0-999B-00C04FD655E1")]
     [NativeTypeName("struct IShellIconOverlay : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IShellIconOverlay
+    public unsafe partial struct IShellIconOverlay : IShellIconOverlay.Interface
     {
         public void** lpVtbl;
 
@@ -51,6 +51,15 @@ namespace TerraFX.Interop
         public HRESULT GetOverlayIconIndex([NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidl, int* pIconIndex)
         {
             return ((delegate* unmanaged<IShellIconOverlay*, ITEMIDLIST*, int*, int>)(lpVtbl[4]))((IShellIconOverlay*)Unsafe.AsPointer(ref this), pidl, pIconIndex);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetOverlayIndex([NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidl, int* pIndex);
+
+            [VtblIndex(4)]
+            HRESULT GetOverlayIconIndex([NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidl, int* pIconIndex);
         }
 
         public partial struct Vtbl

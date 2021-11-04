@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("3051051A-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct ISVGTextContentElement : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct ISVGTextContentElement
+    public unsafe partial struct ISVGTextContentElement : ISVGTextContentElement.Interface
     {
         public void** lpVtbl;
 
@@ -156,6 +156,48 @@ namespace TerraFX.Interop
         public HRESULT selectSubString([NativeTypeName("long")] int charnum, [NativeTypeName("long")] int nchars)
         {
             return ((delegate* unmanaged<ISVGTextContentElement*, int, int, int>)(lpVtbl[19]))((ISVGTextContentElement*)Unsafe.AsPointer(ref this), charnum, nchars);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT putref_textLength(ISVGAnimatedLength* v);
+
+            [VtblIndex(8)]
+            HRESULT get_textLength(ISVGAnimatedLength** p);
+
+            [VtblIndex(9)]
+            HRESULT putref_lengthAdjust(ISVGAnimatedEnumeration* v);
+
+            [VtblIndex(10)]
+            HRESULT get_lengthAdjust(ISVGAnimatedEnumeration** p);
+
+            [VtblIndex(11)]
+            HRESULT getNumberOfChars([NativeTypeName("long *")] int* pResult);
+
+            [VtblIndex(12)]
+            HRESULT getComputedTextLength(float* pResult);
+
+            [VtblIndex(13)]
+            HRESULT getSubStringLength([NativeTypeName("long")] int charnum, [NativeTypeName("long")] int nchars, float* pResult);
+
+            [VtblIndex(14)]
+            HRESULT getStartPositionOfChar([NativeTypeName("long")] int charnum, ISVGPoint** ppResult);
+
+            [VtblIndex(15)]
+            HRESULT getEndPositionOfChar([NativeTypeName("long")] int charnum, ISVGPoint** ppResult);
+
+            [VtblIndex(16)]
+            HRESULT getExtentOfChar([NativeTypeName("long")] int charnum, ISVGRect** ppResult);
+
+            [VtblIndex(17)]
+            HRESULT getRotationOfChar([NativeTypeName("long")] int charnum, float* pResult);
+
+            [VtblIndex(18)]
+            HRESULT getCharNumAtPosition(ISVGPoint* point, [NativeTypeName("long *")] int* pResult);
+
+            [VtblIndex(19)]
+            HRESULT selectSubString([NativeTypeName("long")] int charnum, [NativeTypeName("long")] int nchars);
         }
 
         public partial struct Vtbl

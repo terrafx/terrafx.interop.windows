@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("305104DF-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct ISVGExternalResourcesRequired : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct ISVGExternalResourcesRequired
+    public unsafe partial struct ISVGExternalResourcesRequired : ISVGExternalResourcesRequired.Interface
     {
         public void** lpVtbl;
 
@@ -72,6 +72,12 @@ namespace TerraFX.Interop
         public HRESULT get_externalResourcesRequired(ISVGAnimatedBoolean** p)
         {
             return ((delegate* unmanaged<ISVGExternalResourcesRequired*, ISVGAnimatedBoolean**, int>)(lpVtbl[7]))((ISVGExternalResourcesRequired*)Unsafe.AsPointer(ref this), p);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT get_externalResourcesRequired(ISVGAnimatedBoolean** p);
         }
 
         public partial struct Vtbl

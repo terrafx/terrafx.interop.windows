@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("61F7D887-1230-4A8B-AEBA-8AD434D1A64D")]
     [NativeTypeName("struct IMFSSLCertificateManager : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IMFSSLCertificateManager
+    public unsafe partial struct IMFSSLCertificateManager : IMFSSLCertificateManager.Interface
     {
         public void** lpVtbl;
 
@@ -72,6 +72,24 @@ namespace TerraFX.Interop
         public HRESULT OnServerCertificate([NativeTypeName("LPCWSTR")] ushort* pszURL, byte* pbData, [NativeTypeName("DWORD")] uint cbData, BOOL* pfIsGood)
         {
             return ((delegate* unmanaged<IMFSSLCertificateManager*, ushort*, byte*, uint, BOOL*, int>)(lpVtbl[7]))((IMFSSLCertificateManager*)Unsafe.AsPointer(ref this), pszURL, pbData, cbData, pfIsGood);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetClientCertificate([NativeTypeName("LPCWSTR")] ushort* pszURL, byte** ppbData, [NativeTypeName("DWORD *")] uint* pcbData);
+
+            [VtblIndex(4)]
+            HRESULT BeginGetClientCertificate([NativeTypeName("LPCWSTR")] ushort* pszURL, IMFAsyncCallback* pCallback, IUnknown* pState);
+
+            [VtblIndex(5)]
+            HRESULT EndGetClientCertificate(IMFAsyncResult* pResult, byte** ppbData, [NativeTypeName("DWORD *")] uint* pcbData);
+
+            [VtblIndex(6)]
+            HRESULT GetCertificatePolicy([NativeTypeName("LPCWSTR")] ushort* pszURL, BOOL* pfOverrideAutomaticCheck, BOOL* pfClientCertificateAvailable);
+
+            [VtblIndex(7)]
+            HRESULT OnServerCertificate([NativeTypeName("LPCWSTR")] ushort* pszURL, byte* pbData, [NativeTypeName("DWORD")] uint cbData, BOOL* pfIsGood);
         }
 
         public partial struct Vtbl

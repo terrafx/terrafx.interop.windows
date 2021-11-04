@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("EB87E1BC-3233-11D2-AEC9-00C04FB68820")]
     [NativeTypeName("struct IWbemStatusCodeText : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IWbemStatusCodeText
+    public unsafe partial struct IWbemStatusCodeText : IWbemStatusCodeText.Interface
     {
         public void** lpVtbl;
 
@@ -51,6 +51,15 @@ namespace TerraFX.Interop
         public HRESULT GetFacilityCodeText(HRESULT hRes, [NativeTypeName("LCID")] uint LocaleId, [NativeTypeName("long")] int lFlags, [NativeTypeName("BSTR *")] ushort** MessageText)
         {
             return ((delegate* unmanaged<IWbemStatusCodeText*, HRESULT, uint, int, ushort**, int>)(lpVtbl[4]))((IWbemStatusCodeText*)Unsafe.AsPointer(ref this), hRes, LocaleId, lFlags, MessageText);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetErrorCodeText(HRESULT hRes, [NativeTypeName("LCID")] uint LocaleId, [NativeTypeName("long")] int lFlags, [NativeTypeName("BSTR *")] ushort** MessageText);
+
+            [VtblIndex(4)]
+            HRESULT GetFacilityCodeText(HRESULT hRes, [NativeTypeName("LCID")] uint LocaleId, [NativeTypeName("long")] int lFlags, [NativeTypeName("BSTR *")] ushort** MessageText);
         }
 
         public partial struct Vtbl

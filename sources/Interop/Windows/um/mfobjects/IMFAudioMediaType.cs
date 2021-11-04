@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("26A0ADC3-CE26-4672-9304-69552EDD3FAF")]
     [NativeTypeName("struct IMFAudioMediaType : IMFMediaType")]
     [NativeInheritance("IMFMediaType")]
-    public unsafe partial struct IMFAudioMediaType
+    public unsafe partial struct IMFAudioMediaType : IMFAudioMediaType.Interface
     {
         public void** lpVtbl;
 
@@ -290,6 +290,13 @@ namespace TerraFX.Interop
         public WAVEFORMATEX* GetAudioFormat()
         {
             return ((delegate* unmanaged<IMFAudioMediaType*, WAVEFORMATEX*>)(lpVtbl[38]))((IMFAudioMediaType*)Unsafe.AsPointer(ref this));
+        }
+
+        public interface Interface : IMFMediaType.Interface
+        {
+            [VtblIndex(38)]
+            [return: NativeTypeName("const WAVEFORMATEX *")]
+            WAVEFORMATEX* GetAudioFormat();
         }
 
         public partial struct Vtbl

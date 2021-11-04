@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("30510501-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct ISVGPathSegLinetoRel : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct ISVGPathSegLinetoRel
+    public unsafe partial struct ISVGPathSegLinetoRel : ISVGPathSegLinetoRel.Interface
     {
         public void** lpVtbl;
 
@@ -93,6 +93,21 @@ namespace TerraFX.Interop
         public HRESULT get_y(float* p)
         {
             return ((delegate* unmanaged<ISVGPathSegLinetoRel*, float*, int>)(lpVtbl[10]))((ISVGPathSegLinetoRel*)Unsafe.AsPointer(ref this), p);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT put_x(float v);
+
+            [VtblIndex(8)]
+            HRESULT get_x(float* p);
+
+            [VtblIndex(9)]
+            HRESULT put_y(float v);
+
+            [VtblIndex(10)]
+            HRESULT get_y(float* p);
         }
 
         public partial struct Vtbl

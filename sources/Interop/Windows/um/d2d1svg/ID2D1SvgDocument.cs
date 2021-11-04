@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("86B88E4D-AFA4-4D7B-88E4-68A51C4A0AEC")]
     [NativeTypeName("struct ID2D1SvgDocument : ID2D1Resource")]
     [NativeInheritance("ID2D1Resource")]
-    public unsafe partial struct ID2D1SvgDocument
+    public unsafe partial struct ID2D1SvgDocument : ID2D1SvgDocument.Interface
     {
         public void** lpVtbl;
 
@@ -123,6 +123,43 @@ namespace TerraFX.Interop
         public HRESULT CreatePathData([NativeTypeName("const FLOAT *")] float* segmentData, [NativeTypeName("UINT32")] uint segmentDataCount, [NativeTypeName("const D2D1_SVG_PATH_COMMAND *")] D2D1_SVG_PATH_COMMAND* commands, [NativeTypeName("UINT32")] uint commandsCount, ID2D1SvgPathData** pathData)
         {
             return ((delegate* unmanaged<ID2D1SvgDocument*, float*, uint, D2D1_SVG_PATH_COMMAND*, uint, ID2D1SvgPathData**, int>)(lpVtbl[14]))((ID2D1SvgDocument*)Unsafe.AsPointer(ref this), segmentData, segmentDataCount, commands, commandsCount, pathData);
+        }
+
+        public interface Interface : ID2D1Resource.Interface
+        {
+            [VtblIndex(4)]
+            HRESULT SetViewportSize([NativeTypeName("D2D1_SIZE_F")] D2D_SIZE_F viewportSize);
+
+            [VtblIndex(5)]
+            [return: NativeTypeName("D2D1_SIZE_F")]
+            D2D_SIZE_F GetViewportSize();
+
+            [VtblIndex(6)]
+            HRESULT SetRoot(ID2D1SvgElement* root);
+
+            [VtblIndex(7)]
+            void GetRoot(ID2D1SvgElement** root);
+
+            [VtblIndex(8)]
+            HRESULT FindElementById([NativeTypeName("PCWSTR")] ushort* id, ID2D1SvgElement** svgElement);
+
+            [VtblIndex(9)]
+            HRESULT Serialize(IStream* outputXmlStream, ID2D1SvgElement* subtree = null);
+
+            [VtblIndex(10)]
+            HRESULT Deserialize(IStream* inputXmlStream, ID2D1SvgElement** subtree);
+
+            [VtblIndex(11)]
+            HRESULT CreatePaint(D2D1_SVG_PAINT_TYPE paintType, [NativeTypeName("const D2D1_COLOR_F *")] DXGI_RGBA* color, [NativeTypeName("PCWSTR")] ushort* id, ID2D1SvgPaint** paint);
+
+            [VtblIndex(12)]
+            HRESULT CreateStrokeDashArray([NativeTypeName("const D2D1_SVG_LENGTH *")] D2D1_SVG_LENGTH* dashes, [NativeTypeName("UINT32")] uint dashesCount, ID2D1SvgStrokeDashArray** strokeDashArray);
+
+            [VtblIndex(13)]
+            HRESULT CreatePointCollection([NativeTypeName("const D2D1_POINT_2F *")] D2D_POINT_2F* points, [NativeTypeName("UINT32")] uint pointsCount, ID2D1SvgPointCollection** pointCollection);
+
+            [VtblIndex(14)]
+            HRESULT CreatePathData([NativeTypeName("const FLOAT *")] float* segmentData, [NativeTypeName("UINT32")] uint segmentDataCount, [NativeTypeName("const D2D1_SVG_PATH_COMMAND *")] D2D1_SVG_PATH_COMMAND* commands, [NativeTypeName("UINT32")] uint commandsCount, ID2D1SvgPathData** pathData);
         }
 
         public partial struct Vtbl

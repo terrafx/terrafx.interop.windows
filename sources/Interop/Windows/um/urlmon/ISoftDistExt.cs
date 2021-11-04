@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("B15B8DC1-C7E1-11D0-8680-00AA00BDCB71")]
     [NativeTypeName("struct ISoftDistExt : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct ISoftDistExt
+    public unsafe partial struct ISoftDistExt : ISoftDistExt.Interface
     {
         public void** lpVtbl;
 
@@ -65,6 +65,21 @@ namespace TerraFX.Interop
         public HRESULT AsyncInstallDistributionUnit(IBindCtx* pbc, [NativeTypeName("LPVOID")] void* pvReserved, [NativeTypeName("DWORD")] uint flags, [NativeTypeName("LPCODEBASEHOLD")] CODEBASEHOLD* lpcbh)
         {
             return ((delegate* unmanaged<ISoftDistExt*, IBindCtx*, void*, uint, CODEBASEHOLD*, int>)(lpVtbl[6]))((ISoftDistExt*)Unsafe.AsPointer(ref this), pbc, pvReserved, flags, lpcbh);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT ProcessSoftDist([NativeTypeName("LPCWSTR")] ushort* szCDFURL, IXMLElement* pSoftDistElement, [NativeTypeName("LPSOFTDISTINFO")] SOFTDISTINFO* lpsdi);
+
+            [VtblIndex(4)]
+            HRESULT GetFirstCodeBase([NativeTypeName("LPWSTR *")] ushort** szCodeBase, [NativeTypeName("LPDWORD")] uint* dwMaxSize);
+
+            [VtblIndex(5)]
+            HRESULT GetNextCodeBase([NativeTypeName("LPWSTR *")] ushort** szCodeBase, [NativeTypeName("LPDWORD")] uint* dwMaxSize);
+
+            [VtblIndex(6)]
+            HRESULT AsyncInstallDistributionUnit(IBindCtx* pbc, [NativeTypeName("LPVOID")] void* pvReserved, [NativeTypeName("DWORD")] uint flags, [NativeTypeName("LPCODEBASEHOLD")] CODEBASEHOLD* lpcbh);
         }
 
         public partial struct Vtbl

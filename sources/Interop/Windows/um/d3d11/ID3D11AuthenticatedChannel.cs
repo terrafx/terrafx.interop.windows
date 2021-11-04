@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("3015A308-DCBD-47AA-A747-192486D14D4A")]
     [NativeTypeName("struct ID3D11AuthenticatedChannel : ID3D11DeviceChild")]
     [NativeInheritance("ID3D11DeviceChild")]
-    public unsafe partial struct ID3D11AuthenticatedChannel
+    public unsafe partial struct ID3D11AuthenticatedChannel : ID3D11AuthenticatedChannel.Interface
     {
         public void** lpVtbl;
 
@@ -86,6 +86,18 @@ namespace TerraFX.Interop
         public void GetChannelHandle(HANDLE* pChannelHandle)
         {
             ((delegate* unmanaged<ID3D11AuthenticatedChannel*, HANDLE*, void>)(lpVtbl[9]))((ID3D11AuthenticatedChannel*)Unsafe.AsPointer(ref this), pChannelHandle);
+        }
+
+        public interface Interface : ID3D11DeviceChild.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT GetCertificateSize(uint* pCertificateSize);
+
+            [VtblIndex(8)]
+            HRESULT GetCertificate(uint CertificateSize, byte* pCertificate);
+
+            [VtblIndex(9)]
+            void GetChannelHandle(HANDLE* pChannelHandle);
         }
 
         public partial struct Vtbl

@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("58473A19-2BC8-4663-8012-25F81BABDDD1")]
     [NativeTypeName("struct IDVRGB219 : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IDVRGB219
+    public unsafe partial struct IDVRGB219 : IDVRGB219.Interface
     {
         public void** lpVtbl;
 
@@ -44,6 +44,12 @@ namespace TerraFX.Interop
         public HRESULT SetRGB219(BOOL bState)
         {
             return ((delegate* unmanaged<IDVRGB219*, BOOL, int>)(lpVtbl[3]))((IDVRGB219*)Unsafe.AsPointer(ref this), bState);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT SetRGB219(BOOL bState);
         }
 
         public partial struct Vtbl

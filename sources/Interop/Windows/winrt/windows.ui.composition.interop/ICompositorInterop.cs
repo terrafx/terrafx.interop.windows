@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("25297D5C-3AD4-4C9C-B5CF-E36A38512330")]
     [NativeTypeName("struct ICompositorInterop : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct ICompositorInterop
+    public unsafe partial struct ICompositorInterop : ICompositorInterop.Interface
     {
         public void** lpVtbl;
 
@@ -58,6 +58,18 @@ namespace TerraFX.Interop
         public HRESULT CreateGraphicsDevice(IUnknown* renderingDevice, [NativeTypeName("ABI::Windows::UI::Composition::ICompositionGraphicsDevice **")] void** result)
         {
             return ((delegate* unmanaged<ICompositorInterop*, IUnknown*, void**, int>)(lpVtbl[5]))((ICompositorInterop*)Unsafe.AsPointer(ref this), renderingDevice, result);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT CreateCompositionSurfaceForHandle(HANDLE swapChain, [NativeTypeName("ABI::Windows::UI::Composition::ICompositionSurface **")] void** result);
+
+            [VtblIndex(4)]
+            HRESULT CreateCompositionSurfaceForSwapChain(IUnknown* swapChain, [NativeTypeName("ABI::Windows::UI::Composition::ICompositionSurface **")] void** result);
+
+            [VtblIndex(5)]
+            HRESULT CreateGraphicsDevice(IUnknown* renderingDevice, [NativeTypeName("ABI::Windows::UI::Composition::ICompositionGraphicsDevice **")] void** result);
         }
 
         public partial struct Vtbl

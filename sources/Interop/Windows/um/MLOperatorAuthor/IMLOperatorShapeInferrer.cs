@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("540BE5BE-A6C9-40EE-83F6-D2B8B40A7798")]
     [NativeTypeName("struct IMLOperatorShapeInferrer : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IMLOperatorShapeInferrer
+    public unsafe partial struct IMLOperatorShapeInferrer : IMLOperatorShapeInferrer.Interface
     {
         public void** lpVtbl;
 
@@ -44,6 +44,12 @@ namespace TerraFX.Interop
         public HRESULT InferOutputShapes(IMLOperatorShapeInferenceContext* context)
         {
             return ((delegate* unmanaged<IMLOperatorShapeInferrer*, IMLOperatorShapeInferenceContext*, int>)(lpVtbl[3]))((IMLOperatorShapeInferrer*)Unsafe.AsPointer(ref this), context);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT InferOutputShapes(IMLOperatorShapeInferenceContext* context);
         }
 
         public partial struct Vtbl

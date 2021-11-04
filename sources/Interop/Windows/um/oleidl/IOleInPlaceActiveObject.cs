@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("00000117-0000-0000-C000-000000000046")]
     [NativeTypeName("struct IOleInPlaceActiveObject : IOleWindow")]
     [NativeInheritance("IOleWindow")]
-    public unsafe partial struct IOleInPlaceActiveObject
+    public unsafe partial struct IOleInPlaceActiveObject : IOleInPlaceActiveObject.Interface
     {
         public void** lpVtbl;
 
@@ -86,6 +86,24 @@ namespace TerraFX.Interop
         public HRESULT EnableModeless(BOOL fEnable)
         {
             return ((delegate* unmanaged<IOleInPlaceActiveObject*, BOOL, int>)(lpVtbl[9]))((IOleInPlaceActiveObject*)Unsafe.AsPointer(ref this), fEnable);
+        }
+
+        public interface Interface : IOleWindow.Interface
+        {
+            [VtblIndex(5)]
+            HRESULT TranslateAccelerator([NativeTypeName("LPMSG")] MSG* lpmsg);
+
+            [VtblIndex(6)]
+            HRESULT OnFrameWindowActivate(BOOL fActivate);
+
+            [VtblIndex(7)]
+            HRESULT OnDocWindowActivate(BOOL fActivate);
+
+            [VtblIndex(8)]
+            HRESULT ResizeBorder([NativeTypeName("LPCRECT")] RECT* prcBorder, IOleInPlaceUIWindow* pUIWindow, BOOL fFrameWindow);
+
+            [VtblIndex(9)]
+            HRESULT EnableModeless(BOOL fEnable);
         }
 
         public partial struct Vtbl

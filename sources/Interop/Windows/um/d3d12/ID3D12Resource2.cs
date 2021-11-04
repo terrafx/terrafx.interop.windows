@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("BE36EC3B-EA85-4AEB-A45A-E9D76404A495")]
     [NativeTypeName("struct ID3D12Resource2 : ID3D12Resource1")]
     [NativeInheritance("ID3D12Resource1")]
-    public unsafe partial struct ID3D12Resource2
+    public unsafe partial struct ID3D12Resource2 : ID3D12Resource2.Interface
     {
         public void** lpVtbl;
 
@@ -138,6 +138,12 @@ namespace TerraFX.Interop
         {
             D3D12_RESOURCE_DESC1 result;
             return *((delegate* unmanaged<ID3D12Resource2*, D3D12_RESOURCE_DESC1*, D3D12_RESOURCE_DESC1*>)(lpVtbl[16]))((ID3D12Resource2*)Unsafe.AsPointer(ref this), &result);
+        }
+
+        public interface Interface : ID3D12Resource1.Interface
+        {
+            [VtblIndex(16)]
+            D3D12_RESOURCE_DESC1 GetDesc1();
         }
 
         public partial struct Vtbl

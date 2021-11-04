@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("7BE0FC5B-ABD9-44FB-A5C8-F50136E71599")]
     [NativeTypeName("struct IMFOutputSchema : IMFAttributes")]
     [NativeInheritance("IMFAttributes")]
-    public unsafe partial struct IMFOutputSchema
+    public unsafe partial struct IMFOutputSchema : IMFOutputSchema.Interface
     {
         public void** lpVtbl;
 
@@ -268,6 +268,18 @@ namespace TerraFX.Interop
         public HRESULT GetOriginatorID(Guid* pguidOriginatorID)
         {
             return ((delegate* unmanaged<IMFOutputSchema*, Guid*, int>)(lpVtbl[35]))((IMFOutputSchema*)Unsafe.AsPointer(ref this), pguidOriginatorID);
+        }
+
+        public interface Interface : IMFAttributes.Interface
+        {
+            [VtblIndex(33)]
+            HRESULT GetSchemaType(Guid* pguidSchemaType);
+
+            [VtblIndex(34)]
+            HRESULT GetConfigurationData([NativeTypeName("DWORD *")] uint* pdwVal);
+
+            [VtblIndex(35)]
+            HRESULT GetOriginatorID(Guid* pguidOriginatorID);
         }
 
         public partial struct Vtbl

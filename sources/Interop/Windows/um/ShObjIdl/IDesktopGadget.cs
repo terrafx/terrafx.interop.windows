@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("C1646BC4-F298-4F91-A204-EB2DD1709D1A")]
     [NativeTypeName("struct IDesktopGadget : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IDesktopGadget
+    public unsafe partial struct IDesktopGadget : IDesktopGadget.Interface
     {
         public void** lpVtbl;
 
@@ -44,6 +44,12 @@ namespace TerraFX.Interop
         public HRESULT RunGadget([NativeTypeName("LPCWSTR")] ushort* gadgetPath)
         {
             return ((delegate* unmanaged<IDesktopGadget*, ushort*, int>)(lpVtbl[3]))((IDesktopGadget*)Unsafe.AsPointer(ref this), gadgetPath);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT RunGadget([NativeTypeName("LPCWSTR")] ushort* gadgetPath);
         }
 
         public partial struct Vtbl

@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("03CB2711-24D7-4DB6-A17F-F3A7A479A536")]
     [NativeTypeName("struct IMFPresentationDescriptor : IMFAttributes")]
     [NativeInheritance("IMFAttributes")]
-    public unsafe partial struct IMFPresentationDescriptor
+    public unsafe partial struct IMFPresentationDescriptor : IMFPresentationDescriptor.Interface
     {
         public void** lpVtbl;
 
@@ -282,6 +282,24 @@ namespace TerraFX.Interop
         public HRESULT Clone(IMFPresentationDescriptor** ppPresentationDescriptor)
         {
             return ((delegate* unmanaged<IMFPresentationDescriptor*, IMFPresentationDescriptor**, int>)(lpVtbl[37]))((IMFPresentationDescriptor*)Unsafe.AsPointer(ref this), ppPresentationDescriptor);
+        }
+
+        public interface Interface : IMFAttributes.Interface
+        {
+            [VtblIndex(33)]
+            HRESULT GetStreamDescriptorCount([NativeTypeName("DWORD *")] uint* pdwDescriptorCount);
+
+            [VtblIndex(34)]
+            HRESULT GetStreamDescriptorByIndex([NativeTypeName("DWORD")] uint dwIndex, BOOL* pfSelected, IMFStreamDescriptor** ppDescriptor);
+
+            [VtblIndex(35)]
+            HRESULT SelectStream([NativeTypeName("DWORD")] uint dwDescriptorIndex);
+
+            [VtblIndex(36)]
+            HRESULT DeselectStream([NativeTypeName("DWORD")] uint dwDescriptorIndex);
+
+            [VtblIndex(37)]
+            HRESULT Clone(IMFPresentationDescriptor** ppPresentationDescriptor);
         }
 
         public partial struct Vtbl

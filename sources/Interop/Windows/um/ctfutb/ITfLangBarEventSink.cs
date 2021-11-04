@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("18A4E900-E0AE-11D2-AFDD-00105A2799B5")]
     [NativeTypeName("struct ITfLangBarEventSink : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct ITfLangBarEventSink
+    public unsafe partial struct ITfLangBarEventSink : ITfLangBarEventSink.Interface
     {
         public void** lpVtbl;
 
@@ -79,6 +79,27 @@ namespace TerraFX.Interop
         public HRESULT GetItemFloatingRect([NativeTypeName("DWORD")] uint dwThreadId, [NativeTypeName("const GUID &")] Guid* rguid, RECT* prc)
         {
             return ((delegate* unmanaged<ITfLangBarEventSink*, uint, Guid*, RECT*, int>)(lpVtbl[8]))((ITfLangBarEventSink*)Unsafe.AsPointer(ref this), dwThreadId, rguid, prc);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT OnSetFocus([NativeTypeName("DWORD")] uint dwThreadId);
+
+            [VtblIndex(4)]
+            HRESULT OnThreadTerminate([NativeTypeName("DWORD")] uint dwThreadId);
+
+            [VtblIndex(5)]
+            HRESULT OnThreadItemChange([NativeTypeName("DWORD")] uint dwThreadId);
+
+            [VtblIndex(6)]
+            HRESULT OnModalInput([NativeTypeName("DWORD")] uint dwThreadId, uint uMsg, WPARAM wParam, LPARAM lParam);
+
+            [VtblIndex(7)]
+            HRESULT ShowFloating([NativeTypeName("DWORD")] uint dwFlags);
+
+            [VtblIndex(8)]
+            HRESULT GetItemFloatingRect([NativeTypeName("DWORD")] uint dwThreadId, [NativeTypeName("const GUID &")] Guid* rguid, RECT* prc);
         }
 
         public partial struct Vtbl

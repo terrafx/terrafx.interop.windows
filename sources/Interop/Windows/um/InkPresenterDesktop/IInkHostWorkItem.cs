@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("CCDA0A9A-1B78-4632-BB96-97800662E26C")]
     [NativeTypeName("struct IInkHostWorkItem : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IInkHostWorkItem
+    public unsafe partial struct IInkHostWorkItem : IInkHostWorkItem.Interface
     {
         public void** lpVtbl;
 
@@ -44,6 +44,12 @@ namespace TerraFX.Interop
         public HRESULT Invoke()
         {
             return ((delegate* unmanaged<IInkHostWorkItem*, int>)(lpVtbl[3]))((IInkHostWorkItem*)Unsafe.AsPointer(ref this));
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT Invoke();
         }
 
         public partial struct Vtbl

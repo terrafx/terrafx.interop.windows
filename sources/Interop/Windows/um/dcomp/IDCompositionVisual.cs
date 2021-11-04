@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("4D93059D-097B-4651-9A60-F0F25116E2F3")]
     [NativeTypeName("struct IDCompositionVisual : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IDCompositionVisual
+    public unsafe partial struct IDCompositionVisual : IDCompositionVisual.Interface
     {
         public void** lpVtbl;
 
@@ -156,6 +156,60 @@ namespace TerraFX.Interop
         public HRESULT SetCompositeMode(DCOMPOSITION_COMPOSITE_MODE compositeMode)
         {
             return ((delegate* unmanaged<IDCompositionVisual*, DCOMPOSITION_COMPOSITE_MODE, int>)(lpVtbl[19]))((IDCompositionVisual*)Unsafe.AsPointer(ref this), compositeMode);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT SetOffsetX(IDCompositionAnimation* animation);
+
+            [VtblIndex(4)]
+            HRESULT SetOffsetX(float offsetX);
+
+            [VtblIndex(5)]
+            HRESULT SetOffsetY(IDCompositionAnimation* animation);
+
+            [VtblIndex(6)]
+            HRESULT SetOffsetY(float offsetY);
+
+            [VtblIndex(7)]
+            HRESULT SetTransform(IDCompositionTransform* transform);
+
+            [VtblIndex(8)]
+            HRESULT SetTransform([NativeTypeName("const D2D_MATRIX_3X2_F &")] D2D_MATRIX_3X2_F* matrix);
+
+            [VtblIndex(9)]
+            HRESULT SetTransformParent(IDCompositionVisual* visual);
+
+            [VtblIndex(10)]
+            HRESULT SetEffect(IDCompositionEffect* effect);
+
+            [VtblIndex(11)]
+            HRESULT SetBitmapInterpolationMode(DCOMPOSITION_BITMAP_INTERPOLATION_MODE interpolationMode);
+
+            [VtblIndex(12)]
+            HRESULT SetBorderMode(DCOMPOSITION_BORDER_MODE borderMode);
+
+            [VtblIndex(13)]
+            HRESULT SetClip(IDCompositionClip* clip);
+
+            [VtblIndex(14)]
+            HRESULT SetClip([NativeTypeName("const D2D_RECT_F &")] D2D_RECT_F* rect);
+
+            [VtblIndex(15)]
+            HRESULT SetContent(IUnknown* content);
+
+            [VtblIndex(16)]
+            HRESULT AddVisual(IDCompositionVisual* visual, BOOL insertAbove, IDCompositionVisual* referenceVisual);
+
+            [VtblIndex(17)]
+            HRESULT RemoveVisual(IDCompositionVisual* visual);
+
+            [VtblIndex(18)]
+            HRESULT RemoveAllVisuals();
+
+            [VtblIndex(19)]
+            HRESULT SetCompositeMode(DCOMPOSITION_COMPOSITE_MODE compositeMode);
         }
 
         public partial struct Vtbl

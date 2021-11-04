@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("A9DB33A2-AF5F-43C7-B679-74F5984B5AA4")]
     [NativeTypeName("struct IWICPixelFormatInfo2 : IWICPixelFormatInfo")]
     [NativeInheritance("IWICPixelFormatInfo")]
-    public unsafe partial struct IWICPixelFormatInfo2
+    public unsafe partial struct IWICPixelFormatInfo2 : IWICPixelFormatInfo2.Interface
     {
         public void** lpVtbl;
 
@@ -142,6 +142,15 @@ namespace TerraFX.Interop
         public HRESULT GetNumericRepresentation(WICPixelFormatNumericRepresentation* pNumericRepresentation)
         {
             return ((delegate* unmanaged<IWICPixelFormatInfo2*, WICPixelFormatNumericRepresentation*, int>)(lpVtbl[17]))((IWICPixelFormatInfo2*)Unsafe.AsPointer(ref this), pNumericRepresentation);
+        }
+
+        public interface Interface : IWICPixelFormatInfo.Interface
+        {
+            [VtblIndex(16)]
+            HRESULT SupportsTransparency(BOOL* pfSupportsTransparency);
+
+            [VtblIndex(17)]
+            HRESULT GetNumericRepresentation(WICPixelFormatNumericRepresentation* pNumericRepresentation);
         }
 
         public partial struct Vtbl

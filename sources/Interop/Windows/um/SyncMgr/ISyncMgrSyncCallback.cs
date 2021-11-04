@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("884CCD87-B139-4937-A4BA-4F8E19513FBE")]
     [NativeTypeName("struct ISyncMgrSyncCallback : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct ISyncMgrSyncCallback
+    public unsafe partial struct ISyncMgrSyncCallback : ISyncMgrSyncCallback.Interface
     {
         public void** lpVtbl;
 
@@ -107,6 +107,39 @@ namespace TerraFX.Interop
         public HRESULT ReportManualSync()
         {
             return ((delegate* unmanaged<ISyncMgrSyncCallback*, int>)(lpVtbl[12]))((ISyncMgrSyncCallback*)Unsafe.AsPointer(ref this));
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT ReportProgress([NativeTypeName("LPCWSTR")] ushort* pszItemID, [NativeTypeName("LPCWSTR")] ushort* pszProgressText, SYNCMGR_PROGRESS_STATUS nStatus, [NativeTypeName("ULONG")] uint uCurrentStep, [NativeTypeName("ULONG")] uint uMaxStep, SYNCMGR_CANCEL_REQUEST* pnCancelRequest);
+
+            [VtblIndex(4)]
+            HRESULT SetHandlerProgressText([NativeTypeName("LPCWSTR")] ushort* pszProgressText, SYNCMGR_CANCEL_REQUEST* pnCancelRequest);
+
+            [VtblIndex(5)]
+            HRESULT ReportEventW([NativeTypeName("LPCWSTR")] ushort* pszItemID, SYNCMGR_EVENT_LEVEL nLevel, SYNCMGR_EVENT_FLAGS nFlags, [NativeTypeName("LPCWSTR")] ushort* pszName, [NativeTypeName("LPCWSTR")] ushort* pszDescription, [NativeTypeName("LPCWSTR")] ushort* pszLinkText, [NativeTypeName("LPCWSTR")] ushort* pszLinkReference, [NativeTypeName("LPCWSTR")] ushort* pszContext, Guid* pguidEventID);
+
+            [VtblIndex(6)]
+            HRESULT CanContinue([NativeTypeName("LPCWSTR")] ushort* pszItemID);
+
+            [VtblIndex(7)]
+            HRESULT QueryForAdditionalItems(IEnumString** ppenumItemIDs, IEnumUnknown** ppenumPunks);
+
+            [VtblIndex(8)]
+            HRESULT AddItemToSession([NativeTypeName("LPCWSTR")] ushort* pszItemID);
+
+            [VtblIndex(9)]
+            HRESULT AddIUnknownToSession(IUnknown* punk);
+
+            [VtblIndex(10)]
+            HRESULT ProposeItem(ISyncMgrSyncItem* pNewItem);
+
+            [VtblIndex(11)]
+            HRESULT CommitItem([NativeTypeName("LPCWSTR")] ushort* pszItemID);
+
+            [VtblIndex(12)]
+            HRESULT ReportManualSync();
         }
 
         public partial struct Vtbl

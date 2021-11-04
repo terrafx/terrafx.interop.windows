@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("3051051B-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct ISVGTextPositioningElement : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct ISVGTextPositioningElement
+    public unsafe partial struct ISVGTextPositioningElement : ISVGTextPositioningElement.Interface
     {
         public void** lpVtbl;
 
@@ -135,6 +135,39 @@ namespace TerraFX.Interop
         public HRESULT get_rotate(ISVGAnimatedNumberList** p)
         {
             return ((delegate* unmanaged<ISVGTextPositioningElement*, ISVGAnimatedNumberList**, int>)(lpVtbl[16]))((ISVGTextPositioningElement*)Unsafe.AsPointer(ref this), p);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT putref_x(ISVGAnimatedLengthList* v);
+
+            [VtblIndex(8)]
+            HRESULT get_x(ISVGAnimatedLengthList** p);
+
+            [VtblIndex(9)]
+            HRESULT putref_y(ISVGAnimatedLengthList* v);
+
+            [VtblIndex(10)]
+            HRESULT get_y(ISVGAnimatedLengthList** p);
+
+            [VtblIndex(11)]
+            HRESULT putref_dx(ISVGAnimatedLengthList* v);
+
+            [VtblIndex(12)]
+            HRESULT get_dx(ISVGAnimatedLengthList** p);
+
+            [VtblIndex(13)]
+            HRESULT putref_dy(ISVGAnimatedLengthList* v);
+
+            [VtblIndex(14)]
+            HRESULT get_dy(ISVGAnimatedLengthList** p);
+
+            [VtblIndex(15)]
+            HRESULT putref_rotate(ISVGAnimatedNumberList* v);
+
+            [VtblIndex(16)]
+            HRESULT get_rotate(ISVGAnimatedNumberList** p);
         }
 
         public partial struct Vtbl

@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("DDA0B713-F3FF-49D3-898A-2786780C5D98")]
     [NativeTypeName("struct IAppxManifestPackageDependency2 : IAppxManifestPackageDependency")]
     [NativeInheritance("IAppxManifestPackageDependency")]
-    public unsafe partial struct IAppxManifestPackageDependency2
+    public unsafe partial struct IAppxManifestPackageDependency2 : IAppxManifestPackageDependency2.Interface
     {
         public void** lpVtbl;
 
@@ -65,6 +65,12 @@ namespace TerraFX.Interop
         public HRESULT GetMaxMajorVersionTested([NativeTypeName("UINT16 *")] ushort* maxMajorVersionTested)
         {
             return ((delegate* unmanaged<IAppxManifestPackageDependency2*, ushort*, int>)(lpVtbl[6]))((IAppxManifestPackageDependency2*)Unsafe.AsPointer(ref this), maxMajorVersionTested);
+        }
+
+        public interface Interface : IAppxManifestPackageDependency.Interface
+        {
+            [VtblIndex(6)]
+            HRESULT GetMaxMajorVersionTested([NativeTypeName("UINT16 *")] ushort* maxMajorVersionTested);
         }
 
         public partial struct Vtbl

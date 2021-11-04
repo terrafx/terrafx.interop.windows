@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("F4B8E804-811E-4436-B69C-44CB67B72084")]
     [NativeTypeName("struct IWebAuthenticationCoreManagerInterop : IInspectable")]
     [NativeInheritance("IInspectable")]
-    public unsafe partial struct IWebAuthenticationCoreManagerInterop
+    public unsafe partial struct IWebAuthenticationCoreManagerInterop : IWebAuthenticationCoreManagerInterop.Interface
     {
         public void** lpVtbl;
 
@@ -72,6 +72,15 @@ namespace TerraFX.Interop
         public HRESULT RequestTokenWithWebAccountForWindowAsync(HWND appWindow, IInspectable* request, IInspectable* webAccount, [NativeTypeName("const IID &")] Guid* riid, void** asyncInfo)
         {
             return ((delegate* unmanaged<IWebAuthenticationCoreManagerInterop*, HWND, IInspectable*, IInspectable*, Guid*, void**, int>)(lpVtbl[7]))((IWebAuthenticationCoreManagerInterop*)Unsafe.AsPointer(ref this), appWindow, request, webAccount, riid, asyncInfo);
+        }
+
+        public interface Interface : IInspectable.Interface
+        {
+            [VtblIndex(6)]
+            HRESULT RequestTokenForWindowAsync(HWND appWindow, IInspectable* request, [NativeTypeName("const IID &")] Guid* riid, void** asyncInfo);
+
+            [VtblIndex(7)]
+            HRESULT RequestTokenWithWebAccountForWindowAsync(HWND appWindow, IInspectable* request, IInspectable* webAccount, [NativeTypeName("const IID &")] Guid* riid, void** asyncInfo);
         }
 
         public partial struct Vtbl

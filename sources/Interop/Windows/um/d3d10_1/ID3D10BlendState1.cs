@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("EDAD8D99-8A35-4D6D-8566-2EA276CDE161")]
     [NativeTypeName("struct ID3D10BlendState1 : ID3D10BlendState")]
     [NativeInheritance("ID3D10BlendState")]
-    public unsafe partial struct ID3D10BlendState1
+    public unsafe partial struct ID3D10BlendState1 : ID3D10BlendState1.Interface
     {
         public void** lpVtbl;
 
@@ -79,6 +79,12 @@ namespace TerraFX.Interop
         public void GetDesc1(D3D10_BLEND_DESC1* pDesc)
         {
             ((delegate* unmanaged<ID3D10BlendState1*, D3D10_BLEND_DESC1*, void>)(lpVtbl[8]))((ID3D10BlendState1*)Unsafe.AsPointer(ref this), pDesc);
+        }
+
+        public interface Interface : ID3D10BlendState.Interface
+        {
+            [VtblIndex(8)]
+            void GetDesc1(D3D10_BLEND_DESC1* pDesc);
         }
 
         public partial struct Vtbl

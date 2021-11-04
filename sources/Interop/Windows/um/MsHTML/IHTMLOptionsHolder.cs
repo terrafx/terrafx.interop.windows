@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("3050F378-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct IHTMLOptionsHolder : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct IHTMLOptionsHolder
+    public unsafe partial struct IHTMLOptionsHolder : IHTMLOptionsHolder.Interface
     {
         public void** lpVtbl;
 
@@ -254,6 +254,90 @@ namespace TerraFX.Interop
         public HRESULT get_secureConnectionInfo([NativeTypeName("BSTR *")] ushort** p)
         {
             return ((delegate* unmanaged<IHTMLOptionsHolder*, ushort**, int>)(lpVtbl[33]))((IHTMLOptionsHolder*)Unsafe.AsPointer(ref this), p);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT get_document(IHTMLDocument2** p);
+
+            [VtblIndex(8)]
+            HRESULT get_fonts(IHTMLFontNamesCollection** p);
+
+            [VtblIndex(9)]
+            HRESULT put_execArg(VARIANT v);
+
+            [VtblIndex(10)]
+            HRESULT get_execArg(VARIANT* p);
+
+            [VtblIndex(11)]
+            HRESULT put_errorLine([NativeTypeName("long")] int v);
+
+            [VtblIndex(12)]
+            HRESULT get_errorLine([NativeTypeName("long *")] int* p);
+
+            [VtblIndex(13)]
+            HRESULT put_errorCharacter([NativeTypeName("long")] int v);
+
+            [VtblIndex(14)]
+            HRESULT get_errorCharacter([NativeTypeName("long *")] int* p);
+
+            [VtblIndex(15)]
+            HRESULT put_errorCode([NativeTypeName("long")] int v);
+
+            [VtblIndex(16)]
+            HRESULT get_errorCode([NativeTypeName("long *")] int* p);
+
+            [VtblIndex(17)]
+            HRESULT put_errorMessage([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(18)]
+            HRESULT get_errorMessage([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(19)]
+            HRESULT put_errorDebug([NativeTypeName("VARIANT_BOOL")] short v);
+
+            [VtblIndex(20)]
+            HRESULT get_errorDebug([NativeTypeName("VARIANT_BOOL *")] short* p);
+
+            [VtblIndex(21)]
+            HRESULT get_unsecuredWindowOfDocument(IHTMLWindow2** p);
+
+            [VtblIndex(22)]
+            HRESULT put_findText([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(23)]
+            HRESULT get_findText([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(24)]
+            HRESULT put_anythingAfterFrameset([NativeTypeName("VARIANT_BOOL")] short v);
+
+            [VtblIndex(25)]
+            HRESULT get_anythingAfterFrameset([NativeTypeName("VARIANT_BOOL *")] short* p);
+
+            [VtblIndex(26)]
+            HRESULT sizes([NativeTypeName("BSTR")] ushort* fontName, IHTMLFontSizesCollection** pSizesCollection);
+
+            [VtblIndex(27)]
+            HRESULT openfiledlg(VARIANT initFile, VARIANT initDir, VARIANT filter, VARIANT title, [NativeTypeName("BSTR *")] ushort** pathName);
+
+            [VtblIndex(28)]
+            HRESULT savefiledlg(VARIANT initFile, VARIANT initDir, VARIANT filter, VARIANT title, [NativeTypeName("BSTR *")] ushort** pathName);
+
+            [VtblIndex(29)]
+            HRESULT choosecolordlg(VARIANT initColor, [NativeTypeName("long *")] int* rgbColor);
+
+            [VtblIndex(30)]
+            HRESULT showSecurityInfo();
+
+            [VtblIndex(31)]
+            HRESULT isApartmentModel(IHTMLObjectElement* @object, [NativeTypeName("VARIANT_BOOL *")] short* fApartment);
+
+            [VtblIndex(32)]
+            HRESULT getCharset([NativeTypeName("BSTR")] ushort* fontName, [NativeTypeName("long *")] int* charset);
+
+            [VtblIndex(33)]
+            HRESULT get_secureConnectionInfo([NativeTypeName("BSTR *")] ushort** p);
         }
 
         public partial struct Vtbl

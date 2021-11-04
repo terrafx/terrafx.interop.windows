@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("AE24FDAD-03C6-11D1-8B76-0080C744F389")]
     [NativeTypeName("struct IWebBridge : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct IWebBridge
+    public unsafe partial struct IWebBridge : IWebBridge.Interface
     {
         public void** lpVtbl;
 
@@ -128,6 +128,36 @@ namespace TerraFX.Interop
         public HRESULT AboutBox()
         {
             return ((delegate* unmanaged<IWebBridge*, int>)(lpVtbl[15]))((IWebBridge*)Unsafe.AsPointer(ref this));
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT put_URL([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(8)]
+            HRESULT get_URL([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(9)]
+            HRESULT put_Scrollbar([NativeTypeName("VARIANT_BOOL")] short v);
+
+            [VtblIndex(10)]
+            HRESULT get_Scrollbar([NativeTypeName("VARIANT_BOOL *")] short* p);
+
+            [VtblIndex(11)]
+            HRESULT put_embed([NativeTypeName("VARIANT_BOOL")] short v);
+
+            [VtblIndex(12)]
+            HRESULT get_embed([NativeTypeName("VARIANT_BOOL *")] short* p);
+
+            [VtblIndex(13)]
+            HRESULT get_event(IDispatch** p);
+
+            [VtblIndex(14)]
+            HRESULT get_readyState([NativeTypeName("long *")] int* p);
+
+            [VtblIndex(15)]
+            HRESULT AboutBox();
         }
 
         public partial struct Vtbl

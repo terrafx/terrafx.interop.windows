@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("96BF961B-40FE-42F1-BA9D-320238B49700")]
     [NativeTypeName("struct IMFWorkQueueServicesEx : IMFWorkQueueServices")]
     [NativeInheritance("IMFWorkQueueServices")]
-    public unsafe partial struct IMFWorkQueueServicesEx
+    public unsafe partial struct IMFWorkQueueServicesEx : IMFWorkQueueServicesEx.Interface
     {
         public void** lpVtbl;
 
@@ -142,6 +142,18 @@ namespace TerraFX.Interop
         public HRESULT GetPlatformWorkQueueMMCSSPriority([NativeTypeName("DWORD")] uint dwPlatformWorkQueueId, [NativeTypeName("LONG *")] int* plPriority)
         {
             return ((delegate* unmanaged<IMFWorkQueueServicesEx*, uint, int*, int>)(lpVtbl[17]))((IMFWorkQueueServicesEx*)Unsafe.AsPointer(ref this), dwPlatformWorkQueueId, plPriority);
+        }
+
+        public interface Interface : IMFWorkQueueServices.Interface
+        {
+            [VtblIndex(15)]
+            HRESULT GetTopologyWorkQueueMMCSSPriority([NativeTypeName("DWORD")] uint dwTopologyWorkQueueId, [NativeTypeName("LONG *")] int* plPriority);
+
+            [VtblIndex(16)]
+            HRESULT BeginRegisterPlatformWorkQueueWithMMCSSEx([NativeTypeName("DWORD")] uint dwPlatformWorkQueue, [NativeTypeName("LPCWSTR")] ushort* wszClass, [NativeTypeName("DWORD")] uint dwTaskId, [NativeTypeName("LONG")] int lPriority, IMFAsyncCallback* pCallback, IUnknown* pState);
+
+            [VtblIndex(17)]
+            HRESULT GetPlatformWorkQueueMMCSSPriority([NativeTypeName("DWORD")] uint dwPlatformWorkQueueId, [NativeTypeName("LONG *")] int* plPriority);
         }
 
         public partial struct Vtbl

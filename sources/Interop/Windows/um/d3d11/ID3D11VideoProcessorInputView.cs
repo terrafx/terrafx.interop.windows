@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("11EC5A5F-51DC-4945-AB34-6E8C21300EA5")]
     [NativeTypeName("struct ID3D11VideoProcessorInputView : ID3D11View")]
     [NativeInheritance("ID3D11View")]
-    public unsafe partial struct ID3D11VideoProcessorInputView
+    public unsafe partial struct ID3D11VideoProcessorInputView : ID3D11VideoProcessorInputView.Interface
     {
         public void** lpVtbl;
 
@@ -79,6 +79,12 @@ namespace TerraFX.Interop
         public void GetDesc(D3D11_VIDEO_PROCESSOR_INPUT_VIEW_DESC* pDesc)
         {
             ((delegate* unmanaged<ID3D11VideoProcessorInputView*, D3D11_VIDEO_PROCESSOR_INPUT_VIEW_DESC*, void>)(lpVtbl[8]))((ID3D11VideoProcessorInputView*)Unsafe.AsPointer(ref this), pDesc);
+        }
+
+        public interface Interface : ID3D11View.Interface
+        {
+            [VtblIndex(8)]
+            void GetDesc(D3D11_VIDEO_PROCESSOR_INPUT_VIEW_DESC* pDesc);
         }
 
         public partial struct Vtbl

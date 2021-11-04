@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("27354137-7F64-5B0F-8F00-5D77AFBE261E")]
     [NativeTypeName("struct DWriteEngine2Events : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct DWriteEngine2Events
+    public unsafe partial struct DWriteEngine2Events : DWriteEngine2Events.Interface
     {
         public void** lpVtbl;
 
@@ -72,6 +72,12 @@ namespace TerraFX.Interop
         public HRESULT Update(IDispatch* @object, IDispatch* progress)
         {
             return ((delegate* unmanaged<DWriteEngine2Events*, IDispatch*, IDispatch*, int>)(lpVtbl[7]))((DWriteEngine2Events*)Unsafe.AsPointer(ref this), @object, progress);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT Update(IDispatch* @object, IDispatch* progress);
         }
 
         public partial struct Vtbl

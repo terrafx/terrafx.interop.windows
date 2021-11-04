@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("3050F682-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct IMarkupServices2 : IMarkupServices")]
     [NativeInheritance("IMarkupServices")]
-    public unsafe partial struct IMarkupServices2
+    public unsafe partial struct IMarkupServices2 : IMarkupServices2.Interface
     {
         public void** lpVtbl;
 
@@ -198,6 +198,18 @@ namespace TerraFX.Interop
         public HRESULT SaveSegmentsToClipboard(ISegmentList* pSegmentList, [NativeTypeName("DWORD")] uint dwFlags)
         {
             return ((delegate* unmanaged<IMarkupServices2*, ISegmentList*, uint, int>)(lpVtbl[25]))((IMarkupServices2*)Unsafe.AsPointer(ref this), pSegmentList, dwFlags);
+        }
+
+        public interface Interface : IMarkupServices.Interface
+        {
+            [VtblIndex(23)]
+            HRESULT ParseGlobalEx(HGLOBAL hglobalHTML, [NativeTypeName("DWORD")] uint dwFlags, IMarkupContainer* pContext, IMarkupContainer** ppContainerResult, IMarkupPointer* pPointerStart, IMarkupPointer* pPointerFinish);
+
+            [VtblIndex(24)]
+            HRESULT ValidateElements(IMarkupPointer* pPointerStart, IMarkupPointer* pPointerFinish, IMarkupPointer* pPointerTarget, IMarkupPointer* pPointerStatus, IHTMLElement** ppElemFailBottom, IHTMLElement** ppElemFailTop);
+
+            [VtblIndex(25)]
+            HRESULT SaveSegmentsToClipboard(ISegmentList* pSegmentList, [NativeTypeName("DWORD")] uint dwFlags);
         }
 
         public partial struct Vtbl

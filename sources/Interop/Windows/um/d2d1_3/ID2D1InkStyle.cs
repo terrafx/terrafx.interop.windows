@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("BAE8B344-23FC-4071-8CB5-D05D6F073848")]
     [NativeTypeName("struct ID2D1InkStyle : ID2D1Resource")]
     [NativeInheritance("ID2D1Resource")]
-    public unsafe partial struct ID2D1InkStyle
+    public unsafe partial struct ID2D1InkStyle : ID2D1InkStyle.Interface
     {
         public void** lpVtbl;
 
@@ -72,6 +72,21 @@ namespace TerraFX.Interop
         public D2D1_INK_NIB_SHAPE GetNibShape()
         {
             return ((delegate* unmanaged<ID2D1InkStyle*, D2D1_INK_NIB_SHAPE>)(lpVtbl[7]))((ID2D1InkStyle*)Unsafe.AsPointer(ref this));
+        }
+
+        public interface Interface : ID2D1Resource.Interface
+        {
+            [VtblIndex(4)]
+            void SetNibTransform([NativeTypeName("const D2D1_MATRIX_3X2_F *")] D2D_MATRIX_3X2_F* transform);
+
+            [VtblIndex(5)]
+            void GetNibTransform([NativeTypeName("D2D1_MATRIX_3X2_F *")] D2D_MATRIX_3X2_F* transform);
+
+            [VtblIndex(6)]
+            void SetNibShape(D2D1_INK_NIB_SHAPE nibShape);
+
+            [VtblIndex(7)]
+            D2D1_INK_NIB_SHAPE GetNibShape();
         }
 
         public partial struct Vtbl

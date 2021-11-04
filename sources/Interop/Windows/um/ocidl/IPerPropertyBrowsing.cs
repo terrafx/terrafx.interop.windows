@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("376BD3AA-3845-101B-84ED-08002B2EC713")]
     [NativeTypeName("struct IPerPropertyBrowsing : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IPerPropertyBrowsing
+    public unsafe partial struct IPerPropertyBrowsing : IPerPropertyBrowsing.Interface
     {
         public void** lpVtbl;
 
@@ -65,6 +65,21 @@ namespace TerraFX.Interop
         public HRESULT GetPredefinedValue([NativeTypeName("DISPID")] int dispID, [NativeTypeName("DWORD")] uint dwCookie, VARIANT* pVarOut)
         {
             return ((delegate* unmanaged<IPerPropertyBrowsing*, int, uint, VARIANT*, int>)(lpVtbl[6]))((IPerPropertyBrowsing*)Unsafe.AsPointer(ref this), dispID, dwCookie, pVarOut);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetDisplayString([NativeTypeName("DISPID")] int dispID, [NativeTypeName("BSTR *")] ushort** pBstr);
+
+            [VtblIndex(4)]
+            HRESULT MapPropertyToPage([NativeTypeName("DISPID")] int dispID, [NativeTypeName("CLSID *")] Guid* pClsid);
+
+            [VtblIndex(5)]
+            HRESULT GetPredefinedStrings([NativeTypeName("DISPID")] int dispID, CALPOLESTR* pCaStringsOut, CADWORD* pCaCookiesOut);
+
+            [VtblIndex(6)]
+            HRESULT GetPredefinedValue([NativeTypeName("DISPID")] int dispID, [NativeTypeName("DWORD")] uint dwCookie, VARIANT* pVarOut);
         }
 
         public partial struct Vtbl

@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("0B124F8C-91F0-11D1-B8B5-006008059382")]
     [NativeTypeName("struct IEnumPublishedApps : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IEnumPublishedApps
+    public unsafe partial struct IEnumPublishedApps : IEnumPublishedApps.Interface
     {
         public void** lpVtbl;
 
@@ -51,6 +51,15 @@ namespace TerraFX.Interop
         public HRESULT Reset()
         {
             return ((delegate* unmanaged<IEnumPublishedApps*, int>)(lpVtbl[4]))((IEnumPublishedApps*)Unsafe.AsPointer(ref this));
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT Next(IPublishedApp** pia);
+
+            [VtblIndex(4)]
+            HRESULT Reset();
         }
 
         public partial struct Vtbl

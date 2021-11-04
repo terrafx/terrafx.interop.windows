@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("AC6B7889-0740-4D51-8619-905994A55CC6")]
     [NativeTypeName("struct IMFAsyncResult : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IMFAsyncResult
+    public unsafe partial struct IMFAsyncResult : IMFAsyncResult.Interface
     {
         public void** lpVtbl;
 
@@ -72,6 +72,24 @@ namespace TerraFX.Interop
         public IUnknown* GetStateNoAddRef()
         {
             return ((delegate* unmanaged<IMFAsyncResult*, IUnknown*>)(lpVtbl[7]))((IMFAsyncResult*)Unsafe.AsPointer(ref this));
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetState(IUnknown** ppunkState);
+
+            [VtblIndex(4)]
+            HRESULT GetStatus();
+
+            [VtblIndex(5)]
+            HRESULT SetStatus(HRESULT hrStatus);
+
+            [VtblIndex(6)]
+            HRESULT GetObject(IUnknown** ppObject);
+
+            [VtblIndex(7)]
+            IUnknown* GetStateNoAddRef();
         }
 
         public partial struct Vtbl

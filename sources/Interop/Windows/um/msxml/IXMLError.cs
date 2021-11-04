@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("948C5AD3-C58D-11D0-9C0B-00C04FC99C8E")]
     [NativeTypeName("struct IXMLError : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IXMLError
+    public unsafe partial struct IXMLError : IXMLError.Interface
     {
         public void** lpVtbl;
 
@@ -44,6 +44,12 @@ namespace TerraFX.Interop
         public HRESULT GetErrorInfo(XML_ERROR* pErrorReturn)
         {
             return ((delegate* unmanaged<IXMLError*, XML_ERROR*, int>)(lpVtbl[3]))((IXMLError*)Unsafe.AsPointer(ref this), pErrorReturn);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetErrorInfo(XML_ERROR* pErrorReturn);
         }
 
         public partial struct Vtbl

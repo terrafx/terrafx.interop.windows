@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("6CA38BE5-FBBB-4800-95A1-A438865EB0D4")]
     [NativeTypeName("struct IIsoImageManager : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct IIsoImageManager
+    public unsafe partial struct IIsoImageManager : IIsoImageManager.Interface
     {
         public void** lpVtbl;
 
@@ -100,6 +100,24 @@ namespace TerraFX.Interop
         public HRESULT Validate()
         {
             return ((delegate* unmanaged<IIsoImageManager*, int>)(lpVtbl[11]))((IIsoImageManager*)Unsafe.AsPointer(ref this));
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT get_Path([NativeTypeName("BSTR *")] ushort** pVal);
+
+            [VtblIndex(8)]
+            HRESULT get_Stream(IStream** data);
+
+            [VtblIndex(9)]
+            HRESULT SetPath([NativeTypeName("BSTR")] ushort* Val);
+
+            [VtblIndex(10)]
+            HRESULT SetStream(IStream* data);
+
+            [VtblIndex(11)]
+            HRESULT Validate();
         }
 
         public partial struct Vtbl

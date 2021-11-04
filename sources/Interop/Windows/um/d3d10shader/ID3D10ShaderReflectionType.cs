@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop
 {
     [Guid("C530AD7D-9B16-4395-A979-BA2ECFF83ADD")]
-    public unsafe partial struct ID3D10ShaderReflectionType
+    public unsafe partial struct ID3D10ShaderReflectionType : ID3D10ShaderReflectionType.Interface
     {
         public void** lpVtbl;
 
@@ -40,6 +40,22 @@ namespace TerraFX.Interop
         public sbyte* GetMemberTypeName(uint Index)
         {
             return ((delegate* unmanaged<ID3D10ShaderReflectionType*, uint, sbyte*>)(lpVtbl[3]))((ID3D10ShaderReflectionType*)Unsafe.AsPointer(ref this), Index);
+        }
+
+        public interface Interface
+        {
+            [VtblIndex(0)]
+            HRESULT GetDesc(D3D10_SHADER_TYPE_DESC* pDesc);
+
+            [VtblIndex(1)]
+            ID3D10ShaderReflectionType* GetMemberTypeByIndex(uint Index);
+
+            [VtblIndex(2)]
+            ID3D10ShaderReflectionType* GetMemberTypeByName([NativeTypeName("LPCSTR")] sbyte* Name);
+
+            [VtblIndex(3)]
+            [return: NativeTypeName("LPCSTR")]
+            sbyte* GetMemberTypeName(uint Index);
         }
 
         public partial struct Vtbl

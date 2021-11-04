@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("6450336F-7D49-4CED-8097-49D6DEE37294")]
     [NativeTypeName("struct ISpeechBaseStream : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct ISpeechBaseStream
+    public unsafe partial struct ISpeechBaseStream : ISpeechBaseStream.Interface
     {
         public void** lpVtbl;
 
@@ -100,6 +100,24 @@ namespace TerraFX.Interop
         public HRESULT Seek(VARIANT Position, SpeechStreamSeekPositionType Origin, VARIANT* NewPosition)
         {
             return ((delegate* unmanaged<ISpeechBaseStream*, VARIANT, SpeechStreamSeekPositionType, VARIANT*, int>)(lpVtbl[11]))((ISpeechBaseStream*)Unsafe.AsPointer(ref this), Position, Origin, NewPosition);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT get_Format(ISpeechAudioFormat** AudioFormat);
+
+            [VtblIndex(8)]
+            HRESULT putref_Format(ISpeechAudioFormat* AudioFormat);
+
+            [VtblIndex(9)]
+            HRESULT Read(VARIANT* Buffer, [NativeTypeName("long")] int NumberOfBytes, [NativeTypeName("long *")] int* BytesRead);
+
+            [VtblIndex(10)]
+            HRESULT Write(VARIANT Buffer, [NativeTypeName("long *")] int* BytesWritten);
+
+            [VtblIndex(11)]
+            HRESULT Seek(VARIANT Position, SpeechStreamSeekPositionType Origin, VARIANT* NewPosition);
         }
 
         public partial struct Vtbl

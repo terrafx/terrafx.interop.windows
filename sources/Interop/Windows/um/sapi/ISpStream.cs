@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("12E3CCA9-7518-44C5-A5E7-BA5A79CB929E")]
     [NativeTypeName("struct ISpStream : ISpStreamFormat")]
     [NativeInheritance("ISpStreamFormat")]
-    public unsafe partial struct ISpStream
+    public unsafe partial struct ISpStream : ISpStream.Interface
     {
         public void** lpVtbl;
 
@@ -149,6 +149,21 @@ namespace TerraFX.Interop
         public HRESULT Close()
         {
             return ((delegate* unmanaged<ISpStream*, int>)(lpVtbl[18]))((ISpStream*)Unsafe.AsPointer(ref this));
+        }
+
+        public interface Interface : ISpStreamFormat.Interface
+        {
+            [VtblIndex(15)]
+            HRESULT SetBaseStream(IStream* pStream, [NativeTypeName("const GUID &")] Guid* rguidFormat, [NativeTypeName("const WAVEFORMATEX *")] WAVEFORMATEX* pWaveFormatEx);
+
+            [VtblIndex(16)]
+            HRESULT GetBaseStream(IStream** ppStream);
+
+            [VtblIndex(17)]
+            HRESULT BindToFile([NativeTypeName("LPCWSTR")] ushort* pszFileName, SPFILEMODE eMode, [NativeTypeName("const GUID *")] Guid* pFormatId, [NativeTypeName("const WAVEFORMATEX *")] WAVEFORMATEX* pWaveFormatEx, [NativeTypeName("ULONGLONG")] ulong ullEventInterest);
+
+            [VtblIndex(18)]
+            HRESULT Close();
         }
 
         public partial struct Vtbl

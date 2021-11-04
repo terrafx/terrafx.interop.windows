@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("C3E12EB5-7D8D-44F8-B6DD-0E77B34D6DE4")]
     [NativeTypeName("struct IInitializeWithPropertyStore : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IInitializeWithPropertyStore
+    public unsafe partial struct IInitializeWithPropertyStore : IInitializeWithPropertyStore.Interface
     {
         public void** lpVtbl;
 
@@ -44,6 +44,12 @@ namespace TerraFX.Interop
         public HRESULT Initialize(IPropertyStore* pps)
         {
             return ((delegate* unmanaged<IInitializeWithPropertyStore*, IPropertyStore*, int>)(lpVtbl[3]))((IInitializeWithPropertyStore*)Unsafe.AsPointer(ref this), pps);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT Initialize(IPropertyStore* pps);
         }
 
         public partial struct Vtbl

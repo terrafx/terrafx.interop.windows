@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("1C733A30-2A1C-11CE-ADE5-00AA0044773D")]
     [NativeTypeName("struct ICallFactory : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct ICallFactory
+    public unsafe partial struct ICallFactory : ICallFactory.Interface
     {
         public void** lpVtbl;
 
@@ -44,6 +44,12 @@ namespace TerraFX.Interop
         public HRESULT CreateCall([NativeTypeName("const IID &")] Guid* riid, IUnknown* pCtrlUnk, [NativeTypeName("const IID &")] Guid* riid2, IUnknown** ppv)
         {
             return ((delegate* unmanaged<ICallFactory*, Guid*, IUnknown*, Guid*, IUnknown**, int>)(lpVtbl[3]))((ICallFactory*)Unsafe.AsPointer(ref this), riid, pCtrlUnk, riid2, ppv);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT CreateCall([NativeTypeName("const IID &")] Guid* riid, IUnknown* pCtrlUnk, [NativeTypeName("const IID &")] Guid* riid2, IUnknown** ppv);
         }
 
         public partial struct Vtbl

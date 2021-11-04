@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("572F7389-2168-49E3-9693-D6DF5871BF6D")]
     [NativeTypeName("struct ID3D12Heap1 : ID3D12Heap")]
     [NativeInheritance("ID3D12Heap")]
-    public unsafe partial struct ID3D12Heap1
+    public unsafe partial struct ID3D12Heap1 : ID3D12Heap1.Interface
     {
         public void** lpVtbl;
 
@@ -87,6 +87,12 @@ namespace TerraFX.Interop
         public HRESULT GetProtectedResourceSession([NativeTypeName("const IID &")] Guid* riid, void** ppProtectedSession)
         {
             return ((delegate* unmanaged<ID3D12Heap1*, Guid*, void**, int>)(lpVtbl[9]))((ID3D12Heap1*)Unsafe.AsPointer(ref this), riid, ppProtectedSession);
+        }
+
+        public interface Interface : ID3D12Heap.Interface
+        {
+            [VtblIndex(9)]
+            HRESULT GetProtectedResourceSession([NativeTypeName("const IID &")] Guid* riid, void** ppProtectedSession);
         }
 
         public partial struct Vtbl

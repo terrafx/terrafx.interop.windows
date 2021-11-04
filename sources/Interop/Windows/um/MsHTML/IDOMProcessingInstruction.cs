@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("30510742-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct IDOMProcessingInstruction : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct IDOMProcessingInstruction
+    public unsafe partial struct IDOMProcessingInstruction : IDOMProcessingInstruction.Interface
     {
         public void** lpVtbl;
 
@@ -86,6 +86,18 @@ namespace TerraFX.Interop
         public HRESULT get_data([NativeTypeName("BSTR *")] ushort** p)
         {
             return ((delegate* unmanaged<IDOMProcessingInstruction*, ushort**, int>)(lpVtbl[9]))((IDOMProcessingInstruction*)Unsafe.AsPointer(ref this), p);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT get_target([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(8)]
+            HRESULT put_data([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(9)]
+            HRESULT get_data([NativeTypeName("BSTR *")] ushort** p);
         }
 
         public partial struct Vtbl

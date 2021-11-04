@@ -13,7 +13,7 @@ namespace TerraFX.Interop
     [Guid("AF67F125-AB39-4E93-B4A2-CC2E66E182A7")]
     [NativeTypeName("struct ISpeechFileStream : ISpeechBaseStream")]
     [NativeInheritance("ISpeechBaseStream")]
-    public unsafe partial struct ISpeechFileStream
+    public unsafe partial struct ISpeechFileStream : ISpeechFileStream.Interface
     {
         public void** lpVtbl;
 
@@ -115,6 +115,15 @@ namespace TerraFX.Interop
         public HRESULT Close()
         {
             return ((delegate* unmanaged<ISpeechFileStream*, int>)(lpVtbl[13]))((ISpeechFileStream*)Unsafe.AsPointer(ref this));
+        }
+
+        public interface Interface : ISpeechBaseStream.Interface
+        {
+            [VtblIndex(12)]
+            HRESULT Open([NativeTypeName("BSTR")] ushort* FileName, SpeechStreamFileMode FileMode = SSFMOpenForRead, [NativeTypeName("VARIANT_BOOL")] short DoEvents = 0);
+
+            [VtblIndex(13)]
+            HRESULT Close();
         }
 
         public partial struct Vtbl

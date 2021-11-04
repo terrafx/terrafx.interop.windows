@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("F7FB4B9B-6D96-4D7B-9115-201B144811EF")]
     [NativeTypeName("struct IFsiDirectoryItem2 : IFsiDirectoryItem")]
     [NativeInheritance("IFsiDirectoryItem")]
-    public unsafe partial struct IFsiDirectoryItem2
+    public unsafe partial struct IFsiDirectoryItem2 : IFsiDirectoryItem2.Interface
     {
         public void** lpVtbl;
 
@@ -226,6 +226,12 @@ namespace TerraFX.Interop
         public HRESULT AddTreeWithNamedStreams([NativeTypeName("BSTR")] ushort* sourceDirectory, [NativeTypeName("VARIANT_BOOL")] short includeBaseDirectory)
         {
             return ((delegate* unmanaged<IFsiDirectoryItem2*, ushort*, short, int>)(lpVtbl[29]))((IFsiDirectoryItem2*)Unsafe.AsPointer(ref this), sourceDirectory, includeBaseDirectory);
+        }
+
+        public interface Interface : IFsiDirectoryItem.Interface
+        {
+            [VtblIndex(29)]
+            HRESULT AddTreeWithNamedStreams([NativeTypeName("BSTR")] ushort* sourceDirectory, [NativeTypeName("VARIANT_BOOL")] short includeBaseDirectory);
         }
 
         public partial struct Vtbl

@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("EA163CE2-7A65-4506-82A3-C528215DA64E")]
     [NativeTypeName("struct ITfFnGetLinguisticAlternates : ITfFunction")]
     [NativeInheritance("ITfFunction")]
-    public unsafe partial struct ITfFnGetLinguisticAlternates
+    public unsafe partial struct ITfFnGetLinguisticAlternates : ITfFnGetLinguisticAlternates.Interface
     {
         public void** lpVtbl;
 
@@ -51,6 +51,12 @@ namespace TerraFX.Interop
         public HRESULT GetAlternates(ITfRange* pRange, ITfCandidateList** ppCandidateList)
         {
             return ((delegate* unmanaged<ITfFnGetLinguisticAlternates*, ITfRange*, ITfCandidateList**, int>)(lpVtbl[4]))((ITfFnGetLinguisticAlternates*)Unsafe.AsPointer(ref this), pRange, ppCandidateList);
+        }
+
+        public interface Interface : ITfFunction.Interface
+        {
+            [VtblIndex(4)]
+            HRESULT GetAlternates(ITfRange* pRange, ITfCandidateList** ppCandidateList);
         }
 
         public partial struct Vtbl

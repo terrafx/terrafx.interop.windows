@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("2735413A-7F64-5B0F-8F00-5D77AFBE261E")]
     [NativeTypeName("struct DDiscFormat2EraseEvents : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct DDiscFormat2EraseEvents
+    public unsafe partial struct DDiscFormat2EraseEvents : DDiscFormat2EraseEvents.Interface
     {
         public void** lpVtbl;
 
@@ -72,6 +72,12 @@ namespace TerraFX.Interop
         public HRESULT Update(IDispatch* @object, [NativeTypeName("LONG")] int elapsedSeconds, [NativeTypeName("LONG")] int estimatedTotalSeconds)
         {
             return ((delegate* unmanaged<DDiscFormat2EraseEvents*, IDispatch*, int, int, int>)(lpVtbl[7]))((DDiscFormat2EraseEvents*)Unsafe.AsPointer(ref this), @object, elapsedSeconds, estimatedTotalSeconds);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT Update(IDispatch* @object, [NativeTypeName("LONG")] int elapsedSeconds, [NativeTypeName("LONG")] int estimatedTotalSeconds);
         }
 
         public partial struct Vtbl

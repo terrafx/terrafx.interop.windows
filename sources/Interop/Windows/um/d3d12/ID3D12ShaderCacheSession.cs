@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("28E2495D-0F64-4AE4-A6EC-129255DC49A8")]
     [NativeTypeName("struct ID3D12ShaderCacheSession : ID3D12DeviceChild")]
     [NativeInheritance("ID3D12DeviceChild")]
-    public unsafe partial struct ID3D12ShaderCacheSession
+    public unsafe partial struct ID3D12ShaderCacheSession : ID3D12ShaderCacheSession.Interface
     {
         public void** lpVtbl;
 
@@ -101,6 +101,21 @@ namespace TerraFX.Interop
         {
             D3D12_SHADER_CACHE_SESSION_DESC result;
             return *((delegate* unmanaged<ID3D12ShaderCacheSession*, D3D12_SHADER_CACHE_SESSION_DESC*, D3D12_SHADER_CACHE_SESSION_DESC*>)(lpVtbl[11]))((ID3D12ShaderCacheSession*)Unsafe.AsPointer(ref this), &result);
+        }
+
+        public interface Interface : ID3D12DeviceChild.Interface
+        {
+            [VtblIndex(8)]
+            HRESULT FindValue([NativeTypeName("const void *")] void* pKey, uint KeySize, void* pValue, uint* pValueSize);
+
+            [VtblIndex(9)]
+            HRESULT StoreValue([NativeTypeName("const void *")] void* pKey, uint KeySize, [NativeTypeName("const void *")] void* pValue, uint ValueSize);
+
+            [VtblIndex(10)]
+            void SetDeleteOnDestroy();
+
+            [VtblIndex(11)]
+            D3D12_SHADER_CACHE_SESSION_DESC GetDesc();
         }
 
         public partial struct Vtbl

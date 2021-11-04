@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("6D66D782-1D4F-4DB7-8C63-CB8C77F1EF5E")]
     [NativeTypeName("struct IMFByteStreamBuffering : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IMFByteStreamBuffering
+    public unsafe partial struct IMFByteStreamBuffering : IMFByteStreamBuffering.Interface
     {
         public void** lpVtbl;
 
@@ -58,6 +58,18 @@ namespace TerraFX.Interop
         public HRESULT StopBuffering()
         {
             return ((delegate* unmanaged<IMFByteStreamBuffering*, int>)(lpVtbl[5]))((IMFByteStreamBuffering*)Unsafe.AsPointer(ref this));
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT SetBufferingParams(MFBYTESTREAM_BUFFERING_PARAMS* pParams);
+
+            [VtblIndex(4)]
+            HRESULT EnableBuffering(BOOL fEnable);
+
+            [VtblIndex(5)]
+            HRESULT StopBuffering();
         }
 
         public partial struct Vtbl

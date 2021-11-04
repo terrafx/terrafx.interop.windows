@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("EA9DBF1A-C88E-4486-854A-98AA0138F30C")]
     [NativeTypeName("struct IDXGIDisplayControl : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IDXGIDisplayControl
+    public unsafe partial struct IDXGIDisplayControl : IDXGIDisplayControl.Interface
     {
         public void** lpVtbl;
 
@@ -51,6 +51,15 @@ namespace TerraFX.Interop
         public void SetStereoEnabled(BOOL enabled)
         {
             ((delegate* unmanaged<IDXGIDisplayControl*, BOOL, void>)(lpVtbl[4]))((IDXGIDisplayControl*)Unsafe.AsPointer(ref this), enabled);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            BOOL IsStereoEnabled();
+
+            [VtblIndex(4)]
+            void SetStereoEnabled(BOOL enabled);
         }
 
         public partial struct Vtbl

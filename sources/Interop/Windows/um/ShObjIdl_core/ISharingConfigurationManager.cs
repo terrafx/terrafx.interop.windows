@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("B4CD448A-9C86-4466-9201-2E62105B87AE")]
     [NativeTypeName("struct ISharingConfigurationManager : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct ISharingConfigurationManager
+    public unsafe partial struct ISharingConfigurationManager : ISharingConfigurationManager.Interface
     {
         public void** lpVtbl;
 
@@ -86,6 +86,30 @@ namespace TerraFX.Interop
         public HRESULT ArePrintersShared()
         {
             return ((delegate* unmanaged<ISharingConfigurationManager*, int>)(lpVtbl[9]))((ISharingConfigurationManager*)Unsafe.AsPointer(ref this));
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT CreateShare(DEF_SHARE_ID dsid, SHARE_ROLE role);
+
+            [VtblIndex(4)]
+            HRESULT DeleteShare(DEF_SHARE_ID dsid);
+
+            [VtblIndex(5)]
+            HRESULT ShareExists(DEF_SHARE_ID dsid);
+
+            [VtblIndex(6)]
+            HRESULT GetSharePermissions(DEF_SHARE_ID dsid, SHARE_ROLE* pRole);
+
+            [VtblIndex(7)]
+            HRESULT SharePrinters();
+
+            [VtblIndex(8)]
+            HRESULT StopSharingPrinters();
+
+            [VtblIndex(9)]
+            HRESULT ArePrintersShared();
         }
 
         public partial struct Vtbl

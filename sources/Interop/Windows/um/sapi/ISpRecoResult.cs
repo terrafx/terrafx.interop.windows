@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("20B053BE-E235-43CD-9A2A-8D17A48B7842")]
     [NativeTypeName("struct ISpRecoResult : ISpPhrase")]
     [NativeInheritance("ISpPhrase")]
-    public unsafe partial struct ISpRecoResult
+    public unsafe partial struct ISpRecoResult : ISpRecoResult.Interface
     {
         public void** lpVtbl;
 
@@ -114,6 +114,30 @@ namespace TerraFX.Interop
         public HRESULT GetRecoContext(ISpRecoContext** ppRecoContext)
         {
             return ((delegate* unmanaged<ISpRecoResult*, ISpRecoContext**, int>)(lpVtbl[13]))((ISpRecoResult*)Unsafe.AsPointer(ref this), ppRecoContext);
+        }
+
+        public interface Interface : ISpPhrase.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT GetResultTimes(SPRECORESULTTIMES* pTimes);
+
+            [VtblIndex(8)]
+            HRESULT GetAlternates([NativeTypeName("ULONG")] uint ulStartElement, [NativeTypeName("ULONG")] uint cElements, [NativeTypeName("ULONG")] uint ulRequestCount, ISpPhraseAlt** ppPhrases, [NativeTypeName("ULONG *")] uint* pcPhrasesReturned);
+
+            [VtblIndex(9)]
+            HRESULT GetAudio([NativeTypeName("ULONG")] uint ulStartElement, [NativeTypeName("ULONG")] uint cElements, ISpStreamFormat** ppStream);
+
+            [VtblIndex(10)]
+            HRESULT SpeakAudio([NativeTypeName("ULONG")] uint ulStartElement, [NativeTypeName("ULONG")] uint cElements, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("ULONG *")] uint* pulStreamNumber);
+
+            [VtblIndex(11)]
+            HRESULT Serialize(SPSERIALIZEDRESULT** ppCoMemSerializedResult);
+
+            [VtblIndex(12)]
+            HRESULT ScaleAudio([NativeTypeName("const GUID *")] Guid* pAudioFormatId, [NativeTypeName("const WAVEFORMATEX *")] WAVEFORMATEX* pWaveFormatEx);
+
+            [VtblIndex(13)]
+            HRESULT GetRecoContext(ISpRecoContext** ppRecoContext);
         }
 
         public partial struct Vtbl

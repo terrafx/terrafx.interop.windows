@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("ABAD189D-9FA3-4278-B3CA-8CA448A88DCB")]
     [NativeTypeName("struct IAppActivationUIInfo : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IAppActivationUIInfo
+    public unsafe partial struct IAppActivationUIInfo : IAppActivationUIInfo.Interface
     {
         public void** lpVtbl;
 
@@ -72,6 +72,24 @@ namespace TerraFX.Interop
         public HRESULT GetKeyState([NativeTypeName("DWORD *")] uint* value)
         {
             return ((delegate* unmanaged<IAppActivationUIInfo*, uint*, int>)(lpVtbl[7]))((IAppActivationUIInfo*)Unsafe.AsPointer(ref this), value);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetMonitor(HMONITOR* value);
+
+            [VtblIndex(4)]
+            HRESULT GetInvokePoint(POINT* value);
+
+            [VtblIndex(5)]
+            HRESULT GetShowCommand(int* value);
+
+            [VtblIndex(6)]
+            HRESULT GetShowUI(BOOL* value);
+
+            [VtblIndex(7)]
+            HRESULT GetKeyState([NativeTypeName("DWORD *")] uint* value);
         }
 
         public partial struct Vtbl

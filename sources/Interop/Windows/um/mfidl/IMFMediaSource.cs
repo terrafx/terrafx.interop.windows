@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("279A808D-AEC7-40C8-9C6B-A6B492C78A66")]
     [NativeTypeName("struct IMFMediaSource : IMFMediaEventGenerator")]
     [NativeInheritance("IMFMediaEventGenerator")]
-    public unsafe partial struct IMFMediaSource
+    public unsafe partial struct IMFMediaSource : IMFMediaSource.Interface
     {
         public void** lpVtbl;
 
@@ -107,6 +107,27 @@ namespace TerraFX.Interop
         public HRESULT Shutdown()
         {
             return ((delegate* unmanaged<IMFMediaSource*, int>)(lpVtbl[12]))((IMFMediaSource*)Unsafe.AsPointer(ref this));
+        }
+
+        public interface Interface : IMFMediaEventGenerator.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT GetCharacteristics([NativeTypeName("DWORD *")] uint* pdwCharacteristics);
+
+            [VtblIndex(8)]
+            HRESULT CreatePresentationDescriptor(IMFPresentationDescriptor** ppPresentationDescriptor);
+
+            [VtblIndex(9)]
+            HRESULT Start(IMFPresentationDescriptor* pPresentationDescriptor, [NativeTypeName("const GUID *")] Guid* pguidTimeFormat, [NativeTypeName("const PROPVARIANT *")] PROPVARIANT* pvarStartPosition);
+
+            [VtblIndex(10)]
+            HRESULT Stop();
+
+            [VtblIndex(11)]
+            HRESULT Pause();
+
+            [VtblIndex(12)]
+            HRESULT Shutdown();
         }
 
         public partial struct Vtbl

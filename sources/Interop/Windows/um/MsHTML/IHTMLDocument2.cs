@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("332C4425-26CB-11D0-B483-00C04FD90119")]
     [NativeTypeName("struct IHTMLDocument2 : IHTMLDocument")]
     [NativeInheritance("IHTMLDocument")]
-    public unsafe partial struct IHTMLDocument2
+    public unsafe partial struct IHTMLDocument2 : IHTMLDocument2.Interface
     {
         public void** lpVtbl;
 
@@ -828,6 +828,333 @@ namespace TerraFX.Interop
         public HRESULT createStyleSheet([NativeTypeName("BSTR")] ushort* bstrHref, [NativeTypeName("long")] int lIndex, IHTMLStyleSheet** ppnewStyleSheet)
         {
             return ((delegate* unmanaged<IHTMLDocument2*, ushort*, int, IHTMLStyleSheet**, int>)(lpVtbl[115]))((IHTMLDocument2*)Unsafe.AsPointer(ref this), bstrHref, lIndex, ppnewStyleSheet);
+        }
+
+        public interface Interface : IHTMLDocument.Interface
+        {
+            [VtblIndex(8)]
+            HRESULT get_all(IHTMLElementCollection** p);
+
+            [VtblIndex(9)]
+            HRESULT get_body(IHTMLElement** p);
+
+            [VtblIndex(10)]
+            HRESULT get_activeElement(IHTMLElement** p);
+
+            [VtblIndex(11)]
+            HRESULT get_images(IHTMLElementCollection** p);
+
+            [VtblIndex(12)]
+            HRESULT get_applets(IHTMLElementCollection** p);
+
+            [VtblIndex(13)]
+            HRESULT get_links(IHTMLElementCollection** p);
+
+            [VtblIndex(14)]
+            HRESULT get_forms(IHTMLElementCollection** p);
+
+            [VtblIndex(15)]
+            HRESULT get_anchors(IHTMLElementCollection** p);
+
+            [VtblIndex(16)]
+            HRESULT put_title([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(17)]
+            HRESULT get_title([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(18)]
+            HRESULT get_scripts(IHTMLElementCollection** p);
+
+            [VtblIndex(19)]
+            HRESULT put_designMode([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(20)]
+            HRESULT get_designMode([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(21)]
+            HRESULT get_selection(IHTMLSelectionObject** p);
+
+            [VtblIndex(22)]
+            HRESULT get_readyState([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(23)]
+            HRESULT get_frames(IHTMLFramesCollection2** p);
+
+            [VtblIndex(24)]
+            HRESULT get_embeds(IHTMLElementCollection** p);
+
+            [VtblIndex(25)]
+            HRESULT get_plugins(IHTMLElementCollection** p);
+
+            [VtblIndex(26)]
+            HRESULT put_alinkColor(VARIANT v);
+
+            [VtblIndex(27)]
+            HRESULT get_alinkColor(VARIANT* p);
+
+            [VtblIndex(28)]
+            HRESULT put_bgColor(VARIANT v);
+
+            [VtblIndex(29)]
+            HRESULT get_bgColor(VARIANT* p);
+
+            [VtblIndex(30)]
+            HRESULT put_fgColor(VARIANT v);
+
+            [VtblIndex(31)]
+            HRESULT get_fgColor(VARIANT* p);
+
+            [VtblIndex(32)]
+            HRESULT put_linkColor(VARIANT v);
+
+            [VtblIndex(33)]
+            HRESULT get_linkColor(VARIANT* p);
+
+            [VtblIndex(34)]
+            HRESULT put_vlinkColor(VARIANT v);
+
+            [VtblIndex(35)]
+            HRESULT get_vlinkColor(VARIANT* p);
+
+            [VtblIndex(36)]
+            HRESULT get_referrer([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(37)]
+            HRESULT get_location(IHTMLLocation** p);
+
+            [VtblIndex(38)]
+            HRESULT get_lastModified([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(39)]
+            HRESULT put_URL([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(40)]
+            HRESULT get_URL([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(41)]
+            HRESULT put_domain([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(42)]
+            HRESULT get_domain([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(43)]
+            HRESULT put_cookie([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(44)]
+            HRESULT get_cookie([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(45)]
+            HRESULT put_expando([NativeTypeName("VARIANT_BOOL")] short v);
+
+            [VtblIndex(46)]
+            HRESULT get_expando([NativeTypeName("VARIANT_BOOL *")] short* p);
+
+            [VtblIndex(47)]
+            HRESULT put_charset([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(48)]
+            HRESULT get_charset([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(49)]
+            HRESULT put_defaultCharset([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(50)]
+            HRESULT get_defaultCharset([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(51)]
+            HRESULT get_mimeType([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(52)]
+            HRESULT get_fileSize([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(53)]
+            HRESULT get_fileCreatedDate([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(54)]
+            HRESULT get_fileModifiedDate([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(55)]
+            HRESULT get_fileUpdatedDate([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(56)]
+            HRESULT get_security([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(57)]
+            HRESULT get_protocol([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(58)]
+            HRESULT get_nameProp([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(59)]
+            HRESULT write(SAFEARRAY* psarray);
+
+            [VtblIndex(60)]
+            HRESULT writeln(SAFEARRAY* psarray);
+
+            [VtblIndex(61)]
+            HRESULT open([NativeTypeName("BSTR")] ushort* url, VARIANT name, VARIANT features, VARIANT replace, IDispatch** pomWindowResult);
+
+            [VtblIndex(62)]
+            HRESULT close();
+
+            [VtblIndex(63)]
+            HRESULT clear();
+
+            [VtblIndex(64)]
+            HRESULT queryCommandSupported([NativeTypeName("BSTR")] ushort* cmdID, [NativeTypeName("VARIANT_BOOL *")] short* pfRet);
+
+            [VtblIndex(65)]
+            HRESULT queryCommandEnabled([NativeTypeName("BSTR")] ushort* cmdID, [NativeTypeName("VARIANT_BOOL *")] short* pfRet);
+
+            [VtblIndex(66)]
+            HRESULT queryCommandState([NativeTypeName("BSTR")] ushort* cmdID, [NativeTypeName("VARIANT_BOOL *")] short* pfRet);
+
+            [VtblIndex(67)]
+            HRESULT queryCommandIndeterm([NativeTypeName("BSTR")] ushort* cmdID, [NativeTypeName("VARIANT_BOOL *")] short* pfRet);
+
+            [VtblIndex(68)]
+            HRESULT queryCommandText([NativeTypeName("BSTR")] ushort* cmdID, [NativeTypeName("BSTR *")] ushort** pcmdText);
+
+            [VtblIndex(69)]
+            HRESULT queryCommandValue([NativeTypeName("BSTR")] ushort* cmdID, VARIANT* pcmdValue);
+
+            [VtblIndex(70)]
+            HRESULT execCommand([NativeTypeName("BSTR")] ushort* cmdID, [NativeTypeName("VARIANT_BOOL")] short showUI, VARIANT value, [NativeTypeName("VARIANT_BOOL *")] short* pfRet);
+
+            [VtblIndex(71)]
+            HRESULT execCommandShowHelp([NativeTypeName("BSTR")] ushort* cmdID, [NativeTypeName("VARIANT_BOOL *")] short* pfRet);
+
+            [VtblIndex(72)]
+            HRESULT createElement([NativeTypeName("BSTR")] ushort* eTag, IHTMLElement** newElem);
+
+            [VtblIndex(73)]
+            HRESULT put_onhelp(VARIANT v);
+
+            [VtblIndex(74)]
+            HRESULT get_onhelp(VARIANT* p);
+
+            [VtblIndex(75)]
+            HRESULT put_onclick(VARIANT v);
+
+            [VtblIndex(76)]
+            HRESULT get_onclick(VARIANT* p);
+
+            [VtblIndex(77)]
+            HRESULT put_ondblclick(VARIANT v);
+
+            [VtblIndex(78)]
+            HRESULT get_ondblclick(VARIANT* p);
+
+            [VtblIndex(79)]
+            HRESULT put_onkeyup(VARIANT v);
+
+            [VtblIndex(80)]
+            HRESULT get_onkeyup(VARIANT* p);
+
+            [VtblIndex(81)]
+            HRESULT put_onkeydown(VARIANT v);
+
+            [VtblIndex(82)]
+            HRESULT get_onkeydown(VARIANT* p);
+
+            [VtblIndex(83)]
+            HRESULT put_onkeypress(VARIANT v);
+
+            [VtblIndex(84)]
+            HRESULT get_onkeypress(VARIANT* p);
+
+            [VtblIndex(85)]
+            HRESULT put_onmouseup(VARIANT v);
+
+            [VtblIndex(86)]
+            HRESULT get_onmouseup(VARIANT* p);
+
+            [VtblIndex(87)]
+            HRESULT put_onmousedown(VARIANT v);
+
+            [VtblIndex(88)]
+            HRESULT get_onmousedown(VARIANT* p);
+
+            [VtblIndex(89)]
+            HRESULT put_onmousemove(VARIANT v);
+
+            [VtblIndex(90)]
+            HRESULT get_onmousemove(VARIANT* p);
+
+            [VtblIndex(91)]
+            HRESULT put_onmouseout(VARIANT v);
+
+            [VtblIndex(92)]
+            HRESULT get_onmouseout(VARIANT* p);
+
+            [VtblIndex(93)]
+            HRESULT put_onmouseover(VARIANT v);
+
+            [VtblIndex(94)]
+            HRESULT get_onmouseover(VARIANT* p);
+
+            [VtblIndex(95)]
+            HRESULT put_onreadystatechange(VARIANT v);
+
+            [VtblIndex(96)]
+            HRESULT get_onreadystatechange(VARIANT* p);
+
+            [VtblIndex(97)]
+            HRESULT put_onafterupdate(VARIANT v);
+
+            [VtblIndex(98)]
+            HRESULT get_onafterupdate(VARIANT* p);
+
+            [VtblIndex(99)]
+            HRESULT put_onrowexit(VARIANT v);
+
+            [VtblIndex(100)]
+            HRESULT get_onrowexit(VARIANT* p);
+
+            [VtblIndex(101)]
+            HRESULT put_onrowenter(VARIANT v);
+
+            [VtblIndex(102)]
+            HRESULT get_onrowenter(VARIANT* p);
+
+            [VtblIndex(103)]
+            HRESULT put_ondragstart(VARIANT v);
+
+            [VtblIndex(104)]
+            HRESULT get_ondragstart(VARIANT* p);
+
+            [VtblIndex(105)]
+            HRESULT put_onselectstart(VARIANT v);
+
+            [VtblIndex(106)]
+            HRESULT get_onselectstart(VARIANT* p);
+
+            [VtblIndex(107)]
+            HRESULT elementFromPoint([NativeTypeName("long")] int x, [NativeTypeName("long")] int y, IHTMLElement** elementHit);
+
+            [VtblIndex(108)]
+            HRESULT get_parentWindow(IHTMLWindow2** p);
+
+            [VtblIndex(109)]
+            HRESULT get_styleSheets(IHTMLStyleSheetsCollection** p);
+
+            [VtblIndex(110)]
+            HRESULT put_onbeforeupdate(VARIANT v);
+
+            [VtblIndex(111)]
+            HRESULT get_onbeforeupdate(VARIANT* p);
+
+            [VtblIndex(112)]
+            HRESULT put_onerrorupdate(VARIANT v);
+
+            [VtblIndex(113)]
+            HRESULT get_onerrorupdate(VARIANT* p);
+
+            [VtblIndex(114)]
+            HRESULT toString([NativeTypeName("BSTR *")] ushort** String);
+
+            [VtblIndex(115)]
+            HRESULT createStyleSheet([NativeTypeName("BSTR")] ushort* bstrHref, [NativeTypeName("long")] int lIndex, IHTMLStyleSheet** ppnewStyleSheet);
         }
 
         public partial struct Vtbl

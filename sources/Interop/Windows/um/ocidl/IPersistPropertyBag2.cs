@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("22F55881-280B-11D0-A8A9-00A0C90C2004")]
     [NativeTypeName("struct IPersistPropertyBag2 : IPersist")]
     [NativeInheritance("IPersist")]
-    public unsafe partial struct IPersistPropertyBag2
+    public unsafe partial struct IPersistPropertyBag2 : IPersistPropertyBag2.Interface
     {
         public void** lpVtbl;
 
@@ -72,6 +72,21 @@ namespace TerraFX.Interop
         public HRESULT IsDirty()
         {
             return ((delegate* unmanaged<IPersistPropertyBag2*, int>)(lpVtbl[7]))((IPersistPropertyBag2*)Unsafe.AsPointer(ref this));
+        }
+
+        public interface Interface : IPersist.Interface
+        {
+            [VtblIndex(4)]
+            HRESULT InitNew();
+
+            [VtblIndex(5)]
+            HRESULT Load(IPropertyBag2* pPropBag, IErrorLog* pErrLog);
+
+            [VtblIndex(6)]
+            HRESULT Save(IPropertyBag2* pPropBag, BOOL fClearDirty, BOOL fSaveAllProperties);
+
+            [VtblIndex(7)]
+            HRESULT IsDirty();
         }
 
         public partial struct Vtbl

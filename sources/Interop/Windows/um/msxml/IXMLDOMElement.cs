@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("2933BF86-7B36-11D2-B20E-00C04F983E60")]
     [NativeTypeName("struct IXMLDOMElement : IXMLDOMNode")]
     [NativeInheritance("IXMLDOMNode")]
-    public unsafe partial struct IXMLDOMElement
+    public unsafe partial struct IXMLDOMElement : IXMLDOMElement.Interface
     {
         public void** lpVtbl;
 
@@ -380,6 +380,36 @@ namespace TerraFX.Interop
         public HRESULT normalize()
         {
             return ((delegate* unmanaged<IXMLDOMElement*, int>)(lpVtbl[51]))((IXMLDOMElement*)Unsafe.AsPointer(ref this));
+        }
+
+        public interface Interface : IXMLDOMNode.Interface
+        {
+            [VtblIndex(43)]
+            HRESULT get_tagName([NativeTypeName("BSTR *")] ushort** tagName);
+
+            [VtblIndex(44)]
+            HRESULT getAttribute([NativeTypeName("BSTR")] ushort* name, VARIANT* value);
+
+            [VtblIndex(45)]
+            HRESULT setAttribute([NativeTypeName("BSTR")] ushort* name, VARIANT value);
+
+            [VtblIndex(46)]
+            HRESULT removeAttribute([NativeTypeName("BSTR")] ushort* name);
+
+            [VtblIndex(47)]
+            HRESULT getAttributeNode([NativeTypeName("BSTR")] ushort* name, IXMLDOMAttribute** attributeNode);
+
+            [VtblIndex(48)]
+            HRESULT setAttributeNode(IXMLDOMAttribute* DOMAttribute, IXMLDOMAttribute** attributeNode);
+
+            [VtblIndex(49)]
+            HRESULT removeAttributeNode(IXMLDOMAttribute* DOMAttribute, IXMLDOMAttribute** attributeNode);
+
+            [VtblIndex(50)]
+            HRESULT getElementsByTagName([NativeTypeName("BSTR")] ushort* tagName, IXMLDOMNodeList** resultList);
+
+            [VtblIndex(51)]
+            HRESULT normalize();
         }
 
         public partial struct Vtbl

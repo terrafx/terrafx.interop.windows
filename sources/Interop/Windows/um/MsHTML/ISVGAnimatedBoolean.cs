@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("305104C6-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct ISVGAnimatedBoolean : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct ISVGAnimatedBoolean
+    public unsafe partial struct ISVGAnimatedBoolean : ISVGAnimatedBoolean.Interface
     {
         public void** lpVtbl;
 
@@ -93,6 +93,21 @@ namespace TerraFX.Interop
         public HRESULT get_animVal([NativeTypeName("VARIANT_BOOL *")] short* p)
         {
             return ((delegate* unmanaged<ISVGAnimatedBoolean*, short*, int>)(lpVtbl[10]))((ISVGAnimatedBoolean*)Unsafe.AsPointer(ref this), p);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT put_baseVal([NativeTypeName("VARIANT_BOOL")] short v);
+
+            [VtblIndex(8)]
+            HRESULT get_baseVal([NativeTypeName("VARIANT_BOOL *")] short* p);
+
+            [VtblIndex(9)]
+            HRESULT put_animVal([NativeTypeName("VARIANT_BOOL")] short v);
+
+            [VtblIndex(10)]
+            HRESULT get_animVal([NativeTypeName("VARIANT_BOOL *")] short* p);
         }
 
         public partial struct Vtbl

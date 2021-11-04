@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("56A868AA-0AD4-11CE-B03A-0020AF0BA770")]
     [NativeTypeName("struct IAsyncReader : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IAsyncReader
+    public unsafe partial struct IAsyncReader : IAsyncReader.Interface
     {
         public void** lpVtbl;
 
@@ -93,6 +93,33 @@ namespace TerraFX.Interop
         public HRESULT EndFlush()
         {
             return ((delegate* unmanaged<IAsyncReader*, int>)(lpVtbl[10]))((IAsyncReader*)Unsafe.AsPointer(ref this));
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT RequestAllocator(IMemAllocator* pPreferred, ALLOCATOR_PROPERTIES* pProps, IMemAllocator** ppActual);
+
+            [VtblIndex(4)]
+            HRESULT Request(IMediaSample* pSample, [NativeTypeName("DWORD_PTR")] nuint dwUser);
+
+            [VtblIndex(5)]
+            HRESULT WaitForNext([NativeTypeName("DWORD")] uint dwTimeout, IMediaSample** ppSample, [NativeTypeName("DWORD_PTR *")] nuint* pdwUser);
+
+            [VtblIndex(6)]
+            HRESULT SyncReadAligned(IMediaSample* pSample);
+
+            [VtblIndex(7)]
+            HRESULT SyncRead([NativeTypeName("LONGLONG")] long llPosition, [NativeTypeName("LONG")] int lLength, byte* pBuffer);
+
+            [VtblIndex(8)]
+            HRESULT Length([NativeTypeName("LONGLONG *")] long* pTotal, [NativeTypeName("LONGLONG *")] long* pAvailable);
+
+            [VtblIndex(9)]
+            HRESULT BeginFlush();
+
+            [VtblIndex(10)]
+            HRESULT EndFlush();
         }
 
         public partial struct Vtbl

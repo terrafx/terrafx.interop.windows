@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("90F732E2-5092-4606-A819-8651970BACCD")]
     [NativeTypeName("struct ID2D1BoundsAdjustmentTransform : ID2D1TransformNode")]
     [NativeInheritance("ID2D1TransformNode")]
-    public unsafe partial struct ID2D1BoundsAdjustmentTransform
+    public unsafe partial struct ID2D1BoundsAdjustmentTransform : ID2D1BoundsAdjustmentTransform.Interface
     {
         public void** lpVtbl;
 
@@ -59,6 +59,15 @@ namespace TerraFX.Interop
         public void GetOutputBounds([NativeTypeName("D2D1_RECT_L *")] RECT* outputBounds)
         {
             ((delegate* unmanaged<ID2D1BoundsAdjustmentTransform*, RECT*, void>)(lpVtbl[5]))((ID2D1BoundsAdjustmentTransform*)Unsafe.AsPointer(ref this), outputBounds);
+        }
+
+        public interface Interface : ID2D1TransformNode.Interface
+        {
+            [VtblIndex(4)]
+            void SetOutputBounds([NativeTypeName("const D2D1_RECT_L *")] RECT* outputBounds);
+
+            [VtblIndex(5)]
+            void GetOutputBounds([NativeTypeName("D2D1_RECT_L *")] RECT* outputBounds);
         }
 
         public partial struct Vtbl

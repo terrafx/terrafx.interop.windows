@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("BD1AE5E0-A6AE-11CE-BD37-504200C10000")]
     [NativeTypeName("struct IPersistMemory : IPersist")]
     [NativeInheritance("IPersist")]
-    public unsafe partial struct IPersistMemory
+    public unsafe partial struct IPersistMemory : IPersistMemory.Interface
     {
         public void** lpVtbl;
 
@@ -79,6 +79,24 @@ namespace TerraFX.Interop
         public HRESULT InitNew()
         {
             return ((delegate* unmanaged<IPersistMemory*, int>)(lpVtbl[8]))((IPersistMemory*)Unsafe.AsPointer(ref this));
+        }
+
+        public interface Interface : IPersist.Interface
+        {
+            [VtblIndex(4)]
+            HRESULT IsDirty();
+
+            [VtblIndex(5)]
+            HRESULT Load([NativeTypeName("LPVOID")] void* pMem, [NativeTypeName("ULONG")] uint cbSize);
+
+            [VtblIndex(6)]
+            HRESULT Save([NativeTypeName("LPVOID")] void* pMem, BOOL fClearDirty, [NativeTypeName("ULONG")] uint cbSize);
+
+            [VtblIndex(7)]
+            HRESULT GetSizeMax([NativeTypeName("ULONG *")] uint* pCbSize);
+
+            [VtblIndex(8)]
+            HRESULT InitNew();
         }
 
         public partial struct Vtbl

@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("30510795-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct IHTMLBodyElement4 : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct IHTMLBodyElement4
+    public unsafe partial struct IHTMLBodyElement4 : IHTMLBodyElement4.Interface
     {
         public void** lpVtbl;
 
@@ -93,6 +93,21 @@ namespace TerraFX.Interop
         public HRESULT get_onstorage(VARIANT* p)
         {
             return ((delegate* unmanaged<IHTMLBodyElement4*, VARIANT*, int>)(lpVtbl[10]))((IHTMLBodyElement4*)Unsafe.AsPointer(ref this), p);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT put_onmessage(VARIANT v);
+
+            [VtblIndex(8)]
+            HRESULT get_onmessage(VARIANT* p);
+
+            [VtblIndex(9)]
+            HRESULT put_onstorage(VARIANT v);
+
+            [VtblIndex(10)]
+            HRESULT get_onstorage(VARIANT* p);
         }
 
         public partial struct Vtbl

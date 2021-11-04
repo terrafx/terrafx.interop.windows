@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("A0884F9A-D2BE-4355-AA5D-5901281AD1D2")]
     [NativeTypeName("struct IDMLDevice1 : IDMLDevice")]
     [NativeInheritance("IDMLDevice")]
-    public unsafe partial struct IDMLDevice1
+    public unsafe partial struct IDMLDevice1 : IDMLDevice1.Interface
     {
         public void** lpVtbl;
 
@@ -142,6 +142,12 @@ namespace TerraFX.Interop
         public HRESULT CompileGraph([NativeTypeName("const DML_GRAPH_DESC *")] DML_GRAPH_DESC* desc, DML_EXECUTION_FLAGS flags, [NativeTypeName("const IID &")] Guid* riid, void** ppv)
         {
             return ((delegate* unmanaged<IDMLDevice1*, DML_GRAPH_DESC*, DML_EXECUTION_FLAGS, Guid*, void**, int>)(lpVtbl[17]))((IDMLDevice1*)Unsafe.AsPointer(ref this), desc, flags, riid, ppv);
+        }
+
+        public interface Interface : IDMLDevice.Interface
+        {
+            [VtblIndex(17)]
+            HRESULT CompileGraph([NativeTypeName("const DML_GRAPH_DESC *")] DML_GRAPH_DESC* desc, DML_EXECUTION_FLAGS flags, [NativeTypeName("const IID &")] Guid* riid, void** ppv);
         }
 
         public partial struct Vtbl

@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("283CE2D7-7153-4A91-9649-7A0F7240945F")]
     [NativeTypeName("struct IAppxManifestPackageId : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IAppxManifestPackageId
+    public unsafe partial struct IAppxManifestPackageId : IAppxManifestPackageId.Interface
     {
         public void** lpVtbl;
 
@@ -93,6 +93,33 @@ namespace TerraFX.Interop
         public HRESULT GetPackageFamilyName([NativeTypeName("LPWSTR *")] ushort** packageFamilyName)
         {
             return ((delegate* unmanaged<IAppxManifestPackageId*, ushort**, int>)(lpVtbl[10]))((IAppxManifestPackageId*)Unsafe.AsPointer(ref this), packageFamilyName);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetName([NativeTypeName("LPWSTR *")] ushort** name);
+
+            [VtblIndex(4)]
+            HRESULT GetArchitecture(APPX_PACKAGE_ARCHITECTURE* architecture);
+
+            [VtblIndex(5)]
+            HRESULT GetPublisher([NativeTypeName("LPWSTR *")] ushort** publisher);
+
+            [VtblIndex(6)]
+            HRESULT GetVersion([NativeTypeName("UINT64 *")] ulong* packageVersion);
+
+            [VtblIndex(7)]
+            HRESULT GetResourceId([NativeTypeName("LPWSTR *")] ushort** resourceId);
+
+            [VtblIndex(8)]
+            HRESULT ComparePublisher([NativeTypeName("LPCWSTR")] ushort* other, BOOL* isSame);
+
+            [VtblIndex(9)]
+            HRESULT GetPackageFullName([NativeTypeName("LPWSTR *")] ushort** packageFullName);
+
+            [VtblIndex(10)]
+            HRESULT GetPackageFamilyName([NativeTypeName("LPWSTR *")] ushort** packageFamilyName);
         }
 
         public partial struct Vtbl

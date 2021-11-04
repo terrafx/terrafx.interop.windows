@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("412D0C3A-9650-44FA-AF5B-DD2A06C8E8FB")]
     [NativeTypeName("struct IWICComponentFactory : IWICImagingFactory")]
     [NativeInheritance("IWICImagingFactory")]
-    public unsafe partial struct IWICComponentFactory
+    public unsafe partial struct IWICComponentFactory : IWICComponentFactory.Interface
     {
         public void** lpVtbl;
 
@@ -261,6 +261,30 @@ namespace TerraFX.Interop
         public HRESULT CreateEncoderPropertyBag(PROPBAG2* ppropOptions, uint cCount, IPropertyBag2** ppIPropertyBag)
         {
             return ((delegate* unmanaged<IWICComponentFactory*, PROPBAG2*, uint, IPropertyBag2**, int>)(lpVtbl[34]))((IWICComponentFactory*)Unsafe.AsPointer(ref this), ppropOptions, cCount, ppIPropertyBag);
+        }
+
+        public interface Interface : IWICImagingFactory.Interface
+        {
+            [VtblIndex(28)]
+            HRESULT CreateMetadataReader([NativeTypeName("const GUID &")] Guid* guidMetadataFormat, [NativeTypeName("const GUID *")] Guid* pguidVendor, [NativeTypeName("DWORD")] uint dwOptions, IStream* pIStream, IWICMetadataReader** ppIReader);
+
+            [VtblIndex(29)]
+            HRESULT CreateMetadataReaderFromContainer([NativeTypeName("const GUID &")] Guid* guidContainerFormat, [NativeTypeName("const GUID *")] Guid* pguidVendor, [NativeTypeName("DWORD")] uint dwOptions, IStream* pIStream, IWICMetadataReader** ppIReader);
+
+            [VtblIndex(30)]
+            HRESULT CreateMetadataWriter([NativeTypeName("const GUID &")] Guid* guidMetadataFormat, [NativeTypeName("const GUID *")] Guid* pguidVendor, [NativeTypeName("DWORD")] uint dwMetadataOptions, IWICMetadataWriter** ppIWriter);
+
+            [VtblIndex(31)]
+            HRESULT CreateMetadataWriterFromReader(IWICMetadataReader* pIReader, [NativeTypeName("const GUID *")] Guid* pguidVendor, IWICMetadataWriter** ppIWriter);
+
+            [VtblIndex(32)]
+            HRESULT CreateQueryReaderFromBlockReader(IWICMetadataBlockReader* pIBlockReader, IWICMetadataQueryReader** ppIQueryReader);
+
+            [VtblIndex(33)]
+            HRESULT CreateQueryWriterFromBlockWriter(IWICMetadataBlockWriter* pIBlockWriter, IWICMetadataQueryWriter** ppIQueryWriter);
+
+            [VtblIndex(34)]
+            HRESULT CreateEncoderPropertyBag(PROPBAG2* ppropOptions, uint cCount, IPropertyBag2** ppIPropertyBag);
         }
 
         public partial struct Vtbl

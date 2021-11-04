@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("A561E69A-B4B8-4113-91A5-64C6BCCA3430")]
     [NativeTypeName("struct IUserAccountChangeCallback : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IUserAccountChangeCallback
+    public unsafe partial struct IUserAccountChangeCallback : IUserAccountChangeCallback.Interface
     {
         public void** lpVtbl;
 
@@ -44,6 +44,12 @@ namespace TerraFX.Interop
         public HRESULT OnPictureChange([NativeTypeName("LPCWSTR")] ushort* pszUserName)
         {
             return ((delegate* unmanaged<IUserAccountChangeCallback*, ushort*, int>)(lpVtbl[3]))((IUserAccountChangeCallback*)Unsafe.AsPointer(ref this), pszUserName);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT OnPictureChange([NativeTypeName("LPCWSTR")] ushort* pszUserName);
         }
 
         public partial struct Vtbl

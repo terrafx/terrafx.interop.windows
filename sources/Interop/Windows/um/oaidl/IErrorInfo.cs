@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("1CF2B120-547D-101B-8E65-08002B2BD119")]
     [NativeTypeName("struct IErrorInfo : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IErrorInfo
+    public unsafe partial struct IErrorInfo : IErrorInfo.Interface
     {
         public void** lpVtbl;
 
@@ -72,6 +72,24 @@ namespace TerraFX.Interop
         public HRESULT GetHelpContext([NativeTypeName("DWORD *")] uint* pdwHelpContext)
         {
             return ((delegate* unmanaged<IErrorInfo*, uint*, int>)(lpVtbl[7]))((IErrorInfo*)Unsafe.AsPointer(ref this), pdwHelpContext);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetGUID(Guid* pGUID);
+
+            [VtblIndex(4)]
+            HRESULT GetSource([NativeTypeName("BSTR *")] ushort** pBstrSource);
+
+            [VtblIndex(5)]
+            HRESULT GetDescription([NativeTypeName("BSTR *")] ushort** pBstrDescription);
+
+            [VtblIndex(6)]
+            HRESULT GetHelpFile([NativeTypeName("BSTR *")] ushort** pBstrHelpFile);
+
+            [VtblIndex(7)]
+            HRESULT GetHelpContext([NativeTypeName("DWORD *")] uint* pdwHelpContext);
         }
 
         public partial struct Vtbl

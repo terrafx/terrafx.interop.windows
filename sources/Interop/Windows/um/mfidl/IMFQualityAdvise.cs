@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("EC15E2E9-E36B-4F7C-8758-77D452EF4CE7")]
     [NativeTypeName("struct IMFQualityAdvise : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IMFQualityAdvise
+    public unsafe partial struct IMFQualityAdvise : IMFQualityAdvise.Interface
     {
         public void** lpVtbl;
 
@@ -72,6 +72,24 @@ namespace TerraFX.Interop
         public HRESULT DropTime([NativeTypeName("LONGLONG")] long hnsAmountToDrop)
         {
             return ((delegate* unmanaged<IMFQualityAdvise*, long, int>)(lpVtbl[7]))((IMFQualityAdvise*)Unsafe.AsPointer(ref this), hnsAmountToDrop);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT SetDropMode(MF_QUALITY_DROP_MODE eDropMode);
+
+            [VtblIndex(4)]
+            HRESULT SetQualityLevel(MF_QUALITY_LEVEL eQualityLevel);
+
+            [VtblIndex(5)]
+            HRESULT GetDropMode(MF_QUALITY_DROP_MODE* peDropMode);
+
+            [VtblIndex(6)]
+            HRESULT GetQualityLevel(MF_QUALITY_LEVEL* peQualityLevel);
+
+            [VtblIndex(7)]
+            HRESULT DropTime([NativeTypeName("LONGLONG")] long hnsAmountToDrop);
         }
 
         public partial struct Vtbl

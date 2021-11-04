@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("FD55FAA7-37E0-4C20-95D2-9BE45BC33F55")]
     [NativeTypeName("struct IDCompositionTransform : IDCompositionTransform3D")]
     [NativeInheritance("IDCompositionTransform3D")]
-    public unsafe partial struct IDCompositionTransform
+    public unsafe partial struct IDCompositionTransform : IDCompositionTransform.Interface
     {
         public void** lpVtbl;
 
@@ -37,6 +37,10 @@ namespace TerraFX.Interop
         public uint Release()
         {
             return ((delegate* unmanaged<IDCompositionTransform*, uint>)(lpVtbl[2]))((IDCompositionTransform*)Unsafe.AsPointer(ref this));
+        }
+
+        public interface Interface : IDCompositionTransform3D.Interface
+        {
         }
 
         public partial struct Vtbl

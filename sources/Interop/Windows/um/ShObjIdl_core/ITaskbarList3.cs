@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("EA1AFB91-9E28-4B86-90E9-9E9F8A5EEFAF")]
     [NativeTypeName("struct ITaskbarList3 : ITaskbarList2")]
     [NativeInheritance("ITaskbarList2")]
-    public unsafe partial struct ITaskbarList3
+    public unsafe partial struct ITaskbarList3 : ITaskbarList3.Interface
     {
         public void** lpVtbl;
 
@@ -163,6 +163,45 @@ namespace TerraFX.Interop
         public HRESULT SetThumbnailClip(HWND hwnd, RECT* prcClip)
         {
             return ((delegate* unmanaged<ITaskbarList3*, HWND, RECT*, int>)(lpVtbl[20]))((ITaskbarList3*)Unsafe.AsPointer(ref this), hwnd, prcClip);
+        }
+
+        public interface Interface : ITaskbarList2.Interface
+        {
+            [VtblIndex(9)]
+            HRESULT SetProgressValue(HWND hwnd, [NativeTypeName("ULONGLONG")] ulong ullCompleted, [NativeTypeName("ULONGLONG")] ulong ullTotal);
+
+            [VtblIndex(10)]
+            HRESULT SetProgressState(HWND hwnd, TBPFLAG tbpFlags);
+
+            [VtblIndex(11)]
+            HRESULT RegisterTab(HWND hwndTab, HWND hwndMDI);
+
+            [VtblIndex(12)]
+            HRESULT UnregisterTab(HWND hwndTab);
+
+            [VtblIndex(13)]
+            HRESULT SetTabOrder(HWND hwndTab, HWND hwndInsertBefore);
+
+            [VtblIndex(14)]
+            HRESULT SetTabActive(HWND hwndTab, HWND hwndMDI, [NativeTypeName("DWORD")] uint dwReserved);
+
+            [VtblIndex(15)]
+            HRESULT ThumbBarAddButtons(HWND hwnd, uint cButtons, [NativeTypeName("LPTHUMBBUTTON")] THUMBBUTTON* pButton);
+
+            [VtblIndex(16)]
+            HRESULT ThumbBarUpdateButtons(HWND hwnd, uint cButtons, [NativeTypeName("LPTHUMBBUTTON")] THUMBBUTTON* pButton);
+
+            [VtblIndex(17)]
+            HRESULT ThumbBarSetImageList(HWND hwnd, HIMAGELIST himl);
+
+            [VtblIndex(18)]
+            HRESULT SetOverlayIcon(HWND hwnd, HICON hIcon, [NativeTypeName("LPCWSTR")] ushort* pszDescription);
+
+            [VtblIndex(19)]
+            HRESULT SetThumbnailTooltip(HWND hwnd, [NativeTypeName("LPCWSTR")] ushort* pszTip);
+
+            [VtblIndex(20)]
+            HRESULT SetThumbnailClip(HWND hwnd, RECT* prcClip);
         }
 
         public partial struct Vtbl

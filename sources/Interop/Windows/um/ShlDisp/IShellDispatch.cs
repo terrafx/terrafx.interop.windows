@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("D8F015C0-C278-11CE-A49E-444553540000")]
     [NativeTypeName("struct IShellDispatch : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct IShellDispatch
+    public unsafe partial struct IShellDispatch : IShellDispatch.Interface
     {
         public void** lpVtbl;
 
@@ -226,6 +226,78 @@ namespace TerraFX.Interop
         public HRESULT ControlPanelItem([NativeTypeName("BSTR")] ushort* bstrDir)
         {
             return ((delegate* unmanaged<IShellDispatch*, ushort*, int>)(lpVtbl[29]))((IShellDispatch*)Unsafe.AsPointer(ref this), bstrDir);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT get_Application(IDispatch** ppid);
+
+            [VtblIndex(8)]
+            HRESULT get_Parent(IDispatch** ppid);
+
+            [VtblIndex(9)]
+            HRESULT NameSpace(VARIANT vDir, Folder** ppsdf);
+
+            [VtblIndex(10)]
+            HRESULT BrowseForFolder([NativeTypeName("long")] int Hwnd, [NativeTypeName("BSTR")] ushort* Title, [NativeTypeName("long")] int Options, VARIANT RootFolder, Folder** ppsdf);
+
+            [VtblIndex(11)]
+            HRESULT Windows(IDispatch** ppid);
+
+            [VtblIndex(12)]
+            HRESULT Open(VARIANT vDir);
+
+            [VtblIndex(13)]
+            HRESULT Explore(VARIANT vDir);
+
+            [VtblIndex(14)]
+            HRESULT MinimizeAll();
+
+            [VtblIndex(15)]
+            HRESULT UndoMinimizeALL();
+
+            [VtblIndex(16)]
+            HRESULT FileRun();
+
+            [VtblIndex(17)]
+            HRESULT CascadeWindows();
+
+            [VtblIndex(18)]
+            HRESULT TileVertically();
+
+            [VtblIndex(19)]
+            HRESULT TileHorizontally();
+
+            [VtblIndex(20)]
+            HRESULT ShutdownWindows();
+
+            [VtblIndex(21)]
+            HRESULT Suspend();
+
+            [VtblIndex(22)]
+            HRESULT EjectPC();
+
+            [VtblIndex(23)]
+            HRESULT SetTime();
+
+            [VtblIndex(24)]
+            HRESULT TrayProperties();
+
+            [VtblIndex(25)]
+            HRESULT Help();
+
+            [VtblIndex(26)]
+            HRESULT FindFiles();
+
+            [VtblIndex(27)]
+            HRESULT FindComputer();
+
+            [VtblIndex(28)]
+            HRESULT RefreshMenu();
+
+            [VtblIndex(29)]
+            HRESULT ControlPanelItem([NativeTypeName("BSTR")] ushort* bstrDir);
         }
 
         public partial struct Vtbl

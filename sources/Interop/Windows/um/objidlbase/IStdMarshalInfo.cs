@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("00000018-0000-0000-C000-000000000046")]
     [NativeTypeName("struct IStdMarshalInfo : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IStdMarshalInfo
+    public unsafe partial struct IStdMarshalInfo : IStdMarshalInfo.Interface
     {
         public void** lpVtbl;
 
@@ -44,6 +44,12 @@ namespace TerraFX.Interop
         public HRESULT GetClassForHandler([NativeTypeName("DWORD")] uint dwDestContext, void* pvDestContext, [NativeTypeName("CLSID *")] Guid* pClsid)
         {
             return ((delegate* unmanaged<IStdMarshalInfo*, uint, void*, Guid*, int>)(lpVtbl[3]))((IStdMarshalInfo*)Unsafe.AsPointer(ref this), dwDestContext, pvDestContext, pClsid);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetClassForHandler([NativeTypeName("DWORD")] uint dwDestContext, void* pvDestContext, [NativeTypeName("CLSID *")] Guid* pClsid);
         }
 
         public partial struct Vtbl

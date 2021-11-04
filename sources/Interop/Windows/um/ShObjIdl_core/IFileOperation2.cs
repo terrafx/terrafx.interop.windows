@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("CD8F23C1-8F61-4916-909D-55BDD0918753")]
     [NativeTypeName("struct IFileOperation2 : IFileOperation")]
     [NativeInheritance("IFileOperation")]
-    public unsafe partial struct IFileOperation2
+    public unsafe partial struct IFileOperation2 : IFileOperation2.Interface
     {
         public void** lpVtbl;
 
@@ -184,6 +184,12 @@ namespace TerraFX.Interop
         public HRESULT SetOperationFlags2(FILE_OPERATION_FLAGS2 operationFlags2)
         {
             return ((delegate* unmanaged<IFileOperation2*, FILE_OPERATION_FLAGS2, int>)(lpVtbl[23]))((IFileOperation2*)Unsafe.AsPointer(ref this), operationFlags2);
+        }
+
+        public interface Interface : IFileOperation.Interface
+        {
+            [VtblIndex(23)]
+            HRESULT SetOperationFlags2(FILE_OPERATION_FLAGS2 operationFlags2);
         }
 
         public partial struct Vtbl

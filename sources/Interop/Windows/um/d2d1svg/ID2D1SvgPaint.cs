@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("D59BAB0A-68A2-455B-A5DC-9EB2854E2490")]
     [NativeTypeName("struct ID2D1SvgPaint : ID2D1SvgAttribute")]
     [NativeInheritance("ID2D1SvgAttribute")]
-    public unsafe partial struct ID2D1SvgPaint
+    public unsafe partial struct ID2D1SvgPaint : ID2D1SvgPaint.Interface
     {
         public void** lpVtbl;
 
@@ -108,6 +108,31 @@ namespace TerraFX.Interop
         public uint GetIdLength()
         {
             return ((delegate* unmanaged<ID2D1SvgPaint*, uint>)(lpVtbl[12]))((ID2D1SvgPaint*)Unsafe.AsPointer(ref this));
+        }
+
+        public interface Interface : ID2D1SvgAttribute.Interface
+        {
+            [VtblIndex(6)]
+            HRESULT SetPaintType(D2D1_SVG_PAINT_TYPE paintType);
+
+            [VtblIndex(7)]
+            D2D1_SVG_PAINT_TYPE GetPaintType();
+
+            [VtblIndex(8)]
+            HRESULT SetColor([NativeTypeName("const D2D1_COLOR_F *")] DXGI_RGBA* color);
+
+            [VtblIndex(9)]
+            void GetColor([NativeTypeName("D2D1_COLOR_F *")] DXGI_RGBA* color);
+
+            [VtblIndex(10)]
+            HRESULT SetId([NativeTypeName("PCWSTR")] ushort* id);
+
+            [VtblIndex(11)]
+            HRESULT GetId([NativeTypeName("PWSTR")] ushort* id, [NativeTypeName("UINT32")] uint idCount);
+
+            [VtblIndex(12)]
+            [return: NativeTypeName("UINT32")]
+            uint GetIdLength();
         }
 
         public partial struct Vtbl

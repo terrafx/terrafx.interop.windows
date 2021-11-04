@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("56A868BB-0AD4-11CE-B03A-0020AF0BA770")]
     [NativeTypeName("struct IRegFilterInfo : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct IRegFilterInfo
+    public unsafe partial struct IRegFilterInfo : IRegFilterInfo.Interface
     {
         public void** lpVtbl;
 
@@ -79,6 +79,15 @@ namespace TerraFX.Interop
         public HRESULT Filter(IDispatch** ppUnk)
         {
             return ((delegate* unmanaged<IRegFilterInfo*, IDispatch**, int>)(lpVtbl[8]))((IRegFilterInfo*)Unsafe.AsPointer(ref this), ppUnk);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT get_Name([NativeTypeName("BSTR *")] ushort** strName);
+
+            [VtblIndex(8)]
+            HRESULT Filter(IDispatch** ppUnk);
         }
 
         public partial struct Vtbl

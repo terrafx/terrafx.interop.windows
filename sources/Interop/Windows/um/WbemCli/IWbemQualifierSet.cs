@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("DC12A680-737F-11CF-884D-00AA004B2E24")]
     [NativeTypeName("struct IWbemQualifierSet : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IWbemQualifierSet
+    public unsafe partial struct IWbemQualifierSet : IWbemQualifierSet.Interface
     {
         public void** lpVtbl;
 
@@ -86,6 +86,30 @@ namespace TerraFX.Interop
         public HRESULT EndEnumeration()
         {
             return ((delegate* unmanaged<IWbemQualifierSet*, int>)(lpVtbl[9]))((IWbemQualifierSet*)Unsafe.AsPointer(ref this));
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT Get([NativeTypeName("LPCWSTR")] ushort* wszName, [NativeTypeName("long")] int lFlags, VARIANT* pVal, [NativeTypeName("long *")] int* plFlavor);
+
+            [VtblIndex(4)]
+            HRESULT Put([NativeTypeName("LPCWSTR")] ushort* wszName, VARIANT* pVal, [NativeTypeName("long")] int lFlavor);
+
+            [VtblIndex(5)]
+            HRESULT Delete([NativeTypeName("LPCWSTR")] ushort* wszName);
+
+            [VtblIndex(6)]
+            HRESULT GetNames([NativeTypeName("long")] int lFlags, SAFEARRAY** pNames);
+
+            [VtblIndex(7)]
+            HRESULT BeginEnumeration([NativeTypeName("long")] int lFlags);
+
+            [VtblIndex(8)]
+            HRESULT Next([NativeTypeName("long")] int lFlags, [NativeTypeName("BSTR *")] ushort** pstrName, VARIANT* pVal, [NativeTypeName("long *")] int* plFlavor);
+
+            [VtblIndex(9)]
+            HRESULT EndEnumeration();
         }
 
         public partial struct Vtbl

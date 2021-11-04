@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("3050F669-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct IHTMLElementRender : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IHTMLElementRender
+    public unsafe partial struct IHTMLElementRender : IHTMLElementRender.Interface
     {
         public void** lpVtbl;
 
@@ -51,6 +51,15 @@ namespace TerraFX.Interop
         public HRESULT SetDocumentPrinter([NativeTypeName("BSTR")] ushort* bstrPrinterName, HDC hDC)
         {
             return ((delegate* unmanaged<IHTMLElementRender*, ushort*, HDC, int>)(lpVtbl[4]))((IHTMLElementRender*)Unsafe.AsPointer(ref this), bstrPrinterName, hDC);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT DrawToDC(HDC hDC);
+
+            [VtblIndex(4)]
+            HRESULT SetDocumentPrinter([NativeTypeName("BSTR")] ushort* bstrPrinterName, HDC hDC);
         }
 
         public partial struct Vtbl

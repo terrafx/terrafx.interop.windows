@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("56A86893-0AD4-11CE-B03A-0020AF0BA770")]
     [NativeTypeName("struct IEnumFilters : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IEnumFilters
+    public unsafe partial struct IEnumFilters : IEnumFilters.Interface
     {
         public void** lpVtbl;
 
@@ -65,6 +65,21 @@ namespace TerraFX.Interop
         public HRESULT Clone(IEnumFilters** ppEnum)
         {
             return ((delegate* unmanaged<IEnumFilters*, IEnumFilters**, int>)(lpVtbl[6]))((IEnumFilters*)Unsafe.AsPointer(ref this), ppEnum);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT Next([NativeTypeName("ULONG")] uint cFilters, IBaseFilter** ppFilter, [NativeTypeName("ULONG *")] uint* pcFetched);
+
+            [VtblIndex(4)]
+            HRESULT Skip([NativeTypeName("ULONG")] uint cFilters);
+
+            [VtblIndex(5)]
+            HRESULT Reset();
+
+            [VtblIndex(6)]
+            HRESULT Clone(IEnumFilters** ppEnum);
         }
 
         public partial struct Vtbl

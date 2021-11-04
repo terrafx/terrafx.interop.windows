@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("305107B5-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct IDOMMSTransitionEvent : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct IDOMMSTransitionEvent
+    public unsafe partial struct IDOMMSTransitionEvent : IDOMMSTransitionEvent.Interface
     {
         public void** lpVtbl;
 
@@ -86,6 +86,18 @@ namespace TerraFX.Interop
         public HRESULT initMSTransitionEvent([NativeTypeName("BSTR")] ushort* eventType, [NativeTypeName("VARIANT_BOOL")] short canBubble, [NativeTypeName("VARIANT_BOOL")] short cancelable, [NativeTypeName("BSTR")] ushort* propertyName, float elapsedTime)
         {
             return ((delegate* unmanaged<IDOMMSTransitionEvent*, ushort*, short, short, ushort*, float, int>)(lpVtbl[9]))((IDOMMSTransitionEvent*)Unsafe.AsPointer(ref this), eventType, canBubble, cancelable, propertyName, elapsedTime);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT get_propertyName([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(8)]
+            HRESULT get_elapsedTime(float* p);
+
+            [VtblIndex(9)]
+            HRESULT initMSTransitionEvent([NativeTypeName("BSTR")] ushort* eventType, [NativeTypeName("VARIANT_BOOL")] short canBubble, [NativeTypeName("VARIANT_BOOL")] short cancelable, [NativeTypeName("BSTR")] ushort* propertyName, float elapsedTime);
         }
 
         public partial struct Vtbl

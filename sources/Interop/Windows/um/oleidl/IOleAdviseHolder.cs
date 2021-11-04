@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("00000111-0000-0000-C000-000000000046")]
     [NativeTypeName("struct IOleAdviseHolder : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IOleAdviseHolder
+    public unsafe partial struct IOleAdviseHolder : IOleAdviseHolder.Interface
     {
         public void** lpVtbl;
 
@@ -79,6 +79,27 @@ namespace TerraFX.Interop
         public HRESULT SendOnClose()
         {
             return ((delegate* unmanaged<IOleAdviseHolder*, int>)(lpVtbl[8]))((IOleAdviseHolder*)Unsafe.AsPointer(ref this));
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT Advise(IAdviseSink* pAdvise, [NativeTypeName("DWORD *")] uint* pdwConnection);
+
+            [VtblIndex(4)]
+            HRESULT Unadvise([NativeTypeName("DWORD")] uint dwConnection);
+
+            [VtblIndex(5)]
+            HRESULT EnumAdvise(IEnumSTATDATA** ppenumAdvise);
+
+            [VtblIndex(6)]
+            HRESULT SendOnRename(IMoniker* pmk);
+
+            [VtblIndex(7)]
+            HRESULT SendOnSave();
+
+            [VtblIndex(8)]
+            HRESULT SendOnClose();
         }
 
         public partial struct Vtbl

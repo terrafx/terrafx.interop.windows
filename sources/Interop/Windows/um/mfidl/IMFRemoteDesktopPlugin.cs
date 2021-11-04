@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("1CDE6309-CAE0-4940-907E-C1EC9C3D1D4A")]
     [NativeTypeName("struct IMFRemoteDesktopPlugin : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IMFRemoteDesktopPlugin
+    public unsafe partial struct IMFRemoteDesktopPlugin : IMFRemoteDesktopPlugin.Interface
     {
         public void** lpVtbl;
 
@@ -44,6 +44,12 @@ namespace TerraFX.Interop
         public HRESULT UpdateTopology(IMFTopology* pTopology)
         {
             return ((delegate* unmanaged<IMFRemoteDesktopPlugin*, IMFTopology*, int>)(lpVtbl[3]))((IMFRemoteDesktopPlugin*)Unsafe.AsPointer(ref this), pTopology);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT UpdateTopology(IMFTopology* pTopology);
         }
 
         public partial struct Vtbl

@@ -24,7 +24,7 @@ namespace TerraFX.Interop
     [Guid("7836D248-68CC-4DF6-B9E8-DE991BF62EB7")]
     [NativeTypeName("struct ID2D1DeviceContext5 : ID2D1DeviceContext4")]
     [NativeInheritance("ID2D1DeviceContext4")]
-    public unsafe partial struct ID2D1DeviceContext5
+    public unsafe partial struct ID2D1DeviceContext5 : ID2D1DeviceContext5.Interface
     {
         public void** lpVtbl;
 
@@ -1021,6 +1021,21 @@ namespace TerraFX.Interop
         public HRESULT CreateColorContextFromSimpleColorProfile([NativeTypeName("const D2D1_SIMPLE_COLOR_PROFILE *")] D2D1_SIMPLE_COLOR_PROFILE* simpleProfile, ID2D1ColorContext1** colorContext)
         {
             return ((delegate* unmanaged<ID2D1DeviceContext5*, D2D1_SIMPLE_COLOR_PROFILE*, ID2D1ColorContext1**, int>)(lpVtbl[118]))((ID2D1DeviceContext5*)Unsafe.AsPointer(ref this), simpleProfile, colorContext);
+        }
+
+        public interface Interface : ID2D1DeviceContext4.Interface
+        {
+            [VtblIndex(115)]
+            HRESULT CreateSvgDocument(IStream* inputXmlStream, [NativeTypeName("D2D1_SIZE_F")] D2D_SIZE_F viewportSize, ID2D1SvgDocument** svgDocument);
+
+            [VtblIndex(116)]
+            void DrawSvgDocument(ID2D1SvgDocument* svgDocument);
+
+            [VtblIndex(117)]
+            HRESULT CreateColorContextFromDxgiColorSpace(DXGI_COLOR_SPACE_TYPE colorSpace, ID2D1ColorContext1** colorContext);
+
+            [VtblIndex(118)]
+            HRESULT CreateColorContextFromSimpleColorProfile([NativeTypeName("const D2D1_SIMPLE_COLOR_PROFILE *")] D2D1_SIMPLE_COLOR_PROFILE* simpleProfile, ID2D1ColorContext1** colorContext);
         }
 
         public partial struct Vtbl

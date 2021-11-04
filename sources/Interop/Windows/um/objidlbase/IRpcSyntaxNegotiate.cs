@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("58A08519-24C8-4935-B482-3FD823333A4F")]
     [NativeTypeName("struct IRpcSyntaxNegotiate : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IRpcSyntaxNegotiate
+    public unsafe partial struct IRpcSyntaxNegotiate : IRpcSyntaxNegotiate.Interface
     {
         public void** lpVtbl;
 
@@ -44,6 +44,12 @@ namespace TerraFX.Interop
         public HRESULT NegotiateSyntax(RPCOLEMESSAGE* pMsg)
         {
             return ((delegate* unmanaged<IRpcSyntaxNegotiate*, RPCOLEMESSAGE*, int>)(lpVtbl[3]))((IRpcSyntaxNegotiate*)Unsafe.AsPointer(ref this), pMsg);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT NegotiateSyntax(RPCOLEMESSAGE* pMsg);
         }
 
         public partial struct Vtbl

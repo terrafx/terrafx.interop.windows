@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("A8809222-07BB-48EA-951C-33158100625B")]
     [NativeTypeName("struct IGetCapabilitiesKey : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IGetCapabilitiesKey
+    public unsafe partial struct IGetCapabilitiesKey : IGetCapabilitiesKey.Interface
     {
         public void** lpVtbl;
 
@@ -44,6 +44,12 @@ namespace TerraFX.Interop
         public HRESULT GetCapabilitiesKey(HKEY* pHKey)
         {
             return ((delegate* unmanaged<IGetCapabilitiesKey*, HKEY*, int>)(lpVtbl[3]))((IGetCapabilitiesKey*)Unsafe.AsPointer(ref this), pHKey);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetCapabilitiesKey(HKEY* pHKey);
         }
 
         public partial struct Vtbl

@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("3051052D-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct ISVGClipPathElement : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct ISVGClipPathElement
+    public unsafe partial struct ISVGClipPathElement : ISVGClipPathElement.Interface
     {
         public void** lpVtbl;
 
@@ -79,6 +79,15 @@ namespace TerraFX.Interop
         public HRESULT get_clipPathUnits(ISVGAnimatedEnumeration** p)
         {
             return ((delegate* unmanaged<ISVGClipPathElement*, ISVGAnimatedEnumeration**, int>)(lpVtbl[8]))((ISVGClipPathElement*)Unsafe.AsPointer(ref this), p);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT putref_clipPathUnits(ISVGAnimatedEnumeration* v);
+
+            [VtblIndex(8)]
+            HRESULT get_clipPathUnits(ISVGAnimatedEnumeration** p);
         }
 
         public partial struct Vtbl

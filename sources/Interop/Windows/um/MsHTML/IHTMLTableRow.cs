@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("3050F23C-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct IHTMLTableRow : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct IHTMLTableRow
+    public unsafe partial struct IHTMLTableRow : IHTMLTableRow.Interface
     {
         public void** lpVtbl;
 
@@ -184,6 +184,60 @@ namespace TerraFX.Interop
         public HRESULT deleteCell([NativeTypeName("long")] int index = -1)
         {
             return ((delegate* unmanaged<IHTMLTableRow*, int, int>)(lpVtbl[23]))((IHTMLTableRow*)Unsafe.AsPointer(ref this), index);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT put_align([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(8)]
+            HRESULT get_align([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(9)]
+            HRESULT put_vAlign([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(10)]
+            HRESULT get_vAlign([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(11)]
+            HRESULT put_bgColor(VARIANT v);
+
+            [VtblIndex(12)]
+            HRESULT get_bgColor(VARIANT* p);
+
+            [VtblIndex(13)]
+            HRESULT put_borderColor(VARIANT v);
+
+            [VtblIndex(14)]
+            HRESULT get_borderColor(VARIANT* p);
+
+            [VtblIndex(15)]
+            HRESULT put_borderColorLight(VARIANT v);
+
+            [VtblIndex(16)]
+            HRESULT get_borderColorLight(VARIANT* p);
+
+            [VtblIndex(17)]
+            HRESULT put_borderColorDark(VARIANT v);
+
+            [VtblIndex(18)]
+            HRESULT get_borderColorDark(VARIANT* p);
+
+            [VtblIndex(19)]
+            HRESULT get_rowIndex([NativeTypeName("long *")] int* p);
+
+            [VtblIndex(20)]
+            HRESULT get_sectionRowIndex([NativeTypeName("long *")] int* p);
+
+            [VtblIndex(21)]
+            HRESULT get_cells(IHTMLElementCollection** p);
+
+            [VtblIndex(22)]
+            HRESULT insertCell([NativeTypeName("long")] int index, IDispatch** row);
+
+            [VtblIndex(23)]
+            HRESULT deleteCell([NativeTypeName("long")] int index = -1);
         }
 
         public partial struct Vtbl

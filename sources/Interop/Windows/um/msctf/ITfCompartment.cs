@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("BB08F7A9-607A-4384-8623-056892B64371")]
     [NativeTypeName("struct ITfCompartment : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct ITfCompartment
+    public unsafe partial struct ITfCompartment : ITfCompartment.Interface
     {
         public void** lpVtbl;
 
@@ -51,6 +51,15 @@ namespace TerraFX.Interop
         public HRESULT GetValue(VARIANT* pvarValue)
         {
             return ((delegate* unmanaged<ITfCompartment*, VARIANT*, int>)(lpVtbl[4]))((ITfCompartment*)Unsafe.AsPointer(ref this), pvarValue);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT SetValue([NativeTypeName("TfClientId")] uint tid, [NativeTypeName("const VARIANT *")] VARIANT* pvarValue);
+
+            [VtblIndex(4)]
+            HRESULT GetValue(VARIANT* pvarValue);
         }
 
         public partial struct Vtbl

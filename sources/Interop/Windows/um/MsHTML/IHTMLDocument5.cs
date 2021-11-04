@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("3050F80C-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct IHTMLDocument5 : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct IHTMLDocument5
+    public unsafe partial struct IHTMLDocument5 : IHTMLDocument5.Interface
     {
         public void** lpVtbl;
 
@@ -198,6 +198,66 @@ namespace TerraFX.Interop
         public HRESULT get_compatMode([NativeTypeName("BSTR *")] ushort** p)
         {
             return ((delegate* unmanaged<IHTMLDocument5*, ushort**, int>)(lpVtbl[25]))((IHTMLDocument5*)Unsafe.AsPointer(ref this), p);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT put_onmousewheel(VARIANT v);
+
+            [VtblIndex(8)]
+            HRESULT get_onmousewheel(VARIANT* p);
+
+            [VtblIndex(9)]
+            HRESULT get_doctype(IHTMLDOMNode** p);
+
+            [VtblIndex(10)]
+            HRESULT get_implementation(IHTMLDOMImplementation** p);
+
+            [VtblIndex(11)]
+            HRESULT createAttribute([NativeTypeName("BSTR")] ushort* bstrattrName, IHTMLDOMAttribute** ppattribute);
+
+            [VtblIndex(12)]
+            HRESULT createComment([NativeTypeName("BSTR")] ushort* bstrdata, IHTMLDOMNode** ppRetNode);
+
+            [VtblIndex(13)]
+            HRESULT put_onfocusin(VARIANT v);
+
+            [VtblIndex(14)]
+            HRESULT get_onfocusin(VARIANT* p);
+
+            [VtblIndex(15)]
+            HRESULT put_onfocusout(VARIANT v);
+
+            [VtblIndex(16)]
+            HRESULT get_onfocusout(VARIANT* p);
+
+            [VtblIndex(17)]
+            HRESULT put_onactivate(VARIANT v);
+
+            [VtblIndex(18)]
+            HRESULT get_onactivate(VARIANT* p);
+
+            [VtblIndex(19)]
+            HRESULT put_ondeactivate(VARIANT v);
+
+            [VtblIndex(20)]
+            HRESULT get_ondeactivate(VARIANT* p);
+
+            [VtblIndex(21)]
+            HRESULT put_onbeforeactivate(VARIANT v);
+
+            [VtblIndex(22)]
+            HRESULT get_onbeforeactivate(VARIANT* p);
+
+            [VtblIndex(23)]
+            HRESULT put_onbeforedeactivate(VARIANT v);
+
+            [VtblIndex(24)]
+            HRESULT get_onbeforedeactivate(VARIANT* p);
+
+            [VtblIndex(25)]
+            HRESULT get_compatMode([NativeTypeName("BSTR *")] ushort** p);
         }
 
         public partial struct Vtbl

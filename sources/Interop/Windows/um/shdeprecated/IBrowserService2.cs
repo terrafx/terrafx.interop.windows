@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("68BD21CC-438B-11D2-A560-00A0C92DBFE8")]
     [NativeTypeName("struct IBrowserService2 : IBrowserService")]
     [NativeInheritance("IBrowserService")]
-    public unsafe partial struct IBrowserService2
+    public unsafe partial struct IBrowserService2 : IBrowserService2.Interface
     {
         public void** lpVtbl;
 
@@ -684,6 +684,197 @@ namespace TerraFX.Interop
         public HRESULT v_CheckZoneCrossing([NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidl)
         {
             return ((delegate* unmanaged<IBrowserService2*, ITEMIDLIST*, int>)(lpVtbl[94]))((IBrowserService2*)Unsafe.AsPointer(ref this), pidl);
+        }
+
+        public interface Interface : IBrowserService.Interface
+        {
+            [VtblIndex(33)]
+            LRESULT WndProcBS(HWND hwnd, uint uMsg, WPARAM wParam, LPARAM lParam);
+
+            [VtblIndex(34)]
+            HRESULT SetAsDefFolderSettings();
+
+            [VtblIndex(35)]
+            HRESULT GetViewRect(RECT* prc);
+
+            [VtblIndex(36)]
+            HRESULT OnSize(WPARAM wParam);
+
+            [VtblIndex(37)]
+            HRESULT OnCreate([NativeTypeName("struct tagCREATESTRUCTW *")] CREATESTRUCTW* pcs);
+
+            [VtblIndex(38)]
+            LRESULT OnCommand(WPARAM wParam, LPARAM lParam);
+
+            [VtblIndex(39)]
+            HRESULT OnDestroy();
+
+            [VtblIndex(40)]
+            LRESULT OnNotify([NativeTypeName("struct tagNMHDR *")] NMHDR* pnm);
+
+            [VtblIndex(41)]
+            HRESULT OnSetFocus();
+
+            [VtblIndex(42)]
+            HRESULT OnFrameWindowActivateBS(BOOL fActive);
+
+            [VtblIndex(43)]
+            HRESULT ReleaseShellView();
+
+            [VtblIndex(44)]
+            HRESULT ActivatePendingView();
+
+            [VtblIndex(45)]
+            HRESULT CreateViewWindow(IShellView* psvNew, IShellView* psvOld, [NativeTypeName("LPRECT")] RECT* prcView, HWND* phwnd);
+
+            [VtblIndex(46)]
+            HRESULT CreateBrowserPropSheetExt([NativeTypeName("const IID &")] Guid* riid, void** ppv);
+
+            [VtblIndex(47)]
+            HRESULT GetViewWindow(HWND* phwndView);
+
+            [VtblIndex(48)]
+            HRESULT GetBaseBrowserData([NativeTypeName("LPCBASEBROWSERDATA *")] BASEBROWSERDATA** pbbd);
+
+            [VtblIndex(49)]
+            [return: NativeTypeName("LPBASEBROWSERDATA")]
+            BASEBROWSERDATA* PutBaseBrowserData();
+
+            [VtblIndex(50)]
+            HRESULT InitializeTravelLog(ITravelLog* ptl, [NativeTypeName("DWORD")] uint dw);
+
+            [VtblIndex(51)]
+            HRESULT SetTopBrowser();
+
+            [VtblIndex(52)]
+            HRESULT Offline(int iCmd);
+
+            [VtblIndex(53)]
+            HRESULT AllowViewResize(BOOL f);
+
+            [VtblIndex(54)]
+            HRESULT SetActivateState(uint u);
+
+            [VtblIndex(55)]
+            HRESULT UpdateSecureLockIcon(int eSecureLock);
+
+            [VtblIndex(56)]
+            HRESULT InitializeDownloadManager();
+
+            [VtblIndex(57)]
+            HRESULT InitializeTransitionSite();
+
+            [VtblIndex(58)]
+            HRESULT _Initialize(HWND hwnd, IUnknown* pauto);
+
+            [VtblIndex(59)]
+            HRESULT _CancelPendingNavigationAsync();
+
+            [VtblIndex(60)]
+            HRESULT _CancelPendingView();
+
+            [VtblIndex(61)]
+            HRESULT _MaySaveChanges();
+
+            [VtblIndex(62)]
+            HRESULT _PauseOrResumeView(BOOL fPaused);
+
+            [VtblIndex(63)]
+            HRESULT _DisableModeless();
+
+            [VtblIndex(64)]
+            HRESULT _NavigateToPidl([NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidl, [NativeTypeName("DWORD")] uint grfHLNF, [NativeTypeName("DWORD")] uint dwFlags);
+
+            [VtblIndex(65)]
+            HRESULT _TryShell2Rename(IShellView* psv, [NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidlNew);
+
+            [VtblIndex(66)]
+            HRESULT _SwitchActivationNow();
+
+            [VtblIndex(67)]
+            HRESULT _ExecChildren(IUnknown* punkBar, BOOL fBroadcast, [NativeTypeName("const GUID *")] Guid* pguidCmdGroup, [NativeTypeName("DWORD")] uint nCmdID, [NativeTypeName("DWORD")] uint nCmdexecopt, [NativeTypeName("VARIANTARG *")] VARIANT* pvarargIn, [NativeTypeName("VARIANTARG *")] VARIANT* pvarargOut);
+
+            [VtblIndex(68)]
+            HRESULT _SendChildren(HWND hwndBar, BOOL fBroadcast, uint uMsg, WPARAM wParam, LPARAM lParam);
+
+            [VtblIndex(69)]
+            HRESULT GetFolderSetData([NativeTypeName("struct tagFolderSetData *")] FOLDERSETDATA* pfsd);
+
+            [VtblIndex(70)]
+            HRESULT _OnFocusChange(uint itb);
+
+            [VtblIndex(71)]
+            HRESULT v_ShowHideChildWindows(BOOL fChildOnly);
+
+            [VtblIndex(72)]
+            uint _get_itbLastFocus();
+
+            [VtblIndex(73)]
+            HRESULT _put_itbLastFocus(uint itbLastFocus);
+
+            [VtblIndex(74)]
+            HRESULT _UIActivateView(uint uState);
+
+            [VtblIndex(75)]
+            HRESULT _GetViewBorderRect(RECT* prc);
+
+            [VtblIndex(76)]
+            HRESULT _UpdateViewRectSize();
+
+            [VtblIndex(77)]
+            HRESULT _ResizeNextBorder(uint itb);
+
+            [VtblIndex(78)]
+            HRESULT _ResizeView();
+
+            [VtblIndex(79)]
+            HRESULT _GetEffectiveClientArea([NativeTypeName("LPRECT")] RECT* lprectBorder, HMONITOR hmon);
+
+            [VtblIndex(80)]
+            IStream* v_GetViewStream([NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidl, [NativeTypeName("DWORD")] uint grfMode, [NativeTypeName("LPCWSTR")] ushort* pwszName);
+
+            [VtblIndex(81)]
+            LRESULT ForwardViewMsg(uint uMsg, WPARAM wParam, LPARAM lParam);
+
+            [VtblIndex(82)]
+            HRESULT SetAcceleratorMenu(HACCEL hacc);
+
+            [VtblIndex(83)]
+            int _GetToolbarCount();
+
+            [VtblIndex(84)]
+            [return: NativeTypeName("LPTOOLBARITEM")]
+            TOOLBARITEM* _GetToolbarItem(int itb);
+
+            [VtblIndex(85)]
+            HRESULT _SaveToolbars(IStream* pstm);
+
+            [VtblIndex(86)]
+            HRESULT _LoadToolbars(IStream* pstm);
+
+            [VtblIndex(87)]
+            HRESULT _CloseAndReleaseToolbars(BOOL fClose);
+
+            [VtblIndex(88)]
+            HRESULT v_MayGetNextToolbarFocus([NativeTypeName("LPMSG")] MSG* lpMsg, uint itbNext, int citb, [NativeTypeName("LPTOOLBARITEM *")] TOOLBARITEM** pptbi, HWND* phwnd);
+
+            [VtblIndex(89)]
+            HRESULT _ResizeNextBorderHelper(uint itb, BOOL bUseHmonitor);
+
+            [VtblIndex(90)]
+            uint _FindTBar(IUnknown* punkSrc);
+
+            [VtblIndex(91)]
+            HRESULT _SetFocus([NativeTypeName("LPTOOLBARITEM")] TOOLBARITEM* ptbi, HWND hwnd, [NativeTypeName("LPMSG")] MSG* lpMsg);
+
+            [VtblIndex(92)]
+            HRESULT v_MayTranslateAccelerator(MSG* pmsg);
+
+            [VtblIndex(93)]
+            HRESULT _GetBorderDWHelper(IUnknown* punkSrc, [NativeTypeName("LPRECT")] RECT* lprectBorder, BOOL bUseHmonitor);
+
+            [VtblIndex(94)]
+            HRESULT v_CheckZoneCrossing([NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidl);
         }
 
         public partial struct Vtbl

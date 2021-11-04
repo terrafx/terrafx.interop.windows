@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("B0AE62FD-BE34-46E7-9CAA-D361FACBB9CC")]
     [NativeTypeName("struct IDirectManipulationUpdateManager : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IDirectManipulationUpdateManager
+    public unsafe partial struct IDirectManipulationUpdateManager : IDirectManipulationUpdateManager.Interface
     {
         public void** lpVtbl;
 
@@ -58,6 +58,18 @@ namespace TerraFX.Interop
         public HRESULT Update(IDirectManipulationFrameInfoProvider* frameInfo)
         {
             return ((delegate* unmanaged<IDirectManipulationUpdateManager*, IDirectManipulationFrameInfoProvider*, int>)(lpVtbl[5]))((IDirectManipulationUpdateManager*)Unsafe.AsPointer(ref this), frameInfo);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT RegisterWaitHandleCallback(HANDLE handle, IDirectManipulationUpdateHandler* eventHandler, [NativeTypeName("DWORD *")] uint* cookie);
+
+            [VtblIndex(4)]
+            HRESULT UnregisterWaitHandleCallback([NativeTypeName("DWORD")] uint cookie);
+
+            [VtblIndex(5)]
+            HRESULT Update(IDirectManipulationFrameInfoProvider* frameInfo);
         }
 
         public partial struct Vtbl

@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("BEE3D220-157B-11D0-BD23-00A0C911CE86")]
     [NativeTypeName("struct IConfigInterleaving : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IConfigInterleaving
+    public unsafe partial struct IConfigInterleaving : IConfigInterleaving.Interface
     {
         public void** lpVtbl;
 
@@ -65,6 +65,21 @@ namespace TerraFX.Interop
         public HRESULT get_Interleaving([NativeTypeName("REFERENCE_TIME *")] long* prtInterleave, [NativeTypeName("REFERENCE_TIME *")] long* prtPreroll)
         {
             return ((delegate* unmanaged<IConfigInterleaving*, long*, long*, int>)(lpVtbl[6]))((IConfigInterleaving*)Unsafe.AsPointer(ref this), prtInterleave, prtPreroll);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT put_Mode(InterleavingMode mode);
+
+            [VtblIndex(4)]
+            HRESULT get_Mode(InterleavingMode* pMode);
+
+            [VtblIndex(5)]
+            HRESULT put_Interleaving([NativeTypeName("const REFERENCE_TIME *")] long* prtInterleave, [NativeTypeName("const REFERENCE_TIME *")] long* prtPreroll);
+
+            [VtblIndex(6)]
+            HRESULT get_Interleaving([NativeTypeName("REFERENCE_TIME *")] long* prtInterleave, [NativeTypeName("REFERENCE_TIME *")] long* prtPreroll);
         }
 
         public partial struct Vtbl

@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("C0DFF467-D499-4986-972B-E1D9090FA941")]
     [NativeTypeName("struct IAMDecoderCaps : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IAMDecoderCaps
+    public unsafe partial struct IAMDecoderCaps : IAMDecoderCaps.Interface
     {
         public void** lpVtbl;
 
@@ -44,6 +44,12 @@ namespace TerraFX.Interop
         public HRESULT GetDecoderCaps([NativeTypeName("DWORD")] uint dwCapIndex, [NativeTypeName("DWORD *")] uint* lpdwCap)
         {
             return ((delegate* unmanaged<IAMDecoderCaps*, uint, uint*, int>)(lpVtbl[3]))((IAMDecoderCaps*)Unsafe.AsPointer(ref this), dwCapIndex, lpdwCap);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetDecoderCaps([NativeTypeName("DWORD")] uint dwCapIndex, [NativeTypeName("DWORD *")] uint* lpdwCap);
         }
 
         public partial struct Vtbl

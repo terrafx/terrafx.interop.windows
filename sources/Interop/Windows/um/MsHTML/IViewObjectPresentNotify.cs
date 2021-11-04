@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("305107F8-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct IViewObjectPresentNotify : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IViewObjectPresentNotify
+    public unsafe partial struct IViewObjectPresentNotify : IViewObjectPresentNotify.Interface
     {
         public void** lpVtbl;
 
@@ -44,6 +44,12 @@ namespace TerraFX.Interop
         public HRESULT OnPreRender()
         {
             return ((delegate* unmanaged<IViewObjectPresentNotify*, int>)(lpVtbl[3]))((IViewObjectPresentNotify*)Unsafe.AsPointer(ref this));
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT OnPreRender();
         }
 
         public partial struct Vtbl

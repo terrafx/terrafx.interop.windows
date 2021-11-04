@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("305106D4-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct IDOMTextEvent : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct IDOMTextEvent
+    public unsafe partial struct IDOMTextEvent : IDOMTextEvent.Interface
     {
         public void** lpVtbl;
 
@@ -93,6 +93,21 @@ namespace TerraFX.Interop
         public HRESULT get_locale([NativeTypeName("BSTR *")] ushort** p)
         {
             return ((delegate* unmanaged<IDOMTextEvent*, ushort**, int>)(lpVtbl[10]))((IDOMTextEvent*)Unsafe.AsPointer(ref this), p);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT get_data([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(8)]
+            HRESULT get_inputMethod([NativeTypeName("ULONG *")] uint* p);
+
+            [VtblIndex(9)]
+            HRESULT initTextEvent([NativeTypeName("BSTR")] ushort* eventType, [NativeTypeName("VARIANT_BOOL")] short canBubble, [NativeTypeName("VARIANT_BOOL")] short cancelable, IHTMLWindow2* viewArg, [NativeTypeName("BSTR")] ushort* dataArg, [NativeTypeName("ULONG")] uint inputMethod, [NativeTypeName("BSTR")] ushort* locale);
+
+            [VtblIndex(10)]
+            HRESULT get_locale([NativeTypeName("BSTR *")] ushort** p);
         }
 
         public partial struct Vtbl

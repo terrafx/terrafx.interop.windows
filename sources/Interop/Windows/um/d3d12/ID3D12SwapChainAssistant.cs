@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("F1DF64B6-57FD-49CD-8807-C0EB88B45C8F")]
     [NativeTypeName("struct ID3D12SwapChainAssistant : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct ID3D12SwapChainAssistant
+    public unsafe partial struct ID3D12SwapChainAssistant : ID3D12SwapChainAssistant.Interface
     {
         public void** lpVtbl;
 
@@ -66,6 +66,21 @@ namespace TerraFX.Interop
         public HRESULT InsertImplicitSync()
         {
             return ((delegate* unmanaged<ID3D12SwapChainAssistant*, int>)(lpVtbl[6]))((ID3D12SwapChainAssistant*)Unsafe.AsPointer(ref this));
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            LUID GetLUID();
+
+            [VtblIndex(4)]
+            HRESULT GetSwapChainObject([NativeTypeName("const IID &")] Guid* riid, void** ppv);
+
+            [VtblIndex(5)]
+            HRESULT GetCurrentResourceAndCommandQueue([NativeTypeName("const IID &")] Guid* riidResource, void** ppvResource, [NativeTypeName("const IID &")] Guid* riidQueue, void** ppvQueue);
+
+            [VtblIndex(6)]
+            HRESULT InsertImplicitSync();
         }
 
         public partial struct Vtbl

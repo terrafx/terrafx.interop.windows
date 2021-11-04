@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("00BB2762-6A77-11D0-A535-00C04FD7D062")]
     [NativeTypeName("struct IAutoComplete : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IAutoComplete
+    public unsafe partial struct IAutoComplete : IAutoComplete.Interface
     {
         public void** lpVtbl;
 
@@ -51,6 +51,15 @@ namespace TerraFX.Interop
         public HRESULT Enable(BOOL fEnable)
         {
             return ((delegate* unmanaged<IAutoComplete*, BOOL, int>)(lpVtbl[4]))((IAutoComplete*)Unsafe.AsPointer(ref this), fEnable);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT Init(HWND hwndEdit, IUnknown* punkACL, [NativeTypeName("LPCWSTR")] ushort* pwszRegKeyPath, [NativeTypeName("LPCWSTR")] ushort* pwszQuickComplete);
+
+            [VtblIndex(4)]
+            HRESULT Enable(BOOL fEnable);
         }
 
         public partial struct Vtbl

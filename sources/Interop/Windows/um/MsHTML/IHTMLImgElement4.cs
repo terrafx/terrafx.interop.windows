@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("305107F6-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct IHTMLImgElement4 : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct IHTMLImgElement4
+    public unsafe partial struct IHTMLImgElement4 : IHTMLImgElement4.Interface
     {
         public void** lpVtbl;
 
@@ -79,6 +79,15 @@ namespace TerraFX.Interop
         public HRESULT get_naturalHeight([NativeTypeName("long *")] int* p)
         {
             return ((delegate* unmanaged<IHTMLImgElement4*, int*, int>)(lpVtbl[8]))((IHTMLImgElement4*)Unsafe.AsPointer(ref this), p);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT get_naturalWidth([NativeTypeName("long *")] int* p);
+
+            [VtblIndex(8)]
+            HRESULT get_naturalHeight([NativeTypeName("long *")] int* p);
         }
 
         public partial struct Vtbl

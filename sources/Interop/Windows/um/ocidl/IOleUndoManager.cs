@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("D001F200-EF97-11CE-9BC9-00AA00608E01")]
     [NativeTypeName("struct IOleUndoManager : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IOleUndoManager
+    public unsafe partial struct IOleUndoManager : IOleUndoManager.Interface
     {
         public void** lpVtbl;
 
@@ -121,6 +121,45 @@ namespace TerraFX.Interop
         public HRESULT Enable(BOOL fEnable)
         {
             return ((delegate* unmanaged<IOleUndoManager*, BOOL, int>)(lpVtbl[14]))((IOleUndoManager*)Unsafe.AsPointer(ref this), fEnable);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT Open(IOleParentUndoUnit* pPUU);
+
+            [VtblIndex(4)]
+            HRESULT Close(IOleParentUndoUnit* pPUU, BOOL fCommit);
+
+            [VtblIndex(5)]
+            HRESULT Add(IOleUndoUnit* pUU);
+
+            [VtblIndex(6)]
+            HRESULT GetOpenParentState([NativeTypeName("DWORD *")] uint* pdwState);
+
+            [VtblIndex(7)]
+            HRESULT DiscardFrom(IOleUndoUnit* pUU);
+
+            [VtblIndex(8)]
+            HRESULT UndoTo(IOleUndoUnit* pUU);
+
+            [VtblIndex(9)]
+            HRESULT RedoTo(IOleUndoUnit* pUU);
+
+            [VtblIndex(10)]
+            HRESULT EnumUndoable(IEnumOleUndoUnits** ppEnum);
+
+            [VtblIndex(11)]
+            HRESULT EnumRedoable(IEnumOleUndoUnits** ppEnum);
+
+            [VtblIndex(12)]
+            HRESULT GetLastUndoDescription([NativeTypeName("BSTR *")] ushort** pBstr);
+
+            [VtblIndex(13)]
+            HRESULT GetLastRedoDescription([NativeTypeName("BSTR *")] ushort** pBstr);
+
+            [VtblIndex(14)]
+            HRESULT Enable(BOOL fEnable);
         }
 
         public partial struct Vtbl

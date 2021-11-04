@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("D7436ADE-1978-4E14-ABA0-555BD8EB83B4")]
     [NativeTypeName("struct ISpatialAudioObjectForHrtf : ISpatialAudioObjectBase")]
     [NativeInheritance("ISpatialAudioObjectBase")]
-    public unsafe partial struct ISpatialAudioObjectForHrtf
+    public unsafe partial struct ISpatialAudioObjectForHrtf : ISpatialAudioObjectForHrtf.Interface
     {
         public void** lpVtbl;
 
@@ -107,6 +107,27 @@ namespace TerraFX.Interop
         public HRESULT SetDirectivity(SpatialAudioHrtfDirectivityUnion* directivity)
         {
             return ((delegate* unmanaged<ISpatialAudioObjectForHrtf*, SpatialAudioHrtfDirectivityUnion*, int>)(lpVtbl[12]))((ISpatialAudioObjectForHrtf*)Unsafe.AsPointer(ref this), directivity);
+        }
+
+        public interface Interface : ISpatialAudioObjectBase.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT SetPosition(float x, float y, float z);
+
+            [VtblIndex(8)]
+            HRESULT SetGain(float gain);
+
+            [VtblIndex(9)]
+            HRESULT SetOrientation([NativeTypeName("const SpatialAudioHrtfOrientation *")] float** orientation);
+
+            [VtblIndex(10)]
+            HRESULT SetEnvironment(SpatialAudioHrtfEnvironmentType environment);
+
+            [VtblIndex(11)]
+            HRESULT SetDistanceDecay(SpatialAudioHrtfDistanceDecay* distanceDecay);
+
+            [VtblIndex(12)]
+            HRESULT SetDirectivity(SpatialAudioHrtfDirectivityUnion* directivity);
         }
 
         public partial struct Vtbl

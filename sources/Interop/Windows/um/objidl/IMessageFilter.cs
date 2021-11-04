@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("00000016-0000-0000-C000-000000000046")]
     [NativeTypeName("struct IMessageFilter : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IMessageFilter
+    public unsafe partial struct IMessageFilter : IMessageFilter.Interface
     {
         public void** lpVtbl;
 
@@ -61,6 +61,21 @@ namespace TerraFX.Interop
         public uint MessagePending(HTASK htaskCallee, [NativeTypeName("DWORD")] uint dwTickCount, [NativeTypeName("DWORD")] uint dwPendingType)
         {
             return ((delegate* unmanaged<IMessageFilter*, HTASK, uint, uint, uint>)(lpVtbl[5]))((IMessageFilter*)Unsafe.AsPointer(ref this), htaskCallee, dwTickCount, dwPendingType);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            [return: NativeTypeName("DWORD")]
+            uint HandleInComingCall([NativeTypeName("DWORD")] uint dwCallType, HTASK htaskCaller, [NativeTypeName("DWORD")] uint dwTickCount, [NativeTypeName("LPINTERFACEINFO")] INTERFACEINFO* lpInterfaceInfo);
+
+            [VtblIndex(4)]
+            [return: NativeTypeName("DWORD")]
+            uint RetryRejectedCall(HTASK htaskCallee, [NativeTypeName("DWORD")] uint dwTickCount, [NativeTypeName("DWORD")] uint dwRejectType);
+
+            [VtblIndex(5)]
+            [return: NativeTypeName("DWORD")]
+            uint MessagePending(HTASK htaskCallee, [NativeTypeName("DWORD")] uint dwTickCount, [NativeTypeName("DWORD")] uint dwPendingType);
         }
 
         public partial struct Vtbl

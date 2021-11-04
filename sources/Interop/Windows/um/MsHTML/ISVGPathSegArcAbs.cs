@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("30510506-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct ISVGPathSegArcAbs : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct ISVGPathSegArcAbs
+    public unsafe partial struct ISVGPathSegArcAbs : ISVGPathSegArcAbs.Interface
     {
         public void** lpVtbl;
 
@@ -163,6 +163,51 @@ namespace TerraFX.Interop
         public HRESULT get_sweepFlag([NativeTypeName("VARIANT_BOOL *")] short* p)
         {
             return ((delegate* unmanaged<ISVGPathSegArcAbs*, short*, int>)(lpVtbl[20]))((ISVGPathSegArcAbs*)Unsafe.AsPointer(ref this), p);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT put_x(float v);
+
+            [VtblIndex(8)]
+            HRESULT get_x(float* p);
+
+            [VtblIndex(9)]
+            HRESULT put_y(float v);
+
+            [VtblIndex(10)]
+            HRESULT get_y(float* p);
+
+            [VtblIndex(11)]
+            HRESULT put_r1(float v);
+
+            [VtblIndex(12)]
+            HRESULT get_r1(float* p);
+
+            [VtblIndex(13)]
+            HRESULT put_r2(float v);
+
+            [VtblIndex(14)]
+            HRESULT get_r2(float* p);
+
+            [VtblIndex(15)]
+            HRESULT put_angle(float v);
+
+            [VtblIndex(16)]
+            HRESULT get_angle(float* p);
+
+            [VtblIndex(17)]
+            HRESULT put_largeArcFlag([NativeTypeName("VARIANT_BOOL")] short v);
+
+            [VtblIndex(18)]
+            HRESULT get_largeArcFlag([NativeTypeName("VARIANT_BOOL *")] short* p);
+
+            [VtblIndex(19)]
+            HRESULT put_sweepFlag([NativeTypeName("VARIANT_BOOL")] short v);
+
+            [VtblIndex(20)]
+            HRESULT get_sweepFlag([NativeTypeName("VARIANT_BOOL *")] short* p);
         }
 
         public partial struct Vtbl

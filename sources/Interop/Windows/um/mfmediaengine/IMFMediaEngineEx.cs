@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("83015EAD-B1E6-40D0-A98A-37145FFE1AD1")]
     [NativeTypeName("struct IMFMediaEngineEx : IMFMediaEngine")]
     [NativeInheritance("IMFMediaEngine")]
-    public unsafe partial struct IMFMediaEngineEx
+    public unsafe partial struct IMFMediaEngineEx : IMFMediaEngineEx.Interface
     {
         public void** lpVtbl;
 
@@ -590,6 +590,120 @@ namespace TerraFX.Interop
         public HRESULT EnableTimeUpdateTimer(BOOL fEnableTimer)
         {
             return ((delegate* unmanaged<IMFMediaEngineEx*, BOOL, int>)(lpVtbl[81]))((IMFMediaEngineEx*)Unsafe.AsPointer(ref this), fEnableTimer);
+        }
+
+        public interface Interface : IMFMediaEngine.Interface
+        {
+            [VtblIndex(45)]
+            HRESULT SetSourceFromByteStream(IMFByteStream* pByteStream, [NativeTypeName("BSTR")] ushort* pURL);
+
+            [VtblIndex(46)]
+            HRESULT GetStatistics(MF_MEDIA_ENGINE_STATISTIC StatisticID, PROPVARIANT* pStatistic);
+
+            [VtblIndex(47)]
+            HRESULT UpdateVideoStream([NativeTypeName("const MFVideoNormalizedRect *")] MFVideoNormalizedRect* pSrc, [NativeTypeName("const RECT *")] RECT* pDst, [NativeTypeName("const MFARGB *")] MFARGB* pBorderClr);
+
+            [VtblIndex(48)]
+            double GetBalance();
+
+            [VtblIndex(49)]
+            HRESULT SetBalance(double balance);
+
+            [VtblIndex(50)]
+            BOOL IsPlaybackRateSupported(double rate);
+
+            [VtblIndex(51)]
+            HRESULT FrameStep(BOOL Forward);
+
+            [VtblIndex(52)]
+            HRESULT GetResourceCharacteristics([NativeTypeName("DWORD *")] uint* pCharacteristics);
+
+            [VtblIndex(53)]
+            HRESULT GetPresentationAttribute([NativeTypeName("const GUID &")] Guid* guidMFAttribute, PROPVARIANT* pvValue);
+
+            [VtblIndex(54)]
+            HRESULT GetNumberOfStreams([NativeTypeName("DWORD *")] uint* pdwStreamCount);
+
+            [VtblIndex(55)]
+            HRESULT GetStreamAttribute([NativeTypeName("DWORD")] uint dwStreamIndex, [NativeTypeName("const GUID &")] Guid* guidMFAttribute, PROPVARIANT* pvValue);
+
+            [VtblIndex(56)]
+            HRESULT GetStreamSelection([NativeTypeName("DWORD")] uint dwStreamIndex, BOOL* pEnabled);
+
+            [VtblIndex(57)]
+            HRESULT SetStreamSelection([NativeTypeName("DWORD")] uint dwStreamIndex, BOOL Enabled);
+
+            [VtblIndex(58)]
+            HRESULT ApplyStreamSelections();
+
+            [VtblIndex(59)]
+            HRESULT IsProtected(BOOL* pProtected);
+
+            [VtblIndex(60)]
+            HRESULT InsertVideoEffect(IUnknown* pEffect, BOOL fOptional);
+
+            [VtblIndex(61)]
+            HRESULT InsertAudioEffect(IUnknown* pEffect, BOOL fOptional);
+
+            [VtblIndex(62)]
+            HRESULT RemoveAllEffects();
+
+            [VtblIndex(63)]
+            HRESULT SetTimelineMarkerTimer(double timeToFire);
+
+            [VtblIndex(64)]
+            HRESULT GetTimelineMarkerTimer(double* pTimeToFire);
+
+            [VtblIndex(65)]
+            HRESULT CancelTimelineMarkerTimer();
+
+            [VtblIndex(66)]
+            BOOL IsStereo3D();
+
+            [VtblIndex(67)]
+            HRESULT GetStereo3DFramePackingMode(MF_MEDIA_ENGINE_S3D_PACKING_MODE* packMode);
+
+            [VtblIndex(68)]
+            HRESULT SetStereo3DFramePackingMode(MF_MEDIA_ENGINE_S3D_PACKING_MODE packMode);
+
+            [VtblIndex(69)]
+            HRESULT GetStereo3DRenderMode(MF3DVideoOutputType* outputType);
+
+            [VtblIndex(70)]
+            HRESULT SetStereo3DRenderMode(MF3DVideoOutputType outputType);
+
+            [VtblIndex(71)]
+            HRESULT EnableWindowlessSwapchainMode(BOOL fEnable);
+
+            [VtblIndex(72)]
+            HRESULT GetVideoSwapchainHandle(HANDLE* phSwapchain);
+
+            [VtblIndex(73)]
+            HRESULT EnableHorizontalMirrorMode(BOOL fEnable);
+
+            [VtblIndex(74)]
+            HRESULT GetAudioStreamCategory([NativeTypeName("UINT32 *")] uint* pCategory);
+
+            [VtblIndex(75)]
+            HRESULT SetAudioStreamCategory([NativeTypeName("UINT32")] uint category);
+
+            [VtblIndex(76)]
+            HRESULT GetAudioEndpointRole([NativeTypeName("UINT32 *")] uint* pRole);
+
+            [VtblIndex(77)]
+            HRESULT SetAudioEndpointRole([NativeTypeName("UINT32")] uint role);
+
+            [VtblIndex(78)]
+            HRESULT GetRealTimeMode(BOOL* pfEnabled);
+
+            [VtblIndex(79)]
+            HRESULT SetRealTimeMode(BOOL fEnable);
+
+            [VtblIndex(80)]
+            HRESULT SetCurrentTimeEx(double seekTime, MF_MEDIA_ENGINE_SEEK_MODE seekMode);
+
+            [VtblIndex(81)]
+            HRESULT EnableTimeUpdateTimer(BOOL fEnableTimer);
         }
 
         public partial struct Vtbl

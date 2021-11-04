@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("31C147B6-0ADE-4A3C-B514-DDF932EF6D17")]
     [NativeTypeName("struct IShellFolderViewDual2 : IShellFolderViewDual")]
     [NativeInheritance("IShellFolderViewDual")]
-    public unsafe partial struct IShellFolderViewDual2
+    public unsafe partial struct IShellFolderViewDual2 : IShellFolderViewDual2.Interface
     {
         public void** lpVtbl;
 
@@ -149,6 +149,18 @@ namespace TerraFX.Interop
         public HRESULT SelectItemRelative(int iRelative)
         {
             return ((delegate* unmanaged<IShellFolderViewDual2*, int, int>)(lpVtbl[18]))((IShellFolderViewDual2*)Unsafe.AsPointer(ref this), iRelative);
+        }
+
+        public interface Interface : IShellFolderViewDual.Interface
+        {
+            [VtblIndex(16)]
+            HRESULT get_CurrentViewMode(uint* pViewMode);
+
+            [VtblIndex(17)]
+            HRESULT put_CurrentViewMode(uint ViewMode);
+
+            [VtblIndex(18)]
+            HRESULT SelectItemRelative(int iRelative);
         }
 
         public partial struct Vtbl

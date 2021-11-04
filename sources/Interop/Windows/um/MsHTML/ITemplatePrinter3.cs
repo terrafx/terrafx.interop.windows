@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("305104A3-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct ITemplatePrinter3 : ITemplatePrinter2")]
     [NativeInheritance("ITemplatePrinter2")]
-    public unsafe partial struct ITemplatePrinter3
+    public unsafe partial struct ITemplatePrinter3 : ITemplatePrinter3.Interface
     {
         public void** lpVtbl;
 
@@ -583,6 +583,39 @@ namespace TerraFX.Interop
         public HRESULT getPageMarginLeftImportant(IDispatch* pageRule, [NativeTypeName("VARIANT_BOOL *")] short* pbImportant)
         {
             return ((delegate* unmanaged<ITemplatePrinter3*, IDispatch*, short*, int>)(lpVtbl[80]))((ITemplatePrinter3*)Unsafe.AsPointer(ref this), pageRule, pbImportant);
+        }
+
+        public interface Interface : ITemplatePrinter2.Interface
+        {
+            [VtblIndex(71)]
+            HRESULT put_headerFooterFont([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(72)]
+            HRESULT get_headerFooterFont([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(73)]
+            HRESULT getPageMarginTop(IDispatch* pageRule, [NativeTypeName("long")] int pageWidth, [NativeTypeName("long")] int pageHeight, VARIANT* pMargin);
+
+            [VtblIndex(74)]
+            HRESULT getPageMarginRight(IDispatch* pageRule, [NativeTypeName("long")] int pageWidth, [NativeTypeName("long")] int pageHeight, VARIANT* pMargin);
+
+            [VtblIndex(75)]
+            HRESULT getPageMarginBottom(IDispatch* pageRule, [NativeTypeName("long")] int pageWidth, [NativeTypeName("long")] int pageHeight, VARIANT* pMargin);
+
+            [VtblIndex(76)]
+            HRESULT getPageMarginLeft(IDispatch* pageRule, [NativeTypeName("long")] int pageWidth, [NativeTypeName("long")] int pageHeight, VARIANT* pMargin);
+
+            [VtblIndex(77)]
+            HRESULT getPageMarginTopImportant(IDispatch* pageRule, [NativeTypeName("VARIANT_BOOL *")] short* pbImportant);
+
+            [VtblIndex(78)]
+            HRESULT getPageMarginRightImportant(IDispatch* pageRule, [NativeTypeName("VARIANT_BOOL *")] short* pbImportant);
+
+            [VtblIndex(79)]
+            HRESULT getPageMarginBottomImportant(IDispatch* pageRule, [NativeTypeName("VARIANT_BOOL *")] short* pbImportant);
+
+            [VtblIndex(80)]
+            HRESULT getPageMarginLeftImportant(IDispatch* pageRule, [NativeTypeName("VARIANT_BOOL *")] short* pbImportant);
         }
 
         public partial struct Vtbl

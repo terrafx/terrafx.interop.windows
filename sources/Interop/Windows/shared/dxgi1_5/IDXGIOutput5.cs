@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("80A07424-AB52-42EB-833C-0C42FD282D98")]
     [NativeTypeName("struct IDXGIOutput5 : IDXGIOutput4")]
     [NativeInheritance("IDXGIOutput4")]
-    public unsafe partial struct IDXGIOutput5
+    public unsafe partial struct IDXGIOutput5 : IDXGIOutput5.Interface
     {
         public void** lpVtbl;
 
@@ -205,6 +205,12 @@ namespace TerraFX.Interop
         public HRESULT DuplicateOutput1(IUnknown* pDevice, uint Flags, uint SupportedFormatsCount, [NativeTypeName("const DXGI_FORMAT *")] DXGI_FORMAT* pSupportedFormats, IDXGIOutputDuplication** ppOutputDuplication)
         {
             return ((delegate* unmanaged<IDXGIOutput5*, IUnknown*, uint, uint, DXGI_FORMAT*, IDXGIOutputDuplication**, int>)(lpVtbl[26]))((IDXGIOutput5*)Unsafe.AsPointer(ref this), pDevice, Flags, SupportedFormatsCount, pSupportedFormats, ppOutputDuplication);
+        }
+
+        public interface Interface : IDXGIOutput4.Interface
+        {
+            [VtblIndex(26)]
+            HRESULT DuplicateOutput1(IUnknown* pDevice, uint Flags, uint SupportedFormatsCount, [NativeTypeName("const DXGI_FORMAT *")] DXGI_FORMAT* pSupportedFormats, IDXGIOutputDuplication** ppOutputDuplication);
         }
 
         public partial struct Vtbl

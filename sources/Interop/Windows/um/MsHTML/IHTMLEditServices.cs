@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("3050F663-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct IHTMLEditServices : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IHTMLEditServices
+    public unsafe partial struct IHTMLEditServices : IHTMLEditServices.Interface
     {
         public void** lpVtbl;
 
@@ -79,6 +79,27 @@ namespace TerraFX.Interop
         public HRESULT SelectRange(IMarkupPointer* pStart, IMarkupPointer* pEnd, SELECTION_TYPE eType)
         {
             return ((delegate* unmanaged<IHTMLEditServices*, IMarkupPointer*, IMarkupPointer*, SELECTION_TYPE, int>)(lpVtbl[8]))((IHTMLEditServices*)Unsafe.AsPointer(ref this), pStart, pEnd, eType);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT AddDesigner(IHTMLEditDesigner* pIDesigner);
+
+            [VtblIndex(4)]
+            HRESULT RemoveDesigner(IHTMLEditDesigner* pIDesigner);
+
+            [VtblIndex(5)]
+            HRESULT GetSelectionServices(IMarkupContainer* pIContainer, ISelectionServices** ppSelSvc);
+
+            [VtblIndex(6)]
+            HRESULT MoveToSelectionAnchor(IMarkupPointer* pIStartAnchor);
+
+            [VtblIndex(7)]
+            HRESULT MoveToSelectionEnd(IMarkupPointer* pIEndAnchor);
+
+            [VtblIndex(8)]
+            HRESULT SelectRange(IMarkupPointer* pStart, IMarkupPointer* pEnd, SELECTION_TYPE eType);
         }
 
         public partial struct Vtbl

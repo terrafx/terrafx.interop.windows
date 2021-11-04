@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("6DFC60FB-F2E9-459B-BEB5-288F1A7C7D54")]
     [NativeTypeName("struct ISortColumnArray : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct ISortColumnArray
+    public unsafe partial struct ISortColumnArray : ISortColumnArray.Interface
     {
         public void** lpVtbl;
 
@@ -58,6 +58,18 @@ namespace TerraFX.Interop
         public HRESULT GetSortType([NativeTypeName("enum SORT_ORDER_TYPE *")] SORT_ORDER_TYPE* type)
         {
             return ((delegate* unmanaged<ISortColumnArray*, SORT_ORDER_TYPE*, int>)(lpVtbl[5]))((ISortColumnArray*)Unsafe.AsPointer(ref this), type);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetCount(uint* columnCount);
+
+            [VtblIndex(4)]
+            HRESULT GetAt(uint index, SORTCOLUMN* sortcolumn);
+
+            [VtblIndex(5)]
+            HRESULT GetSortType([NativeTypeName("enum SORT_ORDER_TYPE *")] SORT_ORDER_TYPE* type);
         }
 
         public partial struct Vtbl

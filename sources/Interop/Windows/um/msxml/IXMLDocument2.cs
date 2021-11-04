@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("2B8DE2FE-8D2D-11D1-B2FC-00C04FD915A9")]
     [NativeTypeName("struct IXMLDocument2 : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct IXMLDocument2
+    public unsafe partial struct IXMLDocument2 : IXMLDocument2.Interface
     {
         public void** lpVtbl;
 
@@ -177,6 +177,57 @@ namespace TerraFX.Interop
         public HRESULT put_async([NativeTypeName("VARIANT_BOOL")] short f)
         {
             return ((delegate* unmanaged<IXMLDocument2*, short, int>)(lpVtbl[22]))((IXMLDocument2*)Unsafe.AsPointer(ref this), f);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT get_root(IXMLElement2** p);
+
+            [VtblIndex(8)]
+            HRESULT get_fileSize([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(9)]
+            HRESULT get_fileModifiedDate([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(10)]
+            HRESULT get_fileUpdatedDate([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(11)]
+            HRESULT get_URL([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(12)]
+            HRESULT put_URL([NativeTypeName("BSTR")] ushort* p);
+
+            [VtblIndex(13)]
+            HRESULT get_mimeType([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(14)]
+            HRESULT get_readyState([NativeTypeName("long *")] int* pl);
+
+            [VtblIndex(15)]
+            HRESULT get_charset([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(16)]
+            HRESULT put_charset([NativeTypeName("BSTR")] ushort* p);
+
+            [VtblIndex(17)]
+            HRESULT get_version([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(18)]
+            HRESULT get_doctype([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(19)]
+            HRESULT get_dtdURL([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(20)]
+            HRESULT createElement(VARIANT vType, VARIANT var1, IXMLElement2** ppElem);
+
+            [VtblIndex(21)]
+            HRESULT get_async([NativeTypeName("VARIANT_BOOL *")] short* pf);
+
+            [VtblIndex(22)]
+            HRESULT put_async([NativeTypeName("VARIANT_BOOL")] short f);
         }
 
         public partial struct Vtbl

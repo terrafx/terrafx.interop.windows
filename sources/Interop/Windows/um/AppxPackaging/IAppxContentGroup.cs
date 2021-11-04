@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("328F6468-C04F-4E3C-B6FA-6B8D27F3003A")]
     [NativeTypeName("struct IAppxContentGroup : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IAppxContentGroup
+    public unsafe partial struct IAppxContentGroup : IAppxContentGroup.Interface
     {
         public void** lpVtbl;
 
@@ -51,6 +51,15 @@ namespace TerraFX.Interop
         public HRESULT GetFiles(IAppxContentGroupFilesEnumerator** enumerator)
         {
             return ((delegate* unmanaged<IAppxContentGroup*, IAppxContentGroupFilesEnumerator**, int>)(lpVtbl[4]))((IAppxContentGroup*)Unsafe.AsPointer(ref this), enumerator);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetName([NativeTypeName("LPWSTR *")] ushort** groupName);
+
+            [VtblIndex(4)]
+            HRESULT GetFiles(IAppxContentGroupFilesEnumerator** enumerator);
         }
 
         public partial struct Vtbl

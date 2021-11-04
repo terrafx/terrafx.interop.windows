@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("DDE28967-521B-46E5-8F00-BD6F2BC8AB1D")]
     [NativeTypeName("struct ISpatialAudioObject : ISpatialAudioObjectBase")]
     [NativeInheritance("ISpatialAudioObjectBase")]
-    public unsafe partial struct ISpatialAudioObject
+    public unsafe partial struct ISpatialAudioObject : ISpatialAudioObject.Interface
     {
         public void** lpVtbl;
 
@@ -79,6 +79,15 @@ namespace TerraFX.Interop
         public HRESULT SetVolume(float volume)
         {
             return ((delegate* unmanaged<ISpatialAudioObject*, float, int>)(lpVtbl[8]))((ISpatialAudioObject*)Unsafe.AsPointer(ref this), volume);
+        }
+
+        public interface Interface : ISpatialAudioObjectBase.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT SetPosition(float x, float y, float z);
+
+            [VtblIndex(8)]
+            HRESULT SetVolume(float volume);
         }
 
         public partial struct Vtbl

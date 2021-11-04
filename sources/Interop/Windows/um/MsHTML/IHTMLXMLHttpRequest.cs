@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("3051040A-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct IHTMLXMLHttpRequest : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct IHTMLXMLHttpRequest
+    public unsafe partial struct IHTMLXMLHttpRequest : IHTMLXMLHttpRequest.Interface
     {
         public void** lpVtbl;
 
@@ -163,6 +163,51 @@ namespace TerraFX.Interop
         public HRESULT setRequestHeader([NativeTypeName("BSTR")] ushort* bstrHeader, [NativeTypeName("BSTR")] ushort* bstrValue)
         {
             return ((delegate* unmanaged<IHTMLXMLHttpRequest*, ushort*, ushort*, int>)(lpVtbl[20]))((IHTMLXMLHttpRequest*)Unsafe.AsPointer(ref this), bstrHeader, bstrValue);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT get_readyState([NativeTypeName("long *")] int* p);
+
+            [VtblIndex(8)]
+            HRESULT get_responseBody(VARIANT* p);
+
+            [VtblIndex(9)]
+            HRESULT get_responseText([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(10)]
+            HRESULT get_responseXML(IDispatch** p);
+
+            [VtblIndex(11)]
+            HRESULT get_status([NativeTypeName("long *")] int* p);
+
+            [VtblIndex(12)]
+            HRESULT get_statusText([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(13)]
+            HRESULT put_onreadystatechange(VARIANT v);
+
+            [VtblIndex(14)]
+            HRESULT get_onreadystatechange(VARIANT* p);
+
+            [VtblIndex(15)]
+            HRESULT abort();
+
+            [VtblIndex(16)]
+            HRESULT open([NativeTypeName("BSTR")] ushort* bstrMethod, [NativeTypeName("BSTR")] ushort* bstrUrl, VARIANT varAsync, VARIANT varUser, VARIANT varPassword);
+
+            [VtblIndex(17)]
+            HRESULT send(VARIANT varBody);
+
+            [VtblIndex(18)]
+            HRESULT getAllResponseHeaders([NativeTypeName("BSTR *")] ushort** __MIDL__IHTMLXMLHttpRequest0000);
+
+            [VtblIndex(19)]
+            HRESULT getResponseHeader([NativeTypeName("BSTR")] ushort* bstrHeader, [NativeTypeName("BSTR *")] ushort** __MIDL__IHTMLXMLHttpRequest0001);
+
+            [VtblIndex(20)]
+            HRESULT setRequestHeader([NativeTypeName("BSTR")] ushort* bstrHeader, [NativeTypeName("BSTR")] ushort* bstrValue);
         }
 
         public partial struct Vtbl

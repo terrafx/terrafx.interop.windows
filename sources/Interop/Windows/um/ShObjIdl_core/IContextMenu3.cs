@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("BCFCE0A0-EC17-11D0-8D10-00A0C90F2719")]
     [NativeTypeName("struct IContextMenu3 : IContextMenu2")]
     [NativeInheritance("IContextMenu2")]
-    public unsafe partial struct IContextMenu3
+    public unsafe partial struct IContextMenu3 : IContextMenu3.Interface
     {
         public void** lpVtbl;
 
@@ -72,6 +72,12 @@ namespace TerraFX.Interop
         public HRESULT HandleMenuMsg2(uint uMsg, WPARAM wParam, LPARAM lParam, LRESULT* plResult)
         {
             return ((delegate* unmanaged<IContextMenu3*, uint, WPARAM, LPARAM, LRESULT*, int>)(lpVtbl[7]))((IContextMenu3*)Unsafe.AsPointer(ref this), uMsg, wParam, lParam, plResult);
+        }
+
+        public interface Interface : IContextMenu2.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT HandleMenuMsg2(uint uMsg, WPARAM wParam, LPARAM lParam, LRESULT* plResult);
         }
 
         public partial struct Vtbl
