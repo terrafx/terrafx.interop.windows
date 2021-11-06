@@ -9,7 +9,6 @@ um-minidumpapiset.h
 --traverse
 C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/minidumpapiset.h
 --exclude
-MiniDumpWriteDump
 _MINIDUMP_CALLBACK_INFORMATION
 _MINIDUMP_CALLBACK_INPUT
 _MINIDUMP_THREAD_CALLBACK
@@ -17,3 +16,4 @@ _MINIDUMP_THREAD_EX_CALLBACK
 RVA_TO_ADDR
 --with-librarypath
 MiniDumpReadDumpStream=DbgHelp
+MiniDumpWriteDump=DbgHelp
