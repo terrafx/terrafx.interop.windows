@@ -96,9 +96,6 @@ namespace TerraFX.Interop
             [VtblIndex(4)]
             HRESULT SetNotifyWindowMessage(HWND hWnd, uint Msg, WPARAM wParam, LPARAM lParam);
 
-            [VtblIndex(5)]
-            HRESULT SetNotifyCallbackFunction([NativeTypeName("SPNOTIFYCALLBACK *")] delegate* unmanaged<WPARAM, LPARAM, void> pfnCallback, WPARAM wParam, LPARAM lParam);
-
             [VtblIndex(6)]
             HRESULT SetNotifyCallbackInterface(ISpNotifyCallback* pSpCallback, WPARAM wParam, LPARAM lParam);
 

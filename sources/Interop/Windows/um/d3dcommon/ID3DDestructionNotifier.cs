@@ -55,9 +55,6 @@ namespace TerraFX.Interop
 
         public interface Interface : IUnknown.Interface
         {
-            [VtblIndex(3)]
-            HRESULT RegisterDestructionCallback([NativeTypeName("PFN_DESTRUCTION_CALLBACK")] delegate* unmanaged<void*, void> callbackFn, void* pData, uint* pCallbackID);
-
             [VtblIndex(4)]
             HRESULT UnregisterDestructionCallback(uint callbackID);
         }

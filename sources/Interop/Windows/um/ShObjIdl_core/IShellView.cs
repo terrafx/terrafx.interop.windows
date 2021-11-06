@@ -153,9 +153,6 @@ namespace TerraFX.Interop
             [VtblIndex(11)]
             HRESULT GetCurrentInfo([NativeTypeName("LPFOLDERSETTINGS")] FOLDERSETTINGS* pfs);
 
-            [VtblIndex(12)]
-            HRESULT AddPropertySheetPages([NativeTypeName("DWORD")] uint dwReserved, [NativeTypeName("LPFNSVADDPROPSHEETPAGE")] delegate* unmanaged<HPROPSHEETPAGE, LPARAM, BOOL> pfn, LPARAM lparam);
-
             [VtblIndex(13)]
             HRESULT SaveViewState();
 

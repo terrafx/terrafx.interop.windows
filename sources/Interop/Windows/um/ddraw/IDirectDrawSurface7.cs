@@ -379,12 +379,6 @@ namespace TerraFX.Interop
             [VtblIndex(8)]
             HRESULT DeleteAttachedSurface([NativeTypeName("DWORD")] uint param0, [NativeTypeName("LPDIRECTDRAWSURFACE7")] IDirectDrawSurface7* param1);
 
-            [VtblIndex(9)]
-            HRESULT EnumAttachedSurfaces([NativeTypeName("LPVOID")] void* param0, [NativeTypeName("LPDDENUMSURFACESCALLBACK7")] delegate* unmanaged<IDirectDrawSurface7*, DDSURFACEDESC2*, void*, HRESULT> param1);
-
-            [VtblIndex(10)]
-            HRESULT EnumOverlayZOrders([NativeTypeName("DWORD")] uint param0, [NativeTypeName("LPVOID")] void* param1, [NativeTypeName("LPDDENUMSURFACESCALLBACK7")] delegate* unmanaged<IDirectDrawSurface7*, DDSURFACEDESC2*, void*, HRESULT> param2);
-
             [VtblIndex(11)]
             HRESULT Flip([NativeTypeName("LPDIRECTDRAWSURFACE7")] IDirectDrawSurface7* param0, [NativeTypeName("DWORD")] uint param1);
 

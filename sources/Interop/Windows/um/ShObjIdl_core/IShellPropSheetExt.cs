@@ -55,11 +55,6 @@ namespace TerraFX.Interop
 
         public interface Interface : IUnknown.Interface
         {
-            [VtblIndex(3)]
-            HRESULT AddPages([NativeTypeName("LPFNSVADDPROPSHEETPAGE")] delegate* unmanaged<HPROPSHEETPAGE, LPARAM, BOOL> pfnAddPage, LPARAM lParam);
-
-            [VtblIndex(4)]
-            HRESULT ReplacePage([NativeTypeName("EXPPS")] uint uPageID, [NativeTypeName("LPFNSVADDPROPSHEETPAGE")] delegate* unmanaged<HPROPSHEETPAGE, LPARAM, BOOL> pfnReplaceWith, LPARAM lParam);
         }
 
         public partial struct Vtbl

@@ -85,9 +85,6 @@ namespace TerraFX.Interop
             [VtblIndex(5)]
             bool IsNotificationTypeSupported(DXCoreNotificationType notificationType);
 
-            [VtblIndex(6)]
-            HRESULT RegisterEventNotification(IUnknown* dxCoreObject, DXCoreNotificationType notificationType, [NativeTypeName("PFN_DXCORE_NOTIFICATION_CALLBACK")] delegate* unmanaged<DXCoreNotificationType, IUnknown*, void*, void> callbackFunction, void* callbackContext, [NativeTypeName("uint32_t *")] uint* eventCookie);
-
             [VtblIndex(7)]
             HRESULT UnregisterEventNotification([NativeTypeName("uint32_t")] uint eventCookie);
         }

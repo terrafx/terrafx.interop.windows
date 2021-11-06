@@ -48,8 +48,6 @@ namespace TerraFX.Interop
 
         public interface Interface : IUnknown.Interface
         {
-            [VtblIndex(3)]
-            HRESULT RegisterProgressNotification([NativeTypeName("PFNProgressNotification")] delegate* unmanaged<void*, uint, WICProgressOperation, double, HRESULT> pfnProgressNotification, [NativeTypeName("LPVOID")] void* pvData, [NativeTypeName("DWORD")] uint dwProgressFlags);
         }
 
         public partial struct Vtbl

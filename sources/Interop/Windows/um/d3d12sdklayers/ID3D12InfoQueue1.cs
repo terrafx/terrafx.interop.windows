@@ -306,9 +306,6 @@ namespace TerraFX.Interop
 
         public interface Interface : ID3D12InfoQueue.Interface
         {
-            [VtblIndex(38)]
-            HRESULT RegisterMessageCallback([NativeTypeName("D3D12MessageFunc")] delegate* unmanaged<D3D12_MESSAGE_CATEGORY, D3D12_MESSAGE_SEVERITY, D3D12_MESSAGE_ID, sbyte*, void*, void> CallbackFunc, D3D12_MESSAGE_CALLBACK_FLAGS CallbackFilterFlags, void* pContext, [NativeTypeName("DWORD *")] uint* pCallbackCookie);
-
             [VtblIndex(39)]
             HRESULT UnregisterMessageCallback([NativeTypeName("DWORD")] uint CallbackCookie);
         }

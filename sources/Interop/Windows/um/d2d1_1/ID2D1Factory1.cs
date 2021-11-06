@@ -244,12 +244,6 @@ namespace TerraFX.Interop
             [VtblIndex(21)]
             HRESULT CreateGdiMetafile(IStream* metafileStream, ID2D1GdiMetafile** metafile);
 
-            [VtblIndex(22)]
-            HRESULT RegisterEffectFromStream([NativeTypeName("const IID &")] Guid* classId, IStream* propertyXml, [NativeTypeName("const D2D1_PROPERTY_BINDING *")] D2D1_PROPERTY_BINDING* bindings, [NativeTypeName("UINT32")] uint bindingsCount, [NativeTypeName("const PD2D1_EFFECT_FACTORY")] delegate* unmanaged<IUnknown**, HRESULT> effectFactory);
-
-            [VtblIndex(23)]
-            HRESULT RegisterEffectFromString([NativeTypeName("const IID &")] Guid* classId, [NativeTypeName("PCWSTR")] ushort* propertyXml, [NativeTypeName("const D2D1_PROPERTY_BINDING *")] D2D1_PROPERTY_BINDING* bindings, [NativeTypeName("UINT32")] uint bindingsCount, [NativeTypeName("const PD2D1_EFFECT_FACTORY")] delegate* unmanaged<IUnknown**, HRESULT> effectFactory);
-
             [VtblIndex(24)]
             HRESULT UnregisterEffect([NativeTypeName("const IID &")] Guid* classId);
 
