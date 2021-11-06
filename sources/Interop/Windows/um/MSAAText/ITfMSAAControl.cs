@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("B5F8FB3B-393F-4F7C-84CB-504924C2705A")]
     [NativeTypeName("struct ITfMSAAControl : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct ITfMSAAControl
+    public unsafe partial struct ITfMSAAControl : ITfMSAAControl.Interface
     {
         public void** lpVtbl;
 
@@ -51,6 +51,33 @@ namespace TerraFX.Interop
         public HRESULT SystemDisableMSAA()
         {
             return ((delegate* unmanaged<ITfMSAAControl*, int>)(lpVtbl[4]))((ITfMSAAControl*)Unsafe.AsPointer(ref this));
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT SystemEnableMSAA();
+
+            [VtblIndex(4)]
+            HRESULT SystemDisableMSAA();
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfMSAAControl*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfMSAAControl*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfMSAAControl*, uint> Release;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfMSAAControl*, int> SystemEnableMSAA;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfMSAAControl*, int> SystemDisableMSAA;
         }
     }
 }

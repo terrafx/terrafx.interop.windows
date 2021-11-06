@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("11D22258-F470-42C1-B291-8361C5437E41")]
     [NativeTypeName("struct IAppxManifestCapabilitiesEnumerator : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IAppxManifestCapabilitiesEnumerator
+    public unsafe partial struct IAppxManifestCapabilitiesEnumerator : IAppxManifestCapabilitiesEnumerator.Interface
     {
         public void** lpVtbl;
 
@@ -58,6 +58,39 @@ namespace TerraFX.Interop
         public HRESULT MoveNext(BOOL* hasNext)
         {
             return ((delegate* unmanaged<IAppxManifestCapabilitiesEnumerator*, BOOL*, int>)(lpVtbl[5]))((IAppxManifestCapabilitiesEnumerator*)Unsafe.AsPointer(ref this), hasNext);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetCurrent([NativeTypeName("LPWSTR *")] ushort** capability);
+
+            [VtblIndex(4)]
+            HRESULT GetHasCurrent(BOOL* hasCurrent);
+
+            [VtblIndex(5)]
+            HRESULT MoveNext(BOOL* hasNext);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAppxManifestCapabilitiesEnumerator*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IAppxManifestCapabilitiesEnumerator*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IAppxManifestCapabilitiesEnumerator*, uint> Release;
+
+            [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAppxManifestCapabilitiesEnumerator*, ushort**, int> GetCurrent;
+
+            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAppxManifestCapabilitiesEnumerator*, BOOL*, int> GetHasCurrent;
+
+            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAppxManifestCapabilitiesEnumerator*, BOOL*, int> MoveNext;
         }
     }
 }

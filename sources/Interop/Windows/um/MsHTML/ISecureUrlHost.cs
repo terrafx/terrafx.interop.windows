@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("C81984C4-74C8-11D2-BAA9-00C04FC2040E")]
     [NativeTypeName("struct ISecureUrlHost : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct ISecureUrlHost
+    public unsafe partial struct ISecureUrlHost : ISecureUrlHost.Interface
     {
         public void** lpVtbl;
 
@@ -44,6 +44,27 @@ namespace TerraFX.Interop
         public HRESULT ValidateSecureUrl(BOOL* pfAllow, [NativeTypeName("OLECHAR *")] ushort* pchUrlInQuestion, [NativeTypeName("DWORD")] uint dwFlags)
         {
             return ((delegate* unmanaged<ISecureUrlHost*, BOOL*, ushort*, uint, int>)(lpVtbl[3]))((ISecureUrlHost*)Unsafe.AsPointer(ref this), pfAllow, pchUrlInQuestion, dwFlags);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT ValidateSecureUrl(BOOL* pfAllow, [NativeTypeName("OLECHAR *")] ushort* pchUrlInQuestion, [NativeTypeName("DWORD")] uint dwFlags);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISecureUrlHost*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ISecureUrlHost*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ISecureUrlHost*, uint> Release;
+
+            [NativeTypeName("HRESULT (BOOL *, OLECHAR *, DWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISecureUrlHost*, BOOL*, ushort*, uint, int> ValidateSecureUrl;
         }
     }
 }

@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("5EE44DA4-6D32-46E3-86BC-07540DEDD0E0")]
     [NativeTypeName("struct IURLSearchHook2 : IURLSearchHook")]
     [NativeInheritance("IURLSearchHook")]
-    public unsafe partial struct IURLSearchHook2
+    public unsafe partial struct IURLSearchHook2 : IURLSearchHook2.Interface
     {
         public void** lpVtbl;
 
@@ -51,6 +51,30 @@ namespace TerraFX.Interop
         public HRESULT TranslateWithSearchContext([NativeTypeName("PWSTR")] ushort* pwszSearchURL, [NativeTypeName("DWORD")] uint cchBufferSize, ISearchContext* pSearchContext)
         {
             return ((delegate* unmanaged<IURLSearchHook2*, ushort*, uint, ISearchContext*, int>)(lpVtbl[4]))((IURLSearchHook2*)Unsafe.AsPointer(ref this), pwszSearchURL, cchBufferSize, pSearchContext);
+        }
+
+        public interface Interface : IURLSearchHook.Interface
+        {
+            [VtblIndex(4)]
+            HRESULT TranslateWithSearchContext([NativeTypeName("PWSTR")] ushort* pwszSearchURL, [NativeTypeName("DWORD")] uint cchBufferSize, ISearchContext* pSearchContext);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IURLSearchHook2*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IURLSearchHook2*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IURLSearchHook2*, uint> Release;
+
+            [NativeTypeName("HRESULT (PWSTR, DWORD) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IURLSearchHook2*, ushort*, uint, int> Translate;
+
+            [NativeTypeName("HRESULT (PWSTR, DWORD, ISearchContext *) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IURLSearchHook2*, ushort*, uint, ISearchContext*, int> TranslateWithSearchContext;
         }
     }
 }

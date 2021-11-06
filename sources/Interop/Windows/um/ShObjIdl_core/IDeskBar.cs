@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("EB0FE173-1A3A-11D0-89B3-00A0C90A90AC")]
     [NativeTypeName("struct IDeskBar : IOleWindow")]
     [NativeInheritance("IOleWindow")]
-    public unsafe partial struct IDeskBar
+    public unsafe partial struct IDeskBar : IDeskBar.Interface
     {
         public void** lpVtbl;
 
@@ -72,6 +72,45 @@ namespace TerraFX.Interop
         public HRESULT OnPosRectChangeDB(RECT* prc)
         {
             return ((delegate* unmanaged<IDeskBar*, RECT*, int>)(lpVtbl[7]))((IDeskBar*)Unsafe.AsPointer(ref this), prc);
+        }
+
+        public interface Interface : IOleWindow.Interface
+        {
+            [VtblIndex(5)]
+            HRESULT SetClient(IUnknown* punkClient);
+
+            [VtblIndex(6)]
+            HRESULT GetClient(IUnknown** ppunkClient);
+
+            [VtblIndex(7)]
+            HRESULT OnPosRectChangeDB(RECT* prc);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDeskBar*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDeskBar*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDeskBar*, uint> Release;
+
+            [NativeTypeName("HRESULT (HWND *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDeskBar*, HWND*, int> GetWindow;
+
+            [NativeTypeName("HRESULT (BOOL) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDeskBar*, BOOL, int> ContextSensitiveHelp;
+
+            [NativeTypeName("HRESULT (IUnknown *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDeskBar*, IUnknown*, int> SetClient;
+
+            [NativeTypeName("HRESULT (IUnknown **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDeskBar*, IUnknown**, int> GetClient;
+
+            [NativeTypeName("HRESULT (RECT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDeskBar*, RECT*, int> OnPosRectChangeDB;
         }
     }
 }

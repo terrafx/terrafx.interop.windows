@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("CFCC809F-295D-42E8-9FFC-424B33C487E6")]
     [NativeTypeName("struct IHWEventHandler2 : IHWEventHandler")]
     [NativeInheritance("IHWEventHandler")]
-    public unsafe partial struct IHWEventHandler2
+    public unsafe partial struct IHWEventHandler2 : IHWEventHandler2.Interface
     {
         public void** lpVtbl;
 
@@ -65,6 +65,36 @@ namespace TerraFX.Interop
         public HRESULT HandleEventWithHWND([NativeTypeName("LPCWSTR")] ushort* pszDeviceID, [NativeTypeName("LPCWSTR")] ushort* pszAltDeviceID, [NativeTypeName("LPCWSTR")] ushort* pszEventType, HWND hwndOwner)
         {
             return ((delegate* unmanaged<IHWEventHandler2*, ushort*, ushort*, ushort*, HWND, int>)(lpVtbl[6]))((IHWEventHandler2*)Unsafe.AsPointer(ref this), pszDeviceID, pszAltDeviceID, pszEventType, hwndOwner);
+        }
+
+        public interface Interface : IHWEventHandler.Interface
+        {
+            [VtblIndex(6)]
+            HRESULT HandleEventWithHWND([NativeTypeName("LPCWSTR")] ushort* pszDeviceID, [NativeTypeName("LPCWSTR")] ushort* pszAltDeviceID, [NativeTypeName("LPCWSTR")] ushort* pszEventType, HWND hwndOwner);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHWEventHandler2*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IHWEventHandler2*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IHWEventHandler2*, uint> Release;
+
+            [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHWEventHandler2*, ushort*, int> Initialize;
+
+            [NativeTypeName("HRESULT (LPCWSTR, LPCWSTR, LPCWSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHWEventHandler2*, ushort*, ushort*, ushort*, int> HandleEvent;
+
+            [NativeTypeName("HRESULT (LPCWSTR, LPCWSTR, LPCWSTR, LPCWSTR, IDataObject *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHWEventHandler2*, ushort*, ushort*, ushort*, ushort*, IDataObject*, int> HandleEventWithContent;
+
+            [NativeTypeName("HRESULT (LPCWSTR, LPCWSTR, LPCWSTR, HWND) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHWEventHandler2*, ushort*, ushort*, ushort*, HWND, int> HandleEventWithHWND;
         }
     }
 }

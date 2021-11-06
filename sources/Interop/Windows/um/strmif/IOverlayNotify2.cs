@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("680EFA10-D535-11D1-87C8-00A0C9223196")]
     [NativeTypeName("struct IOverlayNotify2 : IOverlayNotify")]
     [NativeInheritance("IOverlayNotify")]
-    public unsafe partial struct IOverlayNotify2
+    public unsafe partial struct IOverlayNotify2 : IOverlayNotify2.Interface
     {
         public void** lpVtbl;
 
@@ -72,6 +72,39 @@ namespace TerraFX.Interop
         public HRESULT OnDisplayChange(HMONITOR hMonitor)
         {
             return ((delegate* unmanaged<IOverlayNotify2*, HMONITOR, int>)(lpVtbl[7]))((IOverlayNotify2*)Unsafe.AsPointer(ref this), hMonitor);
+        }
+
+        public interface Interface : IOverlayNotify.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT OnDisplayChange(HMONITOR hMonitor);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IOverlayNotify2*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IOverlayNotify2*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IOverlayNotify2*, uint> Release;
+
+            [NativeTypeName("HRESULT (DWORD, const PALETTEENTRY *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IOverlayNotify2*, uint, PALETTEENTRY*, int> OnPaletteChange;
+
+            [NativeTypeName("HRESULT (const RECT *, const RECT *, const RGNDATA *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IOverlayNotify2*, RECT*, RECT*, RGNDATA*, int> OnClipChange;
+
+            [NativeTypeName("HRESULT (const COLORKEY *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IOverlayNotify2*, COLORKEY*, int> OnColorKeyChange;
+
+            [NativeTypeName("HRESULT (const RECT *, const RECT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IOverlayNotify2*, RECT*, RECT*, int> OnPositionChange;
+
+            [NativeTypeName("HRESULT (HMONITOR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IOverlayNotify2*, HMONITOR, int> OnDisplayChange;
         }
     }
 }

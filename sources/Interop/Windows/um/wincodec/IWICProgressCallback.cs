@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("4776F9CD-9517-45FA-BF24-E89C5EC5C60C")]
     [NativeTypeName("struct IWICProgressCallback : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IWICProgressCallback
+    public unsafe partial struct IWICProgressCallback : IWICProgressCallback.Interface
     {
         public void** lpVtbl;
 
@@ -44,6 +44,27 @@ namespace TerraFX.Interop
         public HRESULT Notify([NativeTypeName("ULONG")] uint uFrameNum, WICProgressOperation operation, double dblProgress)
         {
             return ((delegate* unmanaged<IWICProgressCallback*, uint, WICProgressOperation, double, int>)(lpVtbl[3]))((IWICProgressCallback*)Unsafe.AsPointer(ref this), uFrameNum, operation, dblProgress);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT Notify([NativeTypeName("ULONG")] uint uFrameNum, WICProgressOperation operation, double dblProgress);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWICProgressCallback*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IWICProgressCallback*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IWICProgressCallback*, uint> Release;
+
+            [NativeTypeName("HRESULT (ULONG, WICProgressOperation, double) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWICProgressCallback*, uint, WICProgressOperation, double, int> Notify;
         }
     }
 }

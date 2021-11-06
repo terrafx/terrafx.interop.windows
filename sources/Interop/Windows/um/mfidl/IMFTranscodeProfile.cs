@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("4ADFDBA3-7AB0-4953-A62B-461E7FF3DA1E")]
     [NativeTypeName("struct IMFTranscodeProfile : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IMFTranscodeProfile
+    public unsafe partial struct IMFTranscodeProfile : IMFTranscodeProfile.Interface
     {
         public void** lpVtbl;
 
@@ -79,6 +79,57 @@ namespace TerraFX.Interop
         public HRESULT GetContainerAttributes(IMFAttributes** ppAttrs)
         {
             return ((delegate* unmanaged<IMFTranscodeProfile*, IMFAttributes**, int>)(lpVtbl[8]))((IMFTranscodeProfile*)Unsafe.AsPointer(ref this), ppAttrs);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT SetAudioAttributes(IMFAttributes* pAttrs);
+
+            [VtblIndex(4)]
+            HRESULT GetAudioAttributes(IMFAttributes** ppAttrs);
+
+            [VtblIndex(5)]
+            HRESULT SetVideoAttributes(IMFAttributes* pAttrs);
+
+            [VtblIndex(6)]
+            HRESULT GetVideoAttributes(IMFAttributes** ppAttrs);
+
+            [VtblIndex(7)]
+            HRESULT SetContainerAttributes(IMFAttributes* pAttrs);
+
+            [VtblIndex(8)]
+            HRESULT GetContainerAttributes(IMFAttributes** ppAttrs);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFTranscodeProfile*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFTranscodeProfile*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFTranscodeProfile*, uint> Release;
+
+            [NativeTypeName("HRESULT (IMFAttributes *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFTranscodeProfile*, IMFAttributes*, int> SetAudioAttributes;
+
+            [NativeTypeName("HRESULT (IMFAttributes **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFTranscodeProfile*, IMFAttributes**, int> GetAudioAttributes;
+
+            [NativeTypeName("HRESULT (IMFAttributes *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFTranscodeProfile*, IMFAttributes*, int> SetVideoAttributes;
+
+            [NativeTypeName("HRESULT (IMFAttributes **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFTranscodeProfile*, IMFAttributes**, int> GetVideoAttributes;
+
+            [NativeTypeName("HRESULT (IMFAttributes *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFTranscodeProfile*, IMFAttributes*, int> SetContainerAttributes;
+
+            [NativeTypeName("HRESULT (IMFAttributes **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFTranscodeProfile*, IMFAttributes**, int> GetContainerAttributes;
         }
     }
 }

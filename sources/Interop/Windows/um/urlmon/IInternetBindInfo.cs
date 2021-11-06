@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("79EAC9E1-BAF9-11CE-8C82-00AA004BA90B")]
     [NativeTypeName("struct IInternetBindInfo : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IInternetBindInfo
+    public unsafe partial struct IInternetBindInfo : IInternetBindInfo.Interface
     {
         public void** lpVtbl;
 
@@ -51,6 +51,33 @@ namespace TerraFX.Interop
         public HRESULT GetBindString([NativeTypeName("ULONG")] uint ulStringType, [NativeTypeName("LPOLESTR *")] ushort** ppwzStr, [NativeTypeName("ULONG")] uint cEl, [NativeTypeName("ULONG *")] uint* pcElFetched)
         {
             return ((delegate* unmanaged<IInternetBindInfo*, uint, ushort**, uint, uint*, int>)(lpVtbl[4]))((IInternetBindInfo*)Unsafe.AsPointer(ref this), ulStringType, ppwzStr, cEl, pcElFetched);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetBindInfo([NativeTypeName("DWORD *")] uint* grfBINDF, BINDINFO* pbindinfo);
+
+            [VtblIndex(4)]
+            HRESULT GetBindString([NativeTypeName("ULONG")] uint ulStringType, [NativeTypeName("LPOLESTR *")] ushort** ppwzStr, [NativeTypeName("ULONG")] uint cEl, [NativeTypeName("ULONG *")] uint* pcElFetched);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IInternetBindInfo*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IInternetBindInfo*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IInternetBindInfo*, uint> Release;
+
+            [NativeTypeName("HRESULT (DWORD *, BINDINFO *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IInternetBindInfo*, uint*, BINDINFO*, int> GetBindInfo;
+
+            [NativeTypeName("HRESULT (ULONG, LPOLESTR *, ULONG, ULONG *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IInternetBindInfo*, uint, ushort**, uint, uint*, int> GetBindString;
         }
     }
 }

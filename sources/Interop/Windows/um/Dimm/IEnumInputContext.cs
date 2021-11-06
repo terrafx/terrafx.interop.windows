@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("09B5EAB0-F997-11D1-93D4-0060B067B86E")]
     [NativeTypeName("struct IEnumInputContext : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IEnumInputContext
+    public unsafe partial struct IEnumInputContext : IEnumInputContext.Interface
     {
         public void** lpVtbl;
 
@@ -65,6 +65,45 @@ namespace TerraFX.Interop
         public HRESULT Skip([NativeTypeName("ULONG")] uint ulCount)
         {
             return ((delegate* unmanaged<IEnumInputContext*, uint, int>)(lpVtbl[6]))((IEnumInputContext*)Unsafe.AsPointer(ref this), ulCount);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT Clone(IEnumInputContext** ppEnum);
+
+            [VtblIndex(4)]
+            HRESULT Next([NativeTypeName("ULONG")] uint ulCount, HIMC* rgInputContext, [NativeTypeName("ULONG *")] uint* pcFetched);
+
+            [VtblIndex(5)]
+            HRESULT Reset();
+
+            [VtblIndex(6)]
+            HRESULT Skip([NativeTypeName("ULONG")] uint ulCount);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IEnumInputContext*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IEnumInputContext*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IEnumInputContext*, uint> Release;
+
+            [NativeTypeName("HRESULT (IEnumInputContext **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IEnumInputContext*, IEnumInputContext**, int> Clone;
+
+            [NativeTypeName("HRESULT (ULONG, HIMC *, ULONG *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IEnumInputContext*, uint, HIMC*, uint*, int> Next;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IEnumInputContext*, int> Reset;
+
+            [NativeTypeName("HRESULT (ULONG) __attribute__((stdcall))")]
+            public delegate* unmanaged<IEnumInputContext*, uint, int> Skip;
         }
     }
 }

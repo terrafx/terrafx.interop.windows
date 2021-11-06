@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("EA1EA135-19DF-11D7-A6D2-00065B84435C")]
     [NativeTypeName("struct ITfUIElementMgr : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct ITfUIElementMgr
+    public unsafe partial struct ITfUIElementMgr : ITfUIElementMgr.Interface
     {
         public void** lpVtbl;
 
@@ -72,6 +72,51 @@ namespace TerraFX.Interop
         public HRESULT EnumUIElements(IEnumTfUIElements** ppEnum)
         {
             return ((delegate* unmanaged<ITfUIElementMgr*, IEnumTfUIElements**, int>)(lpVtbl[7]))((ITfUIElementMgr*)Unsafe.AsPointer(ref this), ppEnum);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT BeginUIElement(ITfUIElement* pElement, BOOL* pbShow, [NativeTypeName("DWORD *")] uint* pdwUIElementId);
+
+            [VtblIndex(4)]
+            HRESULT UpdateUIElement([NativeTypeName("DWORD")] uint dwUIElementId);
+
+            [VtblIndex(5)]
+            HRESULT EndUIElement([NativeTypeName("DWORD")] uint dwUIElementId);
+
+            [VtblIndex(6)]
+            HRESULT GetUIElement([NativeTypeName("DWORD")] uint dwUIELementId, ITfUIElement** ppElement);
+
+            [VtblIndex(7)]
+            HRESULT EnumUIElements(IEnumTfUIElements** ppEnum);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfUIElementMgr*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfUIElementMgr*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfUIElementMgr*, uint> Release;
+
+            [NativeTypeName("HRESULT (ITfUIElement *, BOOL *, DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfUIElementMgr*, ITfUIElement*, BOOL*, uint*, int> BeginUIElement;
+
+            [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfUIElementMgr*, uint, int> UpdateUIElement;
+
+            [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfUIElementMgr*, uint, int> EndUIElement;
+
+            [NativeTypeName("HRESULT (DWORD, ITfUIElement **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfUIElementMgr*, uint, ITfUIElement**, int> GetUIElement;
+
+            [NativeTypeName("HRESULT (IEnumTfUIElements **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfUIElementMgr*, IEnumTfUIElements**, int> EnumUIElements;
         }
     }
 }

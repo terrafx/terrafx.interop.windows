@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("7C5F86DA-C7A1-4F05-B8E1-55A179FE5A35")]
     [NativeTypeName("struct IDWriteColorGlyphRunEnumerator1 : IDWriteColorGlyphRunEnumerator")]
     [NativeInheritance("IDWriteColorGlyphRunEnumerator")]
-    public unsafe partial struct IDWriteColorGlyphRunEnumerator1
+    public unsafe partial struct IDWriteColorGlyphRunEnumerator1 : IDWriteColorGlyphRunEnumerator1.Interface
     {
         public void** lpVtbl;
 
@@ -58,6 +58,33 @@ namespace TerraFX.Interop
         public HRESULT GetCurrentRun([NativeTypeName("const DWRITE_COLOR_GLYPH_RUN1 **")] DWRITE_COLOR_GLYPH_RUN1** colorGlyphRun)
         {
             return ((delegate* unmanaged<IDWriteColorGlyphRunEnumerator1*, DWRITE_COLOR_GLYPH_RUN1**, int>)(lpVtbl[5]))((IDWriteColorGlyphRunEnumerator1*)Unsafe.AsPointer(ref this), colorGlyphRun);
+        }
+
+        public interface Interface : IDWriteColorGlyphRunEnumerator.Interface
+        {
+            [VtblIndex(5)]
+            HRESULT GetCurrentRun([NativeTypeName("const DWRITE_COLOR_GLYPH_RUN1 **")] DWRITE_COLOR_GLYPH_RUN1** colorGlyphRun);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDWriteColorGlyphRunEnumerator1*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDWriteColorGlyphRunEnumerator1*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDWriteColorGlyphRunEnumerator1*, uint> Release;
+
+            [NativeTypeName("HRESULT (BOOL *) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDWriteColorGlyphRunEnumerator1*, BOOL*, int> MoveNext;
+
+            [NativeTypeName("HRESULT (const DWRITE_COLOR_GLYPH_RUN **) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDWriteColorGlyphRunEnumerator1*, DWRITE_COLOR_GLYPH_RUN**, int> GetCurrentRun;
+
+            [NativeTypeName("HRESULT (const DWRITE_COLOR_GLYPH_RUN1 **) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDWriteColorGlyphRunEnumerator1*, DWRITE_COLOR_GLYPH_RUN1**, int> GetCurrentRun1;
         }
     }
 }

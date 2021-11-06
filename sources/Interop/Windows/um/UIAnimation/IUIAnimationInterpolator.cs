@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("7815CBBA-DDF7-478C-A46C-7B6C738B7978")]
     [NativeTypeName("struct IUIAnimationInterpolator : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IUIAnimationInterpolator
+    public unsafe partial struct IUIAnimationInterpolator : IUIAnimationInterpolator.Interface
     {
         public void** lpVtbl;
 
@@ -86,6 +86,63 @@ namespace TerraFX.Interop
         public HRESULT GetDependencies(UI_ANIMATION_DEPENDENCIES* initialValueDependencies, UI_ANIMATION_DEPENDENCIES* initialVelocityDependencies, UI_ANIMATION_DEPENDENCIES* durationDependencies)
         {
             return ((delegate* unmanaged<IUIAnimationInterpolator*, UI_ANIMATION_DEPENDENCIES*, UI_ANIMATION_DEPENDENCIES*, UI_ANIMATION_DEPENDENCIES*, int>)(lpVtbl[9]))((IUIAnimationInterpolator*)Unsafe.AsPointer(ref this), initialValueDependencies, initialVelocityDependencies, durationDependencies);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT SetInitialValueAndVelocity(double initialValue, double initialVelocity);
+
+            [VtblIndex(4)]
+            HRESULT SetDuration([NativeTypeName("UI_ANIMATION_SECONDS")] double duration);
+
+            [VtblIndex(5)]
+            HRESULT GetDuration([NativeTypeName("UI_ANIMATION_SECONDS *")] double* duration);
+
+            [VtblIndex(6)]
+            HRESULT GetFinalValue(double* value);
+
+            [VtblIndex(7)]
+            HRESULT InterpolateValue([NativeTypeName("UI_ANIMATION_SECONDS")] double offset, double* value);
+
+            [VtblIndex(8)]
+            HRESULT InterpolateVelocity([NativeTypeName("UI_ANIMATION_SECONDS")] double offset, double* velocity);
+
+            [VtblIndex(9)]
+            HRESULT GetDependencies(UI_ANIMATION_DEPENDENCIES* initialValueDependencies, UI_ANIMATION_DEPENDENCIES* initialVelocityDependencies, UI_ANIMATION_DEPENDENCIES* durationDependencies);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IUIAnimationInterpolator*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IUIAnimationInterpolator*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IUIAnimationInterpolator*, uint> Release;
+
+            [NativeTypeName("HRESULT (DOUBLE, DOUBLE) __attribute__((stdcall))")]
+            public delegate* unmanaged<IUIAnimationInterpolator*, double, double, int> SetInitialValueAndVelocity;
+
+            [NativeTypeName("HRESULT (UI_ANIMATION_SECONDS) __attribute__((stdcall))")]
+            public delegate* unmanaged<IUIAnimationInterpolator*, double, int> SetDuration;
+
+            [NativeTypeName("HRESULT (UI_ANIMATION_SECONDS *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IUIAnimationInterpolator*, double*, int> GetDuration;
+
+            [NativeTypeName("HRESULT (DOUBLE *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IUIAnimationInterpolator*, double*, int> GetFinalValue;
+
+            [NativeTypeName("HRESULT (UI_ANIMATION_SECONDS, DOUBLE *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IUIAnimationInterpolator*, double, double*, int> InterpolateValue;
+
+            [NativeTypeName("HRESULT (UI_ANIMATION_SECONDS, DOUBLE *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IUIAnimationInterpolator*, double, double*, int> InterpolateVelocity;
+
+            [NativeTypeName("HRESULT (UI_ANIMATION_DEPENDENCIES *, UI_ANIMATION_DEPENDENCIES *, UI_ANIMATION_DEPENDENCIES *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IUIAnimationInterpolator*, UI_ANIMATION_DEPENDENCIES*, UI_ANIMATION_DEPENDENCIES*, UI_ANIMATION_DEPENDENCIES*, int> GetDependencies;
         }
     }
 }

@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("DF45AEEA-B74A-4B6B-AFAD-2366B6AA012E")]
     [NativeTypeName("struct IAudioMute : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IAudioMute
+    public unsafe partial struct IAudioMute : IAudioMute.Interface
     {
         public void** lpVtbl;
 
@@ -51,6 +51,33 @@ namespace TerraFX.Interop
         public HRESULT GetMute(BOOL* pbMuted)
         {
             return ((delegate* unmanaged<IAudioMute*, BOOL*, int>)(lpVtbl[4]))((IAudioMute*)Unsafe.AsPointer(ref this), pbMuted);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT SetMute(BOOL bMuted, [NativeTypeName("LPCGUID")] Guid* pguidEventContext);
+
+            [VtblIndex(4)]
+            HRESULT GetMute(BOOL* pbMuted);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAudioMute*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IAudioMute*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IAudioMute*, uint> Release;
+
+            [NativeTypeName("HRESULT (BOOL, LPCGUID) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAudioMute*, BOOL, Guid*, int> SetMute;
+
+            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAudioMute*, BOOL*, int> GetMute;
         }
     }
 }

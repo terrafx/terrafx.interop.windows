@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("36F846FC-2256-48B6-B58E-E2B638316581")]
     [NativeTypeName("struct IMFMediaEventQueue : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IMFMediaEventQueue
+    public unsafe partial struct IMFMediaEventQueue : IMFMediaEventQueue.Interface
     {
         public void** lpVtbl;
 
@@ -86,6 +86,63 @@ namespace TerraFX.Interop
         public HRESULT Shutdown()
         {
             return ((delegate* unmanaged<IMFMediaEventQueue*, int>)(lpVtbl[9]))((IMFMediaEventQueue*)Unsafe.AsPointer(ref this));
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetEvent([NativeTypeName("DWORD")] uint dwFlags, IMFMediaEvent** ppEvent);
+
+            [VtblIndex(4)]
+            HRESULT BeginGetEvent(IMFAsyncCallback* pCallback, IUnknown* punkState);
+
+            [VtblIndex(5)]
+            HRESULT EndGetEvent(IMFAsyncResult* pResult, IMFMediaEvent** ppEvent);
+
+            [VtblIndex(6)]
+            HRESULT QueueEvent(IMFMediaEvent* pEvent);
+
+            [VtblIndex(7)]
+            HRESULT QueueEventParamVar([NativeTypeName("MediaEventType")] uint met, [NativeTypeName("const GUID &")] Guid* guidExtendedType, HRESULT hrStatus, [NativeTypeName("const PROPVARIANT *")] PROPVARIANT* pvValue);
+
+            [VtblIndex(8)]
+            HRESULT QueueEventParamUnk([NativeTypeName("MediaEventType")] uint met, [NativeTypeName("const GUID &")] Guid* guidExtendedType, HRESULT hrStatus, IUnknown* pUnk);
+
+            [VtblIndex(9)]
+            HRESULT Shutdown();
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFMediaEventQueue*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFMediaEventQueue*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFMediaEventQueue*, uint> Release;
+
+            [NativeTypeName("HRESULT (DWORD, IMFMediaEvent **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFMediaEventQueue*, uint, IMFMediaEvent**, int> GetEvent;
+
+            [NativeTypeName("HRESULT (IMFAsyncCallback *, IUnknown *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFMediaEventQueue*, IMFAsyncCallback*, IUnknown*, int> BeginGetEvent;
+
+            [NativeTypeName("HRESULT (IMFAsyncResult *, IMFMediaEvent **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFMediaEventQueue*, IMFAsyncResult*, IMFMediaEvent**, int> EndGetEvent;
+
+            [NativeTypeName("HRESULT (IMFMediaEvent *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFMediaEventQueue*, IMFMediaEvent*, int> QueueEvent;
+
+            [NativeTypeName("HRESULT (MediaEventType, const GUID &, HRESULT, const PROPVARIANT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFMediaEventQueue*, uint, Guid*, HRESULT, PROPVARIANT*, int> QueueEventParamVar;
+
+            [NativeTypeName("HRESULT (MediaEventType, const GUID &, HRESULT, IUnknown *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFMediaEventQueue*, uint, Guid*, HRESULT, IUnknown*, int> QueueEventParamUnk;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFMediaEventQueue*, int> Shutdown;
         }
     }
 }

@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("EB0FE172-1A3A-11D0-89B3-00A0C90A90AC")]
     [NativeTypeName("struct IDeskBand : IDockingWindow")]
     [NativeInheritance("IDockingWindow")]
-    public unsafe partial struct IDeskBand
+    public unsafe partial struct IDeskBand : IDeskBand.Interface
     {
         public void** lpVtbl;
 
@@ -79,6 +79,42 @@ namespace TerraFX.Interop
         public HRESULT GetBandInfo([NativeTypeName("DWORD")] uint dwBandID, [NativeTypeName("DWORD")] uint dwViewMode, DESKBANDINFO* pdbi)
         {
             return ((delegate* unmanaged<IDeskBand*, uint, uint, DESKBANDINFO*, int>)(lpVtbl[8]))((IDeskBand*)Unsafe.AsPointer(ref this), dwBandID, dwViewMode, pdbi);
+        }
+
+        public interface Interface : IDockingWindow.Interface
+        {
+            [VtblIndex(8)]
+            HRESULT GetBandInfo([NativeTypeName("DWORD")] uint dwBandID, [NativeTypeName("DWORD")] uint dwViewMode, DESKBANDINFO* pdbi);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDeskBand*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDeskBand*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDeskBand*, uint> Release;
+
+            [NativeTypeName("HRESULT (HWND *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDeskBand*, HWND*, int> GetWindow;
+
+            [NativeTypeName("HRESULT (BOOL) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDeskBand*, BOOL, int> ContextSensitiveHelp;
+
+            [NativeTypeName("HRESULT (BOOL) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDeskBand*, BOOL, int> ShowDW;
+
+            [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDeskBand*, uint, int> CloseDW;
+
+            [NativeTypeName("HRESULT (LPCRECT, IUnknown *, BOOL) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDeskBand*, RECT*, IUnknown*, BOOL, int> ResizeBorderDW;
+
+            [NativeTypeName("HRESULT (DWORD, DWORD, DESKBANDINFO *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDeskBand*, uint, uint, DESKBANDINFO*, int> GetBandInfo;
         }
     }
 }

@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("2463FBF0-B0AF-11D2-AFC5-00105A2799B5")]
     [NativeTypeName("struct ITfCreatePropertyStore : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct ITfCreatePropertyStore
+    public unsafe partial struct ITfCreatePropertyStore : ITfCreatePropertyStore.Interface
     {
         public void** lpVtbl;
 
@@ -51,6 +51,33 @@ namespace TerraFX.Interop
         public HRESULT CreatePropertyStore([NativeTypeName("const GUID &")] Guid* guidProp, ITfRange* pRange, [NativeTypeName("ULONG")] uint cb, IStream* pStream, ITfPropertyStore** ppStore)
         {
             return ((delegate* unmanaged<ITfCreatePropertyStore*, Guid*, ITfRange*, uint, IStream*, ITfPropertyStore**, int>)(lpVtbl[4]))((ITfCreatePropertyStore*)Unsafe.AsPointer(ref this), guidProp, pRange, cb, pStream, ppStore);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT IsStoreSerializable([NativeTypeName("const GUID &")] Guid* guidProp, ITfRange* pRange, ITfPropertyStore* pPropStore, BOOL* pfSerializable);
+
+            [VtblIndex(4)]
+            HRESULT CreatePropertyStore([NativeTypeName("const GUID &")] Guid* guidProp, ITfRange* pRange, [NativeTypeName("ULONG")] uint cb, IStream* pStream, ITfPropertyStore** ppStore);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfCreatePropertyStore*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfCreatePropertyStore*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfCreatePropertyStore*, uint> Release;
+
+            [NativeTypeName("HRESULT (const GUID &, ITfRange *, ITfPropertyStore *, BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfCreatePropertyStore*, Guid*, ITfRange*, ITfPropertyStore*, BOOL*, int> IsStoreSerializable;
+
+            [NativeTypeName("HRESULT (const GUID &, ITfRange *, ULONG, IStream *, ITfPropertyStore **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfCreatePropertyStore*, Guid*, ITfRange*, uint, IStream*, ITfPropertyStore**, int> CreatePropertyStore;
         }
     }
 }

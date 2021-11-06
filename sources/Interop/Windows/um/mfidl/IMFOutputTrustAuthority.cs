@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("D19F8E94-B126-4446-890C-5DCB7AD71453")]
     [NativeTypeName("struct IMFOutputTrustAuthority : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IMFOutputTrustAuthority
+    public unsafe partial struct IMFOutputTrustAuthority : IMFOutputTrustAuthority.Interface
     {
         public void** lpVtbl;
 
@@ -51,6 +51,33 @@ namespace TerraFX.Interop
         public HRESULT SetPolicy(IMFOutputPolicy** ppPolicy, [NativeTypeName("DWORD")] uint nPolicy, byte** ppbTicket, [NativeTypeName("DWORD *")] uint* pcbTicket)
         {
             return ((delegate* unmanaged<IMFOutputTrustAuthority*, IMFOutputPolicy**, uint, byte**, uint*, int>)(lpVtbl[4]))((IMFOutputTrustAuthority*)Unsafe.AsPointer(ref this), ppPolicy, nPolicy, ppbTicket, pcbTicket);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetAction(MFPOLICYMANAGER_ACTION* pAction);
+
+            [VtblIndex(4)]
+            HRESULT SetPolicy(IMFOutputPolicy** ppPolicy, [NativeTypeName("DWORD")] uint nPolicy, byte** ppbTicket, [NativeTypeName("DWORD *")] uint* pcbTicket);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFOutputTrustAuthority*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFOutputTrustAuthority*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFOutputTrustAuthority*, uint> Release;
+
+            [NativeTypeName("HRESULT (MFPOLICYMANAGER_ACTION *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFOutputTrustAuthority*, MFPOLICYMANAGER_ACTION*, int> GetAction;
+
+            [NativeTypeName("HRESULT (IMFOutputPolicy **, DWORD, BYTE **, DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFOutputTrustAuthority*, IMFOutputPolicy**, uint, byte**, uint*, int> SetPolicy;
         }
     }
 }

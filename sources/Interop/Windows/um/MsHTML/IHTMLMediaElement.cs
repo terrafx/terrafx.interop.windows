@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("30510706-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct IHTMLMediaElement : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct IHTMLMediaElement
+    public unsafe partial struct IHTMLMediaElement : IHTMLMediaElement.Interface
     {
         public void** lpVtbl;
 
@@ -324,6 +324,255 @@ namespace TerraFX.Interop
         public HRESULT get_autobuffer([NativeTypeName("VARIANT_BOOL *")] short* p)
         {
             return ((delegate* unmanaged<IHTMLMediaElement*, short*, int>)(lpVtbl[43]))((IHTMLMediaElement*)Unsafe.AsPointer(ref this), p);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT get_error(IHTMLMediaError** p);
+
+            [VtblIndex(8)]
+            HRESULT put_src([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(9)]
+            HRESULT get_src([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(10)]
+            HRESULT get_currentSrc([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(11)]
+            HRESULT get_networkState(ushort* p);
+
+            [VtblIndex(12)]
+            HRESULT put_preload([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(13)]
+            HRESULT get_preload([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(14)]
+            HRESULT get_buffered(IHTMLTimeRanges** p);
+
+            [VtblIndex(15)]
+            HRESULT load();
+
+            [VtblIndex(16)]
+            HRESULT canPlayType([NativeTypeName("BSTR")] ushort* type, [NativeTypeName("BSTR *")] ushort** canPlay);
+
+            [VtblIndex(17)]
+            HRESULT get_seeking([NativeTypeName("VARIANT_BOOL *")] short* p);
+
+            [VtblIndex(18)]
+            HRESULT put_currentTime(float v);
+
+            [VtblIndex(19)]
+            HRESULT get_currentTime(float* p);
+
+            [VtblIndex(20)]
+            HRESULT get_initialTime(float* p);
+
+            [VtblIndex(21)]
+            HRESULT get_duration(float* p);
+
+            [VtblIndex(22)]
+            HRESULT get_paused([NativeTypeName("VARIANT_BOOL *")] short* p);
+
+            [VtblIndex(23)]
+            HRESULT put_defaultPlaybackRate(float v);
+
+            [VtblIndex(24)]
+            HRESULT get_defaultPlaybackRate(float* p);
+
+            [VtblIndex(25)]
+            HRESULT put_playbackRate(float v);
+
+            [VtblIndex(26)]
+            HRESULT get_playbackRate(float* p);
+
+            [VtblIndex(27)]
+            HRESULT get_played(IHTMLTimeRanges** p);
+
+            [VtblIndex(28)]
+            HRESULT get_seekable(IHTMLTimeRanges** p);
+
+            [VtblIndex(29)]
+            HRESULT get_ended([NativeTypeName("VARIANT_BOOL *")] short* p);
+
+            [VtblIndex(30)]
+            HRESULT put_autoplay([NativeTypeName("VARIANT_BOOL")] short v);
+
+            [VtblIndex(31)]
+            HRESULT get_autoplay([NativeTypeName("VARIANT_BOOL *")] short* p);
+
+            [VtblIndex(32)]
+            HRESULT put_loop([NativeTypeName("VARIANT_BOOL")] short v);
+
+            [VtblIndex(33)]
+            HRESULT get_loop([NativeTypeName("VARIANT_BOOL *")] short* p);
+
+            [VtblIndex(34)]
+            HRESULT play();
+
+            [VtblIndex(35)]
+            HRESULT pause();
+
+            [VtblIndex(36)]
+            HRESULT put_controls([NativeTypeName("VARIANT_BOOL")] short v);
+
+            [VtblIndex(37)]
+            HRESULT get_controls([NativeTypeName("VARIANT_BOOL *")] short* p);
+
+            [VtblIndex(38)]
+            HRESULT put_volume(float v);
+
+            [VtblIndex(39)]
+            HRESULT get_volume(float* p);
+
+            [VtblIndex(40)]
+            HRESULT put_muted([NativeTypeName("VARIANT_BOOL")] short v);
+
+            [VtblIndex(41)]
+            HRESULT get_muted([NativeTypeName("VARIANT_BOOL *")] short* p);
+
+            [VtblIndex(42)]
+            HRESULT put_autobuffer([NativeTypeName("VARIANT_BOOL")] short v);
+
+            [VtblIndex(43)]
+            HRESULT get_autobuffer([NativeTypeName("VARIANT_BOOL *")] short* p);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLMediaElement*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLMediaElement*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLMediaElement*, uint> Release;
+
+            [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLMediaElement*, uint*, int> GetTypeInfoCount;
+
+            [NativeTypeName("HRESULT (UINT, LCID, ITypeInfo **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLMediaElement*, uint, uint, ITypeInfo**, int> GetTypeInfo;
+
+            [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLMediaElement*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+
+            [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLMediaElement*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
+
+            [NativeTypeName("HRESULT (IHTMLMediaError **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLMediaElement*, IHTMLMediaError**, int> get_error;
+
+            [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLMediaElement*, ushort*, int> put_src;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLMediaElement*, ushort**, int> get_src;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLMediaElement*, ushort**, int> get_currentSrc;
+
+            [NativeTypeName("HRESULT (USHORT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLMediaElement*, ushort*, int> get_networkState;
+
+            [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLMediaElement*, ushort*, int> put_preload;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLMediaElement*, ushort**, int> get_preload;
+
+            [NativeTypeName("HRESULT (IHTMLTimeRanges **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLMediaElement*, IHTMLTimeRanges**, int> get_buffered;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLMediaElement*, int> load;
+
+            [NativeTypeName("HRESULT (BSTR, BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLMediaElement*, ushort*, ushort**, int> canPlayType;
+
+            [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLMediaElement*, short*, int> get_seeking;
+
+            [NativeTypeName("HRESULT (float) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLMediaElement*, float, int> put_currentTime;
+
+            [NativeTypeName("HRESULT (float *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLMediaElement*, float*, int> get_currentTime;
+
+            [NativeTypeName("HRESULT (float *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLMediaElement*, float*, int> get_initialTime;
+
+            [NativeTypeName("HRESULT (float *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLMediaElement*, float*, int> get_duration;
+
+            [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLMediaElement*, short*, int> get_paused;
+
+            [NativeTypeName("HRESULT (float) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLMediaElement*, float, int> put_defaultPlaybackRate;
+
+            [NativeTypeName("HRESULT (float *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLMediaElement*, float*, int> get_defaultPlaybackRate;
+
+            [NativeTypeName("HRESULT (float) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLMediaElement*, float, int> put_playbackRate;
+
+            [NativeTypeName("HRESULT (float *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLMediaElement*, float*, int> get_playbackRate;
+
+            [NativeTypeName("HRESULT (IHTMLTimeRanges **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLMediaElement*, IHTMLTimeRanges**, int> get_played;
+
+            [NativeTypeName("HRESULT (IHTMLTimeRanges **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLMediaElement*, IHTMLTimeRanges**, int> get_seekable;
+
+            [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLMediaElement*, short*, int> get_ended;
+
+            [NativeTypeName("HRESULT (VARIANT_BOOL) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLMediaElement*, short, int> put_autoplay;
+
+            [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLMediaElement*, short*, int> get_autoplay;
+
+            [NativeTypeName("HRESULT (VARIANT_BOOL) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLMediaElement*, short, int> put_loop;
+
+            [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLMediaElement*, short*, int> get_loop;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLMediaElement*, int> play;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLMediaElement*, int> pause;
+
+            [NativeTypeName("HRESULT (VARIANT_BOOL) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLMediaElement*, short, int> put_controls;
+
+            [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLMediaElement*, short*, int> get_controls;
+
+            [NativeTypeName("HRESULT (float) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLMediaElement*, float, int> put_volume;
+
+            [NativeTypeName("HRESULT (float *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLMediaElement*, float*, int> get_volume;
+
+            [NativeTypeName("HRESULT (VARIANT_BOOL) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLMediaElement*, short, int> put_muted;
+
+            [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLMediaElement*, short*, int> get_muted;
+
+            [NativeTypeName("HRESULT (VARIANT_BOOL) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLMediaElement*, short, int> put_autobuffer;
+
+            [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLMediaElement*, short*, int> get_autobuffer;
         }
     }
 }

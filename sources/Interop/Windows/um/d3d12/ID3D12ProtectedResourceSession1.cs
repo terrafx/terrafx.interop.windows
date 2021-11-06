@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("D6F12DD6-76FB-406E-8961-4296EEFC0409")]
     [NativeTypeName("struct ID3D12ProtectedResourceSession1 : ID3D12ProtectedResourceSession")]
     [NativeInheritance("ID3D12ProtectedResourceSession")]
-    public unsafe partial struct ID3D12ProtectedResourceSession1
+    public unsafe partial struct ID3D12ProtectedResourceSession1 : ID3D12ProtectedResourceSession1.Interface
     {
         public void** lpVtbl;
 
@@ -102,6 +102,51 @@ namespace TerraFX.Interop
         {
             D3D12_PROTECTED_RESOURCE_SESSION_DESC1 result;
             return *((delegate* unmanaged<ID3D12ProtectedResourceSession1*, D3D12_PROTECTED_RESOURCE_SESSION_DESC1*, D3D12_PROTECTED_RESOURCE_SESSION_DESC1*>)(lpVtbl[11]))((ID3D12ProtectedResourceSession1*)Unsafe.AsPointer(ref this), &result);
+        }
+
+        public interface Interface : ID3D12ProtectedResourceSession.Interface
+        {
+            [VtblIndex(11)]
+            D3D12_PROTECTED_RESOURCE_SESSION_DESC1 GetDesc1();
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D12ProtectedResourceSession1*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D12ProtectedResourceSession1*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D12ProtectedResourceSession1*, uint> Release;
+
+            [NativeTypeName("HRESULT (const GUID &, UINT *, void *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D12ProtectedResourceSession1*, Guid*, uint*, void*, int> GetPrivateData;
+
+            [NativeTypeName("HRESULT (const GUID &, UINT, const void *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D12ProtectedResourceSession1*, Guid*, uint, void*, int> SetPrivateData;
+
+            [NativeTypeName("HRESULT (const GUID &, const IUnknown *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D12ProtectedResourceSession1*, Guid*, IUnknown*, int> SetPrivateDataInterface;
+
+            [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D12ProtectedResourceSession1*, ushort*, int> SetName;
+
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D12ProtectedResourceSession1*, Guid*, void**, int> GetDevice;
+
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D12ProtectedResourceSession1*, Guid*, void**, int> GetStatusFence;
+
+            [NativeTypeName("D3D12_PROTECTED_SESSION_STATUS () __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D12ProtectedResourceSession1*, D3D12_PROTECTED_SESSION_STATUS> GetSessionStatus;
+
+            [NativeTypeName("D3D12_PROTECTED_RESOURCE_SESSION_DESC () __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D12ProtectedResourceSession1*, D3D12_PROTECTED_RESOURCE_SESSION_DESC*, D3D12_PROTECTED_RESOURCE_SESSION_DESC*> GetDesc;
+
+            [NativeTypeName("D3D12_PROTECTED_RESOURCE_SESSION_DESC1 () __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D12ProtectedResourceSession1*, D3D12_PROTECTED_RESOURCE_SESSION_DESC1*, D3D12_PROTECTED_RESOURCE_SESSION_DESC1*> GetDesc1;
         }
     }
 }

@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("5EFB46D7-47C0-4B68-ACDA-DED47C90EC91")]
     [NativeTypeName("struct IStorageProviderBanners : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IStorageProviderBanners
+    public unsafe partial struct IStorageProviderBanners : IStorageProviderBanners.Interface
     {
         public void** lpVtbl;
 
@@ -65,6 +65,45 @@ namespace TerraFX.Interop
         public HRESULT GetBanner([NativeTypeName("LPCWSTR")] ushort* providerIdentity, [NativeTypeName("LPCWSTR")] ushort* subscriptionId, [NativeTypeName("LPWSTR *")] ushort** contentId)
         {
             return ((delegate* unmanaged<IStorageProviderBanners*, ushort*, ushort*, ushort**, int>)(lpVtbl[6]))((IStorageProviderBanners*)Unsafe.AsPointer(ref this), providerIdentity, subscriptionId, contentId);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT SetBanner([NativeTypeName("LPCWSTR")] ushort* providerIdentity, [NativeTypeName("LPCWSTR")] ushort* subscriptionId, [NativeTypeName("LPCWSTR")] ushort* contentId);
+
+            [VtblIndex(4)]
+            HRESULT ClearBanner([NativeTypeName("LPCWSTR")] ushort* providerIdentity, [NativeTypeName("LPCWSTR")] ushort* subscriptionId);
+
+            [VtblIndex(5)]
+            HRESULT ClearAllBanners([NativeTypeName("LPCWSTR")] ushort* providerIdentity);
+
+            [VtblIndex(6)]
+            HRESULT GetBanner([NativeTypeName("LPCWSTR")] ushort* providerIdentity, [NativeTypeName("LPCWSTR")] ushort* subscriptionId, [NativeTypeName("LPWSTR *")] ushort** contentId);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IStorageProviderBanners*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IStorageProviderBanners*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IStorageProviderBanners*, uint> Release;
+
+            [NativeTypeName("HRESULT (LPCWSTR, LPCWSTR, LPCWSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IStorageProviderBanners*, ushort*, ushort*, ushort*, int> SetBanner;
+
+            [NativeTypeName("HRESULT (LPCWSTR, LPCWSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IStorageProviderBanners*, ushort*, ushort*, int> ClearBanner;
+
+            [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IStorageProviderBanners*, ushort*, int> ClearAllBanners;
+
+            [NativeTypeName("HRESULT (LPCWSTR, LPCWSTR, LPWSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IStorageProviderBanners*, ushort*, ushort*, ushort**, int> GetBanner;
         }
     }
 }

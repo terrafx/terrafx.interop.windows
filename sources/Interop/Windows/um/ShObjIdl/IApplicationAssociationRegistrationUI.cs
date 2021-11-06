@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("1F76A169-F994-40AC-8FC8-0959E8874710")]
     [NativeTypeName("struct IApplicationAssociationRegistrationUI : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IApplicationAssociationRegistrationUI
+    public unsafe partial struct IApplicationAssociationRegistrationUI : IApplicationAssociationRegistrationUI.Interface
     {
         public void** lpVtbl;
 
@@ -44,6 +44,27 @@ namespace TerraFX.Interop
         public HRESULT LaunchAdvancedAssociationUI([NativeTypeName("LPCWSTR")] ushort* pszAppRegistryName)
         {
             return ((delegate* unmanaged<IApplicationAssociationRegistrationUI*, ushort*, int>)(lpVtbl[3]))((IApplicationAssociationRegistrationUI*)Unsafe.AsPointer(ref this), pszAppRegistryName);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT LaunchAdvancedAssociationUI([NativeTypeName("LPCWSTR")] ushort* pszAppRegistryName);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IApplicationAssociationRegistrationUI*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IApplicationAssociationRegistrationUI*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IApplicationAssociationRegistrationUI*, uint> Release;
+
+            [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IApplicationAssociationRegistrationUI*, ushort*, int> LaunchAdvancedAssociationUI;
         }
     }
 }

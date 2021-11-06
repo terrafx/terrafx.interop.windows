@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("C71E953F-37B4-4564-8658-D8396866DB0D")]
     [NativeTypeName("struct ILearningModelSessionOptionsNative : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct ILearningModelSessionOptionsNative
+    public unsafe partial struct ILearningModelSessionOptionsNative : ILearningModelSessionOptionsNative.Interface
     {
         public void** lpVtbl;
 
@@ -44,6 +44,27 @@ namespace TerraFX.Interop
         public HRESULT SetIntraOpNumThreadsOverride([NativeTypeName("UINT32")] uint intraOpNumThreads)
         {
             return ((delegate* unmanaged<ILearningModelSessionOptionsNative*, uint, int>)(lpVtbl[3]))((ILearningModelSessionOptionsNative*)Unsafe.AsPointer(ref this), intraOpNumThreads);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT SetIntraOpNumThreadsOverride([NativeTypeName("UINT32")] uint intraOpNumThreads);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ILearningModelSessionOptionsNative*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ILearningModelSessionOptionsNative*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ILearningModelSessionOptionsNative*, uint> Release;
+
+            [NativeTypeName("HRESULT (UINT32) __attribute__((stdcall))")]
+            public delegate* unmanaged<ILearningModelSessionOptionsNative*, uint, int> SetIntraOpNumThreadsOverride;
         }
     }
 }

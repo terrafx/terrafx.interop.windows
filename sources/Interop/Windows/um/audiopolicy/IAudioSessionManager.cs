@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("BFA971F1-4D5E-40BB-935E-967039BFBEE4")]
     [NativeTypeName("struct IAudioSessionManager : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IAudioSessionManager
+    public unsafe partial struct IAudioSessionManager : IAudioSessionManager.Interface
     {
         public void** lpVtbl;
 
@@ -51,6 +51,33 @@ namespace TerraFX.Interop
         public HRESULT GetSimpleAudioVolume([NativeTypeName("LPCGUID")] Guid* AudioSessionGuid, [NativeTypeName("DWORD")] uint StreamFlags, ISimpleAudioVolume** AudioVolume)
         {
             return ((delegate* unmanaged<IAudioSessionManager*, Guid*, uint, ISimpleAudioVolume**, int>)(lpVtbl[4]))((IAudioSessionManager*)Unsafe.AsPointer(ref this), AudioSessionGuid, StreamFlags, AudioVolume);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetAudioSessionControl([NativeTypeName("LPCGUID")] Guid* AudioSessionGuid, [NativeTypeName("DWORD")] uint StreamFlags, IAudioSessionControl** SessionControl);
+
+            [VtblIndex(4)]
+            HRESULT GetSimpleAudioVolume([NativeTypeName("LPCGUID")] Guid* AudioSessionGuid, [NativeTypeName("DWORD")] uint StreamFlags, ISimpleAudioVolume** AudioVolume);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAudioSessionManager*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IAudioSessionManager*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IAudioSessionManager*, uint> Release;
+
+            [NativeTypeName("HRESULT (LPCGUID, DWORD, IAudioSessionControl **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAudioSessionManager*, Guid*, uint, IAudioSessionControl**, int> GetAudioSessionControl;
+
+            [NativeTypeName("HRESULT (LPCGUID, DWORD, ISimpleAudioVolume **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAudioSessionManager*, Guid*, uint, ISimpleAudioVolume**, int> GetSimpleAudioVolume;
         }
     }
 }

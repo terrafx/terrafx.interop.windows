@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("6427A646-7F49-433E-B1A6-0DA309F6885A")]
     [NativeTypeName("struct IAppxManifestHostRuntimeDependenciesEnumerator : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IAppxManifestHostRuntimeDependenciesEnumerator
+    public unsafe partial struct IAppxManifestHostRuntimeDependenciesEnumerator : IAppxManifestHostRuntimeDependenciesEnumerator.Interface
     {
         public void** lpVtbl;
 
@@ -58,6 +58,39 @@ namespace TerraFX.Interop
         public HRESULT MoveNext(BOOL* hasNext)
         {
             return ((delegate* unmanaged<IAppxManifestHostRuntimeDependenciesEnumerator*, BOOL*, int>)(lpVtbl[5]))((IAppxManifestHostRuntimeDependenciesEnumerator*)Unsafe.AsPointer(ref this), hasNext);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetCurrent(IAppxManifestHostRuntimeDependency** hostRuntimeDependency);
+
+            [VtblIndex(4)]
+            HRESULT GetHasCurrent(BOOL* hasCurrent);
+
+            [VtblIndex(5)]
+            HRESULT MoveNext(BOOL* hasNext);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAppxManifestHostRuntimeDependenciesEnumerator*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IAppxManifestHostRuntimeDependenciesEnumerator*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IAppxManifestHostRuntimeDependenciesEnumerator*, uint> Release;
+
+            [NativeTypeName("HRESULT (IAppxManifestHostRuntimeDependency **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAppxManifestHostRuntimeDependenciesEnumerator*, IAppxManifestHostRuntimeDependency**, int> GetCurrent;
+
+            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAppxManifestHostRuntimeDependenciesEnumerator*, BOOL*, int> GetHasCurrent;
+
+            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAppxManifestHostRuntimeDependenciesEnumerator*, BOOL*, int> MoveNext;
         }
     }
 }

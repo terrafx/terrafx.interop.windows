@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("953BB1EE-93B4-11D1-98A3-00C04FB687DA")]
     [NativeTypeName("struct IExtractImage2 : IExtractImage")]
     [NativeInheritance("IExtractImage")]
-    public unsafe partial struct IExtractImage2
+    public unsafe partial struct IExtractImage2 : IExtractImage2.Interface
     {
         public void** lpVtbl;
 
@@ -58,6 +58,33 @@ namespace TerraFX.Interop
         public HRESULT GetDateStamp(FILETIME* pDateStamp)
         {
             return ((delegate* unmanaged<IExtractImage2*, FILETIME*, int>)(lpVtbl[5]))((IExtractImage2*)Unsafe.AsPointer(ref this), pDateStamp);
+        }
+
+        public interface Interface : IExtractImage.Interface
+        {
+            [VtblIndex(5)]
+            HRESULT GetDateStamp(FILETIME* pDateStamp);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IExtractImage2*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IExtractImage2*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IExtractImage2*, uint> Release;
+
+            [NativeTypeName("HRESULT (LPWSTR, DWORD, DWORD *, const SIZE *, DWORD, DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IExtractImage2*, ushort*, uint, uint*, SIZE*, uint, uint*, int> GetLocation;
+
+            [NativeTypeName("HRESULT (HBITMAP *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IExtractImage2*, HBITMAP*, int> Extract;
+
+            [NativeTypeName("HRESULT (FILETIME *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IExtractImage2*, FILETIME*, int> GetDateStamp;
         }
     }
 }

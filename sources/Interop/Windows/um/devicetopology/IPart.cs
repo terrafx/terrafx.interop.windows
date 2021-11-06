@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("AE2DE0E4-5BCA-4F2D-AA46-5D13F8FDB3A9")]
     [NativeTypeName("struct IPart : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IPart
+    public unsafe partial struct IPart : IPart.Interface
     {
         public void** lpVtbl;
 
@@ -128,6 +128,99 @@ namespace TerraFX.Interop
         public HRESULT UnregisterControlChangeCallback(IControlChangeNotify* pNotify)
         {
             return ((delegate* unmanaged<IPart*, IControlChangeNotify*, int>)(lpVtbl[15]))((IPart*)Unsafe.AsPointer(ref this), pNotify);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetName([NativeTypeName("LPWSTR *")] ushort** ppwstrName);
+
+            [VtblIndex(4)]
+            HRESULT GetLocalId(uint* pnId);
+
+            [VtblIndex(5)]
+            HRESULT GetGlobalId([NativeTypeName("LPWSTR *")] ushort** ppwstrGlobalId);
+
+            [VtblIndex(6)]
+            HRESULT GetPartType(PartType* pPartType);
+
+            [VtblIndex(7)]
+            HRESULT GetSubType(Guid* pSubType);
+
+            [VtblIndex(8)]
+            HRESULT GetControlInterfaceCount(uint* pCount);
+
+            [VtblIndex(9)]
+            HRESULT GetControlInterface(uint nIndex, IControlInterface** ppInterfaceDesc);
+
+            [VtblIndex(10)]
+            HRESULT EnumPartsIncoming(IPartsList** ppParts);
+
+            [VtblIndex(11)]
+            HRESULT EnumPartsOutgoing(IPartsList** ppParts);
+
+            [VtblIndex(12)]
+            HRESULT GetTopologyObject(IDeviceTopology** ppTopology);
+
+            [VtblIndex(13)]
+            HRESULT Activate([NativeTypeName("DWORD")] uint dwClsContext, [NativeTypeName("const IID &")] Guid* refiid, void** ppvObject);
+
+            [VtblIndex(14)]
+            HRESULT RegisterControlChangeCallback([NativeTypeName("const GUID &")] Guid* riid, IControlChangeNotify* pNotify);
+
+            [VtblIndex(15)]
+            HRESULT UnregisterControlChangeCallback(IControlChangeNotify* pNotify);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IPart*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IPart*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IPart*, uint> Release;
+
+            [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IPart*, ushort**, int> GetName;
+
+            [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IPart*, uint*, int> GetLocalId;
+
+            [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IPart*, ushort**, int> GetGlobalId;
+
+            [NativeTypeName("HRESULT (PartType *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IPart*, PartType*, int> GetPartType;
+
+            [NativeTypeName("HRESULT (GUID *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IPart*, Guid*, int> GetSubType;
+
+            [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IPart*, uint*, int> GetControlInterfaceCount;
+
+            [NativeTypeName("HRESULT (UINT, IControlInterface **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IPart*, uint, IControlInterface**, int> GetControlInterface;
+
+            [NativeTypeName("HRESULT (IPartsList **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IPart*, IPartsList**, int> EnumPartsIncoming;
+
+            [NativeTypeName("HRESULT (IPartsList **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IPart*, IPartsList**, int> EnumPartsOutgoing;
+
+            [NativeTypeName("HRESULT (IDeviceTopology **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IPart*, IDeviceTopology**, int> GetTopologyObject;
+
+            [NativeTypeName("HRESULT (DWORD, const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IPart*, uint, Guid*, void**, int> Activate;
+
+            [NativeTypeName("HRESULT (const GUID &, IControlChangeNotify *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IPart*, Guid*, IControlChangeNotify*, int> RegisterControlChangeCallback;
+
+            [NativeTypeName("HRESULT (IControlChangeNotify *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IPart*, IControlChangeNotify*, int> UnregisterControlChangeCallback;
         }
     }
 }

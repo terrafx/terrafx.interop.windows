@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("A9849BBE-9EC8-4263-B764-62730F0D15D0")]
     [NativeTypeName("struct IVMRSurface : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IVMRSurface
+    public unsafe partial struct IVMRSurface : IVMRSurface.Interface
     {
         public void** lpVtbl;
 
@@ -65,6 +65,45 @@ namespace TerraFX.Interop
         public HRESULT GetSurface([NativeTypeName("LPDIRECTDRAWSURFACE7 *")] IDirectDrawSurface7** lplpSurface)
         {
             return ((delegate* unmanaged<IVMRSurface*, IDirectDrawSurface7**, int>)(lpVtbl[6]))((IVMRSurface*)Unsafe.AsPointer(ref this), lplpSurface);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT IsSurfaceLocked();
+
+            [VtblIndex(4)]
+            HRESULT LockSurface(byte** lpSurface);
+
+            [VtblIndex(5)]
+            HRESULT UnlockSurface();
+
+            [VtblIndex(6)]
+            HRESULT GetSurface([NativeTypeName("LPDIRECTDRAWSURFACE7 *")] IDirectDrawSurface7** lplpSurface);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IVMRSurface*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IVMRSurface*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IVMRSurface*, uint> Release;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IVMRSurface*, int> IsSurfaceLocked;
+
+            [NativeTypeName("HRESULT (BYTE **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IVMRSurface*, byte**, int> LockSurface;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IVMRSurface*, int> UnlockSurface;
+
+            [NativeTypeName("HRESULT (LPDIRECTDRAWSURFACE7 *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IVMRSurface*, IDirectDrawSurface7**, int> GetSurface;
         }
     }
 }

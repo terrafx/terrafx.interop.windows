@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("62FAE250-7E65-4460-BFC9-6398B322073C")]
     [NativeTypeName("struct IAMOverlayFX : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IAMOverlayFX
+    public unsafe partial struct IAMOverlayFX : IAMOverlayFX.Interface
     {
         public void** lpVtbl;
 
@@ -58,6 +58,39 @@ namespace TerraFX.Interop
         public HRESULT GetOverlayFX([NativeTypeName("DWORD *")] uint* lpdwOverlayFX)
         {
             return ((delegate* unmanaged<IAMOverlayFX*, uint*, int>)(lpVtbl[5]))((IAMOverlayFX*)Unsafe.AsPointer(ref this), lpdwOverlayFX);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT QueryOverlayFXCaps([NativeTypeName("DWORD *")] uint* lpdwOverlayFXCaps);
+
+            [VtblIndex(4)]
+            HRESULT SetOverlayFX([NativeTypeName("DWORD")] uint dwOverlayFX);
+
+            [VtblIndex(5)]
+            HRESULT GetOverlayFX([NativeTypeName("DWORD *")] uint* lpdwOverlayFX);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAMOverlayFX*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IAMOverlayFX*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IAMOverlayFX*, uint> Release;
+
+            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAMOverlayFX*, uint*, int> QueryOverlayFXCaps;
+
+            [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAMOverlayFX*, uint, int> SetOverlayFX;
+
+            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAMOverlayFX*, uint*, int> GetOverlayFX;
         }
     }
 }

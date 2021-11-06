@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("CB787B2F-BD6C-4635-BA52-933126BD2DCD")]
     [NativeTypeName("struct IDiaSymbol : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IDiaSymbol
+    public unsafe partial struct IDiaSymbol : IDiaSymbol.Interface
     {
         public void** lpVtbl;
 
@@ -1689,6 +1689,1437 @@ namespace TerraFX.Interop
         public HRESULT get_bindSlot([NativeTypeName("DWORD *")] uint* pRetVal)
         {
             return ((delegate* unmanaged<IDiaSymbol*, uint*, int>)(lpVtbl[238]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT get_symIndexId([NativeTypeName("DWORD *")] uint* pRetVal);
+
+            [VtblIndex(4)]
+            HRESULT get_symTag([NativeTypeName("DWORD *")] uint* pRetVal);
+
+            [VtblIndex(5)]
+            HRESULT get_name([NativeTypeName("BSTR *")] ushort** pRetVal);
+
+            [VtblIndex(6)]
+            HRESULT get_lexicalParent(IDiaSymbol** pRetVal);
+
+            [VtblIndex(7)]
+            HRESULT get_classParent(IDiaSymbol** pRetVal);
+
+            [VtblIndex(8)]
+            HRESULT get_type(IDiaSymbol** pRetVal);
+
+            [VtblIndex(9)]
+            HRESULT get_dataKind([NativeTypeName("DWORD *")] uint* pRetVal);
+
+            [VtblIndex(10)]
+            HRESULT get_locationType([NativeTypeName("DWORD *")] uint* pRetVal);
+
+            [VtblIndex(11)]
+            HRESULT get_addressSection([NativeTypeName("DWORD *")] uint* pRetVal);
+
+            [VtblIndex(12)]
+            HRESULT get_addressOffset([NativeTypeName("DWORD *")] uint* pRetVal);
+
+            [VtblIndex(13)]
+            HRESULT get_relativeVirtualAddress([NativeTypeName("DWORD *")] uint* pRetVal);
+
+            [VtblIndex(14)]
+            HRESULT get_virtualAddress([NativeTypeName("ULONGLONG *")] ulong* pRetVal);
+
+            [VtblIndex(15)]
+            HRESULT get_registerId([NativeTypeName("DWORD *")] uint* pRetVal);
+
+            [VtblIndex(16)]
+            HRESULT get_offset([NativeTypeName("LONG *")] int* pRetVal);
+
+            [VtblIndex(17)]
+            HRESULT get_length([NativeTypeName("ULONGLONG *")] ulong* pRetVal);
+
+            [VtblIndex(18)]
+            HRESULT get_slot([NativeTypeName("DWORD *")] uint* pRetVal);
+
+            [VtblIndex(19)]
+            HRESULT get_volatileType(BOOL* pRetVal);
+
+            [VtblIndex(20)]
+            HRESULT get_constType(BOOL* pRetVal);
+
+            [VtblIndex(21)]
+            HRESULT get_unalignedType(BOOL* pRetVal);
+
+            [VtblIndex(22)]
+            HRESULT get_access([NativeTypeName("DWORD *")] uint* pRetVal);
+
+            [VtblIndex(23)]
+            HRESULT get_libraryName([NativeTypeName("BSTR *")] ushort** pRetVal);
+
+            [VtblIndex(24)]
+            HRESULT get_platform([NativeTypeName("DWORD *")] uint* pRetVal);
+
+            [VtblIndex(25)]
+            HRESULT get_language([NativeTypeName("DWORD *")] uint* pRetVal);
+
+            [VtblIndex(26)]
+            HRESULT get_editAndContinueEnabled(BOOL* pRetVal);
+
+            [VtblIndex(27)]
+            HRESULT get_frontEndMajor([NativeTypeName("DWORD *")] uint* pRetVal);
+
+            [VtblIndex(28)]
+            HRESULT get_frontEndMinor([NativeTypeName("DWORD *")] uint* pRetVal);
+
+            [VtblIndex(29)]
+            HRESULT get_frontEndBuild([NativeTypeName("DWORD *")] uint* pRetVal);
+
+            [VtblIndex(30)]
+            HRESULT get_backEndMajor([NativeTypeName("DWORD *")] uint* pRetVal);
+
+            [VtblIndex(31)]
+            HRESULT get_backEndMinor([NativeTypeName("DWORD *")] uint* pRetVal);
+
+            [VtblIndex(32)]
+            HRESULT get_backEndBuild([NativeTypeName("DWORD *")] uint* pRetVal);
+
+            [VtblIndex(33)]
+            HRESULT get_sourceFileName([NativeTypeName("BSTR *")] ushort** pRetVal);
+
+            [VtblIndex(34)]
+            HRESULT get_unused([NativeTypeName("BSTR *")] ushort** pRetVal);
+
+            [VtblIndex(35)]
+            HRESULT get_thunkOrdinal([NativeTypeName("DWORD *")] uint* pRetVal);
+
+            [VtblIndex(36)]
+            HRESULT get_thisAdjust([NativeTypeName("LONG *")] int* pRetVal);
+
+            [VtblIndex(37)]
+            HRESULT get_virtualBaseOffset([NativeTypeName("DWORD *")] uint* pRetVal);
+
+            [VtblIndex(38)]
+            HRESULT get_virtual(BOOL* pRetVal);
+
+            [VtblIndex(39)]
+            HRESULT get_intro(BOOL* pRetVal);
+
+            [VtblIndex(40)]
+            HRESULT get_pure(BOOL* pRetVal);
+
+            [VtblIndex(41)]
+            HRESULT get_callingConvention([NativeTypeName("DWORD *")] uint* pRetVal);
+
+            [VtblIndex(42)]
+            HRESULT get_value(VARIANT* pRetVal);
+
+            [VtblIndex(43)]
+            HRESULT get_baseType([NativeTypeName("DWORD *")] uint* pRetVal);
+
+            [VtblIndex(44)]
+            HRESULT get_token([NativeTypeName("DWORD *")] uint* pRetVal);
+
+            [VtblIndex(45)]
+            HRESULT get_timeStamp([NativeTypeName("DWORD *")] uint* pRetVal);
+
+            [VtblIndex(46)]
+            HRESULT get_guid(Guid* pRetVal);
+
+            [VtblIndex(47)]
+            HRESULT get_symbolsFileName([NativeTypeName("BSTR *")] ushort** pRetVal);
+
+            [VtblIndex(48)]
+            HRESULT get_reference(BOOL* pRetVal);
+
+            [VtblIndex(49)]
+            HRESULT get_count([NativeTypeName("DWORD *")] uint* pRetVal);
+
+            [VtblIndex(50)]
+            HRESULT get_bitPosition([NativeTypeName("DWORD *")] uint* pRetVal);
+
+            [VtblIndex(51)]
+            HRESULT get_arrayIndexType(IDiaSymbol** pRetVal);
+
+            [VtblIndex(52)]
+            HRESULT get_packed(BOOL* pRetVal);
+
+            [VtblIndex(53)]
+            HRESULT get_constructor(BOOL* pRetVal);
+
+            [VtblIndex(54)]
+            HRESULT get_overloadedOperator(BOOL* pRetVal);
+
+            [VtblIndex(55)]
+            HRESULT get_nested(BOOL* pRetVal);
+
+            [VtblIndex(56)]
+            HRESULT get_hasNestedTypes(BOOL* pRetVal);
+
+            [VtblIndex(57)]
+            HRESULT get_hasAssignmentOperator(BOOL* pRetVal);
+
+            [VtblIndex(58)]
+            HRESULT get_hasCastOperator(BOOL* pRetVal);
+
+            [VtblIndex(59)]
+            HRESULT get_scoped(BOOL* pRetVal);
+
+            [VtblIndex(60)]
+            HRESULT get_virtualBaseClass(BOOL* pRetVal);
+
+            [VtblIndex(61)]
+            HRESULT get_indirectVirtualBaseClass(BOOL* pRetVal);
+
+            [VtblIndex(62)]
+            HRESULT get_virtualBasePointerOffset([NativeTypeName("LONG *")] int* pRetVal);
+
+            [VtblIndex(63)]
+            HRESULT get_virtualTableShape(IDiaSymbol** pRetVal);
+
+            [VtblIndex(64)]
+            HRESULT get_lexicalParentId([NativeTypeName("DWORD *")] uint* pRetVal);
+
+            [VtblIndex(65)]
+            HRESULT get_classParentId([NativeTypeName("DWORD *")] uint* pRetVal);
+
+            [VtblIndex(66)]
+            HRESULT get_typeId([NativeTypeName("DWORD *")] uint* pRetVal);
+
+            [VtblIndex(67)]
+            HRESULT get_arrayIndexTypeId([NativeTypeName("DWORD *")] uint* pRetVal);
+
+            [VtblIndex(68)]
+            HRESULT get_virtualTableShapeId([NativeTypeName("DWORD *")] uint* pRetVal);
+
+            [VtblIndex(69)]
+            HRESULT get_code(BOOL* pRetVal);
+
+            [VtblIndex(70)]
+            HRESULT get_function(BOOL* pRetVal);
+
+            [VtblIndex(71)]
+            HRESULT get_managed(BOOL* pRetVal);
+
+            [VtblIndex(72)]
+            HRESULT get_msil(BOOL* pRetVal);
+
+            [VtblIndex(73)]
+            HRESULT get_virtualBaseDispIndex([NativeTypeName("DWORD *")] uint* pRetVal);
+
+            [VtblIndex(74)]
+            HRESULT get_undecoratedName([NativeTypeName("BSTR *")] ushort** pRetVal);
+
+            [VtblIndex(75)]
+            HRESULT get_age([NativeTypeName("DWORD *")] uint* pRetVal);
+
+            [VtblIndex(76)]
+            HRESULT get_signature([NativeTypeName("DWORD *")] uint* pRetVal);
+
+            [VtblIndex(77)]
+            HRESULT get_compilerGenerated(BOOL* pRetVal);
+
+            [VtblIndex(78)]
+            HRESULT get_addressTaken(BOOL* pRetVal);
+
+            [VtblIndex(79)]
+            HRESULT get_rank([NativeTypeName("DWORD *")] uint* pRetVal);
+
+            [VtblIndex(80)]
+            HRESULT get_lowerBound(IDiaSymbol** pRetVal);
+
+            [VtblIndex(81)]
+            HRESULT get_upperBound(IDiaSymbol** pRetVal);
+
+            [VtblIndex(82)]
+            HRESULT get_lowerBoundId([NativeTypeName("DWORD *")] uint* pRetVal);
+
+            [VtblIndex(83)]
+            HRESULT get_upperBoundId([NativeTypeName("DWORD *")] uint* pRetVal);
+
+            [VtblIndex(84)]
+            HRESULT get_dataBytes([NativeTypeName("DWORD")] uint cbData, [NativeTypeName("DWORD *")] uint* pcbData, byte* pbData);
+
+            [VtblIndex(85)]
+            HRESULT findChildren([NativeTypeName("enum SymTagEnum")] SymTagEnum symtag, [NativeTypeName("LPCOLESTR")] ushort* name, [NativeTypeName("DWORD")] uint compareFlags, IDiaEnumSymbols** ppResult);
+
+            [VtblIndex(86)]
+            HRESULT findChildrenEx([NativeTypeName("enum SymTagEnum")] SymTagEnum symtag, [NativeTypeName("LPCOLESTR")] ushort* name, [NativeTypeName("DWORD")] uint compareFlags, IDiaEnumSymbols** ppResult);
+
+            [VtblIndex(87)]
+            HRESULT findChildrenExByAddr([NativeTypeName("enum SymTagEnum")] SymTagEnum symtag, [NativeTypeName("LPCOLESTR")] ushort* name, [NativeTypeName("DWORD")] uint compareFlags, [NativeTypeName("DWORD")] uint isect, [NativeTypeName("DWORD")] uint offset, IDiaEnumSymbols** ppResult);
+
+            [VtblIndex(88)]
+            HRESULT findChildrenExByVA([NativeTypeName("enum SymTagEnum")] SymTagEnum symtag, [NativeTypeName("LPCOLESTR")] ushort* name, [NativeTypeName("DWORD")] uint compareFlags, [NativeTypeName("ULONGLONG")] ulong va, IDiaEnumSymbols** ppResult);
+
+            [VtblIndex(89)]
+            HRESULT findChildrenExByRVA([NativeTypeName("enum SymTagEnum")] SymTagEnum symtag, [NativeTypeName("LPCOLESTR")] ushort* name, [NativeTypeName("DWORD")] uint compareFlags, [NativeTypeName("DWORD")] uint rva, IDiaEnumSymbols** ppResult);
+
+            [VtblIndex(90)]
+            HRESULT get_targetSection([NativeTypeName("DWORD *")] uint* pRetVal);
+
+            [VtblIndex(91)]
+            HRESULT get_targetOffset([NativeTypeName("DWORD *")] uint* pRetVal);
+
+            [VtblIndex(92)]
+            HRESULT get_targetRelativeVirtualAddress([NativeTypeName("DWORD *")] uint* pRetVal);
+
+            [VtblIndex(93)]
+            HRESULT get_targetVirtualAddress([NativeTypeName("ULONGLONG *")] ulong* pRetVal);
+
+            [VtblIndex(94)]
+            HRESULT get_machineType([NativeTypeName("DWORD *")] uint* pRetVal);
+
+            [VtblIndex(95)]
+            HRESULT get_oemId([NativeTypeName("DWORD *")] uint* pRetVal);
+
+            [VtblIndex(96)]
+            HRESULT get_oemSymbolId([NativeTypeName("DWORD *")] uint* pRetVal);
+
+            [VtblIndex(97)]
+            HRESULT get_types([NativeTypeName("DWORD")] uint cTypes, [NativeTypeName("DWORD *")] uint* pcTypes, IDiaSymbol** pTypes);
+
+            [VtblIndex(98)]
+            HRESULT get_typeIds([NativeTypeName("DWORD")] uint cTypeIds, [NativeTypeName("DWORD *")] uint* pcTypeIds, [NativeTypeName("DWORD *")] uint* pdwTypeIds);
+
+            [VtblIndex(99)]
+            HRESULT get_objectPointerType(IDiaSymbol** pRetVal);
+
+            [VtblIndex(100)]
+            HRESULT get_udtKind([NativeTypeName("DWORD *")] uint* pRetVal);
+
+            [VtblIndex(101)]
+            HRESULT get_undecoratedNameEx([NativeTypeName("DWORD")] uint undecorateOptions, [NativeTypeName("BSTR *")] ushort** name);
+
+            [VtblIndex(102)]
+            HRESULT get_noReturn(BOOL* pRetVal);
+
+            [VtblIndex(103)]
+            HRESULT get_customCallingConvention(BOOL* pRetVal);
+
+            [VtblIndex(104)]
+            HRESULT get_noInline(BOOL* pRetVal);
+
+            [VtblIndex(105)]
+            HRESULT get_optimizedCodeDebugInfo(BOOL* pRetVal);
+
+            [VtblIndex(106)]
+            HRESULT get_notReached(BOOL* pRetVal);
+
+            [VtblIndex(107)]
+            HRESULT get_interruptReturn(BOOL* pRetVal);
+
+            [VtblIndex(108)]
+            HRESULT get_farReturn(BOOL* pRetVal);
+
+            [VtblIndex(109)]
+            HRESULT get_isStatic(BOOL* pRetVal);
+
+            [VtblIndex(110)]
+            HRESULT get_hasDebugInfo(BOOL* pRetVal);
+
+            [VtblIndex(111)]
+            HRESULT get_isLTCG(BOOL* pRetVal);
+
+            [VtblIndex(112)]
+            HRESULT get_isDataAligned(BOOL* pRetVal);
+
+            [VtblIndex(113)]
+            HRESULT get_hasSecurityChecks(BOOL* pRetVal);
+
+            [VtblIndex(114)]
+            HRESULT get_compilerName([NativeTypeName("BSTR *")] ushort** pRetVal);
+
+            [VtblIndex(115)]
+            HRESULT get_hasAlloca(BOOL* pRetVal);
+
+            [VtblIndex(116)]
+            HRESULT get_hasSetJump(BOOL* pRetVal);
+
+            [VtblIndex(117)]
+            HRESULT get_hasLongJump(BOOL* pRetVal);
+
+            [VtblIndex(118)]
+            HRESULT get_hasInlAsm(BOOL* pRetVal);
+
+            [VtblIndex(119)]
+            HRESULT get_hasEH(BOOL* pRetVal);
+
+            [VtblIndex(120)]
+            HRESULT get_hasSEH(BOOL* pRetVal);
+
+            [VtblIndex(121)]
+            HRESULT get_hasEHa(BOOL* pRetVal);
+
+            [VtblIndex(122)]
+            HRESULT get_isNaked(BOOL* pRetVal);
+
+            [VtblIndex(123)]
+            HRESULT get_isAggregated(BOOL* pRetVal);
+
+            [VtblIndex(124)]
+            HRESULT get_isSplitted(BOOL* pRetVal);
+
+            [VtblIndex(125)]
+            HRESULT get_container(IDiaSymbol** pRetVal);
+
+            [VtblIndex(126)]
+            HRESULT get_inlSpec(BOOL* pRetVal);
+
+            [VtblIndex(127)]
+            HRESULT get_noStackOrdering(BOOL* pRetVal);
+
+            [VtblIndex(128)]
+            HRESULT get_virtualBaseTableType(IDiaSymbol** pRetVal);
+
+            [VtblIndex(129)]
+            HRESULT get_hasManagedCode(BOOL* pRetVal);
+
+            [VtblIndex(130)]
+            HRESULT get_isHotpatchable(BOOL* pRetVal);
+
+            [VtblIndex(131)]
+            HRESULT get_isCVTCIL(BOOL* pRetVal);
+
+            [VtblIndex(132)]
+            HRESULT get_isMSILNetmodule(BOOL* pRetVal);
+
+            [VtblIndex(133)]
+            HRESULT get_isCTypes(BOOL* pRetVal);
+
+            [VtblIndex(134)]
+            HRESULT get_isStripped(BOOL* pRetVal);
+
+            [VtblIndex(135)]
+            HRESULT get_frontEndQFE([NativeTypeName("DWORD *")] uint* pRetVal);
+
+            [VtblIndex(136)]
+            HRESULT get_backEndQFE([NativeTypeName("DWORD *")] uint* pRetVal);
+
+            [VtblIndex(137)]
+            HRESULT get_wasInlined(BOOL* pRetVal);
+
+            [VtblIndex(138)]
+            HRESULT get_strictGSCheck(BOOL* pRetVal);
+
+            [VtblIndex(139)]
+            HRESULT get_isCxxReturnUdt(BOOL* pRetVal);
+
+            [VtblIndex(140)]
+            HRESULT get_isConstructorVirtualBase(BOOL* pRetVal);
+
+            [VtblIndex(141)]
+            HRESULT get_RValueReference(BOOL* pRetVal);
+
+            [VtblIndex(142)]
+            HRESULT get_unmodifiedType(IDiaSymbol** pRetVal);
+
+            [VtblIndex(143)]
+            HRESULT get_framePointerPresent(BOOL* pRetVal);
+
+            [VtblIndex(144)]
+            HRESULT get_isSafeBuffers(BOOL* pRetVal);
+
+            [VtblIndex(145)]
+            HRESULT get_intrinsic(BOOL* pRetVal);
+
+            [VtblIndex(146)]
+            HRESULT get_sealed(BOOL* pRetVal);
+
+            [VtblIndex(147)]
+            HRESULT get_hfaFloat(BOOL* pRetVal);
+
+            [VtblIndex(148)]
+            HRESULT get_hfaDouble(BOOL* pRetVal);
+
+            [VtblIndex(149)]
+            HRESULT get_liveRangeStartAddressSection([NativeTypeName("DWORD *")] uint* pRetVal);
+
+            [VtblIndex(150)]
+            HRESULT get_liveRangeStartAddressOffset([NativeTypeName("DWORD *")] uint* pRetVal);
+
+            [VtblIndex(151)]
+            HRESULT get_liveRangeStartRelativeVirtualAddress([NativeTypeName("DWORD *")] uint* pRetVal);
+
+            [VtblIndex(152)]
+            HRESULT get_countLiveRanges([NativeTypeName("DWORD *")] uint* pRetVal);
+
+            [VtblIndex(153)]
+            HRESULT get_liveRangeLength([NativeTypeName("ULONGLONG *")] ulong* pRetVal);
+
+            [VtblIndex(154)]
+            HRESULT get_offsetInUdt([NativeTypeName("DWORD *")] uint* pRetVal);
+
+            [VtblIndex(155)]
+            HRESULT get_paramBasePointerRegisterId([NativeTypeName("DWORD *")] uint* pRetVal);
+
+            [VtblIndex(156)]
+            HRESULT get_localBasePointerRegisterId([NativeTypeName("DWORD *")] uint* pRetVal);
+
+            [VtblIndex(157)]
+            HRESULT get_isLocationControlFlowDependent(BOOL* pRetVal);
+
+            [VtblIndex(158)]
+            HRESULT get_stride([NativeTypeName("DWORD *")] uint* pRetVal);
+
+            [VtblIndex(159)]
+            HRESULT get_numberOfRows([NativeTypeName("DWORD *")] uint* pRetVal);
+
+            [VtblIndex(160)]
+            HRESULT get_numberOfColumns([NativeTypeName("DWORD *")] uint* pRetVal);
+
+            [VtblIndex(161)]
+            HRESULT get_isMatrixRowMajor(BOOL* pRetVal);
+
+            [VtblIndex(162)]
+            HRESULT get_numericProperties([NativeTypeName("DWORD")] uint cnt, [NativeTypeName("DWORD *")] uint* pcnt, [NativeTypeName("DWORD *")] uint* pProperties);
+
+            [VtblIndex(163)]
+            HRESULT get_modifierValues([NativeTypeName("DWORD")] uint cnt, [NativeTypeName("DWORD *")] uint* pcnt, [NativeTypeName("WORD *")] ushort* pModifiers);
+
+            [VtblIndex(164)]
+            HRESULT get_isReturnValue(BOOL* pRetVal);
+
+            [VtblIndex(165)]
+            HRESULT get_isOptimizedAway(BOOL* pRetVal);
+
+            [VtblIndex(166)]
+            HRESULT get_builtInKind([NativeTypeName("DWORD *")] uint* pRetVal);
+
+            [VtblIndex(167)]
+            HRESULT get_registerType([NativeTypeName("DWORD *")] uint* pRetVal);
+
+            [VtblIndex(168)]
+            HRESULT get_baseDataSlot([NativeTypeName("DWORD *")] uint* pRetVal);
+
+            [VtblIndex(169)]
+            HRESULT get_baseDataOffset([NativeTypeName("DWORD *")] uint* pRetVal);
+
+            [VtblIndex(170)]
+            HRESULT get_textureSlot([NativeTypeName("DWORD *")] uint* pRetVal);
+
+            [VtblIndex(171)]
+            HRESULT get_samplerSlot([NativeTypeName("DWORD *")] uint* pRetVal);
+
+            [VtblIndex(172)]
+            HRESULT get_uavSlot([NativeTypeName("DWORD *")] uint* pRetVal);
+
+            [VtblIndex(173)]
+            HRESULT get_sizeInUdt([NativeTypeName("DWORD *")] uint* pRetVal);
+
+            [VtblIndex(174)]
+            HRESULT get_memorySpaceKind([NativeTypeName("DWORD *")] uint* pRetVal);
+
+            [VtblIndex(175)]
+            HRESULT get_unmodifiedTypeId([NativeTypeName("DWORD *")] uint* pRetVal);
+
+            [VtblIndex(176)]
+            HRESULT get_subTypeId([NativeTypeName("DWORD *")] uint* pRetVal);
+
+            [VtblIndex(177)]
+            HRESULT get_subType(IDiaSymbol** pRetVal);
+
+            [VtblIndex(178)]
+            HRESULT get_numberOfModifiers([NativeTypeName("DWORD *")] uint* pRetVal);
+
+            [VtblIndex(179)]
+            HRESULT get_numberOfRegisterIndices([NativeTypeName("DWORD *")] uint* pRetVal);
+
+            [VtblIndex(180)]
+            HRESULT get_isHLSLData(BOOL* pRetVal);
+
+            [VtblIndex(181)]
+            HRESULT get_isPointerToDataMember(BOOL* pRetVal);
+
+            [VtblIndex(182)]
+            HRESULT get_isPointerToMemberFunction(BOOL* pRetVal);
+
+            [VtblIndex(183)]
+            HRESULT get_isSingleInheritance(BOOL* pRetVal);
+
+            [VtblIndex(184)]
+            HRESULT get_isMultipleInheritance(BOOL* pRetVal);
+
+            [VtblIndex(185)]
+            HRESULT get_isVirtualInheritance(BOOL* pRetVal);
+
+            [VtblIndex(186)]
+            HRESULT get_restrictedType(BOOL* pRetVal);
+
+            [VtblIndex(187)]
+            HRESULT get_isPointerBasedOnSymbolValue(BOOL* pRetVal);
+
+            [VtblIndex(188)]
+            HRESULT get_baseSymbol(IDiaSymbol** pRetVal);
+
+            [VtblIndex(189)]
+            HRESULT get_baseSymbolId([NativeTypeName("DWORD *")] uint* pRetVal);
+
+            [VtblIndex(190)]
+            HRESULT get_objectFileName([NativeTypeName("BSTR *")] ushort** pRetVal);
+
+            [VtblIndex(191)]
+            HRESULT get_isAcceleratorGroupSharedLocal(BOOL* pRetVal);
+
+            [VtblIndex(192)]
+            HRESULT get_isAcceleratorPointerTagLiveRange(BOOL* pRetVal);
+
+            [VtblIndex(193)]
+            HRESULT get_isAcceleratorStubFunction(BOOL* pRetVal);
+
+            [VtblIndex(194)]
+            HRESULT get_numberOfAcceleratorPointerTags([NativeTypeName("DWORD *")] uint* pRetVal);
+
+            [VtblIndex(195)]
+            HRESULT get_isSdl(BOOL* pRetVal);
+
+            [VtblIndex(196)]
+            HRESULT get_isWinRTPointer(BOOL* pRetVal);
+
+            [VtblIndex(197)]
+            HRESULT get_isRefUdt(BOOL* pRetVal);
+
+            [VtblIndex(198)]
+            HRESULT get_isValueUdt(BOOL* pRetVal);
+
+            [VtblIndex(199)]
+            HRESULT get_isInterfaceUdt(BOOL* pRetVal);
+
+            [VtblIndex(200)]
+            HRESULT findInlineFramesByAddr([NativeTypeName("DWORD")] uint isect, [NativeTypeName("DWORD")] uint offset, IDiaEnumSymbols** ppResult);
+
+            [VtblIndex(201)]
+            HRESULT findInlineFramesByRVA([NativeTypeName("DWORD")] uint rva, IDiaEnumSymbols** ppResult);
+
+            [VtblIndex(202)]
+            HRESULT findInlineFramesByVA([NativeTypeName("ULONGLONG")] ulong va, IDiaEnumSymbols** ppResult);
+
+            [VtblIndex(203)]
+            HRESULT findInlineeLines(IDiaEnumLineNumbers** ppResult);
+
+            [VtblIndex(204)]
+            HRESULT findInlineeLinesByAddr([NativeTypeName("DWORD")] uint isect, [NativeTypeName("DWORD")] uint offset, [NativeTypeName("DWORD")] uint length, IDiaEnumLineNumbers** ppResult);
+
+            [VtblIndex(205)]
+            HRESULT findInlineeLinesByRVA([NativeTypeName("DWORD")] uint rva, [NativeTypeName("DWORD")] uint length, IDiaEnumLineNumbers** ppResult);
+
+            [VtblIndex(206)]
+            HRESULT findInlineeLinesByVA([NativeTypeName("ULONGLONG")] ulong va, [NativeTypeName("DWORD")] uint length, IDiaEnumLineNumbers** ppResult);
+
+            [VtblIndex(207)]
+            HRESULT findSymbolsForAcceleratorPointerTag([NativeTypeName("DWORD")] uint tagValue, IDiaEnumSymbols** ppResult);
+
+            [VtblIndex(208)]
+            HRESULT findSymbolsByRVAForAcceleratorPointerTag([NativeTypeName("DWORD")] uint tagValue, [NativeTypeName("DWORD")] uint rva, IDiaEnumSymbols** ppResult);
+
+            [VtblIndex(209)]
+            HRESULT get_acceleratorPointerTags([NativeTypeName("DWORD")] uint cnt, [NativeTypeName("DWORD *")] uint* pcnt, [NativeTypeName("DWORD *")] uint* pPointerTags);
+
+            [VtblIndex(210)]
+            HRESULT getSrcLineOnTypeDefn(IDiaLineNumber** ppResult);
+
+            [VtblIndex(211)]
+            HRESULT get_isPGO(BOOL* pRetVal);
+
+            [VtblIndex(212)]
+            HRESULT get_hasValidPGOCounts(BOOL* pRetVal);
+
+            [VtblIndex(213)]
+            HRESULT get_isOptimizedForSpeed(BOOL* pRetVal);
+
+            [VtblIndex(214)]
+            HRESULT get_PGOEntryCount([NativeTypeName("DWORD *")] uint* pRetVal);
+
+            [VtblIndex(215)]
+            HRESULT get_PGOEdgeCount([NativeTypeName("DWORD *")] uint* pRetVal);
+
+            [VtblIndex(216)]
+            HRESULT get_PGODynamicInstructionCount([NativeTypeName("ULONGLONG *")] ulong* pRetVal);
+
+            [VtblIndex(217)]
+            HRESULT get_staticSize([NativeTypeName("DWORD *")] uint* pRetVal);
+
+            [VtblIndex(218)]
+            HRESULT get_finalLiveStaticSize([NativeTypeName("DWORD *")] uint* pRetVal);
+
+            [VtblIndex(219)]
+            HRESULT get_phaseName([NativeTypeName("BSTR *")] ushort** pRetVal);
+
+            [VtblIndex(220)]
+            HRESULT get_hasControlFlowCheck(BOOL* pRetVal);
+
+            [VtblIndex(221)]
+            HRESULT get_constantExport(BOOL* pRetVal);
+
+            [VtblIndex(222)]
+            HRESULT get_dataExport(BOOL* pRetVal);
+
+            [VtblIndex(223)]
+            HRESULT get_privateExport(BOOL* pRetVal);
+
+            [VtblIndex(224)]
+            HRESULT get_noNameExport(BOOL* pRetVal);
+
+            [VtblIndex(225)]
+            HRESULT get_exportHasExplicitlyAssignedOrdinal(BOOL* pRetVal);
+
+            [VtblIndex(226)]
+            HRESULT get_exportIsForwarder(BOOL* pRetVal);
+
+            [VtblIndex(227)]
+            HRESULT get_ordinal([NativeTypeName("DWORD *")] uint* pRetVal);
+
+            [VtblIndex(228)]
+            HRESULT get_frameSize([NativeTypeName("DWORD *")] uint* pRetVal);
+
+            [VtblIndex(229)]
+            HRESULT get_exceptionHandlerAddressSection([NativeTypeName("DWORD *")] uint* pRetVal);
+
+            [VtblIndex(230)]
+            HRESULT get_exceptionHandlerAddressOffset([NativeTypeName("DWORD *")] uint* pRetVal);
+
+            [VtblIndex(231)]
+            HRESULT get_exceptionHandlerRelativeVirtualAddress([NativeTypeName("DWORD *")] uint* pRetVal);
+
+            [VtblIndex(232)]
+            HRESULT get_exceptionHandlerVirtualAddress([NativeTypeName("ULONGLONG *")] ulong* pRetVal);
+
+            [VtblIndex(233)]
+            HRESULT findInputAssemblyFile(IDiaInputAssemblyFile** ppResult);
+
+            [VtblIndex(234)]
+            HRESULT get_characteristics([NativeTypeName("DWORD *")] uint* pRetVal);
+
+            [VtblIndex(235)]
+            HRESULT get_coffGroup(IDiaSymbol** pRetVal);
+
+            [VtblIndex(236)]
+            HRESULT get_bindID([NativeTypeName("DWORD *")] uint* pRetVal);
+
+            [VtblIndex(237)]
+            HRESULT get_bindSpace([NativeTypeName("DWORD *")] uint* pRetVal);
+
+            [VtblIndex(238)]
+            HRESULT get_bindSlot([NativeTypeName("DWORD *")] uint* pRetVal);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol*, uint> Release;
+
+            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol*, uint*, int> get_symIndexId;
+
+            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol*, uint*, int> get_symTag;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol*, ushort**, int> get_name;
+
+            [NativeTypeName("HRESULT (IDiaSymbol **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol*, IDiaSymbol**, int> get_lexicalParent;
+
+            [NativeTypeName("HRESULT (IDiaSymbol **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol*, IDiaSymbol**, int> get_classParent;
+
+            [NativeTypeName("HRESULT (IDiaSymbol **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol*, IDiaSymbol**, int> get_type;
+
+            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol*, uint*, int> get_dataKind;
+
+            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol*, uint*, int> get_locationType;
+
+            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol*, uint*, int> get_addressSection;
+
+            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol*, uint*, int> get_addressOffset;
+
+            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol*, uint*, int> get_relativeVirtualAddress;
+
+            [NativeTypeName("HRESULT (ULONGLONG *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol*, ulong*, int> get_virtualAddress;
+
+            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol*, uint*, int> get_registerId;
+
+            [NativeTypeName("HRESULT (LONG *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol*, int*, int> get_offset;
+
+            [NativeTypeName("HRESULT (ULONGLONG *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol*, ulong*, int> get_length;
+
+            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol*, uint*, int> get_slot;
+
+            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol*, BOOL*, int> get_volatileType;
+
+            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol*, BOOL*, int> get_constType;
+
+            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol*, BOOL*, int> get_unalignedType;
+
+            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol*, uint*, int> get_access;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol*, ushort**, int> get_libraryName;
+
+            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol*, uint*, int> get_platform;
+
+            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol*, uint*, int> get_language;
+
+            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol*, BOOL*, int> get_editAndContinueEnabled;
+
+            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol*, uint*, int> get_frontEndMajor;
+
+            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol*, uint*, int> get_frontEndMinor;
+
+            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol*, uint*, int> get_frontEndBuild;
+
+            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol*, uint*, int> get_backEndMajor;
+
+            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol*, uint*, int> get_backEndMinor;
+
+            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol*, uint*, int> get_backEndBuild;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol*, ushort**, int> get_sourceFileName;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol*, ushort**, int> get_unused;
+
+            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol*, uint*, int> get_thunkOrdinal;
+
+            [NativeTypeName("HRESULT (LONG *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol*, int*, int> get_thisAdjust;
+
+            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol*, uint*, int> get_virtualBaseOffset;
+
+            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol*, BOOL*, int> get_virtual;
+
+            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol*, BOOL*, int> get_intro;
+
+            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol*, BOOL*, int> get_pure;
+
+            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol*, uint*, int> get_callingConvention;
+
+            [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol*, VARIANT*, int> get_value;
+
+            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol*, uint*, int> get_baseType;
+
+            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol*, uint*, int> get_token;
+
+            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol*, uint*, int> get_timeStamp;
+
+            [NativeTypeName("HRESULT (GUID *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol*, Guid*, int> get_guid;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol*, ushort**, int> get_symbolsFileName;
+
+            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol*, BOOL*, int> get_reference;
+
+            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol*, uint*, int> get_count;
+
+            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol*, uint*, int> get_bitPosition;
+
+            [NativeTypeName("HRESULT (IDiaSymbol **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol*, IDiaSymbol**, int> get_arrayIndexType;
+
+            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol*, BOOL*, int> get_packed;
+
+            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol*, BOOL*, int> get_constructor;
+
+            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol*, BOOL*, int> get_overloadedOperator;
+
+            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol*, BOOL*, int> get_nested;
+
+            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol*, BOOL*, int> get_hasNestedTypes;
+
+            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol*, BOOL*, int> get_hasAssignmentOperator;
+
+            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol*, BOOL*, int> get_hasCastOperator;
+
+            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol*, BOOL*, int> get_scoped;
+
+            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol*, BOOL*, int> get_virtualBaseClass;
+
+            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol*, BOOL*, int> get_indirectVirtualBaseClass;
+
+            [NativeTypeName("HRESULT (LONG *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol*, int*, int> get_virtualBasePointerOffset;
+
+            [NativeTypeName("HRESULT (IDiaSymbol **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol*, IDiaSymbol**, int> get_virtualTableShape;
+
+            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol*, uint*, int> get_lexicalParentId;
+
+            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol*, uint*, int> get_classParentId;
+
+            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol*, uint*, int> get_typeId;
+
+            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol*, uint*, int> get_arrayIndexTypeId;
+
+            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol*, uint*, int> get_virtualTableShapeId;
+
+            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol*, BOOL*, int> get_code;
+
+            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol*, BOOL*, int> get_function;
+
+            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol*, BOOL*, int> get_managed;
+
+            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol*, BOOL*, int> get_msil;
+
+            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol*, uint*, int> get_virtualBaseDispIndex;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol*, ushort**, int> get_undecoratedName;
+
+            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol*, uint*, int> get_age;
+
+            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol*, uint*, int> get_signature;
+
+            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol*, BOOL*, int> get_compilerGenerated;
+
+            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol*, BOOL*, int> get_addressTaken;
+
+            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol*, uint*, int> get_rank;
+
+            [NativeTypeName("HRESULT (IDiaSymbol **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol*, IDiaSymbol**, int> get_lowerBound;
+
+            [NativeTypeName("HRESULT (IDiaSymbol **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol*, IDiaSymbol**, int> get_upperBound;
+
+            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol*, uint*, int> get_lowerBoundId;
+
+            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol*, uint*, int> get_upperBoundId;
+
+            [NativeTypeName("HRESULT (DWORD, DWORD *, BYTE *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol*, uint, uint*, byte*, int> get_dataBytes;
+
+            [NativeTypeName("HRESULT (enum SymTagEnum, LPCOLESTR, DWORD, IDiaEnumSymbols **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol*, SymTagEnum, ushort*, uint, IDiaEnumSymbols**, int> findChildren;
+
+            [NativeTypeName("HRESULT (enum SymTagEnum, LPCOLESTR, DWORD, IDiaEnumSymbols **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol*, SymTagEnum, ushort*, uint, IDiaEnumSymbols**, int> findChildrenEx;
+
+            [NativeTypeName("HRESULT (enum SymTagEnum, LPCOLESTR, DWORD, DWORD, DWORD, IDiaEnumSymbols **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol*, SymTagEnum, ushort*, uint, uint, uint, IDiaEnumSymbols**, int> findChildrenExByAddr;
+
+            [NativeTypeName("HRESULT (enum SymTagEnum, LPCOLESTR, DWORD, ULONGLONG, IDiaEnumSymbols **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol*, SymTagEnum, ushort*, uint, ulong, IDiaEnumSymbols**, int> findChildrenExByVA;
+
+            [NativeTypeName("HRESULT (enum SymTagEnum, LPCOLESTR, DWORD, DWORD, IDiaEnumSymbols **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol*, SymTagEnum, ushort*, uint, uint, IDiaEnumSymbols**, int> findChildrenExByRVA;
+
+            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol*, uint*, int> get_targetSection;
+
+            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol*, uint*, int> get_targetOffset;
+
+            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol*, uint*, int> get_targetRelativeVirtualAddress;
+
+            [NativeTypeName("HRESULT (ULONGLONG *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol*, ulong*, int> get_targetVirtualAddress;
+
+            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol*, uint*, int> get_machineType;
+
+            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol*, uint*, int> get_oemId;
+
+            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol*, uint*, int> get_oemSymbolId;
+
+            [NativeTypeName("HRESULT (DWORD, DWORD *, IDiaSymbol **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol*, uint, uint*, IDiaSymbol**, int> get_types;
+
+            [NativeTypeName("HRESULT (DWORD, DWORD *, DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol*, uint, uint*, uint*, int> get_typeIds;
+
+            [NativeTypeName("HRESULT (IDiaSymbol **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol*, IDiaSymbol**, int> get_objectPointerType;
+
+            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol*, uint*, int> get_udtKind;
+
+            [NativeTypeName("HRESULT (DWORD, BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol*, uint, ushort**, int> get_undecoratedNameEx;
+
+            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol*, BOOL*, int> get_noReturn;
+
+            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol*, BOOL*, int> get_customCallingConvention;
+
+            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol*, BOOL*, int> get_noInline;
+
+            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol*, BOOL*, int> get_optimizedCodeDebugInfo;
+
+            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol*, BOOL*, int> get_notReached;
+
+            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol*, BOOL*, int> get_interruptReturn;
+
+            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol*, BOOL*, int> get_farReturn;
+
+            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol*, BOOL*, int> get_isStatic;
+
+            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol*, BOOL*, int> get_hasDebugInfo;
+
+            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol*, BOOL*, int> get_isLTCG;
+
+            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol*, BOOL*, int> get_isDataAligned;
+
+            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol*, BOOL*, int> get_hasSecurityChecks;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol*, ushort**, int> get_compilerName;
+
+            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol*, BOOL*, int> get_hasAlloca;
+
+            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol*, BOOL*, int> get_hasSetJump;
+
+            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol*, BOOL*, int> get_hasLongJump;
+
+            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol*, BOOL*, int> get_hasInlAsm;
+
+            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol*, BOOL*, int> get_hasEH;
+
+            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol*, BOOL*, int> get_hasSEH;
+
+            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol*, BOOL*, int> get_hasEHa;
+
+            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol*, BOOL*, int> get_isNaked;
+
+            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol*, BOOL*, int> get_isAggregated;
+
+            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol*, BOOL*, int> get_isSplitted;
+
+            [NativeTypeName("HRESULT (IDiaSymbol **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol*, IDiaSymbol**, int> get_container;
+
+            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol*, BOOL*, int> get_inlSpec;
+
+            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol*, BOOL*, int> get_noStackOrdering;
+
+            [NativeTypeName("HRESULT (IDiaSymbol **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol*, IDiaSymbol**, int> get_virtualBaseTableType;
+
+            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol*, BOOL*, int> get_hasManagedCode;
+
+            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol*, BOOL*, int> get_isHotpatchable;
+
+            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol*, BOOL*, int> get_isCVTCIL;
+
+            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol*, BOOL*, int> get_isMSILNetmodule;
+
+            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol*, BOOL*, int> get_isCTypes;
+
+            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol*, BOOL*, int> get_isStripped;
+
+            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol*, uint*, int> get_frontEndQFE;
+
+            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol*, uint*, int> get_backEndQFE;
+
+            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol*, BOOL*, int> get_wasInlined;
+
+            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol*, BOOL*, int> get_strictGSCheck;
+
+            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol*, BOOL*, int> get_isCxxReturnUdt;
+
+            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol*, BOOL*, int> get_isConstructorVirtualBase;
+
+            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol*, BOOL*, int> get_RValueReference;
+
+            [NativeTypeName("HRESULT (IDiaSymbol **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol*, IDiaSymbol**, int> get_unmodifiedType;
+
+            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol*, BOOL*, int> get_framePointerPresent;
+
+            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol*, BOOL*, int> get_isSafeBuffers;
+
+            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol*, BOOL*, int> get_intrinsic;
+
+            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol*, BOOL*, int> get_sealed;
+
+            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol*, BOOL*, int> get_hfaFloat;
+
+            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol*, BOOL*, int> get_hfaDouble;
+
+            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol*, uint*, int> get_liveRangeStartAddressSection;
+
+            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol*, uint*, int> get_liveRangeStartAddressOffset;
+
+            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol*, uint*, int> get_liveRangeStartRelativeVirtualAddress;
+
+            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol*, uint*, int> get_countLiveRanges;
+
+            [NativeTypeName("HRESULT (ULONGLONG *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol*, ulong*, int> get_liveRangeLength;
+
+            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol*, uint*, int> get_offsetInUdt;
+
+            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol*, uint*, int> get_paramBasePointerRegisterId;
+
+            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol*, uint*, int> get_localBasePointerRegisterId;
+
+            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol*, BOOL*, int> get_isLocationControlFlowDependent;
+
+            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol*, uint*, int> get_stride;
+
+            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol*, uint*, int> get_numberOfRows;
+
+            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol*, uint*, int> get_numberOfColumns;
+
+            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol*, BOOL*, int> get_isMatrixRowMajor;
+
+            [NativeTypeName("HRESULT (DWORD, DWORD *, DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol*, uint, uint*, uint*, int> get_numericProperties;
+
+            [NativeTypeName("HRESULT (DWORD, DWORD *, WORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol*, uint, uint*, ushort*, int> get_modifierValues;
+
+            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol*, BOOL*, int> get_isReturnValue;
+
+            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol*, BOOL*, int> get_isOptimizedAway;
+
+            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol*, uint*, int> get_builtInKind;
+
+            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol*, uint*, int> get_registerType;
+
+            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol*, uint*, int> get_baseDataSlot;
+
+            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol*, uint*, int> get_baseDataOffset;
+
+            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol*, uint*, int> get_textureSlot;
+
+            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol*, uint*, int> get_samplerSlot;
+
+            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol*, uint*, int> get_uavSlot;
+
+            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol*, uint*, int> get_sizeInUdt;
+
+            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol*, uint*, int> get_memorySpaceKind;
+
+            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol*, uint*, int> get_unmodifiedTypeId;
+
+            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol*, uint*, int> get_subTypeId;
+
+            [NativeTypeName("HRESULT (IDiaSymbol **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol*, IDiaSymbol**, int> get_subType;
+
+            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol*, uint*, int> get_numberOfModifiers;
+
+            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol*, uint*, int> get_numberOfRegisterIndices;
+
+            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol*, BOOL*, int> get_isHLSLData;
+
+            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol*, BOOL*, int> get_isPointerToDataMember;
+
+            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol*, BOOL*, int> get_isPointerToMemberFunction;
+
+            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol*, BOOL*, int> get_isSingleInheritance;
+
+            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol*, BOOL*, int> get_isMultipleInheritance;
+
+            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol*, BOOL*, int> get_isVirtualInheritance;
+
+            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol*, BOOL*, int> get_restrictedType;
+
+            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol*, BOOL*, int> get_isPointerBasedOnSymbolValue;
+
+            [NativeTypeName("HRESULT (IDiaSymbol **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol*, IDiaSymbol**, int> get_baseSymbol;
+
+            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol*, uint*, int> get_baseSymbolId;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol*, ushort**, int> get_objectFileName;
+
+            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol*, BOOL*, int> get_isAcceleratorGroupSharedLocal;
+
+            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol*, BOOL*, int> get_isAcceleratorPointerTagLiveRange;
+
+            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol*, BOOL*, int> get_isAcceleratorStubFunction;
+
+            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol*, uint*, int> get_numberOfAcceleratorPointerTags;
+
+            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol*, BOOL*, int> get_isSdl;
+
+            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol*, BOOL*, int> get_isWinRTPointer;
+
+            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol*, BOOL*, int> get_isRefUdt;
+
+            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol*, BOOL*, int> get_isValueUdt;
+
+            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol*, BOOL*, int> get_isInterfaceUdt;
+
+            [NativeTypeName("HRESULT (DWORD, DWORD, IDiaEnumSymbols **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol*, uint, uint, IDiaEnumSymbols**, int> findInlineFramesByAddr;
+
+            [NativeTypeName("HRESULT (DWORD, IDiaEnumSymbols **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol*, uint, IDiaEnumSymbols**, int> findInlineFramesByRVA;
+
+            [NativeTypeName("HRESULT (ULONGLONG, IDiaEnumSymbols **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol*, ulong, IDiaEnumSymbols**, int> findInlineFramesByVA;
+
+            [NativeTypeName("HRESULT (IDiaEnumLineNumbers **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol*, IDiaEnumLineNumbers**, int> findInlineeLines;
+
+            [NativeTypeName("HRESULT (DWORD, DWORD, DWORD, IDiaEnumLineNumbers **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol*, uint, uint, uint, IDiaEnumLineNumbers**, int> findInlineeLinesByAddr;
+
+            [NativeTypeName("HRESULT (DWORD, DWORD, IDiaEnumLineNumbers **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol*, uint, uint, IDiaEnumLineNumbers**, int> findInlineeLinesByRVA;
+
+            [NativeTypeName("HRESULT (ULONGLONG, DWORD, IDiaEnumLineNumbers **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol*, ulong, uint, IDiaEnumLineNumbers**, int> findInlineeLinesByVA;
+
+            [NativeTypeName("HRESULT (DWORD, IDiaEnumSymbols **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol*, uint, IDiaEnumSymbols**, int> findSymbolsForAcceleratorPointerTag;
+
+            [NativeTypeName("HRESULT (DWORD, DWORD, IDiaEnumSymbols **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol*, uint, uint, IDiaEnumSymbols**, int> findSymbolsByRVAForAcceleratorPointerTag;
+
+            [NativeTypeName("HRESULT (DWORD, DWORD *, DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol*, uint, uint*, uint*, int> get_acceleratorPointerTags;
+
+            [NativeTypeName("HRESULT (IDiaLineNumber **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol*, IDiaLineNumber**, int> getSrcLineOnTypeDefn;
+
+            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol*, BOOL*, int> get_isPGO;
+
+            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol*, BOOL*, int> get_hasValidPGOCounts;
+
+            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol*, BOOL*, int> get_isOptimizedForSpeed;
+
+            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol*, uint*, int> get_PGOEntryCount;
+
+            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol*, uint*, int> get_PGOEdgeCount;
+
+            [NativeTypeName("HRESULT (ULONGLONG *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol*, ulong*, int> get_PGODynamicInstructionCount;
+
+            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol*, uint*, int> get_staticSize;
+
+            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol*, uint*, int> get_finalLiveStaticSize;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol*, ushort**, int> get_phaseName;
+
+            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol*, BOOL*, int> get_hasControlFlowCheck;
+
+            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol*, BOOL*, int> get_constantExport;
+
+            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol*, BOOL*, int> get_dataExport;
+
+            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol*, BOOL*, int> get_privateExport;
+
+            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol*, BOOL*, int> get_noNameExport;
+
+            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol*, BOOL*, int> get_exportHasExplicitlyAssignedOrdinal;
+
+            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol*, BOOL*, int> get_exportIsForwarder;
+
+            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol*, uint*, int> get_ordinal;
+
+            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol*, uint*, int> get_frameSize;
+
+            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol*, uint*, int> get_exceptionHandlerAddressSection;
+
+            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol*, uint*, int> get_exceptionHandlerAddressOffset;
+
+            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol*, uint*, int> get_exceptionHandlerRelativeVirtualAddress;
+
+            [NativeTypeName("HRESULT (ULONGLONG *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol*, ulong*, int> get_exceptionHandlerVirtualAddress;
+
+            [NativeTypeName("HRESULT (IDiaInputAssemblyFile **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol*, IDiaInputAssemblyFile**, int> findInputAssemblyFile;
+
+            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol*, uint*, int> get_characteristics;
+
+            [NativeTypeName("HRESULT (IDiaSymbol **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol*, IDiaSymbol**, int> get_coffGroup;
+
+            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol*, uint*, int> get_bindID;
+
+            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol*, uint*, int> get_bindSpace;
+
+            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSymbol*, uint*, int> get_bindSlot;
         }
     }
 }

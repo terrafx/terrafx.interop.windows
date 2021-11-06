@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("24918ACC-64B3-37C1-8CA9-74A66E9957A8")]
     [NativeTypeName("struct IAudioSessionEvents : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IAudioSessionEvents
+    public unsafe partial struct IAudioSessionEvents : IAudioSessionEvents.Interface
     {
         public void** lpVtbl;
 
@@ -86,6 +86,63 @@ namespace TerraFX.Interop
         public HRESULT OnSessionDisconnected(AudioSessionDisconnectReason DisconnectReason)
         {
             return ((delegate* unmanaged<IAudioSessionEvents*, AudioSessionDisconnectReason, int>)(lpVtbl[9]))((IAudioSessionEvents*)Unsafe.AsPointer(ref this), DisconnectReason);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT OnDisplayNameChanged([NativeTypeName("LPCWSTR")] ushort* NewDisplayName, [NativeTypeName("LPCGUID")] Guid* EventContext);
+
+            [VtblIndex(4)]
+            HRESULT OnIconPathChanged([NativeTypeName("LPCWSTR")] ushort* NewIconPath, [NativeTypeName("LPCGUID")] Guid* EventContext);
+
+            [VtblIndex(5)]
+            HRESULT OnSimpleVolumeChanged(float NewVolume, BOOL NewMute, [NativeTypeName("LPCGUID")] Guid* EventContext);
+
+            [VtblIndex(6)]
+            HRESULT OnChannelVolumeChanged([NativeTypeName("DWORD")] uint ChannelCount, [NativeTypeName("float []")] float* NewChannelVolumeArray, [NativeTypeName("DWORD")] uint ChangedChannel, [NativeTypeName("LPCGUID")] Guid* EventContext);
+
+            [VtblIndex(7)]
+            HRESULT OnGroupingParamChanged([NativeTypeName("LPCGUID")] Guid* NewGroupingParam, [NativeTypeName("LPCGUID")] Guid* EventContext);
+
+            [VtblIndex(8)]
+            HRESULT OnStateChanged(AudioSessionState NewState);
+
+            [VtblIndex(9)]
+            HRESULT OnSessionDisconnected(AudioSessionDisconnectReason DisconnectReason);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAudioSessionEvents*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IAudioSessionEvents*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IAudioSessionEvents*, uint> Release;
+
+            [NativeTypeName("HRESULT (LPCWSTR, LPCGUID) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAudioSessionEvents*, ushort*, Guid*, int> OnDisplayNameChanged;
+
+            [NativeTypeName("HRESULT (LPCWSTR, LPCGUID) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAudioSessionEvents*, ushort*, Guid*, int> OnIconPathChanged;
+
+            [NativeTypeName("HRESULT (float, BOOL, LPCGUID) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAudioSessionEvents*, float, BOOL, Guid*, int> OnSimpleVolumeChanged;
+
+            [NativeTypeName("HRESULT (DWORD, float *, DWORD, LPCGUID) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAudioSessionEvents*, uint, float*, uint, Guid*, int> OnChannelVolumeChanged;
+
+            [NativeTypeName("HRESULT (LPCGUID, LPCGUID) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAudioSessionEvents*, Guid*, Guid*, int> OnGroupingParamChanged;
+
+            [NativeTypeName("HRESULT (AudioSessionState) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAudioSessionEvents*, AudioSessionState, int> OnStateChanged;
+
+            [NativeTypeName("HRESULT (AudioSessionDisconnectReason) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAudioSessionEvents*, AudioSessionDisconnectReason, int> OnSessionDisconnected;
         }
     }
 }

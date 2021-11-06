@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("152B8A3B-B9B9-4685-B56E-974847BC7545")]
     [NativeTypeName("struct ICorrelationVectorSource : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct ICorrelationVectorSource
+    public unsafe partial struct ICorrelationVectorSource : ICorrelationVectorSource.Interface
     {
         public void** lpVtbl;
 
@@ -44,6 +44,27 @@ namespace TerraFX.Interop
         public HRESULT get_CorrelationVector(HSTRING* cv)
         {
             return ((delegate* unmanaged<ICorrelationVectorSource*, HSTRING*, int>)(lpVtbl[3]))((ICorrelationVectorSource*)Unsafe.AsPointer(ref this), cv);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT get_CorrelationVector(HSTRING* cv);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ICorrelationVectorSource*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ICorrelationVectorSource*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ICorrelationVectorSource*, uint> Release;
+
+            [NativeTypeName("HRESULT (HSTRING *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ICorrelationVectorSource*, HSTRING*, int> get_CorrelationVector;
         }
     }
 }

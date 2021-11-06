@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("E0DB51C3-6F77-4BAE-B3D5-E47509B35838")]
     [NativeTypeName("struct ID2D1GdiInteropRenderTarget : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct ID2D1GdiInteropRenderTarget
+    public unsafe partial struct ID2D1GdiInteropRenderTarget : ID2D1GdiInteropRenderTarget.Interface
     {
         public void** lpVtbl;
 
@@ -51,6 +51,33 @@ namespace TerraFX.Interop
         public HRESULT ReleaseDC([NativeTypeName("const RECT *")] RECT* update)
         {
             return ((delegate* unmanaged<ID2D1GdiInteropRenderTarget*, RECT*, int>)(lpVtbl[4]))((ID2D1GdiInteropRenderTarget*)Unsafe.AsPointer(ref this), update);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetDC(D2D1_DC_INITIALIZE_MODE mode, HDC* hdc);
+
+            [VtblIndex(4)]
+            HRESULT ReleaseDC([NativeTypeName("const RECT *")] RECT* update);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID2D1GdiInteropRenderTarget*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ID2D1GdiInteropRenderTarget*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ID2D1GdiInteropRenderTarget*, uint> Release;
+
+            [NativeTypeName("HRESULT (D2D1_DC_INITIALIZE_MODE, HDC *) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID2D1GdiInteropRenderTarget*, D2D1_DC_INITIALIZE_MODE, HDC*, int> GetDC;
+
+            [NativeTypeName("HRESULT (const RECT *) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID2D1GdiInteropRenderTarget*, RECT*, int> ReleaseDC;
         }
     }
 }

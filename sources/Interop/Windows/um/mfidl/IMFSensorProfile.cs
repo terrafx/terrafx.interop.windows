@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("22F765D1-8DAB-4107-846D-56BAF72215E7")]
     [NativeTypeName("struct IMFSensorProfile : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IMFSensorProfile
+    public unsafe partial struct IMFSensorProfile : IMFSensorProfile.Interface
     {
         public void** lpVtbl;
 
@@ -65,6 +65,45 @@ namespace TerraFX.Interop
         public HRESULT AddBlockedControl([NativeTypeName("LPCWSTR")] ushort* wzBlockedControl)
         {
             return ((delegate* unmanaged<IMFSensorProfile*, ushort*, int>)(lpVtbl[6]))((IMFSensorProfile*)Unsafe.AsPointer(ref this), wzBlockedControl);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetProfileId(SENSORPROFILEID* pId);
+
+            [VtblIndex(4)]
+            HRESULT AddProfileFilter([NativeTypeName("UINT32")] uint StreamId, [NativeTypeName("LPCWSTR")] ushort* wzFilterSetString);
+
+            [VtblIndex(5)]
+            HRESULT IsMediaTypeSupported([NativeTypeName("UINT32")] uint StreamId, IMFMediaType* pMediaType, BOOL* pfSupported);
+
+            [VtblIndex(6)]
+            HRESULT AddBlockedControl([NativeTypeName("LPCWSTR")] ushort* wzBlockedControl);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFSensorProfile*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFSensorProfile*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFSensorProfile*, uint> Release;
+
+            [NativeTypeName("HRESULT (SENSORPROFILEID *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFSensorProfile*, SENSORPROFILEID*, int> GetProfileId;
+
+            [NativeTypeName("HRESULT (UINT32, LPCWSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFSensorProfile*, uint, ushort*, int> AddProfileFilter;
+
+            [NativeTypeName("HRESULT (UINT32, IMFMediaType *, BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFSensorProfile*, uint, IMFMediaType*, BOOL*, int> IsMediaTypeSupported;
+
+            [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFSensorProfile*, ushort*, int> AddBlockedControl;
         }
     }
 }

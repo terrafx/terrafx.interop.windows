@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("3051052B-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct ISVGStopElement : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct ISVGStopElement
+    public unsafe partial struct ISVGStopElement : ISVGStopElement.Interface
     {
         public void** lpVtbl;
 
@@ -79,6 +79,45 @@ namespace TerraFX.Interop
         public HRESULT get_offset(ISVGAnimatedNumber** p)
         {
             return ((delegate* unmanaged<ISVGStopElement*, ISVGAnimatedNumber**, int>)(lpVtbl[8]))((ISVGStopElement*)Unsafe.AsPointer(ref this), p);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT putref_offset(ISVGAnimatedNumber* v);
+
+            [VtblIndex(8)]
+            HRESULT get_offset(ISVGAnimatedNumber** p);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISVGStopElement*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ISVGStopElement*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ISVGStopElement*, uint> Release;
+
+            [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISVGStopElement*, uint*, int> GetTypeInfoCount;
+
+            [NativeTypeName("HRESULT (UINT, LCID, ITypeInfo **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISVGStopElement*, uint, uint, ITypeInfo**, int> GetTypeInfo;
+
+            [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISVGStopElement*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+
+            [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISVGStopElement*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
+
+            [NativeTypeName("HRESULT (ISVGAnimatedNumber *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISVGStopElement*, ISVGAnimatedNumber*, int> putref_offset;
+
+            [NativeTypeName("HRESULT (ISVGAnimatedNumber **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISVGStopElement*, ISVGAnimatedNumber**, int> get_offset;
         }
     }
 }

@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("E9EB5314-33AA-42B2-A718-D77F58B1F1C7")]
     [NativeTypeName("struct ID3D12SDKConfiguration : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct ID3D12SDKConfiguration
+    public unsafe partial struct ID3D12SDKConfiguration : ID3D12SDKConfiguration.Interface
     {
         public void** lpVtbl;
 
@@ -44,6 +44,27 @@ namespace TerraFX.Interop
         public HRESULT SetSDKVersion(uint SDKVersion, [NativeTypeName("LPCSTR")] sbyte* SDKPath)
         {
             return ((delegate* unmanaged<ID3D12SDKConfiguration*, uint, sbyte*, int>)(lpVtbl[3]))((ID3D12SDKConfiguration*)Unsafe.AsPointer(ref this), SDKVersion, SDKPath);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT SetSDKVersion(uint SDKVersion, [NativeTypeName("LPCSTR")] sbyte* SDKPath);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D12SDKConfiguration*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D12SDKConfiguration*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D12SDKConfiguration*, uint> Release;
+
+            [NativeTypeName("HRESULT (UINT, LPCSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D12SDKConfiguration*, uint, sbyte*, int> SetSDKVersion;
         }
     }
 }

@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("418726D8-DD99-4F5D-9886-157ADD20DE01")]
     [NativeTypeName("struct IAppxContentGroupMapReader : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IAppxContentGroupMapReader
+    public unsafe partial struct IAppxContentGroupMapReader : IAppxContentGroupMapReader.Interface
     {
         public void** lpVtbl;
 
@@ -51,6 +51,33 @@ namespace TerraFX.Interop
         public HRESULT GetAutomaticGroups(IAppxContentGroupsEnumerator** automaticGroupsEnumerator)
         {
             return ((delegate* unmanaged<IAppxContentGroupMapReader*, IAppxContentGroupsEnumerator**, int>)(lpVtbl[4]))((IAppxContentGroupMapReader*)Unsafe.AsPointer(ref this), automaticGroupsEnumerator);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetRequiredGroup(IAppxContentGroup** requiredGroup);
+
+            [VtblIndex(4)]
+            HRESULT GetAutomaticGroups(IAppxContentGroupsEnumerator** automaticGroupsEnumerator);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAppxContentGroupMapReader*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IAppxContentGroupMapReader*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IAppxContentGroupMapReader*, uint> Release;
+
+            [NativeTypeName("HRESULT (IAppxContentGroup **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAppxContentGroupMapReader*, IAppxContentGroup**, int> GetRequiredGroup;
+
+            [NativeTypeName("HRESULT (IAppxContentGroupsEnumerator **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAppxContentGroupMapReader*, IAppxContentGroupsEnumerator**, int> GetAutomaticGroups;
         }
     }
 }

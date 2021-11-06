@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("34AB647B-3CC8-46AC-841B-C0965645C046")]
     [NativeTypeName("struct ID3D12RootSignatureDeserializer : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct ID3D12RootSignatureDeserializer
+    public unsafe partial struct ID3D12RootSignatureDeserializer : ID3D12RootSignatureDeserializer.Interface
     {
         public void** lpVtbl;
 
@@ -45,6 +45,28 @@ namespace TerraFX.Interop
         public D3D12_ROOT_SIGNATURE_DESC* GetRootSignatureDesc()
         {
             return ((delegate* unmanaged<ID3D12RootSignatureDeserializer*, D3D12_ROOT_SIGNATURE_DESC*>)(lpVtbl[3]))((ID3D12RootSignatureDeserializer*)Unsafe.AsPointer(ref this));
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            [return: NativeTypeName("const D3D12_ROOT_SIGNATURE_DESC *")]
+            D3D12_ROOT_SIGNATURE_DESC* GetRootSignatureDesc();
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D12RootSignatureDeserializer*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D12RootSignatureDeserializer*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D12RootSignatureDeserializer*, uint> Release;
+
+            [NativeTypeName("const D3D12_ROOT_SIGNATURE_DESC *() __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D12RootSignatureDeserializer*, D3D12_ROOT_SIGNATURE_DESC*> GetRootSignatureDesc;
         }
     }
 }

@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("4F03DC02-5E6E-4653-8F72-A030C123D598")]
     [NativeTypeName("struct IAudioInputSelector : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IAudioInputSelector
+    public unsafe partial struct IAudioInputSelector : IAudioInputSelector.Interface
     {
         public void** lpVtbl;
 
@@ -51,6 +51,33 @@ namespace TerraFX.Interop
         public HRESULT SetSelection(uint nIdSelect, [NativeTypeName("LPCGUID")] Guid* pguidEventContext)
         {
             return ((delegate* unmanaged<IAudioInputSelector*, uint, Guid*, int>)(lpVtbl[4]))((IAudioInputSelector*)Unsafe.AsPointer(ref this), nIdSelect, pguidEventContext);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetSelection(uint* pnIdSelected);
+
+            [VtblIndex(4)]
+            HRESULT SetSelection(uint nIdSelect, [NativeTypeName("LPCGUID")] Guid* pguidEventContext);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAudioInputSelector*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IAudioInputSelector*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IAudioInputSelector*, uint> Release;
+
+            [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAudioInputSelector*, uint*, int> GetSelection;
+
+            [NativeTypeName("HRESULT (UINT, LPCGUID) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAudioInputSelector*, uint, Guid*, int> SetSelection;
         }
     }
 }

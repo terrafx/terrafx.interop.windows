@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("5EFEC991-BCA3-42D1-9EC2-E92D609EC22A")]
     [NativeTypeName("struct IAppxBlockMapReader : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IAppxBlockMapReader
+    public unsafe partial struct IAppxBlockMapReader : IAppxBlockMapReader.Interface
     {
         public void** lpVtbl;
 
@@ -65,6 +65,45 @@ namespace TerraFX.Interop
         public HRESULT GetStream(IStream** blockMapStream)
         {
             return ((delegate* unmanaged<IAppxBlockMapReader*, IStream**, int>)(lpVtbl[6]))((IAppxBlockMapReader*)Unsafe.AsPointer(ref this), blockMapStream);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetFile([NativeTypeName("LPCWSTR")] ushort* filename, IAppxBlockMapFile** file);
+
+            [VtblIndex(4)]
+            HRESULT GetFiles(IAppxBlockMapFilesEnumerator** enumerator);
+
+            [VtblIndex(5)]
+            HRESULT GetHashMethod(IUri** hashMethod);
+
+            [VtblIndex(6)]
+            HRESULT GetStream(IStream** blockMapStream);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAppxBlockMapReader*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IAppxBlockMapReader*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IAppxBlockMapReader*, uint> Release;
+
+            [NativeTypeName("HRESULT (LPCWSTR, IAppxBlockMapFile **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAppxBlockMapReader*, ushort*, IAppxBlockMapFile**, int> GetFile;
+
+            [NativeTypeName("HRESULT (IAppxBlockMapFilesEnumerator **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAppxBlockMapReader*, IAppxBlockMapFilesEnumerator**, int> GetFiles;
+
+            [NativeTypeName("HRESULT (IUri **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAppxBlockMapReader*, IUri**, int> GetHashMethod;
+
+            [NativeTypeName("HRESULT (IStream **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAppxBlockMapReader*, IStream**, int> GetStream;
         }
     }
 }

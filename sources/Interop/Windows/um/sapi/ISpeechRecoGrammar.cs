@@ -13,7 +13,7 @@ namespace TerraFX.Interop
     [Guid("B6D6F79F-2158-4E50-B5BC-9A9CCD852A09")]
     [NativeTypeName("struct ISpeechRecoGrammar : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct ISpeechRecoGrammar
+    public unsafe partial struct ISpeechRecoGrammar : ISpeechRecoGrammar.Interface
     {
         public void** lpVtbl;
 
@@ -199,6 +199,147 @@ namespace TerraFX.Interop
         public HRESULT IsPronounceable([NativeTypeName("const BSTR")] ushort* Word, SpeechWordPronounceable* WordPronounceable)
         {
             return ((delegate* unmanaged<ISpeechRecoGrammar*, ushort*, SpeechWordPronounceable*, int>)(lpVtbl[25]))((ISpeechRecoGrammar*)Unsafe.AsPointer(ref this), Word, WordPronounceable);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT get_Id(VARIANT* Id);
+
+            [VtblIndex(8)]
+            HRESULT get_RecoContext(ISpeechRecoContext** RecoContext);
+
+            [VtblIndex(9)]
+            HRESULT put_State(SpeechGrammarState State);
+
+            [VtblIndex(10)]
+            HRESULT get_State(SpeechGrammarState* State);
+
+            [VtblIndex(11)]
+            HRESULT get_Rules(ISpeechGrammarRules** Rules);
+
+            [VtblIndex(12)]
+            HRESULT Reset([NativeTypeName("SpeechLanguageId")] int NewLanguage = 0);
+
+            [VtblIndex(13)]
+            HRESULT CmdLoadFromFile([NativeTypeName("const BSTR")] ushort* FileName, SpeechLoadOption LoadOption = SLOStatic);
+
+            [VtblIndex(14)]
+            HRESULT CmdLoadFromObject([NativeTypeName("const BSTR")] ushort* ClassId, [NativeTypeName("const BSTR")] ushort* GrammarName, SpeechLoadOption LoadOption = SLOStatic);
+
+            [VtblIndex(15)]
+            HRESULT CmdLoadFromResource([NativeTypeName("long")] int hModule, VARIANT ResourceName, VARIANT ResourceType, [NativeTypeName("SpeechLanguageId")] int LanguageId, SpeechLoadOption LoadOption = SLOStatic);
+
+            [VtblIndex(16)]
+            HRESULT CmdLoadFromMemory(VARIANT GrammarData, SpeechLoadOption LoadOption = SLOStatic);
+
+            [VtblIndex(17)]
+            HRESULT CmdLoadFromProprietaryGrammar([NativeTypeName("const BSTR")] ushort* ProprietaryGuid, [NativeTypeName("const BSTR")] ushort* ProprietaryString, VARIANT ProprietaryData, SpeechLoadOption LoadOption = SLOStatic);
+
+            [VtblIndex(18)]
+            HRESULT CmdSetRuleState([NativeTypeName("const BSTR")] ushort* Name, SpeechRuleState State);
+
+            [VtblIndex(19)]
+            HRESULT CmdSetRuleIdState([NativeTypeName("long")] int RuleId, SpeechRuleState State);
+
+            [VtblIndex(20)]
+            HRESULT DictationLoad([NativeTypeName("const BSTR")] ushort* TopicName = null, SpeechLoadOption LoadOption = SLOStatic);
+
+            [VtblIndex(21)]
+            HRESULT DictationUnload();
+
+            [VtblIndex(22)]
+            HRESULT DictationSetState(SpeechRuleState State);
+
+            [VtblIndex(23)]
+            HRESULT SetWordSequenceData([NativeTypeName("const BSTR")] ushort* Text, [NativeTypeName("long")] int TextLength, ISpeechTextSelectionInformation* Info);
+
+            [VtblIndex(24)]
+            HRESULT SetTextSelection(ISpeechTextSelectionInformation* Info);
+
+            [VtblIndex(25)]
+            HRESULT IsPronounceable([NativeTypeName("const BSTR")] ushort* Word, SpeechWordPronounceable* WordPronounceable);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpeechRecoGrammar*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpeechRecoGrammar*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpeechRecoGrammar*, uint> Release;
+
+            [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpeechRecoGrammar*, uint*, int> GetTypeInfoCount;
+
+            [NativeTypeName("HRESULT (UINT, LCID, ITypeInfo **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpeechRecoGrammar*, uint, uint, ITypeInfo**, int> GetTypeInfo;
+
+            [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpeechRecoGrammar*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+
+            [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpeechRecoGrammar*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
+
+            [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpeechRecoGrammar*, VARIANT*, int> get_Id;
+
+            [NativeTypeName("HRESULT (ISpeechRecoContext **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpeechRecoGrammar*, ISpeechRecoContext**, int> get_RecoContext;
+
+            [NativeTypeName("HRESULT (SpeechGrammarState) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpeechRecoGrammar*, SpeechGrammarState, int> put_State;
+
+            [NativeTypeName("HRESULT (SpeechGrammarState *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpeechRecoGrammar*, SpeechGrammarState*, int> get_State;
+
+            [NativeTypeName("HRESULT (ISpeechGrammarRules **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpeechRecoGrammar*, ISpeechGrammarRules**, int> get_Rules;
+
+            [NativeTypeName("HRESULT (SpeechLanguageId) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpeechRecoGrammar*, int, int> Reset;
+
+            [NativeTypeName("HRESULT (const BSTR, SpeechLoadOption) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpeechRecoGrammar*, ushort*, SpeechLoadOption, int> CmdLoadFromFile;
+
+            [NativeTypeName("HRESULT (const BSTR, const BSTR, SpeechLoadOption) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpeechRecoGrammar*, ushort*, ushort*, SpeechLoadOption, int> CmdLoadFromObject;
+
+            [NativeTypeName("HRESULT (long, VARIANT, VARIANT, SpeechLanguageId, SpeechLoadOption) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpeechRecoGrammar*, int, VARIANT, VARIANT, int, SpeechLoadOption, int> CmdLoadFromResource;
+
+            [NativeTypeName("HRESULT (VARIANT, SpeechLoadOption) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpeechRecoGrammar*, VARIANT, SpeechLoadOption, int> CmdLoadFromMemory;
+
+            [NativeTypeName("HRESULT (const BSTR, const BSTR, VARIANT, SpeechLoadOption) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpeechRecoGrammar*, ushort*, ushort*, VARIANT, SpeechLoadOption, int> CmdLoadFromProprietaryGrammar;
+
+            [NativeTypeName("HRESULT (const BSTR, SpeechRuleState) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpeechRecoGrammar*, ushort*, SpeechRuleState, int> CmdSetRuleState;
+
+            [NativeTypeName("HRESULT (long, SpeechRuleState) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpeechRecoGrammar*, int, SpeechRuleState, int> CmdSetRuleIdState;
+
+            [NativeTypeName("HRESULT (const BSTR, SpeechLoadOption) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpeechRecoGrammar*, ushort*, SpeechLoadOption, int> DictationLoad;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpeechRecoGrammar*, int> DictationUnload;
+
+            [NativeTypeName("HRESULT (SpeechRuleState) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpeechRecoGrammar*, SpeechRuleState, int> DictationSetState;
+
+            [NativeTypeName("HRESULT (const BSTR, long, ISpeechTextSelectionInformation *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpeechRecoGrammar*, ushort*, int, ISpeechTextSelectionInformation*, int> SetWordSequenceData;
+
+            [NativeTypeName("HRESULT (ISpeechTextSelectionInformation *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpeechRecoGrammar*, ISpeechTextSelectionInformation*, int> SetTextSelection;
+
+            [NativeTypeName("HRESULT (const BSTR, SpeechWordPronounceable *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpeechRecoGrammar*, ushort*, SpeechWordPronounceable*, int> IsPronounceable;
         }
     }
 }

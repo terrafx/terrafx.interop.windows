@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("3050F4AE-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct IHTMLWindow3 : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct IHTMLWindow3
+    public unsafe partial struct IHTMLWindow3 : IHTMLWindow3.Interface
     {
         public void** lpVtbl;
 
@@ -156,6 +156,111 @@ namespace TerraFX.Interop
         public HRESULT showModelessDialog([NativeTypeName("BSTR")] ushort* url, VARIANT* varArgIn, VARIANT* options, IHTMLWindow2** pDialog)
         {
             return ((delegate* unmanaged<IHTMLWindow3*, ushort*, VARIANT*, VARIANT*, IHTMLWindow2**, int>)(lpVtbl[19]))((IHTMLWindow3*)Unsafe.AsPointer(ref this), url, varArgIn, options, pDialog);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT get_screenLeft([NativeTypeName("long *")] int* p);
+
+            [VtblIndex(8)]
+            HRESULT get_screenTop([NativeTypeName("long *")] int* p);
+
+            [VtblIndex(9)]
+            HRESULT attachEvent([NativeTypeName("BSTR")] ushort* @event, IDispatch* pDisp, [NativeTypeName("VARIANT_BOOL *")] short* pfResult);
+
+            [VtblIndex(10)]
+            HRESULT detachEvent([NativeTypeName("BSTR")] ushort* @event, IDispatch* pDisp);
+
+            [VtblIndex(11)]
+            HRESULT setTimeout(VARIANT* expression, [NativeTypeName("long")] int msec, VARIANT* language, [NativeTypeName("long *")] int* timerID);
+
+            [VtblIndex(12)]
+            HRESULT setInterval(VARIANT* expression, [NativeTypeName("long")] int msec, VARIANT* language, [NativeTypeName("long *")] int* timerID);
+
+            [VtblIndex(13)]
+            HRESULT print();
+
+            [VtblIndex(14)]
+            HRESULT put_onbeforeprint(VARIANT v);
+
+            [VtblIndex(15)]
+            HRESULT get_onbeforeprint(VARIANT* p);
+
+            [VtblIndex(16)]
+            HRESULT put_onafterprint(VARIANT v);
+
+            [VtblIndex(17)]
+            HRESULT get_onafterprint(VARIANT* p);
+
+            [VtblIndex(18)]
+            HRESULT get_clipboardData(IHTMLDataTransfer** p);
+
+            [VtblIndex(19)]
+            HRESULT showModelessDialog([NativeTypeName("BSTR")] ushort* url, VARIANT* varArgIn, VARIANT* options, IHTMLWindow2** pDialog);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLWindow3*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLWindow3*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLWindow3*, uint> Release;
+
+            [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLWindow3*, uint*, int> GetTypeInfoCount;
+
+            [NativeTypeName("HRESULT (UINT, LCID, ITypeInfo **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLWindow3*, uint, uint, ITypeInfo**, int> GetTypeInfo;
+
+            [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLWindow3*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+
+            [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLWindow3*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
+
+            [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLWindow3*, int*, int> get_screenLeft;
+
+            [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLWindow3*, int*, int> get_screenTop;
+
+            [NativeTypeName("HRESULT (BSTR, IDispatch *, VARIANT_BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLWindow3*, ushort*, IDispatch*, short*, int> attachEvent;
+
+            [NativeTypeName("HRESULT (BSTR, IDispatch *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLWindow3*, ushort*, IDispatch*, int> detachEvent;
+
+            [NativeTypeName("HRESULT (VARIANT *, long, VARIANT *, long *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLWindow3*, VARIANT*, int, VARIANT*, int*, int> setTimeout;
+
+            [NativeTypeName("HRESULT (VARIANT *, long, VARIANT *, long *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLWindow3*, VARIANT*, int, VARIANT*, int*, int> setInterval;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLWindow3*, int> print;
+
+            [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLWindow3*, VARIANT, int> put_onbeforeprint;
+
+            [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLWindow3*, VARIANT*, int> get_onbeforeprint;
+
+            [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLWindow3*, VARIANT, int> put_onafterprint;
+
+            [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLWindow3*, VARIANT*, int> get_onafterprint;
+
+            [NativeTypeName("HRESULT (IHTMLDataTransfer **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLWindow3*, IHTMLDataTransfer**, int> get_clipboardData;
+
+            [NativeTypeName("HRESULT (BSTR, VARIANT *, VARIANT *, IHTMLWindow2 **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLWindow3*, ushort*, VARIANT*, VARIANT*, IHTMLWindow2**, int> showModelessDialog;
         }
     }
 }

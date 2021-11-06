@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("913C24A0-20AB-11D2-9038-00A0C9697298")]
     [NativeTypeName("struct IDDrawExclModeVideoCallback : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IDDrawExclModeVideoCallback
+    public unsafe partial struct IDDrawExclModeVideoCallback : IDDrawExclModeVideoCallback.Interface
     {
         public void** lpVtbl;
 
@@ -58,6 +58,39 @@ namespace TerraFX.Interop
         public HRESULT OnUpdateSize([NativeTypeName("DWORD")] uint dwWidth, [NativeTypeName("DWORD")] uint dwHeight, [NativeTypeName("DWORD")] uint dwARWidth, [NativeTypeName("DWORD")] uint dwARHeight)
         {
             return ((delegate* unmanaged<IDDrawExclModeVideoCallback*, uint, uint, uint, uint, int>)(lpVtbl[5]))((IDDrawExclModeVideoCallback*)Unsafe.AsPointer(ref this), dwWidth, dwHeight, dwARWidth, dwARHeight);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT OnUpdateOverlay(BOOL bBefore, [NativeTypeName("DWORD")] uint dwFlags, BOOL bOldVisible, [NativeTypeName("const RECT *")] RECT* prcOldSrc, [NativeTypeName("const RECT *")] RECT* prcOldDest, BOOL bNewVisible, [NativeTypeName("const RECT *")] RECT* prcNewSrc, [NativeTypeName("const RECT *")] RECT* prcNewDest);
+
+            [VtblIndex(4)]
+            HRESULT OnUpdateColorKey([NativeTypeName("const COLORKEY *")] COLORKEY* pKey, [NativeTypeName("DWORD")] uint dwColor);
+
+            [VtblIndex(5)]
+            HRESULT OnUpdateSize([NativeTypeName("DWORD")] uint dwWidth, [NativeTypeName("DWORD")] uint dwHeight, [NativeTypeName("DWORD")] uint dwARWidth, [NativeTypeName("DWORD")] uint dwARHeight);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDDrawExclModeVideoCallback*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDDrawExclModeVideoCallback*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDDrawExclModeVideoCallback*, uint> Release;
+
+            [NativeTypeName("HRESULT (BOOL, DWORD, BOOL, const RECT *, const RECT *, BOOL, const RECT *, const RECT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDDrawExclModeVideoCallback*, BOOL, uint, BOOL, RECT*, RECT*, BOOL, RECT*, RECT*, int> OnUpdateOverlay;
+
+            [NativeTypeName("HRESULT (const COLORKEY *, DWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDDrawExclModeVideoCallback*, COLORKEY*, uint, int> OnUpdateColorKey;
+
+            [NativeTypeName("HRESULT (DWORD, DWORD, DWORD, DWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDDrawExclModeVideoCallback*, uint, uint, uint, uint, int> OnUpdateSize;
         }
     }
 }

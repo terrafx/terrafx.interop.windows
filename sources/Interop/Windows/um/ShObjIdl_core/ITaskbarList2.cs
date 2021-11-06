@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("602D4995-B13A-429B-A66E-1935E44F4317")]
     [NativeTypeName("struct ITaskbarList2 : ITaskbarList")]
     [NativeInheritance("ITaskbarList")]
-    public unsafe partial struct ITaskbarList2
+    public unsafe partial struct ITaskbarList2 : ITaskbarList2.Interface
     {
         public void** lpVtbl;
 
@@ -79,6 +79,42 @@ namespace TerraFX.Interop
         public HRESULT MarkFullscreenWindow(HWND hwnd, BOOL fFullscreen)
         {
             return ((delegate* unmanaged<ITaskbarList2*, HWND, BOOL, int>)(lpVtbl[8]))((ITaskbarList2*)Unsafe.AsPointer(ref this), hwnd, fFullscreen);
+        }
+
+        public interface Interface : ITaskbarList.Interface
+        {
+            [VtblIndex(8)]
+            HRESULT MarkFullscreenWindow(HWND hwnd, BOOL fFullscreen);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITaskbarList2*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ITaskbarList2*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ITaskbarList2*, uint> Release;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<ITaskbarList2*, int> HrInit;
+
+            [NativeTypeName("HRESULT (HWND) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITaskbarList2*, HWND, int> AddTab;
+
+            [NativeTypeName("HRESULT (HWND) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITaskbarList2*, HWND, int> DeleteTab;
+
+            [NativeTypeName("HRESULT (HWND) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITaskbarList2*, HWND, int> ActivateTab;
+
+            [NativeTypeName("HRESULT (HWND) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITaskbarList2*, HWND, int> SetActiveAlt;
+
+            [NativeTypeName("HRESULT (HWND, BOOL) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITaskbarList2*, HWND, BOOL, int> MarkFullscreenWindow;
         }
     }
 }

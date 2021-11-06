@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("3050F35C-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct IHTMLScreen : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct IHTMLScreen
+    public unsafe partial struct IHTMLScreen : IHTMLScreen.Interface
     {
         public void** lpVtbl;
 
@@ -135,6 +135,93 @@ namespace TerraFX.Interop
         public HRESULT get_fontSmoothingEnabled([NativeTypeName("VARIANT_BOOL *")] short* p)
         {
             return ((delegate* unmanaged<IHTMLScreen*, short*, int>)(lpVtbl[16]))((IHTMLScreen*)Unsafe.AsPointer(ref this), p);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT get_colorDepth([NativeTypeName("long *")] int* p);
+
+            [VtblIndex(8)]
+            HRESULT put_bufferDepth([NativeTypeName("long")] int v);
+
+            [VtblIndex(9)]
+            HRESULT get_bufferDepth([NativeTypeName("long *")] int* p);
+
+            [VtblIndex(10)]
+            HRESULT get_width([NativeTypeName("long *")] int* p);
+
+            [VtblIndex(11)]
+            HRESULT get_height([NativeTypeName("long *")] int* p);
+
+            [VtblIndex(12)]
+            HRESULT put_updateInterval([NativeTypeName("long")] int v);
+
+            [VtblIndex(13)]
+            HRESULT get_updateInterval([NativeTypeName("long *")] int* p);
+
+            [VtblIndex(14)]
+            HRESULT get_availHeight([NativeTypeName("long *")] int* p);
+
+            [VtblIndex(15)]
+            HRESULT get_availWidth([NativeTypeName("long *")] int* p);
+
+            [VtblIndex(16)]
+            HRESULT get_fontSmoothingEnabled([NativeTypeName("VARIANT_BOOL *")] short* p);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLScreen*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLScreen*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLScreen*, uint> Release;
+
+            [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLScreen*, uint*, int> GetTypeInfoCount;
+
+            [NativeTypeName("HRESULT (UINT, LCID, ITypeInfo **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLScreen*, uint, uint, ITypeInfo**, int> GetTypeInfo;
+
+            [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLScreen*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+
+            [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLScreen*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
+
+            [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLScreen*, int*, int> get_colorDepth;
+
+            [NativeTypeName("HRESULT (long) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLScreen*, int, int> put_bufferDepth;
+
+            [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLScreen*, int*, int> get_bufferDepth;
+
+            [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLScreen*, int*, int> get_width;
+
+            [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLScreen*, int*, int> get_height;
+
+            [NativeTypeName("HRESULT (long) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLScreen*, int, int> put_updateInterval;
+
+            [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLScreen*, int*, int> get_updateInterval;
+
+            [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLScreen*, int*, int> get_availHeight;
+
+            [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLScreen*, int*, int> get_availWidth;
+
+            [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLScreen*, short*, int> get_fontSmoothingEnabled;
         }
     }
 }

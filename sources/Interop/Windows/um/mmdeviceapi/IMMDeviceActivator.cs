@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("3B0D0EA4-D0A9-4B0E-935B-09516746FAC0")]
     [NativeTypeName("struct IMMDeviceActivator : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IMMDeviceActivator
+    public unsafe partial struct IMMDeviceActivator : IMMDeviceActivator.Interface
     {
         public void** lpVtbl;
 
@@ -44,6 +44,27 @@ namespace TerraFX.Interop
         public HRESULT Activate([NativeTypeName("const IID &")] Guid* iid, IMMDevice* pDevice, PROPVARIANT* pActivationParams, void** ppInterface)
         {
             return ((delegate* unmanaged<IMMDeviceActivator*, Guid*, IMMDevice*, PROPVARIANT*, void**, int>)(lpVtbl[3]))((IMMDeviceActivator*)Unsafe.AsPointer(ref this), iid, pDevice, pActivationParams, ppInterface);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT Activate([NativeTypeName("const IID &")] Guid* iid, IMMDevice* pDevice, PROPVARIANT* pActivationParams, void** ppInterface);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMMDeviceActivator*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMMDeviceActivator*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMMDeviceActivator*, uint> Release;
+
+            [NativeTypeName("HRESULT (const IID &, IMMDevice *, PROPVARIANT *, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMMDeviceActivator*, Guid*, IMMDevice*, PROPVARIANT*, void**, int> Activate;
         }
     }
 }

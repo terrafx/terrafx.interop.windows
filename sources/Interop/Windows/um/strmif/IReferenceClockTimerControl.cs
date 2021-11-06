@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("EBEC459C-2ECA-4D42-A8AF-30DF557614B8")]
     [NativeTypeName("struct IReferenceClockTimerControl : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IReferenceClockTimerControl
+    public unsafe partial struct IReferenceClockTimerControl : IReferenceClockTimerControl.Interface
     {
         public void** lpVtbl;
 
@@ -51,6 +51,33 @@ namespace TerraFX.Interop
         public HRESULT GetDefaultTimerResolution([NativeTypeName("REFERENCE_TIME *")] long* pTimerResolution)
         {
             return ((delegate* unmanaged<IReferenceClockTimerControl*, long*, int>)(lpVtbl[4]))((IReferenceClockTimerControl*)Unsafe.AsPointer(ref this), pTimerResolution);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT SetDefaultTimerResolution([NativeTypeName("REFERENCE_TIME")] long timerResolution);
+
+            [VtblIndex(4)]
+            HRESULT GetDefaultTimerResolution([NativeTypeName("REFERENCE_TIME *")] long* pTimerResolution);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IReferenceClockTimerControl*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IReferenceClockTimerControl*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IReferenceClockTimerControl*, uint> Release;
+
+            [NativeTypeName("HRESULT (REFERENCE_TIME) __attribute__((stdcall))")]
+            public delegate* unmanaged<IReferenceClockTimerControl*, long, int> SetDefaultTimerResolution;
+
+            [NativeTypeName("HRESULT (REFERENCE_TIME *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IReferenceClockTimerControl*, long*, int> GetDefaultTimerResolution;
         }
     }
 }

@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("64C1024E-C3CF-4462-8078-88C2B11C46D9")]
     [NativeTypeName("struct IWICBitmapCodecProgressNotification : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IWICBitmapCodecProgressNotification
+    public unsafe partial struct IWICBitmapCodecProgressNotification : IWICBitmapCodecProgressNotification.Interface
     {
         public void** lpVtbl;
 
@@ -44,6 +44,25 @@ namespace TerraFX.Interop
         public HRESULT RegisterProgressNotification([NativeTypeName("PFNProgressNotification")] delegate* unmanaged<void*, uint, WICProgressOperation, double, HRESULT> pfnProgressNotification, [NativeTypeName("LPVOID")] void* pvData, [NativeTypeName("DWORD")] uint dwProgressFlags)
         {
             return ((delegate* unmanaged<IWICBitmapCodecProgressNotification*, delegate* unmanaged<void*, uint, WICProgressOperation, double, HRESULT>, void*, uint, int>)(lpVtbl[3]))((IWICBitmapCodecProgressNotification*)Unsafe.AsPointer(ref this), pfnProgressNotification, pvData, dwProgressFlags);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWICBitmapCodecProgressNotification*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IWICBitmapCodecProgressNotification*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IWICBitmapCodecProgressNotification*, uint> Release;
+
+            [NativeTypeName("HRESULT (PFNProgressNotification, LPVOID, DWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWICBitmapCodecProgressNotification*, delegate* unmanaged<void*, uint, WICProgressOperation, double, HRESULT>, void*, uint, int> RegisterProgressNotification;
         }
     }
 }

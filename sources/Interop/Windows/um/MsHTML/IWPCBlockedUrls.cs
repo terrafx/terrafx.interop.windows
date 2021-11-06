@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("30510413-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct IWPCBlockedUrls : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IWPCBlockedUrls
+    public unsafe partial struct IWPCBlockedUrls : IWPCBlockedUrls.Interface
     {
         public void** lpVtbl;
 
@@ -51,6 +51,33 @@ namespace TerraFX.Interop
         public HRESULT GetUrl([NativeTypeName("DWORD")] uint dwIdx, [NativeTypeName("BSTR *")] ushort** pbstrUrl)
         {
             return ((delegate* unmanaged<IWPCBlockedUrls*, uint, ushort**, int>)(lpVtbl[4]))((IWPCBlockedUrls*)Unsafe.AsPointer(ref this), dwIdx, pbstrUrl);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetCount([NativeTypeName("DWORD *")] uint* pdwCount);
+
+            [VtblIndex(4)]
+            HRESULT GetUrl([NativeTypeName("DWORD")] uint dwIdx, [NativeTypeName("BSTR *")] ushort** pbstrUrl);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWPCBlockedUrls*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IWPCBlockedUrls*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IWPCBlockedUrls*, uint> Release;
+
+            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWPCBlockedUrls*, uint*, int> GetCount;
+
+            [NativeTypeName("HRESULT (DWORD, BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWPCBlockedUrls*, uint, ushort**, int> GetUrl;
         }
     }
 }

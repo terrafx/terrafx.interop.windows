@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("E667AF9F-CD56-4F46-83CE-032E595D70A8")]
     [NativeTypeName("struct ID3D12LifetimeOwner : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct ID3D12LifetimeOwner
+    public unsafe partial struct ID3D12LifetimeOwner : ID3D12LifetimeOwner.Interface
     {
         public void** lpVtbl;
 
@@ -44,6 +44,27 @@ namespace TerraFX.Interop
         public void LifetimeStateUpdated(D3D12_LIFETIME_STATE NewState)
         {
             ((delegate* unmanaged<ID3D12LifetimeOwner*, D3D12_LIFETIME_STATE, void>)(lpVtbl[3]))((ID3D12LifetimeOwner*)Unsafe.AsPointer(ref this), NewState);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            void LifetimeStateUpdated(D3D12_LIFETIME_STATE NewState);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D12LifetimeOwner*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D12LifetimeOwner*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D12LifetimeOwner*, uint> Release;
+
+            [NativeTypeName("void (D3D12_LIFETIME_STATE) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D12LifetimeOwner*, D3D12_LIFETIME_STATE, void> LifetimeStateUpdated;
         }
     }
 }

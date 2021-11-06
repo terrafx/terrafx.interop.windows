@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("00000125-0000-0000-C000-000000000046")]
     [NativeTypeName("struct IAdviseSink2 : IAdviseSink")]
     [NativeInheritance("IAdviseSink")]
-    public unsafe partial struct IAdviseSink2
+    public unsafe partial struct IAdviseSink2 : IAdviseSink2.Interface
     {
         public void** lpVtbl;
 
@@ -79,6 +79,42 @@ namespace TerraFX.Interop
         public void OnLinkSrcChange(IMoniker* pmk)
         {
             ((delegate* unmanaged<IAdviseSink2*, IMoniker*, void>)(lpVtbl[8]))((IAdviseSink2*)Unsafe.AsPointer(ref this), pmk);
+        }
+
+        public interface Interface : IAdviseSink.Interface
+        {
+            [VtblIndex(8)]
+            void OnLinkSrcChange(IMoniker* pmk);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAdviseSink2*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IAdviseSink2*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IAdviseSink2*, uint> Release;
+
+            [NativeTypeName("void (FORMATETC *, STGMEDIUM *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAdviseSink2*, FORMATETC*, STGMEDIUM*, void> OnDataChange;
+
+            [NativeTypeName("void (DWORD, LONG) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAdviseSink2*, uint, int, void> OnViewChange;
+
+            [NativeTypeName("void (IMoniker *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAdviseSink2*, IMoniker*, void> OnRename;
+
+            [NativeTypeName("void () __attribute__((stdcall))")]
+            public delegate* unmanaged<IAdviseSink2*, void> OnSave;
+
+            [NativeTypeName("void () __attribute__((stdcall))")]
+            public delegate* unmanaged<IAdviseSink2*, void> OnClose;
+
+            [NativeTypeName("void (IMoniker *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAdviseSink2*, IMoniker*, void> OnLinkSrcChange;
         }
     }
 }

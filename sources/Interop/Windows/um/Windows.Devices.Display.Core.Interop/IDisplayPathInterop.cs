@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("A6BA4205-E59E-4E71-B25B-4E436D21EE3D")]
     [NativeTypeName("struct IDisplayPathInterop : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IDisplayPathInterop
+    public unsafe partial struct IDisplayPathInterop : IDisplayPathInterop.Interface
     {
         public void** lpVtbl;
 
@@ -51,6 +51,33 @@ namespace TerraFX.Interop
         public HRESULT GetSourceId(uint* pSourceId)
         {
             return ((delegate* unmanaged<IDisplayPathInterop*, uint*, int>)(lpVtbl[4]))((IDisplayPathInterop*)Unsafe.AsPointer(ref this), pSourceId);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT CreateSourcePresentationHandle(HANDLE* pValue);
+
+            [VtblIndex(4)]
+            HRESULT GetSourceId(uint* pSourceId);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDisplayPathInterop*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDisplayPathInterop*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDisplayPathInterop*, uint> Release;
+
+            [NativeTypeName("HRESULT (HANDLE *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDisplayPathInterop*, HANDLE*, int> CreateSourcePresentationHandle;
+
+            [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDisplayPathInterop*, uint*, int> GetSourceId;
         }
     }
 }

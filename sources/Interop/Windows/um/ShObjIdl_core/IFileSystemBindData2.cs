@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("3ACF075F-71DB-4AFA-81F0-3FC4FDF2A5B8")]
     [NativeTypeName("struct IFileSystemBindData2 : IFileSystemBindData")]
     [NativeInheritance("IFileSystemBindData")]
-    public unsafe partial struct IFileSystemBindData2
+    public unsafe partial struct IFileSystemBindData2 : IFileSystemBindData2.Interface
     {
         public void** lpVtbl;
 
@@ -79,6 +79,51 @@ namespace TerraFX.Interop
         public HRESULT GetJunctionCLSID([NativeTypeName("CLSID *")] Guid* pclsid)
         {
             return ((delegate* unmanaged<IFileSystemBindData2*, Guid*, int>)(lpVtbl[8]))((IFileSystemBindData2*)Unsafe.AsPointer(ref this), pclsid);
+        }
+
+        public interface Interface : IFileSystemBindData.Interface
+        {
+            [VtblIndex(5)]
+            HRESULT SetFileID(LARGE_INTEGER liFileID);
+
+            [VtblIndex(6)]
+            HRESULT GetFileID(LARGE_INTEGER* pliFileID);
+
+            [VtblIndex(7)]
+            HRESULT SetJunctionCLSID([NativeTypeName("const IID &")] Guid* clsid);
+
+            [VtblIndex(8)]
+            HRESULT GetJunctionCLSID([NativeTypeName("CLSID *")] Guid* pclsid);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFileSystemBindData2*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IFileSystemBindData2*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IFileSystemBindData2*, uint> Release;
+
+            [NativeTypeName("HRESULT (const WIN32_FIND_DATAW *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFileSystemBindData2*, WIN32_FIND_DATAW*, int> SetFindData;
+
+            [NativeTypeName("HRESULT (WIN32_FIND_DATAW *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFileSystemBindData2*, WIN32_FIND_DATAW*, int> GetFindData;
+
+            [NativeTypeName("HRESULT (LARGE_INTEGER) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFileSystemBindData2*, LARGE_INTEGER, int> SetFileID;
+
+            [NativeTypeName("HRESULT (LARGE_INTEGER *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFileSystemBindData2*, LARGE_INTEGER*, int> GetFileID;
+
+            [NativeTypeName("HRESULT (const IID &) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFileSystemBindData2*, Guid*, int> SetJunctionCLSID;
+
+            [NativeTypeName("HRESULT (CLSID *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFileSystemBindData2*, Guid*, int> GetJunctionCLSID;
         }
     }
 }

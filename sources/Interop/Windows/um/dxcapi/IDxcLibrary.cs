@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("E5204DC7-D18C-4C3C-BDFB-851673980FE7")]
     [NativeTypeName("struct IDxcLibrary : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IDxcLibrary
+    public unsafe partial struct IDxcLibrary : IDxcLibrary.Interface
     {
         public void** lpVtbl;
 
@@ -107,6 +107,81 @@ namespace TerraFX.Interop
         public HRESULT GetBlobAsUtf16(IDxcBlob* pBlob, IDxcBlobEncoding** pBlobEncoding)
         {
             return ((delegate* unmanaged<IDxcLibrary*, IDxcBlob*, IDxcBlobEncoding**, int>)(lpVtbl[12]))((IDxcLibrary*)Unsafe.AsPointer(ref this), pBlob, pBlobEncoding);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT SetMalloc(IMalloc* pMalloc);
+
+            [VtblIndex(4)]
+            HRESULT CreateBlobFromBlob(IDxcBlob* pBlob, [NativeTypeName("UINT32")] uint offset, [NativeTypeName("UINT32")] uint length, IDxcBlob** ppResult);
+
+            [VtblIndex(5)]
+            HRESULT CreateBlobFromFile([NativeTypeName("LPCWSTR")] ushort* pFileName, [NativeTypeName("UINT32 *")] uint* codePage, IDxcBlobEncoding** pBlobEncoding);
+
+            [VtblIndex(6)]
+            HRESULT CreateBlobWithEncodingFromPinned([NativeTypeName("LPCVOID")] void* pText, [NativeTypeName("UINT32")] uint size, [NativeTypeName("UINT32")] uint codePage, IDxcBlobEncoding** pBlobEncoding);
+
+            [VtblIndex(7)]
+            HRESULT CreateBlobWithEncodingOnHeapCopy([NativeTypeName("LPCVOID")] void* pText, [NativeTypeName("UINT32")] uint size, [NativeTypeName("UINT32")] uint codePage, IDxcBlobEncoding** pBlobEncoding);
+
+            [VtblIndex(8)]
+            HRESULT CreateBlobWithEncodingOnMalloc([NativeTypeName("LPCVOID")] void* pText, IMalloc* pIMalloc, [NativeTypeName("UINT32")] uint size, [NativeTypeName("UINT32")] uint codePage, IDxcBlobEncoding** pBlobEncoding);
+
+            [VtblIndex(9)]
+            HRESULT CreateIncludeHandler(IDxcIncludeHandler** ppResult);
+
+            [VtblIndex(10)]
+            HRESULT CreateStreamFromBlobReadOnly(IDxcBlob* pBlob, IStream** ppStream);
+
+            [VtblIndex(11)]
+            HRESULT GetBlobAsUtf8(IDxcBlob* pBlob, IDxcBlobEncoding** pBlobEncoding);
+
+            [VtblIndex(12)]
+            HRESULT GetBlobAsUtf16(IDxcBlob* pBlob, IDxcBlobEncoding** pBlobEncoding);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDxcLibrary*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDxcLibrary*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDxcLibrary*, uint> Release;
+
+            [NativeTypeName("HRESULT (IMalloc *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDxcLibrary*, IMalloc*, int> SetMalloc;
+
+            [NativeTypeName("HRESULT (IDxcBlob *, UINT32, UINT32, IDxcBlob **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDxcLibrary*, IDxcBlob*, uint, uint, IDxcBlob**, int> CreateBlobFromBlob;
+
+            [NativeTypeName("HRESULT (LPCWSTR, UINT32 *, IDxcBlobEncoding **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDxcLibrary*, ushort*, uint*, IDxcBlobEncoding**, int> CreateBlobFromFile;
+
+            [NativeTypeName("HRESULT (LPCVOID, UINT32, UINT32, IDxcBlobEncoding **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDxcLibrary*, void*, uint, uint, IDxcBlobEncoding**, int> CreateBlobWithEncodingFromPinned;
+
+            [NativeTypeName("HRESULT (LPCVOID, UINT32, UINT32, IDxcBlobEncoding **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDxcLibrary*, void*, uint, uint, IDxcBlobEncoding**, int> CreateBlobWithEncodingOnHeapCopy;
+
+            [NativeTypeName("HRESULT (LPCVOID, IMalloc *, UINT32, UINT32, IDxcBlobEncoding **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDxcLibrary*, void*, IMalloc*, uint, uint, IDxcBlobEncoding**, int> CreateBlobWithEncodingOnMalloc;
+
+            [NativeTypeName("HRESULT (IDxcIncludeHandler **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDxcLibrary*, IDxcIncludeHandler**, int> CreateIncludeHandler;
+
+            [NativeTypeName("HRESULT (IDxcBlob *, IStream **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDxcLibrary*, IDxcBlob*, IStream**, int> CreateStreamFromBlobReadOnly;
+
+            [NativeTypeName("HRESULT (IDxcBlob *, IDxcBlobEncoding **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDxcLibrary*, IDxcBlob*, IDxcBlobEncoding**, int> GetBlobAsUtf8;
+
+            [NativeTypeName("HRESULT (IDxcBlob *, IDxcBlobEncoding **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDxcLibrary*, IDxcBlob*, IDxcBlobEncoding**, int> GetBlobAsUtf16;
         }
     }
 }

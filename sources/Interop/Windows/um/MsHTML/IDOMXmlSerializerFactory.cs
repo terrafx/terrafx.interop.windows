@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("3051077F-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct IDOMXmlSerializerFactory : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct IDOMXmlSerializerFactory
+    public unsafe partial struct IDOMXmlSerializerFactory : IDOMXmlSerializerFactory.Interface
     {
         public void** lpVtbl;
 
@@ -72,6 +72,39 @@ namespace TerraFX.Interop
         public HRESULT create(IDOMXmlSerializer** __MIDL__IDOMXmlSerializerFactory0000)
         {
             return ((delegate* unmanaged<IDOMXmlSerializerFactory*, IDOMXmlSerializer**, int>)(lpVtbl[7]))((IDOMXmlSerializerFactory*)Unsafe.AsPointer(ref this), __MIDL__IDOMXmlSerializerFactory0000);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT create(IDOMXmlSerializer** __MIDL__IDOMXmlSerializerFactory0000);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDOMXmlSerializerFactory*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDOMXmlSerializerFactory*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDOMXmlSerializerFactory*, uint> Release;
+
+            [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDOMXmlSerializerFactory*, uint*, int> GetTypeInfoCount;
+
+            [NativeTypeName("HRESULT (UINT, LCID, ITypeInfo **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDOMXmlSerializerFactory*, uint, uint, ITypeInfo**, int> GetTypeInfo;
+
+            [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDOMXmlSerializerFactory*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+
+            [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDOMXmlSerializerFactory*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
+
+            [NativeTypeName("HRESULT (IDOMXmlSerializer **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDOMXmlSerializerFactory*, IDOMXmlSerializer**, int> create;
         }
     }
 }

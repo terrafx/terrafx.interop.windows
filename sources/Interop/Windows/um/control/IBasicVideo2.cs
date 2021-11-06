@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("329BB360-F6EA-11D1-9038-00A0C9697298")]
     [NativeTypeName("struct IBasicVideo2 : IBasicVideo")]
     [NativeInheritance("IBasicVideo")]
-    public unsafe partial struct IBasicVideo2
+    public unsafe partial struct IBasicVideo2 : IBasicVideo2.Interface
     {
         public void** lpVtbl;
 
@@ -296,6 +296,135 @@ namespace TerraFX.Interop
         public HRESULT GetPreferredAspectRatio([NativeTypeName("long *")] int* plAspectX, [NativeTypeName("long *")] int* plAspectY)
         {
             return ((delegate* unmanaged<IBasicVideo2*, int*, int*, int>)(lpVtbl[39]))((IBasicVideo2*)Unsafe.AsPointer(ref this), plAspectX, plAspectY);
+        }
+
+        public interface Interface : IBasicVideo.Interface
+        {
+            [VtblIndex(39)]
+            HRESULT GetPreferredAspectRatio([NativeTypeName("long *")] int* plAspectX, [NativeTypeName("long *")] int* plAspectY);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IBasicVideo2*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IBasicVideo2*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IBasicVideo2*, uint> Release;
+
+            [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IBasicVideo2*, uint*, int> GetTypeInfoCount;
+
+            [NativeTypeName("HRESULT (UINT, LCID, ITypeInfo **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IBasicVideo2*, uint, uint, ITypeInfo**, int> GetTypeInfo;
+
+            [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IBasicVideo2*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+
+            [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IBasicVideo2*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
+
+            [NativeTypeName("HRESULT (REFTIME *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IBasicVideo2*, double*, int> get_AvgTimePerFrame;
+
+            [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IBasicVideo2*, int*, int> get_BitRate;
+
+            [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IBasicVideo2*, int*, int> get_BitErrorRate;
+
+            [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IBasicVideo2*, int*, int> get_VideoWidth;
+
+            [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IBasicVideo2*, int*, int> get_VideoHeight;
+
+            [NativeTypeName("HRESULT (long) __attribute__((stdcall))")]
+            public delegate* unmanaged<IBasicVideo2*, int, int> put_SourceLeft;
+
+            [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IBasicVideo2*, int*, int> get_SourceLeft;
+
+            [NativeTypeName("HRESULT (long) __attribute__((stdcall))")]
+            public delegate* unmanaged<IBasicVideo2*, int, int> put_SourceWidth;
+
+            [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IBasicVideo2*, int*, int> get_SourceWidth;
+
+            [NativeTypeName("HRESULT (long) __attribute__((stdcall))")]
+            public delegate* unmanaged<IBasicVideo2*, int, int> put_SourceTop;
+
+            [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IBasicVideo2*, int*, int> get_SourceTop;
+
+            [NativeTypeName("HRESULT (long) __attribute__((stdcall))")]
+            public delegate* unmanaged<IBasicVideo2*, int, int> put_SourceHeight;
+
+            [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IBasicVideo2*, int*, int> get_SourceHeight;
+
+            [NativeTypeName("HRESULT (long) __attribute__((stdcall))")]
+            public delegate* unmanaged<IBasicVideo2*, int, int> put_DestinationLeft;
+
+            [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IBasicVideo2*, int*, int> get_DestinationLeft;
+
+            [NativeTypeName("HRESULT (long) __attribute__((stdcall))")]
+            public delegate* unmanaged<IBasicVideo2*, int, int> put_DestinationWidth;
+
+            [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IBasicVideo2*, int*, int> get_DestinationWidth;
+
+            [NativeTypeName("HRESULT (long) __attribute__((stdcall))")]
+            public delegate* unmanaged<IBasicVideo2*, int, int> put_DestinationTop;
+
+            [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IBasicVideo2*, int*, int> get_DestinationTop;
+
+            [NativeTypeName("HRESULT (long) __attribute__((stdcall))")]
+            public delegate* unmanaged<IBasicVideo2*, int, int> put_DestinationHeight;
+
+            [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IBasicVideo2*, int*, int> get_DestinationHeight;
+
+            [NativeTypeName("HRESULT (long, long, long, long) __attribute__((stdcall))")]
+            public delegate* unmanaged<IBasicVideo2*, int, int, int, int, int> SetSourcePosition;
+
+            [NativeTypeName("HRESULT (long *, long *, long *, long *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IBasicVideo2*, int*, int*, int*, int*, int> GetSourcePosition;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IBasicVideo2*, int> SetDefaultSourcePosition;
+
+            [NativeTypeName("HRESULT (long, long, long, long) __attribute__((stdcall))")]
+            public delegate* unmanaged<IBasicVideo2*, int, int, int, int, int> SetDestinationPosition;
+
+            [NativeTypeName("HRESULT (long *, long *, long *, long *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IBasicVideo2*, int*, int*, int*, int*, int> GetDestinationPosition;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IBasicVideo2*, int> SetDefaultDestinationPosition;
+
+            [NativeTypeName("HRESULT (long *, long *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IBasicVideo2*, int*, int*, int> GetVideoSize;
+
+            [NativeTypeName("HRESULT (long, long, long *, long *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IBasicVideo2*, int, int, int*, int*, int> GetVideoPaletteEntries;
+
+            [NativeTypeName("HRESULT (long *, long *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IBasicVideo2*, int*, int*, int> GetCurrentImage;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IBasicVideo2*, int> IsUsingDefaultSource;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IBasicVideo2*, int> IsUsingDefaultDestination;
+
+            [NativeTypeName("HRESULT (long *, long *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IBasicVideo2*, int*, int*, int> GetPreferredAspectRatio;
         }
     }
 }

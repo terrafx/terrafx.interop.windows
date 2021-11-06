@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("1CD4C13B-1C36-4191-A70A-7F3E611F367D")]
     [NativeTypeName("struct ITfKeyTraceEventSink : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct ITfKeyTraceEventSink
+    public unsafe partial struct ITfKeyTraceEventSink : ITfKeyTraceEventSink.Interface
     {
         public void** lpVtbl;
 
@@ -51,6 +51,33 @@ namespace TerraFX.Interop
         public HRESULT OnKeyTraceUp(WPARAM wParam, LPARAM lParam)
         {
             return ((delegate* unmanaged<ITfKeyTraceEventSink*, WPARAM, LPARAM, int>)(lpVtbl[4]))((ITfKeyTraceEventSink*)Unsafe.AsPointer(ref this), wParam, lParam);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT OnKeyTraceDown(WPARAM wParam, LPARAM lParam);
+
+            [VtblIndex(4)]
+            HRESULT OnKeyTraceUp(WPARAM wParam, LPARAM lParam);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfKeyTraceEventSink*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfKeyTraceEventSink*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfKeyTraceEventSink*, uint> Release;
+
+            [NativeTypeName("HRESULT (WPARAM, LPARAM) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfKeyTraceEventSink*, WPARAM, LPARAM, int> OnKeyTraceDown;
+
+            [NativeTypeName("HRESULT (WPARAM, LPARAM) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfKeyTraceEventSink*, WPARAM, LPARAM, int> OnKeyTraceUp;
         }
     }
 }

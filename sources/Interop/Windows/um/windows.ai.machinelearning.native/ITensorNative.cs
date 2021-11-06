@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("52F547EF-5B03-49B5-82D6-565F1EE0DD49")]
     [NativeTypeName("struct ITensorNative : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct ITensorNative
+    public unsafe partial struct ITensorNative : ITensorNative.Interface
     {
         public void** lpVtbl;
 
@@ -51,6 +51,33 @@ namespace TerraFX.Interop
         public HRESULT GetD3D12Resource(ID3D12Resource** result)
         {
             return ((delegate* unmanaged<ITensorNative*, ID3D12Resource**, int>)(lpVtbl[4]))((ITensorNative*)Unsafe.AsPointer(ref this), result);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetBuffer(byte** value, [NativeTypeName("UINT32 *")] uint* capacity);
+
+            [VtblIndex(4)]
+            HRESULT GetD3D12Resource(ID3D12Resource** result);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITensorNative*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ITensorNative*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ITensorNative*, uint> Release;
+
+            [NativeTypeName("HRESULT (BYTE **, UINT32 *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITensorNative*, byte**, uint*, int> GetBuffer;
+
+            [NativeTypeName("HRESULT (ID3D12Resource **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITensorNative*, ID3D12Resource**, int> GetD3D12Resource;
         }
     }
 }

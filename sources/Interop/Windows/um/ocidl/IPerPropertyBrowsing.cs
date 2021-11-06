@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("376BD3AA-3845-101B-84ED-08002B2EC713")]
     [NativeTypeName("struct IPerPropertyBrowsing : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IPerPropertyBrowsing
+    public unsafe partial struct IPerPropertyBrowsing : IPerPropertyBrowsing.Interface
     {
         public void** lpVtbl;
 
@@ -65,6 +65,45 @@ namespace TerraFX.Interop
         public HRESULT GetPredefinedValue([NativeTypeName("DISPID")] int dispID, [NativeTypeName("DWORD")] uint dwCookie, VARIANT* pVarOut)
         {
             return ((delegate* unmanaged<IPerPropertyBrowsing*, int, uint, VARIANT*, int>)(lpVtbl[6]))((IPerPropertyBrowsing*)Unsafe.AsPointer(ref this), dispID, dwCookie, pVarOut);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetDisplayString([NativeTypeName("DISPID")] int dispID, [NativeTypeName("BSTR *")] ushort** pBstr);
+
+            [VtblIndex(4)]
+            HRESULT MapPropertyToPage([NativeTypeName("DISPID")] int dispID, [NativeTypeName("CLSID *")] Guid* pClsid);
+
+            [VtblIndex(5)]
+            HRESULT GetPredefinedStrings([NativeTypeName("DISPID")] int dispID, CALPOLESTR* pCaStringsOut, CADWORD* pCaCookiesOut);
+
+            [VtblIndex(6)]
+            HRESULT GetPredefinedValue([NativeTypeName("DISPID")] int dispID, [NativeTypeName("DWORD")] uint dwCookie, VARIANT* pVarOut);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IPerPropertyBrowsing*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IPerPropertyBrowsing*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IPerPropertyBrowsing*, uint> Release;
+
+            [NativeTypeName("HRESULT (DISPID, BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IPerPropertyBrowsing*, int, ushort**, int> GetDisplayString;
+
+            [NativeTypeName("HRESULT (DISPID, CLSID *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IPerPropertyBrowsing*, int, Guid*, int> MapPropertyToPage;
+
+            [NativeTypeName("HRESULT (DISPID, CALPOLESTR *, CADWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IPerPropertyBrowsing*, int, CALPOLESTR*, CADWORD*, int> GetPredefinedStrings;
+
+            [NativeTypeName("HRESULT (DISPID, DWORD, VARIANT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IPerPropertyBrowsing*, int, uint, VARIANT*, int> GetPredefinedValue;
         }
     }
 }

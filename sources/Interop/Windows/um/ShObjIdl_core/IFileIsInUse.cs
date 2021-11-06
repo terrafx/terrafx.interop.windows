@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("64A1CBF0-3A1A-4461-9158-376969693950")]
     [NativeTypeName("struct IFileIsInUse : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IFileIsInUse
+    public unsafe partial struct IFileIsInUse : IFileIsInUse.Interface
     {
         public void** lpVtbl;
 
@@ -72,6 +72,51 @@ namespace TerraFX.Interop
         public HRESULT CloseFile()
         {
             return ((delegate* unmanaged<IFileIsInUse*, int>)(lpVtbl[7]))((IFileIsInUse*)Unsafe.AsPointer(ref this));
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetAppName([NativeTypeName("LPWSTR *")] ushort** ppszName);
+
+            [VtblIndex(4)]
+            HRESULT GetUsage(FILE_USAGE_TYPE* pfut);
+
+            [VtblIndex(5)]
+            HRESULT GetCapabilities([NativeTypeName("DWORD *")] uint* pdwCapFlags);
+
+            [VtblIndex(6)]
+            HRESULT GetSwitchToHWND(HWND* phwnd);
+
+            [VtblIndex(7)]
+            HRESULT CloseFile();
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFileIsInUse*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IFileIsInUse*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IFileIsInUse*, uint> Release;
+
+            [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFileIsInUse*, ushort**, int> GetAppName;
+
+            [NativeTypeName("HRESULT (FILE_USAGE_TYPE *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFileIsInUse*, FILE_USAGE_TYPE*, int> GetUsage;
+
+            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFileIsInUse*, uint*, int> GetCapabilities;
+
+            [NativeTypeName("HRESULT (HWND *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFileIsInUse*, HWND*, int> GetSwitchToHWND;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IFileIsInUse*, int> CloseFile;
         }
     }
 }

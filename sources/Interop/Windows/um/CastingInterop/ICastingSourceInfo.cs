@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("45101AB7-7C3A-4BCE-9500-12C09024B298")]
     [NativeTypeName("struct ICastingSourceInfo : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct ICastingSourceInfo
+    public unsafe partial struct ICastingSourceInfo : ICastingSourceInfo.Interface
     {
         public void** lpVtbl;
 
@@ -51,6 +51,33 @@ namespace TerraFX.Interop
         public HRESULT GetProperties(INamedPropertyStore** props)
         {
             return ((delegate* unmanaged<ICastingSourceInfo*, INamedPropertyStore**, int>)(lpVtbl[4]))((ICastingSourceInfo*)Unsafe.AsPointer(ref this), props);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetController(ICastingController** controller);
+
+            [VtblIndex(4)]
+            HRESULT GetProperties(INamedPropertyStore** props);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ICastingSourceInfo*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ICastingSourceInfo*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ICastingSourceInfo*, uint> Release;
+
+            [NativeTypeName("HRESULT (ICastingController **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ICastingSourceInfo*, ICastingController**, int> GetController;
+
+            [NativeTypeName("HRESULT (INamedPropertyStore **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ICastingSourceInfo*, INamedPropertyStore**, int> GetProperties;
         }
     }
 }

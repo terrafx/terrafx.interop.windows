@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("B91EBFEE-CA03-4AF4-8A82-A31752F4A0FC")]
     [NativeTypeName("struct IMFExtendedCameraController : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IMFExtendedCameraController
+    public unsafe partial struct IMFExtendedCameraController : IMFExtendedCameraController.Interface
     {
         public void** lpVtbl;
 
@@ -44,6 +44,27 @@ namespace TerraFX.Interop
         public HRESULT GetExtendedCameraControl([NativeTypeName("DWORD")] uint dwStreamIndex, [NativeTypeName("ULONG")] uint ulPropertyId, IMFExtendedCameraControl** ppControl)
         {
             return ((delegate* unmanaged<IMFExtendedCameraController*, uint, uint, IMFExtendedCameraControl**, int>)(lpVtbl[3]))((IMFExtendedCameraController*)Unsafe.AsPointer(ref this), dwStreamIndex, ulPropertyId, ppControl);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetExtendedCameraControl([NativeTypeName("DWORD")] uint dwStreamIndex, [NativeTypeName("ULONG")] uint ulPropertyId, IMFExtendedCameraControl** ppControl);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFExtendedCameraController*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFExtendedCameraController*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFExtendedCameraController*, uint> Release;
+
+            [NativeTypeName("HRESULT (DWORD, ULONG, IMFExtendedCameraControl **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFExtendedCameraController*, uint, uint, IMFExtendedCameraControl**, int> GetExtendedCameraControl;
         }
     }
 }

@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("79D16DE4-ABEE-4021-8D9D-9169B261D657")]
     [NativeTypeName("struct IDeskBand2 : IDeskBand")]
     [NativeInheritance("IDeskBand")]
-    public unsafe partial struct IDeskBand2
+    public unsafe partial struct IDeskBand2 : IDeskBand2.Interface
     {
         public void** lpVtbl;
 
@@ -100,6 +100,57 @@ namespace TerraFX.Interop
         public HRESULT GetCompositionState(BOOL* pfCompositionEnabled)
         {
             return ((delegate* unmanaged<IDeskBand2*, BOOL*, int>)(lpVtbl[11]))((IDeskBand2*)Unsafe.AsPointer(ref this), pfCompositionEnabled);
+        }
+
+        public interface Interface : IDeskBand.Interface
+        {
+            [VtblIndex(9)]
+            HRESULT CanRenderComposited(BOOL* pfCanRenderComposited);
+
+            [VtblIndex(10)]
+            HRESULT SetCompositionState(BOOL fCompositionEnabled);
+
+            [VtblIndex(11)]
+            HRESULT GetCompositionState(BOOL* pfCompositionEnabled);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDeskBand2*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDeskBand2*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDeskBand2*, uint> Release;
+
+            [NativeTypeName("HRESULT (HWND *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDeskBand2*, HWND*, int> GetWindow;
+
+            [NativeTypeName("HRESULT (BOOL) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDeskBand2*, BOOL, int> ContextSensitiveHelp;
+
+            [NativeTypeName("HRESULT (BOOL) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDeskBand2*, BOOL, int> ShowDW;
+
+            [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDeskBand2*, uint, int> CloseDW;
+
+            [NativeTypeName("HRESULT (LPCRECT, IUnknown *, BOOL) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDeskBand2*, RECT*, IUnknown*, BOOL, int> ResizeBorderDW;
+
+            [NativeTypeName("HRESULT (DWORD, DWORD, DESKBANDINFO *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDeskBand2*, uint, uint, DESKBANDINFO*, int> GetBandInfo;
+
+            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDeskBand2*, BOOL*, int> CanRenderComposited;
+
+            [NativeTypeName("HRESULT (BOOL) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDeskBand2*, BOOL, int> SetCompositionState;
+
+            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDeskBand2*, BOOL*, int> GetCompositionState;
         }
     }
 }

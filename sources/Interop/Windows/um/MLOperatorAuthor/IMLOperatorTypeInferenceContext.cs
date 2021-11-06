@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("EC893BB1-F938-427B-8488-C8DCF775F138")]
     [NativeTypeName("struct IMLOperatorTypeInferenceContext : IMLOperatorAttributes")]
     [NativeInheritance("IMLOperatorAttributes")]
-    public unsafe partial struct IMLOperatorTypeInferenceContext
+    public unsafe partial struct IMLOperatorTypeInferenceContext : IMLOperatorTypeInferenceContext.Interface
     {
         public void** lpVtbl;
 
@@ -109,6 +109,71 @@ namespace TerraFX.Interop
         public HRESULT SetOutputEdgeDescription([NativeTypeName("uint32_t")] uint outputIndex, [NativeTypeName("const MLOperatorEdgeDescription *")] MLOperatorEdgeDescription* edgeDescription)
         {
             return ((delegate* unmanaged<IMLOperatorTypeInferenceContext*, uint, MLOperatorEdgeDescription*, int>)(lpVtbl[12]))((IMLOperatorTypeInferenceContext*)Unsafe.AsPointer(ref this), outputIndex, edgeDescription);
+        }
+
+        public interface Interface : IMLOperatorAttributes.Interface
+        {
+            [VtblIndex(7)]
+            [return: NativeTypeName("uint32_t")]
+            uint GetInputCount();
+
+            [VtblIndex(8)]
+            [return: NativeTypeName("uint32_t")]
+            uint GetOutputCount();
+
+            [VtblIndex(9)]
+            bool IsInputValid([NativeTypeName("uint32_t")] uint inputIndex);
+
+            [VtblIndex(10)]
+            bool IsOutputValid([NativeTypeName("uint32_t")] uint outputIndex);
+
+            [VtblIndex(11)]
+            HRESULT GetInputEdgeDescription([NativeTypeName("uint32_t")] uint inputIndex, MLOperatorEdgeDescription* edgeDescription);
+
+            [VtblIndex(12)]
+            HRESULT SetOutputEdgeDescription([NativeTypeName("uint32_t")] uint outputIndex, [NativeTypeName("const MLOperatorEdgeDescription *")] MLOperatorEdgeDescription* edgeDescription);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMLOperatorTypeInferenceContext*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMLOperatorTypeInferenceContext*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMLOperatorTypeInferenceContext*, uint> Release;
+
+            [NativeTypeName("HRESULT (const char *, MLOperatorAttributeType, uint32_t *) const noexcept __attribute__((stdcall))")]
+            public delegate* unmanaged<IMLOperatorTypeInferenceContext*, sbyte*, MLOperatorAttributeType, uint*, int> GetAttributeElementCount;
+
+            [NativeTypeName("HRESULT (const char *, MLOperatorAttributeType, uint32_t, size_t, void *) const noexcept __attribute__((stdcall))")]
+            public delegate* unmanaged<IMLOperatorTypeInferenceContext*, sbyte*, MLOperatorAttributeType, uint, nuint, void*, int> GetAttribute;
+
+            [NativeTypeName("HRESULT (const char *, uint32_t, uint32_t *) const noexcept __attribute__((stdcall))")]
+            public delegate* unmanaged<IMLOperatorTypeInferenceContext*, sbyte*, uint, uint*, int> GetStringAttributeElementLength;
+
+            [NativeTypeName("HRESULT (const char *, uint32_t, uint32_t, char *) const noexcept __attribute__((stdcall))")]
+            public delegate* unmanaged<IMLOperatorTypeInferenceContext*, sbyte*, uint, uint, sbyte*, int> GetStringAttributeElement;
+
+            [NativeTypeName("uint32_t () const noexcept __attribute__((stdcall))")]
+            public delegate* unmanaged<IMLOperatorTypeInferenceContext*, uint> GetInputCount;
+
+            [NativeTypeName("uint32_t () const noexcept __attribute__((stdcall))")]
+            public delegate* unmanaged<IMLOperatorTypeInferenceContext*, uint> GetOutputCount;
+
+            [NativeTypeName("bool (uint32_t) const noexcept __attribute__((stdcall))")]
+            public delegate* unmanaged<IMLOperatorTypeInferenceContext*, uint, byte> IsInputValid;
+
+            [NativeTypeName("bool (uint32_t) const noexcept __attribute__((stdcall))")]
+            public delegate* unmanaged<IMLOperatorTypeInferenceContext*, uint, byte> IsOutputValid;
+
+            [NativeTypeName("HRESULT (uint32_t, MLOperatorEdgeDescription *) const noexcept __attribute__((stdcall))")]
+            public delegate* unmanaged<IMLOperatorTypeInferenceContext*, uint, MLOperatorEdgeDescription*, int> GetInputEdgeDescription;
+
+            [NativeTypeName("HRESULT (uint32_t, const MLOperatorEdgeDescription *) const noexcept __attribute__((stdcall))")]
+            public delegate* unmanaged<IMLOperatorTypeInferenceContext*, uint, MLOperatorEdgeDescription*, int> SetOutputEdgeDescription;
         }
     }
 }

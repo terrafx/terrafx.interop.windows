@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("B5730A90-1A2C-11CF-8C23-00AA006B6814")]
     [NativeTypeName("struct IAMExtDevice : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IAMExtDevice
+    public unsafe partial struct IAMExtDevice : IAMExtDevice.Interface
     {
         public void** lpVtbl;
 
@@ -93,6 +93,69 @@ namespace TerraFX.Interop
         public HRESULT get_DevicePort([NativeTypeName("long *")] int* pDevicePort)
         {
             return ((delegate* unmanaged<IAMExtDevice*, int*, int>)(lpVtbl[10]))((IAMExtDevice*)Unsafe.AsPointer(ref this), pDevicePort);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetCapability([NativeTypeName("long")] int Capability, [NativeTypeName("long *")] int* pValue, double* pdblValue);
+
+            [VtblIndex(4)]
+            HRESULT get_ExternalDeviceID([NativeTypeName("LPOLESTR *")] ushort** ppszData);
+
+            [VtblIndex(5)]
+            HRESULT get_ExternalDeviceVersion([NativeTypeName("LPOLESTR *")] ushort** ppszData);
+
+            [VtblIndex(6)]
+            HRESULT put_DevicePower([NativeTypeName("long")] int PowerMode);
+
+            [VtblIndex(7)]
+            HRESULT get_DevicePower([NativeTypeName("long *")] int* pPowerMode);
+
+            [VtblIndex(8)]
+            HRESULT Calibrate(HEVENT hEvent, [NativeTypeName("long")] int Mode, [NativeTypeName("long *")] int* pStatus);
+
+            [VtblIndex(9)]
+            HRESULT put_DevicePort([NativeTypeName("long")] int DevicePort);
+
+            [VtblIndex(10)]
+            HRESULT get_DevicePort([NativeTypeName("long *")] int* pDevicePort);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAMExtDevice*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IAMExtDevice*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IAMExtDevice*, uint> Release;
+
+            [NativeTypeName("HRESULT (long, long *, double *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAMExtDevice*, int, int*, double*, int> GetCapability;
+
+            [NativeTypeName("HRESULT (LPOLESTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAMExtDevice*, ushort**, int> get_ExternalDeviceID;
+
+            [NativeTypeName("HRESULT (LPOLESTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAMExtDevice*, ushort**, int> get_ExternalDeviceVersion;
+
+            [NativeTypeName("HRESULT (long) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAMExtDevice*, int, int> put_DevicePower;
+
+            [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAMExtDevice*, int*, int> get_DevicePower;
+
+            [NativeTypeName("HRESULT (HEVENT, long, long *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAMExtDevice*, HEVENT, int, int*, int> Calibrate;
+
+            [NativeTypeName("HRESULT (long) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAMExtDevice*, int, int> put_DevicePort;
+
+            [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAMExtDevice*, int*, int> get_DevicePort;
         }
     }
 }

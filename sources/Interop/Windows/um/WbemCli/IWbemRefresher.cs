@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("49353C99-516B-11D1-AEA6-00C04FB68820")]
     [NativeTypeName("struct IWbemRefresher : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IWbemRefresher
+    public unsafe partial struct IWbemRefresher : IWbemRefresher.Interface
     {
         public void** lpVtbl;
 
@@ -44,6 +44,27 @@ namespace TerraFX.Interop
         public HRESULT Refresh([NativeTypeName("long")] int lFlags)
         {
             return ((delegate* unmanaged<IWbemRefresher*, int, int>)(lpVtbl[3]))((IWbemRefresher*)Unsafe.AsPointer(ref this), lFlags);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT Refresh([NativeTypeName("long")] int lFlags);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWbemRefresher*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IWbemRefresher*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IWbemRefresher*, uint> Release;
+
+            [NativeTypeName("HRESULT (long) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWbemRefresher*, int, int> Refresh;
         }
     }
 }

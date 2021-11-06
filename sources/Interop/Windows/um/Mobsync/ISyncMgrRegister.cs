@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("6295DF42-35EE-11D1-8707-00C04FD93327")]
     [NativeTypeName("struct ISyncMgrRegister : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct ISyncMgrRegister
+    public unsafe partial struct ISyncMgrRegister : ISyncMgrRegister.Interface
     {
         public void** lpVtbl;
 
@@ -58,6 +58,39 @@ namespace TerraFX.Interop
         public HRESULT GetHandlerRegistrationInfo([NativeTypeName("const IID &")] Guid* clsidHandler, [NativeTypeName("LPDWORD")] uint* pdwSyncMgrRegisterFlags)
         {
             return ((delegate* unmanaged<ISyncMgrRegister*, Guid*, uint*, int>)(lpVtbl[5]))((ISyncMgrRegister*)Unsafe.AsPointer(ref this), clsidHandler, pdwSyncMgrRegisterFlags);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT RegisterSyncMgrHandler([NativeTypeName("const IID &")] Guid* clsidHandler, [NativeTypeName("LPCWSTR")] ushort* pwszDescription, [NativeTypeName("DWORD")] uint dwSyncMgrRegisterFlags);
+
+            [VtblIndex(4)]
+            HRESULT UnregisterSyncMgrHandler([NativeTypeName("const IID &")] Guid* clsidHandler, [NativeTypeName("DWORD")] uint dwReserved);
+
+            [VtblIndex(5)]
+            HRESULT GetHandlerRegistrationInfo([NativeTypeName("const IID &")] Guid* clsidHandler, [NativeTypeName("LPDWORD")] uint* pdwSyncMgrRegisterFlags);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISyncMgrRegister*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ISyncMgrRegister*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ISyncMgrRegister*, uint> Release;
+
+            [NativeTypeName("HRESULT (const IID &, LPCWSTR, DWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISyncMgrRegister*, Guid*, ushort*, uint, int> RegisterSyncMgrHandler;
+
+            [NativeTypeName("HRESULT (const IID &, DWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISyncMgrRegister*, Guid*, uint, int> UnregisterSyncMgrHandler;
+
+            [NativeTypeName("HRESULT (const IID &, LPDWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISyncMgrRegister*, Guid*, uint*, int> GetHandlerRegistrationInfo;
         }
     }
 }

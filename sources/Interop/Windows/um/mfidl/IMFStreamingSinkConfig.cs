@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("9DB7AA41-3CC5-40D4-8509-555804AD34CC")]
     [NativeTypeName("struct IMFStreamingSinkConfig : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IMFStreamingSinkConfig
+    public unsafe partial struct IMFStreamingSinkConfig : IMFStreamingSinkConfig.Interface
     {
         public void** lpVtbl;
 
@@ -44,6 +44,27 @@ namespace TerraFX.Interop
         public HRESULT StartStreaming(BOOL fSeekOffsetIsByteOffset, [NativeTypeName("QWORD")] ulong qwSeekOffset)
         {
             return ((delegate* unmanaged<IMFStreamingSinkConfig*, BOOL, ulong, int>)(lpVtbl[3]))((IMFStreamingSinkConfig*)Unsafe.AsPointer(ref this), fSeekOffsetIsByteOffset, qwSeekOffset);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT StartStreaming(BOOL fSeekOffsetIsByteOffset, [NativeTypeName("QWORD")] ulong qwSeekOffset);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFStreamingSinkConfig*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFStreamingSinkConfig*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFStreamingSinkConfig*, uint> Release;
+
+            [NativeTypeName("HRESULT (BOOL, QWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFStreamingSinkConfig*, BOOL, ulong, int> StartStreaming;
         }
     }
 }

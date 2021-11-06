@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("E4946B59-733E-43F0-A724-3BDE4C1285A0")]
     [NativeTypeName("struct IAppxManifestPackageDependency : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IAppxManifestPackageDependency
+    public unsafe partial struct IAppxManifestPackageDependency : IAppxManifestPackageDependency.Interface
     {
         public void** lpVtbl;
 
@@ -58,6 +58,39 @@ namespace TerraFX.Interop
         public HRESULT GetMinVersion([NativeTypeName("UINT64 *")] ulong* minVersion)
         {
             return ((delegate* unmanaged<IAppxManifestPackageDependency*, ulong*, int>)(lpVtbl[5]))((IAppxManifestPackageDependency*)Unsafe.AsPointer(ref this), minVersion);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetName([NativeTypeName("LPWSTR *")] ushort** name);
+
+            [VtblIndex(4)]
+            HRESULT GetPublisher([NativeTypeName("LPWSTR *")] ushort** publisher);
+
+            [VtblIndex(5)]
+            HRESULT GetMinVersion([NativeTypeName("UINT64 *")] ulong* minVersion);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAppxManifestPackageDependency*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IAppxManifestPackageDependency*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IAppxManifestPackageDependency*, uint> Release;
+
+            [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAppxManifestPackageDependency*, ushort**, int> GetName;
+
+            [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAppxManifestPackageDependency*, ushort**, int> GetPublisher;
+
+            [NativeTypeName("HRESULT (UINT64 *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAppxManifestPackageDependency*, ulong*, int> GetMinVersion;
         }
     }
 }

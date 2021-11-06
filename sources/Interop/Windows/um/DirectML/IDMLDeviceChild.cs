@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("27E83142-8165-49E3-974E-2FD66E4CB69D")]
     [NativeTypeName("struct IDMLDeviceChild : IDMLObject")]
     [NativeInheritance("IDMLObject")]
-    public unsafe partial struct IDMLDeviceChild
+    public unsafe partial struct IDMLDeviceChild : IDMLDeviceChild.Interface
     {
         public void** lpVtbl;
 
@@ -72,6 +72,39 @@ namespace TerraFX.Interop
         public HRESULT GetDevice([NativeTypeName("const IID &")] Guid* riid, void** ppv)
         {
             return ((delegate* unmanaged<IDMLDeviceChild*, Guid*, void**, int>)(lpVtbl[7]))((IDMLDeviceChild*)Unsafe.AsPointer(ref this), riid, ppv);
+        }
+
+        public interface Interface : IDMLObject.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT GetDevice([NativeTypeName("const IID &")] Guid* riid, void** ppv);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDMLDeviceChild*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDMLDeviceChild*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDMLDeviceChild*, uint> Release;
+
+            [NativeTypeName("HRESULT (const GUID &, UINT *, void *) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDMLDeviceChild*, Guid*, uint*, void*, int> GetPrivateData;
+
+            [NativeTypeName("HRESULT (const GUID &, UINT, const void *) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDMLDeviceChild*, Guid*, uint, void*, int> SetPrivateData;
+
+            [NativeTypeName("HRESULT (const GUID &, IUnknown *) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDMLDeviceChild*, Guid*, IUnknown*, int> SetPrivateDataInterface;
+
+            [NativeTypeName("HRESULT (PCWSTR) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDMLDeviceChild*, ushort*, int> SetName;
+
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDMLDeviceChild*, Guid*, void**, int> GetDevice;
         }
     }
 }

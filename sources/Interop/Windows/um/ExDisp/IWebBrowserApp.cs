@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("0002DF05-0000-0000-C000-000000000046")]
     [NativeTypeName("struct IWebBrowserApp : IWebBrowser")]
     [NativeInheritance("IWebBrowser")]
-    public unsafe partial struct IWebBrowserApp
+    public unsafe partial struct IWebBrowserApp : IWebBrowserApp.Interface
     {
         public void** lpVtbl;
 
@@ -380,6 +380,228 @@ namespace TerraFX.Interop
         public HRESULT put_FullScreen([NativeTypeName("VARIANT_BOOL")] short bFullScreen)
         {
             return ((delegate* unmanaged<IWebBrowserApp*, short, int>)(lpVtbl[51]))((IWebBrowserApp*)Unsafe.AsPointer(ref this), bFullScreen);
+        }
+
+        public interface Interface : IWebBrowser.Interface
+        {
+            [VtblIndex(32)]
+            HRESULT Quit();
+
+            [VtblIndex(33)]
+            HRESULT ClientToWindow(int* pcx, int* pcy);
+
+            [VtblIndex(34)]
+            HRESULT PutProperty([NativeTypeName("BSTR")] ushort* Property, VARIANT vtValue);
+
+            [VtblIndex(35)]
+            HRESULT GetProperty([NativeTypeName("BSTR")] ushort* Property, VARIANT* pvtValue);
+
+            [VtblIndex(36)]
+            HRESULT get_Name([NativeTypeName("BSTR *")] ushort** Name);
+
+            [VtblIndex(37)]
+            HRESULT get_HWND([NativeTypeName("SHANDLE_PTR *")] nint* pHWND);
+
+            [VtblIndex(38)]
+            HRESULT get_FullName([NativeTypeName("BSTR *")] ushort** FullName);
+
+            [VtblIndex(39)]
+            HRESULT get_Path([NativeTypeName("BSTR *")] ushort** Path);
+
+            [VtblIndex(40)]
+            HRESULT get_Visible([NativeTypeName("VARIANT_BOOL *")] short* pBool);
+
+            [VtblIndex(41)]
+            HRESULT put_Visible([NativeTypeName("VARIANT_BOOL")] short Value);
+
+            [VtblIndex(42)]
+            HRESULT get_StatusBar([NativeTypeName("VARIANT_BOOL *")] short* pBool);
+
+            [VtblIndex(43)]
+            HRESULT put_StatusBar([NativeTypeName("VARIANT_BOOL")] short Value);
+
+            [VtblIndex(44)]
+            HRESULT get_StatusText([NativeTypeName("BSTR *")] ushort** StatusText);
+
+            [VtblIndex(45)]
+            HRESULT put_StatusText([NativeTypeName("BSTR")] ushort* StatusText);
+
+            [VtblIndex(46)]
+            HRESULT get_ToolBar(int* Value);
+
+            [VtblIndex(47)]
+            HRESULT put_ToolBar(int Value);
+
+            [VtblIndex(48)]
+            HRESULT get_MenuBar([NativeTypeName("VARIANT_BOOL *")] short* Value);
+
+            [VtblIndex(49)]
+            HRESULT put_MenuBar([NativeTypeName("VARIANT_BOOL")] short Value);
+
+            [VtblIndex(50)]
+            HRESULT get_FullScreen([NativeTypeName("VARIANT_BOOL *")] short* pbFullScreen);
+
+            [VtblIndex(51)]
+            HRESULT put_FullScreen([NativeTypeName("VARIANT_BOOL")] short bFullScreen);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWebBrowserApp*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IWebBrowserApp*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IWebBrowserApp*, uint> Release;
+
+            [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWebBrowserApp*, uint*, int> GetTypeInfoCount;
+
+            [NativeTypeName("HRESULT (UINT, LCID, ITypeInfo **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWebBrowserApp*, uint, uint, ITypeInfo**, int> GetTypeInfo;
+
+            [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWebBrowserApp*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+
+            [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWebBrowserApp*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IWebBrowserApp*, int> GoBack;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IWebBrowserApp*, int> GoForward;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IWebBrowserApp*, int> GoHome;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IWebBrowserApp*, int> GoSearch;
+
+            [NativeTypeName("HRESULT (BSTR, VARIANT *, VARIANT *, VARIANT *, VARIANT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWebBrowserApp*, ushort*, VARIANT*, VARIANT*, VARIANT*, VARIANT*, int> Navigate;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IWebBrowserApp*, int> Refresh;
+
+            [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWebBrowserApp*, VARIANT*, int> Refresh2;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IWebBrowserApp*, int> Stop;
+
+            [NativeTypeName("HRESULT (IDispatch **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWebBrowserApp*, IDispatch**, int> get_Application;
+
+            [NativeTypeName("HRESULT (IDispatch **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWebBrowserApp*, IDispatch**, int> get_Parent;
+
+            [NativeTypeName("HRESULT (IDispatch **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWebBrowserApp*, IDispatch**, int> get_Container;
+
+            [NativeTypeName("HRESULT (IDispatch **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWebBrowserApp*, IDispatch**, int> get_Document;
+
+            [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWebBrowserApp*, short*, int> get_TopLevelContainer;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWebBrowserApp*, ushort**, int> get_Type;
+
+            [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWebBrowserApp*, int*, int> get_Left;
+
+            [NativeTypeName("HRESULT (long) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWebBrowserApp*, int, int> put_Left;
+
+            [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWebBrowserApp*, int*, int> get_Top;
+
+            [NativeTypeName("HRESULT (long) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWebBrowserApp*, int, int> put_Top;
+
+            [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWebBrowserApp*, int*, int> get_Width;
+
+            [NativeTypeName("HRESULT (long) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWebBrowserApp*, int, int> put_Width;
+
+            [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWebBrowserApp*, int*, int> get_Height;
+
+            [NativeTypeName("HRESULT (long) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWebBrowserApp*, int, int> put_Height;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWebBrowserApp*, ushort**, int> get_LocationName;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWebBrowserApp*, ushort**, int> get_LocationURL;
+
+            [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWebBrowserApp*, short*, int> get_Busy;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IWebBrowserApp*, int> Quit;
+
+            [NativeTypeName("HRESULT (int *, int *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWebBrowserApp*, int*, int*, int> ClientToWindow;
+
+            [NativeTypeName("HRESULT (BSTR, VARIANT) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWebBrowserApp*, ushort*, VARIANT, int> PutProperty;
+
+            [NativeTypeName("HRESULT (BSTR, VARIANT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWebBrowserApp*, ushort*, VARIANT*, int> GetProperty;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWebBrowserApp*, ushort**, int> get_Name;
+
+            [NativeTypeName("HRESULT (SHANDLE_PTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWebBrowserApp*, nint*, int> get_HWND;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWebBrowserApp*, ushort**, int> get_FullName;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWebBrowserApp*, ushort**, int> get_Path;
+
+            [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWebBrowserApp*, short*, int> get_Visible;
+
+            [NativeTypeName("HRESULT (VARIANT_BOOL) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWebBrowserApp*, short, int> put_Visible;
+
+            [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWebBrowserApp*, short*, int> get_StatusBar;
+
+            [NativeTypeName("HRESULT (VARIANT_BOOL) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWebBrowserApp*, short, int> put_StatusBar;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWebBrowserApp*, ushort**, int> get_StatusText;
+
+            [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWebBrowserApp*, ushort*, int> put_StatusText;
+
+            [NativeTypeName("HRESULT (int *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWebBrowserApp*, int*, int> get_ToolBar;
+
+            [NativeTypeName("HRESULT (int) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWebBrowserApp*, int, int> put_ToolBar;
+
+            [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWebBrowserApp*, short*, int> get_MenuBar;
+
+            [NativeTypeName("HRESULT (VARIANT_BOOL) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWebBrowserApp*, short, int> put_MenuBar;
+
+            [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWebBrowserApp*, short*, int> get_FullScreen;
+
+            [NativeTypeName("HRESULT (VARIANT_BOOL) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWebBrowserApp*, short, int> put_FullScreen;
         }
     }
 }

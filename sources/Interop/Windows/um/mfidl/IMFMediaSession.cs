@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("90377834-21D0-4DEE-8214-BA2E3E6C1127")]
     [NativeTypeName("struct IMFMediaSession : IMFMediaEventGenerator")]
     [NativeInheritance("IMFMediaEventGenerator")]
-    public unsafe partial struct IMFMediaSession
+    public unsafe partial struct IMFMediaSession : IMFMediaSession.Interface
     {
         public void** lpVtbl;
 
@@ -135,6 +135,93 @@ namespace TerraFX.Interop
         public HRESULT GetFullTopology([NativeTypeName("DWORD")] uint dwGetFullTopologyFlags, [NativeTypeName("TOPOID")] ulong TopoId, IMFTopology** ppFullTopology)
         {
             return ((delegate* unmanaged<IMFMediaSession*, uint, ulong, IMFTopology**, int>)(lpVtbl[16]))((IMFMediaSession*)Unsafe.AsPointer(ref this), dwGetFullTopologyFlags, TopoId, ppFullTopology);
+        }
+
+        public interface Interface : IMFMediaEventGenerator.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT SetTopology([NativeTypeName("DWORD")] uint dwSetTopologyFlags, IMFTopology* pTopology);
+
+            [VtblIndex(8)]
+            HRESULT ClearTopologies();
+
+            [VtblIndex(9)]
+            HRESULT Start([NativeTypeName("const GUID *")] Guid* pguidTimeFormat, [NativeTypeName("const PROPVARIANT *")] PROPVARIANT* pvarStartPosition);
+
+            [VtblIndex(10)]
+            HRESULT Pause();
+
+            [VtblIndex(11)]
+            HRESULT Stop();
+
+            [VtblIndex(12)]
+            HRESULT Close();
+
+            [VtblIndex(13)]
+            HRESULT Shutdown();
+
+            [VtblIndex(14)]
+            HRESULT GetClock(IMFClock** ppClock);
+
+            [VtblIndex(15)]
+            HRESULT GetSessionCapabilities([NativeTypeName("DWORD *")] uint* pdwCaps);
+
+            [VtblIndex(16)]
+            HRESULT GetFullTopology([NativeTypeName("DWORD")] uint dwGetFullTopologyFlags, [NativeTypeName("TOPOID")] ulong TopoId, IMFTopology** ppFullTopology);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFMediaSession*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFMediaSession*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFMediaSession*, uint> Release;
+
+            [NativeTypeName("HRESULT (DWORD, IMFMediaEvent **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFMediaSession*, uint, IMFMediaEvent**, int> GetEvent;
+
+            [NativeTypeName("HRESULT (IMFAsyncCallback *, IUnknown *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFMediaSession*, IMFAsyncCallback*, IUnknown*, int> BeginGetEvent;
+
+            [NativeTypeName("HRESULT (IMFAsyncResult *, IMFMediaEvent **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFMediaSession*, IMFAsyncResult*, IMFMediaEvent**, int> EndGetEvent;
+
+            [NativeTypeName("HRESULT (MediaEventType, const GUID &, HRESULT, const PROPVARIANT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFMediaSession*, uint, Guid*, HRESULT, PROPVARIANT*, int> QueueEvent;
+
+            [NativeTypeName("HRESULT (DWORD, IMFTopology *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFMediaSession*, uint, IMFTopology*, int> SetTopology;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFMediaSession*, int> ClearTopologies;
+
+            [NativeTypeName("HRESULT (const GUID *, const PROPVARIANT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFMediaSession*, Guid*, PROPVARIANT*, int> Start;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFMediaSession*, int> Pause;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFMediaSession*, int> Stop;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFMediaSession*, int> Close;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFMediaSession*, int> Shutdown;
+
+            [NativeTypeName("HRESULT (IMFClock **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFMediaSession*, IMFClock**, int> GetClock;
+
+            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFMediaSession*, uint*, int> GetSessionCapabilities;
+
+            [NativeTypeName("HRESULT (DWORD, TOPOID, IMFTopology **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFMediaSession*, uint, ulong, IMFTopology**, int> GetFullTopology;
         }
     }
 }

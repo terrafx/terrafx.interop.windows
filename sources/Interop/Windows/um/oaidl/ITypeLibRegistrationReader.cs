@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("ED6A8A2A-B160-4E77-8F73-AA7435CD5C27")]
     [NativeTypeName("struct ITypeLibRegistrationReader : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct ITypeLibRegistrationReader
+    public unsafe partial struct ITypeLibRegistrationReader : ITypeLibRegistrationReader.Interface
     {
         public void** lpVtbl;
 
@@ -44,6 +44,27 @@ namespace TerraFX.Interop
         public HRESULT EnumTypeLibRegistrations(IEnumUnknown** ppEnumUnknown)
         {
             return ((delegate* unmanaged<ITypeLibRegistrationReader*, IEnumUnknown**, int>)(lpVtbl[3]))((ITypeLibRegistrationReader*)Unsafe.AsPointer(ref this), ppEnumUnknown);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT EnumTypeLibRegistrations(IEnumUnknown** ppEnumUnknown);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITypeLibRegistrationReader*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ITypeLibRegistrationReader*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ITypeLibRegistrationReader*, uint> Release;
+
+            [NativeTypeName("HRESULT (IEnumUnknown **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITypeLibRegistrationReader*, IEnumUnknown**, int> EnumTypeLibRegistrations;
         }
     }
 }

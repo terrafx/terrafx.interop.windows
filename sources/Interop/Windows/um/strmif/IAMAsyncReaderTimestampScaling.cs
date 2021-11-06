@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("CF7B26FC-9A00-485B-8147-3E789D5E8F67")]
     [NativeTypeName("struct IAMAsyncReaderTimestampScaling : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IAMAsyncReaderTimestampScaling
+    public unsafe partial struct IAMAsyncReaderTimestampScaling : IAMAsyncReaderTimestampScaling.Interface
     {
         public void** lpVtbl;
 
@@ -51,6 +51,33 @@ namespace TerraFX.Interop
         public HRESULT SetTimestampMode(BOOL fRaw)
         {
             return ((delegate* unmanaged<IAMAsyncReaderTimestampScaling*, BOOL, int>)(lpVtbl[4]))((IAMAsyncReaderTimestampScaling*)Unsafe.AsPointer(ref this), fRaw);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetTimestampMode(BOOL* pfRaw);
+
+            [VtblIndex(4)]
+            HRESULT SetTimestampMode(BOOL fRaw);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAMAsyncReaderTimestampScaling*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IAMAsyncReaderTimestampScaling*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IAMAsyncReaderTimestampScaling*, uint> Release;
+
+            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAMAsyncReaderTimestampScaling*, BOOL*, int> GetTimestampMode;
+
+            [NativeTypeName("HRESULT (BOOL) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAMAsyncReaderTimestampScaling*, BOOL, int> SetTimestampMode;
         }
     }
 }

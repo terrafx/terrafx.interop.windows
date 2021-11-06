@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("DFD3B6B5-C10C-4BE9-85F6-A66969F402F6")]
     [NativeTypeName("struct IExplorerBrowser : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IExplorerBrowser
+    public unsafe partial struct IExplorerBrowser : IExplorerBrowser.Interface
     {
         public void** lpVtbl;
 
@@ -142,6 +142,111 @@ namespace TerraFX.Interop
         public HRESULT GetCurrentView([NativeTypeName("const IID &")] Guid* riid, void** ppv)
         {
             return ((delegate* unmanaged<IExplorerBrowser*, Guid*, void**, int>)(lpVtbl[17]))((IExplorerBrowser*)Unsafe.AsPointer(ref this), riid, ppv);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT Initialize(HWND hwndParent, [NativeTypeName("const RECT *")] RECT* prc, [NativeTypeName("const FOLDERSETTINGS *")] FOLDERSETTINGS* pfs);
+
+            [VtblIndex(4)]
+            HRESULT Destroy();
+
+            [VtblIndex(5)]
+            HRESULT SetRect(HDWP* phdwp, RECT rcBrowser);
+
+            [VtblIndex(6)]
+            HRESULT SetPropertyBag([NativeTypeName("LPCWSTR")] ushort* pszPropertyBag);
+
+            [VtblIndex(7)]
+            HRESULT SetEmptyText([NativeTypeName("LPCWSTR")] ushort* pszEmptyText);
+
+            [VtblIndex(8)]
+            HRESULT SetFolderSettings([NativeTypeName("const FOLDERSETTINGS *")] FOLDERSETTINGS* pfs);
+
+            [VtblIndex(9)]
+            HRESULT Advise(IExplorerBrowserEvents* psbe, [NativeTypeName("DWORD *")] uint* pdwCookie);
+
+            [VtblIndex(10)]
+            HRESULT Unadvise([NativeTypeName("DWORD")] uint dwCookie);
+
+            [VtblIndex(11)]
+            HRESULT SetOptions(EXPLORER_BROWSER_OPTIONS dwFlag);
+
+            [VtblIndex(12)]
+            HRESULT GetOptions(EXPLORER_BROWSER_OPTIONS* pdwFlag);
+
+            [VtblIndex(13)]
+            HRESULT BrowseToIDList([NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidl, uint uFlags);
+
+            [VtblIndex(14)]
+            HRESULT BrowseToObject(IUnknown* punk, uint uFlags);
+
+            [VtblIndex(15)]
+            HRESULT FillFromObject(IUnknown* punk, EXPLORER_BROWSER_FILL_FLAGS dwFlags);
+
+            [VtblIndex(16)]
+            HRESULT RemoveAll();
+
+            [VtblIndex(17)]
+            HRESULT GetCurrentView([NativeTypeName("const IID &")] Guid* riid, void** ppv);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IExplorerBrowser*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IExplorerBrowser*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IExplorerBrowser*, uint> Release;
+
+            [NativeTypeName("HRESULT (HWND, const RECT *, const FOLDERSETTINGS *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IExplorerBrowser*, HWND, RECT*, FOLDERSETTINGS*, int> Initialize;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IExplorerBrowser*, int> Destroy;
+
+            [NativeTypeName("HRESULT (HDWP *, RECT) __attribute__((stdcall))")]
+            public delegate* unmanaged<IExplorerBrowser*, HDWP*, RECT, int> SetRect;
+
+            [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IExplorerBrowser*, ushort*, int> SetPropertyBag;
+
+            [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IExplorerBrowser*, ushort*, int> SetEmptyText;
+
+            [NativeTypeName("HRESULT (const FOLDERSETTINGS *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IExplorerBrowser*, FOLDERSETTINGS*, int> SetFolderSettings;
+
+            [NativeTypeName("HRESULT (IExplorerBrowserEvents *, DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IExplorerBrowser*, IExplorerBrowserEvents*, uint*, int> Advise;
+
+            [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<IExplorerBrowser*, uint, int> Unadvise;
+
+            [NativeTypeName("HRESULT (EXPLORER_BROWSER_OPTIONS) __attribute__((stdcall))")]
+            public delegate* unmanaged<IExplorerBrowser*, EXPLORER_BROWSER_OPTIONS, int> SetOptions;
+
+            [NativeTypeName("HRESULT (EXPLORER_BROWSER_OPTIONS *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IExplorerBrowser*, EXPLORER_BROWSER_OPTIONS*, int> GetOptions;
+
+            [NativeTypeName("HRESULT (LPCITEMIDLIST, UINT) __attribute__((stdcall))")]
+            public delegate* unmanaged<IExplorerBrowser*, ITEMIDLIST*, uint, int> BrowseToIDList;
+
+            [NativeTypeName("HRESULT (IUnknown *, UINT) __attribute__((stdcall))")]
+            public delegate* unmanaged<IExplorerBrowser*, IUnknown*, uint, int> BrowseToObject;
+
+            [NativeTypeName("HRESULT (IUnknown *, EXPLORER_BROWSER_FILL_FLAGS) __attribute__((stdcall))")]
+            public delegate* unmanaged<IExplorerBrowser*, IUnknown*, EXPLORER_BROWSER_FILL_FLAGS, int> FillFromObject;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IExplorerBrowser*, int> RemoveAll;
+
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IExplorerBrowser*, Guid*, void**, int> GetCurrentView;
         }
     }
 }

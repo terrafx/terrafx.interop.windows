@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("3051054C-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct ISVGViewElement : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct ISVGViewElement
+    public unsafe partial struct ISVGViewElement : ISVGViewElement.Interface
     {
         public void** lpVtbl;
 
@@ -79,6 +79,45 @@ namespace TerraFX.Interop
         public HRESULT get_viewTarget(ISVGStringList** p)
         {
             return ((delegate* unmanaged<ISVGViewElement*, ISVGStringList**, int>)(lpVtbl[8]))((ISVGViewElement*)Unsafe.AsPointer(ref this), p);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT putref_viewTarget(ISVGStringList* v);
+
+            [VtblIndex(8)]
+            HRESULT get_viewTarget(ISVGStringList** p);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISVGViewElement*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ISVGViewElement*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ISVGViewElement*, uint> Release;
+
+            [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISVGViewElement*, uint*, int> GetTypeInfoCount;
+
+            [NativeTypeName("HRESULT (UINT, LCID, ITypeInfo **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISVGViewElement*, uint, uint, ITypeInfo**, int> GetTypeInfo;
+
+            [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISVGViewElement*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+
+            [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISVGViewElement*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
+
+            [NativeTypeName("HRESULT (ISVGStringList *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISVGViewElement*, ISVGStringList*, int> putref_viewTarget;
+
+            [NativeTypeName("HRESULT (ISVGStringList **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISVGViewElement*, ISVGStringList**, int> get_viewTarget;
         }
     }
 }

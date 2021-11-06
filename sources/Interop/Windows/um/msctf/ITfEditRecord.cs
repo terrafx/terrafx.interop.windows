@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("42D4D099-7C1A-4A89-B836-6C6F22160DF0")]
     [NativeTypeName("struct ITfEditRecord : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct ITfEditRecord
+    public unsafe partial struct ITfEditRecord : ITfEditRecord.Interface
     {
         public void** lpVtbl;
 
@@ -51,6 +51,33 @@ namespace TerraFX.Interop
         public HRESULT GetTextAndPropertyUpdates([NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("const GUID **")] Guid** prgProperties, [NativeTypeName("ULONG")] uint cProperties, IEnumTfRanges** ppEnum)
         {
             return ((delegate* unmanaged<ITfEditRecord*, uint, Guid**, uint, IEnumTfRanges**, int>)(lpVtbl[4]))((ITfEditRecord*)Unsafe.AsPointer(ref this), dwFlags, prgProperties, cProperties, ppEnum);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetSelectionStatus(BOOL* pfChanged);
+
+            [VtblIndex(4)]
+            HRESULT GetTextAndPropertyUpdates([NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("const GUID **")] Guid** prgProperties, [NativeTypeName("ULONG")] uint cProperties, IEnumTfRanges** ppEnum);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfEditRecord*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfEditRecord*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfEditRecord*, uint> Release;
+
+            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfEditRecord*, BOOL*, int> GetSelectionStatus;
+
+            [NativeTypeName("HRESULT (DWORD, const GUID **, ULONG, IEnumTfRanges **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfEditRecord*, uint, Guid**, uint, IEnumTfRanges**, int> GetTextAndPropertyUpdates;
         }
     }
 }

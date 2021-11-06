@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("30510709-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct IHTMLVideoElement : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct IHTMLVideoElement
+    public unsafe partial struct IHTMLVideoElement : IHTMLVideoElement.Interface
     {
         public void** lpVtbl;
 
@@ -121,6 +121,81 @@ namespace TerraFX.Interop
         public HRESULT get_poster([NativeTypeName("BSTR *")] ushort** p)
         {
             return ((delegate* unmanaged<IHTMLVideoElement*, ushort**, int>)(lpVtbl[14]))((IHTMLVideoElement*)Unsafe.AsPointer(ref this), p);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT put_width([NativeTypeName("long")] int v);
+
+            [VtblIndex(8)]
+            HRESULT get_width([NativeTypeName("long *")] int* p);
+
+            [VtblIndex(9)]
+            HRESULT put_height([NativeTypeName("long")] int v);
+
+            [VtblIndex(10)]
+            HRESULT get_height([NativeTypeName("long *")] int* p);
+
+            [VtblIndex(11)]
+            HRESULT get_videoWidth([NativeTypeName("ULONG *")] uint* p);
+
+            [VtblIndex(12)]
+            HRESULT get_videoHeight([NativeTypeName("ULONG *")] uint* p);
+
+            [VtblIndex(13)]
+            HRESULT put_poster([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(14)]
+            HRESULT get_poster([NativeTypeName("BSTR *")] ushort** p);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLVideoElement*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLVideoElement*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLVideoElement*, uint> Release;
+
+            [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLVideoElement*, uint*, int> GetTypeInfoCount;
+
+            [NativeTypeName("HRESULT (UINT, LCID, ITypeInfo **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLVideoElement*, uint, uint, ITypeInfo**, int> GetTypeInfo;
+
+            [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLVideoElement*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+
+            [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLVideoElement*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
+
+            [NativeTypeName("HRESULT (long) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLVideoElement*, int, int> put_width;
+
+            [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLVideoElement*, int*, int> get_width;
+
+            [NativeTypeName("HRESULT (long) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLVideoElement*, int, int> put_height;
+
+            [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLVideoElement*, int*, int> get_height;
+
+            [NativeTypeName("HRESULT (ULONG *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLVideoElement*, uint*, int> get_videoWidth;
+
+            [NativeTypeName("HRESULT (ULONG *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLVideoElement*, uint*, int> get_videoHeight;
+
+            [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLVideoElement*, ushort*, int> put_poster;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLVideoElement*, ushort**, int> get_poster;
         }
     }
 }

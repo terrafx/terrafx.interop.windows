@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("ED8C108D-4349-11D2-91A4-00C04F7969E8")]
     [NativeTypeName("struct IXMLHttpRequest : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct IXMLHttpRequest
+    public unsafe partial struct IXMLHttpRequest : IXMLHttpRequest.Interface
     {
         public void** lpVtbl;
 
@@ -163,6 +163,117 @@ namespace TerraFX.Interop
         public HRESULT put_onreadystatechange(IDispatch* pReadyStateSink)
         {
             return ((delegate* unmanaged<IXMLHttpRequest*, IDispatch*, int>)(lpVtbl[20]))((IXMLHttpRequest*)Unsafe.AsPointer(ref this), pReadyStateSink);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT open([NativeTypeName("BSTR")] ushort* bstrMethod, [NativeTypeName("BSTR")] ushort* bstrUrl, VARIANT varAsync, VARIANT bstrUser, VARIANT bstrPassword);
+
+            [VtblIndex(8)]
+            HRESULT setRequestHeader([NativeTypeName("BSTR")] ushort* bstrHeader, [NativeTypeName("BSTR")] ushort* bstrValue);
+
+            [VtblIndex(9)]
+            HRESULT getResponseHeader([NativeTypeName("BSTR")] ushort* bstrHeader, [NativeTypeName("BSTR *")] ushort** pbstrValue);
+
+            [VtblIndex(10)]
+            HRESULT getAllResponseHeaders([NativeTypeName("BSTR *")] ushort** pbstrHeaders);
+
+            [VtblIndex(11)]
+            HRESULT send(VARIANT varBody);
+
+            [VtblIndex(12)]
+            HRESULT abort();
+
+            [VtblIndex(13)]
+            HRESULT get_status([NativeTypeName("long *")] int* plStatus);
+
+            [VtblIndex(14)]
+            HRESULT get_statusText([NativeTypeName("BSTR *")] ushort** pbstrStatus);
+
+            [VtblIndex(15)]
+            HRESULT get_responseXML(IDispatch** ppBody);
+
+            [VtblIndex(16)]
+            HRESULT get_responseText([NativeTypeName("BSTR *")] ushort** pbstrBody);
+
+            [VtblIndex(17)]
+            HRESULT get_responseBody(VARIANT* pvarBody);
+
+            [VtblIndex(18)]
+            HRESULT get_responseStream(VARIANT* pvarBody);
+
+            [VtblIndex(19)]
+            HRESULT get_readyState([NativeTypeName("long *")] int* plState);
+
+            [VtblIndex(20)]
+            HRESULT put_onreadystatechange(IDispatch* pReadyStateSink);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IXMLHttpRequest*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IXMLHttpRequest*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IXMLHttpRequest*, uint> Release;
+
+            [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IXMLHttpRequest*, uint*, int> GetTypeInfoCount;
+
+            [NativeTypeName("HRESULT (UINT, LCID, ITypeInfo **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IXMLHttpRequest*, uint, uint, ITypeInfo**, int> GetTypeInfo;
+
+            [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IXMLHttpRequest*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+
+            [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IXMLHttpRequest*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
+
+            [NativeTypeName("HRESULT (BSTR, BSTR, VARIANT, VARIANT, VARIANT) __attribute__((stdcall))")]
+            public delegate* unmanaged<IXMLHttpRequest*, ushort*, ushort*, VARIANT, VARIANT, VARIANT, int> open;
+
+            [NativeTypeName("HRESULT (BSTR, BSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IXMLHttpRequest*, ushort*, ushort*, int> setRequestHeader;
+
+            [NativeTypeName("HRESULT (BSTR, BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IXMLHttpRequest*, ushort*, ushort**, int> getResponseHeader;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IXMLHttpRequest*, ushort**, int> getAllResponseHeaders;
+
+            [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
+            public delegate* unmanaged<IXMLHttpRequest*, VARIANT, int> send;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IXMLHttpRequest*, int> abort;
+
+            [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IXMLHttpRequest*, int*, int> get_status;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IXMLHttpRequest*, ushort**, int> get_statusText;
+
+            [NativeTypeName("HRESULT (IDispatch **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IXMLHttpRequest*, IDispatch**, int> get_responseXML;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IXMLHttpRequest*, ushort**, int> get_responseText;
+
+            [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IXMLHttpRequest*, VARIANT*, int> get_responseBody;
+
+            [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IXMLHttpRequest*, VARIANT*, int> get_responseStream;
+
+            [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IXMLHttpRequest*, int*, int> get_readyState;
+
+            [NativeTypeName("HRESULT (IDispatch *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IXMLHttpRequest*, IDispatch*, int> put_onreadystatechange;
         }
     }
 }

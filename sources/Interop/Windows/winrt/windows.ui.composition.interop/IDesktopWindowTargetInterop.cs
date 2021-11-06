@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("35DBF59E-E3F9-45B0-81E7-FE75F4145DC9")]
     [NativeTypeName("struct IDesktopWindowTargetInterop : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IDesktopWindowTargetInterop
+    public unsafe partial struct IDesktopWindowTargetInterop : IDesktopWindowTargetInterop.Interface
     {
         public void** lpVtbl;
 
@@ -44,6 +44,27 @@ namespace TerraFX.Interop
         public HRESULT get_Hwnd(HWND* value)
         {
             return ((delegate* unmanaged<IDesktopWindowTargetInterop*, HWND*, int>)(lpVtbl[3]))((IDesktopWindowTargetInterop*)Unsafe.AsPointer(ref this), value);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT get_Hwnd(HWND* value);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDesktopWindowTargetInterop*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDesktopWindowTargetInterop*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDesktopWindowTargetInterop*, uint> Release;
+
+            [NativeTypeName("HRESULT (HWND *) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDesktopWindowTargetInterop*, HWND*, int> get_Hwnd;
         }
     }
 }

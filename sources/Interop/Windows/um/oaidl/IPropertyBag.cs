@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("55272A00-42CB-11CE-8135-00AA004BB851")]
     [NativeTypeName("struct IPropertyBag : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IPropertyBag
+    public unsafe partial struct IPropertyBag : IPropertyBag.Interface
     {
         public void** lpVtbl;
 
@@ -51,6 +51,33 @@ namespace TerraFX.Interop
         public HRESULT Write([NativeTypeName("LPCOLESTR")] ushort* pszPropName, VARIANT* pVar)
         {
             return ((delegate* unmanaged<IPropertyBag*, ushort*, VARIANT*, int>)(lpVtbl[4]))((IPropertyBag*)Unsafe.AsPointer(ref this), pszPropName, pVar);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT Read([NativeTypeName("LPCOLESTR")] ushort* pszPropName, VARIANT* pVar, IErrorLog* pErrorLog);
+
+            [VtblIndex(4)]
+            HRESULT Write([NativeTypeName("LPCOLESTR")] ushort* pszPropName, VARIANT* pVar);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IPropertyBag*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IPropertyBag*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IPropertyBag*, uint> Release;
+
+            [NativeTypeName("HRESULT (LPCOLESTR, VARIANT *, IErrorLog *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IPropertyBag*, ushort*, VARIANT*, IErrorLog*, int> Read;
+
+            [NativeTypeName("HRESULT (LPCOLESTR, VARIANT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IPropertyBag*, ushort*, VARIANT*, int> Write;
         }
     }
 }

@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("00000036-0000-0000-C000-000000000046")]
     [NativeTypeName("struct IAsyncInfo : IInspectable")]
     [NativeInheritance("IInspectable")]
-    public unsafe partial struct IAsyncInfo
+    public unsafe partial struct IAsyncInfo : IAsyncInfo.Interface
     {
         public void** lpVtbl;
 
@@ -93,6 +93,60 @@ namespace TerraFX.Interop
         public HRESULT Close()
         {
             return ((delegate* unmanaged<IAsyncInfo*, int>)(lpVtbl[10]))((IAsyncInfo*)Unsafe.AsPointer(ref this));
+        }
+
+        public interface Interface : IInspectable.Interface
+        {
+            [VtblIndex(6)]
+            HRESULT get_Id([NativeTypeName("unsigned int *")] uint* id);
+
+            [VtblIndex(7)]
+            HRESULT get_Status([NativeTypeName("ABI::Windows::Foundation::AsyncStatus *")] AsyncStatus* status);
+
+            [VtblIndex(8)]
+            HRESULT get_ErrorCode(HRESULT* errorCode);
+
+            [VtblIndex(9)]
+            HRESULT Cancel();
+
+            [VtblIndex(10)]
+            HRESULT Close();
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAsyncInfo*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IAsyncInfo*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IAsyncInfo*, uint> Release;
+
+            [NativeTypeName("HRESULT (ULONG *, IID **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAsyncInfo*, uint*, Guid**, int> GetIids;
+
+            [NativeTypeName("HRESULT (HSTRING *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAsyncInfo*, HSTRING*, int> GetRuntimeClassName;
+
+            [NativeTypeName("HRESULT (TrustLevel *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAsyncInfo*, TrustLevel*, int> GetTrustLevel;
+
+            [NativeTypeName("HRESULT (unsigned int *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAsyncInfo*, uint*, int> get_Id;
+
+            [NativeTypeName("HRESULT (ABI::Windows::Foundation::AsyncStatus *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAsyncInfo*, AsyncStatus*, int> get_Status;
+
+            [NativeTypeName("HRESULT (HRESULT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAsyncInfo*, HRESULT*, int> get_ErrorCode;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IAsyncInfo*, int> Cancel;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IAsyncInfo*, int> Close;
         }
     }
 }

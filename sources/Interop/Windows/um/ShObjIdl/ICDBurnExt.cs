@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("2271DCCA-74FC-4414-8FB7-C56B05ACE2D7")]
     [NativeTypeName("struct ICDBurnExt : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct ICDBurnExt
+    public unsafe partial struct ICDBurnExt : ICDBurnExt.Interface
     {
         public void** lpVtbl;
 
@@ -44,6 +44,27 @@ namespace TerraFX.Interop
         public HRESULT GetSupportedActionTypes([NativeTypeName("CDBE_ACTIONS *")] uint* pdwActions)
         {
             return ((delegate* unmanaged<ICDBurnExt*, uint*, int>)(lpVtbl[3]))((ICDBurnExt*)Unsafe.AsPointer(ref this), pdwActions);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetSupportedActionTypes([NativeTypeName("CDBE_ACTIONS *")] uint* pdwActions);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ICDBurnExt*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ICDBurnExt*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ICDBurnExt*, uint> Release;
+
+            [NativeTypeName("HRESULT (CDBE_ACTIONS *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ICDBurnExt*, uint*, int> GetSupportedActionTypes;
         }
     }
 }

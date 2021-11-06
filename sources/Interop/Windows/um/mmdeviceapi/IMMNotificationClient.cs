@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("7991EEC9-7E89-4D85-8390-6C703CEC60C0")]
     [NativeTypeName("struct IMMNotificationClient : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IMMNotificationClient
+    public unsafe partial struct IMMNotificationClient : IMMNotificationClient.Interface
     {
         public void** lpVtbl;
 
@@ -72,6 +72,51 @@ namespace TerraFX.Interop
         public HRESULT OnPropertyValueChanged([NativeTypeName("LPCWSTR")] ushort* pwstrDeviceId, [NativeTypeName("const PROPERTYKEY")] PROPERTYKEY key)
         {
             return ((delegate* unmanaged<IMMNotificationClient*, ushort*, PROPERTYKEY, int>)(lpVtbl[7]))((IMMNotificationClient*)Unsafe.AsPointer(ref this), pwstrDeviceId, key);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT OnDeviceStateChanged([NativeTypeName("LPCWSTR")] ushort* pwstrDeviceId, [NativeTypeName("DWORD")] uint dwNewState);
+
+            [VtblIndex(4)]
+            HRESULT OnDeviceAdded([NativeTypeName("LPCWSTR")] ushort* pwstrDeviceId);
+
+            [VtblIndex(5)]
+            HRESULT OnDeviceRemoved([NativeTypeName("LPCWSTR")] ushort* pwstrDeviceId);
+
+            [VtblIndex(6)]
+            HRESULT OnDefaultDeviceChanged(EDataFlow flow, ERole role, [NativeTypeName("LPCWSTR")] ushort* pwstrDefaultDeviceId);
+
+            [VtblIndex(7)]
+            HRESULT OnPropertyValueChanged([NativeTypeName("LPCWSTR")] ushort* pwstrDeviceId, [NativeTypeName("const PROPERTYKEY")] PROPERTYKEY key);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMMNotificationClient*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMMNotificationClient*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMMNotificationClient*, uint> Release;
+
+            [NativeTypeName("HRESULT (LPCWSTR, DWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMMNotificationClient*, ushort*, uint, int> OnDeviceStateChanged;
+
+            [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMMNotificationClient*, ushort*, int> OnDeviceAdded;
+
+            [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMMNotificationClient*, ushort*, int> OnDeviceRemoved;
+
+            [NativeTypeName("HRESULT (EDataFlow, ERole, LPCWSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMMNotificationClient*, EDataFlow, ERole, ushort*, int> OnDefaultDeviceChanged;
+
+            [NativeTypeName("HRESULT (LPCWSTR, const PROPERTYKEY) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMMNotificationClient*, ushort*, PROPERTYKEY, int> OnPropertyValueChanged;
         }
     }
 }

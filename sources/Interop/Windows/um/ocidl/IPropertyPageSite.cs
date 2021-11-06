@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("B196B28C-BAB4-101A-B69C-00AA00341D07")]
     [NativeTypeName("struct IPropertyPageSite : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IPropertyPageSite
+    public unsafe partial struct IPropertyPageSite : IPropertyPageSite.Interface
     {
         public void** lpVtbl;
 
@@ -65,6 +65,45 @@ namespace TerraFX.Interop
         public HRESULT TranslateAccelerator(MSG* pMsg)
         {
             return ((delegate* unmanaged<IPropertyPageSite*, MSG*, int>)(lpVtbl[6]))((IPropertyPageSite*)Unsafe.AsPointer(ref this), pMsg);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT OnStatusChange([NativeTypeName("DWORD")] uint dwFlags);
+
+            [VtblIndex(4)]
+            HRESULT GetLocaleID([NativeTypeName("LCID *")] uint* pLocaleID);
+
+            [VtblIndex(5)]
+            HRESULT GetPageContainer(IUnknown** ppUnk);
+
+            [VtblIndex(6)]
+            HRESULT TranslateAccelerator(MSG* pMsg);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IPropertyPageSite*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IPropertyPageSite*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IPropertyPageSite*, uint> Release;
+
+            [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<IPropertyPageSite*, uint, int> OnStatusChange;
+
+            [NativeTypeName("HRESULT (LCID *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IPropertyPageSite*, uint*, int> GetLocaleID;
+
+            [NativeTypeName("HRESULT (IUnknown **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IPropertyPageSite*, IUnknown**, int> GetPageContainer;
+
+            [NativeTypeName("HRESULT (MSG *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IPropertyPageSite*, MSG*, int> TranslateAccelerator;
         }
     }
 }

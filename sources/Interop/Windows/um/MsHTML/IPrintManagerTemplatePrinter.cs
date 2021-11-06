@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("F633BE14-9EFF-4C4D-929E-05717B21B3E6")]
     [NativeTypeName("struct IPrintManagerTemplatePrinter : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct IPrintManagerTemplatePrinter
+    public unsafe partial struct IPrintManagerTemplatePrinter : IPrintManagerTemplatePrinter.Interface
     {
         public void** lpVtbl;
 
@@ -107,6 +107,69 @@ namespace TerraFX.Interop
         public HRESULT endPrint()
         {
             return ((delegate* unmanaged<IPrintManagerTemplatePrinter*, int>)(lpVtbl[12]))((IPrintManagerTemplatePrinter*)Unsafe.AsPointer(ref this));
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT startPrint();
+
+            [VtblIndex(8)]
+            HRESULT drawPreviewPage(IDispatch* pElemDisp, [NativeTypeName("long")] int nPage);
+
+            [VtblIndex(9)]
+            HRESULT setPageCount([NativeTypeName("long")] int nPage);
+
+            [VtblIndex(10)]
+            HRESULT invalidatePreview();
+
+            [VtblIndex(11)]
+            HRESULT getPrintTaskOptionValue([NativeTypeName("BSTR")] ushort* bstrKey, VARIANT* pvarin);
+
+            [VtblIndex(12)]
+            HRESULT endPrint();
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IPrintManagerTemplatePrinter*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IPrintManagerTemplatePrinter*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IPrintManagerTemplatePrinter*, uint> Release;
+
+            [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IPrintManagerTemplatePrinter*, uint*, int> GetTypeInfoCount;
+
+            [NativeTypeName("HRESULT (UINT, LCID, ITypeInfo **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IPrintManagerTemplatePrinter*, uint, uint, ITypeInfo**, int> GetTypeInfo;
+
+            [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IPrintManagerTemplatePrinter*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+
+            [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IPrintManagerTemplatePrinter*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IPrintManagerTemplatePrinter*, int> startPrint;
+
+            [NativeTypeName("HRESULT (IDispatch *, long) __attribute__((stdcall))")]
+            public delegate* unmanaged<IPrintManagerTemplatePrinter*, IDispatch*, int, int> drawPreviewPage;
+
+            [NativeTypeName("HRESULT (long) __attribute__((stdcall))")]
+            public delegate* unmanaged<IPrintManagerTemplatePrinter*, int, int> setPageCount;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IPrintManagerTemplatePrinter*, int> invalidatePreview;
+
+            [NativeTypeName("HRESULT (BSTR, VARIANT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IPrintManagerTemplatePrinter*, ushort*, VARIANT*, int> getPrintTaskOptionValue;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IPrintManagerTemplatePrinter*, int> endPrint;
         }
     }
 }

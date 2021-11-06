@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("79EAC9C2-BAF9-11CE-8C82-00AA004BA90B")]
     [NativeTypeName("struct IHlinkSite : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IHlinkSite
+    public unsafe partial struct IHlinkSite : IHlinkSite.Interface
     {
         public void** lpVtbl;
 
@@ -65,6 +65,45 @@ namespace TerraFX.Interop
         public HRESULT OnNavigationComplete([NativeTypeName("DWORD")] uint dwSiteData, [NativeTypeName("DWORD")] uint dwreserved, HRESULT hrError, [NativeTypeName("LPCWSTR")] ushort* pwzError)
         {
             return ((delegate* unmanaged<IHlinkSite*, uint, uint, HRESULT, ushort*, int>)(lpVtbl[6]))((IHlinkSite*)Unsafe.AsPointer(ref this), dwSiteData, dwreserved, hrError, pwzError);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT QueryService([NativeTypeName("DWORD")] uint dwSiteData, [NativeTypeName("const GUID &")] Guid* guidService, [NativeTypeName("const IID &")] Guid* riid, IUnknown** ppiunk);
+
+            [VtblIndex(4)]
+            HRESULT GetMoniker([NativeTypeName("DWORD")] uint dwSiteData, [NativeTypeName("DWORD")] uint dwAssign, [NativeTypeName("DWORD")] uint dwWhich, IMoniker** ppimk);
+
+            [VtblIndex(5)]
+            HRESULT ReadyToNavigate([NativeTypeName("DWORD")] uint dwSiteData, [NativeTypeName("DWORD")] uint dwReserved);
+
+            [VtblIndex(6)]
+            HRESULT OnNavigationComplete([NativeTypeName("DWORD")] uint dwSiteData, [NativeTypeName("DWORD")] uint dwreserved, HRESULT hrError, [NativeTypeName("LPCWSTR")] ushort* pwzError);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHlinkSite*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IHlinkSite*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IHlinkSite*, uint> Release;
+
+            [NativeTypeName("HRESULT (DWORD, const GUID &, const IID &, IUnknown **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHlinkSite*, uint, Guid*, Guid*, IUnknown**, int> QueryService;
+
+            [NativeTypeName("HRESULT (DWORD, DWORD, DWORD, IMoniker **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHlinkSite*, uint, uint, uint, IMoniker**, int> GetMoniker;
+
+            [NativeTypeName("HRESULT (DWORD, DWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHlinkSite*, uint, uint, int> ReadyToNavigate;
+
+            [NativeTypeName("HRESULT (DWORD, DWORD, HRESULT, LPCWSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHlinkSite*, uint, uint, HRESULT, ushort*, int> OnNavigationComplete;
         }
     }
 }

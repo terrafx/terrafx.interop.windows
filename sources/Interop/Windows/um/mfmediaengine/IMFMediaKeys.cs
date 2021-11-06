@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("5CB31C05-61FF-418F-AFDA-CAAF41421A38")]
     [NativeTypeName("struct IMFMediaKeys : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IMFMediaKeys
+    public unsafe partial struct IMFMediaKeys : IMFMediaKeys.Interface
     {
         public void** lpVtbl;
 
@@ -65,6 +65,45 @@ namespace TerraFX.Interop
         public HRESULT GetSuspendNotify(IMFCdmSuspendNotify** notify)
         {
             return ((delegate* unmanaged<IMFMediaKeys*, IMFCdmSuspendNotify**, int>)(lpVtbl[6]))((IMFMediaKeys*)Unsafe.AsPointer(ref this), notify);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT CreateSession([NativeTypeName("BSTR")] ushort* mimeType, [NativeTypeName("const BYTE *")] byte* initData, [NativeTypeName("DWORD")] uint cb, [NativeTypeName("const BYTE *")] byte* customData, [NativeTypeName("DWORD")] uint cbCustomData, IMFMediaKeySessionNotify* notify, IMFMediaKeySession** ppSession);
+
+            [VtblIndex(4)]
+            HRESULT get_KeySystem([NativeTypeName("BSTR *")] ushort** keySystem);
+
+            [VtblIndex(5)]
+            HRESULT Shutdown();
+
+            [VtblIndex(6)]
+            HRESULT GetSuspendNotify(IMFCdmSuspendNotify** notify);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFMediaKeys*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFMediaKeys*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFMediaKeys*, uint> Release;
+
+            [NativeTypeName("HRESULT (BSTR, const BYTE *, DWORD, const BYTE *, DWORD, IMFMediaKeySessionNotify *, IMFMediaKeySession **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFMediaKeys*, ushort*, byte*, uint, byte*, uint, IMFMediaKeySessionNotify*, IMFMediaKeySession**, int> CreateSession;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFMediaKeys*, ushort**, int> get_KeySystem;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFMediaKeys*, int> Shutdown;
+
+            [NativeTypeName("HRESULT (IMFCdmSuspendNotify **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFMediaKeys*, IMFCdmSuspendNotify**, int> GetSuspendNotify;
         }
     }
 }

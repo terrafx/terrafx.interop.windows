@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("1AC56374-6198-4D6B-92E4-749D5AB8A895")]
     [NativeTypeName("struct IAppxManifestPackageDependency3 : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IAppxManifestPackageDependency3
+    public unsafe partial struct IAppxManifestPackageDependency3 : IAppxManifestPackageDependency3.Interface
     {
         public void** lpVtbl;
 
@@ -44,6 +44,27 @@ namespace TerraFX.Interop
         public HRESULT GetIsOptional(BOOL* isOptional)
         {
             return ((delegate* unmanaged<IAppxManifestPackageDependency3*, BOOL*, int>)(lpVtbl[3]))((IAppxManifestPackageDependency3*)Unsafe.AsPointer(ref this), isOptional);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetIsOptional(BOOL* isOptional);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAppxManifestPackageDependency3*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IAppxManifestPackageDependency3*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IAppxManifestPackageDependency3*, uint> Release;
+
+            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAppxManifestPackageDependency3*, BOOL*, int> GetIsOptional;
         }
     }
 }

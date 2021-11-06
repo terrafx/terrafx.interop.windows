@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("DC12A681-737F-11CF-884D-00AA004B2E24")]
     [NativeTypeName("struct IWbemClassObject : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IWbemClassObject
+    public unsafe partial struct IWbemClassObject : IWbemClassObject.Interface
     {
         public void** lpVtbl;
 
@@ -205,6 +205,165 @@ namespace TerraFX.Interop
         public HRESULT GetMethodOrigin([NativeTypeName("LPCWSTR")] ushort* wszMethodName, [NativeTypeName("BSTR *")] ushort** pstrClassName)
         {
             return ((delegate* unmanaged<IWbemClassObject*, ushort*, ushort**, int>)(lpVtbl[26]))((IWbemClassObject*)Unsafe.AsPointer(ref this), wszMethodName, pstrClassName);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetQualifierSet(IWbemQualifierSet** ppQualSet);
+
+            [VtblIndex(4)]
+            HRESULT Get([NativeTypeName("LPCWSTR")] ushort* wszName, [NativeTypeName("long")] int lFlags, VARIANT* pVal, [NativeTypeName("CIMTYPE *")] int* pType, [NativeTypeName("long *")] int* plFlavor);
+
+            [VtblIndex(5)]
+            HRESULT Put([NativeTypeName("LPCWSTR")] ushort* wszName, [NativeTypeName("long")] int lFlags, VARIANT* pVal, [NativeTypeName("CIMTYPE")] int Type);
+
+            [VtblIndex(6)]
+            HRESULT Delete([NativeTypeName("LPCWSTR")] ushort* wszName);
+
+            [VtblIndex(7)]
+            HRESULT GetNames([NativeTypeName("LPCWSTR")] ushort* wszQualifierName, [NativeTypeName("long")] int lFlags, VARIANT* pQualifierVal, SAFEARRAY** pNames);
+
+            [VtblIndex(8)]
+            HRESULT BeginEnumeration([NativeTypeName("long")] int lEnumFlags);
+
+            [VtblIndex(9)]
+            HRESULT Next([NativeTypeName("long")] int lFlags, [NativeTypeName("BSTR *")] ushort** strName, VARIANT* pVal, [NativeTypeName("CIMTYPE *")] int* pType, [NativeTypeName("long *")] int* plFlavor);
+
+            [VtblIndex(10)]
+            HRESULT EndEnumeration();
+
+            [VtblIndex(11)]
+            HRESULT GetPropertyQualifierSet([NativeTypeName("LPCWSTR")] ushort* wszProperty, IWbemQualifierSet** ppQualSet);
+
+            [VtblIndex(12)]
+            HRESULT Clone(IWbemClassObject** ppCopy);
+
+            [VtblIndex(13)]
+            HRESULT GetObjectText([NativeTypeName("long")] int lFlags, [NativeTypeName("BSTR *")] ushort** pstrObjectText);
+
+            [VtblIndex(14)]
+            HRESULT SpawnDerivedClass([NativeTypeName("long")] int lFlags, IWbemClassObject** ppNewClass);
+
+            [VtblIndex(15)]
+            HRESULT SpawnInstance([NativeTypeName("long")] int lFlags, IWbemClassObject** ppNewInstance);
+
+            [VtblIndex(16)]
+            HRESULT CompareTo([NativeTypeName("long")] int lFlags, IWbemClassObject* pCompareTo);
+
+            [VtblIndex(17)]
+            HRESULT GetPropertyOrigin([NativeTypeName("LPCWSTR")] ushort* wszName, [NativeTypeName("BSTR *")] ushort** pstrClassName);
+
+            [VtblIndex(18)]
+            HRESULT InheritsFrom([NativeTypeName("LPCWSTR")] ushort* strAncestor);
+
+            [VtblIndex(19)]
+            HRESULT GetMethod([NativeTypeName("LPCWSTR")] ushort* wszName, [NativeTypeName("long")] int lFlags, IWbemClassObject** ppInSignature, IWbemClassObject** ppOutSignature);
+
+            [VtblIndex(20)]
+            HRESULT PutMethod([NativeTypeName("LPCWSTR")] ushort* wszName, [NativeTypeName("long")] int lFlags, IWbemClassObject* pInSignature, IWbemClassObject* pOutSignature);
+
+            [VtblIndex(21)]
+            HRESULT DeleteMethod([NativeTypeName("LPCWSTR")] ushort* wszName);
+
+            [VtblIndex(22)]
+            HRESULT BeginMethodEnumeration([NativeTypeName("long")] int lEnumFlags);
+
+            [VtblIndex(23)]
+            HRESULT NextMethod([NativeTypeName("long")] int lFlags, [NativeTypeName("BSTR *")] ushort** pstrName, IWbemClassObject** ppInSignature, IWbemClassObject** ppOutSignature);
+
+            [VtblIndex(24)]
+            HRESULT EndMethodEnumeration();
+
+            [VtblIndex(25)]
+            HRESULT GetMethodQualifierSet([NativeTypeName("LPCWSTR")] ushort* wszMethod, IWbemQualifierSet** ppQualSet);
+
+            [VtblIndex(26)]
+            HRESULT GetMethodOrigin([NativeTypeName("LPCWSTR")] ushort* wszMethodName, [NativeTypeName("BSTR *")] ushort** pstrClassName);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWbemClassObject*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IWbemClassObject*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IWbemClassObject*, uint> Release;
+
+            [NativeTypeName("HRESULT (IWbemQualifierSet **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWbemClassObject*, IWbemQualifierSet**, int> GetQualifierSet;
+
+            [NativeTypeName("HRESULT (LPCWSTR, long, VARIANT *, CIMTYPE *, long *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWbemClassObject*, ushort*, int, VARIANT*, int*, int*, int> Get;
+
+            [NativeTypeName("HRESULT (LPCWSTR, long, VARIANT *, CIMTYPE) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWbemClassObject*, ushort*, int, VARIANT*, int, int> Put;
+
+            [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWbemClassObject*, ushort*, int> Delete;
+
+            [NativeTypeName("HRESULT (LPCWSTR, long, VARIANT *, SAFEARRAY **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWbemClassObject*, ushort*, int, VARIANT*, SAFEARRAY**, int> GetNames;
+
+            [NativeTypeName("HRESULT (long) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWbemClassObject*, int, int> BeginEnumeration;
+
+            [NativeTypeName("HRESULT (long, BSTR *, VARIANT *, CIMTYPE *, long *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWbemClassObject*, int, ushort**, VARIANT*, int*, int*, int> Next;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IWbemClassObject*, int> EndEnumeration;
+
+            [NativeTypeName("HRESULT (LPCWSTR, IWbemQualifierSet **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWbemClassObject*, ushort*, IWbemQualifierSet**, int> GetPropertyQualifierSet;
+
+            [NativeTypeName("HRESULT (IWbemClassObject **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWbemClassObject*, IWbemClassObject**, int> Clone;
+
+            [NativeTypeName("HRESULT (long, BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWbemClassObject*, int, ushort**, int> GetObjectText;
+
+            [NativeTypeName("HRESULT (long, IWbemClassObject **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWbemClassObject*, int, IWbemClassObject**, int> SpawnDerivedClass;
+
+            [NativeTypeName("HRESULT (long, IWbemClassObject **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWbemClassObject*, int, IWbemClassObject**, int> SpawnInstance;
+
+            [NativeTypeName("HRESULT (long, IWbemClassObject *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWbemClassObject*, int, IWbemClassObject*, int> CompareTo;
+
+            [NativeTypeName("HRESULT (LPCWSTR, BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWbemClassObject*, ushort*, ushort**, int> GetPropertyOrigin;
+
+            [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWbemClassObject*, ushort*, int> InheritsFrom;
+
+            [NativeTypeName("HRESULT (LPCWSTR, long, IWbemClassObject **, IWbemClassObject **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWbemClassObject*, ushort*, int, IWbemClassObject**, IWbemClassObject**, int> GetMethod;
+
+            [NativeTypeName("HRESULT (LPCWSTR, long, IWbemClassObject *, IWbemClassObject *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWbemClassObject*, ushort*, int, IWbemClassObject*, IWbemClassObject*, int> PutMethod;
+
+            [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWbemClassObject*, ushort*, int> DeleteMethod;
+
+            [NativeTypeName("HRESULT (long) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWbemClassObject*, int, int> BeginMethodEnumeration;
+
+            [NativeTypeName("HRESULT (long, BSTR *, IWbemClassObject **, IWbemClassObject **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWbemClassObject*, int, ushort**, IWbemClassObject**, IWbemClassObject**, int> NextMethod;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IWbemClassObject*, int> EndMethodEnumeration;
+
+            [NativeTypeName("HRESULT (LPCWSTR, IWbemQualifierSet **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWbemClassObject*, ushort*, IWbemQualifierSet**, int> GetMethodQualifierSet;
+
+            [NativeTypeName("HRESULT (LPCWSTR, BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWbemClassObject*, ushort*, ushort**, int> GetMethodOrigin;
         }
     }
 }

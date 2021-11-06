@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("0000002B-0000-0000-C000-000000000046")]
     [NativeTypeName("struct IWaitMultiple : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IWaitMultiple
+    public unsafe partial struct IWaitMultiple : IWaitMultiple.Interface
     {
         public void** lpVtbl;
 
@@ -51,6 +51,33 @@ namespace TerraFX.Interop
         public HRESULT AddSynchronize(ISynchronize* pSync)
         {
             return ((delegate* unmanaged<IWaitMultiple*, ISynchronize*, int>)(lpVtbl[4]))((IWaitMultiple*)Unsafe.AsPointer(ref this), pSync);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT WaitMultiple([NativeTypeName("DWORD")] uint timeout, ISynchronize** pSync);
+
+            [VtblIndex(4)]
+            HRESULT AddSynchronize(ISynchronize* pSync);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWaitMultiple*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IWaitMultiple*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IWaitMultiple*, uint> Release;
+
+            [NativeTypeName("HRESULT (DWORD, ISynchronize **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWaitMultiple*, uint, ISynchronize**, int> WaitMultiple;
+
+            [NativeTypeName("HRESULT (ISynchronize *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWaitMultiple*, ISynchronize*, int> AddSynchronize;
         }
     }
 }

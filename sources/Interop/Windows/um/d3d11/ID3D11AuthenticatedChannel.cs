@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("3015A308-DCBD-47AA-A747-192486D14D4A")]
     [NativeTypeName("struct ID3D11AuthenticatedChannel : ID3D11DeviceChild")]
     [NativeInheritance("ID3D11DeviceChild")]
-    public unsafe partial struct ID3D11AuthenticatedChannel
+    public unsafe partial struct ID3D11AuthenticatedChannel : ID3D11AuthenticatedChannel.Interface
     {
         public void** lpVtbl;
 
@@ -86,6 +86,51 @@ namespace TerraFX.Interop
         public void GetChannelHandle(HANDLE* pChannelHandle)
         {
             ((delegate* unmanaged<ID3D11AuthenticatedChannel*, HANDLE*, void>)(lpVtbl[9]))((ID3D11AuthenticatedChannel*)Unsafe.AsPointer(ref this), pChannelHandle);
+        }
+
+        public interface Interface : ID3D11DeviceChild.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT GetCertificateSize(uint* pCertificateSize);
+
+            [VtblIndex(8)]
+            HRESULT GetCertificate(uint CertificateSize, byte* pCertificate);
+
+            [VtblIndex(9)]
+            void GetChannelHandle(HANDLE* pChannelHandle);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D11AuthenticatedChannel*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D11AuthenticatedChannel*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D11AuthenticatedChannel*, uint> Release;
+
+            [NativeTypeName("void (ID3D11Device **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D11AuthenticatedChannel*, ID3D11Device**, void> GetDevice;
+
+            [NativeTypeName("HRESULT (const GUID &, UINT *, void *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D11AuthenticatedChannel*, Guid*, uint*, void*, int> GetPrivateData;
+
+            [NativeTypeName("HRESULT (const GUID &, UINT, const void *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D11AuthenticatedChannel*, Guid*, uint, void*, int> SetPrivateData;
+
+            [NativeTypeName("HRESULT (const GUID &, const IUnknown *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D11AuthenticatedChannel*, Guid*, IUnknown*, int> SetPrivateDataInterface;
+
+            [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D11AuthenticatedChannel*, uint*, int> GetCertificateSize;
+
+            [NativeTypeName("HRESULT (UINT, BYTE *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D11AuthenticatedChannel*, uint, byte*, int> GetCertificate;
+
+            [NativeTypeName("void (HANDLE *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D11AuthenticatedChannel*, HANDLE*, void> GetChannelHandle;
         }
     }
 }

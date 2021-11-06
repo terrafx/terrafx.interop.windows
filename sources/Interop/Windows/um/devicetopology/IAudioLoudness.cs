@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("7D8B1437-DD53-4350-9C1B-1EE2890BD938")]
     [NativeTypeName("struct IAudioLoudness : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IAudioLoudness
+    public unsafe partial struct IAudioLoudness : IAudioLoudness.Interface
     {
         public void** lpVtbl;
 
@@ -51,6 +51,33 @@ namespace TerraFX.Interop
         public HRESULT SetEnabled(BOOL bEnable, [NativeTypeName("LPCGUID")] Guid* pguidEventContext)
         {
             return ((delegate* unmanaged<IAudioLoudness*, BOOL, Guid*, int>)(lpVtbl[4]))((IAudioLoudness*)Unsafe.AsPointer(ref this), bEnable, pguidEventContext);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetEnabled(BOOL* pbEnabled);
+
+            [VtblIndex(4)]
+            HRESULT SetEnabled(BOOL bEnable, [NativeTypeName("LPCGUID")] Guid* pguidEventContext);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAudioLoudness*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IAudioLoudness*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IAudioLoudness*, uint> Release;
+
+            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAudioLoudness*, BOOL*, int> GetEnabled;
+
+            [NativeTypeName("HRESULT (BOOL, LPCGUID) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAudioLoudness*, BOOL, Guid*, int> SetEnabled;
         }
     }
 }

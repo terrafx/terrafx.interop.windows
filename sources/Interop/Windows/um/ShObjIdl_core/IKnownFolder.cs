@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("3AA7AF7E-9B36-420C-A8E3-F77D4674A488")]
     [NativeTypeName("struct IKnownFolder : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IKnownFolder
+    public unsafe partial struct IKnownFolder : IKnownFolder.Interface
     {
         public void** lpVtbl;
 
@@ -100,6 +100,75 @@ namespace TerraFX.Interop
         public HRESULT GetFolderDefinition(KNOWNFOLDER_DEFINITION* pKFD)
         {
             return ((delegate* unmanaged<IKnownFolder*, KNOWNFOLDER_DEFINITION*, int>)(lpVtbl[11]))((IKnownFolder*)Unsafe.AsPointer(ref this), pKFD);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetId([NativeTypeName("KNOWNFOLDERID *")] Guid* pkfid);
+
+            [VtblIndex(4)]
+            HRESULT GetCategory(KF_CATEGORY* pCategory);
+
+            [VtblIndex(5)]
+            HRESULT GetShellItem([NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("const IID &")] Guid* riid, void** ppv);
+
+            [VtblIndex(6)]
+            HRESULT GetPath([NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("LPWSTR *")] ushort** ppszPath);
+
+            [VtblIndex(7)]
+            HRESULT SetPath([NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("LPCWSTR")] ushort* pszPath);
+
+            [VtblIndex(8)]
+            HRESULT GetIDList([NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("LPITEMIDLIST *")] ITEMIDLIST** ppidl);
+
+            [VtblIndex(9)]
+            HRESULT GetFolderType([NativeTypeName("FOLDERTYPEID *")] Guid* pftid);
+
+            [VtblIndex(10)]
+            HRESULT GetRedirectionCapabilities([NativeTypeName("KF_REDIRECTION_CAPABILITIES *")] uint* pCapabilities);
+
+            [VtblIndex(11)]
+            HRESULT GetFolderDefinition(KNOWNFOLDER_DEFINITION* pKFD);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IKnownFolder*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IKnownFolder*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IKnownFolder*, uint> Release;
+
+            [NativeTypeName("HRESULT (KNOWNFOLDERID *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IKnownFolder*, Guid*, int> GetId;
+
+            [NativeTypeName("HRESULT (KF_CATEGORY *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IKnownFolder*, KF_CATEGORY*, int> GetCategory;
+
+            [NativeTypeName("HRESULT (DWORD, const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IKnownFolder*, uint, Guid*, void**, int> GetShellItem;
+
+            [NativeTypeName("HRESULT (DWORD, LPWSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IKnownFolder*, uint, ushort**, int> GetPath;
+
+            [NativeTypeName("HRESULT (DWORD, LPCWSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IKnownFolder*, uint, ushort*, int> SetPath;
+
+            [NativeTypeName("HRESULT (DWORD, LPITEMIDLIST *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IKnownFolder*, uint, ITEMIDLIST**, int> GetIDList;
+
+            [NativeTypeName("HRESULT (FOLDERTYPEID *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IKnownFolder*, Guid*, int> GetFolderType;
+
+            [NativeTypeName("HRESULT (KF_REDIRECTION_CAPABILITIES *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IKnownFolder*, uint*, int> GetRedirectionCapabilities;
+
+            [NativeTypeName("HRESULT (KNOWNFOLDER_DEFINITION *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IKnownFolder*, KNOWNFOLDER_DEFINITION*, int> GetFolderDefinition;
         }
     }
 }

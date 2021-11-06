@@ -10,7 +10,7 @@ namespace TerraFX.Interop
 {
     [NativeTypeName("struct IFullScreenVideo : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IFullScreenVideo
+    public unsafe partial struct IFullScreenVideo : IFullScreenVideo.Interface
     {
         public void** lpVtbl;
 
@@ -154,6 +154,123 @@ namespace TerraFX.Interop
         public HRESULT SetDefault()
         {
             return ((delegate* unmanaged<IFullScreenVideo*, int>)(lpVtbl[19]))((IFullScreenVideo*)Unsafe.AsPointer(ref this));
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT CountModes([NativeTypeName("long *")] int* pModes);
+
+            [VtblIndex(4)]
+            HRESULT GetModeInfo([NativeTypeName("long")] int Mode, [NativeTypeName("long *")] int* pWidth, [NativeTypeName("long *")] int* pHeight, [NativeTypeName("long *")] int* pDepth);
+
+            [VtblIndex(5)]
+            HRESULT GetCurrentMode([NativeTypeName("long *")] int* pMode);
+
+            [VtblIndex(6)]
+            HRESULT IsModeAvailable([NativeTypeName("long")] int Mode);
+
+            [VtblIndex(7)]
+            HRESULT IsModeEnabled([NativeTypeName("long")] int Mode);
+
+            [VtblIndex(8)]
+            HRESULT SetEnabled([NativeTypeName("long")] int Mode, [NativeTypeName("long")] int bEnabled);
+
+            [VtblIndex(9)]
+            HRESULT GetClipFactor([NativeTypeName("long *")] int* pClipFactor);
+
+            [VtblIndex(10)]
+            HRESULT SetClipFactor([NativeTypeName("long")] int ClipFactor);
+
+            [VtblIndex(11)]
+            HRESULT SetMessageDrain(HWND hwnd);
+
+            [VtblIndex(12)]
+            HRESULT GetMessageDrain(HWND* hwnd);
+
+            [VtblIndex(13)]
+            HRESULT SetMonitor([NativeTypeName("long")] int Monitor);
+
+            [VtblIndex(14)]
+            HRESULT GetMonitor([NativeTypeName("long *")] int* Monitor);
+
+            [VtblIndex(15)]
+            HRESULT HideOnDeactivate([NativeTypeName("long")] int Hide);
+
+            [VtblIndex(16)]
+            HRESULT IsHideOnDeactivate();
+
+            [VtblIndex(17)]
+            HRESULT SetCaption([NativeTypeName("BSTR")] ushort* strCaption);
+
+            [VtblIndex(18)]
+            HRESULT GetCaption([NativeTypeName("BSTR *")] ushort** pstrCaption);
+
+            [VtblIndex(19)]
+            HRESULT SetDefault();
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFullScreenVideo*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IFullScreenVideo*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IFullScreenVideo*, uint> Release;
+
+            [NativeTypeName("HRESULT (long *) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFullScreenVideo*, int*, int> CountModes;
+
+            [NativeTypeName("HRESULT (long, long *, long *, long *) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFullScreenVideo*, int, int*, int*, int*, int> GetModeInfo;
+
+            [NativeTypeName("HRESULT (long *) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFullScreenVideo*, int*, int> GetCurrentMode;
+
+            [NativeTypeName("HRESULT (long) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFullScreenVideo*, int, int> IsModeAvailable;
+
+            [NativeTypeName("HRESULT (long) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFullScreenVideo*, int, int> IsModeEnabled;
+
+            [NativeTypeName("HRESULT (long, long) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFullScreenVideo*, int, int, int> SetEnabled;
+
+            [NativeTypeName("HRESULT (long *) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFullScreenVideo*, int*, int> GetClipFactor;
+
+            [NativeTypeName("HRESULT (long) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFullScreenVideo*, int, int> SetClipFactor;
+
+            [NativeTypeName("HRESULT (HWND) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFullScreenVideo*, HWND, int> SetMessageDrain;
+
+            [NativeTypeName("HRESULT (HWND *) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFullScreenVideo*, HWND*, int> GetMessageDrain;
+
+            [NativeTypeName("HRESULT (long) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFullScreenVideo*, int, int> SetMonitor;
+
+            [NativeTypeName("HRESULT (long *) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFullScreenVideo*, int*, int> GetMonitor;
+
+            [NativeTypeName("HRESULT (long) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFullScreenVideo*, int, int> HideOnDeactivate;
+
+            [NativeTypeName("HRESULT () __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFullScreenVideo*, int> IsHideOnDeactivate;
+
+            [NativeTypeName("HRESULT (BSTR) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFullScreenVideo*, ushort*, int> SetCaption;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFullScreenVideo*, ushort**, int> GetCaption;
+
+            [NativeTypeName("HRESULT () __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFullScreenVideo*, int> SetDefault;
         }
     }
 }

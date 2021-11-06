@@ -7,7 +7,7 @@ using System.Runtime.CompilerServices;
 
 namespace TerraFX.Interop
 {
-    public unsafe partial struct IXAudio2EngineCallback
+    public unsafe partial struct IXAudio2EngineCallback : IXAudio2EngineCallback.Interface
     {
         public void** lpVtbl;
 
@@ -30,6 +30,30 @@ namespace TerraFX.Interop
         public void OnCriticalError(HRESULT Error)
         {
             ((delegate* unmanaged<IXAudio2EngineCallback*, HRESULT, void>)(lpVtbl[2]))((IXAudio2EngineCallback*)Unsafe.AsPointer(ref this), Error);
+        }
+
+        public interface Interface
+        {
+            [VtblIndex(0)]
+            void OnProcessingPassStart();
+
+            [VtblIndex(1)]
+            void OnProcessingPassEnd();
+
+            [VtblIndex(2)]
+            void OnCriticalError(HRESULT Error);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("void () __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IXAudio2EngineCallback*, void> OnProcessingPassStart;
+
+            [NativeTypeName("void () __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IXAudio2EngineCallback*, void> OnProcessingPassEnd;
+
+            [NativeTypeName("void (HRESULT) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IXAudio2EngineCallback*, HRESULT, void> OnCriticalError;
         }
     }
 }

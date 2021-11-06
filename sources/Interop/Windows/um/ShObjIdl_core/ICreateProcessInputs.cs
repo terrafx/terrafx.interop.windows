@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("F6EF6140-E26F-4D82-BAC4-E9BA5FD239A8")]
     [NativeTypeName("struct ICreateProcessInputs : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct ICreateProcessInputs
+    public unsafe partial struct ICreateProcessInputs : ICreateProcessInputs.Interface
     {
         public void** lpVtbl;
 
@@ -86,6 +86,63 @@ namespace TerraFX.Interop
         public HRESULT SetEnvironmentVariableW([NativeTypeName("LPCWSTR")] ushort* pszName, [NativeTypeName("LPCWSTR")] ushort* pszValue)
         {
             return ((delegate* unmanaged<ICreateProcessInputs*, ushort*, ushort*, int>)(lpVtbl[9]))((ICreateProcessInputs*)Unsafe.AsPointer(ref this), pszName, pszValue);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetCreateFlags([NativeTypeName("DWORD *")] uint* pdwCreationFlags);
+
+            [VtblIndex(4)]
+            HRESULT SetCreateFlags([NativeTypeName("DWORD")] uint dwCreationFlags);
+
+            [VtblIndex(5)]
+            HRESULT AddCreateFlags([NativeTypeName("DWORD")] uint dwCreationFlags);
+
+            [VtblIndex(6)]
+            HRESULT SetHotKey([NativeTypeName("WORD")] ushort wHotKey);
+
+            [VtblIndex(7)]
+            HRESULT AddStartupFlags([NativeTypeName("DWORD")] uint dwStartupInfoFlags);
+
+            [VtblIndex(8)]
+            HRESULT SetTitle([NativeTypeName("LPCWSTR")] ushort* pszTitle);
+
+            [VtblIndex(9)]
+            HRESULT SetEnvironmentVariableW([NativeTypeName("LPCWSTR")] ushort* pszName, [NativeTypeName("LPCWSTR")] ushort* pszValue);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ICreateProcessInputs*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ICreateProcessInputs*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ICreateProcessInputs*, uint> Release;
+
+            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ICreateProcessInputs*, uint*, int> GetCreateFlags;
+
+            [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<ICreateProcessInputs*, uint, int> SetCreateFlags;
+
+            [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<ICreateProcessInputs*, uint, int> AddCreateFlags;
+
+            [NativeTypeName("HRESULT (WORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<ICreateProcessInputs*, ushort, int> SetHotKey;
+
+            [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<ICreateProcessInputs*, uint, int> AddStartupFlags;
+
+            [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<ICreateProcessInputs*, ushort*, int> SetTitle;
+
+            [NativeTypeName("HRESULT (LPCWSTR, LPCWSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<ICreateProcessInputs*, ushort*, ushort*, int> SetEnvironmentVariableW;
         }
     }
 }

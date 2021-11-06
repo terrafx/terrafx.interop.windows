@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("DB2F3ACA-2F86-11D1-8E04-00C04FB9989A")]
     [NativeTypeName("struct IPipeByte : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IPipeByte
+    public unsafe partial struct IPipeByte : IPipeByte.Interface
     {
         public void** lpVtbl;
 
@@ -51,6 +51,33 @@ namespace TerraFX.Interop
         public HRESULT Push(byte* buf, [NativeTypeName("ULONG")] uint cSent)
         {
             return ((delegate* unmanaged<IPipeByte*, byte*, uint, int>)(lpVtbl[4]))((IPipeByte*)Unsafe.AsPointer(ref this), buf, cSent);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT Pull(byte* buf, [NativeTypeName("ULONG")] uint cRequest, [NativeTypeName("ULONG *")] uint* pcReturned);
+
+            [VtblIndex(4)]
+            HRESULT Push(byte* buf, [NativeTypeName("ULONG")] uint cSent);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IPipeByte*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IPipeByte*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IPipeByte*, uint> Release;
+
+            [NativeTypeName("HRESULT (BYTE *, ULONG, ULONG *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IPipeByte*, byte*, uint, uint*, int> Pull;
+
+            [NativeTypeName("HRESULT (BYTE *, ULONG) __attribute__((stdcall))")]
+            public delegate* unmanaged<IPipeByte*, byte*, uint, int> Push;
         }
     }
 }

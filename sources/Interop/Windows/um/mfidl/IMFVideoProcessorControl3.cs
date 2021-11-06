@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("2424B3F2-EB23-40F1-91AA-74BDDEEA0883")]
     [NativeTypeName("struct IMFVideoProcessorControl3 : IMFVideoProcessorControl2")]
     [NativeInheritance("IMFVideoProcessorControl2")]
-    public unsafe partial struct IMFVideoProcessorControl3
+    public unsafe partial struct IMFVideoProcessorControl3 : IMFVideoProcessorControl3.Interface
     {
         public void** lpVtbl;
 
@@ -128,6 +128,72 @@ namespace TerraFX.Interop
         public HRESULT SetOutputDevice(IUnknown* pOutputDevice)
         {
             return ((delegate* unmanaged<IMFVideoProcessorControl3*, IUnknown*, int>)(lpVtbl[15]))((IMFVideoProcessorControl3*)Unsafe.AsPointer(ref this), pOutputDevice);
+        }
+
+        public interface Interface : IMFVideoProcessorControl2.Interface
+        {
+            [VtblIndex(12)]
+            HRESULT GetNaturalOutputType(IMFMediaType** ppType);
+
+            [VtblIndex(13)]
+            HRESULT EnableSphericalVideoProcessing(BOOL fEnable, MFVideoSphericalFormat eFormat, MFVideoSphericalProjectionMode eProjectionMode);
+
+            [VtblIndex(14)]
+            HRESULT SetSphericalVideoProperties(float X, float Y, float Z, float W, float fieldOfView);
+
+            [VtblIndex(15)]
+            HRESULT SetOutputDevice(IUnknown* pOutputDevice);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFVideoProcessorControl3*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFVideoProcessorControl3*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFVideoProcessorControl3*, uint> Release;
+
+            [NativeTypeName("HRESULT (MFARGB *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFVideoProcessorControl3*, MFARGB*, int> SetBorderColor;
+
+            [NativeTypeName("HRESULT (RECT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFVideoProcessorControl3*, RECT*, int> SetSourceRectangle;
+
+            [NativeTypeName("HRESULT (RECT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFVideoProcessorControl3*, RECT*, int> SetDestinationRectangle;
+
+            [NativeTypeName("HRESULT (MF_VIDEO_PROCESSOR_MIRROR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFVideoProcessorControl3*, MF_VIDEO_PROCESSOR_MIRROR, int> SetMirror;
+
+            [NativeTypeName("HRESULT (MF_VIDEO_PROCESSOR_ROTATION) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFVideoProcessorControl3*, MF_VIDEO_PROCESSOR_ROTATION, int> SetRotation;
+
+            [NativeTypeName("HRESULT (SIZE *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFVideoProcessorControl3*, SIZE*, int> SetConstrictionSize;
+
+            [NativeTypeName("HRESULT (UINT) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFVideoProcessorControl3*, uint, int> SetRotationOverride;
+
+            [NativeTypeName("HRESULT (BOOL) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFVideoProcessorControl3*, BOOL, int> EnableHardwareEffects;
+
+            [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFVideoProcessorControl3*, uint*, int> GetSupportedHardwareEffects;
+
+            [NativeTypeName("HRESULT (IMFMediaType **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFVideoProcessorControl3*, IMFMediaType**, int> GetNaturalOutputType;
+
+            [NativeTypeName("HRESULT (BOOL, MFVideoSphericalFormat, MFVideoSphericalProjectionMode) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFVideoProcessorControl3*, BOOL, MFVideoSphericalFormat, MFVideoSphericalProjectionMode, int> EnableSphericalVideoProcessing;
+
+            [NativeTypeName("HRESULT (float, float, float, float, float) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFVideoProcessorControl3*, float, float, float, float, float, int> SetSphericalVideoProperties;
+
+            [NativeTypeName("HRESULT (IUnknown *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFVideoProcessorControl3*, IUnknown*, int> SetOutputDevice;
         }
     }
 }

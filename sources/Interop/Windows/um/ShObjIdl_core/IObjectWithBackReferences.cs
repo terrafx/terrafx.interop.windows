@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("321A6A6A-D61F-4BF3-97AE-14BE2986BB36")]
     [NativeTypeName("struct IObjectWithBackReferences : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IObjectWithBackReferences
+    public unsafe partial struct IObjectWithBackReferences : IObjectWithBackReferences.Interface
     {
         public void** lpVtbl;
 
@@ -44,6 +44,27 @@ namespace TerraFX.Interop
         public HRESULT RemoveBackReferences()
         {
             return ((delegate* unmanaged<IObjectWithBackReferences*, int>)(lpVtbl[3]))((IObjectWithBackReferences*)Unsafe.AsPointer(ref this));
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT RemoveBackReferences();
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IObjectWithBackReferences*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IObjectWithBackReferences*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IObjectWithBackReferences*, uint> Release;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IObjectWithBackReferences*, int> RemoveBackReferences;
         }
     }
 }

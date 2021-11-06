@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("34201E5A-A787-41A3-A5A4-BD6DCF2A854E")]
     [NativeTypeName("struct ICredentialProviderEvents : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct ICredentialProviderEvents
+    public unsafe partial struct ICredentialProviderEvents : ICredentialProviderEvents.Interface
     {
         public void** lpVtbl;
 
@@ -44,6 +44,27 @@ namespace TerraFX.Interop
         public HRESULT CredentialsChanged([NativeTypeName("UINT_PTR")] nuint upAdviseContext)
         {
             return ((delegate* unmanaged<ICredentialProviderEvents*, nuint, int>)(lpVtbl[3]))((ICredentialProviderEvents*)Unsafe.AsPointer(ref this), upAdviseContext);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT CredentialsChanged([NativeTypeName("UINT_PTR")] nuint upAdviseContext);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ICredentialProviderEvents*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ICredentialProviderEvents*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ICredentialProviderEvents*, uint> Release;
+
+            [NativeTypeName("HRESULT (UINT_PTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<ICredentialProviderEvents*, nuint, int> CredentialsChanged;
         }
     }
 }

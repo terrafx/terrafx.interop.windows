@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("D59BAB0A-68A2-455B-A5DC-9EB2854E2490")]
     [NativeTypeName("struct ID2D1SvgPaint : ID2D1SvgAttribute")]
     [NativeInheritance("ID2D1SvgAttribute")]
-    public unsafe partial struct ID2D1SvgPaint
+    public unsafe partial struct ID2D1SvgPaint : ID2D1SvgPaint.Interface
     {
         public void** lpVtbl;
 
@@ -108,6 +108,73 @@ namespace TerraFX.Interop
         public uint GetIdLength()
         {
             return ((delegate* unmanaged<ID2D1SvgPaint*, uint>)(lpVtbl[12]))((ID2D1SvgPaint*)Unsafe.AsPointer(ref this));
+        }
+
+        public interface Interface : ID2D1SvgAttribute.Interface
+        {
+            [VtblIndex(6)]
+            HRESULT SetPaintType(D2D1_SVG_PAINT_TYPE paintType);
+
+            [VtblIndex(7)]
+            D2D1_SVG_PAINT_TYPE GetPaintType();
+
+            [VtblIndex(8)]
+            HRESULT SetColor([NativeTypeName("const D2D1_COLOR_F *")] DXGI_RGBA* color);
+
+            [VtblIndex(9)]
+            void GetColor([NativeTypeName("D2D1_COLOR_F *")] DXGI_RGBA* color);
+
+            [VtblIndex(10)]
+            HRESULT SetId([NativeTypeName("PCWSTR")] ushort* id);
+
+            [VtblIndex(11)]
+            HRESULT GetId([NativeTypeName("PWSTR")] ushort* id, [NativeTypeName("UINT32")] uint idCount);
+
+            [VtblIndex(12)]
+            [return: NativeTypeName("UINT32")]
+            uint GetIdLength();
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID2D1SvgPaint*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ID2D1SvgPaint*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ID2D1SvgPaint*, uint> Release;
+
+            [NativeTypeName("void (ID2D1Factory **) const __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID2D1SvgPaint*, ID2D1Factory**, void> GetFactory;
+
+            [NativeTypeName("void (ID2D1SvgElement **) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID2D1SvgPaint*, ID2D1SvgElement**, void> GetElement;
+
+            [NativeTypeName("HRESULT (ID2D1SvgAttribute **) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID2D1SvgPaint*, ID2D1SvgAttribute**, int> Clone;
+
+            [NativeTypeName("HRESULT (D2D1_SVG_PAINT_TYPE) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID2D1SvgPaint*, D2D1_SVG_PAINT_TYPE, int> SetPaintType;
+
+            [NativeTypeName("D2D1_SVG_PAINT_TYPE () __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID2D1SvgPaint*, D2D1_SVG_PAINT_TYPE> GetPaintType;
+
+            [NativeTypeName("HRESULT (const D2D1_COLOR_F *) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID2D1SvgPaint*, DXGI_RGBA*, int> SetColor;
+
+            [NativeTypeName("void (D2D1_COLOR_F *) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID2D1SvgPaint*, DXGI_RGBA*, void> GetColor;
+
+            [NativeTypeName("HRESULT (PCWSTR) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID2D1SvgPaint*, ushort*, int> SetId;
+
+            [NativeTypeName("HRESULT (PWSTR, UINT32) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID2D1SvgPaint*, ushort*, uint, int> GetId;
+
+            [NativeTypeName("UINT32 () __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID2D1SvgPaint*, uint> GetIdLength;
         }
     }
 }

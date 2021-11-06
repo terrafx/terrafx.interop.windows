@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("55136804-B2DE-11D1-B9F2-00A0C98BC547")]
     [NativeTypeName("struct IShellFavoritesNameSpace : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct IShellFavoritesNameSpace
+    public unsafe partial struct IShellFavoritesNameSpace : IShellFavoritesNameSpace.Interface
     {
         public void** lpVtbl;
 
@@ -156,6 +156,111 @@ namespace TerraFX.Interop
         public HRESULT SetRoot([NativeTypeName("BSTR")] ushort* bstrFullPath)
         {
             return ((delegate* unmanaged<IShellFavoritesNameSpace*, ushort*, int>)(lpVtbl[19]))((IShellFavoritesNameSpace*)Unsafe.AsPointer(ref this), bstrFullPath);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT MoveSelectionUp();
+
+            [VtblIndex(8)]
+            HRESULT MoveSelectionDown();
+
+            [VtblIndex(9)]
+            HRESULT ResetSort();
+
+            [VtblIndex(10)]
+            HRESULT NewFolder();
+
+            [VtblIndex(11)]
+            HRESULT Synchronize();
+
+            [VtblIndex(12)]
+            HRESULT Import();
+
+            [VtblIndex(13)]
+            HRESULT Export();
+
+            [VtblIndex(14)]
+            HRESULT InvokeContextMenuCommand([NativeTypeName("BSTR")] ushort* strCommand);
+
+            [VtblIndex(15)]
+            HRESULT MoveSelectionTo();
+
+            [VtblIndex(16)]
+            HRESULT get_SubscriptionsEnabled([NativeTypeName("VARIANT_BOOL *")] short* pBool);
+
+            [VtblIndex(17)]
+            HRESULT CreateSubscriptionForSelection([NativeTypeName("VARIANT_BOOL *")] short* pBool);
+
+            [VtblIndex(18)]
+            HRESULT DeleteSubscriptionForSelection([NativeTypeName("VARIANT_BOOL *")] short* pBool);
+
+            [VtblIndex(19)]
+            HRESULT SetRoot([NativeTypeName("BSTR")] ushort* bstrFullPath);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellFavoritesNameSpace*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellFavoritesNameSpace*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellFavoritesNameSpace*, uint> Release;
+
+            [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellFavoritesNameSpace*, uint*, int> GetTypeInfoCount;
+
+            [NativeTypeName("HRESULT (UINT, LCID, ITypeInfo **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellFavoritesNameSpace*, uint, uint, ITypeInfo**, int> GetTypeInfo;
+
+            [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellFavoritesNameSpace*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+
+            [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellFavoritesNameSpace*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellFavoritesNameSpace*, int> MoveSelectionUp;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellFavoritesNameSpace*, int> MoveSelectionDown;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellFavoritesNameSpace*, int> ResetSort;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellFavoritesNameSpace*, int> NewFolder;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellFavoritesNameSpace*, int> Synchronize;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellFavoritesNameSpace*, int> Import;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellFavoritesNameSpace*, int> Export;
+
+            [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellFavoritesNameSpace*, ushort*, int> InvokeContextMenuCommand;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellFavoritesNameSpace*, int> MoveSelectionTo;
+
+            [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellFavoritesNameSpace*, short*, int> get_SubscriptionsEnabled;
+
+            [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellFavoritesNameSpace*, short*, int> CreateSubscriptionForSelection;
+
+            [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellFavoritesNameSpace*, short*, int> DeleteSubscriptionForSelection;
+
+            [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellFavoritesNameSpace*, ushort*, int> SetRoot;
         }
     }
 }

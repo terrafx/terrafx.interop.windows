@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("3BFE56B0-390C-4863-9430-1F3D083B7684")]
     [NativeTypeName("struct IDiaInputAssemblyFile : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IDiaInputAssemblyFile
+    public unsafe partial struct IDiaInputAssemblyFile : IDiaInputAssemblyFile.Interface
     {
         public void** lpVtbl;
 
@@ -79,6 +79,57 @@ namespace TerraFX.Interop
         public HRESULT get_version([NativeTypeName("DWORD")] uint cbData, [NativeTypeName("DWORD *")] uint* pcbData, byte* pbData)
         {
             return ((delegate* unmanaged<IDiaInputAssemblyFile*, uint, uint*, byte*, int>)(lpVtbl[8]))((IDiaInputAssemblyFile*)Unsafe.AsPointer(ref this), cbData, pcbData, pbData);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT get_uniqueId([NativeTypeName("DWORD *")] uint* pRetVal);
+
+            [VtblIndex(4)]
+            HRESULT get_index([NativeTypeName("DWORD *")] uint* pRetVal);
+
+            [VtblIndex(5)]
+            HRESULT get_timestamp([NativeTypeName("DWORD *")] uint* pRetVal);
+
+            [VtblIndex(6)]
+            HRESULT get_pdbAvailableAtILMerge(BOOL* pRetVal);
+
+            [VtblIndex(7)]
+            HRESULT get_fileName([NativeTypeName("BSTR *")] ushort** pRetVal);
+
+            [VtblIndex(8)]
+            HRESULT get_version([NativeTypeName("DWORD")] uint cbData, [NativeTypeName("DWORD *")] uint* pcbData, byte* pbData);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaInputAssemblyFile*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaInputAssemblyFile*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaInputAssemblyFile*, uint> Release;
+
+            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaInputAssemblyFile*, uint*, int> get_uniqueId;
+
+            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaInputAssemblyFile*, uint*, int> get_index;
+
+            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaInputAssemblyFile*, uint*, int> get_timestamp;
+
+            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaInputAssemblyFile*, BOOL*, int> get_pdbAvailableAtILMerge;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaInputAssemblyFile*, ushort**, int> get_fileName;
+
+            [NativeTypeName("HRESULT (DWORD, DWORD *, BYTE *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaInputAssemblyFile*, uint, uint*, byte*, int> get_version;
         }
     }
 }

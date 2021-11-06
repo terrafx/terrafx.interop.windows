@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("D1019A0E-6243-4329-8497-2E75894D7710")]
     [NativeTypeName("struct IUnbufferedFileHandleOplockCallback : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IUnbufferedFileHandleOplockCallback
+    public unsafe partial struct IUnbufferedFileHandleOplockCallback : IUnbufferedFileHandleOplockCallback.Interface
     {
         public void** lpVtbl;
 
@@ -44,6 +44,27 @@ namespace TerraFX.Interop
         public HRESULT OnBrokenCallback()
         {
             return ((delegate* unmanaged<IUnbufferedFileHandleOplockCallback*, int>)(lpVtbl[3]))((IUnbufferedFileHandleOplockCallback*)Unsafe.AsPointer(ref this));
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT OnBrokenCallback();
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IUnbufferedFileHandleOplockCallback*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IUnbufferedFileHandleOplockCallback*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IUnbufferedFileHandleOplockCallback*, uint> Release;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IUnbufferedFileHandleOplockCallback*, int> OnBrokenCallback;
         }
     }
 }

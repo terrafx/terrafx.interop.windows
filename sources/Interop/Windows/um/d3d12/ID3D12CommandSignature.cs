@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("C36A797C-EC80-4F0A-8985-A7B2475082D1")]
     [NativeTypeName("struct ID3D12CommandSignature : ID3D12Pageable")]
     [NativeInheritance("ID3D12Pageable")]
-    public unsafe partial struct ID3D12CommandSignature
+    public unsafe partial struct ID3D12CommandSignature : ID3D12CommandSignature.Interface
     {
         public void** lpVtbl;
 
@@ -72,6 +72,37 @@ namespace TerraFX.Interop
         public HRESULT GetDevice([NativeTypeName("const IID &")] Guid* riid, void** ppvDevice)
         {
             return ((delegate* unmanaged<ID3D12CommandSignature*, Guid*, void**, int>)(lpVtbl[7]))((ID3D12CommandSignature*)Unsafe.AsPointer(ref this), riid, ppvDevice);
+        }
+
+        public interface Interface : ID3D12Pageable.Interface
+        {
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D12CommandSignature*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D12CommandSignature*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D12CommandSignature*, uint> Release;
+
+            [NativeTypeName("HRESULT (const GUID &, UINT *, void *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D12CommandSignature*, Guid*, uint*, void*, int> GetPrivateData;
+
+            [NativeTypeName("HRESULT (const GUID &, UINT, const void *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D12CommandSignature*, Guid*, uint, void*, int> SetPrivateData;
+
+            [NativeTypeName("HRESULT (const GUID &, const IUnknown *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D12CommandSignature*, Guid*, IUnknown*, int> SetPrivateDataInterface;
+
+            [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D12CommandSignature*, ushort*, int> SetName;
+
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D12CommandSignature*, Guid*, void**, int> GetDevice;
         }
     }
 }

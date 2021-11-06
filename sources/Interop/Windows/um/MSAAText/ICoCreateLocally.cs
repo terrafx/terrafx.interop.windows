@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("03DE00AA-F272-41E3-99CB-03C5E8114EA0")]
     [NativeTypeName("struct ICoCreateLocally : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct ICoCreateLocally
+    public unsafe partial struct ICoCreateLocally : ICoCreateLocally.Interface
     {
         public void** lpVtbl;
 
@@ -44,6 +44,27 @@ namespace TerraFX.Interop
         public HRESULT CoCreateLocally([NativeTypeName("const IID &")] Guid* rclsid, [NativeTypeName("DWORD")] uint dwClsContext, [NativeTypeName("const IID &")] Guid* riid, IUnknown** punk, [NativeTypeName("const IID &")] Guid* riidParam, IUnknown* punkParam, VARIANT varParam)
         {
             return ((delegate* unmanaged<ICoCreateLocally*, Guid*, uint, Guid*, IUnknown**, Guid*, IUnknown*, VARIANT, int>)(lpVtbl[3]))((ICoCreateLocally*)Unsafe.AsPointer(ref this), rclsid, dwClsContext, riid, punk, riidParam, punkParam, varParam);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT CoCreateLocally([NativeTypeName("const IID &")] Guid* rclsid, [NativeTypeName("DWORD")] uint dwClsContext, [NativeTypeName("const IID &")] Guid* riid, IUnknown** punk, [NativeTypeName("const IID &")] Guid* riidParam, IUnknown* punkParam, VARIANT varParam);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ICoCreateLocally*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ICoCreateLocally*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ICoCreateLocally*, uint> Release;
+
+            [NativeTypeName("HRESULT (const IID &, DWORD, const IID &, IUnknown **, const IID &, IUnknown *, VARIANT) __attribute__((stdcall))")]
+            public delegate* unmanaged<ICoCreateLocally*, Guid*, uint, Guid*, IUnknown**, Guid*, IUnknown*, VARIANT, int> CoCreateLocally;
         }
     }
 }

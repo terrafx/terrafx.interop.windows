@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("AE2CD79F-CC22-453F-9B6B-B124E7A5204C")]
     [NativeTypeName("struct IDxcOptimizerPass : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IDxcOptimizerPass
+    public unsafe partial struct IDxcOptimizerPass : IDxcOptimizerPass.Interface
     {
         public void** lpVtbl;
 
@@ -72,6 +72,51 @@ namespace TerraFX.Interop
         public HRESULT GetOptionArgDescription([NativeTypeName("UINT32")] uint argIndex, [NativeTypeName("LPWSTR *")] ushort** ppResult)
         {
             return ((delegate* unmanaged<IDxcOptimizerPass*, uint, ushort**, int>)(lpVtbl[7]))((IDxcOptimizerPass*)Unsafe.AsPointer(ref this), argIndex, ppResult);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetOptionName([NativeTypeName("LPWSTR *")] ushort** ppResult);
+
+            [VtblIndex(4)]
+            HRESULT GetDescription([NativeTypeName("LPWSTR *")] ushort** ppResult);
+
+            [VtblIndex(5)]
+            HRESULT GetOptionArgCount([NativeTypeName("UINT32 *")] uint* pCount);
+
+            [VtblIndex(6)]
+            HRESULT GetOptionArgName([NativeTypeName("UINT32")] uint argIndex, [NativeTypeName("LPWSTR *")] ushort** ppResult);
+
+            [VtblIndex(7)]
+            HRESULT GetOptionArgDescription([NativeTypeName("UINT32")] uint argIndex, [NativeTypeName("LPWSTR *")] ushort** ppResult);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDxcOptimizerPass*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDxcOptimizerPass*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDxcOptimizerPass*, uint> Release;
+
+            [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDxcOptimizerPass*, ushort**, int> GetOptionName;
+
+            [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDxcOptimizerPass*, ushort**, int> GetDescription;
+
+            [NativeTypeName("HRESULT (UINT32 *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDxcOptimizerPass*, uint*, int> GetOptionArgCount;
+
+            [NativeTypeName("HRESULT (UINT32, LPWSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDxcOptimizerPass*, uint, ushort**, int> GetOptionArgName;
+
+            [NativeTypeName("HRESULT (UINT32, LPWSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDxcOptimizerPass*, uint, ushort**, int> GetOptionArgDescription;
         }
     }
 }

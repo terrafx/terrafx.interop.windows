@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("3050F205-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct IHTMLLinkElement : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct IHTMLLinkElement
+    public unsafe partial struct IHTMLLinkElement : IHTMLLinkElement.Interface
     {
         public void** lpVtbl;
 
@@ -205,6 +205,153 @@ namespace TerraFX.Interop
         public HRESULT get_media([NativeTypeName("BSTR *")] ushort** p)
         {
             return ((delegate* unmanaged<IHTMLLinkElement*, ushort**, int>)(lpVtbl[26]))((IHTMLLinkElement*)Unsafe.AsPointer(ref this), p);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT put_href([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(8)]
+            HRESULT get_href([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(9)]
+            HRESULT put_rel([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(10)]
+            HRESULT get_rel([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(11)]
+            HRESULT put_rev([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(12)]
+            HRESULT get_rev([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(13)]
+            HRESULT put_type([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(14)]
+            HRESULT get_type([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(15)]
+            HRESULT get_readyState([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(16)]
+            HRESULT put_onreadystatechange(VARIANT v);
+
+            [VtblIndex(17)]
+            HRESULT get_onreadystatechange(VARIANT* p);
+
+            [VtblIndex(18)]
+            HRESULT put_onload(VARIANT v);
+
+            [VtblIndex(19)]
+            HRESULT get_onload(VARIANT* p);
+
+            [VtblIndex(20)]
+            HRESULT put_onerror(VARIANT v);
+
+            [VtblIndex(21)]
+            HRESULT get_onerror(VARIANT* p);
+
+            [VtblIndex(22)]
+            HRESULT get_styleSheet(IHTMLStyleSheet** p);
+
+            [VtblIndex(23)]
+            HRESULT put_disabled([NativeTypeName("VARIANT_BOOL")] short v);
+
+            [VtblIndex(24)]
+            HRESULT get_disabled([NativeTypeName("VARIANT_BOOL *")] short* p);
+
+            [VtblIndex(25)]
+            HRESULT put_media([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(26)]
+            HRESULT get_media([NativeTypeName("BSTR *")] ushort** p);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLLinkElement*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLLinkElement*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLLinkElement*, uint> Release;
+
+            [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLLinkElement*, uint*, int> GetTypeInfoCount;
+
+            [NativeTypeName("HRESULT (UINT, LCID, ITypeInfo **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLLinkElement*, uint, uint, ITypeInfo**, int> GetTypeInfo;
+
+            [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLLinkElement*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+
+            [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLLinkElement*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
+
+            [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLLinkElement*, ushort*, int> put_href;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLLinkElement*, ushort**, int> get_href;
+
+            [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLLinkElement*, ushort*, int> put_rel;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLLinkElement*, ushort**, int> get_rel;
+
+            [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLLinkElement*, ushort*, int> put_rev;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLLinkElement*, ushort**, int> get_rev;
+
+            [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLLinkElement*, ushort*, int> put_type;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLLinkElement*, ushort**, int> get_type;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLLinkElement*, ushort**, int> get_readyState;
+
+            [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLLinkElement*, VARIANT, int> put_onreadystatechange;
+
+            [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLLinkElement*, VARIANT*, int> get_onreadystatechange;
+
+            [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLLinkElement*, VARIANT, int> put_onload;
+
+            [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLLinkElement*, VARIANT*, int> get_onload;
+
+            [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLLinkElement*, VARIANT, int> put_onerror;
+
+            [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLLinkElement*, VARIANT*, int> get_onerror;
+
+            [NativeTypeName("HRESULT (IHTMLStyleSheet **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLLinkElement*, IHTMLStyleSheet**, int> get_styleSheet;
+
+            [NativeTypeName("HRESULT (VARIANT_BOOL) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLLinkElement*, short, int> put_disabled;
+
+            [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLLinkElement*, short*, int> get_disabled;
+
+            [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLLinkElement*, ushort*, int> put_media;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLLinkElement*, ushort**, int> get_media;
         }
     }
 }

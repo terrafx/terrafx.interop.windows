@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("C6E13340-30AC-11D0-A18C-00A0C9118956")]
     [NativeTypeName("struct IAMStreamConfig : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IAMStreamConfig
+    public unsafe partial struct IAMStreamConfig : IAMStreamConfig.Interface
     {
         public void** lpVtbl;
 
@@ -65,6 +65,45 @@ namespace TerraFX.Interop
         public HRESULT GetStreamCaps(int iIndex, AM_MEDIA_TYPE** ppmt, byte* pSCC)
         {
             return ((delegate* unmanaged<IAMStreamConfig*, int, AM_MEDIA_TYPE**, byte*, int>)(lpVtbl[6]))((IAMStreamConfig*)Unsafe.AsPointer(ref this), iIndex, ppmt, pSCC);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT SetFormat(AM_MEDIA_TYPE* pmt);
+
+            [VtblIndex(4)]
+            HRESULT GetFormat(AM_MEDIA_TYPE** ppmt);
+
+            [VtblIndex(5)]
+            HRESULT GetNumberOfCapabilities(int* piCount, int* piSize);
+
+            [VtblIndex(6)]
+            HRESULT GetStreamCaps(int iIndex, AM_MEDIA_TYPE** ppmt, byte* pSCC);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAMStreamConfig*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IAMStreamConfig*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IAMStreamConfig*, uint> Release;
+
+            [NativeTypeName("HRESULT (AM_MEDIA_TYPE *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAMStreamConfig*, AM_MEDIA_TYPE*, int> SetFormat;
+
+            [NativeTypeName("HRESULT (AM_MEDIA_TYPE **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAMStreamConfig*, AM_MEDIA_TYPE**, int> GetFormat;
+
+            [NativeTypeName("HRESULT (int *, int *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAMStreamConfig*, int*, int*, int> GetNumberOfCapabilities;
+
+            [NativeTypeName("HRESULT (int, AM_MEDIA_TYPE **, BYTE *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAMStreamConfig*, int, AM_MEDIA_TYPE**, byte*, int> GetStreamCaps;
         }
     }
 }

@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("29E691FA-4567-4DCA-B319-D0F207EB6807")]
     [NativeTypeName("struct ICompositorDesktopInterop : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct ICompositorDesktopInterop
+    public unsafe partial struct ICompositorDesktopInterop : ICompositorDesktopInterop.Interface
     {
         public void** lpVtbl;
 
@@ -51,6 +51,33 @@ namespace TerraFX.Interop
         public HRESULT EnsureOnThread([NativeTypeName("DWORD")] uint threadId)
         {
             return ((delegate* unmanaged<ICompositorDesktopInterop*, uint, int>)(lpVtbl[4]))((ICompositorDesktopInterop*)Unsafe.AsPointer(ref this), threadId);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT CreateDesktopWindowTarget(HWND hwndTarget, BOOL isTopmost, [NativeTypeName("ABI::Windows::UI::Composition::Desktop::IDesktopWindowTarget **")] void** result);
+
+            [VtblIndex(4)]
+            HRESULT EnsureOnThread([NativeTypeName("DWORD")] uint threadId);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ICompositorDesktopInterop*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ICompositorDesktopInterop*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ICompositorDesktopInterop*, uint> Release;
+
+            [NativeTypeName("HRESULT (HWND, BOOL, ABI::Windows::UI::Composition::Desktop::IDesktopWindowTarget **) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<ICompositorDesktopInterop*, HWND, BOOL, void**, int> CreateDesktopWindowTarget;
+
+            [NativeTypeName("HRESULT (DWORD) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<ICompositorDesktopInterop*, uint, int> EnsureOnThread;
         }
     }
 }

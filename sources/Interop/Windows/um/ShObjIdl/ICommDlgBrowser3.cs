@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("C8AD25A1-3294-41EE-8165-71174BD01C57")]
     [NativeTypeName("struct ICommDlgBrowser3 : ICommDlgBrowser2")]
     [NativeInheritance("ICommDlgBrowser2")]
-    public unsafe partial struct ICommDlgBrowser3
+    public unsafe partial struct ICommDlgBrowser3 : ICommDlgBrowser3.Interface
     {
         public void** lpVtbl;
 
@@ -100,6 +100,57 @@ namespace TerraFX.Interop
         public HRESULT OnPreViewCreated(IShellView* ppshv)
         {
             return ((delegate* unmanaged<ICommDlgBrowser3*, IShellView*, int>)(lpVtbl[11]))((ICommDlgBrowser3*)Unsafe.AsPointer(ref this), ppshv);
+        }
+
+        public interface Interface : ICommDlgBrowser2.Interface
+        {
+            [VtblIndex(9)]
+            HRESULT OnColumnClicked(IShellView* ppshv, int iColumn);
+
+            [VtblIndex(10)]
+            HRESULT GetCurrentFilter([NativeTypeName("LPWSTR")] ushort* pszFileSpec, int cchFileSpec);
+
+            [VtblIndex(11)]
+            HRESULT OnPreViewCreated(IShellView* ppshv);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ICommDlgBrowser3*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ICommDlgBrowser3*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ICommDlgBrowser3*, uint> Release;
+
+            [NativeTypeName("HRESULT (IShellView *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ICommDlgBrowser3*, IShellView*, int> OnDefaultCommand;
+
+            [NativeTypeName("HRESULT (IShellView *, ULONG) __attribute__((stdcall))")]
+            public delegate* unmanaged<ICommDlgBrowser3*, IShellView*, uint, int> OnStateChange;
+
+            [NativeTypeName("HRESULT (IShellView *, LPCITEMIDLIST) __attribute__((stdcall))")]
+            public delegate* unmanaged<ICommDlgBrowser3*, IShellView*, ITEMIDLIST*, int> IncludeObject;
+
+            [NativeTypeName("HRESULT (IShellView *, DWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<ICommDlgBrowser3*, IShellView*, uint, int> Notify;
+
+            [NativeTypeName("HRESULT (IShellView *, LPWSTR, int) __attribute__((stdcall))")]
+            public delegate* unmanaged<ICommDlgBrowser3*, IShellView*, ushort*, int, int> GetDefaultMenuText;
+
+            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ICommDlgBrowser3*, uint*, int> GetViewFlags;
+
+            [NativeTypeName("HRESULT (IShellView *, int) __attribute__((stdcall))")]
+            public delegate* unmanaged<ICommDlgBrowser3*, IShellView*, int, int> OnColumnClicked;
+
+            [NativeTypeName("HRESULT (LPWSTR, int) __attribute__((stdcall))")]
+            public delegate* unmanaged<ICommDlgBrowser3*, ushort*, int, int> GetCurrentFilter;
+
+            [NativeTypeName("HRESULT (IShellView *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ICommDlgBrowser3*, IShellView*, int> OnPreViewCreated;
         }
     }
 }

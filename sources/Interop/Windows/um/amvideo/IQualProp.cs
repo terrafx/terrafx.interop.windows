@@ -10,7 +10,7 @@ namespace TerraFX.Interop
 {
     [NativeTypeName("struct IQualProp : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IQualProp
+    public unsafe partial struct IQualProp : IQualProp.Interface
     {
         public void** lpVtbl;
 
@@ -77,6 +77,57 @@ namespace TerraFX.Interop
         public HRESULT get_DevSyncOffset(int* piDev)
         {
             return ((delegate* unmanaged<IQualProp*, int*, int>)(lpVtbl[8]))((IQualProp*)Unsafe.AsPointer(ref this), piDev);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT get_FramesDroppedInRenderer(int* pcFrames);
+
+            [VtblIndex(4)]
+            HRESULT get_FramesDrawn(int* pcFramesDrawn);
+
+            [VtblIndex(5)]
+            HRESULT get_AvgFrameRate(int* piAvgFrameRate);
+
+            [VtblIndex(6)]
+            HRESULT get_Jitter(int* iJitter);
+
+            [VtblIndex(7)]
+            HRESULT get_AvgSyncOffset(int* piAvg);
+
+            [VtblIndex(8)]
+            HRESULT get_DevSyncOffset(int* piDev);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IQualProp*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IQualProp*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IQualProp*, uint> Release;
+
+            [NativeTypeName("HRESULT (int *) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IQualProp*, int*, int> get_FramesDroppedInRenderer;
+
+            [NativeTypeName("HRESULT (int *) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IQualProp*, int*, int> get_FramesDrawn;
+
+            [NativeTypeName("HRESULT (int *) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IQualProp*, int*, int> get_AvgFrameRate;
+
+            [NativeTypeName("HRESULT (int *) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IQualProp*, int*, int> get_Jitter;
+
+            [NativeTypeName("HRESULT (int *) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IQualProp*, int*, int> get_AvgSyncOffset;
+
+            [NativeTypeName("HRESULT (int *) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IQualProp*, int*, int> get_DevSyncOffset;
         }
     }
 }

@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("E6E9C590-3E18-40E3-8299-061F98BDE7C7")]
     [NativeTypeName("struct ISpeechAudioFormat : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct ISpeechAudioFormat
+    public unsafe partial struct ISpeechAudioFormat : ISpeechAudioFormat.Interface
     {
         public void** lpVtbl;
 
@@ -107,6 +107,69 @@ namespace TerraFX.Interop
         public HRESULT SetWaveFormatEx(ISpeechWaveFormatEx* SpeechWaveFormatEx)
         {
             return ((delegate* unmanaged<ISpeechAudioFormat*, ISpeechWaveFormatEx*, int>)(lpVtbl[12]))((ISpeechAudioFormat*)Unsafe.AsPointer(ref this), SpeechWaveFormatEx);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT get_Type(SpeechAudioFormatType* AudioFormat);
+
+            [VtblIndex(8)]
+            HRESULT put_Type(SpeechAudioFormatType AudioFormat);
+
+            [VtblIndex(9)]
+            HRESULT get_Guid([NativeTypeName("BSTR *")] ushort** Guid);
+
+            [VtblIndex(10)]
+            HRESULT put_Guid([NativeTypeName("BSTR")] ushort* Guid);
+
+            [VtblIndex(11)]
+            HRESULT GetWaveFormatEx(ISpeechWaveFormatEx** SpeechWaveFormatEx);
+
+            [VtblIndex(12)]
+            HRESULT SetWaveFormatEx(ISpeechWaveFormatEx* SpeechWaveFormatEx);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpeechAudioFormat*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpeechAudioFormat*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpeechAudioFormat*, uint> Release;
+
+            [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpeechAudioFormat*, uint*, int> GetTypeInfoCount;
+
+            [NativeTypeName("HRESULT (UINT, LCID, ITypeInfo **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpeechAudioFormat*, uint, uint, ITypeInfo**, int> GetTypeInfo;
+
+            [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpeechAudioFormat*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+
+            [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpeechAudioFormat*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
+
+            [NativeTypeName("HRESULT (SpeechAudioFormatType *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpeechAudioFormat*, SpeechAudioFormatType*, int> get_Type;
+
+            [NativeTypeName("HRESULT (SpeechAudioFormatType) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpeechAudioFormat*, SpeechAudioFormatType, int> put_Type;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpeechAudioFormat*, ushort**, int> get_Guid;
+
+            [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpeechAudioFormat*, ushort*, int> put_Guid;
+
+            [NativeTypeName("HRESULT (ISpeechWaveFormatEx **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpeechAudioFormat*, ISpeechWaveFormatEx**, int> GetWaveFormatEx;
+
+            [NativeTypeName("HRESULT (ISpeechWaveFormatEx *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpeechAudioFormat*, ISpeechWaveFormatEx*, int> SetWaveFormatEx;
         }
     }
 }

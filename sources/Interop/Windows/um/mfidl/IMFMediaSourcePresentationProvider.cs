@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("0E1D600A-C9F3-442D-8C51-A42D2D49452F")]
     [NativeTypeName("struct IMFMediaSourcePresentationProvider : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IMFMediaSourcePresentationProvider
+    public unsafe partial struct IMFMediaSourcePresentationProvider : IMFMediaSourcePresentationProvider.Interface
     {
         public void** lpVtbl;
 
@@ -44,6 +44,27 @@ namespace TerraFX.Interop
         public HRESULT ForceEndOfPresentation(IMFPresentationDescriptor* pPresentationDescriptor)
         {
             return ((delegate* unmanaged<IMFMediaSourcePresentationProvider*, IMFPresentationDescriptor*, int>)(lpVtbl[3]))((IMFMediaSourcePresentationProvider*)Unsafe.AsPointer(ref this), pPresentationDescriptor);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT ForceEndOfPresentation(IMFPresentationDescriptor* pPresentationDescriptor);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFMediaSourcePresentationProvider*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFMediaSourcePresentationProvider*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFMediaSourcePresentationProvider*, uint> Release;
+
+            [NativeTypeName("HRESULT (IMFPresentationDescriptor *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFMediaSourcePresentationProvider*, IMFPresentationDescriptor*, int> ForceEndOfPresentation;
         }
     }
 }

@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("E7174CFA-1C9E-48B1-8866-626226BFC258")]
     [NativeTypeName("struct IMFDXGIBuffer : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IMFDXGIBuffer
+    public unsafe partial struct IMFDXGIBuffer : IMFDXGIBuffer.Interface
     {
         public void** lpVtbl;
 
@@ -65,6 +65,45 @@ namespace TerraFX.Interop
         public HRESULT SetUnknown([NativeTypeName("const IID &")] Guid* guid, IUnknown* pUnkData)
         {
             return ((delegate* unmanaged<IMFDXGIBuffer*, Guid*, IUnknown*, int>)(lpVtbl[6]))((IMFDXGIBuffer*)Unsafe.AsPointer(ref this), guid, pUnkData);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetResource([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPVOID *")] void** ppvObject);
+
+            [VtblIndex(4)]
+            HRESULT GetSubresourceIndex(uint* puSubresource);
+
+            [VtblIndex(5)]
+            HRESULT GetUnknown([NativeTypeName("const IID &")] Guid* guid, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPVOID *")] void** ppvObject);
+
+            [VtblIndex(6)]
+            HRESULT SetUnknown([NativeTypeName("const IID &")] Guid* guid, IUnknown* pUnkData);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFDXGIBuffer*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFDXGIBuffer*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFDXGIBuffer*, uint> Release;
+
+            [NativeTypeName("HRESULT (const IID &, LPVOID *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFDXGIBuffer*, Guid*, void**, int> GetResource;
+
+            [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFDXGIBuffer*, uint*, int> GetSubresourceIndex;
+
+            [NativeTypeName("HRESULT (const IID &, const IID &, LPVOID *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFDXGIBuffer*, Guid*, Guid*, void**, int> GetUnknown;
+
+            [NativeTypeName("HRESULT (const IID &, IUnknown *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFDXGIBuffer*, Guid*, IUnknown*, int> SetUnknown;
         }
     }
 }

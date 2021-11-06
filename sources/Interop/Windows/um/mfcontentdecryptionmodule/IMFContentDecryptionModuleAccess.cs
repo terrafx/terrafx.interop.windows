@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("A853D1F4-E2A0-4303-9EDC-F1A68EE43136")]
     [NativeTypeName("struct IMFContentDecryptionModuleAccess : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IMFContentDecryptionModuleAccess
+    public unsafe partial struct IMFContentDecryptionModuleAccess : IMFContentDecryptionModuleAccess.Interface
     {
         public void** lpVtbl;
 
@@ -58,6 +58,39 @@ namespace TerraFX.Interop
         public HRESULT GetKeySystem([NativeTypeName("LPWSTR *")] ushort** keySystem)
         {
             return ((delegate* unmanaged<IMFContentDecryptionModuleAccess*, ushort**, int>)(lpVtbl[5]))((IMFContentDecryptionModuleAccess*)Unsafe.AsPointer(ref this), keySystem);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT CreateContentDecryptionModule(IPropertyStore* contentDecryptionModuleProperties, IMFContentDecryptionModule** contentDecryptionModule);
+
+            [VtblIndex(4)]
+            HRESULT GetConfiguration(IPropertyStore** configuration);
+
+            [VtblIndex(5)]
+            HRESULT GetKeySystem([NativeTypeName("LPWSTR *")] ushort** keySystem);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFContentDecryptionModuleAccess*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFContentDecryptionModuleAccess*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFContentDecryptionModuleAccess*, uint> Release;
+
+            [NativeTypeName("HRESULT (IPropertyStore *, IMFContentDecryptionModule **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFContentDecryptionModuleAccess*, IPropertyStore*, IMFContentDecryptionModule**, int> CreateContentDecryptionModule;
+
+            [NativeTypeName("HRESULT (IPropertyStore **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFContentDecryptionModuleAccess*, IPropertyStore**, int> GetConfiguration;
+
+            [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFContentDecryptionModuleAccess*, ushort**, int> GetKeySystem;
         }
     }
 }

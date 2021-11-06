@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("11B103D8-1142-4EDF-A093-82FB3915F8CC")]
     [NativeTypeName("struct ISpeechAudioBufferInfo : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct ISpeechAudioBufferInfo
+    public unsafe partial struct ISpeechAudioBufferInfo : ISpeechAudioBufferInfo.Interface
     {
         public void** lpVtbl;
 
@@ -107,6 +107,69 @@ namespace TerraFX.Interop
         public HRESULT put_EventBias([NativeTypeName("long")] int EventBias)
         {
             return ((delegate* unmanaged<ISpeechAudioBufferInfo*, int, int>)(lpVtbl[12]))((ISpeechAudioBufferInfo*)Unsafe.AsPointer(ref this), EventBias);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT get_MinNotification([NativeTypeName("long *")] int* MinNotification);
+
+            [VtblIndex(8)]
+            HRESULT put_MinNotification([NativeTypeName("long")] int MinNotification);
+
+            [VtblIndex(9)]
+            HRESULT get_BufferSize([NativeTypeName("long *")] int* BufferSize);
+
+            [VtblIndex(10)]
+            HRESULT put_BufferSize([NativeTypeName("long")] int BufferSize);
+
+            [VtblIndex(11)]
+            HRESULT get_EventBias([NativeTypeName("long *")] int* EventBias);
+
+            [VtblIndex(12)]
+            HRESULT put_EventBias([NativeTypeName("long")] int EventBias);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpeechAudioBufferInfo*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpeechAudioBufferInfo*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpeechAudioBufferInfo*, uint> Release;
+
+            [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpeechAudioBufferInfo*, uint*, int> GetTypeInfoCount;
+
+            [NativeTypeName("HRESULT (UINT, LCID, ITypeInfo **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpeechAudioBufferInfo*, uint, uint, ITypeInfo**, int> GetTypeInfo;
+
+            [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpeechAudioBufferInfo*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+
+            [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpeechAudioBufferInfo*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
+
+            [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpeechAudioBufferInfo*, int*, int> get_MinNotification;
+
+            [NativeTypeName("HRESULT (long) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpeechAudioBufferInfo*, int, int> put_MinNotification;
+
+            [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpeechAudioBufferInfo*, int*, int> get_BufferSize;
+
+            [NativeTypeName("HRESULT (long) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpeechAudioBufferInfo*, int, int> put_BufferSize;
+
+            [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpeechAudioBufferInfo*, int*, int> get_EventBias;
+
+            [NativeTypeName("HRESULT (long) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpeechAudioBufferInfo*, int, int> put_EventBias;
         }
     }
 }

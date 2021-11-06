@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("56A868AD-0AD4-11CE-B03A-0020AF0BA770")]
     [NativeTypeName("struct IResourceConsumer : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IResourceConsumer
+    public unsafe partial struct IResourceConsumer : IResourceConsumer.Interface
     {
         public void** lpVtbl;
 
@@ -51,6 +51,33 @@ namespace TerraFX.Interop
         public HRESULT ReleaseResource([NativeTypeName("LONG")] int idResource)
         {
             return ((delegate* unmanaged<IResourceConsumer*, int, int>)(lpVtbl[4]))((IResourceConsumer*)Unsafe.AsPointer(ref this), idResource);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT AcquireResource([NativeTypeName("LONG")] int idResource);
+
+            [VtblIndex(4)]
+            HRESULT ReleaseResource([NativeTypeName("LONG")] int idResource);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IResourceConsumer*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IResourceConsumer*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IResourceConsumer*, uint> Release;
+
+            [NativeTypeName("HRESULT (LONG) __attribute__((stdcall))")]
+            public delegate* unmanaged<IResourceConsumer*, int, int> AcquireResource;
+
+            [NativeTypeName("HRESULT (LONG) __attribute__((stdcall))")]
+            public delegate* unmanaged<IResourceConsumer*, int, int> ReleaseResource;
         }
     }
 }

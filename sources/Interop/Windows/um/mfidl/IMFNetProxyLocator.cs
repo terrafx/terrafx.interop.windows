@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("E9CD0383-A268-4BB4-82DE-658D53574D41")]
     [NativeTypeName("struct IMFNetProxyLocator : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IMFNetProxyLocator
+    public unsafe partial struct IMFNetProxyLocator : IMFNetProxyLocator.Interface
     {
         public void** lpVtbl;
 
@@ -72,6 +72,51 @@ namespace TerraFX.Interop
         public HRESULT Clone(IMFNetProxyLocator** ppProxyLocator)
         {
             return ((delegate* unmanaged<IMFNetProxyLocator*, IMFNetProxyLocator**, int>)(lpVtbl[7]))((IMFNetProxyLocator*)Unsafe.AsPointer(ref this), ppProxyLocator);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT FindFirstProxy([NativeTypeName("LPCWSTR")] ushort* pszHost, [NativeTypeName("LPCWSTR")] ushort* pszUrl, BOOL fReserved);
+
+            [VtblIndex(4)]
+            HRESULT FindNextProxy();
+
+            [VtblIndex(5)]
+            HRESULT RegisterProxyResult(HRESULT hrOp);
+
+            [VtblIndex(6)]
+            HRESULT GetCurrentProxy([NativeTypeName("LPWSTR")] ushort* pszStr, [NativeTypeName("DWORD *")] uint* pcchStr);
+
+            [VtblIndex(7)]
+            HRESULT Clone(IMFNetProxyLocator** ppProxyLocator);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFNetProxyLocator*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFNetProxyLocator*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFNetProxyLocator*, uint> Release;
+
+            [NativeTypeName("HRESULT (LPCWSTR, LPCWSTR, BOOL) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFNetProxyLocator*, ushort*, ushort*, BOOL, int> FindFirstProxy;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFNetProxyLocator*, int> FindNextProxy;
+
+            [NativeTypeName("HRESULT (HRESULT) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFNetProxyLocator*, HRESULT, int> RegisterProxyResult;
+
+            [NativeTypeName("HRESULT (LPWSTR, DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFNetProxyLocator*, ushort*, uint*, int> GetCurrentProxy;
+
+            [NativeTypeName("HRESULT (IMFNetProxyLocator **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFNetProxyLocator*, IMFNetProxyLocator**, int> Clone;
         }
     }
 }

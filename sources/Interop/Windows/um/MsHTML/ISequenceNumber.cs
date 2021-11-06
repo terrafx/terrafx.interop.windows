@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("3050F6C1-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct ISequenceNumber : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct ISequenceNumber
+    public unsafe partial struct ISequenceNumber : ISequenceNumber.Interface
     {
         public void** lpVtbl;
 
@@ -44,6 +44,27 @@ namespace TerraFX.Interop
         public HRESULT GetSequenceNumber([NativeTypeName("long")] int nCurrent, [NativeTypeName("long *")] int* pnNew)
         {
             return ((delegate* unmanaged<ISequenceNumber*, int, int*, int>)(lpVtbl[3]))((ISequenceNumber*)Unsafe.AsPointer(ref this), nCurrent, pnNew);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetSequenceNumber([NativeTypeName("long")] int nCurrent, [NativeTypeName("long *")] int* pnNew);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISequenceNumber*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ISequenceNumber*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ISequenceNumber*, uint> Release;
+
+            [NativeTypeName("HRESULT (long, long *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISequenceNumber*, int, int*, int> GetSequenceNumber;
         }
     }
 }

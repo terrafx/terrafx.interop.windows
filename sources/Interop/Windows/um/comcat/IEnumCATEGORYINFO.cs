@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("0002E011-0000-0000-C000-000000000046")]
     [NativeTypeName("struct IEnumCATEGORYINFO : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IEnumCATEGORYINFO
+    public unsafe partial struct IEnumCATEGORYINFO : IEnumCATEGORYINFO.Interface
     {
         public void** lpVtbl;
 
@@ -65,6 +65,45 @@ namespace TerraFX.Interop
         public HRESULT Clone(IEnumCATEGORYINFO** ppenum)
         {
             return ((delegate* unmanaged<IEnumCATEGORYINFO*, IEnumCATEGORYINFO**, int>)(lpVtbl[6]))((IEnumCATEGORYINFO*)Unsafe.AsPointer(ref this), ppenum);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT Next([NativeTypeName("ULONG")] uint celt, CATEGORYINFO* rgelt, [NativeTypeName("ULONG *")] uint* pceltFetched);
+
+            [VtblIndex(4)]
+            HRESULT Skip([NativeTypeName("ULONG")] uint celt);
+
+            [VtblIndex(5)]
+            HRESULT Reset();
+
+            [VtblIndex(6)]
+            HRESULT Clone(IEnumCATEGORYINFO** ppenum);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IEnumCATEGORYINFO*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IEnumCATEGORYINFO*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IEnumCATEGORYINFO*, uint> Release;
+
+            [NativeTypeName("HRESULT (ULONG, CATEGORYINFO *, ULONG *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IEnumCATEGORYINFO*, uint, CATEGORYINFO*, uint*, int> Next;
+
+            [NativeTypeName("HRESULT (ULONG) __attribute__((stdcall))")]
+            public delegate* unmanaged<IEnumCATEGORYINFO*, uint, int> Skip;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IEnumCATEGORYINFO*, int> Reset;
+
+            [NativeTypeName("HRESULT (IEnumCATEGORYINFO **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IEnumCATEGORYINFO*, IEnumCATEGORYINFO**, int> Clone;
         }
     }
 }

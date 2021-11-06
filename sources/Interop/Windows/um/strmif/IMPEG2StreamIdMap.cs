@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("D0E04C47-25B8-4369-925A-362A01D95444")]
     [NativeTypeName("struct IMPEG2StreamIdMap : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IMPEG2StreamIdMap
+    public unsafe partial struct IMPEG2StreamIdMap : IMPEG2StreamIdMap.Interface
     {
         public void** lpVtbl;
 
@@ -58,6 +58,39 @@ namespace TerraFX.Interop
         public HRESULT EnumStreamIdMap(IEnumStreamIdMap** ppIEnumStreamIdMap)
         {
             return ((delegate* unmanaged<IMPEG2StreamIdMap*, IEnumStreamIdMap**, int>)(lpVtbl[5]))((IMPEG2StreamIdMap*)Unsafe.AsPointer(ref this), ppIEnumStreamIdMap);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT MapStreamId([NativeTypeName("ULONG")] uint ulStreamId, [NativeTypeName("DWORD")] uint MediaSampleContent, [NativeTypeName("ULONG")] uint ulSubstreamFilterValue, int iDataOffset);
+
+            [VtblIndex(4)]
+            HRESULT UnmapStreamId([NativeTypeName("ULONG")] uint culStreamId, [NativeTypeName("ULONG *")] uint* pulStreamId);
+
+            [VtblIndex(5)]
+            HRESULT EnumStreamIdMap(IEnumStreamIdMap** ppIEnumStreamIdMap);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMPEG2StreamIdMap*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMPEG2StreamIdMap*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMPEG2StreamIdMap*, uint> Release;
+
+            [NativeTypeName("HRESULT (ULONG, DWORD, ULONG, int) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMPEG2StreamIdMap*, uint, uint, uint, int, int> MapStreamId;
+
+            [NativeTypeName("HRESULT (ULONG, ULONG *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMPEG2StreamIdMap*, uint, uint*, int> UnmapStreamId;
+
+            [NativeTypeName("HRESULT (IEnumStreamIdMap **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMPEG2StreamIdMap*, IEnumStreamIdMap**, int> EnumStreamIdMap;
         }
     }
 }

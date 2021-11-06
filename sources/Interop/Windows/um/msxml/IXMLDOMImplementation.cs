@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("2933BF8F-7B36-11D2-B20E-00C04F983E60")]
     [NativeTypeName("struct IXMLDOMImplementation : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct IXMLDOMImplementation
+    public unsafe partial struct IXMLDOMImplementation : IXMLDOMImplementation.Interface
     {
         public void** lpVtbl;
 
@@ -72,6 +72,39 @@ namespace TerraFX.Interop
         public HRESULT hasFeature([NativeTypeName("BSTR")] ushort* feature, [NativeTypeName("BSTR")] ushort* version, [NativeTypeName("VARIANT_BOOL *")] short* hasFeature)
         {
             return ((delegate* unmanaged<IXMLDOMImplementation*, ushort*, ushort*, short*, int>)(lpVtbl[7]))((IXMLDOMImplementation*)Unsafe.AsPointer(ref this), feature, version, hasFeature);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT hasFeature([NativeTypeName("BSTR")] ushort* feature, [NativeTypeName("BSTR")] ushort* version, [NativeTypeName("VARIANT_BOOL *")] short* hasFeature);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IXMLDOMImplementation*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IXMLDOMImplementation*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IXMLDOMImplementation*, uint> Release;
+
+            [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IXMLDOMImplementation*, uint*, int> GetTypeInfoCount;
+
+            [NativeTypeName("HRESULT (UINT, LCID, ITypeInfo **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IXMLDOMImplementation*, uint, uint, ITypeInfo**, int> GetTypeInfo;
+
+            [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IXMLDOMImplementation*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+
+            [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IXMLDOMImplementation*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
+
+            [NativeTypeName("HRESULT (BSTR, BSTR, VARIANT_BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IXMLDOMImplementation*, ushort*, ushort*, short*, int> hasFeature;
         }
     }
 }

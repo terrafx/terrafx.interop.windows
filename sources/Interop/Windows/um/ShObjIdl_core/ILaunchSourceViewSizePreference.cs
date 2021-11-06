@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("E5AA01F7-1FB8-4830-8720-4E6734CBD5F3")]
     [NativeTypeName("struct ILaunchSourceViewSizePreference : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct ILaunchSourceViewSizePreference
+    public unsafe partial struct ILaunchSourceViewSizePreference : ILaunchSourceViewSizePreference.Interface
     {
         public void** lpVtbl;
 
@@ -51,6 +51,33 @@ namespace TerraFX.Interop
         public HRESULT GetSourceViewSizePreference(APPLICATION_VIEW_SIZE_PREFERENCE* sourceSizeAfterLaunch)
         {
             return ((delegate* unmanaged<ILaunchSourceViewSizePreference*, APPLICATION_VIEW_SIZE_PREFERENCE*, int>)(lpVtbl[4]))((ILaunchSourceViewSizePreference*)Unsafe.AsPointer(ref this), sourceSizeAfterLaunch);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetSourceViewToPosition(HWND* hwnd);
+
+            [VtblIndex(4)]
+            HRESULT GetSourceViewSizePreference(APPLICATION_VIEW_SIZE_PREFERENCE* sourceSizeAfterLaunch);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ILaunchSourceViewSizePreference*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ILaunchSourceViewSizePreference*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ILaunchSourceViewSizePreference*, uint> Release;
+
+            [NativeTypeName("HRESULT (HWND *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ILaunchSourceViewSizePreference*, HWND*, int> GetSourceViewToPosition;
+
+            [NativeTypeName("HRESULT (APPLICATION_VIEW_SIZE_PREFERENCE *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ILaunchSourceViewSizePreference*, APPLICATION_VIEW_SIZE_PREFERENCE*, int> GetSourceViewSizePreference;
         }
     }
 }

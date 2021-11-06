@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("79EAC9F0-BAF9-11CE-8C82-00AA004BA90B")]
     [NativeTypeName("struct IInternetProtocolSinkStackable : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IInternetProtocolSinkStackable
+    public unsafe partial struct IInternetProtocolSinkStackable : IInternetProtocolSinkStackable.Interface
     {
         public void** lpVtbl;
 
@@ -58,6 +58,39 @@ namespace TerraFX.Interop
         public HRESULT RollbackSwitch()
         {
             return ((delegate* unmanaged<IInternetProtocolSinkStackable*, int>)(lpVtbl[5]))((IInternetProtocolSinkStackable*)Unsafe.AsPointer(ref this));
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT SwitchSink(IInternetProtocolSink* pOIProtSink);
+
+            [VtblIndex(4)]
+            HRESULT CommitSwitch();
+
+            [VtblIndex(5)]
+            HRESULT RollbackSwitch();
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IInternetProtocolSinkStackable*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IInternetProtocolSinkStackable*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IInternetProtocolSinkStackable*, uint> Release;
+
+            [NativeTypeName("HRESULT (IInternetProtocolSink *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IInternetProtocolSinkStackable*, IInternetProtocolSink*, int> SwitchSink;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IInternetProtocolSinkStackable*, int> CommitSwitch;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IInternetProtocolSinkStackable*, int> RollbackSwitch;
         }
     }
 }

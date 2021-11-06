@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("AF0FF408-129D-4B20-91F0-02BD23D88352")]
     [NativeTypeName("struct IGetBindHandle : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IGetBindHandle
+    public unsafe partial struct IGetBindHandle : IGetBindHandle.Interface
     {
         public void** lpVtbl;
 
@@ -44,6 +44,27 @@ namespace TerraFX.Interop
         public HRESULT GetBindHandle(BINDHANDLETYPES enumRequestedHandle, HANDLE* pRetHandle)
         {
             return ((delegate* unmanaged<IGetBindHandle*, BINDHANDLETYPES, HANDLE*, int>)(lpVtbl[3]))((IGetBindHandle*)Unsafe.AsPointer(ref this), enumRequestedHandle, pRetHandle);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetBindHandle(BINDHANDLETYPES enumRequestedHandle, HANDLE* pRetHandle);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IGetBindHandle*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IGetBindHandle*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IGetBindHandle*, uint> Release;
+
+            [NativeTypeName("HRESULT (BINDHANDLETYPES, HANDLE *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IGetBindHandle*, BINDHANDLETYPES, HANDLE*, int> GetBindHandle;
         }
     }
 }

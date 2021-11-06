@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("742B0E01-14E6-101B-914E-00AA00300CAB")]
     [NativeTypeName("struct ISimpleFrameSite : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct ISimpleFrameSite
+    public unsafe partial struct ISimpleFrameSite : ISimpleFrameSite.Interface
     {
         public void** lpVtbl;
 
@@ -51,6 +51,33 @@ namespace TerraFX.Interop
         public HRESULT PostMessageFilter(HWND hWnd, uint msg, WPARAM wp, LPARAM lp, LRESULT* plResult, [NativeTypeName("DWORD")] uint dwCookie)
         {
             return ((delegate* unmanaged<ISimpleFrameSite*, HWND, uint, WPARAM, LPARAM, LRESULT*, uint, int>)(lpVtbl[4]))((ISimpleFrameSite*)Unsafe.AsPointer(ref this), hWnd, msg, wp, lp, plResult, dwCookie);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT PreMessageFilter(HWND hWnd, uint msg, WPARAM wp, LPARAM lp, LRESULT* plResult, [NativeTypeName("DWORD *")] uint* pdwCookie);
+
+            [VtblIndex(4)]
+            HRESULT PostMessageFilter(HWND hWnd, uint msg, WPARAM wp, LPARAM lp, LRESULT* plResult, [NativeTypeName("DWORD")] uint dwCookie);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISimpleFrameSite*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ISimpleFrameSite*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ISimpleFrameSite*, uint> Release;
+
+            [NativeTypeName("HRESULT (HWND, UINT, WPARAM, LPARAM, LRESULT *, DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISimpleFrameSite*, HWND, uint, WPARAM, LPARAM, LRESULT*, uint*, int> PreMessageFilter;
+
+            [NativeTypeName("HRESULT (HWND, UINT, WPARAM, LPARAM, LRESULT *, DWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISimpleFrameSite*, HWND, uint, WPARAM, LPARAM, LRESULT*, uint, int> PostMessageFilter;
         }
     }
 }

@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("50C83A1C-E072-4C48-87B0-3630FA36A6D0")]
     [NativeTypeName("struct IDXGIFactory2 : IDXGIFactory1")]
     [NativeInheritance("IDXGIFactory1")]
-    public unsafe partial struct IDXGIFactory2
+    public unsafe partial struct IDXGIFactory2 : IDXGIFactory2.Interface
     {
         public void** lpVtbl;
 
@@ -191,6 +191,120 @@ namespace TerraFX.Interop
         public HRESULT CreateSwapChainForComposition(IUnknown* pDevice, [NativeTypeName("const DXGI_SWAP_CHAIN_DESC1 *")] DXGI_SWAP_CHAIN_DESC1* pDesc, IDXGIOutput* pRestrictToOutput, IDXGISwapChain1** ppSwapChain)
         {
             return ((delegate* unmanaged<IDXGIFactory2*, IUnknown*, DXGI_SWAP_CHAIN_DESC1*, IDXGIOutput*, IDXGISwapChain1**, int>)(lpVtbl[24]))((IDXGIFactory2*)Unsafe.AsPointer(ref this), pDevice, pDesc, pRestrictToOutput, ppSwapChain);
+        }
+
+        public interface Interface : IDXGIFactory1.Interface
+        {
+            [VtblIndex(14)]
+            BOOL IsWindowedStereoEnabled();
+
+            [VtblIndex(15)]
+            HRESULT CreateSwapChainForHwnd(IUnknown* pDevice, HWND hWnd, [NativeTypeName("const DXGI_SWAP_CHAIN_DESC1 *")] DXGI_SWAP_CHAIN_DESC1* pDesc, [NativeTypeName("const DXGI_SWAP_CHAIN_FULLSCREEN_DESC *")] DXGI_SWAP_CHAIN_FULLSCREEN_DESC* pFullscreenDesc, IDXGIOutput* pRestrictToOutput, IDXGISwapChain1** ppSwapChain);
+
+            [VtblIndex(16)]
+            HRESULT CreateSwapChainForCoreWindow(IUnknown* pDevice, IUnknown* pWindow, [NativeTypeName("const DXGI_SWAP_CHAIN_DESC1 *")] DXGI_SWAP_CHAIN_DESC1* pDesc, IDXGIOutput* pRestrictToOutput, IDXGISwapChain1** ppSwapChain);
+
+            [VtblIndex(17)]
+            HRESULT GetSharedResourceAdapterLuid(HANDLE hResource, LUID* pLuid);
+
+            [VtblIndex(18)]
+            HRESULT RegisterStereoStatusWindow(HWND WindowHandle, uint wMsg, [NativeTypeName("DWORD *")] uint* pdwCookie);
+
+            [VtblIndex(19)]
+            HRESULT RegisterStereoStatusEvent(HANDLE hEvent, [NativeTypeName("DWORD *")] uint* pdwCookie);
+
+            [VtblIndex(20)]
+            void UnregisterStereoStatus([NativeTypeName("DWORD")] uint dwCookie);
+
+            [VtblIndex(21)]
+            HRESULT RegisterOcclusionStatusWindow(HWND WindowHandle, uint wMsg, [NativeTypeName("DWORD *")] uint* pdwCookie);
+
+            [VtblIndex(22)]
+            HRESULT RegisterOcclusionStatusEvent(HANDLE hEvent, [NativeTypeName("DWORD *")] uint* pdwCookie);
+
+            [VtblIndex(23)]
+            void UnregisterOcclusionStatus([NativeTypeName("DWORD")] uint dwCookie);
+
+            [VtblIndex(24)]
+            HRESULT CreateSwapChainForComposition(IUnknown* pDevice, [NativeTypeName("const DXGI_SWAP_CHAIN_DESC1 *")] DXGI_SWAP_CHAIN_DESC1* pDesc, IDXGIOutput* pRestrictToOutput, IDXGISwapChain1** ppSwapChain);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDXGIFactory2*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDXGIFactory2*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDXGIFactory2*, uint> Release;
+
+            [NativeTypeName("HRESULT (const GUID &, UINT, const void *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDXGIFactory2*, Guid*, uint, void*, int> SetPrivateData;
+
+            [NativeTypeName("HRESULT (const GUID &, const IUnknown *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDXGIFactory2*, Guid*, IUnknown*, int> SetPrivateDataInterface;
+
+            [NativeTypeName("HRESULT (const GUID &, UINT *, void *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDXGIFactory2*, Guid*, uint*, void*, int> GetPrivateData;
+
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDXGIFactory2*, Guid*, void**, int> GetParent;
+
+            [NativeTypeName("HRESULT (UINT, IDXGIAdapter **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDXGIFactory2*, uint, IDXGIAdapter**, int> EnumAdapters;
+
+            [NativeTypeName("HRESULT (HWND, UINT) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDXGIFactory2*, HWND, uint, int> MakeWindowAssociation;
+
+            [NativeTypeName("HRESULT (HWND *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDXGIFactory2*, HWND*, int> GetWindowAssociation;
+
+            [NativeTypeName("HRESULT (IUnknown *, DXGI_SWAP_CHAIN_DESC *, IDXGISwapChain **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDXGIFactory2*, IUnknown*, DXGI_SWAP_CHAIN_DESC*, IDXGISwapChain**, int> CreateSwapChain;
+
+            [NativeTypeName("HRESULT (HMODULE, IDXGIAdapter **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDXGIFactory2*, HMODULE, IDXGIAdapter**, int> CreateSoftwareAdapter;
+
+            [NativeTypeName("HRESULT (UINT, IDXGIAdapter1 **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDXGIFactory2*, uint, IDXGIAdapter1**, int> EnumAdapters1;
+
+            [NativeTypeName("BOOL () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDXGIFactory2*, int> IsCurrent;
+
+            [NativeTypeName("BOOL () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDXGIFactory2*, int> IsWindowedStereoEnabled;
+
+            [NativeTypeName("HRESULT (IUnknown *, HWND, const DXGI_SWAP_CHAIN_DESC1 *, const DXGI_SWAP_CHAIN_FULLSCREEN_DESC *, IDXGIOutput *, IDXGISwapChain1 **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDXGIFactory2*, IUnknown*, HWND, DXGI_SWAP_CHAIN_DESC1*, DXGI_SWAP_CHAIN_FULLSCREEN_DESC*, IDXGIOutput*, IDXGISwapChain1**, int> CreateSwapChainForHwnd;
+
+            [NativeTypeName("HRESULT (IUnknown *, IUnknown *, const DXGI_SWAP_CHAIN_DESC1 *, IDXGIOutput *, IDXGISwapChain1 **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDXGIFactory2*, IUnknown*, IUnknown*, DXGI_SWAP_CHAIN_DESC1*, IDXGIOutput*, IDXGISwapChain1**, int> CreateSwapChainForCoreWindow;
+
+            [NativeTypeName("HRESULT (HANDLE, LUID *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDXGIFactory2*, HANDLE, LUID*, int> GetSharedResourceAdapterLuid;
+
+            [NativeTypeName("HRESULT (HWND, UINT, DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDXGIFactory2*, HWND, uint, uint*, int> RegisterStereoStatusWindow;
+
+            [NativeTypeName("HRESULT (HANDLE, DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDXGIFactory2*, HANDLE, uint*, int> RegisterStereoStatusEvent;
+
+            [NativeTypeName("void (DWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDXGIFactory2*, uint, void> UnregisterStereoStatus;
+
+            [NativeTypeName("HRESULT (HWND, UINT, DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDXGIFactory2*, HWND, uint, uint*, int> RegisterOcclusionStatusWindow;
+
+            [NativeTypeName("HRESULT (HANDLE, DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDXGIFactory2*, HANDLE, uint*, int> RegisterOcclusionStatusEvent;
+
+            [NativeTypeName("void (DWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDXGIFactory2*, uint, void> UnregisterOcclusionStatus;
+
+            [NativeTypeName("HRESULT (IUnknown *, const DXGI_SWAP_CHAIN_DESC1 *, IDXGIOutput *, IDXGISwapChain1 **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDXGIFactory2*, IUnknown*, DXGI_SWAP_CHAIN_DESC1*, IDXGIOutput*, IDXGISwapChain1**, int> CreateSwapChainForComposition;
         }
     }
 }

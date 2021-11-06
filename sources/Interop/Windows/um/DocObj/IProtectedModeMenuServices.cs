@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("73C105EE-9DFF-4A07-B83C-7EFF290C266E")]
     [NativeTypeName("struct IProtectedModeMenuServices : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IProtectedModeMenuServices
+    public unsafe partial struct IProtectedModeMenuServices : IProtectedModeMenuServices.Interface
     {
         public void** lpVtbl;
 
@@ -58,6 +58,39 @@ namespace TerraFX.Interop
         public HRESULT LoadMenuID([NativeTypeName("LPCWSTR")] ushort* pszModuleName, [NativeTypeName("WORD")] ushort wResourceID, HMENU* phMenu)
         {
             return ((delegate* unmanaged<IProtectedModeMenuServices*, ushort*, ushort, HMENU*, int>)(lpVtbl[5]))((IProtectedModeMenuServices*)Unsafe.AsPointer(ref this), pszModuleName, wResourceID, phMenu);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT CreateMenu(HMENU* phMenu);
+
+            [VtblIndex(4)]
+            HRESULT LoadMenuW([NativeTypeName("LPCWSTR")] ushort* pszModuleName, [NativeTypeName("LPCWSTR")] ushort* pszMenuName, HMENU* phMenu);
+
+            [VtblIndex(5)]
+            HRESULT LoadMenuID([NativeTypeName("LPCWSTR")] ushort* pszModuleName, [NativeTypeName("WORD")] ushort wResourceID, HMENU* phMenu);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IProtectedModeMenuServices*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IProtectedModeMenuServices*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IProtectedModeMenuServices*, uint> Release;
+
+            [NativeTypeName("HRESULT (HMENU *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IProtectedModeMenuServices*, HMENU*, int> CreateMenu;
+
+            [NativeTypeName("HRESULT (LPCWSTR, LPCWSTR, HMENU *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IProtectedModeMenuServices*, ushort*, ushort*, HMENU*, int> LoadMenuW;
+
+            [NativeTypeName("HRESULT (LPCWSTR, WORD, HMENU *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IProtectedModeMenuServices*, ushort*, ushort, HMENU*, int> LoadMenuID;
         }
     }
 }

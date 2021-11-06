@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("B6AFA338-D779-11D9-8BDE-F66BAD1E3F3A")]
     [NativeTypeName("struct IContactCollection : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IContactCollection
+    public unsafe partial struct IContactCollection : IContactCollection.Interface
     {
         public void** lpVtbl;
 
@@ -58,6 +58,39 @@ namespace TerraFX.Interop
         public HRESULT GetCurrent(IContact** ppContact)
         {
             return ((delegate* unmanaged<IContactCollection*, IContact**, int>)(lpVtbl[5]))((IContactCollection*)Unsafe.AsPointer(ref this), ppContact);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT Reset();
+
+            [VtblIndex(4)]
+            HRESULT Next();
+
+            [VtblIndex(5)]
+            HRESULT GetCurrent(IContact** ppContact);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IContactCollection*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IContactCollection*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IContactCollection*, uint> Release;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IContactCollection*, int> Reset;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IContactCollection*, int> Next;
+
+            [NativeTypeName("HRESULT (IContact **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IContactCollection*, IContact**, int> GetCurrent;
         }
     }
 }

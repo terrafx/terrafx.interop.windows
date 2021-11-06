@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("9BA4B1DD-8B0C-48B7-9E7C-2F25857C8DF5")]
     [NativeTypeName("struct IRendezvousSession : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IRendezvousSession
+    public unsafe partial struct IRendezvousSession : IRendezvousSession.Interface
     {
         public void** lpVtbl;
 
@@ -72,6 +72,51 @@ namespace TerraFX.Interop
         public HRESULT Terminate(HRESULT hr, [NativeTypeName("BSTR")] ushort* bstrAppData)
         {
             return ((delegate* unmanaged<IRendezvousSession*, HRESULT, ushort*, int>)(lpVtbl[7]))((IRendezvousSession*)Unsafe.AsPointer(ref this), hr, bstrAppData);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT get_State(RENDEZVOUS_SESSION_STATE* pSessionState);
+
+            [VtblIndex(4)]
+            HRESULT get_RemoteUser([NativeTypeName("BSTR *")] ushort** bstrUserName);
+
+            [VtblIndex(5)]
+            HRESULT get_Flags([NativeTypeName("LONG *")] int* pFlags);
+
+            [VtblIndex(6)]
+            HRESULT SendContextData([NativeTypeName("BSTR")] ushort* bstrData);
+
+            [VtblIndex(7)]
+            HRESULT Terminate(HRESULT hr, [NativeTypeName("BSTR")] ushort* bstrAppData);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IRendezvousSession*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IRendezvousSession*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IRendezvousSession*, uint> Release;
+
+            [NativeTypeName("HRESULT (RENDEZVOUS_SESSION_STATE *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IRendezvousSession*, RENDEZVOUS_SESSION_STATE*, int> get_State;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IRendezvousSession*, ushort**, int> get_RemoteUser;
+
+            [NativeTypeName("HRESULT (LONG *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IRendezvousSession*, int*, int> get_Flags;
+
+            [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IRendezvousSession*, ushort*, int> SendContextData;
+
+            [NativeTypeName("HRESULT (HRESULT, BSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IRendezvousSession*, HRESULT, ushort*, int> Terminate;
         }
     }
 }

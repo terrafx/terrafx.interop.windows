@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("576616C0-A231-494D-A38D-00FD5EC4DB46")]
     [NativeTypeName("struct IDCompositionCompositeEffect : IDCompositionFilterEffect")]
     [NativeInheritance("IDCompositionFilterEffect")]
-    public unsafe partial struct IDCompositionCompositeEffect
+    public unsafe partial struct IDCompositionCompositeEffect : IDCompositionCompositeEffect.Interface
     {
         public void** lpVtbl;
 
@@ -51,6 +51,30 @@ namespace TerraFX.Interop
         public HRESULT SetMode(D2D1_COMPOSITE_MODE mode)
         {
             return ((delegate* unmanaged<IDCompositionCompositeEffect*, D2D1_COMPOSITE_MODE, int>)(lpVtbl[4]))((IDCompositionCompositeEffect*)Unsafe.AsPointer(ref this), mode);
+        }
+
+        public interface Interface : IDCompositionFilterEffect.Interface
+        {
+            [VtblIndex(4)]
+            HRESULT SetMode(D2D1_COMPOSITE_MODE mode);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDCompositionCompositeEffect*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDCompositionCompositeEffect*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDCompositionCompositeEffect*, uint> Release;
+
+            [NativeTypeName("HRESULT (UINT, IUnknown *, UINT) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDCompositionCompositeEffect*, uint, IUnknown*, uint, int> SetInput;
+
+            [NativeTypeName("HRESULT (D2D1_COMPOSITE_MODE) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDCompositionCompositeEffect*, D2D1_COMPOSITE_MODE, int> SetMode;
         }
     }
 }

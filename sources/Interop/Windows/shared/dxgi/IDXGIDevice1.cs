@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("77DB970F-6276-48BA-BA28-070143B4392C")]
     [NativeTypeName("struct IDXGIDevice1 : IDXGIDevice")]
     [NativeInheritance("IDXGIDevice")]
-    public unsafe partial struct IDXGIDevice1
+    public unsafe partial struct IDXGIDevice1 : IDXGIDevice1.Interface
     {
         public void** lpVtbl;
 
@@ -114,6 +114,60 @@ namespace TerraFX.Interop
         public HRESULT GetMaximumFrameLatency(uint* pMaxLatency)
         {
             return ((delegate* unmanaged<IDXGIDevice1*, uint*, int>)(lpVtbl[13]))((IDXGIDevice1*)Unsafe.AsPointer(ref this), pMaxLatency);
+        }
+
+        public interface Interface : IDXGIDevice.Interface
+        {
+            [VtblIndex(12)]
+            HRESULT SetMaximumFrameLatency(uint MaxLatency);
+
+            [VtblIndex(13)]
+            HRESULT GetMaximumFrameLatency(uint* pMaxLatency);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDXGIDevice1*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDXGIDevice1*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDXGIDevice1*, uint> Release;
+
+            [NativeTypeName("HRESULT (const GUID &, UINT, const void *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDXGIDevice1*, Guid*, uint, void*, int> SetPrivateData;
+
+            [NativeTypeName("HRESULT (const GUID &, const IUnknown *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDXGIDevice1*, Guid*, IUnknown*, int> SetPrivateDataInterface;
+
+            [NativeTypeName("HRESULT (const GUID &, UINT *, void *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDXGIDevice1*, Guid*, uint*, void*, int> GetPrivateData;
+
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDXGIDevice1*, Guid*, void**, int> GetParent;
+
+            [NativeTypeName("HRESULT (IDXGIAdapter **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDXGIDevice1*, IDXGIAdapter**, int> GetAdapter;
+
+            [NativeTypeName("HRESULT (const DXGI_SURFACE_DESC *, UINT, DXGI_USAGE, const DXGI_SHARED_RESOURCE *, IDXGISurface **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDXGIDevice1*, DXGI_SURFACE_DESC*, uint, uint, DXGI_SHARED_RESOURCE*, IDXGISurface**, int> CreateSurface;
+
+            [NativeTypeName("HRESULT (IUnknown *const *, DXGI_RESIDENCY *, UINT) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDXGIDevice1*, IUnknown**, DXGI_RESIDENCY*, uint, int> QueryResourceResidency;
+
+            [NativeTypeName("HRESULT (INT) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDXGIDevice1*, int, int> SetGPUThreadPriority;
+
+            [NativeTypeName("HRESULT (INT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDXGIDevice1*, int*, int> GetGPUThreadPriority;
+
+            [NativeTypeName("HRESULT (UINT) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDXGIDevice1*, uint, int> SetMaximumFrameLatency;
+
+            [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDXGIDevice1*, uint*, int> GetMaximumFrameLatency;
         }
     }
 }

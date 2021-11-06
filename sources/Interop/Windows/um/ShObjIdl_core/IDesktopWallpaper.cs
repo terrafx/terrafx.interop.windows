@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("B92B56A9-8B55-4E14-9A89-0199BBB6F93B")]
     [NativeTypeName("struct IDesktopWallpaper : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IDesktopWallpaper
+    public unsafe partial struct IDesktopWallpaper : IDesktopWallpaper.Interface
     {
         public void** lpVtbl;
 
@@ -149,6 +149,117 @@ namespace TerraFX.Interop
         public HRESULT Enable(BOOL enable)
         {
             return ((delegate* unmanaged<IDesktopWallpaper*, BOOL, int>)(lpVtbl[18]))((IDesktopWallpaper*)Unsafe.AsPointer(ref this), enable);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT SetWallpaper([NativeTypeName("LPCWSTR")] ushort* monitorID, [NativeTypeName("LPCWSTR")] ushort* wallpaper);
+
+            [VtblIndex(4)]
+            HRESULT GetWallpaper([NativeTypeName("LPCWSTR")] ushort* monitorID, [NativeTypeName("LPWSTR *")] ushort** wallpaper);
+
+            [VtblIndex(5)]
+            HRESULT GetMonitorDevicePathAt(uint monitorIndex, [NativeTypeName("LPWSTR *")] ushort** monitorID);
+
+            [VtblIndex(6)]
+            HRESULT GetMonitorDevicePathCount(uint* count);
+
+            [VtblIndex(7)]
+            HRESULT GetMonitorRECT([NativeTypeName("LPCWSTR")] ushort* monitorID, RECT* displayRect);
+
+            [VtblIndex(8)]
+            HRESULT SetBackgroundColor(COLORREF color);
+
+            [VtblIndex(9)]
+            HRESULT GetBackgroundColor(COLORREF* color);
+
+            [VtblIndex(10)]
+            HRESULT SetPosition(DESKTOP_WALLPAPER_POSITION position);
+
+            [VtblIndex(11)]
+            HRESULT GetPosition(DESKTOP_WALLPAPER_POSITION* position);
+
+            [VtblIndex(12)]
+            HRESULT SetSlideshow(IShellItemArray* items);
+
+            [VtblIndex(13)]
+            HRESULT GetSlideshow(IShellItemArray** items);
+
+            [VtblIndex(14)]
+            HRESULT SetSlideshowOptions(DESKTOP_SLIDESHOW_OPTIONS options, uint slideshowTick);
+
+            [VtblIndex(15)]
+            HRESULT GetSlideshowOptions(DESKTOP_SLIDESHOW_OPTIONS* options, uint* slideshowTick);
+
+            [VtblIndex(16)]
+            HRESULT AdvanceSlideshow([NativeTypeName("LPCWSTR")] ushort* monitorID, DESKTOP_SLIDESHOW_DIRECTION direction);
+
+            [VtblIndex(17)]
+            HRESULT GetStatus(DESKTOP_SLIDESHOW_STATE* state);
+
+            [VtblIndex(18)]
+            HRESULT Enable(BOOL enable);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDesktopWallpaper*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDesktopWallpaper*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDesktopWallpaper*, uint> Release;
+
+            [NativeTypeName("HRESULT (LPCWSTR, LPCWSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDesktopWallpaper*, ushort*, ushort*, int> SetWallpaper;
+
+            [NativeTypeName("HRESULT (LPCWSTR, LPWSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDesktopWallpaper*, ushort*, ushort**, int> GetWallpaper;
+
+            [NativeTypeName("HRESULT (UINT, LPWSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDesktopWallpaper*, uint, ushort**, int> GetMonitorDevicePathAt;
+
+            [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDesktopWallpaper*, uint*, int> GetMonitorDevicePathCount;
+
+            [NativeTypeName("HRESULT (LPCWSTR, RECT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDesktopWallpaper*, ushort*, RECT*, int> GetMonitorRECT;
+
+            [NativeTypeName("HRESULT (COLORREF) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDesktopWallpaper*, COLORREF, int> SetBackgroundColor;
+
+            [NativeTypeName("HRESULT (COLORREF *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDesktopWallpaper*, COLORREF*, int> GetBackgroundColor;
+
+            [NativeTypeName("HRESULT (DESKTOP_WALLPAPER_POSITION) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDesktopWallpaper*, DESKTOP_WALLPAPER_POSITION, int> SetPosition;
+
+            [NativeTypeName("HRESULT (DESKTOP_WALLPAPER_POSITION *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDesktopWallpaper*, DESKTOP_WALLPAPER_POSITION*, int> GetPosition;
+
+            [NativeTypeName("HRESULT (IShellItemArray *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDesktopWallpaper*, IShellItemArray*, int> SetSlideshow;
+
+            [NativeTypeName("HRESULT (IShellItemArray **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDesktopWallpaper*, IShellItemArray**, int> GetSlideshow;
+
+            [NativeTypeName("HRESULT (DESKTOP_SLIDESHOW_OPTIONS, UINT) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDesktopWallpaper*, DESKTOP_SLIDESHOW_OPTIONS, uint, int> SetSlideshowOptions;
+
+            [NativeTypeName("HRESULT (DESKTOP_SLIDESHOW_OPTIONS *, UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDesktopWallpaper*, DESKTOP_SLIDESHOW_OPTIONS*, uint*, int> GetSlideshowOptions;
+
+            [NativeTypeName("HRESULT (LPCWSTR, DESKTOP_SLIDESHOW_DIRECTION) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDesktopWallpaper*, ushort*, DESKTOP_SLIDESHOW_DIRECTION, int> AdvanceSlideshow;
+
+            [NativeTypeName("HRESULT (DESKTOP_SLIDESHOW_STATE *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDesktopWallpaper*, DESKTOP_SLIDESHOW_STATE*, int> GetStatus;
+
+            [NativeTypeName("HRESULT (BOOL) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDesktopWallpaper*, BOOL, int> Enable;
         }
     }
 }

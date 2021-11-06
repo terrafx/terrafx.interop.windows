@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("B507CA22-2204-11DD-966A-001AA01BBC58")]
     [NativeTypeName("struct IMultisessionSequential2 : IMultisessionSequential")]
     [NativeInheritance("IMultisessionSequential")]
-    public unsafe partial struct IMultisessionSequential2
+    public unsafe partial struct IMultisessionSequential2 : IMultisessionSequential2.Interface
     {
         public void** lpVtbl;
 
@@ -135,6 +135,66 @@ namespace TerraFX.Interop
         public HRESULT get_WriteUnitSize([NativeTypeName("LONG *")] int* value)
         {
             return ((delegate* unmanaged<IMultisessionSequential2*, int*, int>)(lpVtbl[16]))((IMultisessionSequential2*)Unsafe.AsPointer(ref this), value);
+        }
+
+        public interface Interface : IMultisessionSequential.Interface
+        {
+            [VtblIndex(16)]
+            HRESULT get_WriteUnitSize([NativeTypeName("LONG *")] int* value);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMultisessionSequential2*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMultisessionSequential2*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMultisessionSequential2*, uint> Release;
+
+            [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMultisessionSequential2*, uint*, int> GetTypeInfoCount;
+
+            [NativeTypeName("HRESULT (UINT, LCID, ITypeInfo **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMultisessionSequential2*, uint, uint, ITypeInfo**, int> GetTypeInfo;
+
+            [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMultisessionSequential2*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+
+            [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMultisessionSequential2*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
+
+            [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMultisessionSequential2*, short*, int> get_IsSupportedOnCurrentMediaState;
+
+            [NativeTypeName("HRESULT (VARIANT_BOOL) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMultisessionSequential2*, short, int> put_InUse;
+
+            [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMultisessionSequential2*, short*, int> get_InUse;
+
+            [NativeTypeName("HRESULT (IDiscRecorder2 **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMultisessionSequential2*, IDiscRecorder2**, int> get_ImportRecorder;
+
+            [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMultisessionSequential2*, short*, int> get_IsFirstDataSession;
+
+            [NativeTypeName("HRESULT (LONG *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMultisessionSequential2*, int*, int> get_StartAddressOfPreviousSession;
+
+            [NativeTypeName("HRESULT (LONG *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMultisessionSequential2*, int*, int> get_LastWrittenAddressOfPreviousSession;
+
+            [NativeTypeName("HRESULT (LONG *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMultisessionSequential2*, int*, int> get_NextWritableAddress;
+
+            [NativeTypeName("HRESULT (LONG *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMultisessionSequential2*, int*, int> get_FreeSectorsOnMedia;
+
+            [NativeTypeName("HRESULT (LONG *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMultisessionSequential2*, int*, int> get_WriteUnitSize;
         }
     }
 }

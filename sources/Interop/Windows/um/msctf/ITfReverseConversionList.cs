@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("151D69F0-86F4-4674-B721-56911E797F47")]
     [NativeTypeName("struct ITfReverseConversionList : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct ITfReverseConversionList
+    public unsafe partial struct ITfReverseConversionList : ITfReverseConversionList.Interface
     {
         public void** lpVtbl;
 
@@ -51,6 +51,33 @@ namespace TerraFX.Interop
         public HRESULT GetString(uint uIndex, [NativeTypeName("BSTR *")] ushort** pbstr)
         {
             return ((delegate* unmanaged<ITfReverseConversionList*, uint, ushort**, int>)(lpVtbl[4]))((ITfReverseConversionList*)Unsafe.AsPointer(ref this), uIndex, pbstr);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetLength(uint* puIndex);
+
+            [VtblIndex(4)]
+            HRESULT GetString(uint uIndex, [NativeTypeName("BSTR *")] ushort** pbstr);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfReverseConversionList*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfReverseConversionList*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfReverseConversionList*, uint> Release;
+
+            [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfReverseConversionList*, uint*, int> GetLength;
+
+            [NativeTypeName("HRESULT (UINT, BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfReverseConversionList*, uint, ushort**, int> GetString;
         }
     }
 }

@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("000214E8-0000-0000-C000-000000000046")]
     [NativeTypeName("struct IShellExtInit : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IShellExtInit
+    public unsafe partial struct IShellExtInit : IShellExtInit.Interface
     {
         public void** lpVtbl;
 
@@ -44,6 +44,27 @@ namespace TerraFX.Interop
         public HRESULT Initialize([NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidlFolder, IDataObject* pdtobj, HKEY hkeyProgID)
         {
             return ((delegate* unmanaged<IShellExtInit*, ITEMIDLIST*, IDataObject*, HKEY, int>)(lpVtbl[3]))((IShellExtInit*)Unsafe.AsPointer(ref this), pidlFolder, pdtobj, hkeyProgID);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT Initialize([NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidlFolder, IDataObject* pdtobj, HKEY hkeyProgID);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellExtInit*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellExtInit*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellExtInit*, uint> Release;
+
+            [NativeTypeName("HRESULT (LPCITEMIDLIST, IDataObject *, HKEY) __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellExtInit*, ITEMIDLIST*, IDataObject*, HKEY, int> Initialize;
         }
     }
 }

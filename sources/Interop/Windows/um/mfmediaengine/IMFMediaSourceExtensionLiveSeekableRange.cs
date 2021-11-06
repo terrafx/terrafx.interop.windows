@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("5D1ABFD6-450A-4D92-9EFC-D6B6CBC1F4DA")]
     [NativeTypeName("struct IMFMediaSourceExtensionLiveSeekableRange : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IMFMediaSourceExtensionLiveSeekableRange
+    public unsafe partial struct IMFMediaSourceExtensionLiveSeekableRange : IMFMediaSourceExtensionLiveSeekableRange.Interface
     {
         public void** lpVtbl;
 
@@ -51,6 +51,33 @@ namespace TerraFX.Interop
         public HRESULT ClearLiveSeekableRange()
         {
             return ((delegate* unmanaged<IMFMediaSourceExtensionLiveSeekableRange*, int>)(lpVtbl[4]))((IMFMediaSourceExtensionLiveSeekableRange*)Unsafe.AsPointer(ref this));
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT SetLiveSeekableRange(double start, double end);
+
+            [VtblIndex(4)]
+            HRESULT ClearLiveSeekableRange();
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFMediaSourceExtensionLiveSeekableRange*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFMediaSourceExtensionLiveSeekableRange*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFMediaSourceExtensionLiveSeekableRange*, uint> Release;
+
+            [NativeTypeName("HRESULT (double, double) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFMediaSourceExtensionLiveSeekableRange*, double, double, int> SetLiveSeekableRange;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFMediaSourceExtensionLiveSeekableRange*, int> ClearLiveSeekableRange;
         }
     }
 }

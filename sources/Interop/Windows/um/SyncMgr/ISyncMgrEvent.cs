@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("FEE0EF8B-46BD-4DB4-B7E6-FF2C687313BC")]
     [NativeTypeName("struct ISyncMgrEvent : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct ISyncMgrEvent
+    public unsafe partial struct ISyncMgrEvent : ISyncMgrEvent.Interface
     {
         public void** lpVtbl;
 
@@ -114,6 +114,87 @@ namespace TerraFX.Interop
         public HRESULT GetContext([NativeTypeName("LPWSTR *")] ushort** ppszContext)
         {
             return ((delegate* unmanaged<ISyncMgrEvent*, ushort**, int>)(lpVtbl[13]))((ISyncMgrEvent*)Unsafe.AsPointer(ref this), ppszContext);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetEventID(Guid* pguidEventID);
+
+            [VtblIndex(4)]
+            HRESULT GetHandlerID([NativeTypeName("LPWSTR *")] ushort** ppszHandlerID);
+
+            [VtblIndex(5)]
+            HRESULT GetItemID([NativeTypeName("LPWSTR *")] ushort** ppszItemID);
+
+            [VtblIndex(6)]
+            HRESULT GetLevel(SYNCMGR_EVENT_LEVEL* pnLevel);
+
+            [VtblIndex(7)]
+            HRESULT GetFlags(SYNCMGR_EVENT_FLAGS* pnFlags);
+
+            [VtblIndex(8)]
+            HRESULT GetTime(FILETIME* pfCreationTime);
+
+            [VtblIndex(9)]
+            HRESULT GetName([NativeTypeName("LPWSTR *")] ushort** ppszName);
+
+            [VtblIndex(10)]
+            HRESULT GetDescription([NativeTypeName("LPWSTR *")] ushort** ppszDescription);
+
+            [VtblIndex(11)]
+            HRESULT GetLinkText([NativeTypeName("LPWSTR *")] ushort** ppszLinkText);
+
+            [VtblIndex(12)]
+            HRESULT GetLinkReference([NativeTypeName("LPWSTR *")] ushort** ppszLinkReference);
+
+            [VtblIndex(13)]
+            HRESULT GetContext([NativeTypeName("LPWSTR *")] ushort** ppszContext);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISyncMgrEvent*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ISyncMgrEvent*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ISyncMgrEvent*, uint> Release;
+
+            [NativeTypeName("HRESULT (GUID *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISyncMgrEvent*, Guid*, int> GetEventID;
+
+            [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISyncMgrEvent*, ushort**, int> GetHandlerID;
+
+            [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISyncMgrEvent*, ushort**, int> GetItemID;
+
+            [NativeTypeName("HRESULT (SYNCMGR_EVENT_LEVEL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISyncMgrEvent*, SYNCMGR_EVENT_LEVEL*, int> GetLevel;
+
+            [NativeTypeName("HRESULT (SYNCMGR_EVENT_FLAGS *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISyncMgrEvent*, SYNCMGR_EVENT_FLAGS*, int> GetFlags;
+
+            [NativeTypeName("HRESULT (FILETIME *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISyncMgrEvent*, FILETIME*, int> GetTime;
+
+            [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISyncMgrEvent*, ushort**, int> GetName;
+
+            [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISyncMgrEvent*, ushort**, int> GetDescription;
+
+            [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISyncMgrEvent*, ushort**, int> GetLinkText;
+
+            [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISyncMgrEvent*, ushort**, int> GetLinkReference;
+
+            [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISyncMgrEvent*, ushort**, int> GetContext;
         }
     }
 }

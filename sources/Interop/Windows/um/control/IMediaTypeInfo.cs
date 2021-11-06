@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("56A868BC-0AD4-11CE-B03A-0020AF0BA770")]
     [NativeTypeName("struct IMediaTypeInfo : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct IMediaTypeInfo
+    public unsafe partial struct IMediaTypeInfo : IMediaTypeInfo.Interface
     {
         public void** lpVtbl;
 
@@ -79,6 +79,45 @@ namespace TerraFX.Interop
         public HRESULT get_Subtype([NativeTypeName("BSTR *")] ushort** strType)
         {
             return ((delegate* unmanaged<IMediaTypeInfo*, ushort**, int>)(lpVtbl[8]))((IMediaTypeInfo*)Unsafe.AsPointer(ref this), strType);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT get_Type([NativeTypeName("BSTR *")] ushort** strType);
+
+            [VtblIndex(8)]
+            HRESULT get_Subtype([NativeTypeName("BSTR *")] ushort** strType);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMediaTypeInfo*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMediaTypeInfo*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMediaTypeInfo*, uint> Release;
+
+            [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMediaTypeInfo*, uint*, int> GetTypeInfoCount;
+
+            [NativeTypeName("HRESULT (UINT, LCID, ITypeInfo **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMediaTypeInfo*, uint, uint, ITypeInfo**, int> GetTypeInfo;
+
+            [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMediaTypeInfo*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+
+            [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMediaTypeInfo*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMediaTypeInfo*, ushort**, int> get_Type;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMediaTypeInfo*, ushort**, int> get_Subtype;
         }
     }
 }

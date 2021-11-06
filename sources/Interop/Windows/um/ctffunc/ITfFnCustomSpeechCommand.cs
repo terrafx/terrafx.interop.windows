@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("FCA6C349-A12F-43A3-8DD6-5A5A4282577B")]
     [NativeTypeName("struct ITfFnCustomSpeechCommand : ITfFunction")]
     [NativeInheritance("ITfFunction")]
-    public unsafe partial struct ITfFnCustomSpeechCommand
+    public unsafe partial struct ITfFnCustomSpeechCommand : ITfFnCustomSpeechCommand.Interface
     {
         public void** lpVtbl;
 
@@ -51,6 +51,30 @@ namespace TerraFX.Interop
         public HRESULT SetSpeechCommandProvider(IUnknown* pspcmdProvider)
         {
             return ((delegate* unmanaged<ITfFnCustomSpeechCommand*, IUnknown*, int>)(lpVtbl[4]))((ITfFnCustomSpeechCommand*)Unsafe.AsPointer(ref this), pspcmdProvider);
+        }
+
+        public interface Interface : ITfFunction.Interface
+        {
+            [VtblIndex(4)]
+            HRESULT SetSpeechCommandProvider(IUnknown* pspcmdProvider);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfFnCustomSpeechCommand*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfFnCustomSpeechCommand*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfFnCustomSpeechCommand*, uint> Release;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfFnCustomSpeechCommand*, ushort**, int> GetDisplayName;
+
+            [NativeTypeName("HRESULT (IUnknown *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfFnCustomSpeechCommand*, IUnknown*, int> SetSpeechCommandProvider;
         }
     }
 }

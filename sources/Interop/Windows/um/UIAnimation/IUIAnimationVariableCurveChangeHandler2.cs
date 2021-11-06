@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("72895E91-0145-4C21-9192-5AAB40EDDF80")]
     [NativeTypeName("struct IUIAnimationVariableCurveChangeHandler2 : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IUIAnimationVariableCurveChangeHandler2
+    public unsafe partial struct IUIAnimationVariableCurveChangeHandler2 : IUIAnimationVariableCurveChangeHandler2.Interface
     {
         public void** lpVtbl;
 
@@ -44,6 +44,27 @@ namespace TerraFX.Interop
         public HRESULT OnCurveChanged(IUIAnimationVariable2* variable)
         {
             return ((delegate* unmanaged<IUIAnimationVariableCurveChangeHandler2*, IUIAnimationVariable2*, int>)(lpVtbl[3]))((IUIAnimationVariableCurveChangeHandler2*)Unsafe.AsPointer(ref this), variable);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT OnCurveChanged(IUIAnimationVariable2* variable);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IUIAnimationVariableCurveChangeHandler2*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IUIAnimationVariableCurveChangeHandler2*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IUIAnimationVariableCurveChangeHandler2*, uint> Release;
+
+            [NativeTypeName("HRESULT (IUIAnimationVariable2 *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IUIAnimationVariableCurveChangeHandler2*, IUIAnimationVariable2*, int> OnCurveChanged;
         }
     }
 }

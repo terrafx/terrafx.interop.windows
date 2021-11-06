@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("17239D47-6ADB-45D2-80F6-F9CBC3BF059D")]
     [NativeTypeName("struct IAppxPackagingDiagnosticEventSink : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IAppxPackagingDiagnosticEventSink
+    public unsafe partial struct IAppxPackagingDiagnosticEventSink : IAppxPackagingDiagnosticEventSink.Interface
     {
         public void** lpVtbl;
 
@@ -51,6 +51,33 @@ namespace TerraFX.Interop
         public HRESULT ReportError([NativeTypeName("LPCWSTR")] ushort* errorMessage)
         {
             return ((delegate* unmanaged<IAppxPackagingDiagnosticEventSink*, ushort*, int>)(lpVtbl[4]))((IAppxPackagingDiagnosticEventSink*)Unsafe.AsPointer(ref this), errorMessage);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT ReportContextChange(APPX_PACKAGING_CONTEXT_CHANGE_TYPE changeType, [NativeTypeName("LONG")] int contextId, [NativeTypeName("LPCSTR")] sbyte* contextName, [NativeTypeName("LPCWSTR")] ushort* contextMessage, [NativeTypeName("LPCWSTR")] ushort* detailsMessage);
+
+            [VtblIndex(4)]
+            HRESULT ReportError([NativeTypeName("LPCWSTR")] ushort* errorMessage);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAppxPackagingDiagnosticEventSink*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IAppxPackagingDiagnosticEventSink*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IAppxPackagingDiagnosticEventSink*, uint> Release;
+
+            [NativeTypeName("HRESULT (APPX_PACKAGING_CONTEXT_CHANGE_TYPE, LONG, LPCSTR, LPCWSTR, LPCWSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAppxPackagingDiagnosticEventSink*, APPX_PACKAGING_CONTEXT_CHANGE_TYPE, int, sbyte*, ushort*, ushort*, int> ReportContextChange;
+
+            [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAppxPackagingDiagnosticEventSink*, ushort*, int> ReportError;
         }
     }
 }

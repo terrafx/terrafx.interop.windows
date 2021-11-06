@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("9F251514-9D4D-4902-9D60-18988AB7D4B5")]
     [NativeTypeName("struct IDXGraphicsAnalysis : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IDXGraphicsAnalysis
+    public unsafe partial struct IDXGraphicsAnalysis : IDXGraphicsAnalysis.Interface
     {
         public void** lpVtbl;
 
@@ -51,6 +51,33 @@ namespace TerraFX.Interop
         public void EndCapture()
         {
             ((delegate* unmanaged<IDXGraphicsAnalysis*, void>)(lpVtbl[4]))((IDXGraphicsAnalysis*)Unsafe.AsPointer(ref this));
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            void BeginCapture();
+
+            [VtblIndex(4)]
+            void EndCapture();
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDXGraphicsAnalysis*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDXGraphicsAnalysis*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDXGraphicsAnalysis*, uint> Release;
+
+            [NativeTypeName("void () __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDXGraphicsAnalysis*, void> BeginCapture;
+
+            [NativeTypeName("void () __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDXGraphicsAnalysis*, void> EndCapture;
         }
     }
 }

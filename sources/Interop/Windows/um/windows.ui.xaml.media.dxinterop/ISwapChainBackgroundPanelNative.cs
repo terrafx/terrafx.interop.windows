@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("43BEBD4E-ADD5-4035-8F85-5608D08E9DC9")]
     [NativeTypeName("struct ISwapChainBackgroundPanelNative : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct ISwapChainBackgroundPanelNative
+    public unsafe partial struct ISwapChainBackgroundPanelNative : ISwapChainBackgroundPanelNative.Interface
     {
         public void** lpVtbl;
 
@@ -44,6 +44,27 @@ namespace TerraFX.Interop
         public HRESULT SetSwapChain(IDXGISwapChain* swapChain)
         {
             return ((delegate* unmanaged<ISwapChainBackgroundPanelNative*, IDXGISwapChain*, int>)(lpVtbl[3]))((ISwapChainBackgroundPanelNative*)Unsafe.AsPointer(ref this), swapChain);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT SetSwapChain(IDXGISwapChain* swapChain);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISwapChainBackgroundPanelNative*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ISwapChainBackgroundPanelNative*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ISwapChainBackgroundPanelNative*, uint> Release;
+
+            [NativeTypeName("HRESULT (IDXGISwapChain *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISwapChainBackgroundPanelNative*, IDXGISwapChain*, int> SetSwapChain;
         }
     }
 }

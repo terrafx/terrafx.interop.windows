@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("D07AB776-A9DE-4798-8C14-3DB31E687C78")]
     [NativeTypeName("struct IAppxContentGroupMapWriter : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IAppxContentGroupMapWriter
+    public unsafe partial struct IAppxContentGroupMapWriter : IAppxContentGroupMapWriter.Interface
     {
         public void** lpVtbl;
 
@@ -58,6 +58,39 @@ namespace TerraFX.Interop
         public HRESULT Close()
         {
             return ((delegate* unmanaged<IAppxContentGroupMapWriter*, int>)(lpVtbl[5]))((IAppxContentGroupMapWriter*)Unsafe.AsPointer(ref this));
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT AddAutomaticGroup([NativeTypeName("LPCWSTR")] ushort* groupName);
+
+            [VtblIndex(4)]
+            HRESULT AddAutomaticFile([NativeTypeName("LPCWSTR")] ushort* fileName);
+
+            [VtblIndex(5)]
+            HRESULT Close();
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAppxContentGroupMapWriter*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IAppxContentGroupMapWriter*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IAppxContentGroupMapWriter*, uint> Release;
+
+            [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAppxContentGroupMapWriter*, ushort*, int> AddAutomaticGroup;
+
+            [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAppxContentGroupMapWriter*, ushort*, int> AddAutomaticFile;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IAppxContentGroupMapWriter*, int> Close;
         }
     }
 }

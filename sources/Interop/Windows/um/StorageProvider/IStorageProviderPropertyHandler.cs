@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("301DFBE5-524C-4B0F-8B2D-21C40B3A2988")]
     [NativeTypeName("struct IStorageProviderPropertyHandler : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IStorageProviderPropertyHandler
+    public unsafe partial struct IStorageProviderPropertyHandler : IStorageProviderPropertyHandler.Interface
     {
         public void** lpVtbl;
 
@@ -51,6 +51,33 @@ namespace TerraFX.Interop
         public HRESULT SaveProperties(IPropertyStore* propertiesToSave)
         {
             return ((delegate* unmanaged<IStorageProviderPropertyHandler*, IPropertyStore*, int>)(lpVtbl[4]))((IStorageProviderPropertyHandler*)Unsafe.AsPointer(ref this), propertiesToSave);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT RetrieveProperties([NativeTypeName("const PROPERTYKEY *")] PROPERTYKEY* propertiesToRetrieve, [NativeTypeName("ULONG")] uint propertiesToRetrieveCount, IPropertyStore** retrievedProperties);
+
+            [VtblIndex(4)]
+            HRESULT SaveProperties(IPropertyStore* propertiesToSave);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IStorageProviderPropertyHandler*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IStorageProviderPropertyHandler*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IStorageProviderPropertyHandler*, uint> Release;
+
+            [NativeTypeName("HRESULT (const PROPERTYKEY *, ULONG, IPropertyStore **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IStorageProviderPropertyHandler*, PROPERTYKEY*, uint, IPropertyStore**, int> RetrieveProperties;
+
+            [NativeTypeName("HRESULT (IPropertyStore *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IStorageProviderPropertyHandler*, IPropertyStore*, int> SaveProperties;
         }
     }
 }

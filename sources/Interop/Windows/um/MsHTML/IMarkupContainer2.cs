@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("3050F648-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct IMarkupContainer2 : IMarkupContainer")]
     [NativeInheritance("IMarkupContainer")]
-    public unsafe partial struct IMarkupContainer2
+    public unsafe partial struct IMarkupContainer2 : IMarkupContainer2.Interface
     {
         public void** lpVtbl;
 
@@ -87,6 +87,61 @@ namespace TerraFX.Interop
         public HRESULT GetMasterElement(IHTMLElement** ppElementMaster)
         {
             return ((delegate* unmanaged<IMarkupContainer2*, IHTMLElement**, int>)(lpVtbl[9]))((IMarkupContainer2*)Unsafe.AsPointer(ref this), ppElementMaster);
+        }
+
+        public interface Interface : IMarkupContainer.Interface
+        {
+            [VtblIndex(4)]
+            HRESULT CreateChangeLog(IHTMLChangeSink* pChangeSink, IHTMLChangeLog** ppChangeLog, BOOL fForward, BOOL fBackward);
+
+            [VtblIndex(5)]
+            HRESULT RegisterForDirtyRange(IHTMLChangeSink* pChangeSink, [NativeTypeName("DWORD *")] uint* pdwCookie);
+
+            [VtblIndex(6)]
+            HRESULT UnRegisterForDirtyRange([NativeTypeName("DWORD")] uint dwCookie);
+
+            [VtblIndex(7)]
+            HRESULT GetAndClearDirtyRange([NativeTypeName("DWORD")] uint dwCookie, IMarkupPointer* pIPointerBegin, IMarkupPointer* pIPointerEnd);
+
+            [VtblIndex(8)]
+            [return: NativeTypeName("long")]
+            int GetVersionNumber();
+
+            [VtblIndex(9)]
+            HRESULT GetMasterElement(IHTMLElement** ppElementMaster);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMarkupContainer2*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMarkupContainer2*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMarkupContainer2*, uint> Release;
+
+            [NativeTypeName("HRESULT (IHTMLDocument2 **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMarkupContainer2*, IHTMLDocument2**, int> OwningDoc;
+
+            [NativeTypeName("HRESULT (IHTMLChangeSink *, IHTMLChangeLog **, BOOL, BOOL) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMarkupContainer2*, IHTMLChangeSink*, IHTMLChangeLog**, BOOL, BOOL, int> CreateChangeLog;
+
+            [NativeTypeName("HRESULT (IHTMLChangeSink *, DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMarkupContainer2*, IHTMLChangeSink*, uint*, int> RegisterForDirtyRange;
+
+            [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMarkupContainer2*, uint, int> UnRegisterForDirtyRange;
+
+            [NativeTypeName("HRESULT (DWORD, IMarkupPointer *, IMarkupPointer *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMarkupContainer2*, uint, IMarkupPointer*, IMarkupPointer*, int> GetAndClearDirtyRange;
+
+            [NativeTypeName("long () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMarkupContainer2*, int> GetVersionNumber;
+
+            [NativeTypeName("HRESULT (IHTMLElement **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMarkupContainer2*, IHTMLElement**, int> GetMasterElement;
         }
     }
 }

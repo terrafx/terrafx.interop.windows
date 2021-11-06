@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("B2D9F3EC-C9FE-4A11-A2EC-D86208F7C0A2")]
     [NativeTypeName("struct IDWriteLocalFontFileLoader : IDWriteFontFileLoader")]
     [NativeInheritance("IDWriteFontFileLoader")]
-    public unsafe partial struct IDWriteLocalFontFileLoader
+    public unsafe partial struct IDWriteLocalFontFileLoader : IDWriteLocalFontFileLoader.Interface
     {
         public void** lpVtbl;
 
@@ -65,6 +65,42 @@ namespace TerraFX.Interop
         public HRESULT GetLastWriteTimeFromKey([NativeTypeName("const void *")] void* fontFileReferenceKey, [NativeTypeName("UINT32")] uint fontFileReferenceKeySize, FILETIME* lastWriteTime)
         {
             return ((delegate* unmanaged<IDWriteLocalFontFileLoader*, void*, uint, FILETIME*, int>)(lpVtbl[6]))((IDWriteLocalFontFileLoader*)Unsafe.AsPointer(ref this), fontFileReferenceKey, fontFileReferenceKeySize, lastWriteTime);
+        }
+
+        public interface Interface : IDWriteFontFileLoader.Interface
+        {
+            [VtblIndex(4)]
+            HRESULT GetFilePathLengthFromKey([NativeTypeName("const void *")] void* fontFileReferenceKey, [NativeTypeName("UINT32")] uint fontFileReferenceKeySize, [NativeTypeName("UINT32 *")] uint* filePathLength);
+
+            [VtblIndex(5)]
+            HRESULT GetFilePathFromKey([NativeTypeName("const void *")] void* fontFileReferenceKey, [NativeTypeName("UINT32")] uint fontFileReferenceKeySize, [NativeTypeName("WCHAR *")] ushort* filePath, [NativeTypeName("UINT32")] uint filePathSize);
+
+            [VtblIndex(6)]
+            HRESULT GetLastWriteTimeFromKey([NativeTypeName("const void *")] void* fontFileReferenceKey, [NativeTypeName("UINT32")] uint fontFileReferenceKeySize, FILETIME* lastWriteTime);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDWriteLocalFontFileLoader*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDWriteLocalFontFileLoader*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDWriteLocalFontFileLoader*, uint> Release;
+
+            [NativeTypeName("HRESULT (const void *, UINT32, IDWriteFontFileStream **) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDWriteLocalFontFileLoader*, void*, uint, IDWriteFontFileStream**, int> CreateStreamFromKey;
+
+            [NativeTypeName("HRESULT (const void *, UINT32, UINT32 *) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDWriteLocalFontFileLoader*, void*, uint, uint*, int> GetFilePathLengthFromKey;
+
+            [NativeTypeName("HRESULT (const void *, UINT32, WCHAR *, UINT32) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDWriteLocalFontFileLoader*, void*, uint, ushort*, uint, int> GetFilePathFromKey;
+
+            [NativeTypeName("HRESULT (const void *, UINT32, FILETIME *) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDWriteLocalFontFileLoader*, void*, uint, FILETIME*, int> GetLastWriteTimeFromKey;
         }
     }
 }

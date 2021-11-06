@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("0E79C6E0-85A0-4BE8-B41A-655CF1FD19BD")]
     [NativeTypeName("struct IVisualTreeService3 : IVisualTreeService2")]
     [NativeInheritance("IVisualTreeService2")]
-    public unsafe partial struct IVisualTreeService3
+    public unsafe partial struct IVisualTreeService3 : IVisualTreeService3.Interface
     {
         public void** lpVtbl;
 
@@ -177,6 +177,93 @@ namespace TerraFX.Interop
         public HRESULT RemoveDictionaryItem(InstanceHandle dictionaryHandle, InstanceHandle resourceKey)
         {
             return ((delegate* unmanaged<IVisualTreeService3*, InstanceHandle, InstanceHandle, int>)(lpVtbl[22]))((IVisualTreeService3*)Unsafe.AsPointer(ref this), dictionaryHandle, resourceKey);
+        }
+
+        public interface Interface : IVisualTreeService2.Interface
+        {
+            [VtblIndex(19)]
+            HRESULT ResolveResource(InstanceHandle resourceContext, [NativeTypeName("LPCWSTR")] ushort* resourceName, ResourceType resourceType, [NativeTypeName("unsigned int")] uint propertyIndex);
+
+            [VtblIndex(20)]
+            HRESULT GetDictionaryItem(InstanceHandle dictionaryHandle, [NativeTypeName("LPCWSTR")] ushort* resourceName, BOOL resourceIsImplicitStyle, InstanceHandle* resourceHandle);
+
+            [VtblIndex(21)]
+            HRESULT AddDictionaryItem(InstanceHandle dictionaryHandle, InstanceHandle resourceKey, InstanceHandle resourceHandle);
+
+            [VtblIndex(22)]
+            HRESULT RemoveDictionaryItem(InstanceHandle dictionaryHandle, InstanceHandle resourceKey);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IVisualTreeService3*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IVisualTreeService3*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IVisualTreeService3*, uint> Release;
+
+            [NativeTypeName("HRESULT (IVisualTreeServiceCallback *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IVisualTreeService3*, IVisualTreeServiceCallback*, int> AdviseVisualTreeChange;
+
+            [NativeTypeName("HRESULT (IVisualTreeServiceCallback *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IVisualTreeService3*, IVisualTreeServiceCallback*, int> UnadviseVisualTreeChange;
+
+            [NativeTypeName("HRESULT (unsigned int *, EnumType **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IVisualTreeService3*, uint*, EnumType**, int> GetEnums;
+
+            [NativeTypeName("HRESULT (BSTR, BSTR, InstanceHandle *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IVisualTreeService3*, ushort*, ushort*, InstanceHandle*, int> CreateInstance;
+
+            [NativeTypeName("HRESULT (InstanceHandle, unsigned int *, PropertyChainSource **, unsigned int *, PropertyChainValue **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IVisualTreeService3*, InstanceHandle, uint*, PropertyChainSource**, uint*, PropertyChainValue**, int> GetPropertyValuesChain;
+
+            [NativeTypeName("HRESULT (InstanceHandle, InstanceHandle, unsigned int) __attribute__((stdcall))")]
+            public delegate* unmanaged<IVisualTreeService3*, InstanceHandle, InstanceHandle, uint, int> SetProperty;
+
+            [NativeTypeName("HRESULT (InstanceHandle, unsigned int) __attribute__((stdcall))")]
+            public delegate* unmanaged<IVisualTreeService3*, InstanceHandle, uint, int> ClearProperty;
+
+            [NativeTypeName("HRESULT (InstanceHandle, unsigned int *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IVisualTreeService3*, InstanceHandle, uint*, int> GetCollectionCount;
+
+            [NativeTypeName("HRESULT (InstanceHandle, unsigned int, unsigned int *, CollectionElementValue **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IVisualTreeService3*, InstanceHandle, uint, uint*, CollectionElementValue**, int> GetCollectionElements;
+
+            [NativeTypeName("HRESULT (InstanceHandle, InstanceHandle, unsigned int) __attribute__((stdcall))")]
+            public delegate* unmanaged<IVisualTreeService3*, InstanceHandle, InstanceHandle, uint, int> AddChild;
+
+            [NativeTypeName("HRESULT (InstanceHandle, unsigned int) __attribute__((stdcall))")]
+            public delegate* unmanaged<IVisualTreeService3*, InstanceHandle, uint, int> RemoveChild;
+
+            [NativeTypeName("HRESULT (InstanceHandle) __attribute__((stdcall))")]
+            public delegate* unmanaged<IVisualTreeService3*, InstanceHandle, int> ClearChildren;
+
+            [NativeTypeName("HRESULT (InstanceHandle, LPCWSTR, unsigned int *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IVisualTreeService3*, InstanceHandle, ushort*, uint*, int> GetPropertyIndex;
+
+            [NativeTypeName("HRESULT (InstanceHandle, unsigned int, InstanceHandle *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IVisualTreeService3*, InstanceHandle, uint, InstanceHandle*, int> GetProperty;
+
+            [NativeTypeName("HRESULT (InstanceHandle, InstanceHandle, InstanceHandle) __attribute__((stdcall))")]
+            public delegate* unmanaged<IVisualTreeService3*, InstanceHandle, InstanceHandle, InstanceHandle, int> ReplaceResource;
+
+            [NativeTypeName("HRESULT (InstanceHandle, RenderTargetBitmapOptions, unsigned int, unsigned int, IBitmapData **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IVisualTreeService3*, InstanceHandle, RenderTargetBitmapOptions, uint, uint, IBitmapData**, int> RenderTargetBitmap;
+
+            [NativeTypeName("HRESULT (InstanceHandle, LPCWSTR, ResourceType, unsigned int) __attribute__((stdcall))")]
+            public delegate* unmanaged<IVisualTreeService3*, InstanceHandle, ushort*, ResourceType, uint, int> ResolveResource;
+
+            [NativeTypeName("HRESULT (InstanceHandle, LPCWSTR, BOOL, InstanceHandle *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IVisualTreeService3*, InstanceHandle, ushort*, BOOL, InstanceHandle*, int> GetDictionaryItem;
+
+            [NativeTypeName("HRESULT (InstanceHandle, InstanceHandle, InstanceHandle) __attribute__((stdcall))")]
+            public delegate* unmanaged<IVisualTreeService3*, InstanceHandle, InstanceHandle, InstanceHandle, int> AddDictionaryItem;
+
+            [NativeTypeName("HRESULT (InstanceHandle, InstanceHandle) __attribute__((stdcall))")]
+            public delegate* unmanaged<IVisualTreeService3*, InstanceHandle, InstanceHandle, int> RemoveDictionaryItem;
         }
     }
 }

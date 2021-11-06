@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("40A3D052-8BFF-4C4B-A338-D4A395700DE9")]
     [NativeTypeName("struct ISyncMgrResolutionHandler : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct ISyncMgrResolutionHandler
+    public unsafe partial struct ISyncMgrResolutionHandler : ISyncMgrResolutionHandler.Interface
     {
         public void** lpVtbl;
 
@@ -72,6 +72,51 @@ namespace TerraFX.Interop
         public HRESULT KeepItems(ISyncMgrConflictResolutionItems* pArray, SYNCMGR_RESOLUTION_FEEDBACK* pFeedback)
         {
             return ((delegate* unmanaged<ISyncMgrResolutionHandler*, ISyncMgrConflictResolutionItems*, SYNCMGR_RESOLUTION_FEEDBACK*, int>)(lpVtbl[7]))((ISyncMgrResolutionHandler*)Unsafe.AsPointer(ref this), pArray, pFeedback);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT QueryAbilities([NativeTypeName("SYNCMGR_RESOLUTION_ABILITIES_FLAGS *")] uint* pdwAbilities);
+
+            [VtblIndex(4)]
+            HRESULT KeepOther(IShellItem* psiOther, SYNCMGR_RESOLUTION_FEEDBACK* pFeedback);
+
+            [VtblIndex(5)]
+            HRESULT KeepRecent(SYNCMGR_RESOLUTION_FEEDBACK* pFeedback);
+
+            [VtblIndex(6)]
+            HRESULT RemoveFromSyncSet(SYNCMGR_RESOLUTION_FEEDBACK* pFeedback);
+
+            [VtblIndex(7)]
+            HRESULT KeepItems(ISyncMgrConflictResolutionItems* pArray, SYNCMGR_RESOLUTION_FEEDBACK* pFeedback);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISyncMgrResolutionHandler*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ISyncMgrResolutionHandler*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ISyncMgrResolutionHandler*, uint> Release;
+
+            [NativeTypeName("HRESULT (SYNCMGR_RESOLUTION_ABILITIES_FLAGS *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISyncMgrResolutionHandler*, uint*, int> QueryAbilities;
+
+            [NativeTypeName("HRESULT (IShellItem *, SYNCMGR_RESOLUTION_FEEDBACK *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISyncMgrResolutionHandler*, IShellItem*, SYNCMGR_RESOLUTION_FEEDBACK*, int> KeepOther;
+
+            [NativeTypeName("HRESULT (SYNCMGR_RESOLUTION_FEEDBACK *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISyncMgrResolutionHandler*, SYNCMGR_RESOLUTION_FEEDBACK*, int> KeepRecent;
+
+            [NativeTypeName("HRESULT (SYNCMGR_RESOLUTION_FEEDBACK *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISyncMgrResolutionHandler*, SYNCMGR_RESOLUTION_FEEDBACK*, int> RemoveFromSyncSet;
+
+            [NativeTypeName("HRESULT (ISyncMgrConflictResolutionItems *, SYNCMGR_RESOLUTION_FEEDBACK *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISyncMgrResolutionHandler*, ISyncMgrConflictResolutionItems*, SYNCMGR_RESOLUTION_FEEDBACK*, int> KeepItems;
         }
     }
 }

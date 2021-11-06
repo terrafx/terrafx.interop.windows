@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("30510469-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct IHTMLAttributeCollection3 : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct IHTMLAttributeCollection3
+    public unsafe partial struct IHTMLAttributeCollection3 : IHTMLAttributeCollection3.Interface
     {
         public void** lpVtbl;
 
@@ -100,6 +100,63 @@ namespace TerraFX.Interop
         public HRESULT get_length([NativeTypeName("long *")] int* p)
         {
             return ((delegate* unmanaged<IHTMLAttributeCollection3*, int*, int>)(lpVtbl[11]))((IHTMLAttributeCollection3*)Unsafe.AsPointer(ref this), p);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT getNamedItem([NativeTypeName("BSTR")] ushort* bstrName, IHTMLDOMAttribute** ppNodeOut);
+
+            [VtblIndex(8)]
+            HRESULT setNamedItem(IHTMLDOMAttribute* pNodeIn, IHTMLDOMAttribute** ppNodeOut);
+
+            [VtblIndex(9)]
+            HRESULT removeNamedItem([NativeTypeName("BSTR")] ushort* bstrName, IHTMLDOMAttribute** ppNodeOut);
+
+            [VtblIndex(10)]
+            HRESULT item([NativeTypeName("long")] int index, IHTMLDOMAttribute** ppNodeOut);
+
+            [VtblIndex(11)]
+            HRESULT get_length([NativeTypeName("long *")] int* p);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLAttributeCollection3*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLAttributeCollection3*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLAttributeCollection3*, uint> Release;
+
+            [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLAttributeCollection3*, uint*, int> GetTypeInfoCount;
+
+            [NativeTypeName("HRESULT (UINT, LCID, ITypeInfo **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLAttributeCollection3*, uint, uint, ITypeInfo**, int> GetTypeInfo;
+
+            [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLAttributeCollection3*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+
+            [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLAttributeCollection3*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
+
+            [NativeTypeName("HRESULT (BSTR, IHTMLDOMAttribute **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLAttributeCollection3*, ushort*, IHTMLDOMAttribute**, int> getNamedItem;
+
+            [NativeTypeName("HRESULT (IHTMLDOMAttribute *, IHTMLDOMAttribute **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLAttributeCollection3*, IHTMLDOMAttribute*, IHTMLDOMAttribute**, int> setNamedItem;
+
+            [NativeTypeName("HRESULT (BSTR, IHTMLDOMAttribute **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLAttributeCollection3*, ushort*, IHTMLDOMAttribute**, int> removeNamedItem;
+
+            [NativeTypeName("HRESULT (long, IHTMLDOMAttribute **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLAttributeCollection3*, int, IHTMLDOMAttribute**, int> item;
+
+            [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLAttributeCollection3*, int*, int> get_length;
         }
     }
 }

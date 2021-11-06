@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("A724B056-1B2E-4642-A6F3-DB9420C52908")]
     [NativeTypeName("struct IMFMediaEngineSupportsSourceTransfer : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IMFMediaEngineSupportsSourceTransfer
+    public unsafe partial struct IMFMediaEngineSupportsSourceTransfer : IMFMediaEngineSupportsSourceTransfer.Interface
     {
         public void** lpVtbl;
 
@@ -58,6 +58,39 @@ namespace TerraFX.Interop
         public HRESULT AttachMediaSource(IMFByteStream* pByteStream, IMFMediaSource* pMediaSource, IMFMediaSourceExtension* pMSE)
         {
             return ((delegate* unmanaged<IMFMediaEngineSupportsSourceTransfer*, IMFByteStream*, IMFMediaSource*, IMFMediaSourceExtension*, int>)(lpVtbl[5]))((IMFMediaEngineSupportsSourceTransfer*)Unsafe.AsPointer(ref this), pByteStream, pMediaSource, pMSE);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT ShouldTransferSource(BOOL* pfShouldTransfer);
+
+            [VtblIndex(4)]
+            HRESULT DetachMediaSource(IMFByteStream** ppByteStream, IMFMediaSource** ppMediaSource, IMFMediaSourceExtension** ppMSE);
+
+            [VtblIndex(5)]
+            HRESULT AttachMediaSource(IMFByteStream* pByteStream, IMFMediaSource* pMediaSource, IMFMediaSourceExtension* pMSE);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFMediaEngineSupportsSourceTransfer*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFMediaEngineSupportsSourceTransfer*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFMediaEngineSupportsSourceTransfer*, uint> Release;
+
+            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFMediaEngineSupportsSourceTransfer*, BOOL*, int> ShouldTransferSource;
+
+            [NativeTypeName("HRESULT (IMFByteStream **, IMFMediaSource **, IMFMediaSourceExtension **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFMediaEngineSupportsSourceTransfer*, IMFByteStream**, IMFMediaSource**, IMFMediaSourceExtension**, int> DetachMediaSource;
+
+            [NativeTypeName("HRESULT (IMFByteStream *, IMFMediaSource *, IMFMediaSourceExtension *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFMediaEngineSupportsSourceTransfer*, IMFByteStream*, IMFMediaSource*, IMFMediaSourceExtension*, int> AttachMediaSource;
         }
     }
 }

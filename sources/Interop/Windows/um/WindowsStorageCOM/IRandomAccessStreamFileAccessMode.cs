@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("332E5848-2E15-458E-85C4-C911C0C3D6F4")]
     [NativeTypeName("struct IRandomAccessStreamFileAccessMode : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IRandomAccessStreamFileAccessMode
+    public unsafe partial struct IRandomAccessStreamFileAccessMode : IRandomAccessStreamFileAccessMode.Interface
     {
         public void** lpVtbl;
 
@@ -44,6 +44,27 @@ namespace TerraFX.Interop
         public HRESULT GetMode([NativeTypeName("DWORD *")] uint* fileAccessMode)
         {
             return ((delegate* unmanaged<IRandomAccessStreamFileAccessMode*, uint*, int>)(lpVtbl[3]))((IRandomAccessStreamFileAccessMode*)Unsafe.AsPointer(ref this), fileAccessMode);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetMode([NativeTypeName("DWORD *")] uint* fileAccessMode);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IRandomAccessStreamFileAccessMode*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IRandomAccessStreamFileAccessMode*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IRandomAccessStreamFileAccessMode*, uint> Release;
+
+            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IRandomAccessStreamFileAccessMode*, uint*, int> GetMode;
         }
     }
 }

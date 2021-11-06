@@ -81,7 +81,6 @@ namespace TerraFX.Interop
             return GetType((uint)(object)index);
         }
 
-
         [return: NativeTypeName("UINT32")]
         public uint GetValueSize<U>(U index)
             where U : unmanaged

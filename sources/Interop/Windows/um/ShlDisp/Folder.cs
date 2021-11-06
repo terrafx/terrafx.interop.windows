@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("BBCBDE60-C3FF-11CE-8350-444553540000")]
     [NativeTypeName("struct Folder : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct Folder
+    public unsafe partial struct Folder : Folder.Interface
     {
         public void** lpVtbl;
 
@@ -135,6 +135,93 @@ namespace TerraFX.Interop
         public HRESULT GetDetailsOf(VARIANT vItem, int iColumn, [NativeTypeName("BSTR *")] ushort** pbs)
         {
             return ((delegate* unmanaged<Folder*, VARIANT, int, ushort**, int>)(lpVtbl[16]))((Folder*)Unsafe.AsPointer(ref this), vItem, iColumn, pbs);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT get_Title([NativeTypeName("BSTR *")] ushort** pbs);
+
+            [VtblIndex(8)]
+            HRESULT get_Application(IDispatch** ppid);
+
+            [VtblIndex(9)]
+            HRESULT get_Parent(IDispatch** ppid);
+
+            [VtblIndex(10)]
+            HRESULT get_ParentFolder(Folder** ppsf);
+
+            [VtblIndex(11)]
+            HRESULT Items(FolderItems** ppid);
+
+            [VtblIndex(12)]
+            HRESULT ParseName([NativeTypeName("BSTR")] ushort* bName, FolderItem** ppid);
+
+            [VtblIndex(13)]
+            HRESULT NewFolder([NativeTypeName("BSTR")] ushort* bName, VARIANT vOptions);
+
+            [VtblIndex(14)]
+            HRESULT MoveHere(VARIANT vItem, VARIANT vOptions);
+
+            [VtblIndex(15)]
+            HRESULT CopyHere(VARIANT vItem, VARIANT vOptions);
+
+            [VtblIndex(16)]
+            HRESULT GetDetailsOf(VARIANT vItem, int iColumn, [NativeTypeName("BSTR *")] ushort** pbs);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<Folder*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<Folder*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<Folder*, uint> Release;
+
+            [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<Folder*, uint*, int> GetTypeInfoCount;
+
+            [NativeTypeName("HRESULT (UINT, LCID, ITypeInfo **) __attribute__((stdcall))")]
+            public delegate* unmanaged<Folder*, uint, uint, ITypeInfo**, int> GetTypeInfo;
+
+            [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
+            public delegate* unmanaged<Folder*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+
+            [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<Folder*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<Folder*, ushort**, int> get_Title;
+
+            [NativeTypeName("HRESULT (IDispatch **) __attribute__((stdcall))")]
+            public delegate* unmanaged<Folder*, IDispatch**, int> get_Application;
+
+            [NativeTypeName("HRESULT (IDispatch **) __attribute__((stdcall))")]
+            public delegate* unmanaged<Folder*, IDispatch**, int> get_Parent;
+
+            [NativeTypeName("HRESULT (Folder **) __attribute__((stdcall))")]
+            public delegate* unmanaged<Folder*, Folder**, int> get_ParentFolder;
+
+            [NativeTypeName("HRESULT (FolderItems **) __attribute__((stdcall))")]
+            public delegate* unmanaged<Folder*, FolderItems**, int> Items;
+
+            [NativeTypeName("HRESULT (BSTR, FolderItem **) __attribute__((stdcall))")]
+            public delegate* unmanaged<Folder*, ushort*, FolderItem**, int> ParseName;
+
+            [NativeTypeName("HRESULT (BSTR, VARIANT) __attribute__((stdcall))")]
+            public delegate* unmanaged<Folder*, ushort*, VARIANT, int> NewFolder;
+
+            [NativeTypeName("HRESULT (VARIANT, VARIANT) __attribute__((stdcall))")]
+            public delegate* unmanaged<Folder*, VARIANT, VARIANT, int> MoveHere;
+
+            [NativeTypeName("HRESULT (VARIANT, VARIANT) __attribute__((stdcall))")]
+            public delegate* unmanaged<Folder*, VARIANT, VARIANT, int> CopyHere;
+
+            [NativeTypeName("HRESULT (VARIANT, int, BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<Folder*, VARIANT, int, ushort**, int> GetDetailsOf;
         }
     }
 }

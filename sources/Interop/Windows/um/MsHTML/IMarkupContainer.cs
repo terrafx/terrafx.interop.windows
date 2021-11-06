@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("3050F5F9-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct IMarkupContainer : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IMarkupContainer
+    public unsafe partial struct IMarkupContainer : IMarkupContainer.Interface
     {
         public void** lpVtbl;
 
@@ -44,6 +44,27 @@ namespace TerraFX.Interop
         public HRESULT OwningDoc(IHTMLDocument2** ppDoc)
         {
             return ((delegate* unmanaged<IMarkupContainer*, IHTMLDocument2**, int>)(lpVtbl[3]))((IMarkupContainer*)Unsafe.AsPointer(ref this), ppDoc);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT OwningDoc(IHTMLDocument2** ppDoc);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMarkupContainer*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMarkupContainer*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMarkupContainer*, uint> Release;
+
+            [NativeTypeName("HRESULT (IHTMLDocument2 **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMarkupContainer*, IHTMLDocument2**, int> OwningDoc;
         }
     }
 }

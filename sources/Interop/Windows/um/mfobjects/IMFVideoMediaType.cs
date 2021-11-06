@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("B99F381F-A8F9-47A2-A5AF-CA3A225A3890")]
     [NativeTypeName("struct IMFVideoMediaType : IMFMediaType")]
     [NativeInheritance("IMFMediaType")]
-    public unsafe partial struct IMFVideoMediaType
+    public unsafe partial struct IMFVideoMediaType : IMFVideoMediaType.Interface
     {
         public void** lpVtbl;
 
@@ -297,6 +297,139 @@ namespace TerraFX.Interop
         public HRESULT GetVideoRepresentation(Guid guidRepresentation, [NativeTypeName("LPVOID *")] void** ppvRepresentation, [NativeTypeName("LONG")] int lStride)
         {
             return ((delegate* unmanaged<IMFVideoMediaType*, Guid, void**, int, int>)(lpVtbl[39]))((IMFVideoMediaType*)Unsafe.AsPointer(ref this), guidRepresentation, ppvRepresentation, lStride);
+        }
+
+        public interface Interface : IMFMediaType.Interface
+        {
+            [VtblIndex(38)]
+            [return: NativeTypeName("const MFVIDEOFORMAT *")]
+            MFVIDEOFORMAT* GetVideoFormat();
+
+            [VtblIndex(39)]
+            HRESULT GetVideoRepresentation(Guid guidRepresentation, [NativeTypeName("LPVOID *")] void** ppvRepresentation, [NativeTypeName("LONG")] int lStride);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFVideoMediaType*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFVideoMediaType*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFVideoMediaType*, uint> Release;
+
+            [NativeTypeName("HRESULT (const GUID &, PROPVARIANT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFVideoMediaType*, Guid*, PROPVARIANT*, int> GetItem;
+
+            [NativeTypeName("HRESULT (const GUID &, MF_ATTRIBUTE_TYPE *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFVideoMediaType*, Guid*, MF_ATTRIBUTE_TYPE*, int> GetItemType;
+
+            [NativeTypeName("HRESULT (const GUID &, const PROPVARIANT &, BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFVideoMediaType*, Guid*, PROPVARIANT*, BOOL*, int> CompareItem;
+
+            [NativeTypeName("HRESULT (IMFAttributes *, MF_ATTRIBUTES_MATCH_TYPE, BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFVideoMediaType*, IMFAttributes*, MF_ATTRIBUTES_MATCH_TYPE, BOOL*, int> Compare;
+
+            [NativeTypeName("HRESULT (const GUID &, UINT32 *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFVideoMediaType*, Guid*, uint*, int> GetUINT32;
+
+            [NativeTypeName("HRESULT (const GUID &, UINT64 *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFVideoMediaType*, Guid*, ulong*, int> GetUINT64;
+
+            [NativeTypeName("HRESULT (const GUID &, double *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFVideoMediaType*, Guid*, double*, int> GetDouble;
+
+            [NativeTypeName("HRESULT (const GUID &, GUID *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFVideoMediaType*, Guid*, Guid*, int> GetGUID;
+
+            [NativeTypeName("HRESULT (const GUID &, UINT32 *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFVideoMediaType*, Guid*, uint*, int> GetStringLength;
+
+            [NativeTypeName("HRESULT (const GUID &, LPWSTR, UINT32, UINT32 *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFVideoMediaType*, Guid*, ushort*, uint, uint*, int> GetString;
+
+            [NativeTypeName("HRESULT (const GUID &, LPWSTR *, UINT32 *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFVideoMediaType*, Guid*, ushort**, uint*, int> GetAllocatedString;
+
+            [NativeTypeName("HRESULT (const GUID &, UINT32 *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFVideoMediaType*, Guid*, uint*, int> GetBlobSize;
+
+            [NativeTypeName("HRESULT (const GUID &, UINT8 *, UINT32, UINT32 *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFVideoMediaType*, Guid*, byte*, uint, uint*, int> GetBlob;
+
+            [NativeTypeName("HRESULT (const GUID &, UINT8 **, UINT32 *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFVideoMediaType*, Guid*, byte**, uint*, int> GetAllocatedBlob;
+
+            [NativeTypeName("HRESULT (const GUID &, const IID &, LPVOID *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFVideoMediaType*, Guid*, Guid*, void**, int> GetUnknown;
+
+            [NativeTypeName("HRESULT (const GUID &, const PROPVARIANT &) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFVideoMediaType*, Guid*, PROPVARIANT*, int> SetItem;
+
+            [NativeTypeName("HRESULT (const GUID &) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFVideoMediaType*, Guid*, int> DeleteItem;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFVideoMediaType*, int> DeleteAllItems;
+
+            [NativeTypeName("HRESULT (const GUID &, UINT32) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFVideoMediaType*, Guid*, uint, int> SetUINT32;
+
+            [NativeTypeName("HRESULT (const GUID &, UINT64) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFVideoMediaType*, Guid*, ulong, int> SetUINT64;
+
+            [NativeTypeName("HRESULT (const GUID &, double) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFVideoMediaType*, Guid*, double, int> SetDouble;
+
+            [NativeTypeName("HRESULT (const GUID &, const GUID &) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFVideoMediaType*, Guid*, Guid*, int> SetGUID;
+
+            [NativeTypeName("HRESULT (const GUID &, LPCWSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFVideoMediaType*, Guid*, ushort*, int> SetString;
+
+            [NativeTypeName("HRESULT (const GUID &, const UINT8 *, UINT32) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFVideoMediaType*, Guid*, byte*, uint, int> SetBlob;
+
+            [NativeTypeName("HRESULT (const GUID &, IUnknown *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFVideoMediaType*, Guid*, IUnknown*, int> SetUnknown;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFVideoMediaType*, int> LockStore;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFVideoMediaType*, int> UnlockStore;
+
+            [NativeTypeName("HRESULT (UINT32 *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFVideoMediaType*, uint*, int> GetCount;
+
+            [NativeTypeName("HRESULT (UINT32, GUID *, PROPVARIANT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFVideoMediaType*, uint, Guid*, PROPVARIANT*, int> GetItemByIndex;
+
+            [NativeTypeName("HRESULT (IMFAttributes *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFVideoMediaType*, IMFAttributes*, int> CopyAllItems;
+
+            [NativeTypeName("HRESULT (GUID *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFVideoMediaType*, Guid*, int> GetMajorType;
+
+            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFVideoMediaType*, BOOL*, int> IsCompressedFormat;
+
+            [NativeTypeName("HRESULT (IMFMediaType *, DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFVideoMediaType*, IMFMediaType*, uint*, int> IsEqual;
+
+            [NativeTypeName("HRESULT (GUID, LPVOID *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFVideoMediaType*, Guid, void**, int> GetRepresentation;
+
+            [NativeTypeName("HRESULT (GUID, LPVOID) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFVideoMediaType*, Guid, void*, int> FreeRepresentation;
+
+            [NativeTypeName("const MFVIDEOFORMAT *() __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFVideoMediaType*, MFVIDEOFORMAT*> GetVideoFormat;
+
+            [NativeTypeName("HRESULT (GUID, LPVOID *, LONG) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFVideoMediaType*, Guid, void**, int, int> GetVideoRepresentation;
         }
     }
 }

@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("E37CEED7-340F-4514-9F4D-9C2AE026100B")]
     [NativeTypeName("struct IMFCaptureEngineOnSampleCallback2 : IMFCaptureEngineOnSampleCallback")]
     [NativeInheritance("IMFCaptureEngineOnSampleCallback")]
-    public unsafe partial struct IMFCaptureEngineOnSampleCallback2
+    public unsafe partial struct IMFCaptureEngineOnSampleCallback2 : IMFCaptureEngineOnSampleCallback2.Interface
     {
         public void** lpVtbl;
 
@@ -51,6 +51,30 @@ namespace TerraFX.Interop
         public HRESULT OnSynchronizedEvent(IMFMediaEvent* pEvent)
         {
             return ((delegate* unmanaged<IMFCaptureEngineOnSampleCallback2*, IMFMediaEvent*, int>)(lpVtbl[4]))((IMFCaptureEngineOnSampleCallback2*)Unsafe.AsPointer(ref this), pEvent);
+        }
+
+        public interface Interface : IMFCaptureEngineOnSampleCallback.Interface
+        {
+            [VtblIndex(4)]
+            HRESULT OnSynchronizedEvent(IMFMediaEvent* pEvent);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFCaptureEngineOnSampleCallback2*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFCaptureEngineOnSampleCallback2*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFCaptureEngineOnSampleCallback2*, uint> Release;
+
+            [NativeTypeName("HRESULT (IMFSample *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFCaptureEngineOnSampleCallback2*, IMFSample*, int> OnSample;
+
+            [NativeTypeName("HRESULT (IMFMediaEvent *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFCaptureEngineOnSampleCallback2*, IMFMediaEvent*, int> OnSynchronizedEvent;
         }
     }
 }

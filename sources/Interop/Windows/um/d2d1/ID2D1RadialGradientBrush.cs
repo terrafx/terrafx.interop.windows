@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("2CD906AC-12E2-11DC-9FED-001143A055F9")]
     [NativeTypeName("struct ID2D1RadialGradientBrush : ID2D1Brush")]
     [NativeInheritance("ID2D1Brush")]
-    public unsafe partial struct ID2D1RadialGradientBrush
+    public unsafe partial struct ID2D1RadialGradientBrush : ID2D1RadialGradientBrush.Interface
     {
         public void** lpVtbl;
 
@@ -139,6 +139,92 @@ namespace TerraFX.Interop
         public void GetGradientStopCollection(ID2D1GradientStopCollection** gradientStopCollection)
         {
             ((delegate* unmanaged<ID2D1RadialGradientBrush*, ID2D1GradientStopCollection**, void>)(lpVtbl[16]))((ID2D1RadialGradientBrush*)Unsafe.AsPointer(ref this), gradientStopCollection);
+        }
+
+        public interface Interface : ID2D1Brush.Interface
+        {
+            [VtblIndex(8)]
+            void SetCenter([NativeTypeName("D2D1_POINT_2F")] D2D_POINT_2F center);
+
+            [VtblIndex(9)]
+            void SetGradientOriginOffset([NativeTypeName("D2D1_POINT_2F")] D2D_POINT_2F gradientOriginOffset);
+
+            [VtblIndex(10)]
+            void SetRadiusX(float radiusX);
+
+            [VtblIndex(11)]
+            void SetRadiusY(float radiusY);
+
+            [VtblIndex(12)]
+            [return: NativeTypeName("D2D1_POINT_2F")]
+            D2D_POINT_2F GetCenter();
+
+            [VtblIndex(13)]
+            [return: NativeTypeName("D2D1_POINT_2F")]
+            D2D_POINT_2F GetGradientOriginOffset();
+
+            [VtblIndex(14)]
+            float GetRadiusX();
+
+            [VtblIndex(15)]
+            float GetRadiusY();
+
+            [VtblIndex(16)]
+            void GetGradientStopCollection(ID2D1GradientStopCollection** gradientStopCollection);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID2D1RadialGradientBrush*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ID2D1RadialGradientBrush*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ID2D1RadialGradientBrush*, uint> Release;
+
+            [NativeTypeName("void (ID2D1Factory **) const __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID2D1RadialGradientBrush*, ID2D1Factory**, void> GetFactory;
+
+            [NativeTypeName("void (FLOAT) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID2D1RadialGradientBrush*, float, void> SetOpacity;
+
+            [NativeTypeName("void (const D2D1_MATRIX_3X2_F *) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID2D1RadialGradientBrush*, D2D_MATRIX_3X2_F*, void> SetTransform;
+
+            [NativeTypeName("FLOAT () const __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID2D1RadialGradientBrush*, float> GetOpacity;
+
+            [NativeTypeName("void (D2D1_MATRIX_3X2_F *) const __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID2D1RadialGradientBrush*, D2D_MATRIX_3X2_F*, void> GetTransform;
+
+            [NativeTypeName("void (D2D1_POINT_2F) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID2D1RadialGradientBrush*, D2D_POINT_2F, void> SetCenter;
+
+            [NativeTypeName("void (D2D1_POINT_2F) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID2D1RadialGradientBrush*, D2D_POINT_2F, void> SetGradientOriginOffset;
+
+            [NativeTypeName("void (FLOAT) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID2D1RadialGradientBrush*, float, void> SetRadiusX;
+
+            [NativeTypeName("void (FLOAT) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID2D1RadialGradientBrush*, float, void> SetRadiusY;
+
+            [NativeTypeName("D2D1_POINT_2F () const __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID2D1RadialGradientBrush*, D2D_POINT_2F*, D2D_POINT_2F*> GetCenter;
+
+            [NativeTypeName("D2D1_POINT_2F () const __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID2D1RadialGradientBrush*, D2D_POINT_2F*, D2D_POINT_2F*> GetGradientOriginOffset;
+
+            [NativeTypeName("FLOAT () const __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID2D1RadialGradientBrush*, float> GetRadiusX;
+
+            [NativeTypeName("FLOAT () const __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID2D1RadialGradientBrush*, float> GetRadiusY;
+
+            [NativeTypeName("void (ID2D1GradientStopCollection **) const __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID2D1RadialGradientBrush*, ID2D1GradientStopCollection**, void> GetGradientStopCollection;
         }
     }
 }

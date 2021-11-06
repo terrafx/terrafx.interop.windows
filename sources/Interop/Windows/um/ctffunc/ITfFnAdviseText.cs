@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("3527268B-7D53-4DD9-92B7-7296AE461249")]
     [NativeTypeName("struct ITfFnAdviseText : ITfFunction")]
     [NativeInheritance("ITfFunction")]
-    public unsafe partial struct ITfFnAdviseText
+    public unsafe partial struct ITfFnAdviseText : ITfFnAdviseText.Interface
     {
         public void** lpVtbl;
 
@@ -58,6 +58,36 @@ namespace TerraFX.Interop
         public HRESULT OnLatticeUpdate(ITfRange* pRange, ITfLMLattice* pLattice)
         {
             return ((delegate* unmanaged<ITfFnAdviseText*, ITfRange*, ITfLMLattice*, int>)(lpVtbl[5]))((ITfFnAdviseText*)Unsafe.AsPointer(ref this), pRange, pLattice);
+        }
+
+        public interface Interface : ITfFunction.Interface
+        {
+            [VtblIndex(4)]
+            HRESULT OnTextUpdate(ITfRange* pRange, [NativeTypeName("const WCHAR *")] ushort* pchText, [NativeTypeName("LONG")] int cch);
+
+            [VtblIndex(5)]
+            HRESULT OnLatticeUpdate(ITfRange* pRange, ITfLMLattice* pLattice);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfFnAdviseText*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfFnAdviseText*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfFnAdviseText*, uint> Release;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfFnAdviseText*, ushort**, int> GetDisplayName;
+
+            [NativeTypeName("HRESULT (ITfRange *, const WCHAR *, LONG) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfFnAdviseText*, ITfRange*, ushort*, int, int> OnTextUpdate;
+
+            [NativeTypeName("HRESULT (ITfRange *, ITfLMLattice *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfFnAdviseText*, ITfRange*, ITfLMLattice*, int> OnLatticeUpdate;
         }
     }
 }

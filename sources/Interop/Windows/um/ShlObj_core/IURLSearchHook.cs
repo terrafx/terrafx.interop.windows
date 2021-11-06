@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("AC60F6A0-0FD9-11D0-99CB-00C04FD64497")]
     [NativeTypeName("struct IURLSearchHook : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IURLSearchHook
+    public unsafe partial struct IURLSearchHook : IURLSearchHook.Interface
     {
         public void** lpVtbl;
 
@@ -44,6 +44,27 @@ namespace TerraFX.Interop
         public HRESULT Translate([NativeTypeName("PWSTR")] ushort* pwszSearchURL, [NativeTypeName("DWORD")] uint cchBufferSize)
         {
             return ((delegate* unmanaged<IURLSearchHook*, ushort*, uint, int>)(lpVtbl[3]))((IURLSearchHook*)Unsafe.AsPointer(ref this), pwszSearchURL, cchBufferSize);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT Translate([NativeTypeName("PWSTR")] ushort* pwszSearchURL, [NativeTypeName("DWORD")] uint cchBufferSize);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IURLSearchHook*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IURLSearchHook*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IURLSearchHook*, uint> Release;
+
+            [NativeTypeName("HRESULT (PWSTR, DWORD) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IURLSearchHook*, ushort*, uint, int> Translate;
         }
     }
 }

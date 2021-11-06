@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("A714590A-58AF-430A-85BF-44F5EC838D85")]
     [NativeTypeName("struct IMFPMediaPlayer : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IMFPMediaPlayer
+    public unsafe partial struct IMFPMediaPlayer : IMFPMediaPlayer.Interface
     {
         public void** lpVtbl;
 
@@ -289,6 +289,237 @@ namespace TerraFX.Interop
         public HRESULT Shutdown()
         {
             return ((delegate* unmanaged<IMFPMediaPlayer*, int>)(lpVtbl[38]))((IMFPMediaPlayer*)Unsafe.AsPointer(ref this));
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT Play();
+
+            [VtblIndex(4)]
+            HRESULT Pause();
+
+            [VtblIndex(5)]
+            HRESULT Stop();
+
+            [VtblIndex(6)]
+            HRESULT FrameStep();
+
+            [VtblIndex(7)]
+            HRESULT SetPosition([NativeTypeName("const GUID &")] Guid* guidPositionType, [NativeTypeName("const PROPVARIANT *")] PROPVARIANT* pvPositionValue);
+
+            [VtblIndex(8)]
+            HRESULT GetPosition([NativeTypeName("const GUID &")] Guid* guidPositionType, PROPVARIANT* pvPositionValue);
+
+            [VtblIndex(9)]
+            HRESULT GetDuration([NativeTypeName("const GUID &")] Guid* guidPositionType, PROPVARIANT* pvDurationValue);
+
+            [VtblIndex(10)]
+            HRESULT SetRate(float flRate);
+
+            [VtblIndex(11)]
+            HRESULT GetRate(float* pflRate);
+
+            [VtblIndex(12)]
+            HRESULT GetSupportedRates(BOOL fForwardDirection, float* pflSlowestRate, float* pflFastestRate);
+
+            [VtblIndex(13)]
+            HRESULT GetState(MFP_MEDIAPLAYER_STATE* peState);
+
+            [VtblIndex(14)]
+            HRESULT CreateMediaItemFromURL([NativeTypeName("LPCWSTR")] ushort* pwszURL, BOOL fSync, [NativeTypeName("DWORD_PTR")] nuint dwUserData, IMFPMediaItem** ppMediaItem);
+
+            [VtblIndex(15)]
+            HRESULT CreateMediaItemFromObject(IUnknown* pIUnknownObj, BOOL fSync, [NativeTypeName("DWORD_PTR")] nuint dwUserData, IMFPMediaItem** ppMediaItem);
+
+            [VtblIndex(16)]
+            HRESULT SetMediaItem(IMFPMediaItem* pIMFPMediaItem);
+
+            [VtblIndex(17)]
+            HRESULT ClearMediaItem();
+
+            [VtblIndex(18)]
+            HRESULT GetMediaItem(IMFPMediaItem** ppIMFPMediaItem);
+
+            [VtblIndex(19)]
+            HRESULT GetVolume(float* pflVolume);
+
+            [VtblIndex(20)]
+            HRESULT SetVolume(float flVolume);
+
+            [VtblIndex(21)]
+            HRESULT GetBalance(float* pflBalance);
+
+            [VtblIndex(22)]
+            HRESULT SetBalance(float flBalance);
+
+            [VtblIndex(23)]
+            HRESULT GetMute(BOOL* pfMute);
+
+            [VtblIndex(24)]
+            HRESULT SetMute(BOOL fMute);
+
+            [VtblIndex(25)]
+            HRESULT GetNativeVideoSize(SIZE* pszVideo, SIZE* pszARVideo);
+
+            [VtblIndex(26)]
+            HRESULT GetIdealVideoSize(SIZE* pszMin, SIZE* pszMax);
+
+            [VtblIndex(27)]
+            HRESULT SetVideoSourceRect([NativeTypeName("const MFVideoNormalizedRect *")] MFVideoNormalizedRect* pnrcSource);
+
+            [VtblIndex(28)]
+            HRESULT GetVideoSourceRect(MFVideoNormalizedRect* pnrcSource);
+
+            [VtblIndex(29)]
+            HRESULT SetAspectRatioMode([NativeTypeName("DWORD")] uint dwAspectRatioMode);
+
+            [VtblIndex(30)]
+            HRESULT GetAspectRatioMode([NativeTypeName("DWORD *")] uint* pdwAspectRatioMode);
+
+            [VtblIndex(31)]
+            HRESULT GetVideoWindow(HWND* phwndVideo);
+
+            [VtblIndex(32)]
+            HRESULT UpdateVideo();
+
+            [VtblIndex(33)]
+            HRESULT SetBorderColor(COLORREF Clr);
+
+            [VtblIndex(34)]
+            HRESULT GetBorderColor(COLORREF* pClr);
+
+            [VtblIndex(35)]
+            HRESULT InsertEffect(IUnknown* pEffect, BOOL fOptional);
+
+            [VtblIndex(36)]
+            HRESULT RemoveEffect(IUnknown* pEffect);
+
+            [VtblIndex(37)]
+            HRESULT RemoveAllEffects();
+
+            [VtblIndex(38)]
+            HRESULT Shutdown();
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFPMediaPlayer*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFPMediaPlayer*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFPMediaPlayer*, uint> Release;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFPMediaPlayer*, int> Play;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFPMediaPlayer*, int> Pause;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFPMediaPlayer*, int> Stop;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFPMediaPlayer*, int> FrameStep;
+
+            [NativeTypeName("HRESULT (const GUID &, const PROPVARIANT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFPMediaPlayer*, Guid*, PROPVARIANT*, int> SetPosition;
+
+            [NativeTypeName("HRESULT (const GUID &, PROPVARIANT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFPMediaPlayer*, Guid*, PROPVARIANT*, int> GetPosition;
+
+            [NativeTypeName("HRESULT (const GUID &, PROPVARIANT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFPMediaPlayer*, Guid*, PROPVARIANT*, int> GetDuration;
+
+            [NativeTypeName("HRESULT (float) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFPMediaPlayer*, float, int> SetRate;
+
+            [NativeTypeName("HRESULT (float *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFPMediaPlayer*, float*, int> GetRate;
+
+            [NativeTypeName("HRESULT (BOOL, float *, float *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFPMediaPlayer*, BOOL, float*, float*, int> GetSupportedRates;
+
+            [NativeTypeName("HRESULT (MFP_MEDIAPLAYER_STATE *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFPMediaPlayer*, MFP_MEDIAPLAYER_STATE*, int> GetState;
+
+            [NativeTypeName("HRESULT (LPCWSTR, BOOL, DWORD_PTR, IMFPMediaItem **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFPMediaPlayer*, ushort*, BOOL, nuint, IMFPMediaItem**, int> CreateMediaItemFromURL;
+
+            [NativeTypeName("HRESULT (IUnknown *, BOOL, DWORD_PTR, IMFPMediaItem **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFPMediaPlayer*, IUnknown*, BOOL, nuint, IMFPMediaItem**, int> CreateMediaItemFromObject;
+
+            [NativeTypeName("HRESULT (IMFPMediaItem *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFPMediaPlayer*, IMFPMediaItem*, int> SetMediaItem;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFPMediaPlayer*, int> ClearMediaItem;
+
+            [NativeTypeName("HRESULT (IMFPMediaItem **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFPMediaPlayer*, IMFPMediaItem**, int> GetMediaItem;
+
+            [NativeTypeName("HRESULT (float *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFPMediaPlayer*, float*, int> GetVolume;
+
+            [NativeTypeName("HRESULT (float) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFPMediaPlayer*, float, int> SetVolume;
+
+            [NativeTypeName("HRESULT (float *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFPMediaPlayer*, float*, int> GetBalance;
+
+            [NativeTypeName("HRESULT (float) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFPMediaPlayer*, float, int> SetBalance;
+
+            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFPMediaPlayer*, BOOL*, int> GetMute;
+
+            [NativeTypeName("HRESULT (BOOL) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFPMediaPlayer*, BOOL, int> SetMute;
+
+            [NativeTypeName("HRESULT (SIZE *, SIZE *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFPMediaPlayer*, SIZE*, SIZE*, int> GetNativeVideoSize;
+
+            [NativeTypeName("HRESULT (SIZE *, SIZE *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFPMediaPlayer*, SIZE*, SIZE*, int> GetIdealVideoSize;
+
+            [NativeTypeName("HRESULT (const MFVideoNormalizedRect *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFPMediaPlayer*, MFVideoNormalizedRect*, int> SetVideoSourceRect;
+
+            [NativeTypeName("HRESULT (MFVideoNormalizedRect *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFPMediaPlayer*, MFVideoNormalizedRect*, int> GetVideoSourceRect;
+
+            [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFPMediaPlayer*, uint, int> SetAspectRatioMode;
+
+            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFPMediaPlayer*, uint*, int> GetAspectRatioMode;
+
+            [NativeTypeName("HRESULT (HWND *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFPMediaPlayer*, HWND*, int> GetVideoWindow;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFPMediaPlayer*, int> UpdateVideo;
+
+            [NativeTypeName("HRESULT (COLORREF) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFPMediaPlayer*, COLORREF, int> SetBorderColor;
+
+            [NativeTypeName("HRESULT (COLORREF *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFPMediaPlayer*, COLORREF*, int> GetBorderColor;
+
+            [NativeTypeName("HRESULT (IUnknown *, BOOL) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFPMediaPlayer*, IUnknown*, BOOL, int> InsertEffect;
+
+            [NativeTypeName("HRESULT (IUnknown *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFPMediaPlayer*, IUnknown*, int> RemoveEffect;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFPMediaPlayer*, int> RemoveAllEffects;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFPMediaPlayer*, int> Shutdown;
         }
     }
 }

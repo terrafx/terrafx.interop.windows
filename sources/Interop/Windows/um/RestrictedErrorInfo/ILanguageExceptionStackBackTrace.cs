@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("CBE53FB5-F967-4258-8D34-42F5E25833DE")]
     [NativeTypeName("struct ILanguageExceptionStackBackTrace : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct ILanguageExceptionStackBackTrace
+    public unsafe partial struct ILanguageExceptionStackBackTrace : ILanguageExceptionStackBackTrace.Interface
     {
         public void** lpVtbl;
 
@@ -44,6 +44,27 @@ namespace TerraFX.Interop
         public HRESULT GetStackBackTrace([NativeTypeName("ULONG")] uint maxFramesToCapture, [NativeTypeName("UINT_PTR []")] nuint* stackBackTrace, [NativeTypeName("ULONG *")] uint* framesCaptured)
         {
             return ((delegate* unmanaged<ILanguageExceptionStackBackTrace*, uint, nuint*, uint*, int>)(lpVtbl[3]))((ILanguageExceptionStackBackTrace*)Unsafe.AsPointer(ref this), maxFramesToCapture, stackBackTrace, framesCaptured);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetStackBackTrace([NativeTypeName("ULONG")] uint maxFramesToCapture, [NativeTypeName("UINT_PTR []")] nuint* stackBackTrace, [NativeTypeName("ULONG *")] uint* framesCaptured);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ILanguageExceptionStackBackTrace*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ILanguageExceptionStackBackTrace*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ILanguageExceptionStackBackTrace*, uint> Release;
+
+            [NativeTypeName("HRESULT (ULONG, UINT_PTR *, ULONG *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ILanguageExceptionStackBackTrace*, uint, nuint*, uint*, int> GetStackBackTrace;
         }
     }
 }

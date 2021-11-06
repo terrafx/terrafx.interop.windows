@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("3B22BCBF-2586-4AF0-8583-205D391B807C")]
     [NativeTypeName("struct IDeviceSpecificProperty : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IDeviceSpecificProperty
+    public unsafe partial struct IDeviceSpecificProperty : IDeviceSpecificProperty.Interface
     {
         public void** lpVtbl;
 
@@ -65,6 +65,45 @@ namespace TerraFX.Interop
         public HRESULT Get4BRange([NativeTypeName("LONG *")] int* plMin, [NativeTypeName("LONG *")] int* plMax, [NativeTypeName("LONG *")] int* plStepping)
         {
             return ((delegate* unmanaged<IDeviceSpecificProperty*, int*, int*, int*, int>)(lpVtbl[6]))((IDeviceSpecificProperty*)Unsafe.AsPointer(ref this), plMin, plMax, plStepping);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetType([NativeTypeName("VARTYPE *")] ushort* pVType);
+
+            [VtblIndex(4)]
+            HRESULT GetValue(void* pvValue, [NativeTypeName("DWORD *")] uint* pcbValue);
+
+            [VtblIndex(5)]
+            HRESULT SetValue(void* pvValue, [NativeTypeName("DWORD")] uint cbValue, [NativeTypeName("LPCGUID")] Guid* pguidEventContext);
+
+            [VtblIndex(6)]
+            HRESULT Get4BRange([NativeTypeName("LONG *")] int* plMin, [NativeTypeName("LONG *")] int* plMax, [NativeTypeName("LONG *")] int* plStepping);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDeviceSpecificProperty*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDeviceSpecificProperty*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDeviceSpecificProperty*, uint> Release;
+
+            [NativeTypeName("HRESULT (VARTYPE *) __attribute__((stdcall))")]
+            public new delegate* unmanaged<IDeviceSpecificProperty*, ushort*, int> GetType;
+
+            [NativeTypeName("HRESULT (void *, DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDeviceSpecificProperty*, void*, uint*, int> GetValue;
+
+            [NativeTypeName("HRESULT (void *, DWORD, LPCGUID) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDeviceSpecificProperty*, void*, uint, Guid*, int> SetValue;
+
+            [NativeTypeName("HRESULT (LONG *, LONG *, LONG *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDeviceSpecificProperty*, int*, int*, int*, int> Get4BRange;
         }
     }
 }

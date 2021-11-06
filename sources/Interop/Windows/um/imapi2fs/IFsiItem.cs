@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("2C941FD9-975B-59BE-A960-9A2A262853A5")]
     [NativeTypeName("struct IFsiItem : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct IFsiItem
+    public unsafe partial struct IFsiItem : IFsiItem.Interface
     {
         public void** lpVtbl;
 
@@ -149,6 +149,105 @@ namespace TerraFX.Interop
         public HRESULT FileSystemPath(FsiFileSystems fileSystem, [NativeTypeName("BSTR *")] ushort** pVal)
         {
             return ((delegate* unmanaged<IFsiItem*, FsiFileSystems, ushort**, int>)(lpVtbl[18]))((IFsiItem*)Unsafe.AsPointer(ref this), fileSystem, pVal);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT get_Name([NativeTypeName("BSTR *")] ushort** pVal);
+
+            [VtblIndex(8)]
+            HRESULT get_FullPath([NativeTypeName("BSTR *")] ushort** pVal);
+
+            [VtblIndex(9)]
+            HRESULT get_CreationTime([NativeTypeName("DATE *")] double* pVal);
+
+            [VtblIndex(10)]
+            HRESULT put_CreationTime([NativeTypeName("DATE")] double newVal);
+
+            [VtblIndex(11)]
+            HRESULT get_LastAccessedTime([NativeTypeName("DATE *")] double* pVal);
+
+            [VtblIndex(12)]
+            HRESULT put_LastAccessedTime([NativeTypeName("DATE")] double newVal);
+
+            [VtblIndex(13)]
+            HRESULT get_LastModifiedTime([NativeTypeName("DATE *")] double* pVal);
+
+            [VtblIndex(14)]
+            HRESULT put_LastModifiedTime([NativeTypeName("DATE")] double newVal);
+
+            [VtblIndex(15)]
+            HRESULT get_IsHidden([NativeTypeName("VARIANT_BOOL *")] short* pVal);
+
+            [VtblIndex(16)]
+            HRESULT put_IsHidden([NativeTypeName("VARIANT_BOOL")] short newVal);
+
+            [VtblIndex(17)]
+            HRESULT FileSystemName(FsiFileSystems fileSystem, [NativeTypeName("BSTR *")] ushort** pVal);
+
+            [VtblIndex(18)]
+            HRESULT FileSystemPath(FsiFileSystems fileSystem, [NativeTypeName("BSTR *")] ushort** pVal);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFsiItem*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IFsiItem*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IFsiItem*, uint> Release;
+
+            [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFsiItem*, uint*, int> GetTypeInfoCount;
+
+            [NativeTypeName("HRESULT (UINT, LCID, ITypeInfo **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFsiItem*, uint, uint, ITypeInfo**, int> GetTypeInfo;
+
+            [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFsiItem*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+
+            [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFsiItem*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFsiItem*, ushort**, int> get_Name;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFsiItem*, ushort**, int> get_FullPath;
+
+            [NativeTypeName("HRESULT (DATE *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFsiItem*, double*, int> get_CreationTime;
+
+            [NativeTypeName("HRESULT (DATE) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFsiItem*, double, int> put_CreationTime;
+
+            [NativeTypeName("HRESULT (DATE *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFsiItem*, double*, int> get_LastAccessedTime;
+
+            [NativeTypeName("HRESULT (DATE) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFsiItem*, double, int> put_LastAccessedTime;
+
+            [NativeTypeName("HRESULT (DATE *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFsiItem*, double*, int> get_LastModifiedTime;
+
+            [NativeTypeName("HRESULT (DATE) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFsiItem*, double, int> put_LastModifiedTime;
+
+            [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFsiItem*, short*, int> get_IsHidden;
+
+            [NativeTypeName("HRESULT (VARIANT_BOOL) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFsiItem*, short, int> put_IsHidden;
+
+            [NativeTypeName("HRESULT (FsiFileSystems, BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFsiItem*, FsiFileSystems, ushort**, int> FileSystemName;
+
+            [NativeTypeName("HRESULT (FsiFileSystems, BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFsiItem*, FsiFileSystems, ushort**, int> FileSystemPath;
         }
     }
 }

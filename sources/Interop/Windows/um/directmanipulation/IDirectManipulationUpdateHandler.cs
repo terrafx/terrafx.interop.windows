@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("790B6337-64F8-4FF5-A269-B32BC2AF27A7")]
     [NativeTypeName("struct IDirectManipulationUpdateHandler : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IDirectManipulationUpdateHandler
+    public unsafe partial struct IDirectManipulationUpdateHandler : IDirectManipulationUpdateHandler.Interface
     {
         public void** lpVtbl;
 
@@ -44,6 +44,27 @@ namespace TerraFX.Interop
         public HRESULT Update()
         {
             return ((delegate* unmanaged<IDirectManipulationUpdateHandler*, int>)(lpVtbl[3]))((IDirectManipulationUpdateHandler*)Unsafe.AsPointer(ref this));
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT Update();
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDirectManipulationUpdateHandler*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDirectManipulationUpdateHandler*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDirectManipulationUpdateHandler*, uint> Release;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDirectManipulationUpdateHandler*, int> Update;
         }
     }
 }

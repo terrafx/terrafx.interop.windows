@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("A7ABA9C1-8983-11CF-8F20-00805F2CD064")]
     [NativeTypeName("struct IProvideMultipleClassInfo : IProvideClassInfo2")]
     [NativeInheritance("IProvideClassInfo2")]
-    public unsafe partial struct IProvideMultipleClassInfo
+    public unsafe partial struct IProvideMultipleClassInfo : IProvideMultipleClassInfo.Interface
     {
         public void** lpVtbl;
 
@@ -65,6 +65,39 @@ namespace TerraFX.Interop
         public HRESULT GetInfoOfIndex([NativeTypeName("ULONG")] uint iti, [NativeTypeName("DWORD")] uint dwFlags, ITypeInfo** pptiCoClass, [NativeTypeName("DWORD *")] uint* pdwTIFlags, [NativeTypeName("ULONG *")] uint* pcdispidReserved, [NativeTypeName("IID *")] Guid* piidPrimary, [NativeTypeName("IID *")] Guid* piidSource)
         {
             return ((delegate* unmanaged<IProvideMultipleClassInfo*, uint, uint, ITypeInfo**, uint*, uint*, Guid*, Guid*, int>)(lpVtbl[6]))((IProvideMultipleClassInfo*)Unsafe.AsPointer(ref this), iti, dwFlags, pptiCoClass, pdwTIFlags, pcdispidReserved, piidPrimary, piidSource);
+        }
+
+        public interface Interface : IProvideClassInfo2.Interface
+        {
+            [VtblIndex(5)]
+            HRESULT GetMultiTypeInfoCount([NativeTypeName("ULONG *")] uint* pcti);
+
+            [VtblIndex(6)]
+            HRESULT GetInfoOfIndex([NativeTypeName("ULONG")] uint iti, [NativeTypeName("DWORD")] uint dwFlags, ITypeInfo** pptiCoClass, [NativeTypeName("DWORD *")] uint* pdwTIFlags, [NativeTypeName("ULONG *")] uint* pcdispidReserved, [NativeTypeName("IID *")] Guid* piidPrimary, [NativeTypeName("IID *")] Guid* piidSource);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IProvideMultipleClassInfo*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IProvideMultipleClassInfo*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IProvideMultipleClassInfo*, uint> Release;
+
+            [NativeTypeName("HRESULT (ITypeInfo **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IProvideMultipleClassInfo*, ITypeInfo**, int> GetClassInfo;
+
+            [NativeTypeName("HRESULT (DWORD, GUID *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IProvideMultipleClassInfo*, uint, Guid*, int> GetGUID;
+
+            [NativeTypeName("HRESULT (ULONG *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IProvideMultipleClassInfo*, uint*, int> GetMultiTypeInfoCount;
+
+            [NativeTypeName("HRESULT (ULONG, DWORD, ITypeInfo **, DWORD *, ULONG *, IID *, IID *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IProvideMultipleClassInfo*, uint, uint, ITypeInfo**, uint*, uint*, Guid*, Guid*, int> GetInfoOfIndex;
         }
     }
 }

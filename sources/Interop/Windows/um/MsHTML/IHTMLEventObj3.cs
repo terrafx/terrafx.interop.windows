@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("3050F680-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct IHTMLEventObj3 : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct IHTMLEventObj3
+    public unsafe partial struct IHTMLEventObj3 : IHTMLEventObj3.Interface
     {
         public void** lpVtbl;
 
@@ -177,6 +177,129 @@ namespace TerraFX.Interop
         public HRESULT get_nextPage([NativeTypeName("BSTR *")] ushort** p)
         {
             return ((delegate* unmanaged<IHTMLEventObj3*, ushort**, int>)(lpVtbl[22]))((IHTMLEventObj3*)Unsafe.AsPointer(ref this), p);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT get_contentOverflow([NativeTypeName("VARIANT_BOOL *")] short* p);
+
+            [VtblIndex(8)]
+            HRESULT put_shiftLeft([NativeTypeName("VARIANT_BOOL")] short v);
+
+            [VtblIndex(9)]
+            HRESULT get_shiftLeft([NativeTypeName("VARIANT_BOOL *")] short* p);
+
+            [VtblIndex(10)]
+            HRESULT put_altLeft([NativeTypeName("VARIANT_BOOL")] short v);
+
+            [VtblIndex(11)]
+            HRESULT get_altLeft([NativeTypeName("VARIANT_BOOL *")] short* p);
+
+            [VtblIndex(12)]
+            HRESULT put_ctrlLeft([NativeTypeName("VARIANT_BOOL")] short v);
+
+            [VtblIndex(13)]
+            HRESULT get_ctrlLeft([NativeTypeName("VARIANT_BOOL *")] short* p);
+
+            [VtblIndex(14)]
+            HRESULT get_imeCompositionChange([NativeTypeName("LONG_PTR *")] nint* p);
+
+            [VtblIndex(15)]
+            HRESULT get_imeNotifyCommand([NativeTypeName("LONG_PTR *")] nint* p);
+
+            [VtblIndex(16)]
+            HRESULT get_imeNotifyData([NativeTypeName("LONG_PTR *")] nint* p);
+
+            [VtblIndex(17)]
+            HRESULT get_imeRequest([NativeTypeName("LONG_PTR *")] nint* p);
+
+            [VtblIndex(18)]
+            HRESULT get_imeRequestData([NativeTypeName("LONG_PTR *")] nint* p);
+
+            [VtblIndex(19)]
+            HRESULT get_keyboardLayout([NativeTypeName("LONG_PTR *")] nint* p);
+
+            [VtblIndex(20)]
+            HRESULT get_behaviorCookie([NativeTypeName("long *")] int* p);
+
+            [VtblIndex(21)]
+            HRESULT get_behaviorPart([NativeTypeName("long *")] int* p);
+
+            [VtblIndex(22)]
+            HRESULT get_nextPage([NativeTypeName("BSTR *")] ushort** p);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLEventObj3*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLEventObj3*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLEventObj3*, uint> Release;
+
+            [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLEventObj3*, uint*, int> GetTypeInfoCount;
+
+            [NativeTypeName("HRESULT (UINT, LCID, ITypeInfo **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLEventObj3*, uint, uint, ITypeInfo**, int> GetTypeInfo;
+
+            [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLEventObj3*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+
+            [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLEventObj3*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
+
+            [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLEventObj3*, short*, int> get_contentOverflow;
+
+            [NativeTypeName("HRESULT (VARIANT_BOOL) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLEventObj3*, short, int> put_shiftLeft;
+
+            [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLEventObj3*, short*, int> get_shiftLeft;
+
+            [NativeTypeName("HRESULT (VARIANT_BOOL) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLEventObj3*, short, int> put_altLeft;
+
+            [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLEventObj3*, short*, int> get_altLeft;
+
+            [NativeTypeName("HRESULT (VARIANT_BOOL) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLEventObj3*, short, int> put_ctrlLeft;
+
+            [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLEventObj3*, short*, int> get_ctrlLeft;
+
+            [NativeTypeName("HRESULT (LONG_PTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLEventObj3*, nint*, int> get_imeCompositionChange;
+
+            [NativeTypeName("HRESULT (LONG_PTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLEventObj3*, nint*, int> get_imeNotifyCommand;
+
+            [NativeTypeName("HRESULT (LONG_PTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLEventObj3*, nint*, int> get_imeNotifyData;
+
+            [NativeTypeName("HRESULT (LONG_PTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLEventObj3*, nint*, int> get_imeRequest;
+
+            [NativeTypeName("HRESULT (LONG_PTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLEventObj3*, nint*, int> get_imeRequestData;
+
+            [NativeTypeName("HRESULT (LONG_PTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLEventObj3*, nint*, int> get_keyboardLayout;
+
+            [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLEventObj3*, int*, int> get_behaviorCookie;
+
+            [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLEventObj3*, int*, int> get_behaviorPart;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLEventObj3*, ushort**, int> get_nextPage;
         }
     }
 }

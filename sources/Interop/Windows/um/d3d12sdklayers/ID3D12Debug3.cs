@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("5CF4E58F-F671-4FF1-A542-3686E3D153D1")]
     [NativeTypeName("struct ID3D12Debug3 : ID3D12Debug")]
     [NativeInheritance("ID3D12Debug")]
-    public unsafe partial struct ID3D12Debug3
+    public unsafe partial struct ID3D12Debug3 : ID3D12Debug3.Interface
     {
         public void** lpVtbl;
 
@@ -65,6 +65,42 @@ namespace TerraFX.Interop
         public void SetGPUBasedValidationFlags(D3D12_GPU_BASED_VALIDATION_FLAGS Flags)
         {
             ((delegate* unmanaged<ID3D12Debug3*, D3D12_GPU_BASED_VALIDATION_FLAGS, void>)(lpVtbl[6]))((ID3D12Debug3*)Unsafe.AsPointer(ref this), Flags);
+        }
+
+        public interface Interface : ID3D12Debug.Interface
+        {
+            [VtblIndex(4)]
+            void SetEnableGPUBasedValidation(BOOL Enable);
+
+            [VtblIndex(5)]
+            void SetEnableSynchronizedCommandQueueValidation(BOOL Enable);
+
+            [VtblIndex(6)]
+            void SetGPUBasedValidationFlags(D3D12_GPU_BASED_VALIDATION_FLAGS Flags);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D12Debug3*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D12Debug3*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D12Debug3*, uint> Release;
+
+            [NativeTypeName("void () __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D12Debug3*, void> EnableDebugLayer;
+
+            [NativeTypeName("void (BOOL) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D12Debug3*, BOOL, void> SetEnableGPUBasedValidation;
+
+            [NativeTypeName("void (BOOL) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D12Debug3*, BOOL, void> SetEnableSynchronizedCommandQueueValidation;
+
+            [NativeTypeName("void (D3D12_GPU_BASED_VALIDATION_FLAGS) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D12Debug3*, D3D12_GPU_BASED_VALIDATION_FLAGS, void> SetGPUBasedValidationFlags;
         }
     }
 }

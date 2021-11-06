@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("CA724E8A-C3E6-442B-88A4-6FB0DB8035A3")]
     [NativeTypeName("struct IPropertySystem : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IPropertySystem
+    public unsafe partial struct IPropertySystem : IPropertySystem.Interface
     {
         public void** lpVtbl;
 
@@ -100,6 +100,75 @@ namespace TerraFX.Interop
         public HRESULT RefreshPropertySchema()
         {
             return ((delegate* unmanaged<IPropertySystem*, int>)(lpVtbl[11]))((IPropertySystem*)Unsafe.AsPointer(ref this));
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetPropertyDescription([NativeTypeName("const PROPERTYKEY &")] PROPERTYKEY* propkey, [NativeTypeName("const IID &")] Guid* riid, void** ppv);
+
+            [VtblIndex(4)]
+            HRESULT GetPropertyDescriptionByName([NativeTypeName("LPCWSTR")] ushort* pszCanonicalName, [NativeTypeName("const IID &")] Guid* riid, void** ppv);
+
+            [VtblIndex(5)]
+            HRESULT GetPropertyDescriptionListFromString([NativeTypeName("LPCWSTR")] ushort* pszPropList, [NativeTypeName("const IID &")] Guid* riid, void** ppv);
+
+            [VtblIndex(6)]
+            HRESULT EnumeratePropertyDescriptions(PROPDESC_ENUMFILTER filterOn, [NativeTypeName("const IID &")] Guid* riid, void** ppv);
+
+            [VtblIndex(7)]
+            HRESULT FormatForDisplay([NativeTypeName("const PROPERTYKEY &")] PROPERTYKEY* key, [NativeTypeName("const PROPVARIANT &")] PROPVARIANT* propvar, PROPDESC_FORMAT_FLAGS pdff, [NativeTypeName("LPWSTR")] ushort* pszText, [NativeTypeName("DWORD")] uint cchText);
+
+            [VtblIndex(8)]
+            HRESULT FormatForDisplayAlloc([NativeTypeName("const PROPERTYKEY &")] PROPERTYKEY* key, [NativeTypeName("const PROPVARIANT &")] PROPVARIANT* propvar, PROPDESC_FORMAT_FLAGS pdff, [NativeTypeName("LPWSTR *")] ushort** ppszDisplay);
+
+            [VtblIndex(9)]
+            HRESULT RegisterPropertySchema([NativeTypeName("LPCWSTR")] ushort* pszPath);
+
+            [VtblIndex(10)]
+            HRESULT UnregisterPropertySchema([NativeTypeName("LPCWSTR")] ushort* pszPath);
+
+            [VtblIndex(11)]
+            HRESULT RefreshPropertySchema();
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IPropertySystem*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IPropertySystem*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IPropertySystem*, uint> Release;
+
+            [NativeTypeName("HRESULT (const PROPERTYKEY &, const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IPropertySystem*, PROPERTYKEY*, Guid*, void**, int> GetPropertyDescription;
+
+            [NativeTypeName("HRESULT (LPCWSTR, const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IPropertySystem*, ushort*, Guid*, void**, int> GetPropertyDescriptionByName;
+
+            [NativeTypeName("HRESULT (LPCWSTR, const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IPropertySystem*, ushort*, Guid*, void**, int> GetPropertyDescriptionListFromString;
+
+            [NativeTypeName("HRESULT (PROPDESC_ENUMFILTER, const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IPropertySystem*, PROPDESC_ENUMFILTER, Guid*, void**, int> EnumeratePropertyDescriptions;
+
+            [NativeTypeName("HRESULT (const PROPERTYKEY &, const PROPVARIANT &, PROPDESC_FORMAT_FLAGS, LPWSTR, DWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<IPropertySystem*, PROPERTYKEY*, PROPVARIANT*, PROPDESC_FORMAT_FLAGS, ushort*, uint, int> FormatForDisplay;
+
+            [NativeTypeName("HRESULT (const PROPERTYKEY &, const PROPVARIANT &, PROPDESC_FORMAT_FLAGS, LPWSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IPropertySystem*, PROPERTYKEY*, PROPVARIANT*, PROPDESC_FORMAT_FLAGS, ushort**, int> FormatForDisplayAlloc;
+
+            [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IPropertySystem*, ushort*, int> RegisterPropertySchema;
+
+            [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IPropertySystem*, ushort*, int> UnregisterPropertySchema;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IPropertySystem*, int> RefreshPropertySchema;
         }
     }
 }

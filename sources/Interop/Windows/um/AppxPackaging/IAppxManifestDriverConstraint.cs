@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("C031BEE4-BBCC-48EA-A237-C34045C80A07")]
     [NativeTypeName("struct IAppxManifestDriverConstraint : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IAppxManifestDriverConstraint
+    public unsafe partial struct IAppxManifestDriverConstraint : IAppxManifestDriverConstraint.Interface
     {
         public void** lpVtbl;
 
@@ -58,6 +58,39 @@ namespace TerraFX.Interop
         public HRESULT GetMinDate([NativeTypeName("LPWSTR *")] ushort** minDate)
         {
             return ((delegate* unmanaged<IAppxManifestDriverConstraint*, ushort**, int>)(lpVtbl[5]))((IAppxManifestDriverConstraint*)Unsafe.AsPointer(ref this), minDate);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetName([NativeTypeName("LPWSTR *")] ushort** name);
+
+            [VtblIndex(4)]
+            HRESULT GetMinVersion([NativeTypeName("UINT64 *")] ulong* minVersion);
+
+            [VtblIndex(5)]
+            HRESULT GetMinDate([NativeTypeName("LPWSTR *")] ushort** minDate);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAppxManifestDriverConstraint*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IAppxManifestDriverConstraint*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IAppxManifestDriverConstraint*, uint> Release;
+
+            [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAppxManifestDriverConstraint*, ushort**, int> GetName;
+
+            [NativeTypeName("HRESULT (UINT64 *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAppxManifestDriverConstraint*, ulong*, int> GetMinVersion;
+
+            [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAppxManifestDriverConstraint*, ushort**, int> GetMinDate;
         }
     }
 }

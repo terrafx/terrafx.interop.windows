@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("00000001-0000-0000-C000-000000000046")]
     [NativeTypeName("struct IClassFactory : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IClassFactory
+    public unsafe partial struct IClassFactory : IClassFactory.Interface
     {
         public void** lpVtbl;
 
@@ -51,6 +51,33 @@ namespace TerraFX.Interop
         public HRESULT LockServer(BOOL fLock)
         {
             return ((delegate* unmanaged<IClassFactory*, BOOL, int>)(lpVtbl[4]))((IClassFactory*)Unsafe.AsPointer(ref this), fLock);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT CreateInstance(IUnknown* pUnkOuter, [NativeTypeName("const IID &")] Guid* riid, void** ppvObject);
+
+            [VtblIndex(4)]
+            HRESULT LockServer(BOOL fLock);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IClassFactory*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IClassFactory*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IClassFactory*, uint> Release;
+
+            [NativeTypeName("HRESULT (IUnknown *, const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IClassFactory*, IUnknown*, Guid*, void**, int> CreateInstance;
+
+            [NativeTypeName("HRESULT (BOOL) __attribute__((stdcall))")]
+            public delegate* unmanaged<IClassFactory*, BOOL, int> LockServer;
         }
     }
 }

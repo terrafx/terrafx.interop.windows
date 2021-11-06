@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("2B4B1CC8-A4AD-41F8-8322-CA86FC3EC675")]
     [NativeTypeName("struct ID3D10DepthStencilState : ID3D10DeviceChild")]
     [NativeInheritance("ID3D10DeviceChild")]
-    public unsafe partial struct ID3D10DepthStencilState
+    public unsafe partial struct ID3D10DepthStencilState : ID3D10DepthStencilState.Interface
     {
         public void** lpVtbl;
 
@@ -72,6 +72,39 @@ namespace TerraFX.Interop
         public void GetDesc(D3D10_DEPTH_STENCIL_DESC* pDesc)
         {
             ((delegate* unmanaged<ID3D10DepthStencilState*, D3D10_DEPTH_STENCIL_DESC*, void>)(lpVtbl[7]))((ID3D10DepthStencilState*)Unsafe.AsPointer(ref this), pDesc);
+        }
+
+        public interface Interface : ID3D10DeviceChild.Interface
+        {
+            [VtblIndex(7)]
+            void GetDesc(D3D10_DEPTH_STENCIL_DESC* pDesc);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D10DepthStencilState*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D10DepthStencilState*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D10DepthStencilState*, uint> Release;
+
+            [NativeTypeName("void (ID3D10Device **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D10DepthStencilState*, ID3D10Device**, void> GetDevice;
+
+            [NativeTypeName("HRESULT (const GUID &, UINT *, void *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D10DepthStencilState*, Guid*, uint*, void*, int> GetPrivateData;
+
+            [NativeTypeName("HRESULT (const GUID &, UINT, const void *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D10DepthStencilState*, Guid*, uint, void*, int> SetPrivateData;
+
+            [NativeTypeName("HRESULT (const GUID &, const IUnknown *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D10DepthStencilState*, Guid*, IUnknown*, int> SetPrivateDataInterface;
+
+            [NativeTypeName("void (D3D10_DEPTH_STENCIL_DESC *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D10DepthStencilState*, D3D10_DEPTH_STENCIL_DESC*, void> GetDesc;
         }
     }
 }

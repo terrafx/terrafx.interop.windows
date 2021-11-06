@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("87D605E0-C511-11CF-89A9-00A0C9054129")]
     [NativeTypeName("struct IDocViewSite : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IDocViewSite
+    public unsafe partial struct IDocViewSite : IDocViewSite.Interface
     {
         public void** lpVtbl;
 
@@ -44,6 +44,27 @@ namespace TerraFX.Interop
         public HRESULT OnSetTitle([NativeTypeName("VARIANTARG *")] VARIANT* pvTitle)
         {
             return ((delegate* unmanaged<IDocViewSite*, VARIANT*, int>)(lpVtbl[3]))((IDocViewSite*)Unsafe.AsPointer(ref this), pvTitle);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT OnSetTitle([NativeTypeName("VARIANTARG *")] VARIANT* pvTitle);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDocViewSite*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDocViewSite*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDocViewSite*, uint> Release;
+
+            [NativeTypeName("HRESULT (VARIANTARG *) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDocViewSite*, VARIANT*, int> OnSetTitle;
         }
     }
 }

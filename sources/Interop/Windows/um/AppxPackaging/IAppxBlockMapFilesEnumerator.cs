@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("02B856A2-4262-4070-BACB-1A8CBBC42305")]
     [NativeTypeName("struct IAppxBlockMapFilesEnumerator : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IAppxBlockMapFilesEnumerator
+    public unsafe partial struct IAppxBlockMapFilesEnumerator : IAppxBlockMapFilesEnumerator.Interface
     {
         public void** lpVtbl;
 
@@ -58,6 +58,39 @@ namespace TerraFX.Interop
         public HRESULT MoveNext(BOOL* hasCurrent)
         {
             return ((delegate* unmanaged<IAppxBlockMapFilesEnumerator*, BOOL*, int>)(lpVtbl[5]))((IAppxBlockMapFilesEnumerator*)Unsafe.AsPointer(ref this), hasCurrent);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetCurrent(IAppxBlockMapFile** file);
+
+            [VtblIndex(4)]
+            HRESULT GetHasCurrent(BOOL* hasCurrent);
+
+            [VtblIndex(5)]
+            HRESULT MoveNext(BOOL* hasCurrent);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAppxBlockMapFilesEnumerator*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IAppxBlockMapFilesEnumerator*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IAppxBlockMapFilesEnumerator*, uint> Release;
+
+            [NativeTypeName("HRESULT (IAppxBlockMapFile **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAppxBlockMapFilesEnumerator*, IAppxBlockMapFile**, int> GetCurrent;
+
+            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAppxBlockMapFilesEnumerator*, BOOL*, int> GetHasCurrent;
+
+            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAppxBlockMapFilesEnumerator*, BOOL*, int> MoveNext;
         }
     }
 }

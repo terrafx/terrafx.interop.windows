@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("3050F4AA-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct IElementBehaviorRender : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IElementBehaviorRender
+    public unsafe partial struct IElementBehaviorRender : IElementBehaviorRender.Interface
     {
         public void** lpVtbl;
 
@@ -58,6 +58,39 @@ namespace TerraFX.Interop
         public HRESULT HitTestPoint(POINT* pPoint, IUnknown* pReserved, BOOL* pbHit)
         {
             return ((delegate* unmanaged<IElementBehaviorRender*, POINT*, IUnknown*, BOOL*, int>)(lpVtbl[5]))((IElementBehaviorRender*)Unsafe.AsPointer(ref this), pPoint, pReserved, pbHit);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT Draw(HDC hdc, [NativeTypeName("LONG")] int lLayer, RECT* pRect, IUnknown* pReserved);
+
+            [VtblIndex(4)]
+            HRESULT GetRenderInfo([NativeTypeName("LONG *")] int* plRenderInfo);
+
+            [VtblIndex(5)]
+            HRESULT HitTestPoint(POINT* pPoint, IUnknown* pReserved, BOOL* pbHit);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IElementBehaviorRender*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IElementBehaviorRender*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IElementBehaviorRender*, uint> Release;
+
+            [NativeTypeName("HRESULT (HDC, LONG, RECT *, IUnknown *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IElementBehaviorRender*, HDC, int, RECT*, IUnknown*, int> Draw;
+
+            [NativeTypeName("HRESULT (LONG *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IElementBehaviorRender*, int*, int> GetRenderInfo;
+
+            [NativeTypeName("HRESULT (POINT *, IUnknown *, BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IElementBehaviorRender*, POINT*, IUnknown*, BOOL*, int> HitTestPoint;
         }
     }
 }

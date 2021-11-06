@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("0D34DEB3-5CAE-4DD3-977C-504932A51D31")]
     [NativeTypeName("struct IAppxEncryptedBundleWriter3 : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IAppxEncryptedBundleWriter3
+    public unsafe partial struct IAppxEncryptedBundleWriter3 : IAppxEncryptedBundleWriter3.Interface
     {
         public void** lpVtbl;
 
@@ -51,6 +51,33 @@ namespace TerraFX.Interop
         public HRESULT AddExternalPackageReference([NativeTypeName("LPCWSTR")] ushort* fileName, IStream* inputStream, BOOL isDefaultApplicablePackage)
         {
             return ((delegate* unmanaged<IAppxEncryptedBundleWriter3*, ushort*, IStream*, BOOL, int>)(lpVtbl[4]))((IAppxEncryptedBundleWriter3*)Unsafe.AsPointer(ref this), fileName, inputStream, isDefaultApplicablePackage);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT AddPayloadPackageEncrypted([NativeTypeName("LPCWSTR")] ushort* fileName, IStream* packageStream, BOOL isDefaultApplicablePackage);
+
+            [VtblIndex(4)]
+            HRESULT AddExternalPackageReference([NativeTypeName("LPCWSTR")] ushort* fileName, IStream* inputStream, BOOL isDefaultApplicablePackage);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAppxEncryptedBundleWriter3*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IAppxEncryptedBundleWriter3*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IAppxEncryptedBundleWriter3*, uint> Release;
+
+            [NativeTypeName("HRESULT (LPCWSTR, IStream *, BOOL) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAppxEncryptedBundleWriter3*, ushort*, IStream*, BOOL, int> AddPayloadPackageEncrypted;
+
+            [NativeTypeName("HRESULT (LPCWSTR, IStream *, BOOL) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAppxEncryptedBundleWriter3*, ushort*, IStream*, BOOL, int> AddExternalPackageReference;
         }
     }
 }

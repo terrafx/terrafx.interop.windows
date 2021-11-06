@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("2CD906AA-12E2-11DC-9FED-001143A055F9")]
     [NativeTypeName("struct ID2D1BitmapBrush : ID2D1Brush")]
     [NativeInheritance("ID2D1Brush")]
-    public unsafe partial struct ID2D1BitmapBrush
+    public unsafe partial struct ID2D1BitmapBrush : ID2D1BitmapBrush.Interface
     {
         public void** lpVtbl;
 
@@ -128,6 +128,84 @@ namespace TerraFX.Interop
         public void GetBitmap(ID2D1Bitmap** bitmap)
         {
             ((delegate* unmanaged<ID2D1BitmapBrush*, ID2D1Bitmap**, void>)(lpVtbl[15]))((ID2D1BitmapBrush*)Unsafe.AsPointer(ref this), bitmap);
+        }
+
+        public interface Interface : ID2D1Brush.Interface
+        {
+            [VtblIndex(8)]
+            void SetExtendModeX(D2D1_EXTEND_MODE extendModeX);
+
+            [VtblIndex(9)]
+            void SetExtendModeY(D2D1_EXTEND_MODE extendModeY);
+
+            [VtblIndex(10)]
+            void SetInterpolationMode(D2D1_BITMAP_INTERPOLATION_MODE interpolationMode);
+
+            [VtblIndex(11)]
+            void SetBitmap(ID2D1Bitmap* bitmap);
+
+            [VtblIndex(12)]
+            D2D1_EXTEND_MODE GetExtendModeX();
+
+            [VtblIndex(13)]
+            D2D1_EXTEND_MODE GetExtendModeY();
+
+            [VtblIndex(14)]
+            D2D1_BITMAP_INTERPOLATION_MODE GetInterpolationMode();
+
+            [VtblIndex(15)]
+            void GetBitmap(ID2D1Bitmap** bitmap);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID2D1BitmapBrush*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ID2D1BitmapBrush*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ID2D1BitmapBrush*, uint> Release;
+
+            [NativeTypeName("void (ID2D1Factory **) const __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID2D1BitmapBrush*, ID2D1Factory**, void> GetFactory;
+
+            [NativeTypeName("void (FLOAT) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID2D1BitmapBrush*, float, void> SetOpacity;
+
+            [NativeTypeName("void (const D2D1_MATRIX_3X2_F *) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID2D1BitmapBrush*, D2D_MATRIX_3X2_F*, void> SetTransform;
+
+            [NativeTypeName("FLOAT () const __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID2D1BitmapBrush*, float> GetOpacity;
+
+            [NativeTypeName("void (D2D1_MATRIX_3X2_F *) const __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID2D1BitmapBrush*, D2D_MATRIX_3X2_F*, void> GetTransform;
+
+            [NativeTypeName("void (D2D1_EXTEND_MODE) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID2D1BitmapBrush*, D2D1_EXTEND_MODE, void> SetExtendModeX;
+
+            [NativeTypeName("void (D2D1_EXTEND_MODE) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID2D1BitmapBrush*, D2D1_EXTEND_MODE, void> SetExtendModeY;
+
+            [NativeTypeName("void (D2D1_BITMAP_INTERPOLATION_MODE) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID2D1BitmapBrush*, D2D1_BITMAP_INTERPOLATION_MODE, void> SetInterpolationMode;
+
+            [NativeTypeName("void (ID2D1Bitmap *) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID2D1BitmapBrush*, ID2D1Bitmap*, void> SetBitmap;
+
+            [NativeTypeName("D2D1_EXTEND_MODE () const __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID2D1BitmapBrush*, D2D1_EXTEND_MODE> GetExtendModeX;
+
+            [NativeTypeName("D2D1_EXTEND_MODE () const __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID2D1BitmapBrush*, D2D1_EXTEND_MODE> GetExtendModeY;
+
+            [NativeTypeName("D2D1_BITMAP_INTERPOLATION_MODE () const __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID2D1BitmapBrush*, D2D1_BITMAP_INTERPOLATION_MODE> GetInterpolationMode;
+
+            [NativeTypeName("void (ID2D1Bitmap **) const __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID2D1BitmapBrush*, ID2D1Bitmap**, void> GetBitmap;
         }
     }
 }

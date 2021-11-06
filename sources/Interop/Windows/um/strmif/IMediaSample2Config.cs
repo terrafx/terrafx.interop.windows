@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("68961E68-832B-41EA-BC91-63593F3E70E3")]
     [NativeTypeName("struct IMediaSample2Config : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IMediaSample2Config
+    public unsafe partial struct IMediaSample2Config : IMediaSample2Config.Interface
     {
         public void** lpVtbl;
 
@@ -44,6 +44,27 @@ namespace TerraFX.Interop
         public HRESULT GetSurface(IUnknown** ppDirect3DSurface9)
         {
             return ((delegate* unmanaged<IMediaSample2Config*, IUnknown**, int>)(lpVtbl[3]))((IMediaSample2Config*)Unsafe.AsPointer(ref this), ppDirect3DSurface9);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetSurface(IUnknown** ppDirect3DSurface9);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMediaSample2Config*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMediaSample2Config*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMediaSample2Config*, uint> Release;
+
+            [NativeTypeName("HRESULT (IUnknown **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMediaSample2Config*, IUnknown**, int> GetSurface;
         }
     }
 }

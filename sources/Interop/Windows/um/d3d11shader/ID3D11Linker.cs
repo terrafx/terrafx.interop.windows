@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("59A6CD0E-E10D-4C1F-88C0-63ABA1DAF30E")]
     [NativeTypeName("struct ID3D11Linker : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct ID3D11Linker
+    public unsafe partial struct ID3D11Linker : ID3D11Linker.Interface
     {
         public void** lpVtbl;
 
@@ -58,6 +58,39 @@ namespace TerraFX.Interop
         public HRESULT AddClipPlaneFromCBuffer(uint uCBufferSlot, uint uCBufferEntry)
         {
             return ((delegate* unmanaged<ID3D11Linker*, uint, uint, int>)(lpVtbl[5]))((ID3D11Linker*)Unsafe.AsPointer(ref this), uCBufferSlot, uCBufferEntry);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT Link([NativeTypeName("struct ID3D11ModuleInstance *")] ID3D11ModuleInstance* pEntry, [NativeTypeName("LPCSTR")] sbyte* pEntryName, [NativeTypeName("LPCSTR")] sbyte* pTargetName, uint uFlags, ID3DBlob** ppShaderBlob, ID3DBlob** ppErrorBuffer);
+
+            [VtblIndex(4)]
+            HRESULT UseLibrary([NativeTypeName("struct ID3D11ModuleInstance *")] ID3D11ModuleInstance* pLibraryMI);
+
+            [VtblIndex(5)]
+            HRESULT AddClipPlaneFromCBuffer(uint uCBufferSlot, uint uCBufferEntry);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D11Linker*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D11Linker*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D11Linker*, uint> Release;
+
+            [NativeTypeName("HRESULT (struct ID3D11ModuleInstance *, LPCSTR, LPCSTR, UINT, ID3DBlob **, ID3DBlob **) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D11Linker*, ID3D11ModuleInstance*, sbyte*, sbyte*, uint, ID3DBlob**, ID3DBlob**, int> Link;
+
+            [NativeTypeName("HRESULT (struct ID3D11ModuleInstance *) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D11Linker*, ID3D11ModuleInstance*, int> UseLibrary;
+
+            [NativeTypeName("HRESULT (UINT, UINT) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D11Linker*, uint, uint, int> AddClipPlaneFromCBuffer;
         }
     }
 }

@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("FE9E984D-3F95-407C-B5DB-CB94D4E8F87C")]
     [NativeTypeName("struct ID2D1ImageBrush : ID2D1Brush")]
     [NativeInheritance("ID2D1Brush")]
-    public unsafe partial struct ID2D1ImageBrush
+    public unsafe partial struct ID2D1ImageBrush : ID2D1ImageBrush.Interface
     {
         public void** lpVtbl;
 
@@ -142,6 +142,96 @@ namespace TerraFX.Interop
         public void GetSourceRectangle([NativeTypeName("D2D1_RECT_F *")] D2D_RECT_F* sourceRectangle)
         {
             ((delegate* unmanaged<ID2D1ImageBrush*, D2D_RECT_F*, void>)(lpVtbl[17]))((ID2D1ImageBrush*)Unsafe.AsPointer(ref this), sourceRectangle);
+        }
+
+        public interface Interface : ID2D1Brush.Interface
+        {
+            [VtblIndex(8)]
+            void SetImage(ID2D1Image* image);
+
+            [VtblIndex(9)]
+            void SetExtendModeX(D2D1_EXTEND_MODE extendModeX);
+
+            [VtblIndex(10)]
+            void SetExtendModeY(D2D1_EXTEND_MODE extendModeY);
+
+            [VtblIndex(11)]
+            void SetInterpolationMode(D2D1_INTERPOLATION_MODE interpolationMode);
+
+            [VtblIndex(12)]
+            void SetSourceRectangle([NativeTypeName("const D2D1_RECT_F *")] D2D_RECT_F* sourceRectangle);
+
+            [VtblIndex(13)]
+            void GetImage(ID2D1Image** image);
+
+            [VtblIndex(14)]
+            D2D1_EXTEND_MODE GetExtendModeX();
+
+            [VtblIndex(15)]
+            D2D1_EXTEND_MODE GetExtendModeY();
+
+            [VtblIndex(16)]
+            D2D1_INTERPOLATION_MODE GetInterpolationMode();
+
+            [VtblIndex(17)]
+            void GetSourceRectangle([NativeTypeName("D2D1_RECT_F *")] D2D_RECT_F* sourceRectangle);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID2D1ImageBrush*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ID2D1ImageBrush*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ID2D1ImageBrush*, uint> Release;
+
+            [NativeTypeName("void (ID2D1Factory **) const __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID2D1ImageBrush*, ID2D1Factory**, void> GetFactory;
+
+            [NativeTypeName("void (FLOAT) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID2D1ImageBrush*, float, void> SetOpacity;
+
+            [NativeTypeName("void (const D2D1_MATRIX_3X2_F *) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID2D1ImageBrush*, D2D_MATRIX_3X2_F*, void> SetTransform;
+
+            [NativeTypeName("FLOAT () const __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID2D1ImageBrush*, float> GetOpacity;
+
+            [NativeTypeName("void (D2D1_MATRIX_3X2_F *) const __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID2D1ImageBrush*, D2D_MATRIX_3X2_F*, void> GetTransform;
+
+            [NativeTypeName("void (ID2D1Image *) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID2D1ImageBrush*, ID2D1Image*, void> SetImage;
+
+            [NativeTypeName("void (D2D1_EXTEND_MODE) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID2D1ImageBrush*, D2D1_EXTEND_MODE, void> SetExtendModeX;
+
+            [NativeTypeName("void (D2D1_EXTEND_MODE) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID2D1ImageBrush*, D2D1_EXTEND_MODE, void> SetExtendModeY;
+
+            [NativeTypeName("void (D2D1_INTERPOLATION_MODE) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID2D1ImageBrush*, D2D1_INTERPOLATION_MODE, void> SetInterpolationMode;
+
+            [NativeTypeName("void (const D2D1_RECT_F *) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID2D1ImageBrush*, D2D_RECT_F*, void> SetSourceRectangle;
+
+            [NativeTypeName("void (ID2D1Image **) const __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID2D1ImageBrush*, ID2D1Image**, void> GetImage;
+
+            [NativeTypeName("D2D1_EXTEND_MODE () const __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID2D1ImageBrush*, D2D1_EXTEND_MODE> GetExtendModeX;
+
+            [NativeTypeName("D2D1_EXTEND_MODE () const __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID2D1ImageBrush*, D2D1_EXTEND_MODE> GetExtendModeY;
+
+            [NativeTypeName("D2D1_INTERPOLATION_MODE () const __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID2D1ImageBrush*, D2D1_INTERPOLATION_MODE> GetInterpolationMode;
+
+            [NativeTypeName("void (D2D1_RECT_F *) const __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID2D1ImageBrush*, D2D_RECT_F*, void> GetSourceRectangle;
         }
     }
 }

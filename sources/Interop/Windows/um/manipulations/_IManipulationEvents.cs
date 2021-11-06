@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("4F62C8DA-9C53-4B22-93DF-927A862BBB03")]
     [NativeTypeName("struct _IManipulationEvents : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct _IManipulationEvents
+    public unsafe partial struct _IManipulationEvents : _IManipulationEvents.Interface
     {
         public void** lpVtbl;
 
@@ -58,6 +58,39 @@ namespace TerraFX.Interop
         public HRESULT ManipulationCompleted(float x, float y, float cumulativeTranslationX, float cumulativeTranslationY, float cumulativeScale, float cumulativeExpansion, float cumulativeRotation)
         {
             return ((delegate* unmanaged<_IManipulationEvents*, float, float, float, float, float, float, float, int>)(lpVtbl[5]))((_IManipulationEvents*)Unsafe.AsPointer(ref this), x, y, cumulativeTranslationX, cumulativeTranslationY, cumulativeScale, cumulativeExpansion, cumulativeRotation);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT ManipulationStarted(float x, float y);
+
+            [VtblIndex(4)]
+            HRESULT ManipulationDelta(float x, float y, float translationDeltaX, float translationDeltaY, float scaleDelta, float expansionDelta, float rotationDelta, float cumulativeTranslationX, float cumulativeTranslationY, float cumulativeScale, float cumulativeExpansion, float cumulativeRotation);
+
+            [VtblIndex(5)]
+            HRESULT ManipulationCompleted(float x, float y, float cumulativeTranslationX, float cumulativeTranslationY, float cumulativeScale, float cumulativeExpansion, float cumulativeRotation);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<_IManipulationEvents*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<_IManipulationEvents*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<_IManipulationEvents*, uint> Release;
+
+            [NativeTypeName("HRESULT (FLOAT, FLOAT) __attribute__((stdcall))")]
+            public delegate* unmanaged<_IManipulationEvents*, float, float, int> ManipulationStarted;
+
+            [NativeTypeName("HRESULT (FLOAT, FLOAT, FLOAT, FLOAT, FLOAT, FLOAT, FLOAT, FLOAT, FLOAT, FLOAT, FLOAT, FLOAT) __attribute__((stdcall))")]
+            public delegate* unmanaged<_IManipulationEvents*, float, float, float, float, float, float, float, float, float, float, float, float, int> ManipulationDelta;
+
+            [NativeTypeName("HRESULT (FLOAT, FLOAT, FLOAT, FLOAT, FLOAT, FLOAT, FLOAT) __attribute__((stdcall))")]
+            public delegate* unmanaged<_IManipulationEvents*, float, float, float, float, float, float, float, int> ManipulationCompleted;
         }
     }
 }

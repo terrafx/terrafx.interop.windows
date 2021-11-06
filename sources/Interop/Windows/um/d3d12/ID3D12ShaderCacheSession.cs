@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("28E2495D-0F64-4AE4-A6EC-129255DC49A8")]
     [NativeTypeName("struct ID3D12ShaderCacheSession : ID3D12DeviceChild")]
     [NativeInheritance("ID3D12DeviceChild")]
-    public unsafe partial struct ID3D12ShaderCacheSession
+    public unsafe partial struct ID3D12ShaderCacheSession : ID3D12ShaderCacheSession.Interface
     {
         public void** lpVtbl;
 
@@ -101,6 +101,60 @@ namespace TerraFX.Interop
         {
             D3D12_SHADER_CACHE_SESSION_DESC result;
             return *((delegate* unmanaged<ID3D12ShaderCacheSession*, D3D12_SHADER_CACHE_SESSION_DESC*, D3D12_SHADER_CACHE_SESSION_DESC*>)(lpVtbl[11]))((ID3D12ShaderCacheSession*)Unsafe.AsPointer(ref this), &result);
+        }
+
+        public interface Interface : ID3D12DeviceChild.Interface
+        {
+            [VtblIndex(8)]
+            HRESULT FindValue([NativeTypeName("const void *")] void* pKey, uint KeySize, void* pValue, uint* pValueSize);
+
+            [VtblIndex(9)]
+            HRESULT StoreValue([NativeTypeName("const void *")] void* pKey, uint KeySize, [NativeTypeName("const void *")] void* pValue, uint ValueSize);
+
+            [VtblIndex(10)]
+            void SetDeleteOnDestroy();
+
+            [VtblIndex(11)]
+            D3D12_SHADER_CACHE_SESSION_DESC GetDesc();
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D12ShaderCacheSession*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D12ShaderCacheSession*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D12ShaderCacheSession*, uint> Release;
+
+            [NativeTypeName("HRESULT (const GUID &, UINT *, void *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D12ShaderCacheSession*, Guid*, uint*, void*, int> GetPrivateData;
+
+            [NativeTypeName("HRESULT (const GUID &, UINT, const void *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D12ShaderCacheSession*, Guid*, uint, void*, int> SetPrivateData;
+
+            [NativeTypeName("HRESULT (const GUID &, const IUnknown *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D12ShaderCacheSession*, Guid*, IUnknown*, int> SetPrivateDataInterface;
+
+            [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D12ShaderCacheSession*, ushort*, int> SetName;
+
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D12ShaderCacheSession*, Guid*, void**, int> GetDevice;
+
+            [NativeTypeName("HRESULT (const void *, UINT, void *, UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D12ShaderCacheSession*, void*, uint, void*, uint*, int> FindValue;
+
+            [NativeTypeName("HRESULT (const void *, UINT, const void *, UINT) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D12ShaderCacheSession*, void*, uint, void*, uint, int> StoreValue;
+
+            [NativeTypeName("void () __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D12ShaderCacheSession*, void> SetDeleteOnDestroy;
+
+            [NativeTypeName("D3D12_SHADER_CACHE_SESSION_DESC () __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D12ShaderCacheSession*, D3D12_SHADER_CACHE_SESSION_DESC*, D3D12_SHADER_CACHE_SESSION_DESC*> GetDesc;
         }
     }
 }

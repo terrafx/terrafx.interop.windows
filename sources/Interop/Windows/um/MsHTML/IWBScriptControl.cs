@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("A5170870-0CF8-11D1-8B91-0080C744F389")]
     [NativeTypeName("struct IWBScriptControl : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct IWBScriptControl
+    public unsafe partial struct IWBScriptControl : IWBScriptControl.Interface
     {
         public void** lpVtbl;
 
@@ -149,6 +149,105 @@ namespace TerraFX.Interop
         public HRESULT get_onvisibilitychange(VARIANT* p)
         {
             return ((delegate* unmanaged<IWBScriptControl*, VARIANT*, int>)(lpVtbl[18]))((IWBScriptControl*)Unsafe.AsPointer(ref this), p);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT raiseEvent([NativeTypeName("BSTR")] ushort* name, VARIANT eventData);
+
+            [VtblIndex(8)]
+            HRESULT bubbleEvent();
+
+            [VtblIndex(9)]
+            HRESULT setContextMenu(VARIANT menuItemPairs);
+
+            [VtblIndex(10)]
+            HRESULT put_selectableContent([NativeTypeName("VARIANT_BOOL")] short v);
+
+            [VtblIndex(11)]
+            HRESULT get_selectableContent([NativeTypeName("VARIANT_BOOL *")] short* p);
+
+            [VtblIndex(12)]
+            HRESULT get_frozen([NativeTypeName("VARIANT_BOOL *")] short* p);
+
+            [VtblIndex(13)]
+            HRESULT put_scrollbar([NativeTypeName("VARIANT_BOOL")] short v);
+
+            [VtblIndex(14)]
+            HRESULT get_scrollbar([NativeTypeName("VARIANT_BOOL *")] short* p);
+
+            [VtblIndex(15)]
+            HRESULT get_version([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(16)]
+            HRESULT get_visibility([NativeTypeName("VARIANT_BOOL *")] short* p);
+
+            [VtblIndex(17)]
+            HRESULT put_onvisibilitychange(VARIANT v);
+
+            [VtblIndex(18)]
+            HRESULT get_onvisibilitychange(VARIANT* p);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWBScriptControl*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IWBScriptControl*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IWBScriptControl*, uint> Release;
+
+            [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWBScriptControl*, uint*, int> GetTypeInfoCount;
+
+            [NativeTypeName("HRESULT (UINT, LCID, ITypeInfo **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWBScriptControl*, uint, uint, ITypeInfo**, int> GetTypeInfo;
+
+            [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWBScriptControl*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+
+            [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWBScriptControl*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
+
+            [NativeTypeName("HRESULT (BSTR, VARIANT) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWBScriptControl*, ushort*, VARIANT, int> raiseEvent;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IWBScriptControl*, int> bubbleEvent;
+
+            [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWBScriptControl*, VARIANT, int> setContextMenu;
+
+            [NativeTypeName("HRESULT (VARIANT_BOOL) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWBScriptControl*, short, int> put_selectableContent;
+
+            [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWBScriptControl*, short*, int> get_selectableContent;
+
+            [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWBScriptControl*, short*, int> get_frozen;
+
+            [NativeTypeName("HRESULT (VARIANT_BOOL) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWBScriptControl*, short, int> put_scrollbar;
+
+            [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWBScriptControl*, short*, int> get_scrollbar;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWBScriptControl*, ushort**, int> get_version;
+
+            [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWBScriptControl*, short*, int> get_visibility;
+
+            [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWBScriptControl*, VARIANT, int> put_onvisibilitychange;
+
+            [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWBScriptControl*, VARIANT*, int> get_onvisibilitychange;
         }
     }
 }

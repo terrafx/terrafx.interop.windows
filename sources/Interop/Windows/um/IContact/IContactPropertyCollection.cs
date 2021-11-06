@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("FFD3ADF8-FA64-4328-B1B6-2E0DB509CB3C")]
     [NativeTypeName("struct IContactPropertyCollection : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IContactPropertyCollection
+    public unsafe partial struct IContactPropertyCollection : IContactPropertyCollection.Interface
     {
         public void** lpVtbl;
 
@@ -86,6 +86,63 @@ namespace TerraFX.Interop
         public HRESULT GetPropertyArrayElementID([NativeTypeName("LPWSTR")] ushort* pszArrayElementID, [NativeTypeName("DWORD")] uint cchArrayElementID, [NativeTypeName("DWORD *")] uint* pdwcchArrayElementIDRequired)
         {
             return ((delegate* unmanaged<IContactPropertyCollection*, ushort*, uint, uint*, int>)(lpVtbl[9]))((IContactPropertyCollection*)Unsafe.AsPointer(ref this), pszArrayElementID, cchArrayElementID, pdwcchArrayElementIDRequired);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT Reset();
+
+            [VtblIndex(4)]
+            HRESULT Next();
+
+            [VtblIndex(5)]
+            HRESULT GetPropertyName([NativeTypeName("LPWSTR")] ushort* pszPropertyName, [NativeTypeName("DWORD")] uint cchPropertyName, [NativeTypeName("DWORD *")] uint* pdwcchPropertyNameRequired);
+
+            [VtblIndex(6)]
+            HRESULT GetPropertyType([NativeTypeName("DWORD *")] uint* pdwType);
+
+            [VtblIndex(7)]
+            HRESULT GetPropertyVersion([NativeTypeName("DWORD *")] uint* pdwVersion);
+
+            [VtblIndex(8)]
+            HRESULT GetPropertyModificationDate(FILETIME* pftModificationDate);
+
+            [VtblIndex(9)]
+            HRESULT GetPropertyArrayElementID([NativeTypeName("LPWSTR")] ushort* pszArrayElementID, [NativeTypeName("DWORD")] uint cchArrayElementID, [NativeTypeName("DWORD *")] uint* pdwcchArrayElementIDRequired);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IContactPropertyCollection*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IContactPropertyCollection*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IContactPropertyCollection*, uint> Release;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IContactPropertyCollection*, int> Reset;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IContactPropertyCollection*, int> Next;
+
+            [NativeTypeName("HRESULT (LPWSTR, DWORD, DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IContactPropertyCollection*, ushort*, uint, uint*, int> GetPropertyName;
+
+            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IContactPropertyCollection*, uint*, int> GetPropertyType;
+
+            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IContactPropertyCollection*, uint*, int> GetPropertyVersion;
+
+            [NativeTypeName("HRESULT (FILETIME *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IContactPropertyCollection*, FILETIME*, int> GetPropertyModificationDate;
+
+            [NativeTypeName("HRESULT (LPWSTR, DWORD, DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IContactPropertyCollection*, ushort*, uint, uint*, int> GetPropertyArrayElementID;
         }
     }
 }

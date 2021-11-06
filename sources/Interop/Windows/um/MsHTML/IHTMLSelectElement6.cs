@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("30510760-98B6-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct IHTMLSelectElement6 : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct IHTMLSelectElement6
+    public unsafe partial struct IHTMLSelectElement6 : IHTMLSelectElement6.Interface
     {
         public void** lpVtbl;
 
@@ -86,6 +86,51 @@ namespace TerraFX.Interop
         public HRESULT get_value([NativeTypeName("BSTR *")] ushort** p)
         {
             return ((delegate* unmanaged<IHTMLSelectElement6*, ushort**, int>)(lpVtbl[9]))((IHTMLSelectElement6*)Unsafe.AsPointer(ref this), p);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT add(IHTMLOptionElement* pElem, VARIANT* pvarBefore);
+
+            [VtblIndex(8)]
+            HRESULT put_value([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(9)]
+            HRESULT get_value([NativeTypeName("BSTR *")] ushort** p);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLSelectElement6*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLSelectElement6*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLSelectElement6*, uint> Release;
+
+            [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLSelectElement6*, uint*, int> GetTypeInfoCount;
+
+            [NativeTypeName("HRESULT (UINT, LCID, ITypeInfo **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLSelectElement6*, uint, uint, ITypeInfo**, int> GetTypeInfo;
+
+            [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLSelectElement6*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+
+            [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLSelectElement6*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
+
+            [NativeTypeName("HRESULT (IHTMLOptionElement *, VARIANT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLSelectElement6*, IHTMLOptionElement*, VARIANT*, int> add;
+
+            [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLSelectElement6*, ushort*, int> put_value;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLSelectElement6*, ushort**, int> get_value;
         }
     }
 }

@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("7F00F10A-DAED-41AF-AB26-5FDFA4DFBA3C")]
     [NativeTypeName("struct IMFOutputPolicy : IMFAttributes")]
     [NativeInheritance("IMFAttributes")]
-    public unsafe partial struct IMFOutputPolicy
+    public unsafe partial struct IMFOutputPolicy : IMFOutputPolicy.Interface
     {
         public void** lpVtbl;
 
@@ -268,6 +268,129 @@ namespace TerraFX.Interop
         public HRESULT GetMinimumGRLVersion([NativeTypeName("DWORD *")] uint* pdwMinimumGRLVersion)
         {
             return ((delegate* unmanaged<IMFOutputPolicy*, uint*, int>)(lpVtbl[35]))((IMFOutputPolicy*)Unsafe.AsPointer(ref this), pdwMinimumGRLVersion);
+        }
+
+        public interface Interface : IMFAttributes.Interface
+        {
+            [VtblIndex(33)]
+            HRESULT GenerateRequiredSchemas([NativeTypeName("DWORD")] uint dwAttributes, Guid guidOutputSubType, Guid* rgGuidProtectionSchemasSupported, [NativeTypeName("DWORD")] uint cProtectionSchemasSupported, IMFCollection** ppRequiredProtectionSchemas);
+
+            [VtblIndex(34)]
+            HRESULT GetOriginatorID(Guid* pguidOriginatorID);
+
+            [VtblIndex(35)]
+            HRESULT GetMinimumGRLVersion([NativeTypeName("DWORD *")] uint* pdwMinimumGRLVersion);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFOutputPolicy*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFOutputPolicy*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFOutputPolicy*, uint> Release;
+
+            [NativeTypeName("HRESULT (const GUID &, PROPVARIANT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFOutputPolicy*, Guid*, PROPVARIANT*, int> GetItem;
+
+            [NativeTypeName("HRESULT (const GUID &, MF_ATTRIBUTE_TYPE *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFOutputPolicy*, Guid*, MF_ATTRIBUTE_TYPE*, int> GetItemType;
+
+            [NativeTypeName("HRESULT (const GUID &, const PROPVARIANT &, BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFOutputPolicy*, Guid*, PROPVARIANT*, BOOL*, int> CompareItem;
+
+            [NativeTypeName("HRESULT (IMFAttributes *, MF_ATTRIBUTES_MATCH_TYPE, BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFOutputPolicy*, IMFAttributes*, MF_ATTRIBUTES_MATCH_TYPE, BOOL*, int> Compare;
+
+            [NativeTypeName("HRESULT (const GUID &, UINT32 *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFOutputPolicy*, Guid*, uint*, int> GetUINT32;
+
+            [NativeTypeName("HRESULT (const GUID &, UINT64 *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFOutputPolicy*, Guid*, ulong*, int> GetUINT64;
+
+            [NativeTypeName("HRESULT (const GUID &, double *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFOutputPolicy*, Guid*, double*, int> GetDouble;
+
+            [NativeTypeName("HRESULT (const GUID &, GUID *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFOutputPolicy*, Guid*, Guid*, int> GetGUID;
+
+            [NativeTypeName("HRESULT (const GUID &, UINT32 *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFOutputPolicy*, Guid*, uint*, int> GetStringLength;
+
+            [NativeTypeName("HRESULT (const GUID &, LPWSTR, UINT32, UINT32 *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFOutputPolicy*, Guid*, ushort*, uint, uint*, int> GetString;
+
+            [NativeTypeName("HRESULT (const GUID &, LPWSTR *, UINT32 *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFOutputPolicy*, Guid*, ushort**, uint*, int> GetAllocatedString;
+
+            [NativeTypeName("HRESULT (const GUID &, UINT32 *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFOutputPolicy*, Guid*, uint*, int> GetBlobSize;
+
+            [NativeTypeName("HRESULT (const GUID &, UINT8 *, UINT32, UINT32 *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFOutputPolicy*, Guid*, byte*, uint, uint*, int> GetBlob;
+
+            [NativeTypeName("HRESULT (const GUID &, UINT8 **, UINT32 *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFOutputPolicy*, Guid*, byte**, uint*, int> GetAllocatedBlob;
+
+            [NativeTypeName("HRESULT (const GUID &, const IID &, LPVOID *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFOutputPolicy*, Guid*, Guid*, void**, int> GetUnknown;
+
+            [NativeTypeName("HRESULT (const GUID &, const PROPVARIANT &) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFOutputPolicy*, Guid*, PROPVARIANT*, int> SetItem;
+
+            [NativeTypeName("HRESULT (const GUID &) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFOutputPolicy*, Guid*, int> DeleteItem;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFOutputPolicy*, int> DeleteAllItems;
+
+            [NativeTypeName("HRESULT (const GUID &, UINT32) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFOutputPolicy*, Guid*, uint, int> SetUINT32;
+
+            [NativeTypeName("HRESULT (const GUID &, UINT64) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFOutputPolicy*, Guid*, ulong, int> SetUINT64;
+
+            [NativeTypeName("HRESULT (const GUID &, double) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFOutputPolicy*, Guid*, double, int> SetDouble;
+
+            [NativeTypeName("HRESULT (const GUID &, const GUID &) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFOutputPolicy*, Guid*, Guid*, int> SetGUID;
+
+            [NativeTypeName("HRESULT (const GUID &, LPCWSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFOutputPolicy*, Guid*, ushort*, int> SetString;
+
+            [NativeTypeName("HRESULT (const GUID &, const UINT8 *, UINT32) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFOutputPolicy*, Guid*, byte*, uint, int> SetBlob;
+
+            [NativeTypeName("HRESULT (const GUID &, IUnknown *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFOutputPolicy*, Guid*, IUnknown*, int> SetUnknown;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFOutputPolicy*, int> LockStore;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFOutputPolicy*, int> UnlockStore;
+
+            [NativeTypeName("HRESULT (UINT32 *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFOutputPolicy*, uint*, int> GetCount;
+
+            [NativeTypeName("HRESULT (UINT32, GUID *, PROPVARIANT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFOutputPolicy*, uint, Guid*, PROPVARIANT*, int> GetItemByIndex;
+
+            [NativeTypeName("HRESULT (IMFAttributes *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFOutputPolicy*, IMFAttributes*, int> CopyAllItems;
+
+            [NativeTypeName("HRESULT (DWORD, GUID, GUID *, DWORD, IMFCollection **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFOutputPolicy*, uint, Guid, Guid*, uint, IMFCollection**, int> GenerateRequiredSchemas;
+
+            [NativeTypeName("HRESULT (GUID *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFOutputPolicy*, Guid*, int> GetOriginatorID;
+
+            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFOutputPolicy*, uint*, int> GetMinimumGRLVersion;
         }
     }
 }

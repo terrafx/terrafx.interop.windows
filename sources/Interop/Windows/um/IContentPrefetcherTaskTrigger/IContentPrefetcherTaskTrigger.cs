@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("1B35A14A-6094-4799-A60E-E474E15D4DC9")]
     [NativeTypeName("struct IContentPrefetcherTaskTrigger : IInspectable")]
     [NativeInheritance("IInspectable")]
-    public unsafe partial struct IContentPrefetcherTaskTrigger
+    public unsafe partial struct IContentPrefetcherTaskTrigger : IContentPrefetcherTaskTrigger.Interface
     {
         public void** lpVtbl;
 
@@ -72,6 +72,42 @@ namespace TerraFX.Interop
         public HRESULT IsRegisteredForContentPrefetch([NativeTypeName("LPCWSTR")] ushort* packageFullName, [NativeTypeName("boolean *")] byte* isRegistered)
         {
             return ((delegate* unmanaged<IContentPrefetcherTaskTrigger*, ushort*, byte*, int>)(lpVtbl[7]))((IContentPrefetcherTaskTrigger*)Unsafe.AsPointer(ref this), packageFullName, isRegistered);
+        }
+
+        public interface Interface : IInspectable.Interface
+        {
+            [VtblIndex(6)]
+            HRESULT TriggerContentPrefetcherTask([NativeTypeName("LPCWSTR")] ushort* packageFullName);
+
+            [VtblIndex(7)]
+            HRESULT IsRegisteredForContentPrefetch([NativeTypeName("LPCWSTR")] ushort* packageFullName, [NativeTypeName("boolean *")] byte* isRegistered);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IContentPrefetcherTaskTrigger*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IContentPrefetcherTaskTrigger*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IContentPrefetcherTaskTrigger*, uint> Release;
+
+            [NativeTypeName("HRESULT (ULONG *, IID **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IContentPrefetcherTaskTrigger*, uint*, Guid**, int> GetIids;
+
+            [NativeTypeName("HRESULT (HSTRING *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IContentPrefetcherTaskTrigger*, HSTRING*, int> GetRuntimeClassName;
+
+            [NativeTypeName("HRESULT (TrustLevel *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IContentPrefetcherTaskTrigger*, TrustLevel*, int> GetTrustLevel;
+
+            [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IContentPrefetcherTaskTrigger*, ushort*, int> TriggerContentPrefetcherTask;
+
+            [NativeTypeName("HRESULT (LPCWSTR, boolean *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IContentPrefetcherTaskTrigger*, ushort*, byte*, int> IsRegisteredForContentPrefetch;
         }
     }
 }

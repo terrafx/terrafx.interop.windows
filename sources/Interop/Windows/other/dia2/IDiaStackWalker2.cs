@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("7C185885-A015-4CAC-9411-0F4FB39B1F3A")]
     [NativeTypeName("struct IDiaStackWalker2 : IDiaStackWalker")]
     [NativeInheritance("IDiaStackWalker")]
-    public unsafe partial struct IDiaStackWalker2
+    public unsafe partial struct IDiaStackWalker2 : IDiaStackWalker2.Interface
     {
         public void** lpVtbl;
 
@@ -51,6 +51,28 @@ namespace TerraFX.Interop
         public HRESULT getEnumFrames2([NativeTypeName("enum CV_CPU_TYPE_e")] CV_CPU_TYPE_e cpuid, IDiaStackWalkHelper* pHelper, IDiaEnumStackFrames** ppEnum)
         {
             return ((delegate* unmanaged<IDiaStackWalker2*, CV_CPU_TYPE_e, IDiaStackWalkHelper*, IDiaEnumStackFrames**, int>)(lpVtbl[4]))((IDiaStackWalker2*)Unsafe.AsPointer(ref this), cpuid, pHelper, ppEnum);
+        }
+
+        public interface Interface : IDiaStackWalker.Interface
+        {
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaStackWalker2*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaStackWalker2*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaStackWalker2*, uint> Release;
+
+            [NativeTypeName("HRESULT (IDiaStackWalkHelper *, IDiaEnumStackFrames **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaStackWalker2*, IDiaStackWalkHelper*, IDiaEnumStackFrames**, int> getEnumFrames;
+
+            [NativeTypeName("HRESULT (enum CV_CPU_TYPE_e, IDiaStackWalkHelper *, IDiaEnumStackFrames **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaStackWalker2*, CV_CPU_TYPE_e, IDiaStackWalkHelper*, IDiaEnumStackFrames**, int> getEnumFrames2;
         }
     }
 }

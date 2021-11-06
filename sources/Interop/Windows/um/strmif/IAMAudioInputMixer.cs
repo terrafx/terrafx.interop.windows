@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("54C39221-8380-11D0-B3F0-00AA003761C5")]
     [NativeTypeName("struct IAMAudioInputMixer : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IAMAudioInputMixer
+    public unsafe partial struct IAMAudioInputMixer : IAMAudioInputMixer.Interface
     {
         public void** lpVtbl;
 
@@ -149,6 +149,117 @@ namespace TerraFX.Interop
         public HRESULT get_BassRange(double* pRange)
         {
             return ((delegate* unmanaged<IAMAudioInputMixer*, double*, int>)(lpVtbl[18]))((IAMAudioInputMixer*)Unsafe.AsPointer(ref this), pRange);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT put_Enable(BOOL fEnable);
+
+            [VtblIndex(4)]
+            HRESULT get_Enable(BOOL* pfEnable);
+
+            [VtblIndex(5)]
+            HRESULT put_Mono(BOOL fMono);
+
+            [VtblIndex(6)]
+            HRESULT get_Mono(BOOL* pfMono);
+
+            [VtblIndex(7)]
+            HRESULT put_MixLevel(double Level);
+
+            [VtblIndex(8)]
+            HRESULT get_MixLevel(double* pLevel);
+
+            [VtblIndex(9)]
+            HRESULT put_Pan(double Pan);
+
+            [VtblIndex(10)]
+            HRESULT get_Pan(double* pPan);
+
+            [VtblIndex(11)]
+            HRESULT put_Loudness(BOOL fLoudness);
+
+            [VtblIndex(12)]
+            HRESULT get_Loudness(BOOL* pfLoudness);
+
+            [VtblIndex(13)]
+            HRESULT put_Treble(double Treble);
+
+            [VtblIndex(14)]
+            HRESULT get_Treble(double* pTreble);
+
+            [VtblIndex(15)]
+            HRESULT get_TrebleRange(double* pRange);
+
+            [VtblIndex(16)]
+            HRESULT put_Bass(double Bass);
+
+            [VtblIndex(17)]
+            HRESULT get_Bass(double* pBass);
+
+            [VtblIndex(18)]
+            HRESULT get_BassRange(double* pRange);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAMAudioInputMixer*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IAMAudioInputMixer*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IAMAudioInputMixer*, uint> Release;
+
+            [NativeTypeName("HRESULT (BOOL) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAMAudioInputMixer*, BOOL, int> put_Enable;
+
+            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAMAudioInputMixer*, BOOL*, int> get_Enable;
+
+            [NativeTypeName("HRESULT (BOOL) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAMAudioInputMixer*, BOOL, int> put_Mono;
+
+            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAMAudioInputMixer*, BOOL*, int> get_Mono;
+
+            [NativeTypeName("HRESULT (double) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAMAudioInputMixer*, double, int> put_MixLevel;
+
+            [NativeTypeName("HRESULT (double *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAMAudioInputMixer*, double*, int> get_MixLevel;
+
+            [NativeTypeName("HRESULT (double) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAMAudioInputMixer*, double, int> put_Pan;
+
+            [NativeTypeName("HRESULT (double *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAMAudioInputMixer*, double*, int> get_Pan;
+
+            [NativeTypeName("HRESULT (BOOL) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAMAudioInputMixer*, BOOL, int> put_Loudness;
+
+            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAMAudioInputMixer*, BOOL*, int> get_Loudness;
+
+            [NativeTypeName("HRESULT (double) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAMAudioInputMixer*, double, int> put_Treble;
+
+            [NativeTypeName("HRESULT (double *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAMAudioInputMixer*, double*, int> get_Treble;
+
+            [NativeTypeName("HRESULT (double *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAMAudioInputMixer*, double*, int> get_TrebleRange;
+
+            [NativeTypeName("HRESULT (double) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAMAudioInputMixer*, double, int> put_Bass;
+
+            [NativeTypeName("HRESULT (double *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAMAudioInputMixer*, double*, int> get_Bass;
+
+            [NativeTypeName("HRESULT (double *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAMAudioInputMixer*, double*, int> get_BassRange;
         }
     }
 }

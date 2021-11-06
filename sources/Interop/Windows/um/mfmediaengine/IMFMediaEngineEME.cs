@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("50DC93E4-BA4F-4275-AE66-83E836E57469")]
     [NativeTypeName("struct IMFMediaEngineEME : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IMFMediaEngineEME
+    public unsafe partial struct IMFMediaEngineEME : IMFMediaEngineEME.Interface
     {
         public void** lpVtbl;
 
@@ -51,6 +51,33 @@ namespace TerraFX.Interop
         public HRESULT SetMediaKeys(IMFMediaKeys* keys)
         {
             return ((delegate* unmanaged<IMFMediaEngineEME*, IMFMediaKeys*, int>)(lpVtbl[4]))((IMFMediaEngineEME*)Unsafe.AsPointer(ref this), keys);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT get_Keys(IMFMediaKeys** keys);
+
+            [VtblIndex(4)]
+            HRESULT SetMediaKeys(IMFMediaKeys* keys);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFMediaEngineEME*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFMediaEngineEME*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFMediaEngineEME*, uint> Release;
+
+            [NativeTypeName("HRESULT (IMFMediaKeys **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFMediaEngineEME*, IMFMediaKeys**, int> get_Keys;
+
+            [NativeTypeName("HRESULT (IMFMediaKeys *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFMediaEngineEME*, IMFMediaKeys*, int> SetMediaKeys;
         }
     }
 }

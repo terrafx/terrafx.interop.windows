@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("AEC63FDA-7A97-4944-B35C-6C6DF8085CC3")]
     [NativeTypeName("struct IMFMediaKeySystemAccess : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IMFMediaKeySystemAccess
+    public unsafe partial struct IMFMediaKeySystemAccess : IMFMediaKeySystemAccess.Interface
     {
         public void** lpVtbl;
 
@@ -58,6 +58,39 @@ namespace TerraFX.Interop
         public HRESULT get_KeySystem([NativeTypeName("BSTR *")] ushort** pKeySystem)
         {
             return ((delegate* unmanaged<IMFMediaKeySystemAccess*, ushort**, int>)(lpVtbl[5]))((IMFMediaKeySystemAccess*)Unsafe.AsPointer(ref this), pKeySystem);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT CreateMediaKeys(IPropertyStore* pCdmCustomConfig, IMFMediaKeys2** ppKeys);
+
+            [VtblIndex(4)]
+            HRESULT get_SupportedConfiguration(IPropertyStore** ppSupportedConfiguration);
+
+            [VtblIndex(5)]
+            HRESULT get_KeySystem([NativeTypeName("BSTR *")] ushort** pKeySystem);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFMediaKeySystemAccess*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFMediaKeySystemAccess*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFMediaKeySystemAccess*, uint> Release;
+
+            [NativeTypeName("HRESULT (IPropertyStore *, IMFMediaKeys2 **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFMediaKeySystemAccess*, IPropertyStore*, IMFMediaKeys2**, int> CreateMediaKeys;
+
+            [NativeTypeName("HRESULT (IPropertyStore **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFMediaKeySystemAccess*, IPropertyStore**, int> get_SupportedConfiguration;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFMediaKeySystemAccess*, ushort**, int> get_KeySystem;
         }
     }
 }

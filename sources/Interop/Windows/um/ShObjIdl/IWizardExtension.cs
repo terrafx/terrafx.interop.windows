@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("C02EA696-86CC-491E-9B23-74394A0444A8")]
     [NativeTypeName("struct IWizardExtension : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IWizardExtension
+    public unsafe partial struct IWizardExtension : IWizardExtension.Interface
     {
         public void** lpVtbl;
 
@@ -58,6 +58,39 @@ namespace TerraFX.Interop
         public HRESULT GetLastPage(HPROPSHEETPAGE* phpage)
         {
             return ((delegate* unmanaged<IWizardExtension*, HPROPSHEETPAGE*, int>)(lpVtbl[5]))((IWizardExtension*)Unsafe.AsPointer(ref this), phpage);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT AddPages(HPROPSHEETPAGE* aPages, uint cPages, uint* pnPagesAdded);
+
+            [VtblIndex(4)]
+            HRESULT GetFirstPage(HPROPSHEETPAGE* phpage);
+
+            [VtblIndex(5)]
+            HRESULT GetLastPage(HPROPSHEETPAGE* phpage);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWizardExtension*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IWizardExtension*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IWizardExtension*, uint> Release;
+
+            [NativeTypeName("HRESULT (HPROPSHEETPAGE *, UINT, UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWizardExtension*, HPROPSHEETPAGE*, uint, uint*, int> AddPages;
+
+            [NativeTypeName("HRESULT (HPROPSHEETPAGE *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWizardExtension*, HPROPSHEETPAGE*, int> GetFirstPage;
+
+            [NativeTypeName("HRESULT (HPROPSHEETPAGE *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWizardExtension*, HPROPSHEETPAGE*, int> GetLastPage;
         }
     }
 }

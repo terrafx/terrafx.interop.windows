@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("37D84F60-42CB-11CE-8135-00AA004BB851")]
     [NativeTypeName("struct IPersistPropertyBag : IPersist")]
     [NativeInheritance("IPersist")]
-    public unsafe partial struct IPersistPropertyBag
+    public unsafe partial struct IPersistPropertyBag : IPersistPropertyBag.Interface
     {
         public void** lpVtbl;
 
@@ -65,6 +65,42 @@ namespace TerraFX.Interop
         public HRESULT Save(IPropertyBag* pPropBag, BOOL fClearDirty, BOOL fSaveAllProperties)
         {
             return ((delegate* unmanaged<IPersistPropertyBag*, IPropertyBag*, BOOL, BOOL, int>)(lpVtbl[6]))((IPersistPropertyBag*)Unsafe.AsPointer(ref this), pPropBag, fClearDirty, fSaveAllProperties);
+        }
+
+        public interface Interface : IPersist.Interface
+        {
+            [VtblIndex(4)]
+            HRESULT InitNew();
+
+            [VtblIndex(5)]
+            HRESULT Load(IPropertyBag* pPropBag, IErrorLog* pErrorLog);
+
+            [VtblIndex(6)]
+            HRESULT Save(IPropertyBag* pPropBag, BOOL fClearDirty, BOOL fSaveAllProperties);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IPersistPropertyBag*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IPersistPropertyBag*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IPersistPropertyBag*, uint> Release;
+
+            [NativeTypeName("HRESULT (CLSID *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IPersistPropertyBag*, Guid*, int> GetClassID;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IPersistPropertyBag*, int> InitNew;
+
+            [NativeTypeName("HRESULT (IPropertyBag *, IErrorLog *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IPersistPropertyBag*, IPropertyBag*, IErrorLog*, int> Load;
+
+            [NativeTypeName("HRESULT (IPropertyBag *, BOOL, BOOL) __attribute__((stdcall))")]
+            public delegate* unmanaged<IPersistPropertyBag*, IPropertyBag*, BOOL, BOOL, int> Save;
         }
     }
 }

@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("27354156-8F64-5B0F-8F00-5D77AFBE261E")]
     [NativeTypeName("struct IDiscFormat2Erase : IDiscFormat2")]
     [NativeInheritance("IDiscFormat2")]
-    public unsafe partial struct IDiscFormat2Erase
+    public unsafe partial struct IDiscFormat2Erase : IDiscFormat2Erase.Interface
     {
         public void** lpVtbl;
 
@@ -156,6 +156,96 @@ namespace TerraFX.Interop
         public HRESULT EraseMedia()
         {
             return ((delegate* unmanaged<IDiscFormat2Erase*, int>)(lpVtbl[19]))((IDiscFormat2Erase*)Unsafe.AsPointer(ref this));
+        }
+
+        public interface Interface : IDiscFormat2.Interface
+        {
+            [VtblIndex(12)]
+            HRESULT put_Recorder(IDiscRecorder2* value);
+
+            [VtblIndex(13)]
+            HRESULT get_Recorder(IDiscRecorder2** value);
+
+            [VtblIndex(14)]
+            HRESULT put_FullErase([NativeTypeName("VARIANT_BOOL")] short value);
+
+            [VtblIndex(15)]
+            HRESULT get_FullErase([NativeTypeName("VARIANT_BOOL *")] short* value);
+
+            [VtblIndex(16)]
+            HRESULT get_CurrentPhysicalMediaType(IMAPI_MEDIA_PHYSICAL_TYPE* value);
+
+            [VtblIndex(17)]
+            HRESULT put_ClientName([NativeTypeName("BSTR")] ushort* value);
+
+            [VtblIndex(18)]
+            HRESULT get_ClientName([NativeTypeName("BSTR *")] ushort** value);
+
+            [VtblIndex(19)]
+            HRESULT EraseMedia();
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiscFormat2Erase*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiscFormat2Erase*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiscFormat2Erase*, uint> Release;
+
+            [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiscFormat2Erase*, uint*, int> GetTypeInfoCount;
+
+            [NativeTypeName("HRESULT (UINT, LCID, ITypeInfo **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiscFormat2Erase*, uint, uint, ITypeInfo**, int> GetTypeInfo;
+
+            [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiscFormat2Erase*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+
+            [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiscFormat2Erase*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
+
+            [NativeTypeName("HRESULT (IDiscRecorder2 *, VARIANT_BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiscFormat2Erase*, IDiscRecorder2*, short*, int> IsRecorderSupported;
+
+            [NativeTypeName("HRESULT (IDiscRecorder2 *, VARIANT_BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiscFormat2Erase*, IDiscRecorder2*, short*, int> IsCurrentMediaSupported;
+
+            [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiscFormat2Erase*, short*, int> get_MediaPhysicallyBlank;
+
+            [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiscFormat2Erase*, short*, int> get_MediaHeuristicallyBlank;
+
+            [NativeTypeName("HRESULT (SAFEARRAY **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiscFormat2Erase*, SAFEARRAY**, int> get_SupportedMediaTypes;
+
+            [NativeTypeName("HRESULT (IDiscRecorder2 *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiscFormat2Erase*, IDiscRecorder2*, int> put_Recorder;
+
+            [NativeTypeName("HRESULT (IDiscRecorder2 **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiscFormat2Erase*, IDiscRecorder2**, int> get_Recorder;
+
+            [NativeTypeName("HRESULT (VARIANT_BOOL) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiscFormat2Erase*, short, int> put_FullErase;
+
+            [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiscFormat2Erase*, short*, int> get_FullErase;
+
+            [NativeTypeName("HRESULT (IMAPI_MEDIA_PHYSICAL_TYPE *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiscFormat2Erase*, IMAPI_MEDIA_PHYSICAL_TYPE*, int> get_CurrentPhysicalMediaType;
+
+            [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiscFormat2Erase*, ushort*, int> put_ClientName;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiscFormat2Erase*, ushort**, int> get_ClientName;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiscFormat2Erase*, int> EraseMedia;
         }
     }
 }

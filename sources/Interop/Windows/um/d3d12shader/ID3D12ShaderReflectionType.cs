@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop
 {
     [Guid("E913C351-783D-48CA-A1D1-4F306284AD56")]
-    public unsafe partial struct ID3D12ShaderReflectionType
+    public unsafe partial struct ID3D12ShaderReflectionType : ID3D12ShaderReflectionType.Interface
     {
         public void** lpVtbl;
 
@@ -89,6 +89,79 @@ namespace TerraFX.Interop
         public HRESULT ImplementsInterface(ID3D12ShaderReflectionType* pBase)
         {
             return ((delegate* unmanaged<ID3D12ShaderReflectionType*, ID3D12ShaderReflectionType*, int>)(lpVtbl[10]))((ID3D12ShaderReflectionType*)Unsafe.AsPointer(ref this), pBase);
+        }
+
+        public interface Interface
+        {
+            [VtblIndex(0)]
+            HRESULT GetDesc(D3D12_SHADER_TYPE_DESC* pDesc);
+
+            [VtblIndex(1)]
+            ID3D12ShaderReflectionType* GetMemberTypeByIndex(uint Index);
+
+            [VtblIndex(2)]
+            ID3D12ShaderReflectionType* GetMemberTypeByName([NativeTypeName("LPCSTR")] sbyte* Name);
+
+            [VtblIndex(3)]
+            [return: NativeTypeName("LPCSTR")]
+            sbyte* GetMemberTypeName(uint Index);
+
+            [VtblIndex(4)]
+            HRESULT IsEqual(ID3D12ShaderReflectionType* pType);
+
+            [VtblIndex(5)]
+            ID3D12ShaderReflectionType* GetSubType();
+
+            [VtblIndex(6)]
+            ID3D12ShaderReflectionType* GetBaseClass();
+
+            [VtblIndex(7)]
+            uint GetNumInterfaces();
+
+            [VtblIndex(8)]
+            ID3D12ShaderReflectionType* GetInterfaceByIndex(uint uIndex);
+
+            [VtblIndex(9)]
+            HRESULT IsOfType(ID3D12ShaderReflectionType* pType);
+
+            [VtblIndex(10)]
+            HRESULT ImplementsInterface(ID3D12ShaderReflectionType* pBase);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (D3D12_SHADER_TYPE_DESC *) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D12ShaderReflectionType*, D3D12_SHADER_TYPE_DESC*, int> GetDesc;
+
+            [NativeTypeName("ID3D12ShaderReflectionType *(UINT) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D12ShaderReflectionType*, uint, ID3D12ShaderReflectionType*> GetMemberTypeByIndex;
+
+            [NativeTypeName("ID3D12ShaderReflectionType *(LPCSTR) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D12ShaderReflectionType*, sbyte*, ID3D12ShaderReflectionType*> GetMemberTypeByName;
+
+            [NativeTypeName("LPCSTR (UINT) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D12ShaderReflectionType*, uint, sbyte*> GetMemberTypeName;
+
+            [NativeTypeName("HRESULT (ID3D12ShaderReflectionType *) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D12ShaderReflectionType*, ID3D12ShaderReflectionType*, int> IsEqual;
+
+            [NativeTypeName("ID3D12ShaderReflectionType *() __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D12ShaderReflectionType*, ID3D12ShaderReflectionType*> GetSubType;
+
+            [NativeTypeName("ID3D12ShaderReflectionType *() __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D12ShaderReflectionType*, ID3D12ShaderReflectionType*> GetBaseClass;
+
+            [NativeTypeName("UINT () __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D12ShaderReflectionType*, uint> GetNumInterfaces;
+
+            [NativeTypeName("ID3D12ShaderReflectionType *(UINT) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D12ShaderReflectionType*, uint, ID3D12ShaderReflectionType*> GetInterfaceByIndex;
+
+            [NativeTypeName("HRESULT (ID3D12ShaderReflectionType *) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D12ShaderReflectionType*, ID3D12ShaderReflectionType*, int> IsOfType;
+
+            [NativeTypeName("HRESULT (ID3D12ShaderReflectionType *) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D12ShaderReflectionType*, ID3D12ShaderReflectionType*, int> ImplementsInterface;
         }
     }
 }

@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("8895B1C6-B41F-4C1C-A562-0D564250836F")]
     [NativeTypeName("struct IPreviewHandler : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IPreviewHandler
+    public unsafe partial struct IPreviewHandler : IPreviewHandler.Interface
     {
         public void** lpVtbl;
 
@@ -86,6 +86,63 @@ namespace TerraFX.Interop
         public HRESULT TranslateAcceleratorW(MSG* pmsg)
         {
             return ((delegate* unmanaged<IPreviewHandler*, MSG*, int>)(lpVtbl[9]))((IPreviewHandler*)Unsafe.AsPointer(ref this), pmsg);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT SetWindow(HWND hwnd, [NativeTypeName("const RECT *")] RECT* prc);
+
+            [VtblIndex(4)]
+            HRESULT SetRect([NativeTypeName("const RECT *")] RECT* prc);
+
+            [VtblIndex(5)]
+            HRESULT DoPreview();
+
+            [VtblIndex(6)]
+            HRESULT Unload();
+
+            [VtblIndex(7)]
+            HRESULT SetFocus();
+
+            [VtblIndex(8)]
+            HRESULT QueryFocus(HWND* phwnd);
+
+            [VtblIndex(9)]
+            HRESULT TranslateAcceleratorW(MSG* pmsg);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IPreviewHandler*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IPreviewHandler*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IPreviewHandler*, uint> Release;
+
+            [NativeTypeName("HRESULT (HWND, const RECT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IPreviewHandler*, HWND, RECT*, int> SetWindow;
+
+            [NativeTypeName("HRESULT (const RECT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IPreviewHandler*, RECT*, int> SetRect;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IPreviewHandler*, int> DoPreview;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IPreviewHandler*, int> Unload;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IPreviewHandler*, int> SetFocus;
+
+            [NativeTypeName("HRESULT (HWND *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IPreviewHandler*, HWND*, int> QueryFocus;
+
+            [NativeTypeName("HRESULT (MSG *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IPreviewHandler*, MSG*, int> TranslateAcceleratorW;
         }
     }
 }

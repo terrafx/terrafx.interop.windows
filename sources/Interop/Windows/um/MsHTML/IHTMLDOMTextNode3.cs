@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("3051073E-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct IHTMLDOMTextNode3 : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct IHTMLDOMTextNode3
+    public unsafe partial struct IHTMLDOMTextNode3 : IHTMLDOMTextNode3.Interface
     {
         public void** lpVtbl;
 
@@ -128,6 +128,87 @@ namespace TerraFX.Interop
         public HRESULT normalize()
         {
             return ((delegate* unmanaged<IHTMLDOMTextNode3*, int>)(lpVtbl[15]))((IHTMLDOMTextNode3*)Unsafe.AsPointer(ref this));
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT substringData([NativeTypeName("long")] int offset, [NativeTypeName("long")] int Count, [NativeTypeName("BSTR *")] ushort** pbstrsubString);
+
+            [VtblIndex(8)]
+            HRESULT insertData([NativeTypeName("long")] int offset, [NativeTypeName("BSTR")] ushort* bstrstring);
+
+            [VtblIndex(9)]
+            HRESULT deleteData([NativeTypeName("long")] int offset, [NativeTypeName("long")] int Count);
+
+            [VtblIndex(10)]
+            HRESULT replaceData([NativeTypeName("long")] int offset, [NativeTypeName("long")] int Count, [NativeTypeName("BSTR")] ushort* bstrstring);
+
+            [VtblIndex(11)]
+            HRESULT splitText([NativeTypeName("long")] int offset, IHTMLDOMNode** pRetNode);
+
+            [VtblIndex(12)]
+            HRESULT get_wholeText([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(13)]
+            HRESULT replaceWholeText([NativeTypeName("BSTR")] ushort* bstrText, IHTMLDOMNode** ppRetNode);
+
+            [VtblIndex(14)]
+            HRESULT hasAttributes([NativeTypeName("VARIANT_BOOL *")] short* pfHasAttributes);
+
+            [VtblIndex(15)]
+            HRESULT normalize();
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLDOMTextNode3*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLDOMTextNode3*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLDOMTextNode3*, uint> Release;
+
+            [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLDOMTextNode3*, uint*, int> GetTypeInfoCount;
+
+            [NativeTypeName("HRESULT (UINT, LCID, ITypeInfo **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLDOMTextNode3*, uint, uint, ITypeInfo**, int> GetTypeInfo;
+
+            [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLDOMTextNode3*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+
+            [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLDOMTextNode3*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
+
+            [NativeTypeName("HRESULT (long, long, BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLDOMTextNode3*, int, int, ushort**, int> substringData;
+
+            [NativeTypeName("HRESULT (long, BSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLDOMTextNode3*, int, ushort*, int> insertData;
+
+            [NativeTypeName("HRESULT (long, long) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLDOMTextNode3*, int, int, int> deleteData;
+
+            [NativeTypeName("HRESULT (long, long, BSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLDOMTextNode3*, int, int, ushort*, int> replaceData;
+
+            [NativeTypeName("HRESULT (long, IHTMLDOMNode **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLDOMTextNode3*, int, IHTMLDOMNode**, int> splitText;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLDOMTextNode3*, ushort**, int> get_wholeText;
+
+            [NativeTypeName("HRESULT (BSTR, IHTMLDOMNode **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLDOMTextNode3*, ushort*, IHTMLDOMNode**, int> replaceWholeText;
+
+            [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLDOMTextNode3*, short*, int> hasAttributes;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLDOMTextNode3*, int> normalize;
         }
     }
 }

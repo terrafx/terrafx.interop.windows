@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("4110243A-9757-461F-89F1-F22345BCAB4E")]
     [NativeTypeName("struct IMFSensorGroup : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IMFSensorGroup
+    public unsafe partial struct IMFSensorGroup : IMFSensorGroup.Interface
     {
         public void** lpVtbl;
 
@@ -93,6 +93,69 @@ namespace TerraFX.Interop
         public HRESULT CreateMediaSource(IMFMediaSource** ppSource)
         {
             return ((delegate* unmanaged<IMFSensorGroup*, IMFMediaSource**, int>)(lpVtbl[10]))((IMFSensorGroup*)Unsafe.AsPointer(ref this), ppSource);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetSymbolicLink([NativeTypeName("LPWSTR")] ushort* SymbolicLink, [NativeTypeName("LONG")] int cchSymbolicLink, [NativeTypeName("LONG *")] int* pcchWritten);
+
+            [VtblIndex(4)]
+            HRESULT GetFlags([NativeTypeName("ULONGLONG *")] ulong* pFlags);
+
+            [VtblIndex(5)]
+            HRESULT GetSensorGroupAttributes(IMFAttributes** ppAttributes);
+
+            [VtblIndex(6)]
+            HRESULT GetSensorDeviceCount([NativeTypeName("DWORD *")] uint* pdwCount);
+
+            [VtblIndex(7)]
+            HRESULT GetSensorDevice([NativeTypeName("DWORD")] uint dwIndex, IMFSensorDevice** ppDevice);
+
+            [VtblIndex(8)]
+            HRESULT SetDefaultSensorDeviceIndex([NativeTypeName("DWORD")] uint dwIndex);
+
+            [VtblIndex(9)]
+            HRESULT GetDefaultSensorDeviceIndex([NativeTypeName("DWORD *")] uint* pdwIndex);
+
+            [VtblIndex(10)]
+            HRESULT CreateMediaSource(IMFMediaSource** ppSource);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFSensorGroup*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFSensorGroup*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFSensorGroup*, uint> Release;
+
+            [NativeTypeName("HRESULT (LPWSTR, LONG, LONG *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFSensorGroup*, ushort*, int, int*, int> GetSymbolicLink;
+
+            [NativeTypeName("HRESULT (ULONGLONG *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFSensorGroup*, ulong*, int> GetFlags;
+
+            [NativeTypeName("HRESULT (IMFAttributes **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFSensorGroup*, IMFAttributes**, int> GetSensorGroupAttributes;
+
+            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFSensorGroup*, uint*, int> GetSensorDeviceCount;
+
+            [NativeTypeName("HRESULT (DWORD, IMFSensorDevice **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFSensorGroup*, uint, IMFSensorDevice**, int> GetSensorDevice;
+
+            [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFSensorGroup*, uint, int> SetDefaultSensorDeviceIndex;
+
+            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFSensorGroup*, uint*, int> GetDefaultSensorDeviceIndex;
+
+            [NativeTypeName("HRESULT (IMFMediaSource **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFSensorGroup*, IMFMediaSource**, int> CreateMediaSource;
         }
     }
 }

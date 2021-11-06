@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("CA86AA50-C46E-429E-AB27-16D6AC6844CB")]
     [NativeTypeName("struct IMFSampleGrabberSinkCallback2 : IMFSampleGrabberSinkCallback")]
     [NativeInheritance("IMFSampleGrabberSinkCallback")]
-    public unsafe partial struct IMFSampleGrabberSinkCallback2
+    public unsafe partial struct IMFSampleGrabberSinkCallback2 : IMFSampleGrabberSinkCallback2.Interface
     {
         public void** lpVtbl;
 
@@ -100,6 +100,51 @@ namespace TerraFX.Interop
         public HRESULT OnProcessSampleEx([NativeTypeName("const GUID &")] Guid* guidMajorMediaType, [NativeTypeName("DWORD")] uint dwSampleFlags, [NativeTypeName("LONGLONG")] long llSampleTime, [NativeTypeName("LONGLONG")] long llSampleDuration, [NativeTypeName("const BYTE *")] byte* pSampleBuffer, [NativeTypeName("DWORD")] uint dwSampleSize, IMFAttributes* pAttributes)
         {
             return ((delegate* unmanaged<IMFSampleGrabberSinkCallback2*, Guid*, uint, long, long, byte*, uint, IMFAttributes*, int>)(lpVtbl[11]))((IMFSampleGrabberSinkCallback2*)Unsafe.AsPointer(ref this), guidMajorMediaType, dwSampleFlags, llSampleTime, llSampleDuration, pSampleBuffer, dwSampleSize, pAttributes);
+        }
+
+        public interface Interface : IMFSampleGrabberSinkCallback.Interface
+        {
+            [VtblIndex(11)]
+            HRESULT OnProcessSampleEx([NativeTypeName("const GUID &")] Guid* guidMajorMediaType, [NativeTypeName("DWORD")] uint dwSampleFlags, [NativeTypeName("LONGLONG")] long llSampleTime, [NativeTypeName("LONGLONG")] long llSampleDuration, [NativeTypeName("const BYTE *")] byte* pSampleBuffer, [NativeTypeName("DWORD")] uint dwSampleSize, IMFAttributes* pAttributes);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFSampleGrabberSinkCallback2*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFSampleGrabberSinkCallback2*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFSampleGrabberSinkCallback2*, uint> Release;
+
+            [NativeTypeName("HRESULT (MFTIME, LONGLONG) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFSampleGrabberSinkCallback2*, long, long, int> OnClockStart;
+
+            [NativeTypeName("HRESULT (MFTIME) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFSampleGrabberSinkCallback2*, long, int> OnClockStop;
+
+            [NativeTypeName("HRESULT (MFTIME) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFSampleGrabberSinkCallback2*, long, int> OnClockPause;
+
+            [NativeTypeName("HRESULT (MFTIME) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFSampleGrabberSinkCallback2*, long, int> OnClockRestart;
+
+            [NativeTypeName("HRESULT (MFTIME, float) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFSampleGrabberSinkCallback2*, long, float, int> OnClockSetRate;
+
+            [NativeTypeName("HRESULT (IMFPresentationClock *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFSampleGrabberSinkCallback2*, IMFPresentationClock*, int> OnSetPresentationClock;
+
+            [NativeTypeName("HRESULT (const GUID &, DWORD, LONGLONG, LONGLONG, const BYTE *, DWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFSampleGrabberSinkCallback2*, Guid*, uint, long, long, byte*, uint, int> OnProcessSample;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFSampleGrabberSinkCallback2*, int> OnShutdown;
+
+            [NativeTypeName("HRESULT (const GUID &, DWORD, LONGLONG, LONGLONG, const BYTE *, DWORD, IMFAttributes *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFSampleGrabberSinkCallback2*, Guid*, uint, long, long, byte*, uint, IMFAttributes*, int> OnProcessSampleEx;
         }
     }
 }

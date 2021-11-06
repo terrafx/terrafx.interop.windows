@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("70629033-E363-4A28-A567-0DB78006E6D7")]
     [NativeTypeName("struct IEnumShellItems : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IEnumShellItems
+    public unsafe partial struct IEnumShellItems : IEnumShellItems.Interface
     {
         public void** lpVtbl;
 
@@ -65,6 +65,45 @@ namespace TerraFX.Interop
         public HRESULT Clone(IEnumShellItems** ppenum)
         {
             return ((delegate* unmanaged<IEnumShellItems*, IEnumShellItems**, int>)(lpVtbl[6]))((IEnumShellItems*)Unsafe.AsPointer(ref this), ppenum);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT Next([NativeTypeName("ULONG")] uint celt, IShellItem** rgelt, [NativeTypeName("ULONG *")] uint* pceltFetched);
+
+            [VtblIndex(4)]
+            HRESULT Skip([NativeTypeName("ULONG")] uint celt);
+
+            [VtblIndex(5)]
+            HRESULT Reset();
+
+            [VtblIndex(6)]
+            HRESULT Clone(IEnumShellItems** ppenum);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IEnumShellItems*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IEnumShellItems*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IEnumShellItems*, uint> Release;
+
+            [NativeTypeName("HRESULT (ULONG, IShellItem **, ULONG *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IEnumShellItems*, uint, IShellItem**, uint*, int> Next;
+
+            [NativeTypeName("HRESULT (ULONG) __attribute__((stdcall))")]
+            public delegate* unmanaged<IEnumShellItems*, uint, int> Skip;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IEnumShellItems*, int> Reset;
+
+            [NativeTypeName("HRESULT (IEnumShellItems **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IEnumShellItems*, IEnumShellItems**, int> Clone;
         }
     }
 }

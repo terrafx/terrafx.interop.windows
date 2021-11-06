@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("54B3ABF3-F085-4181-B546-E29C403C726B")]
     [NativeTypeName("struct IEnumSyncMgrSyncItems : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IEnumSyncMgrSyncItems
+    public unsafe partial struct IEnumSyncMgrSyncItems : IEnumSyncMgrSyncItems.Interface
     {
         public void** lpVtbl;
 
@@ -65,6 +65,45 @@ namespace TerraFX.Interop
         public HRESULT Clone(IEnumSyncMgrSyncItems** ppenum)
         {
             return ((delegate* unmanaged<IEnumSyncMgrSyncItems*, IEnumSyncMgrSyncItems**, int>)(lpVtbl[6]))((IEnumSyncMgrSyncItems*)Unsafe.AsPointer(ref this), ppenum);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT Next([NativeTypeName("ULONG")] uint celt, ISyncMgrSyncItem** rgelt, [NativeTypeName("ULONG *")] uint* pceltFetched);
+
+            [VtblIndex(4)]
+            HRESULT Skip([NativeTypeName("ULONG")] uint celt);
+
+            [VtblIndex(5)]
+            HRESULT Reset();
+
+            [VtblIndex(6)]
+            HRESULT Clone(IEnumSyncMgrSyncItems** ppenum);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IEnumSyncMgrSyncItems*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IEnumSyncMgrSyncItems*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IEnumSyncMgrSyncItems*, uint> Release;
+
+            [NativeTypeName("HRESULT (ULONG, ISyncMgrSyncItem **, ULONG *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IEnumSyncMgrSyncItems*, uint, ISyncMgrSyncItem**, uint*, int> Next;
+
+            [NativeTypeName("HRESULT (ULONG) __attribute__((stdcall))")]
+            public delegate* unmanaged<IEnumSyncMgrSyncItems*, uint, int> Skip;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IEnumSyncMgrSyncItems*, int> Reset;
+
+            [NativeTypeName("HRESULT (IEnumSyncMgrSyncItems **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IEnumSyncMgrSyncItems*, IEnumSyncMgrSyncItems**, int> Clone;
         }
     }
 }

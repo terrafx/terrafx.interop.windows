@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("305104C0-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct IHTMLStyleSheetRulesAppliedCollection : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct IHTMLStyleSheetRulesAppliedCollection
+    public unsafe partial struct IHTMLStyleSheetRulesAppliedCollection : IHTMLStyleSheetRulesAppliedCollection.Interface
     {
         public void** lpVtbl;
 
@@ -100,6 +100,63 @@ namespace TerraFX.Interop
         public HRESULT propertyAppliedTraceLength([NativeTypeName("BSTR")] ushort* name, [NativeTypeName("long *")] int* pLength)
         {
             return ((delegate* unmanaged<IHTMLStyleSheetRulesAppliedCollection*, ushort*, int*, int>)(lpVtbl[11]))((IHTMLStyleSheetRulesAppliedCollection*)Unsafe.AsPointer(ref this), name, pLength);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT item([NativeTypeName("long")] int index, IHTMLStyleSheetRule** ppHTMLStyleSheetRule);
+
+            [VtblIndex(8)]
+            HRESULT get_length([NativeTypeName("long *")] int* p);
+
+            [VtblIndex(9)]
+            HRESULT propertyAppliedBy([NativeTypeName("BSTR")] ushort* name, IHTMLStyleSheetRule** ppRule);
+
+            [VtblIndex(10)]
+            HRESULT propertyAppliedTrace([NativeTypeName("BSTR")] ushort* name, [NativeTypeName("long")] int index, IHTMLStyleSheetRule** ppRule);
+
+            [VtblIndex(11)]
+            HRESULT propertyAppliedTraceLength([NativeTypeName("BSTR")] ushort* name, [NativeTypeName("long *")] int* pLength);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLStyleSheetRulesAppliedCollection*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLStyleSheetRulesAppliedCollection*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLStyleSheetRulesAppliedCollection*, uint> Release;
+
+            [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLStyleSheetRulesAppliedCollection*, uint*, int> GetTypeInfoCount;
+
+            [NativeTypeName("HRESULT (UINT, LCID, ITypeInfo **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLStyleSheetRulesAppliedCollection*, uint, uint, ITypeInfo**, int> GetTypeInfo;
+
+            [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLStyleSheetRulesAppliedCollection*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+
+            [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLStyleSheetRulesAppliedCollection*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
+
+            [NativeTypeName("HRESULT (long, IHTMLStyleSheetRule **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLStyleSheetRulesAppliedCollection*, int, IHTMLStyleSheetRule**, int> item;
+
+            [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLStyleSheetRulesAppliedCollection*, int*, int> get_length;
+
+            [NativeTypeName("HRESULT (BSTR, IHTMLStyleSheetRule **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLStyleSheetRulesAppliedCollection*, ushort*, IHTMLStyleSheetRule**, int> propertyAppliedBy;
+
+            [NativeTypeName("HRESULT (BSTR, long, IHTMLStyleSheetRule **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLStyleSheetRulesAppliedCollection*, ushort*, int, IHTMLStyleSheetRule**, int> propertyAppliedTrace;
+
+            [NativeTypeName("HRESULT (BSTR, long *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLStyleSheetRulesAppliedCollection*, ushort*, int*, int> propertyAppliedTraceLength;
         }
     }
 }

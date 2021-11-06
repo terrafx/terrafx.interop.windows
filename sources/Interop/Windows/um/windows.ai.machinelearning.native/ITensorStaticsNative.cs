@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("39D055A4-66F6-4EBC-95D9-7A29EBE7690A")]
     [NativeTypeName("struct ITensorStaticsNative : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct ITensorStaticsNative
+    public unsafe partial struct ITensorStaticsNative : ITensorStaticsNative.Interface
     {
         public void** lpVtbl;
 
@@ -44,6 +44,27 @@ namespace TerraFX.Interop
         public HRESULT CreateFromD3D12Resource(ID3D12Resource* value, [NativeTypeName("long long *")] long* shape, int shapeCount, IUnknown** result)
         {
             return ((delegate* unmanaged<ITensorStaticsNative*, ID3D12Resource*, long*, int, IUnknown**, int>)(lpVtbl[3]))((ITensorStaticsNative*)Unsafe.AsPointer(ref this), value, shape, shapeCount, result);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT CreateFromD3D12Resource(ID3D12Resource* value, [NativeTypeName("long long *")] long* shape, int shapeCount, IUnknown** result);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITensorStaticsNative*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ITensorStaticsNative*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ITensorStaticsNative*, uint> Release;
+
+            [NativeTypeName("HRESULT (ID3D12Resource *, long long *, int, IUnknown **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITensorStaticsNative*, ID3D12Resource*, long*, int, IUnknown**, int> CreateFromD3D12Resource;
         }
     }
 }

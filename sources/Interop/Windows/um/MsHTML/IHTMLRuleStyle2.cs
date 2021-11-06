@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("3050F4AC-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct IHTMLRuleStyle2 : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct IHTMLRuleStyle2
+    public unsafe partial struct IHTMLRuleStyle2 : IHTMLRuleStyle2.Interface
     {
         public void** lpVtbl;
 
@@ -485,6 +485,393 @@ namespace TerraFX.Interop
         public HRESULT get_accelerator([NativeTypeName("BSTR *")] ushort** p)
         {
             return ((delegate* unmanaged<IHTMLRuleStyle2*, ushort**, int>)(lpVtbl[66]))((IHTMLRuleStyle2*)Unsafe.AsPointer(ref this), p);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT put_tableLayout([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(8)]
+            HRESULT get_tableLayout([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(9)]
+            HRESULT put_borderCollapse([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(10)]
+            HRESULT get_borderCollapse([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(11)]
+            HRESULT put_direction([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(12)]
+            HRESULT get_direction([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(13)]
+            HRESULT put_behavior([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(14)]
+            HRESULT get_behavior([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(15)]
+            HRESULT put_position([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(16)]
+            HRESULT get_position([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(17)]
+            HRESULT put_unicodeBidi([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(18)]
+            HRESULT get_unicodeBidi([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(19)]
+            HRESULT put_bottom(VARIANT v);
+
+            [VtblIndex(20)]
+            HRESULT get_bottom(VARIANT* p);
+
+            [VtblIndex(21)]
+            HRESULT put_right(VARIANT v);
+
+            [VtblIndex(22)]
+            HRESULT get_right(VARIANT* p);
+
+            [VtblIndex(23)]
+            HRESULT put_pixelBottom([NativeTypeName("long")] int v);
+
+            [VtblIndex(24)]
+            HRESULT get_pixelBottom([NativeTypeName("long *")] int* p);
+
+            [VtblIndex(25)]
+            HRESULT put_pixelRight([NativeTypeName("long")] int v);
+
+            [VtblIndex(26)]
+            HRESULT get_pixelRight([NativeTypeName("long *")] int* p);
+
+            [VtblIndex(27)]
+            HRESULT put_posBottom(float v);
+
+            [VtblIndex(28)]
+            HRESULT get_posBottom(float* p);
+
+            [VtblIndex(29)]
+            HRESULT put_posRight(float v);
+
+            [VtblIndex(30)]
+            HRESULT get_posRight(float* p);
+
+            [VtblIndex(31)]
+            HRESULT put_imeMode([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(32)]
+            HRESULT get_imeMode([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(33)]
+            HRESULT put_rubyAlign([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(34)]
+            HRESULT get_rubyAlign([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(35)]
+            HRESULT put_rubyPosition([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(36)]
+            HRESULT get_rubyPosition([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(37)]
+            HRESULT put_rubyOverhang([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(38)]
+            HRESULT get_rubyOverhang([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(39)]
+            HRESULT put_layoutGridChar(VARIANT v);
+
+            [VtblIndex(40)]
+            HRESULT get_layoutGridChar(VARIANT* p);
+
+            [VtblIndex(41)]
+            HRESULT put_layoutGridLine(VARIANT v);
+
+            [VtblIndex(42)]
+            HRESULT get_layoutGridLine(VARIANT* p);
+
+            [VtblIndex(43)]
+            HRESULT put_layoutGridMode([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(44)]
+            HRESULT get_layoutGridMode([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(45)]
+            HRESULT put_layoutGridType([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(46)]
+            HRESULT get_layoutGridType([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(47)]
+            HRESULT put_layoutGrid([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(48)]
+            HRESULT get_layoutGrid([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(49)]
+            HRESULT put_textAutospace([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(50)]
+            HRESULT get_textAutospace([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(51)]
+            HRESULT put_wordBreak([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(52)]
+            HRESULT get_wordBreak([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(53)]
+            HRESULT put_lineBreak([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(54)]
+            HRESULT get_lineBreak([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(55)]
+            HRESULT put_textJustify([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(56)]
+            HRESULT get_textJustify([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(57)]
+            HRESULT put_textJustifyTrim([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(58)]
+            HRESULT get_textJustifyTrim([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(59)]
+            HRESULT put_textKashida(VARIANT v);
+
+            [VtblIndex(60)]
+            HRESULT get_textKashida(VARIANT* p);
+
+            [VtblIndex(61)]
+            HRESULT put_overflowX([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(62)]
+            HRESULT get_overflowX([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(63)]
+            HRESULT put_overflowY([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(64)]
+            HRESULT get_overflowY([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(65)]
+            HRESULT put_accelerator([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(66)]
+            HRESULT get_accelerator([NativeTypeName("BSTR *")] ushort** p);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLRuleStyle2*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLRuleStyle2*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLRuleStyle2*, uint> Release;
+
+            [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLRuleStyle2*, uint*, int> GetTypeInfoCount;
+
+            [NativeTypeName("HRESULT (UINT, LCID, ITypeInfo **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLRuleStyle2*, uint, uint, ITypeInfo**, int> GetTypeInfo;
+
+            [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLRuleStyle2*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+
+            [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLRuleStyle2*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
+
+            [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLRuleStyle2*, ushort*, int> put_tableLayout;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLRuleStyle2*, ushort**, int> get_tableLayout;
+
+            [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLRuleStyle2*, ushort*, int> put_borderCollapse;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLRuleStyle2*, ushort**, int> get_borderCollapse;
+
+            [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLRuleStyle2*, ushort*, int> put_direction;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLRuleStyle2*, ushort**, int> get_direction;
+
+            [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLRuleStyle2*, ushort*, int> put_behavior;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLRuleStyle2*, ushort**, int> get_behavior;
+
+            [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLRuleStyle2*, ushort*, int> put_position;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLRuleStyle2*, ushort**, int> get_position;
+
+            [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLRuleStyle2*, ushort*, int> put_unicodeBidi;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLRuleStyle2*, ushort**, int> get_unicodeBidi;
+
+            [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLRuleStyle2*, VARIANT, int> put_bottom;
+
+            [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLRuleStyle2*, VARIANT*, int> get_bottom;
+
+            [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLRuleStyle2*, VARIANT, int> put_right;
+
+            [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLRuleStyle2*, VARIANT*, int> get_right;
+
+            [NativeTypeName("HRESULT (long) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLRuleStyle2*, int, int> put_pixelBottom;
+
+            [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLRuleStyle2*, int*, int> get_pixelBottom;
+
+            [NativeTypeName("HRESULT (long) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLRuleStyle2*, int, int> put_pixelRight;
+
+            [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLRuleStyle2*, int*, int> get_pixelRight;
+
+            [NativeTypeName("HRESULT (float) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLRuleStyle2*, float, int> put_posBottom;
+
+            [NativeTypeName("HRESULT (float *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLRuleStyle2*, float*, int> get_posBottom;
+
+            [NativeTypeName("HRESULT (float) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLRuleStyle2*, float, int> put_posRight;
+
+            [NativeTypeName("HRESULT (float *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLRuleStyle2*, float*, int> get_posRight;
+
+            [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLRuleStyle2*, ushort*, int> put_imeMode;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLRuleStyle2*, ushort**, int> get_imeMode;
+
+            [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLRuleStyle2*, ushort*, int> put_rubyAlign;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLRuleStyle2*, ushort**, int> get_rubyAlign;
+
+            [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLRuleStyle2*, ushort*, int> put_rubyPosition;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLRuleStyle2*, ushort**, int> get_rubyPosition;
+
+            [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLRuleStyle2*, ushort*, int> put_rubyOverhang;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLRuleStyle2*, ushort**, int> get_rubyOverhang;
+
+            [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLRuleStyle2*, VARIANT, int> put_layoutGridChar;
+
+            [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLRuleStyle2*, VARIANT*, int> get_layoutGridChar;
+
+            [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLRuleStyle2*, VARIANT, int> put_layoutGridLine;
+
+            [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLRuleStyle2*, VARIANT*, int> get_layoutGridLine;
+
+            [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLRuleStyle2*, ushort*, int> put_layoutGridMode;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLRuleStyle2*, ushort**, int> get_layoutGridMode;
+
+            [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLRuleStyle2*, ushort*, int> put_layoutGridType;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLRuleStyle2*, ushort**, int> get_layoutGridType;
+
+            [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLRuleStyle2*, ushort*, int> put_layoutGrid;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLRuleStyle2*, ushort**, int> get_layoutGrid;
+
+            [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLRuleStyle2*, ushort*, int> put_textAutospace;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLRuleStyle2*, ushort**, int> get_textAutospace;
+
+            [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLRuleStyle2*, ushort*, int> put_wordBreak;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLRuleStyle2*, ushort**, int> get_wordBreak;
+
+            [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLRuleStyle2*, ushort*, int> put_lineBreak;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLRuleStyle2*, ushort**, int> get_lineBreak;
+
+            [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLRuleStyle2*, ushort*, int> put_textJustify;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLRuleStyle2*, ushort**, int> get_textJustify;
+
+            [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLRuleStyle2*, ushort*, int> put_textJustifyTrim;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLRuleStyle2*, ushort**, int> get_textJustifyTrim;
+
+            [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLRuleStyle2*, VARIANT, int> put_textKashida;
+
+            [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLRuleStyle2*, VARIANT*, int> get_textKashida;
+
+            [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLRuleStyle2*, ushort*, int> put_overflowX;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLRuleStyle2*, ushort**, int> get_overflowX;
+
+            [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLRuleStyle2*, ushort*, int> put_overflowY;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLRuleStyle2*, ushort**, int> get_overflowY;
+
+            [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLRuleStyle2*, ushort*, int> put_accelerator;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLRuleStyle2*, ushort**, int> get_accelerator;
         }
     }
 }

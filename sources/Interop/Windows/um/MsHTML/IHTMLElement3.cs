@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("3050F673-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct IHTMLElement3 : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct IHTMLElement3
+    public unsafe partial struct IHTMLElement3 : IHTMLElement3.Interface
     {
         public void** lpVtbl;
 
@@ -366,6 +366,291 @@ namespace TerraFX.Interop
         public HRESULT get_glyphMode([NativeTypeName("LONG *")] int* p)
         {
             return ((delegate* unmanaged<IHTMLElement3*, int*, int>)(lpVtbl[49]))((IHTMLElement3*)Unsafe.AsPointer(ref this), p);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT mergeAttributes(IHTMLElement* mergeThis, VARIANT* pvarFlags);
+
+            [VtblIndex(8)]
+            HRESULT get_isMultiLine([NativeTypeName("VARIANT_BOOL *")] short* p);
+
+            [VtblIndex(9)]
+            HRESULT get_canHaveHTML([NativeTypeName("VARIANT_BOOL *")] short* p);
+
+            [VtblIndex(10)]
+            HRESULT put_onlayoutcomplete(VARIANT v);
+
+            [VtblIndex(11)]
+            HRESULT get_onlayoutcomplete(VARIANT* p);
+
+            [VtblIndex(12)]
+            HRESULT put_onpage(VARIANT v);
+
+            [VtblIndex(13)]
+            HRESULT get_onpage(VARIANT* p);
+
+            [VtblIndex(14)]
+            HRESULT put_inflateBlock([NativeTypeName("VARIANT_BOOL")] short v);
+
+            [VtblIndex(15)]
+            HRESULT get_inflateBlock([NativeTypeName("VARIANT_BOOL *")] short* p);
+
+            [VtblIndex(16)]
+            HRESULT put_onbeforedeactivate(VARIANT v);
+
+            [VtblIndex(17)]
+            HRESULT get_onbeforedeactivate(VARIANT* p);
+
+            [VtblIndex(18)]
+            HRESULT setActive();
+
+            [VtblIndex(19)]
+            HRESULT put_contentEditable([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(20)]
+            HRESULT get_contentEditable([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(21)]
+            HRESULT get_isContentEditable([NativeTypeName("VARIANT_BOOL *")] short* p);
+
+            [VtblIndex(22)]
+            HRESULT put_hideFocus([NativeTypeName("VARIANT_BOOL")] short v);
+
+            [VtblIndex(23)]
+            HRESULT get_hideFocus([NativeTypeName("VARIANT_BOOL *")] short* p);
+
+            [VtblIndex(24)]
+            HRESULT put_disabled([NativeTypeName("VARIANT_BOOL")] short v);
+
+            [VtblIndex(25)]
+            HRESULT get_disabled([NativeTypeName("VARIANT_BOOL *")] short* p);
+
+            [VtblIndex(26)]
+            HRESULT get_isDisabled([NativeTypeName("VARIANT_BOOL *")] short* p);
+
+            [VtblIndex(27)]
+            HRESULT put_onmove(VARIANT v);
+
+            [VtblIndex(28)]
+            HRESULT get_onmove(VARIANT* p);
+
+            [VtblIndex(29)]
+            HRESULT put_oncontrolselect(VARIANT v);
+
+            [VtblIndex(30)]
+            HRESULT get_oncontrolselect(VARIANT* p);
+
+            [VtblIndex(31)]
+            HRESULT fireEvent([NativeTypeName("BSTR")] ushort* bstrEventName, VARIANT* pvarEventObject, [NativeTypeName("VARIANT_BOOL *")] short* pfCancelled);
+
+            [VtblIndex(32)]
+            HRESULT put_onresizestart(VARIANT v);
+
+            [VtblIndex(33)]
+            HRESULT get_onresizestart(VARIANT* p);
+
+            [VtblIndex(34)]
+            HRESULT put_onresizeend(VARIANT v);
+
+            [VtblIndex(35)]
+            HRESULT get_onresizeend(VARIANT* p);
+
+            [VtblIndex(36)]
+            HRESULT put_onmovestart(VARIANT v);
+
+            [VtblIndex(37)]
+            HRESULT get_onmovestart(VARIANT* p);
+
+            [VtblIndex(38)]
+            HRESULT put_onmoveend(VARIANT v);
+
+            [VtblIndex(39)]
+            HRESULT get_onmoveend(VARIANT* p);
+
+            [VtblIndex(40)]
+            HRESULT put_onmouseenter(VARIANT v);
+
+            [VtblIndex(41)]
+            HRESULT get_onmouseenter(VARIANT* p);
+
+            [VtblIndex(42)]
+            HRESULT put_onmouseleave(VARIANT v);
+
+            [VtblIndex(43)]
+            HRESULT get_onmouseleave(VARIANT* p);
+
+            [VtblIndex(44)]
+            HRESULT put_onactivate(VARIANT v);
+
+            [VtblIndex(45)]
+            HRESULT get_onactivate(VARIANT* p);
+
+            [VtblIndex(46)]
+            HRESULT put_ondeactivate(VARIANT v);
+
+            [VtblIndex(47)]
+            HRESULT get_ondeactivate(VARIANT* p);
+
+            [VtblIndex(48)]
+            HRESULT dragDrop([NativeTypeName("VARIANT_BOOL *")] short* pfRet);
+
+            [VtblIndex(49)]
+            HRESULT get_glyphMode([NativeTypeName("LONG *")] int* p);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLElement3*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLElement3*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLElement3*, uint> Release;
+
+            [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLElement3*, uint*, int> GetTypeInfoCount;
+
+            [NativeTypeName("HRESULT (UINT, LCID, ITypeInfo **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLElement3*, uint, uint, ITypeInfo**, int> GetTypeInfo;
+
+            [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLElement3*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+
+            [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLElement3*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
+
+            [NativeTypeName("HRESULT (IHTMLElement *, VARIANT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLElement3*, IHTMLElement*, VARIANT*, int> mergeAttributes;
+
+            [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLElement3*, short*, int> get_isMultiLine;
+
+            [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLElement3*, short*, int> get_canHaveHTML;
+
+            [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLElement3*, VARIANT, int> put_onlayoutcomplete;
+
+            [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLElement3*, VARIANT*, int> get_onlayoutcomplete;
+
+            [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLElement3*, VARIANT, int> put_onpage;
+
+            [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLElement3*, VARIANT*, int> get_onpage;
+
+            [NativeTypeName("HRESULT (VARIANT_BOOL) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLElement3*, short, int> put_inflateBlock;
+
+            [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLElement3*, short*, int> get_inflateBlock;
+
+            [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLElement3*, VARIANT, int> put_onbeforedeactivate;
+
+            [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLElement3*, VARIANT*, int> get_onbeforedeactivate;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLElement3*, int> setActive;
+
+            [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLElement3*, ushort*, int> put_contentEditable;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLElement3*, ushort**, int> get_contentEditable;
+
+            [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLElement3*, short*, int> get_isContentEditable;
+
+            [NativeTypeName("HRESULT (VARIANT_BOOL) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLElement3*, short, int> put_hideFocus;
+
+            [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLElement3*, short*, int> get_hideFocus;
+
+            [NativeTypeName("HRESULT (VARIANT_BOOL) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLElement3*, short, int> put_disabled;
+
+            [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLElement3*, short*, int> get_disabled;
+
+            [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLElement3*, short*, int> get_isDisabled;
+
+            [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLElement3*, VARIANT, int> put_onmove;
+
+            [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLElement3*, VARIANT*, int> get_onmove;
+
+            [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLElement3*, VARIANT, int> put_oncontrolselect;
+
+            [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLElement3*, VARIANT*, int> get_oncontrolselect;
+
+            [NativeTypeName("HRESULT (BSTR, VARIANT *, VARIANT_BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLElement3*, ushort*, VARIANT*, short*, int> fireEvent;
+
+            [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLElement3*, VARIANT, int> put_onresizestart;
+
+            [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLElement3*, VARIANT*, int> get_onresizestart;
+
+            [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLElement3*, VARIANT, int> put_onresizeend;
+
+            [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLElement3*, VARIANT*, int> get_onresizeend;
+
+            [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLElement3*, VARIANT, int> put_onmovestart;
+
+            [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLElement3*, VARIANT*, int> get_onmovestart;
+
+            [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLElement3*, VARIANT, int> put_onmoveend;
+
+            [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLElement3*, VARIANT*, int> get_onmoveend;
+
+            [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLElement3*, VARIANT, int> put_onmouseenter;
+
+            [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLElement3*, VARIANT*, int> get_onmouseenter;
+
+            [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLElement3*, VARIANT, int> put_onmouseleave;
+
+            [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLElement3*, VARIANT*, int> get_onmouseleave;
+
+            [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLElement3*, VARIANT, int> put_onactivate;
+
+            [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLElement3*, VARIANT*, int> get_onactivate;
+
+            [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLElement3*, VARIANT, int> put_ondeactivate;
+
+            [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLElement3*, VARIANT*, int> get_ondeactivate;
+
+            [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLElement3*, short*, int> dragDrop;
+
+            [NativeTypeName("HRESULT (LONG *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLElement3*, int*, int> get_glyphMode;
         }
     }
 }

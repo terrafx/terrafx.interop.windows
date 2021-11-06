@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("A7E025DD-5303-4A62-89D6-E747E1EFAC73")]
     [NativeTypeName("struct IMFSAMIStyle : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IMFSAMIStyle
+    public unsafe partial struct IMFSAMIStyle : IMFSAMIStyle.Interface
     {
         public void** lpVtbl;
 
@@ -65,6 +65,45 @@ namespace TerraFX.Interop
         public HRESULT GetSelectedStyle([NativeTypeName("LPWSTR *")] ushort** ppwszStyle)
         {
             return ((delegate* unmanaged<IMFSAMIStyle*, ushort**, int>)(lpVtbl[6]))((IMFSAMIStyle*)Unsafe.AsPointer(ref this), ppwszStyle);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetStyleCount([NativeTypeName("DWORD *")] uint* pdwCount);
+
+            [VtblIndex(4)]
+            HRESULT GetStyles(PROPVARIANT* pPropVarStyleArray);
+
+            [VtblIndex(5)]
+            HRESULT SetSelectedStyle([NativeTypeName("LPCWSTR")] ushort* pwszStyle);
+
+            [VtblIndex(6)]
+            HRESULT GetSelectedStyle([NativeTypeName("LPWSTR *")] ushort** ppwszStyle);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFSAMIStyle*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFSAMIStyle*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFSAMIStyle*, uint> Release;
+
+            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFSAMIStyle*, uint*, int> GetStyleCount;
+
+            [NativeTypeName("HRESULT (PROPVARIANT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFSAMIStyle*, PROPVARIANT*, int> GetStyles;
+
+            [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFSAMIStyle*, ushort*, int> SetSelectedStyle;
+
+            [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFSAMIStyle*, ushort**, int> GetSelectedStyle;
         }
     }
 }

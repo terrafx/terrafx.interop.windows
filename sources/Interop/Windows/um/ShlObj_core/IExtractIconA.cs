@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("000214EB-0000-0000-C000-000000000046")]
     [NativeTypeName("struct IExtractIconA : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IExtractIconA
+    public unsafe partial struct IExtractIconA : IExtractIconA.Interface
     {
         public void** lpVtbl;
 
@@ -51,6 +51,33 @@ namespace TerraFX.Interop
         public HRESULT Extract([NativeTypeName("PCSTR")] sbyte* pszFile, uint nIconIndex, HICON* phiconLarge, HICON* phiconSmall, uint nIconSize)
         {
             return ((delegate* unmanaged<IExtractIconA*, sbyte*, uint, HICON*, HICON*, uint, int>)(lpVtbl[4]))((IExtractIconA*)Unsafe.AsPointer(ref this), pszFile, nIconIndex, phiconLarge, phiconSmall, nIconSize);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetIconLocation(uint uFlags, [NativeTypeName("PSTR")] sbyte* pszIconFile, uint cchMax, int* piIndex, uint* pwFlags);
+
+            [VtblIndex(4)]
+            HRESULT Extract([NativeTypeName("PCSTR")] sbyte* pszFile, uint nIconIndex, HICON* phiconLarge, HICON* phiconSmall, uint nIconSize);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IExtractIconA*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IExtractIconA*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IExtractIconA*, uint> Release;
+
+            [NativeTypeName("HRESULT (UINT, PSTR, UINT, int *, UINT *) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IExtractIconA*, uint, sbyte*, uint, int*, uint*, int> GetIconLocation;
+
+            [NativeTypeName("HRESULT (PCSTR, UINT, HICON *, HICON *, UINT) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IExtractIconA*, sbyte*, uint, HICON*, HICON*, uint, int> Extract;
         }
     }
 }

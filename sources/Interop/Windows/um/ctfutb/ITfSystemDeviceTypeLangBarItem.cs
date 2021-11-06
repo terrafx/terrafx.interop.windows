@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("45672EB9-9059-46A2-838D-4530355F6A77")]
     [NativeTypeName("struct ITfSystemDeviceTypeLangBarItem : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct ITfSystemDeviceTypeLangBarItem
+    public unsafe partial struct ITfSystemDeviceTypeLangBarItem : ITfSystemDeviceTypeLangBarItem.Interface
     {
         public void** lpVtbl;
 
@@ -51,6 +51,33 @@ namespace TerraFX.Interop
         public HRESULT GetIconMode([NativeTypeName("DWORD *")] uint* pdwFlags)
         {
             return ((delegate* unmanaged<ITfSystemDeviceTypeLangBarItem*, uint*, int>)(lpVtbl[4]))((ITfSystemDeviceTypeLangBarItem*)Unsafe.AsPointer(ref this), pdwFlags);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT SetIconMode([NativeTypeName("DWORD")] uint dwFlags);
+
+            [VtblIndex(4)]
+            HRESULT GetIconMode([NativeTypeName("DWORD *")] uint* pdwFlags);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfSystemDeviceTypeLangBarItem*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfSystemDeviceTypeLangBarItem*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfSystemDeviceTypeLangBarItem*, uint> Release;
+
+            [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfSystemDeviceTypeLangBarItem*, uint, int> SetIconMode;
+
+            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfSystemDeviceTypeLangBarItem*, uint*, int> GetIconMode;
         }
     }
 }

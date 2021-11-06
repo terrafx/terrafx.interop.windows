@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("0C9FB851-E5C9-43EB-A370-F0677B13874C")]
     [NativeTypeName("struct IOperationsProgressDialog : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IOperationsProgressDialog
+    public unsafe partial struct IOperationsProgressDialog : IOperationsProgressDialog.Interface
     {
         public void** lpVtbl;
 
@@ -114,6 +114,87 @@ namespace TerraFX.Interop
         public HRESULT GetOperationStatus(PDOPSTATUS* popstatus)
         {
             return ((delegate* unmanaged<IOperationsProgressDialog*, PDOPSTATUS*, int>)(lpVtbl[13]))((IOperationsProgressDialog*)Unsafe.AsPointer(ref this), popstatus);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT StartProgressDialog(HWND hwndOwner, [NativeTypeName("OPPROGDLGF")] uint flags);
+
+            [VtblIndex(4)]
+            HRESULT StopProgressDialog();
+
+            [VtblIndex(5)]
+            HRESULT SetOperation(SPACTION action);
+
+            [VtblIndex(6)]
+            HRESULT SetMode([NativeTypeName("PDMODE")] uint mode);
+
+            [VtblIndex(7)]
+            HRESULT UpdateProgress([NativeTypeName("ULONGLONG")] ulong ullPointsCurrent, [NativeTypeName("ULONGLONG")] ulong ullPointsTotal, [NativeTypeName("ULONGLONG")] ulong ullSizeCurrent, [NativeTypeName("ULONGLONG")] ulong ullSizeTotal, [NativeTypeName("ULONGLONG")] ulong ullItemsCurrent, [NativeTypeName("ULONGLONG")] ulong ullItemsTotal);
+
+            [VtblIndex(8)]
+            HRESULT UpdateLocations(IShellItem* psiSource, IShellItem* psiTarget, IShellItem* psiItem);
+
+            [VtblIndex(9)]
+            HRESULT ResetTimer();
+
+            [VtblIndex(10)]
+            HRESULT PauseTimer();
+
+            [VtblIndex(11)]
+            HRESULT ResumeTimer();
+
+            [VtblIndex(12)]
+            HRESULT GetMilliseconds([NativeTypeName("ULONGLONG *")] ulong* pullElapsed, [NativeTypeName("ULONGLONG *")] ulong* pullRemaining);
+
+            [VtblIndex(13)]
+            HRESULT GetOperationStatus(PDOPSTATUS* popstatus);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IOperationsProgressDialog*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IOperationsProgressDialog*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IOperationsProgressDialog*, uint> Release;
+
+            [NativeTypeName("HRESULT (HWND, OPPROGDLGF) __attribute__((stdcall))")]
+            public delegate* unmanaged<IOperationsProgressDialog*, HWND, uint, int> StartProgressDialog;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IOperationsProgressDialog*, int> StopProgressDialog;
+
+            [NativeTypeName("HRESULT (SPACTION) __attribute__((stdcall))")]
+            public delegate* unmanaged<IOperationsProgressDialog*, SPACTION, int> SetOperation;
+
+            [NativeTypeName("HRESULT (PDMODE) __attribute__((stdcall))")]
+            public delegate* unmanaged<IOperationsProgressDialog*, uint, int> SetMode;
+
+            [NativeTypeName("HRESULT (ULONGLONG, ULONGLONG, ULONGLONG, ULONGLONG, ULONGLONG, ULONGLONG) __attribute__((stdcall))")]
+            public delegate* unmanaged<IOperationsProgressDialog*, ulong, ulong, ulong, ulong, ulong, ulong, int> UpdateProgress;
+
+            [NativeTypeName("HRESULT (IShellItem *, IShellItem *, IShellItem *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IOperationsProgressDialog*, IShellItem*, IShellItem*, IShellItem*, int> UpdateLocations;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IOperationsProgressDialog*, int> ResetTimer;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IOperationsProgressDialog*, int> PauseTimer;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IOperationsProgressDialog*, int> ResumeTimer;
+
+            [NativeTypeName("HRESULT (ULONGLONG *, ULONGLONG *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IOperationsProgressDialog*, ulong*, ulong*, int> GetMilliseconds;
+
+            [NativeTypeName("HRESULT (PDOPSTATUS *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IOperationsProgressDialog*, PDOPSTATUS*, int> GetOperationStatus;
         }
     }
 }

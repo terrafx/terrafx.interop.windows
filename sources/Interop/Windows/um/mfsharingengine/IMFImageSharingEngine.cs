@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("CFA0AE8E-7E1C-44D2-AE68-FC4C148A6354")]
     [NativeTypeName("struct IMFImageSharingEngine : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IMFImageSharingEngine
+    public unsafe partial struct IMFImageSharingEngine : IMFImageSharingEngine.Interface
     {
         public void** lpVtbl;
 
@@ -58,6 +58,39 @@ namespace TerraFX.Interop
         public HRESULT Shutdown()
         {
             return ((delegate* unmanaged<IMFImageSharingEngine*, int>)(lpVtbl[5]))((IMFImageSharingEngine*)Unsafe.AsPointer(ref this));
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT SetSource(IUnknown* pStream);
+
+            [VtblIndex(4)]
+            HRESULT GetDevice(DEVICE_INFO* pDevice);
+
+            [VtblIndex(5)]
+            HRESULT Shutdown();
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFImageSharingEngine*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFImageSharingEngine*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFImageSharingEngine*, uint> Release;
+
+            [NativeTypeName("HRESULT (IUnknown *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFImageSharingEngine*, IUnknown*, int> SetSource;
+
+            [NativeTypeName("HRESULT (DEVICE_INFO *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFImageSharingEngine*, DEVICE_INFO*, int> GetDevice;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFImageSharingEngine*, int> Shutdown;
         }
     }
 }

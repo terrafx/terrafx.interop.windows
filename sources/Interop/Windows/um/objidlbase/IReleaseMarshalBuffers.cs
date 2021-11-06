@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("EB0CB9E8-7996-11D2-872E-0000F8080859")]
     [NativeTypeName("struct IReleaseMarshalBuffers : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IReleaseMarshalBuffers
+    public unsafe partial struct IReleaseMarshalBuffers : IReleaseMarshalBuffers.Interface
     {
         public void** lpVtbl;
 
@@ -44,6 +44,27 @@ namespace TerraFX.Interop
         public HRESULT ReleaseMarshalBuffer(RPCOLEMESSAGE* pMsg, [NativeTypeName("DWORD")] uint dwFlags, IUnknown* pChnl)
         {
             return ((delegate* unmanaged<IReleaseMarshalBuffers*, RPCOLEMESSAGE*, uint, IUnknown*, int>)(lpVtbl[3]))((IReleaseMarshalBuffers*)Unsafe.AsPointer(ref this), pMsg, dwFlags, pChnl);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT ReleaseMarshalBuffer(RPCOLEMESSAGE* pMsg, [NativeTypeName("DWORD")] uint dwFlags, IUnknown* pChnl);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IReleaseMarshalBuffers*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IReleaseMarshalBuffers*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IReleaseMarshalBuffers*, uint> Release;
+
+            [NativeTypeName("HRESULT (RPCOLEMESSAGE *, DWORD, IUnknown *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IReleaseMarshalBuffers*, RPCOLEMESSAGE*, uint, IUnknown*, int> ReleaseMarshalBuffer;
         }
     }
 }

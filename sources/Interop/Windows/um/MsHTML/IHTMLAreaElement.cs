@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("3050F265-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct IHTMLAreaElement : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct IHTMLAreaElement
+    public unsafe partial struct IHTMLAreaElement : IHTMLAreaElement.Interface
     {
         public void** lpVtbl;
 
@@ -303,6 +303,237 @@ namespace TerraFX.Interop
         public HRESULT blur()
         {
             return ((delegate* unmanaged<IHTMLAreaElement*, int>)(lpVtbl[40]))((IHTMLAreaElement*)Unsafe.AsPointer(ref this));
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT put_shape([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(8)]
+            HRESULT get_shape([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(9)]
+            HRESULT put_coords([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(10)]
+            HRESULT get_coords([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(11)]
+            HRESULT put_href([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(12)]
+            HRESULT get_href([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(13)]
+            HRESULT put_target([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(14)]
+            HRESULT get_target([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(15)]
+            HRESULT put_alt([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(16)]
+            HRESULT get_alt([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(17)]
+            HRESULT put_noHref([NativeTypeName("VARIANT_BOOL")] short v);
+
+            [VtblIndex(18)]
+            HRESULT get_noHref([NativeTypeName("VARIANT_BOOL *")] short* p);
+
+            [VtblIndex(19)]
+            HRESULT put_host([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(20)]
+            HRESULT get_host([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(21)]
+            HRESULT put_hostname([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(22)]
+            HRESULT get_hostname([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(23)]
+            HRESULT put_pathname([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(24)]
+            HRESULT get_pathname([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(25)]
+            HRESULT put_port([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(26)]
+            HRESULT get_port([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(27)]
+            HRESULT put_protocol([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(28)]
+            HRESULT get_protocol([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(29)]
+            HRESULT put_search([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(30)]
+            HRESULT get_search([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(31)]
+            HRESULT put_hash([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(32)]
+            HRESULT get_hash([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(33)]
+            HRESULT put_onblur(VARIANT v);
+
+            [VtblIndex(34)]
+            HRESULT get_onblur(VARIANT* p);
+
+            [VtblIndex(35)]
+            HRESULT put_onfocus(VARIANT v);
+
+            [VtblIndex(36)]
+            HRESULT get_onfocus(VARIANT* p);
+
+            [VtblIndex(37)]
+            HRESULT put_tabIndex(short v);
+
+            [VtblIndex(38)]
+            HRESULT get_tabIndex(short* p);
+
+            [VtblIndex(39)]
+            HRESULT focus();
+
+            [VtblIndex(40)]
+            HRESULT blur();
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLAreaElement*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLAreaElement*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLAreaElement*, uint> Release;
+
+            [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLAreaElement*, uint*, int> GetTypeInfoCount;
+
+            [NativeTypeName("HRESULT (UINT, LCID, ITypeInfo **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLAreaElement*, uint, uint, ITypeInfo**, int> GetTypeInfo;
+
+            [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLAreaElement*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+
+            [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLAreaElement*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
+
+            [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLAreaElement*, ushort*, int> put_shape;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLAreaElement*, ushort**, int> get_shape;
+
+            [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLAreaElement*, ushort*, int> put_coords;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLAreaElement*, ushort**, int> get_coords;
+
+            [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLAreaElement*, ushort*, int> put_href;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLAreaElement*, ushort**, int> get_href;
+
+            [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLAreaElement*, ushort*, int> put_target;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLAreaElement*, ushort**, int> get_target;
+
+            [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLAreaElement*, ushort*, int> put_alt;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLAreaElement*, ushort**, int> get_alt;
+
+            [NativeTypeName("HRESULT (VARIANT_BOOL) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLAreaElement*, short, int> put_noHref;
+
+            [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLAreaElement*, short*, int> get_noHref;
+
+            [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLAreaElement*, ushort*, int> put_host;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLAreaElement*, ushort**, int> get_host;
+
+            [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLAreaElement*, ushort*, int> put_hostname;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLAreaElement*, ushort**, int> get_hostname;
+
+            [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLAreaElement*, ushort*, int> put_pathname;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLAreaElement*, ushort**, int> get_pathname;
+
+            [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLAreaElement*, ushort*, int> put_port;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLAreaElement*, ushort**, int> get_port;
+
+            [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLAreaElement*, ushort*, int> put_protocol;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLAreaElement*, ushort**, int> get_protocol;
+
+            [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLAreaElement*, ushort*, int> put_search;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLAreaElement*, ushort**, int> get_search;
+
+            [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLAreaElement*, ushort*, int> put_hash;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLAreaElement*, ushort**, int> get_hash;
+
+            [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLAreaElement*, VARIANT, int> put_onblur;
+
+            [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLAreaElement*, VARIANT*, int> get_onblur;
+
+            [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLAreaElement*, VARIANT, int> put_onfocus;
+
+            [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLAreaElement*, VARIANT*, int> get_onfocus;
+
+            [NativeTypeName("HRESULT (short) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLAreaElement*, short, int> put_tabIndex;
+
+            [NativeTypeName("HRESULT (short *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLAreaElement*, short*, int> get_tabIndex;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLAreaElement*, int> focus;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLAreaElement*, int> blur;
         }
     }
 }

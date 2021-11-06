@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("B643C236-C493-41B6-ABB3-692412775CC4")]
     [NativeTypeName("struct ITfReverseConversionMgr : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct ITfReverseConversionMgr
+    public unsafe partial struct ITfReverseConversionMgr : ITfReverseConversionMgr.Interface
     {
         public void** lpVtbl;
 
@@ -44,6 +44,27 @@ namespace TerraFX.Interop
         public HRESULT GetReverseConversion([NativeTypeName("LANGID")] ushort langid, [NativeTypeName("const GUID &")] Guid* guidProfile, [NativeTypeName("DWORD")] uint dwflag, ITfReverseConversion** ppReverseConversion)
         {
             return ((delegate* unmanaged<ITfReverseConversionMgr*, ushort, Guid*, uint, ITfReverseConversion**, int>)(lpVtbl[3]))((ITfReverseConversionMgr*)Unsafe.AsPointer(ref this), langid, guidProfile, dwflag, ppReverseConversion);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetReverseConversion([NativeTypeName("LANGID")] ushort langid, [NativeTypeName("const GUID &")] Guid* guidProfile, [NativeTypeName("DWORD")] uint dwflag, ITfReverseConversion** ppReverseConversion);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfReverseConversionMgr*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfReverseConversionMgr*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfReverseConversionMgr*, uint> Release;
+
+            [NativeTypeName("HRESULT (LANGID, const GUID &, DWORD, ITfReverseConversion **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfReverseConversionMgr*, ushort, Guid*, uint, ITfReverseConversion**, int> GetReverseConversion;
         }
     }
 }

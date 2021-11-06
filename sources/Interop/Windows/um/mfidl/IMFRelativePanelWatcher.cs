@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("421AF7F6-573E-4AD0-8FDA-2E57CEDB18C6")]
     [NativeTypeName("struct IMFRelativePanelWatcher : IMFShutdown")]
     [NativeInheritance("IMFShutdown")]
-    public unsafe partial struct IMFRelativePanelWatcher
+    public unsafe partial struct IMFRelativePanelWatcher : IMFRelativePanelWatcher.Interface
     {
         public void** lpVtbl;
 
@@ -72,6 +72,45 @@ namespace TerraFX.Interop
         public HRESULT GetReport(IMFRelativePanelReport** ppRelativePanelReport)
         {
             return ((delegate* unmanaged<IMFRelativePanelWatcher*, IMFRelativePanelReport**, int>)(lpVtbl[7]))((IMFRelativePanelWatcher*)Unsafe.AsPointer(ref this), ppRelativePanelReport);
+        }
+
+        public interface Interface : IMFShutdown.Interface
+        {
+            [VtblIndex(5)]
+            HRESULT BeginGetReport(IMFAsyncCallback* pCallback, IUnknown* pState);
+
+            [VtblIndex(6)]
+            HRESULT EndGetReport(IMFAsyncResult* pResult, IMFRelativePanelReport** ppRelativePanelReport);
+
+            [VtblIndex(7)]
+            HRESULT GetReport(IMFRelativePanelReport** ppRelativePanelReport);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFRelativePanelWatcher*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFRelativePanelWatcher*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFRelativePanelWatcher*, uint> Release;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFRelativePanelWatcher*, int> Shutdown;
+
+            [NativeTypeName("HRESULT (MFSHUTDOWN_STATUS *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFRelativePanelWatcher*, MFSHUTDOWN_STATUS*, int> GetShutdownStatus;
+
+            [NativeTypeName("HRESULT (IMFAsyncCallback *, IUnknown *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFRelativePanelWatcher*, IMFAsyncCallback*, IUnknown*, int> BeginGetReport;
+
+            [NativeTypeName("HRESULT (IMFAsyncResult *, IMFRelativePanelReport **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFRelativePanelWatcher*, IMFAsyncResult*, IMFRelativePanelReport**, int> EndGetReport;
+
+            [NativeTypeName("HRESULT (IMFRelativePanelReport **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFRelativePanelWatcher*, IMFRelativePanelReport**, int> GetReport;
         }
     }
 }

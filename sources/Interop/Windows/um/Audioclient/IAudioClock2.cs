@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("6F49FF73-6727-49AC-A008-D98CF5E70048")]
     [NativeTypeName("struct IAudioClock2 : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IAudioClock2
+    public unsafe partial struct IAudioClock2 : IAudioClock2.Interface
     {
         public void** lpVtbl;
 
@@ -44,6 +44,27 @@ namespace TerraFX.Interop
         public HRESULT GetDevicePosition([NativeTypeName("UINT64 *")] ulong* DevicePosition, [NativeTypeName("UINT64 *")] ulong* QPCPosition)
         {
             return ((delegate* unmanaged<IAudioClock2*, ulong*, ulong*, int>)(lpVtbl[3]))((IAudioClock2*)Unsafe.AsPointer(ref this), DevicePosition, QPCPosition);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetDevicePosition([NativeTypeName("UINT64 *")] ulong* DevicePosition, [NativeTypeName("UINT64 *")] ulong* QPCPosition);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAudioClock2*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IAudioClock2*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IAudioClock2*, uint> Release;
+
+            [NativeTypeName("HRESULT (UINT64 *, UINT64 *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAudioClock2*, ulong*, ulong*, int> GetDevicePosition;
         }
     }
 }

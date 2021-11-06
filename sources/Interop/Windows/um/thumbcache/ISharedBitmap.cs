@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("091162A4-BC96-411F-AAE8-C5122CD03363")]
     [NativeTypeName("struct ISharedBitmap : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct ISharedBitmap
+    public unsafe partial struct ISharedBitmap : ISharedBitmap.Interface
     {
         public void** lpVtbl;
 
@@ -72,6 +72,51 @@ namespace TerraFX.Interop
         public HRESULT Detach(HBITMAP* phbm)
         {
             return ((delegate* unmanaged<ISharedBitmap*, HBITMAP*, int>)(lpVtbl[7]))((ISharedBitmap*)Unsafe.AsPointer(ref this), phbm);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetSharedBitmap(HBITMAP* phbm);
+
+            [VtblIndex(4)]
+            HRESULT GetSize(SIZE* pSize);
+
+            [VtblIndex(5)]
+            HRESULT GetFormat(WTS_ALPHATYPE* pat);
+
+            [VtblIndex(6)]
+            HRESULT InitializeBitmap(HBITMAP hbm, WTS_ALPHATYPE wtsAT);
+
+            [VtblIndex(7)]
+            HRESULT Detach(HBITMAP* phbm);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISharedBitmap*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ISharedBitmap*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ISharedBitmap*, uint> Release;
+
+            [NativeTypeName("HRESULT (HBITMAP *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISharedBitmap*, HBITMAP*, int> GetSharedBitmap;
+
+            [NativeTypeName("HRESULT (SIZE *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISharedBitmap*, SIZE*, int> GetSize;
+
+            [NativeTypeName("HRESULT (WTS_ALPHATYPE *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISharedBitmap*, WTS_ALPHATYPE*, int> GetFormat;
+
+            [NativeTypeName("HRESULT (HBITMAP, WTS_ALPHATYPE) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISharedBitmap*, HBITMAP, WTS_ALPHATYPE, int> InitializeBitmap;
+
+            [NativeTypeName("HRESULT (HBITMAP *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISharedBitmap*, HBITMAP*, int> Detach;
         }
     }
 }

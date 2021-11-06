@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("34DEACA4-D3C0-4E3E-B312-E42625E3807E")]
     [NativeTypeName("struct IAppxManifestReader6 : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IAppxManifestReader6
+    public unsafe partial struct IAppxManifestReader6 : IAppxManifestReader6.Interface
     {
         public void** lpVtbl;
 
@@ -44,6 +44,27 @@ namespace TerraFX.Interop
         public HRESULT GetIsNonQualifiedResourcePackage(BOOL* isNonQualifiedResourcePackage)
         {
             return ((delegate* unmanaged<IAppxManifestReader6*, BOOL*, int>)(lpVtbl[3]))((IAppxManifestReader6*)Unsafe.AsPointer(ref this), isNonQualifiedResourcePackage);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetIsNonQualifiedResourcePackage(BOOL* isNonQualifiedResourcePackage);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAppxManifestReader6*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IAppxManifestReader6*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IAppxManifestReader6*, uint> Release;
+
+            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAppxManifestReader6*, BOOL*, int> GetIsNonQualifiedResourcePackage;
         }
     }
 }

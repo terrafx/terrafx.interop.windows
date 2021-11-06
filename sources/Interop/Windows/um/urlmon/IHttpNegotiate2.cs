@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("4F9F9FCB-E0F4-48EB-B7AB-FA2EA9365CB4")]
     [NativeTypeName("struct IHttpNegotiate2 : IHttpNegotiate")]
     [NativeInheritance("IHttpNegotiate")]
-    public unsafe partial struct IHttpNegotiate2
+    public unsafe partial struct IHttpNegotiate2 : IHttpNegotiate2.Interface
     {
         public void** lpVtbl;
 
@@ -58,6 +58,33 @@ namespace TerraFX.Interop
         public HRESULT GetRootSecurityId(byte* pbSecurityId, [NativeTypeName("DWORD *")] uint* pcbSecurityId, [NativeTypeName("DWORD_PTR")] nuint dwReserved)
         {
             return ((delegate* unmanaged<IHttpNegotiate2*, byte*, uint*, nuint, int>)(lpVtbl[5]))((IHttpNegotiate2*)Unsafe.AsPointer(ref this), pbSecurityId, pcbSecurityId, dwReserved);
+        }
+
+        public interface Interface : IHttpNegotiate.Interface
+        {
+            [VtblIndex(5)]
+            HRESULT GetRootSecurityId(byte* pbSecurityId, [NativeTypeName("DWORD *")] uint* pcbSecurityId, [NativeTypeName("DWORD_PTR")] nuint dwReserved);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHttpNegotiate2*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IHttpNegotiate2*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IHttpNegotiate2*, uint> Release;
+
+            [NativeTypeName("HRESULT (LPCWSTR, LPCWSTR, DWORD, LPWSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHttpNegotiate2*, ushort*, ushort*, uint, ushort**, int> BeginningTransaction;
+
+            [NativeTypeName("HRESULT (DWORD, LPCWSTR, LPCWSTR, LPWSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHttpNegotiate2*, uint, ushort*, ushort*, ushort**, int> OnResponse;
+
+            [NativeTypeName("HRESULT (BYTE *, DWORD *, DWORD_PTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHttpNegotiate2*, byte*, uint*, nuint, int> GetRootSecurityId;
         }
     }
 }

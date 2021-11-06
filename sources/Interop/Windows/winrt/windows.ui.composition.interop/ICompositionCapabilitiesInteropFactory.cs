@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("2C9DB356-E70D-4642-8298-BC4AA5B4865C")]
     [NativeTypeName("struct ICompositionCapabilitiesInteropFactory : IInspectable")]
     [NativeInheritance("IInspectable")]
-    public unsafe partial struct ICompositionCapabilitiesInteropFactory
+    public unsafe partial struct ICompositionCapabilitiesInteropFactory : ICompositionCapabilitiesInteropFactory.Interface
     {
         public void** lpVtbl;
 
@@ -65,6 +65,36 @@ namespace TerraFX.Interop
         public HRESULT GetForWindow(HWND hwnd, [NativeTypeName("ABI::Windows::UI::Composition::ICompositionCapabilities **")] void** result)
         {
             return ((delegate* unmanaged<ICompositionCapabilitiesInteropFactory*, HWND, void**, int>)(lpVtbl[6]))((ICompositionCapabilitiesInteropFactory*)Unsafe.AsPointer(ref this), hwnd, result);
+        }
+
+        public interface Interface : IInspectable.Interface
+        {
+            [VtblIndex(6)]
+            HRESULT GetForWindow(HWND hwnd, [NativeTypeName("ABI::Windows::UI::Composition::ICompositionCapabilities **")] void** result);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ICompositionCapabilitiesInteropFactory*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ICompositionCapabilitiesInteropFactory*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ICompositionCapabilitiesInteropFactory*, uint> Release;
+
+            [NativeTypeName("HRESULT (ULONG *, IID **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ICompositionCapabilitiesInteropFactory*, uint*, Guid**, int> GetIids;
+
+            [NativeTypeName("HRESULT (HSTRING *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ICompositionCapabilitiesInteropFactory*, HSTRING*, int> GetRuntimeClassName;
+
+            [NativeTypeName("HRESULT (TrustLevel *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ICompositionCapabilitiesInteropFactory*, TrustLevel*, int> GetTrustLevel;
+
+            [NativeTypeName("HRESULT (HWND, ABI::Windows::UI::Composition::ICompositionCapabilities **) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<ICompositionCapabilitiesInteropFactory*, HWND, void**, int> GetForWindow;
         }
     }
 }

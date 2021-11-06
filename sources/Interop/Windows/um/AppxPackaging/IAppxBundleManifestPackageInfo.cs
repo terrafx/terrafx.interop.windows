@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("54CD06C1-268F-40BB-8ED2-757A9EBAEC8D")]
     [NativeTypeName("struct IAppxBundleManifestPackageInfo : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IAppxBundleManifestPackageInfo
+    public unsafe partial struct IAppxBundleManifestPackageInfo : IAppxBundleManifestPackageInfo.Interface
     {
         public void** lpVtbl;
 
@@ -79,6 +79,57 @@ namespace TerraFX.Interop
         public HRESULT GetResources(IAppxManifestQualifiedResourcesEnumerator** resources)
         {
             return ((delegate* unmanaged<IAppxBundleManifestPackageInfo*, IAppxManifestQualifiedResourcesEnumerator**, int>)(lpVtbl[8]))((IAppxBundleManifestPackageInfo*)Unsafe.AsPointer(ref this), resources);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetPackageType(APPX_BUNDLE_PAYLOAD_PACKAGE_TYPE* packageType);
+
+            [VtblIndex(4)]
+            HRESULT GetPackageId(IAppxManifestPackageId** packageId);
+
+            [VtblIndex(5)]
+            HRESULT GetFileName([NativeTypeName("LPWSTR *")] ushort** fileName);
+
+            [VtblIndex(6)]
+            HRESULT GetOffset([NativeTypeName("UINT64 *")] ulong* offset);
+
+            [VtblIndex(7)]
+            HRESULT GetSize([NativeTypeName("UINT64 *")] ulong* size);
+
+            [VtblIndex(8)]
+            HRESULT GetResources(IAppxManifestQualifiedResourcesEnumerator** resources);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAppxBundleManifestPackageInfo*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IAppxBundleManifestPackageInfo*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IAppxBundleManifestPackageInfo*, uint> Release;
+
+            [NativeTypeName("HRESULT (APPX_BUNDLE_PAYLOAD_PACKAGE_TYPE *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAppxBundleManifestPackageInfo*, APPX_BUNDLE_PAYLOAD_PACKAGE_TYPE*, int> GetPackageType;
+
+            [NativeTypeName("HRESULT (IAppxManifestPackageId **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAppxBundleManifestPackageInfo*, IAppxManifestPackageId**, int> GetPackageId;
+
+            [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAppxBundleManifestPackageInfo*, ushort**, int> GetFileName;
+
+            [NativeTypeName("HRESULT (UINT64 *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAppxBundleManifestPackageInfo*, ulong*, int> GetOffset;
+
+            [NativeTypeName("HRESULT (UINT64 *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAppxBundleManifestPackageInfo*, ulong*, int> GetSize;
+
+            [NativeTypeName("HRESULT (IAppxManifestQualifiedResourcesEnumerator **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAppxBundleManifestPackageInfo*, IAppxManifestQualifiedResourcesEnumerator**, int> GetResources;
         }
     }
 }

@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("5DFD4B2A-7674-4110-A4E6-8A68FD5F3688")]
     [NativeTypeName("struct IMFMediaSinkPreroll : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IMFMediaSinkPreroll
+    public unsafe partial struct IMFMediaSinkPreroll : IMFMediaSinkPreroll.Interface
     {
         public void** lpVtbl;
 
@@ -44,6 +44,27 @@ namespace TerraFX.Interop
         public HRESULT NotifyPreroll([NativeTypeName("MFTIME")] long hnsUpcomingStartTime)
         {
             return ((delegate* unmanaged<IMFMediaSinkPreroll*, long, int>)(lpVtbl[3]))((IMFMediaSinkPreroll*)Unsafe.AsPointer(ref this), hnsUpcomingStartTime);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT NotifyPreroll([NativeTypeName("MFTIME")] long hnsUpcomingStartTime);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFMediaSinkPreroll*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFMediaSinkPreroll*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFMediaSinkPreroll*, uint> Release;
+
+            [NativeTypeName("HRESULT (MFTIME) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFMediaSinkPreroll*, long, int> NotifyPreroll;
         }
     }
 }

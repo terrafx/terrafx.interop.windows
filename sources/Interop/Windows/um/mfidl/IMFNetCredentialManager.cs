@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("5B87EF6B-7ED8-434F-BA0E-184FAC1628D1")]
     [NativeTypeName("struct IMFNetCredentialManager : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IMFNetCredentialManager
+    public unsafe partial struct IMFNetCredentialManager : IMFNetCredentialManager.Interface
     {
         public void** lpVtbl;
 
@@ -58,6 +58,39 @@ namespace TerraFX.Interop
         public HRESULT SetGood(IMFNetCredential* pCred, BOOL fGood)
         {
             return ((delegate* unmanaged<IMFNetCredentialManager*, IMFNetCredential*, BOOL, int>)(lpVtbl[5]))((IMFNetCredentialManager*)Unsafe.AsPointer(ref this), pCred, fGood);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT BeginGetCredentials(MFNetCredentialManagerGetParam* pParam, IMFAsyncCallback* pCallback, IUnknown* pState);
+
+            [VtblIndex(4)]
+            HRESULT EndGetCredentials(IMFAsyncResult* pResult, IMFNetCredential** ppCred);
+
+            [VtblIndex(5)]
+            HRESULT SetGood(IMFNetCredential* pCred, BOOL fGood);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFNetCredentialManager*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFNetCredentialManager*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFNetCredentialManager*, uint> Release;
+
+            [NativeTypeName("HRESULT (MFNetCredentialManagerGetParam *, IMFAsyncCallback *, IUnknown *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFNetCredentialManager*, MFNetCredentialManagerGetParam*, IMFAsyncCallback*, IUnknown*, int> BeginGetCredentials;
+
+            [NativeTypeName("HRESULT (IMFAsyncResult *, IMFNetCredential **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFNetCredentialManager*, IMFAsyncResult*, IMFNetCredential**, int> EndGetCredentials;
+
+            [NativeTypeName("HRESULT (IMFNetCredential *, BOOL) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFNetCredentialManager*, IMFNetCredential*, BOOL, int> SetGood;
         }
     }
 }

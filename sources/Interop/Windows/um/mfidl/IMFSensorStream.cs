@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("E9A42171-C56E-498A-8B39-EDA5A070B7FC")]
     [NativeTypeName("struct IMFSensorStream : IMFAttributes")]
     [NativeInheritance("IMFAttributes")]
-    public unsafe partial struct IMFSensorStream
+    public unsafe partial struct IMFSensorStream : IMFSensorStream.Interface
     {
         public void** lpVtbl;
 
@@ -268,6 +268,129 @@ namespace TerraFX.Interop
         public HRESULT CloneSensorStream(IMFSensorStream** ppStream)
         {
             return ((delegate* unmanaged<IMFSensorStream*, IMFSensorStream**, int>)(lpVtbl[35]))((IMFSensorStream*)Unsafe.AsPointer(ref this), ppStream);
+        }
+
+        public interface Interface : IMFAttributes.Interface
+        {
+            [VtblIndex(33)]
+            HRESULT GetMediaTypeCount([NativeTypeName("DWORD *")] uint* pdwCount);
+
+            [VtblIndex(34)]
+            HRESULT GetMediaType([NativeTypeName("DWORD")] uint dwIndex, IMFMediaType** ppMediaType);
+
+            [VtblIndex(35)]
+            HRESULT CloneSensorStream(IMFSensorStream** ppStream);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFSensorStream*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFSensorStream*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFSensorStream*, uint> Release;
+
+            [NativeTypeName("HRESULT (const GUID &, PROPVARIANT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFSensorStream*, Guid*, PROPVARIANT*, int> GetItem;
+
+            [NativeTypeName("HRESULT (const GUID &, MF_ATTRIBUTE_TYPE *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFSensorStream*, Guid*, MF_ATTRIBUTE_TYPE*, int> GetItemType;
+
+            [NativeTypeName("HRESULT (const GUID &, const PROPVARIANT &, BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFSensorStream*, Guid*, PROPVARIANT*, BOOL*, int> CompareItem;
+
+            [NativeTypeName("HRESULT (IMFAttributes *, MF_ATTRIBUTES_MATCH_TYPE, BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFSensorStream*, IMFAttributes*, MF_ATTRIBUTES_MATCH_TYPE, BOOL*, int> Compare;
+
+            [NativeTypeName("HRESULT (const GUID &, UINT32 *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFSensorStream*, Guid*, uint*, int> GetUINT32;
+
+            [NativeTypeName("HRESULT (const GUID &, UINT64 *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFSensorStream*, Guid*, ulong*, int> GetUINT64;
+
+            [NativeTypeName("HRESULT (const GUID &, double *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFSensorStream*, Guid*, double*, int> GetDouble;
+
+            [NativeTypeName("HRESULT (const GUID &, GUID *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFSensorStream*, Guid*, Guid*, int> GetGUID;
+
+            [NativeTypeName("HRESULT (const GUID &, UINT32 *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFSensorStream*, Guid*, uint*, int> GetStringLength;
+
+            [NativeTypeName("HRESULT (const GUID &, LPWSTR, UINT32, UINT32 *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFSensorStream*, Guid*, ushort*, uint, uint*, int> GetString;
+
+            [NativeTypeName("HRESULT (const GUID &, LPWSTR *, UINT32 *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFSensorStream*, Guid*, ushort**, uint*, int> GetAllocatedString;
+
+            [NativeTypeName("HRESULT (const GUID &, UINT32 *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFSensorStream*, Guid*, uint*, int> GetBlobSize;
+
+            [NativeTypeName("HRESULT (const GUID &, UINT8 *, UINT32, UINT32 *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFSensorStream*, Guid*, byte*, uint, uint*, int> GetBlob;
+
+            [NativeTypeName("HRESULT (const GUID &, UINT8 **, UINT32 *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFSensorStream*, Guid*, byte**, uint*, int> GetAllocatedBlob;
+
+            [NativeTypeName("HRESULT (const GUID &, const IID &, LPVOID *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFSensorStream*, Guid*, Guid*, void**, int> GetUnknown;
+
+            [NativeTypeName("HRESULT (const GUID &, const PROPVARIANT &) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFSensorStream*, Guid*, PROPVARIANT*, int> SetItem;
+
+            [NativeTypeName("HRESULT (const GUID &) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFSensorStream*, Guid*, int> DeleteItem;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFSensorStream*, int> DeleteAllItems;
+
+            [NativeTypeName("HRESULT (const GUID &, UINT32) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFSensorStream*, Guid*, uint, int> SetUINT32;
+
+            [NativeTypeName("HRESULT (const GUID &, UINT64) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFSensorStream*, Guid*, ulong, int> SetUINT64;
+
+            [NativeTypeName("HRESULT (const GUID &, double) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFSensorStream*, Guid*, double, int> SetDouble;
+
+            [NativeTypeName("HRESULT (const GUID &, const GUID &) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFSensorStream*, Guid*, Guid*, int> SetGUID;
+
+            [NativeTypeName("HRESULT (const GUID &, LPCWSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFSensorStream*, Guid*, ushort*, int> SetString;
+
+            [NativeTypeName("HRESULT (const GUID &, const UINT8 *, UINT32) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFSensorStream*, Guid*, byte*, uint, int> SetBlob;
+
+            [NativeTypeName("HRESULT (const GUID &, IUnknown *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFSensorStream*, Guid*, IUnknown*, int> SetUnknown;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFSensorStream*, int> LockStore;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFSensorStream*, int> UnlockStore;
+
+            [NativeTypeName("HRESULT (UINT32 *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFSensorStream*, uint*, int> GetCount;
+
+            [NativeTypeName("HRESULT (UINT32, GUID *, PROPVARIANT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFSensorStream*, uint, Guid*, PROPVARIANT*, int> GetItemByIndex;
+
+            [NativeTypeName("HRESULT (IMFAttributes *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFSensorStream*, IMFAttributes*, int> CopyAllItems;
+
+            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFSensorStream*, uint*, int> GetMediaTypeCount;
+
+            [NativeTypeName("HRESULT (DWORD, IMFMediaType **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFSensorStream*, uint, IMFMediaType**, int> GetMediaType;
+
+            [NativeTypeName("HRESULT (IMFSensorStream **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFSensorStream*, IMFSensorStream**, int> CloneSensorStream;
         }
     }
 }

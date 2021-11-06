@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("DC2BB46D-3F07-481E-8625-220C4AEDBB33")]
     [NativeTypeName("struct IWICEnumMetadataItem : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IWICEnumMetadataItem
+    public unsafe partial struct IWICEnumMetadataItem : IWICEnumMetadataItem.Interface
     {
         public void** lpVtbl;
 
@@ -65,6 +65,45 @@ namespace TerraFX.Interop
         public HRESULT Clone(IWICEnumMetadataItem** ppIEnumMetadataItem)
         {
             return ((delegate* unmanaged<IWICEnumMetadataItem*, IWICEnumMetadataItem**, int>)(lpVtbl[6]))((IWICEnumMetadataItem*)Unsafe.AsPointer(ref this), ppIEnumMetadataItem);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT Next([NativeTypeName("ULONG")] uint celt, PROPVARIANT* rgeltSchema, PROPVARIANT* rgeltId, PROPVARIANT* rgeltValue, [NativeTypeName("ULONG *")] uint* pceltFetched);
+
+            [VtblIndex(4)]
+            HRESULT Skip([NativeTypeName("ULONG")] uint celt);
+
+            [VtblIndex(5)]
+            HRESULT Reset();
+
+            [VtblIndex(6)]
+            HRESULT Clone(IWICEnumMetadataItem** ppIEnumMetadataItem);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWICEnumMetadataItem*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IWICEnumMetadataItem*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IWICEnumMetadataItem*, uint> Release;
+
+            [NativeTypeName("HRESULT (ULONG, PROPVARIANT *, PROPVARIANT *, PROPVARIANT *, ULONG *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWICEnumMetadataItem*, uint, PROPVARIANT*, PROPVARIANT*, PROPVARIANT*, uint*, int> Next;
+
+            [NativeTypeName("HRESULT (ULONG) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWICEnumMetadataItem*, uint, int> Skip;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IWICEnumMetadataItem*, int> Reset;
+
+            [NativeTypeName("HRESULT (IWICEnumMetadataItem **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWICEnumMetadataItem*, IWICEnumMetadataItem**, int> Clone;
         }
     }
 }

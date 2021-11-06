@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("0000000A-0000-0000-C000-000000000046")]
     [NativeTypeName("struct ILockBytes : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct ILockBytes
+    public unsafe partial struct ILockBytes : ILockBytes.Interface
     {
         public void** lpVtbl;
 
@@ -86,6 +86,63 @@ namespace TerraFX.Interop
         public HRESULT Stat(STATSTG* pstatstg, [NativeTypeName("DWORD")] uint grfStatFlag)
         {
             return ((delegate* unmanaged<ILockBytes*, STATSTG*, uint, int>)(lpVtbl[9]))((ILockBytes*)Unsafe.AsPointer(ref this), pstatstg, grfStatFlag);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT ReadAt(ULARGE_INTEGER ulOffset, void* pv, [NativeTypeName("ULONG")] uint cb, [NativeTypeName("ULONG *")] uint* pcbRead);
+
+            [VtblIndex(4)]
+            HRESULT WriteAt(ULARGE_INTEGER ulOffset, [NativeTypeName("const void *")] void* pv, [NativeTypeName("ULONG")] uint cb, [NativeTypeName("ULONG *")] uint* pcbWritten);
+
+            [VtblIndex(5)]
+            HRESULT Flush();
+
+            [VtblIndex(6)]
+            HRESULT SetSize(ULARGE_INTEGER cb);
+
+            [VtblIndex(7)]
+            HRESULT LockRegion(ULARGE_INTEGER libOffset, ULARGE_INTEGER cb, [NativeTypeName("DWORD")] uint dwLockType);
+
+            [VtblIndex(8)]
+            HRESULT UnlockRegion(ULARGE_INTEGER libOffset, ULARGE_INTEGER cb, [NativeTypeName("DWORD")] uint dwLockType);
+
+            [VtblIndex(9)]
+            HRESULT Stat(STATSTG* pstatstg, [NativeTypeName("DWORD")] uint grfStatFlag);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ILockBytes*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ILockBytes*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ILockBytes*, uint> Release;
+
+            [NativeTypeName("HRESULT (ULARGE_INTEGER, void *, ULONG, ULONG *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ILockBytes*, ULARGE_INTEGER, void*, uint, uint*, int> ReadAt;
+
+            [NativeTypeName("HRESULT (ULARGE_INTEGER, const void *, ULONG, ULONG *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ILockBytes*, ULARGE_INTEGER, void*, uint, uint*, int> WriteAt;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<ILockBytes*, int> Flush;
+
+            [NativeTypeName("HRESULT (ULARGE_INTEGER) __attribute__((stdcall))")]
+            public delegate* unmanaged<ILockBytes*, ULARGE_INTEGER, int> SetSize;
+
+            [NativeTypeName("HRESULT (ULARGE_INTEGER, ULARGE_INTEGER, DWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<ILockBytes*, ULARGE_INTEGER, ULARGE_INTEGER, uint, int> LockRegion;
+
+            [NativeTypeName("HRESULT (ULARGE_INTEGER, ULARGE_INTEGER, DWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<ILockBytes*, ULARGE_INTEGER, ULARGE_INTEGER, uint, int> UnlockRegion;
+
+            [NativeTypeName("HRESULT (STATSTG *, DWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<ILockBytes*, STATSTG*, uint, int> Stat;
         }
     }
 }

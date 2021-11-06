@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("8849DC22-CEDF-4C95-998D-051419DD3F76")]
     [NativeTypeName("struct IAccessibilityDockingService : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IAccessibilityDockingService
+    public unsafe partial struct IAccessibilityDockingService : IAccessibilityDockingService.Interface
     {
         public void** lpVtbl;
 
@@ -58,6 +58,39 @@ namespace TerraFX.Interop
         public HRESULT UndockWindow(HWND hwnd)
         {
             return ((delegate* unmanaged<IAccessibilityDockingService*, HWND, int>)(lpVtbl[5]))((IAccessibilityDockingService*)Unsafe.AsPointer(ref this), hwnd);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetAvailableSize(HMONITOR hMonitor, uint* pcxFixed, uint* pcyMax);
+
+            [VtblIndex(4)]
+            HRESULT DockWindow(HWND hwnd, HMONITOR hMonitor, uint cyRequested, IAccessibilityDockingServiceCallback* pCallback);
+
+            [VtblIndex(5)]
+            HRESULT UndockWindow(HWND hwnd);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAccessibilityDockingService*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IAccessibilityDockingService*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IAccessibilityDockingService*, uint> Release;
+
+            [NativeTypeName("HRESULT (HMONITOR, UINT *, UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAccessibilityDockingService*, HMONITOR, uint*, uint*, int> GetAvailableSize;
+
+            [NativeTypeName("HRESULT (HWND, HMONITOR, UINT, IAccessibilityDockingServiceCallback *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAccessibilityDockingService*, HWND, HMONITOR, uint, IAccessibilityDockingServiceCallback*, int> DockWindow;
+
+            [NativeTypeName("HRESULT (HWND) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAccessibilityDockingService*, HWND, int> UndockWindow;
         }
     }
 }

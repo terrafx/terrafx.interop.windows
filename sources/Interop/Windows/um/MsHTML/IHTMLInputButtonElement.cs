@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("3050F2B2-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct IHTMLInputButtonElement : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct IHTMLInputButtonElement
+    public unsafe partial struct IHTMLInputButtonElement : IHTMLInputButtonElement.Interface
     {
         public void** lpVtbl;
 
@@ -142,6 +142,99 @@ namespace TerraFX.Interop
         public HRESULT createTextRange(IHTMLTxtRange** range)
         {
             return ((delegate* unmanaged<IHTMLInputButtonElement*, IHTMLTxtRange**, int>)(lpVtbl[17]))((IHTMLInputButtonElement*)Unsafe.AsPointer(ref this), range);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT get_type([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(8)]
+            HRESULT put_value([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(9)]
+            HRESULT get_value([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(10)]
+            HRESULT put_name([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(11)]
+            HRESULT get_name([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(12)]
+            HRESULT put_status(VARIANT v);
+
+            [VtblIndex(13)]
+            HRESULT get_status(VARIANT* p);
+
+            [VtblIndex(14)]
+            HRESULT put_disabled([NativeTypeName("VARIANT_BOOL")] short v);
+
+            [VtblIndex(15)]
+            HRESULT get_disabled([NativeTypeName("VARIANT_BOOL *")] short* p);
+
+            [VtblIndex(16)]
+            HRESULT get_form(IHTMLFormElement** p);
+
+            [VtblIndex(17)]
+            HRESULT createTextRange(IHTMLTxtRange** range);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLInputButtonElement*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLInputButtonElement*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLInputButtonElement*, uint> Release;
+
+            [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLInputButtonElement*, uint*, int> GetTypeInfoCount;
+
+            [NativeTypeName("HRESULT (UINT, LCID, ITypeInfo **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLInputButtonElement*, uint, uint, ITypeInfo**, int> GetTypeInfo;
+
+            [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLInputButtonElement*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+
+            [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLInputButtonElement*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLInputButtonElement*, ushort**, int> get_type;
+
+            [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLInputButtonElement*, ushort*, int> put_value;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLInputButtonElement*, ushort**, int> get_value;
+
+            [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLInputButtonElement*, ushort*, int> put_name;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLInputButtonElement*, ushort**, int> get_name;
+
+            [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLInputButtonElement*, VARIANT, int> put_status;
+
+            [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLInputButtonElement*, VARIANT*, int> get_status;
+
+            [NativeTypeName("HRESULT (VARIANT_BOOL) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLInputButtonElement*, short, int> put_disabled;
+
+            [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLInputButtonElement*, short*, int> get_disabled;
+
+            [NativeTypeName("HRESULT (IHTMLFormElement **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLInputButtonElement*, IHTMLFormElement**, int> get_form;
+
+            [NativeTypeName("HRESULT (IHTMLTxtRange **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLInputButtonElement*, IHTMLTxtRange**, int> createTextRange;
         }
     }
 }

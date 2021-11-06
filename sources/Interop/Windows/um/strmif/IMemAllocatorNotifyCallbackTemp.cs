@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("92980B30-C1DE-11D2-ABF5-00A0C905F375")]
     [NativeTypeName("struct IMemAllocatorNotifyCallbackTemp : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IMemAllocatorNotifyCallbackTemp
+    public unsafe partial struct IMemAllocatorNotifyCallbackTemp : IMemAllocatorNotifyCallbackTemp.Interface
     {
         public void** lpVtbl;
 
@@ -44,6 +44,27 @@ namespace TerraFX.Interop
         public HRESULT NotifyRelease()
         {
             return ((delegate* unmanaged<IMemAllocatorNotifyCallbackTemp*, int>)(lpVtbl[3]))((IMemAllocatorNotifyCallbackTemp*)Unsafe.AsPointer(ref this));
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT NotifyRelease();
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMemAllocatorNotifyCallbackTemp*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMemAllocatorNotifyCallbackTemp*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMemAllocatorNotifyCallbackTemp*, uint> Release;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMemAllocatorNotifyCallbackTemp*, int> NotifyRelease;
         }
     }
 }

@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("E3DCD8C7-3057-4692-99C3-7B7720AFDA31")]
     [NativeTypeName("struct IDesktopWindowXamlSourceNative2 : IDesktopWindowXamlSourceNative")]
     [NativeInheritance("IDesktopWindowXamlSourceNative")]
-    public unsafe partial struct IDesktopWindowXamlSourceNative2
+    public unsafe partial struct IDesktopWindowXamlSourceNative2 : IDesktopWindowXamlSourceNative2.Interface
     {
         public void** lpVtbl;
 
@@ -58,6 +58,33 @@ namespace TerraFX.Interop
         public HRESULT PreTranslateMessage([NativeTypeName("const MSG *")] MSG* message, BOOL* result)
         {
             return ((delegate* unmanaged<IDesktopWindowXamlSourceNative2*, MSG*, BOOL*, int>)(lpVtbl[5]))((IDesktopWindowXamlSourceNative2*)Unsafe.AsPointer(ref this), message, result);
+        }
+
+        public interface Interface : IDesktopWindowXamlSourceNative.Interface
+        {
+            [VtblIndex(5)]
+            HRESULT PreTranslateMessage([NativeTypeName("const MSG *")] MSG* message, BOOL* result);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDesktopWindowXamlSourceNative2*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDesktopWindowXamlSourceNative2*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDesktopWindowXamlSourceNative2*, uint> Release;
+
+            [NativeTypeName("HRESULT (HWND) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDesktopWindowXamlSourceNative2*, HWND, int> AttachToWindow;
+
+            [NativeTypeName("HRESULT (HWND *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDesktopWindowXamlSourceNative2*, HWND*, int> get_WindowHandle;
+
+            [NativeTypeName("HRESULT (const MSG *, BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDesktopWindowXamlSourceNative2*, MSG*, BOOL*, int> PreTranslateMessage;
         }
     }
 }

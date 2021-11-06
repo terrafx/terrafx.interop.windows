@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("0000010A-0000-0000-C000-000000000046")]
     [NativeTypeName("struct IPersistStorage : IPersist")]
     [NativeInheritance("IPersist")]
-    public unsafe partial struct IPersistStorage
+    public unsafe partial struct IPersistStorage : IPersistStorage.Interface
     {
         public void** lpVtbl;
 
@@ -86,6 +86,60 @@ namespace TerraFX.Interop
         public HRESULT HandsOffStorage()
         {
             return ((delegate* unmanaged<IPersistStorage*, int>)(lpVtbl[9]))((IPersistStorage*)Unsafe.AsPointer(ref this));
+        }
+
+        public interface Interface : IPersist.Interface
+        {
+            [VtblIndex(4)]
+            HRESULT IsDirty();
+
+            [VtblIndex(5)]
+            HRESULT InitNew(IStorage* pStg);
+
+            [VtblIndex(6)]
+            HRESULT Load(IStorage* pStg);
+
+            [VtblIndex(7)]
+            HRESULT Save(IStorage* pStgSave, BOOL fSameAsLoad);
+
+            [VtblIndex(8)]
+            HRESULT SaveCompleted(IStorage* pStgNew);
+
+            [VtblIndex(9)]
+            HRESULT HandsOffStorage();
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IPersistStorage*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IPersistStorage*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IPersistStorage*, uint> Release;
+
+            [NativeTypeName("HRESULT (CLSID *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IPersistStorage*, Guid*, int> GetClassID;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IPersistStorage*, int> IsDirty;
+
+            [NativeTypeName("HRESULT (IStorage *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IPersistStorage*, IStorage*, int> InitNew;
+
+            [NativeTypeName("HRESULT (IStorage *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IPersistStorage*, IStorage*, int> Load;
+
+            [NativeTypeName("HRESULT (IStorage *, BOOL) __attribute__((stdcall))")]
+            public delegate* unmanaged<IPersistStorage*, IStorage*, BOOL, int> Save;
+
+            [NativeTypeName("HRESULT (IStorage *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IPersistStorage*, IStorage*, int> SaveCompleted;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IPersistStorage*, int> HandsOffStorage;
         }
     }
 }

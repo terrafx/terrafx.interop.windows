@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("30510478-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct IHTMLEventObj5 : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct IHTMLEventObj5
+    public unsafe partial struct IHTMLEventObj5 : IHTMLEventObj5.Interface
     {
         public void** lpVtbl;
 
@@ -128,6 +128,87 @@ namespace TerraFX.Interop
         public HRESULT get_issession([NativeTypeName("VARIANT_BOOL *")] short* p)
         {
             return ((delegate* unmanaged<IHTMLEventObj5*, short*, int>)(lpVtbl[15]))((IHTMLEventObj5*)Unsafe.AsPointer(ref this), p);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT put_url([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(8)]
+            HRESULT get_url([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(9)]
+            HRESULT put_data([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(10)]
+            HRESULT get_data([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(11)]
+            HRESULT get_source(IDispatch** p);
+
+            [VtblIndex(12)]
+            HRESULT put_origin([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(13)]
+            HRESULT get_origin([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(14)]
+            HRESULT put_issession([NativeTypeName("VARIANT_BOOL")] short v);
+
+            [VtblIndex(15)]
+            HRESULT get_issession([NativeTypeName("VARIANT_BOOL *")] short* p);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLEventObj5*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLEventObj5*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLEventObj5*, uint> Release;
+
+            [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLEventObj5*, uint*, int> GetTypeInfoCount;
+
+            [NativeTypeName("HRESULT (UINT, LCID, ITypeInfo **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLEventObj5*, uint, uint, ITypeInfo**, int> GetTypeInfo;
+
+            [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLEventObj5*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+
+            [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLEventObj5*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
+
+            [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLEventObj5*, ushort*, int> put_url;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLEventObj5*, ushort**, int> get_url;
+
+            [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLEventObj5*, ushort*, int> put_data;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLEventObj5*, ushort**, int> get_data;
+
+            [NativeTypeName("HRESULT (IDispatch **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLEventObj5*, IDispatch**, int> get_source;
+
+            [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLEventObj5*, ushort*, int> put_origin;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLEventObj5*, ushort**, int> get_origin;
+
+            [NativeTypeName("HRESULT (VARIANT_BOOL) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLEventObj5*, short, int> put_issession;
+
+            [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLEventObj5*, short*, int> get_issession;
         }
     }
 }

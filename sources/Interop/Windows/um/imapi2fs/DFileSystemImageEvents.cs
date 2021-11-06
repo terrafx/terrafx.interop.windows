@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("2C941FDF-975B-59BE-A960-9A2A262853A5")]
     [NativeTypeName("struct DFileSystemImageEvents : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct DFileSystemImageEvents
+    public unsafe partial struct DFileSystemImageEvents : DFileSystemImageEvents.Interface
     {
         public void** lpVtbl;
 
@@ -72,6 +72,39 @@ namespace TerraFX.Interop
         public HRESULT Update(IDispatch* @object, [NativeTypeName("BSTR")] ushort* currentFile, [NativeTypeName("LONG")] int copiedSectors, [NativeTypeName("LONG")] int totalSectors)
         {
             return ((delegate* unmanaged<DFileSystemImageEvents*, IDispatch*, ushort*, int, int, int>)(lpVtbl[7]))((DFileSystemImageEvents*)Unsafe.AsPointer(ref this), @object, currentFile, copiedSectors, totalSectors);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT Update(IDispatch* @object, [NativeTypeName("BSTR")] ushort* currentFile, [NativeTypeName("LONG")] int copiedSectors, [NativeTypeName("LONG")] int totalSectors);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<DFileSystemImageEvents*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<DFileSystemImageEvents*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<DFileSystemImageEvents*, uint> Release;
+
+            [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<DFileSystemImageEvents*, uint*, int> GetTypeInfoCount;
+
+            [NativeTypeName("HRESULT (UINT, LCID, ITypeInfo **) __attribute__((stdcall))")]
+            public delegate* unmanaged<DFileSystemImageEvents*, uint, uint, ITypeInfo**, int> GetTypeInfo;
+
+            [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
+            public delegate* unmanaged<DFileSystemImageEvents*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+
+            [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<DFileSystemImageEvents*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
+
+            [NativeTypeName("HRESULT (IDispatch *, BSTR, LONG, LONG) __attribute__((stdcall))")]
+            public delegate* unmanaged<DFileSystemImageEvents*, IDispatch*, ushort*, int, int, int> Update;
         }
     }
 }

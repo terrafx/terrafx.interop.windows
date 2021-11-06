@@ -10,7 +10,7 @@ namespace TerraFX.Interop
 {
     [NativeTypeName("struct ID3D10Effect : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct ID3D10Effect
+    public unsafe partial struct ID3D10Effect : ID3D10Effect.Interface
     {
         public void** lpVtbl;
 
@@ -126,6 +126,99 @@ namespace TerraFX.Interop
         public BOOL IsOptimized()
         {
             return ((delegate* unmanaged<ID3D10Effect*, int>)(lpVtbl[15]))((ID3D10Effect*)Unsafe.AsPointer(ref this));
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            BOOL IsValid();
+
+            [VtblIndex(4)]
+            BOOL IsPool();
+
+            [VtblIndex(5)]
+            HRESULT GetDevice(ID3D10Device** ppDevice);
+
+            [VtblIndex(6)]
+            HRESULT GetDesc(D3D10_EFFECT_DESC* pDesc);
+
+            [VtblIndex(7)]
+            ID3D10EffectConstantBuffer* GetConstantBufferByIndex(uint Index);
+
+            [VtblIndex(8)]
+            ID3D10EffectConstantBuffer* GetConstantBufferByName([NativeTypeName("LPCSTR")] sbyte* Name);
+
+            [VtblIndex(9)]
+            ID3D10EffectVariable* GetVariableByIndex(uint Index);
+
+            [VtblIndex(10)]
+            ID3D10EffectVariable* GetVariableByName([NativeTypeName("LPCSTR")] sbyte* Name);
+
+            [VtblIndex(11)]
+            ID3D10EffectVariable* GetVariableBySemantic([NativeTypeName("LPCSTR")] sbyte* Semantic);
+
+            [VtblIndex(12)]
+            ID3D10EffectTechnique* GetTechniqueByIndex(uint Index);
+
+            [VtblIndex(13)]
+            ID3D10EffectTechnique* GetTechniqueByName([NativeTypeName("LPCSTR")] sbyte* Name);
+
+            [VtblIndex(14)]
+            HRESULT Optimize();
+
+            [VtblIndex(15)]
+            BOOL IsOptimized();
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D10Effect*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D10Effect*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D10Effect*, uint> Release;
+
+            [NativeTypeName("BOOL () __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D10Effect*, int> IsValid;
+
+            [NativeTypeName("BOOL () __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D10Effect*, int> IsPool;
+
+            [NativeTypeName("HRESULT (ID3D10Device **) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D10Effect*, ID3D10Device**, int> GetDevice;
+
+            [NativeTypeName("HRESULT (D3D10_EFFECT_DESC *) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D10Effect*, D3D10_EFFECT_DESC*, int> GetDesc;
+
+            [NativeTypeName("ID3D10EffectConstantBuffer *(UINT) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D10Effect*, uint, ID3D10EffectConstantBuffer*> GetConstantBufferByIndex;
+
+            [NativeTypeName("ID3D10EffectConstantBuffer *(LPCSTR) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D10Effect*, sbyte*, ID3D10EffectConstantBuffer*> GetConstantBufferByName;
+
+            [NativeTypeName("ID3D10EffectVariable *(UINT) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D10Effect*, uint, ID3D10EffectVariable*> GetVariableByIndex;
+
+            [NativeTypeName("ID3D10EffectVariable *(LPCSTR) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D10Effect*, sbyte*, ID3D10EffectVariable*> GetVariableByName;
+
+            [NativeTypeName("ID3D10EffectVariable *(LPCSTR) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D10Effect*, sbyte*, ID3D10EffectVariable*> GetVariableBySemantic;
+
+            [NativeTypeName("ID3D10EffectTechnique *(UINT) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D10Effect*, uint, ID3D10EffectTechnique*> GetTechniqueByIndex;
+
+            [NativeTypeName("ID3D10EffectTechnique *(LPCSTR) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D10Effect*, sbyte*, ID3D10EffectTechnique*> GetTechniqueByName;
+
+            [NativeTypeName("HRESULT () __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D10Effect*, int> Optimize;
+
+            [NativeTypeName("BOOL () __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D10Effect*, int> IsOptimized;
         }
     }
 }

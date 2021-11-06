@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("A8BE2AC4-199F-4946-B331-79599FB98DE7")]
     [NativeTypeName("struct IDXGISwapChain2 : IDXGISwapChain1")]
     [NativeInheritance("IDXGISwapChain1")]
-    public unsafe partial struct IDXGISwapChain2
+    public unsafe partial struct IDXGISwapChain2 : IDXGISwapChain2.Interface
     {
         public void** lpVtbl;
 
@@ -268,6 +268,141 @@ namespace TerraFX.Interop
         public HRESULT GetMatrixTransform(DXGI_MATRIX_3X2_F* pMatrix)
         {
             return ((delegate* unmanaged<IDXGISwapChain2*, DXGI_MATRIX_3X2_F*, int>)(lpVtbl[35]))((IDXGISwapChain2*)Unsafe.AsPointer(ref this), pMatrix);
+        }
+
+        public interface Interface : IDXGISwapChain1.Interface
+        {
+            [VtblIndex(29)]
+            HRESULT SetSourceSize(uint Width, uint Height);
+
+            [VtblIndex(30)]
+            HRESULT GetSourceSize(uint* pWidth, uint* pHeight);
+
+            [VtblIndex(31)]
+            HRESULT SetMaximumFrameLatency(uint MaxLatency);
+
+            [VtblIndex(32)]
+            HRESULT GetMaximumFrameLatency(uint* pMaxLatency);
+
+            [VtblIndex(33)]
+            HANDLE GetFrameLatencyWaitableObject();
+
+            [VtblIndex(34)]
+            HRESULT SetMatrixTransform([NativeTypeName("const DXGI_MATRIX_3X2_F *")] DXGI_MATRIX_3X2_F* pMatrix);
+
+            [VtblIndex(35)]
+            HRESULT GetMatrixTransform(DXGI_MATRIX_3X2_F* pMatrix);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDXGISwapChain2*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDXGISwapChain2*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDXGISwapChain2*, uint> Release;
+
+            [NativeTypeName("HRESULT (const GUID &, UINT, const void *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDXGISwapChain2*, Guid*, uint, void*, int> SetPrivateData;
+
+            [NativeTypeName("HRESULT (const GUID &, const IUnknown *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDXGISwapChain2*, Guid*, IUnknown*, int> SetPrivateDataInterface;
+
+            [NativeTypeName("HRESULT (const GUID &, UINT *, void *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDXGISwapChain2*, Guid*, uint*, void*, int> GetPrivateData;
+
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDXGISwapChain2*, Guid*, void**, int> GetParent;
+
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDXGISwapChain2*, Guid*, void**, int> GetDevice;
+
+            [NativeTypeName("HRESULT (UINT, UINT) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDXGISwapChain2*, uint, uint, int> Present;
+
+            [NativeTypeName("HRESULT (UINT, const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDXGISwapChain2*, uint, Guid*, void**, int> GetBuffer;
+
+            [NativeTypeName("HRESULT (BOOL, IDXGIOutput *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDXGISwapChain2*, BOOL, IDXGIOutput*, int> SetFullscreenState;
+
+            [NativeTypeName("HRESULT (BOOL *, IDXGIOutput **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDXGISwapChain2*, BOOL*, IDXGIOutput**, int> GetFullscreenState;
+
+            [NativeTypeName("HRESULT (DXGI_SWAP_CHAIN_DESC *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDXGISwapChain2*, DXGI_SWAP_CHAIN_DESC*, int> GetDesc;
+
+            [NativeTypeName("HRESULT (UINT, UINT, UINT, DXGI_FORMAT, UINT) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDXGISwapChain2*, uint, uint, uint, DXGI_FORMAT, uint, int> ResizeBuffers;
+
+            [NativeTypeName("HRESULT (const DXGI_MODE_DESC *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDXGISwapChain2*, DXGI_MODE_DESC*, int> ResizeTarget;
+
+            [NativeTypeName("HRESULT (IDXGIOutput **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDXGISwapChain2*, IDXGIOutput**, int> GetContainingOutput;
+
+            [NativeTypeName("HRESULT (DXGI_FRAME_STATISTICS *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDXGISwapChain2*, DXGI_FRAME_STATISTICS*, int> GetFrameStatistics;
+
+            [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDXGISwapChain2*, uint*, int> GetLastPresentCount;
+
+            [NativeTypeName("HRESULT (DXGI_SWAP_CHAIN_DESC1 *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDXGISwapChain2*, DXGI_SWAP_CHAIN_DESC1*, int> GetDesc1;
+
+            [NativeTypeName("HRESULT (DXGI_SWAP_CHAIN_FULLSCREEN_DESC *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDXGISwapChain2*, DXGI_SWAP_CHAIN_FULLSCREEN_DESC*, int> GetFullscreenDesc;
+
+            [NativeTypeName("HRESULT (HWND *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDXGISwapChain2*, HWND*, int> GetHwnd;
+
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDXGISwapChain2*, Guid*, void**, int> GetCoreWindow;
+
+            [NativeTypeName("HRESULT (UINT, UINT, const DXGI_PRESENT_PARAMETERS *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDXGISwapChain2*, uint, uint, DXGI_PRESENT_PARAMETERS*, int> Present1;
+
+            [NativeTypeName("BOOL () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDXGISwapChain2*, int> IsTemporaryMonoSupported;
+
+            [NativeTypeName("HRESULT (IDXGIOutput **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDXGISwapChain2*, IDXGIOutput**, int> GetRestrictToOutput;
+
+            [NativeTypeName("HRESULT (const DXGI_RGBA *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDXGISwapChain2*, DXGI_RGBA*, int> SetBackgroundColor;
+
+            [NativeTypeName("HRESULT (DXGI_RGBA *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDXGISwapChain2*, DXGI_RGBA*, int> GetBackgroundColor;
+
+            [NativeTypeName("HRESULT (DXGI_MODE_ROTATION) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDXGISwapChain2*, DXGI_MODE_ROTATION, int> SetRotation;
+
+            [NativeTypeName("HRESULT (DXGI_MODE_ROTATION *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDXGISwapChain2*, DXGI_MODE_ROTATION*, int> GetRotation;
+
+            [NativeTypeName("HRESULT (UINT, UINT) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDXGISwapChain2*, uint, uint, int> SetSourceSize;
+
+            [NativeTypeName("HRESULT (UINT *, UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDXGISwapChain2*, uint*, uint*, int> GetSourceSize;
+
+            [NativeTypeName("HRESULT (UINT) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDXGISwapChain2*, uint, int> SetMaximumFrameLatency;
+
+            [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDXGISwapChain2*, uint*, int> GetMaximumFrameLatency;
+
+            [NativeTypeName("HANDLE () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDXGISwapChain2*, void*> GetFrameLatencyWaitableObject;
+
+            [NativeTypeName("HRESULT (const DXGI_MATRIX_3X2_F *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDXGISwapChain2*, DXGI_MATRIX_3X2_F*, int> SetMatrixTransform;
+
+            [NativeTypeName("HRESULT (DXGI_MATRIX_3X2_F *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDXGISwapChain2*, DXGI_MATRIX_3X2_F*, int> GetMatrixTransform;
         }
     }
 }

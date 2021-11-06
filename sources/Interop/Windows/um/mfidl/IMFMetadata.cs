@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("F88CFB8C-EF16-4991-B450-CB8C69E51704")]
     [NativeTypeName("struct IMFMetadata : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IMFMetadata
+    public unsafe partial struct IMFMetadata : IMFMetadata.Interface
     {
         public void** lpVtbl;
 
@@ -86,6 +86,63 @@ namespace TerraFX.Interop
         public HRESULT GetAllPropertyNames(PROPVARIANT* ppvNames)
         {
             return ((delegate* unmanaged<IMFMetadata*, PROPVARIANT*, int>)(lpVtbl[9]))((IMFMetadata*)Unsafe.AsPointer(ref this), ppvNames);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT SetLanguage([NativeTypeName("LPCWSTR")] ushort* pwszRFC1766);
+
+            [VtblIndex(4)]
+            HRESULT GetLanguage([NativeTypeName("LPWSTR *")] ushort** ppwszRFC1766);
+
+            [VtblIndex(5)]
+            HRESULT GetAllLanguages(PROPVARIANT* ppvLanguages);
+
+            [VtblIndex(6)]
+            HRESULT SetProperty([NativeTypeName("LPCWSTR")] ushort* pwszName, [NativeTypeName("const PROPVARIANT *")] PROPVARIANT* ppvValue);
+
+            [VtblIndex(7)]
+            HRESULT GetProperty([NativeTypeName("LPCWSTR")] ushort* pwszName, PROPVARIANT* ppvValue);
+
+            [VtblIndex(8)]
+            HRESULT DeleteProperty([NativeTypeName("LPCWSTR")] ushort* pwszName);
+
+            [VtblIndex(9)]
+            HRESULT GetAllPropertyNames(PROPVARIANT* ppvNames);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFMetadata*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFMetadata*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFMetadata*, uint> Release;
+
+            [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFMetadata*, ushort*, int> SetLanguage;
+
+            [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFMetadata*, ushort**, int> GetLanguage;
+
+            [NativeTypeName("HRESULT (PROPVARIANT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFMetadata*, PROPVARIANT*, int> GetAllLanguages;
+
+            [NativeTypeName("HRESULT (LPCWSTR, const PROPVARIANT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFMetadata*, ushort*, PROPVARIANT*, int> SetProperty;
+
+            [NativeTypeName("HRESULT (LPCWSTR, PROPVARIANT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFMetadata*, ushort*, PROPVARIANT*, int> GetProperty;
+
+            [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFMetadata*, ushort*, int> DeleteProperty;
+
+            [NativeTypeName("HRESULT (PROPVARIANT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFMetadata*, PROPVARIANT*, int> GetAllPropertyNames;
         }
     }
 }

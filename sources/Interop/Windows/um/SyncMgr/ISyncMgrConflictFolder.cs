@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("59287F5E-BC81-4FCA-A7F1-E5A8ECDB1D69")]
     [NativeTypeName("struct ISyncMgrConflictFolder : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct ISyncMgrConflictFolder
+    public unsafe partial struct ISyncMgrConflictFolder : ISyncMgrConflictFolder.Interface
     {
         public void** lpVtbl;
 
@@ -44,6 +44,27 @@ namespace TerraFX.Interop
         public HRESULT GetConflictIDList(ISyncMgrConflict* pConflict, [NativeTypeName("LPITEMIDLIST *")] ITEMIDLIST** ppidlConflict)
         {
             return ((delegate* unmanaged<ISyncMgrConflictFolder*, ISyncMgrConflict*, ITEMIDLIST**, int>)(lpVtbl[3]))((ISyncMgrConflictFolder*)Unsafe.AsPointer(ref this), pConflict, ppidlConflict);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetConflictIDList(ISyncMgrConflict* pConflict, [NativeTypeName("LPITEMIDLIST *")] ITEMIDLIST** ppidlConflict);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISyncMgrConflictFolder*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ISyncMgrConflictFolder*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ISyncMgrConflictFolder*, uint> Release;
+
+            [NativeTypeName("HRESULT (ISyncMgrConflict *, LPITEMIDLIST *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISyncMgrConflictFolder*, ISyncMgrConflict*, ITEMIDLIST**, int> GetConflictIDList;
         }
     }
 }

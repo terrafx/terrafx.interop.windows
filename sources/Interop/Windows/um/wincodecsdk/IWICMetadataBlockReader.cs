@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("FEAA2A8D-B3F3-43E4-B25C-D1DE990A1AE1")]
     [NativeTypeName("struct IWICMetadataBlockReader : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IWICMetadataBlockReader
+    public unsafe partial struct IWICMetadataBlockReader : IWICMetadataBlockReader.Interface
     {
         public void** lpVtbl;
 
@@ -65,6 +65,45 @@ namespace TerraFX.Interop
         public HRESULT GetEnumerator(IEnumUnknown** ppIEnumMetadata)
         {
             return ((delegate* unmanaged<IWICMetadataBlockReader*, IEnumUnknown**, int>)(lpVtbl[6]))((IWICMetadataBlockReader*)Unsafe.AsPointer(ref this), ppIEnumMetadata);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetContainerFormat(Guid* pguidContainerFormat);
+
+            [VtblIndex(4)]
+            HRESULT GetCount(uint* pcCount);
+
+            [VtblIndex(5)]
+            HRESULT GetReaderByIndex(uint nIndex, IWICMetadataReader** ppIMetadataReader);
+
+            [VtblIndex(6)]
+            HRESULT GetEnumerator(IEnumUnknown** ppIEnumMetadata);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWICMetadataBlockReader*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IWICMetadataBlockReader*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IWICMetadataBlockReader*, uint> Release;
+
+            [NativeTypeName("HRESULT (GUID *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWICMetadataBlockReader*, Guid*, int> GetContainerFormat;
+
+            [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWICMetadataBlockReader*, uint*, int> GetCount;
+
+            [NativeTypeName("HRESULT (UINT, IWICMetadataReader **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWICMetadataBlockReader*, uint, IWICMetadataReader**, int> GetReaderByIndex;
+
+            [NativeTypeName("HRESULT (IEnumUnknown **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWICMetadataBlockReader*, IEnumUnknown**, int> GetEnumerator;
         }
     }
 }

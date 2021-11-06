@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("0000012A-0000-0000-C000-000000000046")]
     [NativeTypeName("struct IContinue : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IContinue
+    public unsafe partial struct IContinue : IContinue.Interface
     {
         public void** lpVtbl;
 
@@ -44,6 +44,27 @@ namespace TerraFX.Interop
         public HRESULT FContinue()
         {
             return ((delegate* unmanaged<IContinue*, int>)(lpVtbl[3]))((IContinue*)Unsafe.AsPointer(ref this));
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT FContinue();
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IContinue*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IContinue*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IContinue*, uint> Release;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IContinue*, int> FContinue;
         }
     }
 }

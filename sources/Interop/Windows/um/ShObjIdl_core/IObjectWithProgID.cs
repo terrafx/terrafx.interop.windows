@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("71E806FB-8DEE-46FC-BF8C-7748A8A1AE13")]
     [NativeTypeName("struct IObjectWithProgID : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IObjectWithProgID
+    public unsafe partial struct IObjectWithProgID : IObjectWithProgID.Interface
     {
         public void** lpVtbl;
 
@@ -51,6 +51,33 @@ namespace TerraFX.Interop
         public HRESULT GetProgID([NativeTypeName("LPWSTR *")] ushort** ppszProgID)
         {
             return ((delegate* unmanaged<IObjectWithProgID*, ushort**, int>)(lpVtbl[4]))((IObjectWithProgID*)Unsafe.AsPointer(ref this), ppszProgID);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT SetProgID([NativeTypeName("LPCWSTR")] ushort* pszProgID);
+
+            [VtblIndex(4)]
+            HRESULT GetProgID([NativeTypeName("LPWSTR *")] ushort** ppszProgID);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IObjectWithProgID*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IObjectWithProgID*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IObjectWithProgID*, uint> Release;
+
+            [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IObjectWithProgID*, ushort*, int> SetProgID;
+
+            [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IObjectWithProgID*, ushort**, int> GetProgID;
         }
     }
 }

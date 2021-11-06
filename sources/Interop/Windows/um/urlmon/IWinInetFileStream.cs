@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("F134C4B7-B1F8-4E75-B886-74B90943BECB")]
     [NativeTypeName("struct IWinInetFileStream : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IWinInetFileStream
+    public unsafe partial struct IWinInetFileStream : IWinInetFileStream.Interface
     {
         public void** lpVtbl;
 
@@ -51,6 +51,33 @@ namespace TerraFX.Interop
         public HRESULT SetDeleteFile([NativeTypeName("DWORD_PTR")] nuint dwReserved)
         {
             return ((delegate* unmanaged<IWinInetFileStream*, nuint, int>)(lpVtbl[4]))((IWinInetFileStream*)Unsafe.AsPointer(ref this), dwReserved);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT SetHandleForUnlock([NativeTypeName("DWORD_PTR")] nuint hWinInetLockHandle, [NativeTypeName("DWORD_PTR")] nuint dwReserved);
+
+            [VtblIndex(4)]
+            HRESULT SetDeleteFile([NativeTypeName("DWORD_PTR")] nuint dwReserved);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWinInetFileStream*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IWinInetFileStream*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IWinInetFileStream*, uint> Release;
+
+            [NativeTypeName("HRESULT (DWORD_PTR, DWORD_PTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWinInetFileStream*, nuint, nuint, int> SetHandleForUnlock;
+
+            [NativeTypeName("HRESULT (DWORD_PTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWinInetFileStream*, nuint, int> SetDeleteFile;
         }
     }
 }

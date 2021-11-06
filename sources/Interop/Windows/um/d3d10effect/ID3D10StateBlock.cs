@@ -10,7 +10,7 @@ namespace TerraFX.Interop
 {
     [NativeTypeName("struct ID3D10StateBlock : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct ID3D10StateBlock
+    public unsafe partial struct ID3D10StateBlock : ID3D10StateBlock.Interface
     {
         public void** lpVtbl;
 
@@ -63,6 +63,45 @@ namespace TerraFX.Interop
         public HRESULT GetDevice(ID3D10Device** ppDevice)
         {
             return ((delegate* unmanaged<ID3D10StateBlock*, ID3D10Device**, int>)(lpVtbl[6]))((ID3D10StateBlock*)Unsafe.AsPointer(ref this), ppDevice);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT Capture();
+
+            [VtblIndex(4)]
+            HRESULT Apply();
+
+            [VtblIndex(5)]
+            HRESULT ReleaseAllDeviceObjects();
+
+            [VtblIndex(6)]
+            HRESULT GetDevice(ID3D10Device** ppDevice);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D10StateBlock*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D10StateBlock*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D10StateBlock*, uint> Release;
+
+            [NativeTypeName("HRESULT () __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D10StateBlock*, int> Capture;
+
+            [NativeTypeName("HRESULT () __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D10StateBlock*, int> Apply;
+
+            [NativeTypeName("HRESULT () __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D10StateBlock*, int> ReleaseAllDeviceObjects;
+
+            [NativeTypeName("HRESULT (ID3D10Device **) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D10StateBlock*, ID3D10Device**, int> GetDevice;
         }
     }
 }

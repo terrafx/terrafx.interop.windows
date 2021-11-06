@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("65019F75-8DA2-497C-B32C-DFA34E48EDE6")]
     [NativeTypeName("struct ID2D1Image : ID2D1Resource")]
     [NativeInheritance("ID2D1Resource")]
-    public unsafe partial struct ID2D1Image
+    public unsafe partial struct ID2D1Image : ID2D1Image.Interface
     {
         public void** lpVtbl;
 
@@ -44,6 +44,25 @@ namespace TerraFX.Interop
         public void GetFactory(ID2D1Factory** factory)
         {
             ((delegate* unmanaged<ID2D1Image*, ID2D1Factory**, void>)(lpVtbl[3]))((ID2D1Image*)Unsafe.AsPointer(ref this), factory);
+        }
+
+        public interface Interface : ID2D1Resource.Interface
+        {
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID2D1Image*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ID2D1Image*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ID2D1Image*, uint> Release;
+
+            [NativeTypeName("void (ID2D1Factory **) const __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID2D1Image*, ID2D1Factory**, void> GetFactory;
         }
     }
 }

@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("C6E13380-30AC-11D0-A18C-00A0C9118956")]
     [NativeTypeName("struct IAMCrossbar : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IAMCrossbar
+    public unsafe partial struct IAMCrossbar : IAMCrossbar.Interface
     {
         public void** lpVtbl;
 
@@ -72,6 +72,51 @@ namespace TerraFX.Interop
         public HRESULT get_CrossbarPinInfo(BOOL IsInputPin, [NativeTypeName("long")] int PinIndex, [NativeTypeName("long *")] int* PinIndexRelated, [NativeTypeName("long *")] int* PhysicalType)
         {
             return ((delegate* unmanaged<IAMCrossbar*, BOOL, int, int*, int*, int>)(lpVtbl[7]))((IAMCrossbar*)Unsafe.AsPointer(ref this), IsInputPin, PinIndex, PinIndexRelated, PhysicalType);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT get_PinCounts([NativeTypeName("long *")] int* OutputPinCount, [NativeTypeName("long *")] int* InputPinCount);
+
+            [VtblIndex(4)]
+            HRESULT CanRoute([NativeTypeName("long")] int OutputPinIndex, [NativeTypeName("long")] int InputPinIndex);
+
+            [VtblIndex(5)]
+            HRESULT Route([NativeTypeName("long")] int OutputPinIndex, [NativeTypeName("long")] int InputPinIndex);
+
+            [VtblIndex(6)]
+            HRESULT get_IsRoutedTo([NativeTypeName("long")] int OutputPinIndex, [NativeTypeName("long *")] int* InputPinIndex);
+
+            [VtblIndex(7)]
+            HRESULT get_CrossbarPinInfo(BOOL IsInputPin, [NativeTypeName("long")] int PinIndex, [NativeTypeName("long *")] int* PinIndexRelated, [NativeTypeName("long *")] int* PhysicalType);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAMCrossbar*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IAMCrossbar*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IAMCrossbar*, uint> Release;
+
+            [NativeTypeName("HRESULT (long *, long *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAMCrossbar*, int*, int*, int> get_PinCounts;
+
+            [NativeTypeName("HRESULT (long, long) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAMCrossbar*, int, int, int> CanRoute;
+
+            [NativeTypeName("HRESULT (long, long) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAMCrossbar*, int, int, int> Route;
+
+            [NativeTypeName("HRESULT (long, long *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAMCrossbar*, int, int*, int> get_IsRoutedTo;
+
+            [NativeTypeName("HRESULT (BOOL, long, long *, long *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAMCrossbar*, BOOL, int, int*, int*, int> get_CrossbarPinInfo;
         }
     }
 }

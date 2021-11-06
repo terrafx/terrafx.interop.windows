@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("8FEED468-6F7E-440D-869A-49BDD283AD0D")]
     [NativeTypeName("struct IMFSampleOutputStream : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IMFSampleOutputStream
+    public unsafe partial struct IMFSampleOutputStream : IMFSampleOutputStream.Interface
     {
         public void** lpVtbl;
 
@@ -58,6 +58,39 @@ namespace TerraFX.Interop
         public HRESULT Close()
         {
             return ((delegate* unmanaged<IMFSampleOutputStream*, int>)(lpVtbl[5]))((IMFSampleOutputStream*)Unsafe.AsPointer(ref this));
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT BeginWriteSample(IMFSample* pSample, IMFAsyncCallback* pCallback, IUnknown* punkState);
+
+            [VtblIndex(4)]
+            HRESULT EndWriteSample(IMFAsyncResult* pResult);
+
+            [VtblIndex(5)]
+            HRESULT Close();
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFSampleOutputStream*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFSampleOutputStream*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFSampleOutputStream*, uint> Release;
+
+            [NativeTypeName("HRESULT (IMFSample *, IMFAsyncCallback *, IUnknown *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFSampleOutputStream*, IMFSample*, IMFAsyncCallback*, IUnknown*, int> BeginWriteSample;
+
+            [NativeTypeName("HRESULT (IMFAsyncResult *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFSampleOutputStream*, IMFAsyncResult*, int> EndWriteSample;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFSampleOutputStream*, int> Close;
         }
     }
 }

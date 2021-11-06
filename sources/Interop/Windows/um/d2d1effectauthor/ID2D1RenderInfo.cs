@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("519AE1BD-D19A-420D-B849-364F594776B7")]
     [NativeTypeName("struct ID2D1RenderInfo : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct ID2D1RenderInfo
+    public unsafe partial struct ID2D1RenderInfo : ID2D1RenderInfo.Interface
     {
         public void** lpVtbl;
 
@@ -65,6 +65,45 @@ namespace TerraFX.Interop
         public void SetInstructionCountHint([NativeTypeName("UINT32")] uint instructionCount)
         {
             ((delegate* unmanaged<ID2D1RenderInfo*, uint, void>)(lpVtbl[6]))((ID2D1RenderInfo*)Unsafe.AsPointer(ref this), instructionCount);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT SetInputDescription([NativeTypeName("UINT32")] uint inputIndex, D2D1_INPUT_DESCRIPTION inputDescription);
+
+            [VtblIndex(4)]
+            HRESULT SetOutputBuffer(D2D1_BUFFER_PRECISION bufferPrecision, D2D1_CHANNEL_DEPTH channelDepth);
+
+            [VtblIndex(5)]
+            void SetCached(BOOL isCached);
+
+            [VtblIndex(6)]
+            void SetInstructionCountHint([NativeTypeName("UINT32")] uint instructionCount);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID2D1RenderInfo*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ID2D1RenderInfo*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ID2D1RenderInfo*, uint> Release;
+
+            [NativeTypeName("HRESULT (UINT32, D2D1_INPUT_DESCRIPTION) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID2D1RenderInfo*, uint, D2D1_INPUT_DESCRIPTION, int> SetInputDescription;
+
+            [NativeTypeName("HRESULT (D2D1_BUFFER_PRECISION, D2D1_CHANNEL_DEPTH) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID2D1RenderInfo*, D2D1_BUFFER_PRECISION, D2D1_CHANNEL_DEPTH, int> SetOutputBuffer;
+
+            [NativeTypeName("void (BOOL) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID2D1RenderInfo*, BOOL, void> SetCached;
+
+            [NativeTypeName("void (UINT32) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID2D1RenderInfo*, uint, void> SetInstructionCountHint;
         }
     }
 }

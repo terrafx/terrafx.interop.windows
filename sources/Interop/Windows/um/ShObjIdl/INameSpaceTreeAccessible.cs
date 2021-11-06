@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("71F312DE-43ED-4190-8477-E9536B82350B")]
     [NativeTypeName("struct INameSpaceTreeAccessible : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct INameSpaceTreeAccessible
+    public unsafe partial struct INameSpaceTreeAccessible : INameSpaceTreeAccessible.Interface
     {
         public void** lpVtbl;
 
@@ -58,6 +58,39 @@ namespace TerraFX.Interop
         public HRESULT OnGetAccessibilityRole(IShellItem* psi, VARIANT* pvarRole)
         {
             return ((delegate* unmanaged<INameSpaceTreeAccessible*, IShellItem*, VARIANT*, int>)(lpVtbl[5]))((INameSpaceTreeAccessible*)Unsafe.AsPointer(ref this), psi, pvarRole);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT OnGetDefaultAccessibilityAction(IShellItem* psi, [NativeTypeName("BSTR *")] ushort** pbstrDefaultAction);
+
+            [VtblIndex(4)]
+            HRESULT OnDoDefaultAccessibilityAction(IShellItem* psi);
+
+            [VtblIndex(5)]
+            HRESULT OnGetAccessibilityRole(IShellItem* psi, VARIANT* pvarRole);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<INameSpaceTreeAccessible*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<INameSpaceTreeAccessible*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<INameSpaceTreeAccessible*, uint> Release;
+
+            [NativeTypeName("HRESULT (IShellItem *, BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<INameSpaceTreeAccessible*, IShellItem*, ushort**, int> OnGetDefaultAccessibilityAction;
+
+            [NativeTypeName("HRESULT (IShellItem *) __attribute__((stdcall))")]
+            public delegate* unmanaged<INameSpaceTreeAccessible*, IShellItem*, int> OnDoDefaultAccessibilityAction;
+
+            [NativeTypeName("HRESULT (IShellItem *, VARIANT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<INameSpaceTreeAccessible*, IShellItem*, VARIANT*, int> OnGetAccessibilityRole;
         }
     }
 }

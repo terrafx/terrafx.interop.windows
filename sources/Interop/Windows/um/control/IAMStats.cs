@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("BC9BCF80-DCD2-11D2-ABF6-00A0C905F375")]
     [NativeTypeName("struct IAMStats : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct IAMStats
+    public unsafe partial struct IAMStats : IAMStats.Interface
     {
         public void** lpVtbl;
 
@@ -107,6 +107,69 @@ namespace TerraFX.Interop
         public HRESULT AddValue([NativeTypeName("long")] int lIndex, double dValue)
         {
             return ((delegate* unmanaged<IAMStats*, int, double, int>)(lpVtbl[12]))((IAMStats*)Unsafe.AsPointer(ref this), lIndex, dValue);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT Reset();
+
+            [VtblIndex(8)]
+            HRESULT get_Count([NativeTypeName("LONG *")] int* plCount);
+
+            [VtblIndex(9)]
+            HRESULT GetValueByIndex([NativeTypeName("long")] int lIndex, [NativeTypeName("BSTR *")] ushort** szName, [NativeTypeName("long *")] int* lCount, double* dLast, double* dAverage, double* dStdDev, double* dMin, double* dMax);
+
+            [VtblIndex(10)]
+            HRESULT GetValueByName([NativeTypeName("BSTR")] ushort* szName, [NativeTypeName("long *")] int* lIndex, [NativeTypeName("long *")] int* lCount, double* dLast, double* dAverage, double* dStdDev, double* dMin, double* dMax);
+
+            [VtblIndex(11)]
+            HRESULT GetIndex([NativeTypeName("BSTR")] ushort* szName, [NativeTypeName("long")] int lCreate, [NativeTypeName("long *")] int* plIndex);
+
+            [VtblIndex(12)]
+            HRESULT AddValue([NativeTypeName("long")] int lIndex, double dValue);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAMStats*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IAMStats*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IAMStats*, uint> Release;
+
+            [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAMStats*, uint*, int> GetTypeInfoCount;
+
+            [NativeTypeName("HRESULT (UINT, LCID, ITypeInfo **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAMStats*, uint, uint, ITypeInfo**, int> GetTypeInfo;
+
+            [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAMStats*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+
+            [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAMStats*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IAMStats*, int> Reset;
+
+            [NativeTypeName("HRESULT (LONG *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAMStats*, int*, int> get_Count;
+
+            [NativeTypeName("HRESULT (long, BSTR *, long *, double *, double *, double *, double *, double *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAMStats*, int, ushort**, int*, double*, double*, double*, double*, double*, int> GetValueByIndex;
+
+            [NativeTypeName("HRESULT (BSTR, long *, long *, double *, double *, double *, double *, double *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAMStats*, ushort*, int*, int*, double*, double*, double*, double*, double*, int> GetValueByName;
+
+            [NativeTypeName("HRESULT (BSTR, long, long *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAMStats*, ushort*, int, int*, int> GetIndex;
+
+            [NativeTypeName("HRESULT (long, double) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAMStats*, int, double, int> AddValue;
         }
     }
 }

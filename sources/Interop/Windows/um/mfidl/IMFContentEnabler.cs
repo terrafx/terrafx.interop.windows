@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("D3C4EF59-49CE-4381-9071-D5BCD044C770")]
     [NativeTypeName("struct IMFContentEnabler : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IMFContentEnabler
+    public unsafe partial struct IMFContentEnabler : IMFContentEnabler.Interface
     {
         public void** lpVtbl;
 
@@ -86,6 +86,63 @@ namespace TerraFX.Interop
         public HRESULT Cancel()
         {
             return ((delegate* unmanaged<IMFContentEnabler*, int>)(lpVtbl[9]))((IMFContentEnabler*)Unsafe.AsPointer(ref this));
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetEnableType(Guid* pType);
+
+            [VtblIndex(4)]
+            HRESULT GetEnableURL([NativeTypeName("LPWSTR *")] ushort** ppwszURL, [NativeTypeName("DWORD *")] uint* pcchURL, MF_URL_TRUST_STATUS* pTrustStatus);
+
+            [VtblIndex(5)]
+            HRESULT GetEnableData(byte** ppbData, [NativeTypeName("DWORD *")] uint* pcbData);
+
+            [VtblIndex(6)]
+            HRESULT IsAutomaticSupported(BOOL* pfAutomatic);
+
+            [VtblIndex(7)]
+            HRESULT AutomaticEnable();
+
+            [VtblIndex(8)]
+            HRESULT MonitorEnable();
+
+            [VtblIndex(9)]
+            HRESULT Cancel();
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFContentEnabler*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFContentEnabler*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFContentEnabler*, uint> Release;
+
+            [NativeTypeName("HRESULT (GUID *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFContentEnabler*, Guid*, int> GetEnableType;
+
+            [NativeTypeName("HRESULT (LPWSTR *, DWORD *, MF_URL_TRUST_STATUS *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFContentEnabler*, ushort**, uint*, MF_URL_TRUST_STATUS*, int> GetEnableURL;
+
+            [NativeTypeName("HRESULT (BYTE **, DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFContentEnabler*, byte**, uint*, int> GetEnableData;
+
+            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFContentEnabler*, BOOL*, int> IsAutomaticSupported;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFContentEnabler*, int> AutomaticEnable;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFContentEnabler*, int> MonitorEnable;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFContentEnabler*, int> Cancel;
         }
     }
 }

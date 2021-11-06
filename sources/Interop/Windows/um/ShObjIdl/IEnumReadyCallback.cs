@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("61E00D45-8FFF-4E60-924E-6537B61612DD")]
     [NativeTypeName("struct IEnumReadyCallback : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IEnumReadyCallback
+    public unsafe partial struct IEnumReadyCallback : IEnumReadyCallback.Interface
     {
         public void** lpVtbl;
 
@@ -44,6 +44,27 @@ namespace TerraFX.Interop
         public HRESULT EnumReady()
         {
             return ((delegate* unmanaged<IEnumReadyCallback*, int>)(lpVtbl[3]))((IEnumReadyCallback*)Unsafe.AsPointer(ref this));
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT EnumReady();
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IEnumReadyCallback*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IEnumReadyCallback*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IEnumReadyCallback*, uint> Release;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IEnumReadyCallback*, int> EnumReady;
         }
     }
 }

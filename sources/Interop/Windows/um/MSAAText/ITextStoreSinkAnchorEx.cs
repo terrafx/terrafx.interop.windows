@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("25642426-028D-4474-977B-111BB114FE3E")]
     [NativeTypeName("struct ITextStoreSinkAnchorEx : ITextStoreAnchorSink")]
     [NativeInheritance("ITextStoreAnchorSink")]
-    public unsafe partial struct ITextStoreSinkAnchorEx
+    public unsafe partial struct ITextStoreSinkAnchorEx : ITextStoreSinkAnchorEx.Interface
     {
         public void** lpVtbl;
 
@@ -100,6 +100,51 @@ namespace TerraFX.Interop
         public HRESULT OnDisconnect()
         {
             return ((delegate* unmanaged<ITextStoreSinkAnchorEx*, int>)(lpVtbl[11]))((ITextStoreSinkAnchorEx*)Unsafe.AsPointer(ref this));
+        }
+
+        public interface Interface : ITextStoreAnchorSink.Interface
+        {
+            [VtblIndex(11)]
+            HRESULT OnDisconnect();
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITextStoreSinkAnchorEx*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ITextStoreSinkAnchorEx*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ITextStoreSinkAnchorEx*, uint> Release;
+
+            [NativeTypeName("HRESULT (DWORD, IAnchor *, IAnchor *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITextStoreSinkAnchorEx*, uint, IAnchor*, IAnchor*, int> OnTextChange;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<ITextStoreSinkAnchorEx*, int> OnSelectionChange;
+
+            [NativeTypeName("HRESULT (TsLayoutCode, TsViewCookie) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITextStoreSinkAnchorEx*, TsLayoutCode, uint, int> OnLayoutChange;
+
+            [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITextStoreSinkAnchorEx*, uint, int> OnStatusChange;
+
+            [NativeTypeName("HRESULT (IAnchor *, IAnchor *, ULONG, const TS_ATTRID *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITextStoreSinkAnchorEx*, IAnchor*, IAnchor*, uint, Guid*, int> OnAttrsChange;
+
+            [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITextStoreSinkAnchorEx*, uint, int> OnLockGranted;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<ITextStoreSinkAnchorEx*, int> OnStartEditTransaction;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<ITextStoreSinkAnchorEx*, int> OnEndEditTransaction;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<ITextStoreSinkAnchorEx*, int> OnDisconnect;
         }
     }
 }

@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("D11AD862-66DE-4DF4-BF6C-1F5621996AF1")]
     [NativeTypeName("struct IOpenControlPanel : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IOpenControlPanel
+    public unsafe partial struct IOpenControlPanel : IOpenControlPanel.Interface
     {
         public void** lpVtbl;
 
@@ -58,6 +58,39 @@ namespace TerraFX.Interop
         public HRESULT GetCurrentView(CPVIEW* pView)
         {
             return ((delegate* unmanaged<IOpenControlPanel*, CPVIEW*, int>)(lpVtbl[5]))((IOpenControlPanel*)Unsafe.AsPointer(ref this), pView);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT Open([NativeTypeName("LPCWSTR")] ushort* pszName, [NativeTypeName("LPCWSTR")] ushort* pszPage, IUnknown* punkSite);
+
+            [VtblIndex(4)]
+            HRESULT GetPath([NativeTypeName("LPCWSTR")] ushort* pszName, [NativeTypeName("LPWSTR")] ushort* pszPath, uint cchPath);
+
+            [VtblIndex(5)]
+            HRESULT GetCurrentView(CPVIEW* pView);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IOpenControlPanel*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IOpenControlPanel*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IOpenControlPanel*, uint> Release;
+
+            [NativeTypeName("HRESULT (LPCWSTR, LPCWSTR, IUnknown *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IOpenControlPanel*, ushort*, ushort*, IUnknown*, int> Open;
+
+            [NativeTypeName("HRESULT (LPCWSTR, LPWSTR, UINT) __attribute__((stdcall))")]
+            public delegate* unmanaged<IOpenControlPanel*, ushort*, ushort*, uint, int> GetPath;
+
+            [NativeTypeName("HRESULT (CPVIEW *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IOpenControlPanel*, CPVIEW*, int> GetCurrentView;
         }
     }
 }

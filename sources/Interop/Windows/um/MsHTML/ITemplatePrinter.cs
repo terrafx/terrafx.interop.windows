@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("3050F6B4-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct ITemplatePrinter : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct ITemplatePrinter
+    public unsafe partial struct ITemplatePrinter : ITemplatePrinter.Interface
     {
         public void** lpVtbl;
 
@@ -450,6 +450,363 @@ namespace TerraFX.Interop
         public HRESULT updatePageStatus([NativeTypeName("long *")] int* p)
         {
             return ((delegate* unmanaged<ITemplatePrinter*, int*, int>)(lpVtbl[61]))((ITemplatePrinter*)Unsafe.AsPointer(ref this), p);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT startDoc([NativeTypeName("BSTR")] ushort* bstrTitle, [NativeTypeName("VARIANT_BOOL *")] short* p);
+
+            [VtblIndex(8)]
+            HRESULT stopDoc();
+
+            [VtblIndex(9)]
+            HRESULT printBlankPage();
+
+            [VtblIndex(10)]
+            HRESULT printPage(IDispatch* pElemDisp);
+
+            [VtblIndex(11)]
+            HRESULT ensurePrintDialogDefaults([NativeTypeName("VARIANT_BOOL *")] short* p);
+
+            [VtblIndex(12)]
+            HRESULT showPrintDialog([NativeTypeName("VARIANT_BOOL *")] short* p);
+
+            [VtblIndex(13)]
+            HRESULT showPageSetupDialog([NativeTypeName("VARIANT_BOOL *")] short* p);
+
+            [VtblIndex(14)]
+            HRESULT printNonNative(IUnknown* pMarkup, [NativeTypeName("VARIANT_BOOL *")] short* p);
+
+            [VtblIndex(15)]
+            HRESULT printNonNativeFrames(IUnknown* pMarkup, [NativeTypeName("VARIANT_BOOL")] short fActiveFrame);
+
+            [VtblIndex(16)]
+            HRESULT put_framesetDocument([NativeTypeName("VARIANT_BOOL")] short v);
+
+            [VtblIndex(17)]
+            HRESULT get_framesetDocument([NativeTypeName("VARIANT_BOOL *")] short* p);
+
+            [VtblIndex(18)]
+            HRESULT put_frameActive([NativeTypeName("VARIANT_BOOL")] short v);
+
+            [VtblIndex(19)]
+            HRESULT get_frameActive([NativeTypeName("VARIANT_BOOL *")] short* p);
+
+            [VtblIndex(20)]
+            HRESULT put_frameAsShown([NativeTypeName("VARIANT_BOOL")] short v);
+
+            [VtblIndex(21)]
+            HRESULT get_frameAsShown([NativeTypeName("VARIANT_BOOL *")] short* p);
+
+            [VtblIndex(22)]
+            HRESULT put_selection([NativeTypeName("VARIANT_BOOL")] short v);
+
+            [VtblIndex(23)]
+            HRESULT get_selection([NativeTypeName("VARIANT_BOOL *")] short* p);
+
+            [VtblIndex(24)]
+            HRESULT put_selectedPages([NativeTypeName("VARIANT_BOOL")] short v);
+
+            [VtblIndex(25)]
+            HRESULT get_selectedPages([NativeTypeName("VARIANT_BOOL *")] short* p);
+
+            [VtblIndex(26)]
+            HRESULT put_currentPage([NativeTypeName("VARIANT_BOOL")] short v);
+
+            [VtblIndex(27)]
+            HRESULT get_currentPage([NativeTypeName("VARIANT_BOOL *")] short* p);
+
+            [VtblIndex(28)]
+            HRESULT put_currentPageAvail([NativeTypeName("VARIANT_BOOL")] short v);
+
+            [VtblIndex(29)]
+            HRESULT get_currentPageAvail([NativeTypeName("VARIANT_BOOL *")] short* p);
+
+            [VtblIndex(30)]
+            HRESULT put_collate([NativeTypeName("VARIANT_BOOL")] short v);
+
+            [VtblIndex(31)]
+            HRESULT get_collate([NativeTypeName("VARIANT_BOOL *")] short* p);
+
+            [VtblIndex(32)]
+            HRESULT get_duplex([NativeTypeName("VARIANT_BOOL *")] short* p);
+
+            [VtblIndex(33)]
+            HRESULT put_copies(ushort v);
+
+            [VtblIndex(34)]
+            HRESULT get_copies(ushort* p);
+
+            [VtblIndex(35)]
+            HRESULT put_pageFrom(ushort v);
+
+            [VtblIndex(36)]
+            HRESULT get_pageFrom(ushort* p);
+
+            [VtblIndex(37)]
+            HRESULT put_pageTo(ushort v);
+
+            [VtblIndex(38)]
+            HRESULT get_pageTo(ushort* p);
+
+            [VtblIndex(39)]
+            HRESULT put_tableOfLinks([NativeTypeName("VARIANT_BOOL")] short v);
+
+            [VtblIndex(40)]
+            HRESULT get_tableOfLinks([NativeTypeName("VARIANT_BOOL *")] short* p);
+
+            [VtblIndex(41)]
+            HRESULT put_allLinkedDocuments([NativeTypeName("VARIANT_BOOL")] short v);
+
+            [VtblIndex(42)]
+            HRESULT get_allLinkedDocuments([NativeTypeName("VARIANT_BOOL *")] short* p);
+
+            [VtblIndex(43)]
+            HRESULT put_header([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(44)]
+            HRESULT get_header([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(45)]
+            HRESULT put_footer([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(46)]
+            HRESULT get_footer([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(47)]
+            HRESULT put_marginLeft([NativeTypeName("long")] int v);
+
+            [VtblIndex(48)]
+            HRESULT get_marginLeft([NativeTypeName("long *")] int* p);
+
+            [VtblIndex(49)]
+            HRESULT put_marginRight([NativeTypeName("long")] int v);
+
+            [VtblIndex(50)]
+            HRESULT get_marginRight([NativeTypeName("long *")] int* p);
+
+            [VtblIndex(51)]
+            HRESULT put_marginTop([NativeTypeName("long")] int v);
+
+            [VtblIndex(52)]
+            HRESULT get_marginTop([NativeTypeName("long *")] int* p);
+
+            [VtblIndex(53)]
+            HRESULT put_marginBottom([NativeTypeName("long")] int v);
+
+            [VtblIndex(54)]
+            HRESULT get_marginBottom([NativeTypeName("long *")] int* p);
+
+            [VtblIndex(55)]
+            HRESULT get_pageWidth([NativeTypeName("long *")] int* p);
+
+            [VtblIndex(56)]
+            HRESULT get_pageHeight([NativeTypeName("long *")] int* p);
+
+            [VtblIndex(57)]
+            HRESULT get_unprintableLeft([NativeTypeName("long *")] int* p);
+
+            [VtblIndex(58)]
+            HRESULT get_unprintableTop([NativeTypeName("long *")] int* p);
+
+            [VtblIndex(59)]
+            HRESULT get_unprintableRight([NativeTypeName("long *")] int* p);
+
+            [VtblIndex(60)]
+            HRESULT get_unprintableBottom([NativeTypeName("long *")] int* p);
+
+            [VtblIndex(61)]
+            HRESULT updatePageStatus([NativeTypeName("long *")] int* p);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITemplatePrinter*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ITemplatePrinter*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ITemplatePrinter*, uint> Release;
+
+            [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITemplatePrinter*, uint*, int> GetTypeInfoCount;
+
+            [NativeTypeName("HRESULT (UINT, LCID, ITypeInfo **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITemplatePrinter*, uint, uint, ITypeInfo**, int> GetTypeInfo;
+
+            [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITemplatePrinter*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+
+            [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITemplatePrinter*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
+
+            [NativeTypeName("HRESULT (BSTR, VARIANT_BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITemplatePrinter*, ushort*, short*, int> startDoc;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<ITemplatePrinter*, int> stopDoc;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<ITemplatePrinter*, int> printBlankPage;
+
+            [NativeTypeName("HRESULT (IDispatch *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITemplatePrinter*, IDispatch*, int> printPage;
+
+            [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITemplatePrinter*, short*, int> ensurePrintDialogDefaults;
+
+            [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITemplatePrinter*, short*, int> showPrintDialog;
+
+            [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITemplatePrinter*, short*, int> showPageSetupDialog;
+
+            [NativeTypeName("HRESULT (IUnknown *, VARIANT_BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITemplatePrinter*, IUnknown*, short*, int> printNonNative;
+
+            [NativeTypeName("HRESULT (IUnknown *, VARIANT_BOOL) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITemplatePrinter*, IUnknown*, short, int> printNonNativeFrames;
+
+            [NativeTypeName("HRESULT (VARIANT_BOOL) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITemplatePrinter*, short, int> put_framesetDocument;
+
+            [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITemplatePrinter*, short*, int> get_framesetDocument;
+
+            [NativeTypeName("HRESULT (VARIANT_BOOL) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITemplatePrinter*, short, int> put_frameActive;
+
+            [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITemplatePrinter*, short*, int> get_frameActive;
+
+            [NativeTypeName("HRESULT (VARIANT_BOOL) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITemplatePrinter*, short, int> put_frameAsShown;
+
+            [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITemplatePrinter*, short*, int> get_frameAsShown;
+
+            [NativeTypeName("HRESULT (VARIANT_BOOL) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITemplatePrinter*, short, int> put_selection;
+
+            [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITemplatePrinter*, short*, int> get_selection;
+
+            [NativeTypeName("HRESULT (VARIANT_BOOL) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITemplatePrinter*, short, int> put_selectedPages;
+
+            [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITemplatePrinter*, short*, int> get_selectedPages;
+
+            [NativeTypeName("HRESULT (VARIANT_BOOL) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITemplatePrinter*, short, int> put_currentPage;
+
+            [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITemplatePrinter*, short*, int> get_currentPage;
+
+            [NativeTypeName("HRESULT (VARIANT_BOOL) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITemplatePrinter*, short, int> put_currentPageAvail;
+
+            [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITemplatePrinter*, short*, int> get_currentPageAvail;
+
+            [NativeTypeName("HRESULT (VARIANT_BOOL) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITemplatePrinter*, short, int> put_collate;
+
+            [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITemplatePrinter*, short*, int> get_collate;
+
+            [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITemplatePrinter*, short*, int> get_duplex;
+
+            [NativeTypeName("HRESULT (USHORT) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITemplatePrinter*, ushort, int> put_copies;
+
+            [NativeTypeName("HRESULT (USHORT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITemplatePrinter*, ushort*, int> get_copies;
+
+            [NativeTypeName("HRESULT (USHORT) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITemplatePrinter*, ushort, int> put_pageFrom;
+
+            [NativeTypeName("HRESULT (USHORT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITemplatePrinter*, ushort*, int> get_pageFrom;
+
+            [NativeTypeName("HRESULT (USHORT) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITemplatePrinter*, ushort, int> put_pageTo;
+
+            [NativeTypeName("HRESULT (USHORT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITemplatePrinter*, ushort*, int> get_pageTo;
+
+            [NativeTypeName("HRESULT (VARIANT_BOOL) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITemplatePrinter*, short, int> put_tableOfLinks;
+
+            [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITemplatePrinter*, short*, int> get_tableOfLinks;
+
+            [NativeTypeName("HRESULT (VARIANT_BOOL) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITemplatePrinter*, short, int> put_allLinkedDocuments;
+
+            [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITemplatePrinter*, short*, int> get_allLinkedDocuments;
+
+            [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITemplatePrinter*, ushort*, int> put_header;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITemplatePrinter*, ushort**, int> get_header;
+
+            [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITemplatePrinter*, ushort*, int> put_footer;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITemplatePrinter*, ushort**, int> get_footer;
+
+            [NativeTypeName("HRESULT (long) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITemplatePrinter*, int, int> put_marginLeft;
+
+            [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITemplatePrinter*, int*, int> get_marginLeft;
+
+            [NativeTypeName("HRESULT (long) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITemplatePrinter*, int, int> put_marginRight;
+
+            [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITemplatePrinter*, int*, int> get_marginRight;
+
+            [NativeTypeName("HRESULT (long) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITemplatePrinter*, int, int> put_marginTop;
+
+            [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITemplatePrinter*, int*, int> get_marginTop;
+
+            [NativeTypeName("HRESULT (long) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITemplatePrinter*, int, int> put_marginBottom;
+
+            [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITemplatePrinter*, int*, int> get_marginBottom;
+
+            [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITemplatePrinter*, int*, int> get_pageWidth;
+
+            [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITemplatePrinter*, int*, int> get_pageHeight;
+
+            [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITemplatePrinter*, int*, int> get_unprintableLeft;
+
+            [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITemplatePrinter*, int*, int> get_unprintableTop;
+
+            [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITemplatePrinter*, int*, int> get_unprintableRight;
+
+            [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITemplatePrinter*, int*, int> get_unprintableBottom;
+
+            [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITemplatePrinter*, int*, int> updatePageStatus;
         }
     }
 }

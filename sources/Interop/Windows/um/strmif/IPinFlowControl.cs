@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("C56E9858-DBF3-4F6B-8119-384AF2060DEB")]
     [NativeTypeName("struct IPinFlowControl : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IPinFlowControl
+    public unsafe partial struct IPinFlowControl : IPinFlowControl.Interface
     {
         public void** lpVtbl;
 
@@ -44,6 +44,27 @@ namespace TerraFX.Interop
         public HRESULT Block([NativeTypeName("DWORD")] uint dwBlockFlags, HANDLE hEvent)
         {
             return ((delegate* unmanaged<IPinFlowControl*, uint, HANDLE, int>)(lpVtbl[3]))((IPinFlowControl*)Unsafe.AsPointer(ref this), dwBlockFlags, hEvent);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT Block([NativeTypeName("DWORD")] uint dwBlockFlags, HANDLE hEvent);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IPinFlowControl*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IPinFlowControl*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IPinFlowControl*, uint> Release;
+
+            [NativeTypeName("HRESULT (DWORD, HANDLE) __attribute__((stdcall))")]
+            public delegate* unmanaged<IPinFlowControl*, uint, HANDLE, int> Block;
         }
     }
 }

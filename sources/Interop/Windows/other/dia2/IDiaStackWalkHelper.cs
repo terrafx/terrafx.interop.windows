@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("21F81B1B-C5BB-42A3-BC4F-CCBAA75B9F19")]
     [NativeTypeName("struct IDiaStackWalkHelper : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IDiaStackWalkHelper
+    public unsafe partial struct IDiaStackWalkHelper : IDiaStackWalkHelper.Interface
     {
         public void** lpVtbl;
 
@@ -121,6 +121,93 @@ namespace TerraFX.Interop
         public HRESULT functionFragmentsForVA([NativeTypeName("ULONGLONG")] ulong vaFunc, [NativeTypeName("DWORD")] uint cbFunc, [NativeTypeName("DWORD")] uint cFragments, [NativeTypeName("ULONGLONG *")] ulong* pVaFragment, [NativeTypeName("DWORD *")] uint* pLenFragment)
         {
             return ((delegate* unmanaged<IDiaStackWalkHelper*, ulong, uint, uint, ulong*, uint*, int>)(lpVtbl[14]))((IDiaStackWalkHelper*)Unsafe.AsPointer(ref this), vaFunc, cbFunc, cFragments, pVaFragment, pLenFragment);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT get_registerValue([NativeTypeName("DWORD")] uint index, [NativeTypeName("ULONGLONG *")] ulong* pRetVal);
+
+            [VtblIndex(4)]
+            HRESULT put_registerValue([NativeTypeName("DWORD")] uint index, [NativeTypeName("ULONGLONG")] ulong NewVal);
+
+            [VtblIndex(5)]
+            HRESULT readMemory([NativeTypeName("enum MemoryTypeEnum")] MemoryTypeEnum type, [NativeTypeName("ULONGLONG")] ulong va, [NativeTypeName("DWORD")] uint cbData, [NativeTypeName("DWORD *")] uint* pcbData, byte* pbData);
+
+            [VtblIndex(6)]
+            HRESULT searchForReturnAddress(IDiaFrameData* frame, [NativeTypeName("ULONGLONG *")] ulong* returnAddress);
+
+            [VtblIndex(7)]
+            HRESULT searchForReturnAddressStart(IDiaFrameData* frame, [NativeTypeName("ULONGLONG")] ulong startAddress, [NativeTypeName("ULONGLONG *")] ulong* returnAddress);
+
+            [VtblIndex(8)]
+            HRESULT frameForVA([NativeTypeName("ULONGLONG")] ulong va, IDiaFrameData** ppFrame);
+
+            [VtblIndex(9)]
+            HRESULT symbolForVA([NativeTypeName("ULONGLONG")] ulong va, IDiaSymbol** ppSymbol);
+
+            [VtblIndex(10)]
+            HRESULT pdataForVA([NativeTypeName("ULONGLONG")] ulong va, [NativeTypeName("DWORD")] uint cbData, [NativeTypeName("DWORD *")] uint* pcbData, byte* pbData);
+
+            [VtblIndex(11)]
+            HRESULT imageForVA([NativeTypeName("ULONGLONG")] ulong vaContext, [NativeTypeName("ULONGLONG *")] ulong* pvaImageStart);
+
+            [VtblIndex(12)]
+            HRESULT addressForVA([NativeTypeName("ULONGLONG")] ulong va, [NativeTypeName("DWORD *")] uint* pISect, [NativeTypeName("DWORD *")] uint* pOffset);
+
+            [VtblIndex(13)]
+            HRESULT numberOfFunctionFragmentsForVA([NativeTypeName("ULONGLONG")] ulong vaFunc, [NativeTypeName("DWORD")] uint cbFunc, [NativeTypeName("DWORD *")] uint* pNumFragments);
+
+            [VtblIndex(14)]
+            HRESULT functionFragmentsForVA([NativeTypeName("ULONGLONG")] ulong vaFunc, [NativeTypeName("DWORD")] uint cbFunc, [NativeTypeName("DWORD")] uint cFragments, [NativeTypeName("ULONGLONG *")] ulong* pVaFragment, [NativeTypeName("DWORD *")] uint* pLenFragment);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaStackWalkHelper*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaStackWalkHelper*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaStackWalkHelper*, uint> Release;
+
+            [NativeTypeName("HRESULT (DWORD, ULONGLONG *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaStackWalkHelper*, uint, ulong*, int> get_registerValue;
+
+            [NativeTypeName("HRESULT (DWORD, ULONGLONG) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaStackWalkHelper*, uint, ulong, int> put_registerValue;
+
+            [NativeTypeName("HRESULT (enum MemoryTypeEnum, ULONGLONG, DWORD, DWORD *, BYTE *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaStackWalkHelper*, MemoryTypeEnum, ulong, uint, uint*, byte*, int> readMemory;
+
+            [NativeTypeName("HRESULT (IDiaFrameData *, ULONGLONG *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaStackWalkHelper*, IDiaFrameData*, ulong*, int> searchForReturnAddress;
+
+            [NativeTypeName("HRESULT (IDiaFrameData *, ULONGLONG, ULONGLONG *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaStackWalkHelper*, IDiaFrameData*, ulong, ulong*, int> searchForReturnAddressStart;
+
+            [NativeTypeName("HRESULT (ULONGLONG, IDiaFrameData **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaStackWalkHelper*, ulong, IDiaFrameData**, int> frameForVA;
+
+            [NativeTypeName("HRESULT (ULONGLONG, IDiaSymbol **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaStackWalkHelper*, ulong, IDiaSymbol**, int> symbolForVA;
+
+            [NativeTypeName("HRESULT (ULONGLONG, DWORD, DWORD *, BYTE *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaStackWalkHelper*, ulong, uint, uint*, byte*, int> pdataForVA;
+
+            [NativeTypeName("HRESULT (ULONGLONG, ULONGLONG *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaStackWalkHelper*, ulong, ulong*, int> imageForVA;
+
+            [NativeTypeName("HRESULT (ULONGLONG, DWORD *, DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaStackWalkHelper*, ulong, uint*, uint*, int> addressForVA;
+
+            [NativeTypeName("HRESULT (ULONGLONG, DWORD, DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaStackWalkHelper*, ulong, uint, uint*, int> numberOfFunctionFragmentsForVA;
+
+            [NativeTypeName("HRESULT (ULONGLONG, DWORD, DWORD, ULONGLONG *, DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaStackWalkHelper*, ulong, uint, uint, ulong*, uint*, int> functionFragmentsForVA;
         }
     }
 }

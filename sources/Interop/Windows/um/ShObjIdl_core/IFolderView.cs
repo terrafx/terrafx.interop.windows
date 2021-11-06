@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("CDE725B0-CCC9-4519-917E-325D72FAB4CE")]
     [NativeTypeName("struct IFolderView : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IFolderView
+    public unsafe partial struct IFolderView : IFolderView.Interface
     {
         public void** lpVtbl;
 
@@ -135,6 +135,105 @@ namespace TerraFX.Interop
         public HRESULT SelectAndPositionItems(uint cidl, [NativeTypeName("LPCITEMIDLIST *")] ITEMIDLIST** apidl, POINT* apt, [NativeTypeName("DWORD")] uint dwFlags)
         {
             return ((delegate* unmanaged<IFolderView*, uint, ITEMIDLIST**, POINT*, uint, int>)(lpVtbl[16]))((IFolderView*)Unsafe.AsPointer(ref this), cidl, apidl, apt, dwFlags);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetCurrentViewMode(uint* pViewMode);
+
+            [VtblIndex(4)]
+            HRESULT SetCurrentViewMode(uint ViewMode);
+
+            [VtblIndex(5)]
+            HRESULT GetFolder([NativeTypeName("const IID &")] Guid* riid, void** ppv);
+
+            [VtblIndex(6)]
+            HRESULT Item(int iItemIndex, [NativeTypeName("LPITEMIDLIST *")] ITEMIDLIST** ppidl);
+
+            [VtblIndex(7)]
+            HRESULT ItemCount(uint uFlags, int* pcItems);
+
+            [VtblIndex(8)]
+            HRESULT Items(uint uFlags, [NativeTypeName("const IID &")] Guid* riid, void** ppv);
+
+            [VtblIndex(9)]
+            HRESULT GetSelectionMarkedItem(int* piItem);
+
+            [VtblIndex(10)]
+            HRESULT GetFocusedItem(int* piItem);
+
+            [VtblIndex(11)]
+            HRESULT GetItemPosition([NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidl, POINT* ppt);
+
+            [VtblIndex(12)]
+            HRESULT GetSpacing(POINT* ppt);
+
+            [VtblIndex(13)]
+            HRESULT GetDefaultSpacing(POINT* ppt);
+
+            [VtblIndex(14)]
+            HRESULT GetAutoArrange();
+
+            [VtblIndex(15)]
+            HRESULT SelectItem(int iItem, [NativeTypeName("DWORD")] uint dwFlags);
+
+            [VtblIndex(16)]
+            HRESULT SelectAndPositionItems(uint cidl, [NativeTypeName("LPCITEMIDLIST *")] ITEMIDLIST** apidl, POINT* apt, [NativeTypeName("DWORD")] uint dwFlags);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFolderView*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IFolderView*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IFolderView*, uint> Release;
+
+            [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFolderView*, uint*, int> GetCurrentViewMode;
+
+            [NativeTypeName("HRESULT (UINT) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFolderView*, uint, int> SetCurrentViewMode;
+
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFolderView*, Guid*, void**, int> GetFolder;
+
+            [NativeTypeName("HRESULT (int, LPITEMIDLIST *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFolderView*, int, ITEMIDLIST**, int> Item;
+
+            [NativeTypeName("HRESULT (UINT, int *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFolderView*, uint, int*, int> ItemCount;
+
+            [NativeTypeName("HRESULT (UINT, const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFolderView*, uint, Guid*, void**, int> Items;
+
+            [NativeTypeName("HRESULT (int *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFolderView*, int*, int> GetSelectionMarkedItem;
+
+            [NativeTypeName("HRESULT (int *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFolderView*, int*, int> GetFocusedItem;
+
+            [NativeTypeName("HRESULT (LPCITEMIDLIST, POINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFolderView*, ITEMIDLIST*, POINT*, int> GetItemPosition;
+
+            [NativeTypeName("HRESULT (POINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFolderView*, POINT*, int> GetSpacing;
+
+            [NativeTypeName("HRESULT (POINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFolderView*, POINT*, int> GetDefaultSpacing;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IFolderView*, int> GetAutoArrange;
+
+            [NativeTypeName("HRESULT (int, DWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFolderView*, int, uint, int> SelectItem;
+
+            [NativeTypeName("HRESULT (UINT, LPCITEMIDLIST *, POINT *, DWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFolderView*, uint, ITEMIDLIST**, POINT*, uint, int> SelectAndPositionItems;
         }
     }
 }

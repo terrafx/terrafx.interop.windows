@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("0E700BE1-9DB6-11D1-A1CE-00C04FD75D13")]
     [NativeTypeName("struct IEnumExtraSearch : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IEnumExtraSearch
+    public unsafe partial struct IEnumExtraSearch : IEnumExtraSearch.Interface
     {
         public void** lpVtbl;
 
@@ -65,6 +65,45 @@ namespace TerraFX.Interop
         public HRESULT Clone(IEnumExtraSearch** ppenum)
         {
             return ((delegate* unmanaged<IEnumExtraSearch*, IEnumExtraSearch**, int>)(lpVtbl[6]))((IEnumExtraSearch*)Unsafe.AsPointer(ref this), ppenum);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT Next([NativeTypeName("ULONG")] uint celt, EXTRASEARCH* rgelt, [NativeTypeName("ULONG *")] uint* pceltFetched);
+
+            [VtblIndex(4)]
+            HRESULT Skip([NativeTypeName("ULONG")] uint celt);
+
+            [VtblIndex(5)]
+            HRESULT Reset();
+
+            [VtblIndex(6)]
+            HRESULT Clone(IEnumExtraSearch** ppenum);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IEnumExtraSearch*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IEnumExtraSearch*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IEnumExtraSearch*, uint> Release;
+
+            [NativeTypeName("HRESULT (ULONG, EXTRASEARCH *, ULONG *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IEnumExtraSearch*, uint, EXTRASEARCH*, uint*, int> Next;
+
+            [NativeTypeName("HRESULT (ULONG) __attribute__((stdcall))")]
+            public delegate* unmanaged<IEnumExtraSearch*, uint, int> Skip;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IEnumExtraSearch*, int> Reset;
+
+            [NativeTypeName("HRESULT (IEnumExtraSearch **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IEnumExtraSearch*, IEnumExtraSearch**, int> Clone;
         }
     }
 }

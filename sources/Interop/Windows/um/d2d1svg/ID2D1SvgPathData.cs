@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("C095E4F4-BB98-43D6-9745-4D1B84EC9888")]
     [NativeTypeName("struct ID2D1SvgPathData : ID2D1SvgAttribute")]
     [NativeInheritance("ID2D1SvgAttribute")]
-    public unsafe partial struct ID2D1SvgPathData
+    public unsafe partial struct ID2D1SvgPathData : ID2D1SvgPathData.Interface
     {
         public void** lpVtbl;
 
@@ -123,6 +123,86 @@ namespace TerraFX.Interop
         public HRESULT CreatePathGeometry(D2D1_FILL_MODE fillMode, ID2D1PathGeometry1** pathGeometry)
         {
             return ((delegate* unmanaged<ID2D1SvgPathData*, D2D1_FILL_MODE, ID2D1PathGeometry1**, int>)(lpVtbl[14]))((ID2D1SvgPathData*)Unsafe.AsPointer(ref this), fillMode, pathGeometry);
+        }
+
+        public interface Interface : ID2D1SvgAttribute.Interface
+        {
+            [VtblIndex(6)]
+            HRESULT RemoveSegmentDataAtEnd([NativeTypeName("UINT32")] uint dataCount);
+
+            [VtblIndex(7)]
+            HRESULT UpdateSegmentData([NativeTypeName("const FLOAT *")] float* data, [NativeTypeName("UINT32")] uint dataCount, [NativeTypeName("UINT32")] uint startIndex = 0);
+
+            [VtblIndex(8)]
+            HRESULT GetSegmentData(float* data, [NativeTypeName("UINT32")] uint dataCount, [NativeTypeName("UINT32")] uint startIndex = 0);
+
+            [VtblIndex(9)]
+            [return: NativeTypeName("UINT32")]
+            uint GetSegmentDataCount();
+
+            [VtblIndex(10)]
+            HRESULT RemoveCommandsAtEnd([NativeTypeName("UINT32")] uint commandsCount);
+
+            [VtblIndex(11)]
+            HRESULT UpdateCommands([NativeTypeName("const D2D1_SVG_PATH_COMMAND *")] D2D1_SVG_PATH_COMMAND* commands, [NativeTypeName("UINT32")] uint commandsCount, [NativeTypeName("UINT32")] uint startIndex = 0);
+
+            [VtblIndex(12)]
+            HRESULT GetCommands(D2D1_SVG_PATH_COMMAND* commands, [NativeTypeName("UINT32")] uint commandsCount, [NativeTypeName("UINT32")] uint startIndex = 0);
+
+            [VtblIndex(13)]
+            [return: NativeTypeName("UINT32")]
+            uint GetCommandsCount();
+
+            [VtblIndex(14)]
+            HRESULT CreatePathGeometry(D2D1_FILL_MODE fillMode, ID2D1PathGeometry1** pathGeometry);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID2D1SvgPathData*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ID2D1SvgPathData*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ID2D1SvgPathData*, uint> Release;
+
+            [NativeTypeName("void (ID2D1Factory **) const __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID2D1SvgPathData*, ID2D1Factory**, void> GetFactory;
+
+            [NativeTypeName("void (ID2D1SvgElement **) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID2D1SvgPathData*, ID2D1SvgElement**, void> GetElement;
+
+            [NativeTypeName("HRESULT (ID2D1SvgAttribute **) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID2D1SvgPathData*, ID2D1SvgAttribute**, int> Clone;
+
+            [NativeTypeName("HRESULT (UINT32) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID2D1SvgPathData*, uint, int> RemoveSegmentDataAtEnd;
+
+            [NativeTypeName("HRESULT (const FLOAT *, UINT32, UINT32) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID2D1SvgPathData*, float*, uint, uint, int> UpdateSegmentData;
+
+            [NativeTypeName("HRESULT (FLOAT *, UINT32, UINT32) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID2D1SvgPathData*, float*, uint, uint, int> GetSegmentData;
+
+            [NativeTypeName("UINT32 () __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID2D1SvgPathData*, uint> GetSegmentDataCount;
+
+            [NativeTypeName("HRESULT (UINT32) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID2D1SvgPathData*, uint, int> RemoveCommandsAtEnd;
+
+            [NativeTypeName("HRESULT (const D2D1_SVG_PATH_COMMAND *, UINT32, UINT32) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID2D1SvgPathData*, D2D1_SVG_PATH_COMMAND*, uint, uint, int> UpdateCommands;
+
+            [NativeTypeName("HRESULT (D2D1_SVG_PATH_COMMAND *, UINT32, UINT32) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID2D1SvgPathData*, D2D1_SVG_PATH_COMMAND*, uint, uint, int> GetCommands;
+
+            [NativeTypeName("UINT32 () __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID2D1SvgPathData*, uint> GetCommandsCount;
+
+            [NativeTypeName("HRESULT (D2D1_FILL_MODE, ID2D1PathGeometry1 **) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID2D1SvgPathData*, D2D1_FILL_MODE, ID2D1PathGeometry1**, int> CreatePathGeometry;
         }
     }
 }

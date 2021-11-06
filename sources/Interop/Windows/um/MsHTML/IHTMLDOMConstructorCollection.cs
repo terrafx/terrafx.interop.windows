@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("3051049C-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct IHTMLDOMConstructorCollection : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct IHTMLDOMConstructorCollection
+    public unsafe partial struct IHTMLDOMConstructorCollection : IHTMLDOMConstructorCollection.Interface
     {
         public void** lpVtbl;
 
@@ -807,6 +807,669 @@ namespace TerraFX.Interop
         public HRESULT get_XMLHttpRequest(IDispatch** p)
         {
             return ((delegate* unmanaged<IHTMLDOMConstructorCollection*, IDispatch**, int>)(lpVtbl[112]))((IHTMLDOMConstructorCollection*)Unsafe.AsPointer(ref this), p);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT get_Attr(IDispatch** p);
+
+            [VtblIndex(8)]
+            HRESULT get_BehaviorUrnsCollection(IDispatch** p);
+
+            [VtblIndex(9)]
+            HRESULT get_BookmarkCollection(IDispatch** p);
+
+            [VtblIndex(10)]
+            HRESULT get_CompatibleInfo(IDispatch** p);
+
+            [VtblIndex(11)]
+            HRESULT get_CompatibleInfoCollection(IDispatch** p);
+
+            [VtblIndex(12)]
+            HRESULT get_ControlRangeCollection(IDispatch** p);
+
+            [VtblIndex(13)]
+            HRESULT get_CSSCurrentStyleDeclaration(IDispatch** p);
+
+            [VtblIndex(14)]
+            HRESULT get_CSSRuleList(IDispatch** p);
+
+            [VtblIndex(15)]
+            HRESULT get_CSSRuleStyleDeclaration(IDispatch** p);
+
+            [VtblIndex(16)]
+            HRESULT get_CSSStyleDeclaration(IDispatch** p);
+
+            [VtblIndex(17)]
+            HRESULT get_CSSStyleRule(IDispatch** p);
+
+            [VtblIndex(18)]
+            HRESULT get_CSSStyleSheet(IDispatch** p);
+
+            [VtblIndex(19)]
+            HRESULT get_DataTransfer(IDispatch** p);
+
+            [VtblIndex(20)]
+            HRESULT get_DOMImplementation(IDispatch** p);
+
+            [VtblIndex(21)]
+            HRESULT get_Element(IDispatch** p);
+
+            [VtblIndex(22)]
+            HRESULT get_Event(IDispatch** p);
+
+            [VtblIndex(23)]
+            HRESULT get_History(IDispatch** p);
+
+            [VtblIndex(24)]
+            HRESULT get_HTCElementBehaviorDefaults(IDispatch** p);
+
+            [VtblIndex(25)]
+            HRESULT get_HTMLAnchorElement(IDispatch** p);
+
+            [VtblIndex(26)]
+            HRESULT get_HTMLAreaElement(IDispatch** p);
+
+            [VtblIndex(27)]
+            HRESULT get_HTMLAreasCollection(IDispatch** p);
+
+            [VtblIndex(28)]
+            HRESULT get_HTMLBaseElement(IDispatch** p);
+
+            [VtblIndex(29)]
+            HRESULT get_HTMLBaseFontElement(IDispatch** p);
+
+            [VtblIndex(30)]
+            HRESULT get_HTMLBGSoundElement(IDispatch** p);
+
+            [VtblIndex(31)]
+            HRESULT get_HTMLBlockElement(IDispatch** p);
+
+            [VtblIndex(32)]
+            HRESULT get_HTMLBodyElement(IDispatch** p);
+
+            [VtblIndex(33)]
+            HRESULT get_HTMLBRElement(IDispatch** p);
+
+            [VtblIndex(34)]
+            HRESULT get_HTMLButtonElement(IDispatch** p);
+
+            [VtblIndex(35)]
+            HRESULT get_HTMLCollection(IDispatch** p);
+
+            [VtblIndex(36)]
+            HRESULT get_HTMLCommentElement(IDispatch** p);
+
+            [VtblIndex(37)]
+            HRESULT get_HTMLDDElement(IDispatch** p);
+
+            [VtblIndex(38)]
+            HRESULT get_HTMLDivElement(IDispatch** p);
+
+            [VtblIndex(39)]
+            HRESULT get_HTMLDocument(IDispatch** p);
+
+            [VtblIndex(40)]
+            HRESULT get_HTMLDListElement(IDispatch** p);
+
+            [VtblIndex(41)]
+            HRESULT get_HTMLDTElement(IDispatch** p);
+
+            [VtblIndex(42)]
+            HRESULT get_HTMLEmbedElement(IDispatch** p);
+
+            [VtblIndex(43)]
+            HRESULT get_HTMLFieldSetElement(IDispatch** p);
+
+            [VtblIndex(44)]
+            HRESULT get_HTMLFontElement(IDispatch** p);
+
+            [VtblIndex(45)]
+            HRESULT get_HTMLFormElement(IDispatch** p);
+
+            [VtblIndex(46)]
+            HRESULT get_HTMLFrameElement(IDispatch** p);
+
+            [VtblIndex(47)]
+            HRESULT get_HTMLFrameSetElement(IDispatch** p);
+
+            [VtblIndex(48)]
+            HRESULT get_HTMLGenericElement(IDispatch** p);
+
+            [VtblIndex(49)]
+            HRESULT get_HTMLHeadElement(IDispatch** p);
+
+            [VtblIndex(50)]
+            HRESULT get_HTMLHeadingElement(IDispatch** p);
+
+            [VtblIndex(51)]
+            HRESULT get_HTMLHRElement(IDispatch** p);
+
+            [VtblIndex(52)]
+            HRESULT get_HTMLHtmlElement(IDispatch** p);
+
+            [VtblIndex(53)]
+            HRESULT get_HTMLIFrameElement(IDispatch** p);
+
+            [VtblIndex(54)]
+            HRESULT get_HTMLImageElement(IDispatch** p);
+
+            [VtblIndex(55)]
+            HRESULT get_HTMLInputElement(IDispatch** p);
+
+            [VtblIndex(56)]
+            HRESULT get_HTMLIsIndexElement(IDispatch** p);
+
+            [VtblIndex(57)]
+            HRESULT get_HTMLLabelElement(IDispatch** p);
+
+            [VtblIndex(58)]
+            HRESULT get_HTMLLegendElement(IDispatch** p);
+
+            [VtblIndex(59)]
+            HRESULT get_HTMLLIElement(IDispatch** p);
+
+            [VtblIndex(60)]
+            HRESULT get_HTMLLinkElement(IDispatch** p);
+
+            [VtblIndex(61)]
+            HRESULT get_HTMLMapElement(IDispatch** p);
+
+            [VtblIndex(62)]
+            HRESULT get_HTMLMarqueeElement(IDispatch** p);
+
+            [VtblIndex(63)]
+            HRESULT get_HTMLMetaElement(IDispatch** p);
+
+            [VtblIndex(64)]
+            HRESULT get_HTMLModelessDialog(IDispatch** p);
+
+            [VtblIndex(65)]
+            HRESULT get_HTMLNamespaceInfo(IDispatch** p);
+
+            [VtblIndex(66)]
+            HRESULT get_HTMLNamespaceInfoCollection(IDispatch** p);
+
+            [VtblIndex(67)]
+            HRESULT get_HTMLNextIdElement(IDispatch** p);
+
+            [VtblIndex(68)]
+            HRESULT get_HTMLNoShowElement(IDispatch** p);
+
+            [VtblIndex(69)]
+            HRESULT get_HTMLObjectElement(IDispatch** p);
+
+            [VtblIndex(70)]
+            HRESULT get_HTMLOListElement(IDispatch** p);
+
+            [VtblIndex(71)]
+            HRESULT get_HTMLOptionElement(IDispatch** p);
+
+            [VtblIndex(72)]
+            HRESULT get_HTMLParagraphElement(IDispatch** p);
+
+            [VtblIndex(73)]
+            HRESULT get_HTMLParamElement(IDispatch** p);
+
+            [VtblIndex(74)]
+            HRESULT get_HTMLPhraseElement(IDispatch** p);
+
+            [VtblIndex(75)]
+            HRESULT get_HTMLPluginsCollection(IDispatch** p);
+
+            [VtblIndex(76)]
+            HRESULT get_HTMLPopup(IDispatch** p);
+
+            [VtblIndex(77)]
+            HRESULT get_HTMLScriptElement(IDispatch** p);
+
+            [VtblIndex(78)]
+            HRESULT get_HTMLSelectElement(IDispatch** p);
+
+            [VtblIndex(79)]
+            HRESULT get_HTMLSpanElement(IDispatch** p);
+
+            [VtblIndex(80)]
+            HRESULT get_HTMLStyleElement(IDispatch** p);
+
+            [VtblIndex(81)]
+            HRESULT get_HTMLTableCaptionElement(IDispatch** p);
+
+            [VtblIndex(82)]
+            HRESULT get_HTMLTableCellElement(IDispatch** p);
+
+            [VtblIndex(83)]
+            HRESULT get_HTMLTableColElement(IDispatch** p);
+
+            [VtblIndex(84)]
+            HRESULT get_HTMLTableElement(IDispatch** p);
+
+            [VtblIndex(85)]
+            HRESULT get_HTMLTableRowElement(IDispatch** p);
+
+            [VtblIndex(86)]
+            HRESULT get_HTMLTableSectionElement(IDispatch** p);
+
+            [VtblIndex(87)]
+            HRESULT get_HTMLTextAreaElement(IDispatch** p);
+
+            [VtblIndex(88)]
+            HRESULT get_HTMLTextElement(IDispatch** p);
+
+            [VtblIndex(89)]
+            HRESULT get_HTMLTitleElement(IDispatch** p);
+
+            [VtblIndex(90)]
+            HRESULT get_HTMLUListElement(IDispatch** p);
+
+            [VtblIndex(91)]
+            HRESULT get_HTMLUnknownElement(IDispatch** p);
+
+            [VtblIndex(92)]
+            HRESULT get_Image(IDispatch** p);
+
+            [VtblIndex(93)]
+            HRESULT get_Location(IDispatch** p);
+
+            [VtblIndex(94)]
+            HRESULT get_NamedNodeMap(IDispatch** p);
+
+            [VtblIndex(95)]
+            HRESULT get_Navigator(IDispatch** p);
+
+            [VtblIndex(96)]
+            HRESULT get_NodeList(IDispatch** p);
+
+            [VtblIndex(97)]
+            HRESULT get_Option(IDispatch** p);
+
+            [VtblIndex(98)]
+            HRESULT get_Screen(IDispatch** p);
+
+            [VtblIndex(99)]
+            HRESULT get_Selection(IDispatch** p);
+
+            [VtblIndex(100)]
+            HRESULT get_StaticNodeList(IDispatch** p);
+
+            [VtblIndex(101)]
+            HRESULT get_Storage(IDispatch** p);
+
+            [VtblIndex(102)]
+            HRESULT get_StyleSheetList(IDispatch** p);
+
+            [VtblIndex(103)]
+            HRESULT get_StyleSheetPage(IDispatch** p);
+
+            [VtblIndex(104)]
+            HRESULT get_StyleSheetPageList(IDispatch** p);
+
+            [VtblIndex(105)]
+            HRESULT get_Text(IDispatch** p);
+
+            [VtblIndex(106)]
+            HRESULT get_TextRange(IDispatch** p);
+
+            [VtblIndex(107)]
+            HRESULT get_TextRangeCollection(IDispatch** p);
+
+            [VtblIndex(108)]
+            HRESULT get_TextRectangle(IDispatch** p);
+
+            [VtblIndex(109)]
+            HRESULT get_TextRectangleList(IDispatch** p);
+
+            [VtblIndex(110)]
+            HRESULT get_Window(IDispatch** p);
+
+            [VtblIndex(111)]
+            HRESULT get_XDomainRequest(IDispatch** p);
+
+            [VtblIndex(112)]
+            HRESULT get_XMLHttpRequest(IDispatch** p);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLDOMConstructorCollection*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLDOMConstructorCollection*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLDOMConstructorCollection*, uint> Release;
+
+            [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLDOMConstructorCollection*, uint*, int> GetTypeInfoCount;
+
+            [NativeTypeName("HRESULT (UINT, LCID, ITypeInfo **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLDOMConstructorCollection*, uint, uint, ITypeInfo**, int> GetTypeInfo;
+
+            [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLDOMConstructorCollection*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+
+            [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLDOMConstructorCollection*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
+
+            [NativeTypeName("HRESULT (IDispatch **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLDOMConstructorCollection*, IDispatch**, int> get_Attr;
+
+            [NativeTypeName("HRESULT (IDispatch **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLDOMConstructorCollection*, IDispatch**, int> get_BehaviorUrnsCollection;
+
+            [NativeTypeName("HRESULT (IDispatch **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLDOMConstructorCollection*, IDispatch**, int> get_BookmarkCollection;
+
+            [NativeTypeName("HRESULT (IDispatch **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLDOMConstructorCollection*, IDispatch**, int> get_CompatibleInfo;
+
+            [NativeTypeName("HRESULT (IDispatch **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLDOMConstructorCollection*, IDispatch**, int> get_CompatibleInfoCollection;
+
+            [NativeTypeName("HRESULT (IDispatch **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLDOMConstructorCollection*, IDispatch**, int> get_ControlRangeCollection;
+
+            [NativeTypeName("HRESULT (IDispatch **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLDOMConstructorCollection*, IDispatch**, int> get_CSSCurrentStyleDeclaration;
+
+            [NativeTypeName("HRESULT (IDispatch **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLDOMConstructorCollection*, IDispatch**, int> get_CSSRuleList;
+
+            [NativeTypeName("HRESULT (IDispatch **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLDOMConstructorCollection*, IDispatch**, int> get_CSSRuleStyleDeclaration;
+
+            [NativeTypeName("HRESULT (IDispatch **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLDOMConstructorCollection*, IDispatch**, int> get_CSSStyleDeclaration;
+
+            [NativeTypeName("HRESULT (IDispatch **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLDOMConstructorCollection*, IDispatch**, int> get_CSSStyleRule;
+
+            [NativeTypeName("HRESULT (IDispatch **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLDOMConstructorCollection*, IDispatch**, int> get_CSSStyleSheet;
+
+            [NativeTypeName("HRESULT (IDispatch **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLDOMConstructorCollection*, IDispatch**, int> get_DataTransfer;
+
+            [NativeTypeName("HRESULT (IDispatch **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLDOMConstructorCollection*, IDispatch**, int> get_DOMImplementation;
+
+            [NativeTypeName("HRESULT (IDispatch **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLDOMConstructorCollection*, IDispatch**, int> get_Element;
+
+            [NativeTypeName("HRESULT (IDispatch **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLDOMConstructorCollection*, IDispatch**, int> get_Event;
+
+            [NativeTypeName("HRESULT (IDispatch **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLDOMConstructorCollection*, IDispatch**, int> get_History;
+
+            [NativeTypeName("HRESULT (IDispatch **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLDOMConstructorCollection*, IDispatch**, int> get_HTCElementBehaviorDefaults;
+
+            [NativeTypeName("HRESULT (IDispatch **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLDOMConstructorCollection*, IDispatch**, int> get_HTMLAnchorElement;
+
+            [NativeTypeName("HRESULT (IDispatch **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLDOMConstructorCollection*, IDispatch**, int> get_HTMLAreaElement;
+
+            [NativeTypeName("HRESULT (IDispatch **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLDOMConstructorCollection*, IDispatch**, int> get_HTMLAreasCollection;
+
+            [NativeTypeName("HRESULT (IDispatch **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLDOMConstructorCollection*, IDispatch**, int> get_HTMLBaseElement;
+
+            [NativeTypeName("HRESULT (IDispatch **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLDOMConstructorCollection*, IDispatch**, int> get_HTMLBaseFontElement;
+
+            [NativeTypeName("HRESULT (IDispatch **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLDOMConstructorCollection*, IDispatch**, int> get_HTMLBGSoundElement;
+
+            [NativeTypeName("HRESULT (IDispatch **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLDOMConstructorCollection*, IDispatch**, int> get_HTMLBlockElement;
+
+            [NativeTypeName("HRESULT (IDispatch **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLDOMConstructorCollection*, IDispatch**, int> get_HTMLBodyElement;
+
+            [NativeTypeName("HRESULT (IDispatch **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLDOMConstructorCollection*, IDispatch**, int> get_HTMLBRElement;
+
+            [NativeTypeName("HRESULT (IDispatch **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLDOMConstructorCollection*, IDispatch**, int> get_HTMLButtonElement;
+
+            [NativeTypeName("HRESULT (IDispatch **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLDOMConstructorCollection*, IDispatch**, int> get_HTMLCollection;
+
+            [NativeTypeName("HRESULT (IDispatch **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLDOMConstructorCollection*, IDispatch**, int> get_HTMLCommentElement;
+
+            [NativeTypeName("HRESULT (IDispatch **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLDOMConstructorCollection*, IDispatch**, int> get_HTMLDDElement;
+
+            [NativeTypeName("HRESULT (IDispatch **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLDOMConstructorCollection*, IDispatch**, int> get_HTMLDivElement;
+
+            [NativeTypeName("HRESULT (IDispatch **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLDOMConstructorCollection*, IDispatch**, int> get_HTMLDocument;
+
+            [NativeTypeName("HRESULT (IDispatch **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLDOMConstructorCollection*, IDispatch**, int> get_HTMLDListElement;
+
+            [NativeTypeName("HRESULT (IDispatch **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLDOMConstructorCollection*, IDispatch**, int> get_HTMLDTElement;
+
+            [NativeTypeName("HRESULT (IDispatch **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLDOMConstructorCollection*, IDispatch**, int> get_HTMLEmbedElement;
+
+            [NativeTypeName("HRESULT (IDispatch **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLDOMConstructorCollection*, IDispatch**, int> get_HTMLFieldSetElement;
+
+            [NativeTypeName("HRESULT (IDispatch **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLDOMConstructorCollection*, IDispatch**, int> get_HTMLFontElement;
+
+            [NativeTypeName("HRESULT (IDispatch **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLDOMConstructorCollection*, IDispatch**, int> get_HTMLFormElement;
+
+            [NativeTypeName("HRESULT (IDispatch **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLDOMConstructorCollection*, IDispatch**, int> get_HTMLFrameElement;
+
+            [NativeTypeName("HRESULT (IDispatch **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLDOMConstructorCollection*, IDispatch**, int> get_HTMLFrameSetElement;
+
+            [NativeTypeName("HRESULT (IDispatch **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLDOMConstructorCollection*, IDispatch**, int> get_HTMLGenericElement;
+
+            [NativeTypeName("HRESULT (IDispatch **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLDOMConstructorCollection*, IDispatch**, int> get_HTMLHeadElement;
+
+            [NativeTypeName("HRESULT (IDispatch **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLDOMConstructorCollection*, IDispatch**, int> get_HTMLHeadingElement;
+
+            [NativeTypeName("HRESULT (IDispatch **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLDOMConstructorCollection*, IDispatch**, int> get_HTMLHRElement;
+
+            [NativeTypeName("HRESULT (IDispatch **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLDOMConstructorCollection*, IDispatch**, int> get_HTMLHtmlElement;
+
+            [NativeTypeName("HRESULT (IDispatch **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLDOMConstructorCollection*, IDispatch**, int> get_HTMLIFrameElement;
+
+            [NativeTypeName("HRESULT (IDispatch **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLDOMConstructorCollection*, IDispatch**, int> get_HTMLImageElement;
+
+            [NativeTypeName("HRESULT (IDispatch **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLDOMConstructorCollection*, IDispatch**, int> get_HTMLInputElement;
+
+            [NativeTypeName("HRESULT (IDispatch **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLDOMConstructorCollection*, IDispatch**, int> get_HTMLIsIndexElement;
+
+            [NativeTypeName("HRESULT (IDispatch **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLDOMConstructorCollection*, IDispatch**, int> get_HTMLLabelElement;
+
+            [NativeTypeName("HRESULT (IDispatch **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLDOMConstructorCollection*, IDispatch**, int> get_HTMLLegendElement;
+
+            [NativeTypeName("HRESULT (IDispatch **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLDOMConstructorCollection*, IDispatch**, int> get_HTMLLIElement;
+
+            [NativeTypeName("HRESULT (IDispatch **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLDOMConstructorCollection*, IDispatch**, int> get_HTMLLinkElement;
+
+            [NativeTypeName("HRESULT (IDispatch **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLDOMConstructorCollection*, IDispatch**, int> get_HTMLMapElement;
+
+            [NativeTypeName("HRESULT (IDispatch **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLDOMConstructorCollection*, IDispatch**, int> get_HTMLMarqueeElement;
+
+            [NativeTypeName("HRESULT (IDispatch **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLDOMConstructorCollection*, IDispatch**, int> get_HTMLMetaElement;
+
+            [NativeTypeName("HRESULT (IDispatch **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLDOMConstructorCollection*, IDispatch**, int> get_HTMLModelessDialog;
+
+            [NativeTypeName("HRESULT (IDispatch **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLDOMConstructorCollection*, IDispatch**, int> get_HTMLNamespaceInfo;
+
+            [NativeTypeName("HRESULT (IDispatch **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLDOMConstructorCollection*, IDispatch**, int> get_HTMLNamespaceInfoCollection;
+
+            [NativeTypeName("HRESULT (IDispatch **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLDOMConstructorCollection*, IDispatch**, int> get_HTMLNextIdElement;
+
+            [NativeTypeName("HRESULT (IDispatch **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLDOMConstructorCollection*, IDispatch**, int> get_HTMLNoShowElement;
+
+            [NativeTypeName("HRESULT (IDispatch **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLDOMConstructorCollection*, IDispatch**, int> get_HTMLObjectElement;
+
+            [NativeTypeName("HRESULT (IDispatch **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLDOMConstructorCollection*, IDispatch**, int> get_HTMLOListElement;
+
+            [NativeTypeName("HRESULT (IDispatch **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLDOMConstructorCollection*, IDispatch**, int> get_HTMLOptionElement;
+
+            [NativeTypeName("HRESULT (IDispatch **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLDOMConstructorCollection*, IDispatch**, int> get_HTMLParagraphElement;
+
+            [NativeTypeName("HRESULT (IDispatch **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLDOMConstructorCollection*, IDispatch**, int> get_HTMLParamElement;
+
+            [NativeTypeName("HRESULT (IDispatch **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLDOMConstructorCollection*, IDispatch**, int> get_HTMLPhraseElement;
+
+            [NativeTypeName("HRESULT (IDispatch **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLDOMConstructorCollection*, IDispatch**, int> get_HTMLPluginsCollection;
+
+            [NativeTypeName("HRESULT (IDispatch **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLDOMConstructorCollection*, IDispatch**, int> get_HTMLPopup;
+
+            [NativeTypeName("HRESULT (IDispatch **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLDOMConstructorCollection*, IDispatch**, int> get_HTMLScriptElement;
+
+            [NativeTypeName("HRESULT (IDispatch **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLDOMConstructorCollection*, IDispatch**, int> get_HTMLSelectElement;
+
+            [NativeTypeName("HRESULT (IDispatch **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLDOMConstructorCollection*, IDispatch**, int> get_HTMLSpanElement;
+
+            [NativeTypeName("HRESULT (IDispatch **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLDOMConstructorCollection*, IDispatch**, int> get_HTMLStyleElement;
+
+            [NativeTypeName("HRESULT (IDispatch **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLDOMConstructorCollection*, IDispatch**, int> get_HTMLTableCaptionElement;
+
+            [NativeTypeName("HRESULT (IDispatch **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLDOMConstructorCollection*, IDispatch**, int> get_HTMLTableCellElement;
+
+            [NativeTypeName("HRESULT (IDispatch **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLDOMConstructorCollection*, IDispatch**, int> get_HTMLTableColElement;
+
+            [NativeTypeName("HRESULT (IDispatch **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLDOMConstructorCollection*, IDispatch**, int> get_HTMLTableElement;
+
+            [NativeTypeName("HRESULT (IDispatch **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLDOMConstructorCollection*, IDispatch**, int> get_HTMLTableRowElement;
+
+            [NativeTypeName("HRESULT (IDispatch **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLDOMConstructorCollection*, IDispatch**, int> get_HTMLTableSectionElement;
+
+            [NativeTypeName("HRESULT (IDispatch **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLDOMConstructorCollection*, IDispatch**, int> get_HTMLTextAreaElement;
+
+            [NativeTypeName("HRESULT (IDispatch **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLDOMConstructorCollection*, IDispatch**, int> get_HTMLTextElement;
+
+            [NativeTypeName("HRESULT (IDispatch **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLDOMConstructorCollection*, IDispatch**, int> get_HTMLTitleElement;
+
+            [NativeTypeName("HRESULT (IDispatch **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLDOMConstructorCollection*, IDispatch**, int> get_HTMLUListElement;
+
+            [NativeTypeName("HRESULT (IDispatch **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLDOMConstructorCollection*, IDispatch**, int> get_HTMLUnknownElement;
+
+            [NativeTypeName("HRESULT (IDispatch **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLDOMConstructorCollection*, IDispatch**, int> get_Image;
+
+            [NativeTypeName("HRESULT (IDispatch **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLDOMConstructorCollection*, IDispatch**, int> get_Location;
+
+            [NativeTypeName("HRESULT (IDispatch **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLDOMConstructorCollection*, IDispatch**, int> get_NamedNodeMap;
+
+            [NativeTypeName("HRESULT (IDispatch **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLDOMConstructorCollection*, IDispatch**, int> get_Navigator;
+
+            [NativeTypeName("HRESULT (IDispatch **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLDOMConstructorCollection*, IDispatch**, int> get_NodeList;
+
+            [NativeTypeName("HRESULT (IDispatch **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLDOMConstructorCollection*, IDispatch**, int> get_Option;
+
+            [NativeTypeName("HRESULT (IDispatch **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLDOMConstructorCollection*, IDispatch**, int> get_Screen;
+
+            [NativeTypeName("HRESULT (IDispatch **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLDOMConstructorCollection*, IDispatch**, int> get_Selection;
+
+            [NativeTypeName("HRESULT (IDispatch **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLDOMConstructorCollection*, IDispatch**, int> get_StaticNodeList;
+
+            [NativeTypeName("HRESULT (IDispatch **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLDOMConstructorCollection*, IDispatch**, int> get_Storage;
+
+            [NativeTypeName("HRESULT (IDispatch **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLDOMConstructorCollection*, IDispatch**, int> get_StyleSheetList;
+
+            [NativeTypeName("HRESULT (IDispatch **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLDOMConstructorCollection*, IDispatch**, int> get_StyleSheetPage;
+
+            [NativeTypeName("HRESULT (IDispatch **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLDOMConstructorCollection*, IDispatch**, int> get_StyleSheetPageList;
+
+            [NativeTypeName("HRESULT (IDispatch **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLDOMConstructorCollection*, IDispatch**, int> get_Text;
+
+            [NativeTypeName("HRESULT (IDispatch **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLDOMConstructorCollection*, IDispatch**, int> get_TextRange;
+
+            [NativeTypeName("HRESULT (IDispatch **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLDOMConstructorCollection*, IDispatch**, int> get_TextRangeCollection;
+
+            [NativeTypeName("HRESULT (IDispatch **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLDOMConstructorCollection*, IDispatch**, int> get_TextRectangle;
+
+            [NativeTypeName("HRESULT (IDispatch **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLDOMConstructorCollection*, IDispatch**, int> get_TextRectangleList;
+
+            [NativeTypeName("HRESULT (IDispatch **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLDOMConstructorCollection*, IDispatch**, int> get_Window;
+
+            [NativeTypeName("HRESULT (IDispatch **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLDOMConstructorCollection*, IDispatch**, int> get_XDomainRequest;
+
+            [NativeTypeName("HRESULT (IDispatch **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLDOMConstructorCollection*, IDispatch**, int> get_XMLHttpRequest;
         }
     }
 }

@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("C02216F6-8C67-4B5B-9D00-D008E73E0064")]
     [NativeTypeName("struct IAudioMeterInformation : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IAudioMeterInformation
+    public unsafe partial struct IAudioMeterInformation : IAudioMeterInformation.Interface
     {
         public void** lpVtbl;
 
@@ -65,6 +65,45 @@ namespace TerraFX.Interop
         public HRESULT QueryHardwareSupport([NativeTypeName("DWORD *")] uint* pdwHardwareSupportMask)
         {
             return ((delegate* unmanaged<IAudioMeterInformation*, uint*, int>)(lpVtbl[6]))((IAudioMeterInformation*)Unsafe.AsPointer(ref this), pdwHardwareSupportMask);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetPeakValue(float* pfPeak);
+
+            [VtblIndex(4)]
+            HRESULT GetMeteringChannelCount(uint* pnChannelCount);
+
+            [VtblIndex(5)]
+            HRESULT GetChannelsPeakValues([NativeTypeName("UINT32")] uint u32ChannelCount, float* afPeakValues);
+
+            [VtblIndex(6)]
+            HRESULT QueryHardwareSupport([NativeTypeName("DWORD *")] uint* pdwHardwareSupportMask);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAudioMeterInformation*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IAudioMeterInformation*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IAudioMeterInformation*, uint> Release;
+
+            [NativeTypeName("HRESULT (float *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAudioMeterInformation*, float*, int> GetPeakValue;
+
+            [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAudioMeterInformation*, uint*, int> GetMeteringChannelCount;
+
+            [NativeTypeName("HRESULT (UINT32, float *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAudioMeterInformation*, uint, float*, int> GetChannelsPeakValues;
+
+            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAudioMeterInformation*, uint*, int> QueryHardwareSupport;
         }
     }
 }

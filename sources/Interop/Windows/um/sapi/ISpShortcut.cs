@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("3DF681E2-EA56-11D9-8BDE-F66BAD1E3F3A")]
     [NativeTypeName("struct ISpShortcut : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct ISpShortcut
+    public unsafe partial struct ISpShortcut : ISpShortcut.Interface
     {
         public void** lpVtbl;
 
@@ -93,6 +93,69 @@ namespace TerraFX.Interop
         public HRESULT GetGenerationChange([NativeTypeName("DWORD *")] uint* pdwGeneration, SPSHORTCUTPAIRLIST* pShortcutpairList)
         {
             return ((delegate* unmanaged<ISpShortcut*, uint*, SPSHORTCUTPAIRLIST*, int>)(lpVtbl[10]))((ISpShortcut*)Unsafe.AsPointer(ref this), pdwGeneration, pShortcutpairList);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT AddShortcut([NativeTypeName("LPCWSTR")] ushort* pszDisplay, [NativeTypeName("WORD")] ushort LangID, [NativeTypeName("LPCWSTR")] ushort* pszSpoken, SPSHORTCUTTYPE shType);
+
+            [VtblIndex(4)]
+            HRESULT RemoveShortcut([NativeTypeName("LPCWSTR")] ushort* pszDisplay, [NativeTypeName("WORD")] ushort LangID, [NativeTypeName("LPCWSTR")] ushort* pszSpoken, SPSHORTCUTTYPE shType);
+
+            [VtblIndex(5)]
+            HRESULT GetShortcuts([NativeTypeName("WORD")] ushort LangID, SPSHORTCUTPAIRLIST* pShortcutpairList);
+
+            [VtblIndex(6)]
+            HRESULT GetGeneration([NativeTypeName("DWORD *")] uint* pdwGeneration);
+
+            [VtblIndex(7)]
+            HRESULT GetWordsFromGenerationChange([NativeTypeName("DWORD *")] uint* pdwGeneration, SPWORDLIST* pWordList);
+
+            [VtblIndex(8)]
+            HRESULT GetWords([NativeTypeName("DWORD *")] uint* pdwGeneration, [NativeTypeName("DWORD *")] uint* pdwCookie, SPWORDLIST* pWordList);
+
+            [VtblIndex(9)]
+            HRESULT GetShortcutsForGeneration([NativeTypeName("DWORD *")] uint* pdwGeneration, [NativeTypeName("DWORD *")] uint* pdwCookie, SPSHORTCUTPAIRLIST* pShortcutpairList);
+
+            [VtblIndex(10)]
+            HRESULT GetGenerationChange([NativeTypeName("DWORD *")] uint* pdwGeneration, SPSHORTCUTPAIRLIST* pShortcutpairList);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpShortcut*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpShortcut*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpShortcut*, uint> Release;
+
+            [NativeTypeName("HRESULT (LPCWSTR, WORD, LPCWSTR, SPSHORTCUTTYPE) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpShortcut*, ushort*, ushort, ushort*, SPSHORTCUTTYPE, int> AddShortcut;
+
+            [NativeTypeName("HRESULT (LPCWSTR, WORD, LPCWSTR, SPSHORTCUTTYPE) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpShortcut*, ushort*, ushort, ushort*, SPSHORTCUTTYPE, int> RemoveShortcut;
+
+            [NativeTypeName("HRESULT (WORD, SPSHORTCUTPAIRLIST *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpShortcut*, ushort, SPSHORTCUTPAIRLIST*, int> GetShortcuts;
+
+            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpShortcut*, uint*, int> GetGeneration;
+
+            [NativeTypeName("HRESULT (DWORD *, SPWORDLIST *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpShortcut*, uint*, SPWORDLIST*, int> GetWordsFromGenerationChange;
+
+            [NativeTypeName("HRESULT (DWORD *, DWORD *, SPWORDLIST *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpShortcut*, uint*, uint*, SPWORDLIST*, int> GetWords;
+
+            [NativeTypeName("HRESULT (DWORD *, DWORD *, SPSHORTCUTPAIRLIST *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpShortcut*, uint*, uint*, SPSHORTCUTPAIRLIST*, int> GetShortcutsForGeneration;
+
+            [NativeTypeName("HRESULT (DWORD *, SPSHORTCUTPAIRLIST *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpShortcut*, uint*, SPSHORTCUTPAIRLIST*, int> GetGenerationChange;
         }
     }
 }

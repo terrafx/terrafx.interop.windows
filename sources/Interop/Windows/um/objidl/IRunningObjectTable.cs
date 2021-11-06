@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("00000010-0000-0000-C000-000000000046")]
     [NativeTypeName("struct IRunningObjectTable : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IRunningObjectTable
+    public unsafe partial struct IRunningObjectTable : IRunningObjectTable.Interface
     {
         public void** lpVtbl;
 
@@ -86,6 +86,63 @@ namespace TerraFX.Interop
         public HRESULT EnumRunning(IEnumMoniker** ppenumMoniker)
         {
             return ((delegate* unmanaged<IRunningObjectTable*, IEnumMoniker**, int>)(lpVtbl[9]))((IRunningObjectTable*)Unsafe.AsPointer(ref this), ppenumMoniker);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT Register([NativeTypeName("DWORD")] uint grfFlags, IUnknown* punkObject, IMoniker* pmkObjectName, [NativeTypeName("DWORD *")] uint* pdwRegister);
+
+            [VtblIndex(4)]
+            HRESULT Revoke([NativeTypeName("DWORD")] uint dwRegister);
+
+            [VtblIndex(5)]
+            HRESULT IsRunning(IMoniker* pmkObjectName);
+
+            [VtblIndex(6)]
+            HRESULT GetObject(IMoniker* pmkObjectName, IUnknown** ppunkObject);
+
+            [VtblIndex(7)]
+            HRESULT NoteChangeTime([NativeTypeName("DWORD")] uint dwRegister, FILETIME* pfiletime);
+
+            [VtblIndex(8)]
+            HRESULT GetTimeOfLastChange(IMoniker* pmkObjectName, FILETIME* pfiletime);
+
+            [VtblIndex(9)]
+            HRESULT EnumRunning(IEnumMoniker** ppenumMoniker);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IRunningObjectTable*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IRunningObjectTable*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IRunningObjectTable*, uint> Release;
+
+            [NativeTypeName("HRESULT (DWORD, IUnknown *, IMoniker *, DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IRunningObjectTable*, uint, IUnknown*, IMoniker*, uint*, int> Register;
+
+            [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<IRunningObjectTable*, uint, int> Revoke;
+
+            [NativeTypeName("HRESULT (IMoniker *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IRunningObjectTable*, IMoniker*, int> IsRunning;
+
+            [NativeTypeName("HRESULT (IMoniker *, IUnknown **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IRunningObjectTable*, IMoniker*, IUnknown**, int> GetObject;
+
+            [NativeTypeName("HRESULT (DWORD, FILETIME *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IRunningObjectTable*, uint, FILETIME*, int> NoteChangeTime;
+
+            [NativeTypeName("HRESULT (IMoniker *, FILETIME *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IRunningObjectTable*, IMoniker*, FILETIME*, int> GetTimeOfLastChange;
+
+            [NativeTypeName("HRESULT (IEnumMoniker **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IRunningObjectTable*, IEnumMoniker**, int> EnumRunning;
         }
     }
 }

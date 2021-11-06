@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("F294ACFC-3146-4483-A7BF-ADDCA7C260E2")]
     [NativeTypeName("struct IAudioRenderClient : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IAudioRenderClient
+    public unsafe partial struct IAudioRenderClient : IAudioRenderClient.Interface
     {
         public void** lpVtbl;
 
@@ -51,6 +51,33 @@ namespace TerraFX.Interop
         public HRESULT ReleaseBuffer([NativeTypeName("UINT32")] uint NumFramesWritten, [NativeTypeName("DWORD")] uint dwFlags)
         {
             return ((delegate* unmanaged<IAudioRenderClient*, uint, uint, int>)(lpVtbl[4]))((IAudioRenderClient*)Unsafe.AsPointer(ref this), NumFramesWritten, dwFlags);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetBuffer([NativeTypeName("UINT32")] uint NumFramesRequested, byte** ppData);
+
+            [VtblIndex(4)]
+            HRESULT ReleaseBuffer([NativeTypeName("UINT32")] uint NumFramesWritten, [NativeTypeName("DWORD")] uint dwFlags);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAudioRenderClient*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IAudioRenderClient*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IAudioRenderClient*, uint> Release;
+
+            [NativeTypeName("HRESULT (UINT32, BYTE **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAudioRenderClient*, uint, byte**, int> GetBuffer;
+
+            [NativeTypeName("HRESULT (UINT32, DWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAudioRenderClient*, uint, uint, int> ReleaseBuffer;
         }
     }
 }

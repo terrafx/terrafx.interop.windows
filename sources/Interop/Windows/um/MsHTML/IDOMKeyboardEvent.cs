@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("305106D6-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct IDOMKeyboardEvent : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct IDOMKeyboardEvent
+    public unsafe partial struct IDOMKeyboardEvent : IDOMKeyboardEvent.Interface
     {
         public void** lpVtbl;
 
@@ -163,6 +163,117 @@ namespace TerraFX.Interop
         public HRESULT get_locale([NativeTypeName("BSTR *")] ushort** p)
         {
             return ((delegate* unmanaged<IDOMKeyboardEvent*, ushort**, int>)(lpVtbl[20]))((IDOMKeyboardEvent*)Unsafe.AsPointer(ref this), p);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT get_key([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(8)]
+            HRESULT get_location([NativeTypeName("ULONG *")] uint* p);
+
+            [VtblIndex(9)]
+            HRESULT get_ctrlKey([NativeTypeName("VARIANT_BOOL *")] short* p);
+
+            [VtblIndex(10)]
+            HRESULT get_shiftKey([NativeTypeName("VARIANT_BOOL *")] short* p);
+
+            [VtblIndex(11)]
+            HRESULT get_altKey([NativeTypeName("VARIANT_BOOL *")] short* p);
+
+            [VtblIndex(12)]
+            HRESULT get_metaKey([NativeTypeName("VARIANT_BOOL *")] short* p);
+
+            [VtblIndex(13)]
+            HRESULT get_repeat([NativeTypeName("VARIANT_BOOL *")] short* p);
+
+            [VtblIndex(14)]
+            HRESULT getModifierState([NativeTypeName("BSTR")] ushort* keyArg, [NativeTypeName("VARIANT_BOOL *")] short* state);
+
+            [VtblIndex(15)]
+            HRESULT initKeyboardEvent([NativeTypeName("BSTR")] ushort* eventType, [NativeTypeName("VARIANT_BOOL")] short canBubble, [NativeTypeName("VARIANT_BOOL")] short cancelable, IHTMLWindow2* viewArg, [NativeTypeName("BSTR")] ushort* keyArg, [NativeTypeName("ULONG")] uint locationArg, [NativeTypeName("BSTR")] ushort* modifiersListArg, [NativeTypeName("VARIANT_BOOL")] short repeat, [NativeTypeName("BSTR")] ushort* locale);
+
+            [VtblIndex(16)]
+            HRESULT get_keyCode([NativeTypeName("long *")] int* p);
+
+            [VtblIndex(17)]
+            HRESULT get_charCode([NativeTypeName("long *")] int* p);
+
+            [VtblIndex(18)]
+            HRESULT get_which([NativeTypeName("long *")] int* p);
+
+            [VtblIndex(19)]
+            HRESULT get_ie9_char(VARIANT* p);
+
+            [VtblIndex(20)]
+            HRESULT get_locale([NativeTypeName("BSTR *")] ushort** p);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDOMKeyboardEvent*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDOMKeyboardEvent*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDOMKeyboardEvent*, uint> Release;
+
+            [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDOMKeyboardEvent*, uint*, int> GetTypeInfoCount;
+
+            [NativeTypeName("HRESULT (UINT, LCID, ITypeInfo **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDOMKeyboardEvent*, uint, uint, ITypeInfo**, int> GetTypeInfo;
+
+            [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDOMKeyboardEvent*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+
+            [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDOMKeyboardEvent*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDOMKeyboardEvent*, ushort**, int> get_key;
+
+            [NativeTypeName("HRESULT (ULONG *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDOMKeyboardEvent*, uint*, int> get_location;
+
+            [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDOMKeyboardEvent*, short*, int> get_ctrlKey;
+
+            [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDOMKeyboardEvent*, short*, int> get_shiftKey;
+
+            [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDOMKeyboardEvent*, short*, int> get_altKey;
+
+            [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDOMKeyboardEvent*, short*, int> get_metaKey;
+
+            [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDOMKeyboardEvent*, short*, int> get_repeat;
+
+            [NativeTypeName("HRESULT (BSTR, VARIANT_BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDOMKeyboardEvent*, ushort*, short*, int> getModifierState;
+
+            [NativeTypeName("HRESULT (BSTR, VARIANT_BOOL, VARIANT_BOOL, IHTMLWindow2 *, BSTR, ULONG, BSTR, VARIANT_BOOL, BSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDOMKeyboardEvent*, ushort*, short, short, IHTMLWindow2*, ushort*, uint, ushort*, short, ushort*, int> initKeyboardEvent;
+
+            [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDOMKeyboardEvent*, int*, int> get_keyCode;
+
+            [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDOMKeyboardEvent*, int*, int> get_charCode;
+
+            [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDOMKeyboardEvent*, int*, int> get_which;
+
+            [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDOMKeyboardEvent*, VARIANT*, int> get_ie9_char;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDOMKeyboardEvent*, ushort**, int> get_locale;
         }
     }
 }

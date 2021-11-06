@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("C004F646-BE2C-48F3-93A2-A0983EBA1108")]
     [NativeTypeName("struct IMFPMPClientApp : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IMFPMPClientApp
+    public unsafe partial struct IMFPMPClientApp : IMFPMPClientApp.Interface
     {
         public void** lpVtbl;
 
@@ -44,6 +44,27 @@ namespace TerraFX.Interop
         public HRESULT SetPMPHost(IMFPMPHostApp* pPMPHost)
         {
             return ((delegate* unmanaged<IMFPMPClientApp*, IMFPMPHostApp*, int>)(lpVtbl[3]))((IMFPMPClientApp*)Unsafe.AsPointer(ref this), pPMPHost);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT SetPMPHost(IMFPMPHostApp* pPMPHost);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFPMPClientApp*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFPMPClientApp*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFPMPClientApp*, uint> Release;
+
+            [NativeTypeName("HRESULT (IMFPMPHostApp *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFPMPClientApp*, IMFPMPHostApp*, int> SetPMPHost;
         }
     }
 }

@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("8EF6ADFE-3762-4A8F-9373-2FC5D444C8D2")]
     [NativeTypeName("struct IAppxManifestQualifiedResourcesEnumerator : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IAppxManifestQualifiedResourcesEnumerator
+    public unsafe partial struct IAppxManifestQualifiedResourcesEnumerator : IAppxManifestQualifiedResourcesEnumerator.Interface
     {
         public void** lpVtbl;
 
@@ -58,6 +58,39 @@ namespace TerraFX.Interop
         public HRESULT MoveNext(BOOL* hasNext)
         {
             return ((delegate* unmanaged<IAppxManifestQualifiedResourcesEnumerator*, BOOL*, int>)(lpVtbl[5]))((IAppxManifestQualifiedResourcesEnumerator*)Unsafe.AsPointer(ref this), hasNext);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetCurrent(IAppxManifestQualifiedResource** resource);
+
+            [VtblIndex(4)]
+            HRESULT GetHasCurrent(BOOL* hasCurrent);
+
+            [VtblIndex(5)]
+            HRESULT MoveNext(BOOL* hasNext);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAppxManifestQualifiedResourcesEnumerator*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IAppxManifestQualifiedResourcesEnumerator*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IAppxManifestQualifiedResourcesEnumerator*, uint> Release;
+
+            [NativeTypeName("HRESULT (IAppxManifestQualifiedResource **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAppxManifestQualifiedResourcesEnumerator*, IAppxManifestQualifiedResource**, int> GetCurrent;
+
+            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAppxManifestQualifiedResourcesEnumerator*, BOOL*, int> GetHasCurrent;
+
+            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAppxManifestQualifiedResourcesEnumerator*, BOOL*, int> MoveNext;
         }
     }
 }

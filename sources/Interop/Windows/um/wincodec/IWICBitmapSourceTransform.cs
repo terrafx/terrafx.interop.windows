@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("3B16811B-6A43-4EC9-B713-3D5A0C13B940")]
     [NativeTypeName("struct IWICBitmapSourceTransform : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IWICBitmapSourceTransform
+    public unsafe partial struct IWICBitmapSourceTransform : IWICBitmapSourceTransform.Interface
     {
         public void** lpVtbl;
 
@@ -65,6 +65,45 @@ namespace TerraFX.Interop
         public HRESULT DoesSupportTransform(WICBitmapTransformOptions dstTransform, BOOL* pfIsSupported)
         {
             return ((delegate* unmanaged<IWICBitmapSourceTransform*, WICBitmapTransformOptions, BOOL*, int>)(lpVtbl[6]))((IWICBitmapSourceTransform*)Unsafe.AsPointer(ref this), dstTransform, pfIsSupported);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT CopyPixels([NativeTypeName("const WICRect *")] WICRect* prc, uint uiWidth, uint uiHeight, [NativeTypeName("WICPixelFormatGUID *")] Guid* pguidDstFormat, WICBitmapTransformOptions dstTransform, uint nStride, uint cbBufferSize, byte* pbBuffer);
+
+            [VtblIndex(4)]
+            HRESULT GetClosestSize(uint* puiWidth, uint* puiHeight);
+
+            [VtblIndex(5)]
+            HRESULT GetClosestPixelFormat([NativeTypeName("WICPixelFormatGUID *")] Guid* pguidDstFormat);
+
+            [VtblIndex(6)]
+            HRESULT DoesSupportTransform(WICBitmapTransformOptions dstTransform, BOOL* pfIsSupported);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWICBitmapSourceTransform*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IWICBitmapSourceTransform*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IWICBitmapSourceTransform*, uint> Release;
+
+            [NativeTypeName("HRESULT (const WICRect *, UINT, UINT, WICPixelFormatGUID *, WICBitmapTransformOptions, UINT, UINT, BYTE *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWICBitmapSourceTransform*, WICRect*, uint, uint, Guid*, WICBitmapTransformOptions, uint, uint, byte*, int> CopyPixels;
+
+            [NativeTypeName("HRESULT (UINT *, UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWICBitmapSourceTransform*, uint*, uint*, int> GetClosestSize;
+
+            [NativeTypeName("HRESULT (WICPixelFormatGUID *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWICBitmapSourceTransform*, Guid*, int> GetClosestPixelFormat;
+
+            [NativeTypeName("HRESULT (WICBitmapTransformOptions, BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWICBitmapSourceTransform*, WICBitmapTransformOptions, BOOL*, int> DoesSupportTransform;
         }
     }
 }

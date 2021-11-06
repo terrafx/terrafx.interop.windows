@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("56A868AB-0AD4-11CE-B03A-0020AF0BA770")]
     [NativeTypeName("struct IGraphVersion : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IGraphVersion
+    public unsafe partial struct IGraphVersion : IGraphVersion.Interface
     {
         public void** lpVtbl;
 
@@ -44,6 +44,27 @@ namespace TerraFX.Interop
         public HRESULT QueryVersion([NativeTypeName("LONG *")] int* pVersion)
         {
             return ((delegate* unmanaged<IGraphVersion*, int*, int>)(lpVtbl[3]))((IGraphVersion*)Unsafe.AsPointer(ref this), pVersion);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT QueryVersion([NativeTypeName("LONG *")] int* pVersion);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IGraphVersion*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IGraphVersion*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IGraphVersion*, uint> Release;
+
+            [NativeTypeName("HRESULT (LONG *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IGraphVersion*, int*, int> QueryVersion;
         }
     }
 }

@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("47DD575D-AC05-4CDD-8049-9B02CD16F44C")]
     [NativeTypeName("struct ID2D1Device : ID2D1Resource")]
     [NativeInheritance("ID2D1Resource")]
-    public unsafe partial struct ID2D1Device
+    public unsafe partial struct ID2D1Device : ID2D1Device.Interface
     {
         public void** lpVtbl;
 
@@ -80,6 +80,55 @@ namespace TerraFX.Interop
         public void ClearResources([NativeTypeName("UINT32")] uint millisecondsSinceUse = 0)
         {
             ((delegate* unmanaged<ID2D1Device*, uint, void>)(lpVtbl[8]))((ID2D1Device*)Unsafe.AsPointer(ref this), millisecondsSinceUse);
+        }
+
+        public interface Interface : ID2D1Resource.Interface
+        {
+            [VtblIndex(4)]
+            HRESULT CreateDeviceContext(D2D1_DEVICE_CONTEXT_OPTIONS options, ID2D1DeviceContext** deviceContext);
+
+            [VtblIndex(5)]
+            HRESULT CreatePrintControl(IWICImagingFactory* wicFactory, IPrintDocumentPackageTarget* documentTarget, [NativeTypeName("const D2D1_PRINT_CONTROL_PROPERTIES *")] D2D1_PRINT_CONTROL_PROPERTIES* printControlProperties, ID2D1PrintControl** printControl);
+
+            [VtblIndex(6)]
+            void SetMaximumTextureMemory([NativeTypeName("UINT64")] ulong maximumInBytes);
+
+            [VtblIndex(7)]
+            [return: NativeTypeName("UINT64")]
+            ulong GetMaximumTextureMemory();
+
+            [VtblIndex(8)]
+            void ClearResources([NativeTypeName("UINT32")] uint millisecondsSinceUse = 0);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID2D1Device*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ID2D1Device*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ID2D1Device*, uint> Release;
+
+            [NativeTypeName("void (ID2D1Factory **) const __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID2D1Device*, ID2D1Factory**, void> GetFactory;
+
+            [NativeTypeName("HRESULT (D2D1_DEVICE_CONTEXT_OPTIONS, ID2D1DeviceContext **) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID2D1Device*, D2D1_DEVICE_CONTEXT_OPTIONS, ID2D1DeviceContext**, int> CreateDeviceContext;
+
+            [NativeTypeName("HRESULT (IWICImagingFactory *, IPrintDocumentPackageTarget *, const D2D1_PRINT_CONTROL_PROPERTIES *, ID2D1PrintControl **) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID2D1Device*, IWICImagingFactory*, IPrintDocumentPackageTarget*, D2D1_PRINT_CONTROL_PROPERTIES*, ID2D1PrintControl**, int> CreatePrintControl;
+
+            [NativeTypeName("void (UINT64) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID2D1Device*, ulong, void> SetMaximumTextureMemory;
+
+            [NativeTypeName("UINT64 () const __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID2D1Device*, ulong> GetMaximumTextureMemory;
+
+            [NativeTypeName("void (UINT32) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID2D1Device*, uint, void> ClearResources;
         }
     }
 }

@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("06791122-C6F0-417D-8323-269E987F5954")]
     [NativeTypeName("struct IDCompositionTranslateTransform : IDCompositionTransform")]
     [NativeInheritance("IDCompositionTransform")]
-    public unsafe partial struct IDCompositionTranslateTransform
+    public unsafe partial struct IDCompositionTranslateTransform : IDCompositionTranslateTransform.Interface
     {
         public void** lpVtbl;
 
@@ -40,6 +40,13 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(3)]
+        public HRESULT SetOffsetX(IDCompositionAnimation* animation)
+        {
+            return ((delegate* unmanaged<IDCompositionTranslateTransform*, IDCompositionAnimation*, int>)(lpVtbl[3]))((IDCompositionTranslateTransform*)Unsafe.AsPointer(ref this), animation);
+        }
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
         public HRESULT SetOffsetX(float offsetX)
         {
@@ -47,10 +54,10 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(3)]
-        public HRESULT SetOffsetX(IDCompositionAnimation* animation)
+        [VtblIndex(5)]
+        public HRESULT SetOffsetY(IDCompositionAnimation* animation)
         {
-            return ((delegate* unmanaged<IDCompositionTranslateTransform*, IDCompositionAnimation*, int>)(lpVtbl[3]))((IDCompositionTranslateTransform*)Unsafe.AsPointer(ref this), animation);
+            return ((delegate* unmanaged<IDCompositionTranslateTransform*, IDCompositionAnimation*, int>)(lpVtbl[5]))((IDCompositionTranslateTransform*)Unsafe.AsPointer(ref this), animation);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -60,11 +67,43 @@ namespace TerraFX.Interop
             return ((delegate* unmanaged<IDCompositionTranslateTransform*, float, int>)(lpVtbl[6]))((IDCompositionTranslateTransform*)Unsafe.AsPointer(ref this), offsetY);
         }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(5)]
-        public HRESULT SetOffsetY(IDCompositionAnimation* animation)
+        public interface Interface : IDCompositionTransform.Interface
         {
-            return ((delegate* unmanaged<IDCompositionTranslateTransform*, IDCompositionAnimation*, int>)(lpVtbl[5]))((IDCompositionTranslateTransform*)Unsafe.AsPointer(ref this), animation);
+            [VtblIndex(3)]
+            HRESULT SetOffsetX(IDCompositionAnimation* animation);
+
+            [VtblIndex(4)]
+            HRESULT SetOffsetX(float offsetX);
+
+            [VtblIndex(5)]
+            HRESULT SetOffsetY(IDCompositionAnimation* animation);
+
+            [VtblIndex(6)]
+            HRESULT SetOffsetY(float offsetY);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDCompositionTranslateTransform*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDCompositionTranslateTransform*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDCompositionTranslateTransform*, uint> Release;
+
+            [NativeTypeName("HRESULT (IDCompositionAnimation *) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDCompositionTranslateTransform*, IDCompositionAnimation*, int> SetOffsetX;
+
+            [NativeTypeName("HRESULT (float) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDCompositionTranslateTransform*, float, int> SetOffsetX1;
+
+            [NativeTypeName("HRESULT (IDCompositionAnimation *) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDCompositionTranslateTransform*, IDCompositionAnimation*, int> SetOffsetY;
+
+            [NativeTypeName("HRESULT (float) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDCompositionTranslateTransform*, float, int> SetOffsetY1;
         }
     }
 }

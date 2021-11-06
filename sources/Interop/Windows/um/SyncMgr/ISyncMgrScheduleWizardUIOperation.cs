@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("459A6C84-21D2-4DDC-8A53-F023A46066F2")]
     [NativeTypeName("struct ISyncMgrScheduleWizardUIOperation : ISyncMgrUIOperation")]
     [NativeInheritance("ISyncMgrUIOperation")]
-    public unsafe partial struct ISyncMgrScheduleWizardUIOperation
+    public unsafe partial struct ISyncMgrScheduleWizardUIOperation : ISyncMgrScheduleWizardUIOperation.Interface
     {
         public void** lpVtbl;
 
@@ -51,6 +51,30 @@ namespace TerraFX.Interop
         public HRESULT InitWizard([NativeTypeName("LPCWSTR")] ushort* pszHandlerID)
         {
             return ((delegate* unmanaged<ISyncMgrScheduleWizardUIOperation*, ushort*, int>)(lpVtbl[4]))((ISyncMgrScheduleWizardUIOperation*)Unsafe.AsPointer(ref this), pszHandlerID);
+        }
+
+        public interface Interface : ISyncMgrUIOperation.Interface
+        {
+            [VtblIndex(4)]
+            HRESULT InitWizard([NativeTypeName("LPCWSTR")] ushort* pszHandlerID);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISyncMgrScheduleWizardUIOperation*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ISyncMgrScheduleWizardUIOperation*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ISyncMgrScheduleWizardUIOperation*, uint> Release;
+
+            [NativeTypeName("HRESULT (HWND) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISyncMgrScheduleWizardUIOperation*, HWND, int> Run;
+
+            [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISyncMgrScheduleWizardUIOperation*, ushort*, int> InitWizard;
         }
     }
 }

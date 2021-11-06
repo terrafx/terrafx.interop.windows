@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("4622AD16-FF23-11D0-8D34-00A0C90F2719")]
     [NativeTypeName("struct IInitializeObject : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IInitializeObject
+    public unsafe partial struct IInitializeObject : IInitializeObject.Interface
     {
         public void** lpVtbl;
 
@@ -44,6 +44,27 @@ namespace TerraFX.Interop
         public HRESULT Initialize()
         {
             return ((delegate* unmanaged<IInitializeObject*, int>)(lpVtbl[3]))((IInitializeObject*)Unsafe.AsPointer(ref this));
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT Initialize();
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IInitializeObject*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IInitializeObject*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IInitializeObject*, uint> Release;
+
+            [NativeTypeName("HRESULT () __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IInitializeObject*, int> Initialize;
         }
     }
 }

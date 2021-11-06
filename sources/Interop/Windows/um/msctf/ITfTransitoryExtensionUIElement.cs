@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("858F956A-972F-42A2-A2F2-0321E1ABE209")]
     [NativeTypeName("struct ITfTransitoryExtensionUIElement : ITfUIElement")]
     [NativeInheritance("ITfUIElement")]
-    public unsafe partial struct ITfTransitoryExtensionUIElement
+    public unsafe partial struct ITfTransitoryExtensionUIElement : ITfTransitoryExtensionUIElement.Interface
     {
         public void** lpVtbl;
 
@@ -72,6 +72,39 @@ namespace TerraFX.Interop
         public HRESULT GetDocumentMgr(ITfDocumentMgr** ppdim)
         {
             return ((delegate* unmanaged<ITfTransitoryExtensionUIElement*, ITfDocumentMgr**, int>)(lpVtbl[7]))((ITfTransitoryExtensionUIElement*)Unsafe.AsPointer(ref this), ppdim);
+        }
+
+        public interface Interface : ITfUIElement.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT GetDocumentMgr(ITfDocumentMgr** ppdim);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfTransitoryExtensionUIElement*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfTransitoryExtensionUIElement*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfTransitoryExtensionUIElement*, uint> Release;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfTransitoryExtensionUIElement*, ushort**, int> GetDescription;
+
+            [NativeTypeName("HRESULT (GUID *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfTransitoryExtensionUIElement*, Guid*, int> GetGUID;
+
+            [NativeTypeName("HRESULT (BOOL) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfTransitoryExtensionUIElement*, BOOL, int> Show;
+
+            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfTransitoryExtensionUIElement*, BOOL*, int> IsShown;
+
+            [NativeTypeName("HRESULT (ITfDocumentMgr **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfTransitoryExtensionUIElement*, ITfDocumentMgr**, int> GetDocumentMgr;
         }
     }
 }

@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("3DE21209-8BA6-4F2A-A577-2819B56FF14D")]
     [NativeTypeName("struct IAdvancedMediaCaptureInitializationSettings : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IAdvancedMediaCaptureInitializationSettings
+    public unsafe partial struct IAdvancedMediaCaptureInitializationSettings : IAdvancedMediaCaptureInitializationSettings.Interface
     {
         public void** lpVtbl;
 
@@ -44,6 +44,27 @@ namespace TerraFX.Interop
         public HRESULT SetDirectxDeviceManager(IMFDXGIDeviceManager* value)
         {
             return ((delegate* unmanaged<IAdvancedMediaCaptureInitializationSettings*, IMFDXGIDeviceManager*, int>)(lpVtbl[3]))((IAdvancedMediaCaptureInitializationSettings*)Unsafe.AsPointer(ref this), value);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT SetDirectxDeviceManager(IMFDXGIDeviceManager* value);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAdvancedMediaCaptureInitializationSettings*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IAdvancedMediaCaptureInitializationSettings*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IAdvancedMediaCaptureInitializationSettings*, uint> Release;
+
+            [NativeTypeName("HRESULT (IMFDXGIDeviceManager *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAdvancedMediaCaptureInitializationSettings*, IMFDXGIDeviceManager*, int> SetDirectxDeviceManager;
         }
     }
 }

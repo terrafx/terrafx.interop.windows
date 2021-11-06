@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("56A868A3-0AD4-11CE-B03A-0020AF0BA770")]
     [NativeTypeName("struct IFilterMapper : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IFilterMapper
+    public unsafe partial struct IFilterMapper : IFilterMapper.Interface
     {
         public void** lpVtbl;
 
@@ -93,6 +93,69 @@ namespace TerraFX.Interop
         public HRESULT EnumMatchingFilters(IEnumRegFilters** ppEnum, [NativeTypeName("DWORD")] uint dwMerit, BOOL bInputNeeded, [NativeTypeName("CLSID")] Guid clsInMaj, [NativeTypeName("CLSID")] Guid clsInSub, BOOL bRender, BOOL bOututNeeded, [NativeTypeName("CLSID")] Guid clsOutMaj, [NativeTypeName("CLSID")] Guid clsOutSub)
         {
             return ((delegate* unmanaged<IFilterMapper*, IEnumRegFilters**, uint, BOOL, Guid, Guid, BOOL, BOOL, Guid, Guid, int>)(lpVtbl[10]))((IFilterMapper*)Unsafe.AsPointer(ref this), ppEnum, dwMerit, bInputNeeded, clsInMaj, clsInSub, bRender, bOututNeeded, clsOutMaj, clsOutSub);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT RegisterFilter([NativeTypeName("CLSID")] Guid clsid, [NativeTypeName("LPCWSTR")] ushort* Name, [NativeTypeName("DWORD")] uint dwMerit);
+
+            [VtblIndex(4)]
+            HRESULT RegisterFilterInstance([NativeTypeName("CLSID")] Guid clsid, [NativeTypeName("LPCWSTR")] ushort* Name, [NativeTypeName("CLSID *")] Guid* MRId);
+
+            [VtblIndex(5)]
+            HRESULT RegisterPin([NativeTypeName("CLSID")] Guid Filter, [NativeTypeName("LPCWSTR")] ushort* Name, BOOL bRendered, BOOL bOutput, BOOL bZero, BOOL bMany, [NativeTypeName("CLSID")] Guid ConnectsToFilter, [NativeTypeName("LPCWSTR")] ushort* ConnectsToPin);
+
+            [VtblIndex(6)]
+            HRESULT RegisterPinType([NativeTypeName("CLSID")] Guid clsFilter, [NativeTypeName("LPCWSTR")] ushort* strName, [NativeTypeName("CLSID")] Guid clsMajorType, [NativeTypeName("CLSID")] Guid clsSubType);
+
+            [VtblIndex(7)]
+            HRESULT UnregisterFilter([NativeTypeName("CLSID")] Guid Filter);
+
+            [VtblIndex(8)]
+            HRESULT UnregisterFilterInstance([NativeTypeName("CLSID")] Guid MRId);
+
+            [VtblIndex(9)]
+            HRESULT UnregisterPin([NativeTypeName("CLSID")] Guid Filter, [NativeTypeName("LPCWSTR")] ushort* Name);
+
+            [VtblIndex(10)]
+            HRESULT EnumMatchingFilters(IEnumRegFilters** ppEnum, [NativeTypeName("DWORD")] uint dwMerit, BOOL bInputNeeded, [NativeTypeName("CLSID")] Guid clsInMaj, [NativeTypeName("CLSID")] Guid clsInSub, BOOL bRender, BOOL bOututNeeded, [NativeTypeName("CLSID")] Guid clsOutMaj, [NativeTypeName("CLSID")] Guid clsOutSub);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFilterMapper*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IFilterMapper*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IFilterMapper*, uint> Release;
+
+            [NativeTypeName("HRESULT (CLSID, LPCWSTR, DWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFilterMapper*, Guid, ushort*, uint, int> RegisterFilter;
+
+            [NativeTypeName("HRESULT (CLSID, LPCWSTR, CLSID *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFilterMapper*, Guid, ushort*, Guid*, int> RegisterFilterInstance;
+
+            [NativeTypeName("HRESULT (CLSID, LPCWSTR, BOOL, BOOL, BOOL, BOOL, CLSID, LPCWSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFilterMapper*, Guid, ushort*, BOOL, BOOL, BOOL, BOOL, Guid, ushort*, int> RegisterPin;
+
+            [NativeTypeName("HRESULT (CLSID, LPCWSTR, CLSID, CLSID) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFilterMapper*, Guid, ushort*, Guid, Guid, int> RegisterPinType;
+
+            [NativeTypeName("HRESULT (CLSID) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFilterMapper*, Guid, int> UnregisterFilter;
+
+            [NativeTypeName("HRESULT (CLSID) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFilterMapper*, Guid, int> UnregisterFilterInstance;
+
+            [NativeTypeName("HRESULT (CLSID, LPCWSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFilterMapper*, Guid, ushort*, int> UnregisterPin;
+
+            [NativeTypeName("HRESULT (IEnumRegFilters **, DWORD, BOOL, CLSID, CLSID, BOOL, BOOL, CLSID, CLSID) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFilterMapper*, IEnumRegFilters**, uint, BOOL, Guid, Guid, BOOL, BOOL, Guid, Guid, int> EnumMatchingFilters;
         }
     }
 }

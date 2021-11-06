@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("FFF4AF3A-1FC1-4EF9-A29B-D26C49E2F31A")]
     [NativeTypeName("struct IMFSystemId : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IMFSystemId
+    public unsafe partial struct IMFSystemId : IMFSystemId.Interface
     {
         public void** lpVtbl;
 
@@ -51,6 +51,33 @@ namespace TerraFX.Interop
         public HRESULT Setup([NativeTypeName("UINT32")] uint stage, [NativeTypeName("UINT32")] uint cbIn, [NativeTypeName("const BYTE *")] byte* pbIn, [NativeTypeName("UINT32 *")] uint* pcbOut, byte** ppbOut)
         {
             return ((delegate* unmanaged<IMFSystemId*, uint, uint, byte*, uint*, byte**, int>)(lpVtbl[4]))((IMFSystemId*)Unsafe.AsPointer(ref this), stage, cbIn, pbIn, pcbOut, ppbOut);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetData([NativeTypeName("UINT32 *")] uint* size, byte** data);
+
+            [VtblIndex(4)]
+            HRESULT Setup([NativeTypeName("UINT32")] uint stage, [NativeTypeName("UINT32")] uint cbIn, [NativeTypeName("const BYTE *")] byte* pbIn, [NativeTypeName("UINT32 *")] uint* pcbOut, byte** ppbOut);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFSystemId*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFSystemId*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFSystemId*, uint> Release;
+
+            [NativeTypeName("HRESULT (UINT32 *, BYTE **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFSystemId*, uint*, byte**, int> GetData;
+
+            [NativeTypeName("HRESULT (UINT32, UINT32, const BYTE *, UINT32 *, BYTE **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFSystemId*, uint, uint, byte*, uint*, byte**, int> Setup;
         }
     }
 }

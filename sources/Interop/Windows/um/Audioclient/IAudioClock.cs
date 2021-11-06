@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("CD63314F-3FBA-4A1B-812C-EF96358728E7")]
     [NativeTypeName("struct IAudioClock : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IAudioClock
+    public unsafe partial struct IAudioClock : IAudioClock.Interface
     {
         public void** lpVtbl;
 
@@ -58,6 +58,39 @@ namespace TerraFX.Interop
         public HRESULT GetCharacteristics([NativeTypeName("DWORD *")] uint* pdwCharacteristics)
         {
             return ((delegate* unmanaged<IAudioClock*, uint*, int>)(lpVtbl[5]))((IAudioClock*)Unsafe.AsPointer(ref this), pdwCharacteristics);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetFrequency([NativeTypeName("UINT64 *")] ulong* pu64Frequency);
+
+            [VtblIndex(4)]
+            HRESULT GetPosition([NativeTypeName("UINT64 *")] ulong* pu64Position, [NativeTypeName("UINT64 *")] ulong* pu64QPCPosition);
+
+            [VtblIndex(5)]
+            HRESULT GetCharacteristics([NativeTypeName("DWORD *")] uint* pdwCharacteristics);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAudioClock*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IAudioClock*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IAudioClock*, uint> Release;
+
+            [NativeTypeName("HRESULT (UINT64 *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAudioClock*, ulong*, int> GetFrequency;
+
+            [NativeTypeName("HRESULT (UINT64 *, UINT64 *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAudioClock*, ulong*, ulong*, int> GetPosition;
+
+            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAudioClock*, uint*, int> GetCharacteristics;
         }
     }
 }

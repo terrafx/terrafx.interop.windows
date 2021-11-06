@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("1ADAA23A-EB67-41F3-AAD8-5D984E9BACD4")]
     [NativeTypeName("struct ILearningModelOperatorProviderNative : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct ILearningModelOperatorProviderNative
+    public unsafe partial struct ILearningModelOperatorProviderNative : ILearningModelOperatorProviderNative.Interface
     {
         public void** lpVtbl;
 
@@ -44,6 +44,27 @@ namespace TerraFX.Interop
         public HRESULT GetRegistry(IMLOperatorRegistry** ppOperatorRegistry)
         {
             return ((delegate* unmanaged<ILearningModelOperatorProviderNative*, IMLOperatorRegistry**, int>)(lpVtbl[3]))((ILearningModelOperatorProviderNative*)Unsafe.AsPointer(ref this), ppOperatorRegistry);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetRegistry(IMLOperatorRegistry** ppOperatorRegistry);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ILearningModelOperatorProviderNative*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ILearningModelOperatorProviderNative*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ILearningModelOperatorProviderNative*, uint> Release;
+
+            [NativeTypeName("HRESULT (IMLOperatorRegistry **) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<ILearningModelOperatorProviderNative*, IMLOperatorRegistry**, int> GetRegistry;
         }
     }
 }

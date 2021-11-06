@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("FEC87AAF-35F9-447A-ADB7-20234491401A")]
     [NativeTypeName("struct IPreviewHandlerFrame : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IPreviewHandlerFrame
+    public unsafe partial struct IPreviewHandlerFrame : IPreviewHandlerFrame.Interface
     {
         public void** lpVtbl;
 
@@ -51,6 +51,33 @@ namespace TerraFX.Interop
         public HRESULT TranslateAcceleratorW(MSG* pmsg)
         {
             return ((delegate* unmanaged<IPreviewHandlerFrame*, MSG*, int>)(lpVtbl[4]))((IPreviewHandlerFrame*)Unsafe.AsPointer(ref this), pmsg);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetWindowContext(PREVIEWHANDLERFRAMEINFO* pinfo);
+
+            [VtblIndex(4)]
+            HRESULT TranslateAcceleratorW(MSG* pmsg);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IPreviewHandlerFrame*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IPreviewHandlerFrame*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IPreviewHandlerFrame*, uint> Release;
+
+            [NativeTypeName("HRESULT (PREVIEWHANDLERFRAMEINFO *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IPreviewHandlerFrame*, PREVIEWHANDLERFRAMEINFO*, int> GetWindowContext;
+
+            [NativeTypeName("HRESULT (MSG *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IPreviewHandlerFrame*, MSG*, int> TranslateAcceleratorW;
         }
     }
 }

@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("53C84785-8425-4DC5-971B-E58D9C19F9B6")]
     [NativeTypeName("struct IWrappedProtocol : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IWrappedProtocol
+    public unsafe partial struct IWrappedProtocol : IWrappedProtocol.Interface
     {
         public void** lpVtbl;
 
@@ -44,6 +44,27 @@ namespace TerraFX.Interop
         public HRESULT GetWrapperCode([NativeTypeName("LONG *")] int* pnCode, [NativeTypeName("DWORD_PTR")] nuint dwReserved)
         {
             return ((delegate* unmanaged<IWrappedProtocol*, int*, nuint, int>)(lpVtbl[3]))((IWrappedProtocol*)Unsafe.AsPointer(ref this), pnCode, dwReserved);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetWrapperCode([NativeTypeName("LONG *")] int* pnCode, [NativeTypeName("DWORD_PTR")] nuint dwReserved);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWrappedProtocol*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IWrappedProtocol*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IWrappedProtocol*, uint> Release;
+
+            [NativeTypeName("HRESULT (LONG *, DWORD_PTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWrappedProtocol*, int*, nuint, int> GetWrapperCode;
         }
     }
 }

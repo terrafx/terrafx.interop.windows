@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("28724C91-DF35-4856-9F76-D6A26413F3DF")]
     [NativeTypeName("struct IAudioAmbisonicsControl : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IAudioAmbisonicsControl
+    public unsafe partial struct IAudioAmbisonicsControl : IAudioAmbisonicsControl.Interface
     {
         public void** lpVtbl;
 
@@ -65,6 +65,45 @@ namespace TerraFX.Interop
         public HRESULT SetRotation(float X, float Y, float Z, float W)
         {
             return ((delegate* unmanaged<IAudioAmbisonicsControl*, float, float, float, float, int>)(lpVtbl[6]))((IAudioAmbisonicsControl*)Unsafe.AsPointer(ref this), X, Y, Z, W);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT SetData([NativeTypeName("const AMBISONICS_PARAMS *")] AMBISONICS_PARAMS* pAmbisonicsParams, [NativeTypeName("UINT32")] uint cbAmbisonicsParams);
+
+            [VtblIndex(4)]
+            HRESULT SetHeadTracking(BOOL bEnableHeadTracking);
+
+            [VtblIndex(5)]
+            HRESULT GetHeadTracking(BOOL* pbEnableHeadTracking);
+
+            [VtblIndex(6)]
+            HRESULT SetRotation(float X, float Y, float Z, float W);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAudioAmbisonicsControl*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IAudioAmbisonicsControl*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IAudioAmbisonicsControl*, uint> Release;
+
+            [NativeTypeName("HRESULT (const AMBISONICS_PARAMS *, UINT32) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAudioAmbisonicsControl*, AMBISONICS_PARAMS*, uint, int> SetData;
+
+            [NativeTypeName("HRESULT (BOOL) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAudioAmbisonicsControl*, BOOL, int> SetHeadTracking;
+
+            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAudioAmbisonicsControl*, BOOL*, int> GetHeadTracking;
+
+            [NativeTypeName("HRESULT (float, float, float, float) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAudioAmbisonicsControl*, float, float, float, float, int> SetRotation;
         }
     }
 }

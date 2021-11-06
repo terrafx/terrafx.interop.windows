@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("AE39362B-45A8-4074-9B9E-CCF49AA2D0B6")]
     [NativeTypeName("struct ISpXMLRecoResult : ISpRecoResult")]
     [NativeInheritance("ISpRecoResult")]
-    public unsafe partial struct ISpXMLRecoResult
+    public unsafe partial struct ISpXMLRecoResult : ISpXMLRecoResult.Interface
     {
         public void** lpVtbl;
 
@@ -128,6 +128,66 @@ namespace TerraFX.Interop
         public HRESULT GetXMLErrorInfo(SPSEMANTICERRORINFO* pSemanticErrorInfo)
         {
             return ((delegate* unmanaged<ISpXMLRecoResult*, SPSEMANTICERRORINFO*, int>)(lpVtbl[15]))((ISpXMLRecoResult*)Unsafe.AsPointer(ref this), pSemanticErrorInfo);
+        }
+
+        public interface Interface : ISpRecoResult.Interface
+        {
+            [VtblIndex(14)]
+            HRESULT GetXMLResult([NativeTypeName("LPWSTR *")] ushort** ppszCoMemXMLResult, SPXMLRESULTOPTIONS Options);
+
+            [VtblIndex(15)]
+            HRESULT GetXMLErrorInfo(SPSEMANTICERRORINFO* pSemanticErrorInfo);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpXMLRecoResult*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpXMLRecoResult*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpXMLRecoResult*, uint> Release;
+
+            [NativeTypeName("HRESULT (SPPHRASE **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpXMLRecoResult*, SPPHRASE**, int> GetPhrase;
+
+            [NativeTypeName("HRESULT (SPSERIALIZEDPHRASE **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpXMLRecoResult*, SPSERIALIZEDPHRASE**, int> GetSerializedPhrase;
+
+            [NativeTypeName("HRESULT (ULONG, ULONG, BOOL, LPWSTR *, BYTE *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpXMLRecoResult*, uint, uint, BOOL, ushort**, byte*, int> GetText;
+
+            [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpXMLRecoResult*, uint, int> Discard;
+
+            [NativeTypeName("HRESULT (SPRECORESULTTIMES *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpXMLRecoResult*, SPRECORESULTTIMES*, int> GetResultTimes;
+
+            [NativeTypeName("HRESULT (ULONG, ULONG, ULONG, ISpPhraseAlt **, ULONG *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpXMLRecoResult*, uint, uint, uint, ISpPhraseAlt**, uint*, int> GetAlternates;
+
+            [NativeTypeName("HRESULT (ULONG, ULONG, ISpStreamFormat **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpXMLRecoResult*, uint, uint, ISpStreamFormat**, int> GetAudio;
+
+            [NativeTypeName("HRESULT (ULONG, ULONG, DWORD, ULONG *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpXMLRecoResult*, uint, uint, uint, uint*, int> SpeakAudio;
+
+            [NativeTypeName("HRESULT (SPSERIALIZEDRESULT **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpXMLRecoResult*, SPSERIALIZEDRESULT**, int> Serialize;
+
+            [NativeTypeName("HRESULT (const GUID *, const WAVEFORMATEX *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpXMLRecoResult*, Guid*, WAVEFORMATEX*, int> ScaleAudio;
+
+            [NativeTypeName("HRESULT (ISpRecoContext **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpXMLRecoResult*, ISpRecoContext**, int> GetRecoContext;
+
+            [NativeTypeName("HRESULT (LPWSTR *, SPXMLRESULTOPTIONS) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpXMLRecoResult*, ushort**, SPXMLRESULTOPTIONS, int> GetXMLResult;
+
+            [NativeTypeName("HRESULT (SPSEMANTICERRORINFO *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpXMLRecoResult*, SPSEMANTICERRORINFO*, int> GetXMLErrorInfo;
         }
     }
 }

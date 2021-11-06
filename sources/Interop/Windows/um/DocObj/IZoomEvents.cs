@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("41B68150-904C-4E17-A0BA-A438182E359D")]
     [NativeTypeName("struct IZoomEvents : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IZoomEvents
+    public unsafe partial struct IZoomEvents : IZoomEvents.Interface
     {
         public void** lpVtbl;
 
@@ -44,6 +44,27 @@ namespace TerraFX.Interop
         public HRESULT OnZoomPercentChanged([NativeTypeName("ULONG")] uint ulZoomPercent)
         {
             return ((delegate* unmanaged<IZoomEvents*, uint, int>)(lpVtbl[3]))((IZoomEvents*)Unsafe.AsPointer(ref this), ulZoomPercent);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT OnZoomPercentChanged([NativeTypeName("ULONG")] uint ulZoomPercent);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IZoomEvents*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IZoomEvents*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IZoomEvents*, uint> Release;
+
+            [NativeTypeName("HRESULT (ULONG) __attribute__((stdcall))")]
+            public delegate* unmanaged<IZoomEvents*, uint, int> OnZoomPercentChanged;
         }
     }
 }

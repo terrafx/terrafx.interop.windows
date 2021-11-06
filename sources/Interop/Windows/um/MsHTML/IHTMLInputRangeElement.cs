@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("3050F2D4-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct IHTMLInputRangeElement : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct IHTMLInputRangeElement
+    public unsafe partial struct IHTMLInputRangeElement : IHTMLInputRangeElement.Interface
     {
         public void** lpVtbl;
 
@@ -198,6 +198,147 @@ namespace TerraFX.Interop
         public HRESULT stepDown([NativeTypeName("long")] int n = 1)
         {
             return ((delegate* unmanaged<IHTMLInputRangeElement*, int, int>)(lpVtbl[25]))((IHTMLInputRangeElement*)Unsafe.AsPointer(ref this), n);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT put_disabled([NativeTypeName("VARIANT_BOOL")] short v);
+
+            [VtblIndex(8)]
+            HRESULT get_disabled([NativeTypeName("VARIANT_BOOL *")] short* p);
+
+            [VtblIndex(9)]
+            HRESULT get_type([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(10)]
+            HRESULT put_alt([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(11)]
+            HRESULT get_alt([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(12)]
+            HRESULT put_name([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(13)]
+            HRESULT get_name([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(14)]
+            HRESULT put_value([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(15)]
+            HRESULT get_value([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(16)]
+            HRESULT put_min([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(17)]
+            HRESULT get_min([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(18)]
+            HRESULT put_max([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(19)]
+            HRESULT get_max([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(20)]
+            HRESULT put_step([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(21)]
+            HRESULT get_step([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(22)]
+            HRESULT put_valueAsNumber(double v);
+
+            [VtblIndex(23)]
+            HRESULT get_valueAsNumber(double* p);
+
+            [VtblIndex(24)]
+            HRESULT stepUp([NativeTypeName("long")] int n = 1);
+
+            [VtblIndex(25)]
+            HRESULT stepDown([NativeTypeName("long")] int n = 1);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLInputRangeElement*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLInputRangeElement*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLInputRangeElement*, uint> Release;
+
+            [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLInputRangeElement*, uint*, int> GetTypeInfoCount;
+
+            [NativeTypeName("HRESULT (UINT, LCID, ITypeInfo **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLInputRangeElement*, uint, uint, ITypeInfo**, int> GetTypeInfo;
+
+            [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLInputRangeElement*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+
+            [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLInputRangeElement*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
+
+            [NativeTypeName("HRESULT (VARIANT_BOOL) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLInputRangeElement*, short, int> put_disabled;
+
+            [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLInputRangeElement*, short*, int> get_disabled;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLInputRangeElement*, ushort**, int> get_type;
+
+            [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLInputRangeElement*, ushort*, int> put_alt;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLInputRangeElement*, ushort**, int> get_alt;
+
+            [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLInputRangeElement*, ushort*, int> put_name;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLInputRangeElement*, ushort**, int> get_name;
+
+            [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLInputRangeElement*, ushort*, int> put_value;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLInputRangeElement*, ushort**, int> get_value;
+
+            [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLInputRangeElement*, ushort*, int> put_min;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLInputRangeElement*, ushort**, int> get_min;
+
+            [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLInputRangeElement*, ushort*, int> put_max;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLInputRangeElement*, ushort**, int> get_max;
+
+            [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLInputRangeElement*, ushort*, int> put_step;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLInputRangeElement*, ushort**, int> get_step;
+
+            [NativeTypeName("HRESULT (double) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLInputRangeElement*, double, int> put_valueAsNumber;
+
+            [NativeTypeName("HRESULT (double *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLInputRangeElement*, double*, int> get_valueAsNumber;
+
+            [NativeTypeName("HRESULT (long) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLInputRangeElement*, int, int> stepUp;
+
+            [NativeTypeName("HRESULT (long) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLInputRangeElement*, int, int> stepDown;
         }
     }
 }

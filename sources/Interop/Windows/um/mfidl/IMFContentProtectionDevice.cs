@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("E6257174-A060-4C9A-A088-3B1B471CAD28")]
     [NativeTypeName("struct IMFContentProtectionDevice : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IMFContentProtectionDevice
+    public unsafe partial struct IMFContentProtectionDevice : IMFContentProtectionDevice.Interface
     {
         public void** lpVtbl;
 
@@ -51,6 +51,33 @@ namespace TerraFX.Interop
         public HRESULT GetPrivateDataByteCount([NativeTypeName("DWORD *")] uint* PrivateInputByteCount, [NativeTypeName("DWORD *")] uint* PrivateOutputByteCount)
         {
             return ((delegate* unmanaged<IMFContentProtectionDevice*, uint*, uint*, int>)(lpVtbl[4]))((IMFContentProtectionDevice*)Unsafe.AsPointer(ref this), PrivateInputByteCount, PrivateOutputByteCount);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT InvokeFunction([NativeTypeName("DWORD")] uint FunctionId, [NativeTypeName("DWORD")] uint InputBufferByteCount, [NativeTypeName("const BYTE *")] byte* InputBuffer, [NativeTypeName("DWORD *")] uint* OutputBufferByteCount, byte* OutputBuffer);
+
+            [VtblIndex(4)]
+            HRESULT GetPrivateDataByteCount([NativeTypeName("DWORD *")] uint* PrivateInputByteCount, [NativeTypeName("DWORD *")] uint* PrivateOutputByteCount);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFContentProtectionDevice*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFContentProtectionDevice*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFContentProtectionDevice*, uint> Release;
+
+            [NativeTypeName("HRESULT (DWORD, DWORD, const BYTE *, DWORD *, BYTE *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFContentProtectionDevice*, uint, uint, byte*, uint*, byte*, int> InvokeFunction;
+
+            [NativeTypeName("HRESULT (DWORD *, DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFContentProtectionDevice*, uint*, uint*, int> GetPrivateDataByteCount;
         }
     }
 }

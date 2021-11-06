@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("DA6FEA51-564C-4487-9810-F0D0F9B4E3A5")]
     [NativeTypeName("struct ID3D11SamplerState : ID3D11DeviceChild")]
     [NativeInheritance("ID3D11DeviceChild")]
-    public unsafe partial struct ID3D11SamplerState
+    public unsafe partial struct ID3D11SamplerState : ID3D11SamplerState.Interface
     {
         public void** lpVtbl;
 
@@ -72,6 +72,39 @@ namespace TerraFX.Interop
         public void GetDesc(D3D11_SAMPLER_DESC* pDesc)
         {
             ((delegate* unmanaged<ID3D11SamplerState*, D3D11_SAMPLER_DESC*, void>)(lpVtbl[7]))((ID3D11SamplerState*)Unsafe.AsPointer(ref this), pDesc);
+        }
+
+        public interface Interface : ID3D11DeviceChild.Interface
+        {
+            [VtblIndex(7)]
+            void GetDesc(D3D11_SAMPLER_DESC* pDesc);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D11SamplerState*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D11SamplerState*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D11SamplerState*, uint> Release;
+
+            [NativeTypeName("void (ID3D11Device **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D11SamplerState*, ID3D11Device**, void> GetDevice;
+
+            [NativeTypeName("HRESULT (const GUID &, UINT *, void *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D11SamplerState*, Guid*, uint*, void*, int> GetPrivateData;
+
+            [NativeTypeName("HRESULT (const GUID &, UINT, const void *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D11SamplerState*, Guid*, uint, void*, int> SetPrivateData;
+
+            [NativeTypeName("HRESULT (const GUID &, const IUnknown *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D11SamplerState*, Guid*, IUnknown*, int> SetPrivateDataInterface;
+
+            [NativeTypeName("void (D3D11_SAMPLER_DESC *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D11SamplerState*, D3D11_SAMPLER_DESC*, void> GetDesc;
         }
     }
 }

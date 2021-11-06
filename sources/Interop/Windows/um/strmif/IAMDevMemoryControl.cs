@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("C6545BF1-E76B-11D0-BD52-00A0C911CE86")]
     [NativeTypeName("struct IAMDevMemoryControl : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IAMDevMemoryControl
+    public unsafe partial struct IAMDevMemoryControl : IAMDevMemoryControl.Interface
     {
         public void** lpVtbl;
 
@@ -58,6 +58,39 @@ namespace TerraFX.Interop
         public HRESULT GetDevId([NativeTypeName("DWORD *")] uint* pdwDevId)
         {
             return ((delegate* unmanaged<IAMDevMemoryControl*, uint*, int>)(lpVtbl[5]))((IAMDevMemoryControl*)Unsafe.AsPointer(ref this), pdwDevId);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT QueryWriteSync();
+
+            [VtblIndex(4)]
+            HRESULT WriteSync();
+
+            [VtblIndex(5)]
+            HRESULT GetDevId([NativeTypeName("DWORD *")] uint* pdwDevId);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAMDevMemoryControl*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IAMDevMemoryControl*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IAMDevMemoryControl*, uint> Release;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IAMDevMemoryControl*, int> QueryWriteSync;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IAMDevMemoryControl*, int> WriteSync;
+
+            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAMDevMemoryControl*, uint*, int> GetDevId;
         }
     }
 }

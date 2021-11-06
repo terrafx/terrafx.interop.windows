@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("4C896039-7B6D-49E6-A8C1-45116A98292B")]
     [NativeTypeName("struct IAccClientDocMgr : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IAccClientDocMgr
+    public unsafe partial struct IAccClientDocMgr : IAccClientDocMgr.Interface
     {
         public void** lpVtbl;
 
@@ -65,6 +65,45 @@ namespace TerraFX.Interop
         public HRESULT GetFocused([NativeTypeName("const IID &")] Guid* riid, IUnknown** ppunk)
         {
             return ((delegate* unmanaged<IAccClientDocMgr*, Guid*, IUnknown**, int>)(lpVtbl[6]))((IAccClientDocMgr*)Unsafe.AsPointer(ref this), riid, ppunk);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetDocuments(IEnumUnknown** enumUnknown);
+
+            [VtblIndex(4)]
+            HRESULT LookupByHWND(HWND hWnd, [NativeTypeName("const IID &")] Guid* riid, IUnknown** ppunk);
+
+            [VtblIndex(5)]
+            HRESULT LookupByPoint(POINT pt, [NativeTypeName("const IID &")] Guid* riid, IUnknown** ppunk);
+
+            [VtblIndex(6)]
+            HRESULT GetFocused([NativeTypeName("const IID &")] Guid* riid, IUnknown** ppunk);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAccClientDocMgr*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IAccClientDocMgr*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IAccClientDocMgr*, uint> Release;
+
+            [NativeTypeName("HRESULT (IEnumUnknown **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAccClientDocMgr*, IEnumUnknown**, int> GetDocuments;
+
+            [NativeTypeName("HRESULT (HWND, const IID &, IUnknown **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAccClientDocMgr*, HWND, Guid*, IUnknown**, int> LookupByHWND;
+
+            [NativeTypeName("HRESULT (POINT, const IID &, IUnknown **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAccClientDocMgr*, POINT, Guid*, IUnknown**, int> LookupByPoint;
+
+            [NativeTypeName("HRESULT (const IID &, IUnknown **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAccClientDocMgr*, Guid*, IUnknown**, int> GetFocused;
         }
     }
 }

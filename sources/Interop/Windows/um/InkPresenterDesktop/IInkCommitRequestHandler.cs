@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("FABEA3FC-B108-45B6-A9FC-8D08FA9F85CF")]
     [NativeTypeName("struct IInkCommitRequestHandler : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IInkCommitRequestHandler
+    public unsafe partial struct IInkCommitRequestHandler : IInkCommitRequestHandler.Interface
     {
         public void** lpVtbl;
 
@@ -44,6 +44,27 @@ namespace TerraFX.Interop
         public HRESULT OnCommitRequested()
         {
             return ((delegate* unmanaged<IInkCommitRequestHandler*, int>)(lpVtbl[3]))((IInkCommitRequestHandler*)Unsafe.AsPointer(ref this));
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT OnCommitRequested();
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IInkCommitRequestHandler*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IInkCommitRequestHandler*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IInkCommitRequestHandler*, uint> Release;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IInkCommitRequestHandler*, int> OnCommitRequested;
         }
     }
 }

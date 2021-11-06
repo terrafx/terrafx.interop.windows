@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("00000113-0000-0000-C000-000000000046")]
     [NativeTypeName("struct IOleInPlaceObject : IOleWindow")]
     [NativeInheritance("IOleWindow")]
-    public unsafe partial struct IOleInPlaceObject
+    public unsafe partial struct IOleInPlaceObject : IOleInPlaceObject.Interface
     {
         public void** lpVtbl;
 
@@ -79,6 +79,51 @@ namespace TerraFX.Interop
         public HRESULT ReactivateAndUndo()
         {
             return ((delegate* unmanaged<IOleInPlaceObject*, int>)(lpVtbl[8]))((IOleInPlaceObject*)Unsafe.AsPointer(ref this));
+        }
+
+        public interface Interface : IOleWindow.Interface
+        {
+            [VtblIndex(5)]
+            HRESULT InPlaceDeactivate();
+
+            [VtblIndex(6)]
+            HRESULT UIDeactivate();
+
+            [VtblIndex(7)]
+            HRESULT SetObjectRects([NativeTypeName("LPCRECT")] RECT* lprcPosRect, [NativeTypeName("LPCRECT")] RECT* lprcClipRect);
+
+            [VtblIndex(8)]
+            HRESULT ReactivateAndUndo();
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IOleInPlaceObject*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IOleInPlaceObject*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IOleInPlaceObject*, uint> Release;
+
+            [NativeTypeName("HRESULT (HWND *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IOleInPlaceObject*, HWND*, int> GetWindow;
+
+            [NativeTypeName("HRESULT (BOOL) __attribute__((stdcall))")]
+            public delegate* unmanaged<IOleInPlaceObject*, BOOL, int> ContextSensitiveHelp;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IOleInPlaceObject*, int> InPlaceDeactivate;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IOleInPlaceObject*, int> UIDeactivate;
+
+            [NativeTypeName("HRESULT (LPCRECT, LPCRECT) __attribute__((stdcall))")]
+            public delegate* unmanaged<IOleInPlaceObject*, RECT*, RECT*, int> SetObjectRects;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IOleInPlaceObject*, int> ReactivateAndUndo;
         }
     }
 }

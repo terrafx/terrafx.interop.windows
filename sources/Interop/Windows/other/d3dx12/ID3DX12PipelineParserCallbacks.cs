@@ -7,7 +7,7 @@ using System.Runtime.CompilerServices;
 
 namespace TerraFX.Interop
 {
-    public unsafe partial struct ID3DX12PipelineParserCallbacks
+    public unsafe partial struct ID3DX12PipelineParserCallbacks : ID3DX12PipelineParserCallbacks.Interface
     {
         public void** lpVtbl;
 
@@ -212,6 +212,186 @@ namespace TerraFX.Interop
         public void Dispose()
         {
             ((delegate* unmanaged<ID3DX12PipelineParserCallbacks*, void>)(lpVtbl[28]))((ID3DX12PipelineParserCallbacks*)Unsafe.AsPointer(ref this));
+        }
+
+        public interface Interface
+        {
+            [VtblIndex(0)]
+            void FlagsCb(D3D12_PIPELINE_STATE_FLAGS param0);
+
+            [VtblIndex(1)]
+            void NodeMaskCb(uint param0);
+
+            [VtblIndex(2)]
+            void RootSignatureCb(ID3D12RootSignature* param0);
+
+            [VtblIndex(3)]
+            void InputLayoutCb([NativeTypeName("const D3D12_INPUT_LAYOUT_DESC &")] D3D12_INPUT_LAYOUT_DESC* param0);
+
+            [VtblIndex(4)]
+            void IBStripCutValueCb(D3D12_INDEX_BUFFER_STRIP_CUT_VALUE param0);
+
+            [VtblIndex(5)]
+            void PrimitiveTopologyTypeCb(D3D12_PRIMITIVE_TOPOLOGY_TYPE param0);
+
+            [VtblIndex(6)]
+            void VSCb([NativeTypeName("const D3D12_SHADER_BYTECODE &")] D3D12_SHADER_BYTECODE* param0);
+
+            [VtblIndex(7)]
+            void GSCb([NativeTypeName("const D3D12_SHADER_BYTECODE &")] D3D12_SHADER_BYTECODE* param0);
+
+            [VtblIndex(8)]
+            void StreamOutputCb([NativeTypeName("const D3D12_STREAM_OUTPUT_DESC &")] D3D12_STREAM_OUTPUT_DESC* param0);
+
+            [VtblIndex(9)]
+            void HSCb([NativeTypeName("const D3D12_SHADER_BYTECODE &")] D3D12_SHADER_BYTECODE* param0);
+
+            [VtblIndex(10)]
+            void DSCb([NativeTypeName("const D3D12_SHADER_BYTECODE &")] D3D12_SHADER_BYTECODE* param0);
+
+            [VtblIndex(11)]
+            void PSCb([NativeTypeName("const D3D12_SHADER_BYTECODE &")] D3D12_SHADER_BYTECODE* param0);
+
+            [VtblIndex(12)]
+            void CSCb([NativeTypeName("const D3D12_SHADER_BYTECODE &")] D3D12_SHADER_BYTECODE* param0);
+
+            [VtblIndex(13)]
+            void ASCb([NativeTypeName("const D3D12_SHADER_BYTECODE &")] D3D12_SHADER_BYTECODE* param0);
+
+            [VtblIndex(14)]
+            void MSCb([NativeTypeName("const D3D12_SHADER_BYTECODE &")] D3D12_SHADER_BYTECODE* param0);
+
+            [VtblIndex(15)]
+            void BlendStateCb([NativeTypeName("const D3D12_BLEND_DESC &")] D3D12_BLEND_DESC* param0);
+
+            [VtblIndex(16)]
+            void DepthStencilStateCb([NativeTypeName("const D3D12_DEPTH_STENCIL_DESC &")] D3D12_DEPTH_STENCIL_DESC* param0);
+
+            [VtblIndex(17)]
+            void DepthStencilState1Cb([NativeTypeName("const D3D12_DEPTH_STENCIL_DESC1 &")] D3D12_DEPTH_STENCIL_DESC1* param0);
+
+            [VtblIndex(18)]
+            void DSVFormatCb(DXGI_FORMAT param0);
+
+            [VtblIndex(19)]
+            void RasterizerStateCb([NativeTypeName("const D3D12_RASTERIZER_DESC &")] D3D12_RASTERIZER_DESC* param0);
+
+            [VtblIndex(20)]
+            void RTVFormatsCb([NativeTypeName("const D3D12_RT_FORMAT_ARRAY &")] D3D12_RT_FORMAT_ARRAY* param0);
+
+            [VtblIndex(21)]
+            void SampleDescCb([NativeTypeName("const DXGI_SAMPLE_DESC &")] DXGI_SAMPLE_DESC* param0);
+
+            [VtblIndex(22)]
+            void SampleMaskCb(uint param0);
+
+            [VtblIndex(23)]
+            void ViewInstancingCb([NativeTypeName("const D3D12_VIEW_INSTANCING_DESC &")] D3D12_VIEW_INSTANCING_DESC* param0);
+
+            [VtblIndex(24)]
+            void CachedPSOCb([NativeTypeName("const D3D12_CACHED_PIPELINE_STATE &")] D3D12_CACHED_PIPELINE_STATE* param0);
+
+            [VtblIndex(25)]
+            void ErrorBadInputParameter(uint param0);
+
+            [VtblIndex(26)]
+            void ErrorDuplicateSubobject(D3D12_PIPELINE_STATE_SUBOBJECT_TYPE param0);
+
+            [VtblIndex(27)]
+            void ErrorUnknownSubobject(uint param0);
+
+            [VtblIndex(28)]
+            void Dispose();
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("void (D3D12_PIPELINE_STATE_FLAGS)")]
+            public delegate* unmanaged<ID3DX12PipelineParserCallbacks*, D3D12_PIPELINE_STATE_FLAGS, void> FlagsCb;
+
+            [NativeTypeName("void (UINT)")]
+            public delegate* unmanaged<ID3DX12PipelineParserCallbacks*, uint, void> NodeMaskCb;
+
+            [NativeTypeName("void (ID3D12RootSignature *)")]
+            public delegate* unmanaged<ID3DX12PipelineParserCallbacks*, ID3D12RootSignature*, void> RootSignatureCb;
+
+            [NativeTypeName("void (const D3D12_INPUT_LAYOUT_DESC &)")]
+            public delegate* unmanaged<ID3DX12PipelineParserCallbacks*, D3D12_INPUT_LAYOUT_DESC*, void> InputLayoutCb;
+
+            [NativeTypeName("void (D3D12_INDEX_BUFFER_STRIP_CUT_VALUE)")]
+            public delegate* unmanaged<ID3DX12PipelineParserCallbacks*, D3D12_INDEX_BUFFER_STRIP_CUT_VALUE, void> IBStripCutValueCb;
+
+            [NativeTypeName("void (D3D12_PRIMITIVE_TOPOLOGY_TYPE)")]
+            public delegate* unmanaged<ID3DX12PipelineParserCallbacks*, D3D12_PRIMITIVE_TOPOLOGY_TYPE, void> PrimitiveTopologyTypeCb;
+
+            [NativeTypeName("void (const D3D12_SHADER_BYTECODE &)")]
+            public delegate* unmanaged<ID3DX12PipelineParserCallbacks*, D3D12_SHADER_BYTECODE*, void> VSCb;
+
+            [NativeTypeName("void (const D3D12_SHADER_BYTECODE &)")]
+            public delegate* unmanaged<ID3DX12PipelineParserCallbacks*, D3D12_SHADER_BYTECODE*, void> GSCb;
+
+            [NativeTypeName("void (const D3D12_STREAM_OUTPUT_DESC &)")]
+            public delegate* unmanaged<ID3DX12PipelineParserCallbacks*, D3D12_STREAM_OUTPUT_DESC*, void> StreamOutputCb;
+
+            [NativeTypeName("void (const D3D12_SHADER_BYTECODE &)")]
+            public delegate* unmanaged<ID3DX12PipelineParserCallbacks*, D3D12_SHADER_BYTECODE*, void> HSCb;
+
+            [NativeTypeName("void (const D3D12_SHADER_BYTECODE &)")]
+            public delegate* unmanaged<ID3DX12PipelineParserCallbacks*, D3D12_SHADER_BYTECODE*, void> DSCb;
+
+            [NativeTypeName("void (const D3D12_SHADER_BYTECODE &)")]
+            public delegate* unmanaged<ID3DX12PipelineParserCallbacks*, D3D12_SHADER_BYTECODE*, void> PSCb;
+
+            [NativeTypeName("void (const D3D12_SHADER_BYTECODE &)")]
+            public delegate* unmanaged<ID3DX12PipelineParserCallbacks*, D3D12_SHADER_BYTECODE*, void> CSCb;
+
+            [NativeTypeName("void (const D3D12_SHADER_BYTECODE &)")]
+            public delegate* unmanaged<ID3DX12PipelineParserCallbacks*, D3D12_SHADER_BYTECODE*, void> ASCb;
+
+            [NativeTypeName("void (const D3D12_SHADER_BYTECODE &)")]
+            public delegate* unmanaged<ID3DX12PipelineParserCallbacks*, D3D12_SHADER_BYTECODE*, void> MSCb;
+
+            [NativeTypeName("void (const D3D12_BLEND_DESC &)")]
+            public delegate* unmanaged<ID3DX12PipelineParserCallbacks*, D3D12_BLEND_DESC*, void> BlendStateCb;
+
+            [NativeTypeName("void (const D3D12_DEPTH_STENCIL_DESC &)")]
+            public delegate* unmanaged<ID3DX12PipelineParserCallbacks*, D3D12_DEPTH_STENCIL_DESC*, void> DepthStencilStateCb;
+
+            [NativeTypeName("void (const D3D12_DEPTH_STENCIL_DESC1 &)")]
+            public delegate* unmanaged<ID3DX12PipelineParserCallbacks*, D3D12_DEPTH_STENCIL_DESC1*, void> DepthStencilState1Cb;
+
+            [NativeTypeName("void (DXGI_FORMAT)")]
+            public delegate* unmanaged<ID3DX12PipelineParserCallbacks*, DXGI_FORMAT, void> DSVFormatCb;
+
+            [NativeTypeName("void (const D3D12_RASTERIZER_DESC &)")]
+            public delegate* unmanaged<ID3DX12PipelineParserCallbacks*, D3D12_RASTERIZER_DESC*, void> RasterizerStateCb;
+
+            [NativeTypeName("void (const D3D12_RT_FORMAT_ARRAY &)")]
+            public delegate* unmanaged<ID3DX12PipelineParserCallbacks*, D3D12_RT_FORMAT_ARRAY*, void> RTVFormatsCb;
+
+            [NativeTypeName("void (const DXGI_SAMPLE_DESC &)")]
+            public delegate* unmanaged<ID3DX12PipelineParserCallbacks*, DXGI_SAMPLE_DESC*, void> SampleDescCb;
+
+            [NativeTypeName("void (UINT)")]
+            public delegate* unmanaged<ID3DX12PipelineParserCallbacks*, uint, void> SampleMaskCb;
+
+            [NativeTypeName("void (const D3D12_VIEW_INSTANCING_DESC &)")]
+            public delegate* unmanaged<ID3DX12PipelineParserCallbacks*, D3D12_VIEW_INSTANCING_DESC*, void> ViewInstancingCb;
+
+            [NativeTypeName("void (const D3D12_CACHED_PIPELINE_STATE &)")]
+            public delegate* unmanaged<ID3DX12PipelineParserCallbacks*, D3D12_CACHED_PIPELINE_STATE*, void> CachedPSOCb;
+
+            [NativeTypeName("void (UINT)")]
+            public delegate* unmanaged<ID3DX12PipelineParserCallbacks*, uint, void> ErrorBadInputParameter;
+
+            [NativeTypeName("void (D3D12_PIPELINE_STATE_SUBOBJECT_TYPE)")]
+            public delegate* unmanaged<ID3DX12PipelineParserCallbacks*, D3D12_PIPELINE_STATE_SUBOBJECT_TYPE, void> ErrorDuplicateSubobject;
+
+            [NativeTypeName("void (UINT)")]
+            public delegate* unmanaged<ID3DX12PipelineParserCallbacks*, uint, void> ErrorUnknownSubobject;
+
+            [NativeTypeName("void () noexcept")]
+            public delegate* unmanaged<ID3DX12PipelineParserCallbacks*, void> Dispose;
         }
     }
 }

@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("91956D21-9276-11D1-921A-006097DF5BD4")]
     [NativeTypeName("struct ICurrentWorkingDirectory : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct ICurrentWorkingDirectory
+    public unsafe partial struct ICurrentWorkingDirectory : ICurrentWorkingDirectory.Interface
     {
         public void** lpVtbl;
 
@@ -51,6 +51,33 @@ namespace TerraFX.Interop
         public HRESULT SetDirectory([NativeTypeName("PCWSTR")] ushort* pwzPath)
         {
             return ((delegate* unmanaged<ICurrentWorkingDirectory*, ushort*, int>)(lpVtbl[4]))((ICurrentWorkingDirectory*)Unsafe.AsPointer(ref this), pwzPath);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetDirectory([NativeTypeName("PWSTR")] ushort* pwzPath, [NativeTypeName("DWORD")] uint cchSize);
+
+            [VtblIndex(4)]
+            HRESULT SetDirectory([NativeTypeName("PCWSTR")] ushort* pwzPath);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ICurrentWorkingDirectory*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ICurrentWorkingDirectory*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ICurrentWorkingDirectory*, uint> Release;
+
+            [NativeTypeName("HRESULT (PWSTR, DWORD) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<ICurrentWorkingDirectory*, ushort*, uint, int> GetDirectory;
+
+            [NativeTypeName("HRESULT (PCWSTR) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<ICurrentWorkingDirectory*, ushort*, int> SetDirectory;
         }
     }
 }

@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("C5A05F0C-16F2-4ADF-9F4D-A8C4D58AC550")]
     [NativeTypeName("struct IDXGIDebug1 : IDXGIDebug")]
     [NativeInheritance("IDXGIDebug")]
-    public unsafe partial struct IDXGIDebug1
+    public unsafe partial struct IDXGIDebug1 : IDXGIDebug1.Interface
     {
         public void** lpVtbl;
 
@@ -65,6 +65,42 @@ namespace TerraFX.Interop
         public BOOL IsLeakTrackingEnabledForThread()
         {
             return ((delegate* unmanaged<IDXGIDebug1*, int>)(lpVtbl[6]))((IDXGIDebug1*)Unsafe.AsPointer(ref this));
+        }
+
+        public interface Interface : IDXGIDebug.Interface
+        {
+            [VtblIndex(4)]
+            void EnableLeakTrackingForThread();
+
+            [VtblIndex(5)]
+            void DisableLeakTrackingForThread();
+
+            [VtblIndex(6)]
+            BOOL IsLeakTrackingEnabledForThread();
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDXGIDebug1*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDXGIDebug1*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDXGIDebug1*, uint> Release;
+
+            [NativeTypeName("HRESULT (GUID, DXGI_DEBUG_RLO_FLAGS) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDXGIDebug1*, Guid, DXGI_DEBUG_RLO_FLAGS, int> ReportLiveObjects;
+
+            [NativeTypeName("void () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDXGIDebug1*, void> EnableLeakTrackingForThread;
+
+            [NativeTypeName("void () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDXGIDebug1*, void> DisableLeakTrackingForThread;
+
+            [NativeTypeName("BOOL () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDXGIDebug1*, int> IsLeakTrackingEnabledForThread;
         }
     }
 }

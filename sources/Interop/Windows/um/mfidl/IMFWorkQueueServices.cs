@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("35FE1BB8-A3A9-40FE-BBEC-EB569C9CCCA3")]
     [NativeTypeName("struct IMFWorkQueueServices : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IMFWorkQueueServices
+    public unsafe partial struct IMFWorkQueueServices : IMFWorkQueueServices.Interface
     {
         public void** lpVtbl;
 
@@ -121,6 +121,93 @@ namespace TerraFX.Interop
         public HRESULT GetPlatformWorkQueueMMCSSTaskId([NativeTypeName("DWORD")] uint dwPlatformWorkQueueId, [NativeTypeName("DWORD *")] uint* pdwTaskId)
         {
             return ((delegate* unmanaged<IMFWorkQueueServices*, uint, uint*, int>)(lpVtbl[14]))((IMFWorkQueueServices*)Unsafe.AsPointer(ref this), dwPlatformWorkQueueId, pdwTaskId);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT BeginRegisterTopologyWorkQueuesWithMMCSS(IMFAsyncCallback* pCallback, IUnknown* pState);
+
+            [VtblIndex(4)]
+            HRESULT EndRegisterTopologyWorkQueuesWithMMCSS(IMFAsyncResult* pResult);
+
+            [VtblIndex(5)]
+            HRESULT BeginUnregisterTopologyWorkQueuesWithMMCSS(IMFAsyncCallback* pCallback, IUnknown* pState);
+
+            [VtblIndex(6)]
+            HRESULT EndUnregisterTopologyWorkQueuesWithMMCSS(IMFAsyncResult* pResult);
+
+            [VtblIndex(7)]
+            HRESULT GetTopologyWorkQueueMMCSSClass([NativeTypeName("DWORD")] uint dwTopologyWorkQueueId, [NativeTypeName("LPWSTR")] ushort* pwszClass, [NativeTypeName("DWORD *")] uint* pcchClass);
+
+            [VtblIndex(8)]
+            HRESULT GetTopologyWorkQueueMMCSSTaskId([NativeTypeName("DWORD")] uint dwTopologyWorkQueueId, [NativeTypeName("DWORD *")] uint* pdwTaskId);
+
+            [VtblIndex(9)]
+            HRESULT BeginRegisterPlatformWorkQueueWithMMCSS([NativeTypeName("DWORD")] uint dwPlatformWorkQueue, [NativeTypeName("LPCWSTR")] ushort* wszClass, [NativeTypeName("DWORD")] uint dwTaskId, IMFAsyncCallback* pCallback, IUnknown* pState);
+
+            [VtblIndex(10)]
+            HRESULT EndRegisterPlatformWorkQueueWithMMCSS(IMFAsyncResult* pResult, [NativeTypeName("DWORD *")] uint* pdwTaskId);
+
+            [VtblIndex(11)]
+            HRESULT BeginUnregisterPlatformWorkQueueWithMMCSS([NativeTypeName("DWORD")] uint dwPlatformWorkQueue, IMFAsyncCallback* pCallback, IUnknown* pState);
+
+            [VtblIndex(12)]
+            HRESULT EndUnregisterPlatformWorkQueueWithMMCSS(IMFAsyncResult* pResult);
+
+            [VtblIndex(13)]
+            HRESULT GetPlaftormWorkQueueMMCSSClass([NativeTypeName("DWORD")] uint dwPlatformWorkQueueId, [NativeTypeName("LPWSTR")] ushort* pwszClass, [NativeTypeName("DWORD *")] uint* pcchClass);
+
+            [VtblIndex(14)]
+            HRESULT GetPlatformWorkQueueMMCSSTaskId([NativeTypeName("DWORD")] uint dwPlatformWorkQueueId, [NativeTypeName("DWORD *")] uint* pdwTaskId);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFWorkQueueServices*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFWorkQueueServices*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFWorkQueueServices*, uint> Release;
+
+            [NativeTypeName("HRESULT (IMFAsyncCallback *, IUnknown *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFWorkQueueServices*, IMFAsyncCallback*, IUnknown*, int> BeginRegisterTopologyWorkQueuesWithMMCSS;
+
+            [NativeTypeName("HRESULT (IMFAsyncResult *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFWorkQueueServices*, IMFAsyncResult*, int> EndRegisterTopologyWorkQueuesWithMMCSS;
+
+            [NativeTypeName("HRESULT (IMFAsyncCallback *, IUnknown *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFWorkQueueServices*, IMFAsyncCallback*, IUnknown*, int> BeginUnregisterTopologyWorkQueuesWithMMCSS;
+
+            [NativeTypeName("HRESULT (IMFAsyncResult *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFWorkQueueServices*, IMFAsyncResult*, int> EndUnregisterTopologyWorkQueuesWithMMCSS;
+
+            [NativeTypeName("HRESULT (DWORD, LPWSTR, DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFWorkQueueServices*, uint, ushort*, uint*, int> GetTopologyWorkQueueMMCSSClass;
+
+            [NativeTypeName("HRESULT (DWORD, DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFWorkQueueServices*, uint, uint*, int> GetTopologyWorkQueueMMCSSTaskId;
+
+            [NativeTypeName("HRESULT (DWORD, LPCWSTR, DWORD, IMFAsyncCallback *, IUnknown *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFWorkQueueServices*, uint, ushort*, uint, IMFAsyncCallback*, IUnknown*, int> BeginRegisterPlatformWorkQueueWithMMCSS;
+
+            [NativeTypeName("HRESULT (IMFAsyncResult *, DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFWorkQueueServices*, IMFAsyncResult*, uint*, int> EndRegisterPlatformWorkQueueWithMMCSS;
+
+            [NativeTypeName("HRESULT (DWORD, IMFAsyncCallback *, IUnknown *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFWorkQueueServices*, uint, IMFAsyncCallback*, IUnknown*, int> BeginUnregisterPlatformWorkQueueWithMMCSS;
+
+            [NativeTypeName("HRESULT (IMFAsyncResult *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFWorkQueueServices*, IMFAsyncResult*, int> EndUnregisterPlatformWorkQueueWithMMCSS;
+
+            [NativeTypeName("HRESULT (DWORD, LPWSTR, DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFWorkQueueServices*, uint, ushort*, uint*, int> GetPlaftormWorkQueueMMCSSClass;
+
+            [NativeTypeName("HRESULT (DWORD, DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFWorkQueueServices*, uint, uint*, int> GetPlatformWorkQueueMMCSSTaskId;
         }
     }
 }

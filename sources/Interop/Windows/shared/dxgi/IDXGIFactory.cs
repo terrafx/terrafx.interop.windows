@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("7B7166EC-21C7-44AE-B21A-C9AE321AE369")]
     [NativeTypeName("struct IDXGIFactory : IDXGIObject")]
     [NativeInheritance("IDXGIObject")]
-    public unsafe partial struct IDXGIFactory
+    public unsafe partial struct IDXGIFactory : IDXGIFactory.Interface
     {
         public void** lpVtbl;
 
@@ -100,6 +100,63 @@ namespace TerraFX.Interop
         public HRESULT CreateSoftwareAdapter(HMODULE Module, IDXGIAdapter** ppAdapter)
         {
             return ((delegate* unmanaged<IDXGIFactory*, HMODULE, IDXGIAdapter**, int>)(lpVtbl[11]))((IDXGIFactory*)Unsafe.AsPointer(ref this), Module, ppAdapter);
+        }
+
+        public interface Interface : IDXGIObject.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT EnumAdapters(uint Adapter, IDXGIAdapter** ppAdapter);
+
+            [VtblIndex(8)]
+            HRESULT MakeWindowAssociation(HWND WindowHandle, uint Flags);
+
+            [VtblIndex(9)]
+            HRESULT GetWindowAssociation(HWND* pWindowHandle);
+
+            [VtblIndex(10)]
+            HRESULT CreateSwapChain(IUnknown* pDevice, DXGI_SWAP_CHAIN_DESC* pDesc, IDXGISwapChain** ppSwapChain);
+
+            [VtblIndex(11)]
+            HRESULT CreateSoftwareAdapter(HMODULE Module, IDXGIAdapter** ppAdapter);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDXGIFactory*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDXGIFactory*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDXGIFactory*, uint> Release;
+
+            [NativeTypeName("HRESULT (const GUID &, UINT, const void *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDXGIFactory*, Guid*, uint, void*, int> SetPrivateData;
+
+            [NativeTypeName("HRESULT (const GUID &, const IUnknown *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDXGIFactory*, Guid*, IUnknown*, int> SetPrivateDataInterface;
+
+            [NativeTypeName("HRESULT (const GUID &, UINT *, void *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDXGIFactory*, Guid*, uint*, void*, int> GetPrivateData;
+
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDXGIFactory*, Guid*, void**, int> GetParent;
+
+            [NativeTypeName("HRESULT (UINT, IDXGIAdapter **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDXGIFactory*, uint, IDXGIAdapter**, int> EnumAdapters;
+
+            [NativeTypeName("HRESULT (HWND, UINT) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDXGIFactory*, HWND, uint, int> MakeWindowAssociation;
+
+            [NativeTypeName("HRESULT (HWND *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDXGIFactory*, HWND*, int> GetWindowAssociation;
+
+            [NativeTypeName("HRESULT (IUnknown *, DXGI_SWAP_CHAIN_DESC *, IDXGISwapChain **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDXGIFactory*, IUnknown*, DXGI_SWAP_CHAIN_DESC*, IDXGISwapChain**, int> CreateSwapChain;
+
+            [NativeTypeName("HRESULT (HMODULE, IDXGIAdapter **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDXGIFactory*, HMODULE, IDXGIAdapter**, int> CreateSoftwareAdapter;
         }
     }
 }

@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("ACD16696-8C14-4F5D-877E-FE3FC1D32737")]
     [NativeTypeName("struct IDWriteFont : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IDWriteFont
+    public unsafe partial struct IDWriteFont : IDWriteFont.Interface
     {
         public void** lpVtbl;
 
@@ -114,6 +114,87 @@ namespace TerraFX.Interop
         public HRESULT CreateFontFace(IDWriteFontFace** fontFace)
         {
             return ((delegate* unmanaged<IDWriteFont*, IDWriteFontFace**, int>)(lpVtbl[13]))((IDWriteFont*)Unsafe.AsPointer(ref this), fontFace);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetFontFamily(IDWriteFontFamily** fontFamily);
+
+            [VtblIndex(4)]
+            DWRITE_FONT_WEIGHT GetWeight();
+
+            [VtblIndex(5)]
+            DWRITE_FONT_STRETCH GetStretch();
+
+            [VtblIndex(6)]
+            DWRITE_FONT_STYLE GetStyle();
+
+            [VtblIndex(7)]
+            BOOL IsSymbolFont();
+
+            [VtblIndex(8)]
+            HRESULT GetFaceNames(IDWriteLocalizedStrings** names);
+
+            [VtblIndex(9)]
+            HRESULT GetInformationalStrings(DWRITE_INFORMATIONAL_STRING_ID informationalStringID, IDWriteLocalizedStrings** informationalStrings, BOOL* exists);
+
+            [VtblIndex(10)]
+            DWRITE_FONT_SIMULATIONS GetSimulations();
+
+            [VtblIndex(11)]
+            void GetMetrics(DWRITE_FONT_METRICS* fontMetrics);
+
+            [VtblIndex(12)]
+            HRESULT HasCharacter([NativeTypeName("UINT32")] uint unicodeValue, BOOL* exists);
+
+            [VtblIndex(13)]
+            HRESULT CreateFontFace(IDWriteFontFace** fontFace);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDWriteFont*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDWriteFont*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDWriteFont*, uint> Release;
+
+            [NativeTypeName("HRESULT (IDWriteFontFamily **) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDWriteFont*, IDWriteFontFamily**, int> GetFontFamily;
+
+            [NativeTypeName("DWRITE_FONT_WEIGHT () __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDWriteFont*, DWRITE_FONT_WEIGHT> GetWeight;
+
+            [NativeTypeName("DWRITE_FONT_STRETCH () __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDWriteFont*, DWRITE_FONT_STRETCH> GetStretch;
+
+            [NativeTypeName("DWRITE_FONT_STYLE () __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDWriteFont*, DWRITE_FONT_STYLE> GetStyle;
+
+            [NativeTypeName("BOOL () __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDWriteFont*, int> IsSymbolFont;
+
+            [NativeTypeName("HRESULT (IDWriteLocalizedStrings **) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDWriteFont*, IDWriteLocalizedStrings**, int> GetFaceNames;
+
+            [NativeTypeName("HRESULT (DWRITE_INFORMATIONAL_STRING_ID, IDWriteLocalizedStrings **, BOOL *) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDWriteFont*, DWRITE_INFORMATIONAL_STRING_ID, IDWriteLocalizedStrings**, BOOL*, int> GetInformationalStrings;
+
+            [NativeTypeName("DWRITE_FONT_SIMULATIONS () __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDWriteFont*, DWRITE_FONT_SIMULATIONS> GetSimulations;
+
+            [NativeTypeName("void (DWRITE_FONT_METRICS *) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDWriteFont*, DWRITE_FONT_METRICS*, void> GetMetrics;
+
+            [NativeTypeName("HRESULT (UINT32, BOOL *) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDWriteFont*, uint, BOOL*, int> HasCharacter;
+
+            [NativeTypeName("HRESULT (IDWriteFontFace **) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDWriteFont*, IDWriteFontFace**, int> CreateFontFace;
         }
     }
 }

@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("3050F805-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct IElementNamespaceFactory2 : IElementNamespaceFactory")]
     [NativeInheritance("IElementNamespaceFactory")]
-    public unsafe partial struct IElementNamespaceFactory2
+    public unsafe partial struct IElementNamespaceFactory2 : IElementNamespaceFactory2.Interface
     {
         public void** lpVtbl;
 
@@ -51,6 +51,30 @@ namespace TerraFX.Interop
         public HRESULT CreateWithImplementation(IElementNamespace* pNamespace, [NativeTypeName("BSTR")] ushort* bstrImplementation)
         {
             return ((delegate* unmanaged<IElementNamespaceFactory2*, IElementNamespace*, ushort*, int>)(lpVtbl[4]))((IElementNamespaceFactory2*)Unsafe.AsPointer(ref this), pNamespace, bstrImplementation);
+        }
+
+        public interface Interface : IElementNamespaceFactory.Interface
+        {
+            [VtblIndex(4)]
+            HRESULT CreateWithImplementation(IElementNamespace* pNamespace, [NativeTypeName("BSTR")] ushort* bstrImplementation);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IElementNamespaceFactory2*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IElementNamespaceFactory2*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IElementNamespaceFactory2*, uint> Release;
+
+            [NativeTypeName("HRESULT (IElementNamespace *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IElementNamespaceFactory2*, IElementNamespace*, int> Create;
+
+            [NativeTypeName("HRESULT (IElementNamespace *, BSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IElementNamespaceFactory2*, IElementNamespace*, ushort*, int> CreateWithImplementation;
         }
     }
 }

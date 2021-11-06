@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("10F63BCE-201A-11D3-AC70-00C04F8EE6C0")]
     [NativeTypeName("struct ISpTranscript : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct ISpTranscript
+    public unsafe partial struct ISpTranscript : ISpTranscript.Interface
     {
         public void** lpVtbl;
 
@@ -51,6 +51,33 @@ namespace TerraFX.Interop
         public HRESULT AppendTranscript([NativeTypeName("LPCWSTR")] ushort* pszTranscript)
         {
             return ((delegate* unmanaged<ISpTranscript*, ushort*, int>)(lpVtbl[4]))((ISpTranscript*)Unsafe.AsPointer(ref this), pszTranscript);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetTranscript([NativeTypeName("LPWSTR *")] ushort** ppszTranscript);
+
+            [VtblIndex(4)]
+            HRESULT AppendTranscript([NativeTypeName("LPCWSTR")] ushort* pszTranscript);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpTranscript*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpTranscript*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpTranscript*, uint> Release;
+
+            [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpTranscript*, ushort**, int> GetTranscript;
+
+            [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpTranscript*, ushort*, int> AppendTranscript;
         }
     }
 }

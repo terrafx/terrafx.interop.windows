@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("00000148-0000-0000-C000-000000000046")]
     [NativeTypeName("struct IAddrExclusionControl : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IAddrExclusionControl
+    public unsafe partial struct IAddrExclusionControl : IAddrExclusionControl.Interface
     {
         public void** lpVtbl;
 
@@ -51,6 +51,33 @@ namespace TerraFX.Interop
         public HRESULT UpdateAddrExclusionList(IUnknown* pEnumerator)
         {
             return ((delegate* unmanaged<IAddrExclusionControl*, IUnknown*, int>)(lpVtbl[4]))((IAddrExclusionControl*)Unsafe.AsPointer(ref this), pEnumerator);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetCurrentAddrExclusionList([NativeTypeName("const IID &")] Guid* riid, void** ppEnumerator);
+
+            [VtblIndex(4)]
+            HRESULT UpdateAddrExclusionList(IUnknown* pEnumerator);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAddrExclusionControl*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IAddrExclusionControl*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IAddrExclusionControl*, uint> Release;
+
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAddrExclusionControl*, Guid*, void**, int> GetCurrentAddrExclusionList;
+
+            [NativeTypeName("HRESULT (IUnknown *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAddrExclusionControl*, IUnknown*, int> UpdateAddrExclusionList;
         }
     }
 }

@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("3B9C7E7A-6EEE-4DED-9092-11657279ADBE")]
     [NativeTypeName("struct ISpeechTextSelectionInformation : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct ISpeechTextSelectionInformation
+    public unsafe partial struct ISpeechTextSelectionInformation : ISpeechTextSelectionInformation.Interface
     {
         public void** lpVtbl;
 
@@ -121,6 +121,81 @@ namespace TerraFX.Interop
         public HRESULT get_SelectionLength([NativeTypeName("long *")] int* SelectionLength)
         {
             return ((delegate* unmanaged<ISpeechTextSelectionInformation*, int*, int>)(lpVtbl[14]))((ISpeechTextSelectionInformation*)Unsafe.AsPointer(ref this), SelectionLength);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT put_ActiveOffset([NativeTypeName("long")] int ActiveOffset);
+
+            [VtblIndex(8)]
+            HRESULT get_ActiveOffset([NativeTypeName("long *")] int* ActiveOffset);
+
+            [VtblIndex(9)]
+            HRESULT put_ActiveLength([NativeTypeName("long")] int ActiveLength);
+
+            [VtblIndex(10)]
+            HRESULT get_ActiveLength([NativeTypeName("long *")] int* ActiveLength);
+
+            [VtblIndex(11)]
+            HRESULT put_SelectionOffset([NativeTypeName("long")] int SelectionOffset);
+
+            [VtblIndex(12)]
+            HRESULT get_SelectionOffset([NativeTypeName("long *")] int* SelectionOffset);
+
+            [VtblIndex(13)]
+            HRESULT put_SelectionLength([NativeTypeName("long")] int SelectionLength);
+
+            [VtblIndex(14)]
+            HRESULT get_SelectionLength([NativeTypeName("long *")] int* SelectionLength);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpeechTextSelectionInformation*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpeechTextSelectionInformation*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpeechTextSelectionInformation*, uint> Release;
+
+            [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpeechTextSelectionInformation*, uint*, int> GetTypeInfoCount;
+
+            [NativeTypeName("HRESULT (UINT, LCID, ITypeInfo **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpeechTextSelectionInformation*, uint, uint, ITypeInfo**, int> GetTypeInfo;
+
+            [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpeechTextSelectionInformation*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+
+            [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpeechTextSelectionInformation*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
+
+            [NativeTypeName("HRESULT (long) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpeechTextSelectionInformation*, int, int> put_ActiveOffset;
+
+            [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpeechTextSelectionInformation*, int*, int> get_ActiveOffset;
+
+            [NativeTypeName("HRESULT (long) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpeechTextSelectionInformation*, int, int> put_ActiveLength;
+
+            [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpeechTextSelectionInformation*, int*, int> get_ActiveLength;
+
+            [NativeTypeName("HRESULT (long) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpeechTextSelectionInformation*, int, int> put_SelectionOffset;
+
+            [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpeechTextSelectionInformation*, int*, int> get_SelectionOffset;
+
+            [NativeTypeName("HRESULT (long) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpeechTextSelectionInformation*, int, int> put_SelectionLength;
+
+            [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpeechTextSelectionInformation*, int*, int> get_SelectionLength;
         }
     }
 }

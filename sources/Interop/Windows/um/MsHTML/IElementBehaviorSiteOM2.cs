@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("3050F659-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct IElementBehaviorSiteOM2 : IElementBehaviorSiteOM")]
     [NativeInheritance("IElementBehaviorSiteOM")]
-    public unsafe partial struct IElementBehaviorSiteOM2
+    public unsafe partial struct IElementBehaviorSiteOM2 : IElementBehaviorSiteOM2.Interface
     {
         public void** lpVtbl;
 
@@ -86,6 +86,45 @@ namespace TerraFX.Interop
         public HRESULT GetDefaults(IHTMLElementDefaults** ppDefaults)
         {
             return ((delegate* unmanaged<IElementBehaviorSiteOM2*, IHTMLElementDefaults**, int>)(lpVtbl[9]))((IElementBehaviorSiteOM2*)Unsafe.AsPointer(ref this), ppDefaults);
+        }
+
+        public interface Interface : IElementBehaviorSiteOM.Interface
+        {
+            [VtblIndex(9)]
+            HRESULT GetDefaults(IHTMLElementDefaults** ppDefaults);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IElementBehaviorSiteOM2*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IElementBehaviorSiteOM2*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IElementBehaviorSiteOM2*, uint> Release;
+
+            [NativeTypeName("HRESULT (LPOLESTR, LONG, LONG *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IElementBehaviorSiteOM2*, ushort*, int, int*, int> RegisterEvent;
+
+            [NativeTypeName("HRESULT (LPOLESTR, LONG *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IElementBehaviorSiteOM2*, ushort*, int*, int> GetEventCookie;
+
+            [NativeTypeName("HRESULT (LONG, IHTMLEventObj *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IElementBehaviorSiteOM2*, int, IHTMLEventObj*, int> FireEvent;
+
+            [NativeTypeName("HRESULT (IHTMLEventObj **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IElementBehaviorSiteOM2*, IHTMLEventObj**, int> CreateEventObject;
+
+            [NativeTypeName("HRESULT (LPOLESTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IElementBehaviorSiteOM2*, ushort*, int> RegisterName;
+
+            [NativeTypeName("HRESULT (LPOLESTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IElementBehaviorSiteOM2*, ushort*, int> RegisterUrn;
+
+            [NativeTypeName("HRESULT (IHTMLElementDefaults **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IElementBehaviorSiteOM2*, IHTMLElementDefaults**, int> GetDefaults;
         }
     }
 }

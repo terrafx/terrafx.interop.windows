@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("8C5DAC4F-083C-4B85-A4C9-71746048ADCA")]
     [NativeTypeName("struct IEnumSpeechCommands : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IEnumSpeechCommands
+    public unsafe partial struct IEnumSpeechCommands : IEnumSpeechCommands.Interface
     {
         public void** lpVtbl;
 
@@ -65,6 +65,45 @@ namespace TerraFX.Interop
         public HRESULT Skip([NativeTypeName("ULONG")] uint ulCount)
         {
             return ((delegate* unmanaged<IEnumSpeechCommands*, uint, int>)(lpVtbl[6]))((IEnumSpeechCommands*)Unsafe.AsPointer(ref this), ulCount);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT Clone(IEnumSpeechCommands** ppEnum);
+
+            [VtblIndex(4)]
+            HRESULT Next([NativeTypeName("ULONG")] uint ulCount, [NativeTypeName("WCHAR **")] ushort** pSpCmds, [NativeTypeName("ULONG *")] uint* pcFetched);
+
+            [VtblIndex(5)]
+            HRESULT Reset();
+
+            [VtblIndex(6)]
+            HRESULT Skip([NativeTypeName("ULONG")] uint ulCount);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IEnumSpeechCommands*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IEnumSpeechCommands*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IEnumSpeechCommands*, uint> Release;
+
+            [NativeTypeName("HRESULT (IEnumSpeechCommands **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IEnumSpeechCommands*, IEnumSpeechCommands**, int> Clone;
+
+            [NativeTypeName("HRESULT (ULONG, WCHAR **, ULONG *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IEnumSpeechCommands*, uint, ushort**, uint*, int> Next;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IEnumSpeechCommands*, int> Reset;
+
+            [NativeTypeName("HRESULT (ULONG) __attribute__((stdcall))")]
+            public delegate* unmanaged<IEnumSpeechCommands*, uint, int> Skip;
         }
     }
 }

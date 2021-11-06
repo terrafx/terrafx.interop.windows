@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("0000000E-0000-0000-C000-000000000046")]
     [NativeTypeName("struct IBindCtx : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IBindCtx
+    public unsafe partial struct IBindCtx : IBindCtx.Interface
     {
         public void** lpVtbl;
 
@@ -107,6 +107,81 @@ namespace TerraFX.Interop
         public HRESULT RevokeObjectParam([NativeTypeName("LPOLESTR")] ushort* pszKey)
         {
             return ((delegate* unmanaged<IBindCtx*, ushort*, int>)(lpVtbl[12]))((IBindCtx*)Unsafe.AsPointer(ref this), pszKey);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT RegisterObjectBound(IUnknown* punk);
+
+            [VtblIndex(4)]
+            HRESULT RevokeObjectBound(IUnknown* punk);
+
+            [VtblIndex(5)]
+            HRESULT ReleaseBoundObjects();
+
+            [VtblIndex(6)]
+            HRESULT SetBindOptions(BIND_OPTS* pbindopts);
+
+            [VtblIndex(7)]
+            HRESULT GetBindOptions(BIND_OPTS* pbindopts);
+
+            [VtblIndex(8)]
+            HRESULT GetRunningObjectTable(IRunningObjectTable** pprot);
+
+            [VtblIndex(9)]
+            HRESULT RegisterObjectParam([NativeTypeName("LPOLESTR")] ushort* pszKey, IUnknown* punk);
+
+            [VtblIndex(10)]
+            HRESULT GetObjectParam([NativeTypeName("LPOLESTR")] ushort* pszKey, IUnknown** ppunk);
+
+            [VtblIndex(11)]
+            HRESULT EnumObjectParam(IEnumString** ppenum);
+
+            [VtblIndex(12)]
+            HRESULT RevokeObjectParam([NativeTypeName("LPOLESTR")] ushort* pszKey);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IBindCtx*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IBindCtx*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IBindCtx*, uint> Release;
+
+            [NativeTypeName("HRESULT (IUnknown *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IBindCtx*, IUnknown*, int> RegisterObjectBound;
+
+            [NativeTypeName("HRESULT (IUnknown *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IBindCtx*, IUnknown*, int> RevokeObjectBound;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IBindCtx*, int> ReleaseBoundObjects;
+
+            [NativeTypeName("HRESULT (BIND_OPTS *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IBindCtx*, BIND_OPTS*, int> SetBindOptions;
+
+            [NativeTypeName("HRESULT (BIND_OPTS *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IBindCtx*, BIND_OPTS*, int> GetBindOptions;
+
+            [NativeTypeName("HRESULT (IRunningObjectTable **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IBindCtx*, IRunningObjectTable**, int> GetRunningObjectTable;
+
+            [NativeTypeName("HRESULT (LPOLESTR, IUnknown *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IBindCtx*, ushort*, IUnknown*, int> RegisterObjectParam;
+
+            [NativeTypeName("HRESULT (LPOLESTR, IUnknown **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IBindCtx*, ushort*, IUnknown**, int> GetObjectParam;
+
+            [NativeTypeName("HRESULT (IEnumString **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IBindCtx*, IEnumString**, int> EnumObjectParam;
+
+            [NativeTypeName("HRESULT (LPOLESTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IBindCtx*, ushort*, int> RevokeObjectParam;
         }
     }
 }

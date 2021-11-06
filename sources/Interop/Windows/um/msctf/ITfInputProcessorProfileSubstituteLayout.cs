@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("4FD67194-1002-4513-BFF2-C0DDF6258552")]
     [NativeTypeName("struct ITfInputProcessorProfileSubstituteLayout : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct ITfInputProcessorProfileSubstituteLayout
+    public unsafe partial struct ITfInputProcessorProfileSubstituteLayout : ITfInputProcessorProfileSubstituteLayout.Interface
     {
         public void** lpVtbl;
 
@@ -44,6 +44,27 @@ namespace TerraFX.Interop
         public HRESULT GetSubstituteKeyboardLayout([NativeTypeName("const IID &")] Guid* rclsid, [NativeTypeName("LANGID")] ushort langid, [NativeTypeName("const GUID &")] Guid* guidProfile, HKL* phKL)
         {
             return ((delegate* unmanaged<ITfInputProcessorProfileSubstituteLayout*, Guid*, ushort, Guid*, HKL*, int>)(lpVtbl[3]))((ITfInputProcessorProfileSubstituteLayout*)Unsafe.AsPointer(ref this), rclsid, langid, guidProfile, phKL);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetSubstituteKeyboardLayout([NativeTypeName("const IID &")] Guid* rclsid, [NativeTypeName("LANGID")] ushort langid, [NativeTypeName("const GUID &")] Guid* guidProfile, HKL* phKL);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfInputProcessorProfileSubstituteLayout*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfInputProcessorProfileSubstituteLayout*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfInputProcessorProfileSubstituteLayout*, uint> Release;
+
+            [NativeTypeName("HRESULT (const IID &, LANGID, const GUID &, HKL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfInputProcessorProfileSubstituteLayout*, Guid*, ushort, Guid*, HKL*, int> GetSubstituteKeyboardLayout;
         }
     }
 }

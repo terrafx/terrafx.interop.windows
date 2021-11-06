@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("79F1BB5F-B66E-48E5-B6A9-1545C323CA3D")]
     [NativeTypeName("struct IDiaDataSource : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IDiaDataSource
+    public unsafe partial struct IDiaDataSource : IDiaDataSource.Interface
     {
         public void** lpVtbl;
 
@@ -93,6 +93,69 @@ namespace TerraFX.Interop
         public HRESULT loadDataFromMiscInfo([NativeTypeName("LPCOLESTR")] ushort* executable, [NativeTypeName("LPCOLESTR")] ushort* searchPath, [NativeTypeName("DWORD")] uint timeStampExe, [NativeTypeName("DWORD")] uint timeStampDbg, [NativeTypeName("DWORD")] uint sizeOfExe, [NativeTypeName("DWORD")] uint cbMiscInfo, byte* pbMiscInfo, IUnknown* pCallback)
         {
             return ((delegate* unmanaged<IDiaDataSource*, ushort*, ushort*, uint, uint, uint, uint, byte*, IUnknown*, int>)(lpVtbl[10]))((IDiaDataSource*)Unsafe.AsPointer(ref this), executable, searchPath, timeStampExe, timeStampDbg, sizeOfExe, cbMiscInfo, pbMiscInfo, pCallback);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT get_lastError([NativeTypeName("BSTR *")] ushort** pRetVal);
+
+            [VtblIndex(4)]
+            HRESULT loadDataFromPdb([NativeTypeName("LPCOLESTR")] ushort* pdbPath);
+
+            [VtblIndex(5)]
+            HRESULT loadAndValidateDataFromPdb([NativeTypeName("LPCOLESTR")] ushort* pdbPath, Guid* pcsig70, [NativeTypeName("DWORD")] uint sig, [NativeTypeName("DWORD")] uint age);
+
+            [VtblIndex(6)]
+            HRESULT loadDataForExe([NativeTypeName("LPCOLESTR")] ushort* executable, [NativeTypeName("LPCOLESTR")] ushort* searchPath, IUnknown* pCallback);
+
+            [VtblIndex(7)]
+            HRESULT loadDataFromIStream(IStream* pIStream);
+
+            [VtblIndex(8)]
+            HRESULT openSession(IDiaSession** ppSession);
+
+            [VtblIndex(9)]
+            HRESULT loadDataFromCodeViewInfo([NativeTypeName("LPCOLESTR")] ushort* executable, [NativeTypeName("LPCOLESTR")] ushort* searchPath, [NativeTypeName("DWORD")] uint cbCvInfo, byte* pbCvInfo, IUnknown* pCallback);
+
+            [VtblIndex(10)]
+            HRESULT loadDataFromMiscInfo([NativeTypeName("LPCOLESTR")] ushort* executable, [NativeTypeName("LPCOLESTR")] ushort* searchPath, [NativeTypeName("DWORD")] uint timeStampExe, [NativeTypeName("DWORD")] uint timeStampDbg, [NativeTypeName("DWORD")] uint sizeOfExe, [NativeTypeName("DWORD")] uint cbMiscInfo, byte* pbMiscInfo, IUnknown* pCallback);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaDataSource*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaDataSource*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaDataSource*, uint> Release;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaDataSource*, ushort**, int> get_lastError;
+
+            [NativeTypeName("HRESULT (LPCOLESTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaDataSource*, ushort*, int> loadDataFromPdb;
+
+            [NativeTypeName("HRESULT (LPCOLESTR, GUID *, DWORD, DWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaDataSource*, ushort*, Guid*, uint, uint, int> loadAndValidateDataFromPdb;
+
+            [NativeTypeName("HRESULT (LPCOLESTR, LPCOLESTR, IUnknown *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaDataSource*, ushort*, ushort*, IUnknown*, int> loadDataForExe;
+
+            [NativeTypeName("HRESULT (IStream *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaDataSource*, IStream*, int> loadDataFromIStream;
+
+            [NativeTypeName("HRESULT (IDiaSession **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaDataSource*, IDiaSession**, int> openSession;
+
+            [NativeTypeName("HRESULT (LPCOLESTR, LPCOLESTR, DWORD, BYTE *, IUnknown *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaDataSource*, ushort*, ushort*, uint, byte*, IUnknown*, int> loadDataFromCodeViewInfo;
+
+            [NativeTypeName("HRESULT (LPCOLESTR, LPCOLESTR, DWORD, DWORD, DWORD, DWORD, BYTE *, IUnknown *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaDataSource*, ushort*, ushort*, uint, uint, uint, uint, byte*, IUnknown*, int> loadDataFromMiscInfo;
         }
     }
 }

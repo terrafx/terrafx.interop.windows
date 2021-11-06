@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("87CE5498-68D6-44E5-9215-6DA47EF883D8")]
     [NativeTypeName("struct ISimpleAudioVolume : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct ISimpleAudioVolume
+    public unsafe partial struct ISimpleAudioVolume : ISimpleAudioVolume.Interface
     {
         public void** lpVtbl;
 
@@ -65,6 +65,45 @@ namespace TerraFX.Interop
         public HRESULT GetMute(BOOL* pbMute)
         {
             return ((delegate* unmanaged<ISimpleAudioVolume*, BOOL*, int>)(lpVtbl[6]))((ISimpleAudioVolume*)Unsafe.AsPointer(ref this), pbMute);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT SetMasterVolume(float fLevel, [NativeTypeName("LPCGUID")] Guid* EventContext);
+
+            [VtblIndex(4)]
+            HRESULT GetMasterVolume(float* pfLevel);
+
+            [VtblIndex(5)]
+            HRESULT SetMute([NativeTypeName("const BOOL")] BOOL bMute, [NativeTypeName("LPCGUID")] Guid* EventContext);
+
+            [VtblIndex(6)]
+            HRESULT GetMute(BOOL* pbMute);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISimpleAudioVolume*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ISimpleAudioVolume*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ISimpleAudioVolume*, uint> Release;
+
+            [NativeTypeName("HRESULT (float, LPCGUID) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISimpleAudioVolume*, float, Guid*, int> SetMasterVolume;
+
+            [NativeTypeName("HRESULT (float *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISimpleAudioVolume*, float*, int> GetMasterVolume;
+
+            [NativeTypeName("HRESULT (const BOOL, LPCGUID) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISimpleAudioVolume*, BOOL, Guid*, int> SetMute;
+
+            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISimpleAudioVolume*, BOOL*, int> GetMute;
         }
     }
 }

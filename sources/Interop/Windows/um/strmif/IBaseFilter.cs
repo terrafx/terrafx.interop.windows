@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("56A86895-0AD4-11CE-B03A-0020AF0BA770")]
     [NativeTypeName("struct IBaseFilter : IMediaFilter")]
     [NativeInheritance("IMediaFilter")]
-    public unsafe partial struct IBaseFilter
+    public unsafe partial struct IBaseFilter : IBaseFilter.Interface
     {
         public void** lpVtbl;
 
@@ -121,6 +121,72 @@ namespace TerraFX.Interop
         public HRESULT QueryVendorInfo([NativeTypeName("LPWSTR *")] ushort** pVendorInfo)
         {
             return ((delegate* unmanaged<IBaseFilter*, ushort**, int>)(lpVtbl[14]))((IBaseFilter*)Unsafe.AsPointer(ref this), pVendorInfo);
+        }
+
+        public interface Interface : IMediaFilter.Interface
+        {
+            [VtblIndex(10)]
+            HRESULT EnumPins(IEnumPins** ppEnum);
+
+            [VtblIndex(11)]
+            HRESULT FindPin([NativeTypeName("LPCWSTR")] ushort* Id, IPin** ppPin);
+
+            [VtblIndex(12)]
+            HRESULT QueryFilterInfo(FILTER_INFO* pInfo);
+
+            [VtblIndex(13)]
+            HRESULT JoinFilterGraph(IFilterGraph* pGraph, [NativeTypeName("LPCWSTR")] ushort* pName);
+
+            [VtblIndex(14)]
+            HRESULT QueryVendorInfo([NativeTypeName("LPWSTR *")] ushort** pVendorInfo);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IBaseFilter*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IBaseFilter*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IBaseFilter*, uint> Release;
+
+            [NativeTypeName("HRESULT (CLSID *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IBaseFilter*, Guid*, int> GetClassID;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IBaseFilter*, int> Stop;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IBaseFilter*, int> Pause;
+
+            [NativeTypeName("HRESULT (REFERENCE_TIME) __attribute__((stdcall))")]
+            public delegate* unmanaged<IBaseFilter*, long, int> Run;
+
+            [NativeTypeName("HRESULT (DWORD, FILTER_STATE *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IBaseFilter*, uint, FILTER_STATE*, int> GetState;
+
+            [NativeTypeName("HRESULT (IReferenceClock *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IBaseFilter*, IReferenceClock*, int> SetSyncSource;
+
+            [NativeTypeName("HRESULT (IReferenceClock **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IBaseFilter*, IReferenceClock**, int> GetSyncSource;
+
+            [NativeTypeName("HRESULT (IEnumPins **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IBaseFilter*, IEnumPins**, int> EnumPins;
+
+            [NativeTypeName("HRESULT (LPCWSTR, IPin **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IBaseFilter*, ushort*, IPin**, int> FindPin;
+
+            [NativeTypeName("HRESULT (FILTER_INFO *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IBaseFilter*, FILTER_INFO*, int> QueryFilterInfo;
+
+            [NativeTypeName("HRESULT (IFilterGraph *, LPCWSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IBaseFilter*, IFilterGraph*, ushort*, int> JoinFilterGraph;
+
+            [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IBaseFilter*, ushort**, int> QueryVendorInfo;
         }
     }
 }

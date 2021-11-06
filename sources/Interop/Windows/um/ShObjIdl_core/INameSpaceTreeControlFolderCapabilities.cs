@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("E9701183-E6B3-4FF2-8568-813615FEC7BE")]
     [NativeTypeName("struct INameSpaceTreeControlFolderCapabilities : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct INameSpaceTreeControlFolderCapabilities
+    public unsafe partial struct INameSpaceTreeControlFolderCapabilities : INameSpaceTreeControlFolderCapabilities.Interface
     {
         public void** lpVtbl;
 
@@ -44,6 +44,27 @@ namespace TerraFX.Interop
         public HRESULT GetFolderCapabilities(NSTCFOLDERCAPABILITIES nfcMask, NSTCFOLDERCAPABILITIES* pnfcValue)
         {
             return ((delegate* unmanaged<INameSpaceTreeControlFolderCapabilities*, NSTCFOLDERCAPABILITIES, NSTCFOLDERCAPABILITIES*, int>)(lpVtbl[3]))((INameSpaceTreeControlFolderCapabilities*)Unsafe.AsPointer(ref this), nfcMask, pnfcValue);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetFolderCapabilities(NSTCFOLDERCAPABILITIES nfcMask, NSTCFOLDERCAPABILITIES* pnfcValue);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<INameSpaceTreeControlFolderCapabilities*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<INameSpaceTreeControlFolderCapabilities*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<INameSpaceTreeControlFolderCapabilities*, uint> Release;
+
+            [NativeTypeName("HRESULT (NSTCFOLDERCAPABILITIES, NSTCFOLDERCAPABILITIES *) __attribute__((stdcall))")]
+            public delegate* unmanaged<INameSpaceTreeControlFolderCapabilities*, NSTCFOLDERCAPABILITIES, NSTCFOLDERCAPABILITIES*, int> GetFolderCapabilities;
         }
     }
 }

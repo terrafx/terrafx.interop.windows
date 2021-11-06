@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("766C8FFB-5FDB-4FEA-A28D-B912996F51BD")]
     [NativeTypeName("struct IMFPMediaPlayerCallback : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IMFPMediaPlayerCallback
+    public unsafe partial struct IMFPMediaPlayerCallback : IMFPMediaPlayerCallback.Interface
     {
         public void** lpVtbl;
 
@@ -44,6 +44,27 @@ namespace TerraFX.Interop
         public void OnMediaPlayerEvent(MFP_EVENT_HEADER* pEventHeader)
         {
             ((delegate* unmanaged<IMFPMediaPlayerCallback*, MFP_EVENT_HEADER*, void>)(lpVtbl[3]))((IMFPMediaPlayerCallback*)Unsafe.AsPointer(ref this), pEventHeader);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            void OnMediaPlayerEvent(MFP_EVENT_HEADER* pEventHeader);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFPMediaPlayerCallback*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFPMediaPlayerCallback*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFPMediaPlayerCallback*, uint> Release;
+
+            [NativeTypeName("void (MFP_EVENT_HEADER *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFPMediaPlayerCallback*, MFP_EVENT_HEADER*, void> OnMediaPlayerEvent;
         }
     }
 }

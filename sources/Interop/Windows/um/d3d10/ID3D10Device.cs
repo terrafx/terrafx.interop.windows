@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("9B7E4C0F-342C-4106-A19F-4F2704F689F0")]
     [NativeTypeName("struct ID3D10Device : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct ID3D10Device
+    public unsafe partial struct ID3D10Device : ID3D10Device.Interface
     {
         public void** lpVtbl;
 
@@ -702,6 +702,591 @@ namespace TerraFX.Interop
         public void GetTextFilterSize(uint* pWidth, uint* pHeight)
         {
             ((delegate* unmanaged<ID3D10Device*, uint*, uint*, void>)(lpVtbl[97]))((ID3D10Device*)Unsafe.AsPointer(ref this), pWidth, pHeight);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            void VSSetConstantBuffers(uint StartSlot, uint NumBuffers, [NativeTypeName("ID3D10Buffer *const *")] ID3D10Buffer** ppConstantBuffers);
+
+            [VtblIndex(4)]
+            void PSSetShaderResources(uint StartSlot, uint NumViews, [NativeTypeName("ID3D10ShaderResourceView *const *")] ID3D10ShaderResourceView** ppShaderResourceViews);
+
+            [VtblIndex(5)]
+            void PSSetShader(ID3D10PixelShader* pPixelShader);
+
+            [VtblIndex(6)]
+            void PSSetSamplers(uint StartSlot, uint NumSamplers, [NativeTypeName("ID3D10SamplerState *const *")] ID3D10SamplerState** ppSamplers);
+
+            [VtblIndex(7)]
+            void VSSetShader(ID3D10VertexShader* pVertexShader);
+
+            [VtblIndex(8)]
+            void DrawIndexed(uint IndexCount, uint StartIndexLocation, int BaseVertexLocation);
+
+            [VtblIndex(9)]
+            void Draw(uint VertexCount, uint StartVertexLocation);
+
+            [VtblIndex(10)]
+            void PSSetConstantBuffers(uint StartSlot, uint NumBuffers, [NativeTypeName("ID3D10Buffer *const *")] ID3D10Buffer** ppConstantBuffers);
+
+            [VtblIndex(11)]
+            void IASetInputLayout(ID3D10InputLayout* pInputLayout);
+
+            [VtblIndex(12)]
+            void IASetVertexBuffers(uint StartSlot, uint NumBuffers, [NativeTypeName("ID3D10Buffer *const *")] ID3D10Buffer** ppVertexBuffers, [NativeTypeName("const UINT *")] uint* pStrides, [NativeTypeName("const UINT *")] uint* pOffsets);
+
+            [VtblIndex(13)]
+            void IASetIndexBuffer(ID3D10Buffer* pIndexBuffer, DXGI_FORMAT Format, uint Offset);
+
+            [VtblIndex(14)]
+            void DrawIndexedInstanced(uint IndexCountPerInstance, uint InstanceCount, uint StartIndexLocation, int BaseVertexLocation, uint StartInstanceLocation);
+
+            [VtblIndex(15)]
+            void DrawInstanced(uint VertexCountPerInstance, uint InstanceCount, uint StartVertexLocation, uint StartInstanceLocation);
+
+            [VtblIndex(16)]
+            void GSSetConstantBuffers(uint StartSlot, uint NumBuffers, [NativeTypeName("ID3D10Buffer *const *")] ID3D10Buffer** ppConstantBuffers);
+
+            [VtblIndex(17)]
+            void GSSetShader(ID3D10GeometryShader* pShader);
+
+            [VtblIndex(18)]
+            void IASetPrimitiveTopology([NativeTypeName("D3D10_PRIMITIVE_TOPOLOGY")] D3D_PRIMITIVE_TOPOLOGY Topology);
+
+            [VtblIndex(19)]
+            void VSSetShaderResources(uint StartSlot, uint NumViews, [NativeTypeName("ID3D10ShaderResourceView *const *")] ID3D10ShaderResourceView** ppShaderResourceViews);
+
+            [VtblIndex(20)]
+            void VSSetSamplers(uint StartSlot, uint NumSamplers, [NativeTypeName("ID3D10SamplerState *const *")] ID3D10SamplerState** ppSamplers);
+
+            [VtblIndex(21)]
+            void SetPredication(ID3D10Predicate* pPredicate, BOOL PredicateValue);
+
+            [VtblIndex(22)]
+            void GSSetShaderResources(uint StartSlot, uint NumViews, [NativeTypeName("ID3D10ShaderResourceView *const *")] ID3D10ShaderResourceView** ppShaderResourceViews);
+
+            [VtblIndex(23)]
+            void GSSetSamplers(uint StartSlot, uint NumSamplers, [NativeTypeName("ID3D10SamplerState *const *")] ID3D10SamplerState** ppSamplers);
+
+            [VtblIndex(24)]
+            void OMSetRenderTargets(uint NumViews, [NativeTypeName("ID3D10RenderTargetView *const *")] ID3D10RenderTargetView** ppRenderTargetViews, ID3D10DepthStencilView* pDepthStencilView);
+
+            [VtblIndex(25)]
+            void OMSetBlendState(ID3D10BlendState* pBlendState, [NativeTypeName("const FLOAT [4]")] float* BlendFactor, uint SampleMask);
+
+            [VtblIndex(26)]
+            void OMSetDepthStencilState(ID3D10DepthStencilState* pDepthStencilState, uint StencilRef);
+
+            [VtblIndex(27)]
+            void SOSetTargets(uint NumBuffers, [NativeTypeName("ID3D10Buffer *const *")] ID3D10Buffer** ppSOTargets, [NativeTypeName("const UINT *")] uint* pOffsets);
+
+            [VtblIndex(28)]
+            void DrawAuto();
+
+            [VtblIndex(29)]
+            void RSSetState(ID3D10RasterizerState* pRasterizerState);
+
+            [VtblIndex(30)]
+            void RSSetViewports(uint NumViewports, [NativeTypeName("const D3D10_VIEWPORT *")] D3D10_VIEWPORT* pViewports);
+
+            [VtblIndex(31)]
+            void RSSetScissorRects(uint NumRects, [NativeTypeName("const D3D10_RECT *")] RECT* pRects);
+
+            [VtblIndex(32)]
+            void CopySubresourceRegion(ID3D10Resource* pDstResource, uint DstSubresource, uint DstX, uint DstY, uint DstZ, ID3D10Resource* pSrcResource, uint SrcSubresource, [NativeTypeName("const D3D10_BOX *")] D3D10_BOX* pSrcBox);
+
+            [VtblIndex(33)]
+            void CopyResource(ID3D10Resource* pDstResource, ID3D10Resource* pSrcResource);
+
+            [VtblIndex(34)]
+            void UpdateSubresource(ID3D10Resource* pDstResource, uint DstSubresource, [NativeTypeName("const D3D10_BOX *")] D3D10_BOX* pDstBox, [NativeTypeName("const void *")] void* pSrcData, uint SrcRowPitch, uint SrcDepthPitch);
+
+            [VtblIndex(35)]
+            void ClearRenderTargetView(ID3D10RenderTargetView* pRenderTargetView, [NativeTypeName("const FLOAT [4]")] float* ColorRGBA);
+
+            [VtblIndex(36)]
+            void ClearDepthStencilView(ID3D10DepthStencilView* pDepthStencilView, uint ClearFlags, float Depth, [NativeTypeName("UINT8")] byte Stencil);
+
+            [VtblIndex(37)]
+            void GenerateMips(ID3D10ShaderResourceView* pShaderResourceView);
+
+            [VtblIndex(38)]
+            void ResolveSubresource(ID3D10Resource* pDstResource, uint DstSubresource, ID3D10Resource* pSrcResource, uint SrcSubresource, DXGI_FORMAT Format);
+
+            [VtblIndex(39)]
+            void VSGetConstantBuffers(uint StartSlot, uint NumBuffers, ID3D10Buffer** ppConstantBuffers);
+
+            [VtblIndex(40)]
+            void PSGetShaderResources(uint StartSlot, uint NumViews, ID3D10ShaderResourceView** ppShaderResourceViews);
+
+            [VtblIndex(41)]
+            void PSGetShader(ID3D10PixelShader** ppPixelShader);
+
+            [VtblIndex(42)]
+            void PSGetSamplers(uint StartSlot, uint NumSamplers, ID3D10SamplerState** ppSamplers);
+
+            [VtblIndex(43)]
+            void VSGetShader(ID3D10VertexShader** ppVertexShader);
+
+            [VtblIndex(44)]
+            void PSGetConstantBuffers(uint StartSlot, uint NumBuffers, ID3D10Buffer** ppConstantBuffers);
+
+            [VtblIndex(45)]
+            void IAGetInputLayout(ID3D10InputLayout** ppInputLayout);
+
+            [VtblIndex(46)]
+            void IAGetVertexBuffers(uint StartSlot, uint NumBuffers, ID3D10Buffer** ppVertexBuffers, uint* pStrides, uint* pOffsets);
+
+            [VtblIndex(47)]
+            void IAGetIndexBuffer(ID3D10Buffer** pIndexBuffer, DXGI_FORMAT* Format, uint* Offset);
+
+            [VtblIndex(48)]
+            void GSGetConstantBuffers(uint StartSlot, uint NumBuffers, ID3D10Buffer** ppConstantBuffers);
+
+            [VtblIndex(49)]
+            void GSGetShader(ID3D10GeometryShader** ppGeometryShader);
+
+            [VtblIndex(50)]
+            void IAGetPrimitiveTopology([NativeTypeName("D3D10_PRIMITIVE_TOPOLOGY *")] D3D_PRIMITIVE_TOPOLOGY* pTopology);
+
+            [VtblIndex(51)]
+            void VSGetShaderResources(uint StartSlot, uint NumViews, ID3D10ShaderResourceView** ppShaderResourceViews);
+
+            [VtblIndex(52)]
+            void VSGetSamplers(uint StartSlot, uint NumSamplers, ID3D10SamplerState** ppSamplers);
+
+            [VtblIndex(53)]
+            void GetPredication(ID3D10Predicate** ppPredicate, BOOL* pPredicateValue);
+
+            [VtblIndex(54)]
+            void GSGetShaderResources(uint StartSlot, uint NumViews, ID3D10ShaderResourceView** ppShaderResourceViews);
+
+            [VtblIndex(55)]
+            void GSGetSamplers(uint StartSlot, uint NumSamplers, ID3D10SamplerState** ppSamplers);
+
+            [VtblIndex(56)]
+            void OMGetRenderTargets(uint NumViews, ID3D10RenderTargetView** ppRenderTargetViews, ID3D10DepthStencilView** ppDepthStencilView);
+
+            [VtblIndex(57)]
+            void OMGetBlendState(ID3D10BlendState** ppBlendState, [NativeTypeName("FLOAT [4]")] float* BlendFactor, uint* pSampleMask);
+
+            [VtblIndex(58)]
+            void OMGetDepthStencilState(ID3D10DepthStencilState** ppDepthStencilState, uint* pStencilRef);
+
+            [VtblIndex(59)]
+            void SOGetTargets(uint NumBuffers, ID3D10Buffer** ppSOTargets, uint* pOffsets);
+
+            [VtblIndex(60)]
+            void RSGetState(ID3D10RasterizerState** ppRasterizerState);
+
+            [VtblIndex(61)]
+            void RSGetViewports(uint* NumViewports, D3D10_VIEWPORT* pViewports);
+
+            [VtblIndex(62)]
+            void RSGetScissorRects(uint* NumRects, [NativeTypeName("D3D10_RECT *")] RECT* pRects);
+
+            [VtblIndex(63)]
+            HRESULT GetDeviceRemovedReason();
+
+            [VtblIndex(64)]
+            HRESULT SetExceptionMode(uint RaiseFlags);
+
+            [VtblIndex(65)]
+            uint GetExceptionMode();
+
+            [VtblIndex(66)]
+            HRESULT GetPrivateData([NativeTypeName("const GUID &")] Guid* guid, uint* pDataSize, void* pData);
+
+            [VtblIndex(67)]
+            HRESULT SetPrivateData([NativeTypeName("const GUID &")] Guid* guid, uint DataSize, [NativeTypeName("const void *")] void* pData);
+
+            [VtblIndex(68)]
+            HRESULT SetPrivateDataInterface([NativeTypeName("const GUID &")] Guid* guid, [NativeTypeName("const IUnknown *")] IUnknown* pData);
+
+            [VtblIndex(69)]
+            void ClearState();
+
+            [VtblIndex(70)]
+            void Flush();
+
+            [VtblIndex(71)]
+            HRESULT CreateBuffer([NativeTypeName("const D3D10_BUFFER_DESC *")] D3D10_BUFFER_DESC* pDesc, [NativeTypeName("const D3D10_SUBRESOURCE_DATA *")] D3D10_SUBRESOURCE_DATA* pInitialData, ID3D10Buffer** ppBuffer);
+
+            [VtblIndex(72)]
+            HRESULT CreateTexture1D([NativeTypeName("const D3D10_TEXTURE1D_DESC *")] D3D10_TEXTURE1D_DESC* pDesc, [NativeTypeName("const D3D10_SUBRESOURCE_DATA *")] D3D10_SUBRESOURCE_DATA* pInitialData, ID3D10Texture1D** ppTexture1D);
+
+            [VtblIndex(73)]
+            HRESULT CreateTexture2D([NativeTypeName("const D3D10_TEXTURE2D_DESC *")] D3D10_TEXTURE2D_DESC* pDesc, [NativeTypeName("const D3D10_SUBRESOURCE_DATA *")] D3D10_SUBRESOURCE_DATA* pInitialData, ID3D10Texture2D** ppTexture2D);
+
+            [VtblIndex(74)]
+            HRESULT CreateTexture3D([NativeTypeName("const D3D10_TEXTURE3D_DESC *")] D3D10_TEXTURE3D_DESC* pDesc, [NativeTypeName("const D3D10_SUBRESOURCE_DATA *")] D3D10_SUBRESOURCE_DATA* pInitialData, ID3D10Texture3D** ppTexture3D);
+
+            [VtblIndex(75)]
+            HRESULT CreateShaderResourceView(ID3D10Resource* pResource, [NativeTypeName("const D3D10_SHADER_RESOURCE_VIEW_DESC *")] D3D10_SHADER_RESOURCE_VIEW_DESC* pDesc, ID3D10ShaderResourceView** ppSRView);
+
+            [VtblIndex(76)]
+            HRESULT CreateRenderTargetView(ID3D10Resource* pResource, [NativeTypeName("const D3D10_RENDER_TARGET_VIEW_DESC *")] D3D10_RENDER_TARGET_VIEW_DESC* pDesc, ID3D10RenderTargetView** ppRTView);
+
+            [VtblIndex(77)]
+            HRESULT CreateDepthStencilView(ID3D10Resource* pResource, [NativeTypeName("const D3D10_DEPTH_STENCIL_VIEW_DESC *")] D3D10_DEPTH_STENCIL_VIEW_DESC* pDesc, ID3D10DepthStencilView** ppDepthStencilView);
+
+            [VtblIndex(78)]
+            HRESULT CreateInputLayout([NativeTypeName("const D3D10_INPUT_ELEMENT_DESC *")] D3D10_INPUT_ELEMENT_DESC* pInputElementDescs, uint NumElements, [NativeTypeName("const void *")] void* pShaderBytecodeWithInputSignature, [NativeTypeName("SIZE_T")] nuint BytecodeLength, ID3D10InputLayout** ppInputLayout);
+
+            [VtblIndex(79)]
+            HRESULT CreateVertexShader([NativeTypeName("const void *")] void* pShaderBytecode, [NativeTypeName("SIZE_T")] nuint BytecodeLength, ID3D10VertexShader** ppVertexShader);
+
+            [VtblIndex(80)]
+            HRESULT CreateGeometryShader([NativeTypeName("const void *")] void* pShaderBytecode, [NativeTypeName("SIZE_T")] nuint BytecodeLength, ID3D10GeometryShader** ppGeometryShader);
+
+            [VtblIndex(81)]
+            HRESULT CreateGeometryShaderWithStreamOutput([NativeTypeName("const void *")] void* pShaderBytecode, [NativeTypeName("SIZE_T")] nuint BytecodeLength, [NativeTypeName("const D3D10_SO_DECLARATION_ENTRY *")] D3D10_SO_DECLARATION_ENTRY* pSODeclaration, uint NumEntries, uint OutputStreamStride, ID3D10GeometryShader** ppGeometryShader);
+
+            [VtblIndex(82)]
+            HRESULT CreatePixelShader([NativeTypeName("const void *")] void* pShaderBytecode, [NativeTypeName("SIZE_T")] nuint BytecodeLength, ID3D10PixelShader** ppPixelShader);
+
+            [VtblIndex(83)]
+            HRESULT CreateBlendState([NativeTypeName("const D3D10_BLEND_DESC *")] D3D10_BLEND_DESC* pBlendStateDesc, ID3D10BlendState** ppBlendState);
+
+            [VtblIndex(84)]
+            HRESULT CreateDepthStencilState([NativeTypeName("const D3D10_DEPTH_STENCIL_DESC *")] D3D10_DEPTH_STENCIL_DESC* pDepthStencilDesc, ID3D10DepthStencilState** ppDepthStencilState);
+
+            [VtblIndex(85)]
+            HRESULT CreateRasterizerState([NativeTypeName("const D3D10_RASTERIZER_DESC *")] D3D10_RASTERIZER_DESC* pRasterizerDesc, ID3D10RasterizerState** ppRasterizerState);
+
+            [VtblIndex(86)]
+            HRESULT CreateSamplerState([NativeTypeName("const D3D10_SAMPLER_DESC *")] D3D10_SAMPLER_DESC* pSamplerDesc, ID3D10SamplerState** ppSamplerState);
+
+            [VtblIndex(87)]
+            HRESULT CreateQuery([NativeTypeName("const D3D10_QUERY_DESC *")] D3D10_QUERY_DESC* pQueryDesc, ID3D10Query** ppQuery);
+
+            [VtblIndex(88)]
+            HRESULT CreatePredicate([NativeTypeName("const D3D10_QUERY_DESC *")] D3D10_QUERY_DESC* pPredicateDesc, ID3D10Predicate** ppPredicate);
+
+            [VtblIndex(89)]
+            HRESULT CreateCounter([NativeTypeName("const D3D10_COUNTER_DESC *")] D3D10_COUNTER_DESC* pCounterDesc, ID3D10Counter** ppCounter);
+
+            [VtblIndex(90)]
+            HRESULT CheckFormatSupport(DXGI_FORMAT Format, uint* pFormatSupport);
+
+            [VtblIndex(91)]
+            HRESULT CheckMultisampleQualityLevels(DXGI_FORMAT Format, uint SampleCount, uint* pNumQualityLevels);
+
+            [VtblIndex(92)]
+            void CheckCounterInfo(D3D10_COUNTER_INFO* pCounterInfo);
+
+            [VtblIndex(93)]
+            HRESULT CheckCounter([NativeTypeName("const D3D10_COUNTER_DESC *")] D3D10_COUNTER_DESC* pDesc, D3D10_COUNTER_TYPE* pType, uint* pActiveCounters, [NativeTypeName("LPSTR")] sbyte* szName, uint* pNameLength, [NativeTypeName("LPSTR")] sbyte* szUnits, uint* pUnitsLength, [NativeTypeName("LPSTR")] sbyte* szDescription, uint* pDescriptionLength);
+
+            [VtblIndex(94)]
+            uint GetCreationFlags();
+
+            [VtblIndex(95)]
+            HRESULT OpenSharedResource(HANDLE hResource, [NativeTypeName("const IID &")] Guid* ReturnedInterface, void** ppResource);
+
+            [VtblIndex(96)]
+            void SetTextFilterSize(uint Width, uint Height);
+
+            [VtblIndex(97)]
+            void GetTextFilterSize(uint* pWidth, uint* pHeight);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D10Device*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D10Device*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D10Device*, uint> Release;
+
+            [NativeTypeName("void (UINT, UINT, ID3D10Buffer *const *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D10Device*, uint, uint, ID3D10Buffer**, void> VSSetConstantBuffers;
+
+            [NativeTypeName("void (UINT, UINT, ID3D10ShaderResourceView *const *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D10Device*, uint, uint, ID3D10ShaderResourceView**, void> PSSetShaderResources;
+
+            [NativeTypeName("void (ID3D10PixelShader *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D10Device*, ID3D10PixelShader*, void> PSSetShader;
+
+            [NativeTypeName("void (UINT, UINT, ID3D10SamplerState *const *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D10Device*, uint, uint, ID3D10SamplerState**, void> PSSetSamplers;
+
+            [NativeTypeName("void (ID3D10VertexShader *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D10Device*, ID3D10VertexShader*, void> VSSetShader;
+
+            [NativeTypeName("void (UINT, UINT, INT) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D10Device*, uint, uint, int, void> DrawIndexed;
+
+            [NativeTypeName("void (UINT, UINT) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D10Device*, uint, uint, void> Draw;
+
+            [NativeTypeName("void (UINT, UINT, ID3D10Buffer *const *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D10Device*, uint, uint, ID3D10Buffer**, void> PSSetConstantBuffers;
+
+            [NativeTypeName("void (ID3D10InputLayout *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D10Device*, ID3D10InputLayout*, void> IASetInputLayout;
+
+            [NativeTypeName("void (UINT, UINT, ID3D10Buffer *const *, const UINT *, const UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D10Device*, uint, uint, ID3D10Buffer**, uint*, uint*, void> IASetVertexBuffers;
+
+            [NativeTypeName("void (ID3D10Buffer *, DXGI_FORMAT, UINT) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D10Device*, ID3D10Buffer*, DXGI_FORMAT, uint, void> IASetIndexBuffer;
+
+            [NativeTypeName("void (UINT, UINT, UINT, INT, UINT) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D10Device*, uint, uint, uint, int, uint, void> DrawIndexedInstanced;
+
+            [NativeTypeName("void (UINT, UINT, UINT, UINT) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D10Device*, uint, uint, uint, uint, void> DrawInstanced;
+
+            [NativeTypeName("void (UINT, UINT, ID3D10Buffer *const *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D10Device*, uint, uint, ID3D10Buffer**, void> GSSetConstantBuffers;
+
+            [NativeTypeName("void (ID3D10GeometryShader *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D10Device*, ID3D10GeometryShader*, void> GSSetShader;
+
+            [NativeTypeName("void (D3D10_PRIMITIVE_TOPOLOGY) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D10Device*, D3D_PRIMITIVE_TOPOLOGY, void> IASetPrimitiveTopology;
+
+            [NativeTypeName("void (UINT, UINT, ID3D10ShaderResourceView *const *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D10Device*, uint, uint, ID3D10ShaderResourceView**, void> VSSetShaderResources;
+
+            [NativeTypeName("void (UINT, UINT, ID3D10SamplerState *const *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D10Device*, uint, uint, ID3D10SamplerState**, void> VSSetSamplers;
+
+            [NativeTypeName("void (ID3D10Predicate *, BOOL) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D10Device*, ID3D10Predicate*, BOOL, void> SetPredication;
+
+            [NativeTypeName("void (UINT, UINT, ID3D10ShaderResourceView *const *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D10Device*, uint, uint, ID3D10ShaderResourceView**, void> GSSetShaderResources;
+
+            [NativeTypeName("void (UINT, UINT, ID3D10SamplerState *const *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D10Device*, uint, uint, ID3D10SamplerState**, void> GSSetSamplers;
+
+            [NativeTypeName("void (UINT, ID3D10RenderTargetView *const *, ID3D10DepthStencilView *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D10Device*, uint, ID3D10RenderTargetView**, ID3D10DepthStencilView*, void> OMSetRenderTargets;
+
+            [NativeTypeName("void (ID3D10BlendState *, const FLOAT *, UINT) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D10Device*, ID3D10BlendState*, float*, uint, void> OMSetBlendState;
+
+            [NativeTypeName("void (ID3D10DepthStencilState *, UINT) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D10Device*, ID3D10DepthStencilState*, uint, void> OMSetDepthStencilState;
+
+            [NativeTypeName("void (UINT, ID3D10Buffer *const *, const UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D10Device*, uint, ID3D10Buffer**, uint*, void> SOSetTargets;
+
+            [NativeTypeName("void () __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D10Device*, void> DrawAuto;
+
+            [NativeTypeName("void (ID3D10RasterizerState *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D10Device*, ID3D10RasterizerState*, void> RSSetState;
+
+            [NativeTypeName("void (UINT, const D3D10_VIEWPORT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D10Device*, uint, D3D10_VIEWPORT*, void> RSSetViewports;
+
+            [NativeTypeName("void (UINT, const D3D10_RECT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D10Device*, uint, RECT*, void> RSSetScissorRects;
+
+            [NativeTypeName("void (ID3D10Resource *, UINT, UINT, UINT, UINT, ID3D10Resource *, UINT, const D3D10_BOX *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D10Device*, ID3D10Resource*, uint, uint, uint, uint, ID3D10Resource*, uint, D3D10_BOX*, void> CopySubresourceRegion;
+
+            [NativeTypeName("void (ID3D10Resource *, ID3D10Resource *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D10Device*, ID3D10Resource*, ID3D10Resource*, void> CopyResource;
+
+            [NativeTypeName("void (ID3D10Resource *, UINT, const D3D10_BOX *, const void *, UINT, UINT) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D10Device*, ID3D10Resource*, uint, D3D10_BOX*, void*, uint, uint, void> UpdateSubresource;
+
+            [NativeTypeName("void (ID3D10RenderTargetView *, const FLOAT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D10Device*, ID3D10RenderTargetView*, float*, void> ClearRenderTargetView;
+
+            [NativeTypeName("void (ID3D10DepthStencilView *, UINT, FLOAT, UINT8) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D10Device*, ID3D10DepthStencilView*, uint, float, byte, void> ClearDepthStencilView;
+
+            [NativeTypeName("void (ID3D10ShaderResourceView *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D10Device*, ID3D10ShaderResourceView*, void> GenerateMips;
+
+            [NativeTypeName("void (ID3D10Resource *, UINT, ID3D10Resource *, UINT, DXGI_FORMAT) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D10Device*, ID3D10Resource*, uint, ID3D10Resource*, uint, DXGI_FORMAT, void> ResolveSubresource;
+
+            [NativeTypeName("void (UINT, UINT, ID3D10Buffer **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D10Device*, uint, uint, ID3D10Buffer**, void> VSGetConstantBuffers;
+
+            [NativeTypeName("void (UINT, UINT, ID3D10ShaderResourceView **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D10Device*, uint, uint, ID3D10ShaderResourceView**, void> PSGetShaderResources;
+
+            [NativeTypeName("void (ID3D10PixelShader **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D10Device*, ID3D10PixelShader**, void> PSGetShader;
+
+            [NativeTypeName("void (UINT, UINT, ID3D10SamplerState **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D10Device*, uint, uint, ID3D10SamplerState**, void> PSGetSamplers;
+
+            [NativeTypeName("void (ID3D10VertexShader **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D10Device*, ID3D10VertexShader**, void> VSGetShader;
+
+            [NativeTypeName("void (UINT, UINT, ID3D10Buffer **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D10Device*, uint, uint, ID3D10Buffer**, void> PSGetConstantBuffers;
+
+            [NativeTypeName("void (ID3D10InputLayout **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D10Device*, ID3D10InputLayout**, void> IAGetInputLayout;
+
+            [NativeTypeName("void (UINT, UINT, ID3D10Buffer **, UINT *, UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D10Device*, uint, uint, ID3D10Buffer**, uint*, uint*, void> IAGetVertexBuffers;
+
+            [NativeTypeName("void (ID3D10Buffer **, DXGI_FORMAT *, UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D10Device*, ID3D10Buffer**, DXGI_FORMAT*, uint*, void> IAGetIndexBuffer;
+
+            [NativeTypeName("void (UINT, UINT, ID3D10Buffer **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D10Device*, uint, uint, ID3D10Buffer**, void> GSGetConstantBuffers;
+
+            [NativeTypeName("void (ID3D10GeometryShader **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D10Device*, ID3D10GeometryShader**, void> GSGetShader;
+
+            [NativeTypeName("void (D3D10_PRIMITIVE_TOPOLOGY *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D10Device*, D3D_PRIMITIVE_TOPOLOGY*, void> IAGetPrimitiveTopology;
+
+            [NativeTypeName("void (UINT, UINT, ID3D10ShaderResourceView **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D10Device*, uint, uint, ID3D10ShaderResourceView**, void> VSGetShaderResources;
+
+            [NativeTypeName("void (UINT, UINT, ID3D10SamplerState **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D10Device*, uint, uint, ID3D10SamplerState**, void> VSGetSamplers;
+
+            [NativeTypeName("void (ID3D10Predicate **, BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D10Device*, ID3D10Predicate**, BOOL*, void> GetPredication;
+
+            [NativeTypeName("void (UINT, UINT, ID3D10ShaderResourceView **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D10Device*, uint, uint, ID3D10ShaderResourceView**, void> GSGetShaderResources;
+
+            [NativeTypeName("void (UINT, UINT, ID3D10SamplerState **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D10Device*, uint, uint, ID3D10SamplerState**, void> GSGetSamplers;
+
+            [NativeTypeName("void (UINT, ID3D10RenderTargetView **, ID3D10DepthStencilView **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D10Device*, uint, ID3D10RenderTargetView**, ID3D10DepthStencilView**, void> OMGetRenderTargets;
+
+            [NativeTypeName("void (ID3D10BlendState **, FLOAT *, UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D10Device*, ID3D10BlendState**, float*, uint*, void> OMGetBlendState;
+
+            [NativeTypeName("void (ID3D10DepthStencilState **, UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D10Device*, ID3D10DepthStencilState**, uint*, void> OMGetDepthStencilState;
+
+            [NativeTypeName("void (UINT, ID3D10Buffer **, UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D10Device*, uint, ID3D10Buffer**, uint*, void> SOGetTargets;
+
+            [NativeTypeName("void (ID3D10RasterizerState **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D10Device*, ID3D10RasterizerState**, void> RSGetState;
+
+            [NativeTypeName("void (UINT *, D3D10_VIEWPORT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D10Device*, uint*, D3D10_VIEWPORT*, void> RSGetViewports;
+
+            [NativeTypeName("void (UINT *, D3D10_RECT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D10Device*, uint*, RECT*, void> RSGetScissorRects;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D10Device*, int> GetDeviceRemovedReason;
+
+            [NativeTypeName("HRESULT (UINT) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D10Device*, uint, int> SetExceptionMode;
+
+            [NativeTypeName("UINT () __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D10Device*, uint> GetExceptionMode;
+
+            [NativeTypeName("HRESULT (const GUID &, UINT *, void *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D10Device*, Guid*, uint*, void*, int> GetPrivateData;
+
+            [NativeTypeName("HRESULT (const GUID &, UINT, const void *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D10Device*, Guid*, uint, void*, int> SetPrivateData;
+
+            [NativeTypeName("HRESULT (const GUID &, const IUnknown *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D10Device*, Guid*, IUnknown*, int> SetPrivateDataInterface;
+
+            [NativeTypeName("void () __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D10Device*, void> ClearState;
+
+            [NativeTypeName("void () __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D10Device*, void> Flush;
+
+            [NativeTypeName("HRESULT (const D3D10_BUFFER_DESC *, const D3D10_SUBRESOURCE_DATA *, ID3D10Buffer **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D10Device*, D3D10_BUFFER_DESC*, D3D10_SUBRESOURCE_DATA*, ID3D10Buffer**, int> CreateBuffer;
+
+            [NativeTypeName("HRESULT (const D3D10_TEXTURE1D_DESC *, const D3D10_SUBRESOURCE_DATA *, ID3D10Texture1D **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D10Device*, D3D10_TEXTURE1D_DESC*, D3D10_SUBRESOURCE_DATA*, ID3D10Texture1D**, int> CreateTexture1D;
+
+            [NativeTypeName("HRESULT (const D3D10_TEXTURE2D_DESC *, const D3D10_SUBRESOURCE_DATA *, ID3D10Texture2D **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D10Device*, D3D10_TEXTURE2D_DESC*, D3D10_SUBRESOURCE_DATA*, ID3D10Texture2D**, int> CreateTexture2D;
+
+            [NativeTypeName("HRESULT (const D3D10_TEXTURE3D_DESC *, const D3D10_SUBRESOURCE_DATA *, ID3D10Texture3D **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D10Device*, D3D10_TEXTURE3D_DESC*, D3D10_SUBRESOURCE_DATA*, ID3D10Texture3D**, int> CreateTexture3D;
+
+            [NativeTypeName("HRESULT (ID3D10Resource *, const D3D10_SHADER_RESOURCE_VIEW_DESC *, ID3D10ShaderResourceView **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D10Device*, ID3D10Resource*, D3D10_SHADER_RESOURCE_VIEW_DESC*, ID3D10ShaderResourceView**, int> CreateShaderResourceView;
+
+            [NativeTypeName("HRESULT (ID3D10Resource *, const D3D10_RENDER_TARGET_VIEW_DESC *, ID3D10RenderTargetView **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D10Device*, ID3D10Resource*, D3D10_RENDER_TARGET_VIEW_DESC*, ID3D10RenderTargetView**, int> CreateRenderTargetView;
+
+            [NativeTypeName("HRESULT (ID3D10Resource *, const D3D10_DEPTH_STENCIL_VIEW_DESC *, ID3D10DepthStencilView **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D10Device*, ID3D10Resource*, D3D10_DEPTH_STENCIL_VIEW_DESC*, ID3D10DepthStencilView**, int> CreateDepthStencilView;
+
+            [NativeTypeName("HRESULT (const D3D10_INPUT_ELEMENT_DESC *, UINT, const void *, SIZE_T, ID3D10InputLayout **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D10Device*, D3D10_INPUT_ELEMENT_DESC*, uint, void*, nuint, ID3D10InputLayout**, int> CreateInputLayout;
+
+            [NativeTypeName("HRESULT (const void *, SIZE_T, ID3D10VertexShader **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D10Device*, void*, nuint, ID3D10VertexShader**, int> CreateVertexShader;
+
+            [NativeTypeName("HRESULT (const void *, SIZE_T, ID3D10GeometryShader **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D10Device*, void*, nuint, ID3D10GeometryShader**, int> CreateGeometryShader;
+
+            [NativeTypeName("HRESULT (const void *, SIZE_T, const D3D10_SO_DECLARATION_ENTRY *, UINT, UINT, ID3D10GeometryShader **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D10Device*, void*, nuint, D3D10_SO_DECLARATION_ENTRY*, uint, uint, ID3D10GeometryShader**, int> CreateGeometryShaderWithStreamOutput;
+
+            [NativeTypeName("HRESULT (const void *, SIZE_T, ID3D10PixelShader **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D10Device*, void*, nuint, ID3D10PixelShader**, int> CreatePixelShader;
+
+            [NativeTypeName("HRESULT (const D3D10_BLEND_DESC *, ID3D10BlendState **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D10Device*, D3D10_BLEND_DESC*, ID3D10BlendState**, int> CreateBlendState;
+
+            [NativeTypeName("HRESULT (const D3D10_DEPTH_STENCIL_DESC *, ID3D10DepthStencilState **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D10Device*, D3D10_DEPTH_STENCIL_DESC*, ID3D10DepthStencilState**, int> CreateDepthStencilState;
+
+            [NativeTypeName("HRESULT (const D3D10_RASTERIZER_DESC *, ID3D10RasterizerState **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D10Device*, D3D10_RASTERIZER_DESC*, ID3D10RasterizerState**, int> CreateRasterizerState;
+
+            [NativeTypeName("HRESULT (const D3D10_SAMPLER_DESC *, ID3D10SamplerState **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D10Device*, D3D10_SAMPLER_DESC*, ID3D10SamplerState**, int> CreateSamplerState;
+
+            [NativeTypeName("HRESULT (const D3D10_QUERY_DESC *, ID3D10Query **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D10Device*, D3D10_QUERY_DESC*, ID3D10Query**, int> CreateQuery;
+
+            [NativeTypeName("HRESULT (const D3D10_QUERY_DESC *, ID3D10Predicate **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D10Device*, D3D10_QUERY_DESC*, ID3D10Predicate**, int> CreatePredicate;
+
+            [NativeTypeName("HRESULT (const D3D10_COUNTER_DESC *, ID3D10Counter **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D10Device*, D3D10_COUNTER_DESC*, ID3D10Counter**, int> CreateCounter;
+
+            [NativeTypeName("HRESULT (DXGI_FORMAT, UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D10Device*, DXGI_FORMAT, uint*, int> CheckFormatSupport;
+
+            [NativeTypeName("HRESULT (DXGI_FORMAT, UINT, UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D10Device*, DXGI_FORMAT, uint, uint*, int> CheckMultisampleQualityLevels;
+
+            [NativeTypeName("void (D3D10_COUNTER_INFO *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D10Device*, D3D10_COUNTER_INFO*, void> CheckCounterInfo;
+
+            [NativeTypeName("HRESULT (const D3D10_COUNTER_DESC *, D3D10_COUNTER_TYPE *, UINT *, LPSTR, UINT *, LPSTR, UINT *, LPSTR, UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D10Device*, D3D10_COUNTER_DESC*, D3D10_COUNTER_TYPE*, uint*, sbyte*, uint*, sbyte*, uint*, sbyte*, uint*, int> CheckCounter;
+
+            [NativeTypeName("UINT () __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D10Device*, uint> GetCreationFlags;
+
+            [NativeTypeName("HRESULT (HANDLE, const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D10Device*, HANDLE, Guid*, void**, int> OpenSharedResource;
+
+            [NativeTypeName("void (UINT, UINT) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D10Device*, uint, uint, void> SetTextFilterSize;
+
+            [NativeTypeName("void (UINT *, UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D10Device*, uint*, uint*, void> GetTextFilterSize;
         }
     }
 }

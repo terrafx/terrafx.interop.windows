@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("D5F56A34-593B-101A-B569-08002B2DBF7A")]
     [NativeTypeName("struct IRpcProxyBuffer : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IRpcProxyBuffer
+    public unsafe partial struct IRpcProxyBuffer : IRpcProxyBuffer.Interface
     {
         public void** lpVtbl;
 
@@ -51,6 +51,33 @@ namespace TerraFX.Interop
         public void Disconnect()
         {
             ((delegate* unmanaged<IRpcProxyBuffer*, void>)(lpVtbl[4]))((IRpcProxyBuffer*)Unsafe.AsPointer(ref this));
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT Connect(IRpcChannelBuffer* pRpcChannelBuffer);
+
+            [VtblIndex(4)]
+            void Disconnect();
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IRpcProxyBuffer*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IRpcProxyBuffer*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IRpcProxyBuffer*, uint> Release;
+
+            [NativeTypeName("HRESULT (IRpcChannelBuffer *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IRpcProxyBuffer*, IRpcChannelBuffer*, int> Connect;
+
+            [NativeTypeName("void () __attribute__((stdcall))")]
+            public delegate* unmanaged<IRpcProxyBuffer*, void> Disconnect;
         }
     }
 }

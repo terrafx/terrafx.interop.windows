@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("3050F69A-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct IHTMLDocument4 : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct IHTMLDocument4
+    public unsafe partial struct IHTMLDocument4 : IHTMLDocument4.Interface
     {
         public void** lpVtbl;
 
@@ -163,6 +163,117 @@ namespace TerraFX.Interop
         public HRESULT get_URLUnencoded([NativeTypeName("BSTR *")] ushort** p)
         {
             return ((delegate* unmanaged<IHTMLDocument4*, ushort**, int>)(lpVtbl[20]))((IHTMLDocument4*)Unsafe.AsPointer(ref this), p);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT focus();
+
+            [VtblIndex(8)]
+            HRESULT hasFocus([NativeTypeName("VARIANT_BOOL *")] short* pfFocus);
+
+            [VtblIndex(9)]
+            HRESULT put_onselectionchange(VARIANT v);
+
+            [VtblIndex(10)]
+            HRESULT get_onselectionchange(VARIANT* p);
+
+            [VtblIndex(11)]
+            HRESULT get_namespaces(IDispatch** p);
+
+            [VtblIndex(12)]
+            HRESULT createDocumentFromUrl([NativeTypeName("BSTR")] ushort* bstrUrl, [NativeTypeName("BSTR")] ushort* bstrOptions, IHTMLDocument2** newDoc);
+
+            [VtblIndex(13)]
+            HRESULT put_media([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(14)]
+            HRESULT get_media([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(15)]
+            HRESULT createEventObject(VARIANT* pvarEventObject, IHTMLEventObj** ppEventObj);
+
+            [VtblIndex(16)]
+            HRESULT fireEvent([NativeTypeName("BSTR")] ushort* bstrEventName, VARIANT* pvarEventObject, [NativeTypeName("VARIANT_BOOL *")] short* pfCancelled);
+
+            [VtblIndex(17)]
+            HRESULT createRenderStyle([NativeTypeName("BSTR")] ushort* v, IHTMLRenderStyle** ppIHTMLRenderStyle);
+
+            [VtblIndex(18)]
+            HRESULT put_oncontrolselect(VARIANT v);
+
+            [VtblIndex(19)]
+            HRESULT get_oncontrolselect(VARIANT* p);
+
+            [VtblIndex(20)]
+            HRESULT get_URLUnencoded([NativeTypeName("BSTR *")] ushort** p);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLDocument4*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLDocument4*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLDocument4*, uint> Release;
+
+            [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLDocument4*, uint*, int> GetTypeInfoCount;
+
+            [NativeTypeName("HRESULT (UINT, LCID, ITypeInfo **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLDocument4*, uint, uint, ITypeInfo**, int> GetTypeInfo;
+
+            [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLDocument4*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+
+            [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLDocument4*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLDocument4*, int> focus;
+
+            [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLDocument4*, short*, int> hasFocus;
+
+            [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLDocument4*, VARIANT, int> put_onselectionchange;
+
+            [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLDocument4*, VARIANT*, int> get_onselectionchange;
+
+            [NativeTypeName("HRESULT (IDispatch **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLDocument4*, IDispatch**, int> get_namespaces;
+
+            [NativeTypeName("HRESULT (BSTR, BSTR, IHTMLDocument2 **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLDocument4*, ushort*, ushort*, IHTMLDocument2**, int> createDocumentFromUrl;
+
+            [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLDocument4*, ushort*, int> put_media;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLDocument4*, ushort**, int> get_media;
+
+            [NativeTypeName("HRESULT (VARIANT *, IHTMLEventObj **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLDocument4*, VARIANT*, IHTMLEventObj**, int> createEventObject;
+
+            [NativeTypeName("HRESULT (BSTR, VARIANT *, VARIANT_BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLDocument4*, ushort*, VARIANT*, short*, int> fireEvent;
+
+            [NativeTypeName("HRESULT (BSTR, IHTMLRenderStyle **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLDocument4*, ushort*, IHTMLRenderStyle**, int> createRenderStyle;
+
+            [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLDocument4*, VARIANT, int> put_oncontrolselect;
+
+            [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLDocument4*, VARIANT*, int> get_oncontrolselect;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLDocument4*, ushort**, int> get_URLUnencoded;
         }
     }
 }

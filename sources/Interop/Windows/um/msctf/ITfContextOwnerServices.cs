@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("B23EB630-3E1C-11D3-A745-0050040AB407")]
     [NativeTypeName("struct ITfContextOwnerServices : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct ITfContextOwnerServices
+    public unsafe partial struct ITfContextOwnerServices : ITfContextOwnerServices.Interface
     {
         public void** lpVtbl;
 
@@ -86,6 +86,63 @@ namespace TerraFX.Interop
         public HRESULT CreateRange([NativeTypeName("LONG")] int acpStart, [NativeTypeName("LONG")] int acpEnd, ITfRangeACP** ppRange)
         {
             return ((delegate* unmanaged<ITfContextOwnerServices*, int, int, ITfRangeACP**, int>)(lpVtbl[9]))((ITfContextOwnerServices*)Unsafe.AsPointer(ref this), acpStart, acpEnd, ppRange);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT OnLayoutChange();
+
+            [VtblIndex(4)]
+            HRESULT OnStatusChange([NativeTypeName("DWORD")] uint dwFlags);
+
+            [VtblIndex(5)]
+            HRESULT OnAttributeChange([NativeTypeName("const GUID &")] Guid* rguidAttribute);
+
+            [VtblIndex(6)]
+            HRESULT Serialize(ITfProperty* pProp, ITfRange* pRange, TF_PERSISTENT_PROPERTY_HEADER_ACP* pHdr, IStream* pStream);
+
+            [VtblIndex(7)]
+            HRESULT Unserialize(ITfProperty* pProp, [NativeTypeName("const TF_PERSISTENT_PROPERTY_HEADER_ACP *")] TF_PERSISTENT_PROPERTY_HEADER_ACP* pHdr, IStream* pStream, ITfPersistentPropertyLoaderACP* pLoader);
+
+            [VtblIndex(8)]
+            HRESULT ForceLoadProperty(ITfProperty* pProp);
+
+            [VtblIndex(9)]
+            HRESULT CreateRange([NativeTypeName("LONG")] int acpStart, [NativeTypeName("LONG")] int acpEnd, ITfRangeACP** ppRange);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfContextOwnerServices*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfContextOwnerServices*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfContextOwnerServices*, uint> Release;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfContextOwnerServices*, int> OnLayoutChange;
+
+            [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfContextOwnerServices*, uint, int> OnStatusChange;
+
+            [NativeTypeName("HRESULT (const GUID &) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfContextOwnerServices*, Guid*, int> OnAttributeChange;
+
+            [NativeTypeName("HRESULT (ITfProperty *, ITfRange *, TF_PERSISTENT_PROPERTY_HEADER_ACP *, IStream *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfContextOwnerServices*, ITfProperty*, ITfRange*, TF_PERSISTENT_PROPERTY_HEADER_ACP*, IStream*, int> Serialize;
+
+            [NativeTypeName("HRESULT (ITfProperty *, const TF_PERSISTENT_PROPERTY_HEADER_ACP *, IStream *, ITfPersistentPropertyLoaderACP *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfContextOwnerServices*, ITfProperty*, TF_PERSISTENT_PROPERTY_HEADER_ACP*, IStream*, ITfPersistentPropertyLoaderACP*, int> Unserialize;
+
+            [NativeTypeName("HRESULT (ITfProperty *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfContextOwnerServices*, ITfProperty*, int> ForceLoadProperty;
+
+            [NativeTypeName("HRESULT (LONG, LONG, ITfRangeACP **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfContextOwnerServices*, int, int, ITfRangeACP**, int> CreateRange;
         }
     }
 }

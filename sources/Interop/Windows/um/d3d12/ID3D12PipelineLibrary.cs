@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("C64226A8-9201-46AF-B4CC-53FB9FF7414F")]
     [NativeTypeName("struct ID3D12PipelineLibrary : ID3D12DeviceChild")]
     [NativeInheritance("ID3D12DeviceChild")]
-    public unsafe partial struct ID3D12PipelineLibrary
+    public unsafe partial struct ID3D12PipelineLibrary : ID3D12PipelineLibrary.Interface
     {
         public void** lpVtbl;
 
@@ -108,6 +108,67 @@ namespace TerraFX.Interop
         public HRESULT Serialize(void* pData, [NativeTypeName("SIZE_T")] nuint DataSizeInBytes)
         {
             return ((delegate* unmanaged<ID3D12PipelineLibrary*, void*, nuint, int>)(lpVtbl[12]))((ID3D12PipelineLibrary*)Unsafe.AsPointer(ref this), pData, DataSizeInBytes);
+        }
+
+        public interface Interface : ID3D12DeviceChild.Interface
+        {
+            [VtblIndex(8)]
+            HRESULT StorePipeline([NativeTypeName("LPCWSTR")] ushort* pName, ID3D12PipelineState* pPipeline);
+
+            [VtblIndex(9)]
+            HRESULT LoadGraphicsPipeline([NativeTypeName("LPCWSTR")] ushort* pName, [NativeTypeName("const D3D12_GRAPHICS_PIPELINE_STATE_DESC *")] D3D12_GRAPHICS_PIPELINE_STATE_DESC* pDesc, [NativeTypeName("const IID &")] Guid* riid, void** ppPipelineState);
+
+            [VtblIndex(10)]
+            HRESULT LoadComputePipeline([NativeTypeName("LPCWSTR")] ushort* pName, [NativeTypeName("const D3D12_COMPUTE_PIPELINE_STATE_DESC *")] D3D12_COMPUTE_PIPELINE_STATE_DESC* pDesc, [NativeTypeName("const IID &")] Guid* riid, void** ppPipelineState);
+
+            [VtblIndex(11)]
+            [return: NativeTypeName("SIZE_T")]
+            nuint GetSerializedSize();
+
+            [VtblIndex(12)]
+            HRESULT Serialize(void* pData, [NativeTypeName("SIZE_T")] nuint DataSizeInBytes);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D12PipelineLibrary*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D12PipelineLibrary*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D12PipelineLibrary*, uint> Release;
+
+            [NativeTypeName("HRESULT (const GUID &, UINT *, void *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D12PipelineLibrary*, Guid*, uint*, void*, int> GetPrivateData;
+
+            [NativeTypeName("HRESULT (const GUID &, UINT, const void *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D12PipelineLibrary*, Guid*, uint, void*, int> SetPrivateData;
+
+            [NativeTypeName("HRESULT (const GUID &, const IUnknown *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D12PipelineLibrary*, Guid*, IUnknown*, int> SetPrivateDataInterface;
+
+            [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D12PipelineLibrary*, ushort*, int> SetName;
+
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D12PipelineLibrary*, Guid*, void**, int> GetDevice;
+
+            [NativeTypeName("HRESULT (LPCWSTR, ID3D12PipelineState *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D12PipelineLibrary*, ushort*, ID3D12PipelineState*, int> StorePipeline;
+
+            [NativeTypeName("HRESULT (LPCWSTR, const D3D12_GRAPHICS_PIPELINE_STATE_DESC *, const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D12PipelineLibrary*, ushort*, D3D12_GRAPHICS_PIPELINE_STATE_DESC*, Guid*, void**, int> LoadGraphicsPipeline;
+
+            [NativeTypeName("HRESULT (LPCWSTR, const D3D12_COMPUTE_PIPELINE_STATE_DESC *, const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D12PipelineLibrary*, ushort*, D3D12_COMPUTE_PIPELINE_STATE_DESC*, Guid*, void**, int> LoadComputePipeline;
+
+            [NativeTypeName("SIZE_T () __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D12PipelineLibrary*, nuint> GetSerializedSize;
+
+            [NativeTypeName("HRESULT (void *, SIZE_T) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D12PipelineLibrary*, void*, nuint, int> Serialize;
         }
     }
 }

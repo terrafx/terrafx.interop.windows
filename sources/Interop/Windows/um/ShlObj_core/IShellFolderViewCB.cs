@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("2047E320-F2A9-11CE-AE65-08002B2E1262")]
     [NativeTypeName("struct IShellFolderViewCB : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IShellFolderViewCB
+    public unsafe partial struct IShellFolderViewCB : IShellFolderViewCB.Interface
     {
         public void** lpVtbl;
 
@@ -44,6 +44,27 @@ namespace TerraFX.Interop
         public HRESULT MessageSFVCB(uint uMsg, WPARAM wParam, LPARAM lParam)
         {
             return ((delegate* unmanaged<IShellFolderViewCB*, uint, WPARAM, LPARAM, int>)(lpVtbl[3]))((IShellFolderViewCB*)Unsafe.AsPointer(ref this), uMsg, wParam, lParam);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT MessageSFVCB(uint uMsg, WPARAM wParam, LPARAM lParam);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellFolderViewCB*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellFolderViewCB*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellFolderViewCB*, uint> Release;
+
+            [NativeTypeName("HRESULT (UINT, WPARAM, LPARAM) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellFolderViewCB*, uint, WPARAM, LPARAM, int> MessageSFVCB;
         }
     }
 }

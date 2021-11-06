@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("7D903FCA-D6F9-4810-8332-946C0177E247")]
     [NativeTypeName("struct IIdentityName : IRelatedItem")]
     [NativeInheritance("IRelatedItem")]
-    public unsafe partial struct IIdentityName
+    public unsafe partial struct IIdentityName : IIdentityName.Interface
     {
         public void** lpVtbl;
 
@@ -51,6 +51,28 @@ namespace TerraFX.Interop
         public HRESULT GetItem(IShellItem** ppsi)
         {
             return ((delegate* unmanaged<IIdentityName*, IShellItem**, int>)(lpVtbl[4]))((IIdentityName*)Unsafe.AsPointer(ref this), ppsi);
+        }
+
+        public interface Interface : IRelatedItem.Interface
+        {
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IIdentityName*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IIdentityName*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IIdentityName*, uint> Release;
+
+            [NativeTypeName("HRESULT (LPITEMIDLIST *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IIdentityName*, ITEMIDLIST**, int> GetItemIDList;
+
+            [NativeTypeName("HRESULT (IShellItem **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IIdentityName*, IShellItem**, int> GetItem;
         }
     }
 }

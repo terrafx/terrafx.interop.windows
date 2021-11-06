@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("FD672C54-40EA-4D6E-9B49-CFB1A7507BD7")]
     [NativeTypeName("struct ICredentialProviderCredential2 : ICredentialProviderCredential")]
     [NativeInheritance("ICredentialProviderCredential")]
-    public unsafe partial struct ICredentialProviderCredential2
+    public unsafe partial struct ICredentialProviderCredential2 : ICredentialProviderCredential2.Interface
     {
         public void** lpVtbl;
 
@@ -163,6 +163,78 @@ namespace TerraFX.Interop
         public HRESULT GetUserSid([NativeTypeName("LPWSTR *")] ushort** sid)
         {
             return ((delegate* unmanaged<ICredentialProviderCredential2*, ushort**, int>)(lpVtbl[20]))((ICredentialProviderCredential2*)Unsafe.AsPointer(ref this), sid);
+        }
+
+        public interface Interface : ICredentialProviderCredential.Interface
+        {
+            [VtblIndex(20)]
+            HRESULT GetUserSid([NativeTypeName("LPWSTR *")] ushort** sid);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ICredentialProviderCredential2*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ICredentialProviderCredential2*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ICredentialProviderCredential2*, uint> Release;
+
+            [NativeTypeName("HRESULT (ICredentialProviderCredentialEvents *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ICredentialProviderCredential2*, ICredentialProviderCredentialEvents*, int> Advise;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<ICredentialProviderCredential2*, int> UnAdvise;
+
+            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ICredentialProviderCredential2*, BOOL*, int> SetSelected;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<ICredentialProviderCredential2*, int> SetDeselected;
+
+            [NativeTypeName("HRESULT (DWORD, CREDENTIAL_PROVIDER_FIELD_STATE *, CREDENTIAL_PROVIDER_FIELD_INTERACTIVE_STATE *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ICredentialProviderCredential2*, uint, CREDENTIAL_PROVIDER_FIELD_STATE*, CREDENTIAL_PROVIDER_FIELD_INTERACTIVE_STATE*, int> GetFieldState;
+
+            [NativeTypeName("HRESULT (DWORD, LPWSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ICredentialProviderCredential2*, uint, ushort**, int> GetStringValue;
+
+            [NativeTypeName("HRESULT (DWORD, HBITMAP *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ICredentialProviderCredential2*, uint, HBITMAP*, int> GetBitmapValue;
+
+            [NativeTypeName("HRESULT (DWORD, BOOL *, LPWSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ICredentialProviderCredential2*, uint, BOOL*, ushort**, int> GetCheckboxValue;
+
+            [NativeTypeName("HRESULT (DWORD, DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ICredentialProviderCredential2*, uint, uint*, int> GetSubmitButtonValue;
+
+            [NativeTypeName("HRESULT (DWORD, DWORD *, DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ICredentialProviderCredential2*, uint, uint*, uint*, int> GetComboBoxValueCount;
+
+            [NativeTypeName("HRESULT (DWORD, DWORD, LPWSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ICredentialProviderCredential2*, uint, uint, ushort**, int> GetComboBoxValueAt;
+
+            [NativeTypeName("HRESULT (DWORD, LPCWSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<ICredentialProviderCredential2*, uint, ushort*, int> SetStringValue;
+
+            [NativeTypeName("HRESULT (DWORD, BOOL) __attribute__((stdcall))")]
+            public delegate* unmanaged<ICredentialProviderCredential2*, uint, BOOL, int> SetCheckboxValue;
+
+            [NativeTypeName("HRESULT (DWORD, DWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<ICredentialProviderCredential2*, uint, uint, int> SetComboBoxSelectedValue;
+
+            [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<ICredentialProviderCredential2*, uint, int> CommandLinkClicked;
+
+            [NativeTypeName("HRESULT (CREDENTIAL_PROVIDER_GET_SERIALIZATION_RESPONSE *, CREDENTIAL_PROVIDER_CREDENTIAL_SERIALIZATION *, LPWSTR *, CREDENTIAL_PROVIDER_STATUS_ICON *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ICredentialProviderCredential2*, CREDENTIAL_PROVIDER_GET_SERIALIZATION_RESPONSE*, CREDENTIAL_PROVIDER_CREDENTIAL_SERIALIZATION*, ushort**, CREDENTIAL_PROVIDER_STATUS_ICON*, int> GetSerialization;
+
+            [NativeTypeName("HRESULT (NTSTATUS, NTSTATUS, LPWSTR *, CREDENTIAL_PROVIDER_STATUS_ICON *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ICredentialProviderCredential2*, int, int, ushort**, CREDENTIAL_PROVIDER_STATUS_ICON*, int> ReportResult;
+
+            [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ICredentialProviderCredential2*, ushort**, int> GetUserSid;
         }
     }
 }

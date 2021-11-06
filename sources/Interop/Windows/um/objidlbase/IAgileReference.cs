@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("C03F6A43-65A4-9818-987E-E0B810D2A6F2")]
     [NativeTypeName("struct IAgileReference : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IAgileReference
+    public unsafe partial struct IAgileReference : IAgileReference.Interface
     {
         public void** lpVtbl;
 
@@ -44,6 +44,27 @@ namespace TerraFX.Interop
         public HRESULT Resolve([NativeTypeName("const IID &")] Guid* riid, void** ppvObjectReference)
         {
             return ((delegate* unmanaged<IAgileReference*, Guid*, void**, int>)(lpVtbl[3]))((IAgileReference*)Unsafe.AsPointer(ref this), riid, ppvObjectReference);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT Resolve([NativeTypeName("const IID &")] Guid* riid, void** ppvObjectReference);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAgileReference*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IAgileReference*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IAgileReference*, uint> Release;
+
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAgileReference*, Guid*, void**, int> Resolve;
         }
     }
 }

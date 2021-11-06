@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("D97B5AAC-C792-433C-975D-35C4EADC7A9D")]
     [NativeTypeName("struct IFileSyncMergeHandler : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IFileSyncMergeHandler
+    public unsafe partial struct IFileSyncMergeHandler : IFileSyncMergeHandler.Interface
     {
         public void** lpVtbl;
 
@@ -51,6 +51,33 @@ namespace TerraFX.Interop
         public HRESULT ShowResolveConflictUIAsync([NativeTypeName("LPCWSTR")] ushort* localFilePath, HMONITOR monitorToDisplayOn)
         {
             return ((delegate* unmanaged<IFileSyncMergeHandler*, ushort*, HMONITOR, int>)(lpVtbl[4]))((IFileSyncMergeHandler*)Unsafe.AsPointer(ref this), localFilePath, monitorToDisplayOn);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT Merge([NativeTypeName("LPCWSTR")] ushort* localFilePath, [NativeTypeName("LPCWSTR")] ushort* serverFilePath, MERGE_UPDATE_STATUS* updateStatus);
+
+            [VtblIndex(4)]
+            HRESULT ShowResolveConflictUIAsync([NativeTypeName("LPCWSTR")] ushort* localFilePath, HMONITOR monitorToDisplayOn);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFileSyncMergeHandler*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IFileSyncMergeHandler*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IFileSyncMergeHandler*, uint> Release;
+
+            [NativeTypeName("HRESULT (LPCWSTR, LPCWSTR, MERGE_UPDATE_STATUS *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFileSyncMergeHandler*, ushort*, ushort*, MERGE_UPDATE_STATUS*, int> Merge;
+
+            [NativeTypeName("HRESULT (LPCWSTR, HMONITOR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFileSyncMergeHandler*, ushort*, HMONITOR, int> ShowResolveConflictUIAsync;
         }
     }
 }

@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("8278F932-2A3E-11D2-838F-00C04FD918D0")]
     [NativeTypeName("struct ITrackShellMenu : IShellMenu")]
     [NativeInheritance("IShellMenu")]
-    public unsafe partial struct ITrackShellMenu
+    public unsafe partial struct ITrackShellMenu : ITrackShellMenu.Interface
     {
         public void** lpVtbl;
 
@@ -114,6 +114,60 @@ namespace TerraFX.Interop
         public HRESULT Popup(HWND hwnd, POINTL* ppt, RECTL* prcExclude, [NativeTypeName("MP_POPUPFLAGS")] int dwFlags)
         {
             return ((delegate* unmanaged<ITrackShellMenu*, HWND, POINTL*, RECTL*, int, int>)(lpVtbl[13]))((ITrackShellMenu*)Unsafe.AsPointer(ref this), hwnd, ppt, prcExclude, dwFlags);
+        }
+
+        public interface Interface : IShellMenu.Interface
+        {
+            [VtblIndex(12)]
+            HRESULT SetObscured(HWND hwndTB, IUnknown* punkBand, [NativeTypeName("DWORD")] uint dwSMSetFlags);
+
+            [VtblIndex(13)]
+            HRESULT Popup(HWND hwnd, POINTL* ppt, RECTL* prcExclude, [NativeTypeName("MP_POPUPFLAGS")] int dwFlags);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITrackShellMenu*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ITrackShellMenu*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ITrackShellMenu*, uint> Release;
+
+            [NativeTypeName("HRESULT (IShellMenuCallback *, UINT, UINT, DWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITrackShellMenu*, IShellMenuCallback*, uint, uint, uint, int> Initialize;
+
+            [NativeTypeName("HRESULT (IShellMenuCallback **, UINT *, UINT *, DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITrackShellMenu*, IShellMenuCallback**, uint*, uint*, uint*, int> GetMenuInfo;
+
+            [NativeTypeName("HRESULT (IShellFolder *, LPCITEMIDLIST, HKEY, DWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITrackShellMenu*, IShellFolder*, ITEMIDLIST*, HKEY, uint, int> SetShellFolder;
+
+            [NativeTypeName("HRESULT (DWORD *, LPITEMIDLIST *, const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITrackShellMenu*, uint*, ITEMIDLIST**, Guid*, void**, int> GetShellFolder;
+
+            [NativeTypeName("HRESULT (HMENU, HWND, DWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITrackShellMenu*, HMENU, HWND, uint, int> SetMenu;
+
+            [NativeTypeName("HRESULT (HMENU *, HWND *, DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITrackShellMenu*, HMENU*, HWND*, uint*, int> GetMenu;
+
+            [NativeTypeName("HRESULT (LPSMDATA, DWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITrackShellMenu*, SMDATA*, uint, int> InvalidateItem;
+
+            [NativeTypeName("HRESULT (LPSMDATA) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITrackShellMenu*, SMDATA*, int> GetState;
+
+            [NativeTypeName("HRESULT (IUnknown *, DWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITrackShellMenu*, IUnknown*, uint, int> SetMenuToolbar;
+
+            [NativeTypeName("HRESULT (HWND, IUnknown *, DWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITrackShellMenu*, HWND, IUnknown*, uint, int> SetObscured;
+
+            [NativeTypeName("HRESULT (HWND, POINTL *, RECTL *, MP_POPUPFLAGS) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITrackShellMenu*, HWND, POINTL*, RECTL*, int, int> Popup;
         }
     }
 }

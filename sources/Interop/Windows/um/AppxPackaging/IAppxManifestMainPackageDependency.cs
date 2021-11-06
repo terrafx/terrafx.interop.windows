@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("05D0611C-BC29-46D5-97E2-84B9C79BD8AE")]
     [NativeTypeName("struct IAppxManifestMainPackageDependency : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IAppxManifestMainPackageDependency
+    public unsafe partial struct IAppxManifestMainPackageDependency : IAppxManifestMainPackageDependency.Interface
     {
         public void** lpVtbl;
 
@@ -58,6 +58,39 @@ namespace TerraFX.Interop
         public HRESULT GetPackageFamilyName([NativeTypeName("LPWSTR *")] ushort** packageFamilyName)
         {
             return ((delegate* unmanaged<IAppxManifestMainPackageDependency*, ushort**, int>)(lpVtbl[5]))((IAppxManifestMainPackageDependency*)Unsafe.AsPointer(ref this), packageFamilyName);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetName([NativeTypeName("LPWSTR *")] ushort** name);
+
+            [VtblIndex(4)]
+            HRESULT GetPublisher([NativeTypeName("LPWSTR *")] ushort** publisher);
+
+            [VtblIndex(5)]
+            HRESULT GetPackageFamilyName([NativeTypeName("LPWSTR *")] ushort** packageFamilyName);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAppxManifestMainPackageDependency*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IAppxManifestMainPackageDependency*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IAppxManifestMainPackageDependency*, uint> Release;
+
+            [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAppxManifestMainPackageDependency*, ushort**, int> GetName;
+
+            [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAppxManifestMainPackageDependency*, ushort**, int> GetPublisher;
+
+            [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAppxManifestMainPackageDependency*, ushort**, int> GetPackageFamilyName;
         }
     }
 }

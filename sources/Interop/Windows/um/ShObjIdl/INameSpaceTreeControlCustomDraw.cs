@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("2D3BA758-33EE-42D5-BB7B-5F3431D86C78")]
     [NativeTypeName("struct INameSpaceTreeControlCustomDraw : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct INameSpaceTreeControlCustomDraw
+    public unsafe partial struct INameSpaceTreeControlCustomDraw : INameSpaceTreeControlCustomDraw.Interface
     {
         public void** lpVtbl;
 
@@ -65,6 +65,45 @@ namespace TerraFX.Interop
         public HRESULT ItemPostPaint(HDC hdc, RECT* prc, NSTCCUSTOMDRAW* pnstccdItem)
         {
             return ((delegate* unmanaged<INameSpaceTreeControlCustomDraw*, HDC, RECT*, NSTCCUSTOMDRAW*, int>)(lpVtbl[6]))((INameSpaceTreeControlCustomDraw*)Unsafe.AsPointer(ref this), hdc, prc, pnstccdItem);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT PrePaint(HDC hdc, RECT* prc, LRESULT* plres);
+
+            [VtblIndex(4)]
+            HRESULT PostPaint(HDC hdc, RECT* prc);
+
+            [VtblIndex(5)]
+            HRESULT ItemPrePaint(HDC hdc, RECT* prc, NSTCCUSTOMDRAW* pnstccdItem, COLORREF* pclrText, COLORREF* pclrTextBk, LRESULT* plres);
+
+            [VtblIndex(6)]
+            HRESULT ItemPostPaint(HDC hdc, RECT* prc, NSTCCUSTOMDRAW* pnstccdItem);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<INameSpaceTreeControlCustomDraw*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<INameSpaceTreeControlCustomDraw*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<INameSpaceTreeControlCustomDraw*, uint> Release;
+
+            [NativeTypeName("HRESULT (HDC, RECT *, LRESULT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<INameSpaceTreeControlCustomDraw*, HDC, RECT*, LRESULT*, int> PrePaint;
+
+            [NativeTypeName("HRESULT (HDC, RECT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<INameSpaceTreeControlCustomDraw*, HDC, RECT*, int> PostPaint;
+
+            [NativeTypeName("HRESULT (HDC, RECT *, NSTCCUSTOMDRAW *, COLORREF *, COLORREF *, LRESULT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<INameSpaceTreeControlCustomDraw*, HDC, RECT*, NSTCCUSTOMDRAW*, COLORREF*, COLORREF*, LRESULT*, int> ItemPrePaint;
+
+            [NativeTypeName("HRESULT (HDC, RECT *, NSTCCUSTOMDRAW *) __attribute__((stdcall))")]
+            public delegate* unmanaged<INameSpaceTreeControlCustomDraw*, HDC, RECT*, NSTCCUSTOMDRAW*, int> ItemPostPaint;
         }
     }
 }

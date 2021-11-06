@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("2705C288-79AE-11D2-B348-00105A1F8177")]
     [NativeTypeName("struct IWbemHiPerfEnum : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IWbemHiPerfEnum
+    public unsafe partial struct IWbemHiPerfEnum : IWbemHiPerfEnum.Interface
     {
         public void** lpVtbl;
 
@@ -65,6 +65,45 @@ namespace TerraFX.Interop
         public HRESULT RemoveAll([NativeTypeName("long")] int lFlags)
         {
             return ((delegate* unmanaged<IWbemHiPerfEnum*, int, int>)(lpVtbl[6]))((IWbemHiPerfEnum*)Unsafe.AsPointer(ref this), lFlags);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT AddObjects([NativeTypeName("long")] int lFlags, [NativeTypeName("ULONG")] uint uNumObjects, [NativeTypeName("long *")] int* apIds, IWbemObjectAccess** apObj);
+
+            [VtblIndex(4)]
+            HRESULT RemoveObjects([NativeTypeName("long")] int lFlags, [NativeTypeName("ULONG")] uint uNumObjects, [NativeTypeName("long *")] int* apIds);
+
+            [VtblIndex(5)]
+            HRESULT GetObjects([NativeTypeName("long")] int lFlags, [NativeTypeName("ULONG")] uint uNumObjects, IWbemObjectAccess** apObj, [NativeTypeName("ULONG *")] uint* puReturned);
+
+            [VtblIndex(6)]
+            HRESULT RemoveAll([NativeTypeName("long")] int lFlags);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWbemHiPerfEnum*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IWbemHiPerfEnum*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IWbemHiPerfEnum*, uint> Release;
+
+            [NativeTypeName("HRESULT (long, ULONG, long *, IWbemObjectAccess **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWbemHiPerfEnum*, int, uint, int*, IWbemObjectAccess**, int> AddObjects;
+
+            [NativeTypeName("HRESULT (long, ULONG, long *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWbemHiPerfEnum*, int, uint, int*, int> RemoveObjects;
+
+            [NativeTypeName("HRESULT (long, ULONG, IWbemObjectAccess **, ULONG *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWbemHiPerfEnum*, int, uint, IWbemObjectAccess**, uint*, int> GetObjects;
+
+            [NativeTypeName("HRESULT (long) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWbemHiPerfEnum*, int, int> RemoveAll;
         }
     }
 }

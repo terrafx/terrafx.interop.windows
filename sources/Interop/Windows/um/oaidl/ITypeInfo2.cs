@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("00020412-0000-0000-C000-000000000046")]
     [NativeTypeName("struct ITypeInfo2 : ITypeInfo")]
     [NativeInheritance("ITypeInfo")]
-    public unsafe partial struct ITypeInfo2
+    public unsafe partial struct ITypeInfo2 : ITypeInfo2.Interface
     {
         public void** lpVtbl;
 
@@ -275,6 +275,168 @@ namespace TerraFX.Interop
         public HRESULT GetAllImplTypeCustData(uint index, CUSTDATA* pCustData)
         {
             return ((delegate* unmanaged<ITypeInfo2*, uint, CUSTDATA*, int>)(lpVtbl[36]))((ITypeInfo2*)Unsafe.AsPointer(ref this), index, pCustData);
+        }
+
+        public interface Interface : ITypeInfo.Interface
+        {
+            [VtblIndex(22)]
+            HRESULT GetTypeKind(TYPEKIND* pTypeKind);
+
+            [VtblIndex(23)]
+            HRESULT GetTypeFlags([NativeTypeName("ULONG *")] uint* pTypeFlags);
+
+            [VtblIndex(24)]
+            HRESULT GetFuncIndexOfMemId([NativeTypeName("MEMBERID")] int memid, INVOKEKIND invKind, uint* pFuncIndex);
+
+            [VtblIndex(25)]
+            HRESULT GetVarIndexOfMemId([NativeTypeName("MEMBERID")] int memid, uint* pVarIndex);
+
+            [VtblIndex(26)]
+            HRESULT GetCustData([NativeTypeName("const GUID &")] Guid* guid, VARIANT* pVarVal);
+
+            [VtblIndex(27)]
+            HRESULT GetFuncCustData(uint index, [NativeTypeName("const GUID &")] Guid* guid, VARIANT* pVarVal);
+
+            [VtblIndex(28)]
+            HRESULT GetParamCustData(uint indexFunc, uint indexParam, [NativeTypeName("const GUID &")] Guid* guid, VARIANT* pVarVal);
+
+            [VtblIndex(29)]
+            HRESULT GetVarCustData(uint index, [NativeTypeName("const GUID &")] Guid* guid, VARIANT* pVarVal);
+
+            [VtblIndex(30)]
+            HRESULT GetImplTypeCustData(uint index, [NativeTypeName("const GUID &")] Guid* guid, VARIANT* pVarVal);
+
+            [VtblIndex(31)]
+            HRESULT GetDocumentation2([NativeTypeName("MEMBERID")] int memid, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("BSTR *")] ushort** pbstrHelpString, [NativeTypeName("DWORD *")] uint* pdwHelpStringContext, [NativeTypeName("BSTR *")] ushort** pbstrHelpStringDll);
+
+            [VtblIndex(32)]
+            HRESULT GetAllCustData(CUSTDATA* pCustData);
+
+            [VtblIndex(33)]
+            HRESULT GetAllFuncCustData(uint index, CUSTDATA* pCustData);
+
+            [VtblIndex(34)]
+            HRESULT GetAllParamCustData(uint indexFunc, uint indexParam, CUSTDATA* pCustData);
+
+            [VtblIndex(35)]
+            HRESULT GetAllVarCustData(uint index, CUSTDATA* pCustData);
+
+            [VtblIndex(36)]
+            HRESULT GetAllImplTypeCustData(uint index, CUSTDATA* pCustData);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITypeInfo2*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ITypeInfo2*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ITypeInfo2*, uint> Release;
+
+            [NativeTypeName("HRESULT (TYPEATTR **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITypeInfo2*, TYPEATTR**, int> GetTypeAttr;
+
+            [NativeTypeName("HRESULT (ITypeComp **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITypeInfo2*, ITypeComp**, int> GetTypeComp;
+
+            [NativeTypeName("HRESULT (UINT, FUNCDESC **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITypeInfo2*, uint, FUNCDESC**, int> GetFuncDesc;
+
+            [NativeTypeName("HRESULT (UINT, VARDESC **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITypeInfo2*, uint, VARDESC**, int> GetVarDesc;
+
+            [NativeTypeName("HRESULT (MEMBERID, BSTR *, UINT, UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITypeInfo2*, int, ushort**, uint, uint*, int> GetNames;
+
+            [NativeTypeName("HRESULT (UINT, HREFTYPE *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITypeInfo2*, uint, uint*, int> GetRefTypeOfImplType;
+
+            [NativeTypeName("HRESULT (UINT, INT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITypeInfo2*, uint, int*, int> GetImplTypeFlags;
+
+            [NativeTypeName("HRESULT (LPOLESTR *, UINT, MEMBERID *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITypeInfo2*, ushort**, uint, int*, int> GetIDsOfNames;
+
+            [NativeTypeName("HRESULT (PVOID, MEMBERID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITypeInfo2*, void*, int, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
+
+            [NativeTypeName("HRESULT (MEMBERID, BSTR *, BSTR *, DWORD *, BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITypeInfo2*, int, ushort**, ushort**, uint*, ushort**, int> GetDocumentation;
+
+            [NativeTypeName("HRESULT (MEMBERID, INVOKEKIND, BSTR *, BSTR *, WORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITypeInfo2*, int, INVOKEKIND, ushort**, ushort**, ushort*, int> GetDllEntry;
+
+            [NativeTypeName("HRESULT (HREFTYPE, ITypeInfo **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITypeInfo2*, uint, ITypeInfo**, int> GetRefTypeInfo;
+
+            [NativeTypeName("HRESULT (MEMBERID, INVOKEKIND, PVOID *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITypeInfo2*, int, INVOKEKIND, void**, int> AddressOfMember;
+
+            [NativeTypeName("HRESULT (IUnknown *, const IID &, PVOID *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITypeInfo2*, IUnknown*, Guid*, void**, int> CreateInstance;
+
+            [NativeTypeName("HRESULT (MEMBERID, BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITypeInfo2*, int, ushort**, int> GetMops;
+
+            [NativeTypeName("HRESULT (ITypeLib **, UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITypeInfo2*, ITypeLib**, uint*, int> GetContainingTypeLib;
+
+            [NativeTypeName("void (TYPEATTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITypeInfo2*, TYPEATTR*, void> ReleaseTypeAttr;
+
+            [NativeTypeName("void (FUNCDESC *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITypeInfo2*, FUNCDESC*, void> ReleaseFuncDesc;
+
+            [NativeTypeName("void (VARDESC *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITypeInfo2*, VARDESC*, void> ReleaseVarDesc;
+
+            [NativeTypeName("HRESULT (TYPEKIND *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITypeInfo2*, TYPEKIND*, int> GetTypeKind;
+
+            [NativeTypeName("HRESULT (ULONG *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITypeInfo2*, uint*, int> GetTypeFlags;
+
+            [NativeTypeName("HRESULT (MEMBERID, INVOKEKIND, UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITypeInfo2*, int, INVOKEKIND, uint*, int> GetFuncIndexOfMemId;
+
+            [NativeTypeName("HRESULT (MEMBERID, UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITypeInfo2*, int, uint*, int> GetVarIndexOfMemId;
+
+            [NativeTypeName("HRESULT (const GUID &, VARIANT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITypeInfo2*, Guid*, VARIANT*, int> GetCustData;
+
+            [NativeTypeName("HRESULT (UINT, const GUID &, VARIANT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITypeInfo2*, uint, Guid*, VARIANT*, int> GetFuncCustData;
+
+            [NativeTypeName("HRESULT (UINT, UINT, const GUID &, VARIANT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITypeInfo2*, uint, uint, Guid*, VARIANT*, int> GetParamCustData;
+
+            [NativeTypeName("HRESULT (UINT, const GUID &, VARIANT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITypeInfo2*, uint, Guid*, VARIANT*, int> GetVarCustData;
+
+            [NativeTypeName("HRESULT (UINT, const GUID &, VARIANT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITypeInfo2*, uint, Guid*, VARIANT*, int> GetImplTypeCustData;
+
+            [NativeTypeName("HRESULT (MEMBERID, LCID, BSTR *, DWORD *, BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITypeInfo2*, int, uint, ushort**, uint*, ushort**, int> GetDocumentation2;
+
+            [NativeTypeName("HRESULT (CUSTDATA *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITypeInfo2*, CUSTDATA*, int> GetAllCustData;
+
+            [NativeTypeName("HRESULT (UINT, CUSTDATA *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITypeInfo2*, uint, CUSTDATA*, int> GetAllFuncCustData;
+
+            [NativeTypeName("HRESULT (UINT, UINT, CUSTDATA *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITypeInfo2*, uint, uint, CUSTDATA*, int> GetAllParamCustData;
+
+            [NativeTypeName("HRESULT (UINT, CUSTDATA *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITypeInfo2*, uint, CUSTDATA*, int> GetAllVarCustData;
+
+            [NativeTypeName("HRESULT (UINT, CUSTDATA *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITypeInfo2*, uint, CUSTDATA*, int> GetAllImplTypeCustData;
         }
     }
 }

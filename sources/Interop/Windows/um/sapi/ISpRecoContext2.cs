@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("BEAD311C-52FF-437F-9464-6B21054CA73D")]
     [NativeTypeName("struct ISpRecoContext2 : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct ISpRecoContext2
+    public unsafe partial struct ISpRecoContext2 : ISpRecoContext2.Interface
     {
         public void** lpVtbl;
 
@@ -58,6 +58,39 @@ namespace TerraFX.Interop
         public HRESULT SetAdaptationData2([NativeTypeName("LPCWSTR")] ushort* pAdaptationData, [NativeTypeName("const ULONG")] uint cch, [NativeTypeName("LPCWSTR")] ushort* pTopicName, [NativeTypeName("DWORD")] uint eAdaptationSettings, SPADAPTATIONRELEVANCE eRelevance)
         {
             return ((delegate* unmanaged<ISpRecoContext2*, ushort*, uint, ushort*, uint, SPADAPTATIONRELEVANCE, int>)(lpVtbl[5]))((ISpRecoContext2*)Unsafe.AsPointer(ref this), pAdaptationData, cch, pTopicName, eAdaptationSettings, eRelevance);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT SetGrammarOptions([NativeTypeName("DWORD")] uint eGrammarOptions);
+
+            [VtblIndex(4)]
+            HRESULT GetGrammarOptions([NativeTypeName("DWORD *")] uint* peGrammarOptions);
+
+            [VtblIndex(5)]
+            HRESULT SetAdaptationData2([NativeTypeName("LPCWSTR")] ushort* pAdaptationData, [NativeTypeName("const ULONG")] uint cch, [NativeTypeName("LPCWSTR")] ushort* pTopicName, [NativeTypeName("DWORD")] uint eAdaptationSettings, SPADAPTATIONRELEVANCE eRelevance);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpRecoContext2*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpRecoContext2*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpRecoContext2*, uint> Release;
+
+            [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpRecoContext2*, uint, int> SetGrammarOptions;
+
+            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpRecoContext2*, uint*, int> GetGrammarOptions;
+
+            [NativeTypeName("HRESULT (LPCWSTR, const ULONG, LPCWSTR, DWORD, SPADAPTATIONRELEVANCE) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpRecoContext2*, ushort*, uint, ushort*, uint, SPADAPTATIONRELEVANCE, int> SetAdaptationData2;
         }
     }
 }

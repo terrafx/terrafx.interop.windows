@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("1CF2B120-547D-101B-8E65-08002B2BD119")]
     [NativeTypeName("struct IErrorInfo : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IErrorInfo
+    public unsafe partial struct IErrorInfo : IErrorInfo.Interface
     {
         public void** lpVtbl;
 
@@ -72,6 +72,51 @@ namespace TerraFX.Interop
         public HRESULT GetHelpContext([NativeTypeName("DWORD *")] uint* pdwHelpContext)
         {
             return ((delegate* unmanaged<IErrorInfo*, uint*, int>)(lpVtbl[7]))((IErrorInfo*)Unsafe.AsPointer(ref this), pdwHelpContext);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetGUID(Guid* pGUID);
+
+            [VtblIndex(4)]
+            HRESULT GetSource([NativeTypeName("BSTR *")] ushort** pBstrSource);
+
+            [VtblIndex(5)]
+            HRESULT GetDescription([NativeTypeName("BSTR *")] ushort** pBstrDescription);
+
+            [VtblIndex(6)]
+            HRESULT GetHelpFile([NativeTypeName("BSTR *")] ushort** pBstrHelpFile);
+
+            [VtblIndex(7)]
+            HRESULT GetHelpContext([NativeTypeName("DWORD *")] uint* pdwHelpContext);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IErrorInfo*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IErrorInfo*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IErrorInfo*, uint> Release;
+
+            [NativeTypeName("HRESULT (GUID *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IErrorInfo*, Guid*, int> GetGUID;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IErrorInfo*, ushort**, int> GetSource;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IErrorInfo*, ushort**, int> GetDescription;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IErrorInfo*, ushort**, int> GetHelpFile;
+
+            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IErrorInfo*, uint*, int> GetHelpContext;
         }
     }
 }

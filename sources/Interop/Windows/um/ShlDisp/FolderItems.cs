@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("744129E0-CBE5-11CE-8350-444553540000")]
     [NativeTypeName("struct FolderItems : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct FolderItems
+    public unsafe partial struct FolderItems : FolderItems.Interface
     {
         public void** lpVtbl;
 
@@ -100,6 +100,63 @@ namespace TerraFX.Interop
         public HRESULT _NewEnum(IUnknown** ppunk)
         {
             return ((delegate* unmanaged<FolderItems*, IUnknown**, int>)(lpVtbl[11]))((FolderItems*)Unsafe.AsPointer(ref this), ppunk);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT get_Count([NativeTypeName("long *")] int* plCount);
+
+            [VtblIndex(8)]
+            HRESULT get_Application(IDispatch** ppid);
+
+            [VtblIndex(9)]
+            HRESULT get_Parent(IDispatch** ppid);
+
+            [VtblIndex(10)]
+            HRESULT Item(VARIANT index, FolderItem** ppid);
+
+            [VtblIndex(11)]
+            HRESULT _NewEnum(IUnknown** ppunk);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<FolderItems*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<FolderItems*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<FolderItems*, uint> Release;
+
+            [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<FolderItems*, uint*, int> GetTypeInfoCount;
+
+            [NativeTypeName("HRESULT (UINT, LCID, ITypeInfo **) __attribute__((stdcall))")]
+            public delegate* unmanaged<FolderItems*, uint, uint, ITypeInfo**, int> GetTypeInfo;
+
+            [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
+            public delegate* unmanaged<FolderItems*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+
+            [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<FolderItems*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
+
+            [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
+            public delegate* unmanaged<FolderItems*, int*, int> get_Count;
+
+            [NativeTypeName("HRESULT (IDispatch **) __attribute__((stdcall))")]
+            public delegate* unmanaged<FolderItems*, IDispatch**, int> get_Application;
+
+            [NativeTypeName("HRESULT (IDispatch **) __attribute__((stdcall))")]
+            public delegate* unmanaged<FolderItems*, IDispatch**, int> get_Parent;
+
+            [NativeTypeName("HRESULT (VARIANT, FolderItem **) __attribute__((stdcall))")]
+            public delegate* unmanaged<FolderItems*, VARIANT, FolderItem**, int> Item;
+
+            [NativeTypeName("HRESULT (IUnknown **) __attribute__((stdcall))")]
+            public delegate* unmanaged<FolderItems*, IUnknown**, int> _NewEnum;
         }
     }
 }

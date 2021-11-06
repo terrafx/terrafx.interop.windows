@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("88E39E80-3578-11CF-AE69-08002B2E1262")]
     [NativeTypeName("struct IShellView2 : IShellView")]
     [NativeInheritance("IShellView")]
-    public unsafe partial struct IShellView2
+    public unsafe partial struct IShellView2 : IShellView2.Interface
     {
         public void** lpVtbl;
 
@@ -156,6 +156,84 @@ namespace TerraFX.Interop
         public HRESULT SelectAndPositionItem([NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidlItem, uint uFlags, POINT* ppt)
         {
             return ((delegate* unmanaged<IShellView2*, ITEMIDLIST*, uint, POINT*, int>)(lpVtbl[19]))((IShellView2*)Unsafe.AsPointer(ref this), pidlItem, uFlags, ppt);
+        }
+
+        public interface Interface : IShellView.Interface
+        {
+            [VtblIndex(16)]
+            HRESULT GetView([NativeTypeName("SHELLVIEWID *")] Guid* pvid, [NativeTypeName("ULONG")] uint uView);
+
+            [VtblIndex(17)]
+            HRESULT CreateViewWindow2([NativeTypeName("LPSV2CVW2_PARAMS")] SV2CVW2_PARAMS* lpParams);
+
+            [VtblIndex(18)]
+            HRESULT HandleRename([NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidlNew);
+
+            [VtblIndex(19)]
+            HRESULT SelectAndPositionItem([NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidlItem, uint uFlags, POINT* ppt);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellView2*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellView2*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellView2*, uint> Release;
+
+            [NativeTypeName("HRESULT (HWND *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellView2*, HWND*, int> GetWindow;
+
+            [NativeTypeName("HRESULT (BOOL) __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellView2*, BOOL, int> ContextSensitiveHelp;
+
+            [NativeTypeName("HRESULT (MSG *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellView2*, MSG*, int> TranslateAcceleratorW;
+
+            [NativeTypeName("HRESULT (BOOL) __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellView2*, BOOL, int> EnableModeless;
+
+            [NativeTypeName("HRESULT (UINT) __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellView2*, uint, int> UIActivate;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellView2*, int> Refresh;
+
+            [NativeTypeName("HRESULT (IShellView *, LPCFOLDERSETTINGS, IShellBrowser *, RECT *, HWND *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellView2*, IShellView*, FOLDERSETTINGS*, IShellBrowser*, RECT*, HWND*, int> CreateViewWindow;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellView2*, int> DestroyViewWindow;
+
+            [NativeTypeName("HRESULT (LPFOLDERSETTINGS) __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellView2*, FOLDERSETTINGS*, int> GetCurrentInfo;
+
+            [NativeTypeName("HRESULT (DWORD, LPFNSVADDPROPSHEETPAGE, LPARAM) __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellView2*, uint, delegate* unmanaged<HPROPSHEETPAGE, LPARAM, BOOL>, LPARAM, int> AddPropertySheetPages;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellView2*, int> SaveViewState;
+
+            [NativeTypeName("HRESULT (LPCITEMIDLIST, SVSIF) __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellView2*, ITEMIDLIST*, uint, int> SelectItem;
+
+            [NativeTypeName("HRESULT (UINT, const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellView2*, uint, Guid*, void**, int> GetItemObject;
+
+            [NativeTypeName("HRESULT (SHELLVIEWID *, ULONG) __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellView2*, Guid*, uint, int> GetView;
+
+            [NativeTypeName("HRESULT (LPSV2CVW2_PARAMS) __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellView2*, SV2CVW2_PARAMS*, int> CreateViewWindow2;
+
+            [NativeTypeName("HRESULT (LPCITEMIDLIST) __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellView2*, ITEMIDLIST*, int> HandleRename;
+
+            [NativeTypeName("HRESULT (LPCITEMIDLIST, UINT, POINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellView2*, ITEMIDLIST*, uint, POINT*, int> SelectAndPositionItem;
         }
     }
 }

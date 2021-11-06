@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("B5CF2CFA-8AEB-11D1-9364-0060B067B86E")]
     [NativeTypeName("struct IActiveIMMMessagePumpOwner : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IActiveIMMMessagePumpOwner
+    public unsafe partial struct IActiveIMMMessagePumpOwner : IActiveIMMMessagePumpOwner.Interface
     {
         public void** lpVtbl;
 
@@ -72,6 +72,51 @@ namespace TerraFX.Interop
         public HRESULT Resume([NativeTypeName("DWORD")] uint dwCookie)
         {
             return ((delegate* unmanaged<IActiveIMMMessagePumpOwner*, uint, int>)(lpVtbl[7]))((IActiveIMMMessagePumpOwner*)Unsafe.AsPointer(ref this), dwCookie);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT Start();
+
+            [VtblIndex(4)]
+            HRESULT End();
+
+            [VtblIndex(5)]
+            HRESULT OnTranslateMessage([NativeTypeName("const MSG *")] MSG* pMsg);
+
+            [VtblIndex(6)]
+            HRESULT Pause([NativeTypeName("DWORD *")] uint* pdwCookie);
+
+            [VtblIndex(7)]
+            HRESULT Resume([NativeTypeName("DWORD")] uint dwCookie);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IActiveIMMMessagePumpOwner*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IActiveIMMMessagePumpOwner*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IActiveIMMMessagePumpOwner*, uint> Release;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IActiveIMMMessagePumpOwner*, int> Start;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IActiveIMMMessagePumpOwner*, int> End;
+
+            [NativeTypeName("HRESULT (const MSG *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IActiveIMMMessagePumpOwner*, MSG*, int> OnTranslateMessage;
+
+            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IActiveIMMMessagePumpOwner*, uint*, int> Pause;
+
+            [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<IActiveIMMMessagePumpOwner*, uint, int> Resume;
         }
     }
 }

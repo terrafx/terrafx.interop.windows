@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("30510417-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct IHTMLDocument6 : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct IHTMLDocument6
+    public unsafe partial struct IHTMLDocument6 : IHTMLDocument6.Interface
     {
         public void** lpVtbl;
 
@@ -121,6 +121,81 @@ namespace TerraFX.Interop
         public HRESULT updateSettings()
         {
             return ((delegate* unmanaged<IHTMLDocument6*, int>)(lpVtbl[14]))((IHTMLDocument6*)Unsafe.AsPointer(ref this));
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT get_compatible(IHTMLDocumentCompatibleInfoCollection** p);
+
+            [VtblIndex(8)]
+            HRESULT get_documentMode(VARIANT* p);
+
+            [VtblIndex(9)]
+            HRESULT put_onstorage(VARIANT v);
+
+            [VtblIndex(10)]
+            HRESULT get_onstorage(VARIANT* p);
+
+            [VtblIndex(11)]
+            HRESULT put_onstoragecommit(VARIANT v);
+
+            [VtblIndex(12)]
+            HRESULT get_onstoragecommit(VARIANT* p);
+
+            [VtblIndex(13)]
+            HRESULT getElementById([NativeTypeName("BSTR")] ushort* bstrId, IHTMLElement2** ppRetElement);
+
+            [VtblIndex(14)]
+            HRESULT updateSettings();
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLDocument6*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLDocument6*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLDocument6*, uint> Release;
+
+            [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLDocument6*, uint*, int> GetTypeInfoCount;
+
+            [NativeTypeName("HRESULT (UINT, LCID, ITypeInfo **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLDocument6*, uint, uint, ITypeInfo**, int> GetTypeInfo;
+
+            [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLDocument6*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+
+            [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLDocument6*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
+
+            [NativeTypeName("HRESULT (IHTMLDocumentCompatibleInfoCollection **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLDocument6*, IHTMLDocumentCompatibleInfoCollection**, int> get_compatible;
+
+            [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLDocument6*, VARIANT*, int> get_documentMode;
+
+            [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLDocument6*, VARIANT, int> put_onstorage;
+
+            [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLDocument6*, VARIANT*, int> get_onstorage;
+
+            [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLDocument6*, VARIANT, int> put_onstoragecommit;
+
+            [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLDocument6*, VARIANT*, int> get_onstoragecommit;
+
+            [NativeTypeName("HRESULT (BSTR, IHTMLElement2 **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLDocument6*, ushort*, IHTMLElement2**, int> getElementById;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLDocument6*, int> updateSettings;
         }
     }
 }

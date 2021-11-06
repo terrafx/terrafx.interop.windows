@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("5009834F-2D6A-41CE-9E1B-17C5AFF7A782")]
     [NativeTypeName("struct IWICBitmapFlipRotator : IWICBitmapSource")]
     [NativeInheritance("IWICBitmapSource")]
-    public unsafe partial struct IWICBitmapFlipRotator
+    public unsafe partial struct IWICBitmapFlipRotator : IWICBitmapFlipRotator.Interface
     {
         public void** lpVtbl;
 
@@ -79,6 +79,42 @@ namespace TerraFX.Interop
         public HRESULT Initialize(IWICBitmapSource* pISource, WICBitmapTransformOptions options)
         {
             return ((delegate* unmanaged<IWICBitmapFlipRotator*, IWICBitmapSource*, WICBitmapTransformOptions, int>)(lpVtbl[8]))((IWICBitmapFlipRotator*)Unsafe.AsPointer(ref this), pISource, options);
+        }
+
+        public interface Interface : IWICBitmapSource.Interface
+        {
+            [VtblIndex(8)]
+            HRESULT Initialize(IWICBitmapSource* pISource, WICBitmapTransformOptions options);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWICBitmapFlipRotator*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IWICBitmapFlipRotator*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IWICBitmapFlipRotator*, uint> Release;
+
+            [NativeTypeName("HRESULT (UINT *, UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWICBitmapFlipRotator*, uint*, uint*, int> GetSize;
+
+            [NativeTypeName("HRESULT (WICPixelFormatGUID *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWICBitmapFlipRotator*, Guid*, int> GetPixelFormat;
+
+            [NativeTypeName("HRESULT (double *, double *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWICBitmapFlipRotator*, double*, double*, int> GetResolution;
+
+            [NativeTypeName("HRESULT (IWICPalette *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWICBitmapFlipRotator*, IWICPalette*, int> CopyPalette;
+
+            [NativeTypeName("HRESULT (const WICRect *, UINT, UINT, BYTE *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWICBitmapFlipRotator*, WICRect*, uint, uint, byte*, int> CopyPixels;
+
+            [NativeTypeName("HRESULT (IWICBitmapSource *, WICBitmapTransformOptions) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWICBitmapFlipRotator*, IWICBitmapSource*, WICBitmapTransformOptions, int> Initialize;
         }
     }
 }

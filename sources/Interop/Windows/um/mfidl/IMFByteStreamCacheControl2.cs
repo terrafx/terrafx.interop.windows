@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("71CE469C-F34B-49EA-A56B-2D2A10E51149")]
     [NativeTypeName("struct IMFByteStreamCacheControl2 : IMFByteStreamCacheControl")]
     [NativeInheritance("IMFByteStreamCacheControl")]
-    public unsafe partial struct IMFByteStreamCacheControl2
+    public unsafe partial struct IMFByteStreamCacheControl2 : IMFByteStreamCacheControl2.Interface
     {
         public void** lpVtbl;
 
@@ -65,6 +65,42 @@ namespace TerraFX.Interop
         public HRESULT IsBackgroundTransferActive(BOOL* pfActive)
         {
             return ((delegate* unmanaged<IMFByteStreamCacheControl2*, BOOL*, int>)(lpVtbl[6]))((IMFByteStreamCacheControl2*)Unsafe.AsPointer(ref this), pfActive);
+        }
+
+        public interface Interface : IMFByteStreamCacheControl.Interface
+        {
+            [VtblIndex(4)]
+            HRESULT GetByteRanges([NativeTypeName("DWORD *")] uint* pcRanges, MF_BYTE_STREAM_CACHE_RANGE** ppRanges);
+
+            [VtblIndex(5)]
+            HRESULT SetCacheLimit([NativeTypeName("QWORD")] ulong qwBytes);
+
+            [VtblIndex(6)]
+            HRESULT IsBackgroundTransferActive(BOOL* pfActive);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFByteStreamCacheControl2*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFByteStreamCacheControl2*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFByteStreamCacheControl2*, uint> Release;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFByteStreamCacheControl2*, int> StopBackgroundTransfer;
+
+            [NativeTypeName("HRESULT (DWORD *, MF_BYTE_STREAM_CACHE_RANGE **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFByteStreamCacheControl2*, uint*, MF_BYTE_STREAM_CACHE_RANGE**, int> GetByteRanges;
+
+            [NativeTypeName("HRESULT (QWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFByteStreamCacheControl2*, ulong, int> SetCacheLimit;
+
+            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFByteStreamCacheControl2*, BOOL*, int> IsBackgroundTransferActive;
         }
     }
 }

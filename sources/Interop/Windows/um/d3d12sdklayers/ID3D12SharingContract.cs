@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("0ADF7D52-929C-4E61-ADDB-FFED30DE66EF")]
     [NativeTypeName("struct ID3D12SharingContract : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct ID3D12SharingContract
+    public unsafe partial struct ID3D12SharingContract : ID3D12SharingContract.Interface
     {
         public void** lpVtbl;
 
@@ -65,6 +65,45 @@ namespace TerraFX.Interop
         public void EndCapturableWork([NativeTypeName("const GUID &")] Guid* guid)
         {
             ((delegate* unmanaged<ID3D12SharingContract*, Guid*, void>)(lpVtbl[6]))((ID3D12SharingContract*)Unsafe.AsPointer(ref this), guid);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            void Present(ID3D12Resource* pResource, uint Subresource, HWND window);
+
+            [VtblIndex(4)]
+            void SharedFenceSignal(ID3D12Fence* pFence, [NativeTypeName("UINT64")] ulong FenceValue);
+
+            [VtblIndex(5)]
+            void BeginCapturableWork([NativeTypeName("const GUID &")] Guid* guid);
+
+            [VtblIndex(6)]
+            void EndCapturableWork([NativeTypeName("const GUID &")] Guid* guid);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D12SharingContract*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D12SharingContract*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D12SharingContract*, uint> Release;
+
+            [NativeTypeName("void (ID3D12Resource *, UINT, HWND) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D12SharingContract*, ID3D12Resource*, uint, HWND, void> Present;
+
+            [NativeTypeName("void (ID3D12Fence *, UINT64) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D12SharingContract*, ID3D12Fence*, ulong, void> SharedFenceSignal;
+
+            [NativeTypeName("void (const GUID &) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D12SharingContract*, Guid*, void> BeginCapturableWork;
+
+            [NativeTypeName("void (const GUID &) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D12SharingContract*, Guid*, void> EndCapturableWork;
         }
     }
 }

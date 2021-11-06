@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("30F3D47A-6447-11D1-8E3C-00C04FB9386D")]
     [NativeTypeName("struct IBlockingLock : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IBlockingLock
+    public unsafe partial struct IBlockingLock : IBlockingLock.Interface
     {
         public void** lpVtbl;
 
@@ -51,6 +51,33 @@ namespace TerraFX.Interop
         public HRESULT Unlock()
         {
             return ((delegate* unmanaged<IBlockingLock*, int>)(lpVtbl[4]))((IBlockingLock*)Unsafe.AsPointer(ref this));
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT Lock([NativeTypeName("DWORD")] uint dwTimeout);
+
+            [VtblIndex(4)]
+            HRESULT Unlock();
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IBlockingLock*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IBlockingLock*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IBlockingLock*, uint> Release;
+
+            [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<IBlockingLock*, uint, int> Lock;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IBlockingLock*, int> Unlock;
         }
     }
 }

@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("8E36395F-C7B9-43C4-A54D-512B4AF63C95")]
     [NativeTypeName("struct IMFSampleProtection : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IMFSampleProtection
+    public unsafe partial struct IMFSampleProtection : IMFSampleProtection.Interface
     {
         public void** lpVtbl;
 
@@ -72,6 +72,51 @@ namespace TerraFX.Interop
         public HRESULT InitInputProtection([NativeTypeName("DWORD")] uint dwVersion, [NativeTypeName("DWORD")] uint dwInputId, byte* pbSeed, [NativeTypeName("DWORD")] uint cbSeed)
         {
             return ((delegate* unmanaged<IMFSampleProtection*, uint, uint, byte*, uint, int>)(lpVtbl[7]))((IMFSampleProtection*)Unsafe.AsPointer(ref this), dwVersion, dwInputId, pbSeed, cbSeed);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetInputProtectionVersion([NativeTypeName("DWORD *")] uint* pdwVersion);
+
+            [VtblIndex(4)]
+            HRESULT GetOutputProtectionVersion([NativeTypeName("DWORD *")] uint* pdwVersion);
+
+            [VtblIndex(5)]
+            HRESULT GetProtectionCertificate([NativeTypeName("DWORD")] uint dwVersion, byte** ppCert, [NativeTypeName("DWORD *")] uint* pcbCert);
+
+            [VtblIndex(6)]
+            HRESULT InitOutputProtection([NativeTypeName("DWORD")] uint dwVersion, [NativeTypeName("DWORD")] uint dwOutputId, byte* pbCert, [NativeTypeName("DWORD")] uint cbCert, byte** ppbSeed, [NativeTypeName("DWORD *")] uint* pcbSeed);
+
+            [VtblIndex(7)]
+            HRESULT InitInputProtection([NativeTypeName("DWORD")] uint dwVersion, [NativeTypeName("DWORD")] uint dwInputId, byte* pbSeed, [NativeTypeName("DWORD")] uint cbSeed);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFSampleProtection*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFSampleProtection*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFSampleProtection*, uint> Release;
+
+            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFSampleProtection*, uint*, int> GetInputProtectionVersion;
+
+            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFSampleProtection*, uint*, int> GetOutputProtectionVersion;
+
+            [NativeTypeName("HRESULT (DWORD, BYTE **, DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFSampleProtection*, uint, byte**, uint*, int> GetProtectionCertificate;
+
+            [NativeTypeName("HRESULT (DWORD, DWORD, BYTE *, DWORD, BYTE **, DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFSampleProtection*, uint, uint, byte*, uint, byte**, uint*, int> InitOutputProtection;
+
+            [NativeTypeName("HRESULT (DWORD, DWORD, BYTE *, DWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFSampleProtection*, uint, uint, byte*, uint, int> InitInputProtection;
         }
     }
 }

@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("F75B68D6-D1FD-4707-AAFD-FA6F4C0E3BF4")]
     [NativeTypeName("struct IHolographicCameraRenderingParametersInterop : IInspectable")]
     [NativeInheritance("IInspectable")]
-    public unsafe partial struct IHolographicCameraRenderingParametersInterop
+    public unsafe partial struct IHolographicCameraRenderingParametersInterop : IHolographicCameraRenderingParametersInterop.Interface
     {
         public void** lpVtbl;
 
@@ -72,6 +72,42 @@ namespace TerraFX.Interop
         public HRESULT CommitDirect3D12ResourceWithDepthData(ID3D12Resource* pColorResourceToCommit, ID3D12Fence* pColorResourceFence, [NativeTypeName("UINT64")] ulong colorResourceFenceSignalValue, ID3D12Resource* pDepthResourceToCommit, ID3D12Fence* pDepthResourceFence, [NativeTypeName("UINT64")] ulong depthResourceFenceSignalValue)
         {
             return ((delegate* unmanaged<IHolographicCameraRenderingParametersInterop*, ID3D12Resource*, ID3D12Fence*, ulong, ID3D12Resource*, ID3D12Fence*, ulong, int>)(lpVtbl[7]))((IHolographicCameraRenderingParametersInterop*)Unsafe.AsPointer(ref this), pColorResourceToCommit, pColorResourceFence, colorResourceFenceSignalValue, pDepthResourceToCommit, pDepthResourceFence, depthResourceFenceSignalValue);
+        }
+
+        public interface Interface : IInspectable.Interface
+        {
+            [VtblIndex(6)]
+            HRESULT CommitDirect3D12Resource(ID3D12Resource* pColorResourceToCommit, ID3D12Fence* pColorResourceFence, [NativeTypeName("UINT64")] ulong colorResourceFenceSignalValue);
+
+            [VtblIndex(7)]
+            HRESULT CommitDirect3D12ResourceWithDepthData(ID3D12Resource* pColorResourceToCommit, ID3D12Fence* pColorResourceFence, [NativeTypeName("UINT64")] ulong colorResourceFenceSignalValue, ID3D12Resource* pDepthResourceToCommit, ID3D12Fence* pDepthResourceFence, [NativeTypeName("UINT64")] ulong depthResourceFenceSignalValue);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHolographicCameraRenderingParametersInterop*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IHolographicCameraRenderingParametersInterop*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IHolographicCameraRenderingParametersInterop*, uint> Release;
+
+            [NativeTypeName("HRESULT (ULONG *, IID **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHolographicCameraRenderingParametersInterop*, uint*, Guid**, int> GetIids;
+
+            [NativeTypeName("HRESULT (HSTRING *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHolographicCameraRenderingParametersInterop*, HSTRING*, int> GetRuntimeClassName;
+
+            [NativeTypeName("HRESULT (TrustLevel *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHolographicCameraRenderingParametersInterop*, TrustLevel*, int> GetTrustLevel;
+
+            [NativeTypeName("HRESULT (ID3D12Resource *, ID3D12Fence *, UINT64) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHolographicCameraRenderingParametersInterop*, ID3D12Resource*, ID3D12Fence*, ulong, int> CommitDirect3D12Resource;
+
+            [NativeTypeName("HRESULT (ID3D12Resource *, ID3D12Fence *, UINT64, ID3D12Resource *, ID3D12Fence *, UINT64) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHolographicCameraRenderingParametersInterop*, ID3D12Resource*, ID3D12Fence*, ulong, ID3D12Resource*, ID3D12Fence*, ulong, int> CommitDirect3D12ResourceWithDepthData;
         }
     }
 }

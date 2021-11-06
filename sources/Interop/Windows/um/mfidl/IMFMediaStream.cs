@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("D182108F-4EC6-443F-AA42-A71106EC825F")]
     [NativeTypeName("struct IMFMediaStream : IMFMediaEventGenerator")]
     [NativeInheritance("IMFMediaEventGenerator")]
-    public unsafe partial struct IMFMediaStream
+    public unsafe partial struct IMFMediaStream : IMFMediaStream.Interface
     {
         public void** lpVtbl;
 
@@ -86,6 +86,51 @@ namespace TerraFX.Interop
         public HRESULT RequestSample(IUnknown* pToken)
         {
             return ((delegate* unmanaged<IMFMediaStream*, IUnknown*, int>)(lpVtbl[9]))((IMFMediaStream*)Unsafe.AsPointer(ref this), pToken);
+        }
+
+        public interface Interface : IMFMediaEventGenerator.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT GetMediaSource(IMFMediaSource** ppMediaSource);
+
+            [VtblIndex(8)]
+            HRESULT GetStreamDescriptor(IMFStreamDescriptor** ppStreamDescriptor);
+
+            [VtblIndex(9)]
+            HRESULT RequestSample(IUnknown* pToken);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFMediaStream*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFMediaStream*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFMediaStream*, uint> Release;
+
+            [NativeTypeName("HRESULT (DWORD, IMFMediaEvent **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFMediaStream*, uint, IMFMediaEvent**, int> GetEvent;
+
+            [NativeTypeName("HRESULT (IMFAsyncCallback *, IUnknown *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFMediaStream*, IMFAsyncCallback*, IUnknown*, int> BeginGetEvent;
+
+            [NativeTypeName("HRESULT (IMFAsyncResult *, IMFMediaEvent **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFMediaStream*, IMFAsyncResult*, IMFMediaEvent**, int> EndGetEvent;
+
+            [NativeTypeName("HRESULT (MediaEventType, const GUID &, HRESULT, const PROPVARIANT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFMediaStream*, uint, Guid*, HRESULT, PROPVARIANT*, int> QueueEvent;
+
+            [NativeTypeName("HRESULT (IMFMediaSource **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFMediaStream*, IMFMediaSource**, int> GetMediaSource;
+
+            [NativeTypeName("HRESULT (IMFStreamDescriptor **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFMediaStream*, IMFStreamDescriptor**, int> GetStreamDescriptor;
+
+            [NativeTypeName("HRESULT (IUnknown *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFMediaStream*, IUnknown*, int> RequestSample;
         }
     }
 }

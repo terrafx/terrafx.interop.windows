@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("45C35144-154E-4797-BED8-D33AE7BF8794")]
     [NativeTypeName("struct ITfCleanupContextDurationSink : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct ITfCleanupContextDurationSink
+    public unsafe partial struct ITfCleanupContextDurationSink : ITfCleanupContextDurationSink.Interface
     {
         public void** lpVtbl;
 
@@ -51,6 +51,33 @@ namespace TerraFX.Interop
         public HRESULT OnEndCleanupContext()
         {
             return ((delegate* unmanaged<ITfCleanupContextDurationSink*, int>)(lpVtbl[4]))((ITfCleanupContextDurationSink*)Unsafe.AsPointer(ref this));
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT OnStartCleanupContext();
+
+            [VtblIndex(4)]
+            HRESULT OnEndCleanupContext();
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfCleanupContextDurationSink*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfCleanupContextDurationSink*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfCleanupContextDurationSink*, uint> Release;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfCleanupContextDurationSink*, int> OnStartCleanupContext;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfCleanupContextDurationSink*, int> OnEndCleanupContext;
         }
     }
 }

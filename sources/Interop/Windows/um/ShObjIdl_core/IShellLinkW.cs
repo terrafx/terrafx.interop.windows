@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("000214F9-0000-0000-C000-000000000046")]
     [NativeTypeName("struct IShellLinkW : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IShellLinkW
+    public unsafe partial struct IShellLinkW : IShellLinkW.Interface
     {
         public void** lpVtbl;
 
@@ -163,6 +163,129 @@ namespace TerraFX.Interop
         public HRESULT SetPath([NativeTypeName("LPCWSTR")] ushort* pszFile)
         {
             return ((delegate* unmanaged<IShellLinkW*, ushort*, int>)(lpVtbl[20]))((IShellLinkW*)Unsafe.AsPointer(ref this), pszFile);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetPath([NativeTypeName("LPWSTR")] ushort* pszFile, int cch, WIN32_FIND_DATAW* pfd, [NativeTypeName("DWORD")] uint fFlags);
+
+            [VtblIndex(4)]
+            HRESULT GetIDList([NativeTypeName("LPITEMIDLIST *")] ITEMIDLIST** ppidl);
+
+            [VtblIndex(5)]
+            HRESULT SetIDList([NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidl);
+
+            [VtblIndex(6)]
+            HRESULT GetDescription([NativeTypeName("LPWSTR")] ushort* pszName, int cch);
+
+            [VtblIndex(7)]
+            HRESULT SetDescription([NativeTypeName("LPCWSTR")] ushort* pszName);
+
+            [VtblIndex(8)]
+            HRESULT GetWorkingDirectory([NativeTypeName("LPWSTR")] ushort* pszDir, int cch);
+
+            [VtblIndex(9)]
+            HRESULT SetWorkingDirectory([NativeTypeName("LPCWSTR")] ushort* pszDir);
+
+            [VtblIndex(10)]
+            HRESULT GetArguments([NativeTypeName("LPWSTR")] ushort* pszArgs, int cch);
+
+            [VtblIndex(11)]
+            HRESULT SetArguments([NativeTypeName("LPCWSTR")] ushort* pszArgs);
+
+            [VtblIndex(12)]
+            HRESULT GetHotkey([NativeTypeName("WORD *")] ushort* pwHotkey);
+
+            [VtblIndex(13)]
+            HRESULT SetHotkey([NativeTypeName("WORD")] ushort wHotkey);
+
+            [VtblIndex(14)]
+            HRESULT GetShowCmd(int* piShowCmd);
+
+            [VtblIndex(15)]
+            HRESULT SetShowCmd(int iShowCmd);
+
+            [VtblIndex(16)]
+            HRESULT GetIconLocation([NativeTypeName("LPWSTR")] ushort* pszIconPath, int cch, int* piIcon);
+
+            [VtblIndex(17)]
+            HRESULT SetIconLocation([NativeTypeName("LPCWSTR")] ushort* pszIconPath, int iIcon);
+
+            [VtblIndex(18)]
+            HRESULT SetRelativePath([NativeTypeName("LPCWSTR")] ushort* pszPathRel, [NativeTypeName("DWORD")] uint dwReserved);
+
+            [VtblIndex(19)]
+            HRESULT Resolve(HWND hwnd, [NativeTypeName("DWORD")] uint fFlags);
+
+            [VtblIndex(20)]
+            HRESULT SetPath([NativeTypeName("LPCWSTR")] ushort* pszFile);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellLinkW*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellLinkW*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellLinkW*, uint> Release;
+
+            [NativeTypeName("HRESULT (LPWSTR, int, WIN32_FIND_DATAW *, DWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellLinkW*, ushort*, int, WIN32_FIND_DATAW*, uint, int> GetPath;
+
+            [NativeTypeName("HRESULT (LPITEMIDLIST *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellLinkW*, ITEMIDLIST**, int> GetIDList;
+
+            [NativeTypeName("HRESULT (LPCITEMIDLIST) __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellLinkW*, ITEMIDLIST*, int> SetIDList;
+
+            [NativeTypeName("HRESULT (LPWSTR, int) __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellLinkW*, ushort*, int, int> GetDescription;
+
+            [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellLinkW*, ushort*, int> SetDescription;
+
+            [NativeTypeName("HRESULT (LPWSTR, int) __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellLinkW*, ushort*, int, int> GetWorkingDirectory;
+
+            [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellLinkW*, ushort*, int> SetWorkingDirectory;
+
+            [NativeTypeName("HRESULT (LPWSTR, int) __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellLinkW*, ushort*, int, int> GetArguments;
+
+            [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellLinkW*, ushort*, int> SetArguments;
+
+            [NativeTypeName("HRESULT (WORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellLinkW*, ushort*, int> GetHotkey;
+
+            [NativeTypeName("HRESULT (WORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellLinkW*, ushort, int> SetHotkey;
+
+            [NativeTypeName("HRESULT (int *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellLinkW*, int*, int> GetShowCmd;
+
+            [NativeTypeName("HRESULT (int) __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellLinkW*, int, int> SetShowCmd;
+
+            [NativeTypeName("HRESULT (LPWSTR, int, int *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellLinkW*, ushort*, int, int*, int> GetIconLocation;
+
+            [NativeTypeName("HRESULT (LPCWSTR, int) __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellLinkW*, ushort*, int, int> SetIconLocation;
+
+            [NativeTypeName("HRESULT (LPCWSTR, DWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellLinkW*, ushort*, uint, int> SetRelativePath;
+
+            [NativeTypeName("HRESULT (HWND, DWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellLinkW*, HWND, uint, int> Resolve;
+
+            [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellLinkW*, ushort*, int> SetPath;
         }
     }
 }

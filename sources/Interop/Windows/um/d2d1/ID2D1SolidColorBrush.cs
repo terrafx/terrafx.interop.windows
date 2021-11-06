@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("2CD906A9-12E2-11DC-9FED-001143A055F9")]
     [NativeTypeName("struct ID2D1SolidColorBrush : ID2D1Brush")]
     [NativeInheritance("ID2D1Brush")]
-    public unsafe partial struct ID2D1SolidColorBrush
+    public unsafe partial struct ID2D1SolidColorBrush : ID2D1SolidColorBrush.Interface
     {
         public void** lpVtbl;
 
@@ -88,6 +88,49 @@ namespace TerraFX.Interop
         {
             DXGI_RGBA result;
             return *((delegate* unmanaged<ID2D1SolidColorBrush*, DXGI_RGBA*, DXGI_RGBA*>)(lpVtbl[9]))((ID2D1SolidColorBrush*)Unsafe.AsPointer(ref this), &result);
+        }
+
+        public interface Interface : ID2D1Brush.Interface
+        {
+            [VtblIndex(8)]
+            void SetColor([NativeTypeName("const D2D1_COLOR_F *")] DXGI_RGBA* color);
+
+            [VtblIndex(9)]
+            [return: NativeTypeName("D2D1_COLOR_F")]
+            DXGI_RGBA GetColor();
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID2D1SolidColorBrush*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ID2D1SolidColorBrush*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ID2D1SolidColorBrush*, uint> Release;
+
+            [NativeTypeName("void (ID2D1Factory **) const __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID2D1SolidColorBrush*, ID2D1Factory**, void> GetFactory;
+
+            [NativeTypeName("void (FLOAT) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID2D1SolidColorBrush*, float, void> SetOpacity;
+
+            [NativeTypeName("void (const D2D1_MATRIX_3X2_F *) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID2D1SolidColorBrush*, D2D_MATRIX_3X2_F*, void> SetTransform;
+
+            [NativeTypeName("FLOAT () const __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID2D1SolidColorBrush*, float> GetOpacity;
+
+            [NativeTypeName("void (D2D1_MATRIX_3X2_F *) const __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID2D1SolidColorBrush*, D2D_MATRIX_3X2_F*, void> GetTransform;
+
+            [NativeTypeName("void (const D2D1_COLOR_F *) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID2D1SolidColorBrush*, DXGI_RGBA*, void> SetColor;
+
+            [NativeTypeName("D2D1_COLOR_F () const __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID2D1SolidColorBrush*, DXGI_RGBA*, DXGI_RGBA*> GetColor;
         }
     }
 }

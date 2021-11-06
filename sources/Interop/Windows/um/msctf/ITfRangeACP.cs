@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("057A6296-029B-4154-B79A-0D461D4EA94C")]
     [NativeTypeName("struct ITfRangeACP : ITfRange")]
     [NativeInheritance("ITfRange")]
-    public unsafe partial struct ITfRangeACP
+    public unsafe partial struct ITfRangeACP : ITfRangeACP.Interface
     {
         public void** lpVtbl;
 
@@ -205,6 +205,99 @@ namespace TerraFX.Interop
         public HRESULT SetExtent([NativeTypeName("LONG")] int acpAnchor, [NativeTypeName("LONG")] int cch)
         {
             return ((delegate* unmanaged<ITfRangeACP*, int, int, int>)(lpVtbl[26]))((ITfRangeACP*)Unsafe.AsPointer(ref this), acpAnchor, cch);
+        }
+
+        public interface Interface : ITfRange.Interface
+        {
+            [VtblIndex(25)]
+            HRESULT GetExtent([NativeTypeName("LONG *")] int* pacpAnchor, [NativeTypeName("LONG *")] int* pcch);
+
+            [VtblIndex(26)]
+            HRESULT SetExtent([NativeTypeName("LONG")] int acpAnchor, [NativeTypeName("LONG")] int cch);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfRangeACP*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfRangeACP*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfRangeACP*, uint> Release;
+
+            [NativeTypeName("HRESULT (TfEditCookie, DWORD, WCHAR *, ULONG, ULONG *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfRangeACP*, uint, uint, ushort*, uint, uint*, int> GetText;
+
+            [NativeTypeName("HRESULT (TfEditCookie, DWORD, const WCHAR *, LONG) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfRangeACP*, uint, uint, ushort*, int, int> SetText;
+
+            [NativeTypeName("HRESULT (TfEditCookie, IDataObject **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfRangeACP*, uint, IDataObject**, int> GetFormattedText;
+
+            [NativeTypeName("HRESULT (TfEditCookie, const GUID &, const IID &, IUnknown **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfRangeACP*, uint, Guid*, Guid*, IUnknown**, int> GetEmbedded;
+
+            [NativeTypeName("HRESULT (TfEditCookie, DWORD, IDataObject *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfRangeACP*, uint, uint, IDataObject*, int> InsertEmbedded;
+
+            [NativeTypeName("HRESULT (TfEditCookie, LONG, LONG *, const TF_HALTCOND *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfRangeACP*, uint, int, int*, TF_HALTCOND*, int> ShiftStart;
+
+            [NativeTypeName("HRESULT (TfEditCookie, LONG, LONG *, const TF_HALTCOND *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfRangeACP*, uint, int, int*, TF_HALTCOND*, int> ShiftEnd;
+
+            [NativeTypeName("HRESULT (TfEditCookie, ITfRange *, TfAnchor) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfRangeACP*, uint, ITfRange*, TfAnchor, int> ShiftStartToRange;
+
+            [NativeTypeName("HRESULT (TfEditCookie, ITfRange *, TfAnchor) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfRangeACP*, uint, ITfRange*, TfAnchor, int> ShiftEndToRange;
+
+            [NativeTypeName("HRESULT (TfEditCookie, TfShiftDir, BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfRangeACP*, uint, TfShiftDir, BOOL*, int> ShiftStartRegion;
+
+            [NativeTypeName("HRESULT (TfEditCookie, TfShiftDir, BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfRangeACP*, uint, TfShiftDir, BOOL*, int> ShiftEndRegion;
+
+            [NativeTypeName("HRESULT (TfEditCookie, BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfRangeACP*, uint, BOOL*, int> IsEmpty;
+
+            [NativeTypeName("HRESULT (TfEditCookie, TfAnchor) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfRangeACP*, uint, TfAnchor, int> Collapse;
+
+            [NativeTypeName("HRESULT (TfEditCookie, ITfRange *, TfAnchor, BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfRangeACP*, uint, ITfRange*, TfAnchor, BOOL*, int> IsEqualStart;
+
+            [NativeTypeName("HRESULT (TfEditCookie, ITfRange *, TfAnchor, BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfRangeACP*, uint, ITfRange*, TfAnchor, BOOL*, int> IsEqualEnd;
+
+            [NativeTypeName("HRESULT (TfEditCookie, ITfRange *, TfAnchor, LONG *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfRangeACP*, uint, ITfRange*, TfAnchor, int*, int> CompareStart;
+
+            [NativeTypeName("HRESULT (TfEditCookie, ITfRange *, TfAnchor, LONG *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfRangeACP*, uint, ITfRange*, TfAnchor, int*, int> CompareEnd;
+
+            [NativeTypeName("HRESULT (TfEditCookie, ULONG, BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfRangeACP*, uint, uint, BOOL*, int> AdjustForInsert;
+
+            [NativeTypeName("HRESULT (TfGravity *, TfGravity *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfRangeACP*, TfGravity*, TfGravity*, int> GetGravity;
+
+            [NativeTypeName("HRESULT (TfEditCookie, TfGravity, TfGravity) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfRangeACP*, uint, TfGravity, TfGravity, int> SetGravity;
+
+            [NativeTypeName("HRESULT (ITfRange **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfRangeACP*, ITfRange**, int> Clone;
+
+            [NativeTypeName("HRESULT (ITfContext **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfRangeACP*, ITfContext**, int> GetContext;
+
+            [NativeTypeName("HRESULT (LONG *, LONG *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfRangeACP*, int*, int*, int> GetExtent;
+
+            [NativeTypeName("HRESULT (LONG, LONG) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfRangeACP*, int, int, int> SetExtent;
         }
     }
 }

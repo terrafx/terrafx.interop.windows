@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("3050F81A-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct IHtmlDlgSafeHelper : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct IHtmlDlgSafeHelper
+    public unsafe partial struct IHtmlDlgSafeHelper : IHtmlDlgSafeHelper.Interface
     {
         public void** lpVtbl;
 
@@ -93,6 +93,57 @@ namespace TerraFX.Interop
         public HRESULT get_BlockFormats(IDispatch** p)
         {
             return ((delegate* unmanaged<IHtmlDlgSafeHelper*, IDispatch**, int>)(lpVtbl[10]))((IHtmlDlgSafeHelper*)Unsafe.AsPointer(ref this), p);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT choosecolordlg(VARIANT initColor, VARIANT* rgbColor);
+
+            [VtblIndex(8)]
+            HRESULT getCharset([NativeTypeName("BSTR")] ushort* fontName, VARIANT* charset);
+
+            [VtblIndex(9)]
+            HRESULT get_Fonts(IDispatch** p);
+
+            [VtblIndex(10)]
+            HRESULT get_BlockFormats(IDispatch** p);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHtmlDlgSafeHelper*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IHtmlDlgSafeHelper*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IHtmlDlgSafeHelper*, uint> Release;
+
+            [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHtmlDlgSafeHelper*, uint*, int> GetTypeInfoCount;
+
+            [NativeTypeName("HRESULT (UINT, LCID, ITypeInfo **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHtmlDlgSafeHelper*, uint, uint, ITypeInfo**, int> GetTypeInfo;
+
+            [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHtmlDlgSafeHelper*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+
+            [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHtmlDlgSafeHelper*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
+
+            [NativeTypeName("HRESULT (VARIANT, VARIANT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHtmlDlgSafeHelper*, VARIANT, VARIANT*, int> choosecolordlg;
+
+            [NativeTypeName("HRESULT (BSTR, VARIANT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHtmlDlgSafeHelper*, ushort*, VARIANT*, int> getCharset;
+
+            [NativeTypeName("HRESULT (IDispatch **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHtmlDlgSafeHelper*, IDispatch**, int> get_Fonts;
+
+            [NativeTypeName("HRESULT (IDispatch **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHtmlDlgSafeHelper*, IDispatch**, int> get_BlockFormats;
         }
     }
 }

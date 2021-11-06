@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("3051051F-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct ISVGTextPathElement : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct ISVGTextPathElement
+    public unsafe partial struct ISVGTextPathElement : ISVGTextPathElement.Interface
     {
         public void** lpVtbl;
 
@@ -107,6 +107,69 @@ namespace TerraFX.Interop
         public HRESULT get_spacing(ISVGAnimatedEnumeration** p)
         {
             return ((delegate* unmanaged<ISVGTextPathElement*, ISVGAnimatedEnumeration**, int>)(lpVtbl[12]))((ISVGTextPathElement*)Unsafe.AsPointer(ref this), p);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT putref_startOffset(ISVGAnimatedLength* v);
+
+            [VtblIndex(8)]
+            HRESULT get_startOffset(ISVGAnimatedLength** p);
+
+            [VtblIndex(9)]
+            HRESULT putref_method(ISVGAnimatedEnumeration* v);
+
+            [VtblIndex(10)]
+            HRESULT get_method(ISVGAnimatedEnumeration** p);
+
+            [VtblIndex(11)]
+            HRESULT putref_spacing(ISVGAnimatedEnumeration* v);
+
+            [VtblIndex(12)]
+            HRESULT get_spacing(ISVGAnimatedEnumeration** p);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISVGTextPathElement*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ISVGTextPathElement*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ISVGTextPathElement*, uint> Release;
+
+            [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISVGTextPathElement*, uint*, int> GetTypeInfoCount;
+
+            [NativeTypeName("HRESULT (UINT, LCID, ITypeInfo **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISVGTextPathElement*, uint, uint, ITypeInfo**, int> GetTypeInfo;
+
+            [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISVGTextPathElement*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+
+            [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISVGTextPathElement*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
+
+            [NativeTypeName("HRESULT (ISVGAnimatedLength *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISVGTextPathElement*, ISVGAnimatedLength*, int> putref_startOffset;
+
+            [NativeTypeName("HRESULT (ISVGAnimatedLength **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISVGTextPathElement*, ISVGAnimatedLength**, int> get_startOffset;
+
+            [NativeTypeName("HRESULT (ISVGAnimatedEnumeration *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISVGTextPathElement*, ISVGAnimatedEnumeration*, int> putref_method;
+
+            [NativeTypeName("HRESULT (ISVGAnimatedEnumeration **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISVGTextPathElement*, ISVGAnimatedEnumeration**, int> get_method;
+
+            [NativeTypeName("HRESULT (ISVGAnimatedEnumeration *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISVGTextPathElement*, ISVGAnimatedEnumeration*, int> putref_spacing;
+
+            [NativeTypeName("HRESULT (ISVGAnimatedEnumeration **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISVGTextPathElement*, ISVGAnimatedEnumeration**, int> get_spacing;
         }
     }
 }

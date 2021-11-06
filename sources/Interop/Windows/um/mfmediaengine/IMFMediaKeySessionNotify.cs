@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("6A0083F9-8947-4C1D-9CE0-CDEE22B23135")]
     [NativeTypeName("struct IMFMediaKeySessionNotify : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IMFMediaKeySessionNotify
+    public unsafe partial struct IMFMediaKeySessionNotify : IMFMediaKeySessionNotify.Interface
     {
         public void** lpVtbl;
 
@@ -58,6 +58,39 @@ namespace TerraFX.Interop
         public void KeyError(ushort code, [NativeTypeName("DWORD")] uint systemCode)
         {
             ((delegate* unmanaged<IMFMediaKeySessionNotify*, ushort, uint, void>)(lpVtbl[5]))((IMFMediaKeySessionNotify*)Unsafe.AsPointer(ref this), code, systemCode);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            void KeyMessage([NativeTypeName("BSTR")] ushort* destinationURL, [NativeTypeName("const BYTE *")] byte* message, [NativeTypeName("DWORD")] uint cb);
+
+            [VtblIndex(4)]
+            void KeyAdded();
+
+            [VtblIndex(5)]
+            void KeyError(ushort code, [NativeTypeName("DWORD")] uint systemCode);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFMediaKeySessionNotify*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFMediaKeySessionNotify*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFMediaKeySessionNotify*, uint> Release;
+
+            [NativeTypeName("void (BSTR, const BYTE *, DWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFMediaKeySessionNotify*, ushort*, byte*, uint, void> KeyMessage;
+
+            [NativeTypeName("void () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFMediaKeySessionNotify*, void> KeyAdded;
+
+            [NativeTypeName("void (USHORT, DWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFMediaKeySessionNotify*, ushort, uint, void> KeyError;
         }
     }
 }

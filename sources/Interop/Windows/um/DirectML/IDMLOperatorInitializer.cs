@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("427C1113-435C-469C-8676-4D5DD072F813")]
     [NativeTypeName("struct IDMLOperatorInitializer : IDMLDispatchable")]
     [NativeInheritance("IDMLDispatchable")]
-    public unsafe partial struct IDMLOperatorInitializer
+    public unsafe partial struct IDMLOperatorInitializer : IDMLOperatorInitializer.Interface
     {
         public void** lpVtbl;
 
@@ -87,6 +87,45 @@ namespace TerraFX.Interop
         public HRESULT Reset(uint operatorCount, [NativeTypeName("IDMLCompiledOperator *const *")] IDMLCompiledOperator** operators)
         {
             return ((delegate* unmanaged<IDMLOperatorInitializer*, uint, IDMLCompiledOperator**, int>)(lpVtbl[9]))((IDMLOperatorInitializer*)Unsafe.AsPointer(ref this), operatorCount, operators);
+        }
+
+        public interface Interface : IDMLDispatchable.Interface
+        {
+            [VtblIndex(9)]
+            HRESULT Reset(uint operatorCount, [NativeTypeName("IDMLCompiledOperator *const *")] IDMLCompiledOperator** operators);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDMLOperatorInitializer*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDMLOperatorInitializer*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDMLOperatorInitializer*, uint> Release;
+
+            [NativeTypeName("HRESULT (const GUID &, UINT *, void *) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDMLOperatorInitializer*, Guid*, uint*, void*, int> GetPrivateData;
+
+            [NativeTypeName("HRESULT (const GUID &, UINT, const void *) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDMLOperatorInitializer*, Guid*, uint, void*, int> SetPrivateData;
+
+            [NativeTypeName("HRESULT (const GUID &, IUnknown *) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDMLOperatorInitializer*, Guid*, IUnknown*, int> SetPrivateDataInterface;
+
+            [NativeTypeName("HRESULT (PCWSTR) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDMLOperatorInitializer*, ushort*, int> SetName;
+
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDMLOperatorInitializer*, Guid*, void**, int> GetDevice;
+
+            [NativeTypeName("DML_BINDING_PROPERTIES () __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDMLOperatorInitializer*, DML_BINDING_PROPERTIES*, DML_BINDING_PROPERTIES*> GetBindingProperties;
+
+            [NativeTypeName("HRESULT (UINT, IDMLCompiledOperator *const *) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDMLOperatorInitializer*, uint, IDMLCompiledOperator**, int> Reset;
         }
     }
 }

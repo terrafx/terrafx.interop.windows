@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("7C857801-7381-11CF-884D-00AA004B2E24")]
     [NativeTypeName("struct IWbemObjectSink : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IWbemObjectSink
+    public unsafe partial struct IWbemObjectSink : IWbemObjectSink.Interface
     {
         public void** lpVtbl;
 
@@ -51,6 +51,33 @@ namespace TerraFX.Interop
         public HRESULT SetStatus([NativeTypeName("long")] int lFlags, HRESULT hResult, [NativeTypeName("BSTR")] ushort* strParam, IWbemClassObject* pObjParam)
         {
             return ((delegate* unmanaged<IWbemObjectSink*, int, HRESULT, ushort*, IWbemClassObject*, int>)(lpVtbl[4]))((IWbemObjectSink*)Unsafe.AsPointer(ref this), lFlags, hResult, strParam, pObjParam);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT Indicate([NativeTypeName("long")] int lObjectCount, IWbemClassObject** apObjArray);
+
+            [VtblIndex(4)]
+            HRESULT SetStatus([NativeTypeName("long")] int lFlags, HRESULT hResult, [NativeTypeName("BSTR")] ushort* strParam, IWbemClassObject* pObjParam);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWbemObjectSink*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IWbemObjectSink*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IWbemObjectSink*, uint> Release;
+
+            [NativeTypeName("HRESULT (long, IWbemClassObject **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWbemObjectSink*, int, IWbemClassObject**, int> Indicate;
+
+            [NativeTypeName("HRESULT (long, HRESULT, BSTR, IWbemClassObject *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWbemObjectSink*, int, HRESULT, ushort*, IWbemClassObject*, int> SetStatus;
         }
     }
 }

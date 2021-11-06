@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("2CF5C4FD-E54C-4EA5-BA4E-F8C4B105A8C8")]
     [NativeTypeName("struct IAppxPackageWriter2 : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IAppxPackageWriter2
+    public unsafe partial struct IAppxPackageWriter2 : IAppxPackageWriter2.Interface
     {
         public void** lpVtbl;
 
@@ -44,6 +44,27 @@ namespace TerraFX.Interop
         public HRESULT Close(IStream* manifest, IStream* contentGroupMap)
         {
             return ((delegate* unmanaged<IAppxPackageWriter2*, IStream*, IStream*, int>)(lpVtbl[3]))((IAppxPackageWriter2*)Unsafe.AsPointer(ref this), manifest, contentGroupMap);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT Close(IStream* manifest, IStream* contentGroupMap);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAppxPackageWriter2*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IAppxPackageWriter2*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IAppxPackageWriter2*, uint> Release;
+
+            [NativeTypeName("HRESULT (IStream *, IStream *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAppxPackageWriter2*, IStream*, IStream*, int> Close;
         }
     }
 }

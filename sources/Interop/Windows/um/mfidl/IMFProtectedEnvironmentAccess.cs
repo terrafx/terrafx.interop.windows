@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("EF5DC845-F0D9-4EC9-B00C-CB5183D38434")]
     [NativeTypeName("struct IMFProtectedEnvironmentAccess : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IMFProtectedEnvironmentAccess
+    public unsafe partial struct IMFProtectedEnvironmentAccess : IMFProtectedEnvironmentAccess.Interface
     {
         public void** lpVtbl;
 
@@ -51,6 +51,33 @@ namespace TerraFX.Interop
         public HRESULT ReadGRL([NativeTypeName("UINT32 *")] uint* outputLength, byte** output)
         {
             return ((delegate* unmanaged<IMFProtectedEnvironmentAccess*, uint*, byte**, int>)(lpVtbl[4]))((IMFProtectedEnvironmentAccess*)Unsafe.AsPointer(ref this), outputLength, output);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT Call([NativeTypeName("UINT32")] uint inputLength, [NativeTypeName("const BYTE *")] byte* input, [NativeTypeName("UINT32")] uint outputLength, byte* output);
+
+            [VtblIndex(4)]
+            HRESULT ReadGRL([NativeTypeName("UINT32 *")] uint* outputLength, byte** output);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFProtectedEnvironmentAccess*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFProtectedEnvironmentAccess*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFProtectedEnvironmentAccess*, uint> Release;
+
+            [NativeTypeName("HRESULT (UINT32, const BYTE *, UINT32, BYTE *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFProtectedEnvironmentAccess*, uint, byte*, uint, byte*, int> Call;
+
+            [NativeTypeName("HRESULT (UINT32 *, BYTE **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFProtectedEnvironmentAccess*, uint*, byte**, int> ReadGRL;
         }
     }
 }

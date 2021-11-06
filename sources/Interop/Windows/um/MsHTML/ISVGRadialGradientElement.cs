@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("3051052A-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct ISVGRadialGradientElement : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct ISVGRadialGradientElement
+    public unsafe partial struct ISVGRadialGradientElement : ISVGRadialGradientElement.Interface
     {
         public void** lpVtbl;
 
@@ -135,6 +135,93 @@ namespace TerraFX.Interop
         public HRESULT get_fy(ISVGAnimatedLength** p)
         {
             return ((delegate* unmanaged<ISVGRadialGradientElement*, ISVGAnimatedLength**, int>)(lpVtbl[16]))((ISVGRadialGradientElement*)Unsafe.AsPointer(ref this), p);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT putref_cx(ISVGAnimatedLength* v);
+
+            [VtblIndex(8)]
+            HRESULT get_cx(ISVGAnimatedLength** p);
+
+            [VtblIndex(9)]
+            HRESULT putref_cy(ISVGAnimatedLength* v);
+
+            [VtblIndex(10)]
+            HRESULT get_cy(ISVGAnimatedLength** p);
+
+            [VtblIndex(11)]
+            HRESULT putref_r(ISVGAnimatedLength* v);
+
+            [VtblIndex(12)]
+            HRESULT get_r(ISVGAnimatedLength** p);
+
+            [VtblIndex(13)]
+            HRESULT putref_fx(ISVGAnimatedLength* v);
+
+            [VtblIndex(14)]
+            HRESULT get_fx(ISVGAnimatedLength** p);
+
+            [VtblIndex(15)]
+            HRESULT putref_fy(ISVGAnimatedLength* v);
+
+            [VtblIndex(16)]
+            HRESULT get_fy(ISVGAnimatedLength** p);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISVGRadialGradientElement*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ISVGRadialGradientElement*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ISVGRadialGradientElement*, uint> Release;
+
+            [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISVGRadialGradientElement*, uint*, int> GetTypeInfoCount;
+
+            [NativeTypeName("HRESULT (UINT, LCID, ITypeInfo **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISVGRadialGradientElement*, uint, uint, ITypeInfo**, int> GetTypeInfo;
+
+            [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISVGRadialGradientElement*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+
+            [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISVGRadialGradientElement*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
+
+            [NativeTypeName("HRESULT (ISVGAnimatedLength *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISVGRadialGradientElement*, ISVGAnimatedLength*, int> putref_cx;
+
+            [NativeTypeName("HRESULT (ISVGAnimatedLength **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISVGRadialGradientElement*, ISVGAnimatedLength**, int> get_cx;
+
+            [NativeTypeName("HRESULT (ISVGAnimatedLength *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISVGRadialGradientElement*, ISVGAnimatedLength*, int> putref_cy;
+
+            [NativeTypeName("HRESULT (ISVGAnimatedLength **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISVGRadialGradientElement*, ISVGAnimatedLength**, int> get_cy;
+
+            [NativeTypeName("HRESULT (ISVGAnimatedLength *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISVGRadialGradientElement*, ISVGAnimatedLength*, int> putref_r;
+
+            [NativeTypeName("HRESULT (ISVGAnimatedLength **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISVGRadialGradientElement*, ISVGAnimatedLength**, int> get_r;
+
+            [NativeTypeName("HRESULT (ISVGAnimatedLength *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISVGRadialGradientElement*, ISVGAnimatedLength*, int> putref_fx;
+
+            [NativeTypeName("HRESULT (ISVGAnimatedLength **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISVGRadialGradientElement*, ISVGAnimatedLength**, int> get_fx;
+
+            [NativeTypeName("HRESULT (ISVGAnimatedLength *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISVGRadialGradientElement*, ISVGAnimatedLength*, int> putref_fy;
+
+            [NativeTypeName("HRESULT (ISVGAnimatedLength **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISVGRadialGradientElement*, ISVGAnimatedLength**, int> get_fy;
         }
     }
 }

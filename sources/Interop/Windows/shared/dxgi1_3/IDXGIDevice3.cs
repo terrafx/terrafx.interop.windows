@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("6007896C-3244-4AFD-BF18-A6D3BEDA5023")]
     [NativeTypeName("struct IDXGIDevice3 : IDXGIDevice2")]
     [NativeInheritance("IDXGIDevice2")]
-    public unsafe partial struct IDXGIDevice3
+    public unsafe partial struct IDXGIDevice3 : IDXGIDevice3.Interface
     {
         public void** lpVtbl;
 
@@ -142,6 +142,69 @@ namespace TerraFX.Interop
         public void Trim()
         {
             ((delegate* unmanaged<IDXGIDevice3*, void>)(lpVtbl[17]))((IDXGIDevice3*)Unsafe.AsPointer(ref this));
+        }
+
+        public interface Interface : IDXGIDevice2.Interface
+        {
+            [VtblIndex(17)]
+            void Trim();
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDXGIDevice3*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDXGIDevice3*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDXGIDevice3*, uint> Release;
+
+            [NativeTypeName("HRESULT (const GUID &, UINT, const void *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDXGIDevice3*, Guid*, uint, void*, int> SetPrivateData;
+
+            [NativeTypeName("HRESULT (const GUID &, const IUnknown *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDXGIDevice3*, Guid*, IUnknown*, int> SetPrivateDataInterface;
+
+            [NativeTypeName("HRESULT (const GUID &, UINT *, void *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDXGIDevice3*, Guid*, uint*, void*, int> GetPrivateData;
+
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDXGIDevice3*, Guid*, void**, int> GetParent;
+
+            [NativeTypeName("HRESULT (IDXGIAdapter **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDXGIDevice3*, IDXGIAdapter**, int> GetAdapter;
+
+            [NativeTypeName("HRESULT (const DXGI_SURFACE_DESC *, UINT, DXGI_USAGE, const DXGI_SHARED_RESOURCE *, IDXGISurface **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDXGIDevice3*, DXGI_SURFACE_DESC*, uint, uint, DXGI_SHARED_RESOURCE*, IDXGISurface**, int> CreateSurface;
+
+            [NativeTypeName("HRESULT (IUnknown *const *, DXGI_RESIDENCY *, UINT) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDXGIDevice3*, IUnknown**, DXGI_RESIDENCY*, uint, int> QueryResourceResidency;
+
+            [NativeTypeName("HRESULT (INT) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDXGIDevice3*, int, int> SetGPUThreadPriority;
+
+            [NativeTypeName("HRESULT (INT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDXGIDevice3*, int*, int> GetGPUThreadPriority;
+
+            [NativeTypeName("HRESULT (UINT) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDXGIDevice3*, uint, int> SetMaximumFrameLatency;
+
+            [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDXGIDevice3*, uint*, int> GetMaximumFrameLatency;
+
+            [NativeTypeName("HRESULT (UINT, IDXGIResource *const *, DXGI_OFFER_RESOURCE_PRIORITY) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDXGIDevice3*, uint, IDXGIResource**, DXGI_OFFER_RESOURCE_PRIORITY, int> OfferResources;
+
+            [NativeTypeName("HRESULT (UINT, IDXGIResource *const *, BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDXGIDevice3*, uint, IDXGIResource**, BOOL*, int> ReclaimResources;
+
+            [NativeTypeName("HRESULT (HANDLE) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDXGIDevice3*, HANDLE, int> EnqueueSetEvent;
+
+            [NativeTypeName("void () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDXGIDevice3*, void> Trim;
         }
     }
 }

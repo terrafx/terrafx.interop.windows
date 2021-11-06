@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("12B81347-1B3A-4A04-AA61-3F768B67FD7E")]
     [NativeTypeName("struct IPublishedApp2 : IPublishedApp")]
     [NativeInheritance("IPublishedApp")]
-    public unsafe partial struct IPublishedApp2
+    public unsafe partial struct IPublishedApp2 : IPublishedApp2.Interface
     {
         public void** lpVtbl;
 
@@ -100,6 +100,51 @@ namespace TerraFX.Interop
         public HRESULT Install2([NativeTypeName("LPSYSTEMTIME")] SYSTEMTIME* pstInstall, HWND hwndParent)
         {
             return ((delegate* unmanaged<IPublishedApp2*, SYSTEMTIME*, HWND, int>)(lpVtbl[11]))((IPublishedApp2*)Unsafe.AsPointer(ref this), pstInstall, hwndParent);
+        }
+
+        public interface Interface : IPublishedApp.Interface
+        {
+            [VtblIndex(11)]
+            HRESULT Install2([NativeTypeName("LPSYSTEMTIME")] SYSTEMTIME* pstInstall, HWND hwndParent);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IPublishedApp2*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IPublishedApp2*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IPublishedApp2*, uint> Release;
+
+            [NativeTypeName("HRESULT (PAPPINFODATA) __attribute__((stdcall))")]
+            public delegate* unmanaged<IPublishedApp2*, APPINFODATA*, int> GetAppInfo;
+
+            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IPublishedApp2*, uint*, int> GetPossibleActions;
+
+            [NativeTypeName("HRESULT (PSLOWAPPINFO) __attribute__((stdcall))")]
+            public delegate* unmanaged<IPublishedApp2*, SLOWAPPINFO*, int> GetSlowAppInfo;
+
+            [NativeTypeName("HRESULT (PSLOWAPPINFO) __attribute__((stdcall))")]
+            public delegate* unmanaged<IPublishedApp2*, SLOWAPPINFO*, int> GetCachedSlowAppInfo;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IPublishedApp2*, int> IsInstalled;
+
+            [NativeTypeName("HRESULT (LPSYSTEMTIME) __attribute__((stdcall))")]
+            public delegate* unmanaged<IPublishedApp2*, SYSTEMTIME*, int> Install;
+
+            [NativeTypeName("HRESULT (PPUBAPPINFO) __attribute__((stdcall))")]
+            public delegate* unmanaged<IPublishedApp2*, PUBAPPINFO*, int> GetPublishedAppInfo;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IPublishedApp2*, int> Unschedule;
+
+            [NativeTypeName("HRESULT (LPSYSTEMTIME, HWND) __attribute__((stdcall))")]
+            public delegate* unmanaged<IPublishedApp2*, SYSTEMTIME*, HWND, int> Install2;
         }
     }
 }

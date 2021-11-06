@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("F9B856EE-49A6-4E19-B2B0-6A2406D63A32")]
     [NativeTypeName("struct IAppxBundleManifestPackageInfoEnumerator : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IAppxBundleManifestPackageInfoEnumerator
+    public unsafe partial struct IAppxBundleManifestPackageInfoEnumerator : IAppxBundleManifestPackageInfoEnumerator.Interface
     {
         public void** lpVtbl;
 
@@ -58,6 +58,39 @@ namespace TerraFX.Interop
         public HRESULT MoveNext(BOOL* hasNext)
         {
             return ((delegate* unmanaged<IAppxBundleManifestPackageInfoEnumerator*, BOOL*, int>)(lpVtbl[5]))((IAppxBundleManifestPackageInfoEnumerator*)Unsafe.AsPointer(ref this), hasNext);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetCurrent(IAppxBundleManifestPackageInfo** packageInfo);
+
+            [VtblIndex(4)]
+            HRESULT GetHasCurrent(BOOL* hasCurrent);
+
+            [VtblIndex(5)]
+            HRESULT MoveNext(BOOL* hasNext);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAppxBundleManifestPackageInfoEnumerator*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IAppxBundleManifestPackageInfoEnumerator*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IAppxBundleManifestPackageInfoEnumerator*, uint> Release;
+
+            [NativeTypeName("HRESULT (IAppxBundleManifestPackageInfo **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAppxBundleManifestPackageInfoEnumerator*, IAppxBundleManifestPackageInfo**, int> GetCurrent;
+
+            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAppxBundleManifestPackageInfoEnumerator*, BOOL*, int> GetHasCurrent;
+
+            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAppxBundleManifestPackageInfoEnumerator*, BOOL*, int> MoveNext;
         }
     }
 }

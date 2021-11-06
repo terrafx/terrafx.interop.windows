@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("4D93059D-097B-4651-9A60-F0F25116E2F3")]
     [NativeTypeName("struct IDCompositionVisual : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IDCompositionVisual
+    public unsafe partial struct IDCompositionVisual : IDCompositionVisual.Interface
     {
         public void** lpVtbl;
 
@@ -40,13 +40,6 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(4)]
-        public HRESULT SetOffsetX(float offsetX)
-        {
-            return ((delegate* unmanaged<IDCompositionVisual*, float, int>)(lpVtbl[4]))((IDCompositionVisual*)Unsafe.AsPointer(ref this), offsetX);
-        }
-
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
         public HRESULT SetOffsetX(IDCompositionAnimation* animation)
         {
@@ -54,10 +47,10 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(6)]
-        public HRESULT SetOffsetY(float offsetY)
+        [VtblIndex(4)]
+        public HRESULT SetOffsetX(float offsetX)
         {
-            return ((delegate* unmanaged<IDCompositionVisual*, float, int>)(lpVtbl[6]))((IDCompositionVisual*)Unsafe.AsPointer(ref this), offsetY);
+            return ((delegate* unmanaged<IDCompositionVisual*, float, int>)(lpVtbl[4]))((IDCompositionVisual*)Unsafe.AsPointer(ref this), offsetX);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -68,10 +61,10 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(8)]
-        public HRESULT SetTransform([NativeTypeName("const D2D_MATRIX_3X2_F &")] D2D_MATRIX_3X2_F* matrix)
+        [VtblIndex(6)]
+        public HRESULT SetOffsetY(float offsetY)
         {
-            return ((delegate* unmanaged<IDCompositionVisual*, D2D_MATRIX_3X2_F*, int>)(lpVtbl[8]))((IDCompositionVisual*)Unsafe.AsPointer(ref this), matrix);
+            return ((delegate* unmanaged<IDCompositionVisual*, float, int>)(lpVtbl[6]))((IDCompositionVisual*)Unsafe.AsPointer(ref this), offsetY);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -79,6 +72,13 @@ namespace TerraFX.Interop
         public HRESULT SetTransform(IDCompositionTransform* transform)
         {
             return ((delegate* unmanaged<IDCompositionVisual*, IDCompositionTransform*, int>)(lpVtbl[7]))((IDCompositionVisual*)Unsafe.AsPointer(ref this), transform);
+        }
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(8)]
+        public HRESULT SetTransform([NativeTypeName("const D2D_MATRIX_3X2_F &")] D2D_MATRIX_3X2_F* matrix)
+        {
+            return ((delegate* unmanaged<IDCompositionVisual*, D2D_MATRIX_3X2_F*, int>)(lpVtbl[8]))((IDCompositionVisual*)Unsafe.AsPointer(ref this), matrix);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -110,17 +110,17 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(14)]
-        public HRESULT SetClip([NativeTypeName("const D2D_RECT_F &")] D2D_RECT_F* rect)
-        {
-            return ((delegate* unmanaged<IDCompositionVisual*, D2D_RECT_F*, int>)(lpVtbl[14]))((IDCompositionVisual*)Unsafe.AsPointer(ref this), rect);
-        }
-
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(13)]
         public HRESULT SetClip(IDCompositionClip* clip)
         {
             return ((delegate* unmanaged<IDCompositionVisual*, IDCompositionClip*, int>)(lpVtbl[13]))((IDCompositionVisual*)Unsafe.AsPointer(ref this), clip);
+        }
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(14)]
+        public HRESULT SetClip([NativeTypeName("const D2D_RECT_F &")] D2D_RECT_F* rect)
+        {
+            return ((delegate* unmanaged<IDCompositionVisual*, D2D_RECT_F*, int>)(lpVtbl[14]))((IDCompositionVisual*)Unsafe.AsPointer(ref this), rect);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -156,6 +156,123 @@ namespace TerraFX.Interop
         public HRESULT SetCompositeMode(DCOMPOSITION_COMPOSITE_MODE compositeMode)
         {
             return ((delegate* unmanaged<IDCompositionVisual*, DCOMPOSITION_COMPOSITE_MODE, int>)(lpVtbl[19]))((IDCompositionVisual*)Unsafe.AsPointer(ref this), compositeMode);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT SetOffsetX(IDCompositionAnimation* animation);
+
+            [VtblIndex(4)]
+            HRESULT SetOffsetX(float offsetX);
+
+            [VtblIndex(5)]
+            HRESULT SetOffsetY(IDCompositionAnimation* animation);
+
+            [VtblIndex(6)]
+            HRESULT SetOffsetY(float offsetY);
+
+            [VtblIndex(7)]
+            HRESULT SetTransform(IDCompositionTransform* transform);
+
+            [VtblIndex(8)]
+            HRESULT SetTransform([NativeTypeName("const D2D_MATRIX_3X2_F &")] D2D_MATRIX_3X2_F* matrix);
+
+            [VtblIndex(9)]
+            HRESULT SetTransformParent(IDCompositionVisual* visual);
+
+            [VtblIndex(10)]
+            HRESULT SetEffect(IDCompositionEffect* effect);
+
+            [VtblIndex(11)]
+            HRESULT SetBitmapInterpolationMode(DCOMPOSITION_BITMAP_INTERPOLATION_MODE interpolationMode);
+
+            [VtblIndex(12)]
+            HRESULT SetBorderMode(DCOMPOSITION_BORDER_MODE borderMode);
+
+            [VtblIndex(13)]
+            HRESULT SetClip(IDCompositionClip* clip);
+
+            [VtblIndex(14)]
+            HRESULT SetClip([NativeTypeName("const D2D_RECT_F &")] D2D_RECT_F* rect);
+
+            [VtblIndex(15)]
+            HRESULT SetContent(IUnknown* content);
+
+            [VtblIndex(16)]
+            HRESULT AddVisual(IDCompositionVisual* visual, BOOL insertAbove, IDCompositionVisual* referenceVisual);
+
+            [VtblIndex(17)]
+            HRESULT RemoveVisual(IDCompositionVisual* visual);
+
+            [VtblIndex(18)]
+            HRESULT RemoveAllVisuals();
+
+            [VtblIndex(19)]
+            HRESULT SetCompositeMode(DCOMPOSITION_COMPOSITE_MODE compositeMode);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDCompositionVisual*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDCompositionVisual*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDCompositionVisual*, uint> Release;
+
+            [NativeTypeName("HRESULT (IDCompositionAnimation *) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDCompositionVisual*, IDCompositionAnimation*, int> SetOffsetX;
+
+            [NativeTypeName("HRESULT (float) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDCompositionVisual*, float, int> SetOffsetX1;
+
+            [NativeTypeName("HRESULT (IDCompositionAnimation *) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDCompositionVisual*, IDCompositionAnimation*, int> SetOffsetY;
+
+            [NativeTypeName("HRESULT (float) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDCompositionVisual*, float, int> SetOffsetY1;
+
+            [NativeTypeName("HRESULT (IDCompositionTransform *) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDCompositionVisual*, IDCompositionTransform*, int> SetTransform;
+
+            [NativeTypeName("HRESULT (const D2D_MATRIX_3X2_F &) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDCompositionVisual*, D2D_MATRIX_3X2_F*, int> SetTransform1;
+
+            [NativeTypeName("HRESULT (IDCompositionVisual *) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDCompositionVisual*, IDCompositionVisual*, int> SetTransformParent;
+
+            [NativeTypeName("HRESULT (IDCompositionEffect *) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDCompositionVisual*, IDCompositionEffect*, int> SetEffect;
+
+            [NativeTypeName("HRESULT (DCOMPOSITION_BITMAP_INTERPOLATION_MODE) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDCompositionVisual*, DCOMPOSITION_BITMAP_INTERPOLATION_MODE, int> SetBitmapInterpolationMode;
+
+            [NativeTypeName("HRESULT (DCOMPOSITION_BORDER_MODE) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDCompositionVisual*, DCOMPOSITION_BORDER_MODE, int> SetBorderMode;
+
+            [NativeTypeName("HRESULT (IDCompositionClip *) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDCompositionVisual*, IDCompositionClip*, int> SetClip;
+
+            [NativeTypeName("HRESULT (const D2D_RECT_F &) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDCompositionVisual*, D2D_RECT_F*, int> SetClip1;
+
+            [NativeTypeName("HRESULT (IUnknown *) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDCompositionVisual*, IUnknown*, int> SetContent;
+
+            [NativeTypeName("HRESULT (IDCompositionVisual *, BOOL, IDCompositionVisual *) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDCompositionVisual*, IDCompositionVisual*, BOOL, IDCompositionVisual*, int> AddVisual;
+
+            [NativeTypeName("HRESULT (IDCompositionVisual *) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDCompositionVisual*, IDCompositionVisual*, int> RemoveVisual;
+
+            [NativeTypeName("HRESULT () __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDCompositionVisual*, int> RemoveAllVisuals;
+
+            [NativeTypeName("HRESULT (DCOMPOSITION_COMPOSITE_MODE) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDCompositionVisual*, DCOMPOSITION_COMPOSITE_MODE, int> SetCompositeMode;
         }
     }
 }

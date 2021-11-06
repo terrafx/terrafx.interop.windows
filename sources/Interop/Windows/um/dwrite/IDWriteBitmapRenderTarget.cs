@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("5E5A32A3-8DFF-4773-9FF6-0696EAB77267")]
     [NativeTypeName("struct IDWriteBitmapRenderTarget : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IDWriteBitmapRenderTarget
+    public unsafe partial struct IDWriteBitmapRenderTarget : IDWriteBitmapRenderTarget.Interface
     {
         public void** lpVtbl;
 
@@ -93,6 +93,69 @@ namespace TerraFX.Interop
         public HRESULT Resize([NativeTypeName("UINT32")] uint width, [NativeTypeName("UINT32")] uint height)
         {
             return ((delegate* unmanaged<IDWriteBitmapRenderTarget*, uint, uint, int>)(lpVtbl[10]))((IDWriteBitmapRenderTarget*)Unsafe.AsPointer(ref this), width, height);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT DrawGlyphRun(float baselineOriginX, float baselineOriginY, DWRITE_MEASURING_MODE measuringMode, [NativeTypeName("const DWRITE_GLYPH_RUN *")] DWRITE_GLYPH_RUN* glyphRun, IDWriteRenderingParams* renderingParams, COLORREF textColor, RECT* blackBoxRect = null);
+
+            [VtblIndex(4)]
+            HDC GetMemoryDC();
+
+            [VtblIndex(5)]
+            float GetPixelsPerDip();
+
+            [VtblIndex(6)]
+            HRESULT SetPixelsPerDip(float pixelsPerDip);
+
+            [VtblIndex(7)]
+            HRESULT GetCurrentTransform(DWRITE_MATRIX* transform);
+
+            [VtblIndex(8)]
+            HRESULT SetCurrentTransform([NativeTypeName("const DWRITE_MATRIX *")] DWRITE_MATRIX* transform);
+
+            [VtblIndex(9)]
+            HRESULT GetSize(SIZE* size);
+
+            [VtblIndex(10)]
+            HRESULT Resize([NativeTypeName("UINT32")] uint width, [NativeTypeName("UINT32")] uint height);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDWriteBitmapRenderTarget*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDWriteBitmapRenderTarget*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDWriteBitmapRenderTarget*, uint> Release;
+
+            [NativeTypeName("HRESULT (FLOAT, FLOAT, DWRITE_MEASURING_MODE, const DWRITE_GLYPH_RUN *, IDWriteRenderingParams *, COLORREF, RECT *) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDWriteBitmapRenderTarget*, float, float, DWRITE_MEASURING_MODE, DWRITE_GLYPH_RUN*, IDWriteRenderingParams*, COLORREF, RECT*, int> DrawGlyphRun;
+
+            [NativeTypeName("HDC () __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDWriteBitmapRenderTarget*, void*> GetMemoryDC;
+
+            [NativeTypeName("FLOAT () __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDWriteBitmapRenderTarget*, float> GetPixelsPerDip;
+
+            [NativeTypeName("HRESULT (FLOAT) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDWriteBitmapRenderTarget*, float, int> SetPixelsPerDip;
+
+            [NativeTypeName("HRESULT (DWRITE_MATRIX *) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDWriteBitmapRenderTarget*, DWRITE_MATRIX*, int> GetCurrentTransform;
+
+            [NativeTypeName("HRESULT (const DWRITE_MATRIX *) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDWriteBitmapRenderTarget*, DWRITE_MATRIX*, int> SetCurrentTransform;
+
+            [NativeTypeName("HRESULT (SIZE *) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDWriteBitmapRenderTarget*, SIZE*, int> GetSize;
+
+            [NativeTypeName("HRESULT (UINT32, UINT32) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDWriteBitmapRenderTarget*, uint, uint, int> Resize;
         }
     }
 }

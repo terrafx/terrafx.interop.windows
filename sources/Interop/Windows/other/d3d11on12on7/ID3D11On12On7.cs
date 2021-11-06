@@ -10,7 +10,7 @@ namespace TerraFX.Interop
 {
     [NativeTypeName("struct ID3D11On12On7 : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct ID3D11On12On7
+    public unsafe partial struct ID3D11On12On7 : ID3D11On12On7.Interface
     {
         public void** lpVtbl;
 
@@ -63,6 +63,45 @@ namespace TerraFX.Interop
         public void* GetThreadLastCreatedResource()
         {
             return ((delegate* unmanaged<ID3D11On12On7*, void*>)(lpVtbl[6]))((ID3D11On12On7*)Unsafe.AsPointer(ref this));
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            void SetThreadDeviceCreationParams(ID3D12Device* pDevice, ID3D12CommandQueue* pGraphicsQueue);
+
+            [VtblIndex(4)]
+            void SetThreadResourceCreationParams(ID3D12Resource* pResource);
+
+            [VtblIndex(5)]
+            ID3D11On12On7Device* GetThreadLastCreatedDevice();
+
+            [VtblIndex(6)]
+            void* GetThreadLastCreatedResource();
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D11On12On7*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D11On12On7*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D11On12On7*, uint> Release;
+
+            [NativeTypeName("void (ID3D12Device *, ID3D12CommandQueue *) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D11On12On7*, ID3D12Device*, ID3D12CommandQueue*, void> SetThreadDeviceCreationParams;
+
+            [NativeTypeName("void (ID3D12Resource *) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D11On12On7*, ID3D12Resource*, void> SetThreadResourceCreationParams;
+
+            [NativeTypeName("ID3D11On12On7Device *() __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D11On12On7*, ID3D11On12On7Device*> GetThreadLastCreatedDevice;
+
+            [NativeTypeName("ID3D11On12On7Resource *() __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D11On12On7*, void*> GetThreadLastCreatedResource;
         }
     }
 }

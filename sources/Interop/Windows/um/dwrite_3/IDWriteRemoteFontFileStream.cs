@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("4DB3757A-2C72-4ED9-B2B6-1ABABE1AFF9C")]
     [NativeTypeName("struct IDWriteRemoteFontFileStream : IDWriteFontFileStream")]
     [NativeInheritance("IDWriteFontFileStream")]
-    public unsafe partial struct IDWriteRemoteFontFileStream
+    public unsafe partial struct IDWriteRemoteFontFileStream : IDWriteRemoteFontFileStream.Interface
     {
         public void** lpVtbl;
 
@@ -93,6 +93,57 @@ namespace TerraFX.Interop
         public HRESULT BeginDownload([NativeTypeName("const UUID *")] Guid* downloadOperationID, [NativeTypeName("const DWRITE_FILE_FRAGMENT *")] DWRITE_FILE_FRAGMENT* fileFragments, [NativeTypeName("UINT32")] uint fragmentCount, IDWriteAsyncResult** asyncResult)
         {
             return ((delegate* unmanaged<IDWriteRemoteFontFileStream*, Guid*, DWRITE_FILE_FRAGMENT*, uint, IDWriteAsyncResult**, int>)(lpVtbl[10]))((IDWriteRemoteFontFileStream*)Unsafe.AsPointer(ref this), downloadOperationID, fileFragments, fragmentCount, asyncResult);
+        }
+
+        public interface Interface : IDWriteFontFileStream.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT GetLocalFileSize([NativeTypeName("UINT64 *")] ulong* localFileSize);
+
+            [VtblIndex(8)]
+            HRESULT GetFileFragmentLocality([NativeTypeName("UINT64")] ulong fileOffset, [NativeTypeName("UINT64")] ulong fragmentSize, BOOL* isLocal, [NativeTypeName("UINT64 *")] ulong* partialSize);
+
+            [VtblIndex(9)]
+            DWRITE_LOCALITY GetLocality();
+
+            [VtblIndex(10)]
+            HRESULT BeginDownload([NativeTypeName("const UUID *")] Guid* downloadOperationID, [NativeTypeName("const DWRITE_FILE_FRAGMENT *")] DWRITE_FILE_FRAGMENT* fileFragments, [NativeTypeName("UINT32")] uint fragmentCount, IDWriteAsyncResult** asyncResult);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDWriteRemoteFontFileStream*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDWriteRemoteFontFileStream*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDWriteRemoteFontFileStream*, uint> Release;
+
+            [NativeTypeName("HRESULT (const void **, UINT64, UINT64, void **) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDWriteRemoteFontFileStream*, void**, ulong, ulong, void**, int> ReadFileFragment;
+
+            [NativeTypeName("void (void *) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDWriteRemoteFontFileStream*, void*, void> ReleaseFileFragment;
+
+            [NativeTypeName("HRESULT (UINT64 *) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDWriteRemoteFontFileStream*, ulong*, int> GetFileSize;
+
+            [NativeTypeName("HRESULT (UINT64 *) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDWriteRemoteFontFileStream*, ulong*, int> GetLastWriteTime;
+
+            [NativeTypeName("HRESULT (UINT64 *) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDWriteRemoteFontFileStream*, ulong*, int> GetLocalFileSize;
+
+            [NativeTypeName("HRESULT (UINT64, UINT64, BOOL *, UINT64 *) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDWriteRemoteFontFileStream*, ulong, ulong, BOOL*, ulong*, int> GetFileFragmentLocality;
+
+            [NativeTypeName("DWRITE_LOCALITY () __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDWriteRemoteFontFileStream*, DWRITE_LOCALITY> GetLocality;
+
+            [NativeTypeName("HRESULT (const UUID *, const DWRITE_FILE_FRAGMENT *, UINT32, IDWriteAsyncResult **) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDWriteRemoteFontFileStream*, Guid*, DWRITE_FILE_FRAGMENT*, uint, IDWriteAsyncResult**, int> BeginDownload;
         }
     }
 }

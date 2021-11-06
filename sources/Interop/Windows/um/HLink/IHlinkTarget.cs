@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("79EAC9C4-BAF9-11CE-8C82-00AA004BA90B")]
     [NativeTypeName("struct IHlinkTarget : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IHlinkTarget
+    public unsafe partial struct IHlinkTarget : IHlinkTarget.Interface
     {
         public void** lpVtbl;
 
@@ -72,6 +72,51 @@ namespace TerraFX.Interop
         public HRESULT GetFriendlyName([NativeTypeName("LPCWSTR")] ushort* pwzLocation, [NativeTypeName("LPWSTR *")] ushort** ppwzFriendlyName)
         {
             return ((delegate* unmanaged<IHlinkTarget*, ushort*, ushort**, int>)(lpVtbl[7]))((IHlinkTarget*)Unsafe.AsPointer(ref this), pwzLocation, ppwzFriendlyName);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT SetBrowseContext(IHlinkBrowseContext* pihlbc);
+
+            [VtblIndex(4)]
+            HRESULT GetBrowseContext(IHlinkBrowseContext** ppihlbc);
+
+            [VtblIndex(5)]
+            HRESULT Navigate([NativeTypeName("DWORD")] uint grfHLNF, [NativeTypeName("LPCWSTR")] ushort* pwzJumpLocation);
+
+            [VtblIndex(6)]
+            HRESULT GetMoniker([NativeTypeName("LPCWSTR")] ushort* pwzLocation, [NativeTypeName("DWORD")] uint dwAssign, IMoniker** ppimkLocation);
+
+            [VtblIndex(7)]
+            HRESULT GetFriendlyName([NativeTypeName("LPCWSTR")] ushort* pwzLocation, [NativeTypeName("LPWSTR *")] ushort** ppwzFriendlyName);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHlinkTarget*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IHlinkTarget*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IHlinkTarget*, uint> Release;
+
+            [NativeTypeName("HRESULT (IHlinkBrowseContext *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHlinkTarget*, IHlinkBrowseContext*, int> SetBrowseContext;
+
+            [NativeTypeName("HRESULT (IHlinkBrowseContext **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHlinkTarget*, IHlinkBrowseContext**, int> GetBrowseContext;
+
+            [NativeTypeName("HRESULT (DWORD, LPCWSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHlinkTarget*, uint, ushort*, int> Navigate;
+
+            [NativeTypeName("HRESULT (LPCWSTR, DWORD, IMoniker **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHlinkTarget*, ushort*, uint, IMoniker**, int> GetMoniker;
+
+            [NativeTypeName("HRESULT (LPCWSTR, LPWSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHlinkTarget*, ushort*, ushort**, int> GetFriendlyName;
         }
     }
 }

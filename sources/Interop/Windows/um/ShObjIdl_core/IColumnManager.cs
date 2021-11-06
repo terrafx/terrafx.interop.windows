@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("D8EC27BB-3F3B-4042-B10A-4ACFD924D453")]
     [NativeTypeName("struct IColumnManager : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IColumnManager
+    public unsafe partial struct IColumnManager : IColumnManager.Interface
     {
         public void** lpVtbl;
 
@@ -72,6 +72,51 @@ namespace TerraFX.Interop
         public HRESULT SetColumns([NativeTypeName("const PROPERTYKEY *")] PROPERTYKEY* rgkeyOrder, uint cVisible)
         {
             return ((delegate* unmanaged<IColumnManager*, PROPERTYKEY*, uint, int>)(lpVtbl[7]))((IColumnManager*)Unsafe.AsPointer(ref this), rgkeyOrder, cVisible);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT SetColumnInfo([NativeTypeName("const PROPERTYKEY &")] PROPERTYKEY* propkey, [NativeTypeName("const CM_COLUMNINFO *")] CM_COLUMNINFO* pcmci);
+
+            [VtblIndex(4)]
+            HRESULT GetColumnInfo([NativeTypeName("const PROPERTYKEY &")] PROPERTYKEY* propkey, CM_COLUMNINFO* pcmci);
+
+            [VtblIndex(5)]
+            HRESULT GetColumnCount(CM_ENUM_FLAGS dwFlags, uint* puCount);
+
+            [VtblIndex(6)]
+            HRESULT GetColumns(CM_ENUM_FLAGS dwFlags, PROPERTYKEY* rgkeyOrder, uint cColumns);
+
+            [VtblIndex(7)]
+            HRESULT SetColumns([NativeTypeName("const PROPERTYKEY *")] PROPERTYKEY* rgkeyOrder, uint cVisible);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IColumnManager*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IColumnManager*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IColumnManager*, uint> Release;
+
+            [NativeTypeName("HRESULT (const PROPERTYKEY &, const CM_COLUMNINFO *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IColumnManager*, PROPERTYKEY*, CM_COLUMNINFO*, int> SetColumnInfo;
+
+            [NativeTypeName("HRESULT (const PROPERTYKEY &, CM_COLUMNINFO *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IColumnManager*, PROPERTYKEY*, CM_COLUMNINFO*, int> GetColumnInfo;
+
+            [NativeTypeName("HRESULT (CM_ENUM_FLAGS, UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IColumnManager*, CM_ENUM_FLAGS, uint*, int> GetColumnCount;
+
+            [NativeTypeName("HRESULT (CM_ENUM_FLAGS, PROPERTYKEY *, UINT) __attribute__((stdcall))")]
+            public delegate* unmanaged<IColumnManager*, CM_ENUM_FLAGS, PROPERTYKEY*, uint, int> GetColumns;
+
+            [NativeTypeName("HRESULT (const PROPERTYKEY *, UINT) __attribute__((stdcall))")]
+            public delegate* unmanaged<IColumnManager*, PROPERTYKEY*, uint, int> SetColumns;
         }
     }
 }

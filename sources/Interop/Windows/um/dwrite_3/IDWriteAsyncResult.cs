@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("CE25F8FD-863B-4D13-9651-C1F88DC73FE2")]
     [NativeTypeName("struct IDWriteAsyncResult : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IDWriteAsyncResult
+    public unsafe partial struct IDWriteAsyncResult : IDWriteAsyncResult.Interface
     {
         public void** lpVtbl;
 
@@ -51,6 +51,33 @@ namespace TerraFX.Interop
         public HRESULT GetResult()
         {
             return ((delegate* unmanaged<IDWriteAsyncResult*, int>)(lpVtbl[4]))((IDWriteAsyncResult*)Unsafe.AsPointer(ref this));
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HANDLE GetWaitHandle();
+
+            [VtblIndex(4)]
+            HRESULT GetResult();
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDWriteAsyncResult*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDWriteAsyncResult*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDWriteAsyncResult*, uint> Release;
+
+            [NativeTypeName("HANDLE () __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDWriteAsyncResult*, void*> GetWaitHandle;
+
+            [NativeTypeName("HRESULT () __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDWriteAsyncResult*, int> GetResult;
         }
     }
 }

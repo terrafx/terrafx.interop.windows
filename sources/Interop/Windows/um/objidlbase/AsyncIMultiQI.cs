@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("000E0020-0000-0000-C000-000000000046")]
     [NativeTypeName("struct AsyncIMultiQI : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct AsyncIMultiQI
+    public unsafe partial struct AsyncIMultiQI : AsyncIMultiQI.Interface
     {
         public void** lpVtbl;
 
@@ -51,6 +51,33 @@ namespace TerraFX.Interop
         public HRESULT Finish_QueryMultipleInterfaces(MULTI_QI* pMQIs)
         {
             return ((delegate* unmanaged<AsyncIMultiQI*, MULTI_QI*, int>)(lpVtbl[4]))((AsyncIMultiQI*)Unsafe.AsPointer(ref this), pMQIs);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT Begin_QueryMultipleInterfaces([NativeTypeName("ULONG")] uint cMQIs, MULTI_QI* pMQIs);
+
+            [VtblIndex(4)]
+            HRESULT Finish_QueryMultipleInterfaces(MULTI_QI* pMQIs);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<AsyncIMultiQI*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<AsyncIMultiQI*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<AsyncIMultiQI*, uint> Release;
+
+            [NativeTypeName("HRESULT (ULONG, MULTI_QI *) __attribute__((stdcall))")]
+            public delegate* unmanaged<AsyncIMultiQI*, uint, MULTI_QI*, int> Begin_QueryMultipleInterfaces;
+
+            [NativeTypeName("HRESULT (MULTI_QI *) __attribute__((stdcall))")]
+            public delegate* unmanaged<AsyncIMultiQI*, MULTI_QI*, int> Finish_QueryMultipleInterfaces;
         }
     }
 }

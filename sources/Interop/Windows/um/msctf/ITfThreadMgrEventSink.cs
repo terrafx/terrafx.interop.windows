@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("AA80E80E-2021-11D2-93E0-0060B067B86E")]
     [NativeTypeName("struct ITfThreadMgrEventSink : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct ITfThreadMgrEventSink
+    public unsafe partial struct ITfThreadMgrEventSink : ITfThreadMgrEventSink.Interface
     {
         public void** lpVtbl;
 
@@ -72,6 +72,51 @@ namespace TerraFX.Interop
         public HRESULT OnPopContext(ITfContext* pic)
         {
             return ((delegate* unmanaged<ITfThreadMgrEventSink*, ITfContext*, int>)(lpVtbl[7]))((ITfThreadMgrEventSink*)Unsafe.AsPointer(ref this), pic);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT OnInitDocumentMgr(ITfDocumentMgr* pdim);
+
+            [VtblIndex(4)]
+            HRESULT OnUninitDocumentMgr(ITfDocumentMgr* pdim);
+
+            [VtblIndex(5)]
+            HRESULT OnSetFocus(ITfDocumentMgr* pdimFocus, ITfDocumentMgr* pdimPrevFocus);
+
+            [VtblIndex(6)]
+            HRESULT OnPushContext(ITfContext* pic);
+
+            [VtblIndex(7)]
+            HRESULT OnPopContext(ITfContext* pic);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfThreadMgrEventSink*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfThreadMgrEventSink*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfThreadMgrEventSink*, uint> Release;
+
+            [NativeTypeName("HRESULT (ITfDocumentMgr *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfThreadMgrEventSink*, ITfDocumentMgr*, int> OnInitDocumentMgr;
+
+            [NativeTypeName("HRESULT (ITfDocumentMgr *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfThreadMgrEventSink*, ITfDocumentMgr*, int> OnUninitDocumentMgr;
+
+            [NativeTypeName("HRESULT (ITfDocumentMgr *, ITfDocumentMgr *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfThreadMgrEventSink*, ITfDocumentMgr*, ITfDocumentMgr*, int> OnSetFocus;
+
+            [NativeTypeName("HRESULT (ITfContext *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfThreadMgrEventSink*, ITfContext*, int> OnPushContext;
+
+            [NativeTypeName("HRESULT (ITfContext *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfThreadMgrEventSink*, ITfContext*, int> OnPopContext;
         }
     }
 }

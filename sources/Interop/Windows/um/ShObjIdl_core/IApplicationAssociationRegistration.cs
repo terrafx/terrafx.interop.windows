@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("4E530B0A-E611-4C77-A3AC-9031D022281B")]
     [NativeTypeName("struct IApplicationAssociationRegistration : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IApplicationAssociationRegistration
+    public unsafe partial struct IApplicationAssociationRegistration : IApplicationAssociationRegistration.Interface
     {
         public void** lpVtbl;
 
@@ -79,6 +79,57 @@ namespace TerraFX.Interop
         public HRESULT ClearUserAssociations()
         {
             return ((delegate* unmanaged<IApplicationAssociationRegistration*, int>)(lpVtbl[8]))((IApplicationAssociationRegistration*)Unsafe.AsPointer(ref this));
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT QueryCurrentDefault([NativeTypeName("LPCWSTR")] ushort* pszQuery, ASSOCIATIONTYPE atQueryType, ASSOCIATIONLEVEL alQueryLevel, [NativeTypeName("LPWSTR *")] ushort** ppszAssociation);
+
+            [VtblIndex(4)]
+            HRESULT QueryAppIsDefault([NativeTypeName("LPCWSTR")] ushort* pszQuery, ASSOCIATIONTYPE atQueryType, ASSOCIATIONLEVEL alQueryLevel, [NativeTypeName("LPCWSTR")] ushort* pszAppRegistryName, BOOL* pfDefault);
+
+            [VtblIndex(5)]
+            HRESULT QueryAppIsDefaultAll(ASSOCIATIONLEVEL alQueryLevel, [NativeTypeName("LPCWSTR")] ushort* pszAppRegistryName, BOOL* pfDefault);
+
+            [VtblIndex(6)]
+            HRESULT SetAppAsDefault([NativeTypeName("LPCWSTR")] ushort* pszAppRegistryName, [NativeTypeName("LPCWSTR")] ushort* pszSet, ASSOCIATIONTYPE atSetType);
+
+            [VtblIndex(7)]
+            HRESULT SetAppAsDefaultAll([NativeTypeName("LPCWSTR")] ushort* pszAppRegistryName);
+
+            [VtblIndex(8)]
+            HRESULT ClearUserAssociations();
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IApplicationAssociationRegistration*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IApplicationAssociationRegistration*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IApplicationAssociationRegistration*, uint> Release;
+
+            [NativeTypeName("HRESULT (LPCWSTR, ASSOCIATIONTYPE, ASSOCIATIONLEVEL, LPWSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IApplicationAssociationRegistration*, ushort*, ASSOCIATIONTYPE, ASSOCIATIONLEVEL, ushort**, int> QueryCurrentDefault;
+
+            [NativeTypeName("HRESULT (LPCWSTR, ASSOCIATIONTYPE, ASSOCIATIONLEVEL, LPCWSTR, BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IApplicationAssociationRegistration*, ushort*, ASSOCIATIONTYPE, ASSOCIATIONLEVEL, ushort*, BOOL*, int> QueryAppIsDefault;
+
+            [NativeTypeName("HRESULT (ASSOCIATIONLEVEL, LPCWSTR, BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IApplicationAssociationRegistration*, ASSOCIATIONLEVEL, ushort*, BOOL*, int> QueryAppIsDefaultAll;
+
+            [NativeTypeName("HRESULT (LPCWSTR, LPCWSTR, ASSOCIATIONTYPE) __attribute__((stdcall))")]
+            public delegate* unmanaged<IApplicationAssociationRegistration*, ushort*, ushort*, ASSOCIATIONTYPE, int> SetAppAsDefault;
+
+            [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IApplicationAssociationRegistration*, ushort*, int> SetAppAsDefaultAll;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IApplicationAssociationRegistration*, int> ClearUserAssociations;
         }
     }
 }

@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("8A68FDDA-1FDC-4C20-8CEB-416643B5A625")]
     [NativeTypeName("struct IStreamUnbufferedInfo : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IStreamUnbufferedInfo
+    public unsafe partial struct IStreamUnbufferedInfo : IStreamUnbufferedInfo.Interface
     {
         public void** lpVtbl;
 
@@ -44,6 +44,27 @@ namespace TerraFX.Interop
         public HRESULT GetSectorSize([NativeTypeName("ULONG *")] uint* pcbSectorSize)
         {
             return ((delegate* unmanaged<IStreamUnbufferedInfo*, uint*, int>)(lpVtbl[3]))((IStreamUnbufferedInfo*)Unsafe.AsPointer(ref this), pcbSectorSize);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetSectorSize([NativeTypeName("ULONG *")] uint* pcbSectorSize);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IStreamUnbufferedInfo*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IStreamUnbufferedInfo*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IStreamUnbufferedInfo*, uint> Release;
+
+            [NativeTypeName("HRESULT (ULONG *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IStreamUnbufferedInfo*, uint*, int> GetSectorSize;
         }
     }
 }

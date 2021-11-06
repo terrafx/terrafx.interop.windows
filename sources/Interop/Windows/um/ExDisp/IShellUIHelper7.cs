@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("60E567C8-9573-4AB2-A264-637C6C161CB1")]
     [NativeTypeName("struct IShellUIHelper7 : IShellUIHelper6")]
     [NativeInheritance("IShellUIHelper6")]
-    public unsafe partial struct IShellUIHelper7
+    public unsafe partial struct IShellUIHelper7 : IShellUIHelper7.Interface
     {
         public void** lpVtbl;
 
@@ -695,6 +695,330 @@ namespace TerraFX.Interop
         public HRESULT LaunchIE([NativeTypeName("BSTR")] ushort* bstrUrl, [NativeTypeName("VARIANT_BOOL")] short automated)
         {
             return ((delegate* unmanaged<IShellUIHelper7*, ushort*, short, int>)(lpVtbl[96]))((IShellUIHelper7*)Unsafe.AsPointer(ref this), bstrUrl, automated);
+        }
+
+        public interface Interface : IShellUIHelper6.Interface
+        {
+            [VtblIndex(88)]
+            HRESULT SetExperimentalFlag([NativeTypeName("BSTR")] ushort* bstrFlagString, [NativeTypeName("VARIANT_BOOL")] short vfFlag);
+
+            [VtblIndex(89)]
+            HRESULT GetExperimentalFlag([NativeTypeName("BSTR")] ushort* bstrFlagString, [NativeTypeName("VARIANT_BOOL *")] short* vfFlag);
+
+            [VtblIndex(90)]
+            HRESULT SetExperimentalValue([NativeTypeName("BSTR")] ushort* bstrValueString, [NativeTypeName("DWORD")] uint dwValue);
+
+            [VtblIndex(91)]
+            HRESULT GetExperimentalValue([NativeTypeName("BSTR")] ushort* bstrValueString, [NativeTypeName("DWORD *")] uint* pdwValue);
+
+            [VtblIndex(92)]
+            HRESULT ResetAllExperimentalFlagsAndValues();
+
+            [VtblIndex(93)]
+            HRESULT GetNeedIEAutoLaunchFlag([NativeTypeName("BSTR")] ushort* bstrUrl, [NativeTypeName("VARIANT_BOOL *")] short* flag);
+
+            [VtblIndex(94)]
+            HRESULT SetNeedIEAutoLaunchFlag([NativeTypeName("BSTR")] ushort* bstrUrl, [NativeTypeName("VARIANT_BOOL")] short flag);
+
+            [VtblIndex(95)]
+            HRESULT HasNeedIEAutoLaunchFlag([NativeTypeName("BSTR")] ushort* bstrUrl, [NativeTypeName("VARIANT_BOOL *")] short* exists);
+
+            [VtblIndex(96)]
+            HRESULT LaunchIE([NativeTypeName("BSTR")] ushort* bstrUrl, [NativeTypeName("VARIANT_BOOL")] short automated);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellUIHelper7*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellUIHelper7*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellUIHelper7*, uint> Release;
+
+            [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellUIHelper7*, uint*, int> GetTypeInfoCount;
+
+            [NativeTypeName("HRESULT (UINT, LCID, ITypeInfo **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellUIHelper7*, uint, uint, ITypeInfo**, int> GetTypeInfo;
+
+            [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellUIHelper7*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+
+            [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellUIHelper7*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellUIHelper7*, int> ResetFirstBootMode;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellUIHelper7*, int> ResetSafeMode;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellUIHelper7*, int> RefreshOfflineDesktop;
+
+            [NativeTypeName("HRESULT (BSTR, VARIANT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellUIHelper7*, ushort*, VARIANT*, int> AddFavorite;
+
+            [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellUIHelper7*, ushort*, int> AddChannel;
+
+            [NativeTypeName("HRESULT (BSTR, BSTR, VARIANT *, VARIANT *, VARIANT *, VARIANT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellUIHelper7*, ushort*, ushort*, VARIANT*, VARIANT*, VARIANT*, VARIANT*, int> AddDesktopComponent;
+
+            [NativeTypeName("HRESULT (BSTR, VARIANT_BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellUIHelper7*, ushort*, short*, int> IsSubscribed;
+
+            [NativeTypeName("HRESULT (BSTR, BSTR, VARIANT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellUIHelper7*, ushort*, ushort*, VARIANT*, int> NavigateAndFind;
+
+            [NativeTypeName("HRESULT (VARIANT_BOOL, BSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellUIHelper7*, short, ushort*, int> ImportExportFavorites;
+
+            [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellUIHelper7*, VARIANT*, int> AutoCompleteSaveForm;
+
+            [NativeTypeName("HRESULT (BSTR, BSTR, VARIANT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellUIHelper7*, ushort*, ushort*, VARIANT*, int> AutoScan;
+
+            [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellUIHelper7*, VARIANT*, int> AutoCompleteAttach;
+
+            [NativeTypeName("HRESULT (BSTR, VARIANT *, VARIANT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellUIHelper7*, ushort*, VARIANT*, VARIANT*, int> ShowBrowserUI;
+
+            [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellUIHelper7*, ushort*, int> AddSearchProvider;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellUIHelper7*, int> RunOnceShown;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellUIHelper7*, int> SkipRunOnce;
+
+            [NativeTypeName("HRESULT (VARIANT_BOOL, VARIANT_BOOL, BSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellUIHelper7*, short, short, ushort*, int> CustomizeSettings;
+
+            [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellUIHelper7*, short*, int> SqmEnabled;
+
+            [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellUIHelper7*, short*, int> PhishingEnabled;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellUIHelper7*, ushort**, int> BrandImageUri;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellUIHelper7*, int> SkipTabsWelcome;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellUIHelper7*, int> DiagnoseConnection;
+
+            [NativeTypeName("HRESULT (VARIANT_BOOL) __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellUIHelper7*, short, int> CustomizeClearType;
+
+            [NativeTypeName("HRESULT (BSTR, DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellUIHelper7*, ushort*, uint*, int> IsSearchProviderInstalled;
+
+            [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellUIHelper7*, short*, int> IsSearchMigrated;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellUIHelper7*, ushort**, int> DefaultSearchProvider;
+
+            [NativeTypeName("HRESULT (VARIANT_BOOL) __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellUIHelper7*, short, int> RunOnceRequiredSettingsComplete;
+
+            [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellUIHelper7*, short*, int> RunOnceHasShown;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellUIHelper7*, ushort**, int> SearchGuideUrl;
+
+            [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellUIHelper7*, ushort*, int> AddService;
+
+            [NativeTypeName("HRESULT (BSTR, BSTR, DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellUIHelper7*, ushort*, ushort*, uint*, int> IsServiceInstalled;
+
+            [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellUIHelper7*, short*, int> InPrivateFilteringEnabled;
+
+            [NativeTypeName("HRESULT (BSTR, BSTR, VARIANT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellUIHelper7*, ushort*, ushort*, VARIANT*, int> AddToFavoritesBar;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellUIHelper7*, int> BuildNewTabPage;
+
+            [NativeTypeName("HRESULT (VARIANT_BOOL) __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellUIHelper7*, short, int> SetRecentlyClosedVisible;
+
+            [NativeTypeName("HRESULT (VARIANT_BOOL) __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellUIHelper7*, short, int> SetActivitiesVisible;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellUIHelper7*, int> ContentDiscoveryReset;
+
+            [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellUIHelper7*, short*, int> IsSuggestedSitesEnabled;
+
+            [NativeTypeName("HRESULT (VARIANT_BOOL) __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellUIHelper7*, short, int> EnableSuggestedSites;
+
+            [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellUIHelper7*, ushort*, int> NavigateToSuggestedSites;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellUIHelper7*, int> ShowTabsHelp;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellUIHelper7*, int> ShowInPrivateHelp;
+
+            [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellUIHelper7*, short*, int> msIsSiteMode;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellUIHelper7*, int> msSiteModeShowThumbBar;
+
+            [NativeTypeName("HRESULT (BSTR, BSTR, VARIANT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellUIHelper7*, ushort*, ushort*, VARIANT*, int> msSiteModeAddThumbBarButton;
+
+            [NativeTypeName("HRESULT (VARIANT, VARIANT_BOOL, VARIANT_BOOL) __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellUIHelper7*, VARIANT, short, short, int> msSiteModeUpdateThumbBarButton;
+
+            [NativeTypeName("HRESULT (BSTR, VARIANT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellUIHelper7*, ushort*, VARIANT*, int> msSiteModeSetIconOverlay;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellUIHelper7*, int> msSiteModeClearIconOverlay;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellUIHelper7*, int> msAddSiteMode;
+
+            [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellUIHelper7*, ushort*, int> msSiteModeCreateJumpList;
+
+            [NativeTypeName("HRESULT (BSTR, BSTR, BSTR, VARIANT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellUIHelper7*, ushort*, ushort*, ushort*, VARIANT*, int> msSiteModeAddJumpListItem;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellUIHelper7*, int> msSiteModeClearJumpList;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellUIHelper7*, int> msSiteModeShowJumpList;
+
+            [NativeTypeName("HRESULT (VARIANT, BSTR, BSTR, VARIANT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellUIHelper7*, VARIANT, ushort*, ushort*, VARIANT*, int> msSiteModeAddButtonStyle;
+
+            [NativeTypeName("HRESULT (VARIANT, VARIANT) __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellUIHelper7*, VARIANT, VARIANT, int> msSiteModeShowButtonStyle;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellUIHelper7*, int> msSiteModeActivate;
+
+            [NativeTypeName("HRESULT (VARIANT_BOOL, VARIANT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellUIHelper7*, short, VARIANT*, int> msIsSiteModeFirstRun;
+
+            [NativeTypeName("HRESULT (BSTR, BSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellUIHelper7*, ushort*, ushort*, int> msAddTrackingProtectionList;
+
+            [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellUIHelper7*, short*, int> msTrackingProtectionEnabled;
+
+            [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellUIHelper7*, short*, int> msActiveXFilteringEnabled;
+
+            [NativeTypeName("HRESULT (BSTR, VARIANT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellUIHelper7*, ushort*, VARIANT*, int> msProvisionNetworks;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellUIHelper7*, int> msReportSafeUrl;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellUIHelper7*, int> msSiteModeRefreshBadge;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellUIHelper7*, int> msSiteModeClearBadge;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellUIHelper7*, int> msDiagnoseConnectionUILess;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellUIHelper7*, int> msLaunchNetworkClientHelp;
+
+            [NativeTypeName("HRESULT (VARIANT_BOOL) __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellUIHelper7*, short, int> msChangeDefaultBrowser;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellUIHelper7*, int> msStopPeriodicTileUpdate;
+
+            [NativeTypeName("HRESULT (VARIANT, VARIANT, VARIANT) __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellUIHelper7*, VARIANT, VARIANT, VARIANT, int> msStartPeriodicTileUpdate;
+
+            [NativeTypeName("HRESULT (VARIANT, VARIANT, VARIANT) __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellUIHelper7*, VARIANT, VARIANT, VARIANT, int> msStartPeriodicTileUpdateBatch;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellUIHelper7*, int> msClearTile;
+
+            [NativeTypeName("HRESULT (VARIANT_BOOL) __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellUIHelper7*, short, int> msEnableTileNotificationQueue;
+
+            [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellUIHelper7*, VARIANT*, int> msPinnedSiteState;
+
+            [NativeTypeName("HRESULT (VARIANT_BOOL) __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellUIHelper7*, short, int> msEnableTileNotificationQueueForSquare150x150;
+
+            [NativeTypeName("HRESULT (VARIANT_BOOL) __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellUIHelper7*, short, int> msEnableTileNotificationQueueForWide310x150;
+
+            [NativeTypeName("HRESULT (VARIANT_BOOL) __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellUIHelper7*, short, int> msEnableTileNotificationQueueForSquare310x310;
+
+            [NativeTypeName("HRESULT (BSTR, BSTR, BSTR, VARIANT, VARIANT) __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellUIHelper7*, ushort*, ushort*, ushort*, VARIANT, VARIANT, int> msScheduledTileNotification;
+
+            [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellUIHelper7*, ushort*, int> msRemoveScheduledTileNotification;
+
+            [NativeTypeName("HRESULT (BSTR, VARIANT, VARIANT) __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellUIHelper7*, ushort*, VARIANT, VARIANT, int> msStartPeriodicBadgeUpdate;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellUIHelper7*, int> msStopPeriodicBadgeUpdate;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellUIHelper7*, int> msLaunchInternetOptions;
+
+            [NativeTypeName("HRESULT (BSTR, VARIANT_BOOL) __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellUIHelper7*, ushort*, short, int> SetExperimentalFlag;
+
+            [NativeTypeName("HRESULT (BSTR, VARIANT_BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellUIHelper7*, ushort*, short*, int> GetExperimentalFlag;
+
+            [NativeTypeName("HRESULT (BSTR, DWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellUIHelper7*, ushort*, uint, int> SetExperimentalValue;
+
+            [NativeTypeName("HRESULT (BSTR, DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellUIHelper7*, ushort*, uint*, int> GetExperimentalValue;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellUIHelper7*, int> ResetAllExperimentalFlagsAndValues;
+
+            [NativeTypeName("HRESULT (BSTR, VARIANT_BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellUIHelper7*, ushort*, short*, int> GetNeedIEAutoLaunchFlag;
+
+            [NativeTypeName("HRESULT (BSTR, VARIANT_BOOL) __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellUIHelper7*, ushort*, short, int> SetNeedIEAutoLaunchFlag;
+
+            [NativeTypeName("HRESULT (BSTR, VARIANT_BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellUIHelper7*, ushort*, short*, int> HasNeedIEAutoLaunchFlag;
+
+            [NativeTypeName("HRESULT (BSTR, VARIANT_BOOL) __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellUIHelper7*, ushort*, short, int> LaunchIE;
         }
     }
 }

@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("EC446FE8-BFEC-4C64-AB4F-49F038F0C6D2")]
     [NativeTypeName("struct IAppxBundleWriter : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IAppxBundleWriter
+    public unsafe partial struct IAppxBundleWriter : IAppxBundleWriter.Interface
     {
         public void** lpVtbl;
 
@@ -51,6 +51,33 @@ namespace TerraFX.Interop
         public HRESULT Close()
         {
             return ((delegate* unmanaged<IAppxBundleWriter*, int>)(lpVtbl[4]))((IAppxBundleWriter*)Unsafe.AsPointer(ref this));
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT AddPayloadPackage([NativeTypeName("LPCWSTR")] ushort* fileName, IStream* packageStream);
+
+            [VtblIndex(4)]
+            HRESULT Close();
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAppxBundleWriter*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IAppxBundleWriter*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IAppxBundleWriter*, uint> Release;
+
+            [NativeTypeName("HRESULT (LPCWSTR, IStream *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAppxBundleWriter*, ushort*, IStream*, int> AddPayloadPackage;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IAppxBundleWriter*, int> Close;
         }
     }
 }

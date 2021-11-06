@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("6D4C7B74-52A0-4BB7-B0DB-55F29F47A668")]
     [NativeTypeName("struct IMFSchemeHandler : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IMFSchemeHandler
+    public unsafe partial struct IMFSchemeHandler : IMFSchemeHandler.Interface
     {
         public void** lpVtbl;
 
@@ -58,6 +58,39 @@ namespace TerraFX.Interop
         public HRESULT CancelObjectCreation(IUnknown* pIUnknownCancelCookie)
         {
             return ((delegate* unmanaged<IMFSchemeHandler*, IUnknown*, int>)(lpVtbl[5]))((IMFSchemeHandler*)Unsafe.AsPointer(ref this), pIUnknownCancelCookie);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT BeginCreateObject([NativeTypeName("LPCWSTR")] ushort* pwszURL, [NativeTypeName("DWORD")] uint dwFlags, IPropertyStore* pProps, IUnknown** ppIUnknownCancelCookie, IMFAsyncCallback* pCallback, IUnknown* punkState);
+
+            [VtblIndex(4)]
+            HRESULT EndCreateObject(IMFAsyncResult* pResult, MF_OBJECT_TYPE* pObjectType, IUnknown** ppObject);
+
+            [VtblIndex(5)]
+            HRESULT CancelObjectCreation(IUnknown* pIUnknownCancelCookie);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFSchemeHandler*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFSchemeHandler*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFSchemeHandler*, uint> Release;
+
+            [NativeTypeName("HRESULT (LPCWSTR, DWORD, IPropertyStore *, IUnknown **, IMFAsyncCallback *, IUnknown *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFSchemeHandler*, ushort*, uint, IPropertyStore*, IUnknown**, IMFAsyncCallback*, IUnknown*, int> BeginCreateObject;
+
+            [NativeTypeName("HRESULT (IMFAsyncResult *, MF_OBJECT_TYPE *, IUnknown **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFSchemeHandler*, IMFAsyncResult*, MF_OBJECT_TYPE*, IUnknown**, int> EndCreateObject;
+
+            [NativeTypeName("HRESULT (IUnknown *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFSchemeHandler*, IUnknown*, int> CancelObjectCreation;
         }
     }
 }

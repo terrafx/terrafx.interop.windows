@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("EACDD04C-117E-4E17-88F4-D1B12B0E3D89")]
     [NativeTypeName("struct IDCompositionTarget : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IDCompositionTarget
+    public unsafe partial struct IDCompositionTarget : IDCompositionTarget.Interface
     {
         public void** lpVtbl;
 
@@ -44,6 +44,27 @@ namespace TerraFX.Interop
         public HRESULT SetRoot(IDCompositionVisual* visual)
         {
             return ((delegate* unmanaged<IDCompositionTarget*, IDCompositionVisual*, int>)(lpVtbl[3]))((IDCompositionTarget*)Unsafe.AsPointer(ref this), visual);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT SetRoot(IDCompositionVisual* visual);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDCompositionTarget*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDCompositionTarget*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDCompositionTarget*, uint> Release;
+
+            [NativeTypeName("HRESULT (IDCompositionVisual *) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDCompositionTarget*, IDCompositionVisual*, int> SetRoot;
         }
     }
 }

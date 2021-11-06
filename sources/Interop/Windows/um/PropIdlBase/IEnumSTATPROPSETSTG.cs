@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("0000013B-0000-0000-C000-000000000046")]
     [NativeTypeName("struct IEnumSTATPROPSETSTG : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IEnumSTATPROPSETSTG
+    public unsafe partial struct IEnumSTATPROPSETSTG : IEnumSTATPROPSETSTG.Interface
     {
         public void** lpVtbl;
 
@@ -65,6 +65,45 @@ namespace TerraFX.Interop
         public HRESULT Clone(IEnumSTATPROPSETSTG** ppenum)
         {
             return ((delegate* unmanaged<IEnumSTATPROPSETSTG*, IEnumSTATPROPSETSTG**, int>)(lpVtbl[6]))((IEnumSTATPROPSETSTG*)Unsafe.AsPointer(ref this), ppenum);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT Next([NativeTypeName("ULONG")] uint celt, STATPROPSETSTG* rgelt, [NativeTypeName("ULONG *")] uint* pceltFetched);
+
+            [VtblIndex(4)]
+            HRESULT Skip([NativeTypeName("ULONG")] uint celt);
+
+            [VtblIndex(5)]
+            HRESULT Reset();
+
+            [VtblIndex(6)]
+            HRESULT Clone(IEnumSTATPROPSETSTG** ppenum);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IEnumSTATPROPSETSTG*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IEnumSTATPROPSETSTG*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IEnumSTATPROPSETSTG*, uint> Release;
+
+            [NativeTypeName("HRESULT (ULONG, STATPROPSETSTG *, ULONG *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IEnumSTATPROPSETSTG*, uint, STATPROPSETSTG*, uint*, int> Next;
+
+            [NativeTypeName("HRESULT (ULONG) __attribute__((stdcall))")]
+            public delegate* unmanaged<IEnumSTATPROPSETSTG*, uint, int> Skip;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IEnumSTATPROPSETSTG*, int> Reset;
+
+            [NativeTypeName("HRESULT (IEnumSTATPROPSETSTG **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IEnumSTATPROPSETSTG*, IEnumSTATPROPSETSTG**, int> Clone;
         }
     }
 }

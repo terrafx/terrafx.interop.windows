@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("EBBC7C04-315E-11D2-B62F-006097DF5BD4")]
     [NativeTypeName("struct IProgressDialog : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IProgressDialog
+    public unsafe partial struct IProgressDialog : IProgressDialog.Interface
     {
         public void** lpVtbl;
 
@@ -107,6 +107,81 @@ namespace TerraFX.Interop
         public HRESULT Timer([NativeTypeName("DWORD")] uint dwTimerAction, [NativeTypeName("LPCVOID")] void* pvResevered)
         {
             return ((delegate* unmanaged<IProgressDialog*, uint, void*, int>)(lpVtbl[12]))((IProgressDialog*)Unsafe.AsPointer(ref this), dwTimerAction, pvResevered);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT StartProgressDialog(HWND hwndParent, IUnknown* punkEnableModless, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("LPCVOID")] void* pvResevered);
+
+            [VtblIndex(4)]
+            HRESULT StopProgressDialog();
+
+            [VtblIndex(5)]
+            HRESULT SetTitle([NativeTypeName("PCWSTR")] ushort* pwzTitle);
+
+            [VtblIndex(6)]
+            HRESULT SetAnimation(HINSTANCE hInstAnimation, uint idAnimation);
+
+            [VtblIndex(7)]
+            BOOL HasUserCancelled();
+
+            [VtblIndex(8)]
+            HRESULT SetProgress([NativeTypeName("DWORD")] uint dwCompleted, [NativeTypeName("DWORD")] uint dwTotal);
+
+            [VtblIndex(9)]
+            HRESULT SetProgress64([NativeTypeName("ULONGLONG")] ulong ullCompleted, [NativeTypeName("ULONGLONG")] ulong ullTotal);
+
+            [VtblIndex(10)]
+            HRESULT SetLine([NativeTypeName("DWORD")] uint dwLineNum, [NativeTypeName("PCWSTR")] ushort* pwzString, BOOL fCompactPath, [NativeTypeName("LPCVOID")] void* pvResevered);
+
+            [VtblIndex(11)]
+            HRESULT SetCancelMsg([NativeTypeName("PCWSTR")] ushort* pwzCancelMsg, [NativeTypeName("LPCVOID")] void* pvResevered);
+
+            [VtblIndex(12)]
+            HRESULT Timer([NativeTypeName("DWORD")] uint dwTimerAction, [NativeTypeName("LPCVOID")] void* pvResevered);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IProgressDialog*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IProgressDialog*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IProgressDialog*, uint> Release;
+
+            [NativeTypeName("HRESULT (HWND, IUnknown *, DWORD, LPCVOID) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IProgressDialog*, HWND, IUnknown*, uint, void*, int> StartProgressDialog;
+
+            [NativeTypeName("HRESULT () __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IProgressDialog*, int> StopProgressDialog;
+
+            [NativeTypeName("HRESULT (PCWSTR) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IProgressDialog*, ushort*, int> SetTitle;
+
+            [NativeTypeName("HRESULT (HINSTANCE, UINT) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IProgressDialog*, HINSTANCE, uint, int> SetAnimation;
+
+            [NativeTypeName("BOOL () __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IProgressDialog*, int> HasUserCancelled;
+
+            [NativeTypeName("HRESULT (DWORD, DWORD) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IProgressDialog*, uint, uint, int> SetProgress;
+
+            [NativeTypeName("HRESULT (ULONGLONG, ULONGLONG) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IProgressDialog*, ulong, ulong, int> SetProgress64;
+
+            [NativeTypeName("HRESULT (DWORD, PCWSTR, BOOL, LPCVOID) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IProgressDialog*, uint, ushort*, BOOL, void*, int> SetLine;
+
+            [NativeTypeName("HRESULT (PCWSTR, LPCVOID) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IProgressDialog*, ushort*, void*, int> SetCancelMsg;
+
+            [NativeTypeName("HRESULT (DWORD, LPCVOID) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IProgressDialog*, uint, void*, int> Timer;
         }
     }
 }

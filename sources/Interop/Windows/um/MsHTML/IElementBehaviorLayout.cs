@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("3050F6BA-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct IElementBehaviorLayout : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IElementBehaviorLayout
+    public unsafe partial struct IElementBehaviorLayout : IElementBehaviorLayout.Interface
     {
         public void** lpVtbl;
 
@@ -65,6 +65,45 @@ namespace TerraFX.Interop
         public HRESULT MapSize(SIZE* psizeIn, RECT* prcOut)
         {
             return ((delegate* unmanaged<IElementBehaviorLayout*, SIZE*, RECT*, int>)(lpVtbl[6]))((IElementBehaviorLayout*)Unsafe.AsPointer(ref this), psizeIn, prcOut);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetSize([NativeTypeName("LONG")] int dwFlags, SIZE sizeContent, POINT* pptTranslateBy, POINT* pptTopLeft, SIZE* psizeProposed);
+
+            [VtblIndex(4)]
+            HRESULT GetLayoutInfo([NativeTypeName("LONG *")] int* plLayoutInfo);
+
+            [VtblIndex(5)]
+            HRESULT GetPosition([NativeTypeName("LONG")] int lFlags, POINT* pptTopLeft);
+
+            [VtblIndex(6)]
+            HRESULT MapSize(SIZE* psizeIn, RECT* prcOut);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IElementBehaviorLayout*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IElementBehaviorLayout*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IElementBehaviorLayout*, uint> Release;
+
+            [NativeTypeName("HRESULT (LONG, SIZE, POINT *, POINT *, SIZE *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IElementBehaviorLayout*, int, SIZE, POINT*, POINT*, SIZE*, int> GetSize;
+
+            [NativeTypeName("HRESULT (LONG *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IElementBehaviorLayout*, int*, int> GetLayoutInfo;
+
+            [NativeTypeName("HRESULT (LONG, POINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IElementBehaviorLayout*, int, POINT*, int> GetPosition;
+
+            [NativeTypeName("HRESULT (SIZE *, RECT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IElementBehaviorLayout*, SIZE*, RECT*, int> MapSize;
         }
     }
 }

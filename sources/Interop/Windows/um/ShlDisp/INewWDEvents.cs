@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("0751C551-7568-41C9-8E5B-E22E38919236")]
     [NativeTypeName("struct INewWDEvents : IWebWizardHost")]
     [NativeInheritance("IWebWizardHost")]
-    public unsafe partial struct INewWDEvents
+    public unsafe partial struct INewWDEvents : INewWDEvents.Interface
     {
         public void** lpVtbl;
 
@@ -135,6 +135,66 @@ namespace TerraFX.Interop
         public HRESULT PassportAuthenticate([NativeTypeName("BSTR")] ushort* bstrSignInUrl, [NativeTypeName("VARIANT_BOOL *")] short* pvfAuthenitcated)
         {
             return ((delegate* unmanaged<INewWDEvents*, ushort*, short*, int>)(lpVtbl[16]))((INewWDEvents*)Unsafe.AsPointer(ref this), bstrSignInUrl, pvfAuthenitcated);
+        }
+
+        public interface Interface : IWebWizardHost.Interface
+        {
+            [VtblIndex(16)]
+            HRESULT PassportAuthenticate([NativeTypeName("BSTR")] ushort* bstrSignInUrl, [NativeTypeName("VARIANT_BOOL *")] short* pvfAuthenitcated);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<INewWDEvents*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<INewWDEvents*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<INewWDEvents*, uint> Release;
+
+            [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<INewWDEvents*, uint*, int> GetTypeInfoCount;
+
+            [NativeTypeName("HRESULT (UINT, LCID, ITypeInfo **) __attribute__((stdcall))")]
+            public delegate* unmanaged<INewWDEvents*, uint, uint, ITypeInfo**, int> GetTypeInfo;
+
+            [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
+            public delegate* unmanaged<INewWDEvents*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+
+            [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<INewWDEvents*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<INewWDEvents*, int> FinalBack;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<INewWDEvents*, int> FinalNext;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<INewWDEvents*, int> Cancel;
+
+            [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<INewWDEvents*, ushort*, int> put_Caption;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<INewWDEvents*, ushort**, int> get_Caption;
+
+            [NativeTypeName("HRESULT (BSTR, VARIANT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<INewWDEvents*, ushort*, VARIANT*, int> put_Property;
+
+            [NativeTypeName("HRESULT (BSTR, VARIANT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<INewWDEvents*, ushort*, VARIANT*, int> get_Property;
+
+            [NativeTypeName("HRESULT (VARIANT_BOOL, VARIANT_BOOL, VARIANT_BOOL) __attribute__((stdcall))")]
+            public delegate* unmanaged<INewWDEvents*, short, short, short, int> SetWizardButtons;
+
+            [NativeTypeName("HRESULT (BSTR, BSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<INewWDEvents*, ushort*, ushort*, int> SetHeaderText;
+
+            [NativeTypeName("HRESULT (BSTR, VARIANT_BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<INewWDEvents*, ushort*, short*, int> PassportAuthenticate;
         }
     }
 }

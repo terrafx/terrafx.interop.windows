@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("56A868B3-0AD4-11CE-B03A-0020AF0BA770")]
     [NativeTypeName("struct IBasicAudio : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct IBasicAudio
+    public unsafe partial struct IBasicAudio : IBasicAudio.Interface
     {
         public void** lpVtbl;
 
@@ -93,6 +93,57 @@ namespace TerraFX.Interop
         public HRESULT get_Balance([NativeTypeName("long *")] int* plBalance)
         {
             return ((delegate* unmanaged<IBasicAudio*, int*, int>)(lpVtbl[10]))((IBasicAudio*)Unsafe.AsPointer(ref this), plBalance);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT put_Volume([NativeTypeName("long")] int lVolume);
+
+            [VtblIndex(8)]
+            HRESULT get_Volume([NativeTypeName("long *")] int* plVolume);
+
+            [VtblIndex(9)]
+            HRESULT put_Balance([NativeTypeName("long")] int lBalance);
+
+            [VtblIndex(10)]
+            HRESULT get_Balance([NativeTypeName("long *")] int* plBalance);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IBasicAudio*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IBasicAudio*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IBasicAudio*, uint> Release;
+
+            [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IBasicAudio*, uint*, int> GetTypeInfoCount;
+
+            [NativeTypeName("HRESULT (UINT, LCID, ITypeInfo **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IBasicAudio*, uint, uint, ITypeInfo**, int> GetTypeInfo;
+
+            [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IBasicAudio*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+
+            [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IBasicAudio*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
+
+            [NativeTypeName("HRESULT (long) __attribute__((stdcall))")]
+            public delegate* unmanaged<IBasicAudio*, int, int> put_Volume;
+
+            [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IBasicAudio*, int*, int> get_Volume;
+
+            [NativeTypeName("HRESULT (long) __attribute__((stdcall))")]
+            public delegate* unmanaged<IBasicAudio*, int, int> put_Balance;
+
+            [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IBasicAudio*, int*, int> get_Balance;
         }
     }
 }

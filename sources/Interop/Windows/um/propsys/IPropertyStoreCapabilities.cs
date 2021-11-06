@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("C8E2D566-186E-4D49-BF41-6909EAD56ACC")]
     [NativeTypeName("struct IPropertyStoreCapabilities : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IPropertyStoreCapabilities
+    public unsafe partial struct IPropertyStoreCapabilities : IPropertyStoreCapabilities.Interface
     {
         public void** lpVtbl;
 
@@ -44,6 +44,27 @@ namespace TerraFX.Interop
         public HRESULT IsPropertyWritable([NativeTypeName("const PROPERTYKEY &")] PROPERTYKEY* key)
         {
             return ((delegate* unmanaged<IPropertyStoreCapabilities*, PROPERTYKEY*, int>)(lpVtbl[3]))((IPropertyStoreCapabilities*)Unsafe.AsPointer(ref this), key);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT IsPropertyWritable([NativeTypeName("const PROPERTYKEY &")] PROPERTYKEY* key);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IPropertyStoreCapabilities*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IPropertyStoreCapabilities*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IPropertyStoreCapabilities*, uint> Release;
+
+            [NativeTypeName("HRESULT (const PROPERTYKEY &) __attribute__((stdcall))")]
+            public delegate* unmanaged<IPropertyStoreCapabilities*, PROPERTYKEY*, int> IsPropertyWritable;
         }
     }
 }

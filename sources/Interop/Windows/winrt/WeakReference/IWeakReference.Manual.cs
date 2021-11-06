@@ -10,10 +10,10 @@ namespace TerraFX.Interop
     public unsafe partial struct IWeakReference
     {
         public int Resolve<T>(T** objectReference)
-            where T : unmanaged
+            where T : unmanaged, IInspectable.Interface
         {
             Guid iid = typeof(T).GUID;
-            return Resolve(&iid, (IInspectable**) objectReference);
+            return Resolve(&iid, (IInspectable**)objectReference);
         }
     }
 }

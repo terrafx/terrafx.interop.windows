@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("757A7D9F-919A-4118-99D7-DBB208C8CC66")]
     [NativeTypeName("struct IPropertyUI : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IPropertyUI
+    public unsafe partial struct IPropertyUI : IPropertyUI.Interface
     {
         public void** lpVtbl;
 
@@ -93,6 +93,69 @@ namespace TerraFX.Interop
         public HRESULT GetHelpInfo([NativeTypeName("const IID &")] Guid* fmtid, [NativeTypeName("PROPID")] uint pid, [NativeTypeName("LPWSTR")] ushort* pwszHelpFile, [NativeTypeName("DWORD")] uint cch, uint* puHelpID)
         {
             return ((delegate* unmanaged<IPropertyUI*, Guid*, uint, ushort*, uint, uint*, int>)(lpVtbl[10]))((IPropertyUI*)Unsafe.AsPointer(ref this), fmtid, pid, pwszHelpFile, cch, puHelpID);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT ParsePropertyName([NativeTypeName("LPCWSTR")] ushort* pszName, [NativeTypeName("FMTID *")] Guid* pfmtid, [NativeTypeName("PROPID *")] uint* ppid, [NativeTypeName("ULONG *")] uint* pchEaten);
+
+            [VtblIndex(4)]
+            HRESULT GetCannonicalName([NativeTypeName("const IID &")] Guid* fmtid, [NativeTypeName("PROPID")] uint pid, [NativeTypeName("LPWSTR")] ushort* pwszText, [NativeTypeName("DWORD")] uint cchText);
+
+            [VtblIndex(5)]
+            HRESULT GetDisplayName([NativeTypeName("const IID &")] Guid* fmtid, [NativeTypeName("PROPID")] uint pid, [NativeTypeName("PROPERTYUI_NAME_FLAGS")] uint flags, [NativeTypeName("LPWSTR")] ushort* pwszText, [NativeTypeName("DWORD")] uint cchText);
+
+            [VtblIndex(6)]
+            HRESULT GetPropertyDescription([NativeTypeName("const IID &")] Guid* fmtid, [NativeTypeName("PROPID")] uint pid, [NativeTypeName("LPWSTR")] ushort* pwszText, [NativeTypeName("DWORD")] uint cchText);
+
+            [VtblIndex(7)]
+            HRESULT GetDefaultWidth([NativeTypeName("const IID &")] Guid* fmtid, [NativeTypeName("PROPID")] uint pid, [NativeTypeName("ULONG *")] uint* pcxChars);
+
+            [VtblIndex(8)]
+            HRESULT GetFlags([NativeTypeName("const IID &")] Guid* fmtid, [NativeTypeName("PROPID")] uint pid, [NativeTypeName("PROPERTYUI_FLAGS *")] uint* pflags);
+
+            [VtblIndex(9)]
+            HRESULT FormatForDisplay([NativeTypeName("const IID &")] Guid* fmtid, [NativeTypeName("PROPID")] uint pid, [NativeTypeName("const PROPVARIANT *")] PROPVARIANT* ppropvar, [NativeTypeName("PROPERTYUI_FORMAT_FLAGS")] uint puiff, [NativeTypeName("LPWSTR")] ushort* pwszText, [NativeTypeName("DWORD")] uint cchText);
+
+            [VtblIndex(10)]
+            HRESULT GetHelpInfo([NativeTypeName("const IID &")] Guid* fmtid, [NativeTypeName("PROPID")] uint pid, [NativeTypeName("LPWSTR")] ushort* pwszHelpFile, [NativeTypeName("DWORD")] uint cch, uint* puHelpID);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IPropertyUI*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IPropertyUI*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IPropertyUI*, uint> Release;
+
+            [NativeTypeName("HRESULT (LPCWSTR, FMTID *, PROPID *, ULONG *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IPropertyUI*, ushort*, Guid*, uint*, uint*, int> ParsePropertyName;
+
+            [NativeTypeName("HRESULT (const IID &, PROPID, LPWSTR, DWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<IPropertyUI*, Guid*, uint, ushort*, uint, int> GetCannonicalName;
+
+            [NativeTypeName("HRESULT (const IID &, PROPID, PROPERTYUI_NAME_FLAGS, LPWSTR, DWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<IPropertyUI*, Guid*, uint, uint, ushort*, uint, int> GetDisplayName;
+
+            [NativeTypeName("HRESULT (const IID &, PROPID, LPWSTR, DWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<IPropertyUI*, Guid*, uint, ushort*, uint, int> GetPropertyDescription;
+
+            [NativeTypeName("HRESULT (const IID &, PROPID, ULONG *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IPropertyUI*, Guid*, uint, uint*, int> GetDefaultWidth;
+
+            [NativeTypeName("HRESULT (const IID &, PROPID, PROPERTYUI_FLAGS *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IPropertyUI*, Guid*, uint, uint*, int> GetFlags;
+
+            [NativeTypeName("HRESULT (const IID &, PROPID, const PROPVARIANT *, PROPERTYUI_FORMAT_FLAGS, LPWSTR, DWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<IPropertyUI*, Guid*, uint, PROPVARIANT*, uint, ushort*, uint, int> FormatForDisplay;
+
+            [NativeTypeName("HRESULT (const IID &, PROPID, LPWSTR, DWORD, UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IPropertyUI*, Guid*, uint, ushort*, uint, uint*, int> GetHelpInfo;
         }
     }
 }

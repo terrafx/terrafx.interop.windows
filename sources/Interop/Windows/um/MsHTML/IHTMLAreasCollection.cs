@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("3050F383-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct IHTMLAreasCollection : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct IHTMLAreasCollection
+    public unsafe partial struct IHTMLAreasCollection : IHTMLAreasCollection.Interface
     {
         public void** lpVtbl;
 
@@ -114,6 +114,75 @@ namespace TerraFX.Interop
         public HRESULT remove([NativeTypeName("long")] int index = -1)
         {
             return ((delegate* unmanaged<IHTMLAreasCollection*, int, int>)(lpVtbl[13]))((IHTMLAreasCollection*)Unsafe.AsPointer(ref this), index);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT put_length([NativeTypeName("long")] int v);
+
+            [VtblIndex(8)]
+            HRESULT get_length([NativeTypeName("long *")] int* p);
+
+            [VtblIndex(9)]
+            HRESULT get__newEnum(IUnknown** p);
+
+            [VtblIndex(10)]
+            HRESULT item(VARIANT name, VARIANT index, IDispatch** pdisp);
+
+            [VtblIndex(11)]
+            HRESULT tags(VARIANT tagName, IDispatch** pdisp);
+
+            [VtblIndex(12)]
+            HRESULT add(IHTMLElement* element, VARIANT before);
+
+            [VtblIndex(13)]
+            HRESULT remove([NativeTypeName("long")] int index = -1);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLAreasCollection*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLAreasCollection*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLAreasCollection*, uint> Release;
+
+            [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLAreasCollection*, uint*, int> GetTypeInfoCount;
+
+            [NativeTypeName("HRESULT (UINT, LCID, ITypeInfo **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLAreasCollection*, uint, uint, ITypeInfo**, int> GetTypeInfo;
+
+            [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLAreasCollection*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+
+            [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLAreasCollection*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
+
+            [NativeTypeName("HRESULT (long) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLAreasCollection*, int, int> put_length;
+
+            [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLAreasCollection*, int*, int> get_length;
+
+            [NativeTypeName("HRESULT (IUnknown **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLAreasCollection*, IUnknown**, int> get__newEnum;
+
+            [NativeTypeName("HRESULT (VARIANT, VARIANT, IDispatch **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLAreasCollection*, VARIANT, VARIANT, IDispatch**, int> item;
+
+            [NativeTypeName("HRESULT (VARIANT, IDispatch **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLAreasCollection*, VARIANT, IDispatch**, int> tags;
+
+            [NativeTypeName("HRESULT (IHTMLElement *, VARIANT) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLAreasCollection*, IHTMLElement*, VARIANT, int> add;
+
+            [NativeTypeName("HRESULT (long) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLAreasCollection*, int, int> remove;
         }
     }
 }

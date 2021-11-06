@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("FBF23B80-E3F0-101B-8488-00AA003E56F8")]
     [NativeTypeName("struct IUniformResourceLocatorA : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IUniformResourceLocatorA
+    public unsafe partial struct IUniformResourceLocatorA : IUniformResourceLocatorA.Interface
     {
         public void** lpVtbl;
 
@@ -58,6 +58,39 @@ namespace TerraFX.Interop
         public HRESULT InvokeCommand([NativeTypeName("PURLINVOKECOMMANDINFOA")] URLINVOKECOMMANDINFOA* purlici)
         {
             return ((delegate* unmanaged<IUniformResourceLocatorA*, URLINVOKECOMMANDINFOA*, int>)(lpVtbl[5]))((IUniformResourceLocatorA*)Unsafe.AsPointer(ref this), purlici);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT SetURL([NativeTypeName("LPCSTR")] sbyte* pcszURL, [NativeTypeName("DWORD")] uint dwInFlags);
+
+            [VtblIndex(4)]
+            HRESULT GetURL([NativeTypeName("LPSTR *")] sbyte** ppszURL);
+
+            [VtblIndex(5)]
+            HRESULT InvokeCommand([NativeTypeName("PURLINVOKECOMMANDINFOA")] URLINVOKECOMMANDINFOA* purlici);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IUniformResourceLocatorA*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IUniformResourceLocatorA*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IUniformResourceLocatorA*, uint> Release;
+
+            [NativeTypeName("HRESULT (LPCSTR, DWORD) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IUniformResourceLocatorA*, sbyte*, uint, int> SetURL;
+
+            [NativeTypeName("HRESULT (LPSTR *) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IUniformResourceLocatorA*, sbyte**, int> GetURL;
+
+            [NativeTypeName("HRESULT (PURLINVOKECOMMANDINFOA) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IUniformResourceLocatorA*, URLINVOKECOMMANDINFOA*, int> InvokeCommand;
         }
     }
 }

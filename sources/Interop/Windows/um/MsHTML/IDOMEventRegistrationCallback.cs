@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("3051083B-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct IDOMEventRegistrationCallback : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IDOMEventRegistrationCallback
+    public unsafe partial struct IDOMEventRegistrationCallback : IDOMEventRegistrationCallback.Interface
     {
         public void** lpVtbl;
 
@@ -51,6 +51,33 @@ namespace TerraFX.Interop
         public HRESULT OnDOMEventListenerRemoved([NativeTypeName("ULONGLONG")] ulong ullCookie)
         {
             return ((delegate* unmanaged<IDOMEventRegistrationCallback*, ulong, int>)(lpVtbl[4]))((IDOMEventRegistrationCallback*)Unsafe.AsPointer(ref this), ullCookie);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT OnDOMEventListenerAdded([NativeTypeName("LPCWSTR")] ushort* pszEventType, IScriptEventHandler* pHandler);
+
+            [VtblIndex(4)]
+            HRESULT OnDOMEventListenerRemoved([NativeTypeName("ULONGLONG")] ulong ullCookie);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDOMEventRegistrationCallback*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDOMEventRegistrationCallback*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDOMEventRegistrationCallback*, uint> Release;
+
+            [NativeTypeName("HRESULT (LPCWSTR, IScriptEventHandler *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDOMEventRegistrationCallback*, ushort*, IScriptEventHandler*, int> OnDOMEventListenerAdded;
+
+            [NativeTypeName("HRESULT (ULONGLONG) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDOMEventRegistrationCallback*, ulong, int> OnDOMEventListenerRemoved;
         }
     }
 }

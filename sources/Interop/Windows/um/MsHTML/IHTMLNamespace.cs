@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("3050F6BB-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct IHTMLNamespace : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct IHTMLNamespace
+    public unsafe partial struct IHTMLNamespace : IHTMLNamespace.Interface
     {
         public void** lpVtbl;
 
@@ -128,6 +128,87 @@ namespace TerraFX.Interop
         public HRESULT detachEvent([NativeTypeName("BSTR")] ushort* @event, IDispatch* pDisp)
         {
             return ((delegate* unmanaged<IHTMLNamespace*, ushort*, IDispatch*, int>)(lpVtbl[15]))((IHTMLNamespace*)Unsafe.AsPointer(ref this), @event, pDisp);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT get_name([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(8)]
+            HRESULT get_urn([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(9)]
+            HRESULT get_tagNames(IDispatch** p);
+
+            [VtblIndex(10)]
+            HRESULT get_readyState(VARIANT* p);
+
+            [VtblIndex(11)]
+            HRESULT put_onreadystatechange(VARIANT v);
+
+            [VtblIndex(12)]
+            HRESULT get_onreadystatechange(VARIANT* p);
+
+            [VtblIndex(13)]
+            HRESULT doImport([NativeTypeName("BSTR")] ushort* bstrImplementationUrl);
+
+            [VtblIndex(14)]
+            HRESULT attachEvent([NativeTypeName("BSTR")] ushort* @event, IDispatch* pDisp, [NativeTypeName("VARIANT_BOOL *")] short* pfResult);
+
+            [VtblIndex(15)]
+            HRESULT detachEvent([NativeTypeName("BSTR")] ushort* @event, IDispatch* pDisp);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLNamespace*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLNamespace*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLNamespace*, uint> Release;
+
+            [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLNamespace*, uint*, int> GetTypeInfoCount;
+
+            [NativeTypeName("HRESULT (UINT, LCID, ITypeInfo **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLNamespace*, uint, uint, ITypeInfo**, int> GetTypeInfo;
+
+            [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLNamespace*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+
+            [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLNamespace*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLNamespace*, ushort**, int> get_name;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLNamespace*, ushort**, int> get_urn;
+
+            [NativeTypeName("HRESULT (IDispatch **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLNamespace*, IDispatch**, int> get_tagNames;
+
+            [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLNamespace*, VARIANT*, int> get_readyState;
+
+            [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLNamespace*, VARIANT, int> put_onreadystatechange;
+
+            [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLNamespace*, VARIANT*, int> get_onreadystatechange;
+
+            [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLNamespace*, ushort*, int> doImport;
+
+            [NativeTypeName("HRESULT (BSTR, IDispatch *, VARIANT_BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLNamespace*, ushort*, IDispatch*, short*, int> attachEvent;
+
+            [NativeTypeName("HRESULT (BSTR, IDispatch *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLNamespace*, ushort*, IDispatch*, int> detachEvent;
         }
     }
 }

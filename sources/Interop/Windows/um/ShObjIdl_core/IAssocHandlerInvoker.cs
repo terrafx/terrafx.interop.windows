@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("92218CAB-ECAA-4335-8133-807FD234C2EE")]
     [NativeTypeName("struct IAssocHandlerInvoker : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IAssocHandlerInvoker
+    public unsafe partial struct IAssocHandlerInvoker : IAssocHandlerInvoker.Interface
     {
         public void** lpVtbl;
 
@@ -51,6 +51,33 @@ namespace TerraFX.Interop
         public HRESULT Invoke()
         {
             return ((delegate* unmanaged<IAssocHandlerInvoker*, int>)(lpVtbl[4]))((IAssocHandlerInvoker*)Unsafe.AsPointer(ref this));
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT SupportsSelection();
+
+            [VtblIndex(4)]
+            HRESULT Invoke();
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAssocHandlerInvoker*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IAssocHandlerInvoker*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IAssocHandlerInvoker*, uint> Release;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IAssocHandlerInvoker*, int> SupportsSelection;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IAssocHandlerInvoker*, int> Invoke;
         }
     }
 }

@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("305104FC-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct ISVGPathSeg : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct ISVGPathSeg
+    public unsafe partial struct ISVGPathSeg : ISVGPathSeg.Interface
     {
         public void** lpVtbl;
 
@@ -86,6 +86,51 @@ namespace TerraFX.Interop
         public HRESULT get_pathSegTypeAsLetter([NativeTypeName("BSTR *")] ushort** p)
         {
             return ((delegate* unmanaged<ISVGPathSeg*, ushort**, int>)(lpVtbl[9]))((ISVGPathSeg*)Unsafe.AsPointer(ref this), p);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT put_pathSegType(short v);
+
+            [VtblIndex(8)]
+            HRESULT get_pathSegType(short* p);
+
+            [VtblIndex(9)]
+            HRESULT get_pathSegTypeAsLetter([NativeTypeName("BSTR *")] ushort** p);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISVGPathSeg*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ISVGPathSeg*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ISVGPathSeg*, uint> Release;
+
+            [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISVGPathSeg*, uint*, int> GetTypeInfoCount;
+
+            [NativeTypeName("HRESULT (UINT, LCID, ITypeInfo **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISVGPathSeg*, uint, uint, ITypeInfo**, int> GetTypeInfo;
+
+            [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISVGPathSeg*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+
+            [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISVGPathSeg*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
+
+            [NativeTypeName("HRESULT (short) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISVGPathSeg*, short, int> put_pathSegType;
+
+            [NativeTypeName("HRESULT (short *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISVGPathSeg*, short*, int> get_pathSegType;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISVGPathSeg*, ushort**, int> get_pathSegTypeAsLetter;
         }
     }
 }

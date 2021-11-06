@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("F5F84C8F-CFD0-4CD6-B66B-C5D26FF1689D")]
     [NativeTypeName("struct IMessageDispatcher : IInspectable")]
     [NativeInheritance("IInspectable")]
-    public unsafe partial struct IMessageDispatcher
+    public unsafe partial struct IMessageDispatcher : IMessageDispatcher.Interface
     {
         public void** lpVtbl;
 
@@ -65,6 +65,36 @@ namespace TerraFX.Interop
         public HRESULT PumpMessages()
         {
             return ((delegate* unmanaged<IMessageDispatcher*, int>)(lpVtbl[6]))((IMessageDispatcher*)Unsafe.AsPointer(ref this));
+        }
+
+        public interface Interface : IInspectable.Interface
+        {
+            [VtblIndex(6)]
+            HRESULT PumpMessages();
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMessageDispatcher*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMessageDispatcher*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMessageDispatcher*, uint> Release;
+
+            [NativeTypeName("HRESULT (ULONG *, IID **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMessageDispatcher*, uint*, Guid**, int> GetIids;
+
+            [NativeTypeName("HRESULT (HSTRING *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMessageDispatcher*, HSTRING*, int> GetRuntimeClassName;
+
+            [NativeTypeName("HRESULT (TrustLevel *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMessageDispatcher*, TrustLevel*, int> GetTrustLevel;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMessageDispatcher*, int> PumpMessages;
         }
     }
 }

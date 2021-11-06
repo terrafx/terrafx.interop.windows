@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("C37EA93A-E7AA-450D-B16F-9746CB0407F3")]
     [NativeTypeName("struct IDCompositionDevice : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IDCompositionDevice
+    public unsafe partial struct IDCompositionDevice : IDCompositionDevice.Interface
     {
         public void** lpVtbl;
 
@@ -205,6 +205,165 @@ namespace TerraFX.Interop
         public HRESULT CheckDeviceState(BOOL* pfValid)
         {
             return ((delegate* unmanaged<IDCompositionDevice*, BOOL*, int>)(lpVtbl[26]))((IDCompositionDevice*)Unsafe.AsPointer(ref this), pfValid);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT Commit();
+
+            [VtblIndex(4)]
+            HRESULT WaitForCommitCompletion();
+
+            [VtblIndex(5)]
+            HRESULT GetFrameStatistics(DCOMPOSITION_FRAME_STATISTICS* statistics);
+
+            [VtblIndex(6)]
+            HRESULT CreateTargetForHwnd(HWND hwnd, BOOL topmost, IDCompositionTarget** target);
+
+            [VtblIndex(7)]
+            HRESULT CreateVisual(IDCompositionVisual** visual);
+
+            [VtblIndex(8)]
+            HRESULT CreateSurface(uint width, uint height, DXGI_FORMAT pixelFormat, DXGI_ALPHA_MODE alphaMode, IDCompositionSurface** surface);
+
+            [VtblIndex(9)]
+            HRESULT CreateVirtualSurface(uint initialWidth, uint initialHeight, DXGI_FORMAT pixelFormat, DXGI_ALPHA_MODE alphaMode, IDCompositionVirtualSurface** virtualSurface);
+
+            [VtblIndex(10)]
+            HRESULT CreateSurfaceFromHandle(HANDLE handle, IUnknown** surface);
+
+            [VtblIndex(11)]
+            HRESULT CreateSurfaceFromHwnd(HWND hwnd, IUnknown** surface);
+
+            [VtblIndex(12)]
+            HRESULT CreateTranslateTransform(IDCompositionTranslateTransform** translateTransform);
+
+            [VtblIndex(13)]
+            HRESULT CreateScaleTransform(IDCompositionScaleTransform** scaleTransform);
+
+            [VtblIndex(14)]
+            HRESULT CreateRotateTransform(IDCompositionRotateTransform** rotateTransform);
+
+            [VtblIndex(15)]
+            HRESULT CreateSkewTransform(IDCompositionSkewTransform** skewTransform);
+
+            [VtblIndex(16)]
+            HRESULT CreateMatrixTransform(IDCompositionMatrixTransform** matrixTransform);
+
+            [VtblIndex(17)]
+            HRESULT CreateTransformGroup(IDCompositionTransform** transforms, uint elements, IDCompositionTransform** transformGroup);
+
+            [VtblIndex(18)]
+            HRESULT CreateTranslateTransform3D(IDCompositionTranslateTransform3D** translateTransform3D);
+
+            [VtblIndex(19)]
+            HRESULT CreateScaleTransform3D(IDCompositionScaleTransform3D** scaleTransform3D);
+
+            [VtblIndex(20)]
+            HRESULT CreateRotateTransform3D(IDCompositionRotateTransform3D** rotateTransform3D);
+
+            [VtblIndex(21)]
+            HRESULT CreateMatrixTransform3D(IDCompositionMatrixTransform3D** matrixTransform3D);
+
+            [VtblIndex(22)]
+            HRESULT CreateTransform3DGroup(IDCompositionTransform3D** transforms3D, uint elements, IDCompositionTransform3D** transform3DGroup);
+
+            [VtblIndex(23)]
+            HRESULT CreateEffectGroup(IDCompositionEffectGroup** effectGroup);
+
+            [VtblIndex(24)]
+            HRESULT CreateRectangleClip(IDCompositionRectangleClip** clip);
+
+            [VtblIndex(25)]
+            HRESULT CreateAnimation(IDCompositionAnimation** animation);
+
+            [VtblIndex(26)]
+            HRESULT CheckDeviceState(BOOL* pfValid);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDCompositionDevice*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDCompositionDevice*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDCompositionDevice*, uint> Release;
+
+            [NativeTypeName("HRESULT () __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDCompositionDevice*, int> Commit;
+
+            [NativeTypeName("HRESULT () __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDCompositionDevice*, int> WaitForCommitCompletion;
+
+            [NativeTypeName("HRESULT (DCOMPOSITION_FRAME_STATISTICS *) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDCompositionDevice*, DCOMPOSITION_FRAME_STATISTICS*, int> GetFrameStatistics;
+
+            [NativeTypeName("HRESULT (HWND, BOOL, IDCompositionTarget **) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDCompositionDevice*, HWND, BOOL, IDCompositionTarget**, int> CreateTargetForHwnd;
+
+            [NativeTypeName("HRESULT (IDCompositionVisual **) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDCompositionDevice*, IDCompositionVisual**, int> CreateVisual;
+
+            [NativeTypeName("HRESULT (UINT, UINT, DXGI_FORMAT, DXGI_ALPHA_MODE, IDCompositionSurface **) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDCompositionDevice*, uint, uint, DXGI_FORMAT, DXGI_ALPHA_MODE, IDCompositionSurface**, int> CreateSurface;
+
+            [NativeTypeName("HRESULT (UINT, UINT, DXGI_FORMAT, DXGI_ALPHA_MODE, IDCompositionVirtualSurface **) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDCompositionDevice*, uint, uint, DXGI_FORMAT, DXGI_ALPHA_MODE, IDCompositionVirtualSurface**, int> CreateVirtualSurface;
+
+            [NativeTypeName("HRESULT (HANDLE, IUnknown **) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDCompositionDevice*, HANDLE, IUnknown**, int> CreateSurfaceFromHandle;
+
+            [NativeTypeName("HRESULT (HWND, IUnknown **) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDCompositionDevice*, HWND, IUnknown**, int> CreateSurfaceFromHwnd;
+
+            [NativeTypeName("HRESULT (IDCompositionTranslateTransform **) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDCompositionDevice*, IDCompositionTranslateTransform**, int> CreateTranslateTransform;
+
+            [NativeTypeName("HRESULT (IDCompositionScaleTransform **) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDCompositionDevice*, IDCompositionScaleTransform**, int> CreateScaleTransform;
+
+            [NativeTypeName("HRESULT (IDCompositionRotateTransform **) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDCompositionDevice*, IDCompositionRotateTransform**, int> CreateRotateTransform;
+
+            [NativeTypeName("HRESULT (IDCompositionSkewTransform **) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDCompositionDevice*, IDCompositionSkewTransform**, int> CreateSkewTransform;
+
+            [NativeTypeName("HRESULT (IDCompositionMatrixTransform **) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDCompositionDevice*, IDCompositionMatrixTransform**, int> CreateMatrixTransform;
+
+            [NativeTypeName("HRESULT (IDCompositionTransform **, UINT, IDCompositionTransform **) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDCompositionDevice*, IDCompositionTransform**, uint, IDCompositionTransform**, int> CreateTransformGroup;
+
+            [NativeTypeName("HRESULT (IDCompositionTranslateTransform3D **) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDCompositionDevice*, IDCompositionTranslateTransform3D**, int> CreateTranslateTransform3D;
+
+            [NativeTypeName("HRESULT (IDCompositionScaleTransform3D **) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDCompositionDevice*, IDCompositionScaleTransform3D**, int> CreateScaleTransform3D;
+
+            [NativeTypeName("HRESULT (IDCompositionRotateTransform3D **) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDCompositionDevice*, IDCompositionRotateTransform3D**, int> CreateRotateTransform3D;
+
+            [NativeTypeName("HRESULT (IDCompositionMatrixTransform3D **) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDCompositionDevice*, IDCompositionMatrixTransform3D**, int> CreateMatrixTransform3D;
+
+            [NativeTypeName("HRESULT (IDCompositionTransform3D **, UINT, IDCompositionTransform3D **) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDCompositionDevice*, IDCompositionTransform3D**, uint, IDCompositionTransform3D**, int> CreateTransform3DGroup;
+
+            [NativeTypeName("HRESULT (IDCompositionEffectGroup **) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDCompositionDevice*, IDCompositionEffectGroup**, int> CreateEffectGroup;
+
+            [NativeTypeName("HRESULT (IDCompositionRectangleClip **) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDCompositionDevice*, IDCompositionRectangleClip**, int> CreateRectangleClip;
+
+            [NativeTypeName("HRESULT (IDCompositionAnimation **) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDCompositionDevice*, IDCompositionAnimation**, int> CreateAnimation;
+
+            [NativeTypeName("HRESULT (BOOL *) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDCompositionDevice*, BOOL*, int> CheckDeviceState;
         }
     }
 }

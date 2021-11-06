@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("5B4FB971-B115-4DE1-AD97-E482E3BF6EE4")]
     [NativeTypeName("struct ISpProperties : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct ISpProperties
+    public unsafe partial struct ISpProperties : ISpProperties.Interface
     {
         public void** lpVtbl;
 
@@ -65,6 +65,45 @@ namespace TerraFX.Interop
         public HRESULT GetPropertyString([NativeTypeName("LPCWSTR")] ushort* pName, [NativeTypeName("LPWSTR *")] ushort** ppCoMemValue)
         {
             return ((delegate* unmanaged<ISpProperties*, ushort*, ushort**, int>)(lpVtbl[6]))((ISpProperties*)Unsafe.AsPointer(ref this), pName, ppCoMemValue);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT SetPropertyNum([NativeTypeName("LPCWSTR")] ushort* pName, [NativeTypeName("LONG")] int lValue);
+
+            [VtblIndex(4)]
+            HRESULT GetPropertyNum([NativeTypeName("LPCWSTR")] ushort* pName, [NativeTypeName("LONG *")] int* plValue);
+
+            [VtblIndex(5)]
+            HRESULT SetPropertyString([NativeTypeName("LPCWSTR")] ushort* pName, [NativeTypeName("LPCWSTR")] ushort* pValue);
+
+            [VtblIndex(6)]
+            HRESULT GetPropertyString([NativeTypeName("LPCWSTR")] ushort* pName, [NativeTypeName("LPWSTR *")] ushort** ppCoMemValue);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpProperties*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpProperties*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpProperties*, uint> Release;
+
+            [NativeTypeName("HRESULT (LPCWSTR, LONG) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpProperties*, ushort*, int, int> SetPropertyNum;
+
+            [NativeTypeName("HRESULT (LPCWSTR, LONG *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpProperties*, ushort*, int*, int> GetPropertyNum;
+
+            [NativeTypeName("HRESULT (LPCWSTR, LPCWSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpProperties*, ushort*, ushort*, int> SetPropertyString;
+
+            [NativeTypeName("HRESULT (LPCWSTR, LPWSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpProperties*, ushort*, ushort**, int> GetPropertyString;
         }
     }
 }

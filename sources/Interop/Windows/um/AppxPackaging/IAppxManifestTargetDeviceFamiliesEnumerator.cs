@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("36537F36-27A4-4788-88C0-733819575017")]
     [NativeTypeName("struct IAppxManifestTargetDeviceFamiliesEnumerator : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IAppxManifestTargetDeviceFamiliesEnumerator
+    public unsafe partial struct IAppxManifestTargetDeviceFamiliesEnumerator : IAppxManifestTargetDeviceFamiliesEnumerator.Interface
     {
         public void** lpVtbl;
 
@@ -58,6 +58,39 @@ namespace TerraFX.Interop
         public HRESULT MoveNext(BOOL* hasNext)
         {
             return ((delegate* unmanaged<IAppxManifestTargetDeviceFamiliesEnumerator*, BOOL*, int>)(lpVtbl[5]))((IAppxManifestTargetDeviceFamiliesEnumerator*)Unsafe.AsPointer(ref this), hasNext);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetCurrent(IAppxManifestTargetDeviceFamily** targetDeviceFamily);
+
+            [VtblIndex(4)]
+            HRESULT GetHasCurrent(BOOL* hasCurrent);
+
+            [VtblIndex(5)]
+            HRESULT MoveNext(BOOL* hasNext);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAppxManifestTargetDeviceFamiliesEnumerator*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IAppxManifestTargetDeviceFamiliesEnumerator*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IAppxManifestTargetDeviceFamiliesEnumerator*, uint> Release;
+
+            [NativeTypeName("HRESULT (IAppxManifestTargetDeviceFamily **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAppxManifestTargetDeviceFamiliesEnumerator*, IAppxManifestTargetDeviceFamily**, int> GetCurrent;
+
+            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAppxManifestTargetDeviceFamiliesEnumerator*, BOOL*, int> GetHasCurrent;
+
+            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAppxManifestTargetDeviceFamiliesEnumerator*, BOOL*, int> MoveNext;
         }
     }
 }

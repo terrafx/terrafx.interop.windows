@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("11F62CD1-2F9D-42D3-B05F-D6790D9E9F8E")]
     [NativeTypeName("struct IVisualInteractionSourceInterop : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IVisualInteractionSourceInterop
+    public unsafe partial struct IVisualInteractionSourceInterop : IVisualInteractionSourceInterop.Interface
     {
         public void** lpVtbl;
 
@@ -44,6 +44,27 @@ namespace TerraFX.Interop
         public HRESULT TryRedirectForManipulation([NativeTypeName("const POINTER_INFO &")] POINTER_INFO* pointerInfo)
         {
             return ((delegate* unmanaged<IVisualInteractionSourceInterop*, POINTER_INFO*, int>)(lpVtbl[3]))((IVisualInteractionSourceInterop*)Unsafe.AsPointer(ref this), pointerInfo);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT TryRedirectForManipulation([NativeTypeName("const POINTER_INFO &")] POINTER_INFO* pointerInfo);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IVisualInteractionSourceInterop*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IVisualInteractionSourceInterop*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IVisualInteractionSourceInterop*, uint> Release;
+
+            [NativeTypeName("HRESULT (const POINTER_INFO &) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IVisualInteractionSourceInterop*, POINTER_INFO*, int> TryRedirectForManipulation;
         }
     }
 }

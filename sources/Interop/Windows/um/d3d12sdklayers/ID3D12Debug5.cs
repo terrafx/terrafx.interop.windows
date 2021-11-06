@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("548D6B12-09FA-40E0-9069-5DCD589A52C9")]
     [NativeTypeName("struct ID3D12Debug5 : ID3D12Debug4")]
     [NativeInheritance("ID3D12Debug4")]
-    public unsafe partial struct ID3D12Debug5
+    public unsafe partial struct ID3D12Debug5 : ID3D12Debug5.Interface
     {
         public void** lpVtbl;
 
@@ -79,6 +79,42 @@ namespace TerraFX.Interop
         public void SetEnableAutoName(BOOL Enable)
         {
             ((delegate* unmanaged<ID3D12Debug5*, BOOL, void>)(lpVtbl[8]))((ID3D12Debug5*)Unsafe.AsPointer(ref this), Enable);
+        }
+
+        public interface Interface : ID3D12Debug4.Interface
+        {
+            [VtblIndex(8)]
+            void SetEnableAutoName(BOOL Enable);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D12Debug5*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D12Debug5*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D12Debug5*, uint> Release;
+
+            [NativeTypeName("void () __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D12Debug5*, void> EnableDebugLayer;
+
+            [NativeTypeName("void (BOOL) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D12Debug5*, BOOL, void> SetEnableGPUBasedValidation;
+
+            [NativeTypeName("void (BOOL) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D12Debug5*, BOOL, void> SetEnableSynchronizedCommandQueueValidation;
+
+            [NativeTypeName("void (D3D12_GPU_BASED_VALIDATION_FLAGS) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D12Debug5*, D3D12_GPU_BASED_VALIDATION_FLAGS, void> SetGPUBasedValidationFlags;
+
+            [NativeTypeName("void () __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D12Debug5*, void> DisableDebugLayer;
+
+            [NativeTypeName("void (BOOL) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D12Debug5*, BOOL, void> SetEnableAutoName;
         }
     }
 }

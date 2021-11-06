@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("FCD91E03-3E3B-45AD-BBB1-6DFC8153743D")]
     [NativeTypeName("struct IUIAnimationTransitionFactory : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IUIAnimationTransitionFactory
+    public unsafe partial struct IUIAnimationTransitionFactory : IUIAnimationTransitionFactory.Interface
     {
         public void** lpVtbl;
 
@@ -44,6 +44,27 @@ namespace TerraFX.Interop
         public HRESULT CreateTransition(IUIAnimationInterpolator* interpolator, IUIAnimationTransition** transition)
         {
             return ((delegate* unmanaged<IUIAnimationTransitionFactory*, IUIAnimationInterpolator*, IUIAnimationTransition**, int>)(lpVtbl[3]))((IUIAnimationTransitionFactory*)Unsafe.AsPointer(ref this), interpolator, transition);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT CreateTransition(IUIAnimationInterpolator* interpolator, IUIAnimationTransition** transition);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IUIAnimationTransitionFactory*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IUIAnimationTransitionFactory*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IUIAnimationTransitionFactory*, uint> Release;
+
+            [NativeTypeName("HRESULT (IUIAnimationInterpolator *, IUIAnimationTransition **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IUIAnimationTransitionFactory*, IUIAnimationInterpolator*, IUIAnimationTransition**, int> CreateTransition;
         }
     }
 }

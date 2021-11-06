@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("F779FDDF-26E7-4270-8A8B-B983D1859DE0")]
     [NativeTypeName("struct IMFHttpDownloadRequest : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IMFHttpDownloadRequest
+    public unsafe partial struct IMFHttpDownloadRequest : IMFHttpDownloadRequest.Interface
     {
         public void** lpVtbl;
 
@@ -149,6 +149,117 @@ namespace TerraFX.Interop
         public HRESULT Close()
         {
             return ((delegate* unmanaged<IMFHttpDownloadRequest*, int>)(lpVtbl[18]))((IMFHttpDownloadRequest*)Unsafe.AsPointer(ref this));
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT AddHeader([NativeTypeName("LPCWSTR")] ushort* szHeader);
+
+            [VtblIndex(4)]
+            HRESULT BeginSendRequest([NativeTypeName("const BYTE *")] byte* pbPayload, [NativeTypeName("ULONG")] uint cbPayload, IMFAsyncCallback* pCallback, IUnknown* punkState);
+
+            [VtblIndex(5)]
+            HRESULT EndSendRequest(IMFAsyncResult* pResult);
+
+            [VtblIndex(6)]
+            HRESULT BeginReceiveResponse(IMFAsyncCallback* pCallback, IUnknown* punkState);
+
+            [VtblIndex(7)]
+            HRESULT EndReceiveResponse(IMFAsyncResult* pResult);
+
+            [VtblIndex(8)]
+            HRESULT BeginReadPayload(byte* pb, [NativeTypeName("ULONG")] uint cb, IMFAsyncCallback* pCallback, IUnknown* punkState);
+
+            [VtblIndex(9)]
+            HRESULT EndReadPayload(IMFAsyncResult* pResult, [NativeTypeName("QWORD *")] ulong* pqwOffset, [NativeTypeName("ULONG *")] uint* pcbRead);
+
+            [VtblIndex(10)]
+            HRESULT QueryHeader([NativeTypeName("LPCWSTR")] ushort* szHeaderName, [NativeTypeName("DWORD")] uint dwIndex, [NativeTypeName("LPWSTR *")] ushort** ppszHeaderValue);
+
+            [VtblIndex(11)]
+            HRESULT GetURL([NativeTypeName("LPWSTR *")] ushort** ppszURL);
+
+            [VtblIndex(12)]
+            HRESULT HasNullSourceOrigin(BOOL* pfNullSourceOrigin);
+
+            [VtblIndex(13)]
+            HRESULT GetTimeSeekResult([NativeTypeName("QWORD *")] ulong* pqwStartTime, [NativeTypeName("QWORD *")] ulong* pqwStopTime, [NativeTypeName("QWORD *")] ulong* pqwDuration);
+
+            [VtblIndex(14)]
+            HRESULT GetHttpStatus([NativeTypeName("DWORD *")] uint* pdwHttpStatus);
+
+            [VtblIndex(15)]
+            HRESULT GetAtEndOfPayload(BOOL* pfAtEndOfPayload);
+
+            [VtblIndex(16)]
+            HRESULT GetTotalLength([NativeTypeName("QWORD *")] ulong* pqwTotalLength);
+
+            [VtblIndex(17)]
+            HRESULT GetRangeEndOffset([NativeTypeName("QWORD *")] ulong* pqwRangeEnd);
+
+            [VtblIndex(18)]
+            HRESULT Close();
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFHttpDownloadRequest*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFHttpDownloadRequest*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFHttpDownloadRequest*, uint> Release;
+
+            [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFHttpDownloadRequest*, ushort*, int> AddHeader;
+
+            [NativeTypeName("HRESULT (const BYTE *, ULONG, IMFAsyncCallback *, IUnknown *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFHttpDownloadRequest*, byte*, uint, IMFAsyncCallback*, IUnknown*, int> BeginSendRequest;
+
+            [NativeTypeName("HRESULT (IMFAsyncResult *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFHttpDownloadRequest*, IMFAsyncResult*, int> EndSendRequest;
+
+            [NativeTypeName("HRESULT (IMFAsyncCallback *, IUnknown *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFHttpDownloadRequest*, IMFAsyncCallback*, IUnknown*, int> BeginReceiveResponse;
+
+            [NativeTypeName("HRESULT (IMFAsyncResult *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFHttpDownloadRequest*, IMFAsyncResult*, int> EndReceiveResponse;
+
+            [NativeTypeName("HRESULT (BYTE *, ULONG, IMFAsyncCallback *, IUnknown *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFHttpDownloadRequest*, byte*, uint, IMFAsyncCallback*, IUnknown*, int> BeginReadPayload;
+
+            [NativeTypeName("HRESULT (IMFAsyncResult *, QWORD *, ULONG *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFHttpDownloadRequest*, IMFAsyncResult*, ulong*, uint*, int> EndReadPayload;
+
+            [NativeTypeName("HRESULT (LPCWSTR, DWORD, LPWSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFHttpDownloadRequest*, ushort*, uint, ushort**, int> QueryHeader;
+
+            [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFHttpDownloadRequest*, ushort**, int> GetURL;
+
+            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFHttpDownloadRequest*, BOOL*, int> HasNullSourceOrigin;
+
+            [NativeTypeName("HRESULT (QWORD *, QWORD *, QWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFHttpDownloadRequest*, ulong*, ulong*, ulong*, int> GetTimeSeekResult;
+
+            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFHttpDownloadRequest*, uint*, int> GetHttpStatus;
+
+            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFHttpDownloadRequest*, BOOL*, int> GetAtEndOfPayload;
+
+            [NativeTypeName("HRESULT (QWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFHttpDownloadRequest*, ulong*, int> GetTotalLength;
+
+            [NativeTypeName("HRESULT (QWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFHttpDownloadRequest*, ulong*, int> GetRangeEndOffset;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFHttpDownloadRequest*, int> Close;
         }
     }
 }

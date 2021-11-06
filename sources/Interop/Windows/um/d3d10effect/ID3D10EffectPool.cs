@@ -10,7 +10,7 @@ namespace TerraFX.Interop
 {
     [NativeTypeName("struct ID3D10EffectPool : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct ID3D10EffectPool
+    public unsafe partial struct ID3D10EffectPool : ID3D10EffectPool.Interface
     {
         public void** lpVtbl;
 
@@ -42,6 +42,27 @@ namespace TerraFX.Interop
         public ID3D10Effect* AsEffect()
         {
             return ((delegate* unmanaged<ID3D10EffectPool*, ID3D10Effect*>)(lpVtbl[3]))((ID3D10EffectPool*)Unsafe.AsPointer(ref this));
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            ID3D10Effect* AsEffect();
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D10EffectPool*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D10EffectPool*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D10EffectPool*, uint> Release;
+
+            [NativeTypeName("ID3D10Effect *() __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D10EffectPool*, ID3D10Effect*> AsEffect;
         }
     }
 }

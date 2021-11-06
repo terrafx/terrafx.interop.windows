@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("4CEA93C0-0A58-11D3-8DF0-00105A2799B5")]
     [NativeTypeName("struct ITfFnReconversion : ITfFunction")]
     [NativeInheritance("ITfFunction")]
-    public unsafe partial struct ITfFnReconversion
+    public unsafe partial struct ITfFnReconversion : ITfFnReconversion.Interface
     {
         public void** lpVtbl;
 
@@ -65,6 +65,42 @@ namespace TerraFX.Interop
         public HRESULT Reconvert(ITfRange* pRange)
         {
             return ((delegate* unmanaged<ITfFnReconversion*, ITfRange*, int>)(lpVtbl[6]))((ITfFnReconversion*)Unsafe.AsPointer(ref this), pRange);
+        }
+
+        public interface Interface : ITfFunction.Interface
+        {
+            [VtblIndex(4)]
+            HRESULT QueryRange(ITfRange* pRange, ITfRange** ppNewRange, BOOL* pfConvertable);
+
+            [VtblIndex(5)]
+            HRESULT GetReconversion(ITfRange* pRange, ITfCandidateList** ppCandList);
+
+            [VtblIndex(6)]
+            HRESULT Reconvert(ITfRange* pRange);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfFnReconversion*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfFnReconversion*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfFnReconversion*, uint> Release;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfFnReconversion*, ushort**, int> GetDisplayName;
+
+            [NativeTypeName("HRESULT (ITfRange *, ITfRange **, BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfFnReconversion*, ITfRange*, ITfRange**, BOOL*, int> QueryRange;
+
+            [NativeTypeName("HRESULT (ITfRange *, ITfCandidateList **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfFnReconversion*, ITfRange*, ITfCandidateList**, int> GetReconversion;
+
+            [NativeTypeName("HRESULT (ITfRange *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfFnReconversion*, ITfRange*, int> Reconvert;
         }
     }
 }

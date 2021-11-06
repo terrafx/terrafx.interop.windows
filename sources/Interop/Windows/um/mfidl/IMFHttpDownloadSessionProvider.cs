@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("1B4CF4B9-3A16-4115-839D-03CC5C99DF01")]
     [NativeTypeName("struct IMFHttpDownloadSessionProvider : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IMFHttpDownloadSessionProvider
+    public unsafe partial struct IMFHttpDownloadSessionProvider : IMFHttpDownloadSessionProvider.Interface
     {
         public void** lpVtbl;
 
@@ -44,6 +44,27 @@ namespace TerraFX.Interop
         public HRESULT CreateHttpDownloadSession([NativeTypeName("LPCWSTR")] ushort* wszScheme, IMFHttpDownloadSession** ppDownloadSession)
         {
             return ((delegate* unmanaged<IMFHttpDownloadSessionProvider*, ushort*, IMFHttpDownloadSession**, int>)(lpVtbl[3]))((IMFHttpDownloadSessionProvider*)Unsafe.AsPointer(ref this), wszScheme, ppDownloadSession);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT CreateHttpDownloadSession([NativeTypeName("LPCWSTR")] ushort* wszScheme, IMFHttpDownloadSession** ppDownloadSession);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFHttpDownloadSessionProvider*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFHttpDownloadSessionProvider*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFHttpDownloadSessionProvider*, uint> Release;
+
+            [NativeTypeName("HRESULT (LPCWSTR, IMFHttpDownloadSession **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFHttpDownloadSessionProvider*, ushort*, IMFHttpDownloadSession**, int> CreateHttpDownloadSession;
         }
     }
 }

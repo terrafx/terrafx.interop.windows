@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("53FB8E58-50C0-4003-B4AA-0C8DF28E7F3A")]
     [NativeTypeName("struct IShellImageDataAbort : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IShellImageDataAbort
+    public unsafe partial struct IShellImageDataAbort : IShellImageDataAbort.Interface
     {
         public void** lpVtbl;
 
@@ -44,6 +44,27 @@ namespace TerraFX.Interop
         public HRESULT QueryAbort()
         {
             return ((delegate* unmanaged<IShellImageDataAbort*, int>)(lpVtbl[3]))((IShellImageDataAbort*)Unsafe.AsPointer(ref this));
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT QueryAbort();
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellImageDataAbort*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellImageDataAbort*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellImageDataAbort*, uint> Release;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellImageDataAbort*, int> QueryAbort;
         }
     }
 }

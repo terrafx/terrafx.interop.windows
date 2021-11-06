@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("305107CF-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct INavigatorGeolocation : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct INavigatorGeolocation
+    public unsafe partial struct INavigatorGeolocation : INavigatorGeolocation.Interface
     {
         public void** lpVtbl;
 
@@ -72,6 +72,39 @@ namespace TerraFX.Interop
         public HRESULT get_geolocation(IWebGeolocation** p)
         {
             return ((delegate* unmanaged<INavigatorGeolocation*, IWebGeolocation**, int>)(lpVtbl[7]))((INavigatorGeolocation*)Unsafe.AsPointer(ref this), p);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT get_geolocation(IWebGeolocation** p);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<INavigatorGeolocation*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<INavigatorGeolocation*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<INavigatorGeolocation*, uint> Release;
+
+            [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<INavigatorGeolocation*, uint*, int> GetTypeInfoCount;
+
+            [NativeTypeName("HRESULT (UINT, LCID, ITypeInfo **) __attribute__((stdcall))")]
+            public delegate* unmanaged<INavigatorGeolocation*, uint, uint, ITypeInfo**, int> GetTypeInfo;
+
+            [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
+            public delegate* unmanaged<INavigatorGeolocation*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+
+            [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<INavigatorGeolocation*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
+
+            [NativeTypeName("HRESULT (IWebGeolocation **) __attribute__((stdcall))")]
+            public delegate* unmanaged<INavigatorGeolocation*, IWebGeolocation**, int> get_geolocation;
         }
     }
 }

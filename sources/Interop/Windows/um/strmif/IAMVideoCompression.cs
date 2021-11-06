@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("C6E13343-30AC-11D0-A18C-00A0C9118956")]
     [NativeTypeName("struct IAMVideoCompression : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IAMVideoCompression
+    public unsafe partial struct IAMVideoCompression : IAMVideoCompression.Interface
     {
         public void** lpVtbl;
 
@@ -114,6 +114,87 @@ namespace TerraFX.Interop
         public HRESULT OverrideFrameSize([NativeTypeName("long")] int FrameNumber, [NativeTypeName("long")] int Size)
         {
             return ((delegate* unmanaged<IAMVideoCompression*, int, int, int>)(lpVtbl[13]))((IAMVideoCompression*)Unsafe.AsPointer(ref this), FrameNumber, Size);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT put_KeyFrameRate([NativeTypeName("long")] int KeyFrameRate);
+
+            [VtblIndex(4)]
+            HRESULT get_KeyFrameRate([NativeTypeName("long *")] int* pKeyFrameRate);
+
+            [VtblIndex(5)]
+            HRESULT put_PFramesPerKeyFrame([NativeTypeName("long")] int PFramesPerKeyFrame);
+
+            [VtblIndex(6)]
+            HRESULT get_PFramesPerKeyFrame([NativeTypeName("long *")] int* pPFramesPerKeyFrame);
+
+            [VtblIndex(7)]
+            HRESULT put_Quality(double Quality);
+
+            [VtblIndex(8)]
+            HRESULT get_Quality(double* pQuality);
+
+            [VtblIndex(9)]
+            HRESULT put_WindowSize([NativeTypeName("DWORDLONG")] ulong WindowSize);
+
+            [VtblIndex(10)]
+            HRESULT get_WindowSize([NativeTypeName("DWORDLONG *")] ulong* pWindowSize);
+
+            [VtblIndex(11)]
+            HRESULT GetInfo([NativeTypeName("LPWSTR")] ushort* pszVersion, int* pcbVersion, [NativeTypeName("LPWSTR")] ushort* pszDescription, int* pcbDescription, [NativeTypeName("long *")] int* pDefaultKeyFrameRate, [NativeTypeName("long *")] int* pDefaultPFramesPerKey, double* pDefaultQuality, [NativeTypeName("long *")] int* pCapabilities);
+
+            [VtblIndex(12)]
+            HRESULT OverrideKeyFrame([NativeTypeName("long")] int FrameNumber);
+
+            [VtblIndex(13)]
+            HRESULT OverrideFrameSize([NativeTypeName("long")] int FrameNumber, [NativeTypeName("long")] int Size);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAMVideoCompression*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IAMVideoCompression*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IAMVideoCompression*, uint> Release;
+
+            [NativeTypeName("HRESULT (long) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAMVideoCompression*, int, int> put_KeyFrameRate;
+
+            [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAMVideoCompression*, int*, int> get_KeyFrameRate;
+
+            [NativeTypeName("HRESULT (long) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAMVideoCompression*, int, int> put_PFramesPerKeyFrame;
+
+            [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAMVideoCompression*, int*, int> get_PFramesPerKeyFrame;
+
+            [NativeTypeName("HRESULT (double) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAMVideoCompression*, double, int> put_Quality;
+
+            [NativeTypeName("HRESULT (double *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAMVideoCompression*, double*, int> get_Quality;
+
+            [NativeTypeName("HRESULT (DWORDLONG) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAMVideoCompression*, ulong, int> put_WindowSize;
+
+            [NativeTypeName("HRESULT (DWORDLONG *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAMVideoCompression*, ulong*, int> get_WindowSize;
+
+            [NativeTypeName("HRESULT (LPWSTR, int *, LPWSTR, int *, long *, long *, double *, long *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAMVideoCompression*, ushort*, int*, ushort*, int*, int*, int*, double*, int*, int> GetInfo;
+
+            [NativeTypeName("HRESULT (long) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAMVideoCompression*, int, int> OverrideKeyFrame;
+
+            [NativeTypeName("HRESULT (long, long) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAMVideoCompression*, int, int, int> OverrideFrameSize;
         }
     }
 }

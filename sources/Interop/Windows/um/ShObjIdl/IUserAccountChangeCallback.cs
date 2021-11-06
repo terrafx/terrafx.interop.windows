@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("A561E69A-B4B8-4113-91A5-64C6BCCA3430")]
     [NativeTypeName("struct IUserAccountChangeCallback : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IUserAccountChangeCallback
+    public unsafe partial struct IUserAccountChangeCallback : IUserAccountChangeCallback.Interface
     {
         public void** lpVtbl;
 
@@ -44,6 +44,27 @@ namespace TerraFX.Interop
         public HRESULT OnPictureChange([NativeTypeName("LPCWSTR")] ushort* pszUserName)
         {
             return ((delegate* unmanaged<IUserAccountChangeCallback*, ushort*, int>)(lpVtbl[3]))((IUserAccountChangeCallback*)Unsafe.AsPointer(ref this), pszUserName);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT OnPictureChange([NativeTypeName("LPCWSTR")] ushort* pszUserName);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IUserAccountChangeCallback*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IUserAccountChangeCallback*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IUserAccountChangeCallback*, uint> Release;
+
+            [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IUserAccountChangeCallback*, ushort*, int> OnPictureChange;
         }
     }
 }

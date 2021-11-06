@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("2D3B15A4-4762-47AB-A030-B23221DF3AE0")]
     [NativeTypeName("struct IUIAnimationLoopIterationChangeHandler2 : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IUIAnimationLoopIterationChangeHandler2
+    public unsafe partial struct IUIAnimationLoopIterationChangeHandler2 : IUIAnimationLoopIterationChangeHandler2.Interface
     {
         public void** lpVtbl;
 
@@ -44,6 +44,27 @@ namespace TerraFX.Interop
         public HRESULT OnLoopIterationChanged(IUIAnimationStoryboard2* storyboard, [NativeTypeName("UINT_PTR")] nuint id, [NativeTypeName("UINT32")] uint newIterationCount, [NativeTypeName("UINT32")] uint oldIterationCount)
         {
             return ((delegate* unmanaged<IUIAnimationLoopIterationChangeHandler2*, IUIAnimationStoryboard2*, nuint, uint, uint, int>)(lpVtbl[3]))((IUIAnimationLoopIterationChangeHandler2*)Unsafe.AsPointer(ref this), storyboard, id, newIterationCount, oldIterationCount);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT OnLoopIterationChanged(IUIAnimationStoryboard2* storyboard, [NativeTypeName("UINT_PTR")] nuint id, [NativeTypeName("UINT32")] uint newIterationCount, [NativeTypeName("UINT32")] uint oldIterationCount);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IUIAnimationLoopIterationChangeHandler2*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IUIAnimationLoopIterationChangeHandler2*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IUIAnimationLoopIterationChangeHandler2*, uint> Release;
+
+            [NativeTypeName("HRESULT (IUIAnimationStoryboard2 *, UINT_PTR, UINT32, UINT32) __attribute__((stdcall))")]
+            public delegate* unmanaged<IUIAnimationLoopIterationChangeHandler2*, IUIAnimationStoryboard2*, nuint, uint, uint, int> OnLoopIterationChanged;
         }
     }
 }

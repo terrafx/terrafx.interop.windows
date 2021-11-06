@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("94BC8415-04EA-4B2E-AF13-4DE95AA898EB")]
     [NativeTypeName("struct ISoftwareBitmapNative : IInspectable")]
     [NativeInheritance("IInspectable")]
-    public unsafe partial struct ISoftwareBitmapNative
+    public unsafe partial struct ISoftwareBitmapNative : ISoftwareBitmapNative.Interface
     {
         public void** lpVtbl;
 
@@ -65,6 +65,36 @@ namespace TerraFX.Interop
         public HRESULT GetData([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPVOID *")] void** ppv)
         {
             return ((delegate* unmanaged<ISoftwareBitmapNative*, Guid*, void**, int>)(lpVtbl[6]))((ISoftwareBitmapNative*)Unsafe.AsPointer(ref this), riid, ppv);
+        }
+
+        public interface Interface : IInspectable.Interface
+        {
+            [VtblIndex(6)]
+            HRESULT GetData([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPVOID *")] void** ppv);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISoftwareBitmapNative*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ISoftwareBitmapNative*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ISoftwareBitmapNative*, uint> Release;
+
+            [NativeTypeName("HRESULT (ULONG *, IID **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISoftwareBitmapNative*, uint*, Guid**, int> GetIids;
+
+            [NativeTypeName("HRESULT (HSTRING *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISoftwareBitmapNative*, HSTRING*, int> GetRuntimeClassName;
+
+            [NativeTypeName("HRESULT (TrustLevel *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISoftwareBitmapNative*, TrustLevel*, int> GetTrustLevel;
+
+            [NativeTypeName("HRESULT (const IID &, LPVOID *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISoftwareBitmapNative*, Guid*, void**, int> GetData;
         }
     }
 }

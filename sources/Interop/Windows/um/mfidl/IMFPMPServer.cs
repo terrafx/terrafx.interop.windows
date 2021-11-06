@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("994E23AF-1CC2-493C-B9FA-46F1CB040FA4")]
     [NativeTypeName("struct IMFPMPServer : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IMFPMPServer
+    public unsafe partial struct IMFPMPServer : IMFPMPServer.Interface
     {
         public void** lpVtbl;
 
@@ -58,6 +58,39 @@ namespace TerraFX.Interop
         public HRESULT CreateObjectByCLSID([NativeTypeName("const IID &")] Guid* clsid, [NativeTypeName("const IID &")] Guid* riid, void** ppObject)
         {
             return ((delegate* unmanaged<IMFPMPServer*, Guid*, Guid*, void**, int>)(lpVtbl[5]))((IMFPMPServer*)Unsafe.AsPointer(ref this), clsid, riid, ppObject);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT LockProcess();
+
+            [VtblIndex(4)]
+            HRESULT UnlockProcess();
+
+            [VtblIndex(5)]
+            HRESULT CreateObjectByCLSID([NativeTypeName("const IID &")] Guid* clsid, [NativeTypeName("const IID &")] Guid* riid, void** ppObject);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFPMPServer*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFPMPServer*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFPMPServer*, uint> Release;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFPMPServer*, int> LockProcess;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFPMPServer*, int> UnlockProcess;
+
+            [NativeTypeName("HRESULT (const IID &, const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFPMPServer*, Guid*, Guid*, void**, int> CreateObjectByCLSID;
         }
     }
 }

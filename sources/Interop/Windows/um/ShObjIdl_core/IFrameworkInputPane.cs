@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("5752238B-24F0-495A-82F1-2FD593056796")]
     [NativeTypeName("struct IFrameworkInputPane : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IFrameworkInputPane
+    public unsafe partial struct IFrameworkInputPane : IFrameworkInputPane.Interface
     {
         public void** lpVtbl;
 
@@ -65,6 +65,45 @@ namespace TerraFX.Interop
         public HRESULT Location(RECT* prcInputPaneScreenLocation)
         {
             return ((delegate* unmanaged<IFrameworkInputPane*, RECT*, int>)(lpVtbl[6]))((IFrameworkInputPane*)Unsafe.AsPointer(ref this), prcInputPaneScreenLocation);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT Advise(IUnknown* pWindow, IFrameworkInputPaneHandler* pHandler, [NativeTypeName("DWORD *")] uint* pdwCookie);
+
+            [VtblIndex(4)]
+            HRESULT AdviseWithHWND(HWND hwnd, IFrameworkInputPaneHandler* pHandler, [NativeTypeName("DWORD *")] uint* pdwCookie);
+
+            [VtblIndex(5)]
+            HRESULT Unadvise([NativeTypeName("DWORD")] uint dwCookie);
+
+            [VtblIndex(6)]
+            HRESULT Location(RECT* prcInputPaneScreenLocation);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFrameworkInputPane*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IFrameworkInputPane*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IFrameworkInputPane*, uint> Release;
+
+            [NativeTypeName("HRESULT (IUnknown *, IFrameworkInputPaneHandler *, DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFrameworkInputPane*, IUnknown*, IFrameworkInputPaneHandler*, uint*, int> Advise;
+
+            [NativeTypeName("HRESULT (HWND, IFrameworkInputPaneHandler *, DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFrameworkInputPane*, HWND, IFrameworkInputPaneHandler*, uint*, int> AdviseWithHWND;
+
+            [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFrameworkInputPane*, uint, int> Unadvise;
+
+            [NativeTypeName("HRESULT (RECT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFrameworkInputPane*, RECT*, int> Location;
         }
     }
 }

@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("8CEEB155-2849-4CE5-9448-91FF70E1E4D9")]
     [NativeTypeName("struct IUIAnimationVariable : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IUIAnimationVariable
+    public unsafe partial struct IUIAnimationVariable : IUIAnimationVariable.Interface
     {
         public void** lpVtbl;
 
@@ -135,6 +135,105 @@ namespace TerraFX.Interop
         public HRESULT SetVariableIntegerChangeHandler(IUIAnimationVariableIntegerChangeHandler* handler)
         {
             return ((delegate* unmanaged<IUIAnimationVariable*, IUIAnimationVariableIntegerChangeHandler*, int>)(lpVtbl[16]))((IUIAnimationVariable*)Unsafe.AsPointer(ref this), handler);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetValue(double* value);
+
+            [VtblIndex(4)]
+            HRESULT GetFinalValue(double* finalValue);
+
+            [VtblIndex(5)]
+            HRESULT GetPreviousValue(double* previousValue);
+
+            [VtblIndex(6)]
+            HRESULT GetIntegerValue([NativeTypeName("INT32 *")] int* value);
+
+            [VtblIndex(7)]
+            HRESULT GetFinalIntegerValue([NativeTypeName("INT32 *")] int* finalValue);
+
+            [VtblIndex(8)]
+            HRESULT GetPreviousIntegerValue([NativeTypeName("INT32 *")] int* previousValue);
+
+            [VtblIndex(9)]
+            HRESULT GetCurrentStoryboard(IUIAnimationStoryboard** storyboard);
+
+            [VtblIndex(10)]
+            HRESULT SetLowerBound(double bound);
+
+            [VtblIndex(11)]
+            HRESULT SetUpperBound(double bound);
+
+            [VtblIndex(12)]
+            HRESULT SetRoundingMode(UI_ANIMATION_ROUNDING_MODE mode);
+
+            [VtblIndex(13)]
+            HRESULT SetTag(IUnknown* @object, [NativeTypeName("UINT32")] uint id);
+
+            [VtblIndex(14)]
+            HRESULT GetTag(IUnknown** @object, [NativeTypeName("UINT32 *")] uint* id);
+
+            [VtblIndex(15)]
+            HRESULT SetVariableChangeHandler(IUIAnimationVariableChangeHandler* handler);
+
+            [VtblIndex(16)]
+            HRESULT SetVariableIntegerChangeHandler(IUIAnimationVariableIntegerChangeHandler* handler);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IUIAnimationVariable*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IUIAnimationVariable*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IUIAnimationVariable*, uint> Release;
+
+            [NativeTypeName("HRESULT (DOUBLE *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IUIAnimationVariable*, double*, int> GetValue;
+
+            [NativeTypeName("HRESULT (DOUBLE *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IUIAnimationVariable*, double*, int> GetFinalValue;
+
+            [NativeTypeName("HRESULT (DOUBLE *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IUIAnimationVariable*, double*, int> GetPreviousValue;
+
+            [NativeTypeName("HRESULT (INT32 *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IUIAnimationVariable*, int*, int> GetIntegerValue;
+
+            [NativeTypeName("HRESULT (INT32 *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IUIAnimationVariable*, int*, int> GetFinalIntegerValue;
+
+            [NativeTypeName("HRESULT (INT32 *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IUIAnimationVariable*, int*, int> GetPreviousIntegerValue;
+
+            [NativeTypeName("HRESULT (IUIAnimationStoryboard **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IUIAnimationVariable*, IUIAnimationStoryboard**, int> GetCurrentStoryboard;
+
+            [NativeTypeName("HRESULT (DOUBLE) __attribute__((stdcall))")]
+            public delegate* unmanaged<IUIAnimationVariable*, double, int> SetLowerBound;
+
+            [NativeTypeName("HRESULT (DOUBLE) __attribute__((stdcall))")]
+            public delegate* unmanaged<IUIAnimationVariable*, double, int> SetUpperBound;
+
+            [NativeTypeName("HRESULT (UI_ANIMATION_ROUNDING_MODE) __attribute__((stdcall))")]
+            public delegate* unmanaged<IUIAnimationVariable*, UI_ANIMATION_ROUNDING_MODE, int> SetRoundingMode;
+
+            [NativeTypeName("HRESULT (IUnknown *, UINT32) __attribute__((stdcall))")]
+            public delegate* unmanaged<IUIAnimationVariable*, IUnknown*, uint, int> SetTag;
+
+            [NativeTypeName("HRESULT (IUnknown **, UINT32 *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IUIAnimationVariable*, IUnknown**, uint*, int> GetTag;
+
+            [NativeTypeName("HRESULT (IUIAnimationVariableChangeHandler *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IUIAnimationVariable*, IUIAnimationVariableChangeHandler*, int> SetVariableChangeHandler;
+
+            [NativeTypeName("HRESULT (IUIAnimationVariableIntegerChangeHandler *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IUIAnimationVariable*, IUIAnimationVariableIntegerChangeHandler*, int> SetVariableIntegerChangeHandler;
         }
     }
 }

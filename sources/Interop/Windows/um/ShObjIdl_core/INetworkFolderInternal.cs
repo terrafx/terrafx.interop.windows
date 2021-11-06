@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("CEB38218-C971-47BB-A703-F0BC99CCDB81")]
     [NativeTypeName("struct INetworkFolderInternal : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct INetworkFolderInternal
+    public unsafe partial struct INetworkFolderInternal : INetworkFolderInternal.Interface
     {
         public void** lpVtbl;
 
@@ -58,6 +58,39 @@ namespace TerraFX.Interop
         public HRESULT GetProvider(uint itemIdCount, [NativeTypeName("LPCITEMIDLIST *")] ITEMIDLIST** itemIds, uint providerMaxLength, [NativeTypeName("LPWSTR")] ushort* provider)
         {
             return ((delegate* unmanaged<INetworkFolderInternal*, uint, ITEMIDLIST**, uint, ushort*, int>)(lpVtbl[5]))((INetworkFolderInternal*)Unsafe.AsPointer(ref this), itemIdCount, itemIds, providerMaxLength, provider);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetResourceDisplayType(uint* displayType);
+
+            [VtblIndex(4)]
+            HRESULT GetIDList([NativeTypeName("LPITEMIDLIST *")] ITEMIDLIST** idList);
+
+            [VtblIndex(5)]
+            HRESULT GetProvider(uint itemIdCount, [NativeTypeName("LPCITEMIDLIST *")] ITEMIDLIST** itemIds, uint providerMaxLength, [NativeTypeName("LPWSTR")] ushort* provider);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<INetworkFolderInternal*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<INetworkFolderInternal*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<INetworkFolderInternal*, uint> Release;
+
+            [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<INetworkFolderInternal*, uint*, int> GetResourceDisplayType;
+
+            [NativeTypeName("HRESULT (LPITEMIDLIST *) __attribute__((stdcall))")]
+            public delegate* unmanaged<INetworkFolderInternal*, ITEMIDLIST**, int> GetIDList;
+
+            [NativeTypeName("HRESULT (UINT, LPCITEMIDLIST *, UINT, LPWSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<INetworkFolderInternal*, uint, ITEMIDLIST**, uint, ushort*, int> GetProvider;
         }
     }
 }

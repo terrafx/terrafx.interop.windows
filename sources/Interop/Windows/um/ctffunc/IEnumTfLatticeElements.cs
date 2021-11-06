@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("56988052-47DA-4A05-911A-E3D941F17145")]
     [NativeTypeName("struct IEnumTfLatticeElements : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IEnumTfLatticeElements
+    public unsafe partial struct IEnumTfLatticeElements : IEnumTfLatticeElements.Interface
     {
         public void** lpVtbl;
 
@@ -65,6 +65,45 @@ namespace TerraFX.Interop
         public HRESULT Skip([NativeTypeName("ULONG")] uint ulCount)
         {
             return ((delegate* unmanaged<IEnumTfLatticeElements*, uint, int>)(lpVtbl[6]))((IEnumTfLatticeElements*)Unsafe.AsPointer(ref this), ulCount);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT Clone(IEnumTfLatticeElements** ppEnum);
+
+            [VtblIndex(4)]
+            HRESULT Next([NativeTypeName("ULONG")] uint ulCount, TF_LMLATTELEMENT* rgsElements, [NativeTypeName("ULONG *")] uint* pcFetched);
+
+            [VtblIndex(5)]
+            HRESULT Reset();
+
+            [VtblIndex(6)]
+            HRESULT Skip([NativeTypeName("ULONG")] uint ulCount);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IEnumTfLatticeElements*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IEnumTfLatticeElements*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IEnumTfLatticeElements*, uint> Release;
+
+            [NativeTypeName("HRESULT (IEnumTfLatticeElements **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IEnumTfLatticeElements*, IEnumTfLatticeElements**, int> Clone;
+
+            [NativeTypeName("HRESULT (ULONG, TF_LMLATTELEMENT *, ULONG *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IEnumTfLatticeElements*, uint, TF_LMLATTELEMENT*, uint*, int> Next;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IEnumTfLatticeElements*, int> Reset;
+
+            [NativeTypeName("HRESULT (ULONG) __attribute__((stdcall))")]
+            public delegate* unmanaged<IEnumTfLatticeElements*, uint, int> Skip;
         }
     }
 }

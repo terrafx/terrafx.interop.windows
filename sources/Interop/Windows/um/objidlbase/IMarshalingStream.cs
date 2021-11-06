@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("D8F2F5E6-6102-4863-9F26-389A4676EFDE")]
     [NativeTypeName("struct IMarshalingStream : IStream")]
     [NativeInheritance("IStream")]
-    public unsafe partial struct IMarshalingStream
+    public unsafe partial struct IMarshalingStream : IMarshalingStream.Interface
     {
         public void** lpVtbl;
 
@@ -121,6 +121,60 @@ namespace TerraFX.Interop
         public HRESULT GetMarshalingContextAttribute(CO_MARSHALING_CONTEXT_ATTRIBUTES attribute, [NativeTypeName("ULONG_PTR *")] nuint* pAttributeValue)
         {
             return ((delegate* unmanaged<IMarshalingStream*, CO_MARSHALING_CONTEXT_ATTRIBUTES, nuint*, int>)(lpVtbl[14]))((IMarshalingStream*)Unsafe.AsPointer(ref this), attribute, pAttributeValue);
+        }
+
+        public interface Interface : IStream.Interface
+        {
+            [VtblIndex(14)]
+            HRESULT GetMarshalingContextAttribute(CO_MARSHALING_CONTEXT_ATTRIBUTES attribute, [NativeTypeName("ULONG_PTR *")] nuint* pAttributeValue);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMarshalingStream*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMarshalingStream*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMarshalingStream*, uint> Release;
+
+            [NativeTypeName("HRESULT (void *, ULONG, ULONG *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMarshalingStream*, void*, uint, uint*, int> Read;
+
+            [NativeTypeName("HRESULT (const void *, ULONG, ULONG *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMarshalingStream*, void*, uint, uint*, int> Write;
+
+            [NativeTypeName("HRESULT (LARGE_INTEGER, DWORD, ULARGE_INTEGER *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMarshalingStream*, LARGE_INTEGER, uint, ULARGE_INTEGER*, int> Seek;
+
+            [NativeTypeName("HRESULT (ULARGE_INTEGER) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMarshalingStream*, ULARGE_INTEGER, int> SetSize;
+
+            [NativeTypeName("HRESULT (IStream *, ULARGE_INTEGER, ULARGE_INTEGER *, ULARGE_INTEGER *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMarshalingStream*, IStream*, ULARGE_INTEGER, ULARGE_INTEGER*, ULARGE_INTEGER*, int> CopyTo;
+
+            [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMarshalingStream*, uint, int> Commit;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMarshalingStream*, int> Revert;
+
+            [NativeTypeName("HRESULT (ULARGE_INTEGER, ULARGE_INTEGER, DWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMarshalingStream*, ULARGE_INTEGER, ULARGE_INTEGER, uint, int> LockRegion;
+
+            [NativeTypeName("HRESULT (ULARGE_INTEGER, ULARGE_INTEGER, DWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMarshalingStream*, ULARGE_INTEGER, ULARGE_INTEGER, uint, int> UnlockRegion;
+
+            [NativeTypeName("HRESULT (STATSTG *, DWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMarshalingStream*, STATSTG*, uint, int> Stat;
+
+            [NativeTypeName("HRESULT (IStream **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMarshalingStream*, IStream**, int> Clone;
+
+            [NativeTypeName("HRESULT (CO_MARSHALING_CONTEXT_ATTRIBUTES, ULONG_PTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMarshalingStream*, CO_MARSHALING_CONTEXT_ATTRIBUTES, nuint*, int> GetMarshalingContextAttribute;
         }
     }
 }

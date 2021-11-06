@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("9B1921E1-54AC-11D3-9144-00104BA11C5E")]
     [NativeTypeName("struct IEnumDiscRecorders : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IEnumDiscRecorders
+    public unsafe partial struct IEnumDiscRecorders : IEnumDiscRecorders.Interface
     {
         public void** lpVtbl;
 
@@ -65,6 +65,45 @@ namespace TerraFX.Interop
         public HRESULT Clone(IEnumDiscRecorders** ppEnum)
         {
             return ((delegate* unmanaged<IEnumDiscRecorders*, IEnumDiscRecorders**, int>)(lpVtbl[6]))((IEnumDiscRecorders*)Unsafe.AsPointer(ref this), ppEnum);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT Next([NativeTypeName("ULONG")] uint cRecorders, IDiscRecorder** ppRecorder, [NativeTypeName("ULONG *")] uint* pcFetched);
+
+            [VtblIndex(4)]
+            HRESULT Skip([NativeTypeName("ULONG")] uint cRecorders);
+
+            [VtblIndex(5)]
+            HRESULT Reset();
+
+            [VtblIndex(6)]
+            HRESULT Clone(IEnumDiscRecorders** ppEnum);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IEnumDiscRecorders*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IEnumDiscRecorders*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IEnumDiscRecorders*, uint> Release;
+
+            [NativeTypeName("HRESULT (ULONG, IDiscRecorder **, ULONG *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IEnumDiscRecorders*, uint, IDiscRecorder**, uint*, int> Next;
+
+            [NativeTypeName("HRESULT (ULONG) __attribute__((stdcall))")]
+            public delegate* unmanaged<IEnumDiscRecorders*, uint, int> Skip;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IEnumDiscRecorders*, int> Reset;
+
+            [NativeTypeName("HRESULT (IEnumDiscRecorders **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IEnumDiscRecorders*, IEnumDiscRecorders**, int> Clone;
         }
     }
 }

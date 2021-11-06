@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("A7929A74-E6B2-4BD6-8B95-4040119CA34D")]
     [NativeTypeName("struct IDCompositionEffectGroup : IDCompositionEffect")]
     [NativeInheritance("IDCompositionEffect")]
-    public unsafe partial struct IDCompositionEffectGroup
+    public unsafe partial struct IDCompositionEffectGroup : IDCompositionEffectGroup.Interface
     {
         public void** lpVtbl;
 
@@ -40,13 +40,6 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(4)]
-        public HRESULT SetOpacity(float opacity)
-        {
-            return ((delegate* unmanaged<IDCompositionEffectGroup*, float, int>)(lpVtbl[4]))((IDCompositionEffectGroup*)Unsafe.AsPointer(ref this), opacity);
-        }
-
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
         public HRESULT SetOpacity(IDCompositionAnimation* animation)
         {
@@ -54,10 +47,50 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(4)]
+        public HRESULT SetOpacity(float opacity)
+        {
+            return ((delegate* unmanaged<IDCompositionEffectGroup*, float, int>)(lpVtbl[4]))((IDCompositionEffectGroup*)Unsafe.AsPointer(ref this), opacity);
+        }
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
         public HRESULT SetTransform3D(IDCompositionTransform3D* transform3D)
         {
             return ((delegate* unmanaged<IDCompositionEffectGroup*, IDCompositionTransform3D*, int>)(lpVtbl[5]))((IDCompositionEffectGroup*)Unsafe.AsPointer(ref this), transform3D);
+        }
+
+        public interface Interface : IDCompositionEffect.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT SetOpacity(IDCompositionAnimation* animation);
+
+            [VtblIndex(4)]
+            HRESULT SetOpacity(float opacity);
+
+            [VtblIndex(5)]
+            HRESULT SetTransform3D(IDCompositionTransform3D* transform3D);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDCompositionEffectGroup*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDCompositionEffectGroup*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDCompositionEffectGroup*, uint> Release;
+
+            [NativeTypeName("HRESULT (IDCompositionAnimation *) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDCompositionEffectGroup*, IDCompositionAnimation*, int> SetOpacity;
+
+            [NativeTypeName("HRESULT (float) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDCompositionEffectGroup*, float, int> SetOpacity1;
+
+            [NativeTypeName("HRESULT (IDCompositionTransform3D *) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDCompositionEffectGroup*, IDCompositionTransform3D*, int> SetTransform3D;
         }
     }
 }

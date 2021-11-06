@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("96E5AE6D-6AE1-4B1C-900C-C6480EAA8828")]
     [NativeTypeName("struct IResultsFolder : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IResultsFolder
+    public unsafe partial struct IResultsFolder : IResultsFolder.Interface
     {
         public void** lpVtbl;
 
@@ -72,6 +72,51 @@ namespace TerraFX.Interop
         public HRESULT RemoveAll()
         {
             return ((delegate* unmanaged<IResultsFolder*, int>)(lpVtbl[7]))((IResultsFolder*)Unsafe.AsPointer(ref this));
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT AddItem(IShellItem* psi);
+
+            [VtblIndex(4)]
+            HRESULT AddIDList([NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidl, [NativeTypeName("LPITEMIDLIST *")] ITEMIDLIST** ppidlAdded);
+
+            [VtblIndex(5)]
+            HRESULT RemoveItem(IShellItem* psi);
+
+            [VtblIndex(6)]
+            HRESULT RemoveIDList([NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidl);
+
+            [VtblIndex(7)]
+            HRESULT RemoveAll();
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IResultsFolder*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IResultsFolder*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IResultsFolder*, uint> Release;
+
+            [NativeTypeName("HRESULT (IShellItem *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IResultsFolder*, IShellItem*, int> AddItem;
+
+            [NativeTypeName("HRESULT (LPCITEMIDLIST, LPITEMIDLIST *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IResultsFolder*, ITEMIDLIST*, ITEMIDLIST**, int> AddIDList;
+
+            [NativeTypeName("HRESULT (IShellItem *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IResultsFolder*, IShellItem*, int> RemoveItem;
+
+            [NativeTypeName("HRESULT (LPCITEMIDLIST) __attribute__((stdcall))")]
+            public delegate* unmanaged<IResultsFolder*, ITEMIDLIST*, int> RemoveIDList;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IResultsFolder*, int> RemoveAll;
         }
     }
 }

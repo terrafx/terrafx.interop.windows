@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("BDE633D3-E1DC-4A7F-A693-BBAE399C4A20")]
     [NativeTypeName("struct IMFVideoProcessorControl2 : IMFVideoProcessorControl")]
     [NativeInheritance("IMFVideoProcessorControl")]
-    public unsafe partial struct IMFVideoProcessorControl2
+    public unsafe partial struct IMFVideoProcessorControl2 : IMFVideoProcessorControl2.Interface
     {
         public void** lpVtbl;
 
@@ -100,6 +100,57 @@ namespace TerraFX.Interop
         public HRESULT GetSupportedHardwareEffects(uint* puiSupport)
         {
             return ((delegate* unmanaged<IMFVideoProcessorControl2*, uint*, int>)(lpVtbl[11]))((IMFVideoProcessorControl2*)Unsafe.AsPointer(ref this), puiSupport);
+        }
+
+        public interface Interface : IMFVideoProcessorControl.Interface
+        {
+            [VtblIndex(9)]
+            HRESULT SetRotationOverride(uint uiRotation);
+
+            [VtblIndex(10)]
+            HRESULT EnableHardwareEffects(BOOL fEnabled);
+
+            [VtblIndex(11)]
+            HRESULT GetSupportedHardwareEffects(uint* puiSupport);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFVideoProcessorControl2*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFVideoProcessorControl2*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFVideoProcessorControl2*, uint> Release;
+
+            [NativeTypeName("HRESULT (MFARGB *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFVideoProcessorControl2*, MFARGB*, int> SetBorderColor;
+
+            [NativeTypeName("HRESULT (RECT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFVideoProcessorControl2*, RECT*, int> SetSourceRectangle;
+
+            [NativeTypeName("HRESULT (RECT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFVideoProcessorControl2*, RECT*, int> SetDestinationRectangle;
+
+            [NativeTypeName("HRESULT (MF_VIDEO_PROCESSOR_MIRROR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFVideoProcessorControl2*, MF_VIDEO_PROCESSOR_MIRROR, int> SetMirror;
+
+            [NativeTypeName("HRESULT (MF_VIDEO_PROCESSOR_ROTATION) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFVideoProcessorControl2*, MF_VIDEO_PROCESSOR_ROTATION, int> SetRotation;
+
+            [NativeTypeName("HRESULT (SIZE *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFVideoProcessorControl2*, SIZE*, int> SetConstrictionSize;
+
+            [NativeTypeName("HRESULT (UINT) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFVideoProcessorControl2*, uint, int> SetRotationOverride;
+
+            [NativeTypeName("HRESULT (BOOL) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFVideoProcessorControl2*, BOOL, int> EnableHardwareEffects;
+
+            [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFVideoProcessorControl2*, uint*, int> GetSupportedHardwareEffects;
         }
     }
 }

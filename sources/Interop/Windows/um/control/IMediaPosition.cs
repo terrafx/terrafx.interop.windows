@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("56A868B2-0AD4-11CE-B03A-0020AF0BA770")]
     [NativeTypeName("struct IMediaPosition : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct IMediaPosition
+    public unsafe partial struct IMediaPosition : IMediaPosition.Interface
     {
         public void** lpVtbl;
 
@@ -142,6 +142,99 @@ namespace TerraFX.Interop
         public HRESULT CanSeekBackward([NativeTypeName("LONG *")] int* pCanSeekBackward)
         {
             return ((delegate* unmanaged<IMediaPosition*, int*, int>)(lpVtbl[17]))((IMediaPosition*)Unsafe.AsPointer(ref this), pCanSeekBackward);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT get_Duration([NativeTypeName("REFTIME *")] double* plength);
+
+            [VtblIndex(8)]
+            HRESULT put_CurrentPosition([NativeTypeName("REFTIME")] double llTime);
+
+            [VtblIndex(9)]
+            HRESULT get_CurrentPosition([NativeTypeName("REFTIME *")] double* pllTime);
+
+            [VtblIndex(10)]
+            HRESULT get_StopTime([NativeTypeName("REFTIME *")] double* pllTime);
+
+            [VtblIndex(11)]
+            HRESULT put_StopTime([NativeTypeName("REFTIME")] double llTime);
+
+            [VtblIndex(12)]
+            HRESULT get_PrerollTime([NativeTypeName("REFTIME *")] double* pllTime);
+
+            [VtblIndex(13)]
+            HRESULT put_PrerollTime([NativeTypeName("REFTIME")] double llTime);
+
+            [VtblIndex(14)]
+            HRESULT put_Rate(double dRate);
+
+            [VtblIndex(15)]
+            HRESULT get_Rate(double* pdRate);
+
+            [VtblIndex(16)]
+            HRESULT CanSeekForward([NativeTypeName("LONG *")] int* pCanSeekForward);
+
+            [VtblIndex(17)]
+            HRESULT CanSeekBackward([NativeTypeName("LONG *")] int* pCanSeekBackward);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMediaPosition*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMediaPosition*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMediaPosition*, uint> Release;
+
+            [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMediaPosition*, uint*, int> GetTypeInfoCount;
+
+            [NativeTypeName("HRESULT (UINT, LCID, ITypeInfo **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMediaPosition*, uint, uint, ITypeInfo**, int> GetTypeInfo;
+
+            [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMediaPosition*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+
+            [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMediaPosition*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
+
+            [NativeTypeName("HRESULT (REFTIME *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMediaPosition*, double*, int> get_Duration;
+
+            [NativeTypeName("HRESULT (REFTIME) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMediaPosition*, double, int> put_CurrentPosition;
+
+            [NativeTypeName("HRESULT (REFTIME *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMediaPosition*, double*, int> get_CurrentPosition;
+
+            [NativeTypeName("HRESULT (REFTIME *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMediaPosition*, double*, int> get_StopTime;
+
+            [NativeTypeName("HRESULT (REFTIME) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMediaPosition*, double, int> put_StopTime;
+
+            [NativeTypeName("HRESULT (REFTIME *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMediaPosition*, double*, int> get_PrerollTime;
+
+            [NativeTypeName("HRESULT (REFTIME) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMediaPosition*, double, int> put_PrerollTime;
+
+            [NativeTypeName("HRESULT (double) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMediaPosition*, double, int> put_Rate;
+
+            [NativeTypeName("HRESULT (double *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMediaPosition*, double*, int> get_Rate;
+
+            [NativeTypeName("HRESULT (LONG *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMediaPosition*, int*, int> CanSeekForward;
+
+            [NativeTypeName("HRESULT (LONG *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMediaPosition*, int*, int> CanSeekBackward;
         }
     }
 }

@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("3050F25E-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct IHTMLStyle : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct IHTMLStyle
+    public unsafe partial struct IHTMLStyle : IHTMLStyle.Interface
     {
         public void** lpVtbl;
 
@@ -1318,6 +1318,1107 @@ namespace TerraFX.Interop
         public HRESULT toString([NativeTypeName("BSTR *")] ushort** String)
         {
             return ((delegate* unmanaged<IHTMLStyle*, ushort**, int>)(lpVtbl[185]))((IHTMLStyle*)Unsafe.AsPointer(ref this), String);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT put_fontFamily([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(8)]
+            HRESULT get_fontFamily([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(9)]
+            HRESULT put_fontStyle([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(10)]
+            HRESULT get_fontStyle([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(11)]
+            HRESULT put_fontVariant([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(12)]
+            HRESULT get_fontVariant([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(13)]
+            HRESULT put_fontWeight([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(14)]
+            HRESULT get_fontWeight([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(15)]
+            HRESULT put_fontSize(VARIANT v);
+
+            [VtblIndex(16)]
+            HRESULT get_fontSize(VARIANT* p);
+
+            [VtblIndex(17)]
+            HRESULT put_font([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(18)]
+            HRESULT get_font([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(19)]
+            HRESULT put_color(VARIANT v);
+
+            [VtblIndex(20)]
+            HRESULT get_color(VARIANT* p);
+
+            [VtblIndex(21)]
+            HRESULT put_background([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(22)]
+            HRESULT get_background([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(23)]
+            HRESULT put_backgroundColor(VARIANT v);
+
+            [VtblIndex(24)]
+            HRESULT get_backgroundColor(VARIANT* p);
+
+            [VtblIndex(25)]
+            HRESULT put_backgroundImage([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(26)]
+            HRESULT get_backgroundImage([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(27)]
+            HRESULT put_backgroundRepeat([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(28)]
+            HRESULT get_backgroundRepeat([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(29)]
+            HRESULT put_backgroundAttachment([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(30)]
+            HRESULT get_backgroundAttachment([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(31)]
+            HRESULT put_backgroundPosition([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(32)]
+            HRESULT get_backgroundPosition([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(33)]
+            HRESULT put_backgroundPositionX(VARIANT v);
+
+            [VtblIndex(34)]
+            HRESULT get_backgroundPositionX(VARIANT* p);
+
+            [VtblIndex(35)]
+            HRESULT put_backgroundPositionY(VARIANT v);
+
+            [VtblIndex(36)]
+            HRESULT get_backgroundPositionY(VARIANT* p);
+
+            [VtblIndex(37)]
+            HRESULT put_wordSpacing(VARIANT v);
+
+            [VtblIndex(38)]
+            HRESULT get_wordSpacing(VARIANT* p);
+
+            [VtblIndex(39)]
+            HRESULT put_letterSpacing(VARIANT v);
+
+            [VtblIndex(40)]
+            HRESULT get_letterSpacing(VARIANT* p);
+
+            [VtblIndex(41)]
+            HRESULT put_textDecoration([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(42)]
+            HRESULT get_textDecoration([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(43)]
+            HRESULT put_textDecorationNone([NativeTypeName("VARIANT_BOOL")] short v);
+
+            [VtblIndex(44)]
+            HRESULT get_textDecorationNone([NativeTypeName("VARIANT_BOOL *")] short* p);
+
+            [VtblIndex(45)]
+            HRESULT put_textDecorationUnderline([NativeTypeName("VARIANT_BOOL")] short v);
+
+            [VtblIndex(46)]
+            HRESULT get_textDecorationUnderline([NativeTypeName("VARIANT_BOOL *")] short* p);
+
+            [VtblIndex(47)]
+            HRESULT put_textDecorationOverline([NativeTypeName("VARIANT_BOOL")] short v);
+
+            [VtblIndex(48)]
+            HRESULT get_textDecorationOverline([NativeTypeName("VARIANT_BOOL *")] short* p);
+
+            [VtblIndex(49)]
+            HRESULT put_textDecorationLineThrough([NativeTypeName("VARIANT_BOOL")] short v);
+
+            [VtblIndex(50)]
+            HRESULT get_textDecorationLineThrough([NativeTypeName("VARIANT_BOOL *")] short* p);
+
+            [VtblIndex(51)]
+            HRESULT put_textDecorationBlink([NativeTypeName("VARIANT_BOOL")] short v);
+
+            [VtblIndex(52)]
+            HRESULT get_textDecorationBlink([NativeTypeName("VARIANT_BOOL *")] short* p);
+
+            [VtblIndex(53)]
+            HRESULT put_verticalAlign(VARIANT v);
+
+            [VtblIndex(54)]
+            HRESULT get_verticalAlign(VARIANT* p);
+
+            [VtblIndex(55)]
+            HRESULT put_textTransform([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(56)]
+            HRESULT get_textTransform([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(57)]
+            HRESULT put_textAlign([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(58)]
+            HRESULT get_textAlign([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(59)]
+            HRESULT put_textIndent(VARIANT v);
+
+            [VtblIndex(60)]
+            HRESULT get_textIndent(VARIANT* p);
+
+            [VtblIndex(61)]
+            HRESULT put_lineHeight(VARIANT v);
+
+            [VtblIndex(62)]
+            HRESULT get_lineHeight(VARIANT* p);
+
+            [VtblIndex(63)]
+            HRESULT put_marginTop(VARIANT v);
+
+            [VtblIndex(64)]
+            HRESULT get_marginTop(VARIANT* p);
+
+            [VtblIndex(65)]
+            HRESULT put_marginRight(VARIANT v);
+
+            [VtblIndex(66)]
+            HRESULT get_marginRight(VARIANT* p);
+
+            [VtblIndex(67)]
+            HRESULT put_marginBottom(VARIANT v);
+
+            [VtblIndex(68)]
+            HRESULT get_marginBottom(VARIANT* p);
+
+            [VtblIndex(69)]
+            HRESULT put_marginLeft(VARIANT v);
+
+            [VtblIndex(70)]
+            HRESULT get_marginLeft(VARIANT* p);
+
+            [VtblIndex(71)]
+            HRESULT put_margin([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(72)]
+            HRESULT get_margin([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(73)]
+            HRESULT put_paddingTop(VARIANT v);
+
+            [VtblIndex(74)]
+            HRESULT get_paddingTop(VARIANT* p);
+
+            [VtblIndex(75)]
+            HRESULT put_paddingRight(VARIANT v);
+
+            [VtblIndex(76)]
+            HRESULT get_paddingRight(VARIANT* p);
+
+            [VtblIndex(77)]
+            HRESULT put_paddingBottom(VARIANT v);
+
+            [VtblIndex(78)]
+            HRESULT get_paddingBottom(VARIANT* p);
+
+            [VtblIndex(79)]
+            HRESULT put_paddingLeft(VARIANT v);
+
+            [VtblIndex(80)]
+            HRESULT get_paddingLeft(VARIANT* p);
+
+            [VtblIndex(81)]
+            HRESULT put_padding([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(82)]
+            HRESULT get_padding([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(83)]
+            HRESULT put_border([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(84)]
+            HRESULT get_border([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(85)]
+            HRESULT put_borderTop([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(86)]
+            HRESULT get_borderTop([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(87)]
+            HRESULT put_borderRight([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(88)]
+            HRESULT get_borderRight([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(89)]
+            HRESULT put_borderBottom([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(90)]
+            HRESULT get_borderBottom([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(91)]
+            HRESULT put_borderLeft([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(92)]
+            HRESULT get_borderLeft([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(93)]
+            HRESULT put_borderColor([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(94)]
+            HRESULT get_borderColor([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(95)]
+            HRESULT put_borderTopColor(VARIANT v);
+
+            [VtblIndex(96)]
+            HRESULT get_borderTopColor(VARIANT* p);
+
+            [VtblIndex(97)]
+            HRESULT put_borderRightColor(VARIANT v);
+
+            [VtblIndex(98)]
+            HRESULT get_borderRightColor(VARIANT* p);
+
+            [VtblIndex(99)]
+            HRESULT put_borderBottomColor(VARIANT v);
+
+            [VtblIndex(100)]
+            HRESULT get_borderBottomColor(VARIANT* p);
+
+            [VtblIndex(101)]
+            HRESULT put_borderLeftColor(VARIANT v);
+
+            [VtblIndex(102)]
+            HRESULT get_borderLeftColor(VARIANT* p);
+
+            [VtblIndex(103)]
+            HRESULT put_borderWidth([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(104)]
+            HRESULT get_borderWidth([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(105)]
+            HRESULT put_borderTopWidth(VARIANT v);
+
+            [VtblIndex(106)]
+            HRESULT get_borderTopWidth(VARIANT* p);
+
+            [VtblIndex(107)]
+            HRESULT put_borderRightWidth(VARIANT v);
+
+            [VtblIndex(108)]
+            HRESULT get_borderRightWidth(VARIANT* p);
+
+            [VtblIndex(109)]
+            HRESULT put_borderBottomWidth(VARIANT v);
+
+            [VtblIndex(110)]
+            HRESULT get_borderBottomWidth(VARIANT* p);
+
+            [VtblIndex(111)]
+            HRESULT put_borderLeftWidth(VARIANT v);
+
+            [VtblIndex(112)]
+            HRESULT get_borderLeftWidth(VARIANT* p);
+
+            [VtblIndex(113)]
+            HRESULT put_borderStyle([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(114)]
+            HRESULT get_borderStyle([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(115)]
+            HRESULT put_borderTopStyle([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(116)]
+            HRESULT get_borderTopStyle([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(117)]
+            HRESULT put_borderRightStyle([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(118)]
+            HRESULT get_borderRightStyle([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(119)]
+            HRESULT put_borderBottomStyle([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(120)]
+            HRESULT get_borderBottomStyle([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(121)]
+            HRESULT put_borderLeftStyle([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(122)]
+            HRESULT get_borderLeftStyle([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(123)]
+            HRESULT put_width(VARIANT v);
+
+            [VtblIndex(124)]
+            HRESULT get_width(VARIANT* p);
+
+            [VtblIndex(125)]
+            HRESULT put_height(VARIANT v);
+
+            [VtblIndex(126)]
+            HRESULT get_height(VARIANT* p);
+
+            [VtblIndex(127)]
+            HRESULT put_styleFloat([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(128)]
+            HRESULT get_styleFloat([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(129)]
+            HRESULT put_clear([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(130)]
+            HRESULT get_clear([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(131)]
+            HRESULT put_display([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(132)]
+            HRESULT get_display([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(133)]
+            HRESULT put_visibility([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(134)]
+            HRESULT get_visibility([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(135)]
+            HRESULT put_listStyleType([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(136)]
+            HRESULT get_listStyleType([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(137)]
+            HRESULT put_listStylePosition([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(138)]
+            HRESULT get_listStylePosition([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(139)]
+            HRESULT put_listStyleImage([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(140)]
+            HRESULT get_listStyleImage([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(141)]
+            HRESULT put_listStyle([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(142)]
+            HRESULT get_listStyle([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(143)]
+            HRESULT put_whiteSpace([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(144)]
+            HRESULT get_whiteSpace([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(145)]
+            HRESULT put_top(VARIANT v);
+
+            [VtblIndex(146)]
+            HRESULT get_top(VARIANT* p);
+
+            [VtblIndex(147)]
+            HRESULT put_left(VARIANT v);
+
+            [VtblIndex(148)]
+            HRESULT get_left(VARIANT* p);
+
+            [VtblIndex(149)]
+            HRESULT get_position([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(150)]
+            HRESULT put_zIndex(VARIANT v);
+
+            [VtblIndex(151)]
+            HRESULT get_zIndex(VARIANT* p);
+
+            [VtblIndex(152)]
+            HRESULT put_overflow([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(153)]
+            HRESULT get_overflow([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(154)]
+            HRESULT put_pageBreakBefore([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(155)]
+            HRESULT get_pageBreakBefore([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(156)]
+            HRESULT put_pageBreakAfter([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(157)]
+            HRESULT get_pageBreakAfter([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(158)]
+            HRESULT put_cssText([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(159)]
+            HRESULT get_cssText([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(160)]
+            HRESULT put_pixelTop([NativeTypeName("long")] int v);
+
+            [VtblIndex(161)]
+            HRESULT get_pixelTop([NativeTypeName("long *")] int* p);
+
+            [VtblIndex(162)]
+            HRESULT put_pixelLeft([NativeTypeName("long")] int v);
+
+            [VtblIndex(163)]
+            HRESULT get_pixelLeft([NativeTypeName("long *")] int* p);
+
+            [VtblIndex(164)]
+            HRESULT put_pixelWidth([NativeTypeName("long")] int v);
+
+            [VtblIndex(165)]
+            HRESULT get_pixelWidth([NativeTypeName("long *")] int* p);
+
+            [VtblIndex(166)]
+            HRESULT put_pixelHeight([NativeTypeName("long")] int v);
+
+            [VtblIndex(167)]
+            HRESULT get_pixelHeight([NativeTypeName("long *")] int* p);
+
+            [VtblIndex(168)]
+            HRESULT put_posTop(float v);
+
+            [VtblIndex(169)]
+            HRESULT get_posTop(float* p);
+
+            [VtblIndex(170)]
+            HRESULT put_posLeft(float v);
+
+            [VtblIndex(171)]
+            HRESULT get_posLeft(float* p);
+
+            [VtblIndex(172)]
+            HRESULT put_posWidth(float v);
+
+            [VtblIndex(173)]
+            HRESULT get_posWidth(float* p);
+
+            [VtblIndex(174)]
+            HRESULT put_posHeight(float v);
+
+            [VtblIndex(175)]
+            HRESULT get_posHeight(float* p);
+
+            [VtblIndex(176)]
+            HRESULT put_cursor([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(177)]
+            HRESULT get_cursor([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(178)]
+            HRESULT put_clip([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(179)]
+            HRESULT get_clip([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(180)]
+            HRESULT put_filter([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(181)]
+            HRESULT get_filter([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(182)]
+            HRESULT setAttribute([NativeTypeName("BSTR")] ushort* strAttributeName, VARIANT AttributeValue, [NativeTypeName("LONG")] int lFlags = 1);
+
+            [VtblIndex(183)]
+            HRESULT getAttribute([NativeTypeName("BSTR")] ushort* strAttributeName, [NativeTypeName("LONG")] int lFlags, VARIANT* AttributeValue);
+
+            [VtblIndex(184)]
+            HRESULT removeAttribute([NativeTypeName("BSTR")] ushort* strAttributeName, [NativeTypeName("LONG")] int lFlags, [NativeTypeName("VARIANT_BOOL *")] short* pfSuccess);
+
+            [VtblIndex(185)]
+            HRESULT toString([NativeTypeName("BSTR *")] ushort** String);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLStyle*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLStyle*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLStyle*, uint> Release;
+
+            [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLStyle*, uint*, int> GetTypeInfoCount;
+
+            [NativeTypeName("HRESULT (UINT, LCID, ITypeInfo **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLStyle*, uint, uint, ITypeInfo**, int> GetTypeInfo;
+
+            [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLStyle*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+
+            [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLStyle*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
+
+            [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLStyle*, ushort*, int> put_fontFamily;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLStyle*, ushort**, int> get_fontFamily;
+
+            [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLStyle*, ushort*, int> put_fontStyle;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLStyle*, ushort**, int> get_fontStyle;
+
+            [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLStyle*, ushort*, int> put_fontVariant;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLStyle*, ushort**, int> get_fontVariant;
+
+            [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLStyle*, ushort*, int> put_fontWeight;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLStyle*, ushort**, int> get_fontWeight;
+
+            [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLStyle*, VARIANT, int> put_fontSize;
+
+            [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLStyle*, VARIANT*, int> get_fontSize;
+
+            [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLStyle*, ushort*, int> put_font;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLStyle*, ushort**, int> get_font;
+
+            [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLStyle*, VARIANT, int> put_color;
+
+            [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLStyle*, VARIANT*, int> get_color;
+
+            [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLStyle*, ushort*, int> put_background;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLStyle*, ushort**, int> get_background;
+
+            [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLStyle*, VARIANT, int> put_backgroundColor;
+
+            [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLStyle*, VARIANT*, int> get_backgroundColor;
+
+            [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLStyle*, ushort*, int> put_backgroundImage;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLStyle*, ushort**, int> get_backgroundImage;
+
+            [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLStyle*, ushort*, int> put_backgroundRepeat;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLStyle*, ushort**, int> get_backgroundRepeat;
+
+            [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLStyle*, ushort*, int> put_backgroundAttachment;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLStyle*, ushort**, int> get_backgroundAttachment;
+
+            [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLStyle*, ushort*, int> put_backgroundPosition;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLStyle*, ushort**, int> get_backgroundPosition;
+
+            [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLStyle*, VARIANT, int> put_backgroundPositionX;
+
+            [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLStyle*, VARIANT*, int> get_backgroundPositionX;
+
+            [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLStyle*, VARIANT, int> put_backgroundPositionY;
+
+            [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLStyle*, VARIANT*, int> get_backgroundPositionY;
+
+            [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLStyle*, VARIANT, int> put_wordSpacing;
+
+            [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLStyle*, VARIANT*, int> get_wordSpacing;
+
+            [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLStyle*, VARIANT, int> put_letterSpacing;
+
+            [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLStyle*, VARIANT*, int> get_letterSpacing;
+
+            [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLStyle*, ushort*, int> put_textDecoration;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLStyle*, ushort**, int> get_textDecoration;
+
+            [NativeTypeName("HRESULT (VARIANT_BOOL) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLStyle*, short, int> put_textDecorationNone;
+
+            [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLStyle*, short*, int> get_textDecorationNone;
+
+            [NativeTypeName("HRESULT (VARIANT_BOOL) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLStyle*, short, int> put_textDecorationUnderline;
+
+            [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLStyle*, short*, int> get_textDecorationUnderline;
+
+            [NativeTypeName("HRESULT (VARIANT_BOOL) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLStyle*, short, int> put_textDecorationOverline;
+
+            [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLStyle*, short*, int> get_textDecorationOverline;
+
+            [NativeTypeName("HRESULT (VARIANT_BOOL) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLStyle*, short, int> put_textDecorationLineThrough;
+
+            [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLStyle*, short*, int> get_textDecorationLineThrough;
+
+            [NativeTypeName("HRESULT (VARIANT_BOOL) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLStyle*, short, int> put_textDecorationBlink;
+
+            [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLStyle*, short*, int> get_textDecorationBlink;
+
+            [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLStyle*, VARIANT, int> put_verticalAlign;
+
+            [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLStyle*, VARIANT*, int> get_verticalAlign;
+
+            [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLStyle*, ushort*, int> put_textTransform;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLStyle*, ushort**, int> get_textTransform;
+
+            [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLStyle*, ushort*, int> put_textAlign;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLStyle*, ushort**, int> get_textAlign;
+
+            [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLStyle*, VARIANT, int> put_textIndent;
+
+            [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLStyle*, VARIANT*, int> get_textIndent;
+
+            [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLStyle*, VARIANT, int> put_lineHeight;
+
+            [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLStyle*, VARIANT*, int> get_lineHeight;
+
+            [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLStyle*, VARIANT, int> put_marginTop;
+
+            [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLStyle*, VARIANT*, int> get_marginTop;
+
+            [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLStyle*, VARIANT, int> put_marginRight;
+
+            [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLStyle*, VARIANT*, int> get_marginRight;
+
+            [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLStyle*, VARIANT, int> put_marginBottom;
+
+            [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLStyle*, VARIANT*, int> get_marginBottom;
+
+            [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLStyle*, VARIANT, int> put_marginLeft;
+
+            [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLStyle*, VARIANT*, int> get_marginLeft;
+
+            [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLStyle*, ushort*, int> put_margin;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLStyle*, ushort**, int> get_margin;
+
+            [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLStyle*, VARIANT, int> put_paddingTop;
+
+            [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLStyle*, VARIANT*, int> get_paddingTop;
+
+            [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLStyle*, VARIANT, int> put_paddingRight;
+
+            [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLStyle*, VARIANT*, int> get_paddingRight;
+
+            [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLStyle*, VARIANT, int> put_paddingBottom;
+
+            [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLStyle*, VARIANT*, int> get_paddingBottom;
+
+            [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLStyle*, VARIANT, int> put_paddingLeft;
+
+            [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLStyle*, VARIANT*, int> get_paddingLeft;
+
+            [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLStyle*, ushort*, int> put_padding;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLStyle*, ushort**, int> get_padding;
+
+            [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLStyle*, ushort*, int> put_border;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLStyle*, ushort**, int> get_border;
+
+            [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLStyle*, ushort*, int> put_borderTop;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLStyle*, ushort**, int> get_borderTop;
+
+            [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLStyle*, ushort*, int> put_borderRight;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLStyle*, ushort**, int> get_borderRight;
+
+            [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLStyle*, ushort*, int> put_borderBottom;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLStyle*, ushort**, int> get_borderBottom;
+
+            [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLStyle*, ushort*, int> put_borderLeft;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLStyle*, ushort**, int> get_borderLeft;
+
+            [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLStyle*, ushort*, int> put_borderColor;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLStyle*, ushort**, int> get_borderColor;
+
+            [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLStyle*, VARIANT, int> put_borderTopColor;
+
+            [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLStyle*, VARIANT*, int> get_borderTopColor;
+
+            [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLStyle*, VARIANT, int> put_borderRightColor;
+
+            [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLStyle*, VARIANT*, int> get_borderRightColor;
+
+            [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLStyle*, VARIANT, int> put_borderBottomColor;
+
+            [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLStyle*, VARIANT*, int> get_borderBottomColor;
+
+            [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLStyle*, VARIANT, int> put_borderLeftColor;
+
+            [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLStyle*, VARIANT*, int> get_borderLeftColor;
+
+            [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLStyle*, ushort*, int> put_borderWidth;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLStyle*, ushort**, int> get_borderWidth;
+
+            [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLStyle*, VARIANT, int> put_borderTopWidth;
+
+            [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLStyle*, VARIANT*, int> get_borderTopWidth;
+
+            [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLStyle*, VARIANT, int> put_borderRightWidth;
+
+            [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLStyle*, VARIANT*, int> get_borderRightWidth;
+
+            [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLStyle*, VARIANT, int> put_borderBottomWidth;
+
+            [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLStyle*, VARIANT*, int> get_borderBottomWidth;
+
+            [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLStyle*, VARIANT, int> put_borderLeftWidth;
+
+            [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLStyle*, VARIANT*, int> get_borderLeftWidth;
+
+            [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLStyle*, ushort*, int> put_borderStyle;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLStyle*, ushort**, int> get_borderStyle;
+
+            [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLStyle*, ushort*, int> put_borderTopStyle;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLStyle*, ushort**, int> get_borderTopStyle;
+
+            [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLStyle*, ushort*, int> put_borderRightStyle;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLStyle*, ushort**, int> get_borderRightStyle;
+
+            [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLStyle*, ushort*, int> put_borderBottomStyle;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLStyle*, ushort**, int> get_borderBottomStyle;
+
+            [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLStyle*, ushort*, int> put_borderLeftStyle;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLStyle*, ushort**, int> get_borderLeftStyle;
+
+            [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLStyle*, VARIANT, int> put_width;
+
+            [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLStyle*, VARIANT*, int> get_width;
+
+            [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLStyle*, VARIANT, int> put_height;
+
+            [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLStyle*, VARIANT*, int> get_height;
+
+            [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLStyle*, ushort*, int> put_styleFloat;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLStyle*, ushort**, int> get_styleFloat;
+
+            [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLStyle*, ushort*, int> put_clear;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLStyle*, ushort**, int> get_clear;
+
+            [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLStyle*, ushort*, int> put_display;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLStyle*, ushort**, int> get_display;
+
+            [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLStyle*, ushort*, int> put_visibility;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLStyle*, ushort**, int> get_visibility;
+
+            [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLStyle*, ushort*, int> put_listStyleType;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLStyle*, ushort**, int> get_listStyleType;
+
+            [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLStyle*, ushort*, int> put_listStylePosition;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLStyle*, ushort**, int> get_listStylePosition;
+
+            [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLStyle*, ushort*, int> put_listStyleImage;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLStyle*, ushort**, int> get_listStyleImage;
+
+            [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLStyle*, ushort*, int> put_listStyle;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLStyle*, ushort**, int> get_listStyle;
+
+            [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLStyle*, ushort*, int> put_whiteSpace;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLStyle*, ushort**, int> get_whiteSpace;
+
+            [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLStyle*, VARIANT, int> put_top;
+
+            [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLStyle*, VARIANT*, int> get_top;
+
+            [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLStyle*, VARIANT, int> put_left;
+
+            [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLStyle*, VARIANT*, int> get_left;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLStyle*, ushort**, int> get_position;
+
+            [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLStyle*, VARIANT, int> put_zIndex;
+
+            [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLStyle*, VARIANT*, int> get_zIndex;
+
+            [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLStyle*, ushort*, int> put_overflow;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLStyle*, ushort**, int> get_overflow;
+
+            [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLStyle*, ushort*, int> put_pageBreakBefore;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLStyle*, ushort**, int> get_pageBreakBefore;
+
+            [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLStyle*, ushort*, int> put_pageBreakAfter;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLStyle*, ushort**, int> get_pageBreakAfter;
+
+            [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLStyle*, ushort*, int> put_cssText;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLStyle*, ushort**, int> get_cssText;
+
+            [NativeTypeName("HRESULT (long) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLStyle*, int, int> put_pixelTop;
+
+            [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLStyle*, int*, int> get_pixelTop;
+
+            [NativeTypeName("HRESULT (long) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLStyle*, int, int> put_pixelLeft;
+
+            [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLStyle*, int*, int> get_pixelLeft;
+
+            [NativeTypeName("HRESULT (long) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLStyle*, int, int> put_pixelWidth;
+
+            [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLStyle*, int*, int> get_pixelWidth;
+
+            [NativeTypeName("HRESULT (long) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLStyle*, int, int> put_pixelHeight;
+
+            [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLStyle*, int*, int> get_pixelHeight;
+
+            [NativeTypeName("HRESULT (float) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLStyle*, float, int> put_posTop;
+
+            [NativeTypeName("HRESULT (float *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLStyle*, float*, int> get_posTop;
+
+            [NativeTypeName("HRESULT (float) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLStyle*, float, int> put_posLeft;
+
+            [NativeTypeName("HRESULT (float *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLStyle*, float*, int> get_posLeft;
+
+            [NativeTypeName("HRESULT (float) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLStyle*, float, int> put_posWidth;
+
+            [NativeTypeName("HRESULT (float *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLStyle*, float*, int> get_posWidth;
+
+            [NativeTypeName("HRESULT (float) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLStyle*, float, int> put_posHeight;
+
+            [NativeTypeName("HRESULT (float *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLStyle*, float*, int> get_posHeight;
+
+            [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLStyle*, ushort*, int> put_cursor;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLStyle*, ushort**, int> get_cursor;
+
+            [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLStyle*, ushort*, int> put_clip;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLStyle*, ushort**, int> get_clip;
+
+            [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLStyle*, ushort*, int> put_filter;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLStyle*, ushort**, int> get_filter;
+
+            [NativeTypeName("HRESULT (BSTR, VARIANT, LONG) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLStyle*, ushort*, VARIANT, int, int> setAttribute;
+
+            [NativeTypeName("HRESULT (BSTR, LONG, VARIANT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLStyle*, ushort*, int, VARIANT*, int> getAttribute;
+
+            [NativeTypeName("HRESULT (BSTR, LONG, VARIANT_BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLStyle*, ushort*, int, short*, int> removeAttribute;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLStyle*, ushort**, int> toString;
         }
     }
 }

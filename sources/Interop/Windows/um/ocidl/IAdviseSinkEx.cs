@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("3AF24290-0C96-11CE-A0CF-00AA00600AB8")]
     [NativeTypeName("struct IAdviseSinkEx : IAdviseSink")]
     [NativeInheritance("IAdviseSink")]
-    public unsafe partial struct IAdviseSinkEx
+    public unsafe partial struct IAdviseSinkEx : IAdviseSinkEx.Interface
     {
         public void** lpVtbl;
 
@@ -79,6 +79,42 @@ namespace TerraFX.Interop
         public void OnViewStatusChange([NativeTypeName("DWORD")] uint dwViewStatus)
         {
             ((delegate* unmanaged<IAdviseSinkEx*, uint, void>)(lpVtbl[8]))((IAdviseSinkEx*)Unsafe.AsPointer(ref this), dwViewStatus);
+        }
+
+        public interface Interface : IAdviseSink.Interface
+        {
+            [VtblIndex(8)]
+            void OnViewStatusChange([NativeTypeName("DWORD")] uint dwViewStatus);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAdviseSinkEx*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IAdviseSinkEx*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IAdviseSinkEx*, uint> Release;
+
+            [NativeTypeName("void (FORMATETC *, STGMEDIUM *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAdviseSinkEx*, FORMATETC*, STGMEDIUM*, void> OnDataChange;
+
+            [NativeTypeName("void (DWORD, LONG) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAdviseSinkEx*, uint, int, void> OnViewChange;
+
+            [NativeTypeName("void (IMoniker *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAdviseSinkEx*, IMoniker*, void> OnRename;
+
+            [NativeTypeName("void () __attribute__((stdcall))")]
+            public delegate* unmanaged<IAdviseSinkEx*, void> OnSave;
+
+            [NativeTypeName("void () __attribute__((stdcall))")]
+            public delegate* unmanaged<IAdviseSinkEx*, void> OnClose;
+
+            [NativeTypeName("void (DWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAdviseSinkEx*, uint, void> OnViewStatusChange;
         }
     }
 }

@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("30510482-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct IHTMLXMLHttpRequest2 : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct IHTMLXMLHttpRequest2
+    public unsafe partial struct IHTMLXMLHttpRequest2 : IHTMLXMLHttpRequest2.Interface
     {
         public void** lpVtbl;
 
@@ -93,6 +93,57 @@ namespace TerraFX.Interop
         public HRESULT get_ontimeout(VARIANT* p)
         {
             return ((delegate* unmanaged<IHTMLXMLHttpRequest2*, VARIANT*, int>)(lpVtbl[10]))((IHTMLXMLHttpRequest2*)Unsafe.AsPointer(ref this), p);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT put_timeout([NativeTypeName("long")] int v);
+
+            [VtblIndex(8)]
+            HRESULT get_timeout([NativeTypeName("long *")] int* p);
+
+            [VtblIndex(9)]
+            HRESULT put_ontimeout(VARIANT v);
+
+            [VtblIndex(10)]
+            HRESULT get_ontimeout(VARIANT* p);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLXMLHttpRequest2*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLXMLHttpRequest2*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLXMLHttpRequest2*, uint> Release;
+
+            [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLXMLHttpRequest2*, uint*, int> GetTypeInfoCount;
+
+            [NativeTypeName("HRESULT (UINT, LCID, ITypeInfo **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLXMLHttpRequest2*, uint, uint, ITypeInfo**, int> GetTypeInfo;
+
+            [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLXMLHttpRequest2*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+
+            [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLXMLHttpRequest2*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
+
+            [NativeTypeName("HRESULT (long) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLXMLHttpRequest2*, int, int> put_timeout;
+
+            [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLXMLHttpRequest2*, int*, int> get_timeout;
+
+            [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLXMLHttpRequest2*, VARIANT, int> put_ontimeout;
+
+            [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLXMLHttpRequest2*, VARIANT*, int> get_ontimeout;
         }
     }
 }

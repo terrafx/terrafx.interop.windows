@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("14885CC9-BAB0-4F90-B6ED-5C366A2CD03D")]
     [NativeTypeName("struct IDWriteNumberSubstitution : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IDWriteNumberSubstitution
+    public unsafe partial struct IDWriteNumberSubstitution : IDWriteNumberSubstitution.Interface
     {
         public void** lpVtbl;
 
@@ -37,6 +37,22 @@ namespace TerraFX.Interop
         public uint Release()
         {
             return ((delegate* unmanaged<IDWriteNumberSubstitution*, uint>)(lpVtbl[2]))((IDWriteNumberSubstitution*)Unsafe.AsPointer(ref this));
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDWriteNumberSubstitution*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDWriteNumberSubstitution*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDWriteNumberSubstitution*, uint> Release;
         }
     }
 }

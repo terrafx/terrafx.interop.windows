@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("8AB10026-20CC-4B20-8C22-A49C9BA78F60")]
     [NativeTypeName("struct ISpGrammarBuilder2 : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct ISpGrammarBuilder2
+    public unsafe partial struct ISpGrammarBuilder2 : ISpGrammarBuilder2.Interface
     {
         public void** lpVtbl;
 
@@ -51,6 +51,33 @@ namespace TerraFX.Interop
         public HRESULT SetPhoneticAlphabet(PHONETICALPHABET phoneticALphabet)
         {
             return ((delegate* unmanaged<ISpGrammarBuilder2*, PHONETICALPHABET, int>)(lpVtbl[4]))((ISpGrammarBuilder2*)Unsafe.AsPointer(ref this), phoneticALphabet);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT AddTextSubset(SPSTATEHANDLE hFromState, SPSTATEHANDLE hToState, [NativeTypeName("LPCWSTR")] ushort* psz, SPMATCHINGMODE eMatchMode);
+
+            [VtblIndex(4)]
+            HRESULT SetPhoneticAlphabet(PHONETICALPHABET phoneticALphabet);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpGrammarBuilder2*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpGrammarBuilder2*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpGrammarBuilder2*, uint> Release;
+
+            [NativeTypeName("HRESULT (SPSTATEHANDLE, SPSTATEHANDLE, LPCWSTR, SPMATCHINGMODE) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpGrammarBuilder2*, SPSTATEHANDLE, SPSTATEHANDLE, ushort*, SPMATCHINGMODE, int> AddTextSubset;
+
+            [NativeTypeName("HRESULT (PHONETICALPHABET) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpGrammarBuilder2*, PHONETICALPHABET, int> SetPhoneticAlphabet;
         }
     }
 }

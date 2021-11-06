@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("A2B1A1D9-4DB3-425D-A2B2-BD335CB3E2E5")]
     [NativeTypeName("struct IAudioBass : IPerChannelDbLevel")]
     [NativeInheritance("IPerChannelDbLevel")]
-    public unsafe partial struct IAudioBass
+    public unsafe partial struct IAudioBass : IAudioBass.Interface
     {
         public void** lpVtbl;
 
@@ -79,6 +79,40 @@ namespace TerraFX.Interop
         public HRESULT SetLevelAllChannels([NativeTypeName("float []")] float* aLevelsDB, [NativeTypeName("ULONG")] uint cChannels, [NativeTypeName("LPCGUID")] Guid* pguidEventContext)
         {
             return ((delegate* unmanaged<IAudioBass*, float*, uint, Guid*, int>)(lpVtbl[8]))((IAudioBass*)Unsafe.AsPointer(ref this), aLevelsDB, cChannels, pguidEventContext);
+        }
+
+        public interface Interface : IPerChannelDbLevel.Interface
+        {
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAudioBass*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IAudioBass*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IAudioBass*, uint> Release;
+
+            [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAudioBass*, uint*, int> GetChannelCount;
+
+            [NativeTypeName("HRESULT (UINT, float *, float *, float *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAudioBass*, uint, float*, float*, float*, int> GetLevelRange;
+
+            [NativeTypeName("HRESULT (UINT, float *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAudioBass*, uint, float*, int> GetLevel;
+
+            [NativeTypeName("HRESULT (UINT, float, LPCGUID) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAudioBass*, uint, float, Guid*, int> SetLevel;
+
+            [NativeTypeName("HRESULT (float, LPCGUID) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAudioBass*, float, Guid*, int> SetLevelUniform;
+
+            [NativeTypeName("HRESULT (float *, ULONG, LPCGUID) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAudioBass*, float*, uint, Guid*, int> SetLevelAllChannels;
         }
     }
 }

@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("8DED7393-5DB1-475C-9E71-A39111B0FF67")]
     [NativeTypeName("struct ITfDisplayAttributeMgr : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct ITfDisplayAttributeMgr
+    public unsafe partial struct ITfDisplayAttributeMgr : ITfDisplayAttributeMgr.Interface
     {
         public void** lpVtbl;
 
@@ -58,6 +58,39 @@ namespace TerraFX.Interop
         public HRESULT GetDisplayAttributeInfo([NativeTypeName("const GUID &")] Guid* guid, ITfDisplayAttributeInfo** ppInfo, [NativeTypeName("CLSID *")] Guid* pclsidOwner)
         {
             return ((delegate* unmanaged<ITfDisplayAttributeMgr*, Guid*, ITfDisplayAttributeInfo**, Guid*, int>)(lpVtbl[5]))((ITfDisplayAttributeMgr*)Unsafe.AsPointer(ref this), guid, ppInfo, pclsidOwner);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT OnUpdateInfo();
+
+            [VtblIndex(4)]
+            HRESULT EnumDisplayAttributeInfo(IEnumTfDisplayAttributeInfo** ppEnum);
+
+            [VtblIndex(5)]
+            HRESULT GetDisplayAttributeInfo([NativeTypeName("const GUID &")] Guid* guid, ITfDisplayAttributeInfo** ppInfo, [NativeTypeName("CLSID *")] Guid* pclsidOwner);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfDisplayAttributeMgr*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfDisplayAttributeMgr*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfDisplayAttributeMgr*, uint> Release;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfDisplayAttributeMgr*, int> OnUpdateInfo;
+
+            [NativeTypeName("HRESULT (IEnumTfDisplayAttributeInfo **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfDisplayAttributeMgr*, IEnumTfDisplayAttributeInfo**, int> EnumDisplayAttributeInfo;
+
+            [NativeTypeName("HRESULT (const GUID &, ITfDisplayAttributeInfo **, CLSID *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfDisplayAttributeMgr*, Guid*, ITfDisplayAttributeInfo**, Guid*, int> GetDisplayAttributeInfo;
         }
     }
 }

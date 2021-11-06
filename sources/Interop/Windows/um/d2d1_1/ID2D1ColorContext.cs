@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("1C4820BB-5771-4518-A581-2FE4DD0EC657")]
     [NativeTypeName("struct ID2D1ColorContext : ID2D1Resource")]
     [NativeInheritance("ID2D1Resource")]
-    public unsafe partial struct ID2D1ColorContext
+    public unsafe partial struct ID2D1ColorContext : ID2D1ColorContext.Interface
     {
         public void** lpVtbl;
 
@@ -66,6 +66,43 @@ namespace TerraFX.Interop
         public HRESULT GetProfile(byte* profile, [NativeTypeName("UINT32")] uint profileSize)
         {
             return ((delegate* unmanaged<ID2D1ColorContext*, byte*, uint, int>)(lpVtbl[6]))((ID2D1ColorContext*)Unsafe.AsPointer(ref this), profile, profileSize);
+        }
+
+        public interface Interface : ID2D1Resource.Interface
+        {
+            [VtblIndex(4)]
+            D2D1_COLOR_SPACE GetColorSpace();
+
+            [VtblIndex(5)]
+            [return: NativeTypeName("UINT32")]
+            uint GetProfileSize();
+
+            [VtblIndex(6)]
+            HRESULT GetProfile(byte* profile, [NativeTypeName("UINT32")] uint profileSize);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID2D1ColorContext*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ID2D1ColorContext*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ID2D1ColorContext*, uint> Release;
+
+            [NativeTypeName("void (ID2D1Factory **) const __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID2D1ColorContext*, ID2D1Factory**, void> GetFactory;
+
+            [NativeTypeName("D2D1_COLOR_SPACE () const __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID2D1ColorContext*, D2D1_COLOR_SPACE> GetColorSpace;
+
+            [NativeTypeName("UINT32 () const __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID2D1ColorContext*, uint> GetProfileSize;
+
+            [NativeTypeName("HRESULT (BYTE *, UINT32) const __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID2D1ColorContext*, byte*, uint, int> GetProfile;
         }
     }
 }

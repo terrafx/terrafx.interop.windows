@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("7B3A2F01-0751-48DD-B556-004785171C54")]
     [NativeTypeName("struct IRegisterServiceProvider : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IRegisterServiceProvider
+    public unsafe partial struct IRegisterServiceProvider : IRegisterServiceProvider.Interface
     {
         public void** lpVtbl;
 
@@ -44,6 +44,27 @@ namespace TerraFX.Interop
         public HRESULT RegisterService([NativeTypeName("const GUID &")] Guid* guidService, IUnknown* pUnkObject)
         {
             return ((delegate* unmanaged<IRegisterServiceProvider*, Guid*, IUnknown*, int>)(lpVtbl[3]))((IRegisterServiceProvider*)Unsafe.AsPointer(ref this), guidService, pUnkObject);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT RegisterService([NativeTypeName("const GUID &")] Guid* guidService, IUnknown* pUnkObject);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IRegisterServiceProvider*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IRegisterServiceProvider*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IRegisterServiceProvider*, uint> Release;
+
+            [NativeTypeName("HRESULT (const GUID &, IUnknown *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IRegisterServiceProvider*, Guid*, IUnknown*, int> RegisterService;
         }
     }
 }

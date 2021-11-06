@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("3050F4A7-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct IElementBehaviorSiteRender : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IElementBehaviorSiteRender
+    public unsafe partial struct IElementBehaviorSiteRender : IElementBehaviorSiteRender.Interface
     {
         public void** lpVtbl;
 
@@ -58,6 +58,39 @@ namespace TerraFX.Interop
         public HRESULT InvalidateStyle()
         {
             return ((delegate* unmanaged<IElementBehaviorSiteRender*, int>)(lpVtbl[5]))((IElementBehaviorSiteRender*)Unsafe.AsPointer(ref this));
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT Invalidate(RECT* pRect);
+
+            [VtblIndex(4)]
+            HRESULT InvalidateRenderInfo();
+
+            [VtblIndex(5)]
+            HRESULT InvalidateStyle();
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IElementBehaviorSiteRender*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IElementBehaviorSiteRender*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IElementBehaviorSiteRender*, uint> Release;
+
+            [NativeTypeName("HRESULT (RECT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IElementBehaviorSiteRender*, RECT*, int> Invalidate;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IElementBehaviorSiteRender*, int> InvalidateRenderInfo;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IElementBehaviorSiteRender*, int> InvalidateStyle;
         }
     }
 }

@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("624B7D9C-24EA-4421-9D06-3B577471C1FA")]
     [NativeTypeName("struct IDiaEnumSymbolsByAddr : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IDiaEnumSymbolsByAddr
+    public unsafe partial struct IDiaEnumSymbolsByAddr : IDiaEnumSymbolsByAddr.Interface
     {
         public void** lpVtbl;
 
@@ -79,6 +79,57 @@ namespace TerraFX.Interop
         public HRESULT Clone(IDiaEnumSymbolsByAddr** ppenum)
         {
             return ((delegate* unmanaged<IDiaEnumSymbolsByAddr*, IDiaEnumSymbolsByAddr**, int>)(lpVtbl[8]))((IDiaEnumSymbolsByAddr*)Unsafe.AsPointer(ref this), ppenum);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT symbolByAddr([NativeTypeName("DWORD")] uint isect, [NativeTypeName("DWORD")] uint offset, IDiaSymbol** ppSymbol);
+
+            [VtblIndex(4)]
+            HRESULT symbolByRVA([NativeTypeName("DWORD")] uint relativeVirtualAddress, IDiaSymbol** ppSymbol);
+
+            [VtblIndex(5)]
+            HRESULT symbolByVA([NativeTypeName("ULONGLONG")] ulong virtualAddress, IDiaSymbol** ppSymbol);
+
+            [VtblIndex(6)]
+            HRESULT Next([NativeTypeName("ULONG")] uint celt, IDiaSymbol** rgelt, [NativeTypeName("ULONG *")] uint* pceltFetched);
+
+            [VtblIndex(7)]
+            HRESULT Prev([NativeTypeName("ULONG")] uint celt, IDiaSymbol** rgelt, [NativeTypeName("ULONG *")] uint* pceltFetched);
+
+            [VtblIndex(8)]
+            HRESULT Clone(IDiaEnumSymbolsByAddr** ppenum);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaEnumSymbolsByAddr*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaEnumSymbolsByAddr*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaEnumSymbolsByAddr*, uint> Release;
+
+            [NativeTypeName("HRESULT (DWORD, DWORD, IDiaSymbol **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaEnumSymbolsByAddr*, uint, uint, IDiaSymbol**, int> symbolByAddr;
+
+            [NativeTypeName("HRESULT (DWORD, IDiaSymbol **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaEnumSymbolsByAddr*, uint, IDiaSymbol**, int> symbolByRVA;
+
+            [NativeTypeName("HRESULT (ULONGLONG, IDiaSymbol **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaEnumSymbolsByAddr*, ulong, IDiaSymbol**, int> symbolByVA;
+
+            [NativeTypeName("HRESULT (ULONG, IDiaSymbol **, ULONG *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaEnumSymbolsByAddr*, uint, IDiaSymbol**, uint*, int> Next;
+
+            [NativeTypeName("HRESULT (ULONG, IDiaSymbol **, ULONG *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaEnumSymbolsByAddr*, uint, IDiaSymbol**, uint*, int> Prev;
+
+            [NativeTypeName("HRESULT (IDiaEnumSymbolsByAddr **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaEnumSymbolsByAddr*, IDiaEnumSymbolsByAddr**, int> Clone;
         }
     }
 }

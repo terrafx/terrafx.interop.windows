@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("EA1EA137-19DF-11D7-A6D2-00065B84435C")]
     [NativeTypeName("struct ITfUIElement : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct ITfUIElement
+    public unsafe partial struct ITfUIElement : ITfUIElement.Interface
     {
         public void** lpVtbl;
 
@@ -65,6 +65,45 @@ namespace TerraFX.Interop
         public HRESULT IsShown(BOOL* pbShow)
         {
             return ((delegate* unmanaged<ITfUIElement*, BOOL*, int>)(lpVtbl[6]))((ITfUIElement*)Unsafe.AsPointer(ref this), pbShow);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetDescription([NativeTypeName("BSTR *")] ushort** pbstrDescription);
+
+            [VtblIndex(4)]
+            HRESULT GetGUID(Guid* pguid);
+
+            [VtblIndex(5)]
+            HRESULT Show(BOOL bShow);
+
+            [VtblIndex(6)]
+            HRESULT IsShown(BOOL* pbShow);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfUIElement*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfUIElement*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfUIElement*, uint> Release;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfUIElement*, ushort**, int> GetDescription;
+
+            [NativeTypeName("HRESULT (GUID *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfUIElement*, Guid*, int> GetGUID;
+
+            [NativeTypeName("HRESULT (BOOL) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfUIElement*, BOOL, int> Show;
+
+            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfUIElement*, BOOL*, int> IsShown;
         }
     }
 }

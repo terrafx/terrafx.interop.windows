@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("55F1112B-1DC2-4B3C-9541-F46894ED85B6")]
     [NativeTypeName("struct IDWriteTypography : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IDWriteTypography
+    public unsafe partial struct IDWriteTypography : IDWriteTypography.Interface
     {
         public void** lpVtbl;
 
@@ -59,6 +59,40 @@ namespace TerraFX.Interop
         public HRESULT GetFontFeature([NativeTypeName("UINT32")] uint fontFeatureIndex, DWRITE_FONT_FEATURE* fontFeature)
         {
             return ((delegate* unmanaged<IDWriteTypography*, uint, DWRITE_FONT_FEATURE*, int>)(lpVtbl[5]))((IDWriteTypography*)Unsafe.AsPointer(ref this), fontFeatureIndex, fontFeature);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT AddFontFeature(DWRITE_FONT_FEATURE fontFeature);
+
+            [VtblIndex(4)]
+            [return: NativeTypeName("UINT32")]
+            uint GetFontFeatureCount();
+
+            [VtblIndex(5)]
+            HRESULT GetFontFeature([NativeTypeName("UINT32")] uint fontFeatureIndex, DWRITE_FONT_FEATURE* fontFeature);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDWriteTypography*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDWriteTypography*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDWriteTypography*, uint> Release;
+
+            [NativeTypeName("HRESULT (DWRITE_FONT_FEATURE) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDWriteTypography*, DWRITE_FONT_FEATURE, int> AddFontFeature;
+
+            [NativeTypeName("UINT32 () __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDWriteTypography*, uint> GetFontFeatureCount;
+
+            [NativeTypeName("HRESULT (UINT32, DWRITE_FONT_FEATURE *) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDWriteTypography*, uint, DWRITE_FONT_FEATURE*, int> GetFontFeature;
         }
     }
 }

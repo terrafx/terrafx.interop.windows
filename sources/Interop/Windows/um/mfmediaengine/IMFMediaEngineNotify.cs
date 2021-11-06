@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("FEE7C112-E776-42B5-9BBF-0048524E2BD5")]
     [NativeTypeName("struct IMFMediaEngineNotify : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IMFMediaEngineNotify
+    public unsafe partial struct IMFMediaEngineNotify : IMFMediaEngineNotify.Interface
     {
         public void** lpVtbl;
 
@@ -44,6 +44,27 @@ namespace TerraFX.Interop
         public HRESULT EventNotify([NativeTypeName("DWORD")] uint @event, [NativeTypeName("DWORD_PTR")] nuint param1, [NativeTypeName("DWORD")] uint param2)
         {
             return ((delegate* unmanaged<IMFMediaEngineNotify*, uint, nuint, uint, int>)(lpVtbl[3]))((IMFMediaEngineNotify*)Unsafe.AsPointer(ref this), @event, param1, param2);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT EventNotify([NativeTypeName("DWORD")] uint @event, [NativeTypeName("DWORD_PTR")] nuint param1, [NativeTypeName("DWORD")] uint param2);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFMediaEngineNotify*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFMediaEngineNotify*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFMediaEngineNotify*, uint> Release;
+
+            [NativeTypeName("HRESULT (DWORD, DWORD_PTR, DWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFMediaEngineNotify*, uint, nuint, uint, int> EventNotify;
         }
     }
 }

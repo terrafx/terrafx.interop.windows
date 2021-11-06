@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("52502EE0-EC80-11D0-89AB-00C04FC2972D")]
     [NativeTypeName("struct IActiveDesktopP : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IActiveDesktopP
+    public unsafe partial struct IActiveDesktopP : IActiveDesktopP.Interface
     {
         public void** lpVtbl;
 
@@ -65,6 +65,45 @@ namespace TerraFX.Interop
         public HRESULT GetScheme([NativeTypeName("PWSTR")] ushort* pwszSchemeName, [NativeTypeName("DWORD *")] uint* pdwcchBuffer, [NativeTypeName("DWORD")] uint dwFlags)
         {
             return ((delegate* unmanaged<IActiveDesktopP*, ushort*, uint*, uint, int>)(lpVtbl[6]))((IActiveDesktopP*)Unsafe.AsPointer(ref this), pwszSchemeName, pdwcchBuffer, dwFlags);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT SetSafeMode([NativeTypeName("DWORD")] uint dwFlags);
+
+            [VtblIndex(4)]
+            HRESULT EnsureUpdateHTML();
+
+            [VtblIndex(5)]
+            HRESULT SetScheme([NativeTypeName("PCWSTR")] ushort* pwszSchemeName, [NativeTypeName("DWORD")] uint dwFlags);
+
+            [VtblIndex(6)]
+            HRESULT GetScheme([NativeTypeName("PWSTR")] ushort* pwszSchemeName, [NativeTypeName("DWORD *")] uint* pdwcchBuffer, [NativeTypeName("DWORD")] uint dwFlags);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IActiveDesktopP*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IActiveDesktopP*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IActiveDesktopP*, uint> Release;
+
+            [NativeTypeName("HRESULT (DWORD) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IActiveDesktopP*, uint, int> SetSafeMode;
+
+            [NativeTypeName("HRESULT () __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IActiveDesktopP*, int> EnsureUpdateHTML;
+
+            [NativeTypeName("HRESULT (PCWSTR, DWORD) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IActiveDesktopP*, ushort*, uint, int> SetScheme;
+
+            [NativeTypeName("HRESULT (PWSTR, DWORD *, DWORD) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IActiveDesktopP*, ushort*, uint*, uint, int> GetScheme;
         }
     }
 }

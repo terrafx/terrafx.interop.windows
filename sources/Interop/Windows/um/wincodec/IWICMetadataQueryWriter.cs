@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("A721791A-0DEF-4D06-BD91-2118BF1DB10B")]
     [NativeTypeName("struct IWICMetadataQueryWriter : IWICMetadataQueryReader")]
     [NativeInheritance("IWICMetadataQueryReader")]
-    public unsafe partial struct IWICMetadataQueryWriter
+    public unsafe partial struct IWICMetadataQueryWriter : IWICMetadataQueryWriter.Interface
     {
         public void** lpVtbl;
 
@@ -79,6 +79,45 @@ namespace TerraFX.Interop
         public HRESULT RemoveMetadataByName([NativeTypeName("LPCWSTR")] ushort* wzName)
         {
             return ((delegate* unmanaged<IWICMetadataQueryWriter*, ushort*, int>)(lpVtbl[8]))((IWICMetadataQueryWriter*)Unsafe.AsPointer(ref this), wzName);
+        }
+
+        public interface Interface : IWICMetadataQueryReader.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT SetMetadataByName([NativeTypeName("LPCWSTR")] ushort* wzName, [NativeTypeName("const PROPVARIANT *")] PROPVARIANT* pvarValue);
+
+            [VtblIndex(8)]
+            HRESULT RemoveMetadataByName([NativeTypeName("LPCWSTR")] ushort* wzName);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWICMetadataQueryWriter*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IWICMetadataQueryWriter*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IWICMetadataQueryWriter*, uint> Release;
+
+            [NativeTypeName("HRESULT (GUID *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWICMetadataQueryWriter*, Guid*, int> GetContainerFormat;
+
+            [NativeTypeName("HRESULT (UINT, WCHAR *, UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWICMetadataQueryWriter*, uint, ushort*, uint*, int> GetLocation;
+
+            [NativeTypeName("HRESULT (LPCWSTR, PROPVARIANT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWICMetadataQueryWriter*, ushort*, PROPVARIANT*, int> GetMetadataByName;
+
+            [NativeTypeName("HRESULT (IEnumString **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWICMetadataQueryWriter*, IEnumString**, int> GetEnumerator;
+
+            [NativeTypeName("HRESULT (LPCWSTR, const PROPVARIANT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWICMetadataQueryWriter*, ushort*, PROPVARIANT*, int> SetMetadataByName;
+
+            [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWICMetadataQueryWriter*, ushort*, int> RemoveMetadataByName;
         }
     }
 }

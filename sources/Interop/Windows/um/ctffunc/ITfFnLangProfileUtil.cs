@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("A87A8574-A6C1-4E15-99F0-3D3965F548EB")]
     [NativeTypeName("struct ITfFnLangProfileUtil : ITfFunction")]
     [NativeInheritance("ITfFunction")]
-    public unsafe partial struct ITfFnLangProfileUtil
+    public unsafe partial struct ITfFnLangProfileUtil : ITfFnLangProfileUtil.Interface
     {
         public void** lpVtbl;
 
@@ -58,6 +58,36 @@ namespace TerraFX.Interop
         public HRESULT IsProfileAvailableForLang([NativeTypeName("LANGID")] ushort langid, BOOL* pfAvailable)
         {
             return ((delegate* unmanaged<ITfFnLangProfileUtil*, ushort, BOOL*, int>)(lpVtbl[5]))((ITfFnLangProfileUtil*)Unsafe.AsPointer(ref this), langid, pfAvailable);
+        }
+
+        public interface Interface : ITfFunction.Interface
+        {
+            [VtblIndex(4)]
+            HRESULT RegisterActiveProfiles();
+
+            [VtblIndex(5)]
+            HRESULT IsProfileAvailableForLang([NativeTypeName("LANGID")] ushort langid, BOOL* pfAvailable);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfFnLangProfileUtil*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfFnLangProfileUtil*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfFnLangProfileUtil*, uint> Release;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfFnLangProfileUtil*, ushort**, int> GetDisplayName;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfFnLangProfileUtil*, int> RegisterActiveProfiles;
+
+            [NativeTypeName("HRESULT (LANGID, BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfFnLangProfileUtil*, ushort, BOOL*, int> IsProfileAvailableForLang;
         }
     }
 }

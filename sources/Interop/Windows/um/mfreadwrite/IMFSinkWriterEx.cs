@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("588D72AB-5BC1-496A-8714-B70617141B25")]
     [NativeTypeName("struct IMFSinkWriterEx : IMFSinkWriter")]
     [NativeInheritance("IMFSinkWriter")]
-    public unsafe partial struct IMFSinkWriterEx
+    public unsafe partial struct IMFSinkWriterEx : IMFSinkWriterEx.Interface
     {
         public void** lpVtbl;
 
@@ -121,6 +121,60 @@ namespace TerraFX.Interop
         public HRESULT GetTransformForStream([NativeTypeName("DWORD")] uint dwStreamIndex, [NativeTypeName("DWORD")] uint dwTransformIndex, Guid* pGuidCategory, IMFTransform** ppTransform)
         {
             return ((delegate* unmanaged<IMFSinkWriterEx*, uint, uint, Guid*, IMFTransform**, int>)(lpVtbl[14]))((IMFSinkWriterEx*)Unsafe.AsPointer(ref this), dwStreamIndex, dwTransformIndex, pGuidCategory, ppTransform);
+        }
+
+        public interface Interface : IMFSinkWriter.Interface
+        {
+            [VtblIndex(14)]
+            HRESULT GetTransformForStream([NativeTypeName("DWORD")] uint dwStreamIndex, [NativeTypeName("DWORD")] uint dwTransformIndex, Guid* pGuidCategory, IMFTransform** ppTransform);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFSinkWriterEx*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFSinkWriterEx*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFSinkWriterEx*, uint> Release;
+
+            [NativeTypeName("HRESULT (IMFMediaType *, DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFSinkWriterEx*, IMFMediaType*, uint*, int> AddStream;
+
+            [NativeTypeName("HRESULT (DWORD, IMFMediaType *, IMFAttributes *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFSinkWriterEx*, uint, IMFMediaType*, IMFAttributes*, int> SetInputMediaType;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFSinkWriterEx*, int> BeginWriting;
+
+            [NativeTypeName("HRESULT (DWORD, IMFSample *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFSinkWriterEx*, uint, IMFSample*, int> WriteSample;
+
+            [NativeTypeName("HRESULT (DWORD, LONGLONG) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFSinkWriterEx*, uint, long, int> SendStreamTick;
+
+            [NativeTypeName("HRESULT (DWORD, LPVOID) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFSinkWriterEx*, uint, void*, int> PlaceMarker;
+
+            [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFSinkWriterEx*, uint, int> NotifyEndOfSegment;
+
+            [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFSinkWriterEx*, uint, int> Flush;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFSinkWriterEx*, int> Finalize;
+
+            [NativeTypeName("HRESULT (DWORD, const GUID &, const IID &, LPVOID *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFSinkWriterEx*, uint, Guid*, Guid*, void**, int> GetServiceForStream;
+
+            [NativeTypeName("HRESULT (DWORD, MF_SINK_WRITER_STATISTICS *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFSinkWriterEx*, uint, MF_SINK_WRITER_STATISTICS*, int> GetStatistics;
+
+            [NativeTypeName("HRESULT (DWORD, DWORD, GUID *, IMFTransform **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFSinkWriterEx*, uint, uint, Guid*, IMFTransform**, int> GetTransformForStream;
         }
     }
 }

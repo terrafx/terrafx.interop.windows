@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("C405A219-25A2-442E-8743-B845A2CEE93F")]
     [NativeTypeName("struct ISyncMgrConflictResolveInfo : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct ISyncMgrConflictResolveInfo
+    public unsafe partial struct ISyncMgrConflictResolveInfo : ISyncMgrConflictResolveInfo.Interface
     {
         public void** lpVtbl;
 
@@ -93,6 +93,69 @@ namespace TerraFX.Interop
         public HRESULT SetItemChoices(uint* prgiConflictItemIndexes, uint cChoices)
         {
             return ((delegate* unmanaged<ISyncMgrConflictResolveInfo*, uint*, uint, int>)(lpVtbl[10]))((ISyncMgrConflictResolveInfo*)Unsafe.AsPointer(ref this), prgiConflictItemIndexes, cChoices);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetIterationInfo(uint* pnCurrentConflict, uint* pcConflicts, uint* pcRemainingForApplyToAll);
+
+            [VtblIndex(4)]
+            HRESULT GetPresenterNextStep(SYNCMGR_PRESENTER_NEXT_STEP* pnPresenterNextStep);
+
+            [VtblIndex(5)]
+            HRESULT GetPresenterChoice(SYNCMGR_PRESENTER_CHOICE* pnPresenterChoice, BOOL* pfApplyToAll);
+
+            [VtblIndex(6)]
+            HRESULT GetItemChoiceCount(uint* pcChoices);
+
+            [VtblIndex(7)]
+            HRESULT GetItemChoice(uint iChoice, uint* piChoiceIndex);
+
+            [VtblIndex(8)]
+            HRESULT SetPresenterNextStep(SYNCMGR_PRESENTER_NEXT_STEP nPresenterNextStep);
+
+            [VtblIndex(9)]
+            HRESULT SetPresenterChoice(SYNCMGR_PRESENTER_CHOICE nPresenterChoice, BOOL fApplyToAll);
+
+            [VtblIndex(10)]
+            HRESULT SetItemChoices(uint* prgiConflictItemIndexes, uint cChoices);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISyncMgrConflictResolveInfo*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ISyncMgrConflictResolveInfo*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ISyncMgrConflictResolveInfo*, uint> Release;
+
+            [NativeTypeName("HRESULT (UINT *, UINT *, UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISyncMgrConflictResolveInfo*, uint*, uint*, uint*, int> GetIterationInfo;
+
+            [NativeTypeName("HRESULT (SYNCMGR_PRESENTER_NEXT_STEP *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISyncMgrConflictResolveInfo*, SYNCMGR_PRESENTER_NEXT_STEP*, int> GetPresenterNextStep;
+
+            [NativeTypeName("HRESULT (SYNCMGR_PRESENTER_CHOICE *, BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISyncMgrConflictResolveInfo*, SYNCMGR_PRESENTER_CHOICE*, BOOL*, int> GetPresenterChoice;
+
+            [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISyncMgrConflictResolveInfo*, uint*, int> GetItemChoiceCount;
+
+            [NativeTypeName("HRESULT (UINT, UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISyncMgrConflictResolveInfo*, uint, uint*, int> GetItemChoice;
+
+            [NativeTypeName("HRESULT (SYNCMGR_PRESENTER_NEXT_STEP) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISyncMgrConflictResolveInfo*, SYNCMGR_PRESENTER_NEXT_STEP, int> SetPresenterNextStep;
+
+            [NativeTypeName("HRESULT (SYNCMGR_PRESENTER_CHOICE, BOOL) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISyncMgrConflictResolveInfo*, SYNCMGR_PRESENTER_CHOICE, BOOL, int> SetPresenterChoice;
+
+            [NativeTypeName("HRESULT (UINT *, UINT) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISyncMgrConflictResolveInfo*, uint*, uint, int> SetItemChoices;
         }
     }
 }

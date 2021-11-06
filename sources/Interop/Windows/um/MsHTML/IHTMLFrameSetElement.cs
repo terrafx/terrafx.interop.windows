@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("3050F319-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct IHTMLFrameSetElement : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct IHTMLFrameSetElement
+    public unsafe partial struct IHTMLFrameSetElement : IHTMLFrameSetElement.Interface
     {
         public void** lpVtbl;
 
@@ -205,6 +205,153 @@ namespace TerraFX.Interop
         public HRESULT get_onbeforeunload(VARIANT* p)
         {
             return ((delegate* unmanaged<IHTMLFrameSetElement*, VARIANT*, int>)(lpVtbl[26]))((IHTMLFrameSetElement*)Unsafe.AsPointer(ref this), p);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT put_rows([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(8)]
+            HRESULT get_rows([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(9)]
+            HRESULT put_cols([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(10)]
+            HRESULT get_cols([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(11)]
+            HRESULT put_border(VARIANT v);
+
+            [VtblIndex(12)]
+            HRESULT get_border(VARIANT* p);
+
+            [VtblIndex(13)]
+            HRESULT put_borderColor(VARIANT v);
+
+            [VtblIndex(14)]
+            HRESULT get_borderColor(VARIANT* p);
+
+            [VtblIndex(15)]
+            HRESULT put_frameBorder([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(16)]
+            HRESULT get_frameBorder([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(17)]
+            HRESULT put_frameSpacing(VARIANT v);
+
+            [VtblIndex(18)]
+            HRESULT get_frameSpacing(VARIANT* p);
+
+            [VtblIndex(19)]
+            HRESULT put_name([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(20)]
+            HRESULT get_name([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(21)]
+            HRESULT put_onload(VARIANT v);
+
+            [VtblIndex(22)]
+            HRESULT get_onload(VARIANT* p);
+
+            [VtblIndex(23)]
+            HRESULT put_onunload(VARIANT v);
+
+            [VtblIndex(24)]
+            HRESULT get_onunload(VARIANT* p);
+
+            [VtblIndex(25)]
+            HRESULT put_onbeforeunload(VARIANT v);
+
+            [VtblIndex(26)]
+            HRESULT get_onbeforeunload(VARIANT* p);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLFrameSetElement*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLFrameSetElement*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLFrameSetElement*, uint> Release;
+
+            [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLFrameSetElement*, uint*, int> GetTypeInfoCount;
+
+            [NativeTypeName("HRESULT (UINT, LCID, ITypeInfo **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLFrameSetElement*, uint, uint, ITypeInfo**, int> GetTypeInfo;
+
+            [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLFrameSetElement*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+
+            [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLFrameSetElement*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
+
+            [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLFrameSetElement*, ushort*, int> put_rows;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLFrameSetElement*, ushort**, int> get_rows;
+
+            [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLFrameSetElement*, ushort*, int> put_cols;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLFrameSetElement*, ushort**, int> get_cols;
+
+            [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLFrameSetElement*, VARIANT, int> put_border;
+
+            [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLFrameSetElement*, VARIANT*, int> get_border;
+
+            [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLFrameSetElement*, VARIANT, int> put_borderColor;
+
+            [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLFrameSetElement*, VARIANT*, int> get_borderColor;
+
+            [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLFrameSetElement*, ushort*, int> put_frameBorder;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLFrameSetElement*, ushort**, int> get_frameBorder;
+
+            [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLFrameSetElement*, VARIANT, int> put_frameSpacing;
+
+            [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLFrameSetElement*, VARIANT*, int> get_frameSpacing;
+
+            [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLFrameSetElement*, ushort*, int> put_name;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLFrameSetElement*, ushort**, int> get_name;
+
+            [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLFrameSetElement*, VARIANT, int> put_onload;
+
+            [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLFrameSetElement*, VARIANT*, int> get_onload;
+
+            [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLFrameSetElement*, VARIANT, int> put_onunload;
+
+            [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLFrameSetElement*, VARIANT*, int> get_onunload;
+
+            [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLFrameSetElement*, VARIANT, int> put_onbeforeunload;
+
+            [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLFrameSetElement*, VARIANT*, int> get_onbeforeunload;
         }
     }
 }

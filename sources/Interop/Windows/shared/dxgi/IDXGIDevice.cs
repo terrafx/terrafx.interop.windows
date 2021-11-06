@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("54EC77FA-1377-44E6-8C32-88FD5F44C84C")]
     [NativeTypeName("struct IDXGIDevice : IDXGIObject")]
     [NativeInheritance("IDXGIObject")]
-    public unsafe partial struct IDXGIDevice
+    public unsafe partial struct IDXGIDevice : IDXGIDevice.Interface
     {
         public void** lpVtbl;
 
@@ -100,6 +100,63 @@ namespace TerraFX.Interop
         public HRESULT GetGPUThreadPriority(int* pPriority)
         {
             return ((delegate* unmanaged<IDXGIDevice*, int*, int>)(lpVtbl[11]))((IDXGIDevice*)Unsafe.AsPointer(ref this), pPriority);
+        }
+
+        public interface Interface : IDXGIObject.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT GetAdapter(IDXGIAdapter** pAdapter);
+
+            [VtblIndex(8)]
+            HRESULT CreateSurface([NativeTypeName("const DXGI_SURFACE_DESC *")] DXGI_SURFACE_DESC* pDesc, uint NumSurfaces, [NativeTypeName("DXGI_USAGE")] uint Usage, [NativeTypeName("const DXGI_SHARED_RESOURCE *")] DXGI_SHARED_RESOURCE* pSharedResource, IDXGISurface** ppSurface);
+
+            [VtblIndex(9)]
+            HRESULT QueryResourceResidency([NativeTypeName("IUnknown *const *")] IUnknown** ppResources, DXGI_RESIDENCY* pResidencyStatus, uint NumResources);
+
+            [VtblIndex(10)]
+            HRESULT SetGPUThreadPriority(int Priority);
+
+            [VtblIndex(11)]
+            HRESULT GetGPUThreadPriority(int* pPriority);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDXGIDevice*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDXGIDevice*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDXGIDevice*, uint> Release;
+
+            [NativeTypeName("HRESULT (const GUID &, UINT, const void *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDXGIDevice*, Guid*, uint, void*, int> SetPrivateData;
+
+            [NativeTypeName("HRESULT (const GUID &, const IUnknown *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDXGIDevice*, Guid*, IUnknown*, int> SetPrivateDataInterface;
+
+            [NativeTypeName("HRESULT (const GUID &, UINT *, void *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDXGIDevice*, Guid*, uint*, void*, int> GetPrivateData;
+
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDXGIDevice*, Guid*, void**, int> GetParent;
+
+            [NativeTypeName("HRESULT (IDXGIAdapter **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDXGIDevice*, IDXGIAdapter**, int> GetAdapter;
+
+            [NativeTypeName("HRESULT (const DXGI_SURFACE_DESC *, UINT, DXGI_USAGE, const DXGI_SHARED_RESOURCE *, IDXGISurface **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDXGIDevice*, DXGI_SURFACE_DESC*, uint, uint, DXGI_SHARED_RESOURCE*, IDXGISurface**, int> CreateSurface;
+
+            [NativeTypeName("HRESULT (IUnknown *const *, DXGI_RESIDENCY *, UINT) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDXGIDevice*, IUnknown**, DXGI_RESIDENCY*, uint, int> QueryResourceResidency;
+
+            [NativeTypeName("HRESULT (INT) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDXGIDevice*, int, int> SetGPUThreadPriority;
+
+            [NativeTypeName("HRESULT (INT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDXGIDevice*, int*, int> GetGPUThreadPriority;
         }
     }
 }

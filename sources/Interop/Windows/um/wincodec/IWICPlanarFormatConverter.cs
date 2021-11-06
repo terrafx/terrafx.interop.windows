@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("BEBEE9CB-83B0-4DCC-8132-B0AAA55EAC96")]
     [NativeTypeName("struct IWICPlanarFormatConverter : IWICBitmapSource")]
     [NativeInheritance("IWICBitmapSource")]
-    public unsafe partial struct IWICPlanarFormatConverter
+    public unsafe partial struct IWICPlanarFormatConverter : IWICPlanarFormatConverter.Interface
     {
         public void** lpVtbl;
 
@@ -86,6 +86,48 @@ namespace TerraFX.Interop
         public HRESULT CanConvert([NativeTypeName("const WICPixelFormatGUID *")] Guid* pSrcPixelFormats, uint cSrcPlanes, [NativeTypeName("REFWICPixelFormatGUID")] Guid* dstPixelFormat, BOOL* pfCanConvert)
         {
             return ((delegate* unmanaged<IWICPlanarFormatConverter*, Guid*, uint, Guid*, BOOL*, int>)(lpVtbl[9]))((IWICPlanarFormatConverter*)Unsafe.AsPointer(ref this), pSrcPixelFormats, cSrcPlanes, dstPixelFormat, pfCanConvert);
+        }
+
+        public interface Interface : IWICBitmapSource.Interface
+        {
+            [VtblIndex(8)]
+            HRESULT Initialize(IWICBitmapSource** ppPlanes, uint cPlanes, [NativeTypeName("REFWICPixelFormatGUID")] Guid* dstFormat, WICBitmapDitherType dither, IWICPalette* pIPalette, double alphaThresholdPercent, WICBitmapPaletteType paletteTranslate);
+
+            [VtblIndex(9)]
+            HRESULT CanConvert([NativeTypeName("const WICPixelFormatGUID *")] Guid* pSrcPixelFormats, uint cSrcPlanes, [NativeTypeName("REFWICPixelFormatGUID")] Guid* dstPixelFormat, BOOL* pfCanConvert);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWICPlanarFormatConverter*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IWICPlanarFormatConverter*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IWICPlanarFormatConverter*, uint> Release;
+
+            [NativeTypeName("HRESULT (UINT *, UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWICPlanarFormatConverter*, uint*, uint*, int> GetSize;
+
+            [NativeTypeName("HRESULT (WICPixelFormatGUID *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWICPlanarFormatConverter*, Guid*, int> GetPixelFormat;
+
+            [NativeTypeName("HRESULT (double *, double *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWICPlanarFormatConverter*, double*, double*, int> GetResolution;
+
+            [NativeTypeName("HRESULT (IWICPalette *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWICPlanarFormatConverter*, IWICPalette*, int> CopyPalette;
+
+            [NativeTypeName("HRESULT (const WICRect *, UINT, UINT, BYTE *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWICPlanarFormatConverter*, WICRect*, uint, uint, byte*, int> CopyPixels;
+
+            [NativeTypeName("HRESULT (IWICBitmapSource **, UINT, REFWICPixelFormatGUID, WICBitmapDitherType, IWICPalette *, double, WICBitmapPaletteType) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWICPlanarFormatConverter*, IWICBitmapSource**, uint, Guid*, WICBitmapDitherType, IWICPalette*, double, WICBitmapPaletteType, int> Initialize;
+
+            [NativeTypeName("HRESULT (const WICPixelFormatGUID *, UINT, REFWICPixelFormatGUID, BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWICPlanarFormatConverter*, Guid*, uint, Guid*, BOOL*, int> CanConvert;
         }
     }
 }

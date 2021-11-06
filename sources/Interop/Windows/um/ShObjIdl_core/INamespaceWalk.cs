@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("57CED8A7-3F4A-432C-9350-30F24483F74F")]
     [NativeTypeName("struct INamespaceWalk : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct INamespaceWalk
+    public unsafe partial struct INamespaceWalk : INamespaceWalk.Interface
     {
         public void** lpVtbl;
 
@@ -51,6 +51,33 @@ namespace TerraFX.Interop
         public HRESULT GetIDArrayResult(uint* pcItems, [NativeTypeName("LPITEMIDLIST **")] ITEMIDLIST*** prgpidl)
         {
             return ((delegate* unmanaged<INamespaceWalk*, uint*, ITEMIDLIST***, int>)(lpVtbl[4]))((INamespaceWalk*)Unsafe.AsPointer(ref this), pcItems, prgpidl);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT Walk(IUnknown* punkToWalk, [NativeTypeName("DWORD")] uint dwFlags, int cDepth, INamespaceWalkCB* pnswcb);
+
+            [VtblIndex(4)]
+            HRESULT GetIDArrayResult(uint* pcItems, [NativeTypeName("LPITEMIDLIST **")] ITEMIDLIST*** prgpidl);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<INamespaceWalk*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<INamespaceWalk*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<INamespaceWalk*, uint> Release;
+
+            [NativeTypeName("HRESULT (IUnknown *, DWORD, int, INamespaceWalkCB *) __attribute__((stdcall))")]
+            public delegate* unmanaged<INamespaceWalk*, IUnknown*, uint, int, INamespaceWalkCB*, int> Walk;
+
+            [NativeTypeName("HRESULT (UINT *, LPITEMIDLIST **) __attribute__((stdcall))")]
+            public delegate* unmanaged<INamespaceWalk*, uint*, ITEMIDLIST***, int> GetIDArrayResult;
         }
     }
 }

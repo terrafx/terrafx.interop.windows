@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("7CFF842C-7E97-4807-8304-910DD8F7C051")]
     [NativeTypeName("struct IFileSystemImage3 : IFileSystemImage2")]
     [NativeInheritance("IFileSystemImage2")]
-    public unsafe partial struct IFileSystemImage3
+    public unsafe partial struct IFileSystemImage3 : IFileSystemImage3.Interface
     {
         public void** lpVtbl;
 
@@ -450,6 +450,207 @@ namespace TerraFX.Interop
         public HRESULT ProbeSpecificFileSystem(FsiFileSystems fileSystemToProbe, [NativeTypeName("VARIANT_BOOL *")] short* isAppendable)
         {
             return ((delegate* unmanaged<IFileSystemImage3*, FsiFileSystems, short*, int>)(lpVtbl[61]))((IFileSystemImage3*)Unsafe.AsPointer(ref this), fileSystemToProbe, isAppendable);
+        }
+
+        public interface Interface : IFileSystemImage2.Interface
+        {
+            [VtblIndex(59)]
+            HRESULT get_CreateRedundantUdfMetadataFiles([NativeTypeName("VARIANT_BOOL *")] short* pVal);
+
+            [VtblIndex(60)]
+            HRESULT put_CreateRedundantUdfMetadataFiles([NativeTypeName("VARIANT_BOOL")] short newVal);
+
+            [VtblIndex(61)]
+            HRESULT ProbeSpecificFileSystem(FsiFileSystems fileSystemToProbe, [NativeTypeName("VARIANT_BOOL *")] short* isAppendable);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFileSystemImage3*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IFileSystemImage3*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IFileSystemImage3*, uint> Release;
+
+            [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFileSystemImage3*, uint*, int> GetTypeInfoCount;
+
+            [NativeTypeName("HRESULT (UINT, LCID, ITypeInfo **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFileSystemImage3*, uint, uint, ITypeInfo**, int> GetTypeInfo;
+
+            [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFileSystemImage3*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+
+            [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFileSystemImage3*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
+
+            [NativeTypeName("HRESULT (IFsiDirectoryItem **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFileSystemImage3*, IFsiDirectoryItem**, int> get_Root;
+
+            [NativeTypeName("HRESULT (LONG *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFileSystemImage3*, int*, int> get_SessionStartBlock;
+
+            [NativeTypeName("HRESULT (LONG) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFileSystemImage3*, int, int> put_SessionStartBlock;
+
+            [NativeTypeName("HRESULT (LONG *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFileSystemImage3*, int*, int> get_FreeMediaBlocks;
+
+            [NativeTypeName("HRESULT (LONG) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFileSystemImage3*, int, int> put_FreeMediaBlocks;
+
+            [NativeTypeName("HRESULT (IDiscRecorder2 *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFileSystemImage3*, IDiscRecorder2*, int> SetMaxMediaBlocksFromDevice;
+
+            [NativeTypeName("HRESULT (LONG *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFileSystemImage3*, int*, int> get_UsedBlocks;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFileSystemImage3*, ushort**, int> get_VolumeName;
+
+            [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFileSystemImage3*, ushort*, int> put_VolumeName;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFileSystemImage3*, ushort**, int> get_ImportedVolumeName;
+
+            [NativeTypeName("HRESULT (IBootOptions **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFileSystemImage3*, IBootOptions**, int> get_BootImageOptions;
+
+            [NativeTypeName("HRESULT (IBootOptions *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFileSystemImage3*, IBootOptions*, int> put_BootImageOptions;
+
+            [NativeTypeName("HRESULT (LONG *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFileSystemImage3*, int*, int> get_FileCount;
+
+            [NativeTypeName("HRESULT (LONG *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFileSystemImage3*, int*, int> get_DirectoryCount;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFileSystemImage3*, ushort**, int> get_WorkingDirectory;
+
+            [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFileSystemImage3*, ushort*, int> put_WorkingDirectory;
+
+            [NativeTypeName("HRESULT (LONG *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFileSystemImage3*, int*, int> get_ChangePoint;
+
+            [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFileSystemImage3*, short*, int> get_StrictFileSystemCompliance;
+
+            [NativeTypeName("HRESULT (VARIANT_BOOL) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFileSystemImage3*, short, int> put_StrictFileSystemCompliance;
+
+            [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFileSystemImage3*, short*, int> get_UseRestrictedCharacterSet;
+
+            [NativeTypeName("HRESULT (VARIANT_BOOL) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFileSystemImage3*, short, int> put_UseRestrictedCharacterSet;
+
+            [NativeTypeName("HRESULT (FsiFileSystems *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFileSystemImage3*, FsiFileSystems*, int> get_FileSystemsToCreate;
+
+            [NativeTypeName("HRESULT (FsiFileSystems) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFileSystemImage3*, FsiFileSystems, int> put_FileSystemsToCreate;
+
+            [NativeTypeName("HRESULT (FsiFileSystems *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFileSystemImage3*, FsiFileSystems*, int> get_FileSystemsSupported;
+
+            [NativeTypeName("HRESULT (LONG) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFileSystemImage3*, int, int> put_UDFRevision;
+
+            [NativeTypeName("HRESULT (LONG *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFileSystemImage3*, int*, int> get_UDFRevision;
+
+            [NativeTypeName("HRESULT (SAFEARRAY **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFileSystemImage3*, SAFEARRAY**, int> get_UDFRevisionsSupported;
+
+            [NativeTypeName("HRESULT (IDiscRecorder2 *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFileSystemImage3*, IDiscRecorder2*, int> ChooseImageDefaults;
+
+            [NativeTypeName("HRESULT (IMAPI_MEDIA_PHYSICAL_TYPE) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFileSystemImage3*, IMAPI_MEDIA_PHYSICAL_TYPE, int> ChooseImageDefaultsForMediaType;
+
+            [NativeTypeName("HRESULT (LONG) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFileSystemImage3*, int, int> put_ISO9660InterchangeLevel;
+
+            [NativeTypeName("HRESULT (LONG *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFileSystemImage3*, int*, int> get_ISO9660InterchangeLevel;
+
+            [NativeTypeName("HRESULT (SAFEARRAY **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFileSystemImage3*, SAFEARRAY**, int> get_ISO9660InterchangeLevelsSupported;
+
+            [NativeTypeName("HRESULT (IFileSystemImageResult **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFileSystemImage3*, IFileSystemImageResult**, int> CreateResultImage;
+
+            [NativeTypeName("HRESULT (BSTR, FsiItemType *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFileSystemImage3*, ushort*, FsiItemType*, int> Exists;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFileSystemImage3*, ushort**, int> CalculateDiscIdentifier;
+
+            [NativeTypeName("HRESULT (IDiscRecorder2 *, FsiFileSystems *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFileSystemImage3*, IDiscRecorder2*, FsiFileSystems*, int> IdentifyFileSystemsOnDisc;
+
+            [NativeTypeName("HRESULT (FsiFileSystems, FsiFileSystems *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFileSystemImage3*, FsiFileSystems, FsiFileSystems*, int> GetDefaultFileSystemForImport;
+
+            [NativeTypeName("HRESULT (FsiFileSystems *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFileSystemImage3*, FsiFileSystems*, int> ImportFileSystem;
+
+            [NativeTypeName("HRESULT (FsiFileSystems) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFileSystemImage3*, FsiFileSystems, int> ImportSpecificFileSystem;
+
+            [NativeTypeName("HRESULT (LONG) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFileSystemImage3*, int, int> RollbackToChangePoint;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IFileSystemImage3*, int> LockInChangePoint;
+
+            [NativeTypeName("HRESULT (BSTR, IFsiDirectoryItem **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFileSystemImage3*, ushort*, IFsiDirectoryItem**, int> CreateDirectoryItem;
+
+            [NativeTypeName("HRESULT (BSTR, IFsiFileItem **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFileSystemImage3*, ushort*, IFsiFileItem**, int> CreateFileItem;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFileSystemImage3*, ushort**, int> get_VolumeNameUDF;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFileSystemImage3*, ushort**, int> get_VolumeNameJoliet;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFileSystemImage3*, ushort**, int> get_VolumeNameISO9660;
+
+            [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFileSystemImage3*, short*, int> get_StageFiles;
+
+            [NativeTypeName("HRESULT (VARIANT_BOOL) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFileSystemImage3*, short, int> put_StageFiles;
+
+            [NativeTypeName("HRESULT (SAFEARRAY **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFileSystemImage3*, SAFEARRAY**, int> get_MultisessionInterfaces;
+
+            [NativeTypeName("HRESULT (SAFEARRAY *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFileSystemImage3*, SAFEARRAY*, int> put_MultisessionInterfaces;
+
+            [NativeTypeName("HRESULT (SAFEARRAY **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFileSystemImage3*, SAFEARRAY**, int> get_BootImageOptionsArray;
+
+            [NativeTypeName("HRESULT (SAFEARRAY *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFileSystemImage3*, SAFEARRAY*, int> put_BootImageOptionsArray;
+
+            [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFileSystemImage3*, short*, int> get_CreateRedundantUdfMetadataFiles;
+
+            [NativeTypeName("HRESULT (VARIANT_BOOL) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFileSystemImage3*, short, int> put_CreateRedundantUdfMetadataFiles;
+
+            [NativeTypeName("HRESULT (FsiFileSystems, VARIANT_BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFileSystemImage3*, FsiFileSystems, short*, int> ProbeSpecificFileSystem;
         }
     }
 }

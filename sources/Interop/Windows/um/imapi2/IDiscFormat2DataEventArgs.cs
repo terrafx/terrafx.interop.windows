@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("2735413D-7F64-5B0F-8F00-5D77AFBE261E")]
     [NativeTypeName("struct IDiscFormat2DataEventArgs : IWriteEngine2EventArgs")]
     [NativeInheritance("IWriteEngine2EventArgs")]
-    public unsafe partial struct IDiscFormat2DataEventArgs
+    public unsafe partial struct IDiscFormat2DataEventArgs : IDiscFormat2DataEventArgs.Interface
     {
         public void** lpVtbl;
 
@@ -142,6 +142,78 @@ namespace TerraFX.Interop
         public HRESULT get_CurrentAction(IMAPI_FORMAT2_DATA_WRITE_ACTION* value)
         {
             return ((delegate* unmanaged<IDiscFormat2DataEventArgs*, IMAPI_FORMAT2_DATA_WRITE_ACTION*, int>)(lpVtbl[17]))((IDiscFormat2DataEventArgs*)Unsafe.AsPointer(ref this), value);
+        }
+
+        public interface Interface : IWriteEngine2EventArgs.Interface
+        {
+            [VtblIndex(14)]
+            HRESULT get_ElapsedTime([NativeTypeName("LONG *")] int* value);
+
+            [VtblIndex(15)]
+            HRESULT get_RemainingTime([NativeTypeName("LONG *")] int* value);
+
+            [VtblIndex(16)]
+            HRESULT get_TotalTime([NativeTypeName("LONG *")] int* value);
+
+            [VtblIndex(17)]
+            HRESULT get_CurrentAction(IMAPI_FORMAT2_DATA_WRITE_ACTION* value);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiscFormat2DataEventArgs*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiscFormat2DataEventArgs*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiscFormat2DataEventArgs*, uint> Release;
+
+            [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiscFormat2DataEventArgs*, uint*, int> GetTypeInfoCount;
+
+            [NativeTypeName("HRESULT (UINT, LCID, ITypeInfo **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiscFormat2DataEventArgs*, uint, uint, ITypeInfo**, int> GetTypeInfo;
+
+            [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiscFormat2DataEventArgs*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+
+            [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiscFormat2DataEventArgs*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
+
+            [NativeTypeName("HRESULT (LONG *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiscFormat2DataEventArgs*, int*, int> get_StartLba;
+
+            [NativeTypeName("HRESULT (LONG *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiscFormat2DataEventArgs*, int*, int> get_SectorCount;
+
+            [NativeTypeName("HRESULT (LONG *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiscFormat2DataEventArgs*, int*, int> get_LastReadLba;
+
+            [NativeTypeName("HRESULT (LONG *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiscFormat2DataEventArgs*, int*, int> get_LastWrittenLba;
+
+            [NativeTypeName("HRESULT (LONG *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiscFormat2DataEventArgs*, int*, int> get_TotalSystemBuffer;
+
+            [NativeTypeName("HRESULT (LONG *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiscFormat2DataEventArgs*, int*, int> get_UsedSystemBuffer;
+
+            [NativeTypeName("HRESULT (LONG *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiscFormat2DataEventArgs*, int*, int> get_FreeSystemBuffer;
+
+            [NativeTypeName("HRESULT (LONG *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiscFormat2DataEventArgs*, int*, int> get_ElapsedTime;
+
+            [NativeTypeName("HRESULT (LONG *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiscFormat2DataEventArgs*, int*, int> get_RemainingTime;
+
+            [NativeTypeName("HRESULT (LONG *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiscFormat2DataEventArgs*, int*, int> get_TotalTime;
+
+            [NativeTypeName("HRESULT (IMAPI_FORMAT2_DATA_WRITE_ACTION *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiscFormat2DataEventArgs*, IMAPI_FORMAT2_DATA_WRITE_ACTION*, int> get_CurrentAction;
         }
     }
 }

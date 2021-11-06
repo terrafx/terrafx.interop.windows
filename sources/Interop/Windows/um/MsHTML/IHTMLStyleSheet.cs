@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("3050F2E3-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct IHTMLStyleSheet : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct IHTMLStyleSheet
+    public unsafe partial struct IHTMLStyleSheet : IHTMLStyleSheet.Interface
     {
         public void** lpVtbl;
 
@@ -212,6 +212,159 @@ namespace TerraFX.Interop
         public HRESULT get_rules(IHTMLStyleSheetRulesCollection** p)
         {
             return ((delegate* unmanaged<IHTMLStyleSheet*, IHTMLStyleSheetRulesCollection**, int>)(lpVtbl[27]))((IHTMLStyleSheet*)Unsafe.AsPointer(ref this), p);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT put_title([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(8)]
+            HRESULT get_title([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(9)]
+            HRESULT get_parentStyleSheet(IHTMLStyleSheet** p);
+
+            [VtblIndex(10)]
+            HRESULT get_owningElement(IHTMLElement** p);
+
+            [VtblIndex(11)]
+            HRESULT put_disabled([NativeTypeName("VARIANT_BOOL")] short v);
+
+            [VtblIndex(12)]
+            HRESULT get_disabled([NativeTypeName("VARIANT_BOOL *")] short* p);
+
+            [VtblIndex(13)]
+            HRESULT get_readOnly([NativeTypeName("VARIANT_BOOL *")] short* p);
+
+            [VtblIndex(14)]
+            HRESULT get_imports(IHTMLStyleSheetsCollection** p);
+
+            [VtblIndex(15)]
+            HRESULT put_href([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(16)]
+            HRESULT get_href([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(17)]
+            HRESULT get_type([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(18)]
+            HRESULT get_id([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(19)]
+            HRESULT addImport([NativeTypeName("BSTR")] ushort* bstrURL, [NativeTypeName("long")] int lIndex, [NativeTypeName("long *")] int* plIndex);
+
+            [VtblIndex(20)]
+            HRESULT addRule([NativeTypeName("BSTR")] ushort* bstrSelector, [NativeTypeName("BSTR")] ushort* bstrStyle, [NativeTypeName("long")] int lIndex, [NativeTypeName("long *")] int* plNewIndex);
+
+            [VtblIndex(21)]
+            HRESULT removeImport([NativeTypeName("long")] int lIndex);
+
+            [VtblIndex(22)]
+            HRESULT removeRule([NativeTypeName("long")] int lIndex);
+
+            [VtblIndex(23)]
+            HRESULT put_media([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(24)]
+            HRESULT get_media([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(25)]
+            HRESULT put_cssText([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(26)]
+            HRESULT get_cssText([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(27)]
+            HRESULT get_rules(IHTMLStyleSheetRulesCollection** p);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLStyleSheet*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLStyleSheet*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLStyleSheet*, uint> Release;
+
+            [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLStyleSheet*, uint*, int> GetTypeInfoCount;
+
+            [NativeTypeName("HRESULT (UINT, LCID, ITypeInfo **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLStyleSheet*, uint, uint, ITypeInfo**, int> GetTypeInfo;
+
+            [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLStyleSheet*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+
+            [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLStyleSheet*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
+
+            [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLStyleSheet*, ushort*, int> put_title;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLStyleSheet*, ushort**, int> get_title;
+
+            [NativeTypeName("HRESULT (IHTMLStyleSheet **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLStyleSheet*, IHTMLStyleSheet**, int> get_parentStyleSheet;
+
+            [NativeTypeName("HRESULT (IHTMLElement **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLStyleSheet*, IHTMLElement**, int> get_owningElement;
+
+            [NativeTypeName("HRESULT (VARIANT_BOOL) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLStyleSheet*, short, int> put_disabled;
+
+            [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLStyleSheet*, short*, int> get_disabled;
+
+            [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLStyleSheet*, short*, int> get_readOnly;
+
+            [NativeTypeName("HRESULT (IHTMLStyleSheetsCollection **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLStyleSheet*, IHTMLStyleSheetsCollection**, int> get_imports;
+
+            [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLStyleSheet*, ushort*, int> put_href;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLStyleSheet*, ushort**, int> get_href;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLStyleSheet*, ushort**, int> get_type;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLStyleSheet*, ushort**, int> get_id;
+
+            [NativeTypeName("HRESULT (BSTR, long, long *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLStyleSheet*, ushort*, int, int*, int> addImport;
+
+            [NativeTypeName("HRESULT (BSTR, BSTR, long, long *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLStyleSheet*, ushort*, ushort*, int, int*, int> addRule;
+
+            [NativeTypeName("HRESULT (long) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLStyleSheet*, int, int> removeImport;
+
+            [NativeTypeName("HRESULT (long) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLStyleSheet*, int, int> removeRule;
+
+            [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLStyleSheet*, ushort*, int> put_media;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLStyleSheet*, ushort**, int> get_media;
+
+            [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLStyleSheet*, ushort*, int> put_cssText;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLStyleSheet*, ushort**, int> get_cssText;
+
+            [NativeTypeName("HRESULT (IHTMLStyleSheetRulesCollection **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLStyleSheet*, IHTMLStyleSheetRulesCollection**, int> get_rules;
         }
     }
 }

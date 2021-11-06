@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("73DB1241-1E85-4581-8E4F-A81E1D0F8C57")]
     [NativeTypeName("struct IAttachmentExecute : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IAttachmentExecute
+    public unsafe partial struct IAttachmentExecute : IAttachmentExecute.Interface
     {
         public void** lpVtbl;
 
@@ -121,6 +121,93 @@ namespace TerraFX.Interop
         public HRESULT ClearClientState()
         {
             return ((delegate* unmanaged<IAttachmentExecute*, int>)(lpVtbl[14]))((IAttachmentExecute*)Unsafe.AsPointer(ref this));
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT SetClientTitle([NativeTypeName("LPCWSTR")] ushort* pszTitle);
+
+            [VtblIndex(4)]
+            HRESULT SetClientGuid([NativeTypeName("const GUID &")] Guid* guid);
+
+            [VtblIndex(5)]
+            HRESULT SetLocalPath([NativeTypeName("LPCWSTR")] ushort* pszLocalPath);
+
+            [VtblIndex(6)]
+            HRESULT SetFileName([NativeTypeName("LPCWSTR")] ushort* pszFileName);
+
+            [VtblIndex(7)]
+            HRESULT SetSource([NativeTypeName("LPCWSTR")] ushort* pszSource);
+
+            [VtblIndex(8)]
+            HRESULT SetReferrer([NativeTypeName("LPCWSTR")] ushort* pszReferrer);
+
+            [VtblIndex(9)]
+            HRESULT CheckPolicy();
+
+            [VtblIndex(10)]
+            HRESULT Prompt(HWND hwnd, ATTACHMENT_PROMPT prompt, ATTACHMENT_ACTION* paction);
+
+            [VtblIndex(11)]
+            HRESULT Save();
+
+            [VtblIndex(12)]
+            HRESULT Execute(HWND hwnd, [NativeTypeName("LPCWSTR")] ushort* pszVerb, HANDLE* phProcess);
+
+            [VtblIndex(13)]
+            HRESULT SaveWithUI(HWND hwnd);
+
+            [VtblIndex(14)]
+            HRESULT ClearClientState();
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAttachmentExecute*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IAttachmentExecute*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IAttachmentExecute*, uint> Release;
+
+            [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAttachmentExecute*, ushort*, int> SetClientTitle;
+
+            [NativeTypeName("HRESULT (const GUID &) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAttachmentExecute*, Guid*, int> SetClientGuid;
+
+            [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAttachmentExecute*, ushort*, int> SetLocalPath;
+
+            [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAttachmentExecute*, ushort*, int> SetFileName;
+
+            [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAttachmentExecute*, ushort*, int> SetSource;
+
+            [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAttachmentExecute*, ushort*, int> SetReferrer;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IAttachmentExecute*, int> CheckPolicy;
+
+            [NativeTypeName("HRESULT (HWND, ATTACHMENT_PROMPT, ATTACHMENT_ACTION *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAttachmentExecute*, HWND, ATTACHMENT_PROMPT, ATTACHMENT_ACTION*, int> Prompt;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IAttachmentExecute*, int> Save;
+
+            [NativeTypeName("HRESULT (HWND, LPCWSTR, HANDLE *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAttachmentExecute*, HWND, ushort*, HANDLE*, int> Execute;
+
+            [NativeTypeName("HRESULT (HWND) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAttachmentExecute*, HWND, int> SaveWithUI;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IAttachmentExecute*, int> ClearClientState;
         }
     }
 }

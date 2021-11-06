@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("A0884F9A-D2BE-4355-AA5D-5901281AD1D2")]
     [NativeTypeName("struct IDMLDevice1 : IDMLDevice")]
     [NativeInheritance("IDMLDevice")]
-    public unsafe partial struct IDMLDevice1
+    public unsafe partial struct IDMLDevice1 : IDMLDevice1.Interface
     {
         public void** lpVtbl;
 
@@ -142,6 +142,69 @@ namespace TerraFX.Interop
         public HRESULT CompileGraph([NativeTypeName("const DML_GRAPH_DESC *")] DML_GRAPH_DESC* desc, DML_EXECUTION_FLAGS flags, [NativeTypeName("const IID &")] Guid* riid, void** ppv)
         {
             return ((delegate* unmanaged<IDMLDevice1*, DML_GRAPH_DESC*, DML_EXECUTION_FLAGS, Guid*, void**, int>)(lpVtbl[17]))((IDMLDevice1*)Unsafe.AsPointer(ref this), desc, flags, riid, ppv);
+        }
+
+        public interface Interface : IDMLDevice.Interface
+        {
+            [VtblIndex(17)]
+            HRESULT CompileGraph([NativeTypeName("const DML_GRAPH_DESC *")] DML_GRAPH_DESC* desc, DML_EXECUTION_FLAGS flags, [NativeTypeName("const IID &")] Guid* riid, void** ppv);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDMLDevice1*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDMLDevice1*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDMLDevice1*, uint> Release;
+
+            [NativeTypeName("HRESULT (const GUID &, UINT *, void *) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDMLDevice1*, Guid*, uint*, void*, int> GetPrivateData;
+
+            [NativeTypeName("HRESULT (const GUID &, UINT, const void *) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDMLDevice1*, Guid*, uint, void*, int> SetPrivateData;
+
+            [NativeTypeName("HRESULT (const GUID &, IUnknown *) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDMLDevice1*, Guid*, IUnknown*, int> SetPrivateDataInterface;
+
+            [NativeTypeName("HRESULT (PCWSTR) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDMLDevice1*, ushort*, int> SetName;
+
+            [NativeTypeName("HRESULT (DML_FEATURE, UINT, const void *, UINT, void *) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDMLDevice1*, DML_FEATURE, uint, void*, uint, void*, int> CheckFeatureSupport;
+
+            [NativeTypeName("HRESULT (const DML_OPERATOR_DESC *, const IID &, void **) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDMLDevice1*, DML_OPERATOR_DESC*, Guid*, void**, int> CreateOperator;
+
+            [NativeTypeName("HRESULT (IDMLOperator *, DML_EXECUTION_FLAGS, const IID &, void **) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDMLDevice1*, IDMLOperator*, DML_EXECUTION_FLAGS, Guid*, void**, int> CompileOperator;
+
+            [NativeTypeName("HRESULT (UINT, IDMLCompiledOperator *const *, const IID &, void **) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDMLDevice1*, uint, IDMLCompiledOperator**, Guid*, void**, int> CreateOperatorInitializer;
+
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDMLDevice1*, Guid*, void**, int> CreateCommandRecorder;
+
+            [NativeTypeName("HRESULT (const DML_BINDING_TABLE_DESC *, const IID &, void **) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDMLDevice1*, DML_BINDING_TABLE_DESC*, Guid*, void**, int> CreateBindingTable;
+
+            [NativeTypeName("HRESULT (UINT, IDMLPageable *const *) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDMLDevice1*, uint, IDMLPageable**, int> Evict;
+
+            [NativeTypeName("HRESULT (UINT, IDMLPageable *const *) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDMLDevice1*, uint, IDMLPageable**, int> MakeResident;
+
+            [NativeTypeName("HRESULT () __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDMLDevice1*, int> GetDeviceRemovedReason;
+
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDMLDevice1*, Guid*, void**, int> GetParentDevice;
+
+            [NativeTypeName("HRESULT (const DML_GRAPH_DESC *, DML_EXECUTION_FLAGS, const IID &, void **) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDMLDevice1*, DML_GRAPH_DESC*, DML_EXECUTION_FLAGS, Guid*, void**, int> CompileGraph;
         }
     }
 }

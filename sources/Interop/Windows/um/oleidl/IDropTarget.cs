@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("00000122-0000-0000-C000-000000000046")]
     [NativeTypeName("struct IDropTarget : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IDropTarget
+    public unsafe partial struct IDropTarget : IDropTarget.Interface
     {
         public void** lpVtbl;
 
@@ -65,6 +65,45 @@ namespace TerraFX.Interop
         public HRESULT Drop(IDataObject* pDataObj, [NativeTypeName("DWORD")] uint grfKeyState, POINTL pt, [NativeTypeName("DWORD *")] uint* pdwEffect)
         {
             return ((delegate* unmanaged<IDropTarget*, IDataObject*, uint, POINTL, uint*, int>)(lpVtbl[6]))((IDropTarget*)Unsafe.AsPointer(ref this), pDataObj, grfKeyState, pt, pdwEffect);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT DragEnter(IDataObject* pDataObj, [NativeTypeName("DWORD")] uint grfKeyState, POINTL pt, [NativeTypeName("DWORD *")] uint* pdwEffect);
+
+            [VtblIndex(4)]
+            HRESULT DragOver([NativeTypeName("DWORD")] uint grfKeyState, POINTL pt, [NativeTypeName("DWORD *")] uint* pdwEffect);
+
+            [VtblIndex(5)]
+            HRESULT DragLeave();
+
+            [VtblIndex(6)]
+            HRESULT Drop(IDataObject* pDataObj, [NativeTypeName("DWORD")] uint grfKeyState, POINTL pt, [NativeTypeName("DWORD *")] uint* pdwEffect);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDropTarget*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDropTarget*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDropTarget*, uint> Release;
+
+            [NativeTypeName("HRESULT (IDataObject *, DWORD, POINTL, DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDropTarget*, IDataObject*, uint, POINTL, uint*, int> DragEnter;
+
+            [NativeTypeName("HRESULT (DWORD, POINTL, DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDropTarget*, uint, POINTL, uint*, int> DragOver;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDropTarget*, int> DragLeave;
+
+            [NativeTypeName("HRESULT (IDataObject *, DWORD, POINTL, DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDropTarget*, IDataObject*, uint, POINTL, uint*, int> Drop;
         }
     }
 }

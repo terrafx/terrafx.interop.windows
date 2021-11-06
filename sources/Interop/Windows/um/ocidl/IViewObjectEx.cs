@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("3AF24292-0C96-11CE-A0CF-00AA00600AB8")]
     [NativeTypeName("struct IViewObjectEx : IViewObject2")]
     [NativeInheritance("IViewObject2")]
-    public unsafe partial struct IViewObjectEx
+    public unsafe partial struct IViewObjectEx : IViewObjectEx.Interface
     {
         public void** lpVtbl;
 
@@ -121,6 +121,72 @@ namespace TerraFX.Interop
         public HRESULT GetNaturalExtent([NativeTypeName("DWORD")] uint dwAspect, [NativeTypeName("LONG")] int lindex, DVTARGETDEVICE* ptd, HDC hicTargetDev, DVEXTENTINFO* pExtentInfo, [NativeTypeName("LPSIZEL")] SIZE* pSizel)
         {
             return ((delegate* unmanaged<IViewObjectEx*, uint, int, DVTARGETDEVICE*, HDC, DVEXTENTINFO*, SIZE*, int>)(lpVtbl[14]))((IViewObjectEx*)Unsafe.AsPointer(ref this), dwAspect, lindex, ptd, hicTargetDev, pExtentInfo, pSizel);
+        }
+
+        public interface Interface : IViewObject2.Interface
+        {
+            [VtblIndex(10)]
+            HRESULT GetRect([NativeTypeName("DWORD")] uint dwAspect, [NativeTypeName("LPRECTL")] RECTL* pRect);
+
+            [VtblIndex(11)]
+            HRESULT GetViewStatus([NativeTypeName("DWORD *")] uint* pdwStatus);
+
+            [VtblIndex(12)]
+            HRESULT QueryHitPoint([NativeTypeName("DWORD")] uint dwAspect, [NativeTypeName("LPCRECT")] RECT* pRectBounds, POINT ptlLoc, [NativeTypeName("LONG")] int lCloseHint, [NativeTypeName("DWORD *")] uint* pHitResult);
+
+            [VtblIndex(13)]
+            HRESULT QueryHitRect([NativeTypeName("DWORD")] uint dwAspect, [NativeTypeName("LPCRECT")] RECT* pRectBounds, [NativeTypeName("LPCRECT")] RECT* pRectLoc, [NativeTypeName("LONG")] int lCloseHint, [NativeTypeName("DWORD *")] uint* pHitResult);
+
+            [VtblIndex(14)]
+            HRESULT GetNaturalExtent([NativeTypeName("DWORD")] uint dwAspect, [NativeTypeName("LONG")] int lindex, DVTARGETDEVICE* ptd, HDC hicTargetDev, DVEXTENTINFO* pExtentInfo, [NativeTypeName("LPSIZEL")] SIZE* pSizel);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IViewObjectEx*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IViewObjectEx*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IViewObjectEx*, uint> Release;
+
+            [NativeTypeName("HRESULT (DWORD, LONG, void *, DVTARGETDEVICE *, HDC, HDC, LPCRECTL, LPCRECTL, BOOL (*)(ULONG_PTR) __attribute__((stdcall)), ULONG_PTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IViewObjectEx*, uint, int, void*, DVTARGETDEVICE*, HDC, HDC, RECTL*, RECTL*, delegate* unmanaged<nuint, BOOL>, nuint, int> Draw;
+
+            [NativeTypeName("HRESULT (DWORD, LONG, void *, DVTARGETDEVICE *, HDC, LOGPALETTE **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IViewObjectEx*, uint, int, void*, DVTARGETDEVICE*, HDC, LOGPALETTE**, int> GetColorSet;
+
+            [NativeTypeName("HRESULT (DWORD, LONG, void *, DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IViewObjectEx*, uint, int, void*, uint*, int> Freeze;
+
+            [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<IViewObjectEx*, uint, int> Unfreeze;
+
+            [NativeTypeName("HRESULT (DWORD, DWORD, IAdviseSink *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IViewObjectEx*, uint, uint, IAdviseSink*, int> SetAdvise;
+
+            [NativeTypeName("HRESULT (DWORD *, DWORD *, IAdviseSink **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IViewObjectEx*, uint*, uint*, IAdviseSink**, int> GetAdvise;
+
+            [NativeTypeName("HRESULT (DWORD, LONG, DVTARGETDEVICE *, LPSIZEL) __attribute__((stdcall))")]
+            public delegate* unmanaged<IViewObjectEx*, uint, int, DVTARGETDEVICE*, SIZE*, int> GetExtent;
+
+            [NativeTypeName("HRESULT (DWORD, LPRECTL) __attribute__((stdcall))")]
+            public delegate* unmanaged<IViewObjectEx*, uint, RECTL*, int> GetRect;
+
+            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IViewObjectEx*, uint*, int> GetViewStatus;
+
+            [NativeTypeName("HRESULT (DWORD, LPCRECT, POINT, LONG, DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IViewObjectEx*, uint, RECT*, POINT, int, uint*, int> QueryHitPoint;
+
+            [NativeTypeName("HRESULT (DWORD, LPCRECT, LPCRECT, LONG, DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IViewObjectEx*, uint, RECT*, RECT*, int, uint*, int> QueryHitRect;
+
+            [NativeTypeName("HRESULT (DWORD, LONG, DVTARGETDEVICE *, HDC, DVEXTENTINFO *, LPSIZEL) __attribute__((stdcall))")]
+            public delegate* unmanaged<IViewObjectEx*, uint, int, DVTARGETDEVICE*, HDC, DVEXTENTINFO*, SIZE*, int> GetNaturalExtent;
         }
     }
 }

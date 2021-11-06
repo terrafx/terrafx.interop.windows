@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("79EAC9E8-BAF9-11CE-8C82-00AA004BA90B")]
     [NativeTypeName("struct IInternetThreadSwitch : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IInternetThreadSwitch
+    public unsafe partial struct IInternetThreadSwitch : IInternetThreadSwitch.Interface
     {
         public void** lpVtbl;
 
@@ -51,6 +51,33 @@ namespace TerraFX.Interop
         public HRESULT Continue()
         {
             return ((delegate* unmanaged<IInternetThreadSwitch*, int>)(lpVtbl[4]))((IInternetThreadSwitch*)Unsafe.AsPointer(ref this));
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT Prepare();
+
+            [VtblIndex(4)]
+            HRESULT Continue();
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IInternetThreadSwitch*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IInternetThreadSwitch*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IInternetThreadSwitch*, uint> Release;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IInternetThreadSwitch*, int> Prepare;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IInternetThreadSwitch*, int> Continue;
         }
     }
 }

@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("2C941FDB-975B-59BE-A960-9A2A262853A5")]
     [NativeTypeName("struct IFsiFileItem : IFsiItem")]
     [NativeInheritance("IFsiItem")]
-    public unsafe partial struct IFsiFileItem
+    public unsafe partial struct IFsiFileItem : IFsiFileItem.Interface
     {
         public void** lpVtbl;
 
@@ -184,6 +184,99 @@ namespace TerraFX.Interop
         public HRESULT put_Data(IStream* newVal)
         {
             return ((delegate* unmanaged<IFsiFileItem*, IStream*, int>)(lpVtbl[23]))((IFsiFileItem*)Unsafe.AsPointer(ref this), newVal);
+        }
+
+        public interface Interface : IFsiItem.Interface
+        {
+            [VtblIndex(19)]
+            HRESULT get_DataSize([NativeTypeName("LONGLONG *")] long* pVal);
+
+            [VtblIndex(20)]
+            HRESULT get_DataSize32BitLow([NativeTypeName("LONG *")] int* pVal);
+
+            [VtblIndex(21)]
+            HRESULT get_DataSize32BitHigh([NativeTypeName("LONG *")] int* pVal);
+
+            [VtblIndex(22)]
+            HRESULT get_Data(IStream** pVal);
+
+            [VtblIndex(23)]
+            HRESULT put_Data(IStream* newVal);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFsiFileItem*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IFsiFileItem*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IFsiFileItem*, uint> Release;
+
+            [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFsiFileItem*, uint*, int> GetTypeInfoCount;
+
+            [NativeTypeName("HRESULT (UINT, LCID, ITypeInfo **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFsiFileItem*, uint, uint, ITypeInfo**, int> GetTypeInfo;
+
+            [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFsiFileItem*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+
+            [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFsiFileItem*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFsiFileItem*, ushort**, int> get_Name;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFsiFileItem*, ushort**, int> get_FullPath;
+
+            [NativeTypeName("HRESULT (DATE *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFsiFileItem*, double*, int> get_CreationTime;
+
+            [NativeTypeName("HRESULT (DATE) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFsiFileItem*, double, int> put_CreationTime;
+
+            [NativeTypeName("HRESULT (DATE *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFsiFileItem*, double*, int> get_LastAccessedTime;
+
+            [NativeTypeName("HRESULT (DATE) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFsiFileItem*, double, int> put_LastAccessedTime;
+
+            [NativeTypeName("HRESULT (DATE *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFsiFileItem*, double*, int> get_LastModifiedTime;
+
+            [NativeTypeName("HRESULT (DATE) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFsiFileItem*, double, int> put_LastModifiedTime;
+
+            [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFsiFileItem*, short*, int> get_IsHidden;
+
+            [NativeTypeName("HRESULT (VARIANT_BOOL) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFsiFileItem*, short, int> put_IsHidden;
+
+            [NativeTypeName("HRESULT (FsiFileSystems, BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFsiFileItem*, FsiFileSystems, ushort**, int> FileSystemName;
+
+            [NativeTypeName("HRESULT (FsiFileSystems, BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFsiFileItem*, FsiFileSystems, ushort**, int> FileSystemPath;
+
+            [NativeTypeName("HRESULT (LONGLONG *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFsiFileItem*, long*, int> get_DataSize;
+
+            [NativeTypeName("HRESULT (LONG *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFsiFileItem*, int*, int> get_DataSize32BitLow;
+
+            [NativeTypeName("HRESULT (LONG *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFsiFileItem*, int*, int> get_DataSize32BitHigh;
+
+            [NativeTypeName("HRESULT (IStream **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFsiFileItem*, IStream**, int> get_Data;
+
+            [NativeTypeName("HRESULT (IStream *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFsiFileItem*, IStream*, int> put_Data;
         }
     }
 }

@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("C7B236CE-EE80-11D0-985F-006008059382")]
     [NativeTypeName("struct IQueryCodePage : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IQueryCodePage
+    public unsafe partial struct IQueryCodePage : IQueryCodePage.Interface
     {
         public void** lpVtbl;
 
@@ -51,6 +51,33 @@ namespace TerraFX.Interop
         public HRESULT SetCodePage(uint uiCodePage)
         {
             return ((delegate* unmanaged<IQueryCodePage*, uint, int>)(lpVtbl[4]))((IQueryCodePage*)Unsafe.AsPointer(ref this), uiCodePage);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetCodePage(uint* puiCodePage);
+
+            [VtblIndex(4)]
+            HRESULT SetCodePage(uint uiCodePage);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IQueryCodePage*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IQueryCodePage*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IQueryCodePage*, uint> Release;
+
+            [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IQueryCodePage*, uint*, int> GetCodePage;
+
+            [NativeTypeName("HRESULT (UINT) __attribute__((stdcall))")]
+            public delegate* unmanaged<IQueryCodePage*, uint, int> SetCodePage;
         }
     }
 }

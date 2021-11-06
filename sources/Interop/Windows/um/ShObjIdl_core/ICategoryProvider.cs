@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("9AF64809-5864-4C26-A720-C1F78C086EE3")]
     [NativeTypeName("struct ICategoryProvider : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct ICategoryProvider
+    public unsafe partial struct ICategoryProvider : ICategoryProvider.Interface
     {
         public void** lpVtbl;
 
@@ -79,6 +79,57 @@ namespace TerraFX.Interop
         public HRESULT CreateCategory([NativeTypeName("const GUID *")] Guid* pguid, [NativeTypeName("const IID &")] Guid* riid, void** ppv)
         {
             return ((delegate* unmanaged<ICategoryProvider*, Guid*, Guid*, void**, int>)(lpVtbl[8]))((ICategoryProvider*)Unsafe.AsPointer(ref this), pguid, riid, ppv);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT CanCategorizeOnSCID([NativeTypeName("const SHCOLUMNID *")] PROPERTYKEY* pscid);
+
+            [VtblIndex(4)]
+            HRESULT GetDefaultCategory(Guid* pguid, [NativeTypeName("SHCOLUMNID *")] PROPERTYKEY* pscid);
+
+            [VtblIndex(5)]
+            HRESULT GetCategoryForSCID([NativeTypeName("const SHCOLUMNID *")] PROPERTYKEY* pscid, Guid* pguid);
+
+            [VtblIndex(6)]
+            HRESULT EnumCategories(IEnumGUID** penum);
+
+            [VtblIndex(7)]
+            HRESULT GetCategoryName([NativeTypeName("const GUID *")] Guid* pguid, [NativeTypeName("LPWSTR")] ushort* pszName, uint cch);
+
+            [VtblIndex(8)]
+            HRESULT CreateCategory([NativeTypeName("const GUID *")] Guid* pguid, [NativeTypeName("const IID &")] Guid* riid, void** ppv);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ICategoryProvider*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ICategoryProvider*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ICategoryProvider*, uint> Release;
+
+            [NativeTypeName("HRESULT (const SHCOLUMNID *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ICategoryProvider*, PROPERTYKEY*, int> CanCategorizeOnSCID;
+
+            [NativeTypeName("HRESULT (GUID *, SHCOLUMNID *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ICategoryProvider*, Guid*, PROPERTYKEY*, int> GetDefaultCategory;
+
+            [NativeTypeName("HRESULT (const SHCOLUMNID *, GUID *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ICategoryProvider*, PROPERTYKEY*, Guid*, int> GetCategoryForSCID;
+
+            [NativeTypeName("HRESULT (IEnumGUID **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ICategoryProvider*, IEnumGUID**, int> EnumCategories;
+
+            [NativeTypeName("HRESULT (const GUID *, LPWSTR, UINT) __attribute__((stdcall))")]
+            public delegate* unmanaged<ICategoryProvider*, Guid*, ushort*, uint, int> GetCategoryName;
+
+            [NativeTypeName("HRESULT (const GUID *, const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ICategoryProvider*, Guid*, Guid*, void**, int> CreateCategory;
         }
     }
 }

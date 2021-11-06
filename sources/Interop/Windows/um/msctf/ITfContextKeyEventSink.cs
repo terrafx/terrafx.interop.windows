@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("0552BA5D-C835-4934-BF50-846AAA67432F")]
     [NativeTypeName("struct ITfContextKeyEventSink : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct ITfContextKeyEventSink
+    public unsafe partial struct ITfContextKeyEventSink : ITfContextKeyEventSink.Interface
     {
         public void** lpVtbl;
 
@@ -65,6 +65,45 @@ namespace TerraFX.Interop
         public HRESULT OnTestKeyUp(WPARAM wParam, LPARAM lParam, BOOL* pfEaten)
         {
             return ((delegate* unmanaged<ITfContextKeyEventSink*, WPARAM, LPARAM, BOOL*, int>)(lpVtbl[6]))((ITfContextKeyEventSink*)Unsafe.AsPointer(ref this), wParam, lParam, pfEaten);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT OnKeyDown(WPARAM wParam, LPARAM lParam, BOOL* pfEaten);
+
+            [VtblIndex(4)]
+            HRESULT OnKeyUp(WPARAM wParam, LPARAM lParam, BOOL* pfEaten);
+
+            [VtblIndex(5)]
+            HRESULT OnTestKeyDown(WPARAM wParam, LPARAM lParam, BOOL* pfEaten);
+
+            [VtblIndex(6)]
+            HRESULT OnTestKeyUp(WPARAM wParam, LPARAM lParam, BOOL* pfEaten);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfContextKeyEventSink*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfContextKeyEventSink*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfContextKeyEventSink*, uint> Release;
+
+            [NativeTypeName("HRESULT (WPARAM, LPARAM, BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfContextKeyEventSink*, WPARAM, LPARAM, BOOL*, int> OnKeyDown;
+
+            [NativeTypeName("HRESULT (WPARAM, LPARAM, BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfContextKeyEventSink*, WPARAM, LPARAM, BOOL*, int> OnKeyUp;
+
+            [NativeTypeName("HRESULT (WPARAM, LPARAM, BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfContextKeyEventSink*, WPARAM, LPARAM, BOOL*, int> OnTestKeyDown;
+
+            [NativeTypeName("HRESULT (WPARAM, LPARAM, BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfContextKeyEventSink*, WPARAM, LPARAM, BOOL*, int> OnTestKeyUp;
         }
     }
 }

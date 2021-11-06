@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("305104BD-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct IHTMLElementAppliedStyles : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct IHTMLElementAppliedStyles
+    public unsafe partial struct IHTMLElementAppliedStyles : IHTMLElementAppliedStyles.Interface
     {
         public void** lpVtbl;
 
@@ -79,6 +79,45 @@ namespace TerraFX.Interop
         public HRESULT msGetRulesAppliedWithAncestor(VARIANT varContext, IRulesAppliedCollection** ppRulesAppliedCollection)
         {
             return ((delegate* unmanaged<IHTMLElementAppliedStyles*, VARIANT, IRulesAppliedCollection**, int>)(lpVtbl[8]))((IHTMLElementAppliedStyles*)Unsafe.AsPointer(ref this), varContext, ppRulesAppliedCollection);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT msGetRulesApplied(IRulesAppliedCollection** ppRulesAppliedCollection);
+
+            [VtblIndex(8)]
+            HRESULT msGetRulesAppliedWithAncestor(VARIANT varContext, IRulesAppliedCollection** ppRulesAppliedCollection);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLElementAppliedStyles*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLElementAppliedStyles*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLElementAppliedStyles*, uint> Release;
+
+            [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLElementAppliedStyles*, uint*, int> GetTypeInfoCount;
+
+            [NativeTypeName("HRESULT (UINT, LCID, ITypeInfo **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLElementAppliedStyles*, uint, uint, ITypeInfo**, int> GetTypeInfo;
+
+            [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLElementAppliedStyles*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+
+            [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLElementAppliedStyles*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
+
+            [NativeTypeName("HRESULT (IRulesAppliedCollection **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLElementAppliedStyles*, IRulesAppliedCollection**, int> msGetRulesApplied;
+
+            [NativeTypeName("HRESULT (VARIANT, IRulesAppliedCollection **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLElementAppliedStyles*, VARIANT, IRulesAppliedCollection**, int> msGetRulesAppliedWithAncestor;
         }
     }
 }

@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("79CF2233-7536-4948-9D36-1E4692DC5760")]
     [NativeTypeName("struct ID3D11Debug : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct ID3D11Debug
+    public unsafe partial struct ID3D11Debug : ID3D11Debug.Interface
     {
         public void** lpVtbl;
 
@@ -100,6 +100,75 @@ namespace TerraFX.Interop
         public HRESULT ValidateContextForDispatch(ID3D11DeviceContext* pContext)
         {
             return ((delegate* unmanaged<ID3D11Debug*, ID3D11DeviceContext*, int>)(lpVtbl[11]))((ID3D11Debug*)Unsafe.AsPointer(ref this), pContext);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT SetFeatureMask(uint Mask);
+
+            [VtblIndex(4)]
+            uint GetFeatureMask();
+
+            [VtblIndex(5)]
+            HRESULT SetPresentPerRenderOpDelay(uint Milliseconds);
+
+            [VtblIndex(6)]
+            uint GetPresentPerRenderOpDelay();
+
+            [VtblIndex(7)]
+            HRESULT SetSwapChain(IDXGISwapChain* pSwapChain);
+
+            [VtblIndex(8)]
+            HRESULT GetSwapChain(IDXGISwapChain** ppSwapChain);
+
+            [VtblIndex(9)]
+            HRESULT ValidateContext(ID3D11DeviceContext* pContext);
+
+            [VtblIndex(10)]
+            HRESULT ReportLiveDeviceObjects(D3D11_RLDO_FLAGS Flags);
+
+            [VtblIndex(11)]
+            HRESULT ValidateContextForDispatch(ID3D11DeviceContext* pContext);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D11Debug*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D11Debug*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D11Debug*, uint> Release;
+
+            [NativeTypeName("HRESULT (UINT) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D11Debug*, uint, int> SetFeatureMask;
+
+            [NativeTypeName("UINT () __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D11Debug*, uint> GetFeatureMask;
+
+            [NativeTypeName("HRESULT (UINT) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D11Debug*, uint, int> SetPresentPerRenderOpDelay;
+
+            [NativeTypeName("UINT () __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D11Debug*, uint> GetPresentPerRenderOpDelay;
+
+            [NativeTypeName("HRESULT (IDXGISwapChain *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D11Debug*, IDXGISwapChain*, int> SetSwapChain;
+
+            [NativeTypeName("HRESULT (IDXGISwapChain **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D11Debug*, IDXGISwapChain**, int> GetSwapChain;
+
+            [NativeTypeName("HRESULT (ID3D11DeviceContext *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D11Debug*, ID3D11DeviceContext*, int> ValidateContext;
+
+            [NativeTypeName("HRESULT (D3D11_RLDO_FLAGS) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D11Debug*, D3D11_RLDO_FLAGS, int> ReportLiveDeviceObjects;
+
+            [NativeTypeName("HRESULT (ID3D11DeviceContext *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D11Debug*, ID3D11DeviceContext*, int> ValidateContextForDispatch;
         }
     }
 }

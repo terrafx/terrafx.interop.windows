@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("3050F80F-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct IHTMLElement4 : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct IHTMLElement4
+    public unsafe partial struct IHTMLElement4 : IHTMLElement4.Interface
     {
         public void** lpVtbl;
 
@@ -149,6 +149,105 @@ namespace TerraFX.Interop
         public HRESULT get_onfocusout(VARIANT* p)
         {
             return ((delegate* unmanaged<IHTMLElement4*, VARIANT*, int>)(lpVtbl[18]))((IHTMLElement4*)Unsafe.AsPointer(ref this), p);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT put_onmousewheel(VARIANT v);
+
+            [VtblIndex(8)]
+            HRESULT get_onmousewheel(VARIANT* p);
+
+            [VtblIndex(9)]
+            HRESULT normalize();
+
+            [VtblIndex(10)]
+            HRESULT getAttributeNode([NativeTypeName("BSTR")] ushort* bstrname, IHTMLDOMAttribute** ppAttribute);
+
+            [VtblIndex(11)]
+            HRESULT setAttributeNode(IHTMLDOMAttribute* pattr, IHTMLDOMAttribute** ppretAttribute);
+
+            [VtblIndex(12)]
+            HRESULT removeAttributeNode(IHTMLDOMAttribute* pattr, IHTMLDOMAttribute** ppretAttribute);
+
+            [VtblIndex(13)]
+            HRESULT put_onbeforeactivate(VARIANT v);
+
+            [VtblIndex(14)]
+            HRESULT get_onbeforeactivate(VARIANT* p);
+
+            [VtblIndex(15)]
+            HRESULT put_onfocusin(VARIANT v);
+
+            [VtblIndex(16)]
+            HRESULT get_onfocusin(VARIANT* p);
+
+            [VtblIndex(17)]
+            HRESULT put_onfocusout(VARIANT v);
+
+            [VtblIndex(18)]
+            HRESULT get_onfocusout(VARIANT* p);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLElement4*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLElement4*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLElement4*, uint> Release;
+
+            [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLElement4*, uint*, int> GetTypeInfoCount;
+
+            [NativeTypeName("HRESULT (UINT, LCID, ITypeInfo **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLElement4*, uint, uint, ITypeInfo**, int> GetTypeInfo;
+
+            [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLElement4*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+
+            [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLElement4*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
+
+            [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLElement4*, VARIANT, int> put_onmousewheel;
+
+            [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLElement4*, VARIANT*, int> get_onmousewheel;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLElement4*, int> normalize;
+
+            [NativeTypeName("HRESULT (BSTR, IHTMLDOMAttribute **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLElement4*, ushort*, IHTMLDOMAttribute**, int> getAttributeNode;
+
+            [NativeTypeName("HRESULT (IHTMLDOMAttribute *, IHTMLDOMAttribute **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLElement4*, IHTMLDOMAttribute*, IHTMLDOMAttribute**, int> setAttributeNode;
+
+            [NativeTypeName("HRESULT (IHTMLDOMAttribute *, IHTMLDOMAttribute **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLElement4*, IHTMLDOMAttribute*, IHTMLDOMAttribute**, int> removeAttributeNode;
+
+            [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLElement4*, VARIANT, int> put_onbeforeactivate;
+
+            [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLElement4*, VARIANT*, int> get_onbeforeactivate;
+
+            [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLElement4*, VARIANT, int> put_onfocusin;
+
+            [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLElement4*, VARIANT*, int> get_onfocusin;
+
+            [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLElement4*, VARIANT, int> put_onfocusout;
+
+            [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLElement4*, VARIANT*, int> get_onfocusout;
         }
     }
 }

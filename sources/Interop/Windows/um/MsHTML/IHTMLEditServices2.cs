@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("3050F812-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct IHTMLEditServices2 : IHTMLEditServices")]
     [NativeInheritance("IHTMLEditServices")]
-    public unsafe partial struct IHTMLEditServices2
+    public unsafe partial struct IHTMLEditServices2 : IHTMLEditServices2.Interface
     {
         public void** lpVtbl;
 
@@ -107,6 +107,63 @@ namespace TerraFX.Interop
         public HRESULT UnFreezeVirtualCaretPos(BOOL fReset)
         {
             return ((delegate* unmanaged<IHTMLEditServices2*, BOOL, int>)(lpVtbl[12]))((IHTMLEditServices2*)Unsafe.AsPointer(ref this), fReset);
+        }
+
+        public interface Interface : IHTMLEditServices.Interface
+        {
+            [VtblIndex(9)]
+            HRESULT MoveToSelectionAnchorEx(IDisplayPointer* pIStartAnchor);
+
+            [VtblIndex(10)]
+            HRESULT MoveToSelectionEndEx(IDisplayPointer* pIEndAnchor);
+
+            [VtblIndex(11)]
+            HRESULT FreezeVirtualCaretPos(BOOL fReCompute);
+
+            [VtblIndex(12)]
+            HRESULT UnFreezeVirtualCaretPos(BOOL fReset);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLEditServices2*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLEditServices2*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLEditServices2*, uint> Release;
+
+            [NativeTypeName("HRESULT (IHTMLEditDesigner *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLEditServices2*, IHTMLEditDesigner*, int> AddDesigner;
+
+            [NativeTypeName("HRESULT (IHTMLEditDesigner *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLEditServices2*, IHTMLEditDesigner*, int> RemoveDesigner;
+
+            [NativeTypeName("HRESULT (IMarkupContainer *, ISelectionServices **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLEditServices2*, IMarkupContainer*, ISelectionServices**, int> GetSelectionServices;
+
+            [NativeTypeName("HRESULT (IMarkupPointer *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLEditServices2*, IMarkupPointer*, int> MoveToSelectionAnchor;
+
+            [NativeTypeName("HRESULT (IMarkupPointer *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLEditServices2*, IMarkupPointer*, int> MoveToSelectionEnd;
+
+            [NativeTypeName("HRESULT (IMarkupPointer *, IMarkupPointer *, SELECTION_TYPE) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLEditServices2*, IMarkupPointer*, IMarkupPointer*, SELECTION_TYPE, int> SelectRange;
+
+            [NativeTypeName("HRESULT (IDisplayPointer *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLEditServices2*, IDisplayPointer*, int> MoveToSelectionAnchorEx;
+
+            [NativeTypeName("HRESULT (IDisplayPointer *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLEditServices2*, IDisplayPointer*, int> MoveToSelectionEndEx;
+
+            [NativeTypeName("HRESULT (BOOL) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLEditServices2*, BOOL, int> FreezeVirtualCaretPos;
+
+            [NativeTypeName("HRESULT (BOOL) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLEditServices2*, BOOL, int> UnFreezeVirtualCaretPos;
         }
     }
 }

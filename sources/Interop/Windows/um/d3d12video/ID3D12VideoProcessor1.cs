@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("F3CFE615-553F-425C-86D8-EE8C1B1FB01C")]
     [NativeTypeName("struct ID3D12VideoProcessor1 : ID3D12VideoProcessor")]
     [NativeInheritance("ID3D12VideoProcessor")]
-    public unsafe partial struct ID3D12VideoProcessor1
+    public unsafe partial struct ID3D12VideoProcessor1 : ID3D12VideoProcessor1.Interface
     {
         public void** lpVtbl;
 
@@ -108,6 +108,54 @@ namespace TerraFX.Interop
         public HRESULT GetProtectedResourceSession([NativeTypeName("const IID &")] Guid* riid, void** ppProtectedSession)
         {
             return ((delegate* unmanaged<ID3D12VideoProcessor1*, Guid*, void**, int>)(lpVtbl[12]))((ID3D12VideoProcessor1*)Unsafe.AsPointer(ref this), riid, ppProtectedSession);
+        }
+
+        public interface Interface : ID3D12VideoProcessor.Interface
+        {
+            [VtblIndex(12)]
+            HRESULT GetProtectedResourceSession([NativeTypeName("const IID &")] Guid* riid, void** ppProtectedSession);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D12VideoProcessor1*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D12VideoProcessor1*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D12VideoProcessor1*, uint> Release;
+
+            [NativeTypeName("HRESULT (const GUID &, UINT *, void *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D12VideoProcessor1*, Guid*, uint*, void*, int> GetPrivateData;
+
+            [NativeTypeName("HRESULT (const GUID &, UINT, const void *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D12VideoProcessor1*, Guid*, uint, void*, int> SetPrivateData;
+
+            [NativeTypeName("HRESULT (const GUID &, const IUnknown *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D12VideoProcessor1*, Guid*, IUnknown*, int> SetPrivateDataInterface;
+
+            [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D12VideoProcessor1*, ushort*, int> SetName;
+
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D12VideoProcessor1*, Guid*, void**, int> GetDevice;
+
+            [NativeTypeName("UINT () __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D12VideoProcessor1*, uint> GetNodeMask;
+
+            [NativeTypeName("UINT () __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D12VideoProcessor1*, uint> GetNumInputStreamDescs;
+
+            [NativeTypeName("HRESULT (UINT, D3D12_VIDEO_PROCESS_INPUT_STREAM_DESC *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D12VideoProcessor1*, uint, D3D12_VIDEO_PROCESS_INPUT_STREAM_DESC*, int> GetInputStreamDescs;
+
+            [NativeTypeName("D3D12_VIDEO_PROCESS_OUTPUT_STREAM_DESC () __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D12VideoProcessor1*, D3D12_VIDEO_PROCESS_OUTPUT_STREAM_DESC*, D3D12_VIDEO_PROCESS_OUTPUT_STREAM_DESC*> GetOutputStreamDesc;
+
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D12VideoProcessor1*, Guid*, void**, int> GetProtectedResourceSession;
         }
     }
 }

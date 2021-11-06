@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("27354144-7F64-5B0F-8F00-5D77AFBE261E")]
     [NativeTypeName("struct IWriteSpeedDescriptor : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct IWriteSpeedDescriptor
+    public unsafe partial struct IWriteSpeedDescriptor : IWriteSpeedDescriptor.Interface
     {
         public void** lpVtbl;
 
@@ -86,6 +86,51 @@ namespace TerraFX.Interop
         public HRESULT get_WriteSpeed([NativeTypeName("LONG *")] int* value)
         {
             return ((delegate* unmanaged<IWriteSpeedDescriptor*, int*, int>)(lpVtbl[9]))((IWriteSpeedDescriptor*)Unsafe.AsPointer(ref this), value);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT get_MediaType(IMAPI_MEDIA_PHYSICAL_TYPE* value);
+
+            [VtblIndex(8)]
+            HRESULT get_RotationTypeIsPureCAV([NativeTypeName("VARIANT_BOOL *")] short* value);
+
+            [VtblIndex(9)]
+            HRESULT get_WriteSpeed([NativeTypeName("LONG *")] int* value);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWriteSpeedDescriptor*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IWriteSpeedDescriptor*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IWriteSpeedDescriptor*, uint> Release;
+
+            [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWriteSpeedDescriptor*, uint*, int> GetTypeInfoCount;
+
+            [NativeTypeName("HRESULT (UINT, LCID, ITypeInfo **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWriteSpeedDescriptor*, uint, uint, ITypeInfo**, int> GetTypeInfo;
+
+            [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWriteSpeedDescriptor*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+
+            [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWriteSpeedDescriptor*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
+
+            [NativeTypeName("HRESULT (IMAPI_MEDIA_PHYSICAL_TYPE *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWriteSpeedDescriptor*, IMAPI_MEDIA_PHYSICAL_TYPE*, int> get_MediaType;
+
+            [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWriteSpeedDescriptor*, short*, int> get_RotationTypeIsPureCAV;
+
+            [NativeTypeName("HRESULT (LONG *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWriteSpeedDescriptor*, int*, int> get_WriteSpeed;
         }
     }
 }

@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("0000013A-0000-0000-C000-000000000046")]
     [NativeTypeName("struct IPropertySetStorage : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IPropertySetStorage
+    public unsafe partial struct IPropertySetStorage : IPropertySetStorage.Interface
     {
         public void** lpVtbl;
 
@@ -65,6 +65,45 @@ namespace TerraFX.Interop
         public HRESULT Enum(IEnumSTATPROPSETSTG** ppenum)
         {
             return ((delegate* unmanaged<IPropertySetStorage*, IEnumSTATPROPSETSTG**, int>)(lpVtbl[6]))((IPropertySetStorage*)Unsafe.AsPointer(ref this), ppenum);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT Create([NativeTypeName("const IID &")] Guid* rfmtid, [NativeTypeName("const CLSID *")] Guid* pclsid, [NativeTypeName("DWORD")] uint grfFlags, [NativeTypeName("DWORD")] uint grfMode, IPropertyStorage** ppprstg);
+
+            [VtblIndex(4)]
+            HRESULT Open([NativeTypeName("const IID &")] Guid* rfmtid, [NativeTypeName("DWORD")] uint grfMode, IPropertyStorage** ppprstg);
+
+            [VtblIndex(5)]
+            HRESULT Delete([NativeTypeName("const IID &")] Guid* rfmtid);
+
+            [VtblIndex(6)]
+            HRESULT Enum(IEnumSTATPROPSETSTG** ppenum);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IPropertySetStorage*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IPropertySetStorage*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IPropertySetStorage*, uint> Release;
+
+            [NativeTypeName("HRESULT (const IID &, const CLSID *, DWORD, DWORD, IPropertyStorage **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IPropertySetStorage*, Guid*, Guid*, uint, uint, IPropertyStorage**, int> Create;
+
+            [NativeTypeName("HRESULT (const IID &, DWORD, IPropertyStorage **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IPropertySetStorage*, Guid*, uint, IPropertyStorage**, int> Open;
+
+            [NativeTypeName("HRESULT (const IID &) __attribute__((stdcall))")]
+            public delegate* unmanaged<IPropertySetStorage*, Guid*, int> Delete;
+
+            [NativeTypeName("HRESULT (IEnumSTATPROPSETSTG **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IPropertySetStorage*, IEnumSTATPROPSETSTG**, int> Enum;
         }
     }
 }

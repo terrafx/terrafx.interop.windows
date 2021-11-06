@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("00021500-0000-0000-C000-000000000046")]
     [NativeTypeName("struct IQueryInfo : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IQueryInfo
+    public unsafe partial struct IQueryInfo : IQueryInfo.Interface
     {
         public void** lpVtbl;
 
@@ -51,6 +51,33 @@ namespace TerraFX.Interop
         public HRESULT GetInfoFlags([NativeTypeName("DWORD *")] uint* pdwFlags)
         {
             return ((delegate* unmanaged<IQueryInfo*, uint*, int>)(lpVtbl[4]))((IQueryInfo*)Unsafe.AsPointer(ref this), pdwFlags);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetInfoTip([NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("PWSTR *")] ushort** ppwszTip);
+
+            [VtblIndex(4)]
+            HRESULT GetInfoFlags([NativeTypeName("DWORD *")] uint* pdwFlags);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IQueryInfo*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IQueryInfo*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IQueryInfo*, uint> Release;
+
+            [NativeTypeName("HRESULT (DWORD, PWSTR *) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IQueryInfo*, uint, ushort**, int> GetInfoTip;
+
+            [NativeTypeName("HRESULT (DWORD *) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IQueryInfo*, uint*, int> GetInfoFlags;
         }
     }
 }

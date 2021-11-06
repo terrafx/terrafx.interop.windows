@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("0FEB7E34-5A60-4356-8EF7-ABDEC2FF7CF8")]
     [NativeTypeName("struct IAnchor : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IAnchor
+    public unsafe partial struct IAnchor : IAnchor.Interface
     {
         public void** lpVtbl;
 
@@ -114,6 +114,87 @@ namespace TerraFX.Interop
         public HRESULT Clone(IAnchor** ppaClone)
         {
             return ((delegate* unmanaged<IAnchor*, IAnchor**, int>)(lpVtbl[13]))((IAnchor*)Unsafe.AsPointer(ref this), ppaClone);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT SetGravity(TsGravity gravity);
+
+            [VtblIndex(4)]
+            HRESULT GetGravity(TsGravity* pgravity);
+
+            [VtblIndex(5)]
+            HRESULT IsEqual(IAnchor* paWith, BOOL* pfEqual);
+
+            [VtblIndex(6)]
+            HRESULT Compare(IAnchor* paWith, [NativeTypeName("LONG *")] int* plResult);
+
+            [VtblIndex(7)]
+            HRESULT Shift([NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("LONG")] int cchReq, [NativeTypeName("LONG *")] int* pcch, IAnchor* paHaltAnchor);
+
+            [VtblIndex(8)]
+            HRESULT ShiftTo(IAnchor* paSite);
+
+            [VtblIndex(9)]
+            HRESULT ShiftRegion([NativeTypeName("DWORD")] uint dwFlags, TsShiftDir dir, BOOL* pfNoRegion);
+
+            [VtblIndex(10)]
+            HRESULT SetChangeHistoryMask([NativeTypeName("DWORD")] uint dwMask);
+
+            [VtblIndex(11)]
+            HRESULT GetChangeHistory([NativeTypeName("DWORD *")] uint* pdwHistory);
+
+            [VtblIndex(12)]
+            HRESULT ClearChangeHistory();
+
+            [VtblIndex(13)]
+            HRESULT Clone(IAnchor** ppaClone);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAnchor*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IAnchor*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IAnchor*, uint> Release;
+
+            [NativeTypeName("HRESULT (TsGravity) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAnchor*, TsGravity, int> SetGravity;
+
+            [NativeTypeName("HRESULT (TsGravity *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAnchor*, TsGravity*, int> GetGravity;
+
+            [NativeTypeName("HRESULT (IAnchor *, BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAnchor*, IAnchor*, BOOL*, int> IsEqual;
+
+            [NativeTypeName("HRESULT (IAnchor *, LONG *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAnchor*, IAnchor*, int*, int> Compare;
+
+            [NativeTypeName("HRESULT (DWORD, LONG, LONG *, IAnchor *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAnchor*, uint, int, int*, IAnchor*, int> Shift;
+
+            [NativeTypeName("HRESULT (IAnchor *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAnchor*, IAnchor*, int> ShiftTo;
+
+            [NativeTypeName("HRESULT (DWORD, TsShiftDir, BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAnchor*, uint, TsShiftDir, BOOL*, int> ShiftRegion;
+
+            [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAnchor*, uint, int> SetChangeHistoryMask;
+
+            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAnchor*, uint*, int> GetChangeHistory;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IAnchor*, int> ClearChangeHistory;
+
+            [NativeTypeName("HRESULT (IAnchor **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAnchor*, IAnchor**, int> Clone;
         }
     }
 }

@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("3051085C-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct IHTMLCSSStyleDeclaration3 : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct IHTMLCSSStyleDeclaration3
+    public unsafe partial struct IHTMLCSSStyleDeclaration3 : IHTMLCSSStyleDeclaration3.Interface
     {
         public void** lpVtbl;
 
@@ -345,6 +345,273 @@ namespace TerraFX.Interop
         public HRESULT get_touchAction([NativeTypeName("BSTR *")] ushort** p)
         {
             return ((delegate* unmanaged<IHTMLCSSStyleDeclaration3*, ushort**, int>)(lpVtbl[46]))((IHTMLCSSStyleDeclaration3*)Unsafe.AsPointer(ref this), p);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT put_flex([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(8)]
+            HRESULT get_flex([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(9)]
+            HRESULT put_flexDirection([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(10)]
+            HRESULT get_flexDirection([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(11)]
+            HRESULT put_flexWrap([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(12)]
+            HRESULT get_flexWrap([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(13)]
+            HRESULT put_flexFlow([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(14)]
+            HRESULT get_flexFlow([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(15)]
+            HRESULT put_flexGrow(VARIANT v);
+
+            [VtblIndex(16)]
+            HRESULT get_flexGrow(VARIANT* p);
+
+            [VtblIndex(17)]
+            HRESULT put_flexShrink(VARIANT v);
+
+            [VtblIndex(18)]
+            HRESULT get_flexShrink(VARIANT* p);
+
+            [VtblIndex(19)]
+            HRESULT put_flexBasis(VARIANT v);
+
+            [VtblIndex(20)]
+            HRESULT get_flexBasis(VARIANT* p);
+
+            [VtblIndex(21)]
+            HRESULT put_justifyContent([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(22)]
+            HRESULT get_justifyContent([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(23)]
+            HRESULT put_alignItems([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(24)]
+            HRESULT get_alignItems([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(25)]
+            HRESULT put_alignSelf([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(26)]
+            HRESULT get_alignSelf([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(27)]
+            HRESULT put_alignContent([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(28)]
+            HRESULT get_alignContent([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(29)]
+            HRESULT put_borderImage([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(30)]
+            HRESULT get_borderImage([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(31)]
+            HRESULT put_borderImageSource([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(32)]
+            HRESULT get_borderImageSource([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(33)]
+            HRESULT put_borderImageSlice([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(34)]
+            HRESULT get_borderImageSlice([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(35)]
+            HRESULT put_borderImageWidth([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(36)]
+            HRESULT get_borderImageWidth([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(37)]
+            HRESULT put_borderImageOutset([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(38)]
+            HRESULT get_borderImageOutset([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(39)]
+            HRESULT put_borderImageRepeat([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(40)]
+            HRESULT get_borderImageRepeat([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(41)]
+            HRESULT put_msImeAlign([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(42)]
+            HRESULT get_msImeAlign([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(43)]
+            HRESULT put_msTextCombineHorizontal([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(44)]
+            HRESULT get_msTextCombineHorizontal([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(45)]
+            HRESULT put_touchAction([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(46)]
+            HRESULT get_touchAction([NativeTypeName("BSTR *")] ushort** p);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLCSSStyleDeclaration3*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLCSSStyleDeclaration3*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLCSSStyleDeclaration3*, uint> Release;
+
+            [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLCSSStyleDeclaration3*, uint*, int> GetTypeInfoCount;
+
+            [NativeTypeName("HRESULT (UINT, LCID, ITypeInfo **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLCSSStyleDeclaration3*, uint, uint, ITypeInfo**, int> GetTypeInfo;
+
+            [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLCSSStyleDeclaration3*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+
+            [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLCSSStyleDeclaration3*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
+
+            [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLCSSStyleDeclaration3*, ushort*, int> put_flex;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLCSSStyleDeclaration3*, ushort**, int> get_flex;
+
+            [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLCSSStyleDeclaration3*, ushort*, int> put_flexDirection;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLCSSStyleDeclaration3*, ushort**, int> get_flexDirection;
+
+            [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLCSSStyleDeclaration3*, ushort*, int> put_flexWrap;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLCSSStyleDeclaration3*, ushort**, int> get_flexWrap;
+
+            [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLCSSStyleDeclaration3*, ushort*, int> put_flexFlow;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLCSSStyleDeclaration3*, ushort**, int> get_flexFlow;
+
+            [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLCSSStyleDeclaration3*, VARIANT, int> put_flexGrow;
+
+            [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLCSSStyleDeclaration3*, VARIANT*, int> get_flexGrow;
+
+            [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLCSSStyleDeclaration3*, VARIANT, int> put_flexShrink;
+
+            [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLCSSStyleDeclaration3*, VARIANT*, int> get_flexShrink;
+
+            [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLCSSStyleDeclaration3*, VARIANT, int> put_flexBasis;
+
+            [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLCSSStyleDeclaration3*, VARIANT*, int> get_flexBasis;
+
+            [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLCSSStyleDeclaration3*, ushort*, int> put_justifyContent;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLCSSStyleDeclaration3*, ushort**, int> get_justifyContent;
+
+            [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLCSSStyleDeclaration3*, ushort*, int> put_alignItems;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLCSSStyleDeclaration3*, ushort**, int> get_alignItems;
+
+            [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLCSSStyleDeclaration3*, ushort*, int> put_alignSelf;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLCSSStyleDeclaration3*, ushort**, int> get_alignSelf;
+
+            [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLCSSStyleDeclaration3*, ushort*, int> put_alignContent;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLCSSStyleDeclaration3*, ushort**, int> get_alignContent;
+
+            [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLCSSStyleDeclaration3*, ushort*, int> put_borderImage;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLCSSStyleDeclaration3*, ushort**, int> get_borderImage;
+
+            [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLCSSStyleDeclaration3*, ushort*, int> put_borderImageSource;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLCSSStyleDeclaration3*, ushort**, int> get_borderImageSource;
+
+            [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLCSSStyleDeclaration3*, ushort*, int> put_borderImageSlice;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLCSSStyleDeclaration3*, ushort**, int> get_borderImageSlice;
+
+            [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLCSSStyleDeclaration3*, ushort*, int> put_borderImageWidth;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLCSSStyleDeclaration3*, ushort**, int> get_borderImageWidth;
+
+            [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLCSSStyleDeclaration3*, ushort*, int> put_borderImageOutset;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLCSSStyleDeclaration3*, ushort**, int> get_borderImageOutset;
+
+            [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLCSSStyleDeclaration3*, ushort*, int> put_borderImageRepeat;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLCSSStyleDeclaration3*, ushort**, int> get_borderImageRepeat;
+
+            [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLCSSStyleDeclaration3*, ushort*, int> put_msImeAlign;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLCSSStyleDeclaration3*, ushort**, int> get_msImeAlign;
+
+            [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLCSSStyleDeclaration3*, ushort*, int> put_msTextCombineHorizontal;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLCSSStyleDeclaration3*, ushort**, int> get_msTextCombineHorizontal;
+
+            [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLCSSStyleDeclaration3*, ushort*, int> put_touchAction;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLCSSStyleDeclaration3*, ushort**, int> get_touchAction;
         }
     }
 }

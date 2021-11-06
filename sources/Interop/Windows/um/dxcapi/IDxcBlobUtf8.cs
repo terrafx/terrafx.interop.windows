@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("3DA636C9-BA71-4024-A301-30CBF125305B")]
     [NativeTypeName("struct IDxcBlobUtf8 : IDxcBlobEncoding")]
     [NativeInheritance("IDxcBlobEncoding")]
-    public unsafe partial struct IDxcBlobUtf8
+    public unsafe partial struct IDxcBlobUtf8 : IDxcBlobUtf8.Interface
     {
         public void** lpVtbl;
 
@@ -76,6 +76,44 @@ namespace TerraFX.Interop
         public nuint GetStringLength()
         {
             return ((delegate* unmanaged<IDxcBlobUtf8*, nuint>)(lpVtbl[7]))((IDxcBlobUtf8*)Unsafe.AsPointer(ref this));
+        }
+
+        public interface Interface : IDxcBlobEncoding.Interface
+        {
+            [VtblIndex(6)]
+            [return: NativeTypeName("LPCSTR")]
+            sbyte* GetStringPointer();
+
+            [VtblIndex(7)]
+            [return: NativeTypeName("SIZE_T")]
+            nuint GetStringLength();
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDxcBlobUtf8*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDxcBlobUtf8*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDxcBlobUtf8*, uint> Release;
+
+            [NativeTypeName("LPVOID () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDxcBlobUtf8*, void*> GetBufferPointer;
+
+            [NativeTypeName("SIZE_T () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDxcBlobUtf8*, nuint> GetBufferSize;
+
+            [NativeTypeName("HRESULT (BOOL *, UINT32 *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDxcBlobUtf8*, BOOL*, uint*, int> GetEncoding;
+
+            [NativeTypeName("LPCSTR () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDxcBlobUtf8*, sbyte*> GetStringPointer;
+
+            [NativeTypeName("SIZE_T () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDxcBlobUtf8*, nuint> GetStringLength;
         }
     }
 }

@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("EA1EA139-19DF-11D7-A6D2-00065B84435C")]
     [NativeTypeName("struct ITfReadingInformationUIElement : ITfUIElement")]
     [NativeInheritance("ITfUIElement")]
-    public unsafe partial struct ITfReadingInformationUIElement
+    public unsafe partial struct ITfReadingInformationUIElement : ITfReadingInformationUIElement.Interface
     {
         public void** lpVtbl;
 
@@ -107,6 +107,69 @@ namespace TerraFX.Interop
         public HRESULT IsVerticalOrderPreferred(BOOL* pfVertical)
         {
             return ((delegate* unmanaged<ITfReadingInformationUIElement*, BOOL*, int>)(lpVtbl[12]))((ITfReadingInformationUIElement*)Unsafe.AsPointer(ref this), pfVertical);
+        }
+
+        public interface Interface : ITfUIElement.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT GetUpdatedFlags([NativeTypeName("DWORD *")] uint* pdwFlags);
+
+            [VtblIndex(8)]
+            HRESULT GetContext(ITfContext** ppic);
+
+            [VtblIndex(9)]
+            HRESULT GetString([NativeTypeName("BSTR *")] ushort** pstr);
+
+            [VtblIndex(10)]
+            HRESULT GetMaxReadingStringLength(uint* pcchMax);
+
+            [VtblIndex(11)]
+            HRESULT GetErrorIndex(uint* pErrorIndex);
+
+            [VtblIndex(12)]
+            HRESULT IsVerticalOrderPreferred(BOOL* pfVertical);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfReadingInformationUIElement*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfReadingInformationUIElement*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfReadingInformationUIElement*, uint> Release;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfReadingInformationUIElement*, ushort**, int> GetDescription;
+
+            [NativeTypeName("HRESULT (GUID *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfReadingInformationUIElement*, Guid*, int> GetGUID;
+
+            [NativeTypeName("HRESULT (BOOL) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfReadingInformationUIElement*, BOOL, int> Show;
+
+            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfReadingInformationUIElement*, BOOL*, int> IsShown;
+
+            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfReadingInformationUIElement*, uint*, int> GetUpdatedFlags;
+
+            [NativeTypeName("HRESULT (ITfContext **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfReadingInformationUIElement*, ITfContext**, int> GetContext;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfReadingInformationUIElement*, ushort**, int> GetString;
+
+            [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfReadingInformationUIElement*, uint*, int> GetMaxReadingStringLength;
+
+            [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfReadingInformationUIElement*, uint*, int> GetErrorIndex;
+
+            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfReadingInformationUIElement*, BOOL*, int> IsVerticalOrderPreferred;
         }
     }
 }

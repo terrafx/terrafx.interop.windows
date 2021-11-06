@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("00000037-0000-0000-C000-000000000046")]
     [NativeTypeName("struct IWeakReference : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IWeakReference
+    public unsafe partial struct IWeakReference : IWeakReference.Interface
     {
         public void** lpVtbl;
 
@@ -44,6 +44,27 @@ namespace TerraFX.Interop
         public HRESULT Resolve([NativeTypeName("const IID &")] Guid* riid, IInspectable** objectReference)
         {
             return ((delegate* unmanaged<IWeakReference*, Guid*, IInspectable**, int>)(lpVtbl[3]))((IWeakReference*)Unsafe.AsPointer(ref this), riid, objectReference);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT Resolve([NativeTypeName("const IID &")] Guid* riid, IInspectable** objectReference);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWeakReference*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IWeakReference*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IWeakReference*, uint> Release;
+
+            [NativeTypeName("HRESULT (const IID &, IInspectable **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWeakReference*, Guid*, IInspectable**, int> Resolve;
         }
     }
 }

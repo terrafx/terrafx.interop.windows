@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("305107FA-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct IViewObjectPresentNotifySite : IViewObjectPresentSite")]
     [NativeInheritance("IViewObjectPresentSite")]
-    public unsafe partial struct IViewObjectPresentNotifySite
+    public unsafe partial struct IViewObjectPresentNotifySite : IViewObjectPresentNotifySite.Interface
     {
         public void** lpVtbl;
 
@@ -65,6 +65,36 @@ namespace TerraFX.Interop
         public HRESULT RequestFrame()
         {
             return ((delegate* unmanaged<IViewObjectPresentNotifySite*, int>)(lpVtbl[6]))((IViewObjectPresentNotifySite*)Unsafe.AsPointer(ref this));
+        }
+
+        public interface Interface : IViewObjectPresentSite.Interface
+        {
+            [VtblIndex(6)]
+            HRESULT RequestFrame();
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IViewObjectPresentNotifySite*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IViewObjectPresentNotifySite*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IViewObjectPresentNotifySite*, uint> Release;
+
+            [NativeTypeName("HRESULT (IUnknown *, UINT, UINT, UINT, DXGI_FORMAT, VIEW_OBJECT_ALPHA_MODE, ISurfacePresenter **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IViewObjectPresentNotifySite*, IUnknown*, uint, uint, uint, DXGI_FORMAT, VIEW_OBJECT_ALPHA_MODE, ISurfacePresenter**, int> CreateSurfacePresenter;
+
+            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IViewObjectPresentNotifySite*, BOOL*, int> IsHardwareComposition;
+
+            [NativeTypeName("HRESULT (VIEW_OBJECT_COMPOSITION_MODE) __attribute__((stdcall))")]
+            public delegate* unmanaged<IViewObjectPresentNotifySite*, VIEW_OBJECT_COMPOSITION_MODE, int> SetCompositionMode;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IViewObjectPresentNotifySite*, int> RequestFrame;
         }
     }
 }

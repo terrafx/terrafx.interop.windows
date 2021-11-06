@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("4CE7D875-A981-4140-A1FF-AD93258E8D59")]
     [NativeTypeName("struct IInkDesktopHost : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IInkDesktopHost
+    public unsafe partial struct IInkDesktopHost : IInkDesktopHost.Interface
     {
         public void** lpVtbl;
 
@@ -58,6 +58,39 @@ namespace TerraFX.Interop
         public HRESULT CreateAndInitializeInkPresenter(IUnknown* rootVisual, float width, float height, [NativeTypeName("const IID &")] Guid* riid, void** ppv)
         {
             return ((delegate* unmanaged<IInkDesktopHost*, IUnknown*, float, float, Guid*, void**, int>)(lpVtbl[5]))((IInkDesktopHost*)Unsafe.AsPointer(ref this), rootVisual, width, height, riid, ppv);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT QueueWorkItem(IInkHostWorkItem* workItem);
+
+            [VtblIndex(4)]
+            HRESULT CreateInkPresenter([NativeTypeName("const IID &")] Guid* riid, void** ppv);
+
+            [VtblIndex(5)]
+            HRESULT CreateAndInitializeInkPresenter(IUnknown* rootVisual, float width, float height, [NativeTypeName("const IID &")] Guid* riid, void** ppv);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IInkDesktopHost*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IInkDesktopHost*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IInkDesktopHost*, uint> Release;
+
+            [NativeTypeName("HRESULT (IInkHostWorkItem *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IInkDesktopHost*, IInkHostWorkItem*, int> QueueWorkItem;
+
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IInkDesktopHost*, Guid*, void**, int> CreateInkPresenter;
+
+            [NativeTypeName("HRESULT (IUnknown *, float, float, const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IInkDesktopHost*, IUnknown*, float, float, Guid*, void**, int> CreateAndInitializeInkPresenter;
         }
     }
 }

@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("DCB07FDC-3BB5-451C-90BE-966644FED7B0")]
     [NativeTypeName("struct INewMenuClient : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct INewMenuClient
+    public unsafe partial struct INewMenuClient : INewMenuClient.Interface
     {
         public void** lpVtbl;
 
@@ -51,6 +51,33 @@ namespace TerraFX.Interop
         public HRESULT SelectAndEditItem([NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidlItem, [NativeTypeName("NMCSAEI_FLAGS")] int flags)
         {
             return ((delegate* unmanaged<INewMenuClient*, ITEMIDLIST*, int, int>)(lpVtbl[4]))((INewMenuClient*)Unsafe.AsPointer(ref this), pidlItem, flags);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT IncludeItems([NativeTypeName("NMCII_FLAGS *")] int* pflags);
+
+            [VtblIndex(4)]
+            HRESULT SelectAndEditItem([NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidlItem, [NativeTypeName("NMCSAEI_FLAGS")] int flags);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<INewMenuClient*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<INewMenuClient*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<INewMenuClient*, uint> Release;
+
+            [NativeTypeName("HRESULT (NMCII_FLAGS *) __attribute__((stdcall))")]
+            public delegate* unmanaged<INewMenuClient*, int*, int> IncludeItems;
+
+            [NativeTypeName("HRESULT (LPCITEMIDLIST, NMCSAEI_FLAGS) __attribute__((stdcall))")]
+            public delegate* unmanaged<INewMenuClient*, ITEMIDLIST*, int, int> SelectAndEditItem;
         }
     }
 }

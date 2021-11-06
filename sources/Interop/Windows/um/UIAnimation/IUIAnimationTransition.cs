@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("DC6CE252-F731-41CF-B610-614B6CA049AD")]
     [NativeTypeName("struct IUIAnimationTransition : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IUIAnimationTransition
+    public unsafe partial struct IUIAnimationTransition : IUIAnimationTransition.Interface
     {
         public void** lpVtbl;
 
@@ -65,6 +65,45 @@ namespace TerraFX.Interop
         public HRESULT GetDuration([NativeTypeName("UI_ANIMATION_SECONDS *")] double* duration)
         {
             return ((delegate* unmanaged<IUIAnimationTransition*, double*, int>)(lpVtbl[6]))((IUIAnimationTransition*)Unsafe.AsPointer(ref this), duration);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT SetInitialValue(double value);
+
+            [VtblIndex(4)]
+            HRESULT SetInitialVelocity(double velocity);
+
+            [VtblIndex(5)]
+            HRESULT IsDurationKnown();
+
+            [VtblIndex(6)]
+            HRESULT GetDuration([NativeTypeName("UI_ANIMATION_SECONDS *")] double* duration);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IUIAnimationTransition*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IUIAnimationTransition*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IUIAnimationTransition*, uint> Release;
+
+            [NativeTypeName("HRESULT (DOUBLE) __attribute__((stdcall))")]
+            public delegate* unmanaged<IUIAnimationTransition*, double, int> SetInitialValue;
+
+            [NativeTypeName("HRESULT (DOUBLE) __attribute__((stdcall))")]
+            public delegate* unmanaged<IUIAnimationTransition*, double, int> SetInitialVelocity;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IUIAnimationTransition*, int> IsDurationKnown;
+
+            [NativeTypeName("HRESULT (UI_ANIMATION_SECONDS *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IUIAnimationTransition*, double*, int> GetDuration;
         }
     }
 }

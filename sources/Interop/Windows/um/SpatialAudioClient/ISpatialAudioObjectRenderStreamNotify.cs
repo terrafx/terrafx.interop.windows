@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("DDDF83E6-68D7-4C70-883F-A1836AFB4A50")]
     [NativeTypeName("struct ISpatialAudioObjectRenderStreamNotify : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct ISpatialAudioObjectRenderStreamNotify
+    public unsafe partial struct ISpatialAudioObjectRenderStreamNotify : ISpatialAudioObjectRenderStreamNotify.Interface
     {
         public void** lpVtbl;
 
@@ -44,6 +44,27 @@ namespace TerraFX.Interop
         public HRESULT OnAvailableDynamicObjectCountChange(ISpatialAudioObjectRenderStreamBase* sender, [NativeTypeName("LONGLONG")] long hnsComplianceDeadlineTime, [NativeTypeName("UINT32")] uint availableDynamicObjectCountChange)
         {
             return ((delegate* unmanaged<ISpatialAudioObjectRenderStreamNotify*, ISpatialAudioObjectRenderStreamBase*, long, uint, int>)(lpVtbl[3]))((ISpatialAudioObjectRenderStreamNotify*)Unsafe.AsPointer(ref this), sender, hnsComplianceDeadlineTime, availableDynamicObjectCountChange);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT OnAvailableDynamicObjectCountChange(ISpatialAudioObjectRenderStreamBase* sender, [NativeTypeName("LONGLONG")] long hnsComplianceDeadlineTime, [NativeTypeName("UINT32")] uint availableDynamicObjectCountChange);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpatialAudioObjectRenderStreamNotify*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpatialAudioObjectRenderStreamNotify*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpatialAudioObjectRenderStreamNotify*, uint> Release;
+
+            [NativeTypeName("HRESULT (ISpatialAudioObjectRenderStreamBase *, LONGLONG, UINT32) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpatialAudioObjectRenderStreamNotify*, ISpatialAudioObjectRenderStreamBase*, long, uint, int> OnAvailableDynamicObjectCountChange;
         }
     }
 }

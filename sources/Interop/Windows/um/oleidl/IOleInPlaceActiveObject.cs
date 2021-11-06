@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("00000117-0000-0000-C000-000000000046")]
     [NativeTypeName("struct IOleInPlaceActiveObject : IOleWindow")]
     [NativeInheritance("IOleWindow")]
-    public unsafe partial struct IOleInPlaceActiveObject
+    public unsafe partial struct IOleInPlaceActiveObject : IOleInPlaceActiveObject.Interface
     {
         public void** lpVtbl;
 
@@ -86,6 +86,57 @@ namespace TerraFX.Interop
         public HRESULT EnableModeless(BOOL fEnable)
         {
             return ((delegate* unmanaged<IOleInPlaceActiveObject*, BOOL, int>)(lpVtbl[9]))((IOleInPlaceActiveObject*)Unsafe.AsPointer(ref this), fEnable);
+        }
+
+        public interface Interface : IOleWindow.Interface
+        {
+            [VtblIndex(5)]
+            HRESULT TranslateAccelerator([NativeTypeName("LPMSG")] MSG* lpmsg);
+
+            [VtblIndex(6)]
+            HRESULT OnFrameWindowActivate(BOOL fActivate);
+
+            [VtblIndex(7)]
+            HRESULT OnDocWindowActivate(BOOL fActivate);
+
+            [VtblIndex(8)]
+            HRESULT ResizeBorder([NativeTypeName("LPCRECT")] RECT* prcBorder, IOleInPlaceUIWindow* pUIWindow, BOOL fFrameWindow);
+
+            [VtblIndex(9)]
+            HRESULT EnableModeless(BOOL fEnable);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IOleInPlaceActiveObject*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IOleInPlaceActiveObject*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IOleInPlaceActiveObject*, uint> Release;
+
+            [NativeTypeName("HRESULT (HWND *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IOleInPlaceActiveObject*, HWND*, int> GetWindow;
+
+            [NativeTypeName("HRESULT (BOOL) __attribute__((stdcall))")]
+            public delegate* unmanaged<IOleInPlaceActiveObject*, BOOL, int> ContextSensitiveHelp;
+
+            [NativeTypeName("HRESULT (LPMSG) __attribute__((stdcall))")]
+            public delegate* unmanaged<IOleInPlaceActiveObject*, MSG*, int> TranslateAccelerator;
+
+            [NativeTypeName("HRESULT (BOOL) __attribute__((stdcall))")]
+            public delegate* unmanaged<IOleInPlaceActiveObject*, BOOL, int> OnFrameWindowActivate;
+
+            [NativeTypeName("HRESULT (BOOL) __attribute__((stdcall))")]
+            public delegate* unmanaged<IOleInPlaceActiveObject*, BOOL, int> OnDocWindowActivate;
+
+            [NativeTypeName("HRESULT (LPCRECT, IOleInPlaceUIWindow *, BOOL) __attribute__((stdcall))")]
+            public delegate* unmanaged<IOleInPlaceActiveObject*, RECT*, IOleInPlaceUIWindow*, BOOL, int> ResizeBorder;
+
+            [NativeTypeName("HRESULT (BOOL) __attribute__((stdcall))")]
+            public delegate* unmanaged<IOleInPlaceActiveObject*, BOOL, int> EnableModeless;
         }
     }
 }

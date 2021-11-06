@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("952121DA-D69F-45F9-B0F9-F23944321A6D")]
     [NativeTypeName("struct IDirectManipulationViewportEventHandler : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IDirectManipulationViewportEventHandler
+    public unsafe partial struct IDirectManipulationViewportEventHandler : IDirectManipulationViewportEventHandler.Interface
     {
         public void** lpVtbl;
 
@@ -58,6 +58,39 @@ namespace TerraFX.Interop
         public HRESULT OnContentUpdated(IDirectManipulationViewport* viewport, IDirectManipulationContent* content)
         {
             return ((delegate* unmanaged<IDirectManipulationViewportEventHandler*, IDirectManipulationViewport*, IDirectManipulationContent*, int>)(lpVtbl[5]))((IDirectManipulationViewportEventHandler*)Unsafe.AsPointer(ref this), viewport, content);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT OnViewportStatusChanged(IDirectManipulationViewport* viewport, DIRECTMANIPULATION_STATUS current, DIRECTMANIPULATION_STATUS previous);
+
+            [VtblIndex(4)]
+            HRESULT OnViewportUpdated(IDirectManipulationViewport* viewport);
+
+            [VtblIndex(5)]
+            HRESULT OnContentUpdated(IDirectManipulationViewport* viewport, IDirectManipulationContent* content);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDirectManipulationViewportEventHandler*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDirectManipulationViewportEventHandler*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDirectManipulationViewportEventHandler*, uint> Release;
+
+            [NativeTypeName("HRESULT (IDirectManipulationViewport *, DIRECTMANIPULATION_STATUS, DIRECTMANIPULATION_STATUS) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDirectManipulationViewportEventHandler*, IDirectManipulationViewport*, DIRECTMANIPULATION_STATUS, DIRECTMANIPULATION_STATUS, int> OnViewportStatusChanged;
+
+            [NativeTypeName("HRESULT (IDirectManipulationViewport *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDirectManipulationViewportEventHandler*, IDirectManipulationViewport*, int> OnViewportUpdated;
+
+            [NativeTypeName("HRESULT (IDirectManipulationViewport *, IDirectManipulationContent *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDirectManipulationViewportEventHandler*, IDirectManipulationViewport*, IDirectManipulationContent*, int> OnContentUpdated;
         }
     }
 }
