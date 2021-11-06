@@ -27,26 +27,6 @@ jobs:
           ./artifacts/pkg/**/*
           ./artifacts/tst/**/*
         if-no-files-found: error
-  windows-x86:
-    runs-on: ${{ matrix.os }}-latest
-    strategy:
-      matrix:
-        architecture: [ x86 ]
-        configuration: [ debug, release ]
-        os: [ windows ]
-    steps:
-    - uses: actions/checkout@v2
-    - run: ./scripts/cibuild.cmd -configuration ${{ matrix.configuration }} -architecture ${{ matrix.architecture }} /p:PlatformTarget=${{ matrix.architecture }}
-      shell: cmd
-    - uses: actions/upload-artifact@v2
-      with:
-        name: ${{ matrix.os }}_${{ matrix.configuration }}_x86
-        path: |
-          ./artifacts/bin/**/*
-          ./artifacts/log/**/*
-          ./artifacts/pkg/**/*
-          ./artifacts/tst/**/*
-        if-no-files-found: error
   linux-x64:
     runs-on: ${{ matrix.os }}-latest
     strategy:
@@ -126,7 +106,7 @@ jobs:
   publish-nightlies-azure:
     runs-on: ubuntu-latest
     if: ${{ github.event_name == 'push' }}
-    needs: [ windows-x64, windows-x86, linux-x64, macos-x64, build-nuget-preview, build-nuget-release ]
+    needs: [ windows-x64, linux-x64, macos-x64, build-nuget-preview, build-nuget-release ]
     steps:
     - uses: actions/download-artifact@v2
       with:
@@ -142,7 +122,7 @@ jobs:
   publish-nightlies-github:
     runs-on: ubuntu-latest
     if: ${{ github.event_name == 'push' }}
-    needs: [ windows-x64, windows-x86, linux-x64, macos-x64, build-nuget-preview, build-nuget-release ]
+    needs: [ windows-x64, linux-x64, macos-x64, build-nuget-preview, build-nuget-release ]
     steps:
     - uses: actions/download-artifact@v2
       with:
