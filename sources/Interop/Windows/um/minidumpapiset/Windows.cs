@@ -10,9 +10,6 @@ namespace TerraFX.Interop
     public static unsafe partial class Windows
     {
         [DllImport("DbgHelp", ExactSpelling = true)]
-        public static extern BOOL MiniDumpWriteDump(HANDLE hProcess, [NativeTypeName("DWORD")] uint ProcessId, HANDLE hFile, MINIDUMP_TYPE DumpType, [NativeTypeName("PMINIDUMP_EXCEPTION_INFORMATION")] MINIDUMP_EXCEPTION_INFORMATION* ExceptionParam, [NativeTypeName("PMINIDUMP_USER_STREAM_INFORMATION")] MINIDUMP_USER_STREAM_INFORMATION* UserStreamParam, [NativeTypeName("PMINIDUMP_CALLBACK_INFORMATION")] MINIDUMP_CALLBACK_INFORMATION* CallbackParam);
-
-        [DllImport("DbgHelp", ExactSpelling = true)]
         public static extern BOOL MiniDumpReadDumpStream([NativeTypeName("PVOID")] void* BaseOfDump, [NativeTypeName("ULONG")] uint StreamNumber, [NativeTypeName("PMINIDUMP_DIRECTORY *")] MINIDUMP_DIRECTORY** Dir, [NativeTypeName("PVOID *")] void** StreamPointer, [NativeTypeName("ULONG *")] uint* StreamSize);
 
         [NativeTypeName("#define MINIDUMP_SIGNATURE ('PMDM')")]
