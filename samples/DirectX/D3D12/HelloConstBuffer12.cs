@@ -6,6 +6,7 @@
 using System;
 using System.Numerics;
 using System.Runtime.CompilerServices;
+using System.Runtime.Versioning;
 using TerraFX.Interop;
 using static TerraFX.Interop.D3D_ROOT_SIGNATURE_VERSION;
 using static TerraFX.Interop.D3D12_DESCRIPTOR_HEAP_FLAGS;
@@ -26,6 +27,7 @@ using static TerraFX.Samples.DirectX.DXSampleHelper;
 
 namespace TerraFX.Samples.DirectX.D3D12
 {
+    [SupportedOSPlatform("windows10.0")]
     public unsafe class HelloConstBuffer12 : HelloTriangle12
     {
         private ID3D12DescriptorHeap* _cbvHeap;

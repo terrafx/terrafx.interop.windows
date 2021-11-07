@@ -6,9 +6,11 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using System.Runtime.Versioning;
 
 namespace TerraFX.Interop
 {
+    [SupportedOSPlatform("windows8.0")]
     [Guid("72A22D78-CDE4-431D-B8CC-843A71199B6D")]
     [NativeTypeName("struct IActivateAudioInterfaceAsyncOperation : IUnknown")]
     [NativeInheritance("IUnknown")]

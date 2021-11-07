@@ -4,10 +4,12 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Runtime.Versioning;
 
 namespace TerraFX.Interop
 {
     [Flags]
+    [SupportedOSPlatform("windows8.1")]
     public enum PSS_PROCESS_FLAGS
     {
         PSS_PROCESS_FLAGS_NONE = 0x00000000,

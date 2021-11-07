@@ -7,6 +7,7 @@ using System;
 using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using System.Runtime.Versioning;
 
 namespace TerraFX.Interop
 {
@@ -27,6 +28,7 @@ namespace TerraFX.Interop
         [NativeTypeName("const UINT")]
         public const uint DML_MINIMUM_BUFFER_TENSOR_ALIGNMENT = 16;
 
+        [SupportedOSPlatform("windows10.0")]
         [DllImport("directml", ExactSpelling = true)]
         public static extern HRESULT DMLCreateDevice(ID3D12Device* d3d12Device, DML_CREATE_DEVICE_FLAGS flags, [NativeTypeName("const IID &")] Guid* riid, void** ppv);
 

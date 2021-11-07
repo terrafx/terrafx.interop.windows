@@ -6,9 +6,11 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using System.Runtime.Versioning;
 
 namespace TerraFX.Interop
 {
+    [SupportedOSPlatform("windows8.0")]
     [Guid("24394699-1F2C-4EB3-8CD7-0EC1DA42A540")]
     [NativeTypeName("struct IPlayToManagerInterop : IInspectable")]
     [NativeInheritance("IInspectable")]

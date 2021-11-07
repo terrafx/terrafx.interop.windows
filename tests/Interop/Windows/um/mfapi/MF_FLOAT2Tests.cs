@@ -5,10 +5,12 @@
 
 using NUnit.Framework;
 using System.Runtime.InteropServices;
+using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="MF_FLOAT2" /> struct.</summary>
+    [SupportedOSPlatform("windows10.0")]
     public static unsafe partial class MF_FLOAT2Tests
     {
         /// <summary>Validates that the <see cref="MF_FLOAT2" /> struct is blittable.</summary>

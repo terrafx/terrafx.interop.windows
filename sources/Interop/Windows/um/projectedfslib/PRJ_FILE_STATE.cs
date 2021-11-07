@@ -4,10 +4,12 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Runtime.Versioning;
 
 namespace TerraFX.Interop
 {
     [Flags]
+    [SupportedOSPlatform("windows10.0.17763.0")]
     public enum PRJ_FILE_STATE
     {
         PRJ_FILE_STATE_PLACEHOLDER = 0x00000001,

@@ -5,10 +5,12 @@
 
 using NUnit.Framework;
 using System.Runtime.InteropServices;
+using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="D3D12_FEATURE_DATA_VIDEO_MOTION_ESTIMATOR_SIZE" /> struct.</summary>
+    [SupportedOSPlatform("windows10.0.19041.0")]
     public static unsafe partial class D3D12_FEATURE_DATA_VIDEO_MOTION_ESTIMATOR_SIZETests
     {
         /// <summary>Validates that the <see cref="D3D12_FEATURE_DATA_VIDEO_MOTION_ESTIMATOR_SIZE" /> struct is blittable.</summary>

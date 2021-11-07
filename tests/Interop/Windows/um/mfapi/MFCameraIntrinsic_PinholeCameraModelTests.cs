@@ -5,10 +5,12 @@
 
 using NUnit.Framework;
 using System.Runtime.InteropServices;
+using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="MFCameraIntrinsic_PinholeCameraModel" /> struct.</summary>
+    [SupportedOSPlatform("windows10.0")]
     public static unsafe partial class MFCameraIntrinsic_PinholeCameraModelTests
     {
         /// <summary>Validates that the <see cref="MFCameraIntrinsic_PinholeCameraModel" /> struct is blittable.</summary>

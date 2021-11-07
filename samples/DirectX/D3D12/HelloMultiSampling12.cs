@@ -4,6 +4,7 @@
 // Original source is Copyright © Microsoft. All rights reserved. Licensed under the MIT License (MIT).
 
 using System;
+using System.Runtime.Versioning;
 using TerraFX.Interop;
 using static TerraFX.Interop.D3D12_DSV_DIMENSION;
 using static TerraFX.Interop.D3D12_FEATURE;
@@ -17,6 +18,7 @@ using static TerraFX.Samples.DirectX.DXSampleHelper;
 
 namespace TerraFX.Samples.DirectX.D3D12
 {
+    [SupportedOSPlatform("windows10.0")]
     public unsafe class HelloMultiSampling12 : HelloTriangle12
     {
         private ID3D12Resource*[] _msaaRenderTargets;

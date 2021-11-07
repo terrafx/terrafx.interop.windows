@@ -8,5 +8,9 @@ um-mftransform.h
 ../../../tests/Interop/Windows/um/mftransform
 --traverse
 C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/mftransform.h
+--with-attribute
+IMFDeviceTransform=SupportedOSPlatform("windows10.0.15063.0")
+IMFDeviceTransformCallback=SupportedOSPlatform("windows10.0.17134.0")
+MF3DVideoOutputType=SupportedOSPlatform("windows8.0")
 --with-librarypath
 MFCreateTransformActivate=mfplat

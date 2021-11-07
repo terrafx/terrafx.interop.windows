@@ -4,74 +4,97 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System.Runtime.InteropServices;
+using System.Runtime.Versioning;
 
 namespace TerraFX.Interop
 {
     public static unsafe partial class Windows
     {
+        [SupportedOSPlatform("windows8.0")]
         [DllImport("kernelbase", ExactSpelling = true)]
         public static extern BOOL PathIsUNCEx([NativeTypeName("PCWSTR")] ushort* pszPath, [NativeTypeName("PCWSTR *")] ushort** ppszServer);
 
+        [SupportedOSPlatform("windows8.0")]
         [DllImport("kernelbase", ExactSpelling = true)]
         public static extern BOOL PathCchIsRoot([NativeTypeName("PCWSTR")] ushort* pszPath);
 
+        [SupportedOSPlatform("windows8.0")]
         [DllImport("kernelbase", ExactSpelling = true)]
         public static extern HRESULT PathCchAddBackslashEx([NativeTypeName("PWSTR")] ushort* pszPath, [NativeTypeName("size_t")] nuint cchPath, [NativeTypeName("PWSTR *")] ushort** ppszEnd, [NativeTypeName("size_t *")] nuint* pcchRemaining);
 
+        [SupportedOSPlatform("windows8.0")]
         [DllImport("kernelbase", ExactSpelling = true)]
         public static extern HRESULT PathCchAddBackslash([NativeTypeName("PWSTR")] ushort* pszPath, [NativeTypeName("size_t")] nuint cchPath);
 
+        [SupportedOSPlatform("windows8.0")]
         [DllImport("kernelbase", ExactSpelling = true)]
         public static extern HRESULT PathCchRemoveBackslashEx([NativeTypeName("PWSTR")] ushort* pszPath, [NativeTypeName("size_t")] nuint cchPath, [NativeTypeName("PWSTR *")] ushort** ppszEnd, [NativeTypeName("size_t *")] nuint* pcchRemaining);
 
+        [SupportedOSPlatform("windows8.0")]
         [DllImport("kernelbase", ExactSpelling = true)]
         public static extern HRESULT PathCchRemoveBackslash([NativeTypeName("PWSTR")] ushort* pszPath, [NativeTypeName("size_t")] nuint cchPath);
 
+        [SupportedOSPlatform("windows8.0")]
         [DllImport("kernelbase", ExactSpelling = true)]
         public static extern HRESULT PathCchSkipRoot([NativeTypeName("PCWSTR")] ushort* pszPath, [NativeTypeName("PCWSTR *")] ushort** ppszRootEnd);
 
+        [SupportedOSPlatform("windows8.0")]
         [DllImport("kernelbase", ExactSpelling = true)]
         public static extern HRESULT PathCchStripToRoot([NativeTypeName("PWSTR")] ushort* pszPath, [NativeTypeName("size_t")] nuint cchPath);
 
+        [SupportedOSPlatform("windows8.0")]
         [DllImport("kernelbase", ExactSpelling = true)]
         public static extern HRESULT PathCchRemoveFileSpec([NativeTypeName("PWSTR")] ushort* pszPath, [NativeTypeName("size_t")] nuint cchPath);
 
+        [SupportedOSPlatform("windows8.0")]
         [DllImport("kernelbase", ExactSpelling = true)]
         public static extern HRESULT PathCchFindExtension([NativeTypeName("PCWSTR")] ushort* pszPath, [NativeTypeName("size_t")] nuint cchPath, [NativeTypeName("PCWSTR *")] ushort** ppszExt);
 
+        [SupportedOSPlatform("windows8.0")]
         [DllImport("kernelbase", ExactSpelling = true)]
         public static extern HRESULT PathCchAddExtension([NativeTypeName("PWSTR")] ushort* pszPath, [NativeTypeName("size_t")] nuint cchPath, [NativeTypeName("PCWSTR")] ushort* pszExt);
 
+        [SupportedOSPlatform("windows8.0")]
         [DllImport("kernelbase", ExactSpelling = true)]
         public static extern HRESULT PathCchRenameExtension([NativeTypeName("PWSTR")] ushort* pszPath, [NativeTypeName("size_t")] nuint cchPath, [NativeTypeName("PCWSTR")] ushort* pszExt);
 
+        [SupportedOSPlatform("windows8.0")]
         [DllImport("kernelbase", ExactSpelling = true)]
         public static extern HRESULT PathCchRemoveExtension([NativeTypeName("PWSTR")] ushort* pszPath, [NativeTypeName("size_t")] nuint cchPath);
 
+        [SupportedOSPlatform("windows8.0")]
         [DllImport("kernelbase", ExactSpelling = true)]
         public static extern HRESULT PathCchCanonicalizeEx([NativeTypeName("PWSTR")] ushort* pszPathOut, [NativeTypeName("size_t")] nuint cchPathOut, [NativeTypeName("PCWSTR")] ushort* pszPathIn, [NativeTypeName("ULONG")] uint dwFlags);
 
+        [SupportedOSPlatform("windows8.0")]
         [DllImport("kernelbase", ExactSpelling = true)]
         public static extern HRESULT PathCchCanonicalize([NativeTypeName("PWSTR")] ushort* pszPathOut, [NativeTypeName("size_t")] nuint cchPathOut, [NativeTypeName("PCWSTR")] ushort* pszPathIn);
 
+        [SupportedOSPlatform("windows8.0")]
         [DllImport("kernelbase", ExactSpelling = true)]
         public static extern HRESULT PathCchCombineEx([NativeTypeName("PWSTR")] ushort* pszPathOut, [NativeTypeName("size_t")] nuint cchPathOut, [NativeTypeName("PCWSTR")] ushort* pszPathIn, [NativeTypeName("PCWSTR")] ushort* pszMore, [NativeTypeName("ULONG")] uint dwFlags);
 
+        [SupportedOSPlatform("windows8.0")]
         [DllImport("kernelbase", ExactSpelling = true)]
         public static extern HRESULT PathCchCombine([NativeTypeName("PWSTR")] ushort* pszPathOut, [NativeTypeName("size_t")] nuint cchPathOut, [NativeTypeName("PCWSTR")] ushort* pszPathIn, [NativeTypeName("PCWSTR")] ushort* pszMore);
 
+        [SupportedOSPlatform("windows8.0")]
         [DllImport("kernelbase", ExactSpelling = true)]
         public static extern HRESULT PathCchAppendEx([NativeTypeName("PWSTR")] ushort* pszPath, [NativeTypeName("size_t")] nuint cchPath, [NativeTypeName("PCWSTR")] ushort* pszMore, [NativeTypeName("ULONG")] uint dwFlags);
 
+        [SupportedOSPlatform("windows8.0")]
         [DllImport("kernelbase", ExactSpelling = true)]
         public static extern HRESULT PathCchAppend([NativeTypeName("PWSTR")] ushort* pszPath, [NativeTypeName("size_t")] nuint cchPath, [NativeTypeName("PCWSTR")] ushort* pszMore);
 
+        [SupportedOSPlatform("windows8.0")]
         [DllImport("kernelbase", ExactSpelling = true)]
         public static extern HRESULT PathCchStripPrefix([NativeTypeName("PWSTR")] ushort* pszPath, [NativeTypeName("size_t")] nuint cchPath);
 
+        [SupportedOSPlatform("windows8.0")]
         [DllImport("kernelbase", ExactSpelling = true)]
         public static extern HRESULT PathAllocCombine([NativeTypeName("PCWSTR")] ushort* pszPathIn, [NativeTypeName("PCWSTR")] ushort* pszMore, [NativeTypeName("ULONG")] uint dwFlags, [NativeTypeName("PWSTR *")] ushort** ppszPathOut);
 
+        [SupportedOSPlatform("windows8.0")]
         [DllImport("kernelbase", ExactSpelling = true)]
         public static extern HRESULT PathAllocCanonicalize([NativeTypeName("PCWSTR")] ushort* pszPathIn, [NativeTypeName("ULONG")] uint dwFlags, [NativeTypeName("PWSTR *")] ushort** ppszPathOut);
 

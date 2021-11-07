@@ -5,9 +5,11 @@
 
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using System.Runtime.Versioning;
 
 namespace TerraFX.Interop
 {
+    [SupportedOSPlatform("windows10.0.17763.0")]
     public partial struct PRJ_COMPLETE_COMMAND_EXTENDED_PARAMETERS
     {
         public PRJ_COMPLETE_COMMAND_TYPE CommandType;

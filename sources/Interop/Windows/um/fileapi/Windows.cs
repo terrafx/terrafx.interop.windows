@@ -4,6 +4,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System.Runtime.InteropServices;
+using System.Runtime.Versioning;
 
 namespace TerraFX.Interop
 {
@@ -269,6 +270,7 @@ namespace TerraFX.Interop
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
         public static extern BOOL GetVolumePathNamesForVolumeNameW([NativeTypeName("LPCWSTR")] ushort* lpszVolumeName, [NativeTypeName("LPWCH")] ushort* lpszVolumePathNames, [NativeTypeName("DWORD")] uint cchBufferLength, [NativeTypeName("PDWORD")] uint* lpcchReturnLength);
 
+        [SupportedOSPlatform("windows8.0")]
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
         public static extern HANDLE CreateFile2([NativeTypeName("LPCWSTR")] ushort* lpFileName, [NativeTypeName("DWORD")] uint dwDesiredAccess, [NativeTypeName("DWORD")] uint dwShareMode, [NativeTypeName("DWORD")] uint dwCreationDisposition, [NativeTypeName("LPCREATEFILE2_EXTENDED_PARAMETERS")] CREATEFILE2_EXTENDED_PARAMETERS* pCreateExParams);
 
@@ -314,10 +316,12 @@ namespace TerraFX.Interop
         [DllImport("kernel32", ExactSpelling = true)]
         public static extern void SetFileApisToANSI();
 
+        [SupportedOSPlatform("windows10.0.19043.0")]
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("DWORD")]
         public static extern uint GetTempPath2W([NativeTypeName("DWORD")] uint BufferLength, [NativeTypeName("LPWSTR")] ushort* Buffer);
 
+        [SupportedOSPlatform("windows10.0.19043.0")]
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("DWORD")]
         public static extern uint GetTempPath2A([NativeTypeName("DWORD")] uint BufferLength, [NativeTypeName("LPSTR")] sbyte* Buffer);
@@ -442,6 +446,7 @@ namespace TerraFX.Interop
         [NativeTypeName("#define GetCompressedFileSize GetCompressedFileSizeW")]
         public static delegate*<ushort*, uint*, uint> GetCompressedFileSize => &GetCompressedFileSizeW;
 
+        [SupportedOSPlatform("windows10.0.19043.0")]
         [NativeTypeName("#define GetTempPath2 GetTempPath2W")]
         public static delegate*<uint, ushort*, uint> GetTempPath2 => &GetTempPath2W;
     }

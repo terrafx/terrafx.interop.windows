@@ -6,10 +6,12 @@
 using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="MEM_ADDRESS_REQUIREMENTS" /> struct.</summary>
+    [SupportedOSPlatform("windows10.0")]
     public static unsafe partial class MEM_ADDRESS_REQUIREMENTSTests
     {
         /// <summary>Validates that the <see cref="MEM_ADDRESS_REQUIREMENTS" /> struct is blittable.</summary>

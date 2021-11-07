@@ -4,6 +4,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System.Runtime.InteropServices;
+using System.Runtime.Versioning;
 
 namespace TerraFX.Interop
 {
@@ -106,16 +107,20 @@ namespace TerraFX.Interop
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
         public static extern HANDLE CreateFileMappingNumaW(HANDLE hFile, [NativeTypeName("LPSECURITY_ATTRIBUTES")] SECURITY_ATTRIBUTES* lpFileMappingAttributes, [NativeTypeName("DWORD")] uint flProtect, [NativeTypeName("DWORD")] uint dwMaximumSizeHigh, [NativeTypeName("DWORD")] uint dwMaximumSizeLow, [NativeTypeName("LPCWSTR")] ushort* lpName, [NativeTypeName("DWORD")] uint nndPreferred);
 
+        [SupportedOSPlatform("windows8.0")]
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
         public static extern BOOL PrefetchVirtualMemory(HANDLE hProcess, [NativeTypeName("ULONG_PTR")] nuint NumberOfEntries, [NativeTypeName("PWIN32_MEMORY_RANGE_ENTRY")] WIN32_MEMORY_RANGE_ENTRY* VirtualAddresses, [NativeTypeName("ULONG")] uint Flags);
 
+        [SupportedOSPlatform("windows8.0")]
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
         public static extern HANDLE CreateFileMappingFromApp(HANDLE hFile, [NativeTypeName("PSECURITY_ATTRIBUTES")] SECURITY_ATTRIBUTES* SecurityAttributes, [NativeTypeName("ULONG")] uint PageProtection, [NativeTypeName("ULONG64")] ulong MaximumSize, [NativeTypeName("PCWSTR")] ushort* Name);
 
+        [SupportedOSPlatform("windows8.0")]
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("PVOID")]
         public static extern void* MapViewOfFileFromApp(HANDLE hFileMappingObject, [NativeTypeName("ULONG")] uint DesiredAccess, [NativeTypeName("ULONG64")] ulong FileOffset, [NativeTypeName("SIZE_T")] nuint NumberOfBytesToMap);
 
+        [SupportedOSPlatform("windows8.0")]
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
         public static extern BOOL UnmapViewOfFileEx([NativeTypeName("PVOID")] void* BaseAddress, [NativeTypeName("ULONG")] uint UnmapFlags);
 
@@ -135,69 +140,87 @@ namespace TerraFX.Interop
         [return: NativeTypeName("LPVOID")]
         public static extern void* VirtualAllocExNuma(HANDLE hProcess, [NativeTypeName("LPVOID")] void* lpAddress, [NativeTypeName("SIZE_T")] nuint dwSize, [NativeTypeName("DWORD")] uint flAllocationType, [NativeTypeName("DWORD")] uint flProtect, [NativeTypeName("DWORD")] uint nndPreferred);
 
+        [SupportedOSPlatform("windows8.0")]
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
         public static extern BOOL GetMemoryErrorHandlingCapabilities([NativeTypeName("PULONG")] uint* Capabilities);
 
+        [SupportedOSPlatform("windows8.0")]
         [DllImport("kernel32", ExactSpelling = true)]
         [return: NativeTypeName("PVOID")]
         public static extern void* RegisterBadMemoryNotification([NativeTypeName("PBAD_MEMORY_CALLBACK_ROUTINE")] delegate* unmanaged<void> Callback);
 
+        [SupportedOSPlatform("windows8.0")]
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
         public static extern BOOL UnregisterBadMemoryNotification([NativeTypeName("PVOID")] void* RegistrationHandle);
 
+        [SupportedOSPlatform("windows8.1")]
         [DllImport("kernel32", ExactSpelling = true)]
         [return: NativeTypeName("DWORD")]
         public static extern uint OfferVirtualMemory([NativeTypeName("PVOID")] void* VirtualAddress, [NativeTypeName("SIZE_T")] nuint Size, OFFER_PRIORITY Priority);
 
+        [SupportedOSPlatform("windows8.1")]
         [DllImport("kernel32", ExactSpelling = true)]
         [return: NativeTypeName("DWORD")]
         public static extern uint ReclaimVirtualMemory([NativeTypeName("const void *")] void* VirtualAddress, [NativeTypeName("SIZE_T")] nuint Size);
 
+        [SupportedOSPlatform("windows8.1")]
         [DllImport("kernel32", ExactSpelling = true)]
         [return: NativeTypeName("DWORD")]
         public static extern uint DiscardVirtualMemory([NativeTypeName("PVOID")] void* VirtualAddress, [NativeTypeName("SIZE_T")] nuint Size);
 
+        [SupportedOSPlatform("windows10.0")]
         [DllImport("kernelbase", ExactSpelling = true)]
         public static extern BOOL SetProcessValidCallTargets(HANDLE hProcess, [NativeTypeName("PVOID")] void* VirtualAddress, [NativeTypeName("SIZE_T")] nuint RegionSize, [NativeTypeName("ULONG")] uint NumberOfOffsets, [NativeTypeName("PCFG_CALL_TARGET_INFO")] CFG_CALL_TARGET_INFO* OffsetInformation);
 
+        [SupportedOSPlatform("windows10.0")]
         [DllImport("kernelbase", ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("PVOID")]
         public static extern void* VirtualAllocFromApp([NativeTypeName("PVOID")] void* BaseAddress, [NativeTypeName("SIZE_T")] nuint Size, [NativeTypeName("ULONG")] uint AllocationType, [NativeTypeName("ULONG")] uint Protection);
 
+        [SupportedOSPlatform("windows10.0")]
         [DllImport("kernelbase", ExactSpelling = true, SetLastError = true)]
         public static extern BOOL VirtualProtectFromApp([NativeTypeName("PVOID")] void* Address, [NativeTypeName("SIZE_T")] nuint Size, [NativeTypeName("ULONG")] uint NewProtection, [NativeTypeName("PULONG")] uint* OldProtection);
 
+        [SupportedOSPlatform("windows10.0")]
         [DllImport("kernelbase", ExactSpelling = true, SetLastError = true)]
         public static extern HANDLE OpenFileMappingFromApp([NativeTypeName("ULONG")] uint DesiredAccess, BOOL InheritHandle, [NativeTypeName("PCWSTR")] ushort* Name);
 
+        [SupportedOSPlatform("windows10.0.14393.0")]
         [DllImport("api-ms-win-core-memory-l1-1-4", ExactSpelling = true, SetLastError = true)]
         public static extern BOOL QueryVirtualMemoryInformation(HANDLE Process, [NativeTypeName("const void *")] void* VirtualAddress, WIN32_MEMORY_INFORMATION_CLASS MemoryInformationClass, [NativeTypeName("PVOID")] void* MemoryInformation, [NativeTypeName("SIZE_T")] nuint MemoryInformationSize, [NativeTypeName("PSIZE_T")] nuint* ReturnSize);
 
+        [SupportedOSPlatform("windows10.0.15063.0")]
         [DllImport("api-ms-win-core-memory-l1-1-5", ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("PVOID")]
         public static extern void* MapViewOfFileNuma2(HANDLE FileMappingHandle, HANDLE ProcessHandle, [NativeTypeName("ULONG64")] ulong Offset, [NativeTypeName("PVOID")] void* BaseAddress, [NativeTypeName("SIZE_T")] nuint ViewSize, [NativeTypeName("ULONG")] uint AllocationType, [NativeTypeName("ULONG")] uint PageProtection, [NativeTypeName("ULONG")] uint PreferredNode);
 
+        [SupportedOSPlatform("windows10.0.15063.0")]
         [return: NativeTypeName("PVOID")]
         public static void* MapViewOfFile2(HANDLE FileMappingHandle, HANDLE ProcessHandle, [NativeTypeName("ULONG64")] ulong Offset, [NativeTypeName("PVOID")] void* BaseAddress, [NativeTypeName("SIZE_T")] nuint ViewSize, [NativeTypeName("ULONG")] uint AllocationType, [NativeTypeName("ULONG")] uint PageProtection)
         {
             return MapViewOfFileNuma2(FileMappingHandle, ProcessHandle, Offset, BaseAddress, ViewSize, AllocationType, PageProtection, unchecked((uint)(-1)));
         }
 
+        [SupportedOSPlatform("windows10.0.15063.0")]
         [DllImport("kernelbase", ExactSpelling = true, SetLastError = true)]
         public static extern BOOL UnmapViewOfFile2(HANDLE Process, [NativeTypeName("PVOID")] void* BaseAddress, [NativeTypeName("ULONG")] uint UnmapFlags);
 
+        [SupportedOSPlatform("windows10.0")]
         [DllImport("kernelbase", ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("PVOID")]
         public static extern void* VirtualAlloc2(HANDLE Process, [NativeTypeName("PVOID")] void* BaseAddress, [NativeTypeName("SIZE_T")] nuint Size, [NativeTypeName("ULONG")] uint AllocationType, [NativeTypeName("ULONG")] uint PageProtection, MEM_EXTENDED_PARAMETER* ExtendedParameters, [NativeTypeName("ULONG")] uint ParameterCount);
 
+        [SupportedOSPlatform("windows10.0.17134.0")]
         [DllImport("kernelbase", ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("PVOID")]
         public static extern void* MapViewOfFile3(HANDLE FileMapping, HANDLE Process, [NativeTypeName("PVOID")] void* BaseAddress, [NativeTypeName("ULONG64")] ulong Offset, [NativeTypeName("SIZE_T")] nuint ViewSize, [NativeTypeName("ULONG")] uint AllocationType, [NativeTypeName("ULONG")] uint PageProtection, MEM_EXTENDED_PARAMETER* ExtendedParameters, [NativeTypeName("ULONG")] uint ParameterCount);
 
+        [SupportedOSPlatform("windows10.0")]
         [DllImport("kernelbase", ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("PVOID")]
         public static extern void* VirtualAlloc2FromApp(HANDLE Process, [NativeTypeName("PVOID")] void* BaseAddress, [NativeTypeName("SIZE_T")] nuint Size, [NativeTypeName("ULONG")] uint AllocationType, [NativeTypeName("ULONG")] uint PageProtection, MEM_EXTENDED_PARAMETER* ExtendedParameters, [NativeTypeName("ULONG")] uint ParameterCount);
 
+        [SupportedOSPlatform("windows10.0")]
         [DllImport("kernelbase", ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("PVOID")]
         public static extern void* MapViewOfFile3FromApp(HANDLE FileMapping, HANDLE Process, [NativeTypeName("PVOID")] void* BaseAddress, [NativeTypeName("ULONG64")] ulong Offset, [NativeTypeName("SIZE_T")] nuint ViewSize, [NativeTypeName("ULONG")] uint AllocationType, [NativeTypeName("ULONG")] uint PageProtection, MEM_EXTENDED_PARAMETER* ExtendedParameters, [NativeTypeName("ULONG")] uint ParameterCount);

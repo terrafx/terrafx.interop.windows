@@ -29,6 +29,9 @@ D2D1_BITMAP_OPTIONS=Flags
 D2D1_DEVICE_CONTEXT_OPTIONS=Flags
 D2D1_LAYER_OPTIONS1=Flags
 D2D1_MAP_OPTIONS=Flags
+ID2D1Factory1=SupportedOSPlatform("windows8.0")
+ID2D1GdiMetafile=SupportedOSPlatform("windows8.0")
+ID2D1GdiMetafileSink=SupportedOSPlatform("windows8.0")
 --with-librarypath
 D2D1ConvertColorSpace=d2d1
 D2D1CreateDevice=d2d1

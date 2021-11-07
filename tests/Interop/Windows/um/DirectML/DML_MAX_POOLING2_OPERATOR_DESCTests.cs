@@ -6,10 +6,12 @@
 using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="DML_MAX_POOLING2_OPERATOR_DESC" /> struct.</summary>
+    [SupportedOSPlatform("windows10.0.19041.0")]
     public static unsafe partial class DML_MAX_POOLING2_OPERATOR_DESCTests
     {
         /// <summary>Validates that the <see cref="DML_MAX_POOLING2_OPERATOR_DESC" /> struct is blittable.</summary>

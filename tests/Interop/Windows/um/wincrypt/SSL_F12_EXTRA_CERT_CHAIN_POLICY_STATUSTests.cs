@@ -5,10 +5,12 @@
 
 using NUnit.Framework;
 using System.Runtime.InteropServices;
+using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="SSL_F12_EXTRA_CERT_CHAIN_POLICY_STATUS" /> struct.</summary>
+    [SupportedOSPlatform("windows10.0")]
     public static unsafe partial class SSL_F12_EXTRA_CERT_CHAIN_POLICY_STATUSTests
     {
         /// <summary>Validates that the <see cref="SSL_F12_EXTRA_CERT_CHAIN_POLICY_STATUS" /> struct is blittable.</summary>

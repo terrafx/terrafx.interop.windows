@@ -40,3 +40,5 @@ shared-windef.h
 ../../../tests/Interop/Windows/shared/windef
 --traverse
 C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/shared/windef.h
+DPI_AWARENESS=SupportedOSPlatform("windows10.0")
+DPI_HOSTING_BEHAVIOR=SupportedOSPlatform("windows10.0.17134.0")

@@ -6,9 +6,11 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using System.Runtime.Versioning;
 
 namespace TerraFX.Interop
 {
+    [SupportedOSPlatform("windows8.0")]
     [Guid("D2D43CC8-48BB-4AA7-95DB-10C06977E777")]
     [NativeTypeName("struct IMFCapturePhotoSink : IMFCaptureSink")]
     [NativeInheritance("IMFCaptureSink")]

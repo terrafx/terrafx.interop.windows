@@ -6,9 +6,11 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using System.Runtime.Versioning;
 
 namespace TerraFX.Interop
 {
+    [SupportedOSPlatform("windows8.1")]
     [Guid("D3E0E934-22A0-427E-AAE4-7D9574B59DB1")]
     [NativeTypeName("struct IDWriteTextRenderer1 : IDWriteTextRenderer")]
     [NativeInheritance("IDWriteTextRenderer")]

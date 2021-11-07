@@ -6,10 +6,12 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using System.Runtime.Versioning;
 using static TerraFX.Interop.AUDIO_STREAM_CATEGORY;
 
 namespace TerraFX.Interop
 {
+    [SupportedOSPlatform("windows8.0")]
     [Guid("2B02E3CF-2E0B-4EC3-BE45-1B2A3FE7210D")]
     [NativeTypeName("struct IXAudio2 : IUnknown")]
     [NativeInheritance("IUnknown")]

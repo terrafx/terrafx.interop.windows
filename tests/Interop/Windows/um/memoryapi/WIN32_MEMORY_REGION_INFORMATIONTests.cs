@@ -6,10 +6,12 @@
 using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="WIN32_MEMORY_REGION_INFORMATION" /> struct.</summary>
+    [SupportedOSPlatform("windows10.0.14393.0")]
     public static unsafe partial class WIN32_MEMORY_REGION_INFORMATIONTests
     {
         /// <summary>Validates that the <see cref="WIN32_MEMORY_REGION_INFORMATION" /> struct is blittable.</summary>

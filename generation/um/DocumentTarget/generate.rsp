@@ -8,3 +8,9 @@ um-DocumentTarget.h
 ../../../tests/Interop/Windows/um/DocumentTarget
 --traverse
 C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/DocumentTarget.h
+--with-attribute
+IPrintDocumentPackageStatusEvent=SupportedOSPlatform("windows8.0")
+IPrintDocumentPackageTarget=SupportedOSPlatform("windows8.0")
+IPrintDocumentPackageTargetFactory=SupportedOSPlatform("windows8.0")
+PrintDocumentPackageCompletion=SupportedOSPlatform("windows8.0")
+PrintDocumentPackageStatus=SupportedOSPlatform("windows8.0")

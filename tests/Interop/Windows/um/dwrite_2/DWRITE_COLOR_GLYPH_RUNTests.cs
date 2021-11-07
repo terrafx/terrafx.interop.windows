@@ -6,10 +6,12 @@
 using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="DWRITE_COLOR_GLYPH_RUN" /> struct.</summary>
+    [SupportedOSPlatform("windows8.1")]
     public static unsafe partial class DWRITE_COLOR_GLYPH_RUNTests
     {
         /// <summary>Validates that the <see cref="DWRITE_COLOR_GLYPH_RUN" /> struct is blittable.</summary>

@@ -6,9 +6,11 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using System.Runtime.Versioning;
 
 namespace TerraFX.Interop
 {
+    [SupportedOSPlatform("windows10.0.15063.0")]
     [Guid("D0CEF145-B3F4-4340-A2E5-7A5080CA05CB")]
     [NativeTypeName("struct IMFSensorActivityMonitor : IUnknown")]
     [NativeInheritance("IUnknown")]

@@ -5,10 +5,12 @@
 
 using NUnit.Framework;
 using System.Runtime.InteropServices;
+using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="FILE_ALIGNMENT_INFO" /> struct.</summary>
+    [SupportedOSPlatform("windows8.0")]
     public static unsafe partial class FILE_ALIGNMENT_INFOTests
     {
         /// <summary>Validates that the <see cref="FILE_ALIGNMENT_INFO" /> struct is blittable.</summary>

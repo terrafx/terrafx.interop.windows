@@ -42,6 +42,21 @@ um-wincrypt.h
 ../../../tests/Interop/Windows/um/wincrypt
 --traverse
 C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/wincrypt.h
+--with-attribute
+CertIsStrongHashToSign=SupportedOSPlatform("windows8.0")
+CertResyncCertificateChainEngine=SupportedOSPlatform("windows10.0")
+CERT_STRONG_SIGN_PARA=SupportedOSPlatform("windows8.0")
+CERT_STRONG_SIGN_SERIALIZED_INFO=SupportedOSPlatform("windows8.0")
+CRYPT_OBJECT_LOCATOR_PROVIDER_TABLE=SupportedOSPlatform("windows8.0")
+CRYPT_VERIFY_CERT_SIGN_STRONG_PROPERTIES_INFO=SupportedOSPlatform("windows8.0")
+PFN_CRYPT_OBJECT_LOCATOR_PROVIDER_FLUSH=SupportedOSPlatform("windows8.0")
+PFN_CRYPT_OBJECT_LOCATOR_PROVIDER_FREE=SupportedOSPlatform("windows8.0")
+PFN_CRYPT_OBJECT_LOCATOR_PROVIDER_FREE_IDENTIFIER=SupportedOSPlatform("windows8.0")
+PFN_CRYPT_OBJECT_LOCATOR_PROVIDER_FREE_PASSWORD=SupportedOSPlatform("windows8.0")
+PFN_CRYPT_OBJECT_LOCATOR_PROVIDER_GET=SupportedOSPlatform("windows8.0")
+PFN_CRYPT_OBJECT_LOCATOR_PROVIDER_INITIALIZE=SupportedOSPlatform("windows8.0")
+PFN_CRYPT_OBJECT_LOCATOR_PROVIDER_RELEASE=SupportedOSPlatform("windows8.0")
+SSL_F12_EXTRA_CERT_CHAIN_POLICY_STATUS=SupportedOSPlatform("windows10.0")
 --with-librarypath
 CertAddCertificateContextToStore=crypt32
 CertAddCertificateLinkToStore=crypt32

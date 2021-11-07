@@ -5,10 +5,12 @@
 
 using NUnit.Framework;
 using System.Runtime.InteropServices;
+using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="D3D11_TILE_REGION_SIZE" /> struct.</summary>
+    [SupportedOSPlatform("windows8.1")]
     public static unsafe partial class D3D11_TILE_REGION_SIZETests
     {
         /// <summary>Validates that the <see cref="D3D11_TILE_REGION_SIZE" /> struct is blittable.</summary>

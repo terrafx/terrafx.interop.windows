@@ -6,9 +6,11 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using System.Runtime.Versioning;
 
 namespace TerraFX.Interop
 {
+    [SupportedOSPlatform("windows8.0")]
     [Guid("33AE5EA6-4316-436F-8DDD-D73D22F829EC")]
     [NativeTypeName("struct IMF2DBuffer2 : IMF2DBuffer")]
     [NativeInheritance("IMF2DBuffer")]

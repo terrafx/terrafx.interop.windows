@@ -6,9 +6,11 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using System.Runtime.Versioning;
 
 namespace TerraFX.Interop
 {
+    [SupportedOSPlatform("windows8.0")]
     [Guid("C7A4DCA1-F5F0-47B6-B92B-BF0106D25791")]
     [NativeTypeName("struct IMFAsyncCallbackLogging : IMFAsyncCallback")]
     [NativeInheritance("IMFAsyncCallback")]

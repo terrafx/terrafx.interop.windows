@@ -6,10 +6,12 @@
 using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="WINHTTP_PROXY_RESULT_ENTRY" /> struct.</summary>
+    [SupportedOSPlatform("windows8.0")]
     public static unsafe partial class WINHTTP_PROXY_RESULT_ENTRYTests
     {
         /// <summary>Validates that the <see cref="WINHTTP_PROXY_RESULT_ENTRY" /> struct is blittable.</summary>

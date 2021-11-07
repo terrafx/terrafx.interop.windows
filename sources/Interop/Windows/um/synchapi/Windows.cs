@@ -4,6 +4,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System.Runtime.InteropServices;
+using System.Runtime.Versioning;
 
 namespace TerraFX.Interop
 {
@@ -166,24 +167,30 @@ namespace TerraFX.Interop
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
         public static extern HANDLE CreateWaitableTimerExW([NativeTypeName("LPSECURITY_ATTRIBUTES")] SECURITY_ATTRIBUTES* lpTimerAttributes, [NativeTypeName("LPCWSTR")] ushort* lpTimerName, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("DWORD")] uint dwDesiredAccess);
 
+        [SupportedOSPlatform("windows8.0")]
         [DllImport("kernel32", ExactSpelling = true)]
         public static extern BOOL EnterSynchronizationBarrier([NativeTypeName("LPSYNCHRONIZATION_BARRIER")] SYNCHRONIZATION_BARRIER* lpBarrier, [NativeTypeName("DWORD")] uint dwFlags);
 
+        [SupportedOSPlatform("windows8.0")]
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
         public static extern BOOL InitializeSynchronizationBarrier([NativeTypeName("LPSYNCHRONIZATION_BARRIER")] SYNCHRONIZATION_BARRIER* lpBarrier, [NativeTypeName("LONG")] int lTotalThreads, [NativeTypeName("LONG")] int lSpinCount);
 
+        [SupportedOSPlatform("windows8.0")]
         [DllImport("kernel32", ExactSpelling = true)]
         public static extern BOOL DeleteSynchronizationBarrier([NativeTypeName("LPSYNCHRONIZATION_BARRIER")] SYNCHRONIZATION_BARRIER* lpBarrier);
 
         [DllImport("kernel32", ExactSpelling = true)]
         public static extern void Sleep([NativeTypeName("DWORD")] uint dwMilliseconds);
 
+        [SupportedOSPlatform("windows8.0")]
         [DllImport("api-ms-win-core-synch-l1-2-0", ExactSpelling = true, SetLastError = true)]
         public static extern BOOL WaitOnAddress([NativeTypeName("volatile void *")] void* Address, [NativeTypeName("PVOID")] void* CompareAddress, [NativeTypeName("SIZE_T")] nuint AddressSize, [NativeTypeName("DWORD")] uint dwMilliseconds);
 
+        [SupportedOSPlatform("windows8.0")]
         [DllImport("api-ms-win-core-synch-l1-2-0", ExactSpelling = true)]
         public static extern void WakeByAddressSingle([NativeTypeName("PVOID")] void* Address);
 
+        [SupportedOSPlatform("windows8.0")]
         [DllImport("api-ms-win-core-synch-l1-2-0", ExactSpelling = true)]
         public static extern void WakeByAddressAll([NativeTypeName("PVOID")] void* Address);
 

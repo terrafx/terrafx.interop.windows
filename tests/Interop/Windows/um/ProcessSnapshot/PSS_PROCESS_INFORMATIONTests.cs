@@ -6,10 +6,12 @@
 using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="PSS_PROCESS_INFORMATION" /> struct.</summary>
+    [SupportedOSPlatform("windows8.1")]
     public static unsafe partial class PSS_PROCESS_INFORMATIONTests
     {
         /// <summary>Validates that the <see cref="PSS_PROCESS_INFORMATION" /> struct is blittable.</summary>

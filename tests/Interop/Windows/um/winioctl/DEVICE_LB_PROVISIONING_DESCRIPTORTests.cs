@@ -5,10 +5,12 @@
 
 using NUnit.Framework;
 using System.Runtime.InteropServices;
+using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="DEVICE_LB_PROVISIONING_DESCRIPTOR" /> struct.</summary>
+    [SupportedOSPlatform("windows8.0")]
     public static unsafe partial class DEVICE_LB_PROVISIONING_DESCRIPTORTests
     {
         /// <summary>Validates that the <see cref="DEVICE_LB_PROVISIONING_DESCRIPTOR" /> struct is blittable.</summary>

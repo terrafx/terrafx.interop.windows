@@ -5,6 +5,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.Versioning;
 using static TerraFX.Interop.CLSCTX;
 
 namespace TerraFX.Interop
@@ -54,6 +55,7 @@ namespace TerraFX.Interop
         [DllImport("ole32", ExactSpelling = true)]
         public static extern HRESULT CoDecrementMTAUsage(CO_MTA_USAGE_COOKIE Cookie);
 
+        [SupportedOSPlatform("windows8.0")]
         [DllImport("ole32", ExactSpelling = true)]
         public static extern HRESULT CoAllowUnmarshalerCLSID([NativeTypeName("const IID &")] Guid* clsid);
 
@@ -179,6 +181,7 @@ namespace TerraFX.Interop
         [DllImport("ole32", ExactSpelling = true)]
         public static extern HRESULT CoCreateInstanceEx([NativeTypeName("const IID &")] Guid* Clsid, IUnknown* punkOuter, [NativeTypeName("DWORD")] uint dwClsCtx, COSERVERINFO* pServerInfo, [NativeTypeName("DWORD")] uint dwCount, MULTI_QI* pResults);
 
+        [SupportedOSPlatform("windows8.0")]
         [DllImport("combase", ExactSpelling = true)]
         public static extern HRESULT CoCreateInstanceFromApp([NativeTypeName("const IID &")] Guid* Clsid, IUnknown* punkOuter, [NativeTypeName("DWORD")] uint dwClsCtx, [NativeTypeName("PVOID")] void* reserved, [NativeTypeName("DWORD")] uint dwCount, MULTI_QI* pResults);
 
@@ -248,6 +251,7 @@ namespace TerraFX.Interop
         [DllImport("ole32", ExactSpelling = true)]
         public static extern HRESULT CoInvalidateRemoteMachineBindings([NativeTypeName("LPOLESTR")] ushort* pszMachineName);
 
+        [SupportedOSPlatform("windows8.1")]
         [DllImport("ole32", ExactSpelling = true)]
         public static extern HRESULT RoGetAgileReference([NativeTypeName("enum AgileReferenceOptions")] AgileReferenceOptions options, [NativeTypeName("const IID &")] Guid* riid, IUnknown* pUnk, IAgileReference** ppAgileReference);
 

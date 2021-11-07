@@ -5,6 +5,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.Versioning;
 
 namespace TerraFX.Interop
 {
@@ -97,18 +98,23 @@ namespace TerraFX.Interop
         [DllImport("dwmapi", ExactSpelling = true)]
         public static extern HRESULT DwmGetTransportAttributes(BOOL* pfIsRemoting, BOOL* pfIsConnected, [NativeTypeName("DWORD *")] uint* pDwGeneration);
 
+        [SupportedOSPlatform("windows8.0")]
         [DllImport("dwmapi", ExactSpelling = true)]
         public static extern HRESULT DwmTransitionOwnedWindow(HWND hwnd, [NativeTypeName("enum DWMTRANSITION_OWNEDWINDOW_TARGET")] DWMTRANSITION_OWNEDWINDOW_TARGET target);
 
+        [SupportedOSPlatform("windows8.0")]
         [DllImport("dwmapi", ExactSpelling = true)]
         public static extern HRESULT DwmRenderGesture([NativeTypeName("enum GESTURE_TYPE")] GESTURE_TYPE gt, uint cContacts, [NativeTypeName("const DWORD *")] uint* pdwPointerID, [NativeTypeName("const POINT *")] POINT* pPoints);
 
+        [SupportedOSPlatform("windows8.0")]
         [DllImport("dwmapi", ExactSpelling = true)]
         public static extern HRESULT DwmTetherContact([NativeTypeName("DWORD")] uint dwPointerID, BOOL fEnable, POINT ptTether);
 
+        [SupportedOSPlatform("windows8.0")]
         [DllImport("dwmapi", ExactSpelling = true)]
         public static extern HRESULT DwmShowContact([NativeTypeName("DWORD")] uint dwPointerID, [NativeTypeName("enum DWM_SHOWCONTACT")] DWM_SHOWCONTACT eShowContact);
 
+        [SupportedOSPlatform("windows10.0.17134.0")]
         [DllImport("dwmapi", ExactSpelling = true)]
         public static extern HRESULT DwmGetUnmetTabRequirements(HWND appWindow, [NativeTypeName("enum DWM_TAB_WINDOW_REQUIREMENTS *")] DWM_TAB_WINDOW_REQUIREMENTS* value);
 

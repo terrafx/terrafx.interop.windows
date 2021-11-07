@@ -5,10 +5,12 @@
 
 using NUnit.Framework;
 using System.Runtime.InteropServices;
+using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="AUDIOCLIENT_PROCESS_LOOPBACK_PARAMS" /> struct.</summary>
+    [SupportedOSPlatform("windows10.0.19043.0")]
     public static unsafe partial class AUDIOCLIENT_PROCESS_LOOPBACK_PARAMSTests
     {
         /// <summary>Validates that the <see cref="AUDIOCLIENT_PROCESS_LOOPBACK_PARAMS" /> struct is blittable.</summary>

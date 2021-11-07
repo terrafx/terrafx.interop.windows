@@ -5,9 +5,11 @@
 
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using System.Runtime.Versioning;
 
 namespace TerraFX.Interop
 {
+    [SupportedOSPlatform("windows10.0.19043.0")]
     public partial struct AUDIOCLIENT_ACTIVATION_PARAMS
     {
         public AUDIOCLIENT_ACTIVATION_TYPE ActivationType;

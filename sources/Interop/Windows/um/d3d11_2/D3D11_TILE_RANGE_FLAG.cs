@@ -4,10 +4,12 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Runtime.Versioning;
 
 namespace TerraFX.Interop
 {
     [Flags]
+    [SupportedOSPlatform("windows8.1")]
     public enum D3D11_TILE_RANGE_FLAG
     {
         D3D11_TILE_RANGE_NULL = 0x1,
