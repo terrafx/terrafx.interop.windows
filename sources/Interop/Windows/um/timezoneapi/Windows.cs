@@ -4,6 +4,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System.Runtime.InteropServices;
+using System.Runtime.Versioning;
 
 namespace TerraFX.Interop
 {
@@ -52,9 +53,11 @@ namespace TerraFX.Interop
         [DllImport("kernel32", ExactSpelling = true)]
         public static extern BOOL TzSpecificLocalTimeToSystemTimeEx([NativeTypeName("const DYNAMIC_TIME_ZONE_INFORMATION *")] DYNAMIC_TIME_ZONE_INFORMATION* lpTimeZoneInformation, [NativeTypeName("const SYSTEMTIME *")] SYSTEMTIME* lpLocalTime, [NativeTypeName("LPSYSTEMTIME")] SYSTEMTIME* lpUniversalTime);
 
+        [SupportedOSPlatform("windows10.0.17763.0")]
         [DllImport("api-ms-win-core-timezone-l1-1-1", ExactSpelling = true)]
         public static extern BOOL LocalFileTimeToLocalSystemTime([NativeTypeName("const TIME_ZONE_INFORMATION *")] TIME_ZONE_INFORMATION* timeZoneInformation, [NativeTypeName("const FILETIME *")] FILETIME* localFileTime, SYSTEMTIME* localSystemTime);
 
+        [SupportedOSPlatform("windows10.0.17763.0")]
         [DllImport("api-ms-win-core-timezone-l1-1-1", ExactSpelling = true)]
         public static extern BOOL LocalSystemTimeToLocalFileTime([NativeTypeName("const TIME_ZONE_INFORMATION *")] TIME_ZONE_INFORMATION* timeZoneInformation, [NativeTypeName("const SYSTEMTIME *")] SYSTEMTIME* localSystemTime, FILETIME* localFileTime);
 
