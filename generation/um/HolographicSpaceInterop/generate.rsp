@@ -8,3 +8,5 @@ um-HolographicSpaceInterop.h
 ../../../tests/Interop/Windows/um/HolographicSpaceInterop
 --traverse
 C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/HolographicSpaceInterop.h
+--with-attribute
+IHolographicSpaceInterop=SupportedOSPlatform("windows10.0.15063.0")

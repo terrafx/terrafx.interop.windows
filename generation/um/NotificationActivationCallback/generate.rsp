@@ -8,3 +8,7 @@ um-NotificationActivationCallback.h
 ../../../tests/Interop/Windows/um/NotificationActivationCallback
 --traverse
 C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/NotificationActivationCallback.h
+--with-attribute
+INotificationActivationCallback.Activate=SupportedOSPlatform("windows10.0")
+INotificationActivationCallback=SupportedOSPlatform("windows10.0")
+NOTIFICATION_USER_INPUT_DATA=SupportedOSPlatform("windows10.0")

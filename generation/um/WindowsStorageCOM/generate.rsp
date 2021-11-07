@@ -11,6 +11,16 @@ um-WindowsStorageCOM.h
 --traverse
 C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/WindowsStorageCOM.h
 --with-attribute
-HANDLE_OPTIONS=Flags
 HANDLE_ACCESS_OPTIONS=Flags
+HANDLE_ACCESS_OPTIONS=SupportedOSPlatform("windows10.0")
+HANDLE_CREATION_OPTIONS=SupportedOSPlatform("windows10.0")
+HANDLE_OPTIONS=Flags
+HANDLE_OPTIONS=SupportedOSPlatform("windows10.0")
 HANDLE_SHARING_OPTIONS=Flags
+HANDLE_SHARING_OPTIONS=SupportedOSPlatform("windows10.0")
+IOplockBreakingHandler=SupportedOSPlatform("windows10.0")
+IRandomAccessStreamFileAccessMode=SupportedOSPlatform("windows10.0")
+IStorageFolderHandleAccess=SupportedOSPlatform("windows10.0")
+IStorageItemHandleAccess=SupportedOSPlatform("windows10.0")
+IUnbufferedFileHandleOplockCallback=SupportedOSPlatform("windows10.0")
+IUnbufferedFileHandleProvider=SupportedOSPlatform("windows10.0")

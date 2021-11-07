@@ -9,7 +9,22 @@ um-ShellScalingApi.h
 --traverse
 C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/ShellScalingApi.h
 --with-attribute
+DISPLAY_DEVICE_TYPE=SupportedOSPlatform("windows8.0")
+GetDpiForMonitor=SupportedOSPlatform("windows8.1")
+GetDpiForShellUiComponent=SupportedOSPlatform("windows8.1")
+GetProcessDpiAwareness=SupportedOSPlatform("windows8.1")
+GetScaleFactorForDevice=SupportedOSPlatform("windows8.0")
+GetScaleFactorForMonitor=SupportedOSPlatform("windows8.1")
+MONITOR_DPI_TYPE=SupportedOSPlatform("windows8.1")
+PROCESS_DPI_AWARENESS=SupportedOSPlatform("windows8.1")
+RegisterScaleChangeEvent=SupportedOSPlatform("windows8.1")
+RegisterScaleChangeNotifications=SupportedOSPlatform("windows8.0")
+RevokeScaleChangeNotifications=SupportedOSPlatform("windows8.0")
 SCALE_CHANGE_FLAGS=Flags
+SCALE_CHANGE_FLAGS=SupportedOSPlatform("windows8.0")
+SetProcessDpiAwareness=SupportedOSPlatform("windows8.1")
+SHELL_UI_COMPONENT=SupportedOSPlatform("windows8.1")
+UnregisterScaleChangeEvent=SupportedOSPlatform("windows8.1")
 --with-librarypath
 GetDpiForMonitor=shcore
 GetDpiForShellUiComponent=shcore

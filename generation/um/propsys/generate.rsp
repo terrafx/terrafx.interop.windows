@@ -16,6 +16,8 @@ PROPDESC_FORMAT_FLAGS=Flags
 PROPDESC_SEARCHINFO_FLAGS=Flags
 PROPDESC_TYPE_FLAGS=Flags
 PROPDESC_VIEW_FLAGS=Flags
+PropVariantToWinRTPropertyValue=SupportedOSPlatform("windows8.0")
+WinRTPropertyValueToPropVariant=SupportedOSPlatform("windows8.0")
 --with-librarypath
 PropVariantToWinRTPropertyValue=propsys
 WinRTPropertyValueToPropVariant=propsys

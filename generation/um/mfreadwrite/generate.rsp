@@ -13,6 +13,9 @@ um-mfreadwrite.h
 --traverse
 C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/mfreadwrite.h
 --with-attribute
+IMFSinkWriterEncoderConfig=SupportedOSPlatform("windows8.1")
+IMFSinkWriterEx=SupportedOSPlatform("windows8.0")
+IMFSourceReaderEx=SupportedOSPlatform("windows8.0")
 MF_SOURCE_READER_CONTROL_FLAG=Flags
 MF_SOURCE_READER_FLAG=Flags
 --with-librarypath

@@ -8,5 +8,15 @@ um-SpatialAudioMetadata.h
 ../../../tests/Interop/Windows/um/SpatialAudioMetadata
 --traverse
 C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/SpatialAudioMetadata.h
+--with-attribute
+ISpatialAudioMetadataClient=SupportedOSPlatform("windows10.0.15063.0")
+ISpatialAudioMetadataCopier=SupportedOSPlatform("windows10.0.15063.0")
+ISpatialAudioMetadataItems=SupportedOSPlatform("windows10.0.15063.0")
+ISpatialAudioMetadataItemsBuffer=SupportedOSPlatform("windows10.0.15063.0")
+ISpatialAudioMetadataReader=SupportedOSPlatform("windows10.0.15063.0")
+ISpatialAudioMetadataWriter=SupportedOSPlatform("windows10.0.15063.0")
+ISpatialAudioObjectForMetadataCommands=SupportedOSPlatform("windows10.0.15063.0")
+ISpatialAudioObjectForMetadataItems=SupportedOSPlatform("windows10.0.15063.0")
+ISpatialAudioObjectRenderStreamForMetadata=SupportedOSPlatform("windows10.0.15063.0")
 --with-type
 SPATIAL_AUDIO_POSITION_BYTE_COUNT=uint
