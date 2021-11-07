@@ -5,10 +5,12 @@
 
 using NUnit.Framework;
 using System.Runtime.InteropServices;
+using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="D3D11_TEX2D_VDOV" /> struct.</summary>
+    [SupportedOSPlatform("windows8.0")]
     public static unsafe partial class D3D11_TEX2D_VDOVTests
     {
         /// <summary>Validates that the <see cref="D3D11_TEX2D_VDOV" /> struct is blittable.</summary>

@@ -6,10 +6,12 @@
 using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="COPYFILE2_MESSAGE" /> struct.</summary>
+    [SupportedOSPlatform("windows8.0")]
     public static unsafe partial class COPYFILE2_MESSAGETests
     {
         /// <summary>Validates that the <see cref="COPYFILE2_MESSAGE" /> struct is blittable.</summary>

@@ -6,9 +6,11 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using System.Runtime.Versioning;
 
 namespace TerraFX.Interop
 {
+    [SupportedOSPlatform("windows8.0")]
     public partial struct D3D11_VIDEO_DECODER_OUTPUT_VIEW_DESC
     {
         public Guid DecodeProfile;

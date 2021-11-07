@@ -5,10 +5,12 @@
 
 using NUnit.Framework;
 using System.Runtime.InteropServices;
+using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="PSS_PERFORMANCE_COUNTERS" /> struct.</summary>
+    [SupportedOSPlatform("windows8.1")]
     public static unsafe partial class PSS_PERFORMANCE_COUNTERSTests
     {
         /// <summary>Validates that the <see cref="PSS_PERFORMANCE_COUNTERS" /> struct is blittable.</summary>

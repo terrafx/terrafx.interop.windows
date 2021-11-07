@@ -11,5 +11,14 @@ um-mmdeviceapi.h
 ../../../tests/Interop/Windows/um/mmdeviceapi
 --traverse
 C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/mmdeviceapi.h
+--with-attribute
+ActivateAudioInterfaceAsync=SupportedOSPlatform("windows8.0")
+AudioExtensionParams=SupportedOSPlatform("windows8.0")
+AUDIO_SYSTEMEFFECTS_PROPERTYSTORE_TYPE=SupportedOSPlatform("windows10.0.22000.0")
+IActivateAudioInterfaceAsyncOperation=SupportedOSPlatform("windows8.0")
+IActivateAudioInterfaceCompletionHandler=SupportedOSPlatform("windows8.0")
+IAudioSystemEffectsPropertyChangeNotificationClient=SupportedOSPlatform("windows10.0.22000.0")
+IAudioSystemEffectsPropertyStore=SupportedOSPlatform("windows10.0.22000.0")
+__MIDL___MIDL_itf_mmdeviceapi_0000_0008_0002=SupportedOSPlatform("windows10.0.22000.0")
 --with-librarypath
 ActivateAudioInterfaceAsync=mmdevapi

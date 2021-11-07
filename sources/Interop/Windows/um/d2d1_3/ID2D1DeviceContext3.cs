@@ -6,6 +6,7 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using System.Runtime.Versioning;
 using static TerraFX.Interop.D2D1_ALPHA_MODE;
 using static TerraFX.Interop.D2D1_BITMAP_INTERPOLATION_MODE;
 using static TerraFX.Interop.D2D1_COMPATIBLE_RENDER_TARGET_OPTIONS;
@@ -20,6 +21,7 @@ using static TerraFX.Interop.DWRITE_MEASURING_MODE;
 
 namespace TerraFX.Interop
 {
+    [SupportedOSPlatform("windows10.0")]
     [Guid("235A7496-8351-414C-BCD4-6672AB2D8E00")]
     [NativeTypeName("struct ID2D1DeviceContext3 : ID2D1DeviceContext2")]
     [NativeInheritance("ID2D1DeviceContext2")]

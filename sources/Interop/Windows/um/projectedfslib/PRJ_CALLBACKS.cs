@@ -4,9 +4,11 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Runtime.Versioning;
 
 namespace TerraFX.Interop
 {
+    [SupportedOSPlatform("windows10.0.17763.0")]
     public unsafe partial struct PRJ_CALLBACKS
     {
         [NativeTypeName("PRJ_START_DIRECTORY_ENUMERATION_CB *")]

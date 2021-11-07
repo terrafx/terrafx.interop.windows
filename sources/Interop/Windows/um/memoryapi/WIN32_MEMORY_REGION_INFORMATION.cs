@@ -5,9 +5,11 @@
 
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using System.Runtime.Versioning;
 
 namespace TerraFX.Interop
 {
+    [SupportedOSPlatform("windows10.0.14393.0")]
     public unsafe partial struct WIN32_MEMORY_REGION_INFORMATION
     {
         [NativeTypeName("PVOID")]

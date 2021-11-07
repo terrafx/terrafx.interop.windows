@@ -6,9 +6,11 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using System.Runtime.Versioning;
 
 namespace TerraFX.Interop
 {
+    [SupportedOSPlatform("windows8.0")]
     [Guid("DDA0B713-F3FF-49D3-898A-2786780C5D98")]
     [NativeTypeName("struct IAppxManifestPackageDependency2 : IAppxManifestPackageDependency")]
     [NativeInheritance("IAppxManifestPackageDependency")]

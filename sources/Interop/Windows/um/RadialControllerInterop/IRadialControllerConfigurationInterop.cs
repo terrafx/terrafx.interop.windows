@@ -6,9 +6,11 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using System.Runtime.Versioning;
 
 namespace TerraFX.Interop
 {
+    [SupportedOSPlatform("windows10.0.14393.0")]
     [Guid("787CDAAC-3186-476D-87E4-B9374A7B9970")]
     [NativeTypeName("struct IRadialControllerConfigurationInterop : IInspectable")]
     [NativeInheritance("IInspectable")]

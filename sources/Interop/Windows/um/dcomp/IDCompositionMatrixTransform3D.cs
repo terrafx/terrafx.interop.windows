@@ -6,9 +6,11 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using System.Runtime.Versioning;
 
 namespace TerraFX.Interop
 {
+    [SupportedOSPlatform("windows8.0")]
     [Guid("4B3363F0-643B-41B7-B6E0-CCF22D34467C")]
     [NativeTypeName("struct IDCompositionMatrixTransform3D : IDCompositionTransform3D")]
     [NativeInheritance("IDCompositionTransform3D")]

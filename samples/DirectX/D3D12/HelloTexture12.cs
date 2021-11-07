@@ -5,6 +5,7 @@
 
 using System.Numerics;
 using System.Runtime.CompilerServices;
+using System.Runtime.Versioning;
 using TerraFX.Interop;
 using static TerraFX.Interop.D3D_ROOT_SIGNATURE_VERSION;
 using static TerraFX.Interop.D3D12_COMPARISON_FUNC;
@@ -31,6 +32,7 @@ using static TerraFX.Samples.DirectX.DXSampleHelper;
 
 namespace TerraFX.Samples.DirectX.D3D12
 {
+    [SupportedOSPlatform("windows10.0")]
     public unsafe class HelloTexture12 : HelloTriangle12
     {
         private const uint TextureWidth = 256;

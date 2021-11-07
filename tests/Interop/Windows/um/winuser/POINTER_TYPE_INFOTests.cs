@@ -6,10 +6,12 @@
 using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="POINTER_TYPE_INFO" /> struct.</summary>
+    [SupportedOSPlatform("windows10.0.17763.0")]
     public static unsafe partial class POINTER_TYPE_INFOTests
     {
         /// <summary>Validates that the <see cref="POINTER_TYPE_INFO" /> struct is blittable.</summary>

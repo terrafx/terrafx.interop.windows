@@ -7,11 +7,13 @@ using System;
 using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using System.Runtime.Versioning;
 
 namespace TerraFX.Interop
 {
     public static unsafe partial class Windows
     {
+        [SupportedOSPlatform("windows8.1")]
         [DllImport("windows.data.pdf.dll", ExactSpelling = true)]
         public static extern HRESULT PdfCreateRenderer(IDXGIDevice* pDevice, IPdfRendererNative** ppRenderer);
 

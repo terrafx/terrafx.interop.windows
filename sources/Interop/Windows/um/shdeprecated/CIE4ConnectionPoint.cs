@@ -122,10 +122,10 @@ namespace TerraFX.Interop
             public delegate* unmanaged<CIE4ConnectionPoint*, IEnumConnections**, int> EnumConnections;
 
             [NativeTypeName("HRESULT (BOOL *, void **, DISPID, DISPPARAMS *)")]
-            internal delegate* unmanaged<CIE4ConnectionPoint*, BOOL*, void**, int, DISPPARAMS*, int> DoInvokeIE4;
+            public delegate* unmanaged<CIE4ConnectionPoint*, BOOL*, void**, int, DISPPARAMS*, int> DoInvokeIE4;
 
             [NativeTypeName("HRESULT (DISPID, LPCITEMIDLIST, BOOL)")]
-            internal delegate* unmanaged<CIE4ConnectionPoint*, int, ITEMIDLIST*, BOOL, int> DoInvokePIDLIE4;
+            public delegate* unmanaged<CIE4ConnectionPoint*, int, ITEMIDLIST*, BOOL, int> DoInvokePIDLIE4;
         }
     }
 }

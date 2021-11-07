@@ -5,6 +5,7 @@
 
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using System.Runtime.Versioning;
 
 namespace TerraFX.Interop
 {
@@ -38,6 +39,7 @@ namespace TerraFX.Interop
             }
         }
 
+        [SupportedOSPlatform("windows10.0.17763.0")]
         public ref DISPLAYCONFIG_DESKTOP_IMAGE_INFO desktopImageInfo
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]

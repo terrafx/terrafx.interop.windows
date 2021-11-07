@@ -6,10 +6,12 @@
 using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="WS_NAMEDPIPE_SSPI_TRANSPORT_SECURITY_BINDING" /> struct.</summary>
+    [SupportedOSPlatform("windows8.0")]
     public static unsafe partial class WS_NAMEDPIPE_SSPI_TRANSPORT_SECURITY_BINDINGTests
     {
         /// <summary>Validates that the <see cref="WS_NAMEDPIPE_SSPI_TRANSPORT_SECURITY_BINDING" /> struct is blittable.</summary>

@@ -10,6 +10,11 @@ um-windows.data.pdf.interop.h
 ../../../tests/Interop/Windows/um/windows.data.pdf.interop
 --traverse
 C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/windows.data.pdf.interop.h
+--with-attribute
+IPdfRendererNative=SupportedOSPlatform("windows8.1")
+PdfCreateRenderer=SupportedOSPlatform("windows8.1")
+PdfRenderParams=SupportedOSPlatform("windows8.1")
+PDF_RENDER_PARAMS=SupportedOSPlatform("windows8.1")
 --with-librarypath
 PdfCreateRenderer=windows.data.pdf.dll
 PdfRenderParams=windows.data.pdf.dll

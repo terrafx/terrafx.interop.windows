@@ -7,6 +7,7 @@ using System;
 using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using System.Runtime.Versioning;
 
 namespace TerraFX.Interop
 {
@@ -3388,21 +3389,27 @@ namespace TerraFX.Interop
         [DllImport("mf", ExactSpelling = true)]
         public static extern HRESULT MFCreateMP3MediaSink(IMFByteStream* pTargetByteStream, IMFMediaSink** ppMediaSink);
 
+        [SupportedOSPlatform("windows8.0")]
         [DllImport("mf", ExactSpelling = true)]
         public static extern HRESULT MFCreateAC3MediaSink(IMFByteStream* pTargetByteStream, IMFMediaType* pAudioMediaType, IMFMediaSink** ppMediaSink);
 
+        [SupportedOSPlatform("windows8.0")]
         [DllImport("mf", ExactSpelling = true)]
         public static extern HRESULT MFCreateADTSMediaSink(IMFByteStream* pTargetByteStream, IMFMediaType* pAudioMediaType, IMFMediaSink** ppMediaSink);
 
+        [SupportedOSPlatform("windows8.0")]
         [DllImport("mf", ExactSpelling = true)]
         public static extern HRESULT MFCreateMuxSink(Guid guidOutputSubType, IMFAttributes* pOutputAttributes, IMFByteStream* pOutputByteStream, IMFMediaSink** ppMuxSink);
 
+        [SupportedOSPlatform("windows8.0")]
         [DllImport("mf", ExactSpelling = true)]
         public static extern HRESULT MFCreateFMPEG4MediaSink(IMFByteStream* pIByteStream, IMFMediaType* pVideoMediaType, IMFMediaType* pAudioMediaType, IMFMediaSink** ppIMediaSink);
 
+        [SupportedOSPlatform("windows8.1")]
         [DllImport("mfsrcsnk", ExactSpelling = true)]
         public static extern HRESULT MFCreateAVIMediaSink(IMFByteStream* pIByteStream, IMFMediaType* pVideoMediaType, IMFMediaType* pAudioMediaType, IMFMediaSink** ppIMediaSink);
 
+        [SupportedOSPlatform("windows8.1")]
         [DllImport("mfsrcsnk", ExactSpelling = true)]
         public static extern HRESULT MFCreateWAVEMediaSink(IMFByteStream* pTargetByteStream, IMFMediaType* pAudioMediaType, IMFMediaSink** ppMediaSink);
 
@@ -7151,6 +7158,7 @@ namespace TerraFX.Interop
         [DllImport("mf", ExactSpelling = true)]
         public static extern HRESULT MFCreateTranscodeTopology(IMFMediaSource* pSrc, [NativeTypeName("LPCWSTR")] ushort* pwszOutputFilePath, IMFTranscodeProfile* pProfile, IMFTopology** ppTranscodeTopo);
 
+        [SupportedOSPlatform("windows8.0")]
         [DllImport("mf", ExactSpelling = true)]
         public static extern HRESULT MFCreateTranscodeTopologyFromByteStream(IMFMediaSource* pSrc, IMFByteStream* pOutputStream, IMFTranscodeProfile* pProfile, IMFTopology** ppTranscodeTopo);
 
@@ -7185,24 +7193,30 @@ namespace TerraFX.Interop
             }
         }
 
+        [SupportedOSPlatform("windows8.0")]
         [DllImport("mfplat", ExactSpelling = true)]
         public static extern HRESULT MFCreateTrackedSample(IMFTrackedSample** ppMFSample);
 
         [DllImport("mfplat", ExactSpelling = true)]
         public static extern HRESULT MFCreateMFByteStreamOnStream(IStream* pStream, IMFByteStream** ppByteStream);
 
+        [SupportedOSPlatform("windows8.0")]
         [DllImport("mfplat", ExactSpelling = true)]
         public static extern HRESULT MFCreateStreamOnMFByteStream(IMFByteStream* pByteStream, IStream** ppStream);
 
+        [SupportedOSPlatform("windows8.0")]
         [DllImport("mfplat", ExactSpelling = true)]
         public static extern HRESULT MFCreateMFByteStreamOnStreamEx(IUnknown* punkStream, IMFByteStream** ppByteStream);
 
+        [SupportedOSPlatform("windows8.0")]
         [DllImport("mfplat", ExactSpelling = true)]
         public static extern HRESULT MFCreateStreamOnMFByteStreamEx(IMFByteStream* pByteStream, [NativeTypeName("const IID &")] Guid* riid, void** ppv);
 
+        [SupportedOSPlatform("windows8.0")]
         [DllImport("mfplat", ExactSpelling = true)]
         public static extern HRESULT MFCreateMediaTypeFromProperties(IUnknown* punkStream, IMFMediaType** ppMediaType);
 
+        [SupportedOSPlatform("windows8.0")]
         [DllImport("mfplat", ExactSpelling = true)]
         public static extern HRESULT MFCreatePropertiesFromMediaType(IMFMediaType* pMediaType, [NativeTypeName("const IID &")] Guid* riid, void** ppv);
 
@@ -8265,15 +8279,19 @@ namespace TerraFX.Interop
             }
         }
 
+        [SupportedOSPlatform("windows8.0")]
         [DllImport("mf", ExactSpelling = true)]
         public static extern HRESULT MFCreateProtectedEnvironmentAccess(IMFProtectedEnvironmentAccess** ppAccess);
 
+        [SupportedOSPlatform("windows8.0")]
         [DllImport("mf", ExactSpelling = true)]
         public static extern HRESULT MFLoadSignedLibrary([NativeTypeName("LPCWSTR")] ushort* pszName, IMFSignedLibrary** ppLib);
 
+        [SupportedOSPlatform("windows8.0")]
         [DllImport("mf", ExactSpelling = true)]
         public static extern HRESULT MFGetSystemId(IMFSystemId** ppId);
 
+        [SupportedOSPlatform("windows8.0")]
         [DllImport("mf", ExactSpelling = true)]
         public static extern HRESULT MFGetLocalId([NativeTypeName("const BYTE *")] byte* verifier, [NativeTypeName("UINT32")] uint size, [NativeTypeName("LPWSTR *")] ushort** id);
 
@@ -8352,9 +8370,11 @@ namespace TerraFX.Interop
             }
         }
 
+        [SupportedOSPlatform("windows10.0")]
         [DllImport("mfplat", ExactSpelling = true)]
         public static extern HRESULT MFCreateContentProtectionDevice([NativeTypeName("const GUID &")] Guid* ProtectionSystemId, IMFContentProtectionDevice** ContentProtectionDevice);
 
+        [SupportedOSPlatform("windows10.0")]
         [DllImport("mfplat", ExactSpelling = true)]
         public static extern HRESULT MFIsContentProtectionDeviceSupported([NativeTypeName("const GUID &")] Guid* ProtectionSystemId, BOOL* isSupported);
 
@@ -8408,6 +8428,7 @@ namespace TerraFX.Interop
             }
         }
 
+        [SupportedOSPlatform("windows10.0")]
         [DllImport("mfplat", ExactSpelling = true)]
         public static extern HRESULT MFCreateContentDecryptorContext([NativeTypeName("const GUID &")] Guid* guidMediaProtectionSystemId, IMFDXGIDeviceManager* pD3DManager, IMFContentProtectionDevice* pContentProtectionDevice, IMFContentDecryptorContext** ppContentDecryptorContext);
 
@@ -9261,12 +9282,15 @@ namespace TerraFX.Interop
             }
         }
 
+        [SupportedOSPlatform("windows10.0.14393.0")]
         [DllImport("mfsensorgroup", ExactSpelling = true)]
         public static extern HRESULT MFCreateSensorGroup([NativeTypeName("LPCWSTR")] ushort* SensorGroupSymbolicLink, IMFSensorGroup** ppSensorGroup);
 
+        [SupportedOSPlatform("windows10.0.17134.0")]
         [DllImport("mfsensorgroup", ExactSpelling = true)]
         public static extern HRESULT MFCreateSensorProfile([NativeTypeName("const GUID &")] Guid* ProfileType, [NativeTypeName("UINT32")] uint ProfileIndex, [NativeTypeName("LPCWSTR")] ushort* Constraints, IMFSensorProfile** ppProfile);
 
+        [SupportedOSPlatform("windows10.0.15063.0")]
         [DllImport("mfsensorgroup", ExactSpelling = true)]
         public static extern HRESULT MFCreateSensorProfileCollection(IMFSensorProfileCollection** ppSensorProfile);
 
@@ -9323,6 +9347,7 @@ namespace TerraFX.Interop
             }
         }
 
+        [SupportedOSPlatform("windows10.0.19041.0")]
         [DllImport("mfsensorgroup", ExactSpelling = true)]
         public static extern HRESULT MFCreateRelativePanelWatcher([NativeTypeName("PCWSTR")] ushort* videoDeviceId, [NativeTypeName("PCWSTR")] ushort* displayMonitorDeviceId, IMFRelativePanelWatcher** ppRelativePanelWatcher);
 

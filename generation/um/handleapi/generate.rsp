@@ -10,6 +10,8 @@ um-handleapi.h
 ../../../tests/Interop/Windows/um/handleapi
 --traverse
 C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/handleapi.h
+--with-attribute
+CompareObjectHandles=SupportedOSPlatform("windows10.0")
 --with-librarypath
 CloseHandle=kernel32
 DuplicateHandle=kernel32

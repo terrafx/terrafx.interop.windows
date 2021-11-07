@@ -6,9 +6,11 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using System.Runtime.Versioning;
 
 namespace TerraFX.Interop
 {
+    [SupportedOSPlatform("windows10.0")]
     [Guid("8939F66E-C46A-4C21-A9D1-98B327CE1679")]
     [NativeTypeName("struct IWICJpegFrameDecode : IUnknown")]
     [NativeInheritance("IUnknown")]

@@ -5,9 +5,11 @@
 
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using System.Runtime.Versioning;
 
 namespace TerraFX.Interop
 {
+    [SupportedOSPlatform("windows10.0.17763.0")]
     public partial struct DISPLAYCONFIG_SUPPORT_VIRTUAL_RESOLUTION
     {
         public DISPLAYCONFIG_DEVICE_INFO_HEADER header;

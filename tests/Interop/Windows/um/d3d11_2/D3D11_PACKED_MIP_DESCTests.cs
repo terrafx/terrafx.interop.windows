@@ -5,10 +5,12 @@
 
 using NUnit.Framework;
 using System.Runtime.InteropServices;
+using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="D3D11_PACKED_MIP_DESC" /> struct.</summary>
+    [SupportedOSPlatform("windows8.1")]
     public static unsafe partial class D3D11_PACKED_MIP_DESCTests
     {
         /// <summary>Validates that the <see cref="D3D11_PACKED_MIP_DESC" /> struct is blittable.</summary>

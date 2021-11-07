@@ -3,8 +3,11 @@
 // Ported from um/dwrite_2.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System.Runtime.Versioning;
+
 namespace TerraFX.Interop
 {
+    [SupportedOSPlatform("windows8.1")]
     public enum DWRITE_GRID_FIT_MODE
     {
         DWRITE_GRID_FIT_MODE_DEFAULT,

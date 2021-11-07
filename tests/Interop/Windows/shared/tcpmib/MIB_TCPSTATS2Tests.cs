@@ -5,10 +5,12 @@
 
 using NUnit.Framework;
 using System.Runtime.InteropServices;
+using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="MIB_TCPSTATS2" /> struct.</summary>
+    [SupportedOSPlatform("windows10.0.16299.0")]
     public static unsafe partial class MIB_TCPSTATS2Tests
     {
         /// <summary>Validates that the <see cref="MIB_TCPSTATS2" /> struct is blittable.</summary>

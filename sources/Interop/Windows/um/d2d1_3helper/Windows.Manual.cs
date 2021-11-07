@@ -3,10 +3,13 @@
 // Ported from um/d2d1_3helper.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System.Runtime.Versioning;
+
 namespace TerraFX.Interop
 {
     public static unsafe partial class Windows
     {
+        [SupportedOSPlatform("windows10.0")]
         public static D2D1_GRADIENT_MESH_PATCH GradientMeshPatch([NativeTypeName("D2D1_POINT_2F")] D2D_POINT_2F point00, [NativeTypeName("D2D1_POINT_2F")] D2D_POINT_2F point01, [NativeTypeName("D2D1_POINT_2F")] D2D_POINT_2F point02, [NativeTypeName("D2D1_POINT_2F")] D2D_POINT_2F point03, [NativeTypeName("D2D1_POINT_2F")] D2D_POINT_2F point10, [NativeTypeName("D2D1_POINT_2F")] D2D_POINT_2F point11, [NativeTypeName("D2D1_POINT_2F")] D2D_POINT_2F point12, [NativeTypeName("D2D1_POINT_2F")] D2D_POINT_2F point13, [NativeTypeName("D2D1_POINT_2F")] D2D_POINT_2F point20, [NativeTypeName("D2D1_POINT_2F")] D2D_POINT_2F point21, [NativeTypeName("D2D1_POINT_2F")] D2D_POINT_2F point22, [NativeTypeName("D2D1_POINT_2F")] D2D_POINT_2F point23, [NativeTypeName("D2D1_POINT_2F")] D2D_POINT_2F point30, [NativeTypeName("D2D1_POINT_2F")] D2D_POINT_2F point31, [NativeTypeName("D2D1_POINT_2F")] D2D_POINT_2F point32, [NativeTypeName("D2D1_POINT_2F")] D2D_POINT_2F point33, [NativeTypeName("D2D1_COLOR_F")] DXGI_RGBA color00, [NativeTypeName("D2D1_COLOR_F")] DXGI_RGBA color03, [NativeTypeName("D2D1_COLOR_F")] DXGI_RGBA color30, [NativeTypeName("D2D1_COLOR_F")] DXGI_RGBA color33, D2D1_PATCH_EDGE_MODE topEdgeMode, D2D1_PATCH_EDGE_MODE leftEdgeMode, D2D1_PATCH_EDGE_MODE bottomEdgeMode, D2D1_PATCH_EDGE_MODE rightEdgeMode)
         {
             D2D1_GRADIENT_MESH_PATCH newPatch;
@@ -39,6 +42,7 @@ namespace TerraFX.Interop
             return newPatch;
         }
 
+        [SupportedOSPlatform("windows10.0")]
         public static D2D1_GRADIENT_MESH_PATCH GradientMeshPatchFromCoonsPatch([NativeTypeName("D2D1_POINT_2F")] D2D_POINT_2F point0, [NativeTypeName("D2D1_POINT_2F")] D2D_POINT_2F point1, [NativeTypeName("D2D1_POINT_2F")] D2D_POINT_2F point2, [NativeTypeName("D2D1_POINT_2F")] D2D_POINT_2F point3, [NativeTypeName("D2D1_POINT_2F")] D2D_POINT_2F point4, [NativeTypeName("D2D1_POINT_2F")] D2D_POINT_2F point5, [NativeTypeName("D2D1_POINT_2F")] D2D_POINT_2F point6, [NativeTypeName("D2D1_POINT_2F")] D2D_POINT_2F point7, [NativeTypeName("D2D1_POINT_2F")] D2D_POINT_2F point8, [NativeTypeName("D2D1_POINT_2F")] D2D_POINT_2F point9, [NativeTypeName("D2D1_POINT_2F")] D2D_POINT_2F point10, [NativeTypeName("D2D1_POINT_2F")] D2D_POINT_2F point11, [NativeTypeName("D2D1_COLOR_F")] DXGI_RGBA color0, [NativeTypeName("D2D1_COLOR_F")] DXGI_RGBA color1, [NativeTypeName("D2D1_COLOR_F")] DXGI_RGBA color2, [NativeTypeName("D2D1_COLOR_F")] DXGI_RGBA color3, D2D1_PATCH_EDGE_MODE topEdgeMode, D2D1_PATCH_EDGE_MODE leftEdgeMode, D2D1_PATCH_EDGE_MODE bottomEdgeMode, D2D1_PATCH_EDGE_MODE rightEdgeMode)
         {
             D2D1_GRADIENT_MESH_PATCH newPatch;

@@ -5,10 +5,12 @@
 
 using NUnit.Framework;
 using System.Runtime.InteropServices;
+using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="PRJ_NOTIFICATION_PARAMETERS" /> struct.</summary>
+    [SupportedOSPlatform("windows10.0.17763.0")]
     public static unsafe partial class PRJ_NOTIFICATION_PARAMETERSTests
     {
         /// <summary>Validates that the <see cref="PRJ_NOTIFICATION_PARAMETERS" /> struct is blittable.</summary>

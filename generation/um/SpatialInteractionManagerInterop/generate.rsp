@@ -8,3 +8,5 @@ um-SpatialInteractionManagerInterop.h
 ../../../tests/Interop/Windows/um/SpatialInteractionManagerInterop
 --traverse
 C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/SpatialInteractionManagerInterop.h
+--with-attribute
+ISpatialInteractionManagerInterop=SupportedOSPlatform("windows10.0.15063.0")

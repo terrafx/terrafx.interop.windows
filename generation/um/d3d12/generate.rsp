@@ -69,6 +69,14 @@ D3D12_TILE_MAPPING_FLAGS=Flags
 D3D12_TILE_RANGE_FLAGS=Flags
 D3D12_VIEW_INSTANCING_FLAGS=Flags
 D3D12_WAVE_MMA_ACCUM_DATATYPE=Flags
+ID3D12Device5=SupportedOSPlatform("windows10.0.17763.0")
+ID3D12DeviceRemovedExtendedData=SupportedOSPlatform("windows10.0.18362.0")
+ID3D12DeviceRemovedExtendedDataSettings=SupportedOSPlatform("windows10.0.18362.0")
+ID3D12GraphicsCommandList2=SupportedOSPlatform("windows10.0")
+ID3D12GraphicsCommandList3=SupportedOSPlatform("windows10.0")
+ID3D12GraphicsCommandList4=SupportedOSPlatform("windows10.0.17763.0")
+ID3D12ProtectedResourceSession=SupportedOSPlatform("windows10.0")
+ID3D12ProtectedSession=SupportedOSPlatform("windows10.0")
 --with-librarypath
 D3D12CreateDevice=d3d12
 D3D12CreateRootSignatureDeserializer=d3d12

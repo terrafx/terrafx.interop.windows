@@ -5,10 +5,12 @@
 
 using NUnit.Framework;
 using System.Runtime.InteropServices;
+using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="DXCoreHardwareID" /> struct.</summary>
+    [SupportedOSPlatform("windows10.0.19041.0")]
     public static unsafe partial class DXCoreHardwareIDTests
     {
         /// <summary>Validates that the <see cref="DXCoreHardwareID" /> struct is blittable.</summary>

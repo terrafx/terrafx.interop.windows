@@ -8,3 +8,12 @@ um-windows.ui.xaml.media.dxinterop.h
 ../../../tests/Interop/Windows/um/windows.ui.xaml.media.dxinterop
 --traverse
 C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/windows.ui.xaml.media.dxinterop.h
+--with-attribute
+ISurfaceImageSourceManagerNative=SupportedOSPlatform("windows8.1")
+ISurfaceImageSourceNative=SupportedOSPlatform("windows8.1")
+ISurfaceImageSourceNativeWithD2D=SupportedOSPlatform("windows8.1")
+ISwapChainBackgroundPanelNative=SupportedOSPlatform("windows8.1")
+ISwapChainPanelNative2=SupportedOSPlatform("windows8.1")
+ISwapChainPanelNative=SupportedOSPlatform("windows8.1")
+IVirtualSurfaceImageSourceNative=SupportedOSPlatform("windows8.1")
+IVirtualSurfaceUpdatesCallbackNative=SupportedOSPlatform("windows8.1")

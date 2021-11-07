@@ -6,10 +6,12 @@
 using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="CRYPT_PROVIDER_SIGSTATE" /> struct.</summary>
+    [SupportedOSPlatform("windows8.0")]
     public static unsafe partial class CRYPT_PROVIDER_SIGSTATETests
     {
         /// <summary>Validates that the <see cref="CRYPT_PROVIDER_SIGSTATE" /> struct is blittable.</summary>

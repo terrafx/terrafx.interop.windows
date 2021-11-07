@@ -4,6 +4,7 @@
 // Original source is Copyright © Microsoft. All rights reserved. Licensed under the MIT License (MIT).
 
 using System;
+using System.Collections.Generic;
 using System.Diagnostics;
 using System.Drawing;
 using System.IO;
@@ -21,16 +22,7 @@ namespace TerraFX.Samples.DirectX
 {
     public abstract unsafe class DXSample : IDisposable
     {
-        public static readonly DXSample[] Samples = {
-            new HelloWindow11("D3D11.HelloWindow"),
-            new HelloTriangle11("D3D11.HelloTriangle"),
-            new HelloWindow12("D3D12.HelloWindow"),
-            new HelloTriangle12("D3D12.HelloTriangle"),
-            new HelloConstBuffer12("D3D12.HelloConstBuffer"),
-            new HelloTexture12("D3D12.HelloTexture"),
-            new HelloBundles12("D3D12.HelloBundles"),
-            new HelloMultiSampling12("D3D12.HelloMultiSampling"),
-        };
+        public static readonly DXSample[] Samples = GetSamples();
 
         private readonly string _assetsPath;
         private readonly string _name;
@@ -112,6 +104,26 @@ namespace TerraFX.Samples.DirectX
         private static double GetFrequency()
         {
             return (double)TimeSpan.TicksPerSecond / Stopwatch.Frequency;
+        }
+
+        private static DXSample[] GetSamples()
+        {
+            var samples = new List<DXSample>(8) {
+                new HelloWindow11("D3D11.HelloWindow")
+            };
+
+            if (OperatingSystem.IsWindowsVersionAtLeast(10))
+            {
+                samples.Add(new HelloTriangle11("D3D11.HelloTriangle"));
+                samples.Add(new HelloWindow12("D3D12.HelloWindow"));
+                samples.Add(new HelloTriangle12("D3D12.HelloTriangle"));
+                samples.Add(new HelloConstBuffer12("D3D12.HelloConstBuffer"));
+                samples.Add(new HelloTexture12("D3D12.HelloTexture"));
+                samples.Add(new HelloBundles12("D3D12.HelloBundles"));
+                samples.Add(new HelloMultiSampling12("D3D12.HelloMultiSampling"));
+            }
+
+            return samples.ToArray();
         }
 
         public void Dispose()

@@ -6,10 +6,12 @@
 using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="CERT_STRONG_SIGN_PARA" /> struct.</summary>
+    [SupportedOSPlatform("windows8.0")]
     public static unsafe partial class CERT_STRONG_SIGN_PARATests
     {
         /// <summary>Validates that the <see cref="CERT_STRONG_SIGN_PARA" /> struct is blittable.</summary>

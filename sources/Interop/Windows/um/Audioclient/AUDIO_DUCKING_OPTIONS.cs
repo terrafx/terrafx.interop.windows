@@ -4,10 +4,12 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Runtime.Versioning;
 
 namespace TerraFX.Interop
 {
     [Flags]
+    [SupportedOSPlatform("windows10.0.19043.0")]
     public enum AUDIO_DUCKING_OPTIONS
     {
         AUDIO_DUCKING_OPTIONS_DEFAULT = 0,

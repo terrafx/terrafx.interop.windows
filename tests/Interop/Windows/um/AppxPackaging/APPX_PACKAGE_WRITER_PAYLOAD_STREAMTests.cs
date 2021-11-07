@@ -6,10 +6,12 @@
 using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="APPX_PACKAGE_WRITER_PAYLOAD_STREAM" /> struct.</summary>
+    [SupportedOSPlatform("windows10.0")]
     public static unsafe partial class APPX_PACKAGE_WRITER_PAYLOAD_STREAMTests
     {
         /// <summary>Validates that the <see cref="APPX_PACKAGE_WRITER_PAYLOAD_STREAM" /> struct is blittable.</summary>

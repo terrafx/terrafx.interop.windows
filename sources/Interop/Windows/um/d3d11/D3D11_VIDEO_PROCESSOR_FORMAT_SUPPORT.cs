@@ -4,10 +4,12 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Runtime.Versioning;
 
 namespace TerraFX.Interop
 {
     [Flags]
+    [SupportedOSPlatform("windows8.0")]
     public enum D3D11_VIDEO_PROCESSOR_FORMAT_SUPPORT
     {
         D3D11_VIDEO_PROCESSOR_FORMAT_SUPPORT_INPUT = 0x1,

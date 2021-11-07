@@ -5,6 +5,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.Versioning;
 
 namespace TerraFX.Interop
 {
@@ -40,6 +41,7 @@ namespace TerraFX.Interop
         [DllImport("crypt32", ExactSpelling = true, SetLastError = true)]
         public static extern BOOL CryptSIPRemoveProvider(Guid* pgProv);
 
+        [SupportedOSPlatform("windows8.0")]
         [DllImport("crypt32", ExactSpelling = true)]
         public static extern BOOL CryptSIPGetCaps(SIP_SUBJECTINFO* pSubjInfo, [NativeTypeName("SIP_CAP_SET *")] SIP_CAP_SET_V3* pCaps);
 

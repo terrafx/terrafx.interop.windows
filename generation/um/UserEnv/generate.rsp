@@ -8,6 +8,13 @@ um-UserEnv.h
 ../../../tests/Interop/Windows/um/UserEnv
 --traverse
 C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/UserEnv.h
+--with-attribute
+CreateAppContainerProfile=SupportedOSPlatform("windows8.0")
+DeleteAppContainerProfile=SupportedOSPlatform("windows8.0")
+DeriveAppContainerSidFromAppContainerName=SupportedOSPlatform("windows8.0")
+DeriveRestrictedAppContainerSidFromAppContainerSidAndRestrictedName=SupportedOSPlatform("windows10.0")
+GetAppContainerFolderPath=SupportedOSPlatform("windows8.0")
+GetAppContainerRegistryLocation=SupportedOSPlatform("windows8.0")
 --with-librarypath
 CreateAppContainerProfile=userenv
 CreateEnvironmentBlock=userenv

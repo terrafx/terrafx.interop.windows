@@ -6,11 +6,13 @@
 using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.Versioning;
 using static TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="IInputPaneInterop" /> struct.</summary>
+    [SupportedOSPlatform("windows10.0.14393.0")]
     public static unsafe partial class IInputPaneInteropTests
     {
         /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IInputPaneInterop" /> struct is correct.</summary>

@@ -6,9 +6,11 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using System.Runtime.Versioning;
 
 namespace TerraFX.Interop
 {
+    [SupportedOSPlatform("windows10.0.19041.0")]
     [Guid("E5F549CD-C909-444F-8809-7CC18A9C8920")]
     [NativeTypeName("struct IHolographicQuadLayerUpdateParametersInterop : IInspectable")]
     [NativeInheritance("IInspectable")]

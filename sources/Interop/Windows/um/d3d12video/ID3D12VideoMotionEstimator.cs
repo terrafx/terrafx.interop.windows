@@ -6,9 +6,11 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using System.Runtime.Versioning;
 
 namespace TerraFX.Interop
 {
+    [SupportedOSPlatform("windows10.0.19041.0")]
     [Guid("33FDAE0E-098B-428F-87BB-34B695DE08F8")]
     [NativeTypeName("struct ID3D12VideoMotionEstimator : ID3D12Pageable")]
     [NativeInheritance("ID3D12Pageable")]

@@ -6,11 +6,13 @@
 using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.Versioning;
 using static TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="ID3D12Device5" /> struct.</summary>
+    [SupportedOSPlatform("windows10.0.17763.0")]
     public static unsafe partial class ID3D12Device5Tests
     {
         /// <summary>Validates that the <see cref="Guid" /> of the <see cref="ID3D12Device5" /> struct is correct.</summary>

@@ -4,6 +4,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System.Runtime.InteropServices;
+using System.Runtime.Versioning;
 
 namespace TerraFX.Interop
 {
@@ -137,10 +138,12 @@ namespace TerraFX.Interop
         [return: NativeTypeName("ULONG")]
         public static extern uint GetUdpStatisticsEx([NativeTypeName("PMIB_UDPSTATS")] MIB_UDPSTATS* Statistics, [NativeTypeName("ULONG")] uint Family);
 
+        [SupportedOSPlatform("windows10.0.16299.0")]
         [DllImport("iphlpapi", ExactSpelling = true)]
         [return: NativeTypeName("ULONG")]
         public static extern uint GetTcpStatisticsEx2([NativeTypeName("PMIB_TCPSTATS2")] MIB_TCPSTATS2* Statistics, [NativeTypeName("ULONG")] uint Family);
 
+        [SupportedOSPlatform("windows10.0.16299.0")]
         [DllImport("iphlpapi", ExactSpelling = true)]
         [return: NativeTypeName("ULONG")]
         public static extern uint GetUdpStatisticsEx2([NativeTypeName("PMIB_UDPSTATS2")] MIB_UDPSTATS2* Statistics, [NativeTypeName("ULONG")] uint Family);
@@ -264,22 +267,27 @@ namespace TerraFX.Interop
         [return: NativeTypeName("DWORD")]
         public static extern uint GetPerAdapterInfo([NativeTypeName("ULONG")] uint IfIndex, [NativeTypeName("PIP_PER_ADAPTER_INFO")] IP_PER_ADAPTER_INFO_W2KSP1* pPerAdapterInfo, [NativeTypeName("PULONG")] uint* pOutBufLen);
 
+        [SupportedOSPlatform("windows10.0.22000.0")]
         [DllImport("iphlpapi", ExactSpelling = true)]
         [return: NativeTypeName("DWORD")]
         public static extern uint GetInterfaceActiveTimestampCapabilities([NativeTypeName("const NET_LUID *")] NET_LUID_LH* InterfaceLuid, [NativeTypeName("PINTERFACE_TIMESTAMP_CAPABILITIES")] INTERFACE_TIMESTAMP_CAPABILITIES* TimestampCapabilites);
 
+        [SupportedOSPlatform("windows10.0.22000.0")]
         [DllImport("iphlpapi", ExactSpelling = true)]
         [return: NativeTypeName("DWORD")]
         public static extern uint GetInterfaceSupportedTimestampCapabilities([NativeTypeName("const NET_LUID *")] NET_LUID_LH* InterfaceLuid, [NativeTypeName("PINTERFACE_TIMESTAMP_CAPABILITIES")] INTERFACE_TIMESTAMP_CAPABILITIES* TimestampCapabilites);
 
+        [SupportedOSPlatform("windows10.0.22000.0")]
         [DllImport("iphlpapi", ExactSpelling = true)]
         [return: NativeTypeName("DWORD")]
         public static extern uint CaptureInterfaceHardwareCrossTimestamp([NativeTypeName("const NET_LUID *")] NET_LUID_LH* InterfaceLuid, [NativeTypeName("PINTERFACE_HARDWARE_CROSSTIMESTAMP")] INTERFACE_HARDWARE_CROSSTIMESTAMP* CrossTimestamp);
 
+        [SupportedOSPlatform("windows10.0.22000.0")]
         [DllImport("iphlpapi", ExactSpelling = true)]
         [return: NativeTypeName("DWORD")]
         public static extern uint RegisterInterfaceTimestampConfigChange([NativeTypeName("PINTERFACE_TIMESTAMP_CONFIG_CHANGE_CALLBACK")] delegate* unmanaged<void*, void> Callback, [NativeTypeName("PVOID")] void* CallerContext, HIFTIMESTAMPCHANGE* NotificationHandle);
 
+        [SupportedOSPlatform("windows10.0.22000.0")]
         [DllImport("iphlpapi", ExactSpelling = true)]
         public static extern void UnregisterInterfaceTimestampConfigChange(HIFTIMESTAMPCHANGE NotificationHandle);
 

@@ -6,9 +6,11 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using System.Runtime.Versioning;
 
 namespace TerraFX.Interop
 {
+    [SupportedOSPlatform("windows8.1")]
     [Guid("F292E401-C050-4CDE-83D7-04962D3B23C2")]
     [NativeTypeName("struct ID2D1GradientMesh : ID2D1Resource")]
     [NativeInheritance("ID2D1Resource")]

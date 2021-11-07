@@ -8,3 +8,6 @@ um-thumbnailstreamcache.h
 ../../../tests/Interop/Windows/um/thumbnailstreamcache
 --traverse
 C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/thumbnailstreamcache.h
+--with-attribute
+IThumbnailStreamCache=SupportedOSPlatform("windows10.0")
+ThumbnailStreamCacheOptions=SupportedOSPlatform("windows10.0")

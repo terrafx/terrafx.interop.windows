@@ -16,6 +16,8 @@ um-WebServices.h
 C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/WebServices.h
 --with-attribute
 WS_CHANNEL_TYPE=Flags
+WS_NAMEDPIPE_SSPI_TRANSPORT_SECURITY_BINDING=SupportedOSPlatform("windows8.0")
+WS_NETPIPE_URL=SupportedOSPlatform("windows8.0")
 WS_SECURE_PROTOCOL=Flags
 WS_TRANSFER_MODE=Flags
 --with-librarypath

@@ -6,9 +6,11 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using System.Runtime.Versioning;
 
 namespace TerraFX.Interop
 {
+    [SupportedOSPlatform("windows10.0")]
     [Guid("C8D22AFC-BC47-4BDF-9B04-787E49CE3F58")]
     [NativeTypeName("struct IMFTimedTextRegion : IUnknown")]
     [NativeInheritance("IUnknown")]

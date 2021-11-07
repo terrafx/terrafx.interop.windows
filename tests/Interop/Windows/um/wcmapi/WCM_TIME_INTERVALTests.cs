@@ -5,10 +5,12 @@
 
 using NUnit.Framework;
 using System.Runtime.InteropServices;
+using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="WCM_TIME_INTERVAL" /> struct.</summary>
+    [SupportedOSPlatform("windows8.0")]
     public static unsafe partial class WCM_TIME_INTERVALTests
     {
         /// <summary>Validates that the <see cref="WCM_TIME_INTERVAL" /> struct is blittable.</summary>

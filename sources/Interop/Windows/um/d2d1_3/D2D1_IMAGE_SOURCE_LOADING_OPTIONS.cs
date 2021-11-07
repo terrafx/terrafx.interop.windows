@@ -4,10 +4,12 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Runtime.Versioning;
 
 namespace TerraFX.Interop
 {
     [Flags]
+    [SupportedOSPlatform("windows10.0")]
     public enum D2D1_IMAGE_SOURCE_LOADING_OPTIONS : uint
     {
         D2D1_IMAGE_SOURCE_LOADING_OPTIONS_NONE = 0,

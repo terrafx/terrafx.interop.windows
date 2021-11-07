@@ -8,6 +8,21 @@ um-compressapi.h
 ../../../tests/Interop/Windows/um/compressapi
 --traverse
 C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/compressapi.h
+--with-attribute
+CloseCompressor=SupportedOSPlatform("windows8.0")
+CloseDecompressor=SupportedOSPlatform("windows8.0")
+Compress=SupportedOSPlatform("windows8.0")
+COMPRESS_ALLOCATION_ROUTINES=SupportedOSPlatform("windows8.0")
+COMPRESS_INFORMATION_CLASS=SupportedOSPlatform("windows8.0")
+CreateCompressor=SupportedOSPlatform("windows8.0")
+CreateDecompressor=SupportedOSPlatform("windows8.0")
+Decompress=SupportedOSPlatform("windows8.0")
+QueryCompressorInformation=SupportedOSPlatform("windows8.0")
+QueryDecompressorInformation=SupportedOSPlatform("windows8.0")
+ResetCompressor=SupportedOSPlatform("windows8.0")
+ResetDecompressor=SupportedOSPlatform("windows8.0")
+SetCompressorInformation=SupportedOSPlatform("windows8.0")
+SetDecompressorInformation=SupportedOSPlatform("windows8.0")
 --with-librarypath
 CloseCompressor=cabinet
 CloseDecompressor=cabinet

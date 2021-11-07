@@ -4,10 +4,12 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Runtime.Versioning;
 
 namespace TerraFX.Interop
 {
     [Flags]
+    [SupportedOSPlatform("windows8.0")]
     public enum INTERACTION_CONFIGURATION_FLAGS
     {
         INTERACTION_CONFIGURATION_FLAG_NONE = 0x00000000,

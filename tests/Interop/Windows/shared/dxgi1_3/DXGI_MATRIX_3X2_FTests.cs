@@ -5,10 +5,12 @@
 
 using NUnit.Framework;
 using System.Runtime.InteropServices;
+using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="DXGI_MATRIX_3X2_F" /> struct.</summary>
+    [SupportedOSPlatform("windows8.1")]
     public static unsafe partial class DXGI_MATRIX_3X2_FTests
     {
         /// <summary>Validates that the <see cref="DXGI_MATRIX_3X2_F" /> struct is blittable.</summary>

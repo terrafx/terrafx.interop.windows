@@ -5,10 +5,12 @@
 
 using NUnit.Framework;
 using System.Runtime.InteropServices;
+using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="USN_JOURNAL_DATA_V2" /> struct.</summary>
+    [SupportedOSPlatform("windows8.1")]
     public static unsafe partial class USN_JOURNAL_DATA_V2Tests
     {
         /// <summary>Validates that the <see cref="USN_JOURNAL_DATA_V2" /> struct is blittable.</summary>

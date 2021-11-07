@@ -5,10 +5,12 @@
 
 using NUnit.Framework;
 using System.Runtime.InteropServices;
+using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="STORAGE_PHYSICAL_TOPOLOGY_DESCRIPTOR" /> struct.</summary>
+    [SupportedOSPlatform("windows10.0")]
     public static unsafe partial class STORAGE_PHYSICAL_TOPOLOGY_DESCRIPTORTests
     {
         /// <summary>Validates that the <see cref="STORAGE_PHYSICAL_TOPOLOGY_DESCRIPTOR" /> struct is blittable.</summary>

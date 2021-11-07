@@ -6,11 +6,13 @@
 using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.Versioning;
 using static TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="ICredentialProviderCredentialEvents2" /> struct.</summary>
+    [SupportedOSPlatform("windows8.0")]
     public static unsafe partial class ICredentialProviderCredentialEvents2Tests
     {
         /// <summary>Validates that the <see cref="Guid" /> of the <see cref="ICredentialProviderCredentialEvents2" /> struct is correct.</summary>

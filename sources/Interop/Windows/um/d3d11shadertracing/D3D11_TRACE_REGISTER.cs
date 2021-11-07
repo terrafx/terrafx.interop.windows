@@ -6,9 +6,11 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using System.Runtime.Versioning;
 
 namespace TerraFX.Interop
 {
+    [SupportedOSPlatform("windows8.0")]
     public unsafe partial struct D3D11_TRACE_REGISTER
     {
         public D3D11_TRACE_REGISTER_TYPE RegType;
